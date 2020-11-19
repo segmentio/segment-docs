@@ -4,9 +4,11 @@ title: Gauges Destination
 
 ## Getting Started
 
-When you toggle on Gauges in Segment, our snippet will start asynchronously loading Gauges' track.js onto your page. This means you should remove Gauges' snippet from your page.
+When you enable Gauges in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Gauges' `track.js` onto your page.
 
-Gauges will start automatically collecting data on your site.
+This means you should remove Gauges' snippet from your page.
+
+Gauges starts automatically collecting data on your site.
 
 - - -
 

@@ -1,9 +1,28 @@
 ---
 sections:
+- section_title: Getting Started
+  section:
+  - path: /getting-started
+    title: Getting Started with Segment
+  - path: /getting-started/01-what-is-segment
+    title: What is Segment?
+  - path: /getting-started/02-simple-install
+    title: A simple Segment installation
+  - path: /getting-started/03-planning-full-install
+    title: Planning a full installation
+  - path: /getting-started/04-full-install
+    title: A full Segment installation
+  - path: /getting-started/05-data-to-destinations
+    title: Sending data to destinations
+  - path: /getting-started/06-testing-debugging
+    title: Testing and Debugging
+  - path: /getting-started/whats-next
+    title: What's next?
+
 - section_title: Guides
   section:
   - path: /guides
-    title: Getting Started with Segment
+    title: An introduction to Segment
   - path: /guides/intro-impl
     title: Segment Developer overview
   - path: /guides/intro-user
@@ -16,8 +35,6 @@ sections:
     title: How does Segment handle duplicate data?
   - path: /guides/ignore-bots
     title: How can I ignore internet bots?
-  - path: /guides/intelligent-tracking-prevention
-    title: Is Segment impacted by Intelligent Tracking Prevention?
   - path: /guides/segment-vs-tag-managers
     title: What is the difference between Segment and tag managers?
   - path: /guides/what-is-replay
@@ -31,8 +48,6 @@ sections:
       title: How-to Guides Index
     - path: /guides/how-to-guides/automated-multichannel-reengagement
       title: How do I automate multi-channel re-engagement campaigns?
-    - path: /guides/how-to-guides/best-practices-identify
-      title: What are best practices for identifying users?
     - path: /guides/how-to-guides/collect-on-client-or-server
       title: Should I collect data on the client or server?
     - path: /guides/how-to-guides/collect-pageviews-serverside
@@ -42,7 +57,7 @@ sections:
     - path: /guides/how-to-guides/cross-channel-tracking
       title: How do we track your customers across channels and devices?
     - path: /guides/how-to-guides/dynamic-coupon-program
-      title: How do I setup a dynamic coupon program to reward loyal customers?
+      title: How do I set up a dynamic coupon program to reward loyal customers?
     - path: /guides/how-to-guides/forecast-with-sql
       title: How do I forecast LTV with SQL and Excel for e-commerce?
     - path: /guides/how-to-guides/import-historical-data
@@ -105,8 +120,14 @@ sections:
       title: 'Spec: B2B SaaS'
     - path: /connections/spec/ecommerce/v2
       title: 'Spec: Ecommerce Events'
+    - path: /connections/spec/ecommerce-tracking-plan
+      title: 'Ecommerce Tracking Plans'
     - path: /connections/spec/video
       title: Video Spec
+    - path: /connections/spec/best-practices-identify
+      title: Best practices for identifying users
+    - path: /connections/spec/best-practices-event
+      title: Best Practices for Event Calls
   - section_title: Sources
     slug: connections/sources
     section:
@@ -115,16 +136,14 @@ sections:
     - path: /connections/sources/catalog
       title: Sources catalog
       menu_icon: read-more
-    - path: /connections/sources/cloud-source-data
-      title: What can you do with cloud source data?
+    - path: /connections/sources/debugger
+      title: Using the Source Debugger
+    - path: /connections/sources/about-cloud-sources
+      title: All about Cloud Sources
     - path: /connections/sources/custom-domains
       title: Set up a custom domain proxy in Segment
-    - path: /connections/sources/source-functions
-      title: Source Functions
     - path: /connections/sources/visual-tagger
       title: Visual Tagger
-    - path: /connections/sources/what-are-cloud-sources
-      title: What are Cloud-App Sources?
   - section_title: Destinations
     slug: connections/destinations
     section:
@@ -135,30 +154,61 @@ sections:
       menu_icon: read-more
     - path: /connections/destinations/destination-filters
       title: Destination Filters
-    - path: /connections/destinations/destination-functions
-      title: Destination Functions
-  - section_title: Warehouses
-    slug: connections/warehouses
+  - section_title: Functions
+    slug: connections/functions
     section:
-    - path: /connections/warehouses
-      title: Warehouses and Data Storage
-    - path: /connections/warehouses/catalog
-      title: Warehouses catalog
+    - path: /connections/functions
+      title: Functions Overview
+    - path: /connections/functions/source-functions
+      title: Source Functions
+    - path: /connections/functions/destination-functions
+      title: Destination Functions
+    - path: /connections/functions/environment
+      title: Functions environment
+    - path: /connections/functions/usage
+      title: Functions usage limits
+  - section_title: Storage Destinations
+    slug: connections/storage
+    section:
+    - path: /connections/storage
+      title: Storage Destinations overview
+    - path: /connections/storage/catalog
+      title: Storage Destinations catalog
       menu_icon: read-more
-    - path: /connections/warehouses/selective-sync
-      title: Warehouse Selective Sync
-    - path: /connections/warehouses/choose-warehouse
-      title: Choosing a Warehouse
-    - path: /connections/warehouses/faq
-      title: Warehouse FAQs
-    - path: /connections/warehouses/add-warehouse-users
-      title: How do you add users?
-    - path: /connections/warehouses/warehouse-errors
-      title: What does my warehouse error mean?
-    - path: /connections/warehouses/redshift-faq
-      title: Redshift cluster and Redshift connector limitations
-    - path: /connections/warehouses/redshift-tuning
-      title: How Do I Speed Up My Redshift Queries?
+    - section_title: Segment Data Lakes
+      slug: connections/storage/data-lakes
+      section:
+      - path: /connections/storage/data-lakes
+        title: Data Lakes overview
+      - path: /connections/storage/catalog/data-lakes
+        title: Set up Data Lakes
+      - path: /connections/storage/data-lakes/sync-reports
+        title: Sync Reports and error reporting
+      - path: /connections/storage/data-lakes/comparison
+        title: Data Lakes vs Warehouses
+    - section_title: Data Warehouses
+      slug: connections/storage/warehouses
+      section:
+      - path: /connections/storage/warehouses
+        title: Warehouses overview
+      - path: /connections/storage/warehouses/schema
+        title: Warehouses schemas
+      - path: /connections/storage/warehouses/selective-sync
+        title: Warehouse selective sync
+      - path: /connections/storage/warehouses/health
+        title: Warehouse Health dashboards
+      - path: /connections/storage/warehouses/choose-warehouse
+        title: Choosing a warehouse
+      - path: /connections/storage/warehouses/faq
+        title: Warehouse FAQs
+      - path: /connections/storage/warehouses/add-warehouse-users
+        title: How do you add users?
+      - path: /connections/storage/warehouses/warehouse-errors
+        title: What does my warehouse error mean?
+      - path: /connections/storage/warehouses/redshift-faq
+        title: Redshift cluster and Redshift connector limitations
+      - path: /connections/storage/warehouses/redshift-tuning
+        title: How do I speed up my redshift queries?
   - path: /connections/test-connections
     title: How do I test my connections?
   - path: /connections/data-export-options
@@ -173,79 +223,111 @@ sections:
     title: Integration Error Codes
   - path: /connections/schema-unique-limits
     title: Are there limits on my Segment Schema?
+  - path: /connections/rate-limits
+    title: Rate Limits and SLA
 - section_title: Personas
   section:
   - path: /personas
     title: Personas Overview
+  - path: /personas/quickstart
+    title: Personas Quickstart Guide
   - section_title: Personas Identity Resolution
     slug: personas/personas-identity-resolution
     section:
     - path: /personas/identity-resolution
-      title: Identity Resolution Overview
+      title: Overview
+    - path: /personas/identity-resolution/identity-resolution-onboarding
+      title: Onboarding
     - path: /personas/identity-resolution/use-cases
-      title: Identity Resolution Use Cases
+      title: Use Cases
     - path: /personas/identity-resolution/externalids
-      title: Identity Resolution External IDs
+      title: External IDs
     - path: /personas/identity-resolution/identity-resolution-settings
-      title: Identity Resolution Settings
+      title: Settings
     - path: /personas/identity-resolution/ecommerce-example
-      title: Identity Resolution E-Commerce Example
+      title: E-Commerce Example
     - path: /personas/identity-resolution/personas-space-set-up
       title: Personas Space Set Up
-  - path: /personas/activation
-    title: Activation
-  - path: /personas/warehouses
-    title: Personas and Warehouses
-  - path: /personas/personas-gdpr
-    title: Personas and GDPR
-  - path: /personas/profile-api
-    title: Profile API
-  - path: /personas/faqs
-    title: Personas Frequently Asked Questions
-  - path: /personas/audiences
-    title: Audiences
   - path: /personas/computed-traits
     title: Computed Traits
   - path: /personas/sql-traits
     title: SQL Traits
+  - path: /personas/audiences
+    title: Audiences
+  - path: /personas/using-personas-data
+    title: Using Personas data
+  - path: /personas/warehouses
+    title: Personas and Warehouses
+  - path: /personas/profile-api
+    title: Profile API
+  - path: /personas/personas-gdpr
+    title: Personas and GDPR
+  - path: /personas/faqs
+    title: Personas Frequently Asked Questions
 - section_title: Privacy
   section:
   - path: /privacy
-    title: Privacy Tools Overview
-  - path: /privacy/portal
-    title: Privacy Portal
-  - path: /privacy/preparing-for-the-gdpr
-    title: Preparing for the GDPR & CCPA
-  - path: /privacy/user-deletion-and-suppression
-    title: User Deletion and Suppression
+    title: Overview
+  - section_title: Privacy Portal
+    slug: protocols/portal
+    expanded: true
+    section:
+    - path: /privacy/portal
+      title: Detect PII
+    - path: /privacy/data-controls
+      title: Data Controls and Alerts
+  - section_title: GDPR
+    slug: protocols/complying-with-the-gdpr
+    expanded: true
+    section:
+    - path: /privacy/complying-with-the-gdpr
+      title: Complying with GDPR
+    - path: /privacy/user-deletion-and-suppression
+      title: User Deletion and Suppression
+  - path: /privacy/faq
+    title: Frequently Asked Questions
 - section_title: Protocols
   section:
   - path: /protocols
-    title: Protocols Overview
-  - section_title: Data Quality Best Practices
-    slug: protocols/data-quality
+    title: Overview
+  - section_title: Create a Tracking Plan
+    slug: protocols/tracking-plan
     section:
-    - path: /protocols/data-quality
+    - path: /protocols/tracking-plan/best-practices
       title: Data Collection Best Practices
-    - path: /protocols/data-quality/whats-a-tracking-plan
-      title: What is a Tracking Plan?
-    - path: /protocols/data-quality/ecommerce-tracking-plan
-      title: Ecommerce Tracking Plans
-  - path: /protocols/tracking-plan
-    title: Protocols Tracking Plans
-  - path: /protocols/transformations
-    title: 'Protocols Transformations'
-  - section_title: 'Protocols APIs and Extensions'
+    - path: /protocols/tracking-plan/create
+      title: The Tracking Plan
+    - path: /protocols/tracking-plan/libraries
+      title: Tracking Plan Libraries
+  - section_title: Validate with violations
+    slug: protocols/validate
+    section:
+    - path: /protocols/validate/connect-sources
+      title: Connect Sources to your Tracking Plan
+    - path: /protocols/validate/review-violations
+      title: Review and Resolve Event Violations
+    - path: /protocols/validate/forward-violations
+      title: Forward Violations
+  - section_title: Enforce with data controls
+    slug: protocols/enforce
+    section:
+    - path: /protocols/enforce/schema-configuration
+      title: Customize your schema controls
+    - path: /protocols/enforce/forward-blocked-events
+      title: Forward blocked events
+  - path: /protocols/transform
+    title: Transform to fix bad data
+  - section_title: Protocols Extensions
     slug: protocols/apis-and-extensions
     section:
     - path: /protocols/apis-and-extensions
-      title: 'Protocols APIs and Extensions'
+      title: Protocols APIs
     - path: /protocols/apis-and-extensions/typewriter
       title: Typewriter
     - path: /protocols/apis-and-extensions/anomaly_detection
       title: Anomaly Detection
   - path: /protocols/faq
-    title: 'Protocols FAQ'
+    title: Frequently Asked Questions
 - section_title: Segment App
   section:
   - path: /segment-app
@@ -260,7 +342,7 @@ sections:
     - path: /segment-app/iam/roles
       title: Roles
     - path: /segment-app/iam/membership
-      title: Manage members
+      title: Manage workspace members
     - path: /segment-app/iam/labels
       title: Label-Based Access Control
     - path: /segment-app/iam/audit-trail

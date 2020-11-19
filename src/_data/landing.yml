@@ -1,39 +1,63 @@
-- name: Getting Started
-  icon: icon-getting-started.svg
-  description: "An overview of Segment, including the problems it solves, how it works, and its important features."
-  path: /guides/
+sections:
+- section_title: false
+  section_col: 12
+  section:
+  - name: Getting started with Segment
+    icon: icon-getting-started.svg
+    description: "Learn about Segment, work through a basic implementation, plan a full implementation and learn about features and extensions. "
+    path: /getting-started/
+- section_title: How can Segment help you?
+  section_col: 6
+  section:
+  - name: Simplify data collection
+    icon: icon-connections.svg
+    description: "Integrate the tools you need for analytics, growth, marketing, and more."
+    path: /connections/
+  - name: Protect data integrity
+    icon: icon-protocols.svg
+    description: "Prevent data quality issues with a tracking schema and enforcement with Protocols."
+    path: /protocols/
+  - name: Personalize interactions
+    icon: icon-personas.svg
+    description: "Improve customer interactions by building audiences to power personalized experiences."
+    path: /personas/
+  - name: Respect users' privacy
+    icon: icon-privacy.svg
+    description: "Use Segment's tools for data discovery and policy enforcement to keep customer data private."
+    path: /privacy/
 
-- name: How-To Guides
-  icon: icon-guides.svg
-  description: "Over a dozen how-to guides to help you accomplish common tasks."
-  path: /guides/how-to-guides/
+- section_title: Get Data into Segment
+  section_description: "The Segment Spec provides guidance on meaningful data to capture, and the best format for it, across all of our libraries and APIs. When you use these formats it’s simple to send data to downstream tools."
+  section_col: 4
+  section:
+  - name: Segment calls
+    description: "Use Track, Page, and Identify, and learn about the other calls Segment tracking is built on."
+    path: /connections/spec/
+  - name: Common traits
+    description: "Save time by letting the Segment calls collect information automatically."
+    path: /connections/spec/common/
+  - name: Use case specs
+    description: "Use our business-case specs to ensure that your tools get the most from your data."
+    path: /connections/spec/semantic/
 
-- name: App
-  icon: icon-app.svg
-  description: "Learn about the Segment Web App, where you configure your Segment workspace."
-  path: /segment-app/
+- section_title: Learning about Segment
+  section_col: 6
+  section:
+  - name: Segment for Developers
+    icon: icon-guides.svg
+    description: "An overview of the basics of your Segment implementation."
+    path: /guides/intro-impl/
+  - name: How-To Guides
+    icon: icon-guides.svg
+    description: "Over a dozen how-to guides to help you accomplish common tasks."
+    path: /guides/how-to-guides/
 
-- name: Connections
-  icon: icon-connections.svg
-  description: "Get the details on how Segment sends data between Sources and Destinations."
-  path: /connections/
-
-- name: Protocols
-  icon: icon-protocols.svg
-  description: "Prevent data quality issues before they start with a tracking schema and data quality enforcement."
-  path: /protocols/
-
-- name: Personas
-  icon: icon-personas.svg
-  description: "Improve customer interactions by building audiences to power personalized experiences."
-  path: /personas/
-
-- name: Privacy
-  icon: icon-privacy.svg
-  description: "Respect your customers’ privacy with tools for data discovery and policy enforcement."
-  path: /privacy/
-
-- name: Partners
-  icon: icon-partners.svg
-  description: "Join the Segment Platform and enable thousands of companies to activate their first party data."
-  path: /partners/
+- section_title: Connect your app to Segment
+  section_col: 4
+  section:
+  - name: Javascript
+    path: /connections/sources/catalog/libraries/website/javascript/
+  - name: HTTP Tracking API
+    path: /connections/sources/catalog/libraries/server/http-api/
+  - name: iOS
+    path: /connections/sources/catalog/libraries/mobile/ios/

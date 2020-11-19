@@ -1,40 +1,42 @@
 <div class="sidebar sidebar--dark">
-  <nav class="menu">
-    <ul class="menu__list list list--unstyle">
-      <li class="menu-item menu-item--separated">
-        <a class="menu-item__link menu-item__link--small menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}/">
-          <div class="menu-item__icon flex__column">
-            {% include icons/menu/icon-back.svg %}
-          </div>
-
-          <div class="flex__column">Back to Documentation</div>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <nav class="menu">
-    <ul class="menu__list list list--unstyle">
-      <li class="menu-item menu-item--active">
-        <button class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle">
-          <span class="menu-item__icon flex__column">
-            {% include icons/menu/icon-home.svg %}
-          </span>
-
-          <span class="flex__column">Glossary</span>
-        </button>
-
-        {% if site.data.glossary %}
-          <ul class="menu-item__body">
-            {% for item in site.data.glossary %}
-              <li class="menu-item menu-item--gray">
-                {% if item[0] %}
-                  <a class="menu-item__link flex" href="{{ site.baseurl }}{{ page.url }}#{{ item[0] | slugify }}">{{ item[0] }}</a>
-                {% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </li>
-    </ul>
-  </nav>
+  <div class="sidebar__content">
+    <nav class="menu">
+      <ul class="menu__list list list--unstyle">
+        <li class="menu-item">
+          <a class="menu-item__link menu-item__link--small menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}/">
+            <div class="menu-item__icon flex__column">
+              {% include icons/menu/icon-back.svg %}
+            </div>
+  
+            <div class="flex__column">Back to Documentation</div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <nav class="menu">
+      <ul class="menu__list list list--unstyle">
+        <li class="menu-item menu-item--active">
+          <button class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle">
+            <span class="menu-item__icon flex__column">
+              {% include icons/menu/icon-home.svg %}
+            </span>
+  
+            <span class="flex__column">Glossary</span>
+          </button>
+  
+          {% if site.data.glossary %}
+            <ul class="menu-item__body">
+              {% for item in site.data.glossary %}
+                <li class="menu-item menu-item--gray">
+                  {% if item[0] %}
+                    <a class="menu-item__link flex" href="{{ site.baseurl }}{{ page.url }}#{{ item[0] | slugify }}">{{ item[0] }}</a>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>

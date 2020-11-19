@@ -16,7 +16,7 @@ The Config API enables you to programmatically manage Segment workspaces, source
 The Config API is a set of REST services under segmentapis.com:
 
 | Service                     | Description                                            |
-|-----------------------------|--------------------------------------------------------|
+| --------------------------- | ------------------------------------------------------ |
 | [Access Tokens][1]          | Manage access tokens                                   |
 | [Source Catalog][2]         | Get info about all event and cloud sources             |
 | [Destination Catalog][3]    | Get info about all destinations                        |
@@ -26,7 +26,8 @@ The Config API is a set of REST services under segmentapis.com:
 | [Tracking Plans][7]         | Manage workspace tracking plans                        |
 | [Event Delivery Metrics][8] | Get event delivery metrics for cloud-mode destinations |
 | [Destination Filters][9]    | Manage destination filters                             |
-| [IAM][10]                    | Manage workspace users and roles                       |
+| [IAM][10]                   | Manage workspace users and roles                       |
+| [Functions][11]             | Manage Functions                                       |
 
 [1]: https://reference.segmentapis.com/#cd642f96-0fca-42a1-a727-e16fd33c7e8f
 [2]: https://reference.segmentapis.com/#7a63ac88-43af-43db-a987-7ed7d677a8c8
@@ -38,6 +39,7 @@ The Config API is a set of REST services under segmentapis.com:
 [8]: https://reference.segmentapis.com/#51d89077-efd7-429b-85d4-155ac2cd07aa
 [9]: https://reference.segmentapis.com/#6c12fbe8-9f84-4a6c-848e-76a2325cb3c5
 [10]: https://reference.segmentapis.com/?version=latest#c4b14304-9112-4803-aa26-c08678cbe26a
+[11]: https://reference.segmentapis.com/?version=latest#c0866f35-2f39-4dfd-9fd3-26a0003ae74c
 
 To see all the API methods and models see the [Segment Config API Reference](https://reference.segmentapis.com/).
 
@@ -59,9 +61,8 @@ These are currently only suitable for first party, trusted applications, such as
 
 When you create an access token, you'll give it a description, a workspace, and determine whether it has workspace owner or member access.
 
-> Warning: Secret Token
->
-> Note that you can not retrive the plain-text `token` later, so you should save it in a secret manager. If you lose the `token` you can generate a new one.
+> warning "Secret Token"
+> You can not retrieve the plain-text `token` later, so you should save it in a secret manager. If you lose the `token` you can generate a new one.
 
 Note: All Personal Access Tokens will be deprecated on August 3rd, 2019.
 

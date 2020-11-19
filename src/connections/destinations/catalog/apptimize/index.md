@@ -4,15 +4,15 @@ title: Apptimize Destination
 ---
 [Apptimize](https://apptimize.com/) empowers product teams to efficiently run A/B tests, rollout and manage new features, and deliver personalized user experiences. Our Apptimize destination code is open-source. You can browse the code on GitHub for [iOS](https://github.com/Apptimize/analytics-ios-integration-apptimize) and [Android](https://github.com/Apptimize/analytics-android-integration-apptimize).
 
-This document was last updated on April 27, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on April 27, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
- 1. From your Segment UI's Destinations page click on "Add Destination".
- 2. Search for "Apptimize" within the Destinations Catalog and confirm the Source you'd like to connect to.
- 3. Drop in your Apptimize application key, the 31 character key which you can find in your [Apptimize app settings](https://apptimize.com/admin/settings/apps).
+ 1. From the Segment web app, click **Catalog**.
+ 2. Search for "Apptimize" in the Catalog, select it, and choose which of your sources to connect the destination to.
+ 3. In the destination settings, enter your Apptimize application key, the 31 character key which you can find in your [Apptimize app settings](https://apptimize.com/admin/settings/apps).
  4. Depending on the mobile library you've selected, follow the below instructions to complete your setup.
 
 _**NOTE:** There is also an advanced setting to publish Apptimize experiment data to Segment. If you choose to automatically record screen events or track Application lifecycle events, these will also be reflected in Apptimize. You also have access to all normal Apptimize non-Segment functionality. To integrate, simply pull in the destination as a dependency and include the Apptimize Integration Factory when setting up Segment Analytics. _
@@ -67,8 +67,9 @@ It is important to note that if the app keys in the plist/code and the Segment d
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example iOS call would look like:
-```ios
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example iOS call would look like:
+
+```swift
 [[SEGAnalytics sharedAnalytics] screen:@"Photo Feed"
                             properties:@{ @"Feed Type": @"public" }];
 ```
@@ -77,9 +78,9 @@ When you record a `screen`, Apptimize will track an event of the form `Viewed [S
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example iOS call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example iOS call would look like:
 
-```ios
+```swift
 [[SEGAnalytics sharedAnalytics] identify:@"12091906-01011992"
                                 traits:@{ @"email": @"john.doe@example.com" }];
 ```
@@ -88,9 +89,9 @@ When you `identify` a user, Segment will pass that user's information to Apptimi
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example iOS call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example iOS call would look like:
 
-```ios
+```swift
 [[SEGAnalytics sharedAnalytics] track:@"Article Completed"
                            properties:@{ @"title": @"How to Create a Tracking Plan", @"course": @"Intro to Analytics" }];
 ```
@@ -99,7 +100,7 @@ When you `track` an event, the event will be marked in Apptimize as an occurence
 
 **Optional:** You can also specify a value for each event, by adding a `value` property to the event when tracking. This is useful, for instance, when you want to track the price of orders each time a user clicks "Buy" in your app's shopping cart. Including an example iOS call below:
 
-```ios
+```swift
 [[SEGAnalytics sharedAnalytics] track:@"Item Purchased"
                            properties:@{ @"item": @"Sample Item", @"value": @5.23 }];
 ```

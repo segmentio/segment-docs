@@ -22,7 +22,6 @@ const slugify = (displayName) => {
   if (slug === 'roku-alpha') slug = 'roku'
   if (slug === 'shopify-by-littledata') slug = 'shopify-littledata'
   if (slug === 'talon-one') slug = 'talonone'
-  if (slug === 'algolia-insights') slug = 'algolia'
   return slug
 }
 
@@ -66,7 +65,7 @@ const getConnectionModes = (destination) => {
         connectionModes.device.mobile = true
         break
       case 'WEB':
-        if (destination.browserUnbundlingSupported && destination.browserUnbundlingPublic) {
+        if (destination.browserUnbundlingSupported) {
           connectionModes.cloud.web = true
         }
         connectionModes.device.web = true
@@ -85,7 +84,7 @@ const getConnectionModes = (destination) => {
         if (destination.platforms.server) {
           connectionModes.cloud.server = true
         }
-        if (destination.platforms.browser && destination.browserUnbundlingPublic) {
+        if (destination.platforms.browser) {
           connectionModes.cloud.web = true
         }
         break
@@ -118,9 +117,17 @@ const doesCatalogItemExist = (item) => {
 }
 
 const isCatalogItemHidden = (itemURL) => {
-  const f = fm(fs.readFileSync(path.resolve('src', itemURL, 'index.md'), 'utf8'));
-  if (f.attributes.hidden) return true
-  return false
+  try {
+    const catalogPath = path.resolve('src', itemURL, 'index.md')
+    if (fs.existsSync(catalogPath)) {
+      const f = fm(fs.readFileSync(catalogPath, 'utf8'));
+      if (f.attributes.hidden) return true
+    }
+    return false
+  } catch (e) {
+    console.log(error)
+    return false
+  }
 }
 
 const updateSources = async () => {

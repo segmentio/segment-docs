@@ -10,7 +10,7 @@ A user can be in more than one group; however, not all platforms support multipl
 
 Here's the payload of a typical `group` call, with most [common fields](/docs/connections/spec/common/) removed:
 
-```js
+```json
 {
   "type": "group",
   "groupId": "0e8c78ea9d97a7b8185e8632",

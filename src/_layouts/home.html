@@ -16,7 +16,7 @@ layout: main
       <div class="home__body">
         <div>
           {%- if page.title -%}
-            <h1 id="{{ page.title | downcase }}" class="home__heading page__heading">
+            <h1 id="{{ page.title | slugify }}" class="home__heading page__heading">
               {{ page.title }}
             </h1>
           {%- endif -%}
@@ -44,7 +44,7 @@ layout: main
 
 <div class="docs__sidebar stage__sidebar">
   {% include_cached navbar/nav.html %}
-
+  {% unless page.hide-sidebar %}
   <div class="sidebar sidebar--sticky sidebar--scroll">
     {% unless page.hide-feedback %}
 
@@ -66,13 +66,15 @@ layout: main
     {% endunless %}
 
     {%- unless page.hide_toc -%}
+
       <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
         {% include_cached sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=content h_min=2 h_max=2 %}
       </div>
-    {%- endunless -%}
+    {% endunless %}
 
     {% if page.related %}
       {% include sidebar/related-content.html items=page.related %}
     {% endif %}
   </div>
+  {% endunless %}
 </div>

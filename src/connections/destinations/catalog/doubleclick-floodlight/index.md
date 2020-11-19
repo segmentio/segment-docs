@@ -1,34 +1,33 @@
 ---
 title: DoubleClick Floodlight Destination
+strat: google
 ---
 
-## Getting Started
+The [DoubleClick Floodlight](https://support.google.com/searchads/answer/7298761?hl=en) destination allows you to make calls directly to Floodlight based on your mapped events. All you have to do is enter your **DoubleClick Advertiser ID** in the Doubleclick Floodlight destinations settings in the Segment App, then map the Segment `track` events to their corresponding Floodlight tags.
 
-The DoubleClick Floodlight destination allows you to make calls directly to Floodlight based on your mapped events. All you have to do is drop in your **DoubleClick Advertiser ID** into your settings and map the Segment `track` events to their corresponding Floodlight tags.
-
-If you'd like to send mobile data, this destination _requires_ you to send device specific information such as the `IDFA` or the `AdvertisingId` and thus you should send events via our **mobile** libraries. You can also send data from `analytics.js` and we will make direct HTTP requests to Doubleclick Floodlight from your browser.
+This destination _requires_ that you send device-specific information such as the `IDFA` or the `advertisingId`. The best way to send events to Doubleclick Floodlight from mobile devices is using [one of the Segment mobile libraries](/docs/connections/sources/catalog/#mobile), because they collect this information automatically. If you use [one of the Segment server source libraries](/docs/connections/sources/catalog/#server) instead, you must manually include the required `advertisingId`.  You can also send data from [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/) and Segment makes direct HTTP requests to Doubleclick Floodlight from your browser.
 
 ## Track
 
-In order to send `track` events to DoubleClick Floodlight, you **must** first create the Floodlight tags (**Sales** or **Counter**) inside your DoubleClick Campaign Manager and then map the Segment events to those tags inside Segment settings.
+Before you send `track` events to DoubleClick Floodlight, you **must** first go to the  DoubleClick Campaign Manager and create the Floodlight tags (**Sales** or **Counter**). Once you do that, you can map the Segment events to those tags from in the destination's settings in the Segment App.
 
-If you want to track custom properties, be sure to create [custom variables](https://segment.com/docs/connections/destinations/catalog/doubleclick-floodlight/#setting-up-custom-variables) inside DoubleClick Campaign Manager.
+To track custom properties first create [custom variables](#setting-up-custom-variables) inside DoubleClick Campaign Manager.
 
-Once all the configurations are finished, whenever we receive a mapped Segment event, we will map the following properties and settings:
+After you finish configuring Doubleclick Floodlight, Segment maps the following properties and settings when it receives a mapped event:
 
-- `dc_rdid` will be set as `IDFA` or `AdvertisingId` (for mobile data only)
-- `src` will be pulled from your destination settings
-- `cat` and `type` will be pulled from your event mappings from the settings OR your top level **Activity Tag** and **Group Tag** settings
-- `ord` for **counter** tags will be a random number to prevent browser caching
-- `ord` for **sales** tags will be your whatever you define in your settings! (ie. `properties.order_id`) Include the `properties.` prefix to the key to ensure we can find the associated value in your `properties` object.
-- `qty` for **sales** tags only we will sum the quantity of products in your `products` array property or fallback on top level `properties.quantity`
-- `cost` for **sales** tags only we will send the `revenue`
-- `u$` (if any) will be pulled from your property mapping setting
-- `dc_lat` will be set to `0` or `1` depending on whether the device has **Limit Ad Tracking** enabled (for mobile data only)
+- `dc_rdid` is set as `IDFA` or `AdvertisingId` (for mobile data only)
+- `src` is pulled from your destination settings
+- `cat` and `type` are pulled from your event mappings from the settings OR your top level **Activity Tag** and **Group Tag** settings
+- `ord` for **counter** tags are a random number to prevent browser caching
+- `ord` for **sales** tags are set to whatever you define in your settings! (ie. `properties.order_id`) Include the `properties.` prefix to the key to ensure Segment finds the associated value in your `properties` object.
+- `qty` for **sales** tags only, Segment sums the quantity of products in your `products` array property or falls back on top level `properties.quantity`
+- `cost` for **sales** tags only Segment sends the `revenue`
+- `u$` (if any) is pulled from your property mapping setting
+- `dc_lat` is set to `0` or `1` depending on whether the device has **Limit Ad Tracking** enabled (for mobile data only)
 
-**Important:** Floodlight requires that you [set a `User-Agent` header](https://cloudup.com/cDlD6KmuuOK) with that of the app where the track event took place. Our Android or analytics.js library automatically collects the `userAgent`. However, for iOS library you must manually send the user agent string inside the `context` object. If `context.userAgent` is not provided, we will try to generate a user agent string based on some device and operating system information that we *do* already collect.
+**Important:** Floodlight requires that you [set a `User-Agent` header](images/cDlD6KmuuOK.png) with that of the app where the track event took place. The Segment Android and Analytics.js (javascript) library automatically collect the `userAgent`. However you must manually send the user agent string inside the `context` object if you are using the iOS library. If `context.userAgent` is not provided, Segment tries to generate a user agent string based on some device and operating system information that is already has.
 
-Such generated user agent string might look something like this:
+A generated user agent string might look something like the following:
 
 `Segment/1.0 (iPhone OS; CPU iPhone7,2; en-US) Apple; Version 8.1.3`
 
@@ -40,7 +39,7 @@ Assuming the below is an example Floodlight tag mapping:
 
 With the following `track` call:
 
-```objective-c
+```objc
 [[SEGAnalytics sharedAnalytics] track:@"Free El"
                            properties:@{ @"show": @"Stranger Things", @"source": @"Netflix", @"greatestShowEver": YES }];
 ```
@@ -55,37 +54,35 @@ https://ad.doubleclick.net/ddm/activity/src=1234567;cat=fghij456;type=abcde123;d
 
 By default, the Segment event property you define for each custom variable mapping will be matched against the property values found in the `properties` object of a `track` event. You can, however, use JSON style dot-notation-accessors wrapped in double curly brackets to map to **any** property in the event's raw payload to your custom variables. For example, some acceptable values could be `context.campaign.name`, `context.userAgent`, or `anonymousId` (inside of the double curly brackets). You can find the complete structure of a standard Segment event payload [here](/docs/connections/spec/common/#structure).
 
-**Note:** `dc_rdid` and `dc_lat` will be automatically collected by our mobile libraries and `ord` will be uniquely generated for each event.
+**Note:** `dc_rdid` and `dc_lat` are automatically collected by our mobile libraries and `ord` is uniquely generated for each event.
 
 ## Page
 
-Our DoubleClick Floodlight destination also supports tracking named `page` events as conversions. In order to enable this functionality, follow the same steps laid out above for `track` events however, in the destination settings, input the conversion "event" name following this structure (where \[PAGE NAME\] is the `name` parameter you are passing to the Segment `page` event):
+The Segment DoubleClick Floodlight destination also supports tracking named `page` events as conversions. To enable this feature, follow the same steps explained above for `track` events but in the destination settings, enter the conversion "event" name. Use the structure in the example below, replacing `PAGE NAME` with the `name` parameter you pass to the Segment `page` event:
 
-**Viewed** \[PAGE NAME\] **Page**
+**Viewed `PAGE NAME` Page**
 
 Here's an example for tracking a `page` event with the name **Confirmation**:
 
 ![page event as track event](images/page-event.png)
 
-Please ensure you enter the name case sensitively.
+The name is case sensitive.
 
-Reference our [docs](/docs/connections/sources/catalog/libraries/website/javascript/#page) for more on the `name` parameter.
+See the [Analytics.js documentation](/docs/connections/sources/catalog/libraries/website/javascript/#page) for more on the `name` parameter.
 
 ### Pages with categories
 
-If you are passing category names to `page` events you would like to track as conversions, you will need to slightly modify the event name you input into your destination settings. As opposed to **Viewed** \[PAGE NAME\] **Page**, you will need to input it as:
+If you are passing category names to `page` events you would like to track as conversions, you must slightly modify the event name you input into your destination settings. Instead of **Viewed `PAGE NAME` Page**, enter it as: **Viewed `CATEGORY NAME` `PAGE NAME` **Page**
 
-**Viewed** \[CATEGORY NAME\] \[PAGE NAME\] **Page**
-
-For example, if you had a `page` event with the name as **Confirmation** that was being categorized as part of a group of **Checkout** pages, you would input:
+For example, if you had a `page` event with the name as **Confirmation** that was being categorized as part of a group of **Checkout** pages, you would enter:
 
 **Viewed Checkout Confirmation Page**
 
-Reference our [docs](/docs/connections/sources/catalog/libraries/website/javascript/#page) for more on the `category` paramter.
+See the [Analytics.js documentation](/docs/connections/sources/catalog/libraries/website/javascript/#page) for more on the `category` paramter.
 
 ## Setting up Custom Variables
 
-There are two things you need to do in order to send custom track properties as custom Floodlight variables. Firstly, please refer to their [docs](https://support.google.com/dfa/partner/answer/2548879?hl=en) on how to create a custom variable inside DoubleClick:
+There are two things you need to do in order to send custom track properties as custom Floodlight variables. Firstly, refer to their [docs](https://support.google.com/dfa/partner/answer/2548879?hl=en) on how to create a custom variable inside DoubleClick:
 
 Custom Floodlight variables use the keys u1=, u2=, and so on, and can take any values that you choose to pass to them. You can include custom Floodlight variables in any of your Floodlight activity tags and report on their values in Report Builder.
 
@@ -95,25 +92,25 @@ For each custom variable you want to create or edit, enter a Friendly Name, whic
 
 Choose the Type of custom variable you're creating. Choose string if you want the variable to include alphanumeric characters or special characters. The only characters you can't use are ", < and >. Choose number if you want to pass numeric values.
 
-If you add Custom Floodlight Variables to a report as metrics, note that they will be summed in the report as if they are numeric values, even if the variables are actually strings. The string variables will display a value of 0.
+If you add Custom Floodlight Variables to a report as metrics, they are summed in the report as if they are numeric values, even if the variables are actually strings. The string variables will display a value of 0.
 
-Click Save.
+Click **Save**.
 
 ## COPPA Compliance
 
-DoubleClick Floodlight lets you set a parameter called `tag_for_child_directed_treatment` as either `0` or `1` if you want to mark a particular tag as coming from a user under the age of 13, under the [COPPA](https://www.ftc.gov/news-events/media-resources/protecting-consumer-privacy/kids-privacy-coppa) compliance.
+DoubleClick Floodlight lets you set a parameter called `tag_for_child_directed_treatment` as either `0`, or `1` to mark a specific tag as coming from a user under the age of 13, under the [COPPA compliance privacy law](https://www.ftc.gov/news-events/media-resources/protecting-consumer-privacy/kids-privacy-coppa).
 
 If you want to set this flag, you can send an integration option namespaced as `coppaCompliant` with `true` or `false` (default):
 
 ```java
-
 Analytics.with(context).track("Free El", new Properties().putValue("show", "Stranger Things").putValue("source", "Netflix").putValue("greatestShowEver", true), new Options().setIntegrationOptions("DoubleClick Floodlight", new ValueMap().putValue("coppaCompliant", true)));
 ```
 
-> Note: This flag was previously called "copaCompliant" instead of "coppaCompliant". The method has been aliased to preserve the old functionality, and you do not need to update it if you used the old spelling.
+> success ""
+> **Tip**: This flag was previously called `copaCompliant` (a typo) instead of `coppaCompliant`. The method has been aliased to preserve the old functionality, and you do not need to update it if you used the old spelling.
 
 ## Sending Personally Identifiable Information (PII)
 
-Please refrain from mapping custom variables that are PII. Please refer to the [warning](https://support.google.com/dfa/partner/answer/2548879?hl=en) by DoubleClick:
+Do not map custom variables that contain Personally Identifying Information (PII). Refer to [this warning by DoubleClick](https://support.google.com/dfa/partner/answer/2548879?hl=en):
 
 The terms of your DoubleClick contract prohibit passing any information to us that we could use or recognize as personally identifiable information (PII). If you enter certain key-values into a field in a DoubleClick product, you may see a warning that reminds you that you must not use key-values to pass data that we would recognize as PII. Key-values that trigger this warning include, for example, email and username. Note that it is okay to use these key-values if your purpose is not to collect information that DoubleClick could use or recognize as PII. (For example, email=weekly is fine, but passing a user's email address is not.) If you do choose one of these key-values, DoubleClick may contact you in the future to confirm that you are not using them in a way that is prohibited.

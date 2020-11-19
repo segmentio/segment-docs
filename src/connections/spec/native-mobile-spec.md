@@ -2,11 +2,9 @@
 title: What is the native mobile spec?
 ---
 
-# What is the Native Mobile Spec?
-
 The [Native Mobile Spec](https://segment.com/docs/connections/spec/mobile) is a common blueprint for the mobile user lifecycle. The Spec outlines the most important events for mobile apps to be tracking and automatically collects many of these events with the Segment Android and iOS SDKs.
 
-This article outlines common questions about our Native Mobile Spec. To learn what the benefits are of the feature, check out our [blog](https://segment.com/blog/native-mobile-spec). For technical setup and documentation, see our [spec docs](https://segment.com/docs/connections/spec/mobile).
+This article outlines common questions about our Native Mobile Spec. To learn what the benefits are of the feature, check out our [blog](https://segment.com/blog/native-mobile-spec). For technical set up and documentation, see our [spec docs](https://segment.com/docs/connections/spec/mobile).
 
 ### How does the Native Mobile Spec help me?
 
@@ -21,18 +19,18 @@ This article outlines common questions about our Native Mobile Spec. To learn wh
 
 ### Which destinations currently take advantage of the mobile spec?
 
-Our [Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/) server-side destination currently takes advantage of the "Application Installed" event to power new features like custom audience creation, dynamic ads and conversion tracking, without needing to sit on the device. Soon, more destinations like Google Adwords and Salesforce Marketing Cloud and attribution providers will offer similar functionality.
+Our [Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/) cloud-mode destination currently takes advantage of the "Application Installed" event to power new features like custom audience creation, dynamic ads and conversion tracking, without needing to sit on the device. Soon, more destinations like Google Adwords and Salesforce Marketing Cloud and attribution providers will offer similar functionality.
 
 
 ### How does all of this work?
 
 When an engineer installs the SDK, the SDK will automatically register on iOS and Android operation system handlers.
 
-When the application is foregrounded on the phone, our SDK will be called and emit the Application Opened event. Similarly, when the user updates the app, on the nextapp open, the iOS and Android operation system will tell us and we'll emit a track event called Application Updated event. In-app purchases will trigger Order Completed, etc.
+When the application is foregrounded on the phone, our SDK will be called and emit the Application Opened event. Similarly, when the user updates the app, on the next app open, the iOS and Android operation system will tell us and we'll emit a track event called Application Updated event. In-app purchases will trigger Order Completed, etc.
 
 ### How do I opt-in to the new feature?
 
-This feature is opted out by default. You have to opt in to collect these events as mentioned in our Quick Start guides ([iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/), [Android](https://segment.com/docs/libraries/android/quickstart/)). You'll be doing this in code by altering the configuration you pass into the SDK initialization methods (telling the SDK to collect these events automatically).
+This feature is opted out by default. You have to opt in to collect these events as mentioned in our Quick Start guides ([iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/), [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/quickstart/)). You'll be doing this in code by altering the configuration you pass into the SDK initialization methods (telling the SDK to collect these events automatically).
 
 ### What happens if I' already tracking these events? Will they be double counted?
 
@@ -60,4 +58,4 @@ You can, but the sooner you switch to the spec'd events, the further back you'll
 
 ### How will I be able to take advantage of new campaign events?
 
-In the coming months, we'll be updating our mobile marketing destinations to automatically capture campaign events around attribution, deep linking, and push notifications. These events will go to [destinations](/docs/connections/destinations/), including [warehouses](https://segment.com/docs/warehouses/).
+In the coming months, we'll be updating our mobile marketing destinations to automatically capture campaign events around attribution, deep linking, and push notifications. These events will go to [destinations](/docs/connections/destinations/), including [warehouses](/docs/connections/storage/catalog/).

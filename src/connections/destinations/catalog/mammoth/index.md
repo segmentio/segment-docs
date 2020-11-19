@@ -2,14 +2,13 @@
 rewrite: true
 title: Mammoth Destination
 ---
-[Mammoth](https://mammoth.io/integrations/segment-com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve analytics for analysts, businesses, and developers who can leverage Mammoth's data warehousing, data discovery & data preparation abilities to arrive at insights.
+[Mammoth](https://mammoth.io/integrations/segment-com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve analytics for analysts, businesses, and developers who can use Mammoth's data warehousing, data discovery & data preparation abilities to arrive at insights.
 
-[Mammoth](https://mammoth.io) allows you to blend your data from Segment with other sources of data such as databases and files. Using Mammoth, you can build multiple data pipelines, which are constructed by applying transforms through a no coding interface. Mammoth also allows for the visual discovery of the data and easy exports to databases such as MySQL, elasticsearch, and PostgreSQL.
+Mammoth allows you to blend your data from Segment with other sources of data such as databases and files. Using Mammoth, you can build multiple data pipelines, which are constructed by applying transforms through a no coding interface. Mammoth also allows for the visual discovery of the data and easy exports to databases such as MySQL, elasticsearch, and PostgreSQL.
 
+This destination is maintained by [Mammoth](https://mammoth.io). For any issues with Mammoth Destination, [contact the Mammoth Support team](mailto:support@mammoth.io).
 
-This destination is maintained by [Mammoth](https://mammoth.io). For any issues with Mammoth Destination, please [reach out to their team](mailto:support@mammoth.io).
-
-_**NOTE:** The Mammoth Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on June 6, 2019. If you are interested in joining their beta program or have any feedback to help improve the Mammoth and its documentation, please [let  their team know](mailto:support@mammoth.io)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
@@ -77,14 +76,14 @@ Once you have converted the JSON data into a row vs. column format, you can
 - Use other tasks provided by the *ADD TASK* menu to arrive at insights and automate reports.
 - Export the data to another system from Mammoth.
 
-Mammoth recommends that you use the *Save as Dataset* task in the *ADD TASK* menu to save your flattened data as a new dataset. Using this method,  you separate your JSON extractions from your analysis & reporting.
+Mammoth recommends that you use the *Save as Dataset* task in the *ADD TASK* menu to save your flattened data as a new dataset. Using this method, you separate your JSON extractions from your analysis & reporting.
 
 
 
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -95,7 +94,7 @@ Page calls will be sent to the webhook dataset you created earlier. You can filt
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
 
 ```
 [[SEGAnalytics sharedAnalytics] screen:@ "Home"];
@@ -106,11 +105,11 @@ Screen calls will be sent to the webhook dataset you created earlier. You can fi
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
-  email: 'john.doe@segment.com'
+  email: 'john.doe@example.com'
 });
 ```
 
@@ -119,7 +118,7 @@ Identify calls will be sent to the webhook dataset you created earlier. You can 
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked Login Button')

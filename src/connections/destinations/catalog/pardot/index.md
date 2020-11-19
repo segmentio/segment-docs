@@ -5,10 +5,8 @@ name: Pardot
 
 ## Getting Started
 
-When you toggle on Pardot in Segment, this is what happens:
-
-+ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Pardot's javascript onto your page. This means you should remove Pardot's snippet from your page.
-+ Pardot will start automatically collecting anonymous visitor data data on your site.
+When you enable Pardot in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Pardot's javascript onto your page. This means you should remove Pardot's snippet from your page.
++ Pardot starts automatically collecting anonymous visitor data data on your site.
 
 Pardot is supported on the client-side and server-side.
 
@@ -16,9 +14,9 @@ Pardot is supported on the client-side and server-side.
 
 ### API Access
 
-You'll need to provide API access to Segment via Pardot user credentials. Since Pardot's API [requires](http://developer.pardot.com/kb/api-version-3/authentication) that we provide an email and password to get access to their API, we'll need to store this password in plain text in our database.
+You'll need to provide API access to Segment using Pardot user credentials. Since Pardot's API [requires](http://developer.pardot.com/kb/api-version-3/authentication) that we provide an email and password to get access to their API, we'll need to store this password in plain text in our database.
 
-Since we don't want to ask for the password of one of your actual user accounts, we recommend you create a new Pardot user account for Segment. Please create this user by going to *Admin > Users and Groups > Add User*, and creating an Administrator role user.
+Since we don't want to ask for the password of one of your actual user accounts, we recommend you create a new Pardot user account for Segment. Create this user by going to *Admin > Users and Groups > Add User*, and creating an Administrator role user.
 
 Also make sure to disable IP Security in this Pardot user account. First navigate to the [user settings](https://pi.pardot.com/account), then click "Edit Account", and change "Enable IP Security" to "Disabled". Why is this necessary? Segment server IP address(es) may change, meaning we cannot whitelist particular addresses.
 
@@ -34,7 +32,7 @@ There are currently two active versions of the Pardot platform, version 3 and ve
 
 Previously, this was not possible. Email was used by Pardot as a distinct identifier. In version 4 however, in order to update an *existing* prospect, you must provide either the Pardot ID for a given user OR the Salesforce FID. If one of these values is not provided in a request, Pardot will create a new prospect. More information is available on their [website](http://developer.pardot.com/kb/api-version-4/).
 
-Our Pardot integration provides two different options to properly support this new funtionality. Please read on to learn more.
+Our Pardot integration provides two different options to properly support this new funtionality. Read on to learn more.
 
 ## Identify
 
@@ -44,7 +42,7 @@ When you call `identify`, we'll create or update a prospect in Pardot. If you ar
 
 ```javascript
 analytics.identify('YOUR_DATABASE_USER_ID', {
-    email: 'tom@initech.com',
+    email: 'tom@example.com',
     name: 'Tom Smykowski'
     company: 'Initech, Inc',
     department: 'Customer Service',
@@ -61,13 +59,14 @@ You can provide custom fields, but they won't be updated or visible until you cr
 
 ### Version 4
 
-*Please note: our integration with v4 of the Pardot API is currently in beta.*
+> note ""
+> The Segment integration with v4 of the Pardot API is currently in beta, and is only available in cloud-mode.
 
 If you are using version 4, the functionaly is the same as version 3 except you will need to provide some kind of identifier to Segment that we can use to correctly handle either the creation of a new prospect *or* the update of an existing one. There are two options for this.
 
 #### FID or ID Properties
 
-If you are able to access either the **SalesforceFID** or **PardotID** for a given user, you can pass these properties to Segment as [integration specific options](https://segment.com/docs/connections/sources/catalog/libraries/server/node/#selecting-integrations). The properties must be named either `id` to pass a PardotID, or `fid` to pass the Salesforce FID.
+If you are able to access either the **SalesforceFID** or **PardotID** for a given user, you can pass these properties to Segment as [integration specific options](/docs/connections/sources/catalog/libraries/server/node/#selecting-destinations). The properties must be named either `id` to pass a PardotID, or `fid` to pass the Salesforce FID.
 
 ```javascript
 analytics.identify({

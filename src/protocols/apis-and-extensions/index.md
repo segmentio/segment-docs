@@ -1,7 +1,7 @@
 ---
 title: 'Protocols: APIs and Extensions'
 ---
-Protocols was developed from the ground up to support a wide range of customer needs. Whether you're interested in helping your engineers reduce tracking errors, or want to get notified when an issue arises, or want to utilize a Tracking Plan you already have, we have a suite of features and API support to get it done. We've captured many of those resources below.
+Protocols was developed from the ground up to support a wide range of customer needs. Whether you're interested in helping your engineers reduce tracking errors, or want to get notified when an issue arises, or want to use a Tracking Plan you already have, we have a suite of features and API support to get it done. We've captured many of those resources below.
 
 ## Anomaly detection
 
@@ -38,6 +38,8 @@ To upload your Tracking Plan directly from Google Sheets, follow these steps:
 1. Generate a Personal Access Token following the steps [here](/docs/config-api/authentication/)
 2. Copy your Personal Access Token, your Workspace's slug and your tracking plan's `rs_` id (found in the URL path of your Tracking Plan) to the Importer Settings worksheet. Then click on the Segment > Send to Segment menu item to upload your Tracking Plan to Segment.
 
+<!--
+Removed on 3/18/2020 per PROT-2279
 ## Debug Endpoint
 
 This endpoint enables customers to send sample `.track()`, `.identify()`, `.group()`, `.page()` and `.screen()` requests to a debug endpoint that will return an error response if that payload is invalid. The event payload will not be delivered to the Segment Source or any active Destinations.
@@ -96,3 +98,4 @@ The debug endpoint API will return detailed errors depending on the violation ge
 | `properties.Required: properties.Required is required` | The event is missing a required property defined in the Tracking Plan. If the event does not require the property, update the Tracking Plan associated to the source. Otherwise, update the request payload. |
 | `properties.Optional: Invalid type. Expected: string, given: array` | The event property is passing as an array, but expects a string as defined in the Tracking Plan. If the event property should be an array, update the Tracking Plan associated to the source. Otherwise, update the request payload. |
 
+-->

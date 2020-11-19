@@ -1,23 +1,33 @@
 ---
 title: Facebook Offline Conversions Destination
 rewrite: true
+strat: facebook
 ---
 
 [Facebook Offline Conversions](https://www.facebook.com/business/help/1782327938668950?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) enables offline event tracking, so marketers can run campaigns, upload transaction data, and compare in-store transactions.
 
-This document was last updated on April 24, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on April 24, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
-**Use Cases**
 
-* [Track offline conversions from Facebook Ads](https://segment.com/recipes/facebook-offline-conversion-tracking/)
+## Other Facebook Destinations Supported by Segment
+This page is about the **Facebook Offline Conversions**. For documentation on other Facebook destinations, see the pages linked below.
+
+| **Facebook Destination**   | Supported by Personas |
+| ---------------------- | --------------------- |
+| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                  | Yes                   |
+| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)** | Yes                   |
+| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                             | No                    |
+| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)**      | Yes                   |
+| **Facebook Custom Audiences Website**    | Yes                   |
+
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 
-2. Search for "Facebook Offline Conversions" within the Destinations Catalog and confirm the Source you'd like to connect to.
+2. Search for "Facebook Offline Conversions" in the Catalog, select it, and choose which of your sources to connect the destination to.
 
 3. Authorize Segment to send data on your behalf by connecting through OAuth:
 
@@ -41,7 +51,7 @@ You can find Facebook Offline Event Set ID by going to your **Offline Events** p
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track({
@@ -244,7 +254,7 @@ analytics.track({
 });
 ```
 
-_Note_: You can choose to exlicitly send `firstName` or `lastName` separately or just send `name`. We will properly map to `fn` and `ln` properly. If your server has access to Facebook's **Lead IDs** from their Lead Ads product, you can opt to send this via integration specific options:
+_Note_: You can choose to exlicitly send `firstName` or `lastName` separately or just send `name`. We will properly map to `fn` and `ln` properly. If your server has access to Facebook's **Lead IDs** from their Lead Ads product, you can opt to send this using integration specific options:
 
 ```js
 // node.js library example
@@ -264,3 +274,39 @@ analytics.track({
 We will use SHA256 to hash all `match_keys` that include personally identifiable data in compliance with Facebook's privacy requirements.
 
 Keep in mind that Facebook's furthest possible attribution window is 28 days. It is recommended that you send your server side `track` conversions within 62 days of the offline conversion occuring.
+
+## Limited Data Use
+
+{% include content/facebook-ldu-intro.md %}
+
+> info ""
+> The **Use Limited Data Use** destination setting is disabled by default for all Facebook destinations except for Facebook Pixel. This must be enabled manually from the destination settings if you're using other Facebook destinations.
+
+### Data Processing Destination Setting
+
+You can change the **Use Limited Data Use** destination setting to enable or disable Limited Data Use. This must be enabled (set to “on”) if you want to send data processing parameters as part of the the Limited Data Use feature.
+
+### Data Processing Initialization Parameters
+
+The Data Processing parameters you set are the Data Processing Options Segment uses when sending data to Facebook.
+
+The Facebook API does not accept an IP address field to determine the geolocation of a user. Instead, you would need to set the specific user geography options (**Data Processing Options Country** and **Data Processing Options State**) in the `integrations` object.
+
+> warning ""
+> If the **Use Limited Data Use** destination setting is enabled, but you do *not* pass the Data Processing parameters in the `integrations` object, Segment sends an empty data processing object which disables LDU for this event.
+
+The example below shows how you might set custom Data Processing parameters for a Segment server library.
+
+```javascript
+// node.js library example
+
+analytics.track({
+  event: 'Membership Upgraded',
+  userId: '97234974',
+  integrations: {
+    "Facebook Offline Conversions": {
+      "dataProcessingOptions": [[], 1,1000]
+    }
+  }
+})
+```

@@ -1,31 +1,45 @@
 ---
 title: Facebook Pixel Destination
 rewrite: true
+strat: facebook
 ---
 
 [Facebook Pixel](https://developers.facebook.com/docs/facebook-pixel) lets you measure and optimize the performance of your Facebook Ads. It makes conversion tracking, optimization and remarketing easier than ever. The Facebook Pixel Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-facebook-pixel).
 
 _**NOTE:** Facebook has deprecated their modular "Ads For Websites" suite, which previously comprised Facebook Custom Audiences and Facebook Conversion Tracking. We've consolidated those two destinations into this new and improved "Facebook Pixel" destination._
 
-This document was last updated on 31st October, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on 31st October, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 **Use Cases**
 
 * [Increase conversions by retargeting shopping cart abandoners on Facebook](https://segment.com/recipes/abandon-cart-retargeting-facebook/)
 
+
+## Other Facebook Destinations Supported by Segment
+This page is about the **Facebook Pixel**. For documentation on other Facebook destinations, see the pages linked below.
+
+| **Facebook Destination**   | Supported by Personas |
+| ---------------------- | --------------------- |
+| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                  | Yes                   |
+| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)** | Yes                   |
+| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                             | No                    |
+| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)**      | Yes                   |
+| **Facebook Custom Audiences Website**    | Yes                   |
+
+
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Facebook Pixel" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in your `pixelId` from the [Pixels tab in Facebook Ads Manager](https://www.facebook.com/ads/manager/pixel/facebook_pixel).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Facebook Pixel" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. In the destination settings, enter your `pixelId` from the [Pixels tab in Facebook Ads Manager](https://www.facebook.com/ads/manager/pixel/facebook_pixel).
 
-We'll automatically initialize Facebook's pixel with your `pixelId` upon loading `analytics.js`.
+Segment automatically initializes Facebook's pixel with your `pixelId` upon loading `analytics.js`.
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```javascript
 analytics.page();
@@ -35,14 +49,14 @@ We've mapped `analytics.page()` to [Facebook's `fbq('track', "PageView")`](https
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('ze8rt1u89', {
   name: 'Zaphod Kim',
   gender: 'Male',
   email: 'jane.kim@example.com',
-  phone: '1-401-826-4421',
+  phone: '1-401-555-4421',
   address: {
     city: 'San Francisco',
     state: 'Ca',
@@ -51,11 +65,11 @@ analytics.identify('ze8rt1u89', {
 });
 ```
 
-When you make an Identify call with Segment, it will update Facebook Pixel the next time the user loads a page on your website. Facebook Pixel does not support immediately updating user properties via Identify. When you perform an Identify call in Segment, it will update in Facebook Pixel via their Advanced Matching feature.
+When you make an Identify call with Segment, it will update Facebook Pixel the next time the user loads a page on your website. Facebook Pixel does not support immediately updating user properties using Identify. When you perform an Identify call in Segment, it will update in Facebook Pixel using their Advanced Matching feature.
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track("My Custom Event", {
@@ -106,6 +120,8 @@ Here is how you'd specify standard events in the settings view:
 
 ![event mapping](images/event-mapping.png)
 
+You can map more than one Track event to the same Facebook standard event.
+
 ### Legacy Events
 
 To send *Legacy Conversion* events, use the Segment setting called "Legacy Conversion Pixel IDs". Any events that appear in that mapping will be sent to Facebook with the specified Pixel ID used as the Facebook Pixel `eventName`. Conversion events only support `currency` and `value` as event properties, so only these will be associated with the event. `currency` will default to "USD" if left out.
@@ -147,6 +163,29 @@ If you follow Segment's [spec](/docs/connections/spec/identify/#traits), these w
 
 Facebook also accepts an External ID. This can be any unique ID from the advertiser, such as loyalty membership IDs, user IDs, and external cookie IDs. In order to send an `external_id` to Facebook you can indicate which user trait you would like Segment to map to `external_id` using the **Client-Side Only: Advanced Match Trait Key for External ID** setting.
 
+## Limited Data Use
+
+{% include content/facebook-ldu-intro.md %}
+
+> info ""
+> The **Use Limited Data Use** destination setting is disabled by default for all Facebook destinations except for Facebook Pixel. This must be enabled manually from the destination settings if you're using other Facebook destinations.
+
+{% include content/facebook-ldu-params.md %}
+
+Facebook uses the `context.ip` to determine the geolocation of the event.
+
+You can manually change the Data Processing parameters by adding settings to the `integrations` object. For Facebook Pixel, you must store these settings in the [Load object](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#load-options) so that Segment can set them *before* it calls `init`. The example below shows how you might set custom Data Processing parameters in Analytics.js.
+
+```javascript
+analytics.load("replace_with_your_write_key", {
+  integrations: {
+    'Facebook Pixel': {
+      dataProcessingOptions: [['LDU'], 1, 1000]
+    }
+  }
+});
+```
+
 ## Settings
 
 ### Map Categories to FB Content Types
@@ -157,7 +196,7 @@ For most implementations we recommend leaving these mappings blank. By default, 
 
 ## Troubleshooting
 
-### PII Blacklisting
+### PII Blocklisting
 
 Facebook enforces strict guidelines around sending Personally Identifiable Information (PII) as properties of Pixel events. In order to adhere to these guidelines, Segment will automatically scan `track` event properties for PII and remove any that get flagged from the event to Facebook. The following keys are currently filtered:
 
@@ -174,7 +213,7 @@ Facebook enforces strict guidelines around sending Personally Identifiable Infor
 
 Any `track` events with properties containing those keys will be sent to Facebook with those properties omitted.
 
-If you have events that use any of those keys for non-PII properties, you can manually whitelist them using the **Whitelist PII Properties** setting. You may also add to this list and/or optionally hash blacklisted properties with the **Blacklist PII Properties** setting.
+If you have events that use any of those keys for non-PII properties, you can manually whitelist them using the **Allowlist PII Properties** setting. You may also add to this list and/or optionally hash blocklisted properties with the **Blocklist PII Properties** setting.
 
 ### Inconsistent or Missing Conversions
 

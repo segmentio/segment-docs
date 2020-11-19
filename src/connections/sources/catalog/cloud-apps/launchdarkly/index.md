@@ -3,16 +3,16 @@ title: LaunchDarkly Source
 ---
 [LaunchDarkly](https://launchdarkly.com) is a feature management platform that empowers development teams to safely deliver and control software through feature flags.
 
-This source is maintained by LaunchDarkly. For any issues with the source, please [reach out to their team](mailto:support@launchdarkly.com).
+This source is maintained by LaunchDarkly. For any issues with the source, [contact the LaunchDarkly Support team](mailto:support@launchdarkly.com).
 
-_**NOTE:** The LaunchDarkly Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on November 8, 2019. If you are interested in joining their beta program or have any feedback to help improve the LaunchDarkly Source and its documentation, please [let  their team know](mailto:support@launchdarkly.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
 
 1. From your Segment UI's Sources page click on "Add Source".
 2. Search for "LaunchDarkly" within the Sources Catalog and confirm by clicking "Connect".
-3. Give the Source a nickname and follow the setup flow to "Add Source". The nickname will be used to designate the source in the Segment interface, and Segment will create a related schema name. The schema name is the namespace you'll be querying against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
+3. Give the Source a nickname and follow the set up flow to "Add Source". The nickname will be used to designate the source in the Segment interface, and Segment will create a related schema name. The schema name is the namespace you'll be querying against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
 4. Copy the Write key from the Segment UI and log in to your LaunchDarkly account - navigate to Integrations > Data Export Destinations
 5. Select "Add destination" and select "Segment" in the dropdown menu.
 6. Choose a name for the destination and the LaunchDarkly environment for which events will be forwarded to Segment
@@ -132,4 +132,4 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the Destination docs for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, please [contact the LaunchDarkly team](mailto:support@launchdarkly.com).
+If you experience any issues with how the events arrive in Segment, [contact the LaunchDarkly team](mailto:support@launchdarkly.com).

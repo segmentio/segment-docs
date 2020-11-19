@@ -12,9 +12,9 @@ layout: main
   <div class="stage__content" data-swiftype-name="body" data-swiftype-type="text">
     <article class="page">
       {% include components/breadcrumbs.html %}
-      <div class="page__body" data-headings-anchors>
+      <div class="page__body">
         {%- if page.title -%}
-          <h1 id="{{ page.title | downcase }}" class="page__heading">
+          <h1 id="{{ page.title | slugify }}" class="page__heading">
             {{ page.title }}
           </h1>
         {%- endif -%}
@@ -24,7 +24,7 @@ layout: main
         {%- unless page.hide_toc -%}
           {% include sidebar/mobile-menu-side.html %}
         {%- endunless -%}
-        <div class="markdown">
+        <div class="markdown" data-headings-anchors>
           {{ content }}
         </div>
         <p><i style="color: #a5b0ba;font-size: small;">This page was last modified: {{ page.last_modified_at | date: '%d %b %Y' }} </i></p>

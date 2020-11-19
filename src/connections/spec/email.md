@@ -56,7 +56,7 @@ Property               | Type   | Description
     "ip": "67.207.109.102",
     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36",
     "traits": {
-      "email": "pgibbons@initech.com"
+      "email": "pgibbons@example.com"
     }
   },
   "properties": {
@@ -76,7 +76,7 @@ Property               | Type   | Description
     "ip": "67.207.109.102",
     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36",
     "traits": {
-      "email": "pgibbons@initech.com"
+      "email": "pgibbons@example.com"
     }
   },
   "properties": {
@@ -123,7 +123,7 @@ Property               | Type   | Description
     "ip": "67.207.109.102",
     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36",
     "traits": {
-      "email": "pgibbons@initech.com"
+      "email": "pgibbons@example.com"
     }
   },
   "properties": {
@@ -143,7 +143,7 @@ Property               | Type   | Description
     "ip": "67.207.109.102",
     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36",
     "traits": {
-      "email": "pgibbons@initech.com"
+      "email": "pgibbons@example.com"
     }
   },
   "properties": {
@@ -268,7 +268,7 @@ Property               | Type   | Description
     "ip": "67.207.109.102",
     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36",
     "traits": {
-      "email": "mwaddams@initech.com"
+      "email": "mwaddams@example.com"
     }
   },
   "properties": {
@@ -288,7 +288,7 @@ Property               | Type   | Description
     "ip": "67.207.109.102",
     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36",
     "traits": {
-      "email": "mwaddams@initech.com"
+      "email": "mwaddams@example.com"
     }
   },
   "properties": {
@@ -337,7 +337,7 @@ Property               | Type   | Description
     "ip": "67.207.109.102",
     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36",
     "traits": {
-      "email": "pgibbons@initech.com"
+      "email": "pgibbons@example.com"
     }
   },
   "properties": {
@@ -357,7 +357,7 @@ Property               | Type   | Description
     "ip": "67.207.109.102",
     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36",
     "traits": {
-      "email": "pgibbons@initech.com"
+      "email": "pgibbons@example.com"
     }
   },
   "properties": {
@@ -409,7 +409,7 @@ Property               | Type   | Description
     "ip": "67.207.109.102",
     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36",
     "traits": {
-      "email": "pgibbons@initech.com"
+      "email": "pgibbons@example.com"
     }
   },
   "properties": {
@@ -431,7 +431,7 @@ Property               | Type   | Description
     "ip": "67.207.109.102",
     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36",
     "traits": {
-      "email": "pgibbons@initech.com"
+      "email": "pgibbons@example.com"
     }
   },
   "properties": {

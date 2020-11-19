@@ -1,15 +1,15 @@
 ---
 title: 'Mailjet Source'
 ---
-Mailjet is a powerful email service provider that enables you to send, deliver and track transactional and marketing emails all from one single account. With Mailjet, Marketers and Developers can send and track emails via API, User Interface or SMTP Relay. <!-- [Visit Website]() -->
+Mailjet is a powerful email service provider that enables you to send, deliver and track transactional and marketing emails all from one single account. With Mailjet, Marketers and Developers can send and track emails using API, User Interface or SMTP Relay. <!-- [Visit Website]() -->
 
-Take your company's email analysis to the next level by **adding Mailjet as a Source to Segment.** We'll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
+Take your company's email analysis to the next level by **adding Mailjet as a Source to Segment.** Segment automatically  collects email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
 
-In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Mailjet data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use Mailjet with Segment.](/sources/mailjet)
+In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Mailjet data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. 
 
 ## Getting Started
 
-If you have previously enabled sending email events via the Mailjet destination during our beta (using a project write key), you do not need to create new Mailjet source. Your email data will continue to flow as normal.
+If you have previously enabled sending email events using the Mailjet destination during our beta (using a project write key), you do not need to create new Mailjet source. Your email data will continue to flow as normal.
 
 1. From your workspace's `segment.com/<your-workspace>/sources page`, click `Add source`.
 
@@ -31,7 +31,7 @@ That's it! As you send emails, events will now be sent to your destinations and 
 
 **Stream**
 
-Mailjet uses our stream Source component to send Segment email events. It uses a server-side `track` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query via SQL. 
+Mailjet uses our stream Source component to send Segment email events. It uses a server-side `track` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL. 
 
 The default behavior is for Mailjet to pass the `userId` associated with the email recipient as the `userId`. There are cases in which Mailjet does not have an associated `userId`, in which case the email address will be passed in as the `anonymousId`. 
 
@@ -91,4 +91,4 @@ from Mailjet.email_delivered
 
 <!--  ## Send data to Mailjet
 
-The Mailjet Source works better when you also connect Mailjet as an destination. With the Mailjet **Destination**, you can use Segment to send Mailjet user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Mailjet? Head on over to our [Mailjet destination docs](/docs/connections/destinations/catalog/mailjet/). -->
+The Mailjet Source works better when you also connect Mailjet as a destination. With the Mailjet **Destination**, you can use Segment to send Mailjet user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Mailjet? Head on over to our [Mailjet destination docs](/docs/connections/destinations/catalog/mailjet/). -->

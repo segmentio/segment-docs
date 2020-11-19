@@ -3,15 +3,15 @@ title: Drip Source
 ---
 Drip is an automated email tool that lets you set up a drip campaign on your site in a few minutes. After a user signs up, it'll send them the next email in your series every few days. [Visit Website](http://mbsy.co/lqb7?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
 
-Take your company's email analysis to the next level by **adding Drip as a Source to Segment.** We'll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
+Take your company's email analysis to the next level by **adding Drip as a Source to Segment.** Segment automatically  collects email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
 
-In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Drip data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use Drip with Segment.](/sources/drip)
+In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Drip data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. 
 
 
 ## Getting Started
 
 
-If you have previously enabled sending email events via the Drip destination during our beta (using a project write key), you do not need to create new Drip source. Your email data will continue to flow as normal.
+If you have previously enabled sending email events using the Drip destination during our beta (using a project write key), you do not need to create new Drip source. Your email data will continue to flow as normal.
 
 1. From your workspace's `segment.com/<your-workspace>/sources page`, click `Add source`.
 
@@ -35,7 +35,7 @@ That's it! As you send emails, events will now be sent to your destinations and 
 
 **Stream**
 
-Drip uses our stream Source component to send Segment email events. It uses a server-side `track` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query via SQL. 
+Drip uses our stream Source component to send Segment email events. It uses a server-side `track` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL. 
 
 The default behavior is for Drip to pass the `userId` associated with the email recipient as the `userId`. There are cases in which Drip does not have an associated `userId`, in which case the email address will be passed in as the `anonymousId`. 
 
@@ -95,4 +95,4 @@ from drip.email_delivered
 
 ## Send data to Drip
 
-The Drip Source works better when you also connect Drip as an destination. With the Drip **Destination**, you can use Segment to send Drip user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Drip? Head on over to our [Drip destination docs](/docs/connections/destinations/catalog/drip/).
+The Drip Source works better when you also connect Drip as a destination. With the Drip **Destination**, you can use Segment to send Drip user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Drip? Head on over to our [Drip destination docs](/docs/connections/destinations/catalog/drip/).

@@ -14,7 +14,7 @@ This page lists some useful pages for answering docs-related questions. This pag
 - [Destinations Connection Modes comparison](/docs/connections/destinations/cmodes-compare/)
 - [Destinations Methods comparisons](/docs/connections/destinations/methods-compare/)
 - [Destinations by category comparisons](/docs/connections/destinations/category-compare/)
-- [Destinations in beta](/docs/utils/beta-destinations/)
+- [Destinations in beta](/docs/utils/destination-betas/)
 
 ### Sources
 - [Sources by category comparison](/docs/connections/sources/sources-compare/)

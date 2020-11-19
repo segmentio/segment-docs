@@ -1,8 +1,9 @@
 ---
+title: Salesforce DMP Destination
+strat: salesforce
 rewrite: true
 beta: true
 hidden: true
-title: Salesforce DMP Destination
 ---
 
 [Salesforce DMP](https://konsole.zendesk.com/hc/en-us) allows website operators
@@ -13,7 +14,7 @@ audience segments to improve content delivery and advertising revenue.
 _**NOTE:** Salesforce DMP is currently in beta, and this doc was last
 updated on November 6, 2018. This means that there may still be some bugs for
 us to iron out. If you are interested in joining or have any feedback to help
-us improve the Salesforce DMP Destination and its documentation, please
+us improve the Salesforce DMP Destination and its documentation,
 [let us know](https://segment.com/help/contact)!_
 
 ## Getting Started
@@ -104,9 +105,9 @@ and these functionalities can be adjusted only by updating settings within the
 SFDMP dashboard or by contacting your Salesforce representative.
 
 If you are unsure of where to find your SFDMP settings or are unsure of what
-your SFDMP settings are, please contact your Salesforce representative.
+your SFDMP settings are, contact your Salesforce representative.
 
-### Whitelisting and Blacklisting Properties
+### Allowlisting and Blocklisting Properties
 
 SFDMP manages its own filters and settings, which you must adjust either in the
 SFDMP dashboard or by contacting a Salesforce representative. Note that SFDMP
@@ -114,9 +115,9 @@ settings are independent of Segment UI settings. Updating a setting in SFDMP
 will not affect settings in Segment and vice versa. Therefore, it is important
 to ensure that SFDMP and Segment settings do not conflict.
 
-SFDMP has its own property whitelisting and blacklisting rules. For example,
-you could set up a blacklist rule in SFDMP. This means that Salesforce will
-accept any attributes save for those that have been explicitly blacklisted in
+SFDMP has its own property allowlisting and blocklisting rules. For example,
+you could set up a blocklist rule in SFDMP. This means that Salesforce will
+accept any attributes save for those that have been explicitly blocklisted in
 their system.
 
 A whitelist works the opposite way. Setting up a whitelist rule means that
@@ -197,7 +198,7 @@ color attribute.
 
 The ramification of this behavior is that SFDMP will continue to cache page
 attributes for whitelisted events on all single-page applications until a page
-reload. Please contact your Salesforce representative for additional questions
+reload. contact your Salesforce representative for additional questions
 about SFDMP's attribute cacheing functionality.
 
 ### Page Scraping for Page Attributes
@@ -224,7 +225,7 @@ to SFDMP rather than adding them as properties to Segment events, you won't
 see these properties in other Segment connections, including in a raw data
 warehouse.
 
-If you have questions about setting up or adjusting page scraping, please
+If you have questions about setting up or adjusting page scraping,
 contact your Salesforce representative.
 
 
@@ -384,7 +385,7 @@ Sending data to SFDMP's Event.gif endpoint requires that you map any Segment
 event names to SFDMP event IDs in the `Server-side Event ID Mapping` setting in
 Segment's UI. Segment `properties` must be mapped to SFDMP properties in the
 `Event Attribute Mapping` setting in Segment's UI. **Note** that `track`
-properties sent to SFDMP via their Event.gif endpoint must be set up in
+properties sent to SFDMP using their Event.gif endpoint must be set up in
 SFDMP's dashboard before SFDMP will accept them.
 
 In addition, Segment maps fewer event properties to SFDMP out of the box:

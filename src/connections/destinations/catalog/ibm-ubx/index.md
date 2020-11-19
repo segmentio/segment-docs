@@ -14,13 +14,13 @@ can send it to any destination in UBX's portfolio.
 _**NOTE:** IBM UBX is currently in beta and this doc was last
 updated on May 7, 2018. This means that there may still be some bugs for us to
 iron out and we're excited to hear your thoughts. If you are interested in
-joining or have any feedback to help us improve the IBM UBX Destination and its documentation, please [let us know](https://segment.com/help/contact)!_
+joining or have any feedback to help us improve the IBM UBX Destination and its documentation, [let us know](https://segment.com/help/contact)!_
 
 ## Getting Started
 
 _**NOTE:** To enable Segment in UBX, navigate to "Endpoints" in the UBX dashboard,
 select "Register new endpoint", then select "Segment". Once you've added the
-Segment endpoint, please reach out to [Segment
+Segment endpoint, contact [Segment
 support](https://segment.com/help/contact) with your new endpoint's "endpoint
 authentication key" for help activating your new endpoint. Note that the
 endpoint in UBX will not be able to receive Segment data until you have enabled
@@ -29,13 +29,12 @@ endpoint from Segment's support team._
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "IBM UBX" within the Destinations Catalog and confirm the Source
-   you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "IBM UBX" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Enter your UBX API URL and your publisher's endpoint authentication key in
    the Segment Settings UI. You should have received an email with this URL
    shortly after setting up your UBX account. If you can't locate your URL,
-   please contact UBX support (the URL is also referred to as a "base URL" in
+   contact UBX support (the URL is also referred to as a "base URL" in
    the [IBM UBX
    documentation](https://developer.ibm.com/customer-engagement/docs/watson-marketing/ibm-universal-behavior-exchange-ubx/ubxapireference/)).
    To locate your endpoint authentication key, navigate to the "Endpoints" tab
@@ -49,9 +48,9 @@ endpoint from Segment's support team._
     ![](images/ubx-register-endpoint.png)
 
 5. Once registered, the new endpoint's status will remain "Pending" in the
-   "Endpoints" tab until it has been activated. To activate an endpoint, please
+   "Endpoints" tab until it has been activated. To activate an endpoint,
    include your UBX account's API URL and your endpoint authentication key in an
-   email to Segment via our [tech support form](https://segment.com/help/contact/).
+   email to Segment using our [tech support form](https://segment.com/help/contact/).
 
     ![](images/endpoint-details.png)
 
@@ -466,7 +465,7 @@ options:
   channels are `email` and `sms`, and the only two acceptable subscription
   options are `opt-in` and `opt-out`.
 
-For more information, please refer to IBM UBX's documentation on `subchannel`
+For more information, refer to IBM UBX's documentation on `subchannel`
 [here](https://www.ibm.com/support/knowledgecenter/SS9JVY/UBX/Event_taxonomy_ubx/Best_practice_event_attributes.html)
 (*Best practice event attributes* article) and on `channel`
 [here](https://www.ibm.com/support/knowledgecenter/SS9JVY/UBX/Events_ubx/Event_publication.html).
@@ -483,7 +482,7 @@ downstream tools connected to UBX (e.g. Watson Customer Engagement tools).
 
 ## FAQ
 
-Segment does not auto-generate events other than an initial `page` call when using our Analytics.js library and mobile lifecycle events when mobile lifecycle tracking is enabled via Segment's Android or iOS library.
+Segment does not auto-generate events other than an initial `page` call when using our Analytics.js library and mobile lifecycle events when mobile lifecycle tracking is enabled using Segment's Android or iOS library.
 
 This means some events supported and in some cases expected by downstream UBX destinations - including *abandonment events* - must be derived by the customer. One approach would be to integrate with a marketing tool such as [Braze](https://segment.com/docs/connections/destinations/catalog/braze/) or [Bronto](https://segment.com/docs/connections/destinations/catalog/bronto/), in which you can [set up rules that generate abandonment events](https://segment.com/docs/guides/destinations/how-do-i-automate-multi-channel-re-engagement-campaigns/#1st-line-of-defense-the-push-notification), which are then be sent back through Segment and downstream to UBX.
 

@@ -8,16 +8,14 @@ Our comScore destination code is open-source on GitHub if you want to check it o
 
 ## Analytics.js
 
-When you toggle on comScore in Segment, this is what happens:
-
-+ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading comScore's beacon.js onto your page. **This means you should remove comScore's snippet from your page.**
-+ comScore will automatically start recording data.
+When you enable comScore in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading comScore's `beacon.js` onto your page. **This means you should remove comScore's snippet from your page.**
++ comScore automatically starts recording data.
 
 ## Mobile
 
-To get started with comScore and Segment, you'll want to first integrate your mobile app with our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](/docs/connections/sources/catalog/libraries/mobile/android/) sources. comScore can only accept data sent directly from their iOS and Android SDKs. For that reason we can only send data directly from our iOS and Android SDKs to comScore. **Data recorded in our server-side sources cannot be sent to comScore.** Be sure to follow the additional setup steps to get started, which you can find [here for iOS](https://github.com/segment-integrations/analytics-ios-integration-comscore#analytics-ios-integration-comscore) and [here for Android](https://github.com/segment-integrations/analytics-android-integration-comscore#analytics-android-integration-comscore).
+To get started with comScore and Segment, you'll want to first integrate your mobile app with our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](/docs/connections/sources/catalog/libraries/mobile/android/) sources. comScore can only accept data sent directly from their iOS and Android SDKs. For that reason we can only send data directly from our iOS and Android SDKs to comScore. **Data recorded in our server-side sources cannot be sent to comScore.** Be sure to follow the additional set up steps to get started, which you can find [here for iOS](https://github.com/segment-integrations/analytics-ios-integration-comscore#analytics-ios-integration-comscore) and [here for Android](https://github.com/segment-integrations/analytics-android-integration-comscore#analytics-android-integration-comscore).
 
-With the recent comScore update, there is an additional implementation step when getting started with comScore Android. Please be sure to add this to your gradle file:
+With the recent comScore update, there is an additional implementation step when getting started with comScore Android. Be sure to add this to your gradle file:
 
 ```
 allprojects {
@@ -77,9 +75,9 @@ Calling `flush` will clear the offline cache with comScore's `flushOfflineCache`
 
 ## Video Streaming
 
-**Note**: The video tracking functionality is in beta for **mobile only**, and requires version 3.0.0 of the `Segment-comScore` SDK. If you have feedback on or questions about this beta feature, [please contact us](https://segment.com/help/contact)!
+**Note**: The video tracking functionality is in beta for **mobile only**, and requires version 3.0.0 of the `Segment-comScore` SDK. If you have feedback on or questions about this beta feature, [contact us](https://segment.com/help/contact)!
 
-To get started tracking video content through Segment, make sure you are using a media player that has an API which allows you to detect the player state. Please also refer to our [Video Spec](https://segment.com/docs/connections/spec/video/) and implement video tracking as outlined there. We will map the semantic events to comScore's relevant methods.
+To get started tracking video content through Segment, make sure you are using a media player that has an API which allows you to detect the player state. Refer to our [Video Spec](https://segment.com/docs/connections/spec/video/) and implement video tracking as outlined there. We will map the semantic events to comScore's relevant methods.
 
 ### Playback Events
 
@@ -110,7 +108,7 @@ For each playback event, we will set the following asset labels translated from 
 | `ns_st_ws`                              | `full_screen`       |
 | `ns_st_br`                              | `bitrate`           |
 
-Please take note that iOS and Android expect different casing. We expect `snake_case` for iOS and `camelCase` for Android.
+Note that iOS and Android expect different casing. We expect `snake_case` for iOS and `camelCase` for Android.
 
 ### Content Events
 
@@ -137,7 +135,7 @@ If the `properties.position` is passed in, we will call the above methods with t
 | `ns_st_st`                 | `channel`        |
 | `ns_st_ce`                 | `full_episode`   |
 
-Please take note that iOS and Android expect different casing. We expect `snake_case` for iOS and `camelCase` for Android.
+Note that iOS and Android expect different casing. We expect `snake_case` for iOS and `camelCase` for Android.
 
 ### Ad Events
 
@@ -156,14 +154,14 @@ Please take note that iOS and Android expect different casing. We expect `snake_
 | `ns_st_pu`     | `publisher`      |
 | `ns_st_cl`     | `total_length`   |
 
-Please take note that iOS and Android expect different casing. We expect `snake_case` for iOS and `camelCase` for Android.
+Note that iOS and Android expect different casing. We expect `snake_case` for iOS and `camelCase` for Android.
 
 
 ## Additional Video Destinations Specific Options
 
 Example on passing destination specific option values through on iOS:
 
-```objective-c
+```objc
 options:@{
   @"integrations": @{
    @"com-score" : @{
@@ -188,7 +186,7 @@ Analytics.with(context).track("Video Playback Started", new Properties(), new Op
 ```
 
 ### Video Metrix Dictionary Classification
-Represented with the labels `c3`, `c4`, `c6`, these labels determine which entity the clip will credit to in the Video Metrix dictionary. Segment allows you to pass values for these labels as an destination specific option, since these values will.
+Represented with the labels `c3`, `c4`, `c6`, these labels determine which entity the clip will credit to in the Video Metrix dictionary. Segment allows you to pass values for these labels as a destination-specific option, since these values will.
 
 These are required fields, so all three of these labels must always be passed. Unused labels must still be passed with the literal string value `*null`. These values should ONLY appear as part of the video destination, they should not appear or be set in the general mobile destination.
 
@@ -241,7 +239,7 @@ Media that a user may intentionally view (like content), or it may be served to 
 
 #### Content Classification Type
 
-You can pass in a value for `contentClassificationType` as an destination specific option. Segment defaults to value `vc00` on all Content related video tracking events. The values you may dynamically pass in are described by comScore below.
+You can pass in a value for `contentClassificationType` as a destination-specific option. Segment defaults to value `vc00` on all Content related video tracking events. The values you may dynamically pass in are described by comScore below.
 
 **PREMIUM**
 Content with strong brand equity or brand recognition. Premium content is usually created or produced by media and entertainment companies using professional-grade equipment, talent, and production crews that hold or maintain the rights for distribution and syndication.

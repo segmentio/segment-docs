@@ -58,16 +58,16 @@ To use SQL traits you need:
 
 ### Step 1. Set up a warehouse source
 
-We currently support Redshift, Postgres, Snowflake, and BigQuery as data warehouse sources for SQL traits. The setup process for BigQuery is a bit different as it _requires_ a service user.
+We currently support Redshift, Postgres, Snowflake, and BigQuery as data warehouse sources for SQL traits. The set up process for BigQuery is a bit different as it _requires_ a service user.
 
 For any warehouse, we recommend that you create a separate read-only user for building SQL traits.
 
 #### Redshift, Postgres, Snowflake Setup
 
 If you don't already have a data warehouse, follow one of the guides here first:
-- [Redshift Getting Started](/docs/connections/warehouses/catalog/redshift/#getting-started)
-- [Postgres Getting Started](/docs/connections/warehouses/catalog/postgres/#getting-started)
-- [Snowflake Getting Started](/docs/connections/warehouses/catalog/snowflake/#getting-started)
+- [Redshift Getting Started](/docs/connections/storage/catalog/redshift/#getting-started)
+- [Postgres Getting Started](/docs/connections/storage/catalog/postgres/#getting-started)
+- [Snowflake Getting Started](/docs/connections/storage/catalog/snowflake/#getting-started)
 
 Remember to create a read-only service user!
 
@@ -149,7 +149,7 @@ If you are sending data from [object cloud sources](https://segment.com/docs/con
 
 When you're building your query, there are some requirements for the data your query returns.
 
-- The query must return a column with a `user_id` (or `group_id` for account traits, if you have Personas for B2B enabled).
+- The query must return a column with a `user_id`, `email`, or `anonymous_id` (or `group_id` for account traits, if you have Personas for B2B enabled).
 - It must return at least one additional trait in addition to `user_id`/`group_id`, and no more than 25 total columns
 - The query must not return any `user_id`s with a `null` value, or any duplicate `user_id`s.
 - The query must not return more than 10 million rows.
@@ -201,7 +201,7 @@ The result set is capped at 10 million rows.
 
 ### How often are you querying the customer's data warehouse?
 
-We query the data warehouse every 12 hours by default, but can query up to hourly. Please [contact us](https://segment.com/help/contact/) if you need more customizable schedules.
+We query the data warehouse every 12 hours by default, but can query up to hourly. [contact us](https://segment.com/help/contact/) if you need more customizable schedules.
 
 ### What identifiers can I use to query a list?
 
@@ -217,7 +217,7 @@ No, Personas only sends an identify/group call if the values in a row have chang
 
 ### I have a large (1M+) query of users to import, should I be worried?
 
-If you're importing a large list of users and traits, the biggest consideration is the API call usage and volume among the partners you are sending the data to. These vary depending on our partners, so please [contact us](https://segment.com/help/contact/) if you are concerned about this.
+If you're importing a large list of users and traits, the biggest consideration is the API call usage and volume among the partners you are sending the data to. These vary depending on our partners, so [contact us](https://segment.com/help/contact/) if you are concerned about this.
 
 ## Troubleshooting
 
@@ -247,7 +247,7 @@ We currently support returning only 25 columns. [Contact us](https://segment.com
 
 ![](images/troubleshoot3.png)
 
-We require that each row of the query corresponds to a unique user. We throw this error if we see multiple rows with the same `user_id`. Please use a `distinct` or `group by` statement to ensure that each row has a unique user_id.
+We require that each row of the query corresponds to a unique user. We throw this error if we see multiple rows with the same `user_id`. Use a `distinct` or `group by` statement to ensure that each row has a unique user_id.
 
 ### I am seeing some users/accounts in my preview with questions marks. What does that mean?
 

@@ -4,9 +4,9 @@ title: SlicingDice Destination
 ---
 [SlicingDice](https://slicingdice.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an all-in-one data warehouse. It's a fully managed cloud data warehouse with optional built-in tools for data integration, exploration, visualization and machine learning.
 
-This destination is maintained by SlicingDice. For any issues with the destination, please [reach out to their team](mailto:support@slicingdice.com).
+This destination is maintained by SlicingDice. For any issues with the destination, [contact the SlicingDice Support team](mailto:support@slicingdice.com).
 
-_**NOTE:** The SlicingDice Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on May 8, 2019. If you are interested in joining their beta program or have any feedback to help improve the SlicingDice Destination and its documentation, please [let  their team know](mailto:support@slicingdice.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
@@ -19,7 +19,7 @@ _**NOTE:** The SlicingDice Destination is currently in beta, which means that th
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -32,7 +32,7 @@ Page calls will save your data in SlicingDice using the following columns:
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the Screen method does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the Screen method does. An example call would look like:
 ```
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
@@ -46,11 +46,11 @@ Screen calls will be sent to SlicingDice using the following columns:
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
-  email: 'john.doe@segment.com'
+  email: 'john.doe@example.com'
 });
 ```
 
@@ -62,7 +62,7 @@ Identify calls will be sent to SlicingDice using the following columns:
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked Login Button')
@@ -78,7 +78,7 @@ Track calls will be sent to SlicingDice using the following columns:
 
 ## Groups
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
 ```
 analytics.group("0e8c78ea9d97a7b8185e8632", {
   name: "Initech",
@@ -95,7 +95,7 @@ Group calls will be sent to SlicingDice using the following columns:
 * `{source_name}-groups-{attribute_name}`: contains the `traits` attributes of a Group call, saving each one as an individual column
 * `{source_name}-groups-context-{attribute_name}`: contains the "context" attributes of a Group call, saving each one as an individual column
 
-    *Observation: Group calls will also be sent to SlicingDice using the following [Account](https://segment.com/docs/connections/warehouses/#warehouse-schemas) columns that holds the latest state of a group.*
+    *Observation: Group calls will also be sent to SlicingDice using the following [Account](https://segment.com/docs/connections/storage/warehouses/schema/) columns that holds the latest state of a group.*
     * `{source_name}-accounts-group-id`: contains the `groupId` attribute of a Group call
     * `{source_name}-accounts-{attribute_name}`: contains the `traits` attributes of a Track call, saving each one as an individual column
     * `{source_name}-accounts-context-{attribute_name}`: contains the `context` attributes of a Track call, saving each one as an individual column

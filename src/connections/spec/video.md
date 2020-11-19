@@ -25,7 +25,7 @@ subsequent events generated from this session/playback should be tied with the s
 
 All playback events share the same event properties that describe information about the current state of the player. Below is a full list of the supported properties of this object.
 
-```
+```js
 {
   session_id:       String
   content_asset_id | content_asset_ids:  String | Array<string>
@@ -48,30 +48,39 @@ All playback events share the same event properties that describe information ab
 ```
 
 #### Session Id: `String`
+
 The unique ID of the overall session used to tie all events generated from a specific playback. This value should be same across all playback, content, and ad events if they are from the same playback session
 
 #### Content Asset Id |  Content Asset Ids: `String | Array[string]`
+
 The Content Asset Id(s) of the video/videos playing or about to be played in the video player. **For [Video Playback Started](#video-playback-started) events only**, you should send the plural form with an Array of unique asset IDs. For all other playback events, you should send the singular form with the ID of the current content asset playing at the time of the event.
 
 #### Content Pod Id |  Content Pod Ids: `String | Array[string]`
+
 The Content Pod Id(s) of the video/videos playing or about to be played in the video player. **For [Video Playback Started](#video-playback-started) events only**, you should send the plural form with an Array of unique pod IDs. For all other playback events, you should send the singular form with the ID of the current content pod playing at the time of the event.
 
 #### Ad Asset ID: `String | Array[string]`
+
 The Ad Asset Id(s) of the ad/ads playing or about to be played in the video player. **For [Video Playback Started](#video-playback-started) events only**, you should send an Array of unique ad asset IDs. For all other playback events, you should send a string with the ID of the current ad asset playing at the time of the event.
 
 #### Ad Pod ID: `String | Array[string]`
+
 The Ad Pod Id(s) of the ad/ads playing or about to be played in the video player. **For [Video Playback Started](#video-playback-started) events only**, you should send an Array of unique ad pod IDs. For all other playback events, you should send a string with the ID of the current ad pod playing at the time of the event.
 
 #### Ad Type: `Enum {'pre-roll' | 'mid-roll' | 'post-roll'}`
+
 The type of ad playing at the time of the event. Values can include 'pre-roll', 'mid-roll', and 'post-roll'.
 
 #### Position: `Integer`
-The current index position **in seconds** of the playhead. If the playback is a livestream, you must send a negative integer that represents the offset in seconds in relation to the current timestamp. For example, if content is being livestreamed at 8PM but the viewer is 30 seconds behind, the value of this property should be -30.
+
+The current index position **in seconds** of the playhead, including the duration of any ads seen (if available). If the playback is a livestream, check the documentation for relevant destinations for details on how to correctly pass the playhead position.
 
 #### Seek Position: `Integer`
+
 The index position **in seconds** of the playhead where the user is seeking to. Only needed on Video Playback Seek Started events, since on Video Playback Seek Completed, the `seek_position` should be the `position`.
 
 #### Total Length: `Integer`
+
 The total duration of the playback in seconds. This should include the duration of all your content and ad included in this playback session. For livestream playback, send `null`.
 
 #### Bitrate: `Integer`
@@ -81,7 +90,7 @@ The current `kbps`.
 The average `fps`.
 
 #### Video Player: `String`
-The name of the video player (ie 'youtube', 'vimeo').
+The name of the video player (for example `youtube`, `vimeo`).
 
 #### Sound `Integer`
 The sound level of the playback represented in a 0 to 100 scale where 0 is muted and 100 is full volume.
@@ -609,10 +618,12 @@ The channel in which the video content is playing, ie. 'espn', 'my blog'.
 An [ISO 8601 Date String](https://en.wikipedia.org/wiki/ISO_8601) representing the original air date or published date.
 
 #### Position: `Integer`
-The current index position **in seconds** of the playhead. If the playback is a livestream, you must send a negative integer that represents the offset in seconds in relation to the current timestamp. For example, if content is being livestreamed at 8PM but the viewer is 30 seconds behind, the value of this property should be -30.
+The current index position **in seconds** of the playhead into the content/asset. This position must exclude the duration of any ads played.
+
+If the playback is a livestream, check the documentation for relevant destinations for details on how to correctly pass the playhead position.
 
 #### Total Length: `Integer`
-The total duration of the playback in seconds. This should include the duration of all your content and ad included in this playback session. For livestream playback, send `null`.
+The total duration of the content/asset in seconds. This should exclude the duration of any ads included in the playback of this asset. For livestream playback, send `null`.
 
 #### Bitrate: `Integer`
 The current `kbps`.
@@ -1279,4 +1290,4 @@ analytics.track('Video Playback Completed', {
 
 Below is a graphical view of how a playback that has 3 mid-roll ads interspersed within the content:
   ![](images/Video_Tracking_Workflow.png)
-<!-- svg by Aimee via lucidchart-->
+<!-- svg by Aimee using lucidchart-->

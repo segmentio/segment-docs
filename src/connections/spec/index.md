@@ -1,16 +1,15 @@
 ---
 title: Spec Overview
-redirect_from:
-- '/docs/partners/spec/'
+redirect_from: '/docs/partners/spec/'
 ---
 
-The Segment Spec provides guidance on meaningful data to capture, and the best format for it, across all of our libraries and APIs. If you implement Segment using these formats, it's simple to translate your data to downstream tools.
+The Segment Spec provides guidance on meaningful data to capture, and the best format for it, across all of Segment's libraries and APIs. If you implement Segment using these formats, it's simple to translate your data to downstream tools.
 
 {% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/324252?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Segment Methods" content="Check out our high-level overview of these APIs in Segment University. (Must be logged in to access.)" %}
 
 The Segment Spec has three components.
 
-First, it **outlines the semantic definition of the customer data we capture across all of our libraries and APIs**.  There are six API calls in the Spec. They each represent a distinct type of semantic information about a customer. Every call shares the same [common fields](/docs/connections/spec/common/).
+First, it **outlines the semantic definition of the customer data we capture across all of Segment's libraries and APIs**.  There are six API calls in the Spec. They each represent a distinct type of semantic information about a customer. Every call shares the same [common fields](/docs/connections/spec/common/).
 - APIs
   - [Identify](/docs/connections/spec/identify/): who is the customer?
   - [Track](/docs/connections/spec/track/): what are they doing?

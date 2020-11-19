@@ -1,4 +1,6 @@
 .sidebar {
+  $this: &;
+
   & > * + * {
     margin-top: 15px;
     padding-top: 15px;
@@ -9,14 +11,34 @@
     padding-top: 15px;
   }
 
+  &__content {
+    padding-right: 25px;
+
+    & > * + * {
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 1px solid color(border-gray);
+    }
+
+    & > * + *:last-child {
+      padding-top: 32px;
+    }
+  }
+
   &--sticky {
     position: sticky;
     top: 32px;
     left: 0;
+    z-index: 1;
   }
 
   &--scroll {
-    max-height: calc(100vh - 400px);
+    max-height: calc(100vh - 100px);
+
+    &__content {
+      overflow-y: auto;
+      max-height: calc(100vh - 100px);
+    }
 
     ::-webkit-scrollbar {
       width: 5px;
@@ -41,8 +63,10 @@
   }
 
   &--dark {
-    & > * + * {
-      border-top: 1px solid color(border-gray-dark);
+    &__content {
+      & > * + * {
+        border-top: 1px solid color(border-gray-dark);
+      }
     }
   }
 }

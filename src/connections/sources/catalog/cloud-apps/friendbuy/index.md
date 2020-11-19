@@ -57,7 +57,7 @@ Below are the properties that are included in the Referral Shared event payload.
 |	referral_code	|	Friendbuy internal identifier used to make attribution between friend order and advocate referral 	|
 |	message	|	Advocate provided message to the friend 	|
 |	channel	|	Friendbuy channel the share was issued from (email, facebook, facebook messenger, twitter) 	|
-|	recipients	|	Array of recipient email addresses for shares sent via email 	|
+|	recipients	|	Array of recipient email addresses for shares sent using email 	|
 |	variant_id	|	Friendbuy internal id for the widget variant the share is associated with 	|
 |	variant_name	|	Merchant defined name for the widget variant 	|
 |	reward_type	|	Merchant defined Reward Type for the advocate reward 	|

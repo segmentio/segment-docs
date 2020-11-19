@@ -5,26 +5,24 @@ rewrite: true
 
 [Delighted](https://delighted.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the modern customer feedback solution used by the world's most coveted brands to deliver stellar experiences to their customers.
 
-This destination is maintained by Delighted. For any issues with the destination, please [reach out to their team](mailto:hello@delighted.com)
+This destination is maintained by Delighted. For any issues with the destination, [contact the Delighted Support team](mailto:hello@delighted.com)
 
 _**NOTE:** The Delighted Destination is currently only compatible with email surveys._
-
-This document was last updated on January 29, 2019. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please let us know!
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Delighted" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in your Delighted "API Key" in Segment's Settings UI. You can retrieve this from your Delighted Settings > API > Your API Key. It should look like "T8jtGnuYaNerDedVMYrcgn1dRdywfGOl".
-4. If you're using Segment's client-side `analytics.js` library, we asynchronously load Delighted's Javascript library onto the page and the CDN will be updated in 45 minutes.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Delighted" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. In the destination settings, enter your Delighted "API Key" in Segment's Settings UI. You can retrieve this from your Delighted Settings > API > Your API Key. It should look like "T8jtGnuYaNerDedVMYrcgn1dRdywfGOl".
+4. If you're using Segment's client-side `analytics.js` library, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Delighted's Javascript library onto the page and begins sending data.
 
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -38,7 +36,7 @@ Identify calls will add to your list of People in Delighted. The only trait that
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Purchased Product');
@@ -58,4 +56,4 @@ You can optionally configure Delighted to send feedback from Delighted _email su
 
 Simply copy the `Write Key` of the Segment Source where you want to send data and paste into the [Delighted Segment Destination page](https://delighted.com/destinations/segment).
 
-Delighted will then send all _email survey_ feedback triggered via the Segment integration into back into Segment. Please refer to our [Delighted Source](/docs/connections/sources/catalog/cloud-apps/delighted/) documentation for more information.
+Delighted will then send all _email survey_ feedback triggered using the Segment integration into back into Segment. Refer to our [Delighted Source](/docs/connections/sources/catalog/cloud-apps/delighted/) documentation for more information.

@@ -21,7 +21,7 @@ The first thing you see is a graph of the Sources and Destinations you have conn
 
 The graph on this overview page includes lines which can show you which Sources send data to which Destinations. If this is the first time you're looking at your workspace and you haven't set it up yet, it won't look quite like this.
 
-In the left navigation bar, you see the main parts of the Segment application: [Sources](/docs/connections/sources/), [Destinations](/docs/connections/destinations/), [Privacy](/docs/privacy-portal/), and [Personas](/docs/personas/) and [Protocols](/docs/protocols/) if your subscription includes them.
+In the left navigation bar, you see the main parts of the Segment application: [Sources](/docs/connections/sources/), [Destinations](/docs/connections/destinations/), [Privacy](/docs/privacy/), and [Personas](/docs/personas/) and [Protocols](/docs/protocols/) if your subscription includes them.
 
 You can also find the Catalog in the left navigation, which lists the sources you can collect data from, and the destinations you can send data to.
 
@@ -61,7 +61,7 @@ The **Workspace Settings** tab shows more information about your workspace, incl
 
 The **User Preferences** tab shows your individual account settings, including Notification settings.
 
-The **Usage** tab shows how many API calls or [Monthly Tracked Users (MTUs)](/docs/guides/usage-and-billing/how-are-mtus-calculated-by-segment/) your workspace has used this month - which can be important for keeping an eye on your Segment bill.
+The **Usage** tab shows how many API calls or [Monthly Tracked Users (MTUs)](/docs/guides/usage-and-billing/mtus-and-throughput/#how-does-segment-calculate-mtus) your workspace has used this month - which can be important for keeping an eye on your Segment bill.
 
 ## Health
 

@@ -36,9 +36,9 @@ your mobile app with our [iOS](/docs/connections/sources/catalog/libraries/mobil
 
 #### Install the SDK
 
-The recommended way to install Analytics for iOS is via Cocoapods, since it
+The recommended way to install Analytics for iOS is using Cocoapods, since it
 means you can create a build with specific destinations, and because it makes
-it dead simple to install and upgrade. Simply add the Analytics dependency to
+it simple to install and upgrade. Simply add the Analytics dependency to
 your Podfile, like so:
 
 ```
@@ -48,14 +48,14 @@ pod 'Segment-Nielsen-DTVR'
 
 #### Add the Nielsen App SDK Framework 
 
-The integration relies on the NielsenApp SDK framework, which can either be installed via CocoaPods or by manually
+The integration relies on the NielsenApp SDK framework, which can either be installed using CocoaPods or by manually
 adding the framework. You will need to have a Nielsen representative before
 getting started.
 
 ##### CocoaPods
 
 When using the Nielsen SDK version 6.2.0.0 and above, Nielsen recommends
-installation via CocoaPods, and Apple recommends using the dynamic framework.
+installation using CocoaPods, and Apple recommends using the dynamic framework.
 
 Requirements for CocoaPods:
 
@@ -159,7 +159,7 @@ does not expose any hooks into player states during ad plays.
 Spec](/docs/connections/spec/video/) properly with key lifecycle events, this integration
 will not behave properly.
 
-Again, please also refer to our [Video Spec](/docs/connections/spec/video/) and implement
+Again, also refer to our [Video Spec](/docs/connections/spec/video/) and implement
 video tracking as outlined there. We will map the semantic events and
 properties to Nielsen's relevant methods and metadata.
 

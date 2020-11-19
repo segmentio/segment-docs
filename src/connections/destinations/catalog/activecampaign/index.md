@@ -3,25 +3,23 @@ rewrite: true
 title: ActiveCampaign Destination
 ---
 
-[ActiveCampaign](https://www.activecampaign.com) is an integrated email marketing, marketing automation, and small business CRM. It allows you to send beautiful newsletters, setup behavioral based automations, and benefit from sales automation. This destination is maintained by ActiveCampaign. For any issues with the destination, please [reach out to their team](https://www.activecampaign.com/contact/).
+[ActiveCampaign](https://www.activecampaign.com) is an integrated email marketing, marketing automation, and small business CRM. It allows you to send beautiful newsletters, set up behavioral based automations, and benefit from sales automation.
 
-This document was last updated on March 27, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
-
-
+This destination is maintained by ActiveCampaign. For any issues with the destination, [contact the ActiveCampaign support team](https://www.activecampaign.com/contact/).
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
 1.  From your Segment UI's Destinations page click on "Add Destination".
-2.  Search for "Active Campaign" within the Destinations Catalog and confirm the Source you'd like to connect to.
+2.  Search for "Active Campaign" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3.  Add your API URL and API Key which can be found in your ActiveCampaign UI Settings page under the Developer tab.
 4.  Since the Segment ActiveCampaign destination integration is 100% handled through Segment, you don't need to install ActiveCampaign site tracking or event tracking Javascript code.
 
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page();
@@ -34,7 +32,7 @@ When you call `page`, we will send that event to ActiveCampaign as a `site track
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('ze8rt1u89', {
@@ -121,7 +119,7 @@ analytics.identify('ze8rt1u89', {
 ```
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked a button', {

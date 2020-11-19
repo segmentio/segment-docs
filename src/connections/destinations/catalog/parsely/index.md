@@ -5,25 +5,27 @@ title: Parse.ly Destination
 
 [Parse.ly](https://www.parse.ly) provides web analyses and content optimization for online publishers by partnering with them to provide clear audience insights through intuitive analytics.
 
-This document was last updated on November 8th, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on November 8th, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Parsely" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Parsely" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Enter your Domain and enable the destination in Segment. (To enable this destination, you use your Parsely website domain as your API key.)
-4. We'll automatically start recording data.
+4. Segment automatically starts sending data from the source you selected.
 
-When Parse.ly is enabled in Segment, our CDN updates within 45 minutes.  Parse.ly's javascript is asynchronously loaded onto your page, so remember to remove the Parse.ly snippet from your page.
+When you enable Parse.ly from the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Parse.ly's javascript onto your page.
 
-Parsely is substantially more useful when you implement JSON-LD metadata across your website as described [here](https://www.parse.ly/help/integration/basic).
+Remember to remove the Parse.ly native snippet from your page.
+
+Parsely is more useful when you implement JSON-LD metadata across your website as described [here](https://www.parse.ly/help/integration/basic).
 
 ## Page
 
-By default, unless you are using [Dynamic Tracking](https://www.parse.ly/help/integration/dynamic/), Parse.ly automatically tracks pageviews in the background, so you do not need to track them separately with Segment's `.page()` method.
+By default, unless you are using [Dynamic Tracking](https://www.parse.ly/help/integration/dynamic/), Parse.ly automatically tracks pageviews in the background, so you do not need to track them separately with Segment's Page method.
 
 If you are using dynamic tracking, you must explicitly let us know in your [integration settings](/docs/connections/destinations/catalog/parsely/#enable-dynamic-tracking). If this setting is enabled, we will disable Parse.ly's autotracking functionality and begin sending their API pageview events only in response to `analytics.page()` events.
 
@@ -32,7 +34,7 @@ If you are using dynamic tracking, you must explicitly let us know in your [inte
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('ze8rt1u89', {
@@ -58,7 +60,7 @@ Video tracking is possible with either web or server sources.
 
 ## Group
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
 
 ```js
 analytics.group("0e8c78ea9d97a7b8185e8632", {
@@ -73,7 +75,7 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 
 ## Alias
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
 
 ```js
 analytics.alias("507f191e81");
@@ -245,9 +247,9 @@ analytics.track({
 
 This event is only required for server side tracking.
 
-To track the completion of a video, please use our [Video Content Completed](https://segment.com/docs/connections/spec/video/#content-events) event.
+To track the completion of a video, use our [Video Content Completed](https://segment.com/docs/connections/spec/video/#content-events) event.
 
-Please ensure you are sending at minimum, `assetId`, `totalLength`, and `position` as properties.
+Make sure you are sending at minimum, `assetId`, `totalLength`, and `position` as properties.
 
 **Example:**
 
@@ -279,4 +281,4 @@ analytics.track({
 
 #### Track URL
 
-The destination does not currently support Parsely's `trackURL` method. Please [contact us](/contact/requests) if this is important to you.
+The destination does not currently support Parsely's `trackURL` method. [contact us](https://segment.com/requests/integrations/) if this is important to you.

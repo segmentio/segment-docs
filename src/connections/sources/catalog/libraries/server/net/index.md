@@ -5,16 +5,16 @@ sourceCategory: Server
 shortName: 'net'
 ---
 
-Our .NET library is the best way to integrate analytics into your .NET application or website. It lets you record analytics data from your ASP.NET, C#, F#, and Visual Basic code. The library issues requests that hit our servers, and then we route your data to any analytics service you enable on our destinations page. This library is open-source, so you can [check it out on Github](https://github.com/segmentio/Analytics.NET).
+Our .NET library is the best way to integrate analytics into your .NET application or website. It lets you record analytics data from your ASP.NET, C#, F#, and Visual Basic code. The library issues requests that hit our servers, and then we route your data to any analytics service you enable on our destinations page. This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/Analytics.NET).
 
-All of our server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
+All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
 
 
 ## Getting Started
 
 ### Client-side vs Server-side
 
-The best analytics installation combines both client-side and server-side tracking. A client-side analytics.js installation allows you to install A/B testing, heat mapping, session recording, and ad optimization tools. A server-side .NET installation allows you to accurately track events that aren't available client-side, such as payments. For best practices, [check out our guide client-side vs. server-side](/docs/faqs/sources/client-vs-server).
+The best analytics installation combines both client-side and server-side tracking. A client-side analytics.js installation allows you to install A/B testing, heat mapping, session recording, and ad optimization tools. A server-side .NET installation allows you to accurately track events that aren't available client-side, such as payments. For best practices, [check out our guide client-side vs. server-side](/docs/guides/how-to-guides/collect-on-client-or-server/).
 
 
 ### Step 1: Add Analytics.js to your ASP.NET Master Page
@@ -82,7 +82,10 @@ The default initialization settings are production-ready and queue messages on a
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [identify](/docs/connections/spec/identify/) method does.
+> note ""
+> **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
+
+If you're not familiar with the Segment Specs, take a look to understand what the [identify](/docs/connections/spec/identify/) method does.
 
 The `identify` call has the following fields:
 
@@ -113,7 +116,7 @@ Analytics.Client.Identify("019mr8mf4r", new Traits() {
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [track](/docs/connections/spec/track/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [track](/docs/connections/spec/track/) method does.
 
 The `track` call has the following fields:
 
@@ -147,7 +150,7 @@ Analytics.Client.Track("019mr8mf4r", "Item Purchased", new Properties() {
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [page](/docs/connections/spec/page/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [page](/docs/connections/spec/page/) method does.
 
 The `page` call has the following fields:
 
@@ -185,7 +188,7 @@ Analytics.Client.Page("019mr8mf4r", "Login", new Properties() {
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [screen](/docs/connections/spec/screen/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [screen](/docs/connections/spec/screen/) method does.
 
 The `screen` call has the following fields:
 
@@ -222,7 +225,7 @@ Analytics.Client.Screen("019mr8mf4r", "Register", new Properties() {
 
 ## Group
 
-If you haven't had a chance to review our spec, please take a look to understand what the [group](/docs/connections/spec/group/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [group](/docs/connections/spec/group/) method does.
 
 The `group` call has the following fields:
 
@@ -250,13 +253,13 @@ Example `group` call:
 ```csharp
 Analytics.Client.Group("userId", "groupId", new Traits() {
     { "name", "Initech, Inc." },
-    { "website", "http://www.initech.com" }
+    { "website", "http://www.example.com" }
 });
 ```
 
 ## Alias
 
-If you haven't had a chance to review our spec, please take a look to understand what the [alias](/docs/connections/spec/alias/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [alias](/docs/connections/spec/alias/) method does.
 
 The `alias` call has the following fields:
 
@@ -328,15 +331,15 @@ You can specify which analytics destinations you want each action to go to.
 
 ```csharp
 Analytics.Client.Identify("hj2kf92ds212", new Traits() {
-    { "email", "tom@initech.com" },
+    { "email", "tom@example.com" },
     { "name", "Tom Smykowski" },
 }, new Options()
     .SetIntegration("all", false)
-    .SetIntegration("KISSmetrics", true)
+    .SetIntegration("Kissmetrics", true)
 );
 ```
 
-In this case, we're specifying that we want this identify to only go to KISSmetrics. `"all", false` says that no destination should be enabled unless otherwise specified. `{ "KISSmetrics", true }` turns on KISSmetrics, etc.
+In this case, we're specifying that we want this identify to only go to Kissmetrics. `"all", false` says that no destination should be enabled unless otherwise specified. `{ "Kissmetrics", true }` turns on Kissmetrics, etc.
 
 Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
@@ -381,7 +384,7 @@ You can provide nested properties, like so:
 
 ```csharp
 Analytics.Client.Identify("hj2kf92ds212", new Traits() {
-    { "email", "tom@initech.com" },
+    { "email", "tom@example.com" },
     { "name", "Tom Smykowski" },
     { "address", new Dict() {
         { "street", "123 Fake Street" },
@@ -507,13 +510,16 @@ static void LoggingHandler(Logger.Level level, string message, IDictionary<strin
 }
 ```
 
-Please note: the logger requires a minimum version of .NET Core 2.1.
+Note: the logger requires a minimum version of .NET Core 2.1.
 
 ### Json.NET
 
-`Analytics.NET` uses [Json.NET](http://json.codeplex.com/) to serialize json payloads. If you have an older version of `Json.NET` in your build path, `Analytics.NET` could create incomplete json payloads, which can cause strange API responses. If you're seeing issues, try updating `Json.NET`.
+`Analytics.NET` uses [Json.NET](http://json.codeplex.com/) to serialize JSON payloads. If you have an older version of `Json.NET` in your build path, `Analytics.NET` could create incomplete JSON payloads, which can cause strange API responses. If you're seeing issues, try updating `Json.NET`.
 
 
 ### Mono
 
 `Analytics.NET` has been tested and works in Mono.
+
+### .NET Core
+`Analytics.NET` has been tested and works with .NET Core 3.1 and 3.4.2 beta.

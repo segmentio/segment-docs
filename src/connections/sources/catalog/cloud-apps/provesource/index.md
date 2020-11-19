@@ -3,16 +3,16 @@ title: ProveSouce Source
 ---
 [ProveSource](https://provesrc.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a social proof platform, that lets you show recent activities and reviews that happen on your website - signups, purchases, positive reviews and more, this helps build trust with your visitors and ultimately increases your conversions rates.
 
-This source is maintained by ProveSource. For any issues with the source, please [reach out to their team](mailto:support@provesrc.com).
+This source is maintained by ProveSource. For any issues with the source, [contact the ProveSouce Support team](mailto:support@provesrc.com).
 
-_**NOTE:** The ProveSource Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on June 14, 2019. If you are interested in joining their beta program or have any feedback to help improve the ProveSource Source and its documentation, please [let  their team know](mailto:support@provesrc.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
 
 1. From your Segment UI's Sources page click on "Add Source".
 2. Search for "ProveSource" within the Sources Catalog and confirm by clicking "Connect".
-3. Give the Source a nickname and follow the setup flow to "Add Source". The nickname will be used to designate the source in the Segment interface, and Segment will create a related schema name. The schema name is the namespace you'll be querying against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
+3. Give the Source a nickname and follow the set up flow to "Add Source". The nickname will be used to designate the source in the Segment interface, and Segment will create a related schema name. The schema name is the namespace you'll be querying against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
 4. Copy the Write key from the Segment UI and log in to your ProveSource account - navigate to [Settings](https://console.provesrc.com/#/settings) > Integrations > Click Edit next to Segment Integration and paste the key to connect.
 
 
@@ -92,4 +92,4 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the Destination docs for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, please [contact the ProveSource team](mailto:support@provesrc.com).
+If you experience any issues with how the events arrive in Segment, [contact the ProveSource team](mailto:support@provesrc.com).

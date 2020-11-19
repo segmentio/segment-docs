@@ -8,9 +8,9 @@ This integration is maintained by [WebEngage Support](mailto:support@webengage.c
 
 Steps to integrate Segment with WebEngage:
 
-You will be required to provide the API key if you intend on sending any via WebEngage's server-side component. The API key can be found in your WebEngage dashboard on the top right under **Integrations > REST API**. If you don't have a WebEngage account, you can create one [here](https://webengage.com/sign-up).
+You will be required to provide the API key if you intend on sending any using WebEngage's server-side component. The API key can be found in your WebEngage dashboard on the top right under **Integrations > REST API**. If you don't have a WebEngage account, you can create one [here](https://webengage.com/sign-up).
 
-If you'd like to use leverage the client-side web or mobile bundled SDKs, please enter your License Code. WebEngage only needs the License Code you want to enable the device/packaged Integration which will allow you to leverage WebEngage's in-app and push notification functionality.
+To use the client-side web or mobile bundled SDKs, enter your License Code. WebEngage only needs the License Code you want to enable the device/packaged Integration which will allow you to use WebEngage's in-app and push notification functionality.
 
 Do note that WebEngage for Mobile supports only the `Identify` and `Track` methods.
 
@@ -77,7 +77,7 @@ And add the following lines to your AppDelegate's `application:didFinishLaunchin
 
 ## Page
 
-This is *only* supported on the client side web component. Sending page events via server side integration is not supported.
+This is *only* supported on the client side web component. Sending page events using server side integration is not supported.
 
 ## Identify
 
@@ -104,7 +104,7 @@ The `reset` call must be invoked when a user is logged out.
 
 ### Push Notifications
 
-Please follow WebEngage's push notification documentation:
+Follow WebEngage's push notification documentation:
 - [Android](https://docs.webengage.com/docs/android-push-messaging)
 - [iOS](https://docs.webengage.com/docs/ios-push-messaging)
 

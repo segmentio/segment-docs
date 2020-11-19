@@ -77,7 +77,7 @@ Our Mobile SDKs are the best way to simplify your iOS, Android, and Xamarin app 
 
 ## Server
 
-Our server-side sources let you send analytics data directly from your servers. We only recommend tracking from your servers when device-mode tracking (tracking on the client) won't work. Check out [our guide on server-side tracking](/docs/guides/sources/client-vs-server) if you're not sure whether it makes sense for your use case.
+Our server-side sources let you send analytics data directly from your servers. We only recommend tracking from your servers when device-mode tracking (tracking on the client) won't work. Check out [our guide on server-side tracking](/docs/guides/how-to-guides/collect-on-client-or-server/) if you're not sure whether it makes sense for your use case.
 
 {: .columns }
 - [Clojure](/docs/connections/sources/catalog/libraries/server/clojure/)
@@ -151,7 +151,7 @@ To dig into some examples of how to pull this data together, check out our [samp
 
 ### HTTP
 
-If we don't have a library for your environment yet, you can always send your data directly to our [HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http/). All of our other sources and platforms use the HTTP API to work their magic behind the scenes.
+If we don't have a library for your environment yet, you can always send your data directly to our [HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http/). All of Segment's other sources and platforms use the HTTP API to work their magic behind the scenes.
 
 
 ### Pixel
@@ -169,7 +169,7 @@ Our [Pixel Tracking API](/docs/connections/sources/catalog/libraries/server/pixe
 
 ### Source request
 
-We'd love to know what other sources of data you'd like to analyze. Please [log your request](/contact/requests/source/).
+We'd love to know what other sources of data you'd like to analyze. [Contact the Support Team](https://segment.com/help/contact/) to log a request.
 
 ---
 

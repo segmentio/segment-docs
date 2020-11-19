@@ -6,22 +6,22 @@ beta: true
 
 [Stories](https://www.getstories.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) gathers all the user events that matter on a timeline, so your teams can understand what is going on and take action in the right direction.
 
-This destination is maintained by Stories. For any issues with the destination, please [reach out to their team](mailto:support@getstories.io).
+This destination is maintained by Stories. For any issues with the destination, [contact the Stories Support team](mailto:support@getstories.io).
 
-_**NOTE:** The Stories Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 7, 2020. If you are interested in joining their beta program or have any feedback to help improve the Stories Destination and its documentation, please [let  their team know](mailto:support@getstories.io)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Stories" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Settings UI which you can retrieve from your [Stories Account](https://app.getstories.io/settings#/api).
-4. You can choose whether to Sync Users or not with Stories. If you enable this setting, identified users will be automatically added and/or merged with your Stories users. Read more about [Merging Users](#Merging-Users) below.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Stories" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Settings UI which you can retrieve from your [Stories Account](https://app.getstories.io/settings#/api).
+4. You can choose whether to Sync Users or not with Stories. If you enable this setting, identified users will be automatically added and/or merged with your Stories users. Read more about [Merging Users](#merging-users) below.
 
 ## Identify
 
-An [`identify`](https://segment.com/docs/spec/identify/) call is sent to Stories as a new event on a user's timeline. This call is mainly used to keep track of changes to users' profile and maintain user properties called _traits_ in Segment. If you want to track specific user actions we recommend using the [`track` call](#Track).
+[`identify`](/docs/connections/spec/identify/) calls are sent to Stories as a new event on a user's timeline. This call is mainly used to keep track of changes to users' profile and maintain user properties called _traits_ in Segment. If you want to track specific user actions we recommend using the [`track` call](#track).
 
 Only `identify` calls update the Profile traits and Attributes on the left-hand side of user profiles. `track`, `page`, and `screen` calls create users but don't populate user Attributes.
 
@@ -43,8 +43,8 @@ Params: {
 
 ## Page & Screen
 
-A [`page`](https://segment.com/docs/spec/page/) and/or a [`screen`](https://segment.com/docs/spec/screen/) call will be sent to Stories as a new event on a user’s timeline as a visited Page or opened Screen.
-`userId` is a **required** property to assign the call to a specific user. `name` is a recommended field that helps identify the event characteristics but not required.
+[`page`](/docs/connections/spec/page/) and [`screen`](/docs/connections/spec/screen/) calls are sent to Stories as a new event on a user’s timeline as a visited Page or opened Screen.
+`userId` is a **required** property to assign the call to a specific user. `name` is a recommended field that helps identify the event characteristics but is not required.
 An example server-side call:
 
 ```text
@@ -69,8 +69,8 @@ Params: {
 
 ## Track
 
-A [`track`](https://segment.com/docs/spec/track/) call will be sent to Stories as a new event on a user’s timeline to keep a track of user actions.
-`userId` is a **required** property to assign the call to a specific user. `name` is a recommended field that helps identify the event characteristics but not required.
+[`track`](/docs/connections/spec/track/) calls are sent to Stories as a new event on a user’s timeline to keep a track of user actions.
+`userId` is a **required** property to assign the call to a specific user. `name` is a recommended field that helps identify the event characteristics but is not required.
 An example server-side call:
 
 ```text
@@ -91,8 +91,7 @@ To have Stories recognize a user, you must include `userId` when calling `identi
 
 ### Merging Users
 
-You can enable **Sync Users** in Stories Destination Settings.
-When this option is enabled, Stories will automatically merge an identified User in Segment with the corresponding Stories User and create a new User in Stories if it does not exist already. When an [`identify`](https://segment.com/docs/spec/identify/) call is fired, it will also merge/update User attributes with the `identify` call's traits.
+Stories automatically merges identified Users in Segment with their corresponding Stories User and creates a new User in Stories if it does not exist already. When an [`identify`](/docs/connections/spec/identify/) fires, it merges/updates User attributes with the `identify` call's traits.
 
 An example server-side call:
 
@@ -109,3 +108,8 @@ Params: {
     },
 }
 ```
+
+## Sync Users
+
+When you set up your Stories Destination in Segment, your users automatically sync to Stories.
+Note that only Users who have a `userId` in Segment are synced, Stories does not support anonymous users yet. Users are updated by `identify` events from Segment.

@@ -1,29 +1,36 @@
 ---
 title: Identity & Access Management Overview
 ---
-Access management lets workspace owners manage which users can access different parts of their Segment workspaces.
 
-![](images/access-mngt-table.png)
+Segment's access management tools let workspace owners manage which users can access different parts of their Segment workspaces.
 
-Access is scoped to a workspace. A Segment user is associated with one or more workspaces, either as an `owner` or `member` of each.
+
+
+The Access Management page has three tabs: [Users (team members)](/docs/segment-app/iam/concepts/#team-members), [User Groups](/docs/segment-app/iam/concepts/#user-groups), and [Tokens](/docs/segment-app/iam/concepts/#tokens). You can select a user in the table to see their [roles](/docs/segment-app/iam/roles).
+
+## Quick Links
+- [Invite a team member to your workspace](/docs/segment-app/iam/membership/#invite-a-new-team-member)
+- [Create a User Group](/docs/segment-app/iam/membership/#create-a-new-user-group)
+- [Update a team member's access](/docs/segment-app/iam/membership#change-a-team-members-access)
+- [Remove a team member from a workspace](/docs/segment-app/iam/membership/#remove-a-team-member-from-your-workspace)
+- [Add a new user with Single Sign On](/docs/segment-app/iam/membership/#team-management-with-single-sign-on)
+
+{% include components/media-icon.html href="/segment-app/iam/membership/" icon="media/icon-academy.svg" title="Invite and manage workspace members" content="Learn how to add members to your workspace, and manage their permissions." variant="related" %}
+
+{% include components/media-icon.html href="/segment-app/iam/membership/" icon="media/icon-academy.svg" title="Organize Users with User Groups" content="Learn manage workspace memebers in bulk." variant="related" %}
+
+# Access Management Overview
+
+Access settings are applied at the workspace level. A Segment user can be have access to one or more workspaces, either as an `owner` or `member` of each.
 Users access their Segment account with either email/password credentials, or by using Single Sign On.
 
 `Owners` manage all aspects of the workspace, and `members` can have access to specific products and resource types.
 
-* Note: All Segment workspaces have access to the Workspace owner and Source admin roles. Additional roles are only available to Segment Business Tier accounts.
+> info ""
+> **Note**: If you are on a Free or Team plan, only the `workspace owner` and `source admin` roles are available._
 
-| Connections           | Protocols             | Personas             |
-|-----------------------|----------------------------------------------|
-| Source admin          | Protocols admin       | Personas admin       |
-| Source read-only      | Protocols read-only   | Personas user        |
-| Warehouse admin       |                       | Personas read-only   |
-| Warehouse read-only   |                       |                      |
+Check out the [Roles documentation](/docs/segment-app/iam/roles/) for more details.
 
-Check out the [Roles documentation](/docs/iam/roles/) for more details.
+## Exporting a workspace's user list
 
-You can grant Source roles to specific resource instances (for example you could give a member `Source admin` access for the `iOS Prod` source only) or to all current and future instances. A user with access to all current and future instances can also create new instances.
-
-The other roles apply to all resource instances within the product area (Warehouses, Tracking Plans, Personas Audiences/Traits).
-These roles will become more granular very soon.
-
-_Note: If you are on a Developer or Team plan, only the `workspace owner` and `source admin` roles are available._
+*Workspace Owners* can download a .csv list of users who have access to a specific workspace (including their roles) from the Access Management page in the Segment App.

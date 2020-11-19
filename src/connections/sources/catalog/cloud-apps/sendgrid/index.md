@@ -3,7 +3,7 @@ title: Sendgrid Source
 ---
 SendGrid is a trusted platform for transactional email and email marketing. [Visit Website](http://sendgrid.com)
 
-Take your company's analysis to the next level by **adding Sendgrid as a Source to Segment.** We'll automatically collect events like `Click` or `Delivered` and objects such as `Recipients` or `Campaigns` and load them into your data warehouse. 
+Take your company's analysis to the next level by **adding Sendgrid as a Source to Segment.** Segment automatically  collects events like `Click` or `Delivered` and objects such as `Recipients` or `Campaigns` and load them into your data warehouse. 
 
 ## Getting Started
 
@@ -37,7 +37,7 @@ Take your company's analysis to the next level by **adding Sendgrid as a Source 
 
   ![](images/934372_Webhook+Settings.png)
 
-8. Once you enable the Event Notification, you're good to go! Press **Next**, and then **Finish** to wrap up the setup flow.
+8. Once you enable the Event Notification, you're good to go! Press **Next**, and then **Finish** to wrap up the set up flow.
 
 ### Event URL
 
@@ -47,13 +47,13 @@ SendGrid has a single Event URL location. By using the SendGrid source, you will
 
 ### Sync
 
-SendGrid has a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the SendGrid objects (and their corresponding properties) according to the [Collections Table](#collections) below. **Please note**: If you don't use Sendgrid's marketing campaigns features, these collections will be empty in Sendgrid and you'll see "Zero data synced" in your runs. The webhook will still be processing activity data (but only activity data) for you though!
+SendGrid has a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the SendGrid objects (and their corresponding properties) according to the [Collections Table](#collections) below. **Note**: If you don't use Sendgrid's marketing campaigns features, these collections will be empty in Sendgrid and you'll see "Zero data synced" in your runs. The webhook will still be processing activity data (but only activity data) for you though!
 
-Our sync component gets resources from SendGrid and forwards them to Segment using an upsert API, so the dimensional data in your warehouse loaded will reflect the latest state of the corresponding resource in SendGrid.  For example,  if `lists.recipient_count` goes from `100` to `200` between syncs, on its next flush to your warehouse, that tickets status will be  `200`.
+Our sync component gets resources from SendGrid and forwards them to Segment using an upsert API, so the dimensional data in your warehouse loaded will reflect the latest state of the corresponding resource in SendGrid.  For example, if `lists.recipient_count` goes from `100` to `200` between syncs, on its next flush to your warehouse, that tickets status will be  `200`.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 
-At the moment, we don't support filtering which objects or properties get synced. If you're interested in this feature, please let us know!
+At the moment, we don't support filtering which objects or properties get synced. If you're interested in this feature, [let us know](https://segment.com/help/contact/)!
 
 
 ### Streaming
@@ -65,7 +65,7 @@ The SendGrid source also has a streaming component which listens in real time fo
 
 Collections are the groupings of resources we pull from your source. In your warehouse, each collection gets its own table.
 
-**Object** collections are updated with each sync. These are pulled via our sync component.
+**Object** collections are updated with each sync. These are pulled using our sync component.
 
 **Event** collections are append only, represent a user action or activity, and may be likened to fact tables in a traditional data warehouse.
 
@@ -86,3 +86,9 @@ Collections are the groupings of resources we pull from your source. In your war
 |  segments | Object | [Slices of lists](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html). **Will only return data if you're using Marketing Campaign featurs of SendGrid.** |
 |  recipients | Object | All contacts who have received an email, with information about their last activities and custom activities. [More Info](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html).  **Will only return data if you're using Marketing Campaign featurs of SendGrid.** |
 |  campaigns | Object | All campaigns you've created in Sendgrid. [More Info](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html).  **Will only return data if you're using Marketing Campaign featurs of SendGrid.** |
+
+## Troubleshooting 
+
+If you're getting an "Invalid Credentials" error when setting up the SendGrid source, send a direct ping to the [SendGrid Marketing Campaigns API](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html) to test if you're using the correct credentials.
+
+Make sure you whitelist the Segment IP addresses on Sendgrid. [contact our team](https://segment.com/help/contact/) for the list of IP addresses to whitelist.

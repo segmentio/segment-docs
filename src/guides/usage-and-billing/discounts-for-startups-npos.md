@@ -16,10 +16,10 @@ Learn more about the Segment Startup Program and eligibility requirements here.
 **Participants and Alumni of Accelerator Partners**
 We currently partner with various accelerator programs around the globe to offer promotions for both current and alumni participants. Contact your accelerator administrator to see if they partner with Segment and for more information on how to redeem the coupon.
 
-If your accelerator does not participate in our program, please have them [apply here](https://airtable.com/shr84MIvVo4k8xbaO) or [reach out](https://segment.com/help/contact) to us with the details of your program and the best point of contact for consideration.
+If your accelerator does not participate in our program, have them [apply here](https://airtable.com/shr84MIvVo4k8xbaO) or [contact us](https://segment.com/help/contact) to us with the details of your program and the best point of contact for consideration.
 
 **Non-profits**
-We offer non-profit customers a $120 per month discount on our monthly [Team plan](https://segment.com/pricing/), which typically covers 10,000 MTUs per month. Please [reach out](https://segment.com/help/contact) to our support team with proof of your non-profit status for more details.
+We offer non-profit customers a $120 per month discount on our monthly [Team plan](https://segment.com/pricing/), which typically covers 10,000 MTUs per month. [Contact us](https://segment.com/help/contact) to our support team with proof of your non-profit status for more details.
 
 **Special Promotions**
 We occasionally offer special promotions. Customers will be notified directly if they are eligible for a special promotion.
@@ -34,7 +34,7 @@ Coupons are applied to your monthly (or annual) bill, which reduces the correspo
 Eligible startups can [apply directly](http://segment.com/industry/startups) for the Segment Startup Program. Other coupons can be redeemed by reaching out to Segment's [support](https://segment.com/contact/billing) team, who will apply the promotion to your account.
 
 **Where can I view which coupons are applied to my account?**
-The Startup Program credits are reflected in the Workspace usage and billing page. Other coupons applied to your workspace are not currently reflected in the Segment application. If you are curious about a promotion you are currently on, or if you workspace has a coupon applied, please reach out [to our support team](https://segment.com/contact/billing).
+The Startup Program credits are reflected in the Workspace usage and billing page. Other coupons applied to your workspace are not currently reflected in the Segment application. If you are curious about a promotion you are currently on, or if you workspace has a coupon applied, [contact the Segment support team](https://segment.com/contact/billing).
 
 **Do I have to be a "new" customer to receive a coupon?**
 The Segment Startup Program is only for customers that have not previously received any other coupon. Both the non-profit and accelerator promotion can be redeemed regardless if you're a new customer or have been with us for years. A user/workspace can only receive any coupon once.

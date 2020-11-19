@@ -37,7 +37,7 @@ The event payload from your debugger that you just selected will automatically l
 
 This is a real event that will appear in your end tool alongside your existing data. If you're not comfortable with this, then select "Cancel" and do not send the event. 
 
-![](images/event-tester_Yxw1DJqb.png)
+![](/guides/images/asset_Yxw1DJqb.png)
 
 **5. View the Partner API response**
 
@@ -45,7 +45,7 @@ On the right hand side of the Event Tester you will see the response from the pa
 
 ![](images/event-tester_il6mvexS.png)
 
-If you are receiving an error and are unsure how to fix the issue, please visit the partner docs (e.g. [https://developers.google.com/analytics/devguides/reporting/core/v3/errors](https://developers.google.com/analytics/devguides/reporting/core/v3/errors)) or reach out to the partner support team. 
+If you are receiving an error and are unsure how to fix the issue, visit the partner docs (e.g. [https://developers.google.com/analytics/devguides/reporting/core/v3/errors](https://developers.google.com/analytics/devguides/reporting/core/v3/errors)) or contact the partner support team. 
 
 # FAQ
 
@@ -55,4 +55,4 @@ The Event Tester is only accessible to users with write access in their Segment 
 
 **The Event Tester experienced an error when sending my event. Why did this happen?**
 
-If you experience an error, [let us know](segment.com/help/contact/) and we'll help you troubleshoot the issue.
+If you experience an error, [let us know](https://segment.com/help/contact/) and we'll help you troubleshoot the issue.

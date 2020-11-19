@@ -2,38 +2,41 @@
 title: Concepts
 ---
 
-## Team Member
+## Team Members
 
-Team Members are individuals with access to Segment.
-They can have access to one or more workspaces, and authenticate either with email/password or Single Sign On.
-An Access Token is used to access our Config API.
+A Segment *Team Member* is an individual with access to a workspace. A Segment user can be associated with one or more workspaces, either as an `owner` or `member` of each.
+Check out the [roles documentation](/docs/segment-app/iam/roles) for a complete list of roles.
 
-## Roles
 
-A role is used to give a user access to resources within a workspace.
+## User Groups
 
-## Groups
+A *User Group* is a set of Team Members with a set of shared policies. A Segment Team Member can be a member of one or many Groups. All roles in the Segment App are additive, which means that group membership can be assigned in addition to individual roles for a single team member. For example, a single user could inherit roles from a Group definition AND have access to additional resources through individually assigned roles.
 
-A group can be used to give many users the same type of access to resources within a workspace.
 
-## Workspace
+## Tokens
 
-A Workspace holds your entire Segment configuration, including sources, destinations, warehouses, and so on.
+You can generate tokens to programmatically access Segment resources using the [Segment Config API](/docs/config-api/).
 
-## Resource Types
+![](images/token-overview.png)
 
-Resource types are the building blocks of Segment:
+## Resources
+
+Resources are the building blocks of Segment, and represent the different parts of your Segment deployment to which you can grant access. These include:
 
 - Workspaces
 - Sources
-- Destinations (Streaming Destinations)
+- Destinations
 - Warehouses
 - Personas Spaces
-- Tracking Plans
+- Protocols Tracking Plans
 
-Members can be granted `owner` access to a resource type either globally (for example `owner` access to all warehouses), or to specific instances of a resource (for example only `owner` access to `Redshift`)
+## Labels
 
-## Resource Instances
+Workspace owners can use Labels to grant users access to groups of resources. When you add a Label to a Source or Personas Spaces, any users who are granted access to that Label gain access to those resources.
 
-Your Workspace is a resource instance, as well as everything in it (like your sources `iOS Prod` and `Android Prod`).
-We've designed access management around these resource types, and you can grant roles to all or instances of each.
+To create or configure labels, go to the **Labels** tab in your workspace settings. Only workspace Owners can manage labels for the entire workspace.
+
+### Quick Links:
+
+- [Label-based Access Management](/docs/segment-app/iam/labels/)
+- [Labels Best Practices](/docs/segment-app/iam/labels/)

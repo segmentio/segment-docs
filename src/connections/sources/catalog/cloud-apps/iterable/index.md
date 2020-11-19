@@ -5,11 +5,11 @@ Iterable is the growth marketing platform that enables brands to create, execute
 
 Take your company's marketing analysis to the next level by **adding Iterable as a Source to Segment**. Iterable will automatically collect cross-channel messaging events like `Email Delivered` and `Push Delivered`, forward them to your destinations and load them into your data warehouse.
 
-In your favorite BI or analytics tool, you'll be able to analyze all your cross-channel marketing campaigns in SQL or through drag-and-drop reports. And you'll be able to sync your Iterable data with event data you're already sending through Segment to analyze the down-funnel effects of your messaging. [Learn more about how you can use Iterable with Segment.](/sources/iterable) 
+In your favorite BI or analytics tool, you'll be able to analyze all your cross-channel marketing campaigns in SQL or through drag-and-drop reports. And you'll be able to sync your Iterable data with event data you're already sending through Segment to analyze the down-funnel effects of your messaging. 
 
 ## Getting Started
 
-If you have previously enabled sending email events via the Iterable destination during our beta (using a project write key), you do not need to create new Iterable source. Your email data will continue to flow as normal.
+If you have previously enabled sending email events using the Iterable destination during our beta (using a project write key), you do not need to create new Iterable source. Your email data will continue to flow as normal.
 
 1. From your workspace's `segment.com/<your-workspace>/sources page`, click `Add source`.
 
@@ -37,7 +37,7 @@ That's it! As you send emails, events will now be sent to your destinations and 
 
 **Stream**
 
-Iterable uses our stream Source component to send Segment email events. It uses a server-side `track` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query via SQL. 
+Iterable uses our stream Source component to send Segment email events. It uses a server-side `track` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL. 
 
 The default behavior is for Iterable to pass the `userId` associated with the email recipient as the `userId`. There are cases in which Iterable does not have an associated `userId`, in which case the email address will be passed in as the `anonymousId`. 
 
@@ -136,4 +136,4 @@ from iterable.email_delivered
 
 ## Send data to Iterable
 
-The Iterable Source works better when you also connect Iterable as an destination. With the Iterable **Destination**, you can use Segment to send Iterable user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Iterable? Head on over to our [Iterable destination docs](/docs/connections/destinations/catalog/iterable/).
+The Iterable Source works better when you also connect Iterable as a destination. With the Iterable **Destination**, you can use Segment to send Iterable user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Iterable? Head on over to our [Iterable destination docs](/docs/connections/destinations/catalog/iterable/).

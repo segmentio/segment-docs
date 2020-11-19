@@ -8,7 +8,7 @@ The `screen` call lets you record whenever a user sees a screen, the mobile equi
 
 Here's the payload of a typical `screen` call, with most [common fields](/docs/connections/spec/common/) removed:
 
-```js
+```json
 {
   "type": "screen",
   "name": "Home",
@@ -37,7 +37,7 @@ Beyond the common fields, the `screen` call takes the following fields:
 
 Here's a complete example of a `screen` call:
 
-```js
+```json
 {
   "anonymousId": "3a12eab0-bca7-11e4-8dfc-aa07a5b093db",
   "channel": "mobile",

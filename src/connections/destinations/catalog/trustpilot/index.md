@@ -4,22 +4,22 @@ title: Trustpilot Destination
 ---
 [Trustpilot](https://www.trustpilot.com/) is an open and independent review platform. On Trustpilot, people can share and discover reviews of businesses, and businesses can gain insights and showcase their service and products performance through reviews.
 
-This destination is maintained by Trustpilot. For any issues with the destination, please [reach out to their team](https://support.trustpilot.com/hc/en-us/articles/215949867-Contact-Trustpilot-s-Support-Team).
+This destination is maintained by Trustpilot. For any issues with the destination, [contact the Trustpilot Support team](https://support.trustpilot.com/hc/en-us/articles/215949867-Contact-Trustpilot-s-Support-Team).
 
-_**NOTE:** The Trustpilot Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 25, 2019. If you are interested in joining their beta program or have any feedback to help improve the Trustpilot Destination and its documentation, please [let  their team know](https://support.trustpilot.com/hc/en-us/articles/215949867-Contact-Trustpilot-s-Support-Team)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Trustpilot" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "Integration Key" into your Segment Settings UI as "API Key" which you can find on [Trustpilot integrations page](https://businessapp.b2b.trustpilot.com/#/ecommerce/segment).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Trustpilot" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "Integration Key" into your Segment Settings UI as "API Key" which you can find on [Trustpilot integrations page](https://businessapp.b2b.trustpilot.com/#/ecommerce/segment).
 
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Order Completed', {

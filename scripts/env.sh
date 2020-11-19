@@ -37,13 +37,13 @@ if [[ $? != 0 ]] ; then
   else
     # install atom packages which make markdown easy
     echo "Installing useful Atom packages"
-    apm install language-markdown markdown-preview-plus minimap sort-selected-elements wordcount markdown-table-editor markdown-toc
+    apm install language-markdown markdown-preview-plus minimap atom-slugify sort-selected-elements wordcount markdown-table-editor markdown-toc
   fi
 else
     echo " ✔ Atom already installed"
     # install atom packages which make markdown easy
     echo "Installing useful Atom packages"
-    apm install language-markdown markdown-preview-plus minimap sort-selected-elements wordcount markdown-table-editor markdown-toc
+    apm install language-markdown markdown-preview-plus minimap atom-slugify sort-selected-elements wordcount markdown-table-editor markdown-toc
 fi
 
 
@@ -75,6 +75,7 @@ brew install ruby
 which -s bundler
 if [[ $? != 0 ]] ; then
   gem install -n /usr/local/bin bundler:2.1.2
+  gem install bundler:2.1.2 --user-install
   echo " ✔ Bundler installed"
 else
     echo " ✔ Bundler already installed"

@@ -5,21 +5,17 @@ title: TUNE Destination
 
 [TUNE](https://www.tune.com/) helps attribute mobile app events to the advertisements that a customer interacted with. We take care of sending those mobile events to TUNE so that they can be reconciled with ad views. The attributed data can then be [routed](#postbacks) back into other tools that you have enabled in Segment.
 
-This destination is maintained by TUNE. Their code is publicly available for [iOS](https://github.com/TuneOSS/segment-integration-ios) and [Android](https://github.com/TuneOSS/segment-integration-android). For any issues with the destination, please [reach out to their team](https://help.tune.com/contact-support/).
-
-This document was last updated on May 8, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
-
-
+This destination is maintained by TUNE. Their code is publicly available for [iOS](https://github.com/TuneOSS/segment-integration-ios) and [Android](https://github.com/TuneOSS/segment-integration-android). For any issues with the destination, [contact the TUNE Support team](https://help.tune.com/contact-support/).
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
 1.  From your Segment UI's Destinations page click on "Add Destination".
-2.  Search for "TUNE" within the Destinations Catalog and confirm the Source you'd like to connect to.
+2.  Search for "TUNE" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3.  Add your TUNE Advertiser ID in the Segment Settings UI from [your TUNE Dashboard](https://developers.tune.com/sdk/finding-your-advertiser-id-and-conversion-key/).
 4.  In your TUNE account, ensure that you have created a new app by navigating to Applications > Apps > Add A New App.
-5.  Depending on library you've installed, please follow the additional steps below to finish setting up!
+5.  Depending on library you've installed, follow the additional steps below to finish setting up!
 
 ### iOS
 
@@ -61,14 +57,14 @@ AdvertisingIdClient.Info adInfo = AdvertisingIdClient.GetAdvertisingIdInfo(this.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify({
   userId: '019mr8mf4r',
   traits: {
     name: 'Michael Bolton',
-    email: 'mbolton@initech.com',
+    email: 'mbolton@example.com',
     plan: 'Enterprise',
     friends: 42
   }
@@ -79,7 +75,7 @@ If your app has user accounts, you may want to identify these users when they lo
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track({

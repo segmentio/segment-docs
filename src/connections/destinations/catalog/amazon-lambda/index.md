@@ -3,7 +3,7 @@ title: Amazon Lambda Destination
 rewrite: true
 ---
 
-Segment makes it easy to send your data to AWS Lambda (and lots of other destinations). Once you've tracked your data using our open source [libraries](https://segment.com/libraries) we'll translate and route your data to AWS Lambda in the format they understand.
+Segment makes it easy to send your data to AWS Lambda (and lots of other destinations). Once you collect your data using Segment's [open source libraries](/docs/connections/sources/catalog/), Segment translates and routes your data to AWS Lambda in the format it can use.
 
 [AWS Lambda](https://aws.amazon.com/lambda/) lets you run code without provisioning or managing servers. You pay only for the compute time you consume - there is no charge when your code is not running.
 
@@ -56,7 +56,7 @@ There are two options for setting up the IAM policy and role:
 
 ### Use CloudFormation
 
-Using CloudFormation minimizes the setup steps needed, and is Segment's recommended way to create your Lambda's policy and role.
+Using CloudFormation minimizes the set up steps needed, and is Segment's recommended way to create your Lambda's policy and role.
 
 **Create the CloudFormation Template**
 
@@ -134,7 +134,7 @@ Sign in to the [Identity and Access Management (IAM) console](https://console.aw
 
 While setting up the new role, add the policy you created in the previous step.
 
-Finish with any other setup items you may want (like `tags`). Once that's complete, search for and click on your new roles from the [IAM home](https://console.aws.amazon.com/iam/home#/home).
+Finish with any other set up items you may want (like `tags`). Once that's complete, search for and click on your new roles from the [IAM home](https://console.aws.amazon.com/iam/home#/home).
 
 Select the "Trust Relationships" tab, then click the "Edit trust relationship" button.
 
@@ -181,7 +181,7 @@ Search for "Lambda" in our catalog. Connect the destination to the source you cr
 
 **What is the Log Type Setting?**
 
-This setting controls the [Log Type](https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax) for your Lambda function via Cloud Watch. Select option `Tail` if you would like to see [detailed logs](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html) in Cloud Watch.
+This setting controls the [Log Type](https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax) for your Lambda function using Cloud Watch. Select option `Tail` if you would like to see [detailed logs](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html) in Cloud Watch.
 
 **My Lambda <> Segment connection is timing out, what do I do?**
 

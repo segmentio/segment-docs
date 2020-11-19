@@ -6,9 +6,7 @@ Our Chartbeat destination code is open-source on GitHub if you want to [check it
 
 ## Getting Started
 
-When you toggle on Chartbeat in Segment, this is what happens:
-
-+ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading chartbeat.js onto your page. This means you should remove Chartbeat's snippet from your page.
+When you enable Chartbeat in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading `chartbeat.js` onto your page. This means you should remove Chartbeat's snippet from your page.
 + Your Chartbeat real-time dashboard will start showing live concurrent visitors.
 
 Chartbeat is only supported on the client-side.

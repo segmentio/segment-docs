@@ -9,23 +9,23 @@ It measures opens, clicks, revenue generated, breakdown of generated revenue bas
 
 Ultimately, Klaviyo lets you send personalized newsletters, automates triggered emails, product recommendations, welcome campaigns, order announcements, push notifications and sync your data to facebook custom audiences.
 
-Are you trying to setup Klaviyo as an Event Source to get data into your warehouse or other downstream tools? Go [here](https://segment.com/docs/connections/sources/catalog/cloud-apps/klaviyo/).
+Are you trying to set up Klaviyo as an Event Source to get data into your warehouse or other downstream tools? Go [here](https://segment.com/docs/connections/sources/catalog/cloud-apps/klaviyo/).
 
-This document was last updated on September 6, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on September 6, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Klaviyo" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Klaviyo" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Navigate to your [Account > Settings > API Keys](https://www.klaviyo.com/account#api-keys-tab) in the Klaviyo's UI and copy your "API Key" into the Segment Settings UI.
 5. **Note:** Private API Key is required to use the List API. You can find this by going to Klaviyo's UI and clicking [Account > Settings > API Keys > Create API Key](https://www.klaviyo.com/account#api-keys-tab) in order to generate a Private API Key and copy it into the Segment Settings UI.
 
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page();
@@ -35,7 +35,7 @@ analytics.page();
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify({
@@ -51,7 +51,7 @@ analytics.identify({
 
 When you call `identify` on analytics.js, we call Klaviyo's `identify` with the `traits` object. We augment the `traits` object to have `traits.$id` be the `userId` since Klaviyo takes the user ID on the `traits` object itself.
 
-**Note:** When sending data to Klaviyo via `analytics.js`, an initial `page` call is required. By default, this is already added in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet).
+**Note:** When sending data to Klaviyo using `analytics.js`, an initial `page` call is required. By default, this is already added in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet).
 
 We will map the following Segment spec'd traits to Klaviyo [special people properties](http://www.klaviyo.com/docs):
 
@@ -99,7 +99,7 @@ When you call `identify` using a **server side** library, you can optionally sen
 
 In order for this to work, you must add the **Private Key** inside the Klaviyo settings in Segment. You can generate a private key by clicking `Account > Settings > API Keys > Create API Key` inside Klaviyo.
 
-You can choose to provide a default `listId` that we can fallback on when adding users to a list. If you'd like to override this default `listId`, you can also do so by sending it manually via code in `destinations.Klaviyo.listId`.
+You can choose to provide a default `listId` that we can fallback on when adding users to a list. If you'd like to override this default `listId`, you can also do so by sending it manually using code in `destinations.Klaviyo.listId`.
 
 **Important**: You must provide an `email` in your `traits` or send `email` as the `userId`. Be sure to provide the `Private Key` in the Klaviyo settings for this to work.
 
@@ -125,13 +125,13 @@ analytics.identify({
 
 #### Confirm Optin
 
-You can also choose whether you want to force users to confirm the optin to your list. This flag determines whether someone is sent an email with a confirmation link before they are added to the list. The default settings will be `true`. However, you can uncheck this option in the Klaviyo settings inside Segment or override it per `identify` call via code in the `integration.Klaviyo.confirmOptin` parameter.
+You can also choose whether you want to force users to confirm the optin to your list. This flag determines whether someone is sent an email with a confirmation link before they are added to the list. The default settings will be `true`. However, you can uncheck this option in the Klaviyo settings inside Segment or override it per `identify` call using code in the `integration.Klaviyo.confirmOptin` parameter.
 
 **Note:** This setting should only be set to `false` or unchecked if you have already received explicit permission from that person to add them to this list. Inappropriately setting `Klaviyo.confirmOptin` to `false` without explicit permission of the people added can result in your Klaviyo account being suspended and/or terminated by Klaviyo.
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track({
@@ -162,7 +162,7 @@ The below table shows the out of the box mappings in our integration between our
 
 | **Segment Ecommerce Spec | Klaviyo Standard Event** |
 |  ------ | ------- |
-| `Completed Order` | `Ordered Product` |
+| `Order Completed` | `Ordered Product` |
 
 The below table shows the parameter mappings in our integration between Order Completed properties and and Klaviyo's standard properties:
 
@@ -171,7 +171,7 @@ The below table shows the parameter mappings in our integration between Order Co
 | `revenue` | `$value` |
 | `eventId` or `orderId` | `$event_id` |
 
-#### Completed Order
+#### Order Completed
 
 Klaviyo supports the `Order Completed` event that is outlined in our [specs](/docs/connections/spec/ecommerce/v2/#order-completed). If you send us a `Order Completed` event, we will send Klaviyo a `Placed Order` event and a `Ordered Product` event for each item listed in the `properties.products` array. We will also attach `customer_properties` with the `userId` set as `$id` for each of those Klaviyo events.
 

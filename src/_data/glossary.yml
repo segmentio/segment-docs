@@ -10,6 +10,9 @@ App: |
 Asynchronous: |
   Asynchronous means occurring without a specific order or sequence. In engineering, it's most often used for things like when you have to ask a server for a piece of information. If that was a synchronous task, while you were waiting for the server to respond you wouldn't be able to do anything else, you'd just be stuck waiting. But since it's asynchronous, you can request information from a server, continue to go do a bunch of other tasks, and then when the server responds you can get back to what you were doing to start. Basically it lets you work on multiple things at once (in parallel) instead of needing to finish everything in the order it comes in. Think of it like one of the ways computers are able to multi-task.
 
+Audience: |
+  [Personas Audiences](/docs/personas/audiences/) allow you to define cohorts of users or accounts based on their event behavior and traits that Segment then keeps up-to-date over time. Audiences can be built from your core tracking events, traits, or computed traits. These audiences can then be synced to hundreds of destinations or available using the Profile API.
+
 AWS: |
   Amazon Web Services, a large cloud service provider.
 
@@ -36,8 +39,10 @@ Cloud mode: |
   *Cloud mode libraries* run on a server and are completely invisible to end users. You can find the full list of server-side languages Segment supports [in the Sources catalog](/docs/connections/sources/catalog/#server). These libraries can be used to track a user in realtime as they use your app, but are also able to run batches of calls to update many end users at once. Cloud-mode libraries do not maintain "state" which means every API call you make must include every detail you want to see inside of Segment.
 
 Computed trait: |
-  A calculated field in your Personas data, for example `docs_pageviews_last_7_days`.
+  [Computed traits](/docs/personas/computed-traits/) are per-user, or per-account [traits](#traits) that you create or “compute” in [Personas](/docs/personas/). When you build a Computed Trait, Personas adds it to relevant user profiles.
 
+Custom trait: |
+  [Custom Traits](/docs/personas/audiences/#custom-traits) are user or account properties collected from all the events you send to Personas.  For example, you can add any properties that you send as a part of your track calls or identify calls (`email`, `first_name`, `last_name`) as custom traits. You can then view them in the profile explorer, and use them in your audiences, computed traits and SQL traits.
 
 Debugger: |
   This is the place in the app where you can see your events flowing through Segment
@@ -46,7 +51,7 @@ Destination: |
   A destination is a target for Segment to forward data to, and represents a tool or storage destination.
 
 Device mode: |
-  *Device mode*, (or [client-side](#client-side)) libraries are loaded on the on the user's client (for example their web browser, or mobile device), which means they can collect contextual data about the user. The three main libraries that are considered "device mode" are [Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/javascript/), which is used on websites, our [iOS SDK](https://segment.com/docs/connections/sources/catalog/libraries/ios/), and our [Android SDK](https://segment.com/docs/connections/sources/catalog/libraries/android/). Device mode libraries can maintain a cache of information about each user on the device so we know that device belongs to a consistent `anonymousId` or `userId`, and has a consistent list of traits like name, email, etc.
+  *Device mode*, (or [client-side](#client-side)) libraries are loaded on the on the user's client (for example their web browser, or mobile device), which means they can collect contextual data about the user. The three main libraries that are considered "device mode" are [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), which is used on websites, our [iOS SDK](/docs/connections/sources/catalog/libraries/mobile/ios/), and our [Android SDK](/docs/connections/sources/catalog/libraries/mobile/android/). Device mode libraries can maintain a cache of information about each user on the device so we know that device belongs to a consistent `anonymousId` or `userId`, and has a consistent list of traits like name, email, etc.
 
 
 DMP: |
@@ -59,7 +64,7 @@ ETL: |
   Extract, Transform and Load. Referring to the process of extracting data from a production system, transforming it with enriching data into a new format, and then loading it into a data warehouse for analysis (a separate database from production).
 
 Event: |
-  An event can refer to either an action by a user, or something a user does which triggers a [track call](/docs/connections/spec/track/). Events have a name (for example "Product viewed") and properties (for example the product name, price, and category), and take place in a single moment in time. We use the term "event" in contrast to "object" when talking about
+  An event can refer to either an action by a user, or something a user does which triggers a [track call](/docs/connections/spec/track/). Events have a name (for example "Product viewed") and properties (for example the product name, price, and category), and take place in a single moment in time. (This is in contrast to "[objects](#object)" which persist over a period of time, and which have properties that might change.)
 
 Identify: |
   a call that gathers information about who the user is.
@@ -70,16 +75,19 @@ JSON: |
 Library: |
   A library is a reusable piece of code which acts as a building block for higher level pieces of code. It's the software equivalent of a 'tool'. For instance, take Instagram filters. In the good old days, to take a picture with an interesting filter, you had to adjust the aperture length, the focal length, the exposure and film speed to get the desired effect. But now, you can just use Instagram, and press a button to get the pre-tuned filter that you want. They've packaged those effects in software and made them re-usable.
 
-  The most common use case for this term at Segment is in reference to the libraries people use to send data to our API. [A full list of libraries can be found in our docs](https://segment.com/docs/libraries/). Libraries can collect either in "[Device mode](#device-mode)" or "[Cloud mode](#cloud-mode)".
+  The most common use case for this term at Segment is in reference to the libraries people use to send data to our API. [A full list of libraries can be found in our docs](/docs/connections/sources/catalog/). Libraries can collect either in "[Device mode](#device-mode)" or "[Cloud mode](#cloud-mode)".
+
+Lookback: |
+  A “lookback window” limits the period of time in which data is considered when calculating a trait or audience. For example, you might set a lookback window of 7 days on an audience or trait like `new_users_7_days`, but you would not add a lookback window to a trait that isn’t time-bounded, such as `lifetime_value`.
 
 Method: |
-  A method is programming speak for "an action an object can take". It's a specific type of function that is attached to an object. All of our analytics tracking libraries create `analytics` objects, and then `track`, `identify`, `page`, [etc](/docs/conncetions/spec/) are methods you can invoke on those objects.
+  A method is programming speak for "an action an object can take". It's a specific type of function that is attached to an object. All of our analytics tracking libraries create `analytics` objects, and then `track`, `identify`, `page`, [etc](/docs/connections/spec/) are methods you can invoke on those objects.
 
 MTU: |
-  Monthly Tracked Users. You can find more about how they are calculated [here](https://segment.com/docs/guides/usage-and-billing/how-are-mtus-calculated-by-segment/) but in short, they are calculated by adding the number unique userIds and number of unique anonymousIds that a customer tracks with Segment.
+  Monthly Tracked Users. You can find more about how they are calculated [here](/docs/guides/usage-and-billing/mtus-and-throughput/#how-does-segment-calculate-mtus) but in short, they are calculated by adding the number unique userIds and number of unique anonymousIds that a customer tracks with Segment.
 
 Object: |
-  An object is a type of data that persists over time and can be updated, for example a Business or User record. Objects have "traits" which record information about that object, and which can be updated over time. For example a "user" object could have a trait of "email" which doesn't change often, but could also have a [computed trait](#computed-trait) like `logged_in_last_7_days`.
+  An object is a type of data that persists over time and can be updated, for example a Business or a User record. Objects have "traits" which record information about that object, and which can change over time. For example a "user" object could have a trait of "email" which doesn't change often, but could also have a [computed trait](#computed-trait) like `logged_in_last_7_days`. (Objects are in contrast to "[events](#event)" which happen at a single moment in time, and whose properties do not change.)
 
 OTT (Over the Top): |
   Over the top (OTT) refers to content providers that distribute streaming media as a standalone product directly to viewers over the Internet, bypassing telecommunications, multichannel television, and broadcast television platforms that traditionally act as a controller or distributor of such content.
@@ -105,7 +113,7 @@ Schema: |
   In Segment, you can send data to a Warehouse which has a schema based on the types of data you collect and route through Segment, and which updates as the data you collect changes.
 
 Server Side: |
-  Refers to a group of libraries that can send data to Segment, in [Cloud mode](#cloud-mode), meaning through the Segment cloud. "Server side" can could refer to people sending data directly to [our HTTP API](https://segment.com/docs/connections/sources/catalog/libraries/http/) without using a "library". Usually used in contrast to [Client Side](#client-side).
+  Refers to a group of libraries that can send data to Segment, in [Cloud mode](#cloud-mode), meaning through the Segment cloud. "Server side" can could refer to people sending data directly to [our HTTP API](/docs/connections/sources/catalog/libraries/server/http-api/) without using a "library". Usually used in contrast to [Client Side](#client-side).
 
 
 SDK: |
@@ -119,7 +127,7 @@ SQL: |
   select * from users where first_name equals "Alice"
   ```
 SQL Trait: |
-  A Personas trait generated from queries on your data warehouse.
+  [SQL traits](/docs/personas/sql-traits/) are per-user or per-account traits that you create by running queries against your data warehouse, which can include data not captured using your Segment implementation. Segment imports the results into Personas, and appends these traits to the user profile.
 
 Source: |
   A website, server library, mobile SDK, or cloud application which can send data into Segment.
@@ -131,13 +139,16 @@ SSP: |
   Supply-side Platform
 
 Throughput: |
-  The number of calls you can make. This is set in your account plan.
+  The number of API calls and Objects your account makes, per MTU. The limit on this number is defined by your account plan.
 
 Track: |
   Type of API call (method) which records any actions that users perform on a web or mobile app.
 
 Tracking Plan: |
   A tracking plan is a tool that our customers use to keep track of their analytics setup. It contains all of the events, pages, traits and properties they want to record with information about how each is laid out. It's often in a spreadsheet or document, but we're actually building the functionality into the core product so that people can plan out their tracking setup right from inside Segment.
+
+Traits: |
+  Traits are individual pieces of information that we know about an [object](#object). Objects persist over time, so traits can change over time.
 
 Warehouses: |
   Segment’s Data warehouse product. All event data can be sent to one of several Warehouses, where your team can use it to perform more complex analysis of the data.

@@ -5,14 +5,14 @@ Looker is a business intelligence software platform that helps you explore, anal
 
 ## Getting Started
 
-To enable the integration service in Looker, please contact your account representative. They will walk you through the implementation on the Looker side.
+To enable the integration service in Looker, contact your account representative. They will walk you through the implementation on the Looker side.
 
 From Segment's end, you will need to create a Looker source, and copy your write key into the Looker integration admin settings.
 
 
 ### Defining Looks
 
-Using this Source, Looker will send Look (query) results into Segment as `identify` calls. This is the only API method that Looker sends to Segment. Any user trait that you include as a column in your Look will be included as a user trait on these identify call.
+Using this Source, Looker will send Look (query) results into Segment as `identify` calls. This is the only API method that Looker sends to Segment. Any user trait that you include as a column in your Look will be included as a user trait on these identify call. **Note: Arrays are not currently supported. Only properties that are strings or numbers are supported.**
 
 Note: When you set up your Look and generate new user traits (column names), avoid using trait names that may already exist in your marketing tools. If you create a new user trait in Looker (e.g. "churn risk") and that trait already exists in your tools, syncing the user profile to the downstream tool will override the existing trait value with the new one.
 

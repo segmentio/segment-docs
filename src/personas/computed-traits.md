@@ -7,13 +7,18 @@ Computed Traits allow you to quickly create user or account-level calculations t
 ## Types of Computed Traits
 
 Personas currently supports the following types of computed traits:
-- [Event Counter](#event-counter)
-- [Aggregation](#aggregation)
-- [Most Frequent](#most-frequent)
-- [First](#first)
-- [Last](#last)
-- [Unique List](#unique-list)
-- [Unique List Count](#unique-list-count)
+- [Types of Computed Traits](#types-of-computed-traits)
+  - [Event Counter](#event-counter)
+  - [Aggregation](#aggregation)
+  - [Most Frequent](#most-frequent)
+  - [First](#first)
+  - [Last](#last)
+  - [Unique List](#unique-list)
+  - [Unique List Count](#unique-list-count)
+- [Conditions](#conditions)
+- [Connecting your Computed Trait to a Destination](#connecting-your-computed-trait-to-a-destination)
+- [Accessing your Computed Traits using the Profiles API](#accessing-your-computed-traits-using-the-profiles-api)
+- [Downloading your Computed Trait as a CSV](#downloading-your-computed-trait-as-a-csv)
 
 ### Event Counter
 
@@ -118,11 +123,12 @@ Account-level examples:
 ![](images/1542074153487.png)
 
 ## Conditions
+
 All computed trait types support a common "Add Conditions" section. Conditions defined here restrict the messages considered when calculating the final value of the computed trait by looking at a property of the events. For example, you could limits events to only those where "price" is greater than 30.00 or where "page.url" contains "pricing".
 
-There are twelve different operators currently available.
+The following operators are available.
 - equals
-- not equals
+- not equals -
 - less than
 - greater than
 - less than or equal
@@ -142,20 +148,22 @@ There are twelve different operators currently available.
 
 ## Connecting your Computed Trait to a Destination
 
-User-level computed Traits are sent to destinations on our platform through the [identify](/docs/connections/spec/identify) call as a user trait. The trait name will correspond to the snake-cased name that you can find in the trait settings, for e.g. `most_viewed_page_category`. You can find the list of destinations [here](/docs/personas/activation)
+Personas sends user-level computed Traits to destinations using the [Identify call](/docs/connections/spec/identify/) for user traits, or using the [Track call](/docs/connections/spec/track/) for event properties. Learn more about [Computed trait generated events here](/docs/personas/using-personas-data/#computed-trait-generated-events). The trait name corresponds to the snake cased name that you see in the trait settings, for example `most_viewed_page_category`. See the [list of Personas-compatible destinations](/docs/personas/using-personas-data/#compatible-personas-destinations)
 
 ![](images/1525837601768.png)
 
-For account-level computed traits, you have the option to send either a [group](/docs/connections/spec/group) call and/or [identify](/docs/connections/spec/identify) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, we will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account.
+For account-level computed traits, you have the option to send either a [group](/docs/connections/spec/group/) call and/or [identify](/docs/connections/spec/identify/) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, we will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account.
 
-## Accessing your Computed Traits via the Profiles API
+## Accessing your Computed Traits using the Profiles API
 
-You can access your computed traits via the Profile API by querying the `/traits` endpoint. For example, if you can query for the `emails_opened_last_30_days` with the following GET request:
+You can access your computed traits using the Profile API by querying the `/traits` endpoint. For example, if you can query for the `emails_opened_last_30_days` with the following GET request:
 
-    https://profiles.segment.com/v1/spaces/<workspace_id>/collections/users/profiles/email:john.doe@segment.com/traits?include=emails_opened_last_30_days
+```
+https://profiles.segment.com/v1/spaces/<workspace_id>/collections/users/profiles/email:john.doe@segment.com/traits?include=emails_opened_last_30_days
+```
 
 returns:
-
+```json
     {
         "traits": {
             "emails_opened_last_30_days": 255
@@ -167,96 +175,22 @@ returns:
             "limit": 100
         }
     }
-
-View the full Profile API docs [here](/docs/personas/profile-api/)
-
-
-## Audiences
-
-Audiences allow you to define cohorts of users or accounts based on their event behavior and traits that Segment then keeps up-to-date over time. Audiences can be built from your core **tracking events**, **traits**, or **computed traits**. These audiences can then be sycned to hundreds of destinations or available via the [Profile API](/docs/personas/profile-api).
-
-### Building an Audience
-
-**Events**
-
-You build an audience from any of the events that are connected to Personas. This includes any [track](/docs/connections/spec/track), [page](/docs/connections/spec/page), or [screen](/docs/connections/spec/screen) calls. You can use the `property` button to refine the audience on specific event properties as well. Select `and not who` to indicate users that have not performed an event. For example, you might want to look at all users that have viewed a product above a certain price point, but not completed the order.
-
-![](images/1526326688131.png)
-
-You can also specify two different types of time-windows, `within` and `in between`. Within lets you specify an event that occurred in the last `x` number of days. In-between lets you specify events that occurred over a rolling time-window in the past. A common use case is to look at all customers that were active 30 to 90 days ago, but have not completed an action in the last 30 days.
-
-**Traits**
-
-You can also build audiences based on traits. These can traits collected from your apps via an (identify)[/docs/connections/spec/identify] call, or any of the computed traits you have generated through the Personas UI. For example, if you have created a `total_revenue` computed trait, you can use this to generate an audience of `big_spender` customers that exceed a certain threshold.
-
-![](images/1526327264494.png)
-
-**Account-Level audiences**
-
-If you are a B2B business, you might want to build an audience of accounts. You can leverage both account-level traits that you've sent through the [group](/docs/connections/spec/group) call, or user-level traits and events. For example, you might want to re-engage a list of at-risk accounts defined as companies which are on a business tier plan and where none of the users in that account have logged in recently. When incorporating user-level events or traits, you can specify `None of the users`, `Any users`, or `All users`.
-
-![](images/1542075123519.png)
-
-### Connecting your Audience to a Destination
-
-Once you have previewed your audience, you can choose to connect a destination, or simply keep the audience in Segment and download a csv. If you already have destinations setup in Segment, you can import the configuration from one of your existing sources to Personas. Note that you can only connect one destination configuration per destination type.
-
-![](images/1542075497746.png)
-
-Once you have created your audience, we will start syncing your audience to the destinations you have selected. Audiences are either sent to destinations as a boolean user-property or a user-list, depending on what is supported by the destination. Learn more about supported destinations [here](/docs/personas/activation/#destinations).
-
-For account-level audiences, you have the option to send either a [group](/docs/connections/spec/group) call and/or [identify](/docs/connections/spec/identify) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, we will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account.
-
-## Realtime Compute vs. Batch
-
-Realtime Compute allows you to update traits and audiences as Segment receives new events. Realtime Compute unlocks exciting use cases:
-
-  - **Intra-Session App Personalization:** change your app experience with personalized onboarding, product recommendations, and faster funnels based on a user entering and exiting an audience.
-  - **Instant Messaging:** Trigger messages in email, livechat, and push notifications instantly, to deliver immediate experiences across channels.
-  - **Operational Workflows:** Supercharge your sales and support teams by responding to customer needs faster, based on the latest understanding of a user
-
-1. **Go to your Computed Traits or Audiences tab in Personas > New**
-![](images/1538693216424_image.png)
-
-
-2. **Create your computed trait or audience.**
-
-*You will see a Lightning bolt indicating that the computation will be updated in realtime.*
-
-![](images/1538693443980_image.png)
-
-3. **Preview your audience > Select Destinations > Review & Create**
-
-*By default, Segment queries all historical data to set the current value of the computed trait and audience. If you want to compute values only using data from the time you activate the feature on, uncheck Historical Backfill.*
-
-![](images/1538693602203_image.png)
-
-
-Note that Facebook Custom Audiences, Marketo Lists, and Adwords have rate limits on how quickly we can update an audience. We will sync at the fastest frequency allowed by the tool. This is between 1 hour and 6 hours.
-
-
-### Accessing your audiences via the Profiles API
-
-You can access your audiences via the Profile API by querying the `/traits` endpoint. For example, if you can query for the `high_value_user` with the following GET request:
-
-```
-    https://profiles.segment.com/v1/spaces/<workspace_id>/collections/users/profiles/email:alex@segment.com/traits?limit=100&include=high_value_user
 ```
 
-returns:
+You can read the [full Profile API docs](/docs/personas/profile-api/) to learn more.
 
-```json
-    {
-        "traits": {
-            "high_value_user": true
-        },
-        "cursor": {
-            "url": "",
-            "has_more": false,
-            "next": "",
-            "limit": 100
-        }
-    }
-```
+## Downloading your Computed Trait as a CSV
 
-View the full Profile API docs [here](/docs/personas/profile-api/)
+You can download a copy of your trait by visiting the the computed trait overview page.
+![](images/trait_overview.png)
+Computed Trait CSVs are generated on demand. Before you can download the CSV, you will need to generate it. There are three different options for formatting:
+- **Unformatted:** Contains three columns. The first contains the user or account key, the second contains the trait value and the third is a JSON object containing the external IDs. Generating this CSV is by far the fastest of the three options. [Download example unformatted CSV](files/trait_csv_format_a.csv)
+- **Distinct columns for unique external IDs (with indexed columns for ID types with multiple values):** Contains the same first three columns as the unformatted CSV. Additional columns are added for each distinct external ID type. When a single row has more than one value for a given external ID type, for example a user with three email addresses, _additional columns with indexed headers are added_, (`email`, `email_1`, `email_2`). [Download example formatted CSV with indexed columns](files/trait_csv_format_b.csv)
+- **Distinct columns for unique external IDs (with additional rows for ID types with multiple values):** Contains the same first three columns as the unformatted CSV. Additional columns are added for each distinct external ID type. When a single row has more than one value for a given external ID type, for example a user with two email addresses, _additional rows are added with the first three columns repeated (user or account key, trait value and external IDs JSON)._ [Download example formatted CSV with additional rows](files/trait_csv_format_c.csv)
+<table>
+    <tr>
+        <td>![](images/large_trait_csv.png)</td>
+        <td width="45%">Generating a CSV can take a substantial amount of time for large traits (around 30 seconds for a formatted CSV with 1 million rows). For CSVs that are expected to take over 20 seconds, the Segment app displays an estimated generation time. After clicking Generate, it is recommended that you leave the modal and page open while the CSV is created.
+        (If the trait recalculates between when you click Generate and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.)</td>
+    </tr>
+</table>

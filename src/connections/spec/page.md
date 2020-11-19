@@ -6,17 +6,17 @@ The `page` call lets you record whenever a user sees a page of your website, alo
 
 {% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/299969?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Page Method" content="Check out our high-level overview of the Page method in Segment University. (Must be logged in to access.)" %}
 
-**Note:** **In `analytics.js` a `page` call is included in the snippet by default** just after `analytics.load`. We do that because you **must** call this method at least once per page load. However, you can choose to add an optional `name` or `properties` to the default call, or call it multiple times if you have a single-page application.
+**Note: In `analytics.js` a `page` call is included in the snippet by default** just after `analytics.load`. We do that because you **must** call this method at least once per page load. However, you can choose to add an optional `name` or `properties` to the default call, or call it multiple times if you have a single-page application.
 
 Here's the payload of a typical `page` call with most [common fields](/docs/connections/spec/common/) removed:
 
-```js
+```json
 {
   "type": "page",
   "name": "Home",
   "properties": {
     "title": "Welcome | Initech",
-    "url": "http://www.initech.com"
+    "url": "http://www.example.com"
   }
 }
 ```
@@ -40,7 +40,7 @@ Beyond the common fields, the `page` call takes the following fields:
 
 Here's a complete example of a `page` call:
 
-```js
+```json
 {
   "anonymousId": "507f191e810c19729de860ea",
   "channel": "browser",
@@ -57,7 +57,7 @@ Here's a complete example of a `page` call:
   "name": "Home",
   "properties": {
     "title": "Welcome | Initech",
-    "url": "http://www.initech.com"
+    "url": "http://www.example.com"
   },
   "receivedAt": "2015-02-23T22:28:55.387Z",
   "sentAt": "2015-02-23T22:28:55.111Z",

@@ -2,9 +2,9 @@
 title: 'Spec: Common Fields'
 ---
 
-In the Segment [Spec](/docs/connections/spec/) all the [API calls](/docs/connections/spec#api-calls) have a common structure, and a few common fields.
+In the Segment [Spec](/docs/connections/spec/) all the [API calls](/docs/connections/spec/) have a common structure, and a few common fields.
 
-However, not all destinations accept all fields included in the Spec. Not sure which fields a destination accepts? Refer to the destination's documentation page, or check out the [open-source destination code on Github](https://github.com/segment-integrations).
+However, not all destinations accept all fields included in the Spec. Not sure which fields a destination accepts? Refer to the destination's documentation page, or check out the [open-source destination code on GitHub](https://github.com/segment-integrations).
 
 {% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/324252?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Segment Methods" content="Check out our high-level overview of these APIs in Segment University. (Must be logged in to access.)" %}
 
@@ -146,7 +146,7 @@ Context is a dictionary of extra information that provides useful context about 
   <tr>
     <td>`campaign`</td>
     <td>Object</td>
-    <td>Dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term` and `content`.
+    <td>Dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term`, `content`, and any other custom UTM parameter.
     <br><br>
     This maps directly to the common UTM campaign parameters.
     </td>
@@ -154,7 +154,7 @@ Context is a dictionary of extra information that provides useful context about 
   <tr>
     <td>`device` </td>
     <td>Object</td>
-    <td>Dictionary of information about the device, containing `id`, `manufacturer`, `model`, `name`, `type` and `version`.</td>
+    <td>Dictionary of information about the device, containing `id`, `advertisingId`, `manufacturer`, `model`, `name`, `type` and `version`.</td>
   </tr>
   <tr>
     <td>`ip`</td>
@@ -189,7 +189,7 @@ Context is a dictionary of extra information that provides useful context about 
   <tr>
     <td>`page`</td>
     <td>Object</td>
-    <td>Dictionary of information about the current page in the browser, containing `hash`, `path`, `referrer`, `search`, `title` and `url`. This is automatically collected by Analytics.js.
+    <td>Dictionary of information about the current page in the browser, containing `path`, `referrer`, `search`, `title` and `url`. This is automatically collected by [Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#context--traits).
     </td>
   </tr>
   <tr>
@@ -277,8 +277,8 @@ Other libraries only collect `context.library`, any other context variables must
 | userAgent                |      √       |               |      √            |
 | timezone                 |              |      √        |      √            |
 
-* IP Address is not collected by our libraries, but instead filled in by our servers when it receives a message for **client side events only**.
-* Our Android library collects `screen.density` with [this method](/docs/connections/spec/common/#context-fields-automatically-collected).
+- IP Address is not collected by our libraries, but instead filled in by our servers when it receives a message for **client side events only**.
+- Our Android library collects `screen.density` with [this method](/docs/connections/spec/common/#context-fields-automatically-collected).
 
 ## Integrations
 
@@ -392,4 +392,4 @@ The `receivedAt` timestamp is most important as the sort key in our Warehouses p
 
 The `timestamp` timestamp specifies when the datapoint occurred, corrected for client-device clock skew. This is the timestamp that is passed to downstream destinations and used for historical replays. It is important to use this timestamp for importing historical data to the API.
 
-The `timestamp` field is settable from our server-side libs or if passing info directly to the HTTP endpoints.
+If you are using the Segment server Source libraries, or passing calls directly to the HTTP API endpoint, you can manually set the `timestamp` field.  If you are using a Segment Source in device mode, the library generates `timestamp` and you cannot manually set one directly in the call payload. However, for mobile sources, you can use Middleware ([Middleware for iOS](/docs/connections/sources/libraries/mobile/ios/middleware/), [Middleware for Android](/docs/connections/sources/libraries/mobile/ios/middleware/)) to modify the payload, including the timestamp. (You might manually set or override a timestamp to import historical data to the Segment API). 

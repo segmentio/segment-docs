@@ -7,7 +7,7 @@ rewrite: true
 
 Our Clicky destination code is open-source on GitHub. You can check out the code [here](https://github.com/segment-integrations/analytics.js-integration-clicky).
 
-This document was last updated on July 30th, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on July 30th, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 
 ## Getting Started
@@ -15,16 +15,16 @@ This document was last updated on July 30th, 2018. If you notice any gaps, outda
 {% include content/connection-modes.md %}
 
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Clicky" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in your Site ID in the settings. You can find your Site ID under the Preferences of your account.
-4. We'll automatically initialize Clicky's script with your Site ID upon loading analytics.js.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Clicky" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. In the destination settings, enter your Site ID in the settings. You can find your Site ID under the Preferences of your account.
+4. Segment automatically initializes Clicky's script with your Site ID upon loading analytics.js.
 
 - - -
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like this:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like this:
 
 ```javascript
 analytics.page("Home",{
@@ -37,7 +37,7 @@ When you call [`page`](/docs/connections/spec/page/), we call Clicky's `log` fun
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like this:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like this:
 
 ```javascript
 analytics.identify('ze8rt1u89', {
@@ -57,7 +57,7 @@ When you make an Identify call with Segment, we will create a Clicky custom sess
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track("My Custom Event", {

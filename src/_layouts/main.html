@@ -12,6 +12,8 @@ layout: default
         {% include menu/menu-glossary.html %}
       {% elsif currentPage[1] == 'partners' %}
         {% include menu/menu-partners.html %}
+      {% elsif currentPage[1] == 'config-api' %}
+      {% include menu/menu-config-api.html %}
       {% else %}
         {% include menu/menu.html %}
       {% endif %}

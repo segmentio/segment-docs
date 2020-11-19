@@ -1,20 +1,22 @@
 ---
 title: "Building a Subscription Function"
+redirect_from: '/partners/build-functions/'
 ---
 
 Subscription Functions allow you to write custom JavaScript code that sends Segment Event Data to existing APIs. This guides explains how to write custom functions.
 
 ## Getting Started
 
-Please review the steps outlined in the [Developer Center Overview](/docs/partners). This document outlines specific details for Step 4 as it relates to building a Subscription Function. 
+Review the steps outlined in the [Developer Center Overview](/docs/partners). This document outlines specific details for Step 4 as it relates to building a Subscription Function.
 
 1. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model) and [Spec](https://segment.com/docs/connections/spec).
-2. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/).
-3. Create an App.
-4. Build and test your Component(s).
-5. Publish documentation.
-6. Submit your App for review.
-7. Launch into _Public Beta_!
+2. Follow Segment's security guidance.
+3. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/).
+4. Create an App.
+5. Build and test your Component(s).
+6. Publish documentation.
+7. Submit your App for review.
+8. Launch into _Public Beta_!
 
 
 ## Build
@@ -38,7 +40,7 @@ The two items passed into the functions are the _event payload_ and the _setting
 * The _Event_ argument to the function is the [Segment Event Data](https://segment.com/docs/connections/spec/common/#structure)
 * The _Settings_ argument to the function contains user settings like _apiKey_ and any custom settings you have added.
 
-The functions are ["async/await" style JavaScript](https://javascript.info/async-await), and should use the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) via the pre-loaded `fetch` package.
+The functions are ["async/await" style JavaScript](https://javascript.info/async-await), and should use the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) using the pre-loaded `fetch` package.
 
 Here's a basic example of a function that POSTs the event to a "request bin" for introspection. You can go to [RequestBin](https://requestbin.com/) to create your own `endpoint` to experiment with. This builds a query string for the URL, sets a basic auth header, and sends a JSON body:
 

@@ -5,20 +5,14 @@ title: AdRoll Destination
 
 [AdRoll](https://developers.adroll.com/) is a retargeting network that allows you to show ads to visitors who've landed on your site while browsing the web. The AdRoll Destination is open-source. You can browse the code on [GitHub](https://github.com/segment-integrations/analytics.js-integration-adroll).
 
-This document was last updated on January 26, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
-
-**Use Cases**
-
-* [Retarget users who abandon signup with AdRoll](https://segment.com/recipes/retarget-users-abandoned-signup-adroll/)
-* [Personalize retargeting display ads by company size with AdRoll](https://segment.com/recipes/personalize-ads-by-company-size-adroll/)
-* [Retarget shopping cart abandoners with AdRoll to increase conversions](https://segment.com/recipes/abandon-cart-retargeting-adroll/)
+This document was last updated on January 26, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Adroll" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Adroll" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Locate both your AdRoll Advertiser ID and Pixel ID in AdRoll's "Audience" tab, "AdRoll Pixel" section. Click on "View Pixel". Your Advertiser ID will be listed beside `adroll_adv_id` and your AdRoll Pixel will be listed beside `adroll_pix_id`.
 
     ![](images/adroll-pixel.png)
@@ -27,7 +21,7 @@ This document was last updated on January 26, 2018. If you notice any gaps, outd
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 ```javascript
 analytics.page()
 ```
@@ -35,7 +29,7 @@ _**NOTE:** The `page` call **must** be made on a page for any `identify` or `tra
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 ```javascript
 analytics.identify('123', {
   email: 'testing@segment.com'
@@ -46,7 +40,7 @@ Set a `userId` using the `identify` call which will then be passed it to AdRoll 
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 ```javascript
 analytics.track('Sign-up Form Completed');
 ```
@@ -96,7 +90,7 @@ analytics.track('Vewed Product', {
 
 ### **Legacy:** Named Segments
 
-Prior to rolling out Segment ID's, AdRoll allowed "named segments". If your account was created prior to 2015, then the track events you send from the browser via our [`analytics.track`](https://segment.com/docs/connections/destinations/catalog/adroll/#track) method will be passed on to AdRoll as `adroll_segments` with the segment being the snake-cased event name.
+Prior to rolling out Segment ID's, AdRoll allowed "named segments". If your account was created prior to 2015, then the track events you send from the browser using our [`analytics.track`](https://segment.com/docs/connections/destinations/catalog/adroll/#track) method will be passed on to AdRoll as `adroll_segments` with the segment being the snake-cased event name.
 
 ## Troubleshooting
 

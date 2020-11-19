@@ -126,8 +126,10 @@
     margin-bottom: 18px;
 
     @include breakpoint(medium up) {
-      margin-top: 24px;
-      margin-bottom: 24px;
+      border: 1px solid #ddd;
+      display: block;
+      margin: 24px auto;
+      border-radius: 5px;;
     }
   }
 
@@ -231,6 +233,7 @@
 
       &:first-of-type {
         padding-left: 5px;
+        min-width: 150px;
       }
 
       &:last-of-type {
@@ -272,5 +275,31 @@
 
   .underline {
     text-decoration: underline;
+  }
+
+  .double {
+    @include breakpoint(medium up) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .media-icon {
+      &:nth-of-type(even) {
+        margin-top: 20px;
+      }
+
+      @include breakpoint(medium up) {
+        width: calc(50% - 10px);
+
+        &:nth-of-type(even) {
+          margin-top: 0px;
+          margin-left: 20px;
+        }
+      }
+
+      &__anchor {
+        display: none;
+      }
+    }
   }
 }

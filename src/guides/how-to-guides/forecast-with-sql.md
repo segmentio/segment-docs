@@ -8,7 +8,7 @@ The LTV calculation is not straightforward for e-commerce businesses, since futu
 
 This guide shows how to calculate forward-looking LTV for non-contractual businesses using SQL and Excel. This analytical approach allows you to accurately rank your highest value customers, as well as predict their future purchase sizes to help focus your marketing efforts.
 
-In this guide, we assume that you're using the tracking scheme we described in [How to implement an e-commerce tracking plan](https://segment.com/docs/guides/sources/how-to-implement-an-ecommerce-tracking-plan) and are storing data in a [Segment Warehouse](https://segment.com/warehouses).
+In this guide, we assume that you're using the tracking scheme we described in [How to implement an e-commerce tracking plan](/docs/connections/spec/ecommerce-tracking-plan/) and are storing data in a [Segment Warehouse](https://segment.com/warehouses).
 
 [Talk to a product specialist](https://segment.com/contact/sales) to learn how companies like Warby Parker and Crate & Barrel use a data warehouse to increase engagement and sales.
 

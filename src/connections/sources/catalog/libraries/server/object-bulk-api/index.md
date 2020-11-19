@@ -42,7 +42,7 @@ Example objects:
     <td>Object</td>
     <td>
       The object properties that represent the object. Example:<br/><br/>
-      Each value could be a string (ISO dates are parsed and recognised as `isodate` type), an integer, or a float (json types).<br/><br/>
+      Each value could be a string (ISO dates are parsed and recognised as `isodate` type), an integer, or a float (JSON types).<br/><br/>
       Values cannot be lists or objects. Each value must be less 32kb in size.
     </td>
   </tr>
@@ -57,7 +57,7 @@ In practice that means taking a Segment source **Write Key** encoding it with ba
 
 ### Source Type
 
-Setup an `HTTP API` source type in Segment. You will use this source write key for authenticating with the Objects Bulk API.
+set up an `HTTP API` source type in Segment. You will use this source write key for authenticating with the Objects Bulk API.
 
 ### Limits
 The API imposes some rate limits including:
@@ -210,4 +210,4 @@ If the data being collected is streaming all of the time then the **Objects API*
 
 ### Can you just pull data automatically from my database?
 
-If you would like this feature, please [contact us](https://segment.com/contact/) and let us know.
+If you would like this feature, [contact us](https://segment.com/contact/) and let us know.

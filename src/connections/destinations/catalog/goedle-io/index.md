@@ -3,9 +3,9 @@ title: Goedle.io Destination
 rewrite: true
 ---
 
-[goedle.io](https://goedle.io/) uses powerful AI and Machine Learning algorithms to predict user behavior. The more data you provide, the better its recommendations will be. This destination is maintained by Goedle. For any issues with the destination, please [reach out to their team](mailto:support@goedle.io).
+[goedle.io](https://goedle.io/) uses powerful AI and Machine Learning algorithms to predict user behavior. The more data you provide, the better its recommendations will be.
 
-This document was last updated on May 16, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This destination is maintained by Goedle. For any issues with the destination, [contact the Goedle Support team](mailto:support@goedle.io).
 
 
 ## Getting Started
@@ -13,14 +13,14 @@ This document was last updated on May 16, 2018. If you notice any gaps, outdated
 {% include content/connection-modes.md %}
 
 1.  From your Segment UI's Destinations page click on "Add Destination".
-2.  Search for "Goedle" within the Destinations Catalog and confirm the Source you'd like to connect to.
+2.  Search for "Goedle" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3.  In your Segment Settings UI, enter your goedle.io app key which you received upon [sign up](https://go.goedle.io/signup "Sign up at goedle.io").
-4.  After activating, goedle.io will start automatically collecting data from your website, mobile app, or game. However, it will take up to 24 hours for goedle.io to process this data and predict future user behavior - you will receive an email from goedle.io when your data is available.
+4.  After activating, goedle.io starts automatically collecting data from your website, mobile app, or game. However, it will take up to 24 hours for goedle.io to process this data and predict future user behavior - you will receive an email from goedle.io when your data is available.
 
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page();
@@ -30,7 +30,7 @@ goedle.io will track a pageview and log the `path` [property](https://segment.co
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.screen();
@@ -41,7 +41,7 @@ goedle.io will track a screenview on your mobile app and log the `name` [propert
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('ze8rt1u89', {
@@ -55,7 +55,7 @@ goedle.io will set the `userId`, as well as specific user traits that are provid
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Reached Level', {

@@ -4,24 +4,19 @@ title: Youbora Destination
 
 ### Web Destination
 
-When you toggle on Youbora for a website in Segment, this is what happens:
+When you enable Youbora in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Youbora's Javascript onto your page. (This means you should remove Youbora's snippet from your page.)
 
-+ Our CDN is updated within 45 minutes. Then our snippet will start
-  asynchronously loading Youbora's Javascript onto your page. This means you
-  should remove Youbora's snippet from your page.
-+ Youbora will automatically start recording data.
+Youbora automatically starts recording data.
 
 ## Tracking Video Events
-Segment can keep track of events occuring on any number of video players on your
-page. **Note that it is required to include the property `session_id` with every
-single video event you wish to send to the Youbora<->Segment integration so that
-we can keep track of which player to attribute events to.**
+
+Segment can keep track of events occurring on any number of video players on your
+page. **You must include the `session_id` propert with every video event you want to send to the Youbora so Segment can keep track of which player to attribute the events to.**
 
 
 ### Video Playback Started
 
-When a user starts playback of a video, you should use our [Video Playback
-Started](/docs/connections/spec/video/#playback-events) event. We will map the properties
+When a user starts playback of a video, use the [Video Playback Started](/docs/connections/spec/video/#playback-events) event. Segment maps the properties
 from the Video Playback Started event to the following Youbora video metadata
 fields:
 
@@ -45,8 +40,8 @@ fields:
 
 ### Video Content Started
 
-When the video content actully begins playing, you should use our [Video Content
-Started](/docs/connections/spec/video/#content-events) event. We will map the properties
+When the video content actually begins playing, use the [Video Content
+Started](/docs/connections/spec/video/#content-events) event. Segment maps the properties
 from the Video Playback Started event to the following Youbora video metadata
 fields:
 
@@ -93,13 +88,13 @@ Content Started`, Youbora will calculate the join time for you.
 
 ### Video Playback Paused/Resumed
 
-When a user pauses/resumes playback of a video, you should use our [Video
+When a user pauses/resumes playback of a video, use the [Video
 Playback Paused](/docs/connections/spec/video/#playback-events) and [Video Playback
 Resumed](/docs/connections/spec/video/#playback-events) events.
 
-If the user pauses during an ad, please be sure to fill the
+If the user pauses during an ad, be sure to fill the
 `properties.ad_asset_id` field from our spec for **both** calls, as we use its
-presence to determine whether the pause is occuring during an ad or not.
+presence to determine whether the pause is occurring during an ad or not.
 
 **Example**
 
@@ -117,7 +112,7 @@ analytics.track('Video Playback Resumed', {
 
 ### Video Playback Seek Started/Completed
 
-When the video content actully begins playing, you should use our [Video
+When the video content actually begins playing, use the [Video
 Playback Seek Started](/docs/connections/spec/video/#playback-events) and [Video Playback
 Seek Completed](/docs/connections/spec/video/#playback-events) events. Youbora internally
 calculates the duration of the seek but if you would prefer to provide this
@@ -133,14 +128,14 @@ analytics.track('Video Playback Seek Completed');
 
 ### Video Playback Buffer Started/Completed
 
-When the video content buffers during playback, you should use our [Video
+When the video content buffers during playback, use the [Video
 Playback Buffer Started](/docs/connections/spec/video/#playback-events) and [Video Playback
-Buffer Completed](/docs/connections/spec/video/#playback-events) events. We will map the
+Buffer Completed](/docs/connections/spec/video/#playback-events) events. Segment maps the
 properties from these events to the following Youbora video metadata fields:
 
-If the buffer occurs during an ad, please be sure to fill the
+If the buffer occurs during an ad, be sure to fill the
 `properties.ad_asset_id` field from our spec for **both** calls, as we use its
-presence to determine whether the buffer is occuring during an ad or not.
+presence to determine whether the buffer is occurring during an ad or not.
 
 **Example**
 
@@ -152,12 +147,11 @@ analytics.track('Video Playback Buffer Completed', { session_id: 1 });
 
 ### Video Playback Interrupted
 
-When playback of a video is interrupted, you should use our [Video Playback
-Interrupted](/docs/connections/spec/video/#playback-events) event.
+When playback of a video is interrupted, use the [Video Playback Interrupted](/docs/connections/spec/video/#playback-events) event.
 
 ### Video Playback Completed
 
-To track the completion of the video playback session, please use our [Video
+To track the completion of the video playback session, use our [Video
 Playback Completed](https://segment.com/docs/connections/spec/video/#playback-events) event.
 
 **Example**
@@ -168,8 +162,7 @@ analytics.track('Video Playback Completed', { session_id: 1 });
 
 ### Video Ad Started
 
-When an ad begins to load, you should use our [Video Ad
-Started](/docs/connections/spec/video/#ad-events) event. We will map the properties from
+When an ad begins to load, use the [Video Ad Started](/docs/connections/spec/video/#ad-events) event. Segment maps the properties from
 these events to the following Youbora video metadata fields:
 
 <table>
@@ -193,7 +186,7 @@ analytics.track('Video Ad Started', { session_id: 1, title: 'Test Ad Title', ad_
 
 ### Video Ad Completed
 
-To track the completion of an ad, please use our [Video Ad
+To track the completion of an ad, use our [Video Ad
 Completed](https://segment.com/docs/connections/spec/video/#ad-events) event.
 
 **Example**
@@ -204,7 +197,7 @@ analytics.track('Video Ad Completed', { session_id: 1, ad_asset_id: 1 });
 
 ### Video Ad Clicked
 
-To track an ad click, please track an event with event name 'Video Ad Clicked'.
+To track an ad click, track an event with event name 'Video Ad Clicked'.
 
 **Example**
 
@@ -272,7 +265,7 @@ below steps:
 }
 ```
 
-In the `player` field, please pass the video player object, or the ID of the
+In the `player` field, pass the video player object, or the ID of the
 video player element in the case of HTML5.
 
 In the `options` field, you can pass options the same way you would pass them
@@ -285,9 +278,9 @@ See the below example for what a working implementation looks like:
   <script>
     var vplayer = videojs('html5player')
 
-    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var
-      e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,o){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src="http://localhost:3000/analytics.js/v1/"+t+"/analytics.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n);analytics._loadOptions = o;};analytics.SNIPPET_VERSION="4.0.0";
-      analytics.load("K3wz25G4iMGTJcsHFOWeuAWk6BBfwF3e", {
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+
+      analytics.load("YOUR_WRITE_KEY", {
         integrations: {
           Youbora: {
             players: {

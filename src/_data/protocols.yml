@@ -1,0 +1,29 @@
+sections:
+- section_title: There are four steps to using Protocols
+  section_col: 12
+  section:
+  - name: 1. Align teams with a Tracking Plan
+    description: "Good data quality starts with a well thought out Tracking Plan. With Protocols, you can define your events and corresponding properties in a Tracking Plan. This tracking plan becomes a central source of truth for product, engineering, analytics, and business teams."
+    path: /protocols/tracking-plan/best-practices/
+  - name: 2. Validate data quality with violations
+    description: "With your tracking plan living in Segment, you can apply it to 1 or more data sources. Any event or property that does not match the tracking plan will generate a violation. Violations are displayed in aggregated form to spot trends, and detailed form to help you quickly find and resolve discrepancies."
+    path: /protocols/validate/connect-sources/
+  - name: 3. Enforce data standards with controls
+    description: "To maintain a high degree of quality over time, we offer strict controls to block non-conforming events. Blocked events can be forwarded to a separate quarantined Segment source for analysis and review."
+    path: /protocols/enforce/schema-configuration/
+  - name: 4. Resolve data issues with transformations
+    description: "Even the most exacting data collection processes are subject to human error and organizational complexity. Transformations can be applied from within Protocols to change event and property names without touching code."
+    path: /protocols/transform/
+
+- section_title: Learn more
+  section_col: 4
+  section:
+  - name: Best Practices
+    description: "Learn more about tracking plans and why you need them."
+    path: /protocols/tracking-plan/best-practices/
+  - name: Tracking Plan
+    description: "Create a Tracking Plan to standardize your collected data."
+    path: /protocols/tracking-plan/create/
+  - name: FAQ
+    description: "Get answers to Protocols questions that come up the most."
+    path: /protocols/faq/

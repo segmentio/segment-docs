@@ -4,15 +4,14 @@ rewrite: true
 ---
 [Delighted](https://delighted.com/) is the fastest and easiest way to gather actionable feedback from your customers. Use the feedback you gather from customers in all of your decision making processes. Send your feedback to your BI and data warehouses automatically.
 
-This source is maintained by Delighted. For any issues with the source, you may [contact their team](mailto:hello@delighted.com).
+This source is maintained by Delighted. For any issues with the source, you may [contact the Delighted Support team](mailto:hello@delighted.com).
 
-This document was last updated on October 19, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
 1. From your Segment UI's Sources page click on "Add Source".
 2. Search for Delighted within the Sources Catalog and confirm by clicking "Connect".
-3. Give the Source a nickname and follow the setup steps to "Add Source". The nickname is used as a label for the source in your Segment interface, and Segment creates a related schema name which you query against in your warehouse. The nickname can be anything, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (Eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
+3. Give the Source a nickname and follow the set up steps to "Add Source". The nickname is used as a label for the source in your Segment interface, and Segment creates a related schema name which you query against in your warehouse. The nickname can be anything, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (Eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
 4. Sign in to your Delighted account and visit the [Segment destination](https://delighted.com/integrations/segment) to connect.
 5. Once you connect with Segment you need to choose which `track` events you'd like to use as triggers for surveys to be sent people. Then you can configure Delighted to send feedback back to Segment by following the next 2 steps.
 6. Enable the "Sync feedback to Segment" option.
@@ -111,7 +110,7 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the [Destination docs](https://segment.com/docs/connections/destinations/) for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, please [contact the Delighted team](mailto:hello@delighted.com).
+If you experience any issues with how the events arrive in Segment, [contact the Delighted team](mailto:hello@delighted.com).
 
 
 ## Sending Data To Delighted

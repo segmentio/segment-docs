@@ -33,17 +33,18 @@ This event should be sent when a new account is created.
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`account_name`          | String | The name of the account being created.
-`context.groupId`       | String | The id of the account being created.
+| Property          | Type   | Description                            |
+| ----------------- | ------ | -------------------------------------- |
+| `account_name`    | String | The name of the account being created. |
+| `context.groupId` | String | The id of the account being created.   |
+
 
 
 #### Example
 
 {% comment %} api-example '{
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Account Created",
   "properties": {
     "account_name": "Initech"
@@ -56,7 +57,7 @@ Property                | Type   | Description
 ```js
 {
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Account Created",
   "properties": {
     "account_name": "Initech"
@@ -75,16 +76,16 @@ This event should be sent when an account is deleted.
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`account_name`          | String | The name of the account being deleted.
-`context.groupId`       | String | The id of the account being deleted.
+| Property          | Type   | Description                            |
+| ----------------- | ------ | -------------------------------------- |
+| `account_name`    | String | The name of the account being deleted. |
+| `context.groupId` | String | The id of the account being deleted.   |
 
 #### Example
 
 {% comment %} api-example '{
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Account Deleted",
   "properties": {
     "account_name": "Initech"
@@ -97,7 +98,7 @@ Property                | Type   | Description
 ```js
 {
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Account Deleted",
   "properties": {
     "account_name": "Initech"
@@ -112,32 +113,35 @@ Property                | Type   | Description
 
 This event should be sent when a user signs up for your service.
 
+> success ""
+> **Good to know**: Segment's best practice is to use an "Object-Action" naming convention, which in this case would be "User Signed Up". However, because in the B2B case this may not be a specific user, we omit that noun in our example. You may include or omit it as needed for your implementation.
+
 #### Properties
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`type`                  | String | The type of signup, e.g. invited, organic.
-`first_name`            | String | The first name of the user.
-`last_name`             | String | The last name of the user.
-`email`                 | String | The email of the user.
-`phone`                 | String | The phone number of the user.
-`username`              | String | The username of the user.
-`title`                 | String | The title of the user.
-`context.groupId`       | String | The id of the account the user is joining.
+| Property          | Type   | Description                                |
+| ----------------- | ------ | ------------------------------------------ |
+| `type`            | String | The type of signup, e.g. invited, organic. |
+| `first_name`      | String | The first name of the user.                |
+| `last_name`       | String | The last name of the user.                 |
+| `email`           | String | The email of the user.                     |
+| `phone`           | String | The phone number of the user.              |
+| `username`        | String | The username of the user.                  |
+| `title`           | String | The title of the user.                     |
+| `context.groupId` | String | The id of the account the user is joining. |
 
 #### Example
 
 {% comment %} api-example '{
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Signed Up",
   "properties": {
     "type": "organic",
     "first_name": "Peter",
     "last_name": "Gibbons",
-    "email": "pgibbons@initech.com",
+    "email": "pgibbons@example.com",
     "phone": "410-555-9412",
     "username": "pgibbons",
     "title": "Mr"
@@ -147,16 +151,16 @@ Property                | Type   | Description
       }
 }'}}} {% endcomment %}
 
-```js
+```json
 {
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Signed Up",
   "properties": {
     "type": "organic",
     "first_name": "Peter",
     "last_name": "Gibbons",
-    "email": "pgibbons@initech.com",
+    "email": "pgibbons@example.com",
     "phone": "410-555-9412",
     "username": "pgibbons",
     "title": "Mr"
@@ -171,20 +175,23 @@ Property                | Type   | Description
 
 This event should be sent when a user signs in to your service.
 
+> success ""
+> **Good to know**: Segment's best practice is to use an "Object-Action" naming convention, which in this case would be "User Signed In". However, because in the B2B case this may not be a specific user, we omit that noun in our example. You may include or omit it as needed for your implementation.
+
 #### Properties
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`username`              | String | The username of the user logging in.
-`context.groupId`       | String | The id of the account being created.
+| Property                | Type   | Description |
+| --------                | ----   | -----------
+| `username`              | String | The username of the user logging in. |
+| `context.groupId`       | String | The id of the account being created. |
 
 #### Example
 
 {% comment %} api-example '{
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Signed In",
   "properties": {
     "username": "pgibbons"
@@ -194,10 +201,10 @@ Property                | Type   | Description
       }
 }'}}} {% endcomment %}
 
-```js
+```json
 {
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Signed In",
   "properties": {
     "username": "pgibbons"
@@ -210,22 +217,25 @@ Property                | Type   | Description
 
 ### Signed Out
 
-This event should be sent when a user signs out for your service. You should also call [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript/#reset-logout) to refresh the cookie when a Signed Out event occurs.
+This event should be sent when a user signs out for your service. You should also call [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout) to refresh the cookie when a Signed Out event occurs.
+
+> success ""
+> **Good to know**: Segment's best practice is to use an "Object-Action" naming convention, which in this case would be "User Signed Out". However, because in the B2B case this may not be a specific user, we omit that noun in our example. You may include or omit it as needed for your implementation.
 
 #### Properties
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`username`              | String | The username of the user logging in.
-`context.groupId`       | String | The id of the account being created.
+| Property          | Type   | Description                          |
+| ----------------- | ------ | ------------------------------------ |
+| `username`        | String | The username of the user logging in. |
+| `context.groupId` | String | The id of the account being created. |
 
 #### Example
 
 {% comment %} api-example '{
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Signed Out",
   "properties": {
     "username": "pgibbons"
@@ -238,7 +248,7 @@ Property                | Type   | Description
 ```js
 {
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Signed Out",
   "properties": {
     "username": "pgibbons"
@@ -257,18 +267,18 @@ This event should be sent when a user invites another user.
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`invitee_email`         | String | The email address of the person receiving the invite.
-`invitee_first_name`    | String | The first name of the person receiving the invite.
-`invitee_last_name`     | String | The last name of the person receiving the invite.
-`invitee_role`          | String | The permission group for the person receiving the invite.
+| Property             | Type   | Description                                               |
+| -------------------- | ------ | --------------------------------------------------------- |
+| `invitee_email`      | String | The email address of the person receiving the invite.     |
+| `invitee_first_name` | String | The first name of the person receiving the invite.        |
+| `invitee_last_name`  | String | The last name of the person receiving the invite.         |
+| `invitee_role`       | String | The permission group for the person receiving the invite. |
 
 #### Example
 
 {% comment %} api-example '{
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Invite Sent",
   "properties": {
     "invitee_email": "pgibbons@example.com",
@@ -284,7 +294,7 @@ Property                | Type   | Description
 ```js
 {
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Invite Sent",
   "properties": {
     "invitee_email": "pgibbons@example.com",
@@ -306,16 +316,16 @@ This event should be sent when a user is added to a group.
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`role`                  | String | The permission group for this user in this account.
-`context.groupId`       | String | The id of the account being created.
+| Property          | Type   | Description                                         |
+| ----------------- | ------ | --------------------------------------------------- |
+| `role`            | String | The permission group for this user in this account. |
+| `context.groupId` | String | The id of the account being created.                |
 
 #### Example
 
 {% comment %} api-example '{
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Account Added User",
   "properties": {
     "role": "Owner"
@@ -328,7 +338,7 @@ Property                | Type   | Description
 ```js
 {
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Account Added User",
   "properties": {
     "role": "Owner"
@@ -347,15 +357,15 @@ This event should be sent when a user is removed from a group or account.
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`context.groupId`       | String | The id of the account being created.
+| Property                | Type   | Description |
+| --------                | ----   | ----------- |
+| `context.groupId`       | String | The id of the account being created. |
 
 #### Example
 
 {% comment %} api-example '{
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Account Removed User",
   "properties": {},
   "context": {
@@ -366,7 +376,7 @@ Property                | Type   | Description
 ```js
 {
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Account Removed User",
   "properties": {},
   "context": {
@@ -383,18 +393,18 @@ This event should be sent when a trial is started.
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`trial_start_date`      | Date   | The date when the trial starts. It is an ISO-8601 date string.
-`trial_end_date`        | Date   | The date when the trial ends. It is an ISO-8601 date string.
-`trial_plan_name`       | String | The name of the plan being trialed.
-`context.groupId`       | String | The id of the account being created.
+| Property           | Type   | Description                                                    |
+| ------------------ | ------ | -------------------------------------------------------------- |
+| `trial_start_date` | Date   | The date when the trial starts. It is an ISO-8601 date string. |
+| `trial_end_date`   | Date   | The date when the trial ends. It is an ISO-8601 date string.   |
+| `trial_plan_name`  | String | The name of the plan being trialed.                            |
+| `context.groupId`  | String | The id of the account being created.                           |
 
 #### Example
 
 {% comment %} api-example '{
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Trial Started",
   "properties": {
       "trial_start_date": "2018-08-28T04:09:47Z",
@@ -409,7 +419,7 @@ Property                | Type   | Description
 ```js
 {
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Trial Started",
   "properties": {
       "trial_start_date": "2018-08-28T04:09:47Z",
@@ -430,18 +440,18 @@ This event should be sent when a trial ends.
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`trial_start_date`      | Date   | The date when the trial starts. It is an ISO-8601 date string.
-`trial_end_date`        | Date   | The date when the trial ends. It is an ISO-8601 date string.
-`trial_plan_name`       | String | The name of the plan being trialed.
-`context.groupId`       | String | The id of the account being created.
+| Property                | Type   | Description |
+| --------                | ----   | ----------- |
+| `trial_start_date`      | Date   | The date when the trial starts. It is an ISO-8601 date string. |
+| `trial_end_date`        | Date   | The date when the trial ends. It is an ISO-8601 date string. |
+| `trial_plan_name`       | String | The name of the plan being trialed. |
+| `context.groupId`       | String | The id of the account being created. |
 
 #### Example
 
 {% comment %} api-example '{
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Trial Ended",
   "properties": {
       "trial_start_date": "2018-08-28T04:09:47Z",
@@ -456,7 +466,7 @@ Property                | Type   | Description
 ```js
 {
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Trial Ended",
   "properties": {
       "trial_start_date": "2018-08-28T04:09:47Z",

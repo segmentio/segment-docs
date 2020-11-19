@@ -6,14 +6,14 @@ The `track` API call is how you record any actions your users perform, along wit
 
 {% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/299975?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Track Method" content="Check out our high-level overview of the Track method in Segment University. (Must be logged in to access.)" %}
 
-Each action is known as an event. Each event has a name, like **Registered**, and properties, for example a **Registered** event might have properties like `plan` or `accountType`. Calling `track` in one of our [sources](/docs/connections/sources/) is one of the first steps to getting started with Segment.
+Each action is known as an event. Each event has a name, like **User Registered**, and properties, for example a **User Registered** event might have properties like `plan` or `accountType`. Calling `track` in one of our [sources](/docs/connections/sources/) is one of the first steps to getting started with Segment.
 
 Here's the payload of a typical `track` call with most [common fields](/docs/connections/spec/common/) removed:
 
-```js
+```json
 {
   "type": "track",
-  "event": "Registered",
+  "event": "User Registered",
   "properties": {
     "plan": "Pro Annual",
     "accountType" : "Facebook"
@@ -24,7 +24,7 @@ Here's the payload of a typical `track` call with most [common fields](/docs/con
 And here's the corresponding Javascript event that would generate the above payload:
 
 ```js
-analytics.track("Registered", {
+analytics.track("User Registered", {
   plan: "Pro Annual",
   accountType: "Facebook"
 });
@@ -42,7 +42,7 @@ Beyond the common fields, the `track` call has the following fields:
 
 Here's a complete example of a `track` call:
 
-```js
+```json
 {
   "anonymousId": "23adfd82-aa0f-45a7-a756-24f2a7a4c895",
   "context": {
@@ -86,7 +86,7 @@ Every `track` call records a single user action. We call these "events". We reco
 Do not use nondescript names like **Event 12** or **TMDropd**. Instead, use unique but recognizable names like **Video Recorded** and **Order Completed**.
 
 **We recommend event names built from a noun and past-tense verb.**
-For more information about best practices in event naming, check out our [Analytics Academy lesson on best practices for naming conventions for clean data](/academy/collecting-data/naming-conventions-for-clean-data/).
+For more information about best practices in event naming, check out our [Analytics Academy lesson on best practices for naming conventions for clean data](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/).
 
 We have standardized a series of reserved event names that have special semantic meaning. We map these events to tools that support them whenever possible. See the [Semantic Events docs](/docs/connections/spec/semantic/) for more detail.
 

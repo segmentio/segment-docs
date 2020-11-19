@@ -1,20 +1,29 @@
 ---
 title: 'Quickstart: analytics-java'
-hidden: true
-sourceTitle: 'Java'
-sourceCategory: 'Server'
 ---
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics)
 
-This tutorial will help you start sending data from your program to Segment and any of our destinations, using our analytics-java library. As soon as you're setup you'll be able to turn on any new destinations with the flip of a switch!
+This tutorial helps you start sending data from your program to Segment and any of our destinations, using our analytics-java library. As soon as you're set up you'll be able to turn on any new destinations with the flip of a switch!
 
 If you want to dive deeper at any point, check out the [analytics-java reference](/docs/connections/sources/catalog/libraries/server/java).
 
+## Step 1: Create a Source in the Segment app
 
-## Step 1: Install the Library
+Before you begin, you need a Workspace (which is a container that holds all of the sources and destinations which are billed together for an organization). If you already created one, great! If not, you can sign up for a free Segment account and create one.
 
-The recommended way to install the library for Java is with a build system like Gradle or Maven. This makes it dead simple to upgrade and swap out destinations. The library is distributed via [Maven Central](http://maven.org/) as a `jar` dependency.
+Next, create a Java source from your Workspace:
+
+1. Click **Add Source**.
+2. From the source catalog page, click **Java**.
+3. Click **Add Source** again from the informational panel that appears to the right.
+4. Give the source a display name, and enter the URL the source will collect data from.
+
+When you create a Source in the Segment web app, it tells the Segment servers that you'll be sending data from a specific source type. When you create (or change!) a Source in the Segment app, Segment generates a new Write Key for that source. You use the write key in your code to tell the Segment servers where the data is coming from, so Segment can route it to your destinations and other tools.
+
+## Step 2: Install the Library
+
+The recommended way to install the library for Java is with a build system like Gradle or Maven. This makes it simple to upgrade and swap out destinations. The library is distributed using [Maven Central](http://maven.org/) as a `jar` dependency.
 
 Here's what it would look like with Maven:
 
@@ -34,7 +43,7 @@ Here's what it would look like with Maven:
 compile 'com.segment.analytics.java:analytics:+'
 ```
 
-## Step 2: Initialize the SDK
+## Step 3: Initialize the SDK
 
 Before you can send us events, you need to initialize an instance of the Analytics class. To do so, you must use the `Analytics.Builder` class.
 
@@ -52,7 +61,10 @@ Although not enforced at compile time, make sure you provide either of `userId` 
 
 The following examples use [Guava's](https://github.com/google/guava) immutable maps, but feel free to use plain old Java maps instead.
 
-## Step 3: Identify Users
+## Step 4: Identify Users
+
+> note ""
+> **Good to know**: For any of the different methods described in this quickstart, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 The `identify` message is how you tell Segment who the current user is. It includes a unique User ID and any optional traits you know about them. You can read more about it in the [identify reference](/docs/connections/sources/catalog/libraries/server/java#identify).
 
@@ -63,13 +75,13 @@ analytics.enqueue(IdentifyMessage.builder()
     .userId("f4ca124298")
     .traits(ImmutableMap.builder()
         .put("name", "Michael Bolton")
-        .put("email", "mbolton@initech.com")
+        .put("email", "mbolton@example.com")
         .build()
     )
 );
 ```
 
-**Note:** The enqueue method takes a `MessageBuilder` instance and not a `Message` instance directly. This is to allow you to use a `MessageTransformer` that applies to all incoming messages and transform or add data. Read more about it in the [transformer reference docs](/docs/connections/sources/catalog/libraries/server/java#transformer).
+**Note:** The enqueue method takes a `MessageBuilder` instance and not a `Message` instance directly. This is to allow you to use a `MessageTransformer` that applies to all incoming messages and transform or add data. <!-- LR: Can't find that we ever had a doc about this. Read more about it in the [transformer reference docs](/docs/connections/sources/catalog/libraries/server/java#transformer).-->
 
 That's identifying Michael by his unique User ID (the one you know him by in your database) and labeling him with `name` and `email` traits.
 
@@ -78,7 +90,7 @@ That's identifying Michael by his unique User ID (the one you know him by in you
 Of course, lots of analytics tools record more than just _identities_... they record the actions each user performs too! If you're looking for a complete event tracking analytics setup, keep reading...
 
 
-## Step 4: Track Actions
+## Step 5: Track Actions
 
 The `track` method is how you tell Segment about which actions your users are performing on your site. Every action triggers what we call an "event", which can also have associated properties. You can read more about `track` in the [track reference](/docs/connections/sources/catalog/libraries/server/java#track).
 

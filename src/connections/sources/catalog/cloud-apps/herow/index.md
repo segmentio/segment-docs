@@ -7,16 +7,16 @@ beta: true
 
 This is an [Enrichment Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
 
-This source is maintained by HEROW. For any issues with the source, please [contact their team](mailto:support@herow.io).
+This source is maintained by HEROW. For any issues with the source, [contact the HEROW Support team](mailto:support@herow.io).
 
-_**NOTE:** The HEROW Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on January 29, 2020. If you are interested in joining their beta program or have any feedback to help improve the HEROW Source and its documentation, please [let  their team know](mailto:support@HEROW.io)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
 
 1. From your Segment UI’s Sources page click on “Add Source”.
 2. Search for "HEROW" within the Sources Catalog and confirm by clicking "Connect".
-3. Give the Source a nickname and follow the setup flow to "Add Source". The nickname will be used to designate the source in the Segment interface, and Segment will create a related schema name. The schema name is the namespace you'll be querying against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (eg. HEROW_Prod, HEROW_Staging, HEROW_Dev).
+3. Give the Source a nickname and follow the set up flow to "Add Source". The nickname will be used to designate the source in the Segment interface, and Segment will create a related schema name. The schema name is the namespace you'll be querying against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (eg. HEROW_Prod, HEROW_Staging, HEROW_Dev).
 4. Copy the Write key from the Segment UI and log in to your HEROW account - navigate to Settings > Integrations > Segment Integration and paste the key to connect.
 
 ## Events
@@ -141,4 +141,4 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the Destination docs for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, please [contact the HEROW team](mailto:support@HEROW.io).
+If you experience any issues with how the events arrive in Segment, [contact the HEROW team](mailto:support@HEROW.io).

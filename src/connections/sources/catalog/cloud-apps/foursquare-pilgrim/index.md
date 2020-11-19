@@ -3,18 +3,19 @@ title: Foursquare Pilgrim
 beta: true
 ---
 
-[Foursquare's Pilgrim SDK](https://developer.foursquare.com/pilgrimsdk) provides real-time event triggering based upon your users’ location in the physical world, allowing you to harness our powerful geotargeting capabilities to send those events to other services via Segment.
+[Foursquare's Pilgrim SDK](https://developer.foursquare.com/pilgrimsdk) provides real-time event triggering based upon your users’ location in the physical world, allowing you to harness our powerful geotargeting capabilities to send those events to other services using Segment.
 
-This destination is maintained by Foursquare. For any issues with the destination, please [reach out to their team](mailto:developers@foursquare.com).
+This destination is maintained by Foursquare. For any issues with the destination, [contact the Foursquare Developer Support team](mailto:developers@foursquare.com).
 
-_**NOTE:** The Foursquare-Pilgrim Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on January 29, 2020. If you are interested in joining their beta program or have any feedback to help improve the Foursquare-Pilgrim Source and its documentation, please [let  their team know](mailto:developers@foursquare.com)!_
+{% include content/beta-note.md %}
+
 
 ## Getting Started
 
-1. From your Segment UI's Source page click on "Add Source".
-2. Search for "Foursquare Pilgrim" within the Source Catalog and confirm the Source you'd like to connect to.
-3. Once Foursquare is added as a source, copy your "Write Key".
-4. Head over to your [Foursquare Developer Console](https://foursquare.com/developers/apps/) and create a new Segment integration in your Foursquare app's Pilgrim SDK console. There you can drop in your Segment "Write Key" into your Segment Integration Configuration screen.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Foursquare Pilgrim" in the Catalog, select it, and choose which of your sources to connect the it to.
+3. Once you save Foursquare Pilgrim as a source, copy your "Write Key".
+4. Go to your [Foursquare Developer Console](https://foursquare.com/developers/apps/) and create a new Segment integration in your Foursquare app's Pilgrim SDK console. There you can enter the Segment "Write Key" into the Segment Integration Configuration screen.
 
 ## Events
 
@@ -115,4 +116,4 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check that your events appear and contain all the expected properties. If events and properties do not appear, refer to the Destination docs for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, please [contact the Foursquare team](mailto:developers@foursquare.com).
+If you experience any issues with how the events arrive in Segment, [contact the Foursquare team](mailto:developers@foursquare.com).

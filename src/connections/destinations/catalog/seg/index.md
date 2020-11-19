@@ -37,7 +37,7 @@ brands: ['Hasbro']
 - Include extra properties to `Order Completed` , for example
 
 ```javascript
-analytics.track('Completed Order', {
+analytics.track('Order Completed', {
 orderId: '50314b8e9bcf000000000000',
 total: 30,
 revenue: 25,
@@ -69,7 +69,7 @@ variant_name: 'Product Variant Name'
 
 - Include an extra 5 properties to `Viewed Product`, `Added Product` and `Order Completed`, for example
 
-```javascript
+```js
 analytics.track('Viewed Product', {
 id: '507f1f77bcf86cd799439011',
 sku: '45790-32',
@@ -83,9 +83,11 @@ original_price: 19.99,
 variant_name: 'Product Variant Name'
 });
 ```
+
 --- or ---
-```Javascript
-analytics.track('Completed Order', {
+
+```js
+analytics.track('Order Completed', {
 orderId: '50314b8e9bcf000000000000',
 total: 30,
 revenue: 25,

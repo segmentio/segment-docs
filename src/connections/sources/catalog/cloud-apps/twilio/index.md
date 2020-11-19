@@ -4,7 +4,7 @@ rewrite: true
 ---
 [Twilio](http://twilio.com) is a developer platform for communications. Software teams use Twilio APIs to add capabilities like voice, video, and messaging to their applications. This enables businesses to provide the right communications experience for their customers. Behind Twilio APIs is a Super Network, a software layer that connects and optimizes communications networks around the world. This is what allows users to reliably call and message anyone anywhere.
 
-This document was last updated on September 7, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on September 7, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -18,7 +18,7 @@ This document was last updated on September 7, 2018. If you notice any gaps, out
 
 4. When you click **Connect**, you'll be prompted for your Twilio Account SID. You can find it on your Twilio account under the project settings.
 
-5. You'll be re-directed to Twilio's app and you'll need to authorize Segment to read from your account data. To authorize, click in the "Allow" button. Once approved, you'll be redirected back to the setup page in the Segment app.
+5. You'll be re-directed to Twilio's app and you'll need to authorize Segment to read from your account data. To authorize, click in the "Allow" button. Once approved, you'll be redirected back to the set up page in the Segment app.
 
 6. Click on the "Finish" button and you'll be good to go!
 
@@ -30,11 +30,11 @@ We'll begin syncing your Twilio data into Segment momentarily, and it will be wr
 
 The Twilio source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Twilio objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation (ie. `twilio_prod.charges`).
 
-Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Twilio.  For example,  if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
+Our sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in Twilio.  For example, if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 
-At the moment, we don't support filtering which objects or properties get synced. If you're interested in this feature, please [let us know](https://segment.com/help/contact)!
+At the moment, we don't support filtering which objects or properties get synced. If you're interested in this feature, [let us know](https://segment.com/help/contact)!
 
 
 ## Collections
@@ -83,7 +83,7 @@ Below are tables outlining the properties included in the collections listed abo
 |  caller_name | The caller's name if this Call was an incoming call to a phone number with Caller ID Lookup enabled |
 |  date_created | The date that this resource was created, given as GMT in RFC 2822 format |
 |  date_updated | The date that this resource was last updated, given as GMT in RFC 2822 format |
-|  direction | A string describing the direction of the Call. Values are inbound for inbound calls, outbound-api for calls initiated via the REST API or outbound-dial for calls initiated by a <Dial> verb |
+|  direction | A string describing the direction of the Call. Values are inbound for inbound calls, outbound-api for calls initiated using the REST API or outbound-dial for calls initiated by a <Dial> verb |
 |  duration | The length of the Call in seconds. This value is empty for busy, failed, unanswered or ongoing calls |
 |  end_time | The time the Call ended, given as GMT in RFC 2822 format. Empty if the call did not complete successfully |
 |  forwarded_from | The forwarding phone number if this Call was an incoming call forwarded from another number (depends on carrier supporting forwarding) |
@@ -133,7 +133,7 @@ Below are tables outlining the properties included in the collections listed abo
 |  date_created	| The date that this resource was created, given in RFC 2822 format |
 |  date_sent	| The date that the message was sent. For outgoing messages, this is the date that the message was sent from Twilio's platform |
 |  date_updated	| The date that this resource was last updated, given in RFC 2822 format |
-|  direction	| The direction of this message. inbound for incoming messages, outbound-api for messages initiated via the REST API, outbound-call for messages initiated during a call or outbound-reply for messages initiated in response to an incoming message |
+|  direction	| The direction of this message. inbound for incoming messages, outbound-api for messages initiated using the REST API, outbound-call for messages initiated during a call or outbound-reply for messages initiated in response to an incoming message |
 |  error_code	| The error code, if any, associated with your message |
 |  error_message	| The human readable description of the ErrorCode above. If the message status is failed or undelivered it will have one of the values described below, otherwise, it will be null |
 |  from	| The phone number (in E.164 format), alphanumeric sender ID, or Wireless SIM that initiated the message |

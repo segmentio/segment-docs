@@ -1,21 +1,33 @@
 ---
 title: Google Ads (Classic) Destination
+redirect_from: '/connections/destinations/catalog/adwords/'
+strat: google
 ---
 
-Our Google Ads (Classic) destination code is open-source on GitHub if you want to check it out.
-[Our clientside javascript destination.](https://github.com/segment-integrations/analytics.js-integration-adwords).
+Our Google Ads (Classic) destination code is open-source on GitHub if you want to check out
+[Segment's javascript Google Ads destination](https://github.com/segment-integrations/analytics.js-integration-adwords).
 
 ## Web
 
 ### Getting Started
 
-**Please note:** Google released a new version of Google Ads that uses [a Global Site Tag (or Gtag)](https://support.google.com/adwords/answer/7548399?hl=en). Segment supports this using a different version of the destination - see the documentation for [Google Ads (Gtag)](/docs/connections/destinations/catalog/google-adwords-new/) for more details.
+**Note:** Google released a new version of Google Ads that uses [a Global Site Tag (or Gtag)](https://support.google.com/adwords/answer/7548399?hl=en). Segment supports this using a different version of the destination - see the documentation for [Google Ads (Gtag)](/docs/connections/destinations/catalog/google-adwords-new/) for more details.
 
 With Segment your events can be used to fire a Google Ads conversion pixel from your website **in client-side javascript.**
-It can also be used to trigger Google Ads (Classic) conversion from your mobile app via **Server to Server** destination, so you don't have to include the SDK in your app. Our server to server connection requires mobile device specific details to forward the events to Google Ads (Classic). Google Ads (Classic) **does not work with any server-side libraries**. Make sure when you're setting up your Google Ads (Classic) conversions that you choose the appropriate tracking method.
+It can also be used to trigger Google Ads (Classic) conversion from your mobile app using **Server to Server** destination, so you don't have to include the SDK in your app. Our server to server connection requires mobile device specific details to forward the events to Google Ads (Classic). Google Ads (Classic) **does not work with any server-side libraries**. Make sure when you're setting up your Google Ads (Classic) conversions that you choose the appropriate tracking method.
 
 From your Segment Destinations Catalog click Google Ads (Classic).
 You'll need to enter your Conversion ID from your Google Ads (Classic) account first. Next, enter the name of the event exactly as it appears in your [`track`](/docs/connections/spec/track) call on the left and map it to your Google Ads (Classic) conversion's `google_conversion_label` on the right.
+
+#### Additional iOS Cloud Mode Setup for iOS 14
+
+With the release of Segment’s latest Analytics-iOS SDK, which includes support for upcoming iOS 14 tracking changes, you must decide if you _need_ to collect the user's IDFA or not. If you do not need to collect IDFA, you can update your Analytics-iOS SDK to the next version, and Segment sets `device.adTrackingEnabled` to `false`, and starts deleting the `device.advertisingId` from the context object in your payloads. If you _do_ need to collect the IDFA, you must import the IDFA closure as a config to the library, or import the Ad Tracking Transparency framework from Apple.
+
+Google Adwords maps the IDFA to `rdid`, and returns a 4xx error on the outbound request if no `device.advertisingId` key appears in the payload.
+
+ To work around this, enable the **Fallback to Zeroed IDFA when advertisingId key not present** destination setting for Google Adwords in the Segment web app. When enabled, Segment checks if a `device.advertisingId` exists in the payload, and if none exists, sets the `rdid` to `'00000000-0000-0000-0000-000000000000'`.
+
+To maintain backwards compatibility, if you do not enable this setting and no `device.advertisingId` key appears in the payload, Segment rejects the message.
 
 
 ### Conversion ID
@@ -24,7 +36,7 @@ To find a conversion ID look inside of your Google Ads (Classic) account and nav
 
 If you select "Website," click through to the "Review and Install" step in the Google Ads (Classic) dashboard. Scroll down to the "Install your tag" section and look for `w.google_conversion_id`. Copy the string directly to the right of it, and paste it into the Google Ads (Classic) section of your Segment destination tab.
 
-If you select "App" you can choose to track conversions from Firebase, Google Play, or first opens and in-app actions. For more on setting up moble tracking, see [Server to Server Destination for Mobile Apps](#server-to-server-destination-for-mobile-apps) further down on this page.
+If you select "App" you can choose to track conversions from Firebase, Google Play, or first opens and in-app actions. For more on setting up moble tracking, see [Server to Server Destination for Mobile Apps](#mobile--server) further down on this page.
 
 _**NOTE:** If using the New Adwords Experience, the Conversion ID can now be found in a different location. Navigate to Tools, Billing, and Settings menu and, then, select "Measurement: Conversions", which opens to the "Conversion Actions" table. From here you can drill down to the conversion "Tag setup" to view the tag details. From here, select Use Google Tag Manager card in order to expose the Conversion ID._
 
@@ -67,7 +79,7 @@ Our server-to-server integration with Google Ads (Classic) integrates with the [
 
 1) App Event Mappings
 
-Google has replaced the concept of associating conversion events with **conversion ids** and **conversion labels**. Instead, conversion events are simply associated with their event name. Once you've enabled the new integration in your settings, you can begin creating and tracking new conversion events in Google Ads (Classic) that are tied to your Segment `track` event names and ignore the legacy [Event Mappings](/docs/connections/destinations/catalog/adwords/#event-mappings) configuration step.
+Google has replaced the concept of associating conversion events with **conversion ids** and **conversion labels**. Instead, conversion events are simply associated with their event name. Once you've enabled the new integration in your settings, you can begin creating and tracking new conversion events in Google Ads (Classic) that are tied to your Segment `track` event names and ignore the legacy [Event Mappings](/docs/connections/destinations/catalog/google-ads-classic/#event-mappings) configuration step.
 
 2) App Event Types
 
@@ -84,7 +96,7 @@ To authorize Segment to track conversion events using the Google Ads (Classic) A
 
 #### Generate a Link ID in your Google Ads (Classic) Account
 
-Authorization between an Google Ads (Classic) account and a third-party-application is done via the use of a Link Id. This process is detailed [here](https://support.google.com/adwords/answer/7365001).
+Authorization between an Google Ads (Classic) account and a third-party-application is done using the use of a Link Id. This process is detailed [here](https://support.google.com/adwords/answer/7365001).
 
 **Important:** During this process, you will be required to enter a Provider ID. Segment's is the following: 7552494388
 
@@ -94,7 +106,7 @@ Once this step is complete, you should see a screen that looks like this showing
 
 #### Add your Link ID as an Integration Setting
 
-Once you have a Link ID, you need to add them to your Google Ads (Classic) [integration settings](/docs/connections/destinations/catalog/adwords/#settings) in your Segment account. **Please also ensure the API version setting is set to 2.**
+Once you have a Link ID, you need to add them to your Google Ads (Classic) [destination settings](#settings) in your Segment account. **Make sure the API version setting is set to 2.**
 
 ### Track
 All `track` events are by default sent to your Google Ads (Classic) account and from there, you can choose which ones you want to designate as **Conversion Events**. All events sent to Google Ads (Classic) require an **event type** specification. This is an enumerated list of nine potential values:
@@ -109,7 +121,7 @@ All `track` events are by default sent to your Google Ads (Classic) account and 
  8. ecommerce_purchase
  9. custom
 
- We integrate with these event types via the use of our [Semantic Event Spec](https://segment.com/docs/connections/spec/semantic/). Each individual mapping we support is documented in the sections below. Any event we recieve that is not a mapped semantic event will be sent to Google Ads (Classic) as a `custom` event type.
+ We integrate with these event types using the use of our [Semantic Event Spec](https://segment.com/docs/connections/spec/semantic/). Each individual mapping we support is documented in the sections below. Any event we recieve that is not a mapped semantic event will be sent to Google Ads (Classic) as a `custom` event type.
 
 ### Application Installed
 
@@ -119,7 +131,7 @@ Our [Application Installed](/docs/connections/spec/mobile/#application-installed
 
 Our [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) event is sent to Google Ads (Classic) as a `ecommerce_purchase` event type. This event is used to attribute successful revenue generating conversions.
 
-**Important:** if you are tracking a successful purchase from an App Store (either the iOS App Store or the Google Play Store) please be sure to set the `affiliation` property of the event to either `App Store` (for iOS) or `Google Store` (for Android). If these are present, we will properly map the event as an `in_app_purchase` event type. Here is an example for Android:
+**Important:** if you are tracking a successful purchase from an App Store (either the iOS App Store or the Google Play Store)  be sure to set the `affiliation` property of the event to either `App Store` (for iOS) or `Google Store` (for Android). If these are present, we will properly map the event as an `in_app_purchase` event type. Here is an example for Android:
 
 ```javascript
 analytics.track('Order Completed', {
@@ -161,14 +173,14 @@ Our [Products Viewed](/docs/connections/spec/ecommerce/v2/#product-viewed) event
 ### Other Features
 
 #### Attribution Postbacks
-If a conversion event is successfully attributed to an active campaign, Google Ads (Classic) will respond with information about the campaign. If the conversion event was an `Application Installed` event (used to track successful app installs), we will map the attribution information to an [`Install Attributed`](/docs/connections/spec/mobile/#install-attributed) event and send it back to your Segment source to get proliferated out to your other downstream integrations. You can enable this functionality in your integration settings.
+If a conversion event is successfully attributed to an active campaign, Google Ads (Classic) will respond with information about the campaign. If the conversion event was an `Application Installed` event (used to track successful app installs), we will map the attribution information to an [`Install Attributed`](/docs/connections/spec/mobile#install-attributed) event and send it back to your Segment source to get proliferated out to your other downstream integrations. You can enable this functionality in your integration settings.
 
 #### Tracking Value and Currency
-To track the monetary value of a conversion, please ensure your event contains a `.revenue` property with a Number designating the total value of the conversion. You may also pass a three letter `currency` property (ex. USD, EUR, etc...).
+To track the monetary value of a conversion, make sure your event contains a `.revenue` property with a Number designating the total value of the conversion. You may also pass a three letter `currency` property (ex. USD, EUR, etc...).
 
 ## Mobile & Server (Legacy)
 
-**Important:** Google Ads (Classic) has plans to deprecate the API that the functionality outlined here relies on. Please reference our documentation that supports their new API version above.
+**Important:** Google Ads (Classic) has plans to deprecate the API that the functionality outlined here relies on. Reference our documentation that supports their new API version above.
 
 You can specify your key mobile events as conversion events inside of Google Ads conversion dashboard. When these events fire from your mobile apps, we'll trigger these Google Ads (Classic) conversions. Our SDKs should include the following properties, which are required to send the conversions. If you notice these properties aren't being logged, you will want to check your debugger to ensure the properties are in fact included in your events.
 
@@ -199,7 +211,7 @@ You can specify your key mobile events as conversion events inside of Google Ads
   </tr>
 </table>
 
-The following properties are optional, if you'd like to see more, please get in touch with us.
+The following properties are optional, if you'd like to see more, [let us know](https://segment.com/help/contact/).
 
 <table>
   <tr>

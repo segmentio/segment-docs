@@ -4,7 +4,7 @@ title: Zendesk Source
 
 [Zendesk](https://www.zendesk.com/) is a customer service platform for enterprises, which provides a customer support platform that allows quicker and easier interaction between businesses and customers.
 
-This document was last updated on April, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on April, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -30,7 +30,7 @@ Make sure the user has Admin authorizations as we use the incremental export API
   ![](Images/zendesk3.png)
 
 ### Rate Limits
-The Zendesk source uses both Zendesk's [Core API](https://developer.zendesk.com/rest_api/docs/core/introduction) and [Incremental Exports API](https://developer.zendesk.com/rest_api/docs/core/incremental_export). The source's requests to the Incremental API do not count towards your Zendesk account's rate limits, but requests to the Core API do. By default, we cap our requests to Zendesk's Core API to a rate of 200 requests per minute to avoid triggering [Zendesk's Rate Limits](https://developer.zendesk.com/rest_api/docs/core/introduction#rate-limits). If you'd like us to increase or decrease the request rate for your source, please [let us know](/contact), and we'll get it set up. We'll add support for this in the UI soon!
+The Zendesk source uses both Zendesk's [Core API](https://developer.zendesk.com/rest_api/docs/core/introduction) and [Incremental Exports API](https://developer.zendesk.com/rest_api/docs/core/incremental_export). The source's requests to the Incremental API do not count towards your Zendesk account's rate limits, but requests to the Core API do. By default, we cap our requests to Zendesk's Core API to a rate of 200 requests per minute to avoid triggering [Zendesk's Rate Limits](https://developer.zendesk.com/rest_api/docs/core/introduction#rate-limits). If you'd like us to increase or decrease the request rate for your source, [let us know](https://segment.com/help/contact/), and we'll get it set up. We'll add support for this in the UI soon!
 
 ## Components
 
@@ -38,11 +38,11 @@ The Zendesk source uses both Zendesk's [Core API](https://developer.zendesk.com/
 
 The Zendesk source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Zendesk objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation (ie. `zendesk_prod.users`).
 
-Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Zendesk.  For example,  if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
+Our sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in Zendesk.  For example, if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 
-At the moment, we don't support filtering which objects or properties get synced. If you're interested in this feature, please let us know!
+At the moment, we don't support filtering which objects or properties get synced. If you're interested in this feature, [let us know](https://segment.com/help/contact/)!
 
 ## Collections
 
@@ -61,7 +61,7 @@ Collections are the groupings of resources we pull from your source.
 |  ticket_events | events | Returns a stream of changes that occurred on tickets. Each event is tied to an update on a ticket and contains all the fields that were updated in that change. **Note**: We pull 1 year of ticket events to start by default. If you need more, just let us know and we'll do a run to pull further back in history.|
 |  ticket_metrics | object | All kinds of aggregate metrics about a ticket |
 |  satisfaction_ratings | object | If you have enabled satisfaction ratings for your account, this end point allows you to quickly retrieve all ratings. |
-|  ticket_comments | object | Ticket comments represent the conversation between requesters, collaborators, and agents. It includes the full body of each comment, public and private. **Note**: This collection is not included by default. To request it, [contact us](/help/contact). |
+|  ticket_comments | object | Ticket comments represent the conversation between requesters, collaborators, and agents. It includes the full body of each comment, public and private. **Note**: This collection is not included by default. To request it, [contact us]https://segment.com/help/contact/. |
 
 In your warehouse, each collection gets its own table. Find below a list of the properties we automatically fetch for each collection.
 **Note** The list in this document includes the standard properties only, but doesn't include _your_ custom fields. (Don't worry, they'll be there in your warehouse!)
@@ -102,7 +102,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 <table>
    <tr>
      <td>id</td>
-     <td> utomatically assigned when the user is created. </td>
+     <td> Automatically assigned when the user is created. </td>
    </tr>
    <tr>
      <td>url</td>
@@ -152,6 +152,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
      <td>alias</td>
      <td> An alias displayed to end users.</td>
    </tr>
+   <tr>
      <td>active</td>
      <td> false if the user has been deleted.</td>
    </tr>
@@ -175,6 +176,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
      <td>signature</td>
      <td> The user's signature. Only agents and admins can have signatures.</td>
    </tr>
+   <tr>
      <td>details</td>
      <td> Any details you want to store about the user, such as an address.</td>
    </tr>
@@ -198,7 +200,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
      <td>only_private_comments</td>
      <td> true if the user can only create private comments.</td>
    </tr>
-   </tr>
+   <tr>
      <td>restricted_agent</td>
      <td> If the agent has any restrictions; false for admins and unrestricted agents, true for other agents.</td>
    </tr>
@@ -537,7 +539,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
 </table>
 
-  ### ticket_events
+### ticket_events
 <table>
   <tr>
     <td>id</td>
@@ -589,7 +591,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
 </table>
 
-  ### activities
+### activities
 <table>
   <tr>
     <td>id</td>
@@ -617,7 +619,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
 </table>
 
-  ### attachments
+### attachments
 <table>
   <tr>
     <td>id</td>
@@ -649,7 +651,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
 </table>
 
-  ### organizations
+### organizations
 <table>
   <tr>
     <td>id</td>
@@ -701,7 +703,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
 </table>
 
-  ### satisfaction_ratings
+### satisfaction_ratings
 <table>
   <tr>
     <td>id</td>
@@ -744,7 +746,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
 </table>
 
-  ### ticket_comments
+### ticket_comments
   <table>
   <tr>
     <td>id</td>

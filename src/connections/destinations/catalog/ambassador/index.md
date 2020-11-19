@@ -5,21 +5,24 @@ title: Ambassador Destination
 
 [Ambassador](https://www.getambassador.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) empowers companies to easily create, track & manage custom incentives that drive referrals and evangelize their users. The Ambassador Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-ambassador).
 
-This document was last updated on September 03, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on September 03, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-  1. From your Segment UI's Destinations page click on "Add Destination".
-  2. Search for "Ambassador" within the Destinations Catalog and confirm the Source you'd like to connect to.
-  3. Drop in your "Client ID" from your Ambassador dashboard, and populate any "Campaigns" to be mapped as per the below [Mapping campaigns to URLs](#mapping-campaigns-to-urls) section.
-  4. In about 45 minutes the CDN will be updated and the Ambassador snippet will be initialized onto your page.
-  5. Since Ambassador only records specific events and user data, events and users may not appear in Ambassador until you start using the API outlined below.
+  1. From the Segment web app, click **Catalog**.
+  2. Search for "Ambassador" in the Catalog, select it, and choose which of your sources to connect the destination to.
+  3. In the destination settings, enter your "Client ID" from your Ambassador dashboard, and populate any "Campaigns" to be mapped as per the below [Mapping campaigns to URLs](#mapping-campaigns-to-urls) section.
+
+
+Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading the Ambassador snippet on your page and sending data.
+
+Since Ambassador only records specific events and user data, events and users may not appear in Ambassador until you start using the API explained below.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
 
 For Ambassador it takes the unique `userId` of a user and a specific set of traits. All supported `traits` are listed in the example below:
 
@@ -44,7 +47,7 @@ _**NOTE:** You can optionally use the URL campaign map to enroll the user as an 
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
 
 For Ambassador `track` events will be recorded as a conversion if the Segment event name is mapped to a campaign in your Ambassador destination settings in the Segment UI. All supported `properties` are listed in the example below:
 

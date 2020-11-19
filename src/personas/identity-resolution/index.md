@@ -9,7 +9,7 @@ Identity Resolution sits at the core of Personas. The Segment Identity Graph mer
 ![](images/identity_resolution_1.png)
 
 ## Highlights
-1. **Supports existing data** — no additional code or setup required
+1. **Supports existing data** — no additional code or set up required
 2. **Supports all channels** — stitches web + mobile + server + third party interactions into the same user
 3. **Supports anonymous identity stitching** — by using merging child sessions into parent sessions
 4. **Supports user:account relationships** - for b2b companies, generates a graph of relationships between users and accounts

@@ -5,6 +5,9 @@ title: Destinations Connection Modes comparison
 > info ""
 > Destinations displaying an ℹ️ are in Beta.
 
+> success ""
+> Comparison shopping? Check out the [destination connection modes by category](/docs/connections/destinations/category-compare/).
+
 <table>
 <tr>
   <th> Destination </th>

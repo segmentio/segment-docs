@@ -5,7 +5,7 @@ rewrite: true
 
 [Intercom](http://intercom.com) is a customer platform with a suite of products for live chat, marketing, feedback, and support. With Intercom you will be able to send targeted messages to the right people at the right time, manage conversations with leads and customers at scale and create, organize, and publish articles to help people get answers to their questions and get started with your app.
 
-Take your company's email analysis to the next level by **adding Intercom as a Source to Segment.** We'll automatically collect objects like `Users` and `Conversations` and load them into your data warehouse. 
+Take your company's email analysis to the next level by **adding Intercom as a Source to Segment.** Segment automatically  collects objects like `Users` and `Conversations` and load them into your data warehouse. 
 
 
 ## Getting Started
@@ -34,11 +34,11 @@ Voila! We'll begin syncing your Intercom data into Segment momentarily, and it w
 
 Our Intercom source has a sync component, which means we'll make requests to [their API](https://developers.intercom.io/docs/) on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Intercom objects (and their corresponding properties) according to the collections table below. The objects will be written into a designated schema corresponding to the source instance's schema name you designated upon creation. For example, if you went with `intercom_prod`, the `users` collection will be accessible at `intercom_prod.users` in SQL.
 
-Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Intercom.  For example,  if the `users.last_seen_ip` will be the latest value upon each sync.
+Our sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in Intercom.  For example, if the `users.last_seen_ip` will be the latest value upon each sync.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 
-At the moment, we don't support filtering which objects or properties get synced. If you're interested in this feature, please let us know!
+At the moment, we don't support filtering which objects or properties get synced. If you're interested in this feature, [let us know](https://segment.com/help/contact/)!
 
 ## Collections
 

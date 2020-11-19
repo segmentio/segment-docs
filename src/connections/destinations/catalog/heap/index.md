@@ -5,20 +5,20 @@ rewrite: true
 
 [Heap](https://heapanalytics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) automatically captures every user interaction with no extra code. This includes clicks, taps, gestures, form submissions, page views, and more. The Heap Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-heap).
 
-This document was last updated on January 29, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please let us know!
+This document was last updated on January 29, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact/)!
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Heap" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in your Heap "App ID" into the connection settings.
-4. If you are using Heap via Segment's client-side `analytics.js` library, we asynchronously load Heap's Javascript library onto the page. As such, all native functionality of Heap, including auto-capturing of all events.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Heap" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. In the destination settings, enter your Heap "App ID" into the connection settings.
+4. If you are using Heap using Segment's client-side `analytics.js` library, we asynchronously load Heap's Javascript library onto the page. As such, all native functionality of Heap, including auto-capturing of all events.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('userId123');
@@ -30,7 +30,7 @@ If one of your `traits` is of the date property type, we will convert it into an
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track('Clicked Button');

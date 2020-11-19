@@ -4,25 +4,24 @@ title: ScopeAI Destination
 ---
 [ScopeAI](https://www.getscopeai.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) improves communication between support and product teams by aggregating user feedback and tracking the impact of bugs or issues and feature requests.
 
-This destination is maintained by ScopeAI. For any issues with the destination, please [reach out to their team](mailto:support@getscopeai.com).
+This destination is maintained by ScopeAI. For any issues with the destination, [contact the ScopeAI Support team](mailto:support@getscopeai.com).
 
-_**NOTE:** ScopeAI is currently in beta, which means that they are still actively developing the product. This doc was last updated on February 22, 2019. If you are interested in joining their beta program or have any feedback to help improve the ScopeAI Destination and its documentation, please [let  their team know](mailto:support@getscopeai.com)!_
-
+{% include content/beta-note.md %}
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "ScopeAI" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. In the Segment Settings UI under "API Key" place the Segment token that can be seen after clicking "Show Token" in the panel of the Segment integration you've  created in the [ScopeAI integrations page](https://www.getscopeai.com/integrations). If you haven't yet created a Segment integration on the ScopeAI app, please follow these [instructions](http://help.getscopeai.com/integrations/integrating-with-segment) to create one.
+1. From the Segment web app, click **Catalog**.
+2. Search for "ScopeAI" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. In the Segment Settings UI under "API Key" place the Segment token that can be seen after clicking "Show Token" in the panel of the Segment integration you've  created in the [ScopeAI integrations page](https://www.getscopeai.com/integrations). If you haven't yet created a Segment integration on the ScopeAI app, follow these [instructions](http://help.getscopeai.com/integrations/integrating-with-segment) to create one.
 
 Data will only display when there are conversations imported into ScopeAI (these must be imported through separate integrations) that have a `userId` or `email` that match with the `userId` or `email` of Segment API calls. More information on this can be found [here](http://help.getscopeai.com/integrations/integrating-with-segment).
 
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -37,11 +36,11 @@ This data can be used to customize analysis on ScopeAI, information on how can b
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
-  email: 'john.doe@segment.com'
+  email: 'john.doe@example.com'
 });
 ```
 
@@ -54,7 +53,7 @@ This data can be used to customize analysis on ScopeAI, information on how can b
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked Login Button')

@@ -12,7 +12,7 @@ This guide provides you with the tools to answer these questions with SQL so tha
 
 The goal of marketing campaigns is to drive engagement and conversions. Most commonly performed by attracting traffic to the site, these campaigns use UTM parameters for attribution. In our analysis, we'll be heavily relying on UTM parameters to analyze not only campaign, but also channel performance.
 
-[Learn how to effectively use UTM parameters in your marketing campaign strategies.](https://segment.com/docs/guides/sources/how-to-track-customers-across-channels-devices)
+[Learn how to effectively use UTM parameters in your marketing campaign strategies.](/docs/guides/how-to-guides/cross-channel-tracking/)
 
 For our analysis walkthrough, we'll use fictitious e-commerce and marketing data from on-demand artisanal toast company, Toastmates.
 
@@ -156,7 +156,7 @@ The main costs that are incorporated in an ROI calculation are salaries (pro-rat
 
 The costs associated with a given campaign consist of two major pieces: the person-hour cost and any associated media spend.
 
-*   Calculating the pro-rated person-hour is an estimate of the number of hours and people used to setup and manage the campaign, then multiplied by the hourly rates based off their annual salaries.
+*   Calculating the pro-rated person-hour is an estimate of the number of hours and people used to set up and manage the campaign, then multiplied by the hourly rates based off their annual salaries.
 
 *   The media spend is the advertising cost for distributing creatives to generate traffic to your store
 

@@ -2,7 +2,12 @@
 title: Desk.com Source
 rewrite: true
 redirect_from: '/connections/sources/catalog/cloud-apps/desk/'
+hidden: true
 ---
+
+> error ""
+> Desk.com ended operations on March 13th 2020. This page is for historical reference purposes only.
+
 
 [Desk.com](http://www.desk.com/), previously known as Assistly, is a SaaS help desk and customer support product owned by Salesforce.com and accessible through the cloud.
 
@@ -31,7 +36,7 @@ You will need a Desk.com account with administrator privileges.
 
 The Desk.com source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Desk.com objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation (ie. `desk_com.cases`).
 
-Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Desk.com. For example, if `priority` goes from `2` to `4` between syncs, on its next sync that priority value will be `4`.
+Our sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in Desk.com. For example, if `priority` goes from `2` to `4` between syncs, on its next sync that priority value will be `4`.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 
@@ -178,7 +183,7 @@ The source syncs and warehouse syncs are independent processes. Source runs pull
 |  ------ | ------- |
 | rating |	Numeric rating left by customer |
 | rating_type |	Rating type used to generate this feedback, either yes_no or four_star  |
-| additonal_feedback |	An optional additional feedback text field |
+| additional_feedback |	An optional additional feedback text field |
 | created_at |	Date the feedback was created |
 | updated_at |	Date the feedback was updated |
 | user | The user who created this feedback |

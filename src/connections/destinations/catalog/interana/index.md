@@ -4,9 +4,9 @@ rewrite: true
 ---
 [Interana's](https://www.interana.com/segment/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) full stack solution allows you to visually explore trillions of data points from multiple data sets all in real time without the need for ETL, data aggregation, or writing any SQL.
 
-This destination is maintained by Interana. For any issues with the destination, please [reach out to their team](mailto:support@interana.com).
+This destination is maintained by Interana. For any issues with the destination, [contact the Interana Support team](mailto:support@interana.com).
 
-_**NOTE:** The Interana Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on September 24, 2019. If you are interested in joining their beta program or have any feedback to help improve the Interana Destination and its documentation, please [let  their team know](mailto:support@interana.com)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 
@@ -32,7 +32,7 @@ All methods will be tracked as a new event in Interana with the associated metho
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -40,7 +40,7 @@ analytics.page()
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
 
 ```
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -48,17 +48,17 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. Identify methods can be used with Actors properties and Flow Properties in Interana to update the associate with the user in the Identify method. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. Identify methods can be used with Actors properties and Flow Properties in Interana to update the associate with the user in the Identify method. An example call would look like:
 
 ```
 analytics.identify('userId123', {
-  email: 'john.doe@segment.com'
+  email: 'john.doe@example.com'
 });
 ```
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked Login Button')

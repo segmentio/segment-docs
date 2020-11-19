@@ -4,31 +4,29 @@ title: Mailchimp Destination
 ---
 [Mailchimp](https://mailchimp.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides email marketing automation for e-commerce businesses. With Segment you can add people to your MailChimp list with a single [`identify`](/docs/connections/spec/identify/) call.
 
-This document was last updated on May 08, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please let us know!
+This document was last updated on May 08, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact/)!
 
-**Use Cases**
-
-* [Email shopping cart abandoners and generate more conversions with MailChimp](https://segment.com/recipes/email-shopping-cart-abandoners-mailchimp/)
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "MailChimp" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in your MailChimp "API key" into the connection settings. It is recommended that you create a brand new API key for the Segment destination. MailChimp restricts each API key to a maximum of 10 concurrent requests, so creating a dedicated one for Segment will ensure maximum throughput for outgoing calls. You can read more about API keys on [MailChimp's docs](http://kb.mailchimp.com/integrations/api-integrations/about-api-keys).
-4. Drop in your MailChimp "[Audience ID](#audience-id)" into your connection settings.
-5. Drop in your MailChimp "[Datacenter ID](#datacenter-id)"into your connection settings.
+1. From the Segment web app, click **Catalog**.
+2. Search for "MailChimp" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. In the destination settings, enter your MailChimp "API key" into the connection settings.
+   You should create a new API key for the Segment destination. MailChimp restricts each API key to a maximum of 10 concurrent requests, so creating a dedicated one for Segment ensures maximum throughput for outgoing calls. You can read more about API keys on [MailChimp's docs](http://kb.mailchimp.com/integrations/api-integrations/about-api-keys).
+4. Enter your MailChimp "[Audience ID](#audience-id)" into the connection settings.
+5. Enter your MailChimp "[Datacenter ID](#datacenter-id)" into the connection settings.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('userId12345', {
   firstName: 'Bob',
   lastName: 'Dole',
-  email: 'bob.dole@initech.com'
+  email: 'bob.dole@example.com'
 });
 ```
 
@@ -42,7 +40,7 @@ Every time you call [identify](/docs/connections/spec/identify/) with an email a
 
 So you no longer have to worry about the `identify` call resubscribing users unintentionally!
 
-Segment recognizes `firstName`, `lastName` and `email` as [special traits](/docs/connections/spec/identify#special-traits), so we will translate those for you to match the Mailchimp accepted field names. Mailchimp includes these fields by default when you create a list.
+Segment recognizes `firstName`, `lastName` and `email` as [special traits](/docs/connections/spec/identify#traits), so we will translate those for you to match the Mailchimp accepted field names. Mailchimp includes these fields by default when you create a list.
 
 ### Recording Custom User Traits
 
@@ -70,7 +68,7 @@ You can populate those fields using this `identify` call:
 analytics.identify('userId12345', {
   firstName: 'Bob',
   lastName: 'Dole',
-  email: 'bob.dole@initech.com',
+  email: 'bob.dole@example.com',
   company: 'Initech',
   employees: 234
 });
@@ -86,7 +84,7 @@ Once Mailchimp has processed the new subscriber you'll see it show up in your li
 
 ### Recording userId
 
-To record a Segment `userId` in Mailchimp, you must pass the userID as a trait on your `identify()` calls. We do not automatically map the Segment userID to any Mailchimp properties.  
+To record a Segment `userId` in Mailchimp, you must pass the userID as a trait on your `identify()` calls. We do not automatically map the Segment userID to any Mailchimp properties.
 
 ### Overriding List ID (Also now referred to as Audience ID)
 

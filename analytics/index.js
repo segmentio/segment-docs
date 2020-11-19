@@ -74,7 +74,7 @@ function withTypewriterContext(message = {}) {
 			...(message.context || {}),
 			typewriter: {
 				language: 'javascript',
-				version: '7.0.0',
+				version: '7.0.1',
 			},
 		},
 	}
@@ -84,20 +84,43 @@ function withTypewriterContext(message = {}) {
  * @property {string} query -
  */
 /**
- * @typedef FeedbackProvided
- * @property {boolean} helpful -
- * @property {string} section - Was the feedback form in the right-nav or footer clicked?
- * @property {string} title -
+ * @typedef FeedbackCommentProvided
+ * @property {string} [comment] - the comment
+ * @property {boolean} [helpful] - the rating given prior to the comment
+ * @property {string} [section] - Was the feedback form in the right-nav or footer clicked?
+ * @property {string} [title] -
  */
 /**
- * @typedef HomeButtonClicked
- * @property {string} url - The url of the page the home button was clicked on
+ * @typedef FeedbackProvided
+ * @property {string} [comment] -
+ * @property {boolean} helpful - Boolean representing the value of the feedback, true is helpful, false is not helpful
+ * @property {string} section - Was the feedback form in the right-nav or footer clicked?
+ * @property {string} title -
  */
 /**
  * @typedef LeadCaptured
  * @property {string} email -
  * @property {string} location -
  * @property {string} url -
+ */
+/**
+ * @typedef NavigationControlUsed
+ * @property {string} control_value - Name of control used
+ * @property {string} [search_value] - Value of search term if search bar is used
+ */
+/**
+ * @typedef PageViewed
+ * @property {string} [browser_language] - Custom property to identify user's browser language
+ * @property {string} [frontmatter] - Custom property to add additional frontmatter context to each page call
+ * @property {string} [ip] -
+ * @property {string} [name] -
+ * @property {string} [path] -
+ * @property {string} [referrer] -
+ * @property {string} [search] -
+ * @property {string} [timestamp] -
+ * @property {string} [timezone] -
+ * @property {string} [title] -
+ * @property {string} [url] -
  */
 /**
  * @typedef ScrolledToBottom
@@ -158,7 +181,67 @@ export function docsSearched(props, options, callback) {
 	}
 }
 /**
- * Fires a 'Feedback Provided' track call.
+ * User submits comments after their thumbs/down rating
+ *
+ * @param {FeedbackCommentProvided} [props] - The analytics properties that will be sent to Segment.
+ * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
+ * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
+ * 		call is fired.
+ */
+export function feedbackCommentProvided(props, options, callback) {
+	const schema = {
+		$schema: 'http://json-schema.org/draft-07/schema#',
+		description: 'User submits comments after their thumbs/down rating',
+		labels: {},
+		properties: {
+			context: {},
+			properties: {
+				properties: {
+					comment: {
+						description: 'the comment',
+						type: 'string',
+					},
+					helpful: {
+						description: 'the rating given prior to the comment',
+						type: 'boolean',
+					},
+					section: {
+						description:
+							'Was the feedback form in the right-nav or footer clicked?',
+						type: 'string',
+					},
+					title: {
+						description: '',
+						type: 'string',
+					},
+				},
+				type: 'object',
+			},
+			traits: {
+				type: 'object',
+			},
+		},
+		title: 'Feedback Comment Provided',
+		type: 'object',
+	}
+	const message = {
+		event: 'Feedback Comment Provided',
+		properties: props || {},
+		options,
+	}
+	validateAgainstSchema(message, schema)
+	const a = analytics()
+	if (a) {
+		a.track(
+			'Feedback Comment Provided',
+			props || {},
+			withTypewriterContext(options),
+			callback
+		)
+	}
+}
+/**
+ * User submits a thumbs up/down rating for a docs article
  *
  * @param {FeedbackProvided} props - The analytics properties that will be sent to Segment.
  * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
@@ -168,13 +251,19 @@ export function docsSearched(props, options, callback) {
 export function feedbackProvided(props, options, callback) {
 	const schema = {
 		$schema: 'http://json-schema.org/draft-07/schema#',
+		description: 'User submits a thumbs up/down rating for a docs article',
 		labels: {},
 		properties: {
 			context: {},
 			properties: {
 				properties: {
-					helpful: {
+					comment: {
 						description: '',
+						type: 'string',
+					},
+					helpful: {
+						description:
+							'Boolean representing the value of the feedback, true is helpful, false is not helpful',
 						type: 'boolean',
 					},
 					section: {
@@ -188,7 +277,7 @@ export function feedbackProvided(props, options, callback) {
 						type: 'string',
 					},
 				},
-				required: ['helpful', 'title', 'section'],
+				required: ['helpful', 'section', 'title'],
 				type: 'object',
 			},
 			traits: {
@@ -218,7 +307,7 @@ export function feedbackProvided(props, options, callback) {
 /**
  * Fires a 'Home Button Clicked' track call.
  *
- * @param {HomeButtonClicked} props - The analytics properties that will be sent to Segment.
+ * @param {Record<string, any>} [props] - The analytics properties that will be sent to Segment.
  * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
  * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
  * 		call is fired.
@@ -230,20 +319,12 @@ export function homeButtonClicked(props, options, callback) {
 		properties: {
 			context: {},
 			properties: {
-				properties: {
-					url: {
-						description: 'The url of the page the home button was clicked on',
-						type: 'string',
-					},
-				},
-				required: ['url'],
 				type: 'object',
 			},
 			traits: {
 				type: 'object',
 			},
 		},
-		required: ['properties'],
 		title: 'Home Button Clicked',
 		type: 'object',
 	}
@@ -313,6 +394,147 @@ export function leadCaptured(props, options, callback) {
 	if (a) {
 		a.track(
 			'Lead Captured',
+			props || {},
+			withTypewriterContext(options),
+			callback
+		)
+	}
+}
+/**
+ * User clicks one of the navigation elements like the home button, ToC, or searches
+ *
+ * @param {NavigationControlUsed} props - The analytics properties that will be sent to Segment.
+ * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
+ * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
+ * 		call is fired.
+ */
+export function navigationControlUsed(props, options, callback) {
+	const schema = {
+		$schema: 'http://json-schema.org/draft-07/schema#',
+		description:
+			'User clicks one of the navigation elements like the home button, ToC, or searches',
+		labels: {},
+		properties: {
+			context: {},
+			properties: {
+				properties: {
+					control_value: {
+						description: 'Name of control used',
+						type: 'string',
+					},
+					search_value: {
+						description: 'Value of search term if search bar is used',
+						type: 'string',
+					},
+				},
+				required: ['control_value'],
+				type: 'object',
+			},
+			traits: {
+				type: 'object',
+			},
+		},
+		required: ['properties'],
+		title: 'Navigation Control Used',
+		type: 'object',
+	}
+	const message = {
+		event: 'Navigation Control Used',
+		properties: props || {},
+		options,
+	}
+	validateAgainstSchema(message, schema)
+	const a = analytics()
+	if (a) {
+		a.track(
+			'Navigation Control Used',
+			props || {},
+			withTypewriterContext(options),
+			callback
+		)
+	}
+}
+/**
+ * Fires a 'Page Viewed' track call.
+ *
+ * @param {PageViewed} [props] - The analytics properties that will be sent to Segment.
+ * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
+ * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
+ * 		call is fired.
+ */
+export function pageViewed(props, options, callback) {
+	const schema = {
+		$schema: 'http://json-schema.org/draft-07/schema#',
+		labels: {},
+		properties: {
+			context: {},
+			properties: {
+				properties: {
+					browser_language: {
+						description: "Custom property to identify user's browser language",
+						type: 'string',
+					},
+					frontmatter: {
+						description:
+							'Custom property to add additional frontmatter context to each page call',
+						type: 'string',
+					},
+					ip: {
+						description: '',
+						type: 'string',
+					},
+					name: {
+						description: '',
+						type: 'string',
+					},
+					path: {
+						description: '',
+						type: 'string',
+					},
+					referrer: {
+						description: '',
+						type: 'string',
+					},
+					search: {
+						description: '',
+						type: 'string',
+					},
+					timestamp: {
+						description: '',
+						type: 'string',
+					},
+					timezone: {
+						description: '',
+						type: 'string',
+					},
+					title: {
+						description: '',
+						type: 'string',
+					},
+					url: {
+						description: '',
+						type: 'string',
+					},
+				},
+				type: 'object',
+			},
+			traits: {
+				type: 'object',
+			},
+		},
+		title: 'Page Viewed',
+		type: 'object',
+	}
+	const message = {
+		event: 'Page Viewed',
+		properties: props || {},
+		options,
+	}
+	validateAgainstSchema(message, schema)
+	const a = analytics()
+	if (a) {
+		a.track(
+			'Page Viewed',
 			props || {},
 			withTypewriterContext(options),
 			callback
@@ -409,46 +631,6 @@ export function scrolledToBottom(props, options, callback) {
 	}
 }
 /**
- * Fires a 'Search Clicked' track call.
- *
- * @param {Record<string, any>} [props] - The analytics properties that will be sent to Segment.
- * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
- * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
- * 		call is fired.
- */
-export function searchClicked(props, options, callback) {
-	const schema = {
-		$schema: 'http://json-schema.org/draft-07/schema#',
-		labels: {},
-		properties: {
-			context: {},
-			properties: {
-				type: 'object',
-			},
-			traits: {
-				type: 'object',
-			},
-		},
-		title: 'Search Clicked',
-		type: 'object',
-	}
-	const message = {
-		event: 'Search Clicked',
-		properties: props || {},
-		options,
-	}
-	validateAgainstSchema(message, schema)
-	const a = analytics()
-	if (a) {
-		a.track(
-			'Search Clicked',
-			props || {},
-			withTypewriterContext(options),
-			callback
-		)
-	}
-}
-/**
  * Table of Contents Clicked
  *
  * @param {TocClicked} props - The analytics properties that will be sent to Segment.
@@ -478,7 +660,7 @@ export function tocClicked(props, options, callback) {
 						type: 'string',
 					},
 				},
-				required: ['name', 'url', 'link'],
+				required: ['link', 'name', 'url'],
 				type: 'object',
 			},
 			traits: {
@@ -530,7 +712,16 @@ const clientAPI = {
 	 */
 	docsSearched,
 	/**
-	 * Fires a 'Feedback Provided' track call.
+	 * User submits comments after their thumbs/down rating
+	 *
+	 * @param {FeedbackCommentProvided} [props] - The analytics properties that will be sent to Segment.
+	 * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
+	 * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
+	 * 		call is fired.
+	 */
+	feedbackCommentProvided,
+	/**
+	 * User submits a thumbs up/down rating for a docs article
 	 *
 	 * @param {FeedbackProvided} props - The analytics properties that will be sent to Segment.
 	 * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
@@ -541,7 +732,7 @@ const clientAPI = {
 	/**
 	 * Fires a 'Home Button Clicked' track call.
 	 *
-	 * @param {HomeButtonClicked} props - The analytics properties that will be sent to Segment.
+	 * @param {Record<string, any>} [props] - The analytics properties that will be sent to Segment.
 	 * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
 	 * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
 	 * 		call is fired.
@@ -556,6 +747,24 @@ const clientAPI = {
 	 * 		call is fired.
 	 */
 	leadCaptured,
+	/**
+	 * User clicks one of the navigation elements like the home button, ToC, or searches
+	 *
+	 * @param {NavigationControlUsed} props - The analytics properties that will be sent to Segment.
+	 * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
+	 * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
+	 * 		call is fired.
+	 */
+	navigationControlUsed,
+	/**
+	 * Fires a 'Page Viewed' track call.
+	 *
+	 * @param {PageViewed} [props] - The analytics properties that will be sent to Segment.
+	 * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
+	 * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
+	 * 		call is fired.
+	 */
+	pageViewed,
 	/**
 	 * Fires a 'Scroll to Top Clicked' track call.
 	 *
@@ -574,15 +783,6 @@ const clientAPI = {
 	 * 		call is fired.
 	 */
 	scrolledToBottom,
-	/**
-	 * Fires a 'Search Clicked' track call.
-	 *
-	 * @param {Record<string, any>} [props] - The analytics properties that will be sent to Segment.
-	 * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
-	 * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
-	 * 		call is fired.
-	 */
-	searchClicked,
 	/**
 	 * Table of Contents Clicked
 	 *
@@ -603,7 +803,7 @@ export default new Proxy(clientAPI, {
 				method
 			)}) that can't be found. Either:
     a) Re-generate your typewriter client: \`npx typewriter\`
-    b) Add it to your Tracking Plan: https://app.segment.com/personal-sandbox/protocols/tracking-plans/rs_1TXEwonMAr3lovaSXucnJifEEg4`)
+    b) Add it to your Tracking Plan: https://app.segment.com/segment_prod/protocols/tracking-plans/rs_1Ohr9MJskSjbjKIZJ8ixf5dIAJ1`)
 			const a = analytics()
 			if (a) {
 				a.track(

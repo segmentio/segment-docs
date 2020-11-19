@@ -27,17 +27,17 @@ sections:
     section:
     - path: /connections/sources
       title: Sources Overview
-    - path: /connections/sources/cloud-source-data
+    - path: /connections/sources/about-cloud-sources
       title: What can you do with cloud source data?
     - path: /connections/sources/custom-domains
       title: Set up a custom domain proxy in Segment
-    - path: /connections/sources/custom-sources
+    - path: /connections/sources/source-functions
       title: Custom Sources
     - path: /connections/sources/index-tonik
       title: Sources
     - path: /connections/sources/visual-tagger
       title: Visual Tagger
-    - path: /connections/sources/what-are-cloud-sources
+    - path: /connections/sources/about-cloud-sources
       title: What are Cloud-App Sources?
   - section_title: Spec
     slug: connections/spec
@@ -72,23 +72,30 @@ sections:
       title: Video Spec
   - path: /connections/test-connections
     title: How do I test my connections?
-  - section_title: Warehouses
-    slug: connections/warehouses
+  - section_title: Storage Destinations
+    slug: connections/storage
     section:
-    - path: /connections/warehouses
-      title: Warehouses and Data Storage
-    - path: /connections/warehouses/add-warehouse-users
-      title: How do you add warehouse users?
-    - path: /connections/warehouses/choose-warehouse
-      title: Choosing a Warehouse
-    - path: /connections/warehouses/faq
-      title: Warehouse FAQs
-    - path: /connections/warehouses/redshift-faq
-      title: Redshift cluster and Redshift connector limitations
-    - path: /connections/warehouses/redshift-tuning
-      title: How Do I Speed Up My Redshift Queries?
-    - path: /connections/warehouses/warehouse-errors
-      title: What does my warehouse error mean?
+    - path: /connections/storage
+      title: Data Storage Overview
+    - path: /connections/storage/choose-storage
+      title: Data Storage Overview
+    - section_title: Warehouses
+      slug: connections/storage/warehouses
+      section:
+      - path: /connections/storage/warehouses
+        title: Warehouses and Data Storage
+      - path: /connections/storage/warehouses/add-warehouse-users
+        title: How do you add warehouse users?
+      - path: /connections/storage/warehouses/choose-warehouse
+        title: Choosing a Warehouse
+      - path: /connections/storage/warehouses/faq
+        title: Warehouse FAQs
+      - path: /connections/storage/warehouses/redshift-faq
+        title: Redshift cluster and Redshift connector limitations
+      - path: /connections/storage/warehouses/redshift-tuning
+        title: How Do I Speed Up My Redshift Queries?
+      - path: /connections/storage/warehouses/warehouse-errors
+        title: What does my warehouse error mean?
 - section_title: Guides
   section:
   - path: /guides
@@ -117,7 +124,7 @@ sections:
     - path: /guides/how-to-guides/cross-channel-tracking
       title: How do we track your customers across channels and devices?
     - path: /guides/how-to-guides/dynamic-coupon-program
-      title: How do I setup a dynamic coupon program to reward loyal customers?
+      title: How do I set up a dynamic coupon program to reward loyal customers?
     - path: /guides/how-to-guides/forecast-with-sql
       title: How do I forecast LTV with SQL and Excel for e-commerce?
     - path: /guides/how-to-guides/import-historical-data
@@ -159,24 +166,26 @@ sections:
   section:
   - path: /personas
     title: Personas Overview
-  - path: /personas/activation
-    title: 'Personas: Activation'
-  - path: /personas/audiences
-    title: 'Personas: Audiences'
-  - path: /personas/computed-traits
-    title: 'Personas: Computed Traits'
-  - path: /personas/faqs
-    title: Personas Frequently Asked Questions
+  - path: /personas/setup-guide
+    title: Personas set up guide
   - path: /personas/identity-resolution
     title: 'Personas: Identity Resolution'
-  - path: /personas/personas-gdpr
-    title: Personas and GDPR
-  - path: /personas/profile-api
-    title: 'Personas: Profile API'
+  - path: /personas/computed-traits
+    title: 'Personas: Computed Traits'
   - path: /personas/sql-traits
     title: 'Personas: SQL Traits'
+  - path: /personas/audiences
+    title: 'Personas: Audiences'
+  - path: /personas/using-personas-data
+    title: 'Using Personas Data'
   - path: /personas/warehouses
     title: Personas and Warehouses
+  - path: /personas/profile-api
+    title: 'Personas: Profile API'
+  - path: /personas/personas-gdpr
+    title: Personas and GDPR
+  - path: /personas/faqs
+    title: Personas Frequently Asked Questions
 - section_title: Privacy
   section:
   - path: /privacy
@@ -246,6 +255,8 @@ sections:
       title: Picking a secure password
     - path: /segment-app/iam/sso
       title: Single Sign On
+    - path: /segment-app/iam/scim
+      title: System for Cross-domain Identity Management (SCIM)
   - path: /segment-app/set-up-envs
     title: Prod and Testing Environments in Segment
   - path: /segment-app/verify-email-address

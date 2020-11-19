@@ -159,7 +159,7 @@ Our AMP Source doesn't automatically collect UTM parameters for you but you can 
 
 ## AMP Linker
 
-In order to maintain a merged session for a user navigating from an AMP page served from AMP cache to AMP pages hosted on your domain, you will need to leverage the [AMP Linker](https://amp.dev/documentation/examples/advertising-analytics/joining_analytics_sessions/) feature. It works by decorating outgoing links from AMP cache with params such as AMP Client ID in a URL parameter and gets written into a first-party cookie.
+In order to maintain a merged session for a user navigating from an AMP page served from AMP cache to AMP pages hosted on your domain, you will need to use the [AMP Linker](https://amp.dev/documentation/examples/advertising-analytics/joining_analytics_sessions/) feature. It works by decorating outgoing links from AMP cache with params such as AMP Client ID in a URL parameter and gets written into a first-party cookie.
 
 In order to enable this feature, you will need to include a `linkers` object set to `true` within your configuration.
 
@@ -184,7 +184,7 @@ In order to enable this feature, you will need to include a `linkers` object set
 ## Troubleshooting
 
 ### Can I use client-side Destinations?
-No. All AMP data is sent from Google's servers to our server-side API and subsequently only onto our server-side Destinations. You will only be able to use our server-side destinations and their relevant setting. For example, for Google Analytics, please use the "Server-side Tracking ID".
+No. All AMP data is sent from Google's servers to our server-side API and subsequently only onto our server-side Destinations. You will only be able to use our server-side destinations and their relevant setting. For example, for Google Analytics, use the "Server-side Tracking ID".
 
 ### How do I identify users?
 Because AMP is static, it doesn't provide many options for persistently identifying users. AMP provides a basic cookie mechanism called an AMP Client ID which is a uniquely generated cookie for every unique end user's AMP session. Depending on Google's caching settings, you may receive multiple AMP Client IDs for the same user. Segment will [capture](https://github.com/ampproject/amphtml/blob/b8abe2137f1a50ca6173a258fced64e41a46c763/extensions/amp-analytics/0.1/vendors.js#L1629-L1659) this AMP Client ID as an `anonymous_id` and it will be of this format: `amp-REDmCPH4F0QX44kCFomrcA`.
@@ -203,7 +203,7 @@ This identity schema will allow you to join down funnel interaction with earlier
 ### Why aren't all my IDs prefixed with an 'amp-'?
 
 All AMP events won't consistently have an 'amp-' prefixed ID as this is only included in the event that the AMP page is directly visited on your domain.
-For further details please refer to the various `Client ID` scenarios in relation to AMP pages [here]( https://developers.google.com/analytics/devguides/collection/amp-analytics/client-id) (we can only guarantee that if the 3rd scenario happens, the AMP ID will get generated and picked up).
+For further details refer to the various `Client ID` scenarios in relation to AMP pages [here]( https://developers.google.com/analytics/devguides/collection/amp-analytics/client-id) (we can only guarantee that if the 3rd scenario happens, the AMP ID will get generated and picked up).
 
 
 See a live <a href="https://segment-amp.firebaseapp.com">AMP with Segment analytics</a>
