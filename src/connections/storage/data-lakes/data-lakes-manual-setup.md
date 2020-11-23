@@ -84,8 +84,7 @@ Create a `segment-data-lake-role` role for Segment to assume. Attach the followi
       "Condition": {
         "StringEquals": {
           "sts:ExternalId": [
-            "SOURCE_1",
-            "SOURCE_N"
+            "WORKSPACE_ID"
           ]
         }
       }
@@ -95,7 +94,7 @@ Create a `segment-data-lake-role` role for Segment to assume. Attach the followi
 ```
 
 > note ""
-> **NOTE:** Replace the `ExternalID` list with the Segment `SourceId` values that are synced to the Data Lake.
+> **NOTE:** Replace the `ExternalID` list with the Segment `WorkspaceID` that contains the sources to sync to the Data Lake.
 
 ### IAM Policy
 
