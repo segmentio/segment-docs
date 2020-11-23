@@ -47,7 +47,7 @@ Adding a destination can have a few different effects, depending on which source
 
 #### Analytics.js
 
-If you are using [Segment's javascript library, Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), then Segment handles any configuration changes you need for you. If you're using Analytics.js in cloud-mode, the library sends its tracking data to the Segment servers, which route it to your destinations. When you change which destinations you sending data to, the Segment servers automatically add that destination to the distribution list.
+If you are using [Segment's javascript library, Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), then Segment handles any configuration changes you need for you. If you're using Analytics.js in cloud-mode, the library sends its tracking data to the Segment servers, which route it to your destinations. When you change which destinations you send data to, the Segment servers automatically add that destination to the distribution list.
 
 If you're using Analytics.js in device-mode, then Analytics.js serves as a wrapper around additional code used by the individual destinations to run on the user's device. When you add a destination, the Segment servers update a list of destinations that the library queries. When a user next loads your site, Analytics.js checks the list of destinations to load code for, and adds the new destination's code to what it loads. It can take up to 30 minutes for the list to update, due to CDN caching.
 
