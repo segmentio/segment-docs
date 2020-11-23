@@ -2,7 +2,7 @@
 title: Sending Segment data to destinations
 ---
 
-You've decided how to format your data, and collected it using [Segment Sources](/docs/connections/sources/). Now what do you do with it? Send the data to Destinations!
+You've decided how to format your data, and collected it using [Segment Sources](/docs/connections/sources/). Now what do you do with it? You send the data to Destinations!
 
 Destinations are tools or services which can use the data sent from Segment to power analytics, marketing, customer outreach, and more.
 
@@ -12,7 +12,7 @@ Destinations are tools or services which can use the data sent from Segment to p
 
 ## Adding a destination
 
-There are two ways to add a destination to your deployment: from the Segment web app, or using the Config API.
+There are two ways to add a destination to your deployment: using the Segment web app, or using the [Config API](/docs/config-api/).
 
 
 #### Adding a destination from the Segment web app
@@ -33,7 +33,7 @@ There are two ways to add a destination to your deployment: from the Segment web
 > success ""
 > If you have more than one instance of a destination, you can click **Copy Settings From Other Destination** to save yourself time entering the settings values.
 
-#### Adding a destination using the Config APIs
+#### Adding a destination using the Config API
 
 You can use the Segment Config API to add destinations to your workspace using the [Create Destination endpoint](https://reference.segmentapis.com/#51d965d3-4a67-4542-ae2c-eb1fdddc3df6). The API requires an authorization token, and uses the `name` field as a namespace that defines which _source_ the destination is connected to. You send the rest of the destination's configuration as a JSON blob. View the documentation page in the Segment Catalog, or query the [Segment Catalog API](https://reference.segmentapis.com/#7a63ac88-43af-43db-a987-7ed7d677a8c8), for a destination to see the available settings.
 
@@ -47,28 +47,31 @@ Adding a destination can have a few different effects, depending on which source
 
 #### Analytics.js
 
-If you are using [Segment's javascript library, Analytics.js](), then Segment handles any configuration changes you need for you. If you're using Analytics.js in cloud-mode, it sends its tracking data to the Segment servers, which route it to your destinations. When you change which destinations you're sending data to, the Segment servers automatically add that destination to the distribution list.
+If you are using [Segment's javascript library, Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), then Segment handles any configuration changes you need for you. If you're using Analytics.js in cloud-mode, the library sends its tracking data to the Segment servers, which route it to your destinations. When you change which destinations you sending data to, the Segment servers automatically add that destination to the distribution list.
 
-If you're using Analytics.js in device-mode, then Analytics.js serves as a wrapper around additional code used by the individual destinations to run on the user's device. When you add a destination, the Segment servers update a list of destinations that your AJS library queries. When a user next loads your site, AJS checks the list of destinations to load code for, and adds the new destination's code to what it loads. This can take up to 30 minutes due to CDN caching.
+If you're using Analytics.js in device-mode, then Analytics.js serves as a wrapper around additional code used by the individual destinations to run on the user's device. When you add a destination, the Segment servers update a list of destinations that the library queries. When a user next loads your site, Analytics.js checks the list of destinations to load code for, and adds the new destination's code to what it loads. It can take up to 30 minutes for the list to update, due to CDN caching.
+
+You can enable device-mode for some destinations from the destination's Settings page in the Segment web app. You don't need to use the same mode for all destinations in a workspace; some can use device-mode, and some can use cloud-mode.
 
 #### Mobile sources
 
-By default, mobile sources send data to Segment in cloud-mode to help minimize the size of your apps. In cloud-mode the mobile source libraries forward the tracking data to the Segment servers, which route the data to the destinations. Since the Segment servers know which destinations you're using, you don't need to take any action to add destinations to mobile apps using cloud-mode.
+By default, Segment's [mobile sources](/docs/connections/sources/catalog/#mobile) send data to Segment in cloud-mode to help minimize the size of your apps. In cloud-mode the mobile source libraries forward the tracking data to the Segment servers, which route the data to the destinations. Since the Segment servers know which destinations you're using, you don't need to take any action to add destinations to mobile apps using cloud-mode.
 
 However, if the destination you're adding has features that run on the user's device, you might need to update the app to package that destination's SDK with the library. Some destinations require that you package the SDK, and some only offer it
 
+#### Server sources
 
-#### Library sources
+Segment's [server sources](/docs/connections/sources/catalog/#server) run on your internal app code, and never have access to the user's device. They run in cloud-mode only, and forward their tracking calls to the Segment servers, which forward the data to any destinations you enabled.
 
-<!--TODO  -->
 
 ## Destination authentication
 
-<!--TODO  -->
+When you add a destination in Segment, you must tell Segment how to connect with that destination's app or endpoints. Most destinations offer an API token or authentication code which you can get from their web app. The documentation for each Segment destination includes information about what you need, and how to find it. Copy this information, and paste it into the Settings for the destination, or include it in the [create API call](https://reference.segmentapis.com/#51d965d3-4a67-4542-ae2c-eb1fdddc3df6).
 
 ## Destination settings
 
-<!--TODO  -->
+Each destination can also have destination settings. These control how Segment transforms the data you send to the destination, and can be used to adapt it to your configuration or enable or disable certain destination features.
+
 
 <!-- TODO: Project Demux
 ## Multiple instances of the same destination
