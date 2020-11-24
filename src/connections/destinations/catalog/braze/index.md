@@ -115,7 +115,11 @@ analytics.identify('ze8rt1u89', {
 });
 ```
 
-When you Identify a user, we'll pass that user's information to Braze with `userId` as Braze's External User ID. If you are using a device-mode connection, Braze's SDK will also automatically assign a `braze_id` to every user. This allows Braze to capture anonymous activity client-side, by keying on `braze_id` in leiu of a `userId`. Please note that this only applies to device-mode connections. If you wish to send anonymous user data in cloud-mode, you must manually include the user's `braze_id` in all your Segment API calls in the `integrations.Braze.braze_id` or `context.integrations.Braze.braze_id` object.
+When you Identify a user, Segment passes that user's information to Braze with `userId` as Braze's External User ID. 
+
+If you are using a device-mode connection, Braze's SDK also automatically assigns a `braze_id` to every user. This allows Braze to capture anonymous activity from the device by matching on `braze_id` instead of `userId`. This only applies to _device-mode connections_. 
+
+To send anonymous user data in cloud-mode, you must manually include the user's `braze_id` in all your Segment API calls in the `integrations.Braze.braze_id` or `context.integrations.Braze.braze_id` object.
 
 Segment's special traits recognized as Braze's standard user profile fields (in parentheses) are:
 
