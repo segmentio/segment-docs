@@ -3,7 +3,7 @@ sections:
 - section_title: Getting Started
   section:
   - path: /getting-started
-    title: Getting Started with Segment
+    title: Getting started with Segment
   - path: /getting-started/01-what-is-segment
     title: What is Segment?
   - path: /getting-started/02-simple-install
@@ -15,7 +15,7 @@ sections:
   - path: /getting-started/05-data-to-destinations
     title: Sending data to destinations
   - path: /getting-started/06-testing-debugging
-    title: Testing and Debugging
+    title: Testing and debugging
   - path: /getting-started/whats-next
     title: What's next?
 
@@ -24,13 +24,13 @@ sections:
   - path: /guides
     title: An introduction to Segment
   - path: /guides/intro-impl
-    title: Segment Developer overview
+    title: Segment developer overview
   - path: /guides/intro-user
-    title: Segment Data User overview
+    title: Segment data user overview
   - path: /guides/intro-admin
-    title: Segment Workspace Admin overview
+    title: Segment workspace admin overview
   - path: /guides/filtering-data
-    title: Filtering your Segment Data
+    title: Filtering your Segment data
   - path: /guides/duplicate-data
     title: How does Segment handle duplicate data?
   - path: /guides/ignore-bots
@@ -45,7 +45,7 @@ sections:
     menu_icon: read-more
     section:
     - path: /guides/how-to-guides
-      title: How-to Guides Index
+      title: How-to Guides index
     - path: /guides/how-to-guides/automated-multichannel-reengagement
       title: How do I automate multi-channel re-engagement campaigns?
     - path: /guides/how-to-guides/collect-on-client-or-server
@@ -74,13 +74,13 @@ sections:
       title: What role does Segment play in Attribution?
     - path: /guides/how-to-guides/set-up-notifications-alerts
       title: How do we set up event-triggered notifications or alerts?
-  - section_title: Usage And Billing
+  - section_title: Usage and Billing
     slug: guides/usage-and-billing
     section:
     - path: /guides/usage-and-billing/account-management
-      title: Account Management
+      title: Account management
     - path: /guides/usage-and-billing/billing
-      title: Billing and Account FAQs
+      title: Billing and account FAQs
     - path: /guides/usage-and-billing/mtus-and-throughput
       title: 'MTUs, Throughput and Billing'
     - path: /guides/usage-and-billing/discounts-for-startups-npos
@@ -90,12 +90,12 @@ sections:
 - section_title: Connections
   section:
   - path: /connections
-    title: Connections Overview
+    title: Connections overview
   - section_title: The Segment Spec
     slug: connections/spec
     section:
     - path: /connections/spec
-      title: Spec Overview
+      title: Spec overview
     - path: /connections/spec/page
       title: 'Spec: Page'
     - path: /connections/spec/screen
@@ -121,18 +121,18 @@ sections:
     - path: /connections/spec/ecommerce/v2
       title: 'Spec: Ecommerce Events'
     - path: /connections/spec/ecommerce-tracking-plan
-      title: 'Ecommerce Tracking Plans'
+      title: 'Ecommerce tracking plans'
     - path: /connections/spec/video
       title: Video Spec
     - path: /connections/spec/best-practices-identify
       title: Best practices for identifying users
     - path: /connections/spec/best-practices-event
-      title: Best Practices for Event Calls
+      title: Best practices for Event calls
   - section_title: Sources
     slug: connections/sources
     section:
     - path: /connections/sources
-      title: Sources Overview
+      title: Sources overview
     - path: /connections/sources/catalog
       title: Sources catalog
       menu_icon: read-more
@@ -148,7 +148,10 @@ sections:
     slug: connections/destinations
     section:
     - path: /connections/destinations
-      title: Destinations Overview
+
+      title: Destinations overview
+    - path: /connections/destinations/add-destination
+      title: Add a destination
     - path: /connections/destinations/catalog
       title: Destinations catalog
       menu_icon: read-more
@@ -158,7 +161,7 @@ sections:
     slug: connections/functions
     section:
     - path: /connections/functions
-      title: Functions Overview
+      title: Functions overview
     - path: /connections/functions/source-functions
       title: Source Functions
     - path: /connections/functions/destination-functions
@@ -220,7 +223,7 @@ sections:
   - path: /connections/find-writekey
     title: How do I find my write key?
   - path: /connections/integration_error_codes
-    title: Integration Error Codes
+    title: Integration error codes
   - path: /connections/schema-unique-limits
     title: Are there limits on my Segment Schema?
   - path: /connections/rate-limits
@@ -228,7 +231,7 @@ sections:
 - section_title: Personas
   section:
   - path: /personas
-    title: Personas Overview
+    title: Personas overview
   - path: /personas/quickstart
     title: Personas Quickstart Guide
   - section_title: Personas Identity Resolution
@@ -245,9 +248,9 @@ sections:
     - path: /personas/identity-resolution/identity-resolution-settings
       title: Settings
     - path: /personas/identity-resolution/ecommerce-example
-      title: E-Commerce Example
+      title: E-Commerce example
     - path: /personas/identity-resolution/personas-space-set-up
-      title: Personas Space Set Up
+      title: Personas Space set up
   - path: /personas/computed-traits
     title: Computed Traits
   - path: /personas/sql-traits
@@ -263,11 +266,11 @@ sections:
   - path: /personas/personas-gdpr
     title: Personas and GDPR
   - path: /personas/faqs
-    title: Personas Frequently Asked Questions
+    title: Personas FAQs
 - section_title: Privacy
   section:
   - path: /privacy
-    title: Overview
+    title: Privacy overview
   - section_title: Privacy Portal
     slug: protocols/portal
     expanded: true
@@ -283,18 +286,18 @@ sections:
     - path: /privacy/complying-with-the-gdpr
       title: Complying with GDPR
     - path: /privacy/user-deletion-and-suppression
-      title: User Deletion and Suppression
+      title: User deletion and suppression
   - path: /privacy/faq
-    title: Frequently Asked Questions
+    title: Privacy FAQs
 - section_title: Protocols
   section:
   - path: /protocols
-    title: Overview
+    title: Protocols overview
   - section_title: Create a Tracking Plan
     slug: protocols/tracking-plan
     section:
     - path: /protocols/tracking-plan/best-practices
-      title: Data Collection Best Practices
+      title: Data collection best practices
     - path: /protocols/tracking-plan/create
       title: The Tracking Plan
     - path: /protocols/tracking-plan/libraries
@@ -305,9 +308,9 @@ sections:
     - path: /protocols/validate/connect-sources
       title: Connect Sources to your Tracking Plan
     - path: /protocols/validate/review-violations
-      title: Review and Resolve Event Violations
+      title: Review and resolve event violations
     - path: /protocols/validate/forward-violations
-      title: Forward Violations
+      title: Forward violations
   - section_title: Enforce with data controls
     slug: protocols/enforce
     section:
@@ -327,7 +330,7 @@ sections:
     - path: /protocols/apis-and-extensions/anomaly_detection
       title: Anomaly Detection
   - path: /protocols/faq
-    title: Frequently Asked Questions
+    title: Protocols FAQs
 - section_title: Segment App
   section:
   - path: /segment-app
@@ -336,7 +339,7 @@ sections:
     slug: segment-app/iam
     section:
     - path: /segment-app/iam
-      title: Identity & Access Management Overview
+      title: Identity & Access Management overview
     - path: /segment-app/iam/concepts
       title: Concepts
     - path: /segment-app/iam/roles
@@ -344,9 +347,9 @@ sections:
     - path: /segment-app/iam/membership
       title: Manage workspace members
     - path: /segment-app/iam/labels
-      title: Label-Based Access Control
+      title: Label-based access control
     - path: /segment-app/iam/audit-trail
-      title: Audit Trail
+      title: Audit trail
     - path: /segment-app/iam/sso
       title: Single Sign On
     - path: /segment-app/iam/mfa
@@ -354,6 +357,6 @@ sections:
   - path: /segment-app/iam/secure-password
     title: Picking a secure password
   - path: /segment-app/set-up-envs
-    title: Prod and Testing Environments in Segment
+    title: Prod and Testing environments in Segment
   - path: /segment-app/verify-email-address
     title: How do I verify my email address?
