@@ -262,6 +262,9 @@ The `Segment.set()` method accepts an object with the following fields:
 
 {% include content/functions/runtime.md %}
 
+<!-- TODO
+## Batching in functions -->
+
 ## Create settings and secrets
 
 {% include content/functions/settings.md %}
