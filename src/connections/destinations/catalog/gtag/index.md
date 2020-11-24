@@ -55,10 +55,10 @@ Google Analytics Universal tracking method allows you to set a user ID for your 
 
 To use this feature you must enable User-ID in your Google Analytics property and create a User-ID view, [read more here](https://support.google.com/analytics/answer/3123666).
 
-If you want to pass the `id` from your [Identify](/docs/connections/spec/identify) calls to the Gtag destination settings and - enable
+To pass the `id` from your [Identify calls](/docs/connections/spec/identify) to the Gtag destination, go to **Other Settings** and set **Send User-ID to GA** to "on" to enable this setting.
 
 ### Send user ID
-The example below represents Segment sending a User ID value in an identify call:
+The example below represents Segment sending a User-ID value in an identify call:
 
 ```js
 analytics.identify('12345', {
@@ -70,7 +70,7 @@ analytics.identify('12345', {
 In this example the `User-ID` is `12345` for Google Analytics, but Segment won't share the `email` or `name` traits with Google.
 
 > warning ""
-> If you pass an **email**, **phone number**, **full name** or other PII as the `id` in [Identify](/docs/connections/spec/identify) do not use this feature. That is against the Google Analytics terms of service and your Google may suspend your service.
+> If you pass an **email**, **phone number**, **full name** or other PII as the `id` in [Identify](/docs/connections/spec/identify) do not use this feature. That is against the Google Analytics terms of service and Google may suspend your service.
 
 ### Custom dimensions
 Google Analytics has several scopes for each custom dimension: 
@@ -174,7 +174,7 @@ For example:
 
 ## Ecommerce
 
-Segment supports Google Analytics basic e-commerce tracking across all libraries. All you have to do is adhere to the [Ecommerce tracking API](/docs/connections/spec/ecommerce/v2/) and Segment sends the appropriate data to Google Analytics.
+Segment supports Google Analytics basic ecommerce tracking across all libraries. All you have to do is adhere to the [Ecommerce tracking API](/docs/connections/spec/ecommerce/v2/) and Segment sends the appropriate data to Google Analytics.
 
 ### Required steps
 
@@ -191,7 +191,7 @@ Segment supports Google Analytics Enhanced Ecommerce tracking in the Gtag destin
 
 To get started, enable Enhanced Ecommerce and adhere to the standard [Ecommerce tracking API](/docs/connections/spec/ecommerce/v2/). Segment sends necessary data to Google Analytics with the Google Analytics enhanced ecommerce API
 
-To see Enhanced E-Commerce data in your reports, you must be using Google Analytics Universal and enable Enhanced E-Commerce in your Google Analytics view.
+To see Enhanced Ecommerce data in your reports, you must be using Google Analytics Universal and enable Enhanced Ecommerce in your Google Analytics view.
 
 ### Required steps (enhanced)
 
@@ -267,8 +267,8 @@ You can have any number of steps in the checkout funnel as you'd like. The 4 ste
 
 For client-side integrations, to use the ability to track Checkout Steps and Options, Segment uses Google Analytics' ProductAction class. You can read Google's developer docs for information on specific methods:
 
-- [Analytics.js - Enhanced E-Commerce](https://developers.google.com/analytics/devguides/collection/gtagjs/enhanced-ecommerce)
-- [Analytics.js - E-Commerce](https://developers.google.com/analytics/devguides/collection/gtagjs/ecommerce)
+- [Analytics.js - Enhanced Ecommerce](https://developers.google.com/analytics/devguides/collection/gtagjs/enhanced-ecommerce)
+- [Analytics.js - Ecommerce](https://developers.google.com/analytics/devguides/collection/gtagjs/ecommerce)
 
 ### Measuring promotions
 
@@ -291,7 +291,7 @@ analytics.track('Clicked Promotion', {
 
 ### Coupons
 
-If you want to send coupon data to your `Order Completed` event when using Enhanced E-commerce, you can add the `coupon` property on the order level or the product level or both. In the below example, note that the Gtag destination accepts `total` *or* `revenue`, but not both. Segment recommends using `revenue` because several other destinations use `revenue`. For better flexibility and total control over tracking, you can decide how to calculate the way in which coupons and discounts apply. For example:
+If you want to send coupon data to your `Order Completed` event when using Enhanced Ecommerce, you can add the `coupon` property on the order level or the product level or both. In the below example, note that the Gtag destination accepts `total` *or* `revenue`, but not both. Segment recommends using `revenue` because several other destinations use `revenue`. For better flexibility and total control over tracking, you can decide how to calculate the way in which coupons and discounts apply. For example:
 
 ```js
 analytics.track({
@@ -414,11 +414,11 @@ analytics.ready(function(){
 To anonymize the IP addresses of all hits sent to Google, enable the **Anonymize IP** setting in the destination settings.
 
 ### Remarketing
-Segment uses Google's remarketing (The remarketing tag formerly known as Doubleclick) to tag visitors for remarketing campaigns and to identify demographic and interest data on visitors that displays in Demographic & Interest reports inside of Google Analytics.
+Segment uses Google's remarketing (the remarketing tag formerly known as Doubleclick) to tag visitors for remarketing campaigns and to identify demographic and interest data on visitors that displays in Demographic & Interest reports inside of Google Analytics.
 
 Enable the **Remarketing, Display Ads, and Demographic Settings** in the Google Analytics destination to access these features.
 
-Since remarketing loads through Segment, Google Analytics will cannot validate that the code is present on the page. Click **Skip validation** and your data will start showing up within a few hours.
+Since remarketing loads through Segment, Google Analytics cannot validate that the code is present on the page. Click **Skip validation** and your data will start showing up within a few hours.
 
 ### Multiple trackers
 
@@ -433,7 +433,7 @@ analytics.ready(function(){
 ```
 
 > note ""
-> **Important**: Keep in mind you will need to do the data translation/properties mapping inside this `.on()` function before you send the event to Google Analytics. See the[destination code](https://github.com/segment-integrations/analytics.js-integration-google-analytics/blob/master/lib/index.js#L161-L207) for more information.
+> **Important**: Keep in mind you will need to do the data translation/properties mapping inside this `.on()` function before you send the event to Google Analytics. See the [destination code](https://github.com/segment-integrations/analytics.js-integration-google-analytics/blob/master/lib/index.js#L161-L207) for more information.
 
 To do this server side, you can create a separate [source](/docs/connections/sources/) in Segment, and within this source enter your Google Analytics credentials for the second tracker.
 
@@ -496,7 +496,7 @@ To populate the Site Search report in Google Analytics, complete the following s
 
 When you use Segment to load Gtag, the Segment script loads the gtag.js script. If you use [Google Analytics as the verification option](https://support.google.com/webmasters/answer/9008080?hl=en) in Google Webmaster Tools, you'll need to switch to the [Meta tags verification option](https://support.google.com/webmasters/answer/79812?hl=en) instead. This will require you to find the `<meta name=google-site-verification" ..>` tag in Webmaster Tools and place it in your master HTML template.
 
-### Cannonical Urls
+### Cannonical urls
 
 Segment handles tracking the canonical URL to Google Analytics for you automatically. As long as there is a `<meta rel="canonical">` tag on your page, Segment ensures Google Analytics gets the right canonical URL from it.
 
@@ -517,9 +517,9 @@ You may want to deploy Google's [anti-flickering snippet](https://support.google
 They both allow you to track custom data properties in Google Analytics. Metrics are for event properties with a numeric data type and Dimensions are for event properties with a string data type.
 
 ### Real-time reports
-Google Analytics doesn't process data in real-time in most of the Google Analytics reports. The easiest way to see if the data is streaming in is to check the Real-Time reports inside Google Analytics.
+Google Analytics doesn't process data in real time in most of the Google Analytics reports. The easiest way to see if the data is streaming in is to check the Realtime reports in Google Analytics.
 
-If you see events in your real-time reports, but they never show up in other reports that is due to a filter you have applied. You can see your active filters inside Google Analytics by clicking on **Admin** then under your View on the right click on **Filters**.
+If you see events in your Realtime reports and those events never show up in other reports, that is due to a filter you have applied. You can see your active filters inside Google Analytics by clicking **Admin** then under your View on the right click **Filters**.
 
 ### Self referrals
 
@@ -536,4 +536,4 @@ If your site uses `https://`, please go to your Google Analytics property settin
 Using Segment won't affect your bounce rates in Google Analytics.
 If you see your bounce rates drop after installing Segment make sure you don't have multiple copies of Segment's snippet on your page. Also be sure you're not calling `page` more than once when the page loads.
 
-If you call `track` on page load make sure to set `nonInteraction` to `1`. You can also set all events to be non-interactive by default in `Advanced Options`. Read more in the [non-interaction events](#non-interaction-events)) section.
+If you call `track` on page load make sure to set `nonInteraction` to `1`. You can also set all events to be non-interactive by default in `Advanced Options`. Read more in the [non-interaction events](#non-interaction-events) section.
