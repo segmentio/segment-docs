@@ -64,20 +64,22 @@ In addition to the events tracked as standard, the following hits can be tracked
 
 Below is a table of events that **Shopify by Littledata** sends to Segment from Littledata's servers. These events appear as tables in your warehouse, and as regular events in your other Destinations that support cloud-mode. They include the `anonymousId` that links them to the device-mode events where the event was part of a previous user session, or associated with a `userId` that was previously linked with an `anonymousId`. See Littledata's [troubleshooting guide on attribution](https://blog.littledata.io/help/posts/troubleshooting-marketing-attribution-for-shopify/) for more details.
 
-| Event Name              | Description                                                                                                                                                                                 |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Product Added           | A user has added a product to the cart, and left it in the cart for more than 10 seconds                                                                                                    |
-| Product Removed         | A user has removed a product from the cart                                                                                                                                                  |
-| Checkout Started        | A user has started checkout                                                                                                                                                                 |
-| Checkout Step Completed | A user has completed a step in the checkout                                                                                                                                                 |
-| Payment Info Entered    | A user has entered payment info                                                                                                                                                             |
-| Order Completed         | A prospect has completed an order                                                                                                                                                           |
-| Order Refunded          | An order has been refunded                                                                                                                                                                  |
-| Order Cancelled (v2)    | An admin has cancelled an order (including the cancel_reason)                                                                                                                               |
-| POS Order Placed (v2)   | A user has placed an order through Shopify POS                                                                                                                                              |
-| Payment Failure (v2)    | A user completed checkout step 3 but the payment method failed (for example, the card details were valid but the [charge did not succeed(https://stripe.com/docs/testing#cards-responses)]) |
-| Customer Enabled (v2)   | A user has confirmed their email address and created a Shopify customer account with verified_email set as true                                                                             |
-| Fulfilment Update (v2)  | An order fulfilment status has changed (including status, tracking_numbers and tracking_urls where the shipping integration allows)                                                         |
+| Event Name               | Description                                                                                                                                                                                 |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Product Added            | A user has added a product to the cart, and left it in the cart for more than 10 seconds                                                                                                    |
+| Product Removed          | A user has removed a product from the cart                                                                                                                                                  |
+| Checkout Started         | A user has started checkout                                                                                                                                                                 |
+| Checkout Step Completed  | A user has completed a step in the checkout                                                                                                                                                 |
+| Payment Info Entered     | A user has entered payment info                                                                                                                                                             |
+| Order Completed          | A prospect has completed an order                                                                                                                                                           |
+| Order Refunded           | An order has been refunded                                                                                                                                                                  |
+| Coupon Applied           | A user has applied a coupon with Order Completed                                                                                                                                            |
+| Order Cancelled (v2)     | An admin has cancelled an order (including the cancel_reason)                                                                                                                               |
+| POS Order Placed (v2)    | A user has placed an order through Shopify POS                                                                                                                                              |
+| Payment Failure (v2)     | A user completed checkout step 3 but the payment method failed (for example, the card details were valid but the [charge did not succeed(https://stripe.com/docs/testing#cards-responses)]) |
+| Customer Enabled (v2)    | A user has confirmed their email address and created a Shopify customer account with verified_email set as true                                                                             |
+| Fulfillment Created (v2) | An order fulfillment status has changed (including status, tracking_numbers and tracking_urls where the shipping integration allows)                                                        |
+| Fulfillment Updated (v2) | An order fulfillment status has changed (including status, tracking_numbers and tracking_urls where the shipping integration allows)                                                        |
 
 ## Identify Calls
 
@@ -139,7 +141,7 @@ The list below outlines the properties included in the events listed above.
 | `tax`                                  | The amount of tax on the order                                 | Float         |
 | `total`                                | The total value of the order                                   | Float         |
 | `affiliation`                          | The affiliation of the order                                   | String        |
-| `coupon`                               | A discount coupon, if applicable                               | String        |
+| `coupon`                               | Comma-separated string of discount coupons used, if applicable | String        |
 | `currency`                             | The currency of the order                                      | String        |
 | `discount`                             | The discounted amount                                          | Float         |
 | `products`                             | A list of all the product at that step of the funnel           | Array         |
