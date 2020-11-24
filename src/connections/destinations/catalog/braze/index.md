@@ -148,7 +148,7 @@ analytics.track('Purchased Item', {
 ```
 When you `track` an event, we will send that event to Braze as a custom event. Note that Braze does not support arrays or nested objects for custom track event properties.
 
-*Note*: When using a cloud-mode connection, a `userId` or `braze_id` is required for all calls. `braze_id` will only be sent if `userId` is missing. When using a device-mode connection, Braze will automatically track anonymous activity using the `braze_id` if a `userId` is missing.
+*Note*: Braze requires that you include a `userId` or `braze_id` for all calls made in cloud-mode. Segment only sends a `braze_id` if a `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
 
 *Note*: We will remove the following custom properties as they are reserved by Braze and the message will be rejected if you tried to send any of them:
 
