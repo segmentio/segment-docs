@@ -55,7 +55,7 @@ Google Analytics Universal tracking method allows you to set a user ID for your 
 
 To use this feature you must enable User-ID in your Google Analytics property and create a User-ID view, [read more here](https://support.google.com/analytics/answer/3123666).
 
-If you want to pass the `id` from your [Identify](/docs/connections/spec/identify) calls to the Gtag destination, got to Other Settings and select Send User-ID to GA; turn on this setting using the toggle.
+To pass the `id` from your [Identify calls](/docs/connections/spec/identify) to the Gtag destination, go to **Other Settings** and set **Send User-ID to GA** to "on" to enable this setting.
 
 ### Send user ID
 The example below represents Segment sending a User-ID value in an identify call:
