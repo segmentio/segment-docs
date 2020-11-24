@@ -121,6 +121,9 @@ If you are using a device-mode connection, Braze's SDK also automatically assign
 
 To send anonymous user data in cloud-mode, you must manually include the user's `braze_id` in all your Segment API calls in the `integrations.Braze.braze_id` or `context.integrations.Braze.braze_id` object.
 
+> tip ""
+> **Tip!** Braze is complex. If you decide to use the `braze_id`,  consider [contacting Segment Success Engineering](https://segment.com/help/contact/) or a Solutions Architect to validate your Braze implementation.
+
 Segment's special traits recognized as Braze's standard user profile fields (in parentheses) are:
 
 | Segment Event     | Braze Event  |
