@@ -6,7 +6,7 @@ title: EnjoyHQ Destination
 [EnjoyHQ](https://getenjoyhq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps UX and product teams learn from customers faster by streamlining their customer research process. EnjoyHQ makes it easy to centralize, organize and share all their customer insights and user research data in one place.
 
 
-This destination is maintained by EnjoyHQ. For any issues with the destination, [contact their support team](mailto:support@getenjoyhq.com).
+This destination is maintained by EnjoyHQ. For any issues with the destination, [contact the EnjoyHQ support team](mailto:support@getenjoyhq.com).
 
 > note "Note:"
 > The EnjoyHQ Destination is currently in beta, which means that they are still actively developing the destination. To join their beta program, or if you have any feedback to help improve the EnjoyHQ Destination and its documentation, [contact the EnjoyHQ support team](mailto:support@getenjoyhq.com)!
