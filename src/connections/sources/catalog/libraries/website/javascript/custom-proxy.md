@@ -6,7 +6,6 @@ strat: ajs
 
 Custom domains allow you to proxy Analytics.js and proxy all tracking event requests through your domain.
 
-
 ## Prerequisites
 
 To set up a custom domain, you need:
@@ -18,6 +17,7 @@ To set up a custom domain, you need:
 This guide explains how to set up a custom domain in CloudFront. The same principles can be applied to almost any modern CDN that supports proxies.
 
 You need to set up two important parts, regardless of the CDN provider you use:
+
 - Proxy to Segment CDN (`cdn.segment.com`)
 - Proxy to Segment tracking API (`api.segment.io`)
 
@@ -28,13 +28,13 @@ Follow the directions listed for CloudFront or use your own CDN setup. Once you 
 ```text
 Hi,
 
-This is {person} from {company}. I would like to request that you add a proxy for the following source(s) to point to the corresponding proxy url:
+This is {person} from {company}. I would like to configure a proxy for the following source(s) to point to the corresponding proxy url:
 
 * Source {link to source in Segment} with source ID {source id} should point to {api host}
 * Source {link to source in Segment} with source ID {source id} should point to {api host}
 ```
 
-Double-check the source link, the Source ID, and the API proxy host to make sure they are correct. A member of our Success team will respond and set up the proxy for you.
+Double-check the source link, the Source ID, and the API proxy host to make sure they are correct. A member of our Success team will respond and enable an option for you to configure a custom api host for your source. After the option is enabled, you can go to your workspace, then navigate to your source settings, goto Analytics.js, and modify the "Host Address" from `api.segment.io/v1` to `[your proxy host]/v1`.
 
 ## CloudFront
 
