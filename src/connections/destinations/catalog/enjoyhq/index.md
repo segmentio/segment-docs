@@ -20,7 +20,7 @@ This destination is maintained by EnjoyHQ. For any issues with the destination, 
 2. Search for "EnjoyHQ" in the Destinations Catalog, and select the EnjoyHQ destination.
 3. Choose which Source should send data to the EnjoyHQ destination.
 4. Go to the [EnjoyHQ's integrations page](https://app.enjoyhq.com/account/integrations), find Segment and create a new API key.
-5. Enter the API Key in the "EnjoyHQ" destination settings in Segment.
+5. Enter the API Key in the EnjoyHQ destination settings in the Segment web app.
 
 
 
