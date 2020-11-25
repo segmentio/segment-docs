@@ -44,4 +44,4 @@ Segment sends Identify calls to EnjoyHQ as an `identify` event. These events can
 You can find profiles connected to at least one document in the **People tab** using the global search. You can also find any profile (connected or not) when you [associate a customer with a piece of feedback](https://documentation.getenjoyhq.com/article/v9liiusghf-customer-profiles#assigning_customers_to_documents).
 
 > note "Note:"
-> The destination accepts only `identify` calls with an "email" field and properly formed email address. Otherwise, the event is ignored and is not forwarded to EnjoyHQ.
+> The EnjoyHQ destination only accepts Identify calls if they contain a correctly formed email address in the "email" field. Otherwise, the event is ignored and is not forwarded to EnjoyHQ.
