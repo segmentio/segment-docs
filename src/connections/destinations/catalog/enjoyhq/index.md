@@ -3,7 +3,7 @@ rewrite: true
 title: EnjoyHQ Destination
 ---
 
-[EnjoyHQ](https://getenjoyhq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps UX and product teams learn from customers faster by streamlining their customer research process. Used by teams at IBM, Pitch, The Guardian, NASA, and GrubHub, EnjoyHQ makes it easy to centralize, organize and share all their customer insights and user research data in one place.
+[EnjoyHQ](https://getenjoyhq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps UX and product teams learn from customers faster by streamlining their customer research process. EnjoyHQ makes it easy to centralize, organize and share all their customer insights and user research data in one place.
 
 
 This destination is maintained by EnjoyHQ. For any issues with the destination, [contact their support team](mailto:support@getenjoyhq.com).
