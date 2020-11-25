@@ -41,7 +41,7 @@ analytics.identify('userId123', {
 
 Segment sends Identify calls to EnjoyHQ as an `identify` event. These events can create or update an existing customer profile with a matching email address. Data imported using Segment Identify calls [is merged with the data already stored in your EnjoyHQ account](https://documentation.getenjoyhq.com/article/v9liiusghf-customer-profiles#how_is_customer_data_merged).
 
-Profiles which are connected to at least one document, can be found in the global search, under the People tab. You can also find any profile (connected or not) when [associating a customer with a piece of feedback](https://documentation.getenjoyhq.com/article/v9liiusghf-customer-profiles#assigning_customers_to_documents).
+You can find profiles connected to at least one document in the **People tab** using the global search. You can also find any profile (connected or not) when you [associate a customer with a piece of feedback](https://documentation.getenjoyhq.com/article/v9liiusghf-customer-profiles#assigning_customers_to_documents).
 
 > note "Note:"
 > The destination accepts only `identify` calls with an "email" field and properly formed email address. Otherwise, the event is ignored and is not forwarded to EnjoyHQ.
