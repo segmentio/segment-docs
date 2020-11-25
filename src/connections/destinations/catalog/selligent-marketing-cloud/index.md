@@ -6,6 +6,9 @@ rewrite: true
 
 This Destination is maintained by Selligent Marketing Cloud. For any issues with the Destination, [contact their support team](mailto:jason.morgan@acceleration.biz).
 
+> success ""
+> **Good to know**: This page is about the Selligent Marketing Cloud Segment destination, which receives data from Segment. There's also a page about the [Selligent Marketing Cloud Segment source](/docs/connections/sources/catalog/cloud-apps/selligent-marketing-cloud/), which sends data _to_ Segment!
+
 ## Getting Started
 
 Before you enable Selligent Marketing Cloud in your Destination page, validate with your Selligent CSM that the segment components needed to start receiving information from the connector are set up on your account.
