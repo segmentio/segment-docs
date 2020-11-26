@@ -147,7 +147,7 @@
         content: "";
         width: 6px;
         height: 6px;
-        background-color: color(gray);
+        background-color: color(gray-700);
         opacity: 0.5;
         border-radius: 50%;
         display: block;
@@ -215,7 +215,7 @@
     thead {
       font-size: 14px;
       font-weight: 500;
-      background-color: color(gray-light);
+      background-color: color(gray-50);
       border-radius: 4px;
       font-weight: 500;
       line-height: 1.71;
