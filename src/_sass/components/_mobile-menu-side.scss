@@ -27,11 +27,11 @@
   }
 
   &__link {
-    color: rgba(color(gray-dark), 0.8);
+    color: rgba(color(gray-800), 0.8);
 
     &:hover {
       text-decoration: none;
-      color: color(gray-dark);
+      color: color(gray-800);
     }
   }
 

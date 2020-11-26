@@ -4,7 +4,7 @@
   & > * + * {
     margin-top: 32px;
     padding-top: 32px;
-    border-top: 1px solid color(border-gray);
+    border-top: 1px solid color(gray-100);
   }
 
   & > * + *:last-child {
@@ -17,7 +17,7 @@
     & > * + * {
       margin-top: 32px;
       padding-top: 32px;
-      border-top: 1px solid color(border-gray);
+      border-top: 1px solid color(gray-100);
     }
 
     & > * + *:last-child {
@@ -65,7 +65,7 @@
   &--dark {
     &__content {
       & > * + * {
-        border-top: 1px solid color(border-gray-dark);
+        border-top: 1px solid color(gray-100);
       }
     }
   }

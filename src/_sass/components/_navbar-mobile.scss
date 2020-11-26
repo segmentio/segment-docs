@@ -5,7 +5,7 @@
   z-index: 10;
   background-color: color(white);
   box-shadow: 0 1px 2px 0 rgba(67, 90, 111, 0.08);
-  color: color(gray);
+  color: color(gray-700);
 
   @include breakpoint(large up)  {
     display: none;
@@ -40,7 +40,7 @@
     width: 100%;
     height: 100vh;
     max-height: 100vh;
-    background-color: color(gray-light);
+    background-color: color(gray-50);
     transform: translateY(-100%);
     overflow: hidden;
     transition: transform 0.3s ease;
@@ -58,7 +58,7 @@
     z-index: 10;
 
     #{$this}__wrapper {
-      background-color: color(gray-light);
+      background-color: color(gray-50);
     }
 
     #{$this}__search-button {

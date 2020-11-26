@@ -6,13 +6,13 @@
 
   .st-ui-result.__swiftype_result {
     display: flex;
-    color: color(gray-dark);
+    color: color(gray-800);
     font-family: $font-family-primary;
     padding: 18px 18px 18px 28px !important;
 
     .st-ui-type-detail {
       order: -1;
-      color: color(gray);
+      color: color(gray-700);
       display: flex;
       font-size: 14px !important;
 

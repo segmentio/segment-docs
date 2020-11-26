@@ -6,7 +6,7 @@
   }
 
   &__item {
-    background-color: rgba(color(secondary-lighter), 0.4);
+    background-color: rgba(color(secondary-light), 0.4);
     border: 1px solid color(secondary-light);
     border-radius: 4px;
     font-size: 14px;
@@ -14,7 +14,7 @@
     display: inline-block;
 
     &:hover {
-      background-color: color(secondary-lighter);
+      background-color: color(secondary-light);
     }
   }
 

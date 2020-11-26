@@ -17,7 +17,7 @@
 
   &.note {
     padding: 24px 16px;
-    background-color: color(gray-light);
+    background-color: color(gray-50);
     border-radius: 8px;
 
     .header {
@@ -31,7 +31,7 @@
   &.warning,
   &.error {
     padding: 15px 20px;
-    background-color: color(gray-lighter);
+    background-color: color(gray-50);
     border-radius: 4px;
   }
 

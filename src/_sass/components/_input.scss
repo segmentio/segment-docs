@@ -1,9 +1,9 @@
 .input {
   line-height: inherit;
   font-family: $font-family-primary;
-  border: 1px solid color(border-gray-dark);
+  border: 1px solid color(gray-100);
   background-color: color(white);
-  color: color(gray-dark);
+  color: color(gray-800);
   border-radius: 4px;
 
   &:focus {
@@ -11,6 +11,6 @@
   }
 
   &::placeholder {
-    color: color(gray);
+    color: color(gray-700);
   }
 }

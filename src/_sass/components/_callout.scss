@@ -1,6 +1,6 @@
 .callout {
   position: relative;
-  background-color: color(gray-lighter);
+  background-color: color(gray-50);
   border-radius: 8px;
   overflow: hidden;
 
@@ -16,11 +16,11 @@
   &__input {
     padding: 12px 20px;
     width: 100%;
-    border: 1px solid color(border-gray);
+    border: 1px solid color(gray-100);
     -webkit-appearance: none;
 
     &::placeholder {
-      color: color(gray)
+      color: color(gray-700)
     }
   }
 
@@ -28,7 +28,7 @@
     position: relative;
     display: block;
     text-align: center;
-    color: color(gray);
+    color: color(gray-700);
     font-size: 14px;
 
     @include breakpoint(xlarge up) {
