@@ -22,14 +22,14 @@
   .cs { color: color(gray-700); font-style: italic; } /* Special */
 
   /* --- Names --- */
-  .n { color: color(code-gray-700; } /* Name */
-  .py { color: color(code-gray-700; } /* Property */
-  .nl { color: color(code-gray-700; } /* Label */
-  .ni { color: color(code-gray-700; } /* Entity */
-  .nb { color: color(code-gray-700; } /* Builtin */ /* shell commands */
-  .bp { color: color(code-gray-700; } /* Builtin.Pseudo */
-  .nf { color: color(code-gray-700; } /* Function */
-  .na { color: color(code-gray-700; } /* Attribute */
+  .n { color: color(code-gray; } /* Name */
+  .py { color: color(code-gray; } /* Property */
+  .nl { color: color(code-gray; } /* Label */
+  .ni { color: color(code-gray; } /* Entity */
+  .nb { color: color(code-gray; } /* Builtin */ /* shell commands */
+  .bp { color: color(code-gray; } /* Builtin.Pseudo */
+  .nf { color: color(code-gray; } /* Function */
+  .na { color: color(code-gray; } /* Attribute */
   .nx { color: color(code-pink); } /* Other */
   .nc { color: color(code-red); } /* Class */
   .nn { color: color(code-red); } /* Namespace */
@@ -72,7 +72,7 @@
   .ss { color: color(code-blue); } /* Symbol */
   .se { color: color(code-orange); } /* Escape */
   .si { color: color(code-orange); } /* Interpol */
-  .sc { color: color(code-gray-700; } /* Char */
+  .sc { color: color(code-gray; } /* Char */
   .sd { color: color(gray-700); } /* Doc */
 
   /* --- Other Literals --- */
@@ -80,8 +80,8 @@
   .ld { color: color(code-blue); } /* Date */
 
   /* --- Typographic Elements --- */
-  .p { color: color(code-gray-700; } /* Punctuation */
-  .w { color: color(code-gray-700; } /* Whitespace */ /* shouldn't this have a background-color instead ? */
+  .p { color: color(code-gray; } /* Punctuation */
+  .w { color: color(code-gray; } /* Whitespace */ /* shouldn't this have a background-color instead ? */
 
   /* --- Others --- */
   .err { color: color(code-red); } /* Error */
@@ -90,6 +90,6 @@
   /* --- Style --- */
   .gi { color: color(code-blue); } /* inserted */
   .gd { color: color(code-red); } /* deleted */
-  .gh { color: color(code-gray-700; font-weight: bold; } /* heading */
+  .gh { color: color(code-gray; font-weight: bold; } /* heading */
   .gu { color: color(code-green); font-weight: bold; } /* subheading */
 }
