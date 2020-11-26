@@ -124,7 +124,7 @@ $font-line-height: 27px !default;
 /// Base font size set on the root html element.
 ///
 /// @type {Color}
-$font-color: map-get($color-values, secondary-dark) !default;
+$font-color: map-get($color-values, gray-800) !default;
 
 /// Default font family.
 ///
@@ -149,4 +149,4 @@ $heading-font-family: $font-family-primary !default;
 /// Color of headings.
 ///
 /// @type {Color}
-$heading-color: map-get($color-values, secondary) !default;
+$heading-color: map-get($color-values, gray-900) !default;
