@@ -115,10 +115,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 #### Button Modifiers
 
-{% include components/button-fill.html modifier="half" text="Half filled button" href="https://segment.com" %}
 {% include components/button-fill.html modifier="expand" text="Expanded filled button" href="https://segment.com" %}
-
----
 
 ## Code Blocks
 
