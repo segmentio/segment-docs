@@ -1,8 +1,8 @@
 .highlight {
-  .hll { background-color: color(gray); }
+  .hll { background-color: color(gray-700); }
 
   .lineno {
-    background-color: color(gray);
+    background-color: color(gray-700);
     color: color(code-pink);
   }
 
@@ -15,11 +15,11 @@
   .ow { color: color(code-green); } /* Word */
 
   /* --- Comments --- */
-  .c { color: color(gray); font-style: italic; } /* Comment */
-  .cm { color: color(gray); font-style: italic; } /* Multi-line */
-  .cp { color: color(gray); font-style: italic; } /* Preproc */
-  .c1 { color: color(gray); font-style: italic; } /* Single */
-  .cs { color: color(gray); font-style: italic; } /* Special */
+  .c { color: color(gray-700); font-style: italic; } /* Comment */
+  .cm { color: color(gray-700); font-style: italic; } /* Multi-line */
+  .cp { color: color(gray-700); font-style: italic; } /* Preproc */
+  .c1 { color: color(gray-700); font-style: italic; } /* Single */
+  .cs { color: color(gray-700); font-style: italic; } /* Special */
 
   /* --- Names --- */
   .n { color: color(code-gray); } /* Name */
@@ -73,7 +73,7 @@
   .se { color: color(code-orange); } /* Escape */
   .si { color: color(code-orange); } /* Interpol */
   .sc { color: color(code-gray); } /* Char */
-  .sd { color: color(gray); } /* Doc */
+  .sd { color: color(gray-700); } /* Doc */
 
   /* --- Other Literals --- */
   .l { color: color(code-orange); } /* Literal */
