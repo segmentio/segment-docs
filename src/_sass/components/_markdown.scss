@@ -88,14 +88,6 @@
     }
   }
 
-  & > ul, ol {
-    margin-top: 8px;
-
-    @include breakpoint(medium up) {
-      margin-top: 8px;
-    }
-  }
-
   pre {
     max-width: 100%;
     overflow-y: auto;
@@ -133,59 +125,52 @@
     }
   }
 
-  ul {
-    list-style-type: none;
+  ul, ol {
     padding-left: 25px;
+    line-height: 26px;
+    list-style-type: none;
 
-    & > li {
+    li {
       position: relative;
-      font-size: 15px;
-      color: color(secondary-dark);
-      line-height: 2;
+      margin-top: 8px;
 
       &::before {
         content: "";
-        width: 6px;
-        height: 6px;
-        background-color: color(gray-700);
-        opacity: 0.5;
-        border-radius: 50%;
         display: block;
         position: absolute;
-        top: .75em;
+        top: 0;
         left: 0;
-        transform: translateX(calc(-100% - 14px));
       }
 
       & > ul, ol {
         margin-top: 0;
       }
+    }
+  }
 
+  ul {
+    & > li {
+      &::before {
+        width: 8px;
+        height: 8px;
+        background-color: color(gray-600);
+        border-radius: 50%;
+        transform: translate(-23px, 10px);
+      }
     }
   }
 
   ol {
-    list-style-type: none;
     counter-reset: list-items;
-    padding-left: 25px;
 
     & > li {
       counter-increment: list-items;
-      line-height: 30px;
-      position: relative;
 
       &::before {
         content: counter(list-items) ". ";
-        display: block;
-        top: 0;
-        color: color(primary-dark);
+        color: color(primary);
         font-weight: 500;
-        position: absolute;
-        left: -20px;
-      }
-
-      & > ul, ol {
-        margin-top: 0;
+        transform: translate(-23px, 0);
       }
     }
   }
