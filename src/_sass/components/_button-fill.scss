@@ -1,62 +1,10 @@
 .button-fill {
-  border-radius: 4px;
   background-color: color(primary);
   color: color(white);
 
   &:hover {
-    box-shadow: 0 4px 8px 0 rgba(82, 189, 149, 0.08);
-  }
-
-  &--bordered {
-    border: 1px solid color(border-gray-dark);
-    border-radius: 4px;
-  }
-
-  &--white {
-    background-color: color(white);
-    color: color(gray);
-
-    &:hover {
-      color: color(success);
-    }
-  }
-
-  &--white-bordered {
-    background-color: color(white);
-    color: color(gray);
-    border: 1px solid color(border-gray-dark);
-    border-radius: 4px;
-
-    &:hover {
-      color: color(success);
-    }
-  }
-
-  &--borderable {
-    border: 1px solid color(border-gray-dark);
-
-    @include breakpoint(medium up)  {
-      border: none;
-    }
-  }
-
-  &--primary {
     background-color: color(primary);
     color: color(white);
-
-    &:hover {
-      background-color: color(primary);
-      color: color(white);
-    }
-  }
-
-  &--gray {
-    background-color: color(gray);
-    color: color(white);
-
-    &:hover {
-      background-color: color(gray);
-      color: color(white);
-    }
+    box-shadow: 0 4px 8px 0 rgba(82, 189, 149, 0.08);
   }
 }
