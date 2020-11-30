@@ -474,26 +474,7 @@ image_files:
       - images/cUPCM42.png
       - images/uLu70VP.png
       - images/qgbkbvA.png
-  -
-    folder: connections/sources/catalog/libraries/server/java
-    images:
-      - https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics
-      - https://javadoc-badge.appspot.com/com.segment.analytics.java/analytics
-      - https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics
 
-  -
-    folder: connections/sources/catalog/libraries/mobile/react-native
-    images:
-      - images/embed-analytics-framework.png
-  -
-    folder: connections/sources/catalog/libraries/mobile/ios
-    images:
-      - images/embeddedbinaries.png
-  -
-    folder: connections/sources/catalog/libraries/mobile/android
-    images:
-      - https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics
-      - https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics
   -
     folder: connections/sources/source-functions
     images:
@@ -565,15 +546,7 @@ image_files:
   -
     folder: guides/images
     images:
-  -
-    folder: guides/usage-and-billing
-    images:
-      - images/asset_1fupuBg7.png
-      - images/asset_a4KXK0QG.png
-      - images/asset_72X5nx95.png
-  -
-    folder: guides/usage-and-billing/images
-    images:
+
   -
     folder: guides/how-to-guides
     images:
