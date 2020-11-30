@@ -36,14 +36,15 @@ Segment currently charges sales tax in the following states:
 
 - Arizona
 - Chicago
-- Colorado
+- Connecticut
 - Denver
 - District of Columbia
 - Massachusetts
 - New York
+- Ohio
 - Pennsylvania
 - South Carolina
-- Tennessee (beginning 5/15/2020)
+- Tennessee
 - Texas
 - Utah
 - Washington
