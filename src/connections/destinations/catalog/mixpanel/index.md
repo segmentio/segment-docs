@@ -193,12 +193,12 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.alias('newUserId')
 ```
 
-**Important:** Mixpanel used to require that you call `alias` in all libraries to connect anonymous visitors to identified users. However, with the release of Mixpanel's new [Identity Merge feature](https://help.mixpanel.com/hc/en-us/articles/360039133851#enable-id-merge) this is no longer necessary. To enable ID Merge, go to your Mixpanel Settings Dashboard, navigate to **Project Settings > Identity Merge** and enable the setting from that screen. If you are _not_ using this setting, use the instructions below.**
+**Important:** Mixpanel previously requires that you call `alias` in all libraries to connect anonymous visitors to identified users. However, with the release of Mixpanel's new [Identity Merge feature](https://help.mixpanel.com/hc/en-us/articles/360039133851#enable-id-merge) this is no longer necessary. To enable ID Merge, go to your Mixpanel Settings Dashboard, navigate to **Project Settings > Identity Merge** and enable the setting from that screen. If you are _not_ using this setting, use the instructions below.**
 
 
-As soon as you have a `userId` for a visitor that was previously anonymous you'll need to [`alias`](/docs/connections/spec/alias/) their old anonymous `id` to the new `userId`. In Mixpanel only **one** anonymous user history can be merged to **one** identified user. For that reason you should only call `alias` once, right after a user registered, but before the first `identify`.
+As soon as you have a `userId` for a visitor that was previously anonymous you'll need to use an [Alias call](/docs/connections/spec/alias/) to link their old anonymous `id` to the new `userId`. In Mixpanel only **one** anonymous user history can be merged to **one** identified user. For that reason you should only make one Alias call, right after a user registered, but before the first Identify call.
 
-You'll also want to `track` the action that caused the user to be identified or created. Read our [guide on how to identify new users](/docs/connections/spec/best-practices-identify/) to learn why.
+You should  also `track` the action that caused the user to be identified or created. Read the Segment [best practices on identifying new users](/docs/connections/spec/best-practices-identify/) to learn why.
 
 Read more about how Mixpanel recommends using `alias` [in their docs](https://mixpanel.com/docs/integration-libraries/using-mixpanel-alias).
 
@@ -309,9 +309,7 @@ We do not map `$library_version` since that is reserved for Mixpanel's library v
 
 ## Features
 
-### Autotrack
 
-Mixpanel's [Autotrack](https://mixpanel.com/autotrack/) feature is supported using Segment as long as you are using one of our client-side libraries ([analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/), [Android](/docs/connections/sources/catalog/libraries/mobile/android/)). Additionally, if you're using analytics for Android or iOS, make sure your Mixpanel destination is bundled - otherwise Autotrack will not work. Once Mixpanel is installed using Segment, all you have to do is [enable the Autotrack feature for your Mixpanel account](https://mixpanel.com/help/questions/articles/what-is-autotrack-and-how-do-i-get-started-using-it) and it will start working.
 
 ### People
 
@@ -450,9 +448,7 @@ If you are testing in Xcode remember you must first background the app, then the
 
 ## Appendices
 
-### Autotrack
 
-Mixpanel's [Autotrack](https://mixpanel.com/autotrack/) feature is supported using Segment as long as you are using one of our client-side libraries ([analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/), [Android](/docs/connections/sources/catalog/libraries/mobile/android/)). Additionally, if you're using analytics for Android or iOS, make sure your Mixpanel destination is bundled - otherwise Autotrack will not work. Once Mixpanel is installed using segment, all you have to do is [enable the Autotrack feature for your Mixpanel account](https://mixpanel.com/help/questions/articles/what-is-autotrack-and-how-do-i-get-started-using-it) and it will start working.
 
 ### IP
 
@@ -558,7 +554,7 @@ Computed traits with a lookback window only search across events that occurred w
 ![](images/pers-03-lookback.png)
 
 
-If you choose to include anonymous users when you create the computed trait, you must use the [`alias` call](#alias) to merge user profiles when they become a known user.
+If you choose to include anonymous users when you create the computed trait, you must use the [Alias call](#alias) to merge user profiles when they become a known user.
 
 ![](images/pers-04-incl-anons.png)
 
@@ -598,7 +594,7 @@ Audiences with a lookback window only search across events that occurred within 
 
 ![](images/pers-10-lookback.png)
 
-If you choose to include anonymous users when you create an audience, you must use the [alias call](#alias) to merge user profiles when they become a known user.
+If you choose to include anonymous users when you create an audience, you must use the [Alias call](#alias) to merge user profiles when they become a known user.
 
 
 ![](images/pers-11-incl-anons.png)
