@@ -13,7 +13,10 @@ out:
 [iOS](https://github.com/segment-integrations/analytics-ios-integration-amplitude),
 [Android](https://github.com/segment-integrations/analytics-android-integration-amplitude) and
 [JavaScript](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/amplitude).
-Our server integration is not open-source.
+
+> success ""
+> **Good to know**: This page is about the Amplitude Segment destination, which receives data _from_ Segment. There's also a page about the [Amplitude Engage Segment source](/docs/connections/sources/catalog/cloud-apps/amplitude-cohorts/), which sends data _to_ Segment!
+
 
 In addition to the docs below, Amplitude created a [integration guide](https://developers.amplitude.com/docs/segment-amplitude-integration).
 
@@ -31,7 +34,7 @@ NOTE: To delete users based on GDPR regulations, you must include a secret key i
 2. Search for "Amplitude" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In the destination settings, enter your Amplitude API key.
 
-   You can find your Amplitude API key in the [Amplitude project settings](https://analytics.amplitude.com/settings/projects). It is a 32-character string of numbers and letters. Locate the project you want to receive your Segment data, copy that projec'ts API key, and paste it into your Amplitude destination settings in Segment.
+   You can find your Amplitude API key in the [Amplitude project settings](https://analytics.amplitude.com/settings/projects). It is a 32-character string of numbers and letters. Locate the project you want to receive your Segment data, copy that project's API key, and paste it into your Amplitude destination settings in Segment.
 
 
 If you included Segment's Javascript snippet on your page, then Amplitude's SDK loads on your page automatically and you can use Segment's to begin sending events right away.
@@ -41,15 +44,19 @@ If you included Segment's Javascript snippet on your page, then Amplitude's SDK 
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Page](https://segment.com/docs/connections/spec/page/) and [Screen](https://segment.com/docs/connections/spec/screen/) methods do. By default, Segment does not send these standard calls to Amplitude. However, you can enable them with the destination settings below, which you can find under the "Optional Settings" tab.
 
-An example call would look like with a server-side call:
+The example below shows a Page call from a server library.
 
 ```js
 analytics.page({
-  userId: "some_user_id", // on A.js client-side, you can leave out the `userId`
+  userId: "some_user_id", // if using A.js client-side, you can leave out the `userId`
   category: "Merchant",
   name: "Settings",
 })
+```
 
+The next example shows a call from a mobile library, which uses the Screen call instead of the Page call.
+
+```js
 // Note: screen calls are only for mobile. you can't make them from A.js client-side.
 analytics.screen({
   userId: "some_user_id",
@@ -64,7 +71,7 @@ Page and Screen calls have two important properties: a *page name*, such as "Set
 
 ### Event type settings for cloud-mode and Analytics.js
 
-If you use Analytics.js (in either device- or cloud-mode), a mobile library in cloud-mode, or a Segment server library, the following settings are available. (Additional settings are available *only* for iOS and Android sources that send in device-mode.)
+If you use Analytics.js (in either [device- or cloud-mode](/docs/connections/destinations#connection-modes)), a mobile library in cloud-mode, or a Segment server library, the following settings are available. (Additional settings are available *only* for iOS and Android sources that send in device-mode.)
 
 | Setting Name    | When events are sent to Amplitude    | Amplitude Event Name     | Example for `{"name": "Settings", "category": "Merchant" }` |
 | ----------------------- | -------------- | --------------- | ------------------- |
@@ -82,7 +89,7 @@ When you use the **Track All Pages** setting, Segment sends a `Loaded a Page` ev
 > success ""
 > **Tip**: These settings also apply to mobile Cloud-mode connections.
 
-### iOS
+### Event Type settings for iOS
 
 The following settings are available on iOS for device-mode connections.
 
@@ -94,7 +101,7 @@ The following settings are available on iOS for device-mode connections.
 When enabled, the "Track All Screens" setting includes the screen name and category as event
 properties, where the "Track All Pages" omits them. Most iOS implementations should use "Track All Screens".
 
-### Android
+### Event Type settings for Android
 
 The following settings are available on Android for device-mode connections.
 
@@ -142,9 +149,9 @@ To have Amplitude recognize an anonymous user and a known or logged-in user, mak
 If you're using a Segment server library or the Segment HTTP API, you must explicitly include both `anonymousId` and `userId`. If you're using Analytics.js in device-mode, or a bundled SDK, Segment automatically includes `anonymousId` for you.
 
 ### Amplitude Device ID
-<!-- TODO skipped the device ID part, needs some more deta-->
+<!-- TODO skipped the device ID part, needs some more detail-->
 
-Device ID is be set in slightly different ways depending on the library and connection mode you're using (Device-mode vs Cloud-mode).
+You can set the Device ID in slightly different ways depending on the library and connection mode you're using (Device-mode vs Cloud-mode).
 
 #### Default library behavior for Device ID
 
@@ -157,7 +164,7 @@ The table below represents default behavior.
 | iOS |  [Generated by Amplitude](https://amplitude.zendesk.com/hc/en-us/articles/115003135607-Tracking-Unique-Users#determining-unique-users) | n/a  |
 | Android | [Generated by Amplitude](https://amplitude.zendesk.com/hc/en-us/articles/115003135607-Tracking-Unique-Users#determining-unique-users)  | n/a |
 
-**Prefer Anonymous ID for Device ID**
+#### Prefer Anonymous ID for Device ID
 
 If you're using the "Prefer Anonymous ID for Device ID" setting in client-side, server-side, or a mobile library with Cloud-mode enabled, the following rules apply.
 
@@ -166,7 +173,7 @@ If you're using the "Prefer Anonymous ID for Device ID" setting in client-side, 
 | A.js | `anonymousId` | [Generated by Amplitude](https://amplitude.zendesk.com/hc/en-us/articles/115003135607-Tracking-Unique-Users#determining-unique-users) |
 | Server-side  |  `anonymousId` | `context.device.id`  |
 
-**Prefer Advertising ID for Device ID**
+#### Prefer Advertising ID for Device ID
 
 This option is not currently available for mobile libraries using cloud-mode.
 
@@ -177,9 +184,9 @@ If you're using the "Prefer Advertising ID for Device ID" setting with one of ou
 | iOS | `anonymousId` | [Generated by Amplitude](https://amplitude.zendesk.com/hc/en-us/articles/115003135607-Tracking-Unique-Users#determining-unique-users) |
 | Android  |  `anonymousId` | [Generated by Amplitude](https://amplitude.zendesk.com/hc/en-us/articles/115003135607-Tracking-Unique-Users#determining-unique-users)   |
 
-#### Device ID priority
+### Device ID priority
 
-If you have multiple settings enabled, one setting or value can take priority of another. This table lists which settings, if enabled, takes priority over other settings or values.
+If you have multiple settings enabled, one setting or value can take priority of another. This table lists which settings, if enabled, take priority over other settings or values.
 
 | Library | Priority (highest to lowest) |
 | --- | --- |
@@ -189,16 +196,15 @@ If you have multiple settings enabled, one setting or value can take priority of
 | Android | Use AdvertisingId for Device ID (Device-mode only) <br /> [Device ID Generated by Amplitude](https://amplitude.zendesk.com/hc/en-us/articles/115003135607-Tracking-Unique-Users#determining-unique-users)
 
 
-**Merging users with Device ID**
+### Using Device ID to merge users
 
-For Amplitude to associate both client-side and server-side activity with the
-same user, you will need to pass the same `deviceID` to Amplitude.  Otherwise,
-Amplitude will create two users - one for each of the `deviceID`'s set per the functionality outlined in the tables above.
+For Amplitude to associate both device-mode and cloud-mode activity with the
+same user, you must pass the same `deviceID` to Amplitude.  Otherwise,
+Amplitude creates two users - one for each of the `deviceID`'s set per the functionality outlined in the tables above.
 
-You can grab `deviceID` from Amplitude on the client-side to send server-side
-by calling this method within the
+You can get the `deviceID` from Amplitude in device-mode so you can return it on cloud-mode calls. The example method below shows how you could log the `deviceId` in the
 [`ready`](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#ready)
-function on the client-side to send server-side:
+function on the device, so you could send it to the server.
 
 ```js
 analytics.ready(function() {
@@ -208,16 +214,15 @@ analytics.ready(function() {
 });
 ```
 
-Similarly, when a user logs in, be sure to send the same Amplitude `deviceID`
-with your `identify` call. Otherwise, Amplitude will create two separate users: one for your anonymous user, and another for your logged-in user. This will be handled automatically on mobile.
+When a user logs in, be sure to send the same Amplitude `deviceID` in your Identify call. Otherwise, Amplitude creates two separate users: one for your anonymous user, and another for your logged-in user. This is handled automatically on mobile.
 
 
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. Amplitude supports a number of special properties, all of which are included in the example below:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. Amplitude supports several special properties, all of which are included in the example below:
 
-```javascript
+```js
 // On server-side
 analytics.track({
   "userId": "123",
@@ -258,14 +263,13 @@ analytics.track({
 })
 ```
 
-Many of these properties are automatically sent for you if you use one of Segment's browser or mobile libraries such as
-[Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/), or [Android](/docs/connections/sources/catalog/libraries/mobile/android/).
+Segment sends many of these properties automatically if you use [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), [Segment's iOS source](/docs/connections/sources/catalog/libraries/mobile/ios/), or [Segment's Android source](/docs/connections/sources/catalog/libraries/mobile/android/).
 
 For a complete list of special `context` keys see [Segment's Common fields spec](/docs/connections/spec/common/).
 
 ### Log Revenue V2
 
-Segment's iOS and Android components support sending revenue using Amplitude's preferred `logRevenueV2` method. Segment sets Amplitude's special revenue properties, such as `revenueType` and `productIdentifier`, which are used in Amplitude's Revenue Analysis and Revenue LTV charts. Any properties not mapped to Amplitude's special properties are sent using the Amplitude `eventProperties` field.
+Segment's iOS and Android sources can send revenue using Amplitude's preferred `logRevenueV2` method. Segment sets Amplitude's special revenue properties, such as `revenueType` and `productIdentifier`, which are used in Amplitude's Revenue Analysis and Revenue LTV charts. Segment uses the Amplitude `eventProperties` field to send any properties _not_ mapped to Amplitude's special properties.
 
 | Amplitude Property | Segment Property | Description |
 | --- | --- | --- |
@@ -277,7 +281,7 @@ Segment's iOS and Android components support sending revenue using Amplitude's p
 | `receipt` | `receipt` | This is required if you want to verify the revenue event. |
 | `eventProperties` | Any remaining properties | A NSDictionary or Map of event properties to include in the revenue event. |
 
-* If `properties.price` is not present, Segment uses `revenue` instead, and sends that as `price`. In Segment's iOS and Android components, if `revenue` isn't present either, Segment does an additional fallback and sends the `total`.
+<!--&ast;-->\* If `properties.price` is not present, Segment uses `revenue` instead, and sends that as `price`. In Segment's iOS and Android components, if `revenue` isn't present either, Segment does an additional fallback and sends the `total`.
 
 Property names should be `camelCase` for Android implementations, and `snake_case` for iOS implementations.
 
@@ -286,36 +290,37 @@ Property names should be `camelCase` for Android implementations, and `snake_cas
 
 ### Revenue
 
-In our client side, iOS, and Android components, if the preferred `logRevenueV2` setting is not enabled, the deprecated `logRevenue` methods still work. Fields such as `revenueType` will be missing from events logged with these old methods, so the ability to segment on those revenue events will be limited in the Amplitude platform.
+For Segment's Analytics.js (device-mode), iOS, and Android sources, if you do not enable the preferred `logRevenueV2` setting, Segment sends the data using the deprecated `logRevenue` methods (which still work). If you record events using this old setting, fields such as `revenueType` aren't recorded in your events. This can reduce your ability to segment on those revenue events in the Amplitude platform.
 
 | Amplitude Property | Segment Property | Description |
 | --- | --- | --- |
 | `productId` | `productId` | An identifier for the product. |
 | `quantity` | `quantity` | The quantity of products purchased. Note: revenue = `quantity` * `price`. |
-| `price` | `price` (or `revenue` or `total`)^ | The price of the products purchased, and this can be negative. |
-| `receipt` | `receipt` (mobile only) | This is required if you want to verify the revenue event. |
+| `price` | `price` (or `revenue` or `total`, see note below) | The price of the products purchased, and this can be negative. |
+| `receipt` | `receipt` (mobile only) | This is required to verify the revenue event. |
 | `receiptSignature`  | `receiptSignature` (Android only) | The receipt signature.  |
-| `revenueType` | `revenueType` (Server-side only)| The type of revenue (e.g. tax, refund, income). |
-| `revenue`  |  `reveue` (Server-side only) | The revenue collected.  |
-| `eventProperties` | Any remaining properties (Server-side only) | A NSDictionary or Map of event properties to include in the revenue event. |
+| `revenueType` | `revenueType` (cloud-mode only)| The type of revenue (such as tax, refund, income). |
+| `revenue`  |  `revenue` (cloud-mode only) | The revenue collected.  |
+| `eventProperties` | Any remaining properties (cloud-mode only) | A NSDictionary or Map of event properties to include in the revenue event. |
 
 
-^ In our A.js, iOS and Android components, if `properties.price` is not present, Segment will fallback to `revenue` and send that as `price`. In addition, in our iOS and Android components, if `revenue` isn't present either, we'll do an additional fallback to `total`.
+^ In Segment's Analytics.js, iOS and Android sources, if `properties.price` is not present, Segment falls back to `revenue` and sends that as `price`. The Segment iOS and Android sources also do an additional fallback to `total`, if `revenue` isn't present either.
 
-**Note:** If your site allows for users to perform a single transaction with multiple different products (such as a shopping cart checkout), we recommend using an [Order Completed](/docs/connections/destinations/catalog/amplitude/#order-completed) event to track revenue with Amplitude.
+> success ""
+> **Tip** If your site allows users to perform a single transaction with multiple products (such as a shopping cart checkout), we recommend that you use an [Order Completed](/docs/connections/destinations/catalog/amplitude/#order-completed) event to track revenue with Amplitude.
 
 
 
 ### Order Completed
 
-To track revenue with Amplitude, we recommend using our [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) event. This event allows you to define a list of products that a user purchased in a transaction. The need for this functionality is most applicable to sites that have a shopping cart experience.
+Segment recommends that you use the [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) event to track revenue with Amplitude. This event allows you to define a list of products that a user purchased in a single transaction, which is the best way to track purchases for sites that have a shopping cart system.
 
-This event's functionality is currently only available for data originating from a server or web [source](https://segment.com/docs/connections/sources/). An `Order Completed` event from mobile using our bundled Amplitude integration
+You can currently use this event only for data coming from a server or web [source](https://segment.com/docs/connections/sources/). An `Order Completed` event from mobile using our bundled Amplitude integration
 will work the same as our standard `track` event documented above.
 
 Here's an example of how you'd create an "Order Completed" event:
 
-```javascript
+```js
 analytics.track({
   "userId": "e953c39d2597f0b8a79dd3c407baeb13bb58523a",
   "event": "Order Completed",
