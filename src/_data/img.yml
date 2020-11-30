@@ -220,11 +220,6 @@ image_files:
     folder: connections/destinations/catalog/optimizely-web
     images:
       - images/customdimensions.png
-  -
-    folder: connections/destinations/catalog/mammoth
-    images:
-      - images/A8mLIPZ.png
-      - images/JsTuMCy.png
 
   -
     folder: connections/destinations/catalog/nudgespot
@@ -540,11 +535,6 @@ image_files:
     folder: connections/sources/catalog/cloud-apps/delighted
     images:
       - https://scrn.es/6fEhinjMQGiuESd2aQqLcv.gif
-
-  -
-    folder: connections/sources/catalog/cloud-apps/friendbuy
-    images:
-      - images/segment-write-key.png
 
   -
     folder: connections/sources/catalog/cloud-apps/aircall
