@@ -15,7 +15,7 @@ When you use Segment as the single point of collection for your customer data, y
 - Enforce your company's data privacy policies with standard privacy controls
 - Streamline regulatory compliance with tools for user deletion and suppression
 
-Privacy Portal features are available to all Segment workspaces, however only workspace owners can access the Privacy Portal. Advanced features are also available to customers who have Protocols enabled.
+Privacy Portal features are available to all Segment workspaces, however only workspace owners can access the Privacy Portal.
 
 ## Privacy Inbox
 

@@ -203,18 +203,6 @@ image_files:
     folder: connections/destinations/catalog/kenshoo-infinity
     images:
       - images/e7ffbbc58004b02ad61a95d136c98769.png
-  -
-    folder: connections/destinations/catalog/hubspot
-    images:
-      - images/hubspot-personas01.png
-      - images/hubspot-personas02.png
-      - images/hubspot-personas03.png
-      - images/hubspot-personas04.png
-      - images/hubspot-personas05.png
-      - images/hubspot-personas06.png
-      - images/hubspot-personas07.png
-      - images/hubspot-personas08.png
-      - images/hubspot-personas09.png
 
   -
     folder: connections/destinations/catalog/optimizely-web
@@ -269,11 +257,6 @@ image_files:
       - images/braze-anonid.png
 
   -
-    folder: connections/spec
-    images:
-      - images/Video_Tracking_Workflow.png
-
-  -
     folder: connections/storage/warehouses
     images:
       - images/wh-health-warehouse.png
@@ -284,18 +267,6 @@ image_files:
       - images/WH_SS_WH.png
       - images/WH_SS_Source.png
 
-  -
-    folder: connections/storage/catalog/google-cloud-storage
-    images:
-      - images/gcloud4.png
-      - images/gcloud5.png
-      - images/gcloud6.png
-      - images/gcloud8.png
-      - images/gcloud9.png
-      - images/gcloud1.png
-      - images/gcloud2.png
-      - images/gcloud3.png
-      - images/gcloud10.png
   -
     folder: connections/storage/catalog/bigquery
     images:
