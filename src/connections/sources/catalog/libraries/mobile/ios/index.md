@@ -104,7 +104,7 @@ import Segment
 
 ### Including the SDKs for destinations using Device-mode
 
-In the interest of keeping the Analytics-iOS SDK lightweight, the Analytics pod only installs the Segment destination. This means that all your data is sent through Segment's servers to any tools you enable using the default Cloud-mode.
+To keep the Analytics-iOS SDK lightweight, the Analytics pod only installs the Segment destination. This means that all your data is sent through Segment's servers to any tools you enable using the default Cloud-mode.
 
 Some destinations [require or offer Device-mode connections](/docs/connections/destinations/#connection-modes). For those destinations, you must take some additional steps as [to package the device-mode SDKs](/docs/connections/sources/catalog/libraries/mobile/ios/#packaging-device-mode-destination-sdks).
 
@@ -438,7 +438,7 @@ The Group call has the following fields:
   </tr>
   <tr>
     <td>`options` _Options, optional_</td>
-    <td>An `Options` object lets you set a [timestamp](/docs/connections/spec/common/#timestamps), [enable or disable destinations](#selecting-destinations), or [send additional context](/docs/connections/spec/common/#context).</td>
+    <td>An `Options` object lets you [enable or disable destinations](#selecting-destinations), or [send additional context](/docs/connections/spec/common/#context).</td>
   </tr>
 </table>
 
@@ -503,7 +503,7 @@ Analytics.shared().getAnonymousId
 
 The `- reset` method clears the SDK's internal stores for the current `user` and `group`. This is useful for apps where users can log in and out with different identities over time.
 
-Clearing all information about the user is as simple as calling:
+The example code below clears all information about the user.
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -518,7 +518,8 @@ Analytics.shared().reset()
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-**Events in the queue are not cleared**, and are sent to Segment the next time the app starts. You might want to call Flush in combination before you call Reset.
+
+**Reset does not clear events in the queue**, and any remaining events in the queue are sent the next time the app starts. You might want to call [Flush](#flush) before you call Reset.
 
 
 > info ""
@@ -724,7 +725,7 @@ configuration.requestFactory = ^(NSURL *url) {
 
 ## Ad Tracking and IDFA
 
-Starting iOS14, applications must prompt users if that app needs to collect their Identifier for Advertisers (IDFA). Going forward with analytics-ios-4.1 and later, Segment doesn't auto-collect IDFA. If your app or any integrations require the use of IDFA, you need to:
+Starting iOS 14, applications must prompt users if that app needs to collect their Identifier for Advertisers (IDFA). Going forward with analytics-ios-4.1 and later, Segment doesn't auto-collect IDFA. If your app or any integrations require the use of IDFA, you need to:
 
 1. import the [AdSupport](https://developer.apple.com/documentation/adsupport) and [App Tracking Transparency](https://developer.apple.com/documentation/apptrackingtransparency) Frameworks by Apple
 2. pass the below code snippet to Segment config and start tracking events

@@ -3,9 +3,9 @@ sections:
 - section_title: Config API
   section:
   - path: /config-api
-    title: Config API Overview
+    title: Config API overview
   - path: /config-api/api-design
-    title: API Design
+    title: API design
   - path: /config-api/authentication
     title: Authentication
   - path: /config-api/fql

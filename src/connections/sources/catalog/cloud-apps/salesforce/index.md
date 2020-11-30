@@ -1,5 +1,6 @@
 ---
 title: Salesforce Source
+strat: salesforce
 ---
 Salesforce is a leader in on-demand customer relationship management. [Visit Website](http://salesforce.com)
 

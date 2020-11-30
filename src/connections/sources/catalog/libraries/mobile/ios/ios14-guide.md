@@ -1,13 +1,16 @@
 ---
-title: iOS14 Guide
+title: iOS 14 Guide
 strat: ios
 ---
 
-In June 2020, Apple made several privacy-related announcements at WWDC20 about its upcoming iOS14 release, including [changes to the collection and use of Identifier for Advertising (IDFA)](https://developer.apple.com/app-store/user-privacy-and-data-use/). These changes require developers to ask for user consent *before* collecting IDFA to track users across multiple applications.
+> warning ""
+> **Note:** You should update your `analytics-ios` and device-mode destinations to adapt to iOS 14 changes explained in this guide.
+
+In June 2020, Apple made several privacy-related announcements at WWDC20 about its upcoming iOS 14 release, including [changes to the collection and use of Identifier for Advertising (IDFA)](https://developer.apple.com/app-store/user-privacy-and-data-use/). These changes require developers to ask for user consent *before* collecting IDFA to track users across multiple applications.
 
 Segment fundamentally agrees with Apple’s stance. The world is becoming more privacy-conscious, and we believe that every single one of us will have right to own our own data. The best companies are the ones using this data in responsible ways.
 
-Apple released iOS14 in the autumn of 2020, but [delayed the IDFA changes until early 2021](https://developer.apple.com/news/?id=hx9s63c5&1599152522). Segment products, including Connections, Protocols, Personas (including Identity Resolution), and Privacy, Data Lakes, and Cloud Sources, do not rely on IDFA and so are not affected by these platform changes. However, Segment’s iOS Source SDK (`analytics-ios`) and any destinations that previously used IDFA require that you update them so they continue to work with iOS14.
+Apple released iOS 14 in the autumn of 2020, but [delayed the IDFA changes until early 2021](https://developer.apple.com/news/?id=hx9s63c5&1599152522). Segment products, including Connections, Protocols, Personas (including Identity Resolution), and Privacy, Data Lakes, and Cloud Sources, do not rely on IDFA and so are not affected by these platform changes. However, Segment’s iOS Source SDK (`analytics-ios`) and any destinations that previously used IDFA require that you update them so they continue to work with iOS 14.
 
 Segment updated the iOS Source SDK (`analytics-ios`) and any affected destinations so they support Apple’s iOS platform changes. The Segment iOS SDK (`analytics-ios`) has been updated to version 4 with v4.1 released as stable.
 
@@ -26,7 +29,7 @@ Due to this major change, **you should upgrade to the latest stable version of `
 
 If you need to collect the user’s IDFA to pass it to specific destinations, or for other uses, you can follow the steps for Ad Tracking and IDFA in the [iOS documentation](/docs/connections/sources/catalog/libraries/mobile/ios#ad-tracking-and-idfa) to collect and pass IDFA as a configuration item to the Segment SDK.
 
-Remember, under iOS14, applications can only collect the IDFA from a user if they consent to make it available. The Segment example code, used along with Apple’s documentation, make it easy for developers to collect and pass the IDFA to the Segment SDK as a configuration item on app load.
+Remember, under iOS 14, applications can only collect the IDFA from a user if they consent to make it available. The Segment example code, used along with Apple’s documentation, make it easy for developers to collect and pass the IDFA to the Segment SDK as a configuration item on app load.
 
 {% comment %}
 Investigate why above link doesn't work when relative.
@@ -37,9 +40,9 @@ Investigate why above link doesn't work when relative.
 Due to [major changes](https://github.com/segmentio/analytics-ios/blob/master/CHANGELOG.md) to core Segment SDKs for version 4, **all device-mode destination SDKs have been updated**. You should update all device-mode integrations and their bundled SDK packages accordingly.
 
 
-## Segment’s integrations have been updated to support Apple’s iOS14 changes.
+## Segment’s integrations have been updated to support Apple’s iOS 14 changes.
 
-Several integration partners made their own updates to support Apple’s iOS14 platform changes. Segment integrations for both device- and cloud-mode now have the most recent changes from affected integration partners:
+Several integration partners made their own updates to support Apple’s iOS 14 platform changes. Segment integrations for both device- and cloud-mode now have the most recent changes from affected integration partners:
 
 1. [Amplitude](/docs/connections/destinations/catalog/amplitude/#troubleshooting)
 2. [Braze](/docs/connections/destinations/catalog/braze/#additional-device-mode-set-up-for-ios-14-support)
@@ -50,9 +53,5 @@ Several integration partners made their own updates to support Apple’s iOS14 p
 
 Additional affected integration partners are in the process of making changes, and these will be included in future updates.
 
-> warning ""
-> **Note:** You should update your `analytics-ios` and device-mode destinations to adapt to iOS14 changes explained above.
-
-
 > info ""
-> If you discover an integration affected by Apple’s iOS14 changes, but is not listed above or does not have updates, [contact customer support](https://segment.com/help/contact/).
+> If you discover an integration affected by Apple’s iOS 14 changes, but is not listed above or does not have updates, [contact customer support](https://segment.com/help/contact/).

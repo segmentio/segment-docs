@@ -522,4 +522,4 @@ Note: the logger requires a minimum version of .NET Core 2.1.
 `Analytics.NET` has been tested and works in Mono.
 
 ### .NET Core
-`Analytics.NET` is not officially supported using the .NET Core runtime.
+`Analytics.NET` has been tested and works with .NET Core 3.1 and 3.4.2 beta.

@@ -4,7 +4,7 @@ strat: google
 ---
 
 > warning "Migrate mobile implementations to Firebase"
-> Google ended support for Google Analytics classic on iOS and Android mobile apps on October 31st 2019. To continue measuring and optimizing user engagement in your mobile apps, [migrate your implementation to use the Firebase SDKs](migrating). If you are using [Google Analytics DV360](/docs/connections/destinations/catalog/doubleclick-floodlight/) you do not need to migrate.
+> Google ended support for Google Analytics classic on iOS and Android mobile apps on October 31st 2019. To continue measuring and optimizing user engagement in your mobile apps, [migrate your implementation to use the Firebase SDKs](migrating). If you are using Google Analytics 360 you do not need to migrate.
 
 
 ## Getting Started
