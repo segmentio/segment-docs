@@ -1,5 +1,5 @@
 ---
-title: Analytics-React FAQs
+title: Analytics-React-Native FAQs
 strat: react-native
 ---
 
