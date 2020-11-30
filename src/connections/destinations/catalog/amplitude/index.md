@@ -20,6 +20,9 @@ In addition to the docs below, Amplitude created a [integration guide](https://d
 NOTE: To delete users based on GDPR regulations, you must include a secret key in the **Secret Key** setting of every Amplitude destination. You can find your Secret Key on the [General Settings](https://help.amplitude.com/hc/en-us/articles/235649848-Settings#general) of your Amplitude project.
 
 
+{% include components/media-icon.html href="https://segment.com/recipes/amplitude-historical-count-analysis/" icon="media/icon-academy.svg" title="Identify high-value users with Historical Count analysis" content="Examine the exact moment in the customer journey that converts new users into high-value customers." %}
+
+
 ## Getting Started
 
 {% include content/connection-modes.md %}
@@ -139,7 +142,7 @@ To have Amplitude recognize an anonymous user and a known or logged-in user, mak
 If you're using a Segment server library or the Segment HTTP API, you must explicitly include both `anonymousId` and `userId`. If you're using Analytics.js in device-mode, or a bundled SDK, Segment automatically includes `anonymousId` for you.
 
 ### Amplitude Device ID
-<!-- TODO skipped the device ID part, needs some more detangling-->
+<!-- TODO skipped the device ID part, needs some more deta-->
 
 Device ID is be set in slightly different ways depending on the library and connection mode you're using (Device-mode vs Cloud-mode).
 
