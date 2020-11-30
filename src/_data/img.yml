@@ -1208,25 +1208,9 @@ image_files:
   -
     folder: connections/destinations/catalog/optimizely-full-stack/images
     images:
-  -
-    folder: connections/destinations/catalog/attribution
-    images:
-      - images/att1.png
-      - images/att3.png
-      - images/att4.png
-      - images/att5.png
-  -
-    folder: connections/destinations/catalog/attribution/images
-    images:
+
   -
     folder: connections/destinations/catalog/tractionboard
-    images:
-  -
-    folder: connections/destinations/catalog/visual-website-optimizer
-    images:
-      - images/experiment-viewed-setting.png
-  -
-    folder: connections/destinations/catalog/visual-website-optimizer/images
     images:
   -
     folder: connections/destinations/catalog/nudgespot
@@ -1291,14 +1275,6 @@ image_files:
     images:
   -
     folder: connections/destinations/catalog/elevio
-    images:
-  -
-    folder: connections/destinations/catalog/salesforce
-    images:
-      - images/action-example.png
-      - images/upsert-action-example.png
-  -
-    folder: connections/destinations/catalog/salesforce/images
     images:
   -
     folder: connections/destinations/catalog/facebook-pixel
@@ -1370,17 +1346,6 @@ image_files:
     images:
   -
     folder: connections/destinations/catalog/clearbit-reveal
-    images:
-  -
-    folder: connections/destinations/catalog/linkedin-insight-tag
-    images:
-      - images/w53Sm6Jpg3.png
-      - images/K5HEnmgvse.png
-      - images/will-use-tag-manger.png
-      - images/kyTVBLjRyI.png
-      - images/Nmad4zYvWy.png
-  -
-    folder: connections/destinations/catalog/linkedin-insight-tag/images
     images:
   -
     folder: connections/destinations/catalog/gameball
