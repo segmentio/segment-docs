@@ -2,7 +2,7 @@
   # Ignore builds unless [netlify-build] is present in commit message
   # ignore = "git log -1 --pretty=%B | ( ! grep -q '\[netlify\-build\]' )"
   # Ignore if [netlify-ignore] is present
-  ignore = "git log -1 --pretty=%B | ( grep -q '\[netlify\-ignore\]' )"
+  ignore = "git log -1 --pretty=%B | ( grep -q '\\[netlify\\-ignore\\]' )"
 
 [[redirects]]
   from = "/docs/*"
