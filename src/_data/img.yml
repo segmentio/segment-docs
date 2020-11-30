@@ -1050,14 +1050,7 @@ image_files:
   -
     folder: connections/destinations/catalog/gainsight-px/images
     images:
-  -
-    folder: connections/destinations/catalog/livechat
-    images:
-      - Images/livechaton.png
-  -
-    folder: connections/destinations/catalog/livechat/Images
-    images:
-  -
+
     folder: connections/destinations/catalog/convertro
     images:
   -
@@ -1074,14 +1067,6 @@ image_files:
     images:
   -
     folder: connections/destinations/catalog/userlist
-    images:
-  -
-    folder: connections/destinations/catalog/zopim
-    images:
-      - ;
-      - images/recordlivechat.png
-  -
-    folder: connections/destinations/catalog/zopim/images
     images:
   -
     folder: connections/destinations/catalog/perfect-audience
@@ -1119,12 +1104,7 @@ image_files:
   -
     folder: connections/destinations/catalog/optimizely-web
     images:
-      - https://i.gyazo.com/5537158e68f5bcb6be0fe1d8bbc2c61b.png
-      - https://i.gyazo.com/8614c2b2b1ff63b789c65e1413b08920.png
       - images/customdimensions.png
-  -
-    folder: connections/destinations/catalog/optimizely-web/images
-    images:
   -
     folder: connections/destinations/catalog/mammoth
     images:
@@ -1146,20 +1126,6 @@ image_files:
     folder: connections/destinations/catalog/batch
     images:
   -
-    folder: connections/destinations/catalog/sailthru
-    images:
-      - images/1488751534977.png
-      - images/1488751628625.png
-      - images/1488218489126.png
-      - images/1488751128521.png
-      - images/1488751210325.png
-      - images/1488752018885.png
-      - images/1488752126668.png
-      - images/1487272939423.png
-  -
-    folder: connections/destinations/catalog/sailthru/images
-    images:
-  -
     folder: connections/destinations/catalog/whale-watch
     images:
   -
@@ -1174,28 +1140,7 @@ image_files:
   -
     folder: connections/destinations/catalog/experiments-by-growthhackers
     images:
-  -
-    folder: connections/destinations/catalog/pinterest-tag
-    images:
-      - images/conversions-page.png
-      - images/pinterest-tag-configure.png
-      - images/pinterest-tag-activate.png
-  -
-    folder: connections/destinations/catalog/pinterest-tag/images
-    images:
-  -
-    folder: connections/destinations/catalog/salesforce-marketing-cloud
-    images:
-      - images/identify-dext.png
-      - images/sfmc-identify-dext-key.png
-      - images/dext-user-regd-example.png
-      - images/sfmc-conversion-events.png
-      - images/uuid-primary-key.png
-      - images/existing-dext-data-types.png
-      - images/journey-builder-options.png
-  -
-    folder: connections/destinations/catalog/salesforce-marketing-cloud/images
-    images:
+
   -
     folder: connections/destinations/catalog/proof-experiences
     images:
