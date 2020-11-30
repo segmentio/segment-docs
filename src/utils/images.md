@@ -3,9 +3,9 @@ title: images
 hide_toc: true
 hide-feedback: true
 ---
-Images in this list are labled 3 ways:
+Images in this list are labeled 3 ways:
 
-1. Locations that do not begin with a `/` are meant to be appeneded to the value of the heading above the table, and have `/docs/` added at the beginning. For example `privacy/` and `images/privacy-alerts.png` becomes `/docs/privacy/images/privacy-alerts.png`. This makes it a full URL. relative to the root of the site.
+1. Locations that do not begin with a `/` are meant to be appended to the value of the heading above the table, and have `/docs/` added at the beginning. For example `privacy/` and `images/privacy-alerts.png` becomes `/docs/privacy/images/privacy-alerts.png`. This makes it a full URL. relative to the root of the site.
 2. Some locations already include the full URL.
 3. Some locations are hotlinked from external sources. This is bad and we will try to fix.
 
@@ -19,7 +19,7 @@ In the first two cases above, when looking for files in the file system, replace
   <tr>
   <th>Location</th>
   <th>Thumbnail</th>
-  </tr> 
+  </tr>
   {% for image in folders.images %}
   <tr>
   {% if image contains "/docs/" %}
@@ -28,7 +28,7 @@ In the first two cases above, when looking for files in the file system, replace
   {% elsif image contains "http" %}
   <td style="width:200px; border: 1px solid red"><code style="max-width: 200px; overflow: scroll">{{image}}</code> - <strong>HOTLINK</strong></td>
   <td style="border: 1px solid red"><a href="{{image}}" target="_blank"><img src="{{image}}" style="width:100%; max-width: 100%; margin: 5px;" /></a></td>
-  {% else %} 
+  {% else %}
   <td style="width:200px"><code style="max-width: 200px; overflow: scroll">{{image}}</code></td>
   <td><a href="/docs/{{folders.folder}}/{{image}}" target="_blank"><img src="/docs/{{folders.folder}}/{{image}}" style="width:100%; max-width: 100%; margin: 5px;" /></a></td>
   {% endif %}
@@ -38,4 +38,3 @@ In the first two cases above, when looking for files in the file system, replace
 </div>
 {% endif %}
 {% endfor %}
-
