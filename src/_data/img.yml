@@ -15,15 +15,7 @@ image_files:
       - images/suppressed-users.png
       - images/deletion-requests.png
       - images/dest-deletion-status.png
-  -
-    folder: config-api
-    images:
-  -
-    folder: config-api/images
-    images:
-  -
-    folder: utils
-    images:
+
   -
     folder: personas
     images:
@@ -118,15 +110,7 @@ image_files:
       - images/anonymous-id.png
       - images/edit-priority.png
       - images/identity_resolution_1.png
-  -
-    folder: personas/identity-resolution/images
-    images:
-  -
-    folder: personas/images
-    images:
-  -
-    folder: personas/files
-    images:
+
   -
     folder: connections
     images:
@@ -146,9 +130,7 @@ image_files:
       - images/event-tester_J7TEDYvY.png
       - /guides/images/asset_Yxw1DJqb.png
       - images/event-tester_il6mvexS.png
-  -
-    folder: connections/images
-    images:
+
   -
     folder: connections/destinations
     images:
