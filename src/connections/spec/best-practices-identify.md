@@ -136,14 +136,14 @@ The Segment ID cookie is set with a one year expiration. However, there are some
 
 ## Linking server- and client- generated Ids
 
-There are some advantages to sending details about your users directly from your server once the user registers. Server library [identify calls](/docs/connections/spec/identify) are invisible to the end user, making them more secure, and much more reliable.
+There are some advantages to sending details about your users directly from your server once the user registers. Server library [Identify calls](/docs/connections/spec/identify) are invisible to the end user, making them more secure, and much more reliable.
 
 If you want to send user data that is sensitive or which you don't want to expose to the client, then you can make an Identify call from the server with all the traits you know about the user.
 
 
 ### Aliasing from a server library
 
-If you plan to track anonymous visitors from the browser and only call [identify](/docs/connections/spec/identify) from your servers, Kissmetrics and Mixpanel might require that you make an [Alias call](/docs/connections/spec/alias) to link the records. The Alias call links client-side anonymous visitors with server-identified users. This isn't recommended, but if you do this, read the [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#aliasing-new-users-server-side)and[Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias-using-cloud-mode) specific [alias](/docs/connections/spec/alias) docs.
+If you plan to track anonymous visitors from the browser and only make [Identify calls](/docs/connections/spec/identify) from your server libraries, Kissmetrics and Mixpanel might require that you make an [Alias call](/docs/connections/spec/alias) to link the records. The Alias call links client-side anonymous visitors with server-identified users. This isn't recommended, but if you do this, read the [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#aliasing-new-users-server-side)and[Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias-using-cloud-mode) specific [alias](/docs/connections/spec/alias) docs.
 
 ### Common questions
 
