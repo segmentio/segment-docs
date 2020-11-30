@@ -3,39 +3,35 @@ title: 'Google Analytics 4 destination'
 strat: google
 ---
 
-Google introduced the new version of Google Analytics, called Google Analytics 4 (GA4), in October 2020.
+Google introduced the new version of Google Analytics, called Google Analytics 4 (GA4), in October 2020. GA4 has some distinct differences from Universal Analytics (UA), which are important to understand before considering migration and the data schema changes that might require.
 
-Segment currently supports a GA4 destination in beta, and we expect to release this destination to general availability in early 2021. Interested in being a beta tester and giving us your feedback? Email us at [beta@segment.com](mailto:beta@segment.com).
+> success ""
+> Segment currently supports a GA4 destination in beta, and we expect to release this destination to general availability in early 2021. Interested in being a beta tester and giving us your feedback? Email us at [beta@segment.com](mailto:beta@segment.com).
 
 We’ll update this page to share the latest on our GA4 destination.
 
-
-## Differences between GA4 and Universal Analytics
-
-GA4 has some distinct differences from Universal Analytics (UA), which are important to understand before considering migration and the data schema changes that might require.
-
-### Event-based data model vs pageview-based data model
+## Event-based data model vs pageview-based data model
 
 GA4 has an event-based data model, like Segment. It is replacing Universal Analytics (UA), which has a pageview-centric data model. For more details, see Google’s help center article: [Universal Analytics versus Google Analytics 4 data](https://support.google.com/analytics/answer/9964640?hl=en).
 
 Because the data models are different, data *cannot* be migrated from Universal Analytics to GA4. Google recommends you rethink your data collection in terms of the new model, rather than port everything over from UA. If you’re using UA for ecommerce, see Google’s best practices guide for setting up ecommerce tracking in GA4: [Migrate ecommerce data collection from Universal Analytics](https://support.google.com/analytics/answer/10119380?hl=en&ref_topic=10270831); note this is not a simple migration.
 
 
-### Support for web and mobile data streams
+## Support for web and mobile data streams
 
 UA’s pageview-based data model made it great for websites, but not wonderful for mobile apps, which might load content dynamically, without having “pages” the way UA defined them. GA4 has an event-based data model which improves upon this, and can serve as a single reporting destination for both your web *and* mobile sources. This means you can compare data across devices.
 
 If you decide to use GA4 so you can compare the data, you should spend some time thinking about how to set it up. To compare data across devices, you must use the same parameters across all data streams when you create your custom events.
 
 
-### New reports
+## New reports
 
 GA4’s out-of-the-box reports are different from UA’s. GA4’s reporting is much more configurable, and supports new reporting metrics like churn probability and predictive revenue estimates.
 
 You might not be able to perfectly recreate your UA reports in GA4. One approach is to send your data to both UA and G4A while you build out your new reports in G4A, and improve those reports over time. Once you are satisfied that your G4A reports meet your needs, you can gradually migrate away from using the original reporting in UA.
 
 
-### Client-based or server-based
+## Client-based or server-based
 
 GA4 is only available using a device-mode (client-based) SDK  such as `gtag.js`, Firebase, and Google Tag Manager. The [Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/ga4/sending-events?client_type=gtag#send_an_event) that enables server-to-server data syncing for GA4 properties is [currently in alpha](https://developers.google.com/analytics/devguides/collection/protocol/ga4/sending-events?client_type=gtag#send_an_event).
 
