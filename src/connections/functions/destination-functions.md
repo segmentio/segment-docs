@@ -142,8 +142,8 @@ You can read more about [error handling](#destination-functions-logs-and-errors)
 {% include content/functions/runtime.md %}
 
 
-<!-- TODO
-## Batching in functions -->
+<!-- TODO - could also go into the `runtime.md` include above, if applied identically to both types of functions.
+## Batching in functions   -->
 
 ## Create settings and secrets
 
