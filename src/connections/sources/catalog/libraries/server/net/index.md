@@ -1,8 +1,5 @@
 ---
 title: Analytics for .NET
-sourceTitle: .NET
-sourceCategory: Server
-shortName: 'net'
 ---
 
 Our .NET library is the best way to integrate analytics into your .NET application or website. It lets you record analytics data from your ASP.NET, C#, F#, and Visual Basic code. The library issues requests that hit our servers, and then we route your data to any analytics service you enable on our destinations page. This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/Analytics.NET).

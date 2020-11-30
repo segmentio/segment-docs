@@ -503,31 +503,7 @@ image_files:
       - images/cUPCM42.png
       - images/uLu70VP.png
       - images/qgbkbvA.png
-  -
-    folder: connections/sources/catalog/libraries/website/cloudflare
-    images:
-      - https://i.imgur.com/LX36x8R.png
-  -
-    folder: connections/sources/catalog/libraries/website/shopify-littledata
-    images:
-      - images/littledata_arch.png
-      - images/Nd5L0C6.png
-      - images/eLUh6GF.png
-      - images/iYM76VI.png
-      - images/kvjNx4M.png
 
-  -
-    folder: connections/sources/catalog/libraries/website/javascript
-    images:
-      - images/create_cloudfront_distribution.png
-      - images/cloudfront_distribution_web.png
-      - images/cloudfront_distribution_settings.png
-      - images/sources_ajs_brazemiddleware.gif
-      - images/VOsmoAB.gif
-      - images/CFsktto.gif
-      - images/7Ymnh2S.gif
-      - images/d8CmIY2.png
-      - images/CBdS5dO.png
   -
     folder: connections/sources/catalog/libraries/server/net
     images:
