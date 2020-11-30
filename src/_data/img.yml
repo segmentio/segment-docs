@@ -420,7 +420,6 @@ image_files:
     folder: connections/destinations/catalog/nudgespot
     images:
       - images/h911sko8RG.png
-
   -
     folder: connections/destinations/catalog/vitally
     images:
@@ -612,10 +611,6 @@ image_files:
     images:
       - /docs/connections/sources/plugins/plugins-enable.png
   -
-    folder: connections/sources/catalog/cloud-apps/drip
-    images:
-      - images/drip.png
-  -
     folder: connections/sources/catalog/cloud-apps/vero
     images:
       - images/vero1.png
@@ -631,10 +626,6 @@ image_files:
       - images/Iterable2.png
       - images/Iterable3.png
   -
-    folder: connections/sources/catalog/cloud-apps/looker
-    images:
-      - images/9c12ebdd99f19383111aceabc0ab5de9.png
-  -
     folder: connections/sources/catalog/cloud-apps/sendgrid
     images:
       - images/481590_Screen+Shot+2016-02-16+at+10.47.51+AM.png
@@ -644,14 +635,6 @@ image_files:
       - images/601347_Key.png
       - images/694785_Webhook.png
       - images/934372_Webhook+Settings.png
-
-  -
-    folder: connections/sources/catalog/cloud-apps/amplitude-cohorts
-    images:
-      - images/amplitude-add-integration.png
-      - images/amplitude-connect-segment.png
-      - images/amplitude-segment-writekey.png
-
   -
     folder: connections/sources/catalog/cloud-apps/google-ads
     images:
@@ -659,12 +642,6 @@ image_files:
       - images/schema.png
       - images/connection_failed.png
 
-  -
-    folder: connections/sources/catalog/cloud-apps/activecampaign
-    images:
-      - https://cldup.com/QLv153k6CU.png
-      - https://cldup.com/cv4rU1Ivg5.png
-      - https://cldup.com/5OZGDQD3wB.png
 
   -
     folder: connections/sources/catalog/cloud-apps/desk-com
