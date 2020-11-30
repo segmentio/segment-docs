@@ -53,6 +53,7 @@ You should make an Identify call in the following situations:
 The illustration below shows a timeline with a user’s interactions on a website, including sample API calls above that show Segment calls, and the user's `anonymousId` and `userId`.
 
 ![](images/identify-bp-1.png)
+
 <!-- https://www.figma.com/file/Gc53MamYsKZBg3IUduunc5/identity-best-practices?node-id=1%3A3 -->
 
 When the user first visits a page, Analytics.js automatically assigns the user an `anonymousId` and saves it to the user's local storage. As the user interacts with the site, for example clicking around to different pages, Analytics.js includes this `anonymousId` and some [contextual information](/docs/spec/common#context) with each Page and Track call. The contextual information might be the user’s [IP address, browser, and more](/docs/connections/spec/common#context-fields-automatically-collected).
