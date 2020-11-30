@@ -10,24 +10,24 @@ The Segment-MoEngage Integration is a bundled integration, meaning it requires t
 
 ## Setup MoEngage in your Segment Workspace:
 
-To setup MoEngage do the following : 
-  1. First get your key([AppID](http://app.moengage.com/v3/#/settings/0/0)) from the MoEngage dashboard. 
-  2. Go to your **Segment workspace**, go to **Destinations** and select **MoEngage**. 
+To setup MoEngage do the following :
+  1. First get your key([AppID](http://app.moengage.com/v3/#/settings/0/0)) from the MoEngage dashboard.
+  2. Go to your **Segment workspace**, go to **Destinations** and select **MoEngage**.
   3. Enable the MoEngage Destination.
   4. Go to the MoEngage Settings and enter the MoEngage AppID, obtained in **Step1**.
   5. Save the changes.
   6. Make sure you set the **Connection Mode**  to `Device Mode`. MoEngage requires this setting to use
       of features like push notifications and any in-app features of the MoEngage SDK.
-  
-These new settings will take up to an hour to propagate to your existing users. For new 
+
+These new settings will take up to an hour to propagate to your existing users. For new
 users it’ll be instantaneous! Segment-MoEngage Integration is a bundled integration, requires client side integration.
 
-![Settings](/segmentsdk/segment_settings.png)
+![](images/segment_settings.png)
 
 ## iOS
 
 
-To get started with MoEngage on iOS, first integrate your app with the [MoEngage-Segment-iOS](https://github.com/moengage/MoEngage-Segment-iOS) library. You can integrate MoEngage and Segment with [CocoaPods](http://cocoapods.org). 
+To get started with MoEngage on iOS, first integrate your app with the [MoEngage-Segment-iOS](https://github.com/moengage/MoEngage-Segment-iOS) library. You can integrate MoEngage and Segment with [CocoaPods](http://cocoapods.org).
 
   * Initialise pod with pod init command, this will create a podfile for your project.
   * Update your podfile by adding pod '**Segment-MoEngage**' as shown below:
@@ -37,8 +37,8 @@ To get started with MoEngage on iOS, first integrate your app with the [MoEngage
   pod 'Segment-MoEngage’
   ```
 
-   * Update the pod. 
-   
+   * Update the pod.
+
     pod update
 
 ### Configure the Segment SDK:
@@ -50,10 +50,10 @@ Now head to the App Delegate file, and setup the Segment SDK by adding `SEGMoEng
  #import <SEGAnalytics.h>
 
  - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+
     // Add your configuration key from Segment
     SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:@"configuration key"];
-    
+
     // Add MoEngageIntegrationFactory. Without this data will not come to MoEngage.
     [config use:[SEGMoEngageIntegrationFactory instance]];
     [SEGAnalytics setupWithConfiguration:config];
@@ -93,7 +93,7 @@ The `reset` method clears the SDK's internal stores for the current user. This i
 Read more about the [reset method](/docs/connections/sources/catalog/libraries/mobile/ios/#reset).
 
 
-### Install / Update Differentiation 
+### Install / Update Differentiation
 
 Since your app might already be on the App Store, you must specify whether your app update would be an `UPDATE` or an `INSTALL`.
 To differentiate between those, use one of the method below:
@@ -144,19 +144,19 @@ Push Notifications are a great way to keep your users engaged and informed about
   ```objc
   [[SEGAnalytics sharedAnalytics] handleActionWithIdentifier:identifier forRemoteNotification:userInfo];
   ```
- 
+
 **MoEngage Push Implementation:**
 For information about the MoEngage push implementation, see [**Push Notifications**](https://docs.moengage.com/docs/push-notifications) in the MoEngage documentation.
 
 
 #### In-App Messaging
 
-In-App Messaging are custom views which you can send to a segment of users to show custom messages or give new offers or take to some specific pages. Follow the link to know more about  inApp Messaging and how to use it in your application: 
+In-App Messaging are custom views which you can send to a segment of users to show custom messages or give new offers or take to some specific pages. Follow the link to know more about  inApp Messaging and how to use it in your application:
 [**InApp NATIV**](https://docs.moengage.com/docs/in-app-nativ)
 
 
 #### GDPR Compliance
-The MoEngage SDK is GDPR compliant, follow the doc in this [link](https://docs.moengage.com/docs/gdpr-compliance-1) to know how to use opt-outs for different features. 
+The MoEngage SDK is GDPR compliant, follow the doc in this [link](https://docs.moengage.com/docs/gdpr-compliance-1) to know how to use opt-outs for different features.
 
 ### Segment Docs
 For more info on using **Segment for iOS** refer to [**Developer Docs**](/docs/connections/sources/catalog/libraries/mobile/ios/) provided by Segment.
@@ -183,14 +183,14 @@ with `$sdkVersion` replaced by the latest version of the MoEngage SDK.
 
 The MoEngage SDK depends on the below Jetpack libraries provided by Google for its functioning, make you add them if not
  done already.
- 
+
 ```groovy
     implementation("androidx.core:core:1.3.1")
     implementation("androidx.appcompat:appcompat:1.2.0")
     implementation("androidx.lifecycle:lifecycle-process:2.2.0")
 ```
 Refer to the [SDK Configuration](https://docs.moengage.com/docs/android-sdk-configuration) documentation to know more about the build config and other libraries used by the SDK.
- 
+
 ### Register MoEngage with Segment SDK
 
 After adding the dependency, you must register the integration with Segment SDK. To do this, import the MoEngage
@@ -256,10 +256,10 @@ MoEngage moEngage =
 MoEngage.initialise(moEngage);
 ```
 
-For showing Push notifications there are 2 important steps: 
+For showing Push notifications there are 2 important steps:
 
 1. Registration for Push, for example generating push token.
-2. Receiving the Push payload from Firebase Cloud Messaging(FCM) service and showing the notification on the device. 
+2. Receiving the Push payload from Firebase Cloud Messaging(FCM) service and showing the notification on the device.
 
 
 #### Opt out of MoEngage Registration
@@ -312,7 +312,7 @@ Add the below code in your manifest file.
 </service>
 ```
 When the MoEngage SDK handles push registration, it optionally provides a callback to the application whenever a new token is registered or the token is refreshed.
-Application can get this callback by implementing `FirebaseEventListener` and registering for a callback in the Application class' `onCreate()` using `MoEFireBaseHelper.Companion.getInstance().setEventListener()` 
+Application can get this callback by implementing `FirebaseEventListener` and registering for a callback in the Application class' `onCreate()` using `MoEFireBaseHelper.Companion.getInstance().setEventListener()`
 
 
 #### Configure Geo-fence
@@ -333,9 +333,9 @@ By default, the MoEngage SDK does not track location, and geo-fence campaigns do
 
 For more information about configuring the Geo-fence, see the [Configuring Geo-Fence](https://docs.moengage.com/docs/push-configuration#section-geofence-push) section in the MoEngage documentation.
 
-#### 
-Declaring & configuring Rich Landing Activity: 
-Add the following snippet and replace `[PARENT_ACTIVITY_NAME]` with the name of the parent 
+####
+Declaring & configuring Rich Landing Activity:
+Add the following snippet and replace `[PARENT_ACTIVITY_NAME]` with the name of the parent
  activity; `[ACTIVITY_NAME]` with the activity name which should be the parent of the Rich Landing Page
 
 ```xml
@@ -346,20 +346,20 @@ Add the following snippet and replace `[PARENT_ACTIVITY_NAME]` with the name of 
 </activity>
 ```
 
-You are now all set up to receive push notifications from MoEngage. For more information on features provided in MoEngage Android SDK refer to the following links: 
+You are now all set up to receive push notifications from MoEngage. For more information on features provided in MoEngage Android SDK refer to the following links:
 
  * [Push Notifications](http://docs.moengage.com/docs/push-configuration)
- 
+
  * [In-App messaging](http://docs.moengage.com/docs/configuring-in-app-nativ)
- 
+
  * [Notification Center](http://docs.moengage.com/docs/notification-center)
- 
+
  * [Advanced Configuration](https://docs.moengage.com/docs/advanced-integration)
- 
+
  * [API Reference](https://moengage.github.io/MoEngage-Android-SDK/)
- 
+
  * [GDPR Compliance](https://docs.moengage.com/docs/gdpr-compliance)
- 
+
 
 ### Identify
 Use [Identify](/docs/connections/sources/catalog/libraries/mobile/android/#identify) to track user-specific attributes. This is the same as tracking [user attributes](http://docs.moengage.com/docs/identifying-user) on MoEngage. MoEngage supports traits supported by Segment as well as custom traits. If you set traits.id, MoEngage sets that as the Unique ID for that user.
@@ -375,7 +375,7 @@ If your app supports the ability for a user to logout and login with a new ident
 
 Refer to [this](https://github.com/moengage/moengage-segment-integration) github repository for sample implementation
 
-## Web 
+## Web
 
 The MoEngage WebSDK offers the ability to send push notifications to Google Chrome, Opera and Firefox browsers. Complete the following steps after you've configured Segment's `analytics.js.`
 
@@ -383,7 +383,7 @@ The MoEngage WebSDK offers the ability to send push notifications to Google Chro
 ### Integration
 
 #### 1. Setup your MoEngage Web SDK settings at MoEngage Dashboard
-Configure the [web settings](https://app.moengage.com/v3/#/settings/push/web) on the MoEngage dashboard to start using MoEngage <> Segment integration. 
+Configure the [web settings](https://app.moengage.com/v3/#/settings/push/web) on the MoEngage dashboard to start using MoEngage <> Segment integration.
 
 If you have selected `HTTPS` mode of integration in the settings, complete the following steps:
 
