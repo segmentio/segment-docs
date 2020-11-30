@@ -271,39 +271,7 @@ image_files:
     folder: connections/storage/catalog/bigquery
     images:
       - images/syncsched.png
-  -
-    folder: connections/storage/catalog/snowflake
-    images:
-      - images/create_virtual_warehouse.png
-      - images/create_database.png
-      - images/create_user_1.png
-      - images/create_user_2.png
-      - images/create_user_3.png
-      - images/connect_snowflake.png
-      - images/auto_suspend.png
-      - /docs/connections/destinations/catalog/images/syncsched.png
 
-  -
-    folder: connections/storage/catalog/redshift
-    images:
-      - images/Screen+Shot+2015-09-17+at+10.25.47+AM.png
-      - images/Screen+Shot+2015-09-17+at+10.26.03+AM.png
-      - images/cVcF5ZtC51a+.png
-      - images/1442616281635_undefined.png
-      - images/redshift_permissioning1.png
-      - images/redshift_permissioning2.png
-      - images/redshift_permissioning4.png
-      - images/redshift_permissioning5.png
-      - images/redshift_permissioning6.png
-      - images/redshift_permissioning7.png
-      - images/redshift_permissioning8.png
-      - images/redshift_permissioning9.png
-      - images/redshift_permissioning10.png
-      - images/redshift_cluster_modify.png
-      - images/rs-mgmt-clusters-modify.png
-      - images/redshift_outbound_permissions.png
-      - images/redshift_custom_outbound_group.png
-      - /docs/connections/destinations/catalog/images/syncsched.png
   -
     folder: connections/storage/catalog/postgres
     images:
