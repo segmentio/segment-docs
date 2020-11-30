@@ -503,16 +503,6 @@ image_files:
       - images/cUPCM42.png
       - images/uLu70VP.png
       - images/qgbkbvA.png
-
-  -
-    folder: connections/sources/catalog/libraries/server/net
-    images:
-      - images/netcreatesource.png
-      - images/stepone.png
-      - images/step1-2.png
-      - images/debuggerpage.png
-      - images/step2.png
-
   -
     folder: connections/sources/catalog/libraries/server/java
     images:
