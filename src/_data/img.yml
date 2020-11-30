@@ -297,23 +297,6 @@ image_files:
       - images/page_mapping.png
 
   -
-    folder: connections/destinations/catalog/knowtify
-    images:
-      - images/pQTgionViG.png
-
-  -
-    folder: connections/destinations/catalog/zapier
-    images:
-      - images/webhooks-by-zapier.png
-      - images/zapier-catch-raw-hook.gif
-      - images/zapier-choose-action.png
-
-  -
-    folder: connections/destinations/catalog/activecampaign
-    images:
-      - images/jda1490xo_screenshot2015-12-07at3.58.27pm.png
-
-  -
     folder: connections/destinations/catalog/personas-display-video-360
     images:
       - images/dv360-1-select-destination.png
@@ -343,17 +326,6 @@ image_files:
       - images/e7ffbbc58004b02ad61a95d136c98769.png
 
   -
-    folder: connections/destinations/catalog/nat
-    images:
-      - images/natTimeline.png
-
-  -
-    folder: connections/destinations/catalog/freshsales
-    images:
-      - images/lvbDssc2kP.png
-      - images/szDo5891Qq.png
-
-  -
     folder: connections/destinations/catalog/hull
     images:
       - https://segment.hull.io/home.png
@@ -379,36 +351,6 @@ image_files:
       - images/segmentmapping.png
       - images/adroll-mapping.png
 
-  -
-    folder: connections/destinations/catalog/bing-ads
-    images:
-      - images/creating-a-goal-new.png
-
-  -
-    folder: connections/destinations/catalog/mailchimp
-    images:
-      - images/merge-fields.png
-      - images/mailchimp-subscriber.png
-
-  -
-    folder: connections/destinations/catalog/nielsen-dcr
-    images:
-      - images/import.png
-      - images/projectstructure.png
-
-  -
-    folder: connections/destinations/catalog/watsi
-    images:
-      - https://www.filepicker.io/api/file/c74wZbs3Ssiysdrftnsr
-      - https://www.filepicker.io/api/file/PX7dQqJSTt5LP8vvfXLF
-      - https://www.filepicker.io/api/file/qZSLJr2SmClM7fx1fiGL
-
-  -
-    folder: connections/destinations/catalog/ibm-ubx
-    images:
-      - images/ubx-register-endpoint.png
-      - images/endpoint-details.png
-      - images/subscribe-to-events.png
 
   -
     folder: connections/destinations/catalog/personas-facebook-custom-audiences
@@ -432,10 +374,6 @@ image_files:
       - images/garl-audience_mgr.png
       - images/garl-configure_dest.png
 
-  -
-    folder: connections/destinations/catalog/librato
-    images:
-      - librato-graph.png
   -
     folder: connections/destinations/catalog/mixpanel
     images:
@@ -467,34 +405,6 @@ image_files:
       - images/hubspot-personas07.png
       - images/hubspot-personas08.png
       - images/hubspot-personas09.png
-
-  -
-    folder: connections/destinations/catalog/google-cloud-function
-    images:
-      - images/gcloud1.png
-      - images/gcloud2.png
-      - images/gcloud3.png
-  -
-    folder: connections/destinations/catalog/freshmarketer
-    images:
-      - images/contact-fields.png
-      - images/custom-fields.png
-
-  -
-    folder: connections/destinations/catalog/selligent-marketing-cloud
-    images:
-      - images/adminconfig.png
-      - images/wheelicon.jpg
-      - images/apps.png
-      - images/secretplus.png
-      - images/smc2.jpeg
-      - images/adminurl.jpg
-      - images/organization.png
-
-  -
-    folder: connections/destinations/catalog/gainsight-px
-    images:
-      - images/TagKey.png
 
   -
     folder: connections/destinations/catalog/optimizely-web
