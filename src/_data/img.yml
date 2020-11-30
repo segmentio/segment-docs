@@ -447,14 +447,6 @@ image_files:
       - images/schema.png
       - images/connection_failed.png
 
-
-  -
-    folder: connections/sources/catalog/cloud-apps/desk-com
-    images:
-      - images/desk_com_image_1.png
-      - images/desk_com_image_2.png
-
-  -
     folder: connections/sources/catalog/cloud-apps/intercom
     images:
       - images/intercom_source_qnsoxh.png
@@ -463,44 +455,10 @@ image_files:
       - images/image_3_Intercom.png
 
   -
-    folder: connections/sources/catalog/cloud-apps/facebook-lead-ads
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/mandrill
-    images:
-      - images/517874_Screen+Shot+2016-02-16+at+11.51.04+PM.png
-      - images/Webhook.png
-      - images/795640_mandrill-settings.png
-
-  -
-    folder: connections/sources/catalog/cloud-apps/mailchimp
-    images:
-      - images/2732771_Screen+Shot+2016-02-16+at+2.45.02+PM.png
-      - images/3027189_API+Keys.png
-      - images/3032880_ChimpKey.png
-      - images/3146819_Screen+Shot+2016-02-16+at+2.52.00+PM.png
-
-  -
     folder: connections/sources/catalog/cloud-apps/facebook-ads
     images:
       - images/setup.png
       - images/choose_account.png
-
-  -
-    folder: connections/sources/catalog/cloud-apps/shopify-littledata
-    images:
-      - images/Nd5L0C6.png
-      - images/eLUh6GF.png
-      - images/iYM76VI.png
-      - images/kvjNx4M.png
-
-  -
-    folder: connections/sources/catalog/cloud-apps/zendesk
-    images:
-      - Images/zendesk1.png
-      - Images/zendesk2.png
-      - Images/zendesk3.png
-
   -
     folder: connections/sources/catalog/cloud-apps/marketo
     images:
@@ -545,15 +503,6 @@ image_files:
       - images/cUPCM42.png
       - images/uLu70VP.png
       - images/qgbkbvA.png
-
-  -
-    folder: connections/sources/catalog/libraries/website/plugins/vimeo
-    images:
-      - /docs/connections/sources/plugins-enable.png
-  -
-    folder: connections/sources/catalog/libraries/website/plugins/youtube
-    images:
-      - /docs/connections/sources/plugins-enable.png
   -
     folder: connections/sources/catalog/libraries/website/cloudflare
     images:

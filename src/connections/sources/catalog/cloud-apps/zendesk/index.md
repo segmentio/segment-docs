@@ -4,7 +4,7 @@ title: Zendesk Source
 
 [Zendesk](https://www.zendesk.com/) is a customer service platform for enterprises, which provides a customer support platform that allows quicker and easier interaction between businesses and customers.
 
-This document was last updated on April, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -14,22 +14,20 @@ This document was last updated on April, 2018. If you notice any gaps, outdated 
 
 3. Give the source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. Both can be whatever you like, but we recommend sticking to something that reflects the source itself, like `Zendesk` for nickname and `zendesk` or `zendesk_prod` for the schema name.
 
-  **Note** that you can add multiple instances if you have multiple Zendesk accounts. That's why we allow you to customize the source's nickname and schema name!
-
-  ![](Images/zendesk1.png)
+   **Note**: You can add multiple instances if you have multiple Zendesk accounts. That's why we allow you to customize the source's nickname and schema name!
 
 4. Enter your Zendesk subdomain. The subdomain you use to access your Zendesk portal (e.g. 'segment' for segment.zendesk.com)
 
-  **Note** If you enter 'segment.zendesk.com' as a subdomain instead of just 'segment', we will be trying to access host 'segment.zendesk.com.zendesk.com' and you will get a credentials error.
+   **Note** If you enter `segment.zendesk.com` as a subdomain instead of just `segment`, Segment tries to access the host `segment.zendesk.com.zendesk.com` and you will get a credentials error.
 
-  ![](Images/zendesk2.png)
+5. Click **Authorize** to start Zendesk's OAuth process. Sign in and grant permissions, you'll be good to go!
 
-5. When you click Authorize, you'll be dropped into Zendesk's OAuth flow. Once you sign in and grant permissions, you'll be good to go!
-Make sure the user has Admin authorizations as we use the incremental export API from Zendesk, which requires Admin access.
+> success ""
+> **Tip**: Segment uses the incremental export API from Zendesk, which requires Admin access. Make sure the user has Admin authorizations!
 
-  ![](Images/zendesk3.png)
 
 ### Rate Limits
+
 The Zendesk source uses both Zendesk's [Core API](https://developer.zendesk.com/rest_api/docs/core/introduction) and [Incremental Exports API](https://developer.zendesk.com/rest_api/docs/core/incremental_export). The source's requests to the Incremental API do not count towards your Zendesk account's rate limits, but requests to the Core API do. By default, we cap our requests to Zendesk's Core API to a rate of 200 requests per minute to avoid triggering [Zendesk's Rate Limits](https://developer.zendesk.com/rest_api/docs/core/introduction#rate-limits). If you'd like us to increase or decrease the request rate for your source, [let us know](https://segment.com/help/contact/), and we'll get it set up. We'll add support for this in the UI soon!
 
 ## Components

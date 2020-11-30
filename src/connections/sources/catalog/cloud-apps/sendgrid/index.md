@@ -15,7 +15,7 @@ Take your company's analysis to the next level by **adding Sendgrid as a Source 
 
   ![](images/481590_Screen+Shot+2016-02-16+at+10.47.51+AM.png)
 
-  **Note** that you can add multiple instances if you have multiple SendGrid accounts. That's why we allow you to customize the source's nickname and schema name!
+   **Note**: You can add multiple instances if you have multiple SendGrid accounts. That's why we allow you to customize the source's nickname and schema name!
 
 5. Provide your API Key.  In order to pull information about your contacts, we'll make requests to SendGrid's API with our [sync component](#sync).  You can create an API Key by navigating to **Settings > API Keys**, clicking **General API Key**.
 
