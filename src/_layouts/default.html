@@ -62,32 +62,6 @@
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
 </head>
 <body>
-  {% if jekyll.environment == "testing" %}
-  <!-- This section displays on Netlify only -->
-  <div style="height:30px; background-color:#fbfb81; width:100%; border-bottom: 1px solid #888; position: sticky; top:0; z-index: 1000;">
-    <div class="stage" style="min-height: 30px;">
-      <p>This site is meant for preview only. Please do not share outside of Segment.<span id="ghtext"> This page previews pull request <strong><a id="ghlink" href="" target="_blank"></a></strong></span></p>
-    </div>
-    <script>
-      const page =  window.location.hostname;  
-      const regex = /(?!(preview-))(\d+)/g;
-      var span = document.getElementById("ghtext");
-      const found = page.match(regex);
-      const gh_base = "https://github.com/segmentio/segment-docs/pull/"
-    
-      if (found == null) {
-        span.style.display = "none";
-      } else {
-        const pr = found[0]
-        const full_url = gh_base.concat(pr);
-        const link = document.getElementById("ghlink");
-        
-        link.href = full_url;
-        link.innerHTML = pr;
-      }
-      </script>
-  </div>
-  {% endif %}
   <div id="consent-manager"></div>
   {{ content }}
   <a class="back-scrolling" data-back-scrolling data-active-class="back-scrolling--active">

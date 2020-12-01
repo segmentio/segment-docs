@@ -57,28 +57,27 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 ## Lists
 
-1. one
-    1. nested
-2. two
-    1. nested
-3. three
-    1. nested
+1. Item lorem ipsum dolor sit amet
+2. Item lorem ipsum dolor sit amet
+    1. Item nested lorem ipsum dolor sit amet
+    2. Item nested lorem ipsum dolor sit amet
+3. Item lorem ipsum dolor sit amet
+    1. Item nested lorem ipsum dolor sit amet
+    2. Item nested lorem ipsum dolor sit amet
+    3. Item nested lorem ipsum dolor sit amet
+3. Item lorem ipsum dolor sit amet
 
-* Item
-    * First Subitem
-    * Second Subitem
-* Item
-    - Subitem
-    - Subitem
-* Item
+* Unordered list item
+* Unordered list item
+* Unordered list item
+  - Subitem
+  - Subitem
+* Unordered list item
 
-{% include components/list-steps.html number="1" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
+### Two columns list
+Add `{: .columns}` before a list you want to divide into two columns.
 
-{% include components/list-steps.html number="2" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
-
-{% include components/list-steps.html number="3" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
-
-{: .columns }
+{: .columns}
 - One
 - Two
 - Three
@@ -89,6 +88,10 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 - Eight
 - Nine
 - Ten
+
+{% include components/list-steps.html number="1" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
+{% include components/list-steps.html number="2" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
+{% include components/list-steps.html number="3" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
 
 ---
 
