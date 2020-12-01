@@ -594,6 +594,8 @@ Destination flags are **case sensitive** and match [the destination's name in th
 
 You can modify the `.load` method in Analytics.js (the second line of the snippet) to take a second argument. If you pass an object with an `integrations` dictionary (matching the format [above](#selecting-destinations-with-the-integrations-object)), then Segment only loads the integrations in that dictionary that are marked as enabled with the boolean value `true`.
 
+You can only call `.load` on page load, or reload (refresh). If you modify the `.load` method between page loads, it does not have any effect until the page is reloaded.
+
 An example:
 
 ```js
