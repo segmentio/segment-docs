@@ -11,10 +11,12 @@ Images in this list are labled 3 ways:
 
 In the first two cases above, when looking for files in the file system, replace `docs` in the URL with `src` in your computer. So for case 1 above, the location in the repository is `src/privacy/images/privacy-alerts.png`.
 
+
+
 {% for folders in site.data.img.image_files %}
 {% if folders.images %}
 <div>
-<h2 style="position: sticky; top: 25px; background-color: white">{{folders.folder}}/</h2>
+<h2 style="position: sticky; top: 25px; background-color: white; cursor:pointer" id="{{folders.folder | slugify}}">{{folders.folder}}/</h2>
 <table>
   <tr>
   <th>Location</th>
