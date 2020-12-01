@@ -1,3 +1,3 @@
-<a href="{{ include.href }}" class="button button-fill {% if include.size %}button--{{ include.size }}{% endif %} {% if include.variant %}button-fill--{{ include.variant }}{% endif %} flex">
+<a href="{{ include.href }}" class="button {% if include.modifier %}button--{{ include.modifier }}{% endif %} button-fill {% if include.variant %}button-fill--{{ include.variant }}{% endif %}">
   {{ include.text }}
 </a>
