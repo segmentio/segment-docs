@@ -57,7 +57,7 @@ To enable this feature,
 3. Hit 'view' next to the Segment integration
 4. Enter in your Segment write key at the bottom.
 
-![Send email events from Vero](https://cldup.com/1aWDVSGw9d.png)
+![Send email events from Vero](images/1aWDVSGw9d.png)
 
 
 ## Group
