@@ -1,10 +1,13 @@
 .input {
-  line-height: inherit;
+  line-height: 1.5;
+  font-size: 12px;
   font-family: $font-family-primary;
-  border: 1px solid color(gray-100);
+  border: 1px solid color(gray-400);
   background-color: color(white);
   color: color(gray-800);
   border-radius: 4px;
+  -webkit-appearance: none;
+  padding: 8px 14px;
 
   &:focus {
     outline: 0;
