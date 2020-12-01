@@ -121,7 +121,7 @@ analytics.identify('ze8rt1u89', {
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
-```
+```js
 analytics.track('Clicked a button', {
   properties: {
     acValue: 'Signup button'
