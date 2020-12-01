@@ -8,7 +8,7 @@ There are several ways to check if your data is flowing. One is the [Debugger ta
 
 For monitoring purposes, you'll also see alerts in the [Workspace Health](/docs/segment-app/#health) tool if your sources or destinations produce repeated errors.
 
-{% include components/media-icon.html href="https://university.segment.com/series/segment-101/debugging-and-troubleshooting?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: Debugging and Troubleshooting" content="Want more? Check out our course on debugging and troubleshooting. (Must be logged in to access.)" %}
+{% include components/reference-button.html href="https://university.segment.com/series/segment-101/debugging-and-troubleshooting?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: Debugging and Troubleshooting" content="Want more? Check out our course on debugging and troubleshooting. (Must be logged in to access.)" %}
 
 
 ## The Source Debugger
@@ -125,7 +125,7 @@ The Latency view shows the end-to-end P95 latency during the time period you sel
 
 
 <div class="double">
-  {% include components/media-icon.html  href="/getting-started/05-data-to-destinations/" newtab="false" icon="symbols/arrow-left.svg" title="Back: Sending data to Destinations" content="Unlock the power fo Segment with Destinations" variant="related" %}
+  {% include components/reference-button.html  href="/getting-started/05-data-to-destinations/" newtab="false" icon="symbols/arrow-left.svg" title="Back: Sending data to Destinations" content="Unlock the power fo Segment with Destinations" variant="related" %}
 
-  {% include components/media-icon.html  href="/getting-started/whats-next/" newtab="false" icon="symbols/arrow-right.svg" title="Next: What's next?" content="Learn about what you can do next with Segment" variant="related" %}
+  {% include components/reference-button.html  href="/getting-started/whats-next/" newtab="false" icon="symbols/arrow-right.svg" title="Next: What's next?" content="Learn about what you can do next with Segment" variant="related" %}
 </div>

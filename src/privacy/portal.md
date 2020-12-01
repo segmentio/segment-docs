@@ -218,7 +218,7 @@ even when it's not an CCN. For example, the key "Product_ID" could contain a
 10-digit string, even though Product_ID does not actually contain an SSN. A
 North American phone number (without country code) is also ten digits.
 
-{% include components/media-icon.html href="/segment-app/iam/roles/#pii-access" icon="media/icon-academy.svg" title="PII Access" content="Use Access Roles to control who has access to the PII identified by your matchers." variant="related" %}
+{% include components/reference-button.html href="/segment-app/iam/roles/#pii-access" icon="media/icon-academy.svg" title="PII Access" content="Use Access Roles to control who has access to the PII identified by your matchers." variant="related" %}
 
 #### An intro to Regular expressions
 

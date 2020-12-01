@@ -165,18 +165,18 @@ console.log('example');
 
 -  Regular - links to any external resource
 
-{% include components/media-icon.html href="https://segment.com" icon="media/icon-academy.svg" title="Segment" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ipsum fugiat nostrum velit iure, molestiae accusamus tempora quos laborum, ex modi illum delectus." %}
+{% include components/reference-button.html href="https://segment.com" icon="media/icon-academy.svg" title="Segment" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ipsum fugiat nostrum velit iure, molestiae accusamus tempora quos laborum, ex modi illum delectus." %}
 
 -  Related - links to an internal docs page (note the `variant="related"` which adds the `https://segment.com/docs` path in the final build)
 
-{% include components/media-icon.html href="/connections/sources/catalog/" icon="media/icon-academy.svg" title="Sources Catalog" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ipsum fugiat nostrum velit iure, molestiae accusamus tempora." variant="related" %}
+{% include components/reference-button.html href="/connections/sources/catalog/" icon="media/icon-academy.svg" title="Sources Catalog" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ipsum fugiat nostrum velit iure, molestiae accusamus tempora." variant="related" %}
 
 -  Double - side by side buttons (you can use both related and not)
 
 <div class="double">
-  {% include components/media-icon.html  href="https://segment.com" icon="media/icon-academy.svg" title="Segment" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit." %}
+  {% include components/reference-button.html  href="https://segment.com" icon="media/icon-academy.svg" title="Segment" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit." %}
 
-  {% include components/media-icon.html  href="/connections/sources/catalog/" icon="media/icon-academy.svg" title="Sources Catalog" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit." variant="related" %}
+  {% include components/reference-button.html  href="/connections/sources/catalog/" icon="media/icon-academy.svg" title="Sources Catalog" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit." variant="related" %}
 </div>
 
 ---

@@ -2,6 +2,8 @@
   $this: &;
 
   width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: repeat(2, auto);
@@ -9,11 +11,7 @@
   transition: 0.3s box-shadow;
 
   @include breakpoint(large up) {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: repeat(2, auto);
-    grid-template-areas: "icon heading anchor" "icon content anchor";
+    grid-template-areas: "icon heading" "icon content";
   }
 
   svg {
@@ -64,6 +62,10 @@
     font-size: 16px;
     color: color(primary);
     transition: 0.3s color;
+
+    &--centered {
+      grid-row: heading / content;
+    }
   }
 
   &__content {

@@ -435,7 +435,7 @@ You can click around and load pages to see your Segment calls in action, watch t
 
 
 <div class="double">
-  {% include components/media-icon.html  href="/getting-started/01-what-is-segment/" newtab="false" icon="symbols/arrow-left.svg" title="Back: What is Segment" content="The basics of the Segment platform and what you can do with it." variant="related" %}
+  {% include components/reference-button.html  href="/getting-started/01-what-is-segment/" newtab="false" icon="symbols/arrow-left.svg" title="Back: What is Segment" content="The basics of the Segment platform and what you can do with it." variant="related" %}
 
-  {% include components/media-icon.html  href="/getting-started/03-planning-full-install/" newtab="false" icon="symbols/arrow-right.svg" title="Next: Planning a Full Installation" content="Think through your goals, plan your calls, and set yourself up for success." variant="related" %}
+  {% include components/reference-button.html  href="/getting-started/03-planning-full-install/" newtab="false" icon="symbols/arrow-right.svg" title="Next: Planning a Full Installation" content="Think through your goals, plan your calls, and set yourself up for success." variant="related" %}
 </div>

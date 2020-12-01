@@ -4,7 +4,7 @@ title: 'Spec: Screen'
 
 The `screen` call lets you record whenever a user sees a screen, the mobile equivalent of `page`, in your mobile app, along with any properties about the screen. Calling `page` or [`screen`](/docs/connections/spec/screen/) in one of our [sources](/docs/connections/sources/) is one of the first steps to getting started with Segment.
 
-{% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/299973?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Screen Method" content="Check out our high-level overview of the Screen method in Segment University. (Must be logged in to access.)" %}
+{% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/299973?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Screen Method" content="Check out our high-level overview of the Screen method in Segment University. (Must be logged in to access.)" %}
 
 Here's the payload of a typical `screen` call, with most [common fields](/docs/connections/spec/common/) removed:
 
