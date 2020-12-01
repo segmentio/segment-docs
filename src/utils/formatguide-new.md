@@ -107,12 +107,6 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 {% include components/button-fill.html variant="error" text="Primary button" href="https://segment.com" %}
 {% include components/button-link.html text="Link button" href="https://segment.com" %}
 
-#### Button Sizes
-
-{% include components/button-fill.html size="small" text="Small button" href="https://segment.com" %}
-{% include components/button-fill.html text="Medium button" href="https://segment.com" %}
-{% include components/button-fill.html size="large" text="Large button" href="https://segment.com" %}
-
 #### Button Modifiers
 
 {% include components/button-fill.html modifier="expand" text="Expanded filled button" href="https://segment.com" %}
