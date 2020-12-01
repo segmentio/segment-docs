@@ -13,7 +13,8 @@ In the first two cases above, when looking for files in the file system, replace
 
 {% for folders in site.data.img.image_files %}
 {% if folders.images %}
-<h2>{{folders.folder}}/</h2>
+<div>
+<h2 style="position: sticky; top: 0; background-color: white">{{folders.folder}}/</h2>
 <table>
   <tr>
   <th>Location</th>
@@ -34,6 +35,7 @@ In the first two cases above, when looking for files in the file system, replace
   </tr>
   {% endfor %}
 </table>
+</div>
 {% endif %}
 {% endfor %}
 
