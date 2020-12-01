@@ -166,7 +166,7 @@ Add `{: .columns}` before a list you want to divide into two columns.
 
 - **Three columns layout** - created with `flex` utility
 
-<div class="flex flex--wrap waffle waffle--large">
+<div class="flex flex--wrap gutter gutter--large">
   <div class="flex__column flex__column--12 flex__column--4@medium">
     {% include components/reference-button.html
       href="https://segment.com"
