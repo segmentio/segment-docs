@@ -1,4 +1,9 @@
 .button-hollow {
-  color: color(secondary);
-  padding: 12px 0;
+  color: color(gray-700);
+  background-color: color(white);
+  border: 1px solid color(gray-400);
+
+  &:hover {
+    border-color: color(gray-500);
+  }
 }

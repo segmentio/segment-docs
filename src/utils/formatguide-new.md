@@ -106,24 +106,15 @@ Add `{: .columns}` before a list you want to divide into two columns.
 
 ## Buttons
 
-{% include components/button.html text="Button" href="https://segment.com" %}
-{% include components/button.html variant="bordered" text="Bordered button" href="https://segment.com" %}
-{% include components/button.html size="small" variant="bordered" text="Small bordered button" href="https://segment.com" %}
-{% include components/button.html size="large" text="Large button" href="https://segment.com" %}
-
-
-{% include components/button-fill.html size="large" text="Large filled button" href="https://segment.com" %}
-{% include components/button-fill.html size="half" text="Half filled button" href="https://segment.com" %}
-{% include components/button-fill.html size="expand" text="Expanded filled button" href="https://segment.com" %}
-
-{% include components/button-fill.html size="small" text="Small filled button" href="https://segment.com" %}
-{% include components/button-fill.html size="small" variant="white" text="Small white-filled button" href="https://segment.com" %}
-{% include components/button-fill.html size="small" variant="gray" text="Small gray-filled button" href="https://segment.com" %}
-
-{% include components/button-hollow.html size="small" text="Small hollow button" href="https://segment.com" %}
+{% include components/button-fill.html text="Primary button" href="https://segment.com" %}
+{% include components/button-hollow.html text="Secondary button" href="https://segment.com" %}
+{% include components/button-fill.html variant="white" text="Minimal Button" href="https://segment.com" %}
+{% include components/button-fill.html variant="error" text="Error button" href="https://segment.com" %}
 {% include components/button-link.html text="Link button" href="https://segment.com" %}
 
----
+#### Button Modifiers
+
+{% include components/button-fill.html modifier="expand" text="Expanded filled button" href="https://segment.com" %}
 
 ## Reference Buttons
 
