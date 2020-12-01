@@ -96,8 +96,11 @@ export default function() {
 
   const addActiveClasses = (elements) => {
     for (let i = 0; i < elements.length; i++) {
-      const activeClass = elements[i].getAttribute(ACTIVE_CLASS)
-      elements[i].classList.add(activeClass)
+      const activeClasses = elements[i].getAttribute(ACTIVE_CLASS).split(' ')
+      
+      for (let c = 0; c < activeClasses.length; c++) {
+        elements[i].classList.add(activeClasses[c])
+      }
     }
   }
 
