@@ -104,7 +104,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 {% include components/button-fill.html text="Primary button" href="https://segment.com" %}
 {% include components/button-hollow.html text="Secondary button" href="https://segment.com" %}
 {% include components/button-fill.html variant="white" text="Minimal Button" href="https://segment.com" %}
-{% include components/button-fill.html variant="error" text="Primary button" href="https://segment.com" %}
+{% include components/button-fill.html variant="error" text="Error button" href="https://segment.com" %}
 {% include components/button-link.html text="Link button" href="https://segment.com" %}
 
 #### Button Modifiers
