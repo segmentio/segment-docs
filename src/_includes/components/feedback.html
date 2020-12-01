@@ -1,16 +1,16 @@
 <div class="flex flex--wrap waffle waffle--xxlarge@medium">
   <div class="flex__column flex__column--6 flex">
-    <div class="feedback-box flex flex--stack flex--justify waffle waffle--none waffle--small@medium">
+    <div class="feedback-box flex flex--stack flex--justify waffle waffle--none waffle--large@medium">
       <div class="flex__column flex__column--shrink">
         <div class="feedback-box__content">
-          <h4>Need support?</h4>
+          <h3>Need support?</h3>
 
           <p>Questions? Problems? Need more info? Contact us, and we can help!</p>
         </div>
       </div>
 
       <div class="flex__column flex__column--shrink">
-        {% include components/button-link.html text="Visit our Support page" href="https://segment.com/help/contact/" %}
+        {% include components/button-hollow.html text="Visit our Support page" href="https://segment.com/help/contact/" %}
       </div>
     </div>
   </div>
@@ -19,11 +19,11 @@
     <div class="feedback-box flex flex--stack flex--justify waffle waffle--none waffle--large@medium">
       <div class="flex__column flex__column--shrink">
         <div class="feedback-box__content">
-          <h4>Was this page helpful?</h4>
+          <h3>Was this page helpful?</h3>
 
           <div class="flex gutter gutter--large">
             <div class="flex__column flex__column--shrink">
-              <button class="button button--small button-fill button-fill--white button-fill--borderable" data-feedback-button="helpful" data-active-class="button-fill--primary">
+              <button class="button button-hollow gutter gutter--small" data-feedback-button="helpful" data-active-class="button-fill button-fill--primary">
                 <span class="button__icon">
                   {% include icons/symbols/thumb-up.svg %}
                 </span>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="flex__column flex__column--shrink">
-              <button class="button button--small button-fill button-fill--white button-fill--borderable" data-feedback-button="unhelpful" data-active-class="button-fill--gray">
+              <button class="button button-hollow gutter gutter--small" data-feedback-button="unhelpful" data-active-class="button-fill button-fill--gray">
                 <span class="button__icon">
                   {% include icons/symbols/thumb-down.svg %}
                 </span>
