@@ -200,25 +200,6 @@ image_files:
       - images/pers-lookback.png
 
   -
-    folder: connections/destinations/catalog/marketo-v2
-    images:
-      - images/iL42ERv0g5X+.png
-      - images/cV2x9pHb44g+.png
-      - images/cJkQ9XD6FsE+.png
-      - images/cWwQBeVFto0+.png
-      - images/c3s0qJ-dDSO+.png
-      - images/kzayYEY2JL.gif
-      - images/c1X7nf6wDIX+.png
-      - images/cubJQKkGLfF+.png
-      - images/c2l53wGTCVP+.png
-      - images/cwZqHwQfs3M+.png
-      - images/cNSP-7ryT72+.png
-      - images/cIBsfYeh2B8+.png
-      - images/cZuvsHeaepX+.png
-      - images/5bxmcClCgU.gif
-      - images/cPD4kP65buG+.png
-      - images/cg6YhDEPWXv+.png
-  -
     folder: connections/destinations/catalog/kenshoo-infinity
     images:
       - images/e7ffbbc58004b02ad61a95d136c98769.png
