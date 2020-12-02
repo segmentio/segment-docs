@@ -205,15 +205,6 @@ image_files:
       - images/e7ffbbc58004b02ad61a95d136c98769.png
 
   -
-    folder: connections/destinations/catalog/intercom
-    images:
-      - images/pers-2-addbutton.png
-      - images/pers-3-intercom-pdest.png
-      - images/pers-4-config.png
-      - images/pers-5-connect.png
-      - images/pers-6-oath.png
-
-  -
     folder: connections/destinations/catalog/adroll
     images:
       - images/adroll-pixel.png
