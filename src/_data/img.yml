@@ -205,15 +205,6 @@ image_files:
       - images/e7ffbbc58004b02ad61a95d136c98769.png
 
   -
-    folder: connections/destinations/catalog/hull
-    images:
-      - https://segment.hull.io/home.png
-      - https://segment.hull.io/ship_list.png
-      - https://segment.hull.io/ship_segment.png
-      - https://segment.hull.io/segment.png
-      - https://segment.hull.io/guest.png
-
-  -
     folder: connections/destinations/catalog/intercom
     images:
       - images/pers-2-addbutton.png
