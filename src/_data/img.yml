@@ -205,15 +205,6 @@ image_files:
       - images/e7ffbbc58004b02ad61a95d136c98769.png
 
   -
-    folder: connections/destinations/catalog/adwords-remarketing-lists
-    images:
-      - images/garl-add_dest.png
-      - images/garl-auth-google.png
-      - images/garl-select_id.png
-      - images/garl-audience_mgr.png
-      - images/garl-configure_dest.png
-
-  -
     folder: connections/destinations/catalog/mixpanel
     images:
       - images/mixpanel-group-id-traits.png
