@@ -57,26 +57,27 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 ## Lists
 
-1. one
-    1. nested
-2. two
-    1. nested
-3. three
-    1. nested
+1. Item lorem ipsum dolor sit amet
+2. Item lorem ipsum dolor sit amet
+    1. Item nested lorem ipsum dolor sit amet
+    2. Item nested lorem ipsum dolor sit amet
+3. Item lorem ipsum dolor sit amet
+    1. Item nested lorem ipsum dolor sit amet
+    2. Item nested lorem ipsum dolor sit amet
+    3. Item nested lorem ipsum dolor sit amet
+3. Item lorem ipsum dolor sit amet
 
-* Item
-    * First Subitem
-    * Second Subitem
-* Item
-    - Subitem
-    - Subitem
-* Item
+* Unordered list item
+* Unordered list item
+* Unordered list item
+  - Subitem
+  - Subitem
+* Unordered list item
 
-{% include components/list-steps.html number="1" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
-{% include components/list-steps.html number="2" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
-{% include components/list-steps.html number="3" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
+### Two columns list
+Add `{: .columns}` before a list you want to divide into two columns.
 
-{: .columns }
+{: .columns}
 - One
 - Two
 - Three
@@ -87,6 +88,10 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 - Eight
 - Nine
 - Ten
+
+{% include components/list-steps.html number="1" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
+{% include components/list-steps.html number="2" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
+{% include components/list-steps.html number="3" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
 
 ---
 
@@ -110,6 +115,73 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 #### Button Modifiers
 
 {% include components/button-fill.html modifier="expand" text="Expanded filled button" href="https://segment.com" %}
+
+## Reference Buttons
+
+-  **Regular** - links to any external resource
+
+{% include components/reference-button.html
+  href="https://segment.com"
+  icon="media/icon-academy.svg"
+  title="External resource"
+  description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ipsum fugiat nostrum velit iure, molestiae accusamus tempora quos laborum, ex modi illum delectus."
+%}
+
+-  **Related** - links to an internal docs page (note the `variant="related"` which adds the `https://segment.com/docs` path in the final build)
+
+{% include components/reference-button.html
+  href="/connections/sources/catalog/"
+  variant="related"
+  icon="media/icon-academy.svg"
+  title="Totally new to Analytics?"
+  description="For a more hands-on tutorial of Segment, check out Segment University. It offers step-by-step instructions, starting with first steps and going through some of our more advanced features."
+%}
+
+-  **Double** - side by side buttons (you can use both related and not)
+
+<div class="double">
+  {% include components/reference-button.html
+    href="https://segment.com"
+    icon="media/icon-academy.svg"
+    title="Segment for Developers"
+    description="An overview of the basics of your Segment implementation."
+  %}
+
+  {% include components/reference-button.html
+    href="https://segment.com"
+    icon="media/icon-academy.svg"
+    title="How-To Guides"
+    description="Over a dozen how-to guides to help you accomplish common tasks."
+  %}
+</div>
+
+- **Three columns layout** - created with `flex` utility
+
+<div class="flex flex--wrap gutter gutter--large">
+  <div class="flex__column flex__column--12 flex__column--4@medium">
+    {% include components/reference-button.html
+      href="https://segment.com"
+      title="Segment calls"
+      description="Use Track, Page, and Identify, and learn about the other calls Segment tracking is built on."
+    %}
+  </div>
+
+  <div class="flex__column flex__column--12 flex__column--4@medium">
+    {% include components/reference-button.html
+      href="https://segment.com"
+      title="Common traits"
+      description="Save time by letting the Segment calls collect information automatically."
+    %}
+  </div>
+
+  <div class="flex__column flex__column--12 flex__column--4@medium">
+    {% include components/reference-button.html
+      href="https://segment.com"
+      title="Use case specs"
+      description="Use our business-case specs to ensure that your tools get the most from your data."
+    %}
+  </div>
+</div>
 
 ---
 
@@ -151,26 +223,6 @@ console.log('example');
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
-
----
-
-## Reference Buttons
-
--  Regular - links to any external resource
-
-{% include components/media-icon.html href="https://segment.com" icon="media/icon-academy.svg" title="Segment" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ipsum fugiat nostrum velit iure, molestiae accusamus tempora quos laborum, ex modi illum delectus." %}
-
--  Related - links to an internal docs page (note the `variant="related"` which adds the `https://segment.com/docs` path in the final build)
-
-{% include components/media-icon.html href="/connections/sources/catalog/" icon="media/icon-academy.svg" title="Sources Catalog" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ipsum fugiat nostrum velit iure, molestiae accusamus tempora." variant="related" %}
-
--  Double - side by side buttons (you can use both related and not)
-
-<div class="double">
-  {% include components/media-icon.html  href="https://segment.com" icon="media/icon-academy.svg" title="Segment" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit." %}
-
-  {% include components/media-icon.html  href="/connections/sources/catalog/" icon="media/icon-academy.svg" title="Sources Catalog" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit." variant="related" %}
-</div>
 
 ---
 
