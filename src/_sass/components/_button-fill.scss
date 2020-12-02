@@ -7,14 +7,6 @@
     background-color: color(primary-dark);
   }
 
-  &--secondary {
-    background-color: color(secondary);
-
-    &:hover,
-    &:focus {
-      background-color: color(secondary-dark);
-    }
-  }
 
   &--white {
     background-color: color(white);
@@ -28,10 +20,21 @@
   }
 
   &--gray {
+    color: color(white);
     background-color: color(gray-600);
 
     &:hover {
+      color: color(white);
       background-color: color(gray-700);
+    }
+  }
+
+  &--secondary {
+    background-color: color(secondary);
+
+    &:hover,
+    &:focus {
+      background-color: color(secondary-dark);
     }
   }
 
