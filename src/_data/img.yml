@@ -203,7 +203,6 @@ image_files:
     folder: connections/destinations/catalog/kenshoo-infinity
     images:
       - images/e7ffbbc58004b02ad61a95d136c98769.png
-
   -
     folder: connections/destinations/catalog/hubspot
     images:
