@@ -14,7 +14,7 @@ export default function() {
   const helpfulTemplate = [...templates].filter(
     (template) => template.dataset.feedbackTemplate === 'helpful'
   )
-  const unhelpfulTemplatte = [...templates].filter(
+  const unhelpfulTemplate = [...templates].filter(
     (template) => template.dataset.feedbackTemplate === 'unhelpful'
   )
   const alternateTemplate = [...templates].filter(
