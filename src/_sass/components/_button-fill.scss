@@ -23,7 +23,8 @@
     color: color(white);
     background-color: color(gray-600);
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: color(white);
       background-color: color(gray-700);
     }
