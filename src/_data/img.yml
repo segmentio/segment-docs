@@ -205,25 +205,6 @@ image_files:
       - images/e7ffbbc58004b02ad61a95d136c98769.png
 
   -
-    folder: connections/destinations/catalog/mixpanel
-    images:
-      - images/mixpanel-group-id-traits.png
-      - images/mixpanelpeoplesuperprops.png
-      - images/mixpanelincrementinpeople.png
-      - images/pers-01-computed.png
-      - images/pers-02-mpx-profile-computed.png
-      - images/pers-03-lookback.png
-      - images/pers-04-incl-anons.png
-      - images/pers-05-pdest-settings.png
-      - images/pers-06-audience.png
-      - images/pers-07-mxp-profile-audience.png
-      - images/pers-08-audience-track.png
-      - images/pers-09-mxp-profile-activityfeed.png
-      - images/pers-10-lookback.png
-      - images/pers-11-incl-anons.png
-      - images/pers-12-settings-people.png
-
-  -
     folder: connections/destinations/catalog/hubspot
     images:
       - images/hubspot-personas01.png
