@@ -2,15 +2,16 @@
   background-color: color(primary);
   color: color(white);
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: color(primary-dark);
   }
 
   &--secondary {
     background-color: color(secondary);
-    color: color(white);
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: color(secondary-dark);
     }
   }
@@ -19,7 +20,8 @@
     background-color: color(white);
     color: color(gray-700);
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: color(gray-800);
       background-color: color(white);
     }
@@ -27,37 +29,38 @@
 
   &--info {
     background-color: color(info);
-    color: color(white);
 
-    &:hover {
-      background-color: darken(color(info), 0.1);
+    &:hover,
+    &:focus {
+      background-color: darken(color(info), 10%);
     }
   }
 
   &--success {
     background-color: color(success);
-    color: color(white);
 
-    &:hover {
-      background-color: darken(color(success), 0.1);
+    &:hover,
+    &:focus {
+      background-color: darken(color(success), 10%);
     }
   }
 
+
   &--warning {
     background-color: color(warning);
-    color: color(white);
 
-    &:hover {
-      background-color: darken(color(warning), 0.1);
+    &:hover,
+    &:focus {
+      background-color: darken(color(warning), 10%);
     }
   }
 
   &--error {
     background-color: color(error);
-    color: color(white);
 
-    &:hover {
-      background-color: darken(color(error), 0.1);
+    &:hover,
+    &:focus {
+      background-color: darken(color(error), 10%);
     }
   }
 }
