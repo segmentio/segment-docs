@@ -5,12 +5,7 @@
 
   &__input {
     display: block;
-    vertical-align: middle;
-    padding: 6px;
-
-    @include breakpoint(large up)  {
-      padding: 12px 20px;
-    }
+    padding: 8px 14px;
   }
 
   &--expand {
@@ -24,33 +19,30 @@
     z-index: 0;
 
     #{$this}__input {
-      padding-left: 40px;
-      padding-right: 40px;
+      padding-left: 18px;
+      padding-right: 18px;
 
       @include breakpoint(large up)  {
-        padding-left: 60px;
-        padding-right: 60px;
+        padding-left: 32px;
+        padding-right: 32px;
       }
     }
 
     #{$this}__icon {
       position: absolute;
-      top: 0;
+      top: 50%;
       z-index: 1;
-      width: 40px;
-      height: 100%;
-      color: color(gray-700);
-
-      @include breakpoint(large up)  {
-        width: 60px;
-      }
+      max-width: 12px;
+      max-height: 12px;
+      color: color(gray-600);
+      transform: translateY(-50%);
 
       &--left {
-        left: 0;
+        left: 12px;
       }
 
       &--right {
-        right: 0;
+        right: 12px;
       }
     }
 

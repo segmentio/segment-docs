@@ -3,17 +3,24 @@ layout: main
 ---
 
 <main class="docs__body stage__body">
-  <div>
-    <div class="search">
-      {% include_cached navbar/search.html placeholder="Search the Segment documentation..." %}
-    </div>
+  <div class="docs__navbar">
+    <div class="flex flex--justify gutter gutter--large@medium">
+      <div class="flex__column flex__column--6@xlarge">  
+        <div class="search">
+          {% include_cached navbar/search.html placeholder="Search the Segment documentation..." %}
+        </div>
+      </div>
 
-    {% include_cached navbar/navbar-mobile.html %}
+      <div class="flex__column flex__column--shrink">  
+        {% include_cached navbar/nav.html %}
+        {% include_cached navbar/navbar-mobile.html %}
+      </div>
+    </div>
   </div>
 
   <div class="stage__content" data-swiftype-name="body" data-swiftype-type="text">
     <article class="home page">
-      <div class="home__body">
+      <div class="home__body page__body">
         <div>
           {%- if page.title -%}
             <h1 id="{{ page.title | slugify }}" class="home__heading">
@@ -39,27 +46,26 @@ layout: main
 
         {% include components/callout.html %}
       </div>
+
+      {% unless page.hide-sidebar %}
+        <aside class="docs__sidebar page__sidebar">
+          <div class="sidebar sidebar--sticky sidebar--scroll">
+            {% unless page.hide_toc %}
+              <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
+                {% include_cached sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=content h_min=2 h_max=2 %}
+              </div>
+            {% endunless %}
+
+            {% if page.related %}
+              {% include sidebar/related-content.html items=page.related %}
+            {% endif %}
+
+            {% unless page.hide-feedback %}
+              {% include_cached sidebar/feedback.html %}
+            {% endunless %}
+          </div>
+        </aside>
+      {% endunless %}
     </article>
   </div>
 </main>
-
-<div class="docs__sidebar stage__sidebar">
-  {% include_cached navbar/nav.html %}
-  {% unless page.hide-sidebar %}
-  <div class="sidebar sidebar--sticky sidebar--scroll">
-    {% unless page.hide_toc %}
-      <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
-        {% include_cached sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=content h_min=2 h_max=2 %}
-      </div>
-    {% endunless %}
-
-    {% if page.related %}
-      {% include sidebar/related-content.html items=page.related %}
-    {% endif %}
-
-    {% unless page.hide-feedback %}
-      {% include_cached sidebar/feedback.html %}
-    {% endunless %}
-  </div>
-  {% endunless %}
-</div>

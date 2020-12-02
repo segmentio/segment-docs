@@ -191,14 +191,15 @@
       vertical-align: top;
       line-height: 26px;
       word-wrap: break-word;
+      font-size: 12px;
 
       @include breakpoint(medium up) {
         word-wrap: normal;
+        font-size: 14px;
       }
     }
 
     thead {
-      font-size: 14px;
       font-weight: 500;
       background-color: color(gray-50);
       border-radius: 4px;
@@ -208,7 +209,6 @@
     }
 
     tbody {
-      font-size: 15px;
       line-height: 1.73;
       padding: 12px;
     }

@@ -1,12 +1,8 @@
 .stage {
   display: flex;
   width: 100%;
-  max-width: 1230px;
-  margin: 0 auto;
 
   @include breakpoint(large up) {
-    padding-left: 20px;
-    padding-right: 20px;
     min-height: calc(100vh - 475px); /* height of footer */
   }
 
@@ -23,21 +19,6 @@
   &__body {
     flex: 1;
     max-width: 100%;
-
-    @include breakpoint(large up) {
-      padding-left: 72px;
-      padding-right: 62px;
-    }
-  }
-
-  &__sidebar {
-    display: none;
-    flex: 0 0 144px;
-    max-width: 144px;
-
-    @include breakpoint(large up) {
-      display: block;
-    }
   }
 
   &__content {
