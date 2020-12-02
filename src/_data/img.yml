@@ -16,9 +16,6 @@ image_files:
       - images/deletion-requests.png
       - images/dest-deletion-status.png
   -
-    folder: privacy/images
-    images:
-  -
     folder: config-api
     images:
   -
@@ -161,98 +158,7 @@ image_files:
       - images/destination-filters/internal_example.png
       - images/destination-filters/internal_example2.png
       - images/integration-data-deliverability.png
-  -
-    folder: connections/destinations/images
-    images:
-  -
-    folder: connections/destinations/images/destination-filters
-    images:
-  -
-    folder: connections/destinations/catalog
-    images:
 
-  -
-    folder: connections/destinations/catalog/savio
-    images:
-  -
-    folder: connections/destinations/catalog/extole-platform
-    images:
-  -
-    folder: connections/destinations/catalog/wigzo
-    images:
-
-  -
-    folder: connections/destinations/catalog/kahuna
-    images:
-  -
-    folder: connections/destinations/catalog/clearbrain
-    images:
-  -
-    folder: connections/destinations/catalog/lazy-lantern
-    images:
-  -
-    folder: connections/destinations/catalog/split
-    images:
-  -
-    folder: connections/destinations/catalog/apptimize
-    images:
-  -
-    folder: connections/destinations/catalog/sherlock
-    images:
-  -
-    folder: connections/destinations/catalog/drip
-    images:
-  -
-    folder: connections/destinations/catalog/totango
-    images:
-  -
-    folder: connections/destinations/catalog/criteo-offline-conversions
-    images:
-  -
-    folder: connections/destinations/catalog/cordialio
-    images:
-  -
-    folder: connections/destinations/catalog/xplenty
-    images:
-  -
-    folder: connections/destinations/catalog/dreamdata-io
-    images:
-  -
-    folder: connections/destinations/catalog/retina
-    images:
-  -
-    folder: connections/destinations/catalog/funnelenvy
-    images:
-  -
-    folder: connections/destinations/catalog/promoter-io
-    images:
-  -
-    folder: connections/destinations/catalog/localytics
-    images:
-  -
-    folder: connections/destinations/catalog/branch-metrics
-    images:
-  -
-    folder: connections/destinations/catalog/branch-metrics/images
-    images:
-  -
-    folder: connections/destinations/catalog/primer
-    images:
-  -
-    folder: connections/destinations/catalog/atatus
-    images:
-  -
-    folder: connections/destinations/catalog/user-com
-    images:
-  -
-    folder: connections/destinations/catalog/lucky-orange
-    images:
-  -
-    folder: connections/destinations/catalog/qualaroo
-    images:
-  -
-    folder: connections/destinations/catalog/adobe-target
-    images:
   -
     folder: connections/destinations/catalog/facebook-offline-conversions
     images:
@@ -262,24 +168,7 @@ image_files:
       - images/32b565e6457f9c2949af26f4c859afc9.png
       - images/1a188c55dd892543e2b8b6602459130f.png
       - images/86f8c50165a726e8168d652c8052c2a0.png
-  -
-    folder: connections/destinations/catalog/facebook-offline-conversions/images
-    images:
-  -
-    folder: connections/destinations/catalog/errorception
-    images:
-  -
-    folder: connections/destinations/catalog/hasoffers
-    images:
-  -
-    folder: connections/destinations/catalog/sparkpage
-    images:
-  -
-    folder: connections/destinations/catalog/tapstream
-    images:
-  -
-    folder: connections/destinations/catalog/stormly
-    images:
+
   -
     folder: connections/destinations/catalog/marketo-static-lists
     images:
@@ -289,15 +178,7 @@ image_files:
       - images/marketosl-newfolder.png
       - images/marketosl-leads.png
       - images/personas-add-emailtrait.png
-  -
-    folder: connections/destinations/catalog/marketo-static-lists/images
-    images:
-  -
-    folder: connections/destinations/catalog/survicate
-    images:
-  -
-    folder: connections/destinations/catalog/adjust
-    images:
+
   -
     folder: connections/destinations/catalog/google-analytics
     images:
@@ -306,40 +187,19 @@ image_files:
       - images/ab-mapping.png
       - images/checkout-funnel.png
       - images/site-search.png
-  -
-    folder: connections/destinations/catalog/google-analytics/images
-    images:
-  -
-    folder: connections/destinations/catalog/simplereach
-    images:
-  -
-    folder: connections/destinations/catalog/pingdom
-    images:
-  -
-    folder: connections/destinations/catalog/courier
-    images:
+
   -
     folder: connections/destinations/catalog/perimeterx
     images:
       - images/cmA_dv62kgp.png
       - images/cnKeeTBLune.png
-  -
-    folder: connections/destinations/catalog/perimeterx/images
-    images:
+
   -
     folder: connections/destinations/catalog/criteo-app-web-events
     images:
       - images/supporting-page-data.png
       - images/supporting-user-data.png
-  -
-    folder: connections/destinations/catalog/criteo-app-web-events/images
-    images:
-  -
-    folder: connections/destinations/catalog/autopilothq
-    images:
-  -
-    folder: connections/destinations/catalog/autopilothq/images
-    images:
+
   -
     folder: connections/destinations/catalog/iterable
     images:
@@ -353,9 +213,7 @@ image_files:
       - images/pers-audience-track.png
       - images/pers-iterable-profile-events.png
       - images/pers-lookback.png
-  -
-    folder: connections/destinations/catalog/iterable/images
-    images:
+
   -
     folder: connections/destinations/catalog/adobe-analytics
     images:
@@ -380,117 +238,32 @@ image_files:
       - /docs/connections/destinations/catalog/adobe-analytics/images/prop-custom-delimiter.png
       - /docs/connections/destinations/catalog/adobe-analytics/images/list-var-delimiter.png
       - /docs/connections/destinations/catalog/adobe-analytics/images/hier-mapping.png
-  -
-    folder: connections/destinations/catalog/adobe-analytics/images
-    images:
-  -
-    folder: connections/destinations/catalog/userlike
-    images:
-  -
-    folder: connections/destinations/catalog/mouseflow
-    images:
+
   -
     folder: connections/destinations/catalog/tableau
     images:
       - images/tableausetup1.png
       - images/tableausetup3.png
       - images/tableausetup2.png
-  -
-    folder: connections/destinations/catalog/tableau/images
-    images:
-  -
-    folder: connections/destinations/catalog/emarsys
-    images:
-  -
-    folder: connections/destinations/catalog/emarsys/images
-    images:
-  -
-    folder: connections/destinations/catalog/richpanel
-    images:
-  -
-    folder: connections/destinations/catalog/quora-conversion-pixel
-    images:
-  -
-    folder: connections/destinations/catalog/leanplum
-    images:
-  -
-    folder: connections/destinations/catalog/google-tag-manager
-    images:
-  -
-    folder: connections/destinations/catalog/indicative
-    images:
-  -
-    folder: connections/destinations/catalog/salesforce-live-agent
-    images:
-  -
-    folder: connections/destinations/catalog/route
-    images:
-  -
-    folder: connections/destinations/catalog/quanticmind
-    images:
-  -
-    folder: connections/destinations/catalog/parsely
-    images:
-  -
-    folder: connections/destinations/catalog/singular
-    images:
-  -
-    folder: connections/destinations/catalog/saasquatch
-    images:
-  -
-    folder: connections/destinations/catalog/spinnakr
-    images:
+
   -
     folder: connections/destinations/catalog/olark
     images:
       - images/olarklivechat.png
-  -
-    folder: connections/destinations/catalog/olark/images
-    images:
-  -
-    folder: connections/destinations/catalog/adtriba
-    images:
-  -
-    folder: connections/destinations/catalog/clearbit-enrichment
-    images:
-  -
-    folder: connections/destinations/catalog/metacx
-    images:
-  -
-    folder: connections/destinations/catalog/supervised-ai
-    images:
+
   -
     folder: connections/destinations/catalog/tray-io
     images:
       - images/tray-types.png
       - images/tray-delete-setup.gif
-  -
-    folder: connections/destinations/catalog/tray-io/images
-    images:
-  -
-    folder: connections/destinations/catalog/refiner
-    images:
-  -
-    folder: connections/destinations/catalog/woopra
-    images:
-  -
-    folder: connections/destinations/catalog/chameleon
-    images:
-  -
-    folder: connections/destinations/catalog/msg91
-    images:
+
   -
     folder: connections/destinations/catalog/twitter-ads
     images:
       - images/cfZKW-N7o8b.png
       - images/cS23YRgfUy9.png
       - images/event-mapping.png
-  -
-    folder: connections/destinations/catalog/twitter-ads/images
-    images:
-  -
-    folder: connections/destinations/catalog/urban-airship
-    images:
+
   -
     folder: connections/destinations/catalog/azure-function
     images:
@@ -504,123 +277,30 @@ image_files:
       - images/azure8.png
       - images/azure9.png
       - images/azure10.png
-  -
-    folder: connections/destinations/catalog/azure-function/images
-    images:
+
   -
     folder: connections/destinations/catalog/algolia-insights
     images:
       - images/destination_settings.png
       - images/rename_events.png
-  -
-    folder: connections/destinations/catalog/algolia-insights/images
-    images:
-  -
-    folder: connections/destinations/catalog/images
-    images:
-  -
-    folder: connections/destinations/catalog/images/destination-filters
-    images:
+
   -
     folder: connections/destinations/catalog/satismeter
     images:
       - https://cloud.githubusercontent.com/assets/12846380/9251740/edd579ca-41d4-11e5-9ebe-732156cbdb2f.png
-  -
-    folder: connections/destinations/catalog/kissmetrics
-    images:
-  -
-    folder: connections/destinations/catalog/convertflow
-    images:
-  -
-    folder: connections/destinations/catalog/alexa
-    images:
-  -
-    folder: connections/destinations/catalog/snapengage
-    images:
-  -
-    folder: connections/destinations/catalog/snapengage/Images
-    images:
+
   -
     folder: connections/destinations/catalog/google-cloud-pubsub
     images:
       - images/publisher.png
       - images/track_mapping.png
       - images/page_mapping.png
-  -
-    folder: connections/destinations/catalog/google-cloud-pubsub/images
-    images:
-  -
-    folder: connections/destinations/catalog/pendo
-    images:
-  -
-    folder: connections/destinations/catalog/linkedin-conversion-tag
-    images:
-  -
-    folder: connections/destinations/catalog/customersuccessbox
-    images:
-  -
-    folder: connections/destinations/catalog/evergage
-    images:
-  -
-    folder: connections/destinations/catalog/knowtify
-    images:
-      - images/pQTgionViG.png
-  -
-    folder: connections/destinations/catalog/knowtify/images
-    images:
-  -
-    folder: connections/destinations/catalog/pointillist
-    images:
-  -
-    folder: connections/destinations/catalog/zapier
-    images:
-      - images/webhooks-by-zapier.png
-      - images/zapier-catch-raw-hook.gif
-      - images/zapier-choose-action.png
-  -
-    folder: connections/destinations/catalog/zapier/images
-    images:
-  -
-    folder: connections/destinations/catalog/trustpilot
-    images:
-  -
-    folder: connections/destinations/catalog/goedle-io
-    images:
-  -
-    folder: connections/destinations/catalog/countly
-    images:
-  -
-    folder: connections/destinations/catalog/activecampaign
-    images:
-      - images/jda1490xo_screenshot2015-12-07at3.58.27pm.png
-  -
-    folder: connections/destinations/catalog/activecampaign/images
-    images:
-  -
-    folder: connections/destinations/catalog/amazon-kinesis
-    images:
+
   -
     folder: connections/destinations/catalog/personas-display-video-360
     images:
       - images/dv360-1-select-destination.png
-  -
-    folder: connections/destinations/catalog/personas-display-video-360/images
-    images:
-  -
-    folder: connections/destinations/catalog/inspectlet
-    images:
-  -
-    folder: connections/destinations/catalog/bytegain
-    images:
-  -
-    folder: connections/destinations/catalog/klaviyo
-    images:
-  -
-    folder: connections/destinations/catalog/boomtrain
-    images:
-  -
-    folder: connections/destinations/catalog/personyze
-    images:
+
   -
     folder: connections/destinations/catalog/marketo-v2
     images:
@@ -641,54 +321,10 @@ image_files:
       - images/cPD4kP65buG+.png
       - images/cg6YhDEPWXv+.png
   -
-    folder: connections/destinations/catalog/marketo-v2/images
-    images:
-  -
-    folder: connections/destinations/catalog/trackier
-    images:
-  -
-    folder: connections/destinations/catalog/voucherify
-    images:
-  -
     folder: connections/destinations/catalog/kenshoo-infinity
     images:
       - images/e7ffbbc58004b02ad61a95d136c98769.png
-  -
-    folder: connections/destinations/catalog/kenshoo-infinity/images
-    images:
-  -
-    folder: connections/destinations/catalog/track-js
-    images:
-  -
-    folder: connections/destinations/catalog/nat
-    images:
-      - images/natTimeline.png
-  -
-    folder: connections/destinations/catalog/nat/images
-    images:
-  -
-    folder: connections/destinations/catalog/useriq
-    images:
-  -
-    folder: connections/destinations/catalog/freshsales
-    images:
-      - images/lvbDssc2kP.png
-      - images/szDo5891Qq.png
-  -
-    folder: connections/destinations/catalog/freshsales/images
-    images:
-  -
-    folder: connections/destinations/catalog/yandex-metrica
-    images:
-  -
-    folder: connections/destinations/catalog/yandex-metrica/images
-    images:
-  -
-    folder: connections/destinations/catalog/appnexus
-    images:
-  -
-    folder: connections/destinations/catalog/mailjet
-    images:
+
   -
     folder: connections/destinations/catalog/hull
     images:
@@ -697,27 +333,7 @@ image_files:
       - https://segment.hull.io/ship_segment.png
       - https://segment.hull.io/segment.png
       - https://segment.hull.io/guest.png
-  -
-    folder: connections/destinations/catalog/moesif-api-analytics
-    images:
-  -
-    folder: connections/destinations/catalog/all-aboard
-    images:
-  -
-    folder: connections/destinations/catalog/google-ads-gtag
-    images:
-  -
-    folder: connections/destinations/catalog/wishpond
-    images:
-  -
-    folder: connections/destinations/catalog/insider
-    images:
-  -
-    folder: connections/destinations/catalog/worthy
-    images:
-  -
-    folder: connections/destinations/catalog/natero
-    images:
+
   -
     folder: connections/destinations/catalog/intercom
     images:
@@ -726,12 +342,7 @@ image_files:
       - images/pers-4-config.png
       - images/pers-5-connect.png
       - images/pers-6-oath.png
-  -
-    folder: connections/destinations/catalog/intercom/images
-    images:
-  -
-    folder: connections/destinations/catalog/hawkei
-    images:
+
   -
     folder: connections/destinations/catalog/adroll
     images:
@@ -739,145 +350,21 @@ image_files:
       - images/adrollSegmentId.gif
       - images/segmentmapping.png
       - images/adroll-mapping.png
-  -
-    folder: connections/destinations/catalog/adroll/images
-    images:
-  -
-    folder: connections/destinations/catalog/launchdarkly-events
-    images:
-  -
-    folder: connections/destinations/catalog/serenytics
-    images:
-  -
-    folder: connections/destinations/catalog/talkable
-    images:
-  -
-    folder: connections/destinations/catalog/ambassador
-    images:
-  -
-    folder: connections/destinations/catalog/factorsai
-    images:
-  -
-    folder: connections/destinations/catalog/bing-ads
-    images:
-      - images/creating-a-goal-new.png
-  -
-    folder: connections/destinations/catalog/bing-ads/images
-    images:
-  -
-    folder: connections/destinations/catalog/shareasale
-    images:
-  -
-    folder: connections/destinations/catalog/adlearn-open-platform
-    images:
-  -
-    folder: connections/destinations/catalog/xtremepush
-    images:
-  -
-    folder: connections/destinations/catalog/nanigans
-    images:
-  -
-    folder: connections/destinations/catalog/rockerbox
-    images:
-  -
-    folder: connections/destinations/catalog/onesignal
-    images:
-  -
-    folder: connections/destinations/catalog/inkit
-    images:
-  -
-    folder: connections/destinations/catalog/smyte
-    images:
-  -
-    folder: connections/destinations/catalog/chartbeat
-    images:
-  -
-    folder: connections/destinations/catalog/rollbar
-    images:
-  -
-    folder: connections/destinations/catalog/flurry
-    images:
-  -
-    folder: connections/destinations/catalog/kochava
-    images:
-  -
-    folder: connections/destinations/catalog/kochava/images
-    images:
-  -
-    folder: connections/destinations/catalog/mailchimp
-    images:
-      - images/merge-fields.png
-      - images/mailchimp-subscriber.png
-  -
-    folder: connections/destinations/catalog/mailchimp/images
-    images:
-  -
-    folder: connections/destinations/catalog/google-cloud-storage
-    images:
-  -
-    folder: connections/destinations/catalog/amplitude
-    images:
-  -
-    folder: connections/destinations/catalog/nielsen-dcr
-    images:
-      - images/import.png
-      - images/projectstructure.png
-  -
-    folder: connections/destinations/catalog/nielsen-dcr/images
-    images:
-  -
-    folder: connections/destinations/catalog/facebook-app-events
-    images:
-  -
-    folder: connections/destinations/catalog/watsi
-    images:
-      - https://www.filepicker.io/api/file/c74wZbs3Ssiysdrftnsr
-      - https://www.filepicker.io/api/file/PX7dQqJSTt5LP8vvfXLF
-      - https://www.filepicker.io/api/file/qZSLJr2SmClM7fx1fiGL
-  -
-    folder: connections/destinations/catalog/clicky
-    images:
-  -
-    folder: connections/destinations/catalog/callingly
-    images:
-  -
-    folder: connections/destinations/catalog/ibm-ubx
-    images:
-      - images/ubx-register-endpoint.png
-      - images/endpoint-details.png
-      - images/subscribe-to-events.png
-  -
-    folder: connections/destinations/catalog/ibm-ubx/images
-    images:
+
+
   -
     folder: connections/destinations/catalog/personas-facebook-custom-audiences
     images:
       - images/fb_ca_auth.gif
       - images/fb_ca_setup.gif
       - images/fb_ca_final.png
-  -
-    folder: connections/destinations/catalog/personas-facebook-custom-audiences/images
-    images:
-  -
-    folder: connections/destinations/catalog/segmetrics
-    images:
+
   -
     folder: connections/destinations/catalog/amazon-kinesis-firehose
     images:
       - images/track_mapping.png
       - images/page_mapping.png
-  -
-    folder: connections/destinations/catalog/amazon-kinesis-firehose/images
-    images:
-  -
-    folder: connections/destinations/catalog/cruncher
-    images:
-  -
-    folder: connections/destinations/catalog/nielsen-dtvr
-    images:
-  -
-    folder: connections/destinations/catalog/candu
-    images:
+
   -
     folder: connections/destinations/catalog/adwords-remarketing-lists
     images:
@@ -886,34 +373,7 @@ image_files:
       - images/garl-select_id.png
       - images/garl-audience_mgr.png
       - images/garl-configure_dest.png
-  -
-    folder: connections/destinations/catalog/adwords-remarketing-lists/images
-    images:
-  -
-    folder: connections/destinations/catalog/tamber
-    images:
-  -
-    folder: connections/destinations/catalog/aboardly
-    images:
-  -
-    folder: connections/destinations/catalog/help-scout
-    images:
-  -
-    folder: connections/destinations/catalog/stripe-radar
-    images:
-  -
-    folder: connections/destinations/catalog/watchtower
-    images:
-  -
-    folder: connections/destinations/catalog/scopeai
-    images:
-  -
-    folder: connections/destinations/catalog/navilytics
-    images:
-  -
-    folder: connections/destinations/catalog/librato
-    images:
-      - librato-graph.png
+
   -
     folder: connections/destinations/catalog/mixpanel
     images:
@@ -932,21 +392,7 @@ image_files:
       - images/pers-10-lookback.png
       - images/pers-11-incl-anons.png
       - images/pers-12-settings-people.png
-  -
-    folder: connections/destinations/catalog/mixpanel/images
-    images:
-  -
-    folder: connections/destinations/catalog/drift
-    images:
-  -
-    folder: connections/destinations/catalog/intellimize
-    images:
-  -
-    folder: connections/destinations/catalog/email-aptitude
-    images:
-  -
-    folder: connections/destinations/catalog/pixelme
-    images:
+
   -
     folder: connections/destinations/catalog/hubspot
     images:
@@ -959,311 +405,21 @@ image_files:
       - images/hubspot-personas07.png
       - images/hubspot-personas08.png
       - images/hubspot-personas09.png
-  -
-    folder: connections/destinations/catalog/hubspot/images
-    images:
-  -
-    folder: connections/destinations/catalog/preact
-    images:
-  -
-    folder: connections/destinations/catalog/clientsuccess
-    images:
-  -
-    folder: connections/destinations/catalog/google-cloud-function
-    images:
-      - images/gcloud1.png
-      - images/gcloud2.png
-      - images/gcloud3.png
-  -
-    folder: connections/destinations/catalog/google-cloud-function/images
-    images:
-  -
-    folder: connections/destinations/catalog/freshmarketer
-    images:
-      - images/contact-fields.png
-      - images/custom-fields.png
-  -
-    folder: connections/destinations/catalog/freshmarketer/images
-    images:
-  -
-    folder: connections/destinations/catalog/treasure-data
-    images:
-  -
-    folder: connections/destinations/catalog/walkme
-    images:
-  -
-    folder: connections/destinations/catalog/tealium-audience-stream
-    images:
-  -
-    folder: connections/destinations/catalog/fullstory
-    images:
-  -
-    folder: connections/destinations/catalog/calq
-    images:
-  -
-    folder: connections/destinations/catalog/adquick
-    images:
-  -
-    folder: connections/destinations/catalog/talonone
-    images:
-  -
-    folder: connections/destinations/catalog/cxense
-    images:
-  -
-    folder: connections/destinations/catalog/taplytics
-    images:
-  -
-    folder: connections/destinations/catalog/selligent-marketing-cloud
-    images:
-      - images/adminconfig.png
-      - images/wheelicon.jpg
-      - images/apps.png
-      - images/secretplus.png
-      - images/smc2.jpeg
-      - images/adminurl.jpg
-      - images/organization.png
-  -
-    folder: connections/destinations/catalog/selligent-marketing-cloud/images
-    images:
-  -
-    folder: connections/destinations/catalog/radiumone-connect
-    images:
-  -
-    folder: connections/destinations/catalog/pardot
-    images:
-  -
-    folder: connections/destinations/catalog/stories
-    images:
-  -
-    folder: connections/destinations/catalog/leadboxer
-    images:
-  -
-    folder: connections/destinations/catalog/exponea
-    images:
-  -
-    folder: connections/destinations/catalog/firebase
-    images:
-  -
-    folder: connections/destinations/catalog/gainsight-px
-    images:
-      - images/TagKey.png
-  -
-    folder: connections/destinations/catalog/gainsight-px/images
-    images:
-  -
-    folder: connections/destinations/catalog/livechat
-    images:
-      - Images/livechaton.png
-  -
-    folder: connections/destinations/catalog/livechat/Images
-    images:
-  -
-    folder: connections/destinations/catalog/convertro
-    images:
-  -
-    folder: connections/destinations/catalog/webengage
-    images:
-  -
-    folder: connections/destinations/catalog/blendo
-    images:
-  -
-    folder: connections/destinations/catalog/improvely
-    images:
-  -
-    folder: connections/destinations/catalog/retently
-    images:
-  -
-    folder: connections/destinations/catalog/userlist
-    images:
-  -
-    folder: connections/destinations/catalog/zopim
-    images:
-      - ;
-      - images/recordlivechat.png
-  -
-    folder: connections/destinations/catalog/zopim/images
-    images:
-  -
-    folder: connections/destinations/catalog/perfect-audience
-    images:
-  -
-    folder: connections/destinations/catalog/iron-io
-    images:
-  -
-    folder: connections/destinations/catalog/swrve
-    images:
-  -
-    folder: connections/destinations/catalog/kustomer
-    images:
-  -
-    folder: connections/destinations/catalog/heap
-    images:
-  -
-    folder: connections/destinations/catalog/zendesk
-    images:
-  -
-    folder: connections/destinations/catalog/keen
-    images:
-  -
-    folder: connections/destinations/catalog/unwaffle
-    images:
-  -
-    folder: connections/destinations/catalog/podsights
-    images:
-  -
-    folder: connections/destinations/catalog/frontleaf
-    images:
-  -
-    folder: connections/destinations/catalog/strikedeck
-    images:
+
   -
     folder: connections/destinations/catalog/optimizely-web
     images:
-      - https://i.gyazo.com/5537158e68f5bcb6be0fe1d8bbc2c61b.png
-      - https://i.gyazo.com/8614c2b2b1ff63b789c65e1413b08920.png
       - images/customdimensions.png
-  -
-    folder: connections/destinations/catalog/optimizely-web/images
-    images:
   -
     folder: connections/destinations/catalog/mammoth
     images:
       - images/A8mLIPZ.png
       - images/JsTuMCy.png
-  -
-    folder: connections/destinations/catalog/mammoth/images
-    images:
-  -
-    folder: connections/destinations/catalog/millennial-media
-    images:
-  -
-    folder: connections/destinations/catalog/custify
-    images:
-  -
-    folder: connections/destinations/catalog/tune
-    images:
-  -
-    folder: connections/destinations/catalog/batch
-    images:
-  -
-    folder: connections/destinations/catalog/sailthru
-    images:
-      - images/1488751534977.png
-      - images/1488751628625.png
-      - images/1488218489126.png
-      - images/1488751128521.png
-      - images/1488751210325.png
-      - images/1488752018885.png
-      - images/1488752126668.png
-      - images/1487272939423.png
-  -
-    folder: connections/destinations/catalog/sailthru/images
-    images:
-  -
-    folder: connections/destinations/catalog/whale-watch
-    images:
-  -
-    folder: connections/destinations/catalog/selligent
-    images:
-  -
-    folder: connections/destinations/catalog/crazy-egg
-    images:
-  -
-    folder: connections/destinations/catalog/asayer
-    images:
-  -
-    folder: connections/destinations/catalog/experiments-by-growthhackers
-    images:
-  -
-    folder: connections/destinations/catalog/pinterest-tag
-    images:
-      - images/conversions-page.png
-      - images/pinterest-tag-configure.png
-      - images/pinterest-tag-activate.png
-  -
-    folder: connections/destinations/catalog/pinterest-tag/images
-    images:
-  -
-    folder: connections/destinations/catalog/salesforce-marketing-cloud
-    images:
-      - images/identify-dext.png
-      - images/sfmc-identify-dext-key.png
-      - images/dext-user-regd-example.png
-      - images/sfmc-conversion-events.png
-      - images/uuid-primary-key.png
-      - images/existing-dext-data-types.png
-      - images/journey-builder-options.png
-  -
-    folder: connections/destinations/catalog/salesforce-marketing-cloud/images
-    images:
-  -
-    folder: connections/destinations/catalog/proof-experiences
-    images:
-  -
-    folder: connections/destinations/catalog/marketo
-    images:
-  -
-    folder: connections/destinations/catalog/optimizely-full-stack
-    images:
-  -
-    folder: connections/destinations/catalog/optimizely-full-stack/images
-    images:
 
-  -
-    folder: connections/destinations/catalog/tractionboard
-    images:
   -
     folder: connections/destinations/catalog/nudgespot
     images:
       - images/h911sko8RG.png
-  -
-    folder: connections/destinations/catalog/nudgespot/images
-    images:
-  -
-    folder: connections/destinations/catalog/quantcast
-    images:
-  -
-    folder: connections/destinations/catalog/owneriq-pixel
-    images:
-  -
-    folder: connections/destinations/catalog/bugsnag
-    images:
-  -
-    folder: connections/destinations/catalog/funnelfox
-    images:
-  -
-    folder: connections/destinations/catalog/regal-voice
-    images:
-  -
-    folder: connections/destinations/catalog/tag-injector
-    images:
-  -
-    folder: connections/destinations/catalog/userleap
-    images:
-  -
-    folder: connections/destinations/catalog/hittail
-    images:
-  -
-    folder: connections/destinations/catalog/airship
-    images:
-  -
-    folder: connections/destinations/catalog/mabl
-    images:
-  -
-    folder: connections/destinations/catalog/amazon-s3
-    images:
-  -
-    folder: connections/destinations/catalog/interana
-    images:
-  -
-    folder: connections/destinations/catalog/planhat
-    images:
-  -
-    folder: connections/destinations/catalog/akita
-    images:
-  -
-    folder: connections/destinations/catalog/emma
-    images:
   -
     folder: connections/destinations/catalog/vitally
     images:
@@ -1271,27 +427,9 @@ image_files:
       - images/uGHrIvX.gif
       - images/2JQwIBK.png
   -
-    folder: connections/destinations/catalog/vitally/images
-    images:
-  -
-    folder: connections/destinations/catalog/elevio
-    images:
-  -
     folder: connections/destinations/catalog/facebook-pixel
     images:
       - images/event-mapping.png
-  -
-    folder: connections/destinations/catalog/facebook-pixel/images
-    images:
-  -
-    folder: connections/destinations/catalog/persistiq
-    images:
-  -
-    folder: connections/destinations/catalog/salesmachine
-    images:
-  -
-    folder: connections/destinations/catalog/slack
-    images:
   -
     folder: connections/destinations/catalog/amazon-lambda
     images:
@@ -1305,165 +443,11 @@ image_files:
       - images/CloudFormationLambdaRole.png
       - images/SegmentLambdaSettingsPostCF.png
       - images/LambdaTrustRelationship.png
-  -
-    folder: connections/destinations/catalog/amazon-lambda/images
-    images:
-  -
-    folder: connections/destinations/catalog/madkudu
-    images:
-  -
-    folder: connections/destinations/catalog/crowdpower
-    images:
-  -
-    folder: connections/destinations/catalog/posthog
-    images:
-  -
-    folder: connections/destinations/catalog/smartlook
-    images:
-  -
-    folder: connections/destinations/catalog/windsor
-    images:
-  -
-    folder: connections/destinations/catalog/bronto
-    images:
-  -
-    folder: connections/destinations/catalog/data-lakes
-    images:
+
   -
     folder: connections/destinations/catalog/seg
     images:
-  -
-    folder: connections/destinations/catalog/appcues
-    images:
-  -
-    folder: connections/destinations/catalog/cubitic
-    images:
-  -
-    folder: connections/destinations/catalog/castle
-    images:
-  -
-    folder: connections/destinations/catalog/userpilot
-    images:
-  -
-    folder: connections/destinations/catalog/clearbit-reveal
-    images:
-  -
-    folder: connections/destinations/catalog/gameball
-    images:
-  -
-    folder: connections/destinations/catalog/foxmetrics
-    images:
-  -
-    folder: connections/destinations/catalog/epica
-    images:
-  -
-    folder: connections/destinations/catalog/relay
-    images:
-  -
-    folder: connections/destinations/catalog/infinario
-    images:
-  -
-    folder: connections/destinations/catalog/wootric
-    images:
-  -
-    folder: connections/destinations/catalog/adikteev
-    images:
-  -
-    folder: connections/destinations/catalog/yellowhammer
-    images:
-  -
-    folder: connections/destinations/catalog/blueshift
-    images:
-  -
-    folder: connections/destinations/catalog/comscore
-    images:
-  -
-    folder: connections/destinations/catalog/sentry
-    images:
-  -
-    folder: connections/destinations/catalog/webhooks
-    images:
-  -
-    folder: connections/destinations/catalog/gist
-    images:
-  -
-    folder: connections/destinations/catalog/maxia
-    images:
-  -
-    folder: connections/destinations/catalog/appsflyer
-    images:
-  -
-    folder: connections/destinations/catalog/youbora
-    images:
-  -
-    folder: connections/destinations/catalog/insidevault
-    images:
-  -
-    folder: connections/destinations/catalog/customfit-ai
-    images:
-  -
-    folder: connections/destinations/catalog/bugherd
-    images:
-  -
-    folder: connections/destinations/catalog/smbstreams
-    images:
-  -
-    folder: connections/destinations/catalog/canny
-    images:
-  -
-    folder: connections/destinations/catalog/tv-squared
-    images:
-  -
-    folder: connections/destinations/catalog/calixa
-    images:
-  -
-    folder: connections/destinations/catalog/beamer
-    images:
-  -
-    folder: connections/destinations/catalog/kitemetrics
-    images:
-  -
-    folder: connections/destinations/catalog/stitch-data
-    images:
-  -
-    folder: connections/destinations/catalog/churnzero
-    images:
-  -
-    folder: connections/destinations/catalog/whale-alerts
-    images:
-  -
-    folder: connections/destinations/catalog/gauges
-    images:
-  -
-    folder: connections/destinations/catalog/moosend
-    images:
-  -
-    folder: connections/destinations/catalog/ramen
-    images:
-  -
-    folder: connections/destinations/catalog/callexa
-    images:
-  -
-    folder: connections/destinations/catalog/auryc
-    images:
-  -
-    folder: connections/destinations/catalog/hello-bar
-    images:
-  -
-    folder: connections/destinations/catalog/amazon-eventbridge
-    images:
-  -
-    folder: connections/destinations/catalog/mousestats
-    images:
-  -
-    folder: connections/destinations/catalog/hotjar
-    images:
-  -
-    folder: connections/destinations/catalog/eloqua
-    images:
-  -
-    folder: connections/destinations/catalog/impact
-    images:
+
   -
     folder: connections/destinations/catalog/braze
     images:
@@ -1478,91 +462,12 @@ image_files:
       - images/dormant-track.png
       - images/dormant-track-braze.png
       - images/braze-anonid.png
-  -
-    folder: connections/destinations/catalog/braze/images
-    images:
-  -
-    folder: connections/destinations/catalog/salescamp-crm
-    images:
-  -
-    folder: connections/destinations/catalog/mutiny
-    images:
-  -
-    folder: connections/destinations/catalog/sendwithus
-    images:
-  -
-    folder: connections/destinations/catalog/profitwell
-    images:
-  -
-    folder: connections/destinations/catalog/gainsight
-    images:
-  -
-    folder: connections/destinations/catalog/modern-pricing
-    images:
-  -
-    folder: connections/destinations/catalog/monetate
-    images:
-  -
-    folder: connections/destinations/catalog/new-relic
-    images:
-  -
-    folder: connections/destinations/catalog/movable-ink
-    images:
-  -
-    folder: connections/destinations/catalog/zaius
-    images:
-  -
-    folder: connections/destinations/catalog/upcall
-    images:
-  -
-    folder: connections/destinations/catalog/learndot
-    images:
-  -
-    folder: connections/destinations/catalog/slicingdice
-    images:
-  -
-    folder: connections/destinations/catalog/uservoice
-    images:
-  -
-    folder: connections/destinations/catalog/hydra
-    images:
-  -
-    folder: connections/destinations/catalog/gosquared
-    images:
-  -
-    folder: connections/destinations/catalog/framed-io
-    images:
-  -
-    folder: connections/destinations/catalog/crittercism
-    images:
-  -
-    folder: connections/destinations/catalog/matomo
-    images:
-  -
-    folder: connections/destinations/catalog/kubric
-    images:
-  -
-    folder: connections/destinations/catalog/mediamath
-    images:
-  -
-    folder: connections/destinations/catalog/clevertap
-    images:
-  -
-    folder: connections/destinations/catalog/refersion
-    images:
+
   -
     folder: connections/spec
     images:
       - images/Video_Tracking_Workflow.png
-  -
-    folder: connections/spec/ecommerce
-    images:
-  -
-    folder: connections/spec/images
-    images:
-  -
-    folder: connections/storage
-    images:
+
   -
     folder: connections/storage/warehouses
     images:
@@ -1573,12 +478,7 @@ image_files:
       - images/asset_sHNEIURK.png
       - images/WH_SS_WH.png
       - images/WH_SS_Source.png
-  -
-    folder: connections/storage/warehouses/images
-    images:
-  -
-    folder: connections/storage/catalog
-    images:
+
   -
     folder: connections/storage/catalog/google-cloud-storage
     images:
@@ -1592,15 +492,9 @@ image_files:
       - images/gcloud3.png
       - images/gcloud10.png
   -
-    folder: connections/storage/catalog/google-cloud-storage/images
-    images:
-  -
     folder: connections/storage/catalog/bigquery
     images:
       - images/syncsched.png
-  -
-    folder: connections/storage/catalog/bigquery/images
-    images:
   -
     folder: connections/storage/catalog/snowflake
     images:
@@ -1612,9 +506,7 @@ image_files:
       - images/connect_snowflake.png
       - images/auto_suspend.png
       - /docs/connections/destinations/catalog/images/syncsched.png
-  -
-    folder: connections/storage/catalog/snowflake/images
-    images:
+
   -
     folder: connections/storage/catalog/redshift
     images:
@@ -1636,9 +528,6 @@ image_files:
       - images/redshift_outbound_permissions.png
       - images/redshift_custom_outbound_group.png
       - /docs/connections/destinations/catalog/images/syncsched.png
-  -
-    folder: connections/storage/catalog/redshift/images
-    images:
   -
     folder: connections/storage/catalog/postgres
     images:
@@ -1665,9 +554,6 @@ image_files:
       - images/segment4.png
       - images/segment5.png
   -
-    folder: connections/storage/catalog/postgres/images
-    images:
-  -
     folder: connections/storage/catalog/amazon-s3
     images:
       - images/s3processdiagram.png
@@ -1675,24 +561,9 @@ image_files:
       - images/bucket-property.png
       - images/disable-segment-sse.png
   -
-    folder: connections/storage/catalog/amazon-s3/images
-    images:
-  -
-    folder: connections/storage/catalog/db2
-    images:
-  -
-    folder: connections/storage/catalog/db2/images
-    images:
-  -
     folder: connections/storage/catalog/data-lakes
     images:
       - images/dl_activity_notifications2.png
-  -
-    folder: connections/storage/catalog/azuresqldb
-    images:
-  -
-    folder: connections/storage/catalog/azuresqldw
-    images:
   -
     folder: connections/storage/data-lakes
     images:
@@ -1707,9 +578,7 @@ image_files:
       - images/dl_s3bucket.png
       - images/dl_gluecatalog.png
       - images/dl_syncreports_schema.png
-  -
-    folder: connections/storage/data-lakes/images
-    images:
+
   -
     folder: connections/sources
     images:
@@ -1732,12 +601,7 @@ image_files:
       - images/vt-docs-6.gif
       - images/vt-docs-7.png
       - images/vt-docs-8.png
-  -
-    folder: connections/sources/images
-    images:
-  -
-    folder: connections/sources/plugins
-    images:
+
   -
     folder: connections/sources/plugins/vimeo
     images:
@@ -1747,26 +611,10 @@ image_files:
     images:
       - /docs/connections/sources/plugins/plugins-enable.png
   -
-    folder: connections/sources/catalog
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/drip
-    images:
-      - images/drip.png
-  -
-    folder: connections/sources/catalog/cloud-apps/drip/images
-    images:
-  -
     folder: connections/sources/catalog/cloud-apps/vero
     images:
       - images/vero1.png
       - images/vero2.png
-  -
-    folder: connections/sources/catalog/cloud-apps/vero/images
-    images:
   -
     folder: connections/sources/catalog/cloud-apps/autopilothq
     images:
@@ -1778,22 +626,6 @@ image_files:
       - images/Iterable2.png
       - images/Iterable3.png
   -
-    folder: connections/sources/catalog/cloud-apps/iterable/images
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/looker
-    images:
-      - images/9c12ebdd99f19383111aceabc0ab5de9.png
-  -
-    folder: connections/sources/catalog/cloud-apps/looker/images
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/leanplum
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/refiner
-    images:
-  -
     folder: connections/sources/catalog/cloud-apps/sendgrid
     images:
       - images/481590_Screen+Shot+2016-02-16+at+10.47.51+AM.png
@@ -1804,58 +636,19 @@ image_files:
       - images/694785_Webhook.png
       - images/934372_Webhook+Settings.png
   -
-    folder: connections/sources/catalog/cloud-apps/sendgrid/images
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/provesource
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/amplitude-cohorts
-    images:
-      - images/amplitude-add-integration.png
-      - images/amplitude-connect-segment.png
-      - images/amplitude-segment-writekey.png
-  -
-    folder: connections/sources/catalog/cloud-apps/amplitude-cohorts/images
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/pendo
-    images:
-  -
     folder: connections/sources/catalog/cloud-apps/google-ads
     images:
       - images/connect.png
       - images/schema.png
       - images/connection_failed.png
-  -
-    folder: connections/sources/catalog/cloud-apps/google-ads/images
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/activecampaign
-    images:
-      - https://cldup.com/QLv153k6CU.png
-      - https://cldup.com/cv4rU1Ivg5.png
-      - https://cldup.com/5OZGDQD3wB.png
-  -
-    folder: connections/sources/catalog/cloud-apps/launchdarkly
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/klaviyo
-    images:
+
+
   -
     folder: connections/sources/catalog/cloud-apps/desk-com
     images:
       - images/desk_com_image_1.png
       - images/desk_com_image_2.png
-  -
-    folder: connections/sources/catalog/cloud-apps/desk-com/images
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/mailjet
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/moesif-api-analytics
-    images:
+
   -
     folder: connections/sources/catalog/cloud-apps/intercom
     images:
@@ -1863,9 +656,7 @@ image_files:
       - images/image_1_Intercom.png
       - images/image_2_Intercom.png
       - images/image_3_Intercom.png
-  -
-    folder: connections/sources/catalog/cloud-apps/intercom/images
-    images:
+
   -
     folder: connections/sources/catalog/cloud-apps/facebook-lead-ads
     images:
@@ -1875,9 +666,7 @@ image_files:
       - images/517874_Screen+Shot+2016-02-16+at+11.51.04+PM.png
       - images/Webhook.png
       - images/795640_mandrill-settings.png
-  -
-    folder: connections/sources/catalog/cloud-apps/mandrill/images
-    images:
+
   -
     folder: connections/sources/catalog/cloud-apps/mailchimp
     images:
@@ -1885,23 +674,13 @@ image_files:
       - images/3027189_API+Keys.png
       - images/3032880_ChimpKey.png
       - images/3146819_Screen+Shot+2016-02-16+at+2.52.00+PM.png
-  -
-    folder: connections/sources/catalog/cloud-apps/mailchimp/images
-    images:
+
   -
     folder: connections/sources/catalog/cloud-apps/facebook-ads
     images:
       - images/setup.png
       - images/choose_account.png
-  -
-    folder: connections/sources/catalog/cloud-apps/facebook-ads/images
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/candu
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/klenty
-    images:
+
   -
     folder: connections/sources/catalog/cloud-apps/shopify-littledata
     images:
@@ -1909,36 +688,14 @@ image_files:
       - images/eLUh6GF.png
       - images/iYM76VI.png
       - images/kvjNx4M.png
-  -
-    folder: connections/sources/catalog/cloud-apps/shopify-littledata/images
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/hubspot
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/project
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/foursquare-pilgrim
-    images:
+
   -
     folder: connections/sources/catalog/cloud-apps/zendesk
     images:
       - Images/zendesk1.png
       - Images/zendesk2.png
       - Images/zendesk3.png
-  -
-    folder: connections/sources/catalog/cloud-apps/zendesk/Images
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/selligent
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/salesforce-marketing-cloud
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/salesforce-marketing-cloud/images
-    images:
+
   -
     folder: connections/sources/catalog/cloud-apps/marketo
     images:
@@ -1946,15 +703,7 @@ image_files:
       - images/Image2018-04-30at5.28.54PM.png
       - images/Image2018-04-30at5.29.32PM.png
       - images/s_6D5CE4EA856EC72E0480B346CB0DE60F99C9F293F87452BF5BA91C853297F834_1470282525853_Screen+Shot+2016-08-03+at+8.48.29+PM.png
-  -
-    folder: connections/sources/catalog/cloud-apps/marketo/images
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/nudgespot
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/airship
-    images:
+
   -
     folder: connections/sources/catalog/cloud-apps/amazon-s3
     images:
@@ -1965,62 +714,28 @@ image_files:
       - images/s3_5.png
       - images/s3_6.png
       - images/s3_7.png
-  -
-    folder: connections/sources/catalog/cloud-apps/amazon-s3/images
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/salesforce
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/chatlio
-    images:
+
   -
     folder: connections/sources/catalog/cloud-apps/customer-io
     images:
       - images/customerio_streaming_data_out.png
       - images/customerio1.gif
-  -
-    folder: connections/sources/catalog/cloud-apps/customer-io/images
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/wootric
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/radar
-    images:
+
   -
     folder: connections/sources/catalog/cloud-apps/blueshift
     images:
       - images/39c3955d4ea74e0a8ff07ef6651d4b30.png
-  -
-    folder: connections/sources/catalog/cloud-apps/blueshift/images
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/youbora
-    images:
+
   -
     folder: connections/sources/catalog/cloud-apps/delighted
     images:
       - https://scrn.es/6fEhinjMQGiuESd2aQqLcv.gif
-  -
-    folder: connections/sources/catalog/cloud-apps/beamer
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/factual-engine
-    images:
+
   -
     folder: connections/sources/catalog/cloud-apps/friendbuy
     images:
       - images/segment-write-key.png
-  -
-    folder: connections/sources/catalog/cloud-apps/friendbuy/images
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/herow
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/braze
-    images:
+
   -
     folder: connections/sources/catalog/cloud-apps/aircall
     images:
@@ -2030,24 +745,7 @@ image_files:
       - images/cUPCM42.png
       - images/uLu70VP.png
       - images/qgbkbvA.png
-  -
-    folder: connections/sources/catalog/cloud-apps/aircall/images
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/twilio
-    images:
-  -
-    folder: connections/sources/catalog/cloud-apps/stripe
-    images:
-  -
-    folder: connections/sources/catalog/libraries
-    images:
-  -
-    folder: connections/sources/catalog/libraries/website
-    images:
-  -
-    folder: connections/sources/catalog/libraries/website/plugins
-    images:
+
   -
     folder: connections/sources/catalog/libraries/website/plugins/vimeo
     images:
@@ -2068,9 +766,7 @@ image_files:
       - images/eLUh6GF.png
       - images/iYM76VI.png
       - images/kvjNx4M.png
-  -
-    folder: connections/sources/catalog/libraries/website/shopify-littledata/images
-    images:
+
   -
     folder: connections/sources/catalog/libraries/website/javascript
     images:
@@ -2084,12 +780,6 @@ image_files:
       - images/d8CmIY2.png
       - images/CBdS5dO.png
   -
-    folder: connections/sources/catalog/libraries/website/javascript/images
-    images:
-  -
-    folder: connections/sources/catalog/libraries/server
-    images:
-  -
     folder: connections/sources/catalog/libraries/server/net
     images:
       - images/netcreatesource.png
@@ -2097,91 +787,27 @@ image_files:
       - images/step1-2.png
       - images/debuggerpage.png
       - images/step2.png
-  -
-    folder: connections/sources/catalog/libraries/server/net/images
-    images:
-  -
-    folder: connections/sources/catalog/libraries/server/go
-    images:
-  -
-    folder: connections/sources/catalog/libraries/server/go/v2
-    images:
-  -
-    folder: connections/sources/catalog/libraries/server/pixel-tracking-api
-    images:
-  -
-    folder: connections/sources/catalog/libraries/server/python
-    images:
-  -
-    folder: connections/sources/catalog/libraries/server/clojure
-    images:
-  -
-    folder: connections/sources/catalog/libraries/server/http-api
-    images:
-  -
-    folder: connections/sources/catalog/libraries/server/rust
-    images:
+
   -
     folder: connections/sources/catalog/libraries/server/java
     images:
       - https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics
       - https://javadoc-badge.appspot.com/com.segment.analytics.java/analytics
       - https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics
-  -
-    folder: connections/sources/catalog/libraries/server/php
-    images:
-  -
-    folder: connections/sources/catalog/libraries/server/object-api
-    images:
-  -
-    folder: connections/sources/catalog/libraries/server/node
-    images:
-  -
-    folder: connections/sources/catalog/libraries/server/node-js
-    images:
-  -
-    folder: connections/sources/catalog/libraries/server/ruby
-    images:
-  -
-    folder: connections/sources/catalog/libraries/server/object-bulk-api
-    images:
-  -
-    folder: connections/sources/catalog/libraries/mobile
-    images:
+
   -
     folder: connections/sources/catalog/libraries/mobile/react-native
     images:
       - images/embed-analytics-framework.png
   -
-    folder: connections/sources/catalog/libraries/mobile/react-native/images
-    images:
-  -
     folder: connections/sources/catalog/libraries/mobile/ios
     images:
       - images/embeddedbinaries.png
-  -
-    folder: connections/sources/catalog/libraries/mobile/ios/images
-    images:
-  -
-    folder: connections/sources/catalog/libraries/mobile/xamarin
-    images:
-  -
-    folder: connections/sources/catalog/libraries/mobile/amp
-    images:
   -
     folder: connections/sources/catalog/libraries/mobile/android
     images:
       - https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics
       - https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics
-  -
-    folder: connections/sources/catalog/libraries/mobile/android/images
-    images:
-  -
-    folder: connections/sources/catalog/libraries/ott
-    images:
-  -
-    folder: connections/sources/catalog/libraries/ott/roku
-    images:
   -
     folder: connections/sources/source-functions
     images:
