@@ -13,10 +13,16 @@ Learn how to use Segment to collect, responsibly manage, and integrate your cust
 
 ## Additional Resources
 
-### Totally new to Analytics?
-  Segment's [Analytics Academy](https://segment.com/academy/) walks you through the wide world of analytics, including best practices,
-  an overview of the most popular tools, and case studies of
-  how other developers have achieved success.
+{% include components/reference-button.html
+  href="https://segment.com"
+  icon="media/icon-academy.svg"
+  title="Totally new to Analytics?"
+  description="Segment’s Analytics Academy walks you through the wide world of analytics, including best practices, an overview of the most popular tools, and case studies of how other developers have achieved success."
+%}
 
-### Want more hands-on guidance?
-  For a more hands-on tutorial of Segment, check out [Segment University](https://university.segment.com/). It offers step-by-step instructions, starting with first steps and going through some of our more advanced features.
+{% include components/reference-button.html
+  href="https://segment.com"
+  icon="media/icon-guides.svg"
+  title="Want more hands-on guidance?"
+  description="For a more hands-on tutorial of Segment, check out Segment University. It offers step-by-step instructions, starting with first steps and going through some of our more advanced features."
+%}

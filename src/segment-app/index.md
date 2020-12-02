@@ -4,7 +4,7 @@ title: The Segment Web App
 
 When you first log in, you go to your workspace. (If you're a member of several workspaces, you get to choose which one to go to.) Workspaces organize sets of sources and destinations
 
-{% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/299965?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: Segment App Overview" content="Want a video tour of the Segment workpsace? Head over to Segment University! (Must be logged in to access.)" %}
+{% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/299965?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: Segment App Overview" content="Want a video tour of the Segment workpsace? Head over to Segment University! (Must be logged in to access.)" %}
 
 ### What's a Workspace?
 

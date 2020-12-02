@@ -19,7 +19,7 @@ If you're interested in implementing Optimizely Full Stack server-side or on mob
 
 **Use Cases**
 
-{% include components/media-icon.html href="https://segment.com/recipes/ab-test-cta-conversions-optimizely/" icon="media/icon-academy.svg" title="Optimizing page performance using heatmaps" content="Test which call to action (CTA) results in more shopping cart conversions with Optimizely and Amplitude." %}
+{% include components/reference-button.html href="https://segment.com/recipes/ab-test-cta-conversions-optimizely/" icon="media/icon-academy.svg" title="Optimizing page performance using heatmaps" content="Test which call to action (CTA) results in more shopping cart conversions with Optimizely and Amplitude." %}
 
 ## Implementation Prerequisite
 

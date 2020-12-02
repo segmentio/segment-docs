@@ -1,0 +1,20 @@
+<div>
+  <a class="reference-button" {% unless include.newtab == 'false' %}target="_blank"{% endunless %} href="{% if include.variant == 'related' %}/docs{{ include.href }}{% else %}{{ include.href }}{% endif %}">
+    {% if include.icon and include.icon != empty %}
+      <span class="reference-button__icon">
+        {% include icons/{{ include.icon }} %}
+      </span>
+    {% endif %}
+
+
+    {% if include.description and include.description != empty %}
+      <h5 class="reference-button__heading">{{ include.title }}</h5>
+
+      <div class="reference-button__content">
+        <p>{{ include.description }}</p>
+      </div>
+    {% else %}
+      <h5 class="reference-button__heading reference-button__heading--centered">{{ include.title }}</h5>
+    {% endif %}
+  </a>
+</div>

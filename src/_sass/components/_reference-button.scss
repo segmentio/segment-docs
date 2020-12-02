@@ -1,0 +1,82 @@
+.reference-button {
+  $this: &;
+
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas: "icon heading" "content content";
+  transition: 0.3s box-shadow;
+
+  @include breakpoint(large up) {
+    grid-template-areas: "icon heading" "icon content";
+  }
+
+  svg {
+    color: color(primary);
+    transition: 0.3s color;
+  }
+
+  &:hover,
+  &:focus {
+    #{$this}__heading {
+      color: color(primary-dark);
+    }
+
+    #{$this}__icon {
+      background-color: darker(color(primary-lighter), 0.3);
+
+      svg {
+        color: color(primary-dark);
+      }
+    }
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 50%;
+    background-color: color(primary-lighter);
+    transition: 0.3s background-color;
+    grid-area: icon;
+
+    @include breakpoint(large up) {
+      align-self: baseline;
+    }
+
+    svg {
+      width: 16px;
+      max-height: 16px;
+    }
+  }
+
+  &__heading {
+    grid-area: heading;
+    align-self: center;
+    font-size: 16px;
+    color: color(primary);
+    transition: 0.3s color;
+
+    &--centered {
+      grid-row: heading / content;
+    }
+  }
+
+  &__content {
+    grid-area: content;
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    color: color(gray-700);
+
+    & > * + * {
+      margin-top: 8px;
+    }
+  }
+}

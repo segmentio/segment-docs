@@ -11,7 +11,7 @@ export default function () {
     const headings = components[i].querySelectorAll(HEADINGS_SELECTOR)
 
     for (let i = 0; i < headings.length; i++) {
-      if (!headings[i].classList.contains('media-thumbnail__heading') && !headings[i].classList.contains('media-icon__heading')) {
+      if (!headings[i].classList.contains('reference-button__heading')) {
         const tooltip = tippy(headings[i], {
           content: 'Copied!',
           theme: 'dark',
