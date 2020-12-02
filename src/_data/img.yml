@@ -205,13 +205,6 @@ image_files:
       - images/e7ffbbc58004b02ad61a95d136c98769.png
 
   -
-    folder: connections/destinations/catalog/personas-facebook-custom-audiences
-    images:
-      - images/fb_ca_auth.gif
-      - images/fb_ca_setup.gif
-      - images/fb_ca_final.png
-
-  -
     folder: connections/destinations/catalog/amazon-kinesis-firehose
     images:
       - images/track_mapping.png
