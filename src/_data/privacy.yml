@@ -5,11 +5,11 @@ sections:
   - name: Detect and classify customer data
     description: "The Privacy Portal helps automate preparing for new privacy regulations."
     path: /docs/privacy/portal/
-    icon: icon-classify.svg
+    icon: media/icon-classify.svg
   - name: Control what data you collect
     description: "Take control over whether specific data is allowed to enter Segment"
     path: /docs/privacy/data-controls/
-    icon: icon-control.svg
+    icon: media/icon-control.svg
 
 - section_title: Prepare for GDPR & CCPA
   section_col: 6
@@ -17,8 +17,8 @@ sections:
   - name: Understand and Comply with regulations
     description: "Segment is committed to making it easier for you to comply with the GDPR."
     path: /docs/privacy/complying-with-for-the-gdpr/
-    icon: icon-comply.svg
+    icon: media/icon-comply.svg
   - name: Delete and suppress data about end-users
     description: "Easily remove your company's end-users from Segment and supported connections."
     path: /docs/privacy/user-deletion-and-suppression/
-    icon: icon-delete.svg
+    icon: media/icon-delete.svg
