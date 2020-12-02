@@ -205,15 +205,6 @@ image_files:
       - images/e7ffbbc58004b02ad61a95d136c98769.png
 
   -
-    folder: connections/destinations/catalog/adroll
-    images:
-      - images/adroll-pixel.png
-      - images/adrollSegmentId.gif
-      - images/segmentmapping.png
-      - images/adroll-mapping.png
-
-
-  -
     folder: connections/destinations/catalog/personas-facebook-custom-audiences
     images:
       - images/fb_ca_auth.gif
