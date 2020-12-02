@@ -4,7 +4,7 @@ rewrite: true
 redirect_from: '/connections/destinations/catalog/supervised-ai/'
 ---
 
-[DataBrain](https://supervisedai.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides proactive customer health monitoring for customer facing teams, using machine learning to automate churn prediction and generating playbook recommendations.
+[DataBrain](https://usedatabrain.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides proactive customer health monitoring for customer facing teams, using machine learning to automate churn prediction and generating playbook recommendations.
 
 This destination is maintained by DataBrain. For any issues with the destination, [contact the DataBrain Support team](mailto:support@supervisedai.com).
 
@@ -15,7 +15,7 @@ This destination is maintained by DataBrain. For any issues with the destination
 
 1. From the Segment App's Destinations catalog page, click **Add Destination**.
 2. Search for "DataBrain" in the Destinations Catalog, and select the DataBrain destination.
-3. Go to your [DataBrain dashboard](https://supervisedai.com/integrations), and copy your "API Key".
+3. Go to your [DataBrain dashboard](https://usedatabrain.com/integrations), and copy your "API Key".
 4. Back in the Segment app, paste the API key into the settings for the DataBrain destination.
 
 > info ""
