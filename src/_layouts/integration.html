@@ -71,13 +71,14 @@ layout: default
                 {% endunless %}
               {% endif %}
             </div>
-            <p><i style="color: #a5b0ba;font-size: small;">This page was last modified: {{ page.last_modified_at | date: '%d %b %Y' }} </i></p>
+            <p><i>This page was last modified: {{ page.last_modified_at | date: '%d %b %Y' }} </i></p>
 
             {% if page.contributors %}
               {% include components/avatar.html contributors=page.contributors %}
             {% endif %}
-
+            <hr>
             {% include components/feedback.html %}
+            <hr>
             {% include components/callout.html %}
           </div>
         </article>

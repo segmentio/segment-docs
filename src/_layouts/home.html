@@ -30,11 +30,12 @@ layout: main
           </div>
         </div>
 
-        <hr>
-
         {% unless page.hide-feedback %}
-        {% include components/feedback.html %}
+          <hr>
+          {% include components/feedback.html %}
         {% endunless %}
+
+        <hr>
 
         {% include components/callout.html %}
       </div>
