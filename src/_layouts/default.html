@@ -67,6 +67,11 @@
   <a class="back-scrolling" data-back-scrolling data-active-class="back-scrolling--active">
     {%- include icons/symbols/chevron-up.svg -%}
   </a>
+
+  {% unless page.hide-feedback %}
+    {% include_cached components/feedback-templates.html %}
+  {% endunless %}
+
   {%- comment -%}
     A.JS
     Production: https://app.segment.com/segment_prod/sources/segment_docs_v2_prod
