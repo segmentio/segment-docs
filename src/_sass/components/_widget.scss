@@ -1,14 +1,14 @@
 .widget {
   &__heading {
     font-weight: 500;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.5;
   }
 
   &__content {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 20px;
-    color: color(gray-700);
+    color: color(gray-600);
 
     a {
       text-decoration: underline;
