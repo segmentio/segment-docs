@@ -205,12 +205,6 @@ image_files:
       - images/e7ffbbc58004b02ad61a95d136c98769.png
 
   -
-    folder: connections/destinations/catalog/amazon-kinesis-firehose
-    images:
-      - images/track_mapping.png
-      - images/page_mapping.png
-
-  -
     folder: connections/destinations/catalog/adwords-remarketing-lists
     images:
       - images/garl-add_dest.png
