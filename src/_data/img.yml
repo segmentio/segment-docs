@@ -271,17 +271,6 @@ image_files:
     folder: connections/storage/catalog/bigquery
     images:
       - images/syncsched.png
-  -
-    folder: connections/storage/catalog/snowflake
-    images:
-      - images/create_virtual_warehouse.png
-      - images/create_database.png
-      - images/create_user_1.png
-      - images/create_user_2.png
-      - images/create_user_3.png
-      - images/connect_snowflake.png
-      - images/auto_suspend.png
-      - /docs/connections/destinations/catalog/images/syncsched.png
 
   -
     folder: connections/storage/catalog/redshift
