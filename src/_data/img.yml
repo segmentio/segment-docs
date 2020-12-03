@@ -268,30 +268,6 @@ image_files:
       - images/WH_SS_Source.png
 
   -
-    folder: connections/storage/catalog/bigquery
-    images:
-      - images/syncsched.png
-
-  -
-    folder: connections/storage/catalog/data-lakes
-    images:
-      - images/dl_activity_notifications2.png
-  -
-    folder: connections/storage/data-lakes
-    images:
-      - images/01_14-day-lifecycle.png
-      - images/02_hive-spark-table.png
-      - images/03_hardware-node-instances.png
-      - images/05_logging.png
-      - images/06_secure-cluster.png
-      - images/dl_setup_glueerror.png
-      - images/dl_overview2.png
-      - images/dl_vpc.png
-      - images/dl_s3bucket.png
-      - images/dl_gluecatalog.png
-      - images/dl_syncreports_schema.png
-
-  -
     folder: connections/sources
     images:
       - images/xid_debugger_pretty.png
