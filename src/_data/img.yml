@@ -281,12 +281,6 @@ image_files:
       - images/s3_7.png
 
   -
-    folder: connections/sources/catalog/cloud-apps/customer-io
-    images:
-      - images/customerio_streaming_data_out.png
-      - images/customerio1.gif
-
-  -
     folder: connections/sources/catalog/cloud-apps/blueshift
     images:
       - images/39c3955d4ea74e0a8ff07ef6651d4b30.png

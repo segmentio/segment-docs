@@ -20,7 +20,7 @@ If you have previously enabled sending email events using the Customer.io destin
 
 2. Choose Customer.io.
 
-3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. We recommend using a name that reflects the Source itself, like `Customerio` for nickname and `customerio` for the schema name.
+3. Give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name autopopulates the schema name. For example, the source name  `Customer.io` creates the schema `customerio`.
 
 4. The next page ("Overview") displays your **Segment write key for Customer.io.** Copy this write key. 
 

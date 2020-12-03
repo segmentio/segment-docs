@@ -12,7 +12,7 @@ If you notice any gaps, outdated information or simply want to leave some feedba
 
 2. Choose Zendesk.
 
-3. Give the source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. Both can be whatever you like, but we recommend sticking to something that reflects the source itself, like `Zendesk` for nickname and `zendesk` or `zendesk_prod` for the schema name.
+3. Give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name autopopulates the schema name. For example, the source name  `Zendesk` creates the schema `zendesk`.
 
    **Note**: You can add multiple instances if you have multiple Zendesk accounts. That's why we allow you to customize the source's nickname and schema name!
 
