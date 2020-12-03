@@ -322,16 +322,9 @@ image_files:
   -
     folder: getting-started
     images:
-      - images/subwaymap-2.png
-      - images/dests_grid.png
-      - /docs/connections/images/find_writekey.png
-      - /docs/connections/sources/images/debugger_view.png
-      - /docs/connections/sources/images/debugger_search.png
       - /docs/protocols/images/asset_nVdJ3ZyA.png
       - images/trackingplans.png
       - images/identify-call.png
-      - /docs/connections/sources/images/debugger_view.png
-      - /docs/connections/sources/images/debugger_search.png
       - /docs/connections/images/edelivery_jXaoBuF6.png
       - /docs/connections/images/find-edelivery.png
       - /docs/connections/images/edelivery_Qs4r85sc.png

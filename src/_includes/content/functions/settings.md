@@ -25,4 +25,4 @@ Click **Add Setting** to save the new setting.
 
 Once you save a setting, it appears in the **Settings** tab for the function. You can edit or delete settings from this tab.
 
-![Settings Tab](/docs/connections/functions/images/settings-tab-non-empty.jpg){:width="500"}
+![Settings Tab](/docs/connections/functions/images/settings-tab-non-empty.png){:width="500"}
