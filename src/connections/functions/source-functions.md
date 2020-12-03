@@ -270,7 +270,7 @@ Next, fill out this setting's value in **Test** tab, so that we can run our func
 
 Note, this value is only for testing your function.
 
-![Test Value For Setting](images/setting-in-test-tab.jpg){:width="500"}
+![Test Value For Setting](images/setting-in-test-tab.png){:width="500"}
 
 Now that we have our setting set up and test value filled in, we can add code to read its value and run our function:
 
@@ -297,13 +297,11 @@ You can use webhooks to test the source function either by sending requests manu
 
 From the source function editor, copy the webhook URL from the "Auto-fill via Webhook" dialog. To trigger the source function, send the request using the `POST` method, with the `Content-Type` header set to `application/json` or `application/x-www-form-urlencoded`.
 
-![Capture events to test your function](images/webhook-capture.gif)
-
 ### Testing source functions manually
 
 You can also manually construct headers and body of an HTTP request right inside the editor and test with this data, without using webhooks.
 
-![Test HTTP Request](images/test-manual.jpg){:width="500"}
+![Test HTTP Request](images/test-manual.png){:width="500"}
 
 ## Save and deploy the function
 
@@ -365,8 +363,6 @@ Segment only attempts to run your source function again if a **Retry** error occ
 ### Editing and deleting source functions
 
 If you are a **Workspace Owner** or **Functions Admin**, you can manage your source function from the [Functions](https://app.segment.com/goto-my-workspace/functions/catalog) tab in the catalog.
-
-![Editing or deleting your Source Function](images/function-sidesheet-source.gif)
 
 ### Connecting source functions
 

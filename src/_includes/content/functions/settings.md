@@ -4,11 +4,11 @@ Settings allow you to pass configurable variables to your function, which is the
 
 First, add a setting in **Settings** tab in the code editor:
 
-![Settings Tab](/docs/connections/functions/images/settings-tab-empty.jpg){:width="500"}
+![Settings Tab](/docs/connections/functions/images/settings-tab-empty.png){:width="500"}
 
 Click **Add Setting** to add your new setting.
 
-![Add Setting Dialog](/docs/connections/functions/images/add-setting-dialog.jpg)
+![Add Setting Dialog](/docs/connections/functions/images/add-setting-dialog.png)
 
 You can configure the details about this setting, which change how it's displayed to anyone using your function:
 

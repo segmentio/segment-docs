@@ -301,34 +301,17 @@ image_files:
       - images/qgbkbvA.png
 
   -
-    folder: connections/sources/source-functions
-    images:
-      - images/drift_example.png
-      - images/editor.png
-      - images/webhook-capture.gif
-      - images/error-logs.png
-      - images/function-sidesheet.gif
-  -
-    folder: connections/sources/mobile_guide
-    images:
-  -
     folder: connections/functions
     images:
       - images/destination_functions_overview.png
-      - images/editor-dest.png
-      - images/setting-in-test-tab.jpg
       - images/dest-settings.png
       - images/autofill-events.gif
       - images/editor-test.gif
       - images/event-delivery.png
       - images/error-logs-dest.png
-      - images/function-sidesheet-dest.gif
-      - images/function-sidesheet-dest.gif
       - images/functions_overview.png
       - images/source_functions_overview.png
       - images/editor-source.png
-      - images/setting-in-test-tab.jpg
-      - images/source-settings.png
       - images/webhook-capture.gif
       - images/test-manual.jpg
       - images/error-logs-source.png
