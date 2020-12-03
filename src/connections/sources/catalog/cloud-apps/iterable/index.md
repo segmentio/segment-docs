@@ -15,7 +15,7 @@ If you have previously enabled sending email events using the Iterable destinati
 
 2. Choose Iterable.
 
-3. GGive the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name autopopulates the schema name. For example, the source name  `Iterable` creates the schema `iterable`.
+3. Give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name autopopulates the schema name. For example, the source name  `Iterable` creates the schema `iterable`.
 
 4. The next page ("Overview") will surface your **Segment write key for Iterable.** Copy this write key. 
 

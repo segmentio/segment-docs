@@ -268,22 +268,6 @@ image_files:
       - images/WH_SS_Source.png
 
   -
-    folder: connections/sources/catalog/cloud-apps/iterable
-    images:
-      - images/Iterable1.png
-      - images/Iterable2.png
-      - images/Iterable3.png
-  -
-    folder: connections/sources/catalog/cloud-apps/sendgrid
-    images:
-      - images/481590_Screen+Shot+2016-02-16+at+10.47.51+AM.png
-      - images/260179_SendGrid+Create+API+Key.png
-      - images/367284_Email+Activity.png
-      - images/391237_Marketing+Campaigns.png
-      - images/601347_Key.png
-      - images/694785_Webhook.png
-      - images/934372_Webhook+Settings.png
-  -
     folder: connections/sources/catalog/cloud-apps/google-ads
     images:
       - images/connect.png
