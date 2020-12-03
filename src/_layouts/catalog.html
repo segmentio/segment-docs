@@ -19,24 +19,21 @@ layout: default
         {% include_cached navbar/navbar-mobile.html %}
       </div>
 
+      <article class="destinations" data-tracking-scroll data-swiftype-name="body" data-swiftype-type="text">
+        {% include components/breadcrumbs.html %}
+        {%- if page.title -%}
+          <h1 id="{{ page.title | slugify }}" class="destinations__heading">
+            {{ page.title }}
+          </h1>
+        {%- endif -%}
 
-      <div class="stage__content" data-swiftype-name="body" data-swiftype-type="text">
-        <article class="destinations">
-          {% include components/breadcrumbs.html %}
-          {%- if page.title -%}
-            <h1 id="{{ page.title | slugify }}" class="destinations__heading">
-              {{ page.title }}
-            </h1>
-          {%- endif -%}
-
-          {% unless page.integration_type  %}
-            {% include_cached sidebar/{{ page.integration_type }}-menu-mobile.html %}
-          {% endunless %}
-          <div class="destinations__body" data-headings-anchors>
-            {{ content }}
-          </div>
-        </article>
-      </div>
+        {% unless page.integration_type  %}
+          {% include_cached sidebar/{{ page.integration_type }}-menu-mobile.html %}
+        {% endunless %}
+        <div class="destinations__body" data-headings-anchors>
+          {{ content }}
+        </div>
+      </article>
     </main>
 
     <div class="docs__sidebar stage__sidebar">

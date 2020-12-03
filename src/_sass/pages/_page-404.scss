@@ -1,14 +1,10 @@
 .page-404 {
-  @include breakpoint(large up) {
-    margin-top: 90px;
+  &__body {
+    position: relative;
   }
 
   &__heading {
     line-height: 38px;
-
-    @include breakpoint(xlarge up) {
-      line-height: 56px;
-    }
 
     & + * {
       margin-top: 10px;

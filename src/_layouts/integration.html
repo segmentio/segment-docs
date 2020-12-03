@@ -24,65 +24,62 @@ layout: default
         {% include_cached navbar/navbar-mobile.html %}
       </div>
 
+      <article class="integration page" data-headings-anchors data-tracking-scroll data-swiftype-name="body" data-swiftype-type="text">
+        {% include components/breadcrumbs.html %}
 
-      <div class="stage__content" data-swiftype-name="body" data-swiftype-type="text">
-        <article class="integration page" data-headings-anchors>
-          {% include components/breadcrumbs.html %}
+        <div class="integration-header">
+          {%- if page.mark -%}
+            <div class="integration-header__icon">
+              <img src="{{ page.mark }}" alt="" class="image">
+            </div>
+          {%- endif -%}
+          <div class="flex__column">
+            {%- if page.title -%}
+              <h1 id="{{ page.title | slugify }}">
+                {{ page.title }}
+              </h1>
+            {%- endif -%}
 
-          <div class="integration-header">
-            {%- if page.mark -%}
-              <div class="integration-header__icon">
-                <img src="{{ page.mark }}" alt="" class="image">
+            {%- if page.excerpt -%}
+              <div class="integration-header__content">
+                {{ page.excerpt | markdownify }}
               </div>
             {%- endif -%}
-            <div class="flex__column">
-              {%- if page.title -%}
-                <h1 id="{{ page.title | slugify }}">
-                  {{ page.title }}
-                </h1>
-              {%- endif -%}
-
-              {%- if page.excerpt -%}
-                <div class="integration-header__content">
-                  {{ page.excerpt | markdownify }}
-                </div>
-              {%- endif -%}
-            </div>
           </div>
+        </div>
 
-          <hr>
+        <hr>
 
-          {%- unless page.hide_toc -%}
-            {% include sidebar/mobile-menu-side.html %}
-          {%- endunless -%}
+        {%- unless page.hide_toc -%}
+          {% include sidebar/mobile-menu-side.html %}
+        {%- endunless -%}
 
-          <div class="integration__body page__body">
-            <div class="markdown">
+        <div class="integration__body page__body">
+          <div class="markdown">
 
-              {% if page.integration_type == 'source' %}
-                {% capture cloud-app-note %}{% include content/cloud-app-note.md %}{% endcapture %}
-                {{ cloud-app-note | markdownify }}
-              {% endif %}
-              {{ content }}
-              {% if page.integration_type == 'destination' %}
-                {% unless page.hide-boilerplate == true %}
-                {% capture integration-foot %}{% include content/integration-foot.md  %}{% endcapture %}
-                {{ integration-foot | markdownify }}
-                {% endunless %}
-              {% endif %}
-            </div>
-            <p><i>This page was last modified: {{ page.last_modified_at | date: '%d %b %Y' }} </i></p>
-
-            {% if page.contributors %}
-              {% include components/avatar.html contributors=page.contributors %}
+            {% if page.integration_type == 'source' %}
+              {% capture cloud-app-note %}{% include content/cloud-app-note.md %}{% endcapture %}
+              {{ cloud-app-note | markdownify }}
             {% endif %}
-            <hr>
-            {% include components/feedback.html %}
-            <hr>
-            {% include components/callout.html %}
+            {{ content }}
+            {% if page.integration_type == 'destination' %}
+              {% unless page.hide-boilerplate == true %}
+              {% capture integration-foot %}{% include content/integration-foot.md  %}{% endcapture %}
+              {{ integration-foot | markdownify }}
+              {% endunless %}
+            {% endif %}
           </div>
-        </article>
-      </div>
+          <p><i>This page was last modified: {{ page.last_modified_at | date: '%d %b %Y' }} </i></p>
+
+          {% if page.contributors %}
+            {% include components/avatar.html contributors=page.contributors %}
+          {% endif %}
+          <hr>
+          {% include components/feedback.html %}
+          <hr>
+          {% include components/callout.html %}
+        </div>
+      </article>
     </main>
 
     <div class="docs__sidebar stage__sidebar">
