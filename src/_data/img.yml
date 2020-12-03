@@ -268,13 +268,6 @@ image_files:
     images:
       - images/setup.png
       - images/choose_account.png
-  -
-    folder: connections/sources/catalog/cloud-apps/marketo
-    images:
-      - images/Image2018-04-30at5.27.07PM.png
-      - images/Image2018-04-30at5.28.54PM.png
-      - images/Image2018-04-30at5.29.32PM.png
-      - images/s_6D5CE4EA856EC72E0480B346CB0DE60F99C9F293F87452BF5BA91C853297F834_1470282525853_Screen+Shot+2016-08-03+at+8.48.29+PM.png
 
   -
     folder: connections/sources/catalog/cloud-apps/amazon-s3
