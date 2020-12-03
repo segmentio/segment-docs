@@ -8,8 +8,8 @@
 
   &__aside {
     display: none;
-    flex: 0 0 230px;
-    max-width: 230px;
+    flex: 0 0 216px;
+    max-width: 216px;
 
     @include breakpoint(large up) {
       display: block;
