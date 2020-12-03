@@ -12,6 +12,11 @@
     background-color: color(gray-50);
     border-bottom: 1px solid color(gray-300);
     padding: 16px 40px;
+    display: none;
+
+    @include breakpoint(large up)  {
+      display: block;
+    }
   }
 
   &__sidebar {

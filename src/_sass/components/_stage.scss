@@ -20,15 +20,4 @@
     flex: 1;
     max-width: 100%;
   }
-
-  &__content {
-    padding-left: 20px;
-    padding-right: 20px;
-    position: relative;
-
-    @include breakpoint(large up) {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
 }
