@@ -268,15 +268,6 @@ image_files:
       - images/WH_SS_Source.png
 
   -
-    folder: connections/sources/catalog/cloud-apps/vero
-    images:
-      - images/vero1.png
-      - images/vero2.png
-  -
-    folder: connections/sources/catalog/cloud-apps/autopilothq
-    images:
-      - /docs/connections/destinations/catalog/autopilothq/images/4764ec5d9aeb26bd0e503604db243dae.gif
-  -
     folder: connections/sources/catalog/cloud-apps/iterable
     images:
       - images/Iterable1.png
