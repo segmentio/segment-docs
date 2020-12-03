@@ -273,38 +273,6 @@ image_files:
       - images/syncsched.png
 
   -
-    folder: connections/storage/catalog/postgres
-    images:
-      - images/heroku1.png
-      - images/heroku3.png
-      - images/heroku4.png
-      - images/heroku5.png
-      - images/heroku6.png
-      - images/rds2.png
-      - images/rds3.png
-      - images/rds4.png
-      - images/rds5.png
-      - images/rds6.png
-      - images/rds7.png
-      - images/rds8.png
-      - images/rds9.png
-      - images/rds10.png
-      - images/rds11.png
-      - images/rds12.png
-      - images/rds13.png
-      - images/compose1.png
-      - images/compose1.png
-      - images/segment3.png
-      - images/segment4.png
-      - images/segment5.png
-  -
-    folder: connections/storage/catalog/amazon-s3
-    images:
-      - images/s3processdiagram.png
-      - images/customer-managed-key.png
-      - images/bucket-property.png
-      - images/disable-segment-sse.png
-  -
     folder: connections/storage/catalog/data-lakes
     images:
       - images/dl_activity_notifications2.png
