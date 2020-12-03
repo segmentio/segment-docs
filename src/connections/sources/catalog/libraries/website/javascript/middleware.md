@@ -54,7 +54,7 @@ var DMW1 = function({ payload, integration, next }) {
 ```
 
 > note ""
-> Currently only Device-mode Destinations are supported by Destination Middlewares 
+> Currently only Device-mode Destinations are supported by Destination Middlewares
 
 ## Adding middlewares to Analytics.js
 
@@ -76,6 +76,7 @@ If you use the Braze (Appboy) destination in either [cloud or device mode](/docs
 This optional middleware is disabled by default. When enabled, it ensures that only events where at least one changed trait value are sent to Braze, and events with duplicate traits are not sent.
 
 To enable this Middleware for a Javascript or Project source, go to `Analytics.js` in your source settings.
-![BrazeMiddleware](images/sources_ajs_brazemiddleware.gif)
+
+![BrazeMiddleware](images/sources_ajs_brazemiddleware.png)
 
 More information about this tool and how it works [is available in the project's README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).

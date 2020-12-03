@@ -14,7 +14,7 @@ This document was last updated on September 7, 2018. If you notice any gaps, out
 
 3. Give the source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. Both can be whatever you like, but we recommend sticking to something that reflects the source itself, like `Twilio` for nickname and `twilio` or `twilio_prod` for the schema name.
 
-  **Note** that you can add multiple instances if you have multiple Twilio accounts. That's why we allow you to customize the source's nickname and schema name!
+   **Note**: You can add multiple instances if you have multiple Twilio accounts. That's why we allow you to customize the source's nickname and schema name!
 
 4. When you click **Connect**, you'll be prompted for your Twilio Account SID. You can find it on your Twilio account under the project settings.
 
