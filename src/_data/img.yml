@@ -268,29 +268,6 @@ image_files:
       - images/WH_SS_Source.png
 
   -
-    folder: connections/sources
-    images:
-      - images/xid_debugger_pretty.png
-      - images/xid_debugger_raw.png
-      - images/xid_safari_settings.png
-      - images/xid_firefox_settings.png
-      - images/debugger_view.png
-      - images/debugger_search.png
-      - images/vt-docs-1.gif
-      - images/vt-docs-website-type.png
-      - images/vt-docs-setup-starterkit.png
-      - images/vt-docs-2.png
-      - images/vt-docs-3.png
-      - images/vt-docs-4.gif
-      - images/vt-docs-starterkit-event.gif
-      - images/vt-docs-5.png
-      - images/vt-docs-identify.png
-      - images/vt-docs-traits.png
-      - images/vt-docs-6.gif
-      - images/vt-docs-7.png
-      - images/vt-docs-8.png
-
-  -
     folder: connections/sources/catalog/cloud-apps/vero
     images:
       - images/vero1.png
