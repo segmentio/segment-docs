@@ -291,14 +291,6 @@ image_files:
       - images/vt-docs-8.png
 
   -
-    folder: connections/sources/plugins/vimeo
-    images:
-      - /docs/connections/sources/plugins/plugins-enable.png
-  -
-    folder: connections/sources/plugins/youtube
-    images:
-      - /docs/connections/sources/plugins/plugins-enable.png
-  -
     folder: connections/sources/catalog/cloud-apps/vero
     images:
       - images/vero1.png
