@@ -18,7 +18,7 @@ hide-boilerplate: true
 | [Google Ads (Gtag)](/docs/connections/destinations/catalog/google-adwords-new/)          | No                        |
 | [Google Ads (Classic)](/docs/connections/destinations/catalog/google-ads-classic/)       | Yes - Event Destination   |
 | [Google Analytics](/docs/connections/destinations/catalog/google-analytics/)             | Yes - Event Destination   |
-| Google Adwords Remarketing Lists        | Yes - Event Destination   |
+| Google Adwords Remarketing Lists        | Yes - List Destination   |
 
 
 
