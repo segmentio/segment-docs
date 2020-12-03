@@ -257,11 +257,6 @@ image_files:
       - images/braze-anonid.png
 
   -
-    folder: connections/spec
-    images:
-      - images/Video_Tracking_Workflow.png
-
-  -
     folder: connections/storage/warehouses
     images:
       - images/wh-health-warehouse.png
@@ -272,18 +267,6 @@ image_files:
       - images/WH_SS_WH.png
       - images/WH_SS_Source.png
 
-  -
-    folder: connections/storage/catalog/google-cloud-storage
-    images:
-      - images/gcloud4.png
-      - images/gcloud5.png
-      - images/gcloud6.png
-      - images/gcloud8.png
-      - images/gcloud9.png
-      - images/gcloud1.png
-      - images/gcloud2.png
-      - images/gcloud3.png
-      - images/gcloud10.png
   -
     folder: connections/storage/catalog/bigquery
     images:
