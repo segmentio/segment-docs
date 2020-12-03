@@ -203,18 +203,6 @@ image_files:
     folder: connections/destinations/catalog/kenshoo-infinity
     images:
       - images/e7ffbbc58004b02ad61a95d136c98769.png
-  -
-    folder: connections/destinations/catalog/hubspot
-    images:
-      - images/hubspot-personas01.png
-      - images/hubspot-personas02.png
-      - images/hubspot-personas03.png
-      - images/hubspot-personas04.png
-      - images/hubspot-personas05.png
-      - images/hubspot-personas06.png
-      - images/hubspot-personas07.png
-      - images/hubspot-personas08.png
-      - images/hubspot-personas09.png
 
   -
     folder: connections/destinations/catalog/optimizely-web
