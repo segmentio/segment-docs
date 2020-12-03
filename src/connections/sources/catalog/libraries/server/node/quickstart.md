@@ -35,7 +35,7 @@ var Analytics = require('analytics-node');
 var analytics = new Analytics('YOUR_WRITE_KEY');
 ```
 
-That will create an instance of `Analytics` that you can use to send data to Segment for your project. The default initialization settings are production-ready and queue 20 messages before sending any requests. In development you might want to use [development settings](/docs/connections/sources/catalog/libraries/server/node/#development).
+That will create an instance of `Analytics` that you can use to send data to Segment for your project. The default initialization settings are production-ready and queue 20 messages before sending any requests. In development you might want to use [development settings](/docs/connections/sources/catalog/libraries/server/node#development).
 
 Once you've got that, you're ready to...
 
