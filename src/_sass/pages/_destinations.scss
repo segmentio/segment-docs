@@ -2,15 +2,4 @@
   &__heading {
     margin-top: 15px;
   }
-
-  &__body {
-    padding-top: 20px;
-    border-top: 1px solid rgba(color(secondary), 0.16);
-
-    @include breakpoint(large up) {
-      padding-top: 0;
-      border-top: 0;
-      margin-top: 50px;
-    }
-  }
 }
