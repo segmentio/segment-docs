@@ -132,7 +132,7 @@ Add `{: .columns}` before a list you want to divide into two columns.
 {% include components/reference-button.html
   href="/connections/sources/catalog/"
   variant="related"
-  icon="media/icon-academy.svg"
+  icon="chart.svg"
   title="Totally new to Analytics?"
   description="For a more hands-on tutorial of Segment, check out Segment University. It offers step-by-step instructions, starting with first steps and going through some of our more advanced features."
 %}
@@ -142,14 +142,14 @@ Add `{: .columns}` before a list you want to divide into two columns.
 <div class="double">
   {% include components/reference-button.html
     href="https://segment.com"
-    icon="media/icon-academy.svg"
+    icon="git-repo.svg"
     title="Segment for Developers"
     description="An overview of the basics of your Segment implementation."
   %}
 
   {% include components/reference-button.html
     href="https://segment.com"
-    icon="media/icon-academy.svg"
+    icon="book.svg"
     title="How-To Guides"
     description="Over a dozen how-to guides to help you accomplish common tasks."
   %}

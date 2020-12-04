@@ -3,13 +3,7 @@
     <nav class="menu">
       <ul class="menu__list list list--unstyle">
         <li class="menu-item">
-          <a href="{{ site.baseurl }}/" class="menu-item__link menu-item__link--small menu-item__link--highlight menu-item__link--icon flex flex--middle">
-            <div class="menu-item__icon flex__column">
-              {% include icons/menu/icon-back.svg %}
-            </div>
-  
-            <div class="flex__column">Back to Documentation</div>
-          </a>
+          <a href="{{ site.baseurl }}/" class="menu-item__link menu-item__link--small menu-item__link--highlight">Back to Documentation</a>
         </li>
       </ul>
     </nav>
@@ -19,7 +13,7 @@
         <li class="menu-item menu-item--active">
           <button class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle">
             <span class="menu-item__icon flex__column">
-              {% include icons/menu/icon-config-api.svg %}
+              {% include icons/config-api.svg %}
             </span>
   
             <span class="flex__column">{{ site.data.sidenav.api.sections[0].section_title }}</span>
@@ -50,7 +44,7 @@
                     </span>
   
                     <div class="menu-item__chevron flex__column flex__column--shrink">
-                      {% include icons/symbols/chevron-down.svg %}
+                      {% include icons/symbols/caret-down.svg %}
                     </div>
                   </button>
   
@@ -69,7 +63,7 @@
                             {{ subsection.title }}
                             {% if subsection.menu_icon %}
                               <div class="menu-item__icon menu-item__icon--small menu-item__icon--right flex__column">
-                                {% include icons/menu/icon-{{ subsection.menu_icon }}.svg %}
+                                {% include icons/{{ subsection.menu_icon }}.svg %}
                               </div>
                             {% endif %}
                           </a>
@@ -82,7 +76,7 @@
                             </span>
   
                             <div class="menu-item__chevron flex__column flex__column--shrink">
-                              {% include icons/symbols/chevron-down.svg %}
+                              {% include icons/symbols/caret-down.svg %}
                             </div>
                           </button>
   

@@ -51,7 +51,7 @@ When the app is terminated, Segment saves the queue to disk, and loads that data
 {% include content/mobile-cmodes.md %}
 
 
-{% include components/reference-button.html href="https://github.com/segmentio/analytics-test-apps" icon="media/icon-guides.svg" title="iOS Test Apps" description="Segment maintains test apps for the iOS mobile library. Find them here." %}
+{% include components/reference-button.html href="https://github.com/segmentio/analytics-test-apps" icon="guides.svg" title="iOS Test Apps" description="Segment maintains test apps for the iOS mobile library. Find them here." %}
 
 ### Install the SDK
 

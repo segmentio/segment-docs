@@ -3,26 +3,26 @@ sections:
   section_col: 12
   section:
   - name: Getting started with Segment
-    icon: media/icon-getting-started.svg
+    icon: getting-started.svg
     description: "Learn about Segment, work through a basic implementation, plan a full implementation and learn about features and extensions. "
     path: /getting-started/
 - section_title: How can Segment help you?
   section_col: 6
   section:
   - name: Simplify data collection
-    icon: media/icon-connections.svg
+    icon: connections.svg
     description: "Integrate the tools you need for analytics, growth, marketing, and more."
     path: /connections/
   - name: Protect data integrity
-    icon: media/icon-protocols.svg
+    icon: protocols.svg
     description: "Prevent data quality issues with a tracking schema and enforcement with Protocols."
     path: /protocols/
   - name: Personalize interactions
-    icon: media/icon-personas.svg
+    icon: personas.svg
     description: "Improve customer interactions by building audiences to power personalized experiences."
     path: /personas/
   - name: Respect users' privacy
-    icon: media/icon-privacy.svg
+    icon: privacy.svg
     description: "Use Segment's tools for data discovery and policy enforcement to keep customer data private."
     path: /privacy/
 
@@ -44,11 +44,11 @@ sections:
   section_col: 6
   section:
   - name: Segment for Developers
-    icon: media/icon-guides.svg
+    icon: git-repo.svg
     description: "An overview of the basics of your Segment implementation."
     path: /guides/intro-impl/
   - name: How-To Guides
-    icon: media/icon-guides.svg
+    icon: book.svg
     description: "Over a dozen how-to guides to help you accomplish common tasks."
     path: /guides/how-to-guides/
 
