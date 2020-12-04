@@ -9,7 +9,7 @@
             <div class="nav">
               <p class="nav__title">{{ nav.section_title }}</p>
 
-              <ul class="nav-list">
+              <ul class="nav-list flex flex--stack waffle">
                 {% for item in nav.section %}
                   <li>
                     <a class="nav-list__link" href="{{ item.path }}">{{ item.title }}</a>
@@ -28,7 +28,7 @@
       <div class="footer__body flex flex--inline flex--stack flex--queue@large waffle waffle--large">
         <div class="flex__column">
           <div class="nav">
-            <ul class="nav-list nav-list--horizontal flex gutter gutter--xlarge@medium">
+            <ul class="nav-list flex flex--stack flex--queue@large waffle waffle--xlarge@large">
               <li class="flex__column flex__column--shrink">
                 <p>© {{ site.time | date: "%Y" }} Segment.io, Inc.</p>
               </li>
@@ -49,7 +49,7 @@
         </div>
 
         <div class="flex__column flex__column--shrink">
-          <ul class="social-list flex flex--inline flex--middle gutter gutter--xlarge">
+          <ul class="social-list social-list--dark flex flex--inline flex--middle gutter gutter--xlarge">
             <li>
               <a href="https://www.linkedin.com/company/segment-io/" class="social-list__link">
                 {% include icons/socials/linkedin.svg %}

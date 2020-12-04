@@ -2,17 +2,7 @@
   padding-left: 0;
   list-style: none;
 
-  & > * + * {
-    margin-top: 10px;
-  }
-
   &__link {
     color: color(gray-600);
-  }
-
-  &--horizontal {
-    & > * + * {
-      margin-top: 0;
-    }
   }
 }
