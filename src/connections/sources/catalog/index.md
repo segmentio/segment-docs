@@ -2,7 +2,7 @@
 title: Sources Catalog
 hide_toc: true
 landing: true
-icon: symbols/connections.svg
+icon: symbols/squares-arrow.svg
 excerpt: Detailed information about each destination. Learn how our API methods are implemented for that destination.
 layout: catalog
 menu_icon: "read-more"
