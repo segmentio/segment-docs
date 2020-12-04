@@ -33,7 +33,7 @@ Per-function global caching is available in the `cache` namespace. The following
 
 The following example will obtain a JSON value through the cache, only invoking the callback as needed:
 
-```JavaScript
+```js
 const ttl = 5 * 60 * 1000 // 5 minutes
 const val = await cache.load("mycachekey", ttl, () => {
     const res = await fetch("http://echo.jsontest.com/key/value/one/two")
