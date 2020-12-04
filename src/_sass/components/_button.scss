@@ -18,8 +18,12 @@
   }
 
   &__icon {
-    display: inline-block;
     vertical-align: middle;
+    
+    & > svg {
+      max-width: 12px;
+      max-height: 12px;
+    }
   }
 
   &--expand {
