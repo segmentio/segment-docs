@@ -4,40 +4,35 @@
   grid-template-columns: 30px auto;
   font-size: 14px;
   line-height: 22px;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 3px;
-    border-radius: 2px;
-  }
+  color: color(gray-700);
+  border-radius: 8px;
+  padding: 16px;
+  border-style: solid;
+  border-width: 1px;
 
   &.note {
-    padding: 24px 16px;
+    padding: 16px 24px;
     background-color: color(gray-50);
-    border-radius: 8px;
+    border-radius: 0;
+    border: 0;
 
     .header {
-      font-size: 20px;
+      font-size: 16px;
       line-height: 24px;
+      color: color(primary);
+    }
+
+    .fa {
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg viewBox='0 0 16 16' width='16' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8 0a8 8 0 1 0 8 8 8 8 0 0 0-8-8zm.667 11.333a.667.667 0 0 1-1.334 0V7a.667.667 0 1 1 1.334 0v4.333zm-.667-6a.667.667 0 1 1 .667-.666.667.667 0 0 1-.667.666z' fill='%238f95b2' fill-rule='nonzero'/%3e%3c/svg%3e");
     }
   }
 
-  &.info,
-  &.success,
-  &.warning,
-  &.error {
-    padding: 15px 20px;
-    background-color: color(gray-50);
-    border-radius: 4px;
-  }
-
   &.info {
-    &::before {
-      background-color: color(info);
+    background-color: color(info-light);
+    border-color: color(info);
+
+    .header {
+      color: color(info);
     }
 
     .fa {
@@ -46,8 +41,11 @@
   }
 
   &.success {
-    &::before {
-      background-color: color(success);
+    background-color: color(success-light);
+    border-color: color(success);
+
+    .header {
+      color: color(success);
     }
 
     .fa {
@@ -56,8 +54,11 @@
   }
 
   &.warning {
-    &::before {
-      background-color: color(warning);
+    background-color: color(warning-light);
+    border-color: color(warning);
+
+    .header {
+      color: color(warning);
     }
 
     .fa {
@@ -66,8 +67,11 @@
   }
 
   &.error {
-    &::before {
-      background-color: color(error);
+    background-color: color(error-light);
+    border-color: color(error);
+
+    .header {
+      color: color(error);
     }
 
     .fa {
@@ -88,21 +92,16 @@
   }
 
   .header {
-    font-size: 17px;
+    font-size: 14px;
     font-weight: 500;
-    line-height: 20px;
-    color: color(secondary);
-
-    @include breakpoint(medium up) {
-      font-size: 17px;
-      line-height: 20px;
-    }
+    line-height: 24px;
   }
 
   .content {
     ul {
       margin-top: 0px;
     }
+
     & > *:not(.header, ul) + * {
       margin-top: 25px;
     }
@@ -113,7 +112,8 @@
 
     p:first-child {
       strong:first-child {
-        color: color(secondary);
+        color: color(gray-800);
+        font-size: 12px;
       }
     }
   }
