@@ -1,14 +1,13 @@
 .footer {
-  display: none;
-  overflow: hidden;
-  padding-top: 70px;
-  padding-bottom: 120px;
-  background-color: color(secondary);
-  font-size: 16px;
+  padding-top: 40px;
+  background-color: color(gray-900);
+  font-size: 14px;
   color: color(white);
+  text-align: center;
 
-  @include breakpoint(large up) {
-    display: block;
+  @include breakpoint(large up)  {
+    padding-top: 80px;
+    text-align: left;
   }
 
   &__container {
@@ -21,19 +20,27 @@
     padding-right: 15px;
   }
 
-  &__aside {
-    font-size: 14px;
+  &__content {
+    display: none;
 
-    & > * + * {
-      margin-top: 20px;
+    @include breakpoint(large up)  {
+      display: block;
+      margin-top: 100px;
     }
   }
 
-  &__bg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(0, 10%);
-    z-index: -1;
+  &__aside {
+    padding: 32px 0;
+
+    @include breakpoint(large up)  {
+      border-top: 1px solid color(gray-800);
+      margin-top: 80px;
+    }
+  }
+
+  &__body {
+    @include breakpoint(large up)  {
+      width: 100%;
+    }
   }
 }
