@@ -1,43 +1,55 @@
 <div class="footer">
   <div class="footer__container">
-    <div class="flex flex--wrap waffle waffle--large">
-      {% for nav in site.data.nav.sections %}
-        <div class="flex__column flex__column--2">
-          <div class="nav">
-            <p class="nav__title">{{ nav.section_title }}</p>
+    {% include icons/segment.svg %}
 
-            <ul class="nav-list">
-              {% for item in nav.section %}
-                <li>
-                  <a class="nav-list__link" href="{{ item.path }}">{{ item.title }}</a>
-                </li>
-              {% endfor %}
-            </ul>
+    <div class="footer__content">
+      <div class="flex flex--wrap waffle waffle--large">
+        {% for nav in site.data.nav.sections %}
+          <div class="flex__column">
+            <div class="nav">
+              <p class="nav__title">{{ nav.section_title }}</p>
+
+              <ul class="nav-list">
+                {% for item in nav.section %}
+                  <li>
+                    <a class="nav-list__link" href="{{ item.path }}">{{ item.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
           </div>
-        </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 
-      <div class="flex__column flex__column--2 flex__column--center">
-        <div class="footer__aside">
-          {% include icons/segment.svg %}
-
-          <p>© {{ site.time | date: "%Y" }} Segment.io, Inc.</p>
-
+  <div class="footer__aside">
+    <div class="footer__container">
+      <div class="footer__body flex flex--inline flex--stack flex--queue@large waffle waffle--large">
+        <div class="flex__column">
           <div class="nav">
-            <ul class="nav-list">
-              <li>
+            <ul class="nav-list nav-list--horizontal flex gutter gutter--xlarge@medium">
+              <li class="flex__column flex__column--shrink">
+                <p>© {{ site.time | date: "%Y" }} Segment.io, Inc.</p>
+              </li>
+              
+              <li class="flex__column flex__column--shrink">
                 <a class="nav-list__link" href="https://segment.com/legal/privacy/">Privacy</a>
               </li>
-              <li>
+
+              <li class="flex__column flex__column--shrink">
                 <a class="nav-list__link" href="https://segment.com/legal/terms/">Terms</a>
               </li>
-              <li>
+
+              <li class="flex__column flex__column--shrink">
                 <a class="nav-list__link" href="#" id="open-consent-manager">Website Data Collection Preferences</a>
               </li>
             </ul>
           </div>
+        </div>
 
-          <ul class="social-list flex flex--middle gutter gutter--xlarge">
+        <div class="flex__column flex__column--shrink">
+          <ul class="social-list flex flex--inline flex--middle gutter gutter--xlarge">
             <li>
               <a href="https://www.linkedin.com/company/segment-io/" class="social-list__link">
                 {% include icons/socials/linkedin.svg %}
@@ -59,35 +71,5 @@
         </div>
       </div>
     </div>
-
-    <div class="footer__bg">
-      <svg width="912" height="900" xmlns="http://www.w3.org/2000/svg"><path d="M103.991 751.69c0 28.174 23.561 50.991 52.622 50.991 29.036 0 52.597-22.817 52.597-50.99 0-28.15-23.561-50.991-52.597-50.991-29.06 0-52.622 22.842-52.622 50.99zm580.15-616.302c0 28.174 23.535 50.99 52.596 50.99 29.036 0 52.571-22.816 52.571-50.99 0-28.149-23.535-50.99-52.57-50.99-29.062 0-52.597 22.841-52.597 50.99zM355.718 353.041c0 9.375 7.854 17.013 17.524 17.013h521.234c9.67 0 17.524-7.638 17.524-17.013v-62.3c0-9.375-7.854-17.013-17.524-17.013H373.242c-9.67 0-17.524 7.638-17.524 17.013v62.3zm200.564 163.636c0-9.375-7.88-16.988-17.524-16.988H17.524C7.879 499.689 0 507.302 0 516.677v62.325c0 9.375 7.88 16.989 17.524 16.989h521.234c9.644 0 17.524-7.614 17.524-16.99v-62.324zm339.934-28.1l-63.98-6.299c-9.466-.942-17.883 5.481-19.136 14.633-11.23 82.364-52.571 158.7-116.347 214.9-67.23 59.224-154.337 91.862-245.307 91.862-44.87 0-88.667-7.787-130.135-23.164-8.852-3.273-18.675.819-22.36 9.35l-24.737 57.538c-1.868 4.266-1.842 8.953.051 13.194 1.868 4.29 5.372 7.565 9.85 9.251C337.426 889.832 393.758 900 451.445 900c115.734 0 226.58-41.542 312.153-116.936C845.23 711.14 897.904 613.35 911.847 507.699c.613-4.613-.691-9.151-3.659-12.772-2.967-3.621-7.214-5.903-11.972-6.35zM1.714 338.31c24.584-93.152 80.814-177.847 158.25-238.51C242.135 35.44 345.665 0 451.447 0c52.316 0 103.633 8.358 152.572 24.875 4.528 1.538 8.135 4.663 10.156 8.879 2.02 4.191 2.225 8.879.511 13.219l-22.716 58.332c-3.352 8.63-13.047 13.045-22.052 10.044-37.964-12.624-77.846-19.047-118.47-19.047-84.345 0-163.572 27.132-229.062 78.42-60.476 47.37-104.554 113.44-124.022 186.007-2.047 7.639-9.056 12.673-16.884 12.673-1.28 0-2.61-.148-3.94-.421l-62.727-13.84c-4.656-1.016-8.57-3.769-11.077-7.712-2.481-3.968-3.223-8.63-2.021-13.12z" fill="#F7F9F9" fill-rule="evenodd" opacity=".048"/></svg>
-    </div>
   </div>
-</div>
-
-<div class="footer-mobile">
-  <div class="footer__aside">
-    <p>© Copyright {{ site.time | date:"%Y" }} Segment</p>
-  </div>
-
-  <ul class="social-list social-list--dark flex flex--middle flex--center gutter gutter--xlarge">
-    <li>
-      <a href="#" class="social-list__link">
-        {% include icons/socials/linkedin.svg %}
-      </a>
-    </li>
-
-    <li>
-      <a href="#" class="social-list__link">
-        {% include icons/socials/twitter.svg %}
-      </a>
-    </li>
-
-    <li>
-      <a href="#" class="social-list__link">
-        {% include icons/socials/github.svg %}
-      </a>
-    </li>
-  </ul>
 </div>

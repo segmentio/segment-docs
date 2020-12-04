@@ -7,6 +7,12 @@
   }
 
   &__link {
-    color: color(white);
+    color: color(gray-600);
+  }
+
+  &--horizontal {
+    & > * + * {
+      margin-top: 0;
+    }
   }
 }
