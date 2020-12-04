@@ -5,7 +5,7 @@
     {% assign subpage = site.pages | where: 'url', related_url | first %}
 
     {% if subpage.title %}
-      {% include components/reference-button.html variant="related" href=subpage.url icon=subpage.icon title=subpage.title content=subpage.excerpt %}
+      {% include components/reference-button.html variant="related" href=subpage.url icon=subpage.icon title=subpage.title description=subpage.excerpt %}
     {% endif %}
   {% endfor %}
 </div>

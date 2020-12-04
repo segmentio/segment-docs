@@ -7,7 +7,13 @@
 <div class="flex flex--wrap gutter gutter--large">
   {% for category in section.section %}
     <div class="flex__column flex__column--12 flex__column--{{section.section_col}}@medium flex">
-      {% include components/reference-button.html href=category.path icon=category.icon title=category.name description=category.description %}
+      {% include components/reference-button.html
+        href=category.path
+        icon=category.icon
+        title=category.name
+        description=category.description
+        variant="related"
+      %}
     </div>
   {% endfor %}
 </div>
