@@ -37,7 +37,7 @@ The following example will obtain a JSON value through the cache, only invoking 
 const ttl = 5 * 60 * 1000 // 5 minutes
 const val = await cache.load("mycachekey", ttl, () => {
     const res = await fetch("http://echo.jsontest.com/key/value/one/two")
-		const data = await res.json()
-		return data
+    const data = await res.json()
+    return data
 })
 ```
