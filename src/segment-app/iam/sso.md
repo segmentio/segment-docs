@@ -86,7 +86,6 @@ You simply enter your domain (or, if you've verified it already, choose it from 
 
 Segment supports "interruption" on the login page for emails that match your workspace's domain.
 
-![](images/asset_IC593KEZ.gif)
 
 In order to enable this, you'll need to verify your domain with Segment. To do that, go to the "Domains" tab under "Authentication" in the workspace settings page.
 

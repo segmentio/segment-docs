@@ -390,9 +390,6 @@ image_files:
       - images/add_vCFbkibE.png
       - images/add_0ri7jEET.gif
       - images/add_ZMFMf52j.png
-      - images/token-overview.png
-      - images/labels-page.png
-      - images/assign-bulk-labels.png
       - images/labels-access-mgmt.png
       - images/user-group-overview.png
       - images/user-group-members.png
@@ -404,13 +401,7 @@ image_files:
       - images/scim_group_push.png
       - images/scim_edit_groups.png
       - images/password-picker.png
-      - images/asset_JR9CRr6f.png
-      - images/asset_XCyMZpwo.png
-      - images/asset_RRAJ92MY.png
       - images/asset_s19XDgWX.png
-      - images/asset_SNxN4JhO.png
-      - images/asset_require_sso.png
-      - images/asset_IC593KEZ.gif
       - images/asset_MSaDZk2f.png
   -
     folder: segment-app/iam/images
