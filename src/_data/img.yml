@@ -383,24 +383,7 @@ image_files:
       - images/asset_wiAeFR79.png
       - images/asset_BMZJWW6A.png
       - images/asset_Umn2E6DH.png
-  -
-    folder: guides/how-to-guides/images
-    images:
-  -
-    folder: segment-app
-    images:
-      - images/workspace-overview.png
-      - images/sources.png
-      - images/destinations.png
-      - images/catalog.png
-      - images/health.png
-      - /docs/privacy/images/privacy-add-new-matcher.gif
-      - images/support-access-before.png
-      - images/support-access-after.png
-      - images/verify-email.png
-  -
-    folder: segment-app/images
-    images:
+
   -
     folder: segment-app/iam
     images:
