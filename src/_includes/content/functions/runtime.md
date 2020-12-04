@@ -28,8 +28,8 @@ Only the [`crypto` Node.js module](https://nodejs.org/dist/latest-v10.x/docs/api
 
 Per-function global caching is available in the `cache` namespace. The following functions are available:
 
-- `cache.load(key, ttl, async () => {})` - Obtains a cached value for the provided `key`, invoking the callback if the value is missing or has expired. The `ttl` is the maximum duration in milliseconds the value can be cached. If omitted or set to `-1`, the value will have no expiry. There is no guarantee that a value will be retained in the cache for the provided duration, however. The cache space is limited, so efforts to minimize the cached value size will afford a higher cache hit ratio.
-- `cache.delete(key)` - Forcefully remove the value associated withe the `key`.
+- `cache.load(key: string, ttl: number, fn: () => any): Promise<any>` - Obtains a cached value for the provided `key`, invoking the callback if the value is missing or has expired. The `ttl` is the maximum duration in milliseconds the value can be cached. If omitted or set to `-1`, the value will have no expiry. There is no guarantee that a value will be retained in the cache for the provided duration, however. The cache space is limited, so efforts to minimize the cached value size will afford a higher cache hit ratio.
+- `cache.delete(key: string): void` - Forcefully remove the value associated withe the `key`.
 
 The following example will obtain a JSON value through the cache, only invoking the callback as needed:
 
