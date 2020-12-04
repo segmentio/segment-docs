@@ -5,21 +5,21 @@ redirect_from: '/guides/how-to-guides/best-practices-identify/'
 
 The most important calls you make with Segment are the Track and Identify calls. With the Track call, you can attribute actions on your site or app to individuals, and gain a better understanding of their activities, identity, and use patterns over time.
 
-When you use the Segment Identify call with the Track call, you can start to build a whole picture of a user's interactions with your systems, and help [reduce the number of Monthly Tracked Users](/docs/guides/usage-and-billing/mtus-and-throughput/) you are billed for.
+When you use the Segment Identify call with the Track call, you can start to build a complete picture of a user's interactions with your systems, and help [reduce the number of Monthly Tracked Users](/docs/guides/usage-and-billing/mtus-and-throughput/) you are billed for.
 
 
 ## AnonymousId generation
 
 The Segment libraries generate an `anonymousId` for each user, even before you Identify them.
 
-An `anonymousId` is a randomly generated 36 character string automatically assigned to a user on their first visit to your website or mobile application. You can use the `anonymousId` to link events performed by the user as they navigate around your website. When you track the `anonymousId` , you can attribute activities over multiple days to the same user by collecting all of the activities with that ID. If a user chooses to register for your site, or log in to your app,  you can Identify them, and still include their `anonymousId` in the event payload along with the new userId.
+An `anonymousId` is a randomly generated 36 character string automatically assigned to a user on their first visit to your website or mobile application. You can use the `anonymousId` to link events performed by the user as they navigate around your website. When you track the `anonymousId` , you can attribute activities over multiple days to the same user by collecting all of the activities with that ID. If a user chooses to register for your site, or log in to your app,  you can Identify them, and still include their `anonymousId` in the event payload along with the new `userId`.
 
 > success ""
 > **Tip!** Only the Segment mobile and website libraries automatically generate an `anonymousId`. If you use Segment’s Server libraries, you must generate an `anonymousId` manually. It can be any pseudo-unique identifier, for example you might use a `sessionId` from a backend server.
 
 ## Identifying users
 
-Segment’s Identify method lets you link a user to their actions and record traits about them. It includes a unique User ID, and records any traits you know about them, such as their email address, name, and so on.
+Segment’s Identify method lets you link a user to their actions and record traits about them. It includes a unique User ID, and records any traits you know about them, such as their email address, and name.
 
 Segment recommends that you use a unique user identifier that won’t change for your `userId`, for example a database ID from your organization’s internal systems. (See below)
 
@@ -46,7 +46,7 @@ You should make an Identify call in the following situations:
 - when first you create a user (and so it is assigned a `userId`)
 - when a user changes information in their profile
 - when a user logs in
-- An a 4th optional scenario of calling identify() upon loading any pages that are accessible by a logged in user
+- Optionally, when you call Identify upon loading any pages that are accessible by a logged in user
 
 ## Merging Identified and Anonymous user profiles
 
@@ -98,7 +98,7 @@ For simplicity, we're assuming that the user has _not_ cleared their cookies or 
 
 #### Scenario #2 - Multi-day, multi-device, single login
 
-In this scenario, the person uses both a web browser, and a mobile application to interact with your site. In each case, they are assigned a different `anonymousId`. In this scenario, the user signs up on the web application, so Segment is able to assign their _web_ session a `userId`. However, because they do not log in on the mobile application, Segment cannot tie the mobile activity to this specific user. Their mobile application activity remains anonymous unless they log in on the mobile application.
+In this scenario, the person uses both a web browser, and a mobile application to interact with your site. In each case, they are assigned a different `anonymousId`. In this scenario, the user signs up on the web browser, so Segment assigns their _web_ session a `userId`. However, because they do not log in on the mobile application, Segment cannot tie the mobile activity to this specific user. Their mobile application activity remains anonymous unless they log in on the mobile application.
 
 ![](images/identify-bp-3.png)
 
@@ -126,7 +126,7 @@ The Segment ID cookie is set with a one year expiration. However, there are some
 
 - If you call `reset` during a user’s browser session, it removes both their `userId` and `anonymousId`, which means the user generates a new `anonymousId` on the next visit.
 - If the user manually clears their cookies and local storage, they generate a new `anonymousId` on the next visit.
-- If you invoke any call before you set an `anonymousId`, Segment automatically sets the `anonymousId` first. This means if you explicitly set an `anonymousId`, you might be giving the user two `anonymousId`s or overwriting an existing one.
+- If you invoke any call before you set an `anonymousId`, Segment automatically sets the `anonymousId` first. This means if you explicitly set an `anonymousId`, you might give the user two `anonymousId`s or overwrite an existing one.
 - If you fetch the `anonymousId` using `analytics.user().anonymousId()` before one is set, Segment generates and sets an `anonymousId` rather than returning `null`.
 - If you call `analytics.identify()` with a `userId` that is different from the currently cached `userId`, this can overwrite the existing one and cause attribution problems.
 - If you generate a new `anonymousId` on a server library, and passing it from the server to the browser, this could overwrite the user's existing `anonymousId`.
@@ -143,7 +143,7 @@ If you want to send user data that is sensitive or which you don't want to expos
 
 ### Aliasing from a server library
 
-If you plan on tracking anonymous visitors from the browser and only calling [identify](/docs/connections/spec/identify) from your servers, Kissmetrics and Mixpanel might require that you make an [Alias call](/docs/connections/spec/alias) to link the recordsl. The Alias call links client-side anonymous visitors with server-identified users. This isn't recommended, but if you do this, read the [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#aliasing-new-users-server-side)and[Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias-using-cloud-mode) specific [alias](/docs/connections/spec/alias) docs.
+If you plan to track anonymous visitors from the browser and only call [identify](/docs/connections/spec/identify) from your servers, Kissmetrics and Mixpanel might require that you make an [Alias call](/docs/connections/spec/alias) to link the records. The Alias call links client-side anonymous visitors with server-identified users. This isn't recommended, but if you do this, read the [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#aliasing-new-users-server-side)and[Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias-using-cloud-mode) specific [alias](/docs/connections/spec/alias) docs.
 
 ### Common questions
 
