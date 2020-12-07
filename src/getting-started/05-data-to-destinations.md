@@ -63,7 +63,7 @@ There are also a number of Business tier features you can then use with your war
 
 
 <div class="double">
-  {% include components/reference-button.html  href="/getting-started/04-full-install//" newtab="false" icon="symbols/arrow-left.svg" title="Back: A full Segment implementation" description="Take your plans, and make them real." variant="related" %}
+  {% include components/reference-button.html href="/getting-started/04-full-install//" newtab="false" icon="symbols/arrow-left.svg" title="A full Segment implementation" description="Take your plans, and make them real." variant="related" subtitle="back" %}
 
-  {% include components/reference-button.html  href="/getting-started/06-testing-debugging/" newtab="false" icon="symbols/arrow-right.svg" title="Next: Testing and Debugging" description="Test your implementation and see where your data is and isn't arriving." variant="related" %}
+  {% include components/reference-button.html href="/getting-started/06-testing-debugging/" newtab="false" icon="symbols/arrow-right.svg" title="Testing and Debugging" description="Test your implementation and see where your data is and isn't arriving." variant="related" subtitle="next" %}
 </div>

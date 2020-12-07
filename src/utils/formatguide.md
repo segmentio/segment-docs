@@ -155,6 +155,26 @@ Add `{: .columns}` before a list you want to divide into two columns.
   %}
 </div>
 
+- **Back/Next buttons**
+
+<div class="double">
+  {% include components/reference-button.html
+    href="https://segment.com"
+    icon="symbols/arrow-left.svg"
+    title="What is Segment?"
+    description="The basics of the Segment platform and what you can do with it."
+    subtitle="back"
+  %}
+
+  {% include components/reference-button.html
+    href="https://segment.com"
+    icon="symbols/arrow-right.svg"
+    title="Planning a Full Installation"
+    description="Think through your goals, plan your calls, and set yourself up for success."
+    subtitle="next"
+  %}
+</div>
+
 - **Three columns layout** - created with `flex` utility
 
 <div class="flex flex--wrap gutter gutter--large">
