@@ -60,12 +60,13 @@
                             {% assign menuLink = subsection.path  %}
                           {% endif %}
                           <a class="menu-item__link menu-item__link--icon {% if currentPage == currentPath %}menu-item__link--indicator{% endif %} flex" href="{{menuLink}}">
-                            {{ subsection.title }}
                             {% if subsection.menu_icon %}
-                              <div class="menu-item__icon menu-item__icon--small menu-item__icon--right flex__column">
+                              <div class="menu-item__icon menu-item__icon--small flex__column">
                                 {% include icons/{{ subsection.menu_icon }}.svg %}
                               </div>
                             {% endif %}
+
+                            {{ subsection.title }}
                           </a>
                         {% endif %}
   

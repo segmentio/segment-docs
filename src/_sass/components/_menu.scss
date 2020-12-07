@@ -7,17 +7,7 @@
     border-top: 1px solid color(gray-100);
   }
 
-  &__list {
-    & > * + * {
-      margin-top: 20px;
-    }
-  }
-
   &--compact {
-    #{$this}__list {
-      & > * + * {
-        margin-top: 15px;
-      }
-    }
+    
   }
 }

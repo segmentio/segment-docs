@@ -2,27 +2,13 @@
   $this: &;
 
   & > * + * {
-    margin-top: 32px;
-    padding-top: 32px;
+    margin-top: 24px;
+    padding-top: 24px;
     border-top: 1px solid color(gray-100);
   }
 
   & > * + *:last-child {
-    padding-top: 32px;
-  }
-
-  &__content {
-    padding-right: 25px;
-
-    & > * + * {
-      margin-top: 32px;
-      padding-top: 32px;
-      border-top: 1px solid color(gray-100);
-    }
-
-    & > * + *:last-child {
-      padding-top: 32px;
-    }
+    padding-top: 24px;
   }
 
   &--sticky {

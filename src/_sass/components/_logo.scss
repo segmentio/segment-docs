@@ -2,7 +2,7 @@
   display: block;
 
   @include breakpoint(large up)  {
-    padding: 22px 20px;
+    padding: 22px 16px;
   }
 
   &:hover {
