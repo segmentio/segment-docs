@@ -29,7 +29,7 @@ analytics.identify('userId123', {
 
 Segment sends traits in Identify calls to Lou as properties that can be used in [Custom Segments](https://dashboard.louassist.com/segments) to group users into different audiences.
 
-Lou does not accept any personally identifiable information (PII) fields from Identify calls. These fields are automatically filtered out from reaching Lou's servers. For a full list of PII fields that Lou filters from Identify calls, take a look at [Lou's Segment integration documentation](https://www.louassist.com/docs/integrations/segment).
+Lou does not accept any personally identifiable information (PII) fields from Identify calls. These fields are automatically filtered out so they do not reach Lou's servers. For a full list of PII fields that Lou removes from Identify calls, see [Lou's Segment integration documentation](https://www.louassist.com/docs/integrations/segment).
 
 ## Track
 
