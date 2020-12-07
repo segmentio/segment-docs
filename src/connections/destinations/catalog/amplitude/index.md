@@ -570,6 +570,8 @@ as an integration-specific option like so:
 
 You will need to pass the start time of a session as `<Timestamp>`.
 
+Important: The timestamp value that passes via session_id needs to be unix format; if it is ISO 8601 for instance this generates an error upon delivery to Amplitude.
+
 ### Setting event-level groups using .track()
 
 Amplitude supports setting event-level groups, meaning the group designation
