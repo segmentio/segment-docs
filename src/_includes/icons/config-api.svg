@@ -1,5 +1,5 @@
-<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M21 15a1 1 0 100-2 1 1 0 000 2z" fill="#8F95B2"/>
-  <path d="M21 17v4M14 13V6.5C14 4.6 15.6 3 17.5 3S21 4.6 21 6.5V11M14 13v4.5c0 1.9-1.6 3.5-3.5 3.5S7 19.4 7 17.5V14M2 7h10M9 2v5M5 2v5" stroke="#8F95B2" stroke-width="1.5" stroke-miterlimit="10"/>
-  <path d="M10 7v4c0 1.7-1.3 3-3 3s-3-1.3-3-3V7" stroke="#8F95B2" stroke-width="1.5" stroke-miterlimit="10"/>
+<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M19 13a1 1 0 100-2 1 1 0 000 2z"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M18.25 19v-4h1.5v4h-1.5zM15.5 1.75c-1.486 0-2.75 1.264-2.75 2.75V11h-1.5V4.5c0-2.314 1.936-4.25 4.25-4.25s4.25 1.936 4.25 4.25V9h-1.5V4.5c0-1.486-1.264-2.75-2.75-2.75zM11.25 15.5V11h1.5v4.5c0 2.314-1.936 4.25-4.25 4.25s-4.25-1.936-4.25-4.25V12h1.5v3.5c0 1.486 1.264 2.75 2.75 2.75s2.75-1.264 2.75-2.75zM10 5.75H0v-1.5h10v1.5z"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 5V0h1.5v5h-1.5zM2.25 5V0h1.5v5h-1.5zM2.75 5v4c0 1.286.964 2.25 2.25 2.25S7.25 10.286 7.25 9V5h1.5v4c0 2.114-1.636 3.75-3.75 3.75S1.25 11.114 1.25 9V5h1.5z"/>
 </svg>
