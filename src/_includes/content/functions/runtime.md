@@ -33,7 +33,7 @@ Per-function global caching is available in the `cache` namespace. The following
 - `cache.delete(key: string): void`
   - Forcefully remove the value associated withe the `key`.
 
-The following example will obtain a JSON value through the cache, only invoking the callback as needed:
+The following example gets a JSON value through the cache, only invoking the callback as needed:
 
 ```js
 const ttl = 5 * 60 * 1000 // 5 minutes
