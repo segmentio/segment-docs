@@ -26,6 +26,8 @@ The following dependencies are installed in the function environment by default.
 
 Only the [`crypto` Node.js module](https://nodejs.org/dist/latest-v10.x/docs/api/crypto.html ) is included (exposed as `crypto`). [Other built-in Node.js modules](https://nodejs.org/api/modules.html) are not available.
 
+##### Caching
+
 Per-function global caching is available in the `cache` namespace. The following functions are available:
 
 - `cache.load(key: string, ttl: number, fn: async () => any): Promise<any>`
