@@ -540,15 +540,15 @@ analytics.alias({
 
 ### sessionId
 
-[Segment doesn't have a concept for a
-session](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/).
+[Segment doesn't have a concept for a session](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/).
+
 Client-side calls to Amplitude will include session information since we are
 bundling Amplitude's SDK. To set up the same `sessionId` for server-side calls
-to Amplitude, you will have to explicitly set the
+to Amplitude, you must explicitly set the
 [session\_id](https://amplitude.zendesk.com/hc/en-us/articles/204771828-HTTP-API#optional-amplitude-specific-keys-for-the-event-argument)
 as an integration-specific option like so:
 
-```
+```js
 {
   "userId": "1234",
   "traits": {
@@ -568,7 +568,9 @@ as an integration-specific option like so:
 }
 ```
 
-You will need to pass the start time of a session as `<Timestamp>`.
+You must pass the start time of a session as `<Timestamp>`.
+
+When you pass a timestamp value from the `session_id` it must be in Unix format or else it generates an error when it is delivered to Amplitude. For example, a date of January 1, 2020 and 9:30am UTC would be written as `2020-12-07T19:33:44+00:00` in ISO 8601, but `1577871000` in Unix epoch time. There are many tools and libraries available to help you convert your timestamps.
 
 ### Setting event-level groups using .track()
 
@@ -639,7 +641,7 @@ This `identify` event would create or update a new user in Amplitude and set
 
 Supported using our iOS and Android components.
 
-Defaults to enabled. If a user has granted your app location permissions,
+This feature defaults to `enabled`. If a user granted your app location permissions,
 enable this setting so that the SDK will also grab the location of the user.
 Amplitude will never prompt the user for location permission, so this must be
 done by your app.
