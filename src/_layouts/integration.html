@@ -1,93 +1,84 @@
 ---
-layout: default
+layout: main
 ---
 
-<div class="docs">
-  <div class="stage">
-    <div class="docs__aside stage__aside">
-      {% include_cached navbar/logo.html %}
-
-      {% if page.strat %}
-        {% include menu/menu-strat.html %}
-      {% else %}
-        {% include_cached menu/menu-{{ page.integration_type }}.html %}
-      {% endif %}
-    </div>
-
-    <main class="docs__body stage__body">
-      <div>
+<main class="docs__body stage__body">
+  <div class="docs__navbar">
+    <div class="flex flex--justify gutter gutter--large@medium">
+      <div class="flex__column flex__column--6@xlarge">  
         <div class="search">
           {% include_cached navbar/search.html placeholder="Search the Segment documentation..." %}
         </div>
-
-
-        {% include_cached navbar/navbar-mobile.html %}
       </div>
 
-
-      <div class="stage__content" data-swiftype-name="body" data-swiftype-type="text">
-        <article class="integration page" data-headings-anchors>
-          {% include components/breadcrumbs.html %}
-
-          <div class="integration-header">
-            {%- if page.mark -%}
-              <div class="integration-header__icon">
-                <img src="{{ page.mark }}" alt="" class="image">
-              </div>
-            {%- endif -%}
-            <div class="flex__column">
-              {%- if page.title -%}
-                <h1 id="{{ page.title | slugify }}">
-                  {{ page.title }}
-                </h1>
-              {%- endif -%}
-
-              {%- if page.excerpt -%}
-                <div class="integration-header__content">
-                  {{ page.excerpt | markdownify }}
-                </div>
-              {%- endif -%}
-            </div>
-          </div>
-
-          <hr>
-
-          {%- unless page.hide_toc -%}
-            {% include sidebar/mobile-menu-side.html %}
-          {%- endunless -%}
-
-          <div class="integration__body page__body">
-            <div class="markdown">
-
-              {% if page.integration_type == 'source' %}
-                {% capture cloud-app-note %}{% include content/cloud-app-note.md %}{% endcapture %}
-                {{ cloud-app-note | markdownify }}
-              {% endif %}
-              {{ content }}
-              {% if page.integration_type == 'destination' %}
-                {% unless page.hide-boilerplate == true %}
-                {% capture integration-foot %}{% include content/integration-foot.md  %}{% endcapture %}
-                {{ integration-foot | markdownify }}
-                {% endunless %}
-              {% endif %}
-            </div>
-            <p><i>This page was last modified: {{ page.last_modified_at | date: '%d %b %Y' }} </i></p>
-
-            {% if page.contributors %}
-              {% include components/avatar.html contributors=page.contributors %}
-            {% endif %}
-            <hr>
-            {% include components/feedback.html %}
-            <hr>
-            {% include components/callout.html %}
-          </div>
-        </article>
+      <div class="flex__column flex__column--shrink">  
+        {% include_cached navbar/nav.html %}
       </div>
-    </main>
+    </div>
+  </div>
 
-    <div class="docs__sidebar stage__sidebar">
-      {% include_cached navbar/nav.html %}
+  {% include_cached navbar/navbar-mobile.html %}
 
+  <article class="integration page" data-headings-anchors data-tracking-scroll data-swiftype-name="body" data-swiftype-type="text">
+    <div class="integration__body page__body">
+      {% include components/breadcrumbs.html %}
+
+      <div class="integration-header">
+        {%- if page.mark -%}
+          <div class="integration-header__icon">
+            <img src="{{ page.mark }}" alt="" class="image">
+          </div>
+        {%- endif -%}
+        <div class="flex__column">
+          {%- if page.title -%}
+            <h1 id="{{ page.title | slugify }}">
+              {{ page.title }}
+            </h1>
+          {%- endif -%}
+
+          {%- if page.excerpt -%}
+            <div class="integration-header__content">
+              {{ page.excerpt | markdownify }}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <hr>
+
+      {%- unless page.hide_toc -%}
+        {% include sidebar/mobile-menu-side.html %}
+      {%- endunless -%}
+
+      <div class="markdown">
+        {% if page.integration_type == 'source' %}
+          {% capture cloud-app-note %}{% include content/cloud-app-note.md %}{% endcapture %}
+          {{ cloud-app-note | markdownify }}
+        {% endif %}
+
+        {{ content }}
+
+        {% if page.integration_type == 'destination' %}
+          {% unless page.hide-boilerplate == true %}
+            {% capture integration-foot %}{% include content/integration-foot.md  %}{% endcapture %}
+            {{ integration-foot | markdownify }}
+          {% endunless %}
+        {% endif %}
+      </div>
+
+      <p><i>This page was last modified: {{ page.last_modified_at | date: '%d %b %Y' }} </i></p>
+
+      {% if page.contributors %}
+        {% include components/avatar.html contributors=page.contributors %}
+      {% endif %}
+
+      <hr>
+      {% include components/feedback.html %}
+      <hr>
+      {% include components/callout.html %}
+    </div>
+
+    <div class="docs__sidebar page__sidebar">
       <div class="sidebar sidebar--sticky sidebar--scroll">
         {%- unless page.hide_toc -%}
           {% if page.integration_type == 'destination' %}
@@ -97,6 +88,7 @@ layout: default
               {% assign toc_foot = integration-foot | markdownify %}
               {% assign toc_content = content | append: toc_foot %}
             {% endif %}
+            
             <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
               {% include sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=toc_content h_min=2 h_max=2 %}
             </div>
@@ -118,9 +110,5 @@ layout: default
         {% endunless %}
       </div>
     </div>
-  </div>
-
-  <footer>
-    {% include_cached components/footer.html %}
-  </footer>
-</div>
+  </article>
+</main>

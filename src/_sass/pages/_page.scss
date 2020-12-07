@@ -1,11 +1,35 @@
 .page {
+  display: flex;
+  padding: 20px;
+
+  @include breakpoint(large up) {
+    padding: 40px;
+  }
+
   & > * + * {
-    margin-top: 24px;
+    margin-left: 20px;
+
+    @include breakpoint(large up) {
+      margin-left: 40px;
+    }
   }
 
   &__body {
+    flex: 1;
+    max-width: 752px;
+
     & > * + * {
       margin-top: 32px;
+    }
+  }
+
+  &__sidebar {
+    display: none;
+    flex: 0 0 160px;
+    max-width: 160px;
+
+    @include breakpoint(xlarge up) {
+      display: block;
     }
   }
 }

@@ -3,8 +3,8 @@
 
   position: relative;
   z-index: 10;
-  background-color: color(white);
-  box-shadow: 0 1px 2px 0 rgba(67, 90, 111, 0.08);
+  background-color: color(gray-50);
+  border-bottom: 1px solid color(gray-300);
   color: color(gray-700);
 
   @include breakpoint(large up)  {
@@ -12,8 +12,8 @@
   }
 
   &__wrapper {
-    padding: 17px 20px;
-    background-color: color(white);
+    padding: 16px 20px;
+    background-color: color(gray-50);
     transition: background-color 0.2s ease;
   }
 

@@ -1,19 +1,17 @@
 .stage {
   display: flex;
   width: 100%;
-  max-width: 1230px;
+  max-width: 1400px;
   margin: 0 auto;
 
   @include breakpoint(large up) {
-    padding-left: 20px;
-    padding-right: 20px;
     min-height: calc(100vh - 475px); /* height of footer */
   }
 
   &__aside {
     display: none;
-    flex: 0 0 230px;
-    max-width: 230px;
+    flex: 0 0 216px;
+    max-width: 216px;
 
     @include breakpoint(large up) {
       display: block;
@@ -23,31 +21,5 @@
   &__body {
     flex: 1;
     max-width: 100%;
-
-    @include breakpoint(large up) {
-      padding-left: 72px;
-      padding-right: 62px;
-    }
-  }
-
-  &__sidebar {
-    display: none;
-    flex: 0 0 144px;
-    max-width: 144px;
-
-    @include breakpoint(large up) {
-      display: block;
-    }
-  }
-
-  &__content {
-    padding-left: 20px;
-    padding-right: 20px;
-    position: relative;
-
-    @include breakpoint(large up) {
-      padding-left: 0;
-      padding-right: 0;
-    }
   }
 }
