@@ -35,10 +35,11 @@
   }
 
   &__link {
-    text-decoration: underline;
-    font-weight: 500;
-    display: block;
+    display: inline-block;
     margin-top: 7px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: underline;
   }
 
   &__icon {
