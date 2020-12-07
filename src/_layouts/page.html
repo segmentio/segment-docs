@@ -41,7 +41,7 @@ layout: main
         {{ content }}
       </div>
 
-      <p><i>This page was last modified: {{ page.last_modified_at | date: '%d %b %Y' }} </i></p>
+      <p class="last-modified">This page was last modified: {{ page.last_modified_at | date: '%d %b %Y' }}</p>
 
       {% if page.contributors %}
         {% include components/avatar.html contributors=page.contributors %}
