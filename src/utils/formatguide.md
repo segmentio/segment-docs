@@ -122,7 +122,7 @@ Add `{: .columns}` before a list you want to divide into two columns.
 
 {% include components/reference-button.html
   href="https://segment.com"
-  icon="media/icon-academy.svg"
+  icon="media/academy.svg"
   title="External resource"
   description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ipsum fugiat nostrum velit iure, molestiae accusamus tempora quos laborum, ex modi illum delectus."
 %}

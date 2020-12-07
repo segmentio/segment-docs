@@ -6,7 +6,7 @@ related:
 
 The Segment Identify call lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about the user, like their email, name, etc.
 
-{% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/299968?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Identify Method" description="Check out our high-level overview of the Identify method in Segment University. (Must be logged in to access.)" %}
+{% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/299968?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: The Identify Method" description="Check out our high-level overview of the Identify method in Segment University. (Must be logged in to access.)" %}
 
 Segment recommends that you make an Identify call:
 

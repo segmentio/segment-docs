@@ -7,7 +7,7 @@ This guide explains all you need to know to get started with your Segment implem
 > info ""
 > If you haven't already, you should read the [detailed explanation of Segment](/docs/guides/) on the previous page!
 
-{% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/324262?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: Segment in Action" description="See a quick example of Segment working on an ecommerce website. (Must be logged in to access.)" %}
+{% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/324262?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: Segment in Action" description="See a quick example of Segment working on an ecommerce website. (Must be logged in to access.)" %}
 
 ## What does Segment do?
 

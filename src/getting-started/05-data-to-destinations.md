@@ -58,7 +58,7 @@ There are also a number of Business tier features you can then use with your war
 
 
 
-{% include components/reference-button.html href="https://university.segment.com/series/segment-101/destinations-warehouses?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: Warehouses" description="Check out our course on warehouses in Segment University. (Must be logged in to access.)" %}
+{% include components/reference-button.html href="https://university.segment.com/series/segment-101/destinations-warehouses?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: Warehouses" description="Check out our course on warehouses in Segment University. (Must be logged in to access.)" %}
 
 
 

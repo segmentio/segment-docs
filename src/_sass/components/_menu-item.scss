@@ -77,14 +77,20 @@
     &--icon {
       #{$this}__icon {
         flex: 0 0 16px;
-        width: 16px;
         color: color(gray-700);
         vertical-align: middle;
         margin-right: 18px;
 
+        svg {
+          width: 16px;
+        }
+
         &--small {
           flex: 0 0 12px;
-          width: 12px;
+
+          svg {
+            width: 12px;
+          }
         }
 
         &--right {
