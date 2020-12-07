@@ -11,6 +11,7 @@
 
   &:focus {
     outline: 0;
+    border-color: color(gray-500);
   }
 
   &::placeholder {
