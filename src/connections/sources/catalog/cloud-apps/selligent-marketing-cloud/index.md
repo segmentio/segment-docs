@@ -60,7 +60,7 @@ The table below list the properties included in the events listed above.
 
 <table>
   <tr>
-   <td>`Property Name`</td>
+   <td>Property Name</td>
    <td>Description</td>
   </tr>
   <tr>
