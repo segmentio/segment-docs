@@ -8,13 +8,23 @@
 
 
     {% if include.description and include.description != empty %}
-      <h5 class="reference-button__heading">{{ include.title }}</h5>
+      <h5 class="reference-button__heading">
+        {% if include.subtitle and include.subtitle != empty %}
+          <div class="reference-button__subtitle">{{ include.subtitle }}</div>
+        {% endif %}
+        {{ include.title }}
+      </h5>
 
       <div class="reference-button__content">
         <p>{{ include.description }}</p>
       </div>
     {% else %}
-      <h5 class="reference-button__heading reference-button__heading--centered">{{ include.title }}</h5>
+      <h5 class="reference-button__heading reference-button__heading--centered">
+        {% if include.subtitle and include.subtitle != empty %}
+          <div class="reference-button__subtitle">{{ include.subtitle }}</div>
+        {% endif %}
+        {{ include.title }}
+      </h5>
     {% endif %}
   </a>
 </div>

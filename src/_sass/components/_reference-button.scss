@@ -56,6 +56,13 @@
     }
   }
 
+  &__subtitle {
+    margin-bottom: 5px;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+  }
+
   &__heading {
     grid-area: heading;
     align-self: center;

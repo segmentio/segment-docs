@@ -264,8 +264,9 @@
 
   .double {
     @include breakpoint(medium up) {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px
     }
   }
 }
