@@ -60,55 +60,55 @@ The table below list the properties included in the events listed above.
 
 <table>
   <tr>
-   <td>Property Name</td>
+   <td>`Property Name`</td>
    <td>Description</td>
   </tr>
   <tr>
-   <td>user_id</td>
+   <td>`user_id`</td>
    <td>An ID used to identify the email.</td>
   </tr>
   <tr>
-   <td>event</td>
+   <td>`event`</td>
    <td>The Event that occurred.</td>
   </tr>
   <tr>
-   <td>email_id</td>
+   <td>`email_id`</td>
    <td>ID of the email.</td>
   </tr>
   <tr>
-   <td>email_subject</td>
+   <td>`email_subject`</td>
    <td>The email's subject line.</td>
   </tr>
   <tr>
-   <td>campaign_id</td>
+   <td>`campaign_id`</td>
    <td>An ID used to identify a campaign.</td>
   </tr>
   <tr>
-   <td>campaign_name</td>
+   <td>`campaign_name`</td>
    <td>A name used to identify a campaign.</td>
   </tr>
   <tr>
-   <td>link_id</td>
+   <td>`link_id`</td>
    <td>ID of URL. Only for click event type.</td>
   </tr>
   <tr>
-   <td>link_name</td>
+   <td>`link_name`</td>
    <td>Name of URL. Only for click event.</td>
   </tr>
   <tr>
-   <td>list_id</td>
+   <td>`list_id`</td>
    <td>ID of List. Only for unsubscribe event type.</td>
   </tr>
   <tr>
-   <td>list_name</td>
+   <td>`list_name`</td>
    <td>Name of List. Only for unsubscribe event type.</td>
   </tr>
   <tr>
-   <td>timestamp</td>
+   <td>`timestamp`</td>
    <td>Date and time the event occurred.</td>
   </tr>
   <tr>
-   <td>sentAt</td>
+   <td>`sentAt`</td>
    <td>Date and time of event processing to Segment from Selligent Marketing Cloud.</td>
   </tr>
 </table>
