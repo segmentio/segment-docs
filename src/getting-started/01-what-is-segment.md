@@ -83,7 +83,7 @@ When you first log in to your Segment account, you can create a new workspace, o
 
 
 <div class="double">
-  {% include components/reference-button.html href="/getting-started/" newtab="false" newtab="false" icon="symbols/arrow-left.svg" title="Back: Getting Started Overview" description="" variant="related" %}
+  {% include components/reference-button.html href="/getting-started/" newtab="false" newtab="false" icon="symbols/arrow-left.svg" title="Getting Started Overview" description="" variant="related" subtitle="back" %}
 
-  {% include components/reference-button.html  href="/getting-started/02-simple-install/" newtab="false" icon="symbols/arrow-right.svg" title="Next: A simple Segment installation" description="Walk through a disposable, demo implementation." variant="related" %}
+  {% include components/reference-button.html  href="/getting-started/02-simple-install/" newtab="false" icon="symbols/arrow-right.svg" title="A simple Segment installation" description="Walk through a disposable, demo implementation." variant="related" subtitle="next" %}
 </div>

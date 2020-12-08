@@ -155,6 +155,26 @@ Add `{: .columns}` before a list you want to divide into two columns.
   %}
 </div>
 
+- **Back/Next buttons**
+
+<div class="double">
+  {% include components/reference-button.html
+    href="https://segment.com"
+    icon="symbols/arrow-left.svg"
+    title="What is Segment?"
+    description="The basics of the Segment platform and what you can do with it."
+    subtitle="back"
+  %}
+
+  {% include components/reference-button.html
+    href="https://segment.com"
+    icon="symbols/arrow-right.svg"
+    title="Planning a Full Installation"
+    description="Think through your goals, plan your calls, and set yourself up for success."
+    subtitle="next"
+  %}
+</div>
+
 - **Three columns layout** - created with `flex` utility
 
 <div class="flex flex--wrap gutter gutter--large">
@@ -238,16 +258,16 @@ console.log('example');
 
 ## Alerts
 
-> info ""
+> info "Info message."
 > This is a paragraph showing an information box with a blue information icon. Use this when providing useful details that help a reader understand what's going on, but don't require any immediate action.
 
-> success ""
+> success "Success message."
 > This is a paragraph showing an information box with a green checkmark icon. Use this when providing helpful information to a reader that could make their lives better, but that isn't required.
 
-> warning ""
+> warning "Warning message."
 > This is a paragraph showing an information box with an orange warning icon. Use these when you want to caution a reader about something that could have unintended, but not destructive, consequences.
 
-> error ""
+> error "Error message."
 > This is a paragraph showing an information box with a red hazard icon. Use this when warning a reader about destructive or non-reversible actions, like deleting a workspace or overwriting data. Don't use this too frequently, or else it makes the readers worry!
 
 ---

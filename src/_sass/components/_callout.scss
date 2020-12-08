@@ -72,11 +72,9 @@
 
   &__link-button {
     width: 100%;
-    border: solid 1px color(primary);
 
     @include breakpoint(xlarge up) {
       width: auto;
-      border: none;
     }
   }
 }
