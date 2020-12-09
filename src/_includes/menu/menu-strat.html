@@ -6,7 +6,7 @@
     <nav class="menu">
       <ul class="menu__list list list--unstyle">
         <li class="menu-item">
-          <a href="{{ site.baseurl }}/connections/destinations/catalog/" class="menu-item__link menu-item__link--small menu-item__link--highlight">Back to Connections</a>
+          <a href="{{ site.baseurl }}/connections/destinations/catalog/" class="menu-item__link menu-item__link--small menu-link--back">Back to Connections</a>
         </li>
       </ul>
     </nav>
@@ -15,7 +15,7 @@
       <ul class="menu__list list list--unstyle">
         {% for item in ourSection %}
           <li class="menu-item menu-item--gray menu-item--active menu-item--compact" data-accordion data-class-active="menu-item--active">
-            <button class="menu-item__link flex flex--middle flex--justify" data-ref="accordion[trigger]">
+            <button class="menu-item__link flex flex--middle flex--justify gutter gutter--small" data-ref="accordion[trigger]">
               <span class="flex__column">
                 {{ item.section_title }}
               </span>
