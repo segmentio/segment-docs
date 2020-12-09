@@ -67,6 +67,8 @@ Algolia supports the following six events from Segment's [Ecommerce Spec](https:
   </tr>
 </table>
 
+For a full list of required properties for each event type, see the [Spec: V2 Ecommerce Events](/docs/connections/spec/ecommerce/v2/)
+
 ```js
 analytics.track('Product List Viewed', {
     index: "my-index-name",
