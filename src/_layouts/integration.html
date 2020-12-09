@@ -69,7 +69,7 @@ layout: main
       <p class="last-modified">This page was last modified: {{ page.last_modified_at | date: '%d %b %Y' }}</p>
 
       {% if page.contributors %}
-        {% include components/avatar.html contributors=page.contributors %}
+        {% include components/recent-contributor.html contributors=page.contributors %}
       {% endif %}
 
       <hr>
