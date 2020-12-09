@@ -144,7 +144,7 @@ If you want to send user data that is sensitive or which you don't want to expos
 
 ### Aliasing from a server library
 
-If you plan to track anonymous visitors from the browser and only make [Identify calls](/docs/connections/spec/identify) from your server libraries, Kissmetrics and Mixpanel might require that you make an [Alias call](/docs/connections/spec/alias) to link the records. The Alias call links client-side anonymous visitors with server-identified users. This isn't recommended, but if you do this, read the [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#aliasing-new-users-server-side)and[Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias-using-cloud-mode) specific [alias](/docs/connections/spec/alias) docs.
+If you plan to track anonymous visitors from the browser and only make [Identify calls](/docs/connections/spec/identify) from your server libraries, Kissmetrics and Mixpanel might require that you make an [Alias call](/docs/connections/spec/alias) to link the records. The Alias call links client-side anonymous visitors with server-identified users. This isn't recommended, but if you do this, read the [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#aliasing-new-users-server-side) and [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias-using-cloud-mode) specific [alias](/docs/connections/spec/alias) docs.
 
 ### Common questions
 
@@ -160,4 +160,4 @@ This is usually caused by the page redirecting or reloading before the tracking 
 
 This is usually only an issue in [Mixpanel](/docs/connections/destinations/catalog/mixpanel#alias), since it's the only destination that requires a call to [alias](/docs/connections/spec/alias) in the browser to link anonymous browsing history to a new identified user.
 
-Remember that for destinations that require aliasing, you must make the [Alias call](/docs/connections/spec/alias) before you make the [Identify call](/docs/connections/spec/identify) for that user,. Even if you make an [Identify call](/docs/connections/spec/identify) from a server library, it can't happen before the client-side [alias](/docs/connections/spec/alias).
+Remember that for destinations that require aliasing, you must make the [Alias call](/docs/connections/spec/alias) before you make the [Identify call](/docs/connections/spec/identify) for that user. Even if you make an [Identify call](/docs/connections/spec/identify) from a server library, it can't happen before the client-side [alias](/docs/connections/spec/alias).
