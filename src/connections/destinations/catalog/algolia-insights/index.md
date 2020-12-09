@@ -101,7 +101,7 @@ analytics.track('Product Clicked', {
     // ... other required properties from the spec
 })
 
-analytics.track('Product Added, {
+analytics.track('Product Added', {
     objectID: "hit objectID",
     index: "my-index-name",
     queryID: "Algolia queryID", // required only for Click Analytics,
