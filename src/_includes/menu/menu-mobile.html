@@ -40,7 +40,7 @@
               {% assign integrations = site.data.catalog.destinations.items | where: "categories", category.display_name %}
 
               <li class="menu-item menu-item--gray menu-item--compact" data-accordion data-class-active="menu-item--active">
-                <button class="menu-item__link flex flex--middle flex--justify" data-ref="accordion[trigger]">
+                <button class="menu-item__link flex flex--middle flex--justify gutter gutter--small" data-ref="accordion[trigger]">
                   <span class="flex__column">
                     {{ category.display_name }}
                   </span>
@@ -84,7 +84,7 @@
               {% assign integrations = site.data.catalog.sources.items | where: "categories", category.display_name %}
 
               <li class="menu-item menu-item--gray menu-item--compact" data-accordion data-class-active="menu-item--active">
-                <button class="menu-item__link flex flex--middle flex--justify" data-ref="accordion[trigger]">
+                <button class="menu-item__link flex flex--middle flex--justify gutter gutter--small" data-ref="accordion[trigger]">
                   <span class="flex__column">
                     {{ category.display_name }}
                   </span>

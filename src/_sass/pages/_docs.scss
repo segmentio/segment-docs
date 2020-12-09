@@ -15,10 +15,6 @@
       background-color: color(gray-50);
       border-right: 1px solid color(gray-300);
     }
-
-    & > * + * {
-      margin-top: 40px;
-    }
   }
 
   &__navbar {

@@ -7,7 +7,7 @@
     <nav class="menu">
       <ul class="menu__list list list--unstyle">
         <li class="menu-item">
-          <a href="{{ site.baseurl }}/connections/sources/catalog/" class="menu-item__link menu-item__link--small menu-item__link--highlight">Back to Connections</a>
+          <a href="{{ site.baseurl }}/connections/sources/catalog/" class="menu-item__link menu-item__link--small menu-item__link--back">Back to Connections</a>
         </li>
       </ul>
     </nav>
@@ -19,7 +19,7 @@
   
         {% for category in promoted_categories %}
           <li class="menu-item menu-item--gray menu-item--compact {% if currentIntegration.categories contains category and activeState != true %}{% assign activeState = true %}menu-item--active{% endif %}" data-accordion data-class-active="menu-item--active">
-            <button class="menu-item__link flex flex--middle flex--justify" data-ref="accordion[trigger]">
+            <button class="menu-item__link flex flex--middle flex--justify gutter gutter--small" data-ref="accordion[trigger]">
               <span class="flex__column">
                 {{ category }}
               </span>
