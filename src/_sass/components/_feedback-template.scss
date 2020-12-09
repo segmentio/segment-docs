@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 15px 10px 10px;
+  padding: 10px 5px 5px 10px;
   transition: 200ms ease;
 
   &__textarea {
@@ -13,7 +13,7 @@
     outline: none;
 
     &::placeholder {
-      color: #8ea5a9;
+      color: color(gray-600);
     }
   }
 }
