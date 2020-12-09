@@ -10,10 +10,13 @@
   }
 
   &__title {
+    font-size: 20px;
+
     svg {
       width: 24px;
       height: 24px;
-      color: color(secondary);
+      color: color(gray-600);
+      margin-right: 8px;
     }
   }
 }
