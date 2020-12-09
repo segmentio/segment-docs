@@ -69,11 +69,11 @@ Algolia supports the following six events from Segment's [Ecommerce Spec](https:
 
 ```js
 analytics.track('Product List Viewed', {
+    index: "my-index-name",
+    queryID: "Algolia queryID", // required only for Click Analytics,
     products: [{
         objectID: "hit objectID",
-        position: hitPositionOnIndex,  // number
-        index: "my-index-name",
-        queryID: "Algolia queryID" // required only for Click Analytics,
+        // ... other required properties from the spec
     }]
 })
 
@@ -81,36 +81,44 @@ analytics.track('Product List Filtered', {
     index: "my-index-name",
     filters: [
         { type : "free_delivery", value: "true" }
-    ]
+    ],
+    // ... other required properties from the spec
 })
 
 analytics.track('Product Viewed', {
     objectID: "hit objectID",
-    position: hitPositionOnIndex,  // number
     index: "my-index-name",
-    queryID: "Algolia queryID" // required only for Click Analytics,
+    queryID: "Algolia queryID", // required only for Click Analytics,
+    // ... other required properties from the spec
 })
 
 
 analytics.track('Product Clicked', {
     objectID: "hit objectID",
-    position: hitPositionOnIndex,  // number
+    position: hitPositionOnIndex, // number
     index: "my-index-name",
-    queryID: "Algolia queryID" // required only for Click Analytics,
+    queryID: "Algolia queryID", // required only for Click Analytics,
+    // ... other required properties from the spec
 })
 
 analytics.track('Product Added, {
     objectID: "hit objectID",
     index: "my-index-name",
-    queryID: "Algolia queryID" // required only for Click Analytics,
+    queryID: "Algolia queryID", // required only for Click Analytics,
+    // ... other required properties from the spec
 })
 
 analytics.track('Order Completed', {
-    objectID: "hit objectID",
     index: "my-index-name",
-    queryID: "Algolia queryID" // required only for Click Analytics,
+    queryID: "Algolia queryID", // required only for Click Analytics,
+    products: [
+        {
+            objectID: "hit objectID",
+            // ... other required properties from the spec
+        },
+        // ...
+    ]
 })
-
 ```
 
 Track calls will be sent to Algolia as a `track` event, and appear in your Click Analytics, A/B Testing and Personalization dashboard.
