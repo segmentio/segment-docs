@@ -38,11 +38,6 @@ defaults:
       landing: true
       layout: integration
 
-premonition:
-  types:
-    success:
-      default_title: "Default title"
-
 plugins_dir: ./_plugins
 plugins:
   - jekyll-sitemap
