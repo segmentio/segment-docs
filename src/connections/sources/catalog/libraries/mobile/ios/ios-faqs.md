@@ -23,7 +23,7 @@ To install manually:
 ![](images/embeddedbinaries.png)
 
 
-Once you install the framework, import the header file and install as described in [Install the SDK](https://segment.com/docs/connections/sources/catalog/libraries/mobile/\install-the-sdk).
+Once you install the framework, import the header file and install as described in [Install the SDK](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios#install-the-sdk).
 
 If you choose not to use a dependency manager, you must manually keep files up-to-date with regularly scheduled, manual updates.
 
