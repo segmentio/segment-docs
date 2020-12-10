@@ -178,75 +178,43 @@
   table {
     border-collapse: collapse;
     text-align: left;
-    overflow-x: scroll;
-    display: block;
-
-    @include breakpoint(medium up) {
-      overflow: auto;
-      display: table;
-    }
+    display: table;
 
     td {
-      color: color(secondary-dark);
+      color: color(gray-800);
       vertical-align: top;
       line-height: 26px;
       word-wrap: break-word;
       font-size: 12px;
+      line-height: 14px;
+      padding: 12px;
 
       @include breakpoint(medium up) {
         word-wrap: normal;
         font-size: 14px;
+        line-height: 16px;
+        padding: 24px;
       }
     }
 
     thead {
-      font-weight: 500;
       background-color: color(gray-50);
-      border-radius: 4px;
-      font-weight: 500;
-      line-height: 1.71;
-      padding: 12px;
-    }
-
-    tbody {
-      line-height: 1.73;
-      padding: 12px;
-    }
-
-    th, td {
-      padding: 5px 10px;
-
-      &:first-of-type {
-        padding-left: 5px;
-        min-width: 150px;
-      }
-
-      &:last-of-type {
-        padding-right: 5px;
-      }
-
-      @include breakpoint(medium up) {
-        padding: 10px 25px;
-
-        &:first-of-type {
-          padding-left: 15px;
-        }
-
-        &:last-of-type {
-          padding-right: 15px;
-        }
-      }
+      font-size: 10px;
+      text-transform: uppercase;
     }
 
     th {
-      padding-top: 13px;
-      padding-bottom: 13px;
+      color: color(gray-700);
+      font-weight: 500;
+      padding: 12px;
+
+      @include breakpoint(medium up) {
+        padding: 16px 24px;
+      }
     }
 
-    tbody {
-      tr {
-        border-bottom: 1px solid rgba(color(secondary), 0.1);
-      }
+    tr {
+      border: 1px solid color(gray-300);
     }
   }
 
