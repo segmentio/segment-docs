@@ -8,14 +8,14 @@
   &__list {
     overflow-y: auto;
     max-height: calc(100vh - 400px);
+
+    & > * + * {
+      margin-top: 12px;
+    }
   }
 
   &__item {
-    color: color(gray-700);
-
-    & + & {
-      margin-top: 13px;
-    }
+    color: color(gray-600);
 
     svg {
       width: 14px;
@@ -27,16 +27,10 @@
     }
   }
 
-  &__icon {
-    width: 14px;
-    margin-right: 8px;
-    margin-top: 3px;
-  }
-
   &__link {
     width: 100%;
     color: inherit;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 20px;
     text-decoration: none;
 
@@ -46,7 +40,7 @@
     }
 
     &:hover {
-      color: color(primary);
+      color: color(gray-700);
       text-decoration: none;
     }
   }

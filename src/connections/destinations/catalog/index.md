@@ -16,7 +16,7 @@ menu_icon: "read-more"
     <div class="destinations-catalog__section markdown">
       {% assign category_icon = category.slug | slugify %}
 
-      <h2 class="destinations-catalog__title" id="{{ category.slug | slugify }}">
+      <h2 class="destinations-catalog__title flex flex--middle" id="{{ category.slug | slugify }}">
         {% include icons/destinations-catalog/{{ category_icon }}.svg %}
 
         {{ category.display_name }}
