@@ -23,7 +23,7 @@ To install manually:
 ![](images/embeddedbinaries.png)
 
 
-Once you install the framework, import the header file and install as described in [Install the SDK](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#install-the-sdk).
+Once you install the framework, import the header file and install as described in [Install the SDK](https://segment.com/docs/connections/sources/catalog/libraries/mobile/\install-the-sdk).
 
 If you choose not to use a dependency manager, you must manually keep files up-to-date with regularly scheduled, manual updates.
 
@@ -243,7 +243,7 @@ Analytics.shared().track("Clicked Button", properties: nil, options: ["context":
 
 ## How can I get the user’s IDFA?
 
-Some destinations, especially mobile attribution tools (e.g. Kochava), require the IDFA (identifier for advertisers). The IDFA appears in Segment calls in the debugger as `context.device.advertisingId`. To capture this value with Analytics-iOS, follow the steps in [Ad-tracking and IDFA](/docs/connections/sources/catalog/libraries/mobile/ios/#ad-tracking-and-idfa).  Remember that Apple now requires that the user consent to your tracking before you can collect the IDFA.
+Some destinations, especially mobile attribution tools (e.g. Kochava), require the IDFA (identifier for advertisers). The IDFA appears in Segment calls in the debugger as `context.device.advertisingId`. To capture this value with Analytics-iOS, follow the steps in [Ad-tracking and IDFA](/docs/connections/sources/catalog/libraries/mobile/ios#ad-tracking-and-idfa).  Remember that Apple now requires that the user consent to your tracking before you can collect the IDFA.
 
 
 
