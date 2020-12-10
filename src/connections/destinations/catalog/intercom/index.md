@@ -525,12 +525,8 @@ To send computed traits or audiences to Intercom, you first must connect it to y
 
 1. In your Segment workspace, click Personas in the left navigation bar, and select your Personas space.
 2. Click **Destinations** in your Personas space and click **Add Destination**.
-   ![](images/pers-2-addbutton.png)
-
 3. Search for Intercom and click it when it appears in the search results
-   ![](images/pers-3-intercom-pdest.png)
 4. Click **Configure Intercom**.
-   ![](images/pers-4-config.png)
 5. Click **Connect to Intercom**.
    ![](images/pers-5-connect.png)
 6. Log in to Intercom to allow Segment to send data to Intercom.
