@@ -20,20 +20,20 @@ redirect_from:
       <h2 class="destinations-catalog__title" id="{{ category | slugify }}">
         {{ category }}
       </h2>
-      <div class="flex flex--wrap waffle waffle--large">
+      <div class="flex flex--wrap waffle waffle--xlarge">
         {% assign integrations = site.data.catalog.sources.items | where: "categories", category %}
         {% for integration in integrations %}
-          <div class="flex__column flex__column--6 flex__column--4@medium">
+          <div class="flex__column flex__column--6">
             <a class="thumbnail-integration" href="{{ site.baseurl }}/{{ integration.url }}">
-              <div class="thumbnail-integration__content flex flex--stack flex--center flex--middle">
-                <div class="thumbnail-integration__logo">
+              <div class="thumbnail-integration__content flex flex--wrap flex--middle gutter gutter--xlarge">
+                <div class="flex__column flex__column--12 flex__column--2@medium thumbnail-integration__logo-wrapper">
                   {% if integration.logos.mark != '' %}
-                    <img class="image" alt="{{integration.display_name}}" src="{{integration.logo.url}}" />
+                    <img class="thumbnail-integration__logo image" alt="{{integration.display_name}}" src="{{integration.logo.url}}" />
                   {% else %}
-                    <img class="image" alt="{{integration.display_name}}" src="{{integration.logo.url}}" />
+                    <img class="thumbnail-integration__logo image" alt="{{integration.display_name}}" src="{{integration.logo.url}}" />
                   {% endif %}
                 </div>
-                <h5>{{ integration.display_name }}</h5>
+                <h5 class="flex__column flex__column--12 flex__column--10@medium">{{ integration.display_name }}</h5>
               </div>
               {% if integration.status == 'PUBLIC_BETA' %}
                 <p class="thumbnail-integration__label">Beta</p>
@@ -50,21 +50,21 @@ redirect_from:
     <h2 class="destinations-catalog__title" id="cloud-apps">
       Cloud-apps
     </h2>
-    <div class="flex flex--wrap waffle waffle--large">
+    <div class="flex flex--wrap waffle waffle--xlarge">
       {% assign integrations = site.data.catalog.sources.items %}
       {% for integration in integrations %}
         {% unless integration.categories contains promoted_categories[0] or integration.categories contains promoted_categories[1] or integration.categories contains promoted_categories[2] or integration.categories contains promoted_categories[3]%}
-          <div class="flex__column flex__column--6 flex__column--4@medium">
+          <div class="flex__column flex__column--6">
             <a class="thumbnail-integration" href="{{ site.baseurl }}/{{ integration.url }}">
-              <div class="thumbnail-integration__content flex flex--stack flex--center flex--middle">
-                <div class="thumbnail-integration__logo">
+              <div class="thumbnail-integration__content flex flex--wrap flex--middle gutter gutter--xlarge">
+                <div class="flex__column flex__column--12 flex__column--2@medium thumbnail-integration__logo-wrapper">
                   {% if integration.logos.mark != '' %}
-                    <img class="image" alt="{{integration.display_name}}" src="{{integration.logo.url}}" />
+                    <img class="thumbnail-integration__logo image" alt="{{integration.display_name}}" src="{{integration.logo.url}}" />
                   {% else %}
-                    <img class="image" alt="{{integration.display_name}}" src="{{integration.logo.url}}" />
+                    <img class="thumbnail-integration__logo image" alt="{{integration.display_name}}" src="{{integration.logo.url}}" />
                   {% endif %}
                 </div>
-                <h5>{{ integration.display_name }}</h5>
+                <h5 class="flex__column flex__column--12 flex__column--10@medium">{{ integration.display_name }}</h5>
               </div>
               {% if integration.status == 'PUBLIC_BETA' %}
                 <p class="thumbnail-integration__label">Beta</p>

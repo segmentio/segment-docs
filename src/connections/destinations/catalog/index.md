@@ -22,23 +22,23 @@ menu_icon: "read-more"
         {{ category.display_name }}
       </h2>
 
-      <div class="flex flex--wrap waffle waffle--large">
+      <div class="flex flex--wrap waffle waffle--xlarge">
         {% assign destinations = site.data.catalog.destinations.items | where: "categories", category.display_name %}
 
         {% for destination in destinations %}
           {% if destination.status contains "PUBLIC" or destination.status contains "BETA" %}
-            <div class="flex__column flex__column--6 flex__column--4@medium">
+            <div class="flex__column flex__column--6">
               <a class="thumbnail-integration" href="{{ site.baseurl }}/{{ destination.url }}/">
-                <div class="thumbnail-integration__content flex flex--stack flex--center flex--middle">
-                  <div class="thumbnail-integration__logo">
+                <div class="thumbnail-integration__content flex flex--wrap flex--middle gutter gutter--xlarge">
+                  <div class="flex__column flex__column--12 flex__column--2@medium thumbnail-integration__logo-wrapper">
                     {% if destination.mark.url != '' %}
-                      <img class="image" alt="{{ destination.display_name }}" src="{{ destination.mark.url }}">
+                      <img class="thumbnail-integration__logo image" alt="{{ destination.display_name }}" src="{{ destination.mark.url }}">
                     {% else %}
-                      <img class="image" alt="{{ destination.display_name }}" src="{{ destination.logo.url }}">
+                      <img class="thumbnail-integration__logo image" alt="{{ destination.display_name }}" src="{{ destination.logo.url }}">
                     {% endif %}
                   </div>
 
-                  <h5>{{ destination.display_name }}</h5>
+                  <h5 class="flex__column flex__column--12 flex__column--10@medium">{{ destination.display_name }}</h5>
                 </div>
 
                 {% if destination.status == 'PUBLIC_BETA' %}
