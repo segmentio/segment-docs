@@ -15,6 +15,9 @@ addDestinationMiddleware(targetIntegration, [middleware1, middleware2, ...])
 
 The first function (Source Middleware) allows you to manipulate the payload and filter events on a per-source basis, while the second function (Destination Middleware) allows this on a per destination basis. Middlewares run in the browser.
 
+> info ""
+> **Note**: Destination-middleware only act on [data sent to destinations in device-mode](/docs/connections/destinations#connection-modes). Since the destination middleware code exists in your app or project, it cannot transform the data sent from the Segment servers to the destination endpoint.
+
 ## Using Source Middlewares
 
 The function signature for creating Source Middleware has three parameters:
@@ -53,8 +56,8 @@ var DMW1 = function({ payload, integration, next }) {
 };
 ```
 
-> note ""
-> Currently only Device-mode Destinations are supported by Destination Middlewares
+> info ""
+> **Note**: Destination-middleware only act on [data sent to destinations in device-mode](/docs/connections/destinations#connection-modes). Since the destination middleware code exists in your app or project, it cannot transform the data sent from the Segment servers to the destination endpoint.
 
 ## Adding middlewares to Analytics.js
 
