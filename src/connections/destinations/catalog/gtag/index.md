@@ -4,6 +4,7 @@ beta: true
 hidden: true
 strat: google
 ---
+
 > note ""
 > The Gtag Destination is in a closed Early Access Preview. To join the preview, contact [Segment Support](https://segment.com/help/contact/) or your CSM. The use is governed by [(1) Segment First Access](/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](/docs/legal/acceptable-use-policy/).
 
@@ -73,12 +74,12 @@ In this example the `User-ID` is `12345` for Google Analytics, but Segment won't
 > If you pass an **email**, **phone number**, **full name** or other PII as the `id` in [Identify](/docs/connections/spec/identify) do not use this feature. That is against the Google Analytics terms of service and Google may suspend your service.
 
 ### Custom dimensions
-Google Analytics has several scopes for each custom dimension: 
+Google Analytics has several scopes for each custom dimension:
 
 - hit (synonymous with events)
 - session
 - user
-- product (requires enabling enhanced ecommerce). 
+- product (requires enabling enhanced ecommerce).
 
 Segment's device-mode Analytics.js library supports them all.
 
@@ -89,7 +90,7 @@ To configure a custom dimension:
 1. Configure the Custom Dimensions in your Google Analytics admin page. For more information about creating custom dimensions in Google Analytics, see the Google support article [here](https://support.google.com/analytics/answer/2709829?hl=en).
 2. After you've enabled Google Analytics in Segment, you can map traits and properties to your custom dimensions.
 3. From your Segment Workspace, open the destinations catalog and select the Gtag destination, then Settings. Locate Custom Dimensions and declare the mapping.
-  
+
     For example, to map a **Gender** property to dimension `1` and **User Type** to dimension `2`, make the following mappings in both Segment and Google Analytics:
 
     In Segment:
@@ -158,7 +159,7 @@ Segment sends these event attributes to Google Analytics:
 
 ### Non-interaction events
 
-To create an event with the `nonInteraction` flag pass an event property labeled `nonInteraction` with the value of 1. Alternatively, you can set events as non-interactive by default in the destination settings. 
+To create an event with the `nonInteraction` flag pass an event property labeled `nonInteraction` with the value of 1. Alternatively, you can set events as non-interactive by default in the destination settings.
 
 For example:
 
@@ -504,7 +505,7 @@ Segment handles tracking the canonical URL to Google Analytics for you automatic
 
 If you'd like to integrate with Google Analytics' [Optimize plugin](https://support.google.com/360suite/optimize/answer/6262084#optimize-ga-plugin), insert your **Optimize Container ID** in the destination settings and Segment will require the plugin when Google Analytics initializes.
 
-You may want to deploy Google's [anti-flickering snippet](https://support.google.com/optimize/answer/7100284) to prevent the page from flashing / flickering when the A/B test loads, as recommended by Google. You must add this code manually, since it needs to load synchronously. 
+You may want to deploy Google's [anti-flickering snippet](https://support.google.com/optimize/answer/7100284) to prevent the page from flashing / flickering when the A/B test loads, as recommended by Google. You must add this code manually, since it needs to load synchronously.
 
 > note ""
 > Include the Optimize container ID in this snippet.

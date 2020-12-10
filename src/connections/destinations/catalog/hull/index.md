@@ -11,22 +11,22 @@ It helps you creates a single actionable profile and uniform segments that sync 
 Hull receives data from Segment using the **Segment Ship**. Here's how to install it:
 
 Install the Segment Ship on your organization. If you just installed Hull, click on "Add a ship" on the overview page.
-![Home](https://segment.hull.io/home.png)
+![Home](images/home.png)
 
 Pick the **Segment** Ship from the list.
-![List](https://segment.hull.io/ship_list.png)
+![List](images/ship_list.png)
 
 Enter the Segment ship Settings, Copy the API Key
-![Segment](https://segment.hull.io/ship_segment.png)
+![Segment](images/ship_segment.png)
 
 Paste it into your destinations page. Alternatively, just click the "Enable with Segment" button.
-![Segment](https://segment.hull.io/segment.png)
+![Segment](images/segment.png)
 
 ## Tracking Data from anonymous users and Leads
 
 Enable **Guest Users** in your Dashboard's **Settings > User Authentication > Login Options**. This will create users for each `identify` call, even those without a User ID which is useful to track Leads.
 
-![Guest](https://segment.hull.io/guest.png)
+![Guest](images/guest.png)
 
 This is disabled by default because it can greatly increase the number of users in your database. When enabled, users will be tracked from their very first visit and action, allowing you to build segments based on complete customer journeys.
 

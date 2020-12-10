@@ -18,7 +18,7 @@ hide-boilerplate: true
 | [Google Ads (Gtag)](/docs/connections/destinations/catalog/google-adwords-new/)          | No                        |
 | [Google Ads (Classic)](/docs/connections/destinations/catalog/google-ads-classic/)       | Yes - Event Destination   |
 | [Google Analytics](/docs/connections/destinations/catalog/google-analytics/)             | Yes - Event Destination   |
-| Google Adwords Remarketing Lists        | Yes - Event Destination   |
+| Google Adwords Remarketing Lists        | Yes - List Destination   |
 
 
 
@@ -100,7 +100,6 @@ Before you start, make sure you have administrative access to the Adwords accoun
 ### 1. Add Adwords Remarketing Lists as a Personas Destination**
 
 1. Navigate to the Destinations section of your Personas space, and click **Add Destination**.
-![](images/garl-add_dest.png)
 
 2. Search for “Adwords Remarketing Lists” and click **Configure**.
 

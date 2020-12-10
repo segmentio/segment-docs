@@ -323,18 +323,14 @@ GRANT CREATE, TEMPORARY ON DATABASE <enter database name here> TO segment;
 
     Visit the [Segment Workspaces screen](http://segment.com/workspaces). Click the workspace you'd like the database to be associated with.
 
-    <img src="images/segment1.png" width="500">
-
 
 2. Click **Add Destination**.
 
     In the Workspace, you can find the button beside the Destinations.
 
-    <img src="images/segment2.png" width="500">
 
 3. Either select "Warehouses" categories from the left-hand sidebar, or use the search field and look for "Postgres".
 
-    ![](images/segment3.png)
 
 4. Configure the Database Connection.
 
@@ -350,7 +346,7 @@ GRANT CREATE, TEMPORARY ON DATABASE <enter database name here> TO segment;
 
 {% include content/warehouse-sync-sched.md %}
 
-![](images/segment5.png)
+![](/docs/connections/destinations/catalog/images/syncsched.png)
 
 
 ## Security

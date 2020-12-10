@@ -251,8 +251,6 @@ We require that each row of the query corresponds to a unique user. We throw thi
 
 ### I am seeing some users/accounts in my preview with questions marks. What does that mean?
 
-![](images/troubleshoot4.png)
-
 This could mean one of two things:
 
 **1. We haven't seen this `user_id`/`group_id` before in Personas**
