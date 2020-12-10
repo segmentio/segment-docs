@@ -21,19 +21,22 @@ This document has four parts…
 4. [**Personalization**](/docs/personas/profile-api/#recommended-implementation): Example personalization solution built on Personas using server-side personalization
 
 ## Product Highlights
-1. **Realtime Access** - fetch your entire user profile
-2. **Realtime Data** — query streaming data on the user profile that happened seconds ago
+1. **Fast response times** - fetch traits from a user profile under 200ms
+2. **Real-time Data** — query streaming data on the user profile
 3. **One Identity** — query an end user's interactions across web, mobile, server, and third party touch-points
-4. **Rich Data** — query any amount of custom events or user traits
-5. **Any External ID** — the API supports query from any external ID: email, user_id, advertising IDs, anonymous_id, and any custom external ID.
+4. **Rich Data** — query user traits, audiences, and events
+5. **Any External ID** — the API supports query from user_id, advertising IDs, anonymous_id, and custom external IDs.
 
 ## Quickstart
 
+> warning ""
+> **Important**: The Profile API is intended to be used server-side. You should not implement directly in client applications. See best practices section for more details
+
 ### Set up Access
-Your access secret allows you to call the Segment API and access customer data.  We do not recommend exposing this key in client applications (see the end of this section for more details).
+Your access secret allows you to call the Profile API and access customer data.
 
+1.  Go to _Personas > Settings > API Access_: `https://app.segment.com/<your-workspace>/personas/spaces/<your-space>/settings/api-access` (replace <your-workspace> with your own workspace and <your-space> with your space name).
 
-1.  Go to _Personas > Settings > API Access_: `https://app.segment.com/<your-workspace>/personas/settings` (replace <your-workspace> with your own workspace).
 2.  Create your **Access Secret** with name, for e.g. `testing/development`
 
     ![](images/1516309197043.png)
@@ -42,60 +45,54 @@ Your access secret allows you to call the Segment API and access customer data. 
     ![](images/1526362840437.png)
 
 4.  Profile API request URLs require your space ID. For example:
-    `https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/<external_id>/events`
-
-    Your namespace ID can be found here: [https://app.segment.com/goto-my-workspace/personas/spaces/default/settings/api-access](https://app.segment.com/goto-my-workspace/personas/spaces/default/settings/api-access)
-
-      ![](images/space_ID_location.png)
+    `https://profiles.segment.com/v1/spaces/<your-space-id>/collections/users/profiles/<external_id>/events`
 
 
 **B. Find a user's external id**
 
-1. Head over to Personas > Explorer: `https://app.segment.com/<your-workspace>/personas/explorer` (replace **your-workspace** with your own workspace slug)
+1. Head over to Personas > Explorer: `https://app.segment.com/<your-workspace>/personas/spaces/<your-space>/explorer`
 2. And press on any interesting user in the list.
-3. Copy their `external_id` (ex: `email:bob@example.com`)
-![](images/1516310549937.png)
-![](images/1516310623462.png)
+3. Copy their `external_id` (ex: `user_id:9800664881`)
+![](images/profile_api_user_id.png)
 
 **C. Query the user's event history**
 
-1.  Download and open [Postman](https://www.getpostman.com/), a nice app for exploring HTTP APIs
-2.  Create your Postman GET request to query the user's event's history:
+1.  Download and open [Postman](https://www.getpostman.com/), an app for exploring HTTP APIs
+2.  Create your Postman GET request to query the user's traits:
     i. The URL is:
-       `https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/<external_id>/events`
+       `https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/<external_id>/traits`
 
-    ii. Replace `<your-namespace-id>` with your own namespace id found here:
+    ii. Replace `<your-space-id>` with your own namespace id found here:
          [https://app.segment.com/goto-my-workspace/personas/spaces/default/settings/api-access](https://app.segment.com/goto-my-workspace/personas/spaces/default/settings/api-access)
 
 
-    iii. Replace `<id_type:ext_id>` with your external id type and id pair from step B
+    iii. Replace `<id_type:ext_id>` with your external id type and id pair from step B, for e.g. `user_id:9800664881`
 
     iv. Copy your **Access Secret** from step (A) into the _Basic Auth > Username field_. Leave Password empty.
 
 
-    ![](images/postman_basic_auth.png)
+    ![](images/profile_api_request_eg.png)
 
 3.  Press the Send button in Postman.
 
-**D. Explore the user's event history in the response**
+**D. Explore the user's traits in the response**
 
-![](images/1516310954286.png)
-
+![](images/profile_api_traits_example.png)
 
 **E. Explore more of the API**
 
 **Search by an External ID**
-You can query directly by a user's email or user_id:
+You can query directly by a user's user_id or other external_id.
 
-`https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/email:user@example.com/events`
+`https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/user_id:u1234567/events`
 
 
 `https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/user_id:u1234567/events`
 
 **External IDs**
-You can query all of a user's external ids (email, anonymous_id, user_id):
+You can query all of a user's external ids (anonymous_id, user_id, ios.):
 
-`https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/email:user@example.com/external_ids`
+`https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/user_id:u1234567/external_ids`
 
 **Traits**
 You can query a user's traits (first_name, last_name, ...):
@@ -103,7 +100,7 @@ You can query a user's traits (first_name, last_name, ...):
 
 `https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/<your-segment-id>/traits`
 
-By default, we will include 20 traits. You can return up to 200 traits by appending `?limit=200` to the querystring. If you wish to return a specific trait, append `?include={trait}` to the querystring (eg `?include=age`).
+By default, we will include 20 traits. You can return up to 200 traits by appending `?limit=200` to the querystring. If you wish to return a specific trait, append `?include={trait}` to the querystring (eg `?include=age`). You can also use the ``?class=audience​`` or ``?class=computed_trait​`` to retrieve audiences or computed traits specifically.
 
 **Metadata**
 You can query all of a user's metadata (created_at, updated_at, ...):
@@ -129,9 +126,8 @@ You can also request using cURL:
 ```bash
 export SEGMENT_ACCESS_SECRET="YOUR_API_ACCESS_TOKEN_SECRET_HERE"
 
-curl https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/<your-segment-id>/events -u $SEGMENT_ACCESS_SECRET:
+curl https://profiles.segment.com/v1/spaces/<your-space-id>/collections/users/profiles/<your-segment-id>/traits -u $SEGMENT_ACCESS_SECRET:
 ```
-
 
 ## API Reference
 
@@ -172,7 +168,7 @@ Segment  uses conventional HTTP response codes to indicate the success or failur
 | **400 - Bad Request**                  | The request was unacceptable, often due to missing a required parameter.                         |
 | **401 - Unauthorized**                 | No valid Access Secret provided.                                                                 |
 | **404 - Not Found**                    | The requested resource doesn't exist.                                                            |
-| **429 - Too Many Requests**            | Too many requests hit the API too quickly. We recommend an exponential backoff of your requests.    |
+| **429 - Too Many Requests**            | Too many requests hit the API too quickly. We recommend an exponential backoff of your requests. By default, each space has a limit of 100 requests/sec. Please contact friends@segment.com if you need a higher limit with details around your use case.   |
 | **500, 502, 503, 504 - Server Errors** | Something went wrong on Segment's side.                                    |
 
 **Error Body**
@@ -195,7 +191,7 @@ Segment  uses conventional HTTP response codes to indicate the success or failur
 
 ### Rate Limit
 
-Every Space has a default rate limit of 60,000 requests/min. That limit can be adjusted over time.
+To ensure low response times, every Space has a default rate limit of 100 requests/sec. Please contact friends@segment.com if you need a higher limit with details around your use case.
 
 
 ### Pagination
@@ -222,7 +218,7 @@ All top-level API resources have support for bulk fetches using "list" API metho
 Each API request has an associated request identifier. You can find this value in the response headers, under `Request-Id`. **If you need to contact us about a specific request, providing the request identifier will ensure the fastest possible resolution.**
 
 ```bash
-curl -i https://profiles.segment.com/v1/spaces/<namespace_id>/collections/users/profiles
+curl -i https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles
 HTTP/1.1 200 OK
 Date: Mon, 01 Jul 2013 17:27:06 GMT
 Status: 200 OK
@@ -233,11 +229,11 @@ Request-Id: 1111-2222-3333-4444
 
 | **Name**                     | **Route** https://profiles.segment.com/v1/spaces/:space_id:/ ... |
 | ---------------------------- | -------------------------------------------------------------------- |
-| Get a Profile's Traits       | collections/users/profiles/email:amir@segment.com/traits             |
-| Get a Profile's External IDs | collections/users/profiles/email:amir@segment.com/external_ids       |
-| Get a Profile's Metadata     | collections/users/profiles/email:amir@segment.com/metadata           |
-| Get a Profile's Events       | collections/users/profiles/email:amir@segment.com/events             |
-| Get a Profile's Links        | collections/users/profiles/email:amir@segment.com/links              |
+| Get a Profile's Traits       | collections/users/profiles/user_id:u1234567/traits             |
+| Get a Profile's External IDs | collections/users/profiles/user_id:u1234567/external_ids       |
+| Get a Profile's Metadata     | collections/users/profiles/user_id:u1234567/metadata           |
+| Get a Profile's Events       | collections/users/profiles/user_id:u1234567/events             |
+| Get a Profile's Links        | collections/users/profiles/user_id:u1234567/links              |
 
 #### Get a Profile's Traits
 
@@ -248,10 +244,10 @@ GET /v1/spaces/<namespace_id>/collections/<users>/profiles/<external_id>/traits
 ```
 
 **Examples**
-Here's what it looks to search for a profile's traits by an external id, like by an `email`:
+Here's what it looks to search for a profile's traits by an external id, like  an `anonymous_id`:
 
 ```
-GET /v1/spaces/lg8283283/collections/users/profiles/email:amir@segment.com/traits
+GET /v1/spaces/lg8283283/collections/users/profiles/anonymous_id:a1234/traits
 ```
 
 Or a `user_id`:
@@ -322,13 +318,12 @@ And when ?**verbose=true** mode on:
 
 **Query Parameters**
 
-| **Argument** | **Description**                                     | **Example**     |
-| ------------ | --------------------------------------------------- | --------------- |
-| `include`    | A comma-separated list of property keys to include. | first_name,city |
-| `verbose`    | True for verbose field selection                    | true,false      |
-| `limit`      | Defines how many traits are returned in one call    | 100             |
-
-
+| **Argument** | **Description**                                          | **Example**     |
+| ------------ | -------------------------------------------------------- | --------------- |
+| `include`    | A comma-separated list of property keys to include.      | first_name,city |
+| `class`      | Supports returning all audiences, or all computed traits | class=audience or class=computed_trait              |
+| `verbose`    | True for verbose field selection                         | true,false      |
+| `limit`      | Defines how many traits are returned in one call         | 100             |
 
 #### Get a Profile's External IDs
 
@@ -384,7 +379,7 @@ curl https://profiles.segment.com/v1/spaces/:namespace_id:/collections/users/pro
 
 | **Argument** | **Description**                                        | **Example**   |
 | ------------ | ------------------------------------------------------ | ------------- |
-| `include`    | A comma-separated list of external id type to include. | user_id,email |
+| `include`    | A comma-separated list of external id type to include. | user_id,anonymous_id |
 | `verbose`    | True for verbose field selection                       | true,false    |
 | `limit`      | Defines how many external ids are returned in one call | 100           |
 
@@ -392,7 +387,7 @@ curl https://profiles.segment.com/v1/spaces/:namespace_id:/collections/users/pro
 
 #### Get a Profile's Events
 
-Get a single profile's events within a collection using an `external_id`.
+Get up to 14 days of a profile's historical events within a collection using an `external_id`.
 
 ```
     GET /v1/spaces/<namespace_id>/collections/<users>/profiles/<external_id>/events
@@ -605,26 +600,20 @@ GET /v1/spaces/<namespace_id>/collections/<users>/profiles/<external_id>/links
 }
 ```
 
-## Personalization
+## Best Practices
 ###  Recommended Implementation
 
-Segment provides an API where customers can fetch data about their users given an identifier (e.g email or user id) and an authorized access secret. We recommend you integrate using a server-side personalization pattern.
-
+Since the Profile API has access to all of a customer's data, we do not support CORS and ask that you do not expose the access secret (e.g. in a client-side app). We advise engineers implementing this API to create a personalization service in their infrastructure that other apps, websites or services communicate with to fetch personalizations about their users.
 
 ![Server-side Personalization](https://www.lucidchart.com/publicSegments/view/25df2e70-a666-4581-8f86-1a000dbf1f49/image.png)
-
-
-Since this API has access to all of a customer's data, we do not support CORS and ask that you do not expose the access secret (e.g. in a client-side app). We advise customers to create personalization service in their infrastructure that other apps, websites or services communicate with to fetch personalizations about their users.
-
 
 ### Example Workflow
 
 If you want to display the most relevant blog posts given a reader's favorite blog category:
 
-
-1.  **Create a computed trait** `favorite_blog_category` **in Segment UI** [Marketer or Engineer]
+1.  **Create a computed trait** `favorite_blog_category` **in the Personas UI** [Marketer or Engineer]
 2.  **Create** `/api/recommended-posts` **in customer-built personalization service** [Engineer]
-    - Accept `user_id`, `email` or `anonymous_id` to fetch `favorite_blog_category` using API
+    - Accept `user_id`, `anonymous_id` to fetch `favorite_blog_category` using API
     - Return array of most recent posts of that category to render in recommended section
 3.  **Add recommended section to the blog** [Engineer]
     - Client-side by making a request to `/recommended-posts` if it accepts CORS (recommended for static blogs, WordPress plugin, or other CMS solutions)
@@ -632,31 +621,12 @@ If you want to display the most relevant blog posts given a reader's favorite bl
 
 Now, users who take a few minutes to read through an article on the blog will find posts recommended using their historical reading pattern including the post they just read.
 
-## Custom External IDs
+### External IDs
 
-One of the Profile API's strengths is that you can query using custom external IDs. For example, let's say that each user can have a distinct subscription id. You can add it as a custom external ID:
+We do not recommend using any external_ids as a lookup field that might contain PII, because this can make its way into your server logs that can be hard to track down. For this reason, we recommend against using `email` as an external_id for Profile API use cases.
 
-```javascript
-analytics.track('Subscription Upgraded', {
-   plan: 'Pro',
-   mrr: 99.99
-}, {
-  externalIds: [
-    {
-      id: 'sub_1923923',
-      type: 'subscription_id',
-      collection: 'users',
-      encoding: 'none'
-    }
-  ]
-})
-```
+### Performance
 
-> note ""
-> **Note:** The `type` value should use snake_case notation; camelCase and special characters are not currently supported.
+We typically see p95 response times under 200ms for that `/traits` endpoint, based on an in-region test in us-west to retrieve 50 traits. However, if you know which traits you are looking for, we suggest you use the `/traits?include=` parameter to provide a list of traits you are looking to retrieve.
 
-Now you can query the Profile API by subscription_id:
-
-```
-https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/subscription_id:sub_1923923/traits
-```
+Another best practice to optimize performance in high-throughput applications is to use connection pooling. Your personalization service should be sharing existing connections when making a request to the Profile API, instead of opening and closing a connection for each request. This additional TLS handshake is a common source of overhead for each request.
