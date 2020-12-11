@@ -1,9 +1,12 @@
 pre {
-  background-color: color(gray-50);
-  border-radius: 4px;
   padding: 10px 15px;
+  background-color: color(gray-50);
+  border: 1px solid color(gray-300);
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 16px;
 
   @include breakpoint(medium up) {
-    padding: 20px 25px;
+    padding: 16px;
   }
 }

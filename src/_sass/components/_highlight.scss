@@ -30,7 +30,7 @@
   .bp { color: color(code-gray); } /* Builtin.Pseudo */
   .nf { color: color(code-gray); } /* Function */
   .na { color: color(code-gray); } /* Attribute */
-  .nx { color: color(code-pink); } /* Other */
+  .nx { color: color(code-gray); } /* Other */
   .nc { color: color(code-red); } /* Class */
   .nn { color: color(code-red); } /* Namespace */
   .no { color: color(code-red); } /* Constant */
@@ -62,14 +62,14 @@
   .mo { color: color(code-orange); } /* Oct */
 
   /* --- Strings --- */
-  .s { color: color(code-blue); } /* String */
-  .sr { color: color(code-blue); } /* Regex */
-  .sb { color: color(code-blue); } /* Backtick */
-  .s2 { color: color(code-blue); } /* Double */
-  .sh { color: color(code-blue); } /* Heredoc */
-  .sx { color: color(code-blue); } /* Other */
-  .s1 { color: color(code-blue); } /* Single */
-  .ss { color: color(code-blue); } /* Symbol */
+  .s { color: color(code-green); } /* String */
+  .sr { color: color(code-green); } /* Regex */
+  .sb { color: color(code-green); } /* Backtick */
+  .s2 { color: color(code-green); } /* Double */
+  .sh { color: color(code-green); } /* Heredoc */
+  .sx { color: color(code-green); } /* Other */
+  .s1 { color: color(code-green); } /* Single */
+  .ss { color: color(code-green); } /* Symbol */
   .se { color: color(code-orange); } /* Escape */
   .si { color: color(code-orange); } /* Interpol */
   .sc { color: color(code-gray); } /* Char */
@@ -77,7 +77,7 @@
 
   /* --- Other Literals --- */
   .l { color: color(code-orange); } /* Literal */
-  .ld { color: color(code-blue); } /* Date */
+  .ld { color: color(code-green); } /* Date */
 
   /* --- Typographic Elements --- */
   .p { color: color(code-gray); } /* Punctuation */
@@ -88,7 +88,7 @@
   .gp { color: color(code-red); } /* shell prompt */
 
   /* --- Style --- */
-  .gi { color: color(code-blue); } /* inserted */
+  .gi { color: color(code-green); } /* inserted */
   .gd { color: color(code-red); } /* deleted */
   .gh { color: color(code-gray); font-weight: bold; } /* heading */
   .gu { color: color(code-green); font-weight: bold; } /* subheading */
