@@ -2,7 +2,6 @@
   $this: &;
 
   position: relative;
-  display: block;
   height: 100%;
   max-height: 220px;
   padding: 30px;
@@ -11,6 +10,10 @@
   border-radius: 8px;
   transition: 200ms ease;
 
+  @include breakpoint(medium up)  {
+    padding: 20px;
+  }
+
   &:hover {
     border: 1px solid color(gray-100);
     border-color: color(gray-500);
@@ -18,15 +21,11 @@
   }
 
   &__content {
+    width: 100%;
     text-align: center;
 
-    & > * + * {
-      margin-top: 15px;
-
-      @include breakpoint(medium up)  {
-        text-align: left;
-        margin-top: 0;
-      }
+    @include breakpoint(medium up)  {
+      text-align: left;
     }
   }
 
