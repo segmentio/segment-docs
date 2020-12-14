@@ -236,5 +236,21 @@
       grid-template-columns: 1fr 1fr;
       grid-gap: 20px
     }
+
+    // double is another div in .markdown container and that's why it has 16px margin top
+    .reference-button {
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+  }
+
+  // remove reference button margins when it's inside the flex component (flex with waffle has its own margins) 
+  .flex {
+    &.waffle {
+      .reference-button {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
   }
 }
