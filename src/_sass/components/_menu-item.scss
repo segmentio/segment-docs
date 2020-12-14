@@ -48,13 +48,13 @@
     width: 100%;
     text-align: left;
     color: color(gray-800);
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.25;
     outline: 0;
     cursor: pointer;
     display: flex;
     align-items: center;
-    padding: 10px 20px;
+    padding: 5px 20px;
 
     &:hover {
       color: color(secondary);
@@ -163,6 +163,8 @@
       }
 
       &--highlight {
+        font-weight: 600;
+        
         &::before {
           content: "";
           display: block;
