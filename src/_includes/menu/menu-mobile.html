@@ -27,7 +27,10 @@
         <nav class="menu">
           <ul class="menu__list list list--unstyle">
             <li class="menu-item">
-              <a href="{{ site.baseurl }}/connections/destinations/catalog/" class="menu-item__link menu-item__link--small menu-item__link--highlight" data-ref="menu-panels[back]">Back to Connections</a>
+              <a href="{{ site.baseurl }}/connections/destinations/catalog/" class="menu-item__link menu-item__link--small menu-item__link--highlight menu-item__link--back" data-ref="menu-panels[back]">
+                {% include icons/symbols/arrow-left.svg %}
+                <span>Back to Connections</span>
+              </a>
             </li>
           </ul>
         </nav>
@@ -71,7 +74,10 @@
         <nav class="menu">
           <ul class="menu__list list list--unstyle">
             <li class="menu-item">
-              <a href="{{ site.baseurl }}/connections/sources/catalog/" class="menu-item__link menu-item__link--small menu-item__link--highlight" data-ref="menu-panels[back]">Back to Connections</a>
+              <a href="{{ site.baseurl }}/connections/sources/catalog/" class="menu-item__link menu-item__link--small menu-item__link--highlight menu-item__link--back" data-ref="menu-panels[back]">
+                {% include icons/symbols/arrow-left.svg %}
+                <span>Back to Connections</span>
+              </a>
             </li>
           </ul>
         </nav>
