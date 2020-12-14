@@ -1,7 +1,7 @@
 .stage {
   display: flex;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1150px;
   margin: 0 auto;
 
   @include breakpoint(large up) {
