@@ -169,7 +169,7 @@
       &::before {
         content: counter(list-items) ". ";
         color: color(primary);
-        font-weight: 500;
+        font-weight: 600;
         transform: translate(-23px, 0);
       }
     }
@@ -205,7 +205,7 @@
 
     th {
       color: color(gray-700);
-      font-weight: 500;
+      font-weight: 600;
       padding: 12px;
 
       @include breakpoint(medium up) {
