@@ -16,7 +16,10 @@
 
   &__body {
     flex: 1;
-    max-width: 752px;
+    
+    @include breakpoint(xlarge up) {
+      max-width: 690px;
+    }
 
     & > * + * {
       margin-top: 32px;

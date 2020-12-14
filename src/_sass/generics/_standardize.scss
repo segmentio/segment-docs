@@ -16,6 +16,7 @@ html {
   box-sizing: border-box; /* 1 */
   line-height: 1.15; /* 2 */
   text-size-adjust: 100%; /* 3 */
+  overflow-x: hidden;
 }
 
 *,
