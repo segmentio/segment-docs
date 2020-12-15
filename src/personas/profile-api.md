@@ -8,9 +8,9 @@ The Segment Profile API provides a single API to read user-level and account-lev
 
 You can use this API to:
 
-- **Build an in-app recommendation engine** to show users or accounts the last 5 products they viewed but didn't purchase
-- **Train user-level machine learning prediction models** to determine a users next purchase or likelihood to churn
-- **Empower your** **sales and** **support associates with the complete customer context** by embedding the user profile in third-party tools like Zendesk or Desk.com
+- **Build an in-app recommendation** engine to show users or accounts the last 5 products they viewed but didn’t purchase
+- **Empower your sales and support associates** with the complete customer context by embedding the user profile in third-party tools like Zendesk or Desk.com
+- **Power personalized marketing campaigns** by enriching dynamic / custom properties with profile traits in marketing tools like Braze 
 - **Qualify leads faster** by embedding the user event timeline in Salesforce
 
 This document has four parts…
