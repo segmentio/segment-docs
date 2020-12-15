@@ -336,9 +336,9 @@ analytics.track('Completed Checkout Step', {
 The four steps above are only an example, and you can create as many steps in your funnel as you need. You still must track the `Order Completed` event per our standard [Ecommerce tracking spec](/docs/connections/spec/ecommerce/v2/) after you've tracked the checkout steps.
 
 For client-side integrations we use Google Analytics' `ProductAction` class to track Checkout Steps and Options. You can read the Google Analytics developer docs for information on specific methods:
-<!-- commenting out until we can confirm that these aren't useful. the pages are still up, if all mobile needs to use firebase this seems weird to include here
-- [Android](https://developers.google.com/android/reference/com/google/android/gms/analytics/ecommerce/ProductAction)
-- [iOS](https://developers.google.com/analytics/devguides/collection/ios/v3/reference/interface_g_a_i_ecommerce_product_action)-->
+<!-- commenting out until we can confirm that these aren't useful. the pages are still up, if all mobile needs to use firebase this seems weird to include here -->
+<!-- - [Android](https://developers.google.com/android/reference/com/google/android/gms/analytics/ecommerce/ProductAction)-->
+<!-- - [iOS](https://developers.google.com/analytics/devguides/collection/ios/v3/reference/interface_g_a_i_ecommerce_product_action) -->
 - [Analytics.js - Enhanced E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce)
 - [Analytics.js - E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce)
 
