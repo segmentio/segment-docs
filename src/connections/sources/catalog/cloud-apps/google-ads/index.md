@@ -13,7 +13,7 @@ This document was last updated on August 13, 2018. If you notice any gaps, outda
 
 2. Choose Google Ads and click `Connect`.
 
-  ![](images/connect.png)
+   ![](images/connect.png)
 
 3. Click `Authenticate Google Ads` and go through the authentication flow.
 
@@ -21,7 +21,7 @@ This document was last updated on August 13, 2018. If you notice any gaps, outda
 
 5. Finally, choose a schema name. This will be the namespace you will be querying against in your warehouse. We recommend choosing a name that reflects the source itself, like `google_ads`, or `google_ads_usa`.
 
-  ![](images/schema.png)
+   ![](images/schema.png)
 
 
 ### Permissions
@@ -34,7 +34,8 @@ By default, we sync the "primary" Google Ads account connected to your Google ac
 ### I'm getting an Internal Server Error!
 
 If you're getting the error pictured below, try disabling any ad block extensions in your browser and attempting again. We find this typically resolves the set up problems.
-  ![](images/connection_failed.png)
+
+![](images/connection_failed.png)
 
 
 ## Components

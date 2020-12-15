@@ -15,11 +15,7 @@ If you have previously enabled sending email events using the Vero destination d
 
 2. Choose Vero.
 
-  ![](images/vero1.png)
-
-3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. You can name them however you'd like, but we recommend sticking to something that reflects the Source itself, like `Vero` for nickname and `vero` for the schema name.
-
-  ![](images/vero2.png)
+3. Give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name autopopulates the schema name. For example, the source name  `Vero` creates the schema `vero`.
 
 4. The next page ("Overview") will surface your **Segment write key for Vero.** Copy this write key. 
 

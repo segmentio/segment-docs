@@ -11,19 +11,13 @@ In your favorite BI or analytics tool, you'll be able to analyze all your cross-
 
 If you have previously enabled sending email events using the Iterable destination during our beta (using a project write key), you do not need to create new Iterable source. Your email data will continue to flow as normal.
 
-1. From your workspace's `segment.com/<your-workspace>/sources page`, click `Add source`.
+1. From your workspace's `segment.com/<your-workspace>/sources` page, click **Add source**.
 
 2. Choose Iterable.
 
-  ![](images/Iterable1.png)
-
-3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. You can name them however you'd like, but we recommend sticking to something that reflects the Source itself, like `Iterable` for nickname and `iterable` for the schema name.
-
-  ![](images/Iterable2.png)
+3. Give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name autopopulates the schema name. For example, the source name  `Iterable` creates the schema `iterable`.
 
 4. The next page ("Overview") will surface your **Segment write key for Iterable.** Copy this write key. 
-
-  ![](images/Iterable3.png)
 
 5. To finish the setup, you'll have to go into your Iterable account and enter this Segment write key in their integrations settings. Find the right place in Iterable by clicking Integrations > Third Party > Segment.
 

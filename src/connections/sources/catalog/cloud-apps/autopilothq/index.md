@@ -10,12 +10,10 @@ This source is maintained by Autopilot. For any issues with the source, you can 
 
 ## Getting Started
 
-1. From your Segment UI's Sources page click on "Add Source".
-2. Search for AutopilotHQ within the Sources Catalog and confirm by clicking "Connect".
-3. Give the Source a nickname and follow the set up flow to "Add Source". The nickname is a label used in the Segment interface, and Segment creates a related schema name, which you query against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (Eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
+1. From your Segment UI's Sources page click **Add Source**.
+2. Search for and select AutopilotHQ in the Sources Catalog and click **Add Source** to confirm.
+3. Give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name autopopulates the schema name. For example, the source name  `AutopilotHQ` creates the schema `autopilothq`.
 4. Sign in to your Autopilot account and visit the [Segment destination](https://app.autopilothq.com/#settings/app-connections/segment-sync) to connect.
-
-![](/docs/connections/destinations/catalog/autopilothq/images/4764ec5d9aeb26bd0e503604db243dae.gif)
 
 ## Components
 **Stream**

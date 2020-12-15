@@ -29,29 +29,28 @@ Destination flags are **case sensitive** and match [the Destination's name in th
 
 If you're on Segment's Business plan, you can filter track calls right from the Segment UI on your Source Schema page by clicking on the field in the "Integrations" column and then adjusting the toggle for each tool. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
 
-![](images/destctrl_d3SRmkWy.gif)
+![](images/destination-control.png)
 
 ## How do I block or disable specific events and properties from being sent to all Destinations?
 
 If you no longer want to track an event, you can either remove it from your code or, if you're on the Business plan, you can block track calls right from the Segment UI on your Source Schema page by adjusting the toggle for each event.
 
-![](/docs/protocols/images/asset_ZCRZqdO9.gif)
+![](/docs/protocols/images/event-filters.png)
 
 Once you block an event in Segment, we'll stop forwarding it to all of your Destinations, including your warehouses. You can remove it from your code at your leisure. In addition to blocking track calls, Business plan customers can block all Page and Screen calls, as well as Identify traits and Group properties. 
 
 ---
 
-_Note: The following features are currently in beta._
 
-## **How do I prevent new data from being allowed by default? **
 
-If you've solidified your tracking plan and don't want any rogue events finding their way to your warehouses and end tools, we recommend activating our new feature, **Schema Defaults\***. When you lock your schema, or set your Schema Defaults to "Block," Segment will automatically prevent these calls from being sent downstream. You can activate this for new events—including `track`, `page`, and `screen` calls—or for new `identify` traits and `group` properties. 
+## How do I prevent new data from being allowed by default?
+
+If you've solidified your tracking plan and don't want any rogue events finding their way to your warehouses and end tools, we recommend activating our new feature, **Schema Defaults**. When you lock your schema, or set your Schema Defaults to "Block," Segment will automatically prevent these calls from being sent downstream. You can activate this for new events—including `track`, `page`, and `screen` calls—or for new `identify` traits and `group` properties. 
 
 Locking your schema only takes a few seconds and will protect your data from un-spec'd events or tracking errors. To configure your Schema Defaults, go to your Schema page, and then select "General" from the left-hand navigation.
 
-![](images/destctrl_A8jUVuph.gif)
+![](images/schema-defaults.png)
 
-\*_Note: Schema Defaults are currently in beta._
 
 **Overview of Schema Default Settings**
 

@@ -7,6 +7,9 @@ Middlewares are simple functions invoked by the Segment libraries, which give yo
 
 You can access the middleware API in both Objective-C and Swift.
 
+> info ""
+> **Note**: Destination-middleware only act on [data sent to destinations in device-mode](/docs/connections/destinations#connection-modes). Since the destination middleware code exists in your app or project, it cannot transform the data sent from the Segment servers to the destination endpoint. 
+
 ### Use
 
 Middleware is any Objective-C class that conforms to the following protocol.
@@ -259,7 +262,7 @@ SEGBlockMiddleware *customizeAllTrackCalls = [[SEGBlockMiddleware alloc] initWit
 
 #### Change a call type
 
-The following example turns one kind call into another.  
+The following example turns one kind call into another.
 NOTE: This is only applicable to Source Middleware.
 
 
@@ -346,7 +349,7 @@ SEGBlockMiddleware *dropSpecificEvents = [[SEGBlockMiddleware alloc] initWithBlo
                                             @"Order Completed",
                                             @"Home Screen Tracked",
                                             @"AnalyticsIOSTestApp. Screen Tracked"];
-    
+
     if ([context.payload isKindOfClass:[SEGTrackPayload class]]) {
         SEGTrackPayload *track = (SEGTrackPayload *)context.payload;
         if ([validEvents containsObject:track.event]) {

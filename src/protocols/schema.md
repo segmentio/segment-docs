@@ -9,7 +9,7 @@ Segment Business plan customers can use Schema Controls to manage which events a
 If you no longer want to track a specific event, you can either remove it from your code or, if you're on the Business plan, you can block track calls right from the Segment UI. To do so, click on the Schema tab in a Source and toggle the event to enable or block an event.
 
 
-![](images/asset_ZCRZqdO9.gif)
+![](images/event-filters.png)
 
 
 Once you block an event in Segment, we'll stop forwarding it to all of your Cloud and Device-mode Destinations, including your warehouses. You can remove the events from your code at your leisure. In addition to blocking track calls, Business plan customers can block all Page and Screen calls, as well as Identify traits and Group properties.
