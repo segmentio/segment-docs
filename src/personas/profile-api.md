@@ -613,7 +613,7 @@ GET /v1/spaces/<space_id>/collections/<users>/profiles/<external_id>/links
 ## Best Practices
 ###  Recommended Implementation
 
-The Profile API does not support CORS because it has access to the sum of a customer's data. Segment also requests that you prevent the Access Token to the public, for example in a client-side application. Engineers implementing this API are advised to create a personalization service in their infrastructure, whic hother apps, websites, and services communicate with to fetch personalizations about their users.
+The Profile API does not support CORS because it has access to the sum of a customer's data. Segment also requests that you prevent the Access Token to the public, for example in a client-side application. Engineers implementing this API are advised to create a personalization service in their infrastructure, which other apps, websites, and services communicate with to fetch personalizations about their users.
 
 ![Server-side Personalization](https://www.lucidchart.com/publicSegments/view/25df2e70-a666-4581-8f86-1a000dbf1f49/image.png)
 
@@ -629,7 +629,7 @@ If you want to display the most relevant blog posts given a reader's favorite bl
     - Client-side by making a request to `/recommended-posts` if it accepts CORS (recommended for static blogs, WordPress plugin, or other CMS solutions)
     - Server-side by collecting all the personalizations you want to make on the blog in a single request to increase the total time to load (recommended for custom blog setup)
 
-AUsers who take a few minutes to read through an article on the blog will find posts recommended using their historical reading pattern including the post they just read.
+Users who take a few minutes to read through an article on the blog will find posts recommended using their historical reading pattern including the post they just read.
 
 ### External IDs
 
