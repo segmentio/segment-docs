@@ -34,10 +34,14 @@
       top: 0;
       left: 0;
       z-index: -1;
-      width: 100vw;
+      width: 100%;
       height: 100%;
       background-color: color(gray-50);
       border-bottom: 1px solid color(gray-300);
+
+      @include breakpoint(xlarge up) {
+        width: 100vw;
+      }
     }
   }
 
