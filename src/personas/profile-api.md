@@ -613,7 +613,7 @@ GET /v1/spaces/<space_id>/collections/<users>/profiles/<external_id>/links
 ## Best Practices
 ###  Recommended Implementation
 
-The Profile API does not support CORS because it has access to the sum of a customer's data. Segment also requests that you prevent the Access Token to the public, for exampe in a client-side application. Engineers implementing this API are advised to create a personalization service in their infrastructure, whic hother apps, websites, and services communicate with to fetch personalizations about their users.
+The Profile API does not support CORS because it has access to the sum of a customer's data. Segment also requests that you prevent the Access Token to the public, for example in a client-side application. Engineers implementing this API are advised to create a personalization service in their infrastructure, whic hother apps, websites, and services communicate with to fetch personalizations about their users.
 
 ![Server-side Personalization](https://www.lucidchart.com/publicSegments/view/25df2e70-a666-4581-8f86-1a000dbf1f49/image.png)
 
