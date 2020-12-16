@@ -1,0 +1,27 @@
+.release-note {
+  & > * + * {
+    margin-top: 8px;
+  }
+
+  &__date {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    color: color(gray-900);
+  }
+
+  &__links {
+    font-size: 14px;
+    font-weight: 500;
+
+    & > * + * {
+      margin-top: 8px;
+    }
+  }
+
+  &__body {
+    & > * + * {
+      margin-top: 14px;
+    }
+  }
+}

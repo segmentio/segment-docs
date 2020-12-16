@@ -1,11 +1,12 @@
 .badge {
   color: color(primary-dark);
-  padding: 2px 6px;
+  padding: 0 8px;
   display: inline-block;
   background-color: color(primary-lighter);
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
+  line-height: 18px;
   text-transform: uppercase;
 
   &--gray {
@@ -14,7 +15,7 @@
   }
 
   &--success {
-    background-color: color(success-light);
+    background-color: lighten(color(success), 40%);
     color: color(success-dark);
   }
 }
