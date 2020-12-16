@@ -17,6 +17,7 @@ import relativeLinks from './relative-links'
 import sideMenu from './side-menu'
 import tracking from './tracking'
 import searchBar from './search-bar'
+import photoSwipe from './photoswipe'
 feedback()
 accordion()
 accordionGroup()
@@ -36,3 +37,4 @@ relativeLinks()
 sideMenu()
 tracking()
 searchBar()
+photoSwipe()
