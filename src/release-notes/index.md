@@ -1,18 +1,25 @@
 ---
 title: Release Notes
+badges:
+  new_feature: "primary"
+  update: "success"
 ---
 
 A blurb about release notes here....
 
 {% for post in site.release_notes %}
+  {% set release_type_slug = post.release_type | replace: "-", "_" %}
+
+  <hr>
+  
   <div>
-    <div>
-      <p>{{post.release_type | replace: "-", " "}}</p>
-      <p>{{post.product_area}}</p>
+    <div class="flex flex--wrap waffle">
+      <span class="badge badge--{{ badges[release_type_slug] }}">{{post.release_type | replace: "-", " "}}</span>
+      <span class="badge badge--gray">{{post.product_area}}</span>
       {% if post.business == true %}
-        <p>business</p>
+        <span class="badge badge--gray">business</span>
       {% elsif post.team == true %}
-        <p>team</p>
+        <span class="badge badge--gray">team</span>
       {% endif %}
     </div>
     <div>

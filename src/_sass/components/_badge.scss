@@ -1,0 +1,20 @@
+.badge {
+  color: color(primary-dark);
+  padding: 2px 6px;
+  display: inline-block;
+  background-color: color(primary-lighter);
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  &--gray {
+    background-color: color(gray-200);
+    color: color(gray-700);
+  }
+
+  &--success {
+    background-color: color(success-light);
+    color: color(success-dark);
+  }
+}
