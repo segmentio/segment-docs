@@ -10,7 +10,11 @@
 
   &--dark {
     #{$this}__link {
-      color: color(gray-darker);
+      color: color(gray-700);
+
+      &:hover {
+        color: color(gray-500);
+      }
     }
   }
 }

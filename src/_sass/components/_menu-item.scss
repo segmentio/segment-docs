@@ -10,38 +10,27 @@
   &__body {
     position: relative;
     list-style-type: none;
-    margin-top: 20px;
-    padding-top: 3px;
     padding-bottom: 3px;
     padding-left: 32px;
-
-    & > * + * {
-      margin-top: 12px;
-    }
 
     &::before {
       content: "";
       position: absolute;
       top: 0;
-      left: 8px;
+      left: 25px;
       display: block;
       width: 1px;
       height: 100%;
-      background-color: color(border-gray-dark);
+      background-color: color(gray-300);
     }
 
     &--nested {
-      margin-top: 16px;
-      padding-left: 18px;
-      padding-top: 0;
-      padding-bottom: 0;
-
-      & > * + * {
-        margin-top: 16px;
+      &::before {
+        left: 20px;
       }
 
-      &::before {
-        left: 0;
+      #{$this}__link {
+        padding: 9px 12px 9px 6px;
       }
     }
   }
@@ -50,18 +39,25 @@
     display: none;
   }
 
+  &__chevron {
+    color: color(gray-600);
+  }
+
   &__link {
+    position: relative;
     width: 100%;
     text-align: left;
-    color: color(gray-dark);
+    color: color(gray-800);
+    font-size: 14px;
     line-height: 1.25;
     outline: 0;
     cursor: pointer;
     display: flex;
     align-items: center;
+    padding: 5px 20px;
 
     &:hover {
-      color: color(primary);
+      color: color(secondary);
       text-decoration: none;
     }
 
@@ -69,22 +65,50 @@
       font-size: 14px;
     }
 
+    &--back {
+      font-weight: 600;
+      font-size: 12px;
+      color: color(gray-700);
+
+      svg {
+        width: 10px;
+        margin-right: 8px;
+        align-self: baseline;
+      }
+    }
+
     &--highlight {
-      color: color(gray-dark);
-      font-weight: 500;
+      color: color(gray-800);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 12px 16px;
+      
+      &:hover {
+        color: color(gray-800);
+        background-color: color(gray-100);
+      }
     }
 
     &--icon {
       #{$this}__icon {
         flex: 0 0 16px;
-        width: 16px;
-        color: color(gray);
+        color: color(gray-600);
         vertical-align: middle;
-        margin-right: 18px;
+        margin-right: 14px;
+
+        svg {
+          max-width: 22px;
+          max-height: 22px;
+        }
 
         &--small {
           flex: 0 0 12px;
-          width: 12px;
+          margin-right: 9px;
+
+          svg {
+            max-width: 14px;
+            max-height: 14px;
+          }
         }
 
         &--right {
@@ -96,37 +120,35 @@
 
     &--indicator {
       position: relative;
+      padding: 9px 15px;
 
       &:before {
         content: "";
         display: block;
         position: absolute;
-        top: -8px;
-        left: -19px;
-        height: calc(100% + 16px);
+        top: 0;
+        left: -12px;
+        height: 100%;
         width: 2px;
-        background-color: color(primary);
+        background-color: color(secondary);
       }
     }
 
     &--indicator-large {
       position: relative;
+      padding: 10px 20px;
 
       &:before {
         content: "";
         display: block;
         position: absolute;
-        top: -8px;
-        left: -25px;
-        height: calc(100% + 16px);
+        top: 0;
+        left: -7px;
+        height: 100%;
         width: 2px;
-        background-color: color(primary);
+        background-color: color(secondary);
       }
     }
-  }
-
-  &__chevron {
-    color: color(gray);
   }
 
   &--active {
@@ -135,15 +157,30 @@
     }
 
     & > #{$this}__link {
-      color: color(primary);
+      color: color(secondary);
       font-weight: 500;
 
       #{$this}__icon {
-        color: color(primary);
+        color: color(gray-600);
       }
 
       #{$this}__chevron {
         transform: rotate(180deg);
+      }
+
+      &--highlight {
+        font-weight: 600;
+        
+        &::before {
+          content: "";
+          display: block;
+          width: 2px;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: color(secondary);
+        }
       }
     }
 
@@ -156,7 +193,7 @@
 
     &#{$this}--green {
       & > #{$this}__link {
-        color: color(primary);
+        color: color(secondary);
         font-weight: 500;
       }
     }
@@ -171,14 +208,16 @@
       padding-left: 25px;
 
       &::before {
-        left: 0;
+        left: 21px;
       }
     }
 
     #{$this}__link {
+      font-size: 14px;
+
       &--indicator {
         &::before {
-          left: -25px;
+          left: -4px;
         }
       }
     }

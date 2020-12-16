@@ -19,10 +19,15 @@ Segment's Amplitude destination code is open source and available on GitHub. Fee
 
 In addition to the docs below, Amplitude created a [integration guide](https://developers.amplitude.com/docs/segment-amplitude-integration).
 
-NOTE: To delete users based on GDPR regulations, you must include a secret key in the **Secret Key** setting of every Amplitude destination. You can find your Secret Key on the [General Settings](https://help.amplitude.com/hc/en-us/articles/235649848-Settings#general) of your Amplitude project.
+> note ""
+> To delete users based on GDPR regulations, you must include a secret key in the **Secret Key** setting of every Amplitude destination. You can find your Secret Key on the [General Settings](https://help.amplitude.com/hc/en-us/articles/235649848-Settings#general) of your Amplitude project.
 
 
-{% include components/media-icon.html href="https://segment.com/recipes/amplitude-historical-count-analysis/" icon="media/icon-academy.svg" title="Identify high-value users with Historical Count analysis" content="Examine the exact moment in the customer journey that converts new users into high-value customers." %}
+
+{% include components/reference-button.html href="https://segment.com/recipes/amplitude-historical-count-analysis/" icon="media/academy.svg" title="Identify high-value users with Historical Count analysis" description="Examine the exact moment in the customer journey that converts new users into high-value customers." %}
+
+
+
 
 
 ## Getting Started

@@ -5,7 +5,7 @@
 /// @return {Color} Color value
 ///
 /// @example scss - example
-///   color(gray);
+///   color(gray-700);
 @function color($name) {
   @return get($color-values, $name);
 }

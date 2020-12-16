@@ -2,7 +2,7 @@
 title: Sources Catalog
 hide_toc: true
 landing: true
-icon: symbols/connections.svg
+icon: symbols/squares-arrow.svg
 excerpt: Detailed information about each destination. Learn how our API methods are implemented for that destination.
 layout: catalog
 menu_icon: "read-more"
@@ -20,24 +20,26 @@ redirect_from:
       <h2 class="destinations-catalog__title" id="{{ category | slugify }}">
         {{ category }}
       </h2>
-      <div class="flex flex--wrap waffle waffle--large">
+      <div class="flex flex--wrap waffle waffle--xlarge">
         {% assign integrations = site.data.catalog.sources.items | where: "categories", category %}
         {% for integration in integrations %}
-          <div class="flex__column flex__column--6 flex__column--4@medium">
-            <a class="thumbnail-integration" href="{{ site.baseurl }}/{{ integration.url }}">
-              <div class="thumbnail-integration__content flex flex--stack flex--center flex--middle">
-                <div class="thumbnail-integration__logo">
-                  {% if integration.logos.mark != '' %}
-                    <img class="image" alt="{{integration.display_name}}" src="{{integration.logo.url}}" />
-                  {% else %}
-                    <img class="image" alt="{{integration.display_name}}" src="{{integration.logo.url}}" />
-                  {% endif %}
+          <div class="flex__column flex__column--6">
+            <a class="thumbnail-integration flex flex--middle" href="{{ site.baseurl }}/{{ integration.url }}">
+              <div class="thumbnail-integration__content">
+                <div class="flex flex--wrap flex--middle waffle waffle--xlarge@medium">
+                  <div class="flex__column flex__column--12 flex__column--2@medium thumbnail-integration__logo-wrapper">
+                    {% if integration.logos.mark != '' %}
+                      <img class="thumbnail-integration__logo image" alt="{{integration.display_name}}" src="{{integration.logo.url}}" />
+                    {% else %}
+                      <img class="thumbnail-integration__logo image" alt="{{integration.display_name}}" src="{{integration.logo.url}}" />
+                    {% endif %}
+                  </div>
+                  <h5 class="flex__column flex__column--12 flex__column--10@medium">{{ integration.display_name }}</h5>
                 </div>
-                <h5>{{ integration.display_name }}</h5>
+                {% if integration.status == 'PUBLIC_BETA' %}
+                  <p class="thumbnail-integration__label">Beta</p>
+                {% endif %}
               </div>
-              {% if integration.status == 'PUBLIC_BETA' %}
-                <p class="thumbnail-integration__label">Beta</p>
-              {% endif %}
             </a>
           </div>
         {% endfor %}
@@ -50,25 +52,27 @@ redirect_from:
     <h2 class="destinations-catalog__title" id="cloud-apps">
       Cloud-apps
     </h2>
-    <div class="flex flex--wrap waffle waffle--large">
+    <div class="flex flex--wrap waffle waffle--xlarge">
       {% assign integrations = site.data.catalog.sources.items %}
       {% for integration in integrations %}
         {% unless integration.categories contains promoted_categories[0] or integration.categories contains promoted_categories[1] or integration.categories contains promoted_categories[2] or integration.categories contains promoted_categories[3]%}
-          <div class="flex__column flex__column--6 flex__column--4@medium">
-            <a class="thumbnail-integration" href="{{ site.baseurl }}/{{ integration.url }}">
-              <div class="thumbnail-integration__content flex flex--stack flex--center flex--middle">
-                <div class="thumbnail-integration__logo">
-                  {% if integration.logos.mark != '' %}
-                    <img class="image" alt="{{integration.display_name}}" src="{{integration.logo.url}}" />
-                  {% else %}
-                    <img class="image" alt="{{integration.display_name}}" src="{{integration.logo.url}}" />
-                  {% endif %}
+          <div class="flex__column flex__column--6">
+            <a class="thumbnail-integration flex flex--middle" href="{{ site.baseurl }}/{{ integration.url }}">
+              <div class="thumbnail-integration__content">
+                <div class="flex flex--wrap flex--middle waffle waffle--xlarge@medium">
+                  <div class="flex__column flex__column--12 flex__column--2@medium thumbnail-integration__logo-wrapper">
+                    {% if integration.logos.mark != '' %}
+                      <img class="thumbnail-integration__logo image" alt="{{integration.display_name}}" src="{{integration.logo.url}}" />
+                    {% else %}
+                      <img class="thumbnail-integration__logo image" alt="{{integration.display_name}}" src="{{integration.logo.url}}" />
+                    {% endif %}
+                  </div>
+                  <h5 class="flex__column flex__column--12 flex__column--10@medium">{{ integration.display_name }}</h5>
                 </div>
-                <h5>{{ integration.display_name }}</h5>
+                {% if integration.status == 'PUBLIC_BETA' %}
+                  <p class="thumbnail-integration__label">Beta</p>
+                {% endif %}
               </div>
-              {% if integration.status == 'PUBLIC_BETA' %}
-                <p class="thumbnail-integration__label">Beta</p>
-              {% endif %}
             </a>
           </div>
         {% endunless %}

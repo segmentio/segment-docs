@@ -9,7 +9,7 @@
 /// @access private
 ///
 /// @example scss - example
-///   get($colors, gray);
+///   get($colors, gray-700;
 @function get($collection, $key) {
   @if type-of($collection) == "map" {
     @if map-has-key($collection, $key) {

@@ -6,21 +6,20 @@
   }
 
   &__item {
-    background-color: rgba(color(secondary-lighter), 0.4);
-    border: 1px solid color(secondary-light);
+    background-color: color(primary-lighter);
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 16px;
     display: inline-block;
 
     &:hover {
-      background-color: color(secondary-lighter);
+      background-color: color(primary-light);
     }
   }
 
   &__link {
-    color: color(secondary-dark);
-    padding: 4px 5px;
+    color: color(primary-dark);
+    padding: 4px 8px;
     display: block;
 
     &:hover {

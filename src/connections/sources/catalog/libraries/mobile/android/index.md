@@ -50,7 +50,7 @@ Analytics-Android saves up to 1000 calls on disk, and these never expire.
 
 {% include content/mobile-cmodes.md %}
 
-{% include components/media-icon.html href="https://github.com/segmentio/analytics-android/tree/master/analytics-samples/analytics-sample" icon="media/icon-guides.svg" title="Android Test Apps" content="Segment maintains test apps for the Android mobile library. Find them here." %}
+{% include components/reference-button.html href="https://github.com/segmentio/analytics-android/tree/master/analytics-samples/analytics-sample" icon="guides.svg" title="Android Test Apps" description="Segment maintains test apps for the Android mobile library. Find them here." %}
 
 ### Create an Android source
 

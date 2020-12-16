@@ -2,11 +2,7 @@
   padding-left: 0;
   list-style: none;
 
-  & > * + * {
-    margin-top: 10px;
-  }
-
   &__link {
-    color: color(white);
+    color: color(gray-600);
   }
 }
