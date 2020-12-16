@@ -24,6 +24,13 @@ A blurb about release notes here....
           <li><a href="{{link.url}}">{{link.title}}</a></li>
         {% endfor %}
       </ul>
+      <div class="flex flex--wrap waffle waffle--large">
+        {% for image in post.images %}
+          <a class="flex__column flex__column--6 flex__column--3@medium" href="#">
+            <img class="thumbnail" src="/docs/{{image.path}}" alt="{{image.desc}}">
+          </a>
+        {% endfor %}
+      </div>
     </div>
   </div>
 {% endfor %}

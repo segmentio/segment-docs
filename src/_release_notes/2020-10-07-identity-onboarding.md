@@ -12,4 +12,11 @@ doc_links:
   - 
     title: Identity Resolution Onboarding
     url: "/docs/personas/identity-resolution/identity-resolution-onboarding/"
+images:
+  -
+    path: images/release-notes/release-note-2.png
+    desc: a string that explains the image
+  -
+    path: images/release-notes/release-note-1.png
+    desc: a string that explains the image
 ---
