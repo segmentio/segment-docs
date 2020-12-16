@@ -3,14 +3,11 @@ rewrite: true
 title: Startdeliver Destination
 ---
 
-[Startdeliver](https://startdeliver.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) connects data from a variety of sources to get a customer view optimized for Customer Success Managers.
+[Startdeliver](https://startdeliver.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) connects data from a variety of sources to provide a customer view optimized to Customer Success Managers.
 
+Startdeliver maintains this destination. For any issues with the destination, [contact their support team](mailto:support@startdeliver.com).
 
-This destination is maintained by Startdeliver. For any issues with the destination, [contact their support team](mailto:support@startdeliver.com).
-
-> note "Note:"
-> The Startdeliver Destination is currently in beta, which means that they are still actively developing the destination. To join their beta program, or if you have any feedback to help improve the Startdeliver Destination and its documentation, [contact the Startdeliver support team](mailto:support@startdeliver.com)!
-
+{% include content/beta-note.md %}
 
 ## Getting Started
 
@@ -25,15 +22,15 @@ This destination is maintained by Startdeliver. For any issues with the destinat
 7. Enter the "Startdeliver user custom field to match on" in the "Startdeliver" destination settings in Segment.
 
 
-You have to [identify](https://segment.com/docs/connections/spec/identify/) your user with a proper `userId` so that Startdeliver can match your Segments events with correct Startdeliver users.
+You have to [identify](/docs/connections/spec/identify/) your user with a proper `userId` so that Startdeliver can match your Segments events with correct Startdeliver users.
 
-Startdeliver will attach any matched events to existing users, otherwise a new user will be created. Startdeliver will use a custom field you specified at the 7th step of the "Getting Started" section to match a user.
+Startdeliver attaches any matched events to existing users. If no matched users are found, Startdeliver creates a new user. Startdeliver uses a custom field you specified at the 7th step of the "Getting Started" section to match a user.
 
-Let's imagine that you have a user in Startdeliver and you want to attach your Segment events to that user.
+For example, you have a user in Startdeliver and you want to attach your Segment events to that user.
 
-In order to do this, you should create a User custom field. For instance, it could be `externalId`. Now you should update your Startdeliver user with a proper value, let's say – `97980cfea0067` (this is your user's ID). Do not forget to set this custom field in 7th step of the "Getting Started" section.
+To do this, create a User custom field. For instance, it could be `externalId`. Now you should update your Startdeliver user with a proper value, for example, `97980cfea0067` (this is your user's ID). Don't forget to set this custom field in 7th step of the "Getting Started" section.
 
-Now when such a user goes to your app, you should [identify](https://segment.com/docs/connections/spec/identify/) him/her:
+Now when this user goes to your app, you should [identify](/docs/connections/spec/identify/) them:
 
 ```js
 analytics.identify('97980cfea0067')
@@ -45,7 +42,7 @@ After this, you can send either `Page` or `Track` events:
 analytics.track('Login Button Clicked')
 ```
 
-Such an event will be matched with a Startdeliver user that has ID `97980cfea0067` set in a custom field `externalId`.
+This event is matched with a Startdeliver user that has ID `97980cfea0067` set in a custom field `externalId`.
 
 Segment events will appear on Customer and User views in Startdeliver. The views will be created instantly within Startdeliver.
 
@@ -54,7 +51,7 @@ For further information you can check [Startdeliver documentation](https://app.s
 
 ## Page
 
-If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](https://segment.com/docs/connections/spec/page/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](/docs/connections/spec/page/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.page('Home')
@@ -65,7 +62,7 @@ Segment sends Page calls to Startdeliver as a `page` event.
 
 ## Track
 
-If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.track('Login Button Clicked')
