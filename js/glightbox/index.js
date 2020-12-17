@@ -22,7 +22,7 @@ export default function () {
       images[i].addEventListener('click', (event) => {
         event.preventDefault()
 
-        gallery.open()
+        gallery.openAt(i)
       })
     }
   }
