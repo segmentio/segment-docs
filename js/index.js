@@ -17,7 +17,7 @@ import relativeLinks from './relative-links'
 import sideMenu from './side-menu'
 import tracking from './tracking'
 import searchBar from './search-bar'
-import thumbnailGallery from './thumbnail-gallery'
+import glightbox from './glightbox'
 feedback()
 accordion()
 accordionGroup()
@@ -37,4 +37,4 @@ relativeLinks()
 sideMenu()
 tracking()
 searchBar()
-thumbnailGallery()
+glightbox()

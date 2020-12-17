@@ -3409,6 +3409,11 @@ gettemporaryfilepath@^1.0.0:
   resolved "https://registry.yarnpkg.com/gettemporaryfilepath/-/gettemporaryfilepath-1.0.1.tgz#53ace15f931fb3def8abed740c0a092762910391"
   integrity sha512-MVCSgF1blIZuIV3KYhMKOwU1OSxPF1s+ZcyqWMSGR5Fzl6fN7EjIXDFGu9PmWAAwyGjMjmkS2ruqPaj13J3SXA==
 
+glightbox@^3.0.6:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/glightbox/-/glightbox-3.0.6.tgz#e218f3f02f71a651bfb89489e60434019d67663d"
+  integrity sha512-Ah7UPQCKd+EysmReNZvUpLZLXZu8FMLnJiuy5A+YmZk8lVMAgZe8tuXuJ7Wnit7X0scjkzBnF0CO+YClY/VMJQ==
+
 glob-parent@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/glob-parent/-/glob-parent-3.1.0.tgz#9e6af6299d8d3bd2bd40430832bd113df906c5ae"

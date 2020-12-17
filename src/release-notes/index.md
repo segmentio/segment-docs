@@ -40,9 +40,9 @@ A blurb about release notes here....
           <a href="{{ link.url }}">{{ link.title }}</a>
         {% endfor %}
       </div>
-      <div class="flex flex--wrap waffle waffle--large" data-thumbnail-gallery>
+      <div class="flex flex--wrap waffle waffle--large" data-glightbox>
         {% for image in post.images %}
-          <a class="flex__column flex__column--6 flex__column--3@medium" href="#">
+          <a  href="/docs/{{ image.path }}" class="flex__column flex__column--6 flex__column--3@medium">
             <img class="thumbnail" src="/docs/{{ image.path }}" alt="{{ image.desc }}">
           </a>
         {% endfor %}
