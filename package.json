@@ -42,6 +42,7 @@
     "ajv": "6.10.2",
     "clipboard": "^2.0.6",
     "dotenv": "8.2.0",
+    "glightbox": "^3.0.6",
     "hyperlink": "^4.5.2",
     "tap-spot": "^1.1.1",
     "tippy.js": "^5.2.0",
