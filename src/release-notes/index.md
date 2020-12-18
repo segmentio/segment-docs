@@ -37,7 +37,17 @@ Stay up-to-date with the latest features and releases from Segment.
       <main class="markdown">{{ post.description | markdownify }}</main>
       <div class="release-note__links">
         {% for link in post.doc_links %}
+          {% if forloop.length > 1 %}
+            {% if forloop.first %}
+              <ul>
+            {% endif %}
+            <li><a href="{{ link.url }}?utm_source=release%3Dnotes&utm_medium=site&utm_campaign={{post.title | slugify}}">{{ link.title }}</a></li>
+            {% if forloop.last %}
+              </ul>
+            {% endif %}
+          {% else %}
           <a href="{{ link.url }}?utm_source=release%3Dnotes&utm_medium=site&utm_campaign={{post.title | slugify}}">{{ link.title }}</a>
+          {% endif %}
         {% endfor %}
       </div>
       <div class="flex flex--wrap waffle waffle--large" data-glightbox>
