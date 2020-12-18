@@ -8,7 +8,7 @@ badges:
 
 A blurb about release notes here....
 
-{% for post in site.release_notes %}
+{% for post in site.release_notes reversed %}
   {% assign release_type_slug = post.release_type | replace: "-", "_" %}
 
   <hr>
