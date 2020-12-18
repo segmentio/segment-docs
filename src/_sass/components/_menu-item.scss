@@ -91,7 +91,7 @@
 
     &--icon {
       #{$this}__icon {
-        flex: 0 0 16px;
+        flex: 0 0 22px;
         color: color(gray-600);
         vertical-align: middle;
         margin-right: 14px;
@@ -102,7 +102,7 @@
         }
 
         &--small {
-          flex: 0 0 12px;
+          flex: 0 0 14px;
           margin-right: 9px;
 
           svg {
