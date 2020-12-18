@@ -34,7 +34,7 @@ A blurb about release notes here....
     <div class="release-note__body">
       <h2>{{ post.title }}</h2>
       <date class="release-note__date">{{ post.date | date: "%B %d, %Y" }}</date>
-      <main>{{ post.description | markdownify }}</main>
+      <main class="markdown">{{ post.description | markdownify }}</main>
       <div class="release-note__links">
         {% for link in post.doc_links %}
           <a href="{{ link.url }}">{{ link.title }}</a>
