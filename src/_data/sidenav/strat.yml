@@ -40,6 +40,8 @@ sections:
     title: Google Firebase (mobile analytics) destination
   - path: /connections/destinations/catalog/google-analytics
     title: Google Analytics destination
+  - path: /connections/destinations/catalog/google-analytics/ga4-plans
+    title: Google Analytics 4 destination
   - path: /connections/destinations/catalog/google-tag-manager
     title: Google Tag Manager destination
   - path: /connections/destinations/catalog/doubleclick-floodlight
@@ -61,13 +63,13 @@ sections:
   section_title: Salesforce Integrations
   section:
   - path: /connections/destinations/catalog/salesforce
-    title: Salesforce destintation
+    title: Salesforce destination
   - path: /connections/destinations/catalog/salesforce-live-agent
-    title: Salesforce Live Agent destintation
+    title: Salesforce Live Agent destination
   - path: /connections/destinations/catalog/salesforce-marketing-cloud
     title: Salesforce Marketing Cloud destination
   - path: /connections/destinations/catalog/salesforce-dmp
-    title: Salesforce DMP destintation (beta)
+    title: Salesforce DMP destination (beta)
   - path: /connections/sources/catalog/cloud-apps/salesforce
     title: Salesforce cloud source
   - path: /connections/sources/catalog/cloud-apps/salesforce-marketing-cloud
@@ -134,4 +136,3 @@ sections:
     title: Troubleshooting Analytics-React-Native
   - path: /connections/sources/catalog/libraries/mobile/android/react-faqs
     title: React-Native FAQs
-

@@ -35,15 +35,16 @@ All Segment customers with a US business address may be subject to state and loc
 Segment currently charges sales tax in the following states:
 
 - Arizona
-- Chicago
-- Colorado
-- Denver
+- Colorado (Denver only)
+- Connecticut
 - District of Columbia
+- Illinois (Chicago only)
 - Massachusetts
 - New York
+- Ohio
 - Pennsylvania
 - South Carolina
-- Tennessee (beginning 5/15/2020)
+- Tennessee
 - Texas
 - Utah
 - Washington

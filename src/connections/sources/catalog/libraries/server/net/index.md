@@ -1,8 +1,5 @@
 ---
 title: Analytics for .NET
-sourceTitle: .NET
-sourceCategory: Server
-shortName: 'net'
 ---
 
 Our .NET library is the best way to integrate analytics into your .NET application or website. It lets you record analytics data from your ASP.NET, C#, F#, and Visual Basic code. The library issues requests that hit our servers, and then we route your data to any analytics service you enable on our destinations page. This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/Analytics.NET).
@@ -19,11 +16,11 @@ The best analytics installation combines both client-side and server-side tracki
 
 ### Step 1: Add Analytics.js to your ASP.NET Master Page
 
-Create a .NET server source in Segment.
+1. In your Segment workspace, click Catalog, and search for "Net".
+2. Click the .Net tile, then click **Add Source**.
+3. Give the new source a label (which you'll use to identify it later), and apply any labels such as `prod` or `test`.
 
-![image](images/netcreatesource.png)
-
-You will then be presented with an [`analytics.js`](/docs/connections/sources/catalog/libraries/website/javascript/) snippet.
+You will then be presented with an [Analytics.js snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet).
 
 Copy the snippet directly into your ASP.NET [Site.master](https://github.com/segmentio/asp.net-example/blob/master/Site.master#L18-L21).
 

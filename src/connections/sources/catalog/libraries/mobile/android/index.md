@@ -535,7 +535,7 @@ analyticsContext.putValue(...).putReferrer(...).putCampaign(...);
 
 {% codeexampletab Kotlin %}
 ```kotlin
-val analyticsContext = Analytics.with(context).analyticsContext()
+val analyticsContext = Analytics.with(context).analyticsContext
 analyticsContext.putValue(...).putReferrer(...).putCampaign(...)
 ```
 {% endcodeexampletab %}
@@ -555,7 +555,7 @@ analyticsContext.device().putValue("advertisingId", "1");
 
 {% codeexampletab Kotlin %}
 ```kotlin
-val analyticsContext = Analytics.with(context).analyticsContext()
+val analyticsContext = Analytics.with(context).analyticsContext
 analyticsContext.device().putValue("advertisingId", "1")
 ```
 {% endcodeexampletab %}
@@ -575,7 +575,7 @@ context.clear();
 {% codeexampletab Kotlin %}
 ```kotlin
 val analytics = Analytics.Builder(context, writeKey).defaultOptions(defaultOptions).build()
-val context = analytics.analyticsContext()
+val context = analytics.analyticsContext
 context.clear()
 ```
 {% endcodeexampletab %}

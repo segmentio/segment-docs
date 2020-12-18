@@ -100,8 +100,6 @@ Facebook offers the Facebook Pixel, which allows you to retarget these types of 
 - Select the Personas Facebook Custom Audiences option, and click **Configure Personas Facebook Custom Audiences**.
 - Authorize Facebook Ads and select a Facebook account id to sync to.
 
-![](images/fb_ca_auth.gif)
-
 ### 2. Create an audience in Segment & connect to Facebook
 
 - Go to the Audience Builder in Personas and create a new Audience with your desired event and trait criteria.
@@ -111,8 +109,6 @@ Facebook offers the Facebook Pixel, which allows you to retarget these types of 
 
 > note ""
 > **Note**: if you change the name of the audience in Segment, it will not be reflected in Facebook
-
-![](images/fb_ca_setup.gif)
 
 ### 3. Verify that the audience appears in Facebook
 

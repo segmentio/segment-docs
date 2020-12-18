@@ -102,7 +102,7 @@ Authorization between an Google Ads (Classic) account and a third-party-applicat
 
 Once this step is complete, you should see a screen that looks like this showing the new Link Id:
 
-![link id process](images/link-id-process.png)
+![](images/link-id-process.png)
 
 #### Add your Link ID as an Integration Setting
 
