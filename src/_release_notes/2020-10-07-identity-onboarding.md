@@ -1,9 +1,7 @@
 ---
 title: Identity Onboarding
 description: |
-  Customers often got stuck when setting up Identity due to the complexity of our legacy behavior and UI. They either needed to pull in SAs or CSMs for help or didn't configure ID settings at all, which would lead to corrupted user profiles that would impact production workflows later on. With the new flow, customers can fill out a quick questionnaire and be recommended a best fit config for their use-case! 
-  
-  The new flow also enforces dev and prod spaces for QA'ing, and removes the requirement for custom identifiers to live in a context.externalID object, making it all the easier for customers to get value from Personas as soon as possible.
+  All new Personas customers are taken through a guided workflow to set up their identity resolution rules. Based on a user's selections, Personas provides a standard set of identity rules. From there, users can add or edit identifiers and properties, or set custom identifiers based on their unique business rules, from the Identity Resolutions Settings page.
 release_type: new-feature
 product_area: personas
 business: true
@@ -14,9 +12,9 @@ doc_links:
     url: "/docs/personas/identity-resolution/identity-resolution-onboarding/"
 images:
   -
-    path: images/release-notes/release-note-2.png
-    desc: a string that explains the image
+    path: images/release-notes/identity-onboarding-1.png
+    desc: Import rules from another space, select a preset, or define your own. 
   -
-    path: images/release-notes/release-note-1.png
-    desc: a string that explains the image
+    path: images/release-notes/identity-onboarding-2.png
+    desc: Answering four questions helps Segment determine which rules will be most valuable in your new space.
 ---

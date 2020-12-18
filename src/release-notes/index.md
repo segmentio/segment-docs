@@ -6,7 +6,7 @@ badges:
   update: "success"
 ---
 
-A blurb about release notes here....
+Stay up-to-date with the latest features and releases from Segment.
 
 {% for post in site.release_notes reversed %}
   {% assign release_type_slug = post.release_type | replace: "-", "_" %}
@@ -37,7 +37,7 @@ A blurb about release notes here....
       <main class="markdown">{{ post.description | markdownify }}</main>
       <div class="release-note__links">
         {% for link in post.doc_links %}
-          <a href="{{ link.url }}">{{ link.title }}</a>
+          <a href="{{ link.url }}?utm_source=release%3Dnotes&utm_medium=site&utm_campaign={{post.title | slugify}}">{{ link.title }}</a>
         {% endfor %}
       </div>
       <div class="flex flex--wrap waffle waffle--large" data-glightbox>
