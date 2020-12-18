@@ -1,7 +1,7 @@
 ---
 title: A new look and feel for the Segment App
 description: |
-  The Segment App has been completely redesigned with a focus on better usability, clearer navigation, and simplification of complex areas of the product.
+  The Segment App has been completely redesigned with a focus on better usability, clearer navigation, and simplification of complex areas of the product. For more information about the research that went into this update, see our [blog post](https://segment.com/blog/new-look-and-feel-for-Segment/).
 release_type: update
 product_area: segment app
 business: false
