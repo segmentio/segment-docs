@@ -47,7 +47,7 @@ Below is a table of events that **Shopify by Littledata** sends to Segment throu
 | Product Viewed        | The user has viewed a product page                                    |
 | Product Image Clicked | The user has clicked a product image                                  |
 | Product Shared        | User has shared a product via social links                            |
-| Thank you page        | User has viewed the thank you page after completing an order \*       |
+| Thankyou Page Viewed  | User has viewed the thank you page after completing an order \*       |
 
 \* This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
 
@@ -71,9 +71,11 @@ Below is a table of events that **Shopify by Littledata** sends to Segment from 
 | Checkout Started         | A user has started checkout                                                                                                                                                                 |
 | Checkout Step Completed  | A user has completed a step in the checkout                                                                                                                                                 |
 | Payment Info Entered     | A user has entered payment info                                                                                                                                                             |
+| Customer Created         | User added as a customer                                                                                                                                                                    |
+| Customer Updated         | Customer information updated                                                                                                                                                                |
+| Coupon Applied           | Sent with Checkout Step Completed or Order Completed when user has applied a coupon                                                                                                         |
 | Order Completed          | A prospect has completed an order                                                                                                                                                           |
 | Order Refunded           | An order has been refunded                                                                                                                                                                  |
-| Coupon Applied           | A user has applied a coupon with Order Completed                                                                                                                                            |
 | Order Cancelled (v2)     | An admin has cancelled an order (including the cancel_reason)                                                                                                                               |
 | POS Order Placed (v2)    | A user has placed an order through Shopify POS                                                                                                                                              |
 | Payment Failure (v2)     | A user completed checkout step 3 but the payment method failed (for example, the card details were valid but the [charge did not succeed(https://stripe.com/docs/testing#cards-responses)]) |
@@ -125,7 +127,6 @@ Additional events available through Littledata's [ReCharge connection](https://w
 | Charge Failed            | A failed to charge customer                     |
 | Charge Max Tries Reached | The maximum tries to charge customer is reached |
 | Payment Method Updated   | A customer has updated the payment method       |
-| Customer Update          | A customer information updated                  |
 
 ## Event Properties
 
@@ -139,12 +140,13 @@ The list below outlines the properties included in the events listed above.
 | `checkoutId`                           | The ID of the checkout session                                 | String        |
 | `shipping`                             | The shipping cost                                              | Float         |
 | `tax`                                  | The amount of tax on the order                                 | Float         |
+| `subtotal`                             | The total less tax and shipping                                | Float         |
 | `total`                                | The total value of the order                                   | Float         |
 | `affiliation`                          | The affiliation of the order                                   | String        |
 | `coupon`                               | Comma-separated string of discount coupons used, if applicable | String        |
 | `currency`                             | The currency of the order                                      | String        |
 | `discount`                             | The discounted amount                                          | Float         |
-| `products`                             | A list of all the product at that step of the funnel           | Array         |
+| `products`                             | A list of all the product at that step of the funnel \*        | Array         |
 | `step`                                 | The checkout step                                              | Integer       |
 | `payment_method`                       | The payment method chosen for checkout                         | String        |
 | `shipping_method`                      | The shipping method chosen for checkout                        | String        |
@@ -155,22 +157,24 @@ The list below outlines the properties included in the events listed above.
 | `presentment_currency`                 | The user's local currency                                      | String        |
 | `presentment_total`                    | The order total in local currency                              | String        |
 
+\* Prior to 1st February 2021, `products` on Product Added and Product Removed events was [only the single product](https://blog.littledata.io/help/posts/segment-changed-schema-for-product-added-and-product-removed/), not the whole cart.
+
 ## Product Properties
 
-Each item in the `products` array may have the following properties:
+Each item in the `products` array, or Product Viewed and Product Added events, will have the following properties
 
-| Property             | Description                                      | Property Type |
-| -------------------- | ------------------------------------------------ | ------------- |
-| `product_id`         | The Shopify product ID                           | String        |
-| `shopify_product_id` | Also Shopify product ID, with device-mode events | String        |
-| `sku`                | The product SKU                                  | String        |
-| `variant`            | The product variant name                         | String        |
-| `shopify_variant_id` | The Shopify variant ID                           | String        |
-| `category`           | The category of the product (defaults to `all`)  | String        |
-| `brand`              | The brand of the product                         | String        |
-| `list_id`            | The ID of the product collection                 | String        |
-| `list_name`          | The name of the product collection               | String        |
-| `list_position`      | The product position in the collection           | Integer       |
-| `name`               | The product name                                 | String        |
-| `price`              | The product price                                | Float         |
-| `quantity`           | The quantity of products                         | Integer       |
+| Property             | Description                                     | Property Type |
+| -------------------- | ----------------------------------------------- | ------------- |
+| `product_id`         | Shopify product ID                              | String        |
+| `shopify_product_id` | Also Shopify product ID                         | String        |
+| `sku`                | The product SKU                                 | String        |
+| `variant`            | The product variant name                        | String        |
+| `shopify_variant_id` | The Shopify variant ID                          | String        |
+| `category`           | The category of the product (defaults to `all`) | String        |
+| `brand`              | The brand of the product                        | String        |
+| `list_id`            | The ID of the product collection                | String        |
+| `list_name`          | The name of the product collection              | String        |
+| `list_position`      | The product position in the collection          | Integer       |
+| `name`               | The product name                                | String        |
+| `price`              | The product price                               | Float         |
+| `quantity`           | The quantity of products                        | Integer       |
