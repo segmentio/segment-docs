@@ -3,7 +3,10 @@
     <nav class="menu">
       <ul class="menu__list list list--unstyle">
         <li class="menu-item">
-          <a href="{{ site.baseurl }}/" class="menu-item__link menu-item__link--small menu-item__link--back">Back to Documentation</a>
+          <a href="{{ site.baseurl }}/" class="menu-item__link menu-item__link--small menu-item__link--back">
+            {% include icons/symbols/arrow-left.svg %}
+            <span>Back to Documentation</span>
+          </a>
         </li>
       </ul>
     </nav>
