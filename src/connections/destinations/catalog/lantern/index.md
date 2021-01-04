@@ -17,8 +17,8 @@ This destination is maintained by Lantern. For any issues with the destination, 
 
 ### Automated Setup
 1. Log into your [Lantern dashboard](https://app.lantern.so).
-2. When prompted to add a source, click on the Segment logo.
-3. Pick a workspace and a source.
+2. When prompted to add a source, click the Segment logo.
+3. Pick a Segment workspace and source.
 4. Click "Allow".
 
 ### Manual Setup
@@ -35,9 +35,9 @@ This destination is maintained by Lantern. For any issues with the destination, 
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
-```
+```js
 analytics.page();
 ```
 
@@ -46,9 +46,9 @@ Lantern will monitor `page` events and send you alerts when an anomaly occurs (s
 
 ## Screen
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An iOS example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](/docs/connections/spec/screen/) does. An iOS example call would look like:
 
-```
+```swift
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 
@@ -57,22 +57,22 @@ Lantern will monitor `screen` events and send you alerts when an anomaly occurs 
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
-```
+```js
 analytics.identify('userId123', {
   email: 'john.doe@example.com'
 });
 ```
 
-Lantern does not surface any information that links to a user's personal identity. We only analyse the volume of identify calls to detect anomalies related to the total number of unique users and perform various computation over aggregated data. 
+Lantern does not surface information that links to a user's personal identity. Lantern only analyses the volume of identify calls to detect anomalies related to the total number of unique users and perform various computation over aggregated data. 
 
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
-```
+```js
 analytics.track('Products Searched', {
   query: 'blue hotpants'
 });
