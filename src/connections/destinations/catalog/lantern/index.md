@@ -3,11 +3,11 @@ title: Lantern Destination
 rewrite: true
 redirect_from: '/connections/destinations/catalog/lazy-lantern/'
 ---
-[Lantern](https://lazylantern.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides autonomous anomaly detection for all your product metrics. It only takes a minute to enable with Segment, no coding involved.
+[Lantern](https://lantern.so/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides autonomous anomaly detection for all your product metrics. It only takes a minute to enable with Segment, no coding involved.
 
-We ingest your analytics through Segment, perform state-of-the-art anomaly detection on each of your metrics, and  alert you on Slack when something doesn't look right. You get full-coverage over your product and the confidence that you will be notified of any significant variation.
+Lantern is a user behavior monitoring solution for modern product teams. Lantern alerts you on Slack when something doesn't look right. You get full-coverage over your product and the confidence that you will be notified of any significant variation.
 
-This destination is maintained by Lantern. For any issues with the destination, contact [Lantern's support](mailto:support@lazylantern.com).
+This destination is maintained by Lantern. For any issues with the destination, contact [Lantern's support](mailto:support@lantern.so).
 
 {% include content/beta-note.md %}
 
@@ -16,8 +16,8 @@ This destination is maintained by Lantern. For any issues with the destination, 
 {% include content/connection-modes.md %}
 
 ### Automated Setup
-1. Log into your [Lantern dashboard](https://app.lazylantern.com).
-2. Click on the "Enable with Segment" button.
+1. Log into your [Lantern dashboard](https://app.lantern.so).
+2. When prompted to add a source, click on the Segment logo.
 3. Pick a workspace and a source.
 4. Click "Allow".
 
@@ -25,13 +25,12 @@ This destination is maintained by Lantern. For any issues with the destination, 
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Lantern" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your Lantern dashboard [settings page](https://app.lazylantern.com).
+3. Enter the "API Key" into your Segment Settings UI which you can find by contacting Lantern's support [settings page](https://app.lantern.so).
 
 ### Next Steps
- - Lantern needs one week of training on your data before it can perform accurate anomaly detection. The countdown on the Lantern dashboard lets you know when the training period will be completed.
- - During the training period, a debug view on the dashboard will let you verify your data is flowing correctly from Segment to Lantern.
- - Alerts will be delivered by the Lantern Slack bot. Follow the easy instructions on the dashboard to add Lantern to Slack.
-
+ - That's it! Lantern is already at work and will deliver your fist insights in a few hours.
+ - In the meantime, you can connect your Slack workspace to Lantern by clicking on the "Receive Insights In Slack" button from the Lantern newsfeed page.
+ - Add more sources to get more insights. Go to Settings -> Sources -> Add Source to repeat the process for additional sources.
 
 
 ## Page
@@ -66,7 +65,7 @@ analytics.identify('userId123', {
 });
 ```
 
-Lantern does not store any information that links to a user's personal identity. The `userId` field and `traits` object are systematically dropped and not stored in Lantern's warehouse. We only analyse the volume of identify calls to detect anomalies related to the total number of unique users.
+Lantern does not surface any information that links to a user's personal identity. We only analyse the volume of identify calls to detect anomalies related to the total number of unique users and perform various computation over aggregated data. 
 
 
 ## Track

@@ -35,7 +35,7 @@ Once violation forwarding is enabled, you can build a custom anomaly detection s
 
 1. [Forward violations to a Slack channel](#forward-violations-to-a-slack-channel)
 2. [Create violation and event count Anomaly Detection dashboards in a BI tool](#create-customized-anomaly-detection-dashboards-in-a-bi-tool)
-3. [Use a tool like Lazy Lantern to automate anomaly detection](#use-a-tool-like-lazy-lantern-to-automate-anomaly-detection)
+3. [Use a tool like Lantern to automate anomaly detection](#use-a-tool-like-lantern-to-automate-anomaly-detection)
 
 ### Forward violations to a Slack Channel
 After you've enabled [Violation Forwarding](/docs/protocols/validate/forward-violations/), [enable the Slack destination](/docs/connections/destinations/catalog/slack/#getting-started) for your Protocols Audit Source. In the destination's settings, add an Incoming Webhook URL for the Slack channel you want to push notifications to. Next, add the `Violation Generated` event to the [Event Templates settings](/docs/connections/destinations/catalog/slack/#event-templates).
@@ -145,8 +145,8 @@ This query produces a table listing the top 10 events with the most violations. 
        limit  10
 ```
 
-### Use a tool like Lazy Lantern to automate anomaly detection
+### Use a tool like Lantern to automate anomaly detection
 
-After you've set up [Violation Forwarding](/docs/protocols/validate/forward-violations/), you can enable the Lazy Lantern destination for the your `Protocols Audit Source` to start automatically generating Slack notifications when an anomaly occurs. Lazy Lantern can also be connected to your Segment production sources to track if any events are experiencing volume anomalies.
+Enable the Lantern destination for any source to start automatically generating Slack notifications when an anomaly occurs. Lantern works best for sources containing `page` and `track` events, for which it will flag volume anomalies reflecting a change in behavior of some user segment.
 
-[Learn more about Lazy Lantern here](/docs/connections/destinations/catalog/lazy-lantern/)
+[Learn more about Lantern here](/docs/connections/destinations/catalog/lantern/)
