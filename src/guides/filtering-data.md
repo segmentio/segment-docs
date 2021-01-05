@@ -4,7 +4,8 @@ title: Filtering your Segment Data
 
 There are many ways you can use Segment to filter event and object based data to control which destinations it reaches. This document lists the most commonly used ways you can filter data in Segment, and explains when you'd use each.
 
-<img src="/docs/images/segment-diagram.png" style="max-width: 500px;">
+![](/docs/images/segment-diagram.png)
+
 
 ## Filtering with the Integrations Object
 
