@@ -1,8 +1,7 @@
 steps:
   - label: ":hammer: Install Dependencies"
     command:
-      - make node_modules
-      - make vendor/bundle
+      - make deps
     env:
       SEGMENT_CONTEXTS: "snyk, aws-credentials"
     plugins:
