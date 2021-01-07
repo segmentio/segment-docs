@@ -101,7 +101,7 @@ node_modules: package.json yarn.lock
 vendor/bundle:
 	@export BUNDLE_PATH="vendor/bundle"
 	@mkdir -p vendor && mkdir -p vendor/bundle
-	@chmod -R 777 vendor/
+	@chmod -R 777 vendor/ Gemfile.lock
 	@bundle config set --local path 'vendor/bundle'
 	@bundle install
 
