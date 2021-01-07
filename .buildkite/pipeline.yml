@@ -9,11 +9,11 @@ steps:
       - docker#v3.3.0:
           image: jekyll/jekyll
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v3.0.0:
-          key: "v1-cache-gem-{{ checksum 'Gemfile.lock' }}"
+          key: "v2-cache-gem-{{ checksum 'Gemfile.lock' }}"
           paths: [ "vendor/" ]
           save: true
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v3.0.0:
-          key: "v1-cache-npm-{{ checksum 'yarn.lock' }}"
+          key: "v2-cache-npm-{{ checksum 'yarn.lock' }}"
           paths: [ "node_modules/" ]
           save: true
 
@@ -34,10 +34,10 @@ steps:
           environment:
             - BUILDKITE_BRANCH
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v3.0.0:
-          key: "v1-cache-gem-{{ checksum 'Gemfile.lock' }}"
+          key: "v2-cache-gem-{{ checksum 'Gemfile.lock' }}"
           paths: [ "vendor/" ]
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v3.0.0:
-          key: "v1-cache-npm-{{ checksum 'yarn.lock' }}"
+          key: "v2-cache-npm-{{ checksum 'yarn.lock' }}"
           paths: [ "node_modules/" ]
 
   - wait: ~

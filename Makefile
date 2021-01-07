@@ -102,7 +102,8 @@ vendor/bundle:
 	@export BUNDLE_PATH="vendor/bundle"
 	@mkdir -p vendor && mkdir -p vendor/bundle
 	@chmod -R 777 vendor/
-	@bundle install --path=vendor/bundle
+	@bundle config set --local path 'vendor/bundle'
+	@bundle install
 
 
 .PHONY: lint
