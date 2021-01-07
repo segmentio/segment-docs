@@ -1,4 +1,23 @@
 steps:
+  - label: ":hammer: Install Dependencies"
+    command:
+      - make deps
+    env:
+      SEGMENT_CONTEXTS: "snyk, aws-credentials"
+    plugins:
+      - docker#v3.3.0:
+          image: jekyll/jekyll:4.2.0
+      - ssh://git@github.com/segmentio/cache-buildkite-plugin#v3.0.0:
+          key: "v2-cache-gem-{{ checksum 'Gemfile.lock' }}"
+          paths: [ "vendor/" ]
+          save: true
+      - ssh://git@github.com/segmentio/cache-buildkite-plugin#v3.0.0:
+          key: "v2-cache-npm-{{ checksum 'yarn.lock' }}"
+          paths: [ "node_modules/" ]
+          save: true
+
+  - wait: ~
+
   - label: ":hammer: Build Dependencies and Docs"
     command:
       - make test
@@ -10,18 +29,17 @@ steps:
         - build_package.tar.gz
     plugins:
       - docker#v3.3.0:
-          image: jekyll/jekyll
+          image: jekyll/jekyll:4.2.0
           environment:
             - BUILDKITE_BRANCH
-
-      - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
-          key: "v1-cache-gem-{{ checksum 'Gemfile.lock' }}"
+      - ssh://git@github.com/segmentio/cache-buildkite-plugin#v3.0.0:
+          key: "v2-cache-gem-{{ checksum 'Gemfile.lock' }}"
           paths: [ "vendor/" ]
-      - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
-          key: "v1-cache-npm-{{ checksum 'yarn.lock' }}"
+      - ssh://git@github.com/segmentio/cache-buildkite-plugin#v3.0.0:
+          key: "v2-cache-npm-{{ checksum 'yarn.lock' }}"
           paths: [ "node_modules/" ]
-     
-  - wait
+
+  - wait: ~
 
   - label: ":shipit: Deploy Docs to S3"
     env:
