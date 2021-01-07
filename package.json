@@ -20,7 +20,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/plugin-transform-runtime": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
-    "axios": "0.19.0",
+    "axios": "0.21.1",
     "babel-loader": "8.0.6",
     "concurrently": "4.1.2",
     "front-matter": "3.0.2",
