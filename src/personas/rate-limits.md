@@ -33,7 +33,7 @@ If a Customer sends more than 100 requests a second per space to the Profile API
 
 ## Identity Merges
 
-Personas supports up to 100 merges per profile in its identity graph. Messages that attempt additional merges are usually a sign of a corrupt profile and are dropped. A merge occurs when two existing profile are joined together by a common external_id. For example, if a user starts their journey on mobile, and then signs in via a web application, those two user profiles are joined together by a common identifier like a user_id.
+Personas supports up to 100 merges per profile in its identity graph. A merge occurs when two existing profile are joined together by a common external_id. For example, if a user starts their journey on mobile, and then signs in via a web application, those two user profiles are joined together by a common identifier like a user_id. Messages that attempt additional merges are usually a sign of a corrupt profile and are dropped.
 
 ## Identity Mappings
 
