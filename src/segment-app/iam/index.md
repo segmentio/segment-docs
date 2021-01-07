@@ -27,7 +27,7 @@ Users access their Segment account with either email/password credentials, or by
 `Owners` manage all aspects of the workspace, and `members` can have access to specific products and resource types.
 
 > info ""
-> **Note**: If you are on a Free or Team plan, only the `workspace owner` and `source admin` roles are available._
+> **Note**: If you are on a Free or Team plan, only the `workspace owner` and `source admin` roles are available.
 
 Check out the [Roles documentation](/docs/segment-app/iam/roles/) for more details.
 
