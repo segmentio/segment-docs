@@ -259,7 +259,7 @@ Personas sends **Account-Level data** to HubSpot using **Identify** calls to add
 
 
 4. Go to your HubSpot Settings.
-5. Create a new `contact property` in HubSpot for each audience you want HubSpot to receive from Personas.
+5. Create a new `property` in HubSpot for each audience you want HubSpot to receive from Personas.
    This is required because HubSpot’s schema is explicitly defined.
    You must do this *before* you send any Personas data from Segment to HubSpot.
 
@@ -267,8 +267,8 @@ Personas sends **Account-Level data** to HubSpot using **Identify** calls to add
 
 
 6. Set the object type.
-   - For Personas Audiences that are only individual users, set the **Object Type** as `Contact`.
-   - For Audiences that use *Groups*, set the **Object type** to `Contact information`.
+   - For user-level Audiences, set the **Object Type** to `Contact` and the **Group** to `Contact information`.
+   - For account-level Audiences, set the **Object type** to `Company` and the **Group** to `Company information`.
 
 7. Enter the label for the custom property, and make sure it matches the Audience Key you wrote down from the Personas audience builder (see the tip below). Click **Next**.
 
