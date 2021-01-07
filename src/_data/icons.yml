@@ -1,0 +1,37 @@
+sections:
+- section_title: main
+  section_icons:
+    - book
+    - chart
+    - config-api
+    - connections
+    - getting-started
+    - git-repo
+    - glossary
+    - guides
+    - help
+    - home
+    - new-tab
+    - partners
+    - personas
+    - privacy
+    - projects
+    - protocols
+    - read-more
+    - segment-app
+- section_title: media
+  section_icons:
+    - academy
+    - classify
+    - comply
+    - config-desktop
+    - control
+    - database-star
+    - delete
+    - detect
+    - hierarchy
+    - pie-chart
+    - programming
+    - target-center
+    - target-path
+    - violations

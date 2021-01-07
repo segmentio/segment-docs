@@ -20,7 +20,7 @@ don't have a Segment account? No problem, [sign up here](https://segment.com/sig
 4. The next page, **Overview**, will surface your Segment write key for Cloudflare. Copy this write key.
 5. To finish the setup, you'll have to go into your Cloudflare account and enter this Segment write key in their app settings. [Install the app  here](https://cloudflare.com/apps/segment/install?source=segment-docs).
 
-![Screenshot of Cloudflare Segment App](https://i.imgur.com/LX36x8R.png)
+![Screenshot of Cloudflare Segment App](images/LX36x8R.png)
 
 Turn on the "Automatically Track Page Views" option in Cloudflare to collect page view data. Now when you go back to Segment, click into your Cloudflare Source and you'll be able to add other downstream Destinations where you want to see your website's events.
 

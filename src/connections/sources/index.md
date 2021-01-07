@@ -4,7 +4,7 @@ landing: true
 related:
   - "/connections/sources/catalog/"
   - "/connections/sources/faq/"
-icon: media/icon-academy.svg
+icon: media/academy.svg
 excerpt: Detailed information about each Source. Learn how our API methods are implemented for that destination.
 ---
 
@@ -53,11 +53,11 @@ analytics.identify('user_123', {
 
 [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), our Javascript library, is the most powerful way to track customer data from your website. If you're just starting out, we recommend it over server-side libraries as the simplest installation for any website.
 
-{% include components/media-icon.html
+{% include components/reference-button.html
   href="https://segment.com/academy/intro/"
-  icon="symbols/connections.svg"
+  icon="symbols/squares-arrow.svg"
   title="The Analytic Quickstart Guide"
-  content="Analytics and data collection is a very broad topic and it can be quite overwhelming. How do you get started?"
+  description="Analytics and data collection is a very broad topic and it can be quite overwhelming. How do you get started?"
 %}
 
 ---
@@ -98,7 +98,7 @@ Our server-side sources let you send analytics data directly from your servers. 
 
 Cloud app sources empower you to pull together data from all of your different third-party tools into a Segment warehouse or to your other enabled integrated tools. There are two types of Cloud Apps: **Object** and **Event** sources.
 
-{% include components/media-icon.html href="/docs/connections/sources/sources-compare/" icon="media/icon-guides.svg" title="Comparing Cloud Sources" content="Wondering which cloud-apps send which types of data? Check out the Cloud Sources comparison!" %}
+{% include components/reference-button.html href="/docs/connections/sources/sources-compare/" icon="guides.svg" title="Comparing Cloud Sources" description="Wondering which cloud-apps send which types of data? Check out the Cloud Sources comparison!" %}
 
 ### Object Cloud Sources
 

@@ -2,33 +2,47 @@
 ///
 /// @type {Map}
 $color-values: (
-  primary: #1dc989,
-  primary-dark: #1eb57d,
-  primary-darker: #159B75,
-  primary-light: #52bd95,
-  secondary: #1f477d,
-  secondary-light: #abbfdc,
-  secondary-lighter: #d8e2f2,
-  secondary-dark: #435a6f,
-  gray-light: #f7f9fa,
-  gray-lighter: #f9fafb,
-  gray: #a5b0ba,
-  gray-dark: #435A6F,
-  gray-darker: #66788A,
-  border-gray: #edf0ed,
-  border-gray-dark: #dbe1ea,
-  code-gray: #435a6f,
-  code-green: #52bd95,
+  primary-lighter: #ebf0ff,
+  primary-light: #d6e0ff,
+  primary: #3366ff,
+  primary-dark: #2952cc,
+  secondary-light: #dcf2ea,
+  secondary: #52bd94,
+  secondary-dark: #317159,
+
+  gray-900: #101840,
+  gray-800: #474d66,
+  gray-700: #696f8c,
+  gray-600: #8f95b2,
+  gray-500: #c1c4d6,
+  gray-400: #d8dae5,
+  gray-300: #e6e8f0,
+  gray-200: #edeff5,
+  gray-100: #f4f6fa,
+  gray-50: #fafbff,
+
+  code-gray: #474d66,   
+  code-green: #6fba97,
   code-blue: #2e98df,
   code-violet: #9166ca,
   code-pink: #ff678d,
   code-red: #d52039,
   code-orange: #f89c56,
   code-background: #eceef0,
-  info: #4286e2,
-  success: #1dc989,
-  warning: #f89c56,
-  error: #e73630,
+
+  info-light: #f3f6ff,
+  info: #3366ff,
+  info-dark: #2952cc,
+  success-light: #f5fbf8,
+  success: #52bd94,
+  success-dark: #317159,
+  warning-light: #FFFAF1,
+  warning: #ffb020,
+  warning-dark: #996A13,
+  error-light: #fdf4f4,
+  error: #d14343,
+  error-dark: #a73636,
+  
   black: #000000,
   white: #ffffff
 ) !default;
@@ -103,7 +117,7 @@ $breakpoint-offset: 1px;
 /// Base font size set on the root html element.
 ///
 /// @type {Value}
-$font-size: 15px !default;
+$font-size: 16px !default;
 
 /// Base font weight set on the root html element.
 ///
@@ -113,17 +127,17 @@ $font-weight: 400 !default;
 /// Base line height determines the basic unit of vertical rhythm.
 ///
 /// @type {Number}
-$font-line-height: 27px !default;
+$font-line-height: 26px !default;
 
 /// Base font size set on the root html element.
 ///
 /// @type {Color}
-$font-color: map-get($color-values, secondary-dark) !default;
+$font-color: map-get($color-values, gray-800) !default;
 
 /// Default font family.
 ///
 /// @type {Value|Values}
-$font-family-primary: "Graphik Web", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+$font-family-primary: "SF Pro Text", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
 
 /// Monospace font family.
 ///
@@ -133,7 +147,7 @@ $font-family-monospace: "Droid Sans Mono", "Lucida Console", "Monaco", monospace
 /// Font weight of headings.
 ///
 /// @type {Number|Keyword}
-$heading-font-weight: 500 !default;
+$heading-font-weight: 600 !default;
 
 /// Font family of headings.
 ///
@@ -143,4 +157,4 @@ $heading-font-family: $font-family-primary !default;
 /// Color of headings.
 ///
 /// @type {Color}
-$heading-color: map-get($color-values, secondary) !default;
+$heading-color: map-get($color-values, gray-900) !default;

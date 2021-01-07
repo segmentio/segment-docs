@@ -8,19 +8,19 @@
   align-items: center;
   width: 40px;
   height: 40px;
-  background-color: #e4ebee;
+  color: color(gray-600);
+  background-color: color(white);
+  border: 1px solid color(gray-300);
   border-radius: 4px;
   cursor: pointer;
-  // opacity: 0;
-  // visibility: hidden;
 
   @include breakpoint(medium up)  {
-    bottom: 40px;
-    right: 40px;
+    bottom: 32px;
+    right: 32px;
   }
 
   &:hover {
-    background-color: #bdcbd2;
+    background-color: color(gray-300);
   }
 
   &--active {

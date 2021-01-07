@@ -10,8 +10,12 @@ Segment is a Customer Data Platform (CDP), which means that we provide a service
 
 You can also enrich the customer data you collect by connecting data from your other tools, and then aggregate it to monitor performance, inform decision-making processes, and create uniquely customized user experiences. You can also use Personas, our identity resolution tool, to unify data from individual users to gain a wholistic understanding of their actions.
 
-{% include components/media-icon.html href="
-https://university.segment.com/introduction-to-segment/299955?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: How Segment Works" content="Check out how to get started with Segment in Segment University! (Must be logged in to access.)" %}
+{% include components/reference-button.html
+  href="https://university.segment.com/introduction-to-segment/299955?reg=1&referrer=docs"
+  icon="media/academy.svg"
+  title="Segment University: How Segment Works"
+  description="Check out how to get started with Segment in Segment University! (Must be logged in to access.)" 
+%}
 
 ## What does it do?
 
@@ -61,9 +65,9 @@ In addition to [Connections](/docs/connections/) (our core message routing produ
 
 We've generated different guides based on the main activities you'll do in Segment. If you wear many hats, you might use all of these guides!
 
-- {% include components/button.html size="small" variant="bordered" text="I'm a Segment Developer" href="/docs/guides/intro-impl/" %}
-- {% include components/button.html size="small" variant="bordered" text="I'm a Segment Data user" href="/docs/guides/intro-user/" %}
-- {% include components/button.html size="small" variant="bordered" text="I'm a Segment Workspace administrator" href="/docs/guides/intro-admin/" %}
+- {% include components/button-hollow.html text="I'm a Segment Developer" href="/docs/guides/intro-impl/" %}
+- {% include components/button-hollow.html text="I'm a Segment Data user" href="/docs/guides/intro-user/" %}
+- {% include components/button-hollow.html text="I'm a Segment Workspace administrator" href="/docs/guides/intro-admin/" %}
 
 
 ## What's a Workspace?

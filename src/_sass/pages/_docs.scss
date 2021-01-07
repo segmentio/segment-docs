@@ -2,41 +2,50 @@
   &__aside {
     position: relative;
     z-index: 0;
-    padding-top: 25px;
-    padding-bottom: 25px;
 
-    &::before {
+    &:after {
       content: "";
+      display: block;
       position: absolute;
       top: 0;
       right: 0;
       z-index: -1;
-      width: 100vh;
+      width: 100vw;
       height: 100%;
-      background-color: color(gray-light);
-    }
-
-    & > * + * {
-      margin-top: 40px;
+      background-color: color(gray-50);
+      border-right: 1px solid color(gray-300);
     }
   }
 
-  &__body {
+  &__navbar {
+    position: relative;
+    z-index: 0;
+    padding: 16px 40px;
+    display: none;
+
     @include breakpoint(large up)  {
-      max-width: 824px;
-      padding-top: 15px;
-      padding-bottom: 70px;
+      display: block;
     }
 
-    & > * + * {
-      margin-top: 25px;
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-color: color(gray-50);
+      border-bottom: 1px solid color(gray-300);
+
+      @include breakpoint(xlarge up) {
+        width: 100vw;
+      }
     }
   }
 
   &__sidebar {
-    padding-top: 19px;
-    padding-bottom: 25px;
-
     & > * + * {
       margin-top: 74px;
     }

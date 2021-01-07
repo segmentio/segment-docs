@@ -1,11 +1,12 @@
 ---
 title: ActiveCampaign Source
 ---
+
 Active Campaign is an email marketing & marketing automation solution for small businesses. [Visit Website](http://www.activecampaign.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
 
 Take your company's email analysis to the next level by **adding ActiveCampaign as a Source to Segment.** Segment automatically  collects email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
 
-In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your ActiveCampaign data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. 
+In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your ActiveCampaign data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails.
 
 ## Getting Started
 
@@ -20,20 +21,20 @@ If you have previously enabled sending email events using the ActiveCampaign des
 
 4. The next page ("Overview") will surface your **Segment write key for ActiveCampaign.** Copy this write key. 
 
-5. In your ActiveCampaign account, navigate to http://YOURACCOUNT.activehosted.com/apps/#/segment
+5. In your ActiveCampaign account, navigate to `http://YOURACCOUNT.activehosted.com/apps/#/segment`
 
 6. Scroll to the bottom of the page to where it says "Send email events data from ActiveCampaign to Segment."
 
 7. Click the "OFF" toggle.
-![off](https://cldup.com/QLv153k6CU.png)
+![off](images/QLv153k6CU.png)
 
 8. This will open a modal for you to enter your Segment.com write key. Enter your write key and click "Connect".
 
 9. The toggle will now say "ON".
-![on](https://cldup.com/cv4rU1Ivg5.png)
+![on](images/cv4rU1Ivg5.png)
 
 10. Once the first event occurs, you'll always see the last event that occurred in this box.
-![last event](https://cldup.com/5OZGDQD3wB.png)
+![last event](images/5OZGDQD3wB.png)
 
 11. If you ever need to re-enter your Segment write key, just click "Re-enter your Segment write key."
 

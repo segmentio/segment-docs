@@ -4,20 +4,6 @@
   & > * + * {
     margin-top: 30px;
     padding-top: 30px;
-    border-top: 1px solid color(border-gray-dark);
-  }
-
-  &__list {
-    & > * + * {
-      margin-top: 20px;
-    }
-  }
-
-  &--compact {
-    #{$this}__list {
-      & > * + * {
-        margin-top: 15px;
-      }
-    }
+    border-top: 1px solid color(gray-100);
   }
 }

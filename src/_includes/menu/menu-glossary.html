@@ -3,12 +3,9 @@
     <nav class="menu">
       <ul class="menu__list list list--unstyle">
         <li class="menu-item">
-          <a class="menu-item__link menu-item__link--small menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}/">
-            <div class="menu-item__icon flex__column">
-              {% include icons/menu/icon-back.svg %}
-            </div>
-  
-            <div class="flex__column">Back to Documentation</div>
+          <a class="menu-item__link menu-item__link--small menu-item__link--back" href="{{ site.baseurl }}/">
+            {% include icons/symbols/arrow-left.svg %}
+            <span>Back to Documentation</span>
           </a>
         </li>
       </ul>
@@ -18,7 +15,7 @@
         <li class="menu-item menu-item--active">
           <button class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle">
             <span class="menu-item__icon flex__column">
-              {% include icons/menu/icon-home.svg %}
+              {% include icons/glossary.svg %}
             </span>
   
             <span class="flex__column">Glossary</span>

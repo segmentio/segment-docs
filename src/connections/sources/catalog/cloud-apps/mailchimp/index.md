@@ -10,10 +10,7 @@ title: Mailchimp Source
 
 3. Give the source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. Both can be whatever you like, but we recommend sticking to something that reflects the source itself, like `Mailchimp` for nickname and `mailchimp` or `email` or `chimp_prod` for the schema name.
 
-   **Note** that you can add multiple instances if you have multiple Mailchimp accounts. That's why we allow you to customize the source's nickname and schema name!
-
-   ![](images/2732771_Screen+Shot+2016-02-16+at+2.45.02+PM.png)
-
+   **Note**: You can add multiple instances if you have multiple Mailchimp accounts. That's why we allow you to customize the source's nickname and schema name!
 4. Next, provide credentials to an account with API permissions to access your Mailchimp data. It is recommended that you create a brand new api key for the Segment source. MailChimp restricts each api key to a maximum of 10 concurrent requests, so creating a dedicated one for Segment will ensure maximum throughput. You can find your API key in **Account > Extras > API Keys**. You can read more about API keys on [MailChimp's docs](http://kb.mailchimp.com/integrations/api-integrations/about-api-keys).
 
    ![](images/3027189_API+Keys.png)
@@ -21,9 +18,8 @@ title: Mailchimp Source
    ![](images/3032880_ChimpKey.png)
 
 
-5. Paste the newly created key into the Segment set up flow:
+5. Back in Segment, go to the MailChimp source and paste key into the MailChimp API Key field.
 
-   ![](images/3146819_Screen+Shot+2016-02-16+at+2.52.00+PM.png)
 
 ## Components
 

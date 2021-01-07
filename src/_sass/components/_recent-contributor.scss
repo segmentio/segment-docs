@@ -1,0 +1,32 @@
+.recent-contributor {
+  font-size: 12px;
+  line-height: 16px;
+
+  &__content {
+    & > * +  * {
+      margin-top: 6px;
+    }
+  }
+
+  &__title {
+    color: color(gray-900);
+    font-weight: 500;
+  }
+
+  &__info {
+    margin-top: 2px;
+    color: color(gray-700);
+  }
+
+  &__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+
+  &__button {
+    font-size: 12px;
+    font-weight: 500;
+    color: color(primary);
+  }
+}
