@@ -6,7 +6,7 @@ steps:
       SEGMENT_CONTEXTS: "snyk, aws-credentials"
     plugins:
       - docker#v3.3.0:
-          image: jekyll/jekyll
+          image: jekyll/jekyll:4.2.0
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v3.0.0:
           key: "v2-cache-gem-{{ checksum 'Gemfile.lock' }}"
           paths: [ "vendor/" ]
@@ -29,7 +29,7 @@ steps:
         - build_package.tar.gz
     plugins:
       - docker#v3.3.0:
-          image: jekyll/jekyll
+          image: jekyll/jekyll:4.2.0
           environment:
             - BUILDKITE_BRANCH
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v3.0.0:
