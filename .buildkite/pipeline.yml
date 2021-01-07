@@ -17,9 +17,11 @@ steps:
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v3.0.0:
           key: "v1-cache-gem-{{ checksum 'Gemfile.lock' }}"
           paths: [ "vendor/" ]
+          save: true
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v3.0.0:
           key: "v1-cache-npm-{{ checksum 'yarn.lock' }}"
           paths: [ "node_modules/" ]
+          save: true
      
   - wait
 
