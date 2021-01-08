@@ -108,7 +108,7 @@ Before you start, make sure you have administrative access to the Adwords accoun
 4. When prompted, click **Allow**. This is required for Segment to update your Google Adwords Remarketing Lists.
 ![](images/garl-auth-google.png)
 
-5. Select the Adwords account to connect with Personas.
+5. Select the Adwords account to connect with Personas. (Sub-accounts are also available.)
 
 
 ### 2. Create an audience in Segment and connect it to Google Adwords Remarketing Lists
