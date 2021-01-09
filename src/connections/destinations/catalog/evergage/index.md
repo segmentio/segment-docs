@@ -5,16 +5,11 @@ rewrite: true
 
 [Evergage](https://www.evergage.com/) offers a cloud-based platform that empowers digital marketers to increase engagement and conversions through real-time 1:1 personalization. The `analytics.js` Evergage Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-evergage).
 
-This document was last updated on October 29, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+This document was last updated on January 8, 2021. 
 
-## Getting Started
-
-{% include content/connection-modes.md %}
-
-1. From the Segment web app, click **Catalog**.
-2. Search for "Evergage" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter your Evergage Account Key (this is the subdomain you use to login to Evergage with; if your account is "testaccount.evergage.com", then use "testaccount");
-4. Finally, enter the name of the Evergage Dataset you want data to flow to (by default this is "engage");
+| :warning: Evergage has been deprecated |
+|:---------------------------|
+| The Evergage Destination has been deprecated as of January 8, 2021. It is not available in our catalog. It will remain available to existing users but it is no longer supported or maintained. | 
 
 ## Identify
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
