@@ -112,7 +112,7 @@ Before you start, make sure you have administrative access to the Adwords accoun
    
     **What are sub-accounts?** Because the Google My Client Center (MCC) account allows a user to access multiple Google Ads accounts through a single user account. Segment has updated the selector to include these additional "sub-accounts." By default, Segment syncs the "primary" Google Ads account connected to your Google account, but when using Google MCC, you can select any of the Google Ads accounts managed by your primary Google Ads account. If you are not using MCC, your primary Google Ads account is connected. MCC is typically used by advertisers or agencies who are managing multiple client accounts.
 
-![Example of Sub-accounts in Selector](adwords_subaccounts.png)
+![Example of Sub-accounts in Selector](images/adwords_subaccounts.png)
 
 ### 2. Create an audience in Segment and connect it to Google Adwords Remarketing Lists
 
