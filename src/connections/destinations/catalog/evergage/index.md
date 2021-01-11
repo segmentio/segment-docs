@@ -7,9 +7,8 @@ rewrite: true
 
 This document was last updated on January 8, 2021. 
 
-| :warning: Evergage has been deprecated |
-|:---------------------------|
-| The Evergage Destination has been deprecated as of January 8, 2021. It is not available in our catalog. It will remain available to existing users but it is no longer supported or maintained. | 
+> warning "The Evergage destination has been deprecated"
+> The Evergage Destination was deprecated on January 8, 2021 and is no longer supported or maintained. It is no longer available in the Segment catalog, but remains available to existing users.
 
 ## Identify
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
@@ -35,7 +34,7 @@ analytics.group('companyId123', {
 A `groupId` is required on all `group` calls sent to {{ integration.name}}. When you call `group` Segment will call both `setCompany` and `setAccountField` in the [Evergage library](https://doc.evergage.com/display/EKB/Send+Data+to+Evergage) to insert both the `groupId` and corresponding group traits into {{ integration.name}}.
 
 ## Track
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track('Email Opened', {
