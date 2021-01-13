@@ -13,12 +13,12 @@ strat: facebook
 
 This page is about the **Facebook Conversions**. For documentation on other Facebook destinations, including Facebook Pixel, see the pages linked below.
 
-| **Facebook Destination**   | Supported by Personas |
-| ---------------------- | --------------------- |
-| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                  | Yes                   |
-| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)** | Yes                   |
-| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                             | No                    |
-| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)**      | Yes                   |
+| **Facebook Destination**                                                                                    | Supported by Personas |
+| ----------------------------------------------------------------------------------------------------------- | --------------------- |
+| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                      | Yes                   |
+| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)** | Yes                   |
+| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)**    | Yes                   |
+| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                                | No                    |
 
 ## Getting Started
 
@@ -44,19 +44,21 @@ Implementation Options:
 3. [Only send events from the server](/docs/connections/destinations/catalog/facebook-conversions-api/#only-send-events-from-the-server).
 
 ### Send the same events from both the browser and the server
-| Description | Match Rate Considerations | Deduplication Considerations | 
-| -------- | -------- | -------- | 
+
+| Description                                                                                                                                                                                                                                                                                           | Match Rate Considerations                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Deduplication Considerations                                                                                                                                                                                                                                                                                                                                               |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | This approach provides a redundancy that ensures maximum signal reliability. Events that previously could have been lost on the browser side, for a variety of network reasons, are now captured via conversions API. This can be used if you do not want to miss any events coming from the browser. | For this option to work best, the same `external_id` needs to be passed from the browser and from the server. To easily achieve this go to your Segment destination settings for Facebook Pixel and toggle on the setting called **Use UserId or Anonymous Id as External Id**. The Facebook Conversions API destination uses the userId (or anonymousId if not present) to set the External Id by default. Therefore enabling this on Facebook Pixel will allow Facebook to match the users. There are some additional steps you can take to increase the match rate for server-side events. [User traits can be passed into the context object of the track events](/docs/connections/destinations/catalog/facebook-conversions-api/#default-mappings-to-facebook-properties). Other fields such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) can all be collected from the browser and passed to the server and then manually entered into the events. | Events will only be deduplicated if the same event is sent first from the browser and then from the server. When this sequence occurs the server event will be discarded. If you send two consecutive browser events with the same information, neither will be discarded. If you send two consecutive server events with the same information, neither will be discarded. |
 
 ### Send different events; some from the browser others from the server
-| Description | Match Rate Considerations | Deduplication Considerations | 
-| -------- | -------- | -------- | 
-| This approach can be used if you want to separate events completed on a user's browser from events completed outside the browser. Sensitive information is best kept out of browsers. Any data you don’t want exposed to users should only be sent server-side. You can also set up the Conversions API to measure customer actions that are deeper in your marketing funnel. Seeing these deeper funnel events means you can more accurately measure how your ads are helping you reach your business goals. | For this option to work best, the same `external_id` needs to be passed from the browser and from the server. To easily achieve this go to your Segment destination settings for Facebook Pixel and toggle on the setting called **Use UserId or Anonymous Id as External Id**. The Facebook Conversions API destination uses the userId (or anonymousId if not present) to set the External Id by default. Therefore enabling this on Facebook Pixel will allow Facebook to match the users. There are some additional steps you can take to increase the match rate for server-side events. [User traits can be passed into the context object of the track events](/docs/connections/destinations/catalog/facebook-conversions-api/#default-mappings-to-facebook-properties). Other fields such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) can all be collected from the browser and passed to the server and then manually entered into the events.| If you choose this option, you do not need to worry about event deduplication. |
+
+| Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Match Rate Considerations                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Deduplication Considerations                                                   |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| This approach can be used if you want to separate events completed on a user's browser from events completed outside the browser. Sensitive information is best kept out of browsers. Any data you don’t want exposed to users should only be sent server-side. You can also set up the Conversions API to measure customer actions that are deeper in your marketing funnel. Seeing these deeper funnel events means you can more accurately measure how your ads are helping you reach your business goals. | For this option to work best, the same `external_id` needs to be passed from the browser and from the server. To easily achieve this go to your Segment destination settings for Facebook Pixel and toggle on the setting called **Use UserId or Anonymous Id as External Id**. The Facebook Conversions API destination uses the userId (or anonymousId if not present) to set the External Id by default. Therefore enabling this on Facebook Pixel will allow Facebook to match the users. There are some additional steps you can take to increase the match rate for server-side events. [User traits can be passed into the context object of the track events](/docs/connections/destinations/catalog/facebook-conversions-api/#default-mappings-to-facebook-properties). Other fields such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) can all be collected from the browser and passed to the server and then manually entered into the events. | If you choose this option, you do not need to worry about event deduplication. |
 
 ### Only send events from the server 
 
-| Description | Match Rate Considerations | Deduplication Considerations | 
-| -------- | -------- | -------- | 
+| Description                                                                                                                                                                                                                                                                                                                                                                                                                | Match Rate Considerations                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Deduplication Considerations                                                   |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
 | This approach can be used if you do not wish to track users from the browser with Facebook Pixel. Facebooks Conversions API allows you to have control over your customer data by enabling complete control over the identifiers that are passed to Facebook. This is different from the default behavior of Facebook Pixel which collects cookie data, as well as browser data such as the IP Address and the User Agent. | Without certain data fields collected from the browser the match rate will not be as strong when using Facebook Conversions API as a stand alone. However, there are some steps you can take to increase the match rate for server-side events. [User traits can be passed into the context object of the track events](/docs/connections/destinations/catalog/facebook-conversions-api/#default-mappings-to-facebook-properties). Other fields such as `userAgent` and `ip` address can be collected from the browser and passed to the server and then manually entered into the events. | If you choose this option, you do not need to worry about event deduplication. |
 
 
@@ -64,7 +66,7 @@ Implementation Options:
 
 Currently, Facebook Conversions only supports Track calls.
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track('Products Searched', {
@@ -76,14 +78,14 @@ analytics.track('Products Searched', {
 
 The following mappings are automatic and require no additional set up. Any of the Segment Ecommerce Events in the table below will be sent as the corresponding Facebook Standard Event. You learn more about these in the Facebook pixel [standard events documentation](https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking#standard-events).
 
-| Segment Ecommerce Event | Facebook Standard Event | 
-| -------- | -------- | 
-| `Order Completed` | `Purchase`|
-| `Product Added` | `AddToCart` |
-| `Product List Viewed` | `ViewContent` |
-| `Product Viewed` | `ViewContent` |
-| `Products Searched` | `Search` |
-| `Checkout Started` | `InitiateCheckout` |
+| Segment Ecommerce Event | Facebook Standard Event |
+| ----------------------- | ----------------------- |
+| `Checkout Started`      | `InitiateCheckout`      |
+| `Order Completed`       | `Purchase`              |
+| `Product Added`         | `AddToCart`             |
+| `Product List Viewed`   | `ViewContent`           |
+| `Product Viewed`        | `ViewContent`           |
+| `Products Searched`     | `Search`                |
 
 ! Facebook requires a currency for "Purchase" events -- if you leave it out, Segment will set a default value of "USD".
 
@@ -101,35 +103,35 @@ Any unmapped events are automatically sent to Facebook Conversions as a _custom_
 
 Segment maps the following Segment traits to [Facebook properties](https://developers.facebook.com/docs/marketing-api/server-side-api/parameters):
 
-| **Segment Property**                  | **Pixel Property**       | **Notes**            |
-| ------------------------------------- | ------------------------ | -------------------- |
-| `event`                               | `event_name`             |                      |
-| `messageId`                           | `event_id`               |                      |
-| `timestamp`                           | `event_time`             |                      |
-| `userId`                              | `external_id`            | Any unique ID from the advertiser, such as membership IDs, user IDs, and cookie IDs. See [Alternative External IDs](#alternative-external-ids).    |
-| `context.ip `                         | `user_data.client_ip_address` |                 |
-| `context.userAgent`                   | `user_data.client_user_agent` |                 |
-| `context.traits.email`                | `user_data.em`           | hashed               |
-| `context.traits.phone`                | `user_data.ph`           | hashed               |
-| `context.traits.firstName`            | `user_data.fn`           | hashed               |
-| `context.traits.lastName`             | `user_data.ln`           | hashed               |
-| `context.traits.address.city`         | `user_data.ct`           | hashed               |
-| `context.traits.address.postalCode`   | `user_data.zp`           | hashed               |
-| `context.traits.address.state`        | `user_data.st`           | hashed               |
-| `context.traits.birthday`             | `user_data.db`           | hashed               |
-| `properties.fbp`                      | `fbp`                    |                      |
-| `properties.fbc`                      | `fbc`                    |                      |
-| `properties.revenue`                  | `custom_data.value`      | Customizable, see [Alternative Value Properties](#alternative-value-properties)  |
-| `properties.currency`                 | `custom_data.currency`   | Defaults to USD if not set  |
-| `properties.products`                 | `custom_data.contents`   | Must be an array. `num_items` is set to the length of this   |
-| `properties.products[x].price`        | `custom_data.contents[x].item_price` | Must be an integer   |
-| `properties.products[x].product_id`   | `custom_data.contents[x].id`         | Must be a string     |
-| `properties.products[x].quantity`     | `custom_data.contents[x].quantity`   | Must be an integer   |
-| `properties.query`                    | `custom_data.search_string `         |          |
-| `properties.status`                   | `custom_data.status`                 |          |
+| **Segment Property**                | **Pixel Property**                   | **Notes**                                                                                                                                       |
+| ----------------------------------- | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `context.ip`                        | `user_data.client_ip_address`        |                                                                                                                                                 |
+| `context.traits.address.city`       | `user_data.ct`                       | hashed                                                                                                                                          |
+| `context.traits.address.postalCode` | `user_data.zp`                       | hashed                                                                                                                                          |
+| `context.traits.address.state`      | `user_data.st`                       | hashed                                                                                                                                          |
+| `context.traits.birthday`           | `user_data.db`                       | hashed                                                                                                                                          |
+| `context.traits.email`              | `user_data.em`                       | hashed                                                                                                                                          |
+| `context.traits.firstName`          | `user_data.fn`                       | hashed                                                                                                                                          |
+| `context.traits.lastName`           | `user_data.ln`                       | hashed                                                                                                                                          |
+| `context.traits.phone`              | `user_data.ph`                       | hashed                                                                                                                                          |
+| `context.userAgent`                 | `user_data.client_user_agent`        |                                                                                                                                                 |
+| `event`                             | `event_name`                         |                                                                                                                                                 |
+| `messageId`                         | `event_id`                           |                                                                                                                                                 |
+| `properties.currency`               | `custom_data.currency`               | Defaults to USD if not set                                                                                                                      |
+| `properties.fbc`                    | `fbc`                                |                                                                                                                                                 |
+| `properties.fbp`                    | `fbp`                                |                                                                                                                                                 |
+| `properties.products[x].price`      | `custom_data.contents[x].item_price` | Must be an integer                                                                                                                              |
+| `properties.products[x].product_id` | `custom_data.contents[x].id`         | Must be a string                                                                                                                                |
+| `properties.products[x].quantity`   | `custom_data.contents[x].quantity`   | Must be an integer                                                                                                                              |
+| `properties.products`               | `custom_data.contents`               | Must be an array. `num_items` is set to the length of this                                                                                      |
+| `properties.query`                  | `custom_data.search_string`          |                                                                                                                                                 |
+| `properties.revenue`                | `custom_data.value`                  | Customizable, see [Alternative Value Properties](#alternative-value-properties)                                                                 |
+| `properties.status`                 | `custom_data.status`                 |                                                                                                                                                 |
+| `timestamp`                         | `event_time`                         |                                                                                                                                                 |
+| `userId`                            | `external_id`                        | Any unique ID from the advertiser, such as membership IDs, user IDs, and cookie IDs. See [Alternative External IDs](#alternative-external-ids). |
 
 
-To access the `contexts` and `context.traits` objects in a Track call, you can use the [context-traits format](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#context--traits) as in the example below.
+To access the `contexts` and `context.traits` objects in a Track call, you can use the [context-traits format](/docs/connections/sources/catalog/libraries/website/javascript/#context--traits) as in the example below.
 
 ```javascript
 analytics.track("Clicked Email", {
