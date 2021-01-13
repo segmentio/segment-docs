@@ -7,7 +7,8 @@ strat: facebook
 
 [Facebook Conversions API](https://developers.facebook.com/docs/marketing-api/conversions-api) allows advertisers to send events from their servers directly to Facebook. Server-Side events are linked to a pixel and are processed like browser pixel events. This means that Server-Side events are used in measurement, reporting, and optimization in the same way as browser pixel events.
 
-! Facebook Conversions API used to be called Facebook Pixel Server-Side.
+> info "Destination name change"
+> Facebook Conversions API was renamed from Facebook Pixel Server-Side.
 
 ### Other Facebook Destinations Supported by Segment
 
