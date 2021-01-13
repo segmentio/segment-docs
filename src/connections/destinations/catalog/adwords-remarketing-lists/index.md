@@ -108,8 +108,11 @@ Before you start, make sure you have administrative access to the Adwords accoun
 4. When prompted, click **Allow**. This is required for Segment to update your Google Adwords Remarketing Lists.
 ![](images/garl-auth-google.png)
 
-5. Select the Adwords account to connect with Personas. (Sub-accounts are also available.)
+5. Select the Adwords account or sub-account to connect with Personas.
+   
+    **What are sub-accounts?** Because the Google My Client Center (MCC) account allows a user to access multiple Google Ads accounts through a single user account. Segment has updated the selector to include these additional "sub-accounts." By default, Segment syncs the "primary" Google Ads account connected to your Google account, but when using Google MCC, you can select any of the Google Ads accounts managed by your primary Google Ads account. If you are not using MCC, your primary Google Ads account is connected. MCC is typically used by advertisers or agencies who are managing multiple client accounts.
 
+![Example of Sub-accounts in Selector](images/adwords_subaccounts.png)
 
 ### 2. Create an audience in Segment and connect it to Google Adwords Remarketing Lists
 
