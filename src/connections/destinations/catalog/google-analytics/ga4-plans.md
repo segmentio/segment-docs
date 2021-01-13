@@ -6,7 +6,7 @@ strat: google
 Google introduced the new version of Google Analytics, called Google Analytics 4 (GA4), in October 2020. GA4 has some distinct differences from Universal Analytics (UA), which are important to understand before considering migration and the data schema changes that might require.
 
 > success ""
-> Segment currently supports a GA4 destination in beta, and we expect to release this destination to general availability in early 2021. Interested in being a beta tester and giving us your feedback? Email us at [beta@segment.com](mailto:beta@segment.com).
+> Segment currently supports a GA4 destination in beta, and we expect to release this destination to general availability in early 2021. Interested in being a beta tester and giving us your feedback? Fill out this short [questionnaire](https://forms.gle/Tt5T6S4eX7Tcaqin6) and we will be in touch with next steps.
 
 We’ll update this page to share the latest on our GA4 destination.
 
