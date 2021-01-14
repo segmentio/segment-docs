@@ -3,7 +3,7 @@ title: Noora Destination
 rewrite: true
 ---
 
-[Noora](https://noorahq.com.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a customer product feedback management solution. It provides a centralized product feedback solution that gives you the tools to collect, aggregate and act on feedback from customers and internal teams.
+[Noora](https://noorahq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a customer product feedback management solution. It provides a centralized product feedback solution that gives you the tools to collect, aggregate and act on feedback from customers and internal teams.
 
 This destination is maintained by Noora. For any issues with the destination, [contact the Noora Support team](mailto:support@noorahq.com).
 
