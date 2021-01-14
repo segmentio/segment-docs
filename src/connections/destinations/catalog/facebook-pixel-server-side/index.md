@@ -3,6 +3,7 @@ title: Facebook Conversions API Destination
 rewrite: true
 beta: true
 strat: facebook
+redirect_from: '/connections/destinations/catalog/facebook-conversions-api/'
 ---
 
 [Facebook Conversions API](https://developers.facebook.com/docs/marketing-api/conversions-api) allows advertisers to send events from their servers directly to Facebook. Server-Side events are linked to a pixel and are processed like browser pixel events. This means that Server-Side events are used in measurement, reporting, and optimization in the same way as browser pixel events.
@@ -33,7 +34,8 @@ This page is about the **Facebook Conversions**. For documentation on other Face
 4. Go to the Facebook Business [Event Manager Pixel Settings](https://business.facebook.com/events_manager/pixel/settings), find and copy the "Pixel ID".
 5. Enter the "Pixel ID" in the "Facebook Conversions API" destination settings in Segment.
 
-! See the Use Cases section below for additional implementation steps
+> info ""
+> See the Use Cases section below for additional implementation steps
 
 ## Use Cases
 
@@ -105,7 +107,8 @@ The following mappings are automatic and require no additional set up. Any of th
 | `Product Viewed`        | `ViewContent`           |
 | `Products Searched`     | `Search`                |
 
-! Facebook requires a currency for "Purchase" events -- if you leave it out, Segment will set a default value of "USD".
+> info ""
+> Facebook requires a currency for "Purchase" events -- if you leave it out, Segment will set a default value of "USD".
 
 ### Custom Mappings to Facebook Standard Events
 
@@ -115,7 +118,8 @@ To map any of your Segment Events (not listed in the table above) to a Facebook 
 ### Facebook Custom Events
 Any unmapped events are automatically sent to Facebook Conversions as a _custom_ event. If Facebook's predefined standard events aren't suitable for your needs, you can track your own custom events, which also can be used to define [custom audiences](https://developers.facebook.com/docs/facebook-pixel/implementation/custom-audiences) for ad optimization. Custom events also support parameters, which you can include to provide additional information about each custom event.
 
-!! Custom event names cannot exceed 50 characters in length.
+> warning ""
+> Custom event names cannot exceed 50 characters in length.
 
 ### Default Mappings to Facebook Properties
 
