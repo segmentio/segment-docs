@@ -498,6 +498,20 @@ Analytics.shared().getAnonymousId
 {% endcodeexampletab %}
 {% endcodeexample %}
 
+To set the `anonymousId` to a custom value you can set this via the `options` parameter:
+
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+Analytics.shared().identify(nil, traits: ["email": "a user's email address"], options: ["anonymousId" : "test_anonymousId"]);
+```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+[[SEGAnalytics sharedAnalytics] identify:nil traits:@{ @"email": @"a user's email address" } options: @{ @"anonymousId":@"test_anonymousId"}];
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
 
 ### Reset
 
