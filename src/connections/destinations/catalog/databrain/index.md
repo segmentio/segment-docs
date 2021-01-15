@@ -4,14 +4,13 @@ rewrite: true
 redirect_from: '/connections/destinations/catalog/supervised-ai/'
 ---
 
-[DataBrain](https://usedatabrain.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides proactive customer health monitoring for customer facing teams, using machine learning to automate churn prediction and generating playbook recommendations.
+[DataBrain](https://usedatabrain.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides a proactive customer success tool for hyper-growth startups. DataBrain is fully data driven. It ingests data from Segment and leverage smachine learning techniques to send users automated alerts, and predict churn, conversion, retention or any event you need to track.
 
 This destination is maintained by DataBrain. For any issues with the destination, [contact the DataBrain Support team](mailto:support@supervisedai.com).
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
-
 
 1. From the Segment App's Destinations catalog page, click **Add Destination**.
 2. Search for "DataBrain" in the Destinations Catalog, and select the DataBrain destination.

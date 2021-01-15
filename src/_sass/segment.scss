@@ -46,6 +46,7 @@
 @import "components/logo";
 @import "components/thumbnail-integration";
 @import "components/destinations-catalog";
+@import "components/badge";
 @import "components/button";
 @import "components/button-link";
 @import "components/button-hollow";
@@ -92,6 +93,8 @@
 @import "components/reference-button";
 @import "components/icon";
 @import "components/last-modified";
+@import "components/thumbnail";
+@import "components/release-note";
 
 // Pages
 // =================================================
@@ -104,6 +107,6 @@
 
 // Vendors
 // =================================================
-// @import "vendors/swiftype";
 @import "vendors/premonition";
 @import "vendors/tippy";
+@import "vendors/glightbox";

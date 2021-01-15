@@ -1,12 +1,14 @@
 <nav class="menu">
   <ul class="list list--unstyle">
-    <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}/">
-      <div class="menu-item__icon flex__column">
-        {% include icons/home.svg %}
-      </div>
+    <li class="menu-item {% if currentPage == "index" %}menu-item--active{% endif %}">
+      <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}/">
+        <div class="menu-item__icon flex__column">
+          {% include icons/home.svg %}
+        </div>
 
-      <div class="flex__column">Home</div>
-    </a>
+        <div class="flex__column">Home</div>
+      </a>
+    </li>
 
     {% for root_section in site.data.sidenav.main.sections %}
       {% include menu/menu-item.html root_section=root_section %}

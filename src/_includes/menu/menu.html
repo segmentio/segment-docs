@@ -1,3 +1,5 @@
+{% assign currentPage = page.path | downcase | replace: "/index.md" "" | replace: ".md" "" %}
+
 <div class="sidebar">
   <div class="sidebar__content">
     {% include menu/menu-primary.html %}
@@ -14,13 +16,23 @@
           </a>
         </li>
 
-        <li class="menu-item">
+        <li class="menu-item {% if currentPage == "help" %}menu-item--active{% endif %}">
           <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}/help/">
             <div class="menu-item__icon flex__column">
               {% include icons/help.svg %}
             </div>
 
             <div class="flex__column">Help</div>
+          </a>
+        </li>
+
+        <li class="menu-item {% if currentPage == "release-notes" %}menu-item--active{% endif %}">
+          <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}/release-notes/">
+            <div class="menu-item__icon flex__column">
+              {% include icons/megaphone.svg %}
+            </div>
+
+            <div class="flex__column">Release Notes</div>
           </a>
         </li>
 
