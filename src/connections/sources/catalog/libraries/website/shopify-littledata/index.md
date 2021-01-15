@@ -85,14 +85,14 @@ Below is a table of events that **Shopify by Littledata** sends to Segment from 
 
 ## User identity
 
-In Littledata's app you can choose which of the following field you want to send as the userId for known customers:
+In Littledata's app you can choose which of the following fields you want to send as the `userId` for known customers:
 
 - Shopify Customer ID (default)
 - Email
 - MD5 email hash
 - None 
 
-For example, using 'email' allows you to match users across platforms that do not have access to the Shopify Customer ID. For Segment Personas we also send shopify_customer_id as an externalID for advanced matching.
+For example, using 'email' allows you to match users across platforms that do not have access to the Shopify Customer ID. For [Segment Personas](https://segment.com/docs/personas/) we also send `shopify_customer_id` as an [externalID](https://segment.com/docs/personas/identity-resolution/externalids/) for advanced matching.
 
 ## Identify Calls
 
