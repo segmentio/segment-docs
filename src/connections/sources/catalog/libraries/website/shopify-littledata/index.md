@@ -83,6 +83,17 @@ Below is a table of events that **Shopify by Littledata** sends to Segment from 
 | Fulfillment Created (v2) | An order fulfillment status has changed (including status, tracking_numbers and tracking_urls where the shipping integration allows)                                                        |
 | Fulfillment Updated (v2) | An order fulfillment status has changed (including status, tracking_numbers and tracking_urls where the shipping integration allows)                                                        |
 
+## User identity
+
+In Littledata's app you can choose which of the following field you want to send as the userId for known customers:
+
+- Shopify Customer ID (default)
+- Email
+- MD5 email hash
+- None 
+
+For example, using 'email' allows you to match users across platforms that do not have access to the Shopify Customer ID. For Segment Personas we also send shopify_customer_id as an externalID for advanced matching.
+
 ## Identify Calls
 
 For every event where there is an identifiable Shopify customer (from both the device-mode and cloud-mode) Littledata also sends an Identify call. This happens when the customer logs into the storefront, on the last step of the checkout, with the order, and also after purchase with any customer update in Shopify admin.
@@ -91,7 +102,7 @@ The following traits are included with an Identify call:
 
 | Property Name           | Description                                                                                                                                     | Property Type |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `userId`                | The Shopify Customer ID                                                                                                                         | Double        |
+| `userId`                | Chosen user identifier, defaulting to Shopify Customer ID                                                                                       | Double        |
 | `firstName`             | The customer's first name                                                                                                                       | String        |
 | `lastName`              | The customer's email                                                                                                                            | String        |
 | `email`                 | The customer's email address                                                                                                                    | String        |
@@ -134,7 +145,7 @@ The list below outlines the properties included in the events listed above.
 
 | Property                               | Description                                                    | Property Type |
 | -------------------------------------- | -------------------------------------------------------------- | ------------- |
-| `userId`                               | A Shopify Customer ID (after checkout step 2)                  | Double        |
+| `userId`                               | Chosen user identifier, defaulting to Shopify Customer ID      | Double        |
 | `email`                                | Shopify email address, or email submitted on a storefront form | String        |
 | `order_id`                             | The ID of the order                                            | String        |
 | `checkoutId`                           | The ID of the checkout session                                 | String        |
@@ -178,3 +189,15 @@ Each item in the `products` array, or Product Viewed and Product Added events, w
 | `name`               | The product name                                | String        |
 | `price`              | The product price                               | Float         |
 | `quantity`           | The quantity of products                        | Integer       |
+
+## Advanced device-mode settings
+
+You change these advanced settings by manually editing the LittledataLayer object in your Shopify theme. This is documented in our [Shopify tracker GitHub repository](https://github.com/littledata/shopify-tracker#segment-configuration).
+
+### cookiesToTrack
+
+Any cookie set on a landing page (e.g. a session identifier or marketing campaign name) can be sent on to Segment with an identify call.
+
+### CDNForAnalyticsJS
+
+If you have a [proxy CDN setup](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/) to load Segment's AnalyticsJS library from your own domain you can specify it here.
