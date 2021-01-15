@@ -1,5 +1,6 @@
 ---
-# SIGNL4 Alerting Destination
+title: SIGNL4 Alerting
+rewrite: true
 ---
 
 [SIGNL4](https://www.signl4.com) is a lightweight, app-based alerting service of operational teams supporting app push, SMS text and voice call including tracking, escalation, collaboration and duty planning.
@@ -92,6 +93,3 @@ analytics.alias("507f191e81");
 ```
 
 Segment sends Alias calls to SIGNL4 Alerting as an `alias` event, which can also be seen under Signls.
-
-
----
