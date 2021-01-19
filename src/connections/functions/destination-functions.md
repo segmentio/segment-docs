@@ -51,6 +51,7 @@ Destination functions can define handlers for each message type in the [Segment 
 - `onGroup`
 - `onAlias`
 - `onDelete`
+- `onBatch`
 
 Each of the functions above accepts two arguments:
 
@@ -189,6 +190,146 @@ If your function fails, you can check the error details and logs in the **Output
 - **Error Message** - This shows the error surfaced from your function.
 - **Logs** - This section displays any messages to `console.log()` from the function.
 
+## Batching the destination function
+
+Batch handlers are an extension for destination functions. When you define an `onBatch` handler next to the handler function for single events, you signal to Segment that the destination function can accept and handle batches of events.
+
+> info ""
+> Batching is available to destination functions only.
+
+### Batching use cases
+
+Consider definining a batch handler if:
+
+- **Your function sends data to a service that has a batch endpoint.** Batch endpoints may allow you both to send more data downstream and stay within the rate limits imposed by the service. Batch handlers that use one or more batch endpoints improve the efficiency of the function, and enable it to scale more easily.
+- **You have a high throughput function and want to reduce cost.** When you define a batch handler, Segment invokes the function once per *batch*, rather than once per event. As long as the function's execution time isn't adversely affected, the reduction in invocations should lead to a reduction in cost.
+
+<!-- MZ: 1/19/21 - Need to add more below -->
+
+> info ""
+> If a batched function receives a low volume of events, Segment may not invoke the batch handler.
+
+### Define the batch handler
+
+To create a batch handler, define an `onBatch` function within your destination function.
+
+```js
+async function onBatch(events, settings){
+  // handle the batch of events
+}
+```
+
+The handler function receives an array of events. The events can be of any supported type. and a single batch may contain more than one event type. Handler functions also receive functino settings.
+
+For example, you could send the array of events to an external services batch endpoint:
+
+```js
+async function onBatch(events, settings) {
+  await fetch('https://example-service.com/batch-api', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(events) // send a JSON array
+  })
+}
+```
+
+> info ""
+> The `onBatch` handler is an optional extension. Destination functions must still contain single event handlers as a fallback, in cases where Segment does not receive enough events to execute the batch.
+
+To combine events into a batch, Segment collects events over a short window of time, and flushes them when one of the following thresholds is reached:
+
+- A certain number of events 
+- The maximum wait time
+
+Segment batches together any event that occurs in that window of time.
+
+### Configure the event types within a batch
+
+Segment batches together any event that it sees over a short time window. Events in that window may be of different types. Segment does this for two reasons:
+
+- To increas batching efficiency
+- Grouping by type is not always the desired outcome. It's possible to split batches in your code, but not possible to combine batches if Segment split by event type by default.
+
+If your downstream endpoint requires events of a single type, you can write a handler that first groups events by type before handling the events.
+
+```js
+async function onBatch(events, settings) {
+  // group events by type
+  const eventsByType = {}
+  for (const event of events) {
+    if (!(event.type in eventsByType)) {
+      eventsByType[event.type] = []
+    }
+    eventsByType[event.type].push(event)
+  }
+
+  // concurrently process sub-batches of a specific event type
+  const promises = Object.entries(eventsByType).map(([type, events]) => {
+    switch (type) {
+    case 'track':
+      return onTrackBatch(events, settings)
+    case 'identify':
+      return onIdentifyBatch(events, settings)
+    // ...handle other event types here...
+    }
+  })
+  return Promise.all(promises)
+}
+
+async function onTrackBatch(events, settings) {
+  // handle a batch of track events
+}
+
+async function onIdentifyBatch(events, settings) {
+  // handle a batch of identify events
+}
+```
+
+### Avoid writing batch and single event handlers
+
+Segment may not collect enough events to create a batch of short windows of time. In this case, single event handlers from your function are invoked. If you need to consolidate your code into an `onBatch` handler, you can define single event handlers that call `onBatch`.
+
+```js
+async function onTrack(event, settings) {
+  return onBatch([event], settings)// defer to onBatch
+}
+
+async function onIdentify(event, settings) {
+  return onBatch([event], settings) // defer to onBatch
+}
+
+// do the same for onAlias, onGroup, onPage, onScreen, onDelete
+
+async function onBatch(events, settings) {
+  // handle batch of events
+}
+```
+
+### Test the batch handler
+
+The [Functions editing environment](/docs/connections/functions/environment/) supports testing batch handlers. In the right panel of the Functions editor, click **customize the event yourself** to enter Manual Mode. Add events as a JSON array, with one event per element. Click **Run** to preview the batch handler with the specified events.
+
+![Batch handler testing](images/batch-function-editor.png)
+
+The editor displays logs and request traces from the batch handler.
+
+The [Config API](/docs/config-api/) Functions/Preview endpoint also supports testing batch handlers. The payload must be a btach of events as a JSON array.
+
+### Handling batching errors
+
+Standard [function error types](/docs/connections/functions/destination-functions/#destination-functions-error-types) apply to batch handlers. Segment attempts to retry the batch in the case of Timeout or Retry errors. For all other error types, Segment discards the batch. Segment does not support partial retries, where only the failing subset of batch events are retried.
+
+| Error Type             | Result  |
+| ---------------------- | ------- |
+| Bad Request            | Discard |
+| Invalid Settings       | Discard |
+| Message Rejected       | Discard |
+| RetryError             | Retry   |
+| Timeout                | Retry   |
+| Unsupported Event Type | Discard |
+
 ## Save and deploy the function
 
 Once you finish building your destination function, click **Configure** to name it, then click **Create Function** to save it.
@@ -310,3 +451,13 @@ No, destination functions are currently available as cloud-mode destinations onl
 ##### How do I publish a destination to the public Segment catalog?
 
 If you are a partner, looking to publish your destination and distribute your app through Segment catalog, visit the [Developer Center](https://segment.com/partners/developer-center/) and check out our [partner docs](/docs/partners/).
+
+##### How does batching affect visibility?
+
+The Event Delivery tab continues to show metrics for individual events. For more information, see [Destination functions logs and errors](#destination-functions-logs-and-errors)
+
+##### How does batching impact function use and cost?
+
+A function's use depends on the number of times the function is invoked, and the amount of time it takes to execute. When you enable batching, Segment invokes your function *once per batch* rather than once per event. The number of invocations is dependent on batch counts, which are determined by the volume of events flowing through the function.
+
+If you're sending your batch to an external service, the execution time of the functiondepends on the end-to-end latency of that service's batch endpoint, which may be higher than an endpoint that receives a single event.
