@@ -1,59 +1,52 @@
 ---
-layout: default
+layout: main
 ---
 
-<div class="docs">
-  <div class="stage">
-    <div class="docs__aside stage__aside">
-      {% include_cached navbar/logo.html %}
-
-      {% include menu/menu.html %}
-    </div>
-
-    <main class="docs__body stage__body">
-      <div>
+<main class="docs__body stage__body">
+  <div class="docs__navbar">
+    <div class="flex flex--justify gutter gutter--large@medium">
+      <div class="flex__column flex__column--6@xlarge">  
         <div class="search">
           {% include_cached navbar/search.html placeholder="Search the Segment documentation..." %}
         </div>
-
-        {% include_cached navbar/navbar-mobile.html %}
       </div>
 
-
-      <div class="stage__content" data-swiftype-name="body" data-swiftype-type="text">
-        <article class="destinations">
-          {% include components/breadcrumbs.html %}
-          {%- if page.title -%}
-            <h1 id="{{ page.title | slugify }}" class="destinations__heading page__heading">
-              {{ page.title }}
-            </h1>
-          {%- endif -%}
-
-          {% unless page.integration_type  %}
-            {% include_cached sidebar/{{ page.integration_type }}-menu-mobile.html %}
-          {% endunless %}
-          <div class="destinations__body" data-headings-anchors>
-            {{ content }}
-          </div>
-        </article>
+      <div class="flex__column flex__column--shrink">  
+        {% include_cached navbar/nav.html %}
       </div>
-    </main>
+    </div>
+  </div>
 
-    <div class="docs__sidebar stage__sidebar">
-      {% include_cached navbar/nav.html %}
+  {% include_cached navbar/navbar-mobile.html %}
 
+  <article class="destinations page" data-tracking-scroll data-swiftype-name="body" data-swiftype-type="text">
+    <div class="page__body">
+      {% include components/breadcrumbs.html %}
+      {%- if page.title -%}
+        <h1 id="{{ page.title | slugify }}" class="destinations__heading">
+          {{ page.title }}
+        </h1>
+      {%- endif -%}
+
+      {% unless page.integration_type  %}
+        {% include_cached sidebar/{{ page.integration_type }}-menu-mobile.html %}
+      {% endunless %}
+
+      <div data-headings-anchors>
+        {{ content }}
+      </div>
+    </div>
+
+    <div class="docs__sidebar page__sidebar">
       <div class="sidebar sidebar--sticky sidebar--scroll">
         {% if page.integration_type and page.integration_type != 'warehouse' %}
           {% include sidebar/{{ page.integration_type }}-menu.html %}
         {% endif %}
+
         {% unless page.hide-feedback %}
           {% include sidebar/feedback.html %}
         {% endunless %}
       </div>
     </div>
-  </div>
-
-  <footer>
-    {% include_cached components/footer.html %}
-  </footer>
-</div>
+  </article>
+</main>

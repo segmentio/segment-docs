@@ -19,10 +19,15 @@ Segment's Amplitude destination code is open source and available on GitHub. Fee
 
 In addition to the docs below, Amplitude created a [integration guide](https://developers.amplitude.com/docs/segment-amplitude-integration).
 
-NOTE: To delete users based on GDPR regulations, you must include a secret key in the **Secret Key** setting of every Amplitude destination. You can find your Secret Key on the [General Settings](https://help.amplitude.com/hc/en-us/articles/235649848-Settings#general) of your Amplitude project.
+> note ""
+> To delete users based on GDPR regulations, you must include a secret key in the **Secret Key** setting of every Amplitude destination. You can find your Secret Key on the [General Settings](https://help.amplitude.com/hc/en-us/articles/235649848-Settings#general) of your Amplitude project.
 
 
-{% include components/media-icon.html href="https://segment.com/recipes/amplitude-historical-count-analysis/" icon="media/icon-academy.svg" title="Identify high-value users with Historical Count analysis" content="Examine the exact moment in the customer journey that converts new users into high-value customers." %}
+
+{% include components/reference-button.html href="https://segment.com/recipes/amplitude-historical-count-analysis/" icon="media/academy.svg" title="Identify high-value users with Historical Count analysis" description="Examine the exact moment in the customer journey that converts new users into high-value customers." %}
+
+
+
 
 
 ## Getting Started
@@ -440,6 +445,9 @@ with the user's `userId`, or what Amplitude refers to, respectively, as a
 `user_id` and a `global_user_id`.
 
 By default, Segment does **NOT** send Alias events to Amplitude. To forward Alias events from Segment, go to your Amplitude destination settings in the Segment web app, and set the **Enable Alias** setting to "on". Once enabled, Segment forwards both client-based and server-based Alias calls. Segment processes _all_ Alias calls before sending them to Amplitude, so you won't see a `usermap` request to Amplitude if you check your browser's Network activity after making a Segment Alias call.
+
+> note ""  
+> To use Alias, you must have the Amplitude Portfolio add-on enabled.
 
 For more information, see the [Segment Spec page for the Alias method](https://segment.com/docs/connections/spec/alias/) and [the Amplitude `usermap` documentation](https://amplitude.zendesk.com/hc/en-us/articles/360002750712-Portfolio-Cross-Project-Analysis#user-mapping-aliasing).
 

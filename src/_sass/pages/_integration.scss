@@ -1,15 +1,5 @@
 .integration {
-  display: block;
-
   & > * + * {
     margin-top: 33px;
-  }
-
-  &__body {
-    margin-top: 30px;
-
-    @include breakpoint(large up)  {
-      margin-top: 50px;
-    }
   }
 }

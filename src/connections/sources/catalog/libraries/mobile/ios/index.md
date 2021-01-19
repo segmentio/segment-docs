@@ -51,7 +51,7 @@ When the app is terminated, Segment saves the queue to disk, and loads that data
 {% include content/mobile-cmodes.md %}
 
 
-{% include components/media-icon.html href="https://github.com/segmentio/analytics-test-apps" icon="media/icon-guides.svg" title="iOS Test Apps" content="Segment maintains test apps for the iOS mobile library. Find them here." %}
+{% include components/reference-button.html href="https://github.com/segmentio/analytics-test-apps" icon="guides.svg" title="iOS Test Apps" description="Segment maintains test apps for the iOS mobile library. Find them here." %}
 
 ### Install the SDK
 
@@ -498,6 +498,20 @@ Analytics.shared().getAnonymousId
 {% endcodeexampletab %}
 {% endcodeexample %}
 
+To set the `anonymousId` to a custom value you can set this via the `options` parameter:
+
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+Analytics.shared().identify(nil, traits: ["email": "a user's email address"], options: ["anonymousId" : "test_anonymousId"]);
+```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+[[SEGAnalytics sharedAnalytics] identify:nil traits:@{ @"email": @"a user's email address" } options: @{ @"anonymousId":@"test_anonymousId"}];
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
 
 ### Reset
 

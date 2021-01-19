@@ -302,7 +302,7 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [Klaviyo](/docs/connections/destinations/catalog/klaviyo/)
 - [Kochava](/docs/connections/destinations/catalog/kochava/)
 - [Kustomer](/docs/connections/destinations/catalog/kustomer/)
-- [Lazy Lantern](/docs/connections/destinations/catalog/lazy-lantern/)
+- [Lantern](/docs/connections/destinations/catalog/lantern/)
 - [Leanplum](/docs/connections/destinations/catalog/leanplum/)
 - [Librato](/docs/connections/destinations/catalog/librato/)
 - [Lytics](/docs/connections/destinations/catalog/lytics/)

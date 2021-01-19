@@ -1,12 +1,17 @@
 .button {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 600;
   line-height: 1.5;
   text-align: center;
-  padding: 12px 15px;
+  padding: 8px 12px;
   display: inline-block;
   text-decoration: none;
+  border-radius: 4px;
   cursor: pointer;
+
+  @include breakpoint(medium up)  {
+    padding: 8px 16px;
+  }
 
   &:disabled {
     pointer-events: none;
@@ -17,38 +22,15 @@
   }
 
   &__icon {
-    display: inline-block;
     vertical-align: middle;
-  }
-
-  &--small {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.14;
-    padding: 9px 8px;
-  }
-  &--small-bordered {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.14;
-    padding: 9px 8px;
-    border: 1px solid color(border-gray-dark);
-    border-radius: 4px;
-  }
-
-  &--bordered {
-    border: 1px solid color(border-gray-dark);
-    border-radius: 6px;
-  }
-
-  &--large {
-    padding: 14px 20px;
+    
+    & > svg {
+      max-width: 12px;
+      max-height: 12px;
+    }
   }
 
   &--expand {
     width: 100%;
-  }
-  &--half {
-    width: 50%;
   }
 }

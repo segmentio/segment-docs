@@ -5,7 +5,7 @@
   {% if include.root_section.path %}
     <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}{{ include.root_section.path }}/">
       <span class="menu-item__icon flex__column">
-        {% include icons/menu/icon-{{ currentPath }}.svg %}
+        {% include icons/{{ currentPath }}.svg %}
       </span>
 
       <span class="flex__column">{{ include.root_section.section_title }}</span>
@@ -13,7 +13,7 @@
   {% else %}
     <button class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" data-ref="accordion[trigger]">
       <span class="menu-item__icon flex__column">
-        {% include icons/menu/icon-{{ currentPath }}.svg %}
+        {% include icons/{{ currentPath }}.svg %}
       </span>
 
       <span class="flex__column">{{ include.root_section.section_title }}</span>
@@ -46,7 +46,7 @@
               </span>
 
               <div class="menu-item__chevron flex__column flex__column--shrink">
-                {% include icons/symbols/chevron-down.svg %}
+                {% include icons/symbols/caret-down.svg %}
               </div>
             </button>
 
@@ -62,12 +62,13 @@
                       {% assign menuLink = subsection.path  %}
                     {% endif %}
                     <a class="menu-item__link menu-item__link--icon {% if currentPage == currentPath %}menu-item__link--indicator{% endif %} flex" href="{{menuLink}}">
-                      {{ subsection.title }}
                       {% if subsection.menu_icon %}
-                        <div class="menu-item__icon menu-item__icon--small menu-item__icon--right flex__column">
-                          {% include icons/menu/icon-{{ subsection.menu_icon }}.svg %}
+                        <div class="menu-item__icon menu-item__icon--small flex__column">
+                          {% include icons/{{ subsection.menu_icon }}.svg %}
                         </div>
                       {% endif %}
+
+                      {{ subsection.title }}
                     </a>
                   {% endif %}
 
@@ -78,7 +79,7 @@
                       </span>
 
                       <div class="menu-item__chevron flex__column flex__column--shrink">
-                        {% include icons/symbols/chevron-down.svg %}
+                        {% include icons/symbols/caret-down.svg %}
                       </div>
                     </button>
 

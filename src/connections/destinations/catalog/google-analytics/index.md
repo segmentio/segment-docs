@@ -336,9 +336,9 @@ analytics.track('Completed Checkout Step', {
 The four steps above are only an example, and you can create as many steps in your funnel as you need. You still must track the `Order Completed` event per our standard [Ecommerce tracking spec](/docs/connections/spec/ecommerce/v2/) after you've tracked the checkout steps.
 
 For client-side integrations we use Google Analytics' `ProductAction` class to track Checkout Steps and Options. You can read the Google Analytics developer docs for information on specific methods:
-<!-- commenting out until we can confirm that these aren't useful. the pages are still up, if all mobile needs to use firebase this seems weird to include here
-- [Android](https://developers.google.com/android/reference/com/google/android/gms/analytics/ecommerce/ProductAction)
-- [iOS](https://developers.google.com/analytics/devguides/collection/ios/v3/reference/interface_g_a_i_ecommerce_product_action)-->
+<!-- commenting out until we can confirm that these aren't useful. the pages are still up, if all mobile needs to use firebase this seems weird to include here -->
+<!-- - [Android](https://developers.google.com/android/reference/com/google/android/gms/analytics/ecommerce/ProductAction)-->
+<!-- - [iOS](https://developers.google.com/analytics/devguides/collection/ios/v3/reference/interface_g_a_i_ecommerce_product_action) -->
 - [Analytics.js - Enhanced E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce)
 - [Analytics.js - E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce)
 
@@ -365,9 +365,9 @@ analytics.track('Clicked Promotion', {
 ```
 
 For client-side integrations, we use Google Analytics' Promotions class to measure promotions. You can read their developer docs for information on specific methods:
-<!-- same note as above re mobile
-- [Android](https://developers.google.com/android/reference/com/google/android/gms/analytics/ecommerce/Promotion)
-- [iOS](https://developers.google.com/analytics/devguides/collection/ios/v3/reference/interface_g_a_i_ecommerce_promotion)-->
+<!-- same note as above re mobile -->
+<!-- - [Android](https://developers.google.com/android/reference/com/google/android/gms/analytics/ecommerce/Promotion)-->
+<!-- - [iOS](https://developers.google.com/analytics/devguides/collection/ios/v3/reference/interface_g_a_i_ecommerce_promotion)-->
 - [Analytics.js - Enhanced E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce)
 - [Analytics.js - E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce)
 
@@ -469,6 +469,9 @@ analytics.track('Product List Filtered', {
 });
 ```
 
+> tip ""
+> **Tip!** To tie product clicks and views to the same Product List Name in Google Analytics, include a `list` property in your 'Product Viewed' and 'Product Clicked' events. The value in the `list` property should match the value in the `list_id` property for the corresponding 'Product List Viewed' and 'Product List Filtered' events.
+
 ### Refunds
 
 To view refund in Google Analytics, you must have enhanced e-commerce enabled.
@@ -494,7 +497,6 @@ analytics.track('Order Refunded', {
     ]
   });
 ```
-
 
 
 ## Server Side

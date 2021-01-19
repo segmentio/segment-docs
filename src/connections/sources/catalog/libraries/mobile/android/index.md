@@ -50,7 +50,7 @@ Analytics-Android saves up to 1000 calls on disk, and these never expire.
 
 {% include content/mobile-cmodes.md %}
 
-{% include components/media-icon.html href="https://github.com/segmentio/analytics-android/tree/master/analytics-samples/analytics-sample" icon="media/icon-guides.svg" title="Android Test Apps" content="Segment maintains test apps for the Android mobile library. Find them here." %}
+{% include components/reference-button.html href="https://github.com/segmentio/analytics-android/tree/master/analytics-samples/analytics-sample" icon="guides.svg" title="Android Test Apps" description="Segment maintains test apps for the Android mobile library. Find them here." %}
 
 ### Create an Android source
 
@@ -535,7 +535,7 @@ analyticsContext.putValue(...).putReferrer(...).putCampaign(...);
 
 {% codeexampletab Kotlin %}
 ```kotlin
-val analyticsContext = Analytics.with(context).analyticsContext()
+val analyticsContext = Analytics.with(context).analyticsContext
 analyticsContext.putValue(...).putReferrer(...).putCampaign(...)
 ```
 {% endcodeexampletab %}
@@ -555,7 +555,7 @@ analyticsContext.device().putValue("advertisingId", "1");
 
 {% codeexampletab Kotlin %}
 ```kotlin
-val analyticsContext = Analytics.with(context).analyticsContext()
+val analyticsContext = Analytics.with(context).analyticsContext
 analyticsContext.device().putValue("advertisingId", "1")
 ```
 {% endcodeexampletab %}
@@ -575,7 +575,7 @@ context.clear();
 {% codeexampletab Kotlin %}
 ```kotlin
 val analytics = Analytics.Builder(context, writeKey).defaultOptions(defaultOptions).build()
-val context = analytics.analyticsContext()
+val context = analytics.analyticsContext
 context.clear()
 ```
 {% endcodeexampletab %}

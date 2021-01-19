@@ -39,6 +39,7 @@ import "gopkg.in/segmentio/analytics-go.v3"
 
 func main() {
   client := analytics.New("YOUR_WRITE_KEY")
+  defer client.Close()
 }
 ```
 

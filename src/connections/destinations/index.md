@@ -24,7 +24,7 @@ Not all destinations can accept data from specific method types. Wondering which
 
 Many destinations can accept data from all types of sources, but some are only compatible with specific source types (for example, web only, or server only). To find out which source types a specific destination can accept data from, check the documentation for that destination for a "Supported Sources and Connection Modes" section.
 
-{% include components/media-icon.html href="/docs/connections/destinations/category-compare/" icon="media/icon-guides.svg" title="Destinations Compatibility Matrix" content="Wondering which destinations take which data? Check out the Destination connection modes list by category." %}
+{% include components/reference-button.html href="/docs/connections/destinations/category-compare/" icon="guides.svg" title="Destinations Compatibility Matrix" description="Wondering which destinations take which data? Check out the Destination connection modes list by category." %}
 
 ## Connection Modes
 
@@ -192,7 +192,7 @@ You can see the current destination endpoint API success rates and final deliver
 ### Replays
 
 > info ""
-> Replay is available to [Business tier](https://segment.com/pricing) customers. [Contacting us](https://segment.com/contact/sales) to learn more.
+> Replay is available to [Business tier](https://segment.com/pricing) customers. [Contact us](https://segment.com/contact/sales) to learn more.
 
 [Replays](/docs/guides/what-is-replay/) allow customers to load historical data from Segment's S3 logs into downstream destinations which accept cloud-mode data. So, for example, if you wanted to try out a new email or analytics tool, Segment can replay your historical data into that tool. This gives you a great testing environment and prevents data lock-in when vendors try to hold data hostage.
 
