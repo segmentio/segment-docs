@@ -199,7 +199,7 @@ Batch handlers are an extension for destination functions. When you define an `o
 
 ### Batching use cases
 
-Consider definining a batch handler if:
+Consider defining a batch handler if:
 
 - **Your function sends data to a service that has a batch endpoint.** Batch endpoints may allow you both to send more data downstream and stay within the rate limits imposed by the service. Batch handlers that use one or more batch endpoints improve the efficiency of the function, and enable it to scale more easily.
 - **You have a high throughput function and want to reduce cost.** When you define a batch handler, Segment invokes the function once per *batch*, rather than once per event. As long as the function's execution time isn't adversely affected, the reduction in invocations should lead to a reduction in cost.
@@ -219,7 +219,7 @@ async function onBatch(events, settings){
 }
 ```
 
-The handler function receives an array of events. The events can be of any supported type. and a single batch may contain more than one event type. Handler functions also receive functino settings.
+The handler function receives an array of events. The events can be of any supported type. and a single batch may contain more than one event type. Handler functions also receive function settings.
 
 For example, you could send the array of events to an external services batch endpoint:
 
@@ -249,7 +249,7 @@ Segment batches together any event that occurs in that window of time.
 
 Segment batches together any event that it sees over a short time window. Events in that window may be of different types. Segment does this for two reasons:
 
-- To increas batching efficiency
+- To increase batching efficiency
 - Grouping by type is not always the desired outcome. It's possible to split batches in your code, but not possible to combine batches if Segment split by event type by default.
 
 If your downstream endpoint requires events of a single type, you can write a handler that first groups events by type before handling the events.
@@ -315,7 +315,7 @@ The [Functions editing environment](/docs/connections/functions/environment/) su
 
 The editor displays logs and request traces from the batch handler.
 
-The [Config API](/docs/config-api/) Functions/Preview endpoint also supports testing batch handlers. The payload must be a btach of events as a JSON array.
+The [Config API](/docs/config-api/) Functions/Preview endpoint also supports testing batch handlers. The payload must be a batch of events as a JSON array.
 
 ### Handling batching errors
 
