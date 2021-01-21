@@ -1,7 +1,7 @@
 ---
 title: Snapchat Audience Destination
 ---
-The [Snapchat Ads](https://forbusiness.snapchat.com/advertising/targeting)https://forbusiness.snapchat.com/advertising/targeting product provides a way to target advertisements to a global audience and drive meaningful results.
+The [Snapchat Ads](https://forbusiness.snapchat.com/advertising/targeting)https://forbusiness.snapchat.com/advertising/targeting) product provides a way to target advertisements to a global audience and drive meaningful results.
 
 Segment's integration with Snapchat Ad's Snap Audience Match (SAM) enables Segment customers to sync audiences created in Personas with Snapchat Advertising
 
