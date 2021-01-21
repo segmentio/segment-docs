@@ -50,6 +50,22 @@ If you do not pass a `userId`, we will try to fill it in with the `id` or `usern
 
 Keep in mind, we _strongly_ suggest to ensure that the `email` field is passed in the `identify` call.
 
+Integrations options passed to `identify` event will be passed to drift identify as third argument. This can be leveraged for [signed identifies](https://devdocs.drift.com/docs/securing-drift-on-your-site-using-signed-identities).
+
+```javascript
+analytics.identify('ksc2303', {
+  name: 'Tak',
+  email: 'test@forestry.com'
+}, {
+  integrations: {
+    'All': false,
+    'Drift': {
+      // properties to pass to drift identify call.
+    }
+  }
+});
+```
+
 ## Track
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:

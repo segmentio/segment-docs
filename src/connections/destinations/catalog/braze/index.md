@@ -8,7 +8,8 @@ hide-personas-partial: true
 
 The Braze Destination is open-source on GitHub. You can browse the code on GitHub: [iOS](https://github.com/Appboy/appboy-segment-ios), [Android](https://github.com/Appboy/appboy-segment-android) (Android and iOS maintained by Braze), [Web](https://github.com/segment-integrations/analytics.js-integration-appboy), [Server](https://github.com/segmentio/integration-appboy) (Web and Server maintained by Segment). If you find any issues for mobile platforms, let Braze know, if the issues appear on web or server, let [us know](https://segment.com/help/contact).
 
-_**NOTE:** There are currently two major versions of the Braze SDK. Make sure you read [important notes](/docs/connections/destinations/catalog/braze/#migrating-to-v2-of-the-braze-web-sdk) regarding migration from Version 1 to Version 2._
+> info "There are three major versions of the Braze SDK"
+> If you are migrating from version 1 to version 2, see [important notes](/docs/connections/destinations/catalog/braze/#migrating-to-v2-of-the-braze-web-sdk) regarding migration from Version 1 to Version 2.
 
 If you notice any gaps or outdated information in this document, or simply want to leave some feedback to help us improve, [let us know](https://segment.com/help/contact)!
 
@@ -432,9 +433,9 @@ end
 ```
 
 ### Migrating to v2 of the Braze Web SDK
-There are currently two major [versions](https://github.com/Appboy/appboy-web-sdk/blob/master/CHANGELOG.md#breaking) of this SDK: 1 and 2. Segment currently supports both as migrating to Version 2 requires some important changes to your website.
+There are currently three major [versions](https://github.com/Appboy/appboy-web-sdk/blob/master/CHANGELOG.md#breaking) of this SDK: 1, 2, and 3. Segment currently supports both as migrating to Version 2+ requires some important changes to your website.
 
-If you have never implemented Braze on your site, either using Segment or natively, you can ignore this section. If you have had Braze running before and want to migrate to Version 2 **you must ensure you remove all references to `appboy.min.css` from your site.** This is very important as it will cause issues with Version 2 of their SDK. Once you have done this you can select Version 2 using the "Braze Web SDK Version" with your Segment Settings UI.
+If you have never implemented Braze on your site, either using Segment or natively, you can ignore this section. If you have had Braze running before and want to migrate to Version 2+ **you must ensure you remove all references to `appboy.min.css` from your site.** This is very important as it will cause issues with Version 2+ of their SDK. Once you have done this you can select Version 2+ using the "Braze Web SDK Version" with your Segment Settings UI.
 
 ## Using Braze with Personas
 
