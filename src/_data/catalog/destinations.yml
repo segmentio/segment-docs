@@ -7476,7 +7476,7 @@ items:
   description: >-
     The Facebook Pixel integration lets you measure and optimize the performance
     of your Facebook Ads.
-  hidden: false
+  hidden: true
   url: connections/destinations/catalog/facebook-conversions-api
   status: PUBLIC_BETA
   logo:
@@ -13431,17 +13431,6 @@ items:
       required: false
       description: Map your Segment properties to the Marketo Activity Fields
       settings:
-      - name: segmentProperty
-        display_name: Segment Property Name
-        type: STRING
-        deprecated: false
-        required: true
-        string_validators:
-          regexp: ''
-        description: >-
-          Enter the Segment Property Name. This is case sensitive so make sure
-          the name matches exactly how you are passing it in your .track() call.
-        settings: []
       - name: marketoAttributeName
         display_name: Marketo Field Name
         type: STRING
@@ -13472,6 +13461,17 @@ items:
         deprecated: false
         required: false
         description: Mark this property as the Primary field in Marketo.
+        settings: []
+      - name: segmentProperty
+        display_name: Segment Property Name
+        type: STRING
+        deprecated: false
+        required: true
+        string_validators:
+          regexp: ''
+        description: >-
+          Enter the Segment Property Name. This is case sensitive so make sure
+          the name matches exactly how you are passing it in your .track() call.
         settings: []
     - name: event
       display_name: Segment Event Name
@@ -17745,6 +17745,22 @@ items:
       required: false
       description: Map your Segment properties to Responsys Columns
       settings:
+      - name: primaryKey
+        display_name: Set as Primary Key
+        type: BOOLEAN
+        deprecated: false
+        required: false
+        description: Mark this property as a Primary Key in Responsys.
+        settings: []
+      - name: columns
+        display_name: Segment Property Name
+        type: STRING
+        deprecated: false
+        required: true
+        string_validators:
+          regexp: ''
+        description: Enter the Segment Property Name.
+        settings: []
       - name: fieldName
         display_name: Responsys Column Name
         type: STRING
@@ -17770,22 +17786,6 @@ items:
           - INTEGER
           - TIMESTAMP
         description: Enter the Responsys column type.
-        settings: []
-      - name: primaryKey
-        display_name: Set as Primary Key
-        type: BOOLEAN
-        deprecated: false
-        required: false
-        description: Mark this property as a Primary Key in Responsys.
-        settings: []
-      - name: columns
-        display_name: Segment Property Name
-        type: STRING
-        deprecated: false
-        required: true
-        string_validators:
-          regexp: ''
-        description: Enter the Segment Property Name.
         settings: []
     - name: mapEmail
       display_name: Map Email
@@ -20473,6 +20473,56 @@ items:
       server: false
   previous_names:
   - Snapboard
+- display_name: Snapchat Audiences
+  slug: snapchat-audiences
+  name: catalog/destinations/snapchat-audiences
+  description: >-
+    The Snapchat Audiences destination lets you sync audiences of users into
+    Snapchat. The Personas product is required to use this destination.
+  hidden: false
+  url: connections/destinations/catalog/snapchat-audiences
+  status: PUBLIC
+  logo:
+    url: 'https://cdn.filepicker.io/api/file/4pYPZIcPTDqRNgD9s6Pb'
+  mark:
+    url: 'https://cdn.filepicker.io/api/file/Up1KJzLMSg27dHkBdb7v'
+  categories:
+  - Advertising
+  components:
+  - type: CLOUD
+  platforms:
+    browser: false
+    server: true
+    mobile: false
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: true
+  methods:
+    alias: false
+    group: false
+    identify: false
+    page_view: false
+    track: true
+  settings:
+  - name: account
+    display_name: account
+    type: STRING
+    deprecated: false
+    required: true
+    string_validators:
+      regexp: ''
+    description: Choose your Snapchat Ads Account.
+    settings: []
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: true
+  previous_names:
+  - Snapchat Audiences
 - display_name: Spinnakr
   slug: spinnakr
   name: catalog/destinations/spinnakr
