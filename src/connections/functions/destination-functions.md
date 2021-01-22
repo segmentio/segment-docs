@@ -313,6 +313,9 @@ The [Functions editing environment](/docs/connections/functions/environment/) su
 
 ![Batch handler testing](images/batch-function-editor.png)
 
+> note ""
+> The Sample Event option tests single events only. Use Manual Mode to add the entire array of events to test batch handlers.
+
 The editor displays logs and request traces from the batch handler.
 
 The [Config API](/docs/config-api/) Functions/Preview endpoint also supports testing batch handlers. The payload must be a batch of events as a JSON array.
@@ -460,4 +463,4 @@ The Event Delivery tab continues to show metrics for individual events. For more
 
 A function's use depends on the number of times the function is invoked, and the amount of time it takes to execute. When you enable batching, Segment invokes your function *once per batch* rather than once per event. The number of invocations is dependent on batch counts, which are determined by the volume of events flowing through the function.
 
-If you're sending your batch to an external service, the execution time of the functiondepends on the end-to-end latency of that service's batch endpoint, which may be higher than an endpoint that receives a single event.
+If you're sending your batch to an external service, the execution time of the function depends on the end-to-end latency of that service's batch endpoint, which may be higher than an endpoint that receives a single event.
