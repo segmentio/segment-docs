@@ -11,15 +11,16 @@ On the surface this doesn't sound like much, but this can grant huge benefits to
 With Replays, you can send your existing data to new tools.
 This means you can send a limited sample of your data to a new tool to test it out, and run similar tools in parallel to verify the data format or accuracy of the output. Finally, when you're ready to switch to a new tool, you can replay a full set of your data to the new tool to backfill it with data that extends before you set up the tool - no warm-up time or operational gap to disrupt your work.
 
-> **Note**: Any destinations which accept cloud-mode data (meaning data from Segment, and not directly from users' devices) can use replay, however they must also process timestamps on the data for replay to be useful.
+> info "Note"
+> Any destinations which accept cloud-mode data (meaning data from Segment, and not directly from users' devices) can use replay, however they must also process timestamps on the data for replay to be useful.
 
 <!-- TODO: insert a list of destinations which are replay-eligible, see REPLAYS-38-->
 
 ## Replays for resilience
 
-With Replays, you're protected from outages and errors.  If a destination which you rely on experiences an outage, or temporarily isn't able to accept incoming data, you can use Replays to re-send data to that tool once the service recovers. You can also use Replays to recover from errors caused by misconfigurations in your Segment systems - sending data in the wrong format, or want to apply [destination filters](/docs/connections/destinations/destination-filters/)? Change your mapping, clear out the bad data, and replay it from the source. You can also use this to update the schema in your data warehouse when it changes.
+With Replays, you're protected from outages and errors. If a destination which you rely on experiences an outage, or is temporarily unable to accept incoming data, you can use Replays to re-send data to that tool once the service recovers. You can also use Replays to recover from errors caused by misconfigurations in your Segment systems. For example, if you send data in the wrong format, or want to apply [destination filters](/docs/connections/destinations/destination-filters/). In this case, you can change your mapping using a destination filter, clear out the bad data, and replay it to that destination. You can also use this to update the schema in your data warehouse when it changes.
 
-Any of this sound complicated? [Contact us](https://segment.com/help/contact/) and our Success Engineers will walk you through the process.
+For more information, [Contact us](https://segment.com/help/contact/) and our Success Engineers will walk you through the process.
 
 ## Replays considerations
 
