@@ -146,7 +146,7 @@ If you're sending your experiment data to Google Analytics in the form of `track
 
 1. In your Segment source dashboard, enable the "Optimizely Web" destination (*not the "Optimizely Full Stack" destination*).
 2. Require Optimizely's `@optimizely/optimizely-sdk` on your site and create an `optimizelyClientInstance`.
-3. The instance must be named `optmizelyClientInstance`.
+3. The instance must be named `optimizelyClientInstance`.
 4. Attach the `optimizelyClientInstance` to the `window` so Segment recognizes it.
 5. Now, paste your Segment snippet below the Optimizely implementation on every page where you'd like to include Segment's JavaScript. Or, if you've implemented Optimizely in a separate file, ensure Segment loads only after Optimizely has been initialized.
 6. Finally, define any [`events`](https://docs.developers.optimizely.com/full-stack/docs/create-events) and [`attributes`](https://docs.developers.optimizely.com/full-stack/docs/define-attributes) in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`.
