@@ -17,7 +17,7 @@ This means you can send a limited sample of your data to a new tool to test it o
 
 ## Replays for resilience
 
-With Replays, you're protected from outages and errors.  If a destination which you rely on experiences an outage, or temporarily isn't able to accept incoming data, you can use Replays to re-send data to that tool once the service recovers. You can also use Replays to recover from errors caused by misconfigurations in your Segment systems - sending data in the wrong format, or want to apply [destination filters](/docs/connections/destinations/destination-filters/)? Change your mapping, clear out the bad data, and replay it from the source. You can also use this to update the schema in your data warehouse when it changes.
+With Replays, you're protected from outages and errors.  If a destination which you rely on experiences an outage, or temporarily isn't able to accept incoming data, you can use Replays to re-send data to that tool once the service recovers. You can also use Replays to recover from errors caused by misconfigurations in your Segment systems - sending data in the wrong format, or want to apply [destination filters](/docs/connections/destinations/destination-filters/)? Change your mapping using a destination filter, clear out the bad data, and replay it to that destination. You can also use this to update the schema in your data warehouse when it changes.
 
 Any of this sound complicated? [Contact us](https://segment.com/help/contact/) and our Success Engineers will walk you through the process.
 
