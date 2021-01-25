@@ -153,6 +153,7 @@ When you're building your query, there are some requirements for the data your q
 - It must return at least one additional trait in addition to `user_id`/`group_id`, and no more than 25 total columns
 - The query must not return any `user_id`s with a `null` value, or any duplicate `user_id`s.
 - The query must not return more than 10 million rows.
+- Each record must be less than 16kb in size to adhere to [Segment's maximum request size](/docs/connections/sources/catalog/libraries/server/http-api/#max-request-size).
 
 A successful preview returns a sample of users and their traits.
 If we have seen a user before in Personas, their profile shows a green checkmark. You can click that user to view their user profile. If a user has a question mark, we haven't seen this `user_id` in Personas before.
@@ -219,6 +220,10 @@ No, Personas only sends an identify/group call if the values in a row have chang
 
 If you're importing a large list of users and traits, the biggest consideration is the API call usage and volume among the partners you are sending the data to. These vary depending on our partners, so [contact us](https://segment.com/help/contact/) if you are concerned about this.
 
+### Is there a limit on the size of a SQL Trait's payload?
+
+Yes, Segment limits request sizes to a maximum of 16kb. Records larger than this are discarded. 
+
 ## Troubleshooting
 
 ### I am getting a permissions error.
@@ -262,3 +267,4 @@ This means for the [sources connected to Personas](https://app.segment.com/goto-
 You might be returning a value for `user_id` that is inconsistent with how you  track `user_id` elsewhere. We've seen cases where some customers want to return `email` as the `user_id`, or a partner's tool id as the `user_id`. These are against our best practices and corrupt the identity graph if you are then tracking `user_id` differently elsewhere in your apps.
 
 If you see only question marks in the preview, and have already tracked data historically with Segment, then you probably just have the wrong column. If you cloud source doesn't have the database `user_id`, we recommend JOINing with an internal users table before sending the results back to Segment.
+
