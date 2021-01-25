@@ -8,16 +8,16 @@ Account-level audiences are Personas audiences for businesses that sell to other
 > info ""
 > Account-level audiences are available to workspaces on a **Personas Advanced** plan. If you're an existing Segment customer on a Personas Advanced plan, contact your Customer Success Manager for access to Account-level audiences. If you're a new customer, or do not have a CSM, [request a demo](https://segment.com/demo/).
 
-You can use account-level audiences to in the following use cases:
+You can use account-level audiences to accomplish the following use cases:
 - Identify a set of at-risk accounts based on associated users' log in patterns, and flag them in your customer service application
 - Identify a set of trial accounts which would benefit from a paid plan based on their use, and flag those in your CRM application
 - Create an email list of all users in accounts showing high adoption of a specific feature to aid in recruiting for user research
 
-| Use case                                                                                                                              | Required features                                                                                                                                    | Detailed description                                                             |
-| ------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| Create a list of accounts based on account-level traits, and/or the traits and behaviors of individual users associated with accounts | 1. Account-level audiences                                                                                                                           | Account-level audience conditions                                                |
-| Create a list of accounts based on the collective behavior of all users associated with accounts                                      | 1. Account-level computed trait or SQL trait. 2. Account-level audience (using computed trait as a condition)                                        | Using account-level computed and SQL traits as account-level audience conditions |
-| Create a list of users based on a combination of user-lebevl traits and events, and account-level traits                              | 1. Account-level audience (using account-level trait as a condition) 2. User-level audience (using account-level audience membership as a condition) | Using account-level traits in user-level audiences                               |
+| Use case                                                                                                                              | Required features                                                                                                                                    | Detailed description                                                                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Create a list of accounts based on account-level traits, and/or the traits and behaviors of individual users associated with accounts | 1. Account-level audiences                                                                                                                           | [Account-level audience conditions](#account-level-audience-conditions)                                                                                             |
+| Create a list of accounts based on the collective behavior of all users associated with accounts                                      | 1. Account-level computed trait or SQL trait. <br /> 2. Account-level audience (using computed trait as a condition)                                        | [Using account-level computed and SQL traits as account-level audience conditions](#use-account-level-computed-and-sql-traits-as-account-level-audience-conditions) |
+| Create a list of users based on a combination of user-level traits and events, and account-level traits                               | 1. Account-level audience (using account-level trait as a condition) 2. User-level audience (using account-level audience membership as a condition) | [Using account-level traits in user-level audiences](#use-account-level-traits-in-user-level-audiences)                                                             |
 
 ## Enable account-level audiences
 
@@ -40,7 +40,7 @@ A single account-level audience can incorporate any combination of the following
 > [Reserved account-level custom traits](/docs/connections/spec/group/#traits) are not available in audience conditions. You must include them in the traits dictionary a second time using a non-reserved trait name to make them available in the audience builder.
 
 The three types of user-level conditions are:
-- **Any User** (default): Returns all acounts where *at least one user* associated with the account satisfies the specified condition
+- **Any User** (default): Returns all accounts where *at least one user* associated with the account satisfies the specified condition
 - **All users**: Returns all accounts where *all users* associated with the account satisfy the specified condition
 - **None of the users**: Returns all accounts where *no users* associated with the account satisfy the specified condition
 
