@@ -45,6 +45,8 @@ Dynamic Property references give you more flexibility over funnel audiences. Ins
 
 If you are a B2B business, you might want to build an audience of accounts. You can use both account-level traits that you've sent through the [group](/docs/connections/spec/group) call, or user-level traits and events. For example, you might want to re-engage a list of at-risk accounts defined as companies which are on a business tier plan and where none of the users in that account have logged in recently. When incorporating user-level events or traits, you can specify `None of the users`, `Any users`, or `All users`.
 
+See [Account-level Audiences](/docs/personas/audiences/account-audiences) for more information.
+
 ![](images/1542075123519.png)
 
 ## Connecting your Audience to a Destination
@@ -55,7 +57,8 @@ Once you have previewed your audience, you can choose to connect a destination, 
 
 When you create an audience, Segment starts syncing your audience to the destinations you selected. Audiences are either sent to destinations as a boolean user-property or a user-list, depending on what the destination supports. Read more about [which destinations are supported](/docs/personas/using-personas-data/#compatible-personas-destinations) in the Personas documentation.
 
-For account-level audiences, you have the option to send either a [group](/docs/connections/spec/group) call and/or [identify](/docs/connections/spec/identify) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, we will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account.
+For account-level audiences, you can send either a [group](/docs/connections/spec/group) call and/or [identify](/docs/connections/spec/identify) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, we will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account. See [Account-level Audiences](/docs/personas/audiences/account-audiences) for more information.
+
 
 ## Realtime Compute vs. Batch
 
@@ -85,7 +88,7 @@ To create a new audience:
 
 
 > warning ""
-> [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/), [Marketo Lists](/docs/connections/destinations/catalog/marketo-static-lists/), and [Adwords Remarketing Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists) have rate limits on how quickly we can update an audience. We sync at the highest frequency allowed by the tool, which is between 1 hour and 6 hours.
+> [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/), [Marketo Lists](/docs/connections/destinations/catalog/marketo-static-lists/), and [Adwords Remarking Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists) have rate limits on how quickly we can update an audience. We sync at the highest frequency allowed by the tool, which is between 1 hour and 6 hours.
 
 ## Accessing your Audiences using the Profiles API
 
