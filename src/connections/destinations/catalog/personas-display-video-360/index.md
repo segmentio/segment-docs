@@ -289,7 +289,7 @@ Sometimes, Google denies IDFA or `google_user_id` values when they consider them
 
 #### Modifying Lists Configuration in DV360 
 
-Performing any changes in the DV360 lists' configuration (for example, modify the membership expiration from 540 days to some other value that matches the time window on their personas audience) is **very risky** and **will likely** cause mismatches between Personas’ audiences and the lists in Google. We can only guarantee that the integration works successfully if there are no changes made to the configurations on the Google side. We create every DV360 list with the parameters that we know will work based on how Personas works. Any configuration that is not set by our system can cause mismatches by automatically removing more users than intended or not accepting valid uploads.
+Any changes to a DV360 list's configuration (for example, modifying the membership expiration from 540 days to a value that matches the time window on the personas audience) is **very risky** and **will likely** cause mismatches between Personas audiences and the lists in Google. Segment ensures that the integration works successfully only if there are no changes made to the configurations in DV360. DV360 lists are created with parameters that are known to be compatible with Personas. Configurations that differ from Segment's can cause mismatches by removing more users than intended, or by not accepting valid uploads.
 
 
 ### Why is the audience size larger in DV360 than in Personas?
