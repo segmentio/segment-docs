@@ -22,7 +22,7 @@ sections:
   - path: /connections/destinations/catalog/facebook-pixel
     title: Facebook Pixel destination
   - path: /connections/destinations/catalog/facebook-pixel-server-side
-    title: Facebook Pixel Server destination (Beta)
+    title: Facebook Conversions API Destination (Beta)
   - path: /connections/destinations/catalog/facebook-app-events
     title: Facebook App Events destination
   - path: /connections/destinations/catalog/facebook-offline-conversions

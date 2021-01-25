@@ -148,7 +148,7 @@ You can read more about [error handling](#destination-functions-logs-and-errors)
 
 Next, fill out this setting's value in the **Test** tab, so you can run the function and verify that the correct setting value is passed. (This value is only for testing your function.)
 
-![Test Value For Setting](images/setting-in-test-tab.jpg){:width="500"}
+![Test Value For Setting](images/setting-in-test-tab.png){:width="500"}
 
 Now that you've configured a setting and entered a test value, you can add code to read its value and run the function, as in the example below:
 

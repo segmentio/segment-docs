@@ -287,6 +287,10 @@ Apple has announced an updated privacy policy that, while not rolled out yet, im
 
 Sometimes, Google denies IDFA or `google_user_id` values when they consider them to be invalid or inactive.
 
+#### Modifying Lists Configuration in DV360 
+
+Any changes to a DV360 list's configuration (for example, modifying the membership expiration from 540 days to a value that matches the time window on the personas audience) is **very risky** and **will likely** cause mismatches between Personas audiences and the lists in Google. Segment ensures that the integration works successfully only if there are no changes made to the configurations in DV360. DV360 lists are created with parameters that are known to be compatible with Personas. Configurations that differ from Segment's can cause mismatches by removing more users than intended, or by not accepting valid uploads.
+
 
 ### Why is the audience size larger in DV360 than in Personas?
 

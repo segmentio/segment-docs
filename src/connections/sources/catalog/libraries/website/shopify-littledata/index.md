@@ -42,23 +42,24 @@ Below is a table of events that **Shopify by Littledata** sends to Segment throu
 | Event Name            | Description                                                           |
 | --------------------- | --------------------------------------------------------------------- |
 | Page Viewed           | The user has viewed a page                                            |
-| Product List Viewed   | The user has viewed a product as they scroll down the collection page |
 | Product Clicked       | The user has clicked a product within a product list                  |
-| Product Viewed        | The user has viewed a product page                                    |
 | Product Image Clicked | The user has clicked a product image                                  |
-| Product Shared        | User has shared a product via social links                            |
+| Product List Viewed   | The user has viewed a product as they scroll down the collection page |
+| Product Shared        | User has shared a product through social links                        |
+| Product Viewed        | The user has viewed a product page                                    |
 | Thankyou Page Viewed  | User has viewed the thank you page after completing an order \*       |
 
-\* This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
+> note ""
+> \* This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
 
 In addition to the events tracked as standard, the following hits can be tracked based on page path:
 
 | Event Name             | Description                                 |
 | ---------------------- | ------------------------------------------- |
-| Registration Viewed    | A prospect has viewed the registration page |
-| Cart Viewed            | A prospect has viewed the cart              |
 | Blog Viewed            | A prospect has viewed the blog              |
+| Cart Viewed            | A prospect has viewed the cart              |
 | Registration Completed | A prospect has completed registration       |
+| Registration Viewed    | A prospect has viewed the registration page |
 
 ## Cloud-mode Events
 
@@ -66,22 +67,33 @@ Below is a table of events that **Shopify by Littledata** sends to Segment from 
 
 | Event Name               | Description                                                                                                                                                                                 |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Product Added            | A user has added a product to the cart, and left it in the cart for more than 10 seconds                                                                                                    |
-| Product Removed          | A user has removed a product from the cart                                                                                                                                                  |
 | Checkout Started         | A user has started checkout                                                                                                                                                                 |
 | Checkout Step Completed  | A user has completed a step in the checkout                                                                                                                                                 |
-| Payment Info Entered     | A user has entered payment info                                                                                                                                                             |
-| Customer Created         | User added as a customer                                                                                                                                                                    |
-| Customer Updated         | Customer information updated                                                                                                                                                                |
 | Coupon Applied           | Sent with Checkout Step Completed or Order Completed when user has applied a coupon                                                                                                         |
-| Order Completed          | A prospect has completed an order                                                                                                                                                           |
-| Order Refunded           | An order has been refunded                                                                                                                                                                  |
-| Order Cancelled (v2)     | An admin has cancelled an order (including the cancel_reason)                                                                                                                               |
-| POS Order Placed (v2)    | A user has placed an order through Shopify POS                                                                                                                                              |
-| Payment Failure (v2)     | A user completed checkout step 3 but the payment method failed (for example, the card details were valid but the [charge did not succeed(https://stripe.com/docs/testing#cards-responses)]) |
+| Customer Created         | User added as a customer                                                                                                                                                                    |
 | Customer Enabled (v2)    | A user has confirmed their email address and created a Shopify customer account with verified_email set as true                                                                             |
+| Customer Updated         | Customer information updated                                                                                                                                                                |
 | Fulfillment Created (v2) | An order fulfillment status has changed (including status, tracking_numbers and tracking_urls where the shipping integration allows)                                                        |
 | Fulfillment Updated (v2) | An order fulfillment status has changed (including status, tracking_numbers and tracking_urls where the shipping integration allows)                                                        |
+| Order Cancelled (v2)     | An admin has cancelled an order (including the cancel_reason)                                                                                                                               |
+| Order Completed          | A prospect has completed an order                                                                                                                                                           |
+| Order Refunded           | An order has been refunded                                                                                                                                                                  |
+| POS Order Placed (v2)    | A user has placed an order through Shopify POS                                                                                                                                              |
+| Payment Failure (v2)     | A user completed checkout step 3 but the payment method failed (for example, the card details were valid but the [charge did not succeed(https://stripe.com/docs/testing#cards-responses)]) |
+| Payment Info Entered     | A user has entered payment info                                                                                                                                                             |
+| Product Added            | A user has added a product to the cart, and left it in the cart for more than 10 seconds                                                                                                    |
+| Product Removed          | A user has removed a product from the cart                                                                                                                                                  |
+
+## User identity
+
+In the Littledata application, you can choose which of the following fields you want to send as the `userId` for known customers:
+
+- Shopify Customer ID (default)
+- Email
+- MD5 email hash
+- None 
+
+For example, using 'email' allows you to match users across platforms that do not have access to the Shopify Customer ID. For [Segment Personas](/docs/personas/) we also send `shopify_customer_id` as an [externalID](/docs/personas/identity-resolution/externalids/) for advanced matching.
 
 ## Identify Calls
 
@@ -91,19 +103,19 @@ The following traits are included with an Identify call:
 
 | Property Name           | Description                                                                                                                                     | Property Type |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `userId`                | The Shopify Customer ID                                                                                                                         | Double        |
+| `address`               | The customer's primary address                                                                                                                  | String        |
+| `createdAt`             | The date customer record was created                                                                                                            | Date          |
+| `customerLifetimeValue` | The total spend of customer on the Shopify store                                                                                                | Double        |
+| `description`           | The customer notes                                                                                                                              | String        |
+| `email`                 | The customer's email address                                                                                                                    | String        |
 | `firstName`             | The customer's first name                                                                                                                       | String        |
 | `lastName`              | The customer's email                                                                                                                            | String        |
-| `email`                 | The customer's email address                                                                                                                    | String        |
-| `phone`                 | The customer's phone number                                                                                                                     | String        |
-| `createdAt`             | The date customer record was created                                                                                                            | Date          |
-| `description`           | The customer notes                                                                                                                              | String        |
-| `address`               | The customer's primary address                                                                                                                  | String        |
-| `customerLifetimeValue` | The total spend of customer on the Shopify store                                                                                                | Double        |
-| `purchaseCount`         | The bumber of orders by this customer                                                                                                           | Integer       |
 | `marketingOptIn`        | The `marketing_opt_in` field from [Shopify customer](https://shopify.dev/docs/admin-api/rest/reference/customers/customer?api[version]=2020-04) | String        |
-| `tags`                  | The custom tags [applied to the customer](https://shopify.dev/docs/admin-api/rest/reference/customers/customer?api[version]=2020-04)            | String        |
+| `phone`                 | The customer's phone number                                                                                                                     | String        |
+| `purchaseCount`         | The bumber of orders by this customer                                                                                                           | Integer       |
 | `state`                 | Whether the customer account is enabled or disabled                                                                                             | String        |
+| `tags`                  | The custom tags [applied to the customer](https://shopify.dev/docs/admin-api/rest/reference/customers/customer?api[version]=2020-04)            | String        |
+| `userId`                | Chosen user identifier, defaulting to Shopify Customer ID                                                                                       | Double        |
 | `verified_email` (v2)   | Whether the customer has verified their email                                                                                                   | Boolean       |
 
 ## Support for email marketing destinations
@@ -120,13 +132,13 @@ Additional events available through Littledata's [ReCharge connection](https://w
 
 | Event Name               | Description                                     |
 | ------------------------ | ----------------------------------------------- |
-| Subscription Created     | A customer has created a subscription           |
-| Subscription Updated     | A customer has updated a subscription           |
-| Subscription Cancelled   | A customer has cancelled a subscription         |
-| Order Processed          | A recurring order is processed                  |
 | Charge Failed            | A failed to charge customer                     |
 | Charge Max Tries Reached | The maximum tries to charge customer is reached |
+| Order Processed          | A recurring order is processed                  |
 | Payment Method Updated   | A customer has updated the payment method       |
+| Subscription Cancelled   | A customer has cancelled a subscription         |
+| Subscription Created     | A customer has created a subscription           |
+| Subscription Updated     | A customer has updated a subscription           |
 
 ## Event Properties
 
@@ -134,28 +146,28 @@ The list below outlines the properties included in the events listed above.
 
 | Property                               | Description                                                    | Property Type |
 | -------------------------------------- | -------------------------------------------------------------- | ------------- |
-| `userId`                               | A Shopify Customer ID (after checkout step 2)                  | Double        |
-| `email`                                | Shopify email address, or email submitted on a storefront form | String        |
-| `order_id`                             | The ID of the order                                            | String        |
-| `checkoutId`                           | The ID of the checkout session                                 | String        |
-| `shipping`                             | The shipping cost                                              | Float         |
-| `tax`                                  | The amount of tax on the order                                 | Float         |
-| `subtotal`                             | The total less tax and shipping                                | Float         |
-| `total`                                | The total value of the order                                   | Float         |
 | `affiliation`                          | The affiliation of the order                                   | String        |
+| `checkoutId`                           | The ID of the checkout session                                 | String        |
+| `context.uip`                          | The user's IP address                                          | String        |
+| `context['Google Analytics'].clientId` | The user's Google Analytics Client ID                          | String        |
+| `context['Google Analytics'].geoid`    | The user's location                                            | String        |
 | `coupon`                               | Comma-separated string of discount coupons used, if applicable | String        |
 | `currency`                             | The currency of the order                                      | String        |
 | `discount`                             | The discounted amount                                          | Float         |
-| `products`                             | A list of all the product at that step of the funnel \*        | Array         |
-| `step`                                 | The checkout step                                              | Integer       |
+| `email`                                | Shopify email address, or email submitted on a storefront form | String        |
+| `order_id`                             | The ID of the order                                            | String        |
 | `payment_method`                       | The payment method chosen for checkout                         | String        |
-| `shipping_method`                      | The shipping method chosen for checkout                        | String        |
-| `context['Google Analytics'].clientId` | The user's Google Analytics Client ID                          | String        |
-| `context['Google Analytics'].geoid`    | The user's location                                            | String        |
-| `context.uip`                          | The user's IP address                                          | String        |
-| `sent_from`                            | A unique property to identify events sent by Littledata        | String        |
 | `presentment_currency`                 | The user's local currency                                      | String        |
 | `presentment_total`                    | The order total in local currency                              | String        |
+| `products`                             | A list of all the product at that step of the funnel \*        | Array         |
+| `sent_from`                            | A unique property to identify events sent by Littledata        | String        |
+| `shipping_method`                      | The shipping method chosen for checkout                        | String        |
+| `shipping`                             | The shipping cost                                              | Float         |
+| `step`                                 | The checkout step                                              | Integer       |
+| `subtotal`                             | The total less tax and shipping                                | Float         |
+| `tax`                                  | The amount of tax on the order                                 | Float         |
+| `total`                                | The total value of the order                                   | Float         |
+| `userId`                               | Chosen user identifier, defaulting to Shopify Customer ID      | Double        |
 
 \* Prior to 1st February 2021, `products` on Product Added and Product Removed events was [only the single product](https://blog.littledata.io/help/posts/segment-changed-schema-for-product-added-and-product-removed/), not the whole cart.
 
@@ -165,16 +177,28 @@ Each item in the `products` array, or Product Viewed and Product Added events, w
 
 | Property             | Description                                     | Property Type |
 | -------------------- | ----------------------------------------------- | ------------- |
-| `product_id`         | Shopify product ID                              | String        |
-| `shopify_product_id` | Also Shopify product ID                         | String        |
-| `sku`                | The product SKU                                 | String        |
-| `variant`            | The product variant name                        | String        |
-| `shopify_variant_id` | The Shopify variant ID                          | String        |
-| `category`           | The category of the product (defaults to `all`) | String        |
 | `brand`              | The brand of the product                        | String        |
+| `category`           | The category of the product (defaults to `all`) | String        |
 | `list_id`            | The ID of the product collection                | String        |
 | `list_name`          | The name of the product collection              | String        |
 | `list_position`      | The product position in the collection          | Integer       |
 | `name`               | The product name                                | String        |
 | `price`              | The product price                               | Float         |
+| `product_id`         | Shopify product ID                              | String        |
 | `quantity`           | The quantity of products                        | Integer       |
+| `shopify_product_id` | Also Shopify product ID                         | String        |
+| `shopify_variant_id` | The Shopify variant ID                          | String        |
+| `sku`                | The product SKU                                 | String        |
+| `variant`            | The product variant name                        | String        |
+
+## Advanced device-mode settings
+
+You can edit the LittledataLayer object in your Shopify theme to manually change these advanced settings. For more information, see the [Shopify tracker GitHub repository](https://github.com/littledata/shopify-tracker#segment-configuration).
+
+### cookiesToTrack
+
+You can send any cookie set on a landing page (for example, a session identifier or marketing campaign name) to Segment with an Identify call.
+
+### CDNForAnalyticsJS
+
+If you have a [proxy CDN setup](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/) to load Segment's AnalyticsJS library from your own domain, you can specify it here.
