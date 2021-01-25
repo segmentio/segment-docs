@@ -190,9 +190,14 @@ If your function fails, you can check the error details and logs in the **Output
 - **Error Message** - This shows the error surfaced from your function.
 - **Logs** - This section displays any messages to `console.log()` from the function.
 
-## Batching the destination function
+## Batching the destination function [Beta]
+
+> info ""
+> Function Batching is in beta. This means that the feature is in active development, and some functionality may change before the feature becomes generally available.
 
 Batch handlers are an extension for destination functions. When you define an `onBatch` handler next to the handler function for single events, you signal to Segment that the destination function can accept and handle batches of events.
+
+Batch handlers are an extension of destination functions. When you define an `onBatch` handler alongside the handler functions for single events (for example: `onTrack` or `onIdentity`), you're telling Segment that the destination function can accept and handle batches of events.
 
 > info ""
 > Batching is available to destination functions only.
