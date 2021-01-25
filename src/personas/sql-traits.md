@@ -267,3 +267,7 @@ This means for the [sources connected to Personas](https://app.segment.com/goto-
 You might be returning a value for `user_id` that is inconsistent with how you  track `user_id` elsewhere. We've seen cases where some customers want to return `email` as the `user_id`, or a partner's tool id as the `user_id`. These are against our best practices and corrupt the identity graph if you are then tracking `user_id` differently elsewhere in your apps.
 
 If you see only question marks in the preview, and have already tracked data historically with Segment, then you probably just have the wrong column. If you cloud source doesn't have the database `user_id`, we recommend JOINing with an internal users table before sending the results back to Segment.
+
+### Is there a limit on the size of a SQL Trait's payload?
+
+Yes, Segment limits request sizes to a maximum of 16kb. Records larger than this are discarded. 
