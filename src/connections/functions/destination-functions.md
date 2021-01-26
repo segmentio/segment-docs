@@ -193,16 +193,16 @@ If your function fails, you can check the error details and logs in the **Output
 ## Batching the destination function [Beta]
 
 > info ""
-> Function Batching is in beta. This means that the feature is in active development, and some functionality may change before the feature becomes generally available.
-
-Batch handlers are an extension for destination functions. When you define an `onBatch` handler next to the handler function for single events, you signal to Segment that the destination function can accept and handle batches of events.
+> Batch handling for Functions is currently available as an early access beta release. By enabling batch handlers for your function, you acknowledge that your use of batch handlers is subject to [Segment’s Beta Terms and Conditions](https://segment.com/legal/first-access-beta-preview), or the applicable terms governing Beta Releases found in your subscription agreement with Segment.
+> 
+> If you notice any bugs or have any general feedback on this new feature, please email [beta@segment.com](beta@segment.com).
 
 Batch handlers are an extension of destination functions. When you define an `onBatch` handler alongside the handler functions for single events (for example: `onTrack` or `onIdentity`), you're telling Segment that the destination function can accept and handle batches of events.
 
 > info ""
 > Batching is available to destination functions only.
 
-### Batching use cases
+### When to use batching
 
 Consider defining a batch handler if:
 
@@ -224,7 +224,7 @@ async function onBatch(events, settings){
 }
 ```
 
-The handler function receives an array of events. The events can be of any supported type. and a single batch may contain more than one event type. Handler functions also receive function settings.
+The handler function receives an array of events. The events can be of any supported type and a single batch may contain more than one event type. Handler functions also receive function settings.
 
 For example, you could send the array of events to an external services batch endpoint:
 
@@ -291,6 +291,10 @@ async function onIdentifyBatch(events, settings) {
   // handle a batch of identify events
 }
 ```
+
+### Configure your batch parameters
+
+Configuring batch parameters is not possible within the code or UI in this version of the beta. Please contact [beta@segment.com](mailto:beta@segment.com) with information about your specific use case, the reason you need to adjust parameters, and the URL to your destination function.
 
 ### Avoid writing batch and single event handlers
 
