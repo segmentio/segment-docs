@@ -128,6 +128,8 @@ sections:
       title: Best practices for identifying users
     - path: /connections/spec/best-practices-event
       title: Best practices for Event calls
+    - path: /connections/data-residency
+      title: Data Residency
   - section_title: Sources
     slug: connections/sources
     section:
