@@ -8,5 +8,8 @@ Segment offers customers the option to mitigate risk by providing regional infra
 
 If your workspace is enabled to support regional services, you can select on the region on a per-source basis in that Source's settings.
 
+All Segment client-side libraries dynamically read your preferred region when the SDK is loaded when your app starts or restarts. Changing regions does not require changes to your code when you change regions.
 
-All Segment client-side libraries dynamically read your preferred region when the SDK is loaded when your app starts or restarts. Changing regions does not require
+For server-side routing, you can view endpoint details in the source's settings, and use the `apiHost` configuration parameter to send data to the desired region.
+
+Regional infrastructure can failover across locations within the region, but does not failover across regions.
