@@ -255,7 +255,7 @@ Segment batches together any event that occurs in that window of time.
 Segment batches together any event that it sees over a short time window. Events in that window may be of different types. Segment does this for two reasons:
 
 - To increase batching efficiency
-- Grouping by type is not always the desired outcome. It's possible to split batches in your code, but not possible to combine batches if Segment split by event type by default.
+- Grouping by type is not always the desired outcome. It's possible to split batches in your code, but not possible to combine batches if Segment splits by event type by default.
 
 If your downstream endpoint requires events of a single type, you can write a handler that first groups events by type before handling the events.
 
@@ -466,7 +466,7 @@ If you are a partner, looking to publish your destination and distribute your ap
 
 ##### How does batching affect visibility?
 
-The Event Delivery tab continues to show metrics for individual events. For more information, see [Destination functions logs and errors](#destination-functions-logs-and-errors)
+The Event Delivery tab continues to show metrics for individual events. For more information, see [Destination functions logs and errors](#destination-functions-logs-and-errors).
 
 ##### How does batching impact function use and cost?
 
