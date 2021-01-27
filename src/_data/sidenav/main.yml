@@ -128,8 +128,6 @@ sections:
       title: Best practices for identifying users
     - path: /connections/spec/best-practices-event
       title: Best practices for Event calls
-    - path: /connections/data-residency
-      title: Data Residency
   - section_title: Sources
     slug: connections/sources
     section:
@@ -167,7 +165,7 @@ sections:
     - path: /connections/functions/source-functions
       title: Source Functions
     - path: /connections/functions/destination-functions
-      title: Destination Functions
+      title: Destination Functions 
     - path: /connections/functions/environment
       title: Functions environment
     - path: /connections/functions/usage
@@ -230,6 +228,8 @@ sections:
     title: Are there limits on my Segment Schema?
   - path: /connections/rate-limits
     title: Rate Limits and SLA
+  - path: /connections/data-residency
+    title: Data Residency
 - section_title: Personas
   section:
   - path: /personas
