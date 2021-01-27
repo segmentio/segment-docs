@@ -9,7 +9,7 @@ integration_type: feature
 
 Destination functions allow you to transform and annotate your Segment events and send them to any external tool or API without worrying about setting up or maintaining any infrastructure.
 
-All functions are scoped to your workspace, so members of other workspaces won't be able to view and use them.
+All functions are scoped to your workspace, so members of other workspaces won't be able to view or use them.
 
 > info ""
 > Functions is available to all customer plan types with a free allotment of usage hours. Read more about [Functions usage limits](/docs/connections/functions/usage/), or see [your workspace’s Functions usage stats](https://app.segment.com/goto-my-workspace/settings/usage?metric=functions).
@@ -194,7 +194,7 @@ If your function fails, you can check the error details and logs in the **Output
 
 > info ""
 > Batch handling for Functions is currently available as an early access beta release. By enabling batch handlers for your function, you acknowledge that your use of batch handlers is subject to [Segment’s Beta Terms and Conditions](https://segment.com/legal/first-access-beta-preview), or the applicable terms governing Beta Releases found in your subscription agreement with Segment.
-> 
+>
 > If you notice any bugs or have any general feedback on this new feature, please email [beta@segment.com](beta@segment.com).
 
 Batch handlers are an extension of destination functions. When you define an `onBatch` handler alongside the handler functions for single events (for example: `onTrack` or `onIdentity`), you're telling Segment that the destination function can accept and handle batches of events.
@@ -245,7 +245,7 @@ async function onBatch(events, settings) {
 
 To combine events into a batch, Segment collects events over a short window of time, and flushes them when one of the following thresholds is reached:
 
-- A certain number of events 
+- A certain number of events
 - The maximum wait time
 
 Segment batches together any event that occurs in that window of time.
