@@ -195,7 +195,7 @@ If your function fails, you can check the error details and logs in the **Output
 > info ""
 > Batch handling for Functions is currently available as an early access beta release. By enabling batch handlers for your function, you acknowledge that your use of batch handlers is subject to [Segment’s Beta Terms and Conditions](https://segment.com/legal/first-access-beta-preview), or the applicable terms governing Beta Releases found in your subscription agreement with Segment.
 > 
-> If you notice any bugs or have any general feedback on this new feature, please email [beta@segment.com](beta@segment.com).
+> If you notice any bugs or have any general feedback on this new feature, contact [beta@segment.com](beta@segment.com).
 
 Batch handlers are an extension of destination functions. When you define an `onBatch` handler alongside the handler functions for single events (for example: `onTrack` or `onIdentity`), you're telling Segment that the destination function can accept and handle batches of events.
 
@@ -294,7 +294,7 @@ async function onIdentifyBatch(events, settings) {
 
 ### Configure your batch parameters
 
-Configuring batch parameters is not possible within the code or UI in this version of the beta. Please contact [beta@segment.com](mailto:beta@segment.com) with information about your specific use case, the reason you need to adjust parameters, and the URL to your destination function.
+You cannot yet configure batch parameters (either in the code or UI) in this version of the beta. If you would like to change your batch parameters, contact [beta@segment.com](mailto:beta@segment.com) with information about your specific use case, the reason you need to adjust parameters, and the URL to your destination function.
 
 ### Avoid writing batch and single event handlers
 
