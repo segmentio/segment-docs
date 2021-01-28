@@ -1,30 +1,33 @@
 ---
-title: Pardot Destination
-name: Pardot
+title: Salesforce Pardot Destination
+strat: salesforce
 ---
 
 ## Getting Started
 
-When you enable Pardot in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Pardot's javascript onto your page. This means you should remove Pardot's snippet from your page.
-+ Pardot starts automatically collecting anonymous visitor data data on your site.
+When you enable Pardot in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Pardot's javascript onto your page. This means you should remove Pardot's snippet from your page. Pardot automatically collects anonymous visitor data data on your site. Pardot is supported on the client-side and server-side.
 
-Pardot is supported on the client-side and server-side.
 
-- - -
+## Authenticate using Salesforce SSO to access Pardot
 
-### API Access
+> info ""
+> Starting February 15, 2021, Pardot will require that you authenticate using Salesforce’s single sign-on (SSO), rather than a Pardot username and password. You must then reconnect your Segment Pardot destination using Salesforce SSO to keep data flowing to Pardot.
 
-You'll need to provide API access to Segment using Pardot user credentials. Since Pardot's API [requires](http://developer.pardot.com/kb/api-version-3/authentication) that we provide an email and password to get access to their API, we'll need to store this password in plain text in our database.
+If you don’t have a Salesforce account, contact your Salesforce administrator. They can grant you a Salesforce Identity License, which allows you to use Salesforce for SSO purposes without provisioning a full Salesforce account.
 
-Since we don't want to ask for the password of one of your actual user accounts, we recommend you create a new Pardot user account for Segment. Create this user by going to *Admin > Users and Groups > Add User*, and creating an Administrator role user.
+To reconnect Pardot to Segment using SSO authentication:
+1. In the Segment app, click **Connections** on the left, then click **Destinations**. Select your Pardot destination.
+2. On your Pardot settings page, click **Connect to Pardot**, and follow the steps to connect using OAuth.
+   ![](images/connect-sso.png)
 
-Also make sure to disable IP Security in this Pardot user account. First navigate to the [user settings](https://pi.pardot.com/account), then click "Edit Account", and change "Enable IP Security" to "Disabled". Why is this necessary? Segment server IP address(es) may change, meaning we cannot whitelist particular addresses.
+3. On the next screen, you are prompted to authenticate using your Salesforce username and password.
+    If you don’t have a Salesforce account, contact your Salesforce administrator. They can grant you a Salesforce Identity License, which allows you to use Salesforce for SSO purposes without provisioning a full Salesforce account.
 
-If you have web pages with different campaigns, you should follow [Pardot campaign
-instructions](http://www.pardot.com/help/faqs/prospects/how-are-prospects-associated-with-campaigns)
-and include the `pi_campaign_id` url query parameter in your campaign's web page urls.
+## API Access
+To connect to the Pardot API, Segment requires that you authenticate your account using your Salesforce single sign-on (SSO) credentials. When you first connect to the Pardot destination, you are prompted to sign in using Salesforce SSO.
 
-Our script will use the most appropriate campaign Id.
+> success ""
+> If you don’t have a Salesforce account, contact your Salesforce administrator. They can grant you a Salesforce Identity License, which allows you to use Salesforce for SSO purposes without provisioning a full Salesforce account.
 
 ### Pardot Version 3 and Version 4
 
@@ -32,15 +35,15 @@ There are currently two active versions of the Pardot platform, version 3 and ve
 
 Previously, this was not possible. Email was used by Pardot as a distinct identifier. In version 4 however, in order to update an *existing* prospect, you must provide either the Pardot ID for a given user OR the Salesforce FID. If one of these values is not provided in a request, Pardot will create a new prospect. More information is available on their [website](http://developer.pardot.com/kb/api-version-4/).
 
-Our Pardot integration provides two different options to properly support this new funtionality. Read on to learn more.
+The Segment Pardot destination provides two different options to support this new functionality. Read on to learn more.
 
 ## Identify
 
 ### Version 3
 
-When you call `identify`, we'll create or update a prospect in Pardot. If you are using version 3 of the Pardot platform, all you need to ensure is that you pass an `email` trait so that we can check if that prospect already exists. If it does, we'll simply update it's fields with the `traits` that you provide. Otherwise, we'll create a new prospect.
+When you call `identify`, Segment creates or updates a prospect in Pardot. If you are using version 3 of the Pardot platform, make sure you pass an `email` trait so Segment can check if that prospect already exists. If a prospect already exists, Segment updates its fields with the `traits` you provide. Otherwise, Segment creates a new prospect.
 
-```javascript
+```js
 analytics.identify('YOUR_DATABASE_USER_ID', {
     email: 'tom@example.com',
     name: 'Tom Smykowski'
@@ -112,7 +115,7 @@ If possible, we recommend you explore bulk updating all existing users to ensure
 
 ### Client Side
 
-On the client-side browser we load Pardot's javascript snippet to enable [anonymous visitor tracking](http://www.pardot.com/products/marketing-automation/benefits/website-visitor-id-and-anonymous-visitor-tracking/).
+On the client-side browser Segment loads Pardot's javascript snippet to enable [anonymous visitor tracking](http://www.pardot.com/products/marketing-automation/benefits/website-visitor-id-and-anonymous-visitor-tracking/).
 
 ### Troubleshooting
 
