@@ -8,7 +8,7 @@ strat: salesforce
 When you enable Pardot in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Pardot's javascript onto your page. This means you should remove Pardot's snippet from your page. Pardot automatically collects anonymous visitor data data on your site. Pardot is supported on the client-side and server-side.
 
 
-## Authenticate using Salesforce SSO to access Pardot
+## Update your Segment Pardot destination to use Salesforce SSO
 
 > info ""
 > Starting February 15, 2021, Pardot will require that you authenticate using Salesforce’s single sign-on (SSO), rather than a Pardot username and password. You must then reconnect your Segment Pardot destination using Salesforce SSO to keep data flowing to Pardot.
@@ -21,7 +21,7 @@ To reconnect Pardot to Segment using SSO authentication:
    ![](images/connect-sso.png)
 
 3. On the next screen, you are prompted to authenticate using your Salesforce username and password.
-    If you don’t have a Salesforce account, contact your Salesforce administrator. They can grant you a Salesforce Identity License, which allows you to use Salesforce for SSO purposes without provisioning a full Salesforce account.
+   If you don’t have a Salesforce account, contact your Salesforce administrator. They can grant you a Salesforce Identity License, which allows you to use Salesforce for SSO purposes without provisioning a full Salesforce account.
 
 ## API Access
 To connect to the Pardot API, Segment requires that you authenticate your account using your Salesforce single sign-on (SSO) credentials. When you first connect to the Pardot destination, you are prompted to sign in using Salesforce SSO.
@@ -121,6 +121,6 @@ On the client-side browser Segment loads Pardot's javascript snippet to enable [
 
 #### Updating a prospect's email creates a new prospect
 
-If you are using Version 4 of the API and are using a lookup field to match existing prospects with Segment `identify` events, trying to update a prospect's email will result in a new prospect being created. This is because the Pardot API only allows read operations with email as the query (or PardotID/SaleforceFID but if you were passing those, this issue would be irrelevant to you). What ends up happening is our integration performs a read operation for a prospect matching the new email being passed in. This will not return a lookup field match and thus a new user will be generated.
+If you use Version 4 of the API and use a lookup field to match existing prospects with Segment `identify` events, Pardot creates a new prospect when you try to update a prospect's email address. This is because the Pardot API does not allow write operations using an email address - you can only run a read (or lookup) operation with email addresses. (This restriction also applies to the SalesforceFID.) In this case the Segment integration performs a _read_ operation for a prospect matching the new email you sent. The read operation does not return a lookup field match, and so Pardot creates a new user.
 
-To update a user's email, you must pass either a PardotID or a SaleforceFID (see above for specifics on how to do this).
+To update a user's email, you must pass either a PardotID or a SalesforceFID (see above for specifics on how to do this).
