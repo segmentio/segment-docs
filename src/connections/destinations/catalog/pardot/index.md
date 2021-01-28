@@ -11,7 +11,7 @@ When you enable Pardot in the Segment web app, your changes appear in the Segmen
 ## Update your Segment Pardot destination to use Salesforce SSO
 
 > info ""
-> Starting February 15, 2021, Pardot will require that you authenticate using Salesforce’s single sign-on (SSO), rather than a Pardot username and password. You must then reconnect your Segment Pardot destination using Salesforce SSO to keep data flowing to Pardot.
+> Starting February 15, 2021, Pardot will require that you authenticate using Salesforce’s single sign-on (SSO), rather than a Pardot username and password. Prior to this date, you must reconnect your Segment Pardot destination using Salesforce SSO to keep data flowing to Pardot.
 
 If you don’t have a Salesforce account, contact your Salesforce administrator. They can grant you a Salesforce Identity License, which allows you to use Salesforce for SSO purposes without provisioning a full Salesforce account.
 
