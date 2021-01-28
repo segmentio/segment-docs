@@ -7,8 +7,7 @@ rewrite: true
 
 This destination is maintained by Vidora. For any issues with the destination, [contact the Vidora Support team](mailto:support@vidora.com).
 
-> note "Note:"
-> The Vidora Destination is currently in beta, which means that they are still actively developing the destination. To join their beta program, or if you have any feedback to help improve the Vidora Destination and its documentation, [contact the Vidora support team](mailto:support@vidora.com)!
+{% include content/beta-note.md %}
 
 ## Getting Started
 
