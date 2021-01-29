@@ -190,7 +190,7 @@ If your function fails, you can check the error details and logs in the **Output
 - **Error Message** - This shows the error surfaced from your function.
 - **Logs** - This section displays any messages to `console.log()` from the function.
 
-## Batching the destination function [Beta]
+## Batching the destination function (Beta)
 
 > info ""
 > Batch handling for Functions is currently available as an early access beta release. By enabling batch handlers for your function, you acknowledge that your use of batch handlers is subject to [Segment’s Beta Terms and Conditions](https://segment.com/legal/first-access-beta-preview), or the applicable terms governing Beta Releases found in your subscription agreement with Segment.
@@ -207,7 +207,7 @@ Batch handlers are an extension of destination functions. When you define an `on
 Consider defining a batch handler if:
 
 - **Your function sends data to a service that has a batch endpoint.** Batch endpoints may allow you both to send more data downstream and stay within the rate limits imposed by the service. Batch handlers that use one or more batch endpoints improve the efficiency of the function, and enable it to scale more easily. Specifically, you can use batch handlers to build [list-based](/docs/personas/using-personas-data/#personas-destination-types-event-vs-list) Personas destinations.
-- **You have a high throughput function and want to reduce cost.** When you define a batch handler, Segment invokes the function once per *batch*, rather than once per event. As long as the function's execution time isn't adversely affected, the reduction in invocations should lead to a reduction in cost.
+- **You have a high-throughput function and want to reduce cost.** When you define a batch handler, Segment invokes the function once per *batch*, rather than once per event. As long as the function's execution time isn't adversely affected, the reduction in invocations should lead to a reduction in cost.
 
 <!-- MZ: 1/19/21 - Need to add more below -->
 
@@ -224,7 +224,7 @@ async function onBatch(events, settings){
 }
 ```
 
-The handler function receives an array of events. The events can be of any supported type and a single batch may contain more than one event type. Handler functions also receive function settings.
+The handler function receives an array of events. The events can be of any supported type, and a single batch may contain more than one event type. Handler functions also receive function settings.
 
 For example, you could send the array of events to an external services batch endpoint:
 
@@ -243,7 +243,7 @@ async function onBatch(events, settings) {
 > info ""
 > The `onBatch` handler is an optional extension. Destination functions must still contain single event handlers as a fallback, in cases where Segment does not receive enough events to execute the batch.
 
-To combine events into a batch, Segment collects events over a short window of time, and flushes them when one of the following thresholds is reached:
+To combine events into a batch, Segment collects events over a short period of time, and flushes them when one of the following thresholds is reached:
 
 - A certain number of events
 - The maximum wait time
@@ -252,12 +252,9 @@ Segment batches together any event that occurs in that window of time.
 
 ### Configure the event types within a batch
 
-Segment batches together any event that it sees over a short time window. Events in that window may be of different types. Segment does this for two reasons:
+Segment batches together any event (of any type) that it sees over a short period of time. Segment does this to increase batching efficiency, and because grouping by type is not always the desired outcome. You can split batches in your code. If Segment split batches by event type by default, you could not combine the batches later.
 
-- To increase batching efficiency
-- Grouping by type is not always the desired outcome. It's possible to split batches in your code, but not possible to combine batches if Segment splits by event type by default.
-
-If your downstream endpoint requires events of a single type, you can write a handler that first groups events by type before handling the events.
+If your downstream endpoint requires events of a single type, you can write a handler that groups events by type, and then handles the events.
 
 ```js
 async function onBatch(events, settings) {
