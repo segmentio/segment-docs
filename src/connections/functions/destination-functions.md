@@ -217,7 +217,7 @@ Consider creating a batch handler if:
 Segment collects the events over a short period of time and combines them into a batch. The system flushes them when the batch reaches a certain number of events, or when the batch has been waiting for a specified wait time.
 
 To create a batch handler, define an `onBatch` function within your destination function.
-You can also use the template found in the Functions editor to get started quickly.
+You can also use the "Default Batch" template found in the Functions editor to get started quickly.
 
 ```js
 async function onBatch(events, settings){
