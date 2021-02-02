@@ -7,8 +7,6 @@ rewrite: true
 
 This destination is maintained by Vidora. For any issues with the destination, [contact the Vidora Support team](mailto:support@vidora.com).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
