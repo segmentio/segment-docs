@@ -61,7 +61,7 @@ Use-cases for account-level computed traits include:
 
 ### Use account-level computed and SQL traits as account-level audience conditions
 
-Once created, you can connect account-level computed and SQL traits to downstream destinations. You can use them as conditions in account-level audiences, enabling you to build audiences based on the set of events triggered by all users associated with a given account.
+Once created, you can connect account-level computed and SQL traits to downstream destinations. You can also use them as conditions in account-level audiences, enabling you to build audiences based on the set of events triggered by all users associated with a given account.
 
 For example, you can create an audience which selects all accounts where users associated with the account have collectively logged in fewer than 10 times in the past 30 days. To accomplish this, you would:
 
