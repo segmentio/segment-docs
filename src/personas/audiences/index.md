@@ -60,6 +60,9 @@ When you create an audience, Segment starts syncing your audience to the destina
 For account-level audiences, you can send either a [group](/docs/connections/spec/group) call and/or [identify](/docs/connections/spec/identify) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, we will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account. See [Account-level Audiences](/docs/personas/audiences/account-audiences) for more information.
 
 
+> info ""
+> When you connect a new destination to an existing audience, Personas will backfill historical data for that audience to the new destination.
+
 ## Realtime Compute vs. Batch
 
 Realtime Compute allows you to update traits and audiences as Segment receives new events. Realtime Compute unlocks exciting use cases:

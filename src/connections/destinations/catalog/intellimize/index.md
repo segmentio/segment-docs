@@ -7,7 +7,7 @@ hidden: true
 This destination is maintained by the Intellimize team. contact their Support team at segment@intellimize.com.
 
 > warning "The Intellimize destination has been deprecated"
-> The Intellimize Destination was deprecated on 2021-01-25 and is no longer supported or maintained. It is no longer available in the Segment catalog, but remains available to existing users.
+> The Intellimize Destination was deprecated on 2021-01-25 and is no longer supported or maintained.
 
 ## Identify
 
