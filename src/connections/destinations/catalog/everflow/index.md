@@ -48,6 +48,6 @@ If you aren't familiar with the Segment Spec, take a look at the [Track method d
 The TransactionId (`context.referrer.id`) and `context.referrer.type` are **required** fields. Read more about how to pass the TransactionId in [Everflow's TransactionId Documentation](https://developers.everflow.io/docs/everflow-sdk/click_tracking/)
 
 ### Property Mappings
-Please note that the data type for Segment properties must match the data type Everflow has set for the corresponding property. Read more about how Everflow maps Segment properties in [Everflow's Properties Mapping documentation](https://helpdesk.everflow.io/en/articles/4785627-integrations-segment).
+The data type for Segment properties must match the data type set in Everflow for the corresponding property. Read more about how Everflow maps Segment properties in [Everflow's Properties Mapping documentation](https://helpdesk.everflow.io/en/articles/4785627-integrations-segment).
 
 Custom properties are not supported at this time.
