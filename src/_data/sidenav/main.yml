@@ -257,8 +257,15 @@ sections:
     title: Computed Traits
   - path: /personas/sql-traits
     title: SQL Traits
-  - path: /personas/audiences
-    title: Audiences
+  - section_title: Audiences
+    slug: /personas/audiences
+    section: 
+      - path: /personas/audiences
+        title: Overview
+      - path: /personas/audiences/account-audiences
+        title: Account-level Audiences
+  # - path: /personas/audiences
+  #   title: Audiences
   - path: /personas/using-personas-data
     title: Using Personas data
   - path: /personas/warehouses
