@@ -22,7 +22,7 @@ To reconnect Pardot to Segment using SSO authentication:
 
 3. On the next screen, you are prompted to authenticate using your Salesforce username and password.
    If you don’t have a Salesforce account, contact your Salesforce administrator. They can grant you a Salesforce Identity License, which allows you to use Salesforce for SSO purposes without provisioning a full Salesforce account.
-4. On the Pardot destination settings page, click **Primary Business Unit Id** and specify the [Primary Business Unit Id] (/docs/connections/destinations/catalog/pardot/#primary-business-unit-id) associated with your Pardot Account in Salesforce. 
+4. On the Pardot destination settings page, click **Primary Business Unit Id** and specify the [Primary Business Unit Id](/docs/connections/destinations/catalog/pardot/#primary-business-unit-id) associated with your Pardot Account in Salesforce. 
 
 ## API Access
 To connect to the Pardot API, Segment requires that you authenticate your account using your Salesforce single sign-on (SSO) credentials. When you first connect to the Pardot destination, you are prompted to sign in using Salesforce SSO.
