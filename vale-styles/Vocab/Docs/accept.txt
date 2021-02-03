@@ -27,3 +27,13 @@ Vero
 WebKit
 Wootric
 Zendesk
+iOS
+ios
+Dev
+ga
+(?:G|g)tag
+(?:P|p)ageviews?\b
+(?:R|r)emarketing
+Doubleclick
+(?:C|c)annonical
+(?:U|u)rls?\b

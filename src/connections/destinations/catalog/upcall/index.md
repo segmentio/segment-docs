@@ -5,19 +5,19 @@ title: Upcall Destination
 
 [Upcall](https://www.upcall.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) creates real phone conversations seconds after a lead comes in and automatically follows up at the right time and with the right message, 24/7/365.
 
-This destination is maintained by Upcall. For any issues with the destination, [contact their team](mailto:success@upcall.com).
+This destination is maintained by Upcall. For any issues with the destination, [contact the Upcall Support team](mailto:success@upcall.com).
 
 
-_**NOTE:** Upcall is currently in beta, which means that there may still be some bugs for us to iron out. This doc was last updated on February 21, 2019, and we'd love to hear your feedback. If you are interested in joining our beta program or have any feedback to help us improve the Upcall Destination and its documentation, [let us know](mailto:success@upcall.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Upcall" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Upcall dashboard](https://app2.upcall.com/company/settings/integrations/api).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Upcall" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Upcall dashboard](https://app2.upcall.com/company/settings/integrations/api).
 
 ## Identify
 

@@ -3,7 +3,7 @@ title: 'Vero Source'
 ---
 Vero is an email marketing tool that lets you set up automated emails to your users that get sent after they've completed certain actions. [Visit Website](http://getvero.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
 
-Take your company's email analysis to the next level by **adding Vero as a Source to Segment.** We'll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
+Take your company's email analysis to the next level by **adding Vero as a Source to Segment.** Segment automatically  collects email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
 
 In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Vero data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. 
 
@@ -15,11 +15,7 @@ If you have previously enabled sending email events using the Vero destination d
 
 2. Choose Vero.
 
-  ![](images/vero1.png)
-
-3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. You can name them however you'd like, but we recommend sticking to something that reflects the Source itself, like `Vero` for nickname and `vero` for the schema name.
-
-  ![](images/vero2.png)
+3. Give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name autopopulates the schema name. For example, the source name  `Vero` creates the schema `vero`.
 
 4. The next page ("Overview") will surface your **Segment write key for Vero.** Copy this write key. 
 

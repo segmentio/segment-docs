@@ -5,9 +5,9 @@ title: Vitally Destination
 
 [Vitally](https://vitally.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a customer success platform for B2B SaaS companies that wraps your unified customer data with powerful analytics, alerts, and workflows to help you build successful customers.
 
-This destination is maintained by Vitally. For any issues with the destination, [contact their team](mailto:support@vitally.io).
+This destination is maintained by Vitally. For any issues with the destination, [contact the Vitally Support team](mailto:support@vitally.io).
 
-_**NOTE:** Vitally is currently in beta, and this doc was last updated on February 7, 2019. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the Vitally destination and its documentation, [let us know](mailto:support@vitally.io)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started

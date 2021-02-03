@@ -14,7 +14,7 @@ The Segment login page can only be connected to one workspace. To use your IdP w
 
 ## Set up — SAML
 
-Segment's SSO configuration is entirely self-service; we don't require any back and forth with our team in order to test and enable the feature on your workspace. Additionally, we have prebuilt connections with [Okta](https://www.okta.com/integrations/segment/), OneLogin, and [Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/segment-tutorial) which can help you get setup faster. However, we are here to help! don't hesitate to [get in touch](https://segment.com/help/contact/) if you run into any questions or issues.
+Segment's SSO configuration is entirely self-service; we don't require any back and forth with our team in order to test and enable the feature on your workspace. Additionally, we have prebuilt connections with [Okta](https://www.okta.com/integrations/segment/), [OneLogin](https://www.onelogin.com), and [Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/segment-tutorial) which can help you get setup faster. However, we are here to help! don't hesitate to [get in touch](https://segment.com/help/contact/) if you run into any questions or issues.
 
 To get started, go to your workspace settings and choose the "Connections" tab under "Authentication" and click "Add New Connection." Follow the steps to create a SAML connection.
 
@@ -86,7 +86,6 @@ You simply enter your domain (or, if you've verified it already, choose it from 
 
 Segment supports "interruption" on the login page for emails that match your workspace's domain.
 
-![](images/asset_IC593KEZ.gif)
 
 In order to enable this, you'll need to verify your domain with Segment. To do that, go to the "Domains" tab under "Authentication" in the workspace settings page.
 

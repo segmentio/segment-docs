@@ -5,10 +5,9 @@ rewrite: true
 
 [EMMA](https://emma.io/en/features/) helps you track campaigns from your trusted networks, Google Ads campaigns, Facebook and Instagram campaigns, and Twitter campaigns. You can also track user activities in your app, so you can send personalizes push notifications and in-app campaigns like banners, start-views etc.
 
-This destination is maintained by EMMA. For any issues with the destination, [contact their team](mailto:support@emma.io).
+This destination is maintained by EMMA. For any issues with the destination, [contact the EMMA Support team](mailto:support@emma.io).
 
-_**NOTE:** The EMMA Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on March 11, 2019. If you are interested in joining their beta program or have any feedback to help improve the EMMA Destination and its documentation, [let their team know](mailto:support@emma.io)!_
-
+{% include content/beta-note.md %}
 
 ## Getting Started
 

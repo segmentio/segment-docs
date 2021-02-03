@@ -146,9 +146,9 @@ In addition, the following optional parameters will be mapped:
 
 Note that purchases cannot be edited once they are posted.
 
-## Abandonded Cart Events
+## Abandoned Cart Events
 
-In addition to `Order Completed` events, we support the concept of [Sailthru's Abandonded Carts](https://getstarted.sailthru.com/email/transactionals/abandoned-shopping-carts/) using Segment's `Product Added` and `Product Removed` events. When these events are triggered, Segment will pass in `incomplete: 1` to signify that the order is incomplete.
+In addition to `Order Completed` events, we support the concept of [Sailthru's Abandoned Carts](https://getstarted.sailthru.com/email/transactionals/abandoned-shopping-carts/) using Segment's `Product Added` and `Product Removed` events. When these events are triggered, Segment will pass in `incomplete: 1` to signify that the order is incomplete.
 
 To send transactional emails when a user abandons their cart, you must pass in a `reminder_time` and `reminder_template` on the `Product Added` and `Product Removed` events. The template passed through as `reminder_template` must match the **public name** configured in Sailthru's UI.
 

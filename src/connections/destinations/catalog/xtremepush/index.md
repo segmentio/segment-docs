@@ -4,18 +4,19 @@ title: Xtremepush Destination
 ---
 [Xtremepush](https://xtremepush.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a complete digital engagement platform. Empowering global brands to create personalised, real-time experiences for their customers across mobile, web, email, SMS and social. Xtremepush's clients are increasing revenue through data-driven, contextually-relevant interactions. The software is flexible, reliable and quick to deploy, backed up by a team of expert strategists and technical support.
 
-This destination is maintained by Xtremepush. For any issues with the destination, [contact their team](mailto:support@xtremepush.com).
+This destination is maintained by Xtremepush. For any issues with the destination, [contact the Xtremepush Support team](mailto:support@xtremepush.com).
 
-_**NOTE:** The Xtremepush Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 05, 2019. If you are interested in joining their beta program or have any feedback to help improve the Xtremepush Destination and its documentation, [let their team know](mailto:support@xtremepush.com)!_
+{% include content/beta-note.md %}
+
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Xtremepush" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your Xtremepush Project under *Settings > Integrations* as described in the [user guide](https://support.xtremepush.com/hc/en-us/articles/360001351637-Generating-API-Tokens).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Xtremepush" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your Xtremepush Project under *Settings > Integrations* as described in the [user guide](https://support.xtremepush.com/hc/en-us/articles/360001351637-Generating-API-Tokens).
 
 ## Identify
 

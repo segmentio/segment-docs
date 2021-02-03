@@ -1,9 +1,10 @@
 ---
 title: Salesforce Source
+strat: salesforce
 ---
 Salesforce is a leader in on-demand customer relationship management. [Visit Website](http://salesforce.com)
 
-Take your company's analysis to the next level by **adding Salesforce as a Source to Segment.** We'll automatically collect objects like `Accounts`, `Campaigns`, and `Tasks` and load them into your data warehouse. 
+Take your company's analysis to the next level by **adding Salesforce as a Source to Segment.** Segment automatically  collects objects like `Accounts`, `Campaigns`, and `Tasks` and load them into your data warehouse. 
 
 ## Getting Started
 

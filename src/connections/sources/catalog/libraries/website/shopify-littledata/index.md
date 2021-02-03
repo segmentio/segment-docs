@@ -1,14 +1,16 @@
 ---
 title: Shopify by Littledata Source
+redirect_from:
+  - "/connections/sources/catalog/cloud-apps/shopify-littledata/"
 ---
 
 <!-- LR Note: the working copy of the source catalog YML we built on showed this in the `website` source though as of Nov 18 it's labeled cloud-source -->
 
-Littledata is a smart analytics app that automates ecommerce tracking. Littledata's [Shopify-to-Segment connection](https://www.littledata.io/connections/segment/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) automatically tracks key ecommerce events on a Shopify or Shopify Plus store, so you can use Shopify as a source in your Segment workspace.
+Littledata is a smart analytics app that automates ecommerce tracking. Littledata's [Shopify-to-Segment connection](https://blog.littledata.io/help/posts/segment-overview/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) automatically tracks key ecommerce events on a Shopify or Shopify Plus store, so you can use Shopify as a source in your Segment workspace.
 
-Littledata is available as an independent app in the Shopify App Store. When you install the Littledata app on your Store, Littledata does two things:
+Littledata is available as an independent [Shopify App](https://apps.shopify.com/segment-com-by-littledata). When you install the Littledata app on your store, Littledata does two things:
 
-1. It inserts a smart tracking script to your store's front end. This script can be used with any custom Shopify site, and uses analytics.js under the hood to send data in a spec-compliant manner to Segment.
+1. It inserts a smart tracking script to your store's front end. You can use this script with any custom Shopify site, and uses analytics.js under the hood to send data in a spec-compliant manner to Segment.
 
 2. The app also sets up server-side webhook forwarding to ensure 100% accuracy of important Customer and Order data.
 
@@ -39,17 +41,24 @@ Below is a table of events that **Shopify by Littledata** sends to Segment throu
 
 | Event Name            | Description                                                           |
 | --------------------- | --------------------------------------------------------------------- |
-| Cart Viewed           | A user has viewed the /cart                                           |
 | Page Viewed           | The user has viewed a page                                            |
 | Product Clicked       | The user has clicked a product within a product list                  |
 | Product Image Clicked | The user has clicked a product image                                  |
 | Product List Viewed   | The user has viewed a product as they scroll down the collection page |
 | Product Shared        | User has shared a product through social links                        |
 | Product Viewed        | The user has viewed a product page                                    |
-| Registration Viewed   | A user has viewed the account/register page                           |
 | Thankyou Page Viewed  | User has viewed the thank you page after completing an order \*       |
 
 > note "" \* This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
+
+In addition to the events tracked as standard, the following hits can be tracked based on page path:
+
+| Event Name             | Description                                 |
+| ---------------------- | ------------------------------------------- |
+| Blog Viewed            | A prospect has viewed the blog              |
+| Cart Viewed            | A prospect has viewed the cart              |
+| Registration Completed | A prospect has completed registration       |
+| Registration Viewed    | A prospect has viewed the registration page |
 
 ## Cloud-mode Events
 

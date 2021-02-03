@@ -154,10 +154,14 @@ Personas only sends events to the destination if the computed trait value has ch
 
 ## Additional identifiers
 
-Personas has a flexible identity resolution layer that allows you to build user profiles based on multiple identifiers like `user_id`, `email`, `mobile advertisingId`, etc. By default, Personas includes email addresses in all payloads, because many marketing tools match users based on email address. However, different destinations may require different keys beyond email address, so they can do their own matching and identification. For example, Zendesk requires that you include the `name` property.
+Personas has a flexible identity resolution layer that allows you to build user profiles based on multiple identifiers like `user_id`, `email`, `mobile advertisingId`, etc. However, different destinations may require different keys, so they can do their own matching and identification. For example, Zendesk requires that you include the `name` property.
 Personas includes logic to automatically enrich payloads going to these destinations with the required keys.
 
 If you send events to a destination that requires specific enrichment we do not already include, [contact us and let us know](https://segment.com/help/contact/), and we‘ll do our best to address it.
+
+> note ""
+> **Note**: Profiles with multiple identifiers (for example, `user_id` and `email`) will trigger one API call per identifier when the audience or computed trait is first synced to a destination.
+
 
 ## Multiple identifiers of the same type
 
@@ -298,7 +302,7 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [Klaviyo](/docs/connections/destinations/catalog/klaviyo/)
 - [Kochava](/docs/connections/destinations/catalog/kochava/)
 - [Kustomer](/docs/connections/destinations/catalog/kustomer/)
-- [Lazy Lantern](/docs/connections/destinations/catalog/lazy-lantern/)
+- [Lantern](/docs/connections/destinations/catalog/lantern/)
 - [Leanplum](/docs/connections/destinations/catalog/leanplum/)
 - [Librato](/docs/connections/destinations/catalog/librato/)
 - [Lytics](/docs/connections/destinations/catalog/lytics/)

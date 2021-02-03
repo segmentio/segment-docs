@@ -4,17 +4,17 @@ title: Refiner Destination
 ---
 [Refiner](https://refiner.io?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a user qualification and lead scoring platform for B2B SaaS companies with a free trial or freemium model. Refiner helps self-service SaaS providers to identify and convert more high-revenue accounts.
 
-This destination is maintained by Refiner. For any issues with the destination, [contact their team](mailto:contact@refiner.io).
+This destination is maintained by Refiner. For any issues with the destination, [contact the Refiner Support team](mailto:contact@refiner.io).
 
-_**NOTE:** The Refiner Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 24, 2019. If you are interested in joining their beta program or have any feedback to help improve the Refiner Destination and its documentation, [let their team know](mailto:contact@refiner.io)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Refiner" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Refiner" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Enter your Refiner "API Key" into the Segment Settings. You can find this key in on the [Refiner dashboard](https://app.refiner.io) settings under Integrations > Segment.
 
 ## Page

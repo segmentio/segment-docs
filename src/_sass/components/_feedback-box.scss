@@ -4,7 +4,12 @@
 
   &__content {
     & > * + * {
-      margin-top: 8px;
+      margin-top: 16px;
     }
+  }
+
+  &__button {
+    border: 0;
+    padding: 6px;
   }
 }

@@ -5,17 +5,17 @@ redirect_from: '/connections/destinations/catalog/northstar-by-growthhackers/'
 ---
 [Experiments by Growthhackers](http://growthhackers.com/software) provides a project management tool for growth teams, allowing companies to create and prioritize ideas, run experiments and gather data to learn upon!
 
-This destination is maintained by Experiments by Growthhackers. For any issues with the destination, [contact their team](mailto:tech@growthhackers.com).
+This destination is maintained by Experiments by Growthhackers. For any issues with the destination, [contact the Growthhackers Support team](mailto:tech@growthhackers.com).
 
-_**NOTE:** The Experiments by Growthhackers Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on June 26, 2019. If you are interested in joining their beta program or have any feedback to help improve the Experiments by Growthhackers Destination and its documentation, [let their team know](mailto:tech@growthhackers.com)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Experiments by Growthhackers" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find following the path: "Integrations" > "Segment" > "Settings".
+1. From the Segment web app, click **Catalog**.
+2. Search for "Experiments by Growthhackers" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find following the path: "Integrations" > "Segment" > "Settings".
 
 ## Track
 

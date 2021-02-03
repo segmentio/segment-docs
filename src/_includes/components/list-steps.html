@@ -1,13 +1,11 @@
-<div class="list-steps__item">
-  <span class="list-steps__number">{{ include.number }}</span>
-  {% if include.heading == %}
-    <div class="list-steps__content list-steps__content--align">
-      {{ include.content | markdownify }}
-    </div>
-  {% else %}
-    <h5 class="list-steps__title">{{ include.heading }}</h5>
-    <div class="list-steps__content">
-      {{ include.content | markdownify }}
-    </div>
-  {% endif %}
+<div class="list-steps">
+  <div class="list-steps__number">{{ include.number }}</div>
+
+  <div class="list-steps__content">
+    {% if include.heading %}
+      <h5 class="list-steps__heading">{{ include.heading }}</h5>
+    {% endif %}
+
+    <p>{{ include.content | markdownify }}</p>
+  </div>
 </div>

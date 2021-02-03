@@ -14,8 +14,8 @@ module Jekyll
       <div class="accordion__heading" data-ref="accordion[trigger]">
         <%= key.split("|")[0] %>
         <div class="accordion__icon">
-          <svg width="10" height="6" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1.36.27l-.72.7L5 5.39 9.36.97l-.72-.7L5 3.97z" fill-rule="nonzero"/>
+          <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.87 4.17s.01 0 0 0l-3.5-4A.498.498 0 004 0c-.15 0-.28.07-.37.17l-3.5 4A.495.495 0 00.5 5h7a.495.495 0 00.37-.83z" fill="#8F95B2"/>
           </svg>
         </div>
       </div>

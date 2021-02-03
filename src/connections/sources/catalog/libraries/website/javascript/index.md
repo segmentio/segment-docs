@@ -54,7 +54,7 @@ The Identify call has the following fields:
     <td>`options`</td>
     <td>optional</td>
     <td>Object</td>
-    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations-with-the-integrations-object) for the call. _Note: If you do not pass a *traits* object, pass an empty object (as an '{}') before *options*_</td>
+    <td>A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a *traits* object, pass an empty object (as an '{}') before *options*_</td>
   </tr>
   <tr>
     <td>`callback`</td>
@@ -125,7 +125,7 @@ The `track` call has the following fields:
     <td>`options`</td>
     <td>optional</td>
     <td>Object</td>
-    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations-with-the-integrations-object) for the call. _Note: If you do not pass a *properties* object, pass an empty object (like '{}') before *options*_</td>
+    <td>A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a *properties* object, pass an empty object (like '{}') before *options*_</td>
   </tr>
   <tr>
     <td>`callback`</td>
@@ -269,7 +269,7 @@ The `page` call has the following fields:
     <td>`options`</td>
     <td>optional</td>
     <td>Object</td>
-    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_ </td>
+    <td>A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_ </td>
   </tr>
   <tr>
     <td>`callback`</td>
@@ -349,7 +349,7 @@ The Group call has the following fields:
     <td>`options`</td>
     <td>optional</td>
     <td>Object</td>
-    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_</td>
+    <td>A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_</td>
   </tr>
   <tr>
     <td>`callback`</td>
@@ -406,7 +406,7 @@ The Alias call has the following fields:
     <td>`options`</td>
     <td>optional</td>
     <td>Object</td>
-    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations-with-the-integrations-object) for the call.</td>
+    <td>A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call.</td>
   </tr>
   <tr>
     <td>`callback`</td>
@@ -593,6 +593,8 @@ Destination flags are **case sensitive** and match [the destination's name in th
 ### Load Options
 
 You can modify the `.load` method in Analytics.js (the second line of the snippet) to take a second argument. If you pass an object with an `integrations` dictionary (matching the format [above](#selecting-destinations-with-the-integrations-object)), then Segment only loads the integrations in that dictionary that are marked as enabled with the boolean value `true`.
+
+You can only call `.load` on page load, or reload (refresh). If you modify the `.load` method between page loads, it does not have any effect until the page is reloaded.
 
 An example:
 

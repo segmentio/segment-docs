@@ -4,24 +4,32 @@ title: Friendbuy Destination
 
 ## Getting Started
 
-Setting up Friendbuy is very simple! Just login to your Friendbuy account, go to **Integration Code** > and copy the **Site ID** above the snippet box. Then paste it into your Friendbuy Destiation setting back in the Segment UI as seen in the gif below:
+Setting up Friendbuy is very simple!
 
-![](images/f02339b0c4d567e1413c6f3891062c98.gif)
+1. Log in to your Friendbuy account and go to **Integration Code**.
+2. Copy the **Site ID** above the snippet box.
+3. Log in to your Segment workspace, click **Catalog** and select the **Destinations** tab.
+4. Search for "Friendbuy" and click it in the catalog, then click **Configure**.
+5. Select the Segment data source you want to send to Friendbuy.
+6. On the next page that appears, click the **Site ID** setting, and paste the Site ID you copied in step 2, and click **Save**.
 
-This Destination allows you to:
+This destination allows you to:
 
-- Map your `.page()` calls to facilitate [Widget Management](http://developers.friendbuy.com/#widget-management)
-- Map your `.identify()` calls to facilitate [Customer Tracking](http://developers.friendbuy.com/#customer-tracking)
-- Map your `.track()` calls to facilitate [Order Tracking](http://developers.friendbuy.com/#order-tracking) and [Product Tracking](http://developers.friendbuy.com/#product-tracking)
+- Map your Page calls to facilitate [Widget Management](http://developers.friendbuy.com/#widget-management)
+- Map your Identify calls to facilitate [Customer Tracking](http://developers.friendbuy.com/#customer-tracking)
+- Map your Track calls to facilitate [Order Tracking](http://developers.friendbuy.com/#order-tracking) and [Product Tracking](http://developers.friendbuy.com/#product-tracking)
 
 ----------
 ## Page
 
-In order to load specific widgets on your various web pages, you can configure your settings to map your _named_ `.page()` call(s) to your desired Friendbuy Widget(s). You will also be able to configure a number of optionally [advanced widget configurations](http://developers.friendbuy.com/#widget-options) such as **auto delay** and **custom parameters**. See the following gif for example:
+To load specific widgets on different web pages, you can configure your settings to map your _named_ Page call(s) to specific Friendbuy Widget(s). You can also configure a several optional [advanced widget configurations](http://developers.friendbuy.com/#widget-options) such as **auto delay** and **custom parameters**.
 
-![](images/23163f90cfc1f375f6c0da3a06060da4.gif)
+<!-- TODO: convert this long gif into text instrucitons.
+See the following gif for example:
 
-There are two types of Widgets you can map to your `.page()` calls:
+![](images/23163f90cfc1f375f6c0da3a06060da4.gif)-->
+
+There are two types of Widgets you can map to your Page calls:
 
 - Site Wide Widgets
   - These types of widgets are recommended by Friendbuy to load on all your webpages. If you wish to use these types of widgets, you can add them under the *Side Wide Widgets* setting. _NOTE_: You are NOT required to map a site wide widget if the **Call To Action** type is a ribbon served by Friendbuy. This type of overlay widget will just load when we boot up Friendbuy's library.

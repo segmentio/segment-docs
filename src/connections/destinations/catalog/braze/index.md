@@ -8,7 +8,8 @@ hide-personas-partial: true
 
 The Braze Destination is open-source on GitHub. You can browse the code on GitHub: [iOS](https://github.com/Appboy/appboy-segment-ios), [Android](https://github.com/Appboy/appboy-segment-android) (Android and iOS maintained by Braze), [Web](https://github.com/segment-integrations/analytics.js-integration-appboy), [Server](https://github.com/segmentio/integration-appboy) (Web and Server maintained by Segment). If you find any issues for mobile platforms, let Braze know, if the issues appear on web or server, let [us know](https://segment.com/help/contact).
 
-_**NOTE:** There are currently two major versions of the Braze SDK. Make sure you read [important notes](/docs/connections/destinations/catalog/braze/#migrating-to-v2-of-the-braze-web-sdk) regarding migration from Version 1 to Version 2._
+> info "There are three major versions of the Braze SDK"
+> If you are migrating from version 1 to version 2, see [important notes](/docs/connections/destinations/catalog/braze/#migrating-to-v2-of-the-braze-web-sdk) regarding migration from Version 1 to Version 2.
 
 If you notice any gaps or outdated information in this document, or simply want to leave some feedback to help us improve, [let us know](https://segment.com/help/contact)!
 
@@ -16,8 +17,8 @@ If you notice any gaps or outdated information in this document, or simply want 
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Braze" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Braze" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In your Segment Settings UI, add the "API Key" which can be found in your Braze Dashboard under App Settings > Manage App Group.
 4. You will also need to set up a new App Group REST API Key in the Braze Dashboard under App Settings > Developer Console > API Settings. Instructions can be found [here](https://www.braze.com/documentation/REST_API/#creating-and-managing-rest-api-keys). **Note:** For this App Group REST API Key, you will only need to select users.track endpoint under "User Data"
 5. If you are implementing using Analytics.js, Segment will automatically load the [Braze Web SDK](https://www.braze.com/documentation/Web/). Otherwise, depending on the source you've selected, include Braze's library by adding the following lines to your dependency configuration.
@@ -115,7 +116,16 @@ analytics.identify('ze8rt1u89', {
 });
 ```
 
-When you Identify a user, we'll pass that user's information to Braze with `userId` as Braze's External User ID. Segment's special traits recognized as Braze's standard user profile fields (in parentheses) are:
+When you Identify a user, Segment passes that user's information to Braze with `userId` as Braze's External User ID. 
+
+If you are using a device-mode connection, Braze's SDK also automatically assigns a `braze_id` to every user. This allows Braze to capture anonymous activity from the device by matching on `braze_id` instead of `userId`. This only applies to _device-mode connections_. 
+
+To send anonymous user data in cloud-mode, you must manually include the user's `braze_id` in all your Segment API calls in the `integrations.Braze.braze_id` or `context.integrations.Braze.braze_id` object.
+
+> tip ""
+> **Tip!** Braze is complex. If you decide to use the `braze_id`,  consider [contacting Segment Success Engineering](https://segment.com/help/contact/) or a Solutions Architect to validate your Braze implementation.
+
+Segment's special traits recognized as Braze's standard user profile fields (in parentheses) are:
 
 | Segment Event     | Braze Event  |
 |-------------------|-------------|
@@ -142,7 +152,7 @@ analytics.track('Purchased Item', {
 ```
 When you `track` an event, we will send that event to Braze as a custom event. Note that Braze does not support arrays or nested objects for custom track event properties.
 
-*Note*: A `userId` is required for all calls.
+*Note*: Braze requires that you include a `userId` or `braze_id` for all calls made in cloud-mode. Segment only sends a `braze_id` if a `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
 
 *Note*: We will remove the following custom properties as they are reserved by Braze and the message will be rejected if you tried to send any of them:
 
@@ -423,9 +433,9 @@ end
 ```
 
 ### Migrating to v2 of the Braze Web SDK
-There are currently two major [versions](https://github.com/Appboy/appboy-web-sdk/blob/master/CHANGELOG.md#breaking) of this SDK: 1 and 2. Segment currently supports both as migrating to Version 2 requires some important changes to your website.
+There are currently three major [versions](https://github.com/Appboy/appboy-web-sdk/blob/master/CHANGELOG.md#breaking) of this SDK: 1, 2, and 3. Segment currently supports both as migrating to Version 2+ requires some important changes to your website.
 
-If you have never implemented Braze on your site, either using Segment or natively, you can ignore this section. If you have had Braze running before and want to migrate to Version 2 **you must ensure you remove all references to `appboy.min.css` from your site.** This is very important as it will cause issues with Version 2 of their SDK. Once you have done this you can select Version 2 using the "Braze Web SDK Version" with your Segment Settings UI.
+If you have never implemented Braze on your site, either using Segment or natively, you can ignore this section. If you have had Braze running before and want to migrate to Version 2+ **you must ensure you remove all references to `appboy.min.css` from your site.** This is very important as it will cause issues with Version 2+ of their SDK. Once you have done this you can select Version 2+ using the "Braze Web SDK Version" with your Segment Settings UI.
 
 ## Using Braze with Personas
 
@@ -532,7 +542,7 @@ To send computed traits or audiences to Braze, you first must connect it to your
 - **Must create audience_name field before Personas can update those values?**: No. If sent as an `identify` call, Personas automatically creates the computed trait or audience name as a custom attribute in Braze. If sent as a `track` call, Personas automatically creates a custom event in Braze.
 - **Computed trait appears as**: A snake cased version of the computed trait name (for example, `last_product_viewed: 'Sweater'`) with a string for the value of the computed trait.
 - **Audience appears as**: A snake cased version of the audience name (for example, `order_completed_last_30days: true` ) with a boolean value of `true` indicates that a user is in the audience.
-- **Destination rate limit**: 100 requests per second
+- **Destination rate limit**: 100 requests per second (this is at the Personas Space-level, i.e. shared across all Audiences & Computed Traits syncing from 1 Personas Space to Braze. This rate limit would not be shared by multiple Personas Spaces.)
 - **Lookback window allowed:** Yes, unlimited.
 - **Identifiers required** : `userId` or `braze_id`
 - **Identifiers accepted** : `userId` or `braze_id`
@@ -547,7 +557,7 @@ If you use the Braze destination in either [cloud or device mode](/docs/connecti
 
 #### Which ID does Segment match on when sending data to Braze?
 
-By default, Personas data is sent to Braze by matching the `userId`. The Segment `userId` maps to Braze’s External ID. If the user is anonymous and does not have a `userId`, you can also choose to send data using the `braze_id` auto-generated by Braze. To use `braze_id`, you must pass the `braze_id` to Segment as a [Segment externalId](/docs/personas/identity-resolution/externalids/). If `braze_id` is sent as an `externalId` **and** `userId` is missing, Personas matches on `braze_id` when sending to Braze. You can check the **Identities** tab on a user’s Personas profile to confirm that `braze_id` was successfully picked up as an `externalId`.
+By default, Personas data is sent to Braze by matching the `userId`. The Segment `userId` maps to Braze’s External ID. If the user is anonymous and does not have a `userId`, you can also choose to send data using the `braze_id` auto-generated by Braze. To use `braze_id`, you must pass the `braze_id` to Segment as a [Segment externalId](/docs/personas/identity-resolution/externalids/) in the `context.integrations.Braze.braze_id` object. If `braze_id` is sent as an `externalId` **and** `userId` is missing, Personas matches on `braze_id` when sending to Braze. You can check the **Identities** tab on a user’s Personas profile to confirm that `braze_id` was successfully picked up as an `externalId`.
 
 ![](images/braze-anonid.png)
 

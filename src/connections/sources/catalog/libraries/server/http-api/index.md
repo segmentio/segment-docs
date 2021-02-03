@@ -60,7 +60,7 @@ POST https://api.segment.io/v1/identify
   "timestamp": "2012-12-02T00:30:08.276Z"
 }
 ```
-This call is identifying  the user by his unique User ID (the one you know him by in your database) and labeling him with `email`, `name`, and `industry` traits.
+This call is identifying the user by their unique User ID (the one you know them by in your database) and labeling them with `email`, `name`, and `industry` traits.
 <table>
   {% include content/spec-table-header.md %}
   {% include content/spec-field-anonymous-id.md %}

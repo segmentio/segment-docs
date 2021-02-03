@@ -23,10 +23,25 @@ redirect_from: '/styleguide/'
 ## Headings
 
 # Heading 1
+
+The H1 heading size is equivalent to a title. Please don't use it in a page. Use the `title: ` frontmatter instead.
+
 ## Heading 2
+
+H2s are programmatically recorded to form the table of contents in the right-nav.
+
 ### Heading 3
+
+H3 is a nice, friendly heading without anything special.
+
 #### Heading 4
+
+H4 is good for making FAQs when you want the text a little bigger than its surrounding prose.
+
 ##### Heading 5
+
+H5 is good for making FAQs when you want the text about the same size as the surrounding prose.
+
 
 ---
 
@@ -42,26 +57,27 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 ## Lists
 
-1. one
-    1. nested
-2. two
-    1. nested
-3. three
-    1. nested
+1. Item lorem ipsum dolor sit amet
+2. Item lorem ipsum dolor sit amet
+    1. Item nested lorem ipsum dolor sit amet
+    2. Item nested lorem ipsum dolor sit amet
+3. Item lorem ipsum dolor sit amet
+    1. Item nested lorem ipsum dolor sit amet
+    2. Item nested lorem ipsum dolor sit amet
+    3. Item nested lorem ipsum dolor sit amet
+3. Item lorem ipsum dolor sit amet
 
-* Item
-    * First Subitem
-    * Second Subitem
-* Item
-    - Subitem
-    - Subitem
-* Item
+* Unordered list item
+* Unordered list item
+* Unordered list item
+  - Subitem
+  - Subitem
+* Unordered list item
 
-{% include components/list-steps.html number="1" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
-{% include components/list-steps.html number="2" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
-{% include components/list-steps.html number="3" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
+### Two columns list
+Add `{: .columns}` before a list you want to divide into two columns.
 
-{: .columns }
+{: .columns}
 - One
 - Two
 - Three
@@ -72,6 +88,10 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 - Eight
 - Nine
 - Ten
+
+{% include components/list-steps.html number="1" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
+{% include components/list-steps.html number="2" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
+{% include components/list-steps.html number="3" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
 
 ---
 
@@ -86,22 +106,102 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 ## Buttons
 
-{% include components/button.html text="Button" href="https://segment.com" %}
-{% include components/button.html variant="bordered" text="Bordered button" href="https://segment.com" %}
-{% include components/button.html size="small" variant="bordered" text="Small bordered button" href="https://segment.com" %}
-{% include components/button.html size="large" text="Large button" href="https://segment.com" %}
-
-
-{% include components/button-fill.html size="large" text="Large filled button" href="https://segment.com" %}
-{% include components/button-fill.html size="half" text="Half filled button" href="https://segment.com" %}
-{% include components/button-fill.html size="expand" text="Expanded filled button" href="https://segment.com" %}
-
-{% include components/button-fill.html size="small" text="Small filled button" href="https://segment.com" %}
-{% include components/button-fill.html size="small" variant="white" text="Small white-filled button" href="https://segment.com" %}
-{% include components/button-fill.html size="small" variant="gray" text="Small gray-filled button" href="https://segment.com" %}
-
-{% include components/button-hollow.html size="small" text="Small hollow button" href="https://segment.com" %}
+{% include components/button-fill.html text="Primary button" href="https://segment.com" %}
+{% include components/button-hollow.html text="Secondary button" href="https://segment.com" %}
+{% include components/button-fill.html variant="white" text="Minimal Button" href="https://segment.com" %}
+{% include components/button-fill.html variant="error" text="Error button" href="https://segment.com" %}
 {% include components/button-link.html text="Link button" href="https://segment.com" %}
+
+#### Button Modifiers
+
+{% include components/button-fill.html modifier="expand" text="Expanded filled button" href="https://segment.com" %}
+
+## Reference Buttons
+
+-  **Regular** - links to any external resource
+
+{% include components/reference-button.html
+  href="https://segment.com"
+  icon="media/academy.svg"
+  title="External resource"
+  description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ipsum fugiat nostrum velit iure, molestiae accusamus tempora quos laborum, ex modi illum delectus."
+%}
+
+-  **Related** - links to an internal docs page (note the `variant="related"` which adds the `https://segment.com/docs` path in the final build)
+
+{% include components/reference-button.html
+  href="/connections/sources/catalog/"
+  variant="related"
+  icon="chart.svg"
+  title="Totally new to Analytics?"
+  description="For a more hands-on tutorial of Segment, check out Segment University. It offers step-by-step instructions, starting with first steps and going through some of our more advanced features."
+%}
+
+-  **Double** - side by side buttons (you can use both related and not)
+
+<div class="double">
+  {% include components/reference-button.html
+    href="https://segment.com"
+    icon="git-repo.svg"
+    title="Segment for Developers"
+    description="An overview of the basics of your Segment implementation."
+  %}
+
+  {% include components/reference-button.html
+    href="https://segment.com"
+    icon="book.svg"
+    title="How-To Guides"
+    description="Over a dozen how-to guides to help you accomplish common tasks."
+  %}
+</div>
+
+- **Back/Next buttons**
+
+<div class="double">
+  {% include components/reference-button.html
+    href="https://segment.com"
+    icon="symbols/arrow-left.svg"
+    title="What is Segment?"
+    description="The basics of the Segment platform and what you can do with it."
+    subtitle="back"
+  %}
+
+  {% include components/reference-button.html
+    href="https://segment.com"
+    icon="symbols/arrow-right.svg"
+    title="Planning a Full Installation"
+    description="Think through your goals, plan your calls, and set yourself up for success."
+    subtitle="next"
+  %}
+</div>
+
+- **Three columns layout** - created with `flex` utility
+
+<div class="flex flex--wrap gutter gutter--large">
+  <div class="flex__column flex__column--12 flex__column--4@medium">
+    {% include components/reference-button.html
+      href="https://segment.com"
+      title="Segment calls"
+      description="Use Track, Page, and Identify, and learn about the other calls Segment tracking is built on."
+    %}
+  </div>
+
+  <div class="flex__column flex__column--12 flex__column--4@medium">
+    {% include components/reference-button.html
+      href="https://segment.com"
+      title="Common traits"
+      description="Save time by letting the Segment calls collect information automatically."
+    %}
+  </div>
+
+  <div class="flex__column flex__column--12 flex__column--4@medium">
+    {% include components/reference-button.html
+      href="https://segment.com"
+      title="Use case specs"
+      description="Use our business-case specs to ensure that your tools get the most from your data."
+    %}
+  </div>
+</div>
 
 ---
 
@@ -121,6 +221,8 @@ analytics.identify('user_123', {
   }
 });
 ```
+
+## Code Blocks with tabs
 
 {% codeexample %}
 {% codeexampletab JavaScript %}
@@ -144,26 +246,6 @@ console.log('example');
 
 ---
 
-## Reference Buttons
-
--  Regular - links to any external resource
-
-{% include components/media-icon.html href="https://segment.com" icon="media/icon-academy.svg" title="Segment" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ipsum fugiat nostrum velit iure, molestiae accusamus tempora quos laborum, ex modi illum delectus." %}
-
--  Related - links to an internal docs page (note the `variant="related"` which adds the `https://segment.com/docs` path in the final build)
-
-{% include components/media-icon.html href="/connections/sources/catalog/" icon="media/icon-academy.svg" title="Sources Catalog" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ipsum fugiat nostrum velit iure, molestiae accusamus tempora." variant="related" %}
-
--  Double - side by side buttons (you can use both related and not)
-
-<div class="double">
-  {% include components/media-icon.html  href="https://segment.com" icon="media/icon-academy.svg" title="Segment" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit." %}
-
-  {% include components/media-icon.html  href="/connections/sources/catalog/" icon="media/icon-academy.svg" title="Sources Catalog" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit." variant="related" %}
-</div>
-
----
-
 ## Notes
 
 > note ""
@@ -176,16 +258,16 @@ console.log('example');
 
 ## Alerts
 
-> info ""
+> info "Info message."
 > This is a paragraph showing an information box with a blue information icon. Use this when providing useful details that help a reader understand what's going on, but don't require any immediate action.
 
-> success ""
+> success "Success message."
 > This is a paragraph showing an information box with a green checkmark icon. Use this when providing helpful information to a reader that could make their lives better, but that isn't required.
 
-> warning ""
+> warning "Warning message."
 > This is a paragraph showing an information box with an orange warning icon. Use these when you want to caution a reader about something that could have unintended, but not destructive, consequences.
 
-> error ""
+> error "Error message."
 > This is a paragraph showing an information box with a red hazard icon. Use this when warning a reader about destructive or non-reversible actions, like deleting a workspace or overwriting data. Don't use this too frequently, or else it makes the readers worry!
 
 ---

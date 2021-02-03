@@ -29,7 +29,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Segment" />
   <meta property="og:title" content="{{page.title}} {%- unless landing -%}Documentation{%- endunless -%} - Segment" />
-  <meta property="og:image" content="https://images.ctfassets.net/9u2t3ap6pctb/4s5A4gsq5NsG9Zeil5BBoL/537f85b510477c440d07b3017e000319/190305_OGimage_Templates_Universal03.png" />
+  <meta property="og:image" content="https://images.ctfassets.net/i8bfc4nr05rq/3rK5xo4VFkLdTUFZ2UrlGL/05aa6fb3dad150addf943bfb9dc710cc/c3.png" />
   <meta name="twitter:site" content="@segment" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="description" content="{{description}}">
@@ -65,8 +65,13 @@
   <div id="consent-manager"></div>
   {{ content }}
   <a class="back-scrolling" data-back-scrolling data-active-class="back-scrolling--active">
-    {%- include icons/symbols/chevron-up.svg -%}
+    {%- include icons/symbols/arrow-up.svg -%}
   </a>
+
+  {% unless page.hide-feedback %}
+    {% include_cached components/feedback-templates.html %}
+  {% endunless %}
+
   {%- comment -%}
     A.JS
     Production: https://app.segment.com/segment_prod/sources/segment_docs_v2_prod
@@ -123,7 +128,6 @@
 
 <script>
   window.consentManagerConfig = function (exports) {
-      console.log(exports)
     var React = exports.React
     var inCA = exports.inRegions(['CA'])
     var inEU = exports.inRegions(['EU'])

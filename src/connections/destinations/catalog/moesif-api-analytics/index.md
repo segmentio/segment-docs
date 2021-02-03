@@ -13,8 +13,8 @@ This destination is maintained by Moesif. For any issues with the destination, [
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Moesif" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Moesif" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Enter the Moesif "API Key" into the destinations settings in the Segment App. You can find these by going to 
  your [Moesif account](https://www.moesif.com) and navigating to the extensions settings.
 4. Once integrated, Segment data shows up in Moesif in a few seconds.

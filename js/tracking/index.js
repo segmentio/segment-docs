@@ -4,7 +4,7 @@ export default function() {
 
   let scrolledToBottom = false
   window.onscroll = function(ev) {
-    if (!scrolledToBottom && (window.innerHeight + window.pageYOffset) >= document.getElementsByClassName('stage__content')[0].offsetHeight) {//document.body.offsetHeight) {
+    if (!scrolledToBottom && (window.innerHeight + window.pageYOffset) >= document.querySelectorAll('[data-tracking-scroll]')[0].offsetHeight) {//document.body.offsetHeight) {
         scrolledToBottom = true
         console.log("you're at the bottom of the page");
         typewriter.scrolledToBottom({

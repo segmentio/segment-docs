@@ -152,7 +152,8 @@ Personas sends user-level computed Traits to destinations using the [Identify ca
 
 ![](images/1525837601768.png)
 
-For account-level computed traits, you have the option to send either a [group](/docs/connections/spec/group/) call and/or [identify](/docs/connections/spec/identify/) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, we will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account.
+For account-level computed traits, you have the option to send either a [group](/docs/connections/spec/group/) call and/or [identify](/docs/connections/spec/identify/) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, we will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account. See [Account-level Audiences](/docs/personas/audiences/account-audiences) for more information.
+
 
 ## Accessing your Computed Traits using the Profiles API
 

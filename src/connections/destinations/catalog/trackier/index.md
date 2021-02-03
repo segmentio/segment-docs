@@ -4,18 +4,18 @@ title: Trackier Destination
 ---
 [Trackier](https://trackier.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is customisable performance marketing software used by ad networks, agencies and advertisers to manage publisher relations.
 
-This destination is maintained by Trackier. For any issues with the destination, [contact their team](mailto:support@trackier.com).
+This destination is maintained by Trackier. For any issues with the destination, [contact the Trackier Support team](mailto:support@trackier.com).
 
-_**NOTE:** The Trackier Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on May 14, 2019. If you are interested in joining their beta program or have any feedback to help improve the Trackier Destination and its documentation, [let their team know](mailto:support@trackier.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Trackier" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your Trackier dashboard Profile section -> Global Security Token
+1. From the Segment web app, click **Catalog**.
+2. Search for "Trackier" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your Trackier dashboard Profile section -> Global Security Token
 
 
 ## Track

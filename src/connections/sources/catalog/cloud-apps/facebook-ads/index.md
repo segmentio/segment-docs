@@ -14,9 +14,10 @@ This document was last updated on July 6, 2018. If you notice any gaps, outdated
 
 2. Choose Facebook Ads.
 
-3. Give the source a nickname. The nickname is a label used in the Segment interface, and Segment creates a related schema name which you query against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself, like `Facebook Ads` or `Facebook Ads Prod`.
+3. Give the source a nickname.
+   The nickname is a label used in the Segment interface, and Segment creates a related schema name which you query against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself, like `Facebook Ads` or `Facebook Ads Prod`.
 
-  ![](images/setup.png)
+   ![](images/setup.png)
 
 4. Click **Create And Continue** then **Connect** to OAuth into Facebook.
 

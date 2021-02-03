@@ -5,7 +5,6 @@ redirect_from:
   - '/connections/warehouses/catalog/bigquery/'
 ---
 
-
 Segment's [BigQuery](https://cloud.google.com/bigquery/) connector makes it easy
 to load web, mobile, and third-party source data like Salesforce, Zendesk, and
 Google AdWords into a BigQuery data warehouse.  This guide will explain how to
@@ -17,8 +16,8 @@ process to pull raw events and objects and load them into your BigQuery cluster.
 Using BigQuery through Segment means you'll get a fully managed data pipeline
 loaded into one of the most powerful and cost-effective data warehouses today.
 
-This document was last updated on March 12, 2019. If you notice any gaps,
-out-dated information or simply want to leave some feedback to help us improve
+If you notice any gaps,
+out-dated information or want to leave some feedback to help us improve
 our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
@@ -40,8 +39,7 @@ warehouse in Segment.
 
 ### Create a Service Account for Segment
 
-Refer to [Google Cloud's documentation about service
-accounts](https://cloud.google.com/iam/docs/creating-managing-service-accounts)
+Refer to [Google Cloud's documentation about service accounts](https://cloud.google.com/iam/docs/creating-managing-service-accounts)
 for more information.
 
 1. From the Navigation panel on the left, go to **IAM & admin** > **Service accounts**

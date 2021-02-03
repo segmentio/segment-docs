@@ -17,7 +17,7 @@ Personas is a powerful personalization platform that enables you to create unifi
 #### Create unified customer profiles
 Personas uses [Segment Identity Resolution](/docs/personas/identity-resolution/) to take event data from across devices and channels, and intelligently merge it into complete user- or account-level profiles. This gives your organization a single view of your customer base. See the [Identity Resolution documentation](/docs/personas/identity-resolution/) to learn more.
 
-{% include components/media-icon.html href="https://segment.com/customers/frameio/" icon="media/icon-personas.svg" title="Personalizing customer interactions" content="Support teams rely on Segment’s unified profiles to make real-time and informed decisions about customers when answering tickets, or taking support calls. Read about how the support team at Frame.io reduced time to respond to tickets by 80%." %}
+{% include components/reference-button.html href="https://segment.com/customers/frameio/" icon="personas.svg" title="Personalizing customer interactions" description="Support teams rely on Segment’s unified profiles to make real-time and informed decisions about customers when answering tickets, or taking support calls. Read about how the support team at Frame.io reduced time to respond to tickets by 80%." %}
 
 #### Enrich profiles with new traits
 Add detail to user profiles with new traits, and use them to power personalized marketing campaigns. You can add new traits to your user or account profiles in Segment using:
@@ -31,9 +31,9 @@ Create a list of users or accounts that match specific criteria, for example “
 #### Sync audiences to marketing tools
 Once you create your Computed Traits and Audiences, Personas sends them to your Segment Destinations in just a few clicks. You can use these to personalize messages across channels, optimize ad spend, and improve targeting. You can also use the [Profile API](/docs/personas/profile-api) to build in-app and onsite personalization. Learn more about [using Personas data](/docs/personas/using-personas-data/) and the [Profile API](/docs/personas/profile-api).
 
-{% include components/media-icon.html href="https://segment.com/customers/drift/" icon="media/icon-personas.svg" title="Personalizing marketing campaigns" content="Marketing teams use Personas to run real-time multi-channel marketing campaigns, based off specific user attributes they’ve computed in Personas. Read about how Drift used Personas to increase prospect engagement by 150% in 2 month." %}
+{% include components/reference-button.html href="https://segment.com/customers/drift/" icon="personas.svg" title="Personalizing marketing campaigns" content="Marketing teams use Personas to run real-time multi-channel marketing campaigns, based off specific user attributes they’ve computed in Personas. Read about how Drift used Personas to increase prospect engagement by 150% in 2 month." %}
 
-{% include components/media-icon.html href="https://segment.com/customers/consulting/" icon="media/icon-personas.svg" title="Optimizing Advertising ROI" content="Marketing teams can use rich profile data to run powerful advertising campaigns and reduce wasteful ad spend. Examples include lookalike campaigns based on their best customers, exclusion campaigns of existing customers, and reactivation campaigns to warm up inactive users." %}
+{% include components/reference-button.html href="https://segment.com/customers/consulting/" icon="personas.svg" title="Optimizing Advertising ROI" description="Marketing teams can use rich profile data to run powerful advertising campaigns and reduce wasteful ad spend. Examples include lookalike campaigns based on their best customers, exclusion campaigns of existing customers, and reactivation campaigns to warm up inactive users." %}
 
 ## Personas core components
 

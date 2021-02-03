@@ -4,7 +4,7 @@ strat: google
 ---
 
 > warning "Migrate mobile implementations to Firebase"
-> Google ended support for Google Analytics classic on iOS and Android mobile apps on October 31st 2019. To continue measuring and optimizing user engagement in your mobile apps, [migrate your implementation to use the Firebase SDKs](migrating). If you are using [Google Analytics DV360](/docs/connections/destinations/catalog/doubleclick-floodlight/) you do not need to migrate.
+> Google ended support for Google Analytics classic on iOS and Android mobile apps on October 31st 2019. To continue measuring and optimizing user engagement in your mobile apps, [migrate your implementation to use the Firebase SDKs](migrating). If you are using Google Analytics 360 you do not need to migrate.
 
 
 ## Getting Started
@@ -12,13 +12,13 @@ strat: google
 Segment supports Google Analytics client-side and server-side tracking.
 To use Google Analytics for mobile devices, you must use [Google Firebase](/docs/connections/destinations/catalog/firebase/) instead of the original Google Analytics destination. See the [migration guide](migrating/) for more instructions.
 
-When you enable the Google Analytics destination in Segment, this is what happens:
+When you enable the Google Analytics destination in Segment:
 
-  - The Segment CDN updates within 45 minutes. The Segment snippet starts asynchronously loading the Google Analytics javascript library on your web page. **This means you should remove Google's snippet from your page.**
+- Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Google Analytics javascript library on your web page. **This means you should remove Google's snippet from your page.**
 
-  - Your Google Analytics real-time dashboard starts showing live, concurrent visitors.
+- Your Google Analytics real-time dashboard starts showing live, concurrent visitors.
 
-  - Google Analytics starts automatically collecting data on your site. It takes several hours for Google to process this data and add it to your reports, but you should still see events appear in the Google Analytics real-time events dashboard.
+- Google Analytics starts automatically collecting data on your site. It takes several hours for Google to process this data and add it to your reports, but you should still see events appear in the Google Analytics real-time events dashboard.
 
 > info "Classic tracking deprecated"
 > These docs cover Google Analytics Universal features, since the [Classic tracking method has been depreciated](http://analytics.blogspot.com/2014/04/universal-analytics-out-of-beta-into.html).
@@ -336,9 +336,9 @@ analytics.track('Completed Checkout Step', {
 The four steps above are only an example, and you can create as many steps in your funnel as you need. You still must track the `Order Completed` event per our standard [Ecommerce tracking spec](/docs/connections/spec/ecommerce/v2/) after you've tracked the checkout steps.
 
 For client-side integrations we use Google Analytics' `ProductAction` class to track Checkout Steps and Options. You can read the Google Analytics developer docs for information on specific methods:
-<!-- commenting out until we can confirm that these aren't useful. the pages are still up, if all mobile needs to use firebase this seems weird to include here
-- [Android](https://developers.google.com/android/reference/com/google/android/gms/analytics/ecommerce/ProductAction)
-- [iOS](https://developers.google.com/analytics/devguides/collection/ios/v3/reference/interface_g_a_i_ecommerce_product_action)-->
+<!-- commenting out until we can confirm that these aren't useful. the pages are still up, if all mobile needs to use firebase this seems weird to include here -->
+<!-- - [Android](https://developers.google.com/android/reference/com/google/android/gms/analytics/ecommerce/ProductAction)-->
+<!-- - [iOS](https://developers.google.com/analytics/devguides/collection/ios/v3/reference/interface_g_a_i_ecommerce_product_action) -->
 - [Analytics.js - Enhanced E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce)
 - [Analytics.js - E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce)
 
@@ -365,9 +365,9 @@ analytics.track('Clicked Promotion', {
 ```
 
 For client-side integrations, we use Google Analytics' Promotions class to measure promotions. You can read their developer docs for information on specific methods:
-<!-- same note as above re mobile
-- [Android](https://developers.google.com/android/reference/com/google/android/gms/analytics/ecommerce/Promotion)
-- [iOS](https://developers.google.com/analytics/devguides/collection/ios/v3/reference/interface_g_a_i_ecommerce_promotion)-->
+<!-- same note as above re mobile -->
+<!-- - [Android](https://developers.google.com/android/reference/com/google/android/gms/analytics/ecommerce/Promotion)-->
+<!-- - [iOS](https://developers.google.com/analytics/devguides/collection/ios/v3/reference/interface_g_a_i_ecommerce_promotion)-->
 - [Analytics.js - Enhanced E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce)
 - [Analytics.js - E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce)
 
@@ -469,6 +469,9 @@ analytics.track('Product List Filtered', {
 });
 ```
 
+> tip ""
+> **Tip!** To tie product clicks and views to the same Product List Name in Google Analytics, include a `list` property in your 'Product Viewed' and 'Product Clicked' events. The value in the `list` property should match the value in the `list_id` property for the corresponding 'Product List Viewed' and 'Product List Filtered' events.
+
 ### Refunds
 
 To view refund in Google Analytics, you must have enhanced e-commerce enabled.
@@ -494,7 +497,6 @@ analytics.track('Order Refunded', {
     ]
   });
 ```
-
 
 
 ## Server Side

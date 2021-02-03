@@ -6,6 +6,9 @@ rewrite: true
 
 This Destination is maintained by Selligent Marketing Cloud. For any issues with the Destination, [contact their support team](mailto:jason.morgan@acceleration.biz).
 
+> success ""
+> **Good to know**: This page is about the Selligent Marketing Cloud Segment destination, which receives data from Segment. There's also a page about the [Selligent Marketing Cloud Segment source](/docs/connections/sources/catalog/cloud-apps/selligent-marketing-cloud/), which sends data _to_ Segment!
+
 ## Getting Started
 
 Before you enable Selligent Marketing Cloud in your Destination page, validate with your Selligent CSM that the segment components needed to start receiving information from the connector are set up on your account.
@@ -25,9 +28,9 @@ Before you enable Selligent Marketing Cloud in your Destination page, validate w
 
 You can then proceed to configure your destination.
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "*Selligent Marketing Cloud*" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "*API Key*" and "*API Secret*" into your Segment Settings UI.
+1. From the Segment web app, click **Catalog**.
+2. Search for "*Selligent Marketing Cloud*" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "*API Key*" and "*API Secret*" into your Segment Settings UI.
 4. *SMC Admin URL* - Copy the link you use to log into the SMC admin should look like https://**{you company}**.slgnt.us
 ![adminURL](images/adminurl.jpg)
 5. *Organization* - You will find the organization name on the top-right hand corner next to the menu icon.

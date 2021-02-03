@@ -38,6 +38,10 @@ defaults:
       landing: true
       layout: integration
 
+collections:
+  release_notes:
+    output: false
+
 plugins_dir: ./_plugins
 plugins:
   - jekyll-sitemap
