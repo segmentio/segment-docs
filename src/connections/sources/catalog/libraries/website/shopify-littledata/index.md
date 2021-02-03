@@ -41,24 +41,18 @@ Below is a table of events that **Shopify by Littledata** sends to Segment throu
 
 | Event Name            | Description                                                           |
 | --------------------- | --------------------------------------------------------------------- |
+| Cart Viewed           | User has viewed the /cart page                                        |
 | Page Viewed           | The user has viewed a page                                            |
 | Product Clicked       | The user has clicked a product within a product list                  |
 | Product Image Clicked | The user has clicked a product image                                  |
 | Product List Viewed   | The user has viewed a product as they scroll down the collection page |
 | Product Shared        | User has shared a product through social links                        |
 | Product Viewed        | The user has viewed a product page                                    |
+| Products Searched     | User has searched for products (with search `query`)                  |
+| Registration Viewed   | The user has viewed the /account/register page                        |
 | Thank you Page Viewed | User has viewed the thank you page after completing an order \*       |
 
 > note "" \* This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
-
-In addition to the events tracked as standard, the following hits can be tracked based on page path:
-
-| Event Name             | Description                                 |
-| ---------------------- | ------------------------------------------- |
-| Blog Viewed            | A prospect has viewed the blog              |
-| Cart Viewed            | A prospect has viewed the cart              |
-| Registration Completed | A prospect has completed registration       |
-| Registration Viewed    | A prospect has viewed the registration page |
 
 ## Cloud-mode Events
 
