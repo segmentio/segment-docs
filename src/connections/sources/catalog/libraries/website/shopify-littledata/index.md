@@ -6,7 +6,7 @@ redirect_from:
 
 <!-- LR Note: the working copy of the source catalog YML we built on showed this in the `website` source though as of Nov 18 it's labeled cloud-source -->
 
-Littledata is a smart analytics app that automates ecommerce tracking. Littledata's [Shopify-to-Segment connection](https://blog.littledata.io/help/posts/segment-overview/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) automatically tracks key ecommerce events on a Shopify or Shopify Plus store, so you can use Shopify as a source in your Segment workspace.
+Littledata is a smart analytics app that automates e-commerce tracking. Littledata's [Shopify-to-Segment connection](https://blog.littledata.io/help/posts/segment-overview/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) automatically tracks key e-commerce events on a Shopify or Shopify Plus store, so you can use Shopify as a source in your Segment workspace.
 
 Littledata is available as an independent [Shopify App](https://apps.shopify.com/segment-com-by-littledata). When you install the Littledata app on your store, Littledata does two things:
 
@@ -19,7 +19,7 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 ![](images/littledata_arch.png)
 
 > warning "Note"
-> This integration is maintained by Littledata _and is not supported by Segment directly_. The Littledata app has been reviewed by the Segment team for conformance with our [E-Commerce Spec](/docs/connections/spec/ecommerce/v2/), and is our recommended way of using Segment with Shopify. However, it does require a paid subscription with Littledata, who mediates the connection between Shopify and Segment. [Contact their team](mailto:support@littledata.io) with any questions.
+> This integration is maintained by Littledata _and is not supported by Segment directly_. The Littledata app has been reviewed by the Segment team for conformance with Segment's [E-Commerce Spec](/docs/connections/spec/e-commerce/v2/), and is the recommended way of using Segment with Shopify. However, it does require a paid subscription with Littledata, who mediates the connection between Shopify and Segment. [Contact the Littledata Support team](mailto:support@littledata.io) with any questions.
 
 ## Getting Started
 
@@ -32,12 +32,12 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
    ![](images/eLUh6GF.png)
 6. Choose either an **Automatic** or a **Manual** install. _Automatic installs work in most instances, but if you choose to do a manual install, just follow [this guide](https://blog.littledata.io/help/posts/segment-installation-guide/)._
    ![](images/iYM76VI.png)
-7. Segment's **analytics.js** library, Littledata **tracking script** and **webhooks** will be automatically applied to the store and the installation proccess will then be complete.
+7. Segment's **analytics.js** library, Littledata **tracking script** and **webhooks** will be automatically applied to the store and the installation process will then be complete.
    ![](images/kvjNx4M.png)
 
 ## Device-mode Events
 
-Below is a table of events that **Shopify by Littledata** sends to Segment through the analytics.js libary. These events will show up as tables in your warehouse, and as regular events in your other Destinations supporting device-mode.
+Below is a table of events that **Shopify by Littledata** sends to Segment through the analytics.js library. These events will show up as tables in your warehouse, and as regular events in your other Destinations supporting device-mode.
 
 | Event Name            | Description                                                           |
 | --------------------- | --------------------------------------------------------------------- |
@@ -47,7 +47,7 @@ Below is a table of events that **Shopify by Littledata** sends to Segment throu
 | Product List Viewed   | The user has viewed a product as they scroll down the collection page |
 | Product Shared        | User has shared a product through social links                        |
 | Product Viewed        | The user has viewed a product page                                    |
-| Thankyou Page Viewed  | User has viewed the thank you page after completing an order \*       |
+| Thank you Page Viewed | User has viewed the thank you page after completing an order \*       |
 
 > note "" \* This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
 
@@ -111,7 +111,7 @@ The following traits are included with an Identify call:
 | `lastName`              | The customer's email                                                                                                                            | String        |
 | `marketingOptIn`        | The `marketing_opt_in` field from [Shopify customer](https://shopify.dev/docs/admin-api/rest/reference/customers/customer?api[version]=2020-04) | String        |
 | `phone`                 | The customer's phone number                                                                                                                     | String        |
-| `purchaseCount`         | The bumber of orders by this customer                                                                                                           | Integer       |
+| `purchaseCount`         | The number of orders by this customer                                                                                                           | Integer       |
 | `state`                 | Whether the customer account is enabled or disabled                                                                                             | String        |
 | `tags`                  | The custom tags [applied to the customer](https://shopify.dev/docs/admin-api/rest/reference/customers/customer?api[version]=2020-04)            | String        |
 | `userId`                | Chosen user identifier, defaulting to Shopify Customer ID                                                                                       | Double        |
@@ -119,7 +119,7 @@ The following traits are included with an Identify call:
 
 ## Support for Google Analytics destination
 
-All events (device-mode and cloud-mode) contain the Google Analytics `clientId` field where known. This allows the [Google Analytics destionation](/docs/connections/destinations/catalog/google-analytics/#supported-sources-and-connection-modes) to be configured in cloud-mode only, so all client side events are relayed via Segment's servers - reducing the scripts needed on your website.
+All events (device-mode and cloud-mode) contain the Google Analytics `clientId` field where known. This allows the [Google Analytics destination](/docs/connections/destinations/catalog/google-analytics/#supported-sources-and-connection-modes) to be configured in cloud-mode only, so all client side events are relayed via Segment's servers - reducing the scripts needed on your website.
 
 ## Support for email marketing destinations
 
@@ -129,7 +129,7 @@ Email marketing platforms such as [Klaviyo](/docs/connections/destinations/catal
 
 To support seamless customer tracking the [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias), [Vero](/docs/connections/destinations/catalog/vero/#alias) and [KISSMetrics](docs/connections/destinations/catalog/kissmetrics/#alias) destinations, Littledata ensures the pre-checkout `anonymousId` is added as an alias of the `userId` (used from checkout step 2 onwards).
 
-## Subscription Ecommerce Events
+## Subscription e-commerce Events
 
 Additional events available through Littledata's [ReCharge connection](https://www.littledata.io/connections/recharge), and available in cloud-mode destinations.
 
