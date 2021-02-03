@@ -52,7 +52,8 @@ Below is a table of events that **Shopify by Littledata** sends to Segment throu
 | Registration Viewed   | A user has viewed the /account/register page                          |
 | Thank you Page Viewed | A user has viewed the thank you page after completing an order \*     |
 
-> note "" \* This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
+> note ""
+> \*  This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
 
 ## Cloud-mode Events
 
