@@ -41,16 +41,16 @@ Below is a table of events that **Shopify by Littledata** sends to Segment throu
 
 | Event Name            | Description                                                           |
 | --------------------- | --------------------------------------------------------------------- |
-| Cart Viewed           | User has viewed the /cart page                                        |
-| Page Viewed           | The user has viewed a page                                            |
-| Product Clicked       | The user has clicked a product within a product list                  |
-| Product Image Clicked | The user has clicked a product image                                  |
-| Product List Viewed   | The user has viewed a product as they scroll down the collection page |
-| Product Shared        | User has shared a product through social links                        |
-| Product Viewed        | The user has viewed a product page                                    |
-| Products Searched     | User has searched for products (with search `query`)                  |
-| Registration Viewed   | The user has viewed the /account/register page                        |
-| Thank you Page Viewed | User has viewed the thank you page after completing an order \*       |
+| Cart Viewed           | A user has viewed the /cart page                                      |
+| Page Viewed           | A user has viewed any page                                            |
+| Product Clicked       | A user has clicked a product within a product list                    |
+| Product Image Clicked | A user has clicked a product image                                    |
+| Product List Viewed   | A user has viewed a product as they scroll down the collection page   |
+| Product Shared        | A user has shared a product through social links                      |
+| Product Viewed        | A user has viewed a product page                                      |
+| Products Searched     | A user has searched for products (with search `query`)                |
+| Registration Viewed   | A user has viewed the /account/register page                          |
+| Thank you Page Viewed | A user has viewed the thank you page after completing an order \*     |
 
 > note "" \* This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
 
