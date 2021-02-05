@@ -27,7 +27,7 @@ analytics.identify('userId123', {
 });
 ```
 
-Segment sends Identify calls to Bucket as an `identify` event to update Users.
+Segment sends Identify calls to Bucket as an `identify` event which updates Users.
 
 ## Group
 
