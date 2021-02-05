@@ -27,7 +27,7 @@ analytics.identify('userId123', {
 });
 ```
 
-Segment sends Identify calls to Bucket as an `identify` event which updates Users.
+Segment sends Identify calls to Bucket as an `identify` event which updates User profiles.
 
 ## Group
 
@@ -39,7 +39,7 @@ analytics.identify('groupId123', {
 });
 ```
 
-Segment sends Group calls to Bucket as a `group` event which updates Companies.
+Segment sends Group calls to Bucket as a `group` event which updates Companies profiles.
 
 ## Track
 
@@ -50,4 +50,4 @@ analytics.track('Login Button Clicked', {
 })
 ```
 
-Segment sends Track calls to Bucket as a `track` event which updates Features.
+Segment sends Track calls to Bucket as a `track` event which updates the Features page.
