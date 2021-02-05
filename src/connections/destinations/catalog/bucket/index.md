@@ -39,7 +39,7 @@ analytics.identify('groupId123', {
 });
 ```
 
-Segment sends Group calls to Bucket as a `group` event to update Companies.
+Segment sends Group calls to Bucket as a `group` event which updates Companies.
 
 ## Track
 
