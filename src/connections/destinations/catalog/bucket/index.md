@@ -50,4 +50,4 @@ analytics.track('Login Button Clicked', {
 })
 ```
 
-Segment sends Track calls to Bucket as a `track` event to update Features.
+Segment sends Track calls to Bucket as a `track` event which updates Features.
