@@ -41,14 +41,12 @@ analytics.identify('groupId123', {
 
 Segment sends Group calls to Bucket as a `group` event to update Companies.
 
-
 ## Track
 
 If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.track('Login Button Clicked', {
-    // custom properties
 })
 ```
 
