@@ -422,7 +422,6 @@ async function getAccessToken () {
 
 If you are a **Workspace Owner** or **Functions Admin**, you can manage your function from the [Functions](https://app.segment.com/goto-my-workspace/functions/catalog) page.
 
-![Editing or deleting your Destination Function](images/function-sidesheet-dest.gif)
 
 ### Monitoring destination functions
 
