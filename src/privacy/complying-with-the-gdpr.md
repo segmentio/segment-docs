@@ -8,7 +8,7 @@ In keeping with our ongoing commitment to privacy and security, Segment updated 
 
 Specifically, here is how we support our customers:
 
-*   An updated Data Processing Agreement (DPA) to reflect the requirements of the GDPR and to ensure compliant data transfer with storage outside the EU. Existing customers can enter into the updated Data Processing Agreement using the opt-in process described [here](#how-to-opt-into-the-data-processing-agreement-and-eu-model-contract-clauses).
+*   An updated Data Processing Agreement (DPA) to reflect the requirements of the GDPR and to ensure compliant data transfer with storage outside the EU. Existing customers can enter into the updated Data Processing Agreement using the opt-in process described [here](#opting-into-the-data-processing-agreement-and-standard-contractual-clauses).
 
 *   New product capabilities to help you be compliant when users request you delete or suppress their data.
 
@@ -27,7 +27,7 @@ If you collect data about EU residents and decide why and how those data are col
 
 - Lawfulness, fairness and transparency
 - Purpose limitation
-- Data minimisation
+- Data minimization
 - Accuracy
 - Storage limitation
 - Integrity and confidentiality (security)
