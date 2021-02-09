@@ -15,8 +15,6 @@ sections:
     title: Adobe Analytics Heartbeat
   - path: /connections/destinations/catalog/adobe-analytics/best-practices
     title: Adobe Analytics best practices
-  section_title: Marketo (an Adobe company)
-  section:
   - path: /connections/destinations/catalog/marketo-v2
     title: Marketo destination
   - path: /connections/destinations/catalog/marketo-static-lists
