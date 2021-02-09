@@ -23067,7 +23067,7 @@ items:
   slug: userlist
   name: catalog/destinations/userlist
   description: >-
-    Userlist.io is a simple behavior-based email automation tool for SaaS
+    Userlist is a simple behavior-based email automation tool for SaaS
     companies. See what your users do, and send them relevant behavior-driven
     communication.
   hidden: false
@@ -23118,6 +23118,7 @@ items:
       server: true
   previous_names:
   - Userlist
+  - Userlist.io
 - display_name: Userpilot
   slug: userpilot
   name: catalog/destinations/userpilot
