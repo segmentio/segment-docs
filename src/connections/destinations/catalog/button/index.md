@@ -74,7 +74,7 @@ analytics.track('Application Installed' { someProperty: true }, {
 > **Tip!** Make sure you record any different names for `Application Installed` Track events across your sources so you know which are sent where.
 
 ### Orders
-To track order events from your App or Website, utilize Segment's [Order Completed](https://segment.com/docs/connections/spec/ecommerce/v2/#order-completed) event.
+To track `order` events from your app or website, use Segment's [Order Completed](https://segment.com/docs/connections/spec/ecommerce/v2/#order-completed) event.
 
 An example call would look like:
 
