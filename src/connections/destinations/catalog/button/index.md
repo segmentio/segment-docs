@@ -2,7 +2,7 @@
 title: Button Destination
 rewrite: true
 ---
-[Button](https://usebutton.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the mobile commerce technology company that is powering a commerce-driven internet. Our platform powers mobile business growth for the world’s largest brands and publishers, while offering consumers more seamless, enjoyable experiences.
+[Button](https://usebutton.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the mobile commerce technology company that is powering a commerce-driven internet. The Button platform powers mobile business growth for the world’s largest brands and publishers, while offering consumers more seamless, enjoyable experiences.
 
 This destination is maintained by Button. For any issues with the destination, [contact the Button Support team](mailto:support@usebutton.com).
 
