@@ -105,7 +105,7 @@ analytics.track('Order Completed' { someProperty: true }, {
 })
 ```
 > success ""
-> Keep track of any different names for Order Completed Track events across your sources.
+> **Tip!** Make sure you record any different names for `Order Completed` Track events across your sources so you know which are sent where.
 
 ## Setting up a Destination Filter
 
