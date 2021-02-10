@@ -10,8 +10,8 @@ This destination is maintained by Button. For any issues with the destination, [
 
 {% include content/connection-modes.md %}
 
-> success ""
-> **Tip!** Contact your Button representative for your Button API Key.
+> info ""
+> Contact your Button representative for your Button API Key.
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Button" in the Destinations Catalog, and select the Button destination.
