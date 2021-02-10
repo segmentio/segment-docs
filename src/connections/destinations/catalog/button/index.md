@@ -25,7 +25,7 @@ analytics.track('Deep Link Opened')
 
 Segment sends Track calls to Button as a `track` event.
 
-### Deeplinks
+### Deep links
 To track deep links from your app or website, use Segment's [Deep Link Opened](https://segment.com/docs/connections/spec/mobile/#deep-link-opened) and [Application Opened](https://segment.com/docs/connections/spec/mobile/#application-opened) events.
 
 Ensure the referring URL is passed. An example would look like:
