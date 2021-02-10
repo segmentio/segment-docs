@@ -1,7 +1,7 @@
 ---
 sections:
 - slug: adobe
-  section_title: Adobe Analytics
+  section_title: Adobe integrations
   section:
   - path: /connections/destinations/catalog/adobe-analytics
     title: Adobe Analytics destination
