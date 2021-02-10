@@ -60,7 +60,7 @@ analytics.track('Application Installed' { someProperty: true }, {
       adTrackingEnabled: false,
       advertisingId: 'XXXXXXXX-YYYY-ZZZZ-1111-222222222222'
     },
-    ip: '11.000.11.000',
+    ip: '127.0.0.1',
     locale: 'en-US',
     os: {
       name: 'iOS',
