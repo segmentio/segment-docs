@@ -8,6 +8,9 @@ redirect_from: '/connections/destinations/catalog/facebook-conversions-api/'
 
 [Facebook Conversions API](https://developers.facebook.com/docs/marketing-api/conversions-api) allows advertisers to send events from their servers directly to Facebook. Server-Side events are linked to a pixel and are processed like browser pixel events. This means that Server-Side events are used in measurement, reporting, and optimization in the same way as browser pixel events.
 
+> warning "Server Event Parameter Requirements"
+> Starting February 15th Facebook will be enforcing new requirements for server event parameters. Events sent to the Conversions API after February 15th that do not meet the requirements will be dropped by Facebook. For details on how implement these requirements see [Server Event Parameter Requirements](/docs/connections/destinations/catalog/facebook-pixel-server-side/#server-event-parameter-requirements)
+
 > info "Destination name change"
 > Facebook Conversions API was renamed from Facebook Pixel Server-Side.
 
@@ -42,9 +45,9 @@ This page is about the **Facebook Conversions**. For documentation on other Face
 Facebook Conversions API satisfies multiple use cases. It can be used a complement to [Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/), or it can be used as a stand-alone alternative.
 
 Implementation Options:
-1. [Send the same events from both the browser and the server](/docs/connections/destinations/catalog/facebook-conversions-api/#send-the-same-events-from-both-the-browser-and-the-server).
-2. [Send different events; some from the browser others from the server](/docs/connections/destinations/catalog/facebook-conversions-api/#send-different-events-some-from-the-browser-others-from-the-server).
-3. [Only send events from the server](/docs/connections/destinations/catalog/facebook-conversions-api/#only-send-events-from-the-server).
+1. [Send the same events from both the browser and the server](/docs/connections/destinations/catalog/facebook-pixel-server-side/#send-the-same-events-from-both-the-browser-and-the-server).
+2. [Send different events; some from the browser others from the server](/docs/connections/destinations/catalog/facebook-pixel-server-side/#send-different-events-some-from-the-browser-others-from-the-server).
+3. [Only send events from the server](/docs/connections/destinations/catalog/facebook-pixel-server-side/#only-send-events-from-the-server).
 
 ### Send the same events from both the browser and the server
 
@@ -86,11 +89,75 @@ If you choose this option, you do not need to worry about event deduplication.
 
 Currently, Facebook Conversions only supports Track calls.
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. 
 
-```javascript
-analytics.track('Products Searched', {
-  query: 'blue roses'
+## Server Event Parameter Requirements 
+
+Starting February 15th Facebook will require the `action_source` server event parameter for all events sent to the Conversions API. This parameter is used to specify where the conversions occurred. If `action_source` is set to 'website' then the `client_user_agent` and the `event_source_url` parameters are also required. Events sent to the Conversions API after February 15th that do not meet the requirements will be dropped by Facebook.
+
+| Server Event Parameter | Requirement     | Implementation |
+|------------------------|-----------------|----------------|
+| `action_source`        | Always required | It is set automatically but it can be set manually. |
+| `event_source_url`     | Only required if `action_source` = “website | It must be set manually if using a server library. It is set automatically if using our web library. |
+| `client_user_agent`    | Only required if `action_source` = “website | It must be set manually if using a server library. It is set automatically if using our web library. |
+
+
+###Action Source
+
+`action_source` will automatically be set to "website" as a default value. If a mobile library is used then `action_source` will default to “app”. 
+
+`action_source` can also be set manually by passing it in as a property of a Track event. Either snake case or camel case can be used to include `action_source` as a property in Track events.
+
+| Action Source Values | Description                                                                                               |
+| -------------------- | --------------------------------------------------------------------------------------------------------- |
+| `email`              | Conversion happened over email.                                                                           |
+| `website`            | Conversion was made on your website.                                                                      |
+| `app`                | Conversion was made using your app.                                                                       |
+| `phone_call`         | Conversion was made over the phone.                                                                       |
+| `chat`               | Conversion was made via a messaging app, SMS, or online messaging feature.                                |
+| `physical_store`     | Conversion was made in person at your physical store.                                                     |
+| `system_generated`   | Conversion happened automatically, for example, a subscription renewal that’s set on auto-pay each month. |
+| `other`              | Conversion happened in a way that is not listed.                                                          |
+
+
+###Client User Agent
+
+`client_user_agent` is set by including `context.userAgent` in the track event. The value used should be the user agent of the browser where the conversion event occurred. It must be set manually if using a server library. It is set automatically if using our web library. 
+
+###Event Source URL
+
+`event_source_url`  is set by including `context.page.url` in the track event. The value used should be the browser URL where the conversion event occurred. It must be set manually if using a server library. It is set automatically if using our web library. 
+
+###Implementating Server Event Parameter Requirements
+
+If `action_source` = 'website' then the `context.userAgent` and the `context.page.url` fields are required. Segment server-side libraries do not automatically collect the `context.userAgent` or the `context.page.url`. This data will need to be manually grabbed from the client and passed to the server. 
+
+Example of a [`Product Added`](/docs/connections/spec/ecommerce/v2/#product-added) event using Node.js
+```javascript 
+analytics.track({
+  context: {
+    userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_1_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36",
+    page: {
+      url: "https://segment.com/"
+    }
+  },
+  userId: "97980cfea0067",
+  event: "Product Added",
+  properties: {
+    brand: "Hasbro",
+    cart_id: "skdjsidjsdkdj29j",
+    category: "Games",
+    coupon: "MAYDEALS",
+    image_url: "https://www.example.com/product/path.jpg",
+    name: "Monopoly: 3rd Edition",
+    position: 3,
+    price: 18.99,
+    product_id: "507f1f77bcf86cd799439011",
+    quantity: 1,
+    sku: "G-32",
+    url: "https://www.example.com/product/path",
+    variant: "200 pieces"
+  },
 });
 ```
 
@@ -127,6 +194,8 @@ Segment maps the following Segment traits to [Facebook properties](https://devel
 
 | **Segment Property**                | **Pixel Property**                   | **Notes**                                                                                                                                       |
 | ----------------------------------- | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `context.userAgent`                 | `user_data.client_user_agent`        |                                                                                                                                                 |
+| `context.page.url`                  | `event_source_url`                   |                                                                                                                                                 |
 | `context.ip`                        | `user_data.client_ip_address`        |                                                                                                                                                 |
 | `context.traits.address.city`       | `user_data.ct`                       | hashed                                                                                                                                          |
 | `context.traits.address.postalCode` | `user_data.zp`                       | hashed                                                                                                                                          |
@@ -136,9 +205,9 @@ Segment maps the following Segment traits to [Facebook properties](https://devel
 | `context.traits.firstName`          | `user_data.fn`                       | hashed                                                                                                                                          |
 | `context.traits.lastName`           | `user_data.ln`                       | hashed                                                                                                                                          |
 | `context.traits.phone`              | `user_data.ph`                       | hashed                                                                                                                                          |
-| `context.userAgent`                 | `user_data.client_user_agent`        |                                                                                                                                                 |
 | `event`                             | `event_name`                         |                                                                                                                                                 |
 | `messageId`                         | `event_id`                           |                                                                                                                                                 |
+| `properties.action_source`          | `action_source`                      |                                                                                                                                                 |
 | `properties.currency`               | `custom_data.currency`               | Defaults to USD if not set                                                                                                                      |
 | `properties.fbc`                    | `fbc`                                |                                                                                                                                                 |
 | `properties.fbp`                    | `fbp`                                |                                                                                                                                                 |
@@ -197,15 +266,15 @@ You can manually change the Data Processing parameters by adding settings to the
 ```javascript
 // node.js library example
 
-    analytics.track({
-      event: 'Membership Upgraded',
-      userId: '97234974',
-      integrations: {
-        "Facebook Conversions": {
-          "dataProcessingOptions": [[], 1,1000]
-        }
-      }
-    })
+analytics.track({
+  event: 'Membership Upgraded',
+  userId: '97234974',
+  integrations: {
+    "Facebook Conversions": {
+      "dataProcessingOptions": [[], 1,1000]
+    }
+  }
+})
 ```
 
 ## Verify Events in Facebook
