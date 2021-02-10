@@ -4059,7 +4059,7 @@ items:
     url: >-
       https://public-segment-devcenter-production.s3.amazonaws.com/6e23247c-eaa6-4538-a9c1-355b52851d64.svg
   categories:
-  - A/B Testing
+  - Deep Linking
   - Attribution
   - Performance Monitoring
   - Personalization
