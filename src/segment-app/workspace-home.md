@@ -5,8 +5,8 @@ hidden: true
 
 Segment’s Workspace Home serves as a dashboard that gives you a single consolidated view of the workspace, its health and status, and metrics for specific integrations, within the last 24 hours.
 
-
-> ℹ️ The Workspace Home is available only to Business tier customers, and is only visible for [Workspace Owners](/docs/segment-app/iam/roles/). If you have access to the Home page, it is the first screen you see when you first log in to your Segment Workspace.
+> info ""
+> The Workspace Home is available only to Business tier customers, and is only visible for [Workspace Owners](/docs/segment-app/iam/roles/). If you have access to the Home page, it is the first screen you see when you first log in to your Segment Workspace.
 
 The Home page shows a summary of errors in the workspace’s sources and destinations, a list of “favorite” integrations that you can configure, and information about recent audit logged events, and your billing plan usage.
 
