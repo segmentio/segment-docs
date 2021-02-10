@@ -132,7 +132,7 @@ You can set `action_source` manually by passing it as a property of a Track even
 
 If `action_source` is set to 'website', the `context.userAgent` and the `context.page.url` fields are required. Segment server-side libraries do not collect `context.userAgent` or `context.page.url` by default. This data must be retrieved manually from the client and passed to the server.
 
-The snippet below provides an example of a [`Product Added`](/docs/connections/spec/ecommerce/v2/#product-added) event using Node.js.
+The snippet below provides an example of a [`Product Added`](/docs/connections/spec/ecommerce/v2/#product-added) event using Node.js. Notice in this example that the `action_source` parameter has not been set manually by passing this field into the event. The `action_source` parameter will default to "website". Since `action_source` = "website" the `client_user_agent` and the `event_source_url` parameters are required. Therefore the `context.userAgent` and the `context.page.url` fields have been  manually passed into the event. 
 
 ```javascript 
 analytics.track({
