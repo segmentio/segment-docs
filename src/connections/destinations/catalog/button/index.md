@@ -10,11 +10,13 @@ This destination is maintained by Button. For any issues with the destination, [
 
 {% include content/connection-modes.md %}
 
+> success ""
+> **Tip!** Contact your Button representative for your Button API Key.
+
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Button" in the Destinations Catalog, and select the Button destination.
 3. Choose which Source should send data to the Button destination.
-4. Contact your Button representative for your Button API Key.
-5. Enter the "API Key" in the Button destination settings in Segment.
+4. Enter the "API Key" in the Button destination settings in Segment.
 
 ## Track
 If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
