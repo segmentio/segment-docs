@@ -41,7 +41,7 @@ analytics.track('Application Opened' { someProperty: true }, {
 ```
 
 > success ""
-> Keep track of any different names for Deep Link Opened Track events across your sources.
+> **Tip!** Make sure you record any different names for `Deep Link Opened` Track events across your sources so you know which are sent where.
 
 ### Installs
 To track mobile app installs, utilize Segment's [Application Installed](https://segment.com/docs/connections/spec/mobile/#application-installed) event.
