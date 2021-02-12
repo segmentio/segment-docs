@@ -19,9 +19,15 @@ The Sources section of the Home pages shows a summary of the event volume flowin
 
 If your Segment plan includes Protocols, the dashboard shows [Event Violations](/docs/protocols/validate/review-violations/) occurring in the workspace, including a graph over time. You can click into the violations section to see a list of sources ordered from highest number of violations, to lowest. You can click into individual sources to see more details and go to their individual source pages, or [go to the Violations page](https://app.segment.com/goto-my-workspace/protocols/violations).
 
+![](/docs/segment-app/images/workspace-violations.png)
+
+
 ## Destinations - Event Delivery
 
 The Destinations section of the Home page shows a summary of the Event Delivery for the workspace, including a graph over time. You can click the **destinations** link to see a list of destinations with delivery problems, ordered from highest to lowest error rate. You can click a destination to see more details about the delivery failures, and from the details panel click the destination name to go directly to its configuration page.
+
+![](/docs/segment-app/images/workspace-home-delivery.png)
+
 
 ## Favorite integrations
 
@@ -40,4 +46,7 @@ To delete a favorite, click the **more** (…) menu and select **Remove favorite
 The recent activity section displays the most recent items logged to the Segment Audit trail. This includes workspace membership changes and requests, changes to the configuration of different Segment features (including sources, destinations, and to Personas and Protocols configurations), and data storage sync failures.
 
 ## Usage
-The Usage section shows a summary of the workspace’s plan utilization for the current billing period. This includes billing information for all parts of your Segment plan. This includes MTUs or API call volume, Functions usage time (if applicable), and Personas details (if applicable). Click **view all** to go to the workspace’s billing page for more detailed statistics.
+
+The Usage section shows a summary of the workspace’s plan utilization for the current billing period. This includes billing information for all parts of your Segment plan. This includes [MTUs or API call volume](/docs/guides/usage-and-billing/mtus-and-throughput/) (as applicable), Functions usage time (if applicable), and Personas details (if applicable). Click **view all** to go to the workspace’s billing page for more detailed statistics.
+
+![](/docs/segment-app/images/workspace-home-usage.png)
