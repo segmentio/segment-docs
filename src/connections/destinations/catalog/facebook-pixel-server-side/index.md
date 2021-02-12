@@ -93,7 +93,7 @@ For more information about Track calls, see the [Track method](/docs/connections
 
 ## Server Event Parameter Requirements 
 
-Beginning February 15th, 2021, Facebook will require the `action_source` server event parameter for all events sent to the Conversions API. This parameter is used to specify where the conversions occurred. If `action_source` is set to 'website' then the `client_user_agent` and the `event_source_url` parameters are also required. Events sent to the Conversions API after February 15th that do not meet the requirements events may not be available for optimization, targeting, or measurement.
+Beginning February 15th, 2021, Facebook will require the `action_source` server event parameter for all events sent to the Conversions API. This parameter is used to specify where the conversions occurred. If `action_source` is set to 'website' then the `client_user_agent` and the `event_source_url` parameters are also required. Events sent to the Conversions API after February 15th that do not meet the requirements may not be available for optimization, targeting, or measurement.
 
 | Server Event Parameter | Requirement                                 | Implementation                                                                                       |
 | ---------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
