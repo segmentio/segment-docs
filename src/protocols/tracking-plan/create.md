@@ -27,7 +27,7 @@ To get started, click on **New Tracking Plan** in the top right. This will open 
 You will also see an option to infer a tracking plan from a source in your workspace. This option is great if you want to get started quickly with your current events. Note that we will do our best to infer data type, but often times cannot do so if multiple data types were sent for a specific property.
 
 > info ""
-> Does your tracking plan live in a spreadsheet? Use our [Google Sheets Uploader](/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader) to import it into Protocols!
+> If your tracking plan is in a spreadsheet, use the [Google Sheets Uploader](/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader) to import it to Protocols.
 
 ![](../images/tracking_plan_expanded.png)
 
