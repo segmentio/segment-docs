@@ -6,7 +6,6 @@ redirect_from:
   - '/connections/destinations/destination-functions/'
 integration_type: feature
 ---
-
 Destination functions allow you to transform and annotate your Segment events and send them to any external tool or API without worrying about setting up or maintaining any infrastructure.
 
 All functions are scoped to your workspace, so members of other workspaces won't be able to view or use them.
@@ -422,7 +421,6 @@ async function getAccessToken () {
 
 If you are a **Workspace Owner** or **Functions Admin**, you can manage your function from the [Functions](https://app.segment.com/goto-my-workspace/functions/catalog) page.
 
-![Editing or deleting your Destination Function](images/function-sidesheet-dest.gif)
 
 ### Monitoring destination functions
 
