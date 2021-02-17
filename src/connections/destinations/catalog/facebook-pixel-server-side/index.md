@@ -1,15 +1,17 @@
 ---
-title: Facebook Conversions API Destination
+title: Facebook Conversions API destination
 rewrite: true
 beta: true
 strat: facebook
 redirect_from: '/connections/destinations/catalog/facebook-conversions-api/'
 ---
 
+<!-- LR: 2/16/2021: Redirect pulls in from `facebook-conversions-api` because while this destination's display name has changed, the slug is still the old name and the docs build needs to match on slug to find it in `destinations.yml` -->
+
 [Facebook Conversions API](https://developers.facebook.com/docs/marketing-api/conversions-api) allows advertisers to send events from their servers directly to Facebook. Server-Side events are linked to a pixel and are processed like browser pixel events. This means that Server-Side events are used in measurement, reporting, and optimization in the same way as browser pixel events.
 
 > warning "Server Event Parameter Requirements"
-> Beginning February 15th, 2021, Facebook will enforce new requirements for server event parameters. After February 15th, 2021, events sent to the Conversions API that do not meet the new requirements may not be available for optimization, targeting, or measurement. For details on how to implement these requirements see [Server Event Parameter Requirements](/docs/connections/destinations/catalog/facebook-pixel-server-side/#server-event-parameter-requirements)
+> On February 15th 2021, Facebook began enforcing new requirements for server event parameters. After that date, events sent to the Conversions API that do not meet the new requirements might not be available for optimization, targeting, or measurement. For details on how to implement these requirements see [Server Event Parameter Requirements](/docs/connections/destinations/catalog/facebook-pixel-server-side/#server-event-parameter-requirements)
 
 > info "Destination name change"
 > Facebook Conversions API was renamed from Facebook Pixel Server-Side.
@@ -40,49 +42,57 @@ This page is about the **Facebook Conversions**. For documentation on other Face
 > info ""
 > See the Use Cases section below for additional implementation steps
 
-## Use Cases
+## Configuration options
 
-Facebook Conversions API satisfies multiple use cases. You can use it as a compliment to [Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/), or as a stand-alone alternative.
+The Segment Facebook Conversions API destination gives you several ways to implement your conversion tracking. You can use it as a compliment to [Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/), or as a stand-alone alternative.
 
-Implementation Options:
+The following implementation options are available:
 1. [Send the same events from both the browser and the server](#send-the-same-events-from-both-the-browser-and-the-server).
 2. [Send different events; some from the browser others from the server](#send-different-events-some-from-the-browser-others-from-the-server).
 3. [Only send events from the server](#only-send-events-from-the-server).
 
 ### Send the same events from both the browser and the server
 
-#### Description
-This approach provides a redundancy that ensures maximum signal reliability. Events that previously could have been lost on the browser side, for a variety of network reasons, are now captured via conversions API. This can be used if you do not want to miss any events coming from the browser. 
-
-#### Match rate considerations
-For this option to work best, the same `external_id` needs to be passed from the browser and from the server. To easily achieve this go to your Segment destination settings for Facebook Pixel and toggle on the setting called **Use UserId or Anonymous Id as External Id**. The Facebook Conversions API destination uses the userId (or anonymousId if not present) to set the External Id by default. Therefore enabling this on Facebook Pixel will allow Facebook to match the users. There are some additional steps you can take to increase the match rate for server-side events. [User traits can be passed into the context object of the track events](/docs/connections/destinations/catalog/facebook-pixel-server-side/#default-mappings-to-facebook-properties). Other fields such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) can all be collected from the browser and passed to the server and then manually entered into the events.
-
-#### Deduplication considerations
-Events will only be deduplicated if the same event is sent first from the browser and then from the server. When this sequence occurs the server event will be discarded. If you send two consecutive browser events with the same information, neither will be discarded. If you send two consecutive server events with the same information, neither will be discarded.
-
-### Send different events; some from the browser others from the server
-
-#### Description
-This approach can be used if you want to separate events completed on a user's browser from events completed outside the browser. Sensitive information is best kept out of browsers. Any data you don’t want exposed to users should only be sent server-side. You can also set up the Conversions API to measure customer actions that are deeper in your marketing funnel. Seeing these deeper funnel events means you can more accurately measure how your ads are helping you reach your business goals.
-
-#### Match rate considerations
-For this option to work best, the same `external_id` needs to be passed from the browser and from the server. To easily achieve this go to your Segment destination settings for Facebook Pixel and toggle on the setting called **Use UserId or Anonymous Id as External Id**. The Facebook Conversions API destination uses the userId (or anonymousId if not present) to set the External Id by default. Therefore enabling this on Facebook Pixel will allow Facebook to match the users. There are some additional steps you can take to increase the match rate for server-side events. [User traits can be passed into the context object of the track events](/docs/connections/destinations/catalog/facebook-pixel-server-side/#default-mappings-to-facebook-properties). Other fields such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) can all be collected from the browser and passed to the server and then manually entered into the events.
-
-#### Deduplication considerations
-If you choose this option, you do not need to worry about event deduplication.
-
-### Only send events from the server 
-
-#### Description
-
-This approach can be used if you do not wish to track users from the browser with Facebook Pixel. Facebooks Conversions API allows you to have control over your customer data by enabling complete control over the identifiers that are passed to Facebook. This is different from the default behavior of Facebook Pixel which collects cookie data, as well as browser data such as the IP Address and the User Agent.
+This approach provides a redundancy that ensures maximum signal reliability. Events that previously could have been lost (for several different reasons) when sent from browser, are now captured using the conversions API. You can use this if you do not want to miss any events coming from the browser.
 
 #### Match rate considerations
 
-Without certain data fields collected from the browser the match rate will not be as strong when using Facebook Conversions API as a stand alone. However, there are some steps you can take to increase the match rate for server-side events. [User traits can be passed into the context object of the track events](/docs/connections/destinations/catalog/facebook-conversions-api/#default-mappings-to-facebook-properties). Other fields such as `userAgent` and `ip` address can be collected from the browser and passed to the server and then manually entered into the events.
+For this option to work best, you must pass the same `external_id` from both the browser and the server sources.
+To do this, go to your Facebook Pixel destination settings in Segment, and enable **Use UserId or Anonymous Id as External Id**. By default the Facebook Conversions API destination uses the `userId` (or `anonymousId` if not present) to set the External Id, so when you set up Facebook Pixel to use the same settings, Facebook can then match the users.
+
+You can also increase the match rate for events from a server source by sending [user traits in the context object of the track events](/#default-mappings-to-facebook-properties). You can also collect other fields from the browser, such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) and pass them to the server, and manually add them to the events.
 
 #### Deduplication considerations
-If you choose this option, you do not need to worry about event deduplication.
+
+Events are only deduplicated if the same event is sent _first_ from the browser and _then_ from the server. If they are sent from the server and then the browser, they create a duplicate. When events are received in this order, the server event is discarded. If you send two consecutive browser events with the same information, neither is discarded. If you send two consecutive server events with the same information, neither is be discarded.
+
+### Send different events - some from the browser others from the server
+
+Use this approach if you want to separate tracking events completed on a user's browser from events completed outside the browser, such as a server-based payment system. Sensitive information is best kept out of browsers, so any data you don’t want exposed to users should only be sent using a server source. You can also set up the Conversions API to measure customer actions that are deeper in your marketing funnel. Seeing these deeper funnel events means you can more accurately measure how your ads are helping you reach your business goals.
+
+#### Match rate considerations
+
+For this option to work best, the same `external_id` needs to be passed from the browser and from the server. To easily achieve this go to your Segment destination settings for Facebook Pixel and toggle on the setting called **Use UserId or Anonymous Id as External Id**. The Facebook Conversions API destination uses the userId (or anonymousId if not present) to set the External Id by default. Therefore enabling this on Facebook Pixel will allow Facebook to match the users.
+
+You can also increase the match rate for events from a server source by sending [user traits in the context object of the track events](/#default-mappings-to-facebook-properties). You can also collect other fields from the browser, such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) and pass them to the server, and manually add them to the events.
+
+#### Deduplication considerations
+
+If you choose this option, each source sends different events and no deduplication is needed.
+
+### Only send events from the server
+
+Use this approach if you don't want to track users from the browser with Facebook Pixel. By default, Facebook Pixel collects cookie data, as well as browser data such as the IP Address and the User Agent, some of which you might not want to collect. By sending from a Segment server source to Facebook's Conversions API, you can control which identifiers you pass to Facebook.
+
+#### Match rate considerations
+
+If you use Facebook Conversions API as a stand-alone without certain data fields collected from the browser, the match rate might not be as high as if you included them.
+
+You can also increase the match rate for events from a server source by sending [user traits in the context object of the track events](/#default-mappings-to-facebook-properties). You can also collect other fields from the browser, such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) and pass them to the server, and manually add them to the events.
+
+
+#### Deduplication considerations
+If you choose this option, you are only sending events once, and no deduplication is needed.
 
 
 ## Track
@@ -91,9 +101,9 @@ Currently, Facebook Conversions only supports Track calls.
 
 For more information about Track calls, see the [Track method](/docs/connections/spec/track/) in the Segment Spec.
 
-## Server Event Parameter Requirements 
+## Server Event Parameter Requirements
 
-Beginning February 15th, 2021, Facebook will require the `action_source` server event parameter for all events sent to the Conversions API. This parameter is used to specify where the conversions occurred. If `action_source` is set to 'website' then the `client_user_agent` and the `event_source_url` parameters are also required. Events sent to the Conversions API after February 15th that do not meet the requirements may not be available for optimization, targeting, or measurement.
+Beginning February 15th 2021, Facebook requires the `action_source` server event parameter for all events sent to the Conversions API. This parameter is used to specify where the conversions occurred. If `action_source` is set to 'website' then the `client_user_agent` and the `event_source_url` parameters are also required. Events sent to the Conversions API after February 15th that do not meet the requirements may not be available for optimization, targeting, or measurement.
 
 | Server Event Parameter | Requirement                                 | Implementation                                                                                       |
 | ---------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
@@ -104,7 +114,7 @@ Beginning February 15th, 2021, Facebook will require the `action_source` server 
 
 ### Action Source
 
-`action_source` is set to "website" as a default value. If a mobile library is used then `action_source` defaults to “app”. 
+`action_source` is set to "website" as a default value. If a mobile library is used then `action_source` defaults to “app”.
 
 You can set `action_source` manually by passing it as a property of a Track event. You can use either snake case or camel case to include `action_source` as a property in Track events.
 
@@ -122,19 +132,19 @@ You can set `action_source` manually by passing it as a property of a Track even
 
 ### Client User Agent
 
-`client_user_agent` is set by including `context.userAgent` in the track event. The value used should be the user agent of the browser where the conversion event occurred. If you're using a server library, set `client_user_agent` manually. If you're using the Segment web library, `client_user_agent` is set automatically. 
+`client_user_agent` is set by including `context.userAgent` in the track event. The value used should be the user agent of the browser where the conversion event occurred. If you're using a server library, set `client_user_agent` manually. If you're using the Segment web library, `client_user_agent` is set automatically.
 
 ### Event Source URL
 
-`event_source_url` is set by including `context.page.url` in the track event. The value used should be the browser URL where the conversion event occurred. If you're using a server library, set `event_source_url` manually. If you're using the Segment web library, `event_source_url` is set automatically. 
+`event_source_url` is set by including `context.page.url` in the track event. The value used should be the browser URL where the conversion event occurred. If you're using a server library, set `event_source_url` manually. If you're using the Segment web library, `event_source_url` is set automatically.
 
 ### Implementing Server Event Parameter Requirements
 
 If `action_source` is set to 'website', the `context.userAgent` and the `context.page.url` fields are required. Segment server-side libraries do not collect `context.userAgent` or `context.page.url` by default. This data must be retrieved manually from the client and passed to the server.
 
-The snippet below provides an example of a [`Product Added`](/docs/connections/spec/ecommerce/v2/#product-added) event using Node.js. Notice in this example that the `action_source` parameter has not been set manually by passing this field into the event. The `action_source` parameter will default to "website". Since `action_source` = "website" the `client_user_agent` and the `event_source_url` parameters are required. Therefore the `context.userAgent` and the `context.page.url` fields have been  manually passed into the event. 
+The snippet below provides an example of a [`Product Added`](/docs/connections/spec/ecommerce/v2/#product-added) event using Node.js. Notice in this example that the `action_source` parameter has not been set manually by passing this field into the event. The `action_source` parameter will default to "website". Since `action_source` = "website" the `client_user_agent` and the `event_source_url` parameters are required. Therefore the `context.userAgent` and the `context.page.url` fields have been  manually passed into the event.
 
-```javascript 
+```javascript
 analytics.track({
   context: {
     userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_1_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36",
@@ -180,7 +190,7 @@ The following mappings are automatic and require no additional set up. Any of th
 
 ### Custom Mappings to Facebook Standard Events
 
-To map any of your Segment Events (not listed in the table above) to a Facebook _Standard event_, use the Segment destination setting labeled **Map Your Events to Standard FB Events**. Then, when Segment receives an event that appears in that mapping, the event is sent to Facebook as the standard event you specified. All properties included in the event are sent as event properties. 
+To map any of your Segment Events (not listed in the table above) to a Facebook _Standard event_, use the Segment destination setting labeled **Map Your Events to Standard FB Events**. Then, when Segment receives an event that appears in that mapping, the event is sent to Facebook as the standard event you specified. All properties included in the event are sent as event properties.
 
 
 ### Facebook Custom Events
