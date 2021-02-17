@@ -31,6 +31,22 @@ This page is about the **Facebook Conversions**. For documentation on other Face
 
 {% include content/connection-modes.md %}
 
+### Set up in Facebook
+
+**For New Pixels**
+1. Select “Connect a New Data Source”.
+2. Select Web, App, or Offline and then click the Get Started button.
+3. Select Conversions API and then click "Connect".
+4. Choose Segment from the list of Partners.
+5. Toggle the switch to  “Authorize Segment Connection” and then click "Continue".
+
+**For Existing Pixels**
+1. Go to the Facebook Business [Event Manager Pixel Settings](https://business.facebook.com/events_manager/pixel/settings).
+2. Scroll down to the **Set up through a partner integration** section and click "Choose Partner".
+3. Choose Segment from the list of Partners.
+4. Toggle the switch to  “Authorize Segment Connection” and then click "Continue".
+
+
 ### Set up in Segment
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
@@ -39,8 +55,9 @@ This page is about the **Facebook Conversions**. For documentation on other Face
 4. Go to the Facebook Business [Event Manager Pixel Settings](https://business.facebook.com/events_manager/pixel/settings), find and copy the "Pixel ID".
 5. Enter the "Pixel ID" in the "Facebook Conversions API" destination settings in Segment.
 
+
 > info ""
-> See the Use Cases section below for additional implementation steps
+> See the **Configuration options** section below for additional implementation steps
 
 ## Configuration options
 
