@@ -18,7 +18,7 @@ redirect_from: '/connections/destinations/catalog/facebook-conversions-api/'
 
 ### Other Facebook Destinations Supported by Segment
 
-This page is about the **Facebook Conversions**. For documentation on other Facebook destinations, including Facebook Pixel, see the pages linked below.
+This page is about the **Facebook Conversions API** destination. For documentation on other Facebook destinations, including Facebook Pixel, see the pages linked below.
 
 | **Facebook Destination**                                                                                    | Supported by Personas |
 | ----------------------------------------------------------------------------------------------------------- | --------------------- |
@@ -31,20 +31,22 @@ This page is about the **Facebook Conversions**. For documentation on other Face
 
 {% include content/connection-modes.md %}
 
-### Set up in Facebook
+Next, set up your Pixel to work with the Facebook Conversions API destination. You can use an existing Facebook Pixel that you already have set up, or create a new one. If you don't already have a Facebook Pixel configured, follow the "New Pixel" instructions below to create one.
 
-**For New Pixels**
-1. Select “Connect a New Data Source”.
-2. Select Web, App, or Offline and then click the Get Started button.
-3. Select Conversions API and then click "Connect".
-4. Choose Segment from the list of Partners.
-5. Toggle the switch to  “Authorize Segment Connection” and then click "Continue".
+### Option 1 - Create a new pixel
 
-**For Existing Pixels**
-1. Go to the Facebook Business [Event Manager Pixel Settings](https://business.facebook.com/events_manager/pixel/settings).
+1. Go to the Facebook Business [Events Manager](https://www.facebook.com/events_manager/) and click  **Connect a New Data Source**.
+2. Choose Web, App, or Offline and then click **Get Started**.
+3. Select "Conversions API" and then click **Connect**.
+4. Choose "Segment" from the list of partners.
+5. Enable the setting to "Authorize Segment Connection" and then click **Continue**.
+
+### Option 2 - Configure an existing pixel
+
+1. Go to the Facebook Business [Event Manager Pixel Settings](https://www.facebook.com/events_manager/pixel/settings).
 2. Scroll down to the **Set up through a partner integration** section and click "Choose Partner".
 3. Choose Segment from the list of Partners.
-4. Toggle the switch to  “Authorize Segment Connection” and then click "Continue".
+4. Toggle the switch to  "Authorize Segment Connection" and then click "Continue".
 
 
 ### Set up in Segment
@@ -81,7 +83,7 @@ You can also increase the match rate for events from a server source by sending 
 
 #### Deduplication considerations
 
-Events are only deduplicated if the same event is sent _first_ from the browser and _then_ from the server. If they are sent from the server and then the browser, they create a duplicate. When events are received in this order, the server event is discarded. If you send two consecutive browser events with the same information, neither is discarded. If you send two consecutive server events with the same information, neither is be discarded.
+Events are only deduplicated if the same event is sent _first_ from the browser and _then_ from the server.  When events are received in this order, the server event is discarded. If the events are sent from the server and _then_ the browser, they create a duplicate. If you send two consecutive browser events with the same information, neither is discarded. If you send two consecutive server events with the same information, neither is be discarded.
 
 ### Send different events - some from the browser others from the server
 
@@ -125,13 +127,13 @@ Beginning February 15th 2021, Facebook requires the `action_source` server event
 | Server Event Parameter | Requirement                                 | Implementation                                                                                       |
 | ---------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
 | `action_source`        | Always required                             | It is set automatically but it can be set manually.                                                  |
-| `client_user_agent`    | Only required if `action_source` = “website" | It must be set manually if using a server library. It is set automatically if using the Segment web library. |
-| `event_source_url`     | Only required if `action_source` = “website" | It must be set manually if using a server library. It is set automatically if using the Segment web library. |
+| `client_user_agent`    | Only required if `action_source` = "website" | It must be set manually if using a server library. It is set automatically if using the Segment web library. |
+| `event_source_url`     | Only required if `action_source` = "website" | It must be set manually if using a server library. It is set automatically if using the Segment web library. |
 
 
 ### Action Source
 
-`action_source` is set to "website" as a default value. If a mobile library is used then `action_source` defaults to “app”.
+`action_source` is set to "website" as a default value. If a mobile library is used then `action_source` defaults to "app".
 
 You can set `action_source` manually by passing it as a property of a Track event. You can use either snake case or camel case to include `action_source` as a property in Track events.
 
