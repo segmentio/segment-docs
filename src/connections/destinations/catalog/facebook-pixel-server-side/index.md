@@ -57,7 +57,7 @@ This page is about the **Facebook Conversions**. For documentation on other Face
 
 
 > info ""
-> See the **Configuration options** section below for additional implementation steps
+> See the [Configuration options](#configuration-options) section below for additional implementation steps
 
 ## Configuration options
 
