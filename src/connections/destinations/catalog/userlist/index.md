@@ -17,7 +17,8 @@ This destination is maintained by Userlist. For any issues with the destination,
 2.  Search for "Userlist" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3.  In the Userlist Segment destination settings, enter your Userlist "Push API Key". You can find this key in your [Userlist Push API settings](https://app.userlist.com/settings/push).
 
-_**NOTE:** The Userlist Destination does not support tracking of anonymous users, so make sure to call `identify` before calling `track` or `group`. If you do call `track` or `group` on unidentified users, you will receive a 400 error which you can disregard if it was intentional._
+> info""
+> **NOTE:** The Userlist Destination does not support tracking of anonymous users, so make sure to call `identify` before calling `track` or `group`. If you do call `track` or `group` on unidentified users, you will receive a 400 error which you can disregard if it was intentional.
 
 ## Identify
 
