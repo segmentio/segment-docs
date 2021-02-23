@@ -17,6 +17,9 @@ When you use Segment as the single point of collection for your customer data, y
 
 Privacy Portal features are available to all Segment workspaces, however only workspace owners can access the Privacy Portal.
 
+{% include content/plan-grid.md name="privacy" %}
+
+
 ## Privacy Inbox
 
 The Inbox helps you keep track of new restricted data types as they are captured, quickly classify them, and build a data Inventory.
