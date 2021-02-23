@@ -2,6 +2,9 @@
 title: Personas Space Set Up
 ---
 
+{% include content/plan-grid.md name="personas-id" %}
+
+
 ## Step One: Create a New Dev Space
 
 When starting with Personas, begin by creating a *Dev* space. This will be your sandbox instance of Personas to test new Identity settings, audiences and traits before applying the same changes to a *Prod* space that would immediately affect production data flowing to downstream destinations.

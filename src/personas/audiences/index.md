@@ -3,6 +3,9 @@ title: Personas Audiences Overview
 redirect_from: '/personas/audiences'
 ---
 
+{% include content/plan-grid.md name="personas" %}
+
+
 Audiences allow you to define cohorts of users or accounts based on their event behavior and traits that Segment then keeps up-to-date over time. Audiences can be built from your core **tracking events**, **traits**, or **computed traits**. These audiences can then be synced to hundreds of destinations and are available using the [Profile API](/docs/personas/profile-api).
 
 ## Building an Audience

@@ -2,6 +2,9 @@
 title: Personas Identity Resolution Overview
 ---
 
+{% include content/plan-grid.md name="personas-id" %}
+
+
 ## Identity Graph
 
 Identity Resolution sits at the core of Personas. The Segment Identity Graph merges the complete history of each customer into a single profile, no matter where they interact with your business. Identity Resolution allows you to understand a user's interaction across web, mobile, server, and third party partner touch-points in realtime, using an online and offline ID graph with support for cookie IDs, device IDs, emails, and custom external IDs. If you are sending the [group](/docs/connections/spec/group) call, you can also understand user behavior at the account-level.

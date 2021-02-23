@@ -2,6 +2,9 @@
 title: Personas Quickstart Guide
 ---
 
+{% include content/plan-grid.md name="personas" %}
+
+
 This guide walks you through the set up process for a simple Personas Space, which you can use if your Segment implementation is simple. If your implementation is complex, you can use this to demonstrate and test Personas before working on a more complex configuration.
 
 ## Personas Configuration Requirements

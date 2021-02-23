@@ -2,6 +2,10 @@
 title: Identity Resolution Settings
 redirect_from: '/personas/identity-resolution/identity-graph-rules/'
 ---
+
+{% include content/plan-grid.md name="personas-id" %}
+
+
 > note ""
 > **NOTE:** The steps in this guide pertain to spaces created before September 27th, 2020. For spaces created after September 27th, 2020, please refer to the onboarding guide [here](/docs/personas/identity-resolution/identity-resolution-onboarding/).
 
@@ -151,7 +155,7 @@ For example, consider a Personas space with the following Identity Resolution co
 | email        | 5     | 2        |
 | anonymous_id | 5     | 3        |
 
-A profile already exists with `user_id` **abc123** and `email` **jane@example1.com**. A new event comes in with new `user_id` **abc456** but the same `email` **jane@example1.com**. 
+A profile already exists with `user_id` **abc123** and `email` **jane@example1.com**. A new event comes in with new `user_id` **abc456** but the same `email` **jane@example1.com**.
 
 If this event maps to this profile, the resulting profile would then contain two `user_id` values and one `email`. Given that `user_id` has a limit of 1, this exceeds the limit of that identifier. As a result, Segment checks the priority of the `user_id` identifier. Because `email` and `user_id` are the two identifiers on the event and `email` ranks lower than `user_id`, Segment demotes `email` as an identifier on the incoming event and tries again.
 

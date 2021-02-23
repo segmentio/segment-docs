@@ -3,6 +3,9 @@ title: Using your Personas data
 redirect_from: '/personas/activation/'
 ---
 
+{% include content/plan-grid.md name="personas" %}
+
+
 You can send your Personas Computed Traits and Audiences to your Segment Destinations, which allows you to personalize messages across channels, optimize ad spend, and improve targeting. This page provides an overview of different ways to activate Personas data in Segment Destinations.
 
 <!-- TODO: image here? -->
