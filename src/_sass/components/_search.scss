@@ -1,11 +1,61 @@
 .search {
   display: none;
 
-  @include breakpoint(large up)  {
+  @include breakpoint(large up) {
     display: block;
   }
 
   &--mobile {
     display: block;
   }
+}
+
+.algolia-autocomplete {
+  width: 100%;
+}
+
+.aa-dataset-article {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 10px 8px 15px -7px rgba(0, 0, 0, 0.29);
+  margin-top: 10px;
+}
+
+.aa-suggestion {
+  padding: 15px 30px;
+  border-bottom: 1px solid #ddd;
+}
+
+.ais-Highlight {
+  background-color: #f6fcfe;
+  font-weight: bold;
+  font-style: normal;
+}
+
+a.aa-link:hover {
+  text-decoration: none;
+}
+
+
+.aa-title {
+  font-size: 12px;
+  color: #2952cc;
+  line-height: 1.5;
+}
+
+.aa-heading {
+  color: #ccc;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.aa-content, .aa-empty {
+  font-size: 10px;
+  color: grey;
+  line-height: 1.5
+}
+
+.aa-empty{
+  padding:15px 15px;
 }
