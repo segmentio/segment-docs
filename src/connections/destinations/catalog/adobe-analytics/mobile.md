@@ -26,7 +26,7 @@ Before you start sending data from your mobile application to Adobe Analytics, y
 compile 'com.segment.analytics.android.integrations:adobeanalytics:+'
 ```
 
-After you add the dependency, register the integration with the Segment SDK. To do this, import the Amplitude integration:
+After you add the dependency, register the integration with the Segment SDK. To do this, import the Adobe Analytics integration:
 
 ```java
 import com.segment.analytics.android.integrations.adobeanalytics.AdobeIntegration;
