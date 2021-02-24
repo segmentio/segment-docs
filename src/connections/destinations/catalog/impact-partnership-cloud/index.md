@@ -15,7 +15,7 @@ This destination is maintained by Impact. For any issues with the destination, c
 2. Search for "Impact Partnership Cloud" in the Destinations Catalog, and select the Impact Partnership Cloud destination.
 3. Choose which Source should send data to the Impact Partnership Cloud destination.
 4. Go to the [Impact Partnership Cloud Settings](https://app.impact.com), find and copy the "Account SID", "Auth Token", and "Campaign ID".
-5. Enter the "Account SID", "Auth Token", and "Campaign ID" in the Impact Partnership Cloud destination settings in Segment.
+5. Back in the Impact Partnership Cloud destination settings in Segment, enter the "Account SID", "Auth Token", and "Campaign ID".
 
 ## Page
 
