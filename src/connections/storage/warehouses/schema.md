@@ -25,7 +25,7 @@ The table below describes the schema in Segment Warehouses:
   </tr>
   <tr>
     <td>`<source>.users`</td>
-    <td>A table with unique `identify` calls. `identify` calls are upserted on `user_id` into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a user. The `id` column in the users table is the same as the `user_id` column in the identifies table. Also note that this table won't have an `anonymous_id` column since a user can have multiple anonymousIds. To get at a user's anonymousIds, you'll need to query the identifies table. *If you observe any duplicates in the users table, [contact us](https://segment.com/help/contact/).*</td>
+    <td>A table with unique `identify` calls. `identify` calls are upserted on `user_id` into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a user. The `id` column in the users table is the same as the `user_id` column in the identifies table. Also note that this table won't have an `anonymous_id` column since a user can have multiple anonymousIds. To get at a user's anonymousIds, you'll need to query the identifies table. *If you observe any duplicates in the users table [contact us](https://segment.com/help/contact/) (unless you are using Bigquery, where [this is expected](/docs/connections/storage/catalog/bigquery/#schema)).*</td>
   </tr>
   <tr>
     <td>`<source>.pages`</td>
