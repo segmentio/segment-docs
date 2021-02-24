@@ -19,7 +19,7 @@ This destination is maintained by Impact. For any issues with the destination, c
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you aren’t familiar with the Segment Spec, take a look at the [Page method documentation](https://segment.com/docs/connections/spec/page/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.page("Home")
