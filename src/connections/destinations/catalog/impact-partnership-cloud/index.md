@@ -39,7 +39,7 @@ If you aren’t familiar with the Segment Spec, take a look at the [Screen metho
 ```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
-Segment sends Screen calls to Impact Partnership Cloud as a `Clicks` event, if they fit the definition of a unique click, or a `Page Load` event.
+Segment sends Screen calls to Impact Partnership Cloud as a `Clicks` event if they fit the definition of a unique click, or as a `Page Load` event.
 
 
 ## Identify
