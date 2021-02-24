@@ -25,7 +25,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.page("Home")
 ```
 
-Segment sends Page calls to Impact Partnership Cloud as a `Clicks` event, if they fit the definition of a unique click, or a `Page Load` event.
+Segment sends Page calls to Impact Partnership Cloud as a `Clicks` event, if they fit the definition of a unique click, or as a `Page Load` event.
 
 > success ""
 > **Tip!** To accurately track and attribute actions, send a Page call with every page load.
