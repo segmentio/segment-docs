@@ -12,9 +12,9 @@ To learn more about Segment's mobile libraries, see the [iOS](/docs/connections/
 
 Before you start sending data from your mobile application to Adobe Analytics, you must first finish the following set up steps:
 
-- First, enable the Segment-Adobe Analytics destination from in your Segment workspace
+- First, enable the Segment-Adobe Analytics destination from in your Segment workspace.
 - From your Adobe Mobile Services dashboard, check and customize the settings on the "Manage App Settings" tab.
-- Download these settings as the `ADBMobileConfig.json` file by clicking the **Config JSON** link at the bottom of the same tab. Follow the instructions in Adobe's documentation, [here for iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/dev_qs.html), and [here for Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/dev_qs.html)
+- Download these settings as the `ADBMobileConfig.json` file by clicking the **Config JSON** link at the bottom of the same tab. Follow the instructions in Adobe's documentation [here for iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/dev_qs.html) and [here for Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/dev_qs.html).
 - Finally, follow the instructions below for each mobile environment to bundle Segment's Adobe Analytics SDK in your project.
 
 > success ""
@@ -22,10 +22,22 @@ Before you start sending data from your mobile application to Adobe Analytics, y
 
 #### For Android
 ```java
-compile 'com.segment.analytics.android.integrations:adobe-analytics:1.0.0'
+compile 'com.segment.analytics.android.integrations:adobeanalytics:+'
 ```
 
-**Note** If you're working on Android, you'll also need to add these permissions to your `AndroidManifest.xml`:
+After adding the dependency, you must register the integration with our SDK. To do this, import the Amplitude integration:
+```java
+import com.segment.analytics.android.integrations.adobeanalytics.AdobeIntegration;
+```
+
+And add the following line:
+```java
+analytics = new Analytics.Builder(this, "write_key")
+                .use(AdobeIntegration.FACTORY)
+                .build();
+```
+
+**Note:** If you're working on Android, you'll also need to add these permissions to your `AndroidManifest.xml`:
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
@@ -37,9 +49,6 @@ You can see the [Android SDK changelog](https://github.com/segment-integrations/
 #### For iOS
 ```objc
 pod 'Segment-Adobe-Analytics'
-iOS:
-```objc
-pod 'Segment-Adobe-Analytics', '1.1.0-beta'
 ```
 
 You can see the [iOS SDK changelog](https://github.com/segment-integrations/analytics-ios-integration-adobe-analytics/blob/master/Changelog.md) in the open-source repository for information about specific versions of the iOS Adobe Analytics SDK.
