@@ -12,7 +12,11 @@ The Home page shows a summary of errors in the workspace's sources and destinati
 
 ![](/docs/segment-app/images/workspace-home.png)
 
-The Workspace Home page displays when the data it represents was last updated. You can click the **last updated** line to refresh the display. You can also choose between a 24-hour and 7-day view of the data from the drop-down menu at the right. The page automatically updates the graphs and statistics when you change your selection.
+#### Workspace Home time period
+
+The Workspace Home page displays when the data it represents was last updated. You can click the **last updated** line to refresh the display.
+
+You can also use the drop-down menu at the right to choose between a 24-hour and 7-day rolling view of the data. The page automatically updates the graphs and statistics when you change your selection.
 
 ## Sources - Violations
 
