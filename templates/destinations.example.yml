@@ -16089,10 +16089,10 @@ destinations:
     settings: []
 - name: catalog/destinations/userlist
   display_name: Userlist
-  description: Userlist.io is a simple behavior-based email automation tool for SaaS
+  description: Userlist is a simple behavior-based email automation tool for SaaS
     companies. See what your users do, and send them relevant behavior-driven communication.
   type: STREAMING
-  website: http://userlist.io
+  website: http://userlist.com
   status: PUBLIC_BETA
   logos:
     logo: https://public-segment-devcenter-production.s3.amazonaws.com/4aa3cdd4-c5fe-4158-a196-ebd4bcfaaa7a.svg
