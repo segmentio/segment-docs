@@ -95,6 +95,6 @@ To make sure you have enough headroom for quick queries while using Segment Ware
 *   **Size up your cluster.** If you find your queries are getting slow at key times during the day, add more nodes to give enough room for us to load data and for your team to run their queries.
 *   **Disable unused sources.** If you're not actively analyzing data from a source, consider disabling the source for your Warehouse (available for business tier). If you don't use a source anymore—perhaps you were just playing around with it for testing, you might even want to remove it completely. This will kick off fewer jobs in our ETL process.
 *   **Schedule syncs during off times.** If you're concerned about query times and you don't mind data that's a little stale, you can schedule your syncs to run when most of your team isn't actively using the database. (Available for business tier customers.)
-*   **Schedule regular vacuums.** Make sure to schedule regular vacuums for your cluster, so old deleted data isn't taking up space. (You can do this through Segment if you're on the business tier.)
+*   **Schedule regular vacuums.** Make sure to schedule regular vacuums for your cluster, so old deleted data isn't taking up space.
 
 We hope these steps will speed up your workflow! If you need any other help, feel free to [contact us](https://segment.com/help/contact/).
