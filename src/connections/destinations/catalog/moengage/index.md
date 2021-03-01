@@ -4,7 +4,7 @@ title: MoEngage Destination
 
 ## Getting Started
 
-Once you add the Segment-Moengage library to your app, you can enable MoEngage from the Segment App. These new settings can take up to an hour to propagate to your existing users. For new users, it'll be instantaneous!
+Once you add the Segment-MoEngage library to your app, you can enable MoEngage from the Segment App. These new settings can take up to an hour to propagate to your existing users. For new users, it'll be instantaneous!
 
 The Segment-MoEngage Integration is a bundled integration, meaning it requires that you add a client-side integration to your app.
 
@@ -29,7 +29,7 @@ users it’ll be instantaneous! Segment-MoEngage Integration is a bundled integr
 
 To get started with MoEngage on iOS, first integrate your app with the [MoEngage-Segment-iOS](https://github.com/moengage/MoEngage-Segment-iOS) library. You can integrate MoEngage and Segment with [CocoaPods](http://cocoapods.org).
 
-  * Initialise pod with pod init command, this will create a podfile for your project.
+  * Initialize pod with pod init command, this will create a podfile for your project.
   * Update your podfile by adding pod '**Segment-MoEngage**' as shown below:
 
   ```ruby
@@ -108,9 +108,9 @@ To differentiate between those, use one of the method below:
 
 Read more on [install/update differentiation](https://docs.moengage.com/docs/installupdate-differentiation).
 
-### Setting Data Center
+### Set the data center
 
-By default, the data center in SDK is set to `DATA_CENTER_01`, make sure to set the correct Data Center depending on your account using this [doc](https://docs.moengage.com/docs/data-redirection). Its important to set the correct Data Center while integration, if not set correctly will result in MoEngage SDK features not working.
+By default, the data center setting in the SDK is set to `DATA_CENTER_01`. Follow the steps in the [MoEngage - Data Redirection](https://docs.moengage.com/docs/data-redirection) to update the data center value. If not set correctly, several features of the MoEngage SDK will not function.
 
 ### Using features provided in the MoEngage SDK
 
@@ -121,7 +121,7 @@ Push Notifications are a great way to keep your users engaged and informed about
 
 **Segment Push Implementation:**
 
-1. Follow the directions to register for push notifications [using Segment SDK](/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications).
+1. Follow the directions to register for push notifications [with the Segment SDK](/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications).
 
 2. In your application’s application:didReceiveRemoteNotification: method, add the following:
   ```objc
@@ -142,13 +142,12 @@ Push Notifications are a great way to keep your users engaged and informed about
 For information about the MoEngage push implementation, see [**Push Notifications**](https://docs.moengage.com/docs/push-notifications) in the MoEngage documentation.
 
 
-#### In-App Messaging
-In-App Messaging are custom views which you can send to a segment of users to show custom messages or give new offers or take to some specific pages. Follow the link to know more about inApp Messaging and how to use it in your application:
-[**InApp NATIV**](https://docs.moengage.com/docs/in-app-nativ)
+#### In-app messaging
+In-App Messages are custom views which you can send to a set of users to show custom messages,  give new offers, or direct to a specific page. For more information about In-app messaging, see [MoEngage - In-App NATIV](https://docs.moengage.com/docs/in-app-nativ)
 
 
 #### Cards
-Create targeted or automated App Inbox/NewsFeed messages that can be grouped into various categories, and target your users with different updates or offers that can stay in the Inbox/Feed over a designated period of time. Follow the link to know more about [Cards](https://docs.moengage.com/docs/ios-cards).
+Create targeted or automated App Inbox/NewsFeed messages that can be grouped into various categories, and target your users with different updates or offers that can stay in the Inbox/Feed over a designated period of time. For more information about cards, see [MoEngage - Cards](https://docs.moengage.com/docs/ios-cards).
 
 
 #### Compliance
@@ -205,21 +204,22 @@ Analytics analytics = new Analytics.Builder(this, "write_key")
 ```
 
 
-### Initialise the MoEngage SDK
+### Initialize the MoEngage SDK
 
-Get APP ID from the Settings Page `Dashboard --> Settings --> App --> General` and initialise the MoEngage SDK in the  onCreate method of the `Application` class
+Copy the APP ID from the Settings Page `Dashboard --> Settings --> App --> General` and initialize the MoEngage SDK in the onCreate method of the `Application` class
 
-**Note:** It is recommended that you initialise the SDK on the main thread inside `onCreate()` and not create a worker thread and initialise the SDK on that thread.
+> info ""
+> **Note:** MoEngage recommend that you initialize the SDK on the main thread inside `onCreate()` and not create a worker thread and initialize the SDK on that thread.
 
 ```java
 // this is the instance of the application class and "XXXXXXXXXXX" is the APP ID from the dashboard.
 MoEngage moEngage = new MoEngage.Builder(this, "XXXXXXXXXXX")
             .enableSegmentIntegration()
             .build();
-MoEngage.initialise(moEngage);
+MoEngage.initialize(moEngage);
 ```
 
-### Install/Update Differentiation
+### Install or update differentiation
 This is required for migrations to the MoEngage Platform so the SDK can determine whether the user is a new user on your app, or an existing user who updated to the latest version.
 
 If the user was already using your application and has just updated to a new version which has the MoEngage SDK, below is an example call:
@@ -236,13 +236,14 @@ MoEHelper.getInstance(getApplicationContext()).setAppStatus(AppStatus.INSTALL);
 
 ### Configure Push Notifications
 
-Copy the Server Key from the FCM console and add it to the MoEngage Dashboard(Not sure where to find the Server Key refer to [Getting FCM Server Key](https://docs.moengage.com/docs/getting-fcmgcm-server-key). To upload it, go to the Settings Page `Dashboard --> Settings --> Channel --> Push --> Mobile Push --> Android` and add the Server Key and package name.
+Copy the Server Key from the FCM console and add it to the MoEngage Dashboard. For more information about retrieving the Server Key, see [MoEngage - Getting FCM Server Key](https://docs.moengage.com/docs/getting-fcmgcm-server-key). To upload it, go to the Settings Page `Dashboard --> Settings --> Channel --> Push --> Mobile Push --> Android` and add the Server Key and package name.
 **Please make sure you add the keys both in Test and Live environment.**
 
 #### Add meta information for push notification
 
-To show push notifications some metadata regarding the notification is required where the small icon and large icon drawables being the mandatory ones.
-Refer to the [NotificationConfig](https://moengage.github.io/android-api-reference/core/core/com.moengage.core.config/-notification-config/index.html) API reference for all the possible options.
+To display push notifications, some metadata regarding the notification is required. For example, the small icon and large icon drawables are mandatory.
+
+Refer to the [MoEngage - NotificationConfig](https://moengage.github.io/android-api-reference/core/core/com.moengage.core.config/-notification-config/index.html) API reference for all the possible options.
 
 Use the `configureNotificationMetaData()` to pass on the configuration to the SDK.
 
@@ -253,7 +254,7 @@ MoEngage moEngage =
             .configureNotificationMetaData(new NotificationConfig(R.drawable.small_icon, R.drawable.large_icon, R.color.notiColor, "sound", true, true, true))
             .enablePartnerIntegration(IntegrationPartner.SEGMENT)
             .build();
-MoEngage.initialise(moEngage);
+MoEngage.initialize(moEngage);
 ```
 
 #### Configuring Firebase Cloud Messaging
@@ -263,9 +264,9 @@ For showing Push notifications there are 2 important steps:
 1. Registration for Push, for example generating push token.
 2. Receiving the Push payload from Firebase Cloud Messaging(FCM) service and showing the notification on the device.
 
-##### Push Registration and Receiving handled by App
+##### Push registration and receiving handled by the application
 
-###### How to opt-out of MoEngage Registration?
+###### Opt-out of MoEngage registration
 
 To opt-out of MoEngage token registration mechanism disable token registration while configuring FCM in the `MoEngage.Builder` as shown below
 
@@ -275,12 +276,12 @@ MoEngage moEngage = new MoEngage.Builder(this, "XXXXXXXXXX")
             .configureFcm(FcmConfig(false))
             .enablePartnerIntegration(IntegrationPartner.SEGMENT)
             .build();
-MoEngage.initialise(moEngage);
+MoEngage.initialize(moEngage);
 ```
 
-###### Pass the Push Token To MoEngage SDK
+###### Pass the push token to the MoEngage SDK
 
-The Application would need to pass the Push Token received from FCM to the MoEngage SDK for the MoEngage platform to send out push notifications to the device.
+The Application must pass the Push Token received from FCM to the MoEngage SDK for the MoEngage platform to send out push notifications to the device.
 Use the below API to pass the push token to the MoEngage SDK.
 
 ```java
@@ -314,13 +315,15 @@ Add the below code in your manifest file.
 </service>
 ```
 
-When MoEngage SDK handles push registration it optionally provides a callback to the Application whenever a new token is registered or the token is refreshed.
+When the MoEngage SDK handles push registration, it optionally provides a callback to the Application whenever a new token is registered or the token is refreshed.
+
 An application can get this callback by implementing `FirebaseEventListener` and registering for a callback in the Application class `onCreate()` using `MoEFireBaseHelper.getInstance().addEventListener()`
-Refer to the [API reference](https://moengage.github.io/android-api-reference/moe-push-firebase/moe-push-firebase/com.moengage.firebase.listener/-firebase-event-listener/index.html) for more details on the listener.
+
+Refer to the [MoEngage - API reference](https://moengage.github.io/android-api-reference/moe-push-firebase/moe-push-firebase/com.moengage.firebase.listener/-firebase-event-listener/index.html) for more details on the listener.
 
 
 
-#### Declaring & configuring Rich Landing Activity:
+#### Declare and configure Rich Landing Activity:
 
 Add the following snippet and replace `[PARENT_ACTIVITY_NAME]` with the name of the parent
  activity; `[ACTIVITY_NAME]` with the activity name which should be the parent of the Rich Landing Page
@@ -421,7 +424,7 @@ If you already have these files,
 Use [Identify](/docs/sources/website/analytics.js/#identify) to track user specific attributes. This is equal to [tracking user attributes](https://docs.moengage.com/docs/tracking-web-user-attributes) on MoEngage. MoEngage supports traits supported by Segment as well as custom traits.
 
 ### Track
-Use [track](/docs/sources/website/analytics.js/#track) to track events and user behaviour in your app. This will send the event to MoEngage with the associated properties. Tracking events is essential and will help you create segments for engaging users.
+Use [track](/docs/sources/website/analytics.js/#track) to track events and user behavior in your app. This will send the event to MoEngage with the associated properties. Tracking events is essential and will help you create segments for engaging users.
 
 ### Reset
 If your website supports the ability for a user to logout and login with a new identity, then you’ll need to call [reset](/docs/sources/website/analytics.js/#reset-logout) method in `analytics.js`.
