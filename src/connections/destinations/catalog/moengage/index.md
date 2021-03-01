@@ -100,24 +100,17 @@ To differentiate between those, use one of the method below:
 
  ```objc
  //For new Install call following
- [[MoEngage sharedInstance]appStatus:INSTALL];
+ [[MoEngage sharedInstance] appStatus:INSTALL];
 
  //For an app update call following
- [[MoEngage sharedInstance]appStatus:UPDATE];
+ [[MoEngage sharedInstance] appStatus:UPDATE];
  ```
 
 Read more on [install/update differentiation](https://docs.moengage.com/docs/installupdate-differentiation).
 
-### Data Redirection
+### Setting Data Center
 
-You can redirect data to MoEngage' EU servers. To redirect data to, call the `redirectDataToRegion:` method to redirect the data to the `MOE_REGION_EU` region defined in the 'DataRedirectionRegion' Enumerator. Use the method as shown below:
-
-```objc
- [MoEngage redirectDataToRegion:MOE_REGION_EU];
-```
-
-> note ""
-> **IMPORTANT**: If you use MoEngage in the EU, you must [sign up for the EU environment](https://app-eu.moengage.com).
+By default, the data center in SDK is set to `DATA_CENTER_01`, make sure to set the correct Data Center depending on your account using this [doc](https://docs.moengage.com/docs/data-redirection). Its important to set the correct Data Center while integration, if not set correctly will result in MoEngage SDK features not working.
 
 ### Using features provided in the MoEngage SDK
 
@@ -150,13 +143,16 @@ For information about the MoEngage push implementation, see [**Push Notification
 
 
 #### In-App Messaging
-
-In-App Messaging are custom views which you can send to a segment of users to show custom messages or give new offers or take to some specific pages. Follow the link to know more about  inApp Messaging and how to use it in your application:
+In-App Messaging are custom views which you can send to a segment of users to show custom messages or give new offers or take to some specific pages. Follow the link to know more about inApp Messaging and how to use it in your application:
 [**InApp NATIV**](https://docs.moengage.com/docs/in-app-nativ)
 
 
-#### GDPR Compliance
-The MoEngage SDK is GDPR compliant, follow the doc in this [link](https://docs.moengage.com/docs/gdpr-compliance-1) to know how to use opt-outs for different features.
+#### Cards
+Create targeted or automated App Inbox/NewsFeed messages that can be grouped into various categories, and target your users with different updates or offers that can stay in the Inbox/Feed over a designated period of time. Follow the link to know more about [Cards](https://docs.moengage.com/docs/ios-cards).
+
+
+#### Compliance
+To make the App compliant with policies i.e,GDPR while using our SDK, follow the doc in this [link](https://docs.moengage.com/docs/gdpr-compliance-1).
 
 ### Segment Docs
 For more info on using **Segment for iOS** refer to [**Developer Docs**](/docs/connections/sources/catalog/libraries/mobile/ios/) provided by Segment.
