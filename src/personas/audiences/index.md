@@ -1,6 +1,5 @@
 ---
 title: Personas Audiences Overview
-redirect_from: '/personas/audiences'
 ---
 
 Audiences allow you to define cohorts of users or accounts based on their event behavior and traits that Segment then keeps up-to-date over time. Audiences can be built from your core **tracking events**, **traits**, or **computed traits**. These audiences can then be synced to hundreds of destinations and are available using the [Profile API](/docs/personas/profile-api).
@@ -124,9 +123,9 @@ You can download a copy of your audience by visiting the the audience overview p
 ![](/docs/personas/images/audience_overview.png)
 Audience CSVs are generated on demand. Before you can download the CSV, you will need to generate it. There are three different options for formatting:
 
-- **Unformatted:** Contains two columns. The first contains the user or account key and the second is a JSON object containing the external IDs. Generating this CSV is faster than the formatted option below. [Download example unformatted CSV]({{site.url}}/docs/personas/files/audience_csv_format_a.csv)
-- **Formatted (with indexed columns for ID types with multiple values):** Contains the same first two columns as the unformatted CSV. Additional columns are added for each distinct external ID type. When a given external ID type has more than one value, for example a user with three email addresses, _additional columns with indexed headers are added_, (`email`, `email_1`, `email_2`). [Download example formatted CSV with indexed columns]({{site.url}}/docs/personas/files/audience_csv_format_b.csv)
-- **Single Column (with one external ID type):** Contains only a single column of data with the selected external ID type. When the given external ID type has more than one value, for example a user with two email addresses, _additional rows are added._ Data in this format is hashed by default with the SHA256 hashing algorithm, but may be downloaded raw (unhashed) with appropriate permissions. This format is useful for uploading the audience to destinations like Snapchat or Braze, which may require a single column of hashed emails, for example. [Download example single column hashed CSV]({{site.url}}/docs/personas/files/audience_csv_format_c.csv)
+- **Unformatted:** Contains two columns. The first contains the user or account key and the second is a JSON object containing the external IDs. Generating this CSV is faster than the formatted option below. [Download example unformatted CSV](/docs/personas/files/audience_csv_format_a.csv)
+- **Formatted (with indexed columns for ID types with multiple values):** Contains the same first two columns as the unformatted CSV. Additional columns are added for each distinct external ID type. When a given external ID type has more than one value, for example a user with three email addresses, _additional columns with indexed headers are added_, (`email`, `email_1`, `email_2`). [Download example formatted CSV with indexed columns](/docs/personas/files/audience_csv_format_b.csv)
+- **Single Column (with one external ID type):** Contains only a single column of data with the selected external ID type. When the given external ID type has more than one value, for example a user with two email addresses, _additional rows are added._ Data in this format is hashed by default with the SHA256 hashing algorithm, but may be downloaded raw (unhashed) with appropriate permissions. This format is useful for uploading the audience to destinations like Snapchat or Braze, which may require a single column of hashed emails, for example. [Download example single column hashed CSV](/docs/personas/files/audience_csv_format_c.csv)
 
 
 <table>

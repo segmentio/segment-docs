@@ -148,7 +148,6 @@ sections:
     slug: connections/destinations
     section:
     - path: /connections/destinations
-
       title: Destinations overview
     - path: /connections/destinations/add-destination
       title: Add a destination
@@ -264,8 +263,6 @@ sections:
         title: Overview
       - path: /personas/audiences/account-audiences
         title: Account-level Audiences
-  # - path: /personas/audiences
-  #   title: Audiences
   - path: /personas/using-personas-data
     title: Using Personas data
   - path: /personas/warehouses
