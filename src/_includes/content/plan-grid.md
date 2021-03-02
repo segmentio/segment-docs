@@ -14,6 +14,6 @@
     <td></td>
     <td> {% if productData.tiers.free %}✅{% else %}⬜️{% endif %} </td>
     <td> {% if productData.tiers.team %}✅{% else %}⬜️{% endif %} </td>
-    <td> {% if productData.tiers.business == true and productData.tiers.add-on == false %}✅{% elsif productData.tiers.business == true and productData.tiers.add-on == true %} Add-on available {% else %}⬜️{% endif %} </td>
+    <td> {% if productData.tiers.business == true and productData.tiers.add-on == false %}✅{% elsif productData.tiers.business == true and productData.tiers.add-on == true %} ✅ &#10133; Add-on <a href="https://segment.com/pricing/">available</a>{% else %}⬜️{% endif %} </td>
   </tr>
 </table>

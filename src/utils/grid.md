@@ -20,5 +20,13 @@ there should be an Access Management grid below here.
 
 
 
-✅ ⬜️ ☑️ ✔️
+✅ ⬜️ &#10004; &#10133;
+
  hmmm hello
+
+&#10004; &#10133; [Business tier add-on](https://segment.com/pricing/)
+
+otherwise
+
+
+&#9745; &#10133; [Add-on available](https://segment.com/pricing/)
