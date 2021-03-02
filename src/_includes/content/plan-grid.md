@@ -1,5 +1,7 @@
 {% assign thisProduct = include.name %}
 {% assign productData = site.data.products.items | where: "slug", thisProduct | first %}
+{% assign productTiers = productData.tiers %}
+
 <style>
 table.plan tr td {
   padding: 12px;
@@ -9,13 +11,29 @@ table.plan tr td {
 
 </style>
 <div class="flex flex--wrap waffle" style="margin-top: -25px;margin-bottom: 40px;">
+
+{% for item in productTiers %}
+{% if item[1] == true %}
+<div class="flex__column flex__column--shrink">
+        <span class="badge badge--primary"> {{item[0] | capitalize }} ✓ </span>
+</div>
+{% else %}
+<div class="flex__column flex__column--shrink">
+        <span class="badge badge--gray" style="opacity:0.2"> {{item[0] | capitalize }} x </span>
+        </div>
+{% endif %}
+
+{% endfor %}
+
+</div>
+
+<!--
 {% if productData.tiers.free %}
 <div class="flex__column flex__column--shrink">
         <span class="badge badge--primary">Free ✓</span>
 </div>
 {% else %}
-<div class="flex__column flex__column--shrink">
-        <span class="badge badge--gray" style="opacity:0.2">Free x</span>
+Free x</span>
 </div>
 {% endif %}
 {% if productData.tiers.team %}
@@ -47,21 +65,4 @@ table.plan tr td {
 {% endif %}
 </div>
 
-
-
-<!-- <h2>{{ productData.product_display_name }} compatibility</h2>
-<table class="plan" style="max-width:375px">
-  <tr>
-    <td>Free</td>
-    <td>Team</td>
-    <td>Business</td>
-    <td>Add-on</td>
-  </tr>
-  <tr>
-    <td> {{ productData.product_display_name }} </td>
-    <td></td>
-    <td> {% if productData.tiers.free %}✅{% else %}⬜️{% endif %} </td>
-    <td> {% if productData.tiers.team %}✅{% else %}⬜️{% endif %} </td>
-    <td> {% if productData.tiers.business == true and productData.tiers.add-on == false %}✅{% elsif productData.tiers.business == true and productData.tiers.add-on == true %} ✅ &#10133; Add-on <a href="https://segment.com/pricing/">available</a>{% else %}⬜️{% endif %} </td>
-  </tr>
-</table> -->
+-->
