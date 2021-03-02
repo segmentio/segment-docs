@@ -47,6 +47,11 @@ table.plan tr td {
 {% endif %}
 </div>
 
+{% for tier in productData.tiers %}
+
+{{tier.value}}
+
+{% endfor %}
 
 
 <!-- <h2>{{ productData.product_display_name }} compatibility</h2>
