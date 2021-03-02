@@ -9,19 +9,45 @@ table.plan tr td {
 
 </style>
 <div class="flex flex--wrap waffle" style="margin-top: -25px;margin-bottom: 40px;">
+{% if productData.tiers.free %}
+<div class="flex__column flex__column--shrink">
+        <span class="badge badge--primary">Free ✓</span>
+</div>
+{% else %}
 <div class="flex__column flex__column--shrink">
         <span class="badge badge--gray" style="opacity:0.2">Free x</span>
 </div>
+{% endif %}
+{% if productData.tiers.team %}
+<div class="flex__column flex__column--shrink">
+        <span class="badge badge--success">Team ✓</span>
+</div>
+{% else %}
 <div class="flex__column flex__column--shrink">
         <span class="badge badge--gray" style="opacity:0.2">Team x</span>
 </div>
+{% endif %}
+{% if productData.tiers.business %}
 <div class="flex__column flex__column--shrink">
         <span class="badge badge--primary">Business ✓</span>
 </div>
+{% else %}
+<div class="flex__column flex__column--shrink">
+        <span class="badge badge--gray" style="opacity:0.2">Business x</span>
+</div>
+{% endif %}
+{% if productData.tiers.add-on %}
 <div class="flex__column flex__column--shrink">
         <span class="badge badge--success">+ Add-on</span>
 </div>
+{% else %}
+<div class="flex__column flex__column--shrink">
+        <span class="badge badge--gray" style="opacity:0.2">Add-on x</span>
 </div>
+{% endif %}
+</div>
+
+
 
 <!-- <h2>{{ productData.product_display_name }} compatibility</h2>
 <table class="plan" style="max-width:375px">
