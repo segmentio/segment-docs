@@ -1,6 +1,7 @@
 ---
 title: Analytics.js 2.0 (Beta)
 strat: ajs
+hidden: true
 ---
 Analytics.js is Segment's most popular library source. This new major version has been re-engineered to be more performant and provide greater extensibility. It is fully backwards compatible with the previous version of Analytics.js.
 
