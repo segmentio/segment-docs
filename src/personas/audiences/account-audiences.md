@@ -1,6 +1,5 @@
 ---
 title: Account-level Audiences
-redirect_from: '/personas/audiences'
 ---
 
 Account-level audiences are Personas audiences for businesses that sell to other businesses. They return the set of accounts which match a combination of account-level traits, user-level traits, and user events. You can sync these accounts and associated users with downstream destinations.
@@ -35,9 +34,6 @@ A single account-level audience can incorporate any combination of the following
 - Account-level computed traits and SQL traits
 - Account-level audience membership
 - Account-level custom traits (set through a [group](/docs/connections/spec/group) call)
-
-> warning ""
-> [Reserved account-level custom traits](/docs/connections/spec/group/#traits) are not available in audience conditions. You must include them in the traits dictionary a second time using a non-reserved trait name to make them available in the audience builder.
 
 The three types of user-level conditions are:
 - **Any User** (default): Returns all accounts where *at least one user* associated with the account satisfies the specified condition
