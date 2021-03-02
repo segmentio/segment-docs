@@ -36,6 +36,10 @@ A single account-level audience can incorporate any combination of the following
 - Account-level audience membership
 - Account-level custom traits (set through a [group](/docs/connections/spec/group) call)
 
+Use this control to access account-level audience conditions:
+
+![Use this control to access account level audience conditions](/docs/personas/images/new-audience-type.png)
+
 > warning ""
 > [Reserved account-level custom traits](/docs/connections/spec/group/#traits) are not available in audience conditions. You must include them in the traits dictionary a second time using a non-reserved trait name to make them available in the audience builder.
 
