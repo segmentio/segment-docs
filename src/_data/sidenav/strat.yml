@@ -83,8 +83,8 @@ sections:
   section:
   - path: /connections/sources/catalog/libraries/website/javascript
     title: Analytics.js (Javascript) Source
-  - path: /connections/sources/catalog/libraries/website/javascript/analytics-js-2
-    title: Analytics.js 2.0 (Beta)
+  # - path: /connections/sources/catalog/libraries/website/javascript/analytics-js-2
+  #   title: Analytics.js 2.0 (Beta)
   - path: /connections/sources/catalog/libraries/website/javascript/supported-browsers
     title: Analytics.js supported browsers
   - path: /connections/sources/catalog/libraries/website/javascript/quickstart
