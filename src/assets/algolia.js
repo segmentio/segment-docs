@@ -3,6 +3,7 @@ const docs = client.initIndex('segment-docs');
 
 autocomplete(
   '#autocomplete', {
+    hint: false,
     debug: true,
     keyboardShortcuts: ['s', 191],
     templates: {
@@ -39,7 +40,13 @@ autocomplete(
       empty: '<div class="aa-empty">No matching results</div>',
     },
   }, ]
-);
+).on('autocomplete:selected', function (event, suggestion, dataset) {
+  if (suggestion.anchor) {
+    window.location.href = '/docs' + suggestion.url + '#' + suggestion.anchor;
+  } else {
+    window.location.href = '/docs' + suggestion.url;
+  }
+});
 
 window.addEventListener('/', (e) => {
   window.scrollTo(0, 0);
