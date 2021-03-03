@@ -3,7 +3,7 @@
 {% assign productTiers = productData.tiers %}
 
 
-<div class="hoverhelp" data-hoverhelp data-active-class="hoverhelp--active">
+<div class="popover" data-popover data-active-class="popover--active">
 <div class="flex flex--wrap waffle" style="margin-top: -25px;margin-bottom: 40px;" >
 
 {% for item in productTiers %}
@@ -19,13 +19,13 @@
 
 {% endfor %}
 <div class="flex__column flex__column--shrink" style="padding-top:0px">
-  <a class="recent-contributor__button button-link" href="#" data-hoverhelp-target="contributors">?</a>
+  <a class="recent-contributor__button button-link" href="#" data-popover-target="contributors">?</a>
 </div>
 </div>
 
 
 
-<div class="hoverhelp__body" data-hoverhelp-body="contributors">
+<div class="popover__body" data-popover-body="contributors">
 {% if productData.plan-note %}
 <p style="font-size:12px"><a href="https://segment.com/pricing">{{productData.plan-note}}</a> For more information, <a href="https://segment.com/help/contact/">contact us</a>.</p>
 {% elsif productData.tiers.add-on%}
@@ -35,44 +35,3 @@
 {% endif %}
 </div>
 </div>
-
-
-<!--
-{% if productData.tiers.free %}
-<div class="flex__column flex__column--shrink">
-        <span class="badge badge--primary">Free ✓</span>
-</div>
-{% else %}
-Free x</span>
-</div>
-{% endif %}
-{% if productData.tiers.team %}
-<div class="flex__column flex__column--shrink">
-        <span class="badge badge--success">Team ✓</span>
-</div>
-{% else %}
-<div class="flex__column flex__column--shrink">
-        <span class="badge badge--gray" style="opacity:0.2">Team x</span>
-</div>
-{% endif %}
-{% if productData.tiers.business %}
-<div class="flex__column flex__column--shrink">
-        <span class="badge badge--primary">Business ✓</span>
-</div>
-{% else %}
-<div class="flex__column flex__column--shrink">
-        <span class="badge badge--gray" style="opacity:0.2">Business x</span>
-</div>
-{% endif %}
-{% if productData.tiers.add-on %}
-<div class="flex__column flex__column--shrink">
-        <span class="badge badge--success">+ Add-on</span>
-</div>
-{% else %}
-<div class="flex__column flex__column--shrink">
-        <span class="badge badge--gray" style="opacity:0.2">Add-on x</span>
-</div>
-{% endif %}
-</div>
-
--->
