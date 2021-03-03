@@ -48,6 +48,10 @@ This is why even if you see events in the debugger, the Device-mode destination 
 > warning "React-Native version requirement"
 >  You must use React version 0.62 or later.
 
+
+> info "Good to know - Device-mode destinations"
+> Segment's React Native library serves as a wrapper around the two mobile libraries for iOs and Android. If you plan to [bundle device-mode destinations](#packaging-destinations-using-device-mode) you must add these dependencies.
+
 ### iOS configuration
 
 You should use CocoaPods (**recommended**) to manage your installation and dependencies for iOS.
@@ -99,9 +103,9 @@ To install Analytics-React-native manually:
 
 ### Packaging Destinations using Device-mode
 
-By default, Analytics-React-Native sends all of your data first to the Segment servers, which forward the data on to any tools you enabled from the Segment web app. It does not package any external destination SDKs by default. This is known as using "Cloud-mode", and it helps reduce the size of your project.
+By default, Analytics-React-Native sends all of your data first to the Segment servers, which forward the data on to any tools you enabled from the Segment web app. It does not package any external destination SDKs by default. This is known as sending your data using "Cloud-mode", and it helps reduce the size of your project.
 
-However, in order to function correctly some destinations require that you include code in your project that can be executed on the user's device. This is known as "device-mode". Other destinations offer a device-mode SDK, but still work (with reduced features) in cloud-mode.
+However, some destinations require that you include code in your project that can be executed on the user's device so that these tools can function correctly. These destinations run code that sends data directly to the destination's API endpoints, as well as sending a copy to the Segment servers for archiving. This is known as sending data in "device-mode". Other destinations offer a device-mode SDK, but still work (with reduced features) in cloud-mode.
 
 You can read [more about connection modes](/docs/connections/destinations/#connection-modes) in the Destination documentation.
 
@@ -110,7 +114,11 @@ You can read [more about connection modes](/docs/connections/destinations/#conne
 
 To use a device-mode destination, you add the destination's SDK to the project. You can find information about these in the destination information pages in the Segment app. Any mobile destination with a Device-mode option includes information on how to bundle SDK.
 
-These usually take the form of a dependency manager command, like the NPM example below.
+Segment's React Native source library is a wrapper for the iOS and Android source libraries, and the React Native device mode SDKs you bundle are generated from the iOS and Android ones.
+
+To use device-mode destinations with React Native, you must add the dependencies for iOS and Android. Once you set up the device mode dependencies for iOS and Android, you can then add the React Native dependency. See the [device mode documentation in the React Native readme](https://github.com/segmentio/analytics-react-native/#packaging-device-mode-destination-sdks) for more details.
+
+To add the device-mode dependencies, install the pods for iOS builds, and add the dependencies to your `build.gradle​` file in your Android project. You might also be able to use a dependency manager command, like the NPM example below.
 
 ```bash
 yarn add @segment/analytics-react-native-{bugsnag,branch,google-analytics}
