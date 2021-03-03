@@ -1,6 +1,7 @@
 items:
 - product_display_name: Personas
   slug: personas
+  plan-note: "Personas is available as an add-on for Business tier plans."
   tiers:
     free: false
     team: false
@@ -22,6 +23,7 @@ items:
     add-on: true
 - product_display_name: Protocols
   slug: protocols
+  plan-note: "Protocols is available as an add-on for Business tier plans."
   tiers:
     free: false
     team: false
@@ -29,6 +31,7 @@ items:
     add-on: true
 - product_display_name: Access Management
   slug: iam
+  plan-note: "Access Management is available for all Business tier plans."
   tiers:
     free: false
     team: false
@@ -36,6 +39,7 @@ items:
     add-on: false
 - product_display_name: Replay
   slug: replay
+  plan-note: "Replay is available to all Business tier plans."
   tiers:
     free: false
     team: false
@@ -43,6 +47,7 @@ items:
     add-on: false
 - product_display_name: Privacy Portal
   slug: privacy
+  plan-note: "The Privacy Portal is available to all Business tier plans."
   tiers:
     free: true
     team: true
@@ -50,11 +55,12 @@ items:
     add-on: false
 - product_display_name: Warehouses
   slug: warehouses
+  plan-note: "All Segment plans may have 1 warehouse. Business tier plans may have more."
   tiers:
-    free: false
-    team: false
+    free: true
+    team: true
     business: true
-    add-on: true
+    add-on: false
 - product_display_name: Warehouse custom sync
   slug: warehouse-sync
   tiers:
