@@ -14,7 +14,7 @@ The Home page shows a summary of errors in the workspace's sources and destinati
 
 #### Workspace Home reporting period
 
-The Workspace Home page shows when the data it represents was last updated. You can click the **last updated** line to refresh the display.
+The Workspace Home page shows when the data it represents was last updated. You can click the **Updated** line to refresh the display.
 
 You can also use the drop-down menu at the right to choose between a 24-hour and 7-day rolling view of the data. The page automatically updates the graphs and statistics when you change your selection.
 
