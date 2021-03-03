@@ -3,7 +3,7 @@
 {% assign productTiers = productData.tiers %}
 
 
-<div class="popover" data-popover data-active-class="popover--active">
+<div class="hoverhelp" data-hoverhelp data-active-class="hoverhelp--active">
 <div class="flex flex--wrap waffle" style="margin-top: -25px;margin-bottom: 40px;" >
 
 {% for item in productTiers %}
@@ -19,13 +19,13 @@
 
 {% endfor %}
 <div class="flex__column flex__column--shrink" style="padding-top:0px">
-<a class="recent-contributor__button button-link" href="#" data-popover-target="contributors">?</a>
+  <a class="recent-contributor__button button-link" href="#" data-hoverhelp-target="contributors">?</a>
 </div>
 </div>
 
 
 
-<div class="popover__body" data-popover-body="contributors">
+<div class="hoverhelp__body" data-hoverhelp-body="contributors">
 {% if productData.tiers.add-on %}
 <p style="font-size:12px">{{productData.product_display_name}} is available as an add-on for Business tier accounts only. For more information, contact support.</p>
 {% else %}

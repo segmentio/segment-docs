@@ -8,6 +8,10 @@ there should be a Personas grid below here.
 <br><br><br>
 {% include content/plan-grid.md name="personas" %}
 
+there should be a Protocols grid below here.
+<br><br><br>
+{% include content/plan-grid.md name="protocols" %}
+
 
 there should be a Privacy Portal grid below here.
 <br><br><br>
