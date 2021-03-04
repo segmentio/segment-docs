@@ -752,7 +752,6 @@ Analytics.with(context).analyticsContext().traits().anonymousId()
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-
 ### Reset
 
 The `reset` method clears the SDK's internal stores for the current user and group. This is useful for apps where users log in and out with different identities on the same device over time.
