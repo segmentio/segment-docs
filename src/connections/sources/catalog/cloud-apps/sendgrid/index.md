@@ -7,11 +7,11 @@ Take your company's analysis to the next level by **adding Sendgrid as a Source 
 
 ## Getting Started
 
-1. From your workspace's `sources` page, click `add source`.
+1. From the [Source catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) in your Segment workspace, enter "Sendgrid" and select the Sendgrid source that appears.
+2. From the Sendgrid information panel that appears, click **Add source**.
 
-2. Choose Sendgrid.
-
-3. Give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name autopopulates the schema name. For example, the source name  `Sendgrid` creates the schema `sendgrid`. You can add multiple instances if you have multiple SendGrid accounts.
+3. Give the Source a name and add any labels to help you organize and filter your sources. 
+   You can give the source any name, but Segment recommends a name that reflects the source itself, as this name autopopulates the schema name. For example, the source name  `Sendgrid` creates the schema `sendgrid`. You can add multiple instances if you have multiple SendGrid accounts.
 
 4. Provide your API Key.  In order to pull information about your contacts, we'll make requests to SendGrid's API with our [sync component](#sync).  You can create an API Key by navigating to **Settings > API Keys**, clicking **General API Key**.
 

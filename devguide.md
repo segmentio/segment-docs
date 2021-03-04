@@ -33,6 +33,20 @@ Occasionally, a destination will change names. This shouldn't be too difficult t
   2. The programmatic content appears (cmodes, settings, previous names)
   3. The redirect from the old page URL works.
 
+## All about the Catalog script
+
+You run the Catalog update script by running `make catalog` from the docs repo. You, a person who is going to run the script, must first save a Segment token to an `.env` file locally, which is `gitignored` so we don’t check it in to gihub accidentally.
+
+Note: Old ConfigAPI tokens are not compatible with Public API. You'll need a new one if you want to use Public API.
+
+The script takes your token, inserts it into a request header, then contacts the API, downloads all the available metadata for destinations and sources. It then writes them into a series of yml files that the docs build can consume. (You can find these in `/src/_data/catalog/`)
+
+Note: We don’t currently (Feb '21) do this for warehouses (storage dests) because they were originally lumped in with destinations, and didn’t change often enough to be worth writing a script for. We just have a static `warehouses.yml` file instead. With the switch to Public API from ConfigAPI, we should change this.
+
+The script also “calculates” the values for the `connection-modes` table for destinations, but that’s a huge other headache.
+
+It also does some slugification and destination-name normalization, since our handling of dots and dashes hasn't been consistent over time. Finally, it checks to see if there’s a folder for each destination. If it finds a new one, the script makes a folder with a “stub” markdown file for that destination, and then adds a line for it to an "incompleteDocs.txt" file. (It doesn't check to see if it's already listed, just appends to the file.)
+
 
 ## Developer information
 
