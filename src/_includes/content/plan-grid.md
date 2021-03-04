@@ -28,10 +28,12 @@
 <div class="popover__body" data-popover-body="contributors">
 {% if productData.plan-note %}
 <p style="font-size:12px"><a href="https://segment.com/pricing">{{productData.plan-note}}</a> For more information, <a href="https://segment.com/help/contact/">contact us</a>.</p>
-{% elsif productData.tiers.add-on%}
-<p style="font-size:12px">{{productData.product_display_name}} is available as an add-on for the displayed account tiers only. For more information, <a href="https://segment.com/help/contact/">contact us</a>.</p>
+{% elsif productData.tiers.add-on and productData.tiers.buisiness == false%}
+<p style="font-size:12px">{{productData.product_display_name}} is available as an add-on for the displayed plans only. For more information, <a href="https://segment.com/help/contact/">contact us</a>.</p>
+{% elsif productData.tiers.add-on and productData.tiers.business %}
+<p style="font-size:12px">{{productData.product_display_name}} is available as an add-on for Business plans only. For more information, <a href="https://segment.com/help/contact/">contact us</a>.</p>
 {% else %}
-<p style="font-size:12px">{{productData.product_display_name}} is available for the displayed account tiers only. For more information, <a href="https://segment.com/help/contact/">contact us</a>.</p>
+<p style="font-size:12px">{{productData.product_display_name}} is available for the listed account plans only. For more information, <a href="https://segment.com/help/contact/">contact us</a>.</p>
 {% endif %}
 </div>
 </div>

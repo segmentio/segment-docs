@@ -2,7 +2,7 @@
 title: Personas Space Set Up
 ---
 
-{% include content/plan-grid.md name="personas-id" %}
+
 
 
 ## Step One: Create a New Dev Space

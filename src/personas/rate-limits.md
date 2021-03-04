@@ -2,7 +2,7 @@
 title: Limits
 ---
 
-{% include content/plan-grid.md name="personas" %}
+
 
 
 These rate limits were added to our product documentation on December 9, 2020.

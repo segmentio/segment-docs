@@ -2,7 +2,7 @@
 title: Personas SQL Traits
 ---
 
-{% include content/plan-grid.md name="personas" %}
+
 
 
 SQL Traits allow you to import user or account traits from your data warehouse back into Personas to build audiences, or to enhance Segment data that you send to other destinations.

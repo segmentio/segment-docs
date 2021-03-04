@@ -2,7 +2,7 @@
 title: Identity Resolution ExternalIDs
 ---
 
-{% include content/plan-grid.md name="personas-id" %}
+
 
 
 > note ""

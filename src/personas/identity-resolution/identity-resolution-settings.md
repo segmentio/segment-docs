@@ -3,7 +3,7 @@ title: Identity Resolution Settings
 redirect_from: '/personas/identity-resolution/identity-graph-rules/'
 ---
 
-{% include content/plan-grid.md name="personas-id" %}
+
 
 
 > note ""

@@ -2,7 +2,7 @@
 title: Personas Identity Resolution Overview
 ---
 
-{% include content/plan-grid.md name="personas-id" %}
+
 
 
 ## Identity Graph

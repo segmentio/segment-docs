@@ -2,7 +2,7 @@
 title: Personas and Warehouses
 ---
 
-{% include content/plan-grid.md name="personas" %}
+
 
 
 Personas provides a complete, up-to-date view of your users customer journey as it unfolds, and one of the best ways to understand the data produced by this journey is by analyzing the data in your data warehouse using SQL.

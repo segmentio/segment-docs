@@ -2,7 +2,7 @@
 title: Identity Resolution eCommerce Example
 ---
 
-{% include content/plan-grid.md name="personas-id" %}
+
 
 
 The Personas Identity Resolution feature helps to create a unified view of the user across devices, apps, and unique identifiers.

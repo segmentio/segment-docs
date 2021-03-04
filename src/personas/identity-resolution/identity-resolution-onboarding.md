@@ -2,7 +2,7 @@
 title: Identity Resolution Onboarding
 ---
 
-{% include content/plan-grid.md name="personas-id" %}
+
 
 
 > note ""

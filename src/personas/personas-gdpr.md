@@ -1,7 +1,7 @@
 ---
 title: Personas and GDPR
 ---
-{% include content/plan-grid.md name="personas" %}
+
 
 
 

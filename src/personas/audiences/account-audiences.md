@@ -2,7 +2,7 @@
 title: Account-level Audiences
 ---
 
-{% include content/plan-grid.md name="personas" %}
+
 
 Account-level audiences are Personas audiences for businesses that sell to other businesses. They return the set of accounts which match a combination of account-level traits, user-level traits, and user events. You can sync these accounts and associated users with downstream destinations.
 
