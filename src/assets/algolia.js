@@ -24,7 +24,6 @@ autocomplete(
         url,
         anchor,
         _snippetResult,
-        content
       }) {
         if (anchor != null) {
           var anchorLink = "#" + anchor;
