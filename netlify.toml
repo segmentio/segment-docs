@@ -5,6 +5,9 @@
   # Ignore if [netlify-ignore] is present
   ignore = "git log -1 --pretty=%B | ( grep -q '\\[netlify\\-ignore\\]' )"
 
+[context.deploy-preview]
+  command = "yarn develop"
+
 [[redirects]]
   from = "/docs/*"
   to = "/:splat"
