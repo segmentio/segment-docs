@@ -1,7 +1,6 @@
 ---
 title: Analytics.js 2.0 (Beta)
 strat: ajs
-hidden: true
 ---
 > warning "Analytics.js 2.0 is recommended for use in staging"
 > Analytics.js 2.0 was built with backwards compatibility in mind. However, Segment recommends thorough testing in a Staging environment before you upgrade your production source.
