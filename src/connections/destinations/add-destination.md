@@ -31,7 +31,20 @@ There are two ways to add a destination to your deployment: using the Segment we
 8. Click the toggle at the top of the Settings page to enable the destination.
 
 > success ""
-> If you have more than one instance of a destination, you can click **Copy Settings From Other Destination** to save yourself time entering the settings values.
+> If you have more than one instance of the same destination, you can click **Copy Settings From Other Destination** to save yourself time entering the settings values.
+
+#### Adding a destination to a specific Segment Source
+
+You can also add a destination directly from the source's settings page in the Segment web app.
+
+1. Before you start, log in to your account on the destination tool, and get the token or other credentials needed to access the tool. You'll use these to give Segment permission to send data to the tool.
+2. Log in to the Segment web app, and select the workspace you want to work in, and navigate to the source you want to add the destination to.
+3. From the source information page, click **Add Destination**.
+4. Search for the destination you want to add, and click it in the results.
+   If there are multiple results for your search, you can click each result to read more about them until you find the one you're looking for.
+5. In the panel that appears, click **Configure**.
+6. On the next page, find the **Connection Settings** section, and enter the token or credentials for that destination tool.
+7. Click the toggle at the top of the Settings page to enable the destination.
 
 #### Adding a destination using the Config API
 
@@ -73,10 +86,101 @@ When you add a destination in Segment, you must tell Segment how to connect with
 Each destination can also have destination settings. These control how Segment transforms the data you send to the destination, and can be used to adapt it to your configuration or enable or disable certain destination features.
 
 
-<!-- TODO: Project Demux
-## Multiple instances of the same destination
+## Connecting one source to multiple instances of a destination
 
+<!-- LR: 03/04/21 - hiding this for now since it's in limited rollout.
 > note ""
-> Multiple-destination support is available for all Segment customers on all plan tiers.
+> Multiple-destination support is available for all Segment customers on all plan tiers.-->
 
-You can now connect a single Source to more than one instance of a destination. For example, if you have two different Google Analytics accounts for different parts of your business, but are using the same Library Source to track events, you might want to send that data to both Google Analytics accounts. This was not previously possible. -->
+
+> success ""
+> Support for connecting to multiple instances of a destination is in public preview. To use this, you must agree to the [(1) Segment First Access](https://segment.com/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/). The feature is being released to different tiers over time. If you see an error message that you can’t connect to multiple instances of the same destination, it is not available yet in your workspace but is coming soon.
+
+Segment allows you to connect a source to multiple instances of a destination. You can use this to set up a single Segment source that sends data into different instances of your analytics and other tools.
+
+For example, you might set up a single Segment source to send data both to separate instances of Google Analytics for each business unit in your organization, and to another instance for executive-level reporting. You could also use this to make sure that tooling instances for different geographic teams are populated with the same data from the same source.
+
+You can also connect multiple instances of a destination to help you smoothly migrate from one configuration to another. By sending each version the same data, you can check and validate the new configuration without interrupting use of the old one.
+
+
+> success ""
+> If your organization is on a Segment Business tier plan, you can use Replay to send historical data to new instances of a destination.
+
+
+### Connect a source to more than one instance of a destination
+
+To connect a source to more than one instance of a destination in the Segment web app, start by adding the first instance of the destination and giving it a unique name, [as described above](#adding-a-destination). To add another instance of the destination, follow either of those two methods and choose another unique name.
+
+You must give each instance of the destination connected to the same source a unique name. Segment recommends that you use descriptive names rather than numbers, so other Segment users can understand which Segment destinations are linked to which tool instances. For example, you might use "Amplitude North America" and "Amplitude South America", instead of "Amplitude 1" and "Amplitude 2".
+
+Some destinations do not support having multiple instances connected to the same source. In that case, the option to add a second instance of that destination does not appear.
+
+### Connect to more than one instance of a destination using the Config API
+
+You can add multiple instances of a destination using the Segment Config API. See the Segment Config [API documentation](https://reference.segmentapis.com/?version=latest#39ce0439-0969-48c3-ba49-b22a46c41060). If a destination does not support multi-instance, the Config API throws an appropriate error.
+
+
+### Multi-instance destinations and Device-mode
+
+- **Mobile sources cannot connect to multiple instances of a destination.**
+- **You can connect a source to an unlimited number of instances of a destination if all of the instances use cloud-mode.(TODO: link)** Destinations using cloud-mode receive data directly from the Segment servers.
+- **Each source can only connect to one *device-mode* instance of a destination, in addition to unlimited cloud-mode instances.** A device-mode instance of a destination receives data directly from the user’s browser (instead of through the Segment servers), by bundling a copy of destination’s code with the Segment SDK. Segment can’t bundle multiple copies of the destination SDK and so it can’t send data to multiple instances of the destination from the browser.
+- **You cannot connect a source to more than one instance of a destination that operates in device-mode only**. These destinations can only accept data from code directly on the user’s device, and Segment cannot include duplicates of that code for a single source.
+
+For more information see [the compatible destination lists below](#multi-instance-compatible-destinations).
+
+
+
+### Other multi-instance destination considerations
+
+- **Destination Filters and multi-instance destinations:** Destination filters are specific to each source, and currently operate on *all* instances of a destination connected to that source. Support for destination filters for individual destination instances is coming soon.
+
+- **Multiple Data Lakes:** Segment does not currently support connecting a single source to multiple instances of a data lakes destination. [Contact Segment Customer Success](https://segment.com/help/contact/) if this would be useful for your organization.
+
+- **Protocols transformations and multi-instance support:** Protocols transformations are specific to each source, and operate the same on all instances of a specific destination. Segment does not currently support creating unique protocols transformations for each instance of a destination.
+
+-  **Integrations object considerations:** A common part of a Segment message is [the integrations object](https://segment.com/docs/guides/filtering-data/#filtering-with-the-integrations-object), which you can use to explicitly filter to which destinations the call is forwarded, as well as to specify options for different destination tools. If you use the integrations object to filter events or to send destination-specific options, Segment applies its values to all instances. For example:
+
+```js
+{
+  "integrations": {
+    "Mixpanel": false,
+    "Adobe Analytics": {
+      "marketingCloudVisitorId": "12345"
+    }
+  }
+}
+```
+
+In this example:
+
+- Events sent with this `Mixpanel` setting are **not** sent to instances of Mixpanel.
+- Events sent to any Adobe Analytics destinations with this `Adobe Analytics` setting use the same `marketingCloudVisitorId` value specified.
+
+
+### Multi-instance compatible destinations
+
+The sections below list the most popular multi-instance Segment destinations. This list is not exhaustive. If you don’t see your favorite destination in these lists, [contact Segment Customer Success](https://segment.com/help/contact/).
+
+##### Cloud-mode and device-mode
+The following destinations can receive data from an unlimited number of sources in cloud-mode, and **up to one device-mode connection**.
+
+- [Adobe Analytics](/docs/connections/destinations/catalog/adobe-analytics/)
+- [Amplitude](/docs/connections/destinations/catalog/amplitude/)
+- [Customer.io](/docs/connections/destinations/catalog/customer-io)
+- [Google Analytics](/docs/connections/destinations/catalog/google-analytics/)
+- [Marketo V2](/docs/connections/destinations/catalog/marketo-v2/)
+- [Mixpanel](/docs/connections/destinations/catalog/mixpanel/)
+
+##### Cloud-mode only
+
+The following destinations can receive data from an unlimited number of sources in cloud-mode, but do not support device-mode connections at all.
+
+- [Amazon Kinesis](/docs/connections/destinations/catalog/amazon-kinesis/)
+- [Amazon Lambda](/docs/connections/destinations/catalog/amazon-lambda/)
+- [Facebook Conversions API](/docs/connections/destinations/catalog/facebook-pixel-server-side/)
+- [Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)
+- [Slack](/docs/connections/destinations/catalog/slack/)
+- [Webhooks](/docs/connections/destinations/catalog/webhooks/)
+- [Zapier](/docs/connections/destinations/catalog/zapier/)
+- [Zendesk](/docs/connections/destinations/catalog/zendesk/)
