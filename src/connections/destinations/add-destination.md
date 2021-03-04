@@ -90,10 +90,11 @@ Each destination can also have destination settings. These control how Segment t
 
 <!-- LR: 03/04/21 - hiding this for now since it's in limited rollout.
 > note ""
-> Multiple-destination support is available for all Segment customers on all plan tiers.-->
+> Multiple-destination support is available for all Segment customers on all plan tiers.
+-->
 
 
-> success ""
+> info ""
 > Support for connecting to multiple instances of a destination is in public preview. To use this, you must agree to the [(1) Segment First Access](https://segment.com/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/). The feature is being released to different tiers over time. If you see an error message that you can’t connect to multiple instances of the same destination, it is not available yet in your workspace but is coming soon.
 
 Segment allows you to connect a source to multiple instances of a destination. You can use this to set up a single Segment source that sends data into different instances of your analytics and other tools.
@@ -104,7 +105,7 @@ You can also connect multiple instances of a destination to help you smoothly mi
 
 
 > success ""
-> If your organization is on a Segment Business tier plan, you can use Replay to send historical data to new instances of a destination.
+> If your organization is on a Segment Business tier plan, you can use [Replay](/docs/guides/what-is-replay/) to send historical data to new instances of a destination.
 
 
 ### Connect a source to more than one instance of a destination
@@ -122,8 +123,8 @@ You can add multiple instances of a destination using the Segment Config API. Se
 
 ### Multi-instance destinations and Device-mode
 
-- **Mobile sources cannot connect to multiple instances of a destination.**
-- **You can connect a source to an unlimited number of instances of a destination if all of the instances use cloud-mode.(TODO: link)** Destinations using cloud-mode receive data directly from the Segment servers.
+- **_Mobile_ sources cannot connect to multiple instances of a destination.**
+- **You can connect a source to an unlimited number of instances of a destination if all of the instances use cloud-mode.** Destinations using cloud-mode receive data directly from the Segment servers.
 - **Each source can only connect to one *device-mode* instance of a destination, in addition to unlimited cloud-mode instances.** A device-mode instance of a destination receives data directly from the user’s browser (instead of through the Segment servers), by bundling a copy of destination’s code with the Segment SDK. Segment can’t bundle multiple copies of the destination SDK and so it can’t send data to multiple instances of the destination from the browser.
 - **You cannot connect a source to more than one instance of a destination that operates in device-mode only**. These destinations can only accept data from code directly on the user’s device, and Segment cannot include duplicates of that code for a single source.
 
