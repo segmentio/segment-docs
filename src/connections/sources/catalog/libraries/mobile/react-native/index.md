@@ -139,6 +139,34 @@ await analytics.setup('YOUR_WRITE_KEY', {
 })
 ```
 
+#### Destinations that support device-mode for React native
+
+
+| Name                | iOS | Android | npm package           |
+| ------------------- | --- | ------- | ----------------------- |
+| Adjust              | ✅  | ✅      | `@segment/analytics-react-native-adjust`      |
+| Amplitude           | ✅  | ✅      | `@segment/analytics-react-native-amplitude`               |
+| Appboy              | ✅  | ✅      | `@segment/analytics-react-native-appboy`                  |
+| AppsFlyer           | ✅  | ✅      | `@segment/analytics-react-native-appsflyer`               |
+| Branch              | ✅  | ✅      | `@segment/analytics-react-native-branch`                  |
+| Bugsnag             | ✅  | ✅      | `@segment/analytics-react-native-bugsnag`                 |
+| CleverTap           | ✅  | ✅      | `@segment/analytics-react-native-clevertap`               |
+| ComScore            | ✅  | ❌      | `@segment/analytics-react-native-comscore-ios`            |
+| Countly             | ✅  | ✅      | `@segment/analytics-react-native-countly`                 |
+| Crittercism         | ✅  | ✅      | `@segment/analytics-react-native-crittercism`             |
+| Facebook App Events | ✅  | ❌      | `@segment/analytics-react-native-facebook-app-events-ios` |
+| Firebase            | ✅  | ✅      | `@segment/analytics-react-native-firebase`                |
+| Flurry              | ✅  | ✅      | `@segment/analytics-react-native-flurry`                  |
+| Google Analytics    | ✅  | ✅      | `@segment/analytics-react-native-google-analytics`        |
+| Intercom            | ✅  | ✅      | `@segment/analytics-react-native-intercom`                |
+| Localytics          | ✅  | ✅      | `@segment/analytics-react-native-localytics`              |
+| Mixpanel            | ✅  | ✅      | `@segment/analytics-react-native-mixpanel`                |
+| Quantcast           | ❌  | ✅      | `@segment/analytics-react-native-quantcast-android`       |
+| Taplytics           | ✅  | ❌      | `@segment/analytics-react-native-taplytics-ios`           |
+| Tapstream           | ❌  | ✅      | `@segment/analytics-react-native-tapstream-android`       |
+
+
+
 Now that the library is installed and some SDKs are set up, you're ready to learn about the Segment Tracking methods.
 
 
