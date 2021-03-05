@@ -22,9 +22,9 @@ items:
     team: false
     business: true
     add-on: true
-- product_display_name: Access Management
+- product_display_name: Advanced Access Management
   slug: iam
-  plan-note: "Access Management is available for all Business plans."
+  plan-note: "Advanced Access Management is available for all Business plans."
   plans:
     free: false
     team: false
