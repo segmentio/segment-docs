@@ -311,7 +311,7 @@ We do not map `$library_version` since that is reserved for Mixpanel's library v
 
 ### Autotrack
 
-Mixpanel has discontinued Autotrack functionality as of February 2021. If you were previously using this functionality, it will no longer be available.
+Mixpanel discontinued the Autotrack feature in February 2021. The feature is no longer available for use.
 
 ### People
 
