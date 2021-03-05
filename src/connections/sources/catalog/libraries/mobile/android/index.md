@@ -236,6 +236,22 @@ Analytics.with(context).identify("a user's id", Traits().putName("John Doe"), nu
 {% endcodeexampletab %}
 {% endcodeexample %}
 
+The example call below sets the `anonymousId` to a custom value of `test_anonymousId`.
+
+{% codeexample %}
+{% codeexampletab Java %}
+```java
+Analytics.with(context).identify(new Traits().putValue("anonymousId","test_anonymousId"));
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Kotlin %}
+```kotlin
+Analytics.with(context).identify(Traits().putValue("anonymousId","test_anonymousId"))
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
 Segment recommends that you make an Identify call once when the user's first creates an account, and only using the Identify call later when their traits change. Segment remembers the previous userIDs and merges the new traits with the old ones.
 
 {% codeexample %}

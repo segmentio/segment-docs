@@ -1,6 +1,8 @@
 ---
-title: Sync Reports and Errors
+title: Data Lakes Sync Reports and Errors
 ---
+{% include content/plan-grid.md name="data-lakes" %}
+
 
 Segment Data Lakes generates reports with operational metrics about each sync to your data lake so you can monitor sync performance. These sync reports are stored in your S3 bucket and Glue Data Catalog. This means you have access to the raw data, so you can query it to answer questions and set up alerting and monitoring tools.
 

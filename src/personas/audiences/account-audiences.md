@@ -2,6 +2,8 @@
 title: Account-level Audiences
 ---
 
+
+
 Account-level audiences are Personas audiences for businesses that sell to other businesses. They return the set of accounts which match a combination of account-level traits, user-level traits, and user events. You can sync these accounts and associated users with downstream destinations.
 
 > info ""
@@ -98,7 +100,7 @@ For example, you may wish to create an audience which selects all admin-level us
 
 ## Known limitations of account-level audiences
 
-- Account-level audiences do not respect the `context.groupId` property on track calls. If users are associated with multiple accounts (through multiple group calls), the entire collection of a user’s events is considered when evaluating user-level event conditions (not just those events which are tagged with a matching `groupId`). This can lead to unexpected results where a user’s events triggered in the context of one account lead to another account incorrectly matching an account-level audience. 
+- Account-level audiences do not respect the `context.groupId` property on track calls. If users are associated with multiple accounts (through multiple group calls), the entire collection of a user’s events is considered when evaluating user-level event conditions (not just those events which are tagged with a matching `groupId`). This can lead to unexpected results where a user’s events triggered in the context of one account lead to another account incorrectly matching an account-level audience.
 - The identity breakdown report (displayed in the audience builder for user-level audiences) is not available for account-level audiences.
 
 If you find that these limitations impede your ability to use account-level audiences, contact [friends@segment.com](mailto:friends@segment.com) with details about your use-case.
