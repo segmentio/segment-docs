@@ -1,6 +1,7 @@
 ---
 title: "System for Cross-domain Identity Management (SCIM) Configuration Guide"
 ---
+{% include content/plan-grid.md name="sso" %}
 
 The SCIM specification is designed to make managing user identities in cloud-based applications like Segment easier. SCIM allows your Identity Provider (IdP) to manage users and groups within your Segment workspace.
 

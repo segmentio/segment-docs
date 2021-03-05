@@ -3,6 +3,8 @@ title: Use Transformations to fix bad data
 redirect_from: '/protocols/transformations/'
 ---
 
+{% include content/plan-grid.md name="protocols" %}
+
 ## What is a Transformation?
 
 Transformations allow you to change data as it flows through Segment to either correct bad data or customize data for a specific destination. At this time, you can change event and property names to align events with your Tracking Plan, or to conform to a destination-specific requirement. For example, a Transformation could be created to change an event name from `completed_order` to `Order Completed` to conform to [Segment's ecommerce spec](/docs/connections/spec/ecommerce/v2/#order-completed).
