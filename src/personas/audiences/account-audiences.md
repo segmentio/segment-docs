@@ -42,9 +42,6 @@ Use this control to access account-level audience conditions:
 
 ![Use this control to access account level audience conditions](/docs/personas/images/new-audience-type.png)
 
-> warning ""
-> [Reserved account-level custom traits](/docs/connections/spec/group/#traits) are not available in audience conditions. You must include them in the traits dictionary a second time using a non-reserved trait name to make them available in the audience builder.
-
 The three types of user-level conditions are:
 - **Any User** (default): Returns all accounts where *at least one user* associated with the account satisfies the specified condition
 - **All users**: Returns all accounts where *all users* associated with the account satisfy the specified condition
