@@ -18,7 +18,7 @@ Once you've collected your interaction data, there are several different things 
 - Send it to [Destinations](/docs/connections/destinations/), which receive the data from any number of sources in real time
 - Send it to [Warehouses](/docs/connections/storage/) (and other bulk storage tools), which hold your raw event schemas and update on regular intervals
 
-You can also enrich the customer data you collect by [connecting data from your other tools](/docs/connections/sources/catalog/#cloud-apps), and then collect it in a warehouse it to monitor performance, inform decision-making processes, and create uniquely customized user experiences. You can also use [Personas](/docs/personas/), our identity resolution tool, to unify data from individual users to gain a holistic understanding of their actions.
+You can also enrich the customer data you collect by [connecting data from your other tools](/docs/connections/sources/catalog/#cloud-apps), and then collect it in a warehouse to monitor performance, inform decision-making processes, and create uniquely customized user experiences. You can also use [Personas](/docs/personas/), our identity resolution tool, to unify data from individual users to gain a holistic understanding of their actions.
 
 
 ## Where data comes from
