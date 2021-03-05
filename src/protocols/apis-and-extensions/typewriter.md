@@ -3,9 +3,6 @@ title: 'Typewriter'
 redirect_from: '/protocols/typewriter/'
 ---
 
-{% include content/plan-grid.md name="protocols" %}
-
-
 [Typewriter](https://github.com/segmentio/typewriter) is a tool for generating strongly-typed Segment analytics libraries based on your pre-defined [Tracking Plan](/docs/protocols/tracking-plan) spec.
 
 At a high-level, Typewriter can take an event from your Tracking Plan like this `"Order Completed"` event:

@@ -2,9 +2,6 @@
 title: Identity Resolution ExternalIDs
 ---
 
-
-
-
 > note ""
 > **NOTE:** The steps in this guide pertain to spaces created before September 27th, 2020. For spaces created after September 27th, 2020, please refer to the onboarding guide [here](/docs/personas/identity-resolution/identity-resolution-onboarding/).
 

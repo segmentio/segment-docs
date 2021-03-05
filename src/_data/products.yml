@@ -1,70 +1,92 @@
 items:
 - product_display_name: Personas
   slug: personas
-  plan-note: "Personas is available as an add-on for Business tier plans."
-  tiers:
+  plan-note: "Personas is available as an add-on for Business plans only."
+  plans:
     free: false
     team: false
     business: true
     add-on: true
 - product_display_name: Personas Identity Graph
   slug: personas-id
-  tiers:
-    free: false
-    team: false
-    business: true
-    add-on: true
-- product_display_name: Personas Journey Orchestration
-  slug: personas-j
-  tiers:
+  plans:
     free: false
     team: false
     business: true
     add-on: true
 - product_display_name: Protocols
   slug: protocols
-  plan-note: "Protocols is available as an add-on for Business tier plans."
-  tiers:
+  plan-note: "Protocols is available as an add-on for Business plans only."
+  plans:
     free: false
     team: false
     business: true
     add-on: true
 - product_display_name: Access Management
   slug: iam
-  plan-note: "Access Management is available for all Business tier plans."
-  tiers:
+  plan-note: "Access Management is available for all Business plans."
+  plans:
     free: false
     team: false
     business: true
     add-on: false
 - product_display_name: Replay
   slug: replay
-  plan-note: "Replay is available to all Business tier plans."
-  tiers:
+  plan-note: "Replay is available to all Business plans."
+  plans:
     free: false
     team: false
     business: true
     add-on: false
 - product_display_name: Privacy Portal
   slug: privacy
-  plan-note: "The Privacy Portal is available to all Business tier plans."
-  tiers:
+  plans:
     free: true
     team: true
     business: true
     add-on: false
 - product_display_name: Warehouses
   slug: warehouses
-  plan-note: "All Segment plans may have 1 warehouse. Business tier plans may have more."
-  tiers:
+  plan-note: "Free and Team plan workspaces may have 1 warehouse. Business plans may have more."
+  plans:
     free: true
     team: true
     business: true
     add-on: false
 - product_display_name: Warehouse custom sync
   slug: warehouse-sync
-  tiers:
+  plans:
     free: false
     team: false
     business: true
     add-on: true
+- product_display_name: Data Lakes
+  slug: data-lakes
+  plans:
+    free: false
+    team: false
+    business: true
+    add-on: false
+- product_display_name: Audit Trail
+  slug: audit-trail
+  plans:
+    free: false
+    team: false
+    business: true
+    add-on: false
+- product_display_name: Single Sign-on
+  slug: sso
+  plan-note: "Single Sign-on is only available in Business plan workspaces."
+  plans:
+    free: false
+    team: false
+    business: true
+    add-on: false
+- product_display_name: Multi-factor authentication
+  slug: mfa
+  plan-note: "MFA is available to all Segment plans, but cannot be used with SSO."
+  plans:
+    free: true
+    team: true
+    business: true
+    add-on: false

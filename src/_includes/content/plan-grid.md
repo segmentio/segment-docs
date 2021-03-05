@@ -1,12 +1,15 @@
 {% assign thisProduct = include.name %}
 {% assign productData = site.data.products.items | where: "slug", thisProduct | first %}
-{% assign productTiers = productData.tiers %}
+<!-- The line below hides the grid if there's no matching data in products.yml-->
+{% if productData %}
+
+{% assign productPlans = productData.plans %}
 
 
 <div class="popover" data-popover data-active-class="popover--active">
 <div class="flex flex--wrap waffle" style="margin-top: -25px;margin-bottom: 40px;" >
 
-{% for item in productTiers %}
+{% for item in productPlans %}
 {% if item[1] == true %}
 <div class="flex__column flex__column--shrink">
         <span class="badge badge--{% if item[0] == 'add-on' %}success{% else %}primary{%endif%}"> {{item[0] | capitalize }} ✓ </span>
@@ -27,13 +30,14 @@
 
 <div class="popover__body" data-popover-body="contributors">
 {% if productData.plan-note %}
-<p style="font-size:12px"><a href="https://segment.com/pricing">{{productData.plan-note}}</a> For more information, <a href="https://segment.com/help/contact/">contact us</a>.</p>
-{% elsif productData.tiers.add-on and productData.tiers.buisiness == false%}
-<p style="font-size:12px">{{productData.product_display_name}} is available as an add-on for the displayed plans only. For more information, <a href="https://segment.com/help/contact/">contact us</a>.</p>
-{% elsif productData.tiers.add-on and productData.tiers.business %}
-<p style="font-size:12px">{{productData.product_display_name}} is available as an add-on for Business plans only. For more information, <a href="https://segment.com/help/contact/">contact us</a>.</p>
+<p style="font-size:12px">{{productData.plan-note}}
+{% elsif productData.plans.add-on and productData.plans.business == false%}
+<p style="font-size:12px">{{productData.product_display_name}} is available as an add-on for the displayed plans only.</p>
+{% elsif productData.plans.add-on and productData.plans.business %}
+<p style="font-size:12px">{{productData.product_display_name}} is available as an add-on for Business plans only.
 {% else %}
-<p style="font-size:12px">{{productData.product_display_name}} is available for the listed account plans only. For more information, <a href="https://segment.com/help/contact/">contact us</a>.</p>
+<p style="font-size:12px">{{productData.product_display_name}} is available for the listed account plans only.
 {% endif %}
+<br>See the <a href="https://segment.com/pricing">available plans</a>, or <a href="https://segment.com/help/contact/">contact us</a>.</p></div>
 </div>
-</div>
+{% endif %}

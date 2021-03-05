@@ -1,6 +1,7 @@
 ---
 title: Privacy Portal
 ---
+{% include content/plan-grid.md name="privacy" %}
 
 When preparing for new privacy regulations (such as the GDPR or the CCPA), the
 best practice is to create a comprehensive data inventory which includes details
@@ -16,8 +17,6 @@ When you use Segment as the single point of collection for your customer data, y
 - Streamline regulatory compliance with tools for user deletion and suppression
 
 Privacy Portal features are available to all Segment workspaces, however only workspace owners can access the Privacy Portal.
-
-{% include content/plan-grid.md name="privacy" %}
 
 
 ## Privacy Inbox
