@@ -236,7 +236,7 @@ Analytics.with(context).identify("a user's id", Traits().putName("John Doe"), nu
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-Example call to set the anonymousId to a custom value:
+The example call below sets the `anonymousId` to a custom value of `test_anonymousId`.
 
 {% codeexample %}
 {% codeexampletab Java %}
