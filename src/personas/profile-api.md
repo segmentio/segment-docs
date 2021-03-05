@@ -2,6 +2,9 @@
 title: Personas Profile API
 ---
 
+
+
+
 The Segment Profile API provides a single API to read user-level and account-level customer data. Segment now allows you to query the entire user or account object programmatically, including the `external_ids` , `traits` , and `events` that make up a user's journey through your product.
 
 <!-- We need links to glossary pages here ^ -->
@@ -10,7 +13,7 @@ You can use this API to:
 
 - **Build an in-app recommendation** engine to show users or accounts the last 5 products they viewed but didn’t purchase
 - **Empower your sales and support associates** with the complete customer context by embedding the user profile in third-party tools like Zendesk or Desk.com
-- **Power personalized marketing campaigns** by enriching dynamic / custom properties with profile traits in marketing tools like Braze 
+- **Power personalized marketing campaigns** by enriching dynamic / custom properties with profile traits in marketing tools like Braze
 - **Qualify leads faster** by embedding the user event timeline in Salesforce
 
 This document has four parts…
@@ -215,7 +218,7 @@ All top-level API resources have support for bulk fetches using "list" API metho
 
 ### Request IDs
 
-Each API request has an associated request identifier. You can find this value in the response headers, under `Request-Id`. 
+Each API request has an associated request identifier. You can find this value in the response headers, under `Request-Id`.
 
 ```bash
 curl -i https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles
@@ -230,7 +233,7 @@ Request-Id: 1111-2222-3333-4444
 
 ### Routes
 
-The Profile API supports the following routes. These routes are appended the Profile API request URL: 
+The Profile API supports the following routes. These routes are appended the Profile API request URL:
 
 ```
 https://profiles.segment.com/v1/spaces/:space_id:/
@@ -641,4 +644,4 @@ Segment typically sees p95 response times under 200ms for the `/traits` endpoint
 
 Another best practice to optimize performance in high-throughput applications is to use connection pooling. Your personalization service should share existing connections when making a request to the Profile API, instead of opening and closing a connection for each request. This additional TLS handshake is a common source of overhead for each request.
 
-Segment recommends against blocking the page render to wait for a third party API’s response, as even small slow down can impact the page’s conversion performance. Instead, Segment recommends you to asynchronously request the data from after the page loads and use a server-to-server request for the necessary computed traits. Resulting computed traits can be cached for the second page load. 
+Segment recommends against blocking the page render to wait for a third party API’s response, as even small slow down can impact the page’s conversion performance. Instead, Segment recommends you to asynchronously request the data from after the page loads and use a server-to-server request for the necessary computed traits. Resulting computed traits can be cached for the second page load.
