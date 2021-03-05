@@ -47,10 +47,10 @@ items:
     add-on: false
 - product_display_name: Warehouses
   slug: warehouses
-  plan-note: "Free and Team plan workspaces may have 1 warehouse. Business plans may have more."
+  plan-note: "Free and Team plan workspaces can have 1 warehouse. Business plans can have more than one, and include custom sync schedules and filtering."
   plans:
     free: true
-    team: true
+    team: trues
     business: true
     add-on: false
 - product_display_name: Warehouse custom sync
