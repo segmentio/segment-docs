@@ -7,20 +7,23 @@ strat: google
 > Google ended support for Google Analytics classic on iOS and Android mobile apps on October 31st 2019. To continue measuring and optimizing user engagement in your mobile apps, [migrate your implementation to use the Firebase SDKs](migrating). If you are using Google Analytics 360 you do not need to migrate.
 
 
-If you are using G-Codes, you are using Google Analytics 4, and should use [Segment's upcoming Google Analytics 4 destination](/docs/connections/destinations/catalog/google-analytics/ga4-plans/). You can also [create a Universal Analytics account](https://support.google.com/analytics/answer/10269537), which you can use with the current Google Analytics destination.
 
 
 
-#### Google ID prefixes
+#### Which Google destination should I use?
 
-You’ll notice the two IDs begin with different prefixes (UA + G), which indicate the type of ID:
+If your Google Measurement ID starts with a G, you are using G-Codes from Google Analytics 4, and should consider using [Segment's upcoming Google Analytics 4 destination](/docs/connections/destinations/catalog/google-analytics/ga4-plans/).
+
+If you are using GA4, you can still [create a Universal Analytics account](https://support.google.com/analytics/answer/10269537), which you can use with the current Google Analytics destination.
+
+Different Measurement IDs begin with different prefixes, which indicate which Google destination you should use.
 
 | Prefix | Google Account type       | Segment Settings    |
 | ------ | -------------------------- | ----------------- |
-| UA     | Your global site tag is controlled by Google Analytics. The ID is your Google Analytics Measurement ID. To find the property associated with this ID, use the [account search feature](https://support.google.com/analytics/answer/6100731) in Google Analytics. If the property does not appear, you probably do not have access to it. | Google Analytics: Configure ID > Measurement ID           |
-| G      | Your global site tag is controlled by Google Analytics 4 (GA4). The ID is your Google Analytics Measurement ID.       | Google Analytics: Configure ID > App + Web Measurement ID |
-| AW     | Your global site tag is controlled by Google Ads. The numeric string following the AW prefix is your Google Ads Conversion ID.        | Google Ads: Configure ID > Conversion ID                  |
-| DC     | Your global site tag is controlled by a Floodlight tag. The numeric string following DC is your Advertiser ID.                                                                                                                                                                    | Floodlight: Configure ID > App + Web Measurement ID       |
+| UA     | Your global site tag is controlled by Google Analytics. The ID is your Google Analytics Measurement ID. To find the property associated with this ID, use the [account search feature](https://support.google.com/analytics/answer/6100731) in Google Analytics. If the property does not appear, you probably do not have access to it. | [Google Analytics](/docs/connections/destinations/catalog/google-analytics/): Configure ID > Measurement ID           |
+| G      | Your global site tag is controlled by Google Analytics 4 (GA4). The ID is your Google Analytics Measurement ID.       | [Google Analytics](/docs/connections/destinations/catalog/google-analytics/): Configure ID > App + Web Measurement ID |
+| AW     | Your global site tag is controlled by Google Ads. The numeric string following the AW prefix is your Google Ads Conversion ID.        | [Google Ads](/docs/connections/destinations/catalog/google-ads-gtag/): Configure ID > Conversion ID                  |
+| DC     | Your global site tag is controlled by a Floodlight tag. The numeric string following DC is your Advertiser ID.       | [Floodlight](docs/connections/destinations/catalog/doubleclick-floodlight/): Configure ID > App + Web Measurement ID       |
 | other  | Your global site tag is controlled by a different Google product or may be implemented incorrectly. Use the [Tag Assistant extension](https://support.google.com/tagassistant/answer/2947093) for Google Chrome to verify.      | n/a      |
 
 
