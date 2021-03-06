@@ -19,6 +19,7 @@ import sideMenu from './side-menu'
 import tracking from './tracking'
 import searchBar from './search-bar'
 import glightbox from './glightbox'
+import autocomplete from './algolia'
 feedback()
 accordion()
 accordionGroup()
@@ -40,3 +41,4 @@ sideMenu()
 tracking()
 searchBar()
 glightbox()
+autocomplete()

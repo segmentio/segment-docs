@@ -38,12 +38,17 @@
     "yaml-lint": "^1.2.4"
   },
   "dependencies": {
+    "@algolia/autocomplete-js": "^1.0.0-alpha.44",
+    "@algolia/autocomplete-theme-classic": "^1.0.0-alpha.44",
     "@babel/runtime": "7.7.2",
     "ajv": "6.10.2",
+    "algoliasearch": "^4.8.5",
     "clipboard": "^2.0.6",
     "dotenv": "8.2.0",
     "glightbox": "^3.0.6",
+    "htm": "^3.0.4",
     "hyperlink": "^4.5.2",
+    "preact": "^10.5.12",
     "tap-spot": "^1.1.1",
     "tippy.js": "^5.2.0",
     "typewriter": "7.0.1"

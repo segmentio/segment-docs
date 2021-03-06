@@ -60,6 +60,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic@alpha"
+/>
 </head>
 <body>
   <div id="consent-manager"></div>
@@ -94,9 +98,10 @@
   <style>
 
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@3/dist/algoliasearchLite.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/algoliasearch@3/dist/algoliasearchLite.min.js"></script>
   <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.js"></script>
-  <script src="{{ "./assets/algolia.js" | relative_url}}"></script>
+  
+  <script type="module" src="{{ "./assets/algolia.js" | relative_url}}"></script> -->
   {%- comment -%}
     Google Search Results Metadata
   {%- endcomment -%}
@@ -240,5 +245,6 @@
         // analytics.identify();
       }}();
     </script>
+    
 </body>
 </html>

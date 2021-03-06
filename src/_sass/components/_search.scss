@@ -10,11 +10,20 @@
   }
 }
 
+.aa-Input {
+  line-height: 1.5;
+  font-size: 12px;
+  font-family: "SF Pro Text", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  border: 1px solid #d8dae5;
+  background-color: #ffffff;
+  color: #474d66;
+  border-radius: 4px;
+}
 .algolia-autocomplete {
   width: 100%;
 }
 
-.aa-input:focus{
+.aa-Input:focus{
   box-shadow: 0 0 5px #2952cc;
   transition: all 0.30s ease-in-out;
 }
