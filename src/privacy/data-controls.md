@@ -1,8 +1,8 @@
 ---
 title: Privacy Controls & Alerts
 ---
+{% include content/plan-grid.md name="privacy" %}
 
-## Privacy Controls
 
 The Privacy Portal gives you control over whether specific data is allowed to
 enter Segment.
