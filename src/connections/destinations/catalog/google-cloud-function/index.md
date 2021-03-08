@@ -7,7 +7,7 @@ strat: google
 
 Segment makes it easy to send your data to Google Cloud Function (and lots of other destinations). Once you collect your data using Segment's [open source libraries](/docs/connections/sources/catalog/), Segment translates and routes your data to Google Cloud Function in a format it can use.
 
-[Google Cloud Function](https://cloud.google.com/function) is a lightweight compute solution for developers to create single-purpose, stand-alone functions that respond to Cloud events without the need to manage a server or runtime environment.
+[Google Cloud Function](https://cloud.google.com/functions) is a lightweight compute solution for developers to create single-purpose, stand-alone functions that respond to Cloud events without the need to manage a server or runtime environment.
 
 {% include content/beta-note.md %}
 
