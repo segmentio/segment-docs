@@ -13,6 +13,7 @@ autocomplete({
   container: '#autocomplete',
   placeholder: 'Search for the Segment documentation (press / to focus)',
   debug: true,
+  detachedMediaQuery:'',
   getSources( {query} ) {
     return [
       {
