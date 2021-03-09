@@ -32,19 +32,19 @@
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 5px;
-  box-shadow: 10px 8px 15px -7px rgba(0, 0, 0, 0.29);
   margin-top: 10px;
 }
 
-.aa-suggestion {
+.aa-suggestion, .aa-Item {
   padding: 15px 30px;
   border-bottom: 1px solid #ddd;
 }
 
-.ais-Highlight {
+mark, .ais-Highlight {
   background-color: #f6fcfe;
   font-weight: bold;
   font-style: normal;
+  color: inherit;
 }
 
 a.aa-link:hover {
@@ -76,4 +76,21 @@ a.aa-link:hover {
 
 .aa-cursor {
   background-color: #fafbff;
+}
+
+.aa-Panel{
+  z-index: 100;
+  margin-top: 25px;
+  // box-shadow: 10px 8px 15px -7px rgba(0, 0, 0, 0.29);
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.aa-submitIcon {
+  width: 12px !important;
+}
+
+.aa-submitButton:focus {
+  outline: none;
 }

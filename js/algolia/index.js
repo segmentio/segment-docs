@@ -1,23 +1,39 @@
 import { html } from 'htm/preact';
 import algoliasearch from 'algoliasearch/lite';
-import { autocomplete, getAlgoliaHits } from '@algolia/autocomplete-js';
+import { autocomplete, getAlgoliaHits, highlightHit } from '@algolia/autocomplete-js';
+import {createAlgoliaInsightsPlugin} from '@algolia/autocomplete-plugin-algolia-insights';
+import insightsClient from 'search-insights';
 
-// import '@algolia/autocomplete-theme-classic';
 
-const searchClient = algoliasearch(
-  'UINQ2M4D9S', 
-  '636b6d9e2dfb207e89ea7344859848f9'
-);
+const appId = 'UINQ2M4D9S';
+const apiKey = '636b6d9e2dfb207e89ea7344859848f9';
+const searchClient = algoliasearch(appId, apiKey);
 
-autocomplete({
+//insights
+insightsClient('init', { appId, apiKey });
+const algoliaInsightsPlugin = createAlgoliaInsightsPlugin({ insightsClient });
+
+
+const search = autocomplete({
   container: '#autocomplete',
-  placeholder: 'Search for the Segment documentation (press / to focus)',
+  placeholder: 'Search the Segment documentation',
   debug: true,
-  detachedMediaQuery:'',
+  openOnFocus: false,
+  keyboardShortcuts: ['s', 191],
+  plugins: [algoliaInsightsPlugin,],
+  detachedMediaQuery:'none',
   getSources( {query} ) {
     return [
       {
         sourceId: 'articles',
+        getItemUrl({ item }){
+          if (item.anchor != null) {
+            var itemUrl = item.url+"#" + item.anchor;
+          } else {
+            var itemUrl = item.url;
+          }
+          return itemUrl;
+        },
         getItems() {
           return getAlgoliaHits({
             searchClient,
@@ -26,7 +42,9 @@ autocomplete({
                 indexName: 'segment-docs',
                 query,
                 params: {
-                  hitsPerPage: 5
+                  hitsPerPage: 7,
+                  facetFilters: ['hidden:-true'],
+                  clickAnalytics: true,
                 },
               },
             ],
@@ -40,16 +58,23 @@ autocomplete({
               var anchorLink = "";
             }
             return html `<a class="aa-link" href="/docs${item.url}${anchorLink}">
-            <p class="aa-title" >${item.title}</h3>
+            <p class="aa-title" >${highlightHit({hit: item, attribute: 'title'})}</h3>
             <p class="aa-heading">${item.headings.join(' >')}</p>
-            <p class="aa-content">${item.content}</p></a>
+            <p class="aa-content">${highlightHit({hit: item, attribute: 'content'})}</p></a>
           `;
           },
           noResults() {
-            return 'no results';
+            return html `<p class="aa-content">No results for <strong>${query}</strong></p>`;
           }
-        }
-      }
+        },
+        
+      },
     ];
   },
+  navigator: {
+    navigate({ itemUrl }) {
+      window.location.assign('/docs'+itemUrl);
+    },
+  }
 });
+
