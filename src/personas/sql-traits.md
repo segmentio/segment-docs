@@ -2,6 +2,9 @@
 title: Personas SQL Traits
 ---
 
+
+
+
 SQL Traits allow you to import user or account traits from your data warehouse back into Personas to build audiences, or to enhance Segment data that you send to other destinations.
 
 SQL Traits are only limited by what data you have in your warehouse. Anything you can write a query for can become a SQL Trait, which allows you to add more details to your user and account profiles, which allows better and more nuanced personalization.
@@ -222,7 +225,7 @@ If you're importing a large list of users and traits, the biggest consideration 
 
 ### Is there a limit on the size of a SQL Trait's payload?
 
-Yes, Segment limits request sizes to a maximum of 16kb. Records larger than this are discarded. 
+Yes, Segment limits request sizes to a maximum of 16kb. Records larger than this are discarded.
 
 ## Troubleshooting
 
@@ -267,4 +270,3 @@ This means for the [sources connected to Personas](https://app.segment.com/goto-
 You might be returning a value for `user_id` that is inconsistent with how you  track `user_id` elsewhere. We've seen cases where some customers want to return `email` as the `user_id`, or a partner's tool id as the `user_id`. These are against our best practices and corrupt the identity graph if you are then tracking `user_id` differently elsewhere in your apps.
 
 If you see only question marks in the preview, and have already tracked data historically with Segment, then you probably just have the wrong column. If you cloud source doesn't have the database `user_id`, we recommend JOINing with an internal users table before sending the results back to Segment.
-

@@ -1,5 +1,6 @@
 ---
 title: Restricting Workspace Access
+hidden: true 
 ---
 
 ## What do team members have access to?
