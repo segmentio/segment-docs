@@ -1,6 +1,8 @@
 ---
 title: Using Label-Based Access Control
 ---
+{% include content/plan-grid.md name="iam" %}
+
 
 Labels allow workspace owners to assign permissions to users to grant them access to groups. Groups represent collections of Sources, or collections of Personas spaces.
 

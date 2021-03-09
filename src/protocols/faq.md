@@ -2,6 +2,9 @@
 title: Protocols Frequently Asked Questions
 ---
 
+{% include content/plan-grid.md name="protocols" %}
+
+
 ## Protocols Notifications
 
 ### How can I subscribe to Protocols notifications?

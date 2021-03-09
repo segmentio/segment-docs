@@ -2,6 +2,9 @@
 title: Forward Violations
 ---
 
+{% include content/plan-grid.md name="protocols" %}
+
+
 You can forward Violations (data that does not conform to your Protocols tracking plan) to a Segment Source to enable custom notifications, dashboards and further analysis in any Segment destination that accepts cloud-mode data. To set up forwarding, visit your Source settings tab and select which Source you want to forward events to from the dropdown. Similar to [Blocked Event forwarding](/docs/protocols/enforce/forward-blocked-events/), we recommend that you create a new Source for violations.
 
 ![](../images/violation_forwarding.png)
