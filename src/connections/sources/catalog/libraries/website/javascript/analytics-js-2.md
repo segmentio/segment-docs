@@ -49,7 +49,7 @@ We identified the following two cases where upgrading Analytics 2.0 requires man
 If your source uses the in-domain instrumentation as well as a custom "Alias for analytics.js", then you should update the AJS snippet to the latest version (4.13.2
 or higher) before toggling Analytics 2.0 on. 
 
-## When using a strict content security policy on the page 
+### When using a strict content security policy on the page 
 Analytics 2.0 asynchronously loads different pieces of the library as needed, and therefore, if your source uses a strict Content Security Policy (CSP) that allows Javascript to be downloaded from specific locations, then you need to update the CSP to account for all the pieces used for Analytics 2.0. Therefore, beyond allowing the main analytics.min.js script, you should allow the following paths in your CSP: 
 - `https://cdn.segment.com/v1/projects/<WRITE_KEY>/settings`
 - `https://cdn.segment.com/analytics-next/bundles/*` 
