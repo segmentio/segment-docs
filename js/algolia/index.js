@@ -17,7 +17,7 @@ const algoliaInsightsPlugin = createAlgoliaInsightsPlugin({ insightsClient });
 const search = autocomplete({
   container: '#autocomplete',
   placeholder: 'Search the Segment documentation',
-  debug: true,
+  debug: false,
   openOnFocus: false,
   keyboardShortcuts: ['s', 191],
   plugins: [algoliaInsightsPlugin,],
