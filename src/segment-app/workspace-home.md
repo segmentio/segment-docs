@@ -1,8 +1,9 @@
 ---
 title: Workspace Home
 ---
+<!--
 {% include content/plan-grid.md name="workspace-home" %}
-
+-->
 
 
 Segment's Workspace Home serves as a dashboard that gives you a single consolidated view of the workspace, its health and status, and metrics for specific integrations over time.
