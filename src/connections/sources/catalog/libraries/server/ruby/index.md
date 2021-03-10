@@ -454,7 +454,7 @@ Segment::Analytics.new({
 
 ## Flush
 
-If you're running any sort of script or internal queue system to upload data, you should call `Analytics.flush` at the end of execution to ensure that all messages are sent to our servers. It's also recommended you call this method on shutdown to ensure all queued messages are uploaded to Segment.
+If you're running a script or internal queue system to upload data, you should call `Analytics.flush` at the end of execution to ensure that all of your messages are sent to our servers. Segment also recommendeds that you call `flush` on shutdown, so that all queued messages are sent to Segment instead of waiting for the next launch.
 
 ```ruby
 AppAnalytics = Segment::Analytics.new({
@@ -463,7 +463,8 @@ AppAnalytics = Segment::Analytics.new({
 AppAnalytics.flush
 ```
 
-Calling flush will block execution until all messages are processed, so it is not recommended in normal execution of your production application.
+> success "" 
+> **Tip**: When you call `flush`, the call blocks execution on the thread until it finishes processing all the messages in the queue. If you want to call `flush` during the normal operation of your application, you can spawn a local worker thread and call flush on the worker. This prevents the call from blocking the main thread.
 
 
 ## Turbolinks
