@@ -42,6 +42,19 @@ Once enabled, after 5 minutes or less, the updated code is delivered.
 
 To revert back to the previous version of Analytics.js, disable the Analytics 2.0 toggle on any source you've enabled it.
 
+## Cases that require manual upgrade 
+We identified the following two cases where upgrading Analytics 2.0 requires manual effort beyond just enabling the Analytics 2.0 toggle. 
+
+### When using in-domain instrumentation CDN aliasing
+If your source uses the in-domain instrumentation as well as a custom "Alias for analytics.js", then you should update the AJS snippet to the latest version (4.13.2
+or higher) before toggling Analytics 2.0 on. 
+
+### When using a strict content security policy on the page 
+Analytics 2.0 asynchronously loads different pieces of the library as needed, and therefore, if your source uses a strict Content Security Policy (CSP) that allows Javascript to be downloaded from specific locations, then you need to update the CSP to account for all the pieces used for Analytics 2.0. Therefore, beyond allowing the main analytics.min.js script, you should allow the following paths in your CSP: 
+- `https://cdn.segment.com/v1/projects/<WRITE_KEY>/settings`
+- `https://cdn.segment.com/analytics-next/bundles/*` 
+- `https://cdn.segment.com/next-integrations/integrations/*`
+
 ## Open source libraries
 
 Analytics.js 2.0 includes the following open source components:
