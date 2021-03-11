@@ -119,7 +119,7 @@ Beyond this common structure, each API call adds a few specialized top-level fie
 
 ## Context
 
-Context is a dictionary of extra information that provides useful context about a datapoint, for example the user's `ip` address or `locale`. Context is a complete and explicit specification, so properties outside the spec are ignored. You should **only use** Context fields for their intended meaning.
+Context is a dictionary of extra information that provides useful context about a datapoint, for example the user's `ip` address or `locale`. You should **only use** Context fields for their intended meaning.
 
 <table>
   <tr>
