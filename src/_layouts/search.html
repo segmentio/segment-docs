@@ -1,0 +1,143 @@
+---
+layout: main
+---
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.4.5/themes/satellite-min.css" integrity="sha256-TehzF/2QvNKhGQrrNpoOb2Ck4iGZ1J/DI4pkd2oUsBc=" crossorigin="anonymous">
+
+<main class="docs__body stage__body">
+  <div class="docs__navbar">
+    <div class="flex flex--justify gutter gutter--large@medium">
+      <div class="flex__column flex__column--6@xlarge">
+        <div class="search">
+          <div class="field field--expand field--icon">
+            <div id="autocomplete"></div>
+            {% unless include.mobile %}
+              <div class="field__icon field__icon--right flex flex--middle flex--center">
+                <button class="field__button" data-ref="search-navbar[trigger]">
+                  {% include icons/symbols/cross.svg %}
+                </button>
+              </div>
+            {% endunless %}
+          </div>
+        </div>
+      </div>
+
+      <div class="flex__column flex__column--shrink">
+        {% include_cached navbar/nav.html %}
+      </div>
+    </div>
+  </div>
+
+  {% include_cached navbar/navbar-mobile.html %}
+
+  <article class="page" data-tracking-scroll data-swiftype-name="body" data-swiftype-type="text">
+    <div class="page__body">
+      {% include components/breadcrumbs.html %}
+
+      {%- if page.title -%}
+        <h1 id="{{ page.title | slugify }}">
+          {{ page.title }}
+        </h1>
+      {%- endif -%}
+
+      {%- if page.beta -%}
+        {% include content/beta.md %}
+      {%- endif -%}
+
+      {%- unless page.hide_toc -%}
+        {% include sidebar/mobile-menu-side.html %}
+      {%- endunless -%}
+
+      <div class="markdown" data-headings-anchors>
+        {{ content }}
+      </div>
+
+      <p class="last-modified">This page was last modified: {{ page.last_modified_at | date: '%d %b %Y' }}</p>
+
+      {% if page.contributors %}
+        {% include components/recent-contributor.html contributors=page.contributors %}
+      {% endif %}
+
+      {% if page.related %}
+        <hr>
+        {% include components/related.html items=page.related %}
+      {% endif %}
+
+      {% unless page.hide-feedback %}
+        <hr>
+        {% include components/feedback.html %}
+      {% endunless %}
+
+      <hr>
+
+      {% include components/callout.html %}
+    </div>
+
+    {%- unless page.hide-sidebar -%}
+      <div class="docs__sidebar page__sidebar">
+        <div class="sidebar sidebar--sticky sidebar--scroll">
+          {%- unless page.hide_toc -%}
+            <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
+              {% include_cached sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=content h_min=2 h_max=2 %}
+            </div>
+          {% endunless %}
+
+          {% if page.related %}
+            {% include sidebar/related-content.html items=page.related %}
+          {% endif %}
+
+          {% unless page.hide-feedback %}
+            {% include_cached sidebar/feedback.html %}
+          {% endunless %}
+        </div>
+      </div>
+    {% endunless %}
+  </article>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js" integrity="sha256-EXPXz4W6pQgfYY3yTpnDa3OH8/EPn16ciVsPQ/ypsjk=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js" integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script>
+
+<script>
+const appId = 'UINQ2M4D9S';
+const apiKey = '636b6d9e2dfb207e89ea7344859848f9';
+const searchClient = algoliasearch(appId, apiKey);
+
+const instantSearch = instantsearch({
+  indexName: 'segment-docs',
+  searchClient,
+  routing: true,
+  facetFilters: ['hidden:-true'],
+
+});
+
+instantSearch.addWidgets([
+  instantsearch.widgets.searchBox({
+    container: '#searchbox',
+  }),
+
+  instantsearch.widgets.configure({
+    hitsPerPage: 7,
+    facetFilters: ['hidden:-true'],
+  }),
+
+  instantsearch.widgets.hits({
+    container: '#hits',
+    templates: {
+      item(item){
+        if (item.anchor != null) {
+                var anchorLink = "#" + item.anchor;
+              } else {
+                var anchorLink = "";
+              }
+        return `<a class="aa-link" href="/docs${item.url}${anchorLink}">
+              <p class="aa-title" >${item.title}</h3>
+                <p class="aa-heading">${item.headings.join(' >')}</p>
+              <p class="aa-content">${item.content}</p></a>
+            `;
+      }
+    }
+  })
+]);
+
+instantSearch.start();
+
+</script>
