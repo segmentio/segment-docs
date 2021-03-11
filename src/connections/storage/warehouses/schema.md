@@ -602,8 +602,6 @@ After analyzing the data from dozens of customers we set the string column lengt
 
 We special-case compression for some known columns like event names and timestamps. The others default to LZO. We may add look-ahead sampling down the road, but from inspecting the datasets today this would be unnecessary complexity.
 
-After a column is created, Redshift doesn't allow altering. Swapping and renaming may work down the road, but this would cause thrashing and performance issues. If you would like to change the column size, see our [docs here](/docs/connections/storage/warehouses/redshift-faq/#varchar-size-limits).
-
 ## Timestamps
 
 The Segment API associates four timestamps with every call: `timestamp`, `original_timestamp`, `sent_at` and `received_at`.

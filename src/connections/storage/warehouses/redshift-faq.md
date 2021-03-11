@@ -25,27 +25,15 @@ Like with most data warehouses, column data types (string, integer, float, etc.)
 
 ## VARCHAR size limits
 
-All Segment-managed schemas have a default VARCHAR size of 512 in order to keep performance high. If you wish to increase the VARCHAR size, you can run the following query to create a temp column with the VARCHAR size of your choosing. The query then copies over the data from the original column, drops the original column and finally renames the temp column back to the original column. Keep in mind that this process will not backfill any truncated data. The only way to currently backfill this truncated data is to run a backfill which requires a Business Tier Segment account. NOTE: The following query will only work if you're changing the VARCHAR size of a string column. Do not use this query to change a column type (i.e. integer to float).
+All Segment-managed schemas have a default VARCHAR size of 512 in order to keep performance high. If you wish to increase the VARCHAR size, you can run the following query.
 
 ```sql
-BEGIN;
-  LOCK table_name;
-  ALTER TABLE table_name ADD COLUMN column_new column_type;
-  UPDATE table_name SET column_new = column_name;
-  ALTER TABLE table_name DROP column_name;
-  ALTER TABLE table_name RENAME column_new TO column_name;
-  COMMIT;
+  ALTER TABLE table_name ALTER COLUMN column_name column_type;
 ```
 
 Example:
 ```sql
-BEGIN;
-  LOCK segment_prod.identifies;
-  ALTER TABLE segment_prod.identifies ADD COLUMN new_account_id VARCHAR(1024);
-  UPDATE segment_prod.identifies SET new_account_id = account_id;
-  ALTER TABLE segment_prod.identifies DROP account_id;
-  ALTER TABLE table_name RENAME new_account_id TO account_id;
-  COMMIT;
+  ALTER TABLE segment_prod.identifies ALTER COLUMN account_id TYPE VARCHAR(1024);
 ```
 > warning ""
 > Increasing the default size can impact query performance as it needs to process more data to accomodate the increased column size. See [Amazon's Redshift Documentation](https://docs.aws.amazon.com/redshift/latest/dg/c_best-practices-smallest-column-size.html) for more details.
