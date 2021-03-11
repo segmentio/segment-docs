@@ -1,6 +1,8 @@
 ---
 title: "Single Sign On team management"
 ---
+{% include content/plan-grid.md name="sso" %}
+
 
 Segment supports Single Sign On for Business Tier accounts. You can use any SAML-based Identity Provider (IdP), for example Okta, Bitium, OneLogin, or Centrify, or use GSuite to serve as your identity provider, delegating access to the application based on rules you create in your central identity management solution.
 

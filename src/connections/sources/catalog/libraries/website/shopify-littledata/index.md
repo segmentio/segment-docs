@@ -10,7 +10,7 @@ Littledata is a smart analytics app that automates e-commerce tracking. Littleda
 
 Littledata is available as an independent [Shopify App](https://apps.shopify.com/segment-com-by-littledata). When you install the Littledata app on your store, Littledata does two things:
 
-1. It inserts a smart tracking script to your store's front end. You can use this script with any custom Shopify site, and uses analytics.js under the hood to send data in a spec-compliant manner to Segment.
+1. It inserts a smart tracking script to your store's front end. You can use this script with any Shopify site, and uses Analytics.js under the hood to send data in a spec-compliant manner to Segment.
 
 2. The app also sets up server-side webhook forwarding to ensure 100% accuracy of important Customer and Order data.
 
@@ -117,7 +117,7 @@ All events (device-mode and cloud-mode) contain the Google Analytics `clientId` 
 
 ## Support for email marketing destinations
 
-Email marketing platforms such as [Klaviyo](/docs/connections/destinations/catalog/klaviyo/#server-side-track), [Iterable](/docs/connections/destinations/catalog/iterable/#track) and [Hubspot](/docs/connections/destinations/catalog/hubspot/#server) require an email property with any server-side event in order to associate events with a customer (they cannot use an `anonymousId`). Littledata adds that `email` property whenever an email address is set in the user `traits()` object (in device-mode) or from the Shopify customer record (in cloud-mode).
+Email marketing platforms such as [Klaviyo](/docs/connections/destinations/catalog/klaviyo/#server-side-track), [Iterable](/docs/connections/destinations/catalog/iterable/#track) and [Hubspot](/docs/connections/destinations/catalog/hubspot/#server) require an email property with any server-side event in order to associate events with a customer (they cannot use an `anonymousId`). Littledata adds that `email` property whenever an email address is set in the user `traits()` object (in device-mode) or from the Shopify customer record (in cloud-mode). Iterable can also [receive cookie values](#cookiesToTrack) with the Order Completed event.
 
 ## Alias Calls
 
@@ -163,7 +163,7 @@ The list below outlines the properties included in the events listed above.
 | `shipping_method`                      | The shipping method chosen for checkout                        | String        |
 | `shipping`                             | The shipping cost                                              | Float         |
 | `step`                                 | The checkout step                                              | Integer       |
-| `subtotal`                             | The total less tax and shipping                                | Float         |
+| `subtotal`                             | Order total after discounts but before taxes and shipping      | Float         |
 | `tax`                                  | The amount of tax on the order                                 | Float         |
 | `total`                                | The total value of the order                                   | Float         |
 | `userId`                               | Chosen user identifier, defaulting to Shopify Customer ID      | Double        |
@@ -174,21 +174,23 @@ The list below outlines the properties included in the events listed above.
 
 Each item in the `products` array, or Product Viewed and Product Added events, will have the following properties
 
-| Property             | Description                                     | Property Type |
-| -------------------- | ----------------------------------------------- | ------------- |
-| `brand`              | The brand of the product                        | String        |
-| `category`           | The category of the product (defaults to `all`) | String        |
-| `list_id`            | The ID of the product collection                | String        |
-| `list_name`          | The name of the product collection              | String        |
-| `list_position`      | The product position in the collection          | Integer       |
-| `name`               | The product name                                | String        |
-| `price`              | The product price                               | Float         |
-| `product_id`         | Shopify product ID                              | String        |
-| `quantity`           | The quantity of products                        | Integer       |
-| `shopify_product_id` | Also Shopify product ID                         | String        |
-| `shopify_variant_id` | The Shopify variant ID                          | String        |
-| `sku`                | The product SKU                                 | String        |
-| `variant`            | The product variant name                        | String        |
+| Property             | Description                                                        | Property Type |
+| -------------------- | ------------------------------------------------------------------ | ------------- |
+| `brand`              | The brand of the product (Shopify `vendor`)                        | String        |
+| `category`           | The category of the product (defaults to `all`)                    | String        |
+| `compare_at_price`   | The product price before any discount                              | String        |
+| `image_url`          | The URL of the first product image                                 | String        |
+| `list_id`            | The ID of the product collection (for List Views and Clicks)       | String        |
+| `list_position`      | The product position in the collection (for List Views and Clicks) | Integer       |
+| `name`               | The product name                                                   | String        |
+| `price`              | The product price                                                  | Float         |
+| `product_id`         | Shopify product ID                                                 | String        |
+| `quantity`           | The quantity of products                                           | Integer       |
+| `shopify_product_id` | Also Shopify product ID                                            | String        |
+| `shopify_variant_id` | The Shopify variant ID                                             | String        |
+| `sku`                | The product SKU                                                    | String        |
+| `url`                | The URL of the product page                                        | String        |
+| `variant`            | The product variant name                                           | String        |
 
 ## Advanced device-mode settings
 

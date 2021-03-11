@@ -1,0 +1,100 @@
+items:
+- product_display_name: Personas
+  slug: personas
+  plan-note: "Personas is available as an add-on for Business plans only."
+  plans:
+    free: false
+    team: false
+    business: true
+    add-on: true
+- product_display_name: Personas Identity Graph
+  slug: personas-id
+  plans:
+    free: false
+    team: false
+    business: true
+    add-on: true
+- product_display_name: Protocols
+  slug: protocols
+  plan-note: "Protocols is available as an add-on for Business plans only."
+  plans:
+    free: false
+    team: false
+    business: true
+    add-on: true
+- product_display_name: Advanced Access Management
+  slug: iam
+  plan-note: "Advanced Access Management is available for all Business plans."
+  plans:
+    free: false
+    team: false
+    business: true
+    add-on: false
+- product_display_name: Replay
+  slug: replay
+  plan-note: "Replay is available to all Business plans."
+  plans:
+    free: false
+    team: false
+    business: true
+    add-on: false
+- product_display_name: Privacy Portal
+  slug: privacy
+  plans:
+    free: true
+    team: true
+    business: true
+    add-on: false
+- product_display_name: Warehouses
+  slug: warehouses
+  plan-note: "Free and Team plan workspaces can have 1 warehouse. Business plans can have more than one, and include custom sync schedules and filtering."
+  plans:
+    free: true
+    team: true
+    business: true
+    add-on: false
+- product_display_name: Warehouse custom sync
+  slug: warehouse-sync
+  plans:
+    free: false
+    team: false
+    business: true
+    add-on: true
+- product_display_name: Data Lakes
+  slug: data-lakes
+  plans:
+    free: false
+    team: false
+    business: true
+    add-on: false
+- product_display_name: Audit Trail
+  slug: audit-trail
+  plans:
+    free: false
+    team: false
+    business: true
+    add-on: false
+- product_display_name: Single Sign-on
+  slug: sso
+  plan-note: "Single Sign-on is only available in Business plan workspaces."
+  plans:
+    free: false
+    team: false
+    business: true
+    add-on: false
+- product_display_name: Multi-factor authentication
+  slug: mfa
+  plan-note: "MFA is available to all Segment plans, but cannot be used with SSO."
+  plans:
+    free: true
+    team: true
+    business: true
+    add-on: false
+- product_display_name: Workspace Home page
+  slug: workspace-home
+  plan-note: "The Workspace Home page is currently available in Business plan workspaces, to workspace Owners only."
+  plans:
+    free: false
+    team: false
+    business: true
+    add-on: false

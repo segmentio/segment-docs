@@ -29,7 +29,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Segment" />
   <meta property="og:title" content="{{page.title}} {%- unless landing -%}Documentation{%- endunless -%} - Segment" />
-  <meta property="og:image" content="https://images.ctfassets.net/i8bfc4nr05rq/3rK5xo4VFkLdTUFZ2UrlGL/05aa6fb3dad150addf943bfb9dc710cc/c3.png" />
+  <meta property="og:image" content="https://images.ctfassets.net/h6ufgtwb6nv1/4ao0JgcuipXHfWlfDRCbwK/a794ae30b5768a69fb324b4ea4b31fbc/documentation_ogv2.png" />
   <meta name="twitter:site" content="@segment" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="description" content="{{description}}">
@@ -59,7 +59,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic@alpha"
+/>
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/algolia.css' | relative_url }}">
 </head>
 <body>
   <div id="consent-manager"></div>
@@ -79,26 +84,13 @@
   {%- endcomment -%}
   {%- if jekyll.environment == "production" -%}
     {%- assign write_key = "QAKKJEtNsXpsNfCCBeWCLNxkaaLO7pgp" -%}
-    {%- assign swiftype_key = "_s4VzQxzJDw1zYB3HzEC" -%}
   {%- else -%}
     {%- assign write_key = "f5c1iWVVwikUDoh5NuVq0G52EPFrMmrX" -%}
-    {%- assign swiftype_key = "_s4VzQxzJDw1zYB3HzEC" -%}
   {%- endif -%}
   {%- comment -%}
     JS for site
   {%- endcomment -%}
   <script src="{{ "./assets/docs.bundle.js" | relative_url}}"></script>
-  {%- comment -%}
-    Swifttype
-  {%- endcomment -%}
-  <script type="text/javascript">
-    (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-    })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-    _st('install','{{swiftype_key}}','2.0.0');
-  </script>
   {%- comment -%}
     Google Search Results Metadata
   {%- endcomment -%}
@@ -242,5 +234,6 @@
         // analytics.identify();
       }}();
     </script>
+    
 </body>
 </html>

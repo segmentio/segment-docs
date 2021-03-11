@@ -39,7 +39,7 @@ This page is about the **Facebook Custom Audiences** destination developed speci
 - **Destination rate limit**: None
 - **Lookback window allowed**: Yes
 - **Identifiers required** : Email or Mobile Device ID (IDFA)
-- **Identifiers accepted** : See [Facebook developer docs](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/) for full list
+- **Identifiers accepted** : Email and Mobile Device ID (IDFA). Other identifiers can be sent through [Additional Traits Matching](#public-preview-feature-additional-traits-matching)
 - **Client or Server-Side Connection**: Server-side
 - **Minimum audience size required**: 100
 

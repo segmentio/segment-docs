@@ -55,7 +55,7 @@ Regardless of approach, here are some important notes to keep in mind:
 
 ## Create a Tracking Plan
 
-A [tracking plan](https://segment.com/blog/whats-a-tracking-plan) clarifies what events to track, where those events live in the code base, and why those events are necessary from a business perspective. Prior to Protocols, tracking plans typically lived in a spreadsheet. The tracking plan served as a project management tool to align an entire organization around data as the basis on which to make decisions. The tracking plan helps marketers, product managers, engineers, analysts, etc. get on the same page. It represents the single source of truth for what data to collect and why.
+A [tracking plan](https://segment.com/blog/what-is-a-tracking-plan/) clarifies what events to track, where those events live in the code base, and why those events are necessary from a business perspective. Prior to Protocols, tracking plans typically lived in a spreadsheet. The tracking plan served as a project management tool to align an entire organization around data as the basis on which to make decisions. The tracking plan helps marketers, product managers, engineers, analysts, etc. get on the same page. It represents the single source of truth for what data to collect and why.
 
 The tracking plan has been so instrumental in helping organizations reclaim their own data efforts that we invested years of product development to create [Protocols](/docs/protocols/).
 

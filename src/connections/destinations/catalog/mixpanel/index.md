@@ -6,7 +6,7 @@ hide-personas-partial: true
 
 [Mixpanel](https://mixpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an event tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion. The client-side Mixpanel Destination code is open-source.
 
-You can browse the code on GitHub for [Analytics.js in Device-mode](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/mixpanel), [Cloud-mode](https://github.com/segmentio/analytics-cloud-integrations/tree/master/integrations/mixpanel), [iOS](https://github.com/segment-integrations/analytics-ios-integration-mixpanel) and [Android](https://github.com/segment-integrations/analytics-android-integration-mixpanel).
+You can browse the code on GitHub for [Analytics.js in Device-mode](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/mixpanel), [iOS](https://github.com/segment-integrations/analytics-ios-integration-mixpanel) and [Android](https://github.com/segment-integrations/analytics-android-integration-mixpanel).
 
 If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](mailto:docs-feedback@segment.com)!
 
@@ -311,7 +311,7 @@ We do not map `$library_version` since that is reserved for Mixpanel's library v
 
 ### Autotrack
 
-Mixpanel's [Autotrack](https://mixpanel.com/autotrack/) feature is supported using Segment as long as you are using one of our client-side libraries ([analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/), [Android](/docs/connections/sources/catalog/libraries/mobile/android/)). Additionally, if you're using analytics for Android or iOS, make sure your Mixpanel destination is bundled - otherwise Autotrack will not work. Once Mixpanel is installed using Segment, all you have to do is [enable the Autotrack feature for your Mixpanel account](https://mixpanel.com/help/questions/articles/what-is-autotrack-and-how-do-i-get-started-using-it) and it will start working.
+Mixpanel discontinued the Autotrack feature in February 2021. The feature is no longer available for use.
 
 ### People
 
@@ -449,10 +449,6 @@ If you are testing in Xcode remember you must first background the app, then the
 3. Make sure you have disable the default filter in the Mixpanel People Explore tab.
 
 ## Appendices
-
-### Autotrack
-
-Mixpanel's [Autotrack](https://mixpanel.com/autotrack/) feature is supported using Segment as long as you are using one of our client-side libraries ([analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/), [Android](/docs/connections/sources/catalog/libraries/mobile/android/)). Additionally, if you're using analytics for Android or iOS, make sure your Mixpanel destination is bundled - otherwise Autotrack will not work. Once Mixpanel is installed using segment, all you have to do is [enable the Autotrack feature for your Mixpanel account](https://mixpanel.com/help/questions/articles/what-is-autotrack-and-how-do-i-get-started-using-it) and it will start working.
 
 ### IP
 

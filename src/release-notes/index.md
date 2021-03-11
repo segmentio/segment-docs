@@ -32,7 +32,7 @@ Stay up-to-date with the latest features and releases from Segment.
       {% endif %}
     </div>
     <div class="release-note__body">
-      <h2>{{ post.title }}</h2>
+      <h2 id="{{post.title | slugify}}">{{ post.title }}</h2>
       <date class="release-note__date">{{ post.date | date: "%B %d, %Y" }}</date>
       <main class="markdown">{{ post.description | markdownify }}</main>
       <div class="release-note__links">
