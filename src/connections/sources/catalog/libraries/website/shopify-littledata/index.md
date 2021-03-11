@@ -65,7 +65,6 @@ Below is a table of events that **Shopify by Littledata** sends to Segment from 
 | Coupon Applied           | Sent with Checkout Step Completed or Order Completed when user has applied a coupon                                                                                                         |
 | Customer Created         | User added as a customer                                                                                                                                                                    |
 | Customer Enabled (v2)    | A user has confirmed their email address and created a Shopify customer account with verified_email set as true                                                                             |
-| Customer Updated         | Customer information updated                                                                                                                                                                |
 | Fulfillment Created (v2) | An order fulfillment status has changed (including status, tracking_numbers and tracking_urls where the shipping integration allows)                                                        |
 | Fulfillment Updated (v2) | An order fulfillment status has changed (including status, tracking_numbers and tracking_urls where the shipping integration allows)                                                        |
 | Order Cancelled (v2)     | An admin has cancelled an order (including the cancel_reason)                                                                                                                               |
@@ -127,15 +126,15 @@ To support seamless customer tracking the [Mixpanel](/docs/connections/destinati
 
 Additional events available through Littledata's [ReCharge connection](https://www.littledata.io/connections/recharge), and available in cloud-mode destinations.
 
-| Event Name               | Description                                     |
-| ------------------------ | ----------------------------------------------- |
-| Charge Failed            | A failed to charge customer                     |
-| Charge Max Tries Reached | The maximum tries to charge customer is reached |
-| Order Processed          | A recurring order is processed                  |
-| Payment Method Updated   | A customer has updated the payment method       |
-| Subscription Cancelled   | A customer has cancelled a subscription         |
-| Subscription Created     | A customer has created a subscription           |
-| Subscription Updated     | A customer has updated a subscription           |
+| Event Name               | Description                                                                                                 |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------- |
+| Charge Failed            | A recurring charge failed (with `error_type`)                                                               |
+| Charge Max Tries Reached | The maximum tries to charge customer is reached                                                             |
+| Order Processed          | A recurring order is processed                                                                              |
+| Payment Method Updated   | A customer has updated the payment method                                                                   |
+| Subscription Cancelled   | A customer has cancelled a subscription (with `cancellation_reason` and `cancellation_reason_comments`)     |
+| Subscription Created     | A customer has created a subscription (with `status`, `order_interval_frequency` and `order_interval_unit`) |
+| Subscription Updated     | A customer has updated a subscription (with `status`, `order_interval_frequency` and `order_interval_unit`) |
 
 ## Event Properties
 
