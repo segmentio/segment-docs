@@ -39,21 +39,20 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 
 Below is a table of events that **Shopify by Littledata** sends to Segment through the analytics.js library. These events will show up as tables in your warehouse, and as regular events in your other Destinations supporting device-mode.
 
-| Event Name            | Description                                                           |
-| --------------------- | --------------------------------------------------------------------- |
-| Cart Viewed           | A user has viewed the /cart page                                      |
-| Page Viewed           | A user has viewed any page                                            |
-| Product Clicked       | A user has clicked a product within a product list                    |
-| Product Image Clicked | A user has clicked a product image                                    |
-| Product List Viewed   | A user has viewed a product as they scroll down the collection page   |
-| Product Shared        | A user has shared a product through social links                      |
-| Product Viewed        | A user has viewed a product page                                      |
-| Products Searched     | A user has searched for products (with search `query`)                |
-| Registration Viewed   | A user has viewed the /account/register page                          |
-| Thank you Page Viewed | A user has viewed the thank you page after completing an order \*     |
+| Event Name            | Description                                                         |
+| --------------------- | ------------------------------------------------------------------- |
+| Cart Viewed           | A user has viewed the /cart page                                    |
+| Page Viewed           | A user has viewed any page                                          |
+| Product Clicked       | A user has clicked a product within a product list                  |
+| Product Image Clicked | A user has clicked a product image                                  |
+| Product List Viewed   | A user has viewed a product as they scroll down the collection page |
+| Product Shared        | A user has shared a product through social links                    |
+| Product Viewed        | A user has viewed a product page                                    |
+| Products Searched     | A user has searched for products (with search `query`)              |
+| Registration Viewed   | A user has viewed the /account/register page                        |
+| Thank you Page Viewed | A user has viewed the thank you page after completing an order \*   |
 
-> note ""
-> \*  This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
+> note "" \* This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
 
 ## Cloud-mode Events
 
@@ -145,6 +144,7 @@ The list below outlines the properties included in the events listed above.
 | Property                               | Description                                                    | Property Type |
 | -------------------------------------- | -------------------------------------------------------------- | ------------- |
 | `affiliation`                          | The affiliation of the order                                   | String        |
+| `cart_id`                              | The ID of the Shopify cart                                     | String        |
 | `checkoutId`                           | The ID of the checkout session                                 | String        |
 | `context.uip`                          | The user's IP address                                          | String        |
 | `context['Google Analytics'].clientId` | The user's Google Analytics Client ID                          | String        |
@@ -158,6 +158,7 @@ The list below outlines the properties included in the events listed above.
 | `presentment_currency`                 | The user's local currency                                      | String        |
 | `presentment_total`                    | The order total in local currency                              | String        |
 | `products`                             | A list of all the product at that step of the funnel \*        | Array         |
+| `revenue`                              | Product revenue (excluding discounts, shipping and tax)        | Float         |
 | `sent_from`                            | A unique property to identify events sent by Littledata        | String        |
 | `shipping_method`                      | The shipping method chosen for checkout                        | String        |
 | `shipping`                             | The shipping cost                                              | Float         |
