@@ -1,6 +1,9 @@
 ---
 title: Identity Resolution Use-Cases
 ---
+
+
+
 The Personas Identity Resolution feature helps to create a unified view of the user across devices, apps, and unique identifiers. Identity resolution is critical to understanding the customer journey at multiple touch points, which allows brands to deliver personalized experiences to its customers at scale.
 
 ## Anonymous to Known Identification

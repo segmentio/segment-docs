@@ -9,6 +9,7 @@ import dropdownMenu from './dropdown-menu'
 import anchorsIndicator from './anchors-indicator'
 import codeExample from './code-example'
 import popover from './popover'
+import hoverhelp from './hoverhelp'
 import menuPanels from './menu-panels'
 import searchBar404 from './search-bar-404'
 import backScrolling from './back-scrolling'
@@ -30,6 +31,7 @@ dropdownMenu()
 anchorsIndicator()
 codeExample()
 popover()
+hoverhelp()
 searchBar404()
 backScrolling()
 navigation()

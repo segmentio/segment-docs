@@ -3,6 +3,8 @@ title: Segment Data Lakes Overview
 redirect_from: '/connections/destinations/catalog/data-lakes/'
 ---
 
+{% include content/plan-grid.md name="data-lakes" %}
+
 Segment Data Lakes sends Segment data to a cloud data store (for example AWS S3) in a format optimized to reduce processing for data analytics and data science workloads. Segment data is great for building machine learning models for personalization and recommendations, and for other large scale advanced analytics. Data Lakes can reduce the amount of processing required to get real value out of your data.
 
 > info ""

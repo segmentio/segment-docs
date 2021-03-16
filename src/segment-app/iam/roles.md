@@ -2,8 +2,6 @@
 title: Roles
 ---
 
-## Overview
-
 A role is used to give a user access to resources within a workspace. Roles are additive, and can be combined to configure a custom policy for a Team Member or a Group. A policy is at least one role plus one resource applied to an individual user or group.
 
 ## Global Roles
