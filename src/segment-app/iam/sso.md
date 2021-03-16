@@ -104,7 +104,7 @@ Enter your domain and click "Add Domain." When you click verify, you're given tw
 
 Segment supports "just in time" user permissioning; new users who authenticate using your IdP are automatically created in Segment as minimal-access (read-only) members. If the user already exists in Segment then Segment associates the IdP-identity with the existing Segment user account.
 
-Segment also supports user provisioning and role mapping via [SCIM](/docs/segment-app/iam/scim/).
+Segment also supports user provisioning and role mapping [using SCIM](/docs/segment-app/iam/scim/).
 
 ##### Do you support automatic user de-provisioning?
 
