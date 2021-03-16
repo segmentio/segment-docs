@@ -1,7 +1,6 @@
 ---
 title: Analytics.js 2.0 (Beta)
 strat: ajs
-hidden: true
 ---
 > warning "Analytics.js 2.0 is recommended for use in staging"
 > Analytics.js 2.0 was built with backwards compatibility in mind. However, Segment recommends thorough testing in a Staging environment before you upgrade your production source.
@@ -41,6 +40,20 @@ Once enabled, after 5 minutes or less, the updated code is delivered.
 ## Disable Analytics.js 2.0
 
 To revert back to the previous version of Analytics.js, disable the Analytics 2.0 toggle on any source you've enabled it.
+
+## Cases that require manual upgrade 
+There are two cases where upgrading to Analytics.js 2.0 requires manual effort beyond enabling the Analytics.js 2.0 toggle.
+
+### When using in-domain instrumentation CDN aliasing
+
+If the source you intend to upgrade uses the in-domain instrumentation as well as a custom "Alias for analytics.js", then you should update the AJS snippet to the latest version (4.13.2 or higher) before you toggle on Analytics.js 2.0. 
+
+### When using a strict content security policy on the page 
+
+Analytics.js 2.0 asynchronously loads different pieces of the library as needed. If the source you're upgrading uses a strict Content Security Policy (CSP) that allows Javascript to be downloaded from specific locations, then you need to update the CSP to account for all the pieces used for Analytics.js 2.0. Therefore, beyond allowing the main analytics.min.js script, you should allow the following paths in your CSP: 
+- `https://cdn.segment.com/v1/projects/<WRITE_KEY>/settings`
+- `https://cdn.segment.com/analytics-next/bundles/*` 
+- `https://cdn.segment.com/next-integrations/integrations/*`
 
 ## Open source libraries
 
