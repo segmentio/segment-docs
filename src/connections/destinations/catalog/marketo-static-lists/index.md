@@ -1,7 +1,7 @@
 ---
 title: Marketo Static Lists Destination
 hide-boilerplate: true
-strat: adobe
+strat: salesforce
 ---
 
 > note "Marketo vs Marketo Static Lists Destinations"
