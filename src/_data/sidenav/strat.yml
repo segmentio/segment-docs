@@ -1,7 +1,7 @@
 ---
 sections:
 - slug: adobe
-  section_title: Adobe integrations
+  section_title: Adobe Integrations
   section:
   - path: /connections/destinations/catalog/adobe-analytics
     title: Adobe Analytics destination
@@ -18,7 +18,7 @@ sections:
   - path: /connections/destinations/catalog/marketo-v2
     title: Marketo destination
   - path: /connections/destinations/catalog/marketo-static-lists
-    title: Marketo static lists (Personas) destination
+    title: Marketo static lists destination (Personas)
   - path: /connections/sources/catalog/cloud-apps/marketo
     title: Marketo cloud source
 
