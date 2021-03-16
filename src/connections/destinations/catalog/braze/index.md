@@ -42,11 +42,11 @@ If you notice any gaps or outdated information in this document, or simply want 
       [SEGAnalytics setupWithConfiguration:config];
     ```
 
-    [Here](https://github.com/Appboy/appboy-segment-ios/blob/master/Example/Segment-Appboy/SEGAppDelegate.m#L10) is a sample project which shows how to integrate the above.
+    [Here](https://github.com/Appboy/appboy-segment-ios/blob/master/CocoapodsExample/Segment-Appboy/SEGAppDelegate.m) is a sample project which shows how to integrate the above.
 
 #### Sample App
 
-Braze created a sample iOS application that integrates Braze using Segment. Check it out at the [GitHub repo](https://github.com/Appboy/appboy-segment-ios/tree/master/Example).
+Braze created a sample iOS application that integrates Braze using Segment. Check it out at the [GitHub repo](https://github.com/Appboy/appboy-segment-ios/tree/master/CocoapodsExample).
 
 #### Additional device-mode set up for iOS 14 support
 
@@ -116,9 +116,9 @@ analytics.identify('ze8rt1u89', {
 });
 ```
 
-When you Identify a user, Segment passes that user's information to Braze with `userId` as Braze's External User ID. 
+When you Identify a user, Segment passes that user's information to Braze with `userId` as Braze's External User ID.
 
-If you are using a device-mode connection, Braze's SDK also automatically assigns a `braze_id` to every user. This allows Braze to capture anonymous activity from the device by matching on `braze_id` instead of `userId`. This only applies to _device-mode connections_. 
+If you are using a device-mode connection, Braze's SDK also automatically assigns a `braze_id` to every user. This allows Braze to capture anonymous activity from the device by matching on `braze_id` instead of `userId`. This only applies to _device-mode connections_.
 
 To send anonymous user data in cloud-mode, you must manually include the user's `braze_id` in all your Segment API calls in the `integrations.Braze.braze_id` or `context.integrations.Braze.braze_id` object.
 
