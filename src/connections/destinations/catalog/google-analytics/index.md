@@ -13,7 +13,7 @@ strat: google
 
 If your Google Measurement ID starts with a G, you are using G-Codes from Google Analytics 4, and should consider using [Segment's upcoming Google Analytics 4 destination](/docs/connections/destinations/catalog/google-analytics/ga4-plans/).
 
-Although GA4 is now the default when you create a new property, you can still [create a Universal Analytics property](https://support.google.com/analytics/answer/10269537). You can use a UA property with the current Google Analytics destination.
+Although GA4 is now the default when you create a new property, you can still [create a Universal Analytics property](https://support.google.com/analytics/answer/10269537). You can use a UA property with the [Segment's Google Analytics destination](/docs/connections/destinations/catalog/google-analytics/).
 
 Different Measurement IDs begin with different prefixes, which indicate which Google destination you should use.
 
