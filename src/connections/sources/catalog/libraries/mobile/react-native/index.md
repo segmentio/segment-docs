@@ -50,7 +50,7 @@ This is why even if you see events in the debugger, the Device-mode destination 
 
 
 > info "Good to know - Device-mode destinations"
-> Segment's React Native library serves as a wrapper around the two mobile libraries for iOs and Android. If you plan to [bundle device-mode destinations](#packaging-destinations-using-device-mode) you must add these dependencies.
+> Segment's React Native library serves as a wrapper around the two mobile libraries for iOS and Android. If you plan to [bundle device-mode destinations](#packaging-destinations-using-device-mode) you must add these dependencies.
 
 ### iOS configuration
 
@@ -114,17 +114,27 @@ You can read [more about connection modes](/docs/connections/destinations/#conne
 
 To use a device-mode destination, you add the destination's SDK to the project. You can find information about these in the destination information pages in the Segment app. Any mobile destination with a Device-mode option includes information on how to bundle SDK.
 
-Segment's React Native source library is a wrapper for the iOS and Android source libraries, and the React Native device mode SDKs you bundle are generated from the iOS and Android ones.
+> warning ""
+> **Good to know**: Not all destinations have a device-mode package available for use with React Native. [See the list below](). If a destination you want to use does not offer a React Native SDK, you can usually still use it in cloud-mode instead.  
 
-To use device-mode destinations with React Native, you must add the dependencies for iOS and Android. Once you set up the device mode dependencies for iOS and Android, you can then add the React Native dependency. See the [device mode documentation in the React Native readme](https://github.com/segmentio/analytics-react-native/#packaging-device-mode-destination-sdks) for more details.
+When you bundle a destination's device-mode SDK, Segment's React Native library source serves as a wrapper for the iOS and Android source libraries. The React Native device mode SDKs you bundle are generated from the iOS and Android ones.
 
-To add the device-mode dependencies, install the pods for iOS builds, and add the dependencies to your `build.gradle​` file in your Android project. You might also be able to use a dependency manager command, like the NPM example below.
+To use device-mode destinations with React Native, first add the dependencies using the `yarn add` command, as in the example below. Run this command for each device-mode destination you want to bundle.
 
 ```bash
 yarn add @segment/analytics-react-native-{bugsnag,branch,google-analytics}
 ```
 
-After you add the destination dependency, you register it with Analytics-React. This tells How
+> tip "Tip!"
+> If you are bundling several device-mode destinations in your project, you might want to make a checklist
+
+you must add the dependencies for iOS and Android. Once you set up the device mode dependencies for iOS and Android, you can then add the React Native dependency. See the [device mode documentation in the React Native readme](https://github.com/segmentio/analytics-react-native/#packaging-device-mode-destination-sdks) for more details.
+
+To add the device-mode dependencies, install the pods for iOS builds, and add the dependencies to your `build.gradle​` file in your Android project. You might also be able to use a dependency manager command, like the NPM example below.
+
+
+
+After you add the destination dependency, you register it with Analytics-React as in the example below. This tells your application how to access the destination's SDK.
 
 ```js
 import analytics from '@segment/analytics-react-native'
@@ -144,26 +154,26 @@ await analytics.setup('YOUR_WRITE_KEY', {
 
 | Name                | iOS | Android | npm package           |
 | ------------------- | --- | ------- | ----------------------- |
-| Adjust              | ✅  | ✅      | `@segment/analytics-react-native-adjust`      |
-| Amplitude           | ✅  | ✅      | `@segment/analytics-react-native-amplitude`               |
+| Adjust              | ✅  | ✅   | `@segment/analytics-react-native-adjust`      |
+| Amplitude           | ✅  | ✅   | `@segment/analytics-react-native-amplitude`               |
 | Appboy              | ✅  | ✅      | `@segment/analytics-react-native-appboy`                  |
 | AppsFlyer           | ✅  | ✅      | `@segment/analytics-react-native-appsflyer`               |
 | Branch              | ✅  | ✅      | `@segment/analytics-react-native-branch`                  |
 | Bugsnag             | ✅  | ✅      | `@segment/analytics-react-native-bugsnag`                 |
 | CleverTap           | ✅  | ✅      | `@segment/analytics-react-native-clevertap`               |
-| ComScore            | ✅  | ❌      | `@segment/analytics-react-native-comscore-ios`            |
+| ComScore            | ✅  | ⬜️      | `@segment/analytics-react-native-comscore-ios`            |
 | Countly             | ✅  | ✅      | `@segment/analytics-react-native-countly`                 |
 | Crittercism         | ✅  | ✅      | `@segment/analytics-react-native-crittercism`             |
-| Facebook App Events | ✅  | ❌      | `@segment/analytics-react-native-facebook-app-events-ios` |
+| Facebook App Events | ✅  | ⬜️      | `@segment/analytics-react-native-facebook-app-events-ios` |
 | Firebase            | ✅  | ✅      | `@segment/analytics-react-native-firebase`                |
 | Flurry              | ✅  | ✅      | `@segment/analytics-react-native-flurry`                  |
 | Google Analytics    | ✅  | ✅      | `@segment/analytics-react-native-google-analytics`        |
 | Intercom            | ✅  | ✅      | `@segment/analytics-react-native-intercom`                |
 | Localytics          | ✅  | ✅      | `@segment/analytics-react-native-localytics`              |
 | Mixpanel            | ✅  | ✅      | `@segment/analytics-react-native-mixpanel`                |
-| Quantcast           | ❌  | ✅      | `@segment/analytics-react-native-quantcast-android`       |
-| Taplytics           | ✅  | ❌      | `@segment/analytics-react-native-taplytics-ios`           |
-| Tapstream           | ❌  | ✅      | `@segment/analytics-react-native-tapstream-android`       |
+| Quantcast           | ⬜️  | ✅      | `@segment/analytics-react-native-quantcast-android`       |
+| Taplytics           | ✅  | ⬜️      | `@segment/analytics-react-native-taplytics-ios`           |
+| Tapstream           | ⬜️  | ✅      | `@segment/analytics-react-native-tapstream-android`       |
 
 
 
