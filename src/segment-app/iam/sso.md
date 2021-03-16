@@ -102,13 +102,13 @@ Enter your domain and click "Add Domain." When you click verify, you're given tw
 
 ##### Do you support automatic user provisioning?
 
-Segment supports "just in time" user permissioning; new users who authenticate using your IdP are automatically created in Segment as minimal-access (read-only) members.
+Segment supports "just in time" user permissioning; new users who authenticate using your IdP are automatically created in Segment as minimal-access (read-only) members. If the user already exists in Segment then Segment associates the IdP-identity with the existing Segment user account.
 
-If the user already exists in Segment then Segment associates the IdP-identity with the existing Segment user account.
+Segment also supports user provisioning and role mapping [using SCIM](/docs/segment-app/iam/scim/).
 
 ##### Do you support automatic user de-provisioning?
 
-No. However, since any non-owners must log in with SSO to access your workspace, once you remove their authorization in your IdP they will no longer be able to access your workspace.
+Yes, users can be automatically de-provisioned [if you use SCIM](/docs/segment-app/iam/scim/).
 
 ##### Will my users lose access to their other workspaces when I enable SSO?
 
