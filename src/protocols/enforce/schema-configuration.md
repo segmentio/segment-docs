@@ -26,7 +26,7 @@ For example, if you include a `Subscription Cancelled` event in your Tracking Pl
 
 ## Track Calls - Unplanned Properties
 
-Setting this dropdown to Omit Properties will ensure that properties not defined in your Tracking Plan are removed from the relevant event. For example, if you include a single `subscription_id` property in the `Subscription Cancelled` event in your tracking plan, the below track call would have the `subscription_name` property omitted by Protocols.
+Setting this dropdown to Omit Properties will ensure that properties not defined in your Tracking Plan are removed from the relevant event.
 
 For example, if you include a single `subscription_id` property in the `Subscription Cancelled` event in your tracking plan, the example track call below would have the `subscription_name` property omitted by Protocols.
 
