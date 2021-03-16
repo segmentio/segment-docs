@@ -108,7 +108,7 @@ Segment also supports user provisioning and role mapping [using SCIM](/docs/segm
 
 ##### Do you support automatic user de-provisioning?
 
-Yes, users can be automatically de-provisioned using [SCIM](/docs/segment-app/iam/scim/).
+Yes, users can be automatically de-provisioned [if you use SCIM](/docs/segment-app/iam/scim/).
 
 ##### Will my users lose access to their other workspaces when I enable SSO?
 
