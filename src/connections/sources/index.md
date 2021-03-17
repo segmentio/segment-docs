@@ -174,5 +174,7 @@ We'd love to know what other sources of data you'd like to analyze. [Contact the
 ---
 
 ## Visual Tagger (Beta)
+> warning "Visual Tagger entering maintenance mode"
+> For more information, see the [Visual Tagger documentation](/docs/connections/sources/visual-tagger).
 
 [Getting started with Segment Visual Tagger](/docs/connections/sources/visual-tagger)

@@ -1,12 +1,13 @@
 ---
 title: Marketo V2 Destination
+strat: salesforce
 ---
 
 ## Getting Started
 
 To start sending data to Marketo, there are two things you must do. **Both of these steps require that you to log in with the Admin Marketo Account.**
 
-### 1. Enter your Marketo Credentials into your Destination settings.
+### Enter your Marketo Credentials into your Destination settings
 We'll need your Munchkin Account ID, Client Secret, and Client ID.
 
 To get your Munchkin Account ID [login to your Marketo account](https://login.marketo.com/), click Admin in the top right corner, then click Munchkin on the left side bar.
@@ -15,12 +16,13 @@ To get your Munchkin Account ID [login to your Marketo account](https://login.ma
 
 
 To get your Client Secret and Client ID, you must create a role that has full API access, an API only user, and then create a Service in Marketo.
+
 To create a role with full API access:
 
-1. Click Admin in the top right corner.
-2. Click Users & Roles on the left side bar.
-3. Click on the Roles tab.
-4. Click New Role. Name your role and check the API Access box to assign the user full API access. Click Create.
+1. Click **Admin** in the top right corner.
+2. Click **Users & Roles** on the left side bar.
+3. Click on the **Roles** tab.
+4. Click **New Role**. Name your role and check the API Access box to assign the user full API access. Click Create.
 ![](images/cV2x9pHb44g+.png)
 
 
@@ -44,7 +46,7 @@ Next, create a Service and get Client Secret and Client ID from that Service.
 ![](images/c3s0qJ-dDSO+.png)
 
 
-### **2. You must create a User ID and an Anonymous ID field in Marketo.**
+### Create a User ID and an Anonymous ID field in Marketo
 
 1. Click Admin in the top right corner.
 2. Click Field Management on the left side bar.
@@ -79,7 +81,7 @@ Here is a sample Javascript  `.identify()` call with the all the standard traits
 analytics.identify('1234', {
   firstName: 'Robyn Rihanna',
   lastName: 'Fenty',
-  email: 'rihanna@badgalriri.com',
+  email: 'rihanna@example.com',
   gender: 'woman',
   phone: '555-555-5555',
   company: 'Segment.com',
@@ -223,7 +225,7 @@ To upload a list to Marketo, when you are in Lead Database, click All Leads. The
 
 ### Migrating from Marketo to Marketo V2
 
-There are a few necessary steps that have to be taken to Migrate from Marketo to Marketo V2.
+There are a few necessary steps that have to be taken to migrate from Segment's legacy Marketo v1 destinations, to Marketo V2.
 
 **Important: Make sure you disable Marketo once you are done getting set up with Marketo V2. If you leave both enabled, there will likely be duplicate data in your Marketo account.**
 
@@ -233,11 +235,11 @@ There are a few necessary steps that have to be taken to Migrate from Marketo to
 3. `Track` calls must be mapped in your Destination settings. Our Marketo Destination sent `track` calls as a Munchkin Visit WebPage event in Marketo. In Marketo V2, we'll send your track calls to your Marketo Custom Activities. Detailed instructions [here](/docs/connections/destinations/catalog/marketo-v2/#track).
 4. If there are any custom Lead fields that you'd like sent to Marketo in your `Identify` calls, you must add them in your Destination settings. Detailed instructions [here](/docs/connections/destinations/catalog/marketo-v2/#identify).
 5. Update anything in Marketo that rely on the way V1 sends `.track()` events to be triggered by your custom activities. For example, our V1 Marketo destination sent track events as a "Visit Web Page" event with `/event/<your_event_name>`. So if you a workflow that is triggered by a "Visit Web Page" event where the web page contains `/event/<your_event_name>`, you'll have to swap out the "Visit Web Page" event trigger you have with your Custom Attribute Trigger. In the right side bar, click the "Custom" folder under "Triggers" and select the trigger that you set for your custom activity:
-![](images/cPD4kP65buG+.png)
+   ![](images/cPD4kP65buG+.png)
 
 
-To figure out what the trigger name for that Custom Activity is, navigate to the admin section of Marketo > Marketo Custom Activities > Click on your activity from the side bar and you'll see the trigger name:
+   To figure out what the trigger name for that Custom Activity is, navigate to the admin section of Marketo > Marketo Custom Activities > Click on your activity from the side bar and you'll see the trigger name:
 
-![](images/cg6YhDEPWXv+.png)
+   ![](images/cg6YhDEPWXv+.png)
 
 6. When enabling Marketo V2, because of the way Marketo's API works, there is potential to create duplicate leads, especially when the first enabling the destination. For ways to prevent this, check out the Preventing Duplicate Leads.

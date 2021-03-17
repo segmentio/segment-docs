@@ -35,7 +35,7 @@ export default function() {
     };
   };
 
-  Array.from(document.querySelectorAll('.st-search-input')).forEach(searchInput => {
+  Array.from(document.querySelectorAll('.aa-Input')).forEach(searchInput => {
     searchInput.addEventListener('input', debounce(function(e) {
       const query = e.target.value
       if (query.length) {

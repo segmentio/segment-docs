@@ -16,6 +16,7 @@ sections:
   - path: /connections/destinations/catalog/adobe-analytics/best-practices
     title: Adobe Analytics best practices
 
+
 - slug: facebook
   section_title: Facebook Integrations
   section:
@@ -76,6 +77,12 @@ sections:
     title: Salesforce cloud source
   - path: /connections/sources/catalog/cloud-apps/salesforce-marketing-cloud
     title: Salesforce Marketing Cloud cloud source
+  - path: /connections/destinations/catalog/marketo-v2
+    title: Marketo destination
+  - path: /connections/destinations/catalog/marketo-static-lists
+    title: Marketo static lists destination (Personas)
+  - path: /connections/sources/catalog/cloud-apps/marketo
+    title: Marketo cloud source
 
 
 - slug: ajs
@@ -83,8 +90,8 @@ sections:
   section:
   - path: /connections/sources/catalog/libraries/website/javascript
     title: Analytics.js (Javascript) Source
-  # - path: /connections/sources/catalog/libraries/website/javascript/analytics-js-2
-  #   title: Analytics.js 2.0 (Beta)
+  - path: /connections/sources/catalog/libraries/website/javascript/analytics-js-2
+    title: Analytics.js 2.0 (Beta)
   - path: /connections/sources/catalog/libraries/website/javascript/supported-browsers
     title: Analytics.js supported browsers
   - path: /connections/sources/catalog/libraries/website/javascript/quickstart
