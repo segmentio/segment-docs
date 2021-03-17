@@ -10,7 +10,28 @@ This document was last updated on March 11, 2020. If you notice any gaps, outdat
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+The first step is to make sure Intercom supports the source type and connection mode you've chosen to implement. You can learn more about what dictates [the connection modes we support here](https://segment.com/docs/destinations/#connection-modes).
+
+<table>
+  <tr>
+    <th></th>
+    <th>Web</th>
+    <th>Mobile</th>
+    <th>Server</th>
+  </tr>
+  <tr>
+    <td>📱 Device-based</td>
+    <td> ✅ </td>
+    <td> ✅ </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>☁️  Cloud-based</td>
+    <td></td>
+    <td> ✅ </td>
+    <td> ✅ </td>
+  </tr>
+</table>
 
 1.  From your Segment UI's Destinations page click **Add Destination**.
 2.  Search for "Intercom" and select it in the results that appear.

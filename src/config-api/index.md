@@ -64,8 +64,6 @@ When you create an access token, you'll give it a description, a workspace, and 
 > warning "Secret Token"
 > You can not retrieve the plain-text `token` later, so you should save it in a secret manager. If you lose the `token` you can generate a new one.
 
-Note: All Personal Access Tokens will be deprecated on August 3rd, 2019.
-
 ### API Requests
 
 Now that you have an access token, you can use this token to access the rest of the Config API by setting it in the `Authorization` header of your requests, for example:

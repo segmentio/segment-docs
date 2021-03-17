@@ -90,3 +90,11 @@ items:
     team: true
     business: true
     add-on: false
+- product_display_name: Workspace Home page
+  slug: workspace-home
+  plan-note: "The Workspace Home page is currently available in Business plan workspaces, to workspace Owners only."
+  plans:
+    free: false
+    team: false
+    business: true
+    add-on: false

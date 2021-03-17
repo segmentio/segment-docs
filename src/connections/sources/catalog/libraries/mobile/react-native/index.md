@@ -50,7 +50,7 @@ This is why even if you see events in the debugger, the Device-mode destination 
 
 
 > info "Good to know - Device-mode destinations"
-> Segment's React Native library serves as a wrapper around the two mobile libraries for iOS and Android. If you plan to [bundle device-mode destinations](#packaging-destinations-using-device-mode) you must add these dependencies.
+> Segment's React Native library serves as a wrapper around the two mobile libraries for iOs and Android. If you plan to [bundle device-mode destinations](#packaging-destinations-using-device-mode) you must add these dependencies.
 
 ### iOS configuration
 
@@ -115,7 +115,7 @@ You can read [more about connection modes](/docs/connections/destinations/#conne
 To use a device-mode destination, you add the destination's SDK to the project. You can find information about these in the destination information pages in the Segment app. Any mobile destination with a Device-mode option includes information on how to bundle SDK.
 
 > warning ""
-> **Good to know**: Not all destinations have a device-mode package available for use with React Native. [See the list below](). If a destination you want to use does not offer a React Native SDK, you can usually still use it in cloud-mode instead.  
+> **Good to know**: Not all destinations have a device-mode package available for use with React Native. [See the list below](). If a destination you want to use does not offer a React Native SDK, you can usually still use it in cloud-mode instead.
 
 When you bundle a destination's device-mode SDK, Segment's React Native library source serves as a wrapper for the iOS and Android source libraries. The React Native device mode SDKs you bundle are generated from the iOS and Android ones.
 

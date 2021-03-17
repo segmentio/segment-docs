@@ -17,6 +17,7 @@ group :jekyll_plugins do
   gem 'jekyll-redirect-from'
   gem "premonition", "~> 2.0.0"
   gem "jekyll-include-cache"
+  gem 'jekyll-algolia'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

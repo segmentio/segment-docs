@@ -10,6 +10,8 @@ redirect_from:
   - '/docs/connections/sources/catalog/cloud-apps/'
   - '/docs/connections/sources/catalog/cloud-apps/'
 ---
+Below is a list of the available sources on the Segment platform.
+
 
 <div class="destinations-catalog">
   {% assign categories = site.data.catalog.source_categories.items %}
