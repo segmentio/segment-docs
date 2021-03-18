@@ -3,15 +3,23 @@ title: Firebase Destination
 strat: google
 ---
 
+Firebase is Google's platform for mobile apps. The Segment Firebase destination requires that you bundle the Firebase SDK with your project. The Segment-wrapped destination code then runs on the user's device, and sends its tracking calls to the Firebase API endpoints, and a copy to Segment for archiving.
+
+
+> info ""
+> As of October 2019, Firebase replaced the legacy version of Google Analytics Classic for mobile devices. (If you used Google Analytics for mobile, see the [migration guide](/docs/connections/destinations/catalog/google-analytics/migrating/).)
+
 
 ## Getting Started on Android
 
 To start sending data to Firebase Analytics from your Android project, you'll need to follow a few simple steps:
 
-- Register your mobile app with Firebase at `https://console.firebase.google.com`
-- Once your app is registered, you'll be prompted to download a `google-services.json` file. Place this in your Application's "app" folder. This file contains all necessary configurations and cannot be used across multiple apps. If you're configuring Firebase for other apps, you should create a new view in your Firebase console and download a unique `google-services.json`  file for each.
+1. Register your mobile app with Firebase at `https://console.firebase.google.com`
+2. Once your app is registered, download the `google-services.json` file.
+3. Copy the file to your Application's `app` folder.
+   This file contains all necessary configurations and cannot be used across multiple apps. If you're configuring Firebase for other apps, create a new view in your Firebase console and download a unique `google-services.json`  file for each.
 
-***Module-level build.gradle***: Add the Segment-Firebase SDK and apply the Google Services plugin at the end of the file:
+4. Add the modules to `build.gradle`. Add the Segment-Firebase SDK and apply the Google Services plugin at the end of the file:
 
 ```java
 buildscript {
@@ -29,7 +37,7 @@ apply plugin: 'com.google.gms.google-services'
 > note ""
 > **Note:** The Firebase SDK requires android resources which are available on `aar` packages. Use the `aar` package when adding the Segment-Firebase SDK.
 
-***Project-level build.gradle***: Add Google Services dependency and their Maven repo location to repositories:
+<li value="5"> Add the modules to the Project-level `build.gradle` file. Add Google Services dependency and their Maven repo location to repositories:
 
 ```js
 buildscript {
@@ -53,10 +61,13 @@ Add these permissions to your AndroidManifest.xml:
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
+</li>
 
-Finally, register the dependency with the Segment SDK in your application subclass, as [seen here in our Android library documentation](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#packaging-sdks-for-device-mode-destinations):
+<li value="6">Finally, register the dependency with the Segment SDK in your application subclass, [as in our Android library documentation](/docs/connections/sources/catalog/libraries/mobile/android/#packaging-sdks-for-device-mode-destinations).
 
-Periodically, Firebase updates the Android configuration requirements for loading their SDK in your app. To validate that your Android configuration is sufficient for your version of Firebase, consult [Google's Firebase release notes](https://firebase.google.com/support/release-notes/android). You can find the corresponding verison of the Firebase SDK Segment requires in each of the Segment-Firebase SDK versions by consulting the [Segment-Firebase changelog](https://github.com/segment-integrations/analytics-android-integration-firebase/blob/master/CHANGELOG.md). For example, Segment-Firebase 1.3.1 includes Firebase Core 17.0.1 as a dependency.
+Periodically, Firebase updates the Android configuration requirements for loading their SDK in your app. To check if your Android configuration is compatible with for your version of Firebase, check [Google's Firebase release notes](https://firebase.google.com/support/release-notes/android).
+
+You can also check the [Segment-Firebase changelog](https://github.com/segment-integrations/analytics-android-integration-firebase/blob/master/CHANGELOG.md) to find the version of the Firebase SDK that Segment requires in each of the Segment-Firebase SDK version.  For example, Segment-Firebase 1.3.1 includes Firebase Core 17.0.1 as a dependency.
 
 ```java
 Analytics analytics = new Analytics.Builder(context, writeKey)
@@ -65,7 +76,7 @@ Analytics analytics = new Analytics.Builder(context, writeKey)
   .build();
 ```
 
-By default, we bundle only `Firebase/Core` which is [Firebase's Analytics offering](https://firebase.google.com/docs/analytics/). You can see the other available [Firebase dependencies and features here](https://firebase.google.com/docs/android/setup).
+By default, Segment bundles only `Firebase/Core` which is [Firebase's mobile analytics offering](https://firebase.google.com/docs/analytics/). You can see the other available [Firebase dependencies and features in the Firebase documentation](https://firebase.google.com/docs/android/setup).
 
 ## Getting Started on iOS
 
