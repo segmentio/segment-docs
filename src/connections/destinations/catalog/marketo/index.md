@@ -1,6 +1,6 @@
 ---
 title: Marketo Destination
-strat: salesforce
+strat: adobe
 ---
 
 ## Getting Started
