@@ -1,6 +1,6 @@
 ---
 title: Marketo V2 Destination
-strat: salesforce
+strat: adobe
 ---
 
 ## Getting Started
