@@ -89,6 +89,10 @@ By default, we bundle only `Firebase/Core` which is [Firebase's Analytics offeri
 
 By default, Segment only bundles `Firebase/Core` which is [Firebase's Analytics offering](https://firebase.google.com/docs/analytics/). You can see the other available [Firebase pods and features here](https://firebase.google.com/docs/ios/setup).
 
+## Setting up Firebase with Analytics-React-Native
+
+<!-- TODO --> 
+
 ## Identify
 
 When you call `identify` Segment will map to the corresponding Firebase Analytics calls:
