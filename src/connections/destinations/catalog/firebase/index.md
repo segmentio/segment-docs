@@ -37,37 +37,35 @@ apply plugin: 'com.google.gms.google-services'
 > note ""
 > **Note:** The Firebase SDK requires android resources which are available on `aar` packages. Use the `aar` package when adding the Segment-Firebase SDK.
 
-<li value="5"> Add the modules to the Project-level `build.gradle` file. Add Google Services dependency and their Maven repo location to repositories:
+
+<ol style="counter-reset: none;"><li value="5" markdown=1>
+Add the modules to the Project-level `build.gradle` file. Add Google Services dependency and their Maven repo location to repositories:
 
 ```js
 buildscript {
-    dependencies {
-        // Add this line
-        classpath 'com.google.gms:google-services:3.1.0'
-    }
+ dependencies {
+   // Add this line
+   classpath 'com.google.gms:google-services:3.1.0'
+ }
 }
 
 allprojects {
-    repositories {
-        // Add this line
-        maven { url 'https://maven.google.com' }
-    }
+ repositories {
+   // Add this line
+   maven { url 'https://maven.google.com' }
+ }
 }
 ```
 
-Add these permissions to your AndroidManifest.xml:
+   Add these permissions to your AndroidManifest.xml:
 
-```xml
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-```
-</li>
-
-<li value="6">Finally, register the dependency with the Segment SDK in your application subclass, [as in our Android library documentation](/docs/connections/sources/catalog/libraries/mobile/android/#packaging-sdks-for-device-mode-destinations).
-
-Periodically, Firebase updates the Android configuration requirements for loading their SDK in your app. To check if your Android configuration is compatible with for your version of Firebase, check [Google's Firebase release notes](https://firebase.google.com/support/release-notes/android).
-
-You can also check the [Segment-Firebase changelog](https://github.com/segment-integrations/analytics-android-integration-firebase/blob/master/CHANGELOG.md) to find the version of the Firebase SDK that Segment requires in each of the Segment-Firebase SDK version.  For example, Segment-Firebase 1.3.1 includes Firebase Core 17.0.1 as a dependency.
+   ```xml
+   <uses-permission android:name="android.permission.INTERNET" />
+   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+   ```
+</li></ol>
+<ol style="counter-reset: none;"><li value="6" markdown=1>
+Finally, register the dependency with the Segment SDK in your application subclass, [as in our Android library documentation](/docs/connections/sources/catalog/libraries/mobile/android/#packaging-sdks-for-device-mode-destinations).
 
 ```java
 Analytics analytics = new Analytics.Builder(context, writeKey)
@@ -75,8 +73,12 @@ Analytics analytics = new Analytics.Builder(context, writeKey)
   ...
   .build();
 ```
+Firebase periodically updates the Android configuration requirements for loading their SDK in your app. To check if your Android configuration is compatible with for your version of Firebase, check [Google's Firebase release notes](https://firebase.google.com/support/release-notes/android).
+
+You can also check the [Segment-Firebase changelog](https://github.com/segment-integrations/analytics-android-integration-firebase/blob/master/CHANGELOG.md) to find the version of the Firebase SDK that Segment requires in each of the Segment-Firebase SDK version.  For example, Segment-Firebase 1.3.1 includes Firebase Core 17.0.1 as a dependency.
 
 By default, Segment bundles only `Firebase/Core` which is [Firebase's mobile analytics offering](https://firebase.google.com/docs/analytics/). You can see the other available [Firebase dependencies and features in the Firebase documentation](https://firebase.google.com/docs/android/setup).
+</li></ol>
 
 ## Getting Started on iOS
 
@@ -102,7 +104,15 @@ By default, Segment only bundles `Firebase/Core` which is [Firebase's Analytics 
 
 ## Setting up Firebase with Analytics-React-Native
 
-<!-- TODO --> 
+If you use Segment's React Native source library, you must explicitly bundle the mobile SDKs for both iOS and Android with your project.
+
+1. Use yarn to add `analytics-react-native` to your project.
+2. Use yarn to add the react-native firebase SDKs.
+3. Add import statements to your file.
+4. Add to the set-up configuration. (???)
+5. Change to your iOS directory and run `pod install`
+6. Add the `analytics-react-native-firebase` module to your `build.gradle` file.
+
 
 ## Identify
 
