@@ -137,7 +137,7 @@ Segment's special traits recognized as Braze's standard user profile fields (in 
 | `address.country` | `country`   |
 | `gender`          | `gender`    |
 
-All other traits (except their [reserved keys](https://www.braze.com/documentation/Platform_Wide/#reserved-keys)) will be sent to Braze as custom attributes. You can send an array of strings as trait values but not nested objects.
+All other traits (except their [reserved user profile fields](https://www.braze.com/docs/api/objects_filters/user_attributes_object/#braze-user-profile-fields)) will be sent to Braze as custom attributes. You can send an array of strings as trait values but not nested objects.
 
 
 ## Track
