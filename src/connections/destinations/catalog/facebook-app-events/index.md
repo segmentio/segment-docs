@@ -31,6 +31,10 @@ This page is about the **Facebook App Events**. For documentation on other Faceb
 3. In the destination settings, enter your Facebook App ID which can be retrieved from your [Facebook Apps dashboard](https://developers.facebook.com/apps/).
 4. Once you turn on the Facebook App Events integration in your app's Segment project, we'll start sending `track` data to Facebook's App Events endpoints.
 
+### Using Facebook App Events with React Native Device Mode
+
+{% include content/react-dest.md only="ios" %} 
+
 ## Screen
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](/docs/connections/spec/screen/) does. An example call would look like:
@@ -184,7 +188,7 @@ analytics.track({
 
 #### iOS Device Mode
 
-You must use the Facebbok App Events integration SDK version `2.0.0` or later to call `setDataProcessingOptions` when you enable the **Use Limited Data Use** destination setting. Events sent from earlier versions of the Facebook App Events integration SDK cannot call `setDataProcessingOptions`, but Facebook still has access to the IP address in the events to process LDU based on geolocation.
+You must use the Facebook App Events integration SDK version `2.0.0` or later to call `setDataProcessingOptions` when you enable the **Use Limited Data Use** destination setting. Events sent from earlier versions of the Facebook App Events integration SDK cannot call `setDataProcessingOptions`, but Facebook still has access to the IP address in the events to process LDU based on geolocation.
 
 When you use Segment’s mobile libraries, you must set the Data Processing Options when you declare the destination in your app delegate’s instance. The example below shows how you might set custom Data Processing parameters in an iOS project.
 
@@ -219,6 +223,8 @@ Analytics.with(context).track(
 With the release of Segment’s latest Analytics-iOS SDK, which includes support for upcoming iOS 14 tracking changes, you must decide if you _need_ to collect the user's IDFA or not. If you do not need to collect IDFA, you can update your Analytics-iOS SDK to the next version, and Segment sets `device.adTrackingEnabled` to `false`, and starts deleting the `device.advertisingId` from the context object in your payloads. If you _do_ need to collect the IDFA, you must import the IDFA closure as a config to the library, or import the Ad Tracking Transparency framework from Apple.
 
 Facebook returns a 4xx error due to lack of required parameters if the `device.advertisingId` key does not appear in the payload. To work around this, enable the  **Fallback to Zeroed IDFA when advertisingId key not present** destination setting for Facebook App Events from the Segment web app. When you enable this setting, Segment checks for the `device.advertisingId` key, and if none is present, sets the `advertiser_id` in the outbound payload to `'00000000-0000-0000-0000-000000000000'`.
+
+
 
 
 ## Other Features

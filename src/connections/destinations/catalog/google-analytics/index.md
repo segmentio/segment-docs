@@ -24,6 +24,11 @@ When you enable the Google Analytics destination in Segment:
 > These docs cover Google Analytics Universal features, since the [Classic tracking method has been depreciated](http://analytics.blogspot.com/2014/04/universal-analytics-out-of-beta-into.html).
 
 
+
+### React Native set up
+
+{% include content/react-dest.md %}
+
 ## Page and Screen
 
 When you make a [Page call](/docs/connections/spec/page/), Segment sends a `pageview` to Google Analytics. You can send pageviews from the browser, or using any of the [Segment server libraries](/docs/connections/sources/catalog/#server).

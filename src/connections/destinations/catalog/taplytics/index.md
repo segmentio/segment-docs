@@ -23,6 +23,10 @@ To get up and running with Taplytics on Android, there a couple of steps we will
 
 To enable its full functionality (like Push Notifications, Deep linking), there are a couple of extra steps that you have to take care of in your Android app. [This document explains how to set up Push Notifications](https://docs.taplytics.com/docs/guides-push-notifications) and [ths one explains how to set up deep linking](https://support.taplytics.com/hc/en-us/articles/360004176632-Deep-Linking-Guide-).
 
+### React Native set up
+
+{% include content/react-dest.md only="ios" %} 
+
 
 ## Identify
 Use [Identify](/docs/connections/sources/catalog/libraries/mobile/ios/#identify) to track user specific attributes. It equivalent to tracking [user attributes](https://docs.taplytics.com/docs/guides-user-insights) on Taplytics. Taplytics supports traits supported by Segment as well as custom traits. If you set traits.id, we set that as the Unique ID for that user.

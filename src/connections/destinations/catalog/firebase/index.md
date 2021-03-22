@@ -113,6 +113,7 @@ If you use Segment's React Native source library, you must explicitly bundle the
 5. Change to your iOS directory and run `pod install`.
 6. Add the `analytics-react-native-firebase` module to your `build.gradle` file.
 
+<!-- LR Mar 2021: We didn't use the react-dest include here because Firebase needs the extra build.gradle step.-->
 
 ## Identify
 
