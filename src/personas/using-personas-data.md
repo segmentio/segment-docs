@@ -379,7 +379,6 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [Userlist](/docs/connections/destinations/catalog/userlist/)
 - [Vero](/docs/connections/destinations/catalog/vero/)
 - [Vitally](/docs/connections/destinations/catalog/vitally/)
-- [WalkMe](/docs/connections/destinations/catalog/walkme/)
 - [Watchtower](/docs/connections/destinations/catalog/watchtower/)
 - [WebEngage](/docs/connections/destinations/catalog/webengage/)
 - [Webhooks](/docs/connections/destinations/catalog/webhooks/)
