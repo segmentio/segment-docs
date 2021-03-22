@@ -106,11 +106,11 @@ By default, Segment only bundles `Firebase/Core` which is [Firebase's Analytics 
 
 If you use Segment's React Native source library, you must explicitly bundle the mobile SDKs for both iOS and Android with your project.
 
-1. Use yarn to add `analytics-react-native` to your project.
-2. Use yarn to add the react-native firebase SDKs.
-3. Add import statements to your file.
-4. Add to the set-up configuration. (???)
-5. Change to your iOS directory and run `pod install`
+1. Use yarn to add `analytics-react-native` to your project. (`@segment/analytics-react-native`)
+2. Use yarn to add the `analytics-react-native-firebase` SDKs.  (`@segment/analytics-react-native-firebase`)
+3. Add `import` statements to your code so you can access the SDKs.
+4. Go to the `await analytics.setup` configuration in your code, and find (or add) the `using:` item. Add "Firebase" to the list of device-mode destinations in the `using` item.
+5. Change to your iOS directory and run `pod install`.
 6. Add the `analytics-react-native-firebase` module to your `build.gradle` file.
 
 
