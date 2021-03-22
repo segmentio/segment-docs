@@ -122,7 +122,7 @@ When you bundle a destination's device-mode SDK, Segment's React Native library 
 To use device-mode destinations with React Native, first add the dependencies using the `yarn add` command, as in the example below. Run this command for each device-mode destination you want to bundle. You may also need to run `yarn link`, but this is usually optional.
 
 ```bash
-yarn add @segment/analytics-react-native-{bugsnag,branch,google-analytics}
+yarn add @segment/analytics-react-native-{bugsnag,branch,firebase}
 ```
 
 > tip "Tip!"
@@ -130,7 +130,7 @@ yarn add @segment/analytics-react-native-{bugsnag,branch,google-analytics}
 
 See the [device mode documentation in the React Native readme](https://github.com/segmentio/analytics-react-native/#packaging-device-mode-destination-sdks) for more details.
 
-Some device-mode dependencies such as Firebase require that you install the pods for iOS builds, and add the dependencies to your `build.gradle​` file in your Android project.
+Some device-mode dependencies such as Firebase require that you also add the dependencies to your `build.gradle​` file in your Android project.
 
 After you add the destination dependency, you register it with Analytics-React as in the example below. This tells your application how to access the destination's SDK.
 
