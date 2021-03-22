@@ -165,7 +165,6 @@ await analytics.setup('YOUR_WRITE_KEY', {
 | [Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/) | ✅  | ⬜️     | `@segment/analytics-react-native-facebook-app-events-ios` |
 | [Firebase](/docs/connections/destinations/catalog/firebase/)                      | ✅  | ✅      | `@segment/analytics-react-native-firebase`                |
 | [Flurry](/docs/connections/destinations/catalog/flurry)                           | ✅  | ✅      | `@segment/analytics-react-native-flurry`                  |
-| [Google Analytics](/docs/connections/destinations/catalog/google-analytics/)      | ✅  | ✅      | `@segment/analytics-react-native-google-analytics`        |
 | [Intercom](/docs/connections/destinations/catalog/intercom/)                      | ✅  | ✅      | `@segment/analytics-react-native-intercom`                |
 | [Localytics](/docs/connections/destinations/catalog/localytics/)                   | ✅  | ✅      | `@segment/analytics-react-native-localytics`              |
 | [Mixpanel](/docs/connections/destinations/catalog/mixpanel/)                       | ✅  | ✅      | `@segment/analytics-react-native-mixpanel`                |
