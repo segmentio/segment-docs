@@ -7,6 +7,26 @@ strat: google
 > Google ended support for Google Analytics classic on iOS and Android mobile apps on October 31st 2019. To continue measuring and optimizing user engagement in your mobile apps, [migrate your implementation to use the Firebase SDKs](migrating). If you are using Google Analytics 360 you do not need to migrate.
 
 
+
+
+#### Which Google destination should I use?
+
+If your Google Measurement ID starts with a G, you are using G-Codes from Google Analytics 4, and should consider using [Segment's upcoming Google Analytics 4 destination](/docs/connections/destinations/catalog/google-analytics/ga4-plans/).
+
+Although GA4 is now the default when you create a new property, you can still [create a Universal Analytics property](https://support.google.com/analytics/answer/10269537). You can use a UA property with the [Segment's Google Analytics destination](/docs/connections/destinations/catalog/google-analytics/).
+
+Different Measurement IDs begin with different prefixes, which indicate which Google destination you should use.
+
+| Prefix | Google Account type       | Segment Settings    |
+| ------ | -------------------------- | ----------------- |
+| UA     | Your global site tag is controlled by Google Analytics. The ID is your Google Analytics Measurement ID. To find the property associated with this ID, use the [account search feature](https://support.google.com/analytics/answer/6100731) in Google Analytics. If the property does not appear, you probably do not have access to it. | [Google Analytics](/docs/connections/destinations/catalog/google-analytics/): Configure ID > Measurement ID           |
+| G      | Your global site tag is controlled by Google Analytics 4 (GA4). The ID is your Google Analytics Measurement ID.       | [Google Analytics](/docs/connections/destinations/catalog/google-analytics/): Configure ID > App + Web Measurement ID |
+| AW     | Your global site tag is controlled by Google Ads. The numeric string following the AW prefix is your Google Ads Conversion ID.        | [Google Ads](/docs/connections/destinations/catalog/google-ads-gtag/): Configure ID > Conversion ID                  |
+| DC     | Your global site tag is controlled by a Floodlight tag. The numeric string following DC is your Advertiser ID.       | [Floodlight](docs/connections/destinations/catalog/doubleclick-floodlight/): Configure ID > App + Web Measurement ID       |
+| other  | Your global site tag is controlled by a different Google product or may be implemented incorrectly. Use the [Tag Assistant extension](https://support.google.com/tagassistant/answer/2947093) for Google Chrome to verify.      | n/a      |
+
+
+
 ## Getting Started
 
 Segment supports Google Analytics client-side and server-side tracking.
