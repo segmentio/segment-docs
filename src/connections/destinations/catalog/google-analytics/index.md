@@ -140,9 +140,9 @@ analytics.track('Viewed History');
 
 ### Server side Identify
 
-If you are sending Identify calls from your server libraries or have Segment Cloud Apps that send back Identify calls with enriched user traits, you can send that data to your GA account using custom dimensions and metrics.
+If you are sending Identify calls from your server libraries or have [Segment Cloud App sources](/docs/connections/sources/catalog/#cloud-apps) that send back Identify calls with enriched user traits, you can send that data to your GA account using custom dimensions and metrics.
 
-Unlike the client-based destination which can use the browser and the global window `ga` tracker, for server library implementations Segment checks your `traits`, then checks your settings for custom dimension or metric mappings, and then sends the Identify with an explicit event.
+Unlike the device-mode destination which runs directly on the device, and which can use the browser and the global window `ga` tracker, in a server library implementation Segment checks your `traits`, then checks your settings for custom dimension or metric mappings, and then sends the Identify with an explicit event.
 
 You can specify what the event action should be called in the Google Analytics settings. If you don't specify a name, Segment uses a default of event **'User Enriched'**. Since an event category is also required, you can specify which `trait` you want Segment to set this value to. For example, if you send a trait such as `type`, Segment sets the value of `traits.type` as the event category if defined, and if it is not, sets it to the default value **'All'**.
 
@@ -266,11 +266,11 @@ All of our [Ecommerce spec events](/docs/connections/spec/ecommerce/v2/) are rec
 
 ## Enabling Enhanced E-Commerce tracking
 
-Segment supports Google Analytics Enhanced E-Commerce tracking across both our client-side (analytics.js, android-analytics, ios-analytics) and server-side destinations. Enhanced Ecommerce allows you to combine impression data, product data, promotion data, and action data. This is required for product-scoped custom dimensions.
+Segment supports Google Analytics Enhanced E-Commerce tracking across both our device-mode (Analytics.js, Analytics-android, Analytics-ios) and cloud-mode sources. Enhanced Ecommerce allows you to combine impression data, product data, promotion data, and action data. This is required for product-scoped custom dimensions.
 
-To get started, enable enhanced ecommerce and use the standard [Ecommerce tracking spec](/docs/connections/spec/ecommerce/v2/), and Segment records the data to Google Analytics formatted using their enhanced ecommerce API.
+To get started, enable enhanced ecommerce in Google Analytics and use the standard [Ecommerce tracking spec](/docs/connections/spec/ecommerce/v2/), and Segment records the data to Google Analytics formatted using their enhanced ecommerce API.
 
-Before you begin, enable Ecommerce tracking for the view you want to track transactions to. You can do this in Google Analytics by navigating to **Admin > View Settings** and switching the **Ecommerce Settings** switch to ON.
+Before you begin, enable Ecommerce tracking for the view you want to track transactions in. You can do this in Google Analytics by navigating to **Admin > View Settings** and switching the **Ecommerce Settings** switch to ON.
 
 Next, go to your Google Analytics destination settings in the Segment App, and enable **Enhanced Ecommerce**.
 
@@ -292,8 +292,8 @@ To take get the most out of the Enhanced E-commerce features, you should impleme
 
 Next, add `Viewed Checkout Step` and `Completed Checkout Step` events to your checkout flow for each step of the funnel you set up in Google Analytics. Make sure you pass the step number and step-specific options as a property of those events, as in the examples below.
 
-
 The example below shows two Track calls: one for when the user first arrives at the first checkout step, and one for when they complete it. These correspond to the "Review Cart" funnel step in the example image above.
+
 ```js
 //upon arrival at first checkout step ('Review Cart' per the screenshot example above)
 analytics.track('Viewed Checkout Step', {
@@ -324,6 +324,7 @@ analytics.track('Completed Checkout Step', {
 ```
 
 The next four examples are similar, for the additional two steps in the checkout flow. By instrumenting these, you can tell where a user leaves the checkout process.
+
 ```js
 //upon arrival at third checkout step ('Confirm Purchase Details' per the screenshot example above)
 analytics.track('Viewed Checkout Step', {

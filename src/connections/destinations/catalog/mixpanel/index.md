@@ -19,6 +19,10 @@ If you notice any gaps, outdated information or simply want to leave some feedba
 3. Copy your Mixpanel "API Secret" and "Token", and paste them into the Connection Settings in Segment.
 4. Enable the destination to start sending your data to Mixpanel.
 
+### Adding device-mode SDKs to React Native
+
+{% include content/react-dest.md %}
+
 ## Page
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
