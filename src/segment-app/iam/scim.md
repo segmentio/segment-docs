@@ -1,6 +1,7 @@
 ---
 title: "System for Cross-domain Identity Management (SCIM) Configuration Guide"
 ---
+
 {% include content/plan-grid.md name="sso" %}
 
 The SCIM specification is designed to make managing user identities in cloud-based applications like Segment easier. SCIM allows your Identity Provider (IdP) to manage users and groups within your Segment workspace.
@@ -15,7 +16,7 @@ To set up SCIM, you must first create an SSO connection. Once you [create your S
 
 ## Configuration Instructions
 
-Segment officially supports [Okta](#okta-set-up-guide), and has plans to support Azure AD and OneLogin soon. Each link includes specific set up instructions for that IdP. You should read the [features](#features) section of this page to understand which features of SCIM Segment supports.
+Segment officially supports [Okta](#okta-set-up-guide) and [Azure AD](#azure-ad-set-up-guide), and we have plans to support OneLogin soon. Each link includes specific set up instructions for that IdP. You should read the [features](#features) section of this page to understand which features of SCIM Segment supports.
 
 You may still be able to use SCIM with another Identity Provider (IdP) by adapting the following instructions.
 
@@ -108,3 +109,11 @@ For example, you might map `{firstName} {lastName}` from your IdP to `displayNam
 > **Tip**: You can also link Okta groups to an existing group from in the Segment app using the Okta UI.
 
 ![](images/scim_edit_groups.png)
+
+## Azure AD Set up Guide
+
+Instructions for configuring Azure AD can be found on the Microsoft Docs website.
+
+1. [Complete the Azure AD Set up Guide for SSO](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/segment-tutorial)
+
+2. [Complete the Azure AD Set up Guide for SCIM](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/segment-provisioning-tutorial).
