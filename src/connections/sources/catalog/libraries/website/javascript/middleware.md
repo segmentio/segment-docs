@@ -4,7 +4,7 @@ strat: ajs
 ---
 
 
-Middlewares allow developers to extend Analytics.js with custom code which runs on every event. This code has full access to the DOM and Browser API, and helps customers enrich and transform event payloads.
+Middlewares allow developers to extend Analytics.js with custom code which runs on every event. This code has full access to the DOM and Browser API, and helps customers enrich and transform event payloads. Source Middlewares and Destination Middlewares are available on the Analytics.js snippet version `4.12.0` and later.
 
 Analytics.js can be extended using two functions:
 

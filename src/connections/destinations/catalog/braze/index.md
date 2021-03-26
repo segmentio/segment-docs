@@ -69,6 +69,7 @@ To use the latest Braze SDK to collect IDFAs you must do the following:
 
     ```js
     maven { url "http://appboy.github.io/appboy-android-sdk/sdk" }
+    maven { url "http://appboy.github.io/appboy-segment-android/sdk" }
     ```
 
 2. Add the Braze Segment destination dependency to your app `build.gradle`:
