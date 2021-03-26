@@ -65,19 +65,10 @@ layout: default
           {%- endunless -%}
 
           <div class="markdown">
-            {% if page.integration_type == 'source' %}
-              {% capture cloud-app-note %}{% include content/cloud-app-note.md %}{% endcapture %}
-              {{ cloud-app-note | markdownify }}
-            {% endif %}
+
 
             {{ content }}
 
-            {% if page.integration_type == 'destination' %}
-              {% unless page.hide-boilerplate == true %}
-                {% capture destination-footer %}{% include content/destination-footer.md  %}{% endcapture %}
-                {{ destination-footer | markdownify }}
-              {% endunless %}
-            {% endif %}
           </div>
 
           <p class="last-modified">This page was last modified: {{ page.last_modified_at | date: '%d %b %Y' }}</p>
