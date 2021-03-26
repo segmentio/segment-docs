@@ -53,7 +53,7 @@ It also does some slugification and destination-name normalization, since our ha
 
 ### Layouts
 
-`default.html` is the base container through which all the individual other layouts (currently one, `page.html`) are built to have the right title, seo, etc.
+`default.html` is the base container through which all the individual other layouts are built to have the right title, seo, etc. The template inheritance is described in the diagram below.
 
 The `destination.html`, `source.html`, and `integration.html` templates contain the logic that runs the layouts for individual catalog pages. Storage/warehouses use the generic Integration right now because they don't need anything special. Set the layout in the Jekyll `_config.yml` file.
 
@@ -62,10 +62,10 @@ default.html
   |- integration.html
     |- destination.html
     |- source.html
-  |- catalog.html
   |- main.html
-    |-page.html
-    |-home.html
+    |- catalog.html
+    |- home.html
+    |- page.html
 ```
 
 ### Platform Config API + Catalog
