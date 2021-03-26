@@ -1,5 +1,6 @@
 ---
 title: Data Residency
+beta: true
 ---
 Segment offers customers the option to mitigate risk by providing regional infrastructure across Europe, Middle East, Africa and Asia Pacific. The default region for all customers is United States (Oregon). The regional infrastructure has the same [rate limits and SLA](/docs/connections/rate-limits/) as the default region.
 
