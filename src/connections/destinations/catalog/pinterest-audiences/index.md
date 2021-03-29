@@ -14,12 +14,13 @@ For more information about advertising with Pinterest, see:
 - A Pinterest Ads account with the `owner`, `admin`, or `audience_manager` role
 
 **Supported identifiers**
-- email
+
+- Email
 - iOS IDFA
 - Android ID
 
 > warning ""
-> **Note**: The Segment iOS SDK version 4.0 and up does not collect automatically collect IDFA. For more information, see the [iOS 14 Guide](docs/connections/sources/catalog/libraries/mobile/ios/ios14-guide/).
+> **Note**: The Segment iOS SDK version 4.0 and up does not collect automatically collect IDFA. For more information, see the [iOS 14 Guide](/docs/connections/sources/catalog/libraries/mobile/ios/ios14-guide/).
 
 **Connection type**
 - Server-side
@@ -39,11 +40,13 @@ The Pinterest Audiences destination syncs data from Segment Personas to Pinteres
     3. The configured Pinterest Audiences destination should appear in the Send as User List category of available destinations.
     4. Select the destination, and click Add Destination.
 
+The initial synchronization of audience data may take several hours, depending on the size of the audience. Once the initial sync occurs, you'll see a new audience in the Pinterest Audiences dashboard.
+
 ## FAQ
 
 ### What does the audience size represent? 
-It's the final count of matched users - so the actual targetable audience size.
-The audience size represented in Segment is the final count of matched users between your customer profiles in Segment and Pinterest users. This number denotes your targetable audience size within Pinterest.
+The audience size represented in Pinterest is the final count of matched users between your customer profiles in Segment and Pinterest users. This number denotes your targetable audience size within Pinterest.
+
 
 The initial synchronization of audience data may take several hours, depending on the size of the audience. Once the initial sync occurs, you’ll see a new Audience in the Pinterest Audiences dashboard.
 
@@ -51,3 +54,4 @@ The initial synchronization of audience data may take several hours, depending o
 Processing happens regularly and automatically throughout the day - but can take up to 24 hours. 
 
 You do not need to wait to continue sending data; however, any campaigns using those audiences will not see the changes until after processing (they'll continue running against whatever users have already been matched).
+
