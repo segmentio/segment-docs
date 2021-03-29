@@ -19,7 +19,7 @@ For more information about advertising with Pinterest, see:
 - Android ID
 
 > warning ""
-> **Note**: The Segment iOS SDK version 4.0 and up does not collect automatically collect IDFA. For more information, see the [iOS 14 Guide](docs/connections/sources/catalog/libraries/mobile/ios/ios14-guide/).
+> **Note**: The Segment iOS SDK version 4.0 and up does not collect automatically collect IDFA. For more information, see the [iOS 14 Guide](/docs/connections/sources/catalog/libraries/mobile/ios/ios14-guide/).
 
 **Connection type**
 - Server-side
