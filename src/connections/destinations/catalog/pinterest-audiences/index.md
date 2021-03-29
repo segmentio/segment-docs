@@ -44,8 +44,7 @@ The initial synchronization of audience data may take several hours, depending o
 ## FAQ
 
 ### What does the audience size represent? 
-It's the final count of matched users - so the actual targetable audience size.
-The audience size represented in Segment is the final count of matched users between your customer profiles in Segment and Pinterest users. This number denotes your targetable audience size within Pinterest.
+The audience size represented in Pinterest is the final count of matched users between your customer profiles in Segment and Pinterest users. This number denotes your targetable audience size within Pinterest.
 
 The initial synchronization of audience data may take several hours, depending on the size of the audience. Once the initial sync occurs, you’ll see a new Audience in the Pinterest Audiences dashboard.
 
