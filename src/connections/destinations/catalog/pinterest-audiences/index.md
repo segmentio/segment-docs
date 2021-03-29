@@ -14,7 +14,7 @@ For more information about advertising with Pinterest, see:
 - A Pinterest Ads account with the `owner`, `admin`, or `audience_manager` role
 
 **Supported identifiers**
-- email
+- Email
 - iOS IDFA
 - Android ID
 
@@ -38,6 +38,8 @@ The Pinterest Audiences destination syncs data from Segment Personas to Pinteres
     2. Click Add Destination.
     3. The configured Pinterest Audiences destination should appear in the Send as User List category of available destinations.
     4. Select the destination, and click Add Destination.
+
+The initial synchronization of audience data may take several hours, depending on the size of the audience. Once the initial sync occurs, you'll see a new audience in the Pinterest Audiences dashboard.
 
 ## FAQ
 
