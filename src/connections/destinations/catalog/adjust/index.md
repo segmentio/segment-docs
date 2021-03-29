@@ -106,6 +106,10 @@ analytics = new Analytics.Builder(this, "write_key")
 
 After you build and release to the App Store, Segment automatically starts translating and sending your data to Adjust.
 
+### React Native
+
+{% include content/react-dest.md %}
+
 ### Server
 
 Our Cloud-mode integration allows you to send *supplemental* data to Adjust.  This, however, *does not* include attribution events. If you are relying on the Adjust server-side component, and you are not bundling the Segment-Adjust SDK, your installs will not be attributed. E-commerce events and other general `track` events are supported out of the box. You **must** map your `track` events to your custom Adjust Event Token in your [Adjust destination settings](#map-your-events-to-custom-adjust-event-tokens).

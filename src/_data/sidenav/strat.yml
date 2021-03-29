@@ -1,7 +1,7 @@
 ---
 sections:
 - slug: adobe
-  section_title: Adobe Analytics
+  section_title: Adobe Integrations
   section:
   - path: /connections/destinations/catalog/adobe-analytics
     title: Adobe Analytics destination
@@ -15,6 +15,13 @@ sections:
     title: Adobe Analytics Heartbeat
   - path: /connections/destinations/catalog/adobe-analytics/best-practices
     title: Adobe Analytics best practices
+  - path: /connections/destinations/catalog/marketo-v2
+    title: Marketo destination
+  - path: /connections/destinations/catalog/marketo-static-lists
+    title: Marketo static lists destination (Personas)
+  - path: /connections/sources/catalog/cloud-apps/marketo
+    title: Marketo cloud source
+
 
 - slug: facebook
   section_title: Facebook Integrations
@@ -76,6 +83,7 @@ sections:
     title: Salesforce cloud source
   - path: /connections/sources/catalog/cloud-apps/salesforce-marketing-cloud
     title: Salesforce Marketing Cloud cloud source
+
 
 
 - slug: ajs

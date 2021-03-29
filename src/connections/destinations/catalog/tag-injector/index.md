@@ -14,7 +14,6 @@ _**NOTE:** Tag Injector is only available for select customers at this time._
 1. Once you have access, with the link provided confirm the Source you'd like to connect to.
 2. You have the following configuration options which will manipulate the page at runtime:
   - **URL**: A URL to the Javascript code to load on the page as the `src` attribute of the `<script>` tag.
-  - **Raw**: Raw Javascript code to load onto the page within a `<script>` tag.
   - **Merge Variable**: A global variable that can be modified or created at runtime.
 3. You can also configure global variables, which the Tag Injector can manipulate in a user-specified way using Merge Variable tags. These Merge Variable tags support two fields:
   - Variable Name indicates what global variable to operate on.

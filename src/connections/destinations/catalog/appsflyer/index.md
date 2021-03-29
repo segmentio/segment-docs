@@ -54,6 +54,10 @@ If you have the **Can Omit AppsFlyerID** setting enabled, but aren't sending an 
 
 To prevent this, you can enable the new **Fallback to send IDFV when advertisingId key not present** setting in your AppsFlyer destination settings. With this enabled, when you send data using cloud-mode (through the Segment servers), Segment sends the user's IDFV (the `device.id`) when `device.advertisingId` is missing or blank AND “Can Omit AppsFlyerID” is enabled.
 
+#### Additional React Native device-mode set up
+
+{% include content/react-dest.md %}
+
 ### Server
 
 AppsFlyer offers an **augmentative** server-side [HTTP API](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-) intended for use along side the AppsFlyer mobile SDK. Use the cloud-mode destination _with_ the mobile SDK to link out-of-app events (such as website or offline purchases) with attributed users and devices.

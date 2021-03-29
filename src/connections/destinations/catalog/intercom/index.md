@@ -10,7 +10,28 @@ This document was last updated on March 11, 2020. If you notice any gaps, outdat
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+The first step is to make sure Intercom supports the source type and connection mode you've chosen to implement. You can learn more about what dictates [the connection modes we support here](https://segment.com/docs/destinations/#connection-modes).
+
+<table>
+  <tr>
+    <th></th>
+    <th>Web</th>
+    <th>Mobile</th>
+    <th>Server</th>
+  </tr>
+  <tr>
+    <td>📱 Device-based</td>
+    <td> ✅ </td>
+    <td> ✅ </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>☁️  Cloud-based</td>
+    <td></td>
+    <td> ✅ </td>
+    <td> ✅ </td>
+  </tr>
+</table>
 
 1.  From your Segment UI's Destinations page click **Add Destination**.
 2.  Search for "Intercom" and select it in the results that appear.
@@ -20,10 +41,7 @@ This document was last updated on March 11, 2020. If you notice any gaps, outdat
     You can choose which account to sync from the drop down menu in the top right. If you are using [server-side sources](https://segment.com/docs/connections/sources/#server), Segment starts passing data through once you activate the Destination. For other libraries  continue reading below.
 4. Find your "App ID" in the Intercom UI following [the instructions here](https://docs.intercom.com/faqs-and-troubleshooting/getting-set-up/where-can-i-find-my-app-id) or by navigating to the Gear Menu and clicking on "App Settings" followed by "API Keys". It should look something like `9iefb489`.
 
-### Client
 
-
-Enable the Intercom Destination from the Segment web app.
 Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Intercom's `library.js` onto your page.
 
 This means you should remove Intercom's snippet from your page.
@@ -44,22 +62,26 @@ Before reading the specific instructions for iOS or Android below, make sure you
 
 1. Add `compile 'com.segment.analytics.android.integrations:intercom:+'` to your app-level `build.gradle` file
 2. Sync your project, then import the integration in your Application subclass or wherever you're initializing Segment:
-    ```
-    import com.segment.analytics.android.integrations.intercom.IntercomIntegration;
-    ```
+   ```java
+   import com.segment.analytics.android.integrations.intercom.IntercomIntegration;
+   ```
 3. Next, remember to register the `IntercomIntegration.FACTORY` with the Segment SDK:
 
-    ```java
-    analytics = new Analytics.Builder(this, "write_key")
-      .use(IntercomIntegration.FACTORY)
-      .build();
-    ```
+   ```java
+   analytics = new Analytics.Builder(this, "write_key")
+     .use(IntercomIntegration.FACTORY)
+     .build();
+   ```
+
+### React Native
+
+{% include content/react-dest.md %}
 
 ## Page
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
-```
+```js
 analytics.page();
 ```
 

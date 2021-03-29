@@ -33,6 +33,11 @@ If you'd like to integrate with Bugsnag's iOS and/or Android SDKs, in addition t
 
 2. [iOS](https://github.com/segment-integrations/analytics-ios-integration-bugsnag)
 
+
+### React Native
+
+{% include content/react-dest.md %}
+
 - - -
 
 ## Identify
