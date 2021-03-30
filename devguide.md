@@ -63,9 +63,10 @@ default.html
     |- destination.html
     |- source.html
   |- main.html
-    |- catalog.html
-    |- home.html
-    |- page.html
+    |- catalog.html - used for connections catalog pages only
+    |- home.html - for main landing page only
+    |- page.html - used for all pages outside Connections catalogs, without an explicit override
+    |- search.html - search results page only
 ```
 
 ### Platform Config API + Catalog
