@@ -450,7 +450,7 @@ with the user's `userId`, or what Amplitude refers to, respectively, as a
 
 By default, Segment does **NOT** send Alias events to Amplitude. To forward Alias events from Segment, go to your Amplitude destination settings in the
 Segment web app, and set the **Enable Alias** setting to "on". Once enabled, Segment forwards Alias events from Segment's servers only. This means
-that Alias events reach Amplitude only when you're sending events from the client and have set your Amplitude instance's connection mode to "unbundled", 
+that Alias events reach Amplitude only when you're sending events from the client and have set your Amplitude instance's connection mode to "Cloud Mode",
 or are sending Alias events from a Segment server-side library (such as Node).
 
 > note ""
