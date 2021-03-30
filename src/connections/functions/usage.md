@@ -14,7 +14,7 @@ The amount of time you are allotted changes depending on your [Segment pricing p
 
 We measure execution time from when the function first receives an event to the time the function either returns successfully or throws an error. If Segment retries your function (for example, if there was a timeout), those retries also count as billable execution time.
 
-As of March 31, 2021 Functions usage is measured in per millisecond increments. Prior to this change, Functions was measured in 100ms increments, rounded up. For example, a function that took 80ms to complete used to be billed as 100ms.  As a result of the usage updates, it will now be billed as 80ms. 
+Starting on March 31, 2021 Functions usage is measured in millisecond increments. This makes your usage and billing much more precise. Prior to this change, Functions was measured in 100ms increments, and then rounded up. For example, a function that took 80ms to complete was previously billed as 100ms. Using the new usage calculation, it is billed as 80ms. 
 
 ## Execution timeouts
 
