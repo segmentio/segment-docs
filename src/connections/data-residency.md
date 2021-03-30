@@ -67,7 +67,7 @@ To begin with Local Data Storage, complete the following steps in your AWS accou
     Segment requires this access to write raw data to your regionally hosted S3 bucket. Specifically, this allows Segment to use `s3:PutObject`. To enable encryption at rest, use the default S3 mechanism. If you have server-side encryption enabled with AWS KMS managed keys, see the additional [required configuration step](/docs/connections/storage/catalog/amazon-s3/#encryption). To edit the bucket policy, right-click the bucket name in the AWS management console, and select **Edit policy**.
 
 4. Create a new IAM role in your AWS account with a trust relationship to the role which allows Segment to use the Segment `workspace_id` as `externalID`.
-   ```json
+  ```json
   {
     "Version": "2012-10-17",
     "Statement": [
@@ -76,8 +76,7 @@ To begin with Local Data Storage, complete the following steps in your AWS accou
         "Effect": "Allow",
         "Principal": {
           "AWS": [
-            "arn:aws:iam::294048959147:role/segment-regional-archives-production"
-          "arn:aws:iam::294048959147:role/warehouse-replays" 
+            "arn:aws:iam::595280932656:role/segment-regional-archives-production-access"
           ]
         },
         "Action": "sts:AssumeRole",
@@ -93,7 +92,7 @@ To begin with Local Data Storage, complete the following steps in your AWS accou
   }
   ```
 5. Attach this IAM policy to the role defined in Step 4.
-   ```json
+  ```json
   {
     "Version": "2012-10-17",
     "Statement": [
@@ -114,23 +113,33 @@ To begin with Local Data Storage, complete the following steps in your AWS accou
           "arn:aws:s3:::YOUR_BUCKET_NAME/*",
           "arn:aws:s3:::YOUR_BUCKET_NAME"
         ]
-      },
+      }
+    ]
+  }
+  ```
+  This access allows Segment to run local deletions jobs from regionally hosted data for a given user ID.
+
+6. If you are using KMS encryption on your S3 bucket, add the following policy to the IAM role:
+  ```json
+  {
+    "Version": "2012-10-17",
+    "Statement": [
       {
           "Sid": "AllowKMS",
           "Effect": "Allow",
-          "Action": "kms:GenerateDataKey",
-          "Resource": "*"
+          "Action": [
+            "kms:GenerateDataKey",
+            "kms:Decrypt"
+          ],
+          "Resource": "$YOUR_KEY_ARN"
       }
     ]
   }
   ```
 
-> note ""
-> This access allows Segment to run local deletions jobs from regionally hosted data for a given user ID.
-
 ### Local Data Storage configuration
 
-After you configure the policy and roles, as defined above, navigate to the Settings tab of the source for which you want to store data regionally.
+After you configure the policy and roles, as defined above, navigate to the Settings tab of the source for which you want to store data regionally, and find the Local Data Storage section.
 
 ![local storage](images/regional-data-source.png)
 
@@ -138,10 +147,11 @@ To complete the configuration of Local Data Storage:
 
 1. Enter the name of the S3 Bucket you created in the Pre-requisites section
 2. Add a regional label to help locate the bucket from AWS at a later date. For example, `us-west2-294048959147` or `country-REGION-AWS_ACCOUNT`
-3. Enter the ARN of the IAM role set up as a pre-requisite and click **Save**
-4. Navigate to *Privacy > Settings > Data Retention*
-5. Identify the Source in the source-level archive retention periods list
-6. Set the Retention for this source to the suggested value of `7 days` and click **Save**
+3. Enter the ARN of the IAM role set up as a pre-requisite. For example, `arn:aws:iam::ACCOUNT_ID:role/ROLE_NAME`.
+4. Click **Save**
+5. Navigate to *Privacy > Settings > Data Retention*
+6. Identify the Source in the source-level archive retention periods list
+7. Set the Retention for this source to the suggested value of `7 days` and click **Save**
 
 The Local Data Storage bucket will take roughly one hour to receive data.
 
