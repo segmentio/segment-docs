@@ -28,7 +28,7 @@ If you decide to use GA4 so you can compare the data, you should spend some time
 
 GA4’s out-of-the-box reports are different from UA’s. GA4’s reporting is much more configurable, and supports new reporting metrics like churn probability and predictive revenue estimates.
 
-You might not be able to perfectly recreate your UA reports in GA4. One approach is to send your data to both UA and G4A while you build out your new reports in G4A, and improve those reports over time. Once you are satisfied that your G4A reports meet your needs, you can gradually migrate away from using the original reporting in UA.
+You might not be able to perfectly recreate your UA reports in GA4. One approach is to send your data to both UA and GA4 while you build out your new reports in GA4, and improve those reports over time. Once you are satisfied that your GA4 reports meet your needs, you can gradually migrate away from using the original reporting in UA.
 
 
 ## Client-based or server-based
