@@ -42,7 +42,7 @@ Local Data Storage allows you to preserve your raw events in Amazon S3 buckets h
 
 To begin with Local Data Storage, complete the following steps in your AWS account:
 
-1. Create an S3 bucket in the preferred region
+1. Create an S3 bucket in your preferred region
 2. Create a folder named `segment-logs` in the new bucket
 3. Edit the bucket policy to allow Segment access to the S3 bucket
    ```json
@@ -64,7 +64,7 @@ To begin with Local Data Storage, complete the following steps in your AWS accou
    ```
   **Note**: `Resource` property string must end with `/*`.
 
-    Segment requires this access to write raw data to your regionally hosted S3 bucket. Specifically, this allows Segment to use `s3:PutObject`. To enable encryption at rest, use the default S3 mechanism. If you have server-side encryption enabled with AWS KMS managed keys, see the additional [required configuration step](/docs/connections/storage/catalog/amazon-s3/#encryption). To edit the bucket policy, right-click the bucket name in the AWS management console, and select **Edit policy**.
+    Segment requires this access to write raw data to your regionally hosted S3 bucket. Specifically, this allows Segment (as the Segment S3-copy user) to use `s3:PutObject`. To enable encryption at rest, use the default S3 mechanism. If you have server-side encryption enabled with AWS KMS managed keys, see the additional [required configuration step](/docs/connections/storage/catalog/amazon-s3/#encryption). To edit the bucket policy, right-click the bucket name in the AWS management console, and select **Edit policy**.
 
 4. Create a new IAM role in your AWS account with a trust relationship to the role which allows Segment to use the Segment `workspace_id` as `externalID`.
   ```json
@@ -101,7 +101,6 @@ To begin with Local Data Storage, complete the following steps in your AWS accou
         "Effect": "Allow",
         "Action": "s3:ListBucket",
         "Resource": [
-          "arn:aws:s3:::YOUR_BUCKET_NAME/*",
           "arn:aws:s3:::YOUR_BUCKET_NAME"
         ]
       },
@@ -111,7 +110,6 @@ To begin with Local Data Storage, complete the following steps in your AWS accou
         "Action": "s3:*Object*",
         "Resource": [
           "arn:aws:s3:::YOUR_BUCKET_NAME/*",
-          "arn:aws:s3:::YOUR_BUCKET_NAME"
         ]
       }
     ]
@@ -139,7 +137,7 @@ To begin with Local Data Storage, complete the following steps in your AWS accou
 
 ### Local Data Storage configuration
 
-After you configure the policy and roles, as defined above, navigate to the Settings tab of the source for which you want to store data regionally, and find the Local Data Storage section.
+After you configure the policy and roles, as defined above, navigate to the Regional Settings tab of the Settings page of the  source for which you want to store data regionally, and find the Local Data Storage section.
 
 ![local storage](images/regional-data-source.png)
 
