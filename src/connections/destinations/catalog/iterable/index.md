@@ -71,7 +71,21 @@ Iterable has one important difference from the Segment Ecommerce spec. If you us
 
 ```js
 analytics.track("Order Completed", {
-  total: 100.00
+  total: 100.00,
+  products: [
+    {
+      product_id: '507f1f77bcf86cd799439011',
+      name: 'Monopoly: 3rd Edition',
+      price: 19,
+      quantity: 1
+    },
+    {
+      product_id: '505bd76785ebb509fc183733',
+      name: 'Uno Card Game',
+      price: 3,
+      quantity: 2
+    }
+  ]
 });
 ```
 
