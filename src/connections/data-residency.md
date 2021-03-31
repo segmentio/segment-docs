@@ -36,7 +36,7 @@ When you send data from a server-side or project source, you can use the `host` 
 Local Data Storage allows you to preserve your raw events in Amazon S3 buckets hosted regionally. These buckets are hosted by you, in your desired region.
 
 > note ""
-> Configure Local Data Storage on new sources instead of enabling on an existing source to avoid deletion of historical data and a change in retention policy. Historical data that is expired due to a retention policy cannot be replayed at a time in the future. Historical data cannot migrate from the US to your regional buckets.
+> Configure Local Data Storage on new sources instead of enabling on an existing source to avoid deletion of historical data and a change in retention policy. Historical data that is expired due to a retention policy cannot be replayed at a time in the future. Historical data cannot be migrated from the US to your regional buckets.
 
 ### Pre-requisites
 
