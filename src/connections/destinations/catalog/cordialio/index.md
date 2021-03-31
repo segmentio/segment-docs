@@ -1,6 +1,7 @@
 ---
 title: Cordial Destination
 beta: true
+hidden: true
 ---
 
 ## Getting Started
