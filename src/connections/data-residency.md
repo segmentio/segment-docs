@@ -2,6 +2,11 @@
 title: Data Residency
 beta: true
 ---
+
+> info ""
+> **Note**: Data residency is in public beta, and its use is governed by the [(1) Segment First Access and Beta Terms and Conditions](https://segment.com/legal/first-access-beta-preview/) and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/).
+
+
 Segment offers customers the option to lead on data residency by providing regional infrastructure across Europe, Middle East, Africa and Asia Pacific. The default region for all customers is in Oregon, United States. The regional infrastructure has the same [rate limits and SLA](/docs/connections/rate-limits/) as the default region.
 
 ## Enable Local Data Ingest and Storage
