@@ -2,6 +2,11 @@
 title: Data Residency
 beta: true
 ---
+
+> info ""
+> **Note**: Data residency is in public beta, and its use is governed by the [(1) Segment First Access and Beta Terms and Conditions](https://segment.com/legal/first-access-beta-preview/) and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/).
+
+
 Segment offers customers the option to lead on data residency by providing regional infrastructure across Europe, Middle East, Africa and Asia Pacific. The default region for all customers is in Oregon, United States. The regional infrastructure has the same [rate limits and SLA](/docs/connections/rate-limits/) as the default region.
 
 ## Enable Local Data Ingest and Storage
@@ -36,7 +41,7 @@ When you send data from a server-side or project source, you can use the `host` 
 Local Data Storage allows you to preserve your raw events in Amazon S3 buckets hosted regionally. These buckets are hosted by you, in your desired region.
 
 > note ""
-> Configure Local Data Storage on new sources instead of enabling on an existing source to avoid deletion of historical data and a change in retention policy. Historical data that is expired due to a retention policy cannot be replayed at a time in the future. Historical data cannot migrate from the US to your regional buckets.
+> Configure Local Data Storage on new sources instead of enabling on an existing source to avoid deletion of historical data and a change in retention policy. Historical data that is expired due to a retention policy cannot be replayed at a time in the future. Historical data cannot be migrated from the US to your regional buckets.
 
 ### Pre-requisites
 
@@ -67,72 +72,48 @@ To begin with Local Data Storage, complete the following steps in your AWS accou
     Segment requires this access to write raw data to your regionally hosted S3 bucket. Specifically, this allows Segment (as the Segment S3-copy user) to use `s3:PutObject`. To enable encryption at rest, use the default S3 mechanism. If you have server-side encryption enabled with AWS KMS managed keys, see the additional [required configuration step](/docs/connections/storage/catalog/amazon-s3/#encryption). To edit the bucket policy, right-click the bucket name in the AWS management console, and select **Edit policy**.
 
 4. Create a new IAM role in your AWS account with a trust relationship to the role which allows Segment to use the Segment `workspace_id` as `externalID`.
-  ```json
-  {
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Sid": "",
-        "Effect": "Allow",
-        "Principal": {
-          "AWS": [
-            "arn:aws:iam::595280932656:role/segment-regional-archives-production-access"
-          ]
-        },
-        "Action": "sts:AssumeRole",
-        "Condition": {
-          "StringEquals": {
-            "sts:ExternalId": [
-              "YOUR_WORKSPACE_ID"
-            ]
-          }
-        }
-      }
-    ]
-  }
-  ```
 5. Attach this IAM policy to the role defined in Step 4.
   ```json
-  {
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Sid": "ListObjectsInBucket",
-        "Effect": "Allow",
-        "Action": "s3:ListBucket",
-        "Resource": [
-          "arn:aws:s3:::YOUR_BUCKET_NAME"
-        ]
-      },
-      {
-        "Sid": "AllObjectActions",
-        "Effect": "Allow",
-        "Action": "s3:*Object*",
-        "Resource": [
-          "arn:aws:s3:::YOUR_BUCKET_NAME/*",
-        ]
-      }
-    ]
-  }
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "ListObjectsInBucket",
+          "Effect": "Allow",
+          "Action": "s3:ListBucket",
+          "Resource": [
+            "arn:aws:s3:::YOUR_BUCKET_NAME"
+          ]
+        },
+        {
+          "Sid": "AllObjectActions",
+          "Effect": "Allow",
+          "Action": "s3:*Object*",
+          "Resource": [
+            "arn:aws:s3:::YOUR_BUCKET_NAME/*",
+          ]
+        }
+      ]
+    }
   ```
   This access allows Segment to run local deletions jobs from regionally hosted data for a given user ID.
 
 6. If you are using KMS encryption on your S3 bucket, add the following policy to the IAM role:
   ```json
-  {
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-          "Sid": "AllowKMS",
-          "Effect": "Allow",
-          "Action": [
-            "kms:GenerateDataKey",
-            "kms:Decrypt"
-          ],
-          "Resource": "$YOUR_KEY_ARN"
-      }
-    ]
-  }
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+            "Sid": "AllowKMS",
+            "Effect": "Allow",
+            "Action": [
+              "kms:GenerateDataKey",
+              "kms:Decrypt"
+            ],
+            "Resource": "$YOUR_KEY_ARN"
+        }
+      ]
+    }
   ```
 
 ### Local Data Storage configuration
