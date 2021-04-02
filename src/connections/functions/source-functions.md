@@ -73,7 +73,7 @@ To access the URL details, refer to `request.url` object, which is an instance o
 ```js
 async function onRequest(request) {
   // Access a query parameter (e.g. `?name=Jane`)
-  const name = request.headers.searchParams.get('name')
+  const name = request.url.searchParams.get('name')
 }
 ```
 

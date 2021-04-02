@@ -189,9 +189,9 @@ Each piece of frontmatter does something special!
 #### Content-related frontmatter
 - `beta`: default false. When true, show an "in beta" warning in the page layout (see the warning in `_includes/content/beta-note.md`)
 - `rewrite`: defaults to false. This is a legacy frontmatter flag that comes from the old `site-docs` repo, and which labels any destination that was rewritten in ~2018 to a standardized template. It disables the duplicate "connection modes" table that would otherwise show up in the boilerplate content at the end of the page.
-- `hide-boilerplate`: defaults to false. When true, none of the content from `integration-foot.md` is appended to the destination page.
+- `hide-boilerplate`: defaults to false. When true, none of the content from `destination-footer.md` is appended to the destination page.
 - `hide-cmodes`: defaults to false. A renaming of "rewrite" for more clarity, hides the connection modes table in the boilerplate.
-- `hide-personas-partial`: defaults to false. When true, hides the section of content from `integration-foot.md` that talks about being able to receive personas data.
+- `hide-personas-partial`: defaults to false. When true, hides the section of content from `destination-footer.md` that talks about being able to receive personas data.
 - `integration_type`: This is set in the `_config.yml` on three paths to add a noun (Source, Destination, or Warehouse) to the end of the title, and the end of the title tag in the html layout. It also controls the layout and icon for some of these.
 - `source-type`: These are only used to supplement when a Cloud App in the sources path doesn't appear in the Config API list, and needs its type explicitly set. It runs some logic in the `cloud-app-note.md` to explain which cloud-apps are object vs event sources.
 

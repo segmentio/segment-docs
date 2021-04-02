@@ -46,7 +46,11 @@ This is why even if you see events in the debugger, the Device-mode destination 
 ## Getting Started
 
 > warning "React-Native version requirement"
->  You must use React version 0.62 or later.
+> You must use React version 0.62 or later.
+
+
+> info "Good to know - Device-mode destinations"
+> Segment's React Native library serves as a wrapper around the two mobile libraries for iOs and Android. If you plan to [bundle device-mode destinations](#packaging-destinations-using-device-mode) you must add these dependencies.
 
 ### iOS configuration
 
@@ -64,7 +68,7 @@ $ yarn add @segment/analytics-react-native
 $ yarn react-native link
 ```
 
-Then in your application set up the library as in the example below.
+Then in your application, set up the library as in the example below.
 
 ```js
 await analytics.setup('YOUR_WRITE_KEY', {
@@ -83,7 +87,7 @@ import analytics from '@segment/analytics-react-native'
 
 ### Dynamic Framework for Manual Installation
 
-Segment **highly recommend** using Cocoapods. Segment does not support sending data to bundled, device-mode integrations unless you are using Cocoapods.
+Segment only supports sending data to bundled, device-mode destinations if you are using Cocoapods to manage your dependencies. Our Support staff cannot answer questions about, and are not responsible for, projects that do not use Cocoapods.
 
 If you absolutely cannot use Cocoapods, you can manually install our dynamic framework which allows you to send data to Segment, and have Segment send it on to enabled cloud-mode destinations.
 
@@ -99,9 +103,9 @@ To install Analytics-React-native manually:
 
 ### Packaging Destinations using Device-mode
 
-By default, Analytics-React-Native sends all of your data first to the Segment servers, which forward the data on to any tools you enabled from the Segment web app. It does not package any external destination SDKs by default. This is known as using "Cloud-mode", and it helps reduce the size of your project.
+By default, Analytics-React-Native sends all of your data first to the Segment servers, which forward the data on to any tools you enabled from the Segment web app. It does not package any external destination code by default. This is known as sending your data using "Cloud-mode", and it helps reduce the size of your project.
 
-However, in order to function correctly some destinations require that you include code in your project that can be executed on the user's device. This is known as "device-mode". Other destinations offer a device-mode SDK, but still work (with reduced features) in cloud-mode.
+However, some destinations require that you include code in your project that can be run on the user's device so that these tools can function correctly. These destinations send data directly to the destination's API endpoints, as well as sending a copy to the Segment servers for archiving. This is known as sending data in "device-mode". Other destinations offer a device-mode SDK, but still work (with reduced features) in cloud-mode.
 
 You can read [more about connection modes](/docs/connections/destinations/#connection-modes) in the Destination documentation.
 
@@ -110,13 +114,25 @@ You can read [more about connection modes](/docs/connections/destinations/#conne
 
 To use a device-mode destination, you add the destination's SDK to the project. You can find information about these in the destination information pages in the Segment app. Any mobile destination with a Device-mode option includes information on how to bundle SDK.
 
-These usually take the form of a dependency manager command, like the NPM example below.
+> warning ""
+> **Good to know**: Not all destinations have a device-mode package available for use with React Native. [See the list below](#destinations-that-support-device-mode-for-react-native). If a destination you want to use does not offer a React Native SDK, you can usually still use it in cloud-mode instead.
+
+When you bundle a destination's device-mode SDK, Segment's React Native library source serves as a wrapper for the iOS and Android source libraries. The React Native device mode SDKs you bundle are generated from the iOS and Android ones.
+
+To use device-mode destinations with React Native, first add the dependencies using the `yarn add` command, as in the example below. Run this command for each device-mode destination you want to bundle. You may also need to run `yarn link`, but this is usually optional.
 
 ```bash
-yarn add @segment/analytics-react-native-{bugsnag,branch,google-analytics}
+yarn add @segment/analytics-react-native-{bugsnag,branch,firebase}
 ```
 
-After you add the destination dependency, you register it with Analytics-React. This tells How
+> tip "Tip!"
+> If you are bundling several device-mode destinations in your project, you might want to make a checklist to make sure you add the relevant dependencies, and add import statements.
+
+See the [device mode documentation in the React Native readme](https://github.com/segmentio/analytics-react-native/#packaging-device-mode-destination-sdks) for more details.
+
+Some device-mode dependencies such as Firebase require that you also add the dependencies to your `build.gradle​` file in your Android project.
+
+After you add the destination dependency, you register it with Analytics-React as in the example below. This tells your application how to access the destination's SDK.
 
 ```js
 import analytics from '@segment/analytics-react-native'
@@ -131,10 +147,37 @@ await analytics.setup('YOUR_WRITE_KEY', {
 })
 ```
 
-Now that the library is installed and some SDKs are set up, you're ready to learn about the Segment Tracking methods.
+#### Destinations that support device-mode for React native
+
+
+| Name                                                                              | iOS | Android | npm package                                               |
+| --------------------------------------------------------------------------------- | --- | ------- | --------------------------------------------------------- |
+| [Adjust](/docs/connections/destinations/catalog/adjust/)                          | ✅  | ✅      | `@segment/analytics-react-native-adjust`                  |
+| [Amplitude](/docs/connections/destinations/catalog/amplitude/)                    | ✅  | ✅      | `@segment/analytics-react-native-amplitude`               |
+| [Braze](/docs/connections/destinations/catalog/braze/) (formerly Appboy)          | ✅  | ✅      | `@segment/analytics-react-native-appboy`                  |
+| [AppsFlyer](/docs/connections/destinations/catalog/appsflyer/)                    | ✅  | ✅      | `@segment/analytics-react-native-appsflyer`               |
+| [Branch](/docs/connections/destinations/catalog/branch-metrics/)                  | ✅  | ✅      | `@segment/analytics-react-native-branch`                  |
+| [Bugsnag](/docs/connections/destinations/catalog/bugsnag/)                        | ✅  | ✅      | `@segment/analytics-react-native-bugsnag`                 |
+| [CleverTap](/docs/connections/destinations/catalog/clevertap/)                    | ✅  | ✅      | `@segment/analytics-react-native-clevertap`               |
+| [ComScore](/docs/connections/destinations/catalog/comscore/)                      | ✅  | ⬜️     | `@segment/analytics-react-native-comscore-ios`            |
+| [Countly](/docs/connections/destinations/catalog/countly/)                        | ✅  | ✅      | `@segment/analytics-react-native-countly`                 |
+| [Crittercism](/docs/connections/destinations/catalog/crittercism/)                | ✅  | ✅      | `@segment/analytics-react-native-crittercism`             |
+| [Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/) | ✅  | ⬜️     | `@segment/analytics-react-native-facebook-app-events-ios` |
+| [Firebase](/docs/connections/destinations/catalog/firebase/)                      | ✅  | ✅      | `@segment/analytics-react-native-firebase`                |
+| [Flurry](/docs/connections/destinations/catalog/flurry)                           | ✅  | ✅      | `@segment/analytics-react-native-flurry`                  |
+| [Intercom](/docs/connections/destinations/catalog/intercom/)                      | ✅  | ✅      | `@segment/analytics-react-native-intercom`                |
+| [Localytics](/docs/connections/destinations/catalog/localytics/)                   | ✅  | ✅      | `@segment/analytics-react-native-localytics`              |
+| [Mixpanel](/docs/connections/destinations/catalog/mixpanel/)                       | ✅  | ✅      | `@segment/analytics-react-native-mixpanel`                |
+| [Quantcast](/docs/connections/destinations/catalog/quantcast/)                     | ⬜️ | ✅      | `@segment/analytics-react-native-quantcast-android`       |
+| [Taplytics](/docs/connections/destinations/catalog/taplytics/)                     | ✅  | ⬜️     | `@segment/analytics-react-native-taplytics-ios`           |
+| [Tapstream](/docs/connections/destinations/catalog/tapstream/)                     | ⬜️ | ✅      | `@segment/analytics-react-native-tapstream-android`       |
+
+
 
 
 ## Tracking methods
+
+Now that the library is installed and some SDKs are set up, you're ready to learn about the Segment Tracking methods.
 
 ### Identify
 

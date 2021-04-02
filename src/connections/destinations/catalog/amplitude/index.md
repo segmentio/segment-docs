@@ -43,6 +43,10 @@ In addition to the docs below, Amplitude created a [integration guide](https://d
 
 If you included Segment's Javascript snippet on your page, then Amplitude's SDK loads on your page automatically and you can use Segment's to begin sending events right away.
 
+### React Native device mode set up
+
+{% include content/react-dest.md %}
+
 
 ## Page and Screen
 
@@ -444,9 +448,12 @@ Segment Alias call allows you to associate a Segment user's `previousId`
 with the user's `userId`, or what Amplitude refers to, respectively, as a
 `user_id` and a `global_user_id`.
 
-By default, Segment does **NOT** send Alias events to Amplitude. To forward Alias events from Segment, go to your Amplitude destination settings in the Segment web app, and set the **Enable Alias** setting to "on". Once enabled, Segment forwards both client-based and server-based Alias calls. Segment processes _all_ Alias calls before sending them to Amplitude, so you won't see a `usermap` request to Amplitude if you check your browser's Network activity after making a Segment Alias call.
+By default, Segment does **NOT** send Alias events to Amplitude. To forward Alias events from Segment, go to your Amplitude destination settings in the
+Segment web app, and set the **Enable Alias** setting to "on". Once enabled, Segment forwards Alias events from Segment's servers only. This means
+that Alias events reach Amplitude only when you're sending events from the client and have set your Amplitude instance's connection mode to "Cloud Mode",
+or are sending Alias events from a Segment server-side library (such as Node).
 
-> note ""  
+> note ""
 > To use Alias, you must have the Amplitude Portfolio add-on enabled.
 
 For more information, see the [Segment Spec page for the Alias method](https://segment.com/docs/connections/spec/alias/) and [the Amplitude `usermap` documentation](https://amplitude.zendesk.com/hc/en-us/articles/360002750712-Portfolio-Cross-Project-Analysis#user-mapping-aliasing).

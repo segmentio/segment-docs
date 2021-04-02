@@ -31,6 +31,28 @@ This document was last updated on November 13, 2019. If you notice any gaps, out
   5. Paste the Branch Key in the destination settings and click **Save**.
 
 
+### Adding Branch device-mode SDKs for React Native
+
+<!-- LR, Mar2021: this should be a `react-dest` include but Branch changed their name from Branch-Metrics-->
+
+To add the Branch device-mode SDK to a [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) project:
+1. Navigate to the root folder of your project, and run a `yarn add branch` command to add the destination SDK to your project.
+2. Add an `import` statement to your project, as in the example below.
+   ```js
+   import Branch from '@segment/analytics-react-native-branch'
+   ```
+3. In the same project file, add the destination to the `using` list in the `await` command.
+   ```js
+   await analytics.setup('YOUR_WRITE_KEY', {
+     // Add any of your Device-mode destinations. This ensures they load before continuing.
+     using: Branch
+     // ...
+   })
+   ```
+4. Finally, change to your iOS development folder ( `cd ios` ) and run `pod install`.
+
+
+
 ## Identify
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example iOS call would look like:

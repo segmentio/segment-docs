@@ -123,12 +123,33 @@ The Segment-App section should contain roughly a page for each page within the w
 
 ## Troubleshooting Formatting
 
+### Restarting ordered (numbered) lists
+
+We have some fairly complex CSS, and lists with lots of "stuff" in them. Normally, the way you make Markdown include something as part of a list item is to indent it the same number of places as the number.  Unfortunately Markdown _also_ maintains backwards compatibility with an archaic method of invoking a code block, which is to indent it four spaces or two tabs. You can probably guess how this works out...
+
+On top of this, some of the Premonition callouts we use, for some reason, break list ordering. So you can't add an "info" box inside a running list. (Boooo.)
+
+To get around this, you can let the previous list item end whereever if needs to, then create an entire new ordered list with specific HTML to allow you to override the start number.
+
+```html
+<ol style="counter-reset: none;">
+  <li value="5" markdown=1>
+  <!--list item contents here-->
+  </li>
+  <li value="6" markdown=1>
+  <!--list item contents here-->
+  </li>
+</ol>
+
+```
+
+Do this with great caution, and only when absolutely necessary. Because you're explicitly setting the numbers, they won't update if you add or delete a step in the auto-numbered list above.
 
 ### Mixed markdown and HTML
 
 You can mix markdown and html in the same file, but you need to be careful to keep these items on separate lines. The one exception to this is
 
-### Code fences and syntax highligher cues
+### Code fences and syntax highlighter cues
 
 When giving a code example that is more than a line long, use a code block. (For keyboard shortcuts, variables, and commands, use the single-backtick `code format`)
 
