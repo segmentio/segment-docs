@@ -78,7 +78,7 @@ Below is a table of events that **Shopify by Littledata** sends to Segment from 
 
 ## User identity
 
-In Littledata's app you can choose which of the following fields you want to send as the userId for known customers:
+In the Littledata application you can choose which of the following fields you want to send as the `userId` for known customers:
 
 - **Shopify customer ID** (default) - Recommended if you have a simple Shopify setup with minimal integrations.
 - **Hashed email** - The MD5 email hash is useful if you have other marketing platforms sending traffic where you know the email of the visitor (e.g. email marketing like Bronto or Marketo), but not their Shopify customer ID.
