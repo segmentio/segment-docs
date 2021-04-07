@@ -52,7 +52,8 @@ Below is a table of events that **Shopify by Littledata** sends to Segment throu
 | Registration Viewed   | A user has viewed the /account/register page                        |
 | Thank you Page Viewed | A user has viewed the thank you page after completing an order \*   |
 
-> note\* This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
+> info ""
+> \* This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
 
 ## Cloud-mode Events
 
@@ -193,7 +194,7 @@ Each item in the `products` array, or Product Viewed and Product Added events, w
 
 ## Import all orders
 
-With a [Littledata Plus plan](https://www.littledata.io/app/enterprise) you can import all Shopify orders and refunds from before you started using Segment, to sync with destinations that support timestamped events (e.g. a data warehouse). This enables you to build a complete customer history in your chosen destination.
+With a [Littledata Plus plan](https://www.littledata.io/app/enterprise) you can import all Shopify orders and refunds from before you started using Segment, to sync with destinations that support timestamped events (for example, a data warehouse). This enables you to build a complete customer history in your chosen destination.
 
 ## Advanced device-mode settings
 
