@@ -29,7 +29,7 @@ analytics.identify('userId123', {
 });
 ```
 
-Segment sends Identify calls to Kevel as updates to [UserDB](https://dev.kevel.co/docs/userdb-1) updates. Traits with `boolean` values will be stored as `interests` on the UserDB Record. Everything else will be stored in the `custom` property.
+Segment sends Identify calls to Kevel as [UserDB updates](https://dev.kevel.co/docs/userdb-1). Traits with `boolean` values are stored as `interests` on the UserDB Record. Other traits are stored in the `custom` property.
 
 ## Personas
 
