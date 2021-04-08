@@ -65,9 +65,13 @@ layout: default
           {%- endunless -%}
 
           <div class="markdown">
+            {% if page.beta %}
+            {% unless page.integration_type == 'source' or page.integration_type == 'destination' %}
+              {% include content/beta-note.md %}
+            {% endunless %}
+            {% endif %}
 
-
-            {{ content }}
+          {{ content }}
 
           </div>
 

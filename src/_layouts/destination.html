@@ -3,8 +3,12 @@ layout: integration
 ---
 <div class="markdown">
 
+{% if page.beta %}
+  {% include content/beta-note.md %}
+{% endif %}
+
 {% unless page.hide-dossier == true %}
-  {% capture destination-dossier %}{% include content/destination-dossier.md  %}{% endcapture %}
+  {% capture destination-dossier %}{% include content/destination-dossier.md %}{% endcapture %}
   {{ destination-dossier | markdownify }}
 {% endunless %}
 
