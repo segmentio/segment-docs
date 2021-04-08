@@ -170,7 +170,6 @@ The following destinations can receive data from an unlimited number of sources 
 - [Amplitude](/docs/connections/destinations/catalog/amplitude/)
 - [Customer.io](/docs/connections/destinations/catalog/customer-io)
 - [Google Analytics](/docs/connections/destinations/catalog/google-analytics/)
-- [Marketo V2](/docs/connections/destinations/catalog/marketo-v2/)
 - [Mixpanel](/docs/connections/destinations/catalog/mixpanel/)
 
 ##### Cloud-mode only
