@@ -7,7 +7,7 @@ layout: main
     <div class="flex flex--justify gutter gutter--large@medium">
       <div class="flex__column flex__column--6@xlarge">  
         <div class="search">
-          {% include_cached navbar/search.html placeholder="Search the Segment documentation..." %}
+          {% include_cached navbar/search.html container="autocomplete" %}
         </div>
       </div>
 
@@ -19,7 +19,7 @@ layout: main
 
   {% include_cached navbar/navbar-mobile.html %}
 
-  <article class="home page" data-tracking-scroll data-swiftype-name="body" data-swiftype-type="text">
+  <article class="home page" data-tracking-scroll>
     <div class="home__body page__body">
       <div>
         {%- if page.title -%}

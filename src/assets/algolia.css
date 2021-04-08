@@ -1,0 +1,11 @@
+:root {
+  --aa-font-size: 12px;
+  --aa-spacing: 14px;
+  --aa-icon-size: 12px;
+  --aa-spacing-half: 0px;
+  --aa-primary-color: #8f95b2;
+  --aa-panel-shadow: 10px 8px 15px -7px rgba(0, 0, 0, 0.29);
+  --aa-selected-color:#fafbff;
+  --aa-panel-max-height: 90vh;
+  --aa-icon-stroke-width: 2;
+}

@@ -8,8 +8,7 @@ Our comScore destination code is open-source on GitHub if you want to check it o
 
 ## Analytics.js
 
-When you enable comScore in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading comScore's `beacon.js` onto your page. **This means you should remove comScore's snippet from your page.**
-+ comScore automatically starts recording data.
+When you enable comScore in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading comScore's `beacon.js` onto your page. **This means you should remove comScore's snippet from your page.** ComScore automatically starts recording data.
 
 ## Mobile
 
@@ -26,6 +25,10 @@ allprojects {
   }
 }
 ```
+
+## React Native
+
+{% include content/react-dest.md only="ios"%}
 
 
 ### Settings

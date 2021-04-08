@@ -8,8 +8,15 @@ layout: catalog
 menu_icon: "read-more"
 redirect_from:
   - '/docs/connections/sources/catalog/cloud-apps/'
-  - '/docs/connections/sources/catalog/cloud-apps/'
+  - '/docs/connections/sources/catalog/libraries/'
+  - '/docs/connections/sources/catalog/libraries/'
+  - '/docs/connections/sources/catalog/libraries/mobile/'
+  - '/docs/connections/sources/catalog/libraries/ott/'
+  - '/docs/connections/sources/catalog/libraries/server/'
+  - '/docs/connections/sources/catalog/libraries/website/'
 ---
+Below is a list of the available sources on the Segment platform.
+
 
 <div class="destinations-catalog">
   {% assign categories = site.data.catalog.source_categories.items %}

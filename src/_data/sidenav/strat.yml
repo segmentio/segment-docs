@@ -1,7 +1,7 @@
 ---
 sections:
 - slug: adobe
-  section_title: Adobe Analytics
+  section_title: Adobe Integrations
   section:
   - path: /connections/destinations/catalog/adobe-analytics
     title: Adobe Analytics destination
@@ -15,6 +15,13 @@ sections:
     title: Adobe Analytics Heartbeat
   - path: /connections/destinations/catalog/adobe-analytics/best-practices
     title: Adobe Analytics best practices
+  - path: /connections/destinations/catalog/marketo-v2
+    title: Marketo destination
+  - path: /connections/destinations/catalog/marketo-static-lists
+    title: Marketo static lists destination (Personas)
+  - path: /connections/sources/catalog/cloud-apps/marketo
+    title: Marketo cloud source
+
 
 - slug: facebook
   section_title: Facebook Integrations
@@ -78,11 +85,14 @@ sections:
     title: Salesforce Marketing Cloud cloud source
 
 
+
 - slug: ajs
   section_title: Analytics.js Documentation
   section:
   - path: /connections/sources/catalog/libraries/website/javascript
     title: Analytics.js (Javascript) Source
+  - path: /connections/sources/catalog/libraries/website/javascript/analytics-js-2
+    title: Analytics.js 2.0 (Beta)
   - path: /connections/sources/catalog/libraries/website/javascript/supported-browsers
     title: Analytics.js supported browsers
   - path: /connections/sources/catalog/libraries/website/javascript/quickstart
@@ -136,5 +146,5 @@ sections:
     title: Analytics-React-Native mobile source
   - path: /connections/sources/catalog/libraries/mobile/react-native/troubleshooting
     title: Troubleshooting Analytics-React-Native
-  - path: /connections/sources/catalog/libraries/mobile/android/react-faqs
+  - path: /connections/sources/catalog/libraries/mobile/react-native/react-faqs/
     title: React-Native FAQs

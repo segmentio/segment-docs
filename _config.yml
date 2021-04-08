@@ -25,12 +25,12 @@ defaults:
       path: "connections/destinations/catalog"
     values:
       integration_type: destination
-      layout: integration
+      layout: destination
   - scope:
       path: "connections/sources/catalog"
     values:
       integration_type: source
-      layout: integration
+      layout: source
   - scope:
       path: "connections/storage/catalog"
     values:
@@ -49,3 +49,8 @@ plugins:
   - premonition
   - jekyll-commonmark
   - jekyll-last-modified-at
+algolia:
+  application_id: UINQ2M4D9S
+  index_name:     segment-docs
+  files_to_exclude:
+    - _release_notes/*

@@ -9,7 +9,7 @@ permalink: /404.html
     <div class="flex flex--justify gutter gutter--large@medium">
       <div class="flex__column flex__column--6@xlarge">  
         <div class="search">
-          {% include_cached navbar/search.html placeholder="Search the Segment documentation..." %}
+          {% include_cached navbar/search.html container="autocomplete" %}
         </div>
       </div>
 
@@ -31,7 +31,7 @@ permalink: /404.html
               <p>You may have mistyped the address or the page may have moved. Double-check the URL and try again or search the term.</p>
 
               <div class="search search--mobile" data-search>
-                {% include_cached navbar/search.html placeholder="Enter a search term" mobile="true" %}
+                {% include_cached navbar/search.html container="autocomplete" %}
               </div>
             </div>
           </div>

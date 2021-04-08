@@ -2,6 +2,9 @@
 title: Review and Resolve Event Violations
 ---
 
+{% include content/plan-grid.md name="protocols" %}
+
+
 Upon connecting your Tracking Plan to a Source, you will be able to view violations grouped by event. To view violations, click on the Violations button located on the Schema tab in a Source. A filter can be applied to only show events with violations within the past 24 hrs, 7 days and 30 days.
 
 

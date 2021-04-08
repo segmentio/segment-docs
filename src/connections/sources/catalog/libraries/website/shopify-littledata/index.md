@@ -52,7 +52,8 @@ Below is a table of events that **Shopify by Littledata** sends to Segment throu
 | Registration Viewed   | A user has viewed the /account/register page                        |
 | Thank you Page Viewed | A user has viewed the thank you page after completing an order \*   |
 
-> note "" \* This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
+> info ""
+> \* This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
 
 ## Cloud-mode Events
 
@@ -65,7 +66,6 @@ Below is a table of events that **Shopify by Littledata** sends to Segment from 
 | Coupon Applied           | Sent with Checkout Step Completed or Order Completed when user has applied a coupon                                                                                                         |
 | Customer Created         | User added as a customer                                                                                                                                                                    |
 | Customer Enabled (v2)    | A user has confirmed their email address and created a Shopify customer account with verified_email set as true                                                                             |
-| Customer Updated         | Customer information updated                                                                                                                                                                |
 | Fulfillment Created (v2) | An order fulfillment status has changed (including status, tracking_numbers and tracking_urls where the shipping integration allows)                                                        |
 | Fulfillment Updated (v2) | An order fulfillment status has changed (including status, tracking_numbers and tracking_urls where the shipping integration allows)                                                        |
 | Order Cancelled (v2)     | An admin has cancelled an order (including the cancel_reason)                                                                                                                               |
@@ -79,14 +79,14 @@ Below is a table of events that **Shopify by Littledata** sends to Segment from 
 
 ## User identity
 
-In the Littledata application, you can choose which of the following fields you want to send as the `userId` for known customers:
+In the Littledata application you can choose which of the following fields you want to send as the `userId` for known customers:
 
-- Shopify Customer ID (default)
-- Email
-- MD5 email hash
-- None
+- **Shopify customer ID** (default) - Recommended if you have a simple Shopify setup with minimal integrations.
+- **Hashed email** - The MD5 email hash is useful if you have other marketing platforms sending traffic where you know the email of the visitor (e.g. email marketing like Bronto or Marketo), but not their Shopify customer ID.
+- **Email** - The email identifier is recommended when other platforms use the email and can’t hash it, and you are comfortable with the privacy implications.
+- **None** (no identifier) - Choose “none” if user identity is already handled by your Segment implementation and you only need the extra events powered by Littledata's Shopify source.
 
-For example, using 'email' allows you to match users across platforms that do not have access to the Shopify Customer ID. For [Segment Personas](/docs/personas/) we also send `shopify_customer_id` as an [externalID](/docs/personas/identity-resolution/externalids/) for advanced matching.
+For [Segment Personas](/docs/personas/) we also send `shopify_customer_id` as an [externalID](/docs/personas/identity-resolution/externalids/) for advanced matching.
 
 ## Identify Calls
 
@@ -127,15 +127,15 @@ To support seamless customer tracking the [Mixpanel](/docs/connections/destinati
 
 Additional events available through Littledata's [ReCharge connection](https://www.littledata.io/connections/recharge), and available in cloud-mode destinations.
 
-| Event Name               | Description                                     |
-| ------------------------ | ----------------------------------------------- |
-| Charge Failed            | A failed to charge customer                     |
-| Charge Max Tries Reached | The maximum tries to charge customer is reached |
-| Order Processed          | A recurring order is processed                  |
-| Payment Method Updated   | A customer has updated the payment method       |
-| Subscription Cancelled   | A customer has cancelled a subscription         |
-| Subscription Created     | A customer has created a subscription           |
-| Subscription Updated     | A customer has updated a subscription           |
+| Event Name               | Description                                                                                                 |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------- |
+| Charge Failed            | A recurring charge failed (with `error_type`)                                                               |
+| Charge Max Tries Reached | The maximum tries to charge customer is reached                                                             |
+| Order Processed          | A recurring order is processed                                                                              |
+| Payment Method Updated   | A customer has updated the payment method                                                                   |
+| Subscription Cancelled   | A customer has cancelled a subscription (with `cancellation_reason` and `cancellation_reason_comments`)     |
+| Subscription Created     | A customer has created a subscription (with `status`, `order_interval_frequency` and `order_interval_unit`) |
+| Subscription Updated     | A customer has updated a subscription (with `status`, `order_interval_frequency` and `order_interval_unit`) |
 
 ## Event Properties
 
@@ -144,8 +144,9 @@ The list below outlines the properties included in the events listed above.
 | Property                               | Description                                                    | Property Type |
 | -------------------------------------- | -------------------------------------------------------------- | ------------- |
 | `affiliation`                          | The affiliation of the order                                   | String        |
+| `cart_id`                              | The ID of the Shopify cart                                     | String        |
 | `checkoutId`                           | The ID of the checkout session                                 | String        |
-| `context.uip`                          | The user's IP address                                          | String        |
+| `context.ip`                           | The user's IP address                                          | String        |
 | `context['Google Analytics'].clientId` | The user's Google Analytics Client ID                          | String        |
 | `context['Google Analytics'].geoid`    | The user's location                                            | String        |
 | `coupon`                               | Comma-separated string of discount coupons used, if applicable | String        |
@@ -190,6 +191,10 @@ Each item in the `products` array, or Product Viewed and Product Added events, w
 | `sku`                | The product SKU                                                    | String        |
 | `url`                | The URL of the product page                                        | String        |
 | `variant`            | The product variant name                                           | String        |
+
+## Import all orders
+
+With a [Littledata Plus plan](https://www.littledata.io/app/enterprise) you can import all Shopify orders and refunds from before you started using Segment, to sync with destinations that support timestamped events (for example, a data warehouse). This enables you to build a complete customer history in your chosen destination.
 
 ## Advanced device-mode settings
 

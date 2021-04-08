@@ -42,11 +42,11 @@ If you notice any gaps or outdated information in this document, or simply want 
       [SEGAnalytics setupWithConfiguration:config];
     ```
 
-    [Here](https://github.com/Appboy/appboy-segment-ios/blob/master/Example/Segment-Appboy/SEGAppDelegate.m#L10) is a sample project which shows how to integrate the above.
+    [Here](https://github.com/Appboy/appboy-segment-ios/blob/master/CocoapodsExample/Segment-Appboy/SEGAppDelegate.m) is a sample project which shows how to integrate the above.
 
 #### Sample App
 
-Braze created a sample iOS application that integrates Braze using Segment. Check it out at the [GitHub repo](https://github.com/Appboy/appboy-segment-ios/tree/master/Example).
+Braze created a sample iOS application that integrates Braze using Segment. Check it out at the [GitHub repo](https://github.com/Appboy/appboy-segment-ios/tree/master/CocoapodsExample).
 
 #### Additional device-mode set up for iOS 14 support
 
@@ -69,6 +69,7 @@ To use the latest Braze SDK to collect IDFAs you must do the following:
 
     ```js
     maven { url "http://appboy.github.io/appboy-android-sdk/sdk" }
+    maven { url "http://appboy.github.io/appboy-segment-android/sdk" }
     ```
 
 2. Add the Braze Segment destination dependency to your app `build.gradle`:
@@ -94,6 +95,31 @@ To use the latest Braze SDK to collect IDFAs you must do the following:
 
 Braze has created a sample Android application that integrates Braze using Segment. Check it out at the [GitHub repo](https://github.com/Appboy/appboy-segment-android-sample).
 
+
+### React Native device-mode set up
+
+<!-- LR, Mar2021: this should be a `react-dest` include but Braze was originally called Appboy-->
+
+To add the Braze device-mode SDK to a [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) project:
+1. Navigate to the root folder of your project, and run a `yarn add appboy` command to add the destination SDK to your project.
+2. Add an `import` statement to your project, as in the example below.
+   ```js
+   import Braze from '@segment/analytics-react-native-appboy'
+   ```
+3. In the same project file, add the destination to the `using` list in the `await` command.
+   ```js
+   await analytics.setup('YOUR_WRITE_KEY', {
+     // Add any of your Device-mode destinations. This ensures they load before continuing.
+     using: Braze
+     // ...
+   })
+   ```
+4. Finally, change to your iOS development folder ( `cd ios` ) and run `pod install`.
+
+
+> note ""
+> Braze was formerly known as "Appboy", and their React component still uses that name. Be sure to use the old name!
+
 ## Page
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
@@ -116,9 +142,9 @@ analytics.identify('ze8rt1u89', {
 });
 ```
 
-When you Identify a user, Segment passes that user's information to Braze with `userId` as Braze's External User ID. 
+When you Identify a user, Segment passes that user's information to Braze with `userId` as Braze's External User ID.
 
-If you are using a device-mode connection, Braze's SDK also automatically assigns a `braze_id` to every user. This allows Braze to capture anonymous activity from the device by matching on `braze_id` instead of `userId`. This only applies to _device-mode connections_. 
+If you are using a device-mode connection, Braze's SDK also automatically assigns a `braze_id` to every user. This allows Braze to capture anonymous activity from the device by matching on `braze_id` instead of `userId`. This only applies to _device-mode connections_.
 
 To send anonymous user data in cloud-mode, you must manually include the user's `braze_id` in all your Segment API calls in the `integrations.Braze.braze_id` or `context.integrations.Braze.braze_id` object.
 
@@ -137,7 +163,7 @@ Segment's special traits recognized as Braze's standard user profile fields (in 
 | `address.country` | `country`   |
 | `gender`          | `gender`    |
 
-All other traits (except their [reserved keys](https://www.braze.com/documentation/Platform_Wide/#reserved-keys)) will be sent to Braze as custom attributes. You can send an array of strings as trait values but not nested objects.
+All other traits (except their [reserved user profile fields](https://www.braze.com/docs/api/objects_filters/user_attributes_object/#braze-user-profile-fields)) will be sent to Braze as custom attributes. You can send an array of strings as trait values but not nested objects.
 
 
 ## Track

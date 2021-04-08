@@ -1,5 +1,6 @@
 ---
 title: "How do I add a team member?"
+hidden: true
 ---
 
 **This section is being deprecated, refer to [IAM](/docs/segment-app/iam) going forward**

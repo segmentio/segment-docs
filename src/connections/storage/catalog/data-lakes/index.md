@@ -2,6 +2,8 @@
 title: Set Up Segment Data Lakes
 redirect_from: '/connections/destinations/catalog/data-lakes/'
 ---
+{% include content/plan-grid.md name="data-lakes" %}
+
 
 Segment Data Lakes provide a way to collect large quantities of data in a format that's optimized for targeted data science and data analytics workflows. You can read [more information about Data Lakes](/docs/connections/storage/data-lakes/) and learn [how they differ from Warehouses](/docs/connections/storage/data-lakes/comparison/) in our documentation.
 

@@ -2,6 +2,8 @@
 title: Personas Frequently Asked Questions
 ---
 
+
+
 ## Can I use the Profile API on the client-side?
 For security reasons, we require the Profile API only be used server-side. The Profile API allows you to look up data about any user given an identifier (e.g. email, `anonymousId`, or `userId`) and an authorized access secret. While this enables powerful personalization workflows, it could also let your customers' data fall into the wrong hands if the access secret were exposed on the client.
 

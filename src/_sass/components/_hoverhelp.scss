@@ -1,0 +1,28 @@
+.hoverhelp {
+  $this: &;
+
+  position: relative;
+
+  &__body {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+    opacity: 0;
+    visibility: hidden;
+    border: 1px solid color(gray-400);
+    border-radius: 4px;
+    background: color(white);
+    transition: 200ms ease;
+  }
+
+  &--active {
+    #{$this}__body {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

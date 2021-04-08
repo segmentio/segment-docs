@@ -2,6 +2,9 @@
 title: Personas and GDPR
 ---
 
+
+
+
 ## Is Personas compatible with Segment's GDPR features?
 Yes! Personas is compatible with Segment's GDPR features. Personas was designed with the GDPR principles and end-user privacy in mind, and is powered by first-party data.
 
