@@ -67,11 +67,25 @@ Subsequent `track` with `userId`
 
 Iterable also supports Segment's [ecommerce events](/docs/connections/spec/ecommerce/v2/). This works just as you would expect, using the `track` method.
 
-There is one important difference from the Segment documentation. If you are using the `Product Added` / `Product Removed` events, you must also pass along the "products" field with the cart info, just like Segment's example for the `Order Completed` event. You must include all required fields for the Purchase events in Iterable, which includes the total value of the purchase with the property: `total`. This value works best as a float, double, and possibly an integer. An example might look like this:
+Iterable has one important difference from the Segment Ecommerce spec. If you use the `Product Added` / `Product Removed`/ `Order Completed` events, you must include the "products" field with the cart info, as in the `Order Completed` example event. You must include [all required fields for the Purchase events in Iterable](https://api.iterable.com/api/docs#commerce_trackPurchase).  This includes the total value of the purchase as `total` (best as a float, double, and possibly an integer), and an array of objects called `products`. Each product must include an `id` or `productId` as a string, and a `name`, `price`, and `quantity` on each product object in the array. These are used to map to Iterable's expected `items` array. An example might look like this:
 
 ```js
 analytics.track("Order Completed", {
-  total: 100.00
+  total: 100.00,
+  products: [
+    {
+      product_id: '507f1f77bcf86cd799439011',
+      name: 'Monopoly: 3rd Edition',
+      price: 19,
+      quantity: 1
+    },
+    {
+      product_id: '505bd76785ebb509fc183733',
+      name: 'Uno Card Game',
+      price: 3,
+      quantity: 2
+    }
+  ]
 });
 ```
 

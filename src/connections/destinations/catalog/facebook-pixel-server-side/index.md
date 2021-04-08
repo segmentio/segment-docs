@@ -82,7 +82,7 @@ You can also increase the match rate for events from a server source by sending 
 
 #### Deduplication considerations
 
-Events are only deduplicated if the same event is sent _first_ from the browser and _then_ from the server.  When events are received in this order, the server event is discarded. If the events are sent from the server and _then_ the browser, they create a duplicate. If you send two consecutive browser events with the same information, neither is discarded. If you send two consecutive server events with the same information, neither is be discarded.
+Events are only deduplicated if the same event is sent _first_ from the browser and _then_ from the server.  When events are received in this order, the server event is discarded. If the events are sent from the server and _then_ the browser, they create a duplicate. If you send two consecutive browser events with the same information, neither is discarded. If you send two consecutive server events with the same information, neither is discarded.
 
 ### Send different events - some from the browser others from the server
 
