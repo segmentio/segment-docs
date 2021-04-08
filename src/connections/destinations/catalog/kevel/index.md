@@ -14,7 +14,7 @@ This destination is maintained by Kevel. For any issues with the destination, [c
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Kevel" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Find your Network ID in the [Kevel App](https://app.kevel.co) using the "Information" icon in the top navigation menu to the far-right (next to your Username).
+3. In the [Kevel App](https://app.kevel.co), click the Information icon in the top-right navigation to find your **Network ID** by.
 4. Navigate to Settings -> API Keys via the top navigation in the [Kevel App](https://app.kevel.co) and either copy an existing key or generate a new one.
 5. Enter the "API Key" and "Network ID" into your Segment Settings UI.
 
