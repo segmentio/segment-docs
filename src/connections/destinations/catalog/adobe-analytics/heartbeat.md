@@ -34,13 +34,13 @@ For iOS: The Adobe Heartbeat SDK is already included with the Segment-Adobe-Anal
 
 The Adobe Heartbeat JS SDK is automatically included with the Segment-Adobe-Analytics integration when you add a Heartbeat Tracking Server URL. 
 
-Segment will map your video events to the Adobe methods as outlined below. In order to record video heartbeats to Adobe accurately on web, Adobe's SDK requires a playhead update **at least once per second** for main content. The "Video Content Playing" event updates the playhead using the `position` property. If you do not want to trigger this event every second, you can alternatively set the playhead to the window. This can be done by setting `window_.segHBPlayheads` to the key-value pair of the current content's `session_id` and `position`:
+Segment will map your video events to the Adobe methods as outlined below. In order to record video heartbeats to Adobe accurately on web, Adobe's SDK requires a playhead update **at least once per second** for main content. The "Video Content Playing" event updates the playhead using the `position` property. If you do not want to trigger this event every second, you can alternatively set the playhead to the window. This can be done by setting `window._segHBPlayheads` to the key-value pair of the current content's `session_id` and `position`:
 
 ```javascript
 window._segHBPlayheads = { <session_id>: <position> }
 ```
    
-The Segment-Adobe-Analytics integration will pick up the playhead(s) you set to `window_.segHBPlayheads` and pass this to Adobe's SDK.
+The Segment-Adobe-Analytics integration will pick up the playhead(s) you set to `window._segHBPlayheads` and pass this to Adobe's SDK.
 
 
 
