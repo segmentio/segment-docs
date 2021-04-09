@@ -10,6 +10,7 @@ This page is to help troubleshoot and break down each connection modes situation
 - How do you know if there’s a device mode package available for mobile?
 - Does device-mode web mean that it’s an AJS package? and you can turn it on from the UI? Or is that unbundling? (`browserUnbundlingPublic`/`browserUnbundlingSupported`?)
 - Why aren't there any cmodes for dev center dests?
+- Can we say for sure that the "web" device-mode is AJS only?
 
 
 ## Accepts everything 🏆
