@@ -27,10 +27,10 @@ This page collates information about each destination, organized by category for
 {% unless destination.connection_modes.cloud.web == false and destination.connection_modes.cloud.mobile == false and destination.connection_modes.cloud.server == false and destination.connection_modes.device.web == false and destination.connection_modes.device.mobile == false  %}
 <tr>
   <td>**[{{ destination.display_name }}](/docs/{{ destination.url }})**</td>
-  <td>{% if destination.connection_modes.cloud.web %}✅{% else %}⬜️{% endif %} </td>
+  <td style="border-left: 1px solid gray;">{% if destination.connection_modes.cloud.web %}✅{% else %}⬜️{% endif %} </td>
   <td>{% if destination.connection_modes.cloud.mobile %}✅{% else %}⬜️{% endif %} </td>
   <td>{% if destination.connection_modes.cloud.server %}✅{% else %}⬜️{% endif %} </td>
-  <td>{% if destination.connection_modes.device.web %}✅{% else %}⬜️{% endif %} </td>
+  <td style="border-left: 1px solid gray;">{% if destination.connection_modes.device.web %}✅{% else %}⬜️{% endif %} </td>
   <td>{% if destination.connection_modes.device.mobile %}✅{% else %}⬜️{% endif %} </td>
 </tr>
 {% endunless %}
