@@ -12,7 +12,7 @@ This page collates information about each destination, organized by category for
 <tr>
   <th>  </th>
   <th colspan=3 style="border-left: 1px solid gray;">Accepts data from these library types in cloud-mode </th>
-  <th colspan=2 style="border-left: 1px solid gray;">Can use these Device-modes</th>
+  <th colspan=2 style="border-left: 1px solid gray;">Can use these in device-mode</th>
 </tr>
 <tr>
   <th> Destination </th>
