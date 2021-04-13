@@ -8,12 +8,14 @@ This page is to help troubleshoot and break down each connection modes situation
 **Questions from Laura:**
 - What are the `Components` used for in CPS/ConfigAPI? They seem abandoned.
 - How do you know if there’s a device mode package available for mobile?
-- Does device-mode web mean that it’s an AJS package? and you can turn it on from the UI? Or is that unbundling? (`browserUnbundlingPublic`/`browserUnbundlingSupported`?)
+- Does device-mode web mean that it’s an AJS package? and you can turn it on from the UI? Or is that unbundling? (`browserUnbundlingSupported`?)
 - Why aren't there any cmodes for dev center dests?
 - Can we say for sure that the "web" device-mode is AJS only?
 
 
 ## Accepts everything 🏆
+
+"This destination accepts data from [all Segment library sources](/docs/connections/sources/catalog/) in cloud-mode. It also can accept data from both mobile and web sources in device-mode."
 
 {% for destination in site.data.catalog.destinations.items %}
 {% if destination.connection_modes.cloud.web == true and destination.connection_modes.cloud.mobile == true and destination.connection_modes.cloud.server == true and destination.connection_modes.device.web == true and destination.connection_modes.device.mobile == true %}
@@ -27,7 +29,7 @@ This page is to help troubleshoot and break down each connection modes situation
 
 ### Only mobile device mode
 
-These items only run on the users's phone.
+"This destination only accepts data from a mobile source in device-mode. This means that the destination's SDK must run on the users's phone, and you must package the SDK with your mobile project."
 
 {% for destination in site.data.catalog.destinations.items %}
 {% if destination.connection_modes.cloud.web == false and destination.connection_modes.cloud.mobile == false and destination.connection_modes.cloud.server == false and destination.connection_modes.device.web == false and destination.connection_modes.device.mobile == true %}
@@ -38,7 +40,7 @@ These items only run on the users's phone.
 
 ### Only web device mode
 
-These items only run directly in the user's browser.
+"This destination only accepts data from an Analytics.js source in device-mode. This means that AJS must package the destination's library and run it in the user's browser."
 
 {% for destination in site.data.catalog.destinations.items %}
 {% if destination.connection_modes.cloud.web == false and destination.connection_modes.cloud.mobile == false and destination.connection_modes.cloud.server == false and destination.connection_modes.device.web == true and destination.connection_modes.device.mobile == false %}
@@ -59,7 +61,9 @@ These items only run in the browser or on the phone, but can't accept data from 
 ---
 ## Cloud mode Only
 
-### Accepts mobile cloud mode only
+### Accepts data from mobile library sources only
+
+"This destination accepts data from mobile library sources only."
 
 Only accepts data from a Segment mobile source. Not sure how this one weird item works.
 
@@ -72,6 +76,8 @@ Only accepts data from a Segment mobile source. Not sure how this one weird item
 
 ### Accepts mobile and server cloud mode, no web cloud mode, no device mode
 
+"This destination accepts data from [mobile](/docs/connections/sources/catalog/#mobile) and [server](/docs/connections/sources/catalog/#server) library sources. It does not accept data using device-mode sources."
+
 {% for destination in site.data.catalog.destinations.items %}
 {% if destination.connection_modes.cloud.web == false and destination.connection_modes.cloud.mobile == true and
 destination.connection_modes.cloud.server == true and destination.connection_modes.device.web == false and destination.connection_modes.device.mobile == false %}
@@ -81,6 +87,7 @@ destination.connection_modes.cloud.server == true and destination.connection_mod
 
 ### Accepts all cloud mode, no device mode
 
+"This destination accepts data from [all Segment library sources](/docs/connections/sources/catalog/) in cloud-mode. It does not accept data using device-mode sources."
 
 {% for destination in site.data.catalog.destinations.items %}
 {% if destination.connection_modes.cloud.web == true and destination.connection_modes.cloud.mobile == true and destination.connection_modes.cloud.server == true and destination.connection_modes.device.web == false and destination.connection_modes.device.mobile == false and destination.connection_modes.cloud.server == true %}
@@ -102,6 +109,8 @@ Doesn't accept data from a server source, but does on mobile and web. Might have
 
 ## Accepts all cloud mode, plus one or both device mode
 
+"This destination accepts data from all library sources in cloud-mode, and also can use a (sourcetype) device-mode."
+
 {% for destination in site.data.catalog.destinations.items %}
 {% if destination.connection_modes.cloud.web == true and destination.connection_modes.cloud.mobile == true and destination.connection_modes.cloud.server == true %}
 {% if destination.connection_modes.device.web == true or destination.connection_modes.device.mobile == true  %}
@@ -114,6 +123,7 @@ Doesn't accept data from a server source, but does on mobile and web. Might have
 ## No connection modes info available
 
 The following destinations have no connection mode information available:
+
 {% for destination in site.data.catalog.destinations.items %}
 {% if destination.connection_modes.cloud.web == false and destination.connection_modes.cloud.mobile == false and destination.connection_modes.cloud.server == false and destination.connection_modes.device.web == false and destination.connection_modes.device.mobile == false %}
 - [{{ destination.display_name }}](/docs/{{ destination.url }}){% if destination.status == "PUBLIC_BETA" %}&nbsp;ℹ️{% endif %}

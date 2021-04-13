@@ -94,6 +94,26 @@ const getConnectionModes = (destination) => {
 }
 
 /**
+Write the cmodes summary:
+
+Check if all cmodes are false. break if so - this is a devcenter one and needs metadata backfill
+Check if all cmodes are true. :trophy: overachiever!
+Check if all `cloud` items are false.
+- if both device = true "This destination only runs in the browser or on the phone, but can’t accept data from sources through the Segment servers."
+- elseif web only "This destination only runs directly in the users’s browser."
+- elseif mobile only "This destination only runs on the users’s mobile device."
+Check if all `device` items are false.
+- if all cloud = true "Accepts data from any Segment source in cloud mode. Does not offer a device mode."
+- if mobile and server "Accepts data from any Segment mobile or server source in cloud mode. Does not accept data from a web source, and does not offer device-mode connections."
+- edge cases: web and mobile cloud, no server. mobile cloud only.
+Else: has mixed device and cloud
+- all cloud mode plus one or more device modes "Accepts data from any Segment source in cloud mode, and offers a {{connectionModes.device|join}} device mode."
+- edge case: web and mobile cloud mode, plus a device mode.
+
+*/
+
+
+/**
  *
  * If catalog item does not exist, create folder and index.md file for it, and record it as incomplete for later fill in
  */

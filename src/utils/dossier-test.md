@@ -3,12 +3,6 @@ title: Dossier test
 ---
 
 
-| Destination name  (in beta) | categories | previous names |
-| --------------------------- | ---------- | -------------- |
-| methods                     |            |                |
-|                             |            |                |
-
-
 {% assign thisDestination = 'google-ads-gtag' %}
 {% assign destinationInfo = site.data.catalog.destinations.items | where: "slug", thisDestination | first %}
 {% comment %}There are probably prettier ways to generate a list of links to these methods, but this was good enough for me.{% endcomment %}
@@ -25,16 +19,23 @@ title: Dossier test
 {% endfor %}
 {% assign destMethods = destMethods| reverse %}
 
-{% if destinationInfo.connection_modes.device.web or destinationInfo.connection_modes.device.mobile %} {{destinationInfo.display_name}} has a device-mode component available.
+<div class="premonition info">
+<div class="fa fa-info-circle"></div>
+<div class="content"><p>
+<p class="header"> {{destinationInfo.display_name}} quick info.</p>
+<p markdown=1>
+**[{{ destinationInfo.display_name }}](/docs/{{ destinationInfo.url }})**{% if destinationInfo.status == "PUBLIC_BETA" %} is in beta, and{% endif %} accepts {{destMethods |  join: ', ' }} calls. If you reference it in the Integrations object, you can call it &ldquo;{{destinationInfo.previous_names | join: '", or "' }}&rdquo;.
+{% if destinationInfo.connection_modes.device.web or destinationInfo.connection_modes.device.mobile %}
+ {{destinationInfo.display_name}} has a device-mode component available.
 {% endif %}
+{% if destinationInfo.browserUnbundlingSupported %} You can change the {{destinationInfo.display_name}} connection mode for Analytics.js deployments from the destination settings in the Segment web app.
+{% endif %}
+</p>
+</div>
+</div>
 
 
-
-**[{{ destinationInfo.display_name }}](/docs/{{ destinationInfo.url }})**{% if destinationInfo.status == "PUBLIC_BETA" %} is in beta, and{% endif %} accepts
-{{destMethods |  join: ', ' }} calls.
-If you reference it in the Integrations object, you can call it {{destinationInfo.previous_names | join: ", or " }}.
-
-
+{% comment %}
 <table>
 <tr>
   <td> **[{{ destinationInfo.display_name }}](/docs/{{ destinationInfo.url }})**{% if destinationInfo.status == "PUBLIC_BETA" %} (in beta ℹ️){% endif %}</td>
@@ -62,7 +63,7 @@ If you reference it in the Integrations object, you can call it {{destinationInf
 
 
 
-{% comment %}
+
 
 raw:
 
@@ -90,7 +91,6 @@ Raw size:
 {%endif%}
 {% endunless %}
 </table>
-{% endcomment %}
-
 
 {{destinationInfo}}
+{% endcomment %}
