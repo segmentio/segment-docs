@@ -19,21 +19,15 @@ title: Dossier test
 {% endfor %}
 {% assign destMethods = destMethods| reverse %}
 
-<div class="premonition info">
-<div class="fa fa-info-circle"></div>
-<div class="content"><p>
-<p class="header"> {{destinationInfo.display_name}} quick info.</p>
-<p markdown=1>
+<hr>
+#### {{destinationInfo.display_name}} quick info.
+test
+
 **[{{ destinationInfo.display_name }}](/docs/{{ destinationInfo.url }})**{% if destinationInfo.status == "PUBLIC_BETA" %} is in beta, and{% endif %} accepts {{destMethods |  join: ', ' }} calls. If you reference it in the Integrations object, you can call it &ldquo;{{destinationInfo.previous_names | join: '", or "' }}&rdquo;.
-{% if destinationInfo.connection_modes.device.web or destinationInfo.connection_modes.device.mobile %}
- {{destinationInfo.display_name}} has a device-mode component available.
-{% endif %}
+{{ destinationInfo.connection_modes.summary }}
 {% if destinationInfo.browserUnbundlingSupported %} You can change the {{destinationInfo.display_name}} connection mode for Analytics.js deployments from the destination settings in the Segment web app.
 {% endif %}
-</p>
-</div>
-</div>
-
+<hr>
 
 {% comment %}
 <table>

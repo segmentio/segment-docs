@@ -54,7 +54,8 @@ const getConnectionModes = (destination) => {
       web: false,
       mobile: false,
       server: false
-    }
+    },
+    summary: "testing"
   }
   destination.components.forEach(component => {
     switch (component.type) {
@@ -90,31 +91,75 @@ const getConnectionModes = (destination) => {
         break
     }
   })
+
+  // summarize connection modes in plain english.
+  // start with no-cloud
+  if (connectionModes.cloud.web == false && connectionModes.cloud.mobile == false && connectionModes.cloud.server == false){
+    // first check if no info at all available - these need backfill
+    if (connectionModes.device.web == false && connectionModes.device.mobile == false) {
+      connectionModes.summary = "No connection mode information available."
+    }
+    // handle has-device-modes: three cases
+    else if (connectionModes.device.web == true || connectionModes.device.mobile == true){
+      if (connectionModes.device.web == true && connectionModes.device.mobile == true) {
+        connectionModes.summary = "Accepts device-mode data from both Analaytics.js and Mobile sources. Does not accept data in cloud-mode."
+      }
+      if (connectionModes.device.web == true && connectionModes.device.mobile == false) {
+        connectionModes.summary = "Accepts device-mode data only from Analaytics.js."
+      }
+      if (connectionModes.device.web == false && connectionModes.device.mobile == true) {
+        connectionModes.summary = "Accepts device-mode data only from a Mobile source."
+      }
+    }
+
+  }
+  //next check if all are true.
+  else if (connectionModes.cloud.web == true && connectionModes.cloud.mobile == true && connectionModes.cloud.server == true && connectionModes.device.web == true && connectionModes.device.mobile == true) {
+    connectionModes.summary = "Accepts cloud-mode data from all Segment source types. Can accept device-mode data from both web and mobile sources."
+  }
+
+  //next handle all cloud-only (no-device-mode) cases
+  else if ((connectionModes.device.web == false && connectionModes.device.mobile == false) && (connectionModes.cloud.web == true || connectionModes.cloud.mobile == true || connectionModes.cloud.server == true)) {
+    // accepts all cloud-mode
+    if (connectionModes.cloud.web == true && connectionModes.cloud.mobile == true && connectionModes.cloud.server == true){
+      connectionModes.summary = "Accepts cloud-mode data from all Segment source types. Cannot accept device-mode data."
+    }
+    //edge-case-y: only mobile and server
+    else if (connectionModes.cloud.web == false && connectionModes.cloud.mobile == true && connectionModes.cloud.server == true){
+      connectionModes.summary = "Accepts data from any Segment mobile or server source in cloud mode. Does not accept data from a web source, and does not offer device-mode connections."
+    }
+    //edge-case-y: web and mobile cloud, no server.
+    else if (connectionModes.cloud.web == true && connectionModes.cloud.mobile == true && connectionModes.cloud.server == false){
+      connectionModes.summary = "Accepts cloud-mode data from web and mobile sources only."
+    }
+    //edge-case-y: mobile cloud only.
+    else if (connectionModes.cloud.web == false && connectionModes.cloud.mobile == true && connectionModes.cloud.server == false){
+      connectionModes.summary = "Accepts cloud-mode data from mobile sources only."
+    }
+  }
+
+  //handle mixed-case
+  else if ((connectionModes.cloud.web == true || connectionModes.cloud.mobile == true || connectionModes.cloud.server == true) && (connectionModes.device.mobile == true || connectionModes.device.web == true)){
+// troubleshooting line :)
+    connectionModes.summary = "gets into mixed state."
+    // all cloud-mode plus one or more device
+    if ((connectionModes.cloud.web == true && connectionModes.cloud.mobile == true && connectionModes.cloud.server == true) && (connectionModes.device.mobile == true || connectionModes.device.web == true)){
+      connectionModes.summary = "Accepts data in cloud-mode from all source types, and can accept some data in device-mode."
+    }
+    // edge-case-y: cloud mobile and server, device mobile, no web
+    else if (connectionModes.cloud.web == false && connectionModes.cloud.mobile == true && connectionModes.cloud.server == true && connectionModes.device.mobile == true && connectionModes.device.web == false){
+      connectionModes.summary = "Accepts data in cloud-mode from mobile and server sources, and can accept data in device-mode from mobile sources."
+    }
+    // edge-case-y: cloud web and mobile, no server, some device
+    else if ((connectionModes.cloud.web == true && connectionModes.cloud.mobile == true && connectionModes.cloud.server == false) && (connectionModes.device.mobile == true || connectionModes.device.web == true)){
+      connectionModes.summary = "Accepts data in cloud-mode from web and mobile sources, and can accept some data in device-mode."
+    }
+  }
+
   return connectionModes
 }
 
 /**
-Write the cmodes summary:
-
-Check if all cmodes are false. break if so - this is a devcenter one and needs metadata backfill
-Check if all cmodes are true. :trophy: overachiever!
-Check if all `cloud` items are false.
-- if both device = true "This destination only runs in the browser or on the phone, but can’t accept data from sources through the Segment servers."
-- elseif web only "This destination only runs directly in the users’s browser."
-- elseif mobile only "This destination only runs on the users’s mobile device."
-Check if all `device` items are false.
-- if all cloud = true "Accepts data from any Segment source in cloud mode. Does not offer a device mode."
-- if mobile and server "Accepts data from any Segment mobile or server source in cloud mode. Does not accept data from a web source, and does not offer device-mode connections."
-- edge cases: web and mobile cloud, no server. mobile cloud only.
-Else: has mixed device and cloud
-- all cloud mode plus one or more device modes "Accepts data from any Segment source in cloud mode, and offers a {{connectionModes.device|join}} device mode."
-- edge case: web and mobile cloud mode, plus a device mode.
-
-*/
-
-
-/**
- *
  * If catalog item does not exist, create folder and index.md file for it, and record it as incomplete for later fill in
  */
 const doesCatalogItemExist = (item) => {
@@ -286,10 +331,11 @@ const updateDestinations = async () => {
       display_name: destination.display_name,
       slug,
       name: destination.name,
+      url,
       description: destination.description,
       hidden: isCatalogItemHidden(url),
-      url,
       status: destination.status,
+      previous_names: destination.previous_names,
       logo:  {
         url: destination.logos.logo
       },
@@ -297,14 +343,13 @@ const updateDestinations = async () => {
         url: destination.logos.mark
       },
       categories: tempCategories,
+      methods: destination.methods,
       components: destination.components,
       platforms: destination.platforms,
       browserUnbundlingSupported: destination.browserUnbundlingSupported,
       browserUnbundlingPublic: destination.browserUnbundlingPublic,
-      methods: destination.methods,
-      settings,
       connection_modes,
-      previous_names: destination.previous_names
+      settings
     }
 
     destinationsUpdated.push(updatedDestination)
