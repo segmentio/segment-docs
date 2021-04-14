@@ -2,7 +2,7 @@
 title: Digioh Destination
 rewrite: true
 ---
-[Digioh](https://www.digioh.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)  allows you to grow your email lists with personalized forms, landing pages, paywalls and email preference centers. Digioh makes it easy with a drag and drop builder and built-in integrations to your favorite marketing tools. 
+[Digioh](https://www.digioh.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)  allows you to grow your email lists with personalized forms, landing pages, paywalls and email preference centers. Digioh makes it easy with a drag and drop builder and built-in integrations to your favorite marketing tools.
 
 This destination is maintained by Digioh. For any issues with the destination, [contact the Digioh Support team](mailto:contact@digioh.com).
 
@@ -30,7 +30,7 @@ analytics.identify('userId123', {
 Segment sends Identify calls to Digioh as an `identify` event.
 
 > warning ""
-> The `email` field is required.
+> The `email` field is required. Identify calls without an `email` will fail with a `400` code.
 
 ## Track
 
@@ -43,4 +43,4 @@ analytics.track('Login Button Clicked')
 Segment sends Track calls to Digioh as a `track` event.
 
 > warning ""
-> You must send an Identify call for a user before you send a Track call for them.
+> You must send an Identify call for a user before you send a Track call for them otherwise the Track call will be dropped.
