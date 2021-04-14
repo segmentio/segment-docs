@@ -105,7 +105,7 @@ Segment's server-side integration is not open-source. Let's explore what happens
 
    For `.page()` events, this XML tag is set as the `category` of the page call, which is sent by providing both `category` and `name` (ie. `.page('Some Category', 'Some Name');`)
 
-3. For `.track()` events, Segment sets `<pageName>` as `properties.pageName`, `properties.page`, `context.page.title`, or `context.screen.name` (in order of precedence). If none of these fields are available and **Page Name Fallback to Screen** is enabled, Segment will set `properties.screen` to `<pageName>`.  Otherwise, Segment will fallback on `'None'`.
+3. For `.track()` events, Segment sets `<pageName>` as `properties.pageName`, `properties.page`, `context.page.title`, or `context.screen.name` (in order of precedence). If none of these fields are available and **Page Name Fallback to Screen** is enabled, Segment sets `properties.screen` to `<pageName>`.  Otherwise, Segment falls back to `'None'`.
    For `.page()` calls, Segment sets the tag as the `name`. This can be sent by providing the first parameter: `.page('Some Name');`
 
 4. Since Adobe Analytics does not [support sending timestamped hits a `<visitorID>`](https://marketing.adobe.com/resources/help/en_US/sc/implement/timestamps-overview.html), if you have set your Report to **Timestamp Disabled**, Segment sets `<visitorID>` as these values in order of precedence:
