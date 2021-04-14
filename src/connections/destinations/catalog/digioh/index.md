@@ -30,7 +30,7 @@ analytics.identify('userId123', {
 Segment sends Identify calls to Digioh as an `identify` event.
 
 > warning ""
-> `email` is a required field.
+> The `email` field is required.
 
 ## Track
 
