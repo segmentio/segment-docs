@@ -612,7 +612,7 @@ There are two ways to send data to your analytics services through this library:
 
 #### Cloud-Mode in Android
 
-When a destination is enabled for your Android source from the Segment web app, but you haven't packaged its SDK with your app, requests go through the Segment REST API, and are routed to the destination service's API as [described here](/docs/connections/destinations/#connection-modes). Most, but not all destinations offer a cloud-based connection mode, so it's a good idea to [check for destinations that you might _need_ to package](/docs/util/cmodes-compare/).
+When a destination is enabled for your Android source from the Segment web app, but you haven't packaged its SDK with your app, requests go through the Segment REST API, and are routed to the destination service's API as [described here](/docs/connections/destinations/#connection-modes). Most, but not all destinations offer a cloud-based connection mode, so it's a good idea to [check for destinations that you might _need_ to package](/docs/connections/destinations/cmodes-compare).
 
 #### Packaging device-mode destination SDKs
 

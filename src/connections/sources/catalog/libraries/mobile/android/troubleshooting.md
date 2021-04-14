@@ -18,8 +18,8 @@ strat: android
 1. Check that the destination is actually enabled in the Segment app.
 2. Check that you entered your credentials for the destination correctly in the Segment app, and that you added them for the correct Source in the correct Workspace.
 3. Make sure the destination can accept the data that you're sending:
-   - Does the [destination support device-mode or cloud-mode support](/docs/utils/cmodes-compare/)? Confirm you are sending using the correct connection mode.
-   - Does the destination [accept the type of call you are sending](/docs/utils/methods-compare/)? Not all destinations accept all calls: page, track, etc.
+   - Does the [destination support device-mode or cloud-mode support](/docs/connections/destinations/cmodes-compare/)? Confirm you are sending using the correct connection mode.
+   - Does the destination [accept the type of call you are sending](/docs/connections/destinations/methods-compare/)? Not all destinations accept all calls: page, track, etc.
 
 
 If you still don't see data getting to your destination, continue debugging based on the type of connection mode, using the sections below.
