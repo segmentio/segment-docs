@@ -43,4 +43,4 @@ analytics.track('Login Button Clicked')
 Segment sends Track calls to Digioh as a `track` event.
 
 > warning ""
-> Before sending a Track call for a User, you must first send an Identify call for that User.
+> You must send an Identify call for a user before you send a Track call for them.
