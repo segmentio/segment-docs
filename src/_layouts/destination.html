@@ -2,12 +2,14 @@
 layout: integration
 ---
 <div class="markdown">
-
+{%comment%}
+commenting this out for now.
 {% if page.beta %}
   {% include content/beta-note.md %}
 {% endif %}
+{%endcomment%}
 
-{% unless page.hide-dossier == true %}
+{% unless page.hide-dossier == true or page.name != "index.md" %}
   {% capture destination-dossier %}{% include content/destination-dossier.md %}{% endcapture %}
   {{ destination-dossier | markdownify }}
 {% endunless %}
