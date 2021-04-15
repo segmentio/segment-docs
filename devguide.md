@@ -52,24 +52,20 @@ It also does some slugification and destination-name normalization, since our ha
 As part of the Dossiers project we worked on making the Connection Modes table more readable. Originally we were going to have per-page liquid run, but these modes don't change often so it would've added a lot of build time for very little benefit. Instead we pushed it into `catalog.js`.
 Once the connection modes device and cloud arrays are set, we do a bunch of calculations, and add a text summary, a number which corresponds to that summary for easier programmatic writing, and a rough category.
 
-| Case | Summary                                | Type        |
-| ---- | -------------------------------------- | ----------- |
-| 0    | No data available                      | none        |
-| 1    | Both device, no cloud                  | device-only |
-| 2    | AJS (web device) only                  | device-only |
-| 3    | Mobile device mode only                | device-only |
-| 4    | Accepts from all                       | all         |
-| 5    | All cloud types                        | cloud-only  |
-| 6    | Mobile and Server cloud only           | cloud-only  |
-| 7    | Web and mobile cloud only              | cloud-only  |
-| 8    | Mobile cloud only                      | cloud-only  |
-| 9    | All cloud types, 1 device mode         | mixed       |
-| 10   | Web and mobile cloud, 1 device         | mixed       |
-| 11   | Mobile and server cloud, mobile device | mixed       |
-
-
-
-
+| Case | Summary                                | Type        | Message                                                                                                                                                    |     |
+| ---- | -------------------------------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| 0    | No data available                      | none        | No connection mode information available.                                                                                                                  |     |
+| 1    | Both device, no cloud                  | device-only | accepts device-mode data from both Analytics.js and mobile sources. It does not accept data in cloud-mode.                                                 |     |
+| 2    | AJS (web device) only                  | device-only | accepts device-mode data only from Analytics.js.                                                                                                           |     |
+| 3    | Mobile device mode only                | device-only | accepts device-mode data only from a mobile source.                                                                                                        |     |
+| 4    | Accepts from all                       | all         | accepts cloud-mode data from all Segment source types. It can accept device-mode data from both web and mobile sources.                                    |     |
+| 5    | All cloud types                        | cloud-only  | accepts cloud-mode data from all Segment source types. It does not offer device-mode connections.                                                          |     |
+| 6    | Mobile and Server cloud only           | cloud-only  | accepts data from any Segment mobile or server source in cloud mode. It does not accept data from a web source, and does not offer device-mode connections. |     |
+| 7    | Web and mobile cloud only              | cloud-only  | accepts only cloud-mode data from web and mobile sources.                                                                                                  |     |
+| 8    | Mobile cloud only                      | cloud-only  | accepts only cloud-mode data from mobile sources.                                                                                                          |     |
+| 9    | All cloud types, 1 device mode         | mixed       | accepts data in cloud-mode from all source types, and can accept data in device-mode from [Analytics.js or mobile] sources.                                |     |
+| 10   | Web and mobile cloud, 1 device         | mixed       | accepts data in cloud-mode from web and mobile sources, and can accept data in device-mode from [Analytics.js or mobile] sources.                          |     |
+| 11   | Mobile and server cloud, mobile device | mixed       | accepts data in cloud-mode from mobile and server sources, and can accept data in device-mode from mobile sources.                                         |     |
 
 ## Developer information
 

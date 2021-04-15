@@ -106,15 +106,15 @@ const getConnectionModes = (destination) => {
     else if (connectionModes.device.web == true || connectionModes.device.mobile == true){
       connectionModes.cmode_type = "device-only"
       if (connectionModes.device.web == true && connectionModes.device.mobile == true) {
-        connectionModes.summary = "accepts device-mode data from both Analaytics.js and Mobile sources. Does not accept data in cloud-mode."
+        connectionModes.summary = "accepts device-mode data from both Analytics.js and mobile sources. It does not accept data in cloud-mode."
         connectionModes.case = "1"
       }
       if (connectionModes.device.web == true && connectionModes.device.mobile == false) {
-        connectionModes.summary = "accepts device-mode data only from Analaytics.js."
+        connectionModes.summary = "accepts device-mode data only from Analytics.js."
         connectionModes.case = "2"
       }
       if (connectionModes.device.web == false && connectionModes.device.mobile == true) {
-        connectionModes.summary = "accepts device-mode data only from a Mobile source."
+        connectionModes.summary = "accepts device-mode data only from a mobile source."
         connectionModes.case = "3"
       }
     }
@@ -132,7 +132,7 @@ const getConnectionModes = (destination) => {
     connectionModes.cmode_type = "cloud-only"
     // accepts all cloud-mode
     if (connectionModes.cloud.web == true && connectionModes.cloud.mobile == true && connectionModes.cloud.server == true){
-      connectionModes.summary = "accepts cloud-mode data from all Segment source types. It cannot accept device-mode data."
+      connectionModes.summary = "accepts cloud-mode data from all Segment source types. It does not offer device-mode connections."
       connectionModes.case = "5"
     }
     //edge-case-y: only mobile and server cloud
@@ -152,19 +152,29 @@ const getConnectionModes = (destination) => {
     }
   }
 
-  //handle mixed-case - in the dossier, use the "type" to invoke a check for what type of device mode
+  //handle mixed-case - in the dossier, use the case, or type: "mixed" to invoke a check for what type of device mode
   else if ((connectionModes.cloud.web == true || connectionModes.cloud.mobile == true || connectionModes.cloud.server == true) && (connectionModes.device.mobile == true || connectionModes.device.web == true)){
 // remove "both" as that would be covered under ALL
     if (!(connectionModes.device.mobile == true && connectionModes.device.web == true)){
       connectionModes.cmode_type = "mixed"
       // all cloud-mode plus one device
       if ((connectionModes.cloud.web == true && connectionModes.cloud.mobile == true && connectionModes.cloud.server == true) && (connectionModes.device.mobile == true || connectionModes.device.web == true)){
-        connectionModes.summary = "accepts data in cloud-mode from all source types, and can accept some data in device-mode."
+        if (connectionModes.device.mobile == true || connectionModes.device.web == false){
+          connectionModes.summary = "accepts data in cloud-mode from all source types, and can accept data in device-mode from mobile sources."
+        }
+        else if (connectionModes.device.mobile == false || connectionModes.device.web == true){
+          connectionModes.summary = "accepts data in cloud-mode from all source types, and can accept data in device-mode from Analytics.js sources."
+        }
         connectionModes.case = "9"
       }
       // edge-case-y: cloud web and mobile, no server, one device
       else if ((connectionModes.cloud.web == true && connectionModes.cloud.mobile == true && connectionModes.cloud.server == false) && (connectionModes.device.mobile == true || connectionModes.device.web == true)){
-        connectionModes.summary = "accepts data in cloud-mode from web and mobile sources, and can accept some data in device-mode."
+        if (connectionModes.device.mobile == true || connectionModes.device.web == false){
+          connectionModes.summary = "accepts data in cloud-mode from web and mobile sources, and can accept data in device-mode from mobile sources."
+        }
+        else if (connectionModes.device.mobile == false || connectionModes.device.web == true){
+          connectionModes.summary = "accepts data in cloud-mode from web and mobile sources, and can accept data in device-mode from Analytics.js sources."
+        }
         connectionModes.case = "10"
       }
       // edge-case-y: cloud mobile and server, device mobile, no web

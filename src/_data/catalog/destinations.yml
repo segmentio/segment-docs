@@ -41,8 +41,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -114,7 +114,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -236,7 +236,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -1023,8 +1023,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -1157,7 +1157,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -1227,8 +1227,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -1302,8 +1302,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -1370,8 +1370,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -1478,8 +1478,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -1576,8 +1576,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -1712,8 +1712,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -1912,7 +1912,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -2498,7 +2498,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -2593,8 +2593,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -2804,7 +2804,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from a Mobile source.
+    summary: accepts device-mode data only from a mobile source.
     cmode_type: device-only
     case: '3'
   settings:
@@ -2884,7 +2884,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -2939,7 +2939,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -3028,8 +3028,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -3086,7 +3086,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -3138,8 +3138,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -3199,8 +3199,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -3257,7 +3257,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from a Mobile source.
+    summary: accepts device-mode data only from a mobile source.
     cmode_type: device-only
     case: '3'
   settings:
@@ -3401,7 +3401,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -3458,8 +3458,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -3516,8 +3516,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -3986,7 +3986,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -4105,7 +4105,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -4176,8 +4176,8 @@ items:
       mobile: false
       server: false
     summary: >-
-      accepts device-mode data from both Analaytics.js and Mobile sources. Does
-      not accept data in cloud-mode.
+      accepts device-mode data from both Analytics.js and mobile sources. It
+      does not accept data in cloud-mode.
     cmode_type: device-only
     case: '1'
   settings:
@@ -4320,8 +4320,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -4380,8 +4380,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -4441,8 +4441,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -4501,8 +4501,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -4617,8 +4617,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -4700,8 +4700,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -4764,7 +4764,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -4865,8 +4865,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -4923,8 +4923,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -4982,8 +4982,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -5041,8 +5041,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -5190,7 +5190,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -5247,8 +5247,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -5318,7 +5318,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -5377,8 +5377,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -5485,7 +5485,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from a Mobile source.
+    summary: accepts device-mode data only from a mobile source.
     cmode_type: device-only
     case: '3'
   settings:
@@ -5611,7 +5611,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -5673,7 +5673,7 @@ items:
       server: false
     summary: >-
       accepts data in cloud-mode from web and mobile sources, and can accept
-      some data in device-mode.
+      data in device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '10'
   settings:
@@ -5859,7 +5859,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from a Mobile source.
+    summary: accepts device-mode data only from a mobile source.
     cmode_type: device-only
     case: '3'
   settings:
@@ -6038,8 +6038,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -6213,8 +6213,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -6295,8 +6295,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -6361,8 +6361,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -6501,8 +6501,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -6560,8 +6560,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -6683,8 +6683,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -6911,8 +6911,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -6965,8 +6965,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -7033,8 +7033,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -7126,8 +7126,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -7188,8 +7188,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -7240,7 +7240,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -7295,8 +7295,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -7447,7 +7447,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -7511,8 +7511,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -7621,7 +7621,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -7764,8 +7764,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -8196,8 +8196,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -8458,7 +8458,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -8670,7 +8670,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -8738,7 +8738,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from a Mobile source.
+    summary: accepts device-mode data only from a mobile source.
     cmode_type: device-only
     case: '3'
   settings:
@@ -8797,7 +8797,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from a Mobile source.
+    summary: accepts device-mode data only from a mobile source.
     cmode_type: device-only
     case: '3'
   settings:
@@ -8899,7 +8899,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -8965,8 +8965,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -9022,8 +9022,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -9088,7 +9088,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -9224,7 +9224,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -9311,7 +9311,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -9428,8 +9428,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -9515,7 +9515,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -9575,8 +9575,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -9630,7 +9630,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -9689,8 +9689,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -9750,8 +9750,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -9879,8 +9879,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -10063,7 +10063,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -10678,8 +10678,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -10866,7 +10866,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -10967,8 +10967,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -11097,8 +11097,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -11154,7 +11154,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -11210,8 +11210,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings: []
@@ -11256,7 +11256,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -11312,7 +11312,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -11385,8 +11385,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -11478,8 +11478,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -11539,8 +11539,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -11779,7 +11779,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -11849,8 +11849,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -12028,7 +12028,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -12306,8 +12306,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -12385,8 +12385,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -12482,8 +12482,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -12563,8 +12563,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from mobile sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -12648,8 +12648,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -12875,8 +12875,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -12935,8 +12935,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -13125,8 +13125,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -13183,8 +13183,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -13299,8 +13299,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -13361,8 +13361,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from mobile sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -13523,8 +13523,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -13592,7 +13592,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -13647,7 +13647,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -13729,8 +13729,8 @@ items:
       mobile: false
       server: false
     summary: >-
-      accepts device-mode data from both Analaytics.js and Mobile sources. Does
-      not accept data in cloud-mode.
+      accepts device-mode data from both Analytics.js and mobile sources. It
+      does not accept data in cloud-mode.
     cmode_type: device-only
     case: '1'
   settings:
@@ -13854,8 +13854,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -13913,7 +13913,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -13970,8 +13970,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -14066,8 +14066,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -14119,8 +14119,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -14209,8 +14209,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -14276,8 +14276,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -14412,8 +14412,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -14474,26 +14474,6 @@ items:
       required: false
       description: Map your Segment properties to the Marketo Activity Fields
       settings:
-      - name: marketoAttributeType
-        display_name: Marketo Field Type
-        type: SELECT
-        deprecated: false
-        required: true
-        select_validators:
-          select_options:
-          - string
-          - boolean
-          - number
-          - date
-        description: Enter the Marketo Field type.
-        settings: []
-      - name: primaryKey
-        display_name: Set as Primary Key
-        type: BOOLEAN
-        deprecated: false
-        required: false
-        description: Mark this property as the Primary field in Marketo.
-        settings: []
       - name: segmentProperty
         display_name: Segment Property Name
         type: STRING
@@ -14515,6 +14495,26 @@ items:
         description: >-
           Enter the Marketo Field name. Make sure to copy and paste the exact
           API Name for your field as it appears in Marketo.
+        settings: []
+      - name: marketoAttributeType
+        display_name: Marketo Field Type
+        type: SELECT
+        deprecated: false
+        required: true
+        select_validators:
+          select_options:
+          - string
+          - boolean
+          - number
+          - date
+        description: Enter the Marketo Field type.
+        settings: []
+      - name: primaryKey
+        display_name: Set as Primary Key
+        type: BOOLEAN
+        deprecated: false
+        required: false
+        description: Mark this property as the Primary field in Marketo.
         settings: []
     - name: event
       display_name: Segment Event Name
@@ -14645,7 +14645,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -14784,7 +14784,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -14927,8 +14927,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -15434,7 +15434,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -15488,8 +15488,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -15545,7 +15545,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -15600,7 +15600,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -15667,8 +15667,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -15728,8 +15728,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -15784,8 +15784,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -15974,8 +15974,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -16057,7 +16057,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -16125,8 +16125,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -16235,8 +16235,8 @@ items:
       mobile: false
       server: false
     summary: >-
-      accepts device-mode data from both Analaytics.js and Mobile sources. Does
-      not accept data in cloud-mode.
+      accepts device-mode data from both Analytics.js and mobile sources. It
+      does not accept data in cloud-mode.
     cmode_type: device-only
     case: '1'
   settings:
@@ -16413,8 +16413,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -16471,8 +16471,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -16539,7 +16539,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -16888,8 +16888,8 @@ items:
       mobile: false
       server: false
     summary: >-
-      accepts device-mode data from both Analaytics.js and Mobile sources. Does
-      not accept data in cloud-mode.
+      accepts device-mode data from both Analytics.js and mobile sources. It
+      does not accept data in cloud-mode.
     cmode_type: device-only
     case: '1'
   settings:
@@ -17029,8 +17029,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -17165,7 +17165,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -17263,7 +17263,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -17321,7 +17321,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -17383,8 +17383,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -17561,8 +17561,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -17618,7 +17618,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -17741,7 +17741,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -17845,8 +17845,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -17966,8 +17966,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -18146,7 +18146,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -18216,8 +18216,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -18276,8 +18276,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -18333,7 +18333,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -18416,8 +18416,8 @@ items:
       mobile: false
       server: false
     summary: >-
-      accepts device-mode data from both Analaytics.js and Mobile sources. Does
-      not accept data in cloud-mode.
+      accepts device-mode data from both Analytics.js and mobile sources. It
+      does not accept data in cloud-mode.
     cmode_type: device-only
     case: '1'
   settings:
@@ -18506,8 +18506,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -18600,7 +18600,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -18733,8 +18733,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -18804,8 +18804,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -18862,8 +18862,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -18973,8 +18973,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -19027,8 +19027,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -19423,8 +19423,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -19487,7 +19487,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -19566,7 +19566,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -19852,8 +19852,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -19904,7 +19904,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -20168,8 +20168,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -20329,8 +20329,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -20515,8 +20515,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -20585,8 +20585,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -20666,8 +20666,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -20727,8 +20727,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -20785,8 +20785,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -20846,8 +20846,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -21045,7 +21045,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -21221,8 +21221,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -21273,7 +21273,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -21349,8 +21349,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -21403,7 +21403,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -21470,8 +21470,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from mobile sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -21532,8 +21532,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -21706,8 +21706,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -21764,7 +21764,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -21821,7 +21821,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -21998,7 +21998,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -22056,8 +22056,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -22184,8 +22184,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -22453,8 +22453,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -22511,7 +22511,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -22567,7 +22567,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from a Mobile source.
+    summary: accepts device-mode data only from a mobile source.
     cmode_type: device-only
     case: '3'
   settings:
@@ -22819,7 +22819,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -22907,7 +22907,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -23147,8 +23147,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -23205,8 +23205,8 @@ items:
       mobile: false
       server: false
     summary: >-
-      accepts device-mode data from both Analaytics.js and Mobile sources. Does
-      not accept data in cloud-mode.
+      accepts device-mode data from both Analytics.js and mobile sources. It
+      does not accept data in cloud-mode.
     cmode_type: device-only
     case: '1'
   settings:
@@ -23346,8 +23346,8 @@ items:
       mobile: false
       server: false
     summary: >-
-      accepts device-mode data from both Analaytics.js and Mobile sources. Does
-      not accept data in cloud-mode.
+      accepts device-mode data from both Analytics.js and mobile sources. It
+      does not accept data in cloud-mode.
     cmode_type: device-only
     case: '1'
   settings:
@@ -23446,8 +23446,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -23534,7 +23534,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -23700,8 +23700,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -23756,8 +23756,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -23821,8 +23821,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -23879,8 +23879,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -23949,8 +23949,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -24005,7 +24005,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -24109,8 +24109,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -24168,8 +24168,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -24229,8 +24229,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -24293,8 +24293,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -24407,7 +24407,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -24658,8 +24658,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -24714,7 +24714,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -24771,8 +24771,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -24899,7 +24899,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -25056,8 +25056,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -25258,7 +25258,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -25430,8 +25430,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -25530,8 +25530,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -25583,8 +25583,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -25642,8 +25642,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -25763,8 +25763,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -25833,8 +25833,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -26006,8 +26006,8 @@ items:
       mobile: false
       server: false
     summary: >-
-      accepts device-mode data from both Analaytics.js and Mobile sources. Does
-      not accept data in cloud-mode.
+      accepts device-mode data from both Analytics.js and mobile sources. It
+      does not accept data in cloud-mode.
     cmode_type: device-only
     case: '1'
   settings:
@@ -26166,8 +26166,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -26223,7 +26223,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -26317,7 +26317,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -26414,7 +26414,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -26470,8 +26470,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -26525,8 +26525,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -26598,8 +26598,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -26710,8 +26710,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data in cloud-mode from all source types, and can accept some data
-      in device-mode.
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '9'
   settings:
@@ -26777,7 +26777,7 @@ items:
       web: false
       mobile: false
       server: false
-    summary: accepts device-mode data only from Analaytics.js.
+    summary: accepts device-mode data only from Analytics.js.
     cmode_type: device-only
     case: '2'
   settings:
@@ -26845,8 +26845,8 @@ items:
       mobile: false
       server: false
     summary: >-
-      accepts device-mode data from both Analaytics.js and Mobile sources. Does
-      not accept data in cloud-mode.
+      accepts device-mode data from both Analytics.js and mobile sources. It
+      does not accept data in cloud-mode.
     cmode_type: device-only
     case: '1'
   settings:
@@ -26992,8 +26992,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:
@@ -27164,8 +27164,8 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts cloud-mode data from all Segment source types. It cannot accept
-      device-mode data.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
     case: '5'
   settings:

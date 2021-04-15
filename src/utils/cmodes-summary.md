@@ -5,14 +5,6 @@ This page is to help troubleshoot and break down each connection modes situation
 
 
 
-**Questions from Laura:**
-- What are the `Components` used for in CPS/ConfigAPI? They seem abandoned.
-- How do you know if there’s a device mode package available for mobile?
-- Does device-mode web mean that it’s an AJS package? and you can turn it on from the UI? Or is that unbundling? (`browserUnbundlingSupported`?)
-- Why aren't there any cmodes for dev center dests?
-- Can we say for sure that the "web" device-mode is AJS only?
-
-
 ## Accepts everything 🏆
 
 "This destination accepts data from [all Segment library sources](/docs/connections/sources/catalog/) in cloud-mode. It also can accept data from both mobile and web sources in device-mode."
@@ -121,14 +113,15 @@ Doesn't accept data from a server source, but does on mobile and web. Might have
 
 
 ## Accepts all cloud mode, plus one device mode
-(two device-modes would make it "all")
 "This destination accepts data from all library sources in cloud-mode, and also can use a (sourcetype) device-mode."
 
 {% for destination in site.data.catalog.destinations.items %}
-{% if (destination.connection_modes.cloud.web == true and destination.connection_modes.cloud.mobile == true and destination.connection_modes.cloud.server == true) and (destination.connection_modes.device.web == true or destination.connection_modes.device.mobile == true) %}
-{% unless destination.connection_modes.device.web == true and destination.connection_modes.device.mobile == true %}
+{% if destination.connection_modes.cloud.web == true and destination.connection_modes.cloud.mobile == true and destination.connection_modes.cloud.server == true %}
+{% if destination.connection_modes.device.web == true or destination.connection_modes.device.mobile == true %}
+{% unless destination.connection_modes.device.web == true and destination.connection_modes.device.mobile == true %} {%comment%}(two device-modes would make it "all"){%endcomment%}
 - [{{ destination.display_name }}](/docs/{{ destination.url }}){% if destination.status == "PUBLIC_BETA" %}&nbsp;ℹ️{% endif %} {% if destination.connection_modes.device.mobile %}&nbsp;&nbsp;&nbsp;Mobile{% elsif destination.connection_modes.device.web %}Web{% endif %}
 {% endunless%}
+{% endif %}
 {% endif %}
 {% endfor %}
 
