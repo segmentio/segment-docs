@@ -107,15 +107,28 @@ Doesn't accept data from a server source, but does on mobile and web. Might have
 {% endif %}
 {% endfor %}
 
-## Accepts all cloud mode, plus one or both device mode
 
+
+
+## Accepts mobile and server cloud mode, device mode mobile, no web
+
+{% for destination in site.data.catalog.destinations.items %}
+{% if destination.connection_modes.cloud.web == false and destination.connection_modes.cloud.mobile == true and destination.connection_modes.cloud.server == true and destination.connection_modes.device.web == false or destination.connection_modes.device.mobile == true  %}
+- [{{ destination.display_name }}](/docs/{{ destination.url }}){% if destination.status == "PUBLIC_BETA" %}&nbsp;ℹ️{% endif %}
+{% endif %}
+{% endfor %}
+
+
+
+## Accepts all cloud mode, plus one device mode
+(two device-modes would make it "all")
 "This destination accepts data from all library sources in cloud-mode, and also can use a (sourcetype) device-mode."
 
 {% for destination in site.data.catalog.destinations.items %}
-{% if destination.connection_modes.cloud.web == true and destination.connection_modes.cloud.mobile == true and destination.connection_modes.cloud.server == true %}
-{% if destination.connection_modes.device.web == true or destination.connection_modes.device.mobile == true  %}
-- [{{ destination.display_name }}](/docs/{{ destination.url }}){% if destination.status == "PUBLIC_BETA" %}&nbsp;ℹ️{% endif %} {% if destination.connection_modes.device.web and destination.connection_modes.device.mobile %} &nbsp;&nbsp;&nbsp;Both Web and Mobile{% elsif destination.connection_modes.device.mobile %}&nbsp;&nbsp;&nbsp;Mobile only{% elsif destination.connection_modes.device.web %}Web only{% endif %}
-{% endif %}
+{% if (destination.connection_modes.cloud.web == true and destination.connection_modes.cloud.mobile == true and destination.connection_modes.cloud.server == true) and (destination.connection_modes.device.web == true or destination.connection_modes.device.mobile == true) %}
+{% unless destination.connection_modes.device.web == true and destination.connection_modes.device.mobile == true %}
+- [{{ destination.display_name }}](/docs/{{ destination.url }}){% if destination.status == "PUBLIC_BETA" %}&nbsp;ℹ️{% endif %} {% if destination.connection_modes.device.mobile %}&nbsp;&nbsp;&nbsp;Mobile{% elsif destination.connection_modes.device.web %}Web{% endif %}
+{% endunless%}
 {% endif %}
 {% endfor %}
 

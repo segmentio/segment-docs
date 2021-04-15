@@ -47,6 +47,29 @@ The script also “calculates” the values for the `connection-modes` table for
 
 It also does some slugification and destination-name normalization, since our handling of dots and dashes hasn't been consistent over time. Finally, it checks to see if there’s a folder for each destination. If it finds a new one, the script makes a folder with a “stub” markdown file for that destination, and then adds a line for it to an "incompleteDocs.txt" file. (It doesn't check to see if it's already listed, just appends to the file.)
 
+### Connection Modes in the Catalog script
+
+As part of the Dossiers project we worked on making the Connection Modes table more readable. Originally we were going to have per-page liquid run, but these modes don't change often so it would've added a lot of build time for very little benefit. Instead we pushed it into `catalog.js`.
+Once the connection modes device and cloud arrays are set, we do a bunch of calculations, and add a text summary, a number which corresponds to that summary for easier programmatic writing, and a rough category.
+
+| Case | Summary                                | Type        |
+| ---- | -------------------------------------- | ----------- |
+| 0    | No data available                      | none        |
+| 1    | Both device, no cloud                  | device-only |
+| 2    | AJS (web device) only                  | device-only |
+| 3    | Mobile device mode only                | device-only |
+| 4    | Accepts from all                       | all         |
+| 5    | All cloud types                        | cloud-only  |
+| 6    | Mobile and Server cloud only           | cloud-only  |
+| 7    | Web and mobile cloud only              | cloud-only  |
+| 8    | Mobile cloud only                      | cloud-only  |
+| 9    | All cloud types, 1 device mode         | mixed       |
+| 10   | Web and mobile cloud, 1 device         | mixed       |
+| 11   | Mobile and server cloud, mobile device | mixed       |
+
+
+
+
 
 ## Developer information
 

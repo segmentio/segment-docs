@@ -55,7 +55,8 @@ const getConnectionModes = (destination) => {
       mobile: false,
       server: false
     },
-    summary: "testing"
+    summary: "testing",
+    cmode_type: ""
   }
   destination.components.forEach(component => {
     switch (component.type) {
@@ -98,61 +99,79 @@ const getConnectionModes = (destination) => {
     // first check if no info at all available - these need backfill
     if (connectionModes.device.web == false && connectionModes.device.mobile == false) {
       connectionModes.summary = "No connection mode information available."
+      connectionModes.case = "0"
+      connectionModes.cmode_type = "none"
     }
     // handle has-device-modes: three cases
     else if (connectionModes.device.web == true || connectionModes.device.mobile == true){
+      connectionModes.cmode_type = "device-only"
       if (connectionModes.device.web == true && connectionModes.device.mobile == true) {
-        connectionModes.summary = "Accepts device-mode data from both Analaytics.js and Mobile sources. Does not accept data in cloud-mode."
+        connectionModes.summary = "accepts device-mode data from both Analaytics.js and Mobile sources. Does not accept data in cloud-mode."
+        connectionModes.case = "1"
       }
       if (connectionModes.device.web == true && connectionModes.device.mobile == false) {
-        connectionModes.summary = "Accepts device-mode data only from Analaytics.js."
+        connectionModes.summary = "accepts device-mode data only from Analaytics.js."
+        connectionModes.case = "2"
       }
       if (connectionModes.device.web == false && connectionModes.device.mobile == true) {
-        connectionModes.summary = "Accepts device-mode data only from a Mobile source."
+        connectionModes.summary = "accepts device-mode data only from a Mobile source."
+        connectionModes.case = "3"
       }
     }
 
   }
   //next check if all are true.
   else if (connectionModes.cloud.web == true && connectionModes.cloud.mobile == true && connectionModes.cloud.server == true && connectionModes.device.web == true && connectionModes.device.mobile == true) {
-    connectionModes.summary = "Accepts cloud-mode data from all Segment source types. Can accept device-mode data from both web and mobile sources."
+    connectionModes.cmode_type = "all"
+    connectionModes.summary = "accepts cloud-mode data from all Segment source types. It can accept device-mode data from both web and mobile sources."
+    connectionModes.case = "4"
   }
 
   //next handle all cloud-only (no-device-mode) cases
   else if ((connectionModes.device.web == false && connectionModes.device.mobile == false) && (connectionModes.cloud.web == true || connectionModes.cloud.mobile == true || connectionModes.cloud.server == true)) {
+    connectionModes.cmode_type = "cloud-only"
     // accepts all cloud-mode
     if (connectionModes.cloud.web == true && connectionModes.cloud.mobile == true && connectionModes.cloud.server == true){
-      connectionModes.summary = "Accepts cloud-mode data from all Segment source types. Cannot accept device-mode data."
+      connectionModes.summary = "accepts cloud-mode data from all Segment source types. It cannot accept device-mode data."
+      connectionModes.case = "5"
     }
-    //edge-case-y: only mobile and server
+    //edge-case-y: only mobile and server cloud
     else if (connectionModes.cloud.web == false && connectionModes.cloud.mobile == true && connectionModes.cloud.server == true){
-      connectionModes.summary = "Accepts data from any Segment mobile or server source in cloud mode. Does not accept data from a web source, and does not offer device-mode connections."
+      connectionModes.summary = "accepts data from any Segment mobile or server source in cloud mode. It does not accept data from a web source, and does not offer device-mode connections."
+      connectionModes.case = "6"
     }
     //edge-case-y: web and mobile cloud, no server.
     else if (connectionModes.cloud.web == true && connectionModes.cloud.mobile == true && connectionModes.cloud.server == false){
-      connectionModes.summary = "Accepts cloud-mode data from web and mobile sources only."
+      connectionModes.summary = "accepts only cloud-mode data from web and mobile sources."
+      connectionModes.case = "7"
     }
     //edge-case-y: mobile cloud only.
     else if (connectionModes.cloud.web == false && connectionModes.cloud.mobile == true && connectionModes.cloud.server == false){
-      connectionModes.summary = "Accepts cloud-mode data from mobile sources only."
+      connectionModes.summary = "accepts only cloud-mode data from mobile sources."
+      connectionModes.case = "8"
     }
   }
 
-  //handle mixed-case
+  //handle mixed-case - in the dossier, use the "type" to invoke a check for what type of device mode
   else if ((connectionModes.cloud.web == true || connectionModes.cloud.mobile == true || connectionModes.cloud.server == true) && (connectionModes.device.mobile == true || connectionModes.device.web == true)){
-// troubleshooting line :)
-    connectionModes.summary = "gets into mixed state."
-    // all cloud-mode plus one or more device
-    if ((connectionModes.cloud.web == true && connectionModes.cloud.mobile == true && connectionModes.cloud.server == true) && (connectionModes.device.mobile == true || connectionModes.device.web == true)){
-      connectionModes.summary = "Accepts data in cloud-mode from all source types, and can accept some data in device-mode."
-    }
-    // edge-case-y: cloud mobile and server, device mobile, no web
-    else if (connectionModes.cloud.web == false && connectionModes.cloud.mobile == true && connectionModes.cloud.server == true && connectionModes.device.mobile == true && connectionModes.device.web == false){
-      connectionModes.summary = "Accepts data in cloud-mode from mobile and server sources, and can accept data in device-mode from mobile sources."
-    }
-    // edge-case-y: cloud web and mobile, no server, some device
-    else if ((connectionModes.cloud.web == true && connectionModes.cloud.mobile == true && connectionModes.cloud.server == false) && (connectionModes.device.mobile == true || connectionModes.device.web == true)){
-      connectionModes.summary = "Accepts data in cloud-mode from web and mobile sources, and can accept some data in device-mode."
+// remove "both" as that would be covered under ALL
+    if (!(connectionModes.device.mobile == true && connectionModes.device.web == true)){
+      connectionModes.cmode_type = "mixed"
+      // all cloud-mode plus one device
+      if ((connectionModes.cloud.web == true && connectionModes.cloud.mobile == true && connectionModes.cloud.server == true) && (connectionModes.device.mobile == true || connectionModes.device.web == true)){
+        connectionModes.summary = "accepts data in cloud-mode from all source types, and can accept some data in device-mode."
+        connectionModes.case = "9"
+      }
+      // edge-case-y: cloud web and mobile, no server, one device
+      else if ((connectionModes.cloud.web == true && connectionModes.cloud.mobile == true && connectionModes.cloud.server == false) && (connectionModes.device.mobile == true || connectionModes.device.web == true)){
+        connectionModes.summary = "accepts data in cloud-mode from web and mobile sources, and can accept some data in device-mode."
+        connectionModes.case = "10"
+      }
+      // edge-case-y: cloud mobile and server, device mobile, no web
+      else if (connectionModes.cloud.web == false && connectionModes.cloud.mobile == true && connectionModes.cloud.server == true && connectionModes.device.mobile == true && connectionModes.device.web == false){
+        connectionModes.summary = "accepts data in cloud-mode from mobile and server sources, and can accept data in device-mode from mobile sources."
+        connectionModes.case = "11"
+      }
     }
   }
 
