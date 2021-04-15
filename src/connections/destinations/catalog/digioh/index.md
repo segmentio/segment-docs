@@ -2,7 +2,7 @@
 title: Digioh Destination
 rewrite: true
 ---
-[Digioh](https://www.digioh.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)  allows you to grow your email lists with personalized forms, landing pages, paywalls and email preference centers. Digioh makes it easy with a drag and drop builder and built-in integrations to your favorite marketing tools.
+[Digioh](https://www.digioh.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows you to grow your email lists with personalized forms, landing pages, paywalls and email preference centers. Digioh makes it easy with a drag and drop builder and built-in integrations to your favorite marketing tools.
 
 This destination is maintained by Digioh. For any issues with the destination, [contact the Digioh Support team](mailto:contact@digioh.com).
 
