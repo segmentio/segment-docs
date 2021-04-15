@@ -30,7 +30,7 @@ analytics.identify('userId123', {
 Segment sends Identify calls to Digioh as an `identify` event.
 
 > warning ""
-> The `email` field is required. Identify calls without an `email` will fail with a `400` code.
+> The `email` field is required. Identify calls without an `email` fail with a `400` code.
 
 ## Track
 
