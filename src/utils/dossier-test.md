@@ -23,7 +23,7 @@ title: Dossier test
 #### {{destinationInfo.display_name}} quick info
 
 <img style="max-width: 35px; max-height: 35px;" alt="{{destinationInfo.display_name}}" src="{{destinationInfo.mark.url}}">
-**{{ destinationInfo.display_name}**{% if destinationInfo.status == "PUBLIC_BETA" %} is in beta, and{% endif %} accepts
+**{{ destinationInfo.display_name}}**{% if destinationInfo.status == "PUBLIC_BETA" %} is in beta, and{% endif %} accepts
 {% for method in destMethods%}{% if destMethods.size == 1 %}{{method}} calls.{% else %}{% unless forloop.last == true %}{{method}}, {% endunless %}{% if forloop.last == true%}and {{method}} calls.{%endif%}{% endif %}{% endfor %} If you reference it in the [Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), you can call it &ldquo;{{destinationInfo.previous_names | join: '", or "' }}&rdquo;.
 
 {% unless destinationInfo.connection_modes.type == "0" %}
