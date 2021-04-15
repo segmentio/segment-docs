@@ -14,7 +14,6 @@
   line-height: 1.5;
   font-size: 12px;
   font-family: "SF Pro Text", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  border: 1px solid #d8dae5;
   background-color: #ffffff;
   color: #474d66;
   border-radius: 4px;
@@ -23,9 +22,11 @@
   width: 100%;
 }
 
-.aa-Input:focus{
+.aa-Form:focus-within{
   box-shadow: 0 0 5px #2952cc;
   transition: all 0.30s ease-in-out;
+  outline: none;
+  border: 1px solid rgba(128,126,163,.8);
 }
 
 .aa-dataset-article {
