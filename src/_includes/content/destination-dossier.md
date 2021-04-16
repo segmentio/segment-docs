@@ -19,10 +19,10 @@
 
 #### {{destinationInfo.display_name}} quick info
 {% if destMethods.size > 0 %}
-**{{ destinationInfo.display_name }}{% if destinationInfo.status == "PUBLIC_BETA" %} is in beta, and{% endif %} accepts
+**{{ destinationInfo.display_name }}**{% if destinationInfo.status == "PUBLIC_BETA" %} is in beta, and{% endif %} accepts
 {% for method in destMethods%}{% if destMethods.size == 1 %}{{method}} calls.{% else %}{% unless forloop.last == true %}{{method}}, {% endunless %}{% if forloop.last == true%}and {{method}} calls.{%endif%}{% endif %}{% endfor %} If you reference it in the [Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), call it &ldquo;{{destinationInfo.previous_names | join: '", or "' }}&rdquo;.
 {% elsif destinationInfo.status == "PUBLIC_BETA" and  destMethods.size == 0 %}
-**{{ destinationInfo.display_name }} is in beta. If you reference it in the [Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), call it &ldquo;{{destinationInfo.previous_names | join: '", or "' }}&rdquo;.
+**{{ destinationInfo.display_name }}** is in beta. If you reference it in the [Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), call it &ldquo;{{destinationInfo.previous_names | join: '", or "' }}&rdquo;.
 {% elsif destinationInfo.status == "PUBLIC" and  destMethods.size == 0 %} If you reference {{destinationInfo.display_name}} in the [Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), call it &ldquo;{{destinationInfo.previous_names | join: '", or "' }}&rdquo;.
 {% endif %}
 
