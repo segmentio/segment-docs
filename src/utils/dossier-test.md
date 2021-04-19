@@ -1,5 +1,6 @@
 ---
 title: Dossier test
+hidden: true
 ---
 
 

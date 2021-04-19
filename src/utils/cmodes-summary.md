@@ -1,5 +1,6 @@
 ---
 title: Connection modes summary tables
+hidden: true
 ---
 This page is to help troubleshoot and break down each connection modes situation into plain English that we can use to provide a summary. So far we have 10, and two are weird singletons.
 
