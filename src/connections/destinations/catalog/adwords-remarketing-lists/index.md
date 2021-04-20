@@ -33,7 +33,7 @@ If you use Segmentâ€™s mobile SDK to collect events from a mobile app, the userâ
 
 When you send an audience to Google Adwords Remarketing Lists, you can choose which custom matcher (email or mobile id/IDFA) to match with. If a user has multiple emails or IDFAs on their account as `external_ids`, Personas only sends Adwords the ID that was most recently added to the user profile.
 
-These audience lists can be used serve content on Google Search, YouTube, and Gmail, but are not available on the Google Display Network. You can only target users with email addresses that are associated with a Google account, and you can target users in Gmail only if they have an `@gmail.com` address. <!--For Personas audiences that are compatible with Google Display Network, see our documentation for DV360. -->
+These audience lists can be used serve content on Google Search, YouTube, and Gmail. You can only target users with email addresses that are associated with a Google account, and you can target users in Gmail only if they have an `@gmail.com` address. <!--For Personas audiences that are compatible with Google Display Network, see our documentation for DV360. -->
 
 > info ""
 > **Note**: You must have access to Personas as part of your Segment plan to use this destination. [Contact our sales team](https://segment.com/demo/) to try this out.
