@@ -1,5 +1,3 @@
-<!-- canary comment -->
-
 <!-- in the file we're pulling from the API, "name" corresponds with the path to the yml blob for a specific destination.-->
 {% assign thisDestination = page.url | split: "/" | last %}
 {% assign destinationInfo = site.data.catalog.destinations.items | where: "slug", thisDestination | first %}
@@ -23,7 +21,7 @@
 <p><strong>{{destinationInfo.display_name}}</strong> {% if destinationInfo.status == "PUBLIC_BETA" %} is in beta, and{% endif %} accepts {% for method in destMethods%}{% if destMethods.size == 1 %}{{method}} calls.{% else %}{% unless forloop.last == true %}{{method}}, {% endunless %}{% if forloop.last == true%}and {{method}} calls.{%endif%}{% endif %}{% endfor %} If you reference it in the <a href="/docs/guides/filtering-data/#filtering-with-the-integrations-object">Integrations object</a>, call it &ldquo;{{destinationInfo.previous_names | join: '", or "' }}&rdquo;.</p>
 {% elsif destinationInfo.status == "PUBLIC_BETA" and  destMethods.size == 0 %}
 <p><strong>{{ destinationInfo.display_name }}</strong> is in beta. If you reference it in the <a href="/docs/guides/filtering-data/#filtering-with-the-integrations-object">Integrations object</a>, call it &ldquo;{{destinationInfo.previous_names | join: '", or "' }}&rdquo;.</p>
-{% elsif destinationInfo.status == "PUBLIC" and  destMethods.size == 0 %} 
+{% elsif destinationInfo.status == "PUBLIC" and  destMethods.size == 0 %}
 <p>If you reference <strong>{{destinationInfo.display_name}}</strong> in the <a href="/docs/guides/filtering-data/#filtering-with-the-integrations-object">Integrations object</a>, call it &ldquo;{{destinationInfo.previous_names | join: '", or "' }}&rdquo;.</p>
 {% endif %}
 

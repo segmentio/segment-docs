@@ -1,6 +1,5 @@
 ---
 title: 'Pinterest Audiences Destination'
-hide-dossier: true
 ---
 Pinterest Ads provides a way to target advertisements on Pinterest to a global audience. Segment's Pinterest Audiences integration allows Segment Personas customers to sync audiences from Personas to Pinterest for better retargeting and higher-performing ads.
 
@@ -44,12 +43,12 @@ The initial synchronization of audience data may take several hours, depending o
 
 ## FAQ
 
-### What does the audience size represent? 
+### What does the audience size represent?
 The audience size represented in Pinterest is the final count of matched users between your customer profiles in Segment and Pinterest users. This number denotes your targetable audience size within Pinterest.
 
 The initial synchronization of audience data may take several hours, depending on the size of the audience. Once the initial sync occurs, you’ll see a new Audience in the Pinterest Audiences dashboard.
 
-### Are lists/audiences processed on some interval, or on customer list update? Do we need to wait 24-48 hours every time we add/remove identifiers from a list? 
-Processing happens regularly and automatically throughout the day - but can take up to 24 hours. 
+### Are lists/audiences processed on some interval, or on customer list update? Do we need to wait 24-48 hours every time we add/remove identifiers from a list?
+Processing happens regularly and automatically throughout the day - but can take up to 24 hours.
 
 You do not need to wait to continue sending data; however, any campaigns using those audiences will not see the changes until after processing (they'll continue running against whatever users have already been matched).

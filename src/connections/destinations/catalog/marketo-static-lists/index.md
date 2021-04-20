@@ -2,7 +2,6 @@
 title: Marketo Static Lists Destination
 hide-boilerplate: true
 strat: adobe
-hide-dossier: true
 ---
 
 > note "Marketo vs Marketo Static Lists Destinations"
