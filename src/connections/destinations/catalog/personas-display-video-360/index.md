@@ -2,6 +2,7 @@
 title: Personas Google Display & Video 360 Destination
 strat: google
 hide-settings: true
+hide-dossier: true
 ---
 
 Google's [Display & Video (DV360)](https://marketingplatform.google.com/about/display-video-360/) service is an end-to-end campaign management tool that enables enterprise customers to plan, measure, and run display and video advertisements. 

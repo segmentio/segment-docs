@@ -2,6 +2,7 @@
 title: Braze Destination
 hide-cmodes: true
 hide-personas-partial: true
+hide-dossier: true
 ---
 
 [Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni channel customer experiences.

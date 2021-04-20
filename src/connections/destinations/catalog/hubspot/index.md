@@ -2,6 +2,7 @@
 rewrite: true
 title: HubSpot Destination
 hide-personas-partial: true
+hide-dossier: true
 ---
 
 [HubSpot](https://www.hubspot.com/) is an inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers. The `analytics.js` HubSpot Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-hubspot).

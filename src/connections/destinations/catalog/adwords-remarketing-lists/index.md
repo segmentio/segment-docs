@@ -1,6 +1,7 @@
 ---
 title: Google Adwords Remarketing Lists Destination
 hide-boilerplate: true
+hide-dossier: true
 ---
 
 > note "About Google destinations"
