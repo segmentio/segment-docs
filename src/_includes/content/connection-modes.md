@@ -22,15 +22,15 @@ Before you start, make sure {{ currentIntegration.display_name }} supports the s
   </tr>
   <tr>
     <td>📱 Device-mode</td>
-    <td>{% if connectionModes.device.web == true %} ✅ {% endif %}</td>
-    <td>{% if connectionModes.device.mobile == true %} ✅ {% endif %}</td>
-    <td>{% if connectionModes.device.server == true %} ✅ {% endif %}</td>
+    <td>{% if connectionModes.device.web == true %} ✅ {% else %}⬜️{% endif %}</td>
+    <td>{% if connectionModes.device.mobile == true %} ✅ {% else %}⬜️{% endif %}</td>
+    <td>⬜️</td>
   </tr>
   <tr>
     <td>☁️  Cloud-mode</td>
-    <td>{% if connectionModes.cloud.web == true %} ✅ {% endif %}</td>
-    <td>{% if connectionModes.cloud.mobile == true %} ✅ {% endif %}</td>
-    <td>{% if connectionModes.cloud.server == true %} ✅ {% endif %}</td>
+    <td>{% if connectionModes.cloud.web == true %} ✅ {% else %}⬜️{% endif %}</td>
+    <td>{% if connectionModes.cloud.mobile == true %} ✅ {% else %}⬜️{% endif %}</td>
+    <td>{% if connectionModes.cloud.server == true %} ✅ {% else %}⬜️{% endif %}</td>
   </tr>
 </table>
 {% endif %}

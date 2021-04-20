@@ -1,0 +1,12 @@
+.quick-info {
+  border: 1px solid #EBF0FF;
+    background: #FAFBFF;
+    border-radius: 8px;
+    padding: 25px;
+  h4 {
+    margin-bottom: 15px;
+    }
+  p:not(:last-of-type) {
+    margin-bottom: 25px;
+  } 
+}
