@@ -109,7 +109,7 @@ Before you start, make sure you have administrative access to the Adwords accoun
 ![](images/garl-auth-google.png)
 
 5. Select the Adwords account or sub-account to connect with Personas.
-   
+
     **What are sub-accounts?** Because the Google My Client Center (MCC) account allows a user to access multiple Google Ads accounts through a single user account. Segment has updated the selector to include these additional "sub-accounts." By default, Segment syncs the "primary" Google Ads account connected to your Google account, but when using Google MCC, you can select any of the Google Ads accounts managed by your primary Google Ads account. If you are not using MCC, your primary Google Ads account is connected. MCC is typically used by advertisers or agencies who are managing multiple client accounts.
 
 ![Example of Sub-accounts in Selector](images/adwords_subaccounts.png)
@@ -175,6 +175,6 @@ Personas sends the most recent id that was added to the user profile to Google A
 
 #### How do I enter multiple Mobile App IDs when exporting mobile IDs to Google Adwords?
 
-If you have more than one App ID (such as a separate App ID for Android and iOS apps), add a separate Google Adwords Remarketing List destination for each App ID, and make sure the settings for these destinations include the correct App IDs. 
+If you have more than one App ID (such as a separate App ID for Android and iOS apps), add a separate Google Adwords Remarketing List destination for each App ID, and make sure the settings for these destinations include the correct App IDs.
 
 When you create Personas audiences, add conditions to specify which App ID to send the audience to. For example, you might add a property condition of "where `device.type` contains `iOS`" to send only your iOS users to a specific destination.

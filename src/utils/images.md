@@ -2,6 +2,7 @@
 title: images
 hide_toc: true
 hide-feedback: true
+hidden: true
 ---
 Images in this list are labeled 3 ways:
 
