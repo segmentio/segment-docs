@@ -4,10 +4,6 @@ layout: integration
 
 <div class="markdown">
 
-{% if page.beta %}
-  {% include content/beta-note.md %}
-{% endif %}
-
 {% if page.integration_type == 'source' %}
   {% capture cloud-app-note %}{% include content/cloud-app-note.md %}{% endcapture %}
   {{ cloud-app-note | markdownify }}
