@@ -52,9 +52,10 @@ Below is a table of events that **Shopify by Littledata** sends to Segment throu
 | Registration Viewed   | A user has viewed the /account/register page                        |
 | Thank you Page Viewed | A user has viewed the thank you page after completing an order \*   |
 
-> info "" \* This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
+> info "" 
+> \* This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
 
-## Cloud-mode Events
+## Cloud-mode events
 
 Below is a table of events that **Shopify by Littledata** sends to Segment from Littledata's servers. These events appear as tables in your warehouse, and as regular events in your other Destinations that support cloud-mode. They include the `anonymousId` that links them to the device-mode events where the event was part of a previous user session, or associated with a `userId` that was previously linked with an `anonymousId`. See Littledata's [troubleshooting guide on attribution](https://blog.littledata.io/help/posts/troubleshooting-marketing-attribution-for-shopify/) for more details.
 
@@ -76,7 +77,7 @@ Below is a table of events that **Shopify by Littledata** sends to Segment from 
 | Product Added            | A user has added a product to the cart, and left it in the cart for more than 10 seconds                                                                                                    |
 | Product Removed          | A user has removed a product from the cart                                                                                                                                                  |
 
-## User Identity
+## User identity
 
 In the Littledata application you can choose which of the following fields you want to send as the `userId` for known customers:
 
@@ -118,11 +119,11 @@ All events (device-mode and cloud-mode) contain the Google Analytics `clientId` 
 
 Email marketing platforms such as [Klaviyo](/docs/connections/destinations/catalog/klaviyo/#server-side-track), [Iterable](/docs/connections/destinations/catalog/iterable/#track) and [Hubspot](/docs/connections/destinations/catalog/hubspot/#server) require an email property with any server-side event in order to associate events with a customer (they cannot use an `anonymousId`). Littledata adds that `email` property whenever an email address is set in the user `traits()` object (in device-mode) or from the Shopify customer record (in cloud-mode). Iterable can also [receive cookie values](#cookiesToTrack) with the Order Completed event.
 
-## Alias Calls
+## Alias calls
 
 To support seamless customer tracking the [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias), [Vero](/docs/connections/destinations/catalog/vero/#alias) and [KISSMetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) destinations, Littledata ensures the pre-checkout `anonymousId` is added as an alias of the `userId` (used from checkout step 2 onwards).
 
-## Subscription Events
+## Subscription events
 
 Additional events available through Littledata's [ReCharge connection](https://www.littledata.io/connections/recharge), and available in cloud-mode destinations.
 
@@ -136,7 +137,7 @@ Additional events available through Littledata's [ReCharge connection](https://w
 | Subscription Created     | A customer has created a subscription (with `status`, `order_interval_frequency` and `order_interval_unit`) |
 | Subscription Updated     | A customer has updated a subscription (with `status`, `order_interval_frequency` and `order_interval_unit`) |
 
-## Event Properties
+## Event properties
 
 The list below outlines the properties included in the events listed above.
 
@@ -168,7 +169,8 @@ The list below outlines the properties included in the events listed above.
 | `total`                                | The total value of the order                                             | Float         |
 | `userId`                               | Chosen user identifier, defaulting to Shopify Customer ID                | String        |
 
-\* `revenue` is available only with the Order Completed event, and only if the store opts in via the Littledata application. Revenue is a reserved property in many Segment destinations. Opting in will override the `total` property sent to Google Analytics.
+> note ""
+> \* `revenue` is available only with the Order Completed event, and only if the store opts in via the Littledata application. Revenue is a reserved property in many Segment destinations. Opting in will override the `total` property sent to Google Analytics.
 
 ## Product Properties
 
@@ -196,7 +198,7 @@ Each item in the `products` array, or Product Viewed and Product Added events, w
 
 With a [Littledata Plus plan](https://www.littledata.io/app/enterprise) you can import all Shopify orders and refunds from before you started using Segment, to sync with destinations that support timestamped events (for example, a data warehouse). This enables you to build a complete customer history in your chosen destination.
 
-## Advanced Device-mode Settings
+## Advanced Device-mode settings
 
 You can edit the LittledataLayer object in your Shopify theme to manually change these advanced settings. For more information, see the [Shopify tracker GitHub repository](https://github.com/littledata/shopify-tracker#segment-configuration).
 
