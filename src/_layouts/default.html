@@ -83,7 +83,7 @@
     Production: https://app.segment.com/segment_prod/sources/segment_docs_v2_prod
     Everything else: https://app.segment.com/segment-engineering/sources/segment_docs
   {%- endcomment -%}
-  {%- if jekyll.environment == "production" -%}
+  {%- if site.env.CONTEXT == "production" -%}
     {%- assign write_key = "QAKKJEtNsXpsNfCCBeWCLNxkaaLO7pgp" -%}
   {%- else -%}
     {%- assign write_key = "f5c1iWVVwikUDoh5NuVq0G52EPFrMmrX" -%}
