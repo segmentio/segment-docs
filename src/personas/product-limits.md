@@ -3,7 +3,7 @@ title: Personas Default Limits
 redirect_from: '/personas/rate-limits'
 ---
 
-Segment Personas enforces a set of default use and rate limits to help protect the performance and reliability of the Personas product. These limits are designed to provide consistent, reliable performance at scale. Most customers do not exceed these limits.
+Segment Personas enforces a set of default use and rate limits to help ensure the performance and reliability of the Personas product. These limits are designed to provide consistent, reliable performance at scale. Most customers do not exceed these limits.
 
 Contact your dedicated Customer Success Manager or [friends@segment.com](mailto:friends@segment.com) to learn more about custom limits.
 
@@ -75,7 +75,7 @@ Once the limit is reached, Segment rejects additional events.</td>
 </tr>
 <tr>
 <td>Identity Mappings</td>
-<td>14 days</td>
+<td>1000 mappings</td>
 <td>Personas supports up to 1000 mappings per profile in its identity graph. Mappings are external identifier values like a user_id, email, mobile advertising id, or any custom identifier. 
 <br /><br />
 Messages that attempt to more than 1000 mappings are usually a sign of a corrupt profile and are dropped. This limit counts mappings across all merged profiles.</td>
