@@ -5,7 +5,7 @@ redirect_from: '/personas/rate-limits'
 
 Segment Personas enforces a set of default use and rate limits to help protect the performance and reliability of the Personas product. These limits are designed to provide consistent, reliable performance at scale. Most customers do not exceed these limits.
 
-Contact your dedicated Customer Success Manager or [friends@segment.com](mailto:friends@segment.com) to request raises to most limits.
+Contact your dedicated Customer Success Manager or [friends@segment.com](mailto:friends@segment.com) to learn more about custom limits.
 
 <table id="limit">
 <thead>
@@ -18,7 +18,7 @@ Contact your dedicated Customer Success Manager or [friends@segment.com](mailto:
 <tbody>
 <tr>
 <td>Inbound Data Throughput</td>
-<td>1000 events per second*</td>
+<td>1000 events per second</td>
 <td>The total stream of events from the sources connected to Personas. Once the limit is reached, Segment reserves the right to slow the processing of requests. This limit also includes historical data replays into Segment.</td>
 </tr>
 <tr>
@@ -30,10 +30,6 @@ When requests to downstream destinations fail, Segment makes additional attempts
 </tr>
 </tbody>
 </table>
-
-
-> note ""
-> \*Contact your dedicated Customer Success Manager or friends@segment.com to request an increase to this limit. 
 
 ## Profile API
 
@@ -48,19 +44,16 @@ When requests to downstream destinations fail, Segment makes additional attempts
 <tbody>
 <tr>
 <td>Profile API Throughput</td>
-<td>100 requests per second*</td>
+<td>100 requests per second</td>
 <td>If requests exceed 100 per second, the Profile API returns HTTP Error 429.</td>
 </tr>
 <tr>
 <td>Events Lookback History</td>
-<td>14 days*</td>
+<td>14 days</td>
 <td>The Profile API retrieves up to 14 days of a profile’s historical events within a collection. This applies to track events, not traits sent through identify calls.</td>
 </tr>
 </tbody>
 </table>
-
-> note ""
-> \*Contact your dedicated Customer Success Manager or friends@segment.com to request an increase to this limit. 
 
 ## Identity
 
@@ -82,7 +75,7 @@ Once the limit is reached, Segment rejects additional events.</td>
 </tr>
 <tr>
 <td>Identity Mappings</td>
-<td>14 days*</td>
+<td>14 days</td>
 <td>Personas supports up to 1000 mappings per profile in its identity graph. Mappings are external identifier values like a user_id, email, mobile advertising id, or any custom identifier. 
 <br /><br />
 Messages that attempt to more than 1000 mappings are usually a sign of a corrupt profile and are dropped. This limit counts mappings across all merged profiles.</td>
@@ -103,12 +96,12 @@ Messages that attempt to more than 1000 mappings are usually a sign of a corrupt
 <tbody>
 <tr>
 <td>Compute Concurrency</td>
-<td>5 concurrent audiences*</td>
+<td>5 concurrent audiences</td>
 <td>Segment computes five new audiences or computed traits at a time. Once the limit is reached, additional audience computations are queued until one of the 5 audiences finishes computing.</td>
 </tr>
 <tr>
 <td>Compute Throughput</td>
-<td>10000 computations per second*</td>
+<td>10000 computations per second</td>
 <td>Computations are counted as any track or identify call that triggers an audience or computed trait re-computation.
 <br /><br />
 Once the limit is reached, Segment reserves the right to slow the processing of an audience.</td>
@@ -126,9 +119,6 @@ Once the limit is reached, Segment reserves the right to slow the processing of 
 This limit is based on your Personas service. Contact your account team to upgrade your Personas service.</td></tr>
 </tbody>
 </table>
-
-> note ""
-> \*Contact your dedicated Customer Success Manager or friends@segment.com to request an increase to this limit. 
 
 ## SQL Traits
 
@@ -167,16 +157,13 @@ Contact your account team to customize your schedule.</td>
 </tr>
 <tr>
 <td>SQL Traits - Rows</td>
-<td>10 million*</td>
+<td>10 million</td>
 <td>The number of rows each SQL trait can return.</td>
 </tr>
 <tr>
 <td>SQL Traits - Columns</td>
-<td>25*</td>
+<td>25</td>
 <td>The number of columns each SQL trait can return.</td>
 </tr>
 </tbody>
 </table>
-
-> note ""
-> \*Contact your dedicated Customer Success Manager or friends@segment.com to request an increase to this limit. 
