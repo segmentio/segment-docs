@@ -77,7 +77,7 @@ Below is a table of events that **Shopify by Littledata** sends to Segment from 
 | Product Added            | A user has added a product to the cart, and left it in the cart for more than 10 seconds                                                                                                    |
 | Product Removed          | A user has removed a product from the cart                                                                                                                                                  |
 
-## User identity
+## User Identity
 
 In the Littledata application, you can choose which of the following fields you want to send as the `userId` for known customers:
 
@@ -192,7 +192,7 @@ Each item in the `products` array, or Product Viewed and Product Added events, w
 | `url`                | The URL of the product page                                        | String        |
 | `variant`            | The product variant name                                           | String        |
 
-## Advanced device-mode settings
+## Advanced Device-mode Settings
 
 You can edit the LittledataLayer object in your Shopify theme to manually change these advanced settings. For more information, see the [Shopify tracker GitHub repository](https://github.com/littledata/shopify-tracker#segment-configuration).
 
