@@ -35,7 +35,7 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 7. Segment's **analytics.js** library, Littledata **tracking script** and **webhooks** will be automatically applied to the store and the installation process will then be complete.
    ![](images/kvjNx4M.png)
 
-## Device-mode Events
+## Device-mode events
 
 Below is a table of events that **Shopify by Littledata** sends to Segment through the analytics.js library. These events will show up as tables in your warehouse, and as regular events in your other Destinations supporting device-mode.
 
@@ -50,9 +50,9 @@ Below is a table of events that **Shopify by Littledata** sends to Segment throu
 | Product Viewed        | A user has viewed a product page                                    |
 | Products Searched     | A user has searched for products (with search `query`)              |
 | Registration Viewed   | A user has viewed the /account/register page                        |
-| Thank you Page Viewed | A user has viewed the thank you page after completing an order \*   |
+| Thank you Page Viewed | A user has viewed the thank you page after completing an order\*    |
 
-> info "" 
+> note ""
 > \* This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
 
 ## Cloud-mode events
@@ -88,7 +88,7 @@ In the Littledata application you can choose which of the following fields you w
 
 For [Segment Personas](/docs/personas/) we also send `shopify_customer_id` as an [externalID](/docs/personas/identity-resolution/externalids/) for advanced matching.
 
-## Identify Calls
+## Identify calls
 
 For every event where there is an identifiable Shopify customer (from both the device-mode and cloud-mode) Littledata also sends an Identify call. This happens when the customer logs into the storefront, on the last step of the checkout, with the order, and also after purchase with any customer update in Shopify admin.
 
@@ -158,7 +158,7 @@ The list below outlines the properties included in the events listed above.
 | `presentment_currency`                 | The user's local currency                                                | String        |
 | `presentment_total`                    | The order total in local currency                                        | String        |
 | `products`                             | A list of all the product at that step of the funnel                     | Array         |
-| `revenue`                              | Product revenue (excluding discounts, shipping and tax) \*               | Float         |
+| `revenue`                              | Product revenue (excluding discounts, shipping and tax) *               | Float         |
 | `sent_from`                            | A unique property to identify events sent by Littledata                  | String        |
 | `shipping_method`                      | The shipping method chosen for checkout                                  | String        |
 | `shipping`                             | The shipping cost                                                        | Float         |
@@ -172,7 +172,7 @@ The list below outlines the properties included in the events listed above.
 > note ""
 > \* `revenue` is available only with the Order Completed event, and only if the store opts in via the Littledata application. Revenue is a reserved property in many Segment destinations. Opting in will override the `total` property sent to Google Analytics.
 
-## Product Properties
+## Product properties
 
 Each item in the `products` array, or Product Viewed and Product Added events, will have the following properties
 
