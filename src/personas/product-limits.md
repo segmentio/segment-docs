@@ -1,5 +1,5 @@
 ---
-title: Personas Limits
+title: Personas Default Limits
 redirect_from: '/personas/rate-limits'
 ---
 
