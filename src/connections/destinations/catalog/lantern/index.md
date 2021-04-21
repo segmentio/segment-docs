@@ -9,8 +9,6 @@ Lantern is a user behavior monitoring solution for modern product teams. Lantern
 
 This destination is maintained by Lantern. For any issues with the destination, contact [Lantern's support](mailto:support@lantern.so).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
@@ -65,7 +63,7 @@ analytics.identify('userId123', {
 });
 ```
 
-Lantern does not surface information that links to a user's personal identity. Lantern only analyses the volume of identify calls to detect anomalies related to the total number of unique users and perform various computation over aggregated data. 
+Lantern does not surface information that links to a user's personal identity. Lantern only analyses the volume of identify calls to detect anomalies related to the total number of unique users and perform various computation over aggregated data.
 
 
 ## Track

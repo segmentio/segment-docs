@@ -25,16 +25,15 @@ here](https://docs.localytics.com/dev/android.html#include-localytics-xml-file).
 Including a settings xml file in conjunction with a Segment-Localytics iOS SDK
 is not yet supported.
 
-**Note:** Localytics does not accept server-side data, so you'll have to use one
-of our client-side libraries
-([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/),
-[iOS](/docs/connections/sources/catalog/libraries/mobile/ios/)/[Android](/docs/connections/sources/catalog/libraries/mobile/android/) SDKs
-with Localytics [bundled](/docs/connections/spec/mobile-packaging-sdks/) to send data
-to Localytics.
+**Note:** Localytics does not accept cloud-mode data, so you must use a device-mode library ( such as [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/),
+[iOS](/docs/connections/sources/catalog/libraries/mobile/ios/)/[Android](/docs/connections/sources/catalog/libraries/mobile/android/) or [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/)), with the Localytics SDKs [bundled](/docs/connections/spec/mobile-packaging-sdks/) in order to send data to Localytics.
 
-You will also need to add the Maven Localytics repo (since Localytics doesn't
-publish it on Maven Central). You can see an example of how to add that
+You must also add the Maven Localytics repo (since Localytics doesn't publish it on Maven Central). You can see an example of how to add that
 [here](https://github.com/segment-integrations/analytics-android-integration-localytics/blob/master/build.gradle#L44).
+
+### React Native set up
+
+{% include content/react-dest.md %}
 
 - - -
 

@@ -1,6 +1,8 @@
 ---
-title: Sync Reports and Errors
+title: Data Lakes Sync Reports and Errors
 ---
+{% include content/plan-grid.md name="data-lakes" %}
+
 
 Segment Data Lakes generates reports with operational metrics about each sync to your data lake so you can monitor sync performance. These sync reports are stored in your S3 bucket and Glue Data Catalog. This means you have access to the raw data, so you can query it to answer questions and set up alerting and monitoring tools.
 
@@ -213,7 +215,7 @@ If permissions are the problem, you might see one of the following permissions-r
 - "Segment does not have permissions to delete table from Glue Catalog".
 - "Segment does not have permissions to fetch schema information from Glue catalog".
 
-[Check the set up guide](https://docs.google.com/document/d/1GlWzS5KO4QaiVZx9pwfpgF-N-Xy2e_QQcdYSX-nLMDU/edit?usp=sharing) to ensure that you set up the required permission configuration for S3, Glue and EMR.
+[Check the set up guide](/docs/connections/storage/data-lakes/data-lakes-manual-setup/) to ensure that you set up the required permission configuration for S3, Glue and EMR.
 
 ### Invalid Settings
 

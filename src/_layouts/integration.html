@@ -9,23 +9,23 @@ layout: default
         {% include_cached navbar/logo.html %}
       </div>
 
-      {% if page.strat %}	
-        {% include menu/menu-strat.html %}	
-      {% else %}	
-        {% include_cached menu/menu-{{ page.integration_type }}.html %}	
+      {% if page.strat %}
+        {% include menu/menu-strat.html %}
+      {% else %}
+        {% include_cached menu/menu-{{ page.integration_type }}.html %}
       {% endif %}
     </div>
 
     <main class="docs__body stage__body">
       <div class="docs__navbar">
         <div class="flex flex--justify gutter gutter--large@medium">
-          <div class="flex__column flex__column--6@xlarge">  
+          <div class="flex__column flex__column--6@xlarge">
             <div class="search">
-              {% include_cached navbar/search.html placeholder="Search the Segment documentation..." %}
+              {% include_cached navbar/search.html container="autocomplete" %}
             </div>
           </div>
 
-          <div class="flex__column flex__column--shrink">  
+          <div class="flex__column flex__column--shrink">
             {% include_cached navbar/nav.html %}
           </div>
         </div>
@@ -33,7 +33,7 @@ layout: default
 
       {% include_cached navbar/navbar-mobile.html %}
 
-      <article class="integration page" data-headings-anchors data-tracking-scroll data-swiftype-name="body" data-swiftype-type="text">
+      <article class="integration page" data-headings-anchors data-tracking-scroll >
         <div class="integration__body page__body">
           {% include components/breadcrumbs.html %}
 
@@ -57,27 +57,24 @@ layout: default
               {%- endif -%}
             </div>
           </div>
-
+          {%- if page.url contains "destinations/catalog" -%}
+          {%- else -%}
           <hr>
+          {%- endif -%}
 
           {%- unless page.hide_toc -%}
             {% include sidebar/mobile-menu-side.html %}
           {%- endunless -%}
 
           <div class="markdown">
-            {% if page.integration_type == 'source' %}
-              {% capture cloud-app-note %}{% include content/cloud-app-note.md %}{% endcapture %}
-              {{ cloud-app-note | markdownify }}
+            {% if page.beta %}
+            {% unless page.integration_type == 'source' or page.integration_type == 'destination' %}
+              {% include content/beta-note.md %}
+            {% endunless %}
             {% endif %}
 
-            {{ content }}
+          {{ content }}
 
-            {% if page.integration_type == 'destination' %}
-              {% unless page.hide-boilerplate == true %}
-                {% capture integration-foot %}{% include content/integration-foot.md  %}{% endcapture %}
-                {{ integration-foot | markdownify }}
-              {% endunless %}
-            {% endif %}
           </div>
 
           <p class="last-modified">This page was last modified: {{ page.last_modified_at | date: '%d %b %Y' }}</p>
@@ -99,10 +96,10 @@ layout: default
                 {% if page.hide-boilerplate == true %}
                   {% assign toc_content = content  %}
                 {% else %}
-                  {% assign toc_foot = integration-foot | markdownify %}
+                  {% assign toc_foot = destination-footer | markdownify %}
                   {% assign toc_content = content | append: toc_foot %}
                 {% endif %}
-                
+
                 <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
                   {% include sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=toc_content h_min=2 h_max=2 %}
                 </div>

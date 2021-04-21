@@ -1,6 +1,21 @@
 ---
 title: Visual Tagger
 ---
+> warning "Visual Tagger entering maintenance mode"
+> Visual Tagger is entering maintenance mode on **April 5th, 2021**.
+> 
+> You can continue to use Visual Tagger with sources on which it's already enabled. However, the feature will no longer be available to new Segment customers and existing customers will not be able to add new Visual Tagger sources.
+> 
+> Segment is committed to enabling customers to collect and deliver high quality customer data to the tools they need to run their businesses. As a CSS-based event tracking method, Visual Tagger has limitations that can prevent detailed data from being consistently collected. For code-based collection best practices, see the [Segment Spec](/docs/connections/spec).
+> 
+> Going forward, support for the feature will include:
+> - Free, Team, and Startup customers will receive support with issues that impact multiple customers, but will not receive CSS-selector related troubleshooting
+> - Business customers will continue to receive full support
+> 
+> 
+> The following best practices can make your website more compatible with the feature and eliminate common issues:
+> - Assign unique IDs to all elements you intend to tag with Visual Tagger
+> - Adhere to HTML standards, such as forms inclosed in a `<form>` tag, and submitted with an `<input type="submit">` button.
 
 Visual Tagger is a tool that enables you to collect data about what your customers are doing on your websites without having to write any code. Specifically, it helps you implement `track` events by pointing and clicking on parts of your website.
 

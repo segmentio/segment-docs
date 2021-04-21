@@ -3,6 +3,9 @@ title: Using your Personas data
 redirect_from: '/personas/activation/'
 ---
 
+
+
+
 You can send your Personas Computed Traits and Audiences to your Segment Destinations, which allows you to personalize messages across channels, optimize ad spend, and improve targeting. This page provides an overview of different ways to activate Personas data in Segment Destinations.
 
 <!-- TODO: image here? -->
@@ -376,7 +379,6 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [Userlist](/docs/connections/destinations/catalog/userlist/)
 - [Vero](/docs/connections/destinations/catalog/vero/)
 - [Vitally](/docs/connections/destinations/catalog/vitally/)
-- [WalkMe](/docs/connections/destinations/catalog/walkme/)
 - [Watchtower](/docs/connections/destinations/catalog/watchtower/)
 - [WebEngage](/docs/connections/destinations/catalog/webengage/)
 - [Webhooks](/docs/connections/destinations/catalog/webhooks/)

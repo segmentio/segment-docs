@@ -148,7 +148,6 @@ sections:
     slug: connections/destinations
     section:
     - path: /connections/destinations
-
       title: Destinations overview
     - path: /connections/destinations/add-destination
       title: Add a destination
@@ -165,7 +164,7 @@ sections:
     - path: /connections/functions/source-functions
       title: Source Functions
     - path: /connections/functions/destination-functions
-      title: Destination Functions 
+      title: Destination Functions
     - path: /connections/functions/environment
       title: Functions environment
     - path: /connections/functions/usage
@@ -259,13 +258,11 @@ sections:
     title: SQL Traits
   - section_title: Audiences
     slug: /personas/audiences
-    section: 
+    section:
       - path: /personas/audiences
         title: Overview
       - path: /personas/audiences/account-audiences
         title: Account-level Audiences
-  # - path: /personas/audiences
-  #   title: Audiences
   - path: /personas/using-personas-data
     title: Using Personas data
   - path: /personas/warehouses
@@ -346,6 +343,8 @@ sections:
   section:
   - path: /segment-app
     title: Introducing the Segment Web App
+  - path: /segment-app/workspace-home
+    title: Workspace Home
   - section_title: Access Management
     slug: segment-app/iam
     section:

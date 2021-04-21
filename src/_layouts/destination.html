@@ -1,0 +1,18 @@
+---
+layout: integration
+---
+<div class="markdown">
+
+{% unless page.hide-dossier == true or page.name != "index.md" %}
+  {% capture destination-dossier %}{% include content/destination-dossier.html %}{% endcapture %}
+  {{ destination-dossier | markdownify }}
+{% endunless %}
+
+  {{ content }}
+
+{% unless page.hide-boilerplate == true %}
+  {% capture destination-footer %}{% include content/destination-footer.md  %}{% endcapture %}
+  {{ destination-footer | markdownify }}
+{% endunless %}
+
+</div>

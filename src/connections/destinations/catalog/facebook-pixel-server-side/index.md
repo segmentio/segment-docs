@@ -78,11 +78,11 @@ This approach provides a redundancy that ensures maximum signal reliability. Eve
 For this option to work best, you must pass the same `external_id` from both the browser and the server sources.
 To do this, go to your Facebook Pixel destination settings in Segment, and enable **Use UserId or Anonymous Id as External Id**. By default the Facebook Conversions API destination uses the `userId` (or `anonymousId` if not present) to set the External Id, so when you set up Facebook Pixel to use the same settings, Facebook can then match the users.
 
-You can also increase the match rate for events from a server source by sending [user traits in the context object of the track events](/#default-mappings-to-facebook-properties). You can also collect other fields from the browser, such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) and pass them to the server, and manually add them to the events.
+You can also increase the match rate for events from a server source by sending [user traits in the context object of the track events](#default-mappings-to-facebook-properties). You can also collect other fields from the browser, such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) and pass them to the server, and manually add them to the events.
 
 #### Deduplication considerations
 
-Events are only deduplicated if the same event is sent _first_ from the browser and _then_ from the server.  When events are received in this order, the server event is discarded. If the events are sent from the server and _then_ the browser, they create a duplicate. If you send two consecutive browser events with the same information, neither is discarded. If you send two consecutive server events with the same information, neither is be discarded.
+Events are only deduplicated if the same event is sent _first_ from the browser and _then_ from the server.  When events are received in this order, the server event is discarded. If the events are sent from the server and _then_ the browser, they create a duplicate. If you send two consecutive browser events with the same information, neither is discarded. If you send two consecutive server events with the same information, neither is discarded.
 
 ### Send different events - some from the browser others from the server
 
@@ -92,7 +92,7 @@ Use this approach if you want to separate tracking events completed on a user's 
 
 For this option to work best, the same `external_id` needs to be passed from the browser and from the server. To easily achieve this go to your Segment destination settings for Facebook Pixel and toggle on the setting called **Use UserId or Anonymous Id as External Id**. The Facebook Conversions API destination uses the userId (or anonymousId if not present) to set the External Id by default. Therefore enabling this on Facebook Pixel will allow Facebook to match the users.
 
-You can also increase the match rate for events from a server source by sending [user traits in the context object of the track events](/#default-mappings-to-facebook-properties). You can also collect other fields from the browser, such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) and pass them to the server, and manually add them to the events.
+You can also increase the match rate for events from a server source by sending [user traits in the context object of the track events](#default-mappings-to-facebook-properties). You can also collect other fields from the browser, such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) and pass them to the server, and manually add them to the events.
 
 #### Deduplication considerations
 
@@ -106,7 +106,7 @@ Use this approach if you don't want to track users from the browser with Faceboo
 
 If you use Facebook Conversions API as a stand-alone without certain data fields collected from the browser, the match rate might not be as high as if you included them.
 
-You can also increase the match rate for events from a server source by sending [user traits in the context object of the track events](/#default-mappings-to-facebook-properties). You can also collect other fields from the browser, such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) and pass them to the server, and manually add them to the events.
+You can also increase the match rate for events from a server source by sending [user traits in the context object of the track events](#default-mappings-to-facebook-properties). You can also collect other fields from the browser, such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) and pass them to the server, and manually add them to the events.
 
 
 #### Deduplication considerations

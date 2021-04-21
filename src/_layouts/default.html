@@ -59,9 +59,15 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="A5941fqMk8946qbO2cu9KNJ6L-_JBHKLC9DikDbcoys" />
+  <!-- The file below brings in a the core theme file for autocomplete search -->
+  <link rel="stylesheet" href="{{ '/assets/auto-complete-theme.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/algolia.css' | relative_url }}">
 </head>
 <body>
+    <!-- This section displays on deploy previews only -->
+  {% include components/deploy-preview.html %}
   <div id="consent-manager"></div>
   {{ content }}
   <a class="back-scrolling" data-back-scrolling data-active-class="back-scrolling--active">
@@ -79,26 +85,13 @@
   {%- endcomment -%}
   {%- if jekyll.environment == "production" -%}
     {%- assign write_key = "QAKKJEtNsXpsNfCCBeWCLNxkaaLO7pgp" -%}
-    {%- assign swiftype_key = "_s4VzQxzJDw1zYB3HzEC" -%}
   {%- else -%}
     {%- assign write_key = "f5c1iWVVwikUDoh5NuVq0G52EPFrMmrX" -%}
-    {%- assign swiftype_key = "_s4VzQxzJDw1zYB3HzEC" -%}
   {%- endif -%}
   {%- comment -%}
     JS for site
   {%- endcomment -%}
   <script src="{{ "./assets/docs.bundle.js" | relative_url}}"></script>
-  {%- comment -%}
-    Swifttype
-  {%- endcomment -%}
-  <script type="text/javascript">
-    (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-    })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-    _st('install','{{swiftype_key}}','2.0.0');
-  </script>
   {%- comment -%}
     Google Search Results Metadata
   {%- endcomment -%}
@@ -242,5 +235,6 @@
         // analytics.identify();
       }}();
     </script>
+    
 </body>
 </html>

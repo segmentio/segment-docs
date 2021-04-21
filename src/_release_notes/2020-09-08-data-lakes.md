@@ -16,7 +16,7 @@ doc_links:
     url: "/docs/connections/storage/data-lakes/"
   - 
     title: Set Up Segment Data Lakes
-    url: "docs/connections/storage/catalog/data-lakes"
+    url: "/docs/connections/storage/catalog/data-lakes"
 # images:
 #   -
 #     path: images/release-notes/identity-onboarding-1.png

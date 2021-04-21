@@ -1,6 +1,9 @@
 ---
 title: Identity & Access Management Overview
+redirect_from: '/segment-app/iam/add-a-team-member/'
 ---
+{% include content/plan-grid.md name="iam" %}
+
 
 Segment's access management tools let workspace owners manage which users can access different parts of their Segment workspaces.
 
