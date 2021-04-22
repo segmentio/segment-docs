@@ -9,14 +9,14 @@ redirect_from: '/connections/destinations/catalog/personas-facebook-ads/'
 
 ## Overview
 
-The Facebook Custom Audiences Destination is one of our most popular Personas Destinations. It has a variety of use cases related to suppression, acquisition (using lookalikes), retargeting, and more.
+The Facebook Custom Audiences Destination is one of the most popular Personas Destinations. It has a variety of use cases related to suppression, acquisition (using lookalikes), retargeting, and more.
 
 This Destination can send audiences (lists of users) created in Personas to Facebook Custom Audiences as a **User-List**. Once you set this up, Segment sends an initial list of users to Facebook, and then keeps it up-to-date as new users enter or exit that audience.
 
-This allows you to run advertising campaigns in Facebook without having to manually find and upload a refreshed a csv of users. We currently support Facebook Custom Audiences for Known Users. **Anonymous Website Audiences** is supported separately by the **Facebook Custom Audiences Website** Destination, which is currently in Early Access.
+This allows you to run advertising campaigns in Facebook without having to manually find and upload a refreshed a csv of users. We currently support Facebook Custom Audiences for Known Users.
 
 > info ""
-> **Note:**You must have access to Personas as part of your Segment plan to use this destination. [Contact our sales team](https://segment.com/demo/) to try this out.
+> **Note:**You must have access to Personas as part of your Segment plan to use this destination. [Contact the Segment sales team](https://segment.com/demo/) to try this out.
 
 
 ## Other Facebook Destinations Supported by Segment
