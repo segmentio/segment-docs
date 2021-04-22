@@ -227,7 +227,7 @@ Personas sends **User-Level data** to HubSpot to update properties on a user (or
 
 - **Audiences**: Personas uses an Identify call to add the name of the audience to the user’s profile as a trait, and includes a boolean value that indicates if the user is a member of the audience. For example, when a user first completes an order in the last 30 days, Personas sends an Identify call with the property `order_completed_last_30days: true`.  When the user no longer satisfies these criteria (for example when it’s been longer than 30 days since the last purchase), Personas uses a Identify call to set that value to `false`.  This appears as a `Property` for the contact in HubSpot. If using a **Track** call, events will be sent for `Audience Entered` or `Audience Exited`.
     - When you first create an audience, Personas sends an Identify call for every user in the audience. Later syncs only update users which were added or removed from the audience since the last sync.
- 
+
 
 ### How it works: Account-Level Traits and Audiences
 
@@ -306,7 +306,7 @@ You can also see this in the contact property history for each user record.
 
 
 
-## HubSpot Personas Quick Info
+## HubSpot Personas Details
 
 - **Personas Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
 - **Traits and Audiences created by**: Identify calls add and update traits and audiences as traits on the user, Track calls send events for `Audience Entered` and `Audience Exited`.

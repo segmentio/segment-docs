@@ -60,14 +60,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="A5941fqMk8946qbO2cu9KNJ6L-_JBHKLC9DikDbcoys" />
-  <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic@alpha"
-/>
+  <!-- The file below brings in a the core theme file for autocomplete search -->
+  <link rel="stylesheet" href="{{ '/assets/auto-complete-theme.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/algolia.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/algolia.css' | relative_url }}">
 </head>
 <body>
+    <!-- This section displays on deploy previews only -->
+  {% include components/deploy-preview.html %}
   <div id="consent-manager"></div>
   {{ content }}
   <a class="back-scrolling" data-back-scrolling data-active-class="back-scrolling--active">
@@ -83,7 +83,7 @@
     Production: https://app.segment.com/segment_prod/sources/segment_docs_v2_prod
     Everything else: https://app.segment.com/segment-engineering/sources/segment_docs
   {%- endcomment -%}
-  {%- if jekyll.environment == "production" -%}
+  {%- if site.env.CONTEXT == "production" -%}
     {%- assign write_key = "QAKKJEtNsXpsNfCCBeWCLNxkaaLO7pgp" -%}
   {%- else -%}
     {%- assign write_key = "f5c1iWVVwikUDoh5NuVq0G52EPFrMmrX" -%}
@@ -118,7 +118,6 @@
   {%- comment -%}
     Consent Manager
   {%- endcomment -%}
-
 <script>
   window.consentManagerConfig = function (exports) {
     var React = exports.React

@@ -191,7 +191,7 @@ To send computed traits or audiences to Iterable, you first must connect it to y
 3. On the set up screen, enter in your API Key for the Iterable.
 
 
-## Iterable Personas Quick Info
+## Iterable Personas Details
 
 - **Personas Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
 - **Traits and Audiences created by**:You can add traits and audiences as user properties using `identify` calls. You can send audiences as `Audience Entered` or `Audience Exited` `track` calls with the audience name as an event property.

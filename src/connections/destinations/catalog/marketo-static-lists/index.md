@@ -17,7 +17,7 @@ This allows you to run email campaigns in Marketo without having to manually fin
 > You must have access to Personas as part of your Segment plan to use this destination. [Contact our sales team](https://segment.com/demo/) to try this out.
 
 
-## Quick Info
+## Details
 
 - **Supports Personas**: Yes
 - **Personas Destination type**: List

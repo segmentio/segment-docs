@@ -20,7 +20,18 @@ hide-boilerplate: true
 | [Google Analytics](/docs/connections/destinations/catalog/google-analytics/)             | Yes - Event Destination   |
 | Google Adwords Remarketing Lists        | Yes - List Destination   |
 
+## Details
 
+- **Supports Personas**: Yes
+- **Personas Destination type**: List
+- **Must create audience_name field before Personas can update those values?**: No, Personas creates the audience for you.
+- **Audience appears as**: A Customer list, in the Audience Manager under Audience lists.
+- **Destination rate limit**: None
+- **Lookback window allowed**: Yes
+- **Identifiers required** : Email or Mobile Device ID (IDFA)
+- **Identifiers accepted** : Email and Mobile Device ID (IDFA)
+- **Client or Server-Side Connection**: Server-side
+- **Minimum audience size required**: 100
 
 ## Overview
 
@@ -33,7 +44,7 @@ If you use Segmentâ€™s mobile SDK to collect events from a mobile app, the userâ
 
 When you send an audience to Google Adwords Remarketing Lists, you can choose which custom matcher (email or mobile id/IDFA) to match with. If a user has multiple emails or IDFAs on their account as `external_ids`, Personas only sends Adwords the ID that was most recently added to the user profile.
 
-These audience lists can be used serve content on Google Search, YouTube, and Gmail, but are not available on the Google Display Network. You can only target users with email addresses that are associated with a Google account, and you can target users in Gmail only if they have an `@gmail.com` address. <!--For Personas audiences that are compatible with Google Display Network, see our documentation for DV360. -->
+These audience lists can be used serve content on Google Search, YouTube, and Gmail. You can only target users with email addresses that are associated with a Google account, and you can target users in Gmail only if they have an `@gmail.com` address. <!--For Personas audiences that are compatible with Google Display Network, see our documentation for DV360. -->
 
 > info ""
 > **Note**: You must have access to Personas as part of your Segment plan to use this destination. [Contact our sales team](https://segment.com/demo/) to try this out.
@@ -68,19 +79,6 @@ When you create an audience in Personas and connect it to Google Adwords Remarke
 2. Adds any users that fit the audience definition based on Email or Mobile ID (IDFA). Google uses these identifiers to match users in your list to users in the Google system who can be served ads.
 3. Every hour, Segment either adds or removes users from this audience based on the same identifiers.
 
-## Quick Info
-
-- **Supports Personas**: Yes
-- **Personas Destination type**: List
-- **Must create audience_name field before Personas can update those values?**: No, Personas creates the audience for you.
-- **Audience appears as**: A Customer list, in the Audience Manager under Audience lists.
-- **Destination rate limit**: None
-- **Lookback window allowed**: Yes
-- **Identifiers required** : Email or Mobile Device ID (IDFA)
-- **Identifiers accepted** : Email and Mobile Device ID (IDFA)
-- **Client or Server-Side Connection**: Server-side
-- **Minimum audience size required**: 100
-
 
 <!-- commenting out for now because this table format takes a wholepage
 | **Support for Personas**      | Yes       |
@@ -109,7 +107,7 @@ Before you start, make sure you have administrative access to the Adwords accoun
 ![](images/garl-auth-google.png)
 
 5. Select the Adwords account or sub-account to connect with Personas.
-   
+
     **What are sub-accounts?** Because the Google My Client Center (MCC) account allows a user to access multiple Google Ads accounts through a single user account. Segment has updated the selector to include these additional "sub-accounts." By default, Segment syncs the "primary" Google Ads account connected to your Google account, but when using Google MCC, you can select any of the Google Ads accounts managed by your primary Google Ads account. If you are not using MCC, your primary Google Ads account is connected. MCC is typically used by advertisers or agencies who are managing multiple client accounts.
 
 ![Example of Sub-accounts in Selector](images/adwords_subaccounts.png)
@@ -175,6 +173,6 @@ Personas sends the most recent id that was added to the user profile to Google A
 
 #### How do I enter multiple Mobile App IDs when exporting mobile IDs to Google Adwords?
 
-If you have more than one App ID (such as a separate App ID for Android and iOS apps), add a separate Google Adwords Remarketing List destination for each App ID, and make sure the settings for these destinations include the correct App IDs. 
+If you have more than one App ID (such as a separate App ID for Android and iOS apps), add a separate Google Adwords Remarketing List destination for each App ID, and make sure the settings for these destinations include the correct App IDs.
 
 When you create Personas audiences, add conditions to specify which App ID to send the audience to. For example, you might add a property condition of "where `device.type` contains `iOS`" to send only your iOS users to a specific destination.

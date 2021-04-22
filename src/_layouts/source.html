@@ -3,11 +3,12 @@ layout: integration
 ---
 
 <div class="markdown">
-  {% if page.integration_type == 'source' %}
-    {% capture cloud-app-note %}{% include content/cloud-app-note.md %}{% endcapture %}
-    {{ cloud-app-note | markdownify }}
-  {% endif %}
 
-  {{ content }}
+{% if page.integration_type == 'source' %}
+  {% capture cloud-app-note %}{% include content/cloud-app-note.md %}{% endcapture %}
+  {{ cloud-app-note | markdownify }}
+{% endif %}
+
+{{ content }}
 
 </div>
