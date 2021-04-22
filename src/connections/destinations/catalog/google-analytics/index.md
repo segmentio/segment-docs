@@ -621,8 +621,16 @@ If you want to send UTM parameters to Google Analytics using one of the Segment 
 
 Your UTM params need to be passed in the `context` object in `context.campaign`. For Google Analytics `campaign.name`, `campaign.source` and `campaign.medium` all need to be sent together for things to show up in reports. The other two params (`campaign.term` and `campaign.content`) are both optional, but will be forwarded to GA if you send them to Segment.
 
+### Measurement Protocol Parameters
 
----
+Google Analytics uses a reserved set of [Measurement Protocol Parameters](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters) which are automatically collected by the device-mode Google Analytics tracker. 
+
+To include Measurement Protocol Parameters when sending server-side events to Google Analytics:
+
+1. Collect the value of the parameter as a Segment trait or property
+2. Configure the Segment Google Analytics destination to [map the trait or property](#map-traits-or-properties-to-measurement-protocol-params) to a specific Measurement Protocol Parameter key
+
+Segment supports the `plt`, `pdt`, `gclid`, `dt`, and `cid` Measurement Protocol Parameters.
 
 
 ## Features
