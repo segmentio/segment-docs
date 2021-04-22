@@ -625,20 +625,18 @@ Your UTM params need to be passed in the `context` object in `context.campaign`.
 
 Google Analytics uses a reserved set of [Measurement Protocol Parameters](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters) which are automatically collected by the device-mode Google Analytics tracker. 
 
-To include Measurement Protocol Parameters when sending server-side events to Google Analytics, you must:
+To include Measurement Protocol Parameters when sending server-side events to Google Analytics:
 
 1. Collect the value of the parameter as a Segment trait or property
 2. Configure the Segment Google Analytics destination to [map the trait or property](#map-traits-or-properties-to-measurement-protocol-params) to a specific Measurement Protocol Parameter key
 
-The following Measurement Protocol Parameters are currently supported:
+The following Measurement Protocol Parameters are supported:
 
 - plt
 - pdt
 - gclid
 - dt
 - cid
-
----
 
 
 ## Features
