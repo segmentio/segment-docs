@@ -630,13 +630,7 @@ To include Measurement Protocol Parameters when sending server-side events to Go
 1. Collect the value of the parameter as a Segment trait or property
 2. Configure the Segment Google Analytics destination to [map the trait or property](#map-traits-or-properties-to-measurement-protocol-params) to a specific Measurement Protocol Parameter key
 
-The following Measurement Protocol Parameters are supported:
-
-- plt
-- pdt
-- gclid
-- dt
-- cid
+Segment supports the `plt`, `pdt`, `gclid`, `dt`, and `cid` Measurement Protocol Parameters.
 
 
 ## Features
