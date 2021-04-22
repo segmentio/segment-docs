@@ -273,8 +273,8 @@ sections:
     title: Personas and GDPR
   - path: /personas/faqs
     title: Personas FAQs
-  - path: /personas/rate-limits
-    title: Rate Limits
+  - path: /personas/product-limits
+    title: Personas Limits
 - section_title: Privacy
   section:
   - path: /privacy
