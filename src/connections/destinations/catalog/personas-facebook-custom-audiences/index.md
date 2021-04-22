@@ -2,6 +2,7 @@
 title: 'Personas Facebook Custom Audiences Destination'
 beta: true
 hide-boilerplate: true
+hide-dossier: true
 redirect_from: '/connections/destinations/catalog/personas-facebook-ads/'
 ---
 
@@ -29,7 +30,7 @@ This page is about the **Facebook Custom Audiences** destination developed speci
 | **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)**      | Yes                   |
 
 
-## Quick Info
+## Details
 
 
 - **Supports Personas**: Yes

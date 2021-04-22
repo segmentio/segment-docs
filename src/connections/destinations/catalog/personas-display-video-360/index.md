@@ -19,7 +19,7 @@ Segment's integration with DV360 enables Segment customers to sync audiences cre
 > info ""
 > **Note**: Since the release of `analytics-ios` version 4, Segment no longer collects IDFA automatically. To collect and pass IDFA to your DV360 integration, follow the steps for Ad Tracking and IDFA in the [Analytics-iOS mobile source](/docs/connections/sources/catalog/libraries/mobile/ios#ad-tracking-and-idfa) documentation.
 
-## Quick info
+## Details
  {% comment %}
 <table>
 <tr>
