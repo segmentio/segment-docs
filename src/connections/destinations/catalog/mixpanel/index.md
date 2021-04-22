@@ -620,7 +620,7 @@ To send computed traits or audiences to Mixpanel, you first must connect it to y
 ![](images/pers-12-settings-people.png)
 
 
-## Mixpanel Personas Quick Info
+## Mixpanel Personas Details
 
 - **Supports Personas**: Yes
 - **Personas Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)

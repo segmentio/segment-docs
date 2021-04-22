@@ -20,7 +20,18 @@ hide-boilerplate: true
 | [Google Analytics](/docs/connections/destinations/catalog/google-analytics/)             | Yes - Event Destination   |
 | Google Adwords Remarketing Lists        | Yes - List Destination   |
 
+## Details
 
+- **Supports Personas**: Yes
+- **Personas Destination type**: List
+- **Must create audience_name field before Personas can update those values?**: No, Personas creates the audience for you.
+- **Audience appears as**: A Customer list, in the Audience Manager under Audience lists.
+- **Destination rate limit**: None
+- **Lookback window allowed**: Yes
+- **Identifiers required** : Email or Mobile Device ID (IDFA)
+- **Identifiers accepted** : Email and Mobile Device ID (IDFA)
+- **Client or Server-Side Connection**: Server-side
+- **Minimum audience size required**: 100
 
 ## Overview
 
@@ -67,19 +78,6 @@ When you create an audience in Personas and connect it to Google Adwords Remarke
 1. Creates an Adwords Audience list (type Customer List) with the name you entered in Personas.
 2. Adds any users that fit the audience definition based on Email or Mobile ID (IDFA). Google uses these identifiers to match users in your list to users in the Google system who can be served ads.
 3. Every hour, Segment either adds or removes users from this audience based on the same identifiers.
-
-## Quick Info
-
-- **Supports Personas**: Yes
-- **Personas Destination type**: List
-- **Must create audience_name field before Personas can update those values?**: No, Personas creates the audience for you.
-- **Audience appears as**: A Customer list, in the Audience Manager under Audience lists.
-- **Destination rate limit**: None
-- **Lookback window allowed**: Yes
-- **Identifiers required** : Email or Mobile Device ID (IDFA)
-- **Identifiers accepted** : Email and Mobile Device ID (IDFA)
-- **Client or Server-Side Connection**: Server-side
-- **Minimum audience size required**: 100
 
 
 <!-- commenting out for now because this table format takes a wholepage
