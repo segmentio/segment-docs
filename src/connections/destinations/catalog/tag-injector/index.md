@@ -3,7 +3,6 @@ title: Tag Injector Destination
 hide-dossier: true
 hidden: true
 hide-cmodes: true
-published: false
 ---
 
 Segment has built a Tag Injector Destination to give Segment users the flexibility needed to load and configure client-side tools.
