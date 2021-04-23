@@ -160,7 +160,7 @@ Your Google account representative will suggest one of the following permission 
 | `invite_partner`    | An agency, trading desk, or large individual advertiser (with many sub-brands) | Any advertiser within your organization.      |
 | `invite_advertiser` | A single business that runs its own advertising campaigns                      | The single advertiser linked to your account. |
 
-Your selection here depends on the type of business you plan to support wit hthe DV360 destination.
+Your selection here depends on the type of business you plan to support with the DV360 destination.
 
 > info ""
 > **Note**: The permission level and numeric connectionID are required in later steps. Be sure to have these available before you continue.
