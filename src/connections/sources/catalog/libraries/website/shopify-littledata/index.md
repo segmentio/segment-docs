@@ -14,6 +14,8 @@ Littledata is available as an independent [Shopify App](https://apps.shopify.com
 
 2. The app also sets up server-side webhook forwarding to ensure 100% accuracy of important Customer and Order data.
 
+This source has a full [tracking plan and event schema](https://docs.google.com/spreadsheets/d/1JOlgpXpQ7ctktES6B_RyKn0_KxanxGF6) in Google Sheets, which is ready to [upload into Protocols](/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader).
+
 Here's an architecture diagram that shows how the Littledata app mediates data flow between Shopify and Segment.
 
 ![](images/littledata_arch.png)
