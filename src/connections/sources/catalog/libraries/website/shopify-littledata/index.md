@@ -93,22 +93,26 @@ For every event where there is an identifiable Shopify customer (from both the d
 
 The following traits are included with an Identify call:
 
-| Property Name           | Description                                                                                                                | Property Type |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `address`               | The customer's primary address                                                                                             | String        |
-| `createdAt`             | The date customer record was created                                                                                       | Date          |
-| `customerLifetimeValue` | The total spend of customer on the Shopify store                                                                           | Double        |
-| `description`           | The customer notes                                                                                                         | String        |
-| `email`                 | The customer's email address                                                                                               | String        |
-| `firstName`             | The customer's first name                                                                                                  | String        |
-| `lastName`              | The customer's email                                                                                                       | String        |
-| `marketingOptIn`        | The `marketing_opt_in` field from [Shopify customer](https://shopify.dev/docs/admin-api/rest/reference/customers/customer) | String        |
-| `phone`                 | The customer's phone number                                                                                                | String        |
-| `purchaseCount`         | The number of orders by this customer                                                                                      | Integer       |
-| `state`                 | Whether the customer account is enabled or disabled                                                                        | String        |
-| `tags`                  | The custom tags [applied to the customer](https://shopify.dev/docs/admin-api/rest/reference/customers/customer)            | String        |
-| `userId`                | Chosen user identifier, defaulting to Shopify Customer ID                                                                  | Double        |
-| `verified_email` (v2)   | Whether the customer has verified their email                                                                              | Boolean       |
+| Property Name                | Description                                                                                                                | Property Type |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `createdAt`                  | The date customer record was created                                                                                       | Date          |
+| `customerLifetimeValue`      | The total spend of customer on the Shopify store                                                                           | Double        |
+| `default_address.street`     | The customer's default street address                                                                                      | String        |
+| `default_address.city`       | The customer's city address                                                                                                | String        |
+| `default_address.postalCode` | The customer's ZIP / post code                                                                                             | String        |
+| `default_address.state`      | The customer's state address                                                                                               | String        |
+| `default_adress.country`     | The customer's country                                                                                                     | String        |
+| `description`                | The customer notes                                                                                                         | String        |
+| `email`                      | The customer's email address                                                                                               | String        |
+| `firstName`                  | The customer's first name                                                                                                  | String        |
+| `lastName`                   | The customer's last name                                                                                                   | String        |
+| `marketingOptIn`             | The `marketing_opt_in` field from [Shopify customer](https://shopify.dev/docs/admin-api/rest/reference/customers/customer) | String        |
+| `phone`                      | The customer's phone number                                                                                                | String        |
+| `purchaseCount`              | The number of orders by this customer                                                                                      | Integer       |
+| `state`                      | Whether the customer account is `enabled` (user has opted in) or `disabled`                                                | String        |
+| `tags`                       | The custom tags [applied to the customer](https://shopify.dev/docs/admin-api/rest/reference/customers/customer)            | String        |
+| `userId`                     | Chosen user identifier, defaulting to Shopify Customer ID                                                                  | Double        |
+| `verified_email` (v2)        | Whether the customer has verified their email                                                                              | Boolean       |
 
 ## Support for Google Analytics destination
 
@@ -202,7 +206,7 @@ You can edit the LittledataLayer object in your Shopify theme to manually change
 
 ### cookiesToTrack
 
-You can send any cookie set on a landing page (for example, a session identifier or marketing campaign name) to Segment with an Identify call. A common use is to pass Iterable `campaignId` and `templateId` through to the [Order Completed event](https://support.iterable.com/hc/en-us/articles/204795719-Sending-Data-from-Segment-to-Iterable-#order-completed).
+You can send any cookie set on a landing page (for example, a session identifier or marketing campaign name) to Segment with an Identify call. A common use is to set the array as `['iterableEmailCampaignId', 'iterableTemplateId']` to pass Iterable `campaignId` and `templateId` through to the [Order Completed event](https://support.iterable.com/hc/en-us/articles/204795719-Sending-Data-from-Segment-to-Iterable-#order-completed).
 
 ### CDNForAnalyticsJS
 
