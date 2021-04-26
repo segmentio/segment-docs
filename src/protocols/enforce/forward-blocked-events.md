@@ -4,7 +4,7 @@ title: Forward blocked events
 {% include content/plan-grid.md name="protocols" %}
 
 
-If you're concerned about permanently discarding blocked events, you can enable blocked event forwarding to a Segment Source. To set up forwarding, visit your Source settings tab and select which source you want to forward events to from the dropdown. We recommend creating a new Source for forwarded events to avoid contaminating production data. We recommend only enabling blocking when you feel confident about the quality of your data.
+If you're concerned about permanently discarding blocked events, you can enable blocked event forwarding to a Segment Source. To set up forwarding, visit your Source settings tab, then the Schema Configurationn setting. Select which source you want to forward events to from the Blocked Events and Traits dropdown. We recommend creating a new Source for forwarded events to avoid contaminating production data. We recommend only enabling blocking when you feel confident about the quality of your data.
 
 ![](../images/blocked_event_forwarding.png)
 
