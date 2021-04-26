@@ -124,7 +124,7 @@ When the user enters the step:
 ```json
 {
   "type": "track",
-  "event": "Step Entered",
+  "event": "Audience Entered",
   "properties": {
     "j_o_first_purchase__opened_email_dje83h": "true"
   }
@@ -136,7 +136,7 @@ When the user leaves the step:
 ```json
 {
   "type": "track",
-  "event": "Step Exited",
+  "event": "Audience Exited",
   "properties": {
     "j_o_first_purchase__opened_email_dje83h": "false"
   }
