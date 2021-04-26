@@ -7,7 +7,7 @@ For more information about advertising with Pinterest, see:
 - [Pinterest Developers](https://developers.pinterest.com/docs/widgets/getting-started/?)
 - [Pinterest for Business](https://business.pinterest.com/)
 
-## Quick info
+## Details
 
 **Requirements**
 - Personas enabled with an existing Personas space

@@ -306,7 +306,7 @@ You can also see this in the contact property history for each user record.
 
 
 
-## HubSpot Personas Quick Info
+## HubSpot Personas Details
 
 - **Personas Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
 - **Traits and Audiences created by**: Identify calls add and update traits and audiences as traits on the user, Track calls send events for `Audience Entered` and `Audience Exited`.

@@ -55,3 +55,4 @@ algolia:
   index_name:     segment-docs
   files_to_exclude:
     - _release_notes/*
+  nodes_to_index: 'p, table#limit'

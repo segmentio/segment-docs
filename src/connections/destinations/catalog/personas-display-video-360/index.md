@@ -19,7 +19,7 @@ Segment's integration with DV360 enables Segment customers to sync audiences cre
 > info ""
 > **Note**: Since the release of `analytics-ios` version 4, Segment no longer collects IDFA automatically. To collect and pass IDFA to your DV360 integration, follow the steps for Ad Tracking and IDFA in the [Analytics-iOS mobile source](/docs/connections/sources/catalog/libraries/mobile/ios#ad-tracking-and-idfa) documentation.
 
-## Quick info
+## Details
  {% comment %}
 <table>
 <tr>
@@ -160,7 +160,7 @@ Your Google account representative will suggest one of the following permission 
 | `invite_partner`    | An agency, trading desk, or large individual advertiser (with many sub-brands) | Any advertiser within your organization.      |
 | `invite_advertiser` | A single business that runs its own advertising campaigns                      | The single advertiser linked to your account. |
 
-Your selection here depends on the type of business you plan to support wit hthe DV360 destination.
+Your selection here depends on the type of business you plan to support with the DV360 destination.
 
 > info ""
 > **Note**: The permission level and numeric connectionID are required in later steps. Be sure to have these available before you continue.

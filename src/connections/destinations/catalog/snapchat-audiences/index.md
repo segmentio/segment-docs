@@ -9,7 +9,7 @@ For more information about advertising with Snapchat:
 - [SAM Audiences](https://businesshelp.snapchat.com/s/article/create-sam-audience?language=en_US)
 - [Snap Audience Match](https://developers.snapchat.com/api/docs/#create-an-audience-segment) (for developers)
 
-## Quick info
+## Details
 
 **Requirements**
 - Personas enabled with an existing personas space

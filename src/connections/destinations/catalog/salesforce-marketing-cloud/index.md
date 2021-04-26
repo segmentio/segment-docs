@@ -14,7 +14,7 @@ Salesforce Marketing Cloud (SFMC) provides digital marketing automation and anal
 > **Good to know**: This page is about the Salesforce Marketing Cloud Segment destination, which receives data from Segment. There's also a page about the [Salesforce Marketing Cloud Segment source](/docs/connections/sources/catalog/cloud-apps/salesforce-marketing-cloud/), which sends data _to_ Segment!
 
 
-### SFMC quick info
+### SFMC details
 
 | **Support for Personas**               | Yes                                                                  |
 | **Rate Limits**                        | 20 requests per second                                               |
