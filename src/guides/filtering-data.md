@@ -37,6 +37,8 @@ You can use the `integrations` JSON object as part of your Segment payloads to c
 
 By *default*, the `integrations` object is set to `'All':``true`. You do not need to include this flag in the object to use this behavior, but if you'll be using the integrations object frequently to control destination filtering, you might want to do this to make it explicit for later readers. You can also change this to `'All': false` to prevent destinations from receiving any data by default. You can also add destinations to the object by key, and provide a `true` or `false` value to allow or disallow data to flow to them. The `All` flag is superseded by any destination specific options.
 
+The Integrations object does not support specifying a particular destination instance. Any settings passed to the integrations object will apply to all instances of a destination. 
+
 Note that destination flags are **case sensitive** and match the destination's name in the docs (for example, "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
 Your data is sent to your warehouse (if you have one) and into the Segment backend systems regardless of what is in the integrations object.
