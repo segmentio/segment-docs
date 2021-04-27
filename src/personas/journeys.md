@@ -305,6 +305,36 @@ This journey creates an acquisition campaign designed to convert trial accounts 
    2. For the True branch, send the list of users to Email and Support destinations.
    3. For the False branch, send the list of users to an Email destination, Support, and Advertising destinations.
 
+#### Onboarding flow
+
+This journey creates an onboarding flow designed to maintain new user engagement through the onboarding experience.
+
+![onboarding flow](images/journey_onboarding.png)
+
+1. Create the entry condition with the step name `Account created`. Set the condition to all users who performed **Account Created** at least 1 time.
+2. Add a wait duration of **1 hour**.
+3. Add a True/false split.
+   1. Split the audience based on those who have performed **Tutorial Completed**.
+   2. For the True branch, send the list of users to Email, Support, and In-App destinations.
+   3. For the False branch, send the list of users to Email, Support, In-App, and Advertising destinations.
+
+### Media use case
+
+#### Paid subscription acquisition
+
+This journey creates an acquisition campaign designed to convert trial subscriptions to paid subscriptions with a unified owned and paid media strategy.
+
+![acquisition](images/journey_acquisition.png)
+
+1. Create the entry condition with the step name `Free trial`. Set the condition to all users who performed **Subscription Started** at least 1 time, and where **Subscription Plan Type** is **Free**.
+2. Add a wait duration of **1 hour**.
+3. Send the list of users to an Email destination.
+4. Add a wait duration of **7 days**.
+5. Add a True/false split.
+   1. Split the audience based on those who have performed **Subscription Started** where **Subscription Plan Type** is **paid**.
+   2. For the True branch, send to an email destination.
+   3. For the False branch, send to both email and advertising destinations.
+
 ## Product limits
 
 Journeys is available to Personas Advanced customers. To learn more about Personas, contact [sales for a demo](https://segment.com/contact/demo).
