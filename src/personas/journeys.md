@@ -175,7 +175,7 @@ For more information, see [Using Personas Data](/docs/personas/using-personas-da
 
 ## Publish a journey
 
-Published Journey are active Journey. Once published, Journey have a limited ability to be edited.
+Published Journeys are active Journeys. Once published, Journey have a limited ability to be edited.
 
 ### Draft Journey
 
