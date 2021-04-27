@@ -318,7 +318,7 @@ This journey creates an onboarding flow designed to maintain new user engagement
    2. For the True branch, send the list of users to Email, Support, and In-App destinations.
    3. For the False branch, send the list of users to Email, Support, In-App, and Advertising destinations.
 
-### Media use case
+### Media use cases
 
 #### Paid subscription acquisition
 
