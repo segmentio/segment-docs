@@ -33,16 +33,16 @@ Keep the following terms in mind as you begin to explore Journeys.
 | Multi-branch split   | A step in which you define any number of conditions. Each condition represents a separate branch leading away from the step. Users travel down the branch of the condition they meet. <br /> <br /> Journeys does not enforce mutual exclusivity in branch conditions . For more information, see [Best Practices](#). |
 | Send to destinations | A step in which you can send track or identify calls to Event destinations, or a list of users to a List destination.                                                                                                                                                                                                  |
 | Step name            | The name of the step that is surfaced in the Journey builder and overview.                                                                                                                                                                                                                                             |
-| Key                  | name of the Send to Destination step used to identify the step users are on when information is sent to the destination. For Track events, the property name uses this key. For Identify events, the trait name uses this key. <br /><br />For more information, see [Send data to Destinations](#).                   |
+| Key                  | Name of the Send to Destination step used to identify the step users are on when information is sent to the destination. For Track events, the property name uses this key. For Identify events, the trait name uses this key. <br /><br />For more information, see [Send data to Destinations](#).                   |
 
 ### Statuses
 
 | Term                     | Definition                                                                                                                        |
 | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
-| Draft journey            | A Journey which is not yet computing nor sending data to destinations. <br /><br />For more information, see [Draft Journeys](#). |
-| Published (live) journey | A Journey that is computing and sending data to destinations. For more information, see [Published Journeys](#).                  |
+| Draft Journey            | A Journey which is not yet computing nor sending data to destinations. <br /><br />For more information, see [Draft Journeys](#draft-journeys). |
+| Published (live) Journey | A Journey that is computing and sending data to destinations. <br /><br />For more information, see [Published Journeys](#published-journeys).                  |
 
-## Build a journey
+## Build a Journey
 
 Follow along for the steps required to create a new Journey.
 
@@ -175,9 +175,9 @@ For more information, see [Using Personas Data](/docs/personas/using-personas-da
 
 ## Publish a journey
 
-Published journeys are active journeys. Once published, journeys have a limited ability to be edited.
+Published Journey are active Journey. Once published, Journey have a limited ability to be edited.
 
-### Draft journeys
+### Draft Journey
 
 When you're finished creating your journey, click **Save as Draft** in the bottom-right corner.
 
@@ -186,7 +186,7 @@ When you're finished creating your journey, click **Save as Draft** in the botto
 - Journeys provide an *estimate* of user counts at the entry step, and do not compute user counts for the other steps of the journey.
 - Data is **not** sent to connected destinations.
 
-### Published journeys
+### Published Journey
 
 When you publish a journey, it becomes active. To publish a journey, click **Publish Journey** from the Journey Overview. You can also click **Publish Journey** in the bottom-right corner of the Journey Builder.
 
@@ -196,7 +196,7 @@ When you publish a journey, it becomes active. To publish a journey, click **Pub
 - You cannot add, edit, or delete other steps in the journey.
 - User counts are computed. It may take a few hours for user counts to be available.
 - Once user counts are computed and available, you'll see the list of users at each step of the journey.
-- You can click a user profile to see the list of journeys they belong to.
+- You can click a user profile to see the list of Journey they belong to.
 - Data is sent to destinations, and updates in real-time.
 
 ### Edit name, description, and destinations.
@@ -239,8 +239,7 @@ When you do this, the key used for syncing to destinations will be different fro
 ## Frequently asked questions
 
 ### How often do Journeys run?
-Journeys is built on Personas’ real-time compute engine. Because of this, Journeys run in real-time, and users will progress through Journeys as Segment receives new events.
-
+Journeys run in real-time, similar to real-time Audiences in Personas. This means that users will progress through Journeys as Segment receives new events.
 ### What destinations are supported by Journeys?
 Journeys supports all Personas destinations, including Destination Functions. Read more in Send data to destinations.
 
@@ -254,7 +253,7 @@ The type of data you send to a destination depends on whether the destination is
 
 ## Example use cases
 
-To help you get underway, you can reference these sample journeys.
+To help you get underway, you can reference these sample Journey.
 
 ### E-commerce use cases
 
