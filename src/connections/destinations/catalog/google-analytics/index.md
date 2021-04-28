@@ -153,7 +153,7 @@ You can specify what the event action should be called in the Google Analytics s
 
 Segment makes it simple to save your A/B testing versions to custom dimensions in Google Analytics by mapping an experiment to a custom dimension in the Google Analytics destination settings.
 
-If you are using Cloud-mode or server-side Google Analytics destinations, you can also send this data automatically using our `experiment_id`, `experiment_name`, `variation_id`, and `variation_name` properties. If both an experiment and variation are defined, then this is sent automatically. Segment uses the ids before using the names. If both an ID and a name exist, Segment sends the ID first. For example, if you an `experiment_id`, an `experiment_name`, and a `variation_name` in a call, only the `experiment_id` and `variation_name` are sent to Google Analytics.
+If you are using Cloud-mode or server-side Google Analytics destinations, you can also send this data automatically using the `experiment_id`, `experiment_name`, `variation_id`, and `variation_name` properties. If both an experiment and variation are defined, then this is sent automatically. Segment uses the ids before using the names. If both an ID and a name exist, Segment sends the ID first. For example, if you an `experiment_id`, an `experiment_name`, and a `variation_name` in a call, only the `experiment_id` and `variation_name` are sent to Google Analytics.
 
 When you have an active A/B test on a page, Segment either sets that experiment as a property or a user trait, depending on how you choose to send experiment data to other tools on your A/B testing tool's Segment settings page. The property or trait for A/B test experiments are labeled like the following examples:
 
@@ -255,18 +255,18 @@ Here's an example:
 
 ## Enabling E-Commerce tracking
 
-Segment supports Google Analytics basic e-commerce tracking across all our libraries. All you have to do is follow to our [E-commerce tracking spec](/docs/connections/spec/ecommerce/v2/) and Segment records the appropriate data to Google Analytics.
+Segment supports Google Analytics basic e-commerce tracking across all libraries. Follow the [E-commerce tracking spec](/docs/connections/spec/ecommerce/v2/) and Segment records the appropriate data to Google Analytics.
 
 Before you begin, enable Ecommerce tracking for the view you want to track transactions to. You can do this in Google Analytics by navigating to **Admin > View Settings** and switching the **Ecommerce Settings** switch to ON.
 
 Transactions do not appear in your reports until you enable this setting.
 
-All of our [Ecommerce spec events](/docs/connections/spec/ecommerce/v2/) are recommended, but not required. The only required event is `Order Completed`. For each order completed you must include an `orderId`, and for each product inside that order, you must include an `id` and `name` for each product. **All other properties are optional**.
+All [Ecommerce spec events](/docs/connections/spec/ecommerce/v2/) are recommended, but not required. The only required event is `Order Completed`. For each order completed you must include an `orderId`, and for each product inside that order, you must include an `id` and `name` for each product. **All other properties are optional**.
 
 
 ## Enabling Enhanced E-Commerce tracking
 
-Segment supports Google Analytics Enhanced E-Commerce tracking across both our device-mode (Analytics.js, Analytics-android, Analytics-ios) and cloud-mode sources. Enhanced Ecommerce allows you to combine impression data, product data, promotion data, and action data. This is required for product-scoped custom dimensions.
+Segment supports Google Analytics Enhanced E-Commerce tracking across both device-mode (Analytics.js, Analytics-android, Analytics-ios) and cloud-mode sources. Enhanced Ecommerce allows you to combine impression data, product data, promotion data, and action data. This is required for product-scoped custom dimensions.
 
 To get started, enable enhanced ecommerce in Google Analytics and use the standard [Ecommerce tracking spec](/docs/connections/spec/ecommerce/v2/), and Segment records the data to Google Analytics formatted using their enhanced ecommerce API.
 
@@ -354,7 +354,7 @@ analytics.track('Completed Checkout Step', {
 > info ""
 > **Note**: Both `shippingMethod` and `paymentMethod` are semantic properties and part of the [Ecommerce spec](/docs/connections/spec/ecommerce/v2/). Use the exact spelling if you want to send these properties.
 
-The four steps above are only an example, and you can create as many steps in your funnel as you need. You still must track the `Order Completed` event per our standard [Ecommerce tracking spec](/docs/connections/spec/ecommerce/v2/) after you've tracked the checkout steps.
+The four steps above are only an example, and you can create as many steps in your funnel as you need. You still must track the `Order Completed` event per the standard [Ecommerce tracking spec](/docs/connections/spec/ecommerce/v2/) after you've tracked the checkout steps.
 
 For client-side integrations we use Google Analytics' `ProductAction` class to track Checkout Steps and Options. You can read the Google Analytics developer docs for information on specific methods:
 <!-- commenting out until we can confirm that these aren't useful. the pages are still up, if all mobile needs to use firebase this seems weird to include here -->
@@ -440,7 +440,7 @@ analytics.track({
 
 Enhanced Ecommerce also allows you to collect impression information from users who have viewed or filtered through lists containing products. This allows you to collect information about which products have been viewed in a list, which filters or sorts they applied to a list of results, and the positions of each product within that list.
 
-Product impressions are mapped to our 'Product List Viewed' and 'Product List Filtered' Analytics.js events. You can find more information about the parameters and requirements here in our [Ecommerce tracking spec](/docs/connections/spec/ecommerce/v2/).
+Product impressions are mapped to the 'Product List Viewed' and 'Product List Filtered' Analytics.js events. You can find more information about the parameters and requirements here in the [Ecommerce tracking spec](/docs/connections/spec/ecommerce/v2/).
 
 Analytics.js allows you to easily collect and send this data, like in the examples below:
 <!-- need more explanation of what we're looking at here. -->
@@ -522,7 +522,7 @@ analytics.track('Order Refunded', {
 
 ## Server Side
 
-When you track an event or pageview with one of our server-side libraries or [HTTP API](/docs/connections/sources/catalog/libraries/server/http/) Segment sends it to the Google Analytics REST API.
+When you track an event or pageview with one of the server-side libraries or [HTTP API](/docs/connections/sources/catalog/libraries/server/http/) Segment sends it to the Google Analytics REST API.
 
 **You must include a server-side tracking ID in your Google Analytics destination settings or else Segment cannot pass server-side events to Google Analytics.** The tracking ID can be the same UA code as your regular property ID, or you can choose to send the server-side events to a separate Google Analytics property.
 
@@ -560,7 +560,7 @@ ga(function (tracker) {
 });
 ```
 
-If you want our server-side destination to use your user's `clientId`, pass it to us in the `integrations['Google Analytics'].clientId` object. You must pass this value manually on every call as we do not store this value for you.
+If you want the server-side destination to use your user's `clientId`, pass it to us in the `integrations['Google Analytics'].clientId` object. You must pass this value manually on every call as we do not store this value for you.
 
 *Here's a Ruby example:*
 ```ruby
@@ -583,7 +583,7 @@ If you do not pass `integrations['Google Analytics'].clientId`, we look for the 
 
 ### User Agent
 
-By default, we won't set the `user-agent` header. If you have your user's `user-agent` server-side, you can send it to us using the `context` object. The `context` object is an optional argument supported by all of our server-side sources.
+By default, we won't set the `user-agent` header. If you have your user's `user-agent` server-side, you can send it to us using the `context` object. The `context` object is an optional argument supported by all server-side sources.
 
 Here's a Ruby example:
 
@@ -709,7 +709,7 @@ analytics.ready(function(){
 
 *Note*: Make sure this script is placed after your Segment snippet, ideally at the end of the head tag.
 
-After you create the second tracker, you probably want to use our `.on()` emitter to automatically send data to this separate Google Analytics instance based on when you make other Segment calls.
+After you create the second tracker, you probably want to use the `.on()` emitter to automatically send data to this separate Google Analytics instance based on when you make other Segment calls.
 
 The below code would trigger an event to Google Analytics when you make a Segment track call.
 
@@ -725,11 +725,11 @@ analytics.on('track', function(event, properties, options){
 });
 ```
 
-**Important**: Keep in mind you will need to do all the data translation/properties mapping inside this `.on()` function before you send the event to Google Analytics like you see in our [destination code](https://github.com/segment-integrations/analytics.js-integration-google-analytics/blob/master/lib/index.js#L161-L207).
+**Important**: Keep in mind you will need to do all the data translation/properties mapping inside this `.on()` function before you send the event to Google Analytics like you see in the [destination code](https://github.com/segment-integrations/analytics.js-integration-google-analytics/blob/master/lib/index.js#L161-L207).
 
 To do this server side, you can create a separate [source](/docs/connections/sources/) in Segment, and within this source enter your GA credentials for the second tracker.
 
-This source can be your server-side source. From there, its easy to send data to multiple projects server-side, as you can see in this [Node example](/docs/connections/sources/catalog/libraries/server/node/#multiple-clients) you can initialize multiple instances of our library.
+This source can be your server-side source. From there, its easy to send data to multiple projects server-side, as you can see in this [Node example](/docs/connections/sources/catalog/libraries/server/node/#multiple-clients) you can initialize multiple instances of the library.
 
 ### Cookie Domain Name
 
@@ -795,7 +795,7 @@ In order to populate the Site Search report in Google Analytics there are a few 
 
 ### Webmaster Tools
 
-When you use Segment to load Google Analytics, our script loads the Google Analytics script. If you use [Google Analytics as the verification option](https://support.google.com/webmasters/answer/1120006?hl=en) in Google Webmaster Tools, you'll need to switch to the [Meta tags verification option](https://support.google.com/webmasters/answer/79812?hl=en) instead. This will require you to find the `<meta name=google-site-verification" ..>`  tag in Webmaster Tools and place it in your master HTML template.
+When you use Segment to load Google Analytics, the script loads the Google Analytics script. If you use [Google Analytics as the verification option](https://support.google.com/webmasters/answer/1120006?hl=en) in Google Webmaster Tools, you'll need to switch to the [Meta tags verification option](https://support.google.com/webmasters/answer/79812?hl=en) instead. This will require you to find the `<meta name=google-site-verification" ..>`  tag in Webmaster Tools and place it in your master HTML template.
 
 
 ### Cannonical Urls
@@ -856,9 +856,9 @@ If your site uses `https://`, go to your Google Analytics property settings page
 
 Using Segment won't affect your bounce rates in Google Analytics.
 
-If you see your bounce rates drop after installing Segment make sure you don't have multiple copies of our snippet on your page. Also be sure you're not calling `page` more than once when the page loads.
+If you see your bounce rates drop after installing Segment make sure you don't have multiple copies of the snippet on your page. Also be sure you're not calling `page` more than once when the page loads.
 
-If you call `track` on page load make sure to set `nonInteraction` to `1`. You can also set all events to be non-interactive by default in `Advanced Options`. Read more in our [non-interaction events](#non-interaction-events) docs.
+If you call `track` on page load make sure to set `nonInteraction` to `1`. You can also set all events to be non-interactive by default in `Advanced Options`. Read more in the [non-interaction events](#non-interaction-events) docs.
 
 
 ### Traffic from Boardman or Segmentio Browser
