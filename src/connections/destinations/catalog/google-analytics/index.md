@@ -560,7 +560,7 @@ ga(function (tracker) {
 });
 ```
 
-If you want our server-side destination to use your user's `clientId`, pass it to us in the `integrations['Google Analytics'].clientId` object. You must pass this value manually on every call as we do not store this value for you. If you do not pass this through, we look for the `userId` or `anonymousId` value and set the hashed value of either `userId` or `anonymousId` as the `cid`.
+If you want our server-side destination to use your user's `clientId`, pass it to us in the `integrations['Google Analytics'].clientId` object. You must pass this value manually on every call as we do not store this value for you.
 
 *Here's a Ruby example:*
 ```ruby
@@ -577,6 +577,8 @@ Analytics.track(
   }
 )
 ```
+
+If you do not pass `integrations['Google Analytics'].clientId`, we look for the `userId` or `anonymousId` value and set the hashed value of either `userId` or `anonymousId` as the `cid`. By default, we prioritize `userId` over `anonymousId` which may have implications for reports that tie anonymous-to-known user behavior. In those cases, you can choose to prioritize `anonymousId` by enabling the **Prefer Anonymous ID for Client ID - Server Side Only** setting.
 
 
 ### User Agent
