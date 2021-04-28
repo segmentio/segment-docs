@@ -83,7 +83,7 @@ Segment does not integrate with SKAdnetwork by default. Developers should integr
 
 Segment’s partners have put together resources to help you navigate these changes. This list will update as more partners provide guidance:
 
-    - [Branch](https://help.branch.io/faq/docs/what-actions-do-branch-customers-need-to-take-before-the-ios-145-release)
-    - [Adjust](https://help.adjust.com/en/article/attribution-privacy-models)
-    - [Tune](https://www.tune.com/blog/what-ios-14-5-and-apples-latest-privacy-initiatives-mean-for-marketers/)
-    - [Kochava](https://www.kochava.com/ios-14-5-final-launch-checklist/)
+- [Branch](https://help.branch.io/faq/docs/what-actions-do-branch-customers-need-to-take-before-the-ios-145-release)
+- [Adjust](https://help.adjust.com/en/article/attribution-privacy-models)
+- [Tune](https://www.tune.com/blog/what-ios-14-5-and-apples-latest-privacy-initiatives-mean-for-marketers/)
+- [Kochava](https://www.kochava.com/ios-14-5-final-launch-checklist/)
