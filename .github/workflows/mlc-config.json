@@ -1,0 +1,8 @@
+{
+  "replacementPatterns":[
+    {
+      "pattern": "/docs/",
+      "replacement": "src/"
+    }
+  ]
+}
