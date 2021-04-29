@@ -22,10 +22,10 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gems-
     - name: Get changed files
-        id: changes
-        # Set outputs using the command.
-        run: |
-          echo "::set-output name=all::$(git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | xargs)"
+      id: changes
+      # Set outputs using the command.
+      run: |
+        echo "::set-output name=all::$(git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | xargs)"
     # - uses: MeilCli/danger-action@v5
     #   with:
     #     plugins_file: 'Gemfile'
