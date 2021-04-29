@@ -1,4 +1,4 @@
-Functions use Node.js 10.x.
+Functions use Node.js 14.x.
 
 Functions do not currently support importing dependencies, but you can [contact Segment Support](https://segment.com/help/contact/) to request that one be added.
 
