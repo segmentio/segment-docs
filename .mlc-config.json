@@ -1,8 +1,12 @@
 {
-  "replacementPatterns":[
+  "replacementPatterns": [
     {
-      "pattern": "^/docs/",
-      "replacement": "/github/workspace/src/"
-  }
-  ]
+    "pattern": "^/",
+    "replacement": "/github/workspace/"
+    },
+    {
+      "pattern": "docs",
+      "replacement": "src"
+    }
+]
 }
