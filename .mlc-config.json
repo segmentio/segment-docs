@@ -2,7 +2,7 @@
   "replacementPatterns":[
     {
       "pattern": "/docs/",
-      "replacement": "src/"
+      "replacement": "/src/"
     }
   ]
 }
