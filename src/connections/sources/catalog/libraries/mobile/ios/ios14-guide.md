@@ -75,9 +75,12 @@ Using Segment in your mobile app does not require App Tracking Transparency (ATT
 
 Please review Apple's documentation, Terms of Service, and your destinations’ documentation to determine whether you need to use Apple's ATT framework in your application.
 
+
 ### Does Segment integrate with SKAdnetwork? 
 
-Segment does not integrate with SKAdnetwork by default. Developers should integrate directly with SKAdnetwork.
+[SKAdnetwork](https://developer.apple.com/documentation/storekit/skadnetwork) is a framework developers can use to attribute mobile app installs while maintaining user privacy.  The conversion data shared back to advertisers are received at a random interval 24-48 hours after the install occurs and contain no user or device context. 
+
+Segment does not integrate with SKAdnetwork, but developers can integrate directly with SKAdnetwork alongside their Segment implementation. For more on how to use SKAdnetwork in your mobile app, see [Apple's documentation](https://developer.apple.com/documentation/storekit/skadnetwork). 
 
 ### Destination iOS 14.5 guides
 
