@@ -3,6 +3,9 @@ title: Journeys
 hidden: true
 ---
 
+> info "Beta Feature"
+> Segment Journeys is a private beta feature. This means the feature is in active development and some functionality may change before it becomes generally available.
+
 Journeys, a feature of Segment Personas, provide a way for marketers to personalize experiences through planning how and when to engage customers with the right campaigns and messages.
 
 Journeys enable you to define steps in a user's journey based on their event behavior and traits. You can build Journeys from your tracking events, traits, computed traits, or audiences. At each step of a journey, you can send your list of users to any personas-compatible destination.
