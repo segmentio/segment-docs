@@ -1,0 +1,12 @@
+{
+  "replacementPatterns": [
+    {
+    "pattern": "^/docs",
+    "replacement": "/github/workspace/src"
+    },
+    {
+      "pattern": "(\\S+)\/(\\s|$)",
+      "replacement": "$1$2.md"
+    }
+]
+}

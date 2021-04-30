@@ -26,6 +26,7 @@
     "front-matter": "3.0.2",
     "glob": "7.1.4",
     "js-yaml": "3.13.1",
+    "markdown-link-check": "^3.8.7",
     "markdown-link-extractor": "^1.2.2",
     "remark": "^11.0.2",
     "remark-cli": "^7.0.1",
