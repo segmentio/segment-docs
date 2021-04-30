@@ -5,8 +5,8 @@
     "replacement": "/src"
     },
     {
-      "pattern": "(\S+)\/(\s|$)",
-      "replacement": "\1\2.md"
+      "pattern": "(\\S+)\/(\\s|$)",
+      "replacement": "\\1\\2.md"
     }
 ]
 }
