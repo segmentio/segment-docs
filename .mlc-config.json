@@ -6,7 +6,7 @@
     },
     {
       "pattern": "(\\S+)\/(\\s|$)",
-      "replacement": "\\1\\2.md"
+      "replacement": "$1$2.md"
     }
 ]
 }
