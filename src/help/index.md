@@ -7,12 +7,12 @@ hidden: true
 
 ## Technical Support
 
-Email support is available for all [Segment plans](https://segment.com/pricing/). If you're experiencing problems, have questions about implementing Segment, or want to report a bug, you can fill out our [support contact form here](https://segment.com/help/contact/) and our Success Engineering team will get back to you.
+Email support is available for all [Segment plans](https://segment.com/pricing/). If you're experiencing problems, have questions about implementing Segment, or want to report a bug, you can fill out the [support contact form](https://segment.com/help/contact/) and the Success Engineering team will get back to you.
 
 > note ""
 > You need a Segment.com account in order to file a support request. Don't worry! You can always sign up for a free workspace if you don't already have one.
 
-_Segment Support Business Hours_
+### Segment Support Business Hours
 
 Segment’s Support teams work standard business hours (roughly 9:00 AM to 5:30 PM, Monday through Friday) across the Pacific, GMT, and Australian Eastern time zones. Please note, however, that your specific support hours will be governed by the terms and conditions of your Agreement.
 
