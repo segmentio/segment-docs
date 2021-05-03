@@ -30,5 +30,3 @@ View the [Formatting Guide](/docs/utils/formatguide/) to see some of the neat st
 ### Why doesn't this integration page have any programmatic content?
 
 The liquid scripts run based on finding a match between the page path and the key in the `_data/catalog` files. Due to renames, these can fall out of date. Check out the [Find Mismatches page](/docs/utils/find-mismatches/) for a list of possible "problem child" destinations.
-
-
