@@ -5,12 +5,8 @@
     "replacement": "/github/workspace/src"
     },
     {
-      "pattern": "(\\S+)\/(\\s|$)",
-      "replacement": "$1$2"
-    },
-    {
-      "pattern": "(\\S+)",
-      "replacement": "$1.md"
+      "pattern": "(\\S+?)\/(\\S+?)\/?$",
+      "replacement": "$1/$2.md"
     }
 ]
 }
