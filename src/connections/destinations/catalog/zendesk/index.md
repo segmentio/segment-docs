@@ -124,7 +124,7 @@ analytics.track('Article Completed', {
 });
 ```
 
-**Important:** To make track calls, you must sign up for Zendesk's [User Events API early access program](https://develop.zendesk.com/hc/en-us/community/topics/360000030527)
+**Important:** To make track calls, a Zendesk [Sunshine plan](https://www.zendesk.com/pricing/?variant=a#platform) is required.
 
 When you call `track` we will send data about a user's activity to Zendesk.
 
@@ -133,6 +133,18 @@ We will only send `track` events when the following two conditions are met:
 1. The call is listed in the "Events" setting.
 2. A `userId` is included.
   - **Note:** If the `userId` doesn't match any existing users in Zendesk, we will return an error.
+
+**Mapping Users to an Email**: If you'd like to map a segment track event to Zendesk Sunshine event by email, you must supply the email in the track call as `properties.email` so that Zendesk can tie the event to the user. Otherwise, we will send the Segment userId as "external_id". If the email is provided in the track call, an example call in JS would look like:
+
+```js
+analytics.track('Article Completed', {
+  title: 'How to Create a Tracking Plan',
+  course: 'Intro to Analytics',
+  properties: {
+    email : 'user@example.com',
+  }
+});
+```
 
 ## Group
 
