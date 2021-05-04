@@ -115,7 +115,10 @@ To connect a source to more than one instance of a destination in the Segment we
 You must give each instance of the destination connected to the same source a unique name. Segment recommends that you use descriptive names rather than numbers, so other Segment users can understand which Segment destinations are linked to which tool instances. For example, you might use "Amplitude North America" and "Amplitude South America", instead of "Amplitude 1" and "Amplitude 2".
 
 If you added the first instance of your destination before multi-instance destinations became available, that instance is automatically named for the destination with no other identifiers, for example "Amplitude". You cannot currently edit these first destinations' names.
+
 Some destinations do not support having multiple instances connected to the same source. In that case, the option to add a second instance of that destination does not appear.
+
+You can create unique destination filters for each destination instance connected to the same source. 
 
 ### Connect to more than one instance of a destination using the Config API
 
@@ -137,7 +140,6 @@ For more information see [the compatible destination lists below](#multi-instanc
 
 ### Other multi-instance destination considerations
 
-- **Destination filters and multi-instance destinations:** Destination filters are specific to each source, and currently operate on *all* instances of a destination connected to that source. Support for destination filters for individual destination instances is coming soon.
 
 - **Multiple Data Lakes:** Segment does not currently support connecting a single source to multiple instances of a data lakes destination. [Contact Segment Customer Success](https://segment.com/help/contact/) if this would be useful for your organization.
 
