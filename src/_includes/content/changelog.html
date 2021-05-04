@@ -1,0 +1,16 @@
+{% capture log_file %}
+site.data.changelogs.{{page.repo}}
+{% endcapture %}
+{% assign changelog = site.data.changelogs[page.repo] %}
+
+{% for release in changelog.releases %}
+
+<!-- <h1>{{release.version}}</h1>
+<p>Release date: {{release.date | date: "%b %d, %y" }}</p> -->
+{% if release.version != "" %}
+<h2>{{release.version}}</h2>
+<p>{{release.date | date: "%b %d, %Y" }}</p>
+{{release.notes | markdownify}}
+<a href = "{{release.url}}">More information</a>
+{% endif %}
+{% endfor %}

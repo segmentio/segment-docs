@@ -1,0 +1,18 @@
+
+{% capture log_file %}
+site.data.changelogs.{{page.repo}}
+{% endcapture %}
+{% assign changelog = site.data.changelogs[page.repo] %}
+
+{% for release in changelog.releases limit:1 %}
+
+
+
+<div style="float: right; border: 1px solid #eee; border-radius: 5px; width:33%; padding: 5px; margin-right: 15px ">
+
+<p style="font-size: 12px">Current Version: <a href="{{release.url}}" target="_blank">{{release.version}}</a></p>
+<p style="font-size: 12px">Release Date: {{release.date | date: "%b %d, %Y" }}</p>
+{% endfor %}
+<a href="https:///github.com/segmentio/{{page.repo}}" target="_blank"><img style="margin: 0; border: none" src="/docs/images/github.svg" /></a>
+</div>
+

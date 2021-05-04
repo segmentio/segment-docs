@@ -1,6 +1,7 @@
 ---
 title: Analytics for iOS
 strat: ios
+repo: analytics-ios
 ---
 
 
