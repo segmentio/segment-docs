@@ -4,6 +4,7 @@ rewrite: true
 beta: true
 strat: facebook
 redirect_from: '/connections/destinations/catalog/facebook-conversions-api/'
+hide-dossier: true
 ---
 
 <!-- LR: 2/16/2021: Redirect pulls in from `facebook-conversions-api` because while this destination's display name has changed, the slug is still the old name and the docs build needs to match on slug to find it in `destinations.yml` -->
