@@ -2,6 +2,8 @@
 title: What is Replay?
 ---
 
+{% include content/plan-grid.md name="replay" %}
+
 Replay takes an archived copy of your Segment data, and re-sends it to new or existing tools.
 
 On the surface this doesn't sound like much, but this can grant huge benefits to mature data systems: By archiving and replaying data, you can avoid vendor lock-in, and protect your system against data loss.

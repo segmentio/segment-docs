@@ -20,7 +20,7 @@ This allows you to run advertising campaigns in Facebook without having to manua
 
 
 ## Other Facebook Destinations Supported by Segment
-This page is about the **Facebook Custom Audiences** destination developed specifically for use with **Segment Personas**. For documentation on other Facebook destinations, see the pages linked below. For access to documentation on the Facebook Custom Audiences (Website) destination, contact [beta@segment.com](mailto:beta@segment.com), as it is an Early Access feature.
+This page is about the **Facebook Custom Audiences** destination developed specifically for use with **Segment Personas**. For documentation on other Facebook destinations, see the pages linked below.
 
 | **Facebook Destination**   | Supported by Personas |
 | ---------------------- | --------------------- |

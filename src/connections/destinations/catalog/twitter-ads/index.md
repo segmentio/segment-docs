@@ -38,7 +38,7 @@ For example, if your mapping in Segment looks like this:
 
 ![twitter conversion event mapping screenshot](images/event-mapping.png)
 
-Then everytime you make this [`track`](/docs/connections/spec/track) call (from the browser):
+Then every time you make this [`track`](/docs/connections/spec/track) call (from the browser):
 
 ```javascript
 analytics.track('Signed Up', {
@@ -61,7 +61,7 @@ Thus the example `.track()` event above would fire this tag:
 
 ### Advanced Conversion Tracking and Dynamic Ads
 
-Our Twitter destination supports [Advanced Conversion Tracking](https://business.twitter.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites/advanced-conversion-tracking.html) which can be used to run **Dynamic Ads Campaigns**. Once you create your conversion events using **Universal Website Tag** inside Twitter's UI, just follow our [Ecommerce V2 Spec](https://segment.com/docs/connections/spec/ecommerce/v2) and we will automatically map select events (listed below). Keep in mind that you **must** provide the **Universal Website Pixel ID** in your settings for this feature to work.
+Our Twitter destination supports [Advanced Conversion Tracking](https://business.twitter.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites.html#advanced) which can be used to run **Dynamic Ads Campaigns**. Once you create your conversion events using **Universal Website Tag** inside Twitter's UI, just follow our [Ecommerce V2 Spec](https://segment.com/docs/connections/spec/ecommerce/v2) and we will automatically map select events (listed below). Keep in mind that you **must** provide the **Universal Website Pixel ID** in your settings for this feature to work.
 
 *NOTE*: *For each of these Segment events, we will still check if you had mapped any of them to a* **Single Event Website Tag** *in your Segment settings and fire those tags in addition to these advanced conversion tags.*
 
@@ -151,14 +151,15 @@ The following table show how the properties of Segment events would map to Twitt
 
 - You can choose in your Segment settings if you want to populate `content_ids` parameter with your `product_id`(s) or `sku`(s). Whatever you choose should match the IDs in your Product Feed if you are running dynamic ads.
 - `content_type` will always be correctly hardcoded to be `'product'`.
-- `content_name` and `content_category` for multiple products will be concecatenated delimited by commas.
+- `content_name` and `content_category` for multiple products will be concatenated delimited by commas.
 - `num_items` represents the sum total of all your products' respective quantities.
 - While `properties.status` is not spec'd by Segment, you can still send that property through and we will map it to Twitter's `status` parameter, which is an optional free text field representing the state of the conversion event (eg. 'completed', 'in review', 'processed', etc.)
 - `value`, `currency`, `order_id` and `num_items` will not be mapped for any pre-purchase tags because it will attribute revenue, which is undesired behavior for ecommerce/retail businesses.
 
 The following code snippets represent the code we would fire under the hood on your webpage given an example Segment event.
 
-*NOTE*: *The following assumes that the setting for* **Product Identifier** *is `product ID` (it can also be SKU).*
+> note ""
+> The following assumes that the setting for* **Product Identifier** *is `product ID` (it can also be SKU).
 
 **Order Completed** -> **Purchase**
 

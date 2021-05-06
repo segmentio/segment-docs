@@ -6,6 +6,9 @@ strat: android
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics)
 
+> info "Analytics-Kotlin Pilot"
+> A pilot release of the analytics-kotlin library is available at the [Analytics-Kotlin](https://github.com/segmentio/analytics-kotlin) repository. This library is governed by Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/), and should not be used in production scenarios.
+
 Analytics for Android makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
 All of Segment's client sources are open-source, so you can [view Analytics for Android on GitHub](https://github.com/segmentio/analytics-android), or check out Segment's other [browser and server-side sources](/docs/connections/sources/catalog/) too.
