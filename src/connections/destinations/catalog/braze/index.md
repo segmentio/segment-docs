@@ -132,6 +132,9 @@ Page calls are only sent to Braze if you have enabled either "Track All Pages" o
 
 ## Identify
 
+> tip ""
+> **Tip!** Optimize your integration and limit [Data Point usage](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/) through “debouncing” duplicate identify() calls from Segment by adding our [open-source Middleware tool](https://github.com/segmentio/segment-braze-mobile-middleware) to your implementation. More information available in the project’s [README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).
+
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
@@ -167,6 +170,9 @@ All other traits (except their [reserved user profile fields](https://www.braze.
 
 
 ## Track
+
+> tip ""
+> **Tip!** We recommend sending only the Events which are relevant for campaigns and segmentation to the Braze Destination to lower [Data Point usage](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/). Learn more about [Schema Controls here](https://segment.com/docs/protocols/schema/).
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
