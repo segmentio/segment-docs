@@ -2,6 +2,21 @@
 rewrite: true
 title: HubSpot Destination
 hide-personas-partial: true
+connection_modes:
+  device:
+    web: true
+    mobile: false
+    server: false
+  cloud:
+    web: false
+    mobile: true
+    server: true
+  summary: >-
+    accepts data from any Segment mobile or server source in cloud mode. 
+    It does not accept data from a web source, and does not offer device-mode connections.
+  cmode_type: mixed
+  case: '6'
+  
 ---
 
 [HubSpot](https://www.hubspot.com/) is an inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers. The `analytics.js` HubSpot Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-hubspot).

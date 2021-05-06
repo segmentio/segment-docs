@@ -1223,7 +1223,7 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
+      web: true
       mobile: false
       server: true
     summary: testing
@@ -4373,15 +4373,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
+      web: true
       mobile: true
       server: true
     summary: >-
-      accepts data from any Segment mobile or server source in cloud mode. It
-      does not accept data from a web source, and does not offer device-mode
-      connections.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
-    case: '6'
+    case: '5'
   settings:
   - name: apiKey
     display_name: API Key
@@ -5720,11 +5719,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
+      web: true
       mobile: true
       server: false
-    summary: testing
+    summary: >-
+      accepts data in cloud-mode from web and mobile sources, and can accept
+      data in device-mode from Analytics.js sources.
     cmode_type: mixed
+    case: '10'
   settings:
   - name: account
     display_name: Account ID
@@ -6406,15 +6408,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
+      web: true
       mobile: true
       server: true
     summary: >-
-      accepts data from any Segment mobile or server source in cloud mode. It
-      does not accept data from a web source, and does not offer device-mode
-      connections.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
-    case: '6'
+    case: '5'
   settings:
   - name: awsRegion
     display_name: AWS Region
@@ -6547,15 +6548,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
+      web: true
       mobile: true
       server: true
     summary: >-
-      accepts data from any Segment mobile or server source in cloud mode. It
-      does not accept data from a web source, and does not offer device-mode
-      connections.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
-    case: '6'
+    case: '5'
   settings:
   - name: apiKey
     display_name: API Key
@@ -9613,15 +9613,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
+      web: true
       mobile: true
       server: true
     summary: >-
-      accepts data from any Segment mobile or server source in cloud mode. It
-      does not accept data from a web source, and does not offer device-mode
-      connections.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
-    case: '6'
+    case: '5'
   settings:
   - name: apiKey
     display_name: API Key
@@ -9728,15 +9727,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
+      web: true
       mobile: true
       server: true
     summary: >-
-      accepts data from any Segment mobile or server source in cloud mode. It
-      does not accept data from a web source, and does not offer device-mode
-      connections.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
-    case: '6'
+    case: '5'
   settings:
   - name: apiKey
     display_name: API Key
@@ -10798,11 +10796,14 @@ items:
       mobile: true
       server: false
     cloud:
-      web: false
+      web: true
       mobile: true
       server: true
-    summary: testing
-    cmode_type: ''
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It can accept
+      device-mode data from both web and mobile sources.
+    cmode_type: all
+    case: '4'
   settings:
   - name: mappedTopics
     display_name: Mapped Topics
@@ -11433,11 +11434,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
+      web: true
       mobile: true
       server: true
-    summary: testing
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
+    case: '9'
   settings:
   - name: apiKey
     display_name: API Key
@@ -13181,15 +13185,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
+      web: true
       mobile: true
       server: true
     summary: >-
-      accepts data from any Segment mobile or server source in cloud mode. It
-      does not accept data from a web source, and does not offer device-mode
-      connections.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
-    case: '6'
+    case: '5'
   settings:
   - name: apiKey
     display_name: API Key
@@ -13356,15 +13359,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
+      web: true
       mobile: true
       server: true
     summary: >-
-      accepts data from any Segment mobile or server source in cloud mode. It
-      does not accept data from a web source, and does not offer device-mode
-      connections.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
-    case: '6'
+    case: '5'
   settings:
   - name: apiKey
     display_name: API Key
@@ -13912,15 +13914,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
+      web: true
       mobile: true
       server: true
     summary: >-
-      accepts data from any Segment mobile or server source in cloud mode. It
-      does not accept data from a web source, and does not offer device-mode
-      connections.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
-    case: '6'
+    case: '5'
   settings:
   - name: apiKey
     display_name: API Key
@@ -14537,6 +14538,17 @@ items:
       required: false
       description: Map your Segment properties to the Marketo Activity Fields
       settings:
+      - name: segmentProperty
+        display_name: Segment Property Name
+        type: STRING
+        deprecated: false
+        required: true
+        string_validators:
+          regexp: ''
+        description: >-
+          Enter the Segment Property Name. This is case sensitive so make sure
+          the name matches exactly how you are passing it in your .track() call.
+        settings: []
       - name: marketoAttributeName
         display_name: Marketo Field Name
         type: STRING
@@ -14567,17 +14579,6 @@ items:
         deprecated: false
         required: false
         description: Mark this property as the Primary field in Marketo.
-        settings: []
-      - name: segmentProperty
-        display_name: Segment Property Name
-        type: STRING
-        deprecated: false
-        required: true
-        string_validators:
-          regexp: ''
-        description: >-
-          Enter the Segment Property Name. This is case sensitive so make sure
-          the name matches exactly how you are passing it in your .track() call.
         settings: []
     - name: event
       display_name: Segment Event Name
@@ -16472,15 +16473,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
+      web: true
       mobile: true
       server: true
     summary: >-
-      accepts data from any Segment mobile or server source in cloud mode. It
-      does not accept data from a web source, and does not offer device-mode
-      connections.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
-    case: '6'
+    case: '5'
   settings:
   - name: apiKey
     display_name: API Key
@@ -19114,6 +19114,24 @@ items:
       required: false
       description: Map your Segment properties to Responsys Columns
       settings:
+      - name: columns
+        display_name: Segment Property Name
+        type: STRING
+        deprecated: false
+        required: true
+        string_validators:
+          regexp: ''
+        description: Enter the Segment Property Name.
+        settings: []
+      - name: fieldName
+        display_name: Responsys Column Name
+        type: STRING
+        deprecated: false
+        required: true
+        string_validators:
+          regexp: ''
+        description: Enter the Responsys column name.
+        settings: []
       - name: fieldType
         display_name: Responsys Column Type
         type: SELECT
@@ -19137,24 +19155,6 @@ items:
         deprecated: false
         required: false
         description: Mark this property as a Primary Key in Responsys.
-        settings: []
-      - name: columns
-        display_name: Segment Property Name
-        type: STRING
-        deprecated: false
-        required: true
-        string_validators:
-          regexp: ''
-        description: Enter the Segment Property Name.
-        settings: []
-      - name: fieldName
-        display_name: Responsys Column Name
-        type: STRING
-        deprecated: false
-        required: true
-        string_validators:
-          regexp: ''
-        description: Enter the Responsys column name.
         settings: []
     - name: mapEmail
       display_name: Map Email
@@ -19472,15 +19472,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
+      web: true
       mobile: true
       server: true
     summary: >-
-      accepts data from any Segment mobile or server source in cloud mode. It
-      does not accept data from a web source, and does not offer device-mode
-      connections.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
-    case: '6'
+    case: '5'
   settings:
   - name: apiKey
     display_name: API Key
@@ -20892,15 +20891,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
+      web: true
       mobile: true
       server: true
     summary: >-
-      accepts data from any Segment mobile or server source in cloud mode. It
-      does not accept data from a web source, and does not offer device-mode
-      connections.
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
-    case: '6'
+    case: '5'
   settings:
   - name: apiKey
     display_name: API Key

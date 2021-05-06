@@ -1,7 +1,11 @@
 <!-- in the file we're pulling from the API, "name" corresponds with the path to the yml blob for a specific destination.-->
 {% assign currentSlug = page.url | split: "/" | last %}
 {% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
+{% if page.connection_modes %}
+{% assign connectionModes = page.connection_modes %}
+{% else %}
 {% assign connectionModes = currentIntegration.connection_modes %}
+{% endif %}
 
 {% if currentIntegration.components.size > 0 %}
 <!--don't show a blank table if we can't find any info about these. -->
