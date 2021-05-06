@@ -132,6 +132,11 @@ Page calls are only sent to Braze if you have enabled either "Track All Pages" o
 
 ## Identify
 
+> info "Tip"
+> Add Segment's open-source [Middleware](https://github.com/segmentio/segment-braze-mobile-middleware) tool to optimize your integration. This tool limits [Data Point](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/) use by debouncing duplicate identify() calls from Segment. For more information, see the project's [README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).
+
+
+
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
@@ -148,8 +153,8 @@ If you are using a device-mode connection, Braze's SDK also automatically assign
 
 To send anonymous user data in cloud-mode, you must manually include the user's `braze_id` in all your Segment API calls in the `integrations.Braze.braze_id` or `context.integrations.Braze.braze_id` object.
 
-> tip ""
-> **Tip!** Braze is complex. If you decide to use the `braze_id`,  consider [contacting Segment Success Engineering](https://segment.com/help/contact/) or a Solutions Architect to validate your Braze implementation.
+> info "Tip"
+> Braze is complex. If you decide to use the `braze_id`,  consider [contacting Segment Success Engineering](https://segment.com/help/contact/) or a Solutions Architect to validate your Braze implementation.
 
 Segment's special traits recognized as Braze's standard user profile fields (in parentheses) are:
 
@@ -167,6 +172,11 @@ All other traits (except their [reserved user profile fields](https://www.braze.
 
 
 ## Track
+
+> info "Tip"
+> To lower [Data Point](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/) use, send only the Events which are relevant for campaigns and segmentation to the Braze destination. For more information, see /docs/protocols/schema/.
+
+
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
@@ -507,8 +517,8 @@ The following custom event appears in Braze on the user’s profile:
 
 ![](images/last_viewed-track-braze.png)
 
-> success ""
-> **Tip**: You can change the name of the “computed trait” event that Braze receives by going to the Personas Destination Connection Settings.
+> info "Tip"
+> You can change the name of the “computed trait” event that Braze receives in the Personas Destination Connection Settings.
 
 ### Audiences in Braze
 
@@ -548,8 +558,8 @@ The following custom event appears in Braze on the user’s profile when they en
 
 ![](images/dormant-track-braze.png)
 
-> success ""
-> **Tip**: You can change the name of the “Audience Entered” event that Braze receives from the Personas Destination Connection Settings.
+> info "Tip"
+> You can change the name of the “Audience Entered” event that Braze receives in the Personas Destination Connection Settings.
 
 ## Setting up Personas with Braze
 

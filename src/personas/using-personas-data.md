@@ -397,6 +397,7 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [hydra](/docs/connections/destinations/catalog/hydra/)
 - [mabl](/docs/connections/destinations/catalog/mabl/)
 - [tray.io](/docs/connections/destinations/catalog/tray-io/)
+- [Courier](/docs/connections/destinations/catalog/courier/)
 
 ## Personas Compatible Destinations: List Type
 
