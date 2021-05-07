@@ -18,7 +18,7 @@ const getLog = async (url = "") => {
     console.log(error)
   }
 }
-let libraries = ["analytics-android","analytics-ios", "analytics-react-native"]
+let libraries = ["analytics-android","analytics-ios", "analytics-react-native", "analytics-node", "analytics-python", "analytics-php", "analytics-go", "analytics-java", "analytics.NET"]
 
 const replace_token = /.+\r\n(-{2,}\r\n)|.+\r\n(={2,}\r\n)/mg;
 const subst = ``
