@@ -18,7 +18,10 @@ const getLog = async (url = "") => {
     console.log(error)
   }
 }
-let libraries = ["analytics-android","analytics-ios", "analytics-react-native", "analytics-java"]
+let libraries = ["analytics-android","analytics-ios", "analytics-react-native"]
+
+const replace_token = /.+\r\n(-{2,}\r\n)|.+\r\n(={2,}\r\n)/mg;
+const subst = ``
 
 const updateLog = async(library) => {
 
@@ -26,11 +29,13 @@ const updateLog = async(library) => {
   let url = API_URL+library+'/releases'
   const releases = await getLog(url)
   releases.forEach(release => {
+    let note = release.body
+    cleaned_note = note.replace(replace_token,subst)
     let updatedRelease = {
       version: release.name,
       url: release.html_url,
       date: release.published_at,
-      notes: release.body
+      notes: cleaned_note
     }
    releasesUpdated.push(updatedRelease) 
   })
@@ -46,4 +51,3 @@ const updateLog = async(library) => {
 libraries.forEach(library => {
   updateLog(library);
 });
-//updateLog(LIBRARY);
