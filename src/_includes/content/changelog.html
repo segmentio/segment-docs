@@ -9,7 +9,7 @@ site.data.changelogs.{{page.repo}}
 <p>Release date: {{release.date | date: "%b %d, %y" }}</p> -->
 {% if release.version != "" %}
 <h2>{{release.version}}</h2>
-<p>{{release.date | date: "%b %d, %Y" }}</p>
+<p class="released-on">Released on: <strong>{{release.date | date: "%b %d, %Y" }}</strong></p>
 {{release.notes | markdownify}}
 <a href = "{{release.url}}">More information</a>
 {% endif %}
