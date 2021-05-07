@@ -53,6 +53,10 @@ serve: package
 catalog: vendor/bundle
 	@node scripts/catalog.js
 
+.PHONY: changelog
+changelog: vendor/bundle
+	@node scripts/changelog.js
+
 .PHONY: sidenav
 sidenav: vendor/bundle
 	@node scripts/nav.js

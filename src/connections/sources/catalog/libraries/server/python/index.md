@@ -1,5 +1,6 @@
 ---
 title: Analytics for Python
+repo: analytics-python
 ---
 
 Our Python library lets you record analytics data from your Python code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
