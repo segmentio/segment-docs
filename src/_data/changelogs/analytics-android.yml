@@ -4,35 +4,37 @@ releases:
 - version: 4.9.4
   url: 'https://github.com/segmentio/analytics-android/releases/tag/4.9.4'
   date: '2021-05-04T00:16:56Z'
-  notes: "Version 4.9.4 (May 3, 2021)\r\n============================\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/761): Map product_id for a Product\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/767): Safely handle bad URIs when tracking deep links"
+  notes: "* [Fix](https://github.com/segmentio/analytics-android/pull/761): Map product_id for a Product\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/767): Safely handle bad URIs when tracking deep links"
 - version: 4.9.3
   url: 'https://github.com/segmentio/analytics-android/releases/tag/4.9.3'
   date: '2021-03-30T00:39:13Z'
-  notes: "Version 4.9.3 (Mar 29, 2021)\r\n============================\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/755): Check Float NaN and Infinity\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/758): Fix Incorrect Timestamps"
+  notes: "* [Fix](https://github.com/segmentio/analytics-android/pull/755): Check Float NaN and Infinity\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/758): Fix Incorrect Timestamps"
 - version: 4.9.2
   url: 'https://github.com/segmentio/analytics-android/releases/tag/4.9.2'
   date: '2021-03-22T19:13:24Z'
-  notes: "Version 4.9.2 (Mar 19, 2021)\r\n============================\r\n* [New](https://github.com/segmentio/analytics-android/pull/734): Make new lifecycle methods opt-out\r\n* [New](https://github.com/segmentio/analytics-android/pull/731): Kotlin Demo App\r\n* [New](https://github.com/segmentio/analytics-android/pull/739): Custom apiHost for Segment.IO and support multi-regional Segment\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/750): Add NonNull annotations to params for analytics constructor\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/749): Retry hasPermission in case of failure due to package manager being inactive\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/752): Marshal NaN and other special numbers to 0.0 and not produce malformed JSON"
+  notes: "* [New](https://github.com/segmentio/analytics-android/pull/734): Make new lifecycle methods opt-out\r\n* [New](https://github.com/segmentio/analytics-android/pull/731): Kotlin Demo App\r\n* [New](https://github.com/segmentio/analytics-android/pull/739): Custom apiHost for Segment.IO and support multi-regional Segment\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/750): Add NonNull annotations to params for analytics constructor\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/749): Retry hasPermission in case of failure due to package manager being inactive\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/752): Marshal NaN and other special numbers to 0.0 and not produce malformed JSON"
 - version: 4.9.0
   url: 'https://github.com/segmentio/analytics-android/releases/tag/4.9.0'
   date: '2020-10-16T00:33:56Z'
-  notes: "Version 4.9.0 (Oct 15, 2020)\r\n============================\r\n* [New](https://github.com/segmentio/analytics-android/pull/707): Remove the ability to natively report attribution information via Segment integrations\r\n* [New](https://github.com/segmentio/analytics-android/pull/727): Edge Function Support\r\n* [New](https://github.com/segmentio/analytics-android/pull/715): Add a Webhook Integration for viewing payloads\r\n* [New](https://github.com/segmentio/analytics-android/pull/728): Enable faster project settings refresh when debugging enabled"
+  notes: "* [New](https://github.com/segmentio/analytics-android/pull/707): Remove the ability to natively report attribution information via Segment integrations\r\n* [New](https://github.com/segmentio/analytics-android/pull/727): Edge Function Support\r\n* [New](https://github.com/segmentio/analytics-android/pull/715): Add a Webhook Integration for viewing payloads\r\n* [New](https://github.com/segmentio/analytics-android/pull/728): Enable faster project settings refresh when debugging enabled"
 - version: 4.8.2
   url: 'https://github.com/segmentio/analytics-android/releases/tag/4.8.2'
   date: '2020-07-30T20:07:08Z'
-  notes: "Version 4.8.2 (Jul 30, 2020)\r\n============================\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/686): Generate timestamps at call site rather than asynchronously"
+  notes: >-
+    * [Fix](https://github.com/segmentio/analytics-android/pull/686): Generate
+    timestamps at call site rather than asynchronously
 - version: 4.8.0
   url: 'https://github.com/segmentio/analytics-android/releases/tag/4.8.0'
   date: '2020-07-13T18:14:35Z'
-  notes: "Version 4.8.0 (Jul 13, 2020)\r\n============================\r\n\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/668): Fix: Proguard/R8 configuration for createValueMap\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/670): handle RuntimeException when calling `getActivityInfo`\r\n* [New](https://github.com/segmentio/analytics-android/pull/671): Experimental Nanosecond timestamps"
+  notes: "\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/668): Fix: Proguard/R8 configuration for createValueMap\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/670): handle RuntimeException when calling `getActivityInfo`\r\n* [New](https://github.com/segmentio/analytics-android/pull/671): Experimental Nanosecond timestamps"
 - version: 4.7.1
   url: 'https://github.com/segmentio/analytics-android/releases/tag/4.7.1'
   date: '2020-06-08T23:32:57Z'
-  notes: "Version 4.7.1 (Jun 8, 2020)\r\n============================\r\n\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/667): Use AndroidX lifecycle functions for App Fore/Backgrounded\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/666): Fix alias not overridden by cached value\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/663): Catch null intent data"
+  notes: "\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/667): Use AndroidX lifecycle functions for App Fore/Backgrounded\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/666): Fix alias not overridden by cached value\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/663): Catch null intent data"
 - version: 4.7.0
   url: 'https://github.com/segmentio/analytics-android/releases/tag/4.7.0'
   date: '2020-06-01T22:03:42Z'
-  notes: "Version 4.7.0 (Jun 1, 2020)\r\n============================\r\n\r\n* [New](https://github.com/segmentio/analytics-android/pull/655): Add type to device context\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/665): Prevent Global Context modification for one-time op\r\n* [New](https://github.com/segmentio/analytics-android/pull/664): Add support for Destination Middleware\r\n"
+  notes: "\r\n* [New](https://github.com/segmentio/analytics-android/pull/655): Add type to device context\r\n* [Fix](https://github.com/segmentio/analytics-android/pull/665): Prevent Global Context modification for one-time op\r\n* [New](https://github.com/segmentio/analytics-android/pull/664): Add support for Destination Middleware\r\n"
 - version: 4.6.0
   url: 'https://github.com/segmentio/analytics-android/releases/tag/4.6.0'
   date: '2020-05-21T18:17:59Z'

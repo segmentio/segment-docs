@@ -12,15 +12,15 @@ releases:
 - version: 4.1.2
   url: 'https://github.com/segmentio/analytics-ios/releases/tag/4.1.2'
   date: '2020-11-12T23:26:21Z'
-  notes: "Version 4.1.2 *(12 November, 2020)*\r\n-----------------------------\r\n* [Fix](https://github.com/segmentio/analytics-ios/pull/966) Standarized all SDK versions between dependency managers. Migrated to importing modules vs headers. Removed all linked frameworks.\r\n* [Fix](https://github.com/segmentio/analytics-ios/pull/963) Fixed missing userId in traits.\r\n* [Fix](https://github.com/segmentio/analytics-ios/pull/962) Fixed an issue with NSCopying preceding SEGSerialization.\r\n* [Fix](https://github.com/segmentio/analytics-ios/pull/957) Output log messages when events are trimmed from the queue.\r\n* [Fix](https://github.com/segmentio/analytics-ios/pull/956) Added category option to screen calls."
+  notes: "* [Fix](https://github.com/segmentio/analytics-ios/pull/966) Standarized all SDK versions between dependency managers. Migrated to importing modules vs headers. Removed all linked frameworks.\r\n* [Fix](https://github.com/segmentio/analytics-ios/pull/963) Fixed missing userId in traits.\r\n* [Fix](https://github.com/segmentio/analytics-ios/pull/962) Fixed an issue with NSCopying preceding SEGSerialization.\r\n* [Fix](https://github.com/segmentio/analytics-ios/pull/957) Output log messages when events are trimmed from the queue.\r\n* [Fix](https://github.com/segmentio/analytics-ios/pull/956) Added category option to screen calls."
 - version: 4.1.1
   url: 'https://github.com/segmentio/analytics-ios/releases/tag/4.1.1'
   date: '2020-10-27T22:37:42Z'
-  notes: "Version 4.1.1 *(27 October, 2020)*\r\n-----------------------------\r\n* [Fix](https://github.com/segmentio/analytics-ios/pull/955) Fixed example projects using old branch for SPM.\r\n* [Fix](https://github.com/segmentio/analytics-ios/pull/953) Repaired mac example project.\r\n* [Fix] Fixed carthage support for main library and destinations."
+  notes: "* [Fix](https://github.com/segmentio/analytics-ios/pull/955) Fixed example projects using old branch for SPM.\r\n* [Fix](https://github.com/segmentio/analytics-ios/pull/953) Repaired mac example project.\r\n* [Fix] Fixed carthage support for main library and destinations."
 - version: 4.1.0
   url: 'https://github.com/segmentio/analytics-ios/releases/tag/4.1.0'
   date: '2020-10-19T22:41:54Z'
-  notes: "Version 4.1.0 *(19 October, 2020)*\r\n-----------------------------\r\n* [New](https://github.com/segmentio/analytics-ios/pull/945) Added Webhook Integration.\r\n* [New](https://github.com/segmentio/analytics-ios/pull/942) Renamed module from `Analytics` to `Segment`.\r\n* [Fix](https://github.com/segmentio/analytics-ios/pull/941) Removed unused mobile attribution.\r\n* [New](https://github.com/segmentio/analytics-ios/pull/940) Added ability for customer to make their types serializable.\r\n* [New](https://github.com/segmentio/analytics-ios/pull/950) Added necessary changes for Edge Functions.\r\n"
+  notes: "* [New](https://github.com/segmentio/analytics-ios/pull/945) Added Webhook Integration.\r\n* [New](https://github.com/segmentio/analytics-ios/pull/942) Renamed module from `Analytics` to `Segment`.\r\n* [Fix](https://github.com/segmentio/analytics-ios/pull/941) Removed unused mobile attribution.\r\n* [New](https://github.com/segmentio/analytics-ios/pull/940) Added ability for customer to make their types serializable.\r\n* [New](https://github.com/segmentio/analytics-ios/pull/950) Added necessary changes for Edge Functions.\r\n"
 - version: 4.0.5 (pre-release)
   url: 'https://github.com/segmentio/analytics-ios/releases/tag/4.0.5'
   date: '2020-08-28T18:52:32Z'
@@ -32,11 +32,11 @@ releases:
 - version: 4.0.3
   url: 'https://github.com/segmentio/analytics-ios/releases/tag/4.0.3'
   date: '2020-07-07T00:06:33Z'
-  notes: "Version 4.0.3 (6 July, 2020)\r\n-----------------------------\r\n* [Fix](https://github.com/segmentio/analytics-ios/pull/917) Fixed an issue with old traits overwriting new traits.\r\n* [New](https://github.com/segmentio/analytics-ios/pull/915) Added full example flow with Swift Package Manager compatibility.\r\n* [Fix](https://github.com/segmentio/analytics-ios/pull/914) Fixed SwiftUI previews in macOS Catalyst builds."
+  notes: "* [Fix](https://github.com/segmentio/analytics-ios/pull/917) Fixed an issue with old traits overwriting new traits.\r\n* [New](https://github.com/segmentio/analytics-ios/pull/915) Added full example flow with Swift Package Manager compatibility.\r\n* [Fix](https://github.com/segmentio/analytics-ios/pull/914) Fixed SwiftUI previews in macOS Catalyst builds."
 - version: 4.0.2
   url: 'https://github.com/segmentio/analytics-ios/releases/tag/4.0.2'
   date: '2020-06-25T21:27:56Z'
-  notes: "Version 4.0.2 (25 June, 2020)\r\n-----------------------------\r\n* [New](https://github.com/segmentio/analytics-ios/pull/913) Separate public utils from private utils appropriately.\r\n* [New](https://github.com/segmentio/analytics-ios/pull/912) Payload Info & Traits Fixes.\r\n* [New](https://github.com/segmentio/analytics-ios/pull/911) Updated SPM for code coverage compatibility.\r\n* [New](https://github.com/segmentio/analytics-ios/pull/909) Removed Quick and Nimble, updated unit tests."
+  notes: "* [New](https://github.com/segmentio/analytics-ios/pull/913) Separate public utils from private utils appropriately.\r\n* [New](https://github.com/segmentio/analytics-ios/pull/912) Payload Info & Traits Fixes.\r\n* [New](https://github.com/segmentio/analytics-ios/pull/911) Updated SPM for code coverage compatibility.\r\n* [New](https://github.com/segmentio/analytics-ios/pull/909) Removed Quick and Nimble, updated unit tests."
 - version: 4.0.1
   url: 'https://github.com/segmentio/analytics-ios/releases/tag/4.0.1'
   date: '2020-06-18T22:07:31Z'
@@ -68,7 +68,7 @@ releases:
 - version: 3.8.0-beta.2
   url: 'https://github.com/segmentio/analytics-ios/releases/tag/3.8.0-beta.2'
   date: '2020-04-15T21:29:25Z'
-  notes: "Version 3.8.0-beta.2 *(15th April, 2020)*\r\n-----------------------------------------\r\n * [Fix](https://github.com/segmentio/analytics-ios/pull/861) Move SEGQueue from UserDefaults to caches directory.\r\n * [Fix](https://github.com/segmentio/analytics-ios/pull/862) Fix issues around plist->json conversion and nil values.\r\n * [Fix](https://github.com/segmentio/analytics-ios/pull/851) Expect dictionary as well as bool for integration enablement.\r\n * [Fix](https://github.com/segmentio/analytics-ios/pull/864) Differences observed in how iOS/android pass userId/anonId; Corrected.\r\n * [Fix](https://github.com/segmentio/analytics-ios/pull/866) Look at previously cached settings before blowing them away.\r\n * [Fix](https://github.com/segmentio/analytics-ios/pull/876) Added experimental feature to enable nanosecond granularity on timestamps.\r\n"
+  notes: " * [Fix](https://github.com/segmentio/analytics-ios/pull/861) Move SEGQueue from UserDefaults to caches directory.\r\n * [Fix](https://github.com/segmentio/analytics-ios/pull/862) Fix issues around plist->json conversion and nil values.\r\n * [Fix](https://github.com/segmentio/analytics-ios/pull/851) Expect dictionary as well as bool for integration enablement.\r\n * [Fix](https://github.com/segmentio/analytics-ios/pull/864) Differences observed in how iOS/android pass userId/anonId; Corrected.\r\n * [Fix](https://github.com/segmentio/analytics-ios/pull/866) Look at previously cached settings before blowing them away.\r\n * [Fix](https://github.com/segmentio/analytics-ios/pull/876) Added experimental feature to enable nanosecond granularity on timestamps.\r\n"
 - version: 3.7.1
   url: 'https://github.com/segmentio/analytics-ios/releases/tag/3.7.1'
   date: '2020-02-21T20:14:06Z'
