@@ -1,6 +1,6 @@
 ---
-title: Analytics-Android Changelog
+title: Analytics-React-Native Changelog
 repo: analytics-android
-strat: android
+strat: react-native
 ---
 {% include content/changelog.html %}

@@ -18,7 +18,7 @@ const getLog = async (url = "") => {
     console.log(error)
   }
 }
-let libraries = ["analytics-android","analytics-ios"]
+let libraries = ["analytics-android","analytics-ios", "analytics-react-native", "analytics-java"]
 
 const updateLog = async(library) => {
 
