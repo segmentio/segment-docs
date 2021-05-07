@@ -1,0 +1,17 @@
+.current-version {
+  float: right;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  width: 33%;
+  padding: 10px;
+  margin-right: 15px;
+
+  p {
+    font-size: 12px;
+  }
+}
+
+p.released-on {
+  font-size: 12px;
+  margin-top: 0px;
+}
