@@ -5,9 +5,7 @@ repo: analytics-android
 ---
 
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics)
-
-Analytics for Android makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
+  Analytics for Android makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
 
 Analytics for Android only supports any Android device running API 14 (Android 4.0) and higher. This includes Amazon Fire devices.

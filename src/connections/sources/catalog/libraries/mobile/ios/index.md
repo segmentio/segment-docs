@@ -5,18 +5,17 @@ repo: analytics-ios
 ---
 
 
-Analytics for iOS makes it simple to send your data to any analytics or marketing tool without having to learn, test or implement a new API every time.
-
-> info "Analytics-Swift Pilot"
-> A pilot release of the analytics-swift library is available at the [Analytics-Swift](https://github.com/segmentio/analytics-swift) repository. This library is governed by Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/), and should not be used in production scenarios.
-
-All of Segment's libraries are open-source, so you can [view Analytics for iOS on GitHub](https://github.com/segmentio/analytics-ios), or check out the Segment [browser and server-side libraries](/docs/connections/sources/catalog/) too.
-
-Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-ios/tags.atom).
-
+With Analytics for iOS, you can send your data to analytics or marketing tool, without needing to learn, test, or implement a new API with each update or addition.
+<br />
+<br />
+<br />
 
 > note ""
 > **Note:** Segment does not currently support tracking of watchkit extensions for the Apple Watch. [Email us](https://segment.com/requests/integrations/) if you're interested in a Watchkit SDK. For now we recommend tracking watch interactions using the iPhone app code.
+
+
+> info "Analytics-Swift Pilot"
+> A pilot release of the analytics-swift library is available at the [Analytics-Swift](https://github.com/segmentio/analytics-swift) repository. This library is governed by Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/), and should not be used in production scenarios.
 
 
 ## Analytics-iOS and Unique Identifiers

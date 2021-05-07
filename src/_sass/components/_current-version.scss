@@ -9,6 +9,17 @@
   p {
     font-size: 12px;
   }
+  .links {
+    margin-top: 15px;
+  }
+  a {
+    display: inline-block;
+    img {
+      height: 24px;
+      margin: 0; 
+      border: none;
+    }
+  }
 }
 
 p.released-on {
