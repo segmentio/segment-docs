@@ -7,12 +7,12 @@ site.data.changelogs.{{page.repo}}
 {% for release in changelog.releases limit:1 %}
 
 
-
+{% unless release.url == "" %}
 <div class="current-version">
 
 <p>Current Version: <a href="{{release.url}}" target="_blank">{{release.version}}</a></p>
 <p>Release Date: {{release.date | date: "%b %d, %Y" }}</p>
-{% endfor %}
+
 <div class="links">
 <a href="https:///github.com/segmentio/{{page.repo}}" target="_blank"><img src="/docs/images/github.svg" /></a>
 <a href="https:///github.com/segmentio/{{page.repo}}/tags.atom" target="_blank"><img src="/docs/images/atom.svg" /></a>
@@ -21,3 +21,5 @@ site.data.changelogs.{{page.repo}}
 {% endif %}
 </div>
 </div>
+{% endunless %}
+{% endfor %}
