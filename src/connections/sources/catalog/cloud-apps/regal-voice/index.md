@@ -53,6 +53,22 @@ The table below lists events that Regal Voice sends to Segment. These events app
    <td>sms.undelivered</td>
    <td>An sms was undelivered from RegalVoice to Contact</td>
   </tr>
+    <tr>
+   <td>sms.received</td>
+   <td>An sms was received from a contact</td>
+  </tr>
+    <tr>
+   <td>sms.conversation_completed</td>
+   <td>An SMS conversation between a contact and an agent was completed in the Regal Voice agent desktop</td>
+  </tr>
+    <tr>
+   <td>task.created</td>
+   <td>A task was created</td>
+  </tr>
+    <tr>
+   <td>call.completed</td>
+   <td>An inbound or outbound call with a contact was completed. This includes calls that were not answered</td>
+  </tr>
 </table>
 
 ## Event Properties
@@ -124,6 +140,86 @@ The table below lists events that Regal Voice sends to Segment. These events app
   <tr>
    <td>`sms_conversation_id`</td>
    <td>Unique ID of the conversation (if the sms was part of a two-way conversation with an Agent, rather than just an automated outbound sms)</td>
+  </tr>
+  <tr>
+   <td>`campaign_friendly_id`</td>
+   <td>Campaign Friendly Id as seen in the App</td>
+  </tr>
+  <tr>
+   <td>`campaign_id`</td>
+   <td>Campaign Id</td>
+  </tr>
+  <tr>
+   <td>`campaign_name`</td>
+   <td>Campaign Name</td>
+  </tr>
+  <tr>
+   <td>`queue`</td>
+   <td>Task Queue</td>
+  </tr>
+  <tr>
+   <td>`scheduling_agent_fullname`</td>
+   <td>Scheduling Agent Fullname</td>
+  </tr>
+  <tr>
+   <td>`scheduling_agent_id`</td>
+   <td>Scheduling Agent Id</td>
+  </tr>
+  <tr>
+   <td>`target_agent_fullname`</td>
+   <td>Target Agent Fullname</td>
+  </tr>
+  <tr>
+   <td>`target_agent_id`</td>
+   <td>Target Agent Id</td>
+  </tr>
+  <tr>
+   <td>`task_id`</td>
+   <td>Task Id</td>
+  </tr>
+  <tr>
+   <td>`type`</td>
+   <td>Task Type</td>
+  </tr>
+  <tr>
+   <td>`call_id`</td>
+   <td>Task Id for the call</td>
+  </tr>
+  <tr>
+   <td>`disposition`</td>
+   <td>Task disposition</td>
+  </tr>
+  <tr>
+   <td>`objections`</td>
+   <td>Task objections</td>
+  </tr>
+  <tr>
+   <td>`notes`</td>
+   <td>Task notes</td>
+  </tr>
+  <tr>
+   <td>`handle_time`</td>
+   <td>Number of seconds spent for the call task</td>
+  </tr>
+  <tr>
+   <td>`wrapup_time`</td>
+   <td>Number of seconds spent by agent to complete the call task after call end</td>
+  </tr>
+  <tr>
+   <td>`talk_time`</td>
+   <td>Number of seconds spent in the call</td>
+  </tr>
+  <tr>
+   <td>`started_at`</td>
+   <td>UTC timestamp when the call started</td>
+  </tr>
+  <tr>
+   <td>`ended_at`</td>
+   <td>UTC timestamp when the call ended</td>
+  </tr>
+  <tr>
+   <td>`completed_at`</td>
+   <td>UTC timestamp when the call task completed</td>
   </tr>
 </table>
 
