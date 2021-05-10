@@ -77,14 +77,14 @@ analytics.identify({
     {
       channel: "sms",
       subscribed: true,
-      subscribedAt: "2020-08-25T21:23:43Z",
+      timestamp: "2020-08-25T21:23:43Z",
       ip: "172.16.254.1",
       text: "By clicking the 'Submit' button below, I agree to receive automated marketing SMS and calls."
     }, 
     {
       channel: "voice",
       subscribed: true,
-      subscribedAt: "2020-08-25T21:23:43Z",
+      timestamp: "2020-08-25T21:23:43Z",
       ip: "172.16.254.1",
       text: "By clicking the 'Submit' button below, I agree to receive automated marketing SMS and calls."
   }]
@@ -95,7 +95,7 @@ Supported messaging channels are: `sms`, `voice` and `email`.
 
 The `ip` field is required if you are opting in users server side. 
 
-Make sure to include `subscribedAt` with the exact time the user opted in. Since traits are [cached](/docs/connections/sources/catalog/libraries/website/javascript/identity/#clearing-traits) and sent with subsequent `identify` calls, Regal Voice ignores opt-ins without a `subscribedAt` date. 
+Make sure to include `timestamp` with the exact time the user opted in. Since traits are [cached](/docs/connections/sources/catalog/libraries/website/javascript/identity/#clearing-traits) and sent with subsequent `identify` calls, Regal Voice ignores opt-ins without a `timestamp` date. 
 
 
 ## Track
