@@ -5,8 +5,6 @@ title: LaunchDarkly Source
 
 This source is maintained by LaunchDarkly. For any issues with the source, [contact the LaunchDarkly Support team](mailto:support@launchdarkly.com).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 
