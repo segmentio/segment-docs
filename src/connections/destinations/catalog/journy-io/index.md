@@ -54,7 +54,7 @@ analytics.track('Login Button Clicked')
 
 Segment sends Track calls to journy.io as a new events.
 
-Set `context.groupId` if you want to make the event account specific. This is useful in B2B use cases where you need to attribute your non-group calls to an account.
+Set `context.groupId` to record the event and attribute it to a specific account. This is useful in B2B use cases where you need to attribute your non-group calls to an account.
 
 ## Group
 
