@@ -16,7 +16,7 @@ This destination is maintained by Cliff.ai. For any issues with the destination,
 4. Select your Workspace and Source and click **Allow**.
 5. [Create a Data Stream on Cliff](https://app.cliff.ai/apps/anomaly-detection/data-streams/create-streams). Choose which Segment events and dimensions to start monitoring. Enter the name of the event and click the blue **+** button. Repeat to add dimensions. Click **Continue**.
    ![](images/cliff1.png)
-**Note**: Cliff will only ingest events that you selected here.
+   **Note**: Cliff ingests _only_ the events you select in this screen.
 6.  Select the interval at which Cliff will aggregate the data that Segment sends.
 ![](images/cliff2.png)
 
