@@ -78,4 +78,3 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 ```
 
 Segment sends Group calls to Cliff as a `group` event.
----
