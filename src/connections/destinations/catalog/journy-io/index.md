@@ -66,4 +66,4 @@ analytics.group('groupId123', {
 });
 ```
 
-Segment sends Group calls to journy.io as a create or update of an account. If a `userId` is set, the user will be linked to the account.
+Segment sends Group calls to journy.io where they create a new, or update existing accounts. If a `userId` is set, the user is linked to the account.
