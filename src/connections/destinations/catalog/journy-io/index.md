@@ -42,7 +42,7 @@ analytics.identify('userId123', {
 });
 ```
 
-Segment sends Identify calls to journy.io as a create or update of a user.
+Segment sends Identify calls to journy.io where they create a new, or update an existing user.
 
 ## Track
 
