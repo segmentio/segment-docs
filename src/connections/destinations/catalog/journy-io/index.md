@@ -52,7 +52,7 @@ If you aren't familiar with the Segment Spec, take a look at the [Track method d
 analytics.track('Login Button Clicked')
 ```
 
-Segment sends Track calls to journy.io as a create of an event.
+Segment sends Track calls to journy.io as a new events.
 
 Set `context.groupId` if you want to make the event account specific. This is useful in B2B use cases where you need to attribute your non-group calls to an account.
 
