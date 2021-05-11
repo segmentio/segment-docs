@@ -30,7 +30,7 @@ If you aren't familiar with the Segment Spec, take a look at the [Page method do
 analytics.page()
 ```
 
-Segment sends Page calls to journy.io as a `pageview`. Only page calls with `anonymousId` and `properties.url` will be accepted.
+Segment sends Page calls to journy.io as a `pageview`. Only page calls with `anonymousId` and `properties.url` are accepted.
 
 ## Identify
 
