@@ -1,5 +1,6 @@
 ---
 title: Analytics for PHP
+repo: analytics-php
 ---
 
 Our PHP library lets you record analytics data from your PHP code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
@@ -12,7 +13,7 @@ Want to stay updated on releases? Subscribe to the [release feed](https://github
 
 ## Getting Started
 
-Clone the repository from github into your desired application directory.
+Clone the repository from Github into your desired application directory.
 
 For composer users: we've [got you covered too](https://packagist.org/packages/segmentio/analytics-php).
 
