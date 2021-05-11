@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: journy.io Destination
+published: false
 ---
 
 [journy.io](https://www.journy.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) empowers your marketing, sales and support teams with actionable customer insights, needed to improve conversions, increase sales, and reduce churn, right in the tools they already use.
@@ -13,7 +14,7 @@ This destination is maintained by journy.io. For any issues with the destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %} 
+{% include content/connection-modes.md %}
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "journy.io" in the Destinations Catalog, and select the "journy.io" destination.
