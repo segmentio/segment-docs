@@ -8,7 +8,11 @@ layout: integration
   {% capture cloud-app-note %}{% include content/cloud-app-note.md %}{% endcapture %}
   {{ cloud-app-note | markdownify }}
 {% endif %}
-
+{%- if page.repo -%}
+{%- unless page.url contains "changelog" -%}
+{% include content/current-version.html %}
+{%- endunless -%}
+{%- endif -%}
 {{ content }}
 
 </div>
