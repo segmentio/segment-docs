@@ -134,7 +134,7 @@ We will only send `track` events when the following two conditions are met:
 2. A `userId` is included.
   - **Note:** If the `userId` doesn't match any existing users in Zendesk, we will return an error.
 
-**Mapping Users to an Email**: To map a Segment track event to a Zendesk Sunshine event by email, supply the email in the track call as `properties.email` so that Zendesk can tie the event to the user. Otherwise, Segment sends userId as `external_id`. If the email is provided in the track call, a javascript call may look like the following:
+**Mapping Users to an Email**: To map a Segment track event to a Zendesk Sunshine event by email, add the user's email address in the Track call as `properties.email`. This allows Zendesk to tie the event to the user. If there is no `properties.email`, Segment sends the `userId` as `external_id`. If the email is provided in the track call, a javascript call may look like the example below.
 
 ```js
 analytics.track('Article Completed', {
