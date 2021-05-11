@@ -126,7 +126,7 @@ analytics.track('Article Completed', {
 
 **Important:** To make track calls, a Zendesk [Sunshine plan](https://www.zendesk.com/pricing/?variant=a#platform) is required.
 
-When you call `track` we will send data about a user's activity to Zendesk.
+When make a Track call, Segment sends data about the user's activity to Zendesk.
 
 We will only send `track` events when the following two conditions are met:
 
