@@ -189,6 +189,7 @@ Each piece of frontmatter does something special!
 #### Content-related frontmatter
 - `beta`: default false. When true, show an "in beta" warning in the page layout (see the warning in `_includes/content/beta-note.md`)
 - `rewrite`: defaults to false. This is a legacy frontmatter flag that comes from the old `site-docs` repo, and which labels any destination that was rewritten in ~2018 to a standardized template. It disables the duplicate "connection modes" table that would otherwise show up in the boilerplate content at the end of the page.
+- `no-edit`: defaults to false. When true, hide the "Edit in Github/request changes".
 - `hide-boilerplate`: defaults to false. When true, none of the content from `destination-footer.md` is appended to the destination page.
 - `hide-cmodes`: defaults to false. A renaming of "rewrite" for more clarity, hides the connection modes table in the boilerplate.
 - `hide-personas-partial`: defaults to false. When true, hides the section of content from `destination-footer.md` that talks about being able to receive personas data.
