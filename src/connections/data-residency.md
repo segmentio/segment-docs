@@ -71,7 +71,33 @@ To begin with Local Data Storage, complete the following steps in your AWS accou
 
     Segment requires this access to write raw data to your regionally hosted S3 bucket. Specifically, this allows Segment (as the Segment S3-copy user) to use `s3:PutObject`. To enable encryption at rest, use the default S3 mechanism. If you have server-side encryption enabled with AWS KMS managed keys, see the additional [required configuration step](/docs/connections/storage/catalog/amazon-s3/#encryption). To edit the bucket policy, right-click the bucket name in the AWS management console, and select **Edit policy**.
 
-4. Create a new IAM role in your AWS account with a trust relationship to the role which allows Segment to use the Segment `workspace_id` as `externalID`.
+4. Create a new IAM role in your AWS account for Segment to assume. Attach the following trust relationship document to the role:
+    ```json
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "",
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": [
+              "arn:aws:iam::595280932656:role/segment-regional-archives-production-access"
+            ]
+          },
+          "Action": "sts:AssumeRole",
+          "Condition": {
+            "StringEquals": {
+              "sts:ExternalId": [
+                "WORKSPACE_ID"
+              ]
+            }
+          }
+        }
+      ]
+    }
+    ```
+  **Note**: This IAM role is used for replays only. The writes to the bucket are performed directly by the user added in step 3.
+
 5. Attach this IAM policy to the role defined in Step 4.
   ```json
     {
@@ -90,7 +116,7 @@ To begin with Local Data Storage, complete the following steps in your AWS accou
           "Effect": "Allow",
           "Action": "s3:*Object*",
           "Resource": [
-            "arn:aws:s3:::YOUR_BUCKET_NAME/*",
+            "arn:aws:s3:::YOUR_BUCKET_NAME/*"
           ]
         }
       ]

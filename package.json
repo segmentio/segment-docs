@@ -52,6 +52,7 @@
     "glightbox": "^3.0.6",
     "htm": "^3.0.4",
     "hyperlink": "^4.5.2",
+    "json-to-pretty-yaml": "^1.2.2",
     "preact": "^10.5.12",
     "search-insights": "^1.7.1",
     "tap-spot": "^1.1.1",

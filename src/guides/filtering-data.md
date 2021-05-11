@@ -68,25 +68,6 @@ The events filtered out of individual destinations using this method still arriv
 
 **Integration filters are all-or-nothing for each event.** If you require more detailed control over which events are sent to specific destinations, you can use Destination Filters to inspect the event payload, and conditionally drop the data or forward it to the destination.
 
-## Schema Defaults
-
-Schema defaults allow you to prevent unexpected or malformed data from a Source from getting into your downstream destinations. When you set your Schema Defaults to **Block**, Segment automatically prevents new Events from being sent to destinations. You can activate this for new events (including `track`, `page`, and `screen` events) or for new `identify` traits and `group` properties.
-
-Data blocked using schema defaults is permanently discarded, and cannot be recovered or replayed through Segment. You can forward blocked data to a new Source, but these events count toward your account MTU limits, and may not be worth saving.
-
-Schema Defaults are only available to Business Tier customers.
-
-You can find the Schema Defaults in the **Settings** tab for each Source, in **Schema Configuration** section.
-
-![](images/schema-defaults.png)
-
-**Schema Defaults Blocking Limitations**
-You cannot use Schema defaults if the source is connected to a Tracking Plan. If you're using Protocols and Tracking Plans, use [Protocols Tracking Plan Blocking](#protocols-tracking-plan-blocking-and-property-omission) to perform the same blocking. Learn more in the [Protocols Schema Configuration documentation](/docs/protocols/enforce/schema-configuration/).
-
-**Track** events blocked by Schema filters are not delivered to either device-mode or cloud-mode Destinations. That means if you send a blocked event from a client-side library like Analytics.js, it is not delivered to any device-mode Destinations.
-
-**Identify** and **Group** call traits blocked by Schema filters are **only** blocked from delivering to cloud-mode Destinations. Since device-mode destinations are connected directly to the user's device and don't pass through the Segment filters first, they still receive all traits regardless of whether they are blocked in the Segment Schema.
-
 ## Schema Event Filters
 
 You can use Schema Event Filters to discard and permanently remove Page, Screen and Track events from event-based sources, preventing them from reaching any destinations or warehouses. Use this if you know that you'll never want to access this data again. This functionality is similar to filtering with the Integrations object, however it can be changed from within the Segment app without touching any code.

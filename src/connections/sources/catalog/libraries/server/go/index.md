@@ -2,6 +2,7 @@
 title: Analytics for Go
 sourceTitle: 'Go'
 sourceCategory: 'Server'
+repo: analytics-go
 ---
 
 
