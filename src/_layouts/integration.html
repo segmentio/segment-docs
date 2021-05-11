@@ -90,6 +90,9 @@ layout: default
 
         <div class="docs__sidebar page__sidebar">
           <div class="sidebar sidebar--sticky sidebar--scroll">
+            {% unless page.no-edit %}
+              {% include sidebar/edit-tools.html %}
+            {% endunless %}
             {%- unless page.hide_toc -%}
               {% if page.integration_type == 'destination' %}
                 {% if page.hide-boilerplate == true %}
