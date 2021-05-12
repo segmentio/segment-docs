@@ -1,7 +1,6 @@
 ---
 rewrite: true
 title: journy.io Destination
-published: false
 ---
 
 [journy.io](https://www.journy.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) empowers your marketing, sales and support teams with actionable customer insights, needed to improve conversions, increase sales, and reduce churn, right in the tools they already use.
