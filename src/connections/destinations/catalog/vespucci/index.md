@@ -62,5 +62,3 @@ analytics.track('Login Button Clicked')
 ```
 
 Segment sends Track calls to Vespucci as an `action` event.
-
----
