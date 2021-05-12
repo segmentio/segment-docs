@@ -1,5 +1,6 @@
 ---
 title: Analytics for Java
+repo: analytics-java
 ---
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics)
