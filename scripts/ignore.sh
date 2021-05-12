@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # grab the latest entry from git log
-log=$(env -i cd .. && git log -1 --pretty=%B)
-echo $log
+log=$(env -i git log -1 --pretty=%B)
+
 # run a series of checks for common reasons that we shouldn't preview build.
 # if no checks match, exit with code 1 to run the build
 
