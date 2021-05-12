@@ -6,7 +6,7 @@
 
 [context.deploy-preview]
   command = "yarn develop"
-  ignore = "git log -1 --pretty=%B | ( grep -q '\\[netlify\\-ignore\\]' )"
+  ignore = "./scripts/ignore.sh"
 
 [[redirects]]
   from = "/docs/*"
