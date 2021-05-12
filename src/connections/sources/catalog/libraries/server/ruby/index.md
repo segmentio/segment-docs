@@ -19,7 +19,7 @@ All of Segment's server-side libraries are built for high-performance, so you ca
 If you're using bundler, add the following line to your project's `Gemfile`:
 
 ```ruby
-gem 'analytics-ruby', '~> 2.0.0', :require => 'segment/analytics'
+gem 'analytics-ruby', '~> 2.4.0', :require => 'segment/analytics'
 ```
 
 Or, if you're using the gem directly from your application, you'll need to:
@@ -43,7 +43,8 @@ That will create an instance of `Analytics` that you can use to send data to Seg
 
 If you're using Rails, you can stick that initialization logic in `config/initializers/analytics_ruby.rb` and omit the `require` call.
 
-**Note:** Our ruby gem makes requests asynchronously, which can sometimes be suboptimal and difficult to debug if you're pairing it with a queuing system like Sidekiq/delayed job/sucker punch/resqueue. If you'd prefer to use a gem that makes requests synchronously, you can check out [`simple_segment`](https://github.com/whatthewhat/simple_segment), an API-compatible drop-in replacement for the standard gem that does its work synchronously inline. Big thanks to [Mikhail Topolskiy](https://github.com/whatthewhat) for his stewardship of this alternative gem!
+> info ""
+> The analytics-ruby gem makes requests asynchronously, which can sometimes be suboptimal and difficult to debug if you're pairing it with a queuing system like Sidekiq/delayed job/sucker punch/resqueue. If you'd prefer to use a gem that makes requests synchronously, you can check out [`simple_segment`](https://github.com/whatthewhat/simple_segment), an API-compatible drop-in replacement for the standard gem that does its work synchronously inline. Big thanks to [Mikhail Topolskiy](https://github.com/whatthewhat) for his stewardship of this alternative gem!
 
 ## Identify
 
