@@ -16,13 +16,11 @@ This destination is maintained by Vespucci. For any issues with the destination,
 {% include content/connection-modes.md %}
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-2. Search for *Vespucci* in the Destinations Catalog, and select the *Vespucci* destination.
-3. Choose which Source should send data to the *Vespucci* destination.
-4. Go to the [Vespucci Dashboard](https://dashboard.vespuccianalytics.com).
-5. Go to your "Your Active Projects" section on your [Vespucci Dashboard](https://dashboard.vespuccianalytics.com). Click on the **+** button. Enter a name and select "Segment Destination" as the DataPipe.
-6. [Depending on your project configuration](https://vespuccianalytics.com/docs/#segment), select one of the two tracking methods and click "Create" to create your project.
-
-7. Take note of the API key associated with this project (it appears in the "Your Active Projects" section). Back in the Segment App, enter your API key in the *Vespucci* destination settings.
+2. Search for "Vespucci" in the Destinations Catalog, and select the Vespucci destination.
+3. Choose which Source should send data to the Vespucci destination.
+4. Go to your "Your Active Projects" section on your [Vespucci Dashboard](https://dashboard.vespuccianalytics.com). Click on the **+** button. Enter a name and select "Segment Destination" as the DataPipe.
+5. [Depending on your project configuration](https://vespuccianalytics.com/docs/#segment), select one of the two tracking methods and click "Create" to create your project.
+6. Take note of the API key associated with this project. Back in the Segment App, enter your API key in the Vespucci destination settings.
 
 ## Page
 
