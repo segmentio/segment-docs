@@ -9,7 +9,3 @@ An important point remember is that Segment de-duplicates on the event's `messa
 Since the api layer is de-duping during this window, duplicate events that are further than 24 hours apart from one another must be de-duped in the Warehouse. Segment also dedupes messages going into a Warehouse based on the `message_id`, which is the `id` column in a Segment Warehouse. Note that in these cases you will see duplications in end tools as there is no additional layer prior to sending the event to downstream tools.
 
 Keep in mind that Segment's libraries all generate `message_id`s for you for each event payload, with the exception of the Segment HTTP API, which assigns each event a unique `message_id` when the message is ingested. You can override these default generated IDs and manually assign a `message_id` if necessary.
-
-### What identifiers can the merged profile be queried/updated with?
-
-Any of the external IDs can be used to query a profile. When a profile is requested, we will traverse the merge graph and resolve all merged profiles. The result is a single profile, with the latest state of all traits, events, and identifiers.
