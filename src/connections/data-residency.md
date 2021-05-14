@@ -156,9 +156,11 @@ To complete the configuration of Local Data Storage:
 4. Click **Save**
 5. Navigate to *Privacy > Settings > Data Retention*
 6. Identify the Source in the source-level archive retention periods list
-7. Set the Retention for this source to the suggested value of `7 days` and click **Save**
+7. Set the Retention for this source to the suggested value of `7 days`* and click **Save**
 
 The Local Data Storage bucket will take roughly one hour to receive data.
+
+* The data retention can be set to any value available in the portal. If you require less than 7 days of data stored in the Segment-owned Archives, please reach out to support.
 
 ### Deletion from Local Data Storage
 
