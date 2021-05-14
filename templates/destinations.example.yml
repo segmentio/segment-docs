@@ -830,7 +830,7 @@ destinations:
       is `false`.
     settings: []
 - name: catalog/destinations/adwords-remarketing-lists
-  display_name: AdWords Remarketing Lists
+  display_name: AdWords Remarketing Lists (Customer Match)
   description: The Google Adwords audience destination syncs your Segment audiences
     into your Adwords account.
   type: STREAMING
