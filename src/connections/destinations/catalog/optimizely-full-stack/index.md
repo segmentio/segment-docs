@@ -80,7 +80,7 @@ Segment's server-side integration with Optimizely Full Stack does not support no
 When implementing Optimizely Full Stack using cloud-mode, Segment will map `track` events to Optimizely `track` events on our servers and deliver the data to your Optimizely project as usual.
 
 > note ""
-> **Note:** If you are using Optimizely SDKs v1.x or v2.x: if a visitor has any `activate` or `isFeatureEnabled` calls, their `attributes` object for these calls must match the `attributes` object passed to any `track` calls for that user id so that it can be correctly attributed on the Optimizely results page.
+> **Note:** If you are using Optimizely SDKs v1.x or v2.x: if a visitor has any `activate` or `isFeatureEnabled` calls, the `attributes` object for these calls must match the `attributes` object passed to any `track` calls for that user id so that it can be correctly attributed on the Optimizely results page.
 
 If you are using Optimizely SDKs v3+, [Easy Event Tracking](https://blog.optimizely.com/2019/02/26/introducing-easy-event-tracking-the-easier-way-to-understand-and-optimize-the-customer-journey/) is enabled by default for decision events. Set up does not require maintaining the attributes of a user as long as the user id stays the same between Optimizely `activate` and `isFeatureEnabled` calls and Segment `track` calls to have Optimizely `metrics` populated in the Optimizely results page. If you would like to segment your Optimizely results by user `attribute`, then make sure the `attributes` passed in for the `activate` and `isFeatureEnabled` calls match the `attributes` passed in for the `track` calls for that user id.
 
