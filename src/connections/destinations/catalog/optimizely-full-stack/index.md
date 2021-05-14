@@ -60,8 +60,8 @@ Segment also handles the following mapping:
 
 `revenue` values should be passed as a Segment `property`. The value should be an integer and represent the value in cents, so, for example, $1 should be represented by `100`.
 
-> note ""
-> **Note:** [Custom Event Tags](https://docs.developers.optimizely.com/full-stack/docs/include-event-tags) in Optimizely, which include all Event Tags except `revenue` and `value`, are not displayed on the Optimizely results page, however they are available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export) report. Event Tags can be strings, integers, floating point numbers, or boolean values. Optimizely will reject events with any other data types (e.g. arrays).
+> note "Note:"
+> [Custom Event Tags](https://docs.developers.optimizely.com/full-stack/docs/include-event-tags) in Optimizely, which include all Event Tags except `revenue` and `value`, are not displayed on the Optimizely results page, however they are available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export) report. Event Tags can be strings, integers, floating point numbers, or boolean values. Optimizely rejects events with any other data types (for example, arrays).
 
 Segment defaults to identifying users with their `anonymousId`. Enabling the "Use User ID" setting in your Segment settings means that only `track` events triggered by identified users are passed downstream to Optimizely. You may optionally fall back to `anonymousId` when `userId` is unavailable by setting `fallbackToAnonymousId` to `true`.
 
