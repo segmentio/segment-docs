@@ -24,7 +24,7 @@ The Access Management page has three tabs: [Users (team members)](/docs/segment-
 
 # Access Management Overview
 
-Access settings are applied at the workspace level. A Segment user can be have access to one or more workspaces, either as an `owner` or `member` of each.
+Access settings are applied at the workspace level. A Segment user can have access to one or more workspaces, either as an `owner` or `member` of each.
 Users access their Segment account with either email/password credentials, or by using Single Sign On.
 
 `Owners` manage all aspects of the workspace, and `members` can have access to specific products and resource types.

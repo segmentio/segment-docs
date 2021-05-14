@@ -160,3 +160,8 @@ You can sync data from your…
 Yes, Personas now supports the ability to send an audience or computed trait to two or more accounts of the same partner. The most common use case is multiple Facebook, or Adwords ad accounts.
 
 ![](images/multi-facebook.png)
+
+
+### What identifiers can the merged profile be queried/updated with?
+
+Any of the external IDs can be used to query a profile. When a profile is requested, we will traverse the merge graph and resolve all merged profiles. The result is a single profile, with the latest state of all traits, events, and identifiers.
