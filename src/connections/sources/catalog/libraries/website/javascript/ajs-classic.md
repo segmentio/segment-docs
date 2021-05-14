@@ -1,5 +1,5 @@
 ---
-title: Analytics.js 2.0 (Javascript) Source
+title: Analytics.js Classic (Javascript) Source
 redirect_from:
   - '/connections/sources/catalog/libraries/website/analytics.js/'
   - '/sources/website/javascript/'
@@ -7,26 +7,10 @@ redirect_from:
 strat: ajs
 ---
 
-Analytics.js 2.0, the latest version Segment's Javascript source, enables you to send your data to any tool without having to learn, test or use a new API every time.
+Analytics.js, Segment's Javascript source, makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
-## Benefits of Analytics.js 2.0
-
-The Analytics.js 2.0 Beta provides two key benefits over the previous version.
-
-### Performance
-
-Analytics.js 2.0 provides a reduction in page load time, which improves overall site performance. Its package size is **~70%** smaller than the previous Analytics.js.
-
-> info ""
-> There are many factors that impact page load time, including page weight, network conditions, and hosting locations.
-
-### Developer experience
-
-Analytics.js 2.0 introduces new ways for developers to augment events throughout the event timeline. This enables teams to support:
-
-- New privacy and consent controls before an event occurs
-- Enriching events with additional customer or page context in-flight using middleware
-- Collecting better metrics related to deliverability *after* a message is sent
+> info "Analytics.js 2.0"
+> A new version of Analytics.js is available for use in Beta. Click [here](/docs/connections/sources/catalog/libraries/website/javascript/) for more information.
 
 ## Getting Started
 
@@ -656,30 +640,30 @@ Analytics.js tracks across subdomains out of the box; all of our destinations fu
 
 ## Analytics.js Performance
 
-The Analytics.js library and all of the destination libraries are loaded with the [HTML script `async` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async). This also means that Segment fires methods asynchronously, so you should adjust your code accordingly if you require that events be sent from the browser in a specific order.
+The Analytics.js library and all of the destination libraries are loaded with the [HTML script `async` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async). This also means that Segment methods are fired asynchronously, so you should adjust your code accordingly if you require that events be sent from the browser in a specific order.
 
-While many tools require access to the DOM or cookies, for the Zendesk, Salesforce, and MailChimp destinations, Segment does not need to load a native Javascript library! Instead, Segment's servers send data to the end-tools.
+While many tools require access to the DOM or cookies, for our Zendesk, Salesforce, and MailChimp destinations, Segment does not need to load a native Javascript library! Instead data is sent from Segment's servers to the end-tools. We aim to expand on this front in the future.
 
-Segment loads the libraries required for your **enabled** destinations. When you disable a destination, the custom version of Analytics.js loaded on your site stops requesting that library.
+Segment only loads the libraries required for your **enabled** destinations. When you disable a destination, the custom version of Analytics.js loaded on your site stops requesting that library.
 
-Using Analytics.js does not offer a large performance benefit, but is more performant than installing each of the destinations individually. And as more destinations move to accept data directly from Segment, you'll receive more performance benefits automatically.
+Using Analytics.js does not offer a _huge_ performance benefit, but it is more performant than installing each of the destinations individually. And as more destinations move to accept data directly from Segment, you'll receive more performance benefits automatically.
 
-One option, if you don't want to use any bundled third-party tools, is to use the browserify'd [analytics-node](https://github.com/segmentio/analytics-node) package. <!-- TODO LR note: WTF does "browserified" mean-->
+One option, if you don't want to use any bundled third-party tools, is to use our browserify'd [analytics-node](https://github.com/segmentio/analytics-node) package. <!-- TODO LR note: WTF does "browserified" mean-->
 
 ### Bundle size
 
-Segment's Analytics.js Javascript snippet increases the page size by about 1.1KB.
+Segment's Analytics.js Javascript snippet only increases the page size by about 1.1KB.
 
-The snippet asynchronously requests and loads a customized Javascript bundle (`analytics.min.js`), which contains the code and settings needed to load your [device-mode destinations](/docs/connections/destinations/#connection-modes). The size of this file changes depending on the number of and which destinations you enable.
+However, the snippet asynchronously requests and loads a customized Javascript bundle (`analytics.min.js`), which contains the code and settings needed to load your [device-mode destinations](/docs/connections/destinations/#connection-modes). The size of this file changes depending on how many and which destinations you enable.
 
 Without any destinations enabled, the `analytics.min.js` file is about 62KB. Each time you enable a destination, the file's size may increase slightly.
 
 ### Local storage cookies used by Analytics.js
 
-Analytics.js uses `localstorage` cookies if you have retries enabled, to keep track of retry timing.
+Analytics.js uses a few `localstorage` cookies if you have retries enabled, to keep track of retry timing.
 - The `ack` cookie is a timer used to see if another tab should claim the retry queue.
 - The `reclaimStart` and `reclaimEnd` cookies determine if a tab takes over the queue from another tab.
-- The `inProgress` and `queue` cookies track events in progress, and events queued for retry.
+- The `inProgress` and `queue` cookies track events in progress, and events that are queued to be retried.
 
 For more information, visit the [Segment localstorage-retry library](https://github.com/segmentio/localstorage-retry).
 
