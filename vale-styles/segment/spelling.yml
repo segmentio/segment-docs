@@ -2,6 +2,3 @@ extends: spelling
 message: "Did you really mean '%s'?"
 level: error
 filters:
-  # Ignore all contents in Ruby liquid tags.
-  - {% .* %}
-  - {{ .* }}
