@@ -8,18 +8,23 @@ log=$(env -i git log -1 --pretty=%B)
 
 # ignore for simple typo fixes
 if echo "$log" | grep -q 'typo'; then
+echo "Build ignored because 'typo' is in the commit message."
 exit
 # ignore link / url updates
 elif echo "$log" | grep -q 'link'; then
+echo "Build ignored because 'link' is in the commit message."
 exit
 # ignore when the ignore tag is explicitly added
 elif echo "$log" | grep -q 'netlify\-ignore'; then
+echo "Build ignored because it was requested."
 exit 
 # ignore dependabot updates
 elif echo "$log" | grep -q 'dependabot'; then
+echo "Ignoring dependabot update"
 exit
 # ignore when master is merged into a branch
 elif echo "$log" | grep -q 'Merge branch \SMaster\S'; then
+echo "Build ignored because it's only an update from the main branch."
 exit
 else
 exit 1
