@@ -351,7 +351,7 @@ The maximum payload size for an incoming webhook payload is 512 KiB.
 
 **What is the timeout for a function to execute?**
 
-The execution time limit is 5 seconds but we strongly recommend keeping your execution time as low as possible. You can achieve this by ensuring that if you are making multiple external requests, they are made concurrently using async / await.
+The execution time limit is 5 seconds, however Segment strongly recommends that you keep execution time as low as possible. If you are making multiple external requests you can use async / await  to make them concurrently to help keep execution time low.
 
 **What does "ReferenceError: exports is not defined" mean?**
 
