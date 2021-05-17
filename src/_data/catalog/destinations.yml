@@ -1224,10 +1224,13 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
-    summary: testing
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
+    case: '5'
   settings:
   - name: apiKey
     display_name: API Key
@@ -3695,6 +3698,7 @@ items:
       - eu
       - us06
       - us08
+      - us05
     description: 'Choose your Appboy Gateway (ie. US 01, US 02, EU 01, etc.).'
     settings: []
   - name: automaticallyDisplayMessages
@@ -8243,10 +8247,13 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
-    summary: testing
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
+    case: '5'
   settings:
   - name: externalIdProp
     display_name: Alternative External ID Field
@@ -8392,10 +8399,14 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
+      mobile: true
       server: true
-    summary: testing
+    summary: >-
+      accepts data from any Segment mobile or server source in cloud mode. It
+      does not accept data from a web source, and does not offer device-mode
+      connections.
     cmode_type: cloud-only
+    case: '6'
   settings:
   - name: limitedDataUse
     display_name: Limited Data Use
@@ -16707,10 +16718,14 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
+      mobile: true
       server: true
-    summary: testing
+    summary: >-
+      accepts data from any Segment mobile or server source in cloud mode. It
+      does not accept data from a web source, and does not offer device-mode
+      connections.
     cmode_type: cloud-only
+    case: '6'
   settings:
   - name: apiKey
     display_name: App ID/Key
@@ -17738,10 +17753,14 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
+      mobile: true
       server: true
-    summary: testing
+    summary: >-
+      accepts data from any Segment mobile or server source in cloud mode. It
+      does not accept data from a web source, and does not offer device-mode
+      connections.
     cmode_type: cloud-only
+    case: '6'
   settings:
   - name: account
     display_name: account
@@ -18787,10 +18806,13 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
-    summary: testing
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
+    case: '9'
   settings:
   - name: apiKey
     display_name: API Key
@@ -20024,10 +20046,14 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
+      mobile: true
       server: true
-    summary: testing
+    summary: >-
+      accepts data from any Segment mobile or server source in cloud mode. It
+      does not accept data from a web source, and does not offer device-mode
+      connections.
     cmode_type: cloud-only
+    case: '6'
   settings:
   - name: apiKey
     display_name: API Key
@@ -21989,10 +22015,14 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
+      mobile: true
       server: true
-    summary: testing
+    summary: >-
+      accepts data from any Segment mobile or server source in cloud mode. It
+      does not accept data from a web source, and does not offer device-mode
+      connections.
     cmode_type: cloud-only
+    case: '6'
   settings:
   - name: account
     display_name: account
@@ -23488,10 +23518,13 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
-    summary: testing
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
     cmode_type: mixed
+    case: '9'
   settings:
   - name: disableHeartbeat
     display_name: Disable the Totango Heartbeat
@@ -25453,10 +25486,13 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
-    summary: testing
-    cmode_type: ''
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It can accept
+      device-mode data from both web and mobile sources.
+    cmode_type: all
+    case: '4'
   settings:
   - name: apiKey
     display_name: API Key
@@ -25732,10 +25768,13 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
-    summary: testing
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
     cmode_type: cloud-only
+    case: '5'
   settings:
   - name: orgToken
     display_name: Organization Token
