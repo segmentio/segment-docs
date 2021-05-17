@@ -17,3 +17,20 @@ items:
       It does not accept data from a web source, and does not offer device-mode connections.
     cmode_type: mixed
     case: '6'
+- slug: iterable
+  components:
+  - type: WEB
+  - type: CLOUD
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer device-mode connections.
+    cmode_type: mixed
+    case: '5'
