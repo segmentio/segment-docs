@@ -347,11 +347,11 @@ The webhook payload retries up to 5 times with an exponential backoff for the fu
 
 **What is the maximum payload size for the incoming webhook?**
 
-The maximum payload size for an incoming webhook payload is 2MB.
+The maximum payload size for an incoming webhook payload is 512 KiB.
 
 **What is the timeout for a function to execute?**
 
-The execution time limit is 1 second.
+The execution time limit is 5 seconds but we strongly recommend keeping your execution time as low as possible. You can achieve this by ensuring that if you are making multiple external requests, they are made concurrently using async / await.
 
 **What does "ReferenceError: exports is not defined" mean?**
 
