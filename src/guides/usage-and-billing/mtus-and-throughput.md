@@ -18,7 +18,7 @@ Depending on your Segment account type, your plan might include a throughput lim
 
 For example, if your workspace's throughput limit is set to 250, this means that you can send a combined total of 250 API calls and objects to Segment each month per MTU you've paid for in your plan. If you have a 10,000 MTU plan, this means you can send up to a total of 2.5 million API calls and objects each month.
 
-These objects and API calls are not tied to a specific user, but are an aggregate number applied to your workspace. Most customers never hit this limit, and Business tier plans are often have custom limits.
+These objects and API calls are not tied to a specific user, but are an aggregate number applied to your workspace. Most customers never hit this limit, and Business tier plans often have custom limits.
 
 #### Batching and throughput limits
 
