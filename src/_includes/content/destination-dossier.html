@@ -26,6 +26,9 @@
 {% endif %}
 
 {% unless destinationInfo.connection_modes.case == "0"%}
+{% if page.cmode-override %}
+{% assign destinationInfo = site.data.catalog.overrides.items % | where: "slug", thisDestination | first %}
+{% endif %}
 <p>
 {{ destinationInfo.display_name }} {{ destinationInfo.connection_modes.summary }} {% if destinationInfo.connection_modes.case == "mixed" %}  {{destinationInfo.display_name}} accepts device-mode data from {% if destinationInfo.connection_modes.device.mobile and destinationInfo.connection_modes.device.web %} mobile and web{% elsif destinationInfo.connection_modes.device.mobile %} mobile{% elsif destinationInfo.connection_modes.device.web %} web{% endif %} sources.{% endif %} {% if destinationInfo.browserUnbundlingSupported %} You can change the {{destinationInfo.display_name}} connection mode for Analytics.js sources from the destination settings in the Segment web app.
 {% endif %}
