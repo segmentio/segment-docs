@@ -35,7 +35,7 @@ If you aren't familiar with the Segment Spec, take a look at the [Track method d
 ```js
 analytics.track('Login Button Clicked')
 ```
-Segment sends Track calls to HeadsUp as a `track` event. Use Track events to perform metric aggregations, such as how many times a user has logged into your application in the past 30 days.
+Segment sends Track calls to HeadsUp as a `track` event. Use Track events to perform metric aggregations, such as how many times a user logged into your application in the past 30 days.
 
 ## Page
 
