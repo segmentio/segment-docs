@@ -12,7 +12,7 @@ When you enable Ramen in the Segment web app, your changes appear in the Segment
 ​
 ## Identify
 ​
-When you call [`identify`](/docs/connections/spec/identify) on Analytics.js, it identifies the logged-in user to Ramen.
+When you make an [Identify call](/docs/connections/spec/identify) on Analytics.js, it identifies the logged-in user to Ramen.
 ​
 Here is a full example, which we will annotate below:
 ​
