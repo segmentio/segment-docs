@@ -3,7 +3,7 @@ title: HeadsUp AI Destination
 rewrite: true
 ---
 
-[HeadsUp AI](https://headsup.ai?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows customers to build metrics on top of their existing segment analytics to better understand customer behavior and gauge health scores.
+[HeadsUp AI](https://headsup.ai?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows customers to build metrics on top of their existing Segment analytics to better understand customer behavior and gauge health scores.
 
 This destination is maintained by HeadsUp. For any issues with the destination, [contact the HeadsUp AI Support team](mailto:administration@headsup.ai).
 
