@@ -73,6 +73,9 @@ When you’re finished creating your journey, click Save as Draft in the bottom-
 
 When you publish a journey, it becomes active. To publish a journey, click Publish Journey from the Journey Overview. You can also click Publish Journey in the bottom-right corner of the Journey Builder.
 
+> info ""
+> After you publish a Journey, it may take up to three hours for user preview to display.
+
 #### When you publish a Journey
 
 - You can edit the Journey name, description, and destination steps.
