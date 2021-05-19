@@ -14,10 +14,10 @@ For more information, see [Setting up your Sources](/docs/personas/quickstart/#s
 
 1. From your Personas space, click the **Journeys** tab.
 2. Click **+ New Journey** to access the Journey builder.
-3. Click **+ Add Entry Condition**. The entry condition is the first step in the journey and is where you define the entry criteria. It also provides the only opportunity to both enable historical data and preview users before you publish.
+3. Click **+ Add Entry Condition**. The entry condition is the first step in the journey and is where you define the entry criteria. On this step, you can both enable historical data and preview users before you publish.
    1. Add a name that describes the step, for example `New users`.
    2. Add conditions for inclusion, or import conditions from an existing audience to define the group of users who will enter the journey.
-   3. Check **Use historical data** to allow users who have previously matched the entry criteria to enter the journey. Otherwise, only users who meet the entry conditions moving forward will enter the journey.
+   3. Check **Use historical data** to allow users who have matched the entry criteria to enter the journey. Otherwise, users who meet the entry conditions moving forward will enter the journey.
    4. Click **Preview** to see the list of users and ensure you've defined the right conditions.
    5. Click **Save**.
 4. You should see the entry condition on the Journey Builder canvas. It may take up to 2 minutes to see the estimated number of users in the journey.
@@ -29,7 +29,7 @@ Journeys provide 5 step types which you can add after the entry condition.
 
 ![Step types](images/journey_step-types.png)
 
-**Wait for condition** defines the conditions which a user must fulfill to be moved from the previous step, to the next step. You can define conditions from scratch, or import conditions from an existing audience.
+**Wait for condition** defines the conditions which a user must fulfill to move from the previous step, to the next step. You can define conditions from scratch, or import conditions from an existing audience.
 
 ![wait for condition](images/journey_wait-for-condition.png)
 
@@ -59,7 +59,7 @@ Click the **…** icon at the end of a row in the Journey List View to, and sele
 When you publish a journey, it becomes active. To publish a journey, click **Publish Journey** from the Journey Overview. You can also click **Publish Journey** in the bottom-right corner of the Journey Builder.
 
 > info ""
-> Once published, select portions of a Journey are uneditable. For more information, see the difference between Draft and Published journeys below.
+> Once published, you cannot edit select portions of a Journey. For more information, see the difference between Draft and Published journeys below.
 
 ### Draft Journeys
 
@@ -73,13 +73,14 @@ When you’re finished creating your journey, click Save as Draft in the bottom-
 
 When you publish a journey, it becomes active. To publish a journey, click Publish Journey from the Journey Overview. You can also click Publish Journey in the bottom-right corner of the Journey Builder.
 
-#### When a journey is published
-- You can edit only the Journey name, description, and destination steps.
+#### When you publish a Journey
+
+- You can edit the Journey name, description, and destination steps.
 - You cannot add, edit, or delete other steps in the journey.
-- User counts are computed. It may take a few hours for user counts to be available.
-- Once user counts are computed and available, you’ll see the list of users at each step of the journey.
+- Journeys computes user counts. It may take a up to 3 hours for user counts to be available.
+- Once Journeys computes user counts and makes them available, you’ll see the list of users at each step of the journey.
 - You can click a user profile to see the list of Journey they belong to.
-- Data is sent to destinations, and updates in real-time.
+- Journeys sends data to destinations, and updates in real-time.
 
 ## Edit name, description, and destinations
 
