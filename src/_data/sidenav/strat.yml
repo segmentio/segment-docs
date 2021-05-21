@@ -93,7 +93,7 @@ sections:
     title: Analytics.js (Javascript) Source
   - path: /connections/sources/catalog/libraries/website/javascript/ajs-classic
     title: Analytics.js Classic
-  - path: connections/sources/catalog/libraries/website/javascript/migrate-to-ajs2
+  - path: /connections/sources/catalog/libraries/website/javascript/migrate-to-ajs2
     title: Migrate to Analytics.js 2.0
   - path: /connections/sources/catalog/libraries/website/javascript/supported-browsers
     title: Analytics.js supported browsers
