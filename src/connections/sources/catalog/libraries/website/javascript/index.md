@@ -9,16 +9,20 @@ strat: ajs
 
 Analytics.js 2.0, the latest version Segment's Javascript source, enables you to send your data to any tool without having to learn, test or use a new API every time.
 
+> note ""
+> Analytics.js 2.0 is available to Segment customers subject to the terms of the subscription agreement between Segment and the customer, and is not available as an open-source project.
+
+
 ## Benefits of Analytics.js 2.0
 
 The Analytics.js 2.0 Beta provides two key benefits over the previous version.
 
 ### Performance
 
-Analytics.js 2.0 provides a reduction in page load time, which improves overall site performance. Its package size is **~70%** smaller than the previous Analytics.js.
+Analytics.js 2.0 provides a reduction in page load time, which improves site performance. Its package size is **~70%** smaller than the previous Analytics.js.
 
 > info ""
-> There are many factors that impact page load time, including page weight, network conditions, and hosting locations.
+> Many factors impact page load time, including page weight, network conditions, and hosting locations.
 
 ### Developer experience
 
