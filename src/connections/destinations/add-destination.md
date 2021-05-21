@@ -127,11 +127,10 @@ You can add multiple instances of a destination using the Segment Config API. Se
 
 ### Multi-instance destinations and Device-mode
 
-
-- **Mobile sources, and the legacy Project source, cannot connect to multiple instances of a destination.**
-    - **Warning**: If you bundle one instance of a destination in a mobile source but have other instances of that destination connected to that source you might see unexpected and inconsistent data.
 - **You can connect a source to up to 10 instances of a destination if all of the instances use cloud-mode.** Destinations using cloud-mode receive data directly from the Segment servers.
-- **Non-mobile sources can only connect to one *device-mode* instance of a destination, in addition to up to 10 cloud-mode instances.** A web browser device-mode instance of a destination receives data directly from the user’s browser (instead of through the Segment servers), by bundling a copy of destination’s code with the Segment SDK. Segment can’t bundle multiple copies of the destination SDK and so it can’t send data to multiple instances of the destination from the browser.
+- **Mobile sources, and the legacy Project source, can connect to multiple instances of cloud-mode only destinations.** See the list of [cloud-mode only destinations](#cloud-mode-only). Moble and Project sources cannot connect to multiple instances of [cloud-mode and device-mode destinations](#cloud-mode-and-device-mode).
+    - **Warning**: If you bundle one instance of a destination in a mobile source but have other instances of that destination connected to that source you might see unexpected and inconsistent data.
+- **Non-mobile sources can only connect to one *device-mode* instance of a destination, in addition to up to 10 cloud-mode instances.** A web browser sending to a destination in device-mode sends data directly from the user’s browser (instead of through the Segment servers), by bundling a copy of destination’s code with the Segment SDK. Segment can’t bundle multiple copies of the destination SDK and so it can’t send data to multiple instances of the destination from the browser.
 - **You cannot connect a source to more than one instance of a destination that operates in device-mode only**. These destinations can only accept data from code directly on the user’s device, and Segment cannot include duplicates of that code for a single source.
 
 For more information see [the compatible destination lists below](#multi-instance-compatible-destinations).
@@ -162,7 +161,7 @@ In this example:
 
 - Events sent with this `Mixpanel` setting are **not** sent to instances of Mixpanel.
 - Events sent to any Adobe Analytics destinations with this `Adobe Analytics` setting use the same `marketingCloudVisitorId` value specified.
-
+It is not possible to use the integrations object to send data to individual destination instances. 
 
 ### Multi-instance compatible destinations
 
@@ -172,7 +171,6 @@ The sections below list the most popular multi-instance Segment destinations. Th
 For the following destinations, a single source can connect to up to 10 instances of the destination in cloud-mode, and **up to one instance in device-mode**.
 
 - [Adobe Analytics](/docs/connections/destinations/catalog/adobe-analytics/)
-- [Amplitude](/docs/connections/destinations/catalog/amplitude/)
 - [Braze](/docs/connections/destinations/catalog/braze/)
 - [Customer.io](/docs/connections/destinations/catalog/customer-io)
 - [Google Analytics](/docs/connections/destinations/catalog/google-analytics/)
@@ -193,6 +191,7 @@ For the following destinations, a single source can connect to up to 10 instance
 - [Amazon Kinesis Firehose](/docs/connections/destinations/catalog/amazon-kinesis-firehose/)
 - [Amazon Lambda](/docs/connections/destinations/catalog/amazon-lambda/)
 - [Amazon Personalize](/docs/connections/destinations/catalog/amazon-personalize/)
+- [Amplitude](/docs/connections/destinations/catalog/amplitude/)
 - [Attribution](/docs/connections/destinations/catalog/attribution/)
 - [Attune](/docs/connections/destinations/catalog/attune/)
 - [Autopilot](/docs/connections/destinations/catalog/autopilothq/)
