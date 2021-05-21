@@ -161,7 +161,7 @@ In this example:
 
 - Events sent with this `Mixpanel` setting are **not** sent to instances of Mixpanel.
 - Events sent to any Adobe Analytics destinations with this `Adobe Analytics` setting use the same `marketingCloudVisitorId` value specified.
-It is not possible to use the integrations object to send data to individual destination instances. 
+You can not use the [integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object) to send data to individual destination instances. 
 
 ### Multi-instance compatible destinations
 
