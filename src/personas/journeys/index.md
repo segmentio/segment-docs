@@ -2,52 +2,35 @@
 title: Journeys Overview
 ---
 
-Journeys, a feature of Segment Personas, provide a way for marketers to personalize experiences through planning how and when to engage customers with the right campaigns and messages.
+Journeys, a feature of Segment Personas, provides a way for marketers to personalize experiences through planning how and when to engage customers with the right campaigns and messages.
+
+<video width="690px" controls autoplay>
+  <source src="images/journeys-teaser.webm" type="video/webm">
+  <source src="images/journeys-teaser.mp4" type="video/mp4">
+</video>
 
 Journeys enable you to define steps in a user's journey based on event behavior and traits. You can build Journeys from your tracking events, traits, computed traits, or audiences. At each step of a journey, you can send your list of users to any personas-compatible destination.
 
-## Key terms
+## Get started
 
-Keep the following terms in mind as you begin to explore Journeys.
+Start with the visual builder to define entrance criteria, build out conditional branching logic, then focus messaging to drive conversion. Cart abandonment campaigns, trial conversions, and onboarding flows are great examples to get started from. For more information, see [Build a Journey](/docs/personas/journeys/build-journey.md).
 
-### General
+## Send data to your destinations
 
-| Term              | Definition                                                                                                                           |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| Journey           | A multi-step workflow that progresses users through steps based on time logic, real-time customer interactions, and customer traits. |
-| Journey list view | The Journeys tab shows all Journeys in the selected Personas space.                                                                  |
-| Journey builder   | A visual canvas where you can view and edit step definitions and types.                                                              |
-| Journey overview  | A visual canvas where you can view all steps and definitions.                                     |
+Connect destinations to your Journey to send events or user lists when users reach the corresponding step in the Journey. For more information, see [Send Journeys data to a Destination](/docs/personas/journeys/send-data).
 
-### Steps
+## Best practices and FAQ
 
-| Term                 | Definition                                                                                                                                                                                                                                                                                                             |
-| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Step                 | An individual point in the Journey that can be any of the following: **Wait for condition**, **Wait for duration**, **True/false split**, **Multi-branch split**, **Send to destinations**.                                                                                                                            |
-| Branch               | Paths that lead users away from a step. For example, A True/false split creates one True branch and one False branch.                                                                                                                                                                                                  |
-| Entry condition      | The first step in the Journey where you define the entry criteria. In this step, you can backfill historical data and preview users before you publish the Journey.                                                                                                                                      |
-| Wait for condition   | A step in which you define one or more conditions which a user must fulfill to move to this step.                                                                                                                                                                                                                      |
-| Wait for duration    | A step in which you define the amount of time before the user moves to the next step.                                                                                                                                                                                                                                  |
-| True/false split     | A step in which you define a condition to direct a user to A step in which you define a condition to direct user to one of two steps. <br /> <br />Users who fulfill the condition move to the `true` branch. Users who do not move to the `false` branch.                                                             |
-| Multi-branch split   | A step in which you define any number of conditions. Each condition represents a separate branch leading away from the step. Users travel down the branch of the condition they meet. <br /> <br /> Journeys does not enforce mutual exclusivity in branch conditions . For more information, see [Best Practices](#). |
-| Send to destinations | A step in which you can send track or identify calls to Event destinations, or a list of users to a List destination.                                                                                                                                                                                                  |
-| Step name            | The name of the step that displays in the Journey builder and overview.                                                                                                                                                                                                                                             |
-| Key                  | Name of the Send to Destination step used to identify the step users are on when Journeys sends information to the destination. For Track events, the property name uses this key. For Identify events, the trait name uses this key. <br /><br />For more information, see [Send data to Destinations](#).                   |
+For information about best practices for getting started with Journeys, and to view frequently asked questions about Journeys, see [Best Practices and FAQ](/docs/personas/journeys/faq-best-practices).
 
-### Statuses
+## Journeys use cases
 
-| Term                     | Definition                                                                                                                        |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
-| Draft Journey            | A Journey which is not yet computing nor sending data to destinations. <br /><br />For more information, see [Draft Journeys](#draft-journeys). |
-| Published (live) Journey | A Journey that is computing and sending data to destinations. <br /><br />For more information, see [Published Journeys](#published-journeys).                  |
+See [Examples Journeys Use Cases](docs/personas/journeys/use-cases/) for examples of ways you can use Journeys in your marketing workflow.
 
+## Journeys glossary
 
-### Journeys Product Limits
+For a list of key terms related to Journeys, see [Journeys Key Terms](/docs/personas/journeys/key-terms).
+
+## Journeys Product Limits
 
 For information about Product Limits related to journeys, see [Product Limits - Journeys](/docs/personas/product-limits#journeys).
-
-
-
-
-
-
