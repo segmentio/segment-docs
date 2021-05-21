@@ -1,5 +1,5 @@
 ---
-title: Upgrade to A.js 2.0
+title: Upgrade to Analytics.js 2.0
 strat: ajs
 ---
 
