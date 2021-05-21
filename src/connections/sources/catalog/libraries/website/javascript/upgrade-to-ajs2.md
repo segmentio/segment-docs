@@ -1,16 +1,16 @@
 ---
-title: Migrate to A.js 2.0
+title: Upgrade to A.js 2.0
 strat: ajs
 ---
 
-Analytics.js 2.0 is fully backward compatible with Analytics.js Classic. To migrate your sources, follow the manual upgrade steps below, or see the schedule for automatic migration.
+Analytics.js 2.0 is fully backward compatible with Analytics.js Classic. To upgrade your sources, follow the manual upgrade steps below, or see the schedule for automatic migration.
 
-## Manual migration
+## Manual upgrade
 
-To migrate a source to Analytics.js 2.0:
+To upgrade a source to Analytics.js 2.0:
 
 1. In your Segment workspace, open the **Connections** page.
-2. Open the Javascript source you will migrate.
+2. Open the Javascript source you will upgrade.
 3. On the **Settings** tab, open the **Analytics.js** category.
 4. Enable the flag for Analytics 2.0.
 5. Within 5 minutes, the source receives Analytics.js 2.0. No code or tag changes required.
@@ -18,7 +18,7 @@ To migrate a source to Analytics.js 2.0:
 
 ## Automatic migration
 
-Analytics.js sources will migrate to Analytics.js 2.0 on the date below, according to the account tier. On the date listed, Segment will migrate all Analytics.js sources within the associated account tier.
+Analytics.js sources will upgrade to Analytics.js 2.0 on the date below, according to the account tier. On the date listed, Segment will upgrade all Analytics.js sources within the associated account tier.
 
 | Segment Plan | Upgrade Date |
 |--------------| -------------|
