@@ -24,7 +24,6 @@ tests:
     - Amazon Kinesis
     - Amazon Kinesis Firehose
     - Help Scout
-    - Impact
   reference:
     device:
       web: false

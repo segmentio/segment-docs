@@ -8,11 +8,10 @@ When you enable Ramen in the Segment web app, your changes appear in the Segment
 ​
 + As of March 2016, Ramen supports asking questions of anonymous website visitors in addition to logged-in users. Calling [`page`](#page), [`track`](#track), and [`group`](#group) will work without calling [`identify`](#identify). However, when you call [`identify`](#identify) you _must_ pass in an `id` or else the Ramen destination will ignore the call.
 ​
-- - -
 ​
 ## Identify
 ​
-When you call [`identify`](/docs/connections/spec/identify) on Analytics.js, it identifies the logged-in user to Ramen.
+When you make an [Identify call](/docs/connections/spec/identify) on Analytics.js, it identifies the logged-in user to Ramen.
 ​
 Here is a full example, which we will annotate below:
 ​

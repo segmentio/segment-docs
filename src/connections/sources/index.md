@@ -73,6 +73,9 @@ Our Mobile SDKs are the best way to simplify your iOS, Android, and Xamarin app 
 - [AMP](/docs/connections/sources/catalog/libraries/mobile/amp)
 - [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native)
 
+> info "Pilot Libraries"
+> Pilot releases of the [Analytics-Swift](https://github.com/segmentio/analytics-swift) and [Analytics-Kotlin](https://github.com/segmentio/analytics-kotlin) libraries are available. This library is governed by [Segment’s First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/), and should not be used in production scenarios.
+
 ---
 
 ## Server
