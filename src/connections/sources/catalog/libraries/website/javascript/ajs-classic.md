@@ -1,5 +1,5 @@
 ---
-title: Analytics.js Classic (Javascript) Source
+title: Analytics.js Classic Source
 redirect_from:
   - '/connections/sources/catalog/libraries/website/analytics.js/'
   - '/sources/website/javascript/'

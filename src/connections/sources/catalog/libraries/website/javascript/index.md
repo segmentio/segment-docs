@@ -1,5 +1,5 @@
 ---
-title: Analytics.js 2.0 (Javascript) Source
+title: Analytics.js 2.0 Source
 redirect_from:
   - '/connections/sources/catalog/libraries/website/analytics.js/'
   - '/sources/website/javascript/'
