@@ -7,6 +7,8 @@ Segment Personas enforces a set of default use and rate limits to help ensure th
 
 Contact your dedicated Customer Success Manager or [friends@segment.com](mailto:friends@segment.com) to learn more about custom limits.
 
+## Default Limits
+
 <table id="limit">
 <thead>
 <tr>
@@ -167,3 +169,17 @@ Contact your account team to customize your schedule.</td>
 </tr>
 </tbody>
 </table>
+
+
+## Journeys
+
+
+In addition to the [Personas Default Limits](#default-limits), Journeys enforces a set of default limits to ensure the reliability and performance of the feature.
+
+| Item          | Limit description                | Details                                                                                                                                                                                                                                                                               |
+| ------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Journeys      | 10 Journeys per workspace        | This applies to active, concurrent Journeys. <br><br>Once the limit is reached, you cannot publish any additional Journeys. You will still be able to create draft Journeys.                                                                                               |
+| Journey steps | 20 steps per Journey             | This applies to certain steps:<br><br>- Initial cohort: 1<br>- Wait for condition: 1<br>- True / False Split: 1<br>- Multi-Branch Split: Number of branches<br>- Send to Destinations: 1<br><br>Once the limit is reached, you will be unable to add additional steps to the Journey. |
+| Journey Name  | Maximum length of 73 characters  | Once the limit is reached, you cannot add additional characters to the name.                                                                                                                                                                                               |
+| Step Name     | Maximum length of 170 characters | Once the limit is reached, you cannot add additional characters to the name.                                                                                                                                                                                               |
+| Key           | Maximum length of 255 characters | Once the limit is reached, you cannot add additional characters to the key.                                                                                                                                                                                                |
