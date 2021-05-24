@@ -30,12 +30,12 @@ Analytics.js 2.0 provides a reduction in page load time, which improves site per
 Analytics.js 2.0 introduces new ways for developers to augment events throughout the event timeline. This enables teams to support:
 
 - New privacy and consent controls before an event occurs
-- Enriching events with additional customer or page context in-flight using middleware
+- Enriching events with customer or page context in-flight using middleware
 - Collecting better metrics related to deliverability *after* a message is sent
 
 ## Getting Started
 
-Read through the [Analytics.js QuickStart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) which explains how to add Analytics.js to your site in just a few minutes. Once you've installed the library, read on for the detailed API reference!
+Read through the [Analytics.js QuickStart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) which explains how to add Analytics.js to your site. Once you've installed the library, read on for the detailed API reference!
 
 For information about upgrading to Analytics.js 2.0, see [Upgrade to Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/upgrade-to-ajs2).
 
@@ -57,7 +57,7 @@ These names might be familiar, because they are the basic methods covered by the
 The `identify` method is how you link your users, and their actions, to a recognizable `userId` and `traits`. You can see [an `identify` example in the Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-3-identify-users) or [find details on the identify method payload](/docs/connections/spec/identify/).
 
 > note ""
-> Segment recommends _against_ using `identify` for anonymous visitors to your site. Analytics.js automatically retrieves an `anonymousId` from localStorage or assigns one for new visitors, which is attached to all `page` and `track` events both before and after an `identify`.
+> Segment recommends _against_ using `identify` for anonymous visitors to your site. Analytics.js automatically retrieves an `anonymousId` from localStorage or assigns one for new visitors, and attaches it to all `page` and `track` events both before and after an `identify`.
 
 The Identify method follows the format below:
 
@@ -95,7 +95,7 @@ The Identify call has the following fields:
 </table>
 
 
-By default, traits are cached in the browser's `localStorage` and  are attached to each subsequent Identify call.
+By default, Analytics.js caches traits in the browser's `localStorage` and are attaches them to each Identify call.
 
 For example, you might call Identify when someone signs up for a newsletter, but hasn't yet created an account on your site. The example below shows an Identify call (using hard-coded traits) that you might send in this case.
 ```js
@@ -143,7 +143,7 @@ The `track` call has the following fields:
     <td>`event`</td>
     <td></td>
     <td>String</td>
-    <td>The name of the event you're tracking. You can read more about the [track method](/docs/connections/spec/track) and what event names we recommend.</td>
+    <td>The name of the event you're tracking. You can read more about the [track method](/docs/connections/spec/track) and recommended event names.</td>
   </tr>
   <tr>
     <td>`properties`</td>
@@ -161,7 +161,7 @@ The `track` call has the following fields:
     <td>`callback`</td>
     <td>optional</td>
     <td>Function</td>
-    <td>A function that is executed after a short timeout, giving the browser time to make outbound requests first.</td>
+    <td>A function that runs after a short timeout, giving the browser time to make outbound requests first.</td>
   </tr>
 </table>
 
@@ -184,7 +184,7 @@ The only required argument on Track calls in Analytics.js is an `event` name str
 #### Track Link
 
 `trackLink` is a helper method that attaches the `track` call as a handler to a link.
-With `trackLink` a short timeout (300 ms) is inserted to give the `track` call more time. This is useful when a page would redirect before the `track` method could complete all requests.
+With `trackLink`, Analytics.js inserts a short timeout (300 ms) to give the `track` call more time. This is useful when a page would redirect before the `track` method could complete all requests.
 
 The `trackLink` method follows the format below.
 
@@ -196,17 +196,17 @@ analytics.trackLink(element, event, [properties])
   <tr>
     <td>`element(s)` </td>
     <td>Element or Array</td>
-    <td>DOM element to be bound with `track` method. You may pass an array of elements or jQuery objects. _Note: This must be an element, **not** a CSS selector._</td>
+    <td>DOM element to bind with `track` method. You may pass an array of elements or jQuery objects. _Note: This must be an element, **not** a CSS selector._</td>
   </tr>
   <tr>
     <td>`event` </td>
     <td>String or Function</td>
-    <td>The name of the event, passed to the `track` method. Or a **function** that returns a string to be used as the name of the `track` event.</td>
+    <td>The name of the event, passed to the `track` method. Or a **function** that returns a string to use as the name of the `track` event.</td>
   </tr>
   <tr>
     <td>`properties` optional</td>
     <td>Object or Function</td>
-    <td>A dictionary of properties to pass with the track method. Or a **function** that returns an object to be used as the `properties` of the event.</td>
+    <td>A dictionary of properties to pass with the track method. Or a **function** that returns an object to use as the `properties` of the event.</td>
   </tr>
 </table>
 
@@ -240,12 +240,12 @@ analytics.trackForm(form, event, [properties])
   <tr>
     <td>`event` </td>
     <td>String or Function</td>
-    <td>The name of the event, passed to the `track` method. Or a **function** that returns a string to be used as the name of the `track` event.</td>
+    <td>The name of the event, passed to the `track` method. Or a **function** that returns a string to use as the name of the `track` event.</td>
   </tr>
   <tr>
     <td>`properties` optional</td>
     <td>Object or Function</td>
-    <td>A dictionary of properties to pass with the track method. Or a **function** that returns an object to be used as the `properties` of the event.</td>
+    <td>A dictionary of properties to pass with the track method. Or a **function** that returns an object to use as the `properties` of the event.</td>
   </tr>
 </table>
 
@@ -262,11 +262,11 @@ analytics.trackForm(form, 'Signed Up', {
 
 ### Page
 
-The [Page](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
+The [Page](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page viewed by the user.
 
 Because some destinations require a `page` call to instantiate their libraries, **you must call `page`** at least once per page load. You can call it more than once if needed, for example on virtual page changes in a single page app.
 
-A Page call is included by default as the final line in [the Analytics.js snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet). You can modify this `page` call within the guidelines below.
+Analytics.js includes a Page call by default as the final line in [the Analytics.js snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet). You can update this `page` call within the guidelines below.
 
 The `page` method follows the format below.
 
@@ -293,7 +293,7 @@ The `page` call has the following fields:
     <td>`properties`</td>
     <td>optional</td>
     <td> Object </td>
-    <td>A dictionary of properties of the page. Note: `url`, `title`, `referrer` and `path` are collected automatically! Additionally this defaults to a `canonical url`, if available, and falls back to `document.location.href`.</td>
+    <td>A dictionary of properties of the page. Note: Analytics.js collects `url`, `title`, `referrer` and `path` are automatically. This defaults to a `canonical url`, if available, and falls back to `document.location.href`.</td>
   </tr>
   <tr>
     <td>`options`</td>
@@ -305,20 +305,20 @@ The `page` call has the following fields:
     <td>`callback`</td>
     <td>optional</td>
     <td>Function</td>
-    <td>A function that is executed after a short timeout, giving the browser time to make outbound requests first.</td>
+    <td>A function that runs after a short timeout, giving the browser time to make outbound requests first.</td>
   </tr>
 </table>
 
 
 #### Default Page Properties
 
-A few properties are automatically added to each `page` call.
+Analytics.js adds some properties to each `page` call.
 
 ```js
 analytics.page('Pricing');
 ```
 
-Segment adds the following information without any extra work from you:
+Segment adds the following information:
 
 ```js
 analytics.page('Pricing', {
@@ -385,7 +385,7 @@ The Group call has the following fields:
     <td>`callback`</td>
     <td>optional</td>
     <td>Function</td>
-    <td>A function that is executed after a short timeout, giving the browser time to make outbound requests first.</td>
+    <td>A function that runs after a short timeout, giving the browser time to make outbound requests first.</td>
   </tr>
 </table>
 
@@ -401,13 +401,13 @@ analytics.group('UNIVAC Working Group', {
 });
 ```
 
-By default, group `traits` are cached in the browser's local storage and attached to each subsequent `group` call, similar to how the `identify` method works.
+By default, Analytics.js caches group `traits` in the browser's local storage and attaches them to each `group` call, similar to how the `identify` method works.
 
 Find more details about `group` including the **`group` payload** in [the Group Spec](/docs/connections/spec/group/).
 
 ### Alias
 
-The Alias method combines two previously unassociated user identities. Segment usually handles aliasing automatically when you call Identify on a user, however some tools require an explicit `alias` call.
+The Alias method combines two unassociated user identities. Segment usually handles aliasing automatically when you call Identify on a user, however some tools require an explicit `alias` call.
 
 This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations such as [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) and [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias). <!-- TODO: LR Dests question: is this still true? Is there a list of the ones that require this?-->
 
@@ -633,7 +633,7 @@ analytics.load('writekey', { integrations: { All: false, 'Google Analytics': tru
 ```
 
 > info ""
-> **Note:** To use this feature, you must be on snippet version 4.1.0 or later. You can get the latest version of the snippet [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet).
+> **Note:** To use this feature, you must be on snippet version 4.1.0 or later. You can get the latest version of the snippet [here](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet).
 
 This way, you can conditionally load integrations based on what customers opt into on your site. The example below shows how you might load only the tools that the user agreed to use.
 
