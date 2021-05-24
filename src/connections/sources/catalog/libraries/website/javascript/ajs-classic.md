@@ -10,7 +10,7 @@ strat: ajs
 Analytics.js, Segment's Javascript source, makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
 > info "Analytics.js 2.0"
-> A new version of Analytics.js is available for use in Beta. Click [here](/docs/connections/sources/catalog/libraries/website/javascript/) for more information.
+> A new version of Analytics.js is available for use in Beta. Click [here](/docs/connections/sources/catalog/libraries/website/javascript/) for more information. For information about upgrading to Analytics.js 2.0, see [Upgrade to Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/upgrade-to-ajs2).
 
 ## Getting Started
 

@@ -36,6 +36,8 @@ Analytics.js 2.0 introduces new ways for developers to augment events throughout
 
 Read through the [Analytics.js QuickStart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) which explains how to add Analytics.js to your site in just a few minutes. Once you've installed the library, read on for the detailed API reference!
 
+For information about upgrading to Analytics.js 2.0, see [Upgrade to Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/upgrade-to-ajs2).
+
 ### Upgrade your existing Javascript sources
 
 For information about upgrading your existing javascript sources, see [Upgrade to A.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/upgrade-to-ajs2).
