@@ -1,5 +1,6 @@
 ---
 title: Journeys Best Practices and FAQ
+hidden: true
 ---
 ## Best practices
 

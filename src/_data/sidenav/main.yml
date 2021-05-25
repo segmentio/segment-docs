@@ -263,21 +263,21 @@ sections:
         title: Overview
       - path: /personas/audiences/account-audiences
         title: Account-level Audiences
-  - section_title: Journeys
-    slug: /personas/journeys
-    section:
-      - path: /personas/journeys
-        title: Journeys Overview
-      - path: /personas/journeys/build-journey
-        title: Build a Journey
-      - path: /personas/journeys/send-data
-        title: Send Data to Destinations
-      - path: /personas/journeys/faq-best-practices
-        title: Journeys Best Practices and FAQ
-      - path: /personas/journeys/use-cases
-        title: Example Journeys Use Cases
-      - path: /personas/journeys/key-terms
-        title: Journeys Glossary
+  # - section_title: Journeys
+  #   slug: /personas/journeys
+  #   section:
+  #     - path: /personas/journeys
+  #       title: Journeys Overview
+  #     - path: /personas/journeys/build-journey
+  #       title: Build a Journey
+  #     - path: /personas/journeys/send-data
+  #       title: Send Data to Destinations
+  #     - path: /personas/journeys/faq-best-practices
+  #       title: Journeys Best Practices and FAQ
+  #     - path: /personas/journeys/use-cases
+  #       title: Example Journeys Use Cases
+  #     - path: /personas/journeys/key-terms
+  #       title: Journeys Glossary
   - path: /personas/using-personas-data
     title: Using Personas data
   - path: /personas/warehouses
