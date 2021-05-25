@@ -26,13 +26,15 @@ Analytics.js 2.0 provides a reduction in page load time, which improves site per
 > Many factors impact page load time, including page weight, network conditions, and hosting locations.
 
 
-<!-- ### Developer experience
+### Developer experience
 
-Analytics.js 2.0 introduces new ways for developers to augment events throughout the event timeline. This enables teams to support:
+Analytics.js 2.0 improves developer experience by introducing new ways for developers to augment events throughout the event timeline. For example, developers can augment events either before or after an event occurs, or while the event is in-flight. 
 
-- New privacy and consent controls before an event occurs
-- Enriching events with customer or page context in-flight using middleware
-- Collecting better metrics related to deliverability *after* a message is sent -->
+For example, you can use the Analytics.js 2.0 to build features that:
+
+- Ensure you have user consent to track before an event fires
+- Enrich events with customer or page context while in-flight with middleware
+- Check an event for errors after the event is sent to Segment
 
 ## Getting Started
 
