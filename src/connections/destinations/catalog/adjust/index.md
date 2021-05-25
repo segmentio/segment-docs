@@ -5,9 +5,6 @@ title: Adjust Destination
 
 [Adjust](https://adjust.com) is the mobile attribution provider of choice for hundreds of organizations across the globe. They unify all your marketing activities into one powerful platform, giving you the insights you need to scale your business. The Adjust Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-adjust) and [Android](https://github.com/segment-integrations/analytics-android-integration-adjust).
 
-> info ""
-> **Note**: You need to manually implement [these Apple frameworks](https://github.com/adjust/ios_sdk#add-ios-frameworks) to successfully connect Adjust as a desintation.
-
 If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 
@@ -22,7 +19,10 @@ If you notice any gaps, out-dated information or simply want to leave some feedb
 
 ### iOS
 
-If you are using iOS, simply add this line to your [CocoaPods](http://cocoapods.org) `Podfile`:
+> info ""
+> **Note**: You need to add [these iOS frameworks](https://github.com/adjust/ios_sdk#add-ios-frameworks) for attribution purposes in Adjust.
+
+If you are using iOS, add this line to your [CocoaPods](http://cocoapods.org) `Podfile`:
 
 ```ruby
 pod "Segment-Adjust"
@@ -85,7 +85,7 @@ To use the latest Adjust SDK to collect IDFAs you must do the following:
 
 ### Android
 
-If you are using Android, simply add this line to your gradle file:
+If you are using Android, add this line to your gradle file:
 
 ```java
 compile 'com.segment.analytics.android.integrations:adjust:+'
