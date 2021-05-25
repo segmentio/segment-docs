@@ -25,7 +25,7 @@ For information about best practices for getting started with Journeys, and to v
 
 ## Journeys use cases
 
-See [Examples Journeys Use Cases](docs/personas/journeys/use-cases/) for examples of ways you can use Journeys in your marketing workflow.
+See [Examples Journeys Use Cases](/docs/personas/journeys/use-cases/) for examples of ways you can use Journeys in your marketing workflow.
 
 ## Journeys glossary
 
