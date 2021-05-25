@@ -38,14 +38,14 @@ items:
     - Warehouses
 - display_name: Google Cloud Storage
   slug: google-cloud-storage
-  name: catalog/google-cloud-storage
+  name: catalog/warehouses/google-cloud-storage
   description: ''
   url: connections/storage/catalog/google-cloud-storage
   status: PUBLIC_BETA
   logo:
-    url:
+    url: 'https://cdn.filepicker.io/api/file/G6kRHZtSoaEslLkENhPC'
   mark:
-    url: 
+    url: ''
   categories:
     - Warehouses
 - display_name: IBM Db2 Warehouse
