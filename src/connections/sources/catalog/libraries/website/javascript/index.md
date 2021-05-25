@@ -16,7 +16,7 @@ Analytics.js 2.0, the latest version Segment's Javascript source, enables you to
 
 ## Benefits of Analytics.js 2.0
 
-The Analytics.js 2.0 Beta provides two key benefits over the previous version.
+Analytics.js 2.0 provides two key benefits over the previous version.
 
 ### Performance
 
@@ -25,13 +25,14 @@ Analytics.js 2.0 provides a reduction in page load time, which improves site per
 > info ""
 > Many factors impact page load time, including page weight, network conditions, and hosting locations.
 
-### Developer experience
+
+<!-- ### Developer experience
 
 Analytics.js 2.0 introduces new ways for developers to augment events throughout the event timeline. This enables teams to support:
 
 - New privacy and consent controls before an event occurs
 - Enriching events with customer or page context in-flight using middleware
-- Collecting better metrics related to deliverability *after* a message is sent
+- Collecting better metrics related to deliverability *after* a message is sent -->
 
 ## Getting Started
 
