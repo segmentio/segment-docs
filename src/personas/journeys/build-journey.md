@@ -1,5 +1,6 @@
 ---
 title: Build a Journey
+hidden: true
 ---
 
 Follow along for the steps required to create a new Journey.
