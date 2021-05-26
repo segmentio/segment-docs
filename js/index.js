@@ -20,7 +20,9 @@ import tracking from './tracking'
 import searchBar from './search-bar'
 import glightbox from './glightbox'
 import autocomplete from './algolia'
+import feedback_dossier from './feedback_dossier'
 feedback()
+feedback_dossier()
 accordion()
 accordionGroup()
 callout()
