@@ -1,3 +1,5 @@
+# This file is manually generated. When you add or remove an item, add or remove
+# it from the `overrides-list.yml` too.
 items:
 - slug: hubspot
   components:
@@ -13,7 +15,7 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data from any Segment mobile or server source in cloud mode. 
+      accepts data from any Segment mobile or server source in cloud mode.
       It does not accept data from a web source, and does not offer device-mode connections.
     cmode_type: mixed
     case: '6'
