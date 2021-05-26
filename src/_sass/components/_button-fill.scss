@@ -77,4 +77,30 @@
       background-color: darken(color(error), 10%);
     }
   }
+
+  &--dossier {
+    // background-color: none;
+    color: color(gray-500);
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      color: darken(color(gray-500), 10%);
+    }
+    &:disabled {
+      pointer-events: none;
+    }
+  }
+
+  &--dossier-helpful {
+    color: color(secondary);
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &--dossier-unhelpful {
+    color: color(gray-600);
+    cursor: default;
+    pointer-events: none;
+  }
 }
