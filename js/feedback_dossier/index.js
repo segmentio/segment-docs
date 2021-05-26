@@ -58,7 +58,9 @@ export default function() {
           //   url: document.url,
           //   comment: feedbackValue,
           // })
-
+          
+          // Logging feedback value here. Will hook up to typewriter when available
+          console.log(feedbackValue, section, helpful, `${document.title}`, document.url)
           tooltip.hide()
           sent = true
 
@@ -91,6 +93,8 @@ export default function() {
     //   url: document.url,
     //   section,
     // })
+
+    // Logging feedback value here. Will hook up to typewriter when available
     console.log(helpful, section)
   }
 
