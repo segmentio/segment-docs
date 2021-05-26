@@ -7,6 +7,7 @@ title: Destinations Connection Modes comparison
 
 > success ""
 > Comparison shopping? Check out the [destination connection modes by category](/docs/connections/destinations/category-compare/).
+{% assign overridesList = site.data.catalog.overrides-list.items %}
 
 <table>
 <tr>
@@ -26,12 +27,23 @@ title: Destinations Connection Modes comparison
 {% unless destination.connection_modes.cloud.web == false and destination.connection_modes.cloud.mobile == false and destination.connection_modes.device.web == false and destination.connection_modes.device.mobile == false and destination.connection_modes.cloud.server == false %}
 <tr>
   <td>[{{ destination.display_name }}](/docs/{{ destination.url }}){% if destination.status == "PUBLIC_BETA" %}&nbsp;ℹ️{% endif %}</td>
-  <td style="border-left: 1px solid gray;">{% if destination.connection_modes.cloud.web %}✅{% else %}⬜️{% endif %} </td>
+  {% if overridesList contains destination.slug %}{% assign thisDestname = destination.slug %}{% assign thisDest = site.data.catalog.overrides.items | where: "slug", thisDestname | first%}
+  <td style="border-left: 1px solid gray;">
+  {% if thisDest.connection_modes.cloud.web %}✅{% else %}⬜️{% endif %} </td>
+  <td>{% if thisDest.connection_modes.cloud.mobile %}✅{% else %}⬜️{% endif %} </td>
+  <td>{% if thisDest.connection_modes.cloud.server %}✅{% else %}⬜️{% endif %} </td>
+  <td style="border-left: 1px solid gray;">{% if thisDest.connection_modes.device.web %}✅{% else %}⬜️{% endif %} </td>
+  <td>{% if thisDest.connection_modes.device.mobile %}✅{% else %}⬜️{% endif %} </td>
+  {% else %}
+  <td style="border-left: 1px solid gray;">
+  {% if destination.connection_modes.cloud.web %}✅{% else %}⬜️{% endif %} </td>
   <td>{% if destination.connection_modes.cloud.mobile %}✅{% else %}⬜️{% endif %} </td>
   <td>{% if destination.connection_modes.cloud.server %}✅{% else %}⬜️{% endif %} </td>
   <td style="border-left: 1px solid gray;">{% if destination.connection_modes.device.web %}✅{% else %}⬜️{% endif %} </td>
   <td>{% if destination.connection_modes.device.mobile %}✅{% else %}⬜️{% endif %} </td>
+{%endif%}
 </tr>
+
 {% endunless %}
 {% endfor %}
 </table>
