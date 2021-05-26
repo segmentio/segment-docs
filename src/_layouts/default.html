@@ -46,6 +46,7 @@
   {%- endif -%}
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
   <link rel="icon" href="https://segment.com/favicon.ico">
+  
   {%- if jekyll.environment == "production" -%}
     {%- assign hostname = "https://segment.com" -%}
   {%- elsif jekyll.environment == "staging" -%}
@@ -53,7 +54,7 @@
   {%- else -%}
     {%- assign hostname = "" -%}
   {%- endif -%}
-  <link rel="canonical" href="{{hostname}}/docs{{page.url}}" />
+  <link rel="canonical" href="{{site.url}}/docs{{page.url}}" />
   <meta name="application-name" content="Segment">
   <meta name="theme-color" content="#00386C">
   <meta charset="utf-8">
