@@ -1,0 +1,37 @@
+<div class="flex__column flex__column--12 flex__column--6@medium flex">
+  <div class="feedback-box flex flex--stack flex--justify waffle waffle--none waffle--large@medium">
+    <div class="flex__column flex__column--shrink">
+      <div class="feedback-box__content">
+        <!-- <h3>Was this page helpful?</h3> -->
+
+        <div class="flex gutter gutter--large">
+          <div class="flex__column flex__column--shrink">
+            <button class="button button-hollow gutter gutter--small" data-feedback-button-dossier="helpful" data-section="dossier" data-active-class="button-fill button-fill--secondary">
+              <span class="button__icon">
+                {% include icons/symbols/thumb-up.svg %}
+              </span>
+
+              <span>Yes</span>
+            </button>
+          </div>
+
+          <div class="flex__column flex__column--shrink">
+            <button class="button button-hollow gutter gutter--small" data-feedback-button-dossier="unhelpful" data-section="dossier" data-active-class="button-fill button-fill--gray">
+              <span class="button__icon">
+                {% include icons/symbols/thumb-down.svg %}
+              </span>
+
+              <span>No</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- <div class="widget__content" data-feedback-content hidden>
+          <p>Thanks for your feedback!</p>
+
+          <p>Can we improve this doc? <a href="#" data-feedback-button="alternate">Send us feedback!</a></p>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>

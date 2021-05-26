@@ -1,15 +1,16 @@
 import tippy from 'tippy.js'
 
-const BUTTON_SELECTOR = '[data-feedback--button-dossier]'
-const SEND_SELECTOR = '[data-send-button-dossier]'
+const BUTTON_SELECTOR = '[data-feedback-button-dossier]'
+const SEND_SELECTOR = '[data-send-button]'
 const TEMPLATE_SELECTOR = '[data-feedback-template]'
-const TEXT_SELECTOR = '[data-feedback-text-dossier]'
+const TEXT_SELECTOR = '[data-feedback-text]'
 const CONTENT_SELECTOR = '[data-feedback-content-dossier]'
 const ACTIVE_CLASS = 'data-active-class'
 const typewriter = require('analytics')
 
 export default function() {
   const buttons = document.querySelectorAll(BUTTON_SELECTOR)
+  console.log(buttons)
   const templates = document.querySelectorAll(TEMPLATE_SELECTOR)
   const helpfulTemplate = [...templates].filter(
     (template) => template.dataset.feedbackTemplate === 'helpful'
@@ -21,11 +22,14 @@ export default function() {
     (template) => template.dataset.feedbackTemplate === 'alternate'
   )
   const helpfulButtons = [...buttons].filter(
-    (button) => button.dataset.feedbackButton === 'helpful'
+    (button) => button.dataset.feedbackButtonDossier === 'helpful'
   )
   const unhelpfulButtons = [...buttons].filter(
-    (button) => button.dataset.feedbackButton === 'unhelpful'
+    (button) => button.dataset.feedbackButtonDossier === 'unhelpful'
   )
+
+  console.log(helpfulButtons)
+
   const contents = document.querySelectorAll(CONTENT_SELECTOR)
 
   let sent = false
@@ -47,13 +51,13 @@ export default function() {
           let { section = 'footer', helpful = false } = JSON.parse(
             window.localStorage.getItem('docsFeedback')
           )
-          typewriter.feedbackCommentProvided({
-            section,
-            helpful,
-            title: `${document.title}`,
-            url: document.url,
-            comment: feedbackValue,
-          })
+          // typewriter.feedbackCommentProvided({
+          //   section,
+          //   helpful,
+          //   title: `${document.title}`,
+          //   url: document.url,
+          //   comment: feedbackValue,
+          // })
 
           tooltip.hide()
           sent = true
@@ -81,12 +85,13 @@ export default function() {
   }
 
   const trackFeedback = (helpful, section) => {
-    typewriter.feedbackProvided({
-      title: `${document.title}`,
-      helpful,
-      url: document.url,
-      section,
-    })
+    // typewriter.feedbackProvided({
+    //   title: `${document.title}`,
+    //   helpful,
+    //   url: document.url,
+    //   section,
+    // })
+    console.log(helpful, section)
   }
 
   const clickHandler = () => {
@@ -114,10 +119,10 @@ export default function() {
       event.preventDefault()
 
       const section = buttons[i].hasAttribute('data-section')
-        ? 'right-nav'
+        ? 'dossier'
         : 'footer'
-      const helpful = buttons[i].dataset.feedbackButton === 'helpful'
-      const alternate = buttons[i].dataset.feedbackButton === 'alternate'
+      const helpful = buttons[i].dataset.feedbackButtonDossier === 'helpful'
+      const alternate = buttons[i].dataset.feedbackButtonDossier === 'alternate'
 
       window.localStorage.setItem(
         'docsFeedback',
