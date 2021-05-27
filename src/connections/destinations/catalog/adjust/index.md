@@ -20,7 +20,7 @@ If you notice any gaps, out-dated information or simply want to leave some feedb
 ### iOS
 
 > info ""
-> **Note**: The Adjust SDK requires these [iOS frameworks](https://github.com/adjust/ios_sdk#add-ios-frameworks) to enable advanced features like attribution. For best results, add these frameworks to your application.
+> **Note**: The Adjust SDK requires these [frameworks from Apple](https://github.com/adjust/ios_sdk#add-ios-frameworks) to enable advanced features like attribution. For best results, add these frameworks to your application.
 
 If you are using iOS, add this line to your [CocoaPods](http://cocoapods.org) `Podfile`:
 
