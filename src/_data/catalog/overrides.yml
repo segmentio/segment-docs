@@ -2,6 +2,7 @@
 # it from the `overrides-list.yml` too.
 items:
 - slug: hubspot
+  display_name: HubSpot
   components:
   - type: WEB
   - type: CLOUD
@@ -15,8 +16,7 @@ items:
       mobile: true
       server: true
     summary: >-
-      accepts data from any Segment mobile or server source in cloud mode.
-      It does not accept data from a web source, and does not offer device-mode connections.
+      is available in device-mode for Analytics.js only, and is availble in cloud-mode for Mobile and Server sources.
     cmode_type: mixed
     case: '6'
 - slug: iterable
