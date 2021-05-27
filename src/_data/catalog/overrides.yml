@@ -20,6 +20,7 @@ items:
     cmode_type: mixed
     case: '6'
 - slug: iterable
+  display_name: Iterable
   components:
   - type: WEB
   - type: CLOUD
