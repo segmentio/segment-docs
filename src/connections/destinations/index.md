@@ -29,7 +29,7 @@ Many destinations can accept data from all types of sources, but some are only c
 
 ## Destinations 2.0
 
-In June of 2021 Segment released a new form of destinations called Destinations 2.0. These destinations allows users to create sets of conditions and data mappings (called a "subscription") for data sent to the destination. Segment watches for data that matches the conditions you create (called "triggers") for the subscription, and when the conditions are met, uses an explicit mapping to transform the incoming data to an output format that your destination can use.
+In June of 2021 Segment released a new form of destinations called [Destinations 2.0](/docs/connections/destinations/destinations-2.0/). These destinations allow users to create "subscriptions": sets of conditions in which data is sent to the destinations, and data mappings to format that data for the destination tool. Segment watches for data that matches the conditions you create (called "triggers") for the subscription, and when the conditions are met, uses an explicit mapping to transform the incoming data to an output format that your destination can use.
 
 ## Connection Modes
 
