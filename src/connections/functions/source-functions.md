@@ -380,10 +380,14 @@ Copy and paste this URL into the upstream tool or service to send data to this s
 
 ## Source function FAQs
 
+##### What is the retry policy for a webhook payload?
+
+The webhook payload retries up to 5 times with an exponential backoff for the function in the event of a failure with the function. After 5 attempts, the message is dropped.
+
 ##### What is the maximum payload size for the incoming webhook?
 
-2MB.
+The maximum payload size for an incoming webhook payload is 512 KiB.
 
-##### Is there a function execution time limit?
+##### What is the timeout for a function to execute?
 
-Yes, functions should execute within 5 seconds.
+The execution time limit is 5 seconds, however Segment strongly recommends that you keep execution time as low as possible. If you are making multiple external requests you can use async / await to make them concurrently, which will help keep your execution time low.
