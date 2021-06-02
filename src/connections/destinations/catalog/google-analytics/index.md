@@ -1,7 +1,6 @@
 ---
 title: Google Analytics Destination
 strat: google
-hide-settings: true
 ---
 
 > warning "Migrate mobile implementations to Firebase"
