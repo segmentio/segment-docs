@@ -5,7 +5,7 @@ rewrite: true
 
 Google Ads is an online advertising service developed by Google. With Google Ads, you can take advantage of online advertising to improve your internet marketing effectiveness. [Visit Website](https://ads.google.com/home/)
 
-This document was last updated on August 13, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+This document was last updated on June 02, 2021. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -26,10 +26,10 @@ This document was last updated on August 13, 2018. If you notice any gaps, outda
 
 ### Permissions
 
-When setting up your Google Ads Source, you may notice that we don't list all Google Ads accounts your Google user can view. This is because Google Ads API does not expose a list of "managed" or sub-accounts to non-administrator using the API. That said, if you have read permissions to the account, you can enter your Google Ads Customer ID directly. For more information about finding your Google Ads Customer ID, see [here](https://support.google.com/google-ads/answer/1704344?co=ADWORDS.IsAWNCustomer%3Dfalse&hl=en).
+When setting up your Google Ads Source, you may notice that we don't list all Google Ads accounts your Google user can view. This is because Google Ads API does not expose a list of "managed" or sub-accounts to non-administrator using the API. That said, if you have read permissions to the account and would like to add it, please [contact us](https://segment.com/help/contact). For more information about finding your Google Ads Customer ID, see [here](https://support.google.com/google-ads/answer/1704344?co=ADWORDS.IsAWNCustomer%3Dfalse&hl=en).
 
 ### What Google Ads MCC do you sync?
-By default, we sync the "primary" Google Ads account connected to your Google account, but if you'd like to override this, you can specify an Google Ads Customer ID in settings.
+By default, we sync the primary Google Ads account connected to your Google account. If you would like to override this, please [contact us](https://segment.com/help/contact).
 
 ### I'm getting an Internal Server Error!
 
