@@ -1,6 +1,7 @@
 ---
 title: Amplitude Destination
 hide-cmodes: true
+hide-settings: true
 ---
 
 [Amplitude](https://amplitude.com/) is an event tracking and segmentation
