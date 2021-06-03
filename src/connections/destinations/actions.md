@@ -5,7 +5,7 @@ hidden: true
 
 > info ""
 > This document is about a feature which is in beta. This means that the Destinations 2.0 are in active development, and some functionality may change before it becomes generally available
-<!-- TODO check that this is the rigth beta warning -->
+<!-- TODO check that this is the right beta warning -->
 
 In the simplest form of the core Segment product, [Connections](/docs/connections/), you send data from Segment [Sources](/docs/connections/sources/), and this data is translated by the Segment servers into a format that [Destination](/docs/connections/destiantions/) tools can understand. The Segment servers map data from the different [event types](/docs/connections/spec/) to transform it into a format that the destination expects, using a pre-defined set of rules. For most Segment deployments, this works great! However, if you have a complex deployment, or a lot of data coming to your destinations, you might want more control. When you use these standard Destinations, you cannot change these mappings, and it might not always be clear which parts of a Segment event end up in a specific part of the destination format.
 
