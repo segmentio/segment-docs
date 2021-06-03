@@ -149,6 +149,8 @@ sections:
     section:
     - path: /connections/destinations
       title: Destinations overview
+    - path: /connections/destinations/actions
+      title: Destination Actions
     - path: /connections/destinations/add-destination
       title: Add a destination
     - path: /connections/destinations/catalog
