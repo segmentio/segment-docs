@@ -1,5 +1,5 @@
 ---
-title: Amplitude 2.0 Destination
+title: Amplitude Actions Destination
 hide-boilerplate: true
 ---
 
