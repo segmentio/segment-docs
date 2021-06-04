@@ -239,7 +239,6 @@ For the following destinations, a single source can connect to up to 10 instance
 - [Promoter](/docs/connections/destinations/catalog/promoter.io/)
 - [RadiumOne Connect](/docs/connections/destinations/catalog/radiumone-connect/)
 - [Relay](/docs/connections/destinations/catalog/relay/)
-- [Repeater](/docs/connections/destinations/catalog/repeater/)
 - [Responsys](/docs/connections/destinations/catalog/responsys/)
 - [Sailthru](/docs/connections/destinations/catalog/sailthru/)
 - [Salesforce](/docs/connections/destinations/catalog/salesforce/)
