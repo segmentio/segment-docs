@@ -8,20 +8,19 @@ platform for your web and mobile apps. By analyzing the actions your users
 perform, you can gain a better understanding to drive retention, engagement,
 and conversion.
 
+> info ""
+> This document is about a feature which is in beta. This means that the Destination Actions are in active development, and some functionality may change before it becomes generally available
 
 > success ""
-> **Good to know**: This page is about the Amplitude Segment destination, which receives data _from_ Segment. There's also a page about the [Amplitude Engage Segment source](/docs/connections/sources/catalog/cloud-apps/amplitude-cohorts/), which sends data _to_ Segment!
+> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Amplitude Segment destination, which receives data _from_ Segment. There's also a page about the [non-Actions Amplitude destination](/docs/connections/destinations/catalog/amplitude/), and the [Amplitude Engage Segment source](/docs/connections/sources/catalog/cloud-apps/amplitude-cohorts/), which sends data _to_ Segment!
 
 
 
-{% include components/reference-button.html href="https://segment.com/recipes/amplitude-historical-count-analysis/" icon="media/academy.svg" title="Identify high-value users with Historical Count analysis" description="Examine the exact moment in the customer journey that converts new users into high-value customers." %}
+## Connection Modes for Amplitude Actions destination
 
+The Amplitude (actions) destination does not offer a device-mode connection mode. However with the Actions-framework version of the destination, you do not need it.
 
-## Connection Modes for Destination 2.0 Amplitude
-
-The Destinations 2.0 version of the Amplitude destination does not offer a device-mode connection mode. However with this new version, you do not need it.
-
-Most previous deployments of the Amplitude Segment destination only used the device-mode connection to get use the `session_id` tracking feature. In the new Destinations 2.0 version of the Amplitude destination, session ID tracking is built in. This means you don’t need to bundle any software to run on the user’s device, or write any code. It also means that you can use more of the Segment platform features on data going to Amplitude, such as Protocols filtering and transformations,  and Personas identity resolution.
+Most previous deployments of the Amplitude Segment destination only used the device-mode connection to get use the `session_id` tracking feature. In the new Actions-framework Amplitude destination, session ID tracking is built in. This means you don’t need to bundle any software to run on the user’s device, or write any code. It also means that you can use more of the Segment platform features on data going to Amplitude, such as Protocols filtering and transformations, and Personas identity resolution.
 
 
 > info ""
@@ -38,3 +37,5 @@ Most previous deployments of the Amplitude Segment destination only used the dev
 3. Choose which of your sources to connect the destination to. (You can connect more sources to the destination later.)
 3. On the next page enter your Amplitude API key and Secret key and click **Verify credentials**.
 4. Next, choose how to create the mapping. You can click Quick Setup to use the defaults provided by Segment, or click Customized Setup to start from a blank mapping.
+
+Once you have a mapping, you can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).

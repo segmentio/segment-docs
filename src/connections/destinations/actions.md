@@ -7,7 +7,7 @@ hidden: true
 > This document is about a feature which is in beta. This means that the Destination Actions are in active development, and some functionality may change before it becomes generally available
 <!-- TODO check that this is the right beta warning -->
 
-In the simplest form of the core Segment product, [Connections](/docs/connections/), you send data from Segment [Sources](/docs/connections/sources/), and this data is translated by the Segment servers into a format that [Destination](/docs/connections/destiantions/) tools can understand. The Segment servers map data from the different [event types](/docs/connections/spec/) to transform it into a format that the destination expects, using a pre-defined set of rules. For most Segment deployments, this works great! However, if you have a complex deployment, or a lot of data coming to your destinations, you might want more control. When you use these standard Destinations, you cannot change these mappings, and it might not always be clear which parts of a Segment event end up in a specific part of the destination format.
+In the simplest form of the core Segment product, [Connections](/docs/connections/), you send data from Segment [Sources](/docs/connections/sources/), and this data is translated by the Segment servers into a format that [Destination](/docs/connections/destinations/) tools can understand. The Segment servers map data from the different [event types](/docs/connections/spec/) to transform it into a format that the destination expects, using a pre-defined set of rules. For most Segment deployments, this works great! However, if you have a complex deployment, or a lot of data coming to your destinations, you might want more control. When you use these standard Destinations, you cannot change these mappings, and it might not always be clear which parts of a Segment event end up in a specific part of the destination format.
 
 Now, Destinations Actions allows you to see exactly how Segment sends event data to a destination, and change the data mapping to suit the needs of your organization. This means you can now explicitly see how Segment data becomes the destination data, without any guesswork or experimentation. Actions destinations are triggered by data coming through your Segment source, just as in a standard Segment destination, but now you can edit the mappings, create more than one mapping to fit different conditions, and describe specific conditions that trigger a mapping.
 
@@ -37,16 +37,15 @@ To set up a new Actions-framework destination for the first time:
 6. Next, choose how you want to set up the destination, and click **Configure Actions**.
     You can choose **Quick Setup** to use the default mappings, or choose **Customized Setup**
     (if available) to create new mappings and conditions from a blank state. You can always edit these mappings later.
-    (❓ TODO: feedback - Customized Setup show an entirely blank empty state which seems a bit overwhelming. I expected that it’d just give you the defaults and let you modify and delete as needed)
 7. Once you’re satisfied with your mappings, click **Create Destination**.
 
 
-## Edit a destination actioon
+## Edit a destination action
 You can add or remove, disable and re-enable, and rename individual actions from the destination’s Actions tab. Click an individual action to edit it.
-From the edit screen you can change the action’s name, criteria, and mapping, and toggle it on or off. See (TODO anchorlink) Customizing mappings for more information.
+
+From the edit screen you can change the action’s name, criteria, and mapping, and toggle it on or off. See [Customizing mappings](#customizing-mappings) for more information.
 
 (TODO: options for naming here.)
-(Release date: later in May)
 
 
 ![](https://paper-attachments.dropbox.com/s_8E93E0FF186713D3D7C52187FAB459E84121081D44FF455EC700F3114DEAE134_1619138115656_image.png)
@@ -56,20 +55,21 @@ From the edit screen you can change the action’s name, criteria, and mapping, 
 If you find that you need to stop an action from running, but don’t want to delete it completely, you can click the action to select it, then click the toggle next to the action’s name to disable it. This takes effect within minutes, and disables the action until you reenable it.
 
 ## Delete a destination action
-To delete a destination action: click the action to select it, and click **Delete** (trash can icon). This takes effect within minutes, and removes the action completely. Any data that would have gone to the destination will not be delivered. Once deleted, the saved action cannot be restored.
+To delete a destination action: click the action to select it, and click **Delete** (the trash can icon).
+
+This takes effect within minutes, and removes the action completely. Any data that would have gone to the destination is not delivered. Once deleted, the saved action cannot be restored.
 
 
 ## Customizing mappings
 
-If you are using the default mappings for a destination action, you do not *need* to customize the mapping template for the action, but you can always edit the fields later if you find that the defaults no longer meet your needs.
+If you are using the default mappings for a destination action, you do not *need* to customize the mapping template for the action. However, you can always edit the fields later if you find that the defaults no longer meet your needs.
 
 To create a custom destination action, start from the Actions tab.
 If necessary, click **Add action** to create a new, blank action.
 
-
-1. In the edit panel, define the conditions(TODO: anchorlink) under which the action should run.
+1. In the edit panel, define the [conditions](#conditions) under which the action should run.
 2. Test those conditions to make sure that they correctly match an expected event.
-    This step looks for events that match the criteria in the debugger queue (TODO: link to debugger doc), so you might need to trigger some events with the expected criteria to test your conditions. You can skip the test step if needed, and re-try it at any time.
+    This step looks for events that match the criteria in the [debugger queue](/docs/connections/sources/debugger/), so you might need to trigger some events with the expected criteria to test your conditions. You can skip the test step if needed, and re-try it at any time.
 3. Next, set up the data mapping from the Segment format to the destination tool format.
 4. Test the mapping with data from a sample event.
     The edit panel shows you the mapping output in the format for the destination tool. You can change your mapping as needed and re-test.
@@ -94,7 +94,6 @@ You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY
 
 ## Best Practices and/or Recipes
 
-(❓ TODO: Best Practices question: is it computationally significant to start with a type filter, to help narrow down the possible events to consider? are there processing implications to inspecting every event for a property? )
 
 BP: give your actions names that describe what they do, even if you won’t have many individual actions.
 
