@@ -22,6 +22,7 @@ const slugify = (displayName) => {
   if (slug === 'roku-alpha') slug = 'roku'
   if (slug === 'shopify-by-littledata') slug = 'shopify-littledata'
   if (slug === 'talon-one') slug = 'talonone'
+  if (slug == 'google-adwords-remarketing-lists-customer-match') slug = 'google-adwords-remarketing-lists'
   return slug
 }
 
