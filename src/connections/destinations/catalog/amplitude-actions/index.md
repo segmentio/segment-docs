@@ -25,9 +25,21 @@ The Amplitude (actions) destination does not offer a device-mode connection mode
 Most previous deployments of the Amplitude Segment destination only used the device-mode connection to get use the `session_id` tracking feature. In the new Actions-framework Amplitude destination, session ID tracking is built in. This means you don’t need to bundle any software to run on the user’s device, or write any code. It also means that you can use more of the Segment platform features on data going to Amplitude, such as Protocols filtering and transformations, and Personas identity resolution.
 
 
-> info ""
-> If you’re using Analytics.js 2.0, the `session_id` is tracked automatically. On iOS, you’ll need to include a [middleware](/sources/catalog/libraries/mobile/ios/middleware/). Session tracking for Android is coming soon.
+Session tracking is only available when using our new libraries: [Analytics.js 2.0](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)
 
+The session tracking is automatically enabled on Javascript sources.
+Please follow these steps for Swift:
+1. Enable `trackApplicationLifecycleEvents` in configuration
+2. Add the [Amplitude Session plugin](https://github.com/segmentio/analytics-swift/blob/main/Examples/destination_plugins/AmplitudeSession.swift
+) to your project
+3. Initialize the plugin ([example](https://github.com/segmentio/analytics-swift/blob/main/Examples/apps/DestinationsExample/DestinationsExample/AppDelegate.swift))
+ analytics?.add(plugin: AmplitudeSession(name: "Amplitude"))
+
+Please follow these steps for Kotlin:
+1. Add the [Amplitude Session plugin](https://github.com/segmentio/analytics-kotlin/blob/main/samples/kotlin-android-app-destinations/src/main/java/com/segment/analytics/destinations/plugins/AmplitudeSession.kt) to your project
+2. Initialize the plugin
+    // Add amplitude session plugin
+    analytics.add(AmplitudeSession())
 
 
 ## Getting Started
