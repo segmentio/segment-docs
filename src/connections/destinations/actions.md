@@ -62,7 +62,7 @@ This takes effect within minutes, and removes the action completely. Any data th
 If you are using the default mappings for a destination action, you do not *need* to customize the mapping template for the action. However, you can always edit the fields later if you find that the defaults no longer meet your needs.
 
 To create a custom destination action, start from the Actions tab.
-If necessary, click **Add action** to create a new, blank action.
+If necessary, click **Add subscription** to create a new, blank action.
 
 1. In the edit panel, define the [conditions](#conditions) under which the action should run.
 2. Test those conditions to make sure that they correctly match an expected event.
