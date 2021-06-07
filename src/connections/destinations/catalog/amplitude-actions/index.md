@@ -17,29 +17,40 @@ and conversion.
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Amplitude Segment destination, which receives data _from_ Segment. There's also a page about the [non-Actions Amplitude destination](/docs/connections/destinations/catalog/amplitude/), and the [Amplitude Engage Segment source](/docs/connections/sources/catalog/cloud-apps/amplitude-cohorts/), which sends data _to_ Segment!
 
 
-
 ## Connection Modes for Amplitude Actions destination
 
-The Amplitude (actions) destination does not offer a device-mode connection mode. However with the Actions-framework version of the destination, you do not need it.
+The Amplitude (actions) destination does not offer a device-mode connection mode. However if you are using one of Segment's new libraries ([Analytics.js 2.0](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)) with the Actions-framework version of the destination, you do not need the device-mode connection.
 
 Most previous deployments of the Amplitude Segment destination only used the device-mode connection to get use the `session_id` tracking feature. In the new Actions-framework Amplitude destination, session ID tracking is built in. This means you don’t need to bundle any software to run on the user’s device, or write any code. It also means that you can use more of the Segment platform features on data going to Amplitude, such as Protocols filtering and transformations, and Personas identity resolution.
 
 
-Session tracking is only available when using our new libraries: [Analytics.js 2.0](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)
+Session tracking is only available when using Segment's new libraries: [Analytics.js 2.0](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)
+
+### Enable session tracking for Analytics.js 2.0
 
 The session tracking is automatically enabled on Javascript sources.
-Please follow these steps for Swift:
-1. Enable `trackApplicationLifecycleEvents` in configuration
-2. Add the [Amplitude Session plugin](https://github.com/segmentio/analytics-swift/blob/main/Examples/destination_plugins/AmplitudeSession.swift
-) to your project
-3. Initialize the plugin ([example](https://github.com/segmentio/analytics-swift/blob/main/Examples/apps/DestinationsExample/DestinationsExample/AppDelegate.swift))
- analytics?.add(plugin: AmplitudeSession(name: "Amplitude"))
 
-Please follow these steps for Kotlin:
-1. Add the [Amplitude Session plugin](https://github.com/segmentio/analytics-kotlin/blob/main/samples/kotlin-android-app-destinations/src/main/java/com/segment/analytics/destinations/plugins/AmplitudeSession.kt) to your project
+
+### Enable session tracking for Swift
+
+To enable session tracking in Amplitude when using the [Segment Swift library](https://github.com/segmentio/analytics-swift):
+1. Enable `trackApplicationLifecycleEvents` in your configuration.
+2. Add the [Amplitude Session plugin](https://github.com/segmentio/analytics-swift/blob/main/Examples/destination_plugins/AmplitudeSession.swift
+) to your project.
+3. Initialize the plugin ([example](https://github.com/segmentio/analytics-swift/blob/main/Examples/apps/DestinationsExample/DestinationsExample/AppDelegate.swift))
+   ```swift
+   analytics?.add(plugin: AmplitudeSession(name: "Amplitude"))
+   ```
+
+### Enable session tracking for Kotlin
+
+To enable session tracking in Amplitude when using the [Segment Kotlin library](https://github.com/segmentio/analytics-kotlin):
+1. Add the [Amplitude Session plugin](https://github.com/segmentio/analytics-kotlin/blob/main/samples/kotlin-android-app-destinations/src/main/java/com/segment/analytics/destinations/plugins/AmplitudeSession.kt) to your project.
 2. Initialize the plugin
-    // Add amplitude session plugin
-    analytics.add(AmplitudeSession())
+   ```java
+   // Add amplitude session plugin
+   analytics.add(AmplitudeSession())
+   ```
 
 
 ## Getting Started
