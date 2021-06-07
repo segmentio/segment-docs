@@ -26,6 +26,21 @@ Most previous deployments of the Amplitude Segment destination only used the dev
 
 Session tracking is only available when using Segment's new libraries: [Analytics.js 2.0](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)
 
+
+
+## Getting Started
+
+1. Before you start, go to your [Amplitude project settings](https://analytics.amplitude.com/settings/projects), and locate the project that you'll be sending Segment data to. Copy the Amplitude API Key and Secret key for the project.
+1. From the Segment web app, click **Catalog**, then click **Destinations**.
+2. Find the Destinations Actions item in the left navigation, and click it.
+2. Click the "Amplitude" item to select it and click **Configure**.
+3. Choose which of your sources to connect the destination to. (You can connect more sources to the destination later.)
+3. On the next page enter your Amplitude API key and Secret key and click **Verify credentials**.
+4. Next, choose how to create the mapping. You can click Quick Setup to use the defaults provided by Segment, or click Customized Setup to start from a blank mapping.
+
+Once you have a mapping, you can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+
+
 ### Enable session tracking for Analytics.js 2.0
 
 The session tracking is automatically enabled on Javascript sources.
@@ -51,16 +66,3 @@ To enable session tracking in Amplitude when using the [Segment Kotlin library](
    // Add amplitude session plugin
    analytics.add(AmplitudeSession())
    ```
-
-
-## Getting Started
-
-1. Before you start, go to your [Amplitude project settings](https://analytics.amplitude.com/settings/projects), and locate the project that you'll be sending Segment data to. Copy the Amplitude API Key and Secret key for the project.
-1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Find the Destinations Actions item in the left navigation, and click it.
-2. Click the "Amplitude" item to select it and click **Configure**.
-3. Choose which of your sources to connect the destination to. (You can connect more sources to the destination later.)
-3. On the next page enter your Amplitude API key and Secret key and click **Verify credentials**.
-4. Next, choose how to create the mapping. You can click Quick Setup to use the defaults provided by Segment, or click Customized Setup to start from a blank mapping.
-
-Once you have a mapping, you can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
