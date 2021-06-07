@@ -25,7 +25,7 @@ The table below includes the _most important_ Personas Destinations that we supp
 | **Destination**       | **Category**       |
 | === | === |
 | [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/) | Advertising   |
-| [Google Adwords Remarketing Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists/) | Advertising   |
+| [Google Adwords Remarketing Lists (Customer Match)](/docs/connections/destinations/catalog/adwords-remarketing-lists/) | Advertising   |
 | [Braze](/docs/connections/destinations/catalog/braze/)   | Marketing Automation |
 | [Intercom](/docs/connections/destinations/catalog/intercom/)   | Livechat |
 | [Amazon Kinesis](/docs/connections/destinations/catalog/amazon-kinesis/)   | Raw Data |
@@ -225,7 +225,7 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 ## Personas Compatible Destinations: Event Type
 
 - [ActiveCampaign](/docs/connections/destinations/catalog/activecampaign/)
-- [AdWords Remarketing Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists/)
+- [AdWords Remarketing Lists (Customer Match)](/docs/connections/destinations/catalog/adwords-remarketing-lists/)
 - [Adjust](/docs/connections/destinations/catalog/adjust/)
 - [Adobe Analytics](/docs/connections/destinations/catalog/adobe-analytics/)
 - [Adtriba](/docs/connections/destinations/catalog/adtriba/)
@@ -402,5 +402,5 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 ## Personas Compatible Destinations: List Type
 
 - [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)
-- [AdWords Remarketing Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists/)
+- [AdWords Remarketing Lists (Customer Match)](/docs/connections/destinations/catalog/adwords-remarketing-lists/)
 - [Marketo Static Lists](/docs/connections/destinations/catalog/marketo-static-lists/)
