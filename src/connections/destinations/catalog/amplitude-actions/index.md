@@ -61,9 +61,9 @@ To enable session tracking in Amplitude when using the [Segment Swift library](h
 ### Enable session tracking for Kotlin
 
 To enable session tracking in Amplitude when using the [Segment Kotlin library](https://github.com/segmentio/analytics-kotlin):
-1. Add the [Amplitude Session plugin](https://github.com/segmentio/analytics-kotlin/blob/main/samples/kotlin-android-app-destinations/src/main/java/com/segment/analytics/destinations/plugins/AmplitudeSession.kt) to your project.
+1. Enable `trackApplicationLifecycleEvents` in your configuration.
+2. Add the [Amplitude Session plugin](https://github.com/segmentio/analytics-kotlin/blob/main/samples/kotlin-android-app-destinations/src/main/java/com/segment/analytics/destinations/plugins/AmplitudeSession.kt) to your project.
 2. Initialize the plugin
-   ```java
-   // Add amplitude session plugin
+   ```kotlin
    analytics.add(AmplitudeSession())
    ```
