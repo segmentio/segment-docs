@@ -12,8 +12,8 @@ This document was last updated on February 05, 2020. If you notice any gaps, out
 
   1. Create at least one Kinesis Firehose delivery stream. You can follow these [instructions](http://docs.aws.amazon.com/firehose/latest/dev/basic-create.html) to create a new delivery stream.
   2. Create an IAM policy.
-	  - Sign in to the [Identity and Access Management (IAM) console](https://console.aws.amazon.com/iam/).
-	  - Follow [these instructions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create-console.html#access_policies_create-json-editor) to create an IAM policy on the JSON to allow Segment permission to write to your Kinesis Firehose Stream.
+	  1. Sign in to the [Identity and Access Management (IAM) console](https://console.aws.amazon.com/iam/).
+	  2. Follow [these instructions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create-console.html#access_policies_create-json-editor) to create an IAM policy on the JSON to allow Segment permission to write to your Kinesis Firehose Stream.
      - Use the following template policy in the **Policy Document** field. Be sure to change the `{region}`, `{account-id}` and `{stream-name}` with the applicable values.
 
 
@@ -36,16 +36,16 @@ This document was last updated on February 05, 2020. If you notice any gaps, out
 
 
   3. Create an IAM role.
-	  - Follow [these instructions](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html#roles-creatingrole-user-console) to create an IAM role to allow Segment permission to write to your Kinesis Firehose Stream.
-	  - When prompted to enter an Account ID, enter `595280932656`.
-	  - Select the checkbox to enable **Require External ID**.
-	  - Enter your Segment Source ID as the **External ID**. This can be found in Segment by navigating to **Connections > Sources** and choosing the source you want to connect to your Kinesis Firehose destination. Click the **Settings** tab and choose **API Keys**.  
+	  1. Follow [these instructions](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html#roles-creatingrole-user-console) to create an IAM role to allow Segment permission to write to your Kinesis Firehose Stream.
+	  2. When prompted to enter an Account ID, enter `595280932656`.
+	  3. Select the checkbox to enable **Require External ID**.
+	  4. Enter your Segment Source ID as the **External ID**. This can be found in Segment by navigating to **Connections > Sources** and choosing the source you want to connect to your Kinesis Firehose destination. Click the **Settings** tab and choose **API Keys**.  
     - **Note:** If you have multiple sources using Kinesis, enter one of their source IDs here for now and then follow the procedure outlined in the [Multiple Sources](#best-practices) section at the bottom of this doc once you’ve completed this step and saved your IAM role.
-      - When adding permissions to your new role, find the policy you created in step 2 and attach it.
+      5. When adding permissions to your new role, find the policy you created in step 2 and attach it.
 
 4. Create a new Kinesis Firehose Destination.
-    - In the Segment source that you want to connect to your Kinesis Firehose destination, click **Add Destination**.
-    - Search and select the **Amazon Kinesis Firehose** destination and enter details for [these settings options](#settings).
+    1. In the Segment source that you want to connect to your Kinesis Firehose destination, click **Add Destination**.
+    2. Search and select the **Amazon Kinesis Firehose** destination and enter details for [these settings options](#settings).
 
 ## Page
 Take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
