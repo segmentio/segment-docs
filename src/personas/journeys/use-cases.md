@@ -1,6 +1,5 @@
 ---
 title: Example Journeys Use Cases
-hidden: true
 ---
 
 To help you get underway, you can reference these sample Journeys.
