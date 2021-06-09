@@ -27,6 +27,10 @@ Many destinations can accept data from all types of sources, but some are only c
 {% include components/reference-button.html href="/docs/connections/destinations/category-compare/" icon="guides.svg" title="Destinations Compatibility Matrix" description="Wondering which destinations take which data? Check out the Destination connection modes list by category." %}
 
 
+## Destinations 2.0
+
+In June of 2021 Segment released a new form of destinations called [Destinations 2.0](/docs/connections/destinations/destinations-2.0/). These destinations allow users to create "subscriptions": sets of conditions in which data is sent to the destinations, and data mappings to format that data for the destination tool. Segment watches for data that matches the conditions you create (called "triggers") for the subscription, and when the conditions are met, uses an explicit mapping to transform the incoming data to an output format that your destination can use.
+
 ## Connection Modes
 
 {% include content/connection-modes-intro.md %}
