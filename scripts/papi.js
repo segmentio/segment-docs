@@ -405,4 +405,4 @@ const updateDestinations = async () => {
 }
 
 updateDestinations()
-updateSources()
+//updateSources()
