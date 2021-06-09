@@ -15,6 +15,8 @@ and conversion.
 > info ""
 > This document is about a feature which is in beta. This means that the Destination Actions are in active development, and some functionality may change before it becomes generally available
 
+![](images/amplitude-actions-tab.png)
+
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Amplitude Segment destination, which receives data _from_ Segment. There's also a page about the [non-Actions Amplitude destination](/docs/connections/destinations/catalog/amplitude/), and the [Amplitude Engage Segment source](/docs/connections/sources/catalog/cloud-apps/amplitude-cohorts/), which sends data _to_ Segment!
 
