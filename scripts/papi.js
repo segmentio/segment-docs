@@ -8,8 +8,8 @@
 // [x] Add dossier content
 // [x] make quick info work
 // [x] why aren't hidden articles hiding?
-// [ ] fix slugify overrides?
-// [ ] fix settings sections
+// [x] fix slugify overrides?
+// [x] fix settings sections
 
 // Notes
 // PAPI sources do not include type or categories
@@ -103,15 +103,15 @@ const getConnectionModes = (destination) => {
           connectionModes.cloud.web = true
         }
         break
-      // case 'CLOUD':
-      //   connectionModes.cloud.mobile = true
-      //   if (destination.platforms.server) {
-      //     connectionModes.cloud.server = true
-      //   }
-      //   if (destination.platforms.browser) {
-      //     connectionModes.cloud.web = true
-      //   }
-      //   break
+      case 'CLOUD':
+        connectionModes.cloud.mobile = true
+        if (destination.platforms.server) {
+          connectionModes.cloud.server = true
+        }
+        if (destination.platforms.browser) {
+          connectionModes.cloud.web = true
+        }
+        break
         
     }
   })
@@ -206,8 +206,6 @@ const getConnectionModes = (destination) => {
       }
     }
   }
-
-
   return connectionModes
 }
 
@@ -407,4 +405,4 @@ const updateDestinations = async () => {
 }
 
 updateDestinations()
-//updateSources()
+updateSources()
