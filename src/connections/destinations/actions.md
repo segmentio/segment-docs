@@ -48,7 +48,7 @@ From the edit screen you can change the action’s name, subscription criteria, 
 
 <!-- TODO screenshot-->
 
-## Disable a destination actioon
+## Disable a destination action
 If you find that you need to stop an action from running, but don’t want to delete it completely, you can click the action to select it, then click the toggle next to the action’s name to disable it. This takes effect within minutes, and disables the action until you reenable it.
 
 ## Delete a destination action
