@@ -44,19 +44,21 @@ When you first create an audience, Personas sends an Identify call for every use
 ## Settings
 
 Segment lets you change these destination settings from the Segment app without having to touch any code.
-<table>
+<table class="settings">
+<thead>
 <tr>
-<th>Setting Name</th>
+<th>Setting</th>
 <th>Data Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
+</thead>
 {% for item in currentIntegration.settings %}
   {% unless item.deprecated == true %}
 <tr>
-<td class="def" id="{{item.name | slugify}}" style="cursor:pointer">{{item.name}}</td>
+<td class="def" id="{{item.name | slugify}}"><code>{{item.name}}</code></td>
 <td>{{item.type}}</td>
-<td>{{item.defaultValue}}</td>
+<td><code>{{item.defaultValue}}</code></td>
 <td markdown="span">{{item.description}}</td>
 </tr>
 
