@@ -1,6 +1,5 @@
 ---
 title: Journeys Key Terms
-hidden: true
 ---
 
 Keep the following terms in mind as you begin to explore Journeys.
