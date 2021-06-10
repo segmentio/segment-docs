@@ -399,9 +399,20 @@ const updateDestinations = async () => {
   output += "# destination categories last updated " + todayDate + " \n";
   output += yaml.safeDump({ items: destinationCategories }, options);
   fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/destination_categories.yml`), output);
+}
 
+const updateWarehouses = async () => {
+  while (nextPageToken !== null) {
+    const res = await getCatalog(`${PAPI_URL}/catalog/warehouses/`, nextPageToken)
+    destinations = destinations.concat(res.data.destinationsCatalog)
+    nextPageToken = res.data.pagination.next
+  }
 
-
+  destinations.sort((a, b) => {
+    if(a.name < b.name) { return -1; }
+    if(a.name > b.name) { return 1; }
+    return 0;
+  })
 }
 
 updateDestinations()
