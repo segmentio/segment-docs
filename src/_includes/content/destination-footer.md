@@ -48,8 +48,6 @@ Segment lets you change these destination settings from the Segment app without 
 <thead>
 <tr>
 <th>Setting</th>
-<th>Data Type</th>
-<th>Default</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -57,9 +55,7 @@ Segment lets you change these destination settings from the Segment app without 
   {% unless item.deprecated == true %}
 <tr>
 <td class="def" id="{{item.name | slugify}}"><code>{{item.name}}</code></td>
-<td>{{item.type}}</td>
-<td><code>{{item.defaultValue}}</code></td>
-<td markdown="span">{{item.description}}</td>
+<td markdown="span"><code>{{item.type}}</code>{% if item.defaultValue != ''%}, defaults to {{item.defaultValue}}.{% endif %} <br /> <br /> {{item.description}}</td>
 </tr>
 
 
