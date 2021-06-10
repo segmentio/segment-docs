@@ -6,8 +6,13 @@ log=$(env -i git log -1 --pretty=%B)
 # run a series of checks for common reasons that we shouldn't preview build.
 # if no checks match, exit with code 1 to run the build
 
+# Force a build
+if echo $log | grep -1 'netlify\-build'; then
+echo "Force build becuase Netlify is a benevolent overseer"
+exit 1
+
 # ignore for simple typo fixes
-if echo "$log" | grep -q 'typo'; then
+elif echo "$log" | grep -q 'typo'; then
 echo "Build ignored because 'typo' is in the commit message."
 exit
 # ignore link / url updates

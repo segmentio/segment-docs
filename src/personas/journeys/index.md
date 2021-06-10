@@ -1,6 +1,5 @@
 ---
 title: Journeys Overview
-hidden: true
 ---
 
 Journeys, a feature of Segment Personas, provides a way for marketers to personalize experiences through planning how and when to engage customers with the right campaigns and messages.

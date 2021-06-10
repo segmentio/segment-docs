@@ -75,7 +75,7 @@ Find details on the **identify method payload** in our [Spec](/docs/connections/
 
 ## Track
 
-`track` lets you record the actions your users perform.Every action triggers what we call an "event", which can also have associated properties.
+`track` lets you record the actions your users perform. Every action triggers what we call an "event", which can also have associated properties.
 
 You'll want to track events that are indicators of success for your site, like **Signed Up**, **Item Purchased** or **Article Bookmarked**.
 

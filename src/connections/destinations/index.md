@@ -18,13 +18,18 @@ Segment has five types of sources: Web (Analytics.js), Mobile, Server, and Cloud
 
 ## Method Compatibility
 
-Not all destinations can accept data from specific method types. Wondering which ones are which? Check out the [Destinations Methods matrix](/docs/connections/destinations/methods-compare/).
+Not all destinations can accept data from specific method types. Wondering which ones are which? Look for the "Quick Info" box at the top of the destination's documentation page, or check out the [Destinations Methods matrix](/docs/connections/destinations/methods-compare/).
 
 ## Source Compatibility
 
-Many destinations can accept data from all types of sources, but some are only compatible with specific source types (for example, web only, or server only). To find out which source types a specific destination can accept data from, check the documentation for that destination for a "Supported Sources and Connection Modes" section.
+Many destinations can accept data from all types of sources, but some are only compatible with specific source types (for example, web only, or server only). To find out which source types a specific destination can accept data from, check the documentation for that destination for a "Quick info" box, or a "Supported Sources and Connection Modes" section.
 
 {% include components/reference-button.html href="/docs/connections/destinations/category-compare/" icon="guides.svg" title="Destinations Compatibility Matrix" description="Wondering which destinations take which data? Check out the Destination connection modes list by category." %}
+
+
+## Destinations 2.0
+
+In June of 2021 Segment released a new form of destinations called [Destinations 2.0](/docs/connections/destinations/destinations-2.0/). These destinations allow users to create "subscriptions": sets of conditions in which data is sent to the destinations, and data mappings to format that data for the destination tool. Segment watches for data that matches the conditions you create (called "triggers") for the subscription, and when the conditions are met, uses an explicit mapping to transform the incoming data to an output format that your destination can use.
 
 ## Connection Modes
 
@@ -33,7 +38,7 @@ Many destinations can accept data from all types of sources, but some are only c
 
 ### When should I use Device-mode? When should I use Cloud-mode?
 
-There are two main things we consider when we decide to build Device- or Cloud-Modes (or both!) for a destination partner
+There are two main things we consider when Segment decides to use Device- or Cloud-Modes (or both!) for a destination partner
 
 #### 1. Anonymous Attribution Methodology
 
