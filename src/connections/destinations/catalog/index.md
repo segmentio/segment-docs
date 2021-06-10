@@ -31,7 +31,7 @@ redirect_from:
                   <div class="thumbnail-integration__content">
                     <div class="flex flex--wrap flex--middle waffle waffle--xlarge@medium">
                       <div class="flex__column flex__column--12 flex__column--2@medium thumbnail-integration__logo-wrapper">
-                        {% if destination.mark.url != '' %}
+                        {% if destination.mark.url != '' and destination.mark.url != null %}
                           <img class="thumbnail-integration__logo image" alt="{{ destination.display_name }}" src="{{ destination.mark.url }}">
                         {% else %}
                           <img class="thumbnail-integration__logo image" alt="{{ destination.display_name }}" src="{{ destination.logo.url }}">
