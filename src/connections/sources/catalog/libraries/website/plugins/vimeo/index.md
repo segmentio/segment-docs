@@ -3,46 +3,44 @@ title: analytics.js Vimeo Plugin
 hidden: true
 ---
 
-With the analytics.js Vimeo Plugin you can easily collect Vimeo player events into the Segment ecosystem.
+With the analytics.js Vimeo Plugin you can collect Vimeo player events into the Segment ecosystem.
 
 ## Getting Started
-To use the plugin you must first generate an Access Token in Vimeo. The plugin uses this token to access metadata about the video content being played.
+To use the Vimeo plugin:
 
-Vimeo provides documentation outlining this process [here](https://developer.vimeo.com/api/start#getting-started-step1). Make sure you are carefully selecting your access scopes! The plugin only needs to read information about your video(s).
+1. Generate an access token in Vimeo. The plugin uses this token to access metadata about the playing video content. Vimeo provides documentation to [generate the access token](https://developer.vimeo.com/api/guides/start#generate-access-token).
+- **Note:** Make sure to select the access scopes you need as the plugin only needs to read information about your video(s).
 
-### 1. Enable
+2. Enable a new plugin by navigating to the settings for your Source and clicking **Plugins**. You can enable the Vimeo plugin from this menu:
 
-Enable a new plugin by navigating to the settings for your Source and clicking **Plugins**. You can enable the Vimeo plugin from this menu.
+    ![the plugins setting screen](./images/youtube-vimeo-plugins-beta-2021-06-04.png)
 
-![the plugins setting screen](/docs/docs/connections/sources/plugins-enable.png)
+3. Initialize the plugin by entering your Vimeo access token and granting it access to the Vimeo video player instance(s) running on the page. Use this initialize method:
 
-**NOTE:** At this time, only Javascript sources support plugins.
-
-### 2. Initialize
-Initialize the plugin by giving it your Vimeo Access Token, and granting it access to the Vimeo video player instance(s) running on the page. Do this using the initialize method:
-<pre>
-&lt;iframe src="https://player.vimeo.com/video/76979871" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
-&lt;script src="https://player.vimeo.com/api/player.js"&gt;&lt;/script&gt;
-&lt;script&gt;
+```js
+<iframe src="https://player.vimeo.com/video/76979871" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
     var iframe = document.querySelector('iframe');
     var player = new Vimeo.Player(iframe);
-    var VimeoAnalytics = window.analytics.plugins.VimeoAnalytics
-    <b>var vimeoAnalytics = new VimeoAnalytics(player, 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX0365')
-    vimeoAnalytics.initialize()</b>
-&lt;/script&gt;
-</pre>
-
-That's it! The plugin listens to the Vimeo player for events, and responds by firing the corresponding [Segment Video Spec](https://segment.com/docs/connections/spec/video/) events on Analytics.js.
+    analytics.ready(function () {
+      var VimeoAnalytics = window.analytics.plugins.VimeoAnalytics
+      var vimeoAnalytics = new VimeoAnalytics(player, 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX0365')
+      vimeoAnalytics.initialize()
+    })
+</script>
+```
+That's it! The plugin listens to the Vimeo player for events, and responds by firing the corresponding [Segment Video Spec](/docs/connections/spec/video/) events on Analytics.js.
 
 ## Supported Events
-The following [Segment Video Spec](https://segment.com/docs/connections/spec/video/) events are tracked by this plugin:
+The plugin tracks the following [Segment Video Spec](/docs/connections/spec/video/) events:
 - Video Playback Started
 - Video Playback Completed
 - Video Playback Paused/Resumed
 - Video Content Started/Completed
 
 ## Supported Properties
-The following [Segment Video Spec](https://segment.com/docs/connections/spec/video/) properties are automatically attached to the above events:
+The plugin automatically attaches the following [Segment Video Spec](/docs/connections/spec/video/) properties to the above events:
 
 **'Playback' Events**
 - Total Length
