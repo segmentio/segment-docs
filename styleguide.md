@@ -75,7 +75,7 @@ NB, LR 11/12/2020: Technically, an SDK often contains a hardware component, or i
 
 ### When to capitalize
 
-Capitalize Segment (obviously ;) ) and Segment product names. For example, "privacy" by itself isn't capitalized, but "Segment Privacy Portal" is. Page titles Other UI text should be in lower case.
+Capitalize Segment (obviously ;) ) and Segment product names. For example, "privacy" by itself isn't capitalized, but "Segment Privacy Portal" is. Page titles and other UI text should be in lower case.
 
 Capitalize the words "Sources", "Destinations", and "Warehouses" when referring them as product names (for example: “You can use Sources to…”) but decap them when referring to them generically (“You can connect your warehouse to…”)
 
@@ -98,11 +98,11 @@ Device-mode and Cloud-mode are always hyphenated. They should be capitalized whe
 
 ### Use this not that
 
-- Don't use characters like ampersand (`&`) -> Use the word "and".
+- Don't use characters like ampersand (`&`) or plus (`+`) -> Use the word "and".
 - Don't use "ie" or "eg", write out "for example".
 - Don't use the word "via". Instead use the words "using", "with", or sometimes "through" as appropriate.
 - Setup is one word describing a noun ("your recording studio setup") which we should more properly call "configuration."  "Set up" is an action, and requires a space.
-- "Login" is a noun, and we should use "credentials", "account", or similar. "Log in" is an action and requires a space.
+- "Login" is a noun, and we should use "credentials", "account", or similar instead. "Log in" is an action, and requires a space.
 - Replace big words like leverage, utilize, utilizing -> Use "use"
 
 ## Doc structure
