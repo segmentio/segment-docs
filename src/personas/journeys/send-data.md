@@ -1,6 +1,8 @@
 ---
 title: Send Journeys data to a Destination
 ---
+{% include content/plan-grid.md name="journeys" %}
+
 
 When you send data to destinations, you send a series of events or user lists, depending on the destination type.
 

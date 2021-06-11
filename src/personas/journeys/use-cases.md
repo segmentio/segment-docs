@@ -2,6 +2,8 @@
 title: Example Journeys Use Cases
 ---
 
+{% include content/plan-grid.md name="journeys" %}
+
 To help you get underway, you can reference these sample Journeys.
 
 ## E-commerce use cases
