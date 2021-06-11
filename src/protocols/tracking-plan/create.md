@@ -41,7 +41,7 @@ The Tracking Plan editor is organized as a spreadsheet to help you  add new even
 | Permitted Values | Enter simple regular expressions to validate property values. This works when a property data type is set to `string`. For example, you can add pipe delimited strings to the regex column to generate violations when a property value does not match fall, winter or spring. |
 
 > info ""
-> The Status, Data Type, and Permitted Values columns appear as you add a track call property. 
+> The Status, Data Type, and Permitted Values columns appear as you add a track call property.
 
 ### Add a new track call
 To add a new track call:
@@ -78,7 +78,7 @@ Protocols Tracking Plans use [JSON Schemas](https://json-schema.org/) to validat
 You can edit the JSON schema for each track event listed in the tracking plan, and a common JSON schema definition that applies across all events.
 
 #### Track event JSON schema
-Each track event in the tracking plan has a separate JSON schema definition to validate the properties in that event. To edit, you can click on the overflow menu next to each event row in the Tracking Plan.
+Each track event in the tracking plan has a separate JSON schema definition to validate the properties in that event. To edit, click on the overflow menu next to each event row in the Tracking Plan.
 
 > info ""
 > Advanced edits to the JSON schema are not visible in the Tracking Plan and make it harder for other users to understand the validation logic. Be sure to communicate to any other Protocols users that you are making changes in the validation logic.
