@@ -86,7 +86,7 @@ Each track event in the tracking plan has a separate JSON schema definition to v
 #### Common JSON schema
 The Tracking Plan also uses a common JSON schema definition that applies to the entire payload of every event sent from sources connected to the tracking plan.
 
-The common JSON schema definition is unique for each tracking plan. An example use of this feature is to validate that all track, identify and page events sent to Segment include a `context.device.advertisingId` property. This validation ensures that every Segment call has a userId, anonymousId, and context object with a nested `"device": { "advertisingId": "e23sfsdf"}` object. To update this in the Tracking Plan, you'll need to add it under the `"global"`: object and upload using the API.
+The common JSON schema definition is unique for each tracking plan. An example use of this feature is to validate that all track, identify and page events sent to Segment include a `context.device.advertisingId` property. This validation ensures that every Segment call has a userId, anonymousId, and context object with a nested `"device": { "advertisingId": "e23sfsdf"}` object.
 
 ```json
 {
@@ -146,6 +146,8 @@ To edit the common JSON schema:
 2. Enter your new JSON schema and click **Update JSON**.
 3. Once you've saved and merged your JSON schema changes, go to the **Settings** tab for your source.
 4. Click **Schema Configuration** in the navigation and go to the **Advanced Blocking Controls** section to define specific blocking behavior for common JSON schema violations.
+
+To edit the common JSON schema using the Config API, you'll need to add your new JSON schema under the `"global"`: object.
 
 > info ""
 > [Negative lookahead regexes (`?!`)](https://www.regular-expressions.info/lookaround.html) aren't supported. This means you can’t use regex to prevent matches with a specific following character or expression. But, you can use `not` in the regex of your JSON schema to generate violations when a property key or value doesn't match the provided regex pattern.
