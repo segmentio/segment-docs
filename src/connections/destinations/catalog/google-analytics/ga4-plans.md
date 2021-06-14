@@ -6,7 +6,7 @@ strat: google
 Google introduced the new version of Google Analytics, called Google Analytics 4 (GA4), in October 2020. GA4 has some distinct differences from Universal Analytics (UA), which are important to understand before considering migration and the data schema changes that might require.
 
 > success ""
-> Segment expects to release a beta GA4 destination in early 2021. If you are interested in being a beta tester, please complete this short [questionnaire](https://forms.gle/Tt5T6S4eX7Tcaqin6) and someone will be in touch with next steps.
+> Segment expects to release a beta GA4 destination in Q3 2021. Fill out the Segment GA4 [Beta Sign-up Form](https://forms.gle/WzC1dsbxmNVDsYNJ6) to be notified when the destination is available.
 
 We’ll update this page to share the latest on our GA4 destination.
 
@@ -30,12 +30,12 @@ GA4’s out-of-the-box reports are different from UA’s. GA4’s reporting is m
 
 You might not be able to perfectly recreate your UA reports in GA4. One approach is to send your data to both UA and GA4 while you build out your new reports in GA4, and improve those reports over time. Once you are satisfied that your GA4 reports meet your needs, you can gradually migrate away from using the original reporting in UA.
 
+GA4 requires that you use GA4’s recommended events and properties in order to get the new reports. Segment’s GA4 destination will automatically map your Segment spec events to the corresponding recommended GA4 events and properties. If your events do not follow the Segment spec exactly, don’t worry; you’ll be able to modify the mappings. You can also create custom events and properties.
 
-## Client-based or server-based
 
-GA4 is only available using a device-mode (client-based) SDK  such as `gtag.js`, Firebase, and Google Tag Manager. The [Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/ga4/sending-events?client_type=gtag#send_an_event) that enables server-to-server data syncing for GA4 properties is [currently in alpha](https://developers.google.com/analytics/devguides/collection/protocol/ga4/sending-events?client_type=gtag#send_an_event).
+## Cloud Mode (Server-based) first
 
-Segment plans to support Device Mode and Cloud Mode for GA4. Availability will depend on the Google Analytics roadmap and our assessment of the stability of these APIs.
+Segment will start by supporting Cloud-mode for GA4. Note that the [Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/ga4/sending-events?client_type=gtag#send_an_event) that enables server-to-server data syncing for GA4 properties is [currently in alpha](https://developers.google.com/analytics/devguides/collection/protocol/ga4/sending-events?client_type=gtag#send_an_event).
 
 ## Switching to GA4
 

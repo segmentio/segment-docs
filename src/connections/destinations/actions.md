@@ -46,9 +46,9 @@ You can add or remove, disable and re-enable, and rename individual actions from
 
 From the edit screen you can change the action’s name, subscription criteria, and mapping, and toggle it on or off. See [Customizing mappings](#customizing-mappings) for more information.
 
-<!-- TODO screenshot-->
+![](/docs/connections/destinations/catalog/actions-amplitude/images/amplitude-actions-tab.png)
 
-## Disable a destination actioon
+## Disable a destination action
 If you find that you need to stop an action from running, but don’t want to delete it completely, you can click the action to select it, then click the toggle next to the action’s name to disable it. This takes effect within minutes, and disables the action until you reenable it.
 
 ## Delete a destination action

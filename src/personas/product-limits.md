@@ -171,7 +171,7 @@ Contact your account team to customize your schedule.</td>
 </table>
 
 
-<!-- ## Journeys
+## Journeys
 
 
 In addition to the [Personas Default Limits](#default-limits), Journeys enforces a set of default limits to ensure the reliability and performance of the feature.
@@ -182,4 +182,4 @@ In addition to the [Personas Default Limits](#default-limits), Journeys enforces
 | Journey steps | 20 steps per Journey             | This applies to certain steps:<br><br>- Initial cohort: 1<br>- Wait for condition: 1<br>- True / False Split: 1<br>- Multi-Branch Split: Number of branches<br>- Send to Destinations: 1<br><br>Once the limit is reached, you will be unable to add additional steps to the Journey. |
 | Journey Name  | Maximum length of 73 characters  | Once the limit is reached, you cannot add additional characters to the name.                                                                                                                                                                                               |
 | Step Name     | Maximum length of 170 characters | Once the limit is reached, you cannot add additional characters to the name.                                                                                                                                                                                               |
-| Key           | Maximum length of 255 characters | Once the limit is reached, you cannot add additional characters to the key.                                                                                                                                                                                                | -->
+| Key           | Maximum length of 255 characters | Once the limit is reached, you cannot add additional characters to the key.                                                                                                                                                                                                |
