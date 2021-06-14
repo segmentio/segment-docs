@@ -1,11 +1,13 @@
 ---
 title: Analytics.js 2.0 (Beta)
-strat: ajs
+published: false
+hidden: true
 ---
 > warning "Analytics.js 2.0 is recommended for use in staging"
 > Analytics.js 2.0 was built with backwards compatibility in mind. However, Segment recommends thorough testing in a Staging environment before you upgrade your production source.
 
 Analytics.js is Segment's most popular library source. This new major version has been re-engineered to be more performant and provide greater extensibility. It is fully backwards compatible with the previous version of Analytics.js.
+
 
 ## Benefits of Analytics.js 2.0
 
@@ -16,7 +18,7 @@ The Analytics.js 2.0 Beta provides two key benefits over the previous version.
 Analytics.js 2.0 provides a reduction in page load time, which improves overall site performance. Its package size is **~70%** smaller than the previous Analytics.js.
 
 > info ""
-> There are many factors that impact page load time, including page weight, network conditions, and hosting locations.
+> Many factors impact page load time, including page weight, network conditions, and hosting locations.
 
 ### Developer experience
 

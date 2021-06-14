@@ -7,6 +7,8 @@ Segment Personas enforces a set of default use and rate limits to help ensure th
 
 Contact your dedicated Customer Success Manager or [friends@segment.com](mailto:friends@segment.com) to learn more about custom limits.
 
+## Default Limits
+
 <table id="limit">
 <thead>
 <tr>
@@ -69,7 +71,7 @@ When requests to downstream destinations fail, Segment makes additional attempts
 <tr>
 <td>Identity Merges</td>
 <td>100 merges</td>
-<td>Personas supports up to 100 merges per profile in its identity graph. A merge occurs when two existing profiles are joined together by a common `external_id`. For example, if a user starts their journey on mobile, and then signs in through a web application, those two user profiles are joined together by a common identifier like a `user_id`. Messages that attempt additional merges are usually a sign of a corrupt profile and are dropped.
+<td>Personas supports up to 100 merges per profile in its identity graph. A merge occurs when two existing profiles are joined together by a common `external_id`. For example, if a user starts on mobile, and then signs in through a web application, those two user profiles are joined together by a common identifier like a `user_id`. Messages that attempt additional merges are usually a sign of a corrupt profile and are dropped.
 <br /><br />
 Once the limit is reached, Segment rejects additional events.</td>
 </tr>
@@ -167,3 +169,17 @@ Contact your account team to customize your schedule.</td>
 </tr>
 </tbody>
 </table>
+
+
+## Journeys
+
+
+In addition to the [Personas Default Limits](#default-limits), Journeys enforces a set of default limits to ensure the reliability and performance of the feature.
+
+| Item          | Limit description                | Details                                                                                                                                                                                                                                                                               |
+| ------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Journeys      | 10 Journeys per workspace        | This applies to active, concurrent Journeys. <br><br>Once the limit is reached, you cannot publish any additional Journeys. You will still be able to create draft Journeys.                                                                                               |
+| Journey steps | 20 steps per Journey             | This applies to certain steps:<br><br>- Initial cohort: 1<br>- Wait for condition: 1<br>- True / False Split: 1<br>- Multi-Branch Split: Number of branches<br>- Send to Destinations: 1<br><br>Once the limit is reached, you will be unable to add additional steps to the Journey. |
+| Journey Name  | Maximum length of 73 characters  | Once the limit is reached, you cannot add additional characters to the name.                                                                                                                                                                                               |
+| Step Name     | Maximum length of 170 characters | Once the limit is reached, you cannot add additional characters to the name.                                                                                                                                                                                               |
+| Key           | Maximum length of 255 characters | Once the limit is reached, you cannot add additional characters to the key.                                                                                                                                                                                                |

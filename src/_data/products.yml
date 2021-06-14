@@ -98,3 +98,19 @@ items:
     team: false
     business: true
     add-on: false
+- product_display_name: Destination Actions
+  slug: dest-actions
+  plan-note: "Destination Actions are currently available for Free and Team plans. Actions will be available for Business plan users soon."
+  plans:
+    free: true
+    team: true
+    business: false
+    add-on: false
+- product_display_name: Journeys
+  slug: journeys
+  plan-note: "Journeys is available to Personas Advanced customers"
+  plans:
+    free: false
+    team: false
+    business: true
+    add-on: true

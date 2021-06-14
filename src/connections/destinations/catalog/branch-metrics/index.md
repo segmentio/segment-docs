@@ -8,7 +8,7 @@ hide-personas-partial: true
 
 ---
 
-**As of November 2019, the Branch mobile SDKs for Segment are in maintenance mode, and will be refreshed in the second half of 2020.**
+**As of November 2019, the Branch mobile SDKs for Segment are in maintenance mode.**
 
 Existing users of the Branch SDKs are unaffected, however new installations must implement the Branch native SDK separately. They can then enable Branch's [data export integration](https://docs.branch.io/integrations/segment-export/) to push additional data to Segment, and [data import integration](https://docs.branch.io/integrations/segment-import/) to pull additional Segment data into the Branch dashboard.
 

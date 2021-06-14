@@ -54,7 +54,8 @@ Below is a table of events that **Shopify by Littledata** sends to Segment throu
 | Registration Viewed   | A user has viewed the /account/register page                        |
 | Thank you Page Viewed | A user has viewed the thank you page after completing an order\*    |
 
-> note "" \* This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
+> note ""
+> *This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
 
 ## Cloud-mode events
 
@@ -175,7 +176,8 @@ The list below outlines the properties included in the events listed above.
 | `total`                                | The total value of the order                                                                       | Float         |
 | `userId`                               | Chosen user identifier, defaulting to Shopify Customer ID                                          | String        |
 
-> note "" \* `revenue` is available only with the Order Completed event, and only if the store opts in via the Littledata application. Revenue is a reserved property in many Segment destinations. Opting in will override the `total` property sent to Google Analytics.
+> note ""
+> *`revenue` is available only with the Order Completed event, and only if the store opts in via the Littledata application. Revenue is a reserved property in many Segment destinations. Opting in will override the `total` property sent to Google Analytics.
 
 ## Product properties
 

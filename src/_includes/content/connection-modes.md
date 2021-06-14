@@ -1,6 +1,11 @@
 <!-- in the file we're pulling from the API, "name" corresponds with the path to the yml blob for a specific destination.-->
 {% assign currentSlug = page.url | split: "/" | last %}
+{% if page.cmode-override %}
+{% assign currentIntegration = site.data.catalog.overrides.items | where: "slug", currentSlug | first %}
+{% else %}
 {% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
+{% endif %}
+
 {% assign connectionModes = currentIntegration.connection_modes %}
 
 {% if currentIntegration.components.size > 0 %}
@@ -8,7 +13,6 @@
 <!--
 components -> how do we send data
 platforms -> what data do we recognize-->
-
 
 
 Before you start, make sure {{ currentIntegration.display_name }} supports the source type and connection mode you've chosen to implement. You can learn more about [connection modes here](https://segment.com/docs/connections/destinations/#connection-modes).
