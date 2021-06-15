@@ -14559,6 +14559,26 @@ items:
       required: false
       description: Map your Segment properties to the Marketo Activity Fields
       settings:
+      - name: marketoAttributeType
+        display_name: Marketo Field Type
+        type: SELECT
+        deprecated: false
+        required: true
+        select_validators:
+          select_options:
+          - string
+          - boolean
+          - number
+          - date
+        description: Enter the Marketo Field type.
+        settings: []
+      - name: primaryKey
+        display_name: Set as Primary Key
+        type: BOOLEAN
+        deprecated: false
+        required: false
+        description: Mark this property as the Primary field in Marketo.
+        settings: []
       - name: segmentProperty
         display_name: Segment Property Name
         type: STRING
@@ -14580,26 +14600,6 @@ items:
         description: >-
           Enter the Marketo Field name. Make sure to copy and paste the exact
           API Name for your field as it appears in Marketo.
-        settings: []
-      - name: marketoAttributeType
-        display_name: Marketo Field Type
-        type: SELECT
-        deprecated: false
-        required: true
-        select_validators:
-          select_options:
-          - string
-          - boolean
-          - number
-          - date
-        description: Enter the Marketo Field type.
-        settings: []
-      - name: primaryKey
-        display_name: Set as Primary Key
-        type: BOOLEAN
-        deprecated: false
-        required: false
-        description: Mark this property as the Primary field in Marketo.
         settings: []
     - name: event
       display_name: Segment Event Name
@@ -16749,7 +16749,9 @@ items:
   slug: optimizely-full-stack
   name: catalog/destinations/optimizelyx
   url: connections/destinations/catalog/optimizely-full-stack
-  description: ''
+  description: >-
+    Optimizely Full Stack is a powerful A/B testing and feature flag tool for
+    product teams. Segment will pass events and traits to Optimizely Full Stack.
   hidden: false
   status: PUBLIC_BETA
   previous_names:
@@ -16914,7 +16916,9 @@ items:
     required: false
     description: >-
       Enable this if you want the server side integration to use Optimizely User
-      ID instead of User ID or anonymous ID in your calls
+      ID instead of User ID or anonymous ID in your calls. You can include
+      Optimizely User ID in your calls via `integrations.['Optimizely Full
+      Stack'].optimizelyUserId`.
     settings: []
   - name: useUserId
     display_name: Use User ID
