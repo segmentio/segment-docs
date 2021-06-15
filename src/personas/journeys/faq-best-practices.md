@@ -1,6 +1,9 @@
 ---
 title: Journeys Best Practices and FAQ
 ---
+{% include content/plan-grid.md name="journeys" %}
+
+
 ## Best practices
 
 ### Enforce exclusivity in multi-branch splits
@@ -46,3 +49,6 @@ Once published, Journeys displays the number of users are in each step of the Jo
 ### How are users sent to downstream destinations?
 
 The data type you send to a destination depends on whether the destination is an Event Destination or a List Destination. 
+
+### Which roles can access Journeys?
+For Personas Advanced customers, users with either the Personas User or Personas Admin roles can create, edit, and delete journeys. Users with the Personas Read-only role are restricted to view-only access.

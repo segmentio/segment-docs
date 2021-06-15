@@ -72,17 +72,17 @@ Read access to all Tracking Plans in Protocols.
 
 #### Personas Admin
 
-Edit access to assigned Personas Space(s), including all audiences and computed traits. Personas admins can update settings from the Personas screens of the Segment App.
+Edit access to assigned Personas Space(s), including all audiences and computed traits. Personas admins can update settings from the Personas screens of the Segment App. For Personas Advanced customers, Personas Admins can create, edit, and delete Journeys.
 
 **Scope:** Can be granted access to either: all current and future Spaces, or a specific list of Spaces, or Spaces with a specific Label (BT only).
 
 #### Personas User
-Edit access to all traits and audiences within assigned Personas Space(s). Cannot change settings in Personas.
+Edit access to all traits and audiences within assigned Personas Space(s). Cannot change settings in Personas. For Personas Advanced customers, Personas Users can create, edit, and delete Journeys.
 
 **Scope:** Can be granted access to either: all current and future Spaces, or a specific list of Spaces, or Spaces with a specific Label (BT only).
 
 #### Personas Read-only
-Read-only access to assigned Personas Space(s), including all audiences and computed traits.
+Read-only access to assigned Personas Space(s), including all audiences and computed traits. For Personas Advanced customers, Personas Read-only users can view Journeys.
 
 **Scope:** Can be granted access to either: all current and future Spaces, or a specific list of Spaces, or Spaces with a specific Label (BT only).
 
