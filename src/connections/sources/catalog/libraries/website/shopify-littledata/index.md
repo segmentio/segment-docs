@@ -14,7 +14,7 @@ Littledata is available as an independent [Shopify App](https://apps.shopify.com
 
 2. The app also sets up server-side webhook forwarding to ensure 100% accuracy of important Customer and Order data.
 
-This source has a full [tracking plan and event schema](https://docs.google.com/spreadsheets/d/1JOlgpXpQ7ctktES6B_RyKn0_KxanxGF6) in Google Sheets, which is ready to [upload into Protocols](/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader).
+This source has a full [tracking plan and event schema](https://docs.google.com/spreadsheets/d/1aljowRhMU9_7uGXmcipbP1Y14S4cOSdXGQA2Vx7BHko/copy) in Google Sheets, which is ready to [upload into Protocols](/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader).
 
 Here's an architecture diagram that shows how the Littledata app mediates data flow between Shopify and Segment.
 
@@ -151,7 +151,7 @@ The list below outlines the properties included in the events listed above.
 | -------------------------------------- | -------------------------------------------------------------------------------------------------- | ------------- |
 | `affiliation`                          | A comma-seperated list of order tags. Untagged orders use `Shopify`                                | String        |
 | `cart_id`                              | The ID of the Shopify cart                                                                         | String        |
-| `checkoutId`                           | The ID of the checkout session                                                                     | String        |
+| `checkout_id`                          | The ID of the checkout session                                                                     | String        |
 | `context.uip`                          | The user's IP address                                                                              | String        |
 | `context['Google Analytics'].clientId` | The user's Google Analytics Client ID                                                              | String        |
 | `context['Google Analytics'].geoid`    | The user's location                                                                                | String        |
@@ -168,6 +168,7 @@ The list below outlines the properties included in the events listed above.
 | `sent_from`                            | A unique property to identify events sent by Littledata                                            | String        |
 | `shipping_method`                      | The shipping method chosen for checkout                                                            | String        |
 | `shipping`                             | The shipping cost                                                                                  | Float         |
+| `source_name`                          | The source of the order (e.g. `web`, `android`, `pos`)                                             | String        |
 | `step`                                 | The checkout [step number](https://blog.littledata.io/help/posts/shopify-checkout-funnel-updates/) | Integer       |
 | `subscription_revenue`                 | The revenue associated with a [Subscription Event](#subscription-events)                           | Float         |
 | `subtotal`                             | Order total after discounts but before taxes and shipping                                          | Float         |
