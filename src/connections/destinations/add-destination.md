@@ -171,6 +171,7 @@ The sections below list the most popular multi-instance Segment destinations. Th
 For the following destinations, a single source can connect to up to 10 instances of the destination in cloud-mode, and **up to one instance in device-mode**.
 
 - [Adobe Analytics](/docs/connections/destinations/catalog/adobe-analytics/)
+- [Amplitude](/docs/connections/destinations/catalog/amplitude/)
 - [Braze](/docs/connections/destinations/catalog/braze/)
 - [Customer.io](/docs/connections/destinations/catalog/customer-io)
 - [Google Analytics](/docs/connections/destinations/catalog/google-analytics/)
@@ -191,7 +192,6 @@ For the following destinations, a single source can connect to up to 10 instance
 - [Amazon Kinesis Firehose](/docs/connections/destinations/catalog/amazon-kinesis-firehose/)
 - [Amazon Lambda](/docs/connections/destinations/catalog/amazon-lambda/)
 - [Amazon Personalize](/docs/connections/destinations/catalog/amazon-personalize/)
-- [Amplitude](/docs/connections/destinations/catalog/amplitude/)
 - [Attribution](/docs/connections/destinations/catalog/attribution/)
 - [Attune](/docs/connections/destinations/catalog/attune/)
 - [Autopilot](/docs/connections/destinations/catalog/autopilothq/)
