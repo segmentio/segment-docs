@@ -249,6 +249,7 @@ When you complete the connection between Segment and DV360, it can take from 24 
 
 Google’s [documentation](https://developers.google.com/authorized-buyers/rtb/downloads/cookie-bulk-upload-proto) provides information about the accepted identifiers for this integration.
 
+
 - To use DV360 with web traffic, you must collect `anonymous_id` through the client-side `analytics.js` Source.
 - To use DV360 with mobile traffic, you must collect  `IDFA`s through Segment’s mobile sources.
 
