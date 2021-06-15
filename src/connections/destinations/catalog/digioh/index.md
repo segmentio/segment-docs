@@ -10,10 +10,9 @@ This destination is maintained by Digioh. For any issues with the destination, [
 
 {% include content/connection-modes.md %}
 
-1. Go to your [Integrations tab](https://account.digioh.com/Integration/List) and click **New Integration**.
-2. Select “Segment” in the dropdown menu of available integrations and click **Create Integration**.
-3. You will then be routed to Segment where you will be prompted to login and authorize the Digioh Destination.
-4. Select your Workspace and Source and click **Allow**.
+1. Open the [Digioh Integrations tab](https://account.digioh.com/Integration/List), click **New Integration**.
+2. The Segment App opens in a new window. Log in to authenticate the connection from Digioh.
+3. Select the Workspace and Source to connect with Digioh.
 
 ## Identify
 
