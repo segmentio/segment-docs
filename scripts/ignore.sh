@@ -3,6 +3,8 @@
 # grab the latest entry from git log
 log=$(env -i git log -1 --pretty=%B)
 
+git diff --quiet 449432c20512d994fb3cbc996296fcfda3d5565f be5370b0fc5d5a75a980cddd87444d60163a0f60 -- src/
+
 # run a series of checks for common reasons that we shouldn't preview build.
 # if no checks match, exit with code 1 to run the build
 
