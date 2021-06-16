@@ -9,8 +9,6 @@ hidden: true
 | ------------------- | ----------------------------- |
 | Build ID            | `{{site.env.BUILD_ID}}`       |
 | Build Context       | `{{site.env.CONTEXT}}`        |
-| System Architecture | `{{site.env._system_arch}}`   |
-| System Version      | `{{site.env_system_version}}` |
 
 ## Git Metadata
 
