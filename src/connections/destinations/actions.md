@@ -2,7 +2,8 @@
 title: Destination Actions
 hidden: true
 ---
-{% include content/plan-grid.md name="actions" %}
+
+{% include content/plan-grid.md name="dest-actions" %}
 
 
 > info ""

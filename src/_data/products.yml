@@ -100,11 +100,11 @@ items:
     add-on: false
 - product_display_name: Destination Actions
   slug: dest-actions
-  plan-note: "Destination Actions are currently available for Free and Team plans. Actions will be available for Business plan users soon."
+  plan-note: "Destination Actions are available for all Segment plans."
   plans:
     free: true
     team: true
-    business: false
+    business: true
     add-on: false
 - product_display_name: Journeys
   slug: journeys
