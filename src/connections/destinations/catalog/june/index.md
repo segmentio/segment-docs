@@ -49,7 +49,7 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
   "total billed": 830
 });
 ```
-Group calls update `Companies` within June. Each `Company` is associated with a distinct `group_id`.
+Group calls from Segment update `Companies` in June. Each `Company` is associated with a distinct `group_id`.
 
 ## Page
 
