@@ -3,7 +3,7 @@ title: June Destination
 rewrite: true
 ---
 
-[June](https://june.so/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is instant product analytics. We automatically generate graphs of the metrics you should track - just connect your Segment account.
+[June](https://june.so/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is instant product analytics. June automatically generates graphs of the metrics you should track - just connect your Segment account.
 
 This destination is maintained by June. For any issues with the destination, [contact the June Support team](mailto:ferruccio@june.so).
 
