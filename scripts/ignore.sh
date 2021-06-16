@@ -35,6 +35,7 @@ elif echo "$log" | grep -q 'Merge branch \SMaster\S'; then
 echo "Build ignored because it's only an update from the main branch."
 exit
 else
+echo "Nothing to ignore here, building!"
 exit 1
 fi
 
