@@ -107,7 +107,7 @@ Segment sends a [Delete User](https://docs.recombee.com/api.html#delete-user) ca
 All the data associated with the user (including interactions) are removed from Recombee.
 
 ## Reporting successful recommendations
-You can tell Recombee that particular interaction is based on a successful recommendation (e.g. the recommendations were presented to a user and the user clicked one of the items), by setting the ID of the successful recommendation request ([read more details here](https://docs.recombee.com/admin_ui.html#reported-metrics)) to the `recomm_id` property of a Segment event.
+You can tell Recombee that a specific interaction is based on a successful recommendation (meaning that the recommendations were presented to a user, and the user clicked one of the items), by setting the ID of the successful recommendation request on the `recomm_id` property of a Segment event. You can read more about this setting in [Recombee's Reported Metrics documentations](https://docs.recombee.com/admin_ui.html#reported-metrics)) 
 
 
 The `recomm_id` property is recognized in all the events that send interactions.
