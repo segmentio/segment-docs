@@ -4,7 +4,7 @@ rewrite: true
 hide-settings: true
 ---
 
-[Recombee](https://recombee.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Recommender as a Service, that can leverage your data to provide the most accurate recommendations of content or products for your users.
+[Recombee](https://recombee.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Recommender as a Service, that can use your data to provide the most accurate recommendations of content or products for your users.
 
 This destination can send your interaction data (views, purchases, plays, etc.) to Recombee.
 
