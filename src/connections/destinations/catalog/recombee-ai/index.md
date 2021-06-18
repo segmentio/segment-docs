@@ -19,7 +19,6 @@ This destination is maintained by Recombee. For any issues with the destination,
 {% include content/connection-modes.md %} 
 
 1. If you don't already have one, set up a [Recombee account](https://recombee.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners).
-
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Recombee" in the Destinations Catalog, and select the Recombee destination.
 3. Choose which Source should send data to the Recombee destination.
