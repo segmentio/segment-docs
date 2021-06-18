@@ -110,7 +110,7 @@ All the data associated with the user (including interactions) are removed from 
 You can tell Recombee that a specific interaction is based on a successful recommendation (meaning that the recommendations were presented to a user, and the user clicked one of the items), by setting the ID of the successful recommendation request on the `recomm_id` property of a Segment event. You can read more about this setting in [Recombee's Reported Metrics documentations](https://docs.recombee.com/admin_ui.html#reported-metrics)) 
 
 
-The `recomm_id` property is recognized in all the events that send interactions.
+Recombee recognizes the `recomm_id` property in all the events that send interactions.
 
 In case of [Order Completed](https://segment.com/docs/connections/spec/ecommerce/v2/#order-completed), set the `recomm_id` to the object of the particular product (`products.$.recomm_id`) that was ordered thanks to a successful recommendation.
 
