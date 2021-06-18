@@ -61,6 +61,7 @@ analytics.track('Video Content Playing', {
 });
 ```
 
+#### Sending semantic spec events to Recombee
 Recombee Destination can process several [Semantic Events](https://segment.com/docs/connections/spec/semantic/):
 
 [Ecommerce](https://segment.com/docs/connections/spec/ecommerce/v2/):
