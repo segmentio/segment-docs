@@ -79,7 +79,7 @@ Recombee Destination can process several [Semantic Events](https://segment.com/d
     - [Video Playback Paused](https://segment.com/docs/connections/spec/video/#video-playback-paused)
     - [Video Playback Completed](https://segment.com/docs/connections/spec/video/#video-playback-completed)
 
-If you want to send interactions from other events, set them to [Track Events Mapping](#Track-Events-Mapping) in Settings.
+If you want to send interactions from other events, set them to [Track Events Mapping](#track-events-mapping) in Settings.
 
 ## Screen
 
