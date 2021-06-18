@@ -22,7 +22,7 @@ This destination is maintained by Recombee. For any issues with the destination,
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Recombee" in the Destinations Catalog, and select the Recombee destination.
-3. Choose which Source should send data to the "Recombee" destination.
+3. Choose which Source should send data to the Recombee destination.
 4. Go to the [Recombee Admin UI](https://admin.recombee.com):
    - Choose a Recombee Database into which you want to send the interactions.
    - Pick the *Settings* section from the menu on the left.
