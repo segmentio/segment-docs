@@ -27,7 +27,7 @@ This destination is maintained by Recombee. For any issues with the destination,
    - Choose the Recombee Database where you want to send the interactions.
    - Pick the *Settings* section from the menu on the left.
    - In the **Settings** section find the **API Identifier** of the Database and its corresponding **Private Token**
-5. In the settings of the Recombee Destination in Segment:
+5. Back in the Segment web app, go to the Recombee destination settings.
     - set the obtained *API Identifier* as the *Database ID*
     - set the obtained *Private Token* as the *API Key*
 6. When you start sending the data from Segment to the Recombee Destination you can:
