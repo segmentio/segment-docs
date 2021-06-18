@@ -112,7 +112,7 @@ You can tell Recombee that a specific interaction is based on a successful recom
 
 Recombee recognizes the `recomm_id` property in all the events that send interactions.
 
-In case of [Order Completed](https://segment.com/docs/connections/spec/ecommerce/v2/#order-completed), set the `recomm_id` to the object of the particular product (`products.$.recomm_id`) that was ordered thanks to a successful recommendation.
+In case of [Order Completed](https://segment.com/docs/connections/spec/ecommerce/v2/#order-completed), set the `recomm_id` to the object of the product (`products.$.recomm_id`) that was ordered because of a successful recommendation.
 
 Sending the `recomm_id` gives you precise numbers about successful recommendations in the KPI section of the [Recombee Admin UI](https://admin.recombee.com). This explicit feedback also helps you optimize your recommendation models.
 
