@@ -27,7 +27,7 @@ You can change to allow or block individual events/properties/traits through the
 ![toggling schema defaults](./images/schema-defaults-eol-2.png)
 
 #### What happens if a source with Schema Defaults enabled has a Tracking Plan connected to it?
-As Tracking Plans supersede Schema Defaults, there will be no impact to these sources as they’ll continue to behave the same.
+As Tracking Plans replace Schema Defaults, there will be no impact to these sources as they’ll continue to behave the same.
 
 #### How should I prepare for the removal of Schema Defaults?
 If you would still like to block new events and traits by default, you can connect a [Protocols](/docs/protocols/) Tracking Plan to your source.
@@ -49,7 +49,7 @@ Event Requirements will be removed on August 11, 2021.
 Events that violate the rules designated within Event Requirements will no longer be blocked. You also won’t be able to interact with the feature anymore as all UI components for Event Requirements will be removed from Segment.
 
 #### What happens if a source with Event Requirements enabled has a Tracking Plan connected to it?
-As Tracking Plans supersede any Event Requirements, there will be no impact to these sources as they’ll continue to behave the same.
+As Tracking Plans replace any Event Requirements, there will be no impact to these sources as they’ll continue to behave the same.
 
 #### How should I prepare for the removal of Event Requirements?
 If you would still like to block events that you set up in Event Requirements, you can connect a [Protocols](/docs/protocols/) Tracking Plan to your source.
