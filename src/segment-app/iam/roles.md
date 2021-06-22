@@ -18,10 +18,10 @@ Members inherit custom permissions based on [individual roles](#business-tier-ro
   Source admins have edit access to assigned source(s), to the settings for that source, to any connected streaming destinations, schema, and live data from the source in the [debugger](/docs/connections/sources/debugger/). A user with the Source Admin role can be granted access to either all current and future Sources, or a specific list of Sources, or (if you are on a Business plan) to Sources with a specific Label.
 
 - **Functions Admin**
-  Functions admins are able to create, edit and delete access to assigned function(s). A user with the Functions Admin role can be can be granted access to either all current and future functions, or to a specific list of functions.
+Functions admins can create, edit and delete access to assigned function(s). When you assign a user the Functions Admin role, you can grant them access to either _all current and future_ functions, or to a _specific list_ of functions.
 
 - **Functions Read-only**
-  Functions read-only grants users the ability to read an assigned function(s). A user with the Functions Read-only role can be can be granted access to either all current and future functions, or to a specific list of functions.
+The Functions read-only role grants users the ability to read an assigned function(s). When you assign a user the Functions Read-only role, you can grant them access to either _all current and future_ functions, or to a _specific list_ of functions.
   
 
 ## Business Tier Roles
