@@ -178,30 +178,32 @@ Amplitude’s `batch` endpoint throttles data when the rate of events sharing th
 
 In the default configuration, this mapping is triggered when Segment sends an Identify call to Amplitude (Actions).
 
-Set the user ID for a specific device ID or update user properties without sending an event to Amplitude.
+This Action sets the user ID for a specific device ID, or updates the user properties. You can use this when you want to update user information without sending an Event to Amplitude.
 
 
 ## Map User
 
 In the default configuration, this mapping is triggered when Segment sends an Alias call to Amplitude (Actions).
 
-Merge two users together that would otherwise have different User IDs tracked in Amplitude.
+This Action merges two users together that would otherwise have different User IDs tracked in Amplitude. You can use this when you want to merge the users without sending an Event to Amplitude.
 
 
 ## Group Identify User
 
 In the default configuration, this mapping is triggered when Segment sends a Group call to Amplitude (Actions).
 
-Set or update properties of particular groups. These Group updates only affect events that occur after you set up the Amplitude mapping. You cannot use this to group historical data.
+This Action sets or updates the properties of specific groups. You can use this when you want to update a group's information without sending an Event to Amplitude.
 
-> tip ""
+These Group updates only affect events that occur after you set up the Amplitude mapping. You cannot use this to group historical data.
+
+> success ""
 > If you are on a Business Tier Segment plan, you can use [Replay](/docs/guides/what-is-replay/) to run historical data through the Amplitude (Actions) destination to apply the grouping.
 
 
 
 ## Important differences from the classic Amplitude destination
 
-Following user fields are captured by the classic Amplitude destination in device-mode (meaning when it runs on the user’s device), but are not captured by Amplitude (Actions):
+The following user fields are captured by the classic Amplitude destination in device-mode (when it runs on the user’s device), but are not captured by Amplitude (Actions):
 
 - Device Type (for example, Mac, PC, mobile device)
 - Platform (for example iOS or Android)
