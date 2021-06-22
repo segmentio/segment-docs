@@ -19,7 +19,7 @@ and conversion.
 ![](images/amplitude-actions-tab.png)
 
 > success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Amplitude Segment destination, which receives data _from_ Segment. There's also a page about the [non-Actions Amplitude destination](/docs/connections/destinations/catalog/amplitude/), and the [Amplitude Engage Segment source](/docs/connections/sources/catalog/cloud-apps/amplitude-cohorts/), which sends data _to_ Segment!
+> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Amplitude Segment destination. There's also a page about the [non-Actions Amplitude destination](/docs/connections/destinations/catalog/amplitude/). Both of these destinations receives data _from_ Segment. There's also the [Amplitude Engage Segment source](/docs/connections/sources/catalog/cloud-apps/amplitude-cohorts/), which sends data _to_ Segment!
 
 
 ## Connection Modes for Amplitude (Actions) destination
@@ -105,9 +105,7 @@ You can select these subscriptions by choosing “Quick Setup”. You can enable
 ## Amplitude’s Log Event Action
 
 Segment sends an event to Amplitude.
-Default trigger:
-
-- Event Type is Track
+In the default configuration, this mapping is triggered when Segment sends a Track call to Amplitude (Actions).
 
 ### Order Completed
 
