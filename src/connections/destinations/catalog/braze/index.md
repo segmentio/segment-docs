@@ -4,14 +4,19 @@ hide-cmodes: true
 hide-personas-partial: true
 ---
 
-[Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni channel customer experiences.
+[Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
 
-The Braze Destination is open-source on GitHub. You can browse the code on GitHub: [iOS](https://github.com/Appboy/appboy-segment-ios), [Android](https://github.com/Appboy/appboy-segment-android) (Android and iOS maintained by Braze), [Web](https://github.com/segment-integrations/analytics.js-integration-appboy), [Server](https://github.com/segmentio/integration-appboy) (Web and Server maintained by Segment). If you find any issues for mobile platforms, let Braze know, if the issues appear on web or server, let [us know](https://segment.com/help/contact).
+The Braze Destination is open-sourced on GitHub. Source code for the following integrations is available:
 
-> info "There are three major versions of the Braze SDK"
-> If you are migrating from version 1 to version 2, see [important notes](/docs/connections/destinations/catalog/braze/#migrating-to-v2-of-the-braze-web-sdk) regarding migration from Version 1 to Version 2.
+- [iOS](https://github.com/Appboy/appboy-segment-ios) (maintained by Braze)
+- [Android](https://github.com/Appboy/appboy-segment-android)(maintained by Braze)
+- [Web](https://github.com/segment-integrations/analytics.js-integration-appboy) (maintained by Segment) 
+- [Server](https://github.com/segmentio/integration-appboy) (maintained by Segment)
 
-If you notice any gaps or outdated information in this document, or simply want to leave some feedback to help us improve, [let us know](https://segment.com/help/contact)!
+For issues with iOS or Android platforms, contact Braze support. For issues with Web or Server platforms, contact [Segment support](https://segment.com/help/contact).
+
+> info "The Braze SDK contains three major versions"
+> If you are migrating from version 1 to version 2, see information about [migration from Version 1 to Version 2](/docs/connections/destinations/catalog/braze/#migrating-to-v2-of-the-braze-web-sdk) below.
 
 ## Getting Started
 
@@ -19,9 +24,10 @@ If you notice any gaps or outdated information in this document, or simply want 
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Braze" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. In your Segment Settings UI, add the "API Key" which can be found in your Braze Dashboard under App Settings > Manage App Group.
-4. You will also need to set up a new App Group REST API Key in the Braze Dashboard under App Settings > Developer Console > API Settings. Instructions can be found [here](https://www.braze.com/documentation/REST_API/#creating-and-managing-rest-api-keys). **Note:** For this App Group REST API Key, you will only need to select users.track endpoint under "User Data"
-5. If you are implementing using Analytics.js, Segment will automatically load the [Braze Web SDK](https://www.braze.com/documentation/Web/). Otherwise, depending on the source you've selected, include Braze's library by adding the following lines to your dependency configuration.
+3. In the Destination Settings, add the **API Key**, found in the Braze Dashboard in *App Settings > Manage App Group*.
+4. Set up a new App Group REST API Key in the Braze Dashboard in *App Settings > Developer Console > API Settings*. For more information, see [Creating and Managing REST API Keys](https://www.braze.com/docs/api/basics/#creating-and-managing-rest-api-keys) in the Braze documentation. 
+  - Select the `users.track` endpoint in the **User Data** section.
+5. If you're adding Braze using Analytics.js, Segment automatically loads the [Braze Web SDK](https://www.braze.com/documentation/Web/). Otherwise, depending on the source you've selected, include Braze's library by adding the following lines to your dependency configuration.
 
 
 ### iOS
@@ -32,7 +38,7 @@ If you notice any gaps or outdated information in this document, or simply want 
     pod 'Segment-Appboy'
     ```
 
-    We recommend using the latest version on [CocoaPods](https://cocoapods.org/pods/Segment-Appboy) since it will contain the most up to date features and bug fixes.
+    Use the latest version of the Braze Segment Pod available on [CocoaPods](https://cocoapods.org/pods/Segment-Appboy) to ensure you have the must up-to-date features and bug fixes.
 
 2. Next, declare Braze's destination in your app delegate instance:
 
@@ -46,26 +52,24 @@ If you notice any gaps or outdated information in this document, or simply want 
 
 #### Sample App
 
-Braze created a sample iOS application that integrates Braze using Segment. Check it out at the [GitHub repo](https://github.com/Appboy/appboy-segment-ios/tree/master/CocoapodsExample).
+Braze created a sample iOS application that integrates Braze using Segment. See the Braze [GitHub repository](https://github.com/Appboy/appboy-segment-ios/tree/master/CocoapodsExample) for more information.
 
-#### Additional device-mode set up for iOS 14 support
+#### Device-mode set up for iOS 14 support
 
-Segment’s Braze SDK was updated to use AppBoy's version 3.26.1 to prepare for iOS 14. Braze will continue to allow apps to provide a user’s IDFA value to the Braze SDK. The `ABK_ENABLE_IDFA_COLLECTION` macro, which would conditionally compile in optional automatic IDFA collection, will be removed in Braze's iOS 14 release.
-
-See the [Braze iOS 14 SDK Upgrade Guide](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/ios_14/) for more information.
+Braze updated the Braze iOS Segment SDK to 3.26.1 to prepare for iOS 14. As of version 3.27.0, Braze removed the `ABK_ENABLE_IDFA_COLLECTION` macro. To configure sending ISFA to Braze, see Braze's [Implementing IDFA Collection](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/other_sdk_customizations/#ios-14-apptrackingtransparency) documentation.
 
 To use the latest Braze SDK to collect IDFAs you must do the following:
 
 1. Upgrade to use Xcode12.
-2. Update your Segment Appboy SDK to version 3.3.0 or greater.
-3. Import and implement the AppTrackingTransparency (ATT) Framework.
-   - Navigate to your project `Info.plist` and add a “Privacy - Tracking Usage Description”. This description appears in a popup when the application initializes in iOS 14. Users are prompted to indicate whether or not they want to allow tracking.
-4. Implement Braze's `ABKIDFADelegate`. For more information on how to implement this see [Braze’s IDFA Collection documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/other_sdk_customizations/#implementing-idfa-collection).
-5. Follow [Segment's guide for collecting IDFA](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#idfa-collection-in-40-beta-and-later)
+2. Update the Braze iOS Segment SDK to version 3.3.0 or greater.
+3. Import and add the AppTrackingTransparency (ATT) Framework.
+   - Navigate to your project `Info.plist` and add a “Privacy - Tracking Usage Description”. This description appears in a popup when the application initializes in iOS 14. Applications prompt users to select if they want to allow tracking.
+4. Add Braze's `ABKIDFADelegate`. For more information on how to add this see [Braze’s IDFA Collection documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/other_sdk_customizations/#implementing-idfa-collection).
+5. Follow [Segment's guide for collecting IDFA](/docs/connections/sources/catalog/libraries/mobile/ios/#idfa-collection-in-40-beta-and-later)
 
 ### Android
 
-1. In your top-level project `build.gradle` add the following as a repository under allprojects > repositories.
+1. In the top-level project `build.gradle` add the following as a repository in *all projects > repositories*.
 
     ```js
     maven { url "http://appboy.github.io/appboy-android-sdk/sdk" }
@@ -78,9 +82,9 @@ To use the latest Braze SDK to collect IDFAs you must do the following:
    compile 'com.appboy:appboy-segment-integration:+'
    ```
 
-    We recommend using the latest version on [Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22appboy-segment-integration%22) since it will contain the most up-to-date features and bug fixes.
+    To ensure you have the most up-to-date features and bug fixes, use the latest version available on [Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22appboy-segment-integration%22).
 
-    **Note:** Our `groupId` is `com.appboy` and not `com.segment.analytics.android.integrations`.
+    **Note:** The `groupId` is `com.appboy` and not `com.segment.analytics.android.integrations`.
 
 3. Next, declare Braze's destination in your `Analytics` instance:
 
@@ -93,8 +97,7 @@ To use the latest Braze SDK to collect IDFAs you must do the following:
 
 #### Sample App
 
-Braze has created a sample Android application that integrates Braze using Segment. Check it out at the [GitHub repo](https://github.com/Appboy/appboy-segment-android-sample).
-
+Braze created a sample Android application that integrates Braze using Segment. See the Braze [GitHub repository](https://github.com/Appboy/appboy-segment-android-sample) for more information.
 
 ### React Native device-mode set up
 
@@ -114,11 +117,11 @@ To add the Braze device-mode SDK to a [React Native](/docs/connections/sources/c
      // ...
    })
    ```
-4. Finally, change to your iOS development folder ( `cd ios` ) and run `pod install`.
+4. Change to your iOS development folder ( `cd ios` ) and run `pod install`.
 
 
 > note ""
-> Braze was formerly known as "Appboy", and their React component still uses that name. Be sure to use the old name!
+> Braze was formerly known as "Appboy", and the Braze React component still uses that name. Be sure to use the old name!
 
 ## Page
 
@@ -128,7 +131,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.page();
 ```
 
-Page calls are only sent to Braze if you have enabled either "Track All Pages" or "Track Only Named Pages" within your Segment Settings UI. They will be sent as a custom event.
+Segment sends Page calls to Braze as custom events if you have enabled either **Track All Pages** or **Track Only Named Pages** in the Segment Settings. 
 
 ## Identify
 
@@ -149,12 +152,12 @@ analytics.identify('ze8rt1u89', {
 
 When you Identify a user, Segment passes that user's information to Braze with `userId` as Braze's External User ID.
 
-If you are using a device-mode connection, Braze's SDK also automatically assigns a `braze_id` to every user. This allows Braze to capture anonymous activity from the device by matching on `braze_id` instead of `userId`. This only applies to _device-mode connections_.
+If you are using a device-mode connection, Braze's SDK also automatically assigns a `braze_id` to every user. This allows Braze to capture anonymous activity from the device by matching on `braze_id` instead of `userId`. This applies to _device-mode connections_.
 
 To send anonymous user data in cloud-mode, you must manually include the user's `braze_id` in all your Segment API calls in the `integrations.Braze.braze_id` or `context.integrations.Braze.braze_id` object.
 
 > info "Tip"
-> Braze is complex. If you decide to use the `braze_id`,  consider [contacting Segment Success Engineering](https://segment.com/help/contact/) or a Solutions Architect to validate your Braze implementation.
+> Braze is complex. If you decide to use the `braze_id`, consider [contacting Segment Success Engineering](https://segment.com/help/contact/) or a Solutions Architect to verify your Braze implementation.
 
 Segment's special traits recognized as Braze's standard user profile fields (in parentheses) are:
 
@@ -168,17 +171,15 @@ Segment's special traits recognized as Braze's standard user profile fields (in 
 | `address.country` | `country`   |
 | `gender`          | `gender`    |
 
-All other traits (except their [reserved user profile fields](https://www.braze.com/docs/api/objects_filters/user_attributes_object/#braze-user-profile-fields)) will be sent to Braze as custom attributes. You can send an array of strings as trait values but not nested objects.
+Segment sends all other traits (except Braze's [reserved user profile fields](https://www.braze.com/docs/api/objects_filters/user_attributes_object/#braze-user-profile-fields)) to Braze as custom attributes. You can send an array of strings as trait values but not nested objects.
 
 
 ## Track
 
 > info "Tip"
-> To lower [Data Point](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/) use, send only the Events which are relevant for campaigns and segmentation to the Braze destination. For more information, see /docs/protocols/schema/.
+> To lower [Data Point](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/) use, limit the events you send to Braze to those that are relevant for campaigns and segmentation to the Braze destination. For more information, see [Schema Controls](/docs/protocols/schema/).
 
-
-
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call looks like:
 
 ```
 analytics.track('Purchased Item', {
@@ -186,26 +187,27 @@ analytics.track('Purchased Item', {
     name: 'bag'
 })
 ```
-When you `track` an event, we will send that event to Braze as a custom event. Note that Braze does not support arrays or nested objects for custom track event properties.
+When you `track` an event, Segment sends that event to Braze as a custom event. Braze does not support arrays or nested objects for custom track event properties.
 
-*Note*: Braze requires that you include a `userId` or `braze_id` for all calls made in cloud-mode. Segment only sends a `braze_id` if a `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
+> note ""
+> Braze requires that you include a `userId` or `braze_id` for all calls made in cloud-mode. Segment sends a `braze_id` if `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
 
-*Note*: We will remove the following custom properties as they are reserved by Braze and the message will be rejected if you tried to send any of them:
-
-- `time`
-- `product_id`
-- `quantity`
-- `event_name`
-- `price`
-- `currency`
+> note ""
+> Segment removes the following custom properties reserved by Braze:
+>
+>  - `time`
+>  - `quantity`
+>  - `event_name`
+>  - `price`
+>  - `currency`
 
 ### Order Completed
 
-When you `track` an event with the name `Order Completed` using the [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/), we will send the products you've listed to Braze as purchases.
+When you `track` an event with the name `Order Completed` using the [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/), Segment sends the products you've listed to Braze as purchases.
 
 ### Purchases
 
-When you pass [ecommerce events](/docs/connections/spec/ecommerce/v2/), the name of your event will be used as the `productId` in Braze. An example of a purchase event would look like:
+When you pass [ecommerce events](/docs/connections/spec/ecommerce/v2/), the name of the event becomes the `productId` in Braze. An example of a purchase event looks like:
 
 ```js
 analytics.track('Purchased Item', {
@@ -219,9 +221,9 @@ The example above would have "Purchased Item" as its `productId` and includes tw
 - `revenue`
 - `currency`
 
-Braze supports a currency codes as specified in [their documentation](https://www.braze.com/docs/developer_guide/rest_api/user_data/#purchase-object-specification). Be aware that any currency reported other than USD will still be shown in [your Braze UI in USD based on the exchange rate on the date it was reported](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/analytics/logging_purchases/#logging-purchases).
+Braze supports currency codes as specified in [their Purchase Object Specification](https://www.braze.com/docs/developer_guide/rest_api/user_data/#purchase-object-specification). Be aware that any currency reported other than USD displays in [the Braze UI in USD based on the exchange rate on the date it was reported](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/analytics/logging_purchases/#logging-purchases).
 
-You can add more product details in the form of key-value pairs to the `properties` object. However, the following reserved keys will not be passed to Braze if included in your Track call's `properties` object:
+You can add more product details in the form of key-value pairs to the `properties` object. The following reserved keys are not passed to Braze if included in your Track call's `properties` object:
 
 - `time`
 - `product_id`
@@ -244,7 +246,7 @@ analytics.group("1234", {
 });
 ```
 
-When you call `group`, we will send a custom attribute to Braze with the name `ab_segment_group_<groupId>`, where `<groupId>` is the group's ID in the method's parameters. For example, if the group's ID is `1234`, then the custom attribute name will be `ab_segment_group_1234`. The value of the custom attribute will be set to `true`.
+When you call `group`, Segment sends a custom attribute to Braze with the name `ab_segment_group_<groupId>`, where `<groupId>` is the group's ID in the method's parameters. For example, if the group's ID is `1234`, then the custom attribute name is `ab_segment_group_1234`. The value of the custom attribute is `true`.
 
 
 ## Other Features
@@ -252,7 +254,7 @@ When you call `group`, we will send a custom attribute to Braze with the name `a
 ### In-app Messaging
 
 #### Mobile
-In-app messages will be registered for and requested by default. This functionality can be disabled by disabling the **Enable Automatic In-App Message Registration** setting. This is only available for users of the Braze Mobile SDKs.
+In-app messages are registered for and requested by default. Disable this feature by disabling the **Enable Automatic In-App Message Registration** setting. This feature is available for users of the Braze Mobile SDKs.
 
 #### Web
 
@@ -324,7 +326,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 #### Android
 
 1. Follow the directions in Braze's [push notification docs](https://www.braze.com/documentation/Android/#push-notifications).
-2. If you don't have Braze automatically register for push (i.e. you pass the push token from an FCM or manual GCM registration) you need to ensure you call `registerAppboyPushMessages` after Braze is initialized. You can do this by checking if Braze is initialized before trying to pass the push token, and waiting for initializing to set if not.
+2. If you don't have Braze automatically register for push (for example, you pass the push token from an FCM or manual GCM registration) you need to ensure you call `registerAppboyPushMessages` after Braze is initialized. You can do this by checking if Braze is initialized before trying to pass the push token, and waiting for initializing to set if not.
 
     You can do this in an `onIntegrationReady` method:
 
@@ -364,7 +366,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
     });
     ```
 
-    **Note:** We recommend placing this snippet outside of your [Segment Snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) within your `script` tag.
+    **Note:** Place this snippet outside of your [Segment Snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) within your `script` tag.
 
     **Note:** This will immediately request push permission from the user.
 
@@ -378,7 +380,7 @@ analytics.ready(function() {
  });
 ```
 
-Braze recommends checking to see if this returns `true` since not all browsers can recieve push notifications. [See below](/docs/connections/destinations/catalog/braze/#soft-push-prompts) for instructions on setting up a soft push prompt using Braze In-App Messages.
+Braze recommends checking to see if this returns `true` since not all browsers can receive push notifications. [See below](/docs/connections/destinations/catalog/braze/#soft-push-prompts) for instructions on setting up a soft push prompt using Braze In-App Messages.
 
 To unsubscribe a user, call:
 
@@ -390,7 +392,7 @@ analytics.ready(function() {
 
 3. Set your GCM/FCM server API key and SenderID on the Braze dashboard. You can find more details for this [here](https://www.braze.com/documentation/Web/#step-4-set-your-gcmfcm-server-api-key-and-senderid-on-the-Braze-dashboard).
 
-4. To support push notifications on Safari, add your Website Push ID into your Segment Settings UI and we'll send it for you when we initialize the Braze Web SDK. To get your Website Push ID, follow the first two bullet points in [these instructions](https://www.braze.com/documentation/Web/#step-5-configure-safari-push).
+4. To support push notifications on Safari, add your Website Push ID into your Segment Settings UI and Segment sends it when the Braze Web SDK initializes. To get your Website Push ID, follow the first two bullet points in [these instructions](https://www.braze.com/documentation/Web/#step-5-configure-safari-push).
 
 ### Soft Push Prompts
 
@@ -439,7 +441,7 @@ analytics.ready(function() {
 
 For more details on this snippet, check out the Braze's docs [here](https://www.braze.com/documentation/Web/#soft-push-prompts).
 
-**Note:** We recommend placing this snippet outside of your [Segment Snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) within your `script` tag.
+**Note:** Place this snippet outside of your [Segment Snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) within your `script` tag.
 
 4. When you'd like to display the Soft Push to a user, call:
 
@@ -469,7 +471,7 @@ end
 ```
 
 ### Migrating to v2 of the Braze Web SDK
-There are currently three major [versions](https://github.com/Appboy/appboy-web-sdk/blob/master/CHANGELOG.md#breaking) of this SDK: 1, 2, and 3. Segment currently supports both as migrating to Version 2+ requires some important changes to your website.
+There are three major [versions](https://github.com/Appboy/appboy-web-sdk/blob/master/CHANGELOG.md#breaking) of this SDK: 1, 2, and 3. Segment currently supports both as migrating to Version 2+ requires some important changes to your website.
 
 If you have never implemented Braze on your site, either using Segment or natively, you can ignore this section. If you have had Braze running before and want to migrate to Version 2+ **you must ensure you remove all references to `appboy.min.css` from your site.** This is very important as it will cause issues with Version 2+ of their SDK. Once you have done this you can select Version 2+ using the "Braze Web SDK Version" with your Segment Settings UI.
 
@@ -567,7 +569,7 @@ To send computed traits or audiences to Braze, you first must connect it to your
 
 1. Navigate to the **Destinations** tab in your Personas space.
 2. Search for **Braze** and add the destination to your Personas space.
-3. On the set up screen, enter in your App Identifier, REST API Key and Datacenter for Braze.
+3. On the set up screen, enter in your App Identifier, REST API Key and Data center for Braze.
 
 
 ## Braze Personas Quick Info
@@ -578,7 +580,7 @@ To send computed traits or audiences to Braze, you first must connect it to your
 - **Must create audience_name field before Personas can update those values?**: No. If sent as an `identify` call, Personas automatically creates the computed trait or audience name as a custom attribute in Braze. If sent as a `track` call, Personas automatically creates a custom event in Braze.
 - **Computed trait appears as**: A snake cased version of the computed trait name (for example, `last_product_viewed: 'Sweater'`) with a string for the value of the computed trait.
 - **Audience appears as**: A snake cased version of the audience name (for example, `order_completed_last_30days: true` ) with a boolean value of `true` indicates that a user is in the audience.
-- **Destination rate limit**: 100 requests per second (this is at the Personas Space-level, i.e. shared across all Audiences & Computed Traits syncing from 1 Personas Space to Braze. This rate limit would not be shared by multiple Personas Spaces.)
+- **Destination rate limit**: 100 requests per second (this is at the Personas Space-level, for example shared across all Audiences & Computed Traits syncing from 1 Personas Space to Braze. This rate limit would not be shared by multiple Personas Spaces.)
 - **Lookback window allowed:** Yes, unlimited.
 - **Identifiers required** : `userId` or `braze_id`
 - **Identifiers accepted** : `userId` or `braze_id`

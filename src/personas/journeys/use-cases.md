@@ -1,7 +1,8 @@
 ---
 title: Example Journeys Use Cases
-hidden: true
 ---
+
+{% include content/plan-grid.md name="journeys" %}
 
 To help you get underway, you can reference these sample Journeys.
 
@@ -22,6 +23,21 @@ In this journey, you'll see a cart abandonment campaign designed to win users ba
    1. Split the audience based on those who performed **Page Viewed** at least once, and where the **utm_source** equals the ad destination in step 3, within the last day.
    2. For the True branch, send the list of users to Email and Advertising destinations.
    3. For the False branch, send the list of users to an Email destination.
+
+### Repeat Purchase Campaign
+
+This journey focuses on converting one-time buyers into repeat purchasers by delivering communications in their preferred channels.
+
+1. Create the entry condition with the step name `One-Time Purchasers`.
+   - All users who performed `Order Completed` **exactly 1 time**
+2. Add a wait duration of **14 days**
+3. Add a condition called `No New Transactions`
+   - All users who performed `Order Completed` **exactly 1 time**
+4. Add a multi-branch split
+   - Branch 1: Customers who have the trait `Most Frequent UTM Source` equals `Email`
+     - Send to destination: **Email**
+   - Branch 2: Customers who have the trait `Most Frequent UTM Source` equals `SMS`
+     - Send to destination: **SMS**
 
 
 ### Low recency purchase winback
@@ -84,3 +100,19 @@ This journey creates an acquisition campaign designed to convert trial subscript
    1. Split the audience based on those who have performed **Subscription Started** where **Subscription Plan Type** is **paid**.
    2. For the True branch, send to an email destination.
    3. For the False branch, send to both email and advertising destinations.
+
+### Re-engagement Campaign
+
+This journey aims to bring back users with personalized messaging while conserving ad spend based on user preferences.
+
+![Re-engagement](images/journey_re-engagement.png)
+
+1. Create the entry condition with the step name `Low Recency Engagement`. Set the condition to all users who performed `Page Viewed` **exactly 0 times within 60 days**.
+2. Add a True/false split.
+   1. Split the audience based on those who have performed `Subscription Started` where `Subscription Plan Type` is **paid**
+   2. For the **True** branch, add a multi-branch split
+      - For users who have the Computed Trait `user_favorite_article-category` = `Engineering`
+        - Send to email and ads destinations
+      - For users who have the Computed Trait `user_favorite_article-category` = `Marketing`
+        - Send to email and ads destinations
+   3. For the **False** branch, send to an email destination only.
