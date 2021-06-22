@@ -122,6 +122,8 @@ You can only map each trait or property to one Custom Dimension at a time.
 
 When you finish mapping your dimensions and save the settings, Segment checks if the user traits and properties in [Identify](/docs/connections/spec/identify/), [Track](/docs/connections/spec/track/) and [Page](/docs/connections/spec/page/) calls are defined as a dimension. If they are defined in your mapping, Segment sends that dimension to Google Analytics.
 
+In the server-side integration, you can also opt into mapping top-level and `context` object fields to dimensions and metrics using the **Enable Mappings from Top-Level or Context Fields - Server Side Only** setting. If this setting is enabled, top-level and `context` object fields defined in the **Custom Dimensions** mapping and found in your [Identify](/docs/connections/spec/identify/), [Track](/docs/connections/spec/track/), [Page](/docs/connections/spec/page/) and [Screen](/docs/connections/spec/screen) calls will be sent to Google Analytics.
+
 **Note:** Traits in [Identify calls](/docs/connections/spec/identify) that map to Custom Dimensions are only recorded to Google Analytics when the next [Track call](/docs/connections/spec/track) or [Page call](/docs/connections/spec/page) is fired from the browser.
 
 Continuing the example above, we can set the **Gender** trait with the value of **Male**, which maps to `dimension9`, and it will be passed to Google Analytics _when we make the 'Viewed History' Track call_.
