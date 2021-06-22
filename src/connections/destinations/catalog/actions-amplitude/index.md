@@ -46,12 +46,12 @@ Session tracking is only available when using Segment's new libraries: [Analytic
 Once you have a mapping, you can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
 
-### Enable session tracking for Analytics.js 2.0
+### Enable Amplitude session tracking for Analytics.js 2.0
 
 The session tracking is automatically enabled on Javascript sources.
 
 
-### Enable session tracking for Swift
+### Enable Amplitude session tracking for Swift
 
 To enable session tracking in Amplitude when using the [Segment Swift library](https://github.com/segmentio/analytics-swift):
 1. Enable `trackApplicationLifecycleEvents` in your configuration.
@@ -62,7 +62,7 @@ To enable session tracking in Amplitude when using the [Segment Swift library](h
    analytics?.add(plugin: AmplitudeSession(name: "Amplitude"))
    ```
 
-### Enable session tracking for Kotlin
+### Enable Amplitude session tracking for Kotlin
 
 To enable session tracking in Amplitude when using the [Segment Kotlin library](https://github.com/segmentio/analytics-kotlin):
 1. Enable `trackApplicationLifecycleEvents` in your configuration.
@@ -89,7 +89,7 @@ You can see the Segment event fields Amplitude accepts for each action in the Ac
 
 By default a new Amplitude (Actions) destination comes with the following subscriptions.
 
-You can select these subscriptions by choosing “Quick Setup”. You can enable, edit, and disable them from the screen that appears.
+You can select these subscriptions by choosing "Quick Setup" when you first configure the destination. You can enable, edit, and disable them from the screen that appears.
 
 | Subscription Name | Trigger                                          | Amplitude Action | Non-default mapped fields                                      |
 | ----------------- | ------------------------------------------------ | ---------------- | -------------------------------------------------------------- |
@@ -104,8 +104,7 @@ You can select these subscriptions by choosing “Quick Setup”. You can enable
 
 ## Amplitude’s Log Event Action
 
-Segment sends an event to Amplitude.
-In the default configuration, this mapping is triggered when Segment sends a Track call to Amplitude (Actions).
+In the default configuration, the Log Event mapping is triggered when Segment sends a Track call to Amplitude (Actions).
 
 ### Order Completed
 
@@ -113,7 +112,7 @@ Use the [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) 
 
 You can currently use this event only for data coming from a server or web [source](/docs/connections/sources/). An `Order Completed` event from mobile using our bundled Amplitude integration will work the same as our standard `track` event documented above.
 
-The example below shows an “Order Completed” event with its properties.
+The example below shows an "Order Completed" event with its properties.
 
 ```js
 analytics.track({
@@ -152,24 +151,26 @@ analytics.track({
 })
 ```
 
-When you send an “Order Completed” event from Segment, an “Order Completed” event appears in Amplitude for that purchase. An Amplitude event called “Product Purchased” is also created for each product in the purchase. All event properties, except `products`, are sent as `event_properties` of the Amplitude “Order Completed” event. Information about each product is present *only* on the individual “Product Purchased” events.
+When you send an "Order Completed" event from Segment, an "Order Completed" event appears in Amplitude for that purchase. An Amplitude event called "Product Purchased" is also created for each product in the purchase. All event properties, except `products`, are sent as `event_properties` of the Amplitude "Order Completed" event. Information about each product is present *only* on the individual "Product Purchased" events.
 
 ### Track Revenue Per Product
 
 Amplitude has two different ways to track revenue associated with a multi-product purchase. You can choose which method you want to use using the **Track Revenue Per Product** destination setting.
 
-If you disable the setting (“off”), Segment sends a single revenue event with the total amount purchased. Revenue data is added to the Amplitude “Order Completed” event. The “Product Purchased” events do not contain any native Amplitude revenue data.
+If you disable the setting ("off"), Segment sends a single revenue event with the total amount purchased. Revenue data is added to the Amplitude "Order Completed" event. The "Product Purchased" events do not contain any native Amplitude revenue data.
 
-If you enable the setting (“on”), Segment sends a single revenue event for each product that was purchased. Revenue data is added to each “Product Purchased” event, and the “Order Completed” event does not contain any native Amplitude revenue data.
+If you enable the setting ("on"), Segment sends a single revenue event for each product that was purchased. Revenue data is added to each "Product Purchased" event, and the "Order Completed" event does not contain any native Amplitude revenue data.
 
 Make sure you format your events using the [Track method spec](/docs/connections/spec/track/). You must pass a `revenue` property, a `price` property, and a `quantity` property for each product in the products list.
 
 ### Send To Batch Endpoint
 
-> info “”
+
+> info ""
 > This endpoint is available when you send data in Cloud-mode only.
 
-If `true`, events are sent to Amplitude’s `batch` endpoint rather than to their `httpapi` endpoint. Because Amplitude’s `batch` endpoint throttles traffic less restrictively than the Amplitude `httpapi` endpoint, enabling this setting can help to reduce 429 errors (throttling errors)  from Amplitude.
+
+If `true`, events are sent to Amplitude’s `batch` endpoint rather than to their `httpapi` endpoint. Because Amplitude’s `batch` endpoint throttles traffic less restrictively than the Amplitude `httpapi` endpoint, enabling this setting can help to reduce 429 errors (throttling errors) from Amplitude.
 
 Amplitude’s `batch` endpoint throttles data when the rate of events sharing the same `user_id` or `device_id` exceeds an average of 1,000/second over a 30-second period. See the Amplitude documentation for more about [429 errors and throttling in Amplitude](https://developers.amplitude.com/#429s-in-depth).
 
@@ -211,13 +212,13 @@ Following user fields are captured by the classic Amplitude destination in devic
 
 Most of the classic Amplitude destination settings were related to device-mode collection (for example, batching or Log Revenue V2), and do not apply to the Amplitude (Actions) destination, which runs in cloud-mode. The following sections discuss how to replicate the old settings where possible.
 
-> info “”
+> info ""
 > Contact Segment support if you find features missing from the Amplitude (Actions) destination that were available in the classic Amplitude destination.
 
 ### Track Named, Categorized, or All Pages or Screens
 
 The default Amplitude (Actions) subscription sends *all* Page and Screen calls.
-To replicate the old behavior, change the trigger to include only events that contain  `name`  or `category`.
+To replicate the old behavior, change the trigger to include only events that contain `name` or `category`.
 
 ### Prefer Anonymous ID for Device ID
 
