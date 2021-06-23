@@ -276,7 +276,13 @@ const updateSources = async () => {
   sources.forEach(source => {
     let slug = slugify(source.name)
     let settings = source.options
-    let mainCategory = source.categories[0] ? source.categories[0].toLowerCase : ''
+    let mainCategory = source.categories[0] ? source.categories[0].toLowerCase() : ''
+
+    if (libraryCategories.includes(mainCategory)) {
+      url = `connections/sources/catalog/libraries/${mainCategory}/${slug}`
+    } else {
+      url = `connections/sources/catalog/cloud-apps/${slug}`
+    }  
     
     settings.sort((a, b) => {
       if(a.name < b.name) { return -1; }
@@ -284,17 +290,15 @@ const updateSources = async () => {
       return 0;
     })
 
+    // console.log(slug, mainCategory)
     
-    if (libraryCategories.includes(mainCategory)) {
-      url = `connections/sources/catalog/libraries/${mainCategory}/${slug}`
-    } else {
-      url = `connections/sources/catalog/cloud-apps/${slug}`
-    }  
+
 
 
     let updatedSource = {
       display_name: source.name,
       slug,
+      url,
       description: source.description,
       logo: {
         url: source.logos.default
@@ -495,6 +499,6 @@ const updateWarehouses = async () => {
 
 }
 
-updateDestinations()
+//updateDestinations()
 updateSources()
 // updateWarehouses()
