@@ -178,7 +178,7 @@ Replace that snippet with the following, and replace the contents of the array w
 }
 ```
 
-### Migrating to PutRecords
+### Update IAM to Support PutRecords
 The Kinesis destination will default to use PutRecords. A previous version of the IAM policy document only granted `PutRecord` access, which can slow down Kinesis write times and degrade data deliverability. Substitute the updated policy document above to grant Kinesis `PutRecords` (plural) and allow batching, like this: 
    ```json
    {
