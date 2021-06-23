@@ -14611,6 +14611,26 @@ items:
       required: false
       description: Map your Segment properties to the Marketo Activity Fields
       settings:
+      - name: marketoAttributeType
+        display_name: Marketo Field Type
+        type: SELECT
+        deprecated: false
+        required: true
+        select_validators:
+          select_options:
+          - string
+          - boolean
+          - number
+          - date
+        description: Enter the Marketo Field type.
+        settings: []
+      - name: primaryKey
+        display_name: Set as Primary Key
+        type: BOOLEAN
+        deprecated: false
+        required: false
+        description: Mark this property as the Primary field in Marketo.
+        settings: []
       - name: segmentProperty
         display_name: Segment Property Name
         type: STRING
@@ -14632,26 +14652,6 @@ items:
         description: >-
           Enter the Marketo Field name. Make sure to copy and paste the exact
           API Name for your field as it appears in Marketo.
-        settings: []
-      - name: marketoAttributeType
-        display_name: Marketo Field Type
-        type: SELECT
-        deprecated: false
-        required: true
-        select_validators:
-          select_options:
-          - string
-          - boolean
-          - number
-          - date
-        description: Enter the Marketo Field type.
-        settings: []
-      - name: primaryKey
-        display_name: Set as Primary Key
-        type: BOOLEAN
-        deprecated: false
-        required: false
-        description: Mark this property as the Primary field in Marketo.
         settings: []
     - name: event
       display_name: Segment Event Name
@@ -19202,15 +19202,6 @@ items:
       required: false
       description: Map your Segment properties to Responsys Columns
       settings:
-      - name: columns
-        display_name: Segment Property Name
-        type: STRING
-        deprecated: false
-        required: true
-        string_validators:
-          regexp: ''
-        description: Enter the Segment Property Name.
-        settings: []
       - name: fieldName
         display_name: Responsys Column Name
         type: STRING
@@ -19243,6 +19234,15 @@ items:
         deprecated: false
         required: false
         description: Mark this property as a Primary Key in Responsys.
+        settings: []
+      - name: columns
+        display_name: Segment Property Name
+        type: STRING
+        deprecated: false
+        required: true
+        string_validators:
+          regexp: ''
+        description: Enter the Segment Property Name.
         settings: []
     - name: mapEmail
       display_name: Map Email
@@ -20835,8 +20835,7 @@ items:
   - Interana
   - Scuba Analytics
   logo:
-    url: >-
-      https://public-segment-devcenter-production.s3.amazonaws.com/aa62411e-8a50-467b-9b76-edb083819144.svg
+    url: 'https://cdn.filepicker.io/api/file/MLWgTbepQSGONWcv6NFu'
   mark:
     url: >-
       https://public-segment-devcenter-production.s3.amazonaws.com/97c63f06-f139-44dc-9524-ba287a1d2900.svg
