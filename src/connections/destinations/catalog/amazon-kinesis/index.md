@@ -178,6 +178,27 @@ Replace that snippet with the following, and replace the contents of the array w
 }
 ```
 
+### Migrating to PutRecords
+The Kinesis destination will default to use PutRecords. A previous version of the IAM policy document only granted `PutRecord` access, which can slow down Kinesis write times and degrade data deliverability. Substitute the updated policy document above to grant Kinesis `PutRecords` (plural) and allow batching, like this: 
+   ```json
+   {
+      "Version": "2012-10-17",
+      "Statement": [
+          {
+              "Effect": "Allow",
+              "Action": [
+                  "kinesis:PutRecord",
+                  "kinesis:PutRecords"
+              ],
+              "Resource": [
+                  "arn:aws:kinesis:{region}:{account-id}:stream/{stream-name}"
+              ]
+          }
+      ]
+   }
+   ```
+Once you update your IAM policy, Segment systems will automatically default to use PutRecords for more efficient data transmission. This is a zero-downtime change and will not have any impact on your data other than increasing the deliverability success rate.
+
 ### Use a single secret ID
 If you have so many sources using Kinesis that it is impractical to attach all of their IDs to your IAM role, you can instead opt to set a single ID to use instead. This approach should be avoided in favor of the above approach if possible since it will result in you having to keep track of a secret value. To set this value, go to the Kinesis destination settings from each of your Segment sources and set the 'Secret ID' to a value of your choosing. This value is a secret and should be treated as sensitively as a password. Once all of your sources have been updated to use this value, find the IAM role you created for this destination in the AWS Console in Services > IAM > Roles. Click on the role, and navigate to the **Trust Relationships** tab. Click **Edit trust relationship**. You should see a snippet that looks something that looks like this:
 
