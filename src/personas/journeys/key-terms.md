@@ -1,7 +1,9 @@
 ---
 title: Journeys Key Terms
-hidden: true
 ---
+
+{% include content/plan-grid.md name="journeys" %}
+
 
 Keep the following terms in mind as you begin to explore Journeys.
 

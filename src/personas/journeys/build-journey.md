@@ -1,7 +1,7 @@
 ---
 title: Build a Journey
-hidden: true
 ---
+{% include content/plan-grid.md name="journeys" %}
 
 Follow along for the steps required to create a new Journey.
 
