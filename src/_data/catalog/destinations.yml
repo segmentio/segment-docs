@@ -5684,6 +5684,73 @@ items:
       Segment.** Your account number will appear in bold. It should be a series
       of numbers, like `00938301`.
     settings: []
+- display_name: Crisp
+  slug: crisp
+  name: catalog/destinations/crisp
+  url: connections/destinations/catalog/crisp
+  description: Crisp is an all-in-one platform to connect with your customers.
+  hidden: false
+  status: PUBLIC
+  previous_names:
+  - Crisp
+  logo:
+    url: >-
+      https://public-segment-devcenter-production.s3.amazonaws.com/db6f4c77-470b-429c-b77a-77b1228ade63.svg
+  mark:
+    url: >-
+      https://public-segment-devcenter-production.s3.amazonaws.com/45cad587-47d4-4ada-a09d-c730242af27e.svg
+  categories:
+  - CRM
+  - Customer Success
+  - Email Marketing
+  - Marketing Automation
+  methods:
+    alias: false
+    group: false
+    identify: true
+    page_view: false
+    track: true
+  components:
+  - type: WEB
+  platforms:
+    browser: true
+    server: true
+    mobile: true
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: false
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
+  settings:
+  - name: apiKey
+    display_name: API Key
+    type: STRING
+    deprecated: false
+    required: true
+    string_validators:
+      regexp: '^.{8,}$'
+    description: >-
+      The API key is autoset when linking Crisp with Segment. Click "Connect to
+      Segment" in the Crisp plugins section
+    settings: []
+  - name: websiteId
+    display_name: Website ID
+    type: STRING
+    deprecated: false
+    required: false
+    string_validators:
+      regexp: ''
+    description: ''
+    settings: []
 - display_name: Criteo App & Web Events
   slug: criteo-app-web-events
   name: catalog/destinations/criteo
@@ -14611,26 +14678,6 @@ items:
       required: false
       description: Map your Segment properties to the Marketo Activity Fields
       settings:
-      - name: marketoAttributeType
-        display_name: Marketo Field Type
-        type: SELECT
-        deprecated: false
-        required: true
-        select_validators:
-          select_options:
-          - string
-          - boolean
-          - number
-          - date
-        description: Enter the Marketo Field type.
-        settings: []
-      - name: primaryKey
-        display_name: Set as Primary Key
-        type: BOOLEAN
-        deprecated: false
-        required: false
-        description: Mark this property as the Primary field in Marketo.
-        settings: []
       - name: segmentProperty
         display_name: Segment Property Name
         type: STRING
@@ -14652,6 +14699,26 @@ items:
         description: >-
           Enter the Marketo Field name. Make sure to copy and paste the exact
           API Name for your field as it appears in Marketo.
+        settings: []
+      - name: marketoAttributeType
+        display_name: Marketo Field Type
+        type: SELECT
+        deprecated: false
+        required: true
+        select_validators:
+          select_options:
+          - string
+          - boolean
+          - number
+          - date
+        description: Enter the Marketo Field type.
+        settings: []
+      - name: primaryKey
+        display_name: Set as Primary Key
+        type: BOOLEAN
+        deprecated: false
+        required: false
+        description: Mark this property as the Primary field in Marketo.
         settings: []
     - name: event
       display_name: Segment Event Name
@@ -19202,6 +19269,22 @@ items:
       required: false
       description: Map your Segment properties to Responsys Columns
       settings:
+      - name: primaryKey
+        display_name: Set as Primary Key
+        type: BOOLEAN
+        deprecated: false
+        required: false
+        description: Mark this property as a Primary Key in Responsys.
+        settings: []
+      - name: columns
+        display_name: Segment Property Name
+        type: STRING
+        deprecated: false
+        required: true
+        string_validators:
+          regexp: ''
+        description: Enter the Segment Property Name.
+        settings: []
       - name: fieldName
         display_name: Responsys Column Name
         type: STRING
@@ -19227,22 +19310,6 @@ items:
           - INTEGER
           - TIMESTAMP
         description: Enter the Responsys column type.
-        settings: []
-      - name: primaryKey
-        display_name: Set as Primary Key
-        type: BOOLEAN
-        deprecated: false
-        required: false
-        description: Mark this property as a Primary Key in Responsys.
-        settings: []
-      - name: columns
-        display_name: Segment Property Name
-        type: STRING
-        deprecated: false
-        required: true
-        string_validators:
-          regexp: ''
-        description: Enter the Segment Property Name.
         settings: []
     - name: mapEmail
       display_name: Map Email
