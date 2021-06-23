@@ -15,9 +15,13 @@ This destination is maintained by Crisp. For any issues with the destination, [c
 3. The Segment App opens in a new window. Log in to authenticate the connection from Crisp.
 4. Select the Workspace and Source to connect with Crisp.
 
-## Identify
+### Supported methods
 
-If you aren't familiar with the Segment Spec, take a look at the [Identify method documentation](https://segment.com/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
+Crisp supports the following methods, as specified in the [Segment Spec](/docs/connections/spec/).
+
+### Identify
+
+Send [Identify](/docs/connections/spec/identify/) calls to create or update a User profile. The `email` trait is required to create new Users. For example:
 
 ```js
 analytics.identify('userId123', {
@@ -27,11 +31,10 @@ analytics.identify('userId123', {
   avatar: 'https://pbs.twimg.com/profile_images/834424630630817795/TfyS4uXb_400x400.jpg'
 });
 ```
-Send Identify calls to create or update a User profile. The `email` trait is required to create new Users.
 
-## Track
+### Track
 
-If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
+Crisp adds [Track](/docs/connections/spec/track/) events to the User's profile events stream.
 
 ```js
 analytics.track('Completed Purchase', {
@@ -41,6 +44,6 @@ analytics.track('Completed Purchase', {
 });
 ```
 > warning ""
-> Be sure you send an Identify call for any user who will trigger Track calls. If Crisp receives a Track call for an unknown `userId`, the call is dropped.
+> Send an Identify call for any user who triggers Track calls. If Crisp receives a Track call for an unknown `userId`, the call is dropped.
 
-Crisp adds Track events to the User's profile events stream.
+
