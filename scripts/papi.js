@@ -495,6 +495,6 @@ const updateWarehouses = async () => {
 
 }
 
-// updateDestinations()
+updateDestinations()
 updateSources()
 // updateWarehouses()
