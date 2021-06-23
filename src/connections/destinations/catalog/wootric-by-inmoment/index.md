@@ -1,5 +1,5 @@
 ---
-title: Wootric by InMoment by InMoment Destination
+title: Wootric by InMoment Destination
 rewrite: true
 redirect_from: '/connections/destinations/catalog/wootric/'
 ---
