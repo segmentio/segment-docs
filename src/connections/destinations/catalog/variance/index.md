@@ -1,20 +1,13 @@
 ---
 rewrite: true
 title: Variance Destination
-beta: true
 ---
 
 [Variance](https://variance.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) hooks into your customer data and makes it easy to access growth signals across product, marketing, and sales. The platform provides your growth team with clear, intent-based signals, from all stages of a customer's journey.
 
 This destination is maintained by Variance. For any issues with the destination, [contact the Variance Support team](mailto:support@variance.com).
 
-> note "Note:"
-> The Variance Destination is currently in beta, which means that they are still actively developing the destination. To join their beta program, or if you have any feedback to help improve the Variance Destination and its documentation, [contact the Variance support team](mailto:support@variance.com)!
-
-
 ## Getting Started
-
-> Do not remove this line. It will auto-populate the following information for your integration: https://cl.ly/23e637f055f7
 
 {% include content/connection-modes.md %}
 
