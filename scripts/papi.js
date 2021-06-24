@@ -1,20 +1,3 @@
-// To Do:
-// [x] add sources
-// [x] support categorization
-// [x] support creating new files
-// [x] support reading if article is hidden or not
-// [x] figure out connection modes for destinations
-// [x] retain existing slugify function, to account for custom slug rewrites
-// [x] Add dossier content
-// [x] make quick info work
-// [x] why aren't hidden articles hiding?
-// [x] fix slugify overrides?
-// [x] fix settings sections
-
-// Notes
-// PAPI sources do not include type or categories
-
-
 const axios = require('axios');
 const path = require('path');
 const fs = require('fs');
@@ -273,32 +256,42 @@ const updateSources = async () => {
     'website'
   ]
 
+  const hiddenSources = [
+    'amp',
+    'factual-engine'
+  ]
+
   sources.forEach(source => {
     let slug = slugify(source.name)
     let settings = source.options
+    let hidden = false
     let mainCategory = source.categories[0] ? source.categories[0].toLowerCase() : ''
 
+    // determine the doc url based on the source's main category
     if (libraryCategories.includes(mainCategory)) {
       url = `connections/sources/catalog/libraries/${mainCategory}/${slug}`
     } else {
       url = `connections/sources/catalog/cloud-apps/${slug}`
     }  
     
+    // sort the sources alphabetically
     settings.sort((a, b) => {
       if(a.name < b.name) { return -1; }
       if(a.name > b.name) { return 1; }
       return 0;
     })
 
-    // console.log(slug, mainCategory)
+    // check if the source should be hidden
+    if (hiddenSources.includes(slug)) {
+      hidden = true
+    }
     
-
-
-
+    // create the catalog metadata
     let updatedSource = {
       display_name: source.name,
       slug,
       url,
+      hidden,
       description: source.description,
       logo: {
         url: source.logos.default
