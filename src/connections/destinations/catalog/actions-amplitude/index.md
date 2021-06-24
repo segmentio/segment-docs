@@ -34,7 +34,7 @@ Session tracking is only available when using Segment's new libraries: [Analytic
 
 ## Getting Started
 
-1. Before you start, go to your [Amplitude workspace](https://analytics.amplitude.com){:target="blank"}. Click **Settings** in the bottom left, then click **Projects** in the left menu. Select your **Project**. Copy the Amplitude API Key and Secret Key for the project.
+1. Before you start, go to your [Amplitude workspace](https://analytics.amplitude.com){:target="_blank"}. Click **Settings** in the bottom left, then click **Projects** in the left menu. Select your **Project**. Copy the Amplitude API Key and Secret Key for the project.
 2. From the Segment web app, click **Catalog**, then click **Destinations**.
 3. Find the Destinations Actions item in the left navigation, and click it.
 4. Click the "Amplitude" item to select it and click **Configure**.
