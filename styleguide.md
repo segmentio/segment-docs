@@ -120,6 +120,16 @@ There are no naming conventions at this time. Anything you see with `asset` was 
 
 The Segment-App section should contain roughly a page for each page within the web app. If there are in-depth docs about that feature elsewhere, the page should describe what it does at a high-level, and link out to those docs. This gives us a comprehensive UI reference for novice readers that serves as a signpost to the details they may or may not need, and prevents us pulling all of the docs into the Segment-app section.
 
+### External Links
+
+It is convenient to open any link to an external site in a new tab or window to avoid taking users away from the docs site. The Kramdown markdown parser supports with with the following syntax:
+
+```
+[link text](https://google.com){:target="blank"}
+```
+
+The site's CSS adds an external link indicator next to the link text when the page is rendered.
+
 
 ## Troubleshooting Formatting
 
