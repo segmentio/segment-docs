@@ -48,24 +48,29 @@ If you pass `properties.value`, `properties.currency`, or `properties.order_id`,
 The only exception is that for `Order Completed` events, Segment will map Google's semantic `value` field to your `properties.revenue`.
 
 ## Troubleshooting AdWords Conversions
-To figure out your conversion numbers that are sent to AdWords:
-1. Confirm that the events mapped to Google Ads Conversion are being sent in device-mode. To do this:
-    1. Go to **Connections > Destinations** in your workspace.
-    2. Choose the **Gtag** destination.
-    3. Click the **Event Tester** tab and click **Send Event**.
-    If the destination is able to handle the event, the events are successfully being sent.
+To figure out if an event is flagged for Conversion by the AdWords SDK, follow these steps:
+1. Confirm that the events mapped to Google Ads Conversion are being sent in device-mode while using the Segment Analytics.js library. To do this:
+    1. Go to **Connections > Sources** in your workspace and choose your Source.
+    2. Go to the **Debugger** tab.
+    3. Click on an event and look at the **Raw** view to make sure the events have a library name of `analytics.js`. There should be a snippet of code that looks like this:
+
+      ```js
+        "library": {
+          "name": "analytics.js",
+      ``` 
+
 2. Verify that the [Google Conversion ID](/docs/connections/destinations/catalog/google-ads-gtag/#google-conversion-id) in your Segment workspace is correct.
 3. Find your ad online and click on it. This will redirect you to your website.
-4. Open the Network tab in your browser and make sure the **Preserve log** checkbox is checked and **All** is selected.
+4. Open the Network tab in your browser and make sure the **Preserve log** checkbox is checked and **All** is selected. Keep this Network tab and webpage open.
 
       ![Network tab](../../images/network-tab.png)
 
-5. Go to the **Settings** tab for your Gtag destination in Segment and choose **Click Conversions** to look at the mapped `track()` events and make sure the events are mapped to the correct **Adwords Conversion Label**.
+5. Go to the **Settings** tab for your Gtag destination in Segment on a new webpage and choose **Click Conversions** to look at the mapped `track()` events and make sure the events are mapped to the correct **Adwords Conversion Label**.
 
       ![Edit Settings](../../images/conversion-settings.png)
 
 6. Go back to your website and trigger the event mapped to the conversion. For example, as shown in the image above, it would be `Order Completed`.
-7. Open the Network tab in your browser and enter the **Adwords Conversion Label** linked to the event you triggered in the **Filter** field.
+7. Go to the Network tab in your browser and enter the **Adwords Conversion Label** linked to the event you triggered in the **Filter** field.
 
       ![Network tab](../../images/network-tab-search.png)
 
