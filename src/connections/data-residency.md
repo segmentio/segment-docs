@@ -1,31 +1,31 @@
 ---
 title: Data Residency
-beta: true
 ---
+{% include content/plan-grid.md name="data-residency" %}
 
 
 
 
 Segment offers customers the option to lead on data residency by providing regional infrastructure across Europe, Middle East, Africa and Asia Pacific. The default region for all customers is in Oregon, United States. The regional infrastructure has the same [rate limits and SLA](/docs/connections/rate-limits/) as the default region.
 
-## Enable Regional Data Ingest and Storage
+## Enable Regional Data Ingestion and Storage
 
-You can enable Regional Data Ingest and Storage from the Regional Settings tab within your Workspace settings. Enabling the feature here makes the feature available to both client-side and server-side sources.
+You can enable Regional Data Ingestion and Storage from the Regional Settings tab within your Workspace settings. Enabling the feature here makes the feature available to both client-side and server-side sources.
 
 ![enable](images/enable-regional-ingest.png)
 
 > info ""
-> **Note**: Regional Data Storage a Beta feature, and its use is governed by the [(1) Segment First Access and Beta Terms and Conditions](https://segment.com/legal/first-access-beta-preview/) and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/).
+> **Note**: Regional Data Storage is a Beta feature, and its use is governed by the [(1) Segment First Access and Beta Terms and Conditions](https://segment.com/legal/first-access-beta-preview/) and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/).
 
-## Regional Data Ingest
+## Regional Data Ingestion
 
-Regional Data Ingest enables you to send data to Segment from both Client-side and Server-side sources through locally hosted API ingest points. The regional infrastructure can fail-over across locations within a region, but never across regions.
+Regional Data Ingestion enables you to send data to Segment from both Client-side and Server-side sources through regionally hosted API ingest points. The regional infrastructure can fail-over across locations within a region, but never across regions.
 
 ### Client-side sources
 
-You can configure Segment's client-side SDKs for Javascript, iOS, Android, and React Native sources to send data to a regional host after you've updated the Ingest Region in that source's settings.
+You can configure Segment's client-side SDKs for Javascript, iOS, Android, and React Native sources to send data to a regional host after you've updated the Data Ingestion Region in that source's settings.
 
-![ingest region](images/regional-ingest.png)
+![ingestion region](images/regional-ingest.png)
 
 All regions are configured on a **per-source** basis. You'll need to configure the region for each source separately if you do not want to use the default region (Oregon). All Segment client-side SDKs read this setting and update themselves automatically to send data to new endpoints when the app is reloaded. You do not need to change code when you switch regions.
 
