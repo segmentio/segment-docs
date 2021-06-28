@@ -112,9 +112,9 @@ You can also connect multiple instances of a destination to help you smoothly mi
 
 To connect a source to more than one instance of a destination in the Segment web app, start by adding the first instance of the destination and giving it a unique name, [as described above](#adding-a-destination). To add another instance of the destination, follow either of those two methods and choose another unique name.
 
-You must give each instance of the destination connected to the same source a unique name. Segment recommends that you use descriptive names rather than numbers, so other Segment users can understand which Segment destinations are linked to which tool instances. For example, you might use "Amplitude North America" and "Amplitude South America", instead of "Amplitude 1" and "Amplitude 2".
+You must give each instance of the destination connected to the same source a unique name. Segment recommends that you use descriptive names rather than numbers, so other Segment users can understand which Segment destinations are linked to which tool instances. For example, you might use "Amplitude North America" and "Amplitude South America", instead of "Amplitude 1" and "Amplitude 2". You can edit the destination instance name at any time.
 
-If you added the first instance of your destination before multi-instance destinations became available, that instance is automatically named for the destination with no other identifiers, for example "Amplitude". You cannot currently edit these first destinations' names.
+If you added the first instance of your destination before multi-instance destinations became available, that instance is automatically named for the destination with no other identifiers, for example "Amplitude". 
 
 Some destinations do not support having multiple instances connected to the same source. In that case, the option to add a second instance of that destination does not appear.
 
@@ -127,11 +127,10 @@ You can add multiple instances of a destination using the Segment Config API. Se
 
 ### Multi-instance destinations and Device-mode
 
-
-- **Mobile sources, and the legacy Project source, cannot connect to multiple instances of a destination.**
-    - **Warning**: If you bundle one instance of a destination in a mobile source but have other instances of that destination connected to that source you might see unexpected and inconsistent data.
 - **You can connect a source to up to 10 instances of a destination if all of the instances use cloud-mode.** Destinations using cloud-mode receive data directly from the Segment servers.
-- **Non-mobile sources can only connect to one *device-mode* instance of a destination, in addition to up to 10 cloud-mode instances.** A web browser device-mode instance of a destination receives data directly from the user’s browser (instead of through the Segment servers), by bundling a copy of destination’s code with the Segment SDK. Segment can’t bundle multiple copies of the destination SDK and so it can’t send data to multiple instances of the destination from the browser.
+- **Mobile sources, and the legacy Project source, can connect to multiple instances of cloud-mode only destinations.** See the list of [cloud-mode only destinations](#cloud-mode-only). Moble and Project sources cannot connect to multiple instances of [cloud-mode and device-mode destinations](#cloud-mode-and-device-mode).
+    - **Warning**: If you bundle one instance of a destination in a mobile source but have other instances of that destination connected to that source you might see unexpected and inconsistent data.
+- **Non-mobile sources can only connect to one *device-mode* instance of a destination, in addition to up to 10 cloud-mode instances.** A web browser sending to a destination in device-mode sends data directly from the user’s browser (instead of through the Segment servers), by bundling a copy of destination’s code with the Segment SDK. Segment can’t bundle multiple copies of the destination SDK and so it can’t send data to multiple instances of the destination from the browser.
 - **You cannot connect a source to more than one instance of a destination that operates in device-mode only**. These destinations can only accept data from code directly on the user’s device, and Segment cannot include duplicates of that code for a single source.
 
 For more information see [the compatible destination lists below](#multi-instance-compatible-destinations).
@@ -162,7 +161,7 @@ In this example:
 
 - Events sent with this `Mixpanel` setting are **not** sent to instances of Mixpanel.
 - Events sent to any Adobe Analytics destinations with this `Adobe Analytics` setting use the same `marketingCloudVisitorId` value specified.
-
+You can not use the [integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object) to send data to individual destination instances. 
 
 ### Multi-instance compatible destinations
 
@@ -240,7 +239,6 @@ For the following destinations, a single source can connect to up to 10 instance
 - [Promoter](/docs/connections/destinations/catalog/promoter.io/)
 - [RadiumOne Connect](/docs/connections/destinations/catalog/radiumone-connect/)
 - [Relay](/docs/connections/destinations/catalog/relay/)
-- [Repeater](/docs/connections/destinations/catalog/repeater/)
 - [Responsys](/docs/connections/destinations/catalog/responsys/)
 - [Sailthru](/docs/connections/destinations/catalog/sailthru/)
 - [Salesforce](/docs/connections/destinations/catalog/salesforce/)

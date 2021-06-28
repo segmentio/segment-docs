@@ -348,7 +348,7 @@ You are now all set up to receive push notifications from MoEngage. For more inf
 
 * [Advanced Configuration](https://docs.moengage.com/docs/android-advanced-integration)
 
-* [API Reference](https://moengage.github.io/android-api-reference/-modules.html)
+* [API Reference](https://moengage.github.io/android-api-reference/index.html)
 
 * [Compliance](https://docs.moengage.com/docs/android-compliance)
 

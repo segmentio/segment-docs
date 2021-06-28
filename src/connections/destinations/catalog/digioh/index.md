@@ -10,12 +10,9 @@ This destination is maintained by Digioh. For any issues with the destination, [
 
 {% include content/connection-modes.md %}
 
-1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-2. Search for "Digioh" in the Destinations Catalog, and select the Digioh destination.
-3. Choose which Source should send data to the Digioh destination.
-4. Go to the [Digioh dashboard](https://account.digioh.com/HQ/Installation), find and copy the "API key" parameter in your `<script>` tag.
-`<script async type='text/javascript' src='https://www.lightboxcdn.com/vendor/API_KEY/lightbox_inline.js'></script>`
-5. Enter the "API Key" and your Digioh account email in the Digioh destination settings in Segment.
+1. Open the [Digioh Integrations tab](https://account.digioh.com/Integration/List), click **New Integration**.
+2. The Segment App opens in a new window. Log in to authenticate the connection from Digioh.
+3. Select the Workspace and Source to connect with Digioh.
 
 ## Identify
 
