@@ -38,8 +38,6 @@ Regional Data Storage allows you to preserve your raw events in Amazon S3 bucket
 
 You can enable Regional Data Storage from the Regional Settings tab within your Workspace settings. Enabling the feature here makes the feature available to both client-side and server-side sources.
 
-![enable](images/enable-regional-ingest.png)
-
 > info ""
 > **Note**: Regional Data Storage is a Beta feature, and its use is governed by the [(1) Segment First Access and Beta Terms and Conditions](https://segment.com/legal/first-access-beta-preview/){:target="_blank"} and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/){:target="_blank"}.
 
