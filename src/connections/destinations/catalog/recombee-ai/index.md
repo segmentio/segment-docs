@@ -16,7 +16,7 @@ This destination is maintained by Recombee. For any issues with the destination,
 
 ## Getting Started
 
-{% include content/connection-modes.md %} 
+{% include content/connection-modes.md %}
 
 1. If you don't already have one, set up a [Recombee account](https://recombee.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners).
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
@@ -43,7 +43,7 @@ If you aren't familiar with the Segment Spec, take a look at the [Page method do
 analytics.page()
 ```
 
-Segment sends Page calls to Recombee as a [Detail View](https://docs.recombee.com/api.html#add-detail-view). 
+Segment sends Page calls to Recombee as a [Detail View](https://docs.recombee.com/api.html#add-detail-view).
 
 
 ## Track
@@ -88,7 +88,7 @@ If you aren't familiar with the Segment Spec, take a look at the [Screen method 
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 
-Segment sends Screen calls to Recombee as a [Detail View](https://docs.recombee.com/api.html#add-detail-view). 
+Segment sends Screen calls to Recombee as a [Detail View](https://docs.recombee.com/api.html#add-detail-view).
 
 
 ## Alias
@@ -107,7 +107,7 @@ Segment sends a [Delete User](https://docs.recombee.com/api.html#delete-user) ca
 All the data associated with the user (including interactions) are removed from Recombee.
 
 ## Reporting successful recommendations
-You can tell Recombee that a specific interaction is based on a successful recommendation (meaning that the recommendations were presented to a user, and the user clicked one of the items), by setting the ID of the successful recommendation request on the `recomm_id` property of a Segment event. You can read more about this setting in [Recombee's Reported Metrics documentations](https://docs.recombee.com/admin_ui.html#reported-metrics)) 
+You can tell Recombee that a specific interaction is based on a successful recommendation (meaning that the recommendations were presented to a user, and the user clicked one of the items), by setting the ID of the successful recommendation request on the `recomm_id` property of a Segment event. You can read more about this setting in [Recombee's Reported Metrics documentations](https://docs.recombee.com/admin_ui.html#reported-metrics))
 
 
 Recombee recognizes the `recomm_id` property in all the events that send interactions.
@@ -116,37 +116,33 @@ In case of [Order Completed](https://segment.com/docs/connections/spec/ecommerce
 
 Sending the `recomm_id` gives you precise numbers about successful recommendations in the KPI section of the [Recombee Admin UI](https://admin.recombee.com). This explicit feedback also helps you optimize your recommendation models.
 
-## Settings
+## Recombee destination settings
 
-### Required 
+### Database ID (Required)
 
-#### Database ID
+ID of the Recombee Database into which you will send the interactions.
 
-ID of the Recombee Database into which the interactions will be sent.
+### API Key (Required)
 
-#### API Key
+The private token for the database.
 
-Corresponding private token.
+### Item ID Property Name (Optional)
 
-### Optional
+For each [Recombee interaction](https://docs.recombee.com/api.html#user-item-interactions), you must provide a `userId` and an `itemId`.
 
-#### Item ID Property Name
+You can set the **Item ID Property Name** to specify the Segment event property to use as the `itemId`.
 
-For each [Recombee interaction](https://docs.recombee.com/api.html#user-item-interactions), a `userId` and an `itemId` must be provided.
-
-By setting *Item ID Property Name*, you can specify the name of the Segment event property from which the `itemId` will be read.
-
-If you don't provide the *Item ID Property Name*:
-- `product_id` is used for [Ecommerce Events](https://segment.com/docs/connections/spec/ecommerce/v2/)
-- `content_asset_id` / `asset_id is used` for [Video Events](https://segment.com/docs/connections/spec/video/)
-- `name` property is used if exists
+If you don't provide an **Item ID Property Name**:
+- `product_id` is used for [Ecommerce Events](https://segment.com/docs/connections/spec/ecommerce/v2/).
+- `content_asset_id` or `asset_id` is used for [Video Events](https://segment.com/docs/connections/spec/video/).
+- `name` property is used if it exists.
 
 
-#### Track Events Mapping
+### Track Events Mapping (Optional)
 
-This Destination can automatically handle various [Ecommerce Events](https://segment.com/docs/connections/spec/ecommerce/v2/) and [Video Events](https://segment.com/docs/connections/spec/video/) in the *Track* call type (see the [Track section](#Track)).
+Recombee can automatically handle different [Ecommerce Events](https://segment.com/docs/connections/spec/ecommerce/v2/) and [Video Events](https://segment.com/docs/connections/spec/video/) in the *Track* call type (see the [Track section](#track)).
 
-If you are using some custom Events, you can set which Recombee interaction will be sent for each of them.
+If you use some custom Events, you can set which Recombee interaction to send for each one.
 
 The value of the mapping is the name of your event, and the key can be one of:
 
@@ -160,12 +156,9 @@ The value of the mapping is the name of your event, and the key can be one of:
   - the portion (how much of the content was consumed by the user) is computed from the `position` and `total_length` properties (see [Content Event Object](https://segment.com/docs/connections/spec/video/#content-event-object)), or can be given as the `portion` property (a number between 0 and 1).
 
 
-#### API URI
+### API URI (Optional)
 
-Specify the URI of the Recombee API that should be used.
+Specify the URI of the Recombee API to use. Omit the protocol. For example, `rapi.recombee.com`.
 
-Example: `rapi.recombee.com`
-(note that protocol is omitted).
-
-This is needed if you are calling the Recombee cluster based in a specific region or you were assigned a custom URI by the Recombee Support team.
-Otherwise, keep this value unset.
+Only use this setting if you call the Recombee cluster based in a specific region, or if you were assigned a custom URI by the Recombee Support team.
+Otherwise, keep this setting blank.
