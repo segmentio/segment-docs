@@ -26,13 +26,15 @@ Analytics.js 2.0 provides a reduction in page load time, which improves site per
 > Many factors impact page load time, including page weight, network conditions, and hosting locations.
 
 
-<!-- ### Developer experience
+### Developer experience
 
-Analytics.js 2.0 introduces new ways for developers to augment events throughout the event timeline. This enables teams to support:
+Analytics.js 2.0 improves developer experience by introducing new ways for developers to augment events throughout the event timeline. For example, developers can augment events either before or after an event occurs, or while the event is in-flight. 
 
-- New privacy and consent controls before an event occurs
-- Enriching events with customer or page context in-flight using middleware
-- Collecting better metrics related to deliverability *after* a message is sent -->
+For example, you can use the Analytics.js 2.0 to build features that:
+
+- Ensure you have user consent to track before an event fires
+- Enrich events with customer or page context while in-flight with middleware
+- Check an event for errors after the event is sent to Segment
 
 ## Getting Started
 
@@ -464,7 +466,7 @@ The Analytics.js utility methods help you change how Segment loads on your page.
 
 The `ready` method allows you to pass in a method that is called once Analytics.js finishes initializing, and once all enabled device-mode destinations load. It's like [jQuery's `ready` method](https://api.jquery.com/ready/), except for destinations.
 
-`ready` is not invoked if any destination throws an error (for example for an expired API key or incorrect settings configuration) during initialization.
+`ready` is not invoked if any destination throws an error (for example for an expired API key, incorrect settings configuration, or when a destination is blocked by the browser) during initialization.
 
 The code in the `ready` function only executes after `ready` is emitted.
 
@@ -696,3 +698,33 @@ Analytics.js uses `localstorage` cookies if you have retries enabled, to keep tr
 For more information, visit the [Segment localstorage-retry library](https://github.com/segmentio/localstorage-retry).
 
 You can set the `debug` cookie to `analytics.js` to log debug messages from Analytics.js to the console.
+
+## Open source libraries
+
+Analytics.js 2.0 includes the following open source components:
+
+**uuid v2.0.0** ([https://github.com/lukeed/uuid](https://github.com/lukeed/uuid))
+Copyright Luke Edwards <[luke.edwards05@gmail.com](mailto:luke.edwards05@gmail.com)> ([lukeed.com](https://lukeed.com/))
+License: MIT License, available here: [https://github.com/lukeed/uuid/blob/master/license](https://github.com/lukeed/uuid/blob/master/license)
+
+**component-url v0.2.1** ([https://github.com/component/url](https://github.com/component/url))
+Copyright (c) 2014 Component 
+License: MIT License, available here: [https://github.com/component/url/blob/master/Readme.md](https://github.com/component/url/blob/master/Readme.md)
+
+**dset v2.0.1** ([https://github.com/lukeed/dset](https://github.com/lukeed/dset))
+Copyright (c) Luke Edwards <[luke.edwards05@gmail.com](mailto:luke.edwards05@gmail.com)> ([lukeed.com](https://lukeed.com/))
+License: MIT License, available here: [https://github.com/lukeed/dset/blob/master/license](https://github.com/lukeed/dset/blob/master/license)
+
+**js-cookie v2.2.1**
+Copyright (c) 2018 Copyright 2018 Klaus Hartl, Fagner Brack, GitHub Contributors
+ 	License: MIT License, available here: [https://github.com/js-cookie/js-cookie/blob/master/LICENSE](https://github.com/js-cookie/js-cookie/blob/master/LICENSE)
+
+**md5 v2.3.0** ([https://github.com/pvorb/node-md5](https://github.com/pvorb/node-md5))
+Copyright (c) 2011-2012, Paul Vorbach.
+Copyright (c) 2009, Jeff Mott.
+License: BSD-3-Clause “New” or “Revised” License, available at: 
+[https://github.com/pvorb/node-md5/blob/master/LICENSE](https://github.com/pvorb/node-md5/blob/master/LICENSE)
+
+**unfetch v4.1.0** ([https://github.com/developit/unfetch](https://github.com/developit/unfetch))
+Copyright (c) 2017 Jason Miller
+License: MIT License, available at: [https://github.com/developit/unfetch/blob/master/LICENSE.md](https://github.com/developit/unfetch/blob/master/LICENSE.md)

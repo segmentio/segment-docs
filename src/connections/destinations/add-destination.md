@@ -112,9 +112,9 @@ You can also connect multiple instances of a destination to help you smoothly mi
 
 To connect a source to more than one instance of a destination in the Segment web app, start by adding the first instance of the destination and giving it a unique name, [as described above](#adding-a-destination). To add another instance of the destination, follow either of those two methods and choose another unique name.
 
-You must give each instance of the destination connected to the same source a unique name. Segment recommends that you use descriptive names rather than numbers, so other Segment users can understand which Segment destinations are linked to which tool instances. For example, you might use "Amplitude North America" and "Amplitude South America", instead of "Amplitude 1" and "Amplitude 2".
+You must give each instance of the destination connected to the same source a unique name. Segment recommends that you use descriptive names rather than numbers, so other Segment users can understand which Segment destinations are linked to which tool instances. For example, you might use "Amplitude North America" and "Amplitude South America", instead of "Amplitude 1" and "Amplitude 2". You can edit the destination instance name at any time.
 
-If you added the first instance of your destination before multi-instance destinations became available, that instance is automatically named for the destination with no other identifiers, for example "Amplitude". You cannot currently edit these first destinations' names.
+If you added the first instance of your destination before multi-instance destinations became available, that instance is automatically named for the destination with no other identifiers, for example "Amplitude". 
 
 Some destinations do not support having multiple instances connected to the same source. In that case, the option to add a second instance of that destination does not appear.
 
@@ -171,6 +171,7 @@ The sections below list the most popular multi-instance Segment destinations. Th
 For the following destinations, a single source can connect to up to 10 instances of the destination in cloud-mode, and **up to one instance in device-mode**.
 
 - [Adobe Analytics](/docs/connections/destinations/catalog/adobe-analytics/)
+- [Amplitude](/docs/connections/destinations/catalog/amplitude/)
 - [Braze](/docs/connections/destinations/catalog/braze/)
 - [Customer.io](/docs/connections/destinations/catalog/customer-io)
 - [Google Analytics](/docs/connections/destinations/catalog/google-analytics/)
@@ -191,7 +192,6 @@ For the following destinations, a single source can connect to up to 10 instance
 - [Amazon Kinesis Firehose](/docs/connections/destinations/catalog/amazon-kinesis-firehose/)
 - [Amazon Lambda](/docs/connections/destinations/catalog/amazon-lambda/)
 - [Amazon Personalize](/docs/connections/destinations/catalog/amazon-personalize/)
-- [Amplitude](/docs/connections/destinations/catalog/amplitude/)
 - [Attribution](/docs/connections/destinations/catalog/attribution/)
 - [Attune](/docs/connections/destinations/catalog/attune/)
 - [Autopilot](/docs/connections/destinations/catalog/autopilothq/)
@@ -239,7 +239,6 @@ For the following destinations, a single source can connect to up to 10 instance
 - [Promoter](/docs/connections/destinations/catalog/promoter.io/)
 - [RadiumOne Connect](/docs/connections/destinations/catalog/radiumone-connect/)
 - [Relay](/docs/connections/destinations/catalog/relay/)
-- [Repeater](/docs/connections/destinations/catalog/repeater/)
 - [Responsys](/docs/connections/destinations/catalog/responsys/)
 - [Sailthru](/docs/connections/destinations/catalog/sailthru/)
 - [Salesforce](/docs/connections/destinations/catalog/salesforce/)

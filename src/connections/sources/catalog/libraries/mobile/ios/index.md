@@ -791,6 +791,18 @@ configuration.adSupportBlock = ^{
 {% endcodeexampletab %}
 {% endcodeexample %}
 
+> warning ""
+> In some cases, builds may fail with the following error if you are using XCode version 12 or higher:
+> `Incompatible block pointer types assigning to 'SEGAdSupportBlock _Nullable' (aka 'NSString * _Nonnull (^)(void)') from 'NSUUID * _Nonnull (^)(void)'`
+> 
+> If you see this error, change the following on **line 39** of the `SEGAnalyticsConfiguration.h` class:
+> 
+> From this:
+> `typedef NSString *_Nonnull (^SEGAdSupportBlock)(void);` 
+> 
+> To this:
+> `typedef NSUUID *_Nonnull (^SEGAdSupportBlock)(void);`
+>
 
 The same value for IDFA will used across all (device and cloud-mode) integrations.
 

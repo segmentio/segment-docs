@@ -51,11 +51,6 @@ The Segment Dev Center team is here to help you every step of the way. You can e
     - Request to implement OAuth
     - Private beta approval
 
-
-- Shared Slack channel
-    - Welcome
-    - Build Q&A
-
 ## 4. Partner Build
 
 Once you are approved you can start building your Segment App. In a nutshell you will build a webhook service or write JavaScript code to process data from Segment, or write a browser JavaScript SDK plugin to collect data or modify a website. You can [refer to the docs for full details about building and testing Segment App Components](https://segment.com/docs/partners/).

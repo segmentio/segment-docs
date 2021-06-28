@@ -143,10 +143,6 @@ The following operators are available.
 - not exists
 - before date
 - after date
-- within last (x days)
-- with next (x days)
-- before last (x days)
-- after next (x days)
 
 ## Connecting your Computed Trait to a Destination
 

@@ -71,7 +71,7 @@ When requests to downstream destinations fail, Segment makes additional attempts
 <tr>
 <td>Identity Merges</td>
 <td>100 merges</td>
-<td>Personas supports up to 100 merges per profile in its identity graph. A merge occurs when two existing profiles are joined together by a common `external_id`. For example, if a user starts their journey on mobile, and then signs in through a web application, those two user profiles are joined together by a common identifier like a `user_id`. Messages that attempt additional merges are usually a sign of a corrupt profile and are dropped.
+<td>Personas supports up to 100 merges per profile in its identity graph. A merge occurs when two existing profiles are joined together by a common `external_id`. For example, if a user starts on mobile, and then signs in through a web application, those two user profiles are joined together by a common identifier like a `user_id`. Messages that attempt additional merges are usually a sign of a corrupt profile and are dropped.
 <br /><br />
 Once the limit is reached, Segment rejects additional events.</td>
 </tr>
