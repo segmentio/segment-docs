@@ -19,7 +19,7 @@ This destination is maintained by Variance. For any issues with the destination,
 6. Give your connection a name. If you use a descriptive name, you can use it as an event filter in Variance.
 7. Choose a method for account matching. You can read more about these methods in the [Account Mapping](#account-mapping) section.
 8. Find and copy the "Secret" and "Webhook URL" fields associated with this project.
-9. Back in the Segment App, enter these as the "API Key" and "Webhook URL" fields in the "Variance" Destination settings.
+9. Back in the Segment App, enter these as the **API Key** and **Webhook URL** fields in the Variance Destination settings.
 
 ## Supported methods
 
