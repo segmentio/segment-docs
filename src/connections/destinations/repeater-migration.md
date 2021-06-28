@@ -14,13 +14,15 @@ Compared to using a Repeater, multi-instance destination configurations simplify
 
 
 
-#### 1. Identify the Repeater instances that you can replace by connecting new instances of a destination to a single source.
+## Step 1. Identify
+**Identify the Repeater instances that you can replace by connecting new instances of a destination to a single source.**
 
 To understand the function of a Repeater, go to its Settings page, and look at Write Keys. These tell you which sources it sends data to.
 
 If the Repeater has filters, but does not filter out Personas events specifically, you can you can re-create these filters in the multi-instance configuration using [destination filters](/docs/connections/destinations/destination-filters/).
 
-#### 2. Create the new destination instances in your workspace and configure settings.
+## Step 2. Create a replacement
+**Create the new destination instances in your workspace and configure settings.**
 
 1. **Settings:**
    When you first create a new destination instance, you can simplify the set up process by copying settings from an existing destination instance. Segment recommends that you use this feature when you migrate off Repeater, to minimize typos and missed configuration fields.
@@ -30,11 +32,14 @@ If the Repeater has filters, but does not filter out Personas events specificall
    Each destination instance can have unique destination filters. If you want the destination filters to be the same as the previous instance, you must configure them either using the Segment web app, or using the [Segment ConfigAPI](https://reference.segmentapis.com/#6c12fbe8-9f84-4a6c-848e-76a2325cb3c5).
 4. **Do not enable the destination instances yet**, as this will send duplicate data to your destinations.
 
-#### 3. Test that your new destination instances are configured correctly.
+## Step 3. Test
+Test that your new destination instances are configured correctly, and that data arrives in the expected way.
 
 You can create a QA instance of your destination to verify that it is configured correctly and is reporting data. Then create a production instance of the destination, and copy the settings from the QA instance. Be sure the authentication settings point to the production instance of your destination!
 
-#### 4. Disable the repeater and enable the new destination instance.
+## Step 4. Disable the repeater
+
+**Disable the repeater and enable the new destination instance.**
 
 1. If you created a QA instance of the Repeater and you created a QA destination instance, you can test this process before you use production data.
 
