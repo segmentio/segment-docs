@@ -24,11 +24,11 @@ To connect Customer.io as a Segment destination:
 4. Click **Configure Customer.io** and choose which source to connect the destination to.
 5. Enter your settings for these fields and click **Save**:
 
-Field | Details
------ | -------
-Destination Name | The name you want to identify the destination with.
-Connection Mode | You can choose between **Cloud Mode** and **Device Mode**. Segment recommends using Cloud Mode.
-How would you like to set up this destination? | You can choose to fill the settings manually or copy the settings from an existing destination instance.
+    Field | Details
+    ----- | -------
+    Destination Name | The name you want to identify the destination with.
+    Connection Mode | You can choose between **Cloud Mode** and **Device Mode**. Segment recommends using Cloud Mode.
+    How would you like to set up this destination? | You can choose to fill the settings manually or copy the settings from an existing destination instance.
 
 6. Enter your **API Key** and **Site ID** on the Settings tab of your new destination. You can find these in your Customer.io account under **Account Settings > API Credentials**.
 7. Click the toggle to activate the integration and start sending data to your Customer.io destination.
