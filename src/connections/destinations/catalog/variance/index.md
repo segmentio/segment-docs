@@ -16,7 +16,7 @@ This destination is maintained by Variance. For any issues with the destination,
 3. Choose which Source should send data to the Variance destination.
 4. Go to the [Variance Integrations page](http://app.variance.com/integrations){:target="_blank"} (you'll see it in the main nav under your company name).
 5. Click **Add Connection**.
-6. Give your connection a name (descriptive is better as it can be used as an event filter in Variance).
+6. Give your connection a name. If you use a descriptive name, you can use it as an event filter in Variance.
 7. Choose a method for account matching. Details on these methods can be found in the [Account Mapping](#Account-Mapping) section at the bottom of this doc.
 8. Find and copy the "Secret" and "Webhook URL" fields associated with this project.
 9. Back in the Segment App, enter these as the "API Key" and "Webhook URL" fields in the "Variance" Destination settings.
