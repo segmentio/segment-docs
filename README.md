@@ -148,7 +148,7 @@ A few possibilities/suggestions:
 
 There are folders for each of the top level products, and those folders might also contain topics that are related to that product area (for example the Privacy Portal section also contains GDPR/CCPA docs).
 
-For the Connections product, the section is divided into the Spec, then Sources, Destinations, and Storage Destinations (nee "Warehouses"), with general accessory topics at the folder root. (More specific accessory topics are in each sub directory.)
+For the Connections product, the section is divided into the Spec, then Sources, Destinations, and Storage Destinations (formerly called "Warehouses"), with general accessory topics at the folder root. (More specific accessory topics are in each sub directory.)
 
 Each also contains a `catalog` directory, which contains all the directories with information about specific integrations. The top-level of this `catalog` folder (the `index.md`) is a pretty "catalog" page which gives a tile-like view by category, suitable for browsing. It pulls the logo for these tiles from the path for the integration in the metadata, either in `destinations.yml`, `sources.yml`, or `warehouses.yml`.
 
