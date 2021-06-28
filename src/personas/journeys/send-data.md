@@ -41,18 +41,6 @@ When the user enters the step:
 }
 ```
 
-When the user leaves the step:
-
-```json
-{
-  "type": "track",
-  "event": "Audience Exited",
-  "properties": {
-    "j_o_first_purchase__opened_email_dje83h": "false"
-  }
-}
-```
-
 #### Identify calls
 
 When the user enters the step:
@@ -62,17 +50,6 @@ When the user enters the step:
   "type": "identify",
   "traits": {
     "j_o_first_purchase__opened_email_dje83h": "true"
-  }
-}
-```
-
-When the user leaves the step:
-
-```json
-{
-  "type": "identify",
-  "traits": {
-    "j_o_first_purchase__opened_email_dje83h": "false"
   }
 }
 ```
