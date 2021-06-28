@@ -11,12 +11,12 @@ title: Journeys Best Practices and FAQ
 When you create a multi-branch split, do not create overlapping conditions that might lead a user to qualify for more than one step at a time.
 
 For example:
-  - If a multi-branch split has the following conditions, a user who has performed both `webinar attended` and `registration form submitted` will end up in both branches.
+  - In the case where a multi-branch split is based on the conditions `registration form submitted` and `webinar attended`, a user may satisfy both conditions, and therefore is eligible for both paths.
   - To set a priority, branch 2 should then be `who performed registration form submitted and did not perform webinar attended` to ensure mutual exclusivity
 
 ### Add time windows whenever possible
 
-Where possible, add a time window when defining conditions to ensure that users exit the step or Journey, rather than remain at the step forever. This prevents Journeys from collecting stale users which can muddle your data for analytics, or cause you to over-target.
+Using selective time windows ensures that Journeys carefully target the most high-priority audiences. For example, in a repeat purchase campaign, the initial entry condition may look for all one-time purchasers, then filter out users who have new transactions in the past 7 days.
 
 ### Suppress targeting with journey lists
 
