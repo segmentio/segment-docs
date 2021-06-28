@@ -18,6 +18,13 @@ For example:
 
 Where possible, add a time window when defining conditions to ensure that users exit the step or Journey, rather than remain at the step forever. This prevents Journeys from collecting stale users which can muddle your data for analytics, or cause you to over-target.
 
+### Suppress targeting with journey lists
+
+Unlike lists associated with Personas Audiences, users who are added to a journey list cannot be subsequently removed. Lists are typically associated with advertising campaigns, and you must take additional steps if you wish to ensure that users do not continue to be targeted with ads after they achieve some goal. A typical implementation pattern is:
+1. Use a send to destination step to add users to the initial targeting list.
+2. Create additional journey steps to model the conditions where a user should be removed from targeting. Create a second send to destination step for the removal list.
+3. When configuring targeting conditions in the destination interface, use boolean logic to include only those users who are in the initial list AND NOT in the removal list.
+
 ### Review your Journey in drafts first
 
 Save your Journey in a draft state so that you can review before you publish it. Once you publish a Journey, you cannot edit select portions of a Journey and Journeys sends data to destinations.
