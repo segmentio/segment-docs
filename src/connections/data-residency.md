@@ -8,15 +8,6 @@ title: Data Residency
 
 Segment offers customers the option to lead on data residency by providing regional infrastructure across Europe, Middle East, Africa and Asia Pacific. The default region for all customers is in Oregon, United States. The regional infrastructure has the same [rate limits and SLA](/docs/connections/rate-limits/) as the default region.
 
-## Enable Regional Data Ingestion and Storage
-
-You can enable Regional Data Ingestion and Storage from the Regional Settings tab within your Workspace settings. Enabling the feature here makes the feature available to both client-side and server-side sources.
-
-![enable](images/enable-regional-ingest.png)
-
-> info ""
-> **Note**: Regional Data Storage is a Beta feature, and its use is governed by the [(1) Segment First Access and Beta Terms and Conditions](https://segment.com/legal/first-access-beta-preview/) and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/).
-
 ## Regional Data Ingestion
 
 Regional Data Ingestion enables you to send data to Segment from both Client-side and Server-side sources through regionally hosted API ingest points. The regional infrastructure can fail-over across locations within a region, but never across regions.
@@ -44,6 +35,13 @@ Regional Data Storage allows you to preserve your raw events in Amazon S3 bucket
 
 > note ""
 > Configure Regional Data Storage on new sources instead of enabling on an existing source to avoid deletion of historical data and a change in retention policy. Historical data that is expired due to a retention policy cannot be replayed at a time in the future. Historical data cannot be migrated from the US to your regional buckets.
+
+You can enable Regional Data Storage from the Regional Settings tab within your Workspace settings. Enabling the feature here makes the feature available to both client-side and server-side sources.
+
+![enable](images/enable-regional-ingest.png)
+
+> info ""
+> **Note**: Regional Data Storage is a Beta feature, and its use is governed by the [(1) Segment First Access and Beta Terms and Conditions](https://segment.com/legal/first-access-beta-preview/){:target="_blank"} and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/){:target="_blank"}.
 
 ### Pre-requisites
 
@@ -160,9 +158,9 @@ To complete the configuration of Regional Data Storage:
 6. Identify the Source in the source-level archive retention periods list
 7. Set the Retention for this source to the suggested value of `7 days`* and click **Save**
 
-The Regional Data Storage bucket will take roughly one hour to receive data.
+The Regional Data Storage bucket will take around one hour to receive data.
 
-* The data retention can be set to any value available in the portal. If you require less than 7 days of data stored in the Segment-owned Archives, please reach out to support.
+\* The data retention can be set to any value available in the portal. If you require less than 7 days of data stored in the Segment-owned Archives, please contact [Segment Support](https://segment.com/help/contact){:target="_blank"}.
 
 ### Deletion from Regional Data Storage
 
@@ -170,14 +168,14 @@ Regional Data Storage offers the same ability to delete end-user data when they 
 - block ongoing data collection for that user
 - delete all historical data about them from Segment's systems, connected S3 buckets and warehouses, and supported downstream partners
 
-Contact [Segment Support](https://segment.com/help/contact/) to initiate a deletion and provide a valid `userId` for each user to be deleted. Deletion requests are run within the region, and have a 30 day SLA, but requires that the raw data is accessible to Segment in an unaltered state. Deletion from Regional Data Storage is not available from the [Privacy Portal](/docs/privacy/user-deletion-and-suppression/#deletion-requests) or through the API.
+Contact [Segment Support](https://segment.com/help/contact/){:target="_blank"} to initiate a deletion and provide a valid `userId` for each user to be deleted. Deletion requests are run within the region, and have a 30 day SLA, but requires that the raw data is accessible to Segment in an unaltered state. Deletion from Regional Data Storage is not available from the [Privacy Portal](/docs/privacy/user-deletion-and-suppression/#deletion-requests) or through the API.
 
 > note "Business Plan Customers"
 > If you use this feature to delete data, you cannot Replay the deleted data at the same time. For standard Replay requests, you must wait for any pending deletions to complete. You cannot submit new deletions requests for the period of time that Segment replays data for you.
 
 ### Replays from Regional Data Storage
 
-Regional Data Storage supports [Replays](/docs/guides/what-is-replay/#replays-for-tooling-changes) to both existing and new tools. To request a Replay, [contact Segment](https://segment.com/help/contact/) with the following:
+Regional Data Storage supports [Replays](/docs/guides/what-is-replay/#replays-for-tooling-changes) to both existing and new tools. To request a Replay, [contact Segment](https://segment.com/help/contact/){:target="_blank"} with the following:
 - Source ID
 - Date Range
 - Destination
