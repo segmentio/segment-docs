@@ -11,12 +11,19 @@ title: Journeys Best Practices and FAQ
 When you create a multi-branch split, do not create overlapping conditions that might lead a user to qualify for more than one step at a time.
 
 For example:
-  - If a multi-branch split has the following conditions, a user who has performed both `webinar attended` and `registration form submitted` will end up in both branches.
+  - In the case where a multi-branch split is based on the conditions `registration form submitted` and `webinar attended`, a user may satisfy both conditions, and therefore is eligible for both paths.
   - To set a priority, branch 2 should then be `who performed registration form submitted and did not perform webinar attended` to ensure mutual exclusivity
 
 ### Add time windows whenever possible
 
-Where possible, add a time window when defining conditions to ensure that users exit the step or Journey, rather than remain at the step forever. This prevents Journeys from collecting stale users which can muddle your data for analytics, or cause you to over-target.
+Add time windows when defining conditions to enforce funnel constraints in a Journey, rather than using an unbounded event condition which operates on the entire history of the user profile. For example, to check if a user has completed an order since receiving an email triggered 7 days ago, use the condition “Order Completed at least 1 time within 7 days.”
+
+### Suppress targeting with journey lists
+
+Unlike lists associated with Personas Audiences, users who are added to a journey list cannot be subsequently removed. Lists are typically associated with advertising campaigns, and you must take additional steps if you wish to ensure that users do not continue to be targeted with ads after they achieve some goal. A typical implementation pattern is:
+1. Use a send to destination step to add users to the initial targeting list.
+2. Create additional journey steps to model the conditions where a user should be removed from targeting. Create a second send to destination step for the removal list.
+3. When configuring targeting conditions in the destination interface, use boolean logic to include only those users who are in the initial list AND NOT in the removal list.
 
 ### Review your Journey in drafts first
 
