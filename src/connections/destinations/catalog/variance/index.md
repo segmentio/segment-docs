@@ -12,7 +12,7 @@ This destination is maintained by Variance. For any issues with the destination,
 {% include content/connection-modes.md %}
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-2. Search for "Variance" in the Destinations Catalog, and select the "Variance" destination.
+2. Search for "Variance" in the Destinations Catalog, and select the Variance destination.
 3. Choose which Source should send data to the "Variance" destination.
 4. Go to the [Variance Integrations page](http://app.variance.com/integrations){:target="_blank"} (you'll see it in the main nav under your company name).
 5. Click **Add Connection**.
