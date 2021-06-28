@@ -23,7 +23,7 @@ This destination is maintained by Variance. For any issues with the destination,
 
 ## Supported methods
 
-Variance supports the following methods, as specified in the [Segment Spec](/docs/connections/spec).
+Variance supports the following methods of the [Segment Spec](/docs/connections/spec).
 
 ### Page
 
