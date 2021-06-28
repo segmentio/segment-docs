@@ -64,7 +64,7 @@ See the [Contributor Guide](contributors.md) for more info.
 
 If you're planning substantial changes to the docs, follow this process for great success! 🏆
 
-1. 📞 Contact the docs team during the planning phase. This way, we can help with logistics and information architecture, and alert you to any gotchas in your content area.
+1. 📞 Contact the docs team ( @segmentio/segment-doc-team ) during the planning phase. This way, we can help with logistics and information architecture, and alert you to any gotchas in your content area.
 2. 📝 Unless previously booked, we don't need to be involved in the writing - go for it! (We're happy to consult if you get stuck or need someone to bounce ideas off.)
 3. 👀 When you've got a draft at least 70% ready for review, tag a member of the docs team, who'll do an initial review. (This can be either in Paper/Gdocs, or in a Github [Draft PR](#draft-prs) with markdown changes if you're comfortable with that.) They'll do a copy edit pass, and ask clarifying questions.
 4. ❓The doc author/owner should answer the questions asked in the review phase. Either the doc author, or the docs team member can resolve comments as they are clarified in the doc text.👍
