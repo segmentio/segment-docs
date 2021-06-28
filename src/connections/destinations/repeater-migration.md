@@ -15,6 +15,7 @@ Compared to using a Repeater, multi-instance destination configurations simplify
 
 
 ## Step 1. Identify
+
 **Identify the Repeater instances that you can replace by connecting new instances of a destination to a single source.**
 
 To understand the function of a Repeater, go to its Settings page, and look at Write Keys. These tell you which sources it sends data to.
@@ -22,6 +23,7 @@ To understand the function of a Repeater, go to its Settings page, and look at W
 If the Repeater has filters, but does not filter out Personas events specifically, you can you can re-create these filters in the multi-instance configuration using [destination filters](/docs/connections/destinations/destination-filters/).
 
 ## Step 2. Create a replacement
+
 **Create the new destination instances in your workspace and configure settings.**
 
 1. **Settings:**
@@ -33,7 +35,8 @@ If the Repeater has filters, but does not filter out Personas events specificall
 4. **Do not enable the destination instances yet**, as this will send duplicate data to your destinations.
 
 ## Step 3. Test
-Test that your new destination instances are configured correctly, and that data arrives in the expected way.
+
+**Test that your new destination instances are configured correctly, and that data arrives in the expected way.**
 
 You can create a QA instance of your destination to verify that it is configured correctly and is reporting data. Then create a production instance of the destination, and copy the settings from the QA instance. Be sure the authentication settings point to the production instance of your destination!
 
