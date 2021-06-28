@@ -56,7 +56,7 @@ When the user enters the step:
 
 ### List destination
 
-The destination receives a list of users who qualify for that step of the Journey. This list is constantly updated by Segment. 
+The destination receives a list of users who qualify for the associated journey step. Unlike lists associated with Personas Audiences, users who are added to a journey list cannot be subsequently removed. See [best practices](/docs/personas/journeys/faq-best-practices#suppress-targeting-with-journey-lists) for techniques to suppress targeting with journey lists.
 
 For more information, see [Using Personas Data](/docs/personas/using-personas-data/).
 
