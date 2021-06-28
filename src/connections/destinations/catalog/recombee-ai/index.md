@@ -118,6 +118,8 @@ Sending the `recomm_id` gives you precise numbers about successful recommendatio
 
 ## Recombee destination settings
 
+<!--LR: 6/28/2021. We're manually adding the settings in the doc here because the DevCenter does not support Markdown, and copy/pasting into Partner Portal resulted in broken rendering. Hopefully some day this can be improved. -->
+
 ### Database ID (Required)
 
 ID of the Recombee Database into which you will send the interactions.
