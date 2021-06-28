@@ -1,7 +1,8 @@
 ---
 title: Journeys Overview
-hidden: true
 ---
+{% include content/plan-grid.md name="journeys" %}
+
 
 Journeys, a feature of Segment Personas, provides a way for marketers to personalize experiences through planning how and when to engage customers with the right campaigns and messages.
 

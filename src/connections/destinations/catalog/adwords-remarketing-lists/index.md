@@ -1,10 +1,10 @@
 ---
-title: Google Adwords Remarketing Lists Destination
+title: Google Adwords Remarketing Lists (Customer Match) Destination
 hide-boilerplate: true
 ---
 
 > note "About Google destinations"
-> This page is about the **Google Adwords Remarketing Lists** destination supported by Segment Personas. For documentation on other Google Destinations, see the pages below.
+> This page is about the **Google Adwords Remarketing Lists (Customer Match)** destination supported by Segment Personas. For documentation on other Google Destinations, see the pages below.
 
 
 | **Google Destination**       | **Supported by Personas** |
@@ -18,7 +18,7 @@ hide-boilerplate: true
 | [Google Ads (Gtag)](/docs/connections/destinations/catalog/google-adwords-new/)          | No                        |
 | [Google Ads (Classic)](/docs/connections/destinations/catalog/google-ads-classic/)       | Yes - Event Destination   |
 | [Google Analytics](/docs/connections/destinations/catalog/google-analytics/)             | Yes - Event Destination   |
-| Google Adwords Remarketing Lists        | Yes - List Destination   |
+| Google Adwords Remarketing Lists (Customer Match)        | Yes - List Destination   |
 
 ## Details
 
@@ -35,14 +35,14 @@ hide-boilerplate: true
 
 ## Overview
 
-The Google Adwords Remarketing Lists Destination is one of our most popular Personas List Destinations. It has a variety of use cases related to exclusion, acquisition (using Similar Audience), re-marketing, and more.
+The Google Adwords Remarketing Lists (Customer Match) Destination is one of our most popular Personas List Destinations. It has a variety of use cases related to exclusion, acquisition (using Similar Audience), re-marketing, and more.
 
 This Destination can send *audiences* (lists of users) created in [Personas](/docs/personas/) to Google Adwords Audience Lists as a [**Customer List**](https://support.google.com/google-ads/answer/7558048) type. Once you set this up, Segment sends an [initial list](https://developers.google.com/analytics/devguides/config/mgmt/v3/remarketing#insert) of users to Google Adwords Audience lists as a “Customer list”. As users move in and out of the audience, Segment automatically [updates the list](https://developers.google.com/analytics/devguides/config/mgmt/v3/remarketing#insert) in Google every 6 hours. This allows you to run advertising campaigns without having manually update the list of users to target in Adwords campaigns.
 
 Currently, you can only send either an email address or mobile id (IDFA) from Segment Personas to Google as custom matchers. You can set an email address on the user profile by including `email` as a trait on an [`identify` call](/docs/connections/spec/identify/), as a property on a [`track` call](/docs/connections/spec/track/) or as an [external id](/docs/personas/identity-resolution/externalids/) for the user.
 If you use Segment’s mobile SDK to collect events from a mobile app, the user’s IDFA is automatically captured. If you do not use Segment’s mobile SDK, you can set the user’s IDFA by setting it within `context.device.advertisingId`.
 
-When you send an audience to Google Adwords Remarketing Lists, you can choose which custom matcher (email or mobile id/IDFA) to match with. If a user has multiple emails or IDFAs on their account as `external_ids`, Personas only sends Adwords the ID that was most recently added to the user profile.
+When you send an audience to Google Adwords Remarketing Lists (Customer Match), you can choose which custom matcher (email or mobile id/IDFA) to match with. If a user has multiple emails or IDFAs on their account as `external_ids`, Personas only sends Adwords the ID that was most recently added to the user profile.
 
 These audience lists can be used serve content on Google Search, YouTube, and Gmail. You can only target users with email addresses that are associated with a Google account, and you can target users in Gmail only if they have an `@gmail.com` address. <!--For Personas audiences that are compatible with Google Display Network, see our documentation for DV360. -->
 
@@ -51,12 +51,12 @@ These audience lists can be used serve content on Google Search, YouTube, and Gm
 
 ## Use Cases: Known Users
 
-Google Adwords Remarketing Lists allows you to efficiently run several marketing and advertising operations. The list below contains the most popular use cases when you know personally identifiable information (PII) about your users, such as email address or mobile device id (IDFA). When you send a Personas audience to Google Adwords Remarketing Lists with email addresses or mobile device ids (IDFA), Segment hashes the PII values before sending them to Google. Google then uses these identifiers to match with users on their ad network to allow the following use cases.
+Google Adwords Remarketing Lists (Customer Match) allows you to efficiently run several marketing and advertising operations. The list below contains the most popular use cases when you know personally identifiable information (PII) about your users, such as email address or mobile device id (IDFA). When you send a Personas audience to Google Adwords Remarketing Lists (Customer Match) with email addresses or mobile device ids (IDFA), Segment hashes the PII values before sending them to Google. Google then uses these identifiers to match with users on their ad network to allow the following use cases.
 
 
 ### Exclusion audiences (Suppression audiences)
 
-Create an audience of users that signed up, purchased a product, or otherwise performed some conversion event. You can then send those users to Google in a timely manner (hourly syncs) to prevent advertising to users that already converted. You can do this by creating an Audience in Personas, syncing it to the Google Adwords Remarketing Lists, and setting it as an [Exclusion List](https://support.google.com/google-ads/answer/2549058?hl=en-AU) in your Adwords campaign.
+Create an audience of users that signed up, purchased a product, or otherwise performed some conversion event. You can then send those users to Google in a timely manner (hourly syncs) to prevent advertising to users that already converted. You can do this by creating an Audience in Personas, syncing it to the Google Adwords Remarketing Lists (Customer Match), and setting it as an [Exclusion List](https://support.google.com/google-ads/answer/2549058?hl=en-AU) in your Adwords campaign.
 
 
 ### Similar audience
@@ -73,7 +73,7 @@ You can use Personas to target users who completed some initial action, but didn
 
 ## How it works
 
-When you create an audience in Personas and connect it to Google Adwords Remarketing Lists, Segment does the following:
+When you create an audience in Personas and connect it to Google Adwords Remarketing Lists (Customer Match), Segment does the following:
 
 1. Creates an Adwords Audience list (type Customer List) with the name you entered in Personas.
 2. Adds any users that fit the audience definition based on Email or Mobile ID (IDFA). Google uses these identifiers to match users in your list to users in the Google system who can be served ads.
@@ -95,15 +95,15 @@ When you create an audience in Personas and connect it to Google Adwords Remarke
 
 Before you start, make sure you have administrative access to the Adwords account so you can set up and link this destination.
 
-### 1. Add Adwords Remarketing Lists as a Personas Destination**
+### 1. Add Adwords Remarketing Lists (Customer Match) as a Personas Destination**
 
 1. Navigate to the Destinations section of your Personas space, and click **Add Destination**.
 
-2. Search for “Adwords Remarketing Lists” and click **Configure**.
+2. Search for “Adwords Remarketing Lists (Customer Match)” and click **Configure**.
 
-3. Click **Connect to Adwords Remarketing Lists**. You are prompted to sign in to your Google Adwords account. (Make sure you sign in to the account that has administrator access!)
+3. Click **Connect to Adwords Remarketing Lists (Customer Match)**. You are prompted to sign in to your Google Adwords account. (Make sure you sign in to the account that has administrator access!)
 
-4. When prompted, click **Allow**. This is required for Segment to update your Google Adwords Remarketing Lists.
+4. When prompted, click **Allow**. This is required for Segment to update your Google Adwords Remarketing Lists (Customer Match).
 ![](images/garl-auth-google.png)
 
 5. Select the Adwords account or sub-account to connect with Personas.
@@ -112,11 +112,11 @@ Before you start, make sure you have administrative access to the Adwords accoun
 
 ![Example of Sub-accounts in Selector](images/adwords_subaccounts.png)
 
-### 2. Create an audience in Segment and connect it to Google Adwords Remarketing Lists
+### 2. Create an audience in Segment and connect it to Google Adwords Remarketing Lists (Customer Match)
 
 1. Navigate to the Personas Audiences tab or go to  `https://app.segment.com/goto-my-workspace/personas/audiences` and create a new audience.
 2. Give your audience a name, some event and trait criteria, then click **Preview**.
-3. Select “AdWords Remarketing Lists” as a destination for your Audience.
+3. Select “AdWords Remarketing Lists (Customer Match)” as a destination for your Audience.
 4. Select either Email or Mobile ID to use as a custom matcher.
 ![](images/garl-select_id.png)
 
@@ -141,7 +141,7 @@ In Google Adwords go to **Tools & Settings** > **Shared Library**> **Audience ma
 
 Make sure you authorized Google Adwords, and selected the correct account.
 
-Make sure you have administrator access for your Google Adwords account. You can check that your Adwords credentials are correct by navigating the the Adwords Remarketing Lists destination in Personas→ Destinations, and viewing the settings.
+Make sure you have administrator access for your Google Adwords account. You can check that your Adwords credentials are correct by navigating the the Adwords Remarketing Lists (Customer Match) destination in Personas→ Destinations, and viewing the settings.
 
 ![](images/garl-configure_dest.png)
 
@@ -157,7 +157,7 @@ If a user has more than one email address or IDFA on their account as `external_
 
 #### What Google campaigns does Personas support?
 
-Personas audiences can only send to Google Adwords Remarketing Lists for Google Search, YouTube and Gmail campaigns. Gmail campaigns can only target users with a `@gmail` address.
+Personas audiences can only send to Google Adwords Remarketing Lists (Customer Match) for Google Search, YouTube and Gmail campaigns. Gmail campaigns can only target users with a `@gmail` address.
 
 #### How many users must be in an audience be to use Google Adwords Campaigns?
 

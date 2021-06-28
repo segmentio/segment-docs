@@ -17,6 +17,7 @@ The following dependencies are installed in the function environment by default.
 - [`@google-cloud/storage v5.3.0`](https://www.npmjs.com/package/@google-cloud/storage) exposed as `google.cloud.storage`
 - [`jsonwebtoken v8.5.1`](https://www.npmjs.com/package/jsonwebtoken) exposed as `jsonwebtoken`
 - [`lodash v4.17.15`](https://www.npmjs.com/package/lodash) exposed as `_`
+- [`moment v2.26.0`](https://www.npmjs.com/package/moment/v/2.26.0) exposed as `moment`
 - [`node-fetch v2.6.0`](https://www.npmjs.com/package/node-fetch) exposed as `fetch`
 - [`oauth v0.9.15`](https://www.npmjs.com/package/oauth) exposed as `OAuth`
 - [`stripe v8.115.0`](https://www.npmjs.com/package/stripe) exposed as `stripe`
