@@ -27,29 +27,29 @@ Variance supports the following methods of the [Segment Spec](/docs/connections/
 
 ### Page
 
-Send [Page](/docs/connections/spec/page) calls to *ADD WHAT PAGE CALLS ARE USED FOR HERE*. For example:
+If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](https://segment.com/docs/connections/spec/page/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.page()
 ```
 
-Segment sends Page calls to Variance as a `Page` Event Type.
+Segment sends Page calls to Variance as a `Page` Event Type. 
 
 
 ### Screen
 
-Send [Screen](/docs/connections/spec/screen) calls to *ADD WHAT SCREEN CALLS ARE USED FOR HERE*. For example:
+If you aren't familiar with the Segment Spec, take a look at the [Screen method documentation](https://segment.com/docs/connections/spec/screen/) to learn about what it does. An example call would look like:
 
 ```obj-c
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 
-Segment sends Screen calls to Variance as a `Screen` Event Type.
+Segment sends Screen calls to Variance as a `Screen` Event Type. 
 
 
 ### Identify
 
-Send [Identify](/docs/connections/spec/identify) calls to *ADD WHAT IDENTIFY CALLS ARE USED FOR HERE*. For example:
+If you aren't familiar with the Segment Spec, take a look at the [Identify method documentation](https://segment.com/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -62,7 +62,7 @@ Segment sends Identify calls to Variance as a `Contact`.
 
 ### Track
 
-Send [Track](/docs/connections/spec/track) calls to *ADD WHAT Track CALLS ARE USED FOR HERE*. For example:
+If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.track('Login Button Clicked')
