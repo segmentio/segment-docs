@@ -89,7 +89,7 @@ Segment sends Group calls to Variance as an `Account` if you've chosen the "Grou
 
 Variance offers several ways to map your users to accounts or companies, including the following.
 
-1. Group: if you already use the Group call to indicate the Account, then you don’t need to fill in anything. Segment extracts the Account name automatically.
+ - **Group**: If you already use the Group call to indicate the Account, then you don’t need to change anything as Segment automatically extracts the Account name.
 2. Identify with custom traits (for example `company.id` and `company.name`): choose this option if you include some information about the Account, Company, or Organization as a trait in each Identify call. When you choose this option you'll need to add the name of the trait you use. For instance, if you configure the call with the data `{'company':{'id':1,'name':'Awesome Inc.'}}`, add `company.id` as the Account ID trait and `company.name` as the Account Name trait.
 3. (Fallback) Identify email trait domain extraction: if you don't use either of the methods above, Segment extracts the domain from the `email` trait and uses that value as the Account name.
 
