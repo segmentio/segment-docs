@@ -13,10 +13,10 @@ data from those sources never enters Segment once blocked. This does not support
 
 For example, if you want to prevent certain types of PII (like Credit Card
 Number) from ever being ingested by Segment, you can block it using standard
-controls by classifying those fields as "Red" in your Inbox or Data Inventory,
+controls by classifying those fields as "Red" in your Data Inventory,
 and then blocking them in your standard controls settings. Blocking fields
 blocks the properties from entering Segment, but does not block the rest of the
-event data from flowing through. Remember that any data you classify as "Red" is
+event data from flowing through. Remember that any data you classify as "Red" in your Data Inventory is
 blocked if you enable these controls.
 
 If you block Segment data at the source level using these controls, the data
@@ -24,8 +24,8 @@ does not enter Segment and we can not Replay it. Additionally, if you have
 [Privacy Controls](#privacy-controls) configured to change how you route Red and
 Yellow data into or out of Segment, the standard controls respect the rules set
 by those Controls. For example, if you have a Privacy Control set up to block
-**Red** data at the Source-level, any new fields you classify in the Inbox as
-**Red** will also be blocked from that Source.
+**Red** data at the Source-level, any new fields you classify in the Data Inventory as
+**Red** are also blocked from that Source. Only fields added to the Data Inventory are blocked by a Privacy Control.
 
 ## Privacy Alerts
 
