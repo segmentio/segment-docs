@@ -1,10 +1,9 @@
 ---
-title: Migrating Repeater destinations to multi-instance Destinations
+title: Migrating Repeater Destinations to Multi-Instance Destinations
 hidden: true
 ---
 
-[Multi-instance destination capabilities](/docs/connections/destinations/add-destination#connecting-one-source-to-multiple-instances-of-a-destination) can replace the legacy Repeater destination, which was previously used to forward data from a single Segment source to multiple instances of a destination.
-Compared to using a Repeater, multi-instance destination configurations simplify setup, provide better observability into event delivery, and reduce event volume, which reduces your costs. However, it does not replace the Repeater in all situations. If you’re using a Repeater for data transformations or to filter Personas events, you will need to continue using the Repeater.
+[Multi-instance destination capabilities](/docs/connections/destinations/add-destination#connecting-one-source-to-multiple-instances-of-a-destination) can replace a Repeater destination that is used to forward data from a single Segment source to multiple instances of a destination. Compared to using a Repeater, multi-instance destination configurations simplify setup, provide better observability into event delivery, and reduce event volume, which reduces your costs. However, multi-instance destination do not replace the Repeater in all situations. If you’re using a Repeater for data transformations or to filter Personas events, you will need to continue using the Repeater.
 
 > success ""
 > Segment recommends that you test the migration process in a staging environment to check your changes, **before** you change any production configurations.
@@ -27,7 +26,7 @@ If the Repeater has filters, but does not filter out Personas events specificall
 **Create the new destination instances in your workspace and configure settings.**
 
 1. **Settings:**
-   When you first create a new destination instance, you can simplify the set up process by copying settings from an existing destination instance. Segment recommends that you use this feature when you migrate off Repeater, to minimize typos and missed configuration fields.
+   When you first create a new destination instance, you can simplify the set up process by copying settings from an existing destination instance. Segment recommends that you use this feature when you migrate off a Repeater, to minimize typos and missed configuration fields.
 2. **Authentication:**
    Enter the correct authentication information. Make sure it's for the correct destination instance!
 3. **Destination Filters:**
@@ -52,4 +51,4 @@ You can create a QA instance of your destination to verify that it is configured
    - **If the destination can de-duplicate events**, enable the new instance of the destination, and _then_ disable the Repeater.
    - **If the destination does not de-duplicate events**, you can disable the Repeater and then enable the new instance of the destination.
    This could result in minor data loss during the few seconds between the Repeater being disabled and the new destination instance being enabled. You can use the Segment Config API [Update Destination endpoint](https://reference.segmentapis.com/#f25d9ac1-3e20-4635-8687-26ed4153086d) to disable and enable destinations quickly, which can minimize the time between these two actions. However, we cannot guarantee that no data will be lost.
-   If your workspace is on the Business Tier, and the destination supports [Replay](/docs/guides/what-is-replay/), you can replay the data from that period into the new destination instance. Replays are available for any destinations which support cloud-mode data (meaning data routed through Segment) and which also process timestamps. Contact your CSM for more information about replays. If the destination does not de-duplicate events and replays are not available, you can manually delete duplicate events in the destination.
+   If your workspace is on the Business Tier, and the destination supports [Replay](/docs/guides/what-is-replay/), you can replay the data from that period into the new destination instance. Replays are available for any destinations that support cloud-mode data (meaning data routed through Segment) and that also process timestamps. Contact your CSM for more information about replays. If the destination does not de-duplicate events and replays are not available, you can manually delete duplicate events in the destination.
