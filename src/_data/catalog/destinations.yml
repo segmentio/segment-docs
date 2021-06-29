@@ -19139,9 +19139,9 @@ items:
   previous_names:
   - Refiner
   logo:
-    url: 'https://cdn.filepicker.io/api/file/t78iWQeKTUKbHV7asM51'
+    url: 'https://cdn.filepicker.io/api/file/xwrSIRkQoOu3a12jv7ZX'
   mark:
-    url: 'https://cdn.filepicker.io/api/file/q8HZKT11RMeCHQnAshVl'
+    url: 'https://cdn.filepicker.io/api/file/to7cs7zNT1dez00W4y6Z'
   categories:
   - Surveys
   - Enrichment
@@ -19369,24 +19369,6 @@ items:
       required: false
       description: Map your Segment properties to Responsys Columns
       settings:
-      - name: columns
-        display_name: Segment Property Name
-        type: STRING
-        deprecated: false
-        required: true
-        string_validators:
-          regexp: ''
-        description: Enter the Segment Property Name.
-        settings: []
-      - name: fieldName
-        display_name: Responsys Column Name
-        type: STRING
-        deprecated: false
-        required: true
-        string_validators:
-          regexp: ''
-        description: Enter the Responsys column name.
-        settings: []
       - name: fieldType
         display_name: Responsys Column Type
         type: SELECT
@@ -19410,6 +19392,24 @@ items:
         deprecated: false
         required: false
         description: Mark this property as a Primary Key in Responsys.
+        settings: []
+      - name: columns
+        display_name: Segment Property Name
+        type: STRING
+        deprecated: false
+        required: true
+        string_validators:
+          regexp: ''
+        description: Enter the Segment Property Name.
+        settings: []
+      - name: fieldName
+        display_name: Responsys Column Name
+        type: STRING
+        deprecated: false
+        required: true
+        string_validators:
+          regexp: ''
+        description: Enter the Responsys column name.
         settings: []
     - name: mapEmail
       display_name: Map Email
