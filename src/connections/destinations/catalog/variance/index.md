@@ -94,4 +94,4 @@ Variance offers several ways to map your users to accounts or companies, includi
 3. (Fallback) Identify email trait domain extraction: if you don't use either of the methods above, Segment extracts the domain from the `email` trait and uses that value as the Account name.
 
 > info ""
-> If none of the above work for your setup, [contact Variance support](mailto:support@variance.com) to discuss alternative configurations.
+> If none of these methods work for your configuration, [contact Variance support](mailto:support@variance.com) to discuss alternatives.
