@@ -16,7 +16,7 @@ For example:
 
 ### Add time windows whenever possible
 
-Using selective time windows ensures that Journeys carefully target the most high-priority audiences. For example, in a repeat purchase campaign, the initial entry condition may look for all one-time purchasers, then filter out users who have new transactions in the past 7 days.
+Add time windows when defining conditions to enforce funnel constraints in a Journey, rather than using an unbounded event condition which operates on the entire history of the user profile. For example, to check if a user has completed an order since receiving an email triggered 7 days ago, use the condition “Order Completed at least 1 time within 7 days.”
 
 ### Suppress targeting with journey lists
 
