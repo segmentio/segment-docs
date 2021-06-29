@@ -25,7 +25,7 @@ does not enter Segment and we can not Replay it. Additionally, if you have
 Yellow data into or out of Segment, the standard controls respect the rules set
 by those Controls. For example, if you have a Privacy Control set up to block
 **Red** data at the Source-level, any new fields you classify in the Data Inventory as
-**Red** will also be blocked from that Source. Only fields added to the Data Inventory will be blocked by a Privacy Control.
+**Red** are also blocked from that Source. Only fields added to the Data Inventory are blocked by a Privacy Control.
 
 ## Privacy Alerts
 
