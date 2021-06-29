@@ -1,5 +1,5 @@
 ---
-title: Migrating Repeater Destinations to Multi-Instance Destinations
+title: Migrating Repeater destinations to multi-instance destinations
 hidden: true
 ---
 
