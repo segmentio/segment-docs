@@ -10,7 +10,7 @@ Segment offers customers the option to lead on data residency by providing regio
 
 ## Regional Data Ingestion
 
-Regional Data Ingestion enables you to send data to Segment from both Client-side and Server-side sources through regionally hosted API ingest points. The regional infrastructure can fail-over across locations within a region, but never across regions.
+Regional Data Ingestion enables you to send data to Segment from both Device-mode and Cloud-mode sources through regionally hosted API ingest points. The regional infrastructure can fail-over across locations within a region, but never across regions.
 
 ### Client-side sources
 
