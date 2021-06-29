@@ -116,7 +116,7 @@ items:
     add-on: true
 - product_display_name: Data Residency
   slug: data-residency
-  plan-note: "Data residency is available to customers on the Business Tier plan"
+  plan-note: "Data residency is available to customers on the Business Tier plan."
   plans:
     free: false
     team: false
