@@ -13,7 +13,7 @@ To help you improve your query performance, this guide takes you through common 
 
 As your data volume grows and your team writes more queries, you might be running out of space in your cluster.
 
-To check if you're getting close to your max, run this query. It will tell you the percentage of storage used in your cluster. Segment recommends never exceeding 75-80% of your storage capacity. If you're nearing capacity, consider adding some more nodes.
+To check if you're getting close to your max, run this query. It will tell you the percentage of storage used in your cluster. Segment recommends that you don't exceed 75-80% of your storage capacity. If you approach that limit, consider adding more nodes to your cluster.
 
 ![](images/asset_HvZs8FpE.png)
 
@@ -61,7 +61,7 @@ As mentioned before, Redshift schedules and prioritizes queries using [Workload
 
 The default configuration is a single queue with only 5 queries running concurrently, but Segment discovered that the default only works well for low-volume warehouses. More often than not, adjusting this configuration can improve your sync times.
 
-Before Segment's SQL statements, Segment uses `set query_group to "segment";` to group all the queries together. This allows you to create a queue just for Segment that isolates from your own queries. The maximum concurrency that Redshift supports is 50 across _all_ query groups, and resources like memory distribute evenly across all those queries.
+Before Segment's SQL statements, Segment uses `set query_group to "segment";` to group all the queries together. This allows you to create a queue that isolates Segment's queries from your own. The maximum concurrency that Redshift supports is 50 across _all_ query groups, and resources like memory distribute evenly across all those queries.
 
 Segment's initial recommendation is for 2 WLM queues:
 
