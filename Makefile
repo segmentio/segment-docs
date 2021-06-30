@@ -49,13 +49,17 @@ package: build
 serve: package
 	@docker run -p 4000:80 segment-docs:latest
 
+# gives us user-transparent way to swap between two different systems
 .PHONY: catalog
-catalog: vendor/bundle
-	@node scripts/catalog.js
+catalog: catalog-papi
 
-.PHONY: papi
+.PHONY: catalog-capi
+catalog: vendor/bundle
+	@node scripts/catalog-capi.js
+
+.PHONY: catalog-papi
 papi: vendor/bundle
-	@node scripts/papi.js
+	@node scripts/catalog_papi.js
 
 .PHONY: changelog
 changelog: vendor/bundle
