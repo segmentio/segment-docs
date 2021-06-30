@@ -336,18 +336,6 @@ items:
     categories:
       - Advertising
     type: object
-  - display_name: HTTP API
-    slug: http-api
-    name: catalog/sources/http-api
-    description: ''
-    url: connections/sources/catalog/libraries/server/http-api
-    logo:
-      url: 'https://d3hotuclm6if1r.cloudfront.net/logos/http-default.svg'
-    mark:
-      url: ''
-    categories:
-      - Server
-    type: event
   - display_name: Herow
     slug: herow
     name: catalog/sources/herow
@@ -364,6 +352,18 @@ items:
         https://public-segment-devcenter-production.s3.amazonaws.com/f6da3e67-30dd-4351-80a0-13ea685ee10b.svg
     categories:
       - Enrichment
+    type: event
+  - display_name: HTTP API
+    slug: http-api
+    name: catalog/sources/http-api
+    description: ''
+    url: connections/sources/catalog/libraries/server/http-api
+    logo:
+      url: 'https://d3hotuclm6if1r.cloudfront.net/logos/http-default.svg'
+    mark:
+      url: ''
+    categories:
+      - Server
     type: event
   - display_name: HubSpot
     slug: hubspot
@@ -396,6 +396,18 @@ items:
     categories:
       - Email Marketing
     type: object
+  - display_name: iOS
+    slug: ios
+    name: catalog/sources/ios
+    description: ''
+    url: connections/sources/catalog/libraries/mobile/ios
+    logo:
+      url: 'https://cdn.filepicker.io/api/file/qWgSP5cpS7eeW2voq13u'
+    mark:
+      url: ''
+    categories:
+      - Mobile
+    type: event
   - display_name: Iterable
     slug: iterable
     name: catalog/sources/iterable
@@ -590,18 +602,6 @@ items:
     categories:
       - Email Marketing
     type: event
-  - display_name: PHP
-    slug: php
-    name: catalog/sources/php
-    description: ''
-    url: connections/sources/catalog/libraries/server/php
-    logo:
-      url: 'https://cdn.filepicker.io/api/file/cbA43LX9SXi2USnZZjig'
-    mark:
-      url: ''
-    categories:
-      - Server
-    type: event
   - display_name: Pendo
     slug: pendo
     name: catalog/sources/pendo
@@ -616,6 +616,18 @@ items:
       url: 'https://cdn.filepicker.io/api/file/T93xOnE9TqQ0ag8qbU7E'
     categories:
       - Analytics
+    type: event
+  - display_name: PHP
+    slug: php
+    name: catalog/sources/php
+    description: ''
+    url: connections/sources/catalog/libraries/server/php
+    logo:
+      url: 'https://cdn.filepicker.io/api/file/cbA43LX9SXi2USnZZjig'
+    mark:
+      url: ''
+    categories:
+      - Server
     type: event
   - display_name: Pixel Tracking API
     slug: pixel-tracking-api
@@ -942,15 +954,3 @@ items:
     categories:
       - Helpdesk
     type: object
-  - display_name: iOS
-    slug: ios
-    name: catalog/sources/ios
-    description: ''
-    url: connections/sources/catalog/libraries/mobile/ios
-    logo:
-      url: 'https://cdn.filepicker.io/api/file/qWgSP5cpS7eeW2voq13u'
-    mark:
-      url: ''
-    categories:
-      - Mobile
-    type: event

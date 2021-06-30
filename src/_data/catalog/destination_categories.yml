@@ -5,22 +5,22 @@ items:
   slug: email-marketing
 - display_name: Advertising
   slug: advertising
+- display_name: Attribution
+  slug: attribution
+- display_name: Deep Linking
+  slug: deep-linking
 - display_name: Analytics
   slug: analytics
 - display_name: Enrichment
   slug: enrichment
 - display_name: A/B Testing
   slug: a-b-testing
+- display_name: Video
+  slug: video
 - display_name: Customer Success
   slug: customer-success
 - display_name: Performance Monitoring
   slug: performance-monitoring
-- display_name: Attribution
-  slug: attribution
-- display_name: Deep Linking
-  slug: deep-linking
-- display_name: Video
-  slug: video
 - display_name: SMS & Push Notifications
   slug: sms-push-notifications
 - display_name: Marketing Automation

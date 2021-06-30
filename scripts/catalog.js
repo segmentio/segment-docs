@@ -240,8 +240,8 @@ const updateSources = async () => {
   }
 
   sources.sort((a, b) => {
-    if(a.display_name < b.display_name) { return -1; }
-    if(a.display_name > b.display_name) { return 1; }
+    if(a.display_name.toLowerCase() < b.display_name.toLowerCase()) { return -1; }
+    if(a.display_name.toLowerCase() > b.display_name.toLowerCase()) { return 1; }
     return 0;
   })
 
@@ -322,8 +322,8 @@ const updateDestinations = async () => {
     nextPageToken = res.next_page_token
   }
   destinations.sort((a, b) => {
-    if(a.display_name < b.display_name) { return -1; }
-    if(a.display_name > b.display_name) { return 1; }
+    if(a.display_name.toLowerCase() < b.display_name.toLowerCase()) { return -1; }
+    if(a.display_name.toLowerCase() > b.display_name.toLowerCase()) { return 1; }
     return 0;
   })
   destinations.forEach(destination => {
@@ -344,15 +344,15 @@ const updateDestinations = async () => {
 
     let settings = destination.settings
     settings.sort((a, b) => {
-      if(a.display_name < b.display_name) { return -1; }
-      if(a.display_name > b.display_name) { return 1; }
+      if(a.display_name.toLowerCase() < b.display_name.toLowerCase()) { return -1; }
+      if(a.display_name.toLowerCase() > b.display_name.toLowerCase()) { return 1; }
       return 0;
     })
     settings.forEach(setting => {
       if (setting.settings.length > 0) {
         setting.settings.sort((a, b) => {
-          if(a.display_name < b.display_name) { return -1; }
-          if(a.display_name > b.display_name) { return 1; }
+          if(a.display_name.toLowerCase() < b.display_name.toLowerCase()) { return -1; }
+          if(a.display_name.toLowerCase() > b.display_name.toLowerCase()) { return 1; }
           return 0;
         })
       }

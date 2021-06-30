@@ -243,8 +243,8 @@ const updateSources = async () => {
   }
 
   sources.sort((a, b) => {
-    if(a.name < b.name) { return -1; }
-    if(a.name > b.name) { return 1; }
+    if(a.name.toLowerCase() < b.name.toLowerCase()) { return -1; }
+    if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
     return 0;
   })
 
@@ -277,8 +277,8 @@ const updateSources = async () => {
 
     // sort the sources alphabetically
     settings.sort((a, b) => {
-      if(a.name < b.name) { return -1; }
-      if(a.name > b.name) { return 1; }
+      if(a.name.toLowerCase() < b.name.toLowerCase()) { return -1; }
+      if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
       return 0;
     })
 
@@ -352,8 +352,8 @@ const updateDestinations = async () => {
   }
 
   destinations.sort((a, b) => {
-    if(a.name < b.name) { return -1; }
-    if(a.name > b.name) { return 1; }
+    if(a.name.toLowerCase() < b.name.toLowerCase()) { return -1; }
+    if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
     return 0;
   })
 
@@ -376,8 +376,8 @@ const updateDestinations = async () => {
 
     let settings = destination.options
     settings.sort((a, b) => {
-      if(a.name < b.name) { return -1; }
-      if(a.name > b.name) { return 1; }
+      if(a.name.toLowerCase() < b.name.toLowerCase()) { return -1; }
+      if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
       return 0;
     })
 
@@ -453,8 +453,8 @@ const updateWarehouses = async () => {
   }
 
   warehouses.sort((a, b) => {
-    if(a.name < b.name) { return -1; }
-    if(a.name > b.name) { return 1; }
+    if(a.name.toLowerCase() < b.name.toLowerCase()) { return -1; }
+    if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
     return 0;
   })
 
@@ -464,8 +464,8 @@ const updateWarehouses = async () => {
 
     let settings = warehouse.options
     settings.sort((a, b) => {
-      if(a.name < b.name) { return -1; }
-      if(a.name > b.name) { return 1; }
+      if(a.name.toLowerCase() < b.name.toLowerCase()) { return -1; }
+      if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
       return 0;
     })
 
