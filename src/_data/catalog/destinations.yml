@@ -15058,6 +15058,17 @@ items:
       required: false
       description: Map your Segment properties to the Marketo Activity Fields
       settings:
+      - name: segmentProperty
+        display_name: Segment Property Name
+        type: STRING
+        deprecated: false
+        required: true
+        string_validators:
+          regexp: ''
+        description: >-
+          Enter the Segment Property Name. This is case sensitive so make sure
+          the name matches exactly how you are passing it in your .track() call.
+        settings: []
       - name: marketoAttributeName
         display_name: Marketo Field Name
         type: STRING
@@ -15088,17 +15099,6 @@ items:
         deprecated: false
         required: false
         description: Mark this property as the Primary field in Marketo.
-        settings: []
-      - name: segmentProperty
-        display_name: Segment Property Name
-        type: STRING
-        deprecated: false
-        required: true
-        string_validators:
-          regexp: ''
-        description: >-
-          Enter the Segment Property Name. This is case sensitive so make sure
-          the name matches exactly how you are passing it in your .track() call.
         settings: []
     - name: event
       display_name: Segment Event Name

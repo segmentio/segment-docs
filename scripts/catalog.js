@@ -291,6 +291,11 @@ const updateSources = async () => {
       display_name: category,
       slug: slugify(category)
     })
+    sourceCategories.sort((a, b) => {
+      if(a.display_name.toLowerCase() < b.display_name.toLowerCase()) { return -1; }
+      if(a.display_name.toLowerCase() > b.display_name.toLowerCase()) { return 1; }
+      return 0;
+    })
   })
 
   // Create source catalog yaml file
@@ -388,7 +393,6 @@ const updateDestinations = async () => {
 
     // add unique destination categories to set
     tempCategories.reduce((s, e) => s.add(e), categories);
-
   })
 
   const destinationArray = Array.from(categories)
@@ -396,6 +400,11 @@ const updateDestinations = async () => {
     destinationCategories.push({
       display_name: category,
       slug: slugify(category)
+    })
+    destinationCategories.sort((a, b) => {
+      if(a.display_name.toLowerCase() < b.display_name.toLowerCase()) { return -1; }
+      if(a.display_name.toLowerCase() > b.display_name.toLowerCase()) { return 1; }
+      return 0;
     })
   })
 
