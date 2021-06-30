@@ -7,8 +7,6 @@ title: Stormly Destination
 
 This destination is maintained by Stormly. For any issues with the destination, [contact their support team](mailto:support@stormly.com).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
