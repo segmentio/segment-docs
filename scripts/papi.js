@@ -275,7 +275,7 @@ const updateSources = async () => {
       mainCategory = 'cloud-app'
     }
 
-    // sort the sources alphabetically
+    // sort the sources alphabetically. JS's default sort is case sensistve which is why we compare lowercase on the fly
     settings.sort((a, b) => {
       if(a.name.toLowerCase() < b.name.toLowerCase()) { return -1; }
       if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
@@ -315,6 +315,11 @@ const updateSources = async () => {
     sourceCategories.push({
       display_name: category,
       slug: slugify(category)
+    })
+    sourceCategories.sort((a, b) => {
+      if(a.display_name.toLowerCase() < b.display_name.toLowerCase()) { return -1; }
+      if(a.display_name.toLowerCase() > b.display_name.toLowerCase()) { return 1; }
+      return 0;
     })
   })
 
@@ -413,16 +418,18 @@ const updateDestinations = async () => {
   })
 
 
-
-    const destinationArray = Array.from(categories)
-
-
-    destinationArray.forEach(category => {
-      destinationCategories.push({
-        display_name: category,
-        slug: slugify(category)
-      })
+  const destinationArray = Array.from(categories)
+  destinationArray.forEach(category => {
+    destinationCategories.push({
+      display_name: category,
+      slug: slugify(category)
     })
+    destinationCategories.sort((a, b) => {
+      if(a.display_name.toLowerCase() < b.display_name.toLowerCase()) { return -1; }
+      if(a.display_name.toLowerCase() > b.display_name.toLowerCase()) { return 1; }
+      return 0;
+    })
+  })
 
 
   const options = { noArrayIndent: true };
