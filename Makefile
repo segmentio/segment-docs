@@ -53,12 +53,17 @@ serve: package
 .PHONY: catalog
 catalog: catalog-papi
 
-.PHONY: catalog-capi
-catalog: vendor/bundle
+.PHONY: capi
+capi: vendor/bundle
 	@node scripts/catalog-capi.js
 
-.PHONY: catalog-papi
+#backcompat alias
+.PHONY: papi
 papi: vendor/bundle
+	@node scripts/catalog_papi.js
+
+.PHONY: catalog-papi
+catalog-papi: vendor/bundle
 	@node scripts/catalog_papi.js
 
 .PHONY: changelog
