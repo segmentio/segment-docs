@@ -8,7 +8,7 @@ layout: catalog
 <div class="destinations-catalog">
   <div class="destinations-catalog__section">
     <div class="flex flex--wrap waffle waffle--xlarge">
-      {% assign warehouses = site.data.catalog.warehouses_papi.items | sort: "display_name" %}
+      {% assign warehouses = site.data.catalog.warehouse_papi.items | sort: "display_name" %}
       {% for warehouse in warehouses %}
           <div class="flex__column flex__column--6">
             <a class="thumbnail-integration flex flex--middle" href="{{ site.baseurl }}/{{ warehouse.url }}/">
