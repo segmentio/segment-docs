@@ -15058,6 +15058,24 @@ items:
       required: false
       description: Map your Segment properties to the Marketo Activity Fields
       settings:
+      - name: primaryKey
+        display_name: Set as Primary Key
+        type: BOOLEAN
+        deprecated: false
+        required: false
+        description: Mark this property as the Primary field in Marketo.
+        settings: []
+      - name: segmentProperty
+        display_name: Segment Property Name
+        type: STRING
+        deprecated: false
+        required: true
+        string_validators:
+          regexp: ''
+        description: >-
+          Enter the Segment Property Name. This is case sensitive so make sure
+          the name matches exactly how you are passing it in your .track() call.
+        settings: []
       - name: marketoAttributeName
         display_name: Marketo Field Name
         type: STRING
@@ -15081,24 +15099,6 @@ items:
           - number
           - date
         description: Enter the Marketo Field type.
-        settings: []
-      - name: primaryKey
-        display_name: Set as Primary Key
-        type: BOOLEAN
-        deprecated: false
-        required: false
-        description: Mark this property as the Primary field in Marketo.
-        settings: []
-      - name: segmentProperty
-        display_name: Segment Property Name
-        type: STRING
-        deprecated: false
-        required: true
-        string_validators:
-          regexp: ''
-        description: >-
-          Enter the Segment Property Name. This is case sensitive so make sure
-          the name matches exactly how you are passing it in your .track() call.
         settings: []
     - name: event
       display_name: Segment Event Name
@@ -17206,7 +17206,7 @@ items:
     url: >-
       https://public-segment-devcenter-production.s3.amazonaws.com/d180bde1-ed0e-4155-95c4-e8013e6bda4e.svg
   categories:
-  - A/B Testing
+  - SMS & Push Notifications
   - Email Marketing
   - Marketing Automation
   - Personalization
@@ -19760,13 +19760,6 @@ items:
       required: false
       description: Map your Segment properties to Responsys Columns
       settings:
-      - name: primaryKey
-        display_name: Set as Primary Key
-        type: BOOLEAN
-        deprecated: false
-        required: false
-        description: Mark this property as a Primary Key in Responsys.
-        settings: []
       - name: columns
         display_name: Segment Property Name
         type: STRING
@@ -19801,6 +19794,13 @@ items:
           - INTEGER
           - TIMESTAMP
         description: Enter the Responsys column type.
+        settings: []
+      - name: primaryKey
+        display_name: Set as Primary Key
+        type: BOOLEAN
+        deprecated: false
+        required: false
+        description: Mark this property as a Primary Key in Responsys.
         settings: []
     - name: mapEmail
       display_name: Map Email
