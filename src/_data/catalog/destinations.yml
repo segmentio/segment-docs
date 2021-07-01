@@ -15058,6 +15058,13 @@ items:
       required: false
       description: Map your Segment properties to the Marketo Activity Fields
       settings:
+      - name: primaryKey
+        display_name: Set as Primary Key
+        type: BOOLEAN
+        deprecated: false
+        required: false
+        description: Mark this property as the Primary field in Marketo.
+        settings: []
       - name: segmentProperty
         display_name: Segment Property Name
         type: STRING
@@ -15092,13 +15099,6 @@ items:
           - number
           - date
         description: Enter the Marketo Field type.
-        settings: []
-      - name: primaryKey
-        display_name: Set as Primary Key
-        type: BOOLEAN
-        deprecated: false
-        required: false
-        description: Mark this property as the Primary field in Marketo.
         settings: []
     - name: event
       display_name: Segment Event Name
@@ -17206,7 +17206,7 @@ items:
     url: >-
       https://public-segment-devcenter-production.s3.amazonaws.com/d180bde1-ed0e-4155-95c4-e8013e6bda4e.svg
   categories:
-  - A/B Testing
+  - SMS & Push Notifications
   - Email Marketing
   - Marketing Automation
   - Personalization
@@ -25525,12 +25525,12 @@ items:
   - Variance
   logo:
     url: >-
-      https://public-segment-devcenter-production.s3.amazonaws.com/86488d36-ec21-4938-a8b4-f362abc5c591.svg
+      https://public-segment-devcenter-production.s3.amazonaws.com/018ab5c8-b299-4eef-8f91-b406e31994d2.svg
   mark:
     url: >-
-      https://public-segment-devcenter-production.s3.amazonaws.com/58983f68-29cc-49bc-a25d-66ed8f748c85.svg
+      https://public-segment-devcenter-production.s3.amazonaws.com/45a1e5f5-06ab-4476-bdc8-a4a48dcd81cb.svg
   categories:
-  - CRM
+  - Customer Success
   - Marketing Automation
   - Performance Monitoring
   - Personalization
