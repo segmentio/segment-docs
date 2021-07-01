@@ -497,7 +497,7 @@ const updateWarehouses = async () => {
   var todayDate = new Date().toISOString().slice(0,10);
   output += "# warehouse data last updated " + todayDate + " \n";
   output += yaml.safeDump({ items: warehousesUpdated }, options);
-  fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/warehouses.yml`), output);
+  fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/warehouse_papi.yml`), output);
 
 }
 
