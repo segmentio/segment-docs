@@ -24,6 +24,15 @@ For more information, see [Setting up your Sources](/docs/personas/quickstart/#s
 4. You should see the entry condition on the Journey Builder canvas. It may take up to 2 minutes to see the estimated number of users in the journey.
 5. Click **+** to add the next step, and view the available step types.
 
+> info ""
+> Users can enter each Journey a maximum of one time.
+
+### Use historical data for the entry step
+
+If you select the **Use historical data** option, Segment queries all historical data to set the list of users who enter the Journey when it's published. When unselected, only users who satisfy the entry condition *after* you publish will enter the Journey.
+
+Regardless of if you select **Use historical data** in the entry condition, only future events and existing trait memberships trigger subsequent journey steps.
+
 ## Available step types
 
 Journeys provide 5 step types which you can add after the entry condition.
