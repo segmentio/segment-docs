@@ -53,18 +53,26 @@ serve: package
 .PHONY: catalog
 catalog: catalog-papi
 
+# uses the old configapi
 .PHONY: capi
 capi: vendor/bundle
 	@node scripts/catalog-capi.js
 
-#backcompat alias
+# shorter alias
+.PHONY: catalog-capi
+catalog-capi: vendor/bundle
+	@node scripts/catalog-capi.js
+
+# uses the new public api
+.PHONY: catalog-papi
+catalog-papi: vendor/bundle
+	@node scripts/catalog_papi.js
+
+# shorter alias
 .PHONY: papi
 papi: vendor/bundle
 	@node scripts/catalog_papi.js
 
-.PHONY: catalog-papi
-catalog-papi: vendor/bundle
-	@node scripts/catalog_papi.js
 
 .PHONY: changelog
 changelog: vendor/bundle
