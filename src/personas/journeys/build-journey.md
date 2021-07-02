@@ -56,7 +56,7 @@ You can add Step Names to describe the users in the true and false branch.
 Define the number of branches you want to create. Then, add a “Wait for condition” step to define the conditions for each branch.
 
 > info ""
-> Segment Journeys does not enforce branch conditions to be mutually exclusive. For more information about ensuring branch exclusivity, see [Best Practices](#).
+> Journeys does not enforce branch conditions to be mutually exclusive. For more information about ensuring branch exclusivity, see [Best Practices](#).
 
 **Send to destinations** delivers information about the journey to the selected destination. For more information, see [Send data to destinations](/docs/personas/journeys/send-data)
 
