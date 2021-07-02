@@ -386,6 +386,18 @@ const updateDestinations = async () => {
       return 0;
     })
 
+    const clone = (obj) => Object.assign({}, obj)
+    const renameKey = (object, key, newKey) => {
+      const clonedObj = clone(object);
+      const targetKey = clonedObj[key];
+      delete clonedObj[key];
+    
+      clonedObj[newKey] = targetKey;
+      return clonedObj;
+    };
+
+    destination.supportedMethods = renameKey(destination.supportedMethods, 'pageview', 'page')
+
     let updatedDestination = {
       display_name: destination.name,
       name: destination.name,
@@ -502,5 +514,5 @@ const updateWarehouses = async () => {
 }
 
 updateDestinations()
-updateSources()
-updateWarehouses()
+//updateSources()
+//updateWarehouses()
