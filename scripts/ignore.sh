@@ -31,7 +31,7 @@ elif echo "$log" | grep -q 'dependabot'; then
 echo "Ignoring dependabot update"
 exit
 # ignore when master is merged into a branch
-elif echo "$log" | grep -q 'Merge branch \SMaster\S'; then
+elif echo "$log" | grep -q 'Merge branch \Smaster\S'; then
 echo "Build ignored because it's only an update from the main branch."
 exit
 else

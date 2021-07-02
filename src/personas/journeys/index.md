@@ -1,6 +1,8 @@
 ---
 title: Journeys Overview
 ---
+{% include content/plan-grid.md name="journeys" %}
+
 
 Journeys, a feature of Segment Personas, provides a way for marketers to personalize experiences through planning how and when to engage customers with the right campaigns and messages.
 
@@ -13,7 +15,7 @@ Journeys enable you to define steps in a user's journey based on event behavior 
 
 ## Get started
 
-Start with the visual builder to define entrance criteria, build out conditional branching logic, then focus messaging to drive conversion. Cart abandonment campaigns, trial conversions, and onboarding flows are great examples to get started from. For more information, see [Build a Journey](/docs/personas/journeys/build-journey).
+Start with the visual builder to define entrance criteria, build out conditional branching logic, then focus messaging to drive conversion. Repeat purchase campaigns, trial conversions, and onboarding flows are great examples to get started from. For more information, see [Build a Journey](/docs/personas/journeys/build-journey).
 
 ## Send data to your destinations
 
