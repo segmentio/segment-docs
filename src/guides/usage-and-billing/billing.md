@@ -75,9 +75,9 @@ Find out more about the [different plans](https://segment.com/pricing) and which
 
 ## What happens when I exceed the Free plan limit?
 
-The Free plan includes up to 1,000 MTUs at no cost. If you exceed the 1,000 MTU limit twice in a 6-month period, Segment locks your account. To unlock your account, you can choose from either of these options:
-* **Option 1:** Upgrade to the Monthly Team plan. This starts a 2-week free trial that gives you 14 days to fix your implementation to decrease the traffic.
-* **Option 2:** Wait for a full billing cycle (1 month) to go by with any overages. This will automatically unlock your account if the MTU numbers are able to go back down on their own.
+The Free plan includes up to 1,000 MTUs at no cost. If you exceed the 1,000 MTU limit once in a 6-month period, Segment locks your account but data is still able to flow through Segment. To unlock your account, you can wait for a full billing cycle (1 month) to go by with any overages. This will automatically unlock your account if the MTU numbers are able to go back down on their own.
+
+If you exceed the 1,000 MTU limit twice in a 6-month period, Segment locks your account and also stops sending and receiving data. To unlock your account, you can upgrade to the [Team plan](https://segment.com/pricing/). This starts a 2-week free trial that gives you 14 days to fix your implementation to decrease the traffic.
 
 ## Team Trial FAQ
 
