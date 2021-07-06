@@ -2,6 +2,7 @@
 title: Recombee AI Destination
 rewrite: true
 hide-settings: true
+hide-personas-partial: true
 ---
 
 [Recombee](https://recombee.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Recommender as a Service, that can use your data to provide the most accurate recommendations of content or products for your users.
@@ -78,7 +79,7 @@ Recombee Destination can process several [Semantic Events](https://segment.com/d
     - [Video Playback Paused](https://segment.com/docs/connections/spec/video/#video-playback-paused)
     - [Video Playback Completed](https://segment.com/docs/connections/spec/video/#video-playback-completed)
 
-If you want to send interactions from other events, set them to [Track Events Mapping](#track-events-mapping) in Settings.
+If you want to send interactions from other events, set them to [Track Events Mapping](#track-events-mapping-optional) in Settings.
 
 ## Screen
 
