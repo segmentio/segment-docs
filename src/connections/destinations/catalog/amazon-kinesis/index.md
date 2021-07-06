@@ -24,16 +24,18 @@ This document was last updated on February 05, 2020. If you notice any gaps, out
               "Effect": "Allow",
               "Action": [
                   "kinesis:PutRecord",
-                  "kinesis:PutRecords"
+                  "kinesis:PutRecords",
+                  "iam:SimulatePrincipalPolicy"
               ],
               "Resource": [
-                  "arn:aws:kinesis:{region}:{account-id}:stream/{stream-name}"
+                  "arn:aws:kinesis:{region}:{account-id}:stream/{stream-name}",
+                  "arn:aws:iam::{account-id}:role/{role-name}"
               ]
           }
       ]
    }
    ```
-   **Note:** A previous version of this policy document only granted `PutRecord` access, which could slow down Kinesis write times by disallowing file batching. Substitute the updated policy document above to grant Kinesis `PutRecords` (plural) and allow batching.
+   **Note:** A previous version of this policy document only granted `PutRecord` access, which could slow down Kinesis write times by disallowing file batching. Substitute the updated policy document above to grant Kinesis `PutRecords` (plural) and allow batching. We've also requested `iam:SimulatePrincipalPolicy`, which will allow us to verify that the IAM Role has the appropriate Kinesis permissions without invoking the Kinesis API.
 
 3. Create an IAM role.
    Follow these instructions to [Create an IAM role](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html#roles-creatingrole-user-console) to allow Segment permission to write to your Kinesis Stream. When prompted to enter an Account ID, enter "595280932656". Make sure to enable 'Require External ID' and enter your Segment Source ID as the External ID*. This can be found by navigating to Settings > API Keys from your Segment source homepage. When adding permissions to your new role, find the policy you created above and attach it.
@@ -189,10 +191,12 @@ The Kinesis destination defaults to use PutRecords. A previous version of the IA
               "Effect": "Allow",
               "Action": [
                   "kinesis:PutRecord",
-                  "kinesis:PutRecords"
+                  "kinesis:PutRecords",
+                  "iam:SimulatePrincipalPolicy"
               ],
               "Resource": [
-                  "arn:aws:kinesis:{region}:{account-id}:stream/{stream-name}"
+                  "arn:aws:kinesis:{region}:{account-id}:stream/{stream-name}",
+                  "arn:aws:iam::{account-id}:role/{role-name}"
               ]
           }
       ]
