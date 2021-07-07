@@ -261,3 +261,7 @@ a[target="_blank"]:after{
   content: url("/docs/images/external-link-alt-solid.svg");
   margin-left: 4px;
 }
+
+a.no-icon[target="_blank"]:after {
+  content: none
+}
