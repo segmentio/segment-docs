@@ -26,6 +26,24 @@ Each Actions-framework Destination you see in the Segment catalog represents a f
 - If you are using Protocols, Destination Actions actions are applied *after* [schema filters](/docs/protocols/enforce/schema-configuration/) and [transformations](/docs/protocols/transform/). If you are using [destination filters](/docs/connections/destinations/destination-filters/), Actions are applied after the filters - meaning that they are not applied to data that is filtered out.
 - Destination Actions can not yet be accessed or modified using the Segment APIs.
 
+## Components of a Destination Action
+
+A Destination Action contains a hierarchy of components, that work together to ensure the right data is sent to the destination. 
+
+At the top level, is the Destination Action itself. It has two children: **Global Settings** and **Subscriptions**. 
+
+**Global Settings** are where you include information like API keys, and other connection-related information. 
+
+**Subscriptions** handle the individual calls to the destination. In them, you define what type of call you want to make to the destination, and what triggers that call. Individual Destination Actions come enabled with some predefined subscriptions to handel common events like Screen calls, Identify calls, and Track calls. Subscriptions have two components that make this possible: **Triggers** and an **Action**. 
+
+**Triggers** enable you to define *when* the corresponding Action fires. As part of a Trigger, you can use condition-based filters to narrow the scope of the trigger.
+
+**Actions** determine the information sent to the destination. In the Configure action section, you map the fields that come from your source, to fields that the destination expects to find. Fields on the destination side depend on the type of action selected
+
+For example, in the Amplitude (Actions) destination, you define your API and Secret keys in the destination's global settings. Then, the provided Page Calls subscription:
+
+1. Triggers the action on all incoming Page events.
+2. Runs the Log Event action, to map your incoming data to Amplitudes properties.
 
 
 ## Set up a destination action
