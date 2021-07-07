@@ -6,7 +6,7 @@ hide-personas-partial: true
 
 [Mixpanel](https://mixpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an event tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion. The client-side Mixpanel Destination code is open-source.
 
-You can browse the code on GitHub for [Analytics.js in Device-mode](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/mixpanel), [Cloud-mode](https://github.com/segmentio/analytics-cloud-integrations/tree/master/integrations/mixpanel), [iOS](https://github.com/segment-integrations/analytics-ios-integration-mixpanel) and [Android](https://github.com/segment-integrations/analytics-android-integration-mixpanel).
+You can browse the code on GitHub for [Analytics.js in Device-mode](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/mixpanel), [iOS](https://github.com/segment-integrations/analytics-ios-integration-mixpanel) and [Android](https://github.com/segment-integrations/analytics-android-integration-mixpanel).
 
 If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](mailto:docs-feedback@segment.com)!
 
@@ -18,6 +18,10 @@ If you notice any gaps, outdated information or simply want to leave some feedba
 2. Search for Mixpanel in the Destinations Catalog and confirm the Source to connect to.
 3. Copy your Mixpanel "API Secret" and "Token", and paste them into the Connection Settings in Segment.
 4. Enable the destination to start sending your data to Mixpanel.
+
+### Adding device-mode SDKs to React Native
+
+{% include content/react-dest.md %}
 
 ## Page
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
@@ -193,10 +197,15 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.alias('newUserId')
 ```
 
-**Important:** Mixpanel used to require that you call `alias` in all libraries to connect anonymous visitors to identified users. However, with the release of Mixpanel's new [Identity Merge feature](https://help.mixpanel.com/hc/en-us/articles/360039133851#enable-id-merge) this is no longer necessary. To enable ID Merge, go to your Mixpanel Settings Dashboard, navigate to **Project Settings > Identity Merge** and enable the setting from that screen. If you are _not_ using this setting, use the instructions below.**
+> info ""
+> **Important:** Mixpanel used to require that you call `alias` in all libraries to connect anonymous visitors to identified users. However, with the release of Mixpanel's new [Identity Merge feature](https://help.mixpanel.com/hc/en-us/articles/360039133851#enable-id-merge) this is no longer necessary. To enable ID Merge, go to your Mixpanel Settings Dashboard, navigate to **Project Settings > Identity Merge** and enable the setting from that screen. If you are _not_ using this setting, use the instructions below.
 
 
-As soon as you have a `userId` for a visitor that was previously anonymous you'll need to [`alias`](/docs/connections/spec/alias/) their old anonymous `id` to the new `userId`. In Mixpanel only **one** anonymous user history can be merged to **one** identified user. For that reason you should only call `alias` once, right after a user registered, but before the first `identify`.
+As soon as you have a `userId` for a visitor that was previously anonymous you'll need to [`alias`](/docs/connections/spec/alias/) their old anonymous `id` to the new `userId`. In Mixpanel only **one** anonymous user history can be merged to **one** identified user. For that reason you should only call `alias` once, right after a user registered, but before the first `identify`. To merge identities in Mixpanel, send an identify call with both the previous anonymous ID, and the new user ID, as follows:
+
+```javascript
+analytics.alias('anonId','newUserId');
+```
 
 You'll also want to `track` the action that caused the user to be identified or created. Read our [guide on how to identify new users](/docs/connections/spec/best-practices-identify/) to learn why.
 
@@ -311,7 +320,7 @@ We do not map `$library_version` since that is reserved for Mixpanel's library v
 
 ### Autotrack
 
-Mixpanel's [Autotrack](https://mixpanel.com/autotrack/) feature is supported using Segment as long as you are using one of our client-side libraries ([analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/), [Android](/docs/connections/sources/catalog/libraries/mobile/android/)). Additionally, if you're using analytics for Android or iOS, make sure your Mixpanel destination is bundled - otherwise Autotrack will not work. Once Mixpanel is installed using Segment, all you have to do is [enable the Autotrack feature for your Mixpanel account](https://mixpanel.com/help/questions/articles/what-is-autotrack-and-how-do-i-get-started-using-it) and it will start working.
+Mixpanel discontinued the Autotrack feature in February 2021. The feature is no longer available for use.
 
 ### People
 
@@ -449,10 +458,6 @@ If you are testing in Xcode remember you must first background the app, then the
 3. Make sure you have disable the default filter in the Mixpanel People Explore tab.
 
 ## Appendices
-
-### Autotrack
-
-Mixpanel's [Autotrack](https://mixpanel.com/autotrack/) feature is supported using Segment as long as you are using one of our client-side libraries ([analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/), [Android](/docs/connections/sources/catalog/libraries/mobile/android/)). Additionally, if you're using analytics for Android or iOS, make sure your Mixpanel destination is bundled - otherwise Autotrack will not work. Once Mixpanel is installed using segment, all you have to do is [enable the Autotrack feature for your Mixpanel account](https://mixpanel.com/help/questions/articles/what-is-autotrack-and-how-do-i-get-started-using-it) and it will start working.
 
 ### IP
 
@@ -620,7 +625,7 @@ To send computed traits or audiences to Mixpanel, you first must connect it to y
 ![](images/pers-12-settings-people.png)
 
 
-## Mixpanel Personas Quick Info
+## Mixpanel Personas Details
 
 - **Supports Personas**: Yes
 - **Personas Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)

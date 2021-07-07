@@ -8,7 +8,7 @@ hide-personas-partial: true
 
 ---
 
-**As of November 2019, the Branch mobile SDKs for Segment are in maintenance mode, and will be refreshed in the second half of 2020.**
+**As of November 2019, the Branch mobile SDKs for Segment are in maintenance mode.**
 
 Existing users of the Branch SDKs are unaffected, however new installations must implement the Branch native SDK separately. They can then enable Branch's [data export integration](https://docs.branch.io/integrations/segment-export/) to push additional data to Segment, and [data import integration](https://docs.branch.io/integrations/segment-import/) to pull additional Segment data into the Branch dashboard.
 
@@ -29,6 +29,28 @@ This document was last updated on November 13, 2019. If you notice any gaps, out
   3. On Branch side you will need to [sign up for a free Branch account](http://branch.io/signup?bmp=segment) and follow the steps on their Dashboard to complete set up.
   4. Copy your `Branch Key` from the Settings page of your [Branch dashboard](https://dashboard.branch.io/#/settings).
   5. Paste the Branch Key in the destination settings and click **Save**.
+
+
+### Adding Branch device-mode SDKs for React Native
+
+<!-- LR, Mar2021: this should be a `react-dest` include but Branch changed their name from Branch-Metrics-->
+
+To add the Branch device-mode SDK to a [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) project:
+1. Navigate to the root folder of your project, and run a `yarn add branch` command to add the destination SDK to your project.
+2. Add an `import` statement to your project, as in the example below.
+   ```js
+   import Branch from '@segment/analytics-react-native-branch'
+   ```
+3. In the same project file, add the destination to the `using` list in the `await` command.
+   ```js
+   await analytics.setup('YOUR_WRITE_KEY', {
+     // Add any of your Device-mode destinations. This ensures they load before continuing.
+     using: Branch
+     // ...
+   })
+   ```
+4. Finally, change to your iOS development folder ( `cd ios` ) and run `pod install`.
+
 
 
 ## Identify

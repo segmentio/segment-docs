@@ -25,7 +25,7 @@ The table below describes the schema in Segment Warehouses:
   </tr>
   <tr>
     <td>`<source>.users`</td>
-    <td>A table with unique `identify` calls. `identify` calls are upserted on `user_id` into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a user. The `id` column in the users table is the same as the `user_id` column in the identifies table. Also note that this table won't have an `anonymous_id` column since a user can have multiple anonymousIds. To get at a user's anonymousIds, you'll need to query the identifies table. *If you observe any duplicates in the users table, [contact us](https://segment.com/help/contact/).*</td>
+    <td>A table with unique `identify` calls. `identify` calls are upserted on `user_id` into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a user. The `id` column in the users table is the same as the `user_id` column in the identifies table. Also note that this table won't have an `anonymous_id` column since a user can have multiple anonymousIds. To get at a user's anonymousIds, you'll need to query the identifies table. *If you observe any duplicates in the users table [contact us](https://segment.com/help/contact/) (unless you are using Bigquery, where [this is expected](/docs/connections/storage/catalog/bigquery/#schema)).*</td>
   </tr>
   <tr>
     <td>`<source>.pages`</td>
@@ -601,8 +601,6 @@ The datatypes that we support right now are: 
 After analyzing the data from dozens of customers we set the string column length limit at 512 characters. Longer strings are truncated. We found this was the sweet spot for good performance and ignoring non-useful data.
 
 We special-case compression for some known columns like event names and timestamps. The others default to LZO. We may add look-ahead sampling down the road, but from inspecting the datasets today this would be unnecessary complexity.
-
-After a column is created, Redshift doesn't allow altering. Swapping and renaming may work down the road, but this would cause thrashing and performance issues. If you would like to change the column size, see our [docs here](/docs/connections/storage/warehouses/redshift-faq/#varchar-size-limits).
 
 ## Timestamps
 

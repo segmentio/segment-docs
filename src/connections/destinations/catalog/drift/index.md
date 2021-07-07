@@ -1,7 +1,11 @@
 ---
 title: Drift Destination
+published: false
 rewrite: true
 ---
+
+<!--May 2021: hiding this and adding a redirect to destinations catalog. -->
+
 [Drift](http://www.drift.com/segment/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the world's first and only conversational marketing platform. Instead of traditional marketing and sales platforms that rely on forms and follow ups, Drift connects your business with the best leads in real-time.
 
 The `analytics.js` device-mode destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-drift).
@@ -49,6 +53,22 @@ We will also flatten the `address` field. All other attributes are passed throug
 If you do not pass a `userId`, we will try to fill it in with the `id` or `username` special traits.
 
 Keep in mind, we _strongly_ suggest to ensure that the `email` field is passed in the `identify` call.
+
+Integrations options passed to `identify` event will be passed to drift identify as third argument. This can be leveraged for [signed identifies](https://devdocs.drift.com/docs/securing-drift-on-your-site-using-signed-identities).
+
+```javascript
+analytics.identify('ksc2303', {
+  name: 'Tak',
+  email: 'test@forestry.com'
+}, {
+  integrations: {
+    'All': false,
+    'Drift': {
+      // properties to pass to drift identify call.
+    }
+  }
+});
+```
 
 ## Track
 

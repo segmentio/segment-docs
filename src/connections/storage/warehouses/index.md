@@ -3,6 +3,7 @@ title: Data Warehouses
 redirect_from: '/connections/warehouses/'
 ---
 
+{% include content/plan-grid.md name="warehouses" %}
 
 ## What's a Warehouse?
 
@@ -23,7 +24,7 @@ Examples of data warehouses include Amazon Redshift, Google BigQuery, and Postgr
 > info "Looking for the Warehouse Schemas docs?"
 >  They've moved! Check them out [here](schema/).
 
-{% include components/media-icon.html href="https://segment.com/academy/intro/when-to-use-sql-for-analysis/&referrer=docs" icon="media/icon-academy.svg" title="Analytics Academy: When to use SQL for analysis" content="When your existing analytics tools can't answer your questions, it's time to level-up and use SQL for analysis." %}
+{% include components/reference-button.html href="https://segment.com/academy/intro/when-to-use-sql-for-analysis/&referrer=docs" icon="media/academy.svg" title="Analytics Academy: When to use SQL for analysis" description="When your existing analytics tools can't answer your questions, it's time to level-up and use SQL for analysis." %}
 
 ### More Help
 

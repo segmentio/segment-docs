@@ -1,5 +1,6 @@
 ---
 title: Analytics for Java
+repo: analytics-java
 ---
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics)
@@ -407,7 +408,7 @@ For more advance logging, you can check out the [sample code](https://github.com
 
 ## Java Support
 
-We officially support Java 8, 9 and 10. The library may work on other versions of Java as well, however we don't test for compatibility on unsupported versions.
+Segment supports Java 8, 9, 10, and 11. The library may work on other versions of Java as well, however we don't test for compatibility on unsupported versions.
 
 ## Snapshots
 

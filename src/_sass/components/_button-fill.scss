@@ -1,62 +1,80 @@
 .button-fill {
-  border-radius: 4px;
   background-color: color(primary);
   color: color(white);
 
-  &:hover {
-    box-shadow: 0 4px 8px 0 rgba(82, 189, 149, 0.08);
+  &:hover,
+  &:focus {
+    background-color: color(primary-dark);
   }
 
-  &--bordered {
-    border: 1px solid color(border-gray-dark);
-    border-radius: 4px;
-  }
 
   &--white {
     background-color: color(white);
-    color: color(gray);
+    color: color(gray-700);
 
-    &:hover {
-      color: color(success);
-    }
-  }
-
-  &--white-bordered {
-    background-color: color(white);
-    color: color(gray);
-    border: 1px solid color(border-gray-dark);
-    border-radius: 4px;
-
-    &:hover {
-      color: color(success);
-    }
-  }
-
-  &--borderable {
-    border: 1px solid color(border-gray-dark);
-
-    @include breakpoint(medium up)  {
-      border: none;
-    }
-  }
-
-  &--primary {
-    background-color: color(primary);
-    color: color(white);
-
-    &:hover {
-      background-color: color(primary);
-      color: color(white);
+    &:hover,
+    &:focus {
+      color: color(gray-800);
+      background-color: color(gray-100);
     }
   }
 
   &--gray {
-    background-color: color(gray);
     color: color(white);
+    background-color: color(gray-600);
 
-    &:hover {
-      background-color: color(gray);
+    &:hover,
+    &:focus {
       color: color(white);
+      background-color: color(gray-700);
+    }
+  }
+
+  &--secondary {
+    color: color(white);
+    background-color: color(secondary);
+
+    &:hover,
+    &:focus {
+      color: color(white);
+      background-color: color(secondary-dark);
+    }
+  }
+
+  &--info {
+    background-color: color(info);
+
+    &:hover,
+    &:focus {
+      background-color: darken(color(info), 10%);
+    }
+  }
+
+  &--success {
+    background-color: color(success);
+
+    &:hover,
+    &:focus {
+      background-color: darken(color(success), 10%);
+    }
+  }
+
+
+  &--warning {
+    background-color: color(warning);
+
+    &:hover,
+    &:focus {
+      background-color: darken(color(warning), 10%);
+    }
+  }
+
+  &--error {
+    background-color: color(error);
+
+    &:hover,
+    &:focus {
+      background-color: darken(color(error), 10%);
     }
   }
 }

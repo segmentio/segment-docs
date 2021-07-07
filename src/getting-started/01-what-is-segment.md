@@ -18,7 +18,7 @@ Once you've collected your interaction data, there are several different things 
 - Send it to [Destinations](/docs/connections/destinations/), which receive the data from any number of sources in real time
 - Send it to [Warehouses](/docs/connections/storage/) (and other bulk storage tools), which hold your raw event schemas and update on regular intervals
 
-You can also enrich the customer data you collect by [connecting data from your other tools](/docs/connections/sources/catalog/#cloud-apps), and then collect it in a warehouse it to monitor performance, inform decision-making processes, and create uniquely customized user experiences. You can also use [Personas](/docs/personas/), our identity resolution tool, to unify data from individual users to gain a holistic understanding of their actions.
+You can also enrich the customer data you collect by [connecting data from your other tools](/docs/connections/sources/catalog/#cloud-apps), and then collect it in a warehouse to monitor performance, inform decision-making processes, and create uniquely customized user experiences. You can also use [Personas](/docs/personas/), our identity resolution tool, to unify data from individual users to gain a holistic understanding of their actions.
 
 
 ## Where data comes from
@@ -83,7 +83,7 @@ When you first log in to your Segment account, you can create a new workspace, o
 
 
 <div class="double">
-  {% include components/media-icon.html href="/getting-started/" newtab="false" newtab="false" icon="symbols/arrow-left.svg" title="Back: Getting Started Overview" content=" " variant="related" %}
+  {% include components/reference-button.html href="/getting-started/" newtab="false" newtab="false" icon="symbols/arrow-left.svg" title="Getting Started Overview" description="" variant="related" subtitle="back" %}
 
-  {% include components/media-icon.html  href="/getting-started/02-simple-install/" newtab="false"  icon="symbols/arrow-right.svg" title="Next: A simple Segment installation" content="Walk through a disposable, demo implementation." variant="related" %}
+  {% include components/reference-button.html  href="/getting-started/02-simple-install/" newtab="false" icon="symbols/arrow-right.svg" title="A simple Segment installation" description="Walk through a disposable, demo implementation." variant="related" subtitle="next" %}
 </div>

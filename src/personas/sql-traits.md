@@ -2,6 +2,9 @@
 title: Personas SQL Traits
 ---
 
+
+
+
 SQL Traits allow you to import user or account traits from your data warehouse back into Personas to build audiences, or to enhance Segment data that you send to other destinations.
 
 SQL Traits are only limited by what data you have in your warehouse. Anything you can write a query for can become a SQL Trait, which allows you to add more details to your user and account profiles, which allows better and more nuanced personalization.
@@ -153,6 +156,7 @@ When you're building your query, there are some requirements for the data your q
 - It must return at least one additional trait in addition to `user_id`/`group_id`, and no more than 25 total columns
 - The query must not return any `user_id`s with a `null` value, or any duplicate `user_id`s.
 - The query must not return more than 10 million rows.
+- Each record must be less than 16kb in size to adhere to [Segment's maximum request size](/docs/connections/sources/catalog/libraries/server/http-api/#max-request-size).
 
 A successful preview returns a sample of users and their traits.
 If we have seen a user before in Personas, their profile shows a green checkmark. You can click that user to view their user profile. If a user has a question mark, we haven't seen this `user_id` in Personas before.
@@ -219,6 +223,10 @@ No, Personas only sends an identify/group call if the values in a row have chang
 
 If you're importing a large list of users and traits, the biggest consideration is the API call usage and volume among the partners you are sending the data to. These vary depending on our partners, so [contact us](https://segment.com/help/contact/) if you are concerned about this.
 
+### Is there a limit on the size of a SQL Trait's payload?
+
+Yes, Segment limits request sizes to a maximum of 16kb. Records larger than this are discarded.
+
 ## Troubleshooting
 
 ### I am getting a permissions error.
@@ -250,8 +258,6 @@ We currently support returning only 25 columns. [Contact us](https://segment.com
 We require that each row of the query corresponds to a unique user. We throw this error if we see multiple rows with the same `user_id`. Use a `distinct` or `group by` statement to ensure that each row has a unique user_id.
 
 ### I am seeing some users/accounts in my preview with questions marks. What does that mean?
-
-![](images/troubleshoot4.png)
 
 This could mean one of two things:
 

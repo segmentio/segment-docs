@@ -1,6 +1,7 @@
 ---
-title: "Audit Trail"
+title: Audit Trail
 ---
+{% include content/plan-grid.md name="audit-trail" %}
 
 Segment offers an in-app 90 day Audit Trail for Business Tier accounts. If you are a workspace Owner, you view user and system activity in your workspace settings, in the "Audit Trail" tab under "Admin".
 

@@ -3,60 +3,83 @@ layout: main
 ---
 
 <main class="docs__body stage__body">
-  <div>
-    <div class="search">
-      {% include_cached navbar/search.html placeholder="Search the Segment documentation..." %}
-    </div>
-    {% include_cached navbar/navbar-mobile.html %}
-  </div>
-  <div class="stage__content" data-swiftype-name="body" data-swiftype-type="text">
-    <article class="page">
-      {% include components/breadcrumbs.html %}
-      <div class="page__body">
-        {%- if page.title -%}
-          <h1 id="{{ page.title | slugify }}" class="page__heading">
-            {{ page.title }}
-          </h1>
-        {%- endif -%}
-        {%- if page.beta -%}
-          {% include content/beta.md %}
-        {%- endif -%}
-        {%- unless page.hide_toc -%}
-          {% include sidebar/mobile-menu-side.html %}
-        {%- endunless -%}
-        <div class="markdown" data-headings-anchors>
-          {{ content }}
+  <div class="docs__navbar">
+    <div class="flex flex--justify gutter gutter--large@medium">
+      <div class="flex__column flex__column--6@xlarge">
+        <div class="search">
+          {% include_cached navbar/search.html container="autocomplete" %}
         </div>
-        <p><i style="color: #a5b0ba;font-size: small;">This page was last modified: {{ page.last_modified_at | date: '%d %b %Y' }} </i></p>
-        {% if page.contributors %}
-          {% include components/avatar.html contributors=page.contributors %}
-        {% endif %}
-        {% if page.related %}
-          <hr>
-          {% include components/related.html items=page.related %}
-        {% endif %}
+      </div>
+
+      <div class="flex__column flex__column--shrink">
+        {% include_cached navbar/nav.html %}
+      </div>
+    </div>
+  </div>
+
+  {% include_cached navbar/navbar-mobile.html %}
+
+  <article class="page" data-tracking-scroll data-swiftype-name="body" data-swiftype-type="text">
+    <div class="page__body">
+      {% include components/breadcrumbs.html %}
+
+      {%- if page.title -%}
+        <h1 id="{{ page.title | slugify }}">
+          {{ page.title }}
+        </h1>
+      {%- endif -%}
+
+      {%- if page.beta -%}
+        {% include content/beta.md %}
+      {%- endif -%}
+
+      {%- unless page.hide_toc -%}
+        {% include sidebar/mobile-menu-side.html %}
+      {%- endunless -%}
+
+      <div class="markdown" data-headings-anchors>
+        {{ content }}
+      </div>
+
+      <p class="last-modified">This page was last modified: {{ page.last_modified_at | date: '%d %b %Y' }}</p>
+
+      {% if page.contributors %}
+        {% include components/recent-contributor.html contributors=page.contributors %}
+      {% endif %}
+
+      {% if page.related %}
         <hr>
-        {% unless page.hide-feedback %}
+        {% include components/related.html items=page.related %}
+      {% endif %}
+
+      {% unless page.hide-feedback %}
+        <hr>
         {% include components/feedback.html %}
-        {% endunless %}
-        {% include components/callout.html %}
+      {% endunless %}
+
+      <hr>
+
+      {% include components/callout.html %}
+    </div>
+
+    {%- unless page.hide-sidebar -%}
+      <div class="docs__sidebar page__sidebar">
+        <div class="sidebar sidebar--sticky sidebar--scroll">
+          {%- unless page.hide_toc -%}
+            <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
+              {% include_cached sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=content h_min=2 h_max=2 %}
+            </div>
+          {% endunless %}
+
+          {% if page.related %}
+            {% include sidebar/related-content.html items=page.related %}
+          {% endif %}
+
+          {% unless page.hide-feedback %}
+            {% include_cached sidebar/feedback.html %}
+          {% endunless %}
+        </div>
       </div>
-    </article>
-  </div>
-</main>
-<div class="docs__sidebar stage__sidebar">
-  {% include_cached navbar/nav.html %}
-  <div class="sidebar sidebar--sticky sidebar--scroll">
-    {%- unless page.hide_toc -%}
-      <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
-        {% include_cached sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=content h_min=2 h_max=2 %}
-      </div>
-    {%- endunless -%}
-    {% if page.related %}
-      {% include sidebar/related-content.html items=page.related %}
-    {% endif %}
-    {% unless page.hide-feedback %}
-      {% include_cached sidebar/feedback.html %}
     {% endunless %}
-  </div>
-</div>
+  </article>
+</main>

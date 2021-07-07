@@ -3,6 +3,8 @@ title: Customize your schema controls
 redirect_from: '/protocols/enforce/'
 ---
 
+{% include content/plan-grid.md name="protocols" %}
+
 The Schema Configuration settings for each source can be used to selectively block events, or omit properties and traits from `.track()`, `.identify()` and `.group()` calls. Segment can permanently drop events that are not included in your Tracking Plan, depending on the settings you select. Segment can also block events with invalid properties or invalid property values.
 
 To enable blocking, go to the **Settings** tab for your source, and click on **Schema Controls**. See below for detailed descriptions for each of the configuration settings.
@@ -24,7 +26,7 @@ For example, if you include a `Subscription Cancelled` event in your Tracking Pl
 
 ## Track Calls - Unplanned Properties
 
-Setting this dropdown to Omit Properties will ensure that properties not defined in your Tracking Plan are removed from the relevant event. For example, if you include a single `subscription_id` property in the `Subscription Cancelled` event in your tracking plan, the below track call would have the `subscription_name` property omitted by Protocols.
+Setting this dropdown to Omit Properties will ensure that properties not defined in your Tracking Plan are removed from the relevant event.
 
 For example, if you include a single `subscription_id` property in the `Subscription Cancelled` event in your tracking plan, the example track call below would have the `subscription_name` property omitted by Protocols.
 

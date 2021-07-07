@@ -1,18 +1,21 @@
 ---
 title: Analytics for iOS
 strat: ios
+repo: analytics-ios
 ---
 
 
-Analytics for iOS makes it simple to send your data to any analytics or marketing tool without having to learn, test or implement a new API every time.
-
-All of Segment's libraries are open-source, so you can [view Analytics for iOS on GitHub](https://github.com/segmentio/analytics-ios), or check out the Segment [browser and server-side libraries](/docs/connections/sources/catalog/) too.
-
-Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-ios/tags.atom).
-
+With Analytics for iOS, you can send your data to analytics or marketing tool, without needing to learn, test, or implement a new API with each update or addition.
+<br />
+<br />
+<br />
 
 > note ""
 > **Note:** Segment does not currently support tracking of watchkit extensions for the Apple Watch. [Email us](https://segment.com/requests/integrations/) if you're interested in a Watchkit SDK. For now we recommend tracking watch interactions using the iPhone app code.
+
+
+> info "Analytics-Swift Pilot"
+> A pilot release of the analytics-swift library is available at the [Analytics-Swift](https://github.com/segmentio/analytics-swift) repository. This library is governed by Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/), and should not be used in production scenarios.
 
 
 ## Analytics-iOS and Unique Identifiers
@@ -51,7 +54,7 @@ When the app is terminated, Segment saves the queue to disk, and loads that data
 {% include content/mobile-cmodes.md %}
 
 
-{% include components/media-icon.html href="https://github.com/segmentio/analytics-test-apps" icon="media/icon-guides.svg" title="iOS Test Apps" content="Segment maintains test apps for the iOS mobile library. Find them here." %}
+{% include components/reference-button.html href="https://github.com/segmentio/analytics-test-apps" icon="guides.svg" title="iOS Test Apps" description="Segment maintains test apps for the iOS mobile library. Find them here." %}
 
 ### Install the SDK
 
@@ -104,7 +107,7 @@ import Segment
 
 ### Including the SDKs for destinations using Device-mode
 
-In the interest of keeping the Analytics-iOS SDK lightweight, the Analytics pod only installs the Segment destination. This means that all your data is sent through Segment's servers to any tools you enable using the default Cloud-mode.
+To keep the Analytics-iOS SDK lightweight, the Analytics pod only installs the Segment destination. This means that all your data is sent through Segment's servers to any tools you enable using the default Cloud-mode.
 
 Some destinations [require or offer Device-mode connections](/docs/connections/destinations/#connection-modes). For those destinations, you must take some additional steps as [to package the device-mode SDKs](/docs/connections/sources/catalog/libraries/mobile/ios/#packaging-device-mode-destination-sdks).
 
@@ -498,12 +501,26 @@ Analytics.shared().getAnonymousId
 {% endcodeexampletab %}
 {% endcodeexample %}
 
+To set the `anonymousId` to a custom value you can set this via the `options` parameter:
+
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+Analytics.shared().identify(nil, traits: ["email": "a user's email address"], options: ["anonymousId" : "test_anonymousId"]);
+```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+[[SEGAnalytics sharedAnalytics] identify:nil traits:@{ @"email": @"a user's email address" } options: @{ @"anonymousId":@"test_anonymousId"}];
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
 
 ### Reset
 
 The `- reset` method clears the SDK's internal stores for the current `user` and `group`. This is useful for apps where users can log in and out with different identities over time.
 
-Clearing all information about the user is as simple as calling:
+The example code below clears all information about the user.
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -518,7 +535,8 @@ Analytics.shared().reset()
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-**Events in the queue are not cleared**, and are sent to Segment the next time the app starts. You might want to call Flush in combination before you call Reset.
+
+**Reset does not clear events in the queue**, and any remaining events in the queue are sent the next time the app starts. You might want to call [Flush](#flush) before you call Reset.
 
 
 > info ""
@@ -773,6 +791,18 @@ configuration.adSupportBlock = ^{
 {% endcodeexampletab %}
 {% endcodeexample %}
 
+> warning ""
+> In some cases, builds may fail with the following error if you are using XCode version 12 or higher:
+> `Incompatible block pointer types assigning to 'SEGAdSupportBlock _Nullable' (aka 'NSString * _Nonnull (^)(void)') from 'NSUUID * _Nonnull (^)(void)'`
+> 
+> If you see this error, change the following on **line 39** of the `SEGAnalyticsConfiguration.h` class:
+> 
+> From this:
+> `typedef NSString *_Nonnull (^SEGAdSupportBlock)(void);` 
+> 
+> To this:
+> `typedef NSUUID *_Nonnull (^SEGAdSupportBlock)(void);`
+>
 
 The same value for IDFA will used across all (device and cloud-mode) integrations.
 

@@ -8,8 +8,7 @@ Our comScore destination code is open-source on GitHub if you want to check it o
 
 ## Analytics.js
 
-When you enable comScore in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading comScore's `beacon.js` onto your page. **This means you should remove comScore's snippet from your page.**
-+ comScore automatically starts recording data.
+When you enable comScore in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading comScore's `beacon.js` onto your page. **This means you should remove comScore's snippet from your page.** ComScore automatically starts recording data.
 
 ## Mobile
 
@@ -26,6 +25,10 @@ allprojects {
   }
 }
 ```
+
+## React Native
+
+{% include content/react-dest.md only="ios"%}
 
 
 ### Settings
@@ -206,11 +209,10 @@ Classification types are how comScore differentiates between an Ad and Content. 
 
 #### Ad Classification Type
 
-You can pass in a value for `adClassificationType` as an integratino specific option. Segment defaults to value `aa00` on all Ad related video tracking events. The values you may dynamically pass in are described by comScore below.
+You can pass in a value for `adClassificationType` as an integration specific option. Segment defaults to value `va00` on all Ad related video tracking events. The values you may dynamically pass in are described by comScore below.
 
 **LINEAR - VIDEO ON DEMAND**
 Linear advertisements delivered into a media player and presented before, in the middle of, or after video content is consumed by the user. The advertisement completely takes over the full view of the media player.
-
 
 |                  | video + audio |
 | ---------------- | ------------- |
@@ -222,18 +224,21 @@ Linear advertisements delivered into a media player and presented before, in the
 **LINEAR - LIVE**
 Linear advertisements delivered before, in the middle of, or after a live stream of content. The advertisement completely takes over the full view of the media player.
 
-`va21`
+|                  | video + audio |
+| ---------------- | ------------- |
+| Linear Live      | va21          |
+
 
 **BRANDED ENTERTAINMENT**
 Media that a user may intentionally view (like content), or it may be served to a user during an ad break (like an advertisement).
 
-
-| During Linear Pre-Roll  | va31 |
-| ----------------------- | ---- |
-| During Linear Mid-Roll  | va32 |
-| During Linear Post-Roll | va33 |
-| As Content              | va34 |
-| During Live Streaming   | va35 |
+|                         | video + audio |
+| ----------------------- | ------------- |
+| During Linear Pre-Roll  | va31          |
+| During Linear Mid-Roll  | va32          |
+| During Linear Post-Roll | va33          |
+| As Content              | va34          |
+| During Live Streaming   | va35          |
 
 
 
@@ -263,7 +268,9 @@ Content with little-to-no brand equity or brand recognition. User-generated cont
 **BUMPERS**
 Bumpers - also known as billboards or slates - are static promotional items which usually run before content and usually last less than 5 seconds.
 
-`vc99`
+|                  | video + audio |
+| ---------------- | ------------- |
+| Bumpers          | vc99          |
 
 
 ## FAQ

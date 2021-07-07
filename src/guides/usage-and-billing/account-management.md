@@ -32,22 +32,13 @@ No, once a source or workspace is deleted it cannot be recovered.
 
 ## Can I move a source from one workspace to another?
 
-Segment doesn't have the ability to "merge" workspaces, however you can achieve the same effect by moving your existing sources to a single workspace.
+Segment doesn't have the ability to "merge" workspaces, however you can achieve the same effect by moving your existing sources to a single workspace. You might do this to unify all of your data across your team(s) to better track your customer data as a complete picture.
 
-You can move sources between workspaces by clicking the sources tab in the top left of your workspace,
+You can move sources between workspaces going to the Settings for the source, clicking Transfer to Workspace in the left navigation. Choose the workspace you want to move the source to, and click **Transfer Source**.
 
-![](images/asset_1fupuBg7.png)
+> info ""
+> **Note**: The person who transfers the source must be a [workspace owner](/docs/segment-app/iam/) for both the origin and recipient workspaces, otherwise the recipient workspace won't appear in the dropdown list.
 
-heading to "Settings" for the requisite source,
+![](images/transfer-source.png)
 
-![](images/asset_a4KXK0QG.png)
-
-and then clicking on "transfer to workspace," selecting which of your other workspaces you'd like to transfer the source to.
-
-![](images/asset_72X5nx95.png)
-
-You will need to ensure that the transfer is done by someone who is an owner of both workspaces.
-
-You will additionally need to configure desired destinations in the workspace that the source is now sending data to.
-
-Benefits of doing this include unifying all of your data across your team(s) to better track your customer data as a complete picture.
+When you transfer the source, all destination configurations are removed. Be sure to set up the destinations you want after the transfer.

@@ -3,7 +3,10 @@ title: Using your Personas data
 redirect_from: '/personas/activation/'
 ---
 
-You can send the Computed Traits and Audiences you create in Personas to your Segment Destinations, and use that it to personalize messages across channels, optimize ad spend, and improve targeting. This page provides an overview of different ways to activate Personas data in Segment Destinations.
+
+
+
+You can send your Personas Computed Traits and Audiences to your Segment Destinations, which allows you to personalize messages across channels, optimize ad spend, and improve targeting. This page provides an overview of different ways to activate Personas data in Segment Destinations.
 
 <!-- TODO: image here? -->
 
@@ -22,7 +25,7 @@ The table below includes the _most important_ Personas Destinations that we supp
 | **Destination**       | **Category**       |
 | === | === |
 | [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/) | Advertising   |
-| [Google Adwords Remarketing Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists/) | Advertising   |
+| [Google Adwords Remarketing Lists (Customer Match)](/docs/connections/destinations/catalog/adwords-remarketing-lists/) | Advertising   |
 | [Braze](/docs/connections/destinations/catalog/braze/)   | Marketing Automation |
 | [Intercom](/docs/connections/destinations/catalog/intercom/)   | Livechat |
 | [Amazon Kinesis](/docs/connections/destinations/catalog/amazon-kinesis/)   | Raw Data |
@@ -154,10 +157,14 @@ Personas only sends events to the destination if the computed trait value has ch
 
 ## Additional identifiers
 
-Personas has a flexible identity resolution layer that allows you to build user profiles based on multiple identifiers like `user_id`, `email`, `mobile advertisingId`, etc. By default, Personas includes email addresses in all payloads, because many marketing tools match users based on email address. However, different destinations may require different keys beyond email address, so they can do their own matching and identification. For example, Zendesk requires that you include the `name` property.
+Personas has a flexible identity resolution layer that allows you to build user profiles based on multiple identifiers like `user_id`, `email`, `mobile advertisingId`, etc. However, different destinations may require different keys, so they can do their own matching and identification. For example, Zendesk requires that you include the `name` property.
 Personas includes logic to automatically enrich payloads going to these destinations with the required keys.
 
 If you send events to a destination that requires specific enrichment we do not already include, [contact us and let us know](https://segment.com/help/contact/), and we‘ll do our best to address it.
+
+> note ""
+> **Note**: Profiles with multiple identifiers (for example, `user_id` and `email`) will trigger one API call per identifier when the audience or computed trait is first synced to a destination.
+
 
 ## Multiple identifiers of the same type
 
@@ -218,7 +225,7 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 ## Personas Compatible Destinations: Event Type
 
 - [ActiveCampaign](/docs/connections/destinations/catalog/activecampaign/)
-- [AdWords Remarketing Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists/)
+- [AdWords Remarketing Lists (Customer Match)](/docs/connections/destinations/catalog/adwords-remarketing-lists/)
 - [Adjust](/docs/connections/destinations/catalog/adjust/)
 - [Adobe Analytics](/docs/connections/destinations/catalog/adobe-analytics/)
 - [Adtriba](/docs/connections/destinations/catalog/adtriba/)
@@ -298,7 +305,7 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [Klaviyo](/docs/connections/destinations/catalog/klaviyo/)
 - [Kochava](/docs/connections/destinations/catalog/kochava/)
 - [Kustomer](/docs/connections/destinations/catalog/kustomer/)
-- [Lazy Lantern](/docs/connections/destinations/catalog/lazy-lantern/)
+- [Lantern](/docs/connections/destinations/catalog/lantern/)
 - [Leanplum](/docs/connections/destinations/catalog/leanplum/)
 - [Librato](/docs/connections/destinations/catalog/librato/)
 - [Lytics](/docs/connections/destinations/catalog/lytics/)
@@ -372,7 +379,6 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [Userlist](/docs/connections/destinations/catalog/userlist/)
 - [Vero](/docs/connections/destinations/catalog/vero/)
 - [Vitally](/docs/connections/destinations/catalog/vitally/)
-- [WalkMe](/docs/connections/destinations/catalog/walkme/)
 - [Watchtower](/docs/connections/destinations/catalog/watchtower/)
 - [WebEngage](/docs/connections/destinations/catalog/webengage/)
 - [Webhooks](/docs/connections/destinations/catalog/webhooks/)
@@ -391,9 +397,10 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [hydra](/docs/connections/destinations/catalog/hydra/)
 - [mabl](/docs/connections/destinations/catalog/mabl/)
 - [tray.io](/docs/connections/destinations/catalog/tray-io/)
+- [Courier](/docs/connections/destinations/catalog/courier/)
 
 ## Personas Compatible Destinations: List Type
 
 - [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)
-- [AdWords Remarketing Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists/)
+- [AdWords Remarketing Lists (Customer Match)](/docs/connections/destinations/catalog/adwords-remarketing-lists/)
 - [Marketo Static Lists](/docs/connections/destinations/catalog/marketo-static-lists/)

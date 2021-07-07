@@ -1,10 +1,23 @@
 ---
 title: Visual Tagger
 ---
+> warning "Visual Tagger entering maintenance mode"
+> Visual Tagger is entering maintenance mode on **April 5th, 2021**.
+> 
+> You can continue to use Visual Tagger with sources on which it's already enabled. However, the feature will no longer be available to new Segment customers and existing customers will not be able to add new Visual Tagger sources.
+> 
+> Segment is committed to enabling customers to collect and deliver high quality customer data to the tools they need to run their businesses. As a CSS-based event tracking method, Visual Tagger has limitations that can prevent detailed data from being consistently collected. For code-based collection best practices, see the [Segment Spec](/docs/connections/spec).
+> 
+> Going forward, support for the feature will include:
+> - Free, Team, and Startup customers will receive support with issues that impact multiple customers, but will not receive CSS-selector related troubleshooting
+> - Business customers will continue to receive full support
+> 
+> 
+> The following best practices can make your website more compatible with the feature and eliminate common issues:
+> - Assign unique IDs to all elements you intend to tag with Visual Tagger
+> - Adhere to HTML standards, such as forms inclosed in a `<form>` tag, and submitted with an `<input type="submit">` button.
 
 Visual Tagger is a tool that enables you to collect data about what your customers are doing on your websites without having to write any code. Specifically, it helps you implement `track` events by pointing and clicking on parts of your website.
-
-![Visual Tagger intro](images/vt-docs-1.gif)
 
 **With Visual Tagger, you can:**
 - Create **`track` events** to start collecting data on actions that your users take, such as button or link clicks and form submissions. Events that you create using Visual Tagger work the same way as `track` events that you may have implemented in code. You'll be able to send them to any of the integrations in Segment's Catalog.
@@ -42,14 +55,11 @@ Once you have all the prerequisites set up, you're ready to get started:
 3. If this is your first time on this page, click **Get Started**.
    Segment checks that you have the Visual Tagger Chrome extension installed and the correct source type. If either of these items is missing, follow the instructions to install the extension, and enable the Visual Tagger. Click **Continue**.
 4. Visual Tagger asks for the website type it can recommend events to track. You can also choose `Other` and describe your website, to help Segment prioritize which event types to add next.
-   ![Getting Started Steps](images/vt-docs-website-type.png)
-5. The next screen shows **Recommended Events**, and you can choose which ones are relevant to your site. (You can also track any events beyond the recommended ones!)
-   ![Getting Started Steps](images/vt-docs-setup-starterkit.png)
+5. The next screen shows **Recommended Events**, and you can choose which are relevant to your site. (You can also track any events beyond the recommended!)
 6. The UI then loads a page with your website in an internal frame with the option to launch in a popup. Click one of the event type names to select it and begin configuring. For more information about event types and names. see [Step 1](#step-1-choose-the-event-type-and-select-an-element) below.
 
 As you click each event, you're prompted to select the part of the website that should trigger the event, and describe the properties that event should have.
-<!-- TODO: this image is outdated
-![Getting Started Steps](images/vt-docs-2.png)-->
+
 
 You are now ready to tag events on your website!
 
@@ -73,7 +83,7 @@ When you click **Add Event**, three types of events are available:
 
 - **Any Element Click**. Selecting this option will allow you to click on any element on your page. This will allow you to create an event for whenever a user on your website clicks on that element.
 
-![Select Event Type](images/vt-docs-4.gif)
+![Select Event Type](images/vt-docs-4.png)
 
 Once you choose an event type, mouse over your website in the iframe to highlight elements that you can select to create an event, and click one to start the process.
 
@@ -151,7 +161,6 @@ Test your events by clicking around on your website in the iframe, and doing thi
 
 If something doesn't look right, click **Back** to return to the Build screen and edit your tags.
 
-![Test Your Event](images/vt-docs-6.gif)
 
 If you’re having trouble validating your events, see [Troubleshooting Tips](#troubleshooting-your-events).
 

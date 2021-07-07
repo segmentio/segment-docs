@@ -2,6 +2,8 @@
 hidden: true
 title: Configure the Data Lakes AWS Environment
 ---
+{% include content/plan-grid.md name="data-lakes" %}
+
 
 The instructions below will guide you through the process required to configure the environment required to begin loading data into your Segment Data Lake. For a more automated process, see [Step 1 - Configure AWS Resources](#step-1---configure-aws-resources) above.
 
@@ -84,8 +86,7 @@ Create a `segment-data-lake-role` role for Segment to assume. Attach the followi
       "Condition": {
         "StringEquals": {
           "sts:ExternalId": [
-            "SOURCE_1",
-            "SOURCE_N"
+            "WORKSPACE_ID"
           ]
         }
       }
@@ -95,7 +96,7 @@ Create a `segment-data-lake-role` role for Segment to assume. Attach the followi
 ```
 
 > note ""
-> **NOTE:** Replace the `ExternalID` list with the Segment `SourceId` values that are synced to the Data Lake.
+> **NOTE:** Replace the `ExternalID` list with the Segment `WorkspaceID` that contains the sources to sync to the Data Lake.
 
 ### IAM Policy
 

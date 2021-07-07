@@ -1,6 +1,8 @@
 ---
 title: "Single Sign On team management"
 ---
+{% include content/plan-grid.md name="sso" %}
+
 
 Segment supports Single Sign On for Business Tier accounts. You can use any SAML-based Identity Provider (IdP), for example Okta, Bitium, OneLogin, or Centrify, or use GSuite to serve as your identity provider, delegating access to the application based on rules you create in your central identity management solution.
 
@@ -86,7 +88,6 @@ You simply enter your domain (or, if you've verified it already, choose it from 
 
 Segment supports "interruption" on the login page for emails that match your workspace's domain.
 
-![](images/asset_IC593KEZ.gif)
 
 In order to enable this, you'll need to verify your domain with Segment. To do that, go to the "Domains" tab under "Authentication" in the workspace settings page.
 
@@ -101,13 +102,13 @@ Enter your domain and click "Add Domain." When you click verify, you're given tw
 
 ##### Do you support automatic user provisioning?
 
-Segment supports "just in time" user permissioning; new users who authenticate using your IdP are automatically created in Segment as minimal-access (read-only) members.
+Segment supports "just in time" user permissioning; new users who authenticate using your IdP are automatically created in Segment as minimal-access (read-only) members. If the user already exists in Segment then Segment associates the IdP-identity with the existing Segment user account.
 
-If the user already exists in Segment then Segment associates the IdP-identity with the existing Segment user account.
+Segment also supports user provisioning and role mapping [using SCIM](/docs/segment-app/iam/scim/).
 
 ##### Do you support automatic user de-provisioning?
 
-No. However, since any non-owners must log in with SSO to access your workspace, once you remove their authorization in your IdP they will no longer be able to access your workspace.
+Yes, users can be automatically de-provisioned [if you use SCIM](/docs/segment-app/iam/scim/).
 
 ##### Will my users lose access to their other workspaces when I enable SSO?
 

@@ -2,6 +2,8 @@
 title: Personas Frequently Asked Questions
 ---
 
+
+
 ## Can I use the Profile API on the client-side?
 For security reasons, we require the Profile API only be used server-side. The Profile API allows you to look up data about any user given an identifier (e.g. email, `anonymousId`, or `userId`) and an authorized access secret. While this enables powerful personalization workflows, it could also let your customers' data fall into the wrong hands if the access secret were exposed on the client.
 
@@ -158,3 +160,8 @@ You can sync data from your…
 Yes, Personas now supports the ability to send an audience or computed trait to two or more accounts of the same partner. The most common use case is multiple Facebook, or Adwords ad accounts.
 
 ![](images/multi-facebook.png)
+
+
+### What identifiers can the merged profile be queried/updated with?
+
+Any of the external IDs can be used to query a profile. When a profile is requested, we will traverse the merge graph and resolve all merged profiles. The result is a single profile, with the latest state of all traits, events, and identifiers.

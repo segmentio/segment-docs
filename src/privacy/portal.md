@@ -1,6 +1,7 @@
 ---
 title: Privacy Portal
 ---
+{% include content/plan-grid.md name="privacy" %}
 
 When preparing for new privacy regulations (such as the GDPR or the CCPA), the
 best practice is to create a comprehensive data inventory which includes details
@@ -15,7 +16,8 @@ When you use Segment as the single point of collection for your customer data, y
 - Enforce your company's data privacy policies with standard privacy controls
 - Streamline regulatory compliance with tools for user deletion and suppression
 
-Privacy Portal features are available to all Segment workspaces, however only workspace owners can access the Privacy Portal. Advanced features are also available to customers who have Protocols enabled.
+Privacy Portal features are available to all Segment workspaces, however only workspace owners can access the Privacy Portal.
+
 
 ## Privacy Inbox
 
@@ -218,7 +220,7 @@ even when it's not an CCN. For example, the key "Product_ID" could contain a
 10-digit string, even though Product_ID does not actually contain an SSN. A
 North American phone number (without country code) is also ten digits.
 
-{% include components/media-icon.html href="/segment-app/iam/roles/#pii-access" icon="media/icon-academy.svg" title="PII Access" content="Use Access Roles to control who has access to the PII identified by your matchers." variant="related" %}
+{% include components/reference-button.html href="/segment-app/iam/roles/#pii-access" icon="media/academy.svg" title="PII Access" description="Use Access Roles to control who has access to the PII identified by your matchers." variant="related" %}
 
 #### An intro to Regular expressions
 

@@ -2,6 +2,7 @@
 title: Salesforce Marketing Cloud Destination
 hide-cmodes: true
 hide-personas-partial: true
+strat: salesforce
 ---
 
 Salesforce Marketing Cloud (SFMC) provides digital marketing automation and analytics software and services. Marketers can use this software to create sophisticated multi-channel campaigns using the SFMC [Journey Builder](https://help.salesforce.com/articleView?id=mc_jb_journey_builder.htm&type=5). This is a campaign planning tool that helps you design and automate campaigns that guide customers through their journey with your brand, such as [Weekly Product Summary Emails](https://segment.com/recipes/product-summary-emails-salesforce/) that you can enable with Segment.
@@ -9,8 +10,11 @@ Salesforce Marketing Cloud (SFMC) provides digital marketing automation and anal
 > info "A note about ExactTarget"
 > ExactTarget was acquired by Salesforce in 2013 and renamed "Salesforce Marketing Cloud." At Segment we use the name "Salesforce Marketing Cloud" (or sometimes SFMC, for short), but the names "Salesforce Marketing Cloud" and "ExactTarget" refer to the same product.
 
+> success ""
+> **Good to know**: This page is about the Salesforce Marketing Cloud Segment destination, which receives data from Segment. There's also a page about the [Salesforce Marketing Cloud Segment source](/docs/connections/sources/catalog/cloud-apps/salesforce-marketing-cloud/), which sends data _to_ Segment!
 
-### SFMC quick info
+
+### SFMC details
 
 | **Support for Personas**               | Yes                                                                  |
 | **Rate Limits**                        | 20 requests per second                                               |

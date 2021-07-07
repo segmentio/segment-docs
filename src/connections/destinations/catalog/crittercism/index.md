@@ -11,6 +11,10 @@ To get started with Crittercism and Segment, you'll want to integrate our [Andro
 
 Once the Segment library is integrated with your app, toggle Crittercism on in your Segment destination catalog, and add your **App Id** which you can find in your [Crittercism app settings](https://app.crittercism.com/developers/login). These new settings will take up to an hour to propagate to all of your existing users. For new users it'll be instantaneous!
 
+### React Native set up
+
+{% include content/react-dest.md %}
+
 - - -
 
 

@@ -2,6 +2,8 @@
 title: Manage Workspace Access
 redirect_from: '/segment-app/iam/groups/'
 ---
+{% include content/plan-grid.md name="iam" %}
+
 
 This page explains how to add [Team Members](/docs/segment-app/iam/concepts/#team-members) and [User Groups](/docs/segment-app/iam/concepts/#user-groups) to your team's workspace, how to assign them [roles](/docs/segment-app/iam/roles), and how to remove them.
 
@@ -94,6 +96,6 @@ Segment does not support programmatic de-provisioning at this time. However, if 
 
 ## Request Access
 
-If you are a [workspace member](/segment-app/iam/roles), you may encounter a section of the Segment App you do not have access to view. If you require expanded permissions, you may request access directly in the Segment App. Once submitted, Access requests are sent to all workspace owners via email.
+If you are a [workspace member](/docs/segment-app/iam/roles), you might encounter a section of the Segment App that you do not have access to view. If you need expanded permissions, you can request access directly in the Segment App. Once submitted, Access requests are sent to all workspace owners by email.
 
-To review an access request, workspace owners may click the link in the access request email to navigate to Segment's Access Management Settings. The requestor's request access message will appear directly within the Segment Access Management page. Once permissions have been updated, the request access message will be dismissed.
+To review an access request, workspace owners click the link in the access request email to go to their workspace's Access Management Settings. The requestor's access request message appears on the Segment Access Management page, and the workspace owner can adjust the user's permissions. The access request message disappears after the permissions are updated.

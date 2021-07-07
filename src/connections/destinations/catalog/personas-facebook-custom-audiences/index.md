@@ -2,24 +2,25 @@
 title: 'Personas Facebook Custom Audiences Destination'
 beta: true
 hide-boilerplate: true
+hide-dossier: true
 redirect_from: '/connections/destinations/catalog/personas-facebook-ads/'
 ---
 
 
 ## Overview
 
-The Facebook Custom Audiences Destination is one of our most popular Personas Destinations. It has a variety of use cases related to suppression, acquisition (using lookalikes), retargeting, and more.
+The Facebook Custom Audiences Destination is one of the most popular Personas Destinations. It has a variety of use cases related to suppression, acquisition (using lookalikes), retargeting, and more.
 
 This Destination can send audiences (lists of users) created in Personas to Facebook Custom Audiences as a **User-List**. Once you set this up, Segment sends an initial list of users to Facebook, and then keeps it up-to-date as new users enter or exit that audience.
 
-This allows you to run advertising campaigns in Facebook without having to manually find and upload a refreshed a csv of users. We currently support Facebook Custom Audiences for Known Users. **Anonymous Website Audiences** is supported separately by the **Facebook Custom Audiences Website** Destination, which is currently in Early Access.
+This allows you to run advertising campaigns in Facebook without having to manually find and upload a refreshed a csv of users. We currently support Facebook Custom Audiences for Known Users.
 
 > info ""
-> **Note:**You must have access to Personas as part of your Segment plan to use this destination. [Contact our sales team](https://segment.com/demo/) to try this out.
+> **Note:**You must have access to Personas as part of your Segment plan to use this destination. [Contact the Segment sales team](https://segment.com/demo/) to try this out.
 
 
 ## Other Facebook Destinations Supported by Segment
-This page is about the **Facebook Custom Audiences** destination developed specifically for use with **Segment Personas**. For documentation on other Facebook destinations, see the pages linked below. For access to documentation on the Facebook Custom Audiences (Website) destination, contact [beta@segment.com](mailto:beta@segment.com), as it is an Early Access feature.
+This page is about the **Facebook Custom Audiences** destination developed specifically for use with **Segment Personas**. For documentation on other Facebook destinations, see the pages linked below.
 
 | **Facebook Destination**   | Supported by Personas |
 | ---------------------- | --------------------- |
@@ -29,7 +30,7 @@ This page is about the **Facebook Custom Audiences** destination developed speci
 | **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)**      | Yes                   |
 
 
-## Quick Info
+## Details
 
 
 - **Supports Personas**: Yes
@@ -39,7 +40,7 @@ This page is about the **Facebook Custom Audiences** destination developed speci
 - **Destination rate limit**: None
 - **Lookback window allowed**: Yes
 - **Identifiers required** : Email or Mobile Device ID (IDFA)
-- **Identifiers accepted** : See [Facebook developer docs](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/) for full list
+- **Identifiers accepted** : Email and Mobile Device ID (IDFA). Other identifiers can be sent through [Additional Traits Matching](#public-preview-feature-additional-traits-matching)
 - **Client or Server-Side Connection**: Server-side
 - **Minimum audience size required**: 100
 
@@ -100,8 +101,6 @@ Facebook offers the Facebook Pixel, which allows you to retarget these types of 
 - Select the Personas Facebook Custom Audiences option, and click **Configure Personas Facebook Custom Audiences**.
 - Authorize Facebook Ads and select a Facebook account id to sync to.
 
-![](images/fb_ca_auth.gif)
-
 ### 2. Create an audience in Segment & connect to Facebook
 
 - Go to the Audience Builder in Personas and create a new Audience with your desired event and trait criteria.
@@ -111,8 +110,6 @@ Facebook offers the Facebook Pixel, which allows you to retarget these types of 
 
 > note ""
 > **Note**: if you change the name of the audience in Segment, it will not be reflected in Facebook
-
-![](images/fb_ca_setup.gif)
 
 ### 3. Verify that the audience appears in Facebook
 

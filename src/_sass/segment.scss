@@ -15,7 +15,7 @@
 // Fonts
 // =================================================
 @import "fonts/droid-sans-mono";
-@import "fonts/graphik-web";
+@import "fonts/sf-pro";
 
 // Generics
 // =================================================
@@ -44,12 +44,13 @@
 @import "components/consent-manager";
 @import "components/stage";
 @import "components/logo";
-@import "components/button-link";
 @import "components/thumbnail-integration";
 @import "components/destinations-catalog";
+@import "components/badge";
 @import "components/button";
-@import "components/button-fill";
+@import "components/button-link";
 @import "components/button-hollow";
+@import "components/button-fill";
 @import "components/markdown";
 @import "components/list-steps";
 @import "components/input";
@@ -62,7 +63,6 @@
 @import "components/menu-button";
 @import "components/search-button";
 @import "components/callout";
-@import "components/panel";
 @import "components/nav";
 @import "components/nav-list";
 @import "components/social-list";
@@ -78,20 +78,26 @@
 @import "components/destination-menu-mobile";
 @import "components/columns";
 @import "components/feedback-box";
-@import "components/media-icon";
-@import "components/media-thumbnail";
 @import "components/accordion";
-@import "components/avatar";
+@import "components/recent-contributor";
 @import "components/related-list";
 @import "components/integration-header";
 @import "components/code-example";
 @import "components/popover";
+@import "components/hoverhelp";
 @import "components/avatars-list";
 @import "components/mobile-menu-side";
 @import "components/gloss";
 @import "components/back-scrolling";
 @import "components/related-categories";
 @import "components/feedback-template";
+@import "components/reference-button";
+@import "components/icon";
+@import "components/last-modified";
+@import "components/thumbnail";
+@import "components/release-note";
+@import "components/quickinfo";
+@import "components/current-version";
 
 // Pages
 // =================================================
@@ -104,6 +110,6 @@
 
 // Vendors
 // =================================================
-@import "vendors/swiftype";
 @import "vendors/premonition";
 @import "vendors/tippy";
+@import "vendors/glightbox";

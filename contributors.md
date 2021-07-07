@@ -4,6 +4,25 @@ Thanks for helpin' out! We really appreciate it.
 
 ![](guide-imgs/segment-sloth-heart.png)
 
+Here's what's here:
+<!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Contribute from the Github web UI](#contribute-from-the-github-web-ui)
+- [Contribute using Git and Atom](#contribute-using-git-and-atom)
+	- [Making review edits in a PR](#making-review-edits-in-a-pr)
+- [Contribute using git native commands](#contribute-using-git-native-commands)
+- [Tips and tricks](#tips-and-tricks)
+	- [Adding links that open in a new window](#adding-links-that-open-in-a-new-window)
+	- [Escaping code snippets](#escaping-code-snippets)
+	- [Syntax highlighting](#syntax-highlighting)
+	- [Note Blocks](#note-blocks)
+	- [Redirect to a workspace](#redirect-to-a-workspace)
+- [Set up on Mac using the Env script](#set-up-on-mac-using-the-env-script)
+- [Refresh the Segment catalog](#refresh-the-segment-catalog)
+	- [Set up to refresh the Segment catalog](#set-up-to-refresh-the-segment-catalog)
+
+<!-- /TOC -->
+
 
 There are three ways to contribute.
 - EASY: [Contribute from the Github web UI](#contribute-from-the-github-web-ui) - only use this when making small edits to existing text files
@@ -36,7 +55,7 @@ This guide also contains a bunch of [useful formatting tips and tricks](#tips-an
 6. Once someone has reviewed and approved the change,  merge the change.
 7. Delete the branch once the change has been merged!
 
-**If changes are needed on your Github PR**: You (or they) can add Github "suggestions", which you can merge into your PR one by one. If there are many updates, you might need to check out your branch using the Atom and Git process below to make the changes in a single commit.
+**If changes are needed on your Github PR**: You (or they) can add Github "suggestions", which you can merge into your PR either in a batch, or one by one. If there are many updates, you might need to check out your branch using the Atom and Git process below to make the changes in a single commit.
 
 ## Contribute using Git and Atom
 
@@ -95,7 +114,7 @@ This section is a very sparse outline of a git flow for git-experts and other fo
 6. Push your branch and changes to the `segment-docs` repo (`git push`, `git push --set-upstream origin`)
 7. Repeat steps 3-6 as needed.
 8. Open a PR by [going to the PRs page](https://github.com/segmentio/segment-docs/pulls), if not prompted, create new by selecting `master` as base, `(your branch name)` as other.
-9. Request a review. The Codeowners should populate this, and if not you can tag @sanscontext.
+9. Request a review. The Codeowners should populate this, and if not you can tag someone on the docs team.
 10. If changes are requested, repeat steps 3-6 as needed.
 11. Once approved, merge and delete branch, delete branch locally.
 
@@ -110,7 +129,7 @@ To make a link open in a new tab append `[text](https://example.com){:target="_b
 
 ### Escaping code snippets
 
-Certain code syntax will be interpreted by Jekyll/Liquid as site code. If you're having trouble showing code snippets in the docs, you can wrap the snippet in a `{% raw %}` tag. In the example below, the curly brackets would not render in the docs. The raw tags ensure the code renders properly.
+Certain code syntax is interpreted by Jekyll/Liquid as site code. If you're having trouble showing code snippets in the docs, you can wrap the snippet in a `{% raw %}` tag. In the example below, the curly brackets would not render in the docs. The raw tags ensure the code renders properly.
 
 ```
 {% raw %}
@@ -134,17 +153,18 @@ You'd write a block like this:
 ```
 
 Notes *must* include a `[]` in the heading/title, even if it's empty.
-You can see how to write them in the `styleguide.md`, and see how they render at [https://segment.build/docs/styleguide](https://segment.build/docs/styleguide)
+You can see how to write them in the `formatguide.md`, and see how they render at [https://segment.com/docs/utils/formatguide/#alerts](https://segment.com/docs/utils/formatguide/#alerts). This section also includes instructions on when to use each one.
 
 ### Redirect to a workspace
-Occasionally, you'll want to deep-link into the Segment app to link a reader to a specific page or screen. Previously we'd throw them an URL and say "replace {MY SLUG} with your actual workspace slug", but now you can use the slug of `goto-my-workspace` and the Segment app will redirect them.
+Occasionally, you'll want to deep-link into the Segment app to link a reader to a specific page or screen. Previously we'd throw them an URL and say "replace {MY SLUG} with your actual workspace slug", but now you can use the slug of `goto-my-workspace` and the Segment app will redirect them to the first workspace they have access to. (This does mean that it can go a bit wrong for users with access to multiple workspaces, however that's a small proportion of our users at this time.)
+
 https://app.segment.com/goto-my-workspace/destinations/catalog
 
 
 
 ## Set up on Mac using the Env script
 
-We've written a bash script to set up the environment for you on a Mac computer. If you're on another platform, please [email us](mailto:docs-feedback@segment.com) or [file a Github Issue](https://github.com/segmentio/segment-docs/issues/new) to request other instructions, and we'll see what we can do.
+Laura wrote a bash script to set up the environment for you on a Mac computer. If you're on another platform, please [email us](mailto:docs-feedback@segment.com) or [file a Github Issue](https://github.com/segmentio/segment-docs/issues/new) to request other instructions, and we'll see what we can do.
 
 > info ""
 > You only need to run `make env` once!
@@ -155,7 +175,7 @@ We've written a bash script to set up the environment for you on a Mac computer.
 4. Start by checking what directory you’re in, to make sure you’re in the `segment-docs` repo.
    Type `pwd` (which means “print working directory”) to check. You should see something like `~/repos/segment-docs`.
 5. Type `make env`.
-   The script first checks to see if you have Brew installed, and if you don’t, it installs it. It then runs more brew commands to download and install the software you need.
+   The script first checks to see if you have [Brew](https://brew.sh) installed, and if you don’t, it installs it. It then runs more brew commands to download and install the software you need, including a bunch of really useful Atom packages.
 
    > **Heads up**! You’re going to need to enter your laptop password as part of this installation, but only once!
 
@@ -166,13 +186,15 @@ We've written a bash script to set up the environment for you on a Mac computer.
     Go to **Preferences > Editor**, and scroll down to **Show Invisibles**. Make sure that’s checked!
     ![](guides-img/show-invisibles.png)
 
+
+<!-- LR: This stopped working when Apple switched to Zshell by default, and I haven't been able to get it working since.
 8.  Finally, configure bash completion by adding tab-completion to your `.bash` profile:
 
     1. Open Terminal and type `atom ~/.bash_profile` to open the file in Atom.
     2. Paste the following anywhere in the file:
     `[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"`
     3. Save and close the file in Atom.
-    4. Quit and relaunch both Terminal and Atom.
+    4. Quit and relaunch both Terminal and Atom.-->
 
 ## Refresh the Segment catalog
 
@@ -182,14 +204,15 @@ To update the files, you run `make catalog` from your Terminal.  Before you can 
 
 ### Set up to refresh the Segment catalog
 
-To use the `make catalog` command to update the list of sources and destinations that Segment supports, you'll need [a basic token for the Segment ConfigAPI](https://segment.com/docs/config-api/authentication/). You'll save this in a `.env` file on your computer, which will allow the script to talk to the Segment APIs.
+To use the `make catalog` command to update the list of sources and destinations that Segment supports, you'll need [a basic token for the Segment ConfigAPI](https://segment.com/docs/config-api/authentication/). You'll save this in a `.env` file on your computer, which allows the script to talk to the Segment APIs.
 
 1. If you don't already have one, sign up for a free Segment workspace.
 2. Copy the `.env.example` file at the root of this directory, and rename it to remove the word "example". It should *just* be called `.env` when you're done. **Do NOT check in your .env file.**
 2. Go to the workspace's **Settings > Access Management > Tokens** tab (or click [here](https://app.segment.com/goto-my-workspace/settings/access-management)).
 3. Click **Create Token**.
-4. Add a description (you and specify that you're using it for docs purposes).
-5. Select **Workspace Member**, check **Source Admin**, and select one or all sources. You can grant this token more privileges, but that is unnecessary for this use.
+4. Add a description (and specify that you're using it for docs purposes, so nobody revokes it accidentally).
+5. Select **Workspace Member**, check **Source Admin**, and select one or all sources. You _can_ grant this token more privileges, but that's unnecessary.
 5. Click **Create**.
-6. Copy the token payload, and paste it after the equals sign (`=`) after "PLATFORM_API_TOKEN".
-7. Save and close the file. Before running the make command you may need to type `env` and enter into Terminal, or otherwise restart your Terminal session.
+6. Copy the token, and paste it after the equals sign (`=`) after "PLATFORM_API_TOKEN".
+7. Save and close the file.
+   Before you run the make command you might need to type `env` and enter into Terminal, or otherwise restart your Terminal session.

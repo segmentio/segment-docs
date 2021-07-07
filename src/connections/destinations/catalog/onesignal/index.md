@@ -1,5 +1,6 @@
 ---
 title: OneSignal Destination
+hidden: true
 ---
 
 ## Getting Started

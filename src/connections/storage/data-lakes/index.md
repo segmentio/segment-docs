@@ -3,6 +3,8 @@ title: Segment Data Lakes Overview
 redirect_from: '/connections/destinations/catalog/data-lakes/'
 ---
 
+{% include content/plan-grid.md name="data-lakes" %}
+
 Segment Data Lakes sends Segment data to a cloud data store (for example AWS S3) in a format optimized to reduce processing for data analytics and data science workloads. Segment data is great for building machine learning models for personalization and recommendations, and for other large scale advanced analytics. Data Lakes can reduce the amount of processing required to get real value out of your data.
 
 > info ""
@@ -39,7 +41,7 @@ Data Lakes uses an EMR cluster to run jobs that load events from all sources int
 ### AWS IAM Role
 
 Data Lakes uses an IAM role to grant Segment secure access to your AWS account. The required inputs are:
-- **external_ids**: External IDs are the part of the IAM role which Segment uses to assume the role providing access to your AWS account. You will define the external ID in the IAM role as the Segment source ID which you want to connect to  Data Lakes. The Segment source ID can be retrieved from the [Segment app](https://app.segment.com/goto-my-workspace/overview)] when navigating to the Source > Settings > API Keys > Source ID.
+- **external_ids**: External IDs are the part of the IAM role which Segment uses to assume the role providing access to your AWS account. You will define the external ID in the IAM role as the Segment Workspace ID in which you want to connect to  Data Lakes. The Segment Workspace ID can be retrieved from the [Segment app](https://app.segment.com/goto-my-workspace/overview)] when navigating to the Settings > General Settings > ID.
 - **s3_bucket**: Name of the S3 bucket used by the Data Lake.
 
 

@@ -7,12 +7,9 @@
     <nav class="menu">
       <ul class="menu__list list list--unstyle">
         <li class="menu-item">
-          <a href="{{ site.baseurl }}/connections/sources/catalog/" class="menu-item__link menu-item__link--small menu-item__link--highlight menu-item__link--icon flex flex--middle">
-            <div class="menu-item__icon flex__column">
-              {% include icons/menu/icon-back.svg %}
-            </div>
-  
-            <div class="flex__column">Back to Connections</div>
+          <a href="{{ site.baseurl }}/connections/sources/catalog/" class="menu-item__link menu-item__link--small menu-item__link--back">
+            {% include icons/symbols/arrow-left.svg %}
+            <span>Back to Connections</span>
           </a>
         </li>
       </ul>
@@ -25,13 +22,13 @@
   
         {% for category in promoted_categories %}
           <li class="menu-item menu-item--gray menu-item--compact {% if currentIntegration.categories contains category and activeState != true %}{% assign activeState = true %}menu-item--active{% endif %}" data-accordion data-class-active="menu-item--active">
-            <button class="menu-item__link flex flex--middle flex--justify" data-ref="accordion[trigger]">
+            <button class="menu-item__link flex flex--middle flex--justify gutter gutter--small" data-ref="accordion[trigger]">
               <span class="flex__column">
                 {{ category }}
               </span>
   
               <div class="menu-item__chevron flex__column flex__column--shrink">
-                {% include icons/symbols/chevron-down.svg %}
+                {% include icons/symbols/caret-down.svg %}
               </div>
             </button>
   
@@ -56,7 +53,7 @@
             </span>
   
             <div class="menu-item__chevron flex__column flex__column--shrink">
-              {% include icons/symbols/chevron-down.svg %}
+              {% include icons/symbols/caret-down.svg %}
             </div>
           </button>
   

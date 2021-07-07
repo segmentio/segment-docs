@@ -37,3 +37,11 @@ ga
 Doubleclick
 (?:C|c)annonical
 (?:U|u)rls?\b
+Optimizely
+Omnichannel
+namespace
+upsert
+viewability
+measurability
+Lightbox
+gmail

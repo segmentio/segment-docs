@@ -20,7 +20,7 @@ This document was last updated on April 27, 2018. If you notice any gaps, outdat
 
 #### Additional device-mode set up for iOS 14 support
 
-Segment updated the AppsFlyer iOS SDK to use version `6.0 beta` to prepare for tracking changes in iOS 14. The SDK beta version is compatible with the beta version of iOS 14 released by Apple, and supports both AppsFlyer's aggregate attribution, and Apple's `AppTrackingTransperancy` framework, and more. See [the AppsFlyer blog post](https://www.appsflyer.com/blog/privacy-centric-attribution-ios14/) about AppsFlyer's new privacy-centric attribution model.
+Segment updated the AppsFlyer iOS SDK to use version `6.0 beta` to prepare for tracking changes in iOS 14. The SDK beta version is compatible with the beta version of iOS 14 released by Apple, and supports both AppsFlyer's aggregate attribution, and Apple's `AppTrackingTransparency` framework, and more. See [the AppsFlyer blog post](https://www.appsflyer.com/blog/privacy-centric-attribution-ios14/) about AppsFlyer's new privacy-centric attribution model.
 
 To use the latest AppsFlyer SDK to collect IDFAs, do the following:
 
@@ -53,6 +53,10 @@ With the release of Segment’s latest Analytics-iOS SDK, which includes support
 If you have the **Can Omit AppsFlyerID** setting enabled, but aren't sending an IDFA (either because you aren't passing one, or the user denied permission to collect it), AppsFlyer rejects the event.
 
 To prevent this, you can enable the new **Fallback to send IDFV when advertisingId key not present** setting in your AppsFlyer destination settings. With this enabled, when you send data using cloud-mode (through the Segment servers), Segment sends the user's IDFV (the `device.id`) when `device.advertisingId` is missing or blank AND “Can Omit AppsFlyerID” is enabled.
+
+#### Additional React Native device-mode set up
+
+{% include content/react-dest.md %}
 
 ### Server
 

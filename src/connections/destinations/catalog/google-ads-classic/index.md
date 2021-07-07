@@ -2,6 +2,7 @@
 title: Google Ads (Classic) Destination
 redirect_from: '/connections/destinations/catalog/adwords/'
 strat: google
+hide-personas-partial: true
 ---
 
 Our Google Ads (Classic) destination code is open-source on GitHub if you want to check out
@@ -102,7 +103,7 @@ Authorization between an Google Ads (Classic) account and a third-party-applicat
 
 Once this step is complete, you should see a screen that looks like this showing the new Link Id:
 
-![link id process](images/link-id-process.png)
+![](images/link-id-process.png)
 
 #### Add your Link ID as an Integration Setting
 

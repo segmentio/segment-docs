@@ -11,4 +11,4 @@ Protocols was built to automate and scale the [data quality best practices](/doc
 
 {% include components/signpost.html sections=site.data.protocols.sections %}
 
-{% include components/button-fill.html size="large" text="Get Started: Learn more about Tracking Plans ->" href="https://segment.com/docs/protocols/tracking-plan/create/" %}
+{% include components/button-fill.html text="Get Started: Learn more about Tracking Plans ->" href="https://segment.com/docs/protocols/tracking-plan/create/" %}

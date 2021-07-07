@@ -7,18 +7,12 @@
     }
 
     &-item {
+      border-radius: 4px;
+
       $item: &;
 
-      border-bottom: 2px solid transparent;
-
-      &:first-of-type {
-        #{$nav}-link {
-          padding-left: 0;
-        }
-      }
-
       &--active {
-        border-bottom: 2px solid color(primary);
+        background-color: color(primary-lighter);
 
         #{$nav}-link {
           color: color(primary);
@@ -27,11 +21,12 @@
     }
 
     &-link {
-      padding: 13px 8px;
+      padding: 8px 16px;
       display: block;
-      color: color(gray);
-      font-size: 14px;
-      font-weight: 500;
+      color: color(gray-700);
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 600;
 
       &:hover {
         color: color(primary);
@@ -46,5 +41,9 @@
     &--active {
       display: block;
     }
+  }
+
+  &__body {
+    margin-top: 15px;
   }
 }

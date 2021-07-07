@@ -25,18 +25,22 @@ defaults:
       path: "connections/destinations/catalog"
     values:
       integration_type: destination
-      layout: integration
+      layout: destination
   - scope:
       path: "connections/sources/catalog"
     values:
       integration_type: source
-      layout: integration
+      layout: source
   - scope:
       path: "connections/storage/catalog"
     values:
       integration_type: warehouse
       landing: true
       layout: integration
+
+collections:
+  release_notes:
+    output: false
 
 plugins_dir: ./_plugins
 plugins:
@@ -45,3 +49,10 @@ plugins:
   - premonition
   - jekyll-commonmark
   - jekyll-last-modified-at
+  - jekyll-dotenv
+algolia:
+  application_id: UINQ2M4D9S
+  index_name:     segment-docs
+  files_to_exclude:
+    - _release_notes/*
+  nodes_to_index: 'p, table#limit'

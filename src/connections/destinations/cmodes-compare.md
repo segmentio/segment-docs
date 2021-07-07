@@ -7,33 +7,50 @@ title: Destinations Connection Modes comparison
 
 > success ""
 > Comparison shopping? Check out the [destination connection modes by category](/docs/connections/destinations/category-compare/).
+{% assign overridesList = site.data.catalog.overrides-list.items %}
 
 <table>
 <tr>
+  <th>  </th>
+  <th colspan=3 style="border-left: 1px solid gray;">Accepts data from these library types in cloud-mode </th>
+  <th colspan=2 style="border-left: 1px solid gray;">Can use these in device-mode</th>
+</tr>
+<tr>
   <th> Destination </th>
-  <th> Cloud - Web </th>
-  <th> Cloud - Mobile </th>
-  <th> Device - Web </th>
-  <th> Device - Mobile </th>
+  <th style="border-left: 1px solid gray;"> Web </th>
+  <th> Mobile </th>
   <th> Server</th>
+  <th style="border-left: 1px solid gray;"> Web </th>
+  <th> Mobile </th>
 </tr>
 {% for destination in site.data.catalog.destinations.items %}
 {% unless destination.connection_modes.cloud.web == false and destination.connection_modes.cloud.mobile == false and destination.connection_modes.device.web == false and destination.connection_modes.device.mobile == false and destination.connection_modes.cloud.server == false %}
 <tr>
-  <td>{% if destination.status == "PUBLIC_BETA" %}ℹ️ {% endif %}[{{ destination.display_name }}](/docs/{{ destination.url }})</td>
-  <td>{% if destination.connection_modes.cloud.web %}✅{% else %}⬜️{% endif %} </td>
+  <td>[{{ destination.display_name }}](/docs/{{ destination.url }}){% if destination.status == "PUBLIC_BETA" %}&nbsp;ℹ️{% endif %}</td>
+  {% if overridesList contains destination.slug %}{% assign thisDestname = destination.slug %}{% assign thisDest = site.data.catalog.overrides.items | where: "slug", thisDestname | first%}
+  <td style="border-left: 1px solid gray;">
+  {% if thisDest.connection_modes.cloud.web %}✅{% else %}⬜️{% endif %} </td>
+  <td>{% if thisDest.connection_modes.cloud.mobile %}✅{% else %}⬜️{% endif %} </td>
+  <td>{% if thisDest.connection_modes.cloud.server %}✅{% else %}⬜️{% endif %} </td>
+  <td style="border-left: 1px solid gray;">{% if thisDest.connection_modes.device.web %}✅{% else %}⬜️{% endif %} </td>
+  <td>{% if thisDest.connection_modes.device.mobile %}✅{% else %}⬜️{% endif %} </td>
+  {% else %}
+  <td style="border-left: 1px solid gray;">
+  {% if destination.connection_modes.cloud.web %}✅{% else %}⬜️{% endif %} </td>
   <td>{% if destination.connection_modes.cloud.mobile %}✅{% else %}⬜️{% endif %} </td>
-  <td>{% if destination.connection_modes.device.web %}✅{% else %}⬜️{% endif %} </td>
-  <td>{% if destination.connection_modes.device.mobile %}✅{% else %}⬜️{% endif %} </td>
   <td>{% if destination.connection_modes.cloud.server %}✅{% else %}⬜️{% endif %} </td>
+  <td style="border-left: 1px solid gray;">{% if destination.connection_modes.device.web %}✅{% else %}⬜️{% endif %} </td>
+  <td>{% if destination.connection_modes.device.mobile %}✅{% else %}⬜️{% endif %} </td>
+{%endif%}
 </tr>
+
 {% endunless %}
 {% endfor %}
 </table>
 
-The following destinations have no connection mode information available:
+##### The following destinations have no connection mode information available:
 {% for destination in site.data.catalog.destinations.items %}
 {% if destination.connection_modes.cloud.web == false and destination.connection_modes.cloud.mobile == false and destination.connection_modes.device.web == false and destination.connection_modes.device.mobile == false and destination.connection_modes.cloud.server == false %}
-- [{{ destination.display_name }}](/docs/{{ destination.url }}){% if destination.status == "PUBLIC_BETA" %} (beta) {% endif %}
+- [{{ destination.display_name }}](/docs/{{ destination.url }}){% if destination.status == "PUBLIC_BETA" %}&nbsp;ℹ️{% endif %}
 {% endif %}
 {% endfor %}

@@ -7,9 +7,6 @@
       {% assign category_icon = category.slug | slugify %}
       <li class="destination-menu__item">
         <a class="destination-menu__link flex" href="#{{ category.display_name | slugify }}" title="{{ category.display_name }}">
-          <span class="destination-menu__icon">
-            {% include icons/destinations-catalog/{{ category_icon }}.svg %}
-          </span>
           {{ category.display_name }}
         </a>
       </li>

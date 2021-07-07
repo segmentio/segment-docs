@@ -1,17 +1,13 @@
 ---
 title: Intellimize Destination
 beta: true
+hidden: true
 ---
 
 This destination is maintained by the Intellimize team. contact their Support team at segment@intellimize.com.
 
-## Getting Started
-
-{% include content/connection-modes.md %}
-
-You can enable Intellimize in your Segment Destinations dashboard. You will need to authorize the destination with your Intellimize API key. To retrieve your API key, contact your account representative at Intellimize.
-
-Intellimize supports the `identify`, `page`, `screen`, `track`, `group`, and `alias` methods. Make sure that `identify` calls include a userID. The `identify` call is the most important method to drive improved performance for now. Segment will automatically send these calls to Intellimize's endpoint at https://api.intellimize.co/segment once enabled.
+> warning "The Intellimize destination has been deprecated"
+> The Intellimize Destination was deprecated on 2021-01-25 and is no longer supported or maintained.
 
 ## Identify
 

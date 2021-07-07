@@ -2,6 +2,7 @@
 rewrite: true
 title: HubSpot Destination
 hide-personas-partial: true
+cmode-override: true 
 ---
 
 [HubSpot](https://www.hubspot.com/) is an inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers. The `analytics.js` HubSpot Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-hubspot).
@@ -227,7 +228,7 @@ Personas sends **User-Level data** to HubSpot to update properties on a user (or
 
 - **Audiences**: Personas uses an Identify call to add the name of the audience to the user’s profile as a trait, and includes a boolean value that indicates if the user is a member of the audience. For example, when a user first completes an order in the last 30 days, Personas sends an Identify call with the property `order_completed_last_30days: true`.  When the user no longer satisfies these criteria (for example when it’s been longer than 30 days since the last purchase), Personas uses a Identify call to set that value to `false`.  This appears as a `Property` for the contact in HubSpot. If using a **Track** call, events will be sent for `Audience Entered` or `Audience Exited`.
     - When you first create an audience, Personas sends an Identify call for every user in the audience. Later syncs only update users which were added or removed from the audience since the last sync.
- 
+
 
 ### How it works: Account-Level Traits and Audiences
 
@@ -259,7 +260,7 @@ Personas sends **Account-Level data** to HubSpot using **Identify** calls to add
 
 
 4. Go to your HubSpot Settings.
-5. Create a new `contact property` in HubSpot for each audience you want HubSpot to receive from Personas.
+5. Create a new `property` in HubSpot for each audience you want HubSpot to receive from Personas.
    This is required because HubSpot’s schema is explicitly defined.
    You must do this *before* you send any Personas data from Segment to HubSpot.
 
@@ -267,8 +268,8 @@ Personas sends **Account-Level data** to HubSpot using **Identify** calls to add
 
 
 6. Set the object type.
-   - For Personas Audiences that are only individual users, set the **Object Type** as `Contact`.
-   - For Audiences that use *Groups*, set the **Object type** to `Contact information`.
+   - For user-level Audiences, set the **Object Type** to `Contact` and the **Group** to `Contact information`.
+   - For account-level Audiences, set the **Object type** to `Company` and the **Group** to `Company information`.
 
 7. Enter the label for the custom property, and make sure it matches the Audience Key you wrote down from the Personas audience builder (see the tip below). Click **Next**.
 
@@ -306,7 +307,7 @@ You can also see this in the contact property history for each user record.
 
 
 
-## HubSpot Personas Quick Info
+## HubSpot Personas Details
 
 - **Personas Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
 - **Traits and Audiences created by**: Identify calls add and update traits and audiences as traits on the user, Track calls send events for `Audience Entered` and `Audience Exited`.

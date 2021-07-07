@@ -1,6 +1,7 @@
 ---
 title: Adobe Analytics Destination
 strat: adobe
+redirect_from: '/connections/destinations/catalog/omniture/'
 ---
 
 Once you enable Adobe Analytics (formerly known as Omniture or Sitecatalyst) in Segment, you can start sending data from any of the Segment [libraries](/docs/connections/sources/catalog/) to an Adobe report suite. When you send events from Segment's mobile SDKs or Cloud-mode libraries, Segment translates that data using a mapping that you configure, and then passes it to the Adobe Analytics [Data Insertion API](https://docs.adobe.com/content/help/en/analytics/import/c-data-insertion-api.html).
@@ -104,7 +105,7 @@ Segment's server-side integration is not open-source. Let's explore what happens
 
    For `.page()` events, this XML tag is set as the `category` of the page call, which is sent by providing both `category` and `name` (ie. `.page('Some Category', 'Some Name');`)
 
-3. For `.track()` events, Segment sets `<pageName>` as `properties.pageName`, `properties.page`, `context.page.title`, `context.screen.name` or `'None'` (in order of precedence).
+3. For `.track()` events, Segment sets `<pageName>` as `properties.pageName`, `properties.page`, `context.page.title`, or `context.screen.name` (in order of precedence). If none of these fields are available and **Page Name Fallback to Screen** is enabled, Segment sets `properties.screen` to `<pageName>`.  Otherwise, Segment falls back to `'None'`.
    For `.page()` calls, Segment sets the tag as the `name`. This can be sent by providing the first parameter: `.page('Some Name');`
 
 4. Since Adobe Analytics does not [support sending timestamped hits a `<visitorID>`](https://marketing.adobe.com/resources/help/en_US/sc/implement/timestamps-overview.html), if you have set your Report to **Timestamp Disabled**, Segment sets `<visitorID>` as these values in order of precedence:
