@@ -1,0 +1,23 @@
+settings:
+  connection_settings:
+  - name: API Key
+    configurable: true
+    location: Global Setting
+    notes: ""
+  - name: Track Products Once
+    configurable: false
+    location: null
+    notes: "Not applicable to Cloud mode"
+  - name: Version Name
+    configurable: true
+    location: "Action field **App Version**. Defaults to `context.app.version`."
+    notes: ""
+  - name: Connection Mode
+    configurable: true
+    location: null
+    notes: Actions support Cloud mode connections
+  page_and_screen:
+  - name: Track all pages to Amplitude
+    configurable: true
+    location: "Subscription **Page Calls**"
+    notes: When enabled, Amplitude (Actions) tracks all Page calls by default
