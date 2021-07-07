@@ -34,7 +34,7 @@ At the top level, is the Destination Action itself. It has two children: **Globa
 
 **Global Settings** are where you include information like API keys, and other connection-related information. 
 
-**Subscriptions** handle the individual calls to the destination. In them, you define what type of call you want to make to the destination, and what triggers that call. Individual Destination Actions come enabled with some predefined subscriptions to handel common events like Screen calls, Identify calls, and Track calls. Subscriptions have two components that make this possible: **Triggers** and an **Action**. 
+**Subscriptions** handle the individual calls to the destination. In them, you define what type of call you want to make to the destination, and what triggers that call. Individual Destination Actions come enabled with some predefined subscriptions to handle common events like Screen calls, Identify calls, and Track calls. Subscriptions have two components that make this possible: **Triggers** and an **Action**. 
 
 **Triggers** enable you to define *when* the corresponding Action fires. As part of a Trigger, you can use condition-based filters to narrow the scope of the trigger.
 
@@ -104,6 +104,13 @@ The following type filters and operators are available to help you build conditi
     The `does` `not exist` operator matches both a `null` value or a missing property.
 
 You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY to “subscribe” to multiple conditions. Use ALL when you need to filter for very specific conditions. You can only create one group condition per destination action. You cannot created nested conditions.
+
+> info "Destination Filters"
+> Destination filters are compatible with Destination Actions. Consider a Destination Filter when:
+> - You need to remove properties from the data sent to the destination
+> - You need to filter data from multiple types of call (for example, Track, Page, and Identify calls)
+> 
+> If your use case does not match these criteria, you might benefit from using Subscription-level filters as part of a subscription's trigger.
 
 
 
