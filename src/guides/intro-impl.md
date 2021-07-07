@@ -1,5 +1,5 @@
 ---
-title: Segment for Developers
+title: Segment for developers
 ---
 
 This guide explains all you need to know to get started with your Segment implementation, and directs you to more resources depending on your specific needs.
