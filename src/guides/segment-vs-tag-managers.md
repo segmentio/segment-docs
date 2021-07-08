@@ -1,5 +1,5 @@
 ---
-title: What is the difference between Segment and tag managers?
+title: Segment vs. tag managers
 ---
 
 Tag managers, also known as Tag Management Systems (TMS), were a popular solution before the mainstream adoption of mobile apps. They primarily helped Digital Analytics and Online Marketers manage web tags or "beacons" on a website.
