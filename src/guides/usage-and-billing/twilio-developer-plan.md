@@ -22,7 +22,7 @@ Need more destinations or more MTUs? Upgrade to the [Team Plan](https://segment.
 
 ## How do I qualify for the Twilio Developer Plan?
 
-You must have an active Twilio account to sign up for the Twilio Developer Plan. Active Twilio users can sign up for the Twilio Developer Plan here: https://www.segment.com/twilio-developer-plan.
+You must have an active Twilio account to sign up for the Twilio Developer Plan. Active Twilio users can sign up for the Twilio Developer Plan [here](https://www.segment.com/twilio-developer-plan).
 
 ## What is a data source?
 
