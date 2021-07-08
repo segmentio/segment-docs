@@ -1,5 +1,5 @@
 ---
-title: "How do I test my connections?"
+title: "Testing connections"
 ---
 
 
