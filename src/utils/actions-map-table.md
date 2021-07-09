@@ -32,9 +32,10 @@ title: Actions Mapping
   }
 
   .button-container {
-    display:flex;
+    display: flex;
     justify-content: space-around;
   }
+
   .button-link {
     padding: 4px 10px;
   }
@@ -42,17 +43,30 @@ title: Actions Mapping
   .active {
     background-color: #eee;
   }
+
+  .cmode {
+    background-color: #edeff5;
+    font-size: 11px;
+    padding: 0px 6px;
+    border-radius: 4px;
+    height: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: rgb(71, 77, 102);
+    opacity: 0.65;
+  }
+
 </style>
 
 ## Amplitude settings mapping
 
 <input class="table-search" type="text" id="filterInput" onkeyup="searchFilter()" placeholder="Search for setting..">
 <div class="button-container" id="btnContainer">
-  <a href="#" class="button button-link active" onclick="clickFilter('all')">All</a>
-  <a href="#" class="button button-link" onclick="clickFilter('true')">Configurable</a>
-  <a href="#" class="button button-link" onclick="clickFilter('false')">Not Configurable</a>
-  <a href="#" class="button button-link" onclick="clickFilter('cloud')">Cloud-mode</a>
-  <a href="#" class="button button-link" onclick="clickFilter('device')">Device-mode</a>
+  <a href="#" id="all" class="button button-link active">All</a>
+  <a href="#" id="true" class="button button-link" >Configurable</a>
+  <a href="#" id="false" class="button button-link" >Not Configurable</a>
+  <a href="#" id="cloud" class="button button-link">Cloud-mode</a>
+  <a href="#" id="device" class="button button-link" >Device-mode</a>
 </div>
 
 <table id="settingsTable">
@@ -73,9 +87,8 @@ title: Actions Mapping
     <tr
       class="settingRow {%unless setting.configurable%}no-map{%endunless%} {{setting.configurable}} {% for mode in setting.connection_mode %}{{mode}} {%endfor%}"
       id="settingRow">
-      <td>{{setting.name}} {% for mode in setting.connection_mode %} <img src="/docs/images/{{mode}}-mode-icon.svg"
-          title="This setting is applicable to {{mode}}-mode connections"
-          style="border: none; display: inline; margin: 0px; float: right" /> {% endfor %}</td>
+      <td>{{setting.name}} <br /> {% for mode in setting.connection_mode %}<span
+          class="cmode">{{mode | capitalize}}-mode</span> {% endfor %}</td>
       <!-- <td>{{setting.configurable}}</td> -->
       <td>{% if setting.location %}{{setting.location}} <br /> <br /> {% endif %}{{setting.notes}}</td>
     </tr>
@@ -106,6 +119,18 @@ title: Actions Mapping
   }
   clickFilter("all")
 
+  var links = document.getElementsByClassName("button-link");
+
+
+  document.querySelectorAll('.button-link').forEach(item => {
+    let v = item.getAttribute('id');
+    item.addEventListener('click', (event => {
+      event.preventDefault();
+      clickFilter(v);
+    }))
+  })
+
+  
   function clickFilter(c) {
     var x, i;
     x = document.getElementsByClassName("settingRow");
@@ -141,13 +166,14 @@ title: Actions Mapping
     element.className = arr1.join(" ");
   }
 
-var btnContainer = document.getElementById("btnContainer");
-var btns = document.getElementsByClassName("button-link");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
+  var btnContainer = document.getElementById("btnContainer");
+  var btns = document.getElementsByClassName("button-link");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function () {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+    });
+  }
+
 </script>
