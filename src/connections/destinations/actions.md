@@ -30,9 +30,9 @@ Each Actions-framework Destination you see in the Segment catalog represents a f
 
 A Destination Action contains a hierarchy of components, that work together to ensure the right data is sent to the destination. 
 
-At the top level, is the Destination Action itself. It has two children: **Global Settings** and **Subscriptions**. 
+At the top level, is the Destination itself. It has two children: **Global Settings** and **Subscriptions**. 
 
-**Global Settings** are where you include information like API keys, and other connection-related information. 
+**Global Settings** are where you include authentication information like API keys, and other connection-related information. 
 
 **Subscriptions** handle the individual calls to the destination. In them, you define what type of call you want to make to the destination, and what triggers that call. Individual Destination Actions come enabled with some predefined subscriptions to handle common events like Screen calls, Identify calls, and Track calls. Subscriptions have two components that make this possible: **Triggers** and an **Action**. 
 
@@ -110,7 +110,7 @@ You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY
 > - You need to remove properties from the data sent to the destination
 > - You need to filter data from multiple types of call (for example, Track, Page, and Identify calls)
 > 
-> If your use case does not match these criteria, you might benefit from using Subscription-level filters as part of a subscription's trigger.
+> If your use case does not match these criteria, you might benefit from using Subscription-level triggers to match only certain events.
 
 
 
