@@ -219,7 +219,7 @@ sections:
   - path: /connections/data-export-options
     title: Data export options
   - path: /connections/destination-data-control
-    title: Using schema controls
+    title: Using Schema Controls
   - path: /connections/event-delivery
     title: Event Delivery
   - path: /connections/find-writekey
