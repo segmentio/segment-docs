@@ -24,21 +24,21 @@ sections:
   - path: /guides
     title: An introduction to Segment
   - path: /guides/intro-impl
-    title: Segment developer overview
+    title: Segment for developers
   - path: /guides/intro-user
-    title: Segment data user overview
+    title: Segment for data users
   - path: /guides/intro-admin
-    title: Segment workspace admin overview
+    title: Segment for workspace admins
   - path: /guides/filtering-data
     title: Filtering your Segment data
   - path: /guides/duplicate-data
-    title: How does Segment handle duplicate data?
+    title: Handling duplicate data
   - path: /guides/ignore-bots
-    title: How can I ignore internet bots?
+    title: Ignoring internet bots
   - path: /guides/segment-vs-tag-managers
-    title: What is the difference between Segment and tag managers?
+    title: Segment vs. tag managers
   - path: /guides/what-is-replay
-    title: What is Replay?
+    title: Replay
 
   - section_title: How To Guides
     slug: guides/how-to-guides
