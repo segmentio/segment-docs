@@ -17,13 +17,13 @@ Both Redshift and BigQuery are attractive cloud-hosted, affordable, and performa
 
 ## Architecture
 
-When you provision a Redshift cluster, you're renting a server from Amazon Web Services. Your cluster comprises of [nodes](http://docs.aws.amazon.com/redshift/latest/dg/c_high_level_system_architecture.html), each with dedicated memory, CPU, and disk storage. These nodes handle data storage, query execution, and - if your cluster contains multiple nodes - a leader node will handle coordination across the cluster.
+When you provision a Redshift cluster, you're renting a server from Amazon Web Services. Your cluster consists of [nodes](http://docs.aws.amazon.com/redshift/latest/dg/c_high_level_system_architecture.html), each with dedicated memory, CPU, and disk storage. These nodes handle data storage, query execution, and - if your cluster contains multiple nodes - a leader node will handle coordination across the cluster.
 
 Redshift performance and storage capacity is a function of cluster size and cluster type. As your storage or performance requirements change, you can scale up or down your cluster as needed.
 
 With BigQuery, you're not constrained by the storage capacity or compute resources of a given cluster. Instead, you can load large amounts of data into BigQuery without running out of memory, and execute complex queries without maxing out CPU.
 
-This is possible because BigQuery takes advantage of distributed storage and networking to separate data storage from compute power. Data distributes across many servers in the Google cloud using their [Colossus distributed file system](https://cloud.google.com/blog/big-data/2016/01/bigquery-under-the-hood). When you execute a query, the [Dremel query engine](https://cloud.google.com/blog/big-data/2016/01/bigquery-under-the-hood) splits the query into smaller sub-tasks, distributes the sub-tasks to computers across Google data centers, and then re-assembles them into your results.
+This is possible because BigQuery takes advantage of distributed storage and networking to separate data storage from compute power. Google's[Colossus distributed file system](https://cloud.google.com/blog/big-data/2016/01/bigquery-under-the-hood) distributes data across many servers in the Google cloud. When you execute a query, the [Dremel query engine](https://cloud.google.com/blog/big-data/2016/01/bigquery-under-the-hood) splits the query into smaller sub-tasks, distributes the sub-tasks to computers across Google data centers, and then re-assembles them into your results.
 
 ## Pricing
 
