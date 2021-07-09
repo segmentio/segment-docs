@@ -1,6 +1,7 @@
 ---
 title: Analytics for React Native
 strat: react-native
+repo: analytics-react-native
 ---
 
 

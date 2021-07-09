@@ -1,0 +1,39 @@
+# This file is manually generated. When you add or remove an item, add or remove
+# it from the `overrides-list.yml` too.
+items:
+- slug: hubspot
+  display_name: HubSpot
+  components:
+  - type: WEB
+  - type: CLOUD
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: true
+    summary: >-
+      is available in device-mode for Analytics.js only, and is availble in cloud-mode for Mobile and Server sources.
+    cmode_type: mixed
+    case: '6'
+- slug: iterable
+  display_name: Iterable
+  components:
+  - type: WEB
+  - type: CLOUD
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer device-mode connections.
+    cmode_type: mixed
+    case: '5'

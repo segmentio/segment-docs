@@ -49,8 +49,10 @@ plugins:
   - premonition
   - jekyll-commonmark
   - jekyll-last-modified-at
+  - jekyll-dotenv
 algolia:
   application_id: UINQ2M4D9S
   index_name:     segment-docs
   files_to_exclude:
     - _release_notes/*
+  nodes_to_index: 'p, table#limit'

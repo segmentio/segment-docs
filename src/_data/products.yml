@@ -98,3 +98,27 @@ items:
     team: false
     business: true
     add-on: false
+- product_display_name: Destination Actions
+  slug: dest-actions
+  plan-note: "Destination Actions are available for all Segment plans."
+  plans:
+    free: true
+    team: true
+    business: true
+    add-on: false
+- product_display_name: Journeys
+  slug: journeys
+  plan-note: "Journeys is available to Personas Advanced customers"
+  plans:
+    free: false
+    team: false
+    business: true
+    add-on: true
+- product_display_name: Data Residency
+  slug: data-residency
+  plan-note: "Data residency is available to customers on the Business Tier plan."
+  plans:
+    free: false
+    team: false
+    business: true
+    add-on: false

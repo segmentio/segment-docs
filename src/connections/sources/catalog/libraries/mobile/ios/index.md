@@ -1,18 +1,21 @@
 ---
 title: Analytics for iOS
 strat: ios
+repo: analytics-ios
 ---
 
 
-Analytics for iOS makes it simple to send your data to any analytics or marketing tool without having to learn, test or implement a new API every time.
-
-All of Segment's libraries are open-source, so you can [view Analytics for iOS on GitHub](https://github.com/segmentio/analytics-ios), or check out the Segment [browser and server-side libraries](/docs/connections/sources/catalog/) too.
-
-Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-ios/tags.atom).
-
+With Analytics for iOS, you can send your data to analytics or marketing tool, without needing to learn, test, or implement a new API with each update or addition.
+<br />
+<br />
+<br />
 
 > note ""
 > **Note:** Segment does not currently support tracking of watchkit extensions for the Apple Watch. [Email us](https://segment.com/requests/integrations/) if you're interested in a Watchkit SDK. For now we recommend tracking watch interactions using the iPhone app code.
+
+
+> info "Analytics-Swift Pilot"
+> A pilot release of the analytics-swift library is available at the [Analytics-Swift](https://github.com/segmentio/analytics-swift) repository. This library is governed by Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/), and should not be used in production scenarios.
 
 
 ## Analytics-iOS and Unique Identifiers
@@ -788,6 +791,18 @@ configuration.adSupportBlock = ^{
 {% endcodeexampletab %}
 {% endcodeexample %}
 
+> warning ""
+> In some cases, builds may fail with the following error if you are using XCode version 12 or higher:
+> `Incompatible block pointer types assigning to 'SEGAdSupportBlock _Nullable' (aka 'NSString * _Nonnull (^)(void)') from 'NSUUID * _Nonnull (^)(void)'`
+> 
+> If you see this error, change the following on **line 39** of the `SEGAnalyticsConfiguration.h` class:
+> 
+> From this:
+> `typedef NSString *_Nonnull (^SEGAdSupportBlock)(void);` 
+> 
+> To this:
+> `typedef NSUUID *_Nonnull (^SEGAdSupportBlock)(void);`
+>
 
 The same value for IDFA will used across all (device and cloud-mode) integrations.
 

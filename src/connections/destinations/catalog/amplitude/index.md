@@ -14,7 +14,8 @@ Segment's Amplitude destination code is open source and available on GitHub. Fee
 - [Android](https://github.com/segment-integrations/analytics-android-integration-amplitude)
 
 > success ""
-> **Good to know**: This page is about the Amplitude Segment destination, which receives data _from_ Segment. There's also a page about the [Amplitude Engage Segment source](/docs/connections/sources/catalog/cloud-apps/amplitude-cohorts/), which sends data _to_ Segment!
+> **New Amplitude destination available**: Segment's [Destination Actions](/docs/connections/destinations/actions/) allow you to explicitly set up your Amplitude mapping, and configure which events the mappings apply to. See [Amplitude Actions destination](/docs/connections/destinations/catalog/actions-amplitude/) for more information.
+
 
 
 In addition to the docs below, Amplitude created a [integration guide](https://developers.amplitude.com/docs/segment-amplitude-integration).
@@ -26,6 +27,9 @@ In addition to the docs below, Amplitude created a [integration guide](https://d
 
 {% include components/reference-button.html href="https://segment.com/recipes/amplitude-historical-count-analysis/" icon="media/academy.svg" title="Identify high-value users with Historical Count analysis" description="Examine the exact moment in the customer journey that converts new users into high-value customers." %}
 
+
+> success ""
+> **Good to know**: This page is about the Amplitude Segment destination, which receives data _from_ Segment. There's also a page about the [Amplitude Engage Segment source](/docs/connections/sources/catalog/cloud-apps/amplitude-cohorts/), which sends data _to_ Segment!
 
 
 

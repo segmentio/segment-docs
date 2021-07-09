@@ -2,7 +2,6 @@
 title: Segment Documentation
 layout: home
 landing: true
-hide-sidebar: true
 ---
 
 Learn how to use Segment to collect, responsibly manage, and integrate your customer data with hundreds of tools.

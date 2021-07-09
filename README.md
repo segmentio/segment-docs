@@ -64,7 +64,7 @@ See the [Contributor Guide](contributors.md) for more info.
 
 If you're planning substantial changes to the docs, follow this process for great success! 🏆
 
-1. 📞 Contact the docs team* during the planning phase. This way, we can help with logistics and information architecture, and alert you to any gotchas in your content area.
+1. 📞 Contact the docs team ( @segmentio/segment-doc-team ) during the planning phase. This way, we can help with logistics and information architecture, and alert you to any gotchas in your content area.
 2. 📝 Unless previously booked, we don't need to be involved in the writing - go for it! (We're happy to consult if you get stuck or need someone to bounce ideas off.)
 3. 👀 When you've got a draft at least 70% ready for review, tag a member of the docs team, who'll do an initial review. (This can be either in Paper/Gdocs, or in a Github [Draft PR](#draft-prs) with markdown changes if you're comfortable with that.) They'll do a copy edit pass, and ask clarifying questions.
 4. ❓The doc author/owner should answer the questions asked in the review phase. Either the doc author, or the docs team member can resolve comments as they are clarified in the doc text.👍
@@ -76,8 +76,6 @@ If you're planning substantial changes to the docs, follow this process for grea
 
 Once the PR is merged, the docs site rebuilds and the changes are live!
 
-(* The docs team is just Laura right now.)
-
 
 ### The Docs Process for direct contributors
 
@@ -88,17 +86,16 @@ Once the PR is merged, the docs site rebuilds and the changes are live!
 3. Commit your changes.
 3. Push the branch to `segment-docs` and make a PR to master.
     - Include any context you can in the PR: links to ZD tickets, Jira tickets, Paper docs or wiki pages about the project. (If you include a Jira ticket number, Jira can often link directly to the PR.)
-3. [Check if you need a review](#most-frequently-asked-question-do-i-need-a-review) and tag @sanscontext (or another member of the docs team). (Github also tags the CODEOWNERS for the path you're editing.)
+3. [Check if you need a review](#most-frequently-asked-question-do-i-need-a-review) and tag a member of the docs team. (Github also tags the CODEOWNERS for the path you're editing.)
 5. If the reviewers ask for clarifications or edits:
     - make the changes
     - push the new commits to the branch
 5. Once you get an approving review and the checks pass, merge your PR.
-6. Once you've merged the branch, _delete it_!
-7. Once merged, you can track build and deploy process in [buildkite/segment-docs](https://buildkite.com/segment/segment-docs).
+7. Once merged, Netlify builds the changes to `master` and redeploys the docs site.
 
 ### Draft PRs
 
-If you're doing a substantial change and you're going to want to spend a few weeks on it, use [Github's Draft PRs feature](https://help.github.com/en/articles/about-pull-requests#draft-pull-requests), or add `WIP` to the title of your PR. This lets us know to ignore the PR until you're ready (otherwise Laura will ping you weekly about it!).
+If you're doing a substantial change and you're going to want to spend a few weeks on it, use [Github's Draft PRs feature](https://help.github.com/en/articles/about-pull-requests#draft-pull-requests), or add `DRAFT` or `WIP` to the title of your PR. This lets us know to ignore the PR until you're ready (otherwise we might ping you weekly about it!).
 
 
 ## How the docs build works
@@ -111,10 +108,10 @@ When you run `make dev` (or `make docs`) on your laptop, Jekyll runs the same pr
 
 Some of these files include Liquid script, which allows them to load reusable content ("includes"), render fancy HTML styling, and run simple code processes to build programmatic content. As long as the Jekyll process is running on your laptop, you can edit the content of a page in markdown and save it, and Jekyll will detect the change and rebuild that page so you can view it locally. However, this doesn't work if you're editing the page layouts or stylesheets, which are assumed to be static at build time.
 
-When you merge a PR to master, our build system runs the Jekyll program, and automatically publishes the rebuilt HTML files to our web server. (Which is why we *require* that the Buildkite build passes before you merge!)
+When you merge a PR to master, the Netlify build system runs the Jekyll program, and automatically publishes the rebuilt HTML files.
 
 ## Formatting and Prettifying
-Some important tips are in the [styleguide](styleguide.md). We also have a (rendering)[Formatting guide](/src/utils/formatguide.md) available so you can see how different formatting looks when rendered.
+Some important tips are in the [styleguide](styleguide.md). We also have a (rendering) [Formatting guide](/src/utils/formatguide.md) available so you can see how different formatting looks when rendered.
 
 ## Repo structure
 
@@ -147,15 +144,13 @@ A few possibilities/suggestions:
 - **Name images to describe a process flow**. For example `checkout-1-add-to-cart.png`, `checkout-2-est-shipping.png` and so on.
 
 
-### Diagram Library
-
-We have a diagram library in Sketch, which you can use to build pretty, on-brand architecture diagrams, etc. There's a [readme file in that directory](diagram-library/readme.md) with instructions on how to use it.
-
 ### Content structure
 
 There are folders for each of the top level products, and those folders might also contain topics that are related to that product area (for example the Privacy Portal section also contains GDPR/CCPA docs).
 
-For the Connections product, the section is divided into the Spec, then Sources, Destinations, and Warehouses, with general accessory topics at the folder root. (More specific accessory topics are in each sub directory.) Each also contains a `catalog` directory, which contains all the directories with information about specific integrations. The top-level of this folder (the `index.md`) is a pretty "catalog" page which gives a tile-like view by category, suitable for browsing. It pulls the logo for these tiles from the path for the integration in the metadata service.
+For the Connections product, the section is divided into the Spec, then Sources, Destinations, and Storage Destinations (formerly called "Warehouses"), with general accessory topics at the folder root. (More specific accessory topics are in each sub directory.)
+
+Each also contains a `catalog` directory, which contains all the directories with information about specific integrations. The top-level of this `catalog` folder (the `index.md`) is a pretty "catalog" page which gives a tile-like view by category, suitable for browsing. It pulls the logo for these tiles from the path for the integration in the metadata, either in `destinations.yml`, `sources.yml`, or `warehouses.yml`.
 
 
 ### Programmatic content
@@ -166,7 +161,7 @@ Programmatic content is built using information in the files in `/src/_data/cata
 
 Most of the programmatic content is built into the `_layouts` templates that each page uses. Sources, Destinations, and Warehouses use the `integration.html` template, which uses some Liquid logic, and calls an `include` depending on the integration type. Most of logic for the actual content must live in the include file itself, however logic controlling *if* the include is built can live in the `layout`.
 
-Destination pages include the `integration_foot.md` content which uses Liquid scripting and pulls from the catalog metadata.
+Destination pages include the `destination-dossier.html` and `destination_footer.md` content, which use Liquid scripting and pulls from the catalog metadata.
 
 Sources pages check if the source is a cloud-app, then include information about if the source is an object or event source, based on the `type` data from the ConfigAPI.
 
@@ -189,6 +184,7 @@ Each piece of frontmatter does something special!
 #### Content-related frontmatter
 - `beta`: default false. When true, show an "in beta" warning in the page layout (see the warning in `_includes/content/beta-note.md`)
 - `rewrite`: defaults to false. This is a legacy frontmatter flag that comes from the old `site-docs` repo, and which labels any destination that was rewritten in ~2018 to a standardized template. It disables the duplicate "connection modes" table that would otherwise show up in the boilerplate content at the end of the page.
+- `hide-dossier`: defaults to false. When true, hides the "quick info" box at the top of a destination page.
 - `hide-boilerplate`: defaults to false. When true, none of the content from `destination-footer.md` is appended to the destination page.
 - `hide-cmodes`: defaults to false. A renaming of "rewrite" for more clarity, hides the connection modes table in the boilerplate.
 - `hide-personas-partial`: defaults to false. When true, hides the section of content from `destination-footer.md` that talks about being able to receive personas data.
@@ -222,14 +218,10 @@ We have two neat icons that you can add to a bottom-level menu item to mark it w
 - `dev`: runs `jekyll serve` locally with incremental builds. Useful when updating CSS, JS, or content and you don't want to rebuild every time.
 - `docs`: same as `make dev`, but for Laura's convenience.
 - `build`: Builds the site docs. Used by CI to publish the docs to staging and production
-- `catalog`: Pulls in the latest catalog data from the Platform API and saves it in the respective data files. Requires an API key to be passed in env via PLATFORM_API_TOKEN. [Instructions here](#bring-your-own-token).
+- `catalog`: Pulls in the latest catalog data from the Platform API and saves it in the respective data files. Requires an API key to be passed in env via PLATFORM_API_TOKEN. [Instructions here](https://github.com/segmentio/segment-docs/blob/master/contributors.md#refresh-the-segment-catalog).
 - `sidenav`: Builds the side navs for 'main', 'legal', 'api', 'partners' and stores the output in `/src/_data/sidenav-auto/`. This output isn't used for the actual build.
 - `typewriter`: pulls in the current state of the Docs tracking plan for implementing Segment tracking
 - `seed`: copies all example data files out of the `_templates` directory and puts them in the `_data` directory. Useful if you don't have a way to set up an API key.
 - `clean`: removes all build artifacts
 - `clean-deps`: removes all downloaded `gems` and `node_modules`
 - `deps`: installs the required `gems` and `node_modules`
-
-
-- docker-build: runs `make build` on a docker host.
-- docker-dev: runs `make dev` on a docker host.
