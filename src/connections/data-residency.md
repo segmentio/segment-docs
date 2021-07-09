@@ -1,5 +1,5 @@
 ---
-title: Data residency
+title: Data Residency
 beta: true
 ---
 
