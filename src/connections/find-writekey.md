@@ -1,5 +1,5 @@
 ---
-title: Write key
+title: Locate your Write Key
 ---
 
 The write key is a unique identifier for each Source. It lets Segment know which Source is sending the data, and which destinations should receive that data.

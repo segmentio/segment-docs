@@ -223,7 +223,7 @@ sections:
   - path: /connections/event-delivery
     title: Event Delivery
   - path: /connections/find-writekey
-    title: Write key
+    title: Locate your Write Key
   - path: /connections/integration_error_codes
     title: Integration error codes
   - path: /connections/schema-unique-limits
