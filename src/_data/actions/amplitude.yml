@@ -2,148 +2,218 @@ config:
   - category: Connection Settings
     settings:
     - name: API Key
+      connection_mode:
+        - cloud
+        - device
       configurable: true
       location: Global Setting
       notes: ""
     - name: Track Products Once
+      connection_mode:
+        - cloud
       configurable: false
       location: null
       notes: "Not applicable to Cloud mode"
     - name: Version Name
+      connection_mode:
+        - cloud
       configurable: true
       location: "Action field **App Version**."
       notes: "Defaults to `context.app.version`."
     - name: Connection Mode
+      connection_mode:
+        - cloud
+        - device
       configurable: true
       location: null
       notes: Actions support Cloud mode connections
   - category: Page and Screen
     settings:
     - name: Track all pages to Amplitude
+      connection_mode:
+        - cloud
+        - device
       configurable: true
       location: "Subscription **Page Calls**"
       notes: When enabled, Amplitude (Actions) tracks all Page calls by default
     - name: Track all Screens
+      connection_mode:
+        - cloud
+        - device
       configurable: true
       location: "Subscription **Page Calls**"
       notes: When enabled, Amplitude (Actions) tracks all Screen calls by default
     - name: Track Categorized Pages to Amplitude
+      connection_mode:
+        - cloud
+        - device
       configurable: true
       location: "Subscription **Page Calls**"
       notes: Add a Trigger filter condition to check that Event Property **category** exists
     - name: Track Named Pages to Amplitude
+      connection_mode:
+        - cloud
+        - device
       configurable: true
       location: "Subscription **Page Calls**"
       notes: Add a Trigger filter condition to check that Event Property **name** exists
   - category: Traits
     settings:
     - name: Group Type Trait
+      connection_mode:
+        - cloud
+        - device
       configurable: true
       location: "Subscription **Group Identify User**."
       notes: Select a value in the **Group Type** actions field.
     - name: Group Value Trait
+      connection_mode:
+        - cloud
+        - device
       configurable: true
       location: "Subscription **Group Identify User**."
       notes: Select a value in the **Group Value** actions field.
     - name: Traits to Append
+      connection_mode: null
       configurable: false
       location:
       notes: --
     - name: Traits to Increment
+      connection_mode: null
       configurable: false
       location:
       notes: --
     - name: Traits to Prepend
+      connection_mode: null
       configurable: false
       location:
       notes: --
     - name: Traits to Set Once
+      connection_mode: null
       configurable: false
       location: 
       notes: --
   - category: Other Settings
     settings:
     - name: Append Fields to Event Properties
+      connection_mode:
       configurable: false
       location:
       notes: Not applicable to Cloud Mode
     - name: Batch Events
+      connection_mode:
+        - cloud
       configurable: false
       location: 
       notes: Not applicable to Cloud Mode
     - name: Enable Location Listening
+      connection_mode:
+        - device
       configurable: false
       location:
       notes: Not applicable to Cloud Mode
     - name: Event Upload period millis
+      connection_mode:
+        - cloud
       configurable: false
       location:
       notes: Not applicable to Cloud Mode
     - name: Event Upload Threshold
+      connection_mode:
+        - cloud
       configurable: false
       location:
       notes: Not applicable to Cloud Mode
     - name: Force HTTPS
+      connection_mode:
+        - cloud
       configurable: false
       location:
       notes: Not applicable to Cloud Mode
     - name: Map Query Params to Custom Property
+      connection_mode: null
       configurable: false
       location:
       notes: Not available
     - name: Prefer Anonymous Device ID
+      connection_mode:
+        - cloud
+        - device
       configurable: true
       location: Actions field **Device ID**.
       notes: Update the value so your preferred field appears first in the `coalesce()` function.
     - name: Save Referrer, URL Params, GCLID Once per Session
+      connection_mode:
+        - cloud
       configurable: false
       location:
       notes: Not available
     - name: Secret Key
+      connection_mode:
+        - cloud
+        - device
       configurable: true
       location: Global Setting
       notes: ""
     - name: Enable Alias
+      connection_mode: null
       configurable: false
       location:
       notes:
     - name: Send to Batch Endpoint
+      connection_mode: null
       configurable: false
       location:
       notes:
     - name: Track GCLID
+      connection_mode: null
       configurable: false
       location:
       notes: Not applicable to Cloud Mode
     - name: Track Referrer to Amplitude
+      connection_mode: null
       configurable: false
       location:
       notes: Not applicable to Cloud Mode
     - name: Track Revenue per Product
+      connection_mode:
+        - cloud
+        - device
       configurable: true
       location: Actions field **Track Revenue Per Product**.
       notes: Available in any subscription that uses the **Log Event** action.
     - name: Track Session Events to Amplitude
+      connection_mode:
+        - cloud
       configurable: false
       location:
       notes: For best results, use **Session ID**
     - name: Track UTM Properties to Amplitude
+      connection_mode: null
       configurable: false
       location:
       notes: --
     - name: Unset Params Referrer on New Session
+      connection_mode:
+        - cloud
       configurable: false
       location:
       notes: --
     - name: Use Advertising ID for Device ID
+      connection_mode:
+        - cloud
+        - device
       configurable: true
       location: Actions field **Device ID**.
       notes: Update the value so your preferred field appears first in the `coalesce()` function.
     - name: Send Custom Language and Country Properties
+      connection_mode: null
       configurable: true
       location: Actions fields **Language** and **Country**
       notes: These fields are set by default with values from the context object.
     - name: Use Log Revenue v2 API
+      connection_mode:
+        - cloud
       configurable: false
       location:
       notes: Not applicable to Cloud mode
