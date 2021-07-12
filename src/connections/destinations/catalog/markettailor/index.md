@@ -5,7 +5,7 @@ rewrite: true
 
 [Markettailor](https://www.markettailor.io/), helps B2B marketers create personalized websites without code, leveraging company data, audience insights, and recommendations.
 
-This destination is maintained by Markettailor. For any issues with the destination, contact the Markettailor Support team.
+Markettailor maintains this destination. For any issues with the destination, contact the Markettailor Support team.
 
 ## Getting Started
 {% include content/connection-modes.md %}
@@ -16,9 +16,13 @@ This destination is maintained by Markettailor. For any issues with the destinat
 4. Go to the [Markettailor Integrations page](https://app.markettailor.io/integrations), find the Segment integration, click **Authorize**, and copy the API key.
 5. Enter the API Key in the Markettailor destination settings in Segment.
 
+## Supported methods
+
+Markettailor supports the following methods, as specified in the [Segment Spec](/docs/connections/spec).
+
 ### Page
 
-If you aren’t familiar with the Segment Spec, take a look at the Page method documentation to learn about what it does. An example call would look like:
+Send [Page](/docs/connections/spec/page) calls to Markettailor. For example:
 
 ```js
 analytics.page()
@@ -27,7 +31,7 @@ analytics.page()
 Segment sends Page calls to Markettailor as a `page view`.
 
 ### Identify
-If you aren’t familiar with the Segment Spec, take a look at the Identify method documentation to learn what it does. An example call would look like:
+Send [Identify](/docs/connections/spec/identify) calls to Markettailor. For example:
 
 ```js
 analytics.identify('userId123', {
@@ -38,7 +42,7 @@ analytics.identify('userId123', {
 Segment sends Identify calls to Markettailor as an `identify` event.
 
 ### Track
-If you aren’t familiar with the Segment Spec, take a look at the Track method documentation to learn what it does. An example call would look like:
+Send [Track](/docs/connections/spec/track) calls to Markettailor. For example:
 
 ```js
 analytics.track('Login Button Clicked')
