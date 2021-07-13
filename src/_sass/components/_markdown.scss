@@ -196,7 +196,7 @@
       @include breakpoint(medium up) {
         word-wrap: normal;
         font-size: 14px;
-        line-height: 16px;
+        line-height: 1.5;
         padding: 24px;
       }
     }
@@ -243,8 +243,8 @@
     }
 
     td.def {
-      font-size: 12px;
       cursor:  pointer;
+      line-height: 16px;
       code {
         max-width: 100%;
         word-break: break-all;
