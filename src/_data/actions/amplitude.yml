@@ -141,7 +141,7 @@ config:
         - device
       configurable: true
       location: Actions field **Device ID**.
-      notes: Update the value so your preferred field appears first in the `coalesce()` function.
+      notes: Replace the contents of the field with your preferred value.
     - name: Save Referrer, URL Params, GCLID Once per Session
       connection_mode:
         - cloud
