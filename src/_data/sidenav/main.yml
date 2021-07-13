@@ -24,21 +24,21 @@ sections:
   - path: /guides
     title: An introduction to Segment
   - path: /guides/intro-impl
-    title: Segment developer overview
+    title: Segment for developers
   - path: /guides/intro-user
-    title: Segment data user overview
+    title: Segment for data users
   - path: /guides/intro-admin
-    title: Segment workspace admin overview
+    title: Segment for workspace admins
   - path: /guides/filtering-data
     title: Filtering your Segment data
   - path: /guides/duplicate-data
-    title: How does Segment handle duplicate data?
+    title: Handling duplicate data
   - path: /guides/ignore-bots
-    title: How can I ignore internet bots?
+    title: Internet bots
   - path: /guides/segment-vs-tag-managers
-    title: What is the difference between Segment and tag managers?
+    title: Segment vs. tag managers
   - path: /guides/what-is-replay
-    title: What is Replay?
+    title: Replay
 
   - section_title: How To Guides
     slug: guides/how-to-guides
@@ -90,7 +90,7 @@ sections:
 - section_title: Connections
   section:
   - path: /connections
-    title: Connections overview
+    title: Overview
   - section_title: The Segment Spec
     slug: connections/spec
     section:
@@ -215,23 +215,23 @@ sections:
       - path: /connections/storage/warehouses/redshift-tuning
         title: How do I speed up my redshift queries?
   - path: /connections/test-connections
-    title: How do I test my connections?
+    title: Testing connections
   - path: /connections/data-export-options
-    title: What are my data export options?
+    title: Data export options
   - path: /connections/destination-data-control
-    title: How do I use Schema Controls?
+    title: Using Schema Controls
   - path: /connections/event-delivery
-    title: How do I check if data is reaching a destination?
+    title: Event Delivery
   - path: /connections/find-writekey
-    title: How do I find my write key?
+    title: Locate your Write Key
   - path: /connections/integration_error_codes
     title: Integration error codes
   - path: /connections/schema-unique-limits
-    title: Are there limits on my Segment Schema?
+    title: Segment Schema limits
   - path: /connections/rate-limits
-    title: Rate Limits and SLA
+    title: Rate limits and SLA
   - path: /connections/data-residency
-    title: Data Residency
+    title: Data residency
 - section_title: Personas
   section:
   - path: /personas

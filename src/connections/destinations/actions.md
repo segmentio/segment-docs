@@ -26,6 +26,24 @@ Each Actions-framework Destination you see in the Segment catalog represents a f
 - If you are using Protocols, Destination Actions actions are applied *after* [schema filters](/docs/protocols/enforce/schema-configuration/) and [transformations](/docs/protocols/transform/). If you are using [destination filters](/docs/connections/destinations/destination-filters/), Actions are applied after the filters - meaning that they are not applied to data that is filtered out.
 - Destination Actions can not yet be accessed or modified using the Segment APIs.
 
+## Components of a Destination Action
+
+A Destination Action contains a hierarchy of components, that work together to ensure the right data is sent to the destination. 
+
+At the top level, is the Destination itself. It has two children: **Global Settings** and **Subscriptions**. 
+
+**Global Settings** are where you include authentication information like API keys, and other connection-related information. 
+
+**Subscriptions** handle the individual calls to the destination. In them, you define what type of call you want to make to the destination, and what triggers that call. Individual Destination Actions come enabled with some predefined subscriptions to handle common events like Screen calls, Identify calls, and Track calls. Subscriptions have two components that make this possible: **Triggers** and an **Action**. 
+
+**Triggers** enable you to define *when* the corresponding Action fires. As part of a Trigger, you can use condition-based filters to narrow the scope of the trigger.
+
+**Actions** determine the information sent to the destination. In the Configure action section, you map the fields that come from your source, to fields that the destination expects to find. Fields on the destination side depend on the type of action selected
+
+For example, in the Amplitude (Actions) destination, you define your API and Secret keys in the destination's global settings. Then, the provided Page Calls subscription:
+
+1. Triggers the action on all incoming Page events.
+2. Runs the Log Event action, to map your incoming data to Amplitudes properties.
 
 
 ## Set up a destination action
@@ -86,6 +104,13 @@ The following type filters and operators are available to help you build conditi
     The `does` `not exist` operator matches both a `null` value or a missing property.
 
 You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY to “subscribe” to multiple conditions. Use ALL when you need to filter for very specific conditions. You can only create one group condition per destination action. You cannot created nested conditions.
+
+> info "Destination Filters"
+> Destination filters are compatible with Destination Actions. Consider a Destination Filter when:
+> - You need to remove properties from the data sent to the destination
+> - You need to filter data from multiple types of call (for example, Track, Page, and Identify calls)
+> 
+> If your use case does not match these criteria, you might benefit from using Subscription-level triggers to match only certain events.
 
 
 
