@@ -45,35 +45,35 @@ sections:
     menu_icon: read-more
     section:
     - path: /guides/how-to-guides
-      title: How-to Guides index
+      title: How-to Guides Index
     - path: /guides/how-to-guides/automated-multichannel-reengagement
-      title: How do I automate multi-channel re-engagement campaigns?
+      title: Automating Multi-Channel Re-Engagement Campaigns
     - path: /guides/how-to-guides/collect-on-client-or-server
-      title: Should I collect data on the client or server?
+      title: Collecting Data on the Client or Server
     - path: /guides/how-to-guides/collect-pageviews-serverside
-      title: How do I collect page views on the server side?
+      title: Collecting Pageviews on the Server Side
     - path: /guides/how-to-guides/create-push-notification
-      title: How do I create a push notification?
+      title: Creating a Push Notification
     - path: /guides/how-to-guides/cross-channel-tracking
-      title: How do we track your customers across channels and devices?
+      title: Tracking Customers Across Channels and Devices
     - path: /guides/how-to-guides/dynamic-coupon-program
-      title: How do I set up a dynamic coupon program to reward loyal customers?
+      title: Setting up a Dynamic Coupon Program to Reward Loyal Customers
     - path: /guides/how-to-guides/forecast-with-sql
-      title: How do I forecast LTV with SQL and Excel for e-commerce?
+      title: Forecasting LTV with SQL and Excel for E-Commerce
     - path: /guides/how-to-guides/import-historical-data
-      title: How do I import historical data?
+      title: Importing Historical Data
     - path: /guides/how-to-guides/join-user-profiles
-      title: How do I join user profiles?
+      title: Joining User Profiles
     - path: /guides/how-to-guides/measure-advertising-funnel
-      title: How do I measure my advertising funnel?
+      title: Measuring Your Advertising Funnel
     - path: /guides/how-to-guides/measure-marketing-roi
-      title: How do I measure the ROI of my Marketing Campaigns?
+      title: Measuring the ROI of Your Marketing Campaigns
     - path: /guides/how-to-guides/migrate-from-other-tools
-      title: How do I migrate code from other analytics tools?
+      title: Migrating Code From Other Analytics Tools
     - path: /guides/how-to-guides/segment-and-attribution
-      title: What role does Segment play in Attribution?
+      title: Segment's Role in Attribution
     - path: /guides/how-to-guides/set-up-notifications-alerts
-      title: How do we set up event-triggered notifications or alerts?
+      title: Setting Up Event-Triggered Notifications or Alerts
   - section_title: Usage and Billing
     slug: guides/usage-and-billing
     section:
