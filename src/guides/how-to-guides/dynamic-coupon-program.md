@@ -1,5 +1,5 @@
 ---
-title: How do I set up a dynamic coupon program to reward loyal customers?
+title: Setting Up a Dynamic Coupon Program to Reward Loyal Customers
 ---
 
 One component of building a successful and engaging e-commerce brand is rewarding your most loyal customers. With Segment Warehouses and SQL, you can retrieve a table of your most valuable customers, then reward them.

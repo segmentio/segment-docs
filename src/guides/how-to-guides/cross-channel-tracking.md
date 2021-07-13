@@ -1,5 +1,5 @@
 ---
-title: How do we track your customers across channels and devices?
+title: Tracking Customers Across Channels and Devices
 ---
 
 The paths consumers take to your app or website are more complex than ever, often involving a variety of online communities and multiple devices. Your next repeat customer might stumble across your display ad on a newsletter you've never heard about, or receive a recommendation from a co-worker in a Slack channel.
