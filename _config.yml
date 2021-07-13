@@ -40,7 +40,8 @@ defaults:
 
 collections:
   release_notes:
-    output: false
+    output: true
+    permalink: /:collection/:name
 
 plugins_dir: ./_plugins
 plugins:
