@@ -1,5 +1,5 @@
 ---
-title: Crisp Destination
+ title: Crisp Destination
 rewrite: true
 ---
 [Crisp](https://crisp.chat/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an all-in-one solution to communicate with your customers using text-messaging.
@@ -15,7 +15,7 @@ This destination is maintained by Crisp. For any issues with the destination, [c
 3. The Segment App opens in a new window. Log in to authenticate the connection from Crisp.
 4. Select the Workspace and Source to connect with Crisp.
 
-### Supported methods
+## Supported methods
 
 Crisp supports the following methods, as specified in the [Segment Spec](/docs/connections/spec/).
 
@@ -45,5 +45,6 @@ analytics.track('Completed Purchase', {
 ```
 > warning ""
 > Send an Identify call for any user who triggers Track calls. If Crisp receives a Track call for an unknown `userId`, the call is dropped.
+
 
 

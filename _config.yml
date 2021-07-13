@@ -55,4 +55,16 @@ algolia:
   index_name:     segment-docs
   files_to_exclude:
     - _release_notes/*
+    - utils/*
   nodes_to_index: 'p, table#limit'
+  settings:
+    customRanking:
+      - desc(title)
+      - desc(custom_ranking.heading)
+      - asc(custom_ranking.position)
+    attributesForFaceting:
+      - searchable(categories)
+      - searchable(hidden)
+      - searchable(tags)
+      - searchable(title)
+      - type
