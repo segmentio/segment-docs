@@ -50,9 +50,5 @@ analytics.track('Login Button Clicked')
 ```
 
 Segment sends Track calls to Markettailor as a `track` event.
-=======
-title: 'undefined Destination'
-hidden: true
-beta: true
----
+
 
