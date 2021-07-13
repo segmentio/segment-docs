@@ -1,10 +1,11 @@
 .markdown {
-  & > h1,
-  & > h2,
-  & > h3,
-  & > h4,
-  & > h5,
-  & > h6 {
+
+  &>h1,
+  &>h2,
+  &>h3,
+  &>h4,
+  &>h5,
+  &>h6 {
     position: relative;
     cursor: pointer;
     padding-left: 30px;
@@ -32,13 +33,13 @@
     }
   }
 
-  & > h1 {
+  &>h1 {
     @include breakpoint(medium up) {
       margin-top: 32px;
     }
   }
 
-  & > h2 {
+  &>h2 {
     margin-top: 32px;
 
     @include breakpoint(medium up) {
@@ -46,7 +47,7 @@
     }
   }
 
-  & > h3 {
+  &>h3 {
     margin-top: 24px;
 
     @include breakpoint(medium up) {
@@ -54,7 +55,7 @@
     }
   }
 
-  & > h4 {
+  &>h4 {
     margin-top: 16px;
 
     @include breakpoint(medium up) {
@@ -62,7 +63,7 @@
     }
   }
 
-  & > h5 {
+  &>h5 {
     margin-top: 16px;
 
     @include breakpoint(medium up) {
@@ -70,7 +71,7 @@
     }
   }
 
-  & > h6 {
+  &>h6 {
     margin-top: 8px;
 
     @include breakpoint(medium up) {
@@ -78,7 +79,7 @@
     }
   }
 
-  & > p {
+  &>p {
     margin-top: 8px;
     overflow-wrap: break-word;
     line-height: 26px;
@@ -93,12 +94,12 @@
     overflow-y: auto;
   }
 
-  & > pre {
+  &>pre {
     margin-top: 24px;
     margin-bottom: 24px;
   }
 
-  & > hr {
+  &>hr {
     margin-top: 40px;
     margin-bottom: 40px;
 
@@ -108,7 +109,7 @@
     }
   }
 
-  & > div {
+  &>div {
     margin-top: 16px;
   }
 
@@ -121,11 +122,13 @@
       border: 1px solid #ddd;
       display: block;
       margin: 24px auto;
-      border-radius: 5px;;
+      border-radius: 5px;
+      ;
     }
   }
 
-  ul, ol {
+  ul,
+  ol {
     padding-left: 25px;
     line-height: 26px;
     list-style-type: none;
@@ -142,14 +145,15 @@
         left: 0;
       }
 
-      & > ul, ol {
+      &>ul,
+      ol {
         margin-top: 0;
       }
     }
   }
 
   ul {
-    & > li {
+    &>li {
       &::before {
         width: 8px;
         height: 8px;
@@ -163,7 +167,7 @@
   ol {
     counter-reset: list-items;
 
-    & > li {
+    &>li {
       counter-increment: list-items;
 
       &::before {
@@ -192,7 +196,7 @@
       @include breakpoint(medium up) {
         word-wrap: normal;
         font-size: 14px;
-        line-height: 16px;
+        line-height: 1.5;
         padding: 24px;
       }
     }
@@ -218,11 +222,43 @@
     }
   }
 
-  & > table {
+  table.settings {
+    width: 100%;
+    table-layout: fixed;
+
+    th:first-of-type {
+      width: 25%;
+    }
+
+    // th:nth-of-type(2n) {
+    //   width: 15%
+    // }
+
+    // th:nth-of-type(3n) {
+    //   width: 15%
+    // }
+
+    th:nth-of-type(4n) {
+      width: 75%
+    }
+
+    td.def {
+      cursor:  pointer;
+      line-height: 16px;
+      code {
+        max-width: 100%;
+        word-break: break-all;
+      }
+
+
+    }
+  }
+
+  &>table {
     margin-top: 24px;
   }
 
-  & > *:first-child {
+  &>*:first-child {
     margin-top: 0;
   }
 
