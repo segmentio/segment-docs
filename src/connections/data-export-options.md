@@ -1,5 +1,5 @@
 ---
-title: "What are my data export options?"
+title: "Data export options"
 ---
 
 There are a few ways to export your Segment data. Segment [Business customers](https://segment.com/business) have the most data flexibility, but our self-service customers also have options.
