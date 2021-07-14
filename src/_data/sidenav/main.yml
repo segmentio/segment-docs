@@ -3,21 +3,21 @@ sections:
 - section_title: Getting Started
   section:
   - path: /getting-started
-    title: Getting started with Segment
+    title: Getting Started With Segment
   - path: /getting-started/01-what-is-segment
     title: What is Segment?
   - path: /getting-started/02-simple-install
-    title: A simple Segment installation
+    title: A Simple Segment Installation
   - path: /getting-started/03-planning-full-install
-    title: Planning a full installation
+    title: Planning a Full Installation
   - path: /getting-started/04-full-install
-    title: A full Segment installation
+    title: A Full Segment Installation
   - path: /getting-started/05-data-to-destinations
-    title: Sending data to destinations
+    title: Sending Data to Destinations
   - path: /getting-started/06-testing-debugging
-    title: Testing and debugging
+    title: Testing and Debugging
   - path: /getting-started/whats-next
-    title: What's next?
+    title: What's Next
 
 - section_title: Guides
   section:
