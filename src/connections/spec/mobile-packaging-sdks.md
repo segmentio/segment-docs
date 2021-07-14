@@ -1,5 +1,5 @@
 ---
-title: Packaging SDKs for mobile destinations
+title: Packaging SDKs for Mobile Destinations
 ---
 
 When it comes to Mobile SDKs, we know that minimizing size and complexity is a priority for our customers. That's why our core Mobile SDKs are small and offload as much work as possible in handling destinations to our servers. When you install our light-weight SDK, you have access to our entire suite of server-side destinations.

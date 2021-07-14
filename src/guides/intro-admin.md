@@ -1,5 +1,5 @@
 ---
-title: Segment for workspace administrators
+title: Segment for Workspace Administrators
 ---
 
 If your job is to set up or maintain a Segment Workspace for your organization, or assist other people using the Segment Web App, this guide is for you. If you're more interested in Segment implementation details, see the [developer intro guide](/docs/guides/intro-impl/).

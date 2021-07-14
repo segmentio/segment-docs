@@ -1,5 +1,5 @@
 ---
-title: Data residency
+title: Data Residency
 ---
 {% include content/plan-grid.md name="data-residency" %}
 

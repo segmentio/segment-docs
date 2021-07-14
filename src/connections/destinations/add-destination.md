@@ -1,5 +1,5 @@
 ---
-title: Sending Segment data to destinations
+title: Sending Segment Data to Destinations
 ---
 
 You've decided how to format your data, and collected it using [Segment Sources](/docs/connections/sources/). Now what do you do with it? You send the data to Destinations!
@@ -114,11 +114,11 @@ To connect a source to more than one instance of a destination in the Segment we
 
 You must give each instance of the destination connected to the same source a unique name. Segment recommends that you use descriptive names rather than numbers, so other Segment users can understand which Segment destinations are linked to which tool instances. For example, you might use "Amplitude North America" and "Amplitude South America", instead of "Amplitude 1" and "Amplitude 2". You can edit the destination instance name at any time.
 
-If you added the first instance of your destination before multi-instance destinations became available, that instance is automatically named for the destination with no other identifiers, for example "Amplitude". 
+If you added the first instance of your destination before multi-instance destinations became available, that instance is automatically named for the destination with no other identifiers, for example "Amplitude".
 
 Some destinations do not support having multiple instances connected to the same source. In that case, the option to add a second instance of that destination does not appear.
 
-You can create unique destination filters for each destination instance connected to the same source. 
+You can create unique destination filters for each destination instance connected to the same source.
 
 ### Connect to more than one instance of a destination using the Config API
 
@@ -161,7 +161,7 @@ In this example:
 
 - Events sent with this `Mixpanel` setting are **not** sent to instances of Mixpanel.
 - Events sent to any Adobe Analytics destinations with this `Adobe Analytics` setting use the same `marketingCloudVisitorId` value specified.
-You can not use the [integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object) to send data to individual destination instances. 
+You can not use the [integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object) to send data to individual destination instances.
 
 ### Multi-instance compatible destinations
 
