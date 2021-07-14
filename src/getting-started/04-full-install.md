@@ -1,5 +1,5 @@
 ---
-title: A full Segment implementation
+title: A Full Segment Implementation
 related:
   - "/connections/spec/best-practices-event/"
   - "/connections/spec/best-practices-identify/"
