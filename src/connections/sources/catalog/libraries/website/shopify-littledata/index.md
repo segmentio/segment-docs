@@ -39,6 +39,8 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 
 Below is a table of events that **Shopify by Littledata** sends to Segment through the analytics.js library. These events will show up as tables in your warehouse, and as regular events in your other Destinations supporting device-mode.
 
+You can _out out_ of device-mode pageviews or events by setting `disableClientSideEvents: true` or `disablePageviews: true` in the `LittledataLayer` settings.
+
 | Event Name            | Description                                                         |
 | --------------------- | ------------------------------------------------------------------- |
 | Cart Viewed           | A user has viewed the /cart page                                    |
@@ -95,6 +97,7 @@ The following traits are included with an Identify call:
 
 | Property Name           | Description                                                                                                                                     | Property Type |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `accepts_marketing`     | Whether the customer has accepted marketing                                                                                                     | Boolean       |
 | `address`               | The customer's primary address                                                                                                                  | String        |
 | `createdAt`             | The date customer record was created                                                                                                            | Date          |
 | `customerLifetimeValue` | The total spend of customer on the Shopify store                                                                                                | Double        |
@@ -162,6 +165,7 @@ The list below outlines the properties included in the events listed above.
 | `shipping_method`                      | The shipping method chosen for checkout                        | String        |
 | `shipping`                             | The shipping cost                                              | Float         |
 | `step`                                 | The checkout step                                              | Integer       |
+| `source_name`                          | The source of the server-side event (e.g. `web`, `ios`, `pos`) | String        |
 | `subtotal`                             | Order total after discounts but before taxes and shipping      | Float         |
 | `tax`                                  | The amount of tax on the order                                 | Float         |
 | `total`                                | The total value of the order                                   | Float         |
