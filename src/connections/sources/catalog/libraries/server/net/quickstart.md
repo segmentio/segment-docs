@@ -16,7 +16,7 @@ The best analytics installation combines both client-side and server-side tracki
 
 Before you begin, you need a Workspace (which is a container that holds all of the sources and destinations which are billed together for an organization). If you already created one, great! If not, you can sign up for a free Segment account and create one.
 
-Next, create a Ruby source from your Workspace:
+Next, create a .NET source from your Workspace:
 
 1. Click **Add Source**.
 2. From the source catalog page, click **.NET**.

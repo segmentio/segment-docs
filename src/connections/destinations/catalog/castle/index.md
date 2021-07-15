@@ -2,7 +2,7 @@
 title: Castle Destination
 ---
 
-Once you enable the Castle integration, the [Castle JavaScript snippet](https://castle.io/docs/tracking) is placed on your website, and user data starts appearing in the Castle dashboard.
+Once you enable the Castle integration, the [Castle JavaScript snippet](https://docs.castle.io/v1/tutorials/client-side-integration/web/) is placed on your website, and user data starts appearing in the Castle dashboard.
 Client-side tracking works out of the box, however **your existing server-side calls need to be extended** with data from the incoming request.
 
 Castle supports calling `identify`, `page`, `screen`, and `group`. Castle does *not* support the `alias` call.
