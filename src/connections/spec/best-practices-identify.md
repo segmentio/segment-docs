@@ -1,5 +1,5 @@
 ---
-title: Best practices in identifying users
+title: Best Practices for Identifying Users
 redirect_from: '/guides/how-to-guides/best-practices-identify/'
 ---
 

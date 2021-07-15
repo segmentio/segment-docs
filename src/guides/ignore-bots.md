@@ -1,5 +1,5 @@
 ---
-title: Internet bots
+title: Internet Bots
 ---
 
 ## What's a bot?

@@ -1,5 +1,5 @@
 ---
-title: "Testing connections"
+title: "Testing Connections"
 ---
 
 
