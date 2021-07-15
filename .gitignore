@@ -12,3 +12,6 @@ src/assets/docs.bundle.js
 yarn-error.log
 # Make sure to update `analytics` to the full path to your Typewriter client.
 .vscode/spellright.dict
+
+# Local Netlify folder
+.netlify

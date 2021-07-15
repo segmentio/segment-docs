@@ -3,10 +3,13 @@
   # Ignore builds unless [netlify-build] is present in commit message
   # ignore = "git log -1 --pretty=%B | ( ! grep -q '\[netlify\-build\]' )"
   # Ignore if [netlify-ignore] is present
-  ignore = "git log -1 --pretty=%B | ( grep -q '\\[netlify\\-ignore\\]' )"
+
+  # Don't build if there are no changes to src/
+  ignore = "git diff --quiet HEAD^ HEAD src/"
 
 [context.deploy-preview]
   command = "yarn develop"
+  ignore = "./scripts/ignore.sh"
 
 [[redirects]]
   from = "/docs/*"

@@ -10,19 +10,17 @@ Adobe Heartbeat is an Adobe Analytics add-on that allows you to collect video an
 
 Before you start, complete these required steps.
 
-First, connect your Adobe heartbeat server URL to Segment:
-1. Find your Adobe Analytics heartbeat tracking server URL and copy it. If you don’t know where to find your heartbeat tracking server URL, contact your Adobe representative.
+First, connect your Adobe Heartbeat Server URL to Segment:
+1. Find your Adobe Analytics Heartbeat Tracking Server URL and copy it. If you don’t know where to find your Heartbeat Tracking Server URL, contact your Adobe representative.
 2. Log in to your Segment workspace, and go to the Adobe Analytics settings.
    If you have multiple sources sending to Adobe Analytics, click the one that you'll be using with Adobe Heartbeat. If you'll be using Heartbeat with more than one source, repeat these steps for each source.
 3. Open the **Heartbeat Tracking Server URL** setting, and paste your server URL in the field. Click Save.
 
-**Note**: If you don't specify a tracking server URL, Segment can't send your video events to Adobe Analytics.
+**Note**: If you don't specify a Heartbeat Tracking Server URL, Segment can't send your video events to Adobe Heartbeat.
 
 Next, enable Adobe's VisitorID service in your Adobe account. You must do this to track Heartbeat data. See Adobe's documentation for more on enabling the VisitorID service.
 
-## Set up steps for mobile
-
-Then, set up your mobile libraries:
+## Set Up Steps for Mobile
 
 For Android:
 
@@ -30,7 +28,19 @@ For Android:
 2. Download the latest version of the `MediaSDK.jar` file and [include it in your Android project using Adobe's documentation steps](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html).
 3. Follow the [remaining set up steps](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html) to complete the installation.
 
-For iOS: the Adobe Heartbeat SDK is already included with the Segment-Adobe-Analytics SDK. Ensure you have added the `ABDMobileConfig.json` for your iOS project from the Adobe Mobile Services UI.
+For iOS: The Adobe Heartbeat SDK is already included with the Segment-Adobe-Analytics SDK when you add a Heartbeat Tracking Server URL. Ensure you have added the `ABDMobileConfig.json` for your iOS project from the Adobe Mobile Services UI.
+
+## Set Up Steps for Web
+
+The Adobe Heartbeat JS SDK is automatically included with the Segment-Adobe-Analytics integration when you add a Heartbeat Tracking Server URL. 
+
+Segment will map your video events to the Adobe methods as outlined below. In order to record video heartbeats to Adobe accurately on web, Adobe's SDK requires a playhead update **at least once per second** for main content. The "Video Content Playing" event updates the playhead using the `position` property. If you do not want to trigger this event every second, you can alternatively set the playhead to the window. This can be done by setting `window._segHBPlayheads` to the key-value pair of the current content's `session_id` and `position`:
+
+```javascript
+window._segHBPlayheads = { <session_id>: <position> }
+```
+   
+The Segment-Adobe-Analytics integration will pick up the playhead(s) you set to `window._segHBPlayheads` and pass this to Adobe's SDK.
 
 
 

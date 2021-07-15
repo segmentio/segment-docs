@@ -1,18 +1,17 @@
 ---
 title: 'Analytics for Android'
 strat: android
+repo: analytics-android
 ---
 
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics)
+  Analytics for Android makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
-Analytics for Android makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
-
-All of Segment's client sources are open-source, so you can [view Analytics for Android on GitHub](https://github.com/segmentio/analytics-android), or check out Segment's other [browser and server-side sources](/docs/connections/sources/catalog/) too.
-
-Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-android/releases.atom).
 
 Analytics for Android only supports any Android device running API 14 (Android 4.0) and higher. This includes Amazon Fire devices.
+
+> info "Analytics-Kotlin Pilot"
+> A pilot release of the analytics-kotlin library is available at the [Analytics-Kotlin](https://github.com/segmentio/analytics-kotlin) repository. This library is governed by Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/), and should not be used in production scenarios.
 
 > success ""
 > In addition to the documentation here, you can also [read the Javadocs for all versions of Analytics-Android on Javadoc.io](https://javadoc.io/doc/com.segment.analytics.android/analytics/latest/index.html).
@@ -612,7 +611,7 @@ There are two ways to send data to your analytics services through this library:
 
 #### Cloud-Mode in Android
 
-When a destination is enabled for your Android source from the Segment web app, but you haven't packaged its SDK with your app, requests go through the Segment REST API, and are routed to the destination service's API as [described here](/docs/connections/destinations/#connection-modes). Most, but not all destinations offer a cloud-based connection mode, so it's a good idea to [check for destinations that you might _need_ to package](/docs/util/cmodes-compare/).
+When a destination is enabled for your Android source from the Segment web app, but you haven't packaged its SDK with your app, requests go through the Segment REST API, and are routed to the destination service's API as [described here](/docs/connections/destinations/#connection-modes). Most, but not all destinations offer a cloud-based connection mode, so it's a good idea to [check for destinations that you might _need_ to package](/docs/connections/destinations/cmodes-compare).
 
 #### Packaging device-mode destination SDKs
 

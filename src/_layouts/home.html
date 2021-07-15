@@ -5,13 +5,13 @@ layout: main
 <main class="docs__body stage__body">
   <div class="docs__navbar">
     <div class="flex flex--justify gutter gutter--large@medium">
-      <div class="flex__column flex__column--6@xlarge">  
+      <div class="flex__column flex__column--6@xlarge">
         <div class="search">
           {% include_cached navbar/search.html container="autocomplete" %}
         </div>
       </div>
 
-      <div class="flex__column flex__column--shrink">  
+      <div class="flex__column flex__column--shrink">
         {% include_cached navbar/nav.html %}
       </div>
     </div>
@@ -28,9 +28,6 @@ layout: main
           </h1>
         {%- endif -%}
 
-        {%- if page.beta -%}
-          {% include content/beta.md %}
-        {%- endif -%}
 
         <div class="home__markdown markdown" data-headings-anchors>
           {{ content }}
@@ -46,25 +43,5 @@ layout: main
 
       {% include components/callout.html %}
     </div>
-
-    {% unless page.hide-sidebar %}
-      <aside class="docs__sidebar page__sidebar">
-        <div class="sidebar sidebar--sticky sidebar--scroll">
-          {% unless page.hide_toc %}
-            <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
-              {% include_cached sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=content h_min=2 h_max=2 %}
-            </div>
-          {% endunless %}
-
-          {% if page.related %}
-            {% include sidebar/related-content.html items=page.related %}
-          {% endif %}
-
-          {% unless page.hide-feedback %}
-            {% include_cached sidebar/feedback.html %}
-          {% endunless %}
-        </div>
-      </aside>
-    {% endunless %}
   </article>
 </main>

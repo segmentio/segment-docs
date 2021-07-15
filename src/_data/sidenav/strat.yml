@@ -91,8 +91,10 @@ sections:
   section:
   - path: /connections/sources/catalog/libraries/website/javascript
     title: Analytics.js (Javascript) Source
-  - path: /connections/sources/catalog/libraries/website/javascript/analytics-js-2
-    title: Analytics.js 2.0 (Beta)
+  - path: /connections/sources/catalog/libraries/website/javascript/ajs-classic
+    title: Analytics.js Classic
+  - path: /connections/sources/catalog/libraries/website/javascript/upgrade-to-ajs2
+    title: Upgrade to Analytics.js 2.0
   - path: /connections/sources/catalog/libraries/website/javascript/supported-browsers
     title: Analytics.js supported browsers
   - path: /connections/sources/catalog/libraries/website/javascript/quickstart
@@ -124,6 +126,8 @@ sections:
     title: Troubleshooting Analytics-iOS
   - path: /connections/sources/catalog/libraries/mobile/ios/ios-faqs
     title: Analytics-iOS FAQs
+  - path: /connections/sources/catalog/libraries/mobile/ios/changelog
+    title: Analytics-iOS Changelog
 
 - slug: android
   section_title: Analytics-Android Documentation
@@ -138,6 +142,8 @@ sections:
     title: Troubleshooting Analytics-Android
   - path: /connections/sources/catalog/libraries/mobile/android/android-faqs
     title: Analytics-Android FAQs
+  - path: /connections/sources/catalog/libraries/mobile/android/changelog
+    title: Analytics-Android Changelog
 
 - slug: react-native
   section_title: Analytics-React-Native Documentation
@@ -146,5 +152,8 @@ sections:
     title: Analytics-React-Native mobile source
   - path: /connections/sources/catalog/libraries/mobile/react-native/troubleshooting
     title: Troubleshooting Analytics-React-Native
-  - path: /connections/sources/catalog/libraries/mobile/android/react-faqs
+  - path: /connections/sources/catalog/libraries/mobile/react-native/react-faqs/
     title: React-Native FAQs
+  - path: /connections/sources/catalog/libraries/mobile/react-native/changelog
+    title: Analytics-React-Native Changelog
+

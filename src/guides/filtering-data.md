@@ -37,6 +37,8 @@ You can use the `integrations` JSON object as part of your Segment payloads to c
 
 By *default*, the `integrations` object is set to `'All':``true`. You do not need to include this flag in the object to use this behavior, but if you'll be using the integrations object frequently to control destination filtering, you might want to do this to make it explicit for later readers. You can also change this to `'All': false` to prevent destinations from receiving any data by default. You can also add destinations to the object by key, and provide a `true` or `false` value to allow or disallow data to flow to them. The `All` flag is superseded by any destination specific options.
 
+If you are using [multiple instances of a destination](/docs/connections/destinations/add-destination/#connecting-one-source-to-multiple-instances-of-a-destination), any settings you set in the integrations object are applied to all instances of the destination. You cannot specify an instance of a destination to apply Integrations object settings to. 
+
 Note that destination flags are **case sensitive** and match the destination's name in the docs (for example, "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
 Your data is sent to your warehouse (if you have one) and into the Segment backend systems regardless of what is in the integrations object.
@@ -65,25 +67,6 @@ You can apply Integrations filters to specific events regardless of whether the 
 The events filtered out of individual destinations using this method still arrive in your data warehouse(s). Warehouses do not appear in the integration filters dropdown, and you cannot prevent data from flowing to Warehouses using this feature - to do that use [Warehouse Selective Sync](#warehouse-selective-sync).
 
 **Integration filters are all-or-nothing for each event.** If you require more detailed control over which events are sent to specific destinations, you can use Destination Filters to inspect the event payload, and conditionally drop the data or forward it to the destination.
-
-## Schema Defaults
-
-Schema defaults allow you to prevent unexpected or malformed data from a Source from getting into your downstream destinations. When you set your Schema Defaults to **Block**, Segment automatically prevents new Events from being sent to destinations. You can activate this for new events (including `track`, `page`, and `screen` events) or for new `identify` traits and `group` properties.
-
-Data blocked using schema defaults is permanently discarded, and cannot be recovered or replayed through Segment. You can forward blocked data to a new Source, but these events count toward your account MTU limits, and may not be worth saving.
-
-Schema Defaults are only available to Business Tier customers.
-
-You can find the Schema Defaults in the **Settings** tab for each Source, in **Schema Configuration** section.
-
-![](images/schema-defaults.png)
-
-**Schema Defaults Blocking Limitations**
-You cannot use Schema defaults if the source is connected to a Tracking Plan. If you're using Protocols and Tracking Plans, use [Protocols Tracking Plan Blocking](#protocols-tracking-plan-blocking-and-property-omission) to perform the same blocking. Learn more in the [Protocols Schema Configuration documentation](/docs/protocols/enforce/schema-configuration/).
-
-**Track** events blocked by Schema filters are not delivered to either device-mode or cloud-mode Destinations. That means if you send a blocked event from a client-side library like Analytics.js, it is not delivered to any device-mode Destinations.
-
-**Identify** and **Group** call traits blocked by Schema filters are **only** blocked from delivering to cloud-mode Destinations. Since device-mode destinations are connected directly to the user's device and don't pass through the Segment filters first, they still receive all traits regardless of whether they are blocked in the Segment Schema.
 
 ## Schema Event Filters
 

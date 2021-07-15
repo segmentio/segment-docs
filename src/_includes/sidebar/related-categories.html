@@ -9,7 +9,7 @@
     <ul class="related-categories__list menu-side">
       {% for category in current_integration.categories %}
         <li class="related-categories__item">
-          <a href="{{ catalog_url }}/#{{ category | slugify }}" class="related-categories__link">
+          <a href="{{ catalog_url }}#{{ category | slugify }}" class="related-categories__link">
             {{ category }}
           </a>
         </li>

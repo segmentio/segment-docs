@@ -1,5 +1,5 @@
 ---
-title: Best practices in identifying users
+title: Best Practices for Identifying Users
 redirect_from: '/guides/how-to-guides/best-practices-identify/'
 ---
 
@@ -56,7 +56,7 @@ The illustration below shows a timeline with a user’s interactions on a websit
 
 <!-- https://www.figma.com/file/Gc53MamYsKZBg3IUduunc5/identity-best-practices?node-id=1%3A3 -->
 
-When the user first visits a page, Analytics.js automatically assigns the user an `anonymousId` and saves it to the user's local storage. As the user interacts with the site, for example clicking around to different pages, Analytics.js includes this `anonymousId` and some [contextual information](/docs/spec/common#context) with each Page and Track call. The contextual information might be the user’s [IP address, browser, and more](/docs/connections/spec/common#context-fields-automatically-collected).
+When the user first visits a page, Analytics.js automatically assigns the user an `anonymousId` and saves it to the user's local storage. As the user interacts with the site, for example clicking around to different pages, Analytics.js includes this `anonymousId` and some [contextual information](/docs/connections/spec/common#context) with each Page and Track call. The contextual information might be the user’s [IP address, browser, and more](/docs/connections/spec/common#context-fields-automatically-collected).
 
 When a user signs up to create an account on the website, the `.identify(UID)` and `.track(“Signed Up”)` events fire, in that order. You pull the `userId` unique to the user from your systems, and send it to the Segment library so you can label that user’s later events with their ID. The later Track call (“Signed Up”) contains both the `userId` *and* the automatically-collected `anonymousId` for the user, and any other information you capture about them -  such as their first name, last name, and email address.
 

@@ -32,8 +32,9 @@ export default function() {
   const tooltips = tippy(buttons)
   const defaultSettings = {
     interactive: true,
-    placement: 'bottom',
-    boundary: 'viewport',
+    flip: true,
+    placement: 'bottom-end',
+    boundary: '.docs',
     trigger: 'manual',
     onMount: (tooltip) => {
       const sendButton = document.querySelector(SEND_SELECTOR)

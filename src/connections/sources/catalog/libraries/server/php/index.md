@@ -1,5 +1,6 @@
 ---
 title: Analytics for PHP
+repo: analytics-php
 ---
 
 Our PHP library lets you record analytics data from your PHP code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
@@ -12,7 +13,7 @@ Want to stay updated on releases? Subscribe to the [release feed](https://github
 
 ## Getting Started
 
-Clone the repository from github into your desired application directory.
+Clone the repository from Github into your desired application directory.
 
 For composer users: we've [got you covered too](https://packagist.org/packages/segmentio/analytics-php).
 
@@ -516,7 +517,5 @@ $ sudo service cron reload    # reload the cron daemon
 ## 3rd-Party Libraries
 
 If you only need support for PHP5, the team at [Underground Elephant](http://undergroundelephant.com/) has released a [3rd-party library](https://github.com/uecode/segment-io-php) based on Guzzle.
-
-For [FuelPHP](http://fuelphp.com/) support, our friends at [Bit API Hub](http://bitapihub.com/) built this [3rd-party library Segment package](https://github.com/BitAPIHub/FuelPHP-Segment-io).
 
 If you're using Laravel 4 our friends at Catchet have written a wrapper for you! Docs and GitHub repo can be found here: https://github.com/cachethq/Laravel-Segment

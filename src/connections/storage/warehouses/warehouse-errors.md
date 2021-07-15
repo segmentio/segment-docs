@@ -1,5 +1,5 @@
 ---
-title: "What does my warehouse error mean?"
+title: "Warehouse Errors"
 redirect_from: '/connections/warehouses/warehouse-errors/'
 ---
 

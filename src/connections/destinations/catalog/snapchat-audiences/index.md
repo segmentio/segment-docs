@@ -9,7 +9,7 @@ For more information about advertising with Snapchat:
 - [SAM Audiences](https://businesshelp.snapchat.com/s/article/create-sam-audience?language=en_US)
 - [Snap Audience Match](https://developers.snapchat.com/api/docs/#create-an-audience-segment) (for developers)
 
-## Quick info
+## Details
 
 **Requirements**
 - Personas enabled with an existing personas space
@@ -37,9 +37,9 @@ The Snapchat Audiences destination syncs audience data from Segment Personas to 
    3. The configured Snapchat Audiences destination should appear in the *Send as User List* category of available destinations.
    4. Click the destination and confirm the identifier: `Email`, `Phone`, or `Mobile ID`. Click **Save**.
 
-      - Segment sends hashed `email` or `idfa` values to Snapchat so that they can match those identifiers against Snapchat users. 
-      - Segment also supports `phoneNumber` if it is present on the user’s profile. Please make sure you pass phone numbers in a format that Snapchat supports. Read more in Snapchat’s documentation regarding [Normalizing and Hashing](https://developers.snapchat.com/api/docs/#normalizing-hashing). 
-   
+      - Segment sends hashed `email` or `idfa` values to Snapchat so that they can match those identifiers against Snapchat users.
+      - Segment also supports `phoneNumber` if it is present on the user’s profile. Please make sure you pass phone numbers in a format that Snapchat supports. Read more in Snapchat’s documentation regarding [Normalizing and Hashing](https://developers.snapchat.com/api/docs/#normalizing-hashing).
+
          **NOTE**: [Protocols](/docs/protocols) customers can use [Transformations](/docs/protocols/transform/) to change `phoneNumber` values to meet Snapchat's requirements.
 
    1. Click **Add Destination** to activate the destination for your Personas Audience
@@ -61,6 +61,6 @@ Ensure the following criteria are met:
 - Your personal Snapchat login has appropriate permissions within your business. Snapchat Account Admin or Data Manager permissions are required to configure and add audiences.
 - Your Snap Ads account is in `Active` status.
 
-### How do I view the sync status? 
+### How do I view the sync status?
 
 Status will be shown in the Event Delivery tool. When you view the audience, you can open the side bar which directs you  to [Event Delivery](/docs/getting-started/06-testing-debugging/#event-delivery).

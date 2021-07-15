@@ -1,5 +1,5 @@
 ---
-title: All about Cloud Sources
+title: Cloud Sources
 redirect_from:
   - '/connections/sources/what-are-cloud-sources/'
   - '/connections/sources/cloud-source-data/'

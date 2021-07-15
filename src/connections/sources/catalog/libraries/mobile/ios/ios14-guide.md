@@ -6,9 +6,12 @@ strat: ios
 > warning ""
 > **Note:** You should update your `analytics-ios` and device-mode destinations to adapt to iOS 14 changes explained in this guide.
 
+> note ""
+> For information about iOS 14.5, see [What's new in iOS 14.5](#whats-new-with-ios-145) below.
+
 In June 2020, Apple made several privacy-related announcements at WWDC20 about its upcoming iOS 14 release, including [changes to the collection and use of Identifier for Advertising (IDFA)](https://developer.apple.com/app-store/user-privacy-and-data-use/). These changes require developers to ask for user consent *before* collecting IDFA to track users across multiple applications.
 
-Segment fundamentally agrees with Apple’s stance. The world is becoming more privacy-conscious, and we believe that every single one of us will have right to own our own data. The best companies are the ones using this data in responsible ways.
+Segment fundamentally agrees with Apple’s stance.
 
 Apple released iOS 14 in the autumn of 2020, but [delayed the IDFA changes until early 2021](https://developer.apple.com/news/?id=hx9s63c5&1599152522). Segment products, including Connections, Protocols, Personas (including Identity Resolution), and Privacy, Data Lakes, and Cloud Sources, do not rely on IDFA and so are not affected by these platform changes. However, Segment’s iOS Source SDK (`analytics-ios`) and any destinations that previously used IDFA require that you update them so they continue to work with iOS 14.
 
@@ -55,3 +58,35 @@ Additional affected integration partners are in the process of making changes, a
 
 > info ""
 > If you discover an integration affected by Apple’s iOS 14 changes, but is not listed above or does not have updates, [contact customer support](https://segment.com/help/contact/).
+
+## What's new with iOS 14.5?
+
+On April 26, 2021, Apple released iOS 14.5 which includes the following updates that may impact your Segment implementation.
+
+### App Tracking Transparency
+
+With iOS 14.5, Apple is enforcing their [App Tracking Transparency privacy policy](https://developer.apple.com/app-store/user-privacy-and-data-use/). If you link user or device data collected from your application with user or device data collected from other companies’ apps, websites, or offline properties for targeted advertising or measurement purposes, you will need to collect end-user permission through Apple’s [AppTrackingTransparency framework](https://developer.apple.com/documentation/apptrackingtransparency).
+
+As a first-party data pipeline, Segment helps you collect data directly from end-users that have a direct relationship with your products or services. This includes information on which products a customer views or purchases from you, how often they visit your website or mobile app, and even data that’s stored in your CRM system. 
+
+First-party data is distinct from third-party data, which is facilitated by data brokers. Apple defines a data broker as “In general, a data broker is a company that regularly collects and sells, licenses, or otherwise discloses to third parties the personal information of particular end-users with whom the business does not have a direct relationship.”
+
+Using Segment in your mobile app does not require App Tracking Transparency (ATT). However, depending on the way you use Segment and the destinations you have configured, you may need to collect end-user permission through ATT. In particular, customers that rely on advertising, attribution, or rely on the IDFA as their primary user identifier will likely need to implement ATT. 
+
+Please review Apple's documentation, Terms of Service, and your destinations’ documentation to determine whether you need to use Apple's ATT framework in your application.
+
+
+### Does Segment integrate with SKAdnetwork? 
+
+[SKAdnetwork](https://developer.apple.com/documentation/storekit/skadnetwork) is a framework developers can use to attribute mobile app installs while maintaining user privacy.  The conversion data shared back to advertisers are received at a random interval 24-48 hours after the install occurs and contain no user or device context. 
+
+Segment does not integrate with SKAdnetwork, but developers can integrate directly with SKAdnetwork alongside their Segment implementation. For more on how to use SKAdnetwork in your mobile app, see [Apple's documentation](https://developer.apple.com/documentation/storekit/skadnetwork). 
+
+### Destination iOS 14.5 guides
+
+Segment’s partners have put together resources to help you navigate these changes. This list will update as more partners provide guidance:
+
+- [Branch](https://help.branch.io/faq/docs/what-actions-do-branch-customers-need-to-take-before-the-ios-145-release)
+- [Adjust](https://help.adjust.com/en/article/attribution-privacy-models)
+- [Tune](https://www.tune.com/blog/what-ios-14-5-and-apples-latest-privacy-initiatives-mean-for-marketers/)
+- [Kochava](https://www.kochava.com/ios-14-5-final-launch-checklist/)

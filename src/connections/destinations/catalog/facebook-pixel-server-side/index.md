@@ -4,6 +4,7 @@ rewrite: true
 beta: true
 strat: facebook
 redirect_from: '/connections/destinations/catalog/facebook-conversions-api/'
+hide-dossier: true
 ---
 
 <!-- LR: 2/16/2021: Redirect pulls in from `facebook-conversions-api` because while this destination's display name has changed, the slug is still the old name and the docs build needs to match on slug to find it in `destinations.yml` -->
@@ -78,7 +79,7 @@ This approach provides a redundancy that ensures maximum signal reliability. Eve
 For this option to work best, you must pass the same `external_id` from both the browser and the server sources.
 To do this, go to your Facebook Pixel destination settings in Segment, and enable **Use UserId or Anonymous Id as External Id**. By default the Facebook Conversions API destination uses the `userId` (or `anonymousId` if not present) to set the External Id, so when you set up Facebook Pixel to use the same settings, Facebook can then match the users.
 
-You can also increase the match rate for events from a server source by sending [user traits in the context object of the track events](/#default-mappings-to-facebook-properties). You can also collect other fields from the browser, such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) and pass them to the server, and manually add them to the events.
+You can also increase the match rate for events from a server source by sending [user traits in the context object of the track events](#default-mappings-to-facebook-properties). You can also collect other fields from the browser, such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) and pass them to the server, and manually add them to the events.
 
 #### Deduplication considerations
 
@@ -92,7 +93,7 @@ Use this approach if you want to separate tracking events completed on a user's 
 
 For this option to work best, the same `external_id` needs to be passed from the browser and from the server. To easily achieve this go to your Segment destination settings for Facebook Pixel and toggle on the setting called **Use UserId or Anonymous Id as External Id**. The Facebook Conversions API destination uses the userId (or anonymousId if not present) to set the External Id by default. Therefore enabling this on Facebook Pixel will allow Facebook to match the users.
 
-You can also increase the match rate for events from a server source by sending [user traits in the context object of the track events](/#default-mappings-to-facebook-properties). You can also collect other fields from the browser, such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) and pass them to the server, and manually add them to the events.
+You can also increase the match rate for events from a server source by sending [user traits in the context object of the track events](#default-mappings-to-facebook-properties). You can also collect other fields from the browser, such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) and pass them to the server, and manually add them to the events.
 
 #### Deduplication considerations
 
@@ -106,7 +107,7 @@ Use this approach if you don't want to track users from the browser with Faceboo
 
 If you use Facebook Conversions API as a stand-alone without certain data fields collected from the browser, the match rate might not be as high as if you included them.
 
-You can also increase the match rate for events from a server source by sending [user traits in the context object of the track events](/#default-mappings-to-facebook-properties). You can also collect other fields from the browser, such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) and pass them to the server, and manually add them to the events.
+You can also increase the match rate for events from a server source by sending [user traits in the context object of the track events](#default-mappings-to-facebook-properties). You can also collect other fields from the browser, such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) and pass them to the server, and manually add them to the events.
 
 
 #### Deduplication considerations
@@ -132,13 +133,12 @@ Beginning February 15th 2021, Facebook requires the `action_source` server event
 
 ### Action Source
 
-`action_source` is set to "website" as a default value. If a mobile library is used then `action_source` defaults to "app".
+`action_source` is set to "website" as a default value.
 
 You can set `action_source` manually by passing it as a property of a Track event. You can use either snake case or camel case to include `action_source` as a property in Track events.
 
 | Action Source Values | Description                                                                                               |
 | -------------------- | --------------------------------------------------------------------------------------------------------- |
-| `app`                | Conversion was made using your app.                                                                       |
 | `chat`               | Conversion was made via a messaging app, SMS, or online messaging feature.                                |
 | `email`              | Conversion happened over email.                                                                           |
 | `other`              | Conversion happened in a way that is not listed.                                                          |

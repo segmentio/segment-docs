@@ -3,11 +3,10 @@ layout: integration
 ---
 <div class="markdown">
 
-{% unless page.hide-dossier == true %}
-  {% capture destination-dossier %}{% include content/destination-dossier.md  %}{% endcapture %}
+{% unless page.hide-dossier == true or page.name != "index.md" %}
+  {% capture destination-dossier %}{% include content/destination-dossier.html %}{% endcapture %}
   {{ destination-dossier | markdownify }}
 {% endunless %}
-
 
   {{ content }}
 

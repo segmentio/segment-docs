@@ -19,7 +19,10 @@ If you notice any gaps, out-dated information or simply want to leave some feedb
 
 ### iOS
 
-If you are using iOS, simply add this line to your [CocoaPods](http://cocoapods.org) `Podfile`:
+> info ""
+> **Note**: The Adjust SDK requires these [frameworks from Apple](https://github.com/adjust/ios_sdk#add-ios-frameworks) to enable advanced features like attribution. For best results, add these frameworks to your application.
+
+If you are using iOS, add this line to your [CocoaPods](http://cocoapods.org) `Podfile`:
 
 ```ruby
 pod "Segment-Adjust"
@@ -82,7 +85,7 @@ To use the latest Adjust SDK to collect IDFAs you must do the following:
 
 ### Android
 
-If you are using Android, simply add this line to your gradle file:
+If you are using Android, add this line to your gradle file:
 
 ```java
 compile 'com.segment.analytics.android.integrations:adjust:+'
