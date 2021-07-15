@@ -41,7 +41,7 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 
 Below is a table of events that **Shopify by Littledata** sends to Segment through the analytics.js library. These events will show up as tables in your warehouse, and as regular events in your other Destinations supporting device-mode.
 
-You can _out out_ of device-mode pageviews or events by setting `disableClientSideEvents: true` or `disablePageviews: true` in the `LittledataLayer` settings.
+You can _opt out_ of device-mode pageviews or events by setting `disableClientSideEvents: true` or `disablePageviews: true` in the `LittledataLayer` settings.
 
 | Event Name            | Description                                                         |
 | --------------------- | ------------------------------------------------------------------- |
@@ -179,8 +179,7 @@ The list below outlines the properties included in the events listed above.
 | `total`                                | The total value of the order                                                                       | Float         |
 | `userId`                               | Chosen user identifier, defaulting to Shopify Customer ID                                          | String        |
 
-> note ""
-> \*`revenue` is available only with the Order Completed event, and only if the store opts in via the Littledata application. Revenue is a reserved property in many Segment destinations. Opting in will override the `total` property sent to Google Analytics.
+> note "" \*`revenue` is available only with the Order Completed event, and only if the store opts in via the Littledata application. Revenue is a reserved property in many Segment destinations. Opting in will override the `total` property sent to Google Analytics.
 
 ## Product properties
 
