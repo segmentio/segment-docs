@@ -41,6 +41,8 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 
 Below is a table of events that **Shopify by Littledata** sends to Segment through the analytics.js library. These events will show up as tables in your warehouse, and as regular events in your other Destinations supporting device-mode.
 
+You can _opt out_ of device-mode pageviews or events by setting `disableClientSideEvents: true` or `disablePageviews: true` in the `LittledataLayer` settings.
+
 | Event Name            | Description                                                         |
 | --------------------- | ------------------------------------------------------------------- |
 | Cart Viewed           | A user has viewed the /cart page                                    |
@@ -55,7 +57,7 @@ Below is a table of events that **Shopify by Littledata** sends to Segment throu
 | Thank you Page Viewed | A user has viewed the thank you page after completing an order\*    |
 
 > note ""
-> *This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
+> \*This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
 
 ## Cloud-mode events
 
@@ -98,6 +100,7 @@ The following traits are included with an Identify call:
 
 | Property Name                | Description                                                                                                                | Property Type |
 | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `accepts_marketing`          | Whether the customer has accepted marketing                                                                                | Boolean       |
 | `createdAt`                  | The date customer record was created                                                                                       | Date          |
 | `customerLifetimeValue`      | The total spend of customer on the Shopify store                                                                           | Double        |
 | `default_address.street`     | The customer's default street address                                                                                      | String        |
@@ -177,7 +180,7 @@ The list below outlines the properties included in the events listed above.
 | `userId`                               | Chosen user identifier, defaulting to Shopify Customer ID                                          | String        |
 
 > note ""
-> *`revenue` is available only with the Order Completed event, and only if the store opts in via the Littledata application. Revenue is a reserved property in many Segment destinations. Opting in will override the `total` property sent to Google Analytics.
+> \*`revenue` is available only with the Order Completed event, and only if the store opts in via the Littledata application. Revenue is a reserved property in many Segment destinations. Opting in will override the `total` property sent to Google Analytics.
 
 ## Product properties
 

@@ -355,7 +355,7 @@ If you're running a web server, you might want to send [context variables](https
 Analytics.Client.Page("019mr8mf4r", "Login", new Properties() {
     { "path", "/login" },
     { "title", "Initech Login" }
-}), new Options()
+}, new Options()
     .SetContext (new Context () {
         { "userAgent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"},
         { "ip", "12.212.12.49" },
@@ -364,7 +364,7 @@ Analytics.Client.Page("019mr8mf4r", "Login", new Properties() {
           { "clientId", User.ClientId }
           }
         }
-});
+}));
 ```
 
 ## Anonymous ID
