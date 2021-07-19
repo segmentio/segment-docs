@@ -116,13 +116,6 @@ properties out of a single object in an array.
 You are currently limited to 10 filters per destination. If you need help
 consolidating filters or would like to discuss your use case, [contact us](https://segment.com/help/contact/)!
 
-
-**Q: When will you support device-mode?**
-
-Device-mode destination filters for Web are currently in Early Access Preview.
-
-[contact us](https://segment.com/help/contact/) if you are interested in testing this feature.
-
 **Q: When will you support warehouses?**
 
 If you want to filter out events from warehouses, the best way to do that today

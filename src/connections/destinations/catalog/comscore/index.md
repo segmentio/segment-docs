@@ -14,18 +14,6 @@ When you enable comScore in the Segment web app, your changes appear in the Segm
 
 To get started with comScore and Segment, you'll want to first integrate your mobile app with our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](/docs/connections/sources/catalog/libraries/mobile/android/) sources. comScore can only accept data sent directly from their iOS and Android SDKs. For that reason we can only send data directly from our iOS and Android SDKs to comScore. **Data recorded in our server-side sources cannot be sent to comScore.** Be sure to follow the additional set up steps to get started, which you can find [here for iOS](https://github.com/segment-integrations/analytics-ios-integration-comscore#analytics-ios-integration-comscore) and [here for Android](https://github.com/segment-integrations/analytics-android-integration-comscore#analytics-android-integration-comscore).
 
-With the recent comScore update, there is an additional implementation step when getting started with comScore Android. Be sure to add this to your gradle file:
-
-```
-allprojects {
-  repositories {
-    maven {
-      url "https://comscore.bintray.com/Analytics"
-    }
-  }
-}
-```
-
 ## React Native
 
 {% include content/react-dest.md only="ios"%}

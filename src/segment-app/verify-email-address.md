@@ -1,5 +1,5 @@
 ---
-title: "How do I verify my email address?"
+title: "Verifying Your Email Address"
 ---
 
 Before you can use your Segment account, you first need to verify your email address. We automatically send a verification message to the address you used to sign, but you can re-send the verification email if you didn't receive it.

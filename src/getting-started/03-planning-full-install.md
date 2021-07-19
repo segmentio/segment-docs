@@ -1,5 +1,5 @@
 ---
-title: Planning a full installation
+title: Planning a Full Installation
 ---
 
 Now that we’ve shown you Segment in action, let’s step back and think through what a full implementation of Segment for your organization would look like. We know that figuring out what events to track in Segment can feel overwhelming. You should expect this planning process to have the following steps:

@@ -1,5 +1,5 @@
 ---
-title: A simple Segment installation
+title: A Simple Segment Installation
 ---
 
 

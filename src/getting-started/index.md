@@ -1,5 +1,5 @@
 ---
-title: Getting Started with Segment
+title: Getting Started With Segment
 ---
 
 <iframe width="100%" height="385" src="https://www.youtube.com/embed/-5nUITqOz3Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

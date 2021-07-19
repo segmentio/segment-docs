@@ -24,16 +24,18 @@ This document was last updated on February 05, 2020. If you notice any gaps, out
               "Effect": "Allow",
               "Action": [
                   "kinesis:PutRecord",
-                  "kinesis:PutRecords"
+                  "kinesis:PutRecords",
+                  "iam:SimulatePrincipalPolicy"
               ],
               "Resource": [
-                  "arn:aws:kinesis:{region}:{account-id}:stream/{stream-name}"
+                  "arn:aws:kinesis:{region}:{account-id}:stream/{stream-name}",
+                  "arn:aws:iam::{account-id}:role/{role-name}"
               ]
           }
       ]
    }
    ```
-   **Note:** A previous version of this policy document only granted `PutRecord` access, which could slow down Kinesis write times by disallowing file batching. Substitute the updated policy document above to grant Kinesis `PutRecords` (plural) and allow batching.
+   **Note:** A previous version of this policy document only granted `PutRecord` access, which could slow down Kinesis write times by disallowing file batching. Substitute the updated policy document above to grant Kinesis `PutRecords` (plural) and allow batching. We've also requested `iam:SimulatePrincipalPolicy`, which will allow us to verify that the IAM Role has the appropriate Kinesis permissions without invoking the Kinesis API.
 
 3. Create an IAM role.
    Follow these instructions to [Create an IAM role](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html#roles-creatingrole-user-console) to allow Segment permission to write to your Kinesis Stream. When prompted to enter an Account ID, enter "595280932656". Make sure to enable 'Require External ID' and enter your Segment Source ID as the External ID*. This can be found by navigating to Settings > API Keys from your Segment source homepage. When adding permissions to your new role, find the policy you created above and attach it.
@@ -177,6 +179,30 @@ Replace that snippet with the following, and replace the contents of the array w
   ]
 }
 ```
+
+### Update IAM to Support PutRecords
+
+The Kinesis destination defaults to use PutRecords. A previous version of the IAM policy document only granted `PutRecord` access, which can slow down Kinesis write times and degrade data deliverability. Substitute the updated policy document above to grant Kinesis `PutRecords` (plural) and allow batching, like this: 
+   ```json
+   {
+      "Version": "2012-10-17",
+      "Statement": [
+          {
+              "Effect": "Allow",
+              "Action": [
+                  "kinesis:PutRecord",
+                  "kinesis:PutRecords",
+                  "iam:SimulatePrincipalPolicy"
+              ],
+              "Resource": [
+                  "arn:aws:kinesis:{region}:{account-id}:stream/{stream-name}",
+                  "arn:aws:iam::{account-id}:role/{role-name}"
+              ]
+          }
+      ]
+   }
+   ```
+After you update the IAM policy, Segment systems default to use PutRecords for more efficient data transmission. This is a zero-downtime change and does not impact your data other than increasing the deliverability success rate.
 
 ### Use a single secret ID
 If you have so many sources using Kinesis that it is impractical to attach all of their IDs to your IAM role, you can instead opt to set a single ID to use instead. This approach should be avoided in favor of the above approach if possible since it will result in you having to keep track of a secret value. To set this value, go to the Kinesis destination settings from each of your Segment sources and set the 'Secret ID' to a value of your choosing. This value is a secret and should be treated as sensitively as a password. Once all of your sources have been updated to use this value, find the IAM role you created for this destination in the AWS Console in Services > IAM > Roles. Click on the role, and navigate to the **Trust Relationships** tab. Click **Edit trust relationship**. You should see a snippet that looks something that looks like this:

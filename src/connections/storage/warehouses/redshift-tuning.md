@@ -1,5 +1,5 @@
 ---
-title: How do I speed up my Redshift queries?
+title: Speeding Up Redshift Queries 
 redirect_from: '/connections/warehouses/redshift-tuning/'
 ---
 

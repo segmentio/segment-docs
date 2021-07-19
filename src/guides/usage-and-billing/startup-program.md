@@ -1,5 +1,5 @@
 ---
-title: What is the Segment Startup Program?
+title: Segment Startup Program
 ---
 
 Segment offers a **Startup Program** to enable early startups to track data correctly and easily test the marketing and analytics tools necessary to grow their business. The program is open to any early-stage startup that meets the following eligibility requirements:

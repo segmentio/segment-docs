@@ -1,6 +1,7 @@
 ---
 title: Amazon Lambda Destination
 rewrite: true
+hide-personas-partial: true
 ---
 
 Segment makes it easy to send your data to AWS Lambda (and lots of other destinations). Once you collect your data using Segment's [open source libraries](/docs/connections/sources/catalog/), Segment translates and routes your data to AWS Lambda in the format it can use.

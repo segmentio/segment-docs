@@ -2,7 +2,7 @@ import ClipboardJS from 'clipboard'
 import tippy from 'tippy.js'
 
 const COMPONENT_SELECTOR = '[data-headings-anchors]'
-const HEADINGS_SELECTOR = 'h1, h2, h3, h4, h5'
+const HEADINGS_SELECTOR = 'h1, h2, h3, h4, h5, .def'
 
 export default function () {
   const components = document.querySelectorAll(COMPONENT_SELECTOR)

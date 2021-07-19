@@ -285,26 +285,6 @@ async function onIdentifyBatch(events, settings) {
 
 You cannot configure batch parameters (either in the code or UI) in this version of the beta. Functions waits up to 10 seconds to form a batch of 20 events. If you would like to change your batch parameters, please fill out [this form](https://airtable.com/shr9TU4huO0PK0DSU) and Support will contact you once this is made available.
 
-### Avoid writing batch and single event handlers
-
-Your function might not get enough event traffic to create a batch of short windows of time. In this case, your function invokes the single event handler. If you need to consolidate your code into an `onBatch` handler, you can define single event handlers that call `onBatch`.
-
-```js
-async function onTrack(event, settings) {
-  return onBatch([event], settings)// defer to onBatch
-}
-
-async function onIdentify(event, settings) {
-  return onBatch([event], settings) // defer to onBatch
-}
-
-// do the same for onAlias, onGroup, onPage, onScreen, onDelete
-
-async function onBatch(events, settings) {
-  // handle batch of events
-}
-```
-
 ### Test the batch handler
 
 The [Functions editing environment](/docs/connections/functions/environment/) supports testing batch handlers. In the right panel of the Functions editor, click **customize the event yourself** to enter Manual Mode. Add events as a JSON array, with one event per element. Click **Run** to preview the batch handler with the specified events.
