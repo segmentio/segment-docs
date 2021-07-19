@@ -54,6 +54,12 @@ title: Actions Mapping
     text-transform: uppercase;
     color: rgb(71, 77, 102);
     opacity: 0.65;
+    white-space: nowrap;
+  }
+
+  .device-web-mode, .device-mobile-mode {
+    background-color: #e6f5ef;
+    color: #317159
   }
 
 </style>
@@ -65,8 +71,9 @@ title: Actions Mapping
   <a href="#" id="all" class="button button-link active">All</a>
   <a href="#" id="true" class="button button-link" >Configurable</a>
   <a href="#" id="false" class="button button-link" >Not Configurable</a>
-  <a href="#" id="cloud" class="button button-link">Cloud-mode</a>
-  <a href="#" id="device" class="button button-link" >Device-mode</a>
+  <a href="#" id="cloud" class="button button-link">Cloud</a>
+  <a href="#" id="device-web" class="button button-link" >Device-web</a>
+  <a href="#" id="device-mobile" class="button button-link" >Device-mobile</a>
 </div>
 
 <table id="settingsTable">
@@ -88,7 +95,7 @@ title: Actions Mapping
       class="settingRow {%unless setting.configurable%}no-map{%endunless%} {{setting.configurable}} {% for mode in setting.connection_mode %}{{mode}} {%endfor%}"
       id="settingRow">
       <td>{{setting.name}} <br /> {% for mode in setting.connection_mode %}<span
-          class="cmode">{{mode | capitalize}}-mode</span> {% endfor %}</td>
+          class="cmode {{mode}}-mode">{{mode | capitalize}}</span> {% endfor %}</td>
       <!-- <td>{{setting.configurable}}</td> -->
       <td>{% if setting.location %}{{setting.location}} <br /> <br /> {% endif %}{{setting.notes}}</td>
     </tr>
