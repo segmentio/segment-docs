@@ -81,7 +81,7 @@ title: Actions Mapping
     <tr>
       <th>Amplitude 1.0 Destination Setting</th>
       <!-- <th>Configurable in Amplitude (Actions)?</th> -->
-      <th>Details</th>
+      <th>How to enable in Amplitude (Actions)</th>
     </tr>
   </thead>
   <tbody>

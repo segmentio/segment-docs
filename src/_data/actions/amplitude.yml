@@ -214,7 +214,7 @@ config:
         - device-web
       configurable: false
       location:
-      notes: This setting sends `[Session Started]` and `[Session Ended]` events. However, Session ID is used most often in session-based reporting. Analytics.js sources track Session ID by default. Mobile sources require a plugin to enable Session ID tracking. 
+      notes: This setting sends `[Session Started]` and `[Session Ended]` events. However, Session ID is used most often in session-based reporting. Analytics.js sources track Session ID by default. Mobile sources require a plugin to enable Session ID tracking. For more information, see [Enable Session Tracking for Analytics.js 2.0](/docs/connections/destinations/catalog/actions-amplitude/#enable-session-tracking-for-analyticsjs-20)
     - name: Track UTM Properties to Amplitude
       connection_mode:
         - cloud
