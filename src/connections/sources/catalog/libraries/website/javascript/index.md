@@ -659,11 +659,11 @@ Analytics.js stores events in `localStorage` and falls back to in-memory storage
 
 ## Batching
 Batching is the ability to group multiple requests or calls into one request or API call. All requests sent within the same batch have the same `receivedAt` time. With Analytics.js, you can send events to Segment in batches. Sending events in batches enables you to have:
-- Delivery of multiple events with fewer API calls, using the [batch endpoint](/docs/connections/sources/catalog/libraries/server/http-api/#batch)
+- Delivery of multiple events with fewer API calls
 - Fewer errors if a connection is lost because an entire batch will retry at once rather than multiple calls retrying at random times.
 
 ### Setup
-You can start batching by changing the parameters for `size` and `timeout` within the `load` method in the analytics object. Batching requires both parameters.
+You can start batching by changing the `strategy` to `"batching"` and the parameters for `size` and `timeout` within the `load` method in the analytics object. Batching requires both parameters.
 
 ```js
 analytics.load("<write_key>", {
@@ -692,7 +692,7 @@ Your total batched events can’t exceed the maximum payload size of 500 KB, wit
 `timeout` is the number of milliseconds that forces all events queued for batching to be sent, regardless of the batch size, once it’s reached. For example, `timeout: 5000` sends every event in the batch to Segment once 5 seconds passes.
 
 ### Implicit and explicit batching
-All batching is done implicitly and doesn’t require you to change your Analytics.js implementation.
+All batching is done implicitly as it doesn’t require you to change your Analytics.js implementation. Implicit batching is a great option is you want an out of the box approach to batching as you only need to add the required parameters to your load method (mentioned above in Setup) and Analytics.js will handle the rest.
 
 You can fire your analytics events as usual and assume they’ll be delivered the same as individual events would. This code block shows implicit batching:
 
@@ -711,7 +711,7 @@ analytics.track('Checkout clicked')
 // These 5 events will potentially be delivered in the same batch, depending on how far apart they're executed (based on batching config)
 ```
 
-You can get explicit delivery guarantees by changing the implicit code example above to this:  
+If you want to guarantee which specific events are delivered together in the batch, you can set up explicit batching by using `await Promise` and changing the implicit code example above to this:  
 
 ```js
 const checkout = analytics.page('Checkout')
@@ -726,7 +726,7 @@ const clicked = analytics.track('Checkout clicked')
 // This line will block execution until all events in the artificial batch have been delivered
 await Promise.all([checkout, identify, seen, added, clicked])
 ```
-In the case where all events are delivered without any user behavior, you can explicitly guarantee delivery as shown in this example code:
+In the case where all events are delivered without any user behavior, you can guarantee delivery with explicit batching as shown in this example code:
 
 ```js
 // Will wait for all events to be delivered before moving on.
@@ -741,9 +741,9 @@ analytics.track('Product Added')
 analytics.track('Checkout clicked')
 ```
 
-### FAQs
+### Batching FAQs
 #### Will Analytics.js deliver events that are in the queue when a user closes the browser?
-Analytics.js will do its best to deliver the queued events before the browser closes, but the delivery isn’t guaranteed.
+Analytics.js does its best to deliver the queued events before the browser closes, but the delivery isn’t guaranteed.
 
 Upon receiving the `beforeunload` browser event, Analytics.js attempts to flush the queue using `fetch` requests with `keepalive` set to true. Since the max size of `keepalive` payloads is limited to 64 KB, if the queue size is bigger than 64 KB at the time the browser closes, then there is a chance of losing a subset of the queued events. Reducing the batch size or timeout will alleviate this issue, but that will be a trade-off decision.
 
