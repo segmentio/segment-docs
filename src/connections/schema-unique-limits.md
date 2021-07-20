@@ -1,5 +1,5 @@
 ---
-title: Are there limits on my Segment Schema?
+title: Segment Schema Limits
 ---
 
 **How many unique events can be logged in my Segment Schema table?**

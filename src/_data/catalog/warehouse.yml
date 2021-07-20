@@ -89,7 +89,7 @@ items:
   name: catalog/warehouse/data-lakes
   description: ''
   url: connections/storage/catalog/data-lakes
-  status: PUBLIC_BETA
+  status: PUBLIC
   logo:
     url: 'https://cdn.filepicker.io/api/file/YR7dKXAiQWyYvBiVOZNX'
   mark:

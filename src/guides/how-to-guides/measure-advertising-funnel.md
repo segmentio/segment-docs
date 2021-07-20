@@ -1,5 +1,5 @@
 ---
-title: How do I measure my advertising funnel?
+title: Measuring Your Advertising Funnel
 ---
 
 It’s surprisingly hard to answer questions about the ROI of your ad campaigns. What does a click actually result in? How much should I pay for it? We built our Sources for Facebook Ads and Google Adwords to help you understand the true performance and cost of your campaigns.

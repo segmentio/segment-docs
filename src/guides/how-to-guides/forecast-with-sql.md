@@ -1,5 +1,5 @@
 ---
-title: How do I forecast LTV with SQL and Excel for e-commerce?
+title: Forecasting LTV with SQL and Excel for E-Commerce
 ---
 
 Customer Lifetime Value ("LTV") is the amount of money that an individual customer will spend with a given business in the future. It's often used to value cohorts in your customer base, determine how much to spend in acquiring or retaining new users in a given cohort, rank customers, and measure the success of marketing activities from a baseline LTV forecast.

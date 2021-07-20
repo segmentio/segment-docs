@@ -1,5 +1,5 @@
 ---
-title: What's next?
+title: What's Next
 ---
 
 You're just getting started with Segment, but there's so much more to explore!

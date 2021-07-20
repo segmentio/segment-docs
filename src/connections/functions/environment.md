@@ -1,5 +1,5 @@
 ---
-title: The Functions editing environment
+title: The Functions Editing Environment
 ---
 
 

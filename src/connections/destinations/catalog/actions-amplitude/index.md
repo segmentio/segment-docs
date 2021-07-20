@@ -46,7 +46,10 @@ Session tracking is only available when using Segment's new libraries: [Analytic
 Once you have a mapping, you can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
 
-### Enable Amplitude session tracking for Analytics.js 2.0
+### Device ID Mappings
+The Amplitude destination requires that each event include either a Device ID or a User ID. If a User ID isn't present, Amplitude uses the a Device ID, and vice versa, if a Device ID isn't present, Amplitude uses the User ID. By default, Segment maps the Segment property `context.device.id` to the Amplitude property `Device ID`. If `context.device.id` isn't available, Segment maps the property `anonymousId` to the Amplitude `Device ID`. This is indicated by the following text in the Device ID field: `coalesce(` `context.device.id` `anonymousId` `)`. 
+
+### Enable session tracking for Analytics.js 2.0
 
 The session tracking is automatically enabled on Javascript sources.
 

@@ -1,5 +1,5 @@
 ---
-title: How does Segment handle duplicate data?
+title: Handling Duplicate Data
 ---
 
 Segment has a special de-duplication service that sits just behind the `api.segment.com` endpoint, and attempts to drop duplicate data. However, that de-duplication service has to hold the entire set of events in memory in order to know whether or not it has seen that event already. Segment stores 24 hours worth of event `message_id`s. This means Segment can de-duplicate any data that appears within a 24 hour rolling window.
