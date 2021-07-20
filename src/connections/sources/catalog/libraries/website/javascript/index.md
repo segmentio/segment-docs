@@ -659,7 +659,11 @@ Analytics.js stores events in `localStorage` and falls back to in-memory storage
 
 ## Batching
 Batching is the ability to group multiple requests or calls into one request or API call. All requests sent within the same batch have the same `receivedAt` time. With Analytics.js, you can send events to Segment in batches. Sending events in batches enables you to have:
+<<<<<<< HEAD
 - Delivery of multiple events with fewer API calls, using the [batch endpoint](/docs/connections/sources/catalog/libraries/server/http-api/#batch)
+=======
+- Delivery of multiple events with fewer API calls, using the batch endpoint
+>>>>>>> 2e2f61061256fe87c30797438520500837992727
 - Fewer errors if a connection is lost because an entire batch will retry at once rather than multiple calls retrying at random times.
 
 ### Setup
