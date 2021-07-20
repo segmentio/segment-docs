@@ -37,3 +37,6 @@ items:
       accepts cloud-mode data from all Segment source types. It does not offer device-mode connections.
     cmode_type: mixed
     case: '5'
+- slug: google-ads-gtag
+  previous_names:
+  - Google AdWords New
