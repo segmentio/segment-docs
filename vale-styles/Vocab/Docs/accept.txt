@@ -45,3 +45,4 @@ viewability
 measurability
 Lightbox
 gmail
+(?:P|p)endo
