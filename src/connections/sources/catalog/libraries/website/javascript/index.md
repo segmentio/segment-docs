@@ -691,56 +691,6 @@ Your total batched events can’t exceed the maximum payload size of 500 KB, wit
 #### Timeout
 `timeout` is the number of milliseconds that forces all events queued for batching to be sent, regardless of the batch size, once it’s reached. For example, `timeout: 5000` sends every event in the batch to Segment once 5 seconds passes.
 
-### Implicit and explicit batching
-All batching is done implicitly as it doesn’t require you to change your Analytics.js implementation. Implicit batching is a great option is you want an out of the box approach to batching as you only need to add the required parameters to your load method (mentioned above in Setup) and Analytics.js will handle the rest.
-
-You can fire your analytics events as usual and assume they’ll be delivered the same as individual events would. This code block shows implicit batching:
-
-```js
-
-// Implicit Batching
-
-analytics.page('Checkout')
-analytics.identify('User ID')
-analytics.track('Checkout seen')
-
-// some time later
-analytics.track('Product Added')
-analytics.track('Checkout clicked')
-
-// These 5 events will potentially be delivered in the same batch, depending on how far apart they're executed (based on batching config)
-```
-
-If you want to guarantee which specific events are delivered together in the batch, you can set up explicit batching by using `await Promise` and changing the implicit code example above to this:  
-
-```js
-const checkout = analytics.page('Checkout')
-const identify = analytics.identify('User ID')
-const seen = analytics.track('Product Added')
-
-// some time later
-const added = analytics.track('Product Added')
-const clicked = analytics.track('Checkout clicked')
-
-// Collecting all promises and awaiting on them will create an artificial batch
-// This line will block execution until all events in the artificial batch have been delivered
-await Promise.all([checkout, identify, seen, added, clicked])
-```
-In the case where all events are delivered without any user behavior, you can guarantee delivery with explicit batching as shown in this example code:
-
-```js
-// Will wait for all events to be delivered before moving on.
-await Promise.all([
-  analytics.page('Checkout'),
-  analytics.identify('User ID'),
-  analytics.track('Product Added')
-])
-
-// some time later
-analytics.track('Product Added')
-analytics.track('Checkout clicked')
-```
-
 ### Batching FAQs
 #### Will Analytics.js deliver events that are in the queue when a user closes the browser?
 Analytics.js does its best to deliver the queued events before the browser closes, but the delivery isn’t guaranteed.
