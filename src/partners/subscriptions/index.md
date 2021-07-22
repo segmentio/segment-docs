@@ -21,6 +21,9 @@ Review the steps outlined in the [Developer Center Overview](/docs/partners). Th
 
 ## Build & Test
 
+> note ""
+> **NOTE:** On July 31, 2021 support for building Subscription Functions will be removed from Developer Center. You may continue building a Subscription Webhook. We have some exciting updates coming down the pipe for Developer Center 2.0 which will offer a more holistic approach to building on Segment. If you’re interested in joining the beta in the coming months, please fill out [this form](https://airtable.com/shrvZzQ6NTTwsc6rQ)!
+
 You can subscribe to customer data in two ways:
 
 1. **[Webhook](/docs/partners/subscriptions/build-webhook)**: Build a new HTTP service that receives Webhook POSTs from Segment.
