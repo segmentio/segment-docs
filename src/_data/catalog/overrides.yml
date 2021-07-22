@@ -40,3 +40,23 @@ items:
 - slug: google-ads-gtag
   previous_names:
   - Google AdWords New
+- slug: klaviyo
+  display_name: Klaviyo
+  components:
+  - code: 'https://github.com/segment-integrations/analytics.js-integration-klaviyo'
+    type: browser
+  - code: 'https://github.com/segmentio/integrations/tree/master/integrations/klaviyo'
+    type: server
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from web and mobile sources, and can accept data in device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '10'
