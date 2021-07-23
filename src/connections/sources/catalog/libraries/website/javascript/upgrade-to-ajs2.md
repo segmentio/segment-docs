@@ -3,7 +3,7 @@ title: Upgrade to Analytics.js 2.0
 strat: ajs
 ---
 
-Analytics.js 2.0 is fully backward compatible with Analytics.js Classic when using the default Segment snippet. To upgrade your sources, follow the manual upgrade steps below, or see the schedule for automatic migration. As with all upgrades, Segment recommends that you start development on a non-production source to test the upgrade process and outcome, prior to upgrading your production sources.
+Analytics.js 2.0 is fully backward compatible with Analytics.js Classic when you use the default Segment snippet in a standard implementation. To upgrade your sources, follow the manual upgrade steps below, or see the schedule for automatic migration. As with all upgrades, Segment recommends that you start development on a non-production source to test the upgrade process and outcome, prior to upgrading your production sources.
 
 ## Manual upgrade
 
