@@ -2,7 +2,7 @@
 title: 'Quickstart: ASP.NET'
 ---
 
-This tutorial will help you start sending analytics data from your ASP.NET app to Segment and any of our destinations, using our .NET and analytics.js library. As soon as you're set up you'll be able to turn on analytics tools, ad conversion pixels, email tools and lots of other destinations with the flip of a switch!
+This tutorial will help you start sending analytics data from your ASP.NET app to Segment and any of our destinations, using our .NET and Analytics.js library. As soon as you're set up you'll be able to turn on analytics tools, ad conversion pixels, email tools and lots of other destinations with the flip of a switch!
 
 If you want to dive deeper at any point, check out the [.NET library reference](/docs/connections/sources/catalog/libraries/server/net).
 
@@ -16,32 +16,26 @@ The best analytics installation combines both client-side and server-side tracki
 
 Before you begin, you need a Workspace (which is a container that holds all of the sources and destinations which are billed together for an organization). If you already created one, great! If not, you can sign up for a free Segment account and create one.
 
-Next, create a Ruby source from your Workspace:
+Next, create a .NET source from your Workspace:
 
 1. Click **Add Source**.
-2. From the source catalog page, click **Ruby**.
+2. From the source catalog page, click **.NET**.
 3. Click **Add Source** again from the informational panel that appears to the right.
-4. Give the source a display name, and enter the URL the source will collect data from.
+4. Give the source a display name, and add any labels for the source.
 
 When you create a Source in the Segment web app, it tells the Segment servers that you'll be sending data from a specific source type. When you create (or change!) a Source in the Segment app, Segment generates a new Write Key for that source. You use the write key in your code to tell the Segment servers where the data is coming from, so Segment can route it to your destinations and other tools.
 
 ## Step 2: Add Analytics.js to your ASP.NET Master Page
 
-Once you create a source on Segment,
+Once you create a source from the Segment web app, you next [copy the Analytics.js snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) into your project. You can copy the snippet directly into your ASP.NET [Site.master](https://github.com/segmentio/asp.net-example/blob/master/Site.master#L18-L21):
 
-![image](images/stepone.png)
+![image](images/add-ajs.png)
 
-You'll be presented with an analytics.js snippet. You can copy the snippet directly into your ASP.NET [Site.master](https://github.com/segmentio/asp.net-example/blob/master/Site.master#L18-L21):
-
-![image](images/step1-2.png)
-
-That snippet will load Analytics.js onto the page _asynchronously_, so it won't affect your page load speed. As soon as that snippet is running on your site, you can start turning on any destinations on your Segment destinations page and they will start loading on your site automatically! In fact, if you reload, you can start seeing `Page` calls in our debugger:
-
-![image](images/debuggerpage.png)
+That snippet loads Analytics.js onto the page _asynchronously_, so it won't affect your page load speed. As soon as that snippet is running on your site, you can start enabling destinations from your Segment destinations page and they start loading on your site automatically! In fact, if you reload, you can start seeing `Page` calls in the [Segment debugger](/docs/connections/sources/debugger/) almost immediately.
 
 **Fun fact:** if you only want the most basic Google Analytics set up you can stop reading right now. You're done! Just switch on Google Analytics in our interface.
 
-For a more in depth analytics.js tutorial, check out our [quick start](/docs/connections/sources/catalog/libraries/website/javascript/quickstart).
+For a more in depth Analytics.js tutorial, check out the [Analytics.js quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart).
 
 Lots of analytics and marketing tools want to know more information about your users, and what they're doing on your app. In the next section, we'll install the .NET library and start sending an event every time a new user registers on your site.
 
@@ -56,9 +50,9 @@ Install-Package Analytics -Version <version>
 
 You can also accomplish the same thing in the `Manage NuGet Packages` menu of Visual Studio:
 
-![step 2](images/step2.png)
+![step 2](images/manage-nuget.png)
 
-Nice! Now the .NET library needs to know which Segment project you want to send data to. You can initialize the library with your Segment project's `writeKey`in the [Global.asax file](https://github.com/segmentio/asp.net-example/blob/master/Global.asax#L14). Then you can use the `Analytics` singleton in any controller you want.:
+Nice! Now the .NET library needs to know which Segment project you want to send data to. You can initialize the library with your Segment project's `writeKey` in the [Global.asax file](https://github.com/segmentio/asp.net-example/blob/master/Global.asax#L14). Then you can use the `Analytics` singleton in any controller you want.:
 
 ```dotnet
 <%@ Application Language="C#" %>

@@ -11,8 +11,8 @@ This document was last updated on June 15th, 2018. If you notice any gaps, outda
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Quora" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Quora" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Add your Quora Conversion Pixel Key to your Destination settings. To get this you will need to do the following:
 
 	i. Log into your [Quora Ads Manager Account](https://www.quora.com/ads/account).

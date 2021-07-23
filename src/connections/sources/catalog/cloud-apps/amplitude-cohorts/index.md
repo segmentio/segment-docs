@@ -9,6 +9,9 @@ connections. You can easily sync Behavioral Cohorts to your
 Segment-connected raw data warehouses and downstream destinations that accept
 Segment `identify` events.
 
+> success ""
+> **Good to know**: This page is about the Amplitude Engage Segment source, which sends data _into_ Segment. There's also a page about the [Amplitude Segment destination](/docs/connections/destinations/catalog/amplitude/), which receives data _from_ Segment!
+
 ## Getting Started
  1. From your Sources page in Segment, click **Add source**.
  2. Choose **Amplitude Engage**, then click **Connect**.

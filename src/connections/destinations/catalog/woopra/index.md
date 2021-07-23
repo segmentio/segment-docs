@@ -6,10 +6,8 @@ Our Woopra destination code is all open-source on GitHub if you want to check it
 
 ## Getting Started
 
-When you toggle on Woopra in Segment, this is what happens:
-
-+ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Woopra's javascript onto your page. This means you should remove Woopra's snippet from your page.
-+ Woopra will start automatically collecting data on your site.
+When you enable Woopra in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Woopra's javascript onto your page. This means you should remove Woopra's snippet from your page.
++ Woopra starts automatically collecting data on your site.
 
 Woopra is supported on client-side and server-side.
 

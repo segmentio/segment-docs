@@ -2,7 +2,7 @@
 title: Taplytics Destination
 ---
 
-Our Taplytics destination code is open sourced on Github. Feel free to check it out: [iOS](https://github.com/segment-integrations/analytics-ios-integration-taplytics), [Android](https://github.com/segment-integrations/analytics-android-integration-taplytics).
+Our Taplytics destination code is open sourced on GitHub. Feel free to check it out: [iOS](https://github.com/segment-integrations/analytics-ios-integration-taplytics), [Android](https://github.com/segment-integrations/analytics-android-integration-taplytics).
 
 ## Getting Started
 
@@ -22,6 +22,10 @@ For more information about setting up Taplytics on iOS, see their [docs](https:/
 To get up and running with Taplytics on Android, there a couple of steps we will walk you through. You first want to ensure that you've integrated your mobile app with our [Android](/docs/connections/sources/catalog/libraries/mobile/android) library.
 
 To enable its full functionality (like Push Notifications, Deep linking), there are a couple of extra steps that you have to take care of in your Android app. [This document explains how to set up Push Notifications](https://docs.taplytics.com/docs/guides-push-notifications) and [ths one explains how to set up deep linking](https://support.taplytics.com/hc/en-us/articles/360004176632-Deep-Linking-Guide-).
+
+### React Native set up
+
+{% include content/react-dest.md only="ios" %} 
 
 
 ## Identify

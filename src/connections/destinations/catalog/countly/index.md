@@ -2,15 +2,20 @@
 title: Countly Destination
 ---
 
-Our Countly destination code is open source on Github. Feel free to check it out: [iOS](https://github.com/segmentio/analytics-ios/tree/master/Analytics/Integrations/Countly), [Android](https://github.com/segmentio/analytics-android/tree/master/analytics-integrations/countly).
+Our Countly destination code is open source on GitHub. Feel free to check it out: [iOS](https://github.com/segmentio/analytics-ios/tree/master/Analytics/Integrations/Countly), [Android](https://github.com/segmentio/analytics-android/tree/master/analytics-integrations/countly).
 
 ## Getting Started
 
-To get started with Countly and Segment, you'll want to first integrate your mobile app with our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](/docs/connections/sources/catalog/libraries/mobile/android/) sources.
+To get started with Countly and Segment, add our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/), [Android](/docs/connections/sources/catalog/libraries/mobile/android/) or [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) libraries to your mobile app.
 
 Once the Segment library is integrated with your app, toggle Countly on in your Segment destinations catalog, and add your application's **App Key** and **Server URL** which you can find in your Countly Application Management. If you're using their cloud hosted solution (not hosting your own Count.ly server), then your **Server URL** is `https://cloud.count.ly`.
 
-These new settings will take up to an hour to propogate to all of your existing users. For new users it'll be instanteneous!
+These new settings will take up to an hour to propagate to all of your existing users. For new users it'll be instantaneous!
+
+### React Native set up
+
+{% include content/react-dest.md %}
+
 
 - - -
 

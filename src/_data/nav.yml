@@ -28,22 +28,6 @@ sections:
     title: Open Source
   - path: "https://segment.com/engineering/"
     title: Engineering Team
-- section_title: For Businesses
-  section:
-  - path: "https://segment.com/industry/customers/"
-    title: Customer Stories
-  - path: "https://segment.com/industry/enterprise/"
-    title: Enterprise
-  - path: "https://segment.com/industry/startups/"
-    title: Startups
-  - path: "https://segment.com/industry/retail/"
-    title: Retail
-  - path: "https://segment.com/industry/marketplaces/"
-    title: Marketplace
-  - path: "https://segment.com/industry/b2b-software//"
-    title: B2B Software
-  - path: "https://segment.com/industry/mobile/"
-    title: Mobile
 - section_title: Company
   section:
   - path: "https://segment.com/jobs/"

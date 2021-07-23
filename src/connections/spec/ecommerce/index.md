@@ -15,7 +15,7 @@ Refer to our V2 docs [here](/docs/connections/spec/ecommerce/v2/).
 
 One of the core components of the Segment [Spec](/docs/connections/spec/) is the [`track`](/docs/connections/spec/track) method. It records any arbitrary event that the user has triggered. For Ecommerce tracking, you will be sending **specific event names** that we recognize semantically. That way we can transform them before sending them off to each different tool.
 
-The `properties` listed in the sections below are **required** for some destinations to function. You can always add your own custom properties (product color, size, etc.) in additon to the required ones.
+The `properties` listed in the sections below are **required** for some destinations to function. You can always add your own custom properties (product color, size, etc.) in addition to the required ones.
 
 
 ## Events

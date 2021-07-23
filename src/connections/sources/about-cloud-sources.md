@@ -1,5 +1,5 @@
 ---
-title: All about Cloud Sources
+title: Cloud Sources
 redirect_from:
   - '/connections/sources/what-are-cloud-sources/'
   - '/connections/sources/cloud-source-data/'
@@ -28,9 +28,11 @@ Sources are functionally comprised of either one or both of the following compon
 
 ### Sync frequency
 
-When you enable a source and grant us access by pasting an API key or authenticating with OAuth, Segment starts a scheduled job on your behalf which makes requests to the downstream tool, normalizes and transforms the data, and forwards the data to the Segment API. We make an effort to use as few API calls as possible, opting to fetch only data that has changed since the previous sync where possible. This can be an intensive process, especially on first sync, so we have lots of affordances in place for retries and to respect rate limits imposed by the partner.
+You enable a cloud source from the Segment web app, and grant Segment access by pasting an API key or authenticating with OAuth. Segment then starts a scheduled job on your behalf which makes requests to the downstream tool, normalizes and transforms the data, and forwards that data to the Segment API.
 
-### API Call Usage and Collection Selection
+Cloud sources attempt to use as few API calls as possible, and (where possible) only fetch data that changed since the last sync. The syncs might take a long time (especially on the first sync), so the cloud source syncs have robust retry and rate limiting logic.
+
+### API call use and collection selection
 
 We make an effort to be respectful of your API call allotments and limits. For example, in the case of Salesforce, we issue only one query per collection per run, using the absolute minimum number of API calls possible (typically about 350/day).
 
@@ -83,7 +85,7 @@ Sometimes, when the sync job fails due to an unhandled error or is mysteriously 
 
 In general, we've focused on pulling all of the collections directly related to the customer experience. We do not automatically pull all collections available from a partner API, since many of them aren't relevant to the customer journey. You can see a list of the collections we pull in the docs [for each cloud source](/docs/connections/sources/catalog/#cloud-apps). Each collection reflects a table in your database.
 
-[Let us know](https://segment.com/help/contact) if you need additional data collected or to change the schema to do the analysis you want. We'd love to know what analysis you're trying to run, what additional data you need, and we'll share with the product team to evaluate.
+[Contact Segment Product Support](https://segment.com/help/contact) if you need additional data collected, or to change the schema to do the analysis you want. We'd love to know what analysis you're trying to run, what additional data you need, and we'll share with the product team to evaluate.
 
 ### What questions can you answer with data from cloud, web, and mobile sources combined in a single warehouse?
 

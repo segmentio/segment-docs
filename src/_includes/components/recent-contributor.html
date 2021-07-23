@@ -1,0 +1,59 @@
+{% assign recent_contributor = site.data.contributors.list | where: "name", include.contributors[0].name | first %}
+
+{% if recent_contributor %}
+  <div class="popover" data-popover data-active-class="popover--active">
+    <div class="recent-contributor">
+      <div class="flex gutter">
+        <div class="flex__column flex__column--shrink">
+          <img class="recent-contributor__avatar" src="{{ site.baseurl }}/images/{{ recent_contributor.image_path }}" alt="">
+        </div>
+
+        <div class="flex__column">
+          <div class="recent-contributor__content">
+            <div>
+              <p class="recent-contributor__title">Updated on
+                {{ include.contributors[0].date | ordinal }}
+                {{ include.contributors[0].date | date: "%B" }},
+                {{ include.contributors[0].date | date: "%Y" }}
+              </p>
+
+              <p class="recent-contributor__info">by {{ recent_contributor.name }} - {{ recent_contributor.position }}</p>
+            </div>
+
+            {% if include.contributors.size > 1 %}
+              <div>
+                <a class="recent-contributor__button button-link" href="#" data-popover-target="contributors">See all contributors</a>
+              </div>
+
+              <div class="popover__body" data-popover-body="contributors">
+                <div class="avatars-list">
+                  {% for person in include.contributors offset:1 %}
+                    {% assign contributor = site.data.contributors.list | where: "name", person.name | first %}
+
+                    <div class="recent-contributor">
+                      <div class="flex gutter">
+                        <div class="flex__column flex__column--shrink">
+                          <img class="recent-contributor__avatar" src="{{ site.baseurl }}/images/{{ contributor.image_path }}" alt="">
+                        </div>
+
+                        <div class="flex__column">
+                          <p class="recent-contributor__title">Updated on
+                            {{ person.date | ordinal }}
+                            {{ person.date | date: "%B" }},
+                            {{ person.date | date: "%Y" }}
+                          </p>
+
+                          <p class="recent-contributor__info">by {{ contributor.name }} - {{ contributor.position }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

@@ -32,7 +32,7 @@ This page lists which [Segment methods](/docs/connections/spec/) each destinatio
 </table>
 
 
-The following destinations have no method information available:
+#### The following destinations have no method information available:
 {% for destination in site.data.catalog.destinations.items %}
 {% if destination.methods.track == false and destination.methods.page_view == false and destination.methods.identify == false and destination.methods.group == false and destination.methods.alias == false %}
 - [{{ destination.display_name }}](/docs/{{ destination.url }}){% if destination.status == "PUBLIC_BETA" %} (beta){% endif %}

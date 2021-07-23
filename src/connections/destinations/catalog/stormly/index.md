@@ -7,12 +7,9 @@ title: Stormly Destination
 
 This destination is maintained by Stormly. For any issues with the destination, [contact their support team](mailto:support@stormly.com).
 
-> note "Note:"
-> The Stormly Destination is currently in beta, which means that they are still actively developing the destination. To join the Stormly beta program, or if you have any feedback to help improve the Stormly Destination and its documentation, [contact the Stormly support team](mailto:support@stormly.com)!
-
 ## Getting Started
 
-{% include content/connection-modes.md %} 
+{% include content/connection-modes.md %}
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Stormly" in the Destinations Catalog, and select the Stormly destination.
@@ -53,7 +50,7 @@ If you aren't familiar with the Segment Spec, take a look at the [Page method do
 analytics.page()
 ```
 
-Segment sends Page calls to Stormly as a `pageview`. 
+Segment sends Page calls to Stormly as a `pageview`.
 
 
 ## Screen
@@ -64,7 +61,7 @@ If you aren't familiar with the Segment Spec, take a look at the [Screen method 
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 
-Segment sends Screen calls to Stormly as a `screen`. 
+Segment sends Screen calls to Stormly as a `screen`.
 
 
 ## Identify

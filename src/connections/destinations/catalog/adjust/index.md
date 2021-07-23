@@ -5,21 +5,24 @@ title: Adjust Destination
 
 [Adjust](https://adjust.com) is the mobile attribution provider of choice for hundreds of organizations across the globe. They unify all your marketing activities into one powerful platform, giving you the insights you need to scale your business. The Adjust Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-adjust) and [Android](https://github.com/segment-integrations/analytics-android-integration-adjust).
 
-This document was last updated on January 31, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Adjust" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Adjust" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Do not need to include Adjust's SDK natively as this prevent you from successfully implementing the Adjust.
 4. Depending on the source you've selected, include Adjust's library by adding the following lines to your dependency configuration.
 
 ### iOS
 
-If you are using iOS, simply add this line to your [CocoaPods](http://cocoapods.org) `Podfile`:
+> info ""
+> **Note**: The Adjust SDK requires these [frameworks from Apple](https://github.com/adjust/ios_sdk#add-ios-frameworks) to enable advanced features like attribution. For best results, add these frameworks to your application.
+
+If you are using iOS, add this line to your [CocoaPods](http://cocoapods.org) `Podfile`:
 
 ```ruby
 pod "Segment-Adjust"
@@ -47,7 +50,7 @@ In cases where the Adjust integration sometimes does not track the install attri
 
 #### Additional device-mode set up for iOS 14 support
 
-Segment’s Adjust SDK was updated to use Adjust version 4.23.0 to prepare for iOS 14. The updated Adjust SDK offers iOS14 support, AppTrackingTransparency (ATT) and SKAdNetwork dashboard features.
+Segment’s Adjust SDK was updated to use Adjust version 4.23.0 to prepare for iOS 14. The updated Adjust SDK offers iOS 14 support, AppTrackingTransparency (ATT) and SKAdNetwork dashboard features.
 
 See Adjust's [Steps to Support iOS 14 documentation](https://help.adjust.com/manage-data/data-privacy/ios-14-user-privacy-frameworks#Steps-to-support-iOS-14) for more information.
 
@@ -82,7 +85,7 @@ To use the latest Adjust SDK to collect IDFAs you must do the following:
 
 ### Android
 
-If you are using Android, simply add this line to your gradle file:
+If you are using Android, add this line to your gradle file:
 
 ```java
 compile 'com.segment.analytics.android.integrations:adjust:+'
@@ -104,7 +107,11 @@ analytics = new Analytics.Builder(this, "write_key")
                 .build();
 ```
 
-After you build and release to the App Store, we'll automatically start translating and sending your data to Adjust.
+After you build and release to the App Store, Segment automatically starts translating and sending your data to Adjust.
+
+### React Native
+
+{% include content/react-dest.md %}
 
 ### Server
 

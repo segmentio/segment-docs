@@ -1,0 +1,7 @@
+{% if site.env.CONTEXT == "deploy-preview" %}
+<div style="height:30px; background-color:#FFFAF1; width:100%; border-bottom: 1px solid #FFB020; position: sticky; top:0; z-index: 1000; text-align:center;">
+  <!-- <div class="stage" style="justify-content: center;" style="min-height: 30px;"> -->
+    <p style="font-size: 12px; color: #696F8C">This preview of pull request <strong><a href="{{site.env.REPOSITORY_URL}}/pull/{{site.env.REVIEW_ID}}" target="_blank">{{site.env.REVIEW_ID}}</a></strong> is meant for internal use only.</p>
+  <!-- </div> -->
+</div>
+{% endif %}

@@ -10,13 +10,12 @@
     z-index: 10;
     width: 100%;
     margin-top: 10px;
-    padding: 25px;
+    padding: 15px;
     opacity: 0;
     visibility: hidden;
-    border: 1px solid color(gray-light);
+    border: 1px solid color(gray-400);
     border-radius: 4px;
     background: color(white);
-    box-shadow: 0 8px 16px 0 rgba(18, 66, 74, 0.08);
     transition: 200ms ease;
   }
 

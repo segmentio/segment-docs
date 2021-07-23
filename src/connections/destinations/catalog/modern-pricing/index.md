@@ -5,17 +5,16 @@ hide-personas-partial: true
 ---
 [Modern Pricing](https://modernpricing.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides intelligent, real-time pricing recommendations for every potential customer visiting your web application.
 
-This destination is maintained by Modern Pricing. For any issues with the destination, [contact their team](mailto:john@modernpricing.com).
+This destination is maintained by Modern Pricing. For any issues with the destination, [contact the Modern Pricing Support team](mailto:john@modernpricing.com).
 
-This document was last updated on January 8, 2020. If you notice any gaps, out-dated information, or simply want to leave some feedback to help us improve our documentation, [let their team know](mailto:john@modernpricing.com)!
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Modern Pricing" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "Base64 Decoded Key" into your Segment Settings UI which you can find from your Modern Pricing [API Credentials](https://modernpricing.com/login) page. Note: You must click on the active API Key Value to view the Base64 Decoded Key.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Modern Pricing" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "Base64 Decoded Key" into your Segment Settings UI which you can find from your Modern Pricing [API Credentials](https://modernpricing.com/login) page. Note: You must click on the active API Key Value to view the Base64 Decoded Key.
 
 ## Page
 

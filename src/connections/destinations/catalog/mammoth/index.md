@@ -2,67 +2,66 @@
 rewrite: true
 title: Mammoth Destination
 ---
-[Mammoth](https://mammoth.io/integrations/segment-com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve analytics for analysts, businesses, and developers who can use Mammoth's data warehousing, data discovery & data preparation abilities to arrive at insights.
+[Mammoth](https://mammoth.io/integrations/segment/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve analytics for analysts, businesses, and developers who can use Mammoth's data warehousing, data discovery & data preparation abilities to arrive at insights.
 
-[Mammoth](https://mammoth.io) allows you to blend your data from Segment with other sources of data such as databases and files. Using Mammoth, you can build multiple data pipelines, which are constructed by applying transforms through a no coding interface. Mammoth also allows for the visual discovery of the data and easy exports to databases such as MySQL, elasticsearch, and PostgreSQL.
+Mammoth allows you to blend your data from Segment with other sources of data such as databases and files. Using Mammoth, you can build multiple data pipelines, which are constructed by applying transforms through a no coding interface. Mammoth also allows for the visual discovery of the data and easy exports to databases such as MySQL, Elasticsearch, and PostgreSQL.
 
+This destination is maintained by [Mammoth](https://mammoth.io). For any issues with Mammoth Destination, [contact the Mammoth Support team](mailto:support@mammoth.io).
 
-This destination is maintained by [Mammoth](https://mammoth.io). For any issues with Mammoth Destination, [contact their team](mailto:support@mammoth.io).
-
-_**NOTE:** The Mammoth Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on June 6, 2019. If you are interested in joining their beta program or have any feedback to help improve the Mammoth and its documentation, [let their team know](mailto:support@mammoth.io)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-There are three steps to get started using Mammoth with Segment. You can register for an account with Mammoth by clicking [here](https://mammoth.io/register/choose/starter).
+There are three steps to get started using Mammoth with Segment. First, [register for an account with Mammoth](https://mammoth.io/register/choose/starter).
 
-1. Create a webhook dataset on Mammoth & copy the API KEY.
-2. Connect Segment and Mammoth.
+1. Create a webhook dataset in Mammoth, and copy the API key.
+2. Connect Segment to Mammoth.
 3. Use the *Extract from JSON* task to flatten data.
 
 
 ### 1. Create a webhook dataset on Mammoth.
 
-Mammoth Segment destination requires a dataset on Mammoth's side. There are multiple types of datasets you can add. You want to add a webhook type of dataset on Mammoth for Segment Integration.
+Mammoth Segment destination requires that you have a dataset on Mammoth's side. There are multiple types of datasets you can add. You should add a webhook type of dataset in Mammoth for your Segment integration.
 
 
+1. Log in to [app.mammoth.io](https://app.mammoth.io).
+2. First, create a new "webhooks" dataset.
+   If you already have a dataset, click the green button in the data library, then click the **Webhooks** option.
+   If you don't have any datasets in your account yet, the data library shows a button to add a webhook dataset on the data library itself. Click that.
+3. The add dataset dialog opens. Make sure the option selected is *Webhooks*.
+4. Give your dataset a name, and click **Done**. A new dataset appears in the data library.
 
-1. Log into app.mammoth.io.
-2. You need to create a new dataset of type webhooks. To do so, click on the big green button in the data library and click on the option *Webhooks*. If you do not have any datasets in your account, you will see a button to add a webhook dataset on the data library itself.
-3. This will open the add dataset dialog. Make sure the option selected is *Webhooks*.
-4. Give your dataset a name & click on Done. A new dataset will appear in the data library.
+   ![](images/A8mLIPZ.png)
 
-![](images/A8mLIPZ.png)
+   The dataset you created shows an API KEY which you need to connect to Segment.
 
-The dataset you created will have an API KEY which will be needed to proceed on Segment UI. Here is how you copy it:
+   ![](images/JsTuMCy.png)
 
-![](images/JsTuMCy.png)
-
-
-1. Click on the new dataset you created in the previous step.
-2. On the preview panel, copy the API key by clicking on *copy*.
+5. Click the new dataset you created in the previous step.
+6. From the preview panel, click **copy** to copy the API key to your clipboard.
 
 
 ### 2. Connect Segment and Mammoth.
 
 
-1. In the Segment App, select Add Destination. Search for and select Mammoth.
-2. Paste the API KEY you copied in the previous step into the UI.
+1. In the Segment App, select **Add Destination**. Search for and select Mammoth.
+2. Paste the API KEY you copied in the previous step into the settings UI.
 
-### 3. Use the *Extract from JSON* task to flatten data
+### 3. Use the Extract from JSON task to flatten data
 
-Once you are configured according to the previous steps, data should start flowing into Mammoth. Mammoth will store all the data received from Segment in this dataset. You can use the *Extract from JSON* task to flatten the data into rows and columns. Once you have the data in a flat format, you can use Mammoth's capabilities to set up any number of pipelines you need.
+Once you are configured according to the previous steps, data flows into Mammoth. Mammoth stores all the data received from Segment in this dataset. You can use the "Extract from JSON" task to flatten the data into rows and columns. Once you have the data in a flat format, you can use Mammoth to set up any number of pipelines you need.
 
-1. When Mammoth receives data the, `REFRESH` button will show up in the preview panel. Click it to add that data to the dataset from the staging area.
-2. Select the dataset and click on the open button.
-3. You will be taken to the default View on the dataset. You will see one column of data called JSON.
-4. Now we want to flatten the JSON data. Open the *ADD TASK* menu and click on the *Extract from JSON* task.
-5. Use the *Extract from JSON* task as needed to flatten the data. *Extract from JSON* task will automatically suggest you the right options, and all you need to do is hit *Apply*. You can read more about *Extract from JSON* task [here.](https://mammoth.io/docs/content/feature_guide/tasks/json.extract.html)
+1. When Mammoth receives new data the `REFRESH` button appears in the preview panel. Click it to add that data to the dataset from the staging area.
+2. Select the dataset and click **Open**.
+   The default View on the dataset appears. Look for one column of data called **JSON**.
+4. Now we want to flatten the JSON data. Open the *ADD TASK* menu and click **Extract from JSON**.
+5. Use the *Extract from JSON* task as needed to flatten the data. *Extract from JSON* task automatically suggests the correct options, and all you need to do is hit *Apply*. You can read more about the [Extract from JSON task here](https://mammoth.io/docs/content/feature_guide/tasks/json.extract.html).
 6. You may need to apply the *Extract from JSON* task multiple times if the data is nested.
 
-Mammoth will automatically refresh the data approximately every hour. You can also click on the *REFRESH* button to sync data immediately any time.
+Mammoth automatically refreshes the data about once an hour. You can also click **REFRESH** at any time to sync data immediately.
 
 
 ### Hints and Tips

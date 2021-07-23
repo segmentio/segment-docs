@@ -4,13 +4,34 @@ hide-cmodes: true
 hide-personas-partial: true
 ---
 
-[Intercom](https://www.intercom.com/) makes customer messaging apps for sales, marketing, and support, connected on one platform. The Intercom Destination is open-source. You can browse the code for [analytics.js](https://github.com/segment-integrations/analytics.js-integration-intercom), [iOS](https://github.com/segment-integrations/analytics-ios-integration-intercom) and [Android](https://github.com/segment-integrations/analytics-android-integration-intercom) on Github.
+[Intercom](https://www.intercom.com/) makes customer messaging apps for sales, marketing, and support, connected on one platform. The Intercom Destination is open-source. You can browse the code for [analytics.js](https://github.com/segment-integrations/analytics.js-integration-intercom), [iOS](https://github.com/segment-integrations/analytics-ios-integration-intercom) and [Android](https://github.com/segment-integrations/analytics-android-integration-intercom) on GitHub.
 
 This document was last updated on March 11, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+The first step is to make sure Intercom supports the source type and connection mode you've chosen to implement. You can learn more about what dictates [the connection modes we support here](https://segment.com/docs/destinations/#connection-modes).
+
+<table>
+  <tr>
+    <th></th>
+    <th>Web</th>
+    <th>Mobile</th>
+    <th>Server</th>
+  </tr>
+  <tr>
+    <td>📱 Device-based</td>
+    <td> ✅ </td>
+    <td> ✅ </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>☁️  Cloud-based</td>
+    <td></td>
+    <td> ✅ </td>
+    <td> ✅ </td>
+  </tr>
+</table>
 
 1.  From your Segment UI's Destinations page click **Add Destination**.
 2.  Search for "Intercom" and select it in the results that appear.
@@ -20,10 +41,10 @@ This document was last updated on March 11, 2020. If you notice any gaps, outdat
     You can choose which account to sync from the drop down menu in the top right. If you are using [server-side sources](https://segment.com/docs/connections/sources/#server), Segment starts passing data through once you activate the Destination. For other libraries  continue reading below.
 4. Find your "App ID" in the Intercom UI following [the instructions here](https://docs.intercom.com/faqs-and-troubleshooting/getting-set-up/where-can-i-find-my-app-id) or by navigating to the Gear Menu and clicking on "App Settings" followed by "API Keys". It should look something like `9iefb489`.
 
-### Client
 
-1. Activate your Intercom Destination and our CDN is updated within 45 minutes.
-2. Our snippet starts asynchronously loading Intercom's `library.js` onto your page. This means you should remove Intercom's snippet from your page.
+Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Intercom's `library.js` onto your page.
+
+This means you should remove Intercom's snippet from your page.
 
 ### Mobile
 
@@ -41,22 +62,26 @@ Before reading the specific instructions for iOS or Android below, make sure you
 
 1. Add `compile 'com.segment.analytics.android.integrations:intercom:+'` to your app-level `build.gradle` file
 2. Sync your project, then import the integration in your Application subclass or wherever you're initializing Segment:
-    ```
-    import com.segment.analytics.android.integrations.intercom.IntercomIntegration;
-    ```
+   ```java
+   import com.segment.analytics.android.integrations.intercom.IntercomIntegration;
+   ```
 3. Next, remember to register the `IntercomIntegration.FACTORY` with the Segment SDK:
 
-    ```java
-    analytics = new Analytics.Builder(this, "write_key")
-      .use(IntercomIntegration.FACTORY)
-      .build();
-    ```
+   ```java
+   analytics = new Analytics.Builder(this, "write_key")
+     .use(IntercomIntegration.FACTORY)
+     .build();
+   ```
+
+### React Native
+
+{% include content/react-dest.md %}
 
 ## Page
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
-```
+```js
 analytics.page();
 ```
 
@@ -522,12 +547,8 @@ To send computed traits or audiences to Intercom, you first must connect it to y
 
 1. In your Segment workspace, click Personas in the left navigation bar, and select your Personas space.
 2. Click **Destinations** in your Personas space and click **Add Destination**.
-   ![](images/pers-2-addbutton.png)
-
 3. Search for Intercom and click it when it appears in the search results
-   ![](images/pers-3-intercom-pdest.png)
 4. Click **Configure Intercom**.
-   ![](images/pers-4-config.png)
 5. Click **Connect to Intercom**.
    ![](images/pers-5-connect.png)
 6. Log in to Intercom to allow Segment to send data to Intercom.

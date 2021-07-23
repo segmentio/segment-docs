@@ -1,5 +1,5 @@
 ---
-title: Getting Started with Segment
+title: Getting Started With Segment
 ---
 
 <iframe width="100%" height="385" src="https://www.youtube.com/embed/-5nUITqOz3Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -8,4 +8,7 @@ With Segment, you can collect, transform, send, and archive your [first-party cu
 
 When you capture interaction data in Segment, you can send it (often in real-time) to your favorite tools marketing, product, and analytics tools, as well as to data warehouses. In most cases, you won't even need to touch your tracking code to connect new tools.
 
-{% include components/media-icon.html newtab="false" href="/getting-started/01-what-is-segment/" icon="symbols/arrow-right.svg" title="Ready to get started?" content="We'll walk you through the steps to get up and running on Segment. Let's go!" variant="related"  %}
+<div class="double">
+  <div></div>
+  {% include components/reference-button.html newtab="false" href="/getting-started/01-what-is-segment/" icon="symbols/arrow-right.svg" title="Ready to get started?" description="We'll walk you through the steps to get up and running on Segment. Let's go!" variant="related" subtitle="next"  %}
+</div>

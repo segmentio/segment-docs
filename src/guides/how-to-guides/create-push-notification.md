@@ -1,5 +1,5 @@
 ---
-title: How do I create a push notification?
+title: Creating a Push Notification
 ---
 
 Like emails, push notifications are an extremely powerful way to re-engage customers on mobile apps. Push notifications are very personal, so targeting them very precisely using customer behavioral data (from Segment) is crucial.

@@ -2,6 +2,8 @@
 title: Set Up Segment Data Lakes
 redirect_from: '/connections/destinations/catalog/data-lakes/'
 ---
+{% include content/plan-grid.md name="data-lakes" %}
+
 
 Segment Data Lakes provide a way to collect large quantities of data in a format that's optimized for targeted data science and data analytics workflows. You can read [more information about Data Lakes](/docs/connections/storage/data-lakes/) and learn [how they differ from Warehouses](/docs/connections/storage/data-lakes/comparison/) in our documentation.
 
@@ -31,7 +33,7 @@ After you set up the necessary AWS resources, the next step is to set up the Dat
 1. In the [Segment App](https://app.segment.com/goto-my-workspace/overview), click **Add Destination**, then search for and select **Data Lakes**.
 
 2. Click **Configure Data Lakes** and select the source to connect to the Data Lakes destination.
-  **Warning**:You must include all source ids in the external ID list in the IAM policy, or else the source data cannot be synced to S3.
+  **Warning**:You must add the Workspace ID to the external ID list in the IAM policy, or else the source data cannot be synced to S3.
 
 3. In the Settings tab, enter and save the following connection settings:
    - **AWS Region**: The AWS Region where your EMR cluster, S3 Bucket and Glue DB reside. Ex: `us-west-2`
@@ -109,7 +111,7 @@ Yes, the S3 bucket and the EMR cluster must be in the same region.
 {% faqitem How do I connect a new source to Data Lakes? %}
 To connect a new source to Data Lakes:
 
-1. Add the `source_id` found in the Segment workspace into the list of [external ids](https://github.com/segmentio/terraform-aws-data-lake/tree/master/modules/iam#external_ids) in the IAM policy. You can either update this from the AWS console, or re-run the [Terraform](https://github.com/segmentio/terraform-aws-data-lake) job.
+1. Ensure that the `workspace_id` of the Segment workspace is in the list of [external ids](https://github.com/segmentio/terraform-aws-data-lake/tree/master/modules/iam#external_ids) in the IAM policy. You can either update this from the AWS console, or re-run the [Terraform](https://github.com/segmentio/terraform-aws-data-lake) job.
 2. From your Segment workspace, connect the source to the Data Lakes destination.
 {% endfaqitem %}
 {% faqitem Can I configure multiple sources to use the same EMR cluster? %}
@@ -121,7 +123,7 @@ Yes, you can configure multiple sources to use the same EMR cluster. We recommen
 {% faq %}
 {% faqitem Why don't I see any data in S3 or Glue after enabling a source? %}
 If you don't see data after enabling a source, check the following:
-- Does the IAM role have the Segment account ID and source IDs as the external IDs?
+- Does the IAM role have the Segment account ID and workspace ID as the external ID?
 - Is the EMR cluster running?
 - Is the correct IAM role and S3 bucket configured in the settings?
 

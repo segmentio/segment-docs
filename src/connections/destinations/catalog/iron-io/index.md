@@ -4,7 +4,7 @@ title: Iron.io Destination
 
 ## Getting Started
 
-When you toggle on Iron.io in Segment, we'll start sending data to an IronMQ instance with data for your account. Currently, Iron.io supports all of the Segment methods, and will send data from any one of our libraries.
+When you enable Iron.io in Segment, we'll start sending data to an IronMQ instance with data for your account. Currently, Iron.io supports all of the Segment methods, and will send data from any one of our libraries.
 
 When sending data to Iron.io, we'll auto-fill a queue called "segment". You can use Iron.io as a message queue buffer in front of your webhook server or internal data processing cluster. For example, if you want to analyze your data as part of an ETL process, Iron.io can act as an intermediary buffer.
 

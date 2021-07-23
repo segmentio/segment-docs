@@ -1,5 +1,5 @@
 ---
-title: A simple Segment installation
+title: A Simple Segment Installation
 ---
 
 
@@ -17,7 +17,7 @@ Before you start, you need a Segment user account and a workspace. If you're not
 For the quickstart portion below, you also need access to the code for a basic website, PHP website, or an iOS app.
 
 > success ""
-> **Tip**! If you don't have any of those things, you might consider creating a simple [Github Pages website](https://pages.github.com/).
+> **Tip**! If you don't have any of those things, you might consider creating a simple [GitHub Pages website](https://pages.github.com/).
 
 ## A note on Dev and Prod Sources
 
@@ -255,7 +255,7 @@ Once you've added a few `track` calls, **you're set up!** You successfully instr
 
 ### Step 1: Download the library
 
-To install the library, clone the repository from Github into your desired application directory. (psst, composer users: we've [got you covered too](https://packagist.org/packages/segmentio/analytics-php)!)
+To install the library, clone the repository from GitHub into your desired application directory. (psst, composer users: we've [got you covered too](https://packagist.org/packages/segmentio/analytics-php)!)
 
 ```bash
 git clone https://github.com/segmentio/analytics-php /my/application/folders/
@@ -435,7 +435,7 @@ You can click around and load pages to see your Segment calls in action, watch t
 
 
 <div class="double">
-  {% include components/media-icon.html  href="/getting-started/01-what-is-segment/" newtab="false" icon="symbols/arrow-left.svg" title="Back: What is Segment" content="The basics of the Segment platform and what you can do with it." variant="related" %}
+  {% include components/reference-button.html href="/getting-started/01-what-is-segment/" newtab="false" icon="symbols/arrow-left.svg" title="What is Segment" description="The basics of the Segment platform and what you can do with it." variant="related" subtitle="back" %}
 
-  {% include components/media-icon.html  href="/getting-started/03-planning-full-install/" newtab="false" icon="symbols/arrow-right.svg" title="Next: Planning a Full Installation" content="Think through your goals, plan your calls, and set yourself up for success." variant="related" %}
+  {% include components/reference-button.html href="/getting-started/03-planning-full-install/" newtab="false" icon="symbols/arrow-right.svg" title="Planning a Full Installation" description="Think through your goals, plan your calls, and set yourself up for success." variant="related" subtitle="next" %}
 </div>

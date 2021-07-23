@@ -1,53 +1,48 @@
 ---
-layout: default
+layout: main
 title: 404
 permalink: /404.html
 ---
 
-<div class="docs">
-  <div class="stage">
-    <div class="docs__aside stage__aside">
-      {% include_cached navbar/logo.html %}
-      {% include_cached menu/menu.html %}
-    </div>
-
-    <main class="docs__body stage__body">
-      <div>
-        {% include_cached navbar/navbar-mobile.html %}
-      </div>
-
-      <div class="stage__content">
-        <div class="page-404">
-          <div class="flex">
-            <div class="flex__column--12 flex__column--9@xlarge">
-              <h1 class="page-404__heading">The page you were looking for doesn't exist.</h1>
-              <div class="flex">
-                <div class="flex__column--12 flex__column--10@xlarge markdown">
-                  <p>You may have mistyped the address or the page may have moved. Double-check the URL and try again or search the term.</p>
-
-                  <div class="search search--mobile" data-search>
-                    {% include_cached navbar/search.html placeholder="Enter a search term" mobile="true" %}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="page-404__numeric-heading__wrapper markdown flex__column--3 flex--middle">
-              <span class="page-404__numeric-heading">404</span>
-            </div>
-          </div>
+<main class="docs__body stage__body">
+  <div class="docs__navbar">
+    <div class="flex flex--justify gutter gutter--large@medium">
+      <div class="flex__column flex__column--6@xlarge">  
+        <div class="search">
+          {% include_cached navbar/search.html container="autocomplete" %}
         </div>
       </div>
-    </main>
 
-    <div class="docs__sidebar stage__sidebar">
-      {% include_cached navbar/nav.html %}
+      <div class="flex__column flex__column--shrink">  
+        {% include_cached navbar/nav.html %}
+      </div>
     </div>
   </div>
 
-  <footer>
-    {% include_cached components/footer.html %}
-  </footer>
-</div>
+  {% include_cached navbar/navbar-mobile.html %}
+
+  <article class="page-404 page" data-tracking-scroll>
+    <div class="page-404__body page__body">
+      <div class="flex">
+        <div class="flex__column--12 flex__column--9@xlarge">
+          <h1 class="page-404__heading">The page you were looking for doesn't exist.</h1>
+          <div class="flex">
+            <div class="flex__column--12 flex__column--10@xlarge markdown">
+              <p>You may have mistyped the address or the page may have moved. Double-check the URL and try again or search the term.</p>
+
+              <div class="search search--mobile" data-search>
+                {% include_cached navbar/search.html container="autocomplete" %}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-404__numeric-heading__wrapper markdown flex__column--3 flex--middle">
+          <span class="page-404__numeric-heading">404</span>
+        </div>
+      </div>
+    </div>
+  </article>
+</main>
 
 

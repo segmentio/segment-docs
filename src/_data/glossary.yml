@@ -17,7 +17,7 @@ AWS: |
   Amazon Web Services, a large cloud service provider.
 
 Catalog: |
-  Segment's list of available sources, destinations, and warehouses. You can access the catalog from the [Segment website](/catalog/), and from inside the Segment app.
+  Segment's list of available sources, destinations, and warehouses. You can access the catalog from the [Segment website](https://segment.com/catalog/), and from inside the Segment app.
 
 CDN: |
   Content Delivery Network. CDNs are a network of servers which make downloading files faster for the user, by placing them all around the world to reduce data transit time. When you have servers in a CDN, they're much closer on average to the end user. If someone is using Segment in Asia, they don't have to download our files all the way from California, they can get them from a server much closer to them in the network.
@@ -51,7 +51,7 @@ Destination: |
   A destination is a target for Segment to forward data to, and represents a tool or storage destination.
 
 Device mode: |
-  *Device mode*, (or [client-side](#client-side)) libraries are loaded on the on the user's client (for example their web browser, or mobile device), which means they can collect contextual data about the user. The three main libraries that are considered "device mode" are [Analytics.js](/docs/connections/sources/catalog/libraries/javascript/), which is used on websites, our [iOS SDK](/docs/connections/sources/catalog/libraries/ios/), and our [Android SDK](/docs/connections/sources/catalog/libraries/android/). Device mode libraries can maintain a cache of information about each user on the device so we know that device belongs to a consistent `anonymousId` or `userId`, and has a consistent list of traits like name, email, etc.
+  *Device mode*, (or [client-side](#client-side)) libraries are loaded on the on the user's client (for example their web browser, or mobile device), which means they can collect contextual data about the user. The three main libraries that are considered "device mode" are [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), which is used on websites, our [iOS SDK](/docs/connections/sources/catalog/libraries/mobile/ios/), and our [Android SDK](/docs/connections/sources/catalog/libraries/mobile/android/). Device mode libraries can maintain a cache of information about each user on the device so we know that device belongs to a consistent `anonymousId` or `userId`, and has a consistent list of traits like name, email, etc.
 
 
 DMP: |
@@ -75,7 +75,7 @@ JSON: |
 Library: |
   A library is a reusable piece of code which acts as a building block for higher level pieces of code. It's the software equivalent of a 'tool'. For instance, take Instagram filters. In the good old days, to take a picture with an interesting filter, you had to adjust the aperture length, the focal length, the exposure and film speed to get the desired effect. But now, you can just use Instagram, and press a button to get the pre-tuned filter that you want. They've packaged those effects in software and made them re-usable.
 
-  The most common use case for this term at Segment is in reference to the libraries people use to send data to our API. [A full list of libraries can be found in our docs](/docs/sources/catalog/). Libraries can collect either in "[Device mode](#device-mode)" or "[Cloud mode](#cloud-mode)".
+  The most common use case for this term at Segment is in reference to the libraries people use to send data to our API. [A full list of libraries can be found in our docs](/docs/connections/sources/catalog/). Libraries can collect either in "[Device mode](#device-mode)" or "[Cloud mode](#cloud-mode)".
 
 Lookback: |
   A “lookback window” limits the period of time in which data is considered when calculating a trait or audience. For example, you might set a lookback window of 7 days on an audience or trait like `new_users_7_days`, but you would not add a lookback window to a trait that isn’t time-bounded, such as `lifetime_value`.
@@ -113,7 +113,7 @@ Schema: |
   In Segment, you can send data to a Warehouse which has a schema based on the types of data you collect and route through Segment, and which updates as the data you collect changes.
 
 Server Side: |
-  Refers to a group of libraries that can send data to Segment, in [Cloud mode](#cloud-mode), meaning through the Segment cloud. "Server side" can could refer to people sending data directly to [our HTTP API](/docs/connections/sources/catalog/libraries/http/) without using a "library". Usually used in contrast to [Client Side](#client-side).
+  Refers to a group of libraries that can send data to Segment, in [Cloud mode](#cloud-mode), meaning through the Segment cloud. "Server side" can could refer to people sending data directly to [our HTTP API](/docs/connections/sources/catalog/libraries/server/http-api/) without using a "library". Usually used in contrast to [Client Side](#client-side).
 
 
 SDK: |
@@ -139,7 +139,7 @@ SSP: |
   Supply-side Platform
 
 Throughput: |
-  The number of calls you can make. This is set in your account plan.
+  The number of API calls and Objects your account makes, per MTU. The limit on this number is defined by your account plan.
 
 Track: |
   Type of API call (method) which records any actions that users perform on a web or mobile app.

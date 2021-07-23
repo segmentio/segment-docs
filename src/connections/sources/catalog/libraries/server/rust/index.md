@@ -6,7 +6,7 @@ sourceCategory: 'Server'
 
 Our Rust library lets you record analytics data from your Rust code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
 
-This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-rust).
+This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-rust).
 
 All of Segment's server libraries are built for high-performance, so you can use them in your web server controller code. This library contains the building blocks to batch and efficiently send data to Segment.
 
@@ -224,7 +224,7 @@ Find more details about `group` including the **`group` payload** in our [Spec](
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 

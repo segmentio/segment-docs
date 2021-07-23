@@ -1,5 +1,5 @@
 ---
-title: What role does Segment play in Attribution?
+title: Segment's Role in Attribution 
 ---
 
 At a higher level, attribution tools allow you to connect a specific campaign to user acquisition, giving you more visibility into campaign performance.  See [our destination catalog](https://segment.com/catalog) for list of attribution tools that Segment supports. 

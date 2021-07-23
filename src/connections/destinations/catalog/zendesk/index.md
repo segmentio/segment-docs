@@ -13,8 +13,8 @@ This document was last updated on April 30, 2018. If you notice any gaps, outdat
 {% include content/connection-modes.md %}
 
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Zendesk" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Zendesk" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. There are two ways to authenticate your Zendesk account with Segment:
    * Use the standard email and password you use to Sign In to your Zendesk account. In the Zendesk settings, add your email in the **Email** setting and your password in the **Password** setting.
    * Use Zendesk OAuth with a unique token. Get the corresponding token from your Zendesk account: **Settings > Channels > API** and under the Settings Tab choose the corresponding token from the "Active API Tokens" list. In the Zendesk settings, add your `email/token` in the **Email** setting (i.e. `peter@intech.com/token` - use the actual word token in your email address) and add the actual token in the **Password** setting.
@@ -124,15 +124,27 @@ analytics.track('Article Completed', {
 });
 ```
 
-**Important:** To make track calls, you must sign up for Zendesk's [User Events API early access program](https://develop.zendesk.com/hc/en-us/community/topics/360000030527)
+**Important:** You must have a Zendesk [Sunshine plan](https://www.zendesk.com/pricing/?variant=a#platform) to make track calls.
 
-When you call `track` we will send data about a user's activity to Zendesk.
+When you make a Track call, Segment sends data about the user's activity to Zendesk.
 
 We will only send `track` events when the following two conditions are met:
 
 1. The call is listed in the "Events" setting.
 2. A `userId` is included.
   - **Note:** If the `userId` doesn't match any existing users in Zendesk, we will return an error.
+
+**Mapping Users to an Email**: To map a Segment track event to a Zendesk Sunshine event by email, add the user's email address in the Track call as `properties.email`. This allows Zendesk to tie the event to the user. If there is no `properties.email`, Segment sends the `userId` as `external_id`. If the email is provided in the track call, a javascript call may look like the example below.
+
+```js
+analytics.track('Article Completed', {
+  title: 'How to Create a Tracking Plan',
+  course: 'Intro to Analytics',
+  properties: {
+    email : 'user@example.com',
+  }
+});
+```
 
 ## Group
 

@@ -1,5 +1,5 @@
 ---
-title: How do you add warehouse users?
+title: Adding Warehouse Users
 redirect_from: '/connections/warehouses/add-warehouse-users/'
 ---
 

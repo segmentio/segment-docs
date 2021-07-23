@@ -10,7 +10,7 @@ Segment allows you to track events directly into Monetate, and create, test, dep
 
 Because the Monetate destination needs to be on the page right away, Segment can't add it for you. That means you'll need to put the Monetate javascript snippet on the page. Pop over to Monetate and in Settings > destination > Tag you'll find their snippet.
 
-To get started with Monetate and Segment, just toggle on the Monetate destination on your Segment **Destinations page**. If you've already copied the Monetate script tag onto your page, you're ready to go!
+To get started with Monetate and Segment, just enable the Monetate destination on your Segment **Destinations page**. If you've already copied the Monetate script tag onto your page, you're ready to go!
 
  Copy and paste the code provided immediately after your opening `<head>` tag.
 

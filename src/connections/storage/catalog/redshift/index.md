@@ -5,54 +5,45 @@ redirect_from:
   - '/connections/warehouses/catalog/redshift/'
 ---
 
-This guide will explain how to provision a Redshift cluster and allow the Segment warehouse connector to write to it.
-
-This document was last updated on 23rd April, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+This guide explains the process to provision a Redshift cluster and allow the Segment warehouse connector to write to it.
 
 ## Getting Started
 
-There are four steps to get started using Redshift with Segment:
+Complete the following steps to provision your Redshift cluster, and connect Segment to it:
 
-1. Pick the best instance for your needs
-2. Provision a new Redshift Cluster
-3. Create a database user
-4. Connect Redshift to Segment
+1. [Choose the best instance for your needs](#choose-the-best-instance-for-your-needs)
+2. [Provision a new Redshift Cluster](#provision-a-new-redshift-cluster)
+3. [Create a database user](#create-a-database-user)
+4. [Connect Redshift to Segment](#connect-redshift-to-segment)
 
-### Pick the best instance for your needs
+## Choose the best instance for your needs
 
-While the number of events (database records) are important, the storage capacity utilization of your cluster depends primarily on the number of unique tables and columns created in the cluster. Keep in mind that each unique `.track()` event creates a new table, and each property sent creates a new column in that table. For reason, we highly recommend starting with a detailed [tracking plan](/docs/protocols/tracking-plan/create/) before implementing Segment libraries to ensure that only necessary events are being passed to Segment in a consistent way.
+While the number of events (database records) are important, the storage capacity usage of your cluster depends primarily on the number of unique tables and columns created in the cluster. Keep in mind that each unique `.track()` event creates a new table, and each property sent creates a new column in that table. To avoid storing unnecessary data, start with a detailed [tracking plan](/docs/protocols/tracking-plan/create/) before you install Segment libraries to ensure that only the necessary events are passed to Segment.
 
-There are two kinds of Redshift clusters: **Dense Compute** and **Dense Storage**
+Redshift gives the option of three cluster types:
 
-**Dense Compute** clusters are designed to maximize query speed and performance at the expense of storage capacity. This is done by using fast CPUs, large amounts of RAM and solid-state storage. While there are no hard and fast rules for sizing a cluster, we recommend that customers with fewer than 20 million monthly events start with a single DC1 node cluster and add nodes as needed. A single node cluster includes 200GB, with a max size of 2.56TB.
+- **Dense Compute**: These clusters are designed to maximize query speed and performance at the expense of storage capacity. This is done by using fast CPUs, large amounts of RAM and solid-state storage. While there are no hard and fast rules for sizing a cluster, customers with fewer than 20 million monthly events should start with a single DC1 node cluster and add nodes as needed. A single node cluster includes 200GB, with a max size of 2.56TB.
+- **Dense Storage** These clusters are designed to maximize the amount of storage capacity for customers who have 100s of millions of events and prefer to save money on Redshift hosting costs. This is done by using slower CPUs, less RAM, and disk-based storage. A single DS2 node cluster includes 2TB of space, with a max size of 16TB.
+- **RA3**: These clusters provide managed storage to help optimize your data warehouse splitting the cost of compute and storage.
 
-**Dense Storage** clusters are designed to maximize the amount of storage capacity for customers who have 100s of millions of events and prefer to save money on Redshift hosting costs. This is done by using slower CPUs, less RAM, and disk-based storage. A single DS2 node cluster includes 2TB of space, with a max size of 16TB.
 
-### Provision a new Redshift Cluster
+## Provision a new Redshift Cluster
 
-You can skip this step if you already have a Redshift cluster:
-1. Open the Redshift Console
-   ![](images/Screen+Shot+2015-09-17+at+10.25.47+AM.png)
+Follow the steps below to create a new Redshift cluster. If you have a cluster already provisioned, skip this step.
 
-2. Click on "Launch Cluster"
-   ![](images/Screen+Shot+2015-09-17+at+10.26.03+AM.png)
+1. From the Redshift dashboard, click **Create Cluster**.
 
-3. Fill out the cluster details (make sure to select a secure password!)
-   ![Image](images/cVcF5ZtC51a+.png)
+2. Name your new cluster, and select the type and size of the nodes within the cluster. ![create the cluster](images/redshift01.png)
 
-4. Choose your cluster size:
-   ![](images/1442616281635_undefined.png)
-
-5. set up your cluster Security Group or VPC and proceed to review (see below for instructions on settings up a VPC group)
-
+3. Configure the database connection details and admin user for the cluster. ![db user](images/redshift02.png)
 
 Now that you've provisioned your Redshift cluster, you'll need to configure your Redshift cluster to allow Segment to access it.
 
-### Create a Database User
+## Create a Database User
 
-The username and password you've already created for your cluster is your admin password, which you should keep for your own usage. For Segment, and any other 3rd-parties, it is best to create distinct users. This will allow you to isolate queries from one another using [WLM](http://docs.aws.amazon.com/redshift/latest/dg/c_workload_mngmt_classification.html) and perform audits easier.
+The username and password you've already created for your cluster is your admin password, which you should keep for your own use. For Segment, and any other 3rd-parties, it is best to create distinct users. This allows you to isolate queries from one another using [WLM](http://docs.aws.amazon.com/redshift/latest/dg/c_workload_mngmt_classification.html) and perform audits easier.
 
-To create a [new user](http://docs.aws.amazon.com/redshift/latest/dg/r_Users.html), you'll need to log into the Redshift database directly and run the following SQL commands:
+To create a [new user](http://docs.aws.amazon.com/redshift/latest/dg/r_Users.html), log into the Redshift cluster directly (using the credentials you defined in Step 3 above) and run the following SQL commands:
 
 ```sql
 -- create a user named "segment" that Segment will use when connecting to your Redshift cluster.
@@ -62,89 +53,43 @@ CREATE USER segment PASSWORD '<enter password here>';
 GRANT CREATE ON DATABASE "<enter database name here>" TO "segment";
 ```
 
-When setting up your warehouse in Segment, use the username/password you've created here instead of your admin account.
+When you configure your warehouse in Segment, use the username/password you've created here instead of your admin account.
 
-### Connect Redshift to Segment
+## Connect Redshift to Segment
 
 After creating a Redshift warehouse, the next step is to connect Segment:
 
-1. In the Segment App, select 'Add Destination'
-2. Search for and select 'Redshift'
-3. Select which sources and collections/properties will sync to this Warehouse
-3. Enter your Redshift credentials
+1. In the Segment App, navigate to the Connections tab and click **Add Destination**
+2. Search for and select `Redshift`
+3. Add the necessary connection details, add your Redshift credentials
+4. Select which sources and collections/properties will sync to this Warehouse
 
 ## Security
-VPCs keep servers inaccessible to traffic from the internet. With VPC, you're able to designate specific web servers access to your servers.  In this case, you will be whitelisting the [Segment IPs](https://segment.com/docs/connections/warehouses/faq/#which-ips-should-i-whitelist/) to write to your data warehouse.
+VPCs keep servers inaccessible to traffic from the internet. With VPC, you're able to designate specific web servers access to your servers.  In this case, you will be whitelisting the [Segment IPs](/docs/connections/storage/warehouses/faq#which-ips-should-i-whitelist) to write to your data warehouse.
 
-## Best Practice
+## Best practices
 
 ### Networking
 
-Redshift clusters can either be in a **EC2 Classic subnet** or **VPC subnet**.
+Redshift clusters are created in a VPC subnet. To configure:
 
-If your cluster has a field called `Cluster Security Groups`, proceed to [EC2 Classic](//docs/connections/storage/catalog/redshift/#ec2-classic)
-![](images/redshift_permissioning1.png)
+1. Navigate to the Redshift cluster you created previously. Click **Edit**.
 
-Or if your cluster has a field called `VPC Security Groups`, proceed to [EC2 VPC](/docs/connections/storage/catalog/redshift/#ec2-vpc)
-![](images/redshift_permissioning2.png)
+2. Expand the **Network and security** section and click *Open tab* to access the Network and security settings. ![security](images/redshift03.png)
 
-#### EC2-Classic
+3. Click the VPC security group to access its settings. The Security group opens in a new tab. ![group](images/redshift04.png)
 
-1. Navigate to your Redshift Cluster settings: `Redshift Dashboard > Clusters > Select Your Cluster`
+4. Click the Security group in the list to access its settings.
 
-2. Click on the Cluster Security Groups
+5. On the Inbound tab, add or edit a rule to enable Segment to write to your Redshift port from `52.25.130.38/32`. ![inbound](images/redshift05.png)
 
-   ![](images/redshift_permissioning4.png)
+6. On the Outbound tab, ensure Redshift can make outbound requests to the Segment S3 bucket. The default behavior is to allow all outbound traffic, but security groups can limit outbound behavior. ![outbound](images/redshift06.png)
 
-3. Open the Cluster Security Group
+6. Navigate back to the cluster's settings, and click **Edit publicly accessible** to allow access to the cluster from outside of the VPC. ![public](images/redshift07.png)
 
-   ![](images/redshift_permissioning5.png)
+### Electing to encrypt  data 
 
-4. Click on "Add Connection Type"
-
-   ![](images/redshift_permissioning6.png)
-
-5. Choose Connection Type CIDR/IP and authorize Segment to write into your Redshift Port using `52.25.130.38/32`
-
-   ![](images/redshift_permissioning7.png)
-
-#### EC2-VPC
-
-1. Navigate to your `Redshift Dashboard > Clusters > Select Your Cluster`
-
-2. Click on the VPC Security Groups
-
-   ![](images/redshift_permissioning8.png)
-
-3. Select the "Inbound" tab and then "Edit"
-
-   ![](images/redshift_permissioning9.png)
-
-4. Allow Segment to write into your Redshift Port using `52.25.130.38/32`
-
-   ![](images/redshift_permissioning10.png)
-
-  You can find more information on that [here](http://docs.aws.amazon.com/redshift/latest/mgmt/managing-clusters-vpc.html). 
-
-5. Navigate back to your Redshift Cluster Settings: `Redshift Dashboard > Clusters > Select Your Cluster`
-
-6. Select the "Cluster" button and then "Modify"
-   ![](images/redshift_cluster_modify.png)
-
-7. Make sure the "Publicly Accessible" option is set to "Yes"
-   ![](images/rs-mgmt-clusters-modify.png)
-
-8. Check your "Outbound" tab to make sure your Redshift instance is set up to make outbound requests to the Segment S3 bucket. The default behavior is to allow all outbound traffic, but security groups can be put in place to limit outbound behavior.
-
-  ![](images/redshift_outbound_permissions.png)
-
-9. If your outbound traffic is not configured to allow all traffic, you can switch to default settings or specifically whitelist the Segment S3 buckets
-
-   ![](images/redshift_custom_outbound_group.png)
-
-### Electing to encrypt your data 
-
-You can elect to encrypt your data in your Redshift console and it will not affect Segment's ability to read or write.
+You can encrypt  data in the Redshift console. Encryption does not affect Segment's ability to read or write.
 
 
 ### Distribution Key
@@ -153,26 +98,25 @@ The `id` column is the common distribution key used across all tables. When you 
 
 ### Reserved Words
 
-Redshift limits the use of [reserved words](http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html) in schema, table, and column names. Additionally, you should avoid naming traits or properties that conflict with top level Segment fields (e.g. userId, receivedAt, messageId, etc.). These traits and properties that conflict with Redshift or Segment fields will be `_`-prefixed when we create columns for them in your schema, but keeping track of which is which (Segment-reserved vs. custom property columns) can be tricky!
+Redshift limits the use of [reserved words](http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html) in schema, table, and column names. Additionally, avoid naming traits or properties that conflict with top level Segment fields (for example, `userId`, `receivedAt`, or `messageId`). These traits and properties that conflict with Redshift or Segment fields are `_`-prefixed when Segment creates columns for them in your schema.
 
-Redshift limits the use of integers at the start of a schema or table name. We will automatically prepend a `_` to any schema, table or column name that starts with an integer. So a source named '3doctors' will be loaded into a Redshift schema named `_3doctors`.
-
+Redshift limits the use of integers at the start of a schema or table name. Segment prepends an underscore `_` to any schema, table or column name that starts with an integer. A source named `3doctors` is loaded into a Redshift schema named `_3doctors`.
 
 ### CPU
 
-In an usual workload we have seen Redshift using around 20-40% of CPU, we take advantage of the COPY command to ensure to make full use of your cluster to load your data as fast as we can.
+In a usual workload Redshift around 20-40% of CPU. Segment takes advantage of the COPY command to make full use of your cluster to load your data as efficiently as possible.
 
 ## Troubleshooting
 
 ### How do I improve Query Speed?
 
-The speed of your queries depends on the capabilities of the hardware you have chosen as well as the size of the dataset. The amount of data utilization in the cluster will also impact query speed. For Redshift clusters if you're above 75% utilization, you will likely experience degradation in query speed. [Here's a guide on how to improve your query speeds.](/docs/connections/storage/warehouses/redshift-tuning/)
+The speed of your queries depends on the capabilities of the hardware you have chosen as well as the size of the dataset. The amount of data use in the cluster will also impact query speed. For Redshift clusters, if you're above 75% capacity, you will likely experience degradation in query speed. [Here's a guide on how to improve your query speeds.](/docs/connections/storage/warehouses/redshift-tuning/)
 
 ## FAQ
 
 ### How do I sync data in and out between Redshift and Segment?
 
-It's often the case that our customers want to combine 1st party transactional and operational data their Segment data to generate a 360 degree view of the customer. The challenge is that those data sets are often stored in separate data warehouses.
+It's often the case that customers want to combine 1st-party transactional and operational data with Segment data to generate a full view of the customer. The challenge is that those data sets are often stored in separate data warehouses.
 
 If you're interested in importing data into a Redshift cluster, it's important that you follow these [guidelines](/docs/connections/storage/warehouses/faq/).
 

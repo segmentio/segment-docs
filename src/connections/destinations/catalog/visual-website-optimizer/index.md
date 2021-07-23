@@ -7,7 +7,7 @@ title: VWO Destination
 
 The VWO Destination is open-source and you can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-visual-website-optimizer).
 
-This document was last updated on July 26th, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -15,13 +15,13 @@ This document was last updated on July 26th, 2018. If you notice any gaps, outda
 
 Because the VWO destination needs to be on the page right away, there are two ways for the VWO Javascript snippet to be loaded on your page. You can either:
 
-1. Add the Javascript snippet directly on your codebase by following the instructions in [these docs](https://vwo.com/knowledge/add-vwo-smartcode-to-your-website/) from the VWO documentation. Make sure to paste the snippet inside your <HEAD> tag above your Segment snippet!
+1. Add the Javascript snippet directly on your codebase by following the instructions in [these docs](https://vwo.com/knowledge/add-vwo-smartcode-to-your-website/) from the VWO documentation. Make sure to paste the snippet inside your `<HEAD>` tag above your Segment snippet!
 2. Have Segment include the Javascript snippet for you by toggling on the "Use Async Smart Code" setting and then including your Account ID in the "Account ID" setting. When both these settings are correctly set, you will not need to include VWO's native snippet on your page as Segment will do this on your behalf.
 
-Additionaly, to enable the destination  follow these instructions:
+Additionally, to enable the destination  follow these instructions:
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Visual Web Optimizer" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Visual Web Optimizer" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Toggle the destination on!
 
 
@@ -33,10 +33,10 @@ When you enable the VWO destination, we set the option for "Send experiment data
 
 This event supports the following semantic properties:
 
-Property          | Type   | Description
---------          | ----   | -----------
-`experimentId`   | String | The experiment's ID.
-`variationName`  | String | The variation's human-readable name.
+| Property        | Type   | Description                          |
+| --------------- | ------ | ------------------------------------ |
+| `experimentId`  | String | The experiment's ID.                 |
+| `variationName` | String | The variation's human-readable name. |
 
 #### Example
 
@@ -47,7 +47,7 @@ analytics.track('Experiment Viewed', {
 });
 ```
 
-However, you can also send the Experiment data as traits of an identify call that can be routed to all other destinations you have enabled. You'll just need to toggle on the "Send experiment data to other tools (as an identify call)" setting and we will send those experiment values as traits of the user. An example would look like this:
+However, you can also send the Experiment data as traits of an identify call that can be routed to all other destinations you have enabled. You'll just need to enable the "Send experiment data to other tools (as an identify call)" setting and we will send those experiment values as traits of the user. An example would look like this:
 
 ```javascript
 'Experiment: Home CTA': 'Create free account now'

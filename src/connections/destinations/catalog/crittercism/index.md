@@ -3,13 +3,17 @@ title: Crittercism Destination
 redirect_from: '/connections/destinations/catalog/apteligent/'
 ---
 
-Our Crittercism destination code is open sourced on Github. Feel free to check it out: [iOS](https://github.com/segment-integrations/analytics-ios-integration-crittercism), [Android](https://github.com/segment-integrations/analytics-android-integration-crittercism).
+Our Crittercism destination code is open sourced on GitHub. Feel free to check it out: [iOS](https://github.com/segment-integrations/analytics-ios-integration-crittercism), [Android](https://github.com/segment-integrations/analytics-android-integration-crittercism).
 
 ## Getting Started
 
 To get started with Crittercism and Segment, you'll want to integrate our [Android](/docs/connections/sources/catalog/libraries/mobile/android/) or [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) SDK into your mobile app.
 
 Once the Segment library is integrated with your app, toggle Crittercism on in your Segment destination catalog, and add your **App Id** which you can find in your [Crittercism app settings](https://app.crittercism.com/developers/login). These new settings will take up to an hour to propagate to all of your existing users. For new users it'll be instantaneous!
+
+### React Native set up
+
+{% include content/react-dest.md %}
 
 - - -
 

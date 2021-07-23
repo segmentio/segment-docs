@@ -1,10 +1,10 @@
 ---
-title: How do I collect page views on the server side?
+title: Collecting Pageviews on the Server Side
 ---
 
-Generally, we believe that client-side collection is appropriate for collection of basic pageviews.
+Segment believes that client-side collection is appropriate for collection of basic pageviews.
 
-If you'd like to track `page` calls from your server to Segment, we recommend doing it in addition to any client side tracking you're doing with analytics.js, and doing it in a separate "source" so that you can configure where to send the (probably redundant, albeit higher-fidelity) data.
+If you'd like to track `page` calls from your server to Segment, Segment recommends doing it in addition to any client side tracking you're doing with analytics.js, and doing it in a separate "source" so that you can configure where to send the (probably redundant, albeit higher-fidelity) data.
 
 With this approach, you might use a request "middleware" to log a `pageview` with every page load from your server.
 

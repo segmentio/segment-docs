@@ -1,6 +1,9 @@
 ---
 title: Identity & Access Management Overview
+redirect_from: '/segment-app/iam/add-a-team-member/'
 ---
+{% include content/plan-grid.md name="iam" %}
+
 
 Segment's access management tools let workspace owners manage which users can access different parts of their Segment workspaces.
 
@@ -15,19 +18,19 @@ The Access Management page has three tabs: [Users (team members)](/docs/segment-
 - [Remove a team member from a workspace](/docs/segment-app/iam/membership/#remove-a-team-member-from-your-workspace)
 - [Add a new user with Single Sign On](/docs/segment-app/iam/membership/#team-management-with-single-sign-on)
 
-{% include components/media-icon.html href="/segment-app/iam/membership/" icon="media/icon-academy.svg" title="Invite and manage workspace members" content="Learn how to add members to your workspace, and manage their permissions." variant="related" %}
+{% include components/reference-button.html href="/segment-app/iam/membership/" icon="media/academy.svg" title="Invite and manage workspace members" description="Learn how to add members to your workspace, and manage their permissions." variant="related" %}
 
-{% include components/media-icon.html href="/segment-app/iam/membership/" icon="media/icon-academy.svg" title="Organize Users with User Groups" content="Learn manage workspace memebers in bulk." variant="related" %}
+{% include components/reference-button.html href="/segment-app/iam/membership/" icon="media/academy.svg" title="Organize Users with User Groups" description="Learn manage workspace memebers in bulk." variant="related" %}
 
 # Access Management Overview
 
-Access settings are applied at the workspace level. A Segment user can be have access to one or more workspaces, either as an `owner` or `member` of each.
+Access settings are applied at the workspace level. A Segment user can have access to one or more workspaces, either as an `owner` or `member` of each.
 Users access their Segment account with either email/password credentials, or by using Single Sign On.
 
 `Owners` manage all aspects of the workspace, and `members` can have access to specific products and resource types.
 
 > info ""
-> **Note**: If you are on a Free or Team plan, only the `workspace owner` and `source admin` roles are available._
+> **Note**: If you are on a Free or Team plan, only the `workspace owner` and `source admin` roles are available.
 
 Check out the [Roles documentation](/docs/segment-app/iam/roles/) for more details.
 

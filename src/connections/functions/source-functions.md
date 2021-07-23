@@ -73,7 +73,7 @@ To access the URL details, refer to `request.url` object, which is an instance o
 ```js
 async function onRequest(request) {
   // Access a query parameter (e.g. `?name=Jane`)
-  const name = request.headers.searchParams.get('name')
+  const name = request.url.searchParams.get('name')
 }
 ```
 
@@ -262,6 +262,9 @@ The `Segment.set()` method accepts an object with the following fields:
 
 {% include content/functions/runtime.md %}
 
+<!-- TODO - could also go into the `runtime.md` include above, if applied identically to both types of functions.
+## Batching in functions   -->
+
 ## Create settings and secrets
 
 {% include content/functions/settings.md %}
@@ -270,7 +273,7 @@ Next, fill out this setting's value in **Test** tab, so that we can run our func
 
 Note, this value is only for testing your function.
 
-![Test Value For Setting](images/setting-in-test-tab.jpg){:width="500"}
+![Test Value For Setting](images/setting-in-test-tab.png){:width="500"}
 
 Now that we have our setting set up and test value filled in, we can add code to read its value and run our function:
 
@@ -297,13 +300,11 @@ You can use webhooks to test the source function either by sending requests manu
 
 From the source function editor, copy the webhook URL from the "Auto-fill via Webhook" dialog. To trigger the source function, send the request using the `POST` method, with the `Content-Type` header set to `application/json` or `application/x-www-form-urlencoded`.
 
-![Capture events to test your function](images/webhook-capture.gif)
-
 ### Testing source functions manually
 
 You can also manually construct headers and body of an HTTP request right inside the editor and test with this data, without using webhooks.
 
-![Test HTTP Request](images/test-manual.jpg){:width="500"}
+![Test HTTP Request](images/test-manual.png){:width="500"}
 
 ## Save and deploy the function
 
@@ -366,8 +367,6 @@ Segment only attempts to run your source function again if a **Retry** error occ
 
 If you are a **Workspace Owner** or **Functions Admin**, you can manage your source function from the [Functions](https://app.segment.com/goto-my-workspace/functions/catalog) tab in the catalog.
 
-![Editing or deleting your Source Function](images/function-sidesheet-source.gif)
-
 ### Connecting source functions
 
 > note ""
@@ -381,10 +380,14 @@ Copy and paste this URL into the upstream tool or service to send data to this s
 
 ## Source function FAQs
 
+##### What is the retry policy for a webhook payload?
+
+The webhook payload retries up to 5 times with an exponential backoff for the function in the event of a failure with the function. After 5 attempts, the message is dropped.
+
 ##### What is the maximum payload size for the incoming webhook?
 
-2MB.
+The maximum payload size for an incoming webhook payload is 512 KiB.
 
-##### Is there a function execution time limit?
+##### What is the timeout for a function to execute?
 
-Yes, functions should execute within 5 seconds.
+The execution time limit is 5 seconds, however Segment strongly recommends that you keep execution time as low as possible. If you are making multiple external requests you can use async / await to make them concurrently, which will help keep your execution time low.

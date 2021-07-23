@@ -1,6 +1,6 @@
 ---
 rewrite: true
-title: Zopim Destination
+title: Zendesk Chat (Zopim) Destination
 ---
 
 [Zendesk Chat](https://developer.zendesk.com/rest_api/docs/chat/introduction), (previously called Zopim) is a live chat solution that helps businesses increase sales conversion by engaging important leads on their websites. The `analytics.js` Zendesk Chat Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-zopim).
@@ -13,8 +13,8 @@ This document was last updated on June 11th, 2018. If you notice any gaps, outda
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Zopim" within the Destinations Catalog and confirm the Source you'd like to connect to. (This is the old name.)
+1. From the Segment web app, click **Catalog**.
+2. Search for "Zopim" in the Catalog, select it, and choose which of your sources to connect the destination to. (This is the old name.)
 3. Add your Zendesk Chat ID (Zopim ID) to your Destination Settings. If you are using the `Chat Widget`, you can find your ID in the widget script itself. See example below:
 
 ```js
@@ -38,7 +38,7 @@ If you are using the `Web Widget` (see example below), **you will need to contac
 <!-- End of Zendesk Widget script -->
 ```
 
-4. In about 45 minutes the CDN updates and the Zendesk Chat snippet is initialized onto your page.
+Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading the Zendesk Chat snippet on your page and sending data.
 
 ## Identify
 
@@ -70,4 +70,4 @@ To learn more about the live chat events you can capture with this destination, 
 
 ### I want to hide the Zendesk Chat widget on certain pages, or after a analytics.js call is made.
 
-Currently, the best way to ensure that the Zendesk Chat widget does not load on a page is to fire a small Javascript snippet as [documented here on the legacy Zopim site](https://api.zopim.com/files/meshim/widget/controllers/liveChatAPI/Window-js.html#$zopim.livechat.window.hide). To ensure that the Zendesk Chat snippet fires after the library loads on the page, you can either wrap the snippet in an [analytics.ready()](/docs/connections/sources/catalog/libraries/website/javascript/#ready) method with any conditional logic you'd like, or place the script in the callback of any analytics.js (`.track()`, `.identify()`, etc) call so that it hides after that call is made.
+Currently, the best way to ensure that the Zendesk Chat widget does not load on a page is to fire a small Javascript snippet as [documented here on the legacy Zopim site](https://api.zopim.com/files/meshim/widget/controllers/liveChatAPI/Window-js.html#$zopim.livechat.window.hide). To ensure that the Zendesk Chat snippet fires after the library loads on the page, you can either wrap the snippet in an [analytics.ready()](/docs/connections/sources/catalog/libraries/website/javascript/#ready) method with any conditional logic you'd like, or place the script in the callback of any Analytics.js (`.track()`, `.identify()`, etc) call so that it hides after that call is made.

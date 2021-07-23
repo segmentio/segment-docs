@@ -4,7 +4,7 @@ title: The Segment Web App
 
 When you first log in, you go to your workspace. (If you're a member of several workspaces, you get to choose which one to go to.) Workspaces organize sets of sources and destinations
 
-{% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/299965?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: Segment App Overview" content="Want a video tour of the Segment workpsace? Head over to Segment University! (Must be logged in to access.)" %}
+{% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/299965?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: Segment App Overview" description="Want a video tour of the Segment workpsace? Head over to Segment University! (Must be logged in to access.)" %}
 
 ### What's a Workspace?
 
@@ -77,4 +77,4 @@ If errors are present, they're sorted by type and include information about how 
 
 The Privacy Portal allows you to inspect data coming into your Segment account, check it for Personally Identifying Information (PII), classify it based on how sensitive the information is, and then determine which categories of data to send to different destinations. Read more about these tools in the [Privacy Portal documentation](/docs/privacy/portal/).
 
-![](/docs/privacy/images/privacy-add-new-matcher.gif)
+![](images/privacy.png)
