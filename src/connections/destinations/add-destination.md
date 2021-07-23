@@ -187,7 +187,6 @@ For the following destinations, a single source can connect to up to 10 instance
 - [ActiveCampaign](/docs/connections/destinations/catalog/activecampaign/)
 - [Akita](/docs/connections/destinations/catalog/akita/)
 - [All Aboard](/docs/connections/destinations/catalog/all-aboard/)
-- [Amazon EventBridge](/docs/connections/destinations/catalog/amazon-eventbridge/)
 - [Amazon Kinesis](/docs/connections/destinations/catalog/amazon-kinesis/)
 - [Amazon Kinesis Firehose](/docs/connections/destinations/catalog/amazon-kinesis-firehose/)
 - [Amazon Lambda](/docs/connections/destinations/catalog/amazon-lambda/)
