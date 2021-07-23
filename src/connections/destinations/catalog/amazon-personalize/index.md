@@ -18,9 +18,9 @@ Developing the machine-learning capabilities necessary to produce these sophisti
 There are a few pre-requisites before getting started. They are:
 
 1. Segment data flowing into an S3 destination OR a warehouse
-2. . Ability to create AWS Glue jobs (only required if using S3 to [train your model](#train-your-model))
-3. Ability to deploy Lambda functions in Amazon Web Services
-4. Access to AWS Personalize
+2. You have the ability to create AWS Glue jobs (only required if using S3 to [train your model](#train-your-model))
+3. You have the ability to deploy Lambda functions in Amazon Web Services
+4. You have access to AWS Personalize
 
 If you don't have S3, Redshift warehouse, or Snowflake warehouse configured, you can read more about setting up [S3](/docs/connections/storage/catalog/amazon-s3/), [Redshift](/docs/connections/storage/catalog/redshift/), and [Snowflake](/docs/connections/storage/catalog/snowflake/).
 
