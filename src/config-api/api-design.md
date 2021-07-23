@@ -43,7 +43,7 @@ You can manage each resource using standard methods:
 | PermissionDenied   | 403 Forbidden             | 7    | An access token with `write` scope is required for the Create, Update and Delete methods              |
 | Not Found          | 404 Not Found             | 5    | The request or resource could not be found. Either the request method or path is incorrect, or the resource does not exist in this workspace (sometimes because of a typo). |
 | Already Exists     | 409 Conflict              | 6    | A resource (e.g. source) already exists with the given name                                           |
-| Resource Exhausted | 429 Too Many Requests     | 8    | The 60 req / sec rate limit was exhausted                                                             |
+| Resource Exhausted | 429 Too Many Requests     | 8    | The 200 req / min rate limit was exhausted                                                             |
 | Internal           | 500 Internal Server Error | 13   | Segment encountered an error processing the request                                                   |
 | Unimplemented      | 501 Not Implemented       | 12   | The method is not supported or implemented                                                            |
 | Unavailable        | 503 Service Unavailable   | 14   | The API is down                                                                                       |
