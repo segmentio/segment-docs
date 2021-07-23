@@ -183,9 +183,9 @@ If you have many sources using Kinesis that it's impractical to attach all of th
 To set this value for a single Secret ID:
 1. Go to the Kinesis Firehose destination settings from each of your Segment sources.
 2. Click **Secret ID** and enter your Workspace ID.
-    * **NOTE:** For security purposes, Segment recommends you to use your Workspace ID as your Secret ID. If you’re currently using a Secret ID different from your Workspace ID, you’ll be susceptible to attacks. You can find your Workspace ID by going to:  **Settings > Workspace Settings > ID**.
-3. Once all of your sources have been updated to use this value, find the IAM role you created for this destination in the AWS Console in **Services > IAM > Roles**.
-4. Click on the role and navigate to the **Trust Relationships** tab.
+    * **NOTE:** For security purposes, Segment recommends you to use your Segment Workspace ID as your Secret ID. If you’re using a Secret ID different from your Workspace ID, you're susceptible to attacks. You can find your Workspace ID by going to:  **Settings > Workspace Settings > ID** from the Segment dashboard.
+3. Once all of your sources are updated to use this value, find the IAM role you created for this destination in the AWS Console in **Services > IAM > Roles**.
+4. Select the role and navigate to the **Trust Relationships** tab.
 5. Click **Edit trust relationship**. You should see a snippet that looks something that looks like this:
 
     ```json
@@ -207,4 +207,4 @@ To set this value for a single Secret ID:
       ]
     }
     ```
-6. Replace your Source ID (found at "YOUR_SEGMENT_SOURCE_ID") with your Secret ID.
+6. Replace the value of `sts:ExternalId` ( "YOUR_SEGMENT_SOURCE_ID") with the Secret ID / Workspace ID value from the previous step.

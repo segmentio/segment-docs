@@ -59,7 +59,7 @@ There are two options for setting up the IAM policy and role:
 
 Using CloudFormation minimizes the setup steps needed, and is Segment's recommended way to create your Lambda's policy and role. To use CloudFormation:
 1. Create the CloudFormation Template.
-   1. Copy or download the [SegmentLambdaDestinationCFTemplate](https://github.com/segmentio/segment-lambda-recipes/blob/ead6c0f77deb38cea7ed486a7b98b47207796b5c/SegmentLambdaDestinationCFTemplate#L1) from the [segment-lambda-recipes](https://github.com/segmentio/segment-lambda-recipes) GitHub repo.
+   1. Copy or download the [SegmentLambdaDestinationCFTemplate](https://github.com/segmentio/segment-lambda-recipes/blob/ead6c0f77deb38cea7ed486a7b98b47207796b5c/SegmentLambdaDestinationCFTemplate#L1){:target="_blank"} from the [segment-lambda-recipes](https://github.com/segmentio/segment-lambda-recipes){:target="_blank"} GitHub repo. 
    2. Save the file with a name you like, but make sure it doesn't have a file extension.
 2. Create the CloudFormation stack.
    1. Within the AWS Console, navigate to **CloudFormation > Stacks**.
@@ -94,7 +94,7 @@ Using CloudFormation minimizes the setup steps needed, and is Segment's recommen
 
         ![](images/CloudFormationLambdaRole.png)
 
-   13. Click on the **Physical ID** of the role. You will be redirected to the summary page for the role within the IAM console.
+   13. Click the **Physical ID** of the role. You will be redirected to the summary page for the role within the IAM console.
    14. Copy the **Role ARN** and copy it into the **Role Address** setting in your Segment Lambda destination settings.
 
 Using the examples provided, your Segment Lambda destination settings will look something like this:

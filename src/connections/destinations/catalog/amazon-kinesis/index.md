@@ -232,4 +232,4 @@ If you have many sources using Kinesis that it's impractical to attach all of th
       ]
     }
     ```
-6. Replace your source ID (found at `"YOUR_SEGMENT_SOURCE_ID"`) with your Secret ID.
+6. Replace the value of `sts:ExternalId` (`"YOUR_SEGMENT_SOURCE_ID"`) with your Secret ID.
