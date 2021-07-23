@@ -5,6 +5,10 @@ redirect_from: '/partners/build-functions/'
 
 Subscription Functions allow you to write custom JavaScript code that sends Segment Event Data to existing APIs. This guides explains how to write custom functions.
 
+> note ""
+> **NOTE:** On July 31, 2021 support for building Subscription Functions will be removed from Developer Center. You may continue building a Subscription Webhook. Segment is committed to improving the Developer Center experience with Developer Center 2.0, which will offer a more holistic approach to building on Segment. If you’re interested in joining the beta in the coming months, please fill out [this form](https://airtable.com/shrvZzQ6NTTwsc6rQ){:target="_blank"}.
+
+
 ## Getting Started
 
 Review the steps outlined in the [Developer Center Overview](/docs/partners). This document outlines specific details for Step 4 as it relates to building a Subscription Function.
