@@ -15,23 +15,23 @@ Developing the machine-learning capabilities necessary to produce these sophisti
 
 {% include content/connection-modes.md %}
 
-There are a few pre-requisites:
+There are a few pre-requisites before getting started. They are:
 
 1. Segment data flowing into an S3 destination OR a warehouse
-  1. Ability to create AWS Glue jobs (only required if using S3 to [train your model](#train-your-model))
-2. Ability to deploy Lambda functions in Amazon Web Services
-3. Access to AWS Personalize
+2. . Ability to create AWS Glue jobs (only required if using S3 to [train your model](#train-your-model))
+3. Ability to deploy Lambda functions in Amazon Web Services
+4. Access to AWS Personalize
 
-don't have an S3, Redshift warehouse, or Snowflake warehouse set up? You can read more about setting up S3 [here](https://segment.com/docs/connections/storage/catalog/amazon-s3/), Redshift [here](https://segment.com/docs/connections/storage/catalog/redshift/), and Snowflake [here](https://segment.com/docs/connections/storage/catalog/snowflake/).
+If you don't have an S3, Redshift warehouse, or Snowflake warehouse set up, you can read more about setting up [S3](https://segment.com/docs/connections/storage/catalog/amazon-s3/), [Redshift](https://segment.com/docs/connections/storage/catalog/redshift/), and [Snowflake](https://segment.com/docs/connections/storage/catalog/snowflake/).
 
 ***If you're a Segment business tier customer, contact your Success contact to initiate a replay to S3 or your Warehouse.***
 
 
 There are three main parts to using Amazon Personalize with Segment:
 
-1. [**Train your model**]() on historical data in S3 or a Warehouse.
-2. [**Create a Personalize Dataset Group**]() and Campaign
-3. [**Connect Recommendations**] and Live Event Updates to your Campaign and Segment
+1. [**Train your model**](/docs/connections/destinations/catalog/amazon-personalize/#train-your-model) on historical data in S3 or a Warehouse.
+2. [**Create a Personalize Dataset Group**](/docs/connections/destinations/catalog/amazon-personalize/#create-personalize-dataset-group-solution-and-campaign) and Campaign
+3. [**Connect Recommendations**](/docs/connections/destinations/catalog/amazon-personalize/#getting-recommendations-and-live-event-updates) and Live Event Updates to your Campaign and Segment
 
 ## Train Your Model
 
@@ -645,22 +645,23 @@ In the next section, we will build a real-time clickstream ingestion pipeline th
 
 ## Getting Recommendations and Live Event Updates
 
-Once you deployed your Personalize solution and enabled a Campaign, your Lambda can consume event notifications from Segment and use the Solution and Campaign to react to events which will drive your business cases.
+Once you deploy your Personalize solution and enable a Campaign, your Lambda can consume event notifications from Segment and use the Solution and Campaign to react to events which will drive your business cases.
 
-The example code we provide below shows how to forward events to the Personalize Solution you deployed to keep your model updated.  It then forwards an `identify` event back to Segment with the recommendations from your Solution.
+The example code Segment provides below shows how to forward events to the Personalize Solution you deployed to keep your model updated.  It then forwards an `identify` event back to Segment with the recommendations from your Solution.
 
 
 ### Set up Segment IAM policy & role for invoking your Lambda
 
 Segment will need to be able to call ("invoke") your Lambda in order to process events.  This requires you to configure an IAM role for your Lambda which allows the Segment account to invoke your function.
 
-**Create an IAM policy.**
+#### Create an IAM policy
+To create an IAM policy:
+1. Sign in to the [Identity and Access Management (IAM) console](https://console.aws.amazon.com/iam/) and follow these instructions to [Create an IAM policy](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html) to allow Segment permission to invoke your Lambda function.
 
-Sign in to the [Identity and Access Management (IAM) console](https://console.aws.amazon.com/iam/) and follow these instructions to [Create an IAM policy](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html) to allow Segment permission to invoke your Lambda function.
+2. Select the **Create Policy from JSON** option and use the following template policy in the `Policy Document` field. Be sure to change the `{region}`, `{account-id}` and `{function-names}` with the applicable values. Here's example of a Lambda ARN `arn:aws:lambda:us-west-2:355207333203:function:``my-example-function`.
 
-Select the **Create Policy from JSON** option and use the following template policy in the `Policy Document` field. Be sure to change the {region}, {account-id} and {function-names} with the applicable values. An example of a Lambda ARN `arn:aws:lambda:us-west-2:355207333203:function:``my-example-function`.
-
-_Note: you can put in a placeholder ARN for now, as you will need to come back to this step to update with the ARN of your Lambda once that's been created._
+> note ""
+> **NOTE:** You can put in a placeholder ARN for now, as you will need to come back to this step to update with the ARN of your Lambda once that's been created.
 
 ```json
 {
@@ -682,21 +683,22 @@ _Note: you can put in a placeholder ARN for now, as you will need to come back t
 }
 ```
 
+#### Create an IAM role
+To create an IAM role:
+1. Sign in to the [Identity and Access Management (IAM) console](https://console.aws.amazon.com/iam/) and follow these instructions to [Create an IAM role](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html#roles-creatingrole-user-console) to allow Segment permission to invoke your Lambda function.
+2. While setting up the new role, add the policy you created in the [previous step](/docs/connections/destinations/catalog/amazon-personalize/#create-an-iam-policy).
+3. Finish with any other set up items you may want (like `tags`).
+4. Search for and click on your new roles from the [IAM home](https://console.aws.amazon.com/iam/home#/home).
+5. Select the **Trust Relationships** tab, then click **Edit trust relationship**.
 
-**Create an IAM role**
+    ![](images/LambdaTrustRelationship.png)
 
-Sign in to the [Identity and Access Management (IAM) console](https://console.aws.amazon.com/iam/) and follow these instructions to [Create an IAM role](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html#roles-creatingrole-user-console) to allow Segment permission to invoke your Lambda function.
+6. Copy and paste the following into your trust relationship. You should replace `<your-source-id>` with either the Source ID of the attached Segment source (the default) or the custom external ID you set in your Amazon Lambda destination settings.
 
-While setting up the new role, add the policy you created in the previous step.
-
-Finish with any other set up items you may want (like `tags`). Once that's complete, search for and click on your new roles from the [IAM home](https://console.aws.amazon.com/iam/home#/home).
-
-Select the "Trust Relationships" tab, then click the "Edit trust relationship" button.
-
-![](images/LambdaTrustRelationship.png)
-
-Copy and paste the following into your trust relationship. You should replace `<your-source-id>` with either the Source ID of the attached Segment source (the default) or whatever custom external id you set in your Amazon Lambda destination settings.
-  Note: Source ID *can be found by navigating to Settings > API Keys from your Segment source homepage.*
+> note ""
+> **NOTE:** Your Source ID can be found by navigating to **Settings > API Keys** from your Segment source homepage.
+>
+> If you're using an External ID, for security purposes, Segment recommends you to use your Workspace ID as your External ID. If you’re currently using an External ID different from your Workspace ID, you’ll be susceptible to attacks. You can find your Workspace ID by going to:  **Settings > Workspace Settings > ID**.
 
 ```json
 {

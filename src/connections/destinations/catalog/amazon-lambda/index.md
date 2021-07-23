@@ -57,43 +57,47 @@ There are two options for setting up the IAM policy and role:
 
 ### Use CloudFormation
 
-Using CloudFormation minimizes the set up steps needed, and is Segment's recommended way to create your Lambda's policy and role.
+Using CloudFormation minimizes the setup steps needed, and is Segment's recommended way to create your Lambda's policy and role. To use CloudFormation:
+1. Create the CloudFormation Template.
+   1. Copy or download the [SegmentLambdaDestinationCFTemplate](https://github.com/segmentio/segment-lambda-recipes/blob/ead6c0f77deb38cea7ed486a7b98b47207796b5c/SegmentLambdaDestinationCFTemplate#L1) from the [segment-lambda-recipes](https://github.com/segmentio/segment-lambda-recipes) GitHub repo.
+   2. Save the file with a name you like, but make sure it doesn't have a file extension.
+2. Create the CloudFormation stack.
+   1. Within the AWS Console, navigate to **CloudFormation > Stacks**.
 
-**Create the CloudFormation Template**
+      ![](images/CloudFormationStackNav.png)
 
-Copy or download the [SegmentLambdaDestinationCFTemplate](https://github.com/segmentio/segment-lambda-recipes/blob/ead6c0f77deb38cea7ed486a7b98b47207796b5c/SegmentLambdaDestinationCFTemplate#L1) from our [segment-lambda-recipes](https://github.com/segmentio/segment-lambda-recipes) GitHub repo. Save the file with whatever name you like, but make sure it doesn't have a file extension.
+   2. Click **Create Stack**.
 
-**Create the CloudFormation stack**
+      ![](images/CloudFormationCreateStack.png)
 
-Within the AWS Console, navigate to CloudFormation. Navigate to the Stacks page.
+   3. On the **Select Template** page, select **Upload a template to Amazon S3**. Using **Choose File**, select the SegmentLambdaDestinationCFTemplate you downloaded in the previous step.
 
-![](images/CloudFormationStackNav.png)
+   4. Click **Next**.
 
-Click the "Create Stack" button.
+      ![](images/CloudFormationUploadTemplate.png)
 
-![](images/CloudFormationCreateStack.png)
+   5. Give your stack a name.
+   6. For the **ExternalId** parameter, enter the "External ID" setting in your Segment Lambda destination settings. This should be your **Workspace ID**.
+      * **NOTE:** For security purposes, Segment recommends you to use your Workspace ID as your External ID. If you’re currently using an External ID different from your Workspace ID, you’ll be susceptible to attacks. You can find your Workspace ID by going to:  **Settings > Workspace Settings > ID**.
+   7. The **LambdaARN** parameter corresponds to the **Lambda** setting in your Segment Lambda destination settings.
 
-On the "Select Template" page, select "Upload a template to Amazon S3", then using "Chose File", select the SegmentLambdaDestinationCFTemplate you created/downloaded in the previous step.
+      ![](images/CloudFormationStackDetails.png)
 
-Click "Next".
+   8. You can leave the next page as is, no changes needed.
+   9. On the last page, review your template details and click **Create**.
+   10. You will now see your new Stack listed in the Stacks page.
 
-![](images/CloudFormationUploadTemplate.png)
+        ![](images/CloudFormationCreateInProgress.png)
 
-Give your stack a meaningful name. The "ExternalId" parameter corresponds to the "External ID" setting in your Segment Lambda destination settings. The "LambdaARN" parameter corresponds to the "Lambda" setting in your Segment Lambda destination settings.
+   11. Once the status is **CREATE_COMPLETE**, click on the name of your Stack.
+   12. On the Stack Detail page under the **Resources** section, you will see a policy and role listed.
 
-![](images/CloudFormationStackDetails.png)
+        ![](images/CloudFormationLambdaRole.png)
 
-You can leave the next page as is, no changes needed. On the last page, review your template details and click "Create".
+   13. Click on the **Physical ID** of the role. You will be redirected to the summary page for the role within the IAM console.
+   14. Copy the **Role ARN** and copy it into the **Role Address** setting in your Segment Lambda destination settings.
 
-You should now see your new Stack listed in the Stacks page.
-
-![](images/CloudFormationCreateInProgress.png)
-
-Once the status is "CREATE_COMPLETE", click on the name of your Stack. On the Stack Detail page, under the "Resources" section, you should see a policy and role listed.
-
-![](images/CloudFormationLambdaRole.png)
-
-Click on the "Physical ID" of the role. You will be redirected to the summary page for the role within the IAM console. Copy the "Role ARN" and copy it into the "Role Address" setting in your Segment Lambda destination settings. Using the examples provided, your Segment Lambda destination settings would now look something like this:
+Using the examples provided, your Segment Lambda destination settings will look something like this:
 
 ![](images/SegmentLambdaSettingsPostCF.png)
 
