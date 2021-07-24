@@ -4,7 +4,6 @@ title: Amazon Kinesis Destination
 ---
 [Amazon Kinesis](https://aws.amazon.com/kinesis/) enables you to build custom applications that process or analyze streaming data for specialized needs. Amazon Kinesis Streams can continuously capture and store terabytes of data per hour from hundreds of thousands of sources such as website clickstreams, financial transactions, social media feeds, IT logs, and location-tracking events.
 
-This document was last updated on February 05, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let Segment know](https://segment.com/help/contact)!
 
 ## Getting Started
 
