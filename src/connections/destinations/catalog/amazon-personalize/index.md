@@ -3,19 +3,19 @@ rewrite: true
 title: Amazon Personalize Destination
 ---
 
-Segment makes it easy to send your data to Amazon Personalize (and lots of other destinations). Once you collect your data using Segment's [open source libraries](/docs/connections/sources/catalog/), Segment translates and routes your data to Amazon Personalize in the format it can use. [Amazon Personalize](https://aws.amazon.com/personalize/) is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications. AWS Personalize enables…
+Segment makes it easy to send your data to Amazon Personalize (and lots of other destinations). Once you collect your data using Segment's [open source libraries](/docs/connections/sources/catalog/), Segment translates and routes your data to Amazon Personalize in the format it can use. [Amazon Personalize](https://aws.amazon.com/personalize/) is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications. AWS Personalize enables:
 
   - Media companies to provide recommended content for viewers based on their viewing history
-  - Retailers can provide personalized product recommendations based on shopping behavior
+  - Retailers to provide personalized product recommendations based on shopping behavior
   - Any company to provide personalized search results and targeted marketing promotions based on the latest machine-learning capabilities developed at Amazon
 
-Developing the machine-learning capabilities necessary to produce these sophisticated recommendation systems has been beyond the reach of most organizations today due to the complexity of developing machine learning functionality. Amazon Personalize allows developers with no prior machine learning experience to easily build sophisticated personalization capabilities into their applications, using machine learning technology perfected from years of use on Amazon.com.
+Developing the machine-learning capabilities necessary to produce these recommendation systems has been beyond the reach of most organizations today due to the complexity of developing machine learning functionality. Amazon Personalize allows developers with no prior machine learning experience to build sophisticated personalization capabilities into their applications, using machine learning technology perfected from years of use on Amazon.com.
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-There are a few pre-requisites before getting started. They are:
+These are the pre-requisites you need before getting started:
 
 1. Segment data flowing into an S3 destination OR a warehouse
 2. You have the ability to create AWS Glue jobs (only required if using S3 to [train your model](#train-your-model))
@@ -26,18 +26,17 @@ If you don't have S3, Redshift warehouse, or Snowflake warehouse configured, you
 
 ***If you're a Segment business tier customer, contact your Success contact to initiate a replay to S3 or your Warehouse.***
 
+There are 3 main parts to using Amazon Personalize with Segment:
 
-There are three main parts to using Amazon Personalize with Segment:
-
-1. [**Train your model**](/docs/connections/destinations/catalog/amazon-personalize/#train-your-model) on historical data in S3 or a Warehouse.
-2. [**Create a Personalize Dataset Group**](/docs/connections/destinations/catalog/amazon-personalize/#create-personalize-dataset-group-solution-and-campaign) and Campaign
-3. [**Connect Recommendations**](/docs/connections/destinations/catalog/amazon-personalize/#getting-recommendations-and-live-event-updates) and Live Event Updates to your Campaign and Segment
+1. [Train your model](/docs/connections/destinations/catalog/amazon-personalize/#train-your-model) on historical data in S3 or a Warehouse.
+2. [Create a Personalize Dataset Group](/docs/connections/destinations/catalog/amazon-personalize/#create-personalize-dataset-group-solution-and-campaign) and Campaign
+3. [Connect Recommendations](/docs/connections/destinations/catalog/amazon-personalize/#getting-recommendations-and-live-event-updates) and Live Event Updates to your Campaign and Segment
 
 ## Train Your Model
 
 **S3 Bucket Permissions**
 
-Whatever method you choose to train your model will result in placing a CSV into an S3 bucket. Be sure to update the policies of the bucket to include [these permissions](https://docs.aws.amazon.com/personalize/latest/dg/data-prep-upload-s3.html) to allow Personalize to access your CSV:
+Whatever method you choose to train your model will result in placing a CSV into an S3 bucket. Be sure to update the policies of the bucket to include [these permissions](https://docs.aws.amazon.com/personalize/latest/dg/data-prep-upload-s3.html){:target="_blank"} to allow Personalize to access your CSV:
 
 ```json
 {
@@ -65,7 +64,7 @@ Whatever method you choose to train your model will result in placing a CSV into
 
 **Define a Schema**
 
-To train a Personalize model, you will need to define the event schema for the event names and properties that your model will use as features.  For the examples below, we are using the following Personalize Dataset schema to train our model.  You will want to modify this to suit your use cases.  For more information on Personalize schemas, see:  https://docs.aws.amazon.com/personalize/latest/dg/how-it-works-dataset-schema.html
+To train a Personalize model, you'll need to define the event schema for the event names and properties that your model uses as features. For the examples below, Segment is using the following Personalize Dataset schema to train the model. You'll want to modify this to suit your use cases.  You can learn more about [Personalize schemas](https://docs.aws.amazon.com/personalize/latest/dg/how-it-works-dataset-schema.html){:target="_blank"}.
 
 ```json
 {
@@ -94,7 +93,7 @@ To train a Personalize model, you will need to define the event schema for the e
 }
 ```
 
-The examples will show how multiple Segment `track` events can be mapped into this schema and used to train a Personalize solution.
+The examples show how multiple Segment `track` events are mapped into this schema and used to train a Personalize solution.
 
 ### From Redshift
 
@@ -144,9 +143,9 @@ Browse to the S3 service page in the AWS console and navigate to the bucket path
 
 ### From Snowflake
 
-There are a few ways to load a CSV into S3 from your [Snowflake](https://docs.snowflake.net/manuals/user-guide/data-unload-s3.html) warehouse. This example shows loading the data directly into an S3 bucket.
+There are a few ways to load a CSV into S3 from your [Snowflake](https://docs.snowflake.net/manuals/user-guide/data-unload-s3.html){:target="_blank"} warehouse. This example shows loading the data directly into an S3 bucket.
 
-Assuming you have a Personalize schema like that described [below](https://paper.dropbox.com/doc/AWS-Personalize-Public-Docs-Draft--AYzHC6162S0frKZwOTxwK6sxAg-T0BVNjCLNfQZeGUF93ca1#:uid=533004255844735424528405&h2=Part-1---Create-Personalize-Da), you can use the following query to pull out all the date from your `Order Completed`, `Product Added`, and `Product Viewed` events.
+Assuming you have a Personalize schema like that described [below](/docs/connections/destinations/catalog/amazon-personalize/#create-personalize-dataset-group), you can use the following query to pull out all the date from your `Order Completed`, `Product Added`, and `Product Viewed` events.
 
 **Unload Data from Snowflake to S3**
 
@@ -181,471 +180,468 @@ Assuming you have a Personalize schema like that described [below](https://paper
     credentials = (aws_key_id='xxxx' aws_secret_key='xxxxx' aws_token='xxxxxx');
 ```
 
-This example uses temporary S3 credentials, which are generated by AWS STS and expire after a specific period of time. Temporary credentials are [recommended](https://docs.snowflake.net/manuals/user-guide/data-unload-s3.html#unloading-data-directly-into-an-s3-bucket) to protect access to the bucket.
+This example uses temporary S3 credentials, which are generated by AWS STS and expire after a specific period of time. Temporary credentials are [recommended](https://docs.snowflake.net/manuals/user-guide/data-unload-s3.html#unloading-data-directly-into-an-s3-bucket){:target="_blank"} to protect access to the bucket.
 
 **Verify the Output file**
-Browse to the S3 service page in the AWS console and navigate to the bucket path specified in the `unload` command. You should see the output file.
+Go to the S3 service page in the AWS console and navigate to the bucket path specified in the `unload` command. You should see the output file.
 
 
 ### From S3
 
 **Historical Data Preparation**
 
-Segment's S3 destination will contain a copy of all of the source data you have configured to go to S3.  In your S3 bucket you will have a folder called `/segment-logs`.  Under this folder will be another folder for each source of data you have connected to your Segment S3 destination.
+Segment's S3 destination contains a copy of all of the source data you configured to go to S3.  In your S3 bucket there's a folder called `/segment-logs`.  Under this folder is another folder for each source of data you connected to your Segment S3 destination.
 
 Note that this step is not required unless you plan to do batch data extraction from S3.
 
-Your Glue ETL job will need to crawl each source folder to extract the backup data that will form your training set.  Analysis of this data set is beyond the scope of this document.  It is strongly recommended you familiarize yourself with the types of events that can be sent through Segment.  Our event structure is described in detail here:  https://segment.com/docs/connections/sources/catalog/libraries/server/http/.
+Your Glue ETL job will need to crawl each source folder to extract the backup data that forms your training set.  Analysis of this data set is beyond the scope of this document.  It is strongly recommended you familiarize yourself with the types of events that can be sent through Segment.  Segment's event structure is described in detail [here](/docs/connections/sources/catalog/libraries/server/http/).
 
 The following examples show how to configure an AWS Glue job to convert Segment historical data into the Apache Avro format that Personalize wants to consume for training data sets.
 
 **Create AWS Glue ETL Job**
 
-Navigate to the Glue service in your AWS console.  Click the "Get started" button and then click "Jobs" in the left navigation on the Glue console page.
+To create an AWS Glue ETL Job:
+1. Navigate to the Glue service in your AWS console.  
+2. Click **Get started** and then click **Jobs** in the left navigation on the Glue console page.
 
-![](images/GlueJobs.png)
-
-
-Click the "Add job" button and enter the following information.
-
-- Enter a job name such as "SegmentEventsJsonToCsv".
+    ![](images/GlueJobs.png)
 
 
-- For IAM role, you will need to create a role and execution policies that gives your Glue job the ability to write to your S3 bucket:
+3. Click **Add job**.
+4. Enter a job name such as "SegmentEventsJsonToCsv".
+5. For IAM role, create a role and execution policies that gives your Glue job the ability to write to your S3 bucket. For example:
+  * Policy 1:
 
-Policy 1:
-```json
-{
-    "Version": "2012-10-17",
-    "Statement": [
+      ```json
+      {
+          "Version": "2012-10-17",
+          "Statement": [
+              {
+                  "Effect": "Allow",
+                  "Action": [
+                      "glue:*",
+                      "s3:GetBucketLocation",
+                      "s3:ListBucket",
+                      "s3:ListAllMyBuckets",
+                      "s3:GetBucketAcl",
+                      "ec2:DescribeVpcEndpoints",
+                      "ec2:DescribeRouteTables",
+                      "ec2:CreateNetworkInterface",
+                      "ec2:DeleteNetworkInterface",
+                      "ec2:DescribeNetworkInterfaces",
+                      "ec2:DescribeSecurityGroups",
+                      "ec2:DescribeSubnets",
+                      "ec2:DescribeVpcAttribute",
+                      "iam:ListRolePolicies",
+                      "iam:GetRole",
+                      "iam:GetRolePolicy",
+                      "cloudwatch:PutMetricData"
+                  ],
+                  "Resource": [
+                      "*"
+                  ]
+              },
+              {
+                  "Effect": "Allow",
+                  "Action": [
+                      "s3:CreateBucket"
+                  ],
+                  "Resource": [
+                      "arn:aws:s3:::aws-glue-*"
+                  ]
+              },
+              {
+                  "Effect": "Allow",
+                  "Action": [
+                      "s3:GetObject",
+                      "s3:PutObject",
+                      "s3:DeleteObject"
+                  ],
+                  "Resource": [
+                      "arn:aws:s3:::aws-glue-*/*",
+                      "arn:aws:s3:::*/*aws-glue-*/*"
+                  ]
+              },
+              {
+                  "Effect": "Allow",
+                  "Action": [
+                      "s3:GetObject"
+                  ],
+                  "Resource": [
+                      "arn:aws:s3:::crawler-public*",
+                      "arn:aws:s3:::aws-glue-*"
+                  ]
+              },
+              {
+                  "Effect": "Allow",
+                  "Action": [
+                      "logs:CreateLogGroup",
+                      "logs:CreateLogStream",
+                      "logs:PutLogEvents"
+                  ],
+                  "Resource": [
+                      "arn:aws:logs:*:*:/aws-glue/*"
+                  ]
+              },
+              {
+                  "Effect": "Allow",
+                  "Action": [
+                      "ec2:CreateTags",
+                      "ec2:DeleteTags"
+                  ],
+                  "Condition": {
+                      "ForAllValues:StringEquals": {
+                          "aws:TagKeys": [
+                              "aws-glue-service-resource"
+                          ]
+                      }
+                  },
+                  "Resource": [
+                      "arn:aws:ec2:*:*:network-interface/*",
+                      "arn:aws:ec2:*:*:security-group/*",
+                      "arn:aws:ec2:*:*:instance/*"
+                  ]
+              }
+          ]
+      }
+      ```
+
+    * Policy 2:
+
+        ```json
         {
-            "Effect": "Allow",
-            "Action": [
-                "glue:*",
-                "s3:GetBucketLocation",
-                "s3:ListBucket",
-                "s3:ListAllMyBuckets",
-                "s3:GetBucketAcl",
-                "ec2:DescribeVpcEndpoints",
-                "ec2:DescribeRouteTables",
-                "ec2:CreateNetworkInterface",
-                "ec2:DeleteNetworkInterface",
-                "ec2:DescribeNetworkInterfaces",
-                "ec2:DescribeSecurityGroups",
-                "ec2:DescribeSubnets",
-                "ec2:DescribeVpcAttribute",
-                "iam:ListRolePolicies",
-                "iam:GetRole",
-                "iam:GetRolePolicy",
-                "cloudwatch:PutMetricData"
-            ],
-            "Resource": [
-                "*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:CreateBucket"
-            ],
-            "Resource": [
-                "arn:aws:s3:::aws-glue-*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:GetObject",
-                "s3:PutObject",
-                "s3:DeleteObject"
-            ],
-            "Resource": [
-                "arn:aws:s3:::aws-glue-*/*",
-                "arn:aws:s3:::*/*aws-glue-*/*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:GetObject"
-            ],
-            "Resource": [
-                "arn:aws:s3:::crawler-public*",
-                "arn:aws:s3:::aws-glue-*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "logs:CreateLogGroup",
-                "logs:CreateLogStream",
-                "logs:PutLogEvents"
-            ],
-            "Resource": [
-                "arn:aws:logs:*:*:/aws-glue/*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:CreateTags",
-                "ec2:DeleteTags"
-            ],
-            "Condition": {
-                "ForAllValues:StringEquals": {
-                    "aws:TagKeys": [
-                        "aws-glue-service-resource"
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Action": [
+                        "s3:GetObject",
+                        "s3:PutObject"
+                    ],
+                    "Resource": [
+                        "arn:aws:s3:::{ your bucket arn }/segment-logs/*",
+                        "arn:aws:s3:::{ your bucket arn }/transformed/*"
                     ]
                 }
-            },
-            "Resource": [
-                "arn:aws:ec2:*:*:network-interface/*",
-                "arn:aws:ec2:*:*:security-group/*",
-                "arn:aws:ec2:*:*:instance/*"
             ]
         }
-    ]
-}
-```
+      ```
 
-Policy 2:
-```json
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:GetObject",
-                "s3:PutObject"
-            ],
-            "Resource": [
-                "arn:aws:s3:::{ your bucket arn }/segment-logs/*",
-                "arn:aws:s3:::{ your bucket arn }/transformed/*"
-            ]
-        }
-    ]
-}
-```
+6. Leave Type as **Spark**.
+7. For **This job runs**, select **A new script to be authored by you**.
+8. Leave everything else the same and click **Next** at the bottom of the form.
+9. On the **Connections** step, click **Save job and edit script** since you won't access data in a database for this job.
+
+10. The source code for a generic Glue job is below. Modify this code to reflect the names of the events you wish to extract from the Segment logs (see line #25). Copy the code example to your clipboard and paste it into the Glue editor window.
+
+    ```python
+    import sys
+    from awsglue.transforms import *
+    from awsglue.utils import getResolvedOptions
+    from awsglue.context import GlueContext
+    from awsglue.dynamicframe import DynamicFrame
+    from awsglue.job import Job
+    from pyspark.context import SparkContext
+    from pyspark.sql.functions import unix_timestamp
+
+    ## @params: [JOB_NAME,S3_JSON_INPUT_PATH,S3_CSV_OUTPUT_PATH]
+    args = getResolvedOptions(sys.argv, ['JOB_NAME', 'S3_JSON_INPUT_PATH', 'S3_CSV_OUTPUT_PATH'])
+
+    sc = SparkContext()
+    glueContext = GlueContext(sc)
+    spark = glueContext.spark_session
+    job = Job(glueContext)
+    job.init(args['JOB_NAME'], args)
+
+    # Load JSON into dynamic frame
+    datasource0 = glueContext.create_dynamic_frame.from_options('s3', {'paths': [args['S3_JSON_INPUT_PATH']]}, 'json')
+    print("Input file: ", args['S3_JSON_INPUT_PATH'])
+    print("Input file total record count: ", datasource0.count())
+
+    # Filters the JSON documents that we want included in the output CSV
+    supported_events = ['Product Added', 'Order Completed', 'Product Clicked']
+    def filter_function(dynamicRecord):
+            if ('anonymousId' in dynamicRecord and
+                            'userId' in dynamicRecord and
+                            'properties' in dynamicRecord and
+                            'sku' in dynamicRecord["properties"] and
+                            'event' in dynamicRecord and
+                            dynamicRecord['event'] in supported_events):
+                    return True
+            else:
+                    return False
+
+    # Apply filter function to dynamic frame
+    interactions = Filter.apply(frame = datasource0, f = filter_function, transformation_ctx = "interactions")
+    print("Filtered record count: ", interactions.count())
+
+    # Map only the fields we want in the output CSV, changing names to match target schema.
+    applymapping1 = ApplyMapping.apply(frame = interactions, mappings = [ \
+            ("anonymousId", "string", "ANONYMOUS_ID", "string"), \
+            ("userId", "string", "USER_ID", "string"), \
+            ("properties.sku", "string", "ITEM_ID", "string"), \
+            ("event", "string", "EVENT_TYPE", "string"), \
+            ("timestamp", "string", "TIMESTAMP_ISO", "string")], \
+            transformation_ctx = "applymapping1")
+
+    # Repartition to a single file since that is what is required by Personalize
+    onepartitionDF = applymapping1.toDF().repartition(1)
+    # Coalesce timestamp into unix timestamp
+    onepartitionDF = onepartitionDF.withColumn("TIMESTAMP", \
+            unix_timestamp(onepartitionDF['TIMESTAMP_ISO'], "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"))
+    # Convert back to dynamic frame
+    onepartition = DynamicFrame.fromDF(onepartitionDF, glueContext, "onepartition_df")
+
+    # Write output back to S3 as a CSV
+    glueContext.write_dynamic_frame.from_options(frame = onepartition, connection_type = "s3", \
+            connection_options = {"path": args['S3_CSV_OUTPUT_PATH']}, \
+            format = "csv", transformation_ctx = "datasink2")
+
+    job.commit()
+    ```
+
+11. Click **Save** to save the job script.
+
+    ![](images/GlueEditJobScript.png)
 
 
-- Leave Type as "Spark".
-- For "This job runs", click the radio button "A new script to be authored by you".
-- Leave everything else the same and click Next at the bottom of the form.
-- On the "Connections" step click "Save job and edit script" since you will not access data in a database for this job.
+To review key parts of the script in more detail:
+1. The script is initialized with a few job parameters. You'll see how to specify these parameter values when the job below runs. For now, see that Segment is passing in the location of the raw JSON files using `S3_JSON_INPUT_PATH` and the location where the output CSV should be written through `S3_CSV_OUTPUT_PATH`.
 
-The source code for a generic Glue job is below.   Note that you will need to modify this code to reflect the names of the events you wish to extract from the Segment logs (see line #25).
+    ```python
+        args = getResolvedOptions(sys.argv, ['JOB_NAME', 'S3_JSON_INPUT_PATH', 'S3_CSV_OUTPUT_PATH'])
+    ```
 
-Copy the code example to your clipboard and paste it into the Glue editor window.
+2. The Spark and Glue contexts are created and associated. A Glue Job is also created and initialized.
 
-```python
-import sys
-from awsglue.transforms import *
-from awsglue.utils import getResolvedOptions
-from awsglue.context import GlueContext
-from awsglue.dynamicframe import DynamicFrame
-from awsglue.job import Job
-from pyspark.context import SparkContext
-from pyspark.sql.functions import unix_timestamp
+    ```python
+        sc = SparkContext()
+        glueContext = GlueContext(sc)
+        spark = glueContext.spark_session
+        job = Job(glueContext)
+        job.init(args['JOB_NAME'], args)
+    ```
 
-## @params: [JOB_NAME,S3_JSON_INPUT_PATH,S3_CSV_OUTPUT_PATH]
-args = getResolvedOptions(sys.argv, ['JOB_NAME', 'S3_JSON_INPUT_PATH', 'S3_CSV_OUTPUT_PATH'])
+3. The first step in Segment's Job is to load the raw JSON file as a Glue DynamicFrame.
 
-sc = SparkContext()
-glueContext = GlueContext(sc)
-spark = glueContext.spark_session
-job = Job(glueContext)
-job.init(args['JOB_NAME'], args)
+    ```python
+        datasource0 = glueContext.create_dynamic_frame.from_options('s3', {'paths': [args['S3_JSON_INPUT_PATH']]}, 'json')
+    ```
 
-# Load JSON into dynamic frame
-datasource0 = glueContext.create_dynamic_frame.from_options('s3', {'paths': [args['S3_JSON_INPUT_PATH']]}, 'json')
-print("Input file: ", args['S3_JSON_INPUT_PATH'])
-print("Input file total record count: ", datasource0.count())
+4. Since not all events that are written to S3 by Segment are relevant to training a Personalize model, Segment uses Glue's `Filter` transformation to keep the records needed.
+5. The `datasource0` DynamicFrame created above is passed to `Filter.apply(...)` function along with the `filter_function` function. It's in `filter_function` where Segment keeps events that have a product SKU and `userId` specified. The resulting DynamicFrame is captured as `interactions`.
 
-# Filters the JSON documents that we want included in the output CSV
-supported_events = ['Product Added', 'Order Completed', 'Product Clicked']
-def filter_function(dynamicRecord):
-        if ('anonymousId' in dynamicRecord and
-                        'userId' in dynamicRecord and
-                        'properties' in dynamicRecord and
-                        'sku' in dynamicRecord["properties"] and
-                        'event' in dynamicRecord and
-                        dynamicRecord['event'] in supported_events):
-                return True
+    ```python
+    def filter_function(dynamicRecord):
+        if dynamicRecord["properties"]["sku"] and dynamicRecord["userId"]:
+            return True
         else:
-                return False
+            return False
 
-# Apply filter function to dynamic frame
-interactions = Filter.apply(frame = datasource0, f = filter_function, transformation_ctx = "interactions")
-print("Filtered record count: ", interactions.count())
+    interactions = Filter.apply(frame = datasource0, f = filter_function, transformation_ctx = "interactions")
+    ```
 
-# Map only the fields we want in the output CSV, changing names to match target schema.
-applymapping1 = ApplyMapping.apply(frame = interactions, mappings = [ \
+6. Segment calls Glue's `ApplyMapping` transformation, passing the `interactions` DynamicFrame from above and field mapping specification that indicates the fields Segment wants to retain and their new names. These mapped field names become the column names in Segment's output CSV. You'll notice that Segment is using the product SKU as the `ITEM_ID` and `event` as the `EVENT_TYPE`. Segment also renames the `timestamp` field to `TIMESTAMP_ISO` since the format of this field value in the JSON file is an ISO 8601 date and Personalize requires timestamps to be specified in UNIX time (number seconds since Epoc).
+
+    ```python
+    applymapping1 = ApplyMapping.apply(frame = interactions, mappings = [ \
         ("anonymousId", "string", "ANONYMOUS_ID", "string"), \
         ("userId", "string", "USER_ID", "string"), \
         ("properties.sku", "string", "ITEM_ID", "string"), \
         ("event", "string", "EVENT_TYPE", "string"), \
         ("timestamp", "string", "TIMESTAMP_ISO", "string")], \
         transformation_ctx = "applymapping1")
+    ```
 
-# Repartition to a single file since that is what is required by Personalize
-onepartitionDF = applymapping1.toDF().repartition(1)
-# Coalesce timestamp into unix timestamp
-onepartitionDF = onepartitionDF.withColumn("TIMESTAMP", \
-        unix_timestamp(onepartitionDF['TIMESTAMP_ISO'], "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"))
-# Convert back to dynamic frame
-onepartition = DynamicFrame.fromDF(onepartitionDF, glueContext, "onepartition_df")
+7. To convert the ISO 8601 date format to UNIX time for each record, Segment uses Spark's `withColumn(...)` to create a new column called `TIMESTAMP` that is the converted value of the `TIMESTAMP_ISO` field. Before Segment can call `withColumn`, Segment needs to convert the Glue DynamicFrame into a Spark DataFrame. That is accomplished by calling `toDF()` on the output of ApplyMapping transformation above. Since Personalize requires Segment's uploaded CSV to be a single file, Segment calls `repartition(1)` on the DataFrame to force all data to be written in a single partition. After creating the `TIMESTAMP` in the expected format, `DyanmicFrame.fromDF()` is called to convert the DataFrame back into a DyanmicFrame.
 
-# Write output back to S3 as a CSV
-glueContext.write_dynamic_frame.from_options(frame = onepartition, connection_type = "s3", \
-        connection_options = {"path": args['S3_CSV_OUTPUT_PATH']}, \
-        format = "csv", transformation_ctx = "datasink2")
+    ```python
+        # Repartition to a single file
+        onepartitionDF = applymapping1.toDF().repartition(1)
+        # Coalesce timestamp into unix timestamp
+        onepartitionDF = onepartitionDF.withColumn("TIMESTAMP", \
+            unix_timestamp(onepartitionDF['TIMESTAMP_ISO'], "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"))
+        # Convert back to dynamic frame
+        onepartition = DynamicFrame.fromDF(onepartitionDF, glueContext, "onepartition_df")
+    ```
 
-job.commit()
-```
+8. Segment's CSV is written back to S3 at the path specified by the `S3_CSV_OUTPUT_PATH` job property and commits the job.
 
-Click "Save" to save the job script.
+    ```python
+        glueContext.write_dynamic_frame.from_options(frame = onepartition, connection_type = "s3", \
+            connection_options = {"path": args['S3_CSV_OUTPUT_PATH']}, \
+            format = "csv", transformation_ctx = "datasink2")
 
-![](images/GlueEditJobScript.png)
-
-
-Let's review key parts of the script in more detail. First, the script is initialized with a few job parameters. We'll see how to specify these parameter values when we run the job below. For now, just see we're passing in the location of the raw JSON files using `S3_JSON_INPUT_PATH` and the location where the output CSV should be written through `S3_CSV_OUTPUT_PATH`.
-
-```python
-    args = getResolvedOptions(sys.argv, ['JOB_NAME', 'S3_JSON_INPUT_PATH', 'S3_CSV_OUTPUT_PATH'])
-```
-
-Next the Spark and Glue contexts are created and associated. A Glue Job is also created and initialized.
-
-```python
-    sc = SparkContext()
-    glueContext = GlueContext(sc)
-    spark = glueContext.spark_session
-    job = Job(glueContext)
-    job.init(args['JOB_NAME'], args)
-```
-
-The first step in our Job is to load the raw JSON file as a Glue DynamicFrame.
-
-```python
-    datasource0 = glueContext.create_dynamic_frame.from_options('s3', {'paths': [args['S3_JSON_INPUT_PATH']]}, 'json')
-```
-
-Since not all events that are written to S3 by Segment are relevant to training a Personalize model, we'll use Glue's `Filter` transformation to keep only the records we want. The `datasource0` DynamicFrame created above is passed to `Filter.apply(...)` function along with the `filter_function` function. It's in `filter_function` where we keep events that have a product SKU and `userId` specified. The resulting DynamicFrame is captured as `interactions`.
-
-```python
-def filter_function(dynamicRecord):
-    if dynamicRecord["properties"]["sku"] and dynamicRecord["userId"]:
-        return True
-    else:
-        return False
-
-interactions = Filter.apply(frame = datasource0, f = filter_function, transformation_ctx = "interactions")
-```
-
-Next we will call Glue's `ApplyMapping` transformation, passing the `interactions` DynamicFrame from above and field mapping specification that indicates the fields we want to retain and their new names. These mapped field names will become the column names in our output CSV. You'll notice that we're using the product SKU as the `ITEM_ID` and `event`as the `EVENT_TYPE`. We're also renaming the `timestamp` field to `TIMESTAMP_ISO` since the format of this field value in the JSON file is an ISO 8601 date and Personalize requires timestamps to be specified in UNIX time (number seconds since Epoc).
-
-```python
-applymapping1 = ApplyMapping.apply(frame = interactions, mappings = [ \
-    ("anonymousId", "string", "ANONYMOUS_ID", "string"), \
-    ("userId", "string", "USER_ID", "string"), \
-    ("properties.sku", "string", "ITEM_ID", "string"), \
-    ("event", "string", "EVENT_TYPE", "string"), \
-    ("timestamp", "string", "TIMESTAMP_ISO", "string")], \
-    transformation_ctx = "applymapping1")
-```
-
-To convert the ISO 8601 date format to UNIX time for each record, we'll use Spark's `withColumn(...)` to create a new column called `TIMESTAMP` that is the converted value of the `TIMESTAMP_ISO` field. Before we can call `withColumn`, though, we need to convert the Glue DynamicFrame into a Spark DataFrame. That is accomplished by calling `toDF()` on the output of ApplyMapping transformation above. Since Personalize requires our uploaded CSV to be a single file, we'll call `repartition(1)` on the DataFrame to force all data to be written in a single partition. Finally, after creating the `TIMESTAMP` in the expected format, `DyanmicFrame.fromDF()` is called to convert the DataFrame back into a DyanmicFrame.
-
-```python
-    # Repartition to a single file
-    onepartitionDF = applymapping1.toDF().repartition(1)
-    # Coalesce timestamp into unix timestamp
-    onepartitionDF = onepartitionDF.withColumn("TIMESTAMP", \
-        unix_timestamp(onepartitionDF['TIMESTAMP_ISO'], "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"))
-    # Convert back to dynamic frame
-    onepartition = DynamicFrame.fromDF(onepartitionDF, glueContext, "onepartition_df")
-```
-
-The last step is to write our CSV back to S3 at the path specified by the `S3_CSV_OUTPUT_PATH` job property and commit the job.
-
-```python
-    glueContext.write_dynamic_frame.from_options(frame = onepartition, connection_type = "s3", \
-        connection_options = {"path": args['S3_CSV_OUTPUT_PATH']}, \
-        format = "csv", transformation_ctx = "datasink2")
-
-    job.commit()
-```
+        job.commit()
+    ```
 
 **Run Your AWS Glue ETL Job**
-With our ETL Job script created and saved, it's time to run the job to create the CSV needed to train a Personalize Solution.
 
-Before going any further, open another AWS console browser tab/window by right-clicking on the AWS logo in the upper left corner of the page and select "Open Link in New Tab" (or Window).
+With Segment's ETL Job script created and saved, it's time to run the job to create the CSV needed to train a Personalize Solution. To do this:
 
-While still in the Glue service console and the job listed, click the "Run job" button. This will cause the Parameters panel to display.
+1. Open another AWS console browser tab/window by right-clicking on the AWS logo in the upper left corner of the page and select **Open Link in New Tab** (or Window).
 
-Click the "Security configuration, script libraries, and job parameters" section header to cause the job parameters fields to be displayed.
+2. While still in the Glue service console and the job listed, click **Run job**. This will cause the Parameters panel to display.
 
-![](images/GlueRunJobDialog.png)
+3. Click the **Security configuration, script libraries, and job parameters** section header to cause the job parameters fields to be displayed.
 
-
-Scroll down to the "Job parameters" section. This is where we will specify the job parameters that our script expects for the path to the input data and the path to the output file. Create two job parameters with the following key and value.
-
-Be sure to prefix each key with `--` as shown. Substitute your account ID for `[ACCOUNT_ID]` in the values below. You copy the bucket name to your clipboard from the S3 service page in the tab/window you opened above. The order they are specified does not matter.
-
-| **Key**              | **Value**                                      |
-| -------------------- | ---------------------------------------------- |
-| --S3_JSON_INPUT_PATH | s3://personalize-data-[ACCOUNT_ID]/raw-events/ |
-| --S3_CSV_OUTPUT_PATH | s3://personalize-data-[ACCOUNT_ID]/transformed |
-
-![](images/GlueRunJobParams.png)
+    ![](images/GlueRunJobDialog.png)
 
 
-Click the "Run job" button to start the job.  Not that this dialog scrolls.
+4. Scroll down to the **Job parameters** section. This is where Segment will specify the job parameters that Segment's script expects for the path to the input data and the path to the output file.
+5. Create 2 job parameters with the following key and value.
+  * Be sure to prefix each key with `--` as shown. Substitute your account ID for `[ACCOUNT_ID]` in the values below. You copy the bucket name to your clipboard from the S3 service page in the tab/window you opened above. The order they are specified does not matter.
 
-Once the job has started running you will see log output in the "Logs" tab at the bottom of the page. It may take a few minutes to complete.
+    | **Key**              | **Value**                                      |
+    | -------------------- | ---------------------------------------------- |
+    | --S3_JSON_INPUT_PATH | s3://personalize-data-[ACCOUNT_ID]/raw-events/ |
+    | --S3_CSV_OUTPUT_PATH | s3://personalize-data-[ACCOUNT_ID]/transformed |
 
-When the job completes click the "X" in the upper right corner of the the page to exit the job script editor.
+    ![](images/GlueRunJobParams.png)
+
+
+6. Click **Run job** to start the job.  Note that this dialog scrolls.
+
+7. Once the job has started running, you'll see log output in the **Logs** tab at the bottom of the page. It may take a few minutes to complete.
+
+8. When the job completes, click the **X** in the upper right corner of the page to exit the job script editor.
 
 **Verify Output File**
-Browse to the S3 service page in the AWS console and find the bucket with a name starting with `personalize-data-...`. Click on the bucket name. If the job completed successfully you should see a folder named "transformed". Click on "transformed" and you should see the output file created by the ETL job.
 
-![](images/GlueJobOutputFile.png)
+To verify the output file:
 
+1. Go to the S3 service page in the AWS console and find the bucket with a name starting with `personalize-data-...`.
+2. Click on the bucket name. If the job completed successfully, you'll see a folder named **transformed**.
+3. Click on **transformed** and you'll see the output file created by the ETL job.
+
+    ![](images/GlueJobOutputFile.png)
 
 
 ## Create Personalize Dataset Group, Solution and Campaign
 
 ### Create Personalize Dataset Group
 
-Browse to the Amazon Personalize service landing page in the AWS console.
+To create a personalize dataset group:
 
-Click the "View dataset groups" button to get started.
+1. Browse to the Amazon Personalize service landing page in the AWS console.
 
+2. Click **View dataset groups** to get started.
 
-![](images/PersonalizeIntroPage.png)
+    ![](images/PersonalizeIntroPage.png)
 
+3. On the Dataset Groups page, click **Create dataset group**.
 
-On the Dataset Groups page, click the "Create dataset group" button.
+    ![](images/PersonalizeDatasetGroups.png)
 
-![](images/PersonalizeDatasetGroups.png)
+4. On the **Create dataset group** page, give your dataset group a name.
 
+5. Select **Upload user-item interaction data** since Segment will be uploading the CSV prepared in the previous steps.
 
-On the "Create dataset group" page, give your dataset group a name.
+6. Click **Next** to continue.
 
-Select the "Upload user-item interaction data" radio button since we will be uploading the CSV we prepared in the previous steps.
-
-Click "Next" to continue.
-
-![](images/PersonalizeCreateGroup.png)
-
-
-On the "Create user-item interaction data" page, select the "Create new schema" radio button and give your schema a name.
-
-![](images/PersonalizeSchema.png)
+    ![](images/PersonalizeCreateGroup.png)
 
 
-Scroll down to the "Schema definition" editor. Dataset schemas in Personalize are represented in [Avro](https://avro.apache.org/docs/current/spec.html).  For detailed information on Personalize schema definitions, see: https://docs.aws.amazon.com/personalize/latest/dg/how-it-works-dataset-schema.html.
+7. On the **Create user-item interaction data** page, select **Create new schema** and give your schema a name.
+
+    ![](images/PersonalizeSchema.png)
 
 
-> Avro is a remote procedure call and data serialization framework developed within Apache's Hadoop project. It uses JSON for defining data types and protocols, and serializes data in a compact binary format.
+8. Scroll down to the **Schema definition** editor. Dataset schemas in Personalize are represented in [Avro](https://avro.apache.org/docs/current/spec.html){:target="_blank"}. Learn more about For detailed [Personalize schema definitions](https://docs.aws.amazon.com/personalize/latest/dg/how-it-works-dataset-schema.html){:target="_blank"}.
+  * Avro is a remote procedure call and data serialization framework developed within Apache's Hadoop project. It uses JSON for defining data types and protocols, and serializes data in a compact binary format.
+  * This example uses the following example schema:
 
-This example uses the following example schema:
-
-```json
-{
-    "type": "record",
-    "name": "Interactions",
-    "namespace": "com.amazonaws.personalize.schema",
-    "fields": [
+        ```json
         {
-            "name": "USER_ID",
-            "type": "string"
-        },
-        {
-            "name": "ITEM_ID",
-            "type": "string"
-        },
-        {
-            "name": "EVENT_TYPE",
-            "type": "string"
-        },
-        {
-            "name": "TIMESTAMP",
-            "type": "long"
+            "type": "record",
+            "name": "Interactions",
+            "namespace": "com.amazonaws.personalize.schema",
+            "fields": [
+                {
+                    "name": "USER_ID",
+                    "type": "string"
+                },
+                {
+                    "name": "ITEM_ID",
+                    "type": "string"
+                },
+                {
+                    "name": "EVENT_TYPE",
+                    "type": "string"
+                },
+                {
+                    "name": "TIMESTAMP",
+                    "type": "long"
+                }
+            ],
+            "version": "1.0"
         }
-    ],
-    "version": "1.0"
-}
-```
+        ```
 
-Let's review the schema in more detail. The required fields for the user-item interaction dataset schema are `USER_ID`, `ITEM_ID`, and `TIMESTAMP`. Additionally, optional there's an optional field EVENT_TYPE.
+        * The required fields for the user-item interaction dataset schema are `USER_ID`, `ITEM_ID`, and `TIMESTAMP`. There's also an optional field `EVENT_TYPE`.
 
-Copy the contents of Avro schema to your clipboard and paste it into the "Schema definition" editor (replacing the proposed schema).
+9. Copy the contents of Avro schema to your clipboard and paste it into the "Schema definition" editor (replacing the proposed schema).
 
-Click "Next" to save the schema and move to the next step.
+10. Click **Next** to save the schema and move to the next step.
 
-The "Import user-item interaction data" step is displayed next. To complete this form we will need to get two pieces of information from IAM and S3. Give your import job a name and set the automatic import to "Off".
+11. The **Import user-item interaction data** step is displayed next. To complete this form Segment needs to get 2 pieces of information from IAM and S3. Give your import job a name and set the automatic import to **Off**.
 
-For the "IAM service role", select "Create a new role" from the dropdown. In the next pop-up, we recommend listing your bucket name in the "Specific S3 buckets" option, but you're free to choose the option that best suits your needs.
+12. For the **IAM service role**, select **Create a new role** from the dropdown.
+13. In the next pop-up, Segment recommends listing your bucket name in the **Specific S3 buckets** option, but you're free to choose the option that best suits your needs.
 
-Next you will need the location of the CSV file you generated in the earlier steps.  This needs to be configured in the "Data Location" field on this screen.
+14. Find the location of the CSV file you generated in the earlier steps. This needs to be configured in the **Data Location** field on this screen.
 
-![](images/PersonalizeImportJob.png)
+    ![](images/PersonalizeImportJob.png)
 
-After clicking the "Finish" button at the bottom of the page, you will be returned to the Personalize Dashboard where you can monitor the progress of your interaction dataset as it is being created.
+15. After clicking the **Finish** button at the bottom of the page, you'll return to the Personalize Dashboard where you can monitor the progress of your interaction dataset as it is being created.
 
 Be patient as this process can take a long time to complete.
-
 
 ![](images/PersonalizeInteractionDatasetCreating.png)
 
 ### Create Personalize Solution
 
-Once our event CSV is finished importing into a user-item interaction dataset, we can create a Personalize Solution.
+Once Segment's event CSV is finished importing into a user-item interaction dataset, Segment can create a Personalize Solution. To do thi:
 
-From the Dashboard page for the dataset group we created above, click the "Start" button in the "Create solutions" column.
+1. From the Dashboard page for the dataset group we created above, click **Start** in the **Create solutions** column.
 
+    ![](images/PersonalizeCreateSolution.png)
 
-![](images/PersonalizeCreateSolution.png)
+2. On the **Create solution** page, enter a **Solution name**.
+  * For a discussion on the different recipes you can use with Personalize, see [here](https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html){:target="_blank"}.
 
-
-On the "Create solution" page, enter a "Solution name".
-
-For a discussion on the different recipes you can use with Personalize, see [here](https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html)
-
-
-![](images/PersonalizeSolutionConfig.png)
+    ![](images/PersonalizeSolutionConfig.png)
 
 
-Click the "Finish" button to create your Solution. This process can take several minutes to several hours to complete.
+3. Click **Finish** to create your Solution. This process can take several minutes to several hours to complete.
 
-![](images/PersonalizeSolutionInProgress.png)
+    ![](images/PersonalizeSolutionInProgress.png)
 
 ### Create Personalize Campaign
 
 A deployed solution is known as a campaign, and is able to make recommendations for your users. To deploy a solution, you create a campaign in the console or by calling the CreateCampaign API. You can choose which version of the solution to use. By default, a campaign uses the latest version of a solution.
 
-From the Dataset Group Dashboard, click the "Create new campaign" button.
+To create a Personlize campaign:
 
-![](images/PersonalizeCreateCampaignDash.png)
+1. From the Dataset Group Dashboard, click **Create new campaign**.
+
+    ![](images/PersonalizeCreateCampaignDash.png)
+
+2. Enter the name for your campaign.  
+3. Select the solution you created above and click **Create campaign**.
+
+    ![](images/PersonalizeCreateCampaign.png)
+
+4. Personalize will start creating your new campaign. This process can take several minutes.
+
+    ![](images/PersonalizeCampaignCreating.png)
 
 
-Enter the name for your campaign.  Select the solution your created above and click "Create campaign".
-
-![](images/PersonalizeCreateCampaign.png)
-
-
-Personalize will start creating your new campaign. This process can take several minutes.
-
-![](images/PersonalizeCampaignCreating.png)
-
-
-In the next section, we will build a real-time clickstream ingestion pipeline that accepts events from Segment and can query the solution you just deployed.
+In the next section, Segment will build a real-time clickstream ingestion pipeline that accepts events from Segment and can query the solution you just deployed.
 
 ## Getting Recommendations and Live Event Updates
 
-Once you deploy your Personalize solution and enable a Campaign, your Lambda instance consumes event notifications from Segment and use the Solution and Campaign to react to events which drive your business cases.
+Once you deploy your Personalize solution and enable a Campaign, your Lambda instance consumes event notifications from Segment and uses the Solution and Campaign to react to events which drive your business cases.
 
 The example code Segment provides below shows how to forward events to the Personalize Solution you deployed to keep your model updated.  It then forwards an `identify` event back to Segment with the recommendations from your Solution.
 
@@ -728,41 +724,42 @@ If you have multiple Source's using this Role, replace the `sts:ExternalId` sett
 
 ### Build a Lambda Function to Process Segment Events
 
-In order to process events from Segment, you will need to provide a lambda function that can handle your event flow.  This function can be used to forward events to a Tracker for your Personalize solution, or to post process events, get recommendations from your Solution, or to push these results back to Segment for later use in the destinations you have configured.
+In order to process events from Segment, you will need to provide a Lambda function that can handle your event flow.  This function can be used to forward events to a Tracker for your Personalize solution, or to post process events, get recommendations from your Solution, or to push these results back to Segment for later use in the destinations you have configured.
 
-We allow you to send each call type (`track`,`identify`,etc) to a different Lambda function. The example below shows one generic function that could be used to handle any call.
+Segment allows you to send each call type (`track`,`identify`,etc) to a different Lambda function. The example below shows one generic function that could be used to handle any call.
 
-We provide an example Lambda function, written in Python, for you to get up and running.
+Segment provides an example Lambda function, written in Python, for you to get up and running.
 
-Start by browsing to the Lambda service page in your AWS account.
+To build a Lambda function to process Segment events:
+1. Go to the Lambda service page in your AWS account.
+2. Click **Create a function** to create a new function.
 
-Click the "Create a function" button to create a new function.
+    ![](images/LambdaDashboard.png)
 
-![](images/LambdaDashboard.png)
+3. Select **Author from scratch** since Segment will be providing the source code for the function.
 
+4. Enter a name for your function and select **Python 3.7** for the runtime.
 
-Select the "Author from scratch" radio button since we will be providing the source code for the function.
+5. For the **Role** field, select **Create a new role from AWS policy templates** from the dropdown.
+6. Create a **Role name** that makes sense for you, and leave **Policy templates** empty. You will come back to modify this role shortly.
 
-Enter a name for your function and select Python 3.7 for the runtime.
+7. Click **Create function**.
 
-For the "Role" field, select "Create a new role from AWS policy templates" from the dropdown. Create a "Role name" that makes sense for you, and leave "Policy templates" empty. We will come back to modify this role shortly.
-
-Click "Create function".
-
-![](images/LambdaCreateFunction.png)
+    ![](images/LambdaCreateFunction.png)
 
 
 **Lambda Function Source Code**
 
-First, download the `.zip` file at https://github.com/segmentio/segment-lambda-recipes/blob/master/segment-personalize/support/segment_personalize_boilerplate.zip.
+1. Download the `.zip` file at https://github.com/segmentio/segment-lambda-recipes/blob/master/segment-personalize/support/segment_personalize_boilerplate.zip.
 
-Within the Lambda function screen, scroll down to the "Function code" panel. For "Code entry type" choose "Upload a .zip file", click the "Upload" button, then load the `.zip` you downloaded in the first step.
+2. Within the Lambda function screen, scroll down to the **Function code** panel.
+3. For **Code entry type** choose **Upload a .zip file**, and click **Upload**, then load the `.zip` you downloaded in the first step.
 
 You should now be able to see the code (and associate folders) in the code editor.
 
 ![](images/LambdaFunctionCode.png)
 
-Segment will call your lambda once per event.  The provided code will map Segment event fields from the Segment event it gets, and send them to your Personalize Tracker. It will then call Personalize to get a recommendation for the userId in the event, and push that recommendation back as a user trait into Segment, using the `identify` call.
+Segment will call your lambda once per event.  The provided code maps Segment event fields from the Segment event it gets, and sends them to your Personalize Tracker. It then calls Personalize to get a recommendation for the userId in the event, and pushes that recommendation back as a user trait into Segment, using the `identify` call.
 
 Make sure you are clicking **Save** frequently during the next steps!
 
@@ -776,47 +773,56 @@ import of import init_personalize_api as api_helper
 api_helper.init()
 ```
 
-This `import` and function call use some boilerplate code, packaged as a [Lambda Layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html), needed to configure the Personalize API with the AWS Python SDK. This is only necessary while Personalize is in Preview. Once Personalize is GA and the API is bundled with the Python SDK, as well as other language SDKs, this supporting Layer will no longer be needed.
+This `import` and function call uses some boilerplate code, packaged as a [Lambda Layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html) needed to configure the Personalize API with the AWS Python SDK. This is only necessary while Personalize is in Preview. Once Personalize is GA and the API is bundled with the Python SDK, as well as other language SDKs, this supporting Layer will no longer be needed.
 
-To install our Layer, open the Lambda navigation panel and click "Layers".
+To install Segment's Layer:
 
-![Lambda Nav Panel](images/LambdaNav.png)
+1. Open the Lambda navigation panel and click **Layers**.
 
-![Lambda Layers Nav](images/LambdaLayersNav.png)
+    ![Lambda Nav Panel](images/LambdaNav.png)
 
-From the Lambda Layers view, click the "Create layer" button.
+    ![Lambda Layers Nav](images/LambdaLayersNav.png)
 
-![Lambda Create Layer](images/LambdaCreateLayer.png)
+2. From the Lambda Layers view, click **Create layer**.
 
-Create the layer by specifying a name such as "PersonalizeApiInstaller", browsing to the pre-made zip in https://github.com/segmentio/segment-lambda-recipes/blob/master/segment-personalize/support/python_personalize_init.zip, and select Python 3.7 as the compatible runtime. Click the "Create" button to upload the zip file and create the layer.
+    ![Lambda Create Layer](images/LambdaCreateLayer.png)
 
-![Lambda Create Layer Config](images/LambdaCreateLayerConfig.png)
+3. Create the layer by specifying a name such as "PersonalizeApiInstaller", browsing to the pre-made zip in https://github.com/segmentio/segment-lambda-recipes/blob/master/segment-personalize/support/python_personalize_init.zip, and select **Python 3.7** as the compatible runtime.
+4. Click **Create** to upload the zip file and create the layer.
 
-Next you need to add the layer just created to our function. Return to the Lambda function by opening the Lambda navigation panel and clicking "Functions".
+    ![Lambda Create Layer Config](images/LambdaCreateLayerConfig.png)
 
-![Lambda Nav Panel](images/LambdaNav.png)
+5. Add the layer just created to Segment's function.
+6. Return to the Lambda function by opening the Lambda navigation panel and clicking **Functions**.
 
-![Lambda Function Layer Add](images/LambdaFunctionsNav.png)
+    ![Lambda Nav Panel](images/LambdaNav.png)
 
-Click on your function name to access the configuration page again. In the Lambda Designer, click the "Layers" panel below the function name and then the "Add layer" button in the "Referenced layers" panel at the bottom of the page.
+    ![Lambda Function Layer Add](images/LambdaFunctionsNav.png)
 
-![Lambda Function Layer Add](images/LambdaLayerAdd.png)
+7. Click on your function name to access the configuration page again.
+8. In the Lambda Designer, click the **Layers** panel below the function name and then **Add layer**  in the **Referenced layers** panel at the bottom of the page.
 
-Select the layer we just added and the latest version. Click "Add" to add the layer to the function.
+    ![Lambda Function Layer Add](images/LambdaLayerAdd.png)
 
-![Lambda Function Layer Add](images/LambdaLayerAddSelect.png)
+9. Select the layer you just added and the latest version.
+10. Click **Add** to add the layer to the function.
+
+    ![Lambda Function Layer Add](images/LambdaLayerAddSelect.png)
 
 **Update your IAM role for your Lambda to call Personalize**
 
-You will need to modify the IAM Role & Policy originally created with this Lambda to allow it to send and recieve data from Personalize. From the "Execution role" section of your Lambda function, click the "View the <your-role-name>" link.
+You need to modify the IAM Role & Policy originally created with this Lambda to allow it to send and recieve data from Personalize. To do this:
 
-![](images/ExecutionRoleIAM.png)
+1. From the **Execution role** section of your Lambda function, click the **View the <your-role-name>** link.
 
-Click the arrow next to your policy in this role, then "Edit Policy".
+    ![](images/ExecutionRoleIAM.png)
 
-![](images/EditPolicy.png)
+2. Click the arrow next to your policy in this role, then **Edit Policy**.
 
-Add the code below to the existing permissions from within the JSON editor. Then "Review Policy" and "Save Changes".
+    ![](images/EditPolicy.png)
+
+3. Add the code below to the existing permissions from within the JSON editor.
+4. Click **Review Policy** and **Save Changes**.
 
 ```json
 {
@@ -834,7 +840,7 @@ Add the code below to the existing permissions from within the JSON editor. Then
 
 **Wire-up Personalize Event Tracker**
 
-Another dependency in our function is the ability to call the Personalize [PutEvents API](https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html) endpoint as shown in the following excerpt.
+Another dependency in the function is the ability to call the Personalize [PutEvents API](https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html) endpoint as shown in the following excerpt.
 
 ```js
     personalize_events.put_events(
@@ -852,140 +858,133 @@ Another dependency in our function is the ability to call the Personalize [PutEv
       )
 ```
 
-The `trackingId` function argument identifies the Personalize Event Tracker which should handle the events we submit. This value is passed to our Lambda function as an Environment variable.
+The `trackingId` function argument identifies the Personalize Event Tracker which handles the events Segment submits. This value is passed to Segment's Lambda function as an Environment variable.
 
-Let's create a Personalize Event Tracker for the Dataset Group we created earlier.
+You need to create a Personalize Event Tracker for the Dataset Group you created earlier. To do this:
 
-In another browser tab/window, browse to the Personalize service landing page in the AWS console.
+1. In another browser tab/window, go to the Personalize service landing page in the AWS console.
 
-Click on your Dataset Group and then "Event trackers" in the left navigation.
+2. Click on your Dataset Group and then **Event trackers** in the left navigation.
 
-Click the "Create event tracker" button.
+3. Click **Create event tracker** button.
 
-![](images/PersonalizeCreateTracker.png)
+    ![](images/PersonalizeCreateTracker.png)
 
+4. Enter a name for your Event Tracker.
 
-Enter a name for your Event Tracker.
+5. You need to configure a role for Personalize to that allows it to execute the tracker.  This is the same as the execution role you defined earlier for Personalize. Often this is automatically included as a policy labelled "AmazonPersonalizeFullAccess"
 
-You will need to configure a role for Personalize to that allows it to execute the tracker.  This is the same as the execution role you defined earlier for Personalize:
+      ```json
+          {
+              "Version": "2012-10-17",
+              "Statement": [
+                  {
+                      "Effect": "Allow",
+                      "Action": [
+                          "personalize:*"
+                      ],
+                      "Resource": "*"
+                  },
+                  {
+                      "Effect": "Allow",
+                      "Action": [
+                          "cloudwatch:PutMetricData"
+                      ],
+                      "Resource": "*"
+                  },
+                  {
+                      "Effect": "Allow",
+                      "Action": [
+                          "s3:GetObject",
+                          "s3:PutObject",
+                          "s3:DeleteObject",
+                          "s3:ListBucket"
+                      ],
+                      "Resource": [
+                          "arn:aws:s3:::*Personalize*",
+                          "arn:aws:s3:::*personalize*"
+                      ]
+                  },
+                  {
+                      "Effect": "Allow",
+                      "Action": [
+                          "iam:PassRole"
+                      ],
+                      "Resource": "*",
+                      "Condition": {
+                          "StringEquals": {
+                              "iam:PassedToService": "personalize.amazonaws.com"
+                          }
+                      }
+                  }
+              ]
+          }
+      ```
 
-Often this is automatically included as a policy labelled "AmazonPersonalizeFullAccess"
+    * This may be automatically included as policy "AmazonPersonalize-ExecutionPolicy-<some-set-of-numbers>"
 
-```json
-    {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Effect": "Allow",
-                "Action": [
-                    "personalize:*"
-                ],
-                "Resource": "*"
-            },
-            {
-                "Effect": "Allow",
-                "Action": [
-                    "cloudwatch:PutMetricData"
-                ],
-                "Resource": "*"
-            },
-            {
-                "Effect": "Allow",
-                "Action": [
-                    "s3:GetObject",
-                    "s3:PutObject",
-                    "s3:DeleteObject",
-                    "s3:ListBucket"
-                ],
-                "Resource": [
-                    "arn:aws:s3:::*Personalize*",
-                    "arn:aws:s3:::*personalize*"
-                ]
-            },
-            {
-                "Effect": "Allow",
-                "Action": [
-                    "iam:PassRole"
-                ],
-                "Resource": "*",
-                "Condition": {
-                    "StringEquals": {
-                        "iam:PassedToService": "personalize.amazonaws.com"
-                    }
-                }
-            }
-        ]
-    }
-```
+      ```json
+          {
+              "Version": "2012-10-17",
+              "Statement": [
+                  {
+                      "Action": [
+                          "s3:ListBucket"
+                      ],
+                      "Effect": "Allow",
+                      "Resource": [
+                          "arn:aws:s3:::{ your s3 bucket }"
+                      ]
+                  },
+                  {
+                      "Action": [
+                          "s3:GetObject",
+                          "s3:PutObject"
+                      ],
+                      "Effect": "Allow",
+                      "Resource": [
+                          "arn:aws:s3:::{ your s3 bucket }/*"
+                      ]
+                  }
+              ]
+          }
+      ```
 
-This may be automatically included as policy "AmazonPersonalize-ExecutionPolicy-<some-set-of-numbers>"
-
-```json
-    {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Action": [
-                    "s3:ListBucket"
-                ],
-                "Effect": "Allow",
-                "Resource": [
-                    "arn:aws:s3:::{ your s3 bucket }"
-                ]
-            },
-            {
-                "Action": [
-                    "s3:GetObject",
-                    "s3:PutObject"
-                ],
-                "Effect": "Allow",
-                "Resource": [
-                    "arn:aws:s3:::{ your s3 bucket }/*"
-                ]
-            }
-        ]
-    }
-```
-
-![](images/PersonalizeEventTrackerConfig.png)
+      ![](images/PersonalizeEventTrackerConfig.png)
 
 
-The Event Tracker's tracking ID is displayed on the following page and is also available on the Event Tracker's detail page.
+6. The Event Tracker's tracking ID is displayed on the following page and is also available on the Event Tracker's detail page. Copy this value to your clipboard.
 
-Copy this value to your clipboard.
+    ![](images/PersonalizeEventTrackerCreating.png)
 
-![](images/PersonalizeEventTrackerCreating.png)
+7. Returning to the Lambda function, paste the Event Tracker's tracking ID into an Environment variable for the function with the key `personalize_tracking_id`.
 
+    ![](images/LambdaEnvVariable.png)
 
-Returning to our Lambda function, paste the Event Tracker's tracking ID into an Environment variable for our function with the key `personalize_tracking_id`.
+8. Add environment variables for Segment and for the function to tell it the Personalize Campaign to call for retrieving recommendations.
 
-![](images/LambdaEnvVariable.png)
+9. To obtain the Personalize Campaign ARN, go to the Personalize service landing page in the AWS console.
 
-Next, we need to add environment variables for Segment and for the function to tell it the Personalize Campaign to call for retrieving recommendations.
+10. Select the Dataset Group you created earlier and then Campaigns in the left navigation.
 
-To obtain the Personalize Campaign ARN, browse to the Personalize service landing page in the AWS console.
+11. Click on the campaign you created earlier and copy the **Campaign ARN** to your clipboard.
 
-Select the Dataset Group you created earlier and then Campaigns in the left navigation.
-
-Click on the campaign you created earlier and copy the "Campaign arn" to your clipboard.
-
-![](images/PersonalizeCampaignArn.png)
+    ![](images/PersonalizeCampaignArn.png)
 
 
-Return to our Lambda function and scroll down to the "Environment variables" panel.
+12. Return to our Lambda function and scroll down to the **Environment variables** panel.
 
-Add an environment variable with the key `personalize_campaign_arn` and value of the Campaign ARN in your clipboard. Scroll to the top of the page and click the "Save" button to save your changes.
+13. Add an environment variable with the key `personalize_campaign_arn` and value of the Campaign ARN in your clipboard.
+14. Scroll to the top of the page and click **Save** to save your changes.
 
-![](images/LambdaRecCampaignArn.png)
+    ![](images/LambdaRecCampaignArn.png)
 
-And finally, we need a key for the Segment source that will get our update events.
+15. You need a key for the Segment source that will get Segment's update events. Go back to your Segment workspace tab or window, and click on the source which will receive events from your Lambda, and copy the write key from the **Overview** tab.
 
-Go back to your Segment workspace tab or window, and click on the source which will be receiving events from your lambda, and copy the write key from the Overview tab.
-
-![](images/SegmentWriteKey.png)
+  ![](images/SegmentWriteKey.png)
 
 
-Back again to your Lambda tab or window, and paste the key under a property called `connections_source_api_key`.
+16. Go back to your Lambda tab or window, and paste the key under a property called `connections_source_api_key`.
 
 _Make sure to click **Save**_ here or you will need to do this again.
 
@@ -999,9 +998,10 @@ Your lambda is now ready to receive events from Segment.  Next, you will need to
 
 Once your Lambda function is enabled, you can send it events from Segment using the Personalize Destination.
 
-Search for "Amazon Personalize" in our catalog. Connect the destination to the source you created previously. Now you will be presented with the Amazon Personalize Settings.
+1. In the Segment source that you want to connect to your Personalize destination to, click **Add Destination**.
+2. Search and select the **Personalize** destination and enter details for [these settings options](/docs/connections/destinations/catalog/amazon-personalize/#settings)
 
-We allow you to send each call type to a different Lambda. If you leave the Lambda field blank for a given call type, we won't attempt to send any of those calls.
+Segment allows you to send each call type to a different Lambda. If you leave the Lambda field blank for a given call type, Segment won't attempt to send any of those calls.
 
 
 **Track**
