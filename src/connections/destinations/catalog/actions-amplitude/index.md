@@ -101,7 +101,7 @@ You can select these subscriptions by choosing "Quick Setup" when you first conf
 | Screen Calls      | All **screen** calls from the connected source   | Log Event        | Event Type = Viewed `name`<br>for example, `Viewed Homescreen` |
 | Identify Calls    | All **identify** calls from the connected source | Identify User    |                                                                |
 
-![](images/actions-amplitude-defaults)
+![](images/actions-amplitude-defaults.png)
 
 
 
@@ -109,6 +109,8 @@ You can select these subscriptions by choosing "Quick Setup" when you first conf
 
 In the default configuration, the Log Event mapping is triggered when Segment sends a Track call to Amplitude (Actions).
 
+{% comment %}
+MZ - 7/26: Niels is validating the update needed to this section based on a comment in PR 1677
 ### Order Completed
 
 Use the [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) event to track revenue with Amplitude. This event records a list of products that a user purchased in a single transaction. This is the best way for sites that have a shopping cart system to track purchases.
@@ -155,6 +157,7 @@ analytics.track({
 ```
 
 When you send an "Order Completed" event from Segment, an "Order Completed" event appears in Amplitude for that purchase. An Amplitude event called "Product Purchased" is also created for each product in the purchase. All event properties, except `products`, are sent as `event_properties` of the Amplitude "Order Completed" event. Information about each product is present *only* on the individual "Product Purchased" events.
+{% endcomment %}
 
 ### Track Revenue Per Product
 
