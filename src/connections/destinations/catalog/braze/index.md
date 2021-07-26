@@ -96,10 +96,6 @@ To use the latest Braze SDK to collect IDFAs you must do the following:
    .build();
   ```
 
-#### Sample App
-
-Braze created a sample Android application that integrates Braze using Segment. See the Braze [GitHub repository](https://github.com/Appboy/appboy-segment-android-sample) for more information.
-
 ### React Native device-mode set up
 
 <!-- LR, Mar2021: this should be a `react-dest` include but Braze was originally called Appboy-->

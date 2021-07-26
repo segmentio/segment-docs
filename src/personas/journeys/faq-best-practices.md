@@ -39,9 +39,9 @@ When you do this, the key used for syncing to destinations will be different fro
 
 ### Use Traits for conditions based on historical data
 
-Aside from the entry condition, all Journey step conditions are triggered by future events and existing trait memberships. This means that event-based conditions evaluate events that have occured *after* the Journey is published.
+Aside from the entry condition, all Journey step conditions are triggered by future events and existing trait memberships. This means that event-based conditions evaluate events that have occurred *after* the Journey is published.
 
-As a result, if you want to include historical events that may have occured *before* the Journey was published, create conditions based on traits, instead of events.
+As a result, if you want to include historical events that may have occurred *before* the Journey was published, create conditions based on traits, instead of events.
 
 For example, to evaluate if a user has ever used a discount code mid-Journey, create and configure a [Computed Trait](/docs/personas/computed-traits/#conditions) to select for `discount_used = true` to use in your Journey.
 
@@ -52,7 +52,7 @@ Follow these best practices to test your journeys:
 - While in the process of configuring a journey, use dev Personas spaces to model that journey without affecting production data. 
 - Connect a data warehouse to each step of the journey to test for success or failure of that step. 
 - For early version journeys, scaffold Send to Destination steps without connecting to your production advertising or messaging destinations.
-- Verify individual users' progress through the Journey in the Personas Exploror view.
+- Verify individual users' progress through the Journey in the Personas Explorer view.
  
 ## Frequently asked questions
 

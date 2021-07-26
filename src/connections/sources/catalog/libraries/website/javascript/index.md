@@ -28,7 +28,7 @@ Analytics.js 2.0 provides a reduction in page load time, which improves site per
 
 ### Developer experience
 
-Analytics.js 2.0 improves developer experience by introducing new ways for developers to augment events throughout the event timeline. For example, developers can augment events either before or after an event occurs, or while the event is in-flight. 
+Analytics.js 2.0 improves developer experience by introducing new ways for developers to augment events throughout the event timeline. For example, developers can augment events either before or after an event occurs, or while the event is in-flight.
 
 For example, you can use the Analytics.js 2.0 to build features that:
 
@@ -656,6 +656,71 @@ When enabled, Analytics.js automatically retries network and server errors. With
 
 Analytics.js stores events in `localStorage` and falls back to in-memory storage when `localStorage` is unavailable. It retries up to 10 times with an incrementally increasing back-off time between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device's local storage. See the [destination Retries documentation](/docs/connections/destinations/#retries) to learn more.
 
+
+## Batching
+Batching is the ability to group multiple requests or calls into one request or API call. All requests sent within the same batch have the same `receivedAt` time. With Analytics.js, you can send events to Segment in batches. Sending events in batches enables you to have:
+- Delivery of multiple events with fewer API calls
+- Fewer errors if a connection is lost because an entire batch will retry at once rather than multiple calls retrying at random times.
+
+### Setup
+You can start batching by changing the `strategy` to `"batching"` and the parameters for `size` and `timeout` within the `load` method in the analytics object. Batching requires both parameters.
+
+```js
+analytics.load("<write_key>", {
+    integrations: {
+      "Segment.io": {
+        deliveryStrategy: {
+          strategy: "batching",
+          config: {
+            size: 10,
+            timeout: 5000
+          }
+        }
+      }
+    }
+  });
+```
+
+You can check to see if batching works by checking your source’s debugger in **Sources > Debugger**. When you select an event and view the **Raw** code, the `receivedAt` time of all the events in the batch should be the same.
+
+#### Batch size
+The batch size is the threshold that forces all batched events to be sent once it’s reached. For example, `size: 10`  means that after triggering 10 events, Analytics.js sends those 10 events together as a batch to Segment.  
+
+Your total batched events can’t exceed the maximum payload size of 500 KB, with a limit of 32 KB for each event in the batch. If the 500 KB limit is reached, the batch will be split.
+
+#### Timeout
+`timeout` is the number of milliseconds that forces all events queued for batching to be sent, regardless of the batch size, once it’s reached. For example, `timeout: 5000` sends every event in the batch to Segment once 5 seconds passes.
+
+### Batching FAQs
+#### Will Analytics.js deliver events that are in the queue when a user closes the browser?
+Analytics.js does its best to deliver the queued events before the browser closes, but the delivery isn’t guaranteed.
+
+Upon receiving the `beforeunload` browser event, Analytics.js attempts to flush the queue using `fetch` requests with `keepalive` set to true. Since the max size of `keepalive` payloads is limited to 64 KB, if the queue size is bigger than 64 KB at the time the browser closes, then there is a chance of losing a subset of the queued events. Reducing the batch size or timeout will alleviate this issue, but that will be a trade-off decision.
+
+#### Is Batching supported on Analytics.js classic?
+No, Batching is only supported as part of Analytics.js 2.0.
+
+#### Can other destinations receive batched events?
+No, this batching only impacts events sent to Segment. Once the batch reaches Segment, it is split up and follows the normal path of an event.
+
+#### Will batching impact billing or throughput?
+No, batching won’t impact billing or throughput.
+
+#### Can I use batching with partner integrations?
+Partner integrations don’t support batching as all other partner integrations run one event at a time. Only Segment.io events support batched delivery.
+
+#### Does batching work on all browsers?
+Batching won’t work on Internet Explorer.
+
+#### If a source has retry enabled, does the retry behavior change when using batching?
+Batching delays retries, as events that are queued for batching aren’t retried until a batch delivery fails.
+
+#### When using Middlewares as a source and destination, is there a change in behavior when using batching?
+No, there is no change in behavior to Middlewares.
+
+#### When using Segment features (Schema filtering, integrations object, Protocols) to filter events from going to destinations (device and cloud-mode), will batching impact the filtering of events?
+No, there is no impact to how events filter.
+
 ## Plugins
 
 Segment offers video player 'plugins' so you can quickly collect video events using Analytics.js. See the specific documentation below to learn more:
@@ -708,7 +773,7 @@ Copyright Luke Edwards <[luke.edwards05@gmail.com](mailto:luke.edwards05@gmail.c
 License: MIT License, available here: [https://github.com/lukeed/uuid/blob/master/license](https://github.com/lukeed/uuid/blob/master/license)
 
 **component-url v0.2.1** ([https://github.com/component/url](https://github.com/component/url))
-Copyright (c) 2014 Component 
+Copyright (c) 2014 Component
 License: MIT License, available here: [https://github.com/component/url/blob/master/Readme.md](https://github.com/component/url/blob/master/Readme.md)
 
 **dset v2.0.1** ([https://github.com/lukeed/dset](https://github.com/lukeed/dset))
@@ -722,7 +787,7 @@ Copyright (c) 2018 Copyright 2018 Klaus Hartl, Fagner Brack, GitHub Contributors
 **md5 v2.3.0** ([https://github.com/pvorb/node-md5](https://github.com/pvorb/node-md5))
 Copyright (c) 2011-2012, Paul Vorbach.
 Copyright (c) 2009, Jeff Mott.
-License: BSD-3-Clause “New” or “Revised” License, available at: 
+License: BSD-3-Clause “New” or “Revised” License, available at:
 [https://github.com/pvorb/node-md5/blob/master/LICENSE](https://github.com/pvorb/node-md5/blob/master/LICENSE)
 
 **unfetch v4.1.0** ([https://github.com/developit/unfetch](https://github.com/developit/unfetch))
