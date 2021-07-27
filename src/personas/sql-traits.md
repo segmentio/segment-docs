@@ -5,7 +5,7 @@ title: Personas SQL Traits
 
 
 
-SQL Traits allow you to import user or account traits from your data warehouse back into Personas to build audiences, or to enhance Segment data that you send to other destinations.
+SQL Traits allow you to import user or account traits from your data warehouse back into Personas to build audiences, or to enhance Segment data that you send to other Destinations.
 
 SQL Traits are only limited by the data in your warehouse. Because anything you can write a query for can become a SQL Trait, you'll be able to add detail to your user and account profiles, resulting in more nuanced personalization.
 
@@ -14,15 +14,15 @@ This unlocks some interesting possibilities to help you meet your business goals
 - Imagine you want to improve your support team's customer satisfaction score (CSAT). You could create a SQL Trait of the most common ticket requests for a customer's industry by joining data from cloud sources like Zendesk and Salesforce.  The resulting SQL Trait would help you anticipate the user's problems and accelerate potential solutions.
 - If you want to determine if a user resides in a specific area, you could query address data in your warehouse and send it as a `true` or `false` Trait to a Personas audience.
 - If you want to fill gaps in your customer profiles to include information prior to implementing Segment, you could import historical Traits from your warehouse.
-- If you want to accurately predict lifetime value (LTV) for a customer, you can generate a complex query based on demographic and customer data in your warehouse, and use that information in a Personas audience to send personalized offers or recommend specific products.
+- If you want to accurately predict lifetime value (LTV) for a customer, you can generate a complex query based on demographic and customer data in your warehouse. You could then use that information in a Personas audience to send personalized offers or recommend specific products.
 - You could use similarly complex queries to build churn or product adoption models that cannot be easily calculated using Personas Computed Traits, and use them to inform your outreach efforts.
 
-Check out our [SQL traits blog post](https://segment.com/blog/sql-traits) for more customer case studies.
+Check out our [SQL Traits blog post](https://segment.com/blog/sql-traits) for more customer case studies.
 
 
 ### Example: Cloud Sources Sync
 
-SQL traits allow you to import data from [object cloud sources](/docs/connections/sources/#object-cloud-sources) like Salesforce, Stripe, Zendesk, Hubspot, Marketo, Intercom, and more. For example, you could bring in Salesforce Leads or Accounts, Zendesk ticket behavior, or Stripe LTV calculations.
+SQL Traits allow you to import data from [object cloud sources](/docs/connections/sources/#object-cloud-sources) like Salesforce, Stripe, Zendesk, Hubspot, Marketo, Intercom, and more. For example, you could bring in Salesforce Leads or Accounts, Zendesk ticket behavior, or Stripe LTV calculations.
 
 The two examples below show SQL queries you could use to retrieve cloud-source information from your warehouse.
 
@@ -94,7 +94,7 @@ To connect BigQuery to Segment SQL Traits, you must create a service account for
 
    ![](images/bigquery_setup2.png)
 
-6. Give the service account a name - we recommend something like `segment-sqltraits`.
+6. Give the service account a name like `segment-sqltraits`.
 
 7. Under **Project Role**, add _only_ the `BigQuery Data Viewer` and `BigQuery Job User` roles.
 
@@ -112,7 +112,7 @@ To connect BigQuery to Segment SQL Traits, you must create a service account for
 
    ![](images/bigquery_setup5.png)
 
-   A file with the key is saved to your computer. Save this, because you'll need it to set up the Warehouse source in the next step.
+   A file with the key is saved to your computer. Save this, because you'll need it to set up the warehouse source in the next step.
 
    ![](images/bigquery_setup6.png)
 
@@ -130,7 +130,7 @@ Once your warehouse is up and running:
 
 2. Select the type of warehouse you're connecting.
 
-   ![](images/warehouse_source_setup2.png)
+   ![](images/warehouse_source_setup2A.png)
 
 3. In the next screen, provide the connection credentials, and click **Save**.
 
@@ -140,7 +140,7 @@ Once your warehouse is up and running:
 
 ## Creating a SQL Trait
 
-Before you create a SQL Trait, you must first preview it to validate your query. If you've never used SQL before, we have a few templates you can use to try it out.
+Before you create a SQL Trait, you must first preview it to validate your query. If you're new to SQL, try out one of the templates Segment offers.
 
 ### Preview the SQL trait
 
@@ -161,18 +161,18 @@ When you're building your query, there are some requirements for the data your q
 - Each record must be less than 16kb in size to adhere to [Segment's maximum request size](/docs/connections/sources/catalog/libraries/server/http-api/#max-request-size).
 
 A successful preview returns a sample of users and their traits.
-If we have seen a user before in Personas, their profile shows a green checkmark. You can click that user to view their user profile. If a user has a question mark, we haven't seen this `user_id` in Personas before.
+If Segment recognizes a user already in Personas, it displays a green checkmark on their profile. You can click that user to view the user's profile. If a user has a question mark, Segment hasn't detected this `user_id` in Personas before.
 
 ![Click on a user to check out their profile. If a user has a question mark, we haven't seen this user_id in Personas before](images/sql_traits_preview2.png)
 
 
 ### Configure SQL Trait options
 
-Once you're ready to import the SQL trait, select the destinations to which you want to send the data.  If you prefer to build Personas audiences directly from the data instead of sending it to a destination, click **Skip**.
+Once you're ready to import the SQL Trait, select the Destinations to which you want to send the data.  If you prefer to build Personas audiences directly from the data instead of sending it to a Destination, click **Skip**.
 
 ![Select destinations](images/sql_traits_connect1.png)
 
-Give your SQL Trait a name. This is used as a label for descriptive purposes. If you're importing multiple traits, give it a name like "Zendesk traits". The trait names you use in audience-building or in your downstream tools correspond to the column names from the query.
+Give your SQL Trait a name. This is used as a label for descriptive purposes. If you're importing multiple Traits, give it a name like "Zendesk Traits". The Trait names you use in audience-building or in your downstream tools correspond to the column names from the query.
 
 If you're building Personas audiences from this data, select "Compute without enabled destinations".
 
@@ -205,15 +205,15 @@ Happy Querying!
 
 The result set is capped at 10 million rows.
 
-### How often are you querying the customer's data warehouse?
+### How often does Segment query the customer's data warehouse?
 
-Segment queries the data warehouse every 12 hours by default, but can query up to hourly. [Contact us](https://segment.com/help/contact/) if you need more customizable schedules.
+Segment queries the data warehouse every 12 hours by default, but can query up to hourly. [Contact us](https://segment.com/help/contact/) for customized schedules.
 
 ### What identifiers can I use to query a list?
 
 You can currently query based on `email`, `user_id` or `anonymous_id`. If Segment doesn't locate a match based on the chosen identifier, it creates a new profile. See more below.
 
-### Can you use SQL traits to create users in Segment? Or do SQL Traits only append Traits to existing users?
+### Can I use SQL Traits to create users in Segment? Or do SQL Traits only append Traits to existing users?
 
 Yes. The Personas engine sends an `identify` call if there is no match between the identifier you chose and an existing record. When this happens, Segment creates a new user profile. (This identify call happens in the back-end, and doesn't show up in your Debugger.)
 
@@ -253,7 +253,7 @@ Learn more about granting permissions:
 
 Segment currently supports returning only 25 columns. [Contact us](https://segment.com/help/contact/) with a description of your use case if you need to access more.
 
-### I'm seeing a duplicate user_id error.
+### I'm seeing a duplicate `user_id` error.
 
 ![](images/troubleshoot3.png)
 
