@@ -29,7 +29,10 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.page()
 ```
 
-**IMPORTANT:** An initial `page` call is required for data to be sent to HubSpot using Analytics.js. This is included by default in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet).
+> info ""
+> Hubspot supports Page calls on Device-mode connections from Analytics.js sources
+
+Analytics.js requires an initial Page call to send data to HubSpot. The [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) includes this initial call by default.
 
 ## Identify
 
@@ -43,11 +46,12 @@ analytics.identify('user1234', {
 })
 ```
 
-**IMPORTANT:** HubSpot's device-mode integration has two conditions for `identify` to successfully create or update a contact. A `traits.email` value must be included and either a `page` or `track` call must be called. You can read more from HubSpot's documentation [here](https://developers.hubspot.com/docs/methods/tracking_code_api/identify_visitor). If you are using HubSpot's cloud-mode integration, an `identify` call will update records without a `page` or `track` call being needed.
+> info ""
+> HubSpot's device-mode integration has two conditions for Identify to create or update a contact. Identify calls must include a `traits.email` value and need to accompany a Page or Track call. You can read more from HubSpot's documentation [here](https://developers.hubspot.com/docs/methods/tracking_code_api/identify_visitor){:target="_blank"}. If you are using HubSpot's cloud-mode integration, an Identify call will update records without the need for a Page or Track call.
 
-HubSpot does not accept any trait keys that contain uppercases or spaces. So for any custom traits you send Segment converts the trait to lower case, and replaces any spaces with an underscore.
+HubSpot does not accept any trait keys that contain upper case letters or spaces. Segment converts any custom traits you send to lower case, and replaces spaces with an underscore.
 
-Any traits that aren't contact fields in HubSpot will be removed from the request. To find out which fields you can set, check out the custom field names in **Contacts > Contact Settings**. Example field names are "firstname", "lastname", "company", "phone", etc.
+Any traits that aren't contact fields in HubSpot are removed from the request. To find out which fields you can set, check out the custom field names in **Contacts > Contact Settings**. Example field names are "firstname", "lastname", "company", "phone", etc.
 
 If you specify a company name (using `traits.company.name`), it appears as a *property* of the contact (you can find it in HubSpot's UI using **About [contact] > View > View All Properties**), but it does not appear as the user's company under **[contact]'s Company**.
 
@@ -74,7 +78,7 @@ analytics.track("Clicked Buy Now button", {
 })
 ```
 
-**IMPORTANT:** You must have a HubSpot Enterprise account for traits from an `identify` call to be passed through to your `track` call and be successfully sent as [a custom event to HubSpot](https://knowledge.hubspot.com/events-user-guide-v2/using-custom-events).
+**IMPORTANT:** You must have a HubSpot Enterprise account for traits from an Identify call to be passed through to your Track call and be successfully sent as [a custom event to HubSpot](https://knowledge.hubspot.com/events-user-guide-v2/using-custom-events).
 
 The event will appear in your HubSpot UI but may take up to 60 minutes to appear in the graph visualization.
 
@@ -92,12 +96,12 @@ analytics.track(
 )
 ```
 
-In this case, your HubSpot `eventId` is 'Bought Item'. If you want to use an existing `eventId`, you can use it instead of the event value (ie. `Bought Item`). If you don't want to match an existing `eventId`, you can use any event label and HubSpot will auto-create the event for you.
+In this case, your HubSpot `eventId` is 'Bought Item'. If you want to use an existing `eventId`, you can use it instead of the event value (for example, `Bought Item`). If you don't want to match an existing `eventId`, you can use any event label and HubSpot will auto-create the event for you.
 
 
 ### Setting Contact Properties on Track
 
-Although we recommend you send `traits` using [`identify`](/docs/connections/spec/identify/), you can also set HubSpot properties on a track call, as allowed by their [events API](http://developers.hubspot.com/docs/methods/enterprise_events/http_api). You might want to use this method if you're running out of API calls on the Identify requests.
+Although we recommend you send `traits` using [Identify](/docs/connections/spec/identify/), you can also set HubSpot properties on a track call, as allowed by their [events API](http://developers.hubspot.com/docs/methods/enterprise_events/http_api){:target="_blank"}. You might want to use this method if you're running out of API calls on the Identify requests.
 
 Include HubSpot contact properties into the `context.traits` object:
 
@@ -133,13 +137,14 @@ analytics.group({
 });
 ```
 
-Group calls map to the HubSpot [Companies API](https://developers.hubspot.com/docs/methods/companies/companies-overview). Segment's integration is responsible for creating and updating company objects with whatever traits you set, as well as [associating individual contacts to a company](https://developers.hubspot.com/docs/methods/companies/add_contact_to_company).
+Group calls map to the HubSpot [Companies API](https://developers.hubspot.com/docs/methods/companies/companies-overview){:target="_blank"}. Segment's integration is responsible for creating and updating company objects with whatever traits you set, as well as [associating individual contacts to a company](https://developers.hubspot.com/docs/methods/companies/add_contact_to_company){:target="_blank"}.
 
-**IMPORTANT**: There are three requirements to creating companies and associating contacts:
-
-1. Group calls only take effect when called using server-side libraries or mobile libraries, not using our client-side javascript library.
-2. Your contact must have been identified and created within HubSpot (called using analytics.identify for this userId first).
-3. You must include a `website` trait in your group call, and it must be a full, valid, and complete URL. HubSpot uses the domain of the website trait as a unique identifier for companies. To create a new company you must use the full URL and not just the subdomain.
+> warning "" 
+> There are three requirements to creating companies and associating contacts:
+>
+>1. Group calls only take effect when called using server-side libraries or mobile libraries, not using our client-side javascript library.
+>2. Your contact must have been identified and created within HubSpot (called using analytics.identify for this userId first).
+>3. You must include a `website` trait in your group call, and it must be a full, valid, and complete URL. HubSpot uses the domain of the website trait as a unique identifier for companies. To create a new company you must use the full URL and not just the subdomain.
 
 Segment can send the following group traits to HubSpot as special properties:
 
@@ -194,7 +199,8 @@ When using any of our server-side sources, our connector will infer `traits.life
 
 Segment gives you the option to load the [HubSpot Forms SDK](https://developers.hubspot.com/docs/methods/forms/advanced_form_options) alongside their tracking library. This can be done by enabling the **Load Forms SDK** setting when configuring your HubSpot integration.
 
-**Note:** The Forms SDK expects to be loaded synchronously but analytics.js is loaded asynchronously. Therefore, in order to interact with the API, you need to run your code inside an [analytics.ready](/docs/connections/sources/catalog/libraries/website/javascript/#ready) callback. Here's an example:
+> info ""
+> The Forms SDK expects to be loaded synchronously but analytics.js is loaded asynchronously. Therefore, in order to interact with the API, you need to run your code inside an [analytics.ready](/docs/connections/sources/catalog/libraries/website/javascript/#ready) callback. Here's an example:
 
 ```js
 analytics.ready(function(){
