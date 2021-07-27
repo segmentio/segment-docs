@@ -16,24 +16,16 @@ and conversion.
 > info ""
 > This document is about a feature which is in beta. This means that the Destination Actions are in active development, and some functionality may change before it becomes generally available
 
-![](images/amplitude-actions-tab.png)
 
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Amplitude Segment destination. There's also a page about the [non-Actions Amplitude destination](/docs/connections/destinations/catalog/amplitude/). Both of these destinations receives data _from_ Segment. There's also the [Amplitude Engage Segment source](/docs/connections/sources/catalog/cloud-apps/amplitude-cohorts/), which sends data _to_ Segment!
 
 
-## Connection Modes for Amplitude (Actions) destination
-
-The Amplitude (actions) destination does not offer a device-mode connection mode. If you're using one of Segment's new libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)) with the Actions-framework version of the destination, you do not need the device-mode connection.
-
-Most previous deployments of the Amplitude Segment destination used the device-mode connection to use the `session_id` tracking feature. The new Actions-framework Amplitude destination, includes session ID tracking by default. This means you don’t need to bundle any software to run on the user’s device, or write any code. It also means that you can use more of the Segment platform features on data going to Amplitude, such as Protocols filtering and transformations, and Personas identity resolution.
-
-
-Session tracking is available with Segment's new libraries: [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)
 
 
 
-## Getting Started
+
+## Getting started
 
 1. Before you start, go to your [Amplitude workspace](https://analytics.amplitude.com){:target="_blank"}. Click **Settings** in the bottom left, then click **Projects** in the left menu. Select your **Project**. Copy the Amplitude API Key and Secret Key for the project.
 2. From the Segment web app, click **Catalog**, then click **Destinations**.
@@ -45,9 +37,19 @@ Session tracking is available with Segment's new libraries: [Analytics.js 2.0](/
 
 Once you have a mapping, you can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
+### Connection Modes for Amplitude (Actions) destination
+
+The Amplitude (actions) destination does not offer a device-mode connection mode. If you're using one of Segment's new libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)) with the Actions-framework version of the destination, you do not need the device-mode connection.
+
+Most previous deployments of the Amplitude Segment destination used the device-mode connection to use the `session_id` tracking feature. The new Actions-framework Amplitude destination, includes session ID tracking by default. This means you don’t need to bundle any software to run on the user’s device, or write any code. It also means that you can use more of the Segment platform features on data going to Amplitude, such as Protocols filtering and transformations, and Personas identity resolution.
+
+Session tracking is available with Segment's new libraries: [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)
+
 
 ### Device ID Mappings
-The Amplitude destination requires that each event include either a Device ID or a User ID. If a User ID isn't present, Amplitude uses the a Device ID, and vice versa, if a Device ID isn't present, Amplitude uses the User ID. By default, Segment maps the Segment property `context.device.id` to the Amplitude property `Device ID`. If `context.device.id` isn't available, Segment maps the property `anonymousId` to the Amplitude `Device ID`. This is indicated by the following text in the Device ID field: `coalesce(` `context.device.id` `anonymousId` `)`. 
+The Amplitude destination requires that each event include either a Device ID or a User ID. If a User ID isn't present, Amplitude uses the a Device ID, and vice versa, if a Device ID isn't present, Amplitude uses the User ID. 
+
+By default, Segment maps the Segment property `context.device.id` to the Amplitude property `Device ID`. If `context.device.id` isn't available, Segment maps the property `anonymousId` to the Amplitude `Device ID`. This is indicated by the following text in the Device ID field: `coalesce(` `context.device.id` `anonymousId` `)`. 
 
 ### Enable session tracking for Analytics.js 2.0
 
@@ -76,19 +78,15 @@ To enable session tracking in Amplitude when using the [Segment Kotlin library](
    ```
 
 
-## Available Amplitude Actions
+## Important differences from the classic Amplitude destination
 
-Amplitude supports the following Actions:
+The following user fields are captured by the classic Amplitude destination in device-mode (when it runs on the user’s device), but are not captured by Amplitude (Actions):
 
-- Log Event
-- Identify User
-- Map User
-- Group Identify User
-
-You can see the Segment event fields Amplitude accepts for each action in the Actions subscription set up page.
+- Device Type (for example, Mac, PC, mobile device)
+- Platform (for example iOS or Android)
 
 
-## Quick set-up actions
+## Pre-built subscriptions
 
 By default a new Amplitude (Actions) destination comes with the following subscriptions.
 
@@ -101,11 +99,20 @@ You can select these subscriptions by choosing "Quick Setup" when you first conf
 | Screen Calls      | All **screen** calls from the connected source   | Log Event        | Event Type = Viewed `name`<br>for example, `Viewed Homescreen` |
 | Identify Calls    | All **identify** calls from the connected source | Identify User    |                                                                |
 
-![](images/actions-amplitude-defaults.png)
+
+## Available Amplitude Actions
+
+Build your own subscriptions with the following Amplitude-supported actions:
+
+- [Log Event](#log-event)
+- [Identify User](#identify-user)
+- [Map User](#map-user)
+- [Group Identify User](#group-identify-user)
+
+You can see the Segment event fields Amplitude accepts for each action in the Actions subscription set up page.
 
 
-
-## Amplitude’s Log Event Action
+### Log Event 
 
 In the default configuration, the Log Event mapping is triggered when Segment sends a Track call to Amplitude (Actions).
 
@@ -159,7 +166,7 @@ analytics.track({
 When you send an "Order Completed" event from Segment, an "Order Completed" event appears in Amplitude for that purchase. An Amplitude event called "Product Purchased" is also created for each product in the purchase. All event properties, except `products`, are sent as `event_properties` of the Amplitude "Order Completed" event. Information about each product is present *only* on the individual "Product Purchased" events.
 {% endcomment %}
 
-### Track Revenue Per Product
+#### Track Revenue Per Product
 
 Amplitude has two different ways to track revenue associated with a multi-product purchase. You can choose which method you want to use using the **Track Revenue Per Product** destination setting.
 
@@ -169,7 +176,7 @@ If you enable the setting ("on"), Segment sends a single revenue event for each 
 
 Make sure you format your events using the [Track method spec](/docs/connections/spec/track/). You must pass a `revenue` property, a `price` property, and a `quantity` property for each product in the products list.
 
-### Send To Batch Endpoint
+#### Send To Batch Endpoint
 
 
 > info ""
@@ -180,21 +187,21 @@ If `true`, events are sent to Amplitude’s `batch` endpoint rather than to thei
 
 Amplitude’s `batch` endpoint throttles data when the rate of events sharing the same `user_id` or `device_id` exceeds an average of 1,000/second over a 30-second period. See the Amplitude documentation for more about [429 errors and throttling in Amplitude](https://developers.amplitude.com/#429s-in-depth).
 
-## Identify User
+### Identify User
 
 In the default configuration, this mapping is triggered when Segment sends an Identify call to Amplitude (Actions).
 
 This Action sets the user ID for a specific device ID, or updates the user properties. You can use this when you want to update user information without sending an Event to Amplitude.
 
 
-## Map User
+### Map User
 
 In the default configuration, this mapping is triggered when Segment sends an Alias call to Amplitude (Actions).
 
 This Action merges two users together that would otherwise have different User IDs tracked in Amplitude. You can use this when you want to merge the users without sending an Event to Amplitude.
 
 
-## Group Identify User
+### Group Identify User
 
 In the default configuration, this mapping is triggered when Segment sends a Group call to Amplitude (Actions).
 
@@ -205,18 +212,7 @@ These Group updates only affect events that occur after you set up the Amplitude
 > success ""
 > If you are on a Business Tier Segment plan, you can use [Replay](/docs/guides/what-is-replay/) to run historical data through the Amplitude (Actions) destination to apply the grouping.
 
-
-
-## Important differences from the classic Amplitude destination
-
-The following user fields are captured by the classic Amplitude destination in device-mode (when it runs on the user’s device), but are not captured by Amplitude (Actions):
-
-- Device Type (for example, Mac, PC, mobile device)
-- Platform (for example iOS or Android)
-
-
-
-## Replicating classic Amplitude destination settings
+## Migration from Amplitude Classic
 
 Most of the classic Amplitude destination settings were related to device-mode collection (for example, batching or Log Revenue V2), and do not apply to the Amplitude (Actions) destination, which runs in cloud-mode. The following sections discuss how to replicate the old settings where possible.
 
@@ -259,3 +255,5 @@ Location Tracking is a feature of Amplitude’s mobile SDKs and is not supported
 This setting required that the user grant location permission for the mobile app. This is different from the IP-based location lookup that Amplitude can perform.
 
 To work around this limitation, send `context.location.latitude` and `context.location.longitude` from your app, and let Amplitude perform the lookup.
+
+{% include components/actions-map-table.html %}
