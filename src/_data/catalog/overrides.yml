@@ -16,7 +16,7 @@ items:
       mobile: true
       server: true
     summary: >-
-      is available in device-mode for Analytics.js only, and is availble in cloud-mode for Mobile and Server sources.
+      is available in device-mode for Analytics.js only, and is availble in cloud-mode for Mobile and Server sources. Page calls are supported from Device-mode connections only.
     cmode_type: mixed
     case: '6'
 - slug: iterable
