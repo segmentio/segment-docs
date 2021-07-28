@@ -18,8 +18,11 @@
 [[context.branch-deploy.plugins]]
   package = "netlify-plugin-jekyll-cache"
 
+[context.branch-deploy.plugins.inputs] 
+  jekyllSource = "/src"
 
-  
+
+
 [[redirects]]
   from = "/docs/*"
   to = "/:splat"

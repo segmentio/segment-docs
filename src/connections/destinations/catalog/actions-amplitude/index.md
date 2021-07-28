@@ -95,7 +95,7 @@ You can select these subscriptions by choosing "Quick Setup" when you first conf
 <!-- Include section about hard coded mappings for Log Revenue v2 in Track event -->
 <!-- Mention in Group setting the enterprise Amplitude account blurb -->
 <!-- Add Legacy Group Behavior section to migration -->
-<!-- Copy Alias method to Map User action -->
+
 
 ## Available Amplitude Actions
 
