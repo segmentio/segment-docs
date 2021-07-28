@@ -217,6 +217,7 @@ The default Amplitude (Actions) subscription sends *all* Page and Screen calls.
 To replicate the old behavior, change the trigger to include only events that contain `name` or `category`.
 
 ### Prefer Anonymous ID for Device ID
+<!-- do we wanat to show obj-c code here? -->
 
 To replicate the old behavior, change the mapping for Device ID field.
 Default:
