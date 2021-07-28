@@ -15,6 +15,11 @@
   command = "yarn develop-inc"
   ignore = "./scripts/ignore.sh"
 
+[[context.branch-deploy.plugins]]
+  package = "netlify-plugin-jekyll-cache"
+
+
+  
 [[redirects]]
   from = "/docs/*"
   to = "/:splat"

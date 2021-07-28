@@ -92,6 +92,10 @@ You can select these subscriptions by choosing "Quick Setup" when you first conf
 | Screen Calls      | All **screen** calls from the connected source   | Log Event        | Event Type = Viewed `name`<br>for example, `Viewed Homescreen` |
 | Identify Calls    | All **identify** calls from the connected source | Identify User    |                                                                |
 
+<!-- Include section about hard coded mappings for Log Revenue v2 in Track event -->
+<!-- Mention in Group setting the enterprise Amplitude account blurb -->
+<!-- Add Legacy Group Behavior section to migration -->
+<!-- Copy Alias method to Map User action -->
 
 ## Available Amplitude Actions
 
@@ -185,6 +189,8 @@ In the default configuration, this mapping is triggered when Segment sends an Id
 
 This Action sets the user ID for a specific device ID, or updates the user properties. You can use this when you want to update user information without sending an Event to Amplitude.
 
+
+<!-- Include Merging users with Anonymous ID and USer ID -->
 
 ### Map User
 
