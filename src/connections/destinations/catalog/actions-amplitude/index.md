@@ -271,4 +271,12 @@ This setting required that the user grant location permission for the mobile app
 
 To work around this limitation, send `context.location.latitude` and `context.location.longitude` from your app, and let Amplitude perform the lookup.
 
+### Legacy Group Behavior
+
+If you don't provide “Amplitude Group Type/Value Trait”, or one of the traits was not provided in the Group call, then Segment associated the user with a group with the type `[Segment] Group` and with the value `(Group Id)`. No properties are associated with that group.
+
+For example, the previous group call would associate the user with a group of type `[Segment] Group` and value `082108c8-f51e-485f-9d2d-b6ba57ee2c40`.
+
+These fields are mandatory in the Group Identify User action, and the action can't run unless they are provided.
+
 {% include components/actions-map-table.html %}
