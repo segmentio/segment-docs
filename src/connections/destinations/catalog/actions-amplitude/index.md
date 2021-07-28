@@ -20,11 +20,6 @@ and conversion.
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Amplitude Segment destination. There's also a page about the [non-Actions Amplitude destination](/docs/connections/destinations/catalog/amplitude/). Both of these destinations receives data _from_ Segment. There's also the [Amplitude Engage Segment source](/docs/connections/sources/catalog/cloud-apps/amplitude-cohorts/), which sends data _to_ Segment!
 
-
-
-
-
-
 ## Getting started
 
 1. Before you start, go to your [Amplitude workspace](https://analytics.amplitude.com){:target="_blank"}. Click **Settings** in the bottom left, then click **Projects** in the left menu. Select your **Project**. Copy the Amplitude API Key and Secret Key for the project.
@@ -110,7 +105,6 @@ Build your own subscriptions with the following Amplitude-supported actions:
 - [Group Identify User](#group-identify-user)
 
 You can see the Segment event fields Amplitude accepts for each action in the Actions subscription set up page.
-
 
 ### Log Event 
 
