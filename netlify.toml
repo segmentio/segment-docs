@@ -12,7 +12,7 @@
   ignore = "./scripts/ignore.sh"
 
 [context.branch-deploy]
-  command = "yarn develop"
+  command = "yarn develop-inc"
   ignore = "./scripts/ignore.sh"
 
 [[redirects]]
