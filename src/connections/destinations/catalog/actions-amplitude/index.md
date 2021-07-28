@@ -198,6 +198,22 @@ In the default configuration, this mapping is triggered when Segment sends an Al
 
 This Action merges two users together that would otherwise have different User IDs tracked in Amplitude. You can use this when you want to merge the users without sending an Event to Amplitude.
 
+| Segment identifier name | Equivalent Amplitude identifier name |
+| ----------------------- | ------------------------------------ |
+| `previousId`            | `user_id`                            |
+| `userId`                | `global_user_id`                     |
+
+This kind of mapping is useful for users who have different ids across different Amplitude projects. The user’s user_ids act as child ids, and can all be mapped to a single global_user_id in Amplitude. This allows you to analyze the user’s aggregate behavior in Amplitude’s Cross Portfolio view.
+
+
+
+{% comment %}
+#### Unmap a user
+
+You can also unmap users, for example if you aliased them in error. To unmap a user, pass the user’s previousId as an integration-specific option. The example Alias call below sends a request to Amplitude that unlinks user 123 from all global_user_ids it was previously associated with.
+{% endcomment %}
+
+
 
 ### Group Identify User
 
