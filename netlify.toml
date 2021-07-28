@@ -11,6 +11,10 @@
   command = "yarn develop"
   ignore = "./scripts/ignore.sh"
 
+[context.branch-deploy]
+  command = "yarn develop"
+  ignore = "./scripts/ignore.sh"
+
 [[redirects]]
   from = "/docs/*"
   to = "/:splat"
