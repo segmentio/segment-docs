@@ -72,7 +72,7 @@ config:
         - device-mobile
       configurable: true
       location: "Subscription **Group Identify User**."
-      notes: Select a value in the **Group Type** actions field.
+      notes: Select a value in the **Group Type** actions field. This field is mandatory in Amplitude (Actions). In the Amplitude Classic destination, ommiting a value for property field resulted in Amplitude creating a group called `[Segment] Group`.
     - name: Group Value Trait
       connection_mode:
         - cloud
@@ -80,7 +80,7 @@ config:
         - device-mobile
       configurable: true
       location: "Subscription **Group Identify User**."
-      notes: Select a value in the **Group Value** actions field.
+      notes: Select a value in the **Group Value** actions field. This field is mandatory in Amplitude actions. In the Amplitude Classic destination, ommiting a value for this property resulted in an alpha-numeric value.
     - name: Traits to Append
       connection_mode: 
         - cloud
@@ -173,7 +173,7 @@ config:
       connection_mode:
         - cloud
         - device-web
-        - device mobile
+        - device-mobile
       configurable: true
       location: Global Setting
       notes: ""

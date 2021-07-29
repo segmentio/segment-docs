@@ -1,4 +1,5 @@
 {% assign configMap = site.data.actions.amplitude.config %}
+{% assign conModes = site.data.actions.amplitude.config| map: 'settings' | map: 'connection_mode' | uniq | compact%}
 
 <style>
   tr.no-map td {
@@ -66,11 +67,9 @@
 <input class="table-search" type="text" id="filterInput" onkeyup="searchFilter()" placeholder="Search for setting..">
 <div class="button-container" id="btnContainer">
   <a href="#" id="all" class="button button-link active">All</a>
-  <a href="#" id="true" class="button button-link" >Configurable</a>
-  <a href="#" id="false" class="button button-link" >Not Configurable</a>
-  <a href="#" id="cloud" class="button button-link">Cloud</a>
-  <a href="#" id="device-web" class="button button-link" >Device-web</a>
-  <a href="#" id="device-mobile" class="button button-link" >Device-mobile</a>
+  {% for mode in conModes %}
+  <a href="#" id="{{mode}}" class="button button-link">{{mode | capitalize}}</a>
+  {% endfor %}
 </div>
 
 <table id="settingsTable">
@@ -93,8 +92,7 @@
       id="settingRow">
       <td>{{setting.name}} <br /> {% for mode in setting.connection_mode %}<span
           class="cmode {{mode}}-mode">{{mode | capitalize}}</span> {% endfor %}</td>
-      <!-- <td>{{setting.configurable}}</td> -->
-      <td>{% if setting.location %}{{setting.location | markdownify}} <br /> <br /> {% endif %}{{setting.notes | markdownify}}</td>
+      <td>{% if setting.location %}{{setting.location | markdownify}} <br /> {% endif %}{{setting.notes | markdownify}}</td>
     </tr>
     {% endfor %}
     {% endfor %}

@@ -207,7 +207,7 @@ This Action sets the user ID for a specific device ID, or updates the user prope
 
 {% comment %}
 ### Merge users with Anonymous ID and User ID
-<!-- MZ 7/29: Identify User does not have a field for Anonymous ID -->
+<!-- MZ 7/29: Anonymous id is in the coalesce function in Device ID -->
 To have Amplitude recognize an anonymous user and a known or logged-in user, make sure you include both the user’s `userId` and the `anonymousId` they had before that in your Identify call. If you don’t include the anonymousId, Amplitude can’t tell that the anonymous user is the same person as the logged-in user.
 
 If you’re using a Segment server library or the Segment HTTP API, you must explicitly include both anonymousId and userId. If you’re using Analytics.js in device-mode, or a bundled SDK, Segment automatically includes anonymousId for you.
@@ -262,55 +262,9 @@ To use Amplitude's groups with Segment, you must enable the following Action set
 
 ## Migration from Amplitude Classic
 
-Most of the classic Amplitude destination settings were related to device-mode collection (for example, batching or Log Revenue V2), and do not apply to the Amplitude (Actions) destination, which runs in cloud-mode. The following sections discuss how to replicate the old settings where possible.
+Configuration of the Amplitude (Actions) destination is done through Filters and Actions. Consult the table below for information about configuring your Amplitude (Actions) destination similarly to your classic Amplitude destination.
 
 > info ""
 > Contact Segment support if you find features missing from the Amplitude (Actions) destination that were available in the classic Amplitude destination.
-
-### Track Named, Categorized, or All Pages or Screens
-
-The default Amplitude (Actions) subscription sends *all* Page and Screen calls.
-To replicate the old behavior, change the trigger to include only events that contain `name` or `category`.
-
-### Prefer Anonymous ID for Device ID
-<!-- do we wanat to show obj-c code here? -->
-
-To replicate the old behavior, change the mapping for Device ID field.
-Default:
-```objc
-'@if': {
-        exists: { '@path': '$.context.device.id' },
-        then: { '@path': '$.context.device.id' },
-        else: { '@path': '$.anonymousId' }
-      }
-```
-
-### Use AdvertisingId for DeviceId
-
-To replicate the old behavior, change the mapping for Device ID field.
-Default:
-```objc
-'@if': {
-        exists: { '@path': '$.context.device.id' },
-        then: { '@path': '$.context.device.id' },
-        else: { '@path': '$.anonymousId' }
-        }
-```
-
-
-### Location Tracking
-
-Location Tracking is a feature of Amplitude’s mobile SDKs and is not supported in Amplitude (Actions) which run in cloud-mode only.
-This setting required that the user grant location permission for the mobile app. This is different from the IP-based location lookup that Amplitude can perform.
-
-To work around this limitation, send `context.location.latitude` and `context.location.longitude` from your app, and let Amplitude perform the lookup.
-
-### Legacy Group Behavior
-
-If you don't provide “Amplitude Group Type/Value Trait”, or one of the traits was not provided in the Group call, then Segment associated the user with a group with the type `[Segment] Group` and with the value `(Group Id)`. No properties are associated with that group.
-
-For example, the previous group call would associate the user with a group of type `[Segment] Group` and value `082108c8-f51e-485f-9d2d-b6ba57ee2c40`.
-
-These fields are mandatory in the Group Identify User action, and the action can't run unless they are provided.
 
 {% include components/actions-map-table.html %}
