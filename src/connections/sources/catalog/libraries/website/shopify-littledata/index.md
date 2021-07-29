@@ -14,8 +14,6 @@ Littledata is available as an independent [Shopify App](https://apps.shopify.com
 
 2. The app also sets up server-side webhook forwarding to ensure 100% accuracy of important Customer and Order data.
 
-This source has a full [tracking plan and event schema](https://docs.google.com/spreadsheets/d/1aljowRhMU9_7uGXmcipbP1Y14S4cOSdXGQA2Vx7BHko/copy) in Google Sheets, which is ready to [upload into Protocols](/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader).
-
 Here's an architecture diagram that shows how the Littledata app mediates data flow between Shopify and Segment.
 
 ![](images/littledata_arch.png)
@@ -37,11 +35,13 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 7. Segment's **analytics.js** library, Littledata **tracking script** and **webhooks** will be automatically applied to the store and the installation process will then be complete.
    ![](images/kvjNx4M.png)
 
+## Event schema
+
+This source has a full [tracking plan and event schema](https://docs.google.com/spreadsheets/d/1aljowRhMU9_7uGXmcipbP1Y14S4cOSdXGQA2Vx7BHko/copy) in Google Sheets, which is ready to [upload into Protocols](/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader).
+
 ## Device-mode events
 
 Below is a table of events that **Shopify by Littledata** sends to Segment through the analytics.js library. These events will show up as tables in your warehouse, and as regular events in your other Destinations supporting device-mode.
-
-You can _opt out_ of device-mode pageviews or events by setting `disableClientSideEvents: true` or `disablePageviews: true` in the `LittledataLayer` settings.
 
 | Event Name            | Description                                                         |
 | --------------------- | ------------------------------------------------------------------- |
@@ -58,6 +58,10 @@ You can _opt out_ of device-mode pageviews or events by setting `disableClientSi
 
 > note ""
 > \*This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
+
+You can _opt out_ of device-mode pageviews or events by setting `disableClientSideEvents: true` or `disablePageviews: true` in the `LittledataLayer` settings.
+
+The source also respects [GDPR-compliant cookie](https://blog.littledata.io/2021/06/18/shopify-cookie-banner-gdpr-compliance/) consent via Shopify's cookie banner, or popular consent management platforms such as [OneTrust](https://blog.littledata.io/help/posts/integrating-onetrust-with-shopify/) and [TrustArc](https://blog.littledata.io/help/posts/integrating-trustarc-with-shopify/).
 
 ## Cloud-mode events
 
@@ -134,7 +138,9 @@ To support seamless customer tracking the [Mixpanel](/docs/connections/destinati
 
 ## Subscription events
 
-Additional events available through Littledata's [ReCharge connection](https://www.littledata.io/connections/recharge), and available in cloud-mode destinations.
+All [recurring orders in the Shopify checkout](https://blog.littledata.io/help/posts/tracking-subscription-orders-in-the-shopify-checkout/), from any subscription app, are tracked as Order Completed events.
+
+Additional subscription lifecycle events via Littledata's [ReCharge connection](https://www.littledata.io/connections/recharge) are available in cloud-mode destinations. See the [Track (custom)](https://docs.google.com/spreadsheets/d/1aljowRhMU9_7uGXmcipbP1Y14S4cOSdXGQA2Vx7BHko/edit#gid=1155311093) tab of the event schema.
 
 | Event Name               | Description                                                                                                 |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------- |
@@ -148,7 +154,7 @@ Additional events available through Littledata's [ReCharge connection](https://w
 
 ## Event properties
 
-The list below outlines the properties included in the events listed above.
+The list below outlines the properties included in most events. See the 'Track (eCommerce)' tab of the [event schema](https://docs.google.com/spreadsheets/d/1aljowRhMU9_7uGXmcipbP1Y14S4cOSdXGQA2Vx7BHko/copy) for exactly which properties are sent with which events.
 
 | Property                               | Description                                                                                        | Property Type |
 | -------------------------------------- | -------------------------------------------------------------------------------------------------- | ------------- |
@@ -171,7 +177,7 @@ The list below outlines the properties included in the events listed above.
 | `sent_from`                            | A unique property to identify events sent by Littledata                                            | String        |
 | `shipping_method`                      | The shipping method chosen for checkout                                                            | String        |
 | `shipping`                             | The shipping cost                                                                                  | Float         |
-| `source_name`                          | The source of the order (e.g. `web`, `android`, `pos`)                                             | String        |
+| `source_name`                          | The source of the order or checkout (e.g. `web`, `android`, `pos`)                                 | String        |
 | `step`                                 | The checkout [step number](https://blog.littledata.io/help/posts/shopify-checkout-funnel-updates/) | Integer       |
 | `subscription_revenue`                 | The revenue associated with a [Subscription Event](#subscription-events)                           | Float         |
 | `subtotal`                             | Order total after discounts but before taxes and shipping                                          | Float         |
@@ -185,27 +191,31 @@ The list below outlines the properties included in the events listed above.
 
 Each item in the `products` array, or Product Viewed and Product Added events, will have the following properties
 
-| Property             | Description                                                        | Property Type |
-| -------------------- | ------------------------------------------------------------------ | ------------- |
-| `brand`              | The brand of the product (Shopify `vendor`)                        | String        |
-| `category`           | The category of the product (defaults to `all`)                    | String        |
-| `compare_at_price`   | The product price before any discount                              | String        |
-| `image_url`          | The URL of the first product image                                 | String        |
-| `list_id`            | The ID of the product collection (for List Views and Clicks)       | String        |
-| `list_position`      | The product position in the collection (for List Views and Clicks) | Integer       |
-| `name`               | The product name                                                   | String        |
-| `price`              | The product price                                                  | Float         |
-| `product_id`         | Shopify product ID                                                 | String        |
-| `quantity`           | The quantity of products                                           | Integer       |
-| `shopify_product_id` | Also Shopify product ID                                            | String        |
-| `shopify_variant_id` | The Shopify variant ID                                             | String        |
-| `sku`                | The product SKU                                                    | String        |
-| `url`                | The URL of the product page                                        | String        |
-| `variant`            | The product variant name                                           | String        |
+| Property               | Description                                                        | Property Type |
+| ---------------------- | ------------------------------------------------------------------ | ------------- |
+| `brand`                | The brand of the product (Shopify `vendor`)                        | String        |
+| `category`             | The category of the product (defaults to `all`)                    | String        |
+| `compare_at_price`     | The product price before any discount                              | String        |
+| `coupon`               | Coupon code associated with the product                            | String        |
+| `currency`             | The currency displayed to the user                                 | String        |
+| `image_url`            | The URL of the first product image                                 | String        |
+| `list_id`              | The ID of the product collection (for List Views and Clicks)       | String        |
+| `position`             | The product position in the collection (for List Views and Clicks) | Integer       |
+| `name`                 | The product name                                                   | String        |
+| `presentment_amount`   | The product price as displayed to the user                         | String        |
+| `presentment_currency` | The currency displayed to the user                                 | String        |
+| `price`                | The product price at the time of the event, in the store currency  | Float         |
+| `product_id`           | The Shopify product ID                                             | String        |
+| `quantity`             | The quantity of products                                           | Integer       |
+| `shopify_product_id`   | Also Shopify product ID                                            | String        |
+| `shopify_variant_id`   | The Shopify variant ID                                             | String        |
+| `sku`                  | The product SKU                                                    | String        |
+| `url`                  | The URL of the product page                                        | String        |
+| `variant`              | The product variant name                                           | String        |
 
 ## Import all orders
 
-With a [Littledata Plus plan](https://www.littledata.io/app/enterprise) you can import all Shopify orders and refunds from before you started using Segment, to sync with destinations that support timestamped events (for example, a data warehouse). This enables you to build a complete customer history in your chosen destination.
+With an [annual Littledata Plus plan](https://www.littledata.io/app/enterprise) you can import all Shopify orders and refunds from before you started using Segment, to sync with destinations that support timestamped events (for example, a data warehouse). This enables you to build a complete customer history in your chosen destination.
 
 ## Advanced Device-mode settings
 
