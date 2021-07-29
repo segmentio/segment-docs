@@ -77,7 +77,7 @@ Using CloudFormation minimizes the setup steps needed, and is Segment's recommen
 
    5. Give your stack a name.
    6. For the **ExternalId** parameter, enter the "External ID" setting in your Segment Lambda destination settings. This should be your **Workspace ID**.
-      * **NOTE:** For security purposes, Segment recommends you to use your Workspace ID as your External ID. If you’re currently using an External ID different from your Workspace ID, you’ll be susceptible to attacks. You can find your Workspace ID by going to:  **Settings > Workspace Settings > ID**.
+      * **NOTE:** For security purposes, Segment recommends you to use your Workspace ID as your External ID. If you’re currently using an External ID different from your Workspace ID, consider changing it. You can find your Workspace ID by going to:  **Settings > Workspace Settings > ID**.
    7. The **LambdaARN** parameter corresponds to the **Lambda** setting in your Segment Lambda destination settings.
 
       ![](images/CloudFormationStackDetails.png)
@@ -145,7 +145,7 @@ To create an IAM role:
 
     ![](images/LambdaTrustRelationship.png)
 
-7. Copy and paste the following code into your trust relationship. You should replace `<your-source-id>` with either the Source ID of the attached Segment source (the default) or whatever custom external ID you set in your AWS Lambda destination settings.
+7. Copy and paste the following code into your trust relationship. You should replace `<your-source-id>` with either the Source ID of the attached Segment source (the default) or the value of external ID set in your AWS Lambda destination settings.
   * `arn:aws:iam::595280932656:root` refers to Segment's AWS Account, and is what allows Segment's Destination to access the role to invoke your Lambda.
 
 > note ""
@@ -171,10 +171,10 @@ To create an IAM role:
     }
     ```
 
-If you have multiple Sources using this Role, replace the `sts:ExternalId` setting above with:
+If you have multiple Sources using this Role, or require the use multiple externalIds replace the `sts:ExternalId` setting above with:
 
 ```
-    "sts:ExternalId": ["YOUR_SEGMENT_SOURCE_ID", "ANOTHER_SOURCE_ID", "A_THIRD_SOURCE_ID"]
+    "sts:ExternalId": ["YOUR_SEGMENT_SOURCE_ID", "ANOTHER_SOURCE_ID", "AN_EXTERNAL_ID", "ANOTHER_EXTERNAL_ID"]
 ```
 
 ### Configure Segment Lambda Destination
