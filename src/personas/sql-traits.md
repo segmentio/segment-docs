@@ -17,7 +17,7 @@ This unlocks some interesting possibilities to help you meet your business goals
 - If you want to accurately predict lifetime value (LTV) for a customer, you can generate a complex query based on demographic and customer data in your warehouse. You could then use that information in a Personas audience to send personalized offers or recommend specific products.
 - You could use similarly complex queries to build churn or product adoption models that cannot be easily calculated using Personas Computed Traits, and use them to inform your outreach efforts.
 
-Check out our [SQL Traits blog post](https://segment.com/blog/sql-traits) for more customer case studies.
+Check out our [SQL Traits blog post](https://segment.com/blog/sql-traits){:target="_blank"} for more customer case studies.
 
 
 ### Example: Cloud Sources Sync
