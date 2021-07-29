@@ -61,7 +61,7 @@ To use SQL Traits, you need the following:
 
 ### Step 1. Set up a warehouse source
 
-We currently support Redshift, Postgres, Snowflake, Azure, and BigQuery as data warehouse sources for SQL Traits. The setup process for BigQuery is a bit different as it _requires_ a service user.
+Segment supports Redshift, Postgres, Snowflake, Azure, and BigQuery as data warehouse sources for SQL Traits. The setup process for BigQuery is a bit different as it _requires_ a service user.
 
 > info "Safeguard your data"
 > For any warehouse, we recommend that you create a separate read-only user for building SQL Traits.
