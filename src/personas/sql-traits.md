@@ -12,7 +12,7 @@ SQL Traits are only limited by the data in your warehouse. Because anything you 
 This unlocks some interesting possibilities to help you meet your business goals.
 
 - Imagine you want to improve your support team's customer satisfaction score (CSAT). You could create a SQL Trait of the most common ticket requests for a customer's industry by joining data from cloud sources like Zendesk and Salesforce.  The resulting SQL Trait would help you anticipate the user's problems and accelerate potential solutions.
-- If you want to determine if a user resides in a specific area, you could query address data in your warehouse and send it as a `true` or `false` Trait to a Personas audience.
+- If you want to determine if a user resides in a specific area, you can query address data in your warehouse and send it as a `true` or `false` Trait to a Personas audience.
 - If you want to fill gaps in your customer profiles to include information prior to implementing Segment, you could import historical Traits from your warehouse.
 - If you want to accurately predict lifetime value (LTV) for a customer, you can generate a complex query based on demographic and customer data in your warehouse. You could then use that information in a Personas audience to send personalized offers or recommend specific products.
 - You could use similarly complex queries to build churn or product adoption models that cannot be easily calculated using Personas Computed Traits, and use them to inform your outreach efforts.
