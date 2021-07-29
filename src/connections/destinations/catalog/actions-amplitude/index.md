@@ -92,11 +92,6 @@ You can select these subscriptions by choosing "Quick Setup" when you first conf
 | Screen Calls      | All **screen** calls from the connected source   | Log Event        | Event Type = Viewed `name`<br>for example, `Viewed Homescreen` |
 | Identify Calls    | All **identify** calls from the connected source | Identify User    |                                                                |
 
-<!-- Include section about hard coded mappings for Log Revenue v2 in Track event -->
-<!-- Mention in Group setting the enterprise Amplitude account blurb -->
-<!-- Add Legacy Group Behavior section to migration -->
-
-
 ## Available Amplitude Actions
 
 Build your own subscriptions with the following Amplitude-supported actions:
@@ -172,6 +167,27 @@ If you enable the setting ("on"), Segment sends a single revenue event for each 
 
 Make sure you format your events using the [Track method spec](/docs/connections/spec/track/). You must pass a `revenue` property, a `price` property, and a `quantity` property for each product in the products list.
 
+#### Log Revenue v2
+
+Segment's iOS and Android sources can send revenue using Amplitude's preferred `logRevenueV2` method. Segment sets Amplitude's special revenue properties, such as `revenueType` and `productIdentifier`, which are used in Amplitude's Revenue Analysis and Revenue LTV charts. Segment uses the Amplitude `eventProperties` field to send any properties _not_ mapped to Amplitude's special properties.
+
+| Amplitude Property | Segment Property                                             | Description                                                                |
+| ------------------ | ------------------------------------------------------------ | -------------------------------------------------------------------------- |
+| `productId`        | `productId`                                                  | An identifier for the product.                                             |
+| `quantity`         | `quantity`                                                   | The quantity of products purchased. Note: revenue = `quantity` * `price`.  |
+| `price`            | `price` or `revenue` (or `total` for mobile, see note below) | The price of the products purchased, and this can be negative.             |
+| `revenueType`      | `revenueType`                                                | The type of revenue (e.g. tax, refund, income).                            |
+| `receiptSignature` | `receiptSignature` (Android only)                            | The receipt signature.                                                     |
+| `receipt`          | `receipt`                                                    | This is required if you want to verify the revenue event.                  |
+| `eventProperties`  | Any remaining properties                                     | A NSDictionary or Map of event properties to include in the revenue event. |
+
+<!--&ast;-->\* If `properties.price` is not present, Segment uses `revenue` instead, and sends that as `price`. In Segment's iOS and Android components, if `revenue` isn't present either, Segment does an additional fallback and sends the `total`.
+
+Property names should be `camelCase` for Android implementations, and `snake_case` for iOS implementations.
+
+> info ""
+> Amplitude does not support currency conversion. You should normalize all revenue data to your currency of choice before sending it to Amplitude.
+
 #### Send To Batch Endpoint
 
 
@@ -189,8 +205,15 @@ In the default configuration, this mapping is triggered when Segment sends an Id
 
 This Action sets the user ID for a specific device ID, or updates the user properties. You can use this when you want to update user information without sending an Event to Amplitude.
 
+{% comment %}
+### Merge users with Anonymous ID and User ID
+<!-- MZ 7/29: Identify User does not have a field for Anonymous ID -->
+To have Amplitude recognize an anonymous user and a known or logged-in user, make sure you include both the user’s `userId` and the `anonymousId` they had before that in your Identify call. If you don’t include the anonymousId, Amplitude can’t tell that the anonymous user is the same person as the logged-in user.
 
-<!-- Include Merging users with Anonymous ID and USer ID -->
+If you’re using a Segment server library or the Segment HTTP API, you must explicitly include both anonymousId and userId. If you’re using Analytics.js in device-mode, or a bundled SDK, Segment automatically includes anonymousId for you.
+
+{% endcomment %}
+
 
 ### Map User
 
@@ -219,12 +242,23 @@ You can also unmap users, for example if you aliased them in error. To unmap a u
 
 In the default configuration, this mapping is triggered when Segment sends a Group call to Amplitude (Actions).
 
+> warning ""
+> Groups are an enterprise-only feature in Amplitude, and are only available if you've purchased the Accounts add-on.
+
 This Action sets or updates the properties of specific groups. You can use this when you want to update a group's information without sending an Event to Amplitude.
 
 These Group updates only affect events that occur after you set up the Amplitude mapping. You cannot use this to group historical data.
 
 > success ""
 > If you are on a Business Tier Segment plan, you can use [Replay](/docs/guides/what-is-replay/) to run historical data through the Amplitude (Actions) destination to apply the grouping.
+
+If you don't have an enterprise Amplitude account, or don't have the Accounts add-on, Segment always adds groups as `user_properties` on a user record.  As long as you specify the Action settings below, Segment adds a "group type" user property with a value of the "group value".
+
+To use Amplitude's groups with Segment, you must enable the following Action settings and make sure to include the data values they need to function. These settings act as a mapping from Segment group traits to Amplitude group types and values.
+
+- **"Amplitude Group Type Trait"**: This specifies what trait in your Group calls contains the Amplitude "group type". In other words, it's how you tell Segment which trait to use as the group type.
+
+- **"Amplitude Group Value Trait"**: This specifies what trait in your Group calls contains the Amplitude "group value". It's how you tell Segment which trait to use as the group value.
 
 ## Migration from Amplitude Classic
 
