@@ -146,7 +146,7 @@ Before you create a SQL Trait, you must first preview it to validate your query.
 
 From the Personas screen, go to the Computed Traits tab, and click **New Computed Trait**. Next, choose SQL, and click **Configure**. Select the data warehouse that contains the data you want to query.
 
-If you are sending data from [object cloud sources](https://segment.com/docs/connections/sources/#cloud-apps) to your warehouse, the SQL Traits UI has some pre-made templates you can try out.
+If you are sending data from [object cloud sources](/docs/connections/sources/#cloud-apps) to your warehouse, the SQL Traits UI has some pre-made templates you can try out.
 
 ![Example template: preview all users with an open Zendesk ticket](images/sql_traits_preview1.png)
 
