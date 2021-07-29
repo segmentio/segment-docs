@@ -3,8 +3,6 @@ title: Kameleoon Destination
 rewrite: true
 ---
 
-[Kameleoon](https://kameleoon.com/en) & Segment.io integration
----
 [Kameleoon](https://kameleoon.com/en) provides GDPR, CCPA, and HIPAA compliant A/B testing, full stack, and AI-powered personalization solutions to help marketers, product owners, and developers maximize customer engagement and conversion - all from a single platform.
 
 This destination is maintained by Kameleoon. For any issues with the destination, [contact the Kameleoon Support team](mailto:support@kameleoon.com).
