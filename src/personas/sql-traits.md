@@ -181,7 +181,7 @@ Click **Create Computed Trait** to save the Trait.
 ![](images/sql_traits_connect3.png)
 Check **Compute without destinations** if you only want to send to Personas
 
-When you create a SQL Trait, Segment runs the query on the warehouse twice a day by default. (If you're interested in a more frequent or customizable schedule, [contact us](https://segment.com/help/contact/).)
+When you create a SQL Trait, Segment runs the query on the warehouse twice a day by default. (If you're interested in a more frequent or customizable schedule, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.)
 
 For each row (user or account) in the query result, Personas sends an identify or group call with all the columns that were returned as Traits. For example, if you write a query that returns `user_id,has_open_ticket, num_tickets_90_days, avg_zendesk_rating_90days` we send an identify call with the following payload:
 
