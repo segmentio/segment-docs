@@ -7,7 +7,7 @@ title: Personas SQL Traits
 
 SQL Traits allow you to import user or account traits from your data warehouse back into Personas to build audiences, or to enhance Segment data that you send to other Destinations.
 
-SQL Traits are only limited by the data in your warehouse. Because anything you can write a query for can become a SQL Trait, you'll be able to add detail to your user and account profiles, resulting in more nuanced personalization.
+SQL Traits are only limited by the data in your warehouse. Because anything you can write a query for can become a SQL Trait, you can add detail to your user and account profiles, resulting in more nuanced personalization.
 
 This unlocks some interesting possibilities to help you meet your business goals.
 
