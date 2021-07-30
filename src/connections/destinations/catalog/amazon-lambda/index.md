@@ -145,7 +145,7 @@ To create an IAM role:
 
     ![](images/LambdaTrustRelationship.png)
 
-7. Copy and paste the following code into your trust relationship. You should replace `<your-source-id>` with either the Source ID of the attached Segment source (the default) or the value of external ID set in your AWS Lambda destination settings.
+7. Copy and paste the following code into your trust relationship. You should replace `<your-source-id>` with either the Source ID of the attached Segment source (the default) or the External ID set in your AWS Lambda destination settings.
   * `arn:aws:iam::595280932656:root` refers to Segment's AWS Account, and is what allows Segment's Destination to access the role to invoke your Lambda.
 
 > note ""
@@ -171,7 +171,7 @@ To create an IAM role:
     }
     ```
 
-If you have multiple Sources using this Role, or require the use multiple externalIds replace the `sts:ExternalId` setting above with:
+If you have multiple Sources using this Role, or require the use of multiple External Ids, replace the `sts:ExternalId` setting above with:
 
 ```
     "sts:ExternalId": ["YOUR_SEGMENT_SOURCE_ID", "ANOTHER_SOURCE_ID", "AN_EXTERNAL_ID", "ANOTHER_EXTERNAL_ID"]

@@ -716,7 +716,7 @@ To create an IAM role:
 }
 ```
 
-If you have multiple Sources using this Role, or require the use multiple externalIds replace the `sts:ExternalId` setting above with:
+If you have multiple Sources using this Role, or require the use of multiple externalIds, replace the `sts:ExternalId` setting above with:
 
 ```
     "sts:ExternalId": ["YOUR_SEGMENT_SOURCE_ID", "ANOTHER_SOURCE_ID", "AN_EXTERNAL_ID", "ANOTHER_EXTERNAL_ID"]

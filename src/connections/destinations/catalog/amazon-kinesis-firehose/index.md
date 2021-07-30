@@ -180,9 +180,9 @@ To attach multiple sources to your IAM role:
     }
     ```
 
-#### Use secret ID
+#### Use Secret ID
 
-If you have many sources using Kinesis that it's impractical to attach all of their IDs to your IAM role, you can instead opt to set a secret ID.
+If you have many sources using Kinesis that it's impractical to attach all of their IDs to your IAM role, you can instead opt to set a Secret ID.
 
 To set this value for a Secret ID:
 1. Go to the Kinesis Firehose destination settings from each of your Segment sources.
@@ -211,9 +211,8 @@ To set this value for a Secret ID:
       ]
     }
     ```
-6. Replace the value of `sts:ExternalId` ( "YOUR_SEGMENT_SOURCE_ID") with the Secret ID value from the previous step. In the exceptional case of requiring the use multiple secretIds replace the `sts:ExternalId` setting above with:
+6. Replace the value of `sts:ExternalId` ( "YOUR_SEGMENT_SOURCE_ID") with the Secret ID value from the previous step. In the case of requiring the use of multiple secretIds, replace the `sts:ExternalId` setting above with:
 
    ```
     "sts:ExternalId": ["A_SECRET_ID", "ANOTHER_SECRET_ID"]
    ```
-
