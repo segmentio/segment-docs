@@ -88,14 +88,8 @@ Each destination can also have destination settings. These control how Segment t
 
 ## Connecting one source to multiple instances of a destination
 
-<!-- LR: 03/04/21 - hiding this for now since it's in limited rollout.
 > note ""
 > Multiple-destination support is available for all Segment customers on all plan tiers.
--->
-
-
-> info ""
-> Support for connecting to multiple instances of a destination is in public preview. To use this, you must agree to the [(1) Segment First Access](https://segment.com/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/). The feature is being released to different tiers over time. If you see an error message that you can’t connect to multiple instances of the same destination, it is not available yet in your workspace but is coming soon.
 
 Segment allows you to connect a source to multiple instances of a destination. You can use this to set up a single Segment source that sends data into different instances of your analytics and other tools.
 
@@ -187,7 +181,6 @@ For the following destinations, a single source can connect to up to 10 instance
 - [ActiveCampaign](/docs/connections/destinations/catalog/activecampaign/)
 - [Akita](/docs/connections/destinations/catalog/akita/)
 - [All Aboard](/docs/connections/destinations/catalog/all-aboard/)
-- [Amazon EventBridge](/docs/connections/destinations/catalog/amazon-eventbridge/)
 - [Amazon Kinesis](/docs/connections/destinations/catalog/amazon-kinesis/)
 - [Amazon Kinesis Firehose](/docs/connections/destinations/catalog/amazon-kinesis-firehose/)
 - [Amazon Lambda](/docs/connections/destinations/catalog/amazon-lambda/)

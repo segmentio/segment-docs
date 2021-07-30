@@ -293,7 +293,7 @@
 
 }
 
-a[target="_blank"]:after{
+a[target="_blank"]:not(.reference-button):after{
   content: url("/docs/images/external-link-alt-solid.svg");
   margin-left: 4px;
 }
