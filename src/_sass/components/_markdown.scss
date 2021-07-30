@@ -301,3 +301,61 @@ a[target="_blank"]:not(.reference-button):after{
 a.no-icon[target="_blank"]:after {
   content: none
 }
+
+tr.no-map td {
+  opacity: 0.5;
+}
+
+tr.show {
+  display: table-row;
+}
+
+.settingRow {
+  display: none;
+}
+
+.table-search {
+  width: 100%;
+  border: 0px;
+  border-bottom: 1px solid rgb(128, 128, 128);
+  font-family: "SF Pro Text", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  color: #474d66;
+  font-size: 12px;
+  height: 30px;
+  margin-bottom: 15px;
+}
+
+.table-search:focus-visible {
+  outline: none
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.button-link {
+  padding: 4px 10px;
+}
+
+.active {
+  background-color: #eee;
+}
+
+.cmode {
+  background-color: #edeff5;
+  font-size: 11px;
+  padding: 0px 6px;
+  border-radius: 4px;
+  height: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgb(71, 77, 102);
+  opacity: 0.65;
+  white-space: nowrap;
+}
+
+.device-web-mode, .device-mobile-mode {
+  background-color: #e6f5ef;
+  color: #317159
+}
