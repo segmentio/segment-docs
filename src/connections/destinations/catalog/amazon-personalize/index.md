@@ -694,7 +694,7 @@ To create an IAM role:
 > note ""
 > **NOTE:** Your Source ID can be found by navigating to **Settings > API Keys** from your Segment source homepage.
 >
-> If you're using an External ID, for security purposes, Segment recommends you to use your Segment Workspace ID as your External ID. If you use an External ID different from your Workspace ID, you’re susceptible to attacks. You can find your Workspace ID by going to:  **Settings > Workspace Settings > ID** in the Segment dashboard.
+> If you're using an External ID, for security purposes, Segment recommends you to use your Segment Workspace ID as your External ID. If you use an External ID different from your Workspace ID, please change it to make your account more secure. You can find your Workspace ID by going to:  **Settings > Workspace Settings > ID** in the Segment dashboard.
 
 ```json
 {
@@ -716,10 +716,10 @@ To create an IAM role:
 }
 ```
 
-If you have multiple Source's using this Role, replace the `sts:ExternalId` setting above with
+If you have multiple Sources using this Role, or require the use of multiple externalIds, replace the `sts:ExternalId` setting above with:
 
-```json
-    "sts:ExternalId": ["YOUR_SEGMENT_SOURCE_ID", "ANOTHER_SOURCE_ID", "A_THIRD_SOURCE_ID"]
+```
+    "sts:ExternalId": ["YOUR_SEGMENT_SOURCE_ID", "ANOTHER_SOURCE_ID", "AN_EXTERNAL_ID", "ANOTHER_EXTERNAL_ID"]
 ```
 
 ### Build a Lambda Function to Process Segment Events
