@@ -8,10 +8,14 @@ PostgreSQL, often simply Postgres, is an object-relational database management s
 
 PostgreSQL is ACID-compliant and transactional. PostgreSQL has updatable views and materialized views, triggers, foreign keys; supports functions and stored procedures, and other expandability. Developed by the PostgreSQL Global Development Group, free and open-source.
 
-This document was last updated on April, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 ## Getting started
-Find below a selection of options on how to create your Postgres warehouse.
+Segment supports the following Postgres database providers:
+- [Heroku](#heroku-postgres)
+- [RDS](#rds-postgres)
+- [Compose](#compose-postgres)
+
+> warning ""
+> Segment supports only these Postgres databases. Postgres databases from other providers are not guaranteed to work. For questions or concerns, contact [Segment Support](https://segment.com/help/contact){:target="_blank"}
 
 ### Heroku Postgres
 
