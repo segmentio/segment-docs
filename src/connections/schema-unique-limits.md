@@ -4,7 +4,7 @@ title: Segment Schema Limits
 
 **How many unique events can be logged in my Segment Schema table?**
 
-While you can technically track unlimited events with Segment, only the first 2,000 events will be visible on the Schema page for a given Source. After you hit the 2,000 event limit, all future events will still be tracked and sent to your Destinations based on your Schema Default settings. They will not, however, be logged in the Segment Schema table.
+While you can technically track unlimited events with Segment, only the first 2,000 events will be visible on the Schema page for a given Source. After you hit the 2,000 event limit, all future events will still be tracked and sent to your Destinations. They will not, however, be logged in the Segment Schema table.
 
 **How many unique event properties can be logged on the event details page?**
 

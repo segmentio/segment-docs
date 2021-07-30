@@ -11,7 +11,7 @@ title: Identity Resolution Onboarding
 > note ""
 > **NOTE:** Workspace owners, Personas administrators, and users with the Identity Admin role can edit Identity Resolution Settings.
 
-Segment creates and merges user profiles based a space's Identity Resolution configuration. Segment searches for identifiers such as `userId`, `anonymousId` and `email` on incoming events and matches them to existing profiles or creates new profiles. These identifiers display in the Identities tab of a User Profile in the User Explorer:
+Segment creates and merges user profiles based on a space's Identity Resolution configuration. Segment searches for identifiers such as `userId`, `anonymousId` and `email` on incoming events and matches them to existing profiles or creates new profiles. These identifiers display in the Identities tab of a User Profile in the User Explorer:
 
 ![](images/jane_doe_new_identities.png)
 
