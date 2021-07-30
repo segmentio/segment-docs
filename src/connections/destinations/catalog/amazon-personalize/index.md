@@ -694,7 +694,7 @@ To create an IAM role:
 > note ""
 > **NOTE:** Your Source ID can be found by navigating to **Settings > API Keys** from your Segment source homepage.
 >
-> If you're using an External ID, for security purposes, Segment recommends you to use your Segment Workspace ID as your External ID. If you use an External ID different from your Workspace ID, consider changing it. You can find your Workspace ID by going to:  **Settings > Workspace Settings > ID** in the Segment dashboard.
+> If you're using an External ID, for security purposes, Segment recommends you to use your Segment Workspace ID as your External ID. If you use an External ID different from your Workspace ID, please change it to make your account more secure. You can find your Workspace ID by going to:  **Settings > Workspace Settings > ID** in the Segment dashboard.
 
 ```json
 {

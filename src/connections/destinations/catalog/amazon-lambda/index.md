@@ -77,7 +77,7 @@ Using CloudFormation minimizes the setup steps needed, and is Segment's recommen
 
    5. Give your stack a name.
    6. For the **ExternalId** parameter, enter the "External ID" setting in your Segment Lambda destination settings. This should be your **Workspace ID**.
-      * **NOTE:** For security purposes, Segment recommends you to use your Workspace ID as your External ID. If you’re currently using an External ID different from your Workspace ID, consider changing it. You can find your Workspace ID by going to:  **Settings > Workspace Settings > ID**.
+      * **NOTE:** For security purposes, Segment recommends you to use your Workspace ID as your External ID. If you’re currently using an External ID different from your Workspace ID, please change it to make your account more secure. You can find your Workspace ID by going to:  **Settings > Workspace Settings > ID**.
    7. The **LambdaARN** parameter corresponds to the **Lambda** setting in your Segment Lambda destination settings.
 
       ![](images/CloudFormationStackDetails.png)

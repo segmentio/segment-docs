@@ -48,7 +48,7 @@ To get started:
 4. Create a new Kinesis destination.
    1. In the Segment source that you want to connect to your Kinesis destination, click **Add Destination**. Search and select the **Amazon Kinesis** destination.
    2. Enter the **Role Address**, **Stream Region**, **Stream Name**, and **Secret ID**.
-   * **NOTE:** For security purposes, Segment recommends you to use your Workspace ID as your Secret ID. If you’re using a Secret ID different from your Workspace ID, consider changing it. You can find your Workspace ID by going to: **Settings > Workspace Settings > ID**.
+   * **NOTE:** For security purposes, Segment recommends you to use your Workspace ID as your Secret ID. If you’re using a Secret ID different from your Workspace ID, please change it to make your account more secure. You can find your Workspace ID by going to: **Settings > Workspace Settings > ID**.
 
 ## Page
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
