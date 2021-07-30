@@ -30,15 +30,12 @@ Each Actions-framework Destination you see in the Segment catalog represents a f
 
 A Destination Action contains a hierarchy of components, that work together to ensure the right data is sent to the destination. 
 
-At the top level, is the Destination itself. It has two children: **Global Settings** and **Subscriptions**. 
-
-**Global Settings** are where you include authentication information like API keys, and other connection-related information. 
-
-**Subscriptions** handle the individual calls to the destination. In them, you define what type of call you want to make to the destination, and what triggers that call. Individual Destination Actions come enabled with some predefined subscriptions to handle common events like Screen calls, Identify calls, and Track calls. Subscriptions have two components that make this possible: **Triggers** and an **Action**. 
-
-**Triggers** enable you to define *when* the corresponding Action fires. As part of a Trigger, you can use condition-based filters to narrow the scope of the trigger.
-
-**Actions** determine the information sent to the destination. In the Configure action section, you map the fields that come from your source, to fields that the destination expects to find. Fields on the destination side depend on the type of action selected
+| Component       | Description                                                                                                                                                                                                                                                                                                                                                                                                   |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Global Settings | Define authentication and connection-related information like API and Secret keys.                                                                                                                                                                                                                                                                                                                            |
+| Subscriptions   | Handle the individual calls to the destination. In them, you define what type of call you want to make to the destination, and what triggers that call. Individual Destination Actions come enabled with some predefined subscriptions to handle common events like Screen calls, Identify calls, and Track calls. Subscriptions have two components that make this possible: **Triggers** and an **Action**. |
+| Triggers        | Enable you to define *when* the corresponding Action fires. As part of a Trigger, you can use condition-based filters to narrow the scope of the trigger.                                                                                                                                                                                                                                                     |
+| Actions         | Determine the information sent to the destination. In the Configure action section, you map the fields that come from your source, to fields that the destination expects to find. Fields on the destination side depend on the type of action selected.                                                                                                                                                      |
 
 For example, in the Amplitude (Actions) destination, you define your API and Secret keys in the destination's global settings. Then, the provided Page Calls subscription:
 

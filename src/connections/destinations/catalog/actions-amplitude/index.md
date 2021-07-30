@@ -95,14 +95,14 @@ You can select these subscriptions by choosing "Quick Setup" when you first conf
 
 ## Available Amplitude Actions
 
-Build your own subscriptions with the following Amplitude-supported actions:
+Build your own subscriptions! Combine supported [triggers](/docs/connections/destinations/actions/#components-of-a-destination-action) with the following Amplitude-supported actions:
 
 - [Log Event](#log-event)
 - [Identify User](#identify-user)
 - [Map User](#map-user)
 - [Group Identify User](#group-identify-user)
 
-You can see the Segment event fields Amplitude accepts for each action in the Actions subscription set up page.
+You can see the Segment event fields Amplitude accepts for each action in the Actions subscription set up page. Combine these 
 
 ### Log Event 
 
