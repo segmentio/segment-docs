@@ -42,7 +42,7 @@ Session tracking is available with Segment's new libraries: [Analytics.js 2.0](/
 ### Device ID Mappings
 The Amplitude destination requires that each event include either a Device ID or a User ID. If a User ID isn't present, Amplitude uses the a Device ID, and vice versa, if a Device ID isn't present, Amplitude uses the User ID. 
 
-By default, Segment maps the Segment property `context.device.id` to the Amplitude property `Device ID`. If `context.device.id` isn't available, Segment maps the property `anonymousId` to the Amplitude `Device ID`. This is indicated by the following text in the Device ID field: `coalesce(` `context.device.id` `anonymousId` `)`. 
+By default, Segment maps the Segment property `context.device.id` to the Amplitude property `Device ID`. If `context.device.id` isn't available, Segment maps the property `anonymousId` to the Amplitude `Device ID`. The Actions interface indicates this with the following contents of the Device ID field: `coalesce(` `context.device.id` `anonymousId` `)`. 
 
 ### Enable session tracking for Analytics.js 2.0
 
@@ -73,11 +73,12 @@ To enable session tracking in Amplitude when using the [Segment Kotlin library](
 
 ## Important differences from the classic Amplitude destination
 
-The following user fields are captured by the classic Amplitude destination in device-mode (when it runs on the user’s device), but are not captured by Amplitude (Actions):
+The classic Amplitude destination captures the following user fields in device-mode (when it runs on the user’s device):
 
 - Device Type (for example, Mac, PC, mobile device)
 - Platform (for example iOS or Android)
 
+Amplitude (Actions) runs in cloud-mode, and does not capture these fields.
 
 ## Pre-built subscriptions
 
@@ -105,15 +106,17 @@ You can see the Segment event fields Amplitude accepts for each action in the Ac
 
 ### Log Event 
 
-In the default configuration, the Log Event mapping is triggered when Segment sends a Track call to Amplitude (Actions).
+The Track Calls, Page Calls, and Screen Calls default subscriptions all send Log Events to Amplitude when the Amplitude (Actions) destination receives the corresponding call.
+
+This action enables you to define the Event Type the destination sends using a combination of plain text and information received from the received event.
 
 {% comment %}
-MZ - 7/26: Niels is validating the update needed to this section based on a comment in PR 1677
+MZ - 7/26: NT is validating the update needed to this section based on a comment in PR 1677
 ### Order Completed
 
 Use the [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) event to track revenue with Amplitude. This event records a list of products that a user purchased in a single transaction. This is the best way for sites that have a shopping cart system to track purchases.
 
-You can use this event only for data coming from a Cloud-mode [source](/docs/connections/sources/). An `Order Completed` event from mobile using the bundled Amplitude integration will work the same as the standard `track` event documented above.
+You can use this event for data coming from a Cloud-mode [source](/docs/connections/sources/). An `Order Completed` event from mobile using the bundled Amplitude integration will work the same as the standard `track` event documented above.
 
 The example below shows an "Order Completed" event with its properties.
 
@@ -154,34 +157,34 @@ analytics.track({
 })
 ```
 
-When you send an "Order Completed" event from Segment, an "Order Completed" event appears in Amplitude for that purchase. An Amplitude event called "Product Purchased" is also created for each product in the purchase. All event properties, except `products`, are sent as `event_properties` of the Amplitude "Order Completed" event. Information about each product is present *only* on the individual "Product Purchased" events.
+When you send an "Order Completed" event from Segment, an "Order Completed" event appears in Amplitude for that purchase. An Amplitude event called "Product Purchased" is also created for each product in the purchase. Segment sends all event properties, except `products`, as `event_properties` of the Amplitude "Order Completed" event. Information about each product is present on the individual "Product Purchased" events.
 {% endcomment %}
 
 #### Track Revenue Per Product
 
 Amplitude has two different ways to track revenue associated with a multi-product purchase. You can choose which method you want to use using the **Track Revenue Per Product** destination setting.
 
-If you disable the setting ("off"), Segment sends a single revenue event with the total amount purchased. Revenue data is added to the Amplitude "Order Completed" event. The "Product Purchased" events do not contain any native Amplitude revenue data.
+If you disable the setting ("off"), Segment sends a single revenue event with the total amount purchased and adds revenue data the Amplitude "Order Completed" event. The "Product Purchased" events do not contain any native Amplitude revenue data.
 
-If you enable the setting ("on"), Segment sends a single revenue event for each product that was purchased. Revenue data is added to each "Product Purchased" event, and the "Order Completed" event does not contain any native Amplitude revenue data.
+If you enable the setting ("on"), Segment sends a single revenue event for each purchased product and adds Revenue data to each "Product Purchased" event. The "Order Completed" event does not contain any native Amplitude revenue data.
 
 Make sure you format your events using the [Track method spec](/docs/connections/spec/track/). You must pass a `revenue` property, a `price` property, and a `quantity` property for each product in the products list.
 
 #### Log Revenue v2
 
-Segment's iOS and Android sources can send revenue using Amplitude's preferred `logRevenueV2` method. Segment sets Amplitude's special revenue properties, such as `revenueType` and `productIdentifier`, which are used in Amplitude's Revenue Analysis and Revenue LTV charts. Segment uses the Amplitude `eventProperties` field to send any properties _not_ mapped to Amplitude's special properties.
+Segment's iOS and Android sources can send revenue using Amplitude's preferred `logRevenueV2` method. Segment sets Amplitude's special revenue properties, such as `revenueType` and `productIdentifier`, which Amplitude's Revenue Analysis uses for Revenue Analysis and Revenue LTV charts. Segment uses the Amplitude `eventProperties` field to send any properties _not_ mapped to Amplitude's special properties.
 
 | Amplitude Property | Segment Property                                             | Description                                                                |
 | ------------------ | ------------------------------------------------------------ | -------------------------------------------------------------------------- |
 | `productId`        | `productId`                                                  | An identifier for the product.                                             |
 | `quantity`         | `quantity`                                                   | The quantity of products purchased. Note: revenue = `quantity` * `price`.  |
 | `price`            | `price` or `revenue` (or `total` for mobile, see note below) | The price of the products purchased, and this can be negative.             |
-| `revenueType`      | `revenueType`                                                | The type of revenue (e.g. tax, refund, income).                            |
-| `receiptSignature` | `receiptSignature` (Android only)                            | The receipt signature.                                                     |
-| `receipt`          | `receipt`                                                    | This is required if you want to verify the revenue event.                  |
+| `revenueType`      | `revenueType`                                                | The revenue type (for example tax, refund, income).                        |
+| `receiptSignature` | `receiptSignature` (Android)                                 | The receipt signature.                                                     |
+| `receipt`          | `receipt`                                                    | Required if you want to verify the revenue event.                          |
 | `eventProperties`  | Any remaining properties                                     | A NSDictionary or Map of event properties to include in the revenue event. |
 
-<!--&ast;-->\* If `properties.price` is not present, Segment uses `revenue` instead, and sends that as `price`. In Segment's iOS and Android components, if `revenue` isn't present either, Segment does an additional fallback and sends the `total`.
+<!--&ast;-->\* If `properties.price` is not present, Segment uses `revenue` instead, and sends that as `price`. In Segment's iOS and Android libraries, if `revenue` isn't present either, Segment sends the `total`.
 
 Property names should be `camelCase` for Android implementations, and `snake_case` for iOS implementations.
 
@@ -192,62 +195,61 @@ Property names should be `camelCase` for Android implementations, and `snake_cas
 
 
 > info ""
-> This endpoint is available when you send data in Cloud-mode only.
+> This endpoint is available when you send data in Cloud-mode.
 
 
-If `true`, events are sent to Amplitude’s `batch` endpoint rather than to their `httpapi` endpoint. Because Amplitude’s `batch` endpoint throttles traffic less restrictively than the Amplitude `httpapi` endpoint, enabling this setting can help to reduce 429 errors (throttling errors) from Amplitude.
+If `true`, the destination sends events to Amplitude’s `batch` endpoint rather than the `httpapi` endpoint. Because Amplitude’s `batch` endpoint throttles traffic less restrictively than the Amplitude `httpapi` endpoint, enabling this setting can help to reduce 429 errors (throttling errors) from Amplitude.
 
 Amplitude’s `batch` endpoint throttles data when the rate of events sharing the same `user_id` or `device_id` exceeds an average of 1,000/second over a 30-second period. See the Amplitude documentation for more about [429 errors and throttling in Amplitude](https://developers.amplitude.com/#429s-in-depth).
 
 ### Identify User
 
-In the default configuration, this mapping is triggered when Segment sends an Identify call to Amplitude (Actions).
+In the default configuration, Amplitude (Actions) triggers this mapping when it receives an Identify call.
 
 This Action sets the user ID for a specific device ID, or updates the user properties. You can use this when you want to update user information without sending an Event to Amplitude.
 
-{% comment %}
+
 ### Merge users with Anonymous ID and User ID
-<!-- MZ 7/29: Anonymous id is in the coalesce function in Device ID -->
-To have Amplitude recognize an anonymous user and a known or logged-in user, make sure you include both the user’s `userId` and the `anonymousId` they had before that in your Identify call. If you don’t include the anonymousId, Amplitude can’t tell that the anonymous user is the same person as the logged-in user.
 
-If you’re using a Segment server library or the Segment HTTP API, you must explicitly include both anonymousId and userId. If you’re using Analytics.js in device-mode, or a bundled SDK, Segment automatically includes anonymousId for you.
+To merge an anonymous user and known user based on `anonymousId` and `userId`, update the value of the Device ID field so that `anonymousId` is the value present.
 
-{% endcomment %}
-
+By default, the Amplitude Device ID property receives the user's device ID from `context.device.id` and falls back to `anonymousId` if `context.device.id` is not present.
 
 ### Map User
 
-In the default configuration, this mapping is triggered when Segment sends an Alias call to Amplitude (Actions).
+In the default configuration, Amplitude (Actions) triggers this mapping when it receives an Alias call.
 
 This Action merges two users together that would otherwise have different User IDs tracked in Amplitude. You can use this when you want to merge the users without sending an Event to Amplitude.
 
-| Segment identifier name | Equivalent Amplitude identifier name |
-| ----------------------- | ------------------------------------ |
-| `previousId`            | `user_id`                            |
-| `userId`                | `global_user_id`                     |
+| Segment identifier name | Amplitude identifier name |
+| ----------------------- | ------------------------- |
+| `previousId`            | `user_id`                 |
+| `userId`                | `global_user_id`          |
 
-This kind of mapping is useful for users who have different ids across different Amplitude projects. The user’s user_ids act as child ids, and can all be mapped to a single global_user_id in Amplitude. This allows you to analyze the user’s aggregate behavior in Amplitude’s Cross Portfolio view.
+This kind of mapping is useful for users who have different ids across different Amplitude projects. The user’s user_ids act as child ids, which Amplitude maps to a single global_user_id. This allows you to analyze the user’s behavior in Amplitude’s Cross Portfolio view.
 
 
 
 {% comment %}
+<!-- vale off -->
 #### Unmap a user
 
 You can also unmap users, for example if you aliased them in error. To unmap a user, pass the user’s previousId as an integration-specific option. The example Alias call below sends a request to Amplitude that unlinks user 123 from all global_user_ids it was previously associated with.
+<!-- vale on -->
 {% endcomment %}
 
 
 
 ### Group Identify User
 
-In the default configuration, this mapping is triggered when Segment sends a Group call to Amplitude (Actions).
+In the default configuration, Amplitude (Actions) triggers this mapping when it receives a Group call.
 
 > warning ""
-> Groups are an enterprise-only feature in Amplitude, and are only available if you've purchased the Accounts add-on.
+> Groups are an enterprise feature in Amplitude, and are available if you've purchased the Accounts add-on.
 
 This Action sets or updates the properties of specific groups. You can use this when you want to update a group's information without sending an Event to Amplitude.
 
-These Group updates only affect events that occur after you set up the Amplitude mapping. You cannot use this to group historical data.
+These Group updates affect events that occur after you set up the Amplitude mapping. You cannot use this to group historical data.
 
 > success ""
 > If you are on a Business Tier Segment plan, you can use [Replay](/docs/guides/what-is-replay/) to run historical data through the Amplitude (Actions) destination to apply the grouping.
@@ -267,4 +269,4 @@ Configuration of the Amplitude (Actions) destination is done through Filters and
 > info ""
 > Contact Segment support if you find features missing from the Amplitude (Actions) destination that were available in the classic Amplitude destination.
 
-{% include components/actions-map-table.html %}
+{% include components/actions-map-table.html name="amplitude" %}

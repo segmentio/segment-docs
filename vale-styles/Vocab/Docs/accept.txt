@@ -47,3 +47,5 @@ Lightbox
 gmail
 (?:P|p)endo
 (?:K|k)laviyo
+(?:U|u)nmaps?\b
+(?:U|u)nlinks?\b

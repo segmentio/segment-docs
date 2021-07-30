@@ -1,8 +1,11 @@
-{% assign configMap = site.data.actions.amplitude.config %}
-{% assign conModes = site.data.actions.amplitude.config| map: 'settings' | map: 'connection_mode' | uniq | compact%}
+{% assign thisDest = include.name %}
+{% assign configMap = site.data.actions.[thisDest].config %}
+{% assign conModes = site.data.actions.[thisDest].config| map: 'settings' | map: 'connection_mode' | uniq | compact%}
 
 
-### Amplitude settings mapping
+
+
+### {{thisDest | capitalize}} settings mapping
 
 <input class="table-search" type="text" id="filterInput" onkeyup="searchFilter()" placeholder="Search for setting..">
 <div class="button-container" id="btnContainer">
@@ -15,9 +18,8 @@
 <table id="settingsTable">
   <thead>
     <tr>
-      <th>Amplitude 1.0 Destination Setting</th>
-      <!-- <th>Configurable in Amplitude (Actions)?</th> -->
-      <th>How to enable in Amplitude (Actions)</th>
+      <th>{{thisDest}} Classic Destination Setting</th>
+      <th>How to enable in {{thisDest}} (Actions)</th>
     </tr>
   </thead>
   <tbody>

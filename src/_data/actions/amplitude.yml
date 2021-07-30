@@ -248,4 +248,3 @@ config:
       configurable: false
       location:
       notes: Actions supports Revenue v2. Confirm revenue reporting is working as expected if you migrate from the Classic Amplitude destination where this setting was **disabled**
-    
