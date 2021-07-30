@@ -6,9 +6,9 @@ redirect_from:
 
 <!-- LR Note: the working copy of the source catalog YML we built on showed this in the `website` source though as of Nov 18 it's labeled cloud-source -->
 
-Littledata is a smart analytics app that automates e-commerce tracking. Littledata's [Shopify-to-Segment connection](https://blog.littledata.io/help/posts/segment-overview/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) automatically tracks key e-commerce events on a Shopify or Shopify Plus store, so you can use Shopify as a source in your Segment workspace.
+Littledata is a smart analytics app that automates e-commerce tracking. Littledata's [Shopify-to-Segment connection](https://blog.littledata.io/help/posts/segment-overview/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} automatically tracks key e-commerce events on a Shopify or Shopify Plus store, so you can use Shopify as a source in your Segment workspace.
 
-Littledata is available as an independent [Shopify App](https://apps.shopify.com/segment-com-by-littledata). When you install the Littledata app on your store, Littledata does two things:
+Littledata is available as an independent [Shopify App](https://apps.shopify.com/segment-com-by-littledata){:target="_blank"}. When you install the Littledata app on your store, Littledata does two things:
 
 1. It inserts a smart tracking script to your store's front end. You can use this script with any Shopify site, and uses Analytics.js under the hood to send data in a spec-compliant manner to Segment.
 
@@ -24,20 +24,20 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 ## Getting Started
 
 1. **Login** to your Shopify Store account.
-2. Go the [Shopify app store listing](https://apps.shopify.com/segment-com-by-littledata) for **_Segment.com by Littledata_**.
+2. Go the [Shopify app store listing](https://apps.shopify.com/segment-com-by-littledata){:target="_blank"} for **_Segment.com by Littledata_**.
    ![](images/Nd5L0C6.png)
 3. Click **Add app** to begin the installation process.
 4. **Sign up** for a Littledata account using an email address, Google login or Facebook login. _More team members can be added to the subscription after completing the installation process._
 5. Add the [**Segment write key**](/docs/connections/find-writekey/) for the source that is going to send data in the **input field**.
    ![](images/eLUh6GF.png)
-6. Choose either an **Automatic** or a **Manual** install. _Automatic installs work in most instances, but if you choose to do a manual install, just follow [this guide](https://blog.littledata.io/help/posts/segment-installation-guide/)._
+6. Choose either an **Automatic** or a **Manual** install. _Automatic installs work in most instances, but if you choose to do a manual install, just follow [this guide](https://blog.littledata.io/help/posts/segment-installation-guide/){:target="_blank"}._
    ![](images/iYM76VI.png)
 7. Segment's **analytics.js** library, Littledata **tracking script** and **webhooks** will be automatically applied to the store and the installation process will then be complete.
    ![](images/kvjNx4M.png)
 
 ## Event schema
 
-This source has a full [tracking plan and event schema](https://docs.google.com/spreadsheets/d/1aljowRhMU9_7uGXmcipbP1Y14S4cOSdXGQA2Vx7BHko/copy) in Google Sheets, which is ready to [upload into Protocols](/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader).
+This source has a full [tracking plan and event schema](https://docs.google.com/spreadsheets/d/1aljowRhMU9_7uGXmcipbP1Y14S4cOSdXGQA2Vx7BHko/copy){:target="_blank"} in Google Sheets, which is ready to [upload into Protocols](/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader).
 
 ## Device-mode events
 
@@ -138,9 +138,9 @@ To support seamless customer tracking the [Mixpanel](/docs/connections/destinati
 
 ## Subscription events
 
-All [recurring orders in the Shopify checkout](https://blog.littledata.io/help/posts/tracking-subscription-orders-in-the-shopify-checkout/), from any subscription app, are tracked as Order Completed events.
+All [recurring orders in the Shopify checkout](https://blog.littledata.io/help/posts/tracking-subscription-orders-in-the-shopify-checkout/){:target="_blank"}, from any subscription app, are tracked as Order Completed events.
 
-Additional subscription lifecycle events via Littledata's [ReCharge connection](https://www.littledata.io/connections/recharge) are available in cloud-mode destinations. See the [Track (custom)](https://docs.google.com/spreadsheets/d/1aljowRhMU9_7uGXmcipbP1Y14S4cOSdXGQA2Vx7BHko/edit#gid=1155311093) tab of the event schema.
+Additional subscription lifecycle events via Littledata's [ReCharge connection](https://www.littledata.io/connections/recharge){:target="_blank"} are available in cloud-mode destinations. See the [Track (custom)](https://docs.google.com/spreadsheets/d/1aljowRhMU9_7uGXmcipbP1Y14S4cOSdXGQA2Vx7BHko/edit#gid=1155311093){:target="_blank"} tab of the event schema.
 
 | Event Name               | Description                                                                                                 |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------- |
@@ -154,7 +154,7 @@ Additional subscription lifecycle events via Littledata's [ReCharge connection](
 
 ## Event properties
 
-The list below outlines the properties included in most events. See the 'Track (eCommerce)' tab of the [event schema](https://docs.google.com/spreadsheets/d/1aljowRhMU9_7uGXmcipbP1Y14S4cOSdXGQA2Vx7BHko/copy) for exactly which properties are sent with which events.
+The list below outlines the properties included in most events. See the 'Track (eCommerce)' tab of the [event schema](https://docs.google.com/spreadsheets/d/1aljowRhMU9_7uGXmcipbP1Y14S4cOSdXGQA2Vx7BHko/copy){:target="_blank"} for exactly which properties are sent with which events.
 
 | Property                               | Description                                                                                        | Property Type |
 | -------------------------------------- | -------------------------------------------------------------------------------------------------- | ------------- |
@@ -215,15 +215,15 @@ Each item in the `products` array, or Product Viewed and Product Added events, w
 
 ## Import all orders
 
-With an [annual Littledata Plus plan](https://www.littledata.io/app/enterprise) you can import all Shopify orders and refunds from before you started using Segment, to sync with destinations that support timestamped events (for example, a data warehouse). This enables you to build a complete customer history in your chosen destination.
+With an [annual Littledata Plus plan](https://www.littledata.io/app/enterprise){:target="_blank"} you can import all Shopify orders and refunds from before you started using Segment, to sync with destinations that support timestamped events (for example, a data warehouse). This enables you to build a complete customer history in your chosen destination.
 
 ## Advanced Device-mode settings
 
-You can edit the LittledataLayer object in your Shopify theme to manually change these advanced settings. For more information, see the [Shopify tracker GitHub repository](https://github.com/littledata/shopify-tracker#segment-configuration).
+You can edit the LittledataLayer object in your Shopify theme to manually change these advanced settings. For more information, see the [Shopify tracker GitHub repository](https://github.com/littledata/shopify-tracker#segment-configuration){:target="_blank"}.
 
 ### cookiesToTrack
 
-You can send any cookie set on a landing page (for example, a session identifier or marketing campaign name) to Segment with an Identify call. A common use is to set the array as `['iterableEmailCampaignId', 'iterableTemplateId']` to pass Iterable `campaignId` and `templateId` through to the [Order Completed event](https://support.iterable.com/hc/en-us/articles/204795719-Sending-Data-from-Segment-to-Iterable-#order-completed).
+You can send any cookie set on a landing page (for example, a session identifier or marketing campaign name) to Segment with an Identify call. A common use is to set the array as `['iterableEmailCampaignId', 'iterableTemplateId']` to pass Iterable `campaignId` and `templateId` through to the [Order Completed event](https://support.iterable.com/hc/en-us/articles/204795719-Sending-Data-from-Segment-to-Iterable-#order-completed){:target="_blank"}.
 
 ### CDNForAnalyticsJS
 
