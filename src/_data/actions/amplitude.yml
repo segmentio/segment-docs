@@ -168,7 +168,7 @@ config:
         - device-web
       configurable: false
       location:
-      notes: Not supported with Actions
+      notes: This setting supported an edge case that is not applicable to Amplitude (Actions)
     - name: Secret Key
       connection_mode:
         - cloud
@@ -208,7 +208,7 @@ config:
         - device-mobile
       configurable: true
       location: Actions field **Track Revenue Per Product**.
-      notes: Available in any subscription that uses the **Log Event** action.
+      notes: Available in any subscription that uses the **Log Event** action. <br /> In Amplitude (Actions), this setting elevates `revenue` to a top-level property. This allows revenue data to pass through to Amplitude's LTV reports.
     - name: Track Session Events to Amplitude
       connection_mode:
         - device-web

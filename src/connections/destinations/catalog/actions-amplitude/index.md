@@ -18,6 +18,14 @@ and conversion.
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Amplitude Segment destination. There's also a page about the [non-Actions Amplitude destination](/docs/connections/destinations/catalog/amplitude/). Both of these destinations receives data _from_ Segment. There's also the [Amplitude Engage Segment source](/docs/connections/sources/catalog/cloud-apps/amplitude-cohorts/), which sends data _to_ Segment!
 
+## Benefits of Amplitude (Actions) vs Amplitude Classic
+
+Amplitude (Actions) provides the following benefits over the classic Amplitude destination:
+- **Fewer settings**. Data mapping for actions-based destinations happens in during configuration, which eliminates the need for most settings.
+- **Clearer mapping of data**. Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to the destination.
+- **Support for Amplitude's HTTP API v2**. Amplitude (Actions) is built on the latest version of [Amplitude's HTTP API](https://developers.amplitude.com/docs/http-api-v2){:target="_blank"}.
+- **Revenue is a top-level property**. Amplitude (Actions) elevates `revenue` to a top-level property in requests sent to Amplitude. This enables inclusion of this data in Amplitude features like customer LTV reports.
+
 ## Getting started
 
 1. Before you start, go to your [Amplitude workspace](https://analytics.amplitude.com){:target="_blank"}. Click **Settings** in the bottom left, then click **Projects** in the left menu. Select your **Project**. Copy the Amplitude API Key and Secret Key for the project.
@@ -264,7 +272,13 @@ To use Amplitude's groups with Segment, you must enable the following Action set
 
 ## Migration from Amplitude Classic
 
-Configuration of the Amplitude (Actions) destination is done through Filters and Actions. Consult the table below for information about configuring your Amplitude (Actions) destination similarly to your classic Amplitude destination.
+Keep the following in mind if you plan to move to Amplitude (Actions) from a classic Amplitude destination.
+
+### Amplitude (Actions) uses Amplitude's HTTP API v2
+
+If you used Amplitude Classic in cloud-mode, you'll notice different responses from Amplitude to calls you make with the destination. Classic Amplitude was built on Amplitude's now-deprecated HTTP API v1. 
+
+You configure the Amplitude (Actions) destination through Filters and Actions. Consult the table below for information about configuring your Amplitude (Actions) destination similarly to your classic Amplitude destination.
 
 > info ""
 > Contact Segment support if you find features missing from the Amplitude (Actions) destination that were available in the classic Amplitude destination.
