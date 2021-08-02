@@ -1,11 +1,97 @@
 .search {
   display: none;
 
-  @include breakpoint(large up)  {
+  @include breakpoint(large up) {
     display: block;
   }
 
   &--mobile {
     display: block;
   }
+}
+
+.aa-Input {
+  line-height: 1.5;
+  font-size: 12px;
+  font-family: "SF Pro Text", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  background-color: #ffffff;
+  color: #474d66;
+  border-radius: 4px;
+}
+.algolia-autocomplete {
+  width: 100%;
+}
+
+.aa-Form:focus-within{
+  box-shadow: 0 0 5px #2952cc;
+  transition: all 0.30s ease-in-out;
+  outline: none;
+  border: 1px solid rgba(128,126,163,.8);
+}
+
+.aa-dataset-article {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.aa-suggestion, .aa-Item {
+  padding: 15px 30px;
+  border-bottom: 1px solid #ddd;
+}
+
+mark, .ais-Highlight {
+  background-color: #f6fcfe;
+  font-weight: bold;
+  font-style: normal;
+  color: inherit;
+}
+
+a.aa-link:hover {
+  text-decoration: none;
+}
+
+
+.aa-title {
+  font-size: 12px;
+  color: #2952cc;
+  line-height: 1.5;
+}
+
+.aa-heading {
+  color: #ccc;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.aa-content, .aa-empty {
+  font-size: 10px;
+  color: grey;
+  line-height: 1.5
+}
+
+.aa-empty{
+  padding:15px 15px;
+}
+
+.aa-cursor {
+  background-color: #fafbff;
+}
+
+.aa-Panel{
+  z-index: 100;
+  margin-top: 25px;
+  // box-shadow: 10px 8px 15px -7px rgba(0, 0, 0, 0.29);
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.aa-submitIcon {
+  width: 12px !important;
+}
+
+.aa-submitButton:focus {
+  outline: none;
 }

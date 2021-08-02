@@ -1,5 +1,5 @@
 ---
-title: How do I join user profiles?
+title: Joining User Profiles
 ---
 
 One of the first questions we get when our customers start querying all of their data is, how do I join all this data together? For example, let's say you'd like to know if support interactions in Zendesk increase revenue in Stripe, or which percentage of users opened your email campaign and visited your website or mobile app? The key to answering these advanced questions is tying your data together across these sources. To do that, you need a common user identifier.

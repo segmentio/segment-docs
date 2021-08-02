@@ -1,5 +1,5 @@
 ---
-title: How do I automate multi-channel re-engagement campaigns?
+title: Automating Multi-Channel Re-Engagement Campaigns
 ---
 
 Compelling and engaging brands delight their customers at every interaction. As customers move seamlessly across channels—such as email, push notifications, display ads—brands must similarly meet them with tailored and consistent messages.

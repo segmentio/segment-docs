@@ -1,23 +1,25 @@
 ---
 title: Drift Destination
+published: false
 rewrite: true
 ---
+
+<!--May 2021: hiding this and adding a redirect to destinations catalog. -->
+
 [Drift](http://www.drift.com/segment/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the world's first and only conversational marketing platform. Instead of traditional marketing and sales platforms that rely on forms and follow ups, Drift connects your business with the best leads in real-time.
 
 The `analytics.js` device-mode destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-drift).
 
-The cloud-mode destination is maintained by Drift. For any issues with the destination, [contact their team](https://www.drift.com/help/).
-
-This document was last updated on January 25, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+The cloud-mode destination is maintained by Drift. For any issues with the destination, [contact the Drift support team](https://www.drift.com/help/).
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-  1. From your Segment UI's Destinations page click on "Add Destination".
-  2. Search for "Drift" within the Destinations Catalog and confirm the Source you'd like to connect to.
-  3. Drop in your `API Key` and `Embed ID` as obtained from your Drift account (if Drift account not accessible yet, [email the team](mailto:team@drift.com) to get a link for the Drift account creation).
+  1. From the Segment web app, click **Catalog**.
+  2. Search for "Drift" in the Catalog, select it, and choose which of your sources to connect the destination to.
+  3. In the destination settings, enter your `API Key` and `Embed ID` as obtained from your Drift account (if Drift account not accessible yet, [email the team](mailto:team@drift.com) to get a link for the Drift account creation).
   4. If you're using analytics.js and 'identify' users by default, Drift will work automatically. If you don't have analytics.js setup, after enabling the Drift destination in Segment, you must 'identify' users in order for Drift to display in your product.
 
 ## Page
@@ -51,6 +53,22 @@ We will also flatten the `address` field. All other attributes are passed throug
 If you do not pass a `userId`, we will try to fill it in with the `id` or `username` special traits.
 
 Keep in mind, we _strongly_ suggest to ensure that the `email` field is passed in the `identify` call.
+
+Integrations options passed to `identify` event will be passed to drift identify as third argument. This can be leveraged for [signed identifies](https://devdocs.drift.com/docs/securing-drift-on-your-site-using-signed-identities).
+
+```javascript
+analytics.identify('ksc2303', {
+  name: 'Tak',
+  email: 'test@forestry.com'
+}, {
+  integrations: {
+    'All': false,
+    'Drift': {
+      // properties to pass to drift identify call.
+    }
+  }
+});
+```
 
 ## Track
 

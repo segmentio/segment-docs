@@ -6,7 +6,7 @@ sourceCategory: 'Server'
 
 Our Ruby library lets you record analytics data from your ruby code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
 
-This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-ruby).
+This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-ruby).
 
 All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
 
@@ -19,7 +19,7 @@ All of Segment's server-side libraries are built for high-performance, so you ca
 If you're using bundler, add the following line to your project's `Gemfile`:
 
 ```ruby
-gem 'analytics-ruby', '~> 2.0.0', :require => 'segment/analytics'
+gem 'analytics-ruby', '~> 2.4.0', :require => 'segment/analytics'
 ```
 
 Or, if you're using the gem directly from your application, you'll need to:
@@ -43,7 +43,8 @@ That will create an instance of `Analytics` that you can use to send data to Seg
 
 If you're using Rails, you can stick that initialization logic in `config/initializers/analytics_ruby.rb` and omit the `require` call.
 
-**Note:** Our ruby gem makes requests asynchronously, which can sometimes be suboptimal and difficult to debug if you're pairing it with a queuing system like Sidekiq/delayed job/sucker punch/resqueue. If you'd prefer to use a gem that makes requests synchronously, you can check out [`simple_segment`](https://github.com/whatthewhat/simple_segment), an API-compatible drop-in replacement for the standard gem that does its work synchronously inline. Big thanks to [Mikhail Topolskiy](https://github.com/whatthewhat) for his stewardship of this alternative gem!
+> info ""
+> The analytics-ruby gem makes requests asynchronously, which can sometimes be suboptimal and difficult to debug if you're pairing it with a queuing system like Sidekiq/delayed job/sucker punch/resqueue. If you'd prefer to use a gem that makes requests synchronously, you can check out [`simple_segment`](https://github.com/whatthewhat/simple_segment), an API-compatible drop-in replacement for the standard gem that does its work synchronously inline. Big thanks to [Mikhail Topolskiy](https://github.com/whatthewhat) for his stewardship of this alternative gem!
 
 ## Identify
 
@@ -330,7 +331,7 @@ Find more details about `group` including the **`group` payload** in our [Spec](
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
  `alias` method definition:
 
@@ -386,11 +387,11 @@ Here's an example `track` call with the `integrations` object shown.
 Analytics.track({
   user_id: '83489',
   event: 'Song Paused',
-  integrations: { All: false, KISSmetrics: true }
+  integrations: { All: false, Kissmetrics: true }
 })
 ```
 
-In this case, we're specifying that we want this identify to only go to KISSmetrics. `all: false` says that no destination should be enabled unless otherwise specified. `KISSmetrics: true` turns on KISSmetrics, etc.
+In this case, we're specifying that we want this identify to only go to Kissmetrics. `all: false` says that no destination should be enabled unless otherwise specified. `Kissmetrics: true` turns on Kissmetrics, etc.
 
 Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
@@ -454,7 +455,7 @@ Segment::Analytics.new({
 
 ## Flush
 
-If you're running any sort of script or internal queue system to upload data, you should call `Analytics.flush` at the end of execution to ensure that all messages are sent to our servers. It's also recommended you call this method on shutdown to ensure all queued messages are uploaded to Segment.
+If you're running a script or internal queue system to upload data, you should call `Analytics.flush` at the end of execution to ensure that all of your messages are sent to our servers. Segment also recommendeds that you call `flush` on shutdown, so that all queued messages are sent to Segment instead of waiting for the next launch.
 
 ```ruby
 AppAnalytics = Segment::Analytics.new({
@@ -463,7 +464,8 @@ AppAnalytics = Segment::Analytics.new({
 AppAnalytics.flush
 ```
 
-Calling flush will block execution until all messages are processed, so it is not recommended in normal execution of your production application.
+> success "" 
+> **Tip**: When you call `flush`, the call blocks execution on the thread until it finishes processing all the messages in the queue. If you want to call `flush` during the normal operation of your application, you can spawn a local worker thread and call flush on the worker. This prevents the call from blocking the main thread.
 
 
 ## Turbolinks

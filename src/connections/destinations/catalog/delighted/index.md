@@ -5,21 +5,19 @@ rewrite: true
 
 [Delighted](https://delighted.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the modern customer feedback solution used by the world's most coveted brands to deliver stellar experiences to their customers.
 
-This destination is maintained by Delighted. For any issues with the destination, [contact their team](mailto:hello@delighted.com)
+This destination is maintained by Delighted. For any issues with the destination, [contact the Delighted Support team](mailto:hello@delighted.com)
 
 _**NOTE:** The Delighted Destination is currently only compatible with email surveys._
-
-This document was last updated on January 29, 2019. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact/)!
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Delighted" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in your Delighted "API Key" in Segment's Settings UI. You can retrieve this from your Delighted Settings > API > Your API Key. It should look like "T8jtGnuYaNerDedVMYrcgn1dRdywfGOl".
-4. If you're using Segment's client-side `analytics.js` library, we asynchronously load Delighted's Javascript library onto the page and the CDN will be updated in 45 minutes.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Delighted" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. In the destination settings, enter your Delighted "API Key" in Segment's Settings UI. You can retrieve this from your Delighted Settings > API > Your API Key. It should look like "T8jtGnuYaNerDedVMYrcgn1dRdywfGOl".
+4. If you're using Segment's client-side `analytics.js` library, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Delighted's Javascript library onto the page and begins sending data.
 
 
 ## Identify

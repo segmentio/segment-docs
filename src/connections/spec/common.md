@@ -4,9 +4,9 @@ title: 'Spec: Common Fields'
 
 In the Segment [Spec](/docs/connections/spec/) all the [API calls](/docs/connections/spec/) have a common structure, and a few common fields.
 
-However, not all destinations accept all fields included in the Spec. Not sure which fields a destination accepts? Refer to the destination's documentation page, or check out the [open-source destination code on Github](https://github.com/segment-integrations).
+However, not all destinations accept all fields included in the Spec. Not sure which fields a destination accepts? Refer to the destination's documentation page, or check out the [open-source destination code on GitHub](https://github.com/segment-integrations).
 
-{% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/324252?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Segment Methods" content="Check out our high-level overview of these APIs in Segment University. (Must be logged in to access.)" %}
+{% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/324252?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: The Segment Methods" description="Check out our high-level overview of these APIs in Segment University. (Must be logged in to access.)" %}
 
 ## Structure
 Every API call has the same core structure and fields. These fields describe user identity, timestamping and mechanical aides like API version.
@@ -119,7 +119,7 @@ Beyond this common structure, each API call adds a few specialized top-level fie
 
 ## Context
 
-Context is a dictionary of extra information that provides useful context about a datapoint, for example the user's `ip` address or `locale`. Context is a complete and explicit specification, so properties outside the spec are ignored. You should **only use** Context fields for their intended meaning.
+Context is a dictionary of extra information that provides useful context about a datapoint, for example the user's `ip` address or `locale`. You should **only use** Context fields for their intended meaning.
 
 <table>
   <tr>
@@ -255,7 +255,7 @@ Other libraries only collect `context.library`, any other context variables must
 | library.name             |     √        |     √         |      √            |
 | library.version          |     √        |     √         |      √            |
 | ip*                      |     √        |     √         |      √            |
-| locale                   |              |     √         |      √            |
+| locale                   |     √        |     √         |      √            |
 | location.latitude        |              |               |                   |
 | location.longitude       |              |               |                   |
 | location.speed           |              |               |                   |
@@ -282,7 +282,7 @@ Other libraries only collect `context.library`, any other context variables must
 
 ## Integrations
 
-A dictionary of destination names that the message should be sent to. `'All'` is a special key that applies when no key for a specific destination is found.
+A dictionary of destination names that the message should be sent to. `'All'` is a special key that applies when no key for a specific destinatio n is found.
 
 Integrations defaults to the following:
 
@@ -392,4 +392,4 @@ The `receivedAt` timestamp is most important as the sort key in our Warehouses p
 
 The `timestamp` timestamp specifies when the datapoint occurred, corrected for client-device clock skew. This is the timestamp that is passed to downstream destinations and used for historical replays. It is important to use this timestamp for importing historical data to the API.
 
-The `timestamp` field is settable from our server-side libs or if passing info directly to the HTTP endpoints.
+If you are using the Segment server Source libraries, or passing calls directly to the HTTP API endpoint, you can manually set the `timestamp` field.  If you are using a Segment Source in device mode, the library generates `timestamp` and you cannot manually set one directly in the call payload.  

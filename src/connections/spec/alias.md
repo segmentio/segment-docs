@@ -7,11 +7,11 @@ title: 'Spec: Alias'
 
 The `alias` method is used to merge two user identities, effectively connecting two sets of user data as one. This is an advanced method, but it is required to manage user identities successfully in some of our destinations.
 
-{% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/324252?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Segment Methods" content="Check out our high-level overview of these APIs in Segment University. (Must be logged in to access.)" %}
+{% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/324252?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: The Segment Methods" content="Check out our high-level overview of these APIs in Segment University. (Must be logged in to access.)" %}
 
 Since this is our most advanced method we have added sections to each docs page for destinations that use it:
 
-- [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics#alias)
+- [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics#alias)
 - [Mixpanel](/docs/connections/destinations/catalog/mixpanel#alias)
 - [Vero](/docs/connections/destinations/catalog/vero#alias)
 
@@ -27,7 +27,7 @@ Here's the payload of a basic `alias` call that will associate this user's exist
 
 If you're instrumenting a website, then the Anonymous ID is generated in the browser so you must call `alias` from the client-side. If you're using a server-side session ID as the Anonymous ID, then you must alias from the server-side.
 
-Here's the corresponding Javascript event that would generate the above payload. If you're using Segment's Javascript library, we'll automatically pass in the user's anonymousId as previousId for you:
+Here's the corresponding Javascript event that would generate the above payload. If you're using Segment's Javascript library, Segment automatically passes in the user's `anonymousId` as `previousId` for you:
 
 ```js
 analytics.alias("507f191e81");

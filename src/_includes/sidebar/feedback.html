@@ -3,7 +3,7 @@
 
   <div class="flex">
     <div class="flex__column flex__column--6">
-      <button class="button button--small button-fill button-fill--white" data-section="right-bar" data-feedback-button="helpful" data-active-class="button-fill--primary">
+      <button class="feedback-box__button button button-fill button-fill--white gutter gutter--small" data-section="right-bar" data-feedback-button="helpful" data-active-class="button-fill--secondary">
         <span class="button__icon">
           {% include icons/symbols/thumb-up.svg %}
         </span>
@@ -13,7 +13,7 @@
     </div>
 
     <div class="flex__column flex__column--6">
-      <button class="button button--small button-fill button-fill--white" data-section="right-nav" data-feedback-button="unhelpful" data-active-class="button-fill--gray">
+      <button class="feedback-box__button button button-fill button-fill--white gutter gutter--small" data-section="right-nav" data-feedback-button="unhelpful" data-active-class="button-fill--gray">
         <span class="button__icon">
           {% include icons/symbols/thumb-down.svg %}
         </span>
@@ -27,62 +27,5 @@
     <p>Thanks for your feedback!</p>
 
     <p>Can we improve<br> this doc? <br><a href="#" data-feedback-button="alternate">Send us feedback!</a></p>
-  </div>
-
-  <div style="display: none;" data-feedback-template="helpful">
-    <div class="feedback-template">
-      <textarea
-        class="feedback-template__textarea"
-        name="name"
-        placeholder="Great! What did you like?"
-        data-feedback-text
-      ></textarea>
-
-      <button
-        class="button button--small button-fill button-fill--primary"
-        data-section="right-bar"
-        data-send-button
-      >
-        Send
-      </button>
-    </div>
-  </div>
-
-  <div style="display: none;" data-feedback-template="unhelpful">
-    <div class="feedback-template">
-      <textarea
-        class="feedback-template__textarea"
-        name="name"
-        placeholder="Sorry to hear that. What can we do better?"
-        data-feedback-text
-      ></textarea>
-
-      <button
-        class="button button--small button-fill button-fill--primary"
-        data-section="right-bar"
-        data-send-button
-      >
-        Send
-      </button>
-    </div>
-  </div>
-
-  <div style="display: none;" data-feedback-template="alternate">
-    <div class="feedback-template">
-      <textarea
-        class="feedback-template__textarea"
-        name="name"
-        placeholder="Do you have any suggestions?"
-        data-feedback-text
-      ></textarea>
-
-      <button
-        class="button button--small button-fill button-fill--primary"
-        data-section="right-bar"
-        data-send-button
-      >
-        Send
-      </button>
-    </div>
   </div>
 </div>

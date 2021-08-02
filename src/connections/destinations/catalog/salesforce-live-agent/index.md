@@ -1,5 +1,6 @@
 ---
 title: Salesforce Live Agent Destination
+strat: salesforce
 ---
 
 ## Getting Started
@@ -13,7 +14,7 @@ liveagent.init('https://d.la3-c1cs-phx.salesforceliveagent.com/chat', '1111D0000
 </script>
 ```
 
-When you toggle on Salesforce Live Agent in Segment, we'll begin loading the Salesforce Live Agent web SDK on any pages you have Segment deployed. Their accompanying API functionality will be available to interact with however, **we will not initialize their API automatically**. This is because their API has two core functions:
+When you enable Salesforce Live Agent in Segment, we'll begin loading the Salesforce Live Agent web SDK on any pages you have Segment deployed. Their accompanying API functionality will be available to interact with however, **we will not initialize their API automatically**. This is because their API has two core functions:
 
 - Control the visual configuration of the chat experience (set the size of the chat window, conditionally display buttons based on whether the chat agent is online/offline, etc.)
 - Send data about the `Case`, `Account`, and `Contact` to your chat agent as well as your Salesforce CRM deployment using a pre-chat form

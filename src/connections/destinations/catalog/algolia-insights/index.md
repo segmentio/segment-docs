@@ -11,18 +11,18 @@ redirect_from: '/connections/destinations/catalog/algolia/'
 - A/B Testing
 - Personalization
 
-This destination is maintained by [Algolia](https://www.algolia.com/). For any issues with the destination, [contact their team](mailto:hey@algolia.com).
+This destination is maintained by [Algolia](https://www.algolia.com/). For any issues with the destination, [contact the Algolia team](mailto:hey@algolia.com).
 
-_**NOTE:** The Algolia Insights Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 20, 2020. If you are interested in joining their beta program or have any feedback to help improve the Algolia Insights Destination and its documentation, [let their team know](mailto:hey@algolia.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Algolia" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "App ID" & "API Key" into your Segment Settings UI which you can find from your [Algolia Dashboard](https://www.algolia.com/apps/), under API Keys menu.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Algolia" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "App ID" & "API Key" into your Segment Settings UI which you can find from your [Algolia Dashboard](https://www.algolia.com/apps/), under API Keys menu.
 
 _**NOTE:** The Algolia Insights Destination is not a plug-and-play integration. It requires you to modify your frontend code to send additional Algolia-related data like index name, queryID, etc._
 
@@ -67,13 +67,15 @@ Algolia supports the following six events from Segment's [Ecommerce Spec](https:
   </tr>
 </table>
 
+For a full list of required properties for each event type, see the [Spec: V2 Ecommerce Events](/docs/connections/spec/ecommerce/v2/)
+
 ```js
 analytics.track('Product List Viewed', {
+    index: "my-index-name",
+    queryID: "Algolia queryID", // required only for Click Analytics,
     products: [{
         objectID: "hit objectID",
-        position: hitPositionOnIndex,  // number
-        index: "my-index-name",
-        queryID: "Algolia queryID" // required only for Click Analytics,
+        // ... other required properties from the spec
     }]
 })
 
@@ -81,36 +83,44 @@ analytics.track('Product List Filtered', {
     index: "my-index-name",
     filters: [
         { type : "free_delivery", value: "true" }
-    ]
+    ],
+    // ... other required properties from the spec
 })
 
 analytics.track('Product Viewed', {
     objectID: "hit objectID",
-    position: hitPositionOnIndex,  // number
     index: "my-index-name",
-    queryID: "Algolia queryID" // required only for Click Analytics,
+    queryID: "Algolia queryID", // required only for Click Analytics,
+    // ... other required properties from the spec
 })
 
 
 analytics.track('Product Clicked', {
     objectID: "hit objectID",
-    position: hitPositionOnIndex,  // number
+    position: hitPositionOnIndex, // number
     index: "my-index-name",
-    queryID: "Algolia queryID" // required only for Click Analytics,
+    queryID: "Algolia queryID", // required only for Click Analytics,
+    // ... other required properties from the spec
 })
 
-analytics.track('Product Added, {
+analytics.track('Product Added', {
     objectID: "hit objectID",
     index: "my-index-name",
-    queryID: "Algolia queryID" // required only for Click Analytics,
+    queryID: "Algolia queryID", // required only for Click Analytics,
+    // ... other required properties from the spec
 })
 
 analytics.track('Order Completed', {
-    objectID: "hit objectID",
     index: "my-index-name",
-    queryID: "Algolia queryID" // required only for Click Analytics,
+    queryID: "Algolia queryID", // required only for Click Analytics,
+    products: [
+        {
+            objectID: "hit objectID",
+            // ... other required properties from the spec
+        },
+        // ...
+    ]
 })
-
 ```
 
 Track calls will be sent to Algolia as a `track` event, and appear in your Click Analytics, A/B Testing and Personalization dashboard.

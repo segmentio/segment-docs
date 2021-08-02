@@ -5,7 +5,9 @@ layout: default
 <div class="docs">
   <div class="stage">
     <div class="docs__aside stage__aside">
-      {% include_cached navbar/logo.html %}
+      <div class="docs__logotype">
+        {% include_cached navbar/logo.html %}
+      </div>
 
       {% assign currentPage = page.url | downcase | split: "/" %}
       {% if currentPage[1] == 'glossary' %}

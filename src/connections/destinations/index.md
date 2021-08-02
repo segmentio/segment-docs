@@ -2,6 +2,11 @@
 title: Destinations Overview
 ---
 
+If you just want to explore the Segment destinations, check out the [Destinations catalog](/docs/connections/destinations/catalog/).
+
+Select an item from the catalog to learn more about it. The documentation for each destination explains how the Segment Tracking API methods are implemented for that destination.
+
+
 ## Sources vs Destinations
 
 Segment has [Sources](/docs/connections/sources/) and [Destinations](/docs/connections/destinations/). Sources send data _into_ Segment, while Destinations receive data _from_ Segment.
@@ -10,21 +15,21 @@ Segment has [Sources](/docs/connections/sources/) and [Destinations](/docs/conne
 
 Segment has five types of sources: Web (Analytics.js), Mobile, Server, and Cloud App, plus a fifth type: User-created [Source Functions](/docs/connections/sources/source-functions/). Web, Mobile, and Server sources send first-party data from your digital properties. Cloud-app sources send data about your users from your connected web apps, for example a ticketing system such as [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/), a payments system such as [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/), or a marketing tool like [Braze](/docs/connections/sources/catalog/cloud-apps/braze/).
 
-## Catalog
-
-If you're just looking to explore all of our destinations check out the [destinations catalog](/docs/connections/destinations/catalog/).
-
-For detailed information about each destination, select one from the list to learn how our API methods are implemented for that destination, and how you can use it through Segment.
 
 ## Method Compatibility
 
-Not all destinations can accept data from specific method types. Wondering which ones are which? Check out the [Destinations Methods matrix](/docs/connections/destinations/methods-compare/).
+Not all destinations can accept data from specific method types. Wondering which ones are which? Look for the "Quick Info" box at the top of the destination's documentation page, or check out the [Destinations Methods matrix](/docs/connections/destinations/methods-compare/).
 
 ## Source Compatibility
 
-Many destinations can accept data from all types of sources, but some are only compatible with specific source types (for example, web only, or server only). To find out which source types a specific destination can accept data from, check the documentation for that destination for a "Supported Sources and Connection Modes" section.
+Many destinations can accept data from all types of sources, but some are only compatible with specific source types (for example, web only, or server only). To find out which source types a specific destination can accept data from, check the documentation for that destination for a "Quick info" box, or a "Supported Sources and Connection Modes" section.
 
-{% include components/media-icon.html href="/docs/connections/destinations/category-compare/" icon="media/icon-guides.svg" title="Destinations Compatibility Matrix" content="Wondering which destinations take which data? Check out the Destination connection modes list by category." %}
+{% include components/reference-button.html href="/docs/connections/destinations/category-compare/" icon="guides.svg" title="Destinations Compatibility Matrix" description="Wondering which destinations take which data? Check out the Destination connection modes list by category." %}
+
+
+## Destination Actions
+
+In June of 2021 Segment released a new form of destinations called [Destinations Actions](/docs/connections/destinations/actions/). These destinations allow users to create "subscriptions": sets of conditions in which data is sent to the destinations, and data mappings to format that data for the destination tool. Segment watches for data that matches the conditions you create (called "triggers") for the subscription, and when the conditions are met, uses an explicit mapping to transform the incoming data to an output format that your destination can use.
 
 ## Connection Modes
 
@@ -33,7 +38,7 @@ Many destinations can accept data from all types of sources, but some are only c
 
 ### When should I use Device-mode? When should I use Cloud-mode?
 
-There are two main things we consider when we decide to build Device- or Cloud-Modes (or both!) for a destination partner
+There are two main things we consider when Segment decides to use Device- or Cloud-Modes (or both!) for a destination partner
 
 #### 1. Anonymous Attribution Methodology
 
@@ -191,7 +196,10 @@ You can see the current destination endpoint API success rates and final deliver
 
 ### Replays
 
-[Replays](/docs/guides/what-is-replay/) allow customers to load historical data from our S3 logs into downstream destinations which accept cloud-mode data. So, for example, if you wanted to try out a new email or analytics tool, we can replay your historical data into that tool. This gives you a great testing environment and prevents data lock-in when vendors try to hold data hostage. Replay is available to our [Business](https://segment.com/pricing) customers, and you can learn more by [contacting us](https://segment.com/contact/sales).
+> info ""
+> Replay is available to [Business tier](https://segment.com/pricing) customers. [Contact us](https://segment.com/contact/sales) to learn more.
+
+[Replays](/docs/guides/what-is-replay/) allow customers to load historical data from Segment's S3 logs into downstream destinations which accept cloud-mode data. So, for example, if you wanted to try out a new email or analytics tool, Segment can replay your historical data into that tool. This gives you a great testing environment and prevents data lock-in when vendors try to hold data hostage.
 
 > warning ""
 > If you submitted [`suppress_only` requests](https://segment.com/docs/privacy/user-deletion-and-suppression/#suppressed-users), Segment still retains historical events for those users, which can be replayed. If you do not want historical events replayed for suppressed users, submit `suppress_and_delete` requests instead.

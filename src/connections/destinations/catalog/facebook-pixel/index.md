@@ -31,11 +31,11 @@ This page is about the **Facebook Pixel**. For documentation on other Facebook d
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Facebook Pixel" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in your `pixelId` from the [Pixels tab in Facebook Ads Manager](https://www.facebook.com/ads/manager/pixel/facebook_pixel).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Facebook Pixel" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. In the destination settings, enter your `pixelId` from the [Pixels tab in Facebook Ads Manager](https://www.facebook.com/ads/manager/pixel/facebook_pixel).
 
-We'll automatically initialize Facebook's pixel with your `pixelId` upon loading `analytics.js`.
+Segment automatically initializes Facebook's pixel with your `pixelId` upon loading `analytics.js`.
 
 ## Page
 

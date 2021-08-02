@@ -4,7 +4,7 @@ title: Mandrill Source
 
 [Mandrill](http://www.mandrill.com/) is a transactional email API for MailChimp users.
 
-Take your company's email analysis to the next level by **adding Mandrill as a Source to Segment.** We'll automatically collect email events like `Sent` and `Opened` and load them into your data warehouse. 
+Take your company's email analysis to the next level by **adding Mandrill as a Source to Segment.** Segment automatically  collects email events like `Sent` and `Opened` and load them into your data warehouse. 
 
 ## Getting Started
 
@@ -14,17 +14,14 @@ Take your company's email analysis to the next level by **adding Mandrill as a S
 
 3. Give the source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. Both can be whatever you like, but we recommend sticking to something that reflects the source itself, like `Mandrill` for nickname and `mandrill` or `mandrill_prod` for the schema name.
 
-   ![](images/517874_Screen+Shot+2016-02-16+at+11.51.04+PM.png)
+   **Note**: You can add more than one instance if you have multiple Mandrill accounts. That's why Segment allows you to customize the source's nickname and schema name!
 
-   **Note**: ou can add multiple instances if you have multiple Mandrill accounts. That's why we allow you to customize the source's nickname and schema name!
-
-4. Copy the auto-generated Webhook URL and paste it into Mandrill's Event Notification settings pane under Settings > Webhook.
-
-   ![](images/Webhook.png)
+4. Copy the auto-generated Webhook URL.
+5. In Mandrill, go to **Settings > Webhook** and paste the URL in the Event Notification settings pane.
 
    ![](images/795640_mandrill-settings.png)
 
-   Once you enable the webhook, you're good to go! We'll automatically create your collections based on which triggers you select. If any seem unnecessary for your analysis, feel free to leave them unchecked.
+   Once you enable the webhook, you're good to go! Segment automatically creates your collections based on which triggers you select. If any seem unnecessary for your analysis, feel free to leave them unchecked.
 
 5. Finally, back in the Segment UI, press Next and then Finish to wrap up the set up flow.
 

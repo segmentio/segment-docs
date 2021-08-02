@@ -2,7 +2,7 @@ import ClipboardJS from 'clipboard'
 import tippy from 'tippy.js'
 
 const COMPONENT_SELECTOR = '[data-headings-anchors]'
-const HEADINGS_SELECTOR = 'h1, h2, h3, h4, h5'
+const HEADINGS_SELECTOR = 'h1, h2, h3, h4, h5, .def'
 
 export default function () {
   const components = document.querySelectorAll(COMPONENT_SELECTOR)
@@ -11,7 +11,7 @@ export default function () {
     const headings = components[i].querySelectorAll(HEADINGS_SELECTOR)
 
     for (let i = 0; i < headings.length; i++) {
-      if (!headings[i].classList.contains('media-thumbnail__heading') && !headings[i].classList.contains('media-icon__heading')) {
+      if (!headings[i].classList.contains('reference-button__heading')) {
         const tooltip = tippy(headings[i], {
           content: 'Copied!',
           theme: 'dark',

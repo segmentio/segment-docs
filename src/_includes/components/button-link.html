@@ -1,3 +1,3 @@
-<a class="button-link" href="{{ include.href }}">
+<a class="button {% if include.modifier %}button--{{ include.modifier }}{% endif %} button-link {% if include.variant %}button-link--{{ include.variant }}{% endif %}" href="{{ include.href }}">
   {{ include.text }}
 </a>

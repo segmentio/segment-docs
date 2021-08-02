@@ -4,14 +4,18 @@ rewite: true
 redirect_from:
   - '/connections/warehouses/catalog/postgres/'
 ---
-PostgreSQL, often simply Postgres, is an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance. As a database server, its primary functions are to store data securely and return that data in response to requests from other software applications. It can handle workloads ranging from small single-machine applications to large Internet-facing applications (or for data warehousing) with many concurrent users. PostgreSQL is the default database on macOS Server, and it is also available for Microsoft Windows and Linux (supplied in most distributions).
+PostgreSQL, or Postgres, is an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance. As a database server, its primary functions are to store data securely and return that data in response to requests from other software applications. 
 
 PostgreSQL is ACID-compliant and transactional. PostgreSQL has updatable views and materialized views, triggers, foreign keys; supports functions and stored procedures, and other expandability. Developed by the PostgreSQL Global Development Group, free and open-source.
 
-This document was last updated on April, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 ## Getting started
-Find below a selection of options on how to create your Postgres warehouse.
+Segment supports the following Postgres database providers:
+- [Heroku](#heroku-postgres)
+- [RDS](#rds-postgres)
+- [Compose](#compose-postgres)
+
+> warning ""
+> Segment supports only these Postgres databases. Postgres databases from other providers are not guaranteed to work. For questions or concerns, contact [Segment Support](https://segment.com/help/contact){:target="_blank"}
 
 ### Heroku Postgres
 
@@ -39,11 +43,11 @@ This guide explains how to set up a Postgres database with Heroku. Heroku is a c
 
 5. Choose your plan.
 
-    When you click **Create Database**, a modal appears with your plan choices. Depending on your needs, some plans may be more suitable than others - for example, more expensive plans generally have better performance and more storage. We recommend that new customers start with the "Standard 4" plan.
+    When you click **Create Database**, a modal appears with your plan choices. Depending on your needs, some plans may be more suitable than others - for example, more expensive plans generally have better performance and more storage. Segment recommends that new customers start with the "Standard 4" plan.
 
-    In addition, for the fastest sync times, we recommend that you choose the US East region. If you must store data elsewhere, let us know.
+    For the fastest sync times, choose the US East region. 
 
-    After you are done configuring these settings, click in "Login to Install" and/or "Visit Heroku Dashboard to create your first app".
+    After you configur these settings, click "Login to Install" and/or "Visit Heroku Dashboard to create your first app".
 
     ![](images/heroku3.png)
 
@@ -53,7 +57,7 @@ This guide explains how to set up a Postgres database with Heroku. Heroku is a c
 
 7. Click **Provision** and wait for the database provisioning to complete
 
-    Click on the "Heroku Postgres :: Database". After a few moments, the database should shift into the Available state.
+    Click the "Heroku Postgres :: Database". The database should shift into the Available state.
 
     ![](images/heroku5.png)
 
@@ -75,11 +79,11 @@ As a supplement to this guide, Amazon has created an official guide to [setting 
 
 2. Open the RDS Console.
 
-    Go to the [RDS console](https://console.aws.amazon.com/rds/) when you are logged in to AWS.
+    Log in to AWS and navigate to the [RDS console](https://console.aws.amazon.com/rds/).
 
 3. Select the region you'd like to place the database in.
 
-    In the top right-hand corner of the console, you should see a drop-down with the available AWS regions. We suggest putting your database in `US West` for the best performance.
+    In the top right-hand corner of the console, you should see a drop-down with the available AWS regions. For best performance, put the database in the `US West` region.
 
     <img src="images/rds1.png" width="300">
 
@@ -323,18 +327,14 @@ GRANT CREATE, TEMPORARY ON DATABASE <enter database name here> TO segment;
 
     Visit the [Segment Workspaces screen](http://segment.com/workspaces). Click the workspace you'd like the database to be associated with.
 
-    <img src="images/segment1.png" width="500">
-
 
 2. Click **Add Destination**.
 
     In the Workspace, you can find the button beside the Destinations.
 
-    <img src="images/segment2.png" width="500">
 
 3. Either select "Warehouses" categories from the left-hand sidebar, or use the search field and look for "Postgres".
 
-    ![](images/segment3.png)
 
 4. Configure the Database Connection.
 
@@ -350,7 +350,7 @@ GRANT CREATE, TEMPORARY ON DATABASE <enter database name here> TO segment;
 
 {% include content/warehouse-sync-sched.md %}
 
-![](images/segment5.png)
+![](/docs/connections/destinations/catalog/images/syncsched.png)
 
 
 ## Security

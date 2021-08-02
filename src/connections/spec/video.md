@@ -90,7 +90,7 @@ The current `kbps`.
 The average `fps`.
 
 #### Video Player: `String`
-The name of the video player (ie 'youtube', 'vimeo').
+The name of the video player (for example `youtube`, `vimeo`).
 
 #### Sound `Integer`
 The sound level of the playback represented in a 0 to 100 scale where 0 is muted and 100 is full volume.

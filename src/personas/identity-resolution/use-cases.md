@@ -1,6 +1,9 @@
 ---
 title: Identity Resolution Use-Cases
 ---
+
+
+
 The Personas Identity Resolution feature helps to create a unified view of the user across devices, apps, and unique identifiers. Identity resolution is critical to understanding the customer journey at multiple touch points, which allows brands to deliver personalized experiences to its customers at scale.
 
 ## Anonymous to Known Identification
@@ -24,7 +27,7 @@ If a company needs to understand a user's activity across all apps, we recommend
 
 If, however, each app should maintain its own metrics and LTV analysis, regardless of the overlap of users between apps, we recommend creating a separate Personas space per app and only connecting sources related to each app to its space. This will give a siloed view of how users interact with each individual app.
 
-  _Note: Each workspace has two spaces by default. contact your CSM to enable additional spaces._
+  _Note: Each workspace has two spaces by default. Contact your CSM to enable additional spaces._
 
 For an eCommerce example, see [here](/docs/personas/identity-resolution/ecommerce-example/)
 

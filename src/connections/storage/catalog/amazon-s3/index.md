@@ -3,6 +3,7 @@ title: Amazon S3 Destination
 redirect_from:
   - '/connections/destinations/catalog/amazon-s3/'
   - '/connections/waser/catalog/amazon-s3/'
+hide-personas-partial: true
 ---
 
 ## Getting Started
@@ -203,4 +204,16 @@ $ aws s3 sync s3://{bucket}/segment-logs/{source-id} .
 
 To put the files in a specific folder replace the `.` at the end ("current directory") with the desired directory like `~/Downloads/logs`.
 
-{% include content/integration-foot.md  %}
+
+## Personas
+
+> warning ""
+> As mentioned above, the Amazon S3 destination works differently than other destinations in Segment. As a result, Segment sends **all** data from a Personas source to S3 during the sync process, not only the connected audiences and traits.
+
+You can send computed traits and audiences generated using [Segment Personas](/docs/personas) to this destination as a **user property**. To learn more about Personas, contact us for a [demo](https://segment.com/contact/demo).
+
+For user-property destinations, Segment sends an [identify](/docs/connections/spec/identify/) call to the destination for each user added and removed. The property name is the snake_cased version of the audience name, with a true/false value to indicate membership. For example, when a user first completes an order in the last 30 days, Personas sends an Identify call with the property `order_completed_last_30days: true`. When the user no longer satisfies this condition (for example, it's been more than 30 days since their last order), Personas sets that value to `false`.
+
+When you first create an audience, Personas sends an Identify call for every user in that audience. Later audience syncs send updates for users whose membership has changed since the last sync.
+
+{% include content/destination-footer.md %}

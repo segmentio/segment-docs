@@ -5,7 +5,7 @@ rewrite: true
 
 [Flurry](https://developer.yahoo.com/flurry/docs/) provides you with the tools and resources you need to gain a deep level of understanding about your users' behavior in your apps.
 
-Our Flurry destination code is open sourced on Github. Feel free to check it out: [iOS](https://github.com/segment-integrations/analytics-ios-integration-flurry), [Android](https://github.com/segment-integrations/analytics-android-integration-flurry).
+Our Flurry destination code is open sourced on GitHub. Feel free to check it out: [iOS](https://github.com/segment-integrations/analytics-ios-integration-flurry), [Android](https://github.com/segment-integrations/analytics-android-integration-flurry).
 
 This document was last updated on January 10, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
@@ -13,14 +13,17 @@ This document was last updated on January 10, 2019. If you notice any gaps, outd
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Flurry" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in your Flurry "API Key" in Segment's Settings UI. You can retrieve this from your Flurry Admin > Apps > API Key. It should look like "4KKKGS3BAK4WW8WJ93DN".
-4. Follow the instructions in the Github repos: [iOS SDK](https://github.com/segment-integrations/analytics-ios-integration-flurry) and [Android SDK](https://github.com/segment-integrations/analytics-android-integration-flurry).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Flurry" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. In the destination settings, enter your Flurry "API Key" in Segment's Settings UI. You can retrieve this from your **Flurry Admin > Apps > API Key**. It should look like "4KKKGS3BAK4WW8WJ93DN".
+4. Follow the instructions in the GitHub repos: [iOS SDK](https://github.com/segment-integrations/analytics-ios-integration-flurry) and [Android SDK](https://github.com/segment-integrations/analytics-android-integration-flurry).
 5. Once the Segment library is integrated with your app, toggle Flurry on in your Segment UI.
 
 _Note: Flurry does not always display data in real time. We've seen that it can take anywhere from a few hours to a few days for certain types of data to sync with Flurry._
 
+### React Native set up
+
+{% include content/react-dest.md %}
 
 ## Screen
 

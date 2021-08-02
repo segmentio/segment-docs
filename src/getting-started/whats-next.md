@@ -1,5 +1,5 @@
 ---
-title: What's next?
+title: What's Next
 ---
 
 You're just getting started with Segment, but there's so much more to explore!
@@ -53,4 +53,4 @@ If you're experiencing problems, have questions about implementing Segment, or w
 > You need a Segment.com account in order to file a support request. Don't worry! You can always sign up for a free workspace if you don't already have one.
 
 
-{% include components/media-icon.html  href="/getting-started/" newtab="false" icon="symbols/arrow-left.svg" title="Back to the index" content="Back to the Getting Started index" variant="related" %}
+{% include components/reference-button.html  href="/getting-started/" newtab="false" icon="symbols/arrow-left.svg" title="Back to the index" description="Back to the Getting Started index" variant="related" %}

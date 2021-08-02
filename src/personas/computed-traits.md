@@ -2,6 +2,8 @@
 title: Personas Computed Traits
 ---
 
+
+
 Computed Traits allow you to quickly create user or account-level calculations that Segment keeps up-to-date over time. These can be computations like the `total_num_orders` a customer has completed, the `lifetime_revenue` of a customer, the `most_frequent_user` to determine which user is most active in an account, or the `unique_visitors_count` to assess how many visitors from a single domain. These computations are based on your events and event properties that you are sending through Segment on the [page](/docs/connections/spec/page/) and [track](/docs/connections/spec/track) calls.
 
 ## Types of Computed Traits
@@ -141,10 +143,6 @@ The following operators are available.
 - not exists
 - before date
 - after date
-- within last (x days)
-- with next (x days)
-- before last (x days)
-- after next (x days)
 
 ## Connecting your Computed Trait to a Destination
 
@@ -152,7 +150,8 @@ Personas sends user-level computed Traits to destinations using the [Identify ca
 
 ![](images/1525837601768.png)
 
-For account-level computed traits, you have the option to send either a [group](/docs/connections/spec/group/) call and/or [identify](/docs/connections/spec/identify/) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, we will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account.
+For account-level computed traits, you have the option to send either a [group](/docs/connections/spec/group/) call and/or [identify](/docs/connections/spec/identify/) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, we will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account. See [Account-level Audiences](/docs/personas/audiences/account-audiences) for more information.
+
 
 ## Accessing your Computed Traits using the Profiles API
 

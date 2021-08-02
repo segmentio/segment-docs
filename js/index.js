@@ -9,6 +9,7 @@ import dropdownMenu from './dropdown-menu'
 import anchorsIndicator from './anchors-indicator'
 import codeExample from './code-example'
 import popover from './popover'
+import hoverhelp from './hoverhelp'
 import menuPanels from './menu-panels'
 import searchBar404 from './search-bar-404'
 import backScrolling from './back-scrolling'
@@ -17,6 +18,8 @@ import relativeLinks from './relative-links'
 import sideMenu from './side-menu'
 import tracking from './tracking'
 import searchBar from './search-bar'
+import glightbox from './glightbox'
+import autocomplete from './algolia'
 feedback()
 accordion()
 accordionGroup()
@@ -29,6 +32,7 @@ dropdownMenu()
 anchorsIndicator()
 codeExample()
 popover()
+hoverhelp()
 searchBar404()
 backScrolling()
 navigation()
@@ -36,3 +40,4 @@ relativeLinks()
 sideMenu()
 tracking()
 searchBar()
+glightbox()

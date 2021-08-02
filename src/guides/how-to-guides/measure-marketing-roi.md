@@ -1,5 +1,5 @@
 ---
-title: How do I measure the ROI of my Marketing Campaigns?
+title: Measuring the ROI of Your Marketing Campaigns
 ---
 
 The purpose of marketing campaigns is to drive traffic (and sales). But how do you know which campaigns yield the most conversions or what channel across the campaigns was most effective?
@@ -12,7 +12,7 @@ This guide provides you with the tools to answer these questions with SQL so tha
 
 The goal of marketing campaigns is to drive engagement and conversions. Most commonly performed by attracting traffic to the site, these campaigns use UTM parameters for attribution. In our analysis, we'll be heavily relying on UTM parameters to analyze not only campaign, but also channel performance.
 
-[Learn how to effectively use UTM parameters in your marketing campaign strategies.](/docs/guides/sources/how-to-track-customers-across-channels-devices)
+[Learn how to effectively use UTM parameters in your marketing campaign strategies.](/docs/guides/how-to-guides/cross-channel-tracking/)
 
 For our analysis walkthrough, we'll use fictitious e-commerce and marketing data from on-demand artisanal toast company, Toastmates.
 

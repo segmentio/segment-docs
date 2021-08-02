@@ -255,6 +255,8 @@ sections:
       title: Picking a secure password
     - path: /segment-app/iam/sso
       title: Single Sign On
+    - path: /segment-app/iam/scim
+      title: System for Cross-domain Identity Management (SCIM)
   - path: /segment-app/set-up-envs
     title: Prod and Testing Environments in Segment
   - path: /segment-app/verify-email-address

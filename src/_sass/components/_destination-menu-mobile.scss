@@ -37,7 +37,7 @@
 
   &__select {
     padding: 8px 15px;
-    border: 1px solid color(border-gray);
+    border: 1px solid color(gray-100);
     border-radius: 4px 4px 0 0;
 
     &--active {
@@ -61,7 +61,7 @@
 
   &__list {
     box-shadow: 0 8px 16px 0 rgba(18, 66, 74, 0.08);
-    border: solid 1px color(border-gray);
+    border: solid 1px color(gray-100);
     border-top: 0;
     border-radius: 0 0 4px 4px;
     background-color: color(white);
@@ -76,7 +76,7 @@
 
   &__item {
     & + & {
-      border-top: 1px solid rgba(color(gray), 0.2);
+      border-top: 1px solid rgba(color(gray-700), 0.2);
     }
   }
 

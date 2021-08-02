@@ -1,6 +1,8 @@
 ---
 title: Multi-Factor Authentication (MFA)
 ---
+{% include content/plan-grid.md name="mfa" %}
+
 
 Multi-factor Authentication (MFA) provides an additional layer of security when logging into your Segment account. When MFA is enabled, users must enter their username and password, and a one-time use code. Users can either enable MFA for their own account, or workspace owners can require that all users in a workspace use MFA. These security settings are available in the workspace from the "Advanced Settings" section.
 

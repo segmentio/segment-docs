@@ -5,16 +5,10 @@ rewrite: true
 
 [Evergage](https://www.evergage.com/) offers a cloud-based platform that empowers digital marketers to increase engagement and conversions through real-time 1:1 personalization. The `analytics.js` Evergage Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-evergage).
 
-This document was last updated on October 29, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+This document was last updated on January 8, 2021. 
 
-## Getting Started
-
-{% include content/connection-modes.md %}
-
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Evergage" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Enter your Evergage Account Key (this is the subdomain you use to login to Evergage with; if your account is "testaccount.evergage.com", then use "testaccount");
-4. Finally, enter the name of the Evergage Dataset you want data to flow to (by default this is "engage");
+> warning "The Evergage destination has been deprecated"
+> The Evergage Destination was deprecated on January 8, 2021 and is no longer supported or maintained. It is no longer available in the Segment catalog, but remains available to existing users.
 
 ## Identify
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
@@ -40,7 +34,7 @@ analytics.group('companyId123', {
 A `groupId` is required on all `group` calls sent to {{ integration.name}}. When you call `group` Segment will call both `setCompany` and `setAccountField` in the [Evergage library](https://doc.evergage.com/display/EKB/Send+Data+to+Evergage) to insert both the `groupId` and corresponding group traits into {{ integration.name}}.
 
 ## Track
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track('Email Opened', {

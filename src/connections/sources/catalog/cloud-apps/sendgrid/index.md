@@ -3,29 +3,19 @@ title: Sendgrid Source
 ---
 SendGrid is a trusted platform for transactional email and email marketing. [Visit Website](http://sendgrid.com)
 
-Take your company's analysis to the next level by **adding Sendgrid as a Source to Segment.** We'll automatically collect events like `Click` or `Delivered` and objects such as `Recipients` or `Campaigns` and load them into your data warehouse. 
+Take your company's analysis to the next level by **adding Sendgrid as a Source to Segment.** Segment automatically  collects events like `Click` or `Delivered` and objects such as `Recipients` or `Campaigns` and load them into your data warehouse. 
 
 ## Getting Started
 
-1. From your workspace's `sources` page, click `add source`.
+1. From the [Source catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) in your Segment workspace, enter "Sendgrid" and select the Sendgrid source that appears.
+2. From the Sendgrid information panel that appears, click **Add source**.
 
-2. Choose Sendgrid.
+3. Give the Source a name and add any labels to help you organize and filter your sources. 
+   You can give the source any name, but Segment recommends a name that reflects the source itself, as this name autopopulates the schema name. For example, the source name  `Sendgrid` creates the schema `sendgrid`. You can add multiple instances if you have multiple SendGrid accounts.
 
-4. Give the source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. Both can be whatever you like, but we recommend sticking to something that reflects the source itself, like `SendGrid` for nickname and `sendgrid` or `sendgrid_prod` for the schema name.
-
-  ![](images/481590_Screen+Shot+2016-02-16+at+10.47.51+AM.png)
-
-  **Note** that you can add multiple instances if you have multiple SendGrid accounts. That's why we allow you to customize the source's nickname and schema name!
-
-5. Provide your API Key.  In order to pull information about your contacts, we'll make requests to SendGrid's API with our [sync component](#sync).  You can create an API Key by navigating to **Settings > API Keys**, clicking **General API Key**.
-
-  ![](images/260179_SendGrid+Create+API+Key.png)
+4. Provide your API Key.  In order to pull information about your contacts, we'll make requests to SendGrid's API with our [sync component](#sync).  You can create an API Key by navigating to **Settings > API Keys**, clicking **General API Key**.
 
   You will then be prompted to name that key and given the option to adjust the settings.  We recommend providing read permissions for **Email Activity** and **Marketing Activity**.
-
-  ![](images/367284_Email+Activity.png)
-
-  ![](images/391237_Marketing+Campaigns.png)
 
 6. Finally, copy the resulting API Key into the Segment interface, taking care to trim any errant trailing spaces from copying and pasting, and press connect.
 
@@ -34,8 +24,6 @@ Take your company's analysis to the next level by **adding Sendgrid as a Source 
 7. Copy the auto-generated Webhook URL and paste it into SendGrid's Event Notification settings pane under **Settings > Mail Settings**.
 
   ![](images/694785_Webhook.png)
-
-  ![](images/934372_Webhook+Settings.png)
 
 8. Once you enable the Event Notification, you're good to go! Press **Next**, and then **Finish** to wrap up the set up flow.
 

@@ -2,6 +2,7 @@
 title: Marketo Source
 rewrite: true
 source-type: object
+strat: adobe
 ---
 <!-- Marketo is listed as an object source, but doesn't appear in our configapi source catalog, so leave the "source-type" set here -->
 
@@ -9,7 +10,7 @@ source-type: object
 
 This will allow you to write SQL to analyze your analyze your email marketing campaigns ROI, or join your email data to other data sources like web and mobile events, Salesforce, and Zendesk to tie nurture emails to re-activation rates in your app.
 
-_**NOTE:** Marketo is currently in beta and this doc was last updated on April 30, 2018. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you have any feedback to help us improve the Marketo Source and its documentation, and [let us know](https://segment.com/help/contact)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 
@@ -23,7 +24,7 @@ You will need Admin permissions to your Marketo account.
 2. Choose Marketo.
 3. Give the source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. Both can be whatever you like, but we recommend sticking to something that reflects the source itself, like Marketo for nickname and marketo or marketo_prod for the schema name.
 4. Configure your Marketo source with the required settings (see section below for details)
-![](images/Image2018-04-30at5.27.07PM.png)
+![](images/add-source.png)
 
 
 ### Configure your Marketo Source
@@ -289,15 +290,12 @@ We're primarily using the REST API, but also use the Lead Activity Bulk API to r
 
 ### Can I get other collections not default synced by the source?
 
-Yes! [contact us]https://segment.com/help/contact/ to request additional collections.
+Yes! [contact Support](https://segment.com/help/contact/) to request additional collections.
 
 ### Can I get other columns not default synced by the source?
 Yes! For leads and activities, we've introduced a custom fields setting where you can enter comma-separated (no spaces, etc.) custom fields to sync by their REST API name.
 
-![](images/s_6D5CE4EA856EC72E0480B346CB0DE60F99C9F293F87452BF5BA91C853297F834_1470282525853_Screen+Shot+2016-08-03+at+8.48.29+PM.png)
-
-
- By default, we only sync the following fields on the leads collection:
+By default, we only sync the following fields on the leads collection:
 
 - id
 - email
@@ -306,4 +304,4 @@ Yes! For leads and activities, we've introduced a custom fields setting where yo
 - createdAt
 - updatedAt
 
-You can find a full list of standard fields and their REST API names [here](http://developers.marketo.com/rest-api/lead-database/fields/list-of-standard-fields/). If there are other fields you're interested in, [contact us]https://segment.com/help/contact/ and we'll get you setup.
+You can find a full list of standard fields and their REST API names [here](http://developers.marketo.com/rest-api/lead-database/fields/list-of-standard-fields/). If there are other fields you're interested in, [contact support](https://segment.com/help/contact/)  for assistance.

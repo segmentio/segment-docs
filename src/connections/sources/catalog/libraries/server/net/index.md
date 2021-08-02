@@ -1,11 +1,9 @@
 ---
 title: Analytics for .NET
-sourceTitle: .NET
-sourceCategory: Server
-shortName: 'net'
+repo: analytics.NET
 ---
 
-Our .NET library is the best way to integrate analytics into your .NET application or website. It lets you record analytics data from your ASP.NET, C#, F#, and Visual Basic code. The library issues requests that hit our servers, and then we route your data to any analytics service you enable on our destinations page. This library is open-source, so you can [check it out on Github](https://github.com/segmentio/Analytics.NET).
+Our .NET library is the best way to integrate analytics into your .NET application or website. It lets you record analytics data from your ASP.NET, C#, F#, and Visual Basic code. The library issues requests that hit our servers, and then we route your data to any analytics service you enable on our destinations page. This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/Analytics.NET).
 
 All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
 
@@ -19,11 +17,11 @@ The best analytics installation combines both client-side and server-side tracki
 
 ### Step 1: Add Analytics.js to your ASP.NET Master Page
 
-Create a .NET server source in Segment.
+1. In your Segment workspace, click Catalog, and search for "Net".
+2. Click the .Net tile, then click **Add Source**.
+3. Give the new source a label (which you'll use to identify it later), and apply any labels such as `prod` or `test`.
 
-![image](images/netcreatesource.png)
-
-You will then be presented with an [`analytics.js`](/docs/connections/sources/catalog/libraries/website/javascript/) snippet.
+You will then be presented with an [Analytics.js snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet).
 
 Copy the snippet directly into your ASP.NET [Site.master](https://github.com/segmentio/asp.net-example/blob/master/Site.master#L18-L21).
 
@@ -335,11 +333,11 @@ Analytics.Client.Identify("hj2kf92ds212", new Traits() {
     { "name", "Tom Smykowski" },
 }, new Options()
     .SetIntegration("all", false)
-    .SetIntegration("KISSmetrics", true)
+    .SetIntegration("Kissmetrics", true)
 );
 ```
 
-In this case, we're specifying that we want this identify to only go to KISSmetrics. `"all", false` says that no destination should be enabled unless otherwise specified. `{ "KISSmetrics", true }` turns on KISSmetrics, etc.
+In this case, we're specifying that we want this identify to only go to Kissmetrics. `"all", false` says that no destination should be enabled unless otherwise specified. `{ "Kissmetrics", true }` turns on Kissmetrics, etc.
 
 Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
@@ -357,7 +355,7 @@ If you're running a web server, you might want to send [context variables](https
 Analytics.Client.Page("019mr8mf4r", "Login", new Properties() {
     { "path", "/login" },
     { "title", "Initech Login" }
-}), new Options()
+}, new Options()
     .SetContext (new Context () {
         { "userAgent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"},
         { "ip", "12.212.12.49" },
@@ -366,7 +364,7 @@ Analytics.Client.Page("019mr8mf4r", "Login", new Properties() {
           { "clientId", User.ClientId }
           }
         }
-});
+}));
 ```
 
 ## Anonymous ID
@@ -514,7 +512,7 @@ Note: the logger requires a minimum version of .NET Core 2.1.
 
 ### Json.NET
 
-`Analytics.NET` uses [Json.NET](http://json.codeplex.com/) to serialize json payloads. If you have an older version of `Json.NET` in your build path, `Analytics.NET` could create incomplete json payloads, which can cause strange API responses. If you're seeing issues, try updating `Json.NET`.
+`Analytics.NET` uses [Json.NET](http://json.codeplex.com/) to serialize JSON payloads. If you have an older version of `Json.NET` in your build path, `Analytics.NET` could create incomplete JSON payloads, which can cause strange API responses. If you're seeing issues, try updating `Json.NET`.
 
 
 ### Mono
@@ -522,4 +520,4 @@ Note: the logger requires a minimum version of .NET Core 2.1.
 `Analytics.NET` has been tested and works in Mono.
 
 ### .NET Core
-`Analytics.NET` is not officially supported using the .NET Core runtime.
+`Analytics.NET` has been tested and works with .NET Core 3.1 and 3.4.2 beta.

@@ -3,6 +3,8 @@ title: Use Transformations to fix bad data
 redirect_from: '/protocols/transformations/'
 ---
 
+{% include content/plan-grid.md name="protocols" %}
+
 ## What is a Transformation?
 
 Transformations allow you to change data as it flows through Segment to either correct bad data or customize data for a specific destination. At this time, you can change event and property names to align events with your Tracking Plan, or to conform to a destination-specific requirement. For example, a Transformation could be created to change an event name from `completed_order` to `Order Completed` to conform to [Segment's ecommerce spec](/docs/connections/spec/ecommerce/v2/#order-completed).
@@ -18,7 +20,7 @@ Our goal is to make Transformations a powerful tool that complements a well stru
 
 ### Other important notes
 
-- **Transformations cannot be applied retroactively:** They only apply to data moving forward. However, you can manually extract and re-send (or even [Replay](/docs/guides/what-is-replay)) events through a source with an active Transformation, which will send the transformed events to your destinations.
+- **Transformations cannot be applied retroactively:** They only apply to data moving forward. However, you can manually extract and re-send (or even [Replay](/docs/guides/what-is-replay)) events through a source with an active destination Transformation, which will send the transformed events to your destinations.
 - **Transformations are only available to Protocols customers:** If you are interested in this feature, contact your Account Executive or CSM to learn more about the Protocols package.
 - **Source-level transformations are irrevocable:** When applied at the source, a transformation permanently changes the structure of the event. The original events are not easily recoverable or [Replayable](/docs/guides/what-is-replay). Assume that transformed data cannot be recovered.
 - **Device-mode destinations are NOT supported:** Source scoped transformations will **only** apply to cloud-mode destinations, warehouses, and S3 destinations. Destination scoped transformations will **only** apply to cloud-mode destinations.

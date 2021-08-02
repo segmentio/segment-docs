@@ -9,14 +9,13 @@ This destination is maintained by Windsor. For any issues with the destination, 
 
 You can find more information on Windsor on [the Windsor docs site](https://docs.windsor.io).
 
-> note "Note:"
-> The Windsor Destination is currently in beta, which means that they are still actively developing the destination. To join the Windsor beta program, or if you have any feedback to help improve the Windsor Destination and its documentation, [contact the Windsor support team](mailto:support@windsor.com)!
+{% include content/beta-note.md %}
 
 
 ## Getting Started
 
 
-{% include content/connection-modes.md %} 
+{% include content/connection-modes.md %}
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Windsor" in the Destinations Catalog, and select the Windsor destination.

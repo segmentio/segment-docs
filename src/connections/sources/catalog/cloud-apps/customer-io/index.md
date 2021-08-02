@@ -4,7 +4,7 @@ redirect_from: "/connections/sources/catalog/cloud-apps/customer.io/"
 ---
 [Customer.io](https://customer.io/) is an automated email tool. It lets you set up rules to automatically send emails to your users after they perform actions, making drip email campaigns really easy.
 
-Take your company's email analysis to the next level by **adding Customer.io as a Source to Segment.** We'll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
+Take your company's email analysis to the next level by **adding Customer.io as a Source to Segment.** Segment automatically  collects email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
 
 In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Customer.io data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use Customer.io with Segment.](https://segment.com/sources/customerio/)
 
@@ -20,7 +20,7 @@ If you have previously enabled sending email events using the Customer.io destin
 
 2. Choose Customer.io.
 
-3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. We recommend using a name that reflects the Source itself, like `Customerio` for nickname and `customerio` for the schema name.
+3. Give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name autopopulates the schema name. For example, the source name  `Customer.io` creates the schema `customerio`.
 
 4. The next page ("Overview") displays your **Segment write key for Customer.io.** Copy this write key. 
 

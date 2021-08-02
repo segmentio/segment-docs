@@ -1,12 +1,21 @@
 ---
-title: "Audit Trail"
+title: Audit Trail
 ---
+{% include content/plan-grid.md name="audit-trail" %}
 
 Segment offers an in-app 90 day Audit Trail for Business Tier accounts. If you are a workspace Owner, you view user and system activity in your workspace settings, in the "Audit Trail" tab under "Admin".
 
 You can filter for specific actions or actors to see who made changes on specific resources in the app. Actors can include both logged-in users as well as access tokens. You can export the information to a CSV for download, or forward the activity to a Segment source. For example, you can forward audit trail activity to set up real-time Slack alerts and quickly revert changes that could cause unwanted downstream effects, such as a user unintentionally disabling a warehouse.
 
 The Audit Trail includes information on the following activity:
+### Access Management
+*   User Invite Sent
+*   User Invite Deleted
+*   User Invite Accepted
+*   User Added via SSO
+*   User Removed
+*   User Group Created
+*   User Group Updated
 
 ### Source
 *   Source Created
@@ -80,29 +89,3 @@ The Audit Trail includes information on the following activity:
 *   Personas Warehouse Source Created
 *   Personas Warehouse Source Modified
 *   Personas Warehouse Source Deleted
-
-### Schema Default
-*   Schema Default Edited To Block New Events
-*   Schema Default Edited To Allow New Event Properties
-*   Schema Default Edited To Omit New Group Traits
-*   Schema Default Edited To Allow Group Traits On Violation
-*   Schema Default Edited To Omit New Event Properties
-*   Schema Default Edited To Allow New Identify Traits
-*   Schema Default Edited To Omit Identify Traits On Violation
-*   Schema Default Edited To Allow New Events
-*   Schema Event Allowed
-*   Schema Event Blocked
-*   Schema Identify Trait Blocked
-*   Schema Event Archived
-*   Schema Identify Trait Allowed
-*   Schema Event Property Rule Edited To Optional
-*   Schema Event Property Rule Edited To Forbidden
-*   Schema Event Property Conditions Edited
-*   Schema Event Property Rule Edited To Required
-*   Schema Identify Trait Archived
-*   Schema Default Edited To Omit New Identify Traits
-*   Schema Group Property Blocked
-*   Schema Group Property Allowed
-*   Schema Default Edited To Omit Group Traits On Violation
-*   Schema Default Edited To Allow New Group Traits
-*   Schema Default Edited To Allow Identify Traits On Violation

@@ -11,10 +11,20 @@
         <li class="menu-item">
           <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}/help/">
             <div class="menu-item__icon flex__column">
-              {% include icons/menu/icon-help.svg %}
+              {% include icons/help.svg %}
             </div>
 
             <div class="flex__column">Help</div>
+          </a>
+        </li>
+
+        <li class="menu-item">
+          <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}/release-notes/">
+            <div class="menu-item__icon flex__column">
+              {% include icons/megaphone.svg %}
+            </div>
+
+            <div class="flex__column">Release Notes</div>
           </a>
         </li>
       </ul>
@@ -27,12 +37,9 @@
         <nav class="menu">
           <ul class="menu__list list list--unstyle">
             <li class="menu-item">
-              <a href="{{ site.baseurl }}/connections/destinations/catalog/" class="menu-item__link menu-item__link--small menu-item__link--highlight menu-item__link--icon flex flex--middle" data-ref="menu-panels[back]">
-                <div class="menu-item__icon flex__column">
-                  {% include icons/menu/icon-back.svg %}
-                </div>
-
-                <div class="flex__column">Back to Connections</div>
+              <a href="{{ site.baseurl }}/connections/destinations/catalog/" class="menu-item__link menu-item__link--small menu-item__link--highlight menu-item__link--back" data-ref="menu-panels[back]">
+                {% include icons/symbols/arrow-left.svg %}
+                <span>Back to Connections</span>
               </a>
             </li>
           </ul>
@@ -46,13 +53,13 @@
               {% assign integrations = site.data.catalog.destinations.items | where: "categories", category.display_name %}
 
               <li class="menu-item menu-item--gray menu-item--compact" data-accordion data-class-active="menu-item--active">
-                <button class="menu-item__link flex flex--middle flex--justify" data-ref="accordion[trigger]">
+                <button class="menu-item__link flex flex--middle flex--justify gutter gutter--small" data-ref="accordion[trigger]">
                   <span class="flex__column">
                     {{ category.display_name }}
                   </span>
 
                   <div class="menu-item__chevron flex__column flex__column--shrink">
-                    {% include icons/symbols/chevron-down.svg %}
+                    {% include icons/symbols/caret-down.svg %}
                   </div>
                 </button>
 
@@ -77,12 +84,9 @@
         <nav class="menu">
           <ul class="menu__list list list--unstyle">
             <li class="menu-item">
-              <a href="{{ site.baseurl }}/connections/sources/catalog/" class="menu-item__link menu-item__link--small menu-item__link--highlight menu-item__link--icon flex flex--middle" data-ref="menu-panels[back]">
-                <div class="menu-item__icon flex__column">
-                  {% include icons/menu/icon-back.svg %}
-                </div>
-
-                <div class="flex__column">Back to Connections</div>
+              <a href="{{ site.baseurl }}/connections/sources/catalog/" class="menu-item__link menu-item__link--small menu-item__link--highlight menu-item__link--back" data-ref="menu-panels[back]">
+                {% include icons/symbols/arrow-left.svg %}
+                <span>Back to Connections</span>
               </a>
             </li>
           </ul>
@@ -96,13 +100,13 @@
               {% assign integrations = site.data.catalog.sources.items | where: "categories", category.display_name %}
 
               <li class="menu-item menu-item--gray menu-item--compact" data-accordion data-class-active="menu-item--active">
-                <button class="menu-item__link flex flex--middle flex--justify" data-ref="accordion[trigger]">
+                <button class="menu-item__link flex flex--middle flex--justify gutter gutter--small" data-ref="accordion[trigger]">
                   <span class="flex__column">
                     {{ category.display_name }}
                   </span>
 
                   <div class="menu-item__chevron flex__column flex__column--shrink">
-                    {% include icons/symbols/chevron-down.svg %}
+                    {% include icons/symbols/caret-down.svg %}
                   </div>
                 </button>
 

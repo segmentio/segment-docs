@@ -1,12 +1,13 @@
 ---
 title: Analytics for Java
+repo: analytics-java
 ---
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics)
 
 Our Java library lets you record analytics data from your Java code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
 
-This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-java).
+This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-java).
 
 All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make all calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
 
@@ -97,7 +98,7 @@ The `identify` call has the following fields:
   </tr>
 </table>
 
-**Note:** The enqueue method takes a `MessageBuilder` instance and not a `Message` instance directly. This is to allow you to use a `MessageTransformer` that applies to all incoming messages and transform or add data. <!-- LR: can't find this seciton, commenting out.
+**Note:** The enqueue method takes a `MessageBuilder` instance and not a `Message` instance directly. This is to allow you to use a `MessageTransformer` that applies to all incoming messages and transform or add data. <!-- LR: can't find this section, commenting out.
 Read more in our [transformer reference section](/docs/connections/sources/catalog/libraries/server/java#transformer).-->
 
 Find details on the **identify method payload** in our [Spec](/docs/connections/spec/identify/).
@@ -265,7 +266,7 @@ Find more details about `group`, including the **`group` payload**, in our [Spec
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 
@@ -407,7 +408,7 @@ For more advance logging, you can check out the [sample code](https://github.com
 
 ## Java Support
 
-We officially support Java 8, 9 and 10. The library may work on other versions of Java as well, however we don't test for compatibility on unsupported versions.
+Segment supports Java 8, 9, 10, and 11. The library may work on other versions of Java as well, however we don't test for compatibility on unsupported versions.
 
 ## Snapshots
 

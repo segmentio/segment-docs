@@ -14,7 +14,7 @@ export default function() {
   const helpfulTemplate = [...templates].filter(
     (template) => template.dataset.feedbackTemplate === 'helpful'
   )
-  const unhelpfulTemplatte = [...templates].filter(
+  const unhelpfulTemplate = [...templates].filter(
     (template) => template.dataset.feedbackTemplate === 'unhelpful'
   )
   const alternateTemplate = [...templates].filter(
@@ -32,8 +32,9 @@ export default function() {
   const tooltips = tippy(buttons)
   const defaultSettings = {
     interactive: true,
-    placement: 'bottom',
-    boundary: 'viewport',
+    flip: true,
+    placement: 'bottom-end',
+    boundary: '.docs',
     trigger: 'manual',
     onMount: (tooltip) => {
       const sendButton = document.querySelector(SEND_SELECTOR)
@@ -96,8 +97,11 @@ export default function() {
 
   const addActiveClasses = (elements) => {
     for (let i = 0; i < elements.length; i++) {
-      const activeClass = elements[i].getAttribute(ACTIVE_CLASS)
-      elements[i].classList.add(activeClass)
+      const activeClasses = elements[i].getAttribute(ACTIVE_CLASS).split(' ')
+      
+      for (let c = 0; c < activeClasses.length; c++) {
+        elements[i].classList.add(activeClasses[c])
+      }
     }
   }
 

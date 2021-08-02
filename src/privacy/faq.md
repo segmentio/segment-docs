@@ -19,15 +19,7 @@ Only Workspace Owners can access the portal.
 ### Which Segment plan types get access to the Privacy Portal?
 
 All Segment plans have access to the Privacy Portal, because we believe data
-privacy should be a right, not an add-on. However, advanced customizable controls that can
-up-level your privacy posture are available for Business Plan customers who also
-have Protocols.
-
-### What can Advanced Controls do that standard controls can't?
-
-While Standard controls allow you to block Red data on the Source-level for any
-of your Sources, Advanced controls give you the ability to block *or hash* data
-on both the Source *and* the Destination-level.
+privacy should be a right, not an add-on.
 
 ### If I block data at the Source level, can I reverse it or get that data back using Segment's Data Replay feature?
 

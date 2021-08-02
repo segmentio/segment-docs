@@ -1,10 +1,11 @@
 .markdown {
-  & > h1,
-  & > h2,
-  & > h3,
-  & > h4,
-  & > h5,
-  & > h6 {
+
+  &>h1,
+  &>h2,
+  &>h3,
+  &>h4,
+  &>h5,
+  &>h6 {
     position: relative;
     cursor: pointer;
     padding-left: 30px;
@@ -14,9 +15,9 @@
       content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogIDxkZWZzPgogICAgPHBhdGggZD0iTTMuNzUgOWMuMjEgMCAuNC0uMDguNTMtLjIybDQuNS00LjVhLjc1Ljc1IDAgMCAwLTEuMDctMS4wNmwtNC41IDQuNUEuNzUuNzUgMCAwIDAgMy43NSA5aC4wMXptMi44OS0xLjUxTDQuOCA5LjNsLS43NS43NWgtLjAxYy0uMjcuMjctLjY0LjQ1LTEuMDUuNDVBMS41IDEuNSAwIDAgMSAxLjUgOWMwLS40MS4xOC0uNzguNDUtMS4wNXYtLjAxbC43NC0uNzUgMS44My0xLjgzYy0uMjQtLjA4LS41LS4xMi0uNzctLjEyLS44MyAwLTEuNTcuMzQtMi4xLjlsLS4wMi0uMDItLjc1Ljc1LjAxLjAxQy4zNCA3LjQzIDAgOC4xOCAwIDlhMyAzIDAgMCAwIDMgM2MuODMgMCAxLjU3LS4zNSAyLjEtLjlsLjAyLjAyLjc1LS43NS0uMDEtLjAxYTIuOTUgMi45NSAwIDAgMCAuNzgtMi44N3pNMTIgM2EzIDMgMCAwIDAtMy0zYy0uODIgMC0xLjU3LjM0LTIuMS45TDYuODcuODdsLS43NS43NS4wMS4wMWEyLjg2IDIuODYgMCAwIDAtLjc4IDIuODdMNy4yIDIuN2wuNzUtLjc1aC4wMWMuMjctLjI3LjY0LS40NSAxLjA1LS40NS44MiAwIDEuNS42OCAxLjUgMS41IDAgLjQxLS4xOC43OC0uNDUgMS4wNXYuMDFsLS43NC43NS0xLjgzIDEuODRhMi45NSAyLjk1IDAgMCAwIDIuODctLjc4bC4wMi4wMS43NS0uNzUtLjAxLS4wMWMuNTQtLjU0Ljg5LTEuMjguODktMi4xMXoiIGlkPSJhIi8+CiAgPC9kZWZzPgogIDx1c2UgZmlsbD0iI0E1QjBCQSIgZmlsbC1ydWxlPSJub256ZXJvIiB4bGluazpocmVmPSIjYSIvPgo8L3N2Zz4=");
       position: absolute;
       top: 50%;
-      left: 17px;
+      left: 5px;
       opacity: 0;
-      transform: translate(-18px, -50%);
+      transform: translateY(-50%);
       pointer-events: none;
       transition: opacity .3s ease;
       cursor: pointer;
@@ -32,13 +33,13 @@
     }
   }
 
-  & > h1 {
+  &>h1 {
     @include breakpoint(medium up) {
       margin-top: 32px;
     }
   }
 
-  & > h2 {
+  &>h2 {
     margin-top: 32px;
 
     @include breakpoint(medium up) {
@@ -46,7 +47,7 @@
     }
   }
 
-  & > h3 {
+  &>h3 {
     margin-top: 24px;
 
     @include breakpoint(medium up) {
@@ -54,7 +55,7 @@
     }
   }
 
-  & > h4 {
+  &>h4 {
     margin-top: 16px;
 
     @include breakpoint(medium up) {
@@ -62,7 +63,7 @@
     }
   }
 
-  & > h5 {
+  &>h5 {
     margin-top: 16px;
 
     @include breakpoint(medium up) {
@@ -70,7 +71,7 @@
     }
   }
 
-  & > h6 {
+  &>h6 {
     margin-top: 8px;
 
     @include breakpoint(medium up) {
@@ -78,7 +79,7 @@
     }
   }
 
-  & > p {
+  &>p {
     margin-top: 8px;
     overflow-wrap: break-word;
     line-height: 26px;
@@ -88,25 +89,17 @@
     }
   }
 
-  & > ul, ol {
-    margin-top: 8px;
-
-    @include breakpoint(medium up) {
-      margin-top: 8px;
-    }
-  }
-
   pre {
     max-width: 100%;
     overflow-y: auto;
   }
 
-  & > pre {
+  &>pre {
     margin-top: 24px;
     margin-bottom: 24px;
   }
 
-  & > hr {
+  &>hr {
     margin-top: 40px;
     margin-bottom: 40px;
 
@@ -116,7 +109,7 @@
     }
   }
 
-  & > div {
+  &>div {
     margin-top: 16px;
   }
 
@@ -126,64 +119,62 @@
     margin-bottom: 18px;
 
     @include breakpoint(medium up) {
-      margin-top: 24px;
-      margin-bottom: 24px;
+      border: 1px solid #ddd;
+      display: block;
+      margin: 24px auto;
+      border-radius: 5px;
+      ;
+    }
+  }
+
+  ul,
+  ol {
+    padding-left: 25px;
+    line-height: 26px;
+    list-style-type: none;
+
+    li {
+      position: relative;
+      margin-top: 8px;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      &>ul,
+      ol {
+        margin-top: 0;
+      }
     }
   }
 
   ul {
-    list-style-type: none;
-    padding-left: 25px;
-
-    & > li {
-      position: relative;
-      font-size: 15px;
-      color: color(secondary-dark);
-      line-height: 2;
-
+    &>li {
       &::before {
-        content: "";
-        width: 6px;
-        height: 6px;
-        background-color: color(gray);
-        opacity: 0.5;
+        width: 8px;
+        height: 8px;
+        background-color: color(gray-600);
         border-radius: 50%;
-        display: block;
-        position: absolute;
-        top: .75em;
-        left: 0;
-        transform: translateX(calc(-100% - 14px));
+        transform: translate(-23px, 10px);
       }
-
-      & > ul, ol {
-        margin-top: 0;
-      }
-
     }
   }
 
   ol {
-    list-style-type: none;
     counter-reset: list-items;
-    padding-left: 25px;
 
-    & > li {
+    &>li {
       counter-increment: list-items;
-      line-height: 30px;
-      position: relative;
 
       &::before {
         content: counter(list-items) ". ";
-        display: block;
-        top: 0;
-        color: color(primary-dark);
-        font-weight: 500;
-        position: absolute;
-        left: -20px;
-      }
-
-      & > ul, ol {
-        margin-top: 0;
+        color: color(primary);
+        font-weight: 600;
+        transform: translate(-23px, 0);
       }
     }
   }
@@ -191,82 +182,83 @@
   table {
     border-collapse: collapse;
     text-align: left;
-    overflow-x: scroll;
-    display: block;
-
-    @include breakpoint(medium up) {
-      overflow: auto;
-      display: table;
-    }
+    display: table;
 
     td {
-      color: color(secondary-dark);
+      color: color(gray-800);
       vertical-align: top;
       line-height: 26px;
       word-wrap: break-word;
+      font-size: 12px;
+      line-height: 14px;
+      padding: 12px;
 
       @include breakpoint(medium up) {
         word-wrap: normal;
+        font-size: 14px;
+        line-height: 1.5;
+        padding: 24px;
       }
     }
 
     thead {
-      font-size: 14px;
-      font-weight: 500;
-      background-color: color(gray-light);
-      border-radius: 4px;
-      font-weight: 500;
-      line-height: 1.71;
-      padding: 12px;
-    }
-
-    tbody {
-      font-size: 15px;
-      line-height: 1.73;
-      padding: 12px;
-    }
-
-    th, td {
-      padding: 5px 10px;
-
-      &:first-of-type {
-        padding-left: 5px;
-      }
-
-      &:last-of-type {
-        padding-right: 5px;
-      }
-
-      @include breakpoint(medium up) {
-        padding: 10px 25px;
-
-        &:first-of-type {
-          padding-left: 15px;
-        }
-
-        &:last-of-type {
-          padding-right: 15px;
-        }
-      }
+      background-color: color(gray-50);
+      font-size: 10px;
+      text-transform: uppercase;
     }
 
     th {
-      padding-top: 13px;
-      padding-bottom: 13px;
+      color: color(gray-700);
+      font-weight: 600;
+      padding: 12px;
+
+      @include breakpoint(medium up) {
+        padding: 16px 24px;
+      }
     }
 
-    tbody {
-      tr {
-        border-bottom: 1px solid rgba(color(secondary), 0.1);
-      }
+    tr {
+      border: 1px solid color(gray-300);
     }
   }
 
-  & > table {
+  table.settings {
+    width: 100%;
+    table-layout: fixed;
+
+    th:first-of-type {
+      width: 25%;
+    }
+
+    // th:nth-of-type(2n) {
+    //   width: 15%
+    // }
+
+    // th:nth-of-type(3n) {
+    //   width: 15%
+    // }
+
+    th:nth-of-type(4n) {
+      width: 75%
+    }
+
+    td.def {
+      cursor:  pointer;
+      line-height: 16px;
+      code {
+        max-width: 100%;
+        word-break: break-all;
+      }
+
+
+    }
+  }
+
+  &>table {
     margin-top: 24px;
   }
 
-  & > *:first-child {
+  &>*:first-child {
     margin-top: 0;
   }
 
@@ -276,27 +268,36 @@
 
   .double {
     @include breakpoint(medium up) {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px
     }
 
-    .media-icon {
-      &:nth-of-type(even) {
-        margin-top: 20px;
-      }
+    // double is another div in .markdown container and that's why it has 16px margin top
+    .reference-button {
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+  }
 
-      @include breakpoint(medium up) {
-        width: calc(50% - 10px);
-
-        &:nth-of-type(even) {
-          margin-top: 0px;
-          margin-left: 20px;
-        }
-      }
-
-      &__anchor {
-        display: none;
+  // remove reference button margins when it's inside the flex component (flex with waffle has its own margins) 
+  .flex {
+    &.waffle {
+      .reference-button {
+        margin-top: 0;
+        margin-bottom: 0;
       }
     }
   }
+
+
+}
+
+a[target="_blank"]:not(.reference-button):after{
+  content: url("/docs/images/external-link-alt-solid.svg");
+  margin-left: 4px;
+}
+
+a.no-icon[target="_blank"]:after {
+  content: none
 }

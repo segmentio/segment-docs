@@ -1,25 +1,32 @@
 ---
 title: "System for Cross-domain Identity Management (SCIM) Configuration Guide"
-hidden: true
 ---
+
+{% include content/plan-grid.md name="sso" %}
 
 The SCIM specification is designed to make managing user identities in cloud-based applications like Segment easier. SCIM allows your Identity Provider (IdP) to manage users and groups within your Segment workspace.
 
-SCIM is offered by most IdPs and compliments SAML. You can think of SAML as a way for your employees to authenticate and SCIM as a way to make sure they have the appropriate permissions.
+Most IdPs offer SCIM, and it complements SAML. You can think of SAML as a way for your employees to authenticate and SCIM as a way to make sure they have the appropriate permissions.
 
 ## Requirements
 
-Before you start, remember that SSO is only available to Business Tier customers and that SSO connections can only be configured by a workspace owner.
+Before you start, remember that SSO is only available to Business Tier customers, and that only workspace owners may configure SSO connections.
 
-To setup SCIM, you must first create an SSO connection. Once you [create your SSO connection](https://segment.com/docs/segment-app/iam/sso/), log back into Segment using SSO.
+To set up SCIM, you must first create an SSO connection. Once you [create your SSO connection](https://segment.com/docs/segment-app/iam/sso/), log back in to Segment using SSO.
 
 ## Configuration Instructions
 
-Segment officially supports [Okta](#okta-setup-guide), Azure AD, and OneLogin. However, you may still be able to use SCIM with another Identity Provider (IdP) by adapting the following instructions. If using a supported provider, start by searching for Segment in your provider's app catalog.
+Segment officially supports [Okta](#okta-set-up-guide) and [Azure AD](#azure-ad-set-up-guide), and we have plans to support OneLogin soon. Each link includes specific set up instructions for that IdP. You should read the [features](#features) section of this page to understand which features of SCIM Segment supports.
 
-When you enable SCIM, your IdP asks for two values. One is the "base URL", the Segment base URL is: https://scim.segmentapis.com/scim/v2
+You may still be able to use SCIM with another Identity Provider (IdP) by adapting the following instructions.
 
-The other value needed is an API key or Authorization Header. To generate one, go to **Settings > Advanced Settings** in the Segment app, and find the SSO Sync section. Click **Generate SSO Token** and copy the generated token. Use this token for the API key or Authorization Header in your IdP.
+### Base URL
+
+Your IdP needs to know where to send SCIM requests. The Segment base URL is: https://scim.segmentapis.com/scim/v2
+
+### API Key
+
+The other value you need is an API key (sometimes referred to as an Authorization Header). To generate one, go to **Settings > Advanced Settings** in the Segment app, and find the **SSO Sync** section. Click **Generate SSO Token** and copy the generated token. Use this token for the API key or Authorization Header in your IdP.
 
 This page is located as part of the settings sidebar: https://app.segment.com/CUSTOMER_WORKSPACE_SLUG/settings/advanced
 
@@ -27,7 +34,7 @@ This page is located as part of the settings sidebar: https://app.segment.com/CU
 
 ## Features
 
-It is important to remember that Segment has a multi-tenant user/workspace relationship, meaning that users can be part of multiple workspaces. In most cases these workspaces will all be related to a single customer (for example, a single company might have individual workspaces for different brands or subsidiaries). However, some users can be members of workspaces for different Segment customers, such as with contractors or consultants.
+It's important to remember that Segment has a multi-tenant user/workspace relationship, meaning that users can be part of more than one workspaces. In most cases these workspaces are all related to a single customer (for example, a single company might have individual workspaces for different brands or subsidiaries). However, some users can be members of workspaces for different Segment customers, such as with contractors or consultants.
 
 Because of this, Segment must balance the autonomy of our users with the desired level of control of a workspace owner.
 
@@ -39,27 +46,27 @@ If the person you want to add does not have a Segment account, your IdP will cre
 
 You can create new users and set their `userName` (email) and `displayName` (single value field that represents a user’s full name) using your IdP.
 
-If a user already has a Segment account, you can add them using their email address using your IdP. However, the `displayName` sent by the IdP is ignored by Segment because we respect the name chosen by the user when they created their account.
+If a user already has a Segment account, you can add them using their email address using your IdP. However, Segment ignores the `displayName` sent by the IdP, and instead uses the name chosen by the user when they created their account.
 
 ## Updating User Attributes
 
-Segment user profiles only contain a `userName` (email) and `displayName`. Once you create a user, these attributes cannot be updated using SCIM. They can only be updated by the user through the Segment UI.
+Segment user profiles only contain a `userName` (email) and `displayName`. Once you create a user, you cannot update these attributes using SCIM. They can only be updated by the user through the Segment UI.
 
 ## Deleting or Deactivating Users
 
-Segment workspace owners **cannot** delete Segment workspace member accounts using SCIM, the web UI, or the Segment API. A user must delete their own account using the Segment app. Workspace owners **can** remove members from the workspace using SCIM, the web UI, or the Segment API.
+Segment workspace owners _cannot_ **delete** Segment workspace member accounts using SCIM, the web UI, or the Segment API. A user must delete their own account using the Segment app. Workspace owners _can_ **remove members from the workspace** using SCIM, the web UI, or the Segment API.
 
 Some IdPs want to set users as "inactive" or "active." Segment does not have an "inactive" state for user accounts. Similar functionality can be achieved by removing a user from your workspace. Setting an existing Segment user to "active" is similar to adding that user to the workspace.
 
-When your IdP updates a user to set `active: false` or attempts to delete a user, Segment removes the user from your Segment workspace. If your IdP attempts to create a user with an existing email, or set `active: true`, the existing user account is added to your workspace.
+When your IdP updates a user to set `active: false`, or attempts to delete a user, Segment removes the user from your Segment workspace. If your IdP attempts to create a user with an existing email, or set `active: true` on an existing user, Segment adds that existing user account to your workspace.
 
 Any Segment group memberships **must be reassigned** when a user is removed and re-added from your workspace. Newly added workspace users have the "Minimal Workspace Access" permission by default. The "Minimal Workspace Access" role does not have access to any sources, destinations, etc.
 
-This reassignment may happen automatically depending on how you have configured your IdP. If the user was assigned groups via your IdP, your IdP should automatically re-add the user within Segment. For this reason, we **strongly** recommend creating your groups within your IdP, pushing them into Segment, and maintaining an active link between your IdP and Segment.
+This reassignment might happen automatically depending on how you configured your IdP. If the user was assigned groups using your IdP, your IdP should automatically re-add the user within Segment. For this reason, Segment **strongly** recommends that you create groups in your IdP, push them into Segment, and maintain an active link between your IdP and Segment.
 
 ## Creating Groups
 
-Your IdP can create new groups in Segment using SCIM. All groups are created via SCIM start with "Minimal Workspace Access." The "Minimal Workspace Access" permission does not have access to any sources, destinations, etc. To add more permissions to a group you must use the Segment web app.
+Your IdP can create new groups in Segment using SCIM. All groups created using SCIM start with "Minimal Workspace Access." The "Minimal Workspace Access" permission does not have access to any sources, destinations, etc. To add more permissions to a group you must use the Segment web app.
 
 ## Updating Groups
 
@@ -67,38 +74,46 @@ Your IdP can add or remove workspace members from existing groups via SCIM. Your
 
 ## Deleting Groups
 
-Your IdP can use SCIM to delete groups from your Segment workspace. Deleting a group within Segment does **not** remove its members from your workspace. You need to unassign users from Segment within your IdP for them to be removed from the workspace.
+Your IdP can use SCIM to delete groups from your Segment workspace. Deleting a group in Segment does **not** remove its members from your workspace. To remove members from the workspace, unassign the users from Segment from your IdP, then Segment removes them from the workspace.
 
 ## Attribute Mapping
 
-When intergrating Segment SCIM and your IdP you may need to map attributes for users. The only attributes that Segment SCIM supports are `userName` and `displayName`. You should leave any existing mapping for the `email` SAML attribute, which you may have setup during your initial SSO onboarding. This mapping supports SAML authentication, and is separate from setting up SCIM, but may be within the same page depending on your IdP.
+When you integrate Segment SCIM and your IdP you might need to map attributes for users. The only attributes that Segment SCIM supports are `userName` and `displayName`. You should leave any existing mapping for the `email` SAML attribute, which you might have set up during your initial SSO set up. This mapping supports SAML authentication, and is separate from setting up SCIM, but may be within the same page depending on your IdP.
 
-You'll need to map an email (IdP) to `userName` (Segment). Depending on your IdP this attribute may be called `email` or simply `mail`. If your IdP uses emails for usernames, you can map `userName` (IdP) to `userName` (Segment).
+You'll need to map an email (IdP) to `userName` (Segment). Depending on your IdP this attribute might be called `email` or `mail`. If your IdP uses emails for usernames, you can map `userName` (IdP) to `userName` (Segment).
 
-If your IdP supports the `displayName` attribute this can be mapped directly to the Segment `displayName` attribute. If not, most IdPs can create a "macro mapping" which would allow you to map multiple fields to a single field within Segment, such as `{firstName} {lastName}` (IdP) to `displayName` (Segment). If your IdP doesn't support this concept you can map `firstName` (IdP) to `displayName` (Segment).
+If your IdP supports the `displayName` attribute, you can map it directly to the Segment `displayName` attribute. If it does not, most IdPs can create a "macro mapping" which allows you to map more than one field to a single field in Segment.
 
-## Okta Setup Guide
+For example, you might map `{firstName} {lastName}` from your IdP to `displayName` in Segment. If your IdP doesn't support this, you can map `firstName` (IdP) to `displayName` (Segment).
 
-1. [Complete Okta Setup Guide for SSO](https://saml-doc.okta.com/SAML_Docs/How-to-Configure-SAML-2.0-for-Segment.html?baseAdminUrl=https://segment-admin.oktapreview.com&app=segment&instanceId=0oata15py1n3kQUo50h7)
-2. Click on the provisioning tab and follow the [Configuration Instructions](#configuration-instructions) to fill in the required fields.
-3. Once the credentials have been saved, select "To App" (left sidebar) under the provisioning tab. Click edit and select "Create Users" and "Deactivate Users," and then Save.
-4. Under the provisioning tab, click "Go to Profile Editor," and then "Mappings."
-5. The left tab represents the data that Segment will send to Okta. Click "do not map" for all attributes except `email` and `displayName`, click "Save Mappings," and "Apply Updates Now" (if prompted).
+## Okta Set up Guide
 
-![](images/scim_attribute_mappings.png)
+1. [Complete the Okta Set up Guide for SSO](https://saml-doc.okta.com/SAML_Docs/How-to-Configure-SAML-2.0-for-Segment.html?baseAdminUrl=https://segment-admin.oktapreview.com&app=segment&instanceId=0oata15py1n3kQUo50h7)
+2. Click **Provisioning**, then click **Configure API Integration** and select **Enable API Integration**.
+3. [Generate an API key](#api-key), then copy and paste this value into the **API Token** field in Okta, and click **Save**.
 
-6. Reopen "Mappings" and click the right right tab. This represents data that Okta will send to Segment. Again, click "do not map" for all attributes except `email` and `displayName`, "Save Mappings," and "Apply Updates Now" (if prompted).
-7. This should close the "Mappings" pop up. You can now delete all unused attributes from the bottom of the "Provisioning Tab". "Given Name" and "Family Name" are required by Okta, but unused by Segment.
+   ![](images/okta_provisioning.png)
 
-![](images/scim_delete_attributes.png)
+4. Next, select **To App** in the left sidebar of the **Provisioning** tab. Click **Edit** and select both **Create Users** and **Deactivate Users**. Click **Save**.
+5. Click the **Assignments** tab. You can now assign people or groups. Before you continue, read through the [features section](#features) in this doc to make sure you understand how groups work. Segment recommends that you assign users to the Segment app by Okta group. This allows you to manage which groups in your organization can authenticate to Segment. You can also assign users individually.
 
-8. Navigate back to the Segment Okta app. You're now ready to assign people or groups! Please read through the [features](#features) sections of this doc to make sure you understand this functionality before continuing.
-9. We recommend assigning users to the Segment app by Okta group. Assignment by group allows you to easily manage which groups in your organization are able to authenticate to Segment. Users can also be assigned individually.
+   ![](images/scim_assignments.png)
 
-![](images/scim_assignments.png)
+6. Once you assign your users, push the assigned Okta groups to Segment.
 
-10. Once users have been assigned we recommend pushing your assigned Okta groups into Segment, and then going into the Segment app to assign permissions to these groups. You can also link Okta groups to an existing group within the Segment app using the Okta UI.
+   ![](images/scim_group_push.png)
 
-![](images/scim_group_push.png)
+7. Next, go to the Segment app and assign permissions to these groups.
+
+> success ""
+> **Tip**: You can also link Okta groups to an existing group from in the Segment app using the Okta UI.
 
 ![](images/scim_edit_groups.png)
+
+## Azure AD Set up Guide
+
+Instructions for configuring Azure AD can be found on the Microsoft Docs website.
+
+1. [Complete the Azure AD Set up Guide for SSO](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/segment-tutorial)
+
+2. [Complete the Azure AD Set up Guide for SCIM](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/segment-provisioning-tutorial)

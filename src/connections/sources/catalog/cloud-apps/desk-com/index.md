@@ -25,11 +25,7 @@ You will need a Desk.com account with administrator privileges.
 1. From your workspace's `sources` page, click `add source`.
 3. Choose Desk.com.
 4. Choose a name for your Desk.com source to identify it within your workspace.
-![](images/desk_com_image_1.png)
-
 5. Enter your connection credentials
-![](images/desk_com_image_2.png)
-
 6. Add a warehouse or connect Intercom to an already existing warehouse in your workspace
 
 ## Components
@@ -183,7 +179,7 @@ The source syncs and warehouse syncs are independent processes. Source runs pull
 |  ------ | ------- |
 | rating |	Numeric rating left by customer |
 | rating_type |	Rating type used to generate this feedback, either yes_no or four_star  |
-| additonal_feedback |	An optional additional feedback text field |
+| additional_feedback |	An optional additional feedback text field |
 | created_at |	Date the feedback was created |
 | updated_at |	Date the feedback was updated |
 | user | The user who created this feedback |

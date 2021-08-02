@@ -1,5 +1,5 @@
 ---
-title: Should I collect data on the client or server?
+title: Collecting Data on the Client or Server
 ---
 
 One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?"

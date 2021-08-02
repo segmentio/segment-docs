@@ -4,7 +4,7 @@ strat: ajs
 ---
 
 
-Middlewares allow developers to extend Analytics.js with custom code which runs on every event. This code has full access to the DOM and Browser API, and helps customers enrich and transform event payloads.
+Middlewares allow developers to extend Analytics.js with custom code which runs on every event. This code has full access to the DOM and Browser API, and helps customers enrich and transform event payloads. Source Middlewares and Destination Middlewares are available on the Analytics.js snippet version `4.12.0` and later.
 
 Analytics.js can be extended using two functions:
 
@@ -14,6 +14,9 @@ addDestinationMiddleware(targetIntegration, [middleware1, middleware2, ...])
 ```
 
 The first function (Source Middleware) allows you to manipulate the payload and filter events on a per-source basis, while the second function (Destination Middleware) allows this on a per destination basis. Middlewares run in the browser.
+
+> info ""
+> **Note**: Destination-middleware only act on [data sent to destinations in device-mode](/docs/connections/destinations#connection-modes). Since the destination middleware code exists in your app or project, it cannot transform the data sent from the Segment servers to the destination endpoint.
 
 ## Using Source Middlewares
 
@@ -53,8 +56,8 @@ var DMW1 = function({ payload, integration, next }) {
 };
 ```
 
-> note ""
-> Currently only Device-mode Destinations are supported by Destination Middlewares 
+> info ""
+> **Note**: Destination-middleware only act on [data sent to destinations in device-mode](/docs/connections/destinations#connection-modes). Since the destination middleware code exists in your app or project, it cannot transform the data sent from the Segment servers to the destination endpoint.
 
 ## Adding middlewares to Analytics.js
 
@@ -76,6 +79,7 @@ If you use the Braze (Appboy) destination in either [cloud or device mode](/docs
 This optional middleware is disabled by default. When enabled, it ensures that only events where at least one changed trait value are sent to Braze, and events with duplicate traits are not sent.
 
 To enable this Middleware for a Javascript or Project source, go to `Analytics.js` in your source settings.
-![BrazeMiddleware](images/sources_ajs_brazemiddleware.gif)
+
+![BrazeMiddleware](images/sources_ajs_brazemiddleware.png)
 
 More information about this tool and how it works [is available in the project's README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).

@@ -1,0 +1,23 @@
+[build]
+  command = "jekyll algolia && yarn develop"
+  # Ignore builds unless [netlify-build] is present in commit message
+  # ignore = "git log -1 --pretty=%B | ( ! grep -q '\[netlify\-build\]' )"
+  # Ignore if [netlify-ignore] is present
+
+  # Don't build if there are no changes to src/
+  ignore = "git diff --quiet HEAD^ HEAD src/"
+
+[context.deploy-preview]
+  command = "yarn develop"
+  ignore = "./scripts/ignore.sh"
+
+[[redirects]]
+  from = "/docs/*"
+  to = "/:splat"
+  status = 200
+  
+[[redirects]]
+  from = "/docs/assets/docs.bundle.js"
+  to = "/assets/docs.bundle.js"
+  status = 200
+

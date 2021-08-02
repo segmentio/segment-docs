@@ -3,22 +3,21 @@ rewrite: true
 title: Split Destination
 ---
 
-[Split](https://split.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) powers your product decisions with a unified solution for feature flagging and experimentation. With Split, you can safely rollout new functionality using sophisticated user targeting, measure impact of change on engineering, product, and business metrics, and rapidly iterate to refine functionality anywhere in the application stack.
+[Split](https://split.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) powers your product decisions with a unified solution for feature flagging and experimentation. With Split, you can safely roll out new functionality using sophisticated user targeting, measure impact of change on engineering, product, and business metrics, and rapidly iterate to refine functionality anywhere in the application stack.
 
-In addition to the docs below, Split has created integration specific [documentation](https://docs.split.io/docs/segment#section-advanced-functionality) for additional troubleshooting and frequently asked questions.
+Split also maintains [integration specific documentation](https://docs.split.io/docs/segment#section-advanced-functionality) which include additional troubleshooting and frequently asked questions.
 
-This destination is maintained by [Split](https://split.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners). For any issues with the destination, [contact their team](https://help.split.io).
+This destination is maintained by [Split](https://split.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners). For any issues with the destination, [contact the Split IO Support team](https://help.split.io).
 
-
-_**NOTE:** Split is currently in beta, which means that there may still be some bugs for us to iron out. This doc was last updated on March 1, 2019, and we'd love to hear your feedback. If you are interested in joining our beta program or have any feedback to help us improve the Split Destination and its documentation, [let us know](https://help.split.io)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for Split within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI.
+1. From the Segment web app, click **Catalog**.
+2. Search for Split in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI.
 
 To find your key, log into Split and navigate to "Admin Settings" > "Integrations" > select your desired workspace > "Segment". There you can find the key for each configured integration. If you don't have an integration configured, be sure to configure your integration in the section "Configure as a destination in Segment" and click save to generate a key.  For more information, learn more in Split's [integration documentation](https://docs.split.io/docs/segment).
 

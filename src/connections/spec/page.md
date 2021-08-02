@@ -4,9 +4,9 @@ title: 'Spec: Page'
 
 The `page` call lets you record whenever a user sees a page of your website, along with any optional properties about the page. Calling `page` or [`screen`](/docs/connections/spec/screen/) in one of our [sources](/docs/connections/sources/) is one of the first steps to getting started with Segment.
 
-{% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/299969?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Page Method" content="Check out our high-level overview of the Page method in Segment University. (Must be logged in to access.)" %}
+{% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/299969?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: The Page Method" description="Check out our high-level overview of the Page method in Segment University. (Must be logged in to access.)" %}
 
-**Note: In `analytics.js` a `page` call is included in the snippet by default** just after `analytics.load`. We do that because you **must** call this method at least once per page load. However, you can choose to add an optional `name` or `properties` to the default call, or call it multiple times if you have a single-page application.
+**Note: In `analytics.js` a `page` call is included in the snippet by default** just after `analytics.load`. Many destinations require this page event to be fired at least once per page load for proper initialization. You may add an optional `name` or `properties` to the default call, or call it multiple times per page load if you have a single-page application.
 
 Here's the payload of a typical `page` call with most [common fields](/docs/connections/spec/common/) removed:
 

@@ -3,14 +3,14 @@ sections:
 - section_title: Partners
   section:
   - path: /partners
-    title: Overview
+    title: Partners program overview
   - path: /partners/conceptual-model
-    title: Conceptual Model
-  - section_title: Building a Subscription
+    title: Conceptual model
+  - section_title: Building a subscription
     slug: partners/subscriptions
     section:
     - path: /partners/subscriptions
-      title: Subscription Overview
+      title: Subscription overview
     - path: /partners/subscriptions/build-functions
       title: Building a Subscription Function
     - path: /partners/subscriptions/build-webhook
@@ -20,8 +20,8 @@ sections:
   - path: /partners/streams
     title: Building a Stream
   - path: /partners/checklist
-    title: Public Beta Checklist
+    title: Public beta checklist
   - path: /partners/enable-with-segment
     title: Enable with OAuth
   - path: /partners/faqs
-    title: FAQs
+    title: Partners FAQs

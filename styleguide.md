@@ -62,12 +62,20 @@ This styling guidance applies to any prose mention of the methods that is *not* 
 - `.identify()`
 - `Identify` call
 
+### Libraries vs SDKs
 
+We want to help readers distinguish between Segment's software, and the device-mode destination-specific pieces they may need to bundle. Using language very specifically here will help readers distinguish between them.
+
+For our purposes:
+- The Segment Source libraries are libraries, _not_ SDKs.
+- The bundled destination dependencies are SDKs.
+
+NB, LR 11/12/2020: Technically, an SDK often contains a hardware component, or is closely tied to a unique developer key or development-only hardware device - for example, an PlayStation SDK includes a software license key and test hardware linked to that account, an Apple SDK includes a developer key. A library is any modularlized piece of code that can be added to or invoked by a larger project.
 
 
 ### When to capitalize
 
-Capitalize Segment (obviously ;) ) and Segment product names. For example, "privacy" by itself isn't capitalized, but "Segment Privacy Portal" is. Page titles Other UI text should be in lower case.
+Capitalize Segment (obviously ;) ) and Segment product names. For example, "privacy" by itself isn't capitalized, but "Segment Privacy Portal" is. Page titles and other UI text should be in lower case.
 
 Capitalize the words "Sources", "Destinations", and "Warehouses" when referring them as product names (for example: “You can use Sources to…”) but decap them when referring to them generically (“You can connect your warehouse to…”)
 
@@ -90,11 +98,11 @@ Device-mode and Cloud-mode are always hyphenated. They should be capitalized whe
 
 ### Use this not that
 
-- Don't use characters like ampersand (`&`) -> Use the word "and".
+- Don't use characters like ampersand (`&`) or plus (`+`) -> Use the word "and".
 - Don't use "ie" or "eg", write out "for example".
 - Don't use the word "via". Instead use the words "using", "with", or sometimes "through" as appropriate.
 - Setup is one word describing a noun ("your recording studio setup") which we should more properly call "configuration."  "Set up" is an action, and requires a space.
-- "Login" is a noun, and we should use "credentials", "account", or similar. "Log in" is an action and requires a space.
+- "Login" is a noun, and we should use "credentials", "account", or similar instead. "Log in" is an action, and requires a space.
 - Replace big words like leverage, utilize, utilizing -> Use "use"
 
 ## Doc structure
@@ -112,15 +120,46 @@ There are no naming conventions at this time. Anything you see with `asset` was 
 
 The Segment-App section should contain roughly a page for each page within the web app. If there are in-depth docs about that feature elsewhere, the page should describe what it does at a high-level, and link out to those docs. This gives us a comprehensive UI reference for novice readers that serves as a signpost to the details they may or may not need, and prevents us pulling all of the docs into the Segment-app section.
 
+### External Links
+
+It is convenient to open any link to an external site in a new tab or window to avoid taking users away from the docs site. The Kramdown markdown parser supports with with the following syntax:
+
+```
+[link text](https://google.com){:target="blank"}
+```
+
+The site's CSS adds an external link indicator next to the link text when the page is rendered.
+
 
 ## Troubleshooting Formatting
 
+### Restarting ordered (numbered) lists
+
+We have some fairly complex CSS, and lists with lots of "stuff" in them. Normally, the way you make Markdown include something as part of a list item is to indent it the same number of places as the number.  Unfortunately Markdown _also_ maintains backwards compatibility with an archaic method of invoking a code block, which is to indent it four spaces or two tabs. You can probably guess how this works out...
+
+On top of this, some of the Premonition callouts we use, for some reason, break list ordering. So you can't add an "info" box inside a running list. (Boooo.)
+
+To get around this, you can let the previous list item end whereever if needs to, then create an entire new ordered list with specific HTML to allow you to override the start number.
+
+```html
+<ol style="counter-reset: none;">
+  <li value="5" markdown=1>
+  <!--list item contents here-->
+  </li>
+  <li value="6" markdown=1>
+  <!--list item contents here-->
+  </li>
+</ol>
+
+```
+
+Do this with great caution, and only when absolutely necessary. Because you're explicitly setting the numbers, they won't update if you add or delete a step in the auto-numbered list above.
 
 ### Mixed markdown and HTML
 
 You can mix markdown and html in the same file, but you need to be careful to keep these items on separate lines. The one exception to this is
 
-### Code fences and syntax highligher cues
+### Code fences and syntax highlighter cues
 
 When giving a code example that is more than a line long, use a code block. (For keyboard shortcuts, variables, and commands, use the single-backtick `code format`)
 

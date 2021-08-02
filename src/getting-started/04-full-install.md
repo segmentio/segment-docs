@@ -1,5 +1,5 @@
 ---
-title: A full Segment implementation
+title: A Full Segment Implementation
 related:
   - "/connections/spec/best-practices-event/"
   - "/connections/spec/best-practices-identify/"
@@ -236,7 +236,7 @@ Use the following list of objects to see if there is a logical match with your a
 
 Verbs indicate the action taken by either a user on your site. When you name a new track event, consider if you can describe the current interaction using a verb from the list below.
 
-If you can’t, choose a verb that describes what the user is trying to in your specific case, but try to be flexible enough so that you could use is in other scenarios.
+If you can’t, choose a verb that describes what the user is trying to do in your specific case, but try to be flexible enough so that you could use it in other scenarios.
 
 #### Some suggested Verbs
 
@@ -317,7 +317,7 @@ analytics.track( user_id: '12345abcde',
 
 
 <div class="double">
-  {% include components/media-icon.html  href="/getting-started/03-planning-full-install/" newtab="false" icon="symbols/arrow-left.svg" title="Back: Planning a Full Installation" content="Think through your goals, plan your calls, and set yourself up for success." variant="related" %}
+  {% include components/reference-button.html  href="/getting-started/03-planning-full-install/" newtab="false" icon="symbols/arrow-left.svg" title="Planning a Full Installation" description="Think through your goals, plan your calls, and set yourself up for success." variant="related" subtitle="back" %}
 
-  {% include components/media-icon.html  href="/getting-started/05-data-to-destinations/" newtab="false" icon="symbols/arrow-right.svg" title="Next: Sending data to Destinations" content="Unlock the power fo Segment with Destinations." variant="related" %}
+  {% include components/reference-button.html  href="/getting-started/05-data-to-destinations/" newtab="false" icon="symbols/arrow-right.svg" title="Sending data to Destinations" description="Unlock the power fo Segment with Destinations." variant="related" subtitle="next" %}
 </div>

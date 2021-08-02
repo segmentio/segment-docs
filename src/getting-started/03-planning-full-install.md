@@ -1,5 +1,5 @@
 ---
-title: Planning a full installation
+title: Planning a Full Installation
 ---
 
 Now that we’ve shown you Segment in action, let’s step back and think through what a full implementation of Segment for your organization would look like. We know that figuring out what events to track in Segment can feel overwhelming. You should expect this planning process to have the following steps:
@@ -240,7 +240,7 @@ Additionally, you should check [which connection modes each tool supports](/docs
 
 
 <div class="double">
-  {% include components/media-icon.html  href="/getting-started/02-simple-install/" newtab="false" icon="symbols/arrow-left.svg" title="Back: A simple Segment installation" content="Walk through a disposable, demo implementation." variant="related" %}
+  {% include components/reference-button.html href="/getting-started/02-simple-install/" newtab="false" icon="symbols/arrow-left.svg" title="A simple Segment installation" description="Walk through a disposable, demo implementation." variant="related" subtitle="back" %}
 
-  {% include components/media-icon.html href="/getting-started/04-full-install/" newtab="false" icon="symbols/arrow-right.svg" title="Next: A full Segment implementation" content="Take your plans, and make them real." variant="related" %}
+  {% include components/reference-button.html href="/getting-started/04-full-install/" newtab="false" icon="symbols/arrow-right.svg" title="A full Segment implementation" description="Take your plans, and make them real." variant="related" subtitle="next" %}
 </div>

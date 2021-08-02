@@ -2,6 +2,9 @@
 title: Identity Warehouse (Limited Availability)
 ---
 
+
+
+
 > warning ""
 > **Note:** The Identity warehouse currently has limited availability, and does not support GDPR deletion requests. Contact your Segment customer success manager to enable this feature.
 
