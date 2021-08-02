@@ -777,32 +777,18 @@ Analytics.setup(with: configuration)
 ...
 
 SEGAnalyticsConfiguration* configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
-
 // Enable advertising collection
 configuration.enableAdvertisingTracking = YES;
 // Set the block to be called when the advertisingID is needed
 // NOTE: In iOS 14, you'll need to manually do authorization elsewhere and only when it has been authorized, return the advertisingIdentifier to segment via the block below
-configuration.adSupportBlock = ^{
-    return [[ASIdentifierManager sharedManager] advertisingIdentifier];
-}
-
+    configuration.adSupportBlock = ^{
+        return [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    };
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-> warning ""
-> In some cases, builds may fail with the following error if you are using XCode version 12 or higher:
-> `Incompatible block pointer types assigning to 'SEGAdSupportBlock _Nullable' (aka 'NSString * _Nonnull (^)(void)') from 'NSUUID * _Nonnull (^)(void)'`
-> 
-> If you see this error, change the following on **line 39** of the `SEGAnalyticsConfiguration.h` class:
-> 
-> From this:
-> `typedef NSString *_Nonnull (^SEGAdSupportBlock)(void);` 
-> 
-> To this:
-> `typedef NSUUID *_Nonnull (^SEGAdSupportBlock)(void);`
->
 
 The same value for IDFA will used across all (device and cloud-mode) integrations.
 

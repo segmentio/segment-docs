@@ -226,8 +226,6 @@ sections:
     title: Locate Your Write Key
   - path: /connections/integration_error_codes
     title: Integration Error Codes
-  - path: /connections/schema-unique-limits
-    title: Segment Schema Limits
   - path: /connections/rate-limits
     title: Rate Limits and SLA
   - path: /connections/data-residency

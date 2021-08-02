@@ -40,7 +40,7 @@ To get started:
 	  1. Follow [these instructions](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html#roles-creatingrole-user-console) to create an IAM role to allow Segment permission to write to your Kinesis Firehose Stream.
 	  2. When prompted to enter an Account ID, enter `595280932656`.
 	  3. Select the checkbox to enable **Require External ID**.
-	  4. Enter your Segment Source ID as the **External ID**. This can be found in Segment by navigating to **Connections > Sources** and choosing the source you want to connect to your Kinesis Firehose destination. Click the **Settings** tab and choose **API Keys**.  
+	  4. Enter your Segment Source ID as the **External ID**. This can be found in Segment by navigating to **Connections > Sources** and choosing the source you want to connect to your Kinesis Firehose destination. Click the **Settings** tab and choose **API Keys**.
     - **Note:** If you have multiple sources using Kinesis, enter one of their source IDs here for now and then follow the procedure outlined in the [Multiple Sources](#best-practices) section at the bottom of this doc once you’ve completed this step and saved your IAM role.
       5. When adding permissions to your new role, find the policy you created in step 2 and attach it.
 
@@ -180,17 +180,17 @@ To attach multiple sources to your IAM role:
     }
     ```
 
-#### Use a single secret ID
+#### Use Secret ID
 
-If you have many sources using Kinesis that it's impractical to attach all of their IDs to your IAM role, you can set a single ID to use instead. 
+If you have many sources using Kinesis that it's impractical to attach all of their IDs to your IAM role, you can instead opt to set a Secret ID.
 
-To set this value for a single Secret ID:
+To set this value for a Secret ID:
 1. Go to the Kinesis Firehose destination settings from each of your Segment sources.
 2. Click **Secret ID** and enter your Workspace ID.
-    * **NOTE:** For security purposes, Segment recommends you to use your Segment Workspace ID as your Secret ID. If you’re using a Secret ID different from your Workspace ID, you're susceptible to attacks. You can find your Workspace ID by going to:  **Settings > Workspace Settings > ID** from the Segment dashboard.
+    * **NOTE:** For security purposes, Segment recommends you to use your Segment Workspace ID as your Secret ID. If you’re using a Secret ID different from your Workspace ID, please change it to make your account more secure. You can find your Workspace ID by going to:  **Settings > Workspace Settings > ID** from the Segment dashboard.
 3. Once all of your sources are updated to use this value, find the IAM role you created for this destination in the AWS Console in **Services > IAM > Roles**.
 4. Select the role and navigate to the **Trust Relationships** tab.
-5. Click **Edit trust relationship**. You should see a snippet that looks something that looks like this:
+5. Click **Edit trust relationship**. You should see a snippet that looks something like this:
 
     ```json
     {
@@ -211,4 +211,8 @@ To set this value for a single Secret ID:
       ]
     }
     ```
-6. Replace the value of `sts:ExternalId` ( "YOUR_SEGMENT_SOURCE_ID") with the Secret ID / Workspace ID value from the previous step.
+6. Replace the value of `sts:ExternalId` ( "YOUR_SEGMENT_SOURCE_ID") with the Secret ID value from the previous step. In the case of requiring the use of multiple secretIds, replace the `sts:ExternalId` setting above with:
+
+   ```
+    "sts:ExternalId": ["A_SECRET_ID", "ANOTHER_SECRET_ID"]
+   ```

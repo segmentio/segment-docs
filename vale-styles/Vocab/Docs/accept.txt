@@ -12,6 +12,7 @@ https
 Javadoc
 Javadocs
 Javascript
+Kameleoon
 Kissmetrics
 Littledata
 Middleware
@@ -47,4 +48,4 @@ Lightbox
 gmail
 (?:P|p)endo
 (?:K|k)laviyo
-Kameleoon
+(?:P|p)ostgres
