@@ -22,11 +22,6 @@ Review the steps outlined in the [Developer Center Overview](/docs/partners). Th
 ## Build & Test
 
 > note ""
-> **NOTE:** On July 31, 2021 support for building Subscription Functions will be removed from Developer Center. You may continue building a Subscription Webhook. We have some exciting updates coming down the pipe for Developer Center 2.0 which will offer a more holistic approach to building on Segment. If you’re interested in joining the beta in the coming months, please fill out [this form](https://airtable.com/shrvZzQ6NTTwsc6rQ)!
+> **NOTE:** On July 31, 2021 support for building Subscription Functions was removed from Developer Center. You may continue building a Subscription Webhook. We have some exciting updates coming down the pipe for Developer Center 2.0 which will offer a more holistic approach to building on Segment. If you’re interested in joining the beta in the coming months, please fill out [this form](https://airtable.com/shrvZzQ6NTTwsc6rQ)!
 
-You can subscribe to customer data in two ways:
-
-1. **[Webhook](/docs/partners/subscriptions/build-webhook)**: Build a new HTTP service that receives Webhook POSTs from Segment.
-2. **[Functions](/docs/partners/subscriptions/build-functions)**: Write JavaScript functions that run on Segment to translate and send data to your existing API. [Get started...](/docs/partners/subscriptions/build-functions)
-
-See the [Webhook](/docs/partners/subscriptions/build-webhook) and [Functions](/docs/partners/build-functions/) docs in-depth technical details about building.
+[Subscription Webhooks](/docs/partners/subscriptions/build-webhook) allow you to build a new HTTP service that receives Webhook POSTs from Segment. Read more in-depth technical details about building in [our documentation here](/docs/partners/subscriptions/build-webhook).
