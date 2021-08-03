@@ -9,13 +9,11 @@ hidden: true
 > info ""
 > This document is about a feature which is in beta. This means that the Destination Actions are in active development, and some functionality may change before it becomes generally available
 
-In the simplest form of the core Segment product, [Connections](/docs/connections/), you send data from Segment [Sources](/docs/connections/sources/), and this data is translated by the Segment servers into a format that [Destination](/docs/connections/destinations/) tools can understand. The Segment servers map data from the different [event types](/docs/connections/spec/) to transform it into a format that the destination expects, using a pre-defined set of rules. For most Segment deployments, this works great! However, if you have a complex deployment, or a lot of data coming to your destinations, you might want more control. When you use these standard Destinations, you cannot change these mappings, and it might not always be clear which parts of a Segment event end up in a specific part of the destination format.
+The Destination Actions framework improves on classic destinations by enabling you to see and control how Segment sends the event data it receives from your sources, to actions-based destinations. Each Action in a destination lists the event data it requires, and the event data that is optional.
 
-Now, Destinations Actions allows you to see exactly how Segment sends event data to a destination, and change the data mapping to suit the needs of your organization. This means you can now explicitly see how Segment data becomes the destination data, without any guesswork or experimentation. Actions destinations are triggered by data coming through your Segment source, just as in a standard Segment destination, but now you can edit the mappings, create more than one mapping to fit different conditions, and describe specific conditions that trigger a mapping.
+You can also choose which event types, event names, or event property values trigger an Action. These triggers and mappings make it possible to send different versions of the Action, depending on the context from which it is triggered.
 
 Each Actions-framework Destination you see in the Segment catalog represents a feature or capability of the destination which can consume data from your Segment source. The Action clearly lists which data from the events it requires, and which data is optional. For example, Amplitude requires that you always send a  `LogEvent` , or Slack always requires a `PostMessage`.  Each Action also includes a default mapping which you can modify.
-
-
 
 ## Destination Actions compatibility
 

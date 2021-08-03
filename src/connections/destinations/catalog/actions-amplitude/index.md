@@ -276,7 +276,8 @@ Keep the following in mind if you plan to move to Amplitude (Actions) from a cla
 
 ### Amplitude (Actions) uses Amplitude's HTTP API v2
 
-If you used Amplitude Classic in cloud-mode, you'll notice different responses from Amplitude to calls you make with the destination. Classic Amplitude was built on Amplitude's now-deprecated HTTP API v1. 
+> warning ""
+> If you used Amplitude Classic in cloud-mode, you'll notice different responses from Amplitude to calls you make with the destination. Classic Amplitude was built on Amplitude's now-deprecated HTTP API v1. 
 
 You configure the Amplitude (Actions) destination through Filters and Actions. Consult the table below for information about configuring your Amplitude (Actions) destination similarly to your classic Amplitude destination.
 
