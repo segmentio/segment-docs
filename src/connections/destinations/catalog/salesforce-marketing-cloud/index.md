@@ -29,7 +29,7 @@ Segment sends data to SFMC using [Data Extensions](https://help.salesforce.com/a
 
 - **Data Extensions** are tables that contain your data. When this data arrives in SFMC, you can use it to create targeted marketing campaigns using push notifications and emails. You can view and query Data Extensions using the Journey Builder in SFMC. During the set up process, you will create a Data Extensions for Identify calls, and one for each unique Track call.
 
-- **API Events** can trigger an email or push notification campaign immediately when they receive data from Segment.
+- **API Events** can trigger an email or push notification c ampaign immediately when they receive data from Segment.
 
 
 ## SFMC prerequisites
@@ -310,7 +310,7 @@ If a user leaves that audience, the value is automatically updated to `false`, b
 
 Use the following process when syncing Computed Traits to SFMC:
 
-1. Create a field on the SFMC Data Extension to Computed Trait values. The name of the field must match the name of the Segment Computed Trait you will create, and must be Title Cased. Choose a matching data type (i.e. `text` for traits which produce string values, `number` or `decimal` for traits which produce numeric values).  
+1. Create a field on the SFMC Data Extension to store Computed Trait values. The name of the field must match the name of the Segment Computed Trait you'll create, and must be Title Cased. Choose a matching data type (for example, `text` for traits which produce string values, `number` or `decimal` for traits which produce numeric values).  
 2. In your Personas space, add the SFMC destination to a Computed Trait, ensuring you specify the same name assigned to the SFMC field.
 
 ## Troubleshooting and Tips
