@@ -280,8 +280,9 @@ In order to do this, you must have access to **Personas**. To learn more, [conta
 > info ""
 > **Tip**: We recommend that you use [SFMC batching](#optional-set-up-sfmc-batching) with Personas to help reduce the number of API calls that you send to SFMC, but this is optional. If you choose to set up batching, do this _before_ you set up the SFMC destination in your Segment workspace.
 
-1. In your Personas space, add the SFMC destination to a computed trait or audience.
-2. Enter the Data Extension External Key for the existing Data Extension. When your audience syncs to it, Segment adds a new column which stores the computed trait or audience membership.
+Personas sends audience membership and computed trait values to SFMC using Identify calls. To integrate Personas with SFMC:
+1. [Create a Data Extension to store Identify calls](#create-a-data-extension-in-sfmc-to-store-identify-calls) if you haven't already. 
+2. [Configure SFMC as a Personas Destination](#configure-the-salesforce-marketing-cloud-destination-in-segment)
 
 When you sync to an existing Data Extension, note these additional requirements:
 - The table cannot have an existing **Primary Key**, unless it is the `Contact Key` field, and the field type is `Text`.
@@ -293,7 +294,12 @@ When you sync to an existing Data Extension, note these additional requirements:
 
 ### Syncing Personas Audiences to SFMC
 
-When you add an audience to SFMC, the first sync contains all the users in that audience. A user is added as a new row to the Data Extension the first time they enter an audience. For example, let’s say you have an "Active Users" audience. When you send this audience to SFMC, all the users in the audience are added to a Data Extension, with a column that indicates their audience membership with `true`.  **To work correctly**, the Personas audience name should be Title Cased in the Data Extension column. Segment automatically creates the column name in Title Case. Do not change the column casing.
+Use the following process when syncing audiences to SFMC:
+
+1. Create a boolean field on the SFMC Data Extension to store audience membership information. The name of the field must match the name of the Segment audience you will create, and must be Title Cased.
+2. In your Personas space, add the SFMC destination to an audience, ensuring you specify the same name assigned to the SFMC field.
+
+When you add an audience to SFMC, the first sync contains all the users in that audience. A user is added as a new row to the Data Extension the first time they enter an audience. For example, let’s say you have an "Active Users" audience. When you send this audience to SFMC, all the users in the audience are added to a Data Extension, with a field value that indicates their audience membership with `true`.  **To work correctly**, the Personas audience name should be Title Cased in the Data Extension field.
 
 If a user leaves that audience, the value is automatically updated to `false`, but the user is not removed from the Extension. This allows you to see all users who have ever been in the audience, and then optionally create a filtered Data Extension if you want a subset. See the SFMC documentation for more details:
 
@@ -302,8 +308,10 @@ If a user leaves that audience, the value is automatically updated to `false`, b
 
 ### Syncing Personas Computed Traits to SFMC
 
-When you send a computed trait to SFMC, Segment creates a new column named after the computed trait,  and which contains the computed trait calculated by Personas value for each user.
+Use the following process when syncing Computed Traits to SFMC:
 
+1. Create a field on the SFMC Data Extension to Computed Trait values. The name of the field must match the name of the Segment Computed Trait you will create, and must be Title Cased. Choose a matching data type (i.e. `text` for traits which produce string values, `number` or `decimal` for traits which produce numeric values).  
+2. In your Personas space, add the SFMC destination to a Computed Trait, ensuring you specify the same name assigned to the SFMC field.
 
 ## Troubleshooting and Tips
 
