@@ -260,6 +260,7 @@ const updateSources = async () => {
     'amp',
     'factual-engine',
     'kotlin-android',
+    'kotlin',
     'swift-ios'
   ]
 

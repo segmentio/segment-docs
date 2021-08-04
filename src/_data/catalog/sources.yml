@@ -439,7 +439,7 @@ items:
   - display_name: Kotlin
     slug: kotlin
     url: connections/sources/catalog/libraries/server/kotlin
-    hidden: false
+    hidden: true
     source_type: server
     description: The hassle-free way to add Segment analytics to your kotlin app (JVM).
     logo:
