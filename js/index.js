@@ -20,6 +20,7 @@ import tracking from './tracking'
 import searchBar from './search-bar'
 import glightbox from './glightbox'
 import autocomplete from './algolia'
+import mapTable from './map-table'
 feedback()
 accordion()
 accordionGroup()
@@ -41,3 +42,4 @@ sideMenu()
 tracking()
 searchBar()
 glightbox()
+mapTable()

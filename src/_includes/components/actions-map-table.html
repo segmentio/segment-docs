@@ -1,0 +1,65 @@
+{% assign thisDest = include.name %}
+{% assign configMap = site.data.actions.[thisDest].config %}
+{% assign conModes = site.data.actions.[thisDest].config| map: 'settings' | map: 'connection_mode' | uniq | compact%}
+
+
+
+
+### {{thisDest | capitalize}} settings mapping
+
+<input class="table-search" type="text" id="filterInput" onkeyup="searchFilter()" placeholder="Search for setting..">
+<div class="button-container" id="btnContainer">
+  <a href="#" id="all" class="button button-link active">All</a>
+  {% for mode in conModes %}
+  <a href="#" id="{{mode}}" class="button button-link">{{mode | capitalize}}</a>
+  {% endfor %}
+</div>
+
+<table id="settingsTable">
+  <thead>
+    <tr>
+      <th>{{thisDest}} Classic Destination Setting</th>
+      <th>How to enable in {{thisDest}} (Actions)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for category in configMap %}
+    <tr>
+      <td colspan="3" style="font-weight: bold; background-color:fafbff;font-size: 10px; text-transform: uppercase;">
+        {{category.category}}</td>
+    </tr>
+    {% for setting in category.settings%}
+    <tr
+      class="settingRow {%unless setting.configurable%}no-map{%endunless%} {{setting.configurable}} {% for mode in setting.connection_mode %}{{mode}} {%endfor%}"
+      id="settingRow">
+      <td>{{setting.name}} <br /> {% for mode in setting.connection_mode %}<span
+          class="cmode {{mode}}-mode">{{mode | capitalize}}</span> {% endfor %}</td>
+      <td>{% if setting.location %}{{setting.location | markdownify}} <br /> {% endif %}{{setting.notes | markdownify}}</td>
+    </tr>
+    {% endfor %}
+    {% endfor %}
+  </tbody>
+</table>
+
+<script>
+
+function searchFilter() {
+    var input, filter, table, tr, td, i, txtValue;
+
+    input = document.getElementById("filterInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("settingsTable");
+    tr = document.getElementsByClassName("settingRow");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none"
+        }
+      }
+    }
+  }
+</script>
