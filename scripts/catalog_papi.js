@@ -258,7 +258,9 @@ const updateSources = async () => {
 
   const hiddenSources = [
     'amp',
-    'factual-engine'
+    'factual-engine',
+    'kotlin-android',
+    'swift-ios'
   ]
 
   sources.forEach(source => {

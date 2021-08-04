@@ -449,7 +449,7 @@ items:
   - display_name: Kotlin (Android)
     slug: kotlin-android
     url: connections/sources/catalog/libraries/mobile/kotlin-android
-    hidden: false
+    hidden: true
     source_type: mobile
     description: >-
       The hassle-free way to add Segment analytics to your kotlin app
@@ -816,7 +816,7 @@ items:
   - display_name: Swift (iOS)
     slug: swift-ios
     url: connections/sources/catalog/libraries/mobile/swift-ios
-    hidden: false
+    hidden: true
     source_type: mobile
     description: >-
       The hassle-free way to add Segment analytics to your swift app (iOS,
