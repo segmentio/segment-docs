@@ -12274,7 +12274,7 @@ items:
 - display_name: Kameleoon
   name: Kameleoon
   slug: kameleoon
-  hidden: false
+  hidden: true
   url: connections/destinations/catalog/kameleoon
   previous_names:
   - Kameleoon
