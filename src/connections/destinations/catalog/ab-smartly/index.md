@@ -29,7 +29,7 @@ Segment provides specific implementation details for the A/B Smartly product in 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "A/B Smartly" in the Destinations Catalog, and select the "A/B Smartly" destination.
 3. Choose which Source should send data to the "A/B Smartly" destination.
-4. Go to the [A/B Smartly dashboard](https://segment.absmartly.com/apikey/list), find and copy the "API key" that you created for segment.
+4. Go to the [A/B Smartly dashboard](https://your-org-name.absmartly.com/apikey/list), find and copy the "API key" that you created for segment.
 5. Enter the "API Key" in the "A/B Smartly" destination settings in Segment.
 6. If the integration requests for an Application name go to your [A/B Smartly dashboard](https://segment.absmartly.com/application/create) and create an Application named "Segment", or whatever you would like to call it. Use that name in the Application field of the integration settings.
 7. Add also your A/B Smartly Collector endpoint. It's the same endpoint that you are using in all your A/B Smartly SDKs.
