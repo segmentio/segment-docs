@@ -149,8 +149,8 @@ Unlike the device-mode destination which runs directly on the device, and which 
 
 You can specify what the event action should be called in the Google Analytics settings. If you don't specify a name, Segment uses a default of event **'User Enriched'**. Since an event category is also required, you can specify which `trait` you want Segment to set this value to. For example, if you send a trait such as `type`, Segment sets the value of `traits.type` as the event category if defined, and if it is not, sets it to the default value **'All'**.
 
-> note ""
-> **Note**: Segment always marks this event as a **Non Interaction** event. This is _only_ available if you are using Universal GA.
+> info ""
+> **Note**: Segment always marks this event as a **Non Interaction** event. This is only available if you are using Universal GA.
 
 ### A/B Test Versions to Dimensions
 
@@ -174,8 +174,8 @@ To record that property or trait as a custom dimension you would map **Experimen
 
 ![a b test custom dimension mapping screenshot](images/ab-mapping.png)
 
-> tip ""
-> **Tip!** Remember to set up `dimension13` in your Google Analytics Admin first, as described above.
+> success ""
+> Remember to set up `dimension13` in your Google Analytics Admin first, as described above.
 
 ## Track
 
@@ -493,8 +493,8 @@ analytics.track('Product List Filtered', {
 });
 ```
 
-> tip ""
-> **Tip!** To tie product clicks and views to the same Product List Name in Google Analytics, include a `list` property in your 'Product Viewed' and 'Product Clicked' events. The value in the `list` property should match the value in the `list_id` property for the corresponding 'Product List Viewed' and 'Product List Filtered' events.
+> success ""
+> **Tip:** To tie product clicks and views to the same Product List Name in Google Analytics, include a `list` property in your 'Product Viewed' and 'Product Clicked' events. The value in the `list` property should match the value in the `list_id` property for the corresponding 'Product List Viewed' and 'Product List Filtered' events.
 
 ### Refunds
 
@@ -628,7 +628,7 @@ Your UTM params need to be passed in the `context` object in `context.campaign`.
 
 ### Measurement Protocol Parameters
 
-Google Analytics uses a reserved set of [Measurement Protocol Parameters](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters) which are automatically collected by the device-mode Google Analytics tracker. 
+Google Analytics uses a reserved set of [Measurement Protocol Parameters](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters) which are automatically collected by the device-mode Google Analytics tracker.
 
 To include Measurement Protocol Parameters when sending server-side events to Google Analytics:
 
@@ -807,9 +807,13 @@ Segment tracks the canonical URL and automatically sends it to Google Analytics 
 
 ### Optimize
 
-To integrate with Google Analytics' [Optimize plugin](https://support.google.com/360suite/optimize/answer/6262084#optimize-ga-plugin), insert your Optimize **Container ID** in your destination settings and Segment adds the plugin when Analytics.js next initializes the Google Analytics snippet.
+> info ""
+> You can only use this feature in device-mode.
 
-*Note*: Make sure your Container ID is spelled correctly and that your Optimize container is ENABLED in Google. If you don't enable this, your GA destination silently errors out every time you make a call.
+To integrate with the Google Analytics [Optimize plugin](https://support.google.com/360suite/optimize/answer/6262084#optimize-ga-plugin), insert your Optimize **Container ID** in your destination settings. Segment adds the plugin when Analytics.js next initializes the Google Analytics snippet.
+
+> warning ""
+> Make sure your Container ID is spelled correctly and that your Optimize container is ENABLED in Google. If you don't enable this, your GA destination silently errors out every time you make a call.
 
 Google recommends that you deploy [page hiding](https://support.google.com/360suite/optimize/answer/6262084#page-hiding) to prevent the page from flashing or flickering when an A/B test loads. You must add this code manually, since it needs to load synchronously. Note that you must include the Optimize container ID in the page hiding snippet too.
 
@@ -821,7 +825,8 @@ To enable user deletion for Google Analytics:
 1. Navigate to the the **User Deletion** setting in your Segment Google Analytics destination settings
 2. Authenticate your Google Analytics account using OAuth.
 
-> **Note**: User deletion for Google Analytics is currently only supported for Universal Analytics and not Classic Analytics. You also can only send user deletion requests using a `userId` through the Privacy Tool. This means you must  have the User-Id feature enable in your Google Analytics Property within the your Google Analytics dashboard and have Segment sending your Property `userIds` by enabling the setting **Send User-ID to GA**.
+> info ""
+> **NOTE:** User deletion for Google Analytics is currently supported for Universal Analytics and not Classic Analytics. You can send user deletion requests using a `userId` through the Privacy Tool. This means you must  have the User-Id feature enabled in your Google Analytics Property within the your Google Analytics dashboard and have Segment sending your Property `userIds` by enabling the setting **Send User-ID to GA**.
 
 - - -
 
