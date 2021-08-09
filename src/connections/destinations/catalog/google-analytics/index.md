@@ -150,7 +150,7 @@ Unlike the device-mode destination which runs directly on the device, and which 
 You can specify what the event action should be called in the Google Analytics settings. If you don't specify a name, Segment uses a default of event **'User Enriched'**. Since an event category is also required, you can specify which `trait` you want Segment to set this value to. For example, if you send a trait such as `type`, Segment sets the value of `traits.type` as the event category if defined, and if it is not, sets it to the default value **'All'**.
 
 > info ""
-> **Note**: Segment always marks this event as a **Non Interaction** event. This is only available if you are using Universal GA.
+> **Note**: Segment marks enriched user trait events as a **Non Interaction** event. Non-interaction events are available if you're using Universal Google Analytics.
 
 ### A/B Test Versions to Dimensions
 
@@ -826,9 +826,8 @@ To enable user deletion for Google Analytics:
 2. Authenticate your Google Analytics account using OAuth.
 
 > info ""
-> **NOTE:** User deletion for Google Analytics is currently supported for Universal Analytics and not Classic Analytics. You can send user deletion requests using a `userId` through the Privacy Tool. This means you must  have the User-Id feature enabled in your Google Analytics Property within the your Google Analytics dashboard and have Segment sending your Property `userIds` by enabling the setting **Send User-ID to GA**.
+> **NOTE:** Segment supports user deletion for Google Analytics in Universal Analytics and not Classic Analytics. You can send user deletion requests using a `userId` through the Privacy Tool. This means you must  have the User-Id feature enabled in your Google Analytics Property within the your Google Analytics dashboard and have Segment sending your Property `userIds` by enabling the setting **Send User-ID to GA**.
 
-- - -
 
 
 ## Troubleshooting
