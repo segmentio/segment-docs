@@ -5,18 +5,19 @@ title: AB Smartly Destination
 
 ## What is A/B Smartly?
 
-[A/B Smartly](https://absmartly.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides a on-premise, full-stack experimentation platform for engineering and product teams that do continuous experimentation embedded into their development process. A/B Smartly's real-time analytics helps engineering and product teams ensure that new features will improve the customer experience without breaking or degrading performance and/or business metrics.
+[A/B Smartly](https://absmartly.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} provides an on-premise, full-stack experimentation platform for engineering and product teams that do continuous experimentation embedded into their development process. A/B Smartly's real-time analytics helps engineering and product teams ensure that new features will improve the customer experience without breaking or degrading performance and/or business metrics.
 
 This destination is maintained by A/B Smartly. For any issues with the destination, [contact A/B Smartly's Support](mailto:support@absmartly.com).
 
 > note "Note:"
-> A/B Smartly's Destination is currently in beta, which means that they are still actively developing the destination. To join their beta program, or if you have any feedback to help improve A/B Smartly's Destination and its documentation, [contact A/B Smartly's support team](mailto:support@absmartly.com)!
+> A/B Smartly's Destination is in beta, which means that they are still actively developing the destination. To join their beta program, or if you have any feedback to help improve A/B Smartly's Destination and its documentation, [contact A/B Smartly's support team](mailto:support@absmartly.com).
 
 
 ## Implementation Prerequisite
-A/B Smartly works differently than other Segment destinations: Because the A/B Smartly's SDKs are used to modify and deliver experiences to users, they generally must be implemented at a point in your Website or App that allows them to make visual modifications for users.
 
-Because of this A/B Smartly requires that customers implement their SDKs natively, before the Segment snippet or implementation.
+A/B Smartly works differently than other Segment destinations: Because the A/B Smartly's SDKs are used to modify and deliver experiences to users, they must be implemented at a point in your Website or App that allows them to make visual modifications for users.
+
+Because of this A/B Smartly requires customers to integrate the A/B Smartly SDKs natively, before the Segment snippet or implementation.
 
 Although Segment maps `track`, and in some cases `page` and `screen`, events to A/B Smartly’s `track` events, customers must implement the snippet on their site to ensure that experiments run.
 
@@ -29,7 +30,7 @@ Segment provides specific implementation details for the A/B Smartly product in 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "A/B Smartly" in the Destinations Catalog, and select the "A/B Smartly" destination.
 3. Choose which Source should send data to the "A/B Smartly" destination.
-4. Go to the [A/B Smartly dashboard](https://your-org-name.absmartly.com/apikey/list), find and copy the "API key" that you created for segment.
+4. Go to the A/B Smartly dashboard(https://your-org-name.absmartly.com/apikey/list), find and copy the "API key" that you created for segment.
 5. Enter the "API Key" in the "A/B Smartly" destination settings in Segment.
 6. If the integration requests for an Application name go to your [A/B Smartly dashboard](https://segment.absmartly.com/application/create) and create an Application named "Segment", or whatever you would like to call it. Use that name in the Application field of the integration settings.
 7. Add also your A/B Smartly Collector endpoint. It's the same endpoint that you are using in all your A/B Smartly SDKs.
@@ -41,7 +42,7 @@ Segment provides specific implementation details for the A/B Smartly product in 
 
 ## Page
 
-If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](https://segment.com/docs/connections/spec/page/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](/docs/connections/spec/page/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.page()
@@ -52,7 +53,7 @@ Segment sends Page calls to A/B Smartly as a `pageview` goal. The goal name will
 
 ## Screen
 
-If you aren't familiar with the Segment Spec, take a look at the [Screen method documentation](https://segment.com/docs/connections/spec/screen/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Screen method documentation](/docs/connections/spec/screen/) to learn about what it does. An example call would look like:
 
 ```obj-c
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -63,7 +64,7 @@ Segment sends Screen calls to A/B Smartly as a `screenview` goal. The goal name 
 
 ## Track
 
-If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.track('Login Button Clicked')
@@ -71,4 +72,3 @@ analytics.track('Login Button Clicked')
 
 Segment sends Track calls to A/B Smartly as a `track` event. A/B Smartly's track calls are the way to track goals. `analytics.track('booking')` will be equivalent to an A/B Smartly SDK track call `context.track('booking')`.
 
----
