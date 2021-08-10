@@ -47,7 +47,7 @@ If you aren't familiar with the Segment Spec, take a look at the [Page method do
 analytics.page()
 ```
 
-Segment sends Page calls to A/B Smartly as a `pageview` goal. The goal name will be `<page_name>_pageview`. The page name is lower-cased and any spaces or special characters are replaced with underscores. For example, a view of the "Home" page will trigger the `home_pageview` goal. If the goal does not exist in the A/B Smartly web console, it is ignored. 
+Segment sends Page calls to A/B Smartly as a `pageview` goal. The goal name is`<page_name>_pageview`. The page name is lower-cased and any spaces or special characters are replaced with underscores. For example, a view of the "Home" page triggers the `home_pageview` goal. If the goal doesn't exist in the A/B Smartly web console, it is ignored. 
 
 
 ## Screen
