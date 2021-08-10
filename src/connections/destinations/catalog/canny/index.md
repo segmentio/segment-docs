@@ -1,6 +1,7 @@
 ---
 title: Canny Destination
 rewrite: true
+hide-dossier: true
 redirect_from: '/connections/destinations/catalog/canny-functions/'
 ---
 
