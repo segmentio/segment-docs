@@ -813,7 +813,7 @@ Segment tracks the canonical URL and automatically sends it to Google Analytics 
 To integrate with the Google Analytics [Optimize plugin](https://support.google.com/360suite/optimize/answer/6262084#optimize-ga-plugin), insert your Optimize **Container ID** in your destination settings. Segment adds the plugin when Analytics.js next initializes the Google Analytics snippet.
 
 > warning ""
-> Make sure your Container ID is spelled correctly and that your Optimize container is ENABLED in Google. If you don't enable this, your GA destination silently errors out every time you make a call.
+> Make sure your Container ID is spelled correctly and that your Optimize container is ENABLED in Google. If you don't enable this, your Google Analytics destination silently errors out every time you make a call.
 
 Google recommends that you deploy [page hiding](https://support.google.com/360suite/optimize/answer/6262084#page-hiding) to prevent the page from flashing or flickering when an A/B test loads. You must add this code manually, since it needs to load synchronously. Note that you must include the Optimize container ID in the page hiding snippet too.
 
