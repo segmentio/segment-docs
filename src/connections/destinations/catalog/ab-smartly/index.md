@@ -9,7 +9,7 @@ title: AB Smartly Destination
 This destination is maintained by A/B Smartly. For any issues with the destination, [contact A/B Smartly's Support](mailto:support@absmartly.com).
 
 > note "Note:"
-> A/B Smartly's Destination is in beta, which means that they are still actively developing the destination. To join their beta program, or if you have any feedback to help improve A/B Smartly's Destination and its documentation, [contact A/B Smartly's support team](mailto:support@absmartly.com).
+> The A/B Smartly Destination is in beta as the team is actively developing the destination. To join the beta program or to provide feedback to help improve A/B Smartly's Destination and documentation, [contact A/B Smartly's support team](mailto:support@absmartly.com).
 
 
 ## Implementation Prerequisite
