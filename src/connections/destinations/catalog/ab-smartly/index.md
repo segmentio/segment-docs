@@ -3,7 +3,6 @@ rewrite: true
 title: AB Smartly Destination
 ---
 
-## What is A/B Smartly?
 
 [A/B Smartly](https://absmartly.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} provides an on-premise, full-stack experimentation platform for engineering and product teams that do continuous experimentation embedded into their development process. A/B Smartly's real-time analytics helps engineering and product teams ensure that new features will improve the customer experience without breaking or degrading performance and/or business metrics.
 
@@ -71,4 +70,3 @@ analytics.track('Login Button Clicked')
 ```
 
 Segment sends Track calls to A/B Smartly as a `track` event. A/B Smartly's track calls are the way to track goals. `analytics.track('booking')` will be equivalent to an A/B Smartly SDK track call `context.track('booking')`.
-
