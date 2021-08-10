@@ -16,7 +16,7 @@ This destination is maintained by A/B Smartly. For any issues with the destinati
 
 A/B Smartly works differently than other Segment destinations. Because A/B Smartly SDKs are used to modify and deliver experiences to users, you must be implement them at a point in your website or app that allows them to make visual modifications for users.
 
-Because of this A/B Smartly requires customers to integrate the A/B Smartly SDKs natively, before the Segment snippet or implementation.
+A/B Smartly requires you to integrate the A/B Smartly SDKs natively, before the Segment snippet or implementation.
 
 Although Segment maps `track`, and in some cases `page` and `screen`, events to A/B Smartly’s `track` events, customers must implement the snippet on their site to ensure that experiments run.
 
