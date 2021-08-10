@@ -58,7 +58,7 @@ If you aren't familiar with the Segment Spec, take a look at the [Screen method 
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 
-Segment sends Screen calls to A/B Smartly as a `screenview` goal. The goal name will be `<screen_name>_screenview`. The screen name is lower-cased and any spaces or special characters are replaced with underscores. For example, a view of the "Home" screen will trigger the `home_screenview` goal. If the goal does not exist in the A/B Smartly web console, it is ignored.
+Segment sends Screen calls to A/B Smartly as a `screenview` goal. The goal name is `<screen_name>_screenview`. The screen name is lower-cased and any spaces or special characters are replaced with underscores. For example, a view of the "Home" screen triggers the `home_screenview` goal. If the goal doesn't exist in the A/B Smartly web console, it is ignored.
 
 
 ## Track
