@@ -24,6 +24,8 @@ _**NOTE:** If you are interested in using Braze, contact your Braze Customer Suc
 6. Go back to Segment, click into the Braze Source and you can add Destinations where you want to receive your Braze data.
    Events are now sent to these destinations and automatically loaded into any warehouses you have enabled.
 
+   ![](images/braze-connection-warning.png)
+
 ## Components
 **Stream**
 Braze uses our stream Source component to send events to Segment. These events are then available in any Destination that accepts server-side events, including your data warehouse.
