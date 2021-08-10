@@ -14,7 +14,7 @@ This destination is maintained by A/B Smartly. For any issues with the destinati
 
 ## Implementation Prerequisite
 
-A/B Smartly works differently than other Segment destinations: Because the A/B Smartly's SDKs are used to modify and deliver experiences to users, they must be implemented at a point in your Website or App that allows them to make visual modifications for users.
+A/B Smartly works differently than other Segment destinations. Because A/B Smartly SDKs are used to modify and deliver experiences to users, you must be implement them at a point in your website or app that allows them to make visual modifications for users.
 
 Because of this A/B Smartly requires customers to integrate the A/B Smartly SDKs natively, before the Segment snippet or implementation.
 
