@@ -18,7 +18,7 @@ A/B Smartly works differently than other Segment destinations. Because A/B Smart
 
 A/B Smartly requires you to integrate the A/B Smartly SDKs natively, before the Segment snippet or implementation.
 
-Although Segment maps `track`, and in some cases `page` and `screen`, events to A/B Smartly’s `track` events, customers must implement the snippet on their site to ensure that experiments run.
+Even though Segment maps `track`, and in some cases `page` and `screen` events to A/B Smartly’s `track` events, you must implement the snippet on your site to ensure that experiments run.
 
 Segment provides specific implementation details for the A/B Smartly product in the sections below, in addition to details of the out-of-the-box mappings that Segment’s A/B Smartly integration handles transparently.
 
