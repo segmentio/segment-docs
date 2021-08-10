@@ -18,7 +18,7 @@ hidden: true
 ## Benefits of Braze Web-mode (Actions) vs Braze Classic
 
 Braze Web-mode (Actions) provides the following benefits over the classic Braze destination:
-- **Fewer settings**. Data mapping for actions-based destinations happens in during configuration, which eliminates the need for most settings.
+- **Fewer settings**. Data mapping for actions-based destinations happens during configuration, which eliminates the need for most settings.
 - **Clearer mapping of data**. Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to the destination.
 - ...
 
