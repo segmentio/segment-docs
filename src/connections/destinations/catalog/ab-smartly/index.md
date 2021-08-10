@@ -69,4 +69,4 @@ If you aren't familiar with the Segment Spec, take a look at the [Track method d
 analytics.track('Login Button Clicked')
 ```
 
-Segment sends Track calls to A/B Smartly as a `track` event. A/B Smartly's track calls are the way to track goals. `analytics.track('booking')` will be equivalent to an A/B Smartly SDK track call `context.track('booking')`.
+Segment sends Track calls to A/B Smartly as a `track` event. A/B Smartly's track calls are the way to track goals. `analytics.track('booking')` is equivalent to an A/B Smartly SDK track call `context.track('booking')`.
