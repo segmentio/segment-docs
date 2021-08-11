@@ -52,7 +52,7 @@ Segment sends Page calls to A/B Smartly as a `pageview` goal. The goal name is`<
 
 ## Screen
 
-If you aren't familiar with the Segment Spec, take a look at the [Screen method documentation](/docs/connections/spec/screen/) to learn about what it does. An example call would look like:
+Take a look at the [Screen method documentation](/docs/connections/spec/screen/) to understand what it does. An example call would look like:
 
 ```obj-c
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
