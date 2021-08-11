@@ -63,7 +63,7 @@ Segment sends Screen calls to A/B Smartly as a `screenview` goal. The goal name 
 
 ## Track
 
-If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track/) to learn about what it does. An example call would look like:
+Take a look at the [Track method documentation](/docs/connections/spec/track/) to understand what it does. An example call would look like:
 
 ```js
 analytics.track('Login Button Clicked')
