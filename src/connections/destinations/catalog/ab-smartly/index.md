@@ -41,7 +41,7 @@ Segment provides specific implementation details for A/B Smartly in the sections
 
 ## Page
 
-If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](/docs/connections/spec/page/) to learn about what it does. An example call would look like:
+Take a look at the [Page method documentation](/docs/connections/spec/page/) to understand what it does. An example call would look like:
 
 ```js
 analytics.page()
