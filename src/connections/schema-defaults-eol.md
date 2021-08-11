@@ -13,7 +13,7 @@ Any events and traits that were blocked by Schema Defaults will continue to be b
 If you still want to block new events and traits by default, you can connect a [Protocols Tracking Plan](/docs/protocols/) to your source.
 
 #### What happens if a source with Schema Defaults enabled has a Tracking Plan connected to it?
-Tracking Plans _replace_ Schema Defaults, so these sources will continue to behave the same.
+[Tracking Plans](/docs/protocols/tracking-plan/) replace Schema Defaults, so these sources will continue to behave the same.
 
 
 ## Event Requirements Removal FAQs
