@@ -87,8 +87,7 @@ Audiences sends Identify and Track calls to OneSignal when a user enters or exit
 OneSignal stores Track and Identify calls from Personas Computed Traits as [Data Tags](https://documentation.onesignal.com/docs/add-user-data-tags) for the OneSignal User/Player's records.
 
 ## OneSignal Destination FAQ
-
-### Managing Segment’s Reserved and Custom Traits**
+### Managing Segment’s Reserved and Custom Traits
 
 * Segment sends user traits to OneSignal as Data Tags. The number of data tags OneSignal allows depends on your OneSignal pricing plan. Tags over the entitled number will be dropped.
 
