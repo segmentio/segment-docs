@@ -45,7 +45,7 @@ analytics.identify('userId123', {
 Segment sends Identify traits as [Player Data Tags](https://documentation.onesignal.com/docs/add-user-data-tags) in OneSignal.
 
 > warning ""
-> OneSignal does not accept nested objects or arrays as user properties.
+> OneSignal doesn't accept nested objects or arrays as user properties.
 
 ![](images/demo.png)
 
