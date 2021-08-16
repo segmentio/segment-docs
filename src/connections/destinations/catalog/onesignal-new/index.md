@@ -89,7 +89,7 @@ OneSignal stores Track and Identify calls from Personas Computed Traits as [Data
 ## OneSignal Destination FAQ
 ### Managing Segment’s Reserved and Custom Traits
 
-* Segment sends user traits to OneSignal as Data Tags. The number of data tags OneSignal allows depends on your OneSignal pricing plan. Tags over the entitled number will be dropped.
+* Segment sends user traits to OneSignal as Data Tags. The number of data tags OneSignal allows depends on your OneSignal pricing plan. OneSignal drops the data tags that go over your set number. .
 
 * OneSignal always updates the `firstName` and the `lastName` properties for matching users. All other traits are added/updated on a firstcome basis. `firstName` and `lastName` tags are stored as `first_name` and `last_name`.
 
