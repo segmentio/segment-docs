@@ -160,7 +160,7 @@ For more details on this snippet, check out the Braze's docs [here](https://www.
 {% endcomment %}
 
 ## Important differences from the classic Braze destination
-TODO
+- Braze (Actions) supports the [Web](https://github.com/segment-integrations/analytics.js-integration-appboy){:target="_blank"} integration. For other integrations, including iOS, Android, and Server, use the Braze Classic destination.
 
 ## Pre-built subscriptions
 
