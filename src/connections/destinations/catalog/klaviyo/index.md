@@ -21,18 +21,6 @@ To configure Klaviyo as an Event Source to get data into your warehouse or other
 3. Navigate to your [Account > Settings > API Keys](https://www.klaviyo.com/account#api-keys-tab){:target="_blank"} in the Klaviyo's UI and copy your "API Key" into the Segment Settings UI.
 4. **Note:** Klaviyo requires the Private API Key to use the List API. You can find this by going to Klaviyo's UI and clicking [Account > Settings > API Keys > Create API Key](https://www.klaviyo.com/account#api-keys-tab){:target="_blank"}  to generate a Private API Key and copy it into the Segment Settings UI.
 
-
-## Page
-
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
-
-```
-analytics.page();
-```
-
-> info ""
-> `page` calls are supported client-side on analytics.js.
-
 ## Identify
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
