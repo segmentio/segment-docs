@@ -31,10 +31,10 @@ Segment provides specific implementation details for A/B Smartly in the sections
 3. Choose which Source should send data to the "A/B Smartly" destination.
 4. Go to the A/B Smartly dashboard(https://your-org-name.absmartly.com/apikey/list), find and copy the "API key" that you created for segment.
 5. Enter the "API Key" in the "A/B Smartly" destination settings in Segment.
-6. If the integration requests for an Application name go to your [A/B Smartly dashboard](https://your-org-name.absmartly.com/application/create) and create an Application named "Segment", or whatever you would like to call it. Use that name in the Application field of the integration settings.
+6. If the integration requests for an Application name go to your A/B Smartly dashboard (`https://your-org-name.absmartly.com/application/create`) and create an Application named "Segment", or whatever you would like to call it. Use that name in the Application field of the integration settings.
 7. Add also your A/B Smartly Collector endpoint. It's the same endpoint that you are using in all your A/B Smartly SDKs.
-8. Enter the enviroment from your [Environment list](https://your-org-name.absmartly.com/environment/list) that should receive your Segment data. Most likely it will be the production one.
-9. And finally a mapping of Segment Identities to [A/B Smartly Units](https://your-org-name.absmartly.com/unit/list). You should map all your Segment indenties that you would like to use in your A/B tests to the units that you already have in A/B Smartly. Check your [unit list on A/B Smartly](https://your-org-name.absmartly.com/unit/list).
+8. Enter the environment from your Environment list (`https://your-org-name.absmartly.com/environment/list`) that should receive your Segment data. Most likely it will be the production one.
+9. And finally a mapping of Segment Identities to A/B Smartly Units(`https://your-org-name.absmartly.com/unit/list`). You should map all your Segment identities that you would like to use in your A/B tests to the units that you already have in A/B Smartly. Check your unit list on A/B Smartly(`https://your-org-name.absmartly.com/unit/list`).
 10. Optionally go to "Goal Mapping" and start adding the track calls that you would like to see showing up on A/B Smartly as goals. You only need to create a name mapping if the name of the goal on A/B Smartly's platform is different from the name of the track call in Segment.
 
 
