@@ -46,7 +46,7 @@ Journeys provides 5 step types, which you can add after the entry condition.
 
 **Wait for duration** defines the length of time in minutes, hours, days, or weeks that a user must wait before moving to the next step.
 
-**True/false split** divides the previous step's user group into two branches, based on Boolean logic against a defined condition. Users who satisfy the condition(s) move to the **True** branch. Otherwise, they move to the **False** branch.  
+**True/false split** divides the previous step's user group into two branches, based on Boolean logic against a defined condition. Users who satisfy the condition(s) move to the **True** branch. Otherwise, they move to the **False** branch. To enforce mutual exclusivity, Journeys evaluates true/false conditions when a user reaches the relevant step.  
 
 You can add Step Names to describe the users in the True and False branch.
 
