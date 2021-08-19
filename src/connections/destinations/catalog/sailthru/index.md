@@ -1,5 +1,6 @@
 ---
 title: Sailthru Destination
+hidden: true
 ---
 
 ## Getting Started
