@@ -41,7 +41,7 @@ Analytics.shared().screen("Rick's Tee", properties: [
 ])
 ```
 
-A `url` property is required for Screen events. If Sailthru receives a Screen call without a `url` property, the call is dropped.
+Screen events require a `url` property. If Sailthru receives a Screen call without a `url` property, the call drops.
 
 ### Identify
 
