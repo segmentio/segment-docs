@@ -81,7 +81,7 @@ analytics.track("Subscribed", {
 
 Record purchases in Sailthru wih the `Order Completed` event to send order confirmation messages, personalize messaging, and create purchase-related audiences.
 
-The `url` field is required for each line-item for Sailthru purchases. Send the `tags` property for each line-item for later segmentation purposes.
+Each line-item for Sailthru purchases requires the `url` field. Send the `tags` property for each line-item for later segmentation purposes.
 
 Sailthru automatically tracks the `shipping`, `tax`, and `discount` fields as adjustments for accurate purchase values per-user. Use `order_id`, `checkout_id`, or Segment’s `messageId` as a purchase key for later lookup and deduping purposes.
 
