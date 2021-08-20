@@ -117,7 +117,7 @@ analytics.track("Order Completed", {
 #### Update Cart
 Send `Product Added` and `Product Removed` Track events for Sailthru’s abandoned cart messaging to enable the Cart Abandonment entry in Lifecycle Optimizer.
 
-The `url` is required for Sailthru abandoned cart messaging to work.
+Sailthru abandoned cart messaging requires the `url` to function properly. 
 
 ```js
 analytics.track('Product Added', {
