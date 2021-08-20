@@ -18,7 +18,7 @@ If you still want to block new events and traits by default, you can connect a [
 
 ## Event Requirements Removal FAQs
 
-Event Requirements allow you to define rules for an event property and block violating events. This feature was launched to Private Beta in 2017 as an exploratory feature before the introduction of Protocols.
+Event Requirements allows you to define rules for an event property and block violating events. This feature was launched to Private Beta in 2017 as an exploratory feature before the introduction of Protocols.
 
 #### What happens after Event Requirements is removed?
 Events that violate the rules set up in Event Requirements will no longer be blocked. The Event Requirements UI will be removed from the Segment web app, and you won’t be able to interact with the feature settings.
