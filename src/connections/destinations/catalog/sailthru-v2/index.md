@@ -5,7 +5,7 @@ redirect_from: '/connections/destinations/catalog/sailthru/'
 ---
 [Sailthru's](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) cross-channel marketing platform helps brands deliver personalized experiences to each and every consumer across email, web, and mobile, driving higher revenue, improving customer lifetime value, and reducing churn.
 
-This destination is maintained by Sailthru. For any issues with the destination, [contact the Sailthru Support team](mailto:support@sailthru.com.com).
+Sailthru maintains this destination. For any issues with the destination, [contact the Sailthru Support team](mailto:support@sailthru.com.com).
 
 
 ## Getting Started
