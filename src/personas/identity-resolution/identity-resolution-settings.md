@@ -108,7 +108,7 @@ In the past, certain default values cause large amounts of profiles to merge inc
 
 | Value                         | Type            |
 | ----------------------------- | --------------- |
-| Zeroes and Dashes (`^[0\-]*$) | Pattern (REGEX) |
+| Zeroes and Dashes (^[0-]*$)   | Pattern (REGEX) |
 | -1                            | Exact Match     |
 | null                          | Exact Match     |
 | anonymous                     | Exact Match     |
