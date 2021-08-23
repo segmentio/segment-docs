@@ -59,6 +59,8 @@ Event properties can be used as merge tags in the message content. You can also 
 
 ## Enabling Push and In-App Notifications
 To enable Xtremepush push and in-app notifications you will also need to to install the relevant Xtremepush SDKs.
+
 [Xtremepush iOS SDK Docs](https://docs.xtremepush.com/docs/ios-integration)
+
 [Xtremepush Android SDK Docs](https://docs.xtremepush.com/docs/android-integration)
 
