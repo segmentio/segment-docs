@@ -1,8 +1,9 @@
 ---
-title: Braze (Actions) Cloud Destination
+title: Braze (Actions) Web Destination
 hide-boilerplate: true
 hide-dossier: true
 hidden: true
+published: false
 ---
 {% include content/plan-grid.md name="actions" %}
 
@@ -31,7 +32,7 @@ Braze (Actions) Web provides the following benefits over Braze Classic:
    - **App ID**: Find in the Braze Dashboard in App Settings > Manage App Group.
    - **REST Endpoint**: Enter the value that maps to your Braze instance. For more information, see [API Overview](https://www.braze.com/docs/api/basics/){:target="_blank"} in the Braze documentation.
 
-{% comment %}
+
 ### In-app Messaging (Web)
 
 Find instructions to configure In-app Messaging in the Braze [documentation](https://www.braze.com/academy/Best_Practices/#in-app-message-behavior){:target="_blank"}. Once configured, you can trigger in-app message display as a result of several different event types. By default, all In-App Messages that a user is eligible for are automatically delivered to the user upon a session start event. A new session automatically starts when a user loads your site. If you'd like to force a new session for a user, make an Identify call with the corresponding [userId](/docs/connections/spec/identify/#user-id) for that user.
@@ -157,7 +158,7 @@ For more details on this snippet, check out the Braze's docs [here](https://www.
  });
 ```
 
-{% endcomment %}
+
 
 ## Important differences from the classic Braze destination
 - Braze (Actions) supports the [Web](https://github.com/segment-integrations/analytics.js-integration-appboy){:target="_blank"} integration. For other integrations, including iOS, Android, and Server, use the Braze Classic destination.

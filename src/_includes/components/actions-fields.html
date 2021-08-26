@@ -1,0 +1,60 @@
+{% assign thisDest = include.name %}
+{% assign mapping = site.data.actions.[thisDest].actions %}
+
+{% for action in mapping %}
+### {{action.action}}
+{{action.blurb | markdownify}}
+
+{% if action.fields %}
+<p class="button button-fill button-fill--white" data-toggle="collapse" data-target=".settings-content-{{action.action | slugify}}">Click to expand fields</p>
+<div class="collapse settings-content-{{action.action | slugify}}">
+<table id="settingsTable">
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for field in action.fields %}
+<tr>
+<td>{{field.name}}</td>
+<td>{% if field.default %}Default <code>{{field.default}}</code><br />{%endif%}{{field.description}}</td>
+</tr>
+{%endfor%}
+</tbody>
+</table>
+</div>
+
+{% else %}
+This action does not have any fields.
+{% endif %}
+
+{% endfor %}
+
+<script>
+  // map our commands to the classList methods
+  const triggers = Array.from(document.querySelectorAll('[data-toggle="collapse"]'));
+
+window.addEventListener('click', (ev) => {
+  const elm = ev.target;
+  if (triggers.includes(elm)) {
+    const selector = elm.getAttribute('data-target');
+    collapse(selector, 'toggle');
+  }
+}, false);
+
+
+const fnmap = {
+  'toggle': 'toggle',
+  'show': 'add',
+  'hide': 'remove'
+};
+const collapse = (selector, cmd) => {
+  const targets = Array.from(document.querySelectorAll(selector));
+  targets.forEach(target => {
+    target.classList[fnmap[cmd]]('show');
+  });
+}
+
+</script>
