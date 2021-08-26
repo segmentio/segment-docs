@@ -369,7 +369,7 @@ tr.show {
   transition: max-height .5s cubic-bezier(0, 1, 0, 1);
 
   &.show {
-    max-height: 99em;
+    max-height: 100%;
     transition: max-height .5s ease-in-out;
   }
 }

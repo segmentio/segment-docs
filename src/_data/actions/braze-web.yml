@@ -1,3 +1,54 @@
+settings:
+  - category: Connection Settings
+    settings:
+    - name: Allow Crawler Activity
+      description: Enable to allow Braze to log activity from crawlers.
+      default: "off"
+    - name: Allow User Supplied Javascript
+      description: Enable to indicate that you trust the Braze dashboard users to write non-malicious Javascript click actions, set this property to true. If enableHtmlInAppMessages is true, this option will also be set to true.
+      default: "off"
+    - name: API Key (required)
+      description: Enter the API Key to identify your application to Braze.
+      default: 
+    - name: App Version
+      description: Enter the version of the application to which user events will be associated for the purpose of segmentation.
+      default: 
+    - name: Content Security Nonce
+      description: "Enter a value that Braze will add to any `script` and `style` elements that the SDK creates."
+      default: 
+    - name: Device Property Allow List
+      description: Enter an array of DeviceProperties to override the automatically detected and collected DeviceProperties.
+      default: 
+    - name: Disable Push Token Maintenance
+      description: Enable to allow users who have already granted web push permission will to their push token with the Braze backend automatically on new session to ensure deliverability. 
+      default: "On"
+    - name: Do Not Load Font Awesome
+      description: Enable to prevent Braze from loading FontAwesome 4.7.0 from the FontAwesome CDN.
+      default: "off"
+    - name: Enable Logging
+      description: Enable to turn on logging by default.
+      default: "off"
+    - name: Enable SDK Authentication
+      description: Enable to turn on Braze's SDK Authentication.
+      default: "off"
+    - name: SDK Endpoint (required)
+      description: Select the SDK Endpoint for your Braze applicaiton.
+      default: 
+    - name: In-App Message Z Index
+      description: Enter a z-index value for the Braze In-App Message. By default, the Braze SDK will show In-App Messages with a z-index of 1040 for the screen overlay, 1050 for the actual in-app message, and 1060 for the message's close button.
+      default: 
+    - name: Localization
+      description: Enter a ISO 639-1 Language Code to override the user's default browser language.
+      default: _specified by the user's browser_
+    - name: Manage Service Worker Externally
+      description: Enable to prevent Braze from registering and unregistering a service worker of which you control the lifecycle.
+      default: "off"
+    - name: Minimum Interval Between Trigger Actions in Seconds 
+      description: Enter a value to override the default interval between trigger actions.
+      default: 30
+    - name: No Cookies
+      description: Enable the option to disable cookie storage and rely on HTML5 localStorage to identify users and sessions.
+      default: "off"
 config:
   - category: Connection Settings
     settings:
@@ -173,7 +224,7 @@ actions:
       description: Set to true to use the Braze API in "Update Only" mode. 
       default: false
   - action: Track Purchase
-    blurb: Track Purchase sends Braze a Track Purchase call when the destination recieves any event that matches the specified name.
+    blurb: Track Purchase sends Braze a Track Purchase call when the destination recieves any event named `Order Completed`.
     fields:
     - name: Time
       description: The timestamp of when the event occured.

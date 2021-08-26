@@ -3,11 +3,10 @@ title: Braze (Actions) Web Destination
 hide-boilerplate: true
 hide-dossier: true
 hidden: true
-published: false
 ---
 {% include content/plan-grid.md name="actions" %}
 
-[Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
+[Braze](https://www.braze.com/){:target="_blank"}, formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
 
 
 > info ""
@@ -15,23 +14,21 @@ published: false
 
 
 > success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Braze Segment destination. There's also a page about the [non-Actions Braze destination](/docs/connections/destinations/catalog/braze/). Both of these destinations receives data _from_ Segment. There's also the [Braze source](/docs/connections/sources/catalog/cloud-apps/braze//), which sends data _to_ Segment!
+> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Braze Segment destination. There's also a page about the [non-Actions Braze destination](/docs/connections/destinations/catalog/braze/). Both of these destinations receives data _from_ Segment. There's also the [Braze source](/docs/connections/sources/catalog/cloud-apps/braze/), which sends data _to_ Segment.
 
-## Benefits of Braze (Actions) Cloud vs Braze Classic
+## Benefits of Braze (Actions) Web vs Braze Classic
 
 Braze (Actions) Web provides the following benefits over Braze Classic:
 
-- **E-commerce mappings**. Users who can't follow the e-commerce spec due to incompatible event names (for example, Trip Booked vs Order Completed) can log purchases in Braze (Actions) Cloud.
+- **E-commerce mappings**. Users who can't follow the e-commerce spec due to incompatible event names (for example, Trip Booked vs Order Completed) can log purchases in Braze (Actions) Web.
 
 ## Getting Started
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Braze" in the Catalog, select **Braze (Actions) Cloud**, and choose which of your sources to connect the destination to.
-3. Add the following Connection Settings:
-   - **API Key**: Find in the Braze Dashboard in App Settings > Manage App Group.
-   - **App ID**: Find in the Braze Dashboard in App Settings > Manage App Group.
-   - **REST Endpoint**: Enter the value that maps to your Braze instance. For more information, see [API Overview](https://www.braze.com/docs/api/basics/){:target="_blank"} in the Braze documentation.
+2. Search for "Braze" in the Catalog, select **Braze (Actions) Web**, and choose which of your sources to connect the destination to.
+3. Configure the Connection Settings. **API Key** and **SDK Endpoint** are required settings.
 
+{% include components/actions-fields.html name="braze-web" connection="true" %}
 
 ### In-app Messaging (Web)
 
@@ -57,13 +54,13 @@ If you don't want your site to display new In-App Messages as they're received, 
     });
     ```
 
-The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](https://js.appboycdn.com/web-sdk/latest/doc/ab.InAppMessage.html) subclass or [`appboy.ab.ControlMessage`](https://js.appboycdn.com/web-sdk/latest/doc/ab.ControlMessage.html) objects, each of which has various lifecycle event subscription methods.
+The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](https://js.appboycdn.com/web-sdk/latest/doc/ab.InAppMessage.html){:target="_blank"} subclass or [`appboy.ab.ControlMessage`](https://js.appboycdn.com/web-sdk/latest/doc/ab.ControlMessage.html){:target="_blank"} objects, each of which has various lifecycle event subscription methods.
 
 
 
 ### Push Notifications (Client)
 
-1. To support push notifications on Chrome, you'll need to enable FCM/GCM as well as configure your site. Check out steps [one and two here, for detailed instructions on both](https://www.braze.com/documentation/Web/#step-1-to-support-chrome-enable-fcmgcm).
+1. To support push notifications on Chrome, you'll need to enable FCM/GCM as well as configure your site. Check out steps [one and two here, for detailed instructions on both](https://www.braze.com/documentation/Web/#step-1-to-support-chrome-enable-fcmgcm){:target="_blank"}.
 
 2. Browser Registration. In order for a browser to receive push notifications, you must register it for push by calling:
 
@@ -87,7 +84,7 @@ analytics.ready(function() {
  });
 ```
 
-Braze recommends checking to see if this returns `true` since not all browsers can receive push notifications. [See below](/docs/connections/destinations/catalog/braze/#soft-push-prompts) for instructions on setting up a soft push prompt using Braze In-App Messages.
+Braze recommends checking to see if this returns `true` since not all browsers can receive push notifications. See [Soft Push Prompts](#soft-push-prompts) for instructions on setting up a soft push prompt using Braze In-App Messages.
 
 To unsubscribe a user, call:
 
@@ -97,13 +94,13 @@ analytics.ready(function() {
 });
 ```
 
-3. Set your GCM/FCM server API key and SenderID on the Braze dashboard. You can find more details for this [here](https://www.braze.com/documentation/Web/#step-4-set-your-gcmfcm-server-api-key-and-senderid-on-the-Braze-dashboard).
+1. Set your GCM/FCM server API key and SenderID on the Braze dashboard. You can find more details for this [here](https://www.braze.com/documentation/Web/#step-4-set-your-gcmfcm-server-api-key-and-senderid-on-the-Braze-dashboard){:target="_blank"}.
 
-4. To support push notifications on Safari, add your Website Push ID into your Segment Settings UI and Segment sends it when the Braze Web SDK initializes. To get your Website Push ID, follow the first two bullet points in [these instructions](https://www.braze.com/documentation/Web/#step-5-configure-safari-push).
+2. To support push notifications on Safari, add your Website Push ID into your Segment Settings UI and Segment sends it when the Braze Web SDK initializes. To get your Website Push ID, follow the first two bullet points in [these instructions](https://www.braze.com/documentation/Web/#step-5-configure-safari-push){:target="_blank"}.
 
 ### Soft Push Prompts
 
-1. Follow [step one](https://www.braze.com/documentation/Web/#soft-push-prompts) to create a "Prime for Push" in-app messaging Campaign on the Braze dashboard.
+1. Follow [step one](https://www.braze.com/documentation/Web/#soft-push-prompts){:target="_blank"} to create a "Prime for Push" in-app messaging Campaign on the Braze dashboard.
 
 2. Disable your [Automatically Send In-App Messages Destination setting](/docs/connections/destinations/catalog/braze/#settings).
 
@@ -146,11 +143,12 @@ analytics.ready(function() {
  });
 ```
 
-For more details on this snippet, check out the Braze's docs [here](https://www.braze.com/documentation/Web/#soft-push-prompts).
+For more details on this snippet, see Braze's documentation [here](https://www.braze.com/documentation/Web/#soft-push-prompts){:target="_blank"}.
 
-**Note:** Place this snippet outside of your [Segment Snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) within your `script` tag.
+> info ""
+> Place this snippet outside of your [Segment Snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) within your `script` tag.
 
-4. When you'd like to display the Soft Push to a user, call:
+1. When you'd like to display the Soft Push to a user, call:
 
 ```js
  analytics.ready(function() {
@@ -163,15 +161,15 @@ For more details on this snippet, check out the Braze's docs [here](https://www.
 ## Important differences from the classic Braze destination
 - Braze (Actions) supports the [Web](https://github.com/segment-integrations/analytics.js-integration-appboy){:target="_blank"} integration. For other integrations, including iOS, Android, and Server, use the Braze Classic destination.
 
-{% comment %}
+
 ## Pre-built subscriptions
 
-| Subscription Name | Trigger                                                                                      | Braze Action        | Non-default mapped fields |
-| ----------------- | -------------------------------------------------------------------------------------------- | ------------------- | ------------------------- |
-| Track Event       | All **track** calls from the connected source, where the Event Name is not "Order Completed" | Track Event         |                           |
-| Track Purchase    | All **track** calls from the connected source, where the Event Name is "Order Completed"     | Track Purchase      |                           |
-| Identify Calls    | All **identify** calls from the connected source                                             | Update User Profile |                           |
-{% endcomment %}
+| Subscription Name     | Trigger                                                                                      | Braze Web Action    |
+| --------------------- | -------------------------------------------------------------------------------------------- | ------------------- |
+| Track Calls           | All **track** calls from the connected source, where the Event Name is not "Order Completed" | Track Event         |
+| Order Completed Calls | All **track** calls from the connected source, where the Event Name is "Order Completed"     | Track Purchase      |
+| Identify Calls        | All calls where the Event Type is **Identify** or **Group**                                  | Update User Profile |
+
 
 ## Available Braze Actions
 
@@ -181,9 +179,9 @@ Build your own subscription. Combine the supported [triggers](/docs/connections/
 - [Update User Profile](#update-user-profile)
 - [Debounce Middleware](#debounce-middleware)
 
-{% include components/actions-fields.html name="braze-cloud" %}
+{% include components/actions-fields.html name="braze-web" %}
 
 ## Migration from Braze Classic
 Keep the following in mind if you plan to move to Braze (Actions) from the classic Braze destination.
-{% include components/actions-map-table.html name="braze-cloud" %}
+{% include components/actions-map-table.html name="braze-web" %}
 
