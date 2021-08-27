@@ -44,7 +44,7 @@ Segment supports translating `screen` or `page` to Nielsen as a Static App Measu
 | integration option | `segC`| Required (optional for web). Segment B.|
 | integration option | `crossId1` | Standard episode ID (mobile only)|
 
-* For web, you can map a custom property to `section` instead using the **Custom Page/Screen Section Property Name** setting. If this setting is left blank, Segment will fallback on the page top-level `name` then `Unknown`.
+* On web and mobile, you can map a custom property to `section` instead using the **Custom Page/Screen Section Property Name** setting. If this setting is left blank, Segment will fallback on the top-level `name`.
 
 ## Track
 
@@ -86,8 +86,6 @@ From there we will map to the relevant events on the instance as outlined below:
 | Heartbeat timer stopped | `Video Playback Seek Started` |
 | Heartbeat timer updated | `Video Playback Seek Completed` |
 | `-(void) end` and Heartbeat timer stopped | `Video Playback Completed` |
-
-Segment-Nielsen-DCR does not map any playback properties (ie. send metadata) on mobile.
 
 Web supports the use case of tracking a user switching back and forth from amongst multiple videos at the same time. To do so, Segment checks the metadata on playback interrupted events and sends Nielsen updated metadata if we see that the video content has changed. We do so by storing the current `asset_id` in memory and checking to see if the `asset_id` value has changed.
 
