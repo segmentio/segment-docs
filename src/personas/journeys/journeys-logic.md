@@ -26,7 +26,7 @@ Journey steps operate based on the following behaviors:
 - Post-entry condition step membership relies on users at some point entering the preceding step.
 - When a user first joins a step, Segment adds a  `step_joined_time` trait to their profile.
 - Membership is calculated using Segment's [Real-Time Compute System](/docs/personas/audiences/#real-time-compute-vs-batch).
-- Segment does not calculate Waits and Splits in real time.
+- Segment doesn't calculate Waits and Splits in real-time.
 
 The combination of these traits, audiences, and business rules allows you to create an enforced funnel with the following implications:
 
