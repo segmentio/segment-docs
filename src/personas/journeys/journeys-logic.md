@@ -31,7 +31,7 @@ Journey steps operate based on the following behaviors:
 The combination of these traits, audiences, and business rules allows you to create an enforced funnel with the following implications:
 
 - Users enter the Journey when they fulfill the entry conditions.
-- Users cannot re-enter the same Journey at an earlier step.
+- Users can't re-enter the same Journey at an earlier step.
 - Users can only move forward through a Journey.
 - Users remain in a step indefinitely until they fulfill the next step’s criteria.
 
