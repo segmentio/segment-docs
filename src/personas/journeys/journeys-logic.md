@@ -123,7 +123,7 @@ Deleting a Journey removes its underlying audiences from profile views in Person
 
 True/false splits enforce mutual exclusivity by ensuring that once users enter either side of a split, they can't enter the other.
 
-Multi-branch splits do not enforce mutual exclusivity. Users can enter multiple branches of a split if they satisfy the split conditions.
+Multi-branch splits don't enforce mutual exclusivity. Users can enter multiple branches of a split if they satisfy the split conditions.
 
 ### How does “Use Historical Data” backfill work?
 
