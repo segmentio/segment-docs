@@ -8,7 +8,7 @@ Journeys are powered by a series of Audiences and Computed Traits. This guide de
 
 By the end of this guide, you'll understand how and why users progress through your Journey. You'll also gain familiarity with the following key Journeys concepts:
 
-- Journeys entry conditions and step behavior
+- Journey entry conditions and step behavior
 - How Segment evaluates Journeys step membership
 - How real-time step membership works
 
@@ -25,7 +25,7 @@ Journey steps operate based on the following behaviors:
 - The entry condition requires no previous step membership.
 - Post-entry condition step membership relies on users at some point entering the preceding step.
 - When a user first joins a step, Segment adds a  `step_joined_time` trait to their profile.
-- Membership is calculated by a real-time [Audience](/docs/personas/audiences/).
+- Membership is calculated using Segment's [Real-Time Compute System](/docs/personas/audiences/#real-time-compute-vs-batch).
 - Segment does not calculate Waits and Splits in real time.
 
 The combination of these traits, audiences, and business rules allows you to create an enforced funnel with the following implications:
@@ -37,7 +37,9 @@ The combination of these traits, audiences, and business rules allows you to cre
 
 ## Step Membership
 
-To enter a Journey, users must satisfy the entry conditions. To enter each subsequent step, three conditions must be true:
+To enter a Journey, users must satisfy the entry conditions. 
+
+To enter each subsequent step, three conditions must be true:
 
 
 1. The user previously joined the parent step.
@@ -46,11 +48,11 @@ To enter a Journey, users must satisfy the entry conditions. To enter each subse
 
 ### Evaluating Prior Step Membership
 
-To evaluate whether a user has ever joined the previous step, Journeys appends the `preceding_step_joined_time` trait to the user’s profile.  This trait notes when the user initially joined each step.  To enter a step, users must satisfy both the `preceding_step_audience_member = True` condition and the Journey-defined audience conditions.
+To evaluate whether a user has ever joined the previous step, Journeys appends the `preceding_step_joined_time` trait to the user’s profile.  This trait notes when the user initially joined each step.  To enter a step, users must satisfy both the `preceding_step_audience_member = True` condition and the step's defined conditions.
 
 ### Condition Steps
 
-“Add a condition” steps operate like Personas audiences. The defined conditions provide criteria for each step’s audience membership rules.
+“Add a condition” steps operate like [Personas audiences](/docs/personas/audiences/). The defined conditions provide criteria for each step’s membership.
 
 ### Wait Times
 
@@ -68,28 +70,28 @@ The following table summarizes the three step membership conditions and their eq
 
 For every step after the entry step, Journeys leverages [the Personas real-time compute system](https://segment.com/docs/personas/audiences/#real-time-compute-vs-batch).
 
-When a user's traits change or they exceed audience time conditions, they may no longer fulfill the conditions of a previously joined step. If a user joins a step but no longer meets its conditions, Segment removes them from that step’s preview and analytics.  The user does, however, continue to progress through the Journey.
+When a user's traits change or they exceed time-based conditions (for example, "within 7 days"), they may no longer fulfill the conditions of a previously joined step. If a user joins a step but no longer meets its conditions, Journeys removes them from that step’s preview and analytics.  The user does, however, continue to progress through the Journey.
 
 Consider the following example of Journey conditions for a cart abandonment campaign:
 
 
-1. Entry Condition: User has clicked `add to cart` and `purchases = 0` in the last 7 days.
+1. Entry Condition: User has clicked `add to cart` and `purchases = 0` within the last 7 days.
 2. Wait Time Condition: 5 days.
 3. Step Condition: User is member of `Example Audience A`
 4. Send to Destination
 
-If a user makes a purchase during the wait time of 5 days, Segment would set the audience membership to `false` for the audience created from the entry condition. However, the `preceding_step_audience_member` trait would remain on the user’s profile as true, so the user would meet the next step’s conditions and continue to progress through the Journey.
+If a user makes a purchase during the wait time of 5 days, the system would update membership to `false` for the audience created from the entry condition. However, when evaluating Step Condition 3, the `preceding_step_audience_member` trait would remain on the user’s profile as true. As a result, the user would meet the step’s conditions and continue to progress through the Journey.
 
 To maintain best practices and enforce your funnel, re-check or modify audience conditions that follow wait steps.  For example, adding a `purchases = 0` condition to Step 3 results in Segment not advancing users who made a purchase during the wait time:
 
 1. Entry Condition: User has clicked `add to cart` and `purchases = 0` in the last 7 days
 2. Wait Time Condition: 5 days
-3. Step Condition: User is member of `Audience A` and `purchases = 0` in the last 7 days.
+3. Step Condition: User is member of `Example Audience A` and `purchases = 0` in the last 7 days.
 4. Send to Destination
 
 ### Send to Destination steps
 
-Segment neither sends `Audience Exit` events to Destinations nor removes users from Destinations lists.  As a result, users cannot re-enter or loop within Journeys.
+Because Journey members permanently remain in Destination sync stpes, Segment neither sends `Audience Exit` events to Destinations nor removes users from Destinations lists.  As a result, users cannot re-enter or loop within Journeys.
 
 Because Computed Traits from Journeys steps stay appended to user profiles, users permanently remain in a Journey after satisfying its entry conditions.
 
@@ -97,15 +99,15 @@ Because Computed Traits from Journeys steps stay appended to user profiles, user
 
 ### What happens when a user reaches a single or Multi-Split Condition step and the conditions evaluates to `false`?
 
-Each step’s membership conditions evaluate in real time, which means that users remain in their current step until the immediate next step’s conditions becomes true.
+Each step’s membership conditions evaluate in real time, which means that users remain in a step until the immediate next step’s conditions becomes true.
 
 ### Can users exit and re-enter a Journey?
 
-No. Users move down the Journey’s branches in sequential order and cannot re-enter. Journeys use a `true` or `false` profile trait to progress users.  Users who meet the Journey’s entrance criteria stay in the Journey permanently.
+No. Users move down the Journey’s branches in sequential order and cannot re-enter. Journeys appends a profile trait for each step a user enters. Because the system neither assigns `Audience Exit` events nor removes traits from profiles, users who meet the Journey's entry criteria stay in the Journey permanently.
 
 ### What happens to traits and audiences when I delete a Journey?
 
-Deleting a Journey removes its underlying audiences from profile views.  However, the Journey’s True/False traits remain in the user’s last recorded state.
+Deleting a Journey removes its underlying audiences from profile views in Personas Explorer.  However, the Journey’s True/False traits remain in the user’s last recorded state.
 
 > info "Note"
 > Cloning a Journey generates new, unique traits and sync keys.  Deleting the original Journey won’t impact any cloned Journeys.
@@ -126,4 +128,4 @@ For example, to evaluate if a user already in a Journey has ever used a discount
 
 ### How do time windows within step conditions work?
 
-With step condition time windows, you can designate a timeframe for Segment to evaluate whether or not a user has met the condition.  Segment calculates the time window from the current point in time, not relative to any other steps in your Journey.
+With time windows within step conditions, you can designate a timeframe for Segment to evaluate whether or not a user has met the condition.  Segment calculates the time window from the current point in time, not relative to any other steps in your Journey.
