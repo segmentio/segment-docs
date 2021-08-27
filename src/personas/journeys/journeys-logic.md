@@ -127,7 +127,7 @@ Multi-branch splits don't enforce mutual exclusivity. Users can enter multiple b
 
 ### How does “Use Historical Data” backfill work?
 
-Use Historical Data backfills the entry condition to “prime” the Journey.  Future events and existing trait memberships will trigger all Journey conditions, except for entry.  As a result, event-based conditions will only evaluate events that occurred after you published the Journey.
+Use Historical Data backfills the entry condition to “prime” the Journey.  Future events and existing trait memberships trigger all Journey conditions, except for entry.  As a result, event-based conditions only evaluate events that occurred after you published the Journey.
 
 If you want to check for events that occurred before you published your Journey, base your conditions on computed traits instead.
 
