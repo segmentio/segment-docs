@@ -44,7 +44,7 @@ Segment supports translating `screen` or `page` to Nielsen as a Static App Measu
 | integration option | `segC`| Required (optional for web). Segment B.|
 | integration option | `crossId1` | Standard episode ID (mobile only)|
 
-* On web and mobile, you can map a custom property to `section` instead using the **Custom Page/Screen Section Property Name** setting. If this setting is left blank, Segment will fallback on the top-level `name`.
+\* On web and mobile, you can map a custom property to `section` using the **Custom Page/Screen Section Property Name** setting. If this setting is left blank, Segment will fallback on the top-level `name`.
 
 ## Track
 
