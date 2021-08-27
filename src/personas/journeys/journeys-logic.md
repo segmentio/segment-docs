@@ -15,7 +15,7 @@ By the end of this guide, you'll understand how and why users progress through y
 
 ## Entry Conditions and Step Behavior
 
-Journeys begin with an entry condition that computes like standard [Personas Audiences](docs/personas/audiences/). This entry condition queries your customer data in Segment to find users who meet your specified criteria.
+Journeys begin with an entry condition that computes like standard [Personas Audiences](/docs/personas/audiences/). This entry condition queries your customer data in Segment to find users who meet your specified criteria.
 
 After users meet the Journey's entry condition, their progress through the Journey depends on satisfying the criteria of subsequent Journey steps.
 
@@ -52,7 +52,7 @@ To evaluate whether a user has ever joined the previous step, Journeys appends t
 
 ### Condition Steps
 
-“Add a condition” steps operate like [Personas audiences](/docs/personas/audiences/). The defined conditions provide criteria for each step’s membership.
+“Add a condition” steps operate like [Personas Audiences](/docs/personas/audiences/). The defined conditions provide criteria for each step’s membership.
 
 ### Wait Times
 
@@ -80,7 +80,15 @@ Consider the following example of Journey conditions for a cart abandonment camp
 3. Step Condition: User is member of `Example Audience A`
 4. Send to Destination
 
-If a user makes a purchase during the wait time of 5 days, the system would update membership to `false` for the audience created from the entry condition. However, when evaluating Step Condition 3, the `preceding_step_audience_member` trait would remain on the user’s profile as true. As a result, the user would meet the step’s conditions and continue to progress through the Journey.
+If a user makes a purchase during the wait time of 5 days, the system would automatically update membership to `false` for the audience created from the entry condition, Step 1. However, the user could still satisfy Step Condition 3 based on the three step membership conditions:
+
+
+| Semantic Logic                                     | Written Logic Condition                               |
+|----------------------------------------------------|-------------------------------------------------------|
+| Has the user ever joined the previous step?        | True; `preceding_step_audience_member` remains true.  |
+| Does the user meet the specified step conditions?  | True; assuming user is member of `Example Audience A`. |
+| Has the user met preceding N wait time conditions? | True; once 5 days has passed from initial entry.      |
+
 
 To maintain best practices and enforce your funnel, re-check or modify audience conditions that follow wait steps.  For example, adding a `purchases = 0` condition to Step 3 results in Segment not advancing users who made a purchase during the wait time:
 
