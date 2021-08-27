@@ -22,122 +22,11 @@ To get started with Nielsen-DCR and Segment, you'll want to first integrate your
 
 ### iOS
 
-#### Install the SDK
-
-The recommended way to install Analytics for iOS is using Cocoapods, since it means you can create a build with specific destinations, and because it makes it simple to install and upgrade. Simply add the Analytics dependency to your Podfile, like so:
-
-```
-pod 'Analytics' '~> 3.0'
-pod 'Segment-Nielsen-DCR'
-```
-
-#### Add the Nielsen App SDK Framework
-The integration relies on the Nielsen App SDK framework, which can either be installed using CocoaPods or by manually adding the framework. You will need to have a Nielsen representative before getting started.
-
-##### CocoaPods
-
-When using the Nielsen SDK version 6.2.0.0 and above, Nielsen recommends installation using CocoaPods, and Apple recommends using the dynamic framework.
-
-Requirements for CocoaPods:
-
-Dynamic Framework - version 1.6.1 or higher
-Static Framework - version 1.4.0 or higher
-
-1. Set repository credentials
-The first step is to add the credentials received from Nielsen into your .netrc file. Navigate to your home folder and create a file called .netrc
-  ```
-  cd ~/
-  vi .netrc
-  ```
-
-  Add the credentials in the following format:
-  ```
-  machine raw.githubusercontent.com
-  login <Nielsen App SDK client>
-  password <Auth token>
-  ```
-
-  You will need to fill out a license agreement form and have the contact information for your Nielsen representative in order to obtain the credentials [here](https://engineeringportal.nielsen.com/docs/connections/special:Downloads)
-
-2. Add the source to your Podfile:
-
-  Dynamic Framework - `source 'https://github.com/NielsenDigitalSDK/nielsenappsdk-ios-specs-dynamic.git'`
-  Note - you will also need to include `use_frameworks!`
-
-  Static Framework - `source 'https://github.com/NielsenDigitalSDK/nielsenappsdk-ios-specs.git'`
-
-3. Add the pod to your Podfile:
-
-  `pod NielsenAppSDK`
-
-4. Install pods
-
-  `pod install`
-
-The full instructions from Nielsen can be found [here](https://engineeringportal.nielsen.com/docs/Digital_Measurement_iOS_Artifactory_Guide)
-
-##### Manual
-
-Navigate to the [Nielsen Downloads](https://engineeringportal.nielsen.com/docs/connections/special:Downloads) page to download the iOS SDK.
-You will need to fill out a license agreement form and have the contact information for your Nielsen representative ready.
-
-Once extracted, add the static NielsenAppApi.framework to the project and ensure it's in the `Frameworks` folder, and that it is linked.
-
-Nielsen also requires the following frameworks, which must be included into Link Binary with Libraries (within app target's Build Phases) - NOTE - if using the dynamic framework, these will dynamically be linked and there is no need to manually link these.
-  - AdSupport.framework
-  - SystemConfiguration.framework
-  - CoreLocation.framework (Not applicable for International (Germany))
-  - libsqlite3
+To install Nielsen DCR via Segment on iOS, please follow the instructions in the Segment-Nielsen-DCR repository [README](https://github.com/segment-integrations/analytics-ios-integration-nielsen-dcr/blob/master/README.md).
 
 ### Android
 
-#### Install the SDK
-
-The recommended way to install the library for Android is with a build system like Gradle. This makes it simple to upgrade versions and add destinations. The library is distributed using [Maven Central](https://search.maven.org/). Simply add the `analytics` module to your `build.gradle`:
-
-```javascript
-dependencies {
-  api 'com.segment.analytics.android:analytics:4.+'
-  api 'com.segment.analytics.android.integrations:nielsen-dcr:+'
-}
-```
-
-The NielsenDCRIntegration requires you to have Nielsen's SDK jar in your Gradle or Maven repository. You directly download the package from Nielsen or use Gradle as described [here](https://engineeringportal.nielsen.com/docs/DCR_Video_Android_SDK#How_to_obtain_the_NielsenAppApi).
-
-#### Manually Download the Nielsen App SDK
-
-You can manually download the framework and add it to your project.
-
-Import the project:
-
-![Import Project](images/import.png)
-
-Then navigate to the Project Structure, click on the framework and import the jar there:
-
-![Project Structure](images/projectstructure.png)
-
-  1. Be sure to put the jar into the `libs` folder
-  2. Right click it and hit 'Add as library'
-  3. Ensure that `compile files('appsdk/appsdk.jar')` is in your `build.gradle` file (or `compile fileTree(dir: 'libs', include: '*.jar')` if you are using many jar files)
-  4. Do a clean build (you can probably do this fine in Android Studio, but to make sure navigate in a terminal to the root folder of your app and type `./gradlew clean` (this command may be different for you).
-
-
-#### Initialize the Client
-
-We recommend initializing the client in your `Application` subclass. You must import the integration and register it with the Segment SDK.
-
-```javascript
-import com.segment.analytics.android.integrations.nielsendcr.NielsenDCRIntegration;
-
-// Create an analytics client with the given context and Segment write key.
-Analytics analytics = new Analytics.Builder(context, YOUR_WRITE_KEY)
-  .use(NielsenDCRIntegration.FACTORY)
-  .build();
-
-// Set the initialized instance as a globally accessible instance.
-Analytics.setSingletonInstance(analytics)
-
-```
+To install Nielsen DCR via Segment on Android, please follow the instructions in the Segment-Nielsen-DCR repository [README](https://github.com/segment-integrations/analytics-android-integration-nielsen-dcr/blob/master/README.md).
 
 ## Web
 
@@ -150,12 +39,12 @@ Segment supports translating `screen` or `page` to Nielsen as a Static App Measu
 | Segment Property Name | Nielsen | Nielsen Description |
 | --------| ---------- | ---------- |
 | `type`| `type`| Required. Segment hardcodes `'static'` |
-| `name` * | `section`| Required. Section of site|
+| `name`* | `section`| Required. Section of site|
 | integration option | `segB`| Required (optional for web). Segment A.|
 | integration option | `segC`| Required (optional for web). Segment B.|
 | integration option | `crossId1` | Standard episode ID (mobile only)|
 
-* _NOTE_: For web, we will use the following precedence: 1) `[category] [name]` 2) `[name]` 3) `'Loaded a Page'`
+* For web, you can map a custom property to `section` instead using the **Custom Page/Screen Section Property Name** setting. If this setting is left blank, Segment will fallback on the page top-level `name` then `Unknown`.
 
 ## Track
 
