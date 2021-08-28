@@ -99,7 +99,7 @@ To maintain best practices and enforce your funnel, re-check or modify audience 
 
 ### Send to Destination steps
 
-Because Journey members permanently remain in Destination sync stpes, Segment neither sends `Audience Exit` events to Destinations nor removes users from Destinations lists.  As a result, users cannot re-enter or loop within Journeys.
+Because Journey members permanently remain in Destination sync steps, Segment neither sends `Audience Exit` events to Destinations nor removes users from Destinations lists.  As a result, users cannot re-enter or loop within Journeys.
 
 
 ## FAQs
