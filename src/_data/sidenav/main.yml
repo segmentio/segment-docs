@@ -277,6 +277,8 @@ sections:
         title: Journeys Best Practices and FAQ
       - path: /personas/journeys/use-cases
         title: Example Journeys Use Cases
+      - path: /personas/journeys/journeys-logic
+        title: Understanding Journeys Logic
       - path: /personas/journeys/key-terms
         title: Journeys Glossary
   - path: /personas/using-personas-data
