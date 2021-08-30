@@ -30,7 +30,11 @@ Braze (Actions) Web provides the following benefits over Braze Classic:
 
 {% include components/actions-fields.html name="braze-web" connection="true" %}
 
-### In-app Messaging (Web)
+## Other features
+
+Braze (Actions) Web leverages the following features of Braze.
+
+### In-app Messaging
 
 Find instructions to configure In-app Messaging in the Braze [documentation](https://www.braze.com/academy/Best_Practices/#in-app-message-behavior){:target="_blank"}. Once configured, you can trigger in-app message display as a result of several different event types. By default, all In-App Messages that a user is eligible for are automatically delivered to the user upon a session start event. A new session automatically starts when a user loads your site. If you'd like to force a new session for a user, make an Identify call with the corresponding [userId](/docs/connections/spec/identify/#user-id) for that user.
 
@@ -58,7 +62,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
 
 
-### Push Notifications (Client)
+### Push Notifications
 
 1. To support push notifications on Chrome, you'll need to enable FCM/GCM as well as configure your site. Check out steps [one and two here, for detailed instructions on both](https://www.braze.com/documentation/Web/#step-1-to-support-chrome-enable-fcmgcm){:target="_blank"}.
 
@@ -159,7 +163,7 @@ For more details on this snippet, see Braze's documentation [here](https://www.b
 
 
 ## Important differences from the classic Braze destination
-- Braze (Actions) supports the [Web](https://github.com/segment-integrations/analytics.js-integration-appboy){:target="_blank"} integration. For other integrations, including iOS, Android, and Server, use the Braze Classic destination.
+- Braze Web Mode (Actions) supports the Braze [Web](https://github.com/segment-integrations/analytics.js-integration-appboy){:target="_blank"} integration. [Braze Cloud Mode (Actions)](/docs/connections/destinations/catalog/actions-braze-cloud) supports server and mobile sources, but to use mobile sources in device-mode, use the Braze Classic destination.
 
 
 ## Pre-built subscriptions
@@ -171,7 +175,7 @@ For more details on this snippet, see Braze's documentation [here](https://www.b
 | Identify Calls        | All calls where the Event Type is **Identify** or **Group**                                  | Update User Profile |
 
 
-## Available Braze Actions
+## Available Braze Web Mode Actions
 
 Build your own subscription. Combine the supported [triggers](/docs/connections/destinations/actions/#components-of-a-destination-action) with the following Braze-supported actions:
 - [Track Event](#track-event)

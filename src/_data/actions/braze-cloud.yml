@@ -6,20 +6,20 @@ config:
         - cloud
         - device-web
       configurable: true
-      location: Global Setting
-      notes: The setting is called App ID
+      location:
+      notes: This setting is renamed App ID. Find it on the Destination's Settings tab, or during initial configuration.
     - name: REST API Key
       connection_mode:
         - cloud
       configurable: false
-      location: Global Setting
-      notes: This setting is covered by the App ID
+      location: 
+      notes: This setting is not needed in Braze (Actions) Cloud. The authentication provided by this key has moved to the App ID setting.
     - name: Custom API Endpoint
       connection_mode:
         - device-web
       configurable: false
       location:
-      notes: This setting is available in Braze (Actions) Web
+      notes: This setting is not needed in Braze (Actions) Cloud. 
     - name: Appboy Datacenter
       connection_mode:
         - cloud
@@ -30,14 +30,14 @@ config:
       connection_mode: 
         - device-web
       configurable: true
-      location: Triggers
-      notes: Trigger the Log Purchase action only when the `revenue` property exists.
+      location:
+      notes: Modify the Trigger for the Track Purchase action to recreate this behavior in Braze (Actions). By default, events named "Order Completed" trigger this action, but you can update the Trigger to check for a property named `revenue`. The event must have a `products` array with `product_id` and `price`.
     - name: Custom REST API Endpoint
       connection_mode:
         - cloud
       configurable: true
-      location: Global Setting
-      notes: REST API Endpoint
+      location:
+      notes: Select from the available REST Endpoints during initial configuration, or on the Destination's Settings tab.
     - name: Safari Website Push ID
       connection_mode:
         - device-web
@@ -141,12 +141,12 @@ config:
       configurable: false
       location: Available as a setting in Braze (Actions) Web
       notes: ""
-    - name: Update Existing Users Only
-      connection_mode:
-        - cloud
-      configurable: true
-      location: ""
-      notes: ""
+    # - name: Update Existing Users Only
+    #   connection_mode:
+    #     - cloud
+    #   configurable: true
+    #   location: ""
+    #   notes: ""
 actions:
   - action: Track Event
     blurb: Track Event sends Braze a Track Event call when the destination receives a Track event that **is not** named `Order Completed`.
@@ -280,6 +280,8 @@ actions:
     - name: Update Existing Only
       description: Set this flag to true to put the API in "Update Only" mode. 
       default: true
-  - action: Debounce Middleware
-    blurb: When enabled, this action ensure that only events where at least one updated trait value are sent to Braze. Events with duplicate traits are not sent.
+  - action: Identify Debounce
+    blurb: >
+      When enabled for Javascript sources, this action ensure that only Identify calls where at least one updated trait value are sent to Braze. Events with duplicate traits are not sent.
+      To use Identify Debounce with mobile sources, include Segment's open-source [Middleware tool](https://github.com/segmentio/segment-braze-mobile-middleware){:target="_blank"}.
     fields:

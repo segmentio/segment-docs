@@ -18,32 +18,29 @@ hidden: true
 
 ## Benefits of Braze (Actions) Cloud vs Braze Classic
 
-Braze (Actions) Cloud provides the following benefits over Braze Classic:
+Braze (Actions) Cloud provides the following benefit over Braze Classic:
 
-- **E-commerce mappings**. Users who can't follow the e-commerce spec due to incompatible event names (for example, Trip Booked vs Order Completed) can log purchases in Braze (Actions) Cloud.
+- **E-commerce mappings**. Segment implementations that don't follow the e-commerce spec due to incompatible event names (for example, Trip Booked vs Order Completed) can use Event Triggers to log purchases in Braze (Actions) Cloud.
 
 ## Getting Started
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Braze" in the Catalog, select **Braze (Actions) Cloud**, and choose which of your sources to connect the destination to.
 3. Add the following Connection Settings:
-   - **API Key**: Find in the Braze Dashboard in App Settings > Manage App Group.
-   - **App ID**: Find in the Braze Dashboard in App Settings > Manage App Group.
-   - **REST Endpoint**: Enter the value that maps to your Braze instance. For more information, see [API Overview](https://www.braze.com/docs/api/basics/){:target="_blank"} in the Braze documentation.
+   - **API Key**: Created under Developer Console in the Braze Dashboard.
+   - **App ID**: The app identifier used to reference specific Apps in requests made to the Braze API. Created under Developer Console in the Braze Dashboard.
+   - **REST Endpoint**: Your Braze REST Endpoint. For more information, see [API Overview](https://www.braze.com/docs/api/basics/){:target="_blank"} in the Braze documentation.
 
 
-## Important differences from the classic Braze destination
-- Braze (Actions) supports the [Web](https://github.com/segment-integrations/analytics.js-integration-appboy){:target="_blank"} integration. For other integrations, including iOS, Android, and Server, use the Braze Classic destination.
 
-{% comment %}
 ## Pre-built subscriptions
 
-| Subscription Name | Trigger                                                                                      | Braze Action        | Non-default mapped fields |
-| ----------------- | -------------------------------------------------------------------------------------------- | ------------------- | ------------------------- |
-| Track Event       | All **track** calls from the connected source, where the Event Name is not "Order Completed" | Track Event         |                           |
-| Track Purchase    | All **track** calls from the connected source, where the Event Name is "Order Completed"     | Track Purchase      |                           |
-| Identify Calls    | All **identify** calls from the connected source                                             | Update User Profile |                           |
-{% endcomment %}
+| Subscription Name     | Trigger                                                                                      | Braze Web Action    |
+| --------------------- | -------------------------------------------------------------------------------------------- | ------------------- |
+| Track Calls           | All **track** calls from the connected source, where the Event Name is not "Order Completed" | Track Event         |
+| Order Completed Calls | All **track** calls from the connected source, where the Event Name is "Order Completed"     | Track Purchase      |
+| Identify Calls        | All calls where the Event Type is **Identify** or **Group**                                  | Update User Profile |
+
 
 ## Available Braze Actions
 
@@ -51,7 +48,7 @@ Build your own subscription. Combine the supported [triggers](/docs/connections/
 - [Track Event](#track-event)
 - [Track Purchase](#track-event)
 - [Update User Profile](#update-user-profile)
-- [Debounce Middleware](#debounce-middleware)
+- [Identify Debounce](#debounce-middleware)
 
 {% include components/actions-fields.html name="braze-cloud" %}
 

@@ -331,6 +331,8 @@ actions:
     - name: Update Existing Only
       description: Set this flag to true to put the API in "Update Only" mode. 
       default: true
-  - action: Debounce Middleware
-    blurb: When enabled, this action ensure that only events where at least one updated trait value are sent to Braze. Events with duplicate traits are not sent.
+  - action: Identify Debounce
+    blurb: >
+      When enabled for Javascript sources, this action ensure that only Identify calls where at least one updated trait value are sent to Braze. Events with duplicate traits are not sent.
+      To use Identify Debounce with mobile sources, include Segment's open-source [Middleware tool](https://github.com/segmentio/segment-braze-mobile-middleware){:target="_blank"}.
     fields:
