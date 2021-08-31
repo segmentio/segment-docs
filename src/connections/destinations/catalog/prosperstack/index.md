@@ -30,7 +30,7 @@ To add additional sources, click **Connect a source**.
 2. Search for "ProsperStack" in the Destinations Catalog, and select the **ProsperStack** destination.
 3. Click **Configure ProsperStack** and choose the source you want to connect the destination to. 
 4. Create a new API key from the [ProsperStack API keys settings screen](https://app.prosperstack.com/settings/api-keys){:target="\_blank"}.
-5. Enter the "API Key" in the "ProsperStack" destination settings in Segment.
+5. Enter the **API Key** in the ProsperStack destination **Settings** tab in Segment.
 
 ## Supported methods
 
