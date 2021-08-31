@@ -5,7 +5,7 @@ settings:
       description: Enable to allow Braze to log activity from crawlers.
       default: "off"
     - name: Allow User Supplied Javascript
-      description: Enable to indicate that you trust the Braze dashboard users to write non-malicious Javascript click actions, set this property to true. If enableHtmlInAppMessages is true, this option will also be set to true.
+      description: Enable to indicate that you trust the Braze dashboard users to write non-malicious Javascript click actions, set this property to true.
       default: "off"
     - name: API Key (required)
       description: Enter the API Key to identify your application to Braze.
@@ -15,9 +15,6 @@ settings:
       default: 
     - name: Content Security Nonce
       description: "Enter a value that Braze will add to any `script` and `style` elements that the SDK creates."
-      default: 
-    - name: Device Property Allow List
-      description: Enter an array of DeviceProperties to override the automatically detected and collected DeviceProperties.
       default: 
     - name: Disable Push Token Maintenance
       description: Enable to allow users who have already granted web push permission will to their push token with the Braze backend automatically on new session to ensure deliverability. 
@@ -132,8 +129,8 @@ config:
       connection_mode:
         - device-web
       configurable: false
-      location: Available as a setting in Braze (Actions) Web
-      notes: ""
+      location: 
+      notes: Deprecated
     - name: Open In-App Messages in New Tab
       connection_mode:
         - device-web

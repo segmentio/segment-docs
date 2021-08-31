@@ -5,21 +5,21 @@ config:
       connection_mode:
         - cloud
         - device-web
-      configurable: true
+      configurable: false
       location:
-      notes: This setting is renamed App ID. Find it on the Destination's Settings tab, or during initial configuration.
+      notes: This setting is not necessary in Braze Web Mode (Actions).
     - name: REST API Key
       connection_mode:
         - cloud
-      configurable: false
+      configurable: true
       location: 
-      notes: This setting is not needed in Braze (Actions) Cloud. The authentication provided by this key has moved to the App ID setting.
+      notes: This setting is renamed API Key, and is available during initial configuration, or on the Settings tab after configuration.
     - name: Custom API Endpoint
       connection_mode:
         - device-web
       configurable: false
       location:
-      notes: This setting is not needed in Braze (Actions) Cloud. 
+      notes: This setting is not needed in Braze (Actions) Web. 
     - name: Appboy Datacenter
       connection_mode:
         - cloud
