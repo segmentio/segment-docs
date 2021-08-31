@@ -37,31 +37,35 @@ The table below lists events that Regal Voice sends to Segment. These events app
    <td>contact.unsubscribed</td>
    <td>A contact was unsubscribed from a marketing channel</td>
   </tr>
-    <tr>
+  <tr>
    <td>sms.queued</td>
    <td>An sms was queued to be sent from RegalVoice to contact</td>
   </tr>
-    <tr>
+  <tr>
    <td>sms.sent</td>
    <td>An sms was sent from RegalVoice to contact</td>
   </tr>
-    <tr>
+  <tr>
    <td>sms.undelivered</td>
    <td>An sms was undelivered from RegalVoice to contact</td>
   </tr>
-    <tr>
+  <tr>
    <td>sms.received</td>
    <td>An sms was received from a contact</td>
   </tr>
-    <tr>
+  <tr>
    <td>task.created</td>
    <td>A call or sms task was created</td>
   </tr>
-    <tr>
-   <td>sms.conversation_completed</td>
-   <td>An SMS conversation between a contact and an agent was completed in the Regal Voice agent desktop</td>
+  <tr>
+    <td>task.canceled</td>
+    <td>A call or sms task was canceled</td>
   </tr>
-    <tr>
+  <tr>
+   <td>sms.conversation.completed</td>
+   <td>An SMS conversation between a contact and an agent was completed in the Regal Voice agent desktop<td>
+  </tr>
+  <tr>
    <td>call.completed</td>
    <td>An inbound or outbound call with a contact was completed. This includes calls that were not answered</td>
   </tr>
@@ -89,6 +93,18 @@ The table below lists events that Regal Voice sends to Segment. These events app
   <tr>
    <td>`campaign_name`</td>
    <td>Campaign Name</td>
+  </tr>
+  <tr>
+    <td>`cancelation_reason`</td>
+    <td>Reason the task was canceled</td>
+  </tr>
+  <tr>
+    <td>`cancelation_source`</td>
+    <td>Source of where the task was canceled</td>
+  </tr>
+  <tr>
+    <td>`canceled_by`</td>
+    <td>Includes the email of the user who canceled the task, if applicable</td>
   </tr>
   <tr>
    <td>`channel`</td>
