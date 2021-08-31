@@ -38,6 +38,10 @@ The table below lists events that Regal Voice sends to Segment. These events app
    <td>A contact was unsubscribed from a marketing channel</td>
   </tr>
   <tr>
+    <td>contact.attribute_edited</td>
+    <td>A contact's attributes were edited by an agent<td>
+  </tr>
+  <tr>
    <td>sms.queued</td>
    <td>An sms was queued to be sent from RegalVoice to contact</td>
   </tr>
@@ -79,6 +83,10 @@ The table below lists events that Regal Voice sends to Segment. These events app
    <td>Description</td>
   </tr>
   <tr>
+   <td>`agent_email`</td>
+   <td>Email of the agent who took an action</td>
+  </tr>
+  <tr>
    <td>`call_id`</td>
    <td>Task Id for the call</td>
   </tr>
@@ -105,6 +113,10 @@ The table below lists events that Regal Voice sends to Segment. These events app
   <tr>
     <td>`canceled_by`</td>
     <td>Includes the email of the user who canceled the task, if applicable</td>
+  </tr>
+  <tr>
+   <td>`changes`</td>
+   <td>Changes made for the contact.attribute_edited event</td>
   </tr>
   <tr>
    <td>`channel`</td>
