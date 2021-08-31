@@ -17,7 +17,7 @@ ProsperStack maintains this destination. For any issues with the ProsperStack De
 ### Automated setup
 
 1. Log in to the [ProsperStack dashboard](https://app.prosperstack.com){:target="\_blank"}.
-2. Navigate to **Settings** → **Manage integrations**.
+2. Navigate to **Settings** > **Manage integrations**.
 3. Click **Configure** in the Segment integration section.
 4. Click **Connect Segment**.
 5. Select a Segment workspace and source to send to the ProsperStack Destination.
