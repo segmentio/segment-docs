@@ -299,7 +299,7 @@ analytics.track({
   event: 'Membership Upgraded',
   userId: '97234974',
   integrations: {
-    "Facebook Conversions": {
+    "Facebook Conversions API": {
       "dataProcessingOptions": [[], 1,1000]
     }
   }
