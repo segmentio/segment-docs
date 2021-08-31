@@ -6,7 +6,7 @@ import insightsClient from 'search-insights';
 
 
 const appId = 'UINQ2M4D9S';
-const apiKey = '636b6d9e2dfb207e89ea7344859848f9';
+const apiKey = '3ecd0f228971adf2d5a4217789ae1765';
 const searchClient = algoliasearch(appId, apiKey);
 
 //insights
