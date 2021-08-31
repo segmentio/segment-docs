@@ -1,5 +1,5 @@
 ---
-title: Braze (Actions) Web Destination
+title: Braze Web Mode (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
 hidden: true
@@ -16,23 +16,23 @@ hidden: true
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Braze Segment destination. There's also a page about the [non-Actions Braze destination](/docs/connections/destinations/catalog/braze/). Both of these destinations receives data _from_ Segment. There's also the [Braze source](/docs/connections/sources/catalog/cloud-apps/braze/), which sends data _to_ Segment.
 
-## Benefits of Braze (Actions) Web vs Braze Classic
+## Benefits of Braze Web Mode (Actions) vs Braze Classic
 
-Braze (Actions) Web provides the following benefits over Braze Classic:
+Braze Web Mode (Actions) provides the following benefits over Braze Classic:
 
-- **E-commerce mappings**. Users who can't follow the e-commerce spec due to incompatible event names (for example, Trip Booked vs Order Completed) can log purchases in Braze (Actions) Web.
+- **E-commerce mappings**. Users who can't follow the e-commerce spec due to incompatible event names (for example, Trip Booked vs Order Completed) can log purchases in Braze Web Mode (Actions).
 
 ## Getting Started
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Braze" in the Catalog, select **Braze (Actions) Web**, and choose which of your sources to connect the destination to.
+2. Search for "Braze" in the Catalog, select **Braze Web Mode (Actions)**, and choose which of your sources to connect the destination to.
 3. Configure the Connection Settings. **API Key** and **SDK Endpoint** are required settings.
 
 {% include components/actions-fields.html name="braze-web" connection="true" %}
 
 ## Other features
 
-Braze (Actions) Web leverages the following features of Braze.
+Braze Web Mode (Actions) can use the following features of Braze.
 
 ### In-app Messaging
 
