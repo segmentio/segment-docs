@@ -8,7 +8,7 @@ beta: true
 
 ProsperStack maintains this destination. For any issues with the ProsperStack Destination, [contact the ProsperStack Support team](mailto:support@prosperstack.com).
 
-> The ProsperStack Destination is currently in beta, which means that they are still actively developing the destination. To join their beta program, or if you have any feedback to help improve the ProsperStack Destination and its documentation, [contact the ProsperStack support team](mailto:support@prosperstack.com)!
+> The ProsperStack Destination is currently in beta, and is actively developing.  To join the beta program, or if you have any feedback to help improve the ProsperStack Destination and its documentation, [contact the ProsperStack support team](mailto:support@prosperstack.com).
 
 ## Getting Started
 
