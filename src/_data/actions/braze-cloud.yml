@@ -19,7 +19,7 @@ config:
         - device-web
       configurable: false
       location:
-      notes: This setting is not needed in Braze (Actions) Web. 
+      notes: This setting is not needed in Braze Web Mode (Actions). 
     - name: Appboy Datacenter
       connection_mode:
         - cloud
@@ -42,7 +42,7 @@ config:
       connection_mode:
         - device-web
       configurable: false
-      location: Available as a setting in Braze (Actions) Web
+      location: Available as a setting in Braze Web Mode (Actions)
       notes:
     - name: Braze Web SDK Version
       connection_mode:
@@ -69,25 +69,25 @@ config:
       connection_mode:
         - device-web
       configurable: false
-      location: Available as a setting in Braze (Actions) Web
+      location: Available as a setting in Braze Web Mode (Actions)
       notes: ""
     - name: Do Not Load Font Awesome
       connection_mode:
         - device-web
       configurable: false
-      location: Available as a setting in Braze (Actions) Web
+      location: Available as a setting in Braze Web Mode (Actions)
       notes: ""
     - name: Enable HTML In-App Messages
       connection_mode:
         - device-web
       configurable: false
-      location: Available as a setting in Braze (Actions) Web
+      location: Available as a setting in Braze Web Mode (Actions)
       notes: ""
     - name: Open In-App Messages in New Tab
       connection_mode:
         - device-web
       configurable: false
-      location: Available as a setting in Braze (Actions) Web
+      location: Available as a setting in Braze Web Mode (Actions)
       notes: ""
   - category: Page
     settings:
@@ -109,37 +109,37 @@ config:
       connection_mode:
         - device-web
       configurable: false
-      location: Available as a setting in Braze (Actions) Web
+      location: Available as a setting in Braze Web Mode (Actions)
       notes: ""
     - name: Enable Logging
       connection_mode:
         - device-web
       configurable: false
-      location: Available as a setting in Braze (Actions) Web
+      location: Available as a setting in Braze Web Mode (Actions)
       notes: ""
     - name: Minimum Interval Between Trigger Actions in Seconds
       connection_mode:
         - device-web
       configurable: false
-      location: Available as a setting in Braze (Actions) Web
+      location: Available as a setting in Braze Web Mode (Actions)
       notes: ""
     - name: Only Track Known Users
       connection_mode:
         - device-web
       configurable: false
-      location: Available as a setting in Braze (Actions) Web
+      location: Available as a setting in Braze Web Mode (Actions)
       notes: ""
     - name: Open News Feed Cards in New Tab
       connection_mode:
         - device-web
       configurable: false
-      location: Available as a setting in Braze (Actions) Web
+      location: Available as a setting in Braze Web Mode (Actions)
       notes: ""
     - name: Session Timeout in Seconds
       connection_mode:
         - device-web
       configurable: false
-      location: Available as a setting in Braze (Actions) Web
+      location: Available as a setting in Braze Web Mode (Actions)
       notes: ""
     # - name: Update Existing Users Only
     #   connection_mode:

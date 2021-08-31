@@ -59,45 +59,45 @@ config:
     - name: REST API Key
       connection_mode:
         - cloud
-      configurable: false
-      location: Global Setting
-      notes: This setting is covered by the App ID
+      configurable: true
+      location:
+      notes: This setting is renamed **API Key** in the Braze Web Mode (Actions) Connection Settings.
     - name: Custom API Endpoint
       connection_mode:
         - device-web
       configurable: false
       location:
-      notes: This setting is available in Braze (Actions) Web
+      notes:
     - name: Appboy Datacenter
       connection_mode:
         - cloud
-      configurable: false
+      configurable: true
       location: ""
-      notes: This setting is covered by the REST API Endpoint
+      notes: This setting is covered by the SDK Endpoint in Braze Web Mode (Actions) Connection Settings.
     - name: Log Purchase when Revenue is present
       connection_mode: 
         - device-web
       configurable: true
-      location: Triggers
-      notes: Trigger the Log Purchase action only when the `revenue` property exists.
+      location:
+      notes: Modify the Trigger for the Track Purchase action to recreate this behavior in Braze (Actions). By default, events named "Order Completed" trigger this action, but you can update the Trigger to check for a property named `revenue`. The event must have a `products` array with `product_id` and `price`.
     - name: Custom REST API Endpoint
       connection_mode:
         - cloud
-      configurable: true
+      configurable: false
       location: Global Setting
       notes: REST API Endpoint
     - name: Safari Website Push ID
       connection_mode:
         - device-web
-      configurable: false
-      location: Available as a setting in Braze (Actions) Web
-      notes:
+      configurable: true
+      location: 
+      notes: This setting is available in the Braze Web Mode (Actions) Connection Settings.
     - name: Braze Web SDK Version
       connection_mode:
         - device-web
-      configurable: false
+      configurable: true
       location: ""
-      notes: Hardcoded to version \#.##
+      notes: Available in the **SDK Version** Connection Setting. Defaults to version 3.3.
     - name: Connection Mode
       connection_mode:
         - cloud
@@ -117,84 +117,84 @@ config:
       connection_mode:
         - device-web
       configurable: false
-      location: Available as a setting in Braze (Actions) Web
+      location: Available as a setting in Braze Web Mode (Actions)
       notes: ""
     - name: Do Not Load Font Awesome
       connection_mode:
         - device-web
-      configurable: false
-      location: Available as a setting in Braze (Actions) Web
-      notes: ""
-    - name: Enable HTML In-App Messages
-      connection_mode:
-        - device-web
-      configurable: false
+      configurable: true
       location: 
-      notes: Deprecated
+      notes: Available in the Braze Web Mode (Actions) Connection Settings.
     - name: Open In-App Messages in New Tab
       connection_mode:
         - device-web
-      configurable: false
-      location: Available as a setting in Braze (Actions) Web
-      notes: ""
+      configurable: true
+      location:
+      notes: Available in the Braze Web Mode (Actions) Connection Settings.
   - category: Page
     settings:
     - name: Track All Pages
       connection_mode:
         - device-web
       configurable: true
-      location: Track Custom Event action
-      notes: Trigger the action on Page calls.
+      location: 
+      notes: Create a **Track Event** subscription and update the Event Trigger to specify `Event Type is Page` and `Event Property 'name' exists`. Update the Event Name field for the Track Event action to "Viewed Page {name}". Use the Event Variables selector to select the `name` variable.
     - name: Track Only Named Pages
       connection_mode:
         - device-web
       configurable: true
-      location: Track Custom Event action
-      notes: Trigger the action on Page calls where the `name` property exists.
+      location: 
+      notes: Create a **Track Event** subscription and update the Event Trigger to specify `Event Type is Page` and. Update the Event Name field for the Track Event action to "Viewed Page {name}". Use the Event Variables selector to select the `name` variable.
   - category: Other Settings
     settings:
     - name: Allow Crawler Activity
       connection_mode:
         - device-web
-      configurable: false
-      location: Available as a setting in Braze (Actions) Web
-      notes: ""
+      configurable: true
+      location:
+      notes: Available in the Braze Web Mode (Actions) Connection Settings.
     - name: Enable Logging
       connection_mode:
         - device-web
-      configurable: false
-      location: Available as a setting in Braze (Actions) Web
-      notes: ""
+      configurable: true
+      location:
+      notes: Available in the Braze Web Mode (Actions) Connection Settings.
     - name: Minimum Interval Between Trigger Actions in Seconds
       connection_mode:
         - device-web
-      configurable: false
-      location: Available as a setting in Braze (Actions) Web
-      notes: ""
+      configurable: true
+      location:
+      notes: Available in the Braze Web Mode (Actions) Connection Settings.
     - name: Only Track Known Users
       connection_mode:
         - device-web
       configurable: false
-      location: Available as a setting in Braze (Actions) Web
+      location: Available as a setting in Braze Web Mode (Actions)
       notes: ""
     - name: Open News Feed Cards in New Tab
       connection_mode:
         - device-web
-      configurable: false
-      location: Available as a setting in Braze (Actions) Web
-      notes: ""
+      configurable: true
+      location: 
+      notes: Available in the Braze Web Mode (Actions) Connection Settings.
+    - name: Service Worker Location
+      connection_mode:
+        - device-web
+      configurable: true
+      location: ""
+      notes: Available in the Braze Web Mode (Actions) Connection Settings.
     - name: Session Timeout in Seconds
       connection_mode:
         - device-web
-      configurable: false
-      location: Available as a setting in Braze (Actions) Web
-      notes: ""
-    - name: Update Existing Users Only
-      connection_mode:
-        - cloud
       configurable: true
-      location: ""
-      notes: ""
+      location: 
+      notes: Available in the Braze Web Mode (Actions) Connection Settings.
+    # - name: Update Existing Users Only
+    #   connection_mode:
+    #     - cloud
+    #   configurable: true
+    #   location: ""
+    #   notes: ""
 actions:
   - action: Track Event
     blurb: Track Event sends Braze a Track Event call when the destination receives a Track event that **is not** named `Order Completed`.

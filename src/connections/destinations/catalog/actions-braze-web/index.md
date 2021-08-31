@@ -40,23 +40,21 @@ Find instructions to configure In-app Messaging in the Braze [documentation](htt
 
 If you don't want your site to display new In-App Messages as they're received, disable automatic display and register your own display subscribers. To do this:
 
-1. Disable the [Automatically Send In-App Messages Destinations setting](/docs/connections/destinations/catalog/braze/#settings).
+Create your subscriber by calling:
 
-2. Create your subscriber by calling:
+```js
+analytics.ready(function() {
+  window.appboy.subscribeToNewInAppMessages(function(inAppMessages) {
+      // Display the first in-app message. You could defer display here by pushing this message to code      within in your own application.
+      // If you don't want to use Appboy's built-in display capabilities, you could alternatively pass      the in-app message to your own display code here.
+      window.appboy.display.showInAppMessage(inAppMessages[0]);
 
-    ```js
-    analytics.ready(function() {
-      window.appboy.subscribeToNewInAppMessages(function(inAppMessages) {
-         // Display the first in-app message. You could defer display here by pushing this message to code      within in your own application.
-         // If you don't want to use Appboy's built-in display capabilities, you could alternatively pass      the in-app message to your own display code here.
-         window.appboy.display.showInAppMessage(inAppMessages[0]);
-
-        // Return an array with any remaining, unhandled messages to appboy's internal queue.
-        // These will be part of the inAppMessages param the next time this subscriber is invoked.
-         return inAppMessages.slice(1);
-       });
+    // Return an array with any remaining, unhandled messages to appboy's internal queue.
+    // These will be part of the inAppMessages param the next time this subscriber is invoked.
+      return inAppMessages.slice(1);
     });
-    ```
+});
+```
 
 The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](https://js.appboycdn.com/web-sdk/latest/doc/ab.InAppMessage.html){:target="_blank"} subclass or [`appboy.ab.ControlMessage`](https://js.appboycdn.com/web-sdk/latest/doc/ab.ControlMessage.html){:target="_blank"} objects, each of which has various lifecycle event subscription methods.
 
@@ -106,9 +104,7 @@ analytics.ready(function() {
 
 1. Follow [step one](https://www.braze.com/documentation/Web/#soft-push-prompts){:target="_blank"} to create a "Prime for Push" in-app messaging Campaign on the Braze dashboard.
 
-2. Disable your [Automatically Send In-App Messages Destination setting](/docs/connections/destinations/catalog/braze/#settings).
-
-3. Add the following snippet to your site:
+2. Add the following snippet to your site:
 
 ```js
 analytics.ready(function() {
