@@ -26,7 +26,7 @@ To add additional sources, click **Connect a source**.
 
 ### Manual setup
 
-1. From the Destinations catalog page in the Segment App, click **Add Destination**.
+1. In the Segment app, go to **Connections** and click **Add Destination**.
 2. Search for "ProsperStack" in the Destinations Catalog, and select the "ProsperStack" destination.
 3. Choose which Source should send data to the "ProsperStack" destination.
 4. Create a new API key from the [ProsperStack API keys settings screen](https://app.prosperstack.com/settings/api-keys){:target="\_blank"}.
