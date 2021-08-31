@@ -16,9 +16,9 @@ You can also choose which event types, event names, or event property values tri
 Each Actions-framework Destination you see in the Segment catalog represents a feature or capability of the destination which can consume data from your Segment source. The Action clearly lists which data from the events it requires, and which data is optional. For example, Amplitude requires that you always send a  `LogEvent` , or Slack always requires a `PostMessage`.  Each Action also includes a default mapping which you can modify.
 
 ## Available Actions-based Destinations
-- [Amplitude (Actions)](/docs/connections/destination/catalog/actions-amplitude)
-- [Braze (Actions) Web](/docs/connections/destination/catalog/actions-braze-web)
-- [Braze (Actions) Cloud](/docs/connections/destination/catalog/actions-braze-cloud)
+- [Amplitude (Actions)](/docs/connections/destinations/catalog/actions-amplitude)
+- [Braze (Actions) Web](/docs/connections/destinations/catalog/actions-braze-web)
+- [Braze (Actions) Cloud](/docs/connections/destinations/catalog/actions-braze-cloud)
 
 ## Destination Actions compatibility
 
