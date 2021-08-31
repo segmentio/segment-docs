@@ -25,6 +25,7 @@ Add the following to your PHP script to actually load the Segment analytics libr
 
 ```php
 require_once("/path/to/analytics-php/lib/Segment.php");
+use Segment\Segment;
 ```
 
 Now, you're ready to actually initialize the module. In our examples, we first rename this module to be `Analytics` for convenience. In your initialization script, go ahead and make the following call:
