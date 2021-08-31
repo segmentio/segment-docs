@@ -137,7 +137,7 @@ Next, add a CNAME record to your DNS settings. Go to your domain registrar and a
   </tr>
 </table>
 
-Save your record. This might take some time to take effect, depending on your TTL settings. Try `curl`ing your domain to check if it is proxying correctly.
+Save your record. This might take some time to take effect, depending on your TTL settings. Make a `curl` request to your domain to verify that it's proxying correctly.
 
 ### Tracking API Proxy
 
