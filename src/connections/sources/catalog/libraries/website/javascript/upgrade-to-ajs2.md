@@ -24,7 +24,7 @@ Analytics.js sources will upgrade to Analytics.js 2.0 on the date below, accordi
 |--------------| -------------|
 | Free         | June 15, 2021|
 | Team         | July 6, 2021 | 
-| Business     | Q3, 2021     |
+| Business     | Q4, 2021     |
 
 > info ""
 > The plans and dates listed above are subject to change.
