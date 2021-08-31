@@ -54,6 +54,6 @@ analytics.identify("userId123", {
 
 Segment sends Identify calls to ProsperStack as an `identify` event.
 
-Custom traits specified in an Identify call will update [custom properties](https://prosperstack.com/docs/custom-properties/){:target="\_blank"} for a corresponding subscriber in ProsperStack. An `email` must be specified in an Identify call in order for a ProsperStack subscriber to be matched with the Identify call.
+Custom traits specified in an Identify call update [custom properties](https://prosperstack.com/docs/custom-properties/){:target="\_blank"} for a corresponding subscriber in ProsperStack. You must specify an `email` in an Identify call in order for a ProsperStack subscriber to match with the Identify call. 
 
 Custom properties in ProsperStack that match the exact key of a trait will be updated automatically, otherwise additional trait mappings can be configured in the [ProsperStack configuration dashboard](https://app.prosperstack.com/settings/integrations/segment){:target="\_blank"}.
