@@ -22,7 +22,7 @@ ProsperStack maintains this destination. For any issues with the ProsperStack De
 4. Click **Connect Segment**.
 5. Select a Segment workspace and source to send to the ProsperStack Destination.
 
-To add additional sources, click the **Connect a source** link.
+To add additional sources, click **Connect a source**.
 
 ### Manual setup
 
