@@ -1,0 +1,66 @@
+{% assign conn = include.connection %}
+{% assign thisDest = include.name %}
+{% assign connSettings = site.data.actions.[thisDest].settings %}
+{% assign mapping = site.data.actions.[thisDest].actions %}
+
+
+
+{% if conn == "true" %}
+{% for category in connSettings %}
+<h3>{{category.category}}</h3>
+
+<p class="button button-fill button-fill--white" data-toggle="collapse" data-target=".settings-content-{{category.category | slugify}}">Click to expand fields</p>
+<div class="collapse settings-content-{{category.category | slugify}}">
+<table id="settingsTable">
+  <thead>
+    <tr>
+      <th>Setting</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for setting in category.settings %}
+<tr>
+<td>{{setting.name}}</td>
+<td>{% if setting.default %}Default <code>{{setting.default}}</code><br />{%endif%}{{setting.description | markdownify}}</td>
+</tr>
+{%endfor%}
+</tbody>
+</table>
+</div>
+{% endfor %}
+{% else %}
+
+{% for action in mapping %}
+### {{action.action}}
+{{action.blurb | markdownify}}
+
+
+{% if action.fields %}
+<p class="button button-fill button-fill--white" data-toggle="collapse" data-target=".settings-content-{{action.action | slugify}}">Click to expand fields</p>
+<div class="collapse settings-content-{{action.action | slugify}}">
+<table id="settingsTable">
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for field in action.fields %}
+<tr>
+<td>{{field.name}}</td>
+<td>{% if field.default %}Default <code>{{field.default}}</code><br />{%endif%}{{field.description}}</td>
+</tr>
+{%endfor%}
+</tbody>
+</table>
+</div>
+
+{% else %}
+This action does not have any fields.
+{% endif %}
+
+{% endfor %}
+
+{% endif %}
