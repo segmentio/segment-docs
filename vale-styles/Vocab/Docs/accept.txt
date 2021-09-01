@@ -12,6 +12,7 @@ https
 Javadoc
 Javadocs
 Javascript
+Kameleoon
 Kissmetrics
 Littledata
 Middleware
@@ -50,4 +51,4 @@ gmail
 (?:U|u)nmaps?\b
 (?:U|u)nlinks?\b
 (?:P|p)ostgres
-
+Smartly
