@@ -56,7 +56,9 @@ Calling `flush` will clear the offline cache with comScore's `flushOfflineCache`
 
 ## User Consent
 
-To communicate user consent, Comscore requires customers add a label called `cs_ucfr` to events. Segment supports setting the `cs_ucfr` label on web only. Using the **Comscore User Consent Label** setting, input the custom field you would like to map to `cs_ucfr`. Segment will map values to comScore's `cs_ucfr` label as outlined below:
+To communicate user consent, Comscore requires customers add a label called `cs_ucfr` to events. Segment supports setting the `cs_ucfr` label on web only. Using the **Comscore User Consent Label** setting, input the custom field you would like to map to `cs_ucfr`. The custom field mapped to `cs_ucfr` should be present on **all** page calls as per comScore's requirements. 
+
+Segment will map values to comScore's `cs_ucfr` label as outlined below:
 
 | Custom Field Value | `cs_ucfr` Value |
 | ------------ | ------------ |
@@ -66,9 +68,10 @@ To communicate user consent, Comscore requires customers add a label called `cs_
 | `true` | `1` |
 | If third character in the [US Privacy String](https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md) is `Y` | `0` |
 | If third character in the [US Privacy String](https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md) is `N` | `1` |
+| If third character in the [US Privacy String](https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md) is `-` | Not included |
 | Any other string value | "" (empty string) |
 
-The custom field mapped to `cs_ucfr` should be present on **all** page calls as per comScore's requirements.
+`cs_ucfr` will be omitted in all other cases. 
 
 ## Video Streaming
 
