@@ -2,6 +2,7 @@
 title: Analytics for iOS
 strat: ios
 repo: analytics-ios
+redirect_from: '/connections/sources/catalog/cloud-apps/swift/'
 ---
 
 
