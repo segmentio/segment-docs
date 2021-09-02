@@ -1,5 +1,4 @@
 ---
-rewrite: true
 title: AB Smartly Destination
 ---
 
