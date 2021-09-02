@@ -51,4 +51,4 @@ gmail
 (?:U|u)nmaps?\b
 (?:U|u)nlinks?\b
 (?:P|p)ostgres
-
+Smartly

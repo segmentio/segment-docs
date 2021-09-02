@@ -16,7 +16,7 @@ This destination is maintained by Xtremepush. For any issues with the destinatio
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Xtremepush" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your Xtremepush Project under *Settings > Integrations* as described in the [user guide](https://support.xtremepush.com/hc/en-us/articles/360001351637-Generating-API-Tokens).
+3. Enter the "API Key" into your Segment Settings UI which you can find from your Xtremepush Project under *Settings > Integrations* as described in the [user guide](https://docs.xtremepush.com/docs/third-party-integrations).
 
 ## Identify
 
@@ -39,7 +39,7 @@ Some special traits will also be used as additional user identifiers:
 | email         | email                      |
 | phone         | mobile_number              |
 
-For any additional traits you want to save you should create [User Profile Attributes](https://support.xtremepush.com/hc/en-us/articles/360000850789-User-Profiles-Quick-Start-Guide#AddingOtherAttributestoUserProfiles) in your Xtremepush Project.
+For any additional traits you want to save you should create [User Profile Attributes](https://docs.xtremepush.com/docs/attributes-tags) in your Xtremepush Project.
 
 If a trait does not match a custom Xtremepush User Profile Attribute and is not recognized as a User Identifier it will be ignored.
 
@@ -53,9 +53,14 @@ analytics.track('Product Purchased', {
 })
 ```
 
-Track calls will be sent to Xtremepush as a `event hits`, so you can use it to [trigger a campaign](https://support.xtremepush.com/hc/en-us/articles/207743999-Event-Tab) for a user.
+Track calls will be sent to Xtremepush as a `event hits`, so you can use it to [trigger a campaign](https://docs.xtremepush.com/docs/campaign-events) for a user.
 
 Event properties can be used as merge tags in the message content. You can also define additional rules on where to trigger the campaign based on event properties value.
 
 ## Enabling Push and In-App Notifications
-To enable Xtremepush push and in-app notifications you will also need to to install the relevant [Xtremepush SDKs](https://support.xtremepush.com/hc/en-us/categories/200812171-SDKs).
+To enable Xtremepush push and in-app notifications you will also need to to install the relevant Xtremepush SDKs.
+
+[Xtremepush iOS SDK Docs](https://docs.xtremepush.com/docs/ios-integration)
+
+[Xtremepush Android SDK Docs](https://docs.xtremepush.com/docs/android-integration)
+

@@ -15,10 +15,10 @@ The {{thisDestName}} device-mode destination SDK is only available for {{thisDes
 {%endif%}
 
 To add the {{thisDestName}} device-mode SDK to a [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) project:
-1. Navigate to the root folder of your project, and run a `yarn add {{thisDestName | downcase | replace: " ", "-" }}{% if thisDestRNspecific %}-{{thisDestRNspecific}}{%endif%}` command to add the destination SDK to your project.
+1. Navigate to the root folder of your project, and run a `yarn add @segment/analytics-react-native-{{thisDestName | downcase | replace: " ", "-" }}{% if thisDestRNspecific %}-{{thisDestRNspecific}}{%endif%}` command to add the destination SDK to your project.
 2. Add an `import` statement to your project, as in the example below.
    ```js
-   import {{thisDestName | replace: " ", "" }} from '@segment/analytics-react-native-{{thisDestName | downcase | replace: " ", "" }}{% if thisDestRNspecific %}-{{thisDestRNspecific}}{%endif%}'
+   import {{thisDestName | replace: " ", "" }} from '@segment/analytics-react-native-{{thisDestName | downcase | replace: " ", "-" }}{% if thisDestRNspecific %}-{{thisDestRNspecific}}{%endif%}'
    ```
 3. In the same project file, add the destination to the `using` list in the `await` command.
    ```js
