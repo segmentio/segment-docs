@@ -2,8 +2,9 @@
 title: 'Analytics for Android'
 strat: android
 repo: analytics-android
-redirect_from: '/connections/sources/catalog/cloud-apps/kotlin-android/'
-redirect_from: '/connections/sources/catalog/cloud-apps/kotlin/'
+redirect_from:
+  - '/connections/sources/catalog/cloud-apps/kotlin-android/'
+  - '/connections/sources/catalog/cloud-apps/kotlin/'
 ---
 
 
