@@ -59,17 +59,42 @@ analytics.identify({
 });
 ```
 
-Segment sends Identify calls to Regal Voice as an identify event. If an identify event contains a phone, Regal Voice will create a contact in your Audience.
+Segment sends Identify calls to Regal Voice as an identify event.
 
+ If an identify event contains a phone, Regal Voice will create a contact in your Audience.
+
+## Track
+
+If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track/) to learn about what it does. 
+
+Segment recommends calling `track` on any user or system event that you may want Regal Voice to be able to use for lead scoring or as triggers or conditions when sending voice and sms campaigns.
+
+Segment sends `track` calls to Regal Voice as a track event. Pass all attributes relevant to your use case into the `properties` object. 
+
+Regal Voice communications can be triggered proactively to a user based on their activity or inactivity - in order to nudge them through your funnel. 
+
+An example for a financial services company might be that you want to tigger an outbound call to a user for whom a 'Loan Application Approved' event has been received, but not a 'Loan Signed' event (with some parameter around timing).
+
+In that case, an example `track` call for the 'Loan Application Approved' event would look like:
+
+```js
+analytics.track('Loan Application Approved', {
+  loanType: 'Personal loan', 
+  amount: 30000
+  currency: 'USD'
+  term: 12
+})
+```
 
 ## Collecting OptIn
 
 In order to trigger outbound calls or sms messages from Regal Voice, you must collect the user’s explicit opt-in for those channels along with the user’s phone number.
-There are 2 options for how you can let Regal Voice know a user has opted in. 
 
-Anytime you collect opt-in for sms or voice calls, you can trigger a track event after a user opts in and let the Regal Voice team know what track event is synonymous with opt-in collected (there is no required format for this event). The product will then automatically subscribe users who perform that event. (Note: for Regal Voice to subscribe a user, there must already be a phone provided for that user.)
+There are 2 options for how you can let Regal Voice know a user has opted in;
 
-Alternatively, anytime you collect opt-in for sms or voice calls, you can use an `identify` call to pass that opt-in information to Regal Voice by adding an optIn object.
+1. Anytime you collect opt-in for sms or voice calls, you can trigger a track event after a user opts in and let the Regal Voice team know what track event is synonymous with opt-in collected (there is no required format for this event). The product will then automatically subscribe users who perform that event. (Note: for Regal Voice to subscribe a user, there must already be a phone provided for that user.)
+
+2. Alternatively, anytime you collect opt-in for sms or voice calls, you can use an `identify` call to pass that opt-in information to Regal Voice by adding an optIn object.
 
 Below is an example of what an `identify` call would look like for a user who opted into multiple channels (sms and voice calls) at once:
 
@@ -103,27 +128,4 @@ For the identify method, the `ip` field is required if you are opting in users s
 
 Make sure to include `timestamp` with the exact time the user opted in. Since traits are [cached](/docs/connections/sources/catalog/libraries/website/javascript/identity/#clearing-traits) and sent with subsequent Identify calls, Regal Voice ignores opt-ins that do not have a `timestamp` date. 
 
-
-## Track
-
-If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track/) to learn about what it does. 
-
-Segment recommends calling `track` on any user or system event that you may want Regal Voice to be able to use for lead scoring or as triggers or conditions when sending voice and sms campaigns.
-
-Segment sends `track` calls to Regal Voice as a track event. Pass all attributes relevant to your use case into the `properties` object. 
-
-Regal Voice communications can be triggered proactively to a user based on their activity or inactivity - in order to nudge them through your funnel. 
-
-An example for a financial services company might be that you want to tigger an outbound call to a user for whom a 'Loan Application Approved' event has been received, but not a 'Loan Signed' event (with some parameter around timing).
-
-In that case, an example`track` call for the 'Loan Application Approved' event would look like:
-
-```js
-analytics.track('Loan Application Approved', {
-  loanType: 'Personal loan', 
-  amount: 30000
-  currency: 'USD'
-  term: 12
-})
-```
 ---
