@@ -15,7 +15,7 @@ This destination is maintained by OneSignal. For any issues with the destination
 
 {% include content/connection-modes.md %}
 
-1. Log in to the OneSignal Dashboard, go to your **Segment App** -> **Settings** -> **Analytics** -> **Segment.com** -> **Activate**.
+1. Log in to the [OneSignal Dashboard](https://app.onesignal.com/), go to your **Segment App** -> **Settings** -> **Analytics** -> **Segment.com** -> **Activate**.
 2. The Segment App opens in a new window. Log in to authenticate the connection from OneSignal.
 3. Select the Workspace and Source to connect with OneSignal.
 
