@@ -15,11 +15,10 @@ This destination is maintained by OneSignal. For any issues with the destination
 
 {% include content/connection-modes.md %}
 
-1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-1. Search for OneSignal in the Destinations Catalog, and select the OneSignal destination.
-1. Choose which Source should send data to the OneSignal destination.
-1. Go to the [OneSignal dashboard](https://app.onesignal.com/apps/){:target="_blank"}, select the Segment App, and go to the **Settings > Keys & IDs**. Copy the **App ID** and the **API key**.
-1. Enter the OneSignal **App ID** and the **API key** in the OneSignal destination settings in Segment.
+1. Log in to the [OneSignal Dashboard](https://app.onesignal.com/){:target="_new"}
+2. Navigate to **Segment App** -> **Settings** -> **Analytics** -> **Segment.com** and click **Activate**.
+3. The Segment App opens in a new window. Log in to authenticate the connection from OneSignal.
+4. Select the Workspace and Source to connect with OneSignal.
 
 
 > info ""

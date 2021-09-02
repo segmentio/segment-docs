@@ -243,8 +243,9 @@
     }
 
     td.def {
-      cursor:  pointer;
+      cursor: pointer;
       line-height: 16px;
+
       code {
         max-width: 100%;
         word-break: break-all;
@@ -293,7 +294,7 @@
 
 }
 
-a[target="_blank"]:not(.reference-button):after{
+a[target="_blank"]:not(.reference-button):after {
   content: url("/docs/images/external-link-alt-solid.svg");
   margin-left: 4px;
 }
@@ -304,6 +305,7 @@ a.no-icon[target="_blank"]:after {
 
 tr.no-map td {
   opacity: 0.5;
+  display: none;
 }
 
 tr.show {
@@ -355,7 +357,20 @@ tr.show {
   white-space: nowrap;
 }
 
-.device-web-mode, .device-mobile-mode {
+.device-web-mode,
+.device-mobile-mode {
   background-color: #e6f5ef;
   color: #317159
+}
+
+.collapse {
+  display: block;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .5s cubic-bezier(0, 1, 0, 1);
+
+  &.show {
+    max-height: 100%;
+    transition: max-height .5s ease-in-out;
+  }
 }
