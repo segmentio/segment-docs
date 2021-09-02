@@ -61,7 +61,7 @@ analytics.identify({
 
 Segment sends Identify calls to Regal Voice as an identify event.
 
- If an identify event contains a phone, Regal Voice will create a contact in your Audience.
+Identify events are used to create users and update user attributes. If an identify event contains a phone, Regal Voice will create a contact in your Audience.
 
 ## Track
 
