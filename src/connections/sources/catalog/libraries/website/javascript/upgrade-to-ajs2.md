@@ -35,7 +35,7 @@ Once a source moves to Analytics.js 2.0, you can follow the steps above in [Manu
 
 ## Cases that require additional intervention
 
-There are two cases where upgrading to Analytics.js 2.0 requires manual effort beyond enabling the Analytics.js 2.0 toggle.
+In some cases, upgrading to Analytics.js 2.0 requires manual effort beyond enabling the Analytics.js 2.0 toggle.  
 
 ### When using in-domain instrumentation CDN aliasing
 
