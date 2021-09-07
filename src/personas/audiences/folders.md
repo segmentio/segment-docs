@@ -1,5 +1,6 @@
 ---
 title: Working With Folders
+hidden: true
 ---
 
 
