@@ -9,9 +9,7 @@ title: Protocols Frequently Asked Questions
 
 ### How can I subscribe to Protocols notifications?
 
-You can subscribe to a variety of Protocols specific alerts through the workspace Activity Feed settings. To subscribe, visit your workspace **Settings** > **Notification Settings** > **Protocols**.
-
-![](images/activity_notifications.png)
+You can subscribe to a variety of Protocols specific alerts through the workspace Activity Feed settings. To subscribe, visit your workspace **Settings** > **User Preferences** > **Activity Notifications** > **Protocols**.
 
 ### How can I get notified when someone makes a change to my tracking plan?
 

@@ -2,67 +2,76 @@
 title: comScore Destination
 ---
 
-Our comScore destination code is open-source on GitHub if you want to check it out! [For Analytics.js](https://github.com/segment-integrations/analytics.js-integration-comscore). [For Analytics-iOS](https://github.com/segment-integrations/analytics-ios-integration-comscore). [For Analytics-Android](https://github.com/segment-integrations/analytics-android-integration-comscore)
+Segment's comScore destination code is open source and available on GitHub. Feel free to check it out: 
+- [Javascript](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/comscore)
+- [iOS](https://github.com/segment-integrations/analytics-ios-integration-comscore)
+- [Android](https://github.com/segment-integrations/analytics-android-integration-comscore)
 
 ## Getting Started
 
-## Analytics.js
+comScore is supported on mobile apps and web browsers.
 
-When you enable comScore in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading comScore's `beacon.js` onto your page. **This means you should remove comScore's snippet from your page.** ComScore automatically starts recording data.
+
+## Web
+
+When you enable comScore in the Segment App, your changes appear in the Segment CDN within 45 minutes, and then analytics.js starts asynchronously loading comScore's `beacon.js` library onto your page. **This means you should remove comScore's snippet from your page.** 
+
+Be sure to input your comScore **c2 ID** for comScore to start recording data. The **c2 ID** can be found by clicking on the "Get Tag" button within the Comscore dashboard. You will need to pull out the **C2 Value** from the comScore script tag. You **do not** need to copy/paste the entire script tag.
 
 ## Mobile
 
-To get started with comScore and Segment, you'll want to first integrate your mobile app with our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](/docs/connections/sources/catalog/libraries/mobile/android/) sources. comScore can only accept data sent directly from their iOS and Android SDKs. For that reason we can only send data directly from our iOS and Android SDKs to comScore. **Data recorded in our server-side sources cannot be sent to comScore.** Be sure to follow the additional set up steps to get started, which you can find [here for iOS](https://github.com/segment-integrations/analytics-ios-integration-comscore#analytics-ios-integration-comscore) and [here for Android](https://github.com/segment-integrations/analytics-android-integration-comscore#analytics-android-integration-comscore).
+To get started with comScore and Segment, you'll want to first integrate your mobile app with our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](/docs/connections/sources/catalog/libraries/mobile/android/) sources. comScore can only accept data sent directly from their iOS and Android SDKs. For that reason we can only send data directly from our iOS and Android SDKs to comScore. **Data recorded in our server-side sources cannot be sent to comScore.** 
 
-## React Native
+For mobile sources, you will need to enter your comScore **c2 ID** and **Publisher Secret**.
+
+### iOS
+To install comScore via Segment on iOS, please follow the additional set up steps in the Segment-Comscore iOS repository [here](https://github.com/segment-integrations/analytics-ios-integration-comscore#analytics-ios-integration-comscore).
+
+### Android
+To install comScore via Segment on Android, please follow the additional set up steps in the Segment-Comscore Android repository [here](https://github.com/segment-integrations/analytics-android-integration-comscore#analytics-android-integration-comscore).
+
+### React Native
 
 {% include content/react-dest.md only="ios"%}
 
+## Page
 
-### Settings
-Once the Segment source is integrated with your app, toggle comScore on in your Segment destinations catalog, and add your  **C2 Value**, also known as the client ID. The **C2 Value** can be found by clicking on the "Get Tag" button in the "Website" or "Mobile App" tabs within the Comscore dashboard.
-
-For analytics.js sources, you will need to pull out the **C2 Value** from the Comscore script tag. You **do not** need to copy/paste the entire script tag.
-
-For Mobile sources, you will also need to enter the **Publisher Secret Code** located below the **C2 Value**.
-
-These new settings will take up to an hour to propagate to all of your existing users. For new users it'll be instantaneous!
-
-#### App Name
-
-You can include your **App Name** which will be included in all payloads. comScore retrieves the application name from your app's `Info.plist` application bundle name as returned by `CFBundleName` . This value is used in the classification from comScore's Audience reporting. If you want to override the automatically retrieved value, you can provide a string with your preferred app name.
-
-#### HTTPS
-We default **Use HTTPS** to true so that your data is always sent encrypted.
-
-#### Auto Update
-
-We enable you to choose if you want the comScore SDK to update the application usage times on regular intervals.
-
-By default, we have `Foreground Only` on. this means we'll only update usage times when your app is in the foreground, if you uncheck this then we will update usage times even when your app is backgrounded. This is recommended if your app can deliver a user experience while the app is backgrounded, Push Notifications being a common example.
-
-You may also choose to turn off `Foreground Only`, which leaves `AutoUpdate` enabled, which updates the application usage times when the app is both foregrounded and backgrounded.
-
-If you turn off `AutoUpdate`, we will disable Auto Update mode but note that this is not advised.
-
-We also allow you to configure the **Auto Update Interval** which controls how often the SDK updates usage information. This defaults to 60 seconds.
+Calling `page` on web will automatically send a call to comScore's Application Tag, along with any `labels` mapped in the **Beacon Param Map** setting.
 
 ## Identify
 
-Calling `identify` with comScore enabled will automatically set the user attributes provided as `labels`, passing that information on to comScore. With the mobile destination, we map a Segment `identify` event to comScore's `setPersistentLabelWithName`.
+Calling `identify` with comScore enabled will automatically set the user attributes provided as `labels`, passing that information on to comScore. With the mobile destination, we map a Segment `identify` event to comScore's `setPersistentLabelWithName`. Identify is not supported in the web destination.
 
 ## Track
 
-Calling `track` on events will automatically set the properties of that track call as hidden values in comScore to enhance your reports. With the mobile destination, we map a Segment `track` event to comScore's `notifyHiddenEventWithLabels`.
+Calling `track` on events will automatically set the properties of that track call as hidden values in comScore to enhance your reports. With the mobile destination, we map a Segment `track` event to comScore's `notifyHiddenEventWithLabels`. Track is not supported in the web destination.
 
 ## Screen
 
-Calling `screen` will automatically attribute the `name`, `category` and `properties` on that call to be used in the comScore tool. With the mobile destination, we map a Segment `screen` event to comScore's `notifyViewEventWithLabels`.
+Calling `screen` on mobile will automatically attribute the `name`, `category` and `properties` on that call to be used in the comScore tool. With the mobile destination, we map a Segment `screen` event to comScore's `notifyViewEventWithLabels`. Screen is not supported in the web destination.
 
 ## Flush
 
 Calling `flush` will clear the offline cache with comScore's `flushOfflineCache` method.
 
+## User Consent
+
+To communicate user consent, Comscore requires customers add a label called `cs_ucfr` to events. Segment supports setting the `cs_ucfr` label on web only. Using the **Comscore User Consent Label** setting, input the custom field you would like to map to `cs_ucfr`. The custom field mapped to `cs_ucfr` should be present on **all** page calls as per comScore's requirements. 
+
+Segment will map values to comScore's `cs_ucfr` label as outlined below:
+
+| Custom Field Value | `cs_ucfr` Value |
+| ------------ | ------------ |
+| `0` | `0` |
+| `1` | `1` |
+| `false` | `0` |
+| `true` | `1` |
+| If third character in the [US Privacy String](https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md) is `Y` | `0` |
+| If third character in the [US Privacy String](https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md) is `N` | `1` |
+| If third character in the [US Privacy String](https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md) is `-` | Not included |
+| Any other string value | "" (empty string) |
+
+`cs_ucfr` will be omitted in all other cases. 
 
 ## Video Streaming
 
@@ -72,7 +81,7 @@ To get started tracking video content through Segment, make sure you are using a
 
 ### Playback Events
 
-When you call `Video Playback Started`, Segment initializes an instance of the comScore streamingAnalytics class with `[streamingAnalytics createPlaybackSession];`. **It is essential that this event is called in order to continue tracking through comScore**.
+When you call `Video Playback Started`, Segment initializes an instance of the comScore streamingAnalytics class with `[streamingAnalytics createPlaybackSession];`. **It is essential that this event is called in order to continue tracking through comScore's Streaming Tag**.
 
 From there we will map to the relevant events on the instance as outlined below:
 
