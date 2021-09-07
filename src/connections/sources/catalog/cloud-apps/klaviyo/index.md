@@ -1,12 +1,6 @@
 ---
 title: 'Klaviyo Source'
-hidden: true
 ---
-
-
-> warning ""
-> The Klaviyo cloud-source is no longer available.
-
 
 Klaviyo is an email marketing platform that helps companies make more money. It lets you send personalized newsletters, triggered emails, product recommendations, push notifications and sync your data to facebook custom audiences. [Visit Website](https://www.klaviyo.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
 

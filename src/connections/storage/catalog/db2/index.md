@@ -66,11 +66,13 @@ Search for and select "Db2":
 
 Add your credentials as follows:
 
+- Host (Found in Settings → Connection Info → Connection Information)
+- Port (50001 is Db2 Default)
+- Database name
 - User (This is the "User ID" that you created above)
 - Password
-- Host (Found in Settings → Connection Info → Connection Information)
-- Port (50000 by default)
-- Database name
+- Security (Enter "SSL" in this field if applicable - optional)
+
 
 <img src="./images/settings.png" style="max-width: 540px">
 
