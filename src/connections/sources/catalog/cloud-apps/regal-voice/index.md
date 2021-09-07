@@ -39,7 +39,7 @@ The table below lists events that Regal Voice sends to Segment. These events app
   </tr>
   <tr>
     <td>contact.attribute_edited</td>
-    <td>A contact's attributes were edited by an agent<td>
+    <td>A contact's attributes were edited by an agent</td>
   </tr>
   <tr>
    <td>sms.queued</td>
@@ -67,7 +67,7 @@ The table below lists events that Regal Voice sends to Segment. These events app
   </tr>
   <tr>
    <td>sms.conversation.completed</td>
-   <td>An SMS conversation between a contact and an agent was completed in the Regal Voice agent desktop<td>
+   <td>An SMS conversation between a contact and an agent was completed in the Regal Voice agent desktop</td>
   </tr>
   <tr>
    <td>call.completed</td>
@@ -156,7 +156,7 @@ The table below lists events that Regal Voice sends to Segment. These events app
   </tr>
   <tr>
    <td>`handle_time`</td>
-   <td>Full duration task was being handled, including talk time and wrap time (completed_at - started_at<td>
+   <td>Full duration task was being handled, including talk time and wrap time (completed_at - started_at</td>
   </tr>
   <tr>
    <td>`ip`</td>
@@ -206,11 +206,11 @@ The table below lists events that Regal Voice sends to Segment. These events app
   </tr>
   <tr>
    <td>`started_at`</td>
-   <td>UTC timestamp when the conversation was started<td>
+   <td>UTC timestamp when the conversation was started</td>
   </tr>  
   <tr>
    <td>`talk_time`</td>
-   <td>Duration of conversation (ended_at - started_at)<td>
+   <td>Duration of conversation (ended_at - started_at)</td>
   </tr>
   <td>`target_agent_fullname`</td>
    <td>Full name of the agent who contact (and all contact’s tasks) are assigned to</td>
