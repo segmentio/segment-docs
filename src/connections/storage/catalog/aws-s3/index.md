@@ -1,10 +1,9 @@
 ---
-title: Amazon S3 Destination
-redirect_from:
-  - '/connections/destinations/catalog/amazon-s3/'
-  - '/connections/waser/catalog/amazon-s3/'
+title: AWS S3 with IAM Role Support Destination
 hide-personas-partial: true
 ---
+
+{% include content/beta-note.md %}
 
 ## Getting Started
 
@@ -21,41 +20,136 @@ The Segment Tracking API processes data from your sources, and collects the Even
 
 ![](images/s3processdiagram.png)
 
-## Required Steps
+## Create a new destination
 
-- Create a bucket in your preferred region.
-- Create a folder "segment-logs" inside the bucket.
-- Edit your bucket policy to allow Segment to copy files into the bucket:
+Complete the following steps to configure the AWS S3 Destination with IAM Role Support.
 
-```json
-{
-	"Version": "2008-10-17",
-	"Id": "Policy1425281770533",
-	"Statement": [
-		{
-			"Sid": "AllowSegmentUser",
-			"Effect": "Allow",
-			"Principal": {
-				"AWS": "arn:aws:iam::107630771604:user/s3-copy"
-			},
-			"Action": "s3:PutObject",
-			"Resource": "arn:aws:s3:::YOUR_BUCKET_NAME/segment-logs/*"
-		}
-	]
-}
-```
+### Create an IAM role in AWS
 
-> info ""
-> The `Resource` property string **must** end with `/*`.
+To complete this section, you need access to your AWS dashboard.
 
-Specifically, this adds the ability to `s3:PutObject` for the Segment s3-copy user for your bucket.
+1. Create a new S3 bucket in your preferred region. For more information, see Amazon's documentation, [Create your first S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html){:target="_blank"}. Add the following policy to the bucket to allow Segment to copy files into it:
+    ```json
+    {
+        "Version": "2008-10-17",
+        "Id": "Policy1425281770533",
+        "Statement": [
+            {
+                "Sid": "AllowSegmentUser",
+                "Effect": "Allow",
+                "Principal": {
+                    "AWS": "arn:aws:iam::107630771604:user/s3-copy"
+                },
+                "Action": "s3:PutObject",
+                "Resource": "arn:aws:s3:::<YOUR_BUCKET_NAME>/segment-logs/*"
+            }
+        ]
+    }
+    ```
+    This adds the ability to `s3:PutObject` for the Segment s3-copy user for your bucket.
+2. Create a new IAM role for Segment to assume. For more information, see Amazon's documentation, [Creating a role to delegate permissions to an IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html){:target="_blank"}.
+3. Attach the following trust relationship document. Be sure to add your Workspace ID to the `sts:ExternalId` field. 
+    ```json
+    {
+       "Version": "2012-10-17",
+       "Statement": [
+         {
+           "Sid": "",
+           "Effect": "Allow",
+           "Principal": {
+             "AWS": "arn:aws:iam::595280932656:role/segment-s3-integration-production-access"
+           },
+           "Action": "sts:AssumeRole",
+           "Condition": {
+             "StringEquals": {
+               "sts:ExternalId": "<YOUR_WORKSPACE_ID>"
+             }
+           }
+         }
+       ]
+     }
+    ```
+4. Create and attach the following IAM policy to the role created in step 3 above. Replace `<YOUR_BUCKET_NAME>` with the name of the bucket you created in step 1 above.
+    ```json
+    {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+        "Sid": "PutObjectsInBucket",
+        "Effect": "Allow",
+        "Action": [
+            "s3:PutObject",
+            "s3:PutObjectAcl"
+        ],
+        "Resource": "arn:aws:s3:::<YOUR_BUCKET_NAME>/segment-logs/*"
+        }
+    ]
+    }
+    ```
+    If you're using KMS encryption on your S3 bucket, add the following policy to the IAM role:
+    ```json
+    {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowKMS",
+            "Effect": "Allow",
+            "Action": [
+            "kms:GenerateDataKey",
+            "kms:Decrypt"
+            ],
+            "Resource": "YOUR_KEY_ARN"
+        }
+    ]
+    }
+    ```
 
 If you have server-side encryption enabled, see the [required configuration](#encryption).
 
-You can edit your bucket policy in the [AWS management console](https://console.aws.amazon.com) by right-clicking the bucket and then selecting the "edit policy" option.
 
-Lastly, enable the Amazon S3 destination in your Segment destination catalog, and put in your bucket name in the destination settings. It will take about an hour to start receiving data.
+### Add the AWS S3 with IAM Role Support Destination
 
+To finish configuration, enable the AWS S3 Destination with IAM Role Support destination in your workspace.
+
+1. Add the destination from the Data Storage catalog.
+2. Select the data source you'll connect to the destination.
+3. Provide a unique name for the destination.
+4. Complete the destination settings:
+   1. Enter the name of the region in which the bucket you created above resides.
+   2. Enter the name of the bucket you created above. Be sure to enter the bucket's **name** and not URI.
+   3. Enter the ARN of the IAM role you created above. The ARN should follow the format `arn:aws:iam::ACCOUNT_ID:role/ROLE_NAME.`
+5. Enable the destination.
+6. Verify Segment data is stored in the S3 bucket by navigating to the `<your_S3_bucket>/segment-logs` in the AWS console. The bucket will take roughly 1 hour to begin receiving data.
+
+## Migrate an existing destination
+To migrate an existing Amazon S3 destination to the AWS S3 with IAM Role Support Destination:
+
+1. Configure the IAM role and IAM policy permissions as described in steps 3 and 4 [above](#create-an-iam-role-in-aws).
+2. Add the AWS S3 with IAM Role Support Destination and add the AWS Region and IAM role ARN. For the bucket name, enter `<YOUR_BUCKET_NAME>/segment-logs/test`. Enable the destination, and verify data is received at `<YOUR_BUCKET_NAME>/segment-logs/test/segment-logs`. If the folder receives data, continue to the next step. If you don't see log entries, check the trust relationship document and IAM policy attached to the role.
+3. Update the bucket name in the new destination to `<YOUR_BUCKET_NAME>`.
+4. After 1 hour, disable the original Amazon S3 destination to avoid data duplication.
+5. Verify that the `<YOUR_BUCKET_NAME>/segment-logs` receives data.
+6. Remove the test folder created in step 2 from the bucket.
+
+{% comment %}
+### Migration steps for users with multiple sources per environment
+
+In cases where users have multiple sources per environment, for example staging sources pointing to a staging bucket, and production sources going to a production bucket, they need two IAM roles, one for staging, and one for production. 
+
+
+For example:
+
+- stage_source_1 → stage_bucket
+- stage_source_2 → stage_bucket
+- stage_source_N → stage_bucket
+- prod_source_1 → prod_bucket
+- prod_source_2 → prod_bucket
+- prod_source_N → prod_bucket
+
+In this scenario, for `stage_source_1`:
+1. 
+
+{% endcomment %}
 ## Data format
 
 Segment stores logs as gzipped, newline-separated JSON containing the full call information. For a list of supported properties, see the [Segment Spec](/docs/connections/spec/) documentation.
