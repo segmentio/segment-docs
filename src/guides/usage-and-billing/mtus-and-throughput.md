@@ -64,9 +64,9 @@ This is in contrast to "Objects" which represent a single thing that persists ov
 
 ## How is object throughput calculated?
 
-[Object Cloud Sources](/docs/connections/sources/about-cloud-sources/#object-cloud-app-sources) retrieve records from integration partners on a scheduled basis. Segment processes these records before writing them out to connected [Storage Destinations](/docs/connections/storage/). Segment counts one throughput for each record retrieved from a Cloud Source.
+[Object Cloud Sources](/docs/connections/sources/about-cloud-sources/#object-cloud-app-sources) retrieve records from integration partners on a scheduled basis. Segment processes these records before writing them out to connected [Storage Destinations](/docs/connections/storage/). Segment counts one object for each record retrieved from a Cloud Source. The number of objects ingested during a billing period has a direct impact on [throughput](#what-is-throughput), which is calculated as `(objects ingested + API calls received) / MTU allowance`.
 
-Depending on the capabilities of the partner's API, Segment may need to retrieve all available records and then deduplicate them prior to writing them out to a connected storage destination. In such cases, throughput is still counted for all retrieved records, even if the same records are retrieved multiple times in a given billing period. If you experience overages due to high object throughput, contact [friends@segment.com](mailto:friends@segment.com) to request a less frequent sync cadence.
+Depending on the capabilities of the partner's API, Segment may need to retrieve all available records and then deduplicate them prior to writing them out to a connected storage destination. In such cases, all retrieved records are still counted as ingested objects, even if the same records are retrieved multiple times in a given billing period. If you experience overages due to high object throughput, contact [friends@segment.com](mailto:friends@segment.com) to request a less frequent sync cadence.
 
 ## MTUs, object throughput, and Cloud sources
 
