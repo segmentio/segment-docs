@@ -1,0 +1,19 @@
+actions:
+  - action: Post Message
+    blurb: Post Message sends a message to the specified Slack workspace and channel when the associated trigger criteria are met.
+    fields:
+    - name: Webhook URL (required)
+      description: The webhook provided by Slack to connect with the desired workspace.
+      default:
+    - name: Message (required)
+      description: The message that will post to the specified channel. Use a mix of [Slack's formatting](https://api.slack.com/reference/surfaces/formatting){:target="_blank"}, and event variables.
+      default:
+    - name: channel
+      description: The channel within the connected workspace. Do not include the `#` character. For example, use `general`, not `#general`.
+      default:
+    - name: User
+      description: The sender of the posted message.
+      default: Segment
+    - name: Icon URL
+      description: The URL of the image that appears next to the User.
+      default: https://logo.clearbit.com/segment.com
