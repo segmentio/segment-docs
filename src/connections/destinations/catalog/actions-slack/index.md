@@ -34,7 +34,7 @@ Slack (Actions) provides the following benefits over the classic Slack destinati
 
 ## Important differences from the classic Slack destination
 
-- The classic Slack destination formats messages using the handlebars syntax. Slack (Actions) follows [Slack's  formatting syntax](https://api.slack.com/reference/surfaces/formatting){:target="_blank"}
+- The classic Slack destination formats messages using the handlebars syntax. Slack (Actions) follows [Slack's  formatting syntax](https://api.slack.com/reference/surfaces/formatting){:target="_blank"}.
 
 ## Available Slack actions
 
