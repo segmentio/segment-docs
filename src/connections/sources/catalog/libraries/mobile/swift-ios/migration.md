@@ -3,9 +3,12 @@ title: Analytics for Swift Migration Guide
 strat: swift
 ---
 
+> info ""
+> Analytics-Swift is in public beta and currently supports [these destinations](https://github.com/segmentio/analytics-swift/tree/main/Examples/destination_plugins){:target="_blank"} with Segment actively adding more to the list. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this library.
+
 If you’re using a different mobile library such as Analytics-iOS, follow these steps to migrate to the Analytics-Swift library:
 
-> info ""
+> success ""
 > Segment no longer supports installing Analytics-Swift via Cocoapods.
 
 1. Create a Swift Source in Segment.

@@ -15,7 +15,7 @@ With Analytics for iOS, you can send your data to analytics or marketing tool, w
 
 
 > info "Analytics-Swift Public Beta"
-> The [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios/) library is in public beta. If you’d like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift-ios/migration/). This library is governed by Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/).
+> The [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios/) library is in public beta. If you’d like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift-ios/migration/). Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this library. 
 
 ## Analytics-iOS and Unique Identifiers
 

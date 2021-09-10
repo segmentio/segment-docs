@@ -2,20 +2,20 @@
 title: Analytics for Kotlin (Server)
 ---
 
-With Analytics Kotlin, you can send data using Kotlin applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics Kotlin enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations.
+With Analytics-Kotlin, you can send data using Kotlin applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics-Kotlin enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations.
 
 > info ""
-> Analytics Kotlin is in beta and currently supports [these destinations](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app-destinations/src/main/java/com/segment/analytics/destinations/plugins){:target="_blank"} with Segment actively adding more to the list.
+> Analytics-Kotlin is in public beta and currently supports [these destinations](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app-destinations/src/main/java/com/segment/analytics/destinations/plugins){:target="_blank"} with Segment actively adding more to the list. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this library.
 
 > success ""
 > You can choose to set up your Analytics Kotlin source on [mobile](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/index/) or on the [server](/docs/connections/sources/catalog/libraries/server/kotlin/index/). Segment doesn’t support device-mode destinations on the server-side.
 
-If you’re migrating to Analytics Kotlin from a different mobile library, you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/).
+If you’re migrating to Analytics-Kotlin from a different mobile library, you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/).
 
 
 ## Getting Started
 
-To get started with the Analytics Kotlin server library:
+To get started with the Analytics-Kotlin server library:
 
 1. Create a Source in Segment.
     1. Go to **Connections > Sources > Add Source**.

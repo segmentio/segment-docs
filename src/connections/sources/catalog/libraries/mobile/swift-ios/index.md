@@ -3,15 +3,16 @@ title: 'Analytics for Swift'
 strat: swift
 ---
 
-With Analytics Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS and Linux applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics Swift enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations. Analytics Swift also offers default implementations to help you maintain destinations and integrations.
+With Analytics-Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS and Linux applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics-Swift enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations. Analytics-Swift also offers default implementations to help you maintain destinations and integrations.
 
 > info ""
-> Analytics Swift currently supports [these destinations](https://github.com/segmentio/analytics-swift/tree/main/Examples/destination_plugins){:target="_blank"} with Segment actively adding more to the list.
+> Analytics-Swift is in public beta and currently supports [these destinations](https://github.com/segmentio/analytics-swift/tree/main/Examples/destination_plugins){:target="_blank"} with Segment actively adding more to the list. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this library.
 
-If you’re migrating to Analytics Swift from a different mobile library, you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift-ios/migration/).
+
+If you’re migrating to Analytics-Swift from a different mobile library, you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift-ios/migration/).
 
 ## Getting Started
-To get started with the Analytics Swift mobile library:
+To get started with the Analytics-Swift mobile library:
 
 1. Create a Source in Segment.
     1. Go to **Connections > Sources > Add Source**.
@@ -26,7 +27,7 @@ To get started with the Analytics Swift mobile library:
 
     After installing the package, you can reference Analytics Swift by importing Segment's Analytics package with `import Segment`.
 
-3. Initialize and configure the Analytics Swift client.
+3. Initialize and configure the Analytics-Swift client.
     For example, in a lifecycle method such as `didFinishLaunchingWithOptions` in iOS:
 
     ```swift
@@ -58,7 +59,7 @@ To get started with the Analytics Swift mobile library:
     > Configuration options such as IDFA collection and automatic screen tracking are found in Segment’s [Plugin Examples repo](https://github.com/segmentio/analytics-example-plugins/tree/main/plugins/swift){:target="_blank"}.
 
 ## Tracking Methods
-Once you’ve installed the Analytics Swift library, you can start collecting data through Segment’s tracking methods:
+Once you’ve installed the Analytics-Swift library, you can start collecting data through Segment’s tracking methods:
 - [Identify](#identify)
 - [Track](#track)
 - [Screen](#screen)
