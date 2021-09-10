@@ -3,7 +3,7 @@ title: Analytics for Kotlin Migration Guide
 strat: kotlin
 ---
 
-If you’re using a different library, follow these steps to migrate to the Analytics Kotlin library:
+If you’re using a different library such as Analytics-Android, follow these steps to migrate to the Analytics-Kotlin library:
 
 > success ""
 > You can continue to use your Android source write key for the migration to view historical events.

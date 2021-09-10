@@ -3,7 +3,7 @@ title: Analytics for Swift Migration Guide
 strat: swift
 ---
 
-If you’re using a different mobile library, follow these steps to migrate to the Analytics Swift library:
+If you’re using a different mobile library such as Analytics-iOS, follow these steps to migrate to the Analytics-Swift library:
 
 > info ""
 > Segment no longer supports installing Analytics-Swift via Cocoapods.
