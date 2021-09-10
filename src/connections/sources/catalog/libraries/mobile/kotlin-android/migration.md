@@ -3,6 +3,9 @@ title: Analytics for Kotlin Migration Guide
 strat: kotlin
 ---
 
+> info ""
+> Analytics-Kotlin is in pubic beta and currently supports [these destinations](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app-destinations/src/main/java/com/segment/analytics/destinations/plugins){:target="_blank"} with Segment actively adding more to the list. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this library.
+
 If you’re using a different library such as Analytics-Android, follow these steps to migrate to the Analytics-Kotlin library:
 
 > success ""
