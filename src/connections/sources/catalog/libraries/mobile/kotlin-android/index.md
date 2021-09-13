@@ -1,6 +1,8 @@
 ---
 title: Analytics for Kotlin (Android)
 strat: kotlin
+redirect_from:
+  - '/connections/sources/catalog/cloud-apps/kotlin-android/'
 ---
 
 With Analytics-Kotlin, you can send data using Kotlin applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics-Kotlin enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations.
