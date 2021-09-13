@@ -22,20 +22,16 @@ jobs:
         with:
           ruby-version: 2.6 # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-      # - name: Setup Rubygems, Bundler, jekyll
-      #   run: | 
-      #     gem update --system --no-document
-      #     gem update bundler --no-document
-      #     gem install jekyll bundler
-      #     bundle install
       - name: Build jekyll website
         run: bundle exec jekyll build
       - name: Check for broken links
-        run: |
-          bundle exec htmlproofer --checks_to_ignore ScriptCheck,ImageCheck  --only_4xx --log-level :debug ./_site/utils/env/index.html &> links.log
-        continue-on-error: true
-      - name: Archive log links
-        uses: actions/upload-artifact@v1
+        uses: lycheeverse/lychee-action@v1.0.8
         with:
-          name: links-check.log
-          path: links.log
+          args: --verbose --no-progress  ./_site/utils/env.html
+        env: GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Create Issue From File
+        uses: peter-evans/create-issue-from-file@v3
+        with:
+          title: Link Checker Report
+          content-filepath: ./lychee/out.md
+          labels: report, automated issue
