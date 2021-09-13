@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-ruby@v1
         with:
           ruby-version: 2.7.7
-        bundler-cache: true
+          bundler-cache: true
       # - name: Setup Rubygems, Bundler, jekyll
       #   run: | 
       #     gem update --system --no-document
