@@ -3,6 +3,12 @@ title: Environment Variable Test
 hidden: true
 ---
 
+- [good external link](https://www.google.com)
+- [good internal link](/docs/protocols/)
+- [bad external link](https://www.214s.sjs)
+- [bad internal link](/docs/protocolssds/)
+
+
 ## Build Metadata
 
 | Field               | Value                         |

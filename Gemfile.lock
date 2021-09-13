@@ -37,6 +37,8 @@ GEM
     em-websocket (0.5.2)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
+    ethon (0.12.0)
+      ffi (>= 1.3.0)
     eventmachine (1.2.7)
     faraday (1.1.0)
       multipart-post (>= 1.2, < 3)
@@ -44,6 +46,14 @@ GEM
     ffi (1.13.1)
     filesize (0.2.0)
     forwardable-extended (2.6.0)
+    html-proofer (3.19.2)
+      addressable (~> 2.3)
+      mercenary (~> 0.3)
+      nokogumbo (~> 2.0)
+      parallel (~> 1.3)
+      rainbow (~> 3.0)
+      typhoeus (~> 1.3)
+      yell (~> 2.0)
     http_parser.rb (0.6.0)
     httpclient (2.8.3)
     i18n (1.8.5)
@@ -97,6 +107,9 @@ GEM
       racc (~> 1.4)
     nokogiri (1.11.4-x86_64-linux)
       racc (~> 1.4)
+    nokogumbo (2.0.5)
+      nokogiri (~> 1.8, >= 1.8.4)
+    parallel (1.20.1)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     posix-spawn (0.3.15)
@@ -104,6 +117,7 @@ GEM
     progressbar (1.11.0)
     public_suffix (4.0.6)
     racc (1.5.2)
+    rainbow (3.0.0)
     rake (13.0.1)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
@@ -119,6 +133,8 @@ GEM
     terminal-table (2.0.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
     thread_safe (0.3.6)
+    typhoeus (1.4.0)
+      ethon (>= 0.9.0)
     tzinfo (1.2.8)
       thread_safe (~> 0.1)
     tzinfo-data (1.2020.4)
@@ -126,6 +142,7 @@ GEM
     unicode-display_width (1.7.0)
     verbal_expressions (0.1.5)
     wdm (0.1.1)
+    yell (2.2.2)
 
 PLATFORMS
   ruby
@@ -135,6 +152,7 @@ PLATFORMS
 DEPENDENCIES
   dotenv
   faraday
+  html-proofer
   jekyll!
   jekyll-algolia
   jekyll-commonmark
