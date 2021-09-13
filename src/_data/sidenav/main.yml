@@ -149,9 +149,8 @@ sections:
     section:
     - path: /connections/destinations
       title: Destinations Overview
-#    - path: /connections/destinations/actions
-#      title: Destination Actions
-# uncomment once fully rolled out
+    - path: /connections/destinations/actions
+      title: Destination Actions
     - path: /connections/destinations/add-destination
       title: Add a Destination
     - path: /connections/destinations/catalog

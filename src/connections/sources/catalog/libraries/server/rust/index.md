@@ -2,6 +2,8 @@
 title: Analytics for Rust
 sourceTitle: 'Rust'
 sourceCategory: 'Server'
+published: false
+hidden: true
 ---
 
 Our Rust library lets you record analytics data from your Rust code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
