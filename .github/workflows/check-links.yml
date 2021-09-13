@@ -27,7 +27,7 @@ jobs:
       - name: Check for broken links
         uses: lycheeverse/lychee-action@v1.0.8
         with:
-          args: --verbose --no-progress  ./_site/utils/env.html
+          args: --verbose --no-progress  ./_site/utils/env/index.html
         env: 
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Create Issue From File
