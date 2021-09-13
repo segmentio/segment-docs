@@ -1,6 +1,8 @@
 ---
 title: 'Analytics for Swift'
 strat: swift
+redirect_from:
+  - '/connections/sources/catalog/cloud-apps/swift/'
 ---
 
 With Analytics-Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS and Linux applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics-Swift enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations. Analytics-Swift also offers default implementations to help you maintain destinations and integrations.
