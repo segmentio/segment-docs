@@ -259,9 +259,6 @@ const updateSources = async () => {
   const hiddenSources = [
     'amp',
     'factual-engine',
-    'kotlin-android',
-    'kotlin',
-    'swift-ios'
   ]
 
   sources.forEach(source => {
@@ -394,7 +391,7 @@ const updateDestinations = async () => {
       const clonedObj = clone(object);
       const targetKey = clonedObj[key];
       delete clonedObj[key];
-    
+
       clonedObj[newKey] = targetKey;
       return clonedObj;
     };
