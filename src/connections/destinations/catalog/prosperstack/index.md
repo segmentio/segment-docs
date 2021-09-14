@@ -8,8 +8,6 @@ beta: true
 
 ProsperStack maintains this destination. For any issues with the ProsperStack Destination, [contact the ProsperStack Support team](mailto:support@prosperstack.com).
 
-> The ProsperStack Destination is currently in beta, and is actively developing.  To join the beta program, or if you have any feedback to help improve the ProsperStack Destination and its documentation, [contact the ProsperStack support team](mailto:support@prosperstack.com).
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
@@ -28,7 +26,7 @@ To add additional sources, click **Connect a source**.
 
 1. In the Segment app, go to **Connections** and click **Add Destination**.
 2. Search for "ProsperStack" in the Destinations Catalog, and select the **ProsperStack** destination.
-3. Click **Configure ProsperStack** and choose the source you want to connect the destination to. 
+3. Click **Configure ProsperStack** and choose the source you want to connect the destination to.
 4. Create a new API key from the [ProsperStack API keys settings screen](https://app.prosperstack.com/settings/api-keys){:target="\_blank"}.
 5. Enter the **API Key** in the ProsperStack destination **Settings** tab in Segment.
 
@@ -54,6 +52,6 @@ analytics.identify("userId123", {
 
 Segment sends Identify calls to ProsperStack as an `identify` event.
 
-Custom traits specified in an Identify call update [custom properties](https://prosperstack.com/docs/custom-properties/){:target="\_blank"} for a corresponding subscriber in ProsperStack. You must specify an `email` in an Identify call in order for a ProsperStack subscriber to match with the Identify call. 
+Custom traits specified in an Identify call update [custom properties](https://prosperstack.com/docs/custom-properties/){:target="\_blank"} for a corresponding subscriber in ProsperStack. You must specify an `email` in an Identify call in order for a ProsperStack subscriber to match with the Identify call.
 
 Custom properties in ProsperStack that match the exact key of a trait update automatically. You can configure additional trait mappings in the [ProsperStack configuration dashboard](https://app.prosperstack.com/settings/integrations/segment){:target="\_blank"}.
