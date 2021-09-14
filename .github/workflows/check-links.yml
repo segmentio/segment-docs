@@ -24,15 +24,23 @@ jobs:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       - name: Build jekyll website
         run: bundle exec jekyll build
-      - name: Check for broken links
-        uses: lycheeverse/lychee-action@v1.0.8
-        with:
-          args: -v -n ./_site/utils/env/index.html
-        env: 
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: Create Issue From File
-        uses: peter-evans/create-issue-from-file@v3
-        with:
-          title: Link Checker Report
-          content-filepath: ./lychee/out.md
-          labels: report, automated issue
+      # - name: Check for broken links
+      #   uses: lycheeverse/lychee-action@v1.0.8
+      #   with:
+      #     args: -v -n ./_site/utils/env/index.html
+      #   env: 
+      #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      # - name: Create Issue From File
+      #   uses: peter-evans/create-issue-from-file@v3
+      #   with:
+      #     title: Link Checker Report
+      #     content-filepath: ./lychee/out.md
+      #     labels: report, automated issue
+      - name: Check links using container
+      uses: ruzickap/action-my-broken-link-checker@v1
+      with:
+        url: https://my-testing-domain.com
+        pages_path: ./public/
+        cmd_params: "--skip-tls-verification --verbose --color=always"
+        run_timeout: 10
+        debug: true 
