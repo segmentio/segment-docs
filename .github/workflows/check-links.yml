@@ -37,10 +37,10 @@ jobs:
       #     content-filepath: ./lychee/out.md
       #     labels: report, automated issue
       - name: Check links using container
-      uses: ruzickap/action-my-broken-link-checker@v1
-      with:
-        url: https://my-testing-domain.com
-        pages_path: ./public/
-        cmd_params: "--skip-tls-verification --verbose --color=always"
-        run_timeout: 10
-        debug: true 
+        uses: ruzickap/action-my-broken-link-checker@v1
+        with:
+          url: https://my-testing-domain.com
+          pages_path: ./public/
+          cmd_params: "--skip-tls-verification --verbose --color=always"
+          run_timeout: 10
+          debug: true 
