@@ -1,5 +1,5 @@
 ---
-title: ActiveCampaign Destination
+title: 2mee Destination
 rewrite: true
 ---
 [2mee](https://2mee.com ) is a Human Hologram platform that automatically cuts the person out from the background, removing the visual clutter, and places them in the familiar context of your phone or website so that they dominate the screen.
