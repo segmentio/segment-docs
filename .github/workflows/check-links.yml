@@ -36,8 +36,8 @@ jobs:
       #     title: Link Checker Report
       #     content-filepath: ./lychee/out.md
       #     labels: report, automated issue
-      - name: Check links using container
-        uses: ruzickap/action-my-broken-link-checker@v1
+      - name: My Broken Link Checker
+        uses: ruzickap/action-my-broken-link-checker@v1.0.3
         with:
           url: https://my-testing-domain.com
           pages_path: ./public/
