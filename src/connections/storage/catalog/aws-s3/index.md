@@ -9,12 +9,12 @@ hide-personas-partial: true
 
 ## Getting Started
 
-The AWS destination puts the raw logs of the data Segment receives into your S3 bucket, encrypted, no matter what region the bucket is in.
+The AWS S3 destination puts the raw logs of the data Segment receives into your S3 bucket, encrypted, no matter what region the bucket is in.
 
 > info ""
 > Segment copies data into your bucket every hour around the :40 minute mark. You may see multiple files over a period of time depending on the amount of data Segment copies.
 
-Keep in mind that Amazon S3 works in a different way from most other destinations. Using a destinations selector like the [integrations object](/docs/connections/spec/common/#integrations) does not affect events with Amazon S3.
+Keep in mind that AWS S3 works differently than most other destinations. Using a destinations selector like the [integrations object](/docs/connections/spec/common/#integrations) does not affect events with AWS S3.
 
 The diagram below illustrates how the S3 destination works.
 
@@ -145,10 +145,6 @@ The received-day refers to the UTC date unix timestamp, that the API receives th
 ## Encryption
 
 Configure encryption at the bucket-level from within the AWS console. For more information, see Amazon's documentation [Protecting data using encryption](https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html){:target="_blank"}.
-
-## Region
-
-Segment infers the region of your bucket when data is copied to it, so you don' need to specify a bucket region in your configuration. If you're using VPC Endpoints for your S3 bucket, make sure you configure the endpoint in the same region as your bucket. You can find more information on this in the AWS S3 docs [here](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints-s3.html).
 
 ## Custom Path Prefix
 

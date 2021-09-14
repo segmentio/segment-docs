@@ -6,6 +6,9 @@ redirect_from:
 hide-personas-partial: true
 ---
 
+> success "Try the new AWS S3 beta destination"
+> The AWS S3 destination supports IAM Roles, allowing for a more secure connection to your buckets. For more information, see the [AWS S3 destination documentation](/docs/connections/storage/catalog/aws-s3/).
+
 ## Getting Started
 
 The Amazon S3 destination puts the raw logs of the data Segment receives into your S3 bucket, encrypted, no matter what region the bucket is in.
