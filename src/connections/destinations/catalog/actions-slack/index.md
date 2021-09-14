@@ -42,3 +42,12 @@ Combine the supported [triggers](/docs/connections/destinations/actions/#compone
 - [Post Message](#post-message)
 
 {% include components/actions-fields.html name="slack" %}
+
+## Migration from the classic Slack destination
+
+Follow the table below to map your existing Slack destination configuration to Slack (Actions).
+
+> warning ""
+> Slack (Actions) uses [Slack's  formatting syntax](https://api.slack.com/reference/surfaces/formatting){:target="_blank"}. This requires that you manually re-enter any messages from Slack Classic, and pick event data from the event variable picker. The handlebars syntax from Slack Classic is not compatible.
+
+{% include components/actions-map-table.html name="slack" %}

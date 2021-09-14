@@ -17,3 +17,27 @@ actions:
     - name: Icon URL
       description: The URL of the image that appears next to the User.
       default: https://logo.clearbit.com/segment.com
+config:
+  - category: Connection Settings
+    settings:
+    - name: Event Channels
+      configurable: true
+      location:
+      notes: In Slack (Actions), events and channels are set per subscription.
+    - name: Identify Template
+      configurable: true
+      location: 
+      notes: In Slack (Actions), you do not need a specific template for Identifying users. Use the Messages field to write your message, and add data from the event.
+    - name: Event Template
+      configurable: true
+      location:
+      notes: In Slack (Actions), you do not need a specific template for specific Events. Use the Filter and Messages field to specify the incoming event, and write your message with data from the event.
+    - name: Incoming Webhook URL
+      configurable: true
+      location:
+      notes: Available as a subscription-level setting on the Post Message action.
+    - name: Whitelisted Traits
+      configurable: true
+      location:
+      notes: Use the Messages field in the Post Message action to create your message with any traits from an incoming Identify call.
+
