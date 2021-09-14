@@ -3,11 +3,13 @@ title: AWS S3 with IAM Role Support Destination
 hide-personas-partial: true
 ---
 
-{% include content/beta-note.md %}
+> info "This document is about a destination which is in beta"
+> This means that the AWS S3 with IAM Role Support destination is in active development, and some functionality may change before it becomes generally available.
+
 
 ## Getting Started
 
-The Amazon S3 destination puts the raw logs of the data Segment receives into your S3 bucket, encrypted, no matter what region the bucket is in.
+The AWS destination puts the raw logs of the data Segment receives into your S3 bucket, encrypted, no matter what region the bucket is in.
 
 > info ""
 > Segment copies data into your bucket every hour around the :40 minute mark. You may see multiple files over a period of time depending on the amount of data Segment copies.
@@ -28,25 +30,7 @@ Complete the following steps to configure the AWS S3 Destination with IAM Role S
 
 To complete this section, you need access to your AWS dashboard.
 
-1. Create a new S3 bucket in your preferred region. For more information, see Amazon's documentation, [Create your first S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html){:target="_blank"}. Add the following policy to the bucket to allow Segment to copy files into it:
-    ```json
-    {
-        "Version": "2008-10-17",
-        "Id": "Policy1425281770533",
-        "Statement": [
-            {
-                "Sid": "AllowSegmentUser",
-                "Effect": "Allow",
-                "Principal": {
-                    "AWS": "arn:aws:iam::107630771604:user/s3-copy"
-                },
-                "Action": "s3:PutObject",
-                "Resource": "arn:aws:s3:::<YOUR_BUCKET_NAME>/segment-logs/*"
-            }
-        ]
-    }
-    ```
-    This adds the ability to `s3:PutObject` for the Segment s3-copy user for your bucket.
+1. Create a new S3 bucket in your preferred region. For more information, see Amazon's documentation, [Create your first S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html){:target="_blank"}. 
 2. Create a new IAM role for Segment to assume. For more information, see Amazon's documentation, [Creating a role to delegate permissions to an IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html){:target="_blank"}.
 3. Attach the following trust relationship document. Be sure to add your Workspace ID to the `sts:ExternalId` field. 
     ```json
@@ -95,10 +79,10 @@ To complete this section, you need access to your AWS dashboard.
             "Sid": "AllowKMS",
             "Effect": "Allow",
             "Action": [
-            "kms:GenerateDataKey",
-            "kms:Decrypt"
+                "kms:GenerateDataKey",
+                "kms:Decrypt"
             ],
-            "Resource": "YOUR_KEY_ARN"
+            "Resource": "<YOUR_KEY_ARN>"
         }
     ]
     }
@@ -111,7 +95,7 @@ If you have server-side encryption enabled, see the [required configuration](#en
 
 To finish configuration, enable the AWS S3 Destination with IAM Role Support destination in your workspace.
 
-1. Add the destination from the Data Storage catalog.
+1. Add the AWS S3 destination from the Data Storage section of the Destinations catalog.
 2. Select the data source you'll connect to the destination.
 3. Provide a unique name for the destination.
 4. Complete the destination settings:
@@ -124,18 +108,17 @@ To finish configuration, enable the AWS S3 Destination with IAM Role Support des
 ## Migrate an existing destination
 To migrate an existing Amazon S3 destination to the AWS S3 with IAM Role Support Destination:
 
-1. Configure the IAM role and IAM policy permissions as described in steps 3 and 4 [above](#create-an-iam-role-in-aws).
+1. Configure the IAM role and IAM policy permissions as described in steps 2 - 4 [above](#create-an-iam-role-in-aws).
 2. Add the AWS S3 with IAM Role Support Destination and add the AWS Region and IAM role ARN. For the bucket name, enter `<YOUR_BUCKET_NAME>/segment-logs/test`. Enable the destination, and verify data is received at `<YOUR_BUCKET_NAME>/segment-logs/test/segment-logs`. If the folder receives data, continue to the next step. If you don't see log entries, check the trust relationship document and IAM policy attached to the role.
 3. Update the bucket name in the new destination to `<YOUR_BUCKET_NAME>`.
 4. After 1 hour, disable the original Amazon S3 destination to avoid data duplication.
 5. Verify that the `<YOUR_BUCKET_NAME>/segment-logs` receives data.
 6. Remove the test folder created in step 2 from the bucket.
 
-{% comment %}
-### Migration steps for users with multiple sources per environment
 
-In cases where users have multiple sources per environment, for example staging sources pointing to a staging bucket, and production sources going to a production bucket, they need two IAM roles, one for staging, and one for production. 
+### Migration steps for scenarios with multiple sources per environment
 
+In cases where you have multiple sources per environment, for example staging sources pointing to a staging bucket, and production sources going to a production bucket, you need two IAM roles, one for staging, and one for production. 
 
 For example:
 
@@ -146,10 +129,9 @@ For example:
 - prod_source_2 → prod_bucket
 - prod_source_N → prod_bucket
 
-In this scenario, for `stage_source_1`:
-1. 
+For each source in the scenario, complete the steps described in [Migrate an existing destination](#migrate-an-existing-destination), and ensure that you have separate IAM Roles and Permissions set for staging and production use.
 
-{% endcomment %}
+
 ## Data format
 
 Segment stores logs as gzipped, newline-separated JSON containing the full call information. For a list of supported properties, see the [Segment Spec](/docs/connections/spec/) documentation.
@@ -162,98 +144,7 @@ The received-day refers to the UTC date unix timestamp, that the API receives th
 
 ## Encryption
 
-This section contains information for enabling encryption on your S3 bucket.
-
-### Server-Side Encryption with Amazon S3-Managed Keys (SSE-S3)
-
-Segment supports optional, S3-managed Server-Side Encryption, which you can disable or enable from the Destination Configuration UI. By default, the destination now automatically enables encryption, and Segment recommends that you continue to encrypt.
-If you've had the S3 destination enabled since before October 2017, you might need to enable encryption manually on your bucket.
-
-While most client libraries transparently decrypt the file when fetching it, you should make sure that any applications that are consume data in the S3 bucket are ready to decrypt the data before you enable this feature. When you're ready, you can enable encryption from the setting in the destination configuration UI.
-
-### Server-Side Encryption with AWS KMS-Managed Keys (SSE-KMS)
-Segment can also write to S3 buckets with Default Encryption set to AWS-KMS. This ensures that objects written to your bucket are encrypted using customer managed keys created in your AWS Key Management Service (KMS).
-Follow the steps below to enable encryption using AWS KMS Managed Keys:
-
-#### Create a new customer-managed key and grant the Segment user permissions to generate new keys
-The Segment user must have the permission to `GenerateDataKey` from your AWS Key Management Service. Here is a sample policy document that grants the Segment user the necessary permissions.
-
-```json
-{
-    "Version": "2012-10-17",
-    "Id": "key-consolepolicy-3",
-    "Statement": [
-        {
-            "Sid": "Allow Segment S3 user to generate key",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::107630771604:user/s3-copy"
-            },
-            "Action": "kms:GenerateDataKey",
-            "Resource": "*"
-        }
-    ]
-}
-```
-
-![creating customer managed key screenshot](images/customer-managed-key.png)
-
-#### Update S3 bucket default encryption property
-The target S3 bucket should have the "Default encryption" property enabled and set to `AWS-KMS`. Choose the customer-managed key generated in the above step for encryption.
-
-![update default encryption property](images/bucket-property.png)
-
-#### Disable ServerSideEncryption in Segment S3 Destination settings
-Disable the Server Side Encryption setting in the Segment destination configuration. This allows you to enable bucket-level encryption, so Amazon can encrypt objects using KMS managed keys.
-
-![disable segment s3 destination property](images/disable-segment-sse.png)
-
-### Enforcing encryption
-To further secure your bucket by ensuring that all files upload with the encryption flag present, you can add to the bucket policy to strictly enforce that all uploads trigger encryption.
-
-Segment recommends doing this as a best practice. The following policy strictly enforces upload encryption with Amazon S3-Managed keys.
-
-```json
-{
-    "Version": "2008-10-17",
-    "Id": "Policy1425281770533",
-    "Statement": [
-        {
-            "Sid": "AllowSegmentUser",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::107630771604:user/s3-copy"
-            },
-            "Action": "s3:PutObject",
-            "Resource": "arn:aws:s3:::YOUR_BUCKET_NAME/segment-logs/*"
-        },
-        {
-            "Sid": "DenyIncorrectEncryptionHeader",
-            "Effect": "Deny",
-            "Principal": "*",
-            "Action": "s3:PutObject",
-            "Resource": "arn:aws:s3:::YOUR_BUCKET_NAME/*",
-            "Condition": {
-                "StringNotEquals": {
-                    "s3:x-amz-server-side-encryption": "AES256"
-                }
-            }
-        },
-        {
-            "Sid": "DenyUnEncryptedObjectUploads",
-            "Effect": "Deny",
-            "Principal": "*",
-            "Action": "s3:PutObject",
-            "Resource": "arn:aws:s3:::YOUR_BUCKET_NAME/*",
-            "Condition": {
-                "Null": {
-                    "s3:x-amz-server-side-encryption": "true"
-                }
-            }
-        }
-    ]
-}
-```
+Configure encryption at the bucket-level from within the AWS console. For more information, see Amazon's documentation [Protecting data using encryption](https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html){:target="_blank"}.
 
 ## Region
 
@@ -265,49 +156,13 @@ To use a custom key prefix for the files in your bucket, append the path to the 
 
 ### How can I download the data from my bucket?
 
-Segment recommends using the [AWS CLI](http://aws.amazon.com/cli/) and writing a short script to download specific days, one at a time. The AWS CLI is faster than [s3cmd](http://s3tools.org/s3cmd) because it downloads files in parallel.
-
-> info ""
-> S3 transparently decompresses the files for most clients. To access the raw gzipped data you can programmatically download the file using [the AWS SDK](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html) and setting `ResponseContentEncoding: none`. This functionality isn't available in the AWS CLI). You can also manually remove the metadata on the file (`Content-Type: text/plain` and `Content-Encoding: gzip`) through the AWS interface, which allows you to download the file as gzipped.
-
-To configure the AWS CLI, see Amazon's documentation [here](http://docs.aws.amazon.com/cli/latest/userguide/installing.html). For linux systems, run the following command:
-
-
-```bash
-$ sudo apt-get install awscli
-```
-
-Then configure AWS CLI with your Access Key ID and Secret Access Key. You can create or find these keys in your [Amazon IAM user management console](https://console.aws.amazon.com/iam/home#users). Then run the following command which will prompt you for the access keys:
-
-```bash
-$ aws configure
-```
-
-To see a list of the most recent log folders:
-
-```bash
-$ aws s3 ls s3://{bucket}/segment-logs/{source-id}/ | tail -10
-```
-
-To download the files for a specific day:
-
-```bash
-$ aws s3 sync s3://{bucket}/segment-logs/{source-id}/{received-day} .
-```
-
-Or to download *all* files for a source:
-
-```bash
-$ aws s3 sync s3://{bucket}/segment-logs/{source-id} .
-```
-
-To put the files in a specific folder replace the `.` at the end ("current directory") with the desired directory like `~/Downloads/logs`.
+Amazon provides several methods to download data from an S3 bucket. For more information, see [Downloading an object](https://docs.aws.amazon.com/AmazonS3/latest/userguide/download-objects.html){:target="_blank"}.
 
 
 ## Personas
 
 > warning ""
-> As mentioned above, the Amazon S3 destination works differently than other destinations in Segment. As a result, Segment sends **all** data from a Personas source to S3 during the sync process, not only the connected audiences and traits.
+> As mentioned above, the AWS S3 destination works differently than other destinations in Segment. As a result, Segment sends **all** data from a Personas source to S3 during the sync process, not only the connected audiences and traits.
 
 You can send computed traits and audiences generated using [Segment Personas](/docs/personas) to this destination as a **user property**. 
 
