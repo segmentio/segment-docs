@@ -26,7 +26,7 @@ The Actions Google Enhanced Conversions destination is in Private Beta, and does
 4. Enter your Conversion Tracking ID. For more information, see the article [Google Ads conversions](https://support.google.com/tagmanager/answer/6105160?hl=en){:target="_blank"}.
    1. To find your Conversion Tracking ID, log in to Google Ads, and make sure you are in [Expert Mode](https://support.google.com/google-ads/answer/9520605?hl=en){:target="_blank"}.
    2. Click **Tools & Settings** in the top bar, and select **Conversions** from the dropdown. Select the **Conversion Action** you want Segment to log to.
-   3. Open the menu for **Enhanced Conversions**. Enable **Turn on enhanced conversions** and click **Edit code**. then **Use event snippet**.
+   3. Open the menu for **Enhanced Conversions**. Enable **Turn on enhanced conversions** and click **Edit code**, then **Use enhanced conversions API**.
    4. Open the **Tag setup** menu. In the *Select how you want to install your tag* section, select **Install the tag yourself - Add the tag to your website code**.
    5. Scroll down to the **Event snippet** and click **Download snippet**.
    6. Open the snippet in a text editor, you should see something like the following:
