@@ -1,13 +1,19 @@
 ---
 title: AWS S3 with IAM Role Support Destination
 redirect_from:
-  - '/connections/destinations/catalog/amazon-s3/'
+  - '/connections/destinations/catalog/aws-s3/'
 hide-personas-partial: true
 ---
 
 > info "This document is about a destination which is in beta"
 > This means that the AWS S3 with IAM Role Support destination is in active development, and some functionality may change before it becomes generally available.
 
+
+## Differences between the Amazon S3 destination and the AWS S3 destination
+
+The AWS S3 destination provides a more secure method of connecting to your S3 buckets. It uses AWS's own IAM Roles to define access to the specified buckets. For more information about IAM Roles, see Amazon's [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html){:target="_blank"} documentation.
+
+Functionally, the two destinations (Amazon S3 and AWS S3 with IAM Role Support) copy data in a similar manner.
 
 ## Getting Started
 
@@ -23,6 +29,8 @@ The diagram below illustrates how the S3 destination works.
 The Segment Tracking API processes data from your sources, and collects the Events in batches. When these batches reach a 100 MB, or once per hour, a Segment initiates a process which uploads them to a secure Segment S3 bucket, from which they are securely copied to your own S3 bucket.
 
 ![](images/s3processdiagram.png)
+
+
 
 ## Create a new destination
 
@@ -97,7 +105,7 @@ If you have server-side encryption enabled, see the [required configuration](#en
 
 To finish configuration, enable the AWS S3 Destination with IAM Role Support destination in your workspace.
 
-1. Add the AWS S3 destination from the Data Storage section of the Destinations catalog.
+1. Add the **AWS S3** destination from the Raw Data section of the Destinations catalog. This document is about the **AWS S3** destination. For information about the **Amazon S3** destination, which does not include IAM Role support, see the documentation [here](/docs/connections/storage/catalog/amazon-s3/).
 2. Select the data source you'll connect to the destination.
 3. Provide a unique name for the destination.
 4. Complete the destination settings:
@@ -107,13 +115,21 @@ To finish configuration, enable the AWS S3 Destination with IAM Role Support des
 5. Enable the destination.
 6. Verify Segment data is stored in the S3 bucket by navigating to the `<your_S3_bucket>/segment-logs` in the AWS console. The bucket will take roughly 1 hour to begin receiving data.
 
+> info ""
+> Did you know you can create destinations with the Config API? For more information, see [Create Destination](https://reference.segmentapis.com/#51d965d3-4a67-4542-ae2c-eb1fdddc3df6){:target="_blank"}.
+
+
 ## Migrate an existing destination
+
+> warning "Avoid overwriting data"
+> Sending data to the same S3 location from both the existing Amazon S3 destination, and the AWS S3 with IAM Role Support destination will overwrite data in that location. To avoid this, follow the steps below.
+
 To migrate an existing Amazon S3 destination to the AWS S3 with IAM Role Support Destination:
 
 1. Configure the IAM role and IAM policy permissions as described in steps 2 - 4 [above](#create-an-iam-role-in-aws).
 2. Add the AWS S3 with IAM Role Support Destination and add the AWS Region and IAM role ARN. For the bucket name, enter `<YOUR_BUCKET_NAME>/segment-logs/test`. Enable the destination, and verify data is received at `<YOUR_BUCKET_NAME>/segment-logs/test/segment-logs`. If the folder receives data, continue to the next step. If you don't see log entries, check the trust relationship document and IAM policy attached to the role.
 3. Update the bucket name in the new destination to `<YOUR_BUCKET_NAME>`.
-4. After 1 hour, disable the original Amazon S3 destination to avoid data duplication.
+4. After 1 hour, disable the original Amazon S3 destination.
 5. Verify that the `<YOUR_BUCKET_NAME>/segment-logs` receives data.
 6. Remove the test folder created in step 2 from the bucket.
 
