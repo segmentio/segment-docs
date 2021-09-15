@@ -42,7 +42,7 @@ Send [Track](/docs/connections/spec/track/) calls to track the actions your user
 
 Configure the HoloCapsule setting in the [2mee](https://go.2mee.com/) app.
 
-The `userId` field is required. Track calls without a `userId` or with a `userId` not mapped to a device fail with a `400` code.
+Segment requires the `userId`. Track calls without a `userId` or with a `userId` not mapped to a device fail with a `400` code.
 
 ```js
 {
