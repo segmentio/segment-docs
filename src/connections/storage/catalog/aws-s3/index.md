@@ -1,5 +1,7 @@
 ---
 title: AWS S3 with IAM Role Support Destination
+redirect_from:
+  - '/connections/destinations/catalog/amazon-s3/'
 hide-personas-partial: true
 ---
 
