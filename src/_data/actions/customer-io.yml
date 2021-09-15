@@ -1,0 +1,110 @@
+settings:
+  - category: Connection Settings
+    settings:
+    - name: API Key (required)
+      description: Your Customer.io API Key. This can be found on the [API Credentials Page](https://fly.customer.io/settings/api_credentials){:target="_blank"}.
+      default:
+    - name: Site ID (required)
+      description: Your Customer.io site Key. This can be found on the [API Credentials Page](https://fly.customer.io/settings/api_credentials){:target="_blank"}.
+      default:
+actions:
+  - action: Track Event
+    blurb: Track an event for a known person.
+    fields:
+    - name: Event Name (required)
+      description: The name of the event.
+      default: event
+    - name: Person ID
+      description: The ID of the person who triggered the event.
+      default: userId
+    - name: Anonymous ID
+      description: The Anonymous ID of the person who triggered the event.
+      default: anonymousId
+    - name: Event Type
+      description: Override the event type. For example, "page".
+      default: type
+    - name: Data
+      description: Any customer data to include with the event.
+      default: properties
+  - action: Create or Update Person
+    blurb: Update a person in Customer.io or create them if they don't exist.
+    fields:
+    - name: Person ID (required)
+      description: The identifier used to uniquely identify a person in Customer.io
+      default: userId
+    - name: Email Address (required)
+      description: The email address of the person.
+      default: traits.userId
+    - name: Anonymous ID
+      description: The Anonymous ID to uniquely identify a person in Customer.io.
+      default: anonymousId
+    - name: Created At    
+      description: The timestamp for when this person was created.
+      default: timestamp
+    - name: Custom Attributes
+      description: Optional custom attributes for this person. When you update a person, attributes are added and not removed.
+      default: traits
+  - action: Create or Update Device
+    blurb: Update a person's device in Customer.io, or create it if it doesn't exist.
+    fields:
+    - name: Person ID (required)
+      description: The ID of the person this device belongs to.
+      default: userId
+    - name: Device ID (required)
+      description: The unique ID for the device from which the event was sent.
+      default: context.device.id
+    - name: Platform (required)
+      description: The platform of the device.
+      default: context.device.type
+    - name: Last Used
+      description: The timestamp for when the device was last used.
+      default: timestamp
+  - action: Track Anonymous Event
+    blurb: Track an event not tied to a known person.
+    fields:
+    - name: Event Name (required)
+      description: The name of the event.
+      default: event
+    - name: Data
+      description: Custom data to include with the event. If `recipient`, `from_address`, or `reply_to` are sent, they will override settings on any campaings triggered by this event. `recipient` is required if the event is used to trigger a campaign.
+      default: properties
+config:
+  - category: Connection Settings
+    settings:
+    - name: API Key
+      connection_mode:
+        - cloud
+        - device-web
+      configurable: true
+      location:
+      notes: Set the API key as a connection setting during initial configuration, or on the Settings tab.
+    - name: Customer.io Datacenter
+      connection_mode:
+        - cloud
+        - device-web
+      configurable: false
+      location:
+      notes: Customer.io Data Center is not needed in Customer.io (Actions)
+    - name: Site ID
+      connection_mode:
+        - cloud
+        - device-web
+      configurable: true
+      location:
+      notes: Set the Site ID as a connection setting during initial configuration, or on the Settings tab.
+    - name: Connection Mode
+      connection_mode:
+        - cloud
+        - device-web
+      configurable: false
+      location:
+      notes: Customer.io (Actions) supports cloud-mode.
+  - category: Other Settings
+    settings: 
+    - name: Convert to Unix Time
+      connection_mode:
+        - cloud
+        - device-web
+      configurable: false
+      location:
+      notes: tbd
