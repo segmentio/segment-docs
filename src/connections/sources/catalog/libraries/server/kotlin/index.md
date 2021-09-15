@@ -55,15 +55,12 @@ To get started with the Analytics-Kotlin server library:
     ----------- | -----------
     `writeKey` *required* | This is your Segment write key. |
     `application` | Default set to `null`. <br> The application specific object (in the case of `Android: ApplicationContext`).
-    `analyticsScope` | Default set to `MainScope()`. <br> The `CoroutineScope` where all analytics coroutines run. |
-    `analyticsDispatcher` | Default set to `Executors.newSingleThreadExecutor()`. <br> The Dispatcher running analytics tasks. |
     `apiHost` | Default set to `api.segment.io/v1`. <br> This sets a default API Host to which Segment sends events. |
     `autoAddSegmentDestination` | Default set to `true`. <br> This automatically adds the Segment Destination plugin. You can set this to `false` if you want to manually add the Segment Destination plugin. |
     `collectDeviceId` | Default set to `false`. <br> Set to `true` to automatically collect the device Id. |
     `defaultSettings` | Default set to `{}`. <br> The settings object used as fallback in case of network failure. |
     `flushAt` | Default set to `20`. <br> The count of events at which Segment flushes events. |
     `flushInterval` | Default set to `30` (seconds). <br> The interval in seconds at which Segment flushes events. |
-    `ioDispatcher` | Default set to `Dispatchers.IO`. <br> The Dispatcher running IO tasks. |
     `recordScreenViews` | Default set to `false`. <br> Set to `true` to automatically trigger screen events on Activity Start. |
     `storageProvider` | Default set to `ConcreteStorageProvider`. <br> The provider for storage class. It’s best not to modify this as it can disrupt your storage logic and you won’t be able to correctly store events. |
     `trackApplicationLifecycleEvents` | Default set to `false`. <br> Set to `true` to automatically track Lifecycle events. |

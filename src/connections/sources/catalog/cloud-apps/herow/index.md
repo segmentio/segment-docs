@@ -25,7 +25,6 @@ Below is a table of events that HEROW sends to Segment. These events will show u
 
 | Event Name | Description | Details|
 | -------- | -------- | -------- |
-| Text     | Text     | Text     |
 |Zone Entered| User enters a geofence zone| A zone is a geofence monitored by our HEROW SDK. Geofence zones are created and activated in HEROW platform.|
 |Zone Exited|User leaves a geofence zone|A zone is a geofence monitored by our HEROW SDK. Geofence zones are created and activated in HEROW platform.|
 |Home Entered|User enters "Home" location|HEROW's proprietary algorithms can automatically detect a users home location after a few days.|
