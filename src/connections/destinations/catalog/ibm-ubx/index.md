@@ -2,6 +2,7 @@
 title: IBM Universal Behavior Exchange Destination
 rewrite: true
 beta: true
+hidden: true
 ---
 
 [IBM's Universal Behavior Exchange (UBX)](https://www.ibm.com/support/knowledgecenter/en/SS9JVY/UBX/kc_welcome_UBX.html)
