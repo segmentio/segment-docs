@@ -23,7 +23,7 @@ This destination is maintained by 2mee. For any issues with the destination, [co
 
 ### Identify
 
-Send [Identify](https://segment.com/docs/connections/spec/identify/) calls to check if a user exists within your application. For example:
+Send [Identify](/docs/connections/spec/identify/) calls to check if a user exists within your application. For example:
 
 ```js
 {
