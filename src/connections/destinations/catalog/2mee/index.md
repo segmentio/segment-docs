@@ -11,10 +11,11 @@ This destination is maintained by 2mee. For any issues with the destination, [co
 {% include content/connection-modes.md %}
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-2. Search for “2mee” in the Destinations Catalog, and select the 2mee destination.
-3. Choose which Source should send data to the 2mee destination.
-4. Copy the [API Key and Application ID](https://docs.2mee.com/documentation/segment) from the 2mee Dashboard.
-5. Back in the Segment App, paste the API Key and Application ID you just copied in the 2mee destination settings. Note that the API Key should be pasted in this format: `Bearer <API Key>`.
+2. Search for **2mee** in the Destinations Catalog and it.
+3. Click **Configure 2mee**. 
+4. Choose which Source should send data to the 2mee destination.
+5. Go to 2mee and copy the [API Key and Application ID](https://docs.2mee.com/documentation/segment) from the 2mee Dashboard.
+6. Go back to Segment and paste the API Key and Application ID you just copied in the 2mee destination settings. Make sure to paste the API Key in this format: `Bearer <API Key>`.
 
 ## Supported methods
 
