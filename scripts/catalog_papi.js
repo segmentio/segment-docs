@@ -366,8 +366,15 @@ const updateDestinations = async () => {
   destinations.forEach(destination => {
     let slug = slugify(destination.name)
 
-    if (slug == 'amplitude-actions') {
-      slug = 'actions-amplitude'
+    // Flip the slug of Actions destinations
+    const actionsDests = [
+      'amplitude-actions',
+      'slack-actions'
+    ]
+
+    if (actionsDests.includes(slug)) {
+        const newSlug = slug.split('-')
+        slug = newSlug[1]+'-'+newSlug[0]
     }
 
     let url = `connections/destinations/catalog/${slug}`
