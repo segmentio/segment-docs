@@ -116,7 +116,7 @@ We also encourage marketing content that showcases how easy and powerful your in
 - Write docs
     - For your docs site about Segment integration
     - For https://segment.com/docs/ about your integration ([HackMD template](https://hackmd.io/t7amLXluS7-39rg7ARZgSA))
-    - For https://segment.com/catalog/ about your integration ([Google Docs template](https://docs.google.com/document/d/1kvAvAHLyM3pOq-lBcZJhP_X_KivHlk1eiFy-5ERWDXc/edit))
+    - For https://segment.com/catalog/ about your integration ([Google Docs template](https://docs.google.com/document/d/1kKvqYtZeDPnBjvCrtQSuO3BBH70b_CLO13hYrYIOOtA/edit))
 
 
 - Write launch marketing content
@@ -171,7 +171,7 @@ To maintain the quality of the partner integrations catalog, the Segment Develop
     - All signup, API key and data delivery matches test
 
 
-- Review catalog information partner submitted using [Google Docs Template](https://docs.google.com/document/d/1kvAvAHLyM3pOq-lBcZJhP_X_KivHlk1eiFy-5ERWDXc/edit)
+- Review catalog information partner submitted using [Google Docs Template](https://docs.google.com/document/d/1kKvqYtZeDPnBjvCrtQSuO3BBH70b_CLO13hYrYIOOtA/edit)
 
 
 - Verify that in-app catalog entry renders correctly
