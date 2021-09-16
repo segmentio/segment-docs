@@ -4,7 +4,7 @@ items:
 - display_name: 2mee
   name: 2mee
   slug: 2mee
-  hidden: true
+  hidden: false
   url: connections/destinations/catalog/2mee
   previous_names:
   - 2mee
