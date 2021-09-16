@@ -21188,7 +21188,8 @@ items:
   - Slack (Actions)
   website: 'https://slack.com'
   status: PUBLIC_BETA
-  categories: []
+  categories:
+  - Customer Success
   logo:
     url: 'https://cdn.filepicker.io/api/file/MOBcngiSCGx8u10x6Kh3'
   mark:
