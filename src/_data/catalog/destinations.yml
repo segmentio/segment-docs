@@ -173,55 +173,6 @@ items:
       types in the settings page of the A/B Smartly web console.
     required: true
     label: Unit Mapping
-- display_name: Actions Slack
-  name: Actions Slack
-  slug: actions-slack
-  hidden: true
-  url: connections/destinations/catalog/actions-slack
-  previous_names:
-  - Actions Slack
-  website: 'https://slack.com'
-  status: PUBLIC_BETA
-  categories: []
-  logo:
-    url: 'https://cdn.filepicker.io/api/file/MOBcngiSCGx8u10x6Kh3'
-  mark:
-    url: 'https://cdn.filepicker.io/api/file/Bk6jzITDTp26X3K3t0RL'
-  methods:
-    track: true
-    identify: true
-    group: true
-    alias: true
-    page: true
-  platforms:
-    browser: true
-    mobile: false
-    server: true
-  components: []
-  browserUnbundlingSupported: false
-  browserUnbundlingPublic: false
-  replay: false
-  connection_modes:
-    device:
-      web: false
-      mobile: false
-      server: false
-    cloud:
-      web: false
-      mobile: false
-      server: false
-    summary: No connection mode information available.
-    cmode_type: none
-    case: '0'
-  settings:
-  - name: required_hidden_token
-    type: string
-    defaultValue: ''
-    description: >-
-      This token is hidden because it is unused and destinations must have one
-      setting.
-    required: true
-    label: Required Hidden Token
 - display_name: ActiveCampaign
   name: ActiveCampaign
   slug: activecampaign
@@ -21227,6 +21178,56 @@ items:
       you want catch and forward to Slack.
     required: true
     label: Whitelisted Traits
+- display_name: Slack (Actions)
+  name: Slack (Actions)
+  slug: actions-slack
+  hidden: false
+  url: connections/destinations/catalog/actions-slack
+  previous_names:
+  - Actions Slack
+  - Slack (Actions)
+  website: 'https://slack.com'
+  status: PUBLIC_BETA
+  categories: []
+  logo:
+    url: 'https://cdn.filepicker.io/api/file/MOBcngiSCGx8u10x6Kh3'
+  mark:
+    url: 'https://cdn.filepicker.io/api/file/Bk6jzITDTp26X3K3t0RL'
+  methods:
+    track: true
+    identify: true
+    group: true
+    alias: true
+    page: true
+  platforms:
+    browser: true
+    mobile: false
+    server: true
+  components: []
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: false
+  replay: false
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
+  settings:
+  - name: required_hidden_token
+    type: string
+    defaultValue: ''
+    description: >-
+      This token is hidden because it is unused and destinations must have one
+      setting.
+    required: true
+    label: Required Hidden Token
 - display_name: SlicingDice
   name: SlicingDice
   slug: slicingdice
