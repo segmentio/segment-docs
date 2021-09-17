@@ -22,21 +22,20 @@ jobs:
         with:
           ruby-version: 2.6 # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-      - name: Build jekyll website with drafts
+      - name: Build jekyll website with
         run: bundle exec jekyll build
       - name: Check for broken links
         run: |
-          bundle exec htmlproofer --log-level :debug ./_site/utils/env/index.html &> links.log
+          yarn run hyperlink ./_site/index.html --canonicalroot https://segment.com/docs -i -r --skip 0.0.0.0 | yarn run tap-spot > output.md
         continue-on-error: true
       - name: Archive log links
         uses: actions/upload-artifact@v1
         with:
           name: links-check.log
-          path: links.log
-      - name: Build jekyll website
-        run: bundle exec jekyll build
-      - name: Archive log links
-        uses: actions/upload-artifact@v1
+          path: output.md
+      - name: Create Issue From File
+        uses: peter-evans/create-issue-from-file@v2
         with:
-          name: links-check.log
-          path: links.log
+          title: Link Checker Report
+          content-filepath: output.md
+          labels: report, automated issue
