@@ -5,8 +5,16 @@ import {createAlgoliaInsightsPlugin} from '@algolia/autocomplete-plugin-algolia-
 import insightsClient from 'search-insights';
 
 
-const appId = 'UINQ2M4D9S';
-const apiKey = '3ecd0f228971adf2d5a4217789ae1765';
+const sampleAppId = 'latency';
+const sampleApiKey = '6be0576ff61c053d5f9a3225e2a90f76';
+const envAppId = process.env.ALGOLIA_APP_ID;
+const envApiKey = process.env.ALGOLIA_SEARCH_KEY;
+
+
+const appId = envAppId != null ? envAppId : sampleAppId;
+const apiKey = envApiKey != null ? envApiKey : sampleApiKey;
+const placeHolder = envApiKey != null ? 'Search the Segment documentation' : 'Search disabled locally'
+
 const searchClient = algoliasearch(appId, apiKey);
 
 //insights
@@ -19,7 +27,7 @@ const locations = ['#autocomplete','#autocomplete-mobile'];
 function initAutocomplete(item){
   const search = autocomplete({
     container: item,
-    placeholder: 'Search the Segment documentation',
+    placeholder: placeHolder,
     debug: false,
     openOnFocus: false,
     keyboardShortcuts: ['s', 191],

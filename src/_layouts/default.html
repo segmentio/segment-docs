@@ -233,6 +233,9 @@
         // analytics.identify();
       }}();
     </script>
-    
+{%- if site.env.CONTEXT != "production" -%}
+<script src="{{ "./assets/docs.delay.js" | relative_url}}"></script>
+
+{%- endif -%}
 </body>
 </html>
