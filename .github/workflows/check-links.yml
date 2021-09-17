@@ -32,7 +32,8 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: links-check.log
-          path: links.log- name: Build jekyll website
+          path: links.log
+      - name: Build jekyll website
         run: bundle exec jekyll build
       - name: Archive log links
         uses: actions/upload-artifact@v1
