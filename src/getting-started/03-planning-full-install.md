@@ -36,7 +36,7 @@ Tracking is about learning and taking action. Think about what you want to know 
 - How do people discover, start using, and paying for your product?
 - What are the most important steps in a customer's journey?
 
-While it may seem obvious, we highly recommend documenting your high-level business objectives (see [the Goals tab in Google Sheet Tracking Plan](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view) template). More specifically, ask yourself: what are the measurable business outcomes you want to achieve this year? Do you want to acquire new customers? Generate more new sign-ups, drive more incremental revenue among your current customer base?
+While it may seem obvious, we highly recommend documenting your high-level business objectives (see [the Goals tab in Google Sheet Tracking Plan](https://docs.google.com/spreadsheets/d/1TA6qTcDHoZzsG7-C6p5yHGximDxqoNtizguKs7Z0av4/view) template). More specifically, ask yourself: what are the measurable business outcomes you want to achieve this year? Do you want to acquire new customers? Generate more new sign-ups, drive more incremental revenue among your current customer base?
 
 The best way to answer this question is to interview stakeholders in your organization who will consume the data.
 
@@ -60,7 +60,7 @@ With your business objectives documented and mapped to user actions, it’s time
 
 When you're first starting out, we recommend that you limit your tracking plan to a few core events, but add lots of properties to provide context about them. We generally see more success with the “less is more” philosophy of tracking data, but you might also decide to take a more liberal “track more and analyze later” approach. Like everything, each alternative has pros and cons that are important to consider especially as it relates to your company’s needs.
 
-If you're having trouble starting out, we recommend that you look at our free [Tracking Plan spreadsheet template](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view) for inspiration. (We'll talk more about Tracking Plans [below](#develop-a-tracking-plan).)
+If you're having trouble starting out, we recommend that you look at our free [Tracking Plan spreadsheet template](https://docs.google.com/spreadsheets/d/1TA6qTcDHoZzsG7-C6p5yHGximDxqoNtizguKs7Z0av4/view) for inspiration. (We'll talk more about Tracking Plans [below](#develop-a-tracking-plan).)
 
 ### Shortcut! Check if a Business Spec meets your needs
 
@@ -117,7 +117,7 @@ In the next section, we share how to build a tracking plan from the ground up us
 
 ### Using the Tracking Plan Google Sheets template
 
-To help you get started, we developed a Tracking Plan template in [Google Sheets](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view).
+To help you get started, we developed a Tracking Plan template in [Google Sheets](https://docs.google.com/spreadsheets/d/1TA6qTcDHoZzsG7-C6p5yHGximDxqoNtizguKs7Z0av4/view).
 
 The template includes all of our Business-case ("semantic") Specs (which we mentioned [above](#shortcut-check-if-a-business-spec-meets-your-needs)) as tabs, including [eCommerce](/docs/connections/spec/ecommerce/v2/), [B2B SaaS](/docs/connections/spec/mobile/), [Mobile](/docs/connections/spec/mobile/) and [Video](/docs/connections/spec/video/), and a collection of common properties.
 

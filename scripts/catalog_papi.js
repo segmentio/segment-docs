@@ -206,7 +206,7 @@ const getConnectionModes = (destination) => {
       if (item.status === 'PUBLIC_BETA') {
         betaFlag = 'beta: true\n'
       }
-      content =`---\ntitle: '${item.display_name} Destination'\nhidden: true\n${betaFlag}---\n`
+      content =`---\ntitle: '${item.display_name} Destination'\nhidden: true\npublished: false\n${betaFlag}---\n`
     }
     fs.mkdirSync(docsPath)
     fs.writeFileSync(`${docsPath}/index.md`, content)
@@ -259,9 +259,6 @@ const updateSources = async () => {
   const hiddenSources = [
     'amp',
     'factual-engine',
-    'kotlin-android',
-    'kotlin',
-    'swift-ios'
   ]
 
   sources.forEach(source => {
@@ -368,6 +365,18 @@ const updateDestinations = async () => {
 
   destinations.forEach(destination => {
     let slug = slugify(destination.name)
+
+    // Flip the slug of Actions destinations
+    const actionsDests = [
+      'amplitude-actions',
+      'slack-actions'
+    ]
+
+    if (actionsDests.includes(slug)) {
+        const newSlug = slug.split('-')
+        slug = newSlug[1]+'-'+newSlug[0]
+    }
+
     let url = `connections/destinations/catalog/${slug}`
 
     let tempCategories = [destination.categories]
@@ -394,7 +403,7 @@ const updateDestinations = async () => {
       const clonedObj = clone(object);
       const targetKey = clonedObj[key];
       delete clonedObj[key];
-    
+
       clonedObj[newKey] = targetKey;
       return clonedObj;
     };

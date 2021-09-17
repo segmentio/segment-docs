@@ -46,9 +46,6 @@ To enter each subsequent step, three conditions must be true:
 2. The user meets the next step's conditions.
 3. The users satisfies wait conditions.
 
-### Evaluating Prior Step Membership
-
-To evaluate whether a user has ever joined the previous step, Journeys appends the `preceding_step_joined_time` trait to the user’s profile.  This trait notes when the user initially joined each step.  To enter a step, users must satisfy both the `preceding_step_audience_member = True` condition and the step's defined conditions.
 
 ### Condition Steps
 

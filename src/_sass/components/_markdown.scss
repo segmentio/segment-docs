@@ -144,7 +144,12 @@
         top: 0;
         left: 0;
       }
-
+      div.highlighter-rouge {
+        margin: 15px auto;
+      }
+      table {
+        margin: 15px auto;
+      }
       &>ul,
       ol {
         margin-top: 0;
