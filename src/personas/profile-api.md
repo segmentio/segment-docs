@@ -194,7 +194,7 @@ Segment uses conventional HTTP response codes to indicate the success or failure
 
 ### Rate Limit
 
-To ensure low response times, every Space has a default rate limit of 100 requests/sec. Please contact [friends@segment.com](mailto:friends@segment.com) if you need a higher limit with details around your use case. For more information about rate limits, see the [Rate Limits](/docs/personas/rate-limits) documentation.
+To ensure low response times, every Space has a default rate limit of 100 requests/sec. Please contact [friends@segment.com](mailto:friends@segment.com) if you need a higher limit with details around your use case. For more information about rate limits, see the [Product Limits](/docs/personas/product-limits) documentation.
 
 
 ### Pagination
