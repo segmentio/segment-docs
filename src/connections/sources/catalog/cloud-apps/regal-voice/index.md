@@ -43,7 +43,7 @@ The table below lists events that Regal Voice sends to Segment. These events app
   </tr>
   <tr>
     <td>contact.experiment.assigned</td>
-    <td>A contact assigned an experiment</td>
+    <td>A contact was assigned to an experiment</td>
   </tr>
   <tr>
    <td>sms.queued</td>
@@ -155,6 +155,18 @@ The table below lists events that Regal Voice sends to Segment. These events app
    <td>UTC timestamp when the conversation was ended</td>
   </tr>
   <tr>
+    <td>`experimentId`</td>
+    <td>Experiment ID</td>
+  </tr>
+  <tr>
+    <td>`experimentName`</td>
+    <td>Name of experiment</td>
+  </tr>
+  <tr>
+   <td>`experimentVariant`</td>
+   <td>Variant a contact was assigned to in an experiment</td>
+  </tr>
+  <tr>
    <td>`from_number`</td>
    <td>Phone number that sent the message</td>
   </tr>
@@ -218,7 +230,7 @@ The table below lists events that Regal Voice sends to Segment. These events app
   </tr>
   <tr>
     <td>`target_agent_fullname`</td>
-    <td>Full name of the agent who contact (and all contact’s tasks) are assigned to<td>
+    <td>Full name of the agent who contact (and all contact’s tasks) are assigned to</td>
   </tr>
   <tr>
    <td>`target_agent_id`</td>
