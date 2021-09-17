@@ -16,8 +16,8 @@ jobs:
     strategy:
       fail-fast: false
     steps:
-        - name: Check links with linkcheck
-          uses: filiph/linkcheck@v2.0.15+1
-            with: 
-              arguments: https://deploy-preview-1839--segment-docs.netlify.app/utils/env
+      - name: Check links with linkcheck
+        uses: filiph/linkcheck@v2.0.15+1
+        with:
+          arguments: https://deploy-preview-1839--segment-docs.netlify.app/utils/env
 
