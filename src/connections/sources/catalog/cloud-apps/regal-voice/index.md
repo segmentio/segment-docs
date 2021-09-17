@@ -155,15 +155,15 @@ The table below lists events that Regal Voice sends to Segment. These events app
    <td>UTC timestamp when the conversation was ended</td>
   </tr>
   <tr>
-    <td>`experimentId`</td>
+    <td>`experiment_id`</td>
     <td>Experiment ID</td>
   </tr>
   <tr>
-    <td>`experimentName`</td>
+    <td>`experiment_name`</td>
     <td>Name of experiment</td>
   </tr>
   <tr>
-   <td>`experimentVariant`</td>
+   <td>`experiment_variant`</td>
    <td>Variant a contact was assigned to in an experiment</td>
   </tr>
   <tr>
