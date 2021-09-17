@@ -16,8 +16,26 @@ jobs:
     strategy:
       fail-fast: false
     steps:
-        - name: Check links with linkcheck
-          uses: filiph/linkcheck@v2.0.15+1
-            with: 
-              arguments: https://deploy-preview-1839--segment-docs.netlify.app/utils/env
-
+      - uses: actions/checkout@v2
+      - name: Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6 # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - name: Build jekyll website with drafts
+        run: bundle exec jekyll build
+      - name: Check for broken links
+        run: |
+          bundle exec htmlproofer --log-level :debug ./_site &> links.log
+        continue-on-error: true
+      - name: Archive log links
+        uses: actions/upload-artifact@v1
+        with:
+          name: links-check.log
+          path: links.log- name: Build jekyll website
+        run: bundle exec jekyll build
+      - name: Archive log links
+        uses: actions/upload-artifact@v1
+        with:
+          name: links-check.log
+          path: links.log
