@@ -3,7 +3,7 @@
 name: CheckLinks
 on:
   schedule:
-    - cron: "0 0 23 ? * SAT *"
+    - cron: "5 4 * * SAT"
 
 jobs:
   checklinks:
