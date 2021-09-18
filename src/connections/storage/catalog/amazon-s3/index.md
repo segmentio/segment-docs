@@ -78,7 +78,7 @@ This section contains information for enabling encryption on your S3 bucket.
 Segment supports optional, S3-managed Server-Side Encryption, which you can disable or enable from the Destination Configuration UI. By default, the destination now automatically enables encryption, and Segment recommends that you continue to encrypt.
 If you've had the S3 destination enabled since before October 2017, you might need to enable encryption manually on your bucket.
 
-While most client libraries transparently decrypt the file when fetching it, you should make sure that any applications that are consume data in the S3 bucket are ready to decrypt the data before you enable this feature. When you're ready, you can enable encryption from the setting in the destination configuration UI.
+While most client libraries transparently decrypt the file when fetching it, you should make sure that any applications that consume data in the S3 bucket are ready to decrypt the data before you enable this feature. When you're ready, you can enable encryption from the setting in the destination configuration UI.
 
 ### Server-Side Encryption with AWS KMS-Managed Keys (SSE-KMS)
 Segment can also write to S3 buckets with Default Encryption set to AWS-KMS. This ensures that objects written to your bucket are encrypted using customer managed keys created in your AWS Key Management Service (KMS).
