@@ -166,7 +166,7 @@ Segment recommends doing this as a best practice. The following policy strictly 
 
 ## Region
 
-Segment infers the region of your bucket when data is copied to it, so you don' need to specify a bucket region in your configuration. If you're using VPC Endpoints for your S3 bucket, make sure you configure the endpoint in the same region as your bucket. You can find more information on this in the AWS S3 docs [here](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints-s3.html).
+Segment infers the region of your bucket when data is copied to it, so you don't need to specify a bucket region in your configuration. If you're using VPC Endpoints for your S3 bucket, make sure you configure the endpoint in the same region as your bucket. You can find more information on this in the AWS S3 docs [here](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints-s3.html).
 
 ## Custom Path Prefix
 
