@@ -18,7 +18,7 @@ hidden: true
 
 ## Benefits of Customer.io (Actions) vs Customer.io classic
 
-tbd...
+- **Track an anonymous event**. Track events from users who are not yet known to Customer.io. If you have the Customer.io *event merging* feature enabled, Customer.io associates all incoming events that share an `anonymous_id` received in the last 30 days.
 
 ## Getting started
 
