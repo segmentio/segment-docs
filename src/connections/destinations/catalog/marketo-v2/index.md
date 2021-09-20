@@ -67,8 +67,8 @@ When you call [`Identify`](/docs/connections/spec/identify/) in Device-mode, Seg
 
 There are additional steps you must take to send `.identify()` calls in Device-mode.
 
-1. Create an empty form in Marketo. This form will always be hidden and can remain empty as long as the traits you need downstream are mapped in the **Marketo Custom Fields** setting. 
-2. Input the associated **Marketo Form ID** and **Marketo Form URL** in your Marketo V2 destination settings. This information can be found in Form Actions > Embed Code in the Marketo Design Studio:
+1. Create an empty form in Marketo. This form will always be hidden and can remain empty as long as the traits you need downstream are mapped in the **Marketo Custom Fields** Destination setting. 
+2. Input the associated **Marketo Form ID** and **Marketo Form URL** in your Marketo V2 Destination settings. This information can be found in Form Actions > Embed Code in the Marketo Design Studio:
 ![](images/form-info.png)
 
 ### Traits
@@ -109,7 +109,7 @@ analytics.identify('1234', {
 });
 ```
 
-If you'd like any other traits from your `.identify()` call to update a field in Marketo, you must create custom fields in Marketo and map them in the **Marketo Custom Fields** destination setting.
+If you'd like any other traits from your `.identify()` call to update a field in Marketo, you must create custom fields in Marketo and map them in the **Marketo Custom Fields** Destination setting.
 
 ![](images/c1X7nf6wDIX+.png)
 
