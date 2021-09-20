@@ -1,0 +1,35 @@
+config:
+  - category: Connection Settings
+    settings:
+    - name: FS Org
+      connection_mode:
+        - device-web
+      configurable: true
+      location:
+      notes:
+  - category: Other Settings
+    settings:
+    - name: Enter FS debug mode
+      connection_mode:
+        - device-web
+      configurable: true
+      location:
+      notes:
+    - name: Track All Pages
+      connection_mode:
+        - device-web
+      configurable: true
+      location:
+      notes:
+    - name: Track Categorized Pages
+      connection_mode:
+        - device-web
+      configurable: true
+      location:
+      notes:
+    - name: Track Named Pages
+      connection_mode:
+        - device-web
+      configurable: true
+      location:
+      notes:
