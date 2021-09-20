@@ -6,7 +6,7 @@ config:
         - device-web
       configurable: true
       location:
-      notes:
+      notes: Set during initial configuration, or on the Settings tab after you create the destination.
   - category: Other Settings
     settings:
     - name: Enter FS debug mode
@@ -14,22 +14,72 @@ config:
         - device-web
       configurable: true
       location:
-      notes:
+      notes: Available on the Settings tab of the destination.
     - name: Track All Pages
       connection_mode:
         - device-web
       configurable: true
       location:
-      notes:
+      notes: Available as a subscription where the trigger `Event Type is Page` triggers the Viewed Page action.
     - name: Track Categorized Pages
       connection_mode:
         - device-web
-      configurable: true
+      configurable: false
       location:
       notes:
     - name: Track Named Pages
       connection_mode:
         - device-web
-      configurable: true
+      configurable: false
       location:
       notes:
+actions:
+  - action: Identify User
+    blurb: Set user identity variables.
+    fields:
+    - name: userId
+      description: The user's ID in FullStory.
+      default: userId
+    - name: anonymous
+      description: The user's anonymousId in FullStory.
+      default: anonymousId
+    - name: displayName
+      description: The user's display name.
+      default: traits.name
+    - name: email
+      description: The user's email address.
+      default: traits.email
+    - name: traits
+      description: The Segment traits forwarded to FullStory.
+      default: traits
+  - action: Track Event
+    blurb: Send event details to FullStory.
+    fields:
+    - name: name
+      description: The name of the event
+      default: name
+    - name: properties
+      description: A JSON object that contains additional information about the event, and is indexed by FullStory.
+      default: properties
+  - action: Viewed Page
+    blurb: Set the properties of a page event, and send them to FullStory.
+    fields:
+    - name: name
+      description: The name of the viewed page.
+      default: name
+    - name: category
+      description: The category of the viewed page
+      default: category
+    - name: properties
+      description: The properties of the viewed page.
+      default: properties
+settings:
+  - category: Connection Settings
+    settings:
+    - name: Debug mode
+      description: Enables FullStory debug mode
+      default: off
+    - name: FS Org (required)
+      description: The organization ID for FullStory
+      default:
+

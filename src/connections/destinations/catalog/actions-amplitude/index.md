@@ -94,12 +94,12 @@ By default a new Amplitude (Actions) destination comes with the following subscr
 
 You can select these subscriptions by choosing "Quick Setup" when you first configure the destination. You can enable, edit, and disable them from the screen that appears.
 
-| Subscription Name | Trigger                                          | Amplitude Action | Non-default mapped fields                                      |
-| ----------------- | ------------------------------------------------ | ---------------- | -------------------------------------------------------------- |
-| Track Calls       | All **track** calls from the connected source    | Log Event        | Event Type = `event`<br>for example,  `Order Completed`        |
-| Page Calls        | All **page** calls from the connected source     | Log Event        | Event Type = Viewed `name`<br>for example, `Viewed Homepage`   |
-| Screen Calls      | All **screen** calls from the connected source   | Log Event        | Event Type = Viewed `name`<br>for example, `Viewed Homescreen` |
-| Identify Calls    | All **identify** calls from the connected source | Identify User    |                                                                |
+| Subscription Name | Trigger                                          | Amplitude Action |
+| ----------------- | ------------------------------------------------ | ---------------- |
+| Track Calls       | All **track** calls from the connected source    | Log Event        |
+| Page Calls        | All **page** calls from the connected source     | Log Event        |
+| Screen Calls      | All **screen** calls from the connected source   | Log Event        |
+| Identify Calls    | All **identify** calls from the connected source | Identify User    |
 
 ## Available Amplitude Actions
 
