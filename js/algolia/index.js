@@ -1,9 +1,9 @@
 import { html } from 'htm/preact';
 import algoliasearch from 'algoliasearch/lite';
-import { autocomplete, getAlgoliaHits } from '@algolia/autocomplete-js';
+import { autocomplete, getAlgoliaResults } from '@algolia/autocomplete-js';
 import {createAlgoliaInsightsPlugin} from '@algolia/autocomplete-plugin-algolia-insights';
 import insightsClient from 'search-insights';
-import { highlightHit } from './highlight.ts';
+import { highlightHit } from './highlight.js';
 
 
 const appId = 'UINQ2M4D9S';
@@ -39,7 +39,7 @@ function initAutocomplete(item){
             return itemUrl;
           },
           getItems() {
-            return getAlgoliaHits({
+            return getAlgoliaResults({
               searchClient,
               queries: [
                 {
