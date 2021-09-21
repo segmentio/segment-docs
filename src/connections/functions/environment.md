@@ -31,8 +31,6 @@ After you click **Create Function**, the function appears on the [Functions cata
 
 If you are a **Workspace Owner** or **Functions Admin**, you can manage your function from the [Functions catalog page](https://app.segment.com/goto-my-workspace/functions/catalog/).
 
-![Editing or deleting a destination function](images/function-sidesheet-dest.gif)
-
 If you're editing an existing function, you can **Save** changes without changing the behavior of existing instances of the function.
 
 You can also choose to **Save & Deploy** to push changes to all, or specific functions in your workspace that are already deployed. You might need additional permissions to deploy these changes.

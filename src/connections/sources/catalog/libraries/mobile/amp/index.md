@@ -1,5 +1,6 @@
 ---
 title: Analytics for AMP
+redirect_from: '/connections/sources/catalog/libraries/server/amp/'
 ---
 
 The [Segment AMP](https://www.ampproject.org/docs/reference/components/amp-analytics#segment) component makes it easy to send your data to lots of tools without having to learn, test or implement a new AMP component every time.
