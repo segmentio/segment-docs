@@ -59,7 +59,20 @@ Next, create a Service and get Client Secret and Client ID from that Service.
 ----------
 ## Identify
 
-When you call [`Identify`](/docs/connections/spec/identify/), Segment uses [Marketo's REST API](http://developers.marketo.com/rest-api/lead-database/leads/#create_and_update) to upsert leads. We'll map the following spec'd Segment traits to Marketo's standard fields:
+### Cloud-mode
+When you call [`Identify`](/docs/connections/spec/identify/) in Cloud-mode, Segment uses [Marketo's REST API](http://developers.marketo.com/rest-api/lead-database/leads/#create_and_update) to create and update leads server-side.
+
+### Device-mode
+When you call [`Identify`](/docs/connections/spec/identify/) in Device-mode, Segment uses [Marketo's Background Form Submission](https://developers.marketo.com/blog/make-a-marketo-form-submission-in-the-background/) to create and update leads client-side.
+
+There are additional steps you must take to send `.identify()` calls in Device-mode.
+
+1. Create an empty form in Marketo. This form will always be hidden and can remain empty as long as the traits you need downstream are mapped in the **Marketo Custom Fields** Destination setting. 
+2. Input the associated **Marketo Form ID** and **Marketo Form URL** in your Marketo V2 Destination settings. This information can be found in Form Actions > Embed Code in the Marketo Design Studio:
+![](images/form-info.png)
+
+### Traits
+Regardless of connection mode, we'll map the following spec'd Segment traits to Marketo's standard fields:
 
 | **Segment Traits**    | **Marketo Standard Fields** |
 | --------------------- | --------------------------- |
@@ -96,14 +109,16 @@ analytics.identify('1234', {
 });
 ```
 
-If you'd like any other traits from your `.identify()` call to update a field in Marketo, you must map them in your Destination settings. **Note:** Custom `address` traits must go in the top level `traits` object, not in the `address` object.
+If you'd like any other traits from your `.identify()` call to update a field in Marketo, you must create custom fields in Marketo and map them in the **Marketo Custom Fields** Destination setting.
 
 ![](images/c1X7nf6wDIX+.png)
 
 - **Segment Trait**. The name of the trait sent in your `.identify()` call.
-- **Marketo Field Name**. The Marketo REST API name for the field. To get the REST API name for your fields in Marketo, click Field Management, then Export Field Names. A spread sheet will download and the first column is the REST API name for your Marketo fields. **Make sure to copy and paste the REST API name exactly. This is case sensitive.**
+- **Marketo Field Name**. The Marketo REST API name for the field. To get the REST API name for your fields in Marketo, click Field Management, then Export Field Names. A spreadsheet will download and the first column is the REST API name for your Marketo fields. **Make sure to copy and paste the REST API name exactly. This is case sensitive.**
 - **Marketo Field Type**. When you are in Field Management, click on the field name in the bar on the right and you'll see the field type.
 ![](images/cubJQKkGLfF+.png)
+
+**Note:** Custom `address` traits must go in the top level `traits` object, not in the `address` object.
 
 ## Track
 
@@ -233,7 +248,7 @@ There are a few necessary steps that have to be taken to migrate from Segment's 
 1. Your Marketo credentials in your Segment Destination settings need to be updated. Our Marketo Destination used Marketo's SOAP API and Marketo V2 uses Marketo's REST API which requires different credentials. Check out the [Getting Started](/docs/connections/destinations/catalog/marketo-v2/#getting-started) guide for what credentials you'll need.
 2. Two custom fields must be created in Marketo: userId and anonymousId. Check out [Getting Started](/docs/connections/destinations/catalog/marketo-v2/#2-you-must-create-a-user-id-and-an-anonymous-id-field-in-marketo) for exact details on how to create these custom fields in Marketo.
 3. `Track` calls must be mapped in your Destination settings. Our Marketo Destination sent `track` calls as a Munchkin Visit WebPage event in Marketo. In Marketo V2, we'll send your track calls to your Marketo Custom Activities. Detailed instructions [here](/docs/connections/destinations/catalog/marketo-v2/#track).
-4. If there are any custom Lead fields that you'd like sent to Marketo in your `Identify` calls, you must add them in your Destination settings. Detailed instructions [here](/docs/connections/destinations/catalog/marketo-v2/#identify).
+4. If there are any custom Lead fields that you'd like sent to Marketo in your `Identify` calls, you must create custom fields in Marketo and add them in your Destination settings. In addition, if you are connecting Marketo V2 in Device-mode, an empty form must be created in Marketo to create and update leads. Detailed instructions [here](/docs/connections/destinations/catalog/marketo-v2/#identify).
 5. Update anything in Marketo that rely on the way V1 sends `.track()` events to be triggered by your custom activities. For example, our V1 Marketo destination sent track events as a "Visit Web Page" event with `/event/<your_event_name>`. So if you a workflow that is triggered by a "Visit Web Page" event where the web page contains `/event/<your_event_name>`, you'll have to swap out the "Visit Web Page" event trigger you have with your Custom Attribute Trigger. In the right side bar, click the "Custom" folder under "Triggers" and select the trigger that you set for your custom activity:
    ![](images/cPD4kP65buG+.png)
 
