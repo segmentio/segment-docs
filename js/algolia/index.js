@@ -1,4 +1,3 @@
-import { html } from 'htm/preact';
 import algoliasearch from 'algoliasearch/lite';
 import { autocomplete, getAlgoliaResults } from '@algolia/autocomplete-js';
 import {createAlgoliaInsightsPlugin} from '@algolia/autocomplete-plugin-algolia-insights';
@@ -55,17 +54,20 @@ function initAutocomplete(item){
             });
           },
           templates: {
-            item({ item }){
+            item({ item, createElement  }){
               if (item.anchor != null) {
                 var anchorLink = "#" + item.anchor;
               } else {
                 var anchorLink = "";
               }
-              return html `<a class="aa-link" href="/docs${item.url}${anchorLink}">
-              <p class="aa-title" >${highlightHit({hit: item, attribute: 'title'})}</h3>
-              <p class="aa-heading">${item.headings.join(' >')}</p>
-              <p class="aa-content">${highlightHit({hit: item, attribute: 'content'})}</p></a>
-            `;
+              return createElement('div',{
+                dangerouslySetInnerHTML: {
+                  __html: `<a class="aa-link" href="/docs${item.url}${anchorLink}">
+                     <p class="aa-title" >${highlightHit({hit: item, attribute: 'title'})}</h3>
+                     <p class="aa-heading">${item.headings.join(' >')}</p>
+                     <p class="aa-content">${highlightHit({hit: item, attribute: 'content'})}</p></a>`
+                }
+              })
             },
             noResults() {
               return html `<p class="aa-content">No results for <strong>${query}</strong></p>`;
