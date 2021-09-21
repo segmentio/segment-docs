@@ -33,7 +33,6 @@ Segment’s How-to Guides provide an in-depth walk through and examples of the m
 - [.NET Quickstart Guide](/docs/connections/sources/catalog/libraries/server/net/quickstart/)
 - [Go Library Quickstart Guide](/docs/connections/sources/catalog/libraries/server/go/quickstart/)
 - [Python Library Quickstart Guide](/docs/connections/sources/catalog/libraries/server/python/quickstart/)
-- [Rust Quickstart Guide](/docs/connections/sources/catalog/libraries/server/rust/quickstart/)
 - [Java Library Quickstart Guide](/docs/connections/sources/catalog/libraries/server/java/quickstart/)
 - [PHP Library Quickstart Guide](/docs/connections/sources/catalog/libraries/server/php/quickstart/)
 - [Node.js Library Quickstart Guide](/docs/connections/sources/catalog/libraries/server/node/quickstart/)
