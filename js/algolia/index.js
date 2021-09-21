@@ -21,7 +21,7 @@ function initAutocomplete(item){
   const search = autocomplete({
     container: item,
     placeholder: 'Search the Segment documentation',
-    debug: false,
+    debug: true,
     openOnFocus: false,
     keyboardShortcuts: ['s', 191],
     plugins: [algoliaInsightsPlugin,],
