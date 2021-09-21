@@ -33,7 +33,7 @@ Per-function global caching is available in the `cache` namespace. The following
 - `cache.load(key: string, ttl: number, fn: async () => any): Promise<any>`
   - Obtains a cached value for the provided `key`, invoking the callback if the value is missing or has expired. The `ttl` is the maximum duration in milliseconds the value can be cached. If omitted or set to `-1`, the value will have no expiry. There is no guarantee that a value will be retained in the cache for the provided duration, however. The cache space is limited, so efforts to minimize the cached value size will afford a higher cache hit ratio.
 - `cache.delete(key: string): void`
-  - Forcefully remove the value associated withe the `key`.
+  - Forcefully remove the value associated with the `key`.
 
 The following example gets a JSON value through the cache, only invoking the callback as needed:
 

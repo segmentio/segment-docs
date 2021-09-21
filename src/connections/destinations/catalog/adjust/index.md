@@ -81,7 +81,7 @@ To use the latest Adjust SDK to collect IDFAs you must do the following:
      }];
    ```
 
-5. Follow [Segment's guide for collecting IDFA](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#idfa-collection-in-40-beta-and-later)
+5. Follow [Segment's guide for collecting IDFA](/docs/connections/sources/catalog/libraries/mobile/ios/#idfa-collection-in-40-beta-and-later)
 
 ### Android
 
@@ -138,7 +138,7 @@ analytics.track({
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('12091906-01011992', {
@@ -152,7 +152,7 @@ When you call `identify`, Segment will call Adjust's [addSessionPartnerParameter
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track('Article Completed', {
@@ -168,7 +168,7 @@ If you don't provide a mapping, Adjust cannot accept the event. We include all t
 
 ## Reset
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Reset method](https://segment.com/docs/connections/spec/reset/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Reset method](/docs/connections/spec/reset/) does. An example call would look like:
 
 ```javascript
 analytics.reset();
@@ -195,7 +195,7 @@ Using Adjust's [Attribution callback](https://github.com/adjust/ios_sdk#attribut
 | campaign.adCreative | attribution.creative | the creative grouping level of the current install |
 | campaign.adGroup | attribution.adgroup | the ad group grouping level of the current install |
 
-If any value is unavailable, it will default to nil.  This call will be sent to all enabled [device and cloud mode](https://segment.com/docs/connections/destinations/#connection-modes) destinations.
+If any value is unavailable, it will default to nil.  This call will be sent to all enabled [device and cloud mode](/docs/connections/destinations/#connection-modes) destinations.
 
 #### Troubleshooting
 

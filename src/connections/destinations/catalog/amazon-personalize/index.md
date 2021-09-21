@@ -201,7 +201,7 @@ The following examples show how to configure an AWS Glue job to convert Segment 
 **Create AWS Glue ETL Job**
 
 To create an AWS Glue ETL Job:
-1. Navigate to the Glue service in your AWS console.  
+1. Navigate to the Glue service in your AWS console.
 2. Click **Get started** and then click **Jobs** in the left navigation on the Glue console page.
 
     ![](images/GlueJobs.png)
@@ -627,7 +627,7 @@ To create a Personlize campaign:
 
     ![](images/PersonalizeCreateCampaignDash.png)
 
-2. Enter the name for your campaign.  
+2. Enter the name for your campaign.
 3. Select the solution you created above and click **Create campaign**.
 
     ![](images/PersonalizeCreateCampaign.png)
@@ -694,7 +694,7 @@ To create an IAM role:
 > note ""
 > **NOTE:** Your Source ID can be found by navigating to **Settings > API Keys** from your Segment source homepage.
 >
-> If you're using an External ID, for security purposes, Segment recommends you to use your Segment Workspace ID as your External ID. If you use an External ID different from your Workspace ID, please change it to make your account more secure. You can find your Workspace ID by going to:  **Settings > Workspace Settings > ID** in the Segment dashboard.
+> For security purposes, Segment will set your Workspace ID as your External ID. If you are currently using an External ID different from your Workspace ID, reach out to our support team so they can change it and make your account more secure.
 
 ```json
 {

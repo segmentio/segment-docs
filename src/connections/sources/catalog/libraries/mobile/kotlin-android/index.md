@@ -11,7 +11,7 @@ With Analytics-Kotlin, you can send data using Kotlin applications to any analyt
 > Analytics Kotlin is in public beta and currently supports [these destinations](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app-destinations/src/main/java/com/segment/analytics/destinations/plugins){:target="_blank"} with Segment actively adding more to the list. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this library.
 
 > success ""
-> You can choose to set up your Analytics Kotlin source on [mobile](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/index/) or on the [server](/docs/connections/sources/catalog/libraries/server/kotlin/index/). Segment doesn’t support device-mode destinations on the server-side.
+> You can choose to set up your Analytics Kotlin source on [mobile](/docs/connections/sources/catalog/libraries/mobile/kotlin-android) or on the [server](/docs/connections/sources/catalog/libraries/server/kotlin). Segment doesn’t support device-mode destinations on the server-side.
 
 If you’re migrating to Analytics-Kotlin from a different mobile library, you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/).
 
