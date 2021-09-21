@@ -36,7 +36,6 @@ You can select these subscriptions by choosing "Quick Setup" when you first conf
 | Subscription Name | Trigger                                          | FullStory Action |
 | ----------------- | ------------------------------------------------ | ---------------- |
 | Identify User     | All **identify** calls from the connected source | Identify User    |
-| Viewed Page       | All **page** calls from the connected source     | Viewed Page      |
 | Track Event       | All **track** calls from the connected source    | Track Event      |
 | Track Page Events | All **page** calls from the connected source     | Track Event      |
 
