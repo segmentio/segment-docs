@@ -1,5 +1,5 @@
 [build]
-  command = "jekyll algolia && yarn develop"
+  command = "jekyll algolia && yarn production"
   # Ignore builds unless [netlify-build] is present in commit message
   # ignore = "git log -1 --pretty=%B | ( ! grep -q '\[netlify\-build\]' )"
   # Ignore if [netlify-ignore] is present
@@ -9,7 +9,7 @@
 
 [context.deploy-preview]
   command = "yarn develop"
-  ignore = "./scripts/ignore.sh"
+  ##ignore = "./scripts/ignore.sh"
 
 [context.branch-deploy]
   command = "yarn develop-inc"
