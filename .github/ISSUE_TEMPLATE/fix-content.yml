@@ -1,7 +1,9 @@
 name: Improve an existing article's content
 description: Make a suggestion to improve the content of an existing article
+title: "[Content]: "
 labels:
   - content
+  - triage
 body:
   - type: markdown
     attributes:
@@ -11,10 +13,10 @@ body:
   # - type: checkboxes
   #   id: terms
   #   attributes:
-  - type: textarea
+  - type: input
     attributes:
       label: What article on segment.com/docs is affected?
-      description: Please link to the article you'd like to see updated.
+      description: Please paste link to the article you'd like to see updated.
     validations:
       required: true
 
