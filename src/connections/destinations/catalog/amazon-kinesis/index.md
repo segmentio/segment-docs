@@ -216,9 +216,9 @@ After you update the IAM policy, Segment systems default to use PutRecords for m
 ### Use secret ID
 If you have many sources using Kinesis that it's impractical to attach all of their IDs to your IAM role, you can instead opt to set a secret ID. To set this value:
 1. Go to **Connections > Destinations > Amazon Kinesis** for each of your Segment sources.
-2. Click **Secret ID** and enter your Workspace ID.
+2. Click **Secret ID**.
     * **NOTE:** For security purposes, Segment sets your Workspace ID as your Secret ID. If you’re using a Secret ID different from your Workspace ID, reach out to our support team so they can change it and make your account more secure.
-3. Once all of your sources have been updated to use this value, find the IAM role you created for this destination in the AWS Console in **Services > IAM > Roles**.
+3. Find the IAM role you created for this destination in the AWS Console in **Services > IAM > Roles**.
 4. Click on the role and navigate to the **Trust Relationships** tab.
 5. Click **Edit trust relationship**. You should see a snippet that looks something that looks like this:
 
