@@ -38,7 +38,7 @@ The Tracking Plan to Source relationship is a one-to-many relationship. This mea
 
 ### Can I duplicate a Tracking Plan in the Segment UI?
 
-You cannot currently duplicate Tracking Plans in the Segment web app. Instead, we recommend using the [Tracking Plan API](/docs/protocols/apis-and-extensions/) to copy the underlying JSON schema from one Tracking Plan to another. You can also use our [Google Sheets uploader](https://docs.google.com/spreadsheets/u/1/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/copy) to duplicate events from one Tracking Plan into another.
+You cannot currently duplicate Tracking Plans in the Segment web app. Instead, we recommend using the [Tracking Plan API](/docs/protocols/apis-and-extensions/) to copy the underlying JSON schema from one Tracking Plan to another. You can also use our [Google Sheets uploader](https://docs.google.com/spreadsheets/u/1/d/1TA6qTcDHoZzsG7-C6p5yHGximDxqoNtizguKs7Z0av4/copy) to duplicate events from one Tracking Plan into another.
 
 ### How do I handle versioning with mobile apps?
 

@@ -1,12 +1,20 @@
-import { html } from 'htm/preact';
 import algoliasearch from 'algoliasearch/lite';
-import { autocomplete, getAlgoliaHits, highlightHit } from '@algolia/autocomplete-js';
+import { autocomplete, getAlgoliaResults } from '@algolia/autocomplete-js';
 import {createAlgoliaInsightsPlugin} from '@algolia/autocomplete-plugin-algolia-insights';
 import insightsClient from 'search-insights';
+import { highlightHit } from './highlight.js';
 
 
-const appId = 'UINQ2M4D9S';
-const apiKey = '3ecd0f228971adf2d5a4217789ae1765';
+const sampleAppId = 'latency';
+const sampleApiKey = '6be0576ff61c053d5f9a3225e2a90f76';
+const envAppId = process.env.ALGOLIA_APP_ID;
+const envApiKey = process.env.ALGOLIA_SEARCH_KEY;
+
+
+const appId = envAppId != null ? envAppId : sampleAppId;
+const apiKey = envApiKey != null ? envApiKey : sampleApiKey;
+const placeHolder = envApiKey != null ? 'Search the Segment documentation' : 'Search disabled locally'
+
 const searchClient = algoliasearch(appId, apiKey);
 
 //insights
@@ -19,7 +27,7 @@ const locations = ['#autocomplete','#autocomplete-mobile'];
 function initAutocomplete(item){
   const search = autocomplete({
     container: item,
-    placeholder: 'Search the Segment documentation',
+    placeholder: placeHolder,
     debug: false,
     openOnFocus: false,
     keyboardShortcuts: ['s', 191],
@@ -38,7 +46,7 @@ function initAutocomplete(item){
             return itemUrl;
           },
           getItems() {
-            return getAlgoliaHits({
+            return getAlgoliaResults({
               searchClient,
               queries: [
                 {
@@ -54,17 +62,20 @@ function initAutocomplete(item){
             });
           },
           templates: {
-            item({ item }){
+            item({ item, createElement  }){
               if (item.anchor != null) {
                 var anchorLink = "#" + item.anchor;
               } else {
                 var anchorLink = "";
               }
-              return html `<a class="aa-link" href="/docs${item.url}${anchorLink}">
-              <p class="aa-title" >${highlightHit({hit: item, attribute: 'title'})}</h3>
-              <p class="aa-heading">${item.headings.join(' >')}</p>
-              <p class="aa-content">${highlightHit({hit: item, attribute: 'content'})}</p></a>
-            `;
+              return createElement('div',{
+                dangerouslySetInnerHTML: {
+                  __html: `<a class="aa-link" href="/docs${item.url}${anchorLink}">
+                     <p class="aa-title" >${highlightHit({hit: item, attribute: 'title'})}</h3>
+                     <p class="aa-heading">${item.headings.join(' >')}</p>
+                     <p class="aa-content">${highlightHit({hit: item, attribute: 'content'})}</p></a>`
+                }
+              })
             },
             noResults() {
               return html `<p class="aa-content">No results for <strong>${query}</strong></p>`;
