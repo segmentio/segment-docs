@@ -4,8 +4,6 @@ rewrite: true
 ---
 [FullStory](https://help.fullstory.com/11269-Develop) lets product and support teams easily understand everything about the customer experience. The Segment integration for FullStory helps accurately identify your customers within the FullStory dashboard.
 
-This document was last updated on January 25, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
