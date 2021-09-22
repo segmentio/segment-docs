@@ -44,7 +44,7 @@
     "@algolia/autocomplete-plugin-algolia-insights": "^1.4.0",
     "@algolia/client-search": "^4.10.5",
     "@babel/runtime": "^7.15.4",
-    "ajv": "^8.6.3",
+    "ajv": "^6.10.2",
     "algoliasearch": "^4.10.5",
     "clipboard": "^2.0.8",
     "dotenv": "^10.0.0",
