@@ -21,7 +21,9 @@ layout: main
 
   <article class="page" data-tracking-scroll data-swiftype-name="body" data-swiftype-type="text">
     <div class="page__body">
+      {% unless page.hide-breadcrumbs %}
       {% include components/breadcrumbs.html %}
+      {% endunless %}
 
       {%- if page.title -%}
         <h1 id="{{ page.title | slugify }}">

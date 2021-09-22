@@ -1,6 +1,7 @@
 ---
 title: Iterable Destination
 hide-personas-partial: true
+cmode-override: true 
 ---
 
 When you enable the Iterable destination from the Segment app, your data starts flowing into Iterable, where it can trigger workflows and make data available for analytics. You can find your Iterable API key by going to Destinations → API Keys inside the Iterable app.
@@ -53,7 +54,7 @@ This `identify` event would merge the `mobile` property for this user with any o
 
 ## Track
 
-When you call `track` with one of Segment's sources, Segment calls Iterable's [track API endpoint](https://api.iterable.com/api/docs#!/events/track_post_0), and send over the event properties as the data fields in the request. The name of the `track` event appears as a Custom Event in Iterable, and will be available to trigger workflows, segment users, and view analytics.
+When you call `track` with one of Segment's sources, Segment calls Iterable's [track API endpoint](https://api.iterable.com/api/docs#events_track), and send over the event properties as the data fields in the request. The name of the `track` event appears as a Custom Event in Iterable, and will be available to trigger workflows, segment users, and view analytics.
 
 If a user does not already exist in Iterable, calling `track` for a user event will add that user into the system. You can track with either an `email` or userId (if a `userId` exists for that email).
 

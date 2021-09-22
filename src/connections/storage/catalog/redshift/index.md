@@ -18,7 +18,7 @@ Complete the following steps to provision your Redshift cluster, and connect Seg
 
 ## Choose the best instance for your needs
 
-While the number of events (database records) are important, the storage capacity usage of your cluster depends primarily on the number of unique tables and columns created in the cluster. Keep in mind that each unique `.track()` event creates a new table, and each property sent creates a new column in that table. To avoid storing unnecessary data, start with a detailed [tracking plan](/docs/protocols/tracking-plan/create/) before you install Segment libraries to ensure that only the necessary events are passed to Segment. 
+While the number of events (database records) are important, the storage capacity usage of your cluster depends primarily on the number of unique tables and columns created in the cluster. Keep in mind that each unique `.track()` event creates a new table, and each property sent creates a new column in that table. To avoid storing unnecessary data, start with a detailed [tracking plan](/docs/protocols/tracking-plan/create/) before you install Segment libraries to ensure that only the necessary events are passed to Segment.
 
 Redshift gives the option of three cluster types:
 
@@ -73,9 +73,9 @@ VPCs keep servers inaccessible to traffic from the internet. With VPC, you're ab
 
 Redshift clusters are created in a VPC subnet. To configure:
 
-1. Navigate to your to the Redshift cluster you created previously. Click **Edit**.
+1. Navigate to the Redshift cluster you created previously. Click **Edit**.
 
-2. Expand the *Network and security* section. Click *Open tab* to access the Network and security settings. ![security](images/redshift03.png)
+2. Expand the **Network and security** section and click *Open tab* to access the Network and security settings. ![security](images/redshift03.png)
 
 3. Click the VPC security group to access its settings. The Security group opens in a new tab. ![group](images/redshift04.png)
 

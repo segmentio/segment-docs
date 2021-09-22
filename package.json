@@ -11,7 +11,8 @@
     ]
   },
   "scripts": {
-    "develop": "bundle exec jekyll clean && webpack --mode production && JEKYLL_ENV=testing bundle exec jekyll build --trace -V"
+    "develop": "bundle exec jekyll clean && webpack --mode production && JEKYLL_ENV=testing bundle exec jekyll build --trace -V",
+    "develop-inc": "webpack --mode production && JEKYLL_ENV=testing bundle exec jekyll build --trace -V -I"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
@@ -20,7 +21,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/plugin-transform-runtime": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
-    "axios": "0.21.1",
+    "axios": "0.21.2",
     "babel-loader": "8.0.6",
     "concurrently": "4.1.2",
     "front-matter": "3.0.2",
@@ -57,6 +58,7 @@
     "search-insights": "^1.7.1",
     "tap-spot": "^1.1.1",
     "tippy.js": "^5.2.0",
-    "typewriter": "7.0.1"
+    "typewriter": "7.0.1",
+    "webpack-dotenv-plugin": "^2.1.0"
   }
 }

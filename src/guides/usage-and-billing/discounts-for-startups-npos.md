@@ -1,8 +1,8 @@
 ---
-title: Do you offer discounts or coupons?
+title: Discounts or Coupons
 ---
 
-We do! Segment currently offers coupons on an ongoing basis for:
+Segment currently offers coupons on an ongoing basis for:
 
 1. Early-stage startups
 2. Participants and alumni of our Accelerator partners

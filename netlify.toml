@@ -4,9 +4,24 @@
   # ignore = "git log -1 --pretty=%B | ( ! grep -q '\[netlify\-build\]' )"
   # Ignore if [netlify-ignore] is present
 
+  # Don't build if there are no changes to src/
+  ignore = "git diff --quiet HEAD^ HEAD src/"
+
 [context.deploy-preview]
   command = "yarn develop"
-  ignore = "git log -1 --pretty=%B | ( grep -q '\\[netlify\\-ignore\\]' )"
+  ignore = "./scripts/ignore.sh"
+
+[context.branch-deploy]
+  command = "yarn develop-inc"
+  ignore = "./scripts/ignore.sh"
+
+[[context.branch-deploy.plugins]]
+  package = "netlify-plugin-jekyll-cache"
+
+[context.branch-deploy.plugins.inputs] 
+  jekyllSource = "/src"
+
+
 
 [[redirects]]
   from = "/docs/*"

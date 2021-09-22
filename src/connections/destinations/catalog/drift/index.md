@@ -1,7 +1,11 @@
 ---
 title: Drift Destination
+published: false
 rewrite: true
 ---
+
+<!--May 2021: hiding this and adding a redirect to destinations catalog. -->
+
 [Drift](http://www.drift.com/segment/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the world's first and only conversational marketing platform. Instead of traditional marketing and sales platforms that rely on forms and follow ups, Drift connects your business with the best leads in real-time.
 
 The `analytics.js` device-mode destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-drift).

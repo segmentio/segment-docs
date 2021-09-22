@@ -1,5 +1,5 @@
 ---
-title: What is Replay?
+title: Replay
 ---
 
 {% include content/plan-grid.md name="replay" %}

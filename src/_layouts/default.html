@@ -22,6 +22,7 @@
   {%- assign description = currentIntegration.description -%}
   {%- assign priority = 4 -%}
 {%- endif -%}
+<!-- {{site.env.CONTEXT}} -->
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 <head>
   <base href="{{ basehref }}" />
@@ -46,6 +47,7 @@
   {%- endif -%}
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
   <link rel="icon" href="https://segment.com/favicon.ico">
+  
   {%- if jekyll.environment == "production" -%}
     {%- assign hostname = "https://segment.com" -%}
   {%- elsif jekyll.environment == "staging" -%}
@@ -53,7 +55,7 @@
   {%- else -%}
     {%- assign hostname = "" -%}
   {%- endif -%}
-  <link rel="canonical" href="{{hostname}}/docs{{page.url}}" />
+  <link rel="canonical" href="{{site.url}}/docs{{page.url}}" />
   <meta name="application-name" content="Segment">
   <meta name="theme-color" content="#00386C">
   <meta charset="utf-8">
@@ -66,8 +68,6 @@
   <link rel="stylesheet" href="{{ '/assets/algolia.css' | relative_url }}">
 </head>
 <body>
-    <!-- This section displays on deploy previews only -->
-  {% include components/deploy-preview.html %}
   <div id="consent-manager"></div>
   {{ content }}
   <a class="back-scrolling" data-back-scrolling data-active-class="back-scrolling--active">
@@ -234,6 +234,9 @@
         // analytics.identify();
       }}();
     </script>
-    
+{%- if site.env.CONTEXT == "development" -%}
+<script src="{{ "./assets/docs.delay.js" | relative_url}}"></script>
+
+{%- endif -%}
 </body>
 </html>

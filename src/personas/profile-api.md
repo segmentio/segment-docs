@@ -51,8 +51,8 @@ Your access token enables you to call the Profile API and access customer data.
 
 ### Find a user's external id
 
-1. Navigate to *Personas > <personas_space> > Explorer* and select the user you want to query through the API.
-2. Take note of the users's available identifiers. For example, this user has a `user_id` with the value `9800664881`. The Profile API requires both the type of ID and the value separated by a colon. For example, `user_id:9800664881`.
+1. Navigate to Personas > *personas_space* > Explorer and select the user you want to query through the API.
+2. Take note of the user's available identifiers. For example, this user has a `user_id` with the value `9800664881`. The Profile API requires both the type of ID and the value separated by a colon. For example, `user_id:9800664881`.
 ![](images/profile_api_user_id.png)
 
 ### Query the user's event traits
@@ -104,7 +104,7 @@ You can query a user's traits (first_name, last_name, ...):
 
 `https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/<your-segment-id>/traits`
 
-By default, the response includes 20 traits. You can return up to 200 traits by appending `?limit=200` to the querystring. If you wish to return a specific trait, append `?include={trait}` to the querystring (for example `?include=age`). You can also use the ``?class=audience​`` or ``?class=computed_trait​`` to retrieve audiences or computed traits specifically.
+By default, the response includes 20 traits. You can return up to 200 traits by appending `?limit=200` to the querystring. If you wish to return a specific trait, append `?include={trait}` to the querystring (for example `?include=age`). You can also use the ``?class=audience​`` or ``?class=computed_trait​`` URL parameters to retrieve audiences or computed traits specifically.
 
 **Metadata**
 You can query all of a user's metadata (created_at, updated_at, ...):
@@ -194,7 +194,7 @@ Segment uses conventional HTTP response codes to indicate the success or failure
 
 ### Rate Limit
 
-To ensure low response times, every Space has a default rate limit of 100 requests/sec. Please contact [friends@segment.com](mailto:friends@segment.com) if you need a higher limit with details around your use case. For more information about rate limits, see the [Rate Limits](/docs/personas/rate-limits) documentation.
+To ensure low response times, every Space has a default rate limit of 100 requests/sec. Please contact [friends@segment.com](mailto:friends@segment.com) if you need a higher limit with details around your use case. For more information about rate limits, see the [Product Limits](/docs/personas/product-limits) documentation.
 
 
 ### Pagination

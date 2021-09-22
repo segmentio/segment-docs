@@ -8,7 +8,7 @@ integration_type: feature
 ---
 Destination functions allow you to transform and annotate your Segment events and send them to any external tool or API without worrying about setting up or maintaining any infrastructure.
 
-All functions are scoped to your workspace, so members of other workspaces won't be able to view or use them.
+All functions are scoped to your workspace, so members of other workspaces can't view or use them.
 
 > info ""
 > Functions is available to all customer plan types with a free allotment of usage hours. Read more about [Functions usage limits](/docs/connections/functions/usage/), or see [your workspace’s Functions usage stats](https://app.segment.com/goto-my-workspace/settings/usage?metric=functions).
@@ -17,7 +17,7 @@ All functions are scoped to your workspace, so members of other workspaces won't
 
 
 > note ""
-> Destination functions can't currently accept data from [Object Cloud sources](/docs/connections/sources/#object-cloud-sources).
+> Destination functions does not accept data from [Object Cloud sources](/docs/connections/sources/#object-cloud-sources).
 
 ## Create a destination function
 
@@ -37,9 +37,9 @@ When you click **Build**, a code editor appears. Use the editor to write the cod
 Segment invokes a separate part of the function (called a "handler") for each event type that you send to your destination function.
 
 > info ""
-> Your function is not invoked for an event if a [destination filter](/docs/connections/destinations/destination-filters/) is set up, and the event doesn't pass the filter.
+> Your function is not invoked for an event if you've configured a [destination filter](/docs/connections/destinations/destination-filters/), and the event doesn't pass the filter.
 
-The default source code template includes handlers for all event types. However, you do not need to implement all of them - just use the ones you need, and skip the ones you don't.
+The default source code template includes handlers for all event types. You do not need to implement all of them - just use the ones you need, and skip the ones you don't.
 
 Destination functions can define handlers for each message type in the [Segment spec](/docs/connections/spec/):
 
@@ -54,10 +54,8 @@ Destination functions can define handlers for each message type in the [Segment 
 
 Each of the functions above accepts two arguments:
 
-- **event** - Segment event object, where fields and values depend on the type of event. For example, for "Identify" events, the object is formatted to match the [Identify spec](/docs/connections/spec/identify/).
+- **event** - Segment event object, where fields and values depend on the event type. For example, in "Identify" events, Segment formats the object to match the [Identify spec](/docs/connections/spec/identify/).
 - **settings** - Set of [settings](#create-settings-and-secrets) for this function.
-
-We'll learn more about settings later, let's see how we can process Segment events with destination function first.
 
 The example below shows a destination function that listens for "Track" events, and sends some details about them to an external service.
 
@@ -77,16 +75,16 @@ async function onTrack(event) {
 }
 ```
 
-To change which type of event the handler listens to, you can rename it to the name of the message type. For example, if you rename this function `onIdentify`, it listens for "Identify" events instead.
+To change which event type the handler listens to, you can rename it to the name of the message type. For example, if you rename this function `onIdentify`, it listens for "Identify" events instead.
 
 > info ""
 > Functions' runtime includes a `fetch()` polyfill using a `node-fetch` package. Check out the [node-fetch documentation](https://www.npmjs.com/package/node-fetch) for usage examples.
 
 ### Errors and error handling
 
-A function's execution is considered successful if it finishes without any errors. You can also `throw` an error to indicate a failure on purpose. You can use these errors to validate event data before processing it, to ensure your function works as expected.
+Segment considers a function's execution successful if it finishes without error. You can also `throw` an error to create a failure on purpose. Use these errors to validate event data before processing it, to ensure the function works as expected.
 
-You can `throw` the following pre-defined error types to indicate that the function ran as expected, but that data could not be delivered:
+You can `throw` the following pre-defined error types to indicate that the function ran as expected, but that data was deliverable:
 
 - `EventNotSupported`
 - `InvalidEventPayload`
@@ -192,9 +190,9 @@ If your function fails, you can check the error details and logs in the **Output
 ## Batching the destination function (Beta)
 
 > warning ""
-> Batch handling for Functions is currently available as an early access beta release. By enabling batch handlers for your function, you acknowledge that your use of batch handlers is subject to [Segment’s Beta Terms and Conditions](https://segment.com/legal/first-access-beta-preview), or the applicable terms governing Beta Releases found in your subscription agreement with Segment.
+> Batch handling for Functions is available as an early access beta release. By enabling batch handlers for your function, you acknowledge that your use of batch handlers is subject to [Segment’s Beta Terms and Conditions](https://segment.com/legal/first-access-beta-preview), or the applicable terms governing Beta Releases found in your subscription agreement with Segment.
 >
-> If you notice any bugs or have any general feedback on this new feature, contact [beta@segment.com](mailto:beta@segment.com).
+> If you notice any bugs or have any general feedback on this new feature, please fill out [this form](https://airtable.com/shr9TU4huO0PK0DSU).
 
 Batch handlers are an extension of destination functions. When you define an `onBatch` handler alongside the handler functions for single events (for example: `onTrack` or `onIdentity`), you're telling Segment that the destination function can accept and handle batches of events.
 
@@ -285,27 +283,7 @@ async function onIdentifyBatch(events, settings) {
 
 ### Configure your batch parameters
 
-You cannot yet configure batch parameters (either in the code or UI) in this version of the beta. If you would like to change your batch parameters, contact [beta@segment.com](mailto:beta@segment.com) with information about your specific use case, the reason you need to adjust parameters, and the URL to your destination function.
-
-### Avoid writing batch and single event handlers
-
-Your function might not get enough event traffic to create a batch of short windows of time. In this case, your function invokes the single event handler. If you need to consolidate your code into an `onBatch` handler, you can define single event handlers that call `onBatch`.
-
-```js
-async function onTrack(event, settings) {
-  return onBatch([event], settings)// defer to onBatch
-}
-
-async function onIdentify(event, settings) {
-  return onBatch([event], settings) // defer to onBatch
-}
-
-// do the same for onAlias, onGroup, onPage, onScreen, onDelete
-
-async function onBatch(events, settings) {
-  // handle batch of events
-}
-```
+You cannot configure batch parameters (either in the code or UI) in this version of the beta. Functions waits up to 10 seconds to form a batch of 20 events. If you would like to change your batch parameters, please fill out [this form](https://airtable.com/shr9TU4huO0PK0DSU) and Support will contact you once this is made available.
 
 ### Test the batch handler
 
@@ -384,11 +362,11 @@ async function onTrack(event, settings) {
 ```
 
 > warning ""
-> **Warning:** Do not log sensitive data, such as personally-identifying information (PII), authentication tokens, or other secrets. You should especially avoid logging entire request/response payloads. The **Function Logs** tab may be visible to other workspace members if they have the necessary permissions.
+> **Warning:** Do not log sensitive data, such as personally-identifying information (PII), authentication tokens, or other secrets. Avoid logging entire request/response payloads. The **Function Logs** tab may be visible to other workspace members if they have the necessary permissions.
 
 ## Caching in destination functions
 
-Functions execute only in response to incoming data, but the environments that functions run in are generally long-running. Because of this, you can use global variables to cache small amounts of information between invocations. For example, you can reduce the number of access tokens you generate by caching a token, and regenerating it only after it expires. Segment cannot make any guarantees about the longevity of environments, but by using this strategy, you can significantly improve the performance and reliability of your Functions by reducing the need for redundant API requests.
+Functions execute only in response to incoming data, but the environments that functions run in are generally long-running. Because of this, you can use global variables to cache small amounts of information between invocations. For example, you can reduce the number of access tokens you generate by caching a token, and regenerating it only after it expires. Segment cannot make any guarantees about the longevity of environments, but by using this strategy, you can improve the performance and reliability of your Functions by reducing the need for redundant API requests.
 
 This example code fetches an access token from an external API and refreshes it every hour:
 
@@ -430,7 +408,7 @@ If any of your deployed function instances are failing consistently, they will a
 
 ### Data control
 
-You can use [Destination Filters](/docs/connections/destinations/destination-filters/) or [Privacy Portal](https://segment.com/docs/privacy/portal/) to manage what events and, of those events, which event properties are sent to your destination function.
+You can use [Destination Filters](/docs/connections/destinations/destination-filters/) or [Privacy Portal](/docs/privacy/portal/) to manage what events and, of those events, which event properties are sent to your destination function.
 
 ## Destination functions FAQs
 

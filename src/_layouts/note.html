@@ -1,0 +1,51 @@
+---
+layout: page
+hide-toc: true
+---
+
+<article class="release-note">
+  <div class="flex flex--wrap waffle">
+    <div class="flex__column flex__column--shrink">
+      <span class="badge badge--{{ page.badges[release_type_slug] }}">{{ page.release_type | replace: "-", " " }}</span>
+    </div>
+    <div class="flex__column flex__column--shrink">
+      <span class="badge badge--gray">{{ page.product_area }}</span>
+    </div>
+    {% if page.business == true %}
+      <div class="flex__column flex__column--shrink">
+        <span class="badge badge--gray">business</span>
+      </div>
+    {% elsif page.team == true %}
+      <div class="flex__column flex__column--shrink">
+        <span class="badge badge--gray">team</span>
+      </div>
+    {% endif %}
+  </div>
+  <div class="release-note__body">
+    <!-- <h2 id="{{page.title | slugify}}">{{ page.title }}</h2> -->
+    <date class="release-note__date">{{ page.date | date: "%B %d, %Y" }}</date>
+    <main class="markdown">{{ page.description | markdownify }}</main>
+    <div class="release-note__links">
+      {% for link in page.doc_links %}
+        {% if forloop.length > 1 %}
+          {% if forloop.first %}
+            <ul>
+          {% endif %}
+          <li><a href="{{ link.url }}?utm_source=release%3Dnotes&utm_medium=site&utm_campaign={{page.title | slugify}}">{{ link.title }}</a></li>
+          {% if forloop.last %}
+            </ul>
+          {% endif %}
+        {% else %}
+        <a href="{{ link.url }}?utm_source=release%3Dnotes&utm_medium=site&utm_campaign={{page.title | slugify}}">{{ link.title }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="flex flex--wrap waffle waffle--large" data-glightbox>
+      {% for image in page.images %}
+        <a  href="/docs/{{ image.path }}" class="flex__column flex__column--6 flex__column--3@medium">
+          <img class="thumbnail" src="/docs/{{ image.path }}" alt="{{ image.desc }}">
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</article>

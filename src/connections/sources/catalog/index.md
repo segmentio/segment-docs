@@ -28,7 +28,7 @@ Below is a list of the available sources on the Segment platform.
         {{ category }}
       </h2>
       <div class="flex flex--wrap waffle waffle--xlarge">
-        {% assign integrations = site.data.catalog.sources.items | where: "categories", category %}
+        {% assign integrations = site.data.catalog.sources.items | where: "categories", category | where: "hidden", false %}
         {% for integration in integrations %}
           <div class="flex__column flex__column--6">
             <a class="thumbnail-integration flex flex--middle" href="{{ site.baseurl }}/{{ integration.url }}">
@@ -88,9 +88,3 @@ Below is a list of the available sources on the Segment platform.
   </div>
 </div>
 
-<br/>
-## Object Cloud Sources
-
-
-- [Marketo](/docs/connections/sources/catalog/cloud-apps/marketo/)
-- [Salesforce Marketing Cloud](/docs/connections/sources/catalog/cloud-apps/salesforce-marketing-cloud/)

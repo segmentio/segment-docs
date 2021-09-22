@@ -1,5 +1,5 @@
 ---
-title: "How do I use Schema Controls?"
+title: "Using Schema Controls"
 ---
 
 Once you have enabled Destinations for a given Source, all of the [data](/docs/connections/spec/) you track will be routed to your connected tools and warehouses. If you no longer wish to send all data to a particular Destination, you can disable the Destination from the Source overview page. 

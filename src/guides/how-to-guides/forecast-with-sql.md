@@ -1,5 +1,5 @@
 ---
-title: How do I forecast LTV with SQL and Excel for e-commerce?
+title: Forecasting LTV with SQL and Excel for E-Commerce
 ---
 
 Customer Lifetime Value ("LTV") is the amount of money that an individual customer will spend with a given business in the future. It's often used to value cohorts in your customer base, determine how much to spend in acquiring or retaining new users in a given cohort, rank customers, and measure the success of marketing activities from a baseline LTV forecast.
@@ -28,7 +28,7 @@ As a growth analyst at our fictitious on-demand artisanal toast company, Toastma
 
 The first step in creating the BTYD model is to get historic purchasing data of at least a month. In our analysis, we'll use data from the past six months. The data must include the columns `userId` (email is cool, too, which we'll use in our example below), number of purchases within the specified time window, days since last purchase, and days since first purchase.
 
-Then, we'll use [this Google Sheet](https://docs.google.com/spreadsheets/d/1hcl5nI2KoPhtAMneDGQc_eRUNVaktYtx8p_06YT5fNU/edit#gid=0), which provides all of the complex calculations for estimating the model parameters, as well as forecasting the future sales of each customer. This sheet is View Only, so be sure to copy it entirely so you can use it.
+Then, we'll use [this Google Sheet](https://docs.google.com/spreadsheets/d/1GteY4X443TLaMfJWvEiC4hHVdLyHiGaA5aGgHCYkmQM/edit#gid=0), which provides all of the complex calculations for estimating the model parameters, as well as forecasting the future sales of each customer. This sheet is View Only, so be sure to copy it entirely so you can use it.
 
 To retrieve a table with the right columns for analysis, let's use the follow SQL query:
 

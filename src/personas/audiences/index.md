@@ -65,9 +65,9 @@ For account-level audiences, you can send either a [group](/docs/connections/spe
 > info ""
 > When you connect a new destination to an existing audience, Personas will backfill historical data for that audience to the new destination.
 
-## Realtime Compute vs. Batch
+## Real-time Compute vs. Batch
 
-Realtime Compute allows you to update traits and audiences as Segment receives new events. Realtime Compute unlocks exciting use cases:
+Real-time Compute allows you to update traits and audiences as Segment receives new events. Real-time Compute unlocks exciting use cases:
 
 - **Intra-Session App Personalization:** change your app experience with personalized onboarding, product recommendations, and faster funnels based on a user entering and exiting an audience.
 - **Instant Messaging:** Trigger messages in email, livechat, and push notifications instantly, to deliver immediate experiences across channels.
@@ -87,7 +87,7 @@ To create a new audience:
 
 3. To preview your audience, click **Select Destinations**, then click **Review & Create**.
 
-   By default, Segment queries all historical data (or "[replays](/docs/guides/what-is-replay/)" data) to set the current value of the computed trait and audience. You can uncheck Historical Backfill to compute values for the audience or trait without using this data. With this disabled, the trait or audience only uses the data that arrives after you created it.
+   By default, Segment queries all historical data to set the current value of the computed trait and audience. You can uncheck Historical Backfill to compute values for the audience or trait without using this data. With this disabled, the trait or audience only uses the data that arrives after you created it.
 
    ![](/docs/personas/images/audience_review_create.png)
 

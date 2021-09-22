@@ -2,7 +2,7 @@
 rewrite: true
 title: Amazon Kinesis Firehose Destination
 ---
-[Amazon Kinesis Firehose](https://aws.amazon.com/kinesis/data-firehose/) is the easiest way to load streaming data into AWS. It can capture, transform, and load streaming data into Amazon Kinesis Analytics, Amazon S3, Amazon Redshift, and Amazon Elasticsearch Service, enabling near real-time analytics with existing business intelligence tools and dashboards you're already using today. It is a fully managed service that automatically scales to match the throughput of your data and requires no ongoing administration. It can also batch, compress, and encrypt the data before loading it, minimizing the amount of storage used at the destination and increasing security.
+[Amazon Kinesis Firehose](https://aws.amazon.com/kinesis/data-firehose/) provides way to load streaming data into AWS. It can capture, transform, and load streaming data into Amazon Kinesis Analytics, Amazon S3, Amazon Redshift, and Amazon Elasticsearch Service, enabling near real-time analytics with existing business intelligence tools and dashboards you're already using today. It's a fully managed service that automatically scales to match the throughput of your data and requires no ongoing administration. It can also batch, compress, and encrypt the data before loading it, minimizing the amount of storage used at the destination and increasing security.
 
 This document was last updated on February 05, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
@@ -10,37 +10,52 @@ This document was last updated on February 05, 2020. If you notice any gaps, out
 
 {% include content/connection-modes.md %}
 
-  1. Create at least one Kinesis Firehose delivery stream. Follow these [instructions](http://docs.aws.amazon.com/firehose/latest/dev/basic-create.html) to create a new delivery stream.
-  2. Create an IAM policy. Sign in to the [Identity and Access Management (IAM) console](https://console.aws.amazon.com/iam/) and follow these instructions to [Create an IAM policy](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html) to allow Segment permission to write to your Kinesis Firehose Stream. Select the **Create Policy from JSON** option and use the following template policy in the `Policy Document` field. Be sure to change the {region}, {account-id} and {stream-name} with the applicable values.
+To get started:
+  1. Create at least one Kinesis Firehose delivery stream. You can follow these [instructions](http://docs.aws.amazon.com/firehose/latest/dev/basic-create.html){:target="_blank"} to create a new delivery stream.
+  2. Create an IAM policy.
+	  1. Sign in to the [Identity and Access Management (IAM) console](https://console.aws.amazon.com/iam/){:target="_blank"}.
+	  2. Follow [these instructions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create-console.html#access_policies_create-json-editor){:target="_blank"} to create an IAM policy on the JSON to allow Segment permission to write to your Kinesis Firehose Stream.
+     - Use the following template policy in the **Policy Document** field. Be sure to change the `{region}`, `{account-id}` and `{stream-name}` with the applicable values.
 
-```
-{
-   "Version": "2012-10-17",
-   "Statement": [
-       {
-           "Effect": "Allow",
-           "Action": [
-               "firehose:PutRecord"
-           ],
-           "Resource": [
-               "arn:aws:firehose:{region}:{account-id}:deliverystream/{stream-name}"
-           ]
-       }
-   ]
-}
-```
-  3. Create an IAM role. Follow these instructions to [Create an IAM role](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html#roles-creatingrole-user-console) to allow Segment permission to write to your Kinesis Firehose Stream. When prompted to enter an Account ID, enter 595280932656. Make sure to enable 'Require External ID' and enter your Segment Source ID as the External ID*. This can be found by navigating to Settings > API Keys from your Segment source homepage. When adding permissions to your new role, find the policy you created above and attach it.
-**Note:** If you have multiple sources using Kinesis, enter one of their source IDs here for now and then follow the procedure outlined in the Multiple Sources section at the bottom of this doc once you've completed this step and saved your IAM role.
-  4. Create a new Kinesis Firehose Destination. In the Segment source that you want to connect to your Kinesis Firehose destination, click the "Add Destination" button. Search and select the Kinesis Firehose destination and enter the options: `Mapped Streams`, `Region`, and `Role Address` (important for the `Role Address` is that the role itself immediately follows "role/" e.g. `arn:aws:iam::874699288871:role/example-role`).
+
+		```js
+		{
+		   "Version": "2012-10-17",
+		   "Statement": [
+		       {
+		           "Effect": "Allow",
+		           "Action": [
+		               "firehose:PutRecord"
+		           ],
+		           "Resource": [
+		               "arn:aws:firehose:{region}:{account-id}:deliverystream/{stream-name}"
+		           ]
+		       }
+		   ]
+		}
+		```
+
+
+  3. Create an IAM role.
+	  1. Follow [these instructions](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html#roles-creatingrole-user-console) to create an IAM role to allow Segment permission to write to your Kinesis Firehose Stream.
+	  2. When prompted to enter an Account ID, enter `595280932656`.
+	  3. Select the checkbox to enable **Require External ID**.
+	  4. Enter your Segment Source ID as the **External ID**. This can be found in Segment by navigating to **Connections > Sources** and choosing the source you want to connect to your Kinesis Firehose destination. Click the **Settings** tab and choose **API Keys**.
+    - **Note:** If you have multiple sources using Kinesis, enter one of their source IDs here for now and then follow the procedure outlined in the [Multiple Sources](#best-practices) section at the bottom of this doc once you’ve completed this step and saved your IAM role.
+      5. When adding permissions to your new role, find the policy you created in step 2 and attach it.
+
+4. Create a new Kinesis Firehose Destination.
+    1. In the Segment source that you want to connect to your Kinesis Firehose destination, click **Add Destination**.
+    2. Search and select the **Amazon Kinesis Firehose** destination and enter details for [these settings options](#settings).
 
 ## Page
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+Take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 ```javascript
   analytics.page();
 ```
 
 ## Identify
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example identify call is shown below:
+Take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example identify call is shown below:
 ```javascript
 analytics.identify('97980cfea0085', {
   email: 'gibbons@example.com',
@@ -49,9 +64,9 @@ analytics.identify('97980cfea0085', {
 ```
 
 ## Track
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example identify call is shown below:
+Take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example identify call is shown below:
 
-```javascript
+```js
 analytics.track("User Registered", {
   checkinDate: new Date(),
   myCoolProperty: "foobar",
@@ -59,19 +74,19 @@ analytics.track("User Registered", {
 ```
 
 ### Event Mapping
-To begin using the Kinesis Firehose destination you must first decide on which Segment events you would like to route to which Firehose delivery streams. This mapping then needs to be defined in your destination settings.
+To begin using the Kinesis Firehose destination, you must first decide on which Segment events you would like to route to which Firehose delivery streams. This mapping then needs to be defined in your destination settings.
 
-Segment `track` events can map based on their **event name**. For example, if you have an event called `User Registered`, and you wanted these events to be published to a Firehose delivery stream called `new_users`, you would create a row in your destination settings that looks like this:
+Segment `track` events can map based on their **event name**. For example, if you have an event called `User Registered`, and you want these events to be published to a Firehose delivery stream called `new_users`, create a row in your destination settings that looks like this:
 
 ![track event mapping screenshot](images/track_mapping.png)
 
-Any Segment **event type** (ie. `page`, `track`, `identify`, `screen`, etc.) can also be mapped. This allows you to publish all instances of a given Segment event type to a given stream. To do this, you simply to create a row with the event type and it's corrensponding delivery stream:
+Any Segment **event type** (ie. `page`, `track`, `identify`, `screen`, etc.) can also be mapped. This enables you to publish all instances of a given Segment event type to a given stream. To do this, create a row with the event type and its corresponding delivery stream:
 
 ![page event mapping screenshot](images/page_mapping.png)
 
-Events can be defined **insensitive to case** so `Page` will be equivalent to `page`. The delivery stream name however needs to be formatted exactly as it is on AWS.
+Events can be defined **insensitive to case** so `Page` will be equivalent to `page`. The delivery stream name needs to be formatted exactly as it is on AWS.
 
-If you would like to route all events to a stream, use an * as the event name.
+If you would like to route all events to a stream, use an `*` as the event name.
 
 ### Data Model
 Let's say you've decided to publish your Segment track events named `User Registered` to your Kinesis Firehose delivery stream named `online_registrations`. If you send Segment the following `track` call:
@@ -89,7 +104,7 @@ Let's say you've decided to publish your Segment track events named `User Regist
 
 The Segment Kinesis destination will issue a `PutRecord` request with the following parameters:
 
-```
+```js
 firehose.putRecord({
   Record: {
     Data: JSON.stringify(msg)) + '/n'
@@ -98,10 +113,10 @@ firehose.putRecord({
 });
 ```
 
-Segment will append a newline character to each record to allow for easy downstream parsing.
+Segment appends a newline character to each record to allow for easy downstream parsing.
 
 ## Group
-If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example group call is shown below:
+Take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example group call is shown below:
 
 ```js
 analytics.group("0e8c78ea9d9dsasahjg", {
@@ -118,73 +133,86 @@ analytics.group("0e8c78ea9d9dsasahjg", {
 If you have multiple sources using Kinesis/Firehose, you have two options:
 
 #### Attach multiple sources to your IAM role
-Find the IAM role you created for this destination in the AWS Console in Services > IAM > Roles. Click on the role, and navigate to the **Trust Relationships** tab. Click **Edit trust relationship**. You should see a snippet that looks something that looks like this:
+To attach multiple sources to your IAM role:
+1. Find the IAM role you created for this destination in the AWS Console in **Services > IAM > Roles**.
+2. Select the role and navigate to the **Trust Relationships** tab.
+3. Click **Edit trust relationship**. You should see a snippet that looks something that looks like this:
 
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
+    ```json
     {
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": "arn:aws:iam::595280932656:root"
-      },
-      "Action": "sts:AssumeRole",
-      "Condition": {
-        "StringEquals": {
-          "sts:ExternalId": "YOUR_SEGMENT_SOURCE_ID"
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::595280932656:root"
+          },
+          "Action": "sts:AssumeRole",
+          "Condition": {
+            "StringEquals": {
+              "sts:ExternalId": "YOUR_SEGMENT_SOURCE_ID"
+            }
+          }
         }
-      }
+      ]
     }
-  ]
-}
-```
+    ```
 
-Replace that snippet with the following, and replace the contents of the array with all of your source IDs.
+4. Replace that snippet with the following, and replace the contents of the array with all of your source IDs.
 
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
+    ```json
     {
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": "arn:aws:iam::595280932656:root"
-      },
-      "Action": "sts:AssumeRole",
-      "Condition": {
-        "StringEquals": {
-          "sts:ExternalId": ["YOUR_SEGMENT_SOURCE_ID", "ANOTHER_SOURCE_ID", "A_THIRD_SOURCE_ID"]
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::595280932656:root"
+          },
+          "Action": "sts:AssumeRole",
+          "Condition": {
+            "StringEquals": {
+              "sts:ExternalId": ["YOUR_SEGMENT_SOURCE_ID", "ANOTHER_SOURCE_ID", "A_THIRD_SOURCE_ID"]
+            }
+          }
         }
-      }
+      ]
     }
-  ]
-}
-```
+    ```
 
-#### Use a single secret ID
+#### Use Secret ID
 
-If you have so many sources using Kinesis that it is impractical to attach all of their IDs to your IAM role, you can set a single ID to use instead. **This approach requires that you securely store a secret value, so we recommend that you use the method above if at all possible. **
+If you have many sources using Kinesis that it's impractical to attach all of their IDs to your IAM role, you can instead opt to set a Secret ID.
 
-To set this value, go to the Kinesis Firehose destination settings from each of your Segment sources and set the 'Secret ID' to a value of your choosing. This value is a secret and should be treated as sensitively as a password. Once all of your sources have been updated to use this value, find the IAM role you created for this destination in the AWS Console in Services > IAM > Roles. Click on the role, and navigate to the **Trust Relationships** tab. Click **Edit trust relationship**. You should see a snippet that looks something that looks like this:
+To set this value for a Secret ID:
+1. Go to the Kinesis Firehose destination settings from each of your Segment sources.
+2. Click **Secret ID** and enter your Workspace ID.
+    * **NOTE:** For security purposes, Segment sets your Segment Workspace ID as your Secret ID. If you’re using a Secret ID different from your Workspace ID, reach out to our support team so they can change it to make your account more secure.
+3. Once all of your sources are updated to use this value, find the IAM role you created for this destination in the AWS Console in **Services > IAM > Roles**.
+4. Select the role and navigate to the **Trust Relationships** tab.
+5. Click **Edit trust relationship**. You should see a snippet that looks something like this:
 
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
+    ```json
     {
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": "arn:aws:iam::595280932656:root"
-      },
-      "Action": "sts:AssumeRole",
-      "Condition": {
-        "StringEquals": {
-          "sts:ExternalId": "YOUR_SEGMENT_SOURCE_ID"
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::595280932656:root"
+          },
+          "Action": "sts:AssumeRole",
+          "Condition": {
+            "StringEquals": {
+              "sts:ExternalId": "YOUR_SEGMENT_SOURCE_ID"
+            }
+          }
         }
-      }
+      ]
     }
-  ]
-}
-```
-Replace your source ID (found at "YOUR_SEGMENT_SOURCE_ID") with your secret ID.
+    ```
+6. Replace the value of `sts:ExternalId` ( "YOUR_SEGMENT_SOURCE_ID") with the Secret ID value from the previous step. In the case of requiring the use of multiple secretIds, replace the `sts:ExternalId` setting above with:
+
+   ```
+    "sts:ExternalId": ["A_SECRET_ID", "ANOTHER_SECRET_ID"]
+   ```

@@ -51,11 +51,6 @@ The Segment Dev Center team is here to help you every step of the way. You can e
     - Request to implement OAuth
     - Private beta approval
 
-
-- Shared Slack channel
-    - Welcome
-    - Build Q&A
-
 ## 4. Partner Build
 
 Once you are approved you can start building your Segment App. In a nutshell you will build a webhook service or write JavaScript code to process data from Segment, or write a browser JavaScript SDK plugin to collect data or modify a website. You can [refer to the docs for full details about building and testing Segment App Components](https://segment.com/docs/partners/).
@@ -121,7 +116,7 @@ We also encourage marketing content that showcases how easy and powerful your in
 - Write docs
     - For your docs site about Segment integration
     - For https://segment.com/docs/ about your integration ([HackMD template](https://hackmd.io/t7amLXluS7-39rg7ARZgSA))
-    - For https://segment.com/catalog/ about your integration ([Google Docs template](https://docs.google.com/document/d/1kvAvAHLyM3pOq-lBcZJhP_X_KivHlk1eiFy-5ERWDXc/edit))
+    - For https://segment.com/catalog/ about your integration ([Google Docs template](https://docs.google.com/document/d/1kKvqYtZeDPnBjvCrtQSuO3BBH70b_CLO13hYrYIOOtA/edit))
 
 
 - Write launch marketing content
@@ -176,7 +171,7 @@ To maintain the quality of the partner integrations catalog, the Segment Develop
     - All signup, API key and data delivery matches test
 
 
-- Review catalog information partner submitted using [Google Docs Template](https://docs.google.com/document/d/1kvAvAHLyM3pOq-lBcZJhP_X_KivHlk1eiFy-5ERWDXc/edit)
+- Review catalog information partner submitted using [Google Docs Template](https://docs.google.com/document/d/1kKvqYtZeDPnBjvCrtQSuO3BBH70b_CLO13hYrYIOOtA/edit)
 
 
 - Verify that in-app catalog entry renders correctly

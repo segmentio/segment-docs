@@ -9,9 +9,7 @@ title: Protocols Frequently Asked Questions
 
 ### How can I subscribe to Protocols notifications?
 
-You can subscribe to a variety of Protocols specific alerts through the workspace Activity Feed settings. To subscribe, visit your workspace **Settings** > **Notification Settings** > **Protocols**.
-
-![](images/activity_notifications.png)
+You can subscribe to a variety of Protocols specific alerts through the workspace Activity Feed settings. To subscribe, visit your workspace **Settings** > **User Preferences** > **Activity Notifications** > **Protocols**.
 
 ### How can I get notified when someone makes a change to my tracking plan?
 
@@ -40,7 +38,7 @@ The Tracking Plan to Source relationship is a one-to-many relationship. This mea
 
 ### Can I duplicate a Tracking Plan in the Segment UI?
 
-You cannot currently duplicate Tracking Plans in the Segment web app. Instead, we recommend using the [Tracking Plan API](/docs/protocols/apis-and-extensions/) to copy the underlying JSON schema from one Tracking Plan to another. You can also use our [Google Sheets uploader](https://docs.google.com/spreadsheets/u/1/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/copy) to duplicate events from one Tracking Plan into another.
+You cannot currently duplicate Tracking Plans in the Segment web app. Instead, we recommend using the [Tracking Plan API](/docs/protocols/apis-and-extensions/) to copy the underlying JSON schema from one Tracking Plan to another. You can also use our [Google Sheets uploader](https://docs.google.com/spreadsheets/u/1/d/1TA6qTcDHoZzsG7-C6p5yHGximDxqoNtizguKs7Z0av4/copy) to duplicate events from one Tracking Plan into another.
 
 ### How do I handle versioning with mobile apps?
 

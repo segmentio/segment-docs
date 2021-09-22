@@ -70,20 +70,30 @@ else
     echo " ✔ Yarn already installed"
 fi
 
-brew install ruby
+# May 2021 - replacing the brew instructions with an rvm command
+# rvm helps keep the system ruby separate from the jekyll one
+# we'll need to periodically update this with the latest version of ruby we use
+# brew install ruby
+
+curl -sSL https://get.rvm.io | bash -s stable
+rvm install 2.7
+rvm --default use 2.7
+
 
 which -s bundler
 if [[ $? != 0 ]] ; then
-  gem install -n /usr/local/bin bundler:2.1.2
-  gem install bundler:2.1.2 --user-install
+  gem install bundler:2.2.2
   echo " ✔ Bundler installed"
 else
     echo " ✔ Bundler already installed"
 fi
 
-echo " Updating your Gem installation. Please enter your password to sudo."
-sudo gem update --system -n /usr/local/bin
-echo "Gem version " $(gem --version) "installed"
+echo " Installing gems for the docs repo."
+bundle install
+
+#echo " Updating your Gem installation. Please enter your password to sudo."
+#sudo gem update --system -n /usr/local/bin
+#echo "Gem version " $(gem --version) "installed"
 
 # can't get this working because comparing version strings is complicated.
 # which -s gem

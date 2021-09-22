@@ -133,13 +133,12 @@ Beginning February 15th 2021, Facebook requires the `action_source` server event
 
 ### Action Source
 
-`action_source` is set to "website" as a default value. If a mobile library is used then `action_source` defaults to "app".
+`action_source` is set to "website" as a default value.
 
 You can set `action_source` manually by passing it as a property of a Track event. You can use either snake case or camel case to include `action_source` as a property in Track events.
 
 | Action Source Values | Description                                                                                               |
 | -------------------- | --------------------------------------------------------------------------------------------------------- |
-| `app`                | Conversion was made using your app.                                                                       |
 | `chat`               | Conversion was made via a messaging app, SMS, or online messaging feature.                                |
 | `email`              | Conversion happened over email.                                                                           |
 | `other`              | Conversion happened in a way that is not listed.                                                          |
@@ -300,7 +299,7 @@ analytics.track({
   event: 'Membership Upgraded',
   userId: '97234974',
   integrations: {
-    "Facebook Conversions": {
+    "Facebook Conversions API": {
       "dataProcessingOptions": [[], 1,1000]
     }
   }

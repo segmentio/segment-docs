@@ -1,28 +1,38 @@
 # Manually generated
 items:
-- display_name: Redshift
-  slug: redshift
-  name: catalog/warehouses/redshift
-  description: ''
-  url: connections/storage/catalog/redshift
+- display_name: Amazon S3
+  slug: amazon-s3
+  name: catalog/warehouses/amazon-s3
+  description: >-
+    Our Amazon S3 copies our log files of your raw API calls from our S3 bucket
+    to yours, where you can then perform custom analysis on them.
+  url: connections/storage/catalog/amazon-s3
   status: PUBLIC
   logo:
-    url: 'https://d3hotuclm6if1r.cloudfront.net/logos/redshift-default.svg'
+    url: 'https://d3hotuclm6if1r.cloudfront.net/logos/amazon-s3-default.svg'
   mark:
-    url: ''
-  categories:
-    - Warehouses
-
-- display_name: Segment Data Lakes
-  slug: data-lakes
-  name: catalog/warehouse/data-lakes
-  description: ''
-  url: connections/storage/catalog/data-lakes
+    url: 'https://cdn.filepicker.io/api/file/R1EKddJ1SnGECiHtdUlY'
+- display_name: AWS S3
+  slug: aws-s3
+  name: catalog/warehouses/aws-s3
+  description: >-
+    The AWS S3 destination provides a more secure way to store data in your AWS S3 buckets.
+  url: connections/storage/catalog/aws-s3
   status: PUBLIC_BETA
   logo:
-    url: 'https://cdn.filepicker.io/api/file/YR7dKXAiQWyYvBiVOZNX'
+    url: 'https://d3hotuclm6if1r.cloudfront.net/logos/amazon-s3-default.svg'
   mark:
-    url: 'https://cdn.filepicker.io/api/file/zKQw43MuQjmTtXBXs4VL'
+    url: 'https://cdn.filepicker.io/api/file/R1EKddJ1SnGECiHtdUlY'
+- display_name: Azure Synapse Analytics Warehouse
+  slug: azuresqldw
+  name: catalog/warehouses/azuresqldw
+  description: ''
+  url: connections/storage/catalog/azuresqldw
+  status: PUBLIC
+  logo:
+    url: 'https://cdn.filepicker.io/api/file/VKbuWjNjQPKOnOWijFe4'
+  mark:
+    url: 'https://cdn.filepicker.io/api/file/EUJvt69Q7qMqCvGrVtiu'
   categories:
     - Warehouses
 - display_name: BigQuery
@@ -37,28 +47,16 @@ items:
     url: 'https://cdn.filepicker.io/api/file/Vk6iFlMvQeynbg30ZEtt'
   categories:
     - Warehouses
-- display_name: Postgres
-  slug: postgres
-  name: catalog/warehouses/postgres
+- display_name: Google Cloud Storage
+  slug: google-cloud-storage
+  name: catalog/warehouses/google-cloud-storage
   description: ''
-  url: connections/storage/catalog/postgres
-  status: PUBLIC
+  url: connections/storage/catalog/google-cloud-storage
+  status: PUBLIC_BETA
   logo:
-    url: 'https://d3hotuclm6if1r.cloudfront.net/logos/postgres-default.svg'
+    url: 'https://cdn.filepicker.io/api/file/G6kRHZtSoaEslLkENhPC'
   mark:
     url: ''
-  categories:
-    - Warehouses
-- display_name: Snowflake
-  slug: snowflake
-  name: catalog/warehouses/snowflake
-  description: ''
-  url: connections/storage/catalog/snowflake
-  status: PUBLIC
-  logo:
-    url: 'https://cdn.filepicker.io/api/file/JrQWOYvMRRCVvSHp4HL0'
-  mark:
-    url: 'https://cdn.filepicker.io/api/file/OBhrGoCRKaSyvAhDX3fw'
   categories:
     - Warehouses
 - display_name: IBM Db2 Warehouse
@@ -73,30 +71,54 @@ items:
     url: ''
   categories:
     - Warehouses
-- display_name: Azure Synapse Analytics Warehouse
-  slug: azuresqldw
-  name: catalog/warehouses/azuresqldw
+- display_name: Postgres
+  slug: postgres
+  name: catalog/warehouses/postgres
   description: ''
-  url: connections/storage/catalog/azuresqldw
+  url: connections/storage/catalog/postgres
   status: PUBLIC
   logo:
-    url: 'https://cdn.filepicker.io/api/file/VKbuWjNjQPKOnOWijFe4'
+    url: 'https://d3hotuclm6if1r.cloudfront.net/logos/postgres-default.svg'
   mark:
-    url: 'https://cdn.filepicker.io/api/file/EUJvt69Q7qMqCvGrVtiu'
+    url: ''
   categories:
     - Warehouses
-- display_name: Amazon S3
-  slug: amazon-s3
-  name: catalog/warehouses/amazon-s3
-  description: >-
-    Our Amazon S3 copies our log files of your raw API calls from our S3 bucket
-    to yours, where you can then perform custom analysis on them.
-  url: connections/storage/catalog/amazon-s3
+- display_name: Redshift
+  slug: redshift
+  name: catalog/warehouses/redshift
+  description: ''
+  url: connections/storage/catalog/redshift
   status: PUBLIC
   logo:
-    url: 'https://d3hotuclm6if1r.cloudfront.net/logos/amazon-s3-default.svg'
+    url: 'https://d3hotuclm6if1r.cloudfront.net/logos/redshift-default.svg'
   mark:
-    url: 'https://cdn.filepicker.io/api/file/R1EKddJ1SnGECiHtdUlY'
+    url: ''
+  categories:
+    - Warehouses
+- display_name: Segment Data Lakes
+  slug: data-lakes
+  name: catalog/warehouse/data-lakes
+  description: ''
+  url: connections/storage/catalog/data-lakes
+  status: PUBLIC
+  logo:
+    url: 'https://cdn.filepicker.io/api/file/YR7dKXAiQWyYvBiVOZNX'
+  mark:
+    url: 'https://cdn.filepicker.io/api/file/zKQw43MuQjmTtXBXs4VL'
+  categories:
+    - Warehouses
+- display_name: Snowflake
+  slug: snowflake
+  name: catalog/warehouses/snowflake
+  description: ''
+  url: connections/storage/catalog/snowflake
+  status: PUBLIC
+  logo:
+    url: 'https://cdn.filepicker.io/api/file/JrQWOYvMRRCVvSHp4HL0'
+  mark:
+    url: 'https://cdn.filepicker.io/api/file/OBhrGoCRKaSyvAhDX3fw'
+  categories:
+    - Warehouses
 
   settings:
   - name: bucket

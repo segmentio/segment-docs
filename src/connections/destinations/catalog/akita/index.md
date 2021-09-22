@@ -1,6 +1,8 @@
 ---
 beta: true
 title: Akita Destination
+published: false
+hidden: true
 ---
 
 *This destination is maintained by Akita*
