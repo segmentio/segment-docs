@@ -213,12 +213,12 @@ We do our best to limit the amount of API calls that we are making to Marketo bu
     })
 ```
 
-### Hybrid Device/Cloud-mode
+## Hybrid Device/Cloud-mode
 Another option is to use Marketo in [Device-mode](/docs/connections/destinations/catalog/marketo-v2/#supported-sources-and-connection-modes) (assuming you are tracking events from a Website). Marketo does not limit API calls that originate from their Web SDK but it also only supports capturing Identify and Page events. If you would also like to capture Track events, you can choose to have these be routed through our server-side integration.
 
 To enable this "Hybrid" mode, select the [Send Track Events Server Side](/docs/connections/destinations/catalog/marketo-v2/#send-track-events-server-side) setting and follow the instructions for mapping [Track](/docs/connections/destinations/catalog/marketo-v2/#track) events defined above.
 
-### Preventing Duplicate Leads
+## Preventing Duplicate Leads
 
 Marketo allows you to upsert leads based on any field. We use email and userId as well as anonymousId if you are tracking anonymous activity. We will first use email since that is the field Marketo recommends is unique for your leads. However, many  `.track()` and `.page()` calls don't include an email address so then we will use the `userId` or `anonymousId` passed in your `.track()` and `.page()` calls to associate these events to leads in Marketo.
 
@@ -238,7 +238,7 @@ To upload a list to Marketo, when you are in Lead Database, click All Leads. The
 3. Make sure to call identify first. This is already a recommended best practice as [part of our spec](https://segment.com/docs/connections/spec/identify/).
 4. Pass an email in your `.track()` and `.page()` calls.
 
-### Migrating from Marketo to Marketo V2
+## Migrating from Marketo to Marketo V2
 
 There are a few necessary steps that have to be taken to migrate from Segment's legacy Marketo v1 destinations, to Marketo V2.
 
