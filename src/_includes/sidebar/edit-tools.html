@@ -1,13 +1,15 @@
+{% if site.os_links %}
 <div>
-  <a href="https://github.com/segmentio/segment-docs/edit/master/src/{{ page.path }}" class="button edit flex" target="_blank">
+  <a href="https://github.com/segmentio/segment-docs/edit/master/src/{{ page.path }}" class="button edit flex no-icon" target="_blank">
     <span class="button__icon">{% include icons/symbols/edit.svg %}</span>
 
     <span class="button__text">Edit this page</span>
   </a>
 
-  <a href="https://github.com/segmentio/segment-docs/issues/new?body=File:%20[{{ page.path }}](https://segment.com/docs/)" class="button edit"  target="_blank">
+  <a href="https://github.com/segmentio/segment-docs/issues/new?body=File:%20[{{ page.path }}](https://segment.com/docs/)" class="button edit no-icon"  target="_blank">
     <span class="button__icon">{% include icons/symbols/plus.svg %}</span>
 
     <span class="button__text">Request docs change</span>
   </a>
 </div>
+{% endif %}
