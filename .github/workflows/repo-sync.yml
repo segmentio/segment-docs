@@ -49,3 +49,11 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         number: ${{ steps.find-pull-request.outputs.number }}
+    
+    - name: Merge Pull Request
+      if: ${{ steps.find-pull-request.outputs.number }}
+      uses: juliangruber/merge-pull-request-action@v1
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        number: ${{ steps.find-pull-request.outputs.number }}
+        method: merge
