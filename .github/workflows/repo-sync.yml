@@ -19,6 +19,8 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
     - uses: repo-sync/pull-request@v2
       name: Create pull request
+      env:
+        GITHUB_TOKEN: ${{ secrets.DOCS_BOT_PAT_REPO_SCOPE }}
       with:
         source_branch: ${{ secrets.INTERMEDIATE_BRANCH }}
         destination_branch: master
