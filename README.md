@@ -29,9 +29,9 @@ For more information about contributing, see Contributing.
 
 ## List of READMEs
 
-- [Contributing](#)
-- [Style Guide](#)
-- [Developer Guide](#)
+- [Contributing](CONTRIBUTING.md)
+- [Style Guide](styleguide.md)
+- [Developer Guide](devguide.md)
 
 ## License
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
