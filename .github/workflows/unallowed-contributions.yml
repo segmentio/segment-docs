@@ -22,7 +22,7 @@ on:
 
 jobs:
   triage:
-    if: github.repository == 'github/docs' && github.event.pull_request.user.login != 'markzegarelli'
+    if: github.repository == 'segmentio/segment-docs' && github.event.pull_request.user.login != 'markzegarelli'
     runs-on: ubuntu-latest
     steps:
       - name: Get files changed
