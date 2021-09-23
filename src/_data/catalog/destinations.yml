@@ -1451,10 +1451,11 @@ items:
     type: string
     defaultValue: ''
     description: >-
-      The External ID to your IAM role. This value is a secret and should be
-      treated as a password.
+      The External ID to your IAM role. This value is read-only. Reach out to
+      support if you wish to change it. This value is also a secret and should
+      be treated as a password.
     required: true
-    label: Secret ID
+    label: Secret ID (Read-Only)
   - name: stream
     type: string
     defaultValue: ''
@@ -1549,10 +1550,11 @@ items:
     type: string
     defaultValue: ''
     description: >-
-      The External ID to your IAM role. This value is a secret and should be
-      treated as a password.
+      The External ID to your IAM role. This value is read-only. Reach out to
+      support if you wish to change it. This value is also a secret and should
+      be treated as a password.
     required: true
-    label: Secret ID
+    label: Secret ID (Read-Only)
 - display_name: Amazon Lambda
   name: Amazon Lambda
   slug: amazon-lambda
@@ -1666,11 +1668,12 @@ items:
     description: >-
       This is an optional string Segment will use to assume the role provided to
       invoke the Lambda function. If this setting is not defined, we'll use the
-      Source ID. For more information about external IDs while assuming AWS
+      Source ID. This value is read-only. Reach out to support if you wish to
+      change it. For more information about external IDs while assuming AWS
       roles, check
       [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html).
     required: false
-    label: External ID
+    label: External ID (Read-Only)
   - name: function
     type: string
     defaultValue: ''
@@ -1924,11 +1927,12 @@ items:
     description: >-
       This is an optional string Segment will use to assume the role provided to
       invoke the Lambda function. If this setting is not defined, we'll use the
-      Source ID. For more information about external IDs while assuming AWS
+      Source ID. This value is read-only. Reach out to support if you wish to
+      change it. For more information about external IDs while assuming AWS
       roles, check
       [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html).
     required: false
-    label: External ID
+    label: External ID (Read-Only)
   - name: function
     type: string
     defaultValue: ''
