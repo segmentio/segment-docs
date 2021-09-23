@@ -10,13 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    
     - uses: repo-sync/github-sync@v2
       name: Sync repo to branch
+      env:
+        GITHUB_TOKEN: ${{ secrets.DOCS_BOT_PAT_REPO_SCOPE }}
       with:
         source_repo: ${{ secrets.SOURCE_REPO }}
         source_branch: master
         destination_branch: ${{ secrets.INTERMEDIATE_BRANCH }}
         github_token: ${{ secrets.GITHUB_TOKEN }}
+    
     - uses: repo-sync/pull-request@v2
       name: Create pull request
       env:
