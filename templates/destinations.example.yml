@@ -12932,7 +12932,7 @@ destinations:
     type: LIST
     deprecated: false
     required: false
-    description: This is the array of source write keys you want to repeat data into.
+    description: This is the array of source write keys you want to repeat data into. You can have up to 20 write keys.
     settings: []
 - name: catalog/destinations/responsys
   display_name: Responsys
