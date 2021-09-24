@@ -3,7 +3,7 @@ rewrite: true
 title: Stormly Destination
 ---
 
-[Stormly](https://www.stormly.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides easy-to-use building blocks to quickly create tailor-made analytics solutions using AI, in the form of reusable Templates. Or use ready Templates available on the platform like retention, segmentation, sales forecasting and more.
+With [Stormly](https://www.stormly.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners), you can access the insights which interest you the most. The Stormly interface guides you through several questions to help define personalization options, then provides insights into behavioral patterns, forecasts, and other information you want to know about your users.
 
 This destination is maintained by Stormly. For any issues with the destination, [contact their support team](mailto:support@stormly.com).
 
