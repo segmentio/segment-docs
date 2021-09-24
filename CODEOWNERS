@@ -1,6 +1,6 @@
 # The default owners for everything in
 # the repo. Unless a later match takes precedence.
-CODEOWNERS  @segmentio/segment-doc-team @sanscontext @markzegarelli
+CODEOWNERS  @segmentio/segment-doc-team @markzegarelli
 
 # Diagram library
 /diagram-library @sanscontext @markzegarelli
@@ -22,7 +22,7 @@ CODEOWNERS  @segmentio/segment-doc-team @sanscontext @markzegarelli
 
 
 # Libraries owners
-/src/connections/catalog/libraries  @osamakhn @bsneed @pooyaj @juliofarah
+/src/connections/catalog/libraries   @bsneed @pooyaj @juliofarah
 
 # Destinations owners
 /src/connections/destinations  @segmentio/segment-doc-team
