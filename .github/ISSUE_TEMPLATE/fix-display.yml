@@ -27,3 +27,9 @@ body:
       - Chrome
       - Safari
       - Microsoft Edge
+- type: textarea
+  attributes:
+    label: Please describe the issue.
+    description: Add any other context or screenshots about the feature request here.
+  validations:
+    required: true
