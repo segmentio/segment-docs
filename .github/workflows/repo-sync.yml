@@ -54,6 +54,6 @@ jobs:
       if: ${{ steps.find-pull-request.outputs.number }}
       uses: juliangruber/merge-pull-request-action@v1
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        github-token: ${{ secrets.DOCS_BOT_PAT_REPO_SCOPE }}
         number: ${{ steps.find-pull-request.outputs.number }}
         method: merge
