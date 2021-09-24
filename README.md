@@ -11,6 +11,7 @@ In this article, find information about:
 
 - Contributing
 - A list of READMEs
+- Code of conduct
 - License agreement
 
 ## Contributing
@@ -32,6 +33,9 @@ For more information about contributing, see Contributing.
 - [Contributing](CONTRIBUTING.md)
 - [Style Guide](styleguide.md)
 - [Developer Guide](devguide.md)
+
+## Code of Conduct
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 
 ## License
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
