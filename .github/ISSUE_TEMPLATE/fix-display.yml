@@ -5,7 +5,7 @@ labels: [bug, triage]
 body:
 - type: markdown
   attributes:
-    vallue: |
+    value: |
       * Please check that there is not an existing open [issue](https://github.com/segmentio/segment-docs/issues) before you create a new one.
       * Read the Contribution guide before you continue.
 # - type: checkboxes
