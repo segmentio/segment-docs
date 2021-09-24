@@ -3,7 +3,7 @@ rewrite: true
 title: Stormly Destination
 ---
 
-With [Stormly](https://www.stormly.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners), all you need to do is access Insights and pick what interests you the most. The interface will walk you through some personalization options. And after answering a few questions you get Insights with behavioral patterns, forecasts and anything else you want to know about your users.
+With [Stormly](https://www.stormly.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners), you can access the insights which interest you the most. The Stormly interface guides you through several questions to help define personalization options, then provides insights into behavioral patterns, forecasts, and other information you want to know about your users.
 
 This destination is maintained by Stormly. For any issues with the destination, [contact their support team](mailto:support@stormly.com).
 
