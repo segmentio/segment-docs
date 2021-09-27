@@ -30,7 +30,7 @@ analytics.identify('userId123', {
 
 Segment sends Identify calls to Screeb as an `identity` event.
 
-The traits provided along the identity can be listed on the [Screeb platform](https://admin.screeb.app/) > Settings. Surveys can be customized or displayed according to identity properties.
+The traits provided along with the identity can be listed on the [Screeb platform](https://admin.screeb.app/) > Settings. Surveys can be customized or displayed according to identity properties.
 
 
 ## Track
