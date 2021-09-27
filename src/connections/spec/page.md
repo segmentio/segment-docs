@@ -24,13 +24,14 @@ Here's the payload of a typical `page` call with most [common fields](/docs/conn
 And here's the corresponding Javascript event that would generate the above payload. If you're using Segment's Javascript library, the page name and URL are automatically gathered and passed as properties into the event payload:
 
 ```js
-analytics.page("Home");
+analytics.page("Retail Page","Home");
 ```
 
 Beyond the common fields, the `page` call takes the following fields:
 
 <table>
   {% include content/spec-table-header.md %}
+  {% include content/spec-field-page-category.md %}
   {% include content/spec-field-page-name.md %}
   {% include content/spec-field-page-properties.md %}
 </table>

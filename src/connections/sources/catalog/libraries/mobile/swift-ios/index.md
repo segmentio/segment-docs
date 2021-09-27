@@ -314,7 +314,7 @@ analytics.add(plugin: yourIntegration)
 Though you can add plugins anywhere in your code, it’s best to implement your plugin when you configure the client.
 
 ## Utility Methods
-The Analytics Swift utility methods help you work with [plugins](/docs/connections/sources/catalog/libraries/mobile/swift-ios/index#plugin-architecture) from the analytics timeline. They include:
+The Analytics Swift utility methods help you work with [plugins](#plugin-architecture) from the analytics timeline. They include:
 - [Add](#add)
 - [Find](#find)
 - [Remove](#remove)

@@ -1,0 +1,35 @@
+name: Display bug or other issue
+description: Rais an issue related to the display of the site it self, or anything else not related to content.
+title: "[Bug]: "
+labels: [bug, triage]
+body:
+- type: markdown
+  attributes:
+    value: |
+      * Please check that there is not an existing open [issue](https://github.com/segmentio/segment-docs/issues) before you create a new one.
+      * Read the Contribution guide before you continue.
+# - type: checkboxes
+#   id: terms
+#   attributes:
+- type: input
+  attributes:
+    label: Where on segment.com/docs did you see this issue?
+    description: Please paste link to the article where you noticed the issue.
+  validations:
+    required: true
+- type: dropdown
+  id: browsers
+  attributes:
+    label: What browsers are you seeing the problem on?
+    multiple: true
+    options:
+      - Firefox
+      - Chrome
+      - Safari
+      - Microsoft Edge
+- type: textarea
+  attributes:
+    label: Please describe the issue.
+    description: Add any other context or screenshots about the feature request here.
+  validations:
+    required: true

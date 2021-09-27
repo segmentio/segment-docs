@@ -10,6 +10,7 @@ permalink: /:categories/:title/
 
 exclude: ['js', '_site', '*.sketch']
 # Build settings
+os_links: false
 markdown: kramdown
 highlighter: rouge
 defaults:
