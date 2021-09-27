@@ -27,7 +27,7 @@ Data Lakes offers 12 syncs in a 24 hour period and doesn't offer a custom sync s
 
 ### Data Lake deduplication
 
-In addition to Segment's [99% guarantee of no duplicates](/docs/guides/duplicate-data/) for data within a 24 hour look-back window, Data Lakes have another layer of deduplication to ensure clean data in your Data Lake. Segment removes duplicate events at the time your Data Lake ingests data. The Data Lake deduplication process dedupes the data the Data Lake syncs within the last 7 days, with Segment deduping the data based on the `message_id`.
+In addition to Segment's [99% guarantee of no duplicates](/docs/guides/duplicate-data/) for data within a 24 hour look-back window, Data Lakes have another layer of deduplication to ensure clean data in your Data Lake. Segment removes duplicate events at the time your Data Lake ingests data.  Data Lakes deduplicate any data synced within the last 7 days, based on the `message_id` field.
 
 ### Using a Data Lake with a Data Warehouse
 
