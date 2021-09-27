@@ -6,28 +6,35 @@ title: Warehouse Schemas
 
 The table below describes the schema in Segment Warehouses:
 
-| `<source>.aliases` | A table with your `alias` method calls. This table includes the `traits` you identify users by as top-level columns, for example `<source>.aliases.email`. |
-| `<source>.groups` | A table with your `group` method calls. This table includes the `traits` you record for groups as top-level columns, for example `<source>.groups.employee_count`. |
-| `<source>.accounts` | *IN BETA* A table with unique `group` method calls. Group calls are upserted into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a group. |
-| `<source>.identifies` | A table with your `identify` method calls. This table includes the `traits` you identify users by as top-level columns, for example `<source>.identifies.email`. |
-| `<source>.users` | A table with unique `identify` calls. `identify` calls are upserted on `user_id` into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a user. The `id` column in the users table is the same as the `user_id` column in the identifies table. Also note that this table won't have an `anonymous_id` column since a user can have multiple anonymousIds. To retrieve a user's `anonymousId`, query the identifies table. *If you observe any duplicates in the users table [contact us](https://segment.com/help/contact/) (unless you are using BigQuery, where [this is expected](/docs/connections/storage/catalog/bigquery/#schema))*. |
-| `<source>.pages` | A table with your `page` method calls. This table includes the `properties` you record for pages as top-level columns, for example `<source>.pages.title`. |
-| `<source>.screens` | A table with your `screen` method calls. This table includes `properties` you record for screens as top-level columns, for example `<source>.screens.title`. |
-| `<source>.tracks` | A table with your `track` method calls. This table includes standardized properties that are all common to all events: `anonymous_id`, `context_*`, `event`, `event_text`, `received_at`, `sent_at`, and `user_id`.  This is because every event that you send to Segment has different properties.  For querying by the custom properties, use the `<source>.<event>` tables instead. |
-| `<source>.<event>` | For `track` calls, each event like `Signed Up` or `Order Completed` also has it's own table (for example. `initech.clocked_in`) with columns for each of the event's distinct `properties` (for example. `initech.clocked_in.time`). |
+
+
+
+| source                | property                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `<source>.aliases`    | A table with your `alias` method calls. This table includes the `traits` you identify users by as top-level columns, for example `<source>.aliases.email`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `<source>.groups`     | A table with your `group` method calls. This table includes the `traits` you record for groups as top-level columns, for example `<source>.groups.employee_count`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `<source>.accounts`   | *IN BETA* A table with unique `group` method calls. Group calls are upserted into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a group.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `<source>.identifies` | A table with your `identify` method calls. This table includes the `traits` you identify users by as top-level columns, for example `<source>.identifies.email`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `<source>.users`      | A table with unique `identify` calls. `identify` calls are upserted on `user_id` into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a user. The `id` column in the users table is the same as the `user_id` column in the identifies table. Also note that this table won't have an `anonymous_id` column since a user can have multiple anonymousIds. To retrieve a user's `anonymousId`, query the identifies table. *If you observe any duplicates in the users table [contact us](https://segment.com/help/contact/) (unless you are using BigQuery, where [this is expected](/docs/connections/storage/catalog/bigquery/#schema))*. |
+| `<source>.pages`      | A table with your `page` method calls. This table includes the `properties` you record for pages as top-level columns, for example `<source>.pages.title`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `<source>.screens`    | A table with your `screen` method calls. This table includes `properties` you record for screens as top-level columns, for example `<source>.screens.title`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `<source>.tracks`     | A table with your `track` method calls. This table includes standardized properties that are all common to all events: `anonymous_id`, `context_*`, `event`, `event_text`, `received_at`, `sent_at`, and `user_id`.  This is because every event that you send to Segment has different properties.  For querying by the custom properties, use the `<source>.<event>` tables instead.                                                                                                                                                                                                                                                                                                                |
+| `<source>.<event>`    | For `track` calls, each event like `Signed Up` or `Order Completed` also has it's own table (for example. `initech.clocked_in`) with columns for each of the event's distinct `properties` (for example. `initech.clocked_in.time`).                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 
 ## Identifies table
 
 The `identifies` table stores the `.identify()` method calls =. Query it to find out user-level information. It has the following columns:
 
-| `anonymous_id`| The anonymous ID of the user. |
-| `context_<key>`| Non-user-related context fields sent with each identify call. |
-| `id`| The unique ID of the identify call itself. |
-| `received_at`| When Segment received the identify call. |
-| `sent_at`| When a user triggered the identify call. |
-| `user_id`| The unique ID of the user. |
-| `<trait>`| Each trait of the user you record creates its own column, and the column type is automatically inferred from your data. For example, you might have columns like `email` and `first_name`. |
+| method          | property                                                                                                                                                                                   |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `anonymous_id`  | The anonymous ID of the user.                                                                                                                                                              |
+| `context_<key>` | Non-user-related context fields sent with each identify call.                                                                                                                              |
+| `id`            | The unique ID of the identify call itself.                                                                                                                                                 |
+| `received_at`   | When Segment received the identify call.                                                                                                                                                   |
+| `sent_at`       | When a user triggered the identify call.                                                                                                                                                   |
+| `user_id`       | The unique ID of the user.                                                                                                                                                                 |
+| `<trait>`       | Each trait of the user you record creates its own column, and the column type is automatically inferred from your data. For example, you might have columns like `email` and `first_name`. |
 
 
 ### Querying the Identifies table
@@ -41,13 +48,6 @@ WHERE schema_name = '<source>'
 AND table_name = 'identifies'
 ORDER by column_name
 ```
-
-| **Columns**  |
-| ------------ |
-| `anonymous_id` |
-| `context_ip`   |
-| `email`        |
-| ...          |
 
 The `identifies` table is where you can query information about your users and their traits. For example, this query returns unique users you've seen on your site each day:
 
@@ -64,14 +64,16 @@ ORDER BY day
 The  `groups` table stores the `group` method calls. Query it to find out group-level information. It has the following columns:
 
 
-| `anonymous_id`| The anonymous ID of the user. |
-| `context_<key>`| Non-user-related context fields sent with each group call. |
-| `group_id`| The unique ID of the group. |
-| `id`| The unique ID of the group call itself. |
-| `received_at`| When Segment receives the group call. |
-| `sent_at`| When a user triggered the group call. |
-| `user_id`| The unique ID of the user. |
-| `<trait>`| Each trait of the group you record creates its own column, and the column type is automatically inferred from your data. For example, you might have columns like `email` and `name`. |
+| method          | property                                                                                                                                                                              |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `anonymous_id`  | The anonymous ID of the user.                                                                                                                                                         |
+| `context_<key>` | Non-user-related context fields sent with each group call.                                                                                                                            |
+| `group_id`      | The unique ID of the group.                                                                                                                                                           |
+| `id`            | The unique ID of the group call itself.                                                                                                                                               |
+| `received_at`   | When Segment received the groups call.                                                                                                                                                |
+| `sent_at`       | When a user triggered the group call.                                                                                                                                                 |
+| `user_id`       | The unique ID of the user.                                                                                                                                                            |
+| `<trait>`       | Each trait of the group you record creates its own column, and the column type is automatically inferred from your data. For example, you might have columns like `email` and `name`. |
 
 ### Querying the Groups table
 
@@ -86,13 +88,6 @@ AND table_name = 'groups'
 ORDER by column_name
 ```
 
-
-| **Columns**  |
-| ------------ |
-| `anonymous_id` |
-| `context_ip`   |
-| ...          |
-
 To see a list of the groups using your product, run the following:
 
 ```sql
@@ -101,25 +96,20 @@ FROM <source>.groups
 GROUP BY name
 ```
 
-
-| **Company** |
-| ----------- |
-| Comcast     |
-| Rdio        |
-| Warner Brothers         |
-| ...         |
-
 ## Pages and Screens tables
 
 The `pages` and `screens` tables store the `page` and `screen` method calls. Query it to find out information about page views or screen views. It has the following columns:
 
-| `anonymous_id`| The anonymous ID of the user. |
-| `context_<key>`| Non-user-related context fields sent with each page or screen call. |
-| `id`| The unique ID of the page or screen call itself. |
-| `received_at`| When Segment received the page or screen call. |
-| `sent_at`| When a user triggered the page or screen call. |
-| `user_id`| The unique ID of the user. |
-| `property`| Each property of your pages or screens creates its own column, and the column type is automatically inferred from your data. For example, you might have columns like `referrer` and `title`. |
+| method          | property                                                                                                                                                                                      |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `anonymous_id`  | The anonymous ID of the user.                                                                                                                                                                 |
+| `context_<key>` | Non-user-related context fields sent with each page or screen call.                                                                                                                           |
+| `id`            | The unique ID of the page or screen call itself.                                                                                                                                              |
+| `received_at`   | When Segment received the page or screen call.                                                                                                                                                |
+| `sent_at`       | When a user triggered the page or screen call.                                                                                                                                                |
+| `received_at`   | When Segment received the track call.                                                                                                                                                         |
+| `user_id`       | The unique ID of the user.                                                                                                                                                                    |
+| `property`      | Each property of your pages or screens creates its own column, and the column type is automatically inferred from your data. For example, you might have columns like `referrer` and `title`. |
 
 
 ### Querying the Pages and Screens tables
@@ -135,14 +125,6 @@ AND table_name = 'pages'
 ORDER by column_name
 ```
 
-
-| **Columns**  |
-| ------------ |
-| `anonymous_id` |
-| `context_ip`   |
-| `referrer`        |
-| ...          |
-
 The pages table can give you interesting information about page views that happen on your site. The following query, for example, shows page views grouped by day:
 
 ```sql
@@ -152,26 +134,28 @@ GROUP BY day
 ORDER BY day
 ```
 
-| **Day**  | **Views** |
-| ----- | ----- |
+| day        | views     |
+| ---------- | --------- |
 | 2015-01-14 | 2,203,198 |
 | 2015-01-15 | 2,393,020 |
 | 2015-07-21 | 1,920,290 |
-| ...          | ...|
+| ...        | ...       |
 
 
 ## Tracks table
 
 The `tracks` table stores the `track` method calls. Query it to find out information about the events your users have triggered. It has the following columns:
 
-| `anonymous_id`| The anonymous ID of the user. |
-| `context_<key>`| Non-user-related context fields sent with each track call. |
-| `event`| The slug of the event name, mapping to an event-specific table. |
-| `event_text`| The name of the event. |
-| `id`| An ID attached to the event at execution time and used for deduplication at the server level. |
-| `received_at`| When Segment received the track call. |
-| `sent_at`| When a user triggered the track call. |
-| `user_id`| The unique ID of the user. |
+| method          | property                                                                                      |
+| --------------- | --------------------------------------------------------------------------------------------- |
+| `anonymous_id`  | The anonymous ID of the user.                                                                 |
+| `context_<key>` | Non-user-related context fields sent with each track call.                                    |
+| `event`         | The slug of the event name, mapping to an event-specific table.                               |
+| `event_text`    | The name of the event.                                                                        |
+| `id`            | An ID attached to the event at execution time and used for deduplication at the server level. |
+| `received_at`   | When Segment received the track call.                                                         |
+| `sent_at`       | When a user triggered the track call.                                                         |
+| `user_id`       | The unique ID of the user.                                                                    |
 
 
 ### Querying the Tracks table
@@ -187,27 +171,28 @@ GROUP BY day
 ORDER BY day
 ```
 
-| **Day**  | **Views** |
-| ----- | ----- |
+| day        | views  |
+| ---------- | ------ |
 | 2015-01-14 | 25,198 |
 | 2015-01-15 | 31,020 |
 | 2015-07-21 | 19,290 |
-| ...          | ...|
-
+| ...        | ...    |
 
 ## Event Tables
 
 Your event tables are a series of table for each custom event you record to Segment. We break them out into their own tables because the properties, and, as a result, the columns, differ for each event. Query these tables to find out information about specific properties of your custom events. They have the following columns:
 
-| `anonymous_id`| The anonymous ID of the user. |
-| `context_<key>`| Non-user-related context fields sent with each track call. |
-| `event`| The slug of the event name, so you can join the `tracks` table. |
-| `event_text`| The name of the event. |
-| `id`| The unique ID of the track call itself. |
-| `received_at`| When Segment received the track call. |
-| `sent_at`| When a user triggered the track call. |
-| `user_id`| The unique ID of the user. |
-| `<property>`| Each property of your track calls creates its own column, and the column type is automatically inferred from your data. |
+| event           | property                                                                                                                |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `anonymous_id`  | The anonymous ID of the user.                                                                                           |
+| `context_<key>` | Non-user-related context fields sent with each track call.                                                              |
+| `event`         | The slug of the event name, so you can join the `tracks` table.                                                         |
+| `event_text`    | The name of the event.                                                                                                  |
+| `id`            | The unique ID of the track call itself.                                                                                 |
+| `received_at`   | When Segment received the track call.                                                                                   |
+| `sent_at`       | When a user triggered the track call.                                                                                   |
+| `user_id`       | The unique ID of the user.                                                                                              |
+| `<property>`    | Each property of your track calls creates its own column, and the column type is automatically inferred from your data. |
 
 ### Querying the Events tables
 
@@ -227,11 +212,11 @@ WHERE schema = '<source>'
 ORDER BY "table"
 ```
 
-| **Source**  | **Event** |
-| ----- | ----- |
-| production | `signed_up` |
+| source     | event             |
+| ---------- | ----------------- |
+| production | `signed_up`       |
 | production | `completed_order` |
-| ...          | ... |
+| ...        | ...               |
 
 
 To see a list of the columns in one of your event tables, run the following:
@@ -243,12 +228,6 @@ WHERE schema_name = '<source>'
 AND table_name = '<event>'
 ORDER by column_name
 ```
-
-| **Columns**  |
-| ------------ |
-| `anonymous_id` |
-| `context_ip`   |
-| ... |
 
 > info "Note"
 > If you send us an array, we stringify it in Redshift. That way you don't end up having to pollute your events. It won't work if you have a lot of array elements but should work decently to store and query those. We also flatten nested objects. 
@@ -293,12 +272,12 @@ GROUP BY day
 ORDER BY day
 ```
 
-| **Day**  | **Users** |
-| ----- | ----- |
-| 2015-01-14 | 258 |
-| 2015-01-15 | 320 |
-| 2015-07-21 | 190 |
-| ...          | ... |
+| day        | users |
+| ---------- | ----- |
+| 2015-01-14 | 258   |
+| 2015-01-15 | 320   |
+| 2015-07-21 | 190   |
+| ...        | ...   |
 
 Here's an example that queries the daily revenue for an ecommerce store:
 
@@ -309,12 +288,11 @@ GROUP BY day
 ORDER BY day
 ```
 
-| **Day**  | **Revenue** |
-| ----- | ----- |
-| 2014-07-19 | $2,630 |
-| 2014-07-20 | $1,595 |
-| 2014-07-21 | $2,350 |
-
+| day        | revenue |
+| ---------- | ------- |
+| 2014-07-19 | $2,630  |
+| 2014-07-20 | $1,595  |
+| 2014-07-21 | $2,350  |
 
 ### New Columns
 
