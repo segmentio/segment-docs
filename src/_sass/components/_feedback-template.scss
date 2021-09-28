@@ -4,6 +4,11 @@
   align-items: flex-end;
   padding: 10px 5px 5px 10px;
   transition: 200ms ease;
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid rgb(216,218,229);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
 
   &__textarea {
     width: 260px;
@@ -11,6 +16,7 @@
     resize: none;
     color: color(gray-800);
     outline: none;
+    font-size: 12px;
 
     &::placeholder {
       color: color(gray-600);

@@ -11,6 +11,7 @@ In this article, find information about:
 
 - Contributing
 - A list of READMEs
+- Code of conduct
 - License agreement
 
 ## Contributing
@@ -25,13 +26,16 @@ If you see an error or something incorrect on a specific page, click Request doc
 
 If you would like to update the documentation yourself, create a Pull Request to bring it to the team’s attention. Click Edit this page to edit the page directly on GitHub. Alternatively, you can clone the repository and submit your Pull Request that way. For more information, see Contributing and the Developer Guide
 
-For more information about contributing, see Contributing.
+For more information about contributing, see [Contributing](CONTRIBUTING.md).
 
 ## List of READMEs
 
-- [Contributing](#)
-- [Style Guide](#)
-- [Developer Guide](#)
+- [Contributing](CONTRIBUTING.md)
+- [Style Guide](styleguide.md)
+- [Developer Guide](devguide.md)
+
+## Code of Conduct
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 
 ## License
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]

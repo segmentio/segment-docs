@@ -19,7 +19,6 @@ group :jekyll_plugins do
   gem "jekyll-include-cache"
   gem 'jekyll-algolia'
   gem 'jekyll-dotenv'
-  gem 'html-proofer'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
