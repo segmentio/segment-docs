@@ -129,7 +129,6 @@ If you're using the [Analytics Kotlin library](/docs/connections/sources/catalog
             }
         }
     ```    
-
 2. In your app-module `build.gradle` file add these lines:
     ```kotlin
         ...
