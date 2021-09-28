@@ -38,5 +38,18 @@ Keep the following terms in mind as you begin to explore Journeys.
 | Draft Journey            | A Journey which is not yet computing nor sending data to destinations. <br /><br />For more information, see [Draft Journeys](#draft-journeys). |
 | Published (live) Journey | A Journey that is computing and sending data to destinations. <br /><br />For more information, see [Published Journeys](#published-journeys).                  |
 
+## Steps with Audiences
 
+| Step             | Audience definition                                                                                                           |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Entry condition  | All users who fulfill the entry condition criteria. "Use Historical Data" evaluates events before Journey publication.        |
+| Condition        | All users who fulfill condition criteria, at one point fulfilled preceding step criteria, and have met any step wait conditions. |
+| Destination Sync | All users who, at one point, fulfilled parent step criteria and have met any following wait conditions.                        |
 
+## Steps without Audiences
+
+| Step                | Details                                                                                                            |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Delay               | No audience. Segment appends the wait duration as a condition to the following step’s audience.                    |
+| T/F split           | The split's resulting conditions contain two mutually exclusive audiences.  The split node itself has no audience. |
+| Multi-branch splits | The split's resulting conditions contain audiences.  The split node itself has no audience.                        |
