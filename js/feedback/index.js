@@ -32,10 +32,17 @@ export default function() {
   const tooltips = tippy(buttons)
   const defaultSettings = {
     interactive: true,
-    flip: true,
+    popperOptions: {
+      modifiers: [
+        {
+          name: 'flip',
+          enabled: true
+        },
+      ],
+    },
     placement: 'bottom-end',
-    boundary: '.docs',
     trigger: 'manual',
+    allowHTML: true,
     onMount: (tooltip) => {
       const sendButton = document.querySelector(SEND_SELECTOR)
       const feedbackText = document.querySelector(TEXT_SELECTOR)
