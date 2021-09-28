@@ -65,7 +65,7 @@ actions:
     blurb: Set the properties of a page event, and send them to FullStory.
     fields:
     - name: Page Name
-      description: The name of the viewed page. Defaults to `category. If `category` is not present, `name` is used`.
+      description: The name of the viewed page. Defaults to `category`. If `category` is not present, `name` is used.
       default: name
     - name: Properties
       description: The properties of the viewed page.
