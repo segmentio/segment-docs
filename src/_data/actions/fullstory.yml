@@ -37,28 +37,28 @@ actions:
   - action: Identify User
     blurb: Set user identity variables.
     fields:
-    - name: userId
+    - name: User ID
       description: The user's ID in FullStory.
       default: userId
-    - name: anonymous
+    - name: Anonymous ID
       description: The user's anonymousId in FullStory.
       default: anonymousId
-    - name: displayName
+    - name: Display Name
       description: The user's display name.
       default: traits.name
-    - name: email
+    - name: Email
       description: The user's email address.
       default: traits.email
-    - name: traits
+    - name: Traits
       description: The Segment traits forwarded to FullStory.
       default: traits
   - action: Track Event
     blurb: Send event details to FullStory.
     fields:
-    - name: name
+    - name: Name
       description: The name of the event
       default: name
-    - name: properties
+    - name: Properties
       description: A JSON object that contains additional information about the event, and is indexed by FullStory.
       default: properties
   - action: Viewed Page
@@ -67,7 +67,7 @@ actions:
     - name: Page Name
       description: The name of the viewed page. Defaults to `category. If `category` is not present, `name` is used`.
       default: name
-    - name: properties
+    - name: Properties
       description: The properties of the viewed page.
       default: properties
 settings:
