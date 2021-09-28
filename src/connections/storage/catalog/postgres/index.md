@@ -47,7 +47,7 @@ This guide explains how to set up a Postgres database with Heroku. Heroku is a c
 
     For the fastest sync times, choose the US East region. 
 
-    After you configur these settings, click "Login to Install" and/or "Visit Heroku Dashboard to create your first app".
+    After you configure these settings, click "Login to Install" and/or "Visit Heroku Dashboard to create your first app".
 
     ![](images/heroku3.png)
 

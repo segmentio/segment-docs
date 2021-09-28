@@ -1,16 +1,17 @@
+* @segmentio/segment-doc-team
 # The default owners for everything in
 # the repo. Unless a later match takes precedence.
 CODEOWNERS  @segmentio/segment-doc-team @markzegarelli
 
 # Diagram library
-/diagram-library @sanscontext @markzegarelli
+# /diagram-library @markzegarelli
 
 # Utility scripts
-/scripts @segmentio/segment-doc-team
+# /scripts @segmentio/segment-doc-team
 
 # Vale Linting
-/vale-styles @segmentio/segment-doc-team
-.vale.ini @segmentio/segment-doc-team
+# /vale-styles @segmentio/segment-doc-team
+# .vale.ini @segmentio/segment-doc-team
 
 
 # Content owners should be in the order of PM, TL (team-lead), and EM (in a crisis) for a given team.
@@ -22,10 +23,10 @@ CODEOWNERS  @segmentio/segment-doc-team @markzegarelli
 
 
 # Libraries owners
-/src/connections/catalog/libraries   @bsneed @pooyaj @juliofarah
+# /src/connections/catalog/libraries   @bsneed @pooyaj @juliofarah
 
 # Destinations owners
-/src/connections/destinations  @segmentio/segment-doc-team
+# /src/connections/destinations  @segmentio/segment-doc-team
 
 
 # Privacy owners TODO
@@ -36,7 +37,7 @@ CODEOWNERS  @segmentio/segment-doc-team @markzegarelli
 # /src/protocols
 
 # Partner Program owners
-/src/partners  @misteryeo @n2parko @benhorowitz
+# /src/partners  @misteryeo @n2parko @benhorowitz
 
 # Personas owners TODO
 
