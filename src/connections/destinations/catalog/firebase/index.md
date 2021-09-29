@@ -110,9 +110,8 @@ If you use Segment's React Native source library, you must explicitly bundle the
 2. Add `import` statements to your code so you can access the SDKs.
 3. Go to the `await analytics.setup` configuration in your code, and find (or add) the `using:` item. Add "Firebase" to the list of device-mode destinations in the `using` item.
 4. Change to your iOS directory and run `pod install`.
-5. Add the `analytics-react-native-firebase` module to your `build.gradle` file. (See Step.4 of [Getting Started on Android](https://segment.com/docs/connections/destinations/catalog/firebase/#getting-started-on-android))
+5. Add the `analytics-react-native-firebase` module to your `build.gradle` file. (See Step.4 of [Getting Started on Android](/docs/connections/destinations/catalog/firebase/#getting-started-on-android))
 
-<!-- LR Mar 2021: We didn't use the react-dest include here because Firebase needs the extra build.gradle step.-->
 
 ## Setting up Firebase with Analytics-Kotlin
 If you're using the [Analytics-Kotlin library](/docs/connections/sources/catalog/libraries/mobile/kotlin-android), follow these steps to set up Firebase with Analytics-Kotlin:
