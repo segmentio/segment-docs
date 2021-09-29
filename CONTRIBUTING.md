@@ -63,7 +63,7 @@ Each also contains a `catalog` directory, which contains all the directories wit
 
 ### Programmatic content
 
-Programmatic content is sections of documentation that are built conditionally, or using public information from our Config API. This is *awesome* and like the holy grail of docs systems.
+Programmatic content is sections of documentation that are built conditionally, or using public information from our Public API.
 
 Programmatic content is built using information in the files in `/src/_data/catalog/`. These files (with the exception of `warehouses.yml`) are built by the `make catalog` command, which contacts our public ConfigAPI, gets a list of all the available integrations using the Catalog API, and then parses them into static `.yml` files.
 
