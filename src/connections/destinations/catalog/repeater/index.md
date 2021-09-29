@@ -2,7 +2,7 @@
 title: Repeater Destination
 ---
 
-This destination is maintained by Segment.
+This destination is maintained by Segment and is not available to customers on the free plan.
 
 ## Getting Started
 

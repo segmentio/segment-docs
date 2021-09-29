@@ -18917,7 +18917,7 @@ items:
   - name: repeatKeys
     type: array
     defaultValue: []
-    description: This is the array of source write keys you want to repeat data into.
+    description: This is the array of source write keys you want to repeat data into. You can have up to 20 write keys.
     required: true
     label: Write Keys
   - name: writeKeyAllowed
