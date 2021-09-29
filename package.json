@@ -13,7 +13,7 @@
   "scripts": {
     "develop": "bundle exec jekyll clean && webpack --mode production && JEKYLL_ENV=testing bundle exec jekyll build --trace -V",
     "develop-inc": "webpack --mode production && JEKYLL_ENV=testing bundle exec jekyll build --trace -V -I",
-    "build": "bundle exec jekyll clean && webpack --mode production && JEKYLL_ENV=production bundle exec jekyll build --trace -V"
+    "build": "bundle exec jekyll clean && webpack --mode production && bundle exec jekyll build --trace -V"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
