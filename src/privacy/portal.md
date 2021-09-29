@@ -67,11 +67,11 @@ Yellow, and Green. Any time you send this field from a Web, Mobile, Server, or
 Cloud Event Source — whether from another Source or event type — the Privacy
 Portal automatically classifies it and adds it to the Inventory.
 
-Keep in mind that if you have any Privacy Controls configured to control how you route Red and Yellow data into or out of Segment,
+Keep in mind that if you have any Privacy Controls configured to control how you route Red data into Segment,
 the classifications you create in the Inbox are forwarded on to those Controls.
-For example, if you have a Privacy Control set up to block **Yellow** data from
-Google Analytics, any new fields you classify in the Inbox as **Yellow** will
-also be blocked from Google Analytics.
+For example, if you have a Privacy Control set up to block **Red** data from
+your Android source, any new fields you classify in the Inbox as **Red** will
+be blocked from entering Segment from your Android source.
 
 ## Privacy Inventory
 
