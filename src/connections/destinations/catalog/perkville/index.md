@@ -3,11 +3,11 @@ title: Perkville Destination
 rewrite: true
 ---
 
-[Perkville](https://www.perkville.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a customer reward and referral platform - similar to airline mile programs - that integrates with ecommerce, point of sale, membership and scheduling systems to provide a seamless experience that drives referrals and loyalty.
+[Perkville](https://www.perkville.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a customer reward and referral platform - similar to airline mile programs - that integrates with e-commerce, point of sale, membership and scheduling systems to provide a seamless experience that drives referrals and loyalty.
 
 This destination is maintained by Perkville. For any issues with the destination, [contact the Perkville Support team](mailto:support@perkville.com).
 
-The Perkville Destination is currently in beta, which means that they are still actively developing the destination. To join their beta program, or if you have any feedback to help improve the Perkville Destination and its documentation, [contact the Perkville support team](mailto:support@perkville.com)!
+The Perkville Destination is in beta, which means that they are still actively developing the destination. To join their beta program, or if you have any feedback to help improve the Perkville Destination and its documentation, [contact the Perkville support team](mailto:support@perkville.com).
 
 
 ## Getting Started
@@ -25,12 +25,12 @@ The Perkville Destination is currently in beta, which means that they are still 
 
 ## Supported methods
 
-Perkville supports the following method, as specified in the [Segment Spec](/docs/connections/spec)
+Perkville supports the following method, as specified in the [Segment Spec](/docs/connections/spec).
 
 
 ### Track
 
-Send [Track](/docs/connections/spec/track) calls to award points for whitelisted actions. For example:
+Send [Track](/docs/connections/spec/track) calls to award points for allowlisted actions. For example:
 
 ```js
 analytics.track('Order Completed', {
@@ -40,7 +40,8 @@ analytics.track('Order Completed', {
 });
 ```
 
-**Important**: You should only send the track events you need to Perkville. You may use [Segment Destination Filters](/docs/connections/destinations/destination-filters/) to prevent unwated events being sent to Perkville. You must whitelist the names of the events you need in your Segment UI settings for Perkville. We will only send those events to Perkville for you, and throw an error if the event is not whitelisted.
+> warning "Important"
+> You should only send the track events you need to Perkville. You may use [Segment Destination Filters](/docs/connections/destinations/destination-filters/) to prevent unwanted events being sent to Perkville. You must allowlist the names of the events you need in the Perkville destination settings in the Segment App. Segment sends those events to Perkville for you, and returns an error if the event is not allowlisted.
 
 #### Required Values
 
@@ -50,6 +51,4 @@ The only required event value is `email`. This must be present within the `event
 
 Any events that have an `order_id` will be treated as spend transactions. The quantity of points given will reflect the event's `revenue`, `value`, or `total` in that priority order. Per [the eCommerce spec](/docs/connections/spec/ecommerce/v2/#order-refunded), if the order event name includes "Refund," points will be removed from the Perkville account associated with the provided email.
 
-All other events will default to a quantity of 1.
-
----
+All other events default to a quantity of 1.
