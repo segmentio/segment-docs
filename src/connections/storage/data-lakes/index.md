@@ -23,6 +23,12 @@ Segment sends data to S3 by orchestrating the processing in an EMR (Elastic MapR
 
 ![](images/dl_vpc.png)
 
+Data Lakes offers 12 syncs in a 24 hour period and doesn't offer a custom sync schedule or selective sync.
+
+### Data Lake deduplication
+
+In addition to Segment's [99% guarantee of no duplicates](/docs/guides/duplicate-data/) for data within a 24 hour look-back window, Data Lakes have another layer of deduplication to ensure clean data in your Data Lake. Segment removes duplicate events at the time your Data Lake ingests data.  Data Lakes deduplicate any data synced within the last 7 days, based on the `message_id` field.
+
 ### Using a Data Lake with a Data Warehouse
 
 The Data Lakes and Warehouses products are compatible using a mapping, but do not maintain exact parity with each other. This mapping helps you to identify and manage the differences between the two storage solutions, so you can easily understand how the data in each is related. You can [read more about the differences between Data Lakes and Warehouses](/docs/connections/storage/data-lakes/comparison/).
@@ -114,44 +120,36 @@ If Data Lakes sees a bad data type, for example text in place of a number or an 
 
 
 ## FAQ
-{% faq %}
-{% faqitem How often is data synced to Data Lakes? %}
-Data Lakes offers 12 syncs in a 24 hour period. Data Lakes does not offer a custom sync schedule, or allow you use Selective Sync to manage what data is sent.
-{% endfaqitem %}
-{% faqitem What should I expect in terms of duplicates in Data Lakes? %}
-Segment's overall guarantee for duplicate data also applies to data in Data Lakes: 99% guarantee of no duplicates for data within a [24 hour look-back window](https://segment.com/docs/guides/duplicate-data/).
 
-If you have advanced requirements for de-duplication, you can add de-duplication steps downstream to reduce duplicates outside this look back window.
-{% endfaqitem %}
-{% faqitem Can I send all of my Segment data into Data Lakes? %}
+#### Can I send all of my Segment data into Data Lakes?
 Data Lakes supports data from all event sources, including website libraries, mobile, server and event cloud sources.
 
-Data Lakes does not support loading [object cloud source data](https://segment.com/docs/connections/sources/#object-cloud-sources), as well as the users and accounts tables from event cloud sources.
-{% endfaqitem %}
-{% faqitem Are user deletions and suppression supported? %}
-User deletions are not supported in Data Lakes, however [user suppression](https://segment.com/docs/privacy/user-deletion-and-suppression/#suppressed-users) is supported.
-{% endfaqitem %}
-{% faqitem How does Data Lakes handle schema evolution? %}
+Data Lakes doesn't support loading [object cloud source data](https://segment.com/docs/connections/sources/#object-cloud-sources), as well as the users and accounts tables from event cloud sources.
+
+#### Are user deletions and suppression supported?
+Segment doesn't support User deletions in Data Lakes, but supports [user suppression](https://segment.com/docs/privacy/user-deletion-and-suppression/#suppressed-users).
+
+#### How does Data Lakes handle schema evolution?
 As the data schema evolves and new columns are added, Segment Data Lakes will detect any new columns. New columns will be appended to the end of the table in the Glue Data Catalog.
-{% endfaqitem %}
-{% faqitem How does Data Lakes work with Protocols? %}
-Data Lakes does not have a direct integration with [Protocols](https://segment.com/docs/protocols/).
+
+#### How does Data Lakes work with Protocols?
+Data Lakes doesn't have a direct integration with [Protocols](https://segment.com/docs/protocols/).
 
 Any changes to events at the source level made with Protocols also change the data for all downstream destinations, including Data Lakes.
 
-- **Mutated events** - If Protocols mutates an event due to a rule set in the Tracking Plan, then that mutation appears in Segment's internal archives and is reflected in your data lake. For example, if you used Protocols to mutate the event `product_id` to be `productID`, then the event appears in both Data Lakes and Warehouses as `productID`.
+- **Mutated events** - If Protocols mutates an event due to a rule set in the Tracking Plan, then that mutation appears in Segment's internal archives and reflects in your data lake. For example, if you use Protocols to mutate the event `product_id` to be `productID`, then the event appears in both Data Lakes and Warehouses as `productID`.
 
-- **Blocked events** - If a Protocols Tracking Plan blocks an event, the event is not forwarded to any downstream Segment destinations, including Data Lakes. However events which are only marked with a violation _are_ passed to Data Lakes.
+- **Blocked events** - If a Protocols Tracking Plan blocks an event, the event isn't forwarded to any downstream Segment destinations, including Data Lakes. However events which are only marked with a violation _are_ passed to Data Lakes.
 
-Data types and labels available in Protocols are not supported by Data Lakes.
+Data types and labels available in Protocols aren't supported by Data Lakes.
 
-- **Data Types** - Data Lakes infers the data type for each event using its own schema inference systems, instead of using a data type set for an event in Protocols. This might lead to the data type set in a data lake being different from the data type in the tracking plan. For example, if you set `product_id` to be an integer in the Protocols Tracking Plan, but the event is sent into Segment as a string, then Data Lakes may infer this data type as a string in the Glue Data Catalog.
-- **Labels** - Labels set in Protocols are not sent to Data Lakes.
-{% endfaqitem %}
-{% faqitem What is the cost to use AWS Glue? %}
+- **Data Types** - Data Lakes infers the data type for each event using its own schema inference systems instead of using a data type set for an event in Protocols. This might lead to the data type set in a data lake being different from the data type in the tracking plan. For example, if you set `product_id` to be an integer in the Protocols Tracking Plan, but the event is sent into Segment as a string, then Data Lakes may infer this data type as a string in the Glue Data Catalog.
+- **Labels** - Labels set in Protocols aren't sent to Data Lakes.
+
+#### What is the cost to use AWS Glue?
 You can find details on Amazon's [pricing for Glue page](https://aws.amazon.com/glue/pricing/). For reference, Data Lakes creates 1 table per event type in your source, and adds 1 partition per hour to the event table.
-{% endfaqitem %}
-{% faqitem What limits does AWS Glue have? %}
+
+#### What limits does AWS Glue have?
 AWS Glue has limits across various factors, such as number of databases per account, tables per account, and so on. See the [full list of Glue limits](https://docs.aws.amazon.com/general/latest/gr/glue.html#limits_glue) for more information.
 
 The most common limits to keep in mind are:
@@ -162,5 +160,3 @@ The most common limits to keep in mind are:
 Segment stops creating new tables for the events after you exceed this limit. However you can contact your AWS account representative to increase these limits.
 
 You should also read the [additional considerations](https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-hive-metastore-glue.html) when using AWS Glue Data Catalog.
-{% endfaqitem %}
-{% endfaq %}
