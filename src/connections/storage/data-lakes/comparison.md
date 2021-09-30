@@ -13,18 +13,13 @@ Data Lakes and Warehouses are not identical, but are compatible with a configura
 
 Data Lakes and Warehouses offer different sync frequencies:
 - Warehouses can sync up to once an hour, with the ability to set a custom sync schedule and [selectively sync](/docs/connections/warehouses/selective-sync/) collections and properties within a source to Warehouses.
-- Data Lakes offers 12 syncs in a 24 hour period, and does not offer custom sync schedules or selective sync.
+- Data Lakes offers 12 syncs in a 24 hour period, and doesn't offer custom sync schedules or selective sync.
 
 ## Duplicates
 
-Segment's overall guarantee for duplicate data also applies to data in Data Lakes: 99% guarantee of no duplicates for data within a [24 hour look-back window](https://segment.com/docs/guides/duplicate-data/). The guarantee remains the same for Warehouses.
+Segment's [99% guarantee of no duplicates](/docs/guides/duplicate-data/) for data within a 24 hour look-back window applies to data in Data Lakes and Warehouses.
 
-Both Data Lakes and Warehouses (and all Segment destinations) rely on the [de-duplication process](/docs/guides/duplicate-data/) at time of event ingest, to ensure:
-- The 24 hour look back window duplicate guarantee is met
-- Processing costs for customers are managed appropriately
-
-Warehouses also have a secondary de-duplication system built in to further reduce the volume of duplicates. If you have advanced requirements for duplicates in Data Lakes, you can add de-duplication steps downstream to reduce duplicates outside this look back window.
-
+[Warehouses](/docs/guides/duplicate-data/#warehouse-deduplication) and [Data Lakes](/docs/guides/duplicate-data/#data-lake-deduplication) also have a secondary deduplication system to further reduce the volume of duplicates to ensure clean data in your Warehouses and Data Lakes.
 
 ## Object vs Event Data
 
