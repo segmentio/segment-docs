@@ -263,6 +263,8 @@ sections:
         title: Overview
       - path: /personas/audiences/account-audiences
         title: Account-Level Audiences
+      - path: /personas/audiences/organization/
+        title: Organizing Audiences
   - section_title: Journeys
     slug: /personas/journeys
     section:
@@ -286,6 +288,8 @@ sections:
     title: Personas and Warehouses
   - path: /personas/profile-api
     title: Profile API
+  - path: /personas/debugger
+    title: Personas Space Debugger
   - path: /personas/personas-gdpr
     title: Personas and GDPR
   - path: /personas/faqs

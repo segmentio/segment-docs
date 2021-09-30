@@ -330,7 +330,8 @@ The second argument to the `Analytics` constructor is an optional dictionary of 
 ```javascript
 var analytics = new Analytics('YOUR_WRITE_KEY', {
   flushAt: 20,
-  flushInterval: 10000
+  flushInterval: 10000,
+  enable: false
 });
 ```
 
@@ -343,6 +344,10 @@ var analytics = new Analytics('YOUR_WRITE_KEY', {
     <td>`flushInterval` _Number_</td>
     <td>The number of milliseconds to wait before flushing the queue automatically.</td>
   </tr>
+  <tr>
+    <td>`enable` _Boolean_</td>
+    <td>Enable (default) or disable flush. Useful when writing tests and you do not want to send data to Segment Servers.</td>
+  </tr>  
 </table>
 
 
