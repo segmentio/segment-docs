@@ -17285,6 +17285,92 @@ items:
       characters long, and look something like this: `43c4b9f66d5f88435700003c`.
     required: true
     label: Advertiser ID
+- display_name: Perkville
+  name: Perkville
+  slug: perkville
+  hidden: false
+  url: connections/destinations/catalog/perkville
+  previous_names:
+  - Perkville
+  website: https://www.perkville.com/
+  status: PUBLIC_BETA
+  categories:
+  - Referrals
+  logo:
+    url: >-
+      https://public-segment-devcenter-production.s3.amazonaws.com/493a250b-60e1-4c61-8619-25059cfedc9e.svg
+  mark:
+    url: >-
+      https://public-segment-devcenter-production.s3.amazonaws.com/58ca6823-e03a-4f91-92cc-dc289f1eaccb.svg
+  methods:
+    track: true
+    identify: false
+    group: false
+    alias: false
+    page: false
+  platforms:
+    browser: true
+    mobile: true
+    server: true
+  components: []
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: false
+  replay: false
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
+  settings:
+  - name: apiKey
+    type: string
+    defaultValue: ''
+    description: >-
+      Generate the token in Settings > Apps. Click "show token" under the
+      Segment app, then copy it and paste the value here.
+    required: true
+    label: API Key
+  - name: businessId
+    type: string
+    defaultValue: ''
+    description: >-
+      Your Perkville business ID. Reach out to support@perkville.com for this
+      information.
+    required: true
+    label: Business ID
+  - name: eventToPerkMap
+    type: text-map
+    defaultValue: {}
+    description: >-
+      Map your event names to the perk you would like to award points for. For
+      instance, "Checked In" > 123456. This will award all "Checked In" events
+      with perk 123456.
+    required: true
+    label: Event to Perk Map
+  - name: locationId
+    type: string
+    defaultValue: ''
+    description: >-
+      Your Perkville Location ID. Reach out to support@perkville.com for this
+      information.
+    required: true
+    label: Location ID
+  - name: sendEmail
+    type: boolean
+    defaultValue: false
+    description: >-
+      If we post a transaction, send a transactional email to the email address
+      provided in the event. Set to False if you want to suppress emails for
+      this flow.
+    required: true
+    label: Send email
 - display_name: PersistIQ
   name: PersistIQ
   slug: persistiq
