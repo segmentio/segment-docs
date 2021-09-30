@@ -15,9 +15,9 @@ team: false
 #     url: "docs/connections/storage/catalog/data-lakes"
 images:
   -
-    path: /images/release-notes/ui-update-1.png
+    path: images/release-notes/ui-update-1.png
     desc: The navigation was redesigned to better reflect how users navigate through the product.
   - 
-    path: /images/release-notes/ui-update-2.gif
+    path: images/release-notes/ui-update-2.gif
     desc: A new workspace switcher provides an easier way to navigate between workspaces.
 ---

@@ -26,7 +26,7 @@ The Sources section of the Home pages shows a summary of the event volume flowin
 
 If your Segment plan includes Protocols, the dashboard shows [Event Violations](/docs/protocols/validate/review-violations/) occurring in the workspace, including a graph over time. You can click into the violations section to see a list of sources ordered from highest number of violations, to lowest. You can click into individual sources to see more details and go to their individual source pages, or [go to the Violations page](https://app.segment.com/goto-my-workspace/protocols/violations).
 
-![](/docs/segment-app/images/workspace-violations.png)
+![](/docs/segment-app/images/workspace-home-violations.png)
 
 
 ## Destinations - Event Delivery

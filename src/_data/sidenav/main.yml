@@ -149,9 +149,8 @@ sections:
     section:
     - path: /connections/destinations
       title: Destinations Overview
-#    - path: /connections/destinations/actions
-#      title: Destination Actions
-# uncomment once fully rolled out
+    - path: /connections/destinations/actions
+      title: Destination Actions
     - path: /connections/destinations/add-destination
       title: Add a Destination
     - path: /connections/destinations/catalog
@@ -264,6 +263,8 @@ sections:
         title: Overview
       - path: /personas/audiences/account-audiences
         title: Account-Level Audiences
+      - path: /personas/audiences/organization/
+        title: Organizing Audiences
   - section_title: Journeys
     slug: /personas/journeys
     section:
@@ -277,6 +278,8 @@ sections:
         title: Journeys Best Practices and FAQ
       - path: /personas/journeys/use-cases
         title: Example Journeys Use Cases
+      - path: /personas/journeys/journeys-logic
+        title: Understanding Journeys Logic
       - path: /personas/journeys/key-terms
         title: Journeys Glossary
   - path: /personas/using-personas-data
@@ -285,6 +288,8 @@ sections:
     title: Personas and Warehouses
   - path: /personas/profile-api
     title: Profile API
+  - path: /personas/debugger
+    title: Personas Space Debugger
   - path: /personas/personas-gdpr
     title: Personas and GDPR
   - path: /personas/faqs

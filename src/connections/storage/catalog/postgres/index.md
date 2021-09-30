@@ -47,7 +47,7 @@ This guide explains how to set up a Postgres database with Heroku. Heroku is a c
 
     For the fastest sync times, choose the US East region. 
 
-    After you configur these settings, click "Login to Install" and/or "Visit Heroku Dashboard to create your first app".
+    After you configure these settings, click "Login to Install" and/or "Visit Heroku Dashboard to create your first app".
 
     ![](images/heroku3.png)
 
@@ -361,9 +361,7 @@ Make sure you're logging in with a user that has read and write permissions so t
 
 ## Best Practices
 
-All the power of PostgreSQL for Segment data - it's that easy. We wrote an article on [useful queries](https://community.segment.com/t/y78ab1/useful-sql-queries-for-analyzing-segment-data) that you should read to get started on querying your data from your warehouse to create reports.
-
-Once you've got your data in Postgres, you can do even more with it. You might develop an app that performs various functions based on the different events being loaded to the database, potentially using [RabbitMQ](https://www.compose.io/articles/going-from-postgresql-rows-to-rabbitmq-messages/) as your asynchronous message broker. For example, you might want a banner to appear once your 1000th customer has signed up. The data is at your fingertips; you just need to decide how to use it.
+Once you've got your data in Postgres, you can do even more with it. You might develop an app that performs various functions based on different events being loaded to the database, potentially using [RabbitMQ](https://www.compose.io/articles/going-from-postgresql-rows-to-rabbitmq-messages/) as your asynchronous message broker. For example, you might want a banner to appear once your 1000th customer has signed up. The data is at your fingertips; you just need to decide how to use it.
 
 ### Query Speed
 

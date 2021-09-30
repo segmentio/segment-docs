@@ -110,9 +110,44 @@ If you use Segment's React Native source library, you must explicitly bundle the
 2. Add `import` statements to your code so you can access the SDKs.
 3. Go to the `await analytics.setup` configuration in your code, and find (or add) the `using:` item. Add "Firebase" to the list of device-mode destinations in the `using` item.
 4. Change to your iOS directory and run `pod install`.
-5. Add the `analytics-react-native-firebase` module to your `build.gradle` file.
+5. Add the `analytics-react-native-firebase` module to your `build.gradle` file. (See Step.4 of [Getting Started on Android](/docs/connections/destinations/catalog/firebase/#getting-started-on-android))
 
-<!-- LR Mar 2021: We didn't use the react-dest include here because Firebase needs the extra build.gradle step.-->
+
+## Setting up Firebase with Analytics-Kotlin
+If you're using the [Analytics-Kotlin library](/docs/connections/sources/catalog/libraries/mobile/kotlin-android), follow these steps to set up Firebase with Analytics-Kotlin:
+1. In your top-level `build.gradle` file add these lines:
+    ```kotlin  
+    buildscript {
+        ...
+        repositories {
+            google()
+        }
+        dependencies {
+            ...
+            classpath 'com.google.gms:google-services:4.3.5'
+        }
+    }
+    ```    
+2. In your app-module `build.gradle` file add these lines:
+    ```kotlin
+    ...
+    plugins {
+        id 'com.google.gms.google-services'
+    }
+
+    dependencies {
+        ...
+        implementation platform('com.google.firebase:firebase-bom:28.2.1')
+        implementation 'com.google.firebase:firebase-analytics-ktx'
+    }
+    ```
+3. Copy the [FirebaseDestination.kt](https://github.com/segmentio/analytics-kotlin/blob/main/samples/kotlin-android-app-destinations/src/main/java/com/segment/analytics/destinations/plugins/FirebaseDestination.kt) file into your project's codebase.
+4. Copy your `google-service.json` file to your app-module.
+5. Go to your project's codebase and add these lines where you intialize the analytics client:
+    ```kotlin
+    val Firebase = FirebaseDestination()
+    analytics.add(Firebase)
+    ```
 
 ## Identify
 

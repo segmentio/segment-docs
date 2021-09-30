@@ -60,7 +60,7 @@ Then, inside AdRoll you can create a "segment" of all users doing any of those e
 
 ### Conversion Value
 
-When you include an event property labeled `revenue` it will be tracked to AdRoll as `adroll_conversion_value`.
+When you include an event property labeled `price` it will be tracked to AdRoll as `adroll_conversion_value`.
 
 ### Currency
 

@@ -80,3 +80,7 @@ The data type you send to a destination depends on whether the destination is an
 
 ### Which roles can access Journeys?
 For Personas Advanced customers, users with either the Personas User or Personas Admin roles can create, edit, and delete journeys. Users with the Personas Read-only role are restricted to view-only access.
+
+### Why am I seeing duplicate entry or exit events?
+
+Journeys triggers audience or trait-related events for each email `external_id` on a profile. If a profile has two email addresses, you'll see two Audience Entered and two Audience Exited events for each Journey step. Journeys sends both email addresses to downstream destinations. 

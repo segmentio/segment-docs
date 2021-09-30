@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Segment Support
+    url: https://segment.com/help/contact/
+    about: Contact Segment Support for help with product-related issues.

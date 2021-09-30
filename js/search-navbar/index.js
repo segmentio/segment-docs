@@ -22,7 +22,7 @@ export default function () {
     }
   }
 
-  document.getElementsByClassName('aa-Input')[0].addEventListener('click', function () {
-    typewriter.searchClicked()
-  })
+  // document.getElementsByClassName('aa-Input')[0].addEventListener('click', function () {
+  //   typewriter.searchClicked()
+  // })
 }
