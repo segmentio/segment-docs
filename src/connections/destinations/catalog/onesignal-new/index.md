@@ -9,7 +9,7 @@ redirect_from: '/connections/destinations/catalog/onesignal/'
 This destination is maintained by OneSignal. For any issues with the destination, [contact the OneSignal Support team](mailto:support@onesignal.com).
 
 > info ""
-> The OneSignal Destination is available to customers on OneSignal Professional and Enterprise plans.
+> The OneSignal Destination is available to customers on OneSignal Growth, Professional and Enterprise plans.
 
 ## Getting Started
 
