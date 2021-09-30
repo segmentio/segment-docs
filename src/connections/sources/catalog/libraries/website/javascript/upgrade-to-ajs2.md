@@ -39,7 +39,8 @@ In some cases, upgrading to Analytics.js 2.0 requires manual effort beyond enabl
 
 ### When using in-domain instrumentation CDN aliasing
 
-If the source you intend to upgrade uses the in-domain instrumentation as well as a custom "Alias for analytics.js", then you should update the AJS snippet to the latest version (4.13.2 or higher) before you toggle on Analytics.js 2.0. 
+If the source you intend to upgrade uses the in-domain instrumentation as well as a custom "Alias for analytics.js", then you should update the AJS snippet to the latest version (4.15.3) or higher) before you toggle on Analytics.js 2.0.
+
 
 ### When relying on Analytics.js Classic's `ajs_anonymous_id` cookie format  
 

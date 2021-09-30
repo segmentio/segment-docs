@@ -22,6 +22,7 @@
   {%- assign description = currentIntegration.description -%}
   {%- assign priority = 4 -%}
 {%- endif -%}
+<!-- {{site.env.ENVIRONMENT}} -->
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 <head>
   <base href="{{ basehref }}" />
@@ -233,6 +234,9 @@
         // analytics.identify();
       }}();
     </script>
-    
+{%- if site.env.ENVIRONMENT == "development-internal" -%}
+<script src="{{ "./assets/docs.delay.js" | relative_url}}"></script>
+
+{%- endif -%}
 </body>
 </html>

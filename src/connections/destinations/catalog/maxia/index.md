@@ -1,6 +1,8 @@
 ---
 title: Maxia Destination
 rewrite: true
+published: false
+hidden: true
 ---
 
 [Maxia](https://www.maxia.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an AI service that helps businesses with sales and marketing. With Maxia, you can build models that predict conversion, churn, and more - and get those predictions inside of the tools your company is already using: CRMs, Marketing Automation, Customer Success Software, and more.

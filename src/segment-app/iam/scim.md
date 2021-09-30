@@ -117,3 +117,11 @@ Instructions for configuring Azure AD can be found on the Microsoft Docs website
 1. [Complete the Azure AD Set up Guide for SSO](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/segment-tutorial)
 
 2. [Complete the Azure AD Set up Guide for SCIM](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/segment-provisioning-tutorial)
+
+## OneLogin Set up Guide
+
+Instructions for configuring OneLogin can be found on the OneLogin Docs website.
+
+1. Add and configure the Segment SSO integration from within the OneLogin application
+
+2. [Complete the OneLogin Set up Guide for SCIM](https://onelogin.service-now.com/support?id=kb_article&sys_id=a7833cd7db3a30501c167e77f4961923)
