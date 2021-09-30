@@ -5,10 +5,11 @@ hidden: true
 
 ## Build Metadata
 
-| Field         | Value                   |
-| ------------- | ----------------------- |
-| Build ID      | `{{site.env.BUILD_ID}}` |
-| Build Context | `{{site.env.CONTEXT}}`  |
+| Field         | Value                      |
+| ------------- | -------------------------- |
+| Build ID      | `{{site.env.BUILD_ID}}`    |
+| Build Context | `{{site.env.CONTEXT}}`     |
+| Environment   | `{{site.env.ENVIRONMENT}}` |
 
 ## Git Metadata
 

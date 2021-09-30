@@ -2,10 +2,19 @@
 title: Handling Duplicate Data
 ---
 
-Segment has a special de-duplication service that sits just behind the `api.segment.com` endpoint, and attempts to drop duplicate data. However, that de-duplication service has to hold the entire set of events in memory in order to know whether or not it has seen that event already. Segment stores 24 hours worth of event `message_id`s. This means Segment can de-duplicate any data that appears within a 24 hour rolling window.
+Segment guarantees that 99% of your data won't have duplicates within a 24 hour look-back window. Warehouses and Data Lakes also have their own secondary deduplication process to ensure you store clean data.
 
-An important point to remember is that Segment de-duplicates on the event's `message_id`, _not_ on the contents of an event payload. So if you aren't generating `message_id`s for each event, or are trying to de-duplicate data over a longer period than 24 hours, Segment does not have a built-in way to de-duplicate data.
+## 99% deduplication
 
-Since the API layer is de-duplicating during this window, duplicate events that are further than 24 hours apart from one another must be de-duplicated in the Warehouse. Segment also de-duplicates messages going into a Warehouse based on the `message_id`, which is the `id` column in a Segment Warehouse. Note that in these cases you will see duplications in end tools as there is no additional layer prior to sending the event to downstream tools.
+Segment has a special deduplication service that sits behind the `api.segment.com` endpoint and attempts to drop 99% of duplicate data. Segment stores 24 hours worth of event `message_id`s, allowing Segment to deduplicate any data that appears within a 24 hour rolling window.
 
-Keep in mind that Segment's libraries all generate `message_id`s for you for each event payload, with the exception of the Segment HTTP API, which assigns each event a unique `message_id` when the message is ingested. You can override these default generated IDs and manually assign a `message_id` if necessary.
+Segment deduplicates on the event's `message_id`, _not_ on the contents of the event payload. Segment doesn't have a built-in way to deduplicate data over periods longer than 24 hours or for events that don't generate `message_id`s.
+
+> info ""
+> Keep in mind that Segment's libraries all generate `message_id`s for each event payload, with the exception of the Segment HTTP API, which assigns each event a unique `message_id` when the message is ingested. You can override these default generated IDs and manually assign a `message_id` if necessary.
+
+## Warehouse deduplication
+Duplicate events that are more than 24 hours apart from one another deduplicate in the Warehouse. Segment  deduplicates messages going into a Warehouse based on the `message_id`, which is the `id` column in a Segment Warehouse.
+
+## Data Lake deduplication
+To ensure clean data in your Data Lake, Segment removes duplicate events at the time your Data Lake ingests data. The Data Lake deduplication process dedupes the data the Data Lake syncs within the last 7 days with Segment deduping the data based on the `message_id`.
