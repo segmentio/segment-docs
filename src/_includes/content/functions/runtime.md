@@ -15,7 +15,6 @@ The following dependencies are installed in the function environment by default.
 - [`@google-cloud/functions v1.1.0`](https://www.npmjs.com/package/@google-cloud/functions) exposed as `google.cloud.functions`
 - [`@google-cloud/pubsub v2.6.0`](https://www.npmjs.com/package/@google-cloud/pubsub) exposed as `google.cloud.pubsub`
 - [`@google-cloud/storage v5.3.0`](https://www.npmjs.com/package/@google-cloud/storage) exposed as `google.cloud.storage`
-- [`form-data v2.4.0`](https://www.npmjs.com/package/form-data) exposed as `FormData`
 - [`jsonwebtoken v8.5.1`](https://www.npmjs.com/package/jsonwebtoken) exposed as `jsonwebtoken`
 - [`lodash v4.17.15`](https://www.npmjs.com/package/lodash) exposed as `_`
 - [`moment v2.26.0`](https://www.npmjs.com/package/moment/v/2.26.0) exposed as `moment`

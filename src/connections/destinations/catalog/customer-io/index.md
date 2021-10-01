@@ -35,7 +35,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.page();
 ```
 
-Page events send to Customer.io as a `Page View` event where names and properties are optional. In the Customer.io "Activity View", the event will have "Activity Type" set to "Page View" and "Activity Name" set to the page name. If there is no page name, "Activity Name" defaults to the page URL.
+Page events send to Customer.io as a `Page View` event where names and properties are optional. In the Customer.io "Activity Logs", the event will have "Activity Type" set to "Page View" and "Activity Name" set to the page name. If there is no page name, "Activity Name" defaults to the page URL.
 
 ## Screen
 
@@ -45,7 +45,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 
-Screen events send to Customer.io as a custom event. In the Customer.io "Activity View", "Activity Type" is `event` and "Activity Value" sets to `Viewed {screen name} Screen`. For the earlier example the "Activity Value" will be `Viewed Home Screen`. If there is no screen name, then "Activity Value" will be `Viewed Undefined Screen`.
+Screen events send to Customer.io as a custom event. In the Customer.io "Activity Logs", "Activity Type" is `event` and "Activity Value" sets to `Viewed {screen name} Screen`. For the earlier example the "Activity Value" will be `Viewed Home Screen`. If there is no screen name, then "Activity Value" will be `Viewed Undefined Screen`.
 
 
 ## Identify
@@ -79,7 +79,7 @@ analytics.identify('userId123', {
 });
 ```
 
-If you want to change the `id` or `email` you've assigned a person in Customer.io, you have to pass a person's `cio_id`, in the format `cio_&lt;cio_id value>` as the `userId` in your identify call. Currently, you must retrieve this value from a person's page in the Customer.io interface. In the future, you'll be able to do that using this call from Customer.io API.
+If you want to change the `id` or `email` you've assigned a person in Customer.io, you have to pass a person's `cio_id`, in the format `cio_<cio_id value>` as the `userId` in your identify call. Currently, you must retrieve this value from a person's page in the Customer.io interface. In the future, you'll be able to do that using this call from Customer.io API.
 
 ```javascript
 analytics.identify('cio_<cio_id value>', {
@@ -114,7 +114,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.track('Clicked Button');
 ```
 
-Track events send to Customer.io as `custom events`. In the Customer.io "Activity View", "Activity Type" sets to `event` and "Activity Name" sets to the event name.
+Track events send to Customer.io as `custom events`. In the Customer.io "Activity Logs", "Activity Type" sets to `event` and "Activity Name" sets to the event name.
 
 ## Device Token Set up
 
