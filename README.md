@@ -3,6 +3,8 @@
 
 Here, you can contribute to the Segment Documentation site.
 
+**Note**: On Friday, October 1st, the default branch of this repository was changed from `master` to `develop`. If you have a fork of `segment-docs`, please ensure the default branch of the fork is updated accordingly.
+
 ## Overview
 
 This repository contains the documentation website code and source files for https://segment.com/docs.
