@@ -14,12 +14,12 @@ Not all pages have a 1-1 mapping with their location within the repository. This
 
 ## Want to go deeper? Fork the repository
 
-You can fork this repository to your local machine to make larger changes. Examples of larger changes include:
+You can fork this repository and clone it to your local machine to make larger changes. Examples of larger changes include:
 - editing more than one file at a time
 - adding or updating images
 - updating navigation items
 
-In this scenario, you'll fork the repository locally, make your changes, and submit a pull request to have them reviewed and merged back into the site.
+In this scenario, you'll fork the repository, clone it locally, make your changes, and submit a pull request to have them reviewed and merged back into the site.
 
 ## Site structure
 
