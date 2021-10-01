@@ -31,10 +31,10 @@ To disband a Folder you’ve made in Personas, click the **More Options** icon a
 
 To move an Audience to a Folder you’ve already created, follow the steps below:
 
-1. Navigate to the Audiences tab within your Personas space.
+1. Navigate to the **Audiences** tab within your Personas space.
 2. Hover over the Audience you want to move.
 3. Check the selection box that appears next to the Audience name.
-4. **Optional**: repeat Steps 2 and 3 to move multiple Audiences.
+4. *(Optional)*: Repeat Steps 2 and 3 to move multiple Audiences.
 5. Click the **Move** icon that appears in the Audiences header.
 6. Select your destination Folder from the modal window.
 7. Click **Move** to confirm and move the selected Audiences.
@@ -48,12 +48,12 @@ Audience cloning creates a copy of your Audience.  Within Personas, you can clon
 
 To clone an Audience within the same Space, follow the steps below:
 
-1. Navigate to the Audiences tab within your Personas space.
+1. Navigate to the **Audiences** tab within your Personas space.
 2. Click the **More Options** icon next to the Audience you want to clone.
 3. From the dropdown menu, click **Clone**.
 4. Select **Current Space**, then click **Continue**.
 5. Configure the Audience, click **Preview Results**, then click **Select Destination**.
-6. **Optional**: on the next screen, connect the Audience to a Destination.  Click **Review & Create**.
+6. *(Optional)*: On the next screen, connect the Audience to a Destination.  Click **Review & Create**.
 7. Give your Audience a unique name, then click **Create Audience**.
 
 ### Cloning an Audience between Spaces
@@ -70,12 +70,12 @@ You may wish to clone an Audience between spaces for a number of use cases, incl
 
 To clone an Audience between Spaces, follow the steps below:
 
-1. Navigate to the Audiences tab within your Personas space.
+1. Navigate to the **Audiences** tab within your Personas space.
 2. Click the **More Options** icon next to the Audience you want to clone.
 3. From the dropdown menu, click **Clone**.
 4. Select **Different Space**, choose your target Space, then click **Continue**.
 5. Configure the Audience, click **Preview Results**, then click **Select Destination**.
-6. **Optional**: on the next screen, connect the Audience to a Destination.  Click **Review & Create**.
+6. *(Optional)*: On the next screen, connect the Audience to a Destination.  Click **Review & Create**.
 7. Give your Audience a unique name, then click **Create Cloned Audience**.
 
 
