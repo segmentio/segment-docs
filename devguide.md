@@ -4,7 +4,7 @@ The contents of this guide will help you get up and running with the Segment Doc
 
 ## Local development with `ruby` and `node`, without Config API
 
-If using OSX:
+If using MacOS:
   * Install command line tools, `xcode-select --install`
   * Install `Ruby` >= 2.3.0 https://www.ruby-lang.org/en/documentation/installation/
   * Ensure you're running `RubyGems` >= 2.5.0 by running `gem update --system` followed by `gem --version`
@@ -16,7 +16,7 @@ If using OSX:
 
 ##  All about the Catalog script
 
-You run the Catalog update script by running `make catalog` from the docs repo. You, a person who is going to run the script, must first save a Segment token to an `.env` file locally, which is `gitignored` so we don’t check it in to gihub accidentally.
+You run the Catalog update script by running `make catalog` from the docs repo. You, a person who is going to run the script, must first save a Segment token to an `.env` file locally, which is `gitignored` so we don’t check it in to GitHub accidentally.
 
 Note: Old ConfigAPI tokens are not compatible with Public API. You'll need a new one if you want to use Public API.
 
@@ -33,7 +33,7 @@ It also does some slugification and destination-name normalization, since our ha
 
 ###  3.1. <a name='Layouts'></a>Layouts
 
-`default.html` is the base container through which all the individual other layouts are built to have the right title, seo, etc. The template inheritance is described in the diagram below.
+`default.html` is the base container through which all the individual other layouts are built to have the right title, SEO, etc. The template inheritance is described in the diagram below.
 
 The `destination.html`, `source.html`, and `integration.html` templates contain the logic that runs the layouts for individual catalog pages. Storage/warehouses use the generic Integration right now because they don't need anything special. Set the layout in the Jekyll `_config.yml` file.
 
