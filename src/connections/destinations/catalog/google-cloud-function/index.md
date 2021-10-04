@@ -21,17 +21,18 @@ Before you can process events from Segment, you must provide a Google Cloud Func
 
 1. Go to https://cloud.google.com/functions.
 2. Click **VIEW CONSOLE**.
-   ![](images/gcloud1.png)
-
 3. Select a project.
 4. Click **CREATE FUNCTION**.
-   ![](images/gcloud2.png)
 5. Enter a name for your function, and choose how much memory the function can use.
-7. In the **Trigger** field, select `HTTP`. Save the `URL` GCP gives you. You'll use this to configure the Segment destination later.
-8. Choose how you'll provide the function's code (in the **Source code** field) and what language the code is written in (in the **Runtime** field).
-9. Enter the name of the function as you defined it in your code, in the **Function to execute** field.
-10. Click **Create** to save your settings and create the Google Cloud Function.
-![](images/gcloud3.png)
+6. In the **Trigger** field, select `HTTP`. Save the `URL` GCP gives you. You'll use this to configure the Segment destination later.
+7. Choose how you'll provide the function's code (in the **Source code** field) and what language the code is written in (in the **Runtime** field).
+8. Enter the name of the function as you defined it in your code, in the **Function to execute** field.
+9.  Click **Create** to save your settings and create the Google Cloud Function.
+
+
+### Test the function
+
+Segment recommends that you use the Debugger of the source you intend to connect to the Google Cloud Function destination to inspect the request body of the incoming event. This allows you to build handlers in your function based on accurate incoming data. For more information, see [Testing Connections](/docs/connections/test-connections/). 
 
 ## Configure the Google Cloud Function Destination
 
@@ -44,7 +45,7 @@ Once you create the Google Cloud Function, you can set up a Segment destination 
 3. Click **Configure Google Cloud Function**.
 4. Enter the destination settings for this GCF destination.
 
-| Setting  | Description         |
-| -------- | ------------------- |
-| **HTTP Trigger**  | The URL given under the `Trigger` section when you created the Google Cloud Function.    |
+| Setting                | Description                                                                                                                                                                                                                                                           |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **HTTP Trigger**       | The URL given under the `Trigger` section when you created the Google Cloud Function.                                                                                                                                                                                 |
 | **API Key** (optional) | A string to identify that a request is coming from Segment, if required by the function. <br><br>The API key is injected in the `Authorization` header as a [basic authorization header](https://en.wikipedia.org/wiki/Basic_access_authentication) without password. |
