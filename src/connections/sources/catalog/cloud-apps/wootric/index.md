@@ -1,6 +1,8 @@
 ---
 title: InMoment (formerly Wootric)
 rewrite: true
+redirect_from:
+  - 'connections/sources/catalog/cloud-apps/inmoment-formerly-wootric'
 ---
 
 [InMoment](https://wootric.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) (formerly Wootric) is modern customer feedback management software. You can incorporate Voice of Customer data in your decision-making processes and marketing campaigns, and trigger customer follow-up when you send survey responses to your CRM, marketing platform or data warehouses automatically.
@@ -21,26 +23,26 @@ InMoment maintains this source. For any issues, [contact the InMoment support te
 Below is a table of events that InMoment sends to Segment. These events will show up as tables in your warehouse, and as regular events in your other Destinations. InMoment will send through the `userId` if available. Note: at this time event names continue to be labeled “Wootric.”
 
 
-|Event Name|Description|
-| -------- | -------- | -------- |
-|Wootric survey response created|A survey response was created|
-|Wootric survey response updated|An existing survey response was updated|
+| Event Name                      | Description                             |
+| ------------------------------- | --------------------------------------- |  |
+| Wootric survey response created | A survey response was created           |
+| Wootric survey response updated | An existing survey response was updated |
 
 ## Event Properties
 
 Below are tables outlining the properties included in the events listed above.
 
-|Property Name|Description|
-| -------- | -------- | -------- |
-|channel|The channel from which the survey was responded like ‘web’ or ‘email’|
-|created_at|The timestamp of when the response was created|
-|metric_type|The mode of the survey like "NPS" or “CSAT”|
-|properties|The survey properties|
-|response_id|The id of the response|
-|score|The selected score from the survey|
-|survey_id|The id of the survey|
-|updated_at|The timestamp of when the response was updated|
-|text|The feedback text provided by the end user|
+| Property Name | Description                                                           |
+| ------------- | --------------------------------------------------------------------- |  |
+| channel       | The channel from which the survey was responded like ‘web’ or ‘email’ |
+| created_at    | The timestamp of when the response was created                        |
+| metric_type   | The mode of the survey like "NPS" or “CSAT”                           |
+| properties    | The survey properties                                                 |
+| response_id   | The id of the response                                                |
+| score         | The selected score from the survey                                    |
+| survey_id     | The id of the survey                                                  |
+| updated_at    | The timestamp of when the response was updated                        |
+| text          | The feedback text provided by the end user                            |
 
 
 ## Adding Destinations
