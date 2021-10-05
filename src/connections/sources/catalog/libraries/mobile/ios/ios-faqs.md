@@ -243,7 +243,7 @@ Analytics.shared().track("Clicked Button", properties: nil, options: ["context":
 
 ## How can I get the user’s IDFA?
 
-Some destinations, especially mobile attribution tools (e.g. Kochava), require the IDFA (identifier for advertisers). The IDFA appears in Segment calls in the debugger as `context.device.advertisingId`. To capture this value with Analytics-iOS, follow the steps in [Ad-tracking and IDFA](/docs/connections/sources/catalog/libraries/mobile/ios#ad-tracking-and-idfa).  Remember that Apple now requires that the user consent to your tracking before you can collect the IDFA.
+Some destinations, especially mobile attribution tools (for example, [Kochava](https://www.kochava.com/){:target="_blank"}), require the IDFA (identifier for advertisers). The IDFA appears in Segment calls in the debugger as `context.device.advertisingId`. To capture this value with Analytics-iOS, follow the steps in [Ad-tracking and IDFA](/docs/connections/sources/catalog/libraries/mobile/ios#ad-tracking-and-idfa).  Remember that Apple now requires that the user consent to your tracking before you can collect the IDFA.
 
 
 
