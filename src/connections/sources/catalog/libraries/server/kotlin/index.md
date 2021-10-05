@@ -313,6 +313,10 @@ val yourPlugin = SomePlugin()
 analytics.add(yourPlugin)
 ```
 
+### Example projects using Analytics-Kotlin
+See how different platforms and languages use Analytics-Kotlin in different [example projects](https://github.com/segmentio/analytics-kotlin/tree/main/samples).
+The example projects contain sample [plugins](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app/src/main/java/com/segment/analytics/next/plugins) and [destination plugins](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app-destinations/src/main/java/com/segment/analytics/destinations/plugins) you can utilize.
+
 ## Utility Methods
 The Analytics-Kotlin utility methods help you work with plugins from the analytics timeline. They include:
 - [Add](#add)
