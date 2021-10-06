@@ -3,6 +3,8 @@ changelog:
     labels:
       - automated-reposync-pr
       - autoupdate
+    authors:
+      - bot-docsteam
   categories:
     - title: New Features
       labels:
