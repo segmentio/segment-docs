@@ -1,12 +1,12 @@
 ---
 rewrite: true
-title: Datarangers
+title: DataRangers
 beta: true
 ---
 
-DataRangers provides product analytics for mobile and web applications, including event/retention/funnel/error analysis, user segmentation, user paths, behavior lookup, A/B testing and other functions.
+DataRangers provides product analytics for mobile and web applications, including event/retention/funnel/error analysis, user segmentation, user paths, behavior lookup, A/B testing, and other functions.
 
-In addition to the docs below, please reference DataRangers' [integration guide](https://datarangers.com/help/doc?lid=4938&did=134055/){:target="_blank"}.
+In addition to the docs below, please reference the [DataRangers integration guide](https://datarangers.com/help/doc?lid=4938&did=134055/){:target="_blank"}.
 
 This destination is maintained by DataRangers. For any issues with the destination, please [contact the DataRangers Support team](mailto:support@byteplus.com)
 
