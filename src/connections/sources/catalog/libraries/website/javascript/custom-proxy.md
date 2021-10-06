@@ -79,8 +79,8 @@ Next, configure the distribution settings. Under Origin Settings, update the fol
   </tr>
   <tr>
    <td>Alternate Domain Names (CNAMEs)</td>
-   <td>yourdomain.com</td>
-   <td>Add the domain you are proxying to Segment here. If you don't do this you will get an error.</td>
+   <td>`analytics.yourdomain.com`</td>
+   <td>Enter the subdomain you are using as a proxy to Segment. If you don't do this you will get an error.</td>
   </tr>
 </table>
 
