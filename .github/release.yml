@@ -1,0 +1,21 @@
+changelog:
+  exlclude:
+    labels:
+      - automated-reposync-pr
+      - autoupdate
+  categories:
+    - title: New Features
+      labels:
+        - new-feature
+    - title: New Integration Docs
+      labels:
+        - new-integration
+    - title: Improvements
+      labels:
+        - enhancement
+    - title: Fixes
+      labels:
+        - fixed-content
+    - title: Other Updates
+      labels:
+        - "*"
