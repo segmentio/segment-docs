@@ -3,6 +3,7 @@ changelog:
     labels:
       - automated-reposync-pr
       - autoupdate
+      - back-end
     authors:
       - bot-docsteam
   categories:
@@ -18,6 +19,7 @@ changelog:
     - title: Fixes
       labels:
         - fixed-content
+        - fixed-site
     - title: Other Updates
       labels:
         - "*"

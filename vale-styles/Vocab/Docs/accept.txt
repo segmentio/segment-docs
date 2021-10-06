@@ -53,3 +53,5 @@ gmail
 (?:P|p)ostgres
 Smartly
 Hubspot
+Friendbuy
+Chargebee
