@@ -120,7 +120,7 @@ You need the "Domain Name" for the next step, so keep this browser window open.
 
 #### Add CNAME Record to DNS
 
-Next, add a CNAME record to your DNS settings. Go to your domain registrar and add a new record to your DNS of type "CNAME".
+Next, add a CNAME record for the Segment proxy to your organizations DNS settings. Use a name that makes it clear what you are using the subdomain for, for example `analytics.mysite.com`.  Go to your domain registrar and add a new record to your DNS of type "CNAME".
 
 <table>
   <tr>
