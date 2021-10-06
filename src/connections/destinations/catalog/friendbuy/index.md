@@ -1,5 +1,6 @@
 ---
 title: Friendbuy Destination
+cmode-override: true
 ---
 
 ## Getting Started
@@ -19,15 +20,11 @@ This destination allows you to:
 - Map your Identify calls to facilitate [Customer Tracking](http://developers.friendbuy.com/#customer-tracking)
 - Map your Track calls to facilitate [Order Tracking](http://developers.friendbuy.com/#order-tracking) and [Product Tracking](http://developers.friendbuy.com/#product-tracking)
 
-----------
+
 ## Page
 
 To load specific widgets on different web pages, you can configure your settings to map your _named_ Page call(s) to specific Friendbuy Widget(s). You can also configure a several optional [advanced widget configurations](http://developers.friendbuy.com/#widget-options) such as **auto delay** and **custom parameters**.
 
-<!-- TODO: convert this long gif into text instrucitons.
-See the following gif for example:
-
-![](images/23163f90cfc1f375f6c0da3a06060da4.gif)-->
 
 There are two types of Widgets you can map to your Page calls:
 
@@ -37,9 +34,10 @@ There are two types of Widgets you can map to your Page calls:
 - Other widgets
   - All other widgets will fall under this category whereby you can map the `name` of a unique Segment `.page()` call to a widget ID.
 
-_NOTE_: If you have mapped a site wide overlay widget loads on every `.page()` call, even if we have loaded a different widget on the page that you have explicitly mapped.
+> info ""
+> If you have mapped a site wide overlay widget loads on every `.page()` call, even if we have loaded a different widget on the page that you have explicitly mapped.
 
-----------
+
 ## Identify
 
 When you call `.identify()`, we will send the following mapped traits:
@@ -61,8 +59,8 @@ analytics.identify('2', {
 });
 ```
 
-**NOTE**: Friendbuy does not accept any custom traits.
-
+> info ""
+> Friendbuy does not accept custom traits.
 ### Stripe and Chargebee Customer ID
 
 If you are integrated with Stripe or Chargebee and would like to send those IDs to Friendbuy, you can pass them as integration specific options:
@@ -74,7 +72,7 @@ analytics.identify('2', {
   email: 'captain.lightyear@toystory.com',
 }, {
   integrations: {
-    Friendbuy: {
+    FriendBuy: {
       stripeCustomerId: <email@stripe.com>,
       chargebeeCustomerId: <email@chargebee.com>
     }
@@ -106,12 +104,12 @@ Then we will iterate over each item in your `properties.products` and send the f
 | `price`                 | `price`                       |
 | `quantity`              | `quantity`                    |
 
-**NOTE**: You can optionally specify if the customer who made the order is a new customer by passing `new_customer` under your integration specific options:
-
-```js
-  integrations: {
-    Friendbuy: {
-      newCustomer: true,
-    }
-  }
-```
+> info ""
+> You can optionally specify if the customer who made the order is a new customer by passing `new_customer` under your integration specific options:
+> ```js
+>  integrations: {
+>    FriendBuy: {
+>      newCustomer: true,
+>    }
+>  }
+>```
