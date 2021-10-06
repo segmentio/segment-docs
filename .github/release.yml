@@ -1,5 +1,5 @@
 changelog:
-  exlclude:
+  exclude:
     labels:
       - automated-reposync-pr
       - autoupdate
