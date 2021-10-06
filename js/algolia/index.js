@@ -18,7 +18,7 @@ const placeHolder = envApiKey != null ? 'Search the Segment documentation' : 'Se
 const searchClient = algoliasearch(appId, apiKey);
 
 //insights
-insightsClient('init', { appId, apiKey });
+insightsClient('init', { appId, apiKey, useCookie: true });
 const algoliaInsightsPlugin = createAlgoliaInsightsPlugin({ insightsClient });
 
 // define locations to separate invocation for mobile and desktop
@@ -39,9 +39,9 @@ function initAutocomplete(item){
           sourceId: 'articles',
           getItemUrl({ item }){
             if (item.anchor != null) {
-              var itemUrl = item.url+"#" + item.anchor;
+              var itemUrl = '/docs'+item.url+"#" + item.anchor;
             } else {
-              var itemUrl = item.url;
+              var itemUrl = '/docs'+item.url;
             }
             return itemUrl;
           },
@@ -87,9 +87,19 @@ function initAutocomplete(item){
     },
     navigator: {
       navigate({ itemUrl }) {
-        window.location.assign('/docs'+itemUrl);
+        window.location.assign(itemUrl);
       },
-    }
+      navigateNewTab({ itemUrl }) {
+        const windowReference = window.open(itemUrl, '_blank', 'noopener');
+  
+        if (windowReference) {
+          windowReference.focus();
+        }
+      },
+      navigateNewWindow({ itemUrl }) {
+        window.open(itemUrl, '_blank', 'noopener');
+      },
+    },
   });
   
 }
