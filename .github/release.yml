@@ -18,6 +18,7 @@ changelog:
     - title: Fixes
       labels:
         - fixed-content
+        - fixed-site
     - title: Other Updates
       labels:
         - "*"
