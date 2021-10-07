@@ -36,7 +36,10 @@ This is {person} from {company}. I would like to configure a proxy for the follo
 
 Double-check the source link, the Source ID, and the API proxy host to make sure they are correct. 
 
-A Segment Customer Success team member will respond that they have enabled this option for your account. When you receive this confirmation, go to your workspace, then navigate to your source settings, go to Analytics.js, and modify the "Host Address" setting. Change it from `api.segment.io/v1` to `[your proxy host]/v1`.
+A Segment Customer Success team member will respond that they have enabled this option for your account. When you receive this confirmation, open the source in your workspace, and navigate to Settings > Analytics.j. Modify the **Host Address** setting from `api.segment.io/v1` to `[your proxy host]/v1`.
+
+> info ""
+> The **Host Address** field does not appear in source settings until it is enabled by Segment Customer Success.
 
 ## CloudFront
 
