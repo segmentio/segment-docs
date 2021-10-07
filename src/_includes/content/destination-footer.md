@@ -44,7 +44,6 @@ When you first create an audience, Personas sends an Identify call for every use
 
 {% unless page.hide-settings == true %}
 ## Settings
-
 Segment lets you change these destination settings from the Segment app without having to touch any code.
 <table class="settings">
 <thead>

@@ -79,8 +79,8 @@ Next, configure the distribution settings. Under Origin Settings, update the fol
   </tr>
   <tr>
    <td>Alternate Domain Names (CNAMEs)</td>
-   <td>yourdomain.com</td>
-   <td>Add the domain you are proxying to Segment here. If you don't do this you will get an error.</td>
+   <td>`analytics.yourdomain.com`</td>
+   <td>Enter the subdomain you are using as a proxy to Segment. If you don't do this you will get an error.</td>
   </tr>
 </table>
 
@@ -120,7 +120,7 @@ You need the "Domain Name" for the next step, so keep this browser window open.
 
 #### Add CNAME Record to DNS
 
-Next, add a CNAME record to your DNS settings. Go to your domain registrar and add a new record to your DNS of type "CNAME".
+Next, add a CNAME record for the Segment proxy to your organizations DNS settings. Use a name that makes it clear what you are using the subdomain for, for example `analytics.mysite.com`.  Go to your domain registrar and add a new record to your DNS of type "CNAME".
 
 <table>
   <tr>

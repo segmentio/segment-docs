@@ -12,7 +12,7 @@ Azure's [Azure Synapse Analytics](https://azure.microsoft.com/en-us/services/syn
 There are four main steps to get started with Segment:
 
 1. Have an [Azure subscription](https://azure.microsoft.com/en-us/free/)
-2. Provision [SQL Data Warehouse](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal)
+2. Provision [SQL Data Warehouse (Dedicated SQL Pool)](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal)
 3. Give Segment access to your SQL Data Warehouse
 4. Configure the Destination in Segment
 

@@ -369,7 +369,8 @@ const updateDestinations = async () => {
     // Flip the slug of Actions destinations
     const actionsDests = [
       'amplitude-actions',
-      'slack-actions'
+      'slack-actions',
+      'fullstory-actions'
     ]
 
     if (actionsDests.includes(slug)) {
