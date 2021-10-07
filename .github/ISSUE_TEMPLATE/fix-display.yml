@@ -1,5 +1,5 @@
 name: Display bug or other issue
-description: Rais an issue related to the display of the site it self, or anything else not related to content.
+description: Raise an issue related to the display of the site it self, or anything else not related to content.
 title: "[Bug]: "
 labels: [bug, triage]
 body:
