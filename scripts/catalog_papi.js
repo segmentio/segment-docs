@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const fm = require('front-matter');
 const yaml = require('js-yaml');
+const { type } = require('os');
 
 require('dotenv').config();
 
@@ -393,11 +394,31 @@ const updateDestinations = async () => {
     })
 
     let settings = destination.options
+
     settings.sort((a, b) => {
       if(a.name.toLowerCase() < b.name.toLowerCase()) { return -1; }
       if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
       return 0;
     })
+    
+
+    // Here we are dealing with settings that should not be exposed
+    settings.forEach(setting => {
+      if (setting.name == 'directChannels' || setting.name == 'endpoint' || setting.name == 'batchApiLocation') {
+        delete setting.name
+        delete setting.type
+        delete setting.defaultValue
+        delete setting.description
+        delete setting.required
+        delete setting.label
+        delete setting
+
+      }
+    });
+
+    settings = settings.filter(value => JSON.stringify(value) !== '{}')
+
+    // end settings removal block
 
     const clone = (obj) => Object.assign({}, obj)
     const renameKey = (object, key, newKey) => {
