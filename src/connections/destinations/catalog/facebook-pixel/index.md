@@ -161,7 +161,10 @@ Facebook accepts the following properties:
 
 If you follow Segment's [spec](/docs/connections/spec/identify/#traits), these would automatically be sent correctly.
 
-Facebook also accepts an External ID. This can be any unique ID from the advertiser, such as loyalty membership IDs, user IDs, and external cookie IDs. In order to send an `external_id` to Facebook you can indicate which user trait you would like Segment to map to `external_id` using the **Client-Side Only: Advanced Match Trait Key for External ID** setting.
+Facebook also accepts an External ID when using Advanced Matching. This can be any unique ID from the advertiser, such as loyalty membership IDs, user IDs, and external cookie IDs. In order to send an `external_id` to Facebook you can either:
+
+- Send the Segment `userId` or `anonymousId` as `external_id` using the **Use User ID or Anonymous ID as External ID** setting
+- Indicate which user trait you would like Segment to map to `external_id` using the **Advanced Match Trait Key for External ID** setting
 
 ## Limited Data Use
 
