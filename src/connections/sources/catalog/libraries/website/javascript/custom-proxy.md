@@ -75,12 +75,6 @@ To add a CNAME record for the Segment proxy to your organizations DNS settings:
 5. Make a `curl` request to your domain to verify that the proxy works. 
 
 
-| Field | Value                                   |
-| ----- | --------------------------------------- |
-| Name  | `<subdomain_name>.yourdomain.com`       |
-| Value | *The Domain Name value from CloudFront* |
-
-Save your record. This might take some time to take effect, depending on your TTL settings. Make a `curl` request to your domain to verify that the proxy works.
 
 ### Tracking API Proxy
 
@@ -100,10 +94,5 @@ To add a CNAME record to your DNS settings:
    - **Value**: Tracking API CloudFront Distribution Domain Name
 3. Save your record. This might take some time to take effect, depending on your TTL settings.
 4. Run `curl` on your domain to check if the proxy is working correctly.
-
-| Field | Value                                              |
-| ----- | -------------------------------------------------- |
-| Name  | `<subdomain_name>.yourdomain.com`                  |
-| Value | *Tracking API CloudFront Distribution Domain Name* |
 
 
