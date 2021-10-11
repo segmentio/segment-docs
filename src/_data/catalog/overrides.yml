@@ -60,3 +60,50 @@ items:
       accepts data in cloud-mode from web and mobile sources, and can accept data in device-mode from Analytics.js sources.
     cmode_type: mixed
     case: '10'
+- slug: friendbuy
+  display_name: Friendbuy
+  previous_names:
+  - FriendBuy
+  components:
+  - code: https://github.com/segment-integrations/analytics.js-integration-friendbuy
+    type: browser
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
+  settings:
+  - name: siteId
+    type: string
+    defaultValue: ''
+    description: >-
+      This is your **Site ID**. It is used to identify your account in our
+      platform so we can properly attribute referral data. You can find your
+      Site ID in the in Friendbuy web application at **Settings > Integration
+      Code**
+    required: true
+    label: Site ID
+  - name: siteWideWidgets
+    type: mixed
+    defaultValue: []
+    description: >-
+      By default, Friendbuy recommends you add a site wide overlay widget. You
+      can enter any of these site wide widgets here and we will load them any
+      time we receive a `.page()` call. *Note*: If you have custom widgets
+      mapped to named pages in the *Widgets* setting and you have provided a
+      site wide widget, we will load both.
+    required: false
+    label: Site Wide Widgets
+  - name: widgets
+    type: mixed
+    defaultValue: []
+    description: Map your page calls to specific FriendBuy Widgets.
+    required: false
+    label: Page Widgets

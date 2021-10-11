@@ -1,0 +1,25 @@
+changelog:
+  exclude:
+    labels:
+      - automated-reposync-pr
+      - autoupdate
+      - back-end
+    authors:
+      - bot-docsteam
+  categories:
+    - title: New Features
+      labels:
+        - new-feature
+    - title: New Integration Docs
+      labels:
+        - new-integration
+    - title: Improvements
+      labels:
+        - enhancement
+    - title: Fixes
+      labels:
+        - fixed-content
+        - fixed-site
+    - title: Other Updates
+      labels:
+        - "*"

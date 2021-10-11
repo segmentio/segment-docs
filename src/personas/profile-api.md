@@ -93,7 +93,7 @@ The response is returned as a JSON object which contains the queried user's assi
 
   `https://profiles.segment.com/v1/spaces/<space-id>/collections/users/profiles/<user_identifier>/events`
 
-- **External IDs**: Query all of a user's external IDs (for example, `anonymouse_id`You can query all of a user's external ids (anonymous_id, user_id, ios.):
+- **External IDs**: You can query all of a user's external IDs such as `anonymous_id`, `user_id`.
 
   `https://profiles.segment.com/v1/spaces/<space-id>/collections/users/profiles/<user_identifier>/external_ids`
 
