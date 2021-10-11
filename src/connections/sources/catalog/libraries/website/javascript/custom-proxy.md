@@ -10,10 +10,10 @@ Custom domains allow you to proxy Analytics.js and proxy all tracking event requ
 
 To set up a custom domain, you need:
 
-1. Access to your site DNS settings
-2. A CDN you can serve assets from
-3. Access to the CDN settings
-4. A security certificate for the proxy domain
+- Access to your site DNS settings
+- A CDN you can serve assets from
+- Access to the CDN settings
+- A security certificate for the proxy domain
 
 This guide explains how to set up a custom domain in CloudFront. You can apply these principles to almost any modern CDN that supports proxies.
 
