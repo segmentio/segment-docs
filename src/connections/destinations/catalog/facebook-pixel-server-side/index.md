@@ -76,7 +76,7 @@ This approach provides a redundancy that ensures maximum signal reliability. Eve
 
 #### Match rate considerations
 
-For this option to work best, the same `external_id` needs to be passed from the browser and the server. To achieve this, go to your Facebook Pixel destination settings in Segment and enable the **Enable Advanced Matching** and **Use User ID or Anonymous ID as External ID** settings. By default the Facebook Conversions API destination uses the `userId` (or `anonymousId` if not present) to set the `external_id`, so when you set up Facebook Pixel to use the same settings, Facebook can then match the users.
+For this option to work best, pass the same `external_id` from the browser and the server. To achieve this, go to the Facebook Pixel destination settings in Segment and enable the **Enable Advanced Matching** and **Use User ID or Anonymous ID as External ID** settings. By default, the Facebook Conversions API destination uses the `userId` (or `anonymousId` if not present) to set the `external_id`, so when you configure Facebook Pixel to use the same settings, Facebook matches users by those IDs.
 
 You can also increase the match rate for events from a server source by sending [user traits in the context object of the track events](#default-mappings-to-facebook-properties). You can also collect other fields from the browser, such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) and pass them to the server, and manually add them to the events.
 
@@ -92,7 +92,7 @@ Use this approach if you want to separate tracking events completed on a user's 
 
 For this option to work best, the same `external_id` needs to be passed from the browser and the server. To achieve this, go to your Facebook Pixel destination settings in Segment and enable the **Enable Advanced Matching** and **Use User ID or Anonymous ID as External ID** settings. By default the Facebook Conversions API destination uses the `userId` (or `anonymousId` if not present) to set the `external_id`, so when you set up Facebook Pixel to use the same settings, Facebook can then match the users.
 
-You can also increase the match rate for events from a server source by sending [user traits in the context object of the track events](#default-mappings-to-facebook-properties). You can also collect other fields from the browser, such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) and pass them to the server, and manually add them to the events.
+You can also send [user traits in the context object of the track events](#default-mappings-to-facebook-properties)to increase the match rate for events from a server source. Collect other fields from the browser, like `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and manually add them to the events.
 
 #### Deduplication considerations
 
@@ -123,7 +123,7 @@ For more information about Track calls, see the [Track method](/docs/connections
 
 Beginning February 15th 2021, Facebook requires the `action_source` server event parameter for all events sent to the Conversions API. This parameter is used to specify where the conversions occurred. If `action_source` is set to 'website' then the `client_user_agent` and the `event_source_url` parameters are also required. Events sent to the Conversions API after February 15th that do not meet the requirements may not be available for optimization, targeting, or measurement.
 
-| Server Event Parameter | Requirement                                 | Implementation                                                                                       |
+| Server Event Parameter | Requirement                                 | Implementation                 p                                                                      |
 | ---------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
 | `action_source`        | Always required                             | It is set automatically but it can be set manually.                                                  |
 | `client_user_agent`    | Only required if `action_source` = "website" | It must be set manually if using a server library. It is set automatically if using the Segment web library. |
@@ -138,7 +138,7 @@ You can set `action_source` manually by passing it as a property of a Track even
 
 | Action Source Values | Description                                                                                               |
 | -------------------- | --------------------------------------------------------------------------------------------------------- |
-| `chat`               | Conversion was made via a messaging app, SMS, or online messaging feature.                                |
+| `chat`               | Conversion was made through a messaging app, SMS, or online messaging feature.                                |
 | `email`              | Conversion happened over email.                                                                           |
 | `other`              | Conversion happened in a way that is not listed.                                                          |
 | `phone_call`         | Conversion was made over the phone.                                                                       |
