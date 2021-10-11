@@ -401,25 +401,6 @@ const updateDestinations = async () => {
       return 0;
     })
     
-
-    // Here we are dealing with settings that should not be exposed
-    settings.forEach(setting => {
-      if (setting.name == 'directChannels' || setting.name == 'endpoint' || setting.name == 'batchApiLocation') {
-        delete setting.name
-        delete setting.type
-        delete setting.defaultValue
-        delete setting.description
-        delete setting.required
-        delete setting.label
-        delete setting
-
-      }
-    });
-
-    settings = settings.filter(value => JSON.stringify(value) !== '{}')
-
-    // end settings removal block
-
     const clone = (obj) => Object.assign({}, obj)
     const renameKey = (object, key, newKey) => {
       const clonedObj = clone(object);
