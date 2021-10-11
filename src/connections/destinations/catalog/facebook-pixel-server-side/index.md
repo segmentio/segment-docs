@@ -76,8 +76,7 @@ This approach provides a redundancy that ensures maximum signal reliability. Eve
 
 #### Match rate considerations
 
-For this option to work best, you must pass the same `external_id` from both the browser and the server sources.
-To do this, go to your Facebook Pixel destination settings in Segment, and enable **Use UserId or Anonymous Id as External Id**. By default the Facebook Conversions API destination uses the `userId` (or `anonymousId` if not present) to set the External Id, so when you set up Facebook Pixel to use the same settings, Facebook can then match the users.
+For this option to work best, the same `external_id` needs to be passed from the browser and the server. To achieve this, go to your Facebook Pixel destination settings in Segment and enable the **Enable Advanced Matching** and **Use User ID or Anonymous ID as External ID** settings. By default the Facebook Conversions API destination uses the `userId` (or `anonymousId` if not present) to set the `external_id`, so when you set up Facebook Pixel to use the same settings, Facebook can then match the users.
 
 You can also increase the match rate for events from a server source by sending [user traits in the context object of the track events](#default-mappings-to-facebook-properties). You can also collect other fields from the browser, such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) and pass them to the server, and manually add them to the events.
 
@@ -91,7 +90,7 @@ Use this approach if you want to separate tracking events completed on a user's 
 
 #### Match rate considerations
 
-For this option to work best, the same `external_id` needs to be passed from the browser and from the server. To easily achieve this go to your Segment destination settings for Facebook Pixel and toggle on the setting called **Use UserId or Anonymous Id as External Id**. The Facebook Conversions API destination uses the userId (or anonymousId if not present) to set the External Id by default. Therefore enabling this on Facebook Pixel will allow Facebook to match the users.
+For this option to work best, the same `external_id` needs to be passed from the browser and the server. To achieve this, go to your Facebook Pixel destination settings in Segment and enable the **Enable Advanced Matching** and **Use User ID or Anonymous ID as External ID** settings. By default the Facebook Conversions API destination uses the `userId` (or `anonymousId` if not present) to set the `external_id`, so when you set up Facebook Pixel to use the same settings, Facebook can then match the users.
 
 You can also increase the match rate for events from a server source by sending [user traits in the context object of the track events](#default-mappings-to-facebook-properties). You can also collect other fields from the browser, such as `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc) and pass them to the server, and manually add them to the events.
 
@@ -265,18 +264,18 @@ analytics.track("Clicked Email", {
 ```
 
 ### Custom Mappings to Facebook Properties
-Any properties you send that aren't listed above are sent in the 'Custom Data' part of the Segment payload to Facebook.
+Any properties you send that aren't listed above are sent in the `custom_data` part of the Segment payload to Facebook.
 
 ### Alternative External IDs
 
-By default, Segment sends the `userID` as `externalID`, and if `userID` is absent falls back to `anonymousID`. To use a different field in your payload as the External ID, use the "Alternative External ID Field". An example value for this setting would be `properties.externalId`.
+By default, Segment sends the `userId` as `external_id`, and if `userId` is absent falls back to `anonymousId`. To use a different field in your payload as the `external_id`, use the **Alternative External ID Field** setting. An example value for this setting would be `properties.externalId`.
 
-### Alternative "Value" Properties
+### Alternative Value Properties
 
 For most events Segment sends revenue for the Pixel value field, but for
-the pre-purchase events "Product Viewed" and "Product Added", Segment
-uses the value of the "Value Field Identifier" setting to determine which
-property to use for the "value" field. This field defaults to
+the pre-purchase events `Product Viewed` and `Product Added`, Segment
+uses the value of the **Value Field Identifier** setting to determine which
+property to use for the `value` field. This field defaults to
 `price`.
 
 ## Limited Data Use
@@ -313,7 +312,7 @@ minutes. You can confirm that Facebook received them:
 
 1.   Go to the Events Manager.
 2.   Click on the corresponding pixel.
-3.   In the **Overview** tab, look for events where the "Connection Mode" is `Server`.
+3.   In the **Overview** tab, look for events where the "Connection Method" is `Server`.
 
 > info ""
 > **Note**: It might take a few minutes before events appear in the Events Manager.
