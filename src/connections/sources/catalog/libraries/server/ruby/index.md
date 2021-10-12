@@ -93,7 +93,7 @@ The `identify` call has the following fields:
   </tr>
   <tr>
     <td>`message_id`, optional</td>
-    <td>Time</td>
+    <td>String</td>
     <td>Unique identifier for each message that lets you find an individual message across the API.</td>
   </tr>
 </table>
@@ -157,7 +157,7 @@ The `track` call has the following fields:
   </tr>
   <tr>
     <td>`message_id`, optional</td>
-    <td>Time</td>
+    <td>String</td>
     <td>Unique identifier for each message that lets you find an individual message across the API.</td>
   </tr>
 </table>
@@ -248,7 +248,7 @@ The `page` call has the following fields:
   </tr>
   <tr>
     <td>`message_id`, optional</td>
-    <td>Time</td>
+    <td>String</td>
     <td>Unique identifier for each message that lets you find an individual message across the API.</td>
   </tr>
 </table>
@@ -311,7 +311,7 @@ The `group` call has the following fields:
   </tr>
   <tr>
     <td>`message_id`, optional</td>
-    <td>Time</td>
+    <td>String</td>
     <td>Unique identifier for each message that lets you find an individual message across the API.</td>
   </tr>
 </table>
