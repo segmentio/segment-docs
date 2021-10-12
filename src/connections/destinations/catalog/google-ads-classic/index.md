@@ -14,7 +14,7 @@ cmode-override: true
 > info ""
 > Google released a new version of Google Ads that uses [a Global Site Tag (or Gtag)](https://support.google.com/adwords/answer/7548399?hl=en). Segment supports this using a different version of the destination - see the documentation for [Google Ads (Gtag)](/docs/connections/destinations/catalog/google-adwords-new/) for more details.
 
-With Segment, you can use your events to fire a Google Ads conversion pixel from your website **in client-side javascript.**
+With Segment, you can use your events to fire a Google Ads conversion pixel from your website **in client-side JavaScript.**
 You can also trigger Google Ads (Classic) conversion from your mobile app using the **Server to Server** destination, so you don't need to include the SDK in your app. The server to server connection requires mobile device specific details to forward the events to Google Ads (Classic). Google Ads (Classic) **does not work with any server-side libraries**. Make sure when you're setting up your Google Ads (Classic) conversions that you choose the appropriate tracking method.
 
 ### Configure the Google Ads (Classic) destination
