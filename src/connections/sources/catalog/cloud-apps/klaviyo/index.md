@@ -93,3 +93,15 @@ from klaviyo.email_delivered
 ## Send data to Klaviyo
 
 The Klaviyo Source works better when you also connect Klaviyo as a destination. With the Klaviyo **Destination**, you can use Segment to send Klaviyo user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Klaviyo? Head on over to our [Klaviyo destination docs](/docs/connections/destinations/catalog/klaviyo/).
+
+## Preventing Duplication in Segment
+
+Navigate to the integration settings for the Segment Integration in [Klaviyo](https://www.klaviyo.com/integrations).
+
+Here is where you also have the ability to limit the data you pass back to Segment, by checking the box next to Do not sync profiles that are not updated by the Klaviyo Destination.
+
+As noted in the Overview, this integration now supports the ability to pass information back and forth between Segment and Klaviyo, using a unique ID to keep track of which profiles are originally from Segment. If you have multiple integrations enabled in Klaviyo, there is a possibility that the same customer will interact with you from two separate sources, and as a result, this customer will end up with duplicated profiles in Klaviyo.
+
+To help avoid this duplication of profiles in Segment, you can check the box above, which will limit the profiles Klaviyo syncs with Segment to only the profiles originally created in Segment.
+
+Once you’ve selected the settings you would like to enable, click Update Segment Settings to complete the integration.
