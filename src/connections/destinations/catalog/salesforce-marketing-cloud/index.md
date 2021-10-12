@@ -287,7 +287,7 @@ Personas sends audience membership and computed trait values to SFMC using Ident
 When you sync to an existing Data Extension, note these additional requirements:
 - The table cannot have an existing **Primary Key**, unless it is the `Contact Key` field, and the field type is `Text`.
 - All fields in the Data Extension must be nullable (meaning optional, or not required), except the `Contact Key` field.
-- Any fields that you send with Segment, and which already exist in the Data Extension, must be of the correct data type. If they do not exist, Segment creates them for you. The standard identifiers Segment sends come from the [Context object](https://segment.com/docs/connections/spec/common/#context), and appear in the image below.
+- Any fields that you send with Segment, and which already exist in the Data Extension, must be of the correct data type. The standard identifiers Segment sends come from the [Context object](https://segment.com/docs/connections/spec/common/#context), and appear in the image below.
 
 ![](images/existing-dext-data-types.png)
 
