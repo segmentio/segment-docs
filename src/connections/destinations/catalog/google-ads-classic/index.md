@@ -198,51 +198,25 @@ To track the monetary value of a conversion, make sure your event contains a `.r
 > warning ""
 > Google Ads (Classic) has plans to deprecate the API that the functionality outlined here relies on. Reference the documentation that supports their new API version above.
 
-You can specify your key mobile events as conversion events inside of Google Ads conversion dashboard. When these events fire from your mobile apps, Segment triggers these Google Ads (Classic) conversions. Segment SDKs should include the following properties, which are required to send the conversions. If you notice these properties aren't being logged, you will want to check your debugger to ensure the properties are in fact included in your events.
+You can specify key mobile events as conversion events inside of Google Ads conversion dashboard. When these events fire from your mobile apps, Segment triggers these Google Ads (Classic) conversions. Segment SDKs should include the following properties, which are required to send the conversions. If you notice these properties aren't being logged, check the debugger to ensure the properties are included in your events.
 
-<table>
-  <tr>
-    <td>**label**</td>
-    <td>Your Advertising Label from the destination settings panel</td>
-  </tr>
-  <tr>
-    <td>**rdid**</td>
-    <td>`context.device.advertisingId`</td>
-  </tr>
-  <tr>
-    <td>**bundleid**</td>
-    <td>`context.app.namespace`</td>
-  </tr>
-  <tr>
-    <td>**appversion**</td>
-    <td>`context.app.version`</td>
-  </tr>
-  <tr>
-    <td>**osversion**</td>
-    <td>`context.os.version`</td>
-  </tr>
-  <tr>
-    <td>**sdkversion**</td>
-    <td>`context.app.build`</td>
-  </tr>
-</table>
+
+| Property   | Mapping                                                   |
+| ---------- | --------------------------------------------------------- |
+| label      | The Advertising Label from the destination settings panel |
+| rdid       | `context.device.advertisingId`                            |
+| bundleid   | `context.app.namespace`                                   |
+| appversion | `context.app.version`                                     |
+| osversion  | `context.os.version`                                      |
+| sdkversion | `contet.app.build`                                        |
 
 The following properties are optional, if you'd like to see more, [contact Segment Support](https://segment.com/help/contact/).
 
-<table>
-  <tr>
-    <td>**referrer**</td>
-    <td>context.referrer.id</td>
-  </tr>
-  <tr>
-    <td>**value**</td>
-    <td>`properties.revenue`</td>
-  </tr>
-  <tr>
-    <td>**currency_code**</td>
-    <td>`properties.currency`</td>
-  </tr>
-  <tr>
-</table>
+| Property      | Mapping               |
+| ------------- | --------------------- |
+| referrer      | `context.referrer.id` |
+| value         | `properties.revenue`  |
+| currency_code | `properties.currency` |
+
 
 Here's Google documentation for the endpoint Segment connects to [for iOS apps](https://developers.google.com/app-conversion-tracking/ios/conversion-tracking-server#reporting_in-app_conversions_from_an_analytics_server) and [for Android Apps](https://developers.google.com/app-conversion-tracking/android/conversion-tracking-server#in-app_conversions). It can take 24-48 hours for conversions to show up in the conversions dashboard.
