@@ -408,7 +408,7 @@ If any of your deployed function instances are failing consistently, they will a
 
 ### Data control
 
-In addition to [Destination Filters](/docs/connections/destinations/destination-filters/) and [Privacy Portal](/docs/privacy/portal/) to manage which events and properties are sent to your destination function, you can reference the destination function directly in the integrations object of the Segment payload. For example:
+In addition to using [Destination Filters](/docs/connections/destinations/destination-filters/) and the [Privacy Portal](/docs/privacy/portal/) to manage which events and properties are sent to your destination function, you can reference the destination function directly in the integrations object of the Segment payload. For example:
 
 ```json
 ...
