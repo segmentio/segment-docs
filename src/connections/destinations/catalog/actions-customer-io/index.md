@@ -3,8 +3,6 @@ title: Customer.io (Actions) Destination
 hide-personas-partial: true
 hide-boilerplate: true
 hide-dossier: true
-hidden: true
-published: false
 ---
 {% include content/plan-grid.md name="actions" %}
 
