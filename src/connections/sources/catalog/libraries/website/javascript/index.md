@@ -721,7 +721,107 @@ No, there is no change in behavior to Middlewares.
 #### When using Segment features (Schema filtering, integrations object, Protocols) to filter events from going to destinations (device and cloud-mode), will batching impact the filtering of events?
 No, there is no impact to how events filter.
 
-## Plugins
+## Plugin Architecture
+When developing against Analytics 2.0, the plugins you write can augment functionality, enrich data, and control the flow and delivery of events. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
+
+### Plugin Categories
+Plugins are bound by Analytics 2.0 which handles operations such as observability, retries, and error handling. There are two different categories of plugins:
+1. **Critical**: Analytics.js expects this plugin to be loaded before starting event delivery. Failure to load a critical plugin halts event delivery. Use this category sparingly, and only for plugins that are critical to your tracking.
+2. **Non-Critical**: Analytics.js can start event delivery before this plugin finishes loading. This means your plugin can fail to load independently from all other plugins. For example, every Analytics.js destination is a non-critical plugin. This makes it possible for Analytics.js to continue working in case a partner destination fails to load, or in case users have ad blockers turned on that are targeting specific destinations.
+
+> info ""
+> Non-critical plugins are only non-critical from a loading standpoint. A crash in a before plugin can still halt the event delivery pipeline.
+
+Non-critical plugins run through a timeline that execute in order of insertion based on the entry type. Segment has these five entry types of non-critical plugins:
+
+Type | Details
+---- | -------
+`before` | Executes before event processing begins. These are plugins that run before any other plugins run. <br><br>For example, validating events before passing them along to other plugins. A failure here could halt the event pipeline. <br><br> See the example of how Analytics.js uses the [Event Validation plugin](https://github.com/segmentio/analytics-next/blob/master/src/plugins/validation/index.ts) to verify that every event has the correct shape.
+`enrichment` | Executes as the first level of event processing. These plugins modify an event. <br><br> See the example of how Analytics.js uses the [Page Enrichment plugin](https://github.com/segmentio/analytics-next/blob/master/src/plugins/page-enrichment/index.ts) to enrich every event with page information.
+`destination` | Executes as events begin to pass off to destinations. <br><br> This doesn’t modify the event outside of the specific destination, and failure doesn’t halt the execution.
+`after` | Executes after all event processing completes. You can use this to perform cleanup operations. <br><br>An example of this is the [Segment.io Plugin](https://github.com/segmentio/analytics-next/blob/master/src/plugins/segmentio/index.ts) which waits for destinations to succeed or fail so it can send it observability metrics.
+`utility` | Executes only with manual calls such as Logging. <br><br>These are plugins that change the Analytics 2.0 functionality. Utility plugins run outside of the event pipeline, and only execute once.
+
+### Example Plugins
+Here's an example of a plugin that converts all track event names to lowercase before the event gets sent through the rest of the pipeline:
+
+```js
+export const lowercase: Plugin = {
+  name: 'Lowercase events',
+  type: 'enrichment',
+  version: '1.0.0',
+
+  isLoaded: () => true,
+  load: () => Promise.resolve(),
+
+  track: (ctx) => {
+    ctx.updateEvent('event', ctx.event.event.toLowerCase())
+    return ctx
+  }
+}
+
+const identityStitching = () => {
+  let user
+
+  const identity = {
+    // Identifies your plugin in the Plugins stack.
+    // You can see the full list by accessing: `window.analytics.queue.plugins`
+    name: 'Identity Stitching',
+    // Defines where in the event timeline a plugin should run
+    type: 'enrichment',
+    version: '0.1.0',
+
+    // use the `load` hook to bootstrap your plugin
+    // The load hook will receive a context object as its first argument
+    // followed by a reference to the analytics.js instance from the page
+    load: async (_ctx, ajs) => {
+      user = ajs.user()
+    },
+
+    // Used to signal that a plugin has been property loaded
+    isLoaded: () => user !== undefined,
+
+    // Applies the plugin code to every `identify` call in Analytics.js
+    // You can override any of the existing types in the Segment Spec.
+    async identify(ctx) {
+      // Request some extra info to enrich your `identify` events from
+      // an external API.
+      const req = await fetch(
+        `https://jsonplaceholder.typicode.com/users/${ctx.event.userId}`
+      )
+      const userReq = await req.json()
+
+      // ctx.updateEvent can be used to update deeply nested properties
+      // in your events. It's a safe way to change events as it'll
+      //  create any missing objects and properties you may require.
+      ctx.updateEvent('traits.custom', userReq)
+      user.traits(userReq)
+
+      // Every plugin must return a `ctx` object, so that the event
+      // timeline can continue processing.
+      return ctx
+    },
+  }
+
+  return identity
+}
+
+// Registers our new plugin into Analytics.js
+await window.analytics.register(identityStitching())
+```
+
+You can view Segment's [existing plugins](https://github.com/segmentio/analytics-next/tree/master/src/plugins) to see more examples.  
+
+### Registering a plugin
+Registering plugins enable you to modify your analytics implementation to best fit your needs. You can register a plugin using this:
+
+```js
+// A promise will resolve once the plugins has been successfully loaded into Analytics.js
+// You can register multiple plugins at once by using the variable args interface in Analytis.js
+await window.analytics.register(pluginA, pluginB, pluginN)
+```
+
+## Video Player Plugins
 
 Segment offers video player 'plugins' so you can quickly collect video events using Analytics.js. See the specific documentation below to learn more:
 
