@@ -26,7 +26,9 @@ This document was last updated on January 23, 2020. If you notice any gaps, out-
 
 ### Mobile
 
-1. For mobile implementations additional settings are required. Navigate to your InMoment Settings > API to add in your "Client ID" to the respective part of the Segment Settings UI.
+Mobile implementations require additional settings. 
+
+Navigate to your **InMoment Settings > API** to add your **Client ID** to the respective part of the Segment Settings UI.
 
 **IMPORTANT:**  The incoming responses and surveys will not be tied to a user until you [identify](https://segment.com/docs/connections/destinations/catalog/wootric-by-inmoment/#identify) your user.
 
