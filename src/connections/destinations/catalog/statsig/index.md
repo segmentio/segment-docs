@@ -22,7 +22,7 @@ Statsig supports the following methods, as specified in the [Segment Spec](/docs
 
 ### Page
 
-If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](https://segment.com/docs/connections/spec/page/) to learn about what it does. An example call would look like:
+Send [Page](/docs/connections/spec/page) calls to Statsig. For example:
 
 ```js
 analytics.page("Home")
@@ -36,11 +36,11 @@ Segment sends Page calls to Statsig as:
 }
 ```
 
-These events will be automatically included in any experiments running on Statsig and will show up in all Metrics data.
+These events are included in any experiments running on Statsig and will show up in all Metrics data.
 
 ### Screen
 
-If you aren't familiar with the Segment Spec, take a look at the [Screen method documentation](https://segment.com/docs/connections/spec/screen/) to learn about what it does. An example call would look like:
+Send [Screen](/docs/connections/spec/screen) calls to Statsig. For example:
 
 ```obj-c
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -54,11 +54,11 @@ Segment sends Screen calls to Statsig as:
 }
 ```
 
-These events will be automatically included in any experiments running on Statsig and will show up in all Metrics data.
+These events are included in any experiments running on Statsig and will show up in all Metrics data.
 
 ### Track
 
-If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
+Send [Track](/docs/connections/spec/track) calls to Statsig. For example:
 
 ```js
 analytics.track('Login Button Clicked')
@@ -72,4 +72,4 @@ Segment sends Track calls to Statsig as:
 }
 ```
 
-These events will be automatically included in any experiments running on Statsig and will show up in all Metrics data.
+These events are included in any experiments running on Statsig and will show up in all Metrics data.
