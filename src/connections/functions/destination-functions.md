@@ -408,7 +408,21 @@ If any of your deployed function instances are failing consistently, they will a
 
 ### Data control
 
-You can use [Destination Filters](/docs/connections/destinations/destination-filters/) or [Privacy Portal](/docs/privacy/portal/) to manage what events and, of those events, which event properties are sent to your destination function.
+In addition to using [Destination Filters](/docs/connections/destinations/destination-filters/) and the [Privacy Portal](/docs/privacy/portal/) to manage which events and properties are sent to your destination function, you can reference the destination function directly in the integrations object of the Segment payload. For example:
+
+```json
+...
+"integrations": {
+  "All": false,
+  "Amplitude": true,
+  "Customer.io": true,
+  "Google Analytics": true,
+  "My Destination Function (My Workspace)": true
+}
+...
+```
+
+In the example above, the integrations object directly references and enables the `My Destination Function`. Be sure to include the workspace name in which the Destination Function is created, as shown. Like all items in the integration object, Destination Functions (and workspace names) are case sensitive. 
 
 ## Destination functions FAQs
 
