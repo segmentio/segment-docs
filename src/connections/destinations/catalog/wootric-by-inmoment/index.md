@@ -9,7 +9,7 @@ hide-dossier: true
 
 [InMoment (formerly Wootric)](https://www.wootric.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the modern customer feedback management platform that brands around the globe use to make experience their competitive advantage.
 
-The InMoment Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-wootric).
+The InMoment Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/wootric).
 
 This document was last updated on January 23, 2020. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [contact InMoment Support](mailto:support@wootric.com)!
 
@@ -26,7 +26,7 @@ This document was last updated on January 23, 2020. If you notice any gaps, out-
 
 ### Mobile
 
-1. For mobile implementations additional settings are required. Navigate to your InMoment Settings > API to add in your "Client ID" and "Client Secret" to the respective parts of the Segment Settings UI.
+1. For mobile implementations additional settings are required. Navigate to your InMoment Settings > API to add in your "Client ID" to the respective parts of the Segment Settings UI.
 
 **IMPORTANT:**  The incoming responses and surveys will not be tied to a user until you [identify](https://segment.com/docs/connections/destinations/catalog/wootric-by-inmoment/#identify) your user.
 
