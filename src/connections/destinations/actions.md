@@ -20,7 +20,8 @@ Each Actions-framework Destination you see in the Segment catalog represents a f
 - [Braze (Actions) Web](/docs/connections/destinations/catalog/actions-braze-web)
 - [Braze (Actions) Cloud](/docs/connections/destinations/catalog/actions-braze-cloud)
 - [Slack (Actions)](/docs/connections/destinations/catalog/actions-slack)
-- [Fullstory (Actions)](/docs/connections/destinations/catalog/actions-fullstory)
+- [FullStory (Actions)](/docs/connections/destinations/catalog/actions-fullstory)
+- [Customer.io (Actions)](/docs/connections/destinations/catalog/actions-customer-io)
 
 ## Destination Actions compatibility
 
