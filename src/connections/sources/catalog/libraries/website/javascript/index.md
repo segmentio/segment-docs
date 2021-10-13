@@ -726,8 +726,8 @@ When developing against Analytics 2.0, the plugins you write can augment functio
 
 ### Plugin Categories
 Plugins are bound by Analytics 2.0 which handles operations such as observability, retries, and error handling. There are two different categories of plugins:
-1. **Critical**: Analytics.js expects this plugin to be loaded before starting event delivery. Failure to load a critical plugin halts event delivery. Use this category sparingly, and only for plugins that are critical to your tracking.
-2. **Non-Critical**: Analytics.js can start event delivery before this plugin finishes loading. This means your plugin can fail to load independently from all other plugins. For example, every Analytics.js destination is a non-critical plugin. This makes it possible for Analytics.js to continue working in case a partner destination fails to load, or in case users have ad blockers turned on that are targeting specific destinations.
+* **Critical Plugins**: Analytics.js expects this plugin to be loaded before starting event delivery. Failure to load a critical plugin halts event delivery. Use this category sparingly, and only for plugins that are critical to your tracking.
+* **Non-critical Plugins**: Analytics.js can start event delivery before this plugin finishes loading. This means your plugin can fail to load independently from all other plugins. For example, every Analytics.js destination is a non-critical plugin. This makes it possible for Analytics.js to continue working in case a partner destination fails to load, or in case users have ad blockers turned on that are targeting specific destinations.
 
 > info ""
 > Non-critical plugins are only non-critical from a loading standpoint. A crash in a before plugin can still halt the event delivery pipeline.
