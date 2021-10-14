@@ -8642,14 +8642,14 @@ items:
     description: Sends pages with names to FullStory as tracking events.
     required: false
     label: Track Named Pages
-- display_name: Fullstory (Actions)
-  name: Fullstory (Actions)
+- display_name: FullStory (Actions)
+  name: FullStory (Actions)
   slug: actions-fullstory
   hidden: false
   url: connections/destinations/catalog/actions-fullstory
   previous_names:
   - Fullstory
-  - Fullstory (Actions)
+  - FullStory (Actions)
   website: http://www.fullstory.com
   status: PUBLIC_BETA
   categories:
