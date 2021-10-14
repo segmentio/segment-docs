@@ -1,7 +1,13 @@
 ---
 title: Salesforce Live Agent Destination
 strat: salesforce
+hide-dossier: true
+hidden: true
+published: false
 ---
+
+> info ""
+> This destination is in Private Beta, and not publicly available. For more information, contact [Segment Support](https://segment.com/help/contact/).
 
 ## Getting Started
 
