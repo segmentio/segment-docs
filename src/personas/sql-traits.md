@@ -207,7 +207,7 @@ The result set is capped at 10 million rows.
 
 ### How often does Segment query the customer's data warehouse?
 
-Segment queries the data warehouse every 12 hours by default, but can query up to hourly. [Contact us](https://segment.com/help/contact/) for customized schedules.
+For each SQL Trait you create, you can set a compute schedule to query the data warehouse up to once per hour. Your query may run at any given time during the hour you select.
 
 ### What identifiers can I use to query a list?
 
