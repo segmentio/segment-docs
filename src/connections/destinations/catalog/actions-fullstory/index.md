@@ -1,5 +1,5 @@
 ---
-title: Fullstory (Actions)
+title: FullStory (Actions)
 hide-boilerplate: true
 hide-dossier: true
 ---
