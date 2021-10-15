@@ -8,8 +8,6 @@ hide-personas-partial: true
 
 You can browse the code on GitHub for [Analytics.js in Device-mode](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/mixpanel), [iOS](https://github.com/segment-integrations/analytics-ios-integration-mixpanel) and [Android](https://github.com/segment-integrations/analytics-android-integration-mixpanel).
 
-If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](mailto:docs-feedback@segment.com)!
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
@@ -34,27 +32,31 @@ By default, the Page call is transformed to Mixpanel events. This sends all `pag
 
 You can disable this default by changing the "Track All Pages to Mixpanel with a Consolidated Event Name" in the Mixpanel destination settings.
 
-If you want to track the `page` or `screen` calls to Mixpanel with the name or category in the event name, we offer three more options for sending page/screen calls.
-
-> note ""
-> **Note:** Beginning with "Consolidate Page" calls, the following options are each *mutually exclusive*. [See the code for details](https://github.com/segmentio/analytics.js-integrations/blob/master/integrations/mixpanel/lib/index.js#L96-L139)
+If you want to track the `page` or `screen` calls to Mixpanel with the name or category in the event name, Segment offers these options to send page/screen calls:
 
 1. Track All Pages to Mixpanel with a Consolidated Event Name
 2. Track all Pages to Mixpanel
 3. Track Categorized Pages to Mixpanel
 4. Track Named Pages to Mixpanel
 
-If you select "Track all Pages to Mixpanel", all `page` calls regardless of how you have customized it will send a `Loaded A Page`. Even if you have the other options enabled, we will only send this call to prevent double counting your pageviews.
+> info ""
+> Beginning with "Consolidate Page" calls, the following options are each *mutually exclusive*. [See the code for details](https://github.com/segmentio/analytics.js-integrations/blob/master/integrations/mixpanel/lib/index.js#L96-L139)
 
-If you select "Track Categorized Pages to Mixpanel", we will send a `Viewed [category] Page` event.
 
-If you select "Track Named Pages to Mixpanel", we will send a `Viewed [name] Page` event.
 
-**Note**: If both Option 2 and 3 are enabled, we will give precedence to `category`. If you pass both `category` and `name`, (e.g. `analytics.page('category', 'name');`), we will send a `Viewed category name Page` to Mixpanel.
+If you select "Track all Pages to Mixpanel", all `page` calls regardless of how you have customized it will send a `Loaded A Page`. Even if you have the other options enabled, Segment sends this call to prevent double counting your pageviews.
 
-In short, Segment will only send 1 event to Mixpanel per `page` call.
+If you select "Track Categorized Pages to Mixpanel", Segment sends a `Viewed [category] Page` event.
+
+If you select "Track Named Pages to Mixpanel", Segment sends a `Viewed [name] Page` event.
+
+> info ""
+> If both Option 2 and 3 are enabled, Segment gives precedence to `category`. If you pass both `category` and `name`, (for example, `analytics.page('category', 'name');`), Segment sends a `Viewed category name Page` to Mixpanel.
+
+In short, Segment sends one event to Mixpanel per `page` call.
 
 ## Identify
+
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
@@ -68,13 +70,14 @@ The first thing you'll want to do is to identify your users so Mixpanel knows wh
 
 ### People
 
-Segment doesn't send data to Mixpanel People by default, since this usually requires upgrading your Mixpanel account. To enable Mixpanel People, change the "Use Mixpanel People" setting in your Segment Settings UI.
+Segment doesn't send data to Mixpanel People by default, since this usually requires upgrading your Mixpanel account. To enable Mixpanel People, change the "Use Mixpanel People" setting in the Mixpanel Destination settings in Segment.
 
 To add people properties in Mixpanel before you know the user's unique database `userId`, you can identify `traits` without the `userId`.
 
-**Note:** this only works in Analytics.js and our mobile SDKs.
+> info ""
+> This only works in Analytics.js and the Segment mobile SDKs.
 
-Your `identify` call would look like this in Analytics.js if you only want to set people properties without a `userId`:
+The `identify` call would look like this in Analytics.js if you only want to set people properties without a `userId`:
 
 ```js
 analytics.identify({
@@ -109,9 +112,10 @@ If the group call **does not** have a group trait that matches the Group Identif
 
 ### Group using Device-mode
 
-When you call the Identify method from the client in either a browser using Analytics.js or one of our mobile SDKs a bunch of things happen:
+When you use Analytics.js, you must set a `userId` value, or Mixpanel will ignore Group calls.
+When using Analytics.js, a `userId` must be set or group calls to Mixpanel will be ignored. When you call the Identify method from the client in either a browser using Analytics.js or one a mobile SDKs, several things occur:
 
-We start by recognizing and translating our [special traits](/docs/connections/spec/identify/#traits) so that they fit the expectations of Mixpanel's API. The table below shows the mappings. You'll pass the key on the left into Segment and we will transform it to the key on the right before sending to Mixpanel.
+Segment recognizes and translates the [special traits](/docs/connections/spec/identify/#traits) so that they fit the expectations of Mixpanel's API. The table below shows the mappings. Pass the key on the left and Segment transforms it to the key on the right before sending to Mixpanel.
 
 <table>
   <tr>
@@ -146,7 +150,7 @@ We start by recognizing and translating our [special traits](/docs/connections/s
 
 ### Group using Cloud-mode
 
-When you call the Identify method from any of our server libraries, we create or update the user in Mixpanel People with the traits you provide. Calling `identify` doesn't create any users in the standard Mixpanel reporting interface since that only supports `track` events.
+When you call the Identify method from any of Segment's server libraries, Segment creates or updates the user in Mixpanel People with the traits you provide. Calling `identify` doesn't create any users in the standard Mixpanel reporting interface since that only supports `track` events.
 
 You won't see server-side `traits` appear as super-properties on any events you track. This is because Mixpanel [has no REST API](https://github.com/mixpanel/mixpanel-node/issues/48) for setting [super properties](https://mixpanel.com/docs/managing-users/managing-user_advanced/specific-properties) for a `distinct_id`, so [`identify`](/docs/connections/spec/identify/) calls only affect Mixpanel People.
 
@@ -156,21 +160,21 @@ If you use Cloud-mode, you must explicitly include the grouping value as an even
 
 ### Register Super Properties
 
-By default, each trait (i.e. properties in an `identify` call) is registered as a super property. This does not require passing a `userId` in the `identify` call. You can pass a `traits` object by itself and it will still register the traits as super properties.
+By default, each trait (that is, properties in an `identify` call) is registered as a super property. This does not require passing a `userId` in the `identify` call. You can pass a `traits` object by itself and it will still register the traits as super properties.
 
-We also allow you to disable the default behavior and register super properties explicitly by unchecking "Set All Traits as Super Properties or People Properties By Default" and explicitly specifying in the traits or properties you want us to register as super properties in Segment's Mixpanel destination panel. [Check out the documentation here](#explicitly-set-people-properties-and-super-properties)
+Disable **Set All Traits as Super Properties or People Properties By Default** to disable the default behavior and register super properties explicitly. For more information, see [Explicitly set People Properties and Super Properties](#explicitly-set-people-properties-and-super-properties).
 
 #### Set People Properties
 
-If you've enabled Mixpanel People in your Segment settings, we also call Mixpanel's `people.set` with the same `traits` object. There's no need for an additional API call to populate Mixpanel People.
+If you've enabled Mixpanel People in your Segment settings, Segment calls Mixpanel's `people.set` with the same `traits` object. There's no need for an additional API call to populate Mixpanel People.
 
-We also allow you to disable the default behavior and set people properties explicitly by unchecking `Set All Traits as Super Properties or People Properties By Default` and explicitly specifying in the traits or properties you want us to set as people properties in the Mixpanel destination panel in Segment. Segment automatically includes any trait on an identify that matches one of Mixpanel's special properties, which you can see in the table above. [Check out the documentation here](#explicitly-set-people-properties-and-super-properties)
+Disable **Set All Traits as Super Properties or People Properties By Default** to disable the default behavior and register super properties explicitly. Segment automatically includes any trait on an identify that matches one of Mixpanel's special properties, which you can see in the table above. For more information, see [Explicitly set People Properties and Super Properties](#explicitly-set-people-properties-and-super-properties).
 
 If you call `identify` without a `userId`, it may not set the People Properties inside Mixpanel, but it will cache those traits for later use with Segment's `analytics.js`. It is best practice to always call `identify` with a `userId`.
 
 ### Arrays
 
-For array type traits passed to `identify` calls, we will use Mixpanel's `people.union` to union (append ignoring duplicates) them to their existing values. If the trait doesn't exist a new array will be created for you. To clear the contents of the an array trait you can pass an empty array `[]`.
+For array type traits passed to `identify` calls, Segment uses Mixpanel's `people.union` to union (append ignoring duplicates) them to their existing values. If the trait doesn't exist a new array will be created for you. To clear the contents of the an array trait you can pass an empty array `[]`.
 
 ## Track
 
@@ -184,7 +188,7 @@ You should use the [`track`](/docs/connections/spec/track/) method to accomplish
 
 ### Track Charge
 
-If Mixpanel People is enabled in your Segment settings and you include an event property called `revenue`, we'll track a charge to the current user.
+If Mixpanel People is enabled in your Segment settings and you include an event property called `revenue`, Segment tracks a charge to the current user.
 
 ### Reserved Properties
 
@@ -207,16 +211,16 @@ As soon as you have a `userId` for a visitor that was previously anonymous you'l
 analytics.alias('anonId','newUserId');
 ```
 
-You'll also want to `track` the action that caused the user to be identified or created. Read our [guide on how to identify new users](/docs/connections/spec/best-practices-identify/) to learn why.
+You can `track` the action that caused the user to be identified or created. For more information, see [Best Practices for Identifying Users](/docs/connections/spec/best-practices-identify/).
 
 Read more about how Mixpanel recommends using `alias` [in their docs](https://mixpanel.com/docs/integration-libraries/using-mixpanel-alias).
 
 > success ""
-> We recommend aliasing on the client is recommended whenever possible, due to technical limitations with aliasing server-side.
+> Segment recommends that you alias on the client whenever possible, due to technical limitations with aliasing server-side.
 
 ### Alias using Device-mode
 
-In client-side Javascript you only need to pass the new identified `userId`. We automatically alias the old anonymous `id` to your new `userId`.
+In client-side Javascript you only need to pass the new identified `userId`. Segment aliases the old anonymous `id` to your new `userId`.
 
 Here's a Javascript example where the new `userId` is `12345`:
 
@@ -232,14 +236,16 @@ If an `identify` or `track` call arrives to Mixpanel with a new `distinct_id` to
 
 However, in cases when events are processed too quickly, before their corresponding alias, your calls can result in split/duplicate profiles.
 
-Mixpanel's client-side Javasript library fixes this issue by continuing to send `track` calls to the original mixpanel `distinct_id` while the records update.
-**To use that protection and avoid creating split profiles and broken funnels, we recommend doing all aliasing for Mixpanel on the client side through Analytics.js**
+Mixpanel's client-side Javascript library fixes this issue by continuing to send `track` calls to the original mixpanel `distinct_id` while the records update.
+
+> success ""
+> Segment recommends that you alias for Mixpanel on the client side through Analytics.js to avoid creating split profiles and broken funnels.
 
 However, in certain circumstances, despite the risk of duplicate profiles, you may still wish to send the calls server-side. In those cases, there are two options for calling [`alias`](/docs/connections/spec/alias/) from your servers:
 
 #### In Conjunction with Client-Side Tracking
 
-If you're tracking anonymous users on the client side either from a browser or one of our mobile SDK you'll need to pass the Mixpanel `distinct_id` from the browser to your servers in order to [`alias`](/docs/connections/spec/alias/) it to the new `userId`.
+If you track anonymous users on the client side either from a browser or one of a mobile SDK, pass the Mixpanel `distinct_id` from the browser to your servers in order to [`alias`](/docs/connections/spec/alias/) it to the new `userId`.
 
 First, use [`analytics.ready`](/docs/connections/sources/catalog/libraries/website/javascript#ready) to grab the Mixpanel `distinct_id`:
 
@@ -263,11 +269,11 @@ analytics.track({
   event: 'Connected Facebook'
 });
 ```
-As you can see we recommend flushing the [`alias`](/docs/connections/spec/alias) to give Mixpanel a bit of extra time to process it on their side before you [`identify`](/docs/connections/spec/identify) and [`track`](/docs/connections/spec/track).
+Segment recommends that you flush the [`alias`](/docs/connections/spec/alias) to give Mixpanel more time to process it on their side before you [`identify`](/docs/connections/spec/identify) and [`track`](/docs/connections/spec/track).
 
 #### Tracking Exclusively Server Side
 
-If you're tracking anonymous users in one of our server-side libraries that makes things a lot easier. All you have to do is [`alias`](/docs/connections/spec/alias/) the anonymous `id` to the new `userId`.
+If you're tracking anonymous users with a server-side library, you can [`alias`](/docs/connections/spec/alias/) the anonymous `id` to the new `userId`.
 
 Here's a Python example of the [`alias`](/docs/connections/spec/alias/), [`identify`](/docs/connections/spec/identify/), [`track`](/docs/connections/spec/track/) sequence where the anonymous `id` was `92fh49fqh9849hf` and the new `userId` is `12345`:
 
@@ -278,15 +284,16 @@ analytics.flush() # flush the alias
 analytics.identify('12345')
 analytics.track('12345', 'Registered')
 ```
-As you can see we recommend flushing the [`alias`](/docs/connections/spec/alias) to give Mixpanel a bit of extra time to process it on their side before you [`identify`](/docs/connections/spec/identify) and [`track`](/docs/connections/spec/track).
 
-## Best Practises
+Segment recommends that you flush the [`alias`](/docs/connections/spec/alias) to give Mixpanel more time to process it on their side before you [`identify`](/docs/connections/spec/identify) and [`track`](/docs/connections/spec/track).
+
+## Best Practices
 
 ### Collecting contextual properties
 
-If you are sending events server side, depending on your library (JS, mobile, or server), we will map as many [Mixpanel supported contextual properties](https://mixpanel.com/help/questions/articles/what-properties-do-mixpanels-libraries-store-by-default) as we can.
+If you send events server side, depending on your library (JS, mobile, or server), Segment maps as many [Mixpanel supported contextual properties](https://mixpanel.com/help/questions/articles/what-properties-do-mixpanels-libraries-store-by-default) as possible.
 
-You can check out which [context properties are being automatically collected by any Segment library](/docs/connections/spec/common/). If you are using a library that does not support a certain contextual property, you can still send them manually with your events, as long as it is sent in accordance with our [spec](/docs/connections/spec/common/).
+You can see which [context properties are being automatically collected by any Segment library](/docs/connections/spec/common/). If you use a library that does not support a certain contextual property, you can still send them manually with your events, as long as it is sent in accordance with the [spec](/docs/connections/spec/common/).
 
 For example, if you want to send `utm` parameters with your server side library, you can attach a `context.campaign` object like this:
 
@@ -312,7 +319,7 @@ analytics.track({
 });
 ```
 
-We do not map `$library_version` since that is reserved for Mixpanel's library version, not Segment's. We do not map to `$brand`.
+Segment does not map `$library_version` since that is reserved for Mixpanel's library version, not Segment's. Segment does not map to `$brand`.
 
 - - -
 
@@ -324,7 +331,7 @@ Mixpanel discontinued the Autotrack feature in February 2021. The feature is no 
 
 ### People
 
-By default we don't send data to Mixpanel People since it usually requires upgrading your Mixpanel account. If you want to enable Mixpanel People simply check the box for: **Use Mixpanel People** from your source destinations page in the Mixpanel sheet.
+Segment doesn't send data to Mixpanel People by default, since this usually requires upgrading your Mixpanel account. To enable Mixpanel People, change the "Use Mixpanel People" setting in the Mixpanel Destination settings in Segment.
 
 If you want to add people properties in Mixpanel before you know the user's unique database `userId` you can identify `traits` without the `userId`.
 
@@ -342,7 +349,7 @@ analytics.identify({
 
 ### UTM Campaign Parameters
 
-Since Segment's client-side javascript library (`analytics.js`) loads `mixpanel.js` in the background, you'll get the exact same functionality of Mixpanel around UTM Campaign Paramters as you would when using Mixpanel directly.
+Since Segment's client-side javascript library (`analytics.js`) loads `mixpanel.js` in the background, you'll get the exact same functionality of Mixpanel around UTM Campaign Parameters as you would when using Mixpanel directly.
 
 [Read more in Mixpanel's UTM docs](https://mixpanel.com/help/questions/articles/can-i-track-google-analytics-style-utm-tags-with-mixpanel)
 
@@ -372,35 +379,37 @@ analytics.track({
 
 ### Explicitly Set People Properties and Super Properties
 
-We used to set all of your traits and properties as both Super Properties and People Properties (If you had Mixpanel People enabled) but now Mixpanel allows you to segment your reports by both People Properties and Super Properties. In order to give you better precision and control over what property or trait gets set as a Super Property or People Property, you can uncheck **Set All Traits as Super Properties or People Properties By Default** and pass in the properties or traits that you want to send to Mixpanel as People or Super Properties as shown below. We'll still pass through all of Mixpanel's special traits as People Properties so you only need to add the ones that aren't on [this list.](#group-using-device-mode) Note that we'll only set People Properties off of .identify() calls.
+Previously, Segment set all traits and properties as both Super Properties and People Properties (If you had Mixpanel People enabled). Now Mixpanel allows you to segment your reports by both People Properties and Super Properties. To give you better precision and control over what property or trait gets set as a Super Property or People Property, you can disable **Set All Traits as Super Properties or People Properties By Default** and pass in the properties or traits that you want to send to Mixpanel as People or Super Properties as shown below. Segment passes through all of Mixpanel's special traits as People Properties so you only need to add the ones that aren't on [this list](#group-using-device-mode). 
+
 
 ![mixpanel people properties list](images/mixpanelpeoplesuperprops.png)
 
 ### Incrementing events
 
-You don't need to add any extra code to increment event counts for Mixpanel people, as long as they are "known users". Tell us which events need to be incremented and we'll take care of the rest:
+You don't need to add extra code to increment event counts for Mixpanel people, as long as they are "known users". Supply the events that should be incremented.
 
 ![mixpanel increment events list](images/mixpanelincrementinpeople.png)
 
 You can find this in the **Advanced Options** of your Mixpanel settings on your Segment Destinations page.
 
-For each event name listed, we automatically call Mixpanel `increment`, and set a user trait of `Last + {{ event.name }}`.
+For each event name listed, Segment calls Mixpanel `increment`, and set a user trait of `Last + {{ event.name }}`.
 
-For example, if you add **Logged In** to the list of increment events, we will increment a user trait called **Logged In** and set a trait called **Last Logged In** with the current date and time.
+For example, if you add **Logged In** to the list of increment events, Segment increments a user trait called **Logged In** and set a trait called **Last Logged In** with the current date and time.
 
 If you'd like to add an increment for viewing a specific page or screen, ensure you have the setting "Track Named Pages" selected and use the dynamically generated event name under "Events to Increment in People." For example, `.page('Signup')` would translate to "*Viewed* Signup *Page*" and `.screen('Listing')` would translate to "*Viewed* Listing *Screen*".
 
-Remember, we will only send one event per `page` call.
+Remember, Segment sends one event per `page` call.
 
-**Note**: Increment only works for "known users", so if your track call is being made server-side, you need to pass in a userId. If your track call is being made client-side, you need to identify your user first.
+> info ""
+> Increment works for "known users", so if your track call is being made server-side, you need to pass a `userId`. If your track call is being made client-side, you need to identify the user first.
 
 ### Incrementing properties
 
-To increment at the property level, simply tell us which properties you'd like us to increment using the **Properties to increment** setting and we will call Mixpanel's `increment` for you when you attach a number to the property (e.g. `'items purchased': 5`)
+To increment at the property level, tell Segment which properties you want to increment using the **Properties to increment** setting and Segment calls Mixpanel's `increment` for you when you attach a number to the property (for example, `'items purchased': 5`)
 
 ### Reset Mixpanel Cookies
 
-When a user logs out, we recommend that you cal `analytics.reset();` to wipe Segment cookie. Currently this function is not mapped to Mixpanel's reset method. If you are having issues with `distinct_id` such as not being matched with the right user, you should add this to your logout flow:
+When a user logs out, Segment recommends that you call `analytics.reset();` to clear the Segment cookie. This function is not mapped to Mixpanel's reset method. If you have issues with `distinct_id` for example, if it is not matched with the right user, you should add this to your logout flow:
 
 ```javascript
 analytics.ready(function(){
@@ -409,7 +418,7 @@ analytics.ready(function(){
 ```
 ### Ignore IP from Server to Disable Geo-location in Mixpanel People
 
-If you'd like to avoid having any ip address sent to Mixpanel and by doing so, turn off geo-location for server-side users, pass the `context.ip` as 0.
+To avoid having any IP address sent to Mixpanel and by doing so, turn off geo-location for server-side users, pass the `context.ip` as 0.
 
 Here's a python example:
 
@@ -424,9 +433,9 @@ Provide `context.ip` to all your [`identify`](/docs/connections/spec/identify/),
 
 ### Sending data to Mixpanel's European Union Endpoint
 
-If you'd like to implement Mixpanel in the European Union you will need to enable the setting "Enable European Union Enpoint" within the Mixpanel settings in the app. When this setting is enabled, Segment will automatically update the endpoint for any data sent from one of our server-side libraries or from a browser using Analytics.js or the iOS SDK.
+To implement Mixpanel in the European Union, enable the setting "Enable European Union Endpoint" on the Settings tab of the Mixpanel destination. When this setting is enabled, Segment updates the endpoint for any data sent from server-side libraries, browsers using Analytics.js, or the iOS SDK.
 
-If you are sending data using our Android SDK, you will need to specify the different endpoints using meta-data tags. On your app's `AndroidManifest.xml` file, you need to add the following tags under your `<application>` tags to override the track, engage, and group endpoints:
+If you send data with the Android SDK, specify the different endpoints with meta-data tags. On your app's `AndroidManifest.xml` file, add the following tags under your `<application>` tags to override the track, engage, and group endpoints:
 
 ```xml
 <meta-data android:name="com.mixpanel.android.MPConfig.EventsEndpoint"
@@ -445,7 +454,7 @@ See the [Mixpanel documentation on their European Union endpoint](https://develo
 
 If you already have an app deployed with the Segment library, and you just enabled Mixpanel mobile, it can take up to an hour for all your mobile users to refresh their Segment settings cache, and learn about the new service that you want to send to.
 
-After the settings cache refreshes, our library automatically starts sending data to Mixpanel.
+After the settings cache refreshes, the library starts to send data to Mixpanel.
 
 Also worth noting, Mixpanel's SDK only submits requests to the Mixpanel servers when the app is backgrounded. That means you may see events in your Segment debugger while testing, but those requests won't actually be forwarded to Mixpanel until the app gets sent to the background.
 
@@ -486,29 +495,32 @@ analytics.identify(
 
 Push notifications are only available for projects bundling the Segment-Mixpanel SDK.
 
-**Note**: You must set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) documentation._
+> info "" 
+> Set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) documentation.
 
 ### In-App Notifications
 
-In-app notifications are only available for projects either bundling the Segment-Mixpanel SDK or using the client-side Web integration. You must set up your in-app notification handlers by calling into native Mixpanel methods.
+In-app notifications are only available for projects either bundling the Segment-Mixpanel SDK or using the client-side Web integration. Configure in-app notification handlers by calling into native Mixpanel methods.
 
-**Note**: You can read more about how to approach this in our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) documentation.
+> info ""
+> Read more about how to approach this in the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) documentation.
 
 ### A/B Testing
 
-**Note**: You must set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) documentation.
+> info ""
+> Configure push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) documentation.
 
 #### Device Connection Mode (Bundled Mobile SDK)
 
-We support Mixpanel push notifications automatically using the [didRegisterForRemoteNotificationsWithDeviceToken method](/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications).
+Segment supports Mixpanel push notifications automatically using the [didRegisterForRemoteNotificationsWithDeviceToken method](/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications).
 
-For *in-app* notifications and surveys, you can follow the Mixpanel documentation [here](https://mixpanel.com/help/reference/ios-inapp-messages). You can use the native functionality to control when to show an in-app message by following the instructions [here](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and calling the native Mixpanel methods.
+For *in-app* notifications and surveys, follow the Mixpanel documentation [here](https://mixpanel.com/help/reference/ios-inapp-messages){:target="_blank"}. Use the native functionality to control when to show an in-app message by following the instructions [here](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and calling the native Mixpanel methods.
 
-#### Cloud Connection Mode (Unbundled/ Serverside)
+#### Cloud Connection Mode (Unbundled/ Server-side)
 
-If you are using Mixpanel server side and you have access to your users' device tokens, you can import into Mixpanel by sending the token using `context.device.token` as described in our [specs](/docs/connections/spec/common/#context) with an `identify` call. We will send the token as Mixpanel's special trait `$ios_devices`. This only works on iOS. In order to use push on Android, you must bundle the Mixpanel SDK.
+If you use Mixpanel server side and you have access to your users' device tokens, you can import into Mixpanel by sending the token using `context.device.token` as described in the [specs](/docs/connections/spec/common/#context) with an `identify` call. Segment sends the token as Mixpanel's special trait `$ios_devices`. This only works on iOS. In order to use push on Android, you must bundle the Mixpanel SDK.
 
-For example, using our [node library](/docs/connections/sources/catalog/libraries/server/node/):
+For example, using the [node library](/docs/connections/sources/catalog/libraries/server/node/):
 
 ```javascript
 analytics.identify({
@@ -574,7 +586,7 @@ You can send Personas Audiences to Mixpanel as `identify` or `track` calls. You 
 ![](images/pers-05-pdest-settings.png)
 
 
-When you send custom traits as `identify` calls, the name of the audience is added to the user’s profile as a user trait, with a boolean value to indicate if the user is in the audience. For example, when a user first completes an order in the last 30 days, we send an `identify` call with the property `order_completed_last_30days: true`. When this user no longer satisfies these criteria (for example when their last purchase was more than 30 days ago) Personas sets that value to `false`.
+When you send custom traits as `identify` calls, the name of the audience is added to the user’s profile as a user trait, with a boolean value to indicate if the user is in the audience. For example, when a user first completes an order in the last 30 days, Segment sends an `identify` call with the property `order_completed_last_30days: true`. When this user no longer satisfies these criteria (for example when their last purchase was more than 30 days ago) Personas sets that value to `false`.
 
 ![](images/pers-06-audience.png)
 
