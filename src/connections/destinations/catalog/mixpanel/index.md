@@ -109,7 +109,7 @@ If the group call **does not** have a group trait that matches the Group Identif
 
 ### Group using Device-mode
 
-When you call the Identify method from the client in either a browser using Analytics.js or one of our mobile SDKs a bunch of things happen:
+When using Analytics.js, a `userId` must be set or group calls to Mixpanel will be ignored. When you call the Identify method from the client in either a browser using Analytics.js or one of our mobile SDKs a bunch of things happen:
 
 We start by recognizing and translating our [special traits](/docs/connections/spec/identify/#traits) so that they fit the expectations of Mixpanel's API. The table below shows the mappings. You'll pass the key on the left into Segment and we will transform it to the key on the right before sending to Mixpanel.
 
