@@ -71,8 +71,9 @@ sections:
   section:
   - path: /connections/destinations/catalog/salesforce
     title: Salesforce destination
-  - path: /connections/destinations/catalog/salesforce-live-agent
-    title: Salesforce Live Agent destination
+  # This is in Private Beta
+  # - path: /connections/destinations/catalog/salesforce-live-agent
+  #   title: Salesforce Live Agent destination
   - path: /connections/destinations/catalog/salesforce-marketing-cloud
     title: Salesforce Marketing Cloud destination
   - path: /connections/destinations/catalog/salesforce-dmp

@@ -55,3 +55,4 @@ Smartly
 Hubspot
 Friendbuy
 Chargebee
+(?:L|l)ookback

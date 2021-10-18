@@ -3,6 +3,8 @@
 items:
 - slug: hubspot
   display_name: HubSpot
+  previous_names:
+  - HubSpot
   components:
   - type: WEB
   - type: CLOUD
@@ -107,3 +109,134 @@ items:
     description: Map your page calls to specific FriendBuy Widgets.
     required: false
     label: Page Widgets
+- slug: google-ads-classic
+  display_name: Google Ads (Classic)
+  name: Google Ads (Classic)
+  hidden: false
+  url: connections/destinations/catalog/google-ads-classic
+  previous_names:
+  - AdWords
+  - Google Ads (Classic)
+  website: https://adwords.google.com
+  status: PUBLIC
+  categories:
+  - Advertising
+  logo:
+    url: https://cdn.filepicker.io/api/file/O54PEswFQAC7ZZDLSBZ5
+  mark:
+    url: https://cdn.filepicker.io/api/file/R5kQQ2DMR0CuNdDbzPvr
+  methods:
+    track: true
+    identify: false
+    group: false
+    alias: false
+    page: true
+  platforms:
+    browser: true
+    mobile: true
+    server: true
+  components:
+  - code: https://github.com/segment-integrations/analytics.js-integration-adwords
+    type: browser
+  - code: >-
+      https://github.com/segmentio/integrations/tree/master/integrations/google-adwords
+    type: server
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: true
+  replay: false
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: false
+    summary: >-
+      accepts data in cloud-mode from all mobile sources, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
+  settings:
+  - name: conversionId
+    type: string
+    defaultValue: ''
+    description: >-
+      Your AdWords conversion identifier. It looks like `983265867`. You can opt
+      to override this on a per-event basis but at the very least this
+      conversion ID will serve as the ID used in page calls.
+    required: true
+    label: Conversion ID
+  - name: correctLat
+    type: boolean
+    defaultValue: true
+    description: >-
+      Enable this to set Limit Ad Tracking to `true` when
+      context.device.adTrackingEnabled is `false`.
+    required: true
+    label: Correct LAT Behavior
+  - name: eventMappings
+    type: mixed
+    defaultValue: []
+    description: AdWords behavior for each of your Segment Events is defined here.
+    required: true
+    label: Event Mappings
+  - name: linkId
+    type: string
+    defaultValue: ''
+    description: >-
+      The AdWords Link Id associated with Segment. The process for obtaining
+      this can be found
+      [here](https://support.google.com/adwords/answer/7365001). To create this
+      Link Id, you must input Segment's Provider Id: **7552494388**
+
+
+      **Important:** this setting is required only if you are using the new
+      AdWords for mobile implementations.
+    required: true
+    label: Link Id
+  - name: pageRemarketing
+    type: boolean
+    defaultValue: false
+    description: Enable this to send a remarketing tag with your page calls
+    required: true
+    label: Page Remarketing
+  - name: trackAttributionData
+    type: boolean
+    defaultValue: false
+    description: >-
+      If this setting is enabled, Segment will send successfully attributed
+      `Application Installed` events from AdWords as `Install Attributed` events
+      back into this source. These events will contain data about the AdWords
+      campaign that lead to the conversion. You can learn more about these
+      events [here](https://segment.com/docs/spec/mobile/#install-attributed).
+
+
+      **Important:** this feature is only available if you are using the new
+      AdWords version.
+    required: true
+    label: Track Attribution Data
+  - name: version
+    type: select
+    defaultValue: ''
+    description: >-
+      The current version of your AdWords account. If you have migrated your
+      AdWords account to the **new** AdWords interface at any point, you are
+      using version 2. Otherwise, please select version 1.
+    required: true
+    label: Version
+  - name: zeroedAttribution
+    type: boolean
+    defaultValue: false
+    description: >-
+      With the update to use analytics-ios v4.x SDK if adTrackingEnabled is set
+      to false, the advertisingId key will be deleted from the event. These
+      events will fail when sent to Google Adwords. To prevent these event
+      failures in this scenario enable this setting to set the IDFA to be zero'd
+      out (ie. '00000000-0000-0000-0000-000000000000') when sent to Google
+      Adwords. 
+    required: false
+    label: >-
+      Fallback to Zeroed IDFA when advertisingId key not present (Server-Side
+      Only)
