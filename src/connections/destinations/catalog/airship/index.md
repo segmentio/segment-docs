@@ -5,7 +5,7 @@ title: Airship Destination
 
 Airship gives brands the data, channels, orchestration and services they need to deliver push notifications, emails, SMS, in-app messages, and more to the right person at the right moment — building trust, boosting engagement, driving action, and growing value.
 
-[Airship Cloud-mode Destination integration](https://docs.airship.com/partners/segment/#destination) enables users to set Airship Tags and Custom Events through Segment's `identify`, `track`, and `group` API calls.
+[Airship Cloud-mode Destination integration](https://docs.airship.com/partners/segment/#destination) enables users to set Airship tags, attributes, and custom events through Segment's `identify`, `track`, and `group` API calls.
 
 Segment `track` API calls are received by Airship as Custom Events. The traits of the Segments `identify` API call are interpreted as either `tags` or `attributes`. Tags are all traits that contains a boolean value (either `true` or `false`). A trait which contains a non-boolean value -- and is known to Airship -- becomes an attribute.
 
@@ -35,7 +35,7 @@ Follow these steps to configure the integration
 5. For `attributes`, first [predefine them in Airship](https://docs.airship.com/guides/messaging/user-guide/audience/segmentation/attributes/#add-attributes).
 
 ## Requirements
-To use the Segment Destination integration, you must implement `Named Users` in Airship. The Segment UserID must match the Named User ID in Airship. If your `named_user_id` and `UserID` do not match, Airship will not be able to associate `identify` or `track` events to the proper user in Airship. You will not be able to issue automated messages or to attach user attributes from Segment within Airship.
+To use the Segment Destination integration, you must implement `Named Users` in Airship. The Segment UserID must match the Named User ID in Airship. If your `named_user_id` and `UserID` do not match, Airship will not be able to associate `identify`, `track`, or `group` events to the proper user in Airship. You will not be able to issue automated messages or to attach user attributes from Segment within Airship.
 
 See [Tags and Named Users](https://docs.airship.com/guides/audience/tags-named-users/) or the [Named Users API](https://docs.airship.com/api/ua/#tag/named-users) for more information about configuring named users.
 
@@ -81,8 +81,6 @@ analytics.track('Product Clicked', {
 
 The `track` API calls are sent to Airship as `track` events. As soon as a `track` event is received, Airship will create a custom event. The properties of the the `track` event are automatically added as properties on the custom event. If `revenue` is present for the `track` event, then it is set as the value of the custom event.
 
-Note that a custom event will not be created for a `track` event which has more than 20 properties.
-
 **Segment Track Events to Airship Custom Events**
 Airship custom events are used to trigger automated messages for Mobile App, Web Notifications, Email, and SMS messages.
 
@@ -94,21 +92,109 @@ Custom events and tags sent from Segment are automatically populated within Airs
 
 ## Group
 
-For more information about the [group API call](https://segment.com/docs/connections/spec/group/) review the Segment spec. An example call would look like:
+For more information about the [group API call](https://segment.com/docs/connections/spec/group/) review the Segment spec.
+
+When you call `group`, the integration sets either Airship tags or attributes for
+corresponding Segment traits. A *named user* must exist in Airship for the corresonding
+value of `userID` in Segment.
+
+**UserID in Segment group API call**
 
 ```
-analytics.group('1234', {
-  name: 'Initech',
-  industry: 'Technology',
-  employees: 329,
-  plan: 'enterprise',
-  totalBilled: 830
-});
+{
+...
+"userId": "test-user-69w86c"
+...
+}
 ```
 
-When you call `group`, Segment sends a custom attribute to Airship with the name `airship_segment_group_<groupId>`, where `<groupId>` is the group's ID passed as one of its parameters. For example, if the group's ID is `1234` then the custom attribute name is `airship_segment_group_1234`. The value of the custom attribute is `true`.
+**Named user in the correspnding Airship payload***
+```
+{
+"audience": {
+	"named_user_id": "test_user-69w86c"
+},
+...
+}
+```
 
-To take advantage of `group` features as tags, set up a tag group called `segment-integration-group` in Airship. A *named user* must exist for the `userID`.
+Airship tags are set for those Segment traits that contain a boolean value (either `true`
+or `false`). All tags from `group` API calls are added to the `segment-integration-group` tag
+group.
+
+**A Segment group call containing boolean traits**
+
+```
+...
+"traits:" {
+	"hiring": true,
+	"has-remote-employees": false,
+	...
+}
+...
+```
+
+**Setting the corresponding Airship tags**
+
+```
+...
+"add": {
+	"segment-integration-group": ["hiring"]
+},
+"remove": {
+	"segment_integration-group": ["has-remote-employees"]
+}
+...
+```
+
+For Segment traits that contain values of other types, such as numeric or text, Airship sets custom attributes. The integration maps the Segment group trait `name` to the Airship predefined attribute `company`.  All other traits are prefixed with `airship_segment_group_`. Names of nested traits also include their parent traits delimited by underscore (_).
+
+**A Segment group call containing non-boolean traits**
+
+```
+...
+"traits": {
+	"name": "Initech",
+	"industry": "Technology",
+	"employees": 329,
+	"address": {
+		"city": "Portland",
+		...
+	}
+}
+...
+```
+
+**Setting the corresponding Airship attributes**
+```
+...
+"attributes": [
+{
+	"action": "set",
+	"key": "company",
+	"value": "Initech",
+	...
+},
+{
+	"action": "set",
+	"key": "airship_segment_group_industry",
+	"value": "Technology",
+	...
+},
+{
+	"action": "set",
+	"key": "airship_segment_group_employees",
+	"value": 329,
+	...
+},
+{
+	"action": "set",
+	"key": "airship_segment_group_address_city",
+	"value": "Portland",
+	...
+}
+...
+```
 
 # Leveraging this data in Airship
 
