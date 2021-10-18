@@ -147,7 +147,7 @@ analytics.screen(title: "SomeScreen")
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-You can enable automatic screen tracking by using this [example plugin](https://github.com/segmentio/analytics-example-plugins/blob/main/plugins/swift/UIKitScreenTracking.swift){:target="_blank"}.
+You can enable automatic screen tracking by using this [example plugin](https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/UIKitScreenTracking.swift){:target="_blank"}.
 
 Once you add the plugin to your project, add it to your Analytics instance:
 
