@@ -3,6 +3,8 @@
 items:
 - slug: hubspot
   display_name: HubSpot
+  previous_names:
+  - HubSpot
   components:
   - type: WEB
   - type: CLOUD

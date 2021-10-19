@@ -2,11 +2,11 @@
 title: Airship Source
 ---
 
-[Airship](https://www.airship.com) gives brands the data, channels, orchestration and services they need to deliver push notifications, emails, SMS, in-app messages, and more to the right person in the right moment — building trust, boosting engagement, driving action and growing value.
+[Airship](https://www.airship.com) gives brands the data, channels, orchestration and services they need to deliver push notifications, emails, SMS, in-app messages, and more to the right person at the right moment — building trust, boosting engagement, driving action and growing value.
 
-Real-Time Data Stream automatically collects user-level data and sends the data to Segment for analysis or action through other Destination integrations. At Airship, we understand that seamlessly tying data across platforms can be a complex task. This integration removes the development so users can get back to understanding their audience and reaching them on their preferred channel.
+Real-Time Data Streaming automatically collects user-level data and sends the data to Segment for analysis or action through other Destination integrations. At Airship, we understand that seamlessly tying data across platforms can be a complex task. This integration removes the development so users can get back to understanding their audience and reaching them on their preferred channel.
 
-This Source integration is maintained by Airship. For any issues with the source, [contact the Airship Support team](mailto:partner-integration-ua@airship.com).
+This Source integration is maintained by Airship. For any issues with the source, [contact the Airship Support team](mailto:support@airship.com).
 
 > success ""
 > **Good to know**: This page is about the Airship Segment source, which sends data _into_ Segment. There's also a page about the [Airship Segment destination](/docs/connections/destinations/catalog/airship/), which receives data from Segment!
@@ -28,6 +28,10 @@ This Source integration is maintained by Airship. For any issues with the source
 Below is a table of events that Airship sends to Segment. These events will show up as tables in your warehouse, and as regular events in your other Destinations. Airship will send through the `userId` if available.
 
 <table>
+  <tr>
+    <td>Attribute Operation</td>
+    <td>Indicates a change in the device's attributes. Because attribute operations are related to a device they have a *device* field.</td>
+  </tr>
   <tr>
    <td>Open</td>
    <td>Occurs when a user opens your app.</td>
