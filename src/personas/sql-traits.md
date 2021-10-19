@@ -203,7 +203,7 @@ Happy Querying!
 
 ### Is there a limit to the result set that can be queried and imported?
 
-The result set is capped at 10 million rows.
+The result set is capped at 25 million rows.
 
 ### How often does Segment query the customer's data warehouse?
 
