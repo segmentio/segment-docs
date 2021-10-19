@@ -12,9 +12,8 @@ Segment offers a **Startup Program** to enable early startups to track data corr
 
 The Segment Startup Program includes three components:
 
-
 - Segment's **Startup Deal** - Participating startups receive $25,000* in annual credit toward our monthly [Team plan](https://segment.com/pricing/) for as long as they meet our eligibility requirements (up to 2 years).
-- Partner **Startup Deals** - We've partnered with other technology companies that offer valuable tools for startups to offer exclusive deals and promotions from marketing, data warehouse, and analytics tools. Check out the [list of deals](https://bit.ly/segment-partner-deals).
+- Partner **Startup Deals** - We've partnered with other technology companies that offer valuable tools for startups to offer exclusive deals and promotions from marketing, data warehouse, and analytics tools.
 - **Startup Resources** - Segment offers learning materials on topics like analytics, product-market fit, and more for founders to become experts on data analytics and making the most of Segment's technology.
 
 Interested companies can apply [here](http://segment.com/industry/startups).
@@ -49,4 +48,4 @@ Once you've used your total credits, you might be eligible to renew for another 
 Once you've been accepted to the Segment Startup Program, you can apply for the partner deals using [this form](http://bit.ly/segment-deal-redeem). (You can view a list of the available deals [here](https://bit.ly/segment-partner-deals).)
 
 **How do I know if my accelerator/incubator/VC firm has a relationship with Segment?**
-Ask your program manager to see if they participate in the Segment Startup Program. If they do not, you can request that they [apply to become a partner](https://airtable.com/shr84MIvVo4k8xbaO).
+Ask your program manager to see if they participate in the Segment Startup Program. If they do not, you can request that they [apply to become a partner](https://airtable.com/shr84MIvVo4k8xbaO){:target="_blank"}.
