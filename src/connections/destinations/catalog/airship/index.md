@@ -142,7 +142,7 @@ group.
 	"segment-integration-group": ["hiring"]
 },
 "remove": {
-	"segment_integration-group": ["has-remote-employees"]
+	"segment-integration-group": ["has-remote-employees"]
 }
 ...
 ```
