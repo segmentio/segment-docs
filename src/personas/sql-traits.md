@@ -157,7 +157,7 @@ When you're building your query, there are some requirements for the data your q
 - The query must return a column with a `user_id`, `email`, or `anonymous_id` (or `group_id` for account traits, if you have Personas for B2B enabled).
 - It must return at least one additional trait in addition to `user_id`/`group_id`, and no more than 25 total columns
 - The query must not return any `user_id`s with a `null` value, or any duplicate `user_id`s.
-- The query must not return more than 10 million rows.
+- The query must not return more than 25 million rows.
 - Each record must be less than 16kb in size to adhere to [Segment's maximum request size](/docs/connections/sources/catalog/libraries/server/http-api/#max-request-size).
 
 A successful preview returns a sample of users and their traits.
@@ -203,7 +203,7 @@ Happy Querying!
 
 ### Is there a limit to the result set that can be queried and imported?
 
-The result set is capped at 10 million rows.
+The result set is capped at 25 million rows.
 
 ### How often does Segment query the customer's data warehouse?
 
