@@ -41,7 +41,7 @@ See [Tags and Named Users](https://docs.airship.com/guides/audience/tags-named-u
 
 ## Identify
 
-To understand what the [identify API call](https://segment.com/docs/connections/spec/identify/) does, be sure to review the Segment spec. An example call would look like:
+To understand the Identify API call, review the Segment [Identify](/docs/connections/spec/identify/) spec. An example call  looks like:
 
 ```
 analytics.identify('jill', {
@@ -52,11 +52,12 @@ analytics.identify('jill', {
 
 The `identify` API calls are sent to Airship as `identify` events. When an `identify` event is received, Airship will use the `userId` to set attributes or tags for named users. To take advantage of attributes, you must first predefine them in Airship individually. To take advantage of identify features, in Airship you must set up a tag group called `segment-integration` and a named user must exist for the `userId`. The value of the property name will be either `true` or `false`.
 
-**Segment Identify Events to Airship Attributes**
+### Segment Identify Events to Airship Attributes
 
 Airship attributes are used for profile enrichment, message personalization, segment building, and user analytics.
 
-**Segment Identify Events to Airship Tags**
+## Segment Identify Events to Airship Tags
+
 Airship tags are used for profile enrichment, message triggering, segment building, and user analytics.
 
 Example use cases in Airship:
@@ -67,7 +68,7 @@ Example use cases in Airship:
 
 Use this destination to send `track` events to Airship for message triggering and analytics.
 
-For more information about the [track API call](https://segment.com/docs/connections/spec/track/) review the Segment spec. An example call would look like:
+For more information about the Track API call review the Segment [Track]((/docs/connections/spec/track/)) spec. An example call looks like:
 
 ```
 analytics.track('Product Clicked', {
@@ -81,7 +82,8 @@ analytics.track('Product Clicked', {
 
 The `track` API calls are sent to Airship as `track` events. As soon as a `track` event is received, Airship will create a custom event. The properties of the the `track` event are automatically added as properties on the custom event. If `revenue` is present for the `track` event, then it is set as the value of the custom event.
 
-**Segment Track Events to Airship Custom Events**
+### Segment Track Events to Airship Custom Events
+
 Airship custom events are used to trigger automated messages for Mobile App, Web Notifications, Email, and SMS messages.
 
 Example use cases:
@@ -92,13 +94,13 @@ Custom events and tags sent from Segment are automatically populated within Airs
 
 ## Group
 
-For more information about the [group API call](https://segment.com/docs/connections/spec/group/) review the Segment spec.
+For more information about the Group API call review the Segment [Group](/docs/connections/spec/group/) spec.
 
 When you call `group`, the integration sets either Airship tags or attributes for
-corresponding Segment traits. A *named user* must exist in Airship for the corresonding
+corresponding Segment traits. A *named user* must exist in Airship for the corresponding
 value of `userID` in Segment.
 
-**UserID in Segment group API call**
+### UserID in Segment group API call
 
 ```
 {
@@ -108,7 +110,7 @@ value of `userID` in Segment.
 }
 ```
 
-**Named user in the correspnding Airship payload***
+### Named user in the corresponding Airship payload
 ```
 {
 "audience": {
@@ -122,7 +124,7 @@ Airship tags are set for those Segment traits that contain a boolean value (eith
 or `false`). All tags from `group` API calls are added to the `segment-integration-group` tag
 group.
 
-**A Segment group call containing boolean traits**
+### A Segment group call with boolean traits
 
 ```
 ...
@@ -134,7 +136,7 @@ group.
 ...
 ```
 
-**Setting the corresponding Airship tags**
+### Setting the corresponding Airship tags
 
 ```
 ...
@@ -149,7 +151,7 @@ group.
 
 For Segment traits that contain values of other types, such as numeric or text, Airship sets custom attributes. The integration maps the Segment group trait `name` to the Airship predefined attribute `company`.  All other traits are prefixed with `airship_segment_group_`. Names of nested traits also include their parent traits delimited by underscore (_).
 
-**A Segment group call containing non-boolean traits**
+### A Segment group call with non-boolean traits
 
 ```
 ...
@@ -165,7 +167,7 @@ For Segment traits that contain values of other types, such as numeric or text, 
 ...
 ```
 
-**Setting the corresponding Airship attributes**
+### Setting the corresponding Airship attributes
 ```
 ...
 "attributes": [
@@ -196,12 +198,12 @@ For Segment traits that contain values of other types, such as numeric or text, 
 ...
 ```
 
-# Leveraging this data in Airship
+## Leverage this data in Airship
 
 The following guides further explain the different ways of leveraging this data with Airship.
 
-* [Cloud-mode Custom Events vs Audience Tags](https://docs.airship.com/guides/interaction/custom-events/#custom-events-vs-audience-tags)
-* [Message Targeting with Tags](https://docs.airship.com/guides/audience/tags-named-users/)
-* [Creating a Segment with Tags](https://docs.airship.com/tutorials/audience/segments-builder/)
-* [Message Automation with Event Triggering](https://docs.airship.com/tutorials/orchestration/automation/automation/)
-* [Message Personalization with Attributes](https://docs.airship.com/guides/messaging/user-guide/audience/segmentation/attributes/)
+* [Cloud-mode Custom Events vs Audience Tags](https://docs.airship.com/guides/interaction/custom-events/#custom-events-vs-audience-tags){:target="_blank"}
+* [Message Targeting with Tags](https://docs.airship.com/guides/audience/tags-named-users/){:target="_blank"}
+* [Creating a Segment with Tags](https://docs.airship.com/tutorials/audience/segments-builder/){:target="_blank"}
+* [Message Automation with Event Triggering](https://docs.airship.com/tutorials/orchestration/automation/automation/){:target="_blank"}
+* [Message Personalization with Attributes](https://docs.airship.com/guides/messaging/user-guide/audience/segmentation/attributes/){:target="_blank"}
