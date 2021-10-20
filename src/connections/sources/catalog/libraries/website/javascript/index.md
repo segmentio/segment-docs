@@ -11,7 +11,7 @@ strat: ajs
 Analytics.js 2.0, the latest version of Segment's JavaScript source, enables you to send your data to any tool without having to learn, test, or use a new API every time.
 
 > note ""
-> Analytics.js 2.0 is available to Segment customers subject to the terms of their subscription agreement with Segment. Analytics.js 2.0 is now an open-source project.
+> Analytics.js 2.0 is now available as an [open-source project](https://github.com/segmentio/analytics-next/).
 
 
 ## Benefits of Analytics.js 2.0
