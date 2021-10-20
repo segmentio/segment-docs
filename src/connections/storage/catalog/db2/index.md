@@ -87,10 +87,13 @@ database shortly.
 If your Db2 Warehouse is in a private network, be sure to [whitelist
 Segment's IP
 address](https://segment.com/docs/connections/storage/warehouses/faq/#which-ips-should-i-whitelist).
-Otherwise, we will not be able to load your data.
+Otherwise, Segment won't be able to load your data.
 
 ### Unique User
 
-We strongly recommend creating a unique User for the Segment Db2 Warehouse
+Segment recommends you to create a unique User for the Segment Db2 Warehouse
 connection to your Db2 Warehouse instance so that you can manage permissions
 separately.
+
+### SSL
+Always require SSL and make sure your data warehouse can only accept secure connections. Segment only connects to your data warehouse using SSL.
