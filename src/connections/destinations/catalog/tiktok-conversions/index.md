@@ -29,18 +29,18 @@ Follow the instructions below to enable your TikTok ads account, and add the Tik
 
 ### TikTok Requirements
 
-1. [Create a TikTok For Business account](https://ads.tiktok.com/marketing_api/docs?id=1702715936951297){target="_blank"}.
-2. [Register as a developer](https://ads.tiktok.com/marketing_api/docs?id=1702716323359809{target="_blank"}).
-3. [Create a developer application](https://ads.tiktok.com/marketing_api/docs?id=1702716474845185){target="_blank"}.
-4. Follow instructions for [Authorization](https://ads.tiktok.com/marketing_api/docs?id=1701890912382977){target="_blank"} and generate a long term  access token.
+1. [Create a TikTok For Business account](https://ads.tiktok.com/marketing_api/docs?id=1702715936951297){:target="_blank"}.
+2. [Register as a developer](https://ads.tiktok.com/marketing_api/docs?id=1702716323359809{:target="_blank"}).
+3. [Create a developer application](https://ads.tiktok.com/marketing_api/docs?id=1702716474845185){:target="_blank"}.
+4. Follow instructions for [Authorization](https://ads.tiktok.com/marketing_api/docs?id=1701890912382977){:target="_blank"} and generate a long term  access token.
 
 ### Configuring TikTok Conversions in Segment
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Find the Destinations Actions item in the left navigation, and click it.
 3. Click **Configure TikTok Conversions**.
-4. Select an existing Source to connect to TikTok Conversions (Actions).
-5. On the next page enter your TikTok API key and Secret key and click Verify credentials.
+4. Select an existing Source to connect to TikTok Conversions.
+5. On the next page enter your TikTok Access Token, Secret Key, App Id, and Pixel Code. Click Verify credentials.
 
 
 {% include components/actions-fields.html name="tiktok" connection="true" %}
