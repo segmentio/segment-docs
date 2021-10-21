@@ -42,7 +42,7 @@ The following example gets a JSON value through the cache, only invoking the cal
 
 ```js
 const ttl = 5 * 60 * 1000 // 5 minutes
-const val = await cache.load("mycachekey", ttl, () => {
+const val = await cache.load("mycachekey", ttl, async () => {
     const res = await fetch("http://echo.jsontest.com/key/value/one/two")
     const data = await res.json()
     return data
