@@ -7,6 +7,8 @@ settings:
     - name: Site ID (required)
       description: Your Customer.io site Key. This can be found on the [API Credentials Page](https://fly.customer.io/settings/api_credentials){:target="_blank"}.
       default:
+    - name: Account Region
+      description: For more information, see Customer.io's documentation about [Account Regions](https://customer.io/docs/data-centers/){:target="_blank"}.
 actions:
   - action: Track Event
     blurb: Track an event for a known person.
@@ -82,9 +84,9 @@ config:
       connection_mode:
         - cloud
         - device-web
-      configurable: false
+      configurable: true
       location:
-      notes: Customer.io Data Center is not needed in Customer.io (Actions)
+      notes: Select the Account Region in Connection Settings.
     - name: Site ID
       connection_mode:
         - cloud
@@ -96,7 +98,7 @@ config:
       connection_mode:
         - cloud
         - device-web
-      configurable: false
+      configurable: true
       location:
       notes: Customer.io (Actions) supports cloud-mode.
   - category: Other Settings

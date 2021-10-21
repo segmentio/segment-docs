@@ -3,6 +3,8 @@ title: Adobe Target Destination
 strat: adobe
 rewrite: true
 beta: true
+hidden: true
+published: false
 ---
 [Adobe Target](https://www.adobe.com/marketing-cloud/target.html) removes the
 coding and set up hassles of A/B testing to help you quickly discover which
