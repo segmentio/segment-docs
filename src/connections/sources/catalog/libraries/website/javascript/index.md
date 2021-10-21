@@ -722,12 +722,12 @@ No, there is no change in behavior to Middlewares.
 No, there is no impact to how events filter.
 
 ## Plugin Architecture
-When developing against Analytics 2.0, the plugins you write can augment functionality, enrich data, and control the flow and delivery of events. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
+When you develop against Analytics 2.0, the plugins you write can augment functionality, enrich data, and control the flow and delivery of events. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
 
 ### Plugin Categories
 Plugins are bound by Analytics 2.0 which handles operations such as observability, retries, and error handling. There are two different categories of plugins:
 * **Critical Plugins**: Analytics.js expects this plugin to be loaded before starting event delivery. Failure to load a critical plugin halts event delivery. Use this category sparingly, and only for plugins that are critical to your tracking.
-* **Non-critical Plugins**: Analytics.js can start event delivery before this plugin finishes loading. This means your plugin can fail to load independently from all other plugins. For example, every Analytics.js destination is a non-critical plugin. This makes it possible for Analytics.js to continue working in case a partner destination fails to load, or in case users have ad blockers turned on that are targeting specific destinations.
+* **Non-critical Plugins**: Analytics.js can start event delivery before this plugin finishes loading. This means your plugin can fail to load independently from all other plugins. For example, every Analytics.js destination is a non-critical plugin. This makes it possible for Analytics.js to continue working if a partner destination fails to load, or if users have ad blockers turned on that are targeting specific destinations.
 
 > info ""
 > Non-critical plugins are only non-critical from a loading standpoint. A crash in a before plugin can still halt the event delivery pipeline.
@@ -743,7 +743,7 @@ Type | Details
 `utility` | Executes only with manual calls such as Logging. <br><br>These are plugins that change the Analytics 2.0 functionality. Utility plugins run outside of the event pipeline, and only execute once.
 
 ### Example Plugins
-Here's an example of a plugin that converts all track event names to lowercase before the event gets sent through the rest of the pipeline:
+Here's an example of a plugin that converts all track event names to lowercase before the event goes through the rest of the pipeline:
 
 ```js
 export const lowercase: Plugin = {
@@ -765,7 +765,7 @@ const identityStitching = () => {
 
   const identity = {
     // Identifies your plugin in the Plugins stack.
-    // You can see the full list by accessing: `window.analytics.queue.plugins`
+    // Access `window.analytics.queue.plugins` to see the full list of plugins
     name: 'Identity Stitching',
     // Defines where in the event timeline a plugin should run
     type: 'enrichment',
@@ -812,7 +812,7 @@ await window.analytics.register(identityStitching())
 
 You can view Segment's [existing plugins](https://github.com/segmentio/analytics-next/tree/master/src/plugins) to see more examples.  
 
-### Registering a plugin
+### Register a plugin
 Registering plugins enable you to modify your analytics implementation to best fit your needs. You can register a plugin using this:
 
 ```js
