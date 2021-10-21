@@ -8,7 +8,7 @@ redirect_from:
 With Analytics-Kotlin, you can send data using Kotlin applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics-Kotlin enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations.
 
 > info ""
-> Analytics Kotlin is in public beta and currently supports [these destinations](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app-destinations/src/main/java/com/segment/analytics/destinations/plugins){:target="_blank"} with Segment actively adding more to the list. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this library.
+> Analytics Kotlin is in public beta and currently supports [these destinations](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app-destinations/src/main/java/com/segment/analytics/destinations/plugins){:target="_blank"} with Segment actively adding more to the list. If you don't see your destination, you can [build your own](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/index/#build-your-own-destination). <br>Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this library.
 
 > success ""
 > You can choose to set up your Analytics Kotlin source on [mobile](/docs/connections/sources/catalog/libraries/mobile/kotlin-android) or on the [server](/docs/connections/sources/catalog/libraries/server/kotlin). Segment doesn’t support device-mode destinations on the server-side.
@@ -413,3 +413,27 @@ analytics.flush("SomePlugin")
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
+
+## Build Your Own Destination
+
+To build your own Kotlin Destination:
+
+1. Go to the [Kotlin Destination Plugin Template](https://github.com/segmentio/kotlin-destination-templates){:target="_blank"}.
+2. Click **Use this template**.
+3. Enter a name for the repository.
+4. Click **Create repository from template**.
+5. Go to **destination > src > main > java/dmn/your/pkg/destination** in your repository.
+6. Click the **ExampleDestination.kt**.
+7. Edit the code by filling in the `TODO` sections with the appropriate information for your destination. Segment recommends you to change the package name before you finalize your build.
+8. Commit your changes.
+
+You can unit test your destination to make sure it works. Segment recommends you to use the testing template as a starter and to build upon it to get test coverage of most scenarios.
+
+To test your destination:
+
+1. Go to **destination > src > test > java/dmn/your/pkg/destination**.
+2. Click **ExampleDestinationTests.kt**.
+3. Edit the code by filling in the `TODO` sections with the appropriate information for your destination.
+4. Commit your changes.
+
+Segment recommends you to test your destination implementation end-to-end. Send some sample analytics events and ensure that they reach the destination.
