@@ -3,6 +3,8 @@ title: Customer.io (Actions) Destination
 hide-personas-partial: true
 hide-boilerplate: true
 hide-dossier: true
+redirect_from:
+- '/connections/destinations/catalog/customer-io-actions/'
 ---
 {% include content/plan-grid.md name="actions" %}
 
