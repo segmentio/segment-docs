@@ -6,7 +6,7 @@ hidden: true
 ---
 
 > info ""
-> This document is about a feature that is in beta. This means that the destination is in active development, and some functionality may change before it becomes generally available
+> This document is about a feature that is in beta. This means that the destination is in active development, and some functionality may change before it becomes generally available.
 
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Google Enhanced Conversions Segment destination. 
@@ -17,7 +17,7 @@ The Google Enhanced Conversions destination enables you to improve the accuracy 
 > Enable Enhanced Conversions in your Google Ads account. For each Conversion, specify in the settings to that you will use the enhanced conversions API:
 > 1.  When you log in to Google Ads, make sure you are in [Expert Mode](https://support.google.com/google-ads/answer/9520605?hl=en){:target="_blank"}.
 > 2. Click **Tools & Settings** in the top bar, and select **Conversions** from the dropdown. Select the **Conversion Action** you want Segment to log to.
-> 3. Expand the tab for **Enhanced Conversions**. Enable **Turn on enhanced conversions** and click **Edit code**, then **Use enhanced conversions API**.
+> 3. Expand the tab for **Enhanced conversions**. Enable **Turn on enhanced conversions**. Under "To start, select how you want to set up enhanced conversions", select **API**.
 > 
 > When you authenticate your Segment workspace with your Google Account, use a Google Account that is a member of your Google Ads account.
 
