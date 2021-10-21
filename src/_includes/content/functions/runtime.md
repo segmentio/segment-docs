@@ -31,13 +31,19 @@ Only the [`crypto` Node.js module](https://nodejs.org/dist/latest-v10.x/docs/api
 
 ##### Caching
 
-Per-function global caching is available in the `cache` namespace. The following functions are available:
+Basic cache storage is available via the `cache` object, which has the following methods defined:
 
 - `cache.load(key: string, ttl: number, fn: async () => any): Promise<any>`
-  - Obtains a cached value for the provided `key`, invoking the callback if the value is missing or has expired. The `ttl` is the maximum duration in milliseconds the value can be cached. If omitted or set to `-1`, the value will have no expiry. There is no guarantee that a value will be retained in the cache for the provided duration, however. The cache space is limited, so efforts to minimize the cached value size will afford a higher cache hit ratio.
+  - Obtains a cached value for the provided `key`, invoking the callback if the value is missing or has expired. The `ttl` is the maximum duration in milliseconds the value can be cached. If omitted or set to `-1`, the value will have no expiry.
 - `cache.delete(key: string): void`
-  - Forcefully remove the value associated with the `key`.
+  - Immediately remove the value associated with the `key`.
 
+Some important notes about the cache:
+
+- When testing functions in the code editor, the cache will be empty because each test temporarily deploys a new instance of the function.
+- Values in the cache are not shared between concurrently-running function instances; they are process-local which means that high-volume functions will have many separate caches.
+- Values may be expunged at any time, even before the configured TTL is reached. This can happen due to memory pressure or normal scaling activity. Minimizing the size of cached values can improve your hit/miss ratio.
+- Functions that receive a low volume of traffic may be temporarily suspended, during which their caches will be emptied. In general, caches are best used for high-volume functions and with long TTLs.
 The following example gets a JSON value through the cache, only invoking the callback as needed:
 
 ```js
