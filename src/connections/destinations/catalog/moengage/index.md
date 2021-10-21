@@ -184,7 +184,7 @@ The MoEngage SDK depends on the below Jetpack libraries provided by Google for i
     implementation("androidx.appcompat:appcompat:1.2.0")
     implementation("androidx.lifecycle:lifecycle-process:2.2.0")
 ```
-Refer to the [SDK Configuration](https://docs.moengage.com/docs/android-sdk-configuration) documentation to know more about the build config and other libraries used by the SDK.
+Refer to the [SDK Configuration](https://developers.moengage.com/hc/en-us/articles/4401984733972-Android-SDK-Configuration) documentation to know more about the build config and other libraries used by the SDK.
 
 ### Register MoEngage with Segment SDK
 
@@ -236,7 +236,7 @@ MoEHelper.getInstance(getApplicationContext()).setAppStatus(AppStatus.INSTALL);
 
 ### Configure Push Notifications
 
-Copy the Server Key from the FCM console and add it to the MoEngage Dashboard. For more information about retrieving the Server Key, see [MoEngage - Getting FCM Server Key](https://docs.moengage.com/docs/getting-fcmgcm-server-key). To upload it, go to the Settings Page `Dashboard --> Settings --> Channel --> Push --> Mobile Push --> Android` and add the Server Key and package name.
+Copy the Server Key from the FCM console and add it to the MoEngage Dashboard. To upload it, go to the Settings Page `Dashboard --> Settings --> Channel --> Push --> Mobile Push --> Android` and add the Server Key and package name.
 **Please make sure you add the keys both in Test and Live environment.**
 
 #### Add meta information for push notification
@@ -338,21 +338,19 @@ Add the following snippet and replace `[PARENT_ACTIVITY_NAME]` with the name of 
 
 You are now all set up to receive push notifications from MoEngage. For more information on features provided in MoEngage Android SDK refer to the following links:
 
-* [Push Notifications](http://docs.moengage.com/docs/push-configuration)
+* [Push Notifications](https://developers.moengage.com/hc/en-us/sections/360013606771-Push)
 
-* [Geofence](https://docs.moengage.com/docs/android-geofence)
+* [Location Triggered](https://developers.moengage.com/hc/en-us/articles/4403443036564-Location-Triggered)
 
-* [In-App messaging](https://docs.moengage.com/docs/android-in-app-nativ)
+* [In-App messaging](https://developers.moengage.com/hc/en-us/sections/360013831431-In-App-Messages)
 
-* [Notification Center](https://docs.moengage.com/docs/android-notification-center)
-
-* [Advanced Configuration](https://docs.moengage.com/docs/android-advanced-integration)
+* [Notification Center](https://developers.moengage.com/hc/en-us/articles/4403878923284-Notification-Center)
 
 * [API Reference](https://moengage.github.io/android-api-reference/index.html)
 
-* [Compliance](https://docs.moengage.com/docs/android-compliance)
+* [Compliance](https://developers.moengage.com/hc/en-us/sections/4403894212116-Compliance)
 
-* [Release Notes](https://docs.moengage.com/docs/segment-android-releases)
+* [Release Notes](https://developers.moengage.com/hc/en-us/articles/4403896795540-Changelog)
 
 
 ### Identify
@@ -367,7 +365,7 @@ If your app supports the ability for a user to logout and login with a new ident
 
 ### Sample Implementation
 
-Refer to [this](https://github.com/moengage/moengage-segment-integration) github repository for sample implementation
+Refer to [this](https://github.com/moengage/moengage-segment-integration) Github repository for sample implementation
 
 ## Web
 
