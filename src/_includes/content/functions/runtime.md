@@ -31,7 +31,7 @@ Only the [`crypto` Node.js module](https://nodejs.org/dist/latest-v10.x/docs/api
 
 ##### Caching
 
-Basic cache storage is available via the `cache` object, which has the following methods defined:
+Basic cache storage is available through the `cache` object, which has the following methods defined:
 
 - `cache.load(key: string, ttl: number, fn: async () => any): Promise<any>`
   - Obtains a cached value for the provided `key`, invoking the callback if the value is missing or has expired. The `ttl` is the maximum duration in milliseconds the value can be cached. If omitted or set to `-1`, the value will have no expiry.
