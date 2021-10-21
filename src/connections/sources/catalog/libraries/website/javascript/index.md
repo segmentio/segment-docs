@@ -501,7 +501,7 @@ Calling the `debug` method turns on debug mode, which logs helpful messages to t
 
 Enable:
 ```js
-analytics.debug();
+analytics.debug(true);
 ```
 
 Disable:
