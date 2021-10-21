@@ -724,6 +724,8 @@ No, there is no impact to how events filter.
 ## Plugin Architecture
 When you develop against Analytics 2.0, the plugins you write can augment functionality, enrich data, and control the flow and delivery of events. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
 
+Though middlewares function the same as plugins, it's best to use plugins as they are easier to implement and are more testable.
+
 ### Plugin Categories
 Plugins are bound by Analytics 2.0 which handles operations such as observability, retries, and error handling. There are two different categories of plugins:
 * **Critical Plugins**: Analytics.js expects this plugin to be loaded before starting event delivery. Failure to load a critical plugin halts event delivery. Use this category sparingly, and only for plugins that are critical to your tracking.
@@ -740,7 +742,7 @@ Type | Details
 `enrichment` | Executes as the first level of event processing. These plugins modify an event. <br><br> See the example of how Analytics.js uses the [Page Enrichment plugin](https://github.com/segmentio/analytics-next/blob/master/src/plugins/page-enrichment/index.ts){:target="_blank"} to enrich every event with page information.
 `destination` | Executes as events begin to pass off to destinations. <br><br> This doesn’t modify the event outside of the specific destination, and failure doesn’t halt the execution.
 `after` | Executes after all event processing completes. You can use this to perform cleanup operations. <br><br>An example of this is the [Segment.io Plugin](https://github.com/segmentio/analytics-next/blob/master/src/plugins/segmentio/index.ts){:target="_blank"} which waits for destinations to succeed or fail so it can send it observability metrics.
-`utility` | Executes only with manual calls such as Logging. <br><br>These are plugins that change the Analytics 2.0 functionality. Utility plugins run outside of the event pipeline, and only execute once.
+`utility` | Executes once during the bootstrap, to give you an outlet to make any modifications as to how Analytics.js works internally. This allows you to augment Analytics.js functionality.
 
 ### Example Plugins
 Here's an example of a plugin that converts all track event names to lowercase before the event goes through the rest of the pipeline:
@@ -810,14 +812,40 @@ const identityStitching = () => {
 await window.analytics.register(identityStitching())
 ```
 
+Here's an example of a `utility` plugin that allows you to change the format of the anonymous_id cookie:
+
+```js
+
+window.analytics.ready(() => {
+      window.analytics.register({
+        name: 'Cookie Compatibility',
+        version: '0.1.0',
+        type: 'utility',
+        load: (_ctx, ajs) => {
+          const user = ajs.user()
+          const cookieJar = user.cookies
+          const cookieSetter = cookieJar.set.bind(cookieJar)
+
+          // blindly convert any values into JSON strings
+          cookieJar.set = (key, value, opts) => cookieSetter(key, JSON.stringify(value), opts)
+
+          // stringify any existing IDs
+          user.anonymousId(user.anonymousId())
+          user.id(user.id())
+        },
+        isLoaded: () => true
+      })
+    })
+```
+
 You can view Segment's [existing plugins](https://github.com/segmentio/analytics-next/tree/master/src/plugins){:target="_blank"} to see more examples.  
 
 ### Register a plugin
 Registering plugins enable you to modify your analytics implementation to best fit your needs. You can register a plugin using this:
 
 ```js
-// A promise will resolve once the plugins has been successfully loaded into Analytics.js
-// You can register multiple plugins at once by using the variable args interface in Analytis.js
+// A promise will resolve once the plugins have been successfully loaded into Analytics.js
+// You can register multiple plugins at once by using the variable args interface in Analytics.js
 await window.analytics.register(pluginA, pluginB, pluginN)
 ```
 
