@@ -358,7 +358,7 @@ To make sure your Postgres database is secure:
 - Log in with a user that has read and write permissions so that Segment can write to your database.
 - Whitelist the Segment IP (`52.25.130.38/32`). Otherwise, Segment won't be able to load your data.
 - Create a service user that has `read/write` permissions.
-- Always require SSL and make sure your data warehouse can only accept secure connections. Segment only connects to your data warehouse using SSL.
+- Always require SSL/TLS and make sure your data warehouse can only accept secure connections. Segment only connects to your data warehouse using SSL/TLS.
 
 ## Best Practices
 

@@ -95,5 +95,5 @@ Segment recommends you to create a unique User for the Segment Db2 Warehouse
 connection to your Db2 Warehouse instance so that you can manage permissions
 separately.
 
-### SSL
-Always require SSL and make sure your data warehouse can only accept secure connections. Segment only connects to your data warehouse using SSL.
+### SSL/TLS
+Always require SSL/TLS and make sure your data warehouse can only accept secure connections. Segment only connects to your data warehouse using SSL/TLS.
