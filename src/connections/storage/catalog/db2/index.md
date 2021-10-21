@@ -87,7 +87,7 @@ database shortly.
 If your Db2 Warehouse is in a private network, be sure to [whitelist
 Segment's IP
 address](https://segment.com/docs/connections/storage/warehouses/faq/#which-ips-should-i-whitelist).
-Otherwise, Segment won't be able to load your data.
+Otherwise, Segment can't load your data.
 
 ### Unique User
 
