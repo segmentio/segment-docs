@@ -1,6 +1,5 @@
 ---
 title: Destination Actions
-hidden: true
 ---
 
 {% include content/plan-grid.md name="dest-actions" %}
@@ -15,13 +14,26 @@ You can also choose which event types, event names, or event property values tri
 
 Each Actions-framework Destination you see in the Segment catalog represents a feature or capability of the destination which can consume data from your Segment source. The Action clearly lists which data from the events it requires, and which data is optional. For example, Amplitude requires that you always send a  `LogEvent` , or Slack always requires a `PostMessage`.  Each Action also includes a default mapping which you can modify.
 
+## Benefits of Destination Actions
+
+- **Easier setup**: Users see fewer initial settings which can decrease the time spent configuring the destination.
+- **Increased transparency**: Users can see the exact data that is sent to the destination, and when Segment sends it. For example, users can see exactly when Segment sends an IP address to FullStory or an AnonymousId to Amplitude.
+- **Improved customization**: Users can determine how the events their sources trigger and map to actions supported by the destination. For example, define the exact events that are considered purchases by Braze.
+- **Partner ownership**: Partners can own and contribute to any Actions-based destination that use cloud and device mode (web).
+
 ## Available Actions-based Destinations
-- [Amplitude (Actions)](/docs/connections/destinations/catalog/actions-amplitude)
-- [Braze (Actions) Web](/docs/connections/destinations/catalog/actions-braze-web)
-- [Braze (Actions) Cloud](/docs/connections/destinations/catalog/actions-braze-cloud)
-- [Slack (Actions)](/docs/connections/destinations/catalog/actions-slack)
-- [FullStory (Actions)](/docs/connections/destinations/catalog/actions-fullstory)
-- [Customer.io (Actions)](/docs/connections/destinations/catalog/actions-customer-io)
+
+The following destinations are available in public beta status:
+
+| Destination                                                                         | Benefits                                                                                                                |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| [Amplitude (Actions)](/docs/connections/destinations/catalog/actions-amplitude)     | - Supports Amplitude session reporting <br /> - Revenue is a top-level property <br /> - Session tracking in cloud-mode |
+| [Braze (Actions) Cloud](/docs/connections/destinations/catalog/actions-braze-cloud) | E-commerce mappings                                                                                                     |
+| [Braze (Actions) Web](/docs/connections/destinations/catalog/actions-braze-web)     | E-commerce mappings                                                                                                     |
+| [Customer.io (Actions)](/docs/connections/destinations/catalog/actions-customer-io) | Track an anonymous event                                                                                                |
+| [FullStory (Actions)](/docs/connections/destinations/catalog/actions-fullstory)     | Support for FullStory's tracking page variables feature.                                                                |
+| [Slack (Actions)](/docs/connections/destinations/catalog/actions-slack)             | - Consolidated Message Sending <br /> - Configure connection details on a per-message basis                             |
+
 
 ## Destination Actions compatibility
 
