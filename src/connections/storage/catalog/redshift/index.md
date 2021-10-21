@@ -69,8 +69,8 @@ After creating a Redshift warehouse, the next step is to connect Segment:
 ### VPC
 VPCs keep servers inaccessible to traffic from the internet. With VPC, you're able to designate specific web servers access to your servers.  In this case, you will be whitelisting the [Segment IPs](/docs/connections/storage/warehouses/faq#which-ips-should-i-whitelist) to write to your data warehouse.
 
-### SSL
-Always require SSL and make sure your data warehouse can only accept secure connections. Segment only connects to your data warehouse using SSL.
+### SSL/TLS
+Always require SSL/TLS and make sure your data warehouse can only accept secure connections. Segment only connects to your data warehouse using SSL/TLS.
 
 ## Best practices
 
