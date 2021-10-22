@@ -170,6 +170,9 @@ When you send an "Order Completed" event from Segment, an "Order Completed" even
 
 #### Track Revenue Per Product
 
+> info ""
+> If you use Track Revenue Per Product, add a `revenue` property inside the `products` array of the Order Completed event.
+
 Amplitude has two different ways to track revenue associated with a multi-product purchase. You can choose which method you want to use using the **Track Revenue Per Product** destination setting.
 
 If you disable the setting ("off"), Segment sends a single revenue event with the total amount purchased and adds revenue data the Amplitude "Order Completed" event. The "Product Purchased" events do not contain any native Amplitude revenue data.
