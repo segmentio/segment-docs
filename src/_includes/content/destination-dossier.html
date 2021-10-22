@@ -12,13 +12,15 @@
 {% assign methodHTML = methodUrl | append: methodName %}
 {% assign methodHTML = methodHTML | append: '</a>' %}
 {% assign destMethods = destMethods | push: methodHTML %} {%endif%}
+{% assign connectionModes = destinationInfo.connection_modes %}
+{% assign components = destinationInfo.components %}
 {% endfor %}
 {% assign destMethods = destMethods| reverse %}
 
 {% if page.cmode-override %}
 {% assign destinationInfo = site.data.catalog.overrides.items % | where: "slug", thisDestination | first %}
 {% endif %}
-<div class="quick-info">
+<!-- <div class="quick-info">
 <h4>{{ destinationInfo.display_name }} quick info </h4>
 <p>{% if destMethods.size > 0 %}
 <strong>{{destinationInfo.display_name}}</strong> {% if destinationInfo.status == "PUBLIC_BETA" %} is in beta, and{% endif %} accepts {% for method in destMethods%}{% if destMethods.size == 1 %}{{method}} calls.{% else %}{% unless forloop.last == true %}{{method}}, {% endunless %}{% if forloop.last == true%}and {{method}} calls.{%endif%}{% endif %}{% endfor %} If you reference it in the <a href="/docs/guides/filtering-data/#filtering-with-the-integrations-object">Integrations object</a>, call it &ldquo;{{destinationInfo.previous_names | join: '", or "' }}&rdquo;.
@@ -38,4 +40,49 @@ If you reference it in the <a href="/docs/guides/filtering-data/#filtering-with-
 </p>
 {% endunless %}
 
+</div> -->
+
+<div class="quick-info">
+<h3>Quick Info</h3>
+<ul class="qi">
+  <li>Accepts {% for method in destMethods%}{% if destMethods.size == 1 %}{{method}} calls.{% else %}{% unless forloop.last == true %}{{method}}, {% endunless %}{% if forloop.last == true%}and {{method}} calls.{%endif%}{% endif %}{% endfor %}</li>
+  <li>Referred to as <strong>{{destinationInfo.previous_names | join: '</strong>, or <strong>' }}</strong> in the <a href="/docs/guides/filtering-data/#filtering-with-the-integrations-object">Integrations object</a></li>
+</ul>
+{% if components.size > 0%}
+<h3>Connection Modes</h3>
+<table>
+<thead>
+  <tr>
+    <th>Device-mode</th>
+    <th>Cloud-mode</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Web {% if connectionModes.device.web == true %} ✅ {% else %}⬜️{% endif %}</td>
+    <td>Web {% if connectionModes.cloud.web == true %} ✅ {% else %}⬜️{% endif %}</td>
+  </tr>
+  <tr>
+    <td>Mobile {% if connectionModes.device.mobile == true %} ✅ {% else %}⬜️{% endif %}</td>
+    <td>Mobile {% if connectionModes.cloud.mobile == true %} ✅ {% else %}⬜️{% endif %}</td>
+  </tr>
+  <tr>
+    <td>Server ⬜️ </td>
+    <td>Server {% if connectionModes.cloud.server == true %} ✅ {% else %}⬜️{% endif %}</td>
+  </tr>
+</tbody>
+</table>
+
+<h3>Components</h3>
+<ul>
+{%for component in components %}
+{% if component.code contains "/segment-integrations/" %}
+<li><a href="{{component.code}}" target="_blank">{{component.type}}</a></li>
+{% else %}
+<li>{{component.type }}</li>
+{% endif %}
+{% endfor %}
+</ul>
+
+{% endif %}
 </div>
