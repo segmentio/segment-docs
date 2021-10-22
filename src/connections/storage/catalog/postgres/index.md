@@ -4,7 +4,7 @@ rewite: true
 redirect_from:
   - '/connections/warehouses/catalog/postgres/'
 ---
-PostgreSQL, or Postgres, is an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance. As a database server, its primary functions are to store data securely and return that data in response to requests from other software applications. 
+PostgreSQL, or Postgres, is an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance. As a database server, its primary functions are to store data securely and return that data in response to requests from other software applications.
 
 PostgreSQL is ACID-compliant and transactional. PostgreSQL has updatable views and materialized views, triggers, foreign keys; supports functions and stored procedures, and other expandability. Developed by the PostgreSQL Global Development Group, free and open-source.
 
@@ -45,7 +45,7 @@ This guide explains how to set up a Postgres database with Heroku. Heroku is a c
 
     When you click **Create Database**, a modal appears with your plan choices. Depending on your needs, some plans may be more suitable than others - for example, more expensive plans generally have better performance and more storage. Segment recommends that new customers start with the "Standard 4" plan.
 
-    For the fastest sync times, choose the US East region. 
+    For the fastest sync times, choose the US East region.
 
     After you configure these settings, click "Login to Install" and/or "Visit Heroku Dashboard to create your first app".
 
@@ -354,10 +354,11 @@ GRANT CREATE, TEMPORARY ON DATABASE <enter database name here> TO segment;
 
 
 ## Security
-Make sure you're logging in with a user that has read and write permissions so that we can write to your database.
-
-- Whitelist the Segment IP (`52.25.130.38/32`)
+To make sure your Postgres database is secure:
+- Log in with a user that has read and write permissions so that Segment can write to your database.
+- Whitelist the Segment IP (`52.25.130.38/32`). Otherwise, Segment can't load your data.
 - Create a service user that has `read/write` permissions.
+- Always require SSL/TLS and make sure your data warehouse can only accept secure connections. Segment only connects to your data warehouse using SSL/TLS.
 
 ## Best Practices
 
