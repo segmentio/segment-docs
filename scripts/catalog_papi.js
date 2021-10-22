@@ -61,8 +61,6 @@ const getConnectionModes = (destination) => {
       mobile: false,
       server: false
     },
-    summary: "",
-    cmode_type:""
   }
   destination.components.forEach(component =>{
     switch (component.type){
