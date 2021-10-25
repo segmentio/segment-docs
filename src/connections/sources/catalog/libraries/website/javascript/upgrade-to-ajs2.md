@@ -17,7 +17,7 @@ To upgrade a source to Analytics.js 2.0:
 6. Open the Debugger to ensure that events are flowing as expected.
 
 > info ""
-> If you set `'Segment.io:' false' in the integrations object, Analytics.js 2.0 drops the event before it reaches the Source Debugger. 
+> If you set `'Segment.io:' false` in the integrations object, Analytics.js 2.0 drops the event before it reaches the Source Debugger. 
 
 ## Automatic migration
 
