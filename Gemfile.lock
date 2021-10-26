@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/jekyll/jekyll.git
-  revision: 5687bf97d8242feb8bb8f03cdc93991fb20847b7
+  revision: 26a949df85a1f9577e8080e19f2196c8a3db17ec
   specs:
     jekyll (4.2.1)
       addressable (~> 2.4)
@@ -92,14 +92,12 @@ GEM
       jekyll (>= 3.7, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
-    json (2.5.1)
+    json (2.6.0)
     kramdown (2.3.1)
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
     liquid (4.0.3)
-    liquid-c (4.0.0)
-      liquid (>= 3.0.0)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -115,7 +113,7 @@ GEM
     premonition (2.0.1)
     progressbar (1.11.0)
     public_suffix (4.0.6)
-    racc (1.5.2)
+    racc (1.6.0)
     rake (13.0.6)
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
@@ -131,7 +129,7 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2021.2)
+    tzinfo-data (1.2021.4)
       tzinfo (>= 1.0.0)
     unicode-display_width (2.1.0)
     verbal_expressions (0.1.5)
@@ -154,7 +152,6 @@ DEPENDENCIES
   jekyll-last-modified-at
   jekyll-redirect-from
   jekyll-sitemap
-  liquid-c
   premonition (~> 2.0.0)
   rake
   tzinfo (~> 1.2)
