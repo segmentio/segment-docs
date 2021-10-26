@@ -18,16 +18,18 @@ Take your company's analysis to the next level by **adding Salesforce as a Sourc
 
 5. Choose a data warehouse to connect Salesforce to.
 
-6. In your Salesforce source settings you can customize the source  nickname and  schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. Both can be whatever you like, but we recommend sticking to something that reflects the source itself, like `Salesforce` for nickname and `sfdc`, `salesforce`, or `sfdc_prod` for the schema name.
+6. In your Salesforce source settings you can customize the source nickname and schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. Both can be whatever you like, but we recommend sticking to something that reflects the source itself, like `Salesforce` for nickname and `sfdc`, `salesforce`, or `sfdc_prod` for the schema name. You can configure Selective Sync to retrieve only specific objects and properties from Salesforce.
 
-  **Note:** that you can add multiple instances if you have multiple SalesForce accounts. That's why we allow you to customize the source's nickname and schema name!
+  **Note:** you can add multiple instances if you have multiple SalesForce accounts. That's why we allow you to customize the source's nickname and schema name!
 
 
 ## Components
 
 ### Sync
 
-The Salesforce source contains a sync component, which means Segment makes requests to the Salesforce API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Salesforce objects (and their corresponding properties) according to the Collections Table below. Segment writes the objects into a separate schema, corresponding to the source instance's schema name you designated upon creation. For example, you name the schema `sfdc_prod`, the `leads` collection is accessible at `sfdc_prod.leads` in SQL.
+The Salesforce source contains a sync component, which means Segment makes requests to the Salesforce API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, by default we'll grab all the Salesforce objects (and their corresponding properties) according to the Collections Table below. Segment writes the objects into a separate schema, corresponding to the source instance's schema name you designated upon creation. For example, you name the schema `sfdc_prod`, the `leads` collection is accessible at `sfdc_prod.leads` in SQL.
+
+If you configure Selective Sync, Segment only retrieves the objects and properties you specify. Use Selective Sync to avoid unnecessary Salesforce API consumption.
 
 Our sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in Salesforce. For example, if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
 
