@@ -424,7 +424,7 @@ To build your own Kotlin Destination:
 4. Click **Create repository from template**.
 5. Go to **destination > src > main > java/dmn/your/pkg/destination** in your repository.
 6. Click the **ExampleDestination.kt**.
-7. Edit the code by filling in the `TODO` sections with the appropriate information for your destination. Segment recommends you to change the package name before you finalize your build.
+7. Complete the `TODO` sections in the sample code with the appropriate information for your destination. Segment recommends you to change the package name before you finalize your build.
 8. Commit your changes.
 
 You can unit test your destination to make sure it works. Segment recommends you to use the testing template as a starter and to build upon it to get test coverage of most scenarios.
@@ -433,7 +433,7 @@ To test your destination:
 
 1. Go to **destination > src > test > java/dmn/your/pkg/destination**.
 2. Click **ExampleDestinationTests.kt**.
-3. Edit the code by filling in the `TODO` sections with the appropriate information for your destination.
+3. Complete the `TODO` sections in the sample code with the appropriate information for your destination.
 4. Commit your changes.
 
 Segment recommends you to test your destination implementation end-to-end. Send some sample analytics events and ensure that they reach the destination.
