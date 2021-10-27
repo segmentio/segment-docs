@@ -37,7 +37,7 @@ To set up Segment Protocols through the API you first need to create a personal 
 
 1. Log in to your Segment workspace.
 2. Click **Settings** in the left navigation bar.
-3. Click **Workspace Settings** and then the **Access Management** tab, then the **Tokens** tab, and click **Create Token**.
+3. Go to **Settings > Workspace Settings > Access Management**. Select the **Tokens** tab, and click **Create Token**.
 4. For purposes of this demonstration, select **Workspace Owner** as the token's scope.
 5. Enter a description for the token. For this demo, we recommend using `demo-token` so it's easy to find and remove later.
 6. Click **Create**.
