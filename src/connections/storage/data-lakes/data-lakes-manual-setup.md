@@ -10,55 +10,74 @@ The instructions below will guide you through the process required to configure 
 
 ## Step 1 - Create an S3 Bucket
 
-In this step, you'll create the S3 bucket that will store both the intermediate and final data.
+In this step, you'll create the S3 bucket that will store both the intermediate and final data. For instructions on creating an S3 bucket, please see Amazon's documentation, [Create your first S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html).
 
 > info ""
 > Take note of the S3 bucket name you set in this step, as the rest of the set up flow requires it. In these instructions, the name is `segment-data-lake`.
 
-During the set up process, create a Lifecycle rule and set it to expire staging data after **14 days**. For more information, see Amazon's documentation, [How do I create a lifecycle?](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-lifecycle.html).
+After you create your S3 bucket, create a lifecycle rule for the bucket and set it to expire staging data after **14 days**. For help on setting lifecycle configurations, see Amazon's documentation, [Setting lifecycle configuration on a bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/how-to-set-lifecycle-configuration-intro.html).
 
-![Create a Lifecycle rule to expire staging data after 14 days](images/01_14-day-lifecycle.png)
+The following lifecycle settings should be selected:
+* **Expire after:** 14 days
+* **Permanently delete after:** 14 days
+* **Clean up incomplete mulitpart uploads:** after 14 days
+
+<!--- ![Create a Lifecycle rule to expire staging data after 14 days](images/01_14-day-lifecycle.png) --->
 
 ## Step 2 - Configure an EMR cluster
 
-Segment requires access to an EMR cluster to perform necessary data processing. We recommend starting with a small cluster, with the option to add more compute as required.
+Segment requires access to an EMR cluster to perform necessary data processing. We recommend starting with a small cluster, with the option to add more compute resources as required.
 
 ### Configure the hardware and networking configuration
 
-1. Locate and select EMR from the AWS console.
-2. Click **Create Cluster**, and open the **Advanced Options**.
-3. In the Advanced Options, on Step 1: Software and Steps, ensure you select the following options, along with the defaults:
-   - `Use for Hive table metadata`
-   - `Use for Spark table metadata` ![Select to use for both Have and Spark table metadata](images/02_hive-spark-table.png)
-4. In the Networking setup section, select to create the cluster in either a public or private subnet. Creating the cluster in a private subnet is more secure, but requires additional configuration. Creating a cluster in a public subnet is accessible from the internet. You can configure strict security groups to prevent inbound access to the cluster. See Amazon's document, [Amazon VPC Options - Amazon EMR](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-clusters-in-a-vpc.html) for more information. As a best practice, Segment recommends that you consult with your network and security before you configure your EMR cluster.
-5. In the Hardware Configuration section, create a cluster with the nodes listed below. This configuration uses the default **On demand** purchasing option for the instances.
+1. Select EMR from the AWS console by navigating to Services > Analytics > EMR.
+2. Click **Create Cluster**, and select **Go to advanced options**.
+3. In Advanced Options, on Step 1: Software and Steps, select the `emr-5.33.0` release and the following software libraries:
+    - Hadoop 2.10.1
+    - Hive 2.3.7
+    - Hue 4.9.0
+    - Spark 2.4.7
+    - Pig 0.17.0
+ 4. Under the AWS Glue Data Catalog settings, select the following options:
+    - Use for Hive table metadata
+    - Use for Spark table metadata
+    <!--- ![Select to use for both Have and Spark table metadata](images/02_hive-spark-table.png) --->
+5. Select **Next** to move to Step 2: Hardware.
+6. Under the Networking section, select a Network and EC2 Subnet for your EMR instance. You can create EMR instances in either a public or private subnet. Creating the cluster in a private subnet is more secure, but requires additional configuration, while creating a cluster in a public subnet makes it accessible from the Internet. You can configure strict security groups to prevent inbound access to the cluster. See Amazon's document, [Amazon VPC Options - Amazon EMR](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-clusters-in-a-vpc.html) for more information. <br />
+As a best practice, Segment recommends that you consult with your network and security teams before you configure your EMR cluster.
+
+7. In the Hardware Configuration section, create a cluster that includes the following on-demand nodes:
    - **1** master node
    - **2** core nodes
-   - **2** task nodes ![Configure the number of nodes](images/03_hardware-node-instances.png)
+   - **2** task nodes 
+   <!--- ![Configure the number of nodes](images/03_hardware-node-instances.png --->
+For more information about configuring cluster hardware and networking, see Amazon's document, [Configure Cluster Hardware and Networking](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-instances.html).
 
-For more information about configuring the cluster hardware and networking, see Amazon's document, [Configure Cluster Hardware and Networking](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-instances.html).
+8. Select **Next** to proceed to Step 3: General Cluster Settings.
 
 
 ### Configure logging
 
-On the General Options step, configure logging to use the same S3 bucket you configured as the destination for the final data (`segment-data-lakes` in this case). Once configured, logs are to a new prefix, and separated from the final processed data.
+9. On Step 3: General Cluster Settings, configure logging to use the same S3 bucket you configured as the destination for the final data (`segment-data-lakes` in this case). Once configured, logs are given a new prefix, and separated from the final processed data.
 
-Set value of the **vendor** tag to `segment`. The IAM policy uses this to provide Segment access to submit jobs in the EMR cluster.
+10. Add a new key-value pair to the Tags section, a **vendor** key with a value of `segment`. The IAM policy uses this to provide Segment access to submit jobs in the EMR cluster.
 
+11. Select **Next** to proceed to Step 4: Security.
 
-![Configure logging](images/05_logging.png)
+<!---![Configure logging](images/05_logging.png) --->
 
 ### Secure the cluster
+12. Create or select an **EC2 key pair**.
+13. Choose the appropriate roles in the **EC2 instance profile**.
+14. Expand the EC2 security group section and select the appropriate security groups for the Master and Core & Task types.
+15. Update any additional security options, then select **Create cluster**.
 
-On the Security step, be sure to complete the following steps:
-1. Create or select an **EC2 key pair**.
-2. Choose the appropriate roles in the **EC2 instance profile**.
-3. Select the appropriate security groups for the Master and Core & Task types.
+ <!--- ![Secure the cluster](images/06_secure-cluster.png)
 
-![Secure the cluster](images/06_secure-cluster.png)
+The image uses the default settings. You can make these settings more restrictive, if required. --->
 
-The image uses the default settings. You can make these settings more restrictive, if required.
-
+> note ""
+> If you are updating your Data Lakes instance, take note of the EMR cluster ID. 
 
 ## Step 3 - Create an Access Management role and policy
 
