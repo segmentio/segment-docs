@@ -4,6 +4,8 @@ strat: react-native
 repo: analytics-react-native
 ---
 
+> info "Analytics React Native 2.0 Pilot"
+> Analytics React Native 2.0 is available as a public pilot. Use of this pilot is governed by Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/){:target="_blank"}. For more information, see the [Analytics React Native 2.0 GitHub repository](https://github.com/segmentio/analytics-react-native){:target="_blank"}.
 
 Analytics for React Native makes it easy to send your data to any analytics or marketing tool without having to learn, test or implement a new API every time.
 
