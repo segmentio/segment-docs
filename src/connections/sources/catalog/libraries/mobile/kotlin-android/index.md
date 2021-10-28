@@ -416,7 +416,9 @@ analytics.flush("SomePlugin")
 
 ## Build Your Own Destination
 
-To build your own Kotlin Destination:
+If Segment doesn't support your Kotlin destination, you can build your own Kotlin destination using the template Segment provides. 
+
+To build your own Kotlin destination using a plugin template:
 
 1. Go to the [Kotlin Destination Plugin Template](https://github.com/segmentio/kotlin-destination-templates){:target="_blank"}.
 2. Click **Use this template**.
