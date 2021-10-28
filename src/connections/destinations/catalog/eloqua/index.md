@@ -64,8 +64,8 @@ the Segment `group` event needs to include the Account's name and groupId. If
 you set up a custom Account field called Company in Eloqua, Segment will
 automatically map the name of the Account to that field.
 
-Follow the Segment spec to ensure proper mapping of these fields from Segment
-`group` traits: https://segment.com/docs/connections/spec/group/#traits.
+Follow [Segment's group spec](https://segment.com/docs/connections/spec/group/#traits) to ensure proper mapping of these fields from Segment
+`group` traits.
 
 In addition, Segment supports mapping custom `group` traits to Eloqua custom
 object fields. To do so, you can set up mappings in the settings for your
