@@ -33,7 +33,7 @@ Segment requires access to an EMR cluster to perform necessary data processing. 
 
 1. Select EMR from the AWS console by navigating to Services > Analytics > EMR.
 2. Click **Create Cluster**, and select **Go to advanced options**.
-3. In Advanced Options, on Step 1: Software and Steps, select the `emr-5.33.0` release and the following applications:
+3. In Advanced Options, on Step 1: Software and Steps, select both the `emr-5.33.0` release and the following applications:
     - Hadoop 2.10.1
     - Hive 2.3.7
     - Hue 4.9.0
@@ -44,14 +44,20 @@ Segment requires access to an EMR cluster to perform necessary data processing. 
     - Use for Spark table metadata
     <!--- ![Select to use for both Have and Spark table metadata](images/02_hive-spark-table.png) --->
 5. Select **Next** to move to Step 2: Hardware.
-6. Under the Networking section, select a Network and EC2 Subnet for your EMR instance. EMR instances can be created in either a public or private subnet. Creating the cluster in a private subnet is more secure, but requires additional configuration, while creating a cluster in a public subnet leaves it accessible from the Internet. You can configure strict security groups for EMR clusters on public subnets to prevent inbound access. See Amazon's document, [Amazon VPC Options - Amazon EMR](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-clusters-in-a-vpc.html) for more information. As a best practice, Segment recommends that you consult with your network and security teams before you configure your EMR cluster.
+6. Under the Networking section, select a Network and EC2 Subnet (either public or private) for your EMR instance. Creating the cluster in a private subnet is more secure, but requires additional configuration, while creating a cluster in a public subnet leaves it accessible from the Internet. Users who create clusters in public EC2 subnets can configure strict security groups for EMR clusters on public subnets to prevent inbound access. See Amazon's document, [Amazon VPC Options - Amazon EMR](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-clusters-in-a-vpc.html) for more information. As a best practice, Segment recommends that you consult with your network and security teams before you configure your EMR cluster.
 
 7. In the Hardware Configuration section, create a cluster that includes the following on-demand nodes:
    - **1** master node
    - **2** core nodes
-   - **2** task nodes 
+   - **2** task nodes
    <!--- ![Configure the number of nodes](images/03_hardware-node-instances.png --->
-For more information about configuring cluster hardware and networking, see Amazon's document, [Configure Cluster Hardware and Networking](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-instances.html).
+    Each of the master, core, and task nodes should meet or exceed the following specifications:
+    * Instance type: mx5.xlarge
+    * Number of vCores: 4
+    * Memory: 16 GiB
+    * EBS Storage: 64 GiB, EBS only storage
+
+    For more information about configuring cluster hardware and networking, please see Amazon's documentation, [Configure Cluster Hardware and Networking](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-instances.html).
 
 8. Select **Next** to proceed to Step 3: General Cluster Settings.
 
