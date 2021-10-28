@@ -46,7 +46,7 @@ Segment requires access to an EMR cluster to perform necessary data processing. 
 5. Select **Next** to move to Step 2: Hardware.
 6. Under the Networking section, select a Network and EC2 Subnet (either public or private) for your EMR instance. Creating the cluster in a private subnet is more secure, but requires additional configuration, while creating a cluster in a public subnet leaves it accessible from the Internet. Users who create clusters in public EC2 subnets can configure strict security groups for EMR clusters on public subnets to prevent inbound access. See Amazon's document, [Amazon VPC Options - Amazon EMR](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-clusters-in-a-vpc.html) for more information. As a best practice, Segment recommends that you consult with your network and security teams before you configure your EMR cluster.
 
-7. In the Hardware Configuration section, create a cluster that includes the following on-demand nodes:
+7. In the Cluster Nodes and Instances section, create a cluster that includes the following on-demand nodes:
    - **1** master node
    - **2** core nodes
    - **2** task nodes
