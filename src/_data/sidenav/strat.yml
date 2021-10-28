@@ -46,7 +46,7 @@ sections:
   - path: /connections/destinations/catalog/firebase
     title: Google Firebase (mobile analytics) destination
   - path: /connections/destinations/catalog/google-analytics
-    title: Google Analytics destination
+    title: Google Universal Analytics destination
   - path: /connections/destinations/catalog/google-analytics/ga4-plans
     title: Google Analytics 4 destination
   - path: /connections/destinations/catalog/google-tag-manager
