@@ -34,7 +34,7 @@ Analytics.js sources will upgrade to Analytics.js 2.0 on the date below, accordi
 
 ## Revert to Analytics.js Classic
 
-Once a source moves to Analytics.js 2.0, you can follow the steps above in [Manual migration](#manual-migration) back to roll back to Analytics.js Classic.
+Once a source moves to Analytics.js 2.0, you can follow the steps above in [Manual migration](#manual-migration) to roll back to Analytics.js Classic.
 
 ## Cases that require additional intervention
 
