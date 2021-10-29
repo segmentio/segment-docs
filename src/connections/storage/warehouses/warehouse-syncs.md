@@ -17,9 +17,9 @@ You can use the Sync History page to see the status and history of data updates 
 The Sync History includes the following information:
 
 * **Sync Status**: The possible statuses are:
-   * *Success*: Sync run completed without any notices and all rows synced, OR no rows synced because no data was found.
-   * *Partial*: Sync run completed with some notices and some rows synced.
-   * *Failure*: Sync run with some notices and no rows synced.
+   * *Success*: The sync run completed without any notices and all rows synced, OR no rows synced because no data was found.
+   * *Partial*: The sync run completed with some notices and some rows synced.
+   * *Failure*: The sync run completed with some notices and no rows synced.
 * **Start Time**: The time at which the sync began. This is shown in your local timezone.
 * **Duration**: The length of time the sync took.
 * **Synced Rows**: Number of rows successfully synced from the sync run.
