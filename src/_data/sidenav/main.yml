@@ -197,7 +197,7 @@ sections:
         title: Warehouse Overview
       - path: /connections/storage/warehouses/schema
         title: Warehouse Schemas
-      - path: /connections/storage/warehouses/sync
+      - path: /connections/storage/warehouses/warehouse-syncs
         title: Warehouse Syncs
       - path: /connections/storage/warehouses/health
         title: Warehouse Health Dashboards
