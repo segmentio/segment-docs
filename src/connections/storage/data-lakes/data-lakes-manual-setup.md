@@ -7,21 +7,26 @@ title: Configure the Data Lakes AWS Environment
 
 The instructions below will guide you through the process required to configure the environment required to begin loading data into your Segment Data Lake. For a more automated process, see [Set Up Segment Data Lakes](/src/connections/storage/catalog/data-lakes/index.md).
 
+As a best practice, Segment recommends that you consult with your network and security teams before you configure your EMR cluster.
 
-## Step 1 - Create an S3 Bucket
+## Step 1 - Create a VPC and an S3 bucket 
 
-In this step, you'll create the S3 bucket that will store both the intermediate and final data. For instructions on creating an S3 bucket, please see Amazon's documentation, [Create your first S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html).
+In this step, you'll create a Virtual Private Cloud (VPC) to securely launch your AWS resources into and an S3 bucket that will store both the intermediate and final data. 
+
+To create a VPC, follow the instructions outlined in Amazon's documentation, [Create and configure your VPC](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/gsg_create_vpc.html).
+
+To create an S3 bucket, see Amazon's [Create your first S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html) instructions.
 
 > info ""
 > Take note of the S3 bucket name you set in this step, as the rest of the set up flow requires it. 
 <!--- In these instructions, the name is `segment-data-lake`. --->
 
-After you create your S3 bucket, create a lifecycle rule for the bucket and set it to expire staging data after **14 days**. For help on setting lifecycle configurations, see Amazon's documentation, [Setting lifecycle configuration on a bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/how-to-set-lifecycle-configuration-intro.html).
+After creating an S3 bucket, configure a lifecycle rule for the bucket and set it to expire staging data after **14 days**. For instructions on configuring lifecycle rules, see Amazon's documentation, [Setting lifecycle configuration on a bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/how-to-set-lifecycle-configuration-intro.html).
 
-The following lifecycle settings should be selected:
+The following lifecycle settings should be applied to your staging data:
 * **Expire after:** 14 days
 * **Permanently delete after:** 14 days
-* **Clean up incomplete mulitpart uploads:** after 14 days
+* **Clean up incomplete multipart uploads:** after 14 days
 
 <!--- ![Create a Lifecycle rule to expire staging data after 14 days](images/01_14-day-lifecycle.png) --->
 
@@ -43,8 +48,8 @@ Segment requires access to an EMR cluster to perform necessary data processing. 
     - Use for Hive table metadata
     - Use for Spark table metadata
     <!--- ![Select to use for both Have and Spark table metadata](images/02_hive-spark-table.png) --->
-5. Select **Next** to move to Step 2: Hardware.
-6. Under the Networking section, select a Network and EC2 Subnet (either public or private) for your EMR instance. Creating the cluster in a private subnet is more secure, but requires additional configuration, while creating a cluster in a public subnet leaves it accessible from the Internet. Users who create clusters in public EC2 subnets can configure strict security groups for EMR clusters on public subnets to prevent inbound access. See Amazon's document, [Amazon VPC Options - Amazon EMR](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-clusters-in-a-vpc.html) for more information. As a best practice, Segment recommends that you consult with your network and security teams before you configure your EMR cluster.
+5. Select **Next** to proceed to Step 2: Hardware.
+6. Under the Networking section, select a Network (the VPC you created in [Step 1](#step-1---create-a-vpc-and-an-s3-bucket)) and EC2 Subnet for your EMR instance. Creating the cluster in a private subnet is more secure, but requires additional configuration, while creating a cluster in a public subnet leaves it accessible from the Internet. Users who create clusters in public subnets can configure strict security groups to prevent unauthorized inbound EMR cluster access. See Amazon's document, [Amazon VPC Options - Amazon EMR](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-clusters-in-a-vpc.html) for more information.
 
 7. In the Cluster Nodes and Instances section, create a cluster that includes the following on-demand nodes:
    - **1** master node
@@ -57,7 +62,7 @@ Segment requires access to an EMR cluster to perform necessary data processing. 
     * Memory: 16 GiB
     * EBS Storage: 64 GiB, EBS only storage
 
-    For more information about configuring cluster hardware and networking, please see Amazon's documentation, [Configure Cluster Hardware and Networking](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-instances.html).
+    For more information about configuring cluster hardware and networking, see Amazon's documentation, [Configure Cluster Hardware and Networking](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-instances.html).
 
 8. Select **Next** to proceed to Step 3: General Cluster Settings.
 
@@ -73,17 +78,17 @@ Segment requires access to an EMR cluster to perform necessary data processing. 
 <!---![Configure logging](images/05_logging.png) --->
 
 ### Secure the cluster
-12. Create or select an **EC2 key pair**.
+12. On Step 4: Security, in the Security Options section, create or select an **EC2 key pair**.
 13. Choose the appropriate roles in the **EC2 instance profile**.
-14. Expand the EC2 security group section and select the appropriate security groups for the Master and Core & Task types.
-15. Update any additional security options, then select **Create cluster**.
+14. Expand the EC2 security groups section and select the appropriate security groups for the Master and Core & Task types.
+15. Select **Create cluster**.
 
  <!--- ![Secure the cluster](images/06_secure-cluster.png)
 
 The image uses the default settings. You can make these settings more restrictive, if required. --->
 
 > note ""
-> **NOTE:** If you are updating the EMR cluster for your Data Lakes instance, note the EMR cluster ID. 
+> **NOTE:** If you are updating the EMR cluster for an existing Data Lakes instance, note the EMR cluster ID on the confirmation page.
 
 ## Step 3 - Create an Access Management role and policy
 
