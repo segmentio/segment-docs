@@ -3,7 +3,7 @@ title: Personas Default Limits
 redirect_from: '/personas/rate-limits'
 ---
 
-To provide consistent performance at scale, Segment enforces default use and rate limits to ensure Personas performance and reliability. Most customers do not exceed these limits.
+To provide consistent performance and reliability at scale, Segment enforces default use and rate limits within Personas. Most customers do not exceed these limits.
 
 To learn more about custom limits and upgrades, contact your dedicated Customer Success Manager or [friends@segment.com](mailto:friends@segment.com).
 
