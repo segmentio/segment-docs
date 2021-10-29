@@ -1,6 +1,6 @@
 ---
 title: Warehouse Syncs
-redirect_from: '/connections/storage/warehouses/sync'
+redirect_from: '/connections/storage/warehouses/warehouse-syncs'
 ---
 
 The Warehouse Sync process prepares the raw data coming from a source and loads it into a warehouse destination. There are two phases to the sync process:
