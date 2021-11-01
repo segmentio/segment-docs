@@ -66,6 +66,8 @@ The following steps provide examples of the IAM Role and IAM Policy.
 
 ### IAM Role
 
+###### 1. For `us-west-2` region:
+
 Create a `segment-data-lake-role` role for Segment to assume. Attach the following trust relationship document to the role:
 
 ```json
@@ -80,6 +82,34 @@ Create a `segment-data-lake-role` role for Segment to assume. Attach the followi
           "arn:aws:iam::294048959147:role/customer-datalakes-prod-admin",
           "arn:aws:iam::294048959147:role/datalakes-aws-worker",
           "arn:aws:iam::294048959147:role/datalakes-customer-service"
+        ]
+      },
+      "Action": "sts:AssumeRole",
+      "Condition": {
+        "StringEquals": {
+          "sts:ExternalId": [
+            "WORKSPACE_ID"
+          ]
+        }
+      }
+    }
+  ]
+}
+```
+###### 2. For other regions:
+
+Create a `segment-data-lake-role` role for Segment to assume. Attach the following trust relationship document to the role:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::595280932656:role/segment-datalakes-production-access",
         ]
       },
       "Action": "sts:AssumeRole",
