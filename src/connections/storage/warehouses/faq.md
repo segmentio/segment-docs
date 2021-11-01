@@ -5,7 +5,7 @@ redirect_from: '/connections/warehouses/faq/'
 
 ## Can I control what data is sent to my warehouse?
 
-Yes! For those of you who are on Segment's [Business plan](https://segment.com/pricing), you can choose which sources, collections, and properties sync to your data warehouse using [Warehouse Selective Sync](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync).
+Yes. For those of you who are on Segment's [Business plan](https://segment.com/pricing), you can choose which sources, collections, and properties sync to your data warehouse using [Warehouse Selective Sync](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync).
 
 Selective Sync helps manage what data is sent to each individual warehouse, allowing you to sync different sets of data from the same source to different warehouses.
 
@@ -46,7 +46,7 @@ Your warehouse id appears in the URL when you look at the [warehouse destination
 
 Your data will be available in Warehouses within 24-48 hours. The underlying Redshift datastore has a subtle tradeoff between data freshness, robustness, and query speed. For the best experience, Segment needs to balance all three of these.
 
-Real-time loading of the data into Segment Warehouses would cause significant performance degradation at query time because of the way Redshift uses large batches to optimize and compress columns. To optimize for your query speed, reliability, and robustness, Segment guarantees  that your data will be available in Redshift within 24 hours.
+Real-time loading of the data into Segment Warehouses would cause significant performance degradation at query time because of the way Redshift uses large batches to optimize and compress columns. To optimize for your query speed, reliability, and robustness, Segment guarantees that your data will be available in Redshift within 24 hours.
 
 As Segment improves and updates the ETL processes and optimizes for SQL query performance downstream, the actual load time will vary, but Segment ensures it's always within 24 hours.
 
