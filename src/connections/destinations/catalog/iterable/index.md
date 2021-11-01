@@ -4,7 +4,7 @@ hide-personas-partial: true
 cmode-override: true 
 ---
 
-When you enable the Iterable destination from the Segment app, your data starts flowing into Iterable, where it can trigger workflows and make data available for analytics. You can find your Iterable API key by going to Destinations → API Keys inside the Iterable app.
+When you enable the Iterable destination from the Segment app, your data starts flowing into Iterable, where it can trigger workflows and make data available for analytics. You can find or generate your Iterable API key by going to Integrations → API keys inside the Iterable app.
 
 <!-- LR 8/7/2020 these are all 404ing, commenting out until we can figure out if they're gone or just moved
 **Use Cases**
