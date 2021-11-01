@@ -255,7 +255,7 @@ Here's an example:
 ```
 
 > info ""
-> **Note**: Enhanced ecommerce events cannot be tagged using the `nonInteraction` flag or Advanced Options. Instead, when using device-mode, Segment automatically marks all enhanced ecommerce events as **Non-interaction** events. When using cloud-mode or server-side, the `Order Refunded`, `Promotion Viewed`, `Promotion Clicked`, `Product List Viewed`, and `Product List Filtered` enhanced ecommerce events are marked as **Non-interaction** events. All other enhanced ecommerce events will not include a non-interaction flag.
+> Enhanced ecommerce events cannot be tagged with the `nonInteraction` flag or Advanced Options. Instead, in device-mode, Segment marks all enhanced ecommerce events as **Non-interaction** events. When you use cloud-mode or server-side, Segment marks the `Order Refunded`, `Promotion Viewed`, `Promotion Clicked`, `Product List Viewed`, and `Product List Filtered` enhanced ecommerce events as **Non-interaction** events. All other enhanced ecommerce events do not include a non-interaction flag.
 
 ## Enabling E-Commerce tracking
 
