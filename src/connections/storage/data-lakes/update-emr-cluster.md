@@ -18,7 +18,7 @@ By updating your EMR cluster to 5.33.0, you can participate in [AWS Lake Formati
 
 ## Procedure
 1. Open your Segment app workspace and select the Data Lakes destination.
-2. On the Settings tab, select the EMR Cluster ID field and replace the existing ID with the ID of your v5.33.0 EMR cluster. For help finding the cluster ID in AWS, see Amazon's [View cluster status and details](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-manage-view-clusters.html). You do not need to update the Glue Catalog ID, IAM Role ARN, and S3 Bucket name fields.
+2. On the Settings tab, select the EMR Cluster ID field and replace the existing ID with the ID of your v5.33.0 EMR cluster. For help finding the cluster ID in AWS, see Amazon's [View cluster status and details](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-manage-view-clusters.html). You do not need to update the Glue Catalog ID, IAM Role ARN, or S3 Bucket name fields.
 3. Select **Save**.
 4. In AWS, view the Events tab for your cluster to verify it is receiving data.
 
