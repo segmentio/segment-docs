@@ -96,7 +96,7 @@ Create a `segment-data-lake-role` role for Segment to assume. Attach the followi
   ]
 }
 ```
-###### 2. For other regions:
+###### 2. For `eu-west-1` region:
 
 Create a `segment-data-lake-role` role for Segment to assume. Attach the following trust relationship document to the role:
 
