@@ -32,7 +32,7 @@ The following lifecycle settings should be applied to your staging data:
 
 ## Step 2 - Configure an EMR cluster
 
-Segment requires access to an EMR cluster to perform necessary data processing. We recommend starting with a small cluster, with the option to add more compute resources as required.
+Segment requires access to an EMR cluster to perform necessary data processing. For best results, start with a small cluster and add more compute resources as required.
 
 ### Configure the hardware and networking configuration
 
@@ -216,7 +216,7 @@ Add a policy to the role created above to give Segment access to the relevant Gl
 ```
 
 > note ""
-> **NOTE:** The policy above grants full access to Athena, but the individual Glue and S3 policies decide which table is queryable. Segment queries for debugging purposes, and will notify you be for running any queries.
+> **NOTE:** The policy above grants full access to Athena, but the individual Glue and S3 policies determine which table will be queried. Segment queries for debugging purposes, and will notify you before running any queries.
 
 ## Debugging
 
