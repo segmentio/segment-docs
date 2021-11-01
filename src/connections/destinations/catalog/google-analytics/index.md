@@ -150,13 +150,13 @@ Unlike the device-mode destination which runs directly on the device, and which 
 You can specify what the event action should be called in the Google Universal Analytics settings. If you don't specify a name, Segment uses a default of event **'User Enriched'**. Since an event category is also required, you can specify which `trait` you want Segment to set this value to. For example, if you send a trait such as `type`, Segment sets the value of `traits.type` as the event category if defined, and if it is not, sets it to the default value **'All'**.
 
 > info ""
-> **Note**: Segment marks enriched user trait events as a **Non Interaction** event. Non-interaction events are available if you're using Google Universal Analytics.
+> **Note**: Segment marks enriched user trait events as a **Non-interaction** event. Non-interaction events are available if you're using Google Universal Analytics.
 
 ### A/B Test Versions to Dimensions
 
 Segment makes it simple to save your A/B testing versions to custom dimensions in Google Universal Analytics by mapping an experiment to a custom dimension in the Google Universal Analytics destination settings.
 
-If you are using Cloud-mode or server-side Google Universal Analytics destinations, you can also send this data automatically using the `experiment_id`, `experiment_name`, `variation_id`, and `variation_name` properties. If both an experiment and variation are defined, then this is sent automatically. Segment uses the ids before using the names. If both an ID and a name exist, Segment sends the ID first. For example, if you an `experiment_id`, an `experiment_name`, and a `variation_name` in a call, only the `experiment_id` and `variation_name` are sent to Google Universal Analytics.
+If you are using cloud-mode or server-side Google Universal Analytics destinations, you can also send this data automatically using the `experiment_id`, `experiment_name`, `variation_id`, and `variation_name` properties. If both an experiment and variation are defined, then this is sent automatically. Segment uses the ids before using the names. If both an ID and a name exist, Segment sends the ID first. For example, if you an `experiment_id`, an `experiment_name`, and a `variation_name` in a call, only the `experiment_id` and `variation_name` are sent to Google Universal Analytics.
 
 When you have an active A/B test on a page, Segment either sets that experiment as a property or a user trait, depending on how you choose to send experiment data to other tools on your A/B testing tool's Segment settings page. The property or trait for A/B test experiments are labeled like the following examples:
 
@@ -254,7 +254,8 @@ Here's an example:
 }
 ```
 
-
+> info ""
+> Enhanced ecommerce events cannot be tagged with the `nonInteraction` flag or Advanced Options. Instead, in device-mode, Segment marks all enhanced ecommerce events as **Non-interaction** events. When you use cloud-mode or server-side, Segment marks the `Order Refunded`, `Promotion Viewed`, `Promotion Clicked`, `Product List Viewed`, and `Product List Filtered` enhanced ecommerce events as **Non-interaction** events. All other enhanced ecommerce events do not include a non-interaction flag.
 
 ## Enabling E-Commerce tracking
 
@@ -865,7 +866,7 @@ Using Segment won't affect your bounce rates in Google Universal Analytics.
 
 If you see your bounce rates drop after installing Segment make sure you don't have multiple copies of the snippet on your page. Also be sure you're not calling `page` more than once when the page loads.
 
-If you call `track` on page load make sure to set `nonInteraction` to `1`. You can also set all events to be non-interactive by default in `Advanced Options`. Read more in the [non-interaction events](#non-interaction-events) docs.
+If you call `track` on page load make sure to set `nonInteraction` to `1`. You can also set all events to be non-interactive by default in Advanced Options. Read more in the [non-interaction events](#non-interaction-events) docs.
 
 
 ### Traffic from Boardman or Segmentio Browser
