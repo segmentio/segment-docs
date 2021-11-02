@@ -50,7 +50,7 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 | --------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | SQL Traits                  | **Essentials**: 5 <br><br> **Advanced**: 25                                       | The number of SQL traits you can sync to your Personas space. Contact your account team to upgrade your Personas service. |
 | SQL Traits - Sync Frequency | **Essentials**: <br> twice daily <br><br> **Advanced**: customizable, up to hourly | The frequency with which Segment runs your SQL traits. Contact your account team to customize your schedule.              |
-| SQL Traits - Rows           | 10 million                                                                    | The number of rows each SQL trait can return.                                                                             |
+| SQL Traits - Rows           | 25 million                                                                    | The number of rows each SQL trait can return.                                                                             |
 | SQL Traits - Columns        | 25                                                                            | The number of columns each SQL trait can return.                                                                          |
 
 
