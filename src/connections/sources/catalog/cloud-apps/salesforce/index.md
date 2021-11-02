@@ -2,13 +2,13 @@
 title: Salesforce Source
 strat: salesforce
 ---
-Salesforce is a leader in on-demand customer relationship management. [Visit Website](http://salesforce.com)
+[Salesforce](http://salesforce.com){:target="_blank"} is a leader in on-demand customer relationship management.
 
 Take your company's analysis to the next level by **adding Salesforce as a Source to Segment.** Segment automatically  collects objects like `Accounts`, `Campaigns`, and `Tasks` and load them into your data warehouse. 
 
 ## Getting Started
 > info ""
-> You can add multiple instances of this destination if you have more than one SalesForce account. 
+> You can add multiple instances of this destination if you have more than one Salesforce account. 
 
 1. From your workspace's `/sources` page, click `add source`.
 
