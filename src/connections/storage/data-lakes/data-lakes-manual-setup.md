@@ -225,7 +225,7 @@ You can update your existing Data Lake destination to EMR version 5.33.0 by crea
 
 When you update an EMR cluster to 5.33.0, you can participate in [AWS Lake Formation](https://aws.amazon.com/lake-formation/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc){:target="_blank"}, use dynamic auto-scaling, and experience faster Parquet jobs.  
 
-> info""
+> info ""
 > Your Segment Data Lake does not need to be disabled during the update process, and any ongoing syncs will complete on the old cluster. Any syncs that fail while you are updating the cluster ID field will be restarted on the new cluster.
 
 ## Prerequisites
