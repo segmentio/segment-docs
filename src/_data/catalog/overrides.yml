@@ -44,6 +44,8 @@ items:
   - Google AdWords New
 - slug: klaviyo
   display_name: Klaviyo
+  previous_names:
+  - Klaviyo
   components:
   - code: 'https://github.com/segment-integrations/analytics.js-integration-klaviyo'
     type: browser
