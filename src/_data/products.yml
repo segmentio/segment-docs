@@ -114,9 +114,9 @@ items:
     team: false
     business: true
     add-on: true
-- product_display_name: Data Residency
+- product_display_name: Regional Segment
   slug: data-residency
-  plan-note: "Data residency is available to customers on the Business Tier plan."
+  plan-note: "Regional Segment is available to customers on the Business Tier plan."
   plans:
     free: false
     team: false
