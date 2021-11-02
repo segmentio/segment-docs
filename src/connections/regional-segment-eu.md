@@ -21,6 +21,9 @@ To create a workspace with a different data processing region:
 3. Select your **Data processing region**. This determines the location in which Segment collects, processes, and stores data that’s sent to and from your workspace. You can choose from *US West* or *EU Central*.  
 4. Click **Create workspace**.
 
+> info ""
+> Once you create a workspace with a specified data processing region, you can't change the region. You must create a new workspace to change the region.  
+
 ## Regional Data Ingestion
 Regional Data Ingestion enables you to send data to Segment from both Device-mode and Cloud-mode sources through regionally hosted API ingest points. The regional infrastructure can fail across locations within a region, but never across regions.
 
