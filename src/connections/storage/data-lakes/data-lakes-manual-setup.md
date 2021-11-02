@@ -66,9 +66,11 @@ The following steps provide examples of the IAM Role and IAM Policy.
 
 ### IAM Role
 
-###### 1. For DataLake created in US workspaces:
+Create a `segment-data-lake-role` for Segment to assume. The trust relationship document you attach to the role will be different depending on your workspace region. 
 
-Create a `segment-data-lake-role` role for Segment to assume. Attach the following trust relationship document to the role:
+#### IAM Role for Data Lakes created in US workspaces:
+
+Attach the following trust relationship document to the role to create a `segment-data-lake-role` role for Segment:
 
 ```json
 {
@@ -96,9 +98,16 @@ Create a `segment-data-lake-role` role for Segment to assume. Attach the followi
   ]
 }
 ```
-###### 2. For DataLake created in EU workspaces:
 
-Create a `segment-data-lake-role` role for Segment to assume. Attach the following trust relationship document to the role:
+> note ""
+> **NOTE:** Replace the `ExternalID` list with the Segment `WorkspaceID` that contains the sources to sync to the Data Lake.
+
+#### IAM Role for Data Lakes created in EU workspaces:
+
+> info ""
+> EU workspaces are currently in beta. If you would like to learn more about the beta, please contact your account manager. 
+
+Attach the following trust relationship document to the role to create a `segment-data-lake-role` role for Segment.
 
 ```json
 {
