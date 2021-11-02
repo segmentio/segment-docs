@@ -4,6 +4,7 @@ changelog:
       - automated-reposync-pr
       - autoupdate
       - back-end
+      - release
     authors:
       - bot-docsteam
   categories:
