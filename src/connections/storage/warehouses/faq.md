@@ -5,11 +5,11 @@ redirect_from: '/connections/warehouses/faq/'
 
 ## Can I control what data is sent to my warehouse?
 
-Yes. For those of you who are on Segment's [Business plan](https://segment.com/pricing), you can choose which sources, collections, and properties sync to your data warehouse using [Warehouse Selective Sync](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync).
+Yes. Customers on Segment's [Business plan](https://segment.com/pricing) can choose which sources, collections, and properties sync to your data warehouse using [Warehouse Selective Sync](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync).
 
-Selective Sync helps manage what data is sent to each individual warehouse, allowing you to sync different sets of data from the same source to different warehouses.
+Selective Sync helps manage the data Segment sends to each warehouse, allowing you to sync different sets of data from the same source to different warehouses.
 
-Once a source, collection or property is disabled, Segment no longer syncs data from that source. Segment won't delete any historical data from your warehouse. When a source is re-enabled, Segment syncs all events since the last sync. This doesn't apply when a collection or property is re-enabled. Only new data generated after re-enabling a collection or property will sync to your warehouse.
+When you disable a source, collection or property, Segment no longer syncs data from that source. Segment won't delete any historical data from your warehouse. When you re-enable a source, Segment syncs all events since the last sync. This doesn't apply when a collection or property is re-enabled. Only new data generated after re-enabling a collection or property will sync to your warehouse.
 
 ## Can we add, tweak, or delete some of the tables?
 
@@ -44,7 +44,7 @@ Your warehouse id appears in the URL when you look at the [warehouse destination
 
 ## How fresh is the data in Segment Warehouses?
 
-Your data will be available in Warehouses within 24-48 hours. The underlying Redshift datastore has a subtle tradeoff between data freshness, robustness, and query speed. For the best experience, Segment needs to balance all three of these.
+Data is available in Warehouses within 24-48 hours. The underlying Redshift datastore has a subtle tradeoff between data freshness, robustness, and query speed. For the best experience, Segment needs to balance all three of these.
 
 Real-time loading of the data into Segment Warehouses would cause significant performance degradation at query time because of the way Redshift uses large batches to optimize and compress columns. To optimize for your query speed, reliability, and robustness, Segment guarantees that your data will be available in Redshift within 24 hours.
 

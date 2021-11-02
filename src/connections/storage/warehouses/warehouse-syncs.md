@@ -39,17 +39,17 @@ To view the Sync History:
 
 ## Warehouse Selective Sync
 
-Warehouse Selective Sync allows you to manage the data that you send to your warehouses. You can use this feature to stop syncing specific events (also known as collections) or properties that aren’t relevant, and could be slowing down your warehouse syncs.
+Warehouse Selective Sync allows you to manage the data that you send to your warehouses. You can use this feature to stop syncing specific events (also known as collections) or properties that aren’t relevant, and may slow down your warehouse syncs.
 
 > info ""
 > This feature is only available to Business Tier customers. <br><br>You must be a Workspace Owner to change Selective Sync settings.
 
-With Selective Sync, you can customize which collections and properties from a source are sent to each warehouse. This helps you manage what data is sent to each individual warehouse, allowing you to sync different sets of data from the same source to different warehouses.
+With Selective Sync, you can customize which collections and properties from a source are sent to each warehouse. This helps you control the data that is sent to each warehouse, allowing you to sync different sets of data from the same source to different warehouses.
 
 > note ""
 > **NOTE:** This feature only affects [warehouses](/docs/connections/storage/warehouses/), and doesn't prevent data from going to any other [destinations](/docs/connections/destinations/).
 
-Once a source, collection, or property is disabled, Segment no longer syncs data from that source. Segment won't delete any historical data from your warehouse. When a source is re-enabled, Segment syncs all events since the last sync. This does not apply when a collection or property is re-enabled. Only new data generated after re-enabling a collection or property syncs to your warehouse.
+When you disable a source, collection or property, Segment no longer syncs data from that source. Segment won't delete any historical data from your warehouse. When you re-enable a source, Segment syncs all events since the last sync. This doesn't apply when a collection or property is re-enabled. Only new data generated after re-enabling a collection or property will sync to your warehouse.
 
 > warning ""
 > For each warehouse only the first 5,000 collections per source and 5,000 properties per collection are visible in the Selective Sync user interface. [Learn more about the limits](#selective-sync-user-interface-limits).
