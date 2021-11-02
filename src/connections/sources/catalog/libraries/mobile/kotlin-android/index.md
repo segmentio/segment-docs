@@ -416,7 +416,7 @@ analytics.flush("SomePlugin")
 
 ## Build Your Own Destination
 
-If Segment doesn't support your Kotlin destination, you can build your own Kotlin destination using the template Segment provides. 
+If Segment doesn't support your Kotlin destination, you can build your own with the template Segment provides. 
 
 To build your own Kotlin destination using a plugin template:
 
