@@ -227,8 +227,8 @@ sections:
     title: Integration Error Codes
   - path: /connections/rate-limits
     title: Rate Limits and SLA
-  - path: /connections/data-residency
-    title: Data Residency
+  - path: /connections/regional-segment
+    title: Regional Segment
 - section_title: Personas
   section:
   - path: /personas
