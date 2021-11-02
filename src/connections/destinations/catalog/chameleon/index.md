@@ -8,6 +8,8 @@ Our Chameleon destination code is open-source on GitHub if you want to [check it
 
 When you enable the Segment direct destination on the [Chameleon dashboard](https://app.trychameleon.com/settings/integrations) we will immediately start receiving your app's user and event data collected by Segment.
 
+You may need to enable your website domain on the [Chameleon Domains Dashboard](https://app.trychameleon.com/settings/domains) to see User events and properties on Chameleon.
+
 ## Identify
 
 This helps you target product tours to specific (segments of) users. You can read more about how to segmentations work in [Chameleon's docs](https://help.trychameleon.com/en/articles/1500422-how-to-create-a-target-audience)
