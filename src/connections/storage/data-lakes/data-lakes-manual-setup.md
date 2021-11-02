@@ -62,7 +62,7 @@ Segment requires access to an EMR cluster to perform necessary data processing. 
     * Memory: 16 GiB
     * EBS Storage: 64 GiB, EBS only storage
 
-    For more information about configuring cluster hardware and networking, see Amazon's documentation, [Configure Cluster Hardware and Networking](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-instances.html).
+    For more information about configuring cluster hardware and networking, see Amazon's documentation, [Configure Cluster Hardware and Networking](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-instances.html){:target="_blank"}.
 
 8. Click **Next** to proceed to Step 3: General Cluster Settings.
 
