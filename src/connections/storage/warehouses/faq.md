@@ -81,7 +81,12 @@ We highly recommend scripting any sort of additions of data you might have to wa
 
 ## Which IPs should I whitelist?
 
-You can whitelist our custom IP 52.25.130.38/32 while authorizing Segment to write in to your Redshift or Postgres port.
+You can whitelist Segment's custom IP `52.25.130.38/32` while authorizing Segment to write in to your Redshift or Postgres port.
+
+If you're in the EU region, use CIDR `3.251.148.96/29`.
+
+> info ""
+> EU workspace regions are currently in beta. If you would like to learn more about the beta, please contact your account manager.
 
 BigQuery does not require whitelisting an IP address. To learn how to set up BigQuery, check out our [set up guide](https://segment.com/docs/connections/storage/catalog/bigquery/#getting-started)
 
