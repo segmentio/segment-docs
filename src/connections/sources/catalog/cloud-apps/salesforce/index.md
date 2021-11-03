@@ -14,7 +14,7 @@ Take your company's analysis to the next level by **adding Salesforce as a Sourc
 
 2. Choose Salesforce.
 
-3. Give the Salesforce source a name, add any necessary labels, and select the Salesforce environment you'd like to pull data from. If you would like to use data from a Salesforce sandbox environment, select **Sandbox** from the Salesforce Environment dropdown and then [contact us](https://segment.com/help/contact/). Our Support team will then configure your source to use sandbox data. 
+3. Give the source a name, add labels, if applicable, and select the Salesforce environment you'd like to pull data from. If you would like to use data from a Salesforce sandbox environment, select **Sandbox** from the Salesforce Environment dropdown and then [contact us](https://segment.com/help/contact/). Our Support team will then configure your source to use sandbox data.
 
 4. Connect Segment to your Salesforce environment and authorize Segment to connect to it. In order for Segment to collect and sync your Salesforce data, you must enable API access for the user that you are connecting to Segment with. For more information on how to confirm or change API access for a Salesforce user, follow Salesforce's [recommended documentation](https://help.salesforce.com/articleView?id=admin_userperms.htm){:target="_blank"}.   
 
@@ -116,4 +116,4 @@ Warehouses are the only supported destination for object-cloud sources.
 
 ## Troubleshooting
 
-If you are syncing data from a Salesforce sandbox environment and see an "Invalid credentials" error, [contact our support team,](https://segment.com/help/contact/), who will configure your Segment source to use sandbox data. 
+If you are syncing data from a Salesforce sandbox environment and see an "Invalid credentials" error, [contact our support team](https://segment.com/help/contact/), who will configure your Segment source to use sandbox data. 
