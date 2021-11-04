@@ -15,7 +15,7 @@ redirect_from:
 
 
 > success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Braze Segment destination. There's also a page about the [non-Actions Customer.io destination](/docs/connections/destinations/catalog/customer-io/). Both of these destinations receives data _from_ Segment. There's also the [Customer.io source](/docs/connections/sources/catalog/cloud-apps/customer-io/), which sends data _to_ Segment!
+> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Customer.io Segment destination. There's also a page about the [non-Actions Customer.io destination](/docs/connections/destinations/catalog/customer-io/). Both of these destinations receives data _from_ Segment. There's also the [Customer.io source](/docs/connections/sources/catalog/cloud-apps/customer-io/), which sends data _to_ Segment!
 
 ## Benefits of Customer.io (Actions) vs Customer.io classic
 
