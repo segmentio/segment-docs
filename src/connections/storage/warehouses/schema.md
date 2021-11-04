@@ -258,7 +258,7 @@ analytics.track('Register', {
 Then you can expect to see columns named `plan` and `account_type` as well as the default `event`, `id`, and so on. That way, you can write queries against any of the custom data sent in track calls.
 
 > info "Note"
-> Because `properties` and `traits` are added as un-prefixed columns to your tables, there is a chance of collision with our reserved column names. For this reason, properties with the same name as reserved column name (for example, `user_id`) are discarded.
+> Because Segment adds `properties` and `traits` as un-prefixed columns to your tables, there is a chance the names can collide with reserved column names. For this reason, Segment discards properties with the same name as the reserved column name (for example, `user_id`).
 
 Your event tables are one of the more powerful datasets in Segment SQL. They allow you to see which actions users perform when interacting with your product.
 
