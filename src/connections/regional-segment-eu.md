@@ -14,6 +14,7 @@ As Schrems II restricts the transfer of personal data to any processors establis
 > info ""
 > [Cloud object sources](/docs/connections/sources/#object-cloud-sources) and cloud event sources aren't supported in EU workspaces. 
 
+
 > info ""
 > Regional Segment for Europe is currently in beta. Segment’s [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this feature.
 
@@ -26,6 +27,7 @@ To create a workspace with a different data processing region:
 
 > info ""
 > Once you create a workspace with a specified data processing region, you can't change the region. You must create a new workspace to change the region.
+
 
 ## Regional Data Ingestion
 Regional Data Ingestion enables you to send data to Segment from both Device-mode and Cloud-mode sources through regionally hosted API ingest points. The regional infrastructure can fail across locations within a region, but never across regions.
@@ -40,6 +42,7 @@ To set your Data Ingestion Region:
 4. Choose your **Data Ingestion Region**.
     * If you’re in the *US West* data processing region, you can select from: Dublin, Singapore, Oregon, and Sydney.
     * If you're in the *EU West* data processing region, Segment’s EU instance only supports data ingestion from Dublin with the `events.eu1.segmentapis.com` endpoint.
+
 
 ### Client-side sources
 You can configure Segment’s client-side SDKs for Javascript, iOS, Android, and React Native sources to send data to a regional host after you’ve updated the Data Ingestion Region in that source’s settings.
