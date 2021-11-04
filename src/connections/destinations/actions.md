@@ -74,6 +74,16 @@ To set up a new Actions-framework destination for the first time:
     You can choose **Quick Setup** to use the default mappings, or choose **Customized Setup** (if available) to create new mappings and conditions from a blank state. You can always edit these mappings later.
 7. Once you’re satisfied with your mappings, click **Create Destination**.
 
+## Migrate a classic destination to an actions-based destination
+
+Moving from a classic destination to an actions-based destination is a manual process. Segment recommends that you follow the procedure below:
+
+1. Create the actions-based destination with your development or test source.
+2. Copy API keys, connection details, and other settings from the classic destination to the actions-based destination. In general, actions-based destinations have fewer connection settings than their classic counterparts.
+3. Refer to the actions-based destination's documentation for information about migrating specific settings.
+4. Disable the classic version of the destination, and enable the actions-based version.
+5. Verify that data is flowing from the development or test source, to the partner tool.
+6. Repeat the steps above with your production source.
 
 ## Edit a destination action
 You can add or remove, disable and re-enable, and rename individual actions from the Actions tab on the destination's information page in the Segment app. Click an individual action to edit it.
