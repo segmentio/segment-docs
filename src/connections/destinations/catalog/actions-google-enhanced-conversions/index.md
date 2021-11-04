@@ -1,5 +1,5 @@
 ---
-title: Google Enhanced Conversions Actions Destination
+title: Google Enhanced Conversions Destination
 hide-boilerplate: true
 hide-dossier: true
 hidden: true
@@ -25,10 +25,10 @@ The Google Enhanced Conversions destination enables you to improve the accuracy 
 
 ### Add the Google Enhanced Conversions destination to your workspace
 
-The Actions Google Enhanced Conversions destination is in Private Beta, and does not appear in the Destinations Catalog. 
+The Google Enhanced Conversions destination is in Private Beta, and does not appear in the Destinations Catalog. 
 
 1. To access the destination, navigate to this URL: `https://app.segment.com/<workspace_slug>/destinations/catalog/actions-google-enhanced-conversions` Replace `<workspace_slug>` with your workspace slug.
-2. Click **Configure Actions Google Enhanced Conversions** in the top-right corner of the screen.
+2. Click **Configure Google Enhanced Conversions** in the top-right corner of the screen.
 3. Select the source to use to send data to Google Enhanced Conversions.
 4. Enter your Conversion Tracking ID. Find it in your Google Ads account using the instructions in the article [Google Ads conversions](https://support.google.com/tagmanager/answer/6105160?hl=en){:target="_blank"}. When you log in to Google Ads, make sure you are in [Expert Mode](https://support.google.com/google-ads/answer/9520605?hl=en){:target="_blank"}. Note you'll follow these same instructions to get the Conversion label, which you'll need when you set up your first Action, below. 
 5. Click **Configure Actions**.
@@ -36,7 +36,7 @@ The Actions Google Enhanced Conversions destination is in Private Beta, and does
 
 ### Connect to Google Enhanced Conversions
 
-After you create the destination in your Segment workspace, you can authenticate with Google using OAuth. On the **Settings** tab of the destination, click **Connect to Actions Google Enhanced Conversions**. Follow the prompts to authenticate using OAuth, with a Google login that is a member of the Google Ads account with Enhanced Conversions  enabled.
+After you create the destination in your Segment workspace, you can authenticate with Google using OAuth. On the **Settings** tab of the destination, click **Connect to Google Enhanced Conversions**. Follow the prompts to authenticate using OAuth, with a Google login that is a member of the Google Ads account with Enhanced Conversions  enabled.
 
 ## Create your first Action
 
