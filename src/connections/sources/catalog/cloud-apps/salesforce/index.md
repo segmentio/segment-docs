@@ -14,7 +14,7 @@ Take your company's analysis to the next level by **adding Salesforce as a Sourc
 
 2. Choose Salesforce.
 
-3. Give the source a name, add labels, if applicable, and select the Salesforce environment you'd like to pull data from. If you would like to use data from a Salesforce sandbox environment, select **Sandbox** from the Salesforce Environment dropdown and then [contact us](https://segment.com/help/contact/). Our Support team will then configure your source to use sandbox data.
+3. Give the source a name, add labels, if applicable, and select the Salesforce environment you'd like to pull data from. To use data from a Salesforce sandbox environment, select **Sandbox** from the Salesforce Environment dropdown and [contact Segment Support](https://segment.com/help/contact/). Our Support team will then configure your source to use sandbox data.
 
 4. Connect Segment to your Salesforce environment and authorize Segment to connect to it. In order for Segment to collect and sync your Salesforce data, you must enable API access for the user that you are connecting to Segment with. For more information on how to confirm or change API access for a Salesforce user, follow Salesforce's [recommended documentation](https://help.salesforce.com/articleView?id=admin_userperms.htm){:target="_blank"}.   
 
