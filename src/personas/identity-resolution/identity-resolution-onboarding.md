@@ -80,7 +80,7 @@ In the past, Segment has seen certain default values that cause large amounts of
 
 | Value                         | Type            |
 | ----------------------------- | --------------- |
-| Zeroes and Dashes (`^[0\-]*$) | Pattern (REGEX) |
+| Zeroes and Dashes (^[0-]*$) | Pattern (REGEX) |
 | -1                            | Exact Match     |
 | null                          | Exact Match     |
 | anonymous                     | Exact Match     |
