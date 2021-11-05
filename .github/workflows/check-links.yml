@@ -42,9 +42,9 @@ jobs:
           args: --verbose --no-progress **/*.html -a 429 -c ./lychee.toml
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: "exclude non-400 errors"
-        run: |
-          cat ./lychee/out.md | grep -v "error sending request" > ./lychee/out.md
+      # - name: "exclude non-400 errors"
+      #   run: |
+      #     cat ./lychee/out.md | grep -v "error sending request" > ./lychee/out.md
       - name: Create Issue From File
         uses: peter-evans/create-issue-from-file@v3
         with:
