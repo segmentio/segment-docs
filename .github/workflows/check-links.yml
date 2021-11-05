@@ -6,17 +6,9 @@ name: CheckLinks
 
 
 
-# on:
-#   schedule:
-#     - cron: "5 4 * * SAT"
-
 on:
-  push:
-    branches:
-      - link-check-action
-  pull_request:
-    branches:
-      - link-check-action
+  schedule:
+    - cron: "5 4 * * SAT"
 
 jobs:
   checklinks:
@@ -49,5 +41,5 @@ jobs:
         uses: peter-evans/create-issue-from-file@v3
         with:
           title: Link Checker Report
-          content-filepath: ./lychee/out2.md
+          content-filepath: ./lychee/out.md
           labels: report, automated issue
