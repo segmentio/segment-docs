@@ -12,7 +12,7 @@ on:
 
 jobs:
   checklinks:
-    # if: github.repository == 'segmentio/segment-docs-private'
+    if: github.repository == 'segmentio/segment-docs'
     name: Linux
     runs-on: ubuntu-latest
     strategy:
