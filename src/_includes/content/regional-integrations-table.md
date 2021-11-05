@@ -1,6 +1,3 @@
----
-title: Regional Segment Integrations
----
 {% assign source = site.data.regional.regions %}
 
 
