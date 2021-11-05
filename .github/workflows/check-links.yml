@@ -44,7 +44,7 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: "exclude non-400 errors"
         run: |
-          cat ./lychee/out.md | grep -v "error sending request" > ./lychee/out2.md
+          sudo cat ./lychee/out.md | grep -v "error sending request" > ./lychee/out2.md
       - name: Create Issue From File
         uses: peter-evans/create-issue-from-file@v3
         with:
