@@ -197,7 +197,8 @@ To send computed traits or audiences to Iterable, you first must connect it to y
 - **Personas Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
 - **Traits and Audiences created by**:You can add traits and audiences as user properties using `identify` calls. You can send audiences as `Audience Entered` or `Audience Exited` `track` calls with the audience name as an event property.
 - **Must create audience_name field before Personas can update those values?**: No. If you send the audience as an `identify` call, Personas automatically creates the computed trait or audience name as a user property.
-- **Audience appears as**: Computed traits appears as a lower case user property with the spaces converted to underscores. When you send Audiences as an `identify` call, Personas creates a lower case boolean user property using the audience name with spaces converted to underscores.  When you send Audiences as a `track` call, Personas sends `Audience Entered` and `Audience Exited` events, with the audience name as an event property.
+- **Computed trait appears as**: A lower case user property with the spaces converted to underscores.
+- **Audience appears as**:  When you send Audiences as an `identify` call, Personas creates a lower case boolean user property using the audience name with spaces converted to underscores.  When you send Audiences as a `track` call, Personas sends `Audience Entered` and `Audience Exited` events, with the audience name as an event property.
 - **Destination rate limit**: If sending traits and audiences as `identify` calls, 500 requests/second, per project. If sending audiences as `track` calls, 2000 requests/second, per project.
 - **Lookback window allowed**: Unlimited
 - **Identifiers required** : `userId` or `email`
