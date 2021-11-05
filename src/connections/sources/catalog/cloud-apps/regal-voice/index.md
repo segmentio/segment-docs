@@ -30,6 +30,14 @@ The table below lists events that Regal Voice sends to Segment. These events app
    <td>Description</td>
   </tr>
   <tr>
+   <td>agent.activity.updated</td>
+   <td>An agent’s activity status was changed.</td>
+  </tr>
+  <tr>
+   <td>call.completed</td>
+   <td>An inbound or outbound call with a contact was completed. This includes calls that were not answered</td>
+  </tr>
+  <tr>
    <td>contact.subscribed</td>
    <td>A contact was subscribed to a marketing channel</td>
   </tr>
@@ -44,6 +52,10 @@ The table below lists events that Regal Voice sends to Segment. These events app
   <tr>
     <td>contact.experiment.assigned</td>
     <td>A contact was assigned to an experiment</td>
+  </tr>
+  <tr>
+   <td>sms.conversation.completed</td>
+   <td>An SMS conversation between a contact and an agent was completed in the Regal Voice agent desktop</td>
   </tr>
   <tr>
    <td>sms.queued</td>
@@ -62,20 +74,12 @@ The table below lists events that Regal Voice sends to Segment. These events app
    <td>An sms was received from a contact</td>
   </tr>
   <tr>
-   <td>task.created</td>
-   <td>A call or sms task was created</td>
-  </tr>
-  <tr>
     <td>task.canceled</td>
     <td>A call or sms task was canceled</td>
   </tr>
   <tr>
-   <td>sms.conversation.completed</td>
-   <td>An SMS conversation between a contact and an agent was completed in the Regal Voice agent desktop</td>
-  </tr>
-  <tr>
-   <td>call.completed</td>
-   <td>An inbound or outbound call with a contact was completed. This includes calls that were not answered</td>
+   <td>task.created</td>
+   <td>A call or sms task was created</td>
   </tr>
 </table>
 
@@ -87,8 +91,28 @@ The table below lists events that Regal Voice sends to Segment. These events app
    <td>Description</td>
   </tr>
   <tr>
+   <td>`agent_activity_name`</td>
+   <td>Name of agent’s new availability status.</td>
+  </tr>
+  <tr>
+   <td>`agent_availability`</td>
+   <td>Availability of agent’s previous activity status. Can be true or false.</td>
+  </tr>
+  <tr>
    <td>`agent_email`</td>
    <td>Email of the agent who took an action</td>
+  </tr>
+  <tr>
+   <td>`agent_previous_activity_name`</td>
+   <td>Name of agent’s previous availability status.</td>
+  </tr>
+  <tr>
+   <td>`agent_previous_availability`</td>
+   <td>Availability of agent’s previous activity status. Can be true or false.</td>
+  </tr>
+  <tr>
+   <td>`agent_time_in_previous_activity`</td>
+   <td>Time (in seconds) agent spent in previous activity status.</td>
   </tr>
   <tr>
    <td>`call_id`</td>
