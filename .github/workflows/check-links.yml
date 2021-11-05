@@ -6,9 +6,17 @@ name: CheckLinks
 
 
 
+# on:
+#   schedule:
+#     - cron: "5 4 * * SAT"
+
 on:
-  schedule:
-    - cron: "5 4 * * SAT"
+  push:
+    branches:
+      - link-check-action
+  pull_request:
+    branches:
+      - link-check-action
 
 jobs:
   checklinks:
