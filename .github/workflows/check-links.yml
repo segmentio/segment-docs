@@ -39,15 +39,15 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1.1.0
         with:
-          args: --verbose --no-progress **/*.html -a 429 -c ./lychee.toml
+          args: --verbose --no-progress _site/**/*.html -a 429 -c ./lychee.toml
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      # - name: "exclude non-400 errors"
-      #   run: |
-      #     cat ./lychee/out.md | grep -v "error sending request" > ./lychee/out.md
+      - name: "exclude non-400 errors"
+        run: |
+          cat ./lychee/out.md | grep -v "error sending request" > ./lychee/out2.md
       - name: Create Issue From File
         uses: peter-evans/create-issue-from-file@v3
         with:
           title: Link Checker Report
-          content-filepath: ./lychee/out.md
+          content-filepath: ./lychee/out2.md
           labels: report, automated issue
