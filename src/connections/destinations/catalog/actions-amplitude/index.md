@@ -81,8 +81,8 @@ To enable session tracking in Amplitude when using the [Segment Kotlin library](
 ### Enable Amplitude session tracking for iOS
 
 To enable session tracking in Amplitude when using the [Segment iOS library](https://github.com/segmentio/analytics-ios):
-1. Add the [Amplitude Session plugin](https://github.com/segment-integrations/analytics-ios-integration-amplitude/blob/amplitude-session/Pod/Classes/SEGAmplitudeSession.m) to your project.
-2. Initialize the plugin & enable `trackApplicationLifecycleEvents` in your configuration
+1. Add the [Amplitude Session middleware](https://github.com/segment-integrations/analytics-ios-integration-amplitude/blob/amplitude-session/Pod/Classes/SEGAmplitudeSession.m) to your project.
+2. Add the middleware & enable `trackApplicationLifecycleEvents` in your configuration
    ```objective-c
    	NSString *const SEGMENT_WRITE_KEY = @" ... ";
    	SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:SEGMENT_WRITE_KEY];
@@ -94,11 +94,11 @@ To enable session tracking in Amplitude when using the [Segment iOS library](htt
 ### Enable Amplitude session tracking for Android
 
 To enable session tracking in Amplitude when using the [Segment Android library](https://github.com/segmentio/analytics-android):
-1. Add the [Amplitude Session plugin](https://github.com/segment-integrations/analytics-android-integration-amplitude/blob/master/src/main/java/com/segment/analytics/android/integrations/amplitude/AmplitudeSessionId.java) to your project.
+1. Add the [Amplitude Session middleware](https://github.com/segment-integrations/analytics-android-integration-amplitude/blob/master/src/main/java/com/segment/analytics/android/integrations/amplitude/AmplitudeSessionId.java) to your project.
 	```gradle
 	implementation 'com.segment.analytics.android.integrations:amplitude:3.1.0'
 	```
-3. Initialize the plugin & enable `trackApplicationLifecycleEvents` in your configuration
+3. Add the middleware & enable `trackApplicationLifecycleEvents` in your configuration
    ```java
    	String SEGMENT_WRITE_KEY = " ... ";
    	analytics = new Analytics.Builder(this, SEGMENT_WRITE_KEY)
