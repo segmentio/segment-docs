@@ -37,7 +37,7 @@ insecure = false
 
 # Only test links with the given scheme (e.g. https)
 # Omit to check links with any scheme
-#scheme = "https"
+scheme = ['https', 'http']
 
 # Request method
 method = "get"
@@ -50,7 +50,7 @@ headers = []
 ### Exclusions
 ###
 # Exclude URLs from checking (supports regex)
-exclude = ['https://ajs.cd.segment.com/analytics.js/v1/','http://0.0.0.0:4000','https://api.segment.io/v1/', 'https://segment.com/docs/assets/docs.bundle.js','https://www.linkedin.com', 'https://segment.com/jobs/', 'https://segment.com/press/', 'https://github.com/segmentio', 'https://unpkg.com/@segment/consent-manager@4.2.2/standalone/consent-manager.js', '(segment.com)', '(segmentapis.com)', '(example.com)', '(schema.org)']
+exclude = ['https://ajs.cd.segment.com/analytics.js/v1/','http://0.0.0.0:4000','https://api.segment.io/v1/', 'https://segment.com/docs/assets/docs.bundle.js','https://www.linkedin.com', 'https://segment.com/jobs/', 'https://segment.com/press/', 'https://github.com/segmentio', 'https://unpkg.com/@segment/consent-manager@4.2.2/standalone/consent-manager.js', '(segment.com)', '(segmentapis.com)', '(example.com)', '(schema.org)','(maxcdn)']
 
 # Exclude URLs contained in a file from checking
 exclude_file = []
