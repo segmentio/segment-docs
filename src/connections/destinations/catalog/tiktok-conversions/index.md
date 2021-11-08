@@ -93,7 +93,7 @@ Ensure you've created your TikTok Pixel within Events Manager before sending eve
 ## Notes
 
 - The TikTok Events API supports QPS =< 1k per app（TikTok Marketing API app）per endpoint. If more is required, please contact your TikTok account representative.
-- Requests report events to one pixel ID. This restriction is because authorization is done at user/pixel level. See the [Authorization](https://ads.tiktok.com/marketing_api/docs?id=1701890912382977) section for details.
+- Requests report events to one pixel ID. This restriction is because authorization is done at user/pixel level. See the [Authorization](https://ads.tiktok.com/marketing_api/docs?id=1701890912382977){:target="_blank"} section for details.
 - Data that is shared to the Events API is processed similar to information shared through other TikTok data integration business tools, like the TikTok pixel and TikTok SDK.
 
 
