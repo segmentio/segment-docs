@@ -61,7 +61,7 @@ Choose **Quick Setup** during configuration to select these subscriptions. You c
 
 The pre-built TikTok Conversions Subscriptions trigger the same action, **Report Web Event**. The default subscriptions map events that follow Segment's Spec to the TikTok spec. You can create new subscriptions and map events that best suit your configuration.
 
-The table below shows the mapping of the Segment semantic [ecommerce](https://segment.com/docs/connections/spec/ecommerce/v2/) or custom event names to the TikTok semantic conversion event names in the pre-built subscriptions.
+The table below shows the mapping of the Segment semantic [ecommerce](/docs/connections/spec/ecommerce/v2/) or custom event names to the TikTok semantic conversion event names in the pre-built subscriptions.
 
 | Segment Event Name   | TikTok Semantic Conversion Event Name |
 | -------------------- | ------------------------------------- |
