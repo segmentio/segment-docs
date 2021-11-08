@@ -110,7 +110,7 @@ To add the Braze device-mode SDK to a [React Native](/docs/connections/sources/c
    ```js
    await analytics.setup('YOUR_WRITE_KEY', {
      // Add any of your Device-mode destinations. This ensures they load before continuing.
-     using: Braze
+     using: [Braze]
      // ...
    })
    ```
