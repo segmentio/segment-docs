@@ -8,7 +8,7 @@ Take your company's analysis to the next level by **adding Salesforce as a Sourc
 
 ## Getting Started
 > info ""
-> You can add multiple instances of this destination if you have more than one Salesforce account. 
+> You can add multiple instances of this source if you have more than one Salesforce account. 
 
 1. From your workspace's `/sources` page, click `Add Source`.
 
