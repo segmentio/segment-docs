@@ -284,7 +284,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
 #### iOS
 
-1. Follow the directions to register for push at in [Segment's iOS library](/docs/connections/sources/catalog/libraries/mobile/ios/ios-faqs/#how-do-i-use-push-notifications) docs.
+1. Follow the directions to register for push at in [Segment's iOS library](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/ios-faqs/#how-do-i-use-push-notifications) docs.
 2. Add the following to your application:didFinishLaunchingWithOptions
 
     ```
