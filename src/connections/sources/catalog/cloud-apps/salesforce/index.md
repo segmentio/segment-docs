@@ -2,27 +2,25 @@
 title: Salesforce Source
 strat: salesforce
 ---
-Salesforce is a leader in on-demand customer relationship management. [Visit Website](http://salesforce.com)
+[Salesforce](http://salesforce.com){:target="_blank"} is a leader in on-demand customer relationship management.
 
-Take your company's analysis to the next level by **adding Salesforce as a Source to Segment.** Segment automatically  collects objects like `Accounts`, `Campaigns`, and `Tasks` and load them into your data warehouse. 
+Take your company's analysis to the next level by **adding Salesforce as a Source to Segment.** Segment automatically collects objects like `Accounts`, `Campaigns`, and `Tasks` and loads them into your data warehouse. 
 
 ## Getting Started
 > info ""
-> You can add multiple instances of this destination if you have more than one SalesForce account. 
+> You can add multiple instances of this source if you have more than one Salesforce account. 
 
-1. From your workspace's `/sources` page, click `add source`.
+1. From your workspace's `/sources` page, click `Add Source`.
 
 2. Choose Salesforce.
 
-3. Give the source a name.
+3. Give the source a name, add labels, if applicable, and select the Salesforce environment you'd like to pull data from. To use data from a Salesforce sandbox environment, select **Sandbox** from the Salesforce Environment dropdown and [contact Segment Support](https://segment.com/help/contact/). Our Support team will then configure your source to use sandbox data.
 
-4. Connect Segment to your Salesforce environment and authorize Segment to connect to it. In order for Segment to collect and sync your Salesforce data, you must enable API access for the user that you are connecting to Segment with. For more information on how to confirm or change API access for a Salesforce user, follow Salesforce's [recommended documentation](https://help.salesforce.com/articleView?id=admin_userperms.htm).
+4. Connect Segment to your Salesforce environment and authorize Segment to connect to it. In order for Segment to collect and sync your Salesforce data, you must enable API access for the user that you are connecting to Segment with. For more information on how to confirm or change API access for a Salesforce user, follow Salesforce's [recommended documentation](https://help.salesforce.com/articleView?id=admin_userperms.htm){:target="_blank"}.   
 
 5. Choose a data warehouse to connect Salesforce to.
 
 6. In the Salesforce source settings you can customize the source nickname and schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. Both can be whatever you like, but Segment recommends that you use something that reflects the source itself, like `Salesforce` for nickname and `sfdc`, `salesforce`, or `sfdc_prod` for the schema name. Configure Selective Sync to retrieve only specific objects and properties from Salesforce.
-
-
 
 ## Components
 
@@ -115,3 +113,7 @@ Segment performs a one-to-one mapping of all publicly available fields (standard
 ## Adding Destinations
 
 Warehouses are the only supported destination for object-cloud sources.
+
+## Troubleshooting
+
+If you are syncing data from a Salesforce sandbox environment and see an "Invalid credentials" error, [contact our support team](https://segment.com/help/contact/), who will configure your Segment source to use sandbox data. 

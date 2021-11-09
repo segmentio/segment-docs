@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 > info "Want a simpler list?"
-> Check out the [list of _all_ destinations](index-all/).
+> Check out the [list of _all_ destinations](/docs/connections/destinations/catalog/index-all/).
 
 <br>
 <div class="destinations-catalog">
