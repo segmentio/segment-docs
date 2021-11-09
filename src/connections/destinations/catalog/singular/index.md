@@ -35,7 +35,7 @@ Enable automatic tracking of lifecycle events (`Application Opened`, `Applicatio
 > note "Note"
 > If you are using the Device-Based Destination, there’s no need to implement the code below, as the data is already collected automatically.
 
-To get [iAD attribution](https://searchads.apple.com/help/measure-results/) data into Singular, you must include the [analytics-ios-iads-attribution](https://github.com/segmentio/analytics-ios-iads-attribution) dependency and version 3.6.0 or higher of the [Analytics SDK](https://github.com/segmentio/analytics-ios).
+To get attribution data into Singular, you must include the [analytics-ios-iads-attribution](https://github.com/segmentio/analytics-ios-iads-attribution) dependency and version 3.6.0 or higher of the [Analytics SDK](https://github.com/segmentio/analytics-ios).
 
 To install it, simply add the following line to your Podfile:
 `pod "Analytics"`

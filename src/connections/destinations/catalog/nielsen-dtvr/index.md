@@ -22,7 +22,7 @@ you fill out your company info and have a Nielsen representative before getting
 started.
 
 You must also go through the pre-certification process as outlined
-[here](https://engineeringportal.nielsen.com/docs/Digital_Pre-Certification_Checklist)
+[here](https://engineeringportal.nielsen.com/docs/DCR_Pre-Certification_Checklist)
 with your Nielsen representative before shipping this implementation to
 production.
 
