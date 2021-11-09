@@ -68,6 +68,7 @@ analytics.track('Order Completed', {
 
 **Category**: `category` property
 
+**Action**: always sent with value of `track`
 
 ## Troubleshooting
 

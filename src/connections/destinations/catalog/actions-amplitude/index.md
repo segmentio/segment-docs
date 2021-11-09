@@ -78,6 +78,34 @@ To enable session tracking in Amplitude when using the [Segment Kotlin library](
    analytics.add(AmplitudeSession())
    ```
 
+### Enable Amplitude session tracking for iOS
+
+To enable session tracking in Amplitude when using the [Segment iOS library](https://github.com/segmentio/analytics-ios):
+1. Add the [Amplitude Session middleware](https://github.com/segment-integrations/analytics-ios-integration-amplitude/blob/amplitude-session/Pod/Classes/SEGAmplitudeSession.m) to your project.
+2. Add the middleware & enable `trackApplicationLifecycleEvents` in your configuration
+   ```objective-c
+   	NSString *const SEGMENT_WRITE_KEY = @" ... ";
+   	SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:SEGMENT_WRITE_KEY];
+   	configuration.trackApplicationLifecycleEvents = true
+   	configuration.sourceMiddleware = @[[[SEGAmplitudeSession alloc] init]];
+   	[SEGAnalytics setupWithConfiguration:configuration];
+   ```
+
+### Enable Amplitude session tracking for Android
+
+To enable session tracking in Amplitude when using the [Segment Android library](https://github.com/segmentio/analytics-android):
+1. Add the [Amplitude Session middleware](https://github.com/segment-integrations/analytics-android-integration-amplitude/blob/master/src/main/java/com/segment/analytics/android/integrations/amplitude/AmplitudeSessionId.java) to your project.
+	```gradle
+	implementation 'com.segment.analytics.android.integrations:amplitude:3.1.0'
+	```
+3. Add the middleware & enable `trackApplicationLifecycleEvents` in your configuration
+   ```java
+   	String SEGMENT_WRITE_KEY = " ... ";
+   	analytics = new Analytics.Builder(this, SEGMENT_WRITE_KEY)
+				.trackApplicationLifecycleEvents()
+				.useSourceMiddleware(new AmplitudeSessionId())
+				.build();
+   ```
 
 ## Important differences from the classic Amplitude destination
 
@@ -169,6 +197,9 @@ When you send an "Order Completed" event from Segment, an "Order Completed" even
 {% endcomment %}
 
 #### Track Revenue Per Product
+
+> info ""
+> If you use Track Revenue Per Product, add a `revenue` property inside the `products` array of the Order Completed event.
 
 Amplitude has two different ways to track revenue associated with a multi-product purchase. You can choose which method you want to use using the **Track Revenue Per Product** destination setting.
 

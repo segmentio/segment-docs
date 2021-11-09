@@ -110,7 +110,7 @@ To add the Braze device-mode SDK to a [React Native](/docs/connections/sources/c
    ```js
    await analytics.setup('YOUR_WRITE_KEY', {
      // Add any of your Device-mode destinations. This ensures they load before continuing.
-     using: Braze
+     using: [Braze]
      // ...
    })
    ```
@@ -284,7 +284,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
 #### iOS
 
-1. Follow the directions to register for push at in [Segment's iOS library](/docs/connections/sources/catalog/libraries/mobile/ios/) docs.
+1. Follow the directions to register for push at in [Segment's iOS library](/docs/connections/sources/catalog/libraries/mobile/ios/ios-faqs/#how-do-i-use-push-notifications) docs.
 2. Add the following to your application:didFinishLaunchingWithOptions
 
     ```

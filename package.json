@@ -53,7 +53,7 @@
     "handlebars": "^4.7.7",
     "search-insights": "^2.0.3",
     "tap-spot": "^1.1.1",
-    "tippy.js": "^6.3.1",
+    "tippy.js": "5.2.0",
     "typewriter": "^7.4.1",
     "webpack-dotenv-plugin": "^2.1.0"
   }

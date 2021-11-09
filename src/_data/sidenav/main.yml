@@ -197,8 +197,8 @@ sections:
         title: Warehouse Overview
       - path: /connections/storage/warehouses/schema
         title: Warehouse Schemas
-      - path: /connections/storage/warehouses/selective-sync
-        title: Warehouse Selective Sync
+      - path: /connections/storage/warehouses/warehouse-syncs
+        title: Warehouse Syncs
       - path: /connections/storage/warehouses/health
         title: Warehouse Health Dashboards
       - path: /connections/storage/warehouses/choose-warehouse
@@ -227,8 +227,8 @@ sections:
     title: Integration Error Codes
   - path: /connections/rate-limits
     title: Rate Limits and SLA
-  - path: /connections/data-residency
-    title: Data Residency
+  - path: /connections/regional-segment
+    title: Regional Segment
 - section_title: Personas
   section:
   - path: /personas
