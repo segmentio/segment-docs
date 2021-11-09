@@ -100,25 +100,14 @@ If you have Protocols in your workspace, **and** have a tracking plan associated
 
 ## Warehouse Selective Sync
 
-[Warehouse Selective Sync](/docs/connections/storage/warehouses/selective-sync/) allows you to stop sending specific data to specific warehouses. You can use this to stop syncing specific events or properties that aren’t relevant, and which could be slowing down your warehouse syncs.
+Warehouse Selective Sync allows you to stop sending specific data to specific warehouses. You can use this to stop syncing specific events or properties that aren’t relevant, and could be slowing down your warehouse syncs. See the [Warehouse Selective Sync documentation](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync) to learn more.
 
 > info ""
-> This feature is available to Business Tier customers only, and only Workspace Owners can change Selective Sync settings.
-
-By default, a warehouse receives all sources and their collections and properties. No data is prevented from reaching warehouses. With Selective Sync, you can configure which collections and properties from a source are sent to each warehouse. This allows you to send different sets of data to each warehouse. This also means that you need to enable or disable data for each individual warehouse.
-
-This feature only affects [warehouses](/docs/connections/storage/warehouses/), and does not prevent data from going to any other [destinations](/docs/connections/destinations/).
-
-When you use Selective Sync to prevent data from syncing to a specific warehouse, Segment stops sending new data that meets the selection criteria to that warehouse, however it doesn't delete any existing data in the warehouses. If you use Selective Sync to re-enable a source after disabling it, Segment loads all data that arrived since the last sync into the warehouse, but doesn't backfill data that was omitted while the source was not syncing. Re-enabling a collection or property does **not** backfill any historical data -- only new data generated after re-enabling will be synced to your warehouse.
-
-To enable selective sync, in the Segment app go to the Destinations page, select the warehouse, click **Settings**, and click **Selective sync** in the left menu.
-See the documentation on [Warehouse Selective Sync](/docs/connections/storage/warehouses/selective-sync/) for more details.
-
-![](images/warehouse-selective-sync.png)
+> This feature is only available to Business Tier customers, and you must be a Workspace Owner to change Selective Sync settings.
 
 ## Privacy Portal filtering
 
-The [Privacy Portal](/docs/privacy/portal/) is available to all Segment customers, because we believe that data privacy is a right, and that anyone collecting data should have tools to help ensure their users' privacy. More enhancements are available to BT customers who may need tools for managing complex implementations.
+The [Privacy Portal](/docs/privacy/portal/) is available to all Segment customers, because Segment believes that data privacy is a right, and that anyone collecting data should have tools to help ensure their users' privacy. More enhancements are available to BT customers who may need tools for managing complex implementations.
 
 The Privacy Portal tools allow you to inspect your incoming calls and their payloads, detect potential Personally Identifiable Information (PII) in properties using matchers, classify the information by different categories of risk, and use those categories to determine which Destinations may or may not receive the data. Learn more about these features in the [Privacy Portal documentation](/docs/privacy/portal/).
 

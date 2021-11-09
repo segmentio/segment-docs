@@ -5,14 +5,11 @@ redirect_from: '/connections/warehouses/faq/'
 
 ## Can I control what data is sent to my warehouse?
 
-Yes! For those of you who are on our [Business plan](https://segment.com/pricing), you can choose which sources, collections, and properties sync to your data warehouse.
+Yes. Customers on Segment's [Business plan](https://segment.com/pricing) can choose which sources, collections, and properties sync to your data warehouse using [Warehouse Selective Sync](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync).
 
-Selective Sync will help manage what data is sent to each individual warehouse, allowing you to sync different sets of data from the same source to different warehouses. Check out more information on how to use Selective Sync [here](https://segment.com/docs/guides/filtering-data/#warehouse-selective-sync).
+Selective Sync helps manage the data Segment sends to each warehouse, allowing you to sync different sets of data from the same source to different warehouses.
 
-Once a source, collection or property is disabled, we no longer sync data from that source. We will not, however, delete any historical data from your warehouse. When a source is re-enabled, we will sync all events since the last sync. Note: This does not apply when a collection or property is re-enabled - Only new data generated after re-enabling a collection or property will sync to your warehouse.
-
-For Self-Serve and free customers, we do not currently support the ability to select which collections or properties sync to your warehouse.
-
+When you disable a source, collection or property, Segment no longer syncs data from that source. Segment won't delete any historical data from your warehouse. When you re-enable a source, Segment syncs all events since the last sync. This doesn't apply when a collection or property is re-enabled. Only new data generated after re-enabling a collection or property will sync to your warehouse.
 
 ## Can we add, tweak, or delete some of the tables?
 
@@ -47,27 +44,11 @@ Your warehouse id appears in the URL when you look at the [warehouse destination
 
 ## How fresh is the data in Segment Warehouses?
 
-Your data will be available in Warehouses within 24-48 hours. The underlying Redshift datastore has a subtle tradeoff between data freshness, robustness, and query speed. For the best experience we need to balance all three of these.
+Data is available in Warehouses within 24-48 hours. The underlying Redshift datastore has a subtle tradeoff between data freshness, robustness, and query speed. For the best experience, Segment needs to balance all three of these.
 
-Real-time loading of the data into Segment Warehouses would cause significant performance degradation at query time because of the way Redshift uses large batches to optimize and compress columns. To optimize for your query speed, reliability, and robustness, our guarantee is that your data will be available in Redshift within 24 hours.
+Real-time loading of the data into Segment Warehouses would cause significant performance degradation at query time because of the way Redshift uses large batches to optimize and compress columns. To optimize for your query speed, reliability, and robustness, Segment guarantees that your data will be available in Redshift within 24 hours.
 
-As we improve and update our ETL processes and optimize for SQL query performance downstream, the actual load time will vary, but we'll ensure it's always within 24 hours.
-
-You can use the Sync History page to see the status and history of data updates in your warehouse. The Sync History page is available for every source connected to each warehouse. This page helps you answer questions like, "has the data from a specific source been updated recently?" "Did a sync completely fail, or only partially fail?" and "Why wasn't this sync successful?"
-
-The Sync History includes the following information:
-- **Sync Status**: The possible statuses are:
-  - _Success_: Sync run completed without any notices and all rows synced, OR no rows synced because no data was found.
-  - _Partial_: Sync run completed with some notices and some rows synced.
-  - _Failure_: Sync run with some notices and no rows synced.
-- **Start Time**: The time at which the sync began. Shown in your local timezone.
-- **Duration**: Length of time this sync took.
-- **Synced Rows**: Number of rows successfully synced from the sync run.
-- **Notices**: A list of errors or warnings found, which could indicate problems with the sync run. Click a notice message to show details about the result, and any errors or warnings for each collection included in the sync run.
-
-> info ""
-> If a sync run shows a partial success or failure, the next sync attempts to syncing any data which was not successfully synced in the prior run.
-
+As Segment improves and updates the ETL processes and optimizes for SQL query performance downstream, the actual load time will vary, but Segment ensures it's always within 24 hours.
 
 ## What if I want to add custom data to my warehouse?
 
