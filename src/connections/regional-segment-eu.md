@@ -12,7 +12,7 @@ Segment provides regional infrastructure across Europe, Middle East, Africa and 
 As Schrems II restricts the transfer of personal data to any processors established in countries outside of Europe, all data in European workspaces must be ingested, stored, processed and delivered locally within the EU. Workspaces you configure to use the EU West Data Processing Region ingest (for supported sources), process, filter, deduplicate, and archive data through Segment-hosted archives hosted in S3 AWS Dublin, Ireland.
 
 > info ""
-> [Cloud object sources](/docs/connections/sources/#object-cloud-sources) and cloud event sources aren't supported in EU workspaces. 
+> [Cloud object sources](/docs/connections/sources/#object-cloud-sources) and cloud event sources aren't supported in EU workspaces.
 
 > info ""
 > Regional Segment for Europe is currently in beta. Segment’s [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this feature.
@@ -67,4 +67,3 @@ Use Segment's custom CIDR `3.251.148.96/29` while authorizing Segment to write i
 ## Supported Integrations
 
 {% include content/regional-integrations-table.md %}
-
