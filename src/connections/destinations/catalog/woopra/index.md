@@ -30,7 +30,7 @@ When you call `identify` on analytics.js, we call Woopra's `woopraTracker.addVis
 
 ### Server Side
 
-When you call `identify` from the server-side languages, we call Woopra's [HTTP REST API](http://www.woopra.com/docs-old/tracking/http-tracking-api/) with the traits that you pass in.
+When you call `identify` from the server-side languages, we call Woopra's [HTTP REST API](https://docs.woopra.com/reference/intro-http-tracking) with the traits that you pass in.
 
 
 ## Group

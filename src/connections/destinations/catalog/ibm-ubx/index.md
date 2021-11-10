@@ -60,9 +60,6 @@ endpoint from Segment's support team._
    authentication key again and paste it into your UBX settings in the Segment
    UI.
 
-You can read more about defining and activating applications in UBX [here in
-their
-documentation](https://www.ibm.com/support/knowledgecenter/en/SS9JVY/UBX/Endpoints_ubx/Registering_endpoints_as_applications.html).
 
 ## General Tracking Advice
 
@@ -466,12 +463,6 @@ options:
   channels are `email` and `sms`, and the only two acceptable subscription
   options are `opt-in` and `opt-out`.
 
-For more information, refer to IBM UBX's documentation on `subchannel`
-[here](https://www.ibm.com/support/knowledgecenter/SS9JVY/UBX/Event_taxonomy_ubx/Best_practice_event_attributes.html)
-(*Best practice event attributes* article) and on `channel`
-[here](https://www.ibm.com/support/knowledgecenter/SS9JVY/UBX/Events_ubx/Event_publication.html).
-Note that recommended values for these fields is often determined by the
-downstream tools connected to UBX (e.g. Watson Customer Engagement tools).
 
 ## Troubleshooting
 
@@ -497,4 +488,3 @@ Segment's integration with UBX supports the following UBX abandonment events:
 - ibmcartAbandonment
 - ibmcartAbandonmentItem
 
-You can find more information about these events in [UBX's Event Taxonomy](https://ubx-pilot.ibmmarketingcloud.com/#/taxonomy).

@@ -19,8 +19,8 @@ This destination is maintained by Proof. For any issues with the destination, [c
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Proof Experiences" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your [Proof Experiences dashboard](https://app.proof-x.com/account/apikeys).
-4. You should see data flowing into your Proof dashboard in the [event debugger](https://app.proof-x.com/settings/events) within 1 minute of creating your API key and activating your Proof Experiences integration.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your Proof Experiences dashboard.
+4. You should see data flowing into your Proof dashboard in the event debugger within 1 minute of creating your API key and activating your Proof Experiences integration.
 
 
 ## Page
