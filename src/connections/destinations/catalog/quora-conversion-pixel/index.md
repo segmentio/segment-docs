@@ -3,7 +3,7 @@ rewrite: true
 title: Quora Conversion Pixel Destination
 ---
 
-[Quora Conversion Pixel](https://www.quora.com/business) enables you to attribute downstream user actions on your website to your ad campaigns running on Quora.com. Our client-side Destination code is open source. You can browse the code in GitHub [here](https://github.com/segment-integrations/analytics.js-integration-quora-conversion-pixel).
+[Quora Conversion Pixel](https://www.quora.com/business) enables you to attribute downstream user actions on your website to your ad campaigns running on Quora.com. Our client-side Destination code is open source. You can browse the code in GitHub [here](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/quora-conversion-pixel).
 
 This document was last updated on June 15th, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact).
 

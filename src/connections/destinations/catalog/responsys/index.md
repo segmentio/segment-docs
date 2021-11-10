@@ -43,7 +43,7 @@ _NOTE_: You can find your account's endpoint by simply going to your Oracle Resp
 
 4. Enter the name of your default **Profile List** where you would like to store your `.identify()` calls. Again, this can be overriden using destination specific options on a per-call basis as seen [here](#overriding-default-folder-and-list-names).
 
-5. Choose whether you'd like to set your **Default Permission Status** to be `OPTIN` or `OPTOUT`. Unless configured otherwise, the default will be `OPTOUT`. If you are unsure the implications of this settings, you can read more about it [here](https://policy3.responsys.net/permission.htm).
+5. Choose whether you'd like to set your **Default Permission Status** to be `OPTIN` or `OPTOUT`. Unless configured otherwise, the default will be `OPTOUT`.
 
 Once you have entered these required settings, you are ready to integrate your Oracle Responsys account through the Segment platform!
 
