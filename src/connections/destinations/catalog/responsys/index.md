@@ -76,7 +76,7 @@ analytics.identify('rick', {
 ```
 **IMPORTANT**: In order to merge records properly, our destination requires that all `.identify()`  contain at least a `userId` or a `traits.email`!
 
-The above call will try to first find an existing record in the provided Profile List with a matching `userId` of `'rick'` and or `email` of `'wubba-lubba-dub-dub@morty.com'`. If a record is found, we will update the rest of the columns so long as you pass the information using our [identify spec](https://segment.com/docs/connections/spec/identify). The below is how we map our spec'd Segment traits to Responsys' semantic Profile List columns:
+The above call will try to first find an existing record in the provided Profile List with a matching `userId` of `'rick'` and or `email` of `'wubba-lubba-dub-dub@morty.com'`. If a record is found, we will update the rest of the columns so long as you pass the information using our [identify spec](/docs/connections/spec/identify). The below is how we map our spec'd Segment traits to Responsys' semantic Profile List columns:
 
 <table>
   <tr>

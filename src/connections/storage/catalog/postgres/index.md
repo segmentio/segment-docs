@@ -31,7 +31,7 @@ This guide explains how to set up a Postgres database with Heroku. Heroku is a c
 
 3. Create a new app and go to the Data page.
 
-    To get to the Data page, either [click here](https://postgres.heroku.com/databases) or in the Dashboard menu dropdown, select Data.
+    To get to the Data page, in the Dashboard menu dropdown, select Data.
 
     ![](images/heroku1.png)
 

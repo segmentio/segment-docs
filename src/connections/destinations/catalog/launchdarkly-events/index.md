@@ -21,7 +21,7 @@ This destination is maintained by LaunchDarkly. For any issues with the destinat
 5. Enter this ID as the **API Key** in the “LaunchDarkly” destination settings in Segment.
 
 ## Track
-If you aren't familiar with the Segment Spec,  take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec,  take a look at the [Track method documentation](/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 
 ```json
 {

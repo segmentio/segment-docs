@@ -53,7 +53,7 @@ Passing along the following traits will correspond to what is displayed in Vital
 
 ## Track
 
-If you haven't had a chance to review the spec, take a look tounderstand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you haven't had a chance to review the spec, take a look tounderstand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('enabled-slack-integration', {
@@ -66,7 +66,7 @@ Track calls are used in Vitally to [track and analyze](http://docs.vitally.io/en
 
 ## Group
 
-If you haven't had a chance to review the spec, take a look tounderstand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you haven't had a chance to review the spec, take a look tounderstand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
 
 ```js
 analytics.group("accountId123", {

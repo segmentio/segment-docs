@@ -67,7 +67,7 @@ It is important to note that if the app keys in the plist/code and the Segment d
 
 ## Screen
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example iOS call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](/docs/connections/spec/screen/) does. An example iOS call would look like:
 
 ```swift
 [[SEGAnalytics sharedAnalytics] screen:@"Photo Feed"
@@ -78,7 +78,7 @@ When you record a `screen`, Apptimize will track an event of the form `Viewed [S
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example iOS call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example iOS call would look like:
 
 ```swift
 [[SEGAnalytics sharedAnalytics] identify:@"12091906-01011992"
@@ -89,7 +89,7 @@ When you `identify` a user, Segment will pass that user's information to Apptimi
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example iOS call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example iOS call would look like:
 
 ```swift
 [[SEGAnalytics sharedAnalytics] track:@"Article Completed"

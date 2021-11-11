@@ -16,7 +16,7 @@ Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.j
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [identify method](https://segment.com/docs/connections/spec/identify/) does. Identify calls sent to Segment will be transformed and sent to [FullStory's](https://help.fullstory.com/develop-js/identify) `FS.identify` method.
+If you're not familiar with the Segment Specs, take a look to understand what the [identify method](/docs/connections/spec/identify/) does. Identify calls sent to Segment will be transformed and sent to [FullStory's](https://help.fullstory.com/develop-js/identify) `FS.identify` method.
 
 An example call which does not include a `userId` will send FullStory the value of the `anonymousId` and would look like:
 
@@ -52,7 +52,7 @@ analytics.identify("userId123", {
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [track method](https://segment.com/docs/connections/spec/track/) does. Track calls sent to Segment will be automatically passed directly to FullStory using [FullStory's](https://help.fullstory.com/develop-js/363565-fs-event-api-sending-custom-event-data-into-fullstory) `FS.event` method, including all the properties passed in the event.
+If you're not familiar with the Segment Specs, take a look to understand what the [track method](/docs/connections/spec/track/) does. Track calls sent to Segment will be automatically passed directly to FullStory using [FullStory's](https://help.fullstory.com/develop-js/363565-fs-event-api-sending-custom-event-data-into-fullstory) `FS.event` method, including all the properties passed in the event.
 
 An example call would look like:
 

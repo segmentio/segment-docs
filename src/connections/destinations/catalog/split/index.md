@@ -5,9 +5,9 @@ title: Split Destination
 
 [Split](https://split.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) powers your product decisions with a unified solution for feature flagging and experimentation. With Split, you can safely roll out new functionality using sophisticated user targeting, measure impact of change on engineering, product, and business metrics, and rapidly iterate to refine functionality anywhere in the application stack.
 
-Split also maintains [integration specific documentation](https://docs.split.io/docs/segment#section-advanced-functionality) which include additional troubleshooting and frequently asked questions.
+Split also maintains [integration specific documentation](https://help.split.io/hc/en-us/articles/360020742532-Segment) which include additional troubleshooting and frequently asked questions.
 
-This destination is maintained by [Split](https://split.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners). For any issues with the destination, [contact the Split IO Support team](https://help.split.io).
+This destination is maintained by [Split](https://split.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners). For any issues with the destination, [contact the Split IO Support team](https://help.split.io/hc/en-us).
 
 {% include content/beta-note.md %}
 
@@ -19,11 +19,11 @@ This destination is maintained by [Split](https://split.io/?utm_source=segmentio
 2. Search for Split in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Enter the "API Key" into your Segment Settings UI.
 
-To find your key, log into Split and navigate to "Admin Settings" > "Integrations" > select your desired workspace > "Segment". There you can find the key for each configured integration. If you don't have an integration configured, be sure to configure your integration in the section "Configure as a destination in Segment" and click save to generate a key.  For more information, learn more in Split's [integration documentation](https://docs.split.io/docs/segment).
+To find your key, log into Split and navigate to "Admin Settings" > "Integrations" > select your desired workspace > "Segment". There you can find the key for each configured integration. If you don't have an integration configured, be sure to configure your integration in the section "Configure as a destination in Segment" and click save to generate a key.  For more information, learn more in Split's [integration documentation](https://help.split.io/hc/en-us/articles/360020742532-Segment).
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page({
@@ -41,7 +41,7 @@ If you would not like Split to receive `page` calls, you can configure in your i
 
 ## Screen
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.screen({
@@ -60,7 +60,7 @@ If you would not like Split to receive `screen` calls, you can configure in your
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify("userId1", {
@@ -71,15 +71,15 @@ analytics.identify("userId1", {
 });
 ```
 
-Identify calls will be sent to Split as an `identify` event. The `identify` event's userId (or anonymousId) will be mapped to the selected Split [traffic type](https://docs.split.io/docs/selecting-the-traffic-type).
+Identify calls will be sent to Split as an `identify` event. The `identify` event's userId (or anonymousId) will be mapped to the selected Split [traffic type](https://help.split.io/hc/en-us/articles/360019916311-Traffic-type).
 
-Any traits you provide will be displayed in Split as traffic type attributes. Learn more about attributes in Split's [documentation](https://docs.split.io/docs/identifying-customers).
+Any traits you provide will be displayed in Split as traffic type attributes. Learn more about attributes in Split's [documentation](https://help.split.io/hc/en-us/articles/360020529772-Identifying-customers).
 
 If you would not like Split to receive `identify` calls, you can configure in your integration settings in Split.
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track("Registered", {

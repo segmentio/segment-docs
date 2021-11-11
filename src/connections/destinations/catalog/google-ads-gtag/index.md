@@ -11,7 +11,7 @@ name-override: true
 If you're using the [new Google Ads (Gtag) experience](https://support.google.com/adwords/answer/6095821?hl=en&ref_topic=3165803), you can enable the **Google Ads (Gtag)** Destination (previously called "Google Adwords New") in the Segment catalog. The new Google Ads uses a Global Site Tag (Gtag) and event snippets.
 
 > info "Info message."
-> **IMPORTANT**: Only use this destination if your Google Ads account is using the _New_ (Gtag) Experience. If you're using Google Tag Manager (a separate product) as well, don't add the global site tag again in your GTM containers. You should also disable any [Google Ads (Classic)](https://segment.com/docs/connections/destinations/catalog/adwords/) destinations within the same source, since **Google Ads (Classic)** can't load at the same times as **Google Ads (Gtag)**.
+> **IMPORTANT**: Only use this destination if your Google Ads account is using the _New_ (Gtag) Experience. If you're using Google Tag Manager (a separate product) as well, don't add the global site tag again in your GTM containers. You should also disable any [Google Ads (Classic)](/docs/connections/destinations/catalog/adwords/) destinations within the same source, since **Google Ads (Classic)** can't load at the same times as **Google Ads (Gtag)**.
 
 ## Getting Started
 
@@ -38,7 +38,7 @@ analytics.page({}, {
 ```
 
 > note ""
-> **NOTE:** The `'Google Ads (Gtag)'` is case sensitive. Segment prefers you to use `order_id` rather than  `transaction_id` to stay more consistent with the [ecommerce spec](https://segment.com/docs/connections/spec/ecommerce/v2). However, Segment will send it as `transaction_id` in the request itself to satisfy Google's specifications.
+> **NOTE:** The `'Google Ads (Gtag)'` is case sensitive. Segment prefers you to use `order_id` rather than  `transaction_id` to stay more consistent with the [ecommerce spec](/docs/connections/spec/ecommerce/v2). However, Segment will send it as `transaction_id` in the request itself to satisfy Google's specifications.
 
 ## Track
 

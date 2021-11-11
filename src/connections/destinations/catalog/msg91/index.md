@@ -22,7 +22,7 @@ This destination is maintained by MSG91. For any issues with the destination, [c
 
 
 ## Identify
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 {
@@ -46,7 +46,7 @@ Identify calls will be sent to MSG91 as an `Send SMS` event.
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. Make sure you send the following Properties with `page` method to send SMS. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. Make sure you send the following Properties with `page` method to send SMS. An example call would look like:
 
 ```
 {
@@ -65,7 +65,7 @@ Page calls will be sent to MSG91 as a `Send SMS`.
 
 ## Screen
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. Make sure you send the following Properties with `Screen` method to send SMS. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](/docs/connections/spec/screen/) does. Make sure you send the following Properties with `Screen` method to send SMS. An example call would look like:
 
 ```
 {
@@ -83,7 +83,7 @@ Screen calls will be sent to MSG91 as a `Send SMS`.
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. Make sure you send the following Properties with `track` method to send SMS. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. Make sure you send the following Properties with `track` method to send SMS. An example call would look like:
 
 ```
 {

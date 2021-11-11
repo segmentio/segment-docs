@@ -13,7 +13,7 @@ This destination is maintained by TUNE. Their code is publicly available for [iO
 
 1.  From your Segment UI's Destinations page click on "Add Destination".
 2.  Search for "TUNE" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3.  Add your TUNE Advertiser ID in the Segment Settings UI from [your TUNE Dashboard](https://developers.tune.com/sdk/finding-your-advertiser-id-and-conversion-key/).
+3.  Add your TUNE Advertiser ID in the Segment Settings UI from the TUNE Dashboard].
 4.  In your TUNE account, ensure that you have created a new app by navigating to Applications > Apps > Add A New App.
 5.  Depending on library you've installed, follow the additional steps below to finish setting up!
 
@@ -57,7 +57,7 @@ AdvertisingIdClient.Info adInfo = AdvertisingIdClient.GetAdvertisingIdInfo(this.
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify({
@@ -75,7 +75,7 @@ If your app has user accounts, you may want to identify these users when they lo
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track({
@@ -131,7 +131,7 @@ Install attribution is the most common use case for mobile attribution tools. To
 
 ### Special Events
 
-TUNE supports special events beyond install attribution which are mapped to the Segment [Ecommerce Spec](https://segment.com/docs/connections/spec/ecommerce/v2/):
+TUNE supports special events beyond install attribution which are mapped to the Segment [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/):
 
 | Segment Event             | TUNE Event         |
 |---------------------------|--------------------|
@@ -146,4 +146,4 @@ If you send an event with a name not included in the list above, Segment will se
 
 ## Postbacks
 
-In addition to sending data to TUNE to be attributed, Segment allows you to route that data back into other tools that you have enabled. For example, you might want to use a particular analytics tool's dashboards to compare the different channels of your mobile ad campaign. To do this, enable postbacks in TUNE and provide them with your source write key, as explained in [TUNE's documentation](https://help.tune.com/marketing-console/segment-integration/).
+In addition to sending data to TUNE to be attributed, Segment allows you to route that data back into other tools that you have enabled. For example, you might want to use a particular analytics tool's dashboards to compare the different channels of your mobile ad campaign. To do this, enable postbacks in TUNE and provide them with your source write key.

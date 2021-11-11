@@ -27,7 +27,7 @@ _Note: Flurry does not always display data in real time. We've seen that it can 
 
 ## Screen
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](/docs/connections/spec/screen/) does.
 
 An example iOS call would look like:
 
@@ -45,7 +45,7 @@ _Note: When you toggle the Screen Tracks As Events option on in your Flurry Segm
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does.
 
 An example iOS call would look like:
 
@@ -67,7 +67,7 @@ When you call [`identify`](/docs/connections/spec/identify/), we'll set the user
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does.
 
 An example iOS call would look like:
 

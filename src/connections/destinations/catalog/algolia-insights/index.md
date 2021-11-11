@@ -32,9 +32,9 @@ You can read more about how to send Algolia-related data to Segment from [the do
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does.
 
-Algolia supports the following six events from Segment's [Ecommerce Spec](https://segment.com/docs/connections/spec/ecommerce/v2/).
+Algolia supports the following six events from Segment's [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/).
 
 <table>
   <tr>

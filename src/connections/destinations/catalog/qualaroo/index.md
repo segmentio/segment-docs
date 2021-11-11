@@ -19,7 +19,7 @@ This document was last updated on September 5, 2018. If you notice any gaps, out
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('8888', {
@@ -42,7 +42,7 @@ When you call `identify` we call `_kiq.push(['identify', userId]);` with the `us
 
 **Note:** The use of [a custom property to trigger a survey](https://help.qualaroo.com/hc/en-us/articles/201441516) made available by utilizing a Segment Track call is currently not supported due to some code changes. The below section will *not* trigger a survey at this time.
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track("Shadow Seen", {

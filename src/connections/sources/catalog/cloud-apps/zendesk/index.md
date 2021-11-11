@@ -28,7 +28,7 @@ If you notice any gaps, outdated information or simply want to leave some feedba
 
 ### Rate Limits
 
-The Zendesk source uses both Zendesk's [Core API](https://developer.zendesk.com/rest_api/docs/core/introduction) and [Incremental Exports API](https://developer.zendesk.com/rest_api/docs/core/incremental_export). The source's requests to the Incremental API do not count towards your Zendesk account's rate limits, but requests to the Core API do. By default, we cap our requests to Zendesk's Core API to a rate of 200 requests per minute to avoid triggering [Zendesk's Rate Limits](https://developer.zendesk.com/rest_api/docs/core/introduction#rate-limits). If you'd like us to increase or decrease the request rate for your source, [let us know](https://segment.com/help/contact/), and we'll get it set up. We'll add support for this in the UI soon!
+The Zendesk source uses both Zendesk's [Core API](https://developer.zendesk.com/api-reference/) and [Incremental Exports API](https://developer.zendesk.com/rest_api/docs/core/incremental_export). The source's requests to the Incremental API do not count towards your Zendesk account's rate limits, but requests to the Core API do. By default, we cap our requests to Zendesk's Core API to a rate of 200 requests per minute to avoid triggering [Zendesk's Rate Limits](https://developer.zendesk.com/api-reference/ticketing/account-configuration/usage_limits/). If you'd like us to increase or decrease the request rate for your source, [let us know](https://segment.com/help/contact/), and we'll get it set up. We'll add support for this in the UI soon!
 
 ## Components
 

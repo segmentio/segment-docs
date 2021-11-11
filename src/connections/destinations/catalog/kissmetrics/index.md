@@ -2,7 +2,7 @@
 title: Kissmetrics Destination
 rewrite: true
 ---
-[Kissmetrics](https://www.kissmetricshq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a behavioral email and analytics platofrm. It pulls cross-platform behavior reports so marketers can analyze key audience growth segments. It also provides an overview of custom populations, population change and growth, so marketers can analyze populations from customers who have completed actions or events.
+[Kissmetrics](https://www.kissmetricshq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a behavioral email and analytics platform. It pulls cross-platform behavior reports so marketers can analyze key audience growth segments. It also provides an overview of custom populations, population change and growth, so marketers can analyze populations from customers who have completed actions or events.
 
 This document was last updated on July 3, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact/)!
 
@@ -17,17 +17,17 @@ To enable Kissmetrics in Segment:
 3. In the destination settings, enter your Kissmetrics "API Key".
 4. If you are using Kissmetrics using Segment's client-side analytics.js library, Segment asynchronously loads Kissmetrics Javascript library onto the page. (This means you should remove Kissmetrics's snippet from your page.)
 
-Your Kissmetrics source starts automatically collecting "Visited Site" events and [other automatically tracked events](http://support.kissmetrics.com/article/show/javascript-settings).
+Your Kissmetrics source starts automatically collecting "Visited Site" events and [other automatically tracked events](https://support.kissmetrics.io/docs/javascript-settings).
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```javascript
 analytics.page('Docs');
 ```
 
-By default page calls with `name` and `category` properties will automatically be sent to Kissmetrics in your [`page`](/docs/connections/spec/page/) calls. You can adjust this behavior in your Kissmetric destination settings by toggling on and off the 'Track Categorized Pages' and 'Track Named Pages' settings.
+By default page calls with `name` and `category` properties will automatically be sent to Kissmetrics in your [`page`](/docs/connections/spec/page/) calls. You can adjust this behavior in your Kissmetrics destination settings by toggling on and off the 'Track Categorized Pages' and 'Track Named Pages' settings.
 
 Here's an example call on docs pages:
 
@@ -46,7 +46,7 @@ __Note:__ Kissmetrics requires an initial pageview to load the library. By defau
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('userId123');
@@ -56,7 +56,7 @@ When you call [`identify`](/docs/connections/spec/identify/), we first call Kiss
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track('Clicked Button');
@@ -70,7 +70,7 @@ The Kissmetrics javascript library automatically tracks a bunch of events (Visit
 
 ## Group
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
 
 ```javascript
 analytics.group('123');
@@ -95,7 +95,7 @@ will add the following traits to the user:
 
 ## Alias
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Alias method](/docs/connections/spec/alias/) does. An example call would look like:
 
 ```javascript
 analytics.alias();
@@ -107,7 +107,7 @@ Kissmetrics automatically aliases anonymous visitors the first time you call [`i
 
 We will automatically call [`alias`](/docs/connections/spec/alias/) for you the first time you [`identify`](/docs/connections/spec/identify/) users from our iOS SDK. That way it works exactly like web browser tracking - you don't have to manually [`alias`](/docs/connections/spec/alias/) new users.
 
-You can read more about how Kissmetrics recommends using [`alias`](/docs/connections/spec/alias/) [in their docs](http://support.kissmetrics.com/article/show/understanding-identities).
+You can read more about how Kissmetrics recommends using [`alias`](/docs/connections/spec/alias/) [in their docs](https://support.kissmetrics.io/docs/understanding-identities).
 
 
 
@@ -207,4 +207,4 @@ In order to enable this feature,
 
 ### E-Commerce
 
-If you are using our ecommerce api, we will forward that data along to Kissmetrics following the [Kissmetrics Ecommerce Essentials Guide](http://support.kissmetrics.com/article/show/ecommerce-essentials).
+If you are using our ecommerce api, we will forward that data along to Kissmetrics following the [Kissmetrics Ecommerce Essentials Guide](https://support.kissmetrics.io/docs/e-commerce-javascript-code-examples).

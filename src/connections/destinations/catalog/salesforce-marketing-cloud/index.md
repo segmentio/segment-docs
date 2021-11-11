@@ -88,7 +88,7 @@ If possible, you should enable batching for your SFMC destination before you sen
 
 ## Set up to send Identify calls to SFMC
 
-To use the Journey Builder to send campaigns to your users, you need to have data about those users in SFMC. The most common way to send data to SFMC is to send Segment [Identify](https://segment.com/docs/connections/spec/identify/) calls to an SFMC Data Extension which you specify. When you call `identify`, Segment creates a Salesforce Marketing Cloud Contact, and upserts (updates) the user’s `traits` in the Data Extension.
+To use the Journey Builder to send campaigns to your users, you need to have data about those users in SFMC. The most common way to send data to SFMC is to send Segment [Identify](/docs/connections/spec/identify/) calls to an SFMC Data Extension which you specify. When you call `identify`, Segment creates a Salesforce Marketing Cloud Contact, and upserts (updates) the user’s `traits` in the Data Extension.
 
 > note ""
 > **Note**: By default, `identify` events create or update contacts in SFMC. To prevent Identify calls from creating or updating a Contact when they update a Data Extension, enable the "Do Not Create or Update Contacts" option in the Destination Settings.
@@ -237,7 +237,7 @@ You might use more than one primary key if, for example, you want to track if a 
 
 ## Using context properties from Identify or Track calls
 
-The Segment SDKs and libraries automatically collect many [context properties](https://segment.com/docs/connections/spec/common/#context), and you can pass these properties into SFMC as Data Extension attributes.
+The Segment SDKs and libraries automatically collect many [context properties](/docs/connections/spec/common/#context), and you can pass these properties into SFMC as Data Extension attributes.
 
 To use context properties, you must create attributes in the Data Extensions that use specific naming conventions. The table below lists the Segment context properties available for SFMC, and the Data Extension attribute names they map to.
 
@@ -287,7 +287,7 @@ Personas sends audience membership and computed trait values to SFMC using Ident
 When you sync to an existing Data Extension, note these additional requirements:
 - The table cannot have an existing **Primary Key**, unless it is the `Contact Key` field, and the field type is `Text`.
 - All fields in the Data Extension must be nullable (meaning optional, or not required), except the `Contact Key` field.
-- Any fields that you send with Segment, and which already exist in the Data Extension, must be of the correct data type. The standard identifiers Segment sends come from the [Context object](https://segment.com/docs/connections/spec/common/#context), and appear in the image below.
+- Any fields that you send with Segment, and which already exist in the Data Extension, must be of the correct data type. The standard identifiers Segment sends come from the [Context object](/docs/connections/spec/common/#context), and appear in the image below.
 
 ![](images/existing-dext-data-types.png)
 

@@ -13,7 +13,7 @@ This document was last updated on October 22, 2018. If you notice any gaps, outd
 
 1. From the Segment web app, click **Catalog**.
 
-2. Search for "SnapEngage" in the Catalog, select it, and choose which of your sources to connect the destination to. - keep in mind that our "SnapEngage" destination is only compatible with our client-side [analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/) library.
+2. Search for "SnapEngage" in the Catalog, select it, and choose which of your sources to connect the destination to. - keep in mind that our "SnapEngage" destination is only compatible with our client-side [analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/) library.
 
 3. Add your SnapEngage `Widget ID` to your destination settings in Segment. You can find the `Widget ID` in your SnapEngage Javascript snippet. It will look something like this: 0c739ebb-2016-44a0-b1da-a5b5eb272474. Alternatively, the `Widget ID` can also be found under the _Advanced Widget ID_ section of the _Get the Code_ tab in the Admin Dashboard when logged in to SnapEngage.
 
@@ -23,7 +23,7 @@ Remember to remove SnapEngages's snippet from your page.
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('ze8rt1u89', {
@@ -37,7 +37,7 @@ When sending an `Identify` call to SnapEngage be sure to include an `email` fiel
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does.
 
 ### Record Live Chat Events
 

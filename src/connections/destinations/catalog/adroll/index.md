@@ -19,7 +19,7 @@ title: AdRoll Destination
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 ```javascript
 analytics.page()
 ```
@@ -27,18 +27,18 @@ _**NOTE:** The `page` call **must** be made on a page for any `identify` or `tra
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 ```javascript
 analytics.identify('123', {
   email: 'testing@segment.com'
 });
 ```
-Set a `userId` using the `identify` call which will then be passed it to AdRoll each time a [`track`](https://segment.com/docs/connections/destinations/catalog/adroll/#track) call is made. If you pass an `email` trait, we'll send that to AdRoll by setting `window.adroll_email` to that value.
+Set a `userId` using the `identify` call which will then be passed it to AdRoll each time a [`track`](/docs/connections/destinations/catalog/adroll/#track) call is made. If you pass an `email` trait, we'll send that to AdRoll by setting `window.adroll_email` to that value.
 
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 ```javascript
 analytics.track('Sign-up Form Completed');
 ```
@@ -88,7 +88,7 @@ analytics.track('Vewed Product', {
 
 ### **Legacy:** Named Segments
 
-Prior to rolling out Segment ID's, AdRoll allowed "named segments". If your account was created prior to 2015, then the track events you send from the browser using our [`analytics.track`](https://segment.com/docs/connections/destinations/catalog/adroll/#track) method will be passed on to AdRoll as `adroll_segments` with the segment being the snake-cased event name.
+Prior to rolling out Segment ID's, AdRoll allowed "named segments". If your account was created prior to 2015, then the track events you send from the browser using our [`analytics.track`](/docs/connections/destinations/catalog/adroll/#track) method will be passed on to AdRoll as `adroll_segments` with the segment being the snake-cased event name.
 
 ## Troubleshooting
 
