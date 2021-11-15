@@ -23,6 +23,7 @@ Braze Cloud Mode (Actions) provides the following benefit over Braze Classic:
 - **E-commerce mappings**. Segment implementations that don't follow the e-commerce spec due to incompatible event names (for example, Trip Booked vs Order Completed) can use Event Triggers to log purchases in Braze Cloud Mode (Actions).
 
 ## Getting Started
+{% include content/ajs-upgrade.md %}
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Braze" in the Catalog, select **Braze Cloud Mode (Actions)**, and choose which of your sources to connect the destination to.

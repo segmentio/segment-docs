@@ -24,6 +24,8 @@ Slack (Actions) provides the following benefits over the classic Slack destinati
 
 
 ## Getting Started
+{% include content/ajs-upgrade.md %}
+
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Find the Destinations Actions item in the left navigation, and click it.

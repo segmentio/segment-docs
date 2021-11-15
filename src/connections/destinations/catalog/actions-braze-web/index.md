@@ -23,6 +23,8 @@ Braze Web Mode (Actions) provides the following benefits over Braze Classic:
 - **E-commerce mappings**. Users who can't follow the e-commerce spec due to incompatible event names (for example, Trip Booked vs Order Completed) can log purchases in Braze Web Mode (Actions).
 
 ## Getting Started
+{% include content/ajs-upgrade.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Braze" in the Catalog, select **Braze Web Mode (Actions)**, and choose which of your sources to connect the destination to.

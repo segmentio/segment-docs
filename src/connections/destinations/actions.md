@@ -14,6 +14,9 @@ You can also choose which event types, event names, or event property values tri
 
 Each Actions-framework Destination you see in the Segment catalog represents a feature or capability of the destination which can consume data from your Segment source. The Action clearly lists which data from the events it requires, and which data is optional. For example, Amplitude requires that you always send a  `LogEvent` , or Slack always requires a `PostMessage`.  Each Action also includes a default mapping which you can modify.
 
+{% include content/ajs-upgrade.md %}
+
+
 ## Benefits of Destination Actions
 
 - **Easier setup**: Users see fewer initial settings which can decrease the time spent configuring the destination.

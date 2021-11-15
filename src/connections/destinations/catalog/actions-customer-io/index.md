@@ -23,6 +23,8 @@ redirect_from:
 - **Track an anonymous event**. Track events from users who are not yet known to Customer.io. If you have the Customer.io *event merging* feature enabled, Customer.io associates all incoming events that share an `anonymous_id` received in the last 30 days.
 
 ## Getting started
+{% include content/ajs-upgrade.md %}
+
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Find the Destinations Actions item in the left navigation, and click it.
