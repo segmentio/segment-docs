@@ -8,6 +8,11 @@ layout: integration
   {{ destination-dossier | markdownify }}
 {% endunless %}
 
+{% if page.maintenance == true %}
+  {% capture maintenance-mode %}{% include content/destination-maintenance.md %}{% endcapture %}
+  {{maintenance-mode | markdownify}}
+{% endif %}
+
   {{ content }}
 
 {% unless page.hide-boilerplate == true %}
