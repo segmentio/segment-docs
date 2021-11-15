@@ -14,13 +14,9 @@
 
 
 .quick-info {
-  float: right;
   border: 1px solid #eee;
   border-radius: 5px;
-  max-width: 245px;
   padding: 10px;
-  margin: 0px 0px 15px 15px;
-  background-color: #FAFBFF;
   z-index: 1000;
 
   @include breakpoint(small down)  {

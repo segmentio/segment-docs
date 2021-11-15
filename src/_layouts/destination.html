@@ -2,14 +2,30 @@
 layout: integration
 ---
 <div class="markdown">
+  {% assign newContent = '' %}
+  {% assign sections = content | split:'</h2>' %}
+    
+  
+  {% if page.hide-dossier != true or page.name == "index.md" %}
+    {% capture destination-dossier %}{% include content/destination-dossier.html %}{% endcapture %}
+    
+    {% for section in sections %}
+    {% if forloop.index == 1 %}
+    {{newContent | append: section}}
+    {{newContent | append: '</h2> <!--insert-->'}}
+    {{destination-dossier | markdownify}}
 
-{% unless page.hide-dossier == true or page.name != "index.md" %}
-  {% capture destination-dossier %}{% include content/destination-dossier.html %}{% endcapture %}
-  {{ destination-dossier | markdownify }}
-{% endunless %}
+    {% else %}
+    {{newContent | append: section}}
+    {{newContent | append: '</h2> <!--insert-->'}}
+    {% endif %}
+  {% endfor %}
+  
+  
+  {% else %}
 
   {{ content }}
-
+{% endif %}
 {% unless page.hide-boilerplate == true %}
   {% capture destination-footer %}{% include content/destination-footer.md  %}{% endcapture %}
   {{ destination-footer | markdownify }}
