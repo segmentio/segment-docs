@@ -5,6 +5,7 @@ hide-boilerplate: true
 hide-dossier: true
 redirect_from:
 - '/connections/destinations/catalog/customer-io-actions/'
+- 'connections/destinations/catalog/actions-customerio/'
 ---
 {% include content/plan-grid.md name="actions" %}
 

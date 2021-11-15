@@ -20,17 +20,18 @@ Enable a new plugin by navigating to the settings for your Source and clicking *
 
 ### 2. Initialize
 Initialize the plugin by giving it your Vimeo Access Token, and granting it access to the Vimeo video player instance(s) running on the page. Do this using the initialize method:
-<pre>
-&lt;iframe src="https://player.vimeo.com/video/76979871" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
-&lt;script src="https://player.vimeo.com/api/player.js"&gt;&lt;/script&gt;
-&lt;script&gt;
+
+```html
+<iframe src="https://player.vimeo.com/video/76979871" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
     var iframe = document.querySelector('iframe');
     var player = new Vimeo.Player(iframe);
     var VimeoAnalytics = window.analyticsPlugins.VimeoAnalytics
     <b>var vimeoAnalytics = new VimeoAnalytics(player, 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX0365')
     vimeoAnalytics.initialize()</b>
-&lt;/script&gt;
-</pre>
+</script>
+```
 
 That's it! The plugin listens to the Vimeo player for events, and responds by firing the corresponding [Segment Video Spec](https://segment.com/docs/connections/spec/video/) events on Analytics.js.
 

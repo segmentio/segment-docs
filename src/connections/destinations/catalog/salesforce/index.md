@@ -3,24 +3,27 @@ title: Salesforce Destination
 strat: salesforce
 ---
 
+> info ""
+> Segment is aware of Salesforce's plans to enforce multi-factor authentication in 2022, and is evaluating solutions to ensure uninterrupted connectivity with your Salesforce account.
 
 Segment's Salesforce destination allows you to identify leads without using SOAP APIs.
 
 ### API Access
 
-You'll need to provide API access to Segment using a Salesforce user credentials. Since we use Salesforce's SOAP API, you'll need to provide an email, password, and security token to get access to their API.
+Segment uses the Salesforce SOAP API to connect. This API requires the following credentials of a registered Salesforce user:
+- email
+- password
+- security token
 
-Since we don't want to ask for the password of one of your actual user accounts, we recommend you create a new Salesforce user account for Segment. We realize an extra user account costs money, so feel free to use an existing account if you wish.
+Segment recommends that you create a separate user account specifically for this destination, if possible.
 
-If you decide to create a new user account for the Segment API, create this user by going to *Setup > Administration set up > Users > New User*, and creating a new user with a System Administrator profile. This profile is required to give us enough permissions to access the API.
+If you decide to create a new user account for the Segment API, create this user by going to *Setup > Administration set up > Users > New User*, and creating a new user with a System Administrator profile. This profile is required to give Segment enough permissions to access the API.
 
-Also make sure that IP Security is disabled in this Salesforce user account. This is because our servers often change and its hard to predict their IPs.
-
-- - -
+Also make sure that IP Security is disabled in this Salesforce user account. This is because Segment's servers often change and its hard to predict their IPs.
 
 ## Identify
 
-Our destination makes it simple to integrate Salesforce. This destination supports the most important pain point for Salesforce users: getting your prospective customers into Salesforce as Leads from your website or mobile app. Creating/updating Leads is the default behavior of `identify` events. If you would like to customize this you can do so leveraging [Actions](#custom-actions)
+This destination supports the most important pain point for Salesforce users: getting your prospective customers into Salesforce as Leads from your website or mobile app. Creating/updating Leads is the default behavior of `identify` events. If you would like to customize this you can do so using [Actions](#custom-actions)
 
 ### Identifying a Lead
 
@@ -47,7 +50,7 @@ analytics.identify('YOUR_USERS_ID', {
 });
 ```
 
-Additionally, if you're using another destination, like Intercom, that requires the company trait to be an object, you can pass the name of the company as follows and our destination will still map it as expected.
+Additionally, if you're using another destination, like Intercom, that requires the company trait to be an object, you can pass the name of the company as follows and the destination still maps it as expected.
 
 Also, you can send the address data in a object as well.
 
@@ -74,19 +77,21 @@ analytics.identify('YOUR_USERS_ID', {
 });
 ```
 
-When you call `identify`, we'll check to see if this Lead exists based on the `email` trait. If it does, we'll update the Lead with the traits you've passed in your `identify` call, otherwise we'll create a Salesforce Lead.
+When you call `identify`, Segment checks to see if this Lead exists based on the `email` trait. If it does, Segment updates the Lead with the traits you've passed in your `identify` call, otherwise Segment creates a Salesforce Lead.
 
-**IMPORTANT**: If you're planning to update custom fields in Salesforce with Segment, you need to make sure you create the custom Lead Field inside Salesforce *prior* to sending the data. The [Salesforce API for Leads](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_lead.htm) requires `lastName` and `company`. If either of this fields are not present in a server-side request we will automatically append the string `'n/a'` to each of those fields even if you have provided those fields in a previous request.
+> warning ""
+> If you're planning to update custom fields in Salesforce with Segment, you need to make sure you create the custom Lead Field inside Salesforce *prior* to sending the data. The [Salesforce API for Leads](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_lead.htm) requires `lastName` and `company`. If either of this fields are not present in a server-side request Segment appends the string `'n/a'` to each of those fields even if you have provided those fields in a previous request.
 
-For example, if you want to collect a custom trait in Segment called `testProp`, you can create a Field Label called `testProp` which will generate an API Name as `testProp__c`. We will append the `__c` to any custom traits so you don't need to worry about that. Make sure to stay consistent with your casing. If you create custom fields in camelCase, make sure you send `traits` to Segment in camelCase. If you are creating custom fields in SFDC as `snake_case`, then be sure to send your `traits` in the same format.
+For example, if you want to collect a custom trait in Segment called `testProp`, you can create a Field Label called `testProp` which will generate an API Name as `testProp__c`. Segment appends the `__c` to any custom traits so you don't need to worry about that. Make sure to stay consistent with your casing. If you create custom fields in camelCase, make sure you send `traits` to Segment in camelCase. If you are creating custom fields in SFDC as `snake_case`, then be sure to send your `traits` in the same format.
 
-**NOTE**: Our Salesforce destination requires **every event to include a 'Salesforce': true in an integrations object**. Segment will not attempt to send any events to Salesforce that do not include this in their payload. The Salesforce SOAP API has very strict API limits so to prevent users from unintentionally hitting their limits, we require this in all events.
+> info ""
+> The Salesforce destination requires **every event to include a 'Salesforce': true in an integrations object**. Segment will not attempt to send any events to Salesforce that do not include this in their payload. The Salesforce SOAP API has very strict API limits so to prevent users from unintentionally hitting their limits, Segment requires this in all events.
 
-By default we do not send identify calls to Salesforce, given their strict API limits, which is why we ask you to explicitly define which identify calls are sent to Salesforce.
+By default Segment does not send identify calls to Salesforce, given their strict API limits.
 
 ## Group
 
-`.group()` calls will now create or update **Account Objects** inside Salesforce. When we receive a group call, similar to the `.identify()` call, we will first check using the `groupId` to see if the Account Object already exists in your SF account. Depending on the response, we will update that object or create a new one. Creating/updating Accounts is the default behavior of `group` events. If you would like to customize this you can do so leveraging [Actions](#custom-actions)
+`.group()` calls create or update **Account Objects** inside Salesforce. When Segment receives a group call, similar to the `.identify()` call, it first checks using the `groupId` to see if the Account Object already exists in your Salesforce account. Depending on the response, Segment updates that object or create a new one. Creating/updating Accounts is the default behavior of `group` events. If you would like to customize this you can do so using [Actions](#custom-actions)
 
 Take this sample `.group()` call that you might send to Segment:
 
@@ -129,14 +134,15 @@ The above call will be sent like the following, in accordance with [Salesforce's
 }
 ```
 
-*NOTE*: By default we will map `address` to the Account's **billing** address. If you'd like to map the address to the Account's **shipping** address, you can do so inside your Salesforce settings in Segment. You can also opt to map it to *both* billing and shipping.
+> info ""
+> By default Segment maps `address` to the Account's **billing** address. To map the address to the Account's **shipping** address, you can do so inside your Salesforce settings in Segment. You can also opt to map it to *both* billing and shipping.
 
 #### Required Steps
 
 - You must be using V2 of this destination.
 - You must pass in `traits.name` as this is a required field imposed by Salesforce for Account Objects.
 - You must pass `{ 'Salesforce': true }` in the `options`.
-- You must include `AccountNumber` as part of your page layout for us to be able to look up for the Account Objects using `groupId`:
+- You must include `AccountNumber` as part of your page layout for Segment to be able to look up for the Account Objects using `groupId`:
   - Log into your Salesforce account and go to `setup`
   - Go to `Build` > `Customize` > `Accounts` > `Page Layout`
   - Drag the `Account Number` Field to the `Account Detail`
@@ -144,11 +150,11 @@ The above call will be sent like the following, in accordance with [Salesforce's
 
 #### Custom traits
 
-In order to send custom traits, you must do the same steps as you had done for the `.identify()` call. You have to **predefine** them inside Salesforce. We will send any custom traits by appending `__c`.
+In order to send custom traits, you must do the same steps as you had done for the `.identify()` call. You have to **predefine** them inside Salesforce. Segment appends `__c` to any custom traits.
 
 ## Trait Validation
 
-Salesforce has documented strict validations on their semantic traits. We will trim all of those traits if they go over the limit. Refer to their docs for [Account Objects](https://developer.salesforce.com/docs/atlas.en-us.200.0.api.meta/api/sforce_api_objects_account.htm#topic-title) and [Lead Objects](https://developer.salesforce.com/docs/atlas.en-us.200.0.api.meta/api/sforce_api_objects_lead.htm) to make sure you are sending the trait values under these limits if you do not want to see them trimmed off.
+Salesforce has documented strict validations on their semantic traits. Segment trims those traits if they go over the limit. Refer to their docs for [Account Objects](https://developer.salesforce.com/docs/atlas.en-us.200.0.api.meta/api/sforce_api_objects_account.htm#topic-title) and [Lead Objects](https://developer.salesforce.com/docs/atlas.en-us.200.0.api.meta/api/sforce_api_objects_lead.htm) to make sure you are sending the trait values under these limits if you do not want to see them trimmed off.
 
 ## Custom Actions
 If you need to manually configure how your Segment events interact with Salesforce resources, you can do so using the [Actions](#actions) setting. This setting allows you to trigger standard CRUD operation (Create, Read, Update/Upsert, Delete) on your internal SFDC resources in response to your Segment events. You can configure as many of these actions as you would like. Each action must be associated with either a specific `track` event or **all** `identify` events. Actions can be further configured to map event properties to SFDC fields. Here's an example action configuration that will create a new Case in Salesforce in response to an **Issue Submitted** `track` event:
@@ -160,15 +166,15 @@ Upsert actions either create or update a resource in Salesforce. For these to wo
 
 ![upsert action example](images/upsert-action-example.png)
 
-In this example, we creating or updating a Contact in Salesforce based on whether or not the `userId` property in `identify` events maps to a Contact with a custom `UserId__c` field value in SFDC. Additionally, the Salesforce Contact record field values `Email` and `Phone` are populated by the Segment event `traits.email` and `traits.phone` respectively.
+In this example, creating or updating a Contact in Salesforce based on whether or not the `userId` property in `identify` events maps to a Contact with a custom `UserId__c` field value in SFDC. Additionally, the Salesforce Contact record field values `Email` and `Phone` are populated by the Segment event `traits.email` and `traits.phone` respectively.
 
 ## Troubleshooting
 
 ### Creating Other Resources
 
-To reduce the complexity of our API, our Salesforce destination intentionally only supports creating leads using the `identify` call. We make it extremely easy to create and update leads with our destination.
+To reduce the complexity of the API, the Salesforce destination intentionally only supports creating leads using the `identify` call.
 
-To create resources of other types, such as Accounts or custom objects, we recommend integrating with Salesforce directly
+To create resources of other types, such as Accounts or custom objects, Segment recommends that you integrate with Salesforce directly
 
 
 ### Sandbox Mode
@@ -177,11 +183,11 @@ To enable an integration with a Salesforce Sandbox instance, toggle the Sandbox 
 
 ### API Call Limits
 
-Salesforce limits both the concurrent amount of requests and the total amount of daily requests we can make to their API on your behalf. Check [these limits](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm). They vary per edition and your number of bought user licenses.
+Salesforce limits both the concurrent amount of requests and the total amount of daily requests Segment can make to their API on your behalf. Check [these limits](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm). They vary per edition and your number of bought user licenses.
 
-We make two API requests per `identify`. The first request is a SQL query to determine whether this object already exists. The second is to either update or create that object.
+Segment makes two API requests per `identify`. The first request is a SQL query to determine whether this object already exists. The second is to either update or create that object.
 
-Also, every thirty minutes, our servers make two queries: one to renew our connection's sessionId and another to describe your Salesforce object model so to determine which Salesforce objects are available.
+Also, every thirty minutes, Segment's servers make two queries: one to renew the connection's sessionId and another to describe your Salesforce object model so to determine which Salesforce objects are available.
 
 
 ### How can I check how many Salesforce API calls I have left today?
@@ -196,7 +202,7 @@ You can either decrease the amount of Salesforce calls Segment makes using conte
 
 ### Lookup Fields
 
-You can add whatever lookup fields you want to help us find the object you want to update.
+You can add whatever lookup fields you want to help Segment find the object you want to update.
 
 
 ### Custom Fields Aren't Updating
