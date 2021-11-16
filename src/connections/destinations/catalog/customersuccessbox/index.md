@@ -28,7 +28,7 @@ Send **account_id** and **user_id** in **traits** of an identify call to set and
 
 To learn more about user traits that are supported (including custom traits), check **User traits** section from [here](https://support.customersuccessbox.com/article/77-customersuccessbox-destination-on-segment-com)
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userID123', {
@@ -46,7 +46,7 @@ Send **account_id** and **user_id** in properties of a track call to attribute t
 
 You can also pass **product_id** and **module_id** in properties of a track call to define a module and product for the event. To learn more, check **Understanding Product Usage** section [here](https://support.customersuccessbox.com/article/70-getting-started-with-customersuccessbox)
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Order Received', {
@@ -65,7 +65,7 @@ Send **account_id** in traits of a group call to set and update the traits of a 
 
 To learn more about account traits that are supported (including custom traits), check **Account traits** section from [here](https://support.customersuccessbox.com/article/77-customersuccessbox-destination-on-segment-com)
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
 
 ```
 analytics.group('accountId123', {
@@ -80,7 +80,7 @@ Group calls will be sent to CustomerSuccessBox as an `account`event.
 
 Send **account_id** and **user_id** in properties of a page call to attribute the pageview to a unique user belonging to a unique Account. .
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page('orders', {

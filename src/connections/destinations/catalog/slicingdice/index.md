@@ -19,7 +19,7 @@ This destination is maintained by SlicingDice. For any issues with the destinati
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -46,7 +46,7 @@ Screen calls will be sent to SlicingDice using the following columns:
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -62,7 +62,7 @@ Identify calls will be sent to SlicingDice using the following columns:
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked Login Button')
@@ -78,7 +78,7 @@ Track calls will be sent to SlicingDice using the following columns:
 
 ## Groups
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
 ```
 analytics.group("0e8c78ea9d97a7b8185e8632", {
   name: "Initech",
@@ -95,7 +95,7 @@ Group calls will be sent to SlicingDice using the following columns:
 * `{source_name}-groups-{attribute_name}`: contains the `traits` attributes of a Group call, saving each one as an individual column
 * `{source_name}-groups-context-{attribute_name}`: contains the "context" attributes of a Group call, saving each one as an individual column
 
-    *Observation: Group calls will also be sent to SlicingDice using the following [Account](https://segment.com/docs/connections/storage/warehouses/schema/) columns that holds the latest state of a group.*
+    *Observation: Group calls will also be sent to SlicingDice using the following [Account](/docs/connections/storage/warehouses/schema/) columns that holds the latest state of a group.*
     * `{source_name}-accounts-group-id`: contains the `groupId` attribute of a Group call
     * `{source_name}-accounts-{attribute_name}`: contains the `traits` attributes of a Track call, saving each one as an individual column
     * `{source_name}-accounts-context-{attribute_name}`: contains the `context` attributes of a Track call, saving each one as an individual column

@@ -152,7 +152,7 @@ When playback of a video is interrupted, use the [Video Playback Interrupted](/d
 ### Video Playback Completed
 
 To track the completion of the video playback session, use our [Video
-Playback Completed](https://segment.com/docs/connections/spec/video/#playback-events) event.
+Playback Completed](/docs/connections/spec/video/#playback-events) event.
 
 **Example**
 
@@ -187,7 +187,7 @@ analytics.track('Video Ad Started', { session_id: 1, title: 'Test Ad Title', ad_
 ### Video Ad Completed
 
 To track the completion of an ad, use our [Video Ad
-Completed](https://segment.com/docs/connections/spec/video/#ad-events) event.
+Completed](/docs/connections/spec/video/#ad-events) event.
 
 **Example**
 

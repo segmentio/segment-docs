@@ -48,7 +48,7 @@ It looks like this:
 analytics.page('Blog', '15,000 Ways to Increase Conversion');
 ```
 
-You can label as many categories / modules as you need, but as a best practice you'll probably want to have around 5 for a small – medium sized app to 20 for a very large web-application. Not sure which modules to use? Check out Totango's [Best Practices guide](http://help.totango.com/best-practices/preparing-an-integration-worksheet/).
+You can label as many categories / modules as you need, but as a best practice you'll probably want to have around 5 for a small – medium sized app to 20 for a very large web-application.
 
 
 ## Identify

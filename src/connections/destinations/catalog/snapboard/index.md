@@ -35,7 +35,7 @@ And then select the [Workspace Name] that your would like to send your Segment e
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page()
@@ -46,7 +46,7 @@ Page calls are sent to Snapboard as a `pageview`.
 
 ## Screen
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](/docs/connections/spec/screen/) does. An example call would look like:
 
 ```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -57,7 +57,7 @@ Screen calls are sent to Snapboard as a `screenview`.
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -70,7 +70,7 @@ Identify calls are sent to Snapboard as an `identify` event.
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Login Button Clicked')
@@ -81,7 +81,7 @@ Track calls are sent to Snapboard as a `track` event.
 
 ## Alias
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Alias method](/docs/connections/spec/alias/) does. An example call would look like:
 
 ```js
 analytics.alias("507f191e81");

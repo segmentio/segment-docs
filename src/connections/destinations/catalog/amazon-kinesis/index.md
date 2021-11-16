@@ -51,14 +51,14 @@ To get started:
    * **NOTE:** For security purposes, Segment sets your Workspace ID as your Secret ID. If you’re using a Secret ID different from your Workspace ID, reach out to our support team so they can change it to make your account more secure.
 
 ## Page
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
   analytics.page();
 ```
 
 ## Identify
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.  An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does.  An example call would look like:
 
 ```js
 analytics.identify('97980cfea0085', {
@@ -68,7 +68,7 @@ analytics.identify('97980cfea0085', {
 ```
 
 ## Track
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track("User Registered", {
@@ -105,7 +105,7 @@ Segment uses the the `userId || anonymousId` as the `PartitionKey`. The partitio
 > **NOTE:** The JSON payload is base64 stringified.
 
 ## Group
-If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does.
 
 An example group call is shown below:
 ```js

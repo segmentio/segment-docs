@@ -22,7 +22,7 @@ _**NOTE:** The Delighted Destination is currently only compatible with email sur
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -36,7 +36,7 @@ Identify calls will add to your list of People in Delighted. The only trait that
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Purchased Product');
@@ -54,6 +54,6 @@ This also enables you to define the "Sample Rate" and an optional "Delay" for th
 
 You can optionally configure Delighted to send feedback from Delighted _email surveys_ to Segment. This can be useful for data warehousing, forwarding to other services (such as email marketing automation tools), or performing further analysis with the BI tools you have connected to Segment.
 
-Simply copy the `Write Key` of the Segment Source where you want to send data and paste into the [Delighted Segment Destination page](https://delighted.com/destinations/segment).
+Copy the `Write Key` of the Segment Source where you want to send data and paste into the Delighted Segment Destination page.
 
 Delighted will then send all _email survey_ feedback triggered using the Segment integration into back into Segment. Refer to our [Delighted Source](/docs/connections/sources/catalog/cloud-apps/delighted/) documentation for more information.

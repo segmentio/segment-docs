@@ -11,7 +11,7 @@ This document was last updated on January 8, 2021.
 > The Evergage Destination was deprecated on January 8, 2021 and is no longer supported or maintained. It is no longer available in the Segment catalog, but remains available to existing users.
 
 ## Identify
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('userId123', {
@@ -23,7 +23,7 @@ analytics.identify('userId123', {
 A `userId` is required on all `identify` calls sent to {{ integration.name}}. When you call `identify` Segment will call both `setUser` and `setUserField` in the [Evergage library](https://doc.evergage.com/display/EKB/Send+Data+to+Evergage) to insert both the `userId` and corresponding user traits into {{ integration.name}}.
 
 ## Group
-If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
 
 ```javascript
 analytics.group('companyId123', {

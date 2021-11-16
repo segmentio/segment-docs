@@ -34,7 +34,7 @@ If you are using dynamic tracking, you must explicitly let us know in your [inte
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('ze8rt1u89', {
@@ -60,7 +60,7 @@ Video tracking is possible with either web or server sources.
 
 ## Group
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
 
 ```js
 analytics.group("0e8c78ea9d97a7b8185e8632", {
@@ -75,7 +75,7 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 
 ## Alias
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Alias method](/docs/connections/spec/alias/) does. An example call would look like:
 
 ```js
 analytics.alias("507f191e81");
@@ -84,7 +84,7 @@ analytics.alias("507f191e81");
 
 ### Mapping custom properties to semantic Parsely properties
 
-If you'd like to map certain semantic Parse.ly properties to your own custom properties (ones that do not abide by our [page spec](https://segment.com/docs/connections/spec/page), you can define your mappings in your Segment destination settings! You can put the name of your Segment property on the left and the Parse.ly property on the right hand side.
+If you'd like to map certain semantic Parse.ly properties to your own custom properties (ones that do not abide by our [page spec](/docs/connections/spec/page), you can define your mappings in your Segment destination settings! You can put the name of your Segment property on the left and the Parse.ly property on the right hand side.
 
 We currently support mapping the following Parse.ly properties (make sure you spell these correctly on the right hand side of this setting!):
 
@@ -209,7 +209,7 @@ analytics.track('Video Playback Paused', {
 
 (Note: this event is only required for server side tracking)
 
-When using Parse.ly on the web using our Javascript SDK, video heartbeats are captured by their SDK automatically. However, if you are using this destination with a Server side source, you must pass heartbeat events manually using our [Video Content Playing](https://segment.com/docs/connections/spec/video/#content-events) event.
+When using Parse.ly on the web using our Javascript SDK, video heartbeats are captured by their SDK automatically. However, if you are using this destination with a Server side source, you must pass heartbeat events manually using our [Video Content Playing](/docs/connections/spec/video/#content-events) event.
 
 **Important:** These events must be sent in 10 second increments.
 
@@ -247,7 +247,7 @@ analytics.track({
 
 This event is only required for server side tracking.
 
-To track the completion of a video, use our [Video Content Completed](https://segment.com/docs/connections/spec/video/#content-events) event.
+To track the completion of a video, use our [Video Content Completed](/docs/connections/spec/video/#content-events) event.
 
 Make sure you are sending at minimum, `assetId`, `totalLength`, and `position` as properties.
 

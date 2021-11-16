@@ -50,7 +50,7 @@ If you included Segment's Javascript snippet on your page, then Amplitude's SDK 
 
 ## Page and Screen
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page](https://segment.com/docs/connections/spec/page/) and [Screen](https://segment.com/docs/connections/spec/screen/) methods do. By default, Segment does not send these standard calls to Amplitude. However, you can enable them with the destination settings below, which you can find under the "Optional Settings" tab.
+If you're not familiar with the Segment Specs, take a look to understand what the [Page](/docs/connections/spec/page/) and [Screen](/docs/connections/spec/screen/) methods do. By default, Segment does not send these standard calls to Amplitude. However, you can enable them with the destination settings below, which you can find under the "Optional Settings" tab.
 
 The example below shows a Page call from a server library.
 
@@ -125,7 +125,7 @@ and Screen calls from our [Screen spec](/docs/connections/spec/screen/).
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 // On server-side
@@ -210,7 +210,7 @@ same user, you must pass the same `deviceID` to Amplitude.  Otherwise,
 Amplitude creates two users - one for each of the `deviceID`'s set per the functionality outlined in the tables above.
 
 You can get the `deviceID` from Amplitude in device-mode so you can return it on cloud-mode calls. The example method below shows how you could log the `deviceId` in the
-[`ready`](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#ready)
+[`ready`](/docs/connections/sources/catalog/libraries/website/javascript/#ready)
 function on the device, so you could send it to the server.
 
 ```js
@@ -227,7 +227,7 @@ When a user logs in, be sure to send the same Amplitude `deviceID` in your Ident
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. Amplitude supports several special properties, all of which are included in the example below:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. Amplitude supports several special properties, all of which are included in the example below:
 
 ```js
 // On server-side
@@ -322,7 +322,7 @@ For Segment's Analytics.js (device-mode), iOS, and Android sources, if you do no
 
 Segment recommends that you use the [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) event to track revenue with Amplitude. This event allows you to define a list of products that a user purchased in a single transaction, which is the best way to track purchases for sites that have a shopping cart system.
 
-You can currently use this event only for data coming from a server or web [source](https://segment.com/docs/connections/sources/). An `Order Completed` event from mobile using our bundled Amplitude integration
+You can currently use this event only for data coming from a server or web [source](/docs/connections/sources/). An `Order Completed` event from mobile using our bundled Amplitude integration
 will work the same as our standard `track` event documented above.
 
 Here's an example of how you'd create an "Order Completed" event:
@@ -378,7 +378,7 @@ Make sure you are using formatting your events using the [Track method spec](/do
 
 ## Group
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does.
 
 > warning ""
 > Groups are an enterprise-only feature in Amplitude, and are only available if you've purchased the Accounts add-on.
@@ -456,7 +456,7 @@ or are sending Alias events from a Segment server-side library (such as Node).
 > note ""
 > To use Alias, you must have the Amplitude Portfolio add-on enabled.
 
-For more information, see the [Segment Spec page for the Alias method](https://segment.com/docs/connections/spec/alias/) and [the Amplitude `usermap` documentation](https://amplitude.zendesk.com/hc/en-us/articles/360002750712-Portfolio-Cross-Project-Analysis#user-mapping-aliasing).
+For more information, see the [Segment Spec page for the Alias method](/docs/connections/spec/alias/) and [the Amplitude `usermap` documentation](https://amplitude.zendesk.com/hc/en-us/articles/360002750712-Portfolio-Cross-Project-Analysis#user-mapping-aliasing).
 
 | Segment identifier name | Equivalent Amplitude identifier name |
 |--|--|

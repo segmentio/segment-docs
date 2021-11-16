@@ -19,7 +19,7 @@ This document was last updated on July 18th, 2018. If you notice any gaps, outda
   5. When you enable Matomo in your Segment settings, Segment's CDN is updated within 45 minutes. Once that happens, Segment asynchronously loads `matomo.js` on your page whenever it is loaded. This means you should remove Matomo's snippet from your page.
 
 ## Page
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page();
@@ -28,7 +28,7 @@ analytics.page();
 Our Page method triggers a call to Matomo's `trackPageView` method.
 
 ## Identify
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('97980cfea0068');
@@ -36,7 +36,7 @@ analytics.identify('97980cfea0068');
 Our Identify method triggers a call to Matomo's `setUserId` method and will send the `userId` to Matomo.
 
 ## Track
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Logged In');

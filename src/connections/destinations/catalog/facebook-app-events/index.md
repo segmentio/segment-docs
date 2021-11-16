@@ -12,13 +12,13 @@ This document was last updated on October 04, 2018. If you notice any gaps, outd
 ## Other Facebook Destinations Supported by Segment
 This page is about the **Facebook App Events**. For documentation on other Facebook destinations, see the pages linked below.
 
-| **Facebook Destination**   | Supported by Personas |
-| ---------------------- | --------------------- |
-| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                  | Yes                   |
-| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)** | Yes                   |
-| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                             | No                    |
-| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)**      | Yes                   |
-| **Facebook Custom Audiences Website**    | Yes                   |
+| **Facebook Destination**                                                                                    | Supported by Personas |
+| ----------------------------------------------------------------------------------------------------------- | --------------------- |
+| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                      | Yes                   |
+| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)**    | Yes                   |
+| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                                | No                    |
+| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)** | Yes                   |
+| **Facebook Custom Audiences Website**                                                                       | Yes                   |
 
 
 
@@ -239,7 +239,7 @@ In addition to the integration available for both iOS and Android, there is a cl
 
 ### Pre-defined Events and Parameters
 
-The integration currently only supports the `FBSDKAppEventNameActivatedApp` pre-defined event (via the `activateApp` handler). All other events are forwarded as [custom events](https://developers.facebook.com/docs/app-events/ios#custom). If other [pre-defined events](https://developers.facebook.com/docs/app-events/ios#manual) are important to you, [contact us](https://segment.com/help/contact/).
+The integration currently only supports the `FBSDKAppEventNameActivatedApp` pre-defined event (via the `activateApp` handler). All other events are forwarded as [custom events](https://developers.facebook.com/docs/app-events/getting-started-app-events-ios). If other pre-defined events are important to you, [contact us](https://segment.com/help/contact/).
 
 ## Troubleshooting
 
