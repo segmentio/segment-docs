@@ -3,7 +3,7 @@ title: Braze Destination
 hide-cmodes: true
 hide-personas-partial: true
 hide-integrations-object: true
-maintenance: true
+maintenance: false
 maintenance-content: "New versions of this destination is available. See [Braze Cloud Mode (Actions)](/docs/connections/catalog/actions-braze-cloud) and [Braze Web Mode (Actions)](/docs/connections/catalog/actions-braze-web)."
 ---
 
