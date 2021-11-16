@@ -34,7 +34,7 @@ The Segment Tracking API processes data from your sources, and collects the Even
 
 ## Create a new destination
 
-Complete either [Create an IAM role in the AWS console](#create-an-iam-role-in-the-aws-console) or [Create an IAM role using the AWS CLI](#create-an-aws-role-using-the-aws-cli) to configure the AWS S3 Destination with IAM Role Support.
+Complete either [Create an IAM role in the AWS console](#create-an-iam-role-in-the-aws-console) or [Create an IAM role using the AWS CLI](#create-an-iam-role-using-the-aws-cli) to configure the AWS S3 Destination with IAM Role Support.
 
 ### Create an IAM role in the AWS console
 
@@ -105,7 +105,7 @@ If you have server-side encryption enabled, see the [required configuration](#en
 To create an IAM role with external ID and with S3 permissions using the AWS CLI, follow the steps below. 
 
 #### Prerequisites
-To create an S3 IAM role, you must first install and configure the AWS CLI on your local machine and create an S3 bucket. Refer to Amazon's documentation, [Getting started with the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) for more information. 
+To create an S3 IAM role, you must first install and configure the AWS CLI on your local machine and create an S3 bucket. Refer to Amazon's documentation, [Getting started with the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html){:target="_blank"} for more information. 
 
 #### Procedure
 1. Copy the following code snippet and save it as a file on your local machine titled `trust-relationship-policy.json`. Replace `<YOUR_WORKSPACE_ID>` with your Segment workspace ID. 
@@ -222,7 +222,7 @@ To finish configuration, enable the AWS S3 Destination with IAM Role Support des
 
 To migrate an existing Amazon S3 destination to the AWS S3 with IAM Role Support Destination:
 
-1. Configure the IAM role and IAM policy permissions as described in steps 2 - 4 [above](#create-an-iam-role-in-aws).
+1. Configure the IAM role and IAM policy permissions as described in steps 2 - 4 [above](#create-an-iam-role-in-the-aws-console).
 2. Add the AWS S3 with IAM Role Support Destination and add the AWS Region and IAM role ARN. For the bucket name, enter `<YOUR_BUCKET_NAME>/segment-logs/test`. Enable the destination, and verify data is received at `<YOUR_BUCKET_NAME>/segment-logs/test/segment-logs`. If the folder receives data, continue to the next step. If you don't see log entries, check the trust relationship document and IAM policy attached to the role.
 3. Update the bucket name in the new destination to `<YOUR_BUCKET_NAME>`.
 4. After 1 hour, disable the original Amazon S3 destination.
@@ -254,7 +254,7 @@ Segment groups logs by day, and names them using the following format:
 
     s3://{bucket}/segment-logs/{source-id}/{received-day}/filename.gz
 
-The received-day refers to the UTC date unix timestamp, that the API receives the file, which makes it easy to find all calls received within a certain timeframe.
+The received-day refers to the UTC date Unix timestamp, that the API receives the file, which makes it easy to find all calls received within a certain timeframe.
 
 ## Encryption
 
