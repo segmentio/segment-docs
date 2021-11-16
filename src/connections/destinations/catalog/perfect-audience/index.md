@@ -24,7 +24,7 @@ Perfect Audience is only supported on the client-side.
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track("My Custom Event", {
@@ -37,12 +37,9 @@ When you call `track` on analytics.js, we call Perfect Audience's `track` with t
 
 Perfect Audience requires that you define your goals ahead of time in their interface. If that hasn't happened, then they don't track the events.
 
-[Here's their video of how to set that up](http://support.perfectaudience.com/knowledgebase/articles/234037-how-to-create-and-track-conversion-goals-with-perf) - you'll need to match event names between Perfect Audience and your Segment track calls.
-
-
 ### Order Completed
 
-If you're using our [ecommerce spec](/docs/connections/spec/ecommerce/v2/) and passing the `Order Completed` event the `orderId` and `total` will be passsed along to Perfect Audience.
+If you're using our [ecommerce spec](/docs/connections/spec/ecommerce/v2/) and passing the `Order Completed` event the `orderId` and `total` will be passed along to Perfect Audience.
 
 ## Troubleshooting
 

@@ -30,12 +30,12 @@ Mobile implementations require additional settings.
 
 Navigate to your **InMoment Settings > API** to add your **Client ID** to the respective part of the Segment Settings UI.
 
-**IMPORTANT:**  The incoming responses and surveys will not be tied to a user until you [identify](https://segment.com/docs/connections/destinations/catalog/wootric-by-inmoment/#identify) your user.
+**IMPORTANT:**  The incoming responses and surveys will not be tied to a user until you [identify](/docs/connections/destinations/catalog/wootric-by-inmoment/#identify) your user.
 
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('userId123', {
@@ -62,7 +62,7 @@ When you call Track, the user’s information is passed along with the event nam
 
 ## Page
 
-If you aren't familiar with the Segment Spec, you should first read about what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you aren't familiar with the Segment Spec, you should first read about what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page()

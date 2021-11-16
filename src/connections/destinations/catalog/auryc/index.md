@@ -22,7 +22,7 @@ And you’re done! Once you click "Allow", Auryc shows an installation confirmat
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. Identify calls will be sent to Auryc as an `identify` event and `addUserProperties` event.
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. Identify calls will be sent to Auryc as an `identify` event and `addUserProperties` event.
 
 If the call only contains the user id and does not have the traits, the user id will be sent to Auryc as identity.
 
@@ -45,7 +45,7 @@ analytics.identify("userId123", {
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Order Submitted', {price: 234.12})

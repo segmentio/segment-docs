@@ -19,7 +19,7 @@ Segment `identify` events.
  4. From the new Source's Overview page, copy the Segment `writeKey`.
  5. To export users from Amplitude to Segment, first, in Amplitude, create the
     cohort of users you wish to export. You can read more about the different
-    types of cohorts you can create in [Amplitude's documentation](https://amplitude.zendesk.com/hc/en-us/articles/231881448-Behavioral-Cohorts).
+    types of cohorts you can create in [Amplitude's documentation](https://help.amplitude.com/hc/en-us/articles/231881448-Behavioral-Cohorts).
  6. In your Amplitude account, navigate to your Behavioral Cohort and
     paste the Segment `writeKey` under "Sync to" -> "Add Integration" if the
     Segment integration is not already set up for your project. **NOTE:** If you

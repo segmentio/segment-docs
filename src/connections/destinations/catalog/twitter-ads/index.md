@@ -61,7 +61,7 @@ Thus the example `.track()` event above would fire this tag:
 
 ### Advanced Conversion Tracking and Dynamic Ads
 
-Our Twitter destination supports [Advanced Conversion Tracking](https://business.twitter.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites.html#advanced) which can be used to run **Dynamic Ads Campaigns**. Once you create your conversion events using **Universal Website Tag** inside Twitter's UI, just follow our [Ecommerce V2 Spec](https://segment.com/docs/connections/spec/ecommerce/v2) and we will automatically map select events (listed below). Keep in mind that you **must** provide the **Universal Website Pixel ID** in your settings for this feature to work.
+Our Twitter destination supports [Advanced Conversion Tracking](https://business.twitter.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites.html#advanced) which can be used to run **Dynamic Ads Campaigns**. Once you create your conversion events using **Universal Website Tag** inside Twitter's UI, just follow our [Ecommerce V2 Spec](/docs/connections/spec/ecommerce/v2) and we will automatically map select events (listed below). Keep in mind that you **must** provide the **Universal Website Pixel ID** in your settings for this feature to work.
 
 *NOTE*: *For each of these Segment events, we will still check if you had mapped any of them to a* **Single Event Website Tag** *in your Segment settings and fire those tags in addition to these advanced conversion tags.*
 

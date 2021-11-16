@@ -22,14 +22,14 @@ Perform the following steps to get started with Segment's Movable Ink destinatio
 
 
 ## Identify
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does.
 
 When you send an `identify` event with one of Segments sources, this is passed to the Movable Ink API and includes the user `traits` you provide along with the previously used `anonymousId` as well as the `userId` that was given.
 
 Once the Movable Ink API receives this `identify` event, it will associate the events made by the previous `anonymousId` to the provided `userId` or `traits.email` if one is provided. From that point on, the events will now appear in the user profile. This enables **Signals** features such as behavioral targeting, as well as content integrations like **Behavioral Apps**.
 
 ## Track
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does.
 
 When you send a `track` event with one of Segment's sources, Movable Ink will normalize them into the same events that Movable Ink's API would normally receive. They will then be available to target against in behavioral marketing campaign content as well as being available in **Custom Apps** and **Behavioral Apps**.
 
@@ -40,7 +40,7 @@ If no `identify` call has been made, then the events will be attributed to an an
 Events coming from Segment have a few required properties for them to work with **Signals**.
 
 ### Ecommerce Supported Events
-Movable Ink currently supports the [Segment Ecommerce](https://segment.com/docs/connections/spec/ecommerce/v2/) event specification, and in the future Movable Ink may expand the supported events to work with additional client use cases.
+Movable Ink currently supports the [Segment Ecommerce](/docs/connections/spec/ecommerce/v2/) event specification, and in the future Movable Ink may expand the supported events to work with additional client use cases.
 
 #### Product Events
 The `Product Viewed` and `Product Added` `track` events must include the following properties in order for them to be used in **Signals**:

@@ -60,9 +60,6 @@ endpoint from Segment's support team._
    authentication key again and paste it into your UBX settings in the Segment
    UI.
 
-You can read more about defining and activating applications in UBX [here in
-their
-documentation](https://www.ibm.com/support/knowledgecenter/en/SS9JVY/UBX/Endpoints_ubx/Registering_endpoints_as_applications.html).
 
 ## General Tracking Advice
 
@@ -466,12 +463,6 @@ options:
   channels are `email` and `sms`, and the only two acceptable subscription
   options are `opt-in` and `opt-out`.
 
-For more information, refer to IBM UBX's documentation on `subchannel`
-[here](https://www.ibm.com/support/knowledgecenter/SS9JVY/UBX/Event_taxonomy_ubx/Best_practice_event_attributes.html)
-(*Best practice event attributes* article) and on `channel`
-[here](https://www.ibm.com/support/knowledgecenter/SS9JVY/UBX/Events_ubx/Event_publication.html).
-Note that recommended values for these fields is often determined by the
-downstream tools connected to UBX (e.g. Watson Customer Engagement tools).
 
 ## Troubleshooting
 
@@ -485,7 +476,7 @@ downstream tools connected to UBX (e.g. Watson Customer Engagement tools).
 
 Segment does not auto-generate events other than an initial `page` call when using our Analytics.js library and mobile lifecycle events when mobile lifecycle tracking is enabled using Segment's Android or iOS library.
 
-This means some events supported and in some cases expected by downstream UBX destinations - including *abandonment events* - must be derived by the customer. One approach would be to integrate with a marketing tool such as [Braze](https://segment.com/docs/connections/destinations/catalog/braze/) or [Bronto](https://segment.com/docs/connections/destinations/catalog/bronto/), in which you can [set up rules that generate abandonment events](https://segment.com/docs/guides/destinations/how-do-i-automate-multi-channel-re-engagement-campaigns/#1st-line-of-defense-the-push-notification), which are then be sent back through Segment and downstream to UBX.
+This means some events supported and in some cases expected by downstream UBX destinations - including *abandonment events* - must be derived by the customer. One approach would be to integrate with a marketing tool such as [Braze](/docs/connections/destinations/catalog/braze/) or [Bronto](/docs/connections/destinations/catalog/bronto/), in which you can [set up rules that generate abandonment events](/docs/guides/destinations/how-do-i-automate-multi-channel-re-engagement-campaigns/#1st-line-of-defense-the-push-notification), which are then be sent back through Segment and downstream to UBX.
 
 Another approach may be to schedule a cron job in your database that checks for users who have triggered a `Product Added` event, but who never went on to trigger an `Order Completed` event. In this case, one can logically deduce that the user abandoned his cart, hence you should trigger a server-side Segment event based on this rule, which Segment will process and pass downstream to UBX.
 
@@ -497,4 +488,3 @@ Segment's integration with UBX supports the following UBX abandonment events:
 - ibmcartAbandonment
 - ibmcartAbandonmentItem
 
-You can find more information about these events in [UBX's Event Taxonomy](https://ubx-pilot.ibmmarketingcloud.com/#/taxonomy).

@@ -19,13 +19,13 @@ This destination is maintained by Proof. For any issues with the destination, [c
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Proof Experiences" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your [Proof Experiences dashboard](https://app.proof-x.com/account/apikeys).
-4. You should see data flowing into your Proof dashboard in the [event debugger](https://app.proof-x.com/settings/events) within 1 minute of creating your API key and activating your Proof Experiences integration.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your Proof Experiences dashboard.
+4. You should see data flowing into your Proof dashboard in the event debugger within 1 minute of creating your API key and activating your Proof Experiences integration.
 
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -36,7 +36,7 @@ Page calls will be sent to Proof Experiences as a `pageview`.
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -51,7 +51,7 @@ Identify calls will be sent to Proof Experiences as an `identify` call along wit
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked Login Button', {

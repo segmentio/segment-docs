@@ -16,7 +16,7 @@ This destination is maintained by Gist. For any issues with the destination, [co
 5. Enter the "API Key" in the Gist destination settings in Segment.
 
 ## Identify
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -33,7 +33,7 @@ Only `identify` events can *update* existing Contacts.
 See [Gist’s Contact Properties](https://docs.getgist.com/article/241-contact-properties-glossary) for more details.
 
 ## Track
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Login Button Clicked')

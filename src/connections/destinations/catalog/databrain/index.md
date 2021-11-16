@@ -20,11 +20,11 @@ This destination is maintained by DataBrain. For any issues with the destination
 > info ""
 > You should see data in DataBrain within 48 hours. DataBrain notifies you by email when your model is generated.
 
-*Optional:* You can use Segment [Replays](https://segment.com/docs/guides/what-is-replay/) to sync your past events which were sent through Segment into your DataBrain instance.
+*Optional:* You can use Segment [Replays](/docs/guides/what-is-replay/) to sync your past events which were sent through Segment into your DataBrain instance.
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page()
@@ -34,7 +34,7 @@ Segment sends Page calls to DataBrain as a `pageview`.
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -46,7 +46,7 @@ Segment sends Identify calls to DataBrain as an `identify` event.
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Login Button Clicked')
@@ -56,7 +56,7 @@ Segment sends Track calls to DataBrain as a `track` event.
 
 ## Screen
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. Below are two example calls:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](/docs/connections/spec/screen/) does. Below are two example calls:
 
 ```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -75,7 +75,7 @@ Segment sends Screen calls to DataBrain as a `screenview`.
 
 ## Group
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
 
 ```js
 {
