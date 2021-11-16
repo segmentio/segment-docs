@@ -19,11 +19,11 @@ This destination is maintained by Richpanel. For any issues with the destination
 4. In your Richpanel account, go to Data Sources > Integrations and install the Segment Connector.
 5. Enter the "API Key" into your Segment Settings UI which you can find from your [Richpanel data sources](https://app.richpanel.com/connectors/my/list).
 
-**NOTE**: Richpanel accepts anonymous users, or [Visitors](http://event.richpanel.com/#/customers/understanding-customers), but they will not appear in the Richpanel Customer Section UI unless the customer is first identified using an `identify` call or customer actvity through Richpanel Channels, thereby becoming a [Customer](http://event.richpanel.com/#/customers/understanding-customers).
+**NOTE**: Richpanel accepts anonymous users, or Visitors, but they will not appear in the Richpanel Customer Section UI unless the customer is first identified using an `identify` call or customer activity through Richpanel Channels, thereby becoming a Customer.
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [`identify` method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [`identify` method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -44,11 +44,10 @@ The basic properties to identify and create a user are:
 
 `uid` is a *required* field; `email`, `firstName`, and `lastName` are optional, but highly recommended.
 
-See [Richpanel's User Properties](http://event.richpanel.com/#/properties) and [Richpanel's Events](http://event.richpanel.com/#/events?id=attribute-glossary) for more details.
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [`page` method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [`page` method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page('Pricing', {
@@ -64,7 +63,7 @@ If no `richpanel_session_id` is supplied, Richpanel will automatically generate 
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [`track` method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [`track` method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Clicked Login Button', {
@@ -74,4 +73,4 @@ analytics.track('Clicked Login Button', {
 
 Track calls are sent to Richpanel as a `track` event. `track` calls can only update `email` traits, but do not create them.
 
-**NOTE**: Richpanel accepts all events listed in [Segment's Specs](https://segment.com/docs/connections/spec/ecommerce/v2/). For events like Order Updated, Order Cancelled, and Order Refunded, we recommend that you pass an `order_status` property.
+**NOTE**: Richpanel accepts all events listed in [Segment's Specs](/docs/connections/spec/ecommerce/v2/). For events like Order Updated, Order Cancelled, and Order Refunded, we recommend that you pass an `order_status` property.

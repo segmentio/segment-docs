@@ -21,7 +21,7 @@ This destination is maintained by Unwaffle. For any issues with the destination,
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('12345', {
@@ -35,7 +35,7 @@ Identify calls will be sent to Unwaffle as an [`AddParticipant`](https://unwaffl
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('TrialStart')
@@ -43,4 +43,4 @@ analytics.track('TrialStart')
 
 Track calls will be sent to Unwaffle as an [`AddAction`](https://unwaffle.com/api/docs/#addaction)  event.
 
-**IMPORTANT:** Unwaffle does not support anonymous activity. Ensure that you have [identified](https://segment.com/docs/connections/destinations/catalog/unwaffle/#identify) the user before calling Track.
+**IMPORTANT:** Unwaffle does not support anonymous activity. Ensure that you have [identified](/docs/connections/destinations/catalog/unwaffle/#identify) the user before calling Track.

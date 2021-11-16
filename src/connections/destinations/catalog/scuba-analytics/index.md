@@ -33,7 +33,7 @@ All methods will be tracked as a new event in Scuba Analytics with the associate
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -41,7 +41,7 @@ analytics.page()
 
 ## Screen
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](/docs/connections/spec/screen/) does. An example call would look like:
 
 ```
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -49,7 +49,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. Identify methods can be used with Actors properties and Flow Properties in Scuba Analytics to update the associate with the user in the Identify method. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. Identify methods can be used with Actors properties and Flow Properties in Scuba Analytics to update the associate with the user in the Identify method. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -59,7 +59,7 @@ analytics.identify('userId123', {
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked Login Button')

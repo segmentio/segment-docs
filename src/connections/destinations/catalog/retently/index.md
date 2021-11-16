@@ -48,7 +48,7 @@ When a Segment Track event fires, Retently performs the following actions:
 
 The only property that Retently  **requires** is `email`. All other properties can be assigned as optional customer properties in Retently. To learn how to manage customer properties using Segment track events [see the Retently documentation](https://help.retently.com/en/articles/4097690-set-up-segment-transactional-email-surveys).
 
-If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.track('Subscription Activate Button Clicked', {

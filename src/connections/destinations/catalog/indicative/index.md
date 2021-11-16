@@ -29,7 +29,7 @@ For additional information, contact `support@indicative.com`.
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does.
 
 When you call [`identify`](/docs/connections/spec/identify/), we send the entire call as is to Indicative's server.
 
@@ -50,7 +50,7 @@ analytics.identify('ze8rt1u89', {
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does.
 
 When you call [`track`](/docs/connections/spec/track/), we send the entire call as is to Indicative's server.
 
@@ -64,7 +64,7 @@ analytics.track("Calculation Completed", {
 
 ## Page and Screen
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) and [Screen method](https://segment.com/docs/connections/spec/page/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) and [Screen method](/docs/connections/spec/page/) does.
 
 Both [`page`](/docs/connections/spec/page/) and [`screen`](/docs/connections/spec/screen/) calls will be sent to Indicative as events.
 
@@ -89,4 +89,4 @@ analytics.screen({
 
 ### Property values have maximum length of 255 characters
 
-Indicative's [documentation](https://support.indicative.com/hc/en-us/articles/360004149152-REST-API-Track-Events?utm_source=partners&utm_medium=segment&utm_campaign=integration) states that the values in the properties must not exceed 255 characters. Segment will still accept the call, but any values that exceed 255 characters will be trimmed (meaning only the first 255 characters will be sent to Indicative).
+Indicative's [documentation](https://support.indicative.com/hc/en-us/articles/360004147512-REST-API-Guide) states that the values in the properties must not exceed 255 characters. Segment will still accept the call, but any values that exceed 255 characters will be trimmed (meaning only the first 255 characters will be sent to Indicative).

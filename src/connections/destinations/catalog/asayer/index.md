@@ -23,7 +23,7 @@ In the meantime, remove Asayer's native snippet from your site.
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. Identify calls sent to Segment will be transformed and sent to Asayer's `asayer.vars` method.
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. Identify calls sent to Segment will be transformed and sent to Asayer's `asayer.vars` method.
 
 An example call which does not include a `userId` will transmit Asayer the value of the `anonymousId` and would look like:
 ```js
@@ -48,7 +48,7 @@ analytics.identify("userId123", {
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('New Order', {

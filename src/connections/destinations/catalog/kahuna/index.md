@@ -6,7 +6,7 @@ title: Kahuna Destination
 
 Segment makes it easy to send your data to Kahuna. When you tracking your data using Segment's [open-source libraries](/docs/connections/sources/catalog/), Segment translates and routes your data to Kahuna in a format it can process.
 
-If you have mobile apps, then Kahuna recommends that you use the Segment [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios) and or [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android) library and bundling Kahuna (see [Mobile](#mobile) section below).
+If you have mobile apps, then Kahuna recommends that you use the Segment [iOS](/docs/connections/sources/catalog/libraries/mobile/ios) and or [Android](/docs/connections/sources/catalog/libraries/mobile/android) library and bundling Kahuna (see [Mobile](#mobile) section below).
 
 If you are sending data from a server side library, read the [Server side](#server-side) section.
 
@@ -38,7 +38,7 @@ compile ('com.kahuna.integration.android.segment:kahuna:+') {
 }
 ```
 
-Then, bundle Kahuna during your Segment Analytics initialization, with more details [here](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#bundling-integrations):
+Then, bundle Kahuna during your Segment Analytics initialization, with more details [here](/docs/connections/sources/catalog/libraries/mobile/android/#bundling-integrations):
 
 ```java
 Analytics analytics = new Analytics.Builder(this, "SEGMENT_KEY")
@@ -54,7 +54,7 @@ Add the Kahuna pod dependency:
 pod "Segment-Kahuna
 ```
 
-Then, bundle Kahuna during your Segment Analytics initialization, with more details [here](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#bundling-integrations):
+Then, bundle Kahuna during your Segment Analytics initialization, with more details [here](/docs/connections/sources/catalog/libraries/mobile/ios/#bundling-integrations):
 
 ```objc
 #import <Segment-Kahuna/SEGKahunaIntegrationFactory.h>

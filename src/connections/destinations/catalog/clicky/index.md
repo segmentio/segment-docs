@@ -24,7 +24,7 @@ This document was last updated on July 30th, 2018. If you notice any gaps, outda
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like this:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like this:
 
 ```javascript
 analytics.page("Home",{
@@ -37,7 +37,7 @@ When you call [`page`](/docs/connections/spec/page/), we call Clicky's `log` fun
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like this:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like this:
 
 ```javascript
 analytics.identify('ze8rt1u89', {
@@ -57,7 +57,7 @@ When you make an Identify call with Segment, we will create a Clicky custom sess
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track("My Custom Event", {

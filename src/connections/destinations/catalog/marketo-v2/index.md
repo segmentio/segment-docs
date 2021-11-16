@@ -130,7 +130,7 @@ When you call [`Track`](/docs/connections/spec/track/), Segment maps the event t
 
 - Enable [Cloud-mode](/docs/connections/destinations/catalog/marketo-v2/#supported-sources-and-connection-modes)
 - Enable [Device-mode](/docs/connections/destinations/catalog/marketo-v2/#supported-sources-and-connection-modes) and enable the [Send Track Events Server Side](/docs/connections/destinations/catalog/marketo-v2/#send-track-events-server-side) setting
-- Send track events from one of our [server side libraries](https://segment.com/docs/connections/sources/#server)
+- Send track events from one of our [server side libraries](/docs/connections/sources/#server)
 
 Here is a sample Ruby  `.track()` event:
 
@@ -173,7 +173,7 @@ Here is a sample Node `.page()`  event:
       category: 'Docs',
       name: 'Node.js Library',
       properties: {
-        url: 'https://segment.com/docs/connections/sources/catalog/libraries/server/node',
+        url: '/docs/connections/sources/catalog/libraries/server/node',
         path: '/docs/connections/sources/catalog/libraries/server/node/',
         title: 'Node.js Library - Segment',
         referrer: 'https://github.com/segmentio/analytics-node'
@@ -235,7 +235,7 @@ You can do one of the following to prevent duplicate leads:
 To upload a list to Marketo, when you are in Lead Database, click All Leads. Then click "New", then "Import List" from the drop down. Select your CSV, then click "Next". Make sure "Email Address" and "userId" are the Marketo Fields selected then click "Next". Name your list or select a pre-existing list. Select "None" for Acquisition Program. Then Click "Import".
 
 2. Manually merge leads in Marketo. Follow [these instructions to merge](http://docs.marketo.com/display/public/DOCS/Find+and+Merge+Duplicate+People) any duplicate leads found in Marketo after enabling the destination.
-3. Make sure to call identify first. This is already a recommended best practice as [part of our spec](https://segment.com/docs/connections/spec/identify/).
+3. Make sure to call identify first. This is already a recommended best practice as [part of our spec](/docs/connections/spec/identify/).
 4. Pass an email in your `.track()` and `.page()` calls.
 
 ## Migrating from Marketo to Marketo V2
