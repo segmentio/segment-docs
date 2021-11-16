@@ -17,7 +17,7 @@ This destination is maintained by Adtriba. For any issues with the destination, 
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Adtriba" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "Project Tracker ID / API Key" into your Segment Settings UI which you can find from the Adtriba dashboard.
+3. Enter the "Project Tracker ID / API Key" into your Segment Settings UI which you can find on the Adtriba dashboard.
 4. Validate the forwarded events by checking the Tracking Report under the "Tracking" tab.
 
 ## Page

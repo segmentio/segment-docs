@@ -13,7 +13,7 @@ This destination is maintained by TUNE. Their code is publicly available for [iO
 
 1.  From your Segment UI's Destinations page click on "Add Destination".
 2.  Search for "TUNE" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3.  Add your TUNE Advertiser ID in the Segment Settings UI from the TUNE Dashboard].
+3.  Add your TUNE Advertiser ID in the Segment Settings UI from the TUNE Dashboard.
 4.  In your TUNE account, ensure that you have created a new app by navigating to Applications > Apps > Add A New App.
 5.  Depending on library you've installed, follow the additional steps below to finish setting up!
 
