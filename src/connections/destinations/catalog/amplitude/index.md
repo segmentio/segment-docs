@@ -13,10 +13,6 @@ Segment's Amplitude destination code is open source and available on GitHub. Fee
 - [iOS](https://github.com/segment-integrations/analytics-ios-integration-amplitude)
 - [Android](https://github.com/segment-integrations/analytics-android-integration-amplitude)
 
-> success ""
-> **New Amplitude destination available**: Segment's [Destination Actions](/docs/connections/destinations/actions/) allow you to explicitly set up your Amplitude mapping, and configure which events the mappings apply to. See [Amplitude Actions destination](/docs/connections/destinations/catalog/actions-amplitude/) for more information.
-
-
 
 In addition to the docs below, Amplitude created a [integration guide](https://developers.amplitude.com/docs/segment-amplitude-integration).
 

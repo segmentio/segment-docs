@@ -24,6 +24,8 @@ Slack (Actions) provides the following benefits over the classic Slack destinati
 
 
 ## Getting Started
+{% include content/ajs-upgrade.md %}
+
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Find the Destinations Actions item in the left navigation, and click it.
@@ -43,6 +45,9 @@ Combine the supported [triggers](/docs/connections/destinations/actions/#compone
 {% include components/actions-fields.html name="slack" %}
 
 ## Migration from the classic Slack destination
+
+{% include content/ajs-upgrade.md %}
+
 
 Follow the table below to map your existing Slack destination configuration to Slack (Actions).
 

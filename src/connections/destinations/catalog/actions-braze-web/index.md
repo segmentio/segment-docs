@@ -182,6 +182,9 @@ Build your own subscription. Combine the supported [triggers](/docs/connections/
 {% include components/actions-fields.html name="braze-web" %}
 
 ## Migration from Braze Classic
+
+{% include content/ajs-upgrade.md %}
+
 Keep the following in mind if you plan to move to Braze (Actions) from the classic Braze destination.
 {% include components/actions-map-table.html name="braze-web" %}
 
