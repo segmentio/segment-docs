@@ -46,6 +46,9 @@ Combine the supported [triggers](/docs/connections/destinations/actions/#compone
 
 ## Migration from the classic Slack destination
 
+{% include content/ajs-upgrade.md %}
+
+
 Follow the table below to map your existing Slack destination configuration to Slack (Actions).
 
 > warning ""

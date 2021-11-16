@@ -79,6 +79,9 @@ To set up a new Actions-framework destination for the first time:
 
 ## Migrate a classic destination to an actions-based destination
 
+{% include content/ajs-upgrade.md %}
+
+
 Moving from a classic destination to an actions-based destination is a manual process. Segment recommends that you follow the procedure below:
 
 1. Create the actions-based destination with your development or test source.

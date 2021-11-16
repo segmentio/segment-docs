@@ -17,8 +17,6 @@ hide-dossier: true
 
 
 ## Getting started
-{% include content/ajs-upgrade.md %}
-
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Find the Destinations Actions item in the left navigation, and click it.
@@ -51,6 +49,9 @@ Combine the supported [triggers](/docs/connections/destinations/actions/#compone
 {% include components/actions-fields.html name="fullstory" %}
 
 ## Migration from the classic FullStory destination
+{% include content/ajs-upgrade.md %}
+
+
 
 Follow the table below to map your existing FullStory destination configuration to FullStory (Actions).
 

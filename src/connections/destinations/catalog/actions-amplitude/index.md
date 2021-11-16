@@ -27,8 +27,6 @@ Amplitude (Actions) provides the following benefits over the classic Amplitude d
 - **Session tracking in cloud-mode**. Amplitude (Actions) supports sending session details from cloud-mode sources.
 
 ## Getting started
-{% include content/ajs-upgrade.md %}
-
 
 1. Before you start, go to your [Amplitude workspace](https://analytics.amplitude.com){:target="_blank"}. Click **Settings** in the bottom left, then click **Projects** in the left menu. Select your **Project**. Copy the Amplitude API Key and Secret Key for the project.
 2. From the Segment web app, click **Catalog**, then click **Destinations**.
@@ -304,6 +302,8 @@ To use Amplitude's groups with Segment, you must enable the following Action set
 - **"Amplitude Group Value Trait"**: This specifies what trait in your Group calls contains the Amplitude "group value". It's how you tell Segment which trait to use as the group value.
 
 ## Migration from Amplitude Classic
+
+{% include content/ajs-upgrade.md %}
 
 Keep the following in mind if you plan to move to Amplitude (Actions) from a classic Amplitude destination.
 
