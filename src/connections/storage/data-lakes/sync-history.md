@@ -23,7 +23,7 @@ To access the Sync History page from the Segment app, open the **My Destinations
 ## Health
 The health tab provides an overview of the rows that synced to your data lake both today and each day for the last 30 days. 
 
-The bar chart, 'Daily Synced Rows,' shows an overview of the rows synced for each of the last 30 days. Hovering over a date shows the number of rows that were synced for that day. Selecting a date from the bar chart opens the Daily Row Volume table, which provides a breakdown of which collections synced, how many rows from each collection synced, and the percentage of all synced rows from each collection .
+The bar chart, 'Daily Synced Rows,' shows an overview of the rows synced for each of the last 30 days. Hovering over a date shows the number of rows that were synced for that day. Selecting a date from the bar chart opens the Daily Row Volume table, which provides a breakdown of which collections synced, how many rows from each collection synced, and the percentage of all synced rows from each collection.
 
 The Daily Row Volume table contains the following information:
 * **Collections:** The name of each collection of properties synced to the data lake
