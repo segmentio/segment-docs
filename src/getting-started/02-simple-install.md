@@ -38,7 +38,7 @@ To create a Segment source:
 
 ## Find your write key
 
-The write key is the unique identifier for a source that tells Segment which source data comes from, to which workspace the data belongs to, and which destinations should receive the data.
+The write key is the unique identifier for a source that tells Segment which source data comes from, to which workspace the data belongs, and which destinations should receive the data.
 
 To find your write key:
 1. Go to **Connections > Sources** and select your source.
@@ -51,7 +51,7 @@ Any time you change a library's settings in the Segment App, the write key regen
 ![](/docs/connections/images/find_writekey.png)
 
 > info ""
-> [Cloud-sources](/docs/connections/sources/about-cloud-sources/) do not have write keys, as they use a token or key from your account with that service. Cloud-sources have other considerations, and aren't part of this tutorial.
+> [Cloud-sources](/docs/connections/sources/about-cloud-sources/) do not have write keys, as they use a token or key from your account with that service. Cloud-sources have other considerations and aren't part of this tutorial.
 
 ## Installing Segment
 
@@ -67,7 +67,7 @@ Click a tab below to see the tutorial content for the specific library you chose
 
 ### Step 1: Copy the Snippet
 <br>
-Paste the snippet from the Javascript Source overview page into the `<head>` tag of your site.
+Paste the snippet from the JavaScript Source overview page into the `<head>` tag of your site.
 <br><br>
 That snippet loads Analytics.js onto the page _asynchronously_, so it won't affect your page load speed. Once the snippet runs on your site, you can turn on destinations from the destinations page in your workspace and data starts loading on your site automatically.
 <br><br>
@@ -210,7 +210,7 @@ This call identifies Michael by his unique User ID (`f4ca124298`, which is the o
 <br>
 The `track` method is how you tell Segment about the actions your users are performing in your app. Every action triggers what we call an "event", which can also have associated properties. You can read more about `track` in the [track method reference](/docs/connections/sources/catalog/libraries/mobile/ios#track).
 
-The Segment iOS SDK can automatically track a few important common events, such as **Application Installed**, **Application Updated** and **Application Opened**. You can enable this option during initialization by adding the following lines:
+The Segment iOS SDK can automatically track a few important common events, such as **Application Installed**, **Application Updated**, and **Application Opened**. You can enable this option during initialization by adding the following lines:
 
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
@@ -218,7 +218,7 @@ configuration.trackApplicationLifecycleEvents = YES;
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
 <br>
-You should also track events that indicate success in your mobile app, like **Signed Up**, **Item Purchased** or **Article Bookmarked**. Segment recommends that you track a few important events as you can always add more later.
+You should also track events that indicate success in your mobile app, like **Signed Up**, **Item Purchased**, or **Article Bookmarked**. Segment recommends that you track a few important events as you can always add more later.
 <br><br>
 Here's what a `track` call might look like when a user signs up:
 
@@ -277,7 +277,7 @@ class_alias('Segment', 'Analytics');
 Segment::init("YOUR_WRITE_KEY");
 ```
 <br>
-4) Replace `YOUR_WRITE_KEY` with the actual write key, which you can find in Segment under your project settings. Otherwise all that data goes straight to `/dev/null`.
+4) Replace `YOUR_WRITE_KEY` with the actual write key, which you can find in Segment under your project settings. Otherwise, all that data goes straight to `/dev/null`.
 <br><br>
 You only need to call `init` once when your php file is requested. All of your files then have access to the same `Analytics` client.
 
