@@ -28,7 +28,7 @@ You can navigate to the [Crazy Egg Dashboard](https://app.crazyegg.com/v2/dashbo
 
 
 ## Page
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 ```javascript
 analytics.page();
 ```

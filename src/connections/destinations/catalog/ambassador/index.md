@@ -22,7 +22,7 @@ Since Ambassador only records specific events and user data, events and users ma
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does.
 
 For Ambassador it takes the unique `userId` of a user and a specific set of traits. All supported `traits` are listed in the example below:
 
@@ -47,7 +47,7 @@ _**NOTE:** You can optionally use the URL campaign map to enroll the user as an 
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does.
 
 For Ambassador `track` events will be recorded as a conversion if the Segment event name is mapped to a campaign in your Ambassador destination settings in the Segment UI. All supported `properties` are listed in the example below:
 

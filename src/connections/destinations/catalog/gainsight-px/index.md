@@ -31,7 +31,7 @@ Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.j
 Don't miss out the [The Configuration Checklist - Segment.com](https://www.gainsight.com/product-experience/) in Gainsight PX!
 
 ## Identify
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does.
 
 An example identify call is shown below:
 
@@ -51,7 +51,7 @@ Segment must be running on all pages of the web application or site that you wan
 Your Segment integration must include use of the identify call (identifies the user & group/account).
 
 ## Track
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does.
 
 An example track call is shown below:
 
@@ -65,7 +65,7 @@ analytics.track("Form submitted", {
 When you track an event, we will send the event name together with the properties included in the track call. In Gainsight PX you will be able to create new funnels based on the custom events and properties received from Segment. You can also add "custom events" in the features created in the "Product Mapper" view.
 
 ## Group
-If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does.
 
 An example group call is shown below:
 

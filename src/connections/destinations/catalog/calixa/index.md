@@ -16,7 +16,7 @@ This destination is maintained by Calixa. For any issues with the destination, [
 3. Select the Segment Integration and sign in to your Segment account to grant Calixa access.
 
 ## Track
-If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 
 ```json
 {
@@ -32,16 +32,16 @@ If you aren't familiar with the Segment Spec, take a look at the [Track method d
 }
 ```
 
-Calixa supports the following Track calls from Segment's [B2B Spec](https://segment.com/docs/connections/spec/b2b-saas/):
+Calixa supports the following Track calls from Segment's [B2B Spec](/docs/connections/spec/b2b-saas/):
 
-* [Signed Up](https://segment.com/docs/connections/spec/b2b-saas/#signed-up) - Creates a user in Calixa
-* [Account Created](https://segment.com/docs/connections/spec/b2b-saas/#account-created) - Creates an account in Calixa
-* [Account Deleted](https://segment.com/docs/connections/spec/b2b-saas/#account-deleted) - Deletes an account in Calixa
-* [Account Added User](https://segment.com/docs/connections/spec/b2b-saas/#account-added-user) - Adds  a user to an account
-* [Account Removed User](https://segment.com/docs/connections/spec/b2b-saas/#account-removed-user) - Removes a user from an account
+* [Signed Up](/docs/connections/spec/b2b-saas/#signed-up) - Creates a user in Calixa
+* [Account Created](/docs/connections/spec/b2b-saas/#account-created) - Creates an account in Calixa
+* [Account Deleted](/docs/connections/spec/b2b-saas/#account-deleted) - Deletes an account in Calixa
+* [Account Added User](/docs/connections/spec/b2b-saas/#account-added-user) - Adds  a user to an account
+* [Account Removed User](/docs/connections/spec/b2b-saas/#account-removed-user) - Removes a user from an account
 
 ## Identify
-If you aren't familiar with the Segment Spec, take a look at the [Identify method documentation](https://segment.com/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Identify method documentation](/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -51,7 +51,7 @@ analytics.identify('userId123', {
 Segment sends Identify calls to Calixa as an `identify` event. When you identify a new user, Calixa creates a new User record. If the User already exists, Calixa updates the User's properties.
 
 ## Group
-If you aren't familiar with the Segment Spec, take a look at the [Group method documentation](https://segment.com/docs/connections/spec/group/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Group method documentation](/docs/connections/spec/group/) to learn about what it does. An example call would look like:
 ```json
 {
   'type': 'group',

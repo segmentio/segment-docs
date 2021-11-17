@@ -24,7 +24,7 @@ The cloud-mode destination is maintained by Drift. For any issues with the desti
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page();
@@ -34,7 +34,7 @@ When you send a `page` or `screen` event, we will send that event to Drift as a 
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('ksc2303', {
@@ -72,7 +72,7 @@ analytics.identify('ksc2303', {
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track('Product Purchased', {
@@ -86,7 +86,7 @@ When you `track` an event, we will send that event to Drift as a custom event.
 
 ## Group
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
 
 ```javascript
 analytics.group('companyId123', {

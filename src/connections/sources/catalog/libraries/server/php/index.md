@@ -517,6 +517,6 @@ $ sudo service cron reload    # reload the cron daemon
 
 ## 3rd-Party Libraries
 
-If you only need support for PHP5, the team at [Underground Elephant](http://undergroundelephant.com/) has released a [3rd-party library](https://github.com/uecode/segment-io-php) based on Guzzle.
+If you only need support for PHP5, the team at Underground Elephant has released a [3rd-party library](https://github.com/uecode/segment-io-php) based on Guzzle.
 
 If you're using Laravel 4 our friends at Catchet have written a wrapper for you! Docs and GitHub repo can be found here: https://github.com/cachethq/Laravel-Segment

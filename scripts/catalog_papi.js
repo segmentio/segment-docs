@@ -64,19 +64,19 @@ const getConnectionModes = (destination) => {
   }
   destination.components.forEach(component =>{
     switch (component.type){
-      case 'ios':
+      case 'IOS':
         connectionModes.device.mobile = true
         break
-      case 'android':
+      case 'ANDROID':
         connectionModes.device.mobile = true
         break
-      case 'browser':
+      case 'BROWSER':
         if (destination.browserUnbundling) {
           connectionModes.cloud.web = true
         }
         connectionModes.device.web = true
         break
-      case 'server':
+      case 'SERVER':
         connectionModes.cloud.mobile = true
         if (destination.platforms.server) {
           connectionModes.cloud.server = true
@@ -437,4 +437,4 @@ const updateWarehouses = async () => {
 
 updateDestinations()
 updateSources()
-updateWarehouses()
+// updateWarehouses()

@@ -24,6 +24,11 @@ layout: integration
   
   {% else %}
 
+{% if page.maintenance == true %}
+  {% capture maintenance-mode %}{% include content/destination-maintenance.md %}{% endcapture %}
+  {{maintenance-mode | markdownify}}
+{% endif %}
+
   {{ content }}
 {% endif %}
 {% unless page.hide-boilerplate == true %}

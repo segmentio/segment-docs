@@ -18,7 +18,7 @@ This destination is maintained by Bucket. For any issues with the destination, [
 
 ## Identify
 
-If you aren't familiar with the Segment Spec, take a look at the [Identify method documentation](https://segment.com/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Identify method documentation](/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -31,7 +31,7 @@ Segment sends Identify calls to Bucket as an `identify` event which updates User
 
 ## Group
 
-If you aren't familiar with the Segment Spec, take a look at the [Group method documentation](https://segment.com/docs/connections/spec/group/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Group method documentation](/docs/connections/spec/group/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.identify('groupId123', {
@@ -43,7 +43,7 @@ Segment sends Group calls to Bucket as a `group` event which updates Company pro
 
 ## Track
 
-If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.track('Login Button Clicked', {

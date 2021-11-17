@@ -19,7 +19,7 @@ This destination is maintained by Button. For any issues with the destination, [
 4. Enter the "API Key" in the Button destination settings in Segment.
 
 ## Track
-If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.track('Deep Link Opened')
@@ -28,7 +28,7 @@ analytics.track('Deep Link Opened')
 Segment sends Track calls to Button as a `track` event.
 
 ### Deep links
-To track deep links from your app or website, use Segment's [Deep Link Opened](https://segment.com/docs/connections/spec/mobile/#deep-link-opened) and [Application Opened](https://segment.com/docs/connections/spec/mobile/#application-opened) events.
+To track deep links from your app or website, use Segment's [Deep Link Opened](/docs/connections/spec/mobile/#deep-link-opened) and [Application Opened](/docs/connections/spec/mobile/#application-opened) events.
 
 Make sure you pass the referring URL. An example would look like:
 
@@ -46,7 +46,7 @@ analytics.track('Application Opened' { someProperty: true }, {
 > **Tip!** Make sure you record any different names for `Deep Link Opened` Track events across your sources so you know which are sent where.
 
 ### Installs
-To track mobile app installs, use Segment's [Application Installed](https://segment.com/docs/connections/spec/mobile/#application-installed) event.
+To track mobile app installs, use Segment's [Application Installed](/docs/connections/spec/mobile/#application-installed) event.
 
 Capture the referring URL when possible. An example would look like:
 
@@ -76,7 +76,7 @@ analytics.track('Application Installed' { someProperty: true }, {
 > **Tip!** Make sure you record any different names for `Application Installed` Track events across your sources so you know which are sent where.
 
 ### Orders
-To track `order` events from your app or website, use Segment's [Order Completed](https://segment.com/docs/connections/spec/ecommerce/v2/#order-completed) event.
+To track `order` events from your app or website, use Segment's [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) event.
 
 An example call would look like:
 
@@ -111,7 +111,7 @@ analytics.track('Order Completed' { someProperty: true }, {
 
 ## Setting up a Destination Filter
 
-If you are a Business Tier customer, you can set up a [Destination Filter](https://segment.com/docs/connections/destinations/destination-filters/) to only send your `Deep link` and `Order` events to Button.
+If you are a Business Tier customer, you can set up a [Destination Filter](/docs/connections/destinations/destination-filters/) to only send your `Deep link` and `Order` events to Button.
 
 
 Read [Button's Destination Filter documentation](https://developer.usebutton.com/docs/segment-integration-guide) to learn more.

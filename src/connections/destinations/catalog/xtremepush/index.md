@@ -20,7 +20,7 @@ This destination is maintained by Xtremepush. For any issues with the destinatio
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -45,7 +45,7 @@ If a trait does not match a custom Xtremepush User Profile Attribute and is not 
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Product Purchased', {

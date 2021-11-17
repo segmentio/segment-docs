@@ -25,7 +25,7 @@ This destination is maintained by Hawkei. For any issues with the destination, [
 
 ## Page
 
-If you aren't familiar with the Segment Spec, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page()
@@ -36,7 +36,7 @@ When you call `page`, we store it as a `page` event inside Hawkei. You can use t
 
 ## Identify
 
-If you aren't familiar with the Segment Spec, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -48,7 +48,7 @@ Identify calls will be sent to hawkei as an `identify` event. The associated use
 
 ## Group
 
-If you aren't familiar with the Segment Spec, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look to understand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
 
 ```js
 analytics.group('groupId123', {
@@ -61,7 +61,7 @@ Group calls will be sent to hawkei as an `group` event. The associated group dat
 
 ## Track
 
-If you aren't familiar with the Segment Spec, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Clicked Login Button')

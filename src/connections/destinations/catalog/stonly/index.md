@@ -12,7 +12,7 @@ This destination is maintained by Stonly. For any issues with the destination, [
 
 ## Getting Started
 
-Before you start, make sure Stonly destination supports the source type and connection mode you’ve chosen to implement. You can learn more about [connection modes here](https://segment.com/docs/connections/destinations/#connection-modes).
+Before you start, make sure Stonly destination supports the source type and connection mode you’ve chosen to implement. You can learn more about [connection modes here](/docs/connections/destinations/#connection-modes).
 
 {% include content/connection-modes.md %}
 
@@ -25,7 +25,7 @@ Before you start, make sure Stonly destination supports the source type and conn
 
 ## Identify
 
-If you’re not familiar with the Segment Specs, take a look to understand what the Identify method does. An example call would look like this [Identify method documentation](https://segment.com/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
+If you’re not familiar with the Segment Specs, take a look to understand what the Identify method does. An example call would look like this [Identify method documentation](/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.identify("userId", {
@@ -48,7 +48,7 @@ If one of your traits is of the date property type it should be sent as an ISO s
 
 ## Track
 
-If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.track("TicketCreated", {

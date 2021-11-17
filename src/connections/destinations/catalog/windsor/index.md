@@ -28,7 +28,7 @@ You can find more information on Windsor on [the Windsor docs site](https://docs
 
 ## Page
 
-If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](https://segment.com/docs/connections/spec/page/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](/docs/connections/spec/page/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.page()
@@ -39,7 +39,7 @@ Segment sends Page calls as tracked events for each [user](https://app.windsor.i
 
 ## Screen
 
-If you aren't familiar with the Segment Spec, take a look at the [Screen method documentation](https://segment.com/docs/connections/spec/screen/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Screen method documentation](/docs/connections/spec/screen/) to learn about what it does. An example call would look like:
 
 ```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -50,7 +50,7 @@ Segment sends Screen calls to Windsor to the tracked events for each [user](http
 
 ## Identify
 
-If you aren't familiar with the Segment Spec, take a look at the [Identify method documentation](https://segment.com/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Identify method documentation](/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.identify("user-123", {
@@ -79,7 +79,7 @@ You can find [additional best practices on using Identify with Windsor here](htt
 
 ## Track
 
-If you aren't familiar with the Segment Spec,  take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec,  take a look at the [Track method documentation](/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.track('Login Button Clicked')
@@ -89,14 +89,14 @@ Segment sends Track calls to Windsor as tracked events for each [user](https://a
 
 To get the best experience with Windsor, we recommend that you follow the Segment's specs for your industry or application .
 
-- [Mobile App](https://segment.com/docs/connections/spec/mobile/)
-- [E-Commerce](https://segment.com/docs/connections/spec/ecommerce/v2/)
-- [B2B SaaS](https://segment.com/docs/connections/spec/b2b-saas/)
-- [Video](https://segment.com/docs/connections/spec/video/)
+- [Mobile App](/docs/connections/spec/mobile/)
+- [E-Commerce](/docs/connections/spec/ecommerce/v2/)
+- [B2B SaaS](/docs/connections/spec/b2b-saas/)
+- [Video](/docs/connections/spec/video/)
 
 ## Group
 
-If you aren't familiar with the Segment Spec, take a look at the [Group method documentation](https://segment.com/docs/connections/spec/group/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Group method documentation](/docs/connections/spec/group/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.group("group-id");
@@ -106,7 +106,7 @@ You can use group calls to attach an internal property to users who belonging to
 
 ## Alias
 
-If you aren't familiar with the Segment Spec, take a look at the [Alias method documentation](https://segment.com/docs/connections/spec/alias/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Alias method documentation](/docs/connections/spec/alias/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.alias("new-user-id");
@@ -114,4 +114,4 @@ analytics.alias("new-user-id");
 
 Segment sends Alias calls to Windsor to help correctly match users behind the scenes. It merges any user previously identified using the old `userID` with a user identified with the new `userID`. If a user does not exist with the new `userID`, Windsor will create a new user with the newly entered `userID`
 
-This is an advanced method and will irreversibly merge users on Windsor (and possibly other destinations too). Make sure to [read the Segment docs](https://segment.com/docs/connections/spec/alias/) when implementing Alias.
+This is an advanced method and will irreversibly merge users on Windsor (and possibly other destinations too). Make sure to [read the Segment docs](/docs/connections/spec/alias/) when implementing Alias.

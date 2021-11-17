@@ -25,7 +25,7 @@ mabl processes the usage data into rolling 24 hour summaries, every hour.  It ca
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -35,7 +35,7 @@ Page calls are used by mabl to build a model of the pages in your app and determ
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked Login Button')

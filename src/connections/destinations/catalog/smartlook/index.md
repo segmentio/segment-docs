@@ -23,7 +23,7 @@ Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.j
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does.
 Identify calls sent to Segment will be transformed and sent to [Smartlook's](https://smartlook.github.io/docs/web/identify-visitor/) `identify` method. An example call would look like:
 
 ```
@@ -35,7 +35,7 @@ analytics.identify('userId123', {
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does.
 Track calls sent to Segment will be transformed and sent to [Smartlook's](https://smartlook.github.io/docs/web/custom-events/) `track` method.
 An example call would look like:
 

@@ -19,7 +19,7 @@ This destination is maintained by Impact. For any issues with the destination, c
 
 ## Page
 
-If you aren’t familiar with the Segment Spec, take a look at the [Page method documentation](https://segment.com/docs/connections/spec/page/) to learn about what it does. An example call would look like:
+If you aren’t familiar with the Segment Spec, take a look at the [Page method documentation](/docs/connections/spec/page/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.page("Home")
@@ -34,7 +34,7 @@ Read [Impact Partnership Cloud's documentation](https://impact-helpdesk.freshdes
 
 ## Screen
 
-If you aren’t familiar with the Segment Spec, take a look at the [Screen method documentation](https://segment.com/docs/connections/spec/screen/) to learn about what it does. An example call would look like:
+If you aren’t familiar with the Segment Spec, take a look at the [Screen method documentation](/docs/connections/spec/screen/) to learn about what it does. An example call would look like:
 
 ```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -44,7 +44,7 @@ Segment sends Screen calls to Impact Partnership Cloud as a `Clicks` event if th
 
 ## Identify
 
-If you aren’t familiar with the Segment Spec, take a look at the [Identify method documentation](https://segment.com/docs/connections/spec/identify/) to learn more about what it does. An example call would look like:
+If you aren’t familiar with the Segment Spec, take a look at the [Identify method documentation](/docs/connections/spec/identify/) to learn more about what it does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -55,7 +55,7 @@ Segment sends Identify calls to Impact Partnership Cloud as a `Page Load` event 
 
 ## Track
 
-If you aren’t familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn more about what it does. An example call would look like:
+If you aren’t familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track/) to learn more about what it does. An example call would look like:
 
 ```js
 analytics.track('Order Completed', {

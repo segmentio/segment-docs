@@ -10,7 +10,7 @@ This destination is maintained by Wigzo. For any issues with the destination, [c
 
 ## Getting Started
 
-The first step is to make sure Wigzo supports the source type and connection mode you've chosen to implement. You can learn more about what dictates the connection modes we support [here](https://segment.com/docs/connections/destinations/#connection-modes).
+The first step is to make sure Wigzo supports the source type and connection mode you've chosen to implement. You can learn more about what dictates the connection modes we support [here](/docs/connections/destinations/#connection-modes).
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Wigzo" in the Catalog, select it, and choose which of your sources to connect the destination to.
@@ -19,7 +19,7 @@ The first step is to make sure Wigzo supports the source type and connection mod
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```javascript
 analytics.page();
@@ -29,7 +29,7 @@ When you call `.page()` in the browser, we will pass all the properties of the p
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('userId123', {
@@ -41,7 +41,7 @@ When you call `.identify()`, user's data will be sent to Wigzo's server along wi
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track('Clicked Button');

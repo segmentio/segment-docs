@@ -21,7 +21,7 @@ This destination is maintained by EPICA. For any issues with the destination, [c
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -32,7 +32,7 @@ Page calls will be sent to EPICA as a `page`.
 
 ## Screen
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -43,7 +43,7 @@ Screen calls will be sent to EPICA as a `screen`.
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -59,7 +59,7 @@ Identify calls will be sent to EPICA as an `identify` event. Traits are optional
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked Login Button', {

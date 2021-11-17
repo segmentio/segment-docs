@@ -17,8 +17,6 @@ This source is maintained by Delighted. For any issues with the source, you may 
 6. Enable the "Sync feedback to Segment" option.
 7. Copy the Write Key from your Delighted source within Segment and paste it into the provided box within Delighted
 
-![segment-delighted-setup](https://scrn.es/6fEhinjMQGiuESd2aQqLcv.gif)
-
 **NOTE**: We only send feedback back to Segment on surveys triggered from Segment initially. This ensures all feedback we send to Segment is identified and enriched with Segment information.
 
 ## Components

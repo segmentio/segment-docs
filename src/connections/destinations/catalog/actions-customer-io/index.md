@@ -54,5 +54,8 @@ Build your own subscription. Combine the supported [triggers](/docs/connections/
 
 ## Migration from Customer.io classic
 
+{% include content/ajs-upgrade.md %}
+
+
 Keep the following in mind if you plan to move to Customer.io (Actions) from the classic Customer.io destination.
 {% include components/actions-map-table.html name="customer-io" %}

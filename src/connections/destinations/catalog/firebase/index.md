@@ -277,7 +277,7 @@ Firebase is now Google's recommended method for reporting conversions to Adwords
 
 ### Troubleshooting
 
-Firebase has great logging. If you are having any issues, you can enable debug mode as outlined [here](https://support.google.com/firebase/answer/7201382/?hl=en&authuser=0).
+Firebase has great logging. If you are having any issues, you can enable debug mode as outlined [here](https://firebase.google.com/docs/analytics/debugview).
 
 ### Changes from iOS v1 to v2 Beta
 
@@ -294,6 +294,6 @@ Even more exciting is that this new iOS SDK will have parity with the new Segmen
 
 As a current user of Segment-Firebase iOS, you will be able to pull in the latest version by pinning `pod 'Segment-Firebase', '~>2.0`. While we don't suggest this, if you are not ready to upgrade you can pin the old beta version at `pod 'Segment-Firebase', '~>1.0.0``'`
 
-For details on the new mapping, you can check out our documentation [here](https://segment.com/docs/connections/destinations/catalog/firebase/#event-mappings).
+For details on the new mapping, you can check out our documentation [here](/docs/connections/destinations/catalog/firebase/#event-mappings).
 
 Let us know if you have any questions. We recommend upgrading as soon as possible, and [let us know](https://segment.com/help/contact/) if you have any feedback about both the Firebase iOS and Android betas.

@@ -25,10 +25,10 @@ If you received this deprecation notice, your property has already been flagged 
 For more detailed information for each of the classes and methods in the Firebase SDK by platform visit the [Firebase Analytics SDK documentation](https://firebase.google.com/docs/reference).
 
 #### Installing the iOS SDK
-For information on how to add the Segment-Firebase SDK and register the dependency with the Segment SDK visit [Segment's Firebase for iOS](https://segment.com/docs/connections/destinations/catalog/firebase/#ios) documentation.
+For information on how to add the Segment-Firebase SDK and register the dependency with the Segment SDK visit [Segment's Firebase for iOS](/docs/connections/destinations/catalog/firebase/#ios) documentation.
 
 #### Installing the Android SDK
-For information on how to add the Segment-Firebase SDK and apply the Google Services plugin visit [Segment's Firebase for Android](https://segment.com/docs/connections/destinations/catalog/firebase/#android) documentation.
+For information on how to add the Segment-Firebase SDK and apply the Google Services plugin visit [Segment's Firebase for Android](/docs/connections/destinations/catalog/firebase/#android) documentation.
 
 
 ## Comparing Google Analytics and Firebase Functionality

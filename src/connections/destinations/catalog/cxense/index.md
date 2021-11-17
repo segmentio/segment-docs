@@ -21,7 +21,7 @@ Assuming these criteria are met, you can add Cxense as a destination for your de
 
 ## Page
 
-Tracking pageviews is a key component of Cxense's offering. We integrate with this capability using our `.page()` method. When you trigger a `.page()` event the integration will invoke Cxense's corresponding `sendPageView` functionality. We will also pass along any [custom properties](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#page) you define. Here is an example:
+Tracking pageviews is a key component of Cxense's offering. We integrate with this capability using our `.page()` method. When you trigger a `.page()` event the integration will invoke Cxense's corresponding `sendPageView` functionality. We will also pass along any [custom properties](/docs/connections/sources/catalog/libraries/website/javascript/#page) you define. Here is an example:
 
 ```js
 analytics.page('My Page Name', { author: 'Chris Nixon' });

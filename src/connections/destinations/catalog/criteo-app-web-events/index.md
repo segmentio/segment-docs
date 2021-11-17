@@ -15,7 +15,7 @@ Currently this destination supports events originating from Mobile or Web source
 To get started with Criteo Events and Segment, you'll need:
 
 1. An existing account with [Criteo](http://www.criteo.com/).
-2. A data source integrated with either one of our mobile SDK's ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/)) or Javascript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/))
+2. A data source integrated with either one of our mobile SDK's ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](/docs/connections/sources/catalog/libraries/mobile/android/)) or Javascript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/))
 
 Assuming both of these criteria are met, you can add Criteo Events as a destination for your desired source in your Segment account.
 
@@ -29,7 +29,7 @@ Assuming both of these criteria are met, you can add Criteo Events as a destinat
 
 Criteo Events is built to help you track key purchase funnel events and details. To accomplish that, you'll want to [`track`](/docs/connections/spec/track/) your user's actions using the following spec'd events to ensure you're following Criteo's best practices.
 
-We use the context fields that we capture with our SDKs automatically to populate Criteo Events' tag with the app's name, user's language, locale, userId, deviceType and deviceId so you just need to make sure that the event names and properties match up! Refer to our [common fields guide](https://segment.com/docs/connections/spec/common/#context-fields-automatically-collected) to identify which context fields we collect automatically for each of our client-side libraries (analytics.js, analytics-ios or analytics-android).
+We use the context fields that we capture with our SDKs automatically to populate Criteo Events' tag with the app's name, user's language, locale, userId, deviceType and deviceId so you just need to make sure that the event names and properties match up! Refer to our [common fields guide](/docs/connections/spec/common/#context-fields-automatically-collected) to identify which context fields we collect automatically for each of our client-side libraries (analytics.js, analytics-ios or analytics-android).
 
 ### Product Viewed
 

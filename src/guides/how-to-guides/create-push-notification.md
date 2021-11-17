@@ -15,7 +15,7 @@ Every Push messaging focuses around three key features:
 - **Timing** - Always send push notifications to users in their local timezone. In general, mobile usage peaks between 6pm - 10pm.
 
 
-### Choose an destination
+### Choose a destination
 
 It's best practice to self evaluate when trying to choose the "one" that suits your needs.
 

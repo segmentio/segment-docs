@@ -21,7 +21,7 @@ This destination is maintained by Nat.app. For any issues with the destination, 
 
 ## Identify
 
-If you aren't familiar with the Segment Spec, read the documentation to learn what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you aren't familiar with the Segment Spec, read the documentation to learn what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {

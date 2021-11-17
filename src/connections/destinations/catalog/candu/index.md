@@ -20,7 +20,7 @@ This destination is maintained by Candu Labs. For any issues with the destinatio
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does.
 
 An example call would look like:
 ```js
@@ -31,7 +31,7 @@ Page calls will be sent to Candu as a `page` event. You will be able to use `pag
 
 ## Screen
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/page/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](/docs/connections/spec/page/) does.
 
 An example call would look like:
 
@@ -42,7 +42,7 @@ Screen calls will be sent to Candu as a `screen` event.
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does.
 
 An example call would look like:
 
@@ -55,7 +55,7 @@ analytics.identify('userId123', {
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does.
 
 An example call would look like:
 

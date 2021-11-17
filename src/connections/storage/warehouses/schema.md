@@ -336,6 +336,9 @@ All four timestamps pass through to your Warehouse for every ETL'd event. In mos
 
 `received_at` does not ensure chronology of events.  For queries based on event chronology, `timestamp` should be used.
 
+> note ""
+> **NOTE:** ISO-8601 date strings with timezones included are required when using timestamps with [Personas](/docs/personas/). Sending custom traits without a timezone included in the timestamp will result in the value not being saved. 
+
 To learn more about timestamps in Segment, [read our timestamps overview](/docs/connections/spec/common/#timestamps) in the Segment Spec.
 
 ## id
