@@ -164,7 +164,7 @@ To create an S3 IAM role, you must first install and configure the AWS CLI on yo
     aws iam create-policy --policy-name segment-s3-putobject --policy-document file://iam-policy.json --description "Allow Segment to PutObject into S3 destination bucket"
     ```
 
-6. A successful output has the following format. Take note of the `Arn,` as you'll need it in the next step.
+6. A successful output has the following format. Take note of the `Arn`, as you'll need it in the next step.
 
     ``` json
     {
