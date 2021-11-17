@@ -91,7 +91,7 @@ To complete this section, you need access to your AWS dashboard.
             ],
             "Resource": "<YOUR_KEY_ARN>"
         }
-    ]
+      ]
     }
     ```
 
