@@ -7,7 +7,7 @@ sections:
   - path: /getting-started/01-what-is-segment
     title: What is Segment?
   - path: /getting-started/02-simple-install
-    title: A Simple Segment Installation
+    title: A Basic Segment Installation
   - path: /getting-started/03-planning-full-install
     title: Planning a Full Installation
   - path: /getting-started/04-full-install
