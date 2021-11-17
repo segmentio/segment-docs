@@ -188,6 +188,8 @@ sections:
         title: Set Up Data Lakes
       - path: /connections/storage/data-lakes/sync-reports
         title: Sync Reports and Error Reporting
+      - path: /connections/storage/data-lakes/sync-history
+        title: Data Lakes Sync History and Health
       - path: /connections/storage/data-lakes/comparison
         title: Data Lakes vs. Warehouses
     - section_title: Data Warehouses
