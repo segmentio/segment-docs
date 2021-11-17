@@ -1,58 +1,57 @@
 ---
-title: A Simple Segment Installation
+title: A Basic Segment Installation
 ---
 
 
 When you implement Segment, you add Segment code to your website, app, or server. This code generates messages based on specific triggers you define.
 
 
-In the simplest implementation, the code can be a snippet of Javascript that you copy and paste into the HTML of a website to track page views. It can also be as complex as Segment calls embedded in a React mobile app to send messages when the app is opened or closed, when the user performs different actions, or when time based conditions are met (for example "ticket reservation expired" or "cart abandoned after 2 hours").
+In a basic implementation, the code can be a snippet of Javascript that you copy and paste into the HTML of a website to track page views. It can also be as complex as Segment calls embedded in a React mobile app to send messages when the app is opened or closed, when the user performs different actions, or when time based conditions are met (for example "ticket reservation expired" or "cart abandoned after 2 hours").
 
-The best way to learn about how Segment works is to see it in action. This tutorial walks you though an installation using one of our libraries: either our Javascript, PHP, or iOS library.
+The best way to learn about how Segment works is to see it in action. This tutorial walks you though an installation using one of Segment's libraries: Javascript, PHP, or the iOS library.
 
 ## Before you begin
 
-Before you start, you need a Segment user account and a workspace. If you're not already part of an organization with a Segment Workspace, you can [sign up for a free account and workspace](https://app.segment.com/signup/?ref=docs).
-
-For the quickstart portion below, you also need access to the code for a basic website, PHP website, or an iOS app.
+Before you start your Segment implementation, you need:
+1. A Segment user account and a workspace. If you're not already part of an organization with a Segment Workspace, you can [sign up for a free account and workspace](https://app.segment.com/signup/?ref=docs).
+2. Access to the code for a basic website, PHP website, or an iOS app.
 
 > success ""
-> **Tip**! If you don't have any of those things, you might consider creating a simple [GitHub Pages website](https://pages.github.com/).
+> **Tip**! If you don't have any of those things, consider creating a simple [GitHub Pages website](https://pages.github.com/).
 
-## A note on Dev and Prod Sources
+When you develop and test sources, Segment recommends you to create and use separate sources for each of your environments (production, development, staging) to prevent testing and development activities from filling production systems with invalid data.
 
-When developing and testing, you should create and use separate sources for each of your environments (production, development, staging, etc.) to prevent testing and development activities from filling production systems with invalid data.
-
-You can give each source an `environment` label when you create it, and we strongly suggest that you use these labels to sort your sources. When you create a source during the steps below, make sure you enter an environment label.
+You can give each source an `environment` label when you create it, and Segment strongly suggests that you use these labels to sort your sources. When you create a source during the steps below, make sure you enter an environment label.
 
 > warning ""
-> **Caution**! Double-check when you enter write keys for dev and production environments to make sure that you'll send the right data to the right place!
+> Double-check when you enter write keys for dev and production environments to make sure that you send the right data to the right place.
 
 
 ## Create a Segment source
 
-Go to your Segment workspace, and navigate to [the Sources catalog](https://app.segment.com/goto-my-workspace/sources/catalog).
-
-Choose either the [Javascript source](https://app.segment.com/goto-my-workspace/sources/catalog/javascript), [PHP source](https://app.segment.com/goto-my-workspace/sources/catalog/php), or [iOS source](https://app.segment.com/goto-my-workspace/sources/catalog/ios), and click **Add Source**.
-
-On the next screen, give the source a name. (We recommend that you include the word `demo`, `test`, or `quickstart` in the name so you can easily find and delete this source later.)
-
-We also recommend that you add an Environment Label of `dev` to the source, so you know that this demo source isn't part of a production installation.
-
+To create a Segment source:
+1. Go to your Segment workspace, and navigate to [the Sources catalog](https://app.segment.com/goto-my-workspace/sources/catalog).
+2. Select your source. You can choose from either the [Javascript source](https://app.segment.com/goto-my-workspace/sources/catalog/javascript), the [PHP source](https://app.segment.com/goto-my-workspace/sources/catalog/php), or the [iOS source](https://app.segment.com/goto-my-workspace/sources/catalog/ios).
+3. Click **Add Source**.
+4. Enter a name for the source. Segment recommends that you include the word `demo`, `test`, or `quickstart` in the name so you can easily find and delete this source later.
+5. *(Optional)* Add an Environment label of `dev` to the source in the **Labels** field. Segment recommends you do this so you know that this demo source isn't part of a production installation.
 
 ## Find your write key
 
-The write key is the unique identifier for a source which tells Segment which source data comes from, to which workspace it belongs, and which destinations should receive the data.
+The write key is the unique identifier for a source that tells Segment which source data comes from, to which workspace the data belongs to, and which destinations should receive the data.
 
-When you create a new library source, you can find the write key in the **Settings** tab for the source, under **API Keys**. Any time you change a library's settings in the Segment App, the write key regenerates.
+To find your write key:
+1. Go to **Connections > Sources** and select your source.
+2. Click the **Settings** tab for the source and click **API Keys**.
+
+Make note of or write down your write key, as you'll need it in the next steps.
+
+Any time you change a library's settings in the Segment App, the write key regenerates.
 
 ![](/docs/connections/images/find_writekey.png)
 
 > info ""
-> [Cloud-sources](/docs/connections/sources/about-cloud-sources/) do not have write keys, as they use a token or key from your account with that service. Cloud sources have other considerations, and aren't part of this tutorial.
-
-Make note of or write down your write key, as you'll need it in the next steps.
-
+> [Cloud-sources](/docs/connections/sources/about-cloud-sources/) do not have write keys, as they use a token or key from your account with that service. Cloud-sources have other considerations, and aren't part of this tutorial.
 
 ## Installing Segment
 
@@ -67,22 +66,23 @@ Click a tab below to see the tutorial content for the specific library you chose
 
 
 ### Step 1: Copy the Snippet
+<br>
+Paste the snippet from the Javascript Source overview page into the `<head>` tag of your site.
+<br><br>
+That snippet loads Analytics.js onto the page _asynchronously_, so it won't affect your page load speed. Once the snippet runs on your site, you can turn on destinations from the destinations page in your workspace and data starts loading on your site automatically.
+<br><br>
+> note ""
+> **Note:** If you only want the most basic Google Analytics setup you can stop reading right now. You're done! Just toggle on Google Analytics from the Segment App.
 
-Installing Segment is easy, just paste the snippet from the Javascript Source overview page into the `<head>` tag of your site.
-
-That snippet loads Analytics.js onto the page _asynchronously_, so it won't affect your page load speed. Once the snippet is running on your site, you can turn on destinations from the destinations page in your workspace and they start loading on your site automatically!
-
-**Fun fact:** if you only want the most basic Google Analytics set up you can stop reading right now. You're done! Just switch on Google Analytics from the Segment App.
-
-However, lots of analytics and marketing tools need to record _who_ each user is on your site. If you want to use any tool that deals with the identity of your users, read on about the `identify` method.
-
+<br>
 ### Step 2: Identify Users
-
-The `identify` method is how you tell Segment who the current user is. It includes a unique User ID, and any optional traits you know about them. You can read more about it in the [identify method reference](/docs/connections/sources/catalog/libraries/website/javascript#identify).
-
-**Note:** You don't need to call `identify` for anonymous visitors to your site. Segment automatically assigns them an `anonymousId`, so just calling `page` and `track` works just fine without `identify`.
-
-Here's what a basic call to `identify` might look like:
+<br>
+The `identify` method is how you tell Segment who the current user is. It includes a unique User ID and any optional traits you know about them. You can read more about it in the [identify method reference](/docs/connections/sources/catalog/libraries/website/javascript#identify).
+<br><br>
+> note ""
+> **Note:** You don't need to call `identify` for anonymous visitors to your site. Segment automatically assigns them an `anonymousId`, so just calling `page` and `track` works just fine without `identify`.
+<br><br>
+Here's an example of what a basic call to `identify` might look like:
 
 ```js
 analytics.identify('f4ca124298', {
@@ -90,12 +90,11 @@ analytics.identify('f4ca124298', {
   email: 'mbrown@example.com'
 });
 ```
-That identifies Michael by his unique User ID (in this case, `f4ca124298`, which is what you know him by in your database) and labels him with `name` and `email` traits.
-
-**Hold up though!** When you actually put that code on your site, you need to replace those hard-coded trait values with the variables that represent the details of the currently logged-in user.
-
-To do that, we recommend that you use a backend template to inject an `identify` call into the footer of **every page** of your site where the user is logged in. That way, no matter what page the user first lands on, they will always be identified. You don't need to call `identify` if your unique identifier (`userId`) is not known.
-
+<br>
+This identifies Michael by his unique User ID (in this case, `f4ca124298`, which is what you know him by in your database) and labels him with `name` and `email` traits. When you put that code on your site, you need to replace those hard-coded trait values with the variables that represent the details of the currently logged-in user.
+<br><br>
+To do that, Segment recommends that you use a backend template to inject an `identify` call into the footer of **every page** of your site where the user is logged in. That way, no matter what page the user first lands on, they will always be identified. You don't need to call `identify` if your unique identifier (`userId`) is not known.
+<br><br>
 Depending on your templating language, your actual identify call might look something like this:
 
 ```js
@@ -106,27 +105,28 @@ analytics.identify(' {{user.id}} ', {
 });
 {% endraw %}
 ```
-
+<br>
 With that call in your page footer, you successfully identify every user that visits your site.
+<br><br>
+> note ""
+> **Note:** If you only want to use a basic CRM set up, you can stop here. Just enable Salesforce, Intercom, or any other CRM system from your Segment workspace, and Segment starts sending all of your user data to it.
 
-**Second fun fact:** if you only want to use a basic CRM set up, you can stop here. Just enable Salesforce, Intercom, or any other CRM system from your Segment workspace, and Segment starts sending all of your user data to it!
-
-Of course, lots of analytics tools record more than just _identities_... they record the actions each user performs too! If you're looking for a complete event tracking analytics setup, keep reading...
-
-
+<br>
 ### Step 3: Track Actions
-
-The `track` method is how you tell Segment about the actions your users are performing on your site. Every action triggers what we call an "event", which can also have associated properties. You can read more about `track` in the [track method reference](/docs/connections/sources/catalog/libraries/website/javascript#track).
-
-Here's what a call to `track` might look like when a user signs up:
+<br>
+The `track` method is how you tell Segment about the actions your users are performing on your site. Every action triggers what Segment calls an "event", which can also have associated properties. You can read more about `track` in the [track method reference](/docs/connections/sources/catalog/libraries/website/javascript#track).
+<br><br>
+Here's an example of what a call to `track` might look like when a user signs up:
 
 ```js
 analytics.track('Signed Up', {
   plan: 'Enterprise'
 });
 ```
-
-That's just telling us that your user just triggered the **Signed Up** event and chose your hypothetical `'Enterprise'` plan. Properties can be anything you want to record, for example:
+<br>
+This example shows that your user triggered the **Signed Up** event and chose your hypothetical `'Enterprise'` plan.
+<br><br>
+Properties can be anything you want to record, for example:
 
 ```js
 analytics.track('Article Bookmarked', {
@@ -135,12 +135,10 @@ analytics.track('Article Bookmarked', {
   author: 'John Branch'
 });
 ```
-
-If you're just getting started, some of the events you should track are events that indicate the success of your site, like **Signed Up**, **Item Purchased** or **Article Bookmarked**.
-
-To get started, we recommend that you track just a few important events. You can always add more later!
-
-Once you add a few `track` calls, **you're done with this tutorial!** You successfully installed Analytics.js tracking. Now you're ready to turn on any destination you like from the Segment App.
+<br>
+If you're just getting started, some of the events you should track are events that indicate the success of your site, like **Signed Up**, **Item Purchased** or **Article Bookmarked**. Segment recommends that you track a few important events as you can always add more later.
+<br><br>
+Once you add a few `track` calls, you're done with setting up Segment. You successfully installed Analytics.js tracking. Now you're ready to turn on any destination you like from the Segment App.
 
 <!-- marker JS end -->
 
@@ -155,16 +153,16 @@ Once you add a few `track` calls, **you're done with this tutorial!** You succes
 
 
 ### Step 1: Install the SDK
-
-The recommended way to install Analytics for iOS is using [Cocoapods](http://cocoapods.org), since it means you can create a build with specific bundled destinations, and because it makes it simple to install and upgrade.
-
-First, add the `Analytics` dependency to your `Podfile` by adding the following line:
+<br>
+To install Analytics for iOS, Segment recommends you to use [Cocoapods](http://cocoapods.org), because it allows you to create a build with specific bundled destinations, and because it makes it simple to install and upgrade.
+<br>
+1) Add the `Analytics` dependency to your `Podfile` by adding the following line:
 
 ```ruby
 pod 'Analytics', '~> 3.0'
 ```
-
-Then in your application delegate's `- application:didFinishLaunchingWithOptions:` method, set up the SDK like so:
+<br>
+2) In your application delegate's `- application:didFinishLaunchingWithOptions:` method, set up the SDK like so:
 
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
@@ -172,66 +170,66 @@ configuration.trackApplicationLifecycleEvents = YES; // Enable this to record ce
 configuration.recordScreenViews = YES; // Enable this to record screen views automatically!
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
-
+<br>
 > success ""
-> **Tip**: You don't _need_ to use initialization config parameters to track lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views automatically, but we highly recommend that you do so you can start off already tracking some important core events.
+> You don't _need_ to use initialization config parameters to track lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views automatically, but Segment highly recommends that you do, so you can start off already tracking some important core events.
 
-And of course, import the SDK in the files that you use it by adding the following line:
+<br>
+3) Import the SDK in the files that you use it by adding the following line:
 
 ```objc
 #import <Analytics/SEGAnalytics.h>
 ```
-
+<br>
 #### Bundling Client Side SDKs
 
 To keep the Segment SDK lightweight, the `Analytics` pod only installs the Segment library. This means all of the data goes first to Segment's servers, and is then forwarded to any destination tools which accept the data _from Segment_.
-
-Some destinations do not accept data from the Segment servers, and instead require that you collect the data from the device. In these cases you must bundle some additional destination code with the Segment SDK.
-
-We're going to skip over this part for now, but you can see the instructions on [how to bundle the destination tools](/docs/connections/sources/catalog/libraries/mobile/ios/#about-mobile-connection-modes).
-
-Now that the SDK is installed and set up, you're ready to start making calls!
-
+<br><br>
+Some destinations don't accept data from the Segment servers, and instead require that you collect the data from the device. In these cases you must bundle some additional destination code with the Segment SDK. This document skips over this part, but you can see the instructions on [how to bundle the destination tools](/docs/connections/sources/catalog/libraries/mobile/ios/#about-mobile-connection-modes).
+<br><br>
+Now that the SDK is installed and set up, you're ready to start making calls.
+<br><br>
 ### Step 2: Identify Users
-
+<br>
 The `identify` method is how you tell Segment who the current user is. It takes a unique User ID, and any optional traits you know about them. You can read more about it in the [identify reference](/docs/connections/sources/catalog/libraries/mobile/ios#identify).
-
-Here's what a basic call to `identify` might look like:
+<br>
+Here's an example of what a basic call to `identify` might look like:
 
 ```objc
 [[SEGAnalytics sharedAnalytics] identify:@"f4ca124298"
                                   traits:@{ @"name": @"Michael Brown",
                                     @"email": @"mbrown@example.com" }];
 ```
-
-That call identifies Michael by his unique User ID (`f4ca124298`, which is the one you know him by in your database) and labels him with `name` and `email` traits.
-
-**Hold up though!** When you actually put that code in your iOS app, you need to replace those hard-coded trait values with the variables that represent the details of the currently logged-in user.
-
-Once you've added an `identify` call, you're ready to move on to tracking!
-
+<br>
+This call identifies Michael by his unique User ID (`f4ca124298`, which is the one you know him by in your database) and labels him with `name` and `email` traits.
+<br><br>
+> note ""
+> **Note:** When you put that code in your iOS app, you need to replace those hard-coded trait values with the variables that represent the details of the currently logged-in user.
+<br><br>
 ### Step 3: Track Actions
-
+<br>
 The `track` method is how you tell Segment about the actions your users are performing in your app. Every action triggers what we call an "event", which can also have associated properties. You can read more about `track` in the [track method reference](/docs/connections/sources/catalog/libraries/mobile/ios#track).
 
-To get started, the Segment iOS SDK can automatically track a few important common events, such as **Application Installed**, **Application Updated** and **Application Opened**. You can enable this option during initialization by adding the following lines.
+The Segment iOS SDK can automatically track a few important common events, such as **Application Installed**, **Application Updated** and **Application Opened**. You can enable this option during initialization by adding the following lines:
 
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 configuration.trackApplicationLifecycleEvents = YES;
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
-
-You should also track events that indicate success in your mobile app, like **Signed Up**, **Item Purchased** or **Article Bookmarked**. We recommend tracking just a few important events. You can always add more later!
-
+<br>
+You should also track events that indicate success in your mobile app, like **Signed Up**, **Item Purchased** or **Article Bookmarked**. Segment recommends that you track a few important events as you can always add more later.
+<br><br>
 Here's what a `track` call might look like when a user signs up:
 
 ```objc
 [[SEGAnalytics sharedAnalytics] track:@"Signed Up"
                            properties:@{ @"plan": @"Enterprise" }];
 ```
-
-That tells us that your user triggered the **Signed Up** event, and chose your hypothetical `'Enterprise'` plan. Properties can be anything you want to record, for example:
+<br>
+This tells us that your user triggered the **Signed Up** event, and chose your hypothetical `'Enterprise'` plan.
+<br><br>
+Properties can be anything you want to record, for example:
 
 ```objc
 [[SEGAnalytics sharedAnalytics] track:@"Article Bookmarked"
@@ -240,8 +238,8 @@ That tells us that your user triggered the **Signed Up** event, and chose your h
                                @"subtitle": @"The Avalanche at Tunnel Creek",
                                @"author": @"John Branch" }];
 ```
-
-Once you've added a few `track` calls, **you're set up!** You successfully instrumented your app, and can enable destinations from your Segment workspace.
+<br>
+Once you've added a few `track` calls, you're all set. You successfully instrumented your app, and can enable destinations from your Segment workspace.
 
 <!-- marker iOS end -->
 
@@ -254,21 +252,23 @@ Once you've added a few `track` calls, **you're set up!** You successfully instr
 <!-- marker PHP start -->
 
 ### Step 1: Download the library
-
-To install the library, clone the repository from GitHub into your desired application directory. (psst, composer users: we've [got you covered too](https://packagist.org/packages/segmentio/analytics-php)!)
+<br>
+To install the library:
+<br><br>
+1) Clone the repository from GitHub into your desired application directory. (If you're a composer user, [you can use this](https://packagist.org/packages/segmentio/analytics-php).)
 
 ```bash
 git clone https://github.com/segmentio/analytics-php /my/application/folders/
 ```
-
-Then, add the following to your PHP script to load the Segment analytics library in your code:
+<br>
+2) Add the following to your PHP script to load the Segment analytics library in your code:
 
 ```php
 require_once("/path/to/analytics-php/lib/Segment.php");
 use Segment\Segment;
 ```
-
-Now, you're ready to actually initialize the module. In our examples, we first rename this module to `Analytics` for convenience. In your initialization script, make the following call:
+<br>
+3) In your initialization script, make the following call (In the example, Segment first renames this module to `Analytics` for convenience):
 
 ```php
 # Set up our Segment tracking and
@@ -276,21 +276,20 @@ Now, you're ready to actually initialize the module. In our examples, we first r
 class_alias('Segment', 'Analytics');
 Segment::init("YOUR_WRITE_KEY");
 ```
-
-Replace `YOUR_WRITE_KEY` with the actual write key, which you can find in Segment under your project settings. Otherwise all that useful data goes straight to `/dev/null`.
-
+<br>
+4) Replace `YOUR_WRITE_KEY` with the actual write key, which you can find in Segment under your project settings. Otherwise all that data goes straight to `/dev/null`.
+<br><br>
 You only need to call `init` once when your php file is requested. All of your files then have access to the same `Analytics` client.
 
 
 > note ""
-> **Note**: The default PHP consumer is the [libcurl consumer](/docs/connections/sources/catalog/libraries/server/php/#lib-curl-consumer). If this is not working well for you, or if you have a high-volume project, you might try one of Segment's other consumers like the [fork-curl consumer](/docs/connections/sources/catalog/libraries/server/php/#fork-curl-consumer).
+> **Note:** The default PHP consumer is the [libcurl consumer](/docs/connections/sources/catalog/libraries/server/php/#lib-curl-consumer). If this is not working well for you, or if you have a high-volume project, you might try one of Segment's other consumers like the [fork-curl consumer](/docs/connections/sources/catalog/libraries/server/php/#fork-curl-consumer).
 
-All set? Nice, the library's fully installed! We're now primed and ready to start recording our first analytics calls about our users.
-
+<br>
 ### Step 2: Identify Users
-
+<br>
 The [`identify`](/docs/connections/spec/identify) method is how you tell Segment who the current user is. It includes a unique User ID and any optional traits that you might know about them.
-
+<br><br>
 Here's what a basic call to [`identify`](/docs/connections/spec/identify) might look like:
 
 ```php
@@ -302,10 +301,11 @@ Segment::identify(array(
   )
 ));
 ```
+<br>
+This identifies Michael by his unique User ID (in this case, `f4ca124298`, which is what you know him by in your database) and labels him with `name` and `email` traits.
 
-That identifies Michael by his unique User ID (in this case, `f4ca124298`, which is what you know him by in your database) and labels him with `name` and `email` traits.
-
-**Hold up though!** When you actually put that code on your site, you need to replace those hard-coded trait values with the variables that represent the details of the currently logged-in user. The easiest way in PHP is to keep a `$user` variable in memory.
+> note ""
+> **Note:** When you actually put that code on your site, you need to replace those hard-coded trait values with the variables that represent the details of the currently logged-in user. The easiest way in PHP is to keep a `$user` variable in memory.
 
 ```php
 Segment::identify(array(
@@ -316,18 +316,16 @@ Segment::identify(array(
   )
 ));
 ```
+<br>
+With that call on the page, you're now identifying every user that visits your site.
+<br><br>
+If you only want to use a basic CRM set up, you can stop here. Just enable Salesforce, Intercom, or any other CRM system from your Segment workspace, and Segment starts sending all of your user data to it.
 
-With that call on the page, you're now successfully identifying every user that visits your site.
-
-If you only want to use a basic CRM set up, you can stop here. Just enable Salesforce, Intercom, or any other CRM system from your Segment workspace, and Segment starts sending all of your user data to it!
-
-Of course, lots of analytics tools record more than just _identities_... they record the actions each user performs too! If you're looking for a complete event tracking analytics setup, keep reading...
-
-
+<br>
 ### Step 3: Track Actions
-
-The `track` method is how you tell Segment about the actions your users are performing on your site. Every action triggers what we call an "event", which can also have associated properties.
-
+<br>
+The `track` method is how you tell Segment about the actions your users are performing on your site. Every action triggers what Segment calls an "event", which can also have associated properties.
+<br><br>
 Here's what a call to [`track`](/docs/connections/spec/track/) might look like when a user signs up:
 
 ```php
@@ -339,8 +337,10 @@ Segment::track(array(
   )
 ));
 ```
-
-That tells us that the user triggered the **Signed Up** event, and chose your hypothetical `Enterprise` plan. Properties can be anything you want to record, for example:
+<br>
+This tells us that the user triggered the **Signed Up** event, and chose your hypothetical `Enterprise` plan.
+<br><br>
+Properties can be anything you want to record, for example:
 
 ```php
 Segment::track(array(
@@ -353,23 +353,21 @@ Segment::track(array(
   )
 ));
 ```
-
+<br>
 If you're just getting started, some of the events you should track are events that indicate the success of your site, like **Signed Up**, **Item Purchased** or **Article Bookmarked**.
+<br><br>
+To get started, Segment recommends you to track track a few important events as you can always add more later.
 
-To get started, we recommend tracking just a few important events. You can always add more later!
-
-Once you've added a few [`track`](/docs/connections/spec/track) calls, you're almost done.
-
-
+<br>
 ### Step 4: Flush the data
-
-Finally, call the Segment `flush()` method. This manually sends all the queued call data, to make sure it makes it to the Segment servers. This is normally done automatically by the runtime, but some PHP installations won't do it for you, so it's worth calling at the end of your script, just to be safe.
-
+<br>
+Call the Segment `flush()` method. This manually sends all the queued call data to make sure it makes it to the Segment servers. This is normally done automatically by the runtime, but some PHP installations won't do it for you, so it's worth calling at the end of your script, just to be safe.
+<br>
 ```php
 Segment::flush();
 ```
 
-And presto, **you're done!** You successfully installed PHP tracking. Now you're ready to turn on any destination you fancy from the Segment App.
+You've successfully installed PHP tracking. Now you're ready to turn on any destination from the Segment App.
 
 
 <!-- marker PHP end -->
@@ -403,8 +401,6 @@ Two views are available when viewing a payload:
 * The **Pretty view** is a recreation of the API call you made that was sent to Segment.
 * The **Raw view** is the complete JSON object Segment received from the calls you sent. These calls include all the details about what is being tracked: timestamps, properties, traits, ids, and [contextual information Segment automatically collects](/docs/connections/spec/common/#context-fields-automatically-collected) the moment the data is sent.
 
-We'll talk more about debugging and troubleshooting [in a later page](/docs/getting-started/06-testing-debugging/).
-
 ## Set up your first destination
 
 Once you're satisfied that data is arriving from your new source, it's time to set up your first destination! As long as you have `page` or `screen` data, coming from the source, you can quickly enable Google Analytics to look at the page view statistics.
@@ -431,7 +427,7 @@ Congratulations! Data is now flowing from the source you set up, to the first de
 You can click around and load pages to see your Segment calls in action, watch them arrive in the Debugger, and see them arrive in the destination tool.
 
 > warning ""
-> **Note**: When you're done with this test source and destination, you can delete them. This prevents you from getting unplanned "demo" data in your production environment later.
+> **Note:** When you're done with this test source and destination, you can delete them. This prevents you from getting unplanned "demo" data in your production environment later.
 
 
 
