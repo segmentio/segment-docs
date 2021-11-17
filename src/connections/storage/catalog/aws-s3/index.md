@@ -110,91 +110,88 @@ To create an S3 IAM role, you must first install and configure the AWS CLI on yo
 #### Procedure
 1. Copy the following code snippet and save it as a file on your local machine titled `trust-relationship-policy.json`. Replace `<YOUR_WORKSPACE_ID>` with your Segment workspace ID. 
 
-```json
-
-{
-  "Version": "2012-10-17",
-  "Statement": [
+    ```json
     {
-      "Sid": "",
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": "arn:aws:iam::595280932656:role/segment-s3-integration-production-access"
-      },
-      "Action": "sts:AssumeRole",
-      "Condition": {
-        "StringEquals": {
-          "sts:ExternalId": "<YOUR_WORKSPACE_ID>"
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "",
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::595280932656:role/segment-s3-integration-production-access"
+          },
+          "Action": "sts:AssumeRole",
+          "Condition": {
+            "StringEquals": {
+              "sts:ExternalId": "<YOUR_WORKSPACE_ID>"
+            }
+          }
         }
-      }
+      ]
     }
-  ]
-}
-```
+    ```
 
 2. Navigate to the folder containing `trust-relationship-policy.json` and run the following command to create your IAM role and attach the trust relationship document, replacing `<YOUR_ROLE_NAME>` with the name you want to give this IAM role:
 
-``` python
-aws iam create-role --role-name <YOUR_ROLE_NAME> --assume-role-policy-document file://trust-relationship-policy.json --description "IAM role for Segment to assume (AWS S3 destination)"
-```
+    ``` python
+    aws iam create-role --role-name <YOUR_ROLE_NAME> --assume-role-policy-document file://trust-relationship-policy.json --description "IAM role for Segment to assume (AWS S3 destination)"
+    ```
 
->info ""
-> To verify that you successfully created an IAM role, log into your AWS console and open the IAM Management Console. Under the Trust Relationship tab, there should be a key-value pair: a `sts:ExternalID` key with a value of `your Segment workspace ID`.
+3. To verify that the IAM role is created, log into the AWS console and open the IAM Management Console. Under the Trust Relationship tab, there should be a key-value pair: a `sts:ExternalID` key with a value of `your Segment workspace ID`.
 
-3. Copy the following IAM policy, replacing `<YOUR_BUCKET_NAME>` with the name of your S3 bucket, and save it as a file on your local machine titled `iam-policy.json`.
+4. Copy the following IAM policy, replacing `<YOUR_BUCKET_NAME>` with the name of your S3 bucket, and save it as a file on your local machine titled `iam-policy.json`.
 
-```json
-
-{
-  "Version": "2012-10-17",
-  "Statement": [
+    ```json
     {
-      "Sid": "PutObjectsInBucket",
-      "Effect": "Allow",
-      "Action": [
-        "s3:PutObject",
-        "s3:PutObjectAcl"
-      ],
-      "Resource": "arn:aws:s3:::<YOUR_BUCKET_NAME>/segment-logs/*"
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "PutObjectsInBucket",
+          "Effect": "Allow",
+          "Action": [
+            "s3:PutObject",
+            "s3:PutObjectAcl"
+          ],
+          "Resource": "arn:aws:s3:::<YOUR_BUCKET_NAME>/segment-logs/*"
+        }
+      ]
     }
-  ]
-}
-
-```
+    ```
 
 5. Navigate to the folder containing `iam-policy.json`, and run the following command to create the IAM policy:
 
-``` python
-aws iam create-policy --policy-name segment-s3-putobject --policy-document file://iam-policy.json --description "Allow Segment to PutObject into S3 destination bucket"
-```
+    ``` python
+    aws iam create-policy --policy-name segment-s3-putobject --policy-document file://iam-policy.json --description "Allow Segment to PutObject into S3 destination bucket"
+    ```
+
 6. A successful output has the following format. Take note of the `Arn,` as you'll need it in the next step.
 
-``` json
-
-{
-    "Policy": {
-        "PolicyName": "segment-s3-putobject",
-        "PolicyId": "AABC1DE2F34GG567H",
-        "Arn": "arn:aws:iam::012345678912:policy/segment-s3-putobject",
-        "Path": "/",
-        "DefaultVersionId": "v1",
-        "AttachmentCount": 0,
-        "PermissionsBoundaryUsageCount": 0,
-        "IsAttachable": true,
-        "CreateDate": "2021-11-11T01:21:00+00:00",
-        "UpdateDate": "2021-11-11T01:21:00+00:00"
+    ``` json
+    {
+        "Policy": {
+            "PolicyName": "segment-s3-putobject",
+            "PolicyId": "AABC1DE2F34GG567H",
+            "Arn": "arn:aws:iam::012345678912:policy/segment-s3-putobject",
+            "Path": "/",
+            "DefaultVersionId": "v1",
+            "AttachmentCount": 0,
+            "PermissionsBoundaryUsageCount": 0,
+            "IsAttachable": true,
+            "CreateDate": "2021-11-11T01:21:00+00:00",
+            "UpdateDate": "2021-11-11T01:21:00+00:00"
+        }
     }
-}
 
-```
+    ```
+
 7. Run the following command to attach the IAM policy to the IAM role, replacing `<YOUR_ROLE_NAME>` with the name of your role and `<ARN_FROM_STEP_6_OUTPUT>` with the Arn output from the last step:
 
-``` python
-aws iam attach-role-policy --role-name <YOUR_ROLE_NAME> --policy-arn <ARN_FROM_STEP_6_OUTPUT>
-```
+    ``` python
+    aws iam attach-role-policy --role-name <YOUR_ROLE_NAME> --policy-arn <ARN_FROM_STEP_6_OUTPUT>
+    ```
 
 > info ""
-> To verify that you have successfully created your IAM role, navigate to your AWS console and open the IAM Management Console. On the Permissions tab, verify that there is a `segment-s3-putobject` Permissions policy. 
+> To verify that the IAM role is created, navigate to the AWS console and open the IAM Management Console. On the Permissions tab, verify that there is a `segment-s3-putobject` Permissions policy.
 
 
 ### Add the AWS S3 with IAM Role Support Destination
