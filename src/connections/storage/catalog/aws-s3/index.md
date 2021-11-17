@@ -5,9 +5,6 @@ redirect_from:
 hide-personas-partial: true
 ---
 
-> info "This document is about a destination which is in beta"
-> This means that the AWS S3 with IAM Role Support destination is in active development, and some functionality may change before it becomes generally available.
-
 
 ## Differences between the Amazon S3 destination and the AWS S3 destination
 
