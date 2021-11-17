@@ -44,6 +44,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -98,6 +101,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -205,6 +211,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -264,6 +273,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -311,12 +323,17 @@ items:
   connection_modes:
     device:
       web: false
-      mobile: false
+      mobile: true
       server: false
     cloud:
       web: false
-      mobile: false
-      server: false
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from mobile and server sources, and can accept
+      data in device-mode from mobile sources.
+    cmode_type: mixed
+    case: '11'
   settings:
   - name: appToken
     type: string
@@ -436,13 +453,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: events
     type: text-map
@@ -511,13 +531,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
-      mobile: false
+      web: true
+      mobile: true
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It can accept
+      device-mode data from both web and mobile sources.
+    cmode_type: all
+    case: '4'
   settings:
   - name: addBuildToAppId
     type: boolean
@@ -846,6 +871,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -886,13 +914,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: _version
     type: number
@@ -973,6 +1004,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -1023,6 +1057,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: airshipEuDataCenter
     type: boolean
@@ -1080,13 +1117,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: account
     type: string
@@ -1147,9 +1187,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: apiKey
     type: string
@@ -1210,9 +1255,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: accountId
     type: string
@@ -1265,9 +1315,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: region
     type: string
@@ -1350,9 +1405,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: mappedStreams
     type: mixed
@@ -1425,9 +1485,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: clientContext
     type: map
@@ -1534,9 +1599,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: clientContext
     type: map
@@ -1645,6 +1715,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: bucket
     type: string
@@ -1696,13 +1769,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: campaigns
     type: text-map
@@ -1781,13 +1857,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
-      mobile: false
+      web: true
+      mobile: true
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It can accept
+      device-mode data from both web and mobile sources.
+    cmode_type: all
+    case: '4'
   settings:
   - name: apiKey
     type: string
@@ -2191,6 +2272,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -2249,6 +2333,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -2291,13 +2378,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: apiKey
     type: string
@@ -2348,13 +2438,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: events
     type: mixed
@@ -2405,12 +2498,17 @@ items:
   connection_modes:
     device:
       web: false
-      mobile: false
+      mobile: true
       server: false
     cloud:
       web: false
-      mobile: false
-      server: false
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from mobile and server sources, and can accept
+      data in device-mode from mobile sources.
+    cmode_type: mixed
+    case: '11'
   settings:
   - name: androidAppID
     type: string
@@ -2530,12 +2628,15 @@ items:
   connection_modes:
     device:
       web: false
-      mobile: false
+      mobile: true
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from a mobile source.
+    cmode_type: device-only
+    case: '3'
   settings:
   - name: appkey
     type: string
@@ -2601,13 +2702,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: siteId
     type: string
@@ -2650,13 +2754,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: allowedDomains
     type: array
@@ -2735,9 +2842,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: projectId
     type: string
@@ -2783,13 +2895,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: siteid
     type: string
@@ -2835,6 +2950,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -2885,6 +3003,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: awsRegion
     type: string
@@ -2944,9 +3065,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: httpTrigger
     type: string
@@ -2994,12 +3120,15 @@ items:
   connection_modes:
     device:
       web: false
-      mobile: false
+      mobile: true
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from a mobile source.
+    cmode_type: device-only
+    case: '3'
   settings:
   - name: apiKey
     type: string
@@ -3078,6 +3207,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -3120,13 +3252,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: tagId
     type: string
@@ -3175,6 +3310,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -3220,13 +3358,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: apiKey
     type: string
@@ -3279,12 +3422,15 @@ items:
   connection_modes:
     device:
       web: false
-      mobile: false
+      mobile: true
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from a mobile source.
+    cmode_type: device-only
+    case: '3'
   settings:
   - name: apiSecret
     type: string
@@ -3349,13 +3495,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
-      mobile: false
+      web: true
+      mobile: true
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It can accept
+      device-mode data from both web and mobile sources.
+    cmode_type: all
+    case: '4'
   settings:
   - name: allowCrawlerActivity
     type: boolean
@@ -3621,13 +3772,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: host
     type: string
@@ -3683,6 +3837,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -3725,13 +3882,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: apiKey
     type: string
@@ -3790,13 +3950,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
-      mobile: false
+      web: true
+      mobile: true
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: >-
+      accepts device-mode data from both Analytics.js and mobile sources. It
+      does not accept data in cloud-mode.
+    cmode_type: device-only
+    case: '1'
   settings:
   - name: apiKey
     type: string
@@ -3863,6 +4028,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -3914,6 +4082,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -3965,6 +4136,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -4016,9 +4190,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: apiKey
     type: string
@@ -4070,6 +4249,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -4119,6 +4301,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -4167,6 +4352,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -4220,6 +4408,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: autoPageview
     type: boolean
@@ -4282,13 +4473,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: accountId
     type: string
@@ -4336,13 +4530,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: domain
     type: string
@@ -4430,6 +4627,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -4476,9 +4676,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: apiKey
     type: string
@@ -4526,9 +4731,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: apiKey
     type: string
@@ -4582,6 +4792,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -4632,13 +4845,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
-      mobile: false
+      web: true
+      mobile: true
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: >-
+      accepts device-mode data from both Analytics.js and mobile sources. It
+      does not accept data in cloud-mode.
+    cmode_type: device-only
+    case: '1'
   settings:
   - name: clevertap_account_id
     type: string
@@ -4695,13 +4913,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: siteId
     type: string
@@ -4749,6 +4970,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -4807,6 +5031,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -4853,13 +5080,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
-      mobile: false
+      web: true
+      mobile: true
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: >-
+      accepts device-mode data from both Analytics.js and mobile sources. It
+      does not accept data in cloud-mode.
+    cmode_type: device-only
+    case: '1'
   settings:
   - name: appName
     type: string
@@ -4979,13 +5211,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: websiteId
     type: string
@@ -5032,13 +5267,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: account
     type: string
@@ -5125,12 +5365,15 @@ items:
   connection_modes:
     device:
       web: false
-      mobile: false
+      mobile: true
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from a mobile source.
+    cmode_type: device-only
+    case: '3'
   settings:
   - name: appKey
     type: string
@@ -5191,6 +5434,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -5233,13 +5479,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: accountNumber
     type: string
@@ -5289,13 +5538,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: apiKey
     type: string
@@ -5347,13 +5599,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
+      web: true
+      mobile: true
       server: false
+    summary: >-
+      accepts data in cloud-mode from web and mobile sources, and can accept
+      data in device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '10'
   settings:
   - name: account
     type: string
@@ -5451,6 +5708,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -5504,12 +5764,15 @@ items:
   connection_modes:
     device:
       web: false
-      mobile: false
+      mobile: true
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from a mobile source.
+    cmode_type: device-only
+    case: '3'
   settings:
   - name: appId
     type: string
@@ -5614,6 +5877,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -5667,6 +5933,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -5718,6 +5987,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -5765,13 +6037,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: apiKey
     type: string
@@ -5843,6 +6120,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: accountRegion
     type: select
@@ -5910,6 +6190,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -5964,6 +6247,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -6011,9 +6297,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: awsRegion
     type: string
@@ -6117,9 +6408,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: apiKey
     type: string
@@ -6167,6 +6463,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -6214,6 +6513,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -6264,13 +6566,18 @@ items:
   replay: true
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: activityTag
     type: string
@@ -6388,6 +6695,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -6430,13 +6740,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: account
     type: string
@@ -6504,13 +6819,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: accountId
     type: string
@@ -6553,13 +6871,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: companyName
     type: string
@@ -6685,13 +7008,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: accountId
     type: string
@@ -6744,6 +7070,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -6794,6 +7123,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -6845,6 +7177,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -6903,6 +7238,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -6955,6 +7293,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -6996,13 +7337,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: meta
     type: boolean
@@ -7066,6 +7410,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -7127,6 +7474,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -7177,6 +7527,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiBaseUrl
     type: string
@@ -7274,6 +7627,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -7323,12 +7679,17 @@ items:
   connection_modes:
     device:
       web: false
-      mobile: false
+      mobile: true
       server: false
     cloud:
       web: false
-      mobile: false
-      server: false
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from mobile and server sources, and can accept
+      data in device-mode from mobile sources.
+    cmode_type: mixed
+    case: '11'
   settings:
   - name: appEvents
     type: map
@@ -7488,9 +7849,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: contentTypes
     type: text-map
@@ -7598,8 +7964,14 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
-      server: false
+      mobile: true
+      server: true
+    summary: >-
+      accepts data from any Segment mobile or server source in cloud mode. It
+      does not accept data from a web source, and does not offer device-mode
+      connections.
+    cmode_type: cloud-only
+    case: '6'
   settings:
   - name: completeRegistrations
     type: text-map
@@ -7690,13 +8062,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: blacklistPiiProperties
     type: mixed
@@ -7861,13 +8236,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: apiKey
     type: string
@@ -7922,12 +8300,15 @@ items:
   connection_modes:
     device:
       web: false
-      mobile: false
+      mobile: true
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from a mobile source.
+    cmode_type: device-only
+    case: '3'
   settings:
   - name: deepLinkURLScheme
     type: string
@@ -7976,12 +8357,15 @@ items:
   connection_modes:
     device:
       web: false
-      mobile: false
+      mobile: true
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from a mobile source.
+    cmode_type: device-only
+    case: '3'
   settings:
   - name: apiKey
     type: string
@@ -8063,13 +8447,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: appId
     type: string
@@ -8125,6 +8512,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -8170,6 +8560,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -8221,13 +8614,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: siteId
     type: string
@@ -8289,13 +8685,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: debug
     type: boolean
@@ -8369,6 +8768,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: debug
     type: boolean
@@ -8420,13 +8822,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: apiKey
     type: string
@@ -8480,6 +8885,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -8529,9 +8937,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: accessKey
     type: string
@@ -8591,13 +9004,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: apiKey
     type: string
@@ -8648,9 +9064,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: apiKey
     type: string
@@ -8662,13 +9083,8 @@ items:
     type: string
     defaultValue: ''
     description: >-
-<<<<<<< HEAD
-      Register events to be send to Gameball ex:
-      place_order,referral,show_product
-=======
       Register event/s to be send to Gameball ex:
       place_order,referral,show_product or place_order
->>>>>>> master
     required: true
     label: Registered Events
 - display_name: Gauges
@@ -8704,13 +9120,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: siteId
     type: string
@@ -8763,9 +9182,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: apiKey
     type: string
@@ -8815,6 +9239,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -8859,13 +9286,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: conversionId
     type: string
@@ -8984,13 +9416,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: accountId
     type: string
@@ -9098,6 +9533,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: account
     type: string
@@ -9150,15 +9588,6 @@ items:
     device:
       web: false
       mobile: false
-<<<<<<< HEAD
-      server: false
-    cloud:
-      web: false
-      mobile: false
-      server: false
-  settings:
-  - name: apiKey
-=======
       server: false
     cloud:
       web: true
@@ -9448,318 +9877,6 @@ items:
       device-mode data from both web and mobile sources.
     cmode_type: all
     case: '4'
-  settings:
-  - name: anonymizeIp
-    type: boolean
-    defaultValue: false
-    description: >-
-      For client side libraries. Read more about anonymizing IP addresses from
-      the [Google support
-      documentation](https://support.google.com/analytics/answer/2763052?hl=en).
-    required: false
-    label: Anonymize IP Addresses
-  - name: classic
-    type: boolean
-    defaultValue: false
-    description: >-
-      **Important:** When creating your Google Analytics profile, you can choose
-      between **Classic** and **Universal** Analytics. After March 2013, new
-      profiles default to Universal, while earlier ones are Classic. An easy
-      test: if you see `_gaq.push` in your code you're using Classic, so enable
-      this.
-    required: false
-    label: Use Classic Analytics on Your Site
-  - name: contentGroupings
-    type: map
-    defaultValue: {}
-    description: >-
-      Enter a property name on the left. Choose the Google Analytics content
-      grouping you want on the right. Google Analytics only accepts numbered
-      content groupings (e.g. contentGrouping3). When you use
-      `analytics.page(name, properties)` with custom properties, we'll use the
-      value of the property you designate as the value of the specified content
-      grouping.
-    required: false
-    label: Content Groupings
-  - name: dimensions
-    type: map
-    defaultValue: {}
-    description: >-
-      Because Google Analytics cannot accept arbitrary data about users or
-      events, when you use `analytics.identify(userId, traits)` with custom
-      traits or `analytics.track('event', properties)` with custom properties,
-      you need to map those traits and properties to Google Analytics custom
-      dimensions if you want them to be sent to GA. Enter a trait or property
-      name on the left. Choose the Google Analytics dimension you want on the
-      right. Google Analytics only accepts numbered dimensions (e.g.
-      dimension3). We suggest using user-scoped dimensions for trait mappings
-      and hit-scoped dimensions for properties [Contact
-      us](https://segment.com/contact) if you need help!
-    required: false
-    label: Custom Dimensions
-  - name: domain
->>>>>>> master
-    type: string
-    defaultValue: ''
-    description: The api key used to identify request performed by Segment.
-    required: true
-    label: API Key
-  - name: httpTrigger
-    type: string
-    defaultValue: ''
-    description: The URL to call the Google Cloud Function.
-    required: true
-    label: HTTP Trigger
-- display_name: Google Cloud PubSub
-  name: Google Cloud PubSub
-  slug: google-cloud-pubsub
-  hidden: false
-  url: connections/destinations/catalog/google-cloud-pubsub
-  previous_names:
-  - Google Cloud PubSub
-  website: https://cloud.google.com/pubsub/
-  status: PUBLIC
-  categories:
-  - Raw Data
-  logo:
-    url: https://cdn.filepicker.io/api/file/Z66JAyLSXW9liZiZVqgI
-  mark:
-    url: https://cdn.filepicker.io/api/file/4ovy1EpqSDm0yDnfL2kI
-  methods:
-    track: true
-    identify: true
-    group: true
-    alias: true
-    page: true
-  platforms:
-    browser: true
-    mobile: true
-    server: true
-  components:
-  - code: https://github.com/segmentio/integrations
-    owner: SEGMENT
-    type: IOS
-  - code: https://github.com/segmentio/integrations
-    owner: SEGMENT
-    type: ANDROID
-  - code: https://github.com/segmentio/integrations
-    owner: SEGMENT
-    type: SERVER
-  browserUnbundlingSupported: false
-  browserUnbundlingPublic: false
-  replay: false
-  connection_modes:
-    device:
-      web: false
-      mobile: false
-      server: false
-    cloud:
-      web: false
-      mobile: false
-      server: false
-  settings:
-  - name: mappedTopics
-    type: mixed
-    defaultValue: []
-    description: Map your Segment events / event types to your Google Cloud Pub/Sub topics.
-    required: true
-    label: Mapped Topics
-- display_name: Google Cloud Storage
-  name: Google Cloud Storage
-  slug: google-cloud-storage
-  hidden: false
-  url: connections/destinations/catalog/google-cloud-storage
-  previous_names:
-  - Google Cloud Storage
-  website: https://cloud.google.com/storage/
-  status: PUBLIC_BETA
-  categories:
-  - Analytics
-  - Raw Data
-  logo:
-    url: https://cdn.filepicker.io/api/file/G6kRHZtSoaEslLkENhPC
-  mark:
-    url: https://cdn.filepicker.io/api/file/OCwb2VbcSUGP7lhuItt5
-  methods:
-    track: true
-    identify: true
-    group: true
-    alias: true
-    page: true
-  platforms:
-    browser: true
-    mobile: true
-    server: true
-  components: []
-  browserUnbundlingSupported: false
-  browserUnbundlingPublic: true
-  replay: true
-  connection_modes:
-    device:
-      web: false
-      mobile: false
-      server: false
-    cloud:
-      web: false
-      mobile: false
-      server: false
-  settings:
-  - name: bucket
-    type: string
-    defaultValue: ''
-    description: >-
-      Name of the Google Cloud Storage Bucket to which Segment will write event
-      files
-    required: true
-    label: Bucket
-  - name: gcsCredentials
-    type: password
-    defaultValue: ''
-    description: >-
-      Please copy the contents of your Google Cloud Storage Private Key File. It
-      should be valid JSON.
-    required: true
-    label: GCS Private Key File
-- display_name: Google Tag Manager
-  name: Google Tag Manager
-  slug: google-tag-manager
-  hidden: false
-  url: connections/destinations/catalog/google-tag-manager
-  previous_names:
-  - Google Tag Manager
-  website: https://www.google.com/analytics/tag-manager/
-  status: PUBLIC
-  categories:
-  - Tag Managers
-  logo:
-    url: https://cdn.filepicker.io/api/file/M6fnhTBxTT6chfCz5G2Q
-  mark:
-    url: https://cdn.filepicker.io/api/file/JL6sFm7tTlq2915HPGQj
-  methods:
-    track: true
-    identify: false
-    group: false
-    alias: false
-    page: true
-  platforms:
-    browser: true
-    mobile: false
-    server: false
-  components:
-  - code: >-
-      https://github.com/segment-integrations/analytics.js-integration-google-tag-manager
-    type: BROWSER
-  browserUnbundlingSupported: false
-  browserUnbundlingPublic: true
-  replay: false
-  connection_modes:
-    device:
-      web: false
-      mobile: false
-      server: false
-    cloud:
-      web: false
-      mobile: false
-      server: false
-  settings:
-  - name: containerId
-    type: string
-    defaultValue: ''
-    description: >-
-      You can find your Container ID in your [Accounts
-      page](https://www.google.com/tagmanager/web/#management/Accounts/).
-    required: true
-    label: Container ID
-  - name: environment
-    type: string
-    defaultValue: ''
-    description: >-
-      If you're using an 'environment' variable for gtm_preview in your tag's
-      query string, you can put that string here. **IMPORTANT**: make sure the
-      string includes `gtm_auth`. For example, your string should look like
-      `env-xx&gtm_auth=xxxxxx`
-    required: false
-    label: Environment
-  - name: trackAllPages
-    type: boolean
-    defaultValue: false
-    description: >-
-      This will track events titled **'Loaded A Page'** to Google Tag Manager
-      whenever you call our [`page`
-      method](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#page).
-    required: false
-    label: Track All Pages
-  - name: trackCategorizedPages
-    type: boolean
-    defaultValue: false
-    description: >-
-      This will track events to Google Tag Manager for [`page`
-      method](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#page)
-      calls that have a `category` associated with them. For example
-      `page('Docs', 'Index')` would translate to **Viewed Docs Index Page**.
-    required: false
-    label: Track Categorized Pages
-  - name: trackNamedPages
-    type: boolean
-    defaultValue: false
-    description: >-
-      This will track events to Google Tag Manager for [`page`
-      method](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#page)
-      calls that have a `name` associated with them. For example
-      `page('Signup')` would translate to **Viewed Signup Page**.
-    required: false
-    label: Track Named Pages
-- display_name: Google Universal Analytics
-  name: Google Universal Analytics
-  slug: google-universal-analytics
-  hidden: false
-  url: connections/destinations/catalog/google-universal-analytics
-  previous_names:
-  - Google Analytics
-  - Google Universal Analytics
-  website: http://google.com/analytics
-  status: PUBLIC
-  categories:
-  - Analytics
-  logo:
-    url: https://cdn.filepicker.io/api/file/anFgceQJTGeMxChCgiyU
-  mark:
-    url: https://cdn.filepicker.io/api/file/zebLRcY3RtOlynDXTgNk
-  methods:
-    track: true
-    identify: true
-    group: false
-    alias: false
-    page: true
-  platforms:
-    browser: true
-    mobile: true
-    server: true
-  components:
-  - code: >-
-      https://github.com/segment-integrations/analytics.js-integration-google-analytics
-    type: BROWSER
-  - code: >-
-      https://github.com/segment-integrations/analytics-ios-integration-google-analytics
-    type: IOS
-  - code: >-
-      https://github.com/segment-integrations/analytics-android-integration-google-analytics
-    type: ANDROID
-  - code: >-
-      https://github.com/segmentio/integrations/tree/master/integrations/google-analytics
-    type: SERVER
-  browserUnbundlingSupported: true
-  browserUnbundlingPublic: true
-  replay: false
-  connection_modes:
-    device:
-      web: false
-      mobile: false
-      server: false
-    cloud:
-      web: false
-      mobile: false
-      server: false
   settings:
   - name: anonymizeIp
     type: boolean
@@ -10176,13 +10293,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: anonymizeIP
     type: boolean
@@ -10289,6 +10409,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -10337,6 +10460,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -10398,6 +10524,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -10440,13 +10569,18 @@ items:
   replay: true
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: appId
     type: string
@@ -10490,13 +10624,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: apiKey
     type: string
@@ -10544,9 +10681,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings: []
 - display_name: HitTail
   name: HitTail
@@ -10581,13 +10723,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: siteId
     type: string
@@ -10631,13 +10776,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: hjid
     type: string
@@ -10753,13 +10901,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: apiKey
     type: string
@@ -10838,6 +10991,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -10890,6 +11046,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -10940,9 +11099,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: apiURL
     type: string
@@ -11005,6 +11169,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: accountSid
     type: string
@@ -11148,13 +11315,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: domain
     type: string
@@ -11211,9 +11381,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: apiKey
     type: string
@@ -11267,6 +11442,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -11316,13 +11494,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
-      mobile: false
+      web: true
+      mobile: true
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: >-
+      accepts device-mode data from both Analytics.js and mobile sources. It
+      does not accept data in cloud-mode.
+    cmode_type: device-only
+    case: '1'
   settings:
   - name: accountToken
     type: string
@@ -11383,6 +11566,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -11430,13 +11616,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: wid
     type: string
@@ -11492,13 +11681,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
-      mobile: false
+      web: true
+      mobile: true
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It can accept
+      device-mode data from both web and mobile sources.
+    cmode_type: all
+    case: '4'
   settings:
   - name: activator
     type: string
@@ -11609,9 +11803,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: endpoint
     type: string
@@ -11673,13 +11872,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: apiKey
     type: string
@@ -11764,6 +11968,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -11813,6 +12020,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -11862,12 +12072,17 @@ items:
   connection_modes:
     device:
       web: false
-      mobile: false
+      mobile: true
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from mobile sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: apiKey
     type: string
@@ -11939,6 +12154,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -11992,13 +12210,18 @@ items:
   replay: true
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: initialPageview
     type: boolean
@@ -12135,6 +12358,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -12186,13 +12412,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: apiKey
     type: string
@@ -12264,6 +12495,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -12308,13 +12542,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: apiKey
     type: string
@@ -12430,6 +12669,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -12478,9 +12720,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: apiKey
     type: string
@@ -12529,6 +12776,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -12588,6 +12838,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -12638,9 +12891,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: apiKey
     type: string
@@ -12695,12 +12953,17 @@ items:
   connection_modes:
     device:
       web: false
-      mobile: false
+      mobile: true
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from mobile sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: appId
     type: string
@@ -12793,6 +13056,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -12837,9 +13103,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: email
     type: string
@@ -12889,13 +13160,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: partnerId
     type: string
@@ -12938,13 +13212,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: group
     type: string
@@ -13013,13 +13290,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
-      mobile: false
+      web: true
+      mobile: true
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: >-
+      accepts device-mode data from both Analytics.js and mobile sources. It
+      does not accept data in cloud-mode.
+    cmode_type: device-only
+    case: '1'
   settings:
   - name: appKey
     type: string
@@ -13100,9 +13382,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: apiKey
     type: string
@@ -13148,13 +13435,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: siteId
     type: string
@@ -13198,13 +13488,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: apiKey
     type: string
@@ -13285,6 +13580,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -13328,13 +13626,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: apiKey
     type: string
@@ -13380,9 +13681,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: apiKey
     type: string
@@ -13456,6 +13762,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -13512,6 +13821,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -13557,6 +13869,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: clientId
     type: string
@@ -13619,13 +13934,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: accountId
     type: string
@@ -13756,6 +14076,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -13799,13 +14122,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: customVariableLimit
     type: number
@@ -13871,13 +14197,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: allPagesMtAdId
     type: string
@@ -13941,9 +14270,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: events
     type: text-map
@@ -14002,13 +14336,18 @@ items:
   replay: true
   connection_modes:
     device:
-      web: false
-      mobile: false
+      web: true
+      mobile: true
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It can accept
+      device-mode data from both web and mobile sources.
+    cmode_type: all
+    case: '4'
   settings:
   - name: apiKey
     type: string
@@ -14234,6 +14573,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -14285,13 +14627,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
-      mobile: false
+      web: true
+      mobile: true
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: >-
+      accepts device-mode data from both Analytics.js and mobile sources. It
+      does not accept data in cloud-mode.
+    cmode_type: device-only
+    case: '1'
   settings:
   - name: apiKey
     type: string
@@ -14355,6 +14702,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -14398,13 +14748,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: retail
     type: boolean
@@ -14452,6 +14805,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: websiteIdGuid
     type: string
@@ -14494,13 +14850,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: apiKey
     type: string
@@ -14548,13 +14907,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: accountNumber
     type: string
@@ -14604,6 +14966,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -14655,6 +15020,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -14698,13 +15066,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: appId
     type: string
@@ -14783,6 +15156,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -14829,9 +15205,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: authKey
     type: string
@@ -14894,13 +15275,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: memberId
     type: string
@@ -14957,9 +15341,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: accountId
     type: string
@@ -15048,13 +15437,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
-      mobile: false
+      web: true
+      mobile: true
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: >-
+      accepts device-mode data from both Analytics.js and mobile sources. It
+      does not accept data in cloud-mode.
+    cmode_type: device-only
+    case: '1'
   settings:
   - name: adAssetIdPropertyName
     type: string
@@ -15201,9 +15595,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: apiKey
     type: string
@@ -15246,13 +15645,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: apiKey
     type: string
@@ -15303,13 +15705,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: groupId
     type: string
@@ -15405,6 +15810,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -15462,12 +15870,17 @@ items:
   connection_modes:
     device:
       web: false
-      mobile: false
+      mobile: true
       server: false
     cloud:
       web: false
-      mobile: false
-      server: false
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from mobile and server sources, and can accept
+      data in device-mode from mobile sources.
+    cmode_type: mixed
+    case: '11'
   settings:
   - name: accountId
     type: string
@@ -15629,13 +16042,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
-      mobile: false
+      web: true
+      mobile: true
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: >-
+      accepts device-mode data from both Analytics.js and mobile sources. It
+      does not accept data in cloud-mode.
+    cmode_type: device-only
+    case: '1'
   settings:
   - name: customCampaignProperties
     type: map
@@ -15746,13 +16164,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: apiVersion
     type: select
@@ -15860,13 +16283,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: apiKey
     type: string
@@ -15948,13 +16374,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: apiKey
     type: string
@@ -16000,13 +16429,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: siteId
     type: string
@@ -16057,6 +16489,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -16141,6 +16576,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -16188,6 +16626,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings: []
 - display_name: Personas Facebook Custom Audiences
   name: Personas Facebook Custom Audiences
@@ -16227,6 +16668,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: account
     type: string
@@ -16287,6 +16731,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -16329,13 +16776,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: id
     type: string
@@ -16390,8 +16840,14 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
-      server: false
+      mobile: true
+      server: true
+    summary: >-
+      accepts data from any Segment mobile or server source in cloud mode. It
+      does not accept data from a web source, and does not offer device-mode
+      connections.
+    cmode_type: cloud-only
+    case: '6'
   settings:
   - name: account
     type: string
@@ -16436,13 +16892,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: pinterestCustomProperties
     type: array
@@ -16524,6 +16983,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -16579,6 +17041,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -16624,6 +17089,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -16676,6 +17144,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -16735,6 +17206,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -16777,13 +17251,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: publicApiToken
     type: string
@@ -16840,6 +17317,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -16891,6 +17371,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -16943,6 +17426,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -16983,13 +17469,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: customerId
     type: string
@@ -17058,13 +17547,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
-      mobile: false
+      web: true
+      mobile: true
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: >-
+      accepts device-mode data from both Analytics.js and mobile sources. It
+      does not accept data in cloud-mode.
+    cmode_type: device-only
+    case: '1'
   settings:
   - name: advertise
     type: boolean
@@ -17137,13 +17631,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: clientId
     type: string
@@ -17213,13 +17712,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: trackEvents
     type: array
@@ -17281,8 +17783,14 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
-      server: false
+      mobile: true
+      server: true
+    summary: >-
+      accepts data from any Segment mobile or server source in cloud mode. It
+      does not accept data from a web source, and does not offer device-mode
+      connections.
+    cmode_type: cloud-only
+    case: '6'
   settings:
   - name: applicationId
     type: string
@@ -17327,13 +17835,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: apiKey
     type: string
@@ -17390,6 +17901,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -17475,6 +17989,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -17525,6 +18042,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -17574,6 +18094,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -17619,9 +18142,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: endpoint
     type: select
@@ -17676,9 +18204,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: events
     type: mixed
@@ -17800,6 +18333,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -17859,6 +18395,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -17909,9 +18448,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: apiKey
     type: string
@@ -17959,13 +18503,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: customTrackingDomain
     type: string
@@ -18027,13 +18574,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: accessToken
     type: string
@@ -18148,6 +18698,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -18220,6 +18773,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -18274,9 +18830,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: actions
     type: mixed
@@ -18410,9 +18971,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: accountId
     type: string
@@ -18530,6 +19096,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -18582,13 +19151,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: apiKey
     type: string
@@ -18654,6 +19226,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -18704,6 +19279,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -18755,6 +19333,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -18808,6 +19389,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -18869,6 +19453,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -18922,9 +19509,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: apiKey
     type: string
@@ -18984,6 +19576,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: allowedEvents
     type: array
@@ -19082,13 +19677,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: config
     type: string
@@ -19234,6 +19832,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -19275,13 +19876,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: createLeads
     type: boolean
@@ -19346,6 +19950,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -19396,6 +20003,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -19507,13 +20117,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: pid
     type: string
@@ -19568,12 +20181,15 @@ items:
   connection_modes:
     device:
       web: false
-      mobile: false
+      mobile: true
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from a mobile source.
+    cmode_type: device-only
+    case: '3'
   settings:
   - name: apiKey
     type: string
@@ -19624,9 +20240,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: channels
     type: mixed
@@ -19709,6 +20330,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings: []
 - display_name: SlicingDice
   name: SlicingDice
@@ -19752,6 +20376,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -19799,13 +20426,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: token
     type: string
@@ -19858,6 +20488,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -19904,8 +20537,14 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
-      server: false
+      mobile: true
+      server: true
+    summary: >-
+      accepts data from any Segment mobile or server source in cloud mode. It
+      does not accept data from a web source, and does not offer device-mode
+      connections.
+    cmode_type: cloud-only
+    case: '6'
   settings:
   - name: account
     type: string
@@ -19947,13 +20586,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: apiKey
     type: string
@@ -20006,13 +20648,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: siteId
     type: string
@@ -20062,6 +20707,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -20120,6 +20768,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -20173,6 +20824,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -20220,6 +20874,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -20277,6 +20934,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -20330,6 +20990,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -20382,6 +21045,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -20454,6 +21120,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -20500,13 +21169,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: workspaceKey
     type: string
@@ -20556,12 +21228,15 @@ items:
   connection_modes:
     device:
       web: false
-      mobile: false
+      mobile: true
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from a mobile source.
+    cmode_type: device-only
+    case: '3'
   settings:
   - name: doNotRemove
     type: string
@@ -20604,13 +21279,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: campaigns
     type: text-map
@@ -20741,6 +21419,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -20808,6 +21489,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -20854,13 +21538,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
-      mobile: false
+      web: true
+      mobile: true
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: >-
+      accepts device-mode data from both Analytics.js and mobile sources. It
+      does not accept data in cloud-mode.
+    cmode_type: device-only
+    case: '1'
   settings:
   - name: apiKey
     type: string
@@ -20963,13 +21652,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
-      mobile: false
+      web: true
+      mobile: true
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: >-
+      accepts device-mode data from both Analytics.js and mobile sources. It
+      does not accept data in cloud-mode.
+    cmode_type: device-only
+    case: '1'
   settings:
   - name: accountName
     type: string
@@ -21049,13 +21743,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: disableHeartbeat
     type: boolean
@@ -21127,13 +21826,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: application
     type: string
@@ -21276,6 +21978,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -21321,6 +22026,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -21374,6 +22082,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -21422,9 +22133,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: sharedSecret
     type: string
@@ -21483,6 +22199,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -21539,6 +22258,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -21590,12 +22312,17 @@ items:
   connection_modes:
     device:
       web: false
-      mobile: false
+      mobile: true
       server: false
     cloud:
       web: false
-      mobile: false
-      server: false
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from mobile and server sources, and can accept
+      data in device-mode from mobile sources.
+    cmode_type: mixed
+    case: '11'
   settings:
   - name: advertiserId
     type: string
@@ -21705,13 +22432,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: brandId
     type: string
@@ -21780,13 +22510,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: events
     type: text-map
@@ -21871,6 +22604,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -21920,6 +22656,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -21971,6 +22710,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -22023,6 +22765,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -22073,6 +22818,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -22122,6 +22870,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -22165,13 +22916,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: appToken
     type: string
@@ -22215,13 +22969,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: accentColor
     type: color
@@ -22403,6 +23160,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -22459,13 +23219,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: apiKey
     type: string
@@ -22525,6 +23290,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -22575,6 +23343,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -22619,13 +23390,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: accountId
     type: string
@@ -22758,6 +23532,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -22811,6 +23588,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -22923,13 +23703,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: apiKey
     type: string
@@ -23011,13 +23794,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
-      mobile: false
+      web: true
+      mobile: true
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: >-
+      accepts device-mode data from both Analytics.js and mobile sources. It
+      does not accept data in cloud-mode.
+    cmode_type: device-only
+    case: '1'
   settings:
   - name: apiKey
     type: string
@@ -23074,9 +23862,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: globalHook
     type: string
@@ -23144,6 +23937,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -23189,6 +23985,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -23238,6 +24037,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: orgToken
     type: string
@@ -23290,6 +24092,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -23334,13 +24139,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: apiKey
     type: string
@@ -23397,13 +24205,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: cookieDomain
     type: string
@@ -23533,6 +24346,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: name
     type: string
@@ -23604,6 +24420,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -23647,13 +24466,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: accurateTrackBounce
     type: boolean
@@ -23731,13 +24553,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: events
     type: mixed
@@ -23788,13 +24613,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: accountCode
     type: string
@@ -23842,6 +24670,9 @@ items:
       web: false
       mobile: false
       server: false
+    summary: No connection mode information available.
+    cmode_type: none
+    case: '0'
   settings:
   - name: apiKey
     type: string
@@ -23888,9 +24719,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: defaultZap
     type: string
@@ -23951,9 +24787,14 @@ items:
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts cloud-mode data from all Segment source types. It does not offer
+      device-mode connections.
+    cmode_type: cloud-only
+    case: '5'
   settings:
   - name: allowGroupWithoutUserId
     type: boolean
@@ -24046,13 +24887,18 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
-      web: false
-      mobile: false
-      server: false
+      web: true
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from all source types, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
   settings:
   - name: apiKey
     type: string
@@ -24103,13 +24949,16 @@ items:
   replay: false
   connection_modes:
     device:
-      web: false
+      web: true
       mobile: false
       server: false
     cloud:
       web: false
       mobile: false
       server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
   settings:
   - name: listen
     type: boolean

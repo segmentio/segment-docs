@@ -23,13 +23,28 @@
 
 
 <div class="quick-info">
-<h3>Quick Info</h3>
+  <div class="qi-content">
+<h4>Destination Info</h4>
 <ul class="qi">
-  <li>Accepts {% for method in destMethods%}{% if destMethods.size == 1 %}{{method}} calls.{% else %}{% unless forloop.last == true %}{{method}}, {% endunless %}{% if forloop.last == true%}and {{method}} calls.{%endif%}{% endif %}{% endfor %}</li>
+  {% if destMethods.size > 0 %}<li>Accepts {% for method in destMethods%}{% if destMethods.size == 1 %}{{method}} calls.{% else %}{% unless forloop.last == true %}{{method}}, {% endunless %}{% if forloop.last == true%}and {{method}} calls.{%endif%}{% endif %}{% endfor %}</li>{% endif %}
   <li>Referred to as <strong>{{destinationInfo.previous_names | join: '</strong>, or <strong>' }}</strong> in the <a href="/docs/guides/filtering-data/#filtering-with-the-integrations-object">Integrations object</a></li>
 </ul>
 {% if components.size > 0%}
-<h3>Connection Modes</h3>
+
+<h4>Components</h4>
+<ul class="components-list">
+{%for component in components %}
+{% if component.code contains "/segment-integrations/" %}
+<li><a href="{{component.code}}" target="_blank">{% if component.type == "IOS" %}iOS{%else%}{{component.type | capitalize}}{%endif%}</a></li>
+{% else %}
+<li>{% if component.type == "IOS" %}iOS{%else%}{{component.type | capitalize}}{%endif%}</li>
+{% endif %}
+{% endfor %}
+</ul>
+
+</div>
+<div class="qi-content">
+<h4>Connection Modes <a href="/docs/connections/destinations/#connection-modes"><img src="/docs/images/help.svg"/></a></h4>
 <table>
 <thead>
   <tr>
@@ -39,30 +54,19 @@
 </thead>
 <tbody>
   <tr>
-    <td>Web {% if connectionModes.device.web == true %} ✅ {% else %}⬜️{% endif %}</td>
-    <td>Web {% if connectionModes.cloud.web == true %} ✅ {% else %}⬜️{% endif %}</td>
+    <td> {% if connectionModes.device.web == true %} <img src="/docs/images/supported.svg" /> {% else %}<img src="/docs/images/unsupported.svg" />{% endif %} Web</td>
+    <td> {% if connectionModes.cloud.web == true %} <img src="/docs/images/supported.svg" /> {% else %}<img src="/docs/images/unsupported.svg" />{% endif %} Web</td>
   </tr>
   <tr>
-    <td>Mobile {% if connectionModes.device.mobile == true %} ✅ {% else %}⬜️{% endif %}</td>
-    <td>Mobile {% if connectionModes.cloud.mobile == true %} ✅ {% else %}⬜️{% endif %}</td>
+    <td>{% if connectionModes.device.mobile == true %} <img src="/docs/images/supported.svg" /> {% else %}<img src="/docs/images/unsupported.svg" />{% endif %} Mobile</td>
+    <td>{% if connectionModes.cloud.mobile == true %} <img src="/docs/images/supported.svg" /> {% else %}<img src="/docs/images/unsupported.svg" />{% endif %} Mobile</td>
   </tr>
   <tr>
-    <td>Server ⬜️ </td>
-    <td>Server {% if connectionModes.cloud.server == true %} ✅ {% else %}⬜️{% endif %}</td>
+    <td> <img src="/docs/images/unsupported.svg" /> Server</td>
+    <td> {% if connectionModes.cloud.server == true %} <img src="/docs/images/supported.svg" /> {% else %}<img src="/docs/images/unsupported.svg" />{% endif %} Server</td>
   </tr>
 </tbody>
 </table>
-
-<h3>Components</h3>
-<ul>
-{%for component in components %}
-{% if component.code contains "/segment-integrations/" %}
-<li><a href="{{component.code}}" target="_blank">{{component.type}}</a></li>
-{% else %}
-<li>{{component.type }}</li>
-{% endif %}
-{% endfor %}
-</ul>
-
+</div>
 {% endif %}
 </div>
