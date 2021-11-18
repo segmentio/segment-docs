@@ -233,44 +233,37 @@ ORDER by column_name
 
 In order to preserve the quality of your events data, Segment uses the following methods to store objects and arrays in the event tables: 
 
-<table border="1" cellspacing="0" cellpadding="0" width="100%">
+<table>
 <tr>
-    <th> Value Type </th>
-    <th> Field Type </th>
-    <th> Transformation </th>
-    <th> Schema (Example) </th>
+    <th> Field </th>
     <th> Code (Example) </th>
+    <th> Schema (Example) </th>
 </tr>
 
 <tr>
-<td><b>Object</b></td>
-<td> Context </td>
-<td> Flatten </td>
-<td>
+  <td><b>Object (Context):</b> Flatten </td>
+  <td markdown="1">
 
-``` json
-context: {
-    app: {
-        version: "1.0.0"
-    }
-}
-```
-
-</td>
-    <td>
+  ``` json
+  context: {
+      app: {
+          version: "1.0.0"
+      }
+  }
+  ```
+  </td>
+  <td>
     <b>Column Name:</b><br/>
     context_app_version
     <br/><br/>
     <b>Value:</b><br/>
     "1.0.0"
-    </td> 
+  </td> 
 </tr>
 
 <tr>
-    <td></td>
-    <td> Traits </td>
-    <td> Flatten </td>
-    <td>
+    <td> <b>Object (Traits):</b> Flatten </td>
+    <td markdown= "1">
 
 ```json
 traits: {
@@ -291,10 +284,8 @@ address_street<br/>
 </tr>
 
 <tr>
-<td></td>
-<td>Properties </td>
-<td>Stringify</td>
-<td>
+<td><b>Object (Properties):</b> Stringify</td>
+<td markdown="1">
 
 ```json
 properties: {
@@ -303,7 +294,6 @@ properties: {
     }
 }
 ```
-
 </td>
 <td>
     <b>Column Name:</b><br/>
@@ -314,17 +304,13 @@ properties: {
 </tr>
 
 <tr>
-<td>
-    <b>Array</b>
-</td>
-<td>Any</td>
-<td>Stringify</td>
-<td>
+<td><b>Array (Any):</b> Stringify</td>
+<td markdown="1">
 
 ```json
 products: {
     product_id: [
-        "507f1f77bcf86cd799439011", "505bd76785ebb509fc183733"
+        "507f1", "505bd"
     ]
 }
 ```
@@ -334,7 +320,7 @@ products: {
     <b>Column Name:</b> <br/>
     product_id <br/><br/>
     <b>Value:</b>
-    "[507f1f77bcf86cd799439011, 505bd76785ebb509fc183733]"
+    "[507f1, 505bd]"
 </td> 
 </tr>
 </table>
