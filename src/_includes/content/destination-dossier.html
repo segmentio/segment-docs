@@ -24,14 +24,14 @@
 
 <div class="quick-info">
   <div class="qi-content">
-<h4>Destination Info</h4>
+<h6>Destination Info</h6>
 <ul class="qi">
   {% if destMethods.size > 0 %}<li>Accepts {% for method in destMethods%}{% if destMethods.size == 1 %}{{method}} calls.{% else %}{% unless forloop.last == true %}{{method}}, {% endunless %}{% if forloop.last == true%}and {{method}} calls.{%endif%}{% endif %}{% endfor %}</li>{% endif %}
   <li>Referred to as <strong>{{destinationInfo.previous_names | join: '</strong>, or <strong>' }}</strong> in the <a href="/docs/guides/filtering-data/#filtering-with-the-integrations-object">Integrations object</a></li>
 </ul>
 {% if components.size > 0%}
 
-<h4>Components</h4>
+<h6>Components</h6>
 <ul class="components-list">
 {%for component in components %}
 {% if component.code contains "/segment-integrations/" %}
@@ -44,7 +44,7 @@
 
 </div>
 <div class="qi-content">
-<h4>Connection Modes <a href="/docs/connections/destinations/#connection-modes"><img src="/docs/images/help.svg"/></a></h4>
+<h6>Connection Modes <a href="/docs/connections/destinations/#connection-modes"><img src="/docs/images/help.svg"/></a></h6>
 <table>
 <thead>
   <tr>
