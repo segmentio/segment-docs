@@ -46,20 +46,19 @@ Actions define which events Segment sends to Google Enhanced Conversions, and th
 2. Click **Add Subscription**, and select **Post Conversion**.
 3. Configure the **Event Trigger**. For example, you can trigger the action whenever the source sends an Event named `Purchase`. Click **Continue** to configure the action fields, skip Testing for now. ![The action fires when it receives an event named Purchase](images/gec_trigger.png)
 4. Enter the Conversion Label. Find it using the instructions in the article [Google Ads conversions](https://support.google.com/tagmanager/answer/6105160?hl=en){:target="_blank"}.
-5. Configure the remaining properties. The **Email** field is not editable. In the default configuration, `properties.email` maps to the Email property in Google Enhanced Conversions. If `properties.email` is unavailable, the destination uses `traits.email` as a fallback.
+5. Configure the remaining properties. 
 6. When you're finished editing the action fields, click **Continue**. Click **Save**.
 7. To test your action, expand the **Test event trigger** section. Segment searches for recent events that match the trigger conditions. If there are no recent events that match the criteria, click **manually enter an event**, and replace the default event data with the following:
 ```json
 {
-	"messageId": "segment-test-message-hkz2b",
-	"timestamp": "2021-08-27T17:32:12.781Z",
+  "messageId": "segment-test-message-hkz2b",
+  "timestamp": "2021-08-27T17:32:12.781Z",
   "context" : {
     "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1"
   },
-	"type": "track",
-	"email": "test@example.org",
-	"properties": {
-		"email": "test@example.org",
+  "type": "track",
+  "properties": {
+    "email": "test@example.org",
     "orderId": "123",
     "firstName": "Bob John",
     "lastName": "Smith",
@@ -71,9 +70,9 @@ Actions define which events Segment sends to Google Enhanced Conversions, and th
       "postalCode": "94000",
       "country": "USA"
     }
-	},
-	"userId": "test-user-j75yud",
-	"event": "Purchase"
+  },
+  "userId": "test-user-j75yud",
+  "event": "Order Completed"
 }
 ```
 8. Click **Test Event**.
@@ -82,7 +81,7 @@ Actions define which events Segment sends to Google Enhanced Conversions, and th
 11. Click **Save**.
 12. Enable the action with the toggle at the top of the page.
 
+## Available Google Enhanced Conversions Actions
 
-
-
+- Post Conversion
 
