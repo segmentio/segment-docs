@@ -229,10 +229,115 @@ AND table_name = '<event>'
 ORDER by column_name
 ```
 
-> info "Note"
-> If you send us an array, we stringify it in Redshift. That way you don't end up having to pollute your events. It won't work if you have a lot of array elements but should work decently to store and query those. We also flatten nested objects. 
+### How event tables handle nested objects and arrays
 
+In order to preserve the quality of your events data, Segment uses the following methods to store objects and arrays in the event tables: 
 
+<table border="1" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+    <th> Value Type </th>
+    <th> Field Type </th>
+    <th> Transformation </th>
+    <th> Schema (Example) </th>
+    <th> Code (Example) </th>
+</tr>
+
+<tr>
+<td><b>Object</b></td>
+<td> Context </td>
+<td> Flatten </td>
+<td>
+
+``` json
+context: {
+    app: {
+        version: "1.0.0"
+    }
+}
+```
+
+</td>
+    <td>
+    <b>Column Name:</b><br/>
+    context_app_version
+    <br/><br/>
+    <b>Value:</b><br/>
+    "1.0.0"
+    </td> 
+</tr>
+
+<tr>
+    <td></td>
+    <td> Traits </td>
+    <td> Flatten </td>
+    <td>
+
+```json
+traits: {
+    address: {
+        street: "6th Street"
+    }
+}
+```
+
+</td>
+<td>
+<b>Column Name:</b><br/>
+address_street<br/>
+<br/>
+<b>Value:</b><br/>
+"6th Street"
+</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Properties </td>
+<td>Stringify</td>
+<td>
+
+```json
+properties: {
+        product_id: {
+            sku: "G-32"
+    }
+}
+```
+
+</td>
+<td>
+    <b>Column Name:</b><br/>
+    product_id<br/><br/>
+    <b>Value:</b><br/>
+    "{sku.'G-32'}"
+</td> 
+</tr>
+
+<tr>
+<td>
+    <b>Array</b>
+</td>
+<td>Any</td>
+<td>Stringify</td>
+<td>
+
+```json
+products: {
+    product_id: [
+        "507f1f77bcf86cd799439011", "505bd76785ebb509fc183733"
+    ]
+}
+```
+
+</td>
+<td>
+    <b>Column Name:</b> <br/>
+    product_id <br/><br/>
+    <b>Value:</b>
+    "[507f1f77bcf86cd799439011, 505bd76785ebb509fc183733]"
+</td> 
+</tr>
+</table>
 
 ## Tracks vs. Events Tables
 
@@ -303,7 +408,7 @@ New event properties and traits create columns. Segment processes the incoming d
 
 When Segment process a new batch and discover a new column to add, we take the most recent occurrence of a column and choose its datatype.
 
-The datatypes that we support right now are: 
+The data types that we currently support include: 
 
 - `timestamp`
 - `integer` 
@@ -325,7 +430,7 @@ All four timestamps pass through to your Warehouse for every ETL'd event. In mos
 
 `timestamp` is the UTC-converted timestamp which is set by the Segment library. If you are importing historical events using a server-side library, this is the timestamp you'll want to reference in your queries.
 
-`original_timestamp` is the original timestamp set by the Segment library at the time the event is created.  Keep in mind, this timestamp can be affected by device clock skew. You can override this value by manually passing in a value for `timestamp` which will then be relabed as `original_timestamp`. Generally, this timestamp should be ignored in favor of the `timestamp` column.
+`original_timestamp` is the original timestamp set by the Segment library at the time the event is created.  Keep in mind, this timestamp can be affected by device clock skew. You can override this value by manually passing in a value for `timestamp` which will then be relabeled as `original_timestamp`. Generally, this timestamp should be ignored in favor of the `timestamp` column.
 
 `sent_at` is the UTC timestamp set by library when the Segment API call was sent.  This timestamp can also be affected by device clock skew.
 
