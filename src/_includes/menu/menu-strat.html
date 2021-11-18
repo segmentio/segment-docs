@@ -6,14 +6,14 @@
     <nav class="menu">
       <ul class="menu__list list list--unstyle">
         <li class="menu-item">
-          <a href="{{ site.baseurl }}/connections/destinations/catalog/" class="menu-item__link menu-item__link--small menu-item__link--back">
+          <a href="{{ site.baseurl }}/connections/sources/catalog/" class="menu-item__link menu-item__link--small menu-item__link--back">
             {% include icons/symbols/arrow-left.svg %}
             <span>Back to Connections</span>
           </a>
         </li>
       </ul>
     </nav>
-  
+
     <nav class="menu menu--compact">
       <ul class="menu__list list list--unstyle">
         {% for item in ourSection %}
@@ -22,22 +22,22 @@
               <span class="flex__column">
                 {{ item.section_title }}
               </span>
-  
+
               <div class="menu-item__chevron flex__column flex__column--shrink">
                 {% include icons/symbols/caret-down.svg %}
               </div>
             </button>
-  
+
             <ul class="menu-item__body" data-ref="accordion[body]">
               {% for subsection in item.section %}
                 {% if subsection.path %}
                   {% assign menuLink = site.baseurl | append: subsection.path | append: "/" %}
-  
+
                   {% if subsection.path contains "http://" or  subsection.path contains "https://"%}
                     {% assign menuLink = subsection.path  %}
                   {% endif %}
                 {% endif %}
-  
+
                 <li class="menu-item menu-item--compact">
                   <a href="{{ menuLink }}" class="menu-item__link">
                     {{ subsection.title }}
