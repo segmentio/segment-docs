@@ -231,26 +231,28 @@ ORDER by column_name
 
 ### How event tables handle nested objects and arrays
 
-In order to preserve the quality of your events data, Segment uses the following methods to store objects and arrays in the event tables: 
+To preserve the quality of your events data, Segment uses the following methods to store objects and arrays in the event tables: 
 
 <table>
+<thead>
 <tr>
     <th> Field </th>
     <th> Code (Example) </th>
     <th> Schema (Example) </th>
 </tr>
+</thead>
 
 <tr>
   <td><b>Object (Context):</b> Flatten </td>
   <td markdown="1">
 
-  ``` json
-  context: {
-      app: {
-          version: "1.0.0"
-      }
+``` json
+context: {
+  app: {
+    version: "1.0.0"
   }
-  ```
+}
+```
   </td>
   <td>
     <b>Column Name:</b><br/>
@@ -267,9 +269,9 @@ In order to preserve the quality of your events data, Segment uses the following
 
 ```json
 traits: {
-    address: {
-        street: "6th Street"
-    }
+  address: {
+    street: "6th Street"
+  }
 }
 ```
 
@@ -289,9 +291,9 @@ address_street<br/>
 
 ```json
 properties: {
-        product_id: {
-            sku: "G-32"
-    }
+  product_id: {
+    sku: "G-32"
+  }
 }
 ```
 </td>
@@ -309,9 +311,9 @@ properties: {
 
 ```json
 products: {
-    product_id: [
-        "507f1", "505bd"
-    ]
+  product_id: [
+    "507f1", "505bd"
+  ]
 }
 ```
 
