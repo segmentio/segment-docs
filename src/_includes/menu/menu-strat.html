@@ -1,12 +1,13 @@
 {% assign sectionSlug = page.strat %}
 {% assign ourSection = site.data.sidenav.strat.sections | where: "slug", sectionSlug %}
+{% assign type = page.url | split: "/" %}
 
 <div class="sidebar sidebar--sticky sidebar--scroll sidebar--dark">
   <div class="sidebar__content">
     <nav class="menu">
       <ul class="menu__list list list--unstyle">
         <li class="menu-item">
-          <a href="{{ site.baseurl }}/connections/sources/catalog/" class="menu-item__link menu-item__link--small menu-item__link--back">
+          <a href="{{ site.baseurl }}/connections/{{ type[2] }}/catalog/" class="menu-item__link menu-item__link--small menu-item__link--back">
             {% include icons/symbols/arrow-left.svg %}
             <span>Back to Connections</span>
           </a>
