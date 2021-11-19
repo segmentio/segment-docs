@@ -146,6 +146,7 @@
       }
       div.highlighter-rouge {
         margin: 15px auto;
+        position: relative;
       }
       table {
         margin: 15px auto;
@@ -377,5 +378,44 @@ tr.show {
   &.show {
     max-height: 100%;
     transition: max-height .5s ease-in-out;
+  }
+
+}
+
+div.highlighter-rouge {
+  position: relative;
+
+  button {
+    color: #adb5bd;
+    box-sizing: border-box;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+    user-select: none;
+    padding: 8px 10px;
+    font-size: 0.8em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 0.15rem;
+    width: 40px;
+    img {
+      width: 16px;
+      margin: 0;
+      border: none;
+      border-radius: 0px;
+    }
+    img:hover {
+      filter: invert(65%) sepia(9%) saturate(784%) hue-rotate(192deg) brightness(91%) contrast(87%);
+      transition: 0.2s ease-out;
+    }
+
+    img:active {
+      filter: invert(65%) sepia(9%) saturate(784%) hue-rotate(192deg) brightness(91%) contrast(87%);
+    }
+  }
+
+  .green{
+    background-color: #BAE5D5;
+    content: "copied!";
   }
 }
