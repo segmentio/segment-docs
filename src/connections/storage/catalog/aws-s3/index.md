@@ -195,7 +195,8 @@ To create an S3 IAM role, you must first install and configure the AWS CLI on yo
 
 To finish configuration, enable the AWS S3 Destination with IAM Role Support destination in your workspace.
 
-1. Add the **AWS S3** destination from the Raw Data section of the Destinations catalog. This document is about the **AWS S3** destination. For information about the **Amazon S3** destination, which does not include IAM Role support, see the documentation [here](/docs/connections/storage/catalog/amazon-s3/).
+1. Add the **AWS S3** destination from the Storage Destinations tab of the catalog. This document is about the **AWS S3** destination. For information about the **Amazon S3** destination, which does not include IAM Role support, see the documentation [here](/docs/connections/storage/catalog/amazon-s3/).
+    ![AWS S3](images/aws-s3-tile.png)
 2. Select the data source you'll connect to the destination.
 3. Provide a unique name for the destination.
 4. Complete the destination settings:
@@ -217,7 +218,7 @@ To finish configuration, enable the AWS S3 Destination with IAM Role Support des
 To migrate an existing Amazon S3 destination to the AWS S3 with IAM Role Support Destination:
 
 1. Configure the IAM role and IAM policy permissions as described in steps 2 - 4 [above](#create-an-iam-role-in-the-aws-console).
-2. Add the AWS S3 with IAM Role Support Destination and add the AWS Region and IAM role ARN. For the bucket name, enter `<YOUR_BUCKET_NAME>/segment-logs/test`. Enable the destination, and verify data is received at `<YOUR_BUCKET_NAME>/segment-logs/test/segment-logs`. If the folder receives data, continue to the next step. If you don't see log entries, check the trust relationship document and IAM policy attached to the role.
+2. Add the **AWS S3** destination and add the AWS Region and IAM role ARN. For the bucket name, enter `<YOUR_BUCKET_NAME>/segment-logs/test`. Enable the destination, and verify data is received at `<YOUR_BUCKET_NAME>/segment-logs/test/segment-logs`. If the folder receives data, continue to the next step. If you don't see log entries, check the trust relationship document and IAM policy attached to the role.
 3. Update the bucket name in the new destination to `<YOUR_BUCKET_NAME>`.
 4. After 1 hour, disable the original Amazon S3 destination.
 5. Verify that the `<YOUR_BUCKET_NAME>/segment-logs` receives data.
