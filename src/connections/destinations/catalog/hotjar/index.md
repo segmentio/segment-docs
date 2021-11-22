@@ -33,6 +33,8 @@ Hotjar automatically starts tracking visitors based on the tools you have enable
 
 The Hotjar destination will automatically ingest a User ID, as well as values sent over your Identify spec as [traits](/docs/connections/spec/identify/#traits), as long as [User Attributes are enabled in Hotjar](https://help.hotjar.com/hc/en-us/articles/360038394053-How-to-Setup-User-Attributes-in-4-Steps#step-2-review-your-privacy-requirements-and-enable-user-attributes).
 
+Identify calls that do not have a User ID value will not be sent to Hotjar.
+
 ### Nested values or lists
 
 The Hotjar Identify API is unable to ingest values passed as nested objects or lists over your `identify` Spec:
