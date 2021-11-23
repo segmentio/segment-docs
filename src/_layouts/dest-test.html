@@ -1,0 +1,29 @@
+---
+layout: integration
+---
+<div class="markdown">
+
+{% assign newContent = '' %}
+{% assign sections = content | split:'</h2>' %}
+
+
+{% unless page.hide-dossier == true or page.name != "index.md" %}
+  {% capture destination-dossier %}{% include content/destination-dossier.html %}{% endcapture %}
+
+  {% for section in sections %}
+    {% if forloop.index == 1 %}
+    {{newContent | append: section}}
+    {{newContent | append: '</h2> <!--insert-->'}}
+    {{destination-dossier | markdownify}}
+
+    {% else %}
+    {{newContent | append: section}}
+    {{newContent | append: '</h2> <!--insert-->'}}
+    {% endif %}
+  {% endfor %}
+
+{% endunless %}
+
+
+
+</div>

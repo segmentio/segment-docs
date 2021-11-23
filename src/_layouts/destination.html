@@ -2,11 +2,16 @@
 layout: integration
 ---
 <div class="markdown">
-
-{% unless page.hide-dossier == true or page.name != "index.md" %}
+   
+  
+{% if page.hide-dossier != true  %}
   {% capture destination-dossier %}{% include content/destination-dossier.html %}{% endcapture %}
-  {{ destination-dossier | markdownify }}
-{% endunless %}
+  
+  {{destination-dossier | markdownify}}
+
+{% endif %}
+  
+  
 
 {% if page.maintenance == true %}
   {% capture maintenance-mode %}{% include content/destination-maintenance.md %}{% endcapture %}
