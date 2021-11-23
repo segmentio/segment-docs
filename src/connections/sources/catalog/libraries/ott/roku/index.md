@@ -43,7 +43,7 @@ To instantiate the library, you first need to update the application scene .xml 
 1. Include SegmentAnalyticsConnector.brs BrightScript file
 
 ```
-<script type="text/brightscript" uri="pkg:/source/analytics/SegmentAnalyticsConnector.brs />
+<script type="text/brightscript" uri="pkg:/source/analytics/SegmentAnalyticsConnector.brs" />
 ```
 
 2. Include SegmentAnalyticsTask node component under the children tag
