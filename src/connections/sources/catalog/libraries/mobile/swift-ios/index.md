@@ -398,3 +398,6 @@ Copy the IDFACollection plugin to your project. You can also use this [IDFAColle
 let idfaPlugin = IDFACollection()
 analytics.add(plugin: idfaPlugin)
 ```
+
+## Changelog
+[View the Analytics-Swift changelog on GitHub](https://github.com/segmentio/analytics-swift/releases).  

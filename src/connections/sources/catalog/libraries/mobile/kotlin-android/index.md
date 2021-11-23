@@ -416,7 +416,7 @@ analytics.flush("SomePlugin")
 
 ## Build Your Own Destination
 
-If Segment doesn't support your Kotlin destination, you can build your own with the template Segment provides. 
+If Segment doesn't support your Kotlin destination, you can build your own with the template Segment provides.
 
 To build your own Kotlin destination using a plugin template:
 
@@ -439,3 +439,6 @@ To test your destination:
 4. Commit your changes.
 
 Segment recommends you to test your destination implementation end-to-end. Send some sample analytics events and ensure that they reach the destination.
+
+## Changelog
+[View the Analytics-Kotlin changelog on GitHub](https://github.com/segmentio/analytics-kotlin/releases).

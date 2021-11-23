@@ -397,3 +397,6 @@ analytics.flush("SomePlugin")
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
+
+## Changelog
+[View the Analytics-Kotlin changelog on GitHub](https://github.com/segmentio/analytics-kotlin/releases).

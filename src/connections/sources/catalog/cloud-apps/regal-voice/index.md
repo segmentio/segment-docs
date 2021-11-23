@@ -54,6 +54,10 @@ The table below lists events that Regal Voice sends to Segment. These events app
     <td>A contact was assigned to an experiment</td>
   </tr>
   <tr>
+   <td>scheduled.callback.requested</td>
+   <td>A callback was scheduled</td>
+  </tr>
+  <tr>
    <td>sms.conversation.completed</td>
    <td>An SMS conversation between a contact and an agent was completed in the Regal Voice agent desktop</td>
   </tr>
@@ -117,6 +121,10 @@ The table below lists events that Regal Voice sends to Segment. These events app
   <tr>
    <td>`call_id`</td>
    <td>Task Id for the call</td>
+  </tr>
+  <tr>
+   <td>`callback_timestamp`</td>
+   <td>When the callback is scheduled for</td>
   </tr>
   <tr>
    <td>`campaign_id`</td>
@@ -225,6 +233,10 @@ The table below lists events that Regal Voice sends to Segment. These events app
   <tr>
    <td>`regal_voice_phone`</td>
    <td>RegalVoice phone number</td>
+  </tr>
+  <tr>
+   <td>`scheduling_agent_email`</td>
+   <td>Email of the agent who scheduled the callback</td>
   </tr>
   <tr>
    <td>`scheduling_agent_fullname`</td>
