@@ -39,28 +39,10 @@ To complete this section, you need access to your AWS dashboard.
 
 1. Create a new S3 bucket in your preferred region. For more information, see Amazon's documentation, [Create your first S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html){:target="_blank"}. 
 2. Create a new IAM role for Segment to assume. For more information, see Amazon's documentation, [Creating a role to delegate permissions to an IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html){:target="_blank"}.
-3. Attach the following trust relationship document. Be sure to add your Workspace ID to the `sts:ExternalId` field. 
-    ```json
-    {
-       "Version": "2012-10-17",
-       "Statement": [
-         {
-           "Sid": "",
-           "Effect": "Allow",
-           "Principal": {
-             "AWS": "arn:aws:iam::595280932656:role/segment-s3-integration-production-access"
-           },
-           "Action": "sts:AssumeRole",
-           "Condition": {
-             "StringEquals": {
-               "sts:ExternalId": "<YOUR_WORKSPACE_ID>"
-             }
-           }
-         }
-       ]
-     }
-    ```
-4. Create and attach the following IAM policy to the role created in step 3 above. Replace `<YOUR_BUCKET_NAME>` with the name of the bucket you created in step 1 above.
+    1. When prompted to enter an Account ID, enter `595280932656`. (You cannot enter an ARN in this step. In step 4, you can update the `Principal` to a specific role after your IAM role has been created.)
+    2. Click the **Require External ID** checkbox.
+    3. In the **External ID** field, enter your Segment Workspace ID.
+3. Attach the following policy to the IAM role created in step 2. Replace `<YOUR_BUCKET_NAME>` with the name of the S3 bucket you created in step 1.
     ```json
     {
     "Version": "2012-10-17",
@@ -94,8 +76,29 @@ To complete this section, you need access to your AWS dashboard.
       ]
     }
     ```
-
 If you have server-side encryption enabled, see the [required configuration](#encryption).
+ 
+4. Update `Principal` in the role’s trust relationship document to `arn:aws:iam::595280932656:role/segment-s3-integration-production-access`. Replace the `<YOUR_WORKSPACE_ID>` with your Segment Workspace ID.
+``` json
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "",
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::595280932656:role/segment-s3-integration-production-access"
+          },
+          "Action": "sts:AssumeRole",
+          "Condition": {
+            "StringEquals": {
+              "sts:ExternalId": "<YOUR_WORKSPACE_ID>"
+            }
+          }
+        }
+      ]
+    }
+```
 
 ### Create an IAM role using the AWS CLI
 
