@@ -14,6 +14,11 @@ hide-dossier: true
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) FullStory Segment destination. There's also a page about the [non-Actions FullStory destination](/docs/connections/destinations/catalog/fullstory/). Both of these destinations receives data from Segment. 
 
+## Benefits of FullStory (Actions) vs FullStory Classic
+
+- Greater control over the page properties you send.
+- Send events specific to individual pages.
+- Select by name the specific to send.
 
 
 ## Getting started
