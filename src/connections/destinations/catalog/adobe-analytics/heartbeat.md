@@ -97,7 +97,7 @@ options:@{
 
 ## Supported Video Events
 
-Adobe Analytics supports many - but not all - of the [Segment video spec events](/docs/connections/spec/video/), however **some events required for Adobe Analytics are not included as part of Segment's standard video tracking**, so read the documentation closely. The list below shows supported events and the corresponding Adobe method(s) they trigger. The next section explains the function of each event in more detail, and lists any required properties.
+Adobe Analytics supports many - but not all - of the [Segment Video Spec events](/docs/connections/spec/video/), however **some events required for Adobe Analytics are not included as part of Segment's standard video tracking**, so read the documentation closely. The list below shows supported events and the corresponding Adobe method(s) they trigger. The next section explains the function of each event in more detail, and lists any required properties.
 
 <table>
   <tr>
@@ -174,9 +174,11 @@ Adobe Analytics supports many - but not all - of the [Segment video spec events]
   </tr>
 </table>
 
+On web, multiple video sessions can be open at once so video events must have a `session_id` property unique to the session the content belongs to. If a `session_id` is not included, Segment will send `default` as the [s:event:sid](https://experienceleague.adobe.com/docs/media-analytics/using/sdk-implement/validation/heartbeat-params.html?lang=en) and Adobe will create a new session. For more information on `session_id`, please visit [Segment's Video Spec](/docs/connections/spec/video/#playback).
+
 ### Video Playback Started
 
-"Video Playback Started" is required to begin a new video session. This event **must** include the appropriate properties and options to configure the `MediaHeartbeat` instance for this video session. Although all the properties and options listed below are also **required**, you can also send additional standard and custom video properties with this event. See the [Custom Video Metadata section below.](#custom-video-metadata)
+"Video Playback Started" is required to begin a new video session. This event **must** include the appropriate properties and options to configure the `MediaHeartbeat` instance for this video session. Although all the properties and options listed below are also **required**, you can also send additional standard and custom video properties with this event. See the [Custom Video Metadata section below](#custom-video-metadata).
 
 <table>
   <tr>
@@ -193,19 +195,23 @@ Adobe Analytics supports many - but not all - of the [Segment video spec events]
   </tr>
   <tr>
     <td>`properties.title`</td>
-    <td>The title of the video session.</td>
+    <td>The title of the video.</td>
   </tr>
   <tr>
     <td>`properties.contentAssetId`</td>
-    <td>The unique id for the video session.</td>
+    <td>The unique id for the video.</td>
   </tr>
   <tr>
     <td>`properties.totalLength`</td>
-    <td>The total length in seconds of the video session.</td>
+    <td>The total length in seconds of the video.</td>
   </tr>
   <tr>
     <td>`properties.livestream`</td>
-    <td>Whether the session is a livestream (boolean).</td>
+    <td>Whether the video is a livestream (boolean).</td>
+  </tr>
+  <tr>
+    <td>`properties.session_id`</td>
+    <td>The unique id for the session. Required for web.</td>
   </tr>
   <tr>
     <td>`options.ovp`</td>
@@ -215,7 +221,7 @@ Adobe Analytics supports many - but not all - of the [Segment video spec events]
 
 ### Video Playback Completed
 
-This Segment event triggers an Adobe `trackSessionEnd()` event. You do not need to pass any properties along with this event. Properties passed to this event are not forwarded to Adobe (but are sent to other downstream destinations that support video events).
+This Segment event triggers an Adobe `trackSessionEnd()` event. On web, you must include a `session_id` property to tie this event to the correct video session. Any other properties passed to this event are not forwarded to Adobe (but are sent to other downstream destinations that support video events).
 
 ### Video Content Started
 
@@ -242,35 +248,39 @@ This Segment event triggers an Adobe `trackSessionEnd()` event. You do not need 
     <td>`properties.startTime`</td>
     <td>The position of the video playhead in seconds when the chapter starts playing.</td>
   </tr>
+  <tr>
+    <td>`properties.session_id`</td>
+    <td>The unique id for the session. Required for web.</td>
+  </tr>
 </table>
 
 ### Video Content Completed
 
-This Segment event triggers an Adobe `trackEvent(chapterComplete)` event and a `trackComplete()` event. You do not need to pass any properties along with this event. Properties passed to this event are not forwarded to Adobe (but are sent to other downstream destinations that support video events).
+This Segment event triggers an Adobe `trackEvent(chapterComplete)` event and a `trackComplete()` event. On web, you must include a `session_id` property to tie this event to the correct video session. Any other properties passed to this event are not forwarded to Adobe (but are sent to other downstream destinations that support video events).
 
 ### Video Playback Paused
 
-This Segment event triggers an Adobe `trackPause()` event. You do not need to pass any properties along with this event. Properties passed to this event are not forwarded to Adobe (but are sent to other downstream destinations that support video events).
+This Segment event triggers an Adobe `trackPause()` event. On web, you must include a `session_id` property to tie this event to the correct video session. Any other properties passed to this event are not forwarded to Adobe (but are sent to other downstream destinations that support video events).
 
 ### Video Playback Resumed
 
-This Segment event triggers an Adobe `trackPlay()` event. You do not need to pass any properties along with this event. Properties passed to this event are not forwarded to Adobe (but are sent to other downstream destinations that support video events).
+This Segment event triggers an Adobe `trackPlay()` event. On web, you must include a `session_id` property to tie this event to the correct video session. Any other properties passed to this event are not forwarded to Adobe (but are sent to other downstream destinations that support video events).
 
 ### Video Playback Buffer Started
 
-This Segment event triggers an Adobe `trackEvent(bufferStart)` event. You do not need to pass any properties along with this event. Properties passed to this event are not forwarded to Adobe (but are sent to other downstream destinations that support video events).
+This Segment event triggers an Adobe `trackEvent(bufferStart)` event. On web, you must include a `session_id` property to tie this event to the correct video session. Any other properties passed to this event are not forwarded to Adobe (but are sent to other downstream destinations that support video events).
 
 ### Video Playback Buffer Completed
 
-This Segment event triggers an Adobe `trackEvent(bufferComplete)` event. You do not need to pass any properties along with this event. Properties passed to this event are not forwarded to Adobe (but are sent to other downstream destinations that support video events).
+This Segment event triggers an Adobe `trackEvent(bufferComplete)` event. On web, you must include a `session_id` property to tie this event to the correct video session. Any other properties passed to this event are not forwarded to Adobe (but are sent to other downstream destinations that support video events).
 
 ### Video Playback Seek Started
 
-This Segment event triggers an Adobe `trackEvent(seekStart)` event. You do not need to pass any properties along with this event. Properties passed to this event are not forwarded to Adobe (but are sent to other downstream destinations that support video events).
+This Segment event triggers an Adobe `trackEvent(seekStart)` event. On web, you must include a `session_id` property to tie this event to the correct video session. Any other properties passed to this event are not forwarded to Adobe (but are sent to other downstream destinations that support video events).
 
 ### Video Playback Seek Completed
 
-This Segment event triggers an Adobe `trackEvent(seekComplete)` event. To reconcile the new playhead position, you **must** pass this value as `seekPosition`.
+This Segment event triggers an Adobe `trackEvent(seekComplete)` event. On web, you must include a `session_id` property to tie this event to the correct video session. To reconcile the new playhead position, you **must** also pass the position as `seekPosition`.
 
 <table>
   <tr>
@@ -304,11 +314,15 @@ This Segment event triggers an Adobe `trackEvent(adBreakStart)` event. This even
   <td>`properties.startTime`</td>
   <td>The position of the video playhead in seconds when the chapter starts playing.</td>
 </tr>
+<tr>
+  <td>`properties.session_id`</td>
+  <td>The unique id for the session. Required for web.</td>
+</tr>
 </table>
 
 ### Video Ad Break Completed
 
-This Segment event triggers an Adobe `trackEvent(adBreakComplete)` event. You do not need to pass any properties along with this event. Properties passed to this event are not forwarded to Adobe (but are sent to other downstream destinations that support video events).
+This Segment event triggers an Adobe `trackEvent(adBreakComplete)` event. On web, you must include a `session_id` property to tie this event to the correct video session. Any other properties passed to this event are not forwarded to Adobe (but are sent to other downstream destinations that support video events).
 
 ### Video Ad Started
 
@@ -335,11 +349,15 @@ This Segment event triggers an Adobe `trackEvent(adStart)` event. This event **m
     <td>`properties.totalLength`</td>
     <td>The total length of the ad in seconds.</td>
   </tr>
+  <tr>
+    <td>`properties.session_id`</td>
+    <td>The unique id for the session. Required for web.</td>
+  </tr>
 </table>
 
 #### Video Ad Completed
 
-This Segment event triggers an Adobe `trackEvent(adComplete)` event. You do not need to pass any properties along with this event. Properties passed to this event are not forwarded to Adobe (but are sent to other downstream destinations that support video events).
+This Segment event triggers an Adobe `trackEvent(adComplete)` event. On web, you must include a `session_id` property to tie this event to the correct video session. Any other properties passed to this event are not forwarded to Adobe (but are sent to other downstream destinations that support video events).
 
 ### Video Quality Updated
 
@@ -357,6 +375,9 @@ This event is required to set quality of service information in the `MediaHeartb
   </tr>
   <tr>
     <td>`properties.droppedFrames`</td>
+  </tr>
+  <tr>
+    <td>`properties.session_id` _Required for web. Defaults to `default` if missing._</td>
   </tr>
 </table>
 
