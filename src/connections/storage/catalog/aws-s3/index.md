@@ -39,7 +39,7 @@ To complete this section, you need access to your AWS dashboard.
 
 1. Create a new S3 bucket in your preferred region. For more information, see Amazon's documentation, [Create your first S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html){:target="_blank"}. 
 2. Create a new IAM role for Segment to assume. For more information, see Amazon's documentation, [Creating a role to delegate permissions to an IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html){:target="_blank"}.
-    1. When prompted to enter an Account ID, enter `595280932656`. (You cannot enter an ARN in this step. In step 4, you can update the `Principal` to a specific role after your IAM role has been created.)
+    1. When prompted to enter an Account ID, enter `595280932656`. (You cannot enter an ARN in this step. In step 4, you can update the `Principal` to a specific role after you create an IAM role.)
     2. Click the **Require External ID** checkbox.
     3. Enter your Segment Workspace ID in the **External ID** field.
 3. Attach the following policy to the IAM role created in step 2. Replace `<YOUR_BUCKET_NAME>` with the name of the S3 bucket you created in step 1.
