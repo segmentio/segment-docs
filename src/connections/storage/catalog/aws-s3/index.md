@@ -42,39 +42,39 @@ To complete this section, you need access to your AWS dashboard.
     1. When prompted to enter an Account ID, enter `595280932656`. (You cannot enter an ARN in this step. In step 4, you can update the `Principal` to a specific role after you create an IAM role.)
     2. Click the **Require External ID** checkbox.
     3. Enter your Segment Workspace ID in the **External ID** field.
-3. Attach the following policy to the IAM role created in step 2. Replace `<YOUR_BUCKET_NAME>` with the name of the S3 bucket you created in step 1.
-    ```json
+3. Attach the following policy to the IAM role created in step 2. Replace `<YOUR_BUCKET_NAME>` with the name of the S3 bucket you created in step 1.    
+    ```json 
     {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-        "Sid": "PutObjectsInBucket",
-        "Effect": "Allow",
-        "Action": [
-            "s3:PutObject",
-            "s3:PutObjectAcl"
-        ],
-        "Resource": "arn:aws:s3:::<YOUR_BUCKET_NAME>/segment-logs/*"
-        }
-    ]
-    }
+      "Version": "2012-10-17",
+      "Statement": [
+          {
+          "Sid": "PutObjectsInBucket",
+          "Effect": "Allow",
+          "Action": [
+              "s3:PutObject",
+              "s3:PutObjectAcl"
+          ],
+          "Resource": "arn:aws:s3:::<YOUR_BUCKET_NAME>/segment-logs/*"
+          }
+      ]
+    }   
     ```
     If you're using KMS encryption on your S3 bucket, add the following policy to the IAM role:
     ```json
-    {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "AllowKMS",
-            "Effect": "Allow",
-            "Action": [
-                "kms:GenerateDataKey",
-                "kms:Decrypt"
-            ],
-            "Resource": "<YOUR_KEY_ARN>"
-        }
-      ]
-    }
+      {
+      "Version": "2012-10-17",
+      "Statement": [
+          {
+              "Sid": "AllowKMS",
+              "Effect": "Allow",
+              "Action": [
+                  "kms:GenerateDataKey",
+                  "kms:Decrypt"
+              ],
+              "Resource": "<YOUR_KEY_ARN>"
+          }
+        ]
+      }
     ```
 If you have server-side encryption enabled, see the [required configuration](#encryption).
  
