@@ -2851,7 +2851,7 @@ items:
 - display_name: AWS S3
   name: AWS S3
   slug: aws-s3
-  hidden: true
+  hidden: false
   url: connections/destinations/catalog/aws-s3
   previous_names:
   - AWS S3
@@ -8607,6 +8607,15 @@ items:
     description: Aptrinsic API Key
     required: true
     label: API Key
+  - name: dataCenter
+    type: select
+    defaultValue: ''
+    description: >-
+      For PX instances based in the European Union at
+      https://app-eu.aptrinsic.com, select the EU option. For all others (at
+      https://app.aptrinsic.com), select the United States option.
+    required: false
+    label: Data Center
 - display_name: Gameball
   name: Gameball
   slug: gameball
