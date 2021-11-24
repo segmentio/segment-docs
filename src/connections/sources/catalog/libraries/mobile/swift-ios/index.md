@@ -256,7 +256,7 @@ class SomePlugin: EventPlugin {
 #### DestinationPlugin
 The `DestinationPlugin` interface is commonly used for device-mode destinations. This plugin contains an internal timeline that follows the same process as the analytics timeline, enabling you to modify and augment how events reach a particular destination.
 
-For example, if you want to implement a device-mode destination plugin for Amplitude, you can use this:
+For example, if you want to implement a device-mode destination plugin for AppsFlyer, you can use this:
 
 ```swift
 internal struct AppsFlyerSettings: Codable {
