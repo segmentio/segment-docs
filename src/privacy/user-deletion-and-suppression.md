@@ -14,7 +14,7 @@ In keeping with Segment's commitment to GDPR and CCPA readiness, Segment offers 
 
 ## Overview
 
-All deletion and suppression actions in Segment are asynchronous, and categorized as Regulations. Regulations are requests to Segment to control your data flow. You can issue Regulations from your Segment Workspace, in Settings > End User Privacy
+All deletion and suppression actions in Segment are asynchronous and categorized as Regulations. Regulations are requests to Segment to control your data flow. You can issue Regulations from your Segment Workspace, in Settings > End User Privacy
 
 With Regulations, you can issue a single request to delete and suppress data about a user by `userId`. Segment scopes Regulations to your workspace, and targets all sources within the workspace.
 
