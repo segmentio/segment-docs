@@ -1609,7 +1609,7 @@ items:
 - display_name: Amazon S3
   name: Amazon S3
   slug: amazon-s3
-  hidden: true
+  hidden: false
   url: connections/destinations/catalog/amazon-s3
   previous_names:
   - Amazon S3
@@ -5857,7 +5857,7 @@ items:
 - display_name: Customer.io Actions
   name: Customer.io Actions
   slug: customer-io-actions
-  hidden: true
+  hidden: false
   url: connections/destinations/catalog/customer-io-actions
   previous_names:
   - Actions Customerio
@@ -6026,7 +6026,7 @@ items:
 - display_name: Data Lakes
   name: Data Lakes
   slug: data-lakes
-  hidden: true
+  hidden: false
   url: connections/destinations/catalog/data-lakes
   previous_names:
   - Data Lakes
@@ -9279,7 +9279,7 @@ items:
 - display_name: Google Cloud Storage
   name: Google Cloud Storage
   slug: google-cloud-storage
-  hidden: true
+  hidden: false
   url: connections/destinations/catalog/google-cloud-storage
   previous_names:
   - Google Cloud Storage
@@ -9424,7 +9424,7 @@ items:
 - display_name: Google Universal Analytics
   name: Google Universal Analytics
   slug: google-universal-analytics
-  hidden: true
+  hidden: false
   url: connections/destinations/catalog/google-universal-analytics
   previous_names:
   - Google Analytics
@@ -10986,7 +10986,7 @@ items:
 - display_name: InMoment (formerly Wootric)
   name: InMoment (formerly Wootric)
   slug: inmoment-formerly-wootric
-  hidden: true
+  hidden: false
   url: connections/destinations/catalog/inmoment-formerly-wootric
   previous_names:
   - Wootric
