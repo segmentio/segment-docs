@@ -179,7 +179,10 @@ To create resources of other types, such as Accounts or custom objects, Segment 
 
 ### Sandbox Mode
 
-To enable an integration with a Salesforce Sandbox instance, toggle the Sandbox setting to true.
+To enable an integration with a Salesforce Sandbox instance follow the following steps;
+1. Toggle the Sandbox setting to true
+2. Include the sandbox name at the end of the account email followed by a `.` (fullstop) 
+   - i.e. `name@work.com` -> `name@work.com.sandboxname`
 
 ### API Call Limits
 
