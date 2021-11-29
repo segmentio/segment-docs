@@ -45,23 +45,23 @@ To complete this section, you need access to your AWS dashboard.
 3. Attach the following policy to the IAM role created in step 2. Replace `<YOUR_BUCKET_NAME>` with the name of the S3 bucket you created in step 1.    
     ```json 
     {
-      "Version": "2012-10-17",
-      "Statement": [
-          {
-          "Sid": "PutObjectsInBucket",
-          "Effect": "Allow",
-          "Action": [
-              "s3:PutObject",
-              "s3:PutObjectAcl"
-          ],
-          "Resource": "arn:aws:s3:::<YOUR_BUCKET_NAME>/segment-logs/*"
-          }
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+            "Sid": "PutObjectsInBucket",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:PutObjectAcl"
+            ],
+            "Resource": "arn:aws:s3:::<YOUR_BUCKET_NAME>/segment-logs/*"
+            }
       ]
     }   
     ```
     If you're using KMS encryption on your S3 bucket, add the following policy to the IAM role:
     ```json
-      {
+    {
       "Version": "2012-10-17",
       "Statement": [
           {
@@ -74,7 +74,7 @@ To complete this section, you need access to your AWS dashboard.
               "Resource": "<YOUR_KEY_ARN>"
           }
         ]
-      }
+    }
     ```
 If you have server-side encryption enabled, see the [required configuration](#encryption).
  
