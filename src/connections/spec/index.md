@@ -26,7 +26,7 @@ Second, it **details the event data we capture across some of our cloud sources 
 
 Third, it **shares the events we recommend you track for a particular industry based on our experience working with thousands of customers**. When you respect these specs, we can map these events to particular features within end destinations like Google Analytics and Facebook Ads.
 - Industry Specs
- - [Mobile](/docs/connections/spec/mobile/)
- - [E-Commerce](/docs/connections/spec/ecommerce/v2/)
- - [Video](/docs/connections/spec/video/)
- - [B2B SaaS](/docs/connections/spec/b2b-saas/)
+  - [Mobile](/docs/connections/spec/mobile/)
+  - [E-Commerce](/docs/connections/spec/ecommerce/v2/)
+  - [Video](/docs/connections/spec/video/)
+  - [B2B SaaS](/docs/connections/spec/b2b-saas/)
