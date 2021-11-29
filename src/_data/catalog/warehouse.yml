@@ -18,7 +18,7 @@ items:
   description: >-
     The AWS S3 destination provides a more secure way to store data in your AWS S3 buckets.
   url: connections/storage/catalog/aws-s3
-  status: PUBLIC_BETA
+  status: PUBLIC
   logo:
     url: 'https://d3hotuclm6if1r.cloudfront.net/logos/amazon-s3-default.svg'
   mark:
