@@ -33,7 +33,9 @@ By default, your `identify` calls will not be sent through to Slack unless you h
 ### Identify Template
 Once you've saved your whitelisted traits, you can now use them alongside [Handlebars expressions](http://handlebarsjs.com/expressions.html) syntax within a template. Make sure you reference the spec for the [Identify method](/docs/connections/spec/identify/) and [common object](/docs/connections/spec/common/). `Identify` events that contain the whitelisted `traits` will appear as a Slack message with the following default template:
 ```
-Identified user \{{name}}. \n\{{traits}}
+{% raw %}
+Identified user {{name}}. \n\{{traits}}
+{% endraw %}
 ```
 where "name" is the first found of the following:
 * `context.traits.name`
@@ -77,9 +79,13 @@ If you would like to have specific events be sent to a particular channel (#chan
 ### Event Templates
 Event templates also use [Handlebars expressions](http://handlebarsjs.com/expressions.html) syntax. Make sure you reference the spec for the [Track method](/docs/connections/spec/track/) and [common object](/docs/connections/spec/common/). `Track` events will trigger a Slack message with the following default template:
 
-`'\{{name}} did \{{event}}.'`
+```
+{% raw %}
+{{name}} did {{event}}.
+{% endraw %}
+```
 
-where "event" is the event name and "name" is found with the same logic as that of the "name" in the [Identify template](/docs/connections/destinations/catalog/slack/#identify-template).
+"event" is the event name and "name" is found with the same logic as that of the "name" in the [Identify template](/docs/connections/destinations/catalog/slack/#identify-template).
 
 The basic Track structure:
 
@@ -127,5 +133,5 @@ The Slack Destination does not support `page` or `group` calls. Only `track` eve
 
 In order for `identify` events to work, make sure you [whitelist the traits](/docs/connections/destinations/catalog/slack/#whitelisted-traits).
 
-### I'm seeing [object Object] in my Slack message
-If you try to print an object (eg., `\{{properties}}`), you will see [object Object] in Slack. Drill down to a primitive type value (eg., `properties.plan`).
+### I see [object Object] in my Slack message
+If you try to print an object (for example, {% raw %} `{{properties}}` {% endraw %} ), you will see [object Object] in Slack. Drill down to a primitive type value (for example, `properties.plan`).
