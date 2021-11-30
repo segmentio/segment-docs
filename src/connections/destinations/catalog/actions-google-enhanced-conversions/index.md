@@ -11,10 +11,10 @@ hidden: true
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Google Enhanced Conversions Segment destination. 
 
-The Google Enhanced Conversions destination enables you to improve the accuracy of your conversion measurement. You can send first-party customer conversion data from your website, such as email address, to Google Ads. Segment hashes this data sends it in a privacy-safe way. Google matches hashed data with signed-in Google accounts to attribute the conversion to ad events, such as clicks or views. To learn more about Google Enhanced Conversions, see Google's documentation [About enhanced conversions (beta)](https://support.google.com/google-ads/answer/9888656?hl=en-GB){:target="_blank"}.
+The Google Enhanced Conversions destination enables you to improve the accuracy of your conversion measurement. You can supplement existing conversion tags by sending first-party customer conversion data from your website, such as email address, to Google Ads. Segment hashes this data and sends it in a privacy-safe way. Google matches hashed data with signed-in Google accounts to attribute the conversion to ad events, such as clicks or views. To learn more about Google Enhanced Conversions, see Google's documentation [About enhanced conversions](https://support.google.com/google-ads/answer/9888656?hl=en-GB){:target="_blank"}.
 
 > warning "Before you begin"
-> Enable Enhanced Conversions in your Google Ads account. For each Conversion, specify in the settings to that you will use the enhanced conversions API:
+> Enable Enhanced Conversions in your Google Ads account. For each Conversion, specify in the settings that you will use the Enhanced Conversions API:
 > 1.  When you log in to Google Ads, make sure you are in [Expert Mode](https://support.google.com/google-ads/answer/9520605?hl=en){:target="_blank"}.
 > 2. Click **Tools & Settings** in the top bar, and select **Conversions** from the dropdown. Select the **Conversion Action** you want Segment to log to.
 > 3. Expand the tab for **Enhanced conversions**. Enable **Turn on enhanced conversions**. Under "To start, select how you want to set up enhanced conversions", select **API**.
