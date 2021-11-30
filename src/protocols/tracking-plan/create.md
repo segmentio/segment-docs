@@ -37,7 +37,7 @@ The Tracking Plan editor is organized as a spreadsheet to help you  add new even
 | Name         | Specify the name of your event or property.   |
 | Description  | Enter a description for your event or property. These descriptions are helpful for both engineers instrumenting Segment and consumers of the data. |
 | Status       | Specify whether a property is required or optional. You can't require a `.track()` call because Segment is unable to verify when a `.track()` call should be fired. |
-| Data Type    | Specify the data type of the property. Data type options include `any, array, object, boolean, integer, number, string`. |
+| Data Type    | Specify the data type of the property. Data type options include `any, array, object, boolean, integer, number, string, Date time`. Note: Date time is required to be in ISO-8601 format |
 | Permitted Values | Enter simple regular expressions to validate property values. This works when a property data type is set to `string`. For example, you can add pipe delimited strings to the regex column to generate violations when a property value does not match fall, winter or spring. |
 
 > info ""
