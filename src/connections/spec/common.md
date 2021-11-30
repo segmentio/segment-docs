@@ -305,7 +305,7 @@ Every API call has four timestamps, `originalTimestamp`, `timestamp`, `sentAt` a
 **All timestamps are [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date strings.**
 
 > note ""
-> **NOTE:** ISO-8601 date strings with timezones included are required when using timestamps with [Personas](/docs/personas/). Sending custom traits without a timezone included in the timestamp will result in the value not being saved.
+> **NOTE:** You must use ISO-8601 date strings _including_ timezones when you use timestamps with [Personas](/docs/personas/). If you send custom traits without a timezone, Segment does not save the timestamp value.
 
 ### Timestamp Overview
 
