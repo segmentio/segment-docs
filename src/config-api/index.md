@@ -2,6 +2,11 @@
 title: Config API Overview
 ---
 
+> info "The Segment Public API: Beta Release"
+> The Segment Public API is available in Public Beta. This new API features more consistent endpoints, improved error handling and reporting, support for pagination, and more.
+> 
+> See the [Segment Public API documentation](https://api.segmentapis.com/docs/){:target="_blank"} for more information.
+
 The Config API enables you to programmatically manage Segment workspaces, sources, destinations and more. With the API you can:
 
 * List all your workspace Sources and Destinations to see how data flows through Segment
