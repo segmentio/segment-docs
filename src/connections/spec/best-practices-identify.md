@@ -12,7 +12,7 @@ When you use the Segment Identify call with the Track call, you can start to bui
 
 The Segment libraries generate an `anonymousId` for each user, even before you Identify them.
 
-An `anonymousId` is a randomly generated 36 character string automatically assigned to a user on their first visit to your website or mobile application. You can use the `anonymousId` to link events performed by the user as they navigate around your website. When you track the `anonymousId` , you can attribute activities over multiple days to the same user by collecting all of the activities with that ID. If a user chooses to register for your site, or log in to your app,  you can Identify them, and still include their `anonymousId` in the event payload along with the new `userId`.
+An `anonymousId` is a randomly generated 36 character string automatically assigned to a user on their first visit to your website or mobile application. You can use the `anonymousId` to link events performed by the user as they navigate around your website. When you track the `anonymousId`, you can attribute activities over multiple days to the same user by collecting all of the activities with that ID. If a user chooses to register for your site, or log in to your app, you can Identify them, and still include their `anonymousId` in the event payload along with the new `userId`.
 
 > success ""
 > **Tip!** Only the Segment mobile and website libraries automatically generate an `anonymousId`. If you use Segment’s Server libraries, you must generate an `anonymousId` manually. It can be any pseudo-unique identifier, for example you might use a `sessionId` from a backend server.
@@ -23,7 +23,7 @@ Segment’s Identify method lets you link a user to their actions and record tra
 
 Segment recommends that you use a unique user identifier that won’t change for your `userId`, for example a database ID from your organization’s internal systems. (See below)
 
-When you make an [Identify call](/docs/connections/spec/identify) using Analytics.js, Segment saves the `userId` to the browser cookie, and writes all the user traits in local storage. If you’re using one of the Segment mobile libraries, the `userId` and and traits are stored in the device’s memory. This makes it possible to append the user’s data to all subsequent [Page calls](/docs/connections/sources/catalog/libraries/website/javascript#page) or [Track calls](/docs/connections/sources/catalog/libraries/website/javascript#track) for the user, so you can properly attribute those actions.
+When you make an [Identify call](/docs/connections/spec/identify) using Analytics.js, Segment saves the `userId` to the browser cookie, and writes all the user traits in local storage. If you’re using one of the Segment mobile libraries, the `userId` and traits are stored in the device’s memory. This makes it possible to append the user’s data to all subsequent [Page calls](/docs/connections/sources/catalog/libraries/website/javascript#page) or [Track calls](/docs/connections/sources/catalog/libraries/website/javascript#track) for the user, so you can properly attribute those actions.
 
 If a user returns to your site after the [cookie expires](#id-expiration-and-overwriting), Analytics.js looks for an old ID in the user’s `localStorage`, and if one is found, sets it as the user’s ID again in a new cookie. If the user clears their cookies *and* `localStorage`, all of the IDs are removed. The user gets a completely new `anonymousId` when they next visit the page.
 
@@ -34,7 +34,7 @@ A User ID should be a robust, static, unique identifier that you recognize a use
 
 Ideally, the User ID could be a database ID. For example, if you’re using MongoDB it might be a row identifier and look something like `507f191e810c19729de860ea`. These can also be [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier)s that you generate somewhere in your application. You can also use identifiers that you get from other tools - such as Shopify or Braze - however this approach can lead to extra complexity in your systems.
 
-Segment does **not** recommend using simple email addresses or usernames as as a User ID, as these can change over time. Segment recommends that you use static IDs instead, so the IDs *never* change. When you use a static ID, you can still recognize the user in your analytics tools, even if the user changes their email address. And even better, you can link your analytics data with your own internal database.
+Segment does **not** recommend using simple email addresses or usernames as a User ID, as these can change over time. Segment recommends that you use static IDs instead, so the IDs *never* change. When you use a static ID, you can still recognize the user in your analytics tools, even if the user changes their email address. And even better, you can link your analytics data with your own internal database.
 
 > success ""
 > **Tip!** Even if you don't use an email address or a username as a User ID, you should still send them in the analytics payload as [traits](/docs/connections/spec/identify#traits).
@@ -130,7 +130,7 @@ The Segment ID cookie is set with a one year expiration. However, there are some
 - If you invoke any call before you set an `anonymousId`, Segment automatically sets the `anonymousId` first. This means if you explicitly set an `anonymousId`, you might give the user two `anonymousId`s or overwrite an existing one.
 - If you fetch the `anonymousId` using `analytics.user().anonymousId()` before one is set, Segment generates and sets an `anonymousId` rather than returning `null`.
 - If you call `analytics.identify()` with a `userId` that is different from the currently cached `userId`, this can overwrite the existing one and cause attribution problems.
-- If you generate a new `anonymousId` on a server library, and passing it from the server to the browser, this could overwrite the user's existing `anonymousId`.
+- If you generate a new `anonymousId` on a server library, and pass it from the server to the browser, this could overwrite the user's existing `anonymousId`.
 
 > info ""
 > Remember, if a user has multiple devices, they can have different `anonymousId`s on each different device.
