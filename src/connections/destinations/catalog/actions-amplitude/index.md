@@ -138,7 +138,7 @@ Build your own subscriptions! Combine supported [triggers](/docs/connections/des
 - [Map User](#map-user)
 - [Group Identify User](#group-identify-user)
 
-You can see the Segment event fields Amplitude accepts for each action in the Actions subscription set up page. Combine these 
+You can see the Segment event fields Amplitude accepts for each action in the Actions subscription set up page.
 
 ### Log Event 
 
