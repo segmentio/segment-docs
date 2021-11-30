@@ -29,7 +29,7 @@ If you still don't see data getting to your destination, continue debugging base
 
 Inspect one of your data payloads. If you are using device-mode for a specific destination, the value of that integration should be set to `false` in the `integrations` object. That means that the data is being sent from the device directly to the destination's API endpoints, and not through Segment's servers. This is expected if you chose to use a device-mode destination's SDK with Segment's during installation.
 
-Enable verbose [logging](/docs/connections/sources/catalog/libraries/mobile/android/#adding-debug-logging) and trigger the call in question. You should see a call to Segment, and one going to the partner SDK.  It will show you exactly which partner method was invoked and the arguments it was invoked with!
+Enable verbose [logging](/docs/connections/sources/catalog/libraries/mobile/android/#adding-debug-logging) and trigger the call in question. You should see calls to Segment and the partner SDK that show the partner method that was invoked and the arguments with which it was invoked. 
 
 ## Debugging Cloud-mode Destinations
 
