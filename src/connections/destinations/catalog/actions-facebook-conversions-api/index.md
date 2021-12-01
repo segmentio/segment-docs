@@ -5,7 +5,7 @@ hide-boilerplate: true
 hide-dossier: true
 ---
 
-Facebook Conversions API (Actions) enabled advertisers to send events from their servers directly to Facebook. Server-side events link to Facebook Pixel events, and process like browser pixel events. This means that serve-side events are used in measurement, reporting, and optimization, just like browser pixel events.
+Facebook Conversions API (Actions) enables advertisers to send events from their servers directly to Facebook. Server-side events link to Facebook Pixel events, and process like browser pixel events. This means that serve-side events are used in measurement, reporting, and optimization, just like browser pixel events.
 
 > info ""
 > This document is about a feature which is in beta. This means that the Facebook Conversions API (Actions) destination is in active development, and some functionality may change before it becomes generally available.
@@ -20,7 +20,7 @@ Segment’s Facebook Conversions API (Actions) destination provides the followin
 - **Clearer mapping of data**. Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to Facebook Conversions API.
 - **Support for page calls**. Page calls can be sent to Facebook as a standard Page View.
 - **Support for identify calls**. Identify calls can be sent to Facebook as a standard or custom event.
-- **Support for multi-product arrays**. Products nested within arrays, like the products array in the Order Completed event, can be sent to Facebook.
+- **Support for multi-product arrays**. Product data nested within arrays, like the `products` array in the [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) event, can be sent to Facebook.
 - **Data normalization**. Data is normalized before it is hashed to ensure the hashed value matches Facebook Pixel (browser).
 
 ## Getting started
