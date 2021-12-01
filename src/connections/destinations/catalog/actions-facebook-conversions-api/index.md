@@ -107,6 +107,8 @@ Use this approach if you don’t want to track users from the browser with Faceb
 
 If you use Facebook Conversions API as a stand-alone without certain data fields collected from the browser, the match rate might not be as high as if you included them. You can increase the match rate for events from a server source by including User Data, such as Zip Code, Country and State.
 
+You can send additional User Data to increase the match rate for events from a server source. Collect other fields from the browser, like User Agent, IP Address, and [Facebook's cookie parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and map them in the User Data object.
+
 #### Deduplication considerations
 
 If you choose this option, each source sends different events, and deduplication is not necessary.
