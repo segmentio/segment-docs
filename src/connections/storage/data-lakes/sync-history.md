@@ -5,9 +5,6 @@ title: Data Lakes Sync History and Health
 
 The Segment Data Lakes sync history and health tabs generate real-time information about data syncs so you can monitor the health and performance of your data lakes. These tools provide monitoring and debugging capabilities within the Data Lakes UI, so you can identify and proactively address data sync or data pipeline failures. 
 
-> info ""
-> This feature is currently in Public Beta. Segment’s [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern the use of this feature.
-
 ## Sync History
 The 'Sync History' table shows detailed information about the latest 100 syncs to the data lake. The table includes the following fields:
 * **Sync status:** The status of the sync: either 'Success,' indicating that all rows synced correctly, 'Partial Success,' indicating that some rows synced correctly, or 'Failed,' indicating that no rows synced correctly
