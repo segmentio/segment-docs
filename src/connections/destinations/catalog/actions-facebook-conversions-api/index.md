@@ -5,10 +5,10 @@ hide-boilerplate: true
 hide-dossier: true
 ---
 
-Facebook Conversions API (Actions) enabled advertisers to send events from their servers directly to Facebook. Server-side events link to Facebook Pixel events, and process like browser pixel events. This means that serve-side events are used in measurement, reporting, optimization just like browser pixel events.
+Facebook Conversions API (Actions) enabled advertisers to send events from their servers directly to Facebook. Server-side events link to Facebook Pixel events, and process like browser pixel events. This means that serve-side events are used in measurement, reporting, and optimization, just like browser pixel events.
 
 > info ""
-> This document is about a feature which is in beta. This means that the Facebook Conversions API (Actions) destination is in active development, and some functionality may change before it becomes generally available
+> This document is about a feature which is in beta. This means that the Facebook Conversions API (Actions) destination is in active development, and some functionality may change before it becomes generally available.
 
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Customer.io Segment destination. There's also a page about the [non-Actions Facebook Conversions API destination](/docs/connections/destinations/catalog/facebook-pixel-server-side/). Both of these destinations receives data _from_ Segment.
@@ -68,7 +68,7 @@ This approach provides a redundancy that ensures maximum signal reliability. Eve
 
 For this option to work best, pass the same External ID from the browser and the server. To do this, go to your Facebook Pixel destination settings in Segment and enable the **Enable Advanced Matching** setting. Next, enable the **Use User ID or Anonymous ID as External ID** setting, or choose a custom trait for External ID using the **Advanced Match Trait Key for External ID** setting.
 
-With the Facebook Conversions API (Actions) destination, you can choose any field in your event to map to External ID. By default, Segment uses the userId (or anonymousId if not present) to set the External ID, but you can change this in the User Data object mapping of your Action.
+With the Facebook Conversions API (Actions) destination, you can choose any field in your event to map to External ID. By default, Segment uses the userId (or anonymousId if userId is not present) to set the External ID, but you can change this in the User Data object mapping of your Action.
 
 ![the coalesce function](images/image1.png)
 
@@ -92,7 +92,7 @@ If you want to separate events completed on a user’s browser from events compl
 
 For this option to work best, the same External ID needs to be passed from the browser and the server. To achieve this, go to your Facebook Pixel destination settings in Segment and enable the **Enable Advanced Matching** setting. Next, enable the **Use User ID or Anonymous ID as External ID** setting, or choose a custom trait for External ID using the **Advanced Match Trait Key for External ID** setting.
 
-With the Facebook Conversions API (Actions) destination, you can choose any field in your event to map to External ID. By default, Segment uses the userId (or anonymousId if not present) to set the External ID, but you can change this in the User Data object mapping of your Action.
+With the Facebook Conversions API (Actions) destination, you can choose any field in your event to map to External ID. By default, Segment uses the userId (or anonymousId if userId is not present) to set the External ID, but you can change this in the User Data object mapping of your Action.
 
 #### Deduplication considerations
 
