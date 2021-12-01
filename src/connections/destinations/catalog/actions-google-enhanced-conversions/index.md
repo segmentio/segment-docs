@@ -25,14 +25,13 @@ The Google Enhanced Conversions destination enables you to improve the accuracy 
 
 ### Add the Google Enhanced Conversions destination to your workspace
 
-The Google Enhanced Conversions destination is in Private Beta, and does not appear in the Destinations Catalog. 
-
-1. To access the destination, navigate to this URL: `https://app.segment.com/<workspace_slug>/destinations/catalog/actions-google-enhanced-conversions` Replace `<workspace_slug>` with your workspace slug.
-2. Click **Configure Google Enhanced Conversions** in the top-right corner of the screen.
-3. Select the source to use to send data to Google Enhanced Conversions.
-4. Enter your Conversion Tracking ID. Find it in your Google Ads account using the instructions in the article [Google Ads conversions](https://support.google.com/tagmanager/answer/6105160?hl=en){:target="_blank"}. When you log in to Google Ads, make sure you are in [Expert Mode](https://support.google.com/google-ads/answer/9520605?hl=en){:target="_blank"}. Note you'll follow these same instructions to get the Conversion label, which you'll need when you set up your first Action, below. 
-5. Click **Configure Actions**.
-6. Click **Create Destination**.
+1. From the Segment web app, click **Catalog**, then click **Destinations**.
+2. Search for “Google Enhanced Conversions” in the Destinations Catalog, and select the destination.
+3. Click **Configure Google Enhanced Conversions** in the top-right corner of the screen.
+4. Select the source to use to send data to Google Enhanced Conversions.
+5. Enter your Conversion Tracking ID. Find it in your Google Ads account using the instructions in the article [Google Ads conversions](https://support.google.com/tagmanager/answer/6105160?hl=en){:target="_blank"}. When you log in to Google Ads, make sure you are in [Expert Mode](https://support.google.com/google-ads/answer/9520605?hl=en){:target="_blank"}. Note you'll follow these same instructions to get the Conversion label, which you'll need when you set up your first Action, below. 
+6. Click **Configure Actions**.
+7. Click **Create Destination**.
 
 ### Connect to Google Enhanced Conversions
 
