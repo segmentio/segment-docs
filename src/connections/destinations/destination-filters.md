@@ -119,7 +119,11 @@ Errors aren't exposed in the Event Deliverability tab of your Destination. For h
 **Q: How does destination filters work with array properties?**
 
 Destination Filters can filter properties out of objects nested in an array. For
-example, you could filter out the `price` property of every object in an array at `properties.products`. You can also filter out an entire array from the payload. However, you can't drop nested objects in an array, or filter properties out of a single object in an array.
+example, you can filter out the `price` property of every object in an array at `properties.products`. You can also filter out an entire array from the payload. However, you can't drop nested objects in an array, or filter properties out of a single object in an array.
+
+In order to block a specific property from all of the objects within a properties array, set the filter following the format: `<propertyType>.<arrayName>.<arrayElementLabel>​`.
+
+For example, the `properties.products.product_id` filter blocks all `product_id` fields from every `products` object in an array with the `properties` object. If you want to block the Identify trait product_id, select the filter under the User Traits option instead. You can also select from the Context Fields section for context object scenarios.
 
 **Q: How many filters can I create?**
 
