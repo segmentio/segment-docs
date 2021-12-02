@@ -19,7 +19,7 @@ hidden: true
 The Google Analytics 4 destination provides the following benefits:
 
 - **Fewer settings**. Data mapping for actions-based destinations happens during configuration, which eliminates the need for most settings.
-- **Clearer mapping of data**. Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to Google Analytics 4.
+- **Clearer mapping of data**. Actions-based destinations enable you to define the mapping between the data Segment receives from your source and the data Segment sends to Google Analytics 4.
 - **Support for multi-product arrays**. Products nested within arrays, like the products array in the [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) event, can be sent to Google Analytics 4.
 - **Multi-platform support**. You can use a Google Analytics 4 property for a website, an app, or both a website and app together.
 
@@ -27,7 +27,7 @@ The Google Analytics 4 destination provides the following benefits:
 
 Before you connect Segment to Google Analytics 4, configure a Google Analytics 4 property in your Analytics account. For more information, see Google's article: [Set up Analytics for a website and/or app](https://support.google.com/analytics/answer/9304153){:target='_blank'}.
 
-The Google Analytics 4 destination is in Private Beta, and does not appear in the Destinations catalog.
+The Google Analytics 4 destination is in Private Beta and does not appear in the Destinations catalog.
 
 1. To access the destination, navigate to this URL: `https://app.segment.com/<workspace_slug>/destinations/catalog/actions-google-analytics-4`. Replace `<workspace_slug>` with your workspace slug.
 2. Click **Configure Google Analytics 4** in the top-right corner of the screen.
