@@ -80,7 +80,5 @@ Actions define which events Segment sends to Google Enhanced Conversions, and th
 11. Click **Save**.
 12. Enable the action with the toggle at the top of the page.
 
-## Available Google Enhanced Conversions Actions
-
-- Post Conversion
+{% include components/actions-fields.html %}
 

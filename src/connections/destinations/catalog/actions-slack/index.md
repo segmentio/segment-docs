@@ -7,10 +7,6 @@ hide-dossier: true
 
 [Slack](https://www.slack.com){:target="_blank"} is a team collaboration tool work flows. It’s where the people you need, the information you share, and the tools you use come together to get things done.
 
-> info ""
-> This document is about a feature which is in beta. This means that the Destination Actions are in active development, and some functionality may change before it becomes generally available
-
-
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Slack Segment destination. There's also a page about the [non-Actions Slack destination](/docs/connections/destinations/catalog/slack/). Both of these destinations receives data from Segment. 
 
@@ -24,8 +20,6 @@ Slack (Actions) provides the following benefits over the classic Slack destinati
 
 
 ## Getting Started
-{% include content/ajs-upgrade.md %}
-
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Find the Destinations Actions item in the left navigation, and click it.
@@ -37,12 +31,7 @@ Slack (Actions) provides the following benefits over the classic Slack destinati
 
 - The classic Slack destination formats messages using the handlebars syntax. Slack (Actions) follows [Slack's  formatting syntax](https://api.slack.com/reference/surfaces/formatting){:target="_blank"}.
 
-## Available Slack actions
-
-Combine the supported [triggers](/docs/connections/destinations/actions/#components-of-a-destination-action) with the following Slack-supported actions:
-- [Post Message](#post-message)
-
-{% include components/actions-fields.html name="slack" %}
+{% include components/actions-fields.html %}
 
 ## Migration from the classic Slack destination
 
