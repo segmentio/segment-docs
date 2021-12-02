@@ -12,7 +12,7 @@ hidden: true
 
 
 > success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Google Analytics destination. There's also a page about the [non-Actions Google Analytics destination](/docs/connections/destinations/catalog/google-analytics/). Both of these destinations receives data _from_ Segment.
+> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Google Analytics 4 destination. There's also a page about the [non-Actions Google Universal Analytics destination](/docs/connections/destinations/catalog/google-analytics/). Both of these destinations receive data _from_ Segment.
 
 ## Benefits of Google Analytics 4
 
@@ -20,7 +20,7 @@ The Google Analytics 4 destination provides the following benefits:
 
 - **Fewer settings**. Data mapping for actions-based destinations happens during configuration, which eliminates the need for most settings.
 - **Clearer mapping of data**. Actions-based destinations enable you to define the mapping between the data Segment receives from your source and the data Segment sends to Google Analytics 4.
-- **Support for multi-product arrays**. Products nested within arrays, like the products array in the [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) event, can be sent to Google Analytics 4.
+- **Support for multi-product arrays**. Products nested within arrays, like the `products` array in the [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) event, can be sent to Google Analytics 4.
 - **Multi-platform support**. You can use a Google Analytics 4 property for a website, an app, or both a website and app together.
 
 ## Getting started
@@ -32,8 +32,8 @@ The Google Analytics 4 destination is in Private Beta and does not appear in the
 1. To access the destination, navigate to this URL: `https://app.segment.com/<workspace_slug>/destinations/catalog/actions-google-analytics-4`. Replace `<workspace_slug>` with your workspace slug.
 2. Click **Configure Google Analytics 4** in the top-right corner of the screen.
 3. Choose which of your sources to connect the destination to. (You can connect more sources to the destination later.)
-4. Click **Configure Actions** and follow the set up steps to** Create Destination**.
-5. On the Settings tab, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} and API Secret associated with your GA4 stream and click **Save**._ Note: to create a new API Secret, navigate in the Google Analytics UI to Admin > Data Streams > choose your stream > Measurement Protocol > Create. _
+4. Click **Configure Actions** and follow the set up steps to **Create Destination**.
+5. On the Settings tab, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} and API Secret associated with your GA4 stream and click **Save**. _Note: To create a new API Secret, navigate in the Google Analytics UI to Admin > Data Streams > choose your stream > Measurement Protocol > Create._
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
 ## Available Google Analytics 4 actions
