@@ -2,7 +2,7 @@
 title: 'Spec: Page'
 ---
 
-The `page` call lets you record whenever a user sees a page of your website, along with any optional properties about the page. Calling `page` or [`screen`](/docs/connections/spec/screen/) in one of our [sources](/docs/connections/sources/) is one of the first steps to getting started with Segment.
+The `page` call lets you record whenever a user sees a page of your website, along with any optional properties about the page. Calling `page` or [`screen`](/docs/connections/spec/screen/) in a Segment [source](/docs/connections/sources/) is one of the first steps to getting started with Segment.
 
 {% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/299969?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: The Page Method" description="Check out our high-level overview of the Page method in Segment University. (Must be logged in to access.)" %}
 
@@ -21,7 +21,7 @@ Here's the payload of a typical `page` call with most [common fields](/docs/conn
 }
 ```
 
-And here's the corresponding Javascript event that would generate the above payload. If you're using Segment's Javascript library, the page name and URL are automatically gathered and passed as properties into the event payload:
+And here's the corresponding JavaScript event that would generate the above payload. If you're using Segment's JavaScript library, the page name and URL are automatically gathered and passed as properties into the event payload:
 
 ```js
 analytics.page("Retail Page","Home");
@@ -77,11 +77,11 @@ Here's a complete example of a `page` call:
 
 Properties are extra pieces of information that describe the page. They can be anything you want.
 
-We've reserved some properties that have semantic meanings, and we handle them in special ways. For example, we always expect `path` to be the URL path of a page, and `referrer` to be the URL of the previous page.
+Segment handles properties with semantic meanings in unique ways. For example, Segment always expect `path` to be a page's URL path, and `referrer` to be the previous page's URL.
 
 You should **only use reserved properties for their intended meaning**.
 
-Reserved properties we have standardized:
+Reserved properties Segment has standardized:
 
 <table>
   <tr>
@@ -150,4 +150,4 @@ The keywords would most likely be the same as, or similar to, the keywords you w
   </tr>
 </table>
 
-**Note:** In [analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), we automatically send the following properties: `title`, `path`, `url`, `referrer`, and `search`.
+**Note:** In [analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), Segment automatically send the following properties: `title`, `path`, `url`, `referrer`, and `search`.
