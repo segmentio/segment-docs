@@ -83,71 +83,14 @@ You should **only use reserved properties for their intended meaning**.
 
 Reserved properties Segment has standardized:
 
-<table>
-  <tr>
-    <td>**Property**</td>
-    <td>**Type**</td>
-    <td>**Description**</td>
-  </tr>
-  <tr>
-    <td>`name`</td>
-    <td>String</td>
-    <td>Name of the page.
+| property   | type           | description                                                                                                                                                                                                                                                                                                                                                                                          |
+| ---------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`     | String         | Name of the page. Reserved for future use.                                                                                                                                                                                                                                                                                                                                                           |
+| `path`     | String         | Path portion of the page's URL.  Equivalent to [`canonical path`](https://github.com/segmentio/analytics.js/blob/master/analytics.js#L6499-L6503) which defaults to [`location.pathname`](https://developer.mozilla.org/en-US/docs/Web/API/Location) from the DOM API.                                                                                                                               |
+| `referrer` | String         | Previous page's full URL.  Equivalent to [`document.referrer`](https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer) from the DOM API.                                                                                                                                                                                                                                                 |
+| `search`   | String         | Query string portion of the page's URL. Equivalent to [`location.search`](https://developer.mozilla.org/en-US/docs/Web/API/Location) from the DOM API.                                                                                                                                                                                                                                               |
+| `title`    | String         | Page's title. Equivalent to [`document.title`](https://developer.mozilla.org/en-US/docs/Web/API/Document/title) from the DOM API.                                                                                                                                                                                                                                                                    |
+| `url`      | String         | Page's full URL. Segment first looks for the canonical URL. If the canonical URL is not provided, Segment uses [`location.href`](https://developer.mozilla.org/en-US/docs/Web/API/Location) from the DOM API.                                                                                                                                                                                        |
+| `keywords` | Array [String] | A list/array of keywords describing the page's content. The keywords would most likely be the same as, or similar to, the keywords you would find in an HTML [meta](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#Attributes) tag for SEO purposes. This property is mainly used by content publishers that rely heavily on pageview tracking. This is not automatically collected. |
 
-This is reserved for future use.
-
-    </td>
-  </tr>
-  <tr>
-    <td>`path`</td>
-    <td>String</td>
-    <td>Path portion of the URL of the page.
-
-
- Equivalent to [`canonical path`](https://github.com/segmentio/analytics.js/blob/master/analytics.js#L6499-L6503) which defaults to [`location.pathname`](https://developer.mozilla.org/en-US/docs/Web/API/Location) from the DOM API.
-    </td>
-  </tr>
-  <tr>
-    <td>`referrer` </td>
-    <td>String</td>
-    <td>Full URL of the previous page.
-
-
- Equivalent to [`document.referrer`](https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer) from the DOM API.</td>
-  </tr>
-  <tr>
-    <td>`search`</td>
-    <td>String</td>
-    <td>Query string portion of the URL of the page.
-
-
- Equivalent to [`location.search`](https://developer.mozilla.org/en-US/docs/Web/API/Location) from the DOM API.</td>
-  </tr>
-  <tr>
-    <td>`title`</td>
-    <td>String</td>
-    <td>Title of the page.
-
-
- Equivalent to [`document.title`](https://developer.mozilla.org/en-US/docs/Web/API/Document/title) from the DOM API.</td>
-  </tr>
-  <tr>
-    <td>`url`</td>
-    <td>String</td>
-    <td>Full URL of the page.
-
-
-First we look for the canonical url. If the canonical url is not provided, we use [`location.href`](https://developer.mozilla.org/en-US/docs/Web/API/Location) from the DOM API.</td>
-  </tr>
-    <tr>
-    <td>`keywords`</td>
-    <td>Array[String]</td>
-    <td>A list/array of keywords describing the content of the page.
-
-
-The keywords would most likely be the same as, or similar to, the keywords you would find in an html [meta](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#Attributes) tag for SEO purposes. This property is mainly used by content publishers that rely heavily on pageview tracking. This is not automatically collected.
-    </td>
-  </tr>
-</table>
-
-**Note:** In [analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), Segment automatically send the following properties: `title`, `path`, `url`, `referrer`, and `search`.
+**Note:** In [analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), Segment automatically sends the following properties: `title`, `path`, `url`, `referrer`, and `search`.
