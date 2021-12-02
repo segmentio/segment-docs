@@ -18,9 +18,7 @@ loaded into one of the most powerful and cost-effective data warehouses today.
 
 ## Getting Started
 
-First, you'll want to enable BigQuery for your Google Cloud project. Then, you
-will create a Service Account for Segment to use. Last, you will create the
-warehouse in Segment.
+In order store your Segment data in BigQuery, you must [enable BigQuery for your Google Cloud project](#create-a-project-and-enable-bigquery), [create a GCP service account for Segment to assume](#create-a-service-account-for-segment), and [create a warehouse in the Segment app](#create-the-warehouse-in-segment).
 
 ### Create a Project and Enable BigQuery
 
@@ -30,8 +28,8 @@ warehouse in Segment.
   - If you have an existing project, you will need to [enable the BigQuery API](https://cloud.google.com/bigquery/quickstart-web-ui).
     Once you've done so, you should see BigQuery in the "Resources" section of Cloud Platform.
   - **Note:** make sure [billing is enabled](https://support.google.com/cloud/answer/6293499#enable-billing) on your project,
-    otherwise Segment will not be able to write into the cluster.
-3. Copy your project ID, as you will need it later.
+    or Segment will not be able to write into the cluster.
+3. Copy your project ID, as you will need it when creating your warehouse source in the Segment app.
 
 ### Create a Service Account for Segment
 
@@ -40,7 +38,7 @@ for more information.
 
 1. From the Navigation panel on the left, go to **IAM & admin** > **Service accounts**
 2. Click **Create Service Account** along the top
-3. Enter a name (for example: "segment-warehouses") and click **Create**
+3. Enter a name for the service account (for example: "segment-warehouses") and click **Create**
 4. When assigning permissions, make sure to grant the following roles:
     - `BigQuery Data Owner`
     - `BigQuery Job User`
@@ -51,8 +49,9 @@ The downloaded file will be used to create your warehouse in the next section.
 
 1. In Segment, go to **Workspace** > **Add destination** > Search for "BigQuery"
 2. Select **BigQuery**
-3. Enter your project ID in the **Project** field
-4. Copy the contents of the credentials (the JSON key) into the **Credentials** field <br/>
+3. Add a name for the destination to the **Name your destination** field
+4. Enter your project ID in the **Project** field
+5. Copy the contents of the credentials (the JSON key) into the **Credentials** field <br/>
 **Optional:** Enter a [region code](https://cloud.google.com/compute/docs/regions-zones/) in the **Location** field (the default will be "US")
 6. Click **Connect**
 7. if Segment is able to successfully connect with the provided **Project ID** and **Credentials**,
@@ -105,7 +104,7 @@ from <project-id>.<source-name>.<collection-name>_view
 For early customers using BigQuery with Segment, rather than providing Segment
 with credentials, access was granted to a shared Service Account
 (`connector@segment-1119.iam.gserviceaccount.com`). While convenient for early
-adopters, this presents potential security risks that Segment would prefer to address
+adopters, this presented potential security risks that Segment would prefer to address
 proactively.
 
 As of **March 2019**, Segment requires BigQuery customers to
@@ -117,7 +116,7 @@ Account.
 In order to stay ahead of this change, make sure to migrate your warehouse by following
 the instructions in the "Create a Service Account for Segment" section above.
 Then, head to your warehouse's connection settings and update with the
-**Credentials** you created along the way.
+**Credentials** you created.
 
 
 ## Best Practices
@@ -125,10 +124,10 @@ Then, head to your warehouse's connection settings and update with the
 ### Use views
 
 BigQuery charges based on the amount of data scanned by your queries. Views are
-a derived view over your tables that we use for de-duplication of events.
+a derived view over your tables that Segment uses for de-duplication of events.
 Therefore, we recommend you query a specific view whenever possible to avoid
 duplicate events and historical objects. It's important to note that BigQuery
-views are not cached:
+views are not cached. 
 
 > BigQuery's views are logical views, not materialized views, which means that
 > the query that defines the view is re-executed every time the view is queried.
