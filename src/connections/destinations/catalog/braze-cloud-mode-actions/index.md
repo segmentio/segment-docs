@@ -2,7 +2,8 @@
 title: Braze Cloud Mode (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
-hidden: true
+redirect_from:
+  - '/connections/destinations/catalog/actions-braze-cloud/'
 ---
 {% include content/plan-grid.md name="actions" %}
 
@@ -27,7 +28,9 @@ Braze Cloud Mode (Actions) provides the following benefit over Braze Classic:
    - **REST Endpoint**: Your Braze REST Endpoint. For more information, see [API Overview](https://www.braze.com/docs/api/basics/){:target="_blank"} in the Braze documentation.
 
 
-{% include components/actions-fields.html %}
+{% include components/actions-fields.html settings="true"%}
+
+{% include components/actions-fields.html%}
 
 
 ## Migration from Braze Classic

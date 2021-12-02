@@ -1,5 +1,10 @@
 <!-- in the file we're pulling from the API, "name" corresponds with the path to the yml blob for a specific destination.-->
 {% assign thisDestination = page.url | split: "/" | last %}
+
+{% assign overrideInfo = site.data.catalog.overrides.items % | where: "slug", thisDestination | first %}
+
+
+
 {% assign destinationInfo = site.data.catalog.destinations.items | where: "slug", thisDestination | first %}
 {% comment %}There are probably prettier ways to generate a list of links to these methods, but this was good enough for me.{% endcomment %}
 {% assign destMethods = "" | split: ", " %}
@@ -12,14 +17,18 @@
 {% assign methodHTML = methodUrl | append: methodName %}
 {% assign methodHTML = methodHTML | append: '</a>' %}
 {% assign destMethods = destMethods | push: methodHTML %} {%endif%}
+
+{% if page.cmode-override %}
+{% assign connectionModes = overrideInfo.connection_modes %}
+{% else %}
 {% assign connectionModes = destinationInfo.connection_modes %}
+{% endif %}
+
 {% assign components = destinationInfo.components %}
 {% endfor %}
 {% assign destMethods = destMethods| reverse %}
 
-{% if page.cmode-override %}
-{% assign destinationInfo = site.data.catalog.overrides.items % | where: "slug", thisDestination | first %}
-{% endif %}
+
 
 
 <div class="quick-info">

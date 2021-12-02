@@ -3,6 +3,7 @@ title: Customer.io Destination
 rewrite: true
 redirect_from: "/connections/destinations/catalog/customer.io/"
 hide-personas-partial: true
+maintenance: true
 ---
 
 [Customer.io](https://customer.io/) helps you send automated email, push, SMS, and webhooks based on your customers' activities in your app or product. It makes conversion tracking, optimization and re-marketing easier. The `analytics.js` Customer.io Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/customerio).

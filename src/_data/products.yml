@@ -100,7 +100,7 @@ items:
     add-on: false
 - product_display_name: Destination Actions
   slug: dest-actions
-  plan-note: "Destination Actions are available for all Segment plans."
+  plan-note: "Destination Actions are available for all Segment plans. Self-service plans are limited to two conditions per Trigger."
   plans:
     free: true
     team: true
