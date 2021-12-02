@@ -3,29 +3,28 @@ rewrite: true
 title: Appcues Destination
 hide-cmodes: true
 ---
-[Appcues](https://www.appcues.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) adds an experience layer to your product, so you can build user onboarding, NPS surveys, or feature announcements in minutes instead of in weeks. The Appcues JavaScript Destination is open-source. You can browse the code [on GitHub](https://github.com/appcues/analytics.js-integration-appcues).
+[Appcues](https://www.appcues.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) adds an experience layer to your product so you can build user onboarding, NPS surveys, or feature announcements in minutes instead of weeks. The Appcues JavaScript Destination is open-source. You can browse the code [on GitHub](https://github.com/appcues/analytics.js-integration-appcues).
 
-If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+If you notice any gaps, outdated information, or have feedback to improve the documentation, [let us know](https://segment.com/help/contact).
 
 
 ## Getting Started
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Appcues" in the Catalog, select it, and choose which of your sources to connect the destination to.
+2. Search for "Appcues" in the Catalog, select it, and choose the source you'll connect to the destination.
 3. In the destination settings, enter your `Appcues Id` (for client-side integration functionality) and/or your `API Key` (for server-side integration functionality) from the [Appcues account page](https://my.appcues.com/account).
 
 ### Server
 
-Although our JavaScript destination is the traditional way to use Appcues as part of the Segment platform, Appcues also offers a server-side destination with Segment, which is useful if you'd like to send user profile or event data to Appcues from another Segment partner service. The server-side destination may be used simultaneously with the JS destination. In many cases, this is preferable to routing all data through the JS destination.
+As an alternative to a traditional JavaScript implementation, Appcues offers a server-side destination with Segment. You may find the server-side destination useful if you'd like to send user profile or event data to Appcues from another Segment partner service. You can use the server-side destination alongside the JavaScript destination, which you may find preferable to routing all data through the JavaScript destination.
 
-The user profile and event data received through Appcues' server-side Segment destination can be used to segment
-and target Appcues flows, just like data received from the JS destination.
+As with the JavaScript destination, you can segment and target user profile and event data received through the Appcues server-side Segment destination. 
 
-For example, using the server-side destination, customer profile and event data could be directed from a CRM tool into the Appcues platform. This data could then be used for content targeting and user segmentation in the Appcues content editor, alongside data from our `analytics.js` destination.
+For example, using the server-side destination, you can direct customer profile and event data from a CRM tool into Appcues. You can then use the directed data for content targeting and user segmentation in the Appcues content editor, alongside data from Segment's `analytics.js` destination.
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
+To learn more about efer to the [Page method](/docs/connections/spec/page/) in the Segment Spec. An example call would look like:
 
 ```javascript
 analytics.page();
