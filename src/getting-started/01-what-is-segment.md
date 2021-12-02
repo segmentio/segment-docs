@@ -11,7 +11,7 @@ In a nutshell, the Segment libraries ([Sources](/docs/connections/sources/catalo
 
 [Segment Spec methods](/docs/connections/spec/) are how you collect interaction data from your interfaces, and the [Sources](/docs/connections/sources/) are what you package with your interfaces to collect and route the data.
 
-Once you've collected your interaction data, there are several different actions you can do:
+Once you've collected your interaction data, there are several different actions you can take:
 - Send it to [Destinations](/docs/connections/destinations/), which receive the data from any number of sources in real time
 - Send it to [Warehouses](/docs/connections/storage/) and other bulk storage tools, which hold your raw event schemas and update on regular intervals
 - Enrich the customer data you collect by [connecting data from your other tools](/docs/connections/sources/catalog/#cloud-apps), and then collect it in a warehouse to monitor performance, inform decision-making processes, and create uniquely customized user experiences.
@@ -29,7 +29,7 @@ You can collect data by implementing Segment’s tracking libraries as your Sour
 Segment also offers these other source libraries to cover less straightforward cases:
 
 - Use the [HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http-api/) if Segment doesn't offer a library for your specific environment yet.
-- The [Pixel Tracking API](/docs/connections/sources/catalog/libraries/server/pixel-tracking-api/) lets you track events from environments where you can’t execute code - for example, tracking when an email has opened.
+- The [Pixel Tracking API](/docs/connections/sources/catalog/libraries/server/pixel-tracking-api/) lets you track events from environments where you can’t execute code - for example, tracking when an email was opened.
 - The [Querystring API](/docs/connections/sources/catalog/libraries/website/javascript/querystring/) lets you use querystrings to load API methods when a user first visits a Segment-enabled site. Use this API for tracking events like email clicks and identifying users associated with those clicks on the destination page.
 
 ### Cloud App Sources
@@ -40,7 +40,7 @@ Segment also offers [Cloud App Sources](/docs/connections/sources/about-cloud-so
 
 ## How you can track data
 
-Segment supports several ways to implement tracking. The two most common are to use _device-based_ or _server-based_ libraries. You can use Segment's device-based libraries, such as JavaScript, iOS, and Android, to make calls on users’ browsers or mobile devices. You can also track data with Segment's server-based libraries, such as Node, Python, PHP, where the calls are triggered on your own servers and then sent to the Segment servers.
+Segment supports several ways to implement tracking. The two most common are to use _device-based_ or _server-based_ libraries. You can use Segment's device-based libraries, such as JavaScript, iOS, and Android, to make calls on users’ browsers or mobile devices. You can also track data with Segment's server-based libraries, such as Node, Python, or PHP, where the calls are triggered on your own servers and then sent to the Segment servers.
 
 When you collect data using device-based libraries, you can choose between these two different connection modes:
 * **Cloud-mode** is where the library sends the data directly to the Segment servers which then translate and forward it.
@@ -62,7 +62,7 @@ There are several [tracking API methods](/docs/connections/spec/), that you can 
   - [Page](/docs/connections/spec/page/) and [Screen](/docs/connections/spec/screen/): What web page or app screen are they on?
   - [Track](/docs/connections/spec/track/): What are they doing?
 
-Every call shares the same [common fields](/docs/connections/spec/common/). When you use these methods [as intended](/docs/connections/spec/best-practices-identify/), it allows Segment to detect a specific type of data, and correctly translate it to send it on to downstream destinations.
+Every call shares the same [common fields](/docs/connections/spec/common/). When you use these methods [as intended](/docs/connections/spec/best-practices-identify/), it allows Segment to detect a specific type of data and correctly translate it to send it on to downstream destinations.
 
 
 ## Where you can send data
