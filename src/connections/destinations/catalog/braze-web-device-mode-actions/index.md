@@ -2,7 +2,8 @@
 title: Braze Web Mode (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
-hidden: true
+redirect_from:
+  - '/connections/destinations/catalog/actions-braze-web/'
 ---
 {% include content/plan-grid.md name="actions" %}
 
@@ -26,7 +27,9 @@ Braze Web Mode (Actions) provides the following benefits over Braze Classic:
 2. Search for "Braze" in the Catalog, select **Braze Web Mode (Actions)**, and choose which of your sources to connect the destination to.
 3. Configure the Connection Settings. **API Key** and **SDK Endpoint** are required settings.
 
-{% include components/actions-fields.html name="braze-web" connection="true" %}
+{% include components/actions-fields.html settings="true"%}
+
+{% include components/actions-fields.html%}
 
 ## Other features
 
@@ -158,9 +161,6 @@ For more details on this snippet, see Braze's documentation [here](https://www.b
 
 ## Important differences from the classic Braze destination
 - Braze Web Mode (Actions) supports the Braze [Web](https://github.com/segment-integrations/analytics.js-integration-appboy){:target="_blank"} integration. [Braze Cloud Mode (Actions)](/docs/connections/destinations/catalog/actions-braze-cloud) supports server and mobile sources, but to use mobile sources in device-mode, use the Braze Classic destination.
-
-
-{% include components/actions-fields.html %}
 
 
 ## Migration from Braze Classic

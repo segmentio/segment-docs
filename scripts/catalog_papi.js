@@ -307,6 +307,8 @@ const updateDestinations = async () => {
       if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
       return 0;
     })
+    let actions = destination.actions
+    let presets = destination.presets
     
     const clone = (obj) => Object.assign({}, obj)
     const renameKey = (object, key, newKey) => {
@@ -321,6 +323,7 @@ const updateDestinations = async () => {
     destination.supportedMethods = renameKey(destination.supportedMethods, 'pageview', 'page')
 
     let updatedDestination = {
+      destination_id: destination.id,
       display_name: destination.name,
       name: destination.name,
       slug,
@@ -343,7 +346,9 @@ const updateDestinations = async () => {
       browserUnbundlingPublic: destination.supportedFeatures.browserUnbundlingPublic,
       replay: destination.supportedFeatures.replay,
       connection_modes,
-      settings
+      settings,
+      actions,
+      presets
     }
     destinationsUpdated.push(updatedDestination)
     doesCatalogItemExist(updatedDestination)
