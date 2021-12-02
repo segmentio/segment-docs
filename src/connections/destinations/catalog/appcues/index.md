@@ -48,8 +48,8 @@ When you use `identify` on `analytics.js`, Segment call `Appcues.identify`. This
 
 To get the most out of Appcues, you should send as much user data as possible in the `identify` call. Properties personalize content and target experiences to specific users. Most Appcues customers send properties that fall into a few groups:
   * Properties to target based on broad classifications, such as `role` or `userType`
-  * Properties to personalize Appcues content, such as `name`, `firstName` or `company`
-  * Properties to target based on user lifecycle, such as `createdAt` (date) or usage metrics such as `numTasksComplete`
+  * Properties to personalize Appcues content, such as `name`, `firstName`, or `company`
+  * Properties to target based on user lifecycle, such as `createdAt` (date), or usage metrics, such as `numTasksComplete`
 
 ## Track
 
