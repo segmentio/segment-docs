@@ -30,6 +30,9 @@ All other traits will be sent to CleverTap as custom attributes. Please also not
 
 When you `track` an event, we will send that event to CleverTap as a custom event.  Note that CleverTap does not support arrays or nested objects for custom track event properties.
 
+> note ""
+> CleverTap requires `identify` traits such as `userId` or `email` to record and associate the Track event. Without these traits, the Track event does not appear in CleverTap.
+
 Please also note that the default logic for our cloud mode connection to CleverTap will lower case and snake_case any event properties passed from Segment's servers to CleverTap. Our device mode connection will not lower case or snake_case any event properties passed directly to CleverTap from the client.
 
 ### Order Completed
