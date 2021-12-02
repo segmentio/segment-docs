@@ -4,7 +4,7 @@ rewrite: true
 redirect_from: '/connections/destinations/catalog/supervised-ai/'
 ---
 
-[DataBrain](https://usedatabrain.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides a proactive customer success tool for hyper-growth startups. DataBrain is fully data driven. It ingests data from Segment and leverage smachine learning techniques to send users automated alerts, and predict churn, conversion, retention or any event you need to track.
+[DataBrain](https://usedatabrain.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a tool for product-led companies that helps Sales and Customer Success teams close deals, adopt products, and retain customers through data and analytics. It ingests data from Segment and leverages machine learning techniques to send users automated alerts, and predict churn, conversion, and retention on any event you need to track.
 
 This destination is maintained by DataBrain. For any issues with the destination, [contact the DataBrain Support team](mailto:support@supervisedai.com).
 
