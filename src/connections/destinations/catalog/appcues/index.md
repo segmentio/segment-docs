@@ -96,4 +96,4 @@ If you've installed the `analytics.js` script on multiple domains (like a market
 
 ## Delete
 
-When you trigger a user deletion using [Segment's Privacy features](/docs/privacy/user-deletion-and-suppression/), Segment forwards an actionable delete notification to Appcues. Refer to the Appcues documentation for information on [how Appcues handles deletion requests](https://docs.appcues.com/article/443-gdpr-deletion-api).
+When you trigger a user deletion using [Segment's Privacy features](/docs/privacy/user-deletion-and-suppression/), Segment forwards an actionable delete notification to Appcues. Refer to the Appcues documentation for information on [how Appcues handles deletion requests](https://docs.appcues.com/article/443-gdpr-deletion-api){:target="_blank"}.
