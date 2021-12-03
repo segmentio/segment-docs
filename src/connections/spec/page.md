@@ -77,7 +77,7 @@ Here's a complete example of a `page` call:
 
 Properties are extra pieces of information that describe the page. They can be anything you want.
 
-Segment handles properties with semantic meanings in unique ways. For example, Segment always expect `path` to be a page's URL path, and `referrer` to be the previous page's URL.
+Segment handles properties with semantic meanings in unique ways. For example, Segment always expects `path` to be a page's URL path, and `referrer` to be the previous page's URL.
 
 You should **only use reserved properties for their intended meaning**.
 
