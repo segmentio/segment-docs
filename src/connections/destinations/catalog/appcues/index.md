@@ -83,7 +83,7 @@ These events are sent as track calls to the other destinations you've turned on.
 
 To enable this feature, go to the Integrations Settings in Appcues and click "Activate" under the Segment integration.
 
-After you activate the Segment integration, Appcues automatically forwards these events to your Segment workspace. The events will appear in the same [Source Debugger](/docs/connections/sources/debugger/).
+After you activate the Segment integration, Appcues forwards these events to your Segment workspace. The events will appear in the same [Source Debugger](/docs/connections/sources/debugger/).
 
 ### Whitelisted Domains
 
