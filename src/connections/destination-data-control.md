@@ -50,7 +50,7 @@ CSV files generate based on the current view of your Source Schema. Any search p
 You can download the following Track events:
 - Event Name
 - Last Seen (UTC)
-  - if greater than 30 days, the value is "more than 30 days ago"
+  - If greater than 30 days, the value is "more than 30 days ago"
 - Allowed Count
 - Blocked Count
 - Total Count
