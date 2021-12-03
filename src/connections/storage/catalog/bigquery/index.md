@@ -87,10 +87,10 @@ from <project-id>.<source-name>.<collection-name>$20160809
 #### Views
 
 A [view](https://cloud.google.com/bigquery/querying-data#views) is a virtual
-table defined by a SQL query. We use views in our de-duplication process to
+table defined by a SQL query. Segment uses views in the de-duplication process to
 ensure that events that you are querying unique events, and the latest objects
-from third-party data. All our views are set up to show information from the last
-60 days. Whenever possible, we recommend that you query from these views.
+from third-party data. All Segment views are set up to show information from the last
+60 days. Whenever possible, query from these views.
 
 Views are appended with `_view` , which you can query like this:
 
@@ -125,7 +125,7 @@ Then, head to your warehouse's connection settings and update with the
 
 BigQuery charges based on the amount of data scanned by your queries. Views are
 a derived view over your tables that Segment uses for de-duplication of events.
-Therefore, we recommend you query a specific view whenever possible to avoid
+Therefore, Segment recommends you query a specific view whenever possible to avoid
 duplicate events and historical objects. It's important to note that BigQuery
 views are not cached. 
 
@@ -154,12 +154,11 @@ querying sub-sets of tables.
 Absolutely! You will just need to modify one of the references to 60 in the view
 definition to the number of days of your choosing.
 
-We chose 60 days as it suits the needs of most of our customers. However,
+Segment chose 60 days as it suits the needs of most customers. However,
 you're welcome to update the definition of the view as long as the name stays
 the same.
 
-Here is the base query we use when first setting up your views. We are leaving
-in the placeholders (`%s.%s.%s`) where you would want to include the project,
+Here is the base query Segment uses when first setting up your views. Included in the base query are the placeholders (`%s.%s.%s`) where you would want to include the project,
 dataset and table (in that order).
 
 ```sql
@@ -198,7 +197,7 @@ functions.
 ### Does Segment support streaming inserts?
 
 Segment's connector does not support streaming inserts at this time. If you have
-a need for streaming data into BigQuery, [contact us](https://segment.com/requests/integrations/).
+a need for streaming data into BigQuery, [contact Segment support](https://segment.com/requests/integrations/).
 
 ### Can I customize my sync schedule?
 
@@ -210,5 +209,5 @@ a need for streaming data into BigQuery, [contact us](https://segment.com/reques
 
 ### I'm seeing duplicates in my tables.
 
-This behavior is expected. We only de-duplicate data in your views. See the
+This behavior is expected. Segment only de-duplicates data in your views. See the
 section on [views](#views) for more details.
