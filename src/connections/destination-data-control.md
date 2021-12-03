@@ -45,7 +45,7 @@ Segment allows you to download your Source Schema as a CSV file, maximizing port
 
 ![](images/export-source-schema.png)
 
-CSV files are generated based on the current view of your Source Schema. Any search parameters or filters applied to the current Source Schema view are also applied to the CSV.
+CSV files generate based on the current view of your Source Schema. Any search parameters or filters you apply to the current Source Schema view also apply to the CSV.
 
 You can download the following Track events:
 - Event Name
