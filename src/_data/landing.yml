@@ -4,7 +4,7 @@ sections:
   section:
   - name: Getting started with Segment
     icon: getting-started.svg
-    description: "Learn about Segment, work through a basic implementation, plan a full implementation, and learn about features and extensions. "
+    description: "Learn about Segment, plan and work through a basic implementation, and explore features and extensions."
     path: /getting-started/
 - section_title: How can Segment help you?
   section_col: 6
