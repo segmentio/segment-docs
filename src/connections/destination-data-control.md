@@ -60,4 +60,4 @@ You can download the following Track events:
 Export Schema is not available for Identify or Group events.
 
 > note ""
-> Export Schema does not include any actual values (for example, personal data) for the events, properties, and traits you are tracking for a specific source. Properties are not included in the CSV.
+> Export Schema doesn't include any actual values (for example, personal data) for the events, properties, and traits you are tracking for a specific source. Properties aren't included in the CSV.
