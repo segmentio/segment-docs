@@ -137,8 +137,6 @@ Segment sends Page calls to Braze as custom events if you have enabled either **
 > info "Tip"
 > Add Segment's open-source [Middleware](https://github.com/segmentio/segment-braze-mobile-middleware) tool to optimize your integration. This tool limits [Data Point](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/) use by debouncing duplicate identify() calls from Segment. For more information, see the project's [README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).
 
-
-
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
@@ -151,9 +149,41 @@ analytics.identify('ze8rt1u89', {
 
 When you Identify a user, Segment passes that user's information to Braze with `userId` as Braze's External User ID.
 
-If you are using a device-mode connection, Braze's SDK also automatically assigns a `braze_id` to every user. This allows Braze to capture anonymous activity from the device by matching on `braze_id` instead of `userId`. This applies to _device-mode connections_.
+If you are using a device-mode connection, Braze's SDK assigns a `device_id` and a backend identifier, `braze_id`, to every user. This allows Braze to capture anonymous activity from the device by matching on those identifiers instead of `userId`. This applies to _device-mode connections_.
 
 To send anonymous user data in cloud-mode, you must manually include the user's `braze_id` in all your Segment API calls in the `integrations.Braze.braze_id` or `context.integrations.Braze.braze_id` object.
+
+### Capture the braze_id of anonymous users
+
+Pass one of the many identifiers that may exist on an anonymous user profile to the [Braze's User by Identifier REST endpoint](https://www.braze.com/docs/api/endpoints/export/user_data/post_users_identifier/){:target='_blank'} to capture and export the `braze_id`. These identifiers include:
+- email address
+- phone number
+- device_id
+
+Choose an identifier that is available on the user profile at that point in the user lifecycle.
+
+For example, if you pass device_id to the User by Identifier endpoint:
+
+```js
+{
+  "device_id": “{{device_id}}",
+  "fields_to_export": ["braze_id"]
+}
+```
+
+The endpoint returns:
+
+```js
+{
+  "users": [
+    {
+        "braze_id": “{{braze_id}}"
+    }
+  ],
+  "message": "success"
+} 
+```
+
 
 > info "Tip"
 > Braze is complex. If you decide to use the `braze_id`, consider [contacting Segment Success Engineering](https://segment.com/help/contact/) or a Solutions Architect to verify your Braze implementation.
