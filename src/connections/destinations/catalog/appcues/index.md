@@ -91,7 +91,7 @@ By default, Appcues targets based on the URL's path.
 
 For example, if you create an Appcues experience and target it to `/integrations`, it appears wherever the embed script is installed with that URL path, like `appcues.com/integrations` and `my.appcues.com/integrations`.
 
-If you've installed the `analytics.js` script on multiple domains (like a marketing site and your web app), you should use Appcues-whitelisted domains when targeting your experience.
+If you've installed the Analytics.js script on multiple domains (like a marketing site and your web app), you should use Appcues-whitelisted domains when targeting your experience.
 
 
 ## Delete
