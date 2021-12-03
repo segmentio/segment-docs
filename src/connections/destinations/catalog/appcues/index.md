@@ -31,7 +31,7 @@ Refer to the Segment Spec for information about the [Page method](/docs/connecti
 ```javascript
 analytics.page();
 ```
-Each time the page changes, Appcues checks to see if a user qualifies for an experience. When you first call `page` using `analytics.js`, `Appcues.start` checks if there are any current flows for the user and loads them, if necessary.
+Each time the page changes, Appcues checks to see if a user qualifies for an experience. When you first call `page` using Analytics.js, `Appcues.start` checks if there are any current flows for the user and loads them, if necessary.
 
 ## Identify
 
