@@ -5,17 +5,17 @@ hide-boilerplate: true
 hide-dossier: true
 ---
 
-Facebook Conversions API (Actions) enables advertisers to send events from their servers directly to Facebook. Server-side events link to Facebook Pixel events, and process like browser pixel events. This means that serve-side events are used in measurement, reporting, and optimization, just like browser pixel events.
+Facebook Conversions API (Actions) enables advertisers to send events from their servers directly to Facebook. Server-side events link to Facebook Pixel events, and process like browser pixel events. This means that server-side events are used in measurement, reporting, and optimization, just like browser pixel events.
 
 > info ""
 > This document is about a feature which is in beta. This means that the Facebook Conversions API (Actions) destination is in active development, and some functionality may change before it becomes generally available.
 
 > success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Customer.io Segment destination. There's also a page about the [non-Actions Facebook Conversions API destination](/docs/connections/destinations/catalog/facebook-pixel-server-side/). Both of these destinations receives data _from_ Segment.
+> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Facebook Conversions API Segment destination. There's also a page about the [non-Actions Facebook Conversions API destination](/docs/connections/destinations/catalog/facebook-pixel-server-side/). Both of these destinations receive data _from_ Segment.
 
 ## Benefits of Facebook Conversions API (Actions) vs Facebook Conversions API Classic
 
-Segment’s Facebook Conversions API (Actions) destination provides the following benefits over the classic Facebook Conversions API destination:
+The Facebook Conversions API (Actions) destination provides the following benefits over the classic Facebook Conversions API destination:
 - **Fewer settings**. Data mapping for actions-based destinations happens during configuration, which eliminates the need for most settings.
 - **Clearer mapping of data**. Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to Facebook Conversions API.
 - **Support for page calls**. Page calls can be sent to Facebook as a standard Page View.
@@ -50,14 +50,14 @@ The Facebook Conversions API (Actions) destination is in Private Beta, and does 
 1. To access the destination, navigate to this URL: `https://app.segment.com/<workspace_slug>/destinations/catalog/actions-facebook-conversions-api`. Replace `<workspace_slug>` with your workspace slug.
 2. Click **Configure Facebook Conversions API (Actions)** in the top-right corner of the screen.
 3. Choose which of your sources to connect the destination to. (You can connect more sources to the destination later.)
-4. Click **Configure Actions** and follow the set up steps to** Create Destination**.
+4. Click **Configure Actions** and follow the set up steps to **Create Destination**.
 5. On the Settings tab, enter in your Pixel ID and click **Save**.
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
 ## Configuration options
 
 
-The Segment Facebook Conversions API destination gives you several ways to implement your conversion tracking. You can use it with [Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/), or as a stand-alone alternative. You can read more about implementation options below and in [Facebook documentation](https://developers.facebook.com/docs/marketing-api/conversions-api/guides/end-to-end-implementation#pick-your-integration-type){:target="_blank"}.
+The Facebook Conversions API (Actions) destination gives you several ways to implement your conversion tracking. You can use it with [Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/), or as a stand-alone alternative. You can read more about implementation options below and in [Facebook documentation](https://developers.facebook.com/docs/marketing-api/conversions-api/guides/end-to-end-implementation#pick-your-integration-type){:target="_blank"}.
 
 
 ### Send events from both the browser and the server
@@ -94,6 +94,12 @@ For this option to work best, the same External ID needs to be passed from the b
 
 With the Facebook Conversions API (Actions) destination, you can choose any field in your event to map to External ID. By default, Segment uses the userId (or anonymousId if userId is not present) to set the External ID, but you can change this in the User Data object mapping of your Action.
 
+![the coalesce function](images/image1.png)
+
+You can send additional User Data to increase the match rate for events from a server source. Collect other fields from the browser, like User Agent, IP Address, and [Facebook's cookie parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and map them in the User Data object.
+
+![the user data object](images/image2.png)
+
 #### Deduplication considerations
 
 If you choose this option, each source sends different events, and deduplication is not necessary.
@@ -101,7 +107,6 @@ If you choose this option, each source sends different events, and deduplication
 ### Send events from the server
 
 Use this approach if you don’t want to track users from the browser with Facebook Pixel. By default, Facebook Pixel collects cookie data, as well as browser data such as the IP Address and the User Agent, some of which you might not want to collect. By sending from a Segment server source to Facebook’s Conversions API, you can control which identifiers you pass to Facebook.
-
 
 #### Match rate considerations
 
