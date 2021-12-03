@@ -158,7 +158,7 @@ Segment chose 60 days as it suits the needs of most customers. However,
 you're welcome to update the definition of the view as long as the name stays
 the same.
 
-Here is the base query Segment uses when first setting up your views. Included in the base query are the placeholders (`%s.%s.%s`) where you would want to include the project,
+Here is the base query Segment uses when first setting up your views. Included in the base query are the placeholders (`%s.%s.%s`) that you would want to include the project,
 dataset and table (in that order).
 
 ```sql
