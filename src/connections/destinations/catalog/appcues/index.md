@@ -44,7 +44,7 @@ analytics.identify('12091906-01011992', {
 });
 ```
 
-When you use `identify` on `analytics.js`, Segment call `Appcues.identify`. This is the preferred method of using and targeting on user properties.
+When you call `identify` with Analytics.js, Segment calls `Appcues.identify`. This is the preferred method of using and targeting on user properties.
 
 To get the most out of Appcues, you should send as much user data as possible in the `identify` call. Properties personalize content and target experiences to specific users. Most Appcues customers send properties that fall into one of the following groups:
   * Properties to target based on broad classifications, such as `role` or `userType`
