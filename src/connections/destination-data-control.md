@@ -55,7 +55,7 @@ You can download the following Track events:
 - Blocked Count
 - Total Count
 - Planned (available for Protocols customers with a connected Tracking Plan)
-  - values are "planned" or "unplanned"
+  - Values are "planned" or "unplanned"
 
 Export Schema is not available for Identify or Group events.
 
