@@ -41,7 +41,7 @@ Once you block an event in Segment, we'll stop forwarding it to all of your Dest
 
 ## Export your Source Schema
 
-Segment allows you to download your Source Schema as a CSV file, maximizing portability and access to event data. You can download a copy of your schema by visiting the source schema page.
+Segment allows you to download your Source Schema as a CSV file, maximizing portability and access to event data. You can download a copy of your schema by visiting the Source Schema page.
 
 ![](images/export-source-schema.png)
 
