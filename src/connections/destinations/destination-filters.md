@@ -104,7 +104,7 @@ filtering events sent to a destination based on the name of the event.
 
 Some destinations offer settings that also allow you to filter data. For example, the Facebook App Events destination allows you to map `Screen` events to `Track` events. Because Destination Filters are evaluated and applied _before_ the Destination settings are applied, they can conflict with your settings.
 
-In the example in the video above, if you have a Destination Filter that only allows Track events _and_ you have the **Use Screen Events as Track Events** setting enabled, `Track` events are drop, but `Screen` events still process, and the destination settings transform it into a `Track` event - *after* the filters.
+In the example in the video above, if you have a Destination Filter that filters Track events _and_ you have the **Use Screen Events as Track Events** setting enabled, `Track` events will be dropped, but `Screen` events still process. The destination settings will transform it into a `Track` event - *after* the filters.
 
 **Error handling**
 
