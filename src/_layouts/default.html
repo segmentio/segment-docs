@@ -22,6 +22,7 @@
   {%- assign description = currentIntegration.description -%}
   {%- assign priority = 4 -%}
 {%- endif -%}
+<!-- {{site.env.ENVIRONMENT}} -->
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 <head>
   <base href="{{ basehref }}" />
@@ -67,8 +68,6 @@
   <link rel="stylesheet" href="{{ '/assets/algolia.css' | relative_url }}">
 </head>
 <body>
-    <!-- This section displays on deploy previews only -->
-  {% include components/deploy-preview.html %}
   <div id="consent-manager"></div>
   {{ content }}
   <a class="back-scrolling" data-back-scrolling data-active-class="back-scrolling--active">
@@ -235,6 +234,9 @@
         // analytics.identify();
       }}();
     </script>
-    
+{%- if site.env.ENVIRONMENT == "development-internal" -%}
+<script src="{{ "./assets/docs.delay.js" | relative_url}}"></script>
+
+{%- endif -%}
 </body>
 </html>

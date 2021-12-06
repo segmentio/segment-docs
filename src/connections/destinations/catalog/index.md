@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 > info "Want a simpler list?"
-> Check out the [list of _all_ destinations](index-all/).
+> Check out the [list of _all_ destinations](/docs/connections/destinations/catalog/index-all/).
 
 <br>
 <div class="destinations-catalog">
@@ -18,8 +18,6 @@ redirect_from:
     <div class="destinations-catalog__section markdown">
       {% assign category_icon = category.slug | slugify %}
       <h2 class="destinations-catalog__title flex flex--middle" id="{{ category.slug | slugify }}">
-        {% include icons/destinations-catalog/{{ category_icon }}.svg %}
-        {{ category.display_name }}
       </h2>
       <div class="flex flex--wrap waffle waffle--xlarge">
         {% assign destinations = site.data.catalog.destinations.items | where: "categories", category.display_name %}

@@ -21,18 +21,6 @@ To configure Klaviyo as an Event Source to get data into your warehouse or other
 3. Navigate to your [Account > Settings > API Keys](https://www.klaviyo.com/account#api-keys-tab){:target="_blank"} in the Klaviyo's UI and copy your "API Key" into the Segment Settings UI.
 4. **Note:** Klaviyo requires the Private API Key to use the List API. You can find this by going to Klaviyo's UI and clicking [Account > Settings > API Keys > Create API Key](https://www.klaviyo.com/account#api-keys-tab){:target="_blank"}  to generate a Private API Key and copy it into the Segment Settings UI.
 
-
-## Page
-
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
-
-```
-analytics.page();
-```
-
-> info ""
-> `page` calls are supported client-side on analytics.js.
-
 ## Identify
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
@@ -100,7 +88,7 @@ When you call `identify` using a **server side** library, you can optionally sen
 
 In order for this to work, you must add the **Private Key** inside the Klaviyo settings in Segment. You can generate a private key by clicking `Account > Settings > API Keys > Create API Key` inside Klaviyo.
 
-You can choose to provide a default `listId` that we can fallback on when adding users to a list. If you'd like to override this default `listId`, you can also do so by sending it manually using code in `destinations.Klaviyo.listId`.
+You can choose to provide a default `listId` that we can fallback on when adding users to a list. If you'd like to override this default `listId`, you can also do so by sending it manually using code in `integrations.Klaviyo.listId`.
 
 **Important**: You must provide an `email` in your `traits` or send `email` as the `userId`. Be sure to provide the `Private Key` in the Klaviyo settings for this to work.
 
@@ -132,7 +120,7 @@ You can also choose whether you want to force users to confirm the optin to your
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track({

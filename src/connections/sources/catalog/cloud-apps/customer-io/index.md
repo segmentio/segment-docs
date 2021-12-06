@@ -13,27 +13,23 @@ In your favorite BI or analytics tool, you'll be able to analyze your email camp
 
 ## Getting Started
 
-If you have previously enabled sending email events using the Customer.io destination during our beta (using a project write key), you do not need to create new Customer.io source. Your email data will continue to flow as normal.
+If you previously sent email events using the Customer.io destination during our beta (using a project write key), you do not need to create new Customer.io source. Your email data will continue to flow as normal.
 
+1. Go to **Connections > Sources** and click **Add Source** in the Segment app.
 
-1. From your workspace's `segment.com/<your-workspace>/sources` page, click **Add source**.
-
-2. Choose Customer.io.
+2. Search for **Customer.io** in the Sources Catalog and click **Add Source**.
 
 3. Give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name autopopulates the schema name. For example, the source name  `Customer.io` creates the schema `customerio`.
 
 4. The next page ("Overview") displays your **Segment write key for Customer.io.** Copy this write key. 
 
-5. To finish the set up, go to your Customer.io account, go to **Settings > Integrations > Segment**, and enter the Segment write key.
+5. To finish the set up, go to your Customer.io account, go to **Data & Integrations > Integrations > Segment**, and enter the Segment write key.
 
-![](images/customerio_streaming_data_out.png)
+   ![](images/customerio_streaming_data_out.png)
 
+6. Click **Connect Segment**.
 
-6. Click **Save**.
-
-7. In Segment, click into your Customer.io Source in `segment.com/goto-my-workspace/sources`. From there you'll be able to add Destinations where you want to see email events.
-
-![](images/customerio1.gif)
+7. In Segment, click **Add Destinations** in your Customer.io source to add destinations for your Customer.io data.
 
 That's it! As you send emails, events will now be sent to your destinations and automatically loaded into any warehouses you have enabled. 
 

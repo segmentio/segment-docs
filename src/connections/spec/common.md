@@ -302,7 +302,10 @@ Sending data to the rest of our destinations is opt-out so if you don't specify 
 
 Every API call has four timestamps, `originalTimestamp`, `timestamp`, `sentAt` and `receivedAt.`  They're used for very different purposes.
 
-**All timestamps are [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date strings.**
+**All timestamps are [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601){:target="_blank"} date strings.**
+
+> note ""
+> **NOTE:** You must use ISO-8601 date strings that include timezones when you use timestamps with [Personas](/docs/personas/). If you send custom traits without a timezone, Segment doesn't save the timestamp value.
 
 ### Timestamp Overview
 
@@ -343,7 +346,7 @@ Every API call has four timestamps, `originalTimestamp`, `timestamp`, `sentAt` a
   </tr>
   <tr>
     <td>`receivedAt`</td>
-    <td>time on Segment server clock when call was received</td>
+    <td>Time on Segment server clock when call was received</td>
     <td>
       Used by Segment to calculate `timestamp`, and used as sort key in Warehouses.
       <br><br>

@@ -51,4 +51,9 @@ gmail
 (?:U|u)nmaps?\b
 (?:U|u)nlinks?\b
 (?:P|p)ostgres
-
+Smartly
+Hubspot
+Friendbuy
+Chargebee
+(?:L|l)ookback
+Subnet

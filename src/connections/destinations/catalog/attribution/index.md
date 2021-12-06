@@ -20,7 +20,7 @@ This destination is maintained by Attribution. For any issues with the destinati
 
 ## Page
 
-If you haven’t had a chance to review our spec, take a look tounderstand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you haven’t had a chance to review our spec, take a look tounderstand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page("pageLoaded");
@@ -32,7 +32,7 @@ Page calls are sent to Attribution to record visits on your dashboard.
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify("userId123", {
@@ -46,7 +46,7 @@ Identify calls are sent to Attribution as an `identify` event and are used to as
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track("Clicked Login Button")
@@ -57,7 +57,7 @@ Track calls are sent to Attribution as a `conversion event`. You should add a `c
 ![page](images/att5.png)
 
 ## Alias
-If you're not familiar with the Segment Specs, take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Alias method](/docs/connections/spec/alias/) does. An example call would look like:
 
 ```js
 analytics.alias('507f191e81');

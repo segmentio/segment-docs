@@ -104,7 +104,7 @@ filtering events sent to a destination based on the name of the event.
 
 Some destinations offer settings that also allow you to filter data. For example, the Facebook App Events destination allows you to map `Screen` events to `Track` events. Because Destination Filters are evaluated and applied _before_ the Destination settings are applied, they can conflict with your settings.
 
-In the example in the video above, if you have a Destination Filter that only allows Track events _and_ you have the **Use Screen Events as Track Events** setting enabled, `Track` events are drop, but `Screen` events still process, and the destination settings transform it into a `Track` event - *after* the filters.
+In the example in the video above, if you have a Destination Filter that filters Track events _and_ you have the **Use Screen Events as Track Events** setting enabled, `Track` events will be dropped, but `Screen` events still process. The destination settings will transform it into a `Track` event - *after* the filters.
 
 **Error handling**
 
@@ -119,7 +119,11 @@ Errors aren't exposed in the Event Deliverability tab of your Destination. For h
 **Q: How does destination filters work with array properties?**
 
 Destination Filters can filter properties out of objects nested in an array. For
-example, you could filter out the `price` property of every object in an array at `properties.products`. You can also filter out an entire array from the payload. However, you can't drop nested objects in an array, or filter properties out of a single object in an array.
+example, you can filter out the `price` property of every object in an array at `properties.products`. You can also filter out an entire array from the payload. However, you can't drop nested objects in an array, or filter properties out of a single object in an array.
+
+In order to block a specific property from all of the objects within a properties array, set the filter following the format: `<propertyType>.<arrayName>.<arrayElementLabel>​`.
+
+For example, the `properties.products.product_id` filter blocks all `product_id` fields from every `products` object in an array with the `properties` object. If you want to block the Identify trait product_id, select the filter under the User Traits option instead. You can also select from the Context Fields section for context object scenarios.
 
 **Q: How many filters can I create?**
 

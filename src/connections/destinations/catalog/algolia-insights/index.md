@@ -1,6 +1,7 @@
 ---
 title: Algolia Insights Destination
 rewrite: true
+layout: dest-test
 beta: true
 redirect_from: '/connections/destinations/catalog/algolia/'
 ---
@@ -18,11 +19,9 @@ This destination is maintained by [Algolia](https://www.algolia.com/). For any i
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 1. From the Segment web app, click **Catalog**.
 2. Search for "Algolia" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "App ID" & "API Key" into your Segment Settings UI which you can find from your [Algolia Dashboard](https://www.algolia.com/apps/), under API Keys menu.
+3. Enter the "App ID" & "API Key" into your Segment Settings UI which you can find on the Algolia Dashboard, under API Keys menu.
 
 _**NOTE:** The Algolia Insights Destination is not a plug-and-play integration. It requires you to modify your frontend code to send additional Algolia-related data like index name, queryID, etc._
 
@@ -32,9 +31,9 @@ You can read more about how to send Algolia-related data to Segment from [the do
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does.
 
-Algolia supports the following six events from Segment's [Ecommerce Spec](https://segment.com/docs/connections/spec/ecommerce/v2/).
+Algolia supports the following six events from Segment's [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/).
 
 <table>
   <tr>

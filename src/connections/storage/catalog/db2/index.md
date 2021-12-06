@@ -66,11 +66,13 @@ Search for and select "Db2":
 
 Add your credentials as follows:
 
+- Host (Found in Settings → Connection Info → Connection Information)
+- Port (50001 is Db2 Default)
+- Database name
 - User (This is the "User ID" that you created above)
 - Password
-- Host (Found in Settings → Connection Info → Connection Information)
-- Port (50000 by default)
-- Database name
+- Security (Enter "SSL" in this field if applicable - optional)
+
 
 <img src="./images/settings.png" style="max-width: 540px">
 
@@ -85,10 +87,13 @@ database shortly.
 If your Db2 Warehouse is in a private network, be sure to [whitelist
 Segment's IP
 address](https://segment.com/docs/connections/storage/warehouses/faq/#which-ips-should-i-whitelist).
-Otherwise, we will not be able to load your data.
+Otherwise, Segment can't load your data.
 
 ### Unique User
 
-We strongly recommend creating a unique User for the Segment Db2 Warehouse
+Segment recommends you to create a unique User for the Segment Db2 Warehouse
 connection to your Db2 Warehouse instance so that you can manage permissions
 separately.
+
+### SSL/TLS
+Always require SSL/TLS and make sure your data warehouse can only accept secure connections. Segment only connects to your data warehouse using SSL/TLS.

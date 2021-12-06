@@ -30,6 +30,14 @@ The table below lists events that Regal Voice sends to Segment. These events app
    <td>Description</td>
   </tr>
   <tr>
+   <td>agent.activity.updated</td>
+   <td>An agent’s activity status was changed.</td>
+  </tr>
+  <tr>
+   <td>call.completed</td>
+   <td>An inbound or outbound call with a contact was completed. This includes calls that were not answered</td>
+  </tr>
+  <tr>
    <td>contact.subscribed</td>
    <td>A contact was subscribed to a marketing channel</td>
   </tr>
@@ -37,33 +45,45 @@ The table below lists events that Regal Voice sends to Segment. These events app
    <td>contact.unsubscribed</td>
    <td>A contact was unsubscribed from a marketing channel</td>
   </tr>
-    <tr>
+  <tr>
+    <td>contact.attribute.edited</td>
+    <td>A contact's attributes were edited by an agent</td>
+  </tr>
+  <tr>
+    <td>contact.experiment.assigned</td>
+    <td>A contact was assigned to an experiment</td>
+  </tr>
+  <tr>
+   <td>scheduled.callback.requested</td>
+   <td>A callback was scheduled</td>
+  </tr>
+  <tr>
+   <td>sms.conversation.completed</td>
+   <td>An SMS conversation between a contact and an agent was completed in the Regal Voice agent desktop</td>
+  </tr>
+  <tr>
    <td>sms.queued</td>
    <td>An sms was queued to be sent from RegalVoice to contact</td>
   </tr>
-    <tr>
+  <tr>
    <td>sms.sent</td>
    <td>An sms was sent from RegalVoice to contact</td>
   </tr>
-    <tr>
+  <tr>
    <td>sms.undelivered</td>
    <td>An sms was undelivered from RegalVoice to contact</td>
   </tr>
-    <tr>
+  <tr>
    <td>sms.received</td>
    <td>An sms was received from a contact</td>
   </tr>
-    <tr>
+  <tr>
+    <td>task.canceled</td>
+    <td>A call or sms task was canceled</td>
+  </tr>
+  <tr>
    <td>task.created</td>
    <td>A call or sms task was created</td>
-  </tr>
-    <tr>
-   <td>sms.conversation_completed</td>
-   <td>An SMS conversation between a contact and an agent was completed in the Regal Voice agent desktop</td>
-  </tr>
-    <tr>
-   <td>call.completed</td>
-   <td>An inbound or outbound call with a contact was completed. This includes calls that were not answered</td>
   </tr>
 </table>
 
@@ -75,42 +95,76 @@ The table below lists events that Regal Voice sends to Segment. These events app
    <td>Description</td>
   </tr>
   <tr>
+   <td>`agent_activity_name`</td>
+   <td>Name of agent’s new availability status.</td>
+  </tr>
+  <tr>
+   <td>`agent_availability`</td>
+   <td>Availability of agent’s previous activity status. Can be true or false.</td>
+  </tr>
+  <tr>
+   <td>`agent_email`</td>
+   <td>Email of the agent who took an action</td>
+  </tr>
+  <tr>
+   <td>`agent_previous_activity_name`</td>
+   <td>Name of agent’s previous availability status.</td>
+  </tr>
+  <tr>
+   <td>`agent_previous_availability`</td>
+   <td>Availability of agent’s previous activity status. Can be true or false.</td>
+  </tr>
+  <tr>
+   <td>`agent_time_in_previous_activity`</td>
+   <td>Time (in seconds) agent spent in previous activity status.</td>
+  </tr>
+  <tr>
+   <td>`call_id`</td>
+   <td>Task Id for the call</td>
+  </tr>
+  <tr>
+   <td>`callback_timestamp`</td>
+   <td>When the callback is scheduled for</td>
+  </tr>
+  <tr>
+   <td>`campaign_id`</td>
+   <td>Campaign Id</td>
+  </tr>
+  <tr>
+   <td>`campaign_friendly_id`</td>
+   <td>Campaign Friendly Id as seen in the App</td>
+  </tr>
+  <tr>
+   <td>`campaign_name`</td>
+   <td>Campaign Name</td>
+  </tr>
+  <tr>
+    <td>`cancelation_reason`</td>
+    <td>Reason the task was canceled</td>
+  </tr>
+  <tr>
+    <td>`cancelation_source`</td>
+    <td>Source of where the task was canceled</td>
+  </tr>
+  <tr>
+    <td>`canceled_by`</td>
+    <td>Includes the email of the user who canceled the task, if applicable</td>
+  </tr>
+  <tr>
+   <td>`changes`</td>
+   <td>Changes made for the contact.attribute_edited event</td>
+  </tr>
+  <tr>
    <td>`channel`</td>
    <td>The marketing channel: "voice" or "sms"</td>
   </tr>
   <tr>
-   <td>`phone`</td>
-   <td>The phone number the subscription update was applied to. Phone number is the unique identifier for a contact in Regal Voice</td>
-  </tr>
-  <tr>
-   <td>`email`</td>
-   <td>The last email associated with the contact</td>
-  </tr>
-  <tr>
-   <td>`ip`</td>
-   <td>The IP address from where the subscription update was initiated.</td>
-  </tr>
-  <tr>
-   <td>`source`</td>
-   <td>Source of the subscription update.
-   A source value that starts with "Brand." indicates that the subscription update was initiated by the Brand (outside of the Regal Voice platform).
-   A source value that starts with "RegalVoice." indicates that the supscription update was initiated through the Regal Voice platform. </td>
-  </tr>
-  <tr>
-   <td>`text`</td>
-   <td>The exact text the contact was presented for opt in</td>
-  </tr>
-  <tr>
-   <td>`timestamp`</td>
-   <td>Unix timestamp for when the event took place</td>
+   <td>`completed_at`</td>
+   <td>UTC Timestamp when the task was completed</td>
   </tr>
   <tr>
    <td>`contact_phone`</td>
    <td>Phone number of the contact</td>
-  </tr>
-  <tr>
-   <td>`regal_voice_phone`</td>
-   <td>RegalVoice phone number</td>
   </tr>
   <tr>
    <td>`content`</td>
@@ -121,36 +175,68 @@ The table below lists events that Regal Voice sends to Segment. These events app
    <td>INBOUND or OUTBOUND</td>
   </tr>
   <tr>
+   <td>`disposition`</td>
+   <td>Task disposition</td>
+  </tr>
+  <tr>
+   <td>`email`</td>
+   <td>The last email associated with the contact</td>
+  </tr>
+  <tr>
+   <td>`ended_at`</td>
+   <td>UTC timestamp when the conversation was ended</td>
+  </tr>
+  <tr>
+    <td>`experiment_id`</td>
+    <td>Experiment ID</td>
+  </tr>
+  <tr>
+    <td>`experiment_name`</td>
+    <td>Name of experiment</td>
+  </tr>
+  <tr>
+   <td>`experiment_variant`</td>
+   <td>Variant a contact was assigned to in an experiment</td>
+  </tr>
+  <tr>
    <td>`from_number`</td>
    <td>Phone number that sent the message</td>
   </tr>
   <tr>
-   <td>`to_number`</td>
-   <td>Phone number to which the message was sent</td>
+   <td>`handle_time`</td>
+   <td>Full duration task was being handled, including talk time and wrap time (completed_at - started_at</td>
+  </tr>
+  <tr>
+   <td>`ip`</td>
+   <td>The IP address from where the subscription update was initiated.</td>
   </tr>
   <tr>
    <td>`media_url`</td>
    <td>Media URL (if it was an MMS)</td>
   </tr>
   <tr>
-   <td>`sms_conversation_id`</td>
-   <td>Task ID for the conversation. (If the sms was part of a two-way conversation with an Agent, rather than just an automated outbound sms)</td>
+   <td>`notes`</td>
+   <td>Task notes</td>
   </tr>
   <tr>
-   <td>`campaign_friendly_id`</td>
-   <td>Campaign Friendly Id as seen in the App</td>
+   <td>`objections`</td>
+   <td>Task objections</td>
   </tr>
   <tr>
-   <td>`campaign_id`</td>
-   <td>Campaign Id</td>
-  </tr>
-  <tr>
-   <td>`campaign_name`</td>
-   <td>Campaign Name</td>
+   <td>`phone`</td>
+   <td>The phone number the subscription update was applied to. Phone number is the unique identifier for a contact in Regal Voice</td>
   </tr>
   <tr>
    <td>`queue`</td>
    <td>Task Queue</td>
+  </tr>
+  <tr>
+   <td>`regal_voice_phone`</td>
+   <td>RegalVoice phone number</td>
+  </tr>
+  <tr>
+   <td>`scheduling_agent_email`</td>
+   <td>Email of the agent who scheduled the callback</td>
   </tr>
   <tr>
    <td>`scheduling_agent_fullname`</td>
@@ -161,8 +247,26 @@ The table below lists events that Regal Voice sends to Segment. These events app
    <td>Email of the agent who scheduled the Callback</td>
   </tr>
   <tr>
-   <td>`target_agent_fullname`</td>
-   <td>Full name of the agent who contact (and all contact’s tasks) are assigned to</td>
+   <td>`sms_conversation_id`</td>
+   <td>Task ID for the conversation. (If the sms was part of a two-way conversation with an Agent, rather than just an automated outbound sms)</td>
+  </tr>
+  <tr>
+   <td>`source`</td>
+   <td>Source of the subscription update.
+   A source value that starts with "Brand." indicates that the subscription update was initiated by the Brand (outside of the Regal Voice platform).
+   A source value that starts with "RegalVoice." indicates that the supscription update was initiated through the Regal Voice platform. </td>
+  </tr>
+  <tr>
+   <td>`started_at`</td>
+   <td>UTC timestamp when the conversation was started</td>
+  </tr>  
+  <tr>
+   <td>`talk_time`</td>
+   <td>Duration of conversation (ended_at - started_at)</td>
+  </tr>
+  <tr>
+    <td>`target_agent_fullname`</td>
+    <td>Full name of the agent who contact (and all contact’s tasks) are assigned to</td>
   </tr>
   <tr>
    <td>`target_agent_id`</td>
@@ -173,48 +277,24 @@ The table below lists events that Regal Voice sends to Segment. These events app
    <td>Unique identifier for the task. Will match the call_id or sms_conversation_id of a completed task event.</td>
   </tr>
   <tr>
+   <td>`text`</td>
+   <td>The exact text the contact was presented for opt in</td>
+  </tr>
+  <tr>
+   <td>`timestamp`</td>
+   <td>Unix timestamp for when the event took place</td>
+  </tr>
+  <tr>
+   <td>`to_number`</td>
+   <td>Phone number to which the message was sent</td>
+  </tr>
+  <tr>
    <td>`type`</td>
    <td>Task Type</td>
   </tr>
   <tr>
-   <td>`call_id`</td>
-   <td>Task Id for the call</td>
-  </tr>
-  <tr>
-   <td>`disposition`</td>
-   <td>Task disposition</td>
-  </tr>
-  <tr>
-   <td>`objections`</td>
-   <td>Task objections</td>
-  </tr>
-  <tr>
-   <td>`notes`</td>
-   <td>Task notes</td>
-  </tr>
-  <tr>
-   <td>`handle_time`</td>
-   <td>Full duration task was being handled, including talk time and wrap time (completed_at - started_at)</td>
-  </tr>
-  <tr>
    <td>`wrapup_time`</td>
    <td>Duration task was in wrap up (completed_at - ended_at)</td>
-  </tr>
-  <tr>
-   <td>`talk_time`</td>
-   <td>Duration of conversation (ended_at - started_at)</td>
-  </tr>
-  <tr>
-   <td>`started_at`</td>
-   <td>UTC timestamp when the conversation was started</td>
-  </tr>
-  <tr>
-   <td>`ended_at`</td>
-   <td>UTC timestamp when the conversation was ended</td>
-  </tr>
-  <tr>
-   <td>`completed_at`</td>
-   <td>UTC Timestamp when the task was completed</td>
   </tr>
 </table>
 

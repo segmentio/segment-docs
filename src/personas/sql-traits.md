@@ -157,7 +157,7 @@ When you're building your query, there are some requirements for the data your q
 - The query must return a column with a `user_id`, `email`, or `anonymous_id` (or `group_id` for account traits, if you have Personas for B2B enabled).
 - It must return at least one additional trait in addition to `user_id`/`group_id`, and no more than 25 total columns
 - The query must not return any `user_id`s with a `null` value, or any duplicate `user_id`s.
-- The query must not return more than 10 million rows.
+- The query must not return more than 25 million rows.
 - Each record must be less than 16kb in size to adhere to [Segment's maximum request size](/docs/connections/sources/catalog/libraries/server/http-api/#max-request-size).
 
 A successful preview returns a sample of users and their traits.
@@ -181,7 +181,8 @@ Click **Create Computed Trait** to save the Trait.
 ![](images/sql_traits_connect3.png)
 Check **Compute without destinations** if you only want to send to Personas
 
-When you create a SQL Trait, Segment runs the query on the warehouse twice a day by default. (If you're interested in a more frequent or customizable schedule, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.)
+When you create a SQL Trait, Segment runs the query on the warehouse twice a day by default. You can customize the time at which Segment queries the data warehouse and  the frequency, up to once per hour, from the SQL Trait's settings.
+(If you're interested in a more frequent schedule, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.)
 
 For each row (user or account) in the query result, Personas sends an identify or group call with all the columns that were returned as Traits. For example, if you write a query that returns `user_id,has_open_ticket, num_tickets_90_days, avg_zendesk_rating_90days` we send an identify call with the following payload:
 
@@ -203,11 +204,11 @@ Happy Querying!
 
 ### Is there a limit to the result set that can be queried and imported?
 
-The result set is capped at 10 million rows.
+The result set is capped at 25 million rows.
 
 ### How often does Segment query the customer's data warehouse?
 
-Segment queries the data warehouse every 12 hours by default, but can query up to hourly. [Contact us](https://segment.com/help/contact/) for customized schedules.
+For each SQL Trait you create, you can set a compute schedule to query the data warehouse up to once per hour. Your query may run at any given time during the hour you select.
 
 ### What identifiers can I use to query a list?
 

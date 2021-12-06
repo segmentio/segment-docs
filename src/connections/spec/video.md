@@ -538,6 +538,52 @@ When playback is complete and only when the session is finished.
 }
 ```
 
+#### Video Playback Exited
+When user navigates away from a playback/stream.
+{% comment %} api-example '{
+    "action": "track",
+    "event": "Video Playback Exited",
+    "userId": "userId",
+    "properties": {
+      "session_id": "12345",
+      "content_asset_id": "0129370",
+      "content_pod_id": "segA",
+      "position": 392,
+      "total_length": 392,
+      "bitrate": 100,
+      "framerate": 29.00,
+      "video_player": "youtube",
+      "sound": 55,
+      "full_screen": false,
+      "ad_enabled": false,
+      "quality": "hd1080",
+      "livestream": false
+    }
+}'}}} {% endcomment %}
+
+```js
+{
+    "action": "track",
+    "event": "Video Playback Exited",
+    "userId": "userId",
+    "properties": {
+      "session_id": "12345",
+      "content_asset_id": "0129370",
+      "content_pod_id": "segA",
+      "position": 392,
+      "total_length": 392,
+      "bitrate": 100,
+      "framerate": 29.00,
+      "video_player": "youtube",
+      "sound": 55,
+      "full_screen": false,
+      "ad_enabled": false,
+      "quality": "hd1080",
+      "livestream": false
+    }
+}
+```
+
 ---
 
 ## Content

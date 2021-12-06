@@ -1,0 +1,43 @@
+settings:
+  - category: Connection Settings
+    settings:
+    - name: Access Token (required)
+      description: TikTok Long Term Access Token. You can generate this from the TikTok Marketing API portal. Please follow TikTok's [Authorization guide](https://ads.tiktok.com/athena/docs/index.html?plat_id=-1&doc_id=100010&id=100681&key=e98b971a296ae45d8e35a22fba032d1c06f5973de9aab73ce07b82f230cf3afd){:target="_blank"} for more info.
+      default:
+    - name: Secret Key (required)
+      description: TikTok App Secret Key. You can find this key in the "Basic Information" tab of your TikTok app.
+      default:
+    - name: App Id (required)
+      description: TikTok App Id. You can find this key in the "Basic Information" tab of your TikTok app.
+      default:
+    - name: Pixel Code (required)
+      description: An ID for your pixel. Required to send events to the TikTok pixel.
+      default:
+actions:
+  - action: Report Web Event
+    blurb: Report events directly to TikTok.
+    fields:
+    - name: Email
+      description: Email address of the user who triggered the conversion event.
+      default: coalesce(properties.email, traits.email)
+    - name: External ID 
+      description: Uniquely identifies the user who triggered the conversion event.
+      default: coalesce(userId, anonymousId)
+    - name: Event Name
+      description: Conversion event name. Please refer to the "Supported Web Events" section on [this](https://ads.tiktok.com/marketing_api/docs?id=1701890979375106){:target="_blank"} page for accepted event names.
+      default: 
+    - name: Event ID
+      description: Any hashed ID that can identify a unique user/session.
+      default: messageId
+    - name: Event Timestamp
+      description: Timestamp that the event took place, in ISO 8601 format.
+      default:
+    - name: Segment Event Type
+      description: The Segment Event type, for example, "page".
+      default: type
+    - name: Properties associated with the event
+      description: Additional properties such as content info, description, and currency.
+      default: 
+    - name: Phone Number
+      description: Phone number of the user who triggered the conversion event, in E.164 standard format, e.g. +14150000000.
+      default: coalesce(properties.phone, traits.phone)

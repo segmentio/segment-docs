@@ -48,17 +48,17 @@ To get started:
 4. Create a new Kinesis destination.
    1. In the Segment source that you want to connect to your Kinesis destination, click **Add Destination**. Search and select the **Amazon Kinesis** destination.
    2. Enter the **Role Address**, **Stream Region**, **Stream Name**, and **Secret ID**.
-   * **NOTE:** For security purposes, Segment recommends you to use your Workspace ID as your Secret ID. If you’re using a Secret ID different from your Workspace ID, please change it to make your account more secure. You can find your Workspace ID by going to: **Settings > Workspace Settings > ID**.
+   * **NOTE:** For security purposes, Segment sets your Workspace ID as your Secret ID. If you’re using a Secret ID different from your Workspace ID, reach out to our support team so they can change it to make your account more secure.
 
 ## Page
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
   analytics.page();
 ```
 
 ## Identify
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.  An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does.  An example call would look like:
 
 ```js
 analytics.identify('97980cfea0085', {
@@ -68,7 +68,7 @@ analytics.identify('97980cfea0085', {
 ```
 
 ## Track
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track("User Registered", {
@@ -105,7 +105,7 @@ Segment uses the the `userId || anonymousId` as the `PartitionKey`. The partitio
 > **NOTE:** The JSON payload is base64 stringified.
 
 ## Group
-If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does.
 
 An example group call is shown below:
 ```js
@@ -216,9 +216,9 @@ After you update the IAM policy, Segment systems default to use PutRecords for m
 ### Use secret ID
 If you have many sources using Kinesis that it's impractical to attach all of their IDs to your IAM role, you can instead opt to set a secret ID. To set this value:
 1. Go to **Connections > Destinations > Amazon Kinesis** for each of your Segment sources.
-2. Click **Secret ID** and enter your Workspace ID.
-    * **NOTE:** For security purposes, Segment recommends you to use your Workspace ID as your Secret ID. If you’re using a Secret ID different from your Workspace ID, please change it to make your account more secure. You can find your Workspace ID by going to:  **Settings > Workspace Settings > ID**.
-3. Once all of your sources have been updated to use this value, find the IAM role you created for this destination in the AWS Console in **Services > IAM > Roles**.
+2. Click **Secret ID**.
+    * **NOTE:** For security purposes, Segment sets your Workspace ID as your Secret ID. If you’re using a Secret ID different from your Workspace ID, reach out to our support team so they can change it and make your account more secure.
+3. Find the IAM role you created for this destination in the AWS Console in **Services > IAM > Roles**.
 4. Click on the role and navigate to the **Trust Relationships** tab.
 5. Click **Edit trust relationship**. You should see a snippet that looks something that looks like this:
 

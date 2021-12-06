@@ -3,6 +3,8 @@ title: Braze Destination
 hide-cmodes: true
 hide-personas-partial: true
 hide-integrations-object: true
+maintenance: true
+maintenance-content: "New versions of this destination are available. See [Braze Cloud Mode (Actions)](/docs/connections/catalog/actions-braze-cloud) and [Braze Web Mode (Actions)](/docs/connections/catalog/actions-braze-web)."
 ---
 
 [Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
@@ -110,7 +112,7 @@ To add the Braze device-mode SDK to a [React Native](/docs/connections/sources/c
    ```js
    await analytics.setup('YOUR_WRITE_KEY', {
      // Add any of your Device-mode destinations. This ensures they load before continuing.
-     using: Braze
+     using: [Braze]
      // ...
    })
    ```
@@ -184,7 +186,7 @@ analytics.track('Purchased Item', {
     name: 'bag'
 })
 ```
-When you `track` an event, Segment sends that event to Braze as a custom event. Braze does not support arrays or nested objects for custom track event properties.
+When you `track` an event, Segment sends that event to Braze as a custom event.
 
 > note ""
 > Braze requires that you include a `userId` or `braze_id` for all calls made in cloud-mode. Segment sends a `braze_id` if `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
@@ -284,7 +286,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
 #### iOS
 
-1. Follow the directions to register for push at in [Segment's iOS library](/docs/connections/sources/catalog/libraries/mobile/ios/) docs.
+1. Follow the directions to register for push at in [Segment's iOS library](/docs/connections/sources/catalog/libraries/mobile/ios/ios-faqs/#how-do-i-use-push-notifications) docs.
 2. Add the following to your application:didFinishLaunchingWithOptions
 
     ```

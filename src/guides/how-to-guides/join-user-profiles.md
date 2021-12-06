@@ -31,7 +31,7 @@ Though we wish you could use a database ID for everything, some tools force you 
 
 ## For Segment Destination Users
 
-Integrating as many tools as possible through Segment will make your joins down the road a little easier. When you use Segment to [`identify`](https://segment.com/docs/connections/spec/identify) users, we'll send the same ID and traits out to all the destinations you turn on in our interface. (More about [Segment destinations](https://segment.com/docs/connections/destinations/catalog).
+Integrating as many tools as possible through Segment will make your joins down the road a little easier. When you use Segment to [`identify`](/docs/connections/spec/identify) users, we'll send the same ID and traits out to all the destinations you turn on in our interface. (More about [Segment destinations](/docs/connections/destinations/catalog).
 
 A few of our destination partners accept an external ID, where they will insert the same Segment user ID. Then you can join tables in one swoop. For example, Zendesk saves the Segment User ID as `external_id`, making a Segment-Zendesk join look like this:
 
@@ -150,7 +150,7 @@ ORDERBY2desc
 
 An alternative to the lookup user table in SQL would be writing a script to grab user IDs across your third-party tools and dump them into your database.
 
-You'd have to ping the APIs of each tool with something like an email, and ask them toreturn the key or id for the corresponding user in their tool.
+You'd have to ping the APIs of each tool with something like an email, and ask them to return the key or id for the corresponding user in their tool.
 
 A sample script, to run on a nightly cron job, would look something like this:
 

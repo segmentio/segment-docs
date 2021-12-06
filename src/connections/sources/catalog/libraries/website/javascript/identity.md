@@ -9,7 +9,7 @@ This page explains how Analytics.js identifies users, and passes userID and anon
 
 To ensure high fidelity, first-party customer data, Segment writes the user's IDs to the user's local storage, and uses that as the Segment ID on the cookie whenever possible. Local Storage is meant for storing this type of first-party customer information.
 
-If a user returns to your site after the cookie expires, Analytics.js looks for an old ID in the user's `localStorage`, and if one is found, sets it as the user's ID again in the new cookie. If a user clears their cookies _and_ `localstorage`, all of the IDs are removed, and the user gets a completely new anonymousId when they next visit the page.
+If a user returns to your site after the cookie expires, Analytics.js looks for an old ID in the user's `localStorage`, and if one is found, sets it as the user's ID again in the new cookie. If a user clears their cookies _and_ `localstorage`, all of the IDs are removed, and the user gets a completely new `anonymousID` when they next visit the page.
 
 <!-- TODO: add info on how user and group info is stored - on cookie, in mem, in localStorage-->
 
@@ -33,7 +33,7 @@ ajs_anonymous_id=%2239ee7ea5-b6d8-4174-b612-04e1ef3fa952
 You can override the default-generated anonymousID in code using the methods described below:
 - [Set anonymousId from the Segment snippet](#override-the-anonymous-id-from-the-segment-snippet) (before the `ready` method returns)
 - [Use a call to override the anonymousID](#override-the-default-anonymous-id-with-a-call)
-- [Set anonymousId in the `options` object of a call](#override-the-anonymous-id-using-the-options-object)
+- [Set `anonymousId` in the `options` object of a call](#override-the-anonymous-id-using-the-options-object)
 
 ### Retrieve the Anonymous ID
 
@@ -68,7 +68,7 @@ You can also set the `anonymousId` immediately inside your Segment snippet, even
 Use this method if you are queueing calls before `ready` returns and they require a custom `anonymousId`. Keep in mind that setting the `anonymousId` in Analytics.js does not overwrite the anonymous tracking IDs for any destinations you're using.
 
 > info ""
-> Device-mode destinations that load their code on your site _might_ also set their own anonymous ID for the user that is separate and different from the Segment generated one. Some destinations use the Segment anonymousId. Read the documentation for each destination to find out if a destination sets its own ID.
+> Device-mode destinations that load their code on your site _might_ also set their own anonymous ID for the user that is separate and different from the Segment generated one. Some destinations use the Segment `anonymousId`. Read the documentation for each Destination to find out if a Destination sets its own ID.
 
 ### Override the default Anonymous ID with a call
 
@@ -130,10 +130,10 @@ The `options` dictionary contains a sub-dictionary called `context` which automa
 
 The `context` object contains an optional `traits` dictionary that contains traits about the current user. You can use this to store information about a user that you got from previous Identify calls, and that you want to add to Track or Page events.
 
-The information you pass in `context.traits` _does not_ appear in your downstream tools (such as Salesforce, Mixpanel, Google Analytics, etc.); however, this data _does_ appear in your [warehouses and storage destinations](/docs/connections/storage/).
+The information you pass in `context.traits` _does not_ appear in your downstream tools (such as Salesforce, Mixpanel, or Google Analytics); however, this data _does_ appear in your [warehouses and storage destinations](/docs/connections/storage/).
 
 > note ""
-> The `options` object described in the previous section behaves differently from the `options.context.traits` object discussed here. The `traits` object described here does not cause the anonymousId to persist across different calls.
+> The `options` object described in the previous section behaves differently from the `options.context.traits` object discussed here. The `traits` object described here does not cause `anonymousId` to persist across different calls.
 
 Consider this Identify event:
 

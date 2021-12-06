@@ -20,7 +20,7 @@ Whalr puts you back in control.  You can see who is using your system, you know 
 
 If you haven't already, you'll need to sign up at whalr.com.  You'll receive your Whalr member ID and password to log in to the Whalr member console where you will find key information that you will need to turn on the Whalr destination.
 
-After you have deployed Segment's [analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) script to your web site, Segment will begin sending PAGE events to Whalr.  However, at this stage there is no information on users or potential leads and sales targets being sent to Whalr, so intelligence is not yet actionable.
+After you have deployed Segment's [analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) script to your web site, Segment will begin sending PAGE events to Whalr.  However, at this stage there is no information on users or potential leads and sales targets being sent to Whalr, so intelligence is not yet actionable.
 
 This is an introduction to how Segment and Whalr work together and how to get Whalr to produce actionable intelligence.
 

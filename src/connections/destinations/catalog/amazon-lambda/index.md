@@ -76,8 +76,8 @@ Using CloudFormation minimizes the setup steps needed, and is Segment's recommen
       ![](images/CloudFormationUploadTemplate.png)
 
    5. Give your stack a name.
-   6. For the **ExternalId** parameter, enter the "External ID" setting in your Segment Lambda destination settings. This should be your **Workspace ID**.
-      * **NOTE:** For security purposes, Segment recommends you to use your Workspace ID as your External ID. If you’re currently using an External ID different from your Workspace ID, please change it to make your account more secure. You can find your Workspace ID by going to:  **Settings > Workspace Settings > ID**.
+   6. For the **ExternalId** parameter, enter the "External ID" setting in your Segment Lambda destination settings.
+      * **NOTE:** For security purposes, Segment will set your Workspace ID as your External ID. If you’re currently using an External ID different from your Workspace ID, reach out to our support team so they can change it and make your account more secure.
    7. The **LambdaARN** parameter corresponds to the **Lambda** setting in your Segment Lambda destination settings.
 
       ![](images/CloudFormationStackDetails.png)
@@ -193,7 +193,7 @@ This setting controls the [Log Type](https://docs.aws.amazon.com/lambda/latest/d
 Due to how our event delivery system, [Centrifuge](https://segment.com/blog/introducing-centrifuge/), works, your Lambda can't take more than 5 seconds to run per message. If you're consistently running into timeout issues, you should consult the [AWS Lambda docs](https://docs.aws.amazon.com/lambda/index.html#lang/en_us), as well as docs for your language of choice, for tips on optimizing performance.
 
 **Handling Common Errors**
-You can find delivery logs in Destination > [Event Delivery](https://segment.com/docs/guides/destinations/how-do-i-check-if-data-is-successfully-being-delivered-to-my-destination/).
+You can find delivery logs in Destination > [Event Delivery](/docs/guides/destinations/how-do-i-check-if-data-is-successfully-being-delivered-to-my-destination/).
 
 Here are some common errors you may come across and how to resolve:
 

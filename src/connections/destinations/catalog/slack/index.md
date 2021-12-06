@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: Slack Destination
+maintenance: true
 ---
 
 [Slack](https://slack.com/) is a team collaboration tool where work flows. It's where the people you need, the information you share, and the tools you use come together to get things done.
@@ -17,7 +18,7 @@ This document was last updated on January 25, 2018. If you notice any gaps, out-
 4. Enter this in your Segment UI settings under 'Incoming Webhook URL'. The Slack channel you selected will be the default channel which will receive events.
 
 ## Identify
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('userId123', {
@@ -30,9 +31,11 @@ analytics.identify('userId123', {
 By default, your `identify` calls will not be sent through to Slack unless you have whitelisted a `trait` and the `identify` call contains that `trait`. If you whitelist multiple `traits` in the Segment app's destintation settings under "Whitelisted Traits", then the `identify` call must contain all of them in order to be sent into your Slack. Following the code example above, we can whitelist the trait names of `name` and `email`.
 
 ### Identify Template
-Once you've saved your whitelisted traits, you can now use them alongside [Handlebars expressions](http://handlebarsjs.com/expressions.html) syntax within a template. Make sure you reference the spec for the [Identify method](https://segment.com/docs/connections/spec/identify/) and [common object](https://segment.com/docs/connections/spec/common/). `Identify` events that contain the whitelisted `traits` will appear as a Slack message with the following default template:
+Once you've saved your whitelisted traits, you can now use them alongside [Handlebars expressions](http://handlebarsjs.com/expressions.html) syntax within a template. Make sure you reference the spec for the [Identify method](/docs/connections/spec/identify/) and [common object](/docs/connections/spec/common/). `Identify` events that contain the whitelisted `traits` will appear as a Slack message with the following default template:
 ```
-Identified user \{{name}}. \n\{{traits}}
+{% raw %}
+Identified user {{name}}. \n\{{traits}}
+{% endraw %}
 ```
 where "name" is the first found of the following:
 * `context.traits.name`
@@ -58,7 +61,7 @@ The user John Doe has an email of john.doe@example.com
 ```
 
 ## Track
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call using the analytics.js library would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call using the analytics.js library would look like:
 
 ```javascript
 analytics.track('Email Opened', {
@@ -68,17 +71,21 @@ analytics.track('Email Opened', {
 ```
 
 ### Event Channels
-By default, all `track` events are sent to the default Slack channel configured in the Segment UI when [getting started](https://segment.com/docs/connections/destinations/catalog/slack/#getting-started). To prevent events from sending you will need to modify your track call to use [selective integrations](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#selecting-destinations-with-the-integrations-object). Business Tier customers also have the option to filter the events within the "Schema" section of the Segment UI.
+By default, all `track` events are sent to the default Slack channel configured in the Segment UI when [getting started](/docs/connections/destinations/catalog/slack/#getting-started). To prevent events from sending you will need to modify your track call to use [selective integrations](/docs/connections/sources/catalog/libraries/website/javascript/#selecting-destinations-with-the-integrations-object). Business Tier customers also have the option to filter the events within the "Schema" section of the Segment UI.
 
 If you would like to have specific events be sent to a particular channel (#channel) or user (@user) using a direct message, you can specify this in the "Events Channels" settings within the Segment UI.
 
 
 ### Event Templates
-Event templates also use [Handlebars expressions](http://handlebarsjs.com/expressions.html) syntax. Make sure you reference the spec for the [Track method](https://segment.com/docs/connections/spec/track/) and [common object](https://segment.com/docs/connections/spec/common/). `Track` events will trigger a Slack message with the following default template:
+Event templates also use [Handlebars expressions](https://handlebarsjs.com/guide/expressions.html) syntax. Make sure you reference the spec for the [Track method](/docs/connections/spec/track/) and [common object](/docs/connections/spec/common/). `Track` events will trigger a Slack message with the following default template:
 
-`'\{{name}} did \{{event}}.'`
+```
+{% raw %}
+{{name}} did {{event}}.
+{% endraw %}
+```
 
-where "event" is the event name and "name" is found with the same logic as that of the "name" in the [Identify template](https://segment.com/docs/connections/destinations/catalog/slack/#identify-template).
+"event" is the event name and "name" is found with the same logic as that of the "name" in the [Identify template](/docs/connections/destinations/catalog/slack/#identify-template).
 
 The basic Track structure:
 
@@ -122,9 +129,9 @@ More information on regex can be found [here](http://www.zytrax.com/tech/web/reg
 ## Troubleshooting
 
 ### Page, Identify, Group calls are not showing up
-The Slack Destination does not support `page` or `group` calls. Only `track` events are supported by default. Remember that [`track.properties` object](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#track) is an open dictionary and may include any data you choose.
+The Slack Destination does not support `page` or `group` calls. Only `track` events are supported by default. Remember that [`track.properties` object](/docs/connections/sources/catalog/libraries/website/javascript/#track) is an open dictionary and may include any data you choose.
 
-In order for `identify` events to work, make sure you [whitelist the traits](https://segment.com/docs/connections/destinations/catalog/slack/#whitelisted-traits).
+In order for `identify` events to work, make sure you [whitelist the traits](/docs/connections/destinations/catalog/slack/#whitelisted-traits).
 
-### I'm seeing [object Object] in my Slack message
-If you try to print an object (eg., `\{{properties}}`), you will see [object Object] in Slack. Drill down to a primitive type value (eg., `properties.plan`).
+### I see [object Object] in my Slack message
+If you try to print an object (for example, {% raw %} `{{properties}}` {% endraw %} ), you will see [object Object] in Slack. Drill down to a primitive type value (for example, `properties.plan`).

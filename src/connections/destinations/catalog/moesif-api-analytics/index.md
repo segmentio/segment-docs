@@ -20,11 +20,11 @@ This destination is maintained by Moesif. For any issues with the destination, [
 4. Once integrated, Segment data shows up in Moesif in a few seconds.
 
 > tip ""
-> **Tip**: You can use Segment's [Replay feature](https://segment.com/docs/guides/what-is-replay/) to sync historical events sent through Segment into your Moesif app.
+> **Tip**: You can use Segment's [Replay feature](/docs/guides/what-is-replay/) to sync historical events sent through Segment into your Moesif app.
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -46,10 +46,10 @@ Segment sends `identify()` calls to Moesif as [user updates](https://www.moesif.
 |`traits`|`metadata`|
 |`traits.company.id`|`company_id`|
 
-The integration handles Segment [reserved traits](https://segment.com/docs/connections/spec/identify/#traits) like `email` and `firstName`. It maps [automatically-collected fields](/docs/connections/spec/common/#context-fields-automatically-collected) like campaign information and IP address.
+The integration handles Segment [reserved traits](/docs/connections/spec/identify/#traits) like `email` and `firstName`. It maps [automatically-collected fields](/docs/connections/spec/common/#context-fields-automatically-collected) like campaign information and IP address.
 
 ## Track
-If you haven’t had a chance to review our spec, take a look tounderstand what the [Track](https://segment.com/docs/connections/spec/track/) method does. An example call would look like:
+If you haven’t had a chance to review our spec, take a look tounderstand what the [Track](/docs/connections/spec/track/) method does. An example call would look like:
 
 ```
 analytics.track('Login Button Clicked')

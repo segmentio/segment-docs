@@ -10,6 +10,7 @@ permalink: /:categories/:title/
 
 exclude: ['js', '_site', '*.sketch']
 # Build settings
+os_links: true
 markdown: kramdown
 highlighter: rouge
 defaults:
@@ -41,7 +42,7 @@ defaults:
 
 collections:
   release_notes:
-    output: true
+    output: false
     permalink: /:collection/:name
 
 plugins_dir: ./_plugins

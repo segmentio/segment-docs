@@ -45,7 +45,8 @@ If you use Kameleoon Full Stack, please refer to the [Kameleoon SDK documentatio
 
 Kameleoon supports the following methods, as specified in the [Segment Spec](/docs/connections/spec).
 
-Behind the scenes, if the Segment event name matches exactly the name of an existing [goal](https://help.kameleoon.com/create-new-goal/) in your Kameleoon account, a conversion for this goal will be associated to the visitor. If the goal does not exist, Kameleoon will create a [custom goal](https://help.kameleoon.com/create-new-goal/#Custom_goal) by using the Segment event name and associate the conversion to the visitor. The goal will appear in the Kameleoon [goals page](https://help.kameleoon.com/manage-goals/) with the name convention 'SegmentIO eventType - eventName'. Once the goal has been created, you can use them in any of your [campaign](https://https://help.kameleoon.com/set-up-goal-campaign/).
+
+If the Segment event name matches exactly the name of an existing [goal](https://help.kameleoon.com/create-new-goal/){:target="_blank"} in your Kameleoon account, a conversion for this goal will be associated to the visitor. If the goal does not exist, Kameleoon will create a [custom goal](https://help.kameleoon.com/create-new-goal/#Custom_goal){:target="_blank"} by using the Segment event name and associate the conversion to the visitor. The goal will appear in the Kameleoon [goals page](https://help.kameleoon.com/manage-goals/){:target="_blank"} with the name convention 'SegmentIO eventType - eventName'. Once the goal has been created, you can use them in any of your [campaign](https://help.kameleoon.com/set-up-goal-campaign/){:target="_blank"}.
 
 
 ### Page

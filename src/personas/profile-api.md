@@ -93,7 +93,7 @@ The response is returned as a JSON object which contains the queried user's assi
 
   `https://profiles.segment.com/v1/spaces/<space-id>/collections/users/profiles/<user_identifier>/events`
 
-- **External IDs**: Query all of a user's external IDs (for example, `anonymouse_id`You can query all of a user's external ids (anonymous_id, user_id, ios.):
+- **External IDs**: You can query all of a user's external IDs such as `anonymous_id`, `user_id`.
 
   `https://profiles.segment.com/v1/spaces/<space-id>/collections/users/profiles/<user_identifier>/external_ids`
 
@@ -194,7 +194,7 @@ Segment uses conventional HTTP response codes to indicate the success or failure
 
 ### Rate Limit
 
-To ensure low response times, every Space has a default rate limit of 100 requests/sec. Please contact [friends@segment.com](mailto:friends@segment.com) if you need a higher limit with details around your use case. For more information about rate limits, see the [Rate Limits](/docs/personas/rate-limits) documentation.
+To ensure low response times, every Space has a default rate limit of 100 requests/sec. Please contact [friends@segment.com](mailto:friends@segment.com) if you need a higher limit with details around your use case. For more information about rate limits, see the [Product Limits](/docs/personas/product-limits) documentation.
 
 
 ### Pagination

@@ -203,7 +203,7 @@ To test your Destination in the Catalog, click the "Test" tab in the Developer C
 
 From here, click "Configure App", select a Source, and click "Confirm Source". You can now configure your destination by setting the "API Key", then clicking the toggle to enable the destination.
 
-Next you can click the "Event Tester" tab to send data to your destination. Here you can see what requests Segment sends to your destination and introspect the response you are returning. Learn more about the event tester [here](https://segment.com/docs/guides/best-practices/how-do-I-test-my-connections/).
+Next you can click the "Event Tester" tab to send data to your destination. Here you can see what requests Segment sends to your destination and introspect the response you are returning.
 
 Now you can use the JavaScript SDK in a browser to generate real analytics events.
 

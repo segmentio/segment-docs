@@ -43,7 +43,7 @@ _NOTE_: You can find your account's endpoint by simply going to your Oracle Resp
 
 4. Enter the name of your default **Profile List** where you would like to store your `.identify()` calls. Again, this can be overriden using destination specific options on a per-call basis as seen [here](#overriding-default-folder-and-list-names).
 
-5. Choose whether you'd like to set your **Default Permission Status** to be `OPTIN` or `OPTOUT`. Unless configured otherwise, the default will be `OPTOUT`. If you are unsure the implications of this settings, you can read more about it [here](https://policy3.responsys.net/permission.htm).
+5. Choose whether you'd like to set your **Default Permission Status** to be `OPTIN` or `OPTOUT`. Unless configured otherwise, the default will be `OPTOUT`.
 
 Once you have entered these required settings, you are ready to integrate your Oracle Responsys account through the Segment platform!
 
@@ -76,7 +76,7 @@ analytics.identify('rick', {
 ```
 **IMPORTANT**: In order to merge records properly, our destination requires that all `.identify()`  contain at least a `userId` or a `traits.email`!
 
-The above call will try to first find an existing record in the provided Profile List with a matching `userId` of `'rick'` and or `email` of `'wubba-lubba-dub-dub@morty.com'`. If a record is found, we will update the rest of the columns so long as you pass the information using our [identify spec](https://segment.com/docs/connections/spec/identify). The below is how we map our spec'd Segment traits to Responsys' semantic Profile List columns:
+The above call will try to first find an existing record in the provided Profile List with a matching `userId` of `'rick'` and or `email` of `'wubba-lubba-dub-dub@morty.com'`. If a record is found, we will update the rest of the columns so long as you pass the information using our [identify spec](/docs/connections/spec/identify). The below is how we map our spec'd Segment traits to Responsys' semantic Profile List columns:
 
 <table>
   <tr>

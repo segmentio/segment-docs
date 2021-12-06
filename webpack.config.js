@@ -1,4 +1,6 @@
 const path = require('path');
+const DotenvPlugin = require('webpack-dotenv-plugin');
+
 
 module.exports = {
     entry: './js/index.js',
@@ -11,6 +13,13 @@ module.exports = {
             'analytics': path.resolve('analytics')
         }
     },
+    plugins: [
+        new DotenvPlugin({
+          sample: './.env.example',
+          path: './.env',
+          allowEmptyValues: true,
+        })
+      ],
     module: {
         rules: [
             {

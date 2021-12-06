@@ -19,7 +19,7 @@ This document was last updated on October 22, 2018. If you notice any gaps, outd
 Once you enable the destination from the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Userlike's javascript onto your page. Remember to remove Userlike's snippet from your page.
 
 ## Track
- If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
+ If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does.
 
 ### Record Live Chat Events
 

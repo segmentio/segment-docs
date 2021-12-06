@@ -44,7 +44,7 @@ To use the latest AppsFlyer SDK to collect IDFAs, do the following:
        }
    }
    ```
-5. Follow [Segment's guide for collecting IDFA](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#idfa-collection-in-40-beta-and-later)
+5. Follow [Segment's guide for collecting IDFA](/docs/connections/sources/catalog/libraries/mobile/ios/#idfa-collection-in-40-beta-and-later)
 
 #### Additional iOS Cloud Mode Set up for iOS 14
 
@@ -68,7 +68,7 @@ If you want to use AppsFlyer server-side only, contact your AppsFlyer representa
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example iOS call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example iOS call would look like:
 
 ```swift
 [[SEGAnalytics sharedAnalytics] identify:@"12091906-01011992"
@@ -81,7 +81,7 @@ When you call `.identify()`, we will use AppsFlyer's `setCustomerUserID` to send
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example iOS call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example iOS call would look like:
 
 ```swift
 [[SEGAnalytics sharedAnalytics] track:@"Article Completed"
@@ -92,7 +92,7 @@ When you call `track`, Segment translates it automatically and sends the event 
 
 We include all the event properties as callback parameters on the AppsFlyer event, and automatically translate `properties.revenue` to the appropriate AppsFlyer purchase event properties based on our spec'd properties.
 
-Finally, we automatically use AppsFlyer's `transactionId` deduplication when you send an an `orderId` (see the [e-commerce spec](https://segment.com/docs/connections/spec/ecommerce/v2/)).
+Finally, we automatically use AppsFlyer's `transactionId` deduplication when you send an an `orderId` (see the [e-commerce spec](/docs/connections/spec/ecommerce/v2/)).
 
 ### Server
 
@@ -131,7 +131,7 @@ analytics.track({
   }
 });
 ```
-> Check your specific [serverside library docs](https://segment.com/docs/connections/sources/#server) for specifics on how to format the method properly.
+> Check your specific [serverside library docs](/docs/connections/sources/#server) for specifics on how to format the method properly.
 
 Finally, the serverside component will look for the following `properties` and handle them specially:
 
@@ -152,7 +152,7 @@ Segment will automatically trigger an `Install Attributed` event if you have **t
 ### Server
 If you are tracking events server-side, AppsFlyer can still send attribution postbacks but you will need to configure this functionality in your AppsFlyer account. To enable this, navigate to your AppsFlyer app and on the sidebar of the main screen click on **Integrated Partners** and search for Segment. You will be prompted with a couple of configuration options and asked to input your Segment Write Key. Once enabled, successfully attributed app installs will begin showing up as `Install Attributed` events similar to the client side behavior documented above.
 
-If you are sending in the attribution data yourself, for iOS be sure the following properties are sent in within the campaign object on the `Install Attributed` or `Application Opened` event so Appsflyer can correctly attribute it as an Apple Search Ad event. These values should be returned by the [Apple Search Ads API](https://searchads.apple.com/advanced/help/measure-results/#attribution-api):
+If you are sending in the attribution data yourself, for iOS be sure the following properties are sent in within the campaign object on the `Install Attributed` or `Application Opened` event so Appsflyer can correctly attribute it as an Apple Search Ad event. These values should be returned by the [Apple Search Ads API](https://searchads.apple.com/help/reporting/0028-apple-ads-attribution-api):
 
 ```
 "campaign": {

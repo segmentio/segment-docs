@@ -10,11 +10,12 @@ Custom domains allow you to proxy Analytics.js and proxy all tracking event requ
 
 To set up a custom domain, you need:
 
-1. Access to your site DNS settings
-2. A CDN you can serve assets from
-3. Access to the CDN settings
+- Access to your site DNS settings
+- A CDN you can serve assets from
+- Access to the CDN settings
+- A security certificate for the proxy domain
 
-This guide explains how to set up a custom domain in CloudFront. The same principles can be applied to almost any modern CDN that supports proxies.
+This guide explains how to set up a custom domain in CloudFront. You can apply these principles to almost any modern CDN that supports proxies.
 
 You need to set up two important parts, regardless of the CDN provider you use:
 
@@ -36,143 +37,62 @@ This is {person} from {company}. I would like to configure a proxy for the follo
 
 Double-check the source link, the Source ID, and the API proxy host to make sure they are correct. 
 
-A Segment Customer Success team member will respond that they have enabled this option for your account. When you receive this confirmation, go to your workspace, then navigate to your source settings, go to Analytics.js, and modify the "Host Address" setting. Change it from `api.segment.io/v1` to `[your proxy host]/v1`.
+A Segment Customer Success team member will respond that they have enabled this option for your account. When you receive this confirmation, open the source in your workspace, and navigate to Settings > Analytics.j. Update the **Host Address** setting from `api.segment.io/v1` to `[your proxy host]/v1`.
+
+> info ""
+> The **Host Address** field does not appear in source settings until it's enabled by Segment Customer Success.
 
 ## CloudFront
 
+These instructions refer to Amazon CloudFront, but apply more generally to other providers as well.
+
 ### CDN Proxy
+To set up your CDN Proxy: 
+1. Log in to the AWS console and navigate to CloudFront.
+2. Click **Create Distribution**.
+3. Configure the distribution settings. In the Origin section, update the following values:
+   - **Origin Domain Name**: `cdn.segment.com`
+   - **Protocol**: `HTTPS only`
+4. In the Default cache behavior section, configure the following values:
+   - **Viewer protocol policy**: `Redirect HTTP to HTTPS`
+   - **Allowed HTTP Methods**: `GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE`
+5. In the Settings section, configure the following values:
+   - **Alternate domain name (CNAME)**: `analytics.<yourdomain>.com`
+   - **Custom SSL certificate**: Select an existing or new certificate to validate the authorization to use the **Alternate domain name (CNAME)** value. For more information, see Amazon's documentation [Requirements for using alternate domain names](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-requirements){:target="_blank"}.
+ 6. Click **Create Distribution**.
 
-First log in to AWS and navigate to CloudFront.
-
-![](images/create_cloudfront_distribution.png)
-
-Click **Create Distribution**.
-
-Select a delivery method for your content. Click **Get Started** in the **Web** section.
-
-![](images/cloudfront_distribution_web.png)
-
-Next, configure the distribution settings. Under Origin Settings, update the following values:
-
-![](images/cloudfront_distribution_settings.png)
-
-<table>
-  <tr>
-    <td>**Field**</td>
-    <td>**Value**</td>
-    <td>**Description**</td>
-  </tr>
-  <tr>
-   <td>Origin Domain Name</td>
-   <td>`cdn.segment.com`</td>
-   <td>The domain name you want the proxy to be served to</td>
-  </tr>
-  <tr>
-   <td>Origin ID (optional)</td>
-   <td>The Segment CDN</td>
-   <td>A Description of the origin. This can be anything you want that describes the origin domain name.</td>
-  </tr>
-  <tr>
-   <td>Origin Protocol Policy</td>
-   <td>Set to `HTTPS Only`</td>
-   <td></td>
-  </tr>
-  <tr>
-   <td>Alternate Domain Names (CNAMEs)</td>
-   <td>yourdomain.com</td>
-   <td>Add the domain you are proxying to Segment here. If you don't do this you will get an error.</td>
-  </tr>
-</table>
-
-Next, configure the **Default Cache Behavior Settings**.
-
-<table>
-  <tr>
-    <td>**Field**</td>
-    <td>**Value**</td>
-    <td>**Description**</td>
-  </tr>
-  <tr>
-   <td>Viewer Protocol Policy</td>
-   <td>Redirect HTTP to HTTPS</td>
-   <td>Ensure that all traffic goes through HTTPS</td>
-  </tr>
-  <tr>
-   <td>Allowed HTTP Methods</td>
-   <td>GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE</td>
-   <td>Select which HTTP methods are allowed to be proxied.</td>
-  </tr>
-  <tr>
-   <td>Forward Cookies</td>
-   <td>All</td>
-   <td>Ensure that cookies are forwarded.</td>
-  </tr>
-  <tr>
-   <td>Query String Forwarding and Caching</td>
-   <td>Forward all, cache based on all</td>
-   <td>Ensure that all query string values are forwarded and properly cached.</td>
-  </tr>
-</table>
-
-Click **Create Distribution** at the bottom of the page. This distribution displays as being "In Progress" until it finishes deploying.
-
-You need the "Domain Name" for the next step, so keep this browser window open.
+Take note of the Domain Name for use in the next step.
 
 #### Add CNAME Record to DNS
 
-Next, add a CNAME record to your DNS settings. Go to your domain registrar and add a new record to your DNS of type "CNAME".
+To add a CNAME record for the Segment proxy to your organizations DNS settings:
+1. Use a name that makes it clear what you are using the subdomain for, for example `analytics.mysite.com`.
+2. Go to your domain registrar and add a new record to your DNS of type "CNAME".
+3. Configure these values: 
+    - **Name**: `<subdomain_name>.yourdomain.com`
+    - **Value**:  The Domain Name value from CloudFront
+4. Save your record. This might take some time to take effect, depending on your TTL settings. 
+5. Make a `curl` request to your domain to verify that the proxy works. 
 
-<table>
-  <tr>
-    <td>**Field**</td>
-    <td>**Value**</td>
-  </tr>
-  <tr>
-    <td>Name</td>
-    <td>{subdomain_name}.yourdomain.com</td>
-  </tr>
-  <tr>
-    <td>Value</td>
-    <td>CloudFront Distribution Domain Name</td>
-  </tr>
-</table>
 
-Save your record. This might take some time to take effect, depending on your TTL settings. Try `curl`ing your domain to check if it is proxying correctly.
 
 ### Tracking API Proxy
 
-Next, set up a proxy for the tracking API so that all calls are proxied through your domain. In this step, we set up a CloudFront distribution that's very similar to the previous step, with a few minor changes:
+Set up a proxy for the tracking API so that all calls proxy through your domain. To do this, set up a CloudFront distribution that's similar to the one in the previous section, with the exception of the Origin Domain Name:
 
-<table>
-  <tr>
-    <td>**Field**</td>
-    <td>**Value**</td>
-    <td>**Description**</td>
-  </tr>
-  <tr>
-   <td>Origin Domain Name</td>
-   <td>`api.segment.io`</td>
-   <td>The domain name you would like the proxy to be served to</td>
-  </tr>
-</table>
+| Field              | Value            | Description                                  |
+| ------------------ | ---------------- | -------------------------------------------- |
+| Origin Domain Name | `api.segment.io` | The domain name to which the proxy is served |
+
 
 #### Add CNAME Record to DNS
 
-Next, add a CNAME record to your DNS settings. Go to your domain registrar and add a new record to your DNS of type "CNAME". This time use the CloudFront distribution for the tracking API proxy.
+To add a CNAME record to your DNS settings:
+1. Go to your domain registrar and add a new record to your DNS of type "CNAME". This time use the CloudFront distribution for the tracking API proxy.
+2. Enter values for these fields:
+   - **Name**: `<subdomain_name>.yourdomain.com`
+   - **Value**: Tracking API CloudFront Distribution Domain Name
+3. Save your record. This might take some time to take effect, depending on your TTL settings.
+4. Run `curl` on your domain to check if the proxy is working correctly.
 
-<table>
-  <tr>
-    <td>**Field**</td>
-    <td>**Value**</td>
-  </tr>
-  <tr>
-    <td>Name</td>
-    <td>{subdomain_name}.yourdomain.com</td>
-  </tr>
-  <tr>
-    <td>Value</td>
-    <td>Tracking API CloudFront Distribution Domain Name</td>
-  </tr>
-</table>
 
-Save your record. This might take some time to take effect, depending on your TTL settings. Try running `curl` on your domain to check if the proxy is working correctly.

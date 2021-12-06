@@ -21,6 +21,8 @@ import searchBar from './search-bar'
 import glightbox from './glightbox'
 import autocomplete from './algolia'
 import mapTable from './map-table'
+import expando from './expando'
+import codeCopy from './code-copy'
 feedback()
 accordion()
 accordionGroup()
@@ -43,3 +45,5 @@ tracking()
 searchBar()
 glightbox()
 mapTable()
+expando()
+codeCopy()

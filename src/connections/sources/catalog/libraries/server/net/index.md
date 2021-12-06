@@ -41,7 +41,7 @@ Your website will use our .NET library to `identify` and `track` users.  You can
 Install-Package Analytics -Version <version>
 ```
 
-**Note:** the Analytics package has a dependency on [Newton.JSON](http://json.codeplex.com/).
+**Note:** the Analytics package has a dependency on [Newton.JSON](https://www.newtonsoft.com/json).
 
 You can also accomplish the same thing in the Visual Studio `Tools` menu, select `Library Package Manager` and then click `Package Manager Console`.
 

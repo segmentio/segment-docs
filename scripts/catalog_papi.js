@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const fm = require('front-matter');
 const yaml = require('js-yaml');
+const { type } = require('os');
 
 require('dotenv').config();
 
@@ -60,24 +61,22 @@ const getConnectionModes = (destination) => {
       mobile: false,
       server: false
     },
-    summary: "",
-    cmode_type:""
   }
   destination.components.forEach(component =>{
     switch (component.type){
-      case 'ios':
+      case 'IOS':
         connectionModes.device.mobile = true
         break
-      case 'android':
+      case 'ANDROID':
         connectionModes.device.mobile = true
         break
-      case 'browser':
+      case 'BROWSER':
         if (destination.browserUnbundling) {
           connectionModes.cloud.web = true
         }
         connectionModes.device.web = true
         break
-      case 'server':
+      case 'SERVER':
         connectionModes.cloud.mobile = true
         if (destination.platforms.server) {
           connectionModes.cloud.server = true
@@ -98,97 +97,6 @@ const getConnectionModes = (destination) => {
 
     }
   })
-    // summarize connection modes in plain english.
-  // start with no-cloud
-  if (connectionModes.cloud.web == false && connectionModes.cloud.mobile == false && connectionModes.cloud.server == false){
-    // first check if no info at all available - these need backfill
-    if (connectionModes.device.web == false && connectionModes.device.mobile == false) {
-      connectionModes.summary = "No connection mode information available."
-      connectionModes.case = "0"
-      connectionModes.cmode_type = "none"
-    }
-    // handle has-device-modes: three cases
-    else if (connectionModes.device.web == true || connectionModes.device.mobile == true){
-      connectionModes.cmode_type = "device-only"
-      if (connectionModes.device.web == true && connectionModes.device.mobile == true) {
-        connectionModes.summary = "accepts device-mode data from both Analytics.js and mobile sources. It does not accept data in cloud-mode."
-        connectionModes.case = "1"
-      }
-      if (connectionModes.device.web == true && connectionModes.device.mobile == false) {
-        connectionModes.summary = "accepts device-mode data only from Analytics.js."
-        connectionModes.case = "2"
-      }
-      if (connectionModes.device.web == false && connectionModes.device.mobile == true) {
-        connectionModes.summary = "accepts device-mode data only from a mobile source."
-        connectionModes.case = "3"
-      }
-    }
-
-  }
-  //next check if all are true.
-  else if (connectionModes.cloud.web == true && connectionModes.cloud.mobile == true && connectionModes.cloud.server == true && connectionModes.device.web == true && connectionModes.device.mobile == true) {
-    connectionModes.cmode_type = "all"
-    connectionModes.summary = "accepts cloud-mode data from all Segment source types. It can accept device-mode data from both web and mobile sources."
-    connectionModes.case = "4"
-  }
-
-  //next handle all cloud-only (no-device-mode) cases
-  else if ((connectionModes.device.web == false && connectionModes.device.mobile == false) && (connectionModes.cloud.web == true || connectionModes.cloud.mobile == true || connectionModes.cloud.server == true)) {
-    connectionModes.cmode_type = "cloud-only"
-    // accepts all cloud-mode
-    if (connectionModes.cloud.web == true && connectionModes.cloud.mobile == true && connectionModes.cloud.server == true){
-      connectionModes.summary = "accepts cloud-mode data from all Segment source types. It does not offer device-mode connections."
-      connectionModes.case = "5"
-    }
-    //edge-case-y: only mobile and server cloud
-    else if (connectionModes.cloud.web == false && connectionModes.cloud.mobile == true && connectionModes.cloud.server == true){
-      connectionModes.summary = "accepts data from any Segment mobile or server source in cloud mode. It does not accept data from a web source, and does not offer device-mode connections."
-      connectionModes.case = "6"
-    }
-    //edge-case-y: web and mobile cloud, no server.
-    else if (connectionModes.cloud.web == true && connectionModes.cloud.mobile == true && connectionModes.cloud.server == false){
-      connectionModes.summary = "accepts only cloud-mode data from web and mobile sources."
-      connectionModes.case = "7"
-    }
-    //edge-case-y: mobile cloud only.
-    else if (connectionModes.cloud.web == false && connectionModes.cloud.mobile == true && connectionModes.cloud.server == false){
-      connectionModes.summary = "accepts only cloud-mode data from mobile sources."
-      connectionModes.case = "8"
-    }
-  }
-
-  //handle mixed-case - in the dossier, use the case, or type: "mixed" to invoke a check for what type of device mode
-  else if ((connectionModes.cloud.web == true || connectionModes.cloud.mobile == true || connectionModes.cloud.server == true) && (connectionModes.device.mobile == true || connectionModes.device.web == true)){
-// remove "both" as that would be covered under ALL
-    if (!(connectionModes.device.mobile == true && connectionModes.device.web == true)){
-      connectionModes.cmode_type = "mixed"
-      // all cloud-mode plus one device
-      if ((connectionModes.cloud.web == true && connectionModes.cloud.mobile == true && connectionModes.cloud.server == true) && (connectionModes.device.mobile == true || connectionModes.device.web == true)){
-        if (connectionModes.device.mobile == true || connectionModes.device.web == false){
-          connectionModes.summary = "accepts data in cloud-mode from all source types, and can accept data in device-mode from mobile sources."
-        }
-        else if (connectionModes.device.mobile == false || connectionModes.device.web == true){
-          connectionModes.summary = "accepts data in cloud-mode from all source types, and can accept data in device-mode from Analytics.js sources."
-        }
-        connectionModes.case = "9"
-      }
-      // edge-case-y: cloud web and mobile, no server, one device
-      else if ((connectionModes.cloud.web == true && connectionModes.cloud.mobile == true && connectionModes.cloud.server == false) && (connectionModes.device.mobile == true || connectionModes.device.web == true)){
-        if (connectionModes.device.mobile == true || connectionModes.device.web == false){
-          connectionModes.summary = "accepts data in cloud-mode from web and mobile sources, and can accept data in device-mode from mobile sources."
-        }
-        else if (connectionModes.device.mobile == false || connectionModes.device.web == true){
-          connectionModes.summary = "accepts data in cloud-mode from web and mobile sources, and can accept data in device-mode from Analytics.js sources."
-        }
-        connectionModes.case = "10"
-      }
-      // edge-case-y: cloud mobile and server, device mobile, no web
-      else if (connectionModes.cloud.web == false && connectionModes.cloud.mobile == true && connectionModes.cloud.server == true && connectionModes.device.mobile == true && connectionModes.device.web == false){
-        connectionModes.summary = "accepts data in cloud-mode from mobile and server sources, and can accept data in device-mode from mobile sources."
-        connectionModes.case = "11"
-      }
-    }
-  }
   return connectionModes
 }
 
@@ -206,7 +114,7 @@ const getConnectionModes = (destination) => {
       if (item.status === 'PUBLIC_BETA') {
         betaFlag = 'beta: true\n'
       }
-      content =`---\ntitle: '${item.display_name} Destination'\nhidden: true\n${betaFlag}---\n`
+      content =`---\ntitle: '${item.display_name} Destination'\nhidden: true\npublished: false\n${betaFlag}---\n`
     }
     fs.mkdirSync(docsPath)
     fs.writeFileSync(`${docsPath}/index.md`, content)
@@ -259,9 +167,6 @@ const updateSources = async () => {
   const hiddenSources = [
     'amp',
     'factual-engine',
-    'kotlin-android',
-    'kotlin',
-    'swift-ios'
   ]
 
   sources.forEach(source => {
@@ -332,14 +237,14 @@ const updateSources = async () => {
   var todayDate = new Date().toISOString().slice(0,10);
   output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n"
   output += "# sources last updated " + todayDate + " \n";
-  output += yaml.safeDump({ items: sourcesUpdated }, options);
+  output += yaml.dump({ items: sourcesUpdated }, options);
   fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/sources.yml`), output);
 
   // Create source-category mapping yaml file
   var todayDate = new Date().toISOString().slice(0,10);
   output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n"
   output += "# source cateogries last updated " + todayDate + " \n";
-  output += yaml.safeDump({ items: sourceCategories }, options);
+  output += yaml.dump({ items: sourceCategories }, options);
   fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/source_categories.yml`), output);
 
 
@@ -368,6 +273,19 @@ const updateDestinations = async () => {
 
   destinations.forEach(destination => {
     let slug = slugify(destination.name)
+
+    // Flip the slug of Actions destinations
+    const actionsDests = [
+      'amplitude-actions',
+      'slack-actions',
+      'fullstory-actions'
+    ]
+
+    if (actionsDests.includes(slug)) {
+        const newSlug = slug.split('-')
+        slug = newSlug[1]+'-'+newSlug[0]
+    }
+
     let url = `connections/destinations/catalog/${slug}`
 
     let tempCategories = [destination.categories]
@@ -383,18 +301,21 @@ const updateDestinations = async () => {
     })
 
     let settings = destination.options
+
     settings.sort((a, b) => {
       if(a.name.toLowerCase() < b.name.toLowerCase()) { return -1; }
       if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
       return 0;
     })
-
+    let actions = destination.actions
+    let presets = destination.presets
+    
     const clone = (obj) => Object.assign({}, obj)
     const renameKey = (object, key, newKey) => {
       const clonedObj = clone(object);
       const targetKey = clonedObj[key];
       delete clonedObj[key];
-    
+
       clonedObj[newKey] = targetKey;
       return clonedObj;
     };
@@ -402,6 +323,7 @@ const updateDestinations = async () => {
     destination.supportedMethods = renameKey(destination.supportedMethods, 'pageview', 'page')
 
     let updatedDestination = {
+      destination_id: destination.id,
       display_name: destination.name,
       name: destination.name,
       slug,
@@ -424,7 +346,9 @@ const updateDestinations = async () => {
       browserUnbundlingPublic: destination.supportedFeatures.browserUnbundlingPublic,
       replay: destination.supportedFeatures.replay,
       connection_modes,
-      settings
+      settings,
+      actions,
+      presets
     }
     destinationsUpdated.push(updatedDestination)
     doesCatalogItemExist(updatedDestination)
@@ -451,14 +375,14 @@ const updateDestinations = async () => {
   output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n"
   var todayDate = new Date().toISOString().slice(0,10);
   output += "# destination data last updated " + todayDate + " \n";
-  output += yaml.safeDump({ items: destinationsUpdated }, options);
+  output += yaml.dump({ items: destinationsUpdated }, options);
   fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/destinations.yml`), output);
 
   // Create destination-category mapping yaml file
   output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n"
   var todayDate = new Date().toISOString().slice(0,10);
   output += "# destination categories last updated " + todayDate + " \n";
-  output += yaml.safeDump({ items: destinationCategories }, options);
+  output += yaml.dump({ items: destinationCategories }, options);
   fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/destination_categories.yml`), output);
 }
 
@@ -511,11 +435,11 @@ const updateWarehouses = async () => {
   output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n"
   var todayDate = new Date().toISOString().slice(0,10);
   output += "# warehouse data last updated " + todayDate + " \n";
-  output += yaml.safeDump({ items: warehousesUpdated }, options);
+  output += yaml.dump({ items: warehousesUpdated }, options);
   fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/warehouse_papi.yml`), output);
 
 }
 
 updateDestinations()
 updateSources()
-updateWarehouses()
+//updateWarehouses()

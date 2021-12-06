@@ -27,7 +27,7 @@ Segment's `track` and `identify` events can only update the following properties
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [`identify` method does](https://segment.com/docs/connections/spec/identify/). An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [`identify` method does](/docs/connections/spec/identify/). An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -44,7 +44,7 @@ Segment `identify` events create or update user/player object records in Gamebal
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [track method does](https://segment.com/docs/connections/spec/track/). An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [track method does](/docs/connections/spec/track/). An example call would look like:
 
 ```js
 analytics.track('View Product')

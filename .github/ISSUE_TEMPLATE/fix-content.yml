@@ -1,0 +1,32 @@
+name: Improve an existing article's content
+description: Make a suggestion to improve the content of an existing article
+title: "[Content]: "
+labels: [content, triage]
+body:
+- type: markdown
+  attributes:
+    value: |
+      * Please check that there is not an existing open [issue](https://github.com/segmentio/segment-docs/issues) before you create a new one.
+      * Read the Contribution guide before you continue.
+- type: input
+  attributes:
+    label: What article on segment.com/docs is affected?
+    description: Please paste link to the article you'd like to see updated.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: What part(s) of the article would you like to see updated?
+    description: |
+      - Give as much detail as you can to help us understand the change you want to see. 
+      - Why should the docs be changed? What use cases does it support? 
+      - What is the expected outcome?
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Additional information
+    description: Add any other context or screenshots about the feature request here.
+  validations:
+    required: false

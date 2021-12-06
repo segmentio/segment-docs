@@ -3,7 +3,7 @@ rewrite: true
 title: Zendesk Chat (Zopim) Destination
 ---
 
-[Zendesk Chat](https://developer.zendesk.com/rest_api/docs/chat/introduction), (previously called Zopim) is a live chat solution that helps businesses increase sales conversion by engaging important leads on their websites. The `analytics.js` Zendesk Chat Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-zopim).
+[Zendesk Chat](https://developer.zendesk.com/rest_api/docs/chat/introduction), (previously called Zopim) is a live chat solution that helps businesses increase sales conversion by engaging important leads on their websites. The `analytics.js` Zendesk Chat Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/zopim).
 
 **NOTE:** Zendesk Chat currently offers [two types of widgets](https://support.zendesk.com/hc/en-us/articles/115007912068-Using-the-Chat-JavaScript-API): a standalone `Chat Widget`, which is mainly designed to provide chat related features, and a `Web Widget`, which incorporates both Zendesk Chat and Zendesk Support functionalities. At the moment, Segment only supports the `Chat Widget`. For more details refer to the "Getting Started" section below.
 
@@ -42,7 +42,7 @@ Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.j
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('ze8rt1u89', {

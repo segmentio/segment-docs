@@ -134,7 +134,7 @@ For privacy reasons, **you do not want to send the "Cookie" header to Castle**, 
 There are example implementations on how to extract request headers in [PHP](https://github.com/castle/castle-php/blob/e93de1532ef28af17b8bf2bef350e6995a580085/lib/Castle/Request.php#L31), [Ruby](https://github.com/castle/castle-ruby/blob/master/lib/castle-rb/client.rb#L54), and [Java](https://github.com/castle/castle-java/blob/96cdc7469aa0995a836100c3dfd370b10f299e8c/src/main/java/io/castle/client/objects/UserInfoHeader.java#L148).
 
 ## Identify
-When you call [`identify`](https://segment.com/docs/connections/spec/identify), a user will be created in Castle. The Segment special traits `email`, `username`, `name`, `createdAt`, `phone`, and `address` are mapped to Castle's reserved [user traits](https://castle.io/docs/castlejs#attributes).
+When you call [`identify`](/docs/connections/spec/identify), a user will be created in Castle. The Segment special traits `email`, `username`, `name`, `createdAt`, `phone`, and `address` are mapped to Castle's reserved [user traits](https://castle.io/docs/castlejs#attributes).
 
 Any additional traits will be stored on the Castle user model as _custom traits_.
 

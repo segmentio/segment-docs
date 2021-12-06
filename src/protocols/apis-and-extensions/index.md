@@ -35,7 +35,7 @@ Typewriter is a tool for generating strongly-typed Segment analytics libraries b
 
 Thousands of Segment customers have used Google Sheets to build Tracking Plans. We created the following template to help you draft a Tracking Plan and easily upload that Tracking Plan to Segment. Keep in mind that uploading changes from Google Sheets will overwrite any changes made in the Segment UI.
 
-[View the Google Sheets Tracking Plan template here](https://docs.google.com/spreadsheets/u/1/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/copy). Feel free to make a copy!
+[View the Google Sheets Tracking Plan template here](https://docs.google.com/spreadsheets/u/1/d/1TA6qTcDHoZzsG7-C6p5yHGximDxqoNtizguKs7Z0av4/copy). Feel free to make a copy!
 
 To upload your Tracking Plan directly from Google Sheets, follow these steps:
 

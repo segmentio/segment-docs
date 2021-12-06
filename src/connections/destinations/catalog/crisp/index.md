@@ -10,7 +10,7 @@ This destination is maintained by Crisp. For any issues with the destination, [c
 
 {% include content/connection-modes.md %} 
 
-1. Go to the [Crisp Plugins page](app.crisp.chat).
+1. Go to the [Crisp Plugins page](http://app.crisp.chat).
 2. Search for the "Segment" plugin, click **Connect to Segment**.
 3. The Segment App opens in a new window. Log in to authenticate the connection from Crisp.
 4. Select the Workspace and Source to connect with Crisp.

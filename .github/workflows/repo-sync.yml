@@ -1,0 +1,59 @@
+name: Repo Sync
+
+on:
+  schedule: 
+  - cron: "*/30 * * * *" # every 30 minutes.
+
+jobs:
+  repo-sync:
+    name: Repo Sync
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - uses: repo-sync/github-sync@v2
+      name: Sync repo to branch
+      env:
+        GITHUB_TOKEN: ${{ secrets.DOCS_BOT_PAT_REPO_SCOPE }}
+      with:
+        source_repo: ${{ secrets.SOURCE_REPO }}
+        source_branch: ${{ secrets.SOURCE_BRANCH }}
+        destination_branch: ${{ secrets.INTERMEDIATE_BRANCH }}
+        github_token: ${{ secrets.DOCS_BOT_PAT_REPO_SCOPE }}
+    
+    - uses: repo-sync/pull-request@v2
+      name: Create pull request
+      env:
+        GITHUB_TOKEN: ${{ secrets.DOCS_BOT_PAT_REPO_SCOPE }}
+      with:
+        source_branch: ${{ secrets.INTERMEDIATE_BRANCH }}
+        destination_branch: ${{ secrets.DESTINATION_BRANCH }}
+        pr_title: 'repo sync'
+        pr_body: "This is an automated pull request to sync changes between the public and private repos.\n\n:robot: This pull request should be merged (not squashed) to preserve continuity across repos, so please let a bot do the merging!"
+        pr_label: autoupdate,automated-reposync-pr
+        github_token: ${{ secrets.DOCS_BOT_PAT_REPO_SCOPE }}
+
+    - name: Find pull request
+      uses: juliangruber/find-pull-request-action@v1
+      id: find-pull-request
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        branch: repo-sync
+        base: ${{ secrets.DESTINATION_BRANCH }}
+        author: bot-docsteam 
+        state: open
+
+    - name: Approve pull request
+      if: ${{ steps.find-pull-request.outputs.number }}
+      uses: juliangruber/approve-pull-request-action@v1
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        number: ${{ steps.find-pull-request.outputs.number }}
+    
+    - name: Merge Pull Request
+      if: ${{ steps.find-pull-request.outputs.number }}
+      uses: juliangruber/merge-pull-request-action@v1
+      with:
+        github-token: ${{ secrets.DOCS_BOT_PAT_REPO_SCOPE }}
+        number: ${{ steps.find-pull-request.outputs.number }}
+        method: merge

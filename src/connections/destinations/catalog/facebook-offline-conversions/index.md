@@ -51,7 +51,7 @@ You can find Facebook Offline Event Set ID by going to your **Offline Events** p
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track({
@@ -78,7 +78,7 @@ There are 3 places you can map your Segment `track` events:
 
 ![](images/86f8c50165a726e8168d652c8052c2a0.png)
 
-The following table shows how we map Segment's [semantic ecommerce](https://segment.com/docs/connections/spec/ecommerce/v2) or custom event names to Facebook's semantic conversion event names:
+The following table shows how we map Segment's [semantic ecommerce](/docs/connections/spec/ecommerce/v2) or custom event names to Facebook's semantic conversion event names:
 
 <table>
   <tr>
