@@ -18,7 +18,10 @@ loaded into one of the most powerful and cost-effective data warehouses today.
 
 ## Getting Started
 
-In order store your Segment data in BigQuery, you must [enable BigQuery for your Google Cloud project](#create-a-project-and-enable-bigquery), [create a GCP service account for Segment to assume](#create-a-service-account-for-segment), and [create a warehouse in the Segment app](#create-the-warehouse-in-segment).
+To store your Segment data in BigQuery, complete the following steps:
+- [Enable BigQuery for your Google Cloud project](#create-a-project-and-enable-bigquery)
+- [Create a GCP service account for Segment to assume](#create-a-service-account-for-segment)
+- [Create a warehouse in the Segment app](#create-the-warehouse-in-segment).
 
 ### Create a Project and Enable BigQuery
 
@@ -29,7 +32,7 @@ In order store your Segment data in BigQuery, you must [enable BigQuery for your
     Once you've done so, you should see BigQuery in the "Resources" section of Cloud Platform.
   - **Note:** make sure [billing is enabled](https://support.google.com/cloud/answer/6293499#enable-billing) on your project,
     or Segment will not be able to write into the cluster.
-3. Copy your project ID, as you will need it when creating your warehouse source in the Segment app.
+3. Copy the project ID. You will need it when you create a warehouse source in the Segment app.
 
 ### Create a Service Account for Segment
 
@@ -54,7 +57,7 @@ The downloaded file will be used to create your warehouse in the next section.
 5. Copy the contents of the credentials (the JSON key) into the **Credentials** field <br/>
 **Optional:** Enter a [region code](https://cloud.google.com/compute/docs/regions-zones/) in the **Location** field (the default will be "US")
 6. Click **Connect**
-7. if Segment is able to successfully connect with the provided **Project ID** and **Credentials**,
+7. If Segment can connect with the provided **Project ID** and **Credentials**,
 a warehouse will be created and your first sync should begin shortly
 
 ### Schema
@@ -113,7 +116,7 @@ In addition, any attempts to update warehouse connection settings will also
 require these credentials. This effectively deprecates the shared Service
 Account.
 
-In order to stay ahead of this change, make sure to migrate your warehouse by following
+To stay ahead of this change,  migrate your warehouse by following
 the instructions in the "Create a Service Account for Segment" section above.
 Then, head to your warehouse's connection settings and update with the
 **Credentials** you created.
