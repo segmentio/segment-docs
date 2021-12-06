@@ -249,7 +249,7 @@ You will have to be sure that the [IDFA](/docs/connections/sources/catalog/libra
 
 Similarly, on Android, you'll need to include the Play Services Ads library as [mentioned here](/docs/connections/sources/catalog/libraries/mobile/android/#how-do-you-handle-unique-identifiers-) in order for the `advertisingId` to populate.
 
-Once you have added these, you will start to see the `context.device.advertisingId` populate and the `context.device.adTrackingEnabled` flag set to `true` unless the user has ad tracking limited or is using a mobile ad blocker.
+Once you've added these, you will start to see the `context.device.advertisingId` populate and the `context.device.adTrackingEnabled` flag set to `true` unless the user has ad tracking limited or is using a mobile ad blocker.
 
 > note ""
 > While the network is deprecated, the relevant iOS [framework](https://developer.apple.com/reference/iad) is not.
