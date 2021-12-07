@@ -46,7 +46,7 @@ At the moment, we don't support filtering which objects or properties get synced
 
 ### Streaming
 
-The SendGrid source also has a streaming component which listens in real time for inbound webhooks from SendGrid's Event Notifications and batches the events to be uploaded on your next warehouse flush. These events are only ever appended to your warehouse. Note, if you don't use SendGrid's marketing features, this will be the only data that we receive from SendGrid. At present, there is no way to retrieve email event history from SendGrid, so you will only have access to data that we've collected after you successfully enable this component of the source destination.
+The SendGrid source also has a streaming component which listens in real time for inbound webhooks from SendGrid's Event Notifications and batches the events to be uploaded on your next warehouse flush. ***These events are only ever appended to your warehouse.*** Note, if you don't use SendGrid's marketing features, this will be the only data that we receive from SendGrid. At present, there is no way to retrieve email event history from SendGrid, so you will only have access to data that we've collected after you successfully enable this component of the source destination.
 
 
 ## Collections
@@ -55,7 +55,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 **Object** collections are updated with each sync. These are pulled using our sync component.
 
-**Event** collections are append only, represent a user action or activity, and may be likened to fact tables in a traditional data warehouse.
+**Event** collections are append only, represent a user action or activity, and may be likened to fact tables in a traditional data warehouse. **Note:** Unlike traditional events captured by Segment, these events are not able to be forwarded to Destinations you've configured in your Segment workspace. Instead, they can only be synced to a supported data warehouse.
 
 
 |  Collection | Type | Description |
@@ -79,4 +79,4 @@ Collections are the groupings of resources we pull from your source. In your war
 
 If you're getting an "Invalid Credentials" error when setting up the SendGrid source, send a direct ping to the [SendGrid Marketing Campaigns API](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html) to test if you're using the correct credentials.
 
-Make sure you whitelist the Segment IP addresses on Sendgrid. [contact our team](https://segment.com/help/contact/) for the list of IP addresses to whitelist.
+Make sure you whitelist the Segment IP addresses on Sendgrid. [Contact our team](https://segment.com/help/contact/) for the list of IP addresses to whitelist.
