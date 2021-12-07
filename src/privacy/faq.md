@@ -55,8 +55,10 @@ In addition to your Raw Data destinations (Amazon S3 and Data Warehouses), we ca
 - Appcues
 - Vero
 - Google Analytics
+- Customer.io
+- Optimizely Full Stack
 
-Segment cannot guarantee that data is deleted from your Destinations. When you issue a user deletion request, Segment forwards the request to supported streaming Destinations. You must still contact these Destinations to confirm that they have executed the request.
+Segment cannot guarantee that data is deleted from your Destinations. When you issue a user deletion request, Segment forwards the request to supported streaming Destinations. You must still contact these Destinations to confirm that they've executed the request.
 
 ### Which destinations require additional destination setting configuration?
 

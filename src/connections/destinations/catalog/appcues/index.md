@@ -10,7 +10,7 @@ hide-cmodes: true
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Appcues" in the Catalog, select it, and choose the source you'll connect to the destination.
-3. In the destination settings, enter your `Appcues Id` (for client-side integration functionality) and/or your `API Key` (for server-side integration functionality) from the [Appcues account page](https://my.appcues.com/account).
+3. In the destination settings, enter your `Account ID` (for client-side integration functionality) and/or your `API Key` (for server-side integration functionality) from the [Appcues account page](https://my.appcues.com/account).
 
 ### Server
 
