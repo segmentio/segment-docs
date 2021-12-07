@@ -18,28 +18,28 @@ Segment’s Kameleoon destination supports the following Kameleoon products:
 * [Kameleoon AI Personalization](https://www.kameleoon.com/en/platform/personalization){:target="_blank"} (Web Client-side)
 
 
-First, you will have to request an API Key in order to use Kameleoon & Segment.io integration. You can request it to [support@kameleoon.com](mailto:support@kameleoon.com), by specifying your Kameleoon account login.
+In order to use the Kameleoon & Segment.io integration, you first need to request an API Key. Send your request it to [support@kameleoon.com](mailto:support@kameleoon.com), and be sure to specify your Kameleoon account login.
 
 You will also need the **sitecode** key. You can find it in your Kameleoon account, as described in [How do I find my site id?](https://help.kameleoon.com/question/how-do-i-find-my-site-id/){:target="_blank"}.
 
 To add the destination to your Segment workspace:
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-2. Search for "Kameleoon" in the Destinations Catalog, and select the "Kameleoon" destination.
-3. Choose which Source should send data to the "Kameleoon" destination.
+2. Search for **Kameleoon** in the Destinations Catalog, and select the **Kameleoon** destination.
+3. Choose which Source should send data to the **Kameleoon** destination.
 4. Enter the **API Key** and the **sitecode** in the Kameleoon destination settings in Segment.
 
 ## Implementation pre-requisites: matching Users between Kameleoon and Segment
 
 The integration requires you to use the same system of identifiers for both tools, meaning the `userId` value you pass to Segment should be the same value as Kameleoon uses to identify a “visitor”.
 
-If you use Kameleoon Experiment or Kameleoon AI Personalization on your website, Kameleoon places a cookie that contains an anonymous unique identifier, called the Kameleoon visitorcode, randomly assigned to a visitor. This ID is used to uniquely identify a browser.
+If you use Kameleoon Experiment or Kameleoon AI Personalization on your website, Kameleoon places a cookie that contains an anonymous unique identifier, called the Kameleoon visitorcode. This ID is randomly assigned to a visitor and is used to uniquely identify a browser.
 
 You can either pass our visitorcode in the userId property of the Segment calls to ensure Kameleoon can consolidate data and avoid any analytics discrepancies between the tools in your campaign results, OR you may specify in all Segment calls an additional user property, `k_visitorCode`, whose value is the Kameleoon visitorcode. You can retrieve the user visitorCode from the browser by using our [Activation API](https://developers.kameleoon.com/activation-api.html#visitor){:target="_blank"}. `Kameleoon.API.Visitor.code`
 
-If you are not able to update your existing Segment tracking plan, you can also pass our visitor code in an additional Segment call as follow:`analytics.track('Kameleoon identifier', {'k_visitorCode': Kameleoon.API.Visitor.code});Kameleoon` will automatically link your internal user ID or anonymous ID to our own visitorCode. Make sure to call it only once per session.
+If you are not able to update your existing Segment tracking plan, you can also pass Kameleoon's visitor code in an additional Segment call as follows: `analytics.track('Kameleoon identifier', {'k_visitorCode': Kameleoon.API.Visitor.code});Kameleoon`. This will automatically link your internal user ID or anonymous ID to Kameleoon's own visitorCode. Make sure to call it only once per session.
 
-If you use Kameleoon Full Stack, please refer to the [Kameleoon SDK documentation](https://developers.kameleoon.com/sdks-overview.html){:target="_blank"}. We always recommend to use your own internal ID to identify users.
+If you use Kameleoon Full Stack, please refer to the [Kameleoon SDK documentation](https://developers.kameleoon.com/sdks-overview.html){:target="_blank"}. Kameleoon recommends you to use your own internal ID to identify users.
 
 ## Supported methods
 
