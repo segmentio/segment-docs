@@ -2,6 +2,8 @@
 title: Google Universal Analytics Destination
 strat: google
 hide-dossier: true
+redirect_from:
+  - '/connections/destinations/catalog/google-universal-analytics'
 ---
 
 > warning "Migrate mobile implementations to Firebase"
