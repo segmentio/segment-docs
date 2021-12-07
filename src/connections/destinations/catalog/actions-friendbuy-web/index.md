@@ -20,7 +20,7 @@ The Friendbuy destination can send information about your customers and their ac
 - **Track Customer**. Converts Segment [`analytics.identify`](https://segment.com/docs/connections/spec/identify/) calls to Friendbuy *track customer* calls. Use this to add your customer ID and other customer data to the information that Friendbuy has about the customer.
 - **Track Purchase**. Converts Segment [`analytics.track('Order Completed')`](https://segment.com/docs/connections/spec/ecommerce/v2/#order-completed) calls to Friendbuy *track purchase* calls. Use this to send purchase data to Friendbuy so that advocates can be rewarded based on their friends' purchases.
 - **Track Sign-Up**. Converts Segment [`analytics.track('Signed Up')`](https://segment.com/docs/connections/spec/b2b-saas/#signed-up) calls to Friendbuy *track sign_up* calls. Use this so that your customers can be rewarded based on creating an account or other type of sign-up action.
-- **Track Page**. Converts Segment [`analytics.page`](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#page) calls to Friendbuy *track page* calls. Use this to allow your Friendbuy banners based on page name.
+- **Track Page**. Converts Segment [`analytics.page`](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#page) calls to Friendbuy *track page* calls. Use this to allow your Friendbuy widgets based on page name.
 - **Track Custom Event**. Converts an arbitrary Segment [`analytics.track`](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#track) call with an event name and properties of your choosing to a Friendbuy track custom event call. Use this to allow your customers to be rewarded based on actions other than purchases or sign-ups.
 
 ## Benefits of Friendbuy Web Mode (Actions) vs Friendbuy Classic
@@ -78,7 +78,7 @@ Note that the default mappings for the *Purchase*, *Sign Up*, and custom events 
 
 In the *Track Customer*, *Track Purchase*, or *Track Sign Up* mappings you can, if you wish, use the *Custom Attributes* field to send additional custom properties that are not included in the predefined field names for that event. Use the mapping's *Custom Attributes* field to specify the path to a JSON object that will contain those custom attributes. Then, when your code makes its Segment Analytics.js call, include an object at the path that you configured containing your custom attributes and they will be included at the root of the Friendbuy track event.
 
-For example, if your *Track Purchase* call is has the default *Custom Attributes* value of `properties.friendbuyAttributes`, then if your track purchase call is like:
+For example, if your *Track Purchase* call has the default *Custom Attributes* value of `properties.friendbuyAttributes`, then if your track purchase call is like:
 
 ``` javascript
 analytics.track("Order Completed", {
