@@ -1,4 +1,4 @@
 ---
 title: 'Natero Destination'
-hidden: true
+hidden: false
 ---
