@@ -56,7 +56,7 @@ The SendGrid source also has a streaming component which listens in real time fo
 
 Collections are the groupings of resources we pull from your source. In your warehouse, each collection gets its own table.
 
-**Object** collections are updated with each sync. These are pulled using our sync component.
+**Object** collections are updated with each sync. These are pulled using Segment's sync component.
 
 **Event** collections are append only, represent a user action or activity, and may be likened to fact tables in a traditional data warehouse. **Note:** Unlike traditional events captured by Segment, you can't forward these events to Destinations you've configured in your Segment workspace. You can only sync these events to a supported data warehouse.
 
