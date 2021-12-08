@@ -4,7 +4,7 @@ hide-cmodes: true
 hide-personas-partial: true
 hide-integrations-object: true
 maintenance: true
-maintenance-content: "New versions of this destination are available. See [Braze Cloud Mode (Actions)](/docs/connections/catalog/actions-braze-cloud) and [Braze Web Mode (Actions)](/docs/connections/catalog/actions-braze-web)."
+maintenance-content: "New versions of this destination are available. See [Braze Cloud Mode (Actions)](/docs/connections/catalog/braze-cloud-mode-actions) and [Braze Web Mode (Actions)](/docs/connections/catalog/actions-braze-web)."
 ---
 
 [Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
