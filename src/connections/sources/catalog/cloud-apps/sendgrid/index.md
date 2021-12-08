@@ -79,4 +79,4 @@ Collections are the groupings of resources we pull from your source. In your war
 
 If you're getting an "Invalid Credentials" error when setting up the SendGrid source, send a direct ping to the [SendGrid Marketing Campaigns API](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html) to test if you're using the correct credentials.
 
-Make sure you whitelist the Segment IP addresses on Sendgrid. [Contact our team](https://segment.com/help/contact/) for the list of IP addresses to whitelist.
+Make sure you whitelist the Segment IP addresses on Sendgrid. [Contact Segment](https://segment.com/help/contact/) for the list of IP addresses to whitelist.
