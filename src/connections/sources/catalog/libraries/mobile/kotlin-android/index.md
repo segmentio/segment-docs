@@ -67,7 +67,7 @@ To get started with the Analytics-Kotlin mobile library:
     `flushAt` | Default set to `20`. <br> The count of events at which Segment flushes events. |
     `flushInterval` | Default set to `30` (seconds). <br> The interval in seconds at which Segment flushes events. |
     `recordScreenViews` | Default set to `false`. <br> Set to `true` to automatically trigger screen events on Activity Start. |
-    `storageProvider` | Default set to `ConcreteStorageProvider`. <br> The provider for storage class. It’s best not to modify this as it can disrupt your storage logic and you won’t be able to correctly store events. <br> NOTE: in Android, if you create `Configuration` through constrcutor, this must be set to `AndroidStorageProvider`.|
+    `storageProvider` | Default set to `ConcreteStorageProvider`. <br> The provider for storage class. It’s best not to modify this as it can disrupt your storage logic and you won’t be able to correctly store events. <br> NOTE: in Android, if you create `Configuration` through a constructor, this must be set to `AndroidStorageProvider`.|
     `trackApplicationLifecycleEvents` | Default set to `false`. <br> Set to `true` to automatically track Lifecycle events. |
     `trackDeepLinks` | Default set to `false`. <br> Set to `true` to automatically track opened Deep Links based on intents. |
     `useLifecycleObserver` | Default set to `false`. <br> Set to `true` to use `LifecycleObserver` to track Application lifecycle events. |
