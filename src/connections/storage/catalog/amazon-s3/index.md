@@ -17,7 +17,7 @@ Some benefits of using the new AWS S3 destination include:
 - The AWS S3 destination is compliant with AWS best practice of using an external ID when granting Segment access to your AWS resources (which means using the AWS S3 destination improves the privacy and security of your customer data!)
 - The AWS S3 destination is available in both the US and EU regions, unlike the Amazon S3 destination, which was available only in the US. This new development ensures customer data resides in your preferred region. 
 
-To migrate to the AWS S3 destination, follow the instructions outlined in the [AWS S3 destination documentation](/docs/connections/storage/catalog/aws-s3/#migrate-an-existing-destination).
+To migrate to the AWS S3 destination, follow the instructions outlined in the ["Migrate an existing destination" section of the AWS S3 destination documentation](/docs/connections/storage/catalog/aws-s3/#migrate-an-existing-destination).
 
 > error " "
 > You need to migrate to the new S3 destination before disabling your legacy destination to ensure Segment continues to deliver data to your S3 bucket. 
