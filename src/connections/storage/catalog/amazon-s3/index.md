@@ -6,8 +6,21 @@ redirect_from:
 hide-personas-partial: true
 ---
 
-> success "Try the new AWS S3 beta destination"
-> The AWS S3 destination supports IAM Roles, allowing for a more secure connection to your buckets. For more information, see the [AWS S3 destination documentation](/docs/connections/storage/catalog/aws-s3/).
+> warning "The Amazon S3 destination will enter Limited Access in Q1 2021"
+> After Q1 2021, users with a currently enabled Amazon S3 destination will be unable to modify the destination or re-enable a disabled Amazon S3 destination. Users who wish to continue using AWS to store their data should migrate to the AWS S3 destination. For more information, please see the [AWS S3 destination documentation](/docs/connections/storage/catalog/aws-s3/).
+
+## Migrating from Amazon S3 to AWS S3
+
+Segment recommends you migrate from the Amazon S3 destination to the AWS S3 destination before the . 
+
+Some benefits of using the new AWS S3 destination include: 
+- The AWS S3 destination is compliant with AWS best practice of using an external ID when granting Segment access to your AWS resources (which means using the AWS S3 destination improves the privacy and security of your customer data!)
+- The AWS S3 destination is available in both the US and EU regions, unlike the Amazon S3 destination, which was available only in the US. This new development ensures customer data resides in your preferred region. 
+
+To migrate to the AWS S3 destination, follow the instructions outlined in the [AWS S3 destination documentation](/docs/connections/storage/catalog/aws-s3/#migrate-an-existing-destination).
+
+> error " "
+> You need to migrate to the new S3 destination before disabling your legacy destination to ensure Segment continues to deliver data to your S3 bucket. 
 
 ## Getting Started
 
