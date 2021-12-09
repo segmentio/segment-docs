@@ -24,7 +24,7 @@ This source is maintained by Regal Voice. For any issues with the source, [conta
 
 The table below lists events that Regal Voice sends to Segment. These events appear as tables in your warehouse and as regular events in other Destinations. Regal Voice includes the `userId` if available.
 
-| event name                   | property description                                                                                  |
+| Event name                   | Property description                                                                                  |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------- |
 | agent.activity.updated       | An agent’s activity status was changed.                                                               |
 | call.completed               | An inbound or outbound call with a contact was completed. This includes calls that were not answered. |
