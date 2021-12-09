@@ -127,7 +127,7 @@ For example, the `properties.products.newElement` filter blocks all `newElement`
 
 ![](images/destination-filters/filter-array-properties.png)
 
-If you want to block the Identify event trait `products.newElement`, select the option under the **User Traits** list instead. If you want to block a context object field `products.newElement`, select it from **Context Fields** list.
+If you want to block the Identify event trait `products.newElement`, select the option under the **User Traits** list instead. If you want to block a context object field `products.newElement`, select it from the **Context Fields** list.
 
 **Q: How many filters can I create?**
 
