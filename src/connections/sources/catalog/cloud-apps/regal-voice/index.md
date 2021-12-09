@@ -39,7 +39,7 @@ The table below lists events that Regal Voice sends to Segment. These events app
 | sms.undelivered              | An SMS was undelivered from Regal Voice to contact.                                                   |
 | sms.received                 | An SMS was received from a contact.                                                                   |
 | task.canceled                | A call or SMS task was canceled.                                                                      |
-| task.created                 | A call or sms task was created.
+| task.created                 | A call or SMS task was created.
 
 ## Event Properties
 
