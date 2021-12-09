@@ -16,15 +16,12 @@ process to pull raw events and objects and load them into your BigQuery cluster.
 Using BigQuery through Segment means you'll get a fully managed data pipeline
 loaded into one of the most powerful and cost-effective data warehouses today.
 
-If you notice any gaps,
-out-dated information or want to leave some feedback to help us improve
-our documentation, [let us know](https://segment.com/help/contact)!
-
 ## Getting Started
 
-First, you'll want to enable BigQuery for your Google Cloud project. Then, you
-will create a Service Account for Segment to use. Last, you will create the
-warehouse in Segment.
+To store your Segment data in BigQuery, complete the following steps:
+- [Enable BigQuery for your Google Cloud project](#create-a-project-and-enable-bigquery)
+- [Create a GCP service account for Segment to assume](#create-a-service-account-for-segment)
+- [Create a warehouse in the Segment app](#create-the-warehouse-in-segment)
 
 ### Create a Project and Enable BigQuery
 
@@ -32,10 +29,9 @@ warehouse in Segment.
 2. Configure [Cloud Platform](https://console.cloud.google.com/):
   - If you don't have a project already, [create one](https://support.google.com/cloud/answer/6251787?hl=en&ref_topic=6158848).
   - If you have an existing project, you will need to [enable the BigQuery API](https://cloud.google.com/bigquery/quickstart-web-ui).
-    Once you've done so, you should see BigQuery in the ["Resources" section](https://cl.ly/0W2i2I2B2R0M) of Cloud Platform.
-  - **Note:** make sure [billing is enabled](https://support.google.com/cloud/answer/6293499#enable-billing) on your project,
-    otherwise Segment will not be able to write into the cluster.
-3. Copy your project ID, as you will need it later.
+    Once you've done so, you should see BigQuery in the "Resources" section of Cloud Platform.
+  - **Note:** make sure [billing is enabled](https://support.google.com/cloud/answer/6293499#enable-billing) on your project, or Segment will not be able to write into the cluster.
+3. Copy the project ID. You will need it when you create a warehouse source in the Segment app.
 
 ### Create a Service Account for Segment
 
@@ -44,7 +40,7 @@ for more information.
 
 1. From the Navigation panel on the left, go to **IAM & admin** > **Service accounts**
 2. Click **Create Service Account** along the top
-3. Enter a name (for example: "segment-warehouses") and click **Create**
+3. Enter a name for the service account (for example: "segment-warehouses") and click **Create**
 4. When assigning permissions, make sure to grant the following roles:
     - `BigQuery Data Owner`
     - `BigQuery Job User`
@@ -55,12 +51,12 @@ The downloaded file will be used to create your warehouse in the next section.
 
 1. In Segment, go to **Workspace** > **Add destination** > Search for "BigQuery"
 2. Select **BigQuery**
-3. Enter your project ID in the **Project** field
-4. Copy the contents of the credentials (the JSON key) into the **Credentials** field
-5. (Optional) Enter a [region code](https://cloud.google.com/compute/docs/regions-zones/) in the **Location** field (the default will be "US")
+3. Add a name for the destination to the **Name your destination** field
+4. Enter your project ID in the **Project** field
+5. Copy the contents of the credentials (the JSON key) into the **Credentials** field <br/>
+**Optional:** Enter a [region code](https://cloud.google.com/compute/docs/regions-zones/) in the **Location** field (the default will be "US")
 6. Click **Connect**
-7. if Segment is able to successfully connect with the **Project ID** and **Credentials**,
-the warehouse will be created and your first sync should begin shortly
+7. If Segment can connect with the provided **Project ID** and **Credentials**, a warehouse will be created and your first sync should begin shortly
 
 ### Schema
 
@@ -92,10 +88,10 @@ from <project-id>.<source-name>.<collection-name>$20160809
 #### Views
 
 A [view](https://cloud.google.com/bigquery/querying-data#views) is a virtual
-table defined by a SQL query. We use views in our de-duplication process to
+table defined by a SQL query. Segment uses views in the de-duplication process to
 ensure that events that you are querying unique events, and the latest objects
-from third-party data. All our views are set up to show information from the last
-60 days. Whenever possible, we recommend that you query from these views.
+from third-party data. All Segment views are set up to show information from the last
+60 days. Whenever possible, query from these views.
 
 Views are appended with `_view` , which you can query like this:
 
@@ -108,20 +104,20 @@ from <project-id>.<source-name>.<collection-name>_view
 
 For early customers using BigQuery with Segment, rather than providing Segment
 with credentials, access was granted to a shared Service Account
-(`connector@segment-1119.iam.gserviceaccount.com`). While convenient early
-adopters, this presents potential security risks that we would prefer to address
+(`connector@segment-1119.iam.gserviceaccount.com`). While convenient for early
+adopters, this presented potential security risks that Segment would prefer to address
 proactively.
 
-Starting in **March 2019**, we're going to start requiring BigQuery customers to
-create their own Service Accounts and provide us with those credentials instead.
+As of **March 2019**, Segment requires BigQuery customers to
+create their own Service Accounts and provide the app with those credentials instead.
 In addition, any attempts to update warehouse connection settings will also
 require these credentials. This effectively deprecates the shared Service
-Account, and in the future it will be deactivated completely.
+Account.
 
-In order to stay ahead of this, make sure to migrate your warehouse by following
+To stay ahead of this change, migrate your warehouse by following
 the instructions in the "Create a Service Account for Segment" section above.
 Then, head to your warehouse's connection settings and update with the
-**Credentials** you created along the way.
+**Credentials** you created.
 
 
 ## Best Practices
@@ -129,10 +125,10 @@ Then, head to your warehouse's connection settings and update with the
 ### Use views
 
 BigQuery charges based on the amount of data scanned by your queries. Views are
-a derived view over your tables that we use for de-duplication of events.
-Therefore, we recommend you query a specific view whenever possible to avoid
+a derived view over your tables that Segment uses for de-duplication of events.
+Therefore, Segment recommends you query a specific view whenever possible to avoid
 duplicate events and historical objects. It's important to note that BigQuery
-views are not cached:
+views are not cached. 
 
 > BigQuery's views are logical views, not materialized views, which means that
 > the query that defines the view is re-executed every time the view is queried.
@@ -159,12 +155,11 @@ querying sub-sets of tables.
 Absolutely! You will just need to modify one of the references to 60 in the view
 definition to the number of days of your choosing.
 
-We chose 60 days as it suits the needs for most of our customers. However,
+Segment chose 60 days as it suits the needs of most customers. However,
 you're welcome to update the definition of the view as long as the name stays
 the same.
 
-Here is the base query we use when first setting up your views. We are leaving
-in the placeholders (`%s.%s.%s`) where you would want to include the project,
+Here is the base query Segment uses when first setting up your views. Included in the base query are the placeholders (`%s.%s.%s`) that you would want to include the project,
 dataset and table (in that order).
 
 ```sql
@@ -196,14 +191,14 @@ costs.
 You can connect to BigQuery using a BI tool like Mode or Looker, or query
 directly from the BigQuery console.
 
-BigQuery now supports standard SQL, which you can enable using their query UI.
-This does not work with views, or with a query that utilizes table range
+BigQuery now supports standard SQL, which you can enable using their query UI. 
+This does not work with views, or with a query that uses table range 
 functions.
 
 ### Does Segment support streaming inserts?
 
 Segment's connector does not support streaming inserts at this time. If you have
-a need for streaming data into BigQuery, [contact us](https://segment.com/requests/integrations/).
+a need for streaming data into BigQuery, [contact Segment support](https://segment.com/requests/integrations/).
 
 ### Can I customize my sync schedule?
 
@@ -215,5 +210,5 @@ a need for streaming data into BigQuery, [contact us](https://segment.com/reques
 
 ### I'm seeing duplicates in my tables.
 
-This behavior is expected. We only de-duplicate data in your views. See the
+This behavior is expected. Segment only de-duplicates data in your views. See the
 section on [views](#views) for more details.
