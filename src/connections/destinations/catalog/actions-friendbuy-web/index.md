@@ -9,19 +9,19 @@ hidden: true
 
 [Friendbuy](https://www.friendbuy.com/) is a referral marketing platform.
 
-Friendbuy's Segment integration allows you to enable your Friendbuy referral program through Segment's dashboard instead of needing to add Friendbuy's JavaScript directly to your site.
+Friendbuy's Segment integration allows you to enable your Friendbuy referral program through Segment's dashboard instead of adding Friendbuy's JavaScript directly to your site.
 
-Friendbuy's Segment integration is implemented as a Segment browser [destination action](https://segment.com/docs/connections/destinations/actions/) that loads and configures Friendbuy's JavaScript for you. If you are already using Segment's Analytics.js to identify your customers and track their purchases, either directly or through Segment source integrations that you have installed, you can configure Segment to send this data to Friendbuy where it can be used in your referral program.
+Friendbuy's Segment integration is implemented as a Segment browser [destination action](https://segment.com/docs/connections/destinations/actions/) that loads and configures Friendbuy's JavaScript for you. If you're already using Segment's Analytics.js to identify your customers and track their purchases, either directly or through Segment source integrations that you've installed, you can configure Segment to send this data to Friendbuy and use in your referral program.
 
 ## Overview
 
-The Friendbuy destination can send information about your customers and their actions to Friendbuy. It supports the following [Friendbuy tracking events](https://developers.friendbuy.com/#tracking-events).
+The Friendbuy destination sends information about your customers and their actions to Friendbuy. It supports the following [Friendbuy tracking events](https://developers.friendbuy.com/#tracking-events).
 
-- **Track Customer**. Converts Segment [`analytics.identify`](https://segment.com/docs/connections/spec/identify/) calls to Friendbuy *track customer* calls. Use this to add your customer ID and other customer data to the information that Friendbuy has about the customer.
-- **Track Purchase**. Converts Segment [`analytics.track('Order Completed')`](https://segment.com/docs/connections/spec/ecommerce/v2/#order-completed) calls to Friendbuy *track purchase* calls. Use this to send purchase data to Friendbuy so that advocates can be rewarded based on their friends' purchases.
-- **Track Sign-Up**. Converts Segment [`analytics.track('Signed Up')`](https://segment.com/docs/connections/spec/b2b-saas/#signed-up) calls to Friendbuy *track sign_up* calls. Use this so that your customers can be rewarded based on creating an account or other type of sign-up action.
-- **Track Page**. Converts Segment [`analytics.page`](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#page) calls to Friendbuy *track page* calls. Use this to allow your Friendbuy widgets based on page name.
-- **Track Custom Event**. Converts an arbitrary Segment [`analytics.track`](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#track) call with an event name and properties of your choosing to a Friendbuy track custom event call. Use this to allow your customers to be rewarded based on actions other than purchases or sign-ups.
+- **Track Customer**: Converts Segment [`analytics.identify`](https://segment.com/docs/connections/spec/identify/) calls to Friendbuy *track customer* calls. Use this to add your customer ID and other customer data to the information that Friendbuy has about the customer.
+- **Track Purchase**: Converts Segment [`analytics.track('Order Completed')`](https://segment.com/docs/connections/spec/ecommerce/v2/#order-completed) calls to Friendbuy *track purchase* calls. Use this to send purchase data to Friendbuy and reward advocates based on their friends' purchases.
+- **Track Sign-Up**: Converts Segment [`analytics.track('Signed Up')`](https://segment.com/docs/connections/spec/b2b-saas/#signed-up) calls to Friendbuy *track sign_up* calls. Use this to reward customers for account creation and other sign-up actions.
+- **Track Page**: Converts Segment [`analytics.page`](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#page) calls to Friendbuy *track page* calls. Use this to allow your Friendbuy widgets based on page name.
+- **Track Custom Event**: Converts an arbitrary Segment [`analytics.track`](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#track) call with an event name and properties of your choosing to a Friendbuy track custom event call. Use this to reward your customers for actions other than purchases or sign-ups.
 
 ## Benefits of Friendbuy Web Mode (Actions) vs Friendbuy Classic
 
@@ -30,21 +30,21 @@ Friendbuy Web Mode (Actions) is the Segment web mode destination that works with
 ## Getting started
 
 > info ""
-> ** Note**: Please contact your Onboarding & Implementation Representative or email support@friendbuy.com if you are interested in setting up the integration.
+> ** Note**: Please contact your Onboarding & Implementation Representative or email support@friendbuy.com to set up Friendbuy's Segment integration.
 
-You must have already installed Segment's Analytics.js 2.0 on your site. See [Segment's documentation](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) for instructions.
+Before you start, you must have Segment's Analytics.js 2.0 installed on your site. See [Segment's documentation](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) for instructions.
 
-1. First find your Friendbuy Merchant ID, the unique [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) that Friendbuy uses to identify your account. You can find your Merchant ID by [logging in to your Friendbuy account](https://retailer.friendbuy.io/) and visiting the **Developer Center** > **Friendbuy Code** page.
+1. Find your Friendbuy Merchant ID, a unique [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) that Friendbuy uses to identify your account. [Log in to your Friendbuy account](https://retailer.friendbuy.io/) and visit the **Developer Center** > **Friendbuy Code** page to locate your Merchant ID.
 2. From the Segment web app, click **Catalog**, then click **Destinations**.
-3. Filter the destinations on "Friendbuy" in the Catalog and select **Friendbuy Web Device Mode (Actions)**. Click the **Configure Friendbuy Web Device Mode (Actions)** button to start configuring the Friendbuy destination, and choose which of your sources to connect the destination to.
-4. Give the destination a name, and choose to fill in the settings manually.
-5. On the **Basic Settings** page enter the Merchant ID value that you found in step 1, and click **Save Changes**.
-6. Select the **Mappings** tab. You will find that a number of pre-built mappings have been automatically configured for you that map standard events defined in the [Segment Spec](https://segment.com/docs/connections/spec/) to their equivalent Friendbuy events. (See below.)  You can disable events that you do not use or edit the field mappings of the pre-built mappings.
-7. After you have finished configuring the destination be sure to go back to the **Settings** tab and enable it.
+3. Filter the destinations on Friendbuy in the Catalog and select **Friendbuy Web Device Mode (Actions)**. Click **Configure Friendbuy Web Device Mode (Actions)** to configure the Friendbuy destination, and choose which of your sources to connect the destination to.
+4. Give the destination a name, and fill in the settings manually.
+5. On the **Basic Settings** page enter your Merchant ID value from step one, and click **Save Changes**.
+6. Select the **Mappings** tab. You'll find that a number of pre-built mappings have been automatically configured for you that map standard events defined in the [Segment Spec](https://segment.com/docs/connections/spec/) to their equivalent Friendbuy events. (See below.)  You can disable events that you don't use or edit the field mappings of the pre-built mappings.
+7. After you configure the destination, enable it from the **Settings** tab.
 
 ## Pre-built mappings
 
-By default a new Friendbuy Web Mode (Actions) Destination will come with the following mappings.
+By default a Friendbuy Web Mode (Actions) Destination comes with the following mappings.
 
 | Mapping Name   | Trigger                                   | Friendbuy Action |
 |----------------|-------------------------------------------|------------------|
@@ -61,24 +61,24 @@ By default a new Friendbuy Web Mode (Actions) Destination will come with the fol
 
 ## Editing your Friendbuy mappings
 
-There are four steps to configuring a Segment mapping.
+There are four steps to configure a Segment mapping.
 
-1. **Set up event trigger**. Choose the event trigger, which is the event type (such as *Identify*) or event name (such as *Order Completed*) for events that should be sent to Friendbuy.
-2. **Test event trigger**. Find a sample event in your Segment event stream that matches the trigger you defined in the first step.
-3. **Configure action fields**. Define how the fields in the Segment event are mapped to fields in the Friendbuy track event.
-4. **Review mappings**. Verify that the fields in the sample event are mapped correctly.
+1. **Set up event trigger**: Choose the event trigger, which is the event type (such as *Identify*) or event name (such as *Order Completed*) for events that should be sent to Friendbuy.
+2. **Test event trigger**: Find a sample event in your Segment event stream that matches the trigger you defined in the first step.
+3. **Configure action fields**: Define how the fields in the Segment event are mapped to fields in the Friendbuy track event.
+4. **Review mappings**: Verify that the fields in the sample event are mapped correctly.
 
 ### Configuring action fields
 
-On the "configure action fields" step, the mapping will be pre-populated with mappings from the standard Segment event properties to the corresponding Friendbuy fields, but you can edit each field if you want to populate that field from a different Segment event property or not send the field at all.
+In the **configure action fields** step, the mapping is pre-populated with mappings from the standard Segment event properties to the corresponding Friendbuy fields. You can edit each field if you want to populate that field from a different Segment event property or not send the field at all.
 
-Note that the default mappings for the *Purchase*, *Sign Up*, and custom events populate Friendbuy's Customer ID field from the User ID passed  in the `analytics.identify` call so, unless you change the Customer ID field mapping when you configure the action, you must make an `analytics.identify` call before you make the `analytics.track` call for the *Purchase*, *Sign Up*, or custom events if you want a Customer ID to be associated with those events.
+Note that the default mappings for the *Purchase*, *Sign Up*, and custom events populate Friendbuy's Customer ID field from the User ID passed in the `analytics.identify` call. Unless you change the Customer ID field mapping when you configure the action, you must make an `analytics.identify` call before you make the `analytics.track` call for *Purchase*, *Sign Up*, or custom events if you want to associate a Customer ID with those events.
 
 #### Custom attributes
 
-In the *Track Customer*, *Track Purchase*, or *Track Sign Up* mappings you can, if you wish, use the *Custom Attributes* field to send additional custom properties that are not included in the predefined field names for that event. Use the mapping's *Custom Attributes* field to specify the path to a JSON object that will contain those custom attributes. Then, when your code makes its Segment Analytics.js call, include an object at the path that you configured containing your custom attributes and they will be included at the root of the Friendbuy track event.
+In the *Track Customer*, *Track Purchase*, or *Track Sign Up* mappings you can use the *Custom Attributes* field to send additional custom properties that aren't included in the predefined field names for that event. Use the mapping's *Custom Attributes* field to specify the path to a JSON object that contains those custom attributes. Then, when your code makes its Segment Analytics.js call, include an object at the path that you configured containing your custom attributes to include them at the root of the Friendbuy track event.
 
-For example, if your *Track Purchase* call has the default *Custom Attributes* value of `properties.friendbuyAttributes`, then if your track purchase call is like:
+For example, if your *Track Purchase* call has the default *Custom Attributes* value of `properties.friendbuyAttributes`, and if your track purchase call is:
 
 ``` javascript
 analytics.track("Order Completed", {
@@ -104,23 +104,23 @@ friendbuyAPI.push(["track", "purchase", {
 }, true]);
 ```
 
-Note that a Friendbuy track call is limited to a maximum of 10 custom attributes, that custom attribute values must be strings, and the maximum length of a custom attribute is 128 characters.  Custom attributes that do not comply with these restrictions will be dropped.
+Note that a Friendbuy track call is limited to a maximum of 10 custom attributes, custom attribute values must be strings, and the maximum length of a custom attribute is 128 characters.  Custom attributes that do not comply with these restrictions are dropped.
 
 ### Custom events
 
-If you want to allow Friendbuy to act on an event that is not one of the standard events described in the [Overview](#overview) you can use a custom event.
+To allow Friendbuy to act on an event that isn't one of the standard events described in the [Overview](#overview), use a custom event.
 
 To configure a custom event:
 
-1. Click *+ New Mapping* and choose *Track Custom Event*.
+1. Click **New Mapping** and choose **Track Custom Event**.
 
-2. For the Event Name choose the name of the Segment event you are tracking.  For example, if you want to reward on app downloads that you are tracking with `analytics.track("Downloaded", { downloadId: "My App" }`, then you would choose `Downloaded` as your *Event Name*.
+2. For the Event Name, choose the name of the Segment event you are tracking. For example, if you want to reward on app downloads that you are tracking with `analytics.track("Downloaded", { downloadId: "My App" }`, select `Downloaded` as your *Event Name*.
 
 3. When you configure your action fields, you can accept the default *Event Name* of `event` which will cause Friendbuy to receive track events with the same names as the Segment events, or if you want to rename the Friendbuy events you can replace the *Event Name* with a different value such as the static string `download`.
 
 4. By default the *Event Properties* is set from the path `properties`, which means that all the properties that you include in your Segment `analytics.track` call will be passed to Friendbuy. If you don't want to do that, you will have to segregate the fields to pass to Friendbuy into an object and then specify the path to that object similar to what is described above under [Custom Attributes](#custom-attributes) (except in this case the *only* attributes that would be sent are your custom attributes).
 
-5. To prevent an event that is tracked multiple times from being rewarded more than once, you should include a deduplication ID in your event as described in Friendbuy's [Track Custom Event documentation](https://developers.friendbuy.com/#custom-event). You can either pass an explicit Event ID field in your event (defaulting to the `deduplicationId` property) or you can create the Event ID out of other event properties (such as the `userId`, a literal `.`, and the `properties.downloadId` in the above example).
+5. To prevent an event that is tracked multiple times from being rewarded more than once, you should include a deduplication ID in your event as described in Friendbuy's [Track Custom Event documentation](https://developers.friendbuy.com/#custom-event). You can either pass an explicit Event ID field in your event (defaulting to the `deduplicationId` property) or you can create the Event ID out of other event properties (such as the `userId`, a `.`, and the `properties.downloadId` in the above example).
 
 <!--
 Local Variables:
