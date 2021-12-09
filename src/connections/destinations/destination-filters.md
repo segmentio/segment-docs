@@ -123,7 +123,11 @@ example, you can filter out the `price` property of every object in an array at 
 
 In order to block a specific property from all of the objects within a properties array, set the filter following the format: `<propertyType>.<arrayName>.<arrayElementLabel>​`.
 
-For example, the `properties.products.product_id` filter blocks all `product_id` fields from every `products` object in an array with the `properties` object. If you want to block the Identify trait product_id, select the filter under the User Traits option instead. You can also select from the Context Fields section for context object scenarios.
+For example, the `properties.products.newElement` filter blocks all `newElement` property fields from each `products` object of an array within the `properties` object of a Track event.
+
+![](images/destination-filters/filter-array-properties.png)
+
+If you want to block the Identify event trait `products.newElement`, select the option under the **User Traits** list instead. If you want to block a context object field `products.newElement`, select it from the **Context Fields** list.
 
 **Q: How many filters can I create?**
 
