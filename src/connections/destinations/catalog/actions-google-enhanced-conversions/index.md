@@ -2,7 +2,6 @@
 title: Google Enhanced Conversions Destination
 hide-boilerplate: true
 hide-dossier: true
-hidden: true
 ---
 
 > info ""
