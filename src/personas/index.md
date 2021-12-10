@@ -37,7 +37,7 @@ Once you create your Computed Traits and Audiences, Personas sends them to your 
 
 ## Personas core components
 
-Before you set up up Personas, review the features and terms that we’ll use in this documentation. The main parts of Personas are your Personas space(s), Audiences, the Profile Explorer, and Traits (Computed, SQL, and Custom).
+Before you set up up Personas, review the features and terms used in this documentation. The main parts of Personas are your Personas space(s), Audiences, the Profile Explorer, and Traits (Computed, SQL, and Custom).
 
 ## Personas Spaces
 
