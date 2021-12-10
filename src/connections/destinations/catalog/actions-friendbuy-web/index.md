@@ -53,13 +53,13 @@ By default, a Friendbuy Web Mode (Actions) Destination comes with the following 
 | Track Sign Up  | `track` calls with name `Signed Up`       | Track Sign Up    |
 | Track Page     | `page` calls                              | Track Page       |
 
-<!-- Interpolate a "Destination Settings" section. -->
-{% include components/actions-fields.html settings="true" %}
+<!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
 
-<!-- Interpolate "Available Presets" and "Available Actions" sections. -->
 {% include components/actions-fields.html %}
 
-## Editing your Friendbuy mappings
+<!-- If applicable, add information regarding the migration from a classic destination to an Actions-based version below -->
+
+## Edit Friendbuy mappings
 
 There are four steps to configure a Segment mapping.
 
