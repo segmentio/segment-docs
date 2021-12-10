@@ -13,8 +13,6 @@ hide-dossier: true
 
 This destination is maintained by Sprig. For any issues with the destination, contact [support@sprig.com](mailto:support@sprig.com).
 
-> info ""
-> This document is about a feature which is in beta. This means that the Destination Actions are in active development, and some functionality may change before it becomes generally available.
 
 <!-- In the section below, add your destination name where indicated. If you have a classic version of the destination, ensure that its documentation is linked as well. If you don't have a classic version of the destination, remove the second and third sentences. -->
 
@@ -41,39 +39,11 @@ Sprig (Actions) provides the following benefits over the classic Sprig destinati
 5. Find your Environment ID on [Sprig Dashboard > Connect > JavaScript](https://app.sprig.com/connect){:target="_blank"}. Use the Development Environment ID a testing environment, and the Production Environment ID for your live website environment. Use the appropriate Environment ID 
 6. Select **Quick Setup** to start with pre-populated subscriptions, or **Customized Setup** to configure each action from scratch. Click **Configure Actions** to complete setup.
 
-<!-- The line below renders a table of connection settings (if applicable) from your destinations data file. The Segment Docs team will assist with this. -->
+<!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
 
-{% include components/actions-fields.html name="sprig-web" connection="true" %}
+{% include components/actions-fields.html %}
 
-<!-- The section below provides an overview of the prebuilt subscriptions that ship with your destination. If there are no prebuilt subscriptions, remove this section. -->
-
-## Pre-built subscriptions
-
-By default, a new Sprig (Actions) destination comes with the following subscriptions.
-
-You can select these subscriptions by choosing "Quick Setup" when you first configure the destination. You can enable, edit, and disable them from the screen that appears.
-
-| Subscription Name  | Default Trigger                                   | Sprig Action |
-| ------------------ | ----------------------------------------- | ------------------------- |
-| Identify User | All events with type **Identify**. | Set User ID, email, and other traits. |
-| Sign Out User | Events with name **Signed Out** and type **Track**. | Log out user on Sprig so that future actions are not associated with them. |
-| Track Event | All events with type **Track**, except **Signed Out**. | Track this event name for this user, and potentially display a matching microsurvey. |
-| Update User ID | All events with type **Alias**. | Update the User ID for the current user. |
-
-<!-- The section below provides reference tables for the actions defined in your destination. Create the unordered list. The Segment Docs team will assist with populating the data file referenced by this include. -->
-
-## Available Sprig actions
-
-Combine the supported [triggers](/docs/connections/destinations/actions/#components-of-a-destination-action) with the following Sprig-supported actions:
-
-- [Identify User](#identify-user)
-- [Sign Out User](#sign-out-user)
-- [Track Event](#track-event)
-- [Update User ID](#update-user-id)
-
-{% include components/actions-fields.html name="sprig-web" %}
-
-<!-- Add information about steps needed to migrate from a classic version of your destination here. The Segment Docs team will assist you with populating the data file referenced by this include. The table at the bottom maps classic settings to the new destination.-->
+<!-- If applicable, add information regarding the migration from a classic destination to an Actions-based version below -->
 
 ## Migration from the classic Sprig destination
 
@@ -83,4 +53,3 @@ To prevent duplicate events being tracked, please disable your existing Sprig de
 
 Follow the table below to map your existing Sprig destination configuration to Sprig (Actions).
 
-{% include components/actions-map-table.html name="sprig" %}
