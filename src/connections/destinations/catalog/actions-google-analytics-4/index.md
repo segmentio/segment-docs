@@ -35,7 +35,7 @@ Before you connect Segment to Google Analytics 4, configure a Google Analytics 4
 2. Search for “Google Analytics 4” in the Destinations Catalog, and select the destination.
 3. Click **Configure Google Analytics 4** in the top-right corner of the screen.
 4. Select the source that will send data to Google Analytics 4 and follow the steps to name your destination.
-5. On the **Settings** tab tab, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} and API Secret associated with your GA4 stream and click **Save**. _Note: To create a new API Secret, navigate in the Google Analytics UI to Admin > Data Streams > choose your stream > Measurement Protocol > Create._
+5. On the **Settings** tab, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} and API Secret associated with your GA4 stream and click **Save**. _Note: To create a new API Secret, navigate in the Google Analytics UI to Admin > Data Streams > choose your stream > Measurement Protocol > Create._
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
 ### Create your first Mapping
