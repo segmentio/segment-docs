@@ -30,7 +30,7 @@ Friendbuy Web Mode (Actions) is the Segment web mode destination that works with
 ## Getting started
 
 > info ""
-> ** Note**: Please contact your Onboarding & Implementation Representative or email support@friendbuy.com to set up Friendbuy's Segment integration.
+> Please contact your Onboarding & Implementation Representative or email support@friendbuy.com to set up Friendbuy's Segment integration.
 
 Before you start, you must have Segment's Analytics.js 2.0 installed on your site. See [Segment's documentation](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) for instructions.
 
@@ -44,7 +44,7 @@ Before you start, you must have Segment's Analytics.js 2.0 installed on your sit
 
 ## Pre-built mappings
 
-By default a Friendbuy Web Mode (Actions) Destination comes with the following mappings.
+By default, a Friendbuy Web Mode (Actions) Destination comes with the following mappings.
 
 | Mapping Name   | Trigger                                   | Friendbuy Action |
 |----------------|-------------------------------------------|------------------|
@@ -64,7 +64,7 @@ By default a Friendbuy Web Mode (Actions) Destination comes with the following m
 There are four steps to configure a Segment mapping.
 
 1. **Set up event trigger**: Choose the event trigger, which is the event type (such as *Identify*) or event name (such as *Order Completed*) for events that should be sent to Friendbuy.
-2. **Test event trigger**: Find a sample event in your Segment event stream that matches the trigger you defined in the first step.
+2. **Test event trigger**: Find a sample event in your Segment event stream that matches the trigger you defined in step one.
 3. **Configure action fields**: Define how the fields in the Segment event are mapped to fields in the Friendbuy track event.
 4. **Review mappings**: Verify that the fields in the sample event are mapped correctly.
 
