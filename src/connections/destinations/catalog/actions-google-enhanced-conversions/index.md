@@ -22,9 +22,6 @@ The Google Enhanced Conversions destination enables you to improve the accuracy 
 > When you authenticate your Segment workspace with your Google Account, use a Google Account that is a member of your Google Ads account.
 
 ## Getting started
-
-### Connect Google Enhanced Conversions to your workspace
-
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Search for “Google Enhanced Conversions” in the Destinations Catalog, and select the destination.
 3. Click **Configure Google Enhanced Conversions** in the top-right corner of the screen.
@@ -33,17 +30,16 @@ The Google Enhanced Conversions destination enables you to improve the accuracy 
 6. On the **Settings** tab, authenticate with Google using OAuth. Click **Connect to Google Enhanced Conversions**. Follow the prompts to authenticate using OAuth, with a Google login that is a member of the Google Ads account with Enhanced Conversions enabled.
 7. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
-### Create your first Mapping
 
-Mappings define which events Segment sends to Google Enhanced Conversions, and the data that they carry. To create a Mapping:
+{% capture conv_label %}
+#### Find the Conversions label
+Enter the Conversion Label. Find the Conversion Label using the instructions in the article [Google Ads conversions](https://support.google.com/tagmanager/answer/6105160?hl=en){:target="_blank"}.
+{% endcapture %}
 
-1. Navigate to the **Mappings** tab on the destination.
-2. Click **Add Mapping**, and select **Post Conversion**.
-3. Configure the **Event Trigger**. For example, you can trigger the action whenever the source sends an event named `Order Completed`. Click **Continue** to choose a test event and configure the action fields.
-4. Enter the Conversion Label. Find the Conversion Label using the instructions in the article [Google Ads conversions](https://support.google.com/tagmanager/answer/6105160?hl=en){:target="_blank"}.
-5. Configure the remaining fields. 
-6. When you're finished editing the action fields, click **Continue**. Click **Save**.
-7. To test your mapping, expand the **Test event trigger** section. Segment searches for recent events that match the trigger conditions. If there are no recent events that match the criteria, click **manually enter an event**, and replace the default event data with the following:
+{% capture test_mapping %}
+#### Test the Mapping
+To test your mapping:
+1.  expand the **Test event trigger** section. Segment searches for recent events that match the trigger conditions. If there are no recent events that match the criteria, click **manually enter an event**, and replace the default event data with the following:
 ```json
 {
   "messageId": "segment-test-message-hkz2b",
@@ -75,5 +71,6 @@ Mappings define which events Segment sends to Google Enhanced Conversions, and t
 10. The section displays the test result and the payload that Google Enhanced Conversions returns to Segment.
 11. Click **Save**.
 12. Enable the Mapping with the toggle under the **Status** column.
+{% endcapture %}
 
-{% include components/actions-fields.html %}
+{% include components/actions-fields.html content1=conv_label section1="postConversion" content2=test_mapping section2="postConversion" %}
