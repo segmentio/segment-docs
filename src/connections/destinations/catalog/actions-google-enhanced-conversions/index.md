@@ -39,7 +39,7 @@ Enter the Conversion Label. Find the Conversion Label using the instructions in 
 {% capture test_mapping %}
 #### Test the Mapping
 To test your mapping:
-1.  expand the **Test event trigger** section. Segment searches for recent events that match the trigger conditions. If there are no recent events that match the criteria, click **manually enter an event**, and replace the default event data with the following:
+1. Expand the **Test event trigger** section. Segment searches for recent events that match the trigger conditions. If there are no recent events that match the criteria, click **manually enter an event**, and replace the default event data with the following:
 ```json
 {
   "messageId": "segment-test-message-hkz2b",
