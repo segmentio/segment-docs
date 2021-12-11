@@ -33,10 +33,10 @@ Sprig (Actions) provides the following benefits over the classic Sprig destinati
 ## Getting started
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Find the Sprig (Actions) item using the left navigation, and click it.
+2. Use the navigation on the left to locate and select Sprig (Actions).
 3. Click **Configure Sprig (Actions)**.
 4. Select an existing JavaScript website source to connect to Sprig (Actions).
-5. Find your Environment ID on [Sprig Dashboard > Connect > JavaScript](https://app.sprig.com/connect){:target="_blank"}. Use the Development Environment ID a testing environment, and the Production Environment ID for your live website environment. Use the appropriate Environment ID 
+5. Find your Environment ID on [Sprig Dashboard > Connect > JavaScript](https://app.sprig.com/connect){:target="_blank"}. Use the Development Environment ID a testing environment, and the Production Environment ID for your live website environment. Use the appropriate Environment ID. 
 6. Select **Quick Setup** to start with pre-populated subscriptions, or **Customized Setup** to configure each action from scratch. Click **Configure Actions** to complete setup.
 
 <!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
@@ -52,4 +52,3 @@ Sprig (Actions) provides the following benefits over the classic Sprig destinati
 To prevent duplicate events being tracked, please disable your existing Sprig destination when you enable Sprig (Actions).
 
 Follow the table below to map your existing Sprig destination configuration to Sprig (Actions).
-
