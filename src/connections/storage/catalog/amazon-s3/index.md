@@ -20,7 +20,7 @@ Some benefits of using the new AWS S3 destination include:
 To migrate to the AWS S3 destination, follow the instructions outlined in the ["Migrate an existing destination" section of the AWS S3 destination documentation](/docs/connections/storage/catalog/aws-s3/#migrate-an-existing-destination).
 
 > error " "
-> You need to migrate to the new S3 destination before disabling your legacy destination to ensure Segment continues to deliver data to your S3 bucket. 
+> You need to migrate to the new S3 destination before you disable your legacy destination to ensure Segment continues to deliver data to your S3 bucket. 
 
 ## Getting Started
 
