@@ -2,7 +2,7 @@
 title: 'Google Analytics 4 destination'
 strat: google
 hide-dossier: true
-hidden: true
+published: false
 ---
 
 Google introduced the new version of Google Analytics, called Google Analytics 4 (GA4), in October 2020. GA4 has some distinct differences from Universal Analytics (UA), which are important to understand before considering migration and the data schema changes that might require.
