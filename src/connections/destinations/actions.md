@@ -24,14 +24,7 @@ Each Actions-framework Destination you see in the Segment catalog represents a f
 
 The following Actions-based Destinations are available:
 
-| Destination                                                                                                      | Benefits                                                                                                                |
-| ---------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| [Amplitude (Actions)](/docs/connections/destinations/catalog/actions-amplitude)                                  | - Supports Amplitude session reporting <br /> - Revenue is a top-level property <br /> - Session tracking in cloud-mode |
-| [Braze (Actions) Cloud](/docs/connections/destinations/catalog/braze-cloud-mode-actions)                         | E-commerce mappings                                                                                                     |
-| [Braze (Actions) Web](/docs/connections/destinations/catalog/braze-web-device-mode-actions)                      | E-commerce mappings                                                                                                     |
-| [Customer.io (Actions)](/docs/connections/destinations/catalog/customer-io-actions)                              | Track an anonymous event                                                                                                |
-| [FullStory (Actions)](/docs/connections/destinations/catalog/actions-fullstory)                                  | Support for FullStory's tracking page variables feature.                                                                |
-| [Slack (Actions)](/docs/connections/destinations/catalog/actions-slack)                                          | - Consolidated Message Sending <br /> - Configure connection details on a per-message basis                             |
+{% include components/available-actions.html %}
 
 ## Destination Actions compatibility
 
