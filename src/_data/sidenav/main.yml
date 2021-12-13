@@ -3,9 +3,11 @@ sections:
 - section_title: Getting Started
   section:
   - path: /getting-started
-    title: Getting Started With Segment
-  - path: /getting-started/01-what-is-segment
     title: What is Segment?
+  - path: /getting-started/01-what-is-segment
+    title: How Segment Works
+  - path: /getting-started/implementation-guide
+    title: Getting Started Guide
   - path: /getting-started/02-simple-install
     title: A Basic Segment Installation
   - path: /getting-started/03-planning-full-install
