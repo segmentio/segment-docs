@@ -21,7 +21,7 @@ This destination is maintained by Sprig. For any issues with the destination, co
 
 <!-- In the section below, explain the value of this actions-based destination over the classic version, if applicable. If you don't have a classic version of the destination, remove this section. -->
 
-## Benefits of <destination_name> (Actions) vs <destination_name> Classic
+## Benefits of Sprig (Actions) vs Sprig Classic
 
 Sprig (Actions) provides the following benefits over the classic Sprig destination:
 
@@ -36,7 +36,7 @@ Sprig (Actions) provides the following benefits over the classic Sprig destinati
 2. Use the navigation on the left to locate and select Sprig (Actions).
 3. Click **Configure Sprig (Actions)**.
 4. Select an existing JavaScript website source to connect to Sprig (Actions).
-5. Find your Environment ID on [Sprig Dashboard > Connect > JavaScript](https://app.sprig.com/connect){:target="_blank"}. Use the Development Environment ID a testing environment, and the Production Environment ID for your live website environment. Use the appropriate Environment ID. 
+5. Find your Environment ID on [Sprig Dashboard > Connect > JavaScript](https://app.sprig.com/connect){:target="_blank"}. Use the Development Environment ID for a testing environment, and the Production Environment ID for your live website environment. When you configure the destination, input the appropriate Environment ID.  
 6. Select **Quick Setup** to start with pre-populated subscriptions, or **Customized Setup** to configure each action from scratch. Click **Configure Actions** to complete setup.
 
 <!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
