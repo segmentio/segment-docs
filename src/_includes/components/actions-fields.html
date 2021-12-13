@@ -8,7 +8,7 @@
 {% assign actions = currentIntegration.actions %}
 {% assign presets = currentIntegration.presets %}
 
-{% if conn == "true" %}
+{% if settings.size > 0 %}
 ### Destination Settings
 
 <table >
@@ -29,7 +29,7 @@
 </table>
 
 
-{% else %}
+{% endif %}
 
 
 {% if presets.size > 0 %}
@@ -115,4 +115,3 @@ This action does not have any fields.
 
 {% endfor %}
 
-{% endif %}

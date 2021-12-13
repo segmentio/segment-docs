@@ -272,7 +272,15 @@ const updateDestinations = async () => {
 
 
   destinations.forEach(destination => {
+    
+    // We need to be able to keep the system slug in some cases.
+    const slugOverrides = ['actions-google-enhanced-conversions']
     let slug = slugify(destination.name)
+    if (slugOverrides.includes(destination.slug)) {
+      slug = destination.slug
+      console.log(slug)
+    }
+    
 
     // Flip the slug of Actions destinations
     const actionsDests = [
