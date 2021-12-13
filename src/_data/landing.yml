@@ -4,7 +4,7 @@ sections:
   section:
   - name: Getting started with Segment
     icon: getting-started.svg
-    description: "Learn about Segment, work through a basic implementation, plan a full implementation and learn about features and extensions. "
+    description: "Learn about Segment, plan and work through a basic implementation, and explore features and extensions."
     path: /getting-started/
 - section_title: How can Segment help you?
   section_col: 6
@@ -19,22 +19,22 @@ sections:
     path: /protocols/
   - name: Personalize interactions
     icon: personas.svg
-    description: "Improve customer interactions by building audiences to power personalized experiences."
+    description: "Improve customer interactions by building audiences that power personalized experiences."
     path: /personas/
   - name: Respect users' privacy
     icon: privacy.svg
-    description: "Use Segment's tools for data discovery and policy enforcement to keep customer data private."
+    description: "Keep customer data private with Segment's data discovery and policy enforcement tools."
     path: /privacy/
 
 - section_title: Get Data into Segment
-  section_description: "The Segment Spec provides guidance on meaningful data to capture, and the best format for it, across all of our libraries and APIs. When you use these formats it’s simple to send data to downstream tools."
+  section_description: "The Segment Spec helps you identify, capture, and format meaningful data for use with Segment libraries and APIs as well as downstream tools."
   section_col: 4
   section:
   - name: Segment calls
-    description: "Use Track, Page, and Identify, and learn about the other calls Segment tracking is built on."
+    description: "Use Track, Page, Identify, and other Segment tracking calls."
     path: /connections/spec/
   - name: Common traits
-    description: "Save time by letting the Segment calls collect information automatically."
+    description: "Save time by letting Segment calls collect information for you."
     path: /connections/spec/common/
   - name: Use case specs
     description: "Use our business-case specs to ensure that your tools get the most from your data."
@@ -45,17 +45,17 @@ sections:
   section:
   - name: Segment for Developers
     icon: git-repo.svg
-    description: "An overview of the basics of your Segment implementation."
+    description: "The basics of your Segment implementation."
     path: /guides/intro-impl/
   - name: How-To Guides
     icon: book.svg
-    description: "Over a dozen how-to guides to help you accomplish common tasks."
+    description: "Over a dozen how-to guides that help you accomplish common tasks."
     path: /guides/how-to-guides/
 
 - section_title: Connect your app to Segment
   section_col: 4
   section:
-  - name: Javascript
+  - name: JavaScript
     path: /connections/sources/catalog/libraries/website/javascript/
   - name: HTTP Tracking API
     path: /connections/sources/catalog/libraries/server/http-api/

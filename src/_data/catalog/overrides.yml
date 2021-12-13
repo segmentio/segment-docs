@@ -1,6 +1,16 @@
 # This file is manually generated. When you add or remove an item, add or remove
 # it from the `overrides-list.yml` too.
 items:
+- slug: intercom
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: true
 - slug: hubspot
   display_name: HubSpot
   previous_names:

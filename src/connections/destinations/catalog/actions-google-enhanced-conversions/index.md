@@ -1,8 +1,8 @@
 ---
 title: Google Enhanced Conversions Destination
+strat: google
 hide-boilerplate: true
 hide-dossier: true
-hidden: true
 ---
 
 > info ""

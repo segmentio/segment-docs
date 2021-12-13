@@ -74,10 +74,11 @@ Build your own subscriptions! Combine supported [triggers](/docs/connections/des
 
 {% for action in actions %}
 ### {{action.name}}
-{{action.description | markdownify}}
+<p>{{action.description | markdownify}}</p>
+<p>{{action.name}} is a <strong>{{action.platform | capitalize}}</strong> action.</p>
 
 
-{% if action.fields %}
+{% if action.fields.size > 0 %}
 <p class="button button-fill button-fill--white" data-toggle="collapse" data-target=".settings-content-{{action.slug}}">Click to expand fields</p>
 <div class="collapse settings-content-{{action.slug}}">
 <table id="settingsTable">

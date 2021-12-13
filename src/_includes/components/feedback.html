@@ -1,11 +1,11 @@
 <div class="flex flex--wrap waffle waffle--large waffle--xxlarge@medium">
-  <div class="flex__column flex__column--12 flex__column--6@medium flex">
+  <div class="flex__column flex__column--12 flex__column--4@medium flex">
     <div class="feedback-box flex flex--stack flex--justify waffle waffle--large@medium">
       <div class="flex__column flex__column--shrink">
         <div class="feedback-box__content">
           <h3>Need support?</h3>
 
-          <p>Questions? Problems? Need more info? Contact us, and we can help!</p>
+          <p>Questions? Problems? Need more info? Contact Segment Support for assistance!</p>
         </div>
       </div>
 
@@ -14,8 +14,15 @@
       </div>
     </div>
   </div>
-
-  <div class="flex__column flex__column--12 flex__column--6@medium flex">
+  <div class="flex__column flex__column--12 flex__column--4@medium flex">
+    <div class="flex__column flex__column--shrink">
+      <div class="feedback-box__content">
+        <h3>Help improve these docs!</h3>
+        {%include sidebar/edit-tools.html %}
+      </div>
+    </div>
+  </div>
+  <div class="flex__column flex__column--12 flex__column--4@medium flex">
     <div class="feedback-box flex flex--stack flex--justify waffle waffle--none waffle--large@medium">
       <div class="flex__column flex__column--shrink">
         <div class="feedback-box__content">
@@ -23,7 +30,8 @@
 
           <div class="flex gutter gutter--large">
             <div class="flex__column flex__column--shrink">
-              <button class="button button-hollow gutter gutter--small" data-feedback-button="helpful" data-active-class="button-fill button-fill--secondary">
+              <button class="button button-hollow gutter gutter--small" data-feedback-button="helpful"
+                data-active-class="button-fill button-fill--secondary">
                 <span class="button__icon">
                   {% include icons/symbols/thumb-up.svg %}
                 </span>
@@ -33,7 +41,8 @@
             </div>
 
             <div class="flex__column flex__column--shrink">
-              <button class="button button-hollow gutter gutter--small" data-feedback-button="unhelpful" data-active-class="button-fill button-fill--gray">
+              <button class="button button-hollow gutter gutter--small" data-feedback-button="unhelpful"
+                data-active-class="button-fill button-fill--gray">
                 <span class="button__icon">
                   {% include icons/symbols/thumb-down.svg %}
                 </span>
@@ -52,4 +61,5 @@
       </div>
     </div>
   </div>
+
 </div>
