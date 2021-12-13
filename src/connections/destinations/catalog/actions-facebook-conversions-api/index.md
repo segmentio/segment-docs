@@ -1,6 +1,6 @@
 ---
 title: Facebook Conversions API (Actions)
-hidden: true
+strat: facebook
 hide-boilerplate: true
 hide-dossier: true
 ---
@@ -18,6 +18,7 @@ Facebook Conversions API (Actions) enables advertisers to send events from their
 The Facebook Conversions API (Actions) destination provides the following benefits over the classic Facebook Conversions API destination:
 - **Fewer settings**. Data mapping for actions-based destinations happens during configuration, which eliminates the need for most settings.
 - **Clearer mapping of data**. Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to Facebook Conversions API.
+- **Prebuilt mappings**. Mappings for standard Facebook Conversions API events, like `Purchase`, are prebuilt with the prescribed parameters and available for customization.
 - **Support for page calls**. Page calls can be sent to Facebook as a standard Page View.
 - **Support for identify calls**. Identify calls can be sent to Facebook as a standard or custom event.
 - **Support for multi-product arrays**. Product data nested within arrays, like the `products` array in the [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) event, can be sent to Facebook.
@@ -43,19 +44,30 @@ Set up your Pixel to work with the Facebook Conversions API (Actions) destinatio
 3. Choose “Segment” from the list of partners.
 4. Enable the setting to “Authorize Segment Connection” and then click **Continue**.
 
-### Set up in Segment
+### Connect Facebook Conversions API (Actions) to your workspace
 
-The Facebook Conversions API (Actions) destination is in Private Beta, and does not appear in the Destinations Catalog.
-
-1. To access the destination, navigate to this URL: `https://app.segment.com/<workspace_slug>/destinations/catalog/actions-facebook-conversions-api`. Replace `<workspace_slug>` with your workspace slug.
-2. Click **Configure Facebook Conversions API (Actions)** in the top-right corner of the screen.
-3. Choose which of your sources to connect the destination to. (You can connect more sources to the destination later.)
-4. Click **Configure Actions** and follow the set up steps to **Create Destination**.
-5. On the Settings tab, enter in your Pixel ID and click **Save**.
+1. From the Segment web app, click **Catalog**, then click **Destinations**.
+2. Search for “Facebook Conversions API (Actions)” in the Destinations Catalog, and select the destination.
+3. Click **Configure Facebook Conversions API (Actions)** in the top-right corner of the screen.
+4. Select the source that will send data to Facebook Conversions API and follow the steps to name your destination.
+5. On the **Settings** tab, enter in your Pixel ID and click **Save**.
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
-## Configuration options
+### Create your first Mapping
 
+Mappings define which events Segment sends to Facebook Conversions API, and the data that they carry. To create a Mapping:
+
+1. Navigate to the **Mappings** tab on the destination.
+2. Click **Add Mapping**, and select one of the prebuilt actions. If there is no prebuilt action for one of Facebook's standard events, you can select the Custom Event action, include the standard event name as the "Event Name" (i.e. `CompleteRegistration`), and Facebook Conversions API will process your event as a standard event.
+3. Configure the **Event Trigger**. For example, you can trigger the action whenever the source sends an event named `Order Completed`. 
+4. Click **Continue** to choose a test event and configure the action fields. 
+5. When you're finished editing the action fields, click **Continue**. 
+6. To test your mapping, expand the **Send a test event** section, and click **Test Action**. This section displays the test result and the payload that Facebook Conversions API returns to Segment.
+7. Click **Save**.
+8. Enable the Mapping with the toggle under the **Status** column.
+
+
+## Configuration options
 
 The Facebook Conversions API (Actions) destination gives you several ways to implement your conversion tracking. You can use it with [Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/), or as a stand-alone alternative. You can read more about implementation options below and in [Facebook documentation](https://developers.facebook.com/docs/marketing-api/conversions-api/guides/end-to-end-implementation#pick-your-integration-type){:target="_blank"}.
 
@@ -72,7 +84,7 @@ With the Facebook Conversions API (Actions) destination, you can choose any fiel
 
 ![the coalesce function](images/image1.png)
 
-You can send additional User Data to increase the match rate for events from a server source. Collect other fields from the browser, like User Agent, IP Address, and [Facebook's cookie parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and map them in the User Data object.
+You can send additional User Data to increase the match rate for events from a server source. Collect other fields from the browser, like User Agent, IP Address, and [Facebook's cookie parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and map them in the User Data object. See [Facebook's Customer Information Parameters](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters) for more information on User Data fields.
 
 ![the user data object](images/image2.png)
 
@@ -96,7 +108,7 @@ With the Facebook Conversions API (Actions) destination, you can choose any fiel
 
 ![the coalesce function](images/image1.png)
 
-You can send additional User Data to increase the match rate for events from a server source. Collect other fields from the browser, like User Agent, IP Address, and [Facebook's cookie parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and map them in the User Data object.
+You can send additional User Data to increase the match rate for events from a server source. Collect other fields from the browser, like User Agent, IP Address, and [Facebook's cookie parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and map them in the User Data object. See [Facebook's Customer Information Parameters](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters) for more information on User Data fields.
 
 ![the user data object](images/image2.png)
 
@@ -118,6 +130,15 @@ You can send additional User Data to increase the match rate for events from a s
 
 If you choose this option, each source sends different events, and deduplication is not necessary.
 
+
+## Verify Events in Facebook
+
+After you start sending events, you should start seeing them in twenty minutes. You can confirm that Facebook received them:
+
+1. Go to the Events Manager.
+2. Click on the corresponding pixel.
+3. In the Overview tab, look for events where the “Connection Method” is Server.
+
 ## Available Facebook Conversions API actions
 
 Combine the supported [triggers](/docs/connections/destinations/actions/#components-of-a-destination-action) with the following Facebook Conversions API-supported actions:
@@ -129,11 +150,3 @@ Combine the supported [triggers](/docs/connections/destinations/actions/#compone
 * Initiate Checkout
 * Purchase
 * Custom Event
-
-## Verify Events in Facebook
-
-After you start sending events, you should start seeing them in twenty minutes. You can confirm that Facebook received them:
-
-1. Go to the Events Manager.
-2. Click on the corresponding pixel.
-3. In the Overview tab, look for events where the “Connection Method” is Server.
