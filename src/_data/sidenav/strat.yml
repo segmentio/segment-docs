@@ -51,6 +51,8 @@ sections:
     title: Google Universal Analytics destination
   - path: /connections/destinations/catalog/actions-google-analytics-4
     title: Google Analytics 4 destination
+  - path: /connections/destinations/catalog/actions-google-enhanced-conversions
+    title: Google Enhanced Conversions
   - path: /connections/destinations/catalog/google-tag-manager/
     title: Google Tag Manager destination
   - path: /connections/destinations/catalog/doubleclick-floodlight
