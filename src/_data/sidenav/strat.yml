@@ -29,7 +29,9 @@ sections:
   - path: /connections/destinations/catalog/facebook-pixel
     title: Facebook Pixel destination
   - path: /connections/destinations/catalog/facebook-pixel-server-side
-    title: Facebook Conversions API Destination (Beta)
+    title: Facebook Conversions API Destination (Classic)
+  - path: /connections/destinations/catalog/actions-facebook-conversions-api
+    title: Facebook Conversions API Destination (Actions)
   - path: /connections/destinations/catalog/facebook-app-events
     title: Facebook App Events destination
   - path: /connections/destinations/catalog/facebook-offline-conversions
