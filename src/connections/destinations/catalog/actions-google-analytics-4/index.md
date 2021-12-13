@@ -29,8 +29,6 @@ The Google Analytics 4 destination provides the following benefits:
 
 Before you connect Segment to Google Analytics 4, configure a Google Analytics 4 property in your Analytics account. For more information, see Google's article: [Set up Analytics for a website and/or app](https://support.google.com/analytics/answer/9304153){:target='_blank'}.
 
-### Connect Google Analytics 4 to your workspace
-
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Search for “Google Analytics 4” in the Destinations Catalog, and select the destination.
 3. Click **Configure Google Analytics 4** in the top-right corner of the screen.
@@ -38,7 +36,9 @@ Before you connect Segment to Google Analytics 4, configure a Google Analytics 4
 5. On the **Settings** tab, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} and API Secret associated with your GA4 stream and click **Save**. _Note: To create a new API Secret, navigate in the Google Analytics UI to Admin > Data Streams > choose your stream > Measurement Protocol > Create._
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
-### Create your first Mapping
+{% include components/actions-fields.html %}
+
+## Create your first Mapping
 
 Mappings define which events Segment sends to Google Analytics 4, and the data that they carry. To create a Mapping:
 
@@ -51,26 +51,3 @@ Mappings define which events Segment sends to Google Analytics 4, and the data t
 7. Click **Save**.
 8. Enable the Mapping with the toggle under the **Status** column.
 
-## Available Google Analytics 4 Actions
-
-Combine the supported [triggers](docs/connections/destinations/actions/#components-of-a-destination-action) with the following Google Analytics 4-supported actions:
-
-* Page View
-* Search
-* Select Item
-* View Item
-* View Item List
-* Add to Wishlist
-* Add to Cart
-* Remove from Cart
-* View Cart
-* Select Promotion
-* View Promotion
-* Begin Checkout
-* Add Payment Info
-* Purchase
-* Refund
-* Generate Lead
-* Sign Up
-* Login
-* Custom Event
