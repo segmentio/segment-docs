@@ -228,7 +228,7 @@ To migrate an existing Amazon S3 destination to the AWS S3 with IAM Role Support
 6. Remove the test folder created in step 2 from the bucket.
 
 > error " "
-> You need to migrate to the new S3 destination before disabling your legacy destination to ensure Segment continues to deliver data to your S3 bucket. 
+> You need to migrate to the new S3 destination before you disable your legacy destination to ensure Segment continues to deliver data to your S3 bucket. 
 
 ### Migration steps for scenarios with multiple sources per environment
 
