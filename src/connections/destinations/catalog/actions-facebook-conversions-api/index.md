@@ -53,18 +53,7 @@ Set up your Pixel to work with the Facebook Conversions API (Actions) destinatio
 5. On the **Settings** tab, enter in your Pixel ID and click **Save**.
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
-### Create your first Mapping
-
-Mappings define which events Segment sends to Facebook Conversions API, and the data that they carry. To create a Mapping:
-
-1. Navigate to the **Mappings** tab on the destination.
-2. Click **Add Mapping**, and select one of the prebuilt actions. If there is no prebuilt action for one of Facebook's standard events, you can select the Custom Event action, include the standard event name as the "Event Name" (i.e. `CompleteRegistration`), and Facebook Conversions API will process your event as a standard event.
-3. Configure the **Event Trigger**. For example, you can trigger the action whenever the source sends an event named `Order Completed`. 
-4. Click **Continue** to choose a test event and configure the action fields. 
-5. When you're finished editing the action fields, click **Continue**. 
-6. To test your mapping, expand the **Send a test event** section, and click **Test Action**. This section displays the test result and the payload that Facebook Conversions API returns to Segment.
-7. Click **Save**.
-8. Enable the Mapping with the toggle under the **Status** column.
+{% include components/actions-fields.html %}
 
 
 ## Configuration options
@@ -139,14 +128,3 @@ After you start sending events, you should start seeing them in twenty minutes. 
 2. Click on the corresponding pixel.
 3. In the Overview tab, look for events where the “Connection Method” is Server.
 
-## Available Facebook Conversions API actions
-
-Combine the supported [triggers](/docs/connections/destinations/actions/#components-of-a-destination-action) with the following Facebook Conversions API-supported actions:
-
-* Page View
-* Search
-* View Content
-* Add to Cart
-* Initiate Checkout
-* Purchase
-* Custom Event
