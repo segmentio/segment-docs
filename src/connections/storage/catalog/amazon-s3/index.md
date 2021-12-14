@@ -7,7 +7,7 @@ hide-personas-partial: true
 ---
 
 > warning "The Amazon S3 destination will enter Limited Access in Q1 2021"
-> After Q1 2021, you will no longer be able to modify existing Amazon S3 destination instances or re-enable a disabled Amazon S3 instance.
+> After Q1 2021, you will no longer be able to modify existing Amazon S3 destination instances, create new Amazon S3 instances, or re-enable a disabled Amazon S3 instance.
 > 
 > Migrate to the AWS S3 destination to continue storing data in AWS. For more information about migration to AWS S3, see the [AWS S3 destination documentation](/docs/connections/storage/catalog/aws-s3/#migrate-an-existing-destination).
 
