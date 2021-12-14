@@ -14,7 +14,7 @@ redirect_from:
 
 #### Which Google destination should I use?
 
-If your Google Measurement ID starts with a G, you are using G-Codes from Google Analytics 4, and should consider using [Segment's upcoming Google Analytics 4 destination](/docs/connections/destinations/catalog/google-analytics/ga4-plans/).
+If your Google Measurement ID starts with a G, you're using G-Codes from Google Analytics 4, and should consider using [Segment's Google Analytics 4 destination](/docs/connections/destinations/catalog/actions-google-analytics-4/).
 
 Although GA4 is now the default when you create a new property, you can still [create a Universal Analytics property](https://support.google.com/analytics/answer/10269537). You can use a UA property with [Segment's Google Universal Analytics destination](/docs/connections/destinations/catalog/google-analytics/).
 
@@ -22,10 +22,10 @@ Different Measurement IDs begin with different prefixes, which indicate which Go
 
 | Prefix | Google Account type       | Segment Settings    |
 | ------ | -------------------------- | ----------------- |
-| UA     | Your global site tag is controlled by Google Universal Analytics. The ID is your Google Universal Analytics Measurement ID. To find the property associated with this ID, use the [account search feature](https://support.google.com/analytics/answer/6100731) in Google Universal Analytics. If the property does not appear, you probably do not have access to it. | [Google Universal Analytics](/docs/connections/destinations/catalog/google-analytics/): Configure ID > Measurement ID           |
-| G      | Your global site tag is controlled by Google Analytics 4 (GA4). The ID is your Google Analytics Measurement ID.       | [Google Universal Analytics](/docs/connections/destinations/catalog/google-analytics/): Configure ID > App + Web Measurement ID |
-| AW     | Your global site tag is controlled by Google Ads. The numeric string following the AW prefix is your Google Ads Conversion ID.        | [Google Ads](/docs/connections/destinations/catalog/google-ads-gtag/): Configure ID > Conversion ID                  |
-| DC     | Your global site tag is controlled by a Floodlight tag. The numeric string following DC is your Advertiser ID.       | [Floodlight](/docs/connections/destinations/catalog/doubleclick-floodlight/): Configure ID > App + Web Measurement ID       |
+| UA     | Your global site tag is controlled by Google Universal Analytics. The ID is your Google Universal Analytics Measurement ID. To find the property associated with this ID, use the [account search feature](https://support.google.com/analytics/answer/6100731) in Google Universal Analytics. If the property doesn't appear, you probably don't have access to it. | [Google Universal Analytics](/docs/connections/destinations/catalog/google-analytics/): Tracking ID           |
+| G      | Your global site tag is controlled by Google Analytics 4 (GA4). The ID is your Google Analytics Measurement ID.       | [Google Analytics 4](/docs/connections/destinations/catalog/actions-google-analytics-4/): Measurement ID |
+| AW     | Your global site tag is controlled by Google Ads. The numeric string following the AW prefix is your Google Ads Conversion ID.        | [Google Ads](/docs/connections/destinations/catalog/google-ads-gtag/): Google Conversion ID                  |
+| DC     | Your global site tag is controlled by a Floodlight tag. The numeric string following DC is your Advertiser ID.       | [Floodlight](/docs/connections/destinations/catalog/doubleclick-floodlight/): DoubleClick Advertiser ID      |
 | other  | Your global site tag is controlled by a different Google product or may be implemented incorrectly. Use the [Tag Assistant extension](https://support.google.com/tagassistant/answer/2947093) for Google Chrome to verify.      | n/a      |
 
 
