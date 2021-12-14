@@ -29081,9 +29081,10 @@ items:
   previous_names:
   - Tiktok Conversions
   - TikTok Conversions
-  website: http://www.segment.com
+  website: https://ads.tiktok.com/help/article?aid=10003669
   status: PUBLIC_BETA
-  categories: []
+  categories:
+  - Advertising
   logo:
     url: https://cdn.filepicker.io/api/file/vOjOlQFaTZaBitbvoT9Z
   mark:
