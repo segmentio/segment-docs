@@ -6,8 +6,8 @@ redirect_from:
 hide-personas-partial: true
 ---
 
-> warning "The Amazon S3 destination will enter Limited Access in Q1 2021"
-> After Q1 2021, you will no longer be able to modify existing Amazon S3 destination instances, create new Amazon S3 instances, or re-enable a disabled Amazon S3 instance.
+> warning "The Amazon S3 destination will enter Limited Access in Q1 2022"
+> After the Amazon S3 destination enters Limited Access, you will no longer be able to modify existing Amazon S3 destination instances, create new Amazon S3 instances, or re-enable a disabled Amazon S3 instance.
 > 
 > Migrate to the AWS S3 destination to continue storing data in AWS. For more information about migration to AWS S3, see the [AWS S3 destination documentation](/docs/connections/storage/catalog/aws-s3/#migrate-an-existing-destination).
 
@@ -20,6 +20,10 @@ Benefits of using the new AWS S3 destination include:
 - Availability in both the US and EU regions, unlike the Amazon S3 destination, which was available only in the US. This ensures customer data resides in your preferred region. 
 
 To migrate to the AWS S3 destination, follow the instructions outlined in the ["Migrate an existing destination" section of the AWS S3 destination documentation](/docs/connections/storage/catalog/aws-s3/#migrate-an-existing-destination).
+
+The AWS S3 destination appears in the Storage Catalog as the following tile: 
+
+![The AWS S3 destination, as it appears in the catalog](images/AWS-S3.png)
 
 > error " "
 > You need to migrate to the new S3 destination before you disable your legacy destination to ensure Segment continues to deliver data to your S3 bucket. 
