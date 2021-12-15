@@ -929,7 +929,7 @@ Analytics analytics = new Analytics.Builder(this, ANALYTICS_WRITE_KEY) //
         .connectionFactory(new ConnectionFactory() {
           @Override protected HttpURLConnection openConnection(String url) throws IOException {
             String path = Uri.parse(url).getPath();
-            // Replace YOUR_PROXY_HOST with the address of your proxy, e.g. https://aba64da6.ngrok.io.
+            // Replace YOUR_PROXY_HOST with the address of your proxy
             return super.openConnection("YOUR_PROXY_HOST" + path);
           }
         })
@@ -944,7 +944,7 @@ val analytics = Analytics.Builder(this, ANALYTICS_WRITE_KEY) //
           @Throws(IOException::class)
           override fun openConnection(url: String): HttpURLConnection {
             val path = Uri.parse(url).path
-            // Replace YOUR_PROXY_HOST with the address of your proxy, e.g. https://aba64da6.ngrok.io.
+            // Replace YOUR_PROXY_HOST with the address of your proxy
             return super.openConnection("YOUR_PROXY_HOST$path")
           }
         })
