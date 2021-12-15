@@ -245,13 +245,13 @@ Other libraries only collect `context.library`, any other context variables must
 | campaign.medium          |     √        |               |                   |
 | campaign.term            |     √        |               |                   |
 | campaign.content         |     √        |               |                   |
-| device.type              |              |               |      √            |
+| device.type              |              |     √         |      √            |
 | device.id                |              |     √         |      √            |
 | device.advertisingId     |              |     √         |      √            |
 | device.adTrackingEnabled |              |     √         |      √            |
 | device.manufacturer      |              |     √         |      √            |
 | device.model             |              |     √         |      √            |
-| device.name              |              |               |      √            |
+| device.name              |              |     √         |      √            |
 | library.name             |     √        |     √         |      √            |
 | library.version          |     √        |     √         |      √            |
 | ip*                      |     √        |     √         |      √            |
