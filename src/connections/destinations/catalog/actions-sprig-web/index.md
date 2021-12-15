@@ -3,6 +3,7 @@
 title: Sprig (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
+hidden: true
 ---
 
 <!-- In the section above, edit the `title` field. For example, Slack (Actions) Destination -->
