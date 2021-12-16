@@ -741,7 +741,7 @@ This source can be your server-side source. From there, its easy to send data to
 
 ### Consent Mode
 
-Segment does not support Google’s [Consent Mode](https://support.google.com/analytics/answer/9976101?hl=en) feature. This feature enables you to adjust how Google’s tags load on your site, based on whether the user consents to your use of cookies. This feature relies on customers’ use of Google’s gtag.js library, so it does not work when you use Segment’s Google Universal Analytics destination, because it loads [Google’s analytics.js library](https://support.google.com/analytics/answer/7476135?hl=en#zippy=%2Cin-this-article) instead of the gtag.js library. As an alternative, you can use Segment’s [Consent Manager](https://github.com/segmentio/consent-manager).
+Segment does not support Google’s [Consent Mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} feature. Consent Mode enables you to adjust how Google’s tags load on your site, based on whether users consent to your use of cookies. This feature requires Google’s gtag.js library, and does not work when you use Segment’s Google Universal Analytics destination, because it loads [Google’s analytics.js library](https://support.google.com/analytics/answer/7476135?hl=en#zippy=%2Cin-this-article){:target="blank"} instead of the gtag.js library. As an alternative, you can use Segment’s [Consent Manager](https://github.com/segmentio/consent-manager){:target="blank"} .
 
 ### Cookie Domain Name
 
