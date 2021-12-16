@@ -18,7 +18,6 @@
 [context.develop]
   command = "yarn develop"
 
-
 [[redirects]]
   from = "/docs/*"
   to = "/:splat"
