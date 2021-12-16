@@ -25,14 +25,14 @@ To get started with the Analytics-Kotlin mobile library:
     2. Search for **Kotlin (Android)** and click **Add source**.
 2. Add the Analytics dependency to your build.gradle.
 
-    Segment recommends you to install the library with a build system like Gradle, as it simplifies the process of upgrading versions and adding integrations. The library is distributed through [Jitpack](https://jitpack.io/){:target="_blank"}. Add the analytics module to your build.gradle as a dependency as shown in the code sample below.
+    Segment recommends you to install the library with a build system like Gradle, as it simplifies the process of upgrading versions and adding integrations. The library is distributed through [Maven Central](https://search.maven.org/search?q=g:com.segment.analytics.kotlin){:target="_blank"}. Add the analytics module to your build.gradle as a dependency as shown in the code sample below, and replace `<latest_version>` with the latest version listed in [Maven Central](https://search.maven.org/search?q=g:com.segment.analytics.kotlin){:target="_blank"}
 
     ```
     repositories {
-      maven { url 'https://jitpack.io' }
+      mavenCentral()
     }
     dependencies {
-        implementation 'com.github.segmentio.analytics-kotlin:android:+'
+        implementation 'com.segment.analytics.kotlin:android:<latest_version>'
     }
     ```
 
