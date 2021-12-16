@@ -7,6 +7,9 @@ cmode-override: true
 
 [HubSpot](https://www.hubspot.com/) is an inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers. The `analytics.js` HubSpot Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/hubspot).
 
+> warning ""
+> The HubSpot destination is not compatible with the Segment Event Tester. As result, Segment recommends using other tools to troubleshoot the HubSpot destination.
+
 
 ## Getting Started
 
@@ -214,7 +217,6 @@ analytics.ready(function(){
   });
 })
 ```
-
 
 ## Using HubSpot with Personas
 
