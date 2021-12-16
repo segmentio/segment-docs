@@ -19,13 +19,6 @@
   command = "yarn develop"
 
 
-[[plugins]]
-  package = "netlify-plugin-jekyll-cache"
-
-	[plugins.inputs]
-  jekyllSource = "/src"
-
-
 [[redirects]]
   from = "/docs/*"
   to = "/:splat"
