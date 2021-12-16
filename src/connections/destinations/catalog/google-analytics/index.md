@@ -648,6 +648,7 @@ Segment supports the following Google Universal Analytics features.
 
 - [Client-side (Analytics.js) library methods](#client-side-library-methods)
 - [Anonymize IP Address](#anonymize-ip-address)
+- [Consent Mode](#consent-mode)
 - [Cookie Domain Name](#cookie-domain-name)
 - [Custom Dimensions](#custom-dimensions)
 - [Cross-domain Tracking](#cross-domain-tracking)
@@ -737,6 +738,10 @@ analytics.on('track', function(event, properties, options){
 To do this server side, you can create a separate [source](/docs/connections/sources/) in Segment, and within this source enter your GA credentials for the second tracker.
 
 This source can be your server-side source. From there, its easy to send data to multiple projects server-side, as you can see in this [Node example](/docs/connections/sources/catalog/libraries/server/node/#multiple-clients) you can initialize multiple instances of the library.
+
+### Consent Mode
+
+Segment does not support Google’s [Consent Mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} feature. Consent Mode enables you to adjust how Google’s tags load on your site, based on whether users consent to your use of cookies. This feature requires Google’s gtag.js library, and does not work when you use Segment’s Google Universal Analytics destination, because it loads [Google’s analytics.js library](https://support.google.com/analytics/answer/7476135?hl=en#zippy=%2Cin-this-article){:target="blank"} instead of the gtag.js library. As an alternative, you can use Segment’s [Consent Manager](https://github.com/segmentio/consent-manager){:target="blank"} .
 
 ### Cookie Domain Name
 
