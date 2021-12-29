@@ -23,7 +23,7 @@ To migrate to the AWS S3 destination, follow the instructions outlined in the ["
 
 You can view the AWS S3 destination in the Storage Destinations catalog.
 
-![The AWS S3 destination, as it appears in the catalog](images/AWS-S3.png)
+![The AWS S3 destination, as it appears in the catalog](images/aws-s3-tile.png)
 
 > error " "
 > You need to migrate to the new S3 destination before you disable your legacy destination to ensure Segment continues to deliver data to your S3 bucket. 
