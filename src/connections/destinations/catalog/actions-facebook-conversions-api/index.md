@@ -32,7 +32,7 @@ Set up your Pixel to work with the Facebook Conversions API (Actions) destinatio
 ### Option 1: Create a new pixel
 
 1. Go to the [Facebook Business Events Manager](https://www.facebook.com/events_manager/){:target="_blank"} and click **Connect Data Sources**.
-2. Choose Web, App, or Offline and then click **Get Started**.
+2. Choose "Web" and then click **Get Started**.
 3. Select “Conversions API” and then click **Connect**.
 4. Choose “Segment” from the list of partners.
 5. Enable the setting to “Authorize Segment Connection” and then click **Continue**.

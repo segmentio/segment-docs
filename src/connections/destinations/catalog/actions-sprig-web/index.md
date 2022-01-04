@@ -46,10 +46,4 @@ Sprig (Actions) provides the following benefits over the classic Sprig destinati
 
 <!-- If applicable, add information regarding the migration from a classic destination to an Actions-based version below -->
 
-## Migration from the classic Sprig destination
 
-<!-- Include any pertinent information here. -->
-
-To prevent duplicate events being tracked, please disable your existing Sprig destination when you enable Sprig (Actions).
-
-Follow the table below to map your existing Sprig destination configuration to Sprig (Actions).
