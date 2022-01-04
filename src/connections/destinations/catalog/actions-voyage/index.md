@@ -5,7 +5,7 @@ hide-dossier: true
 ---
 {% include content/plan-grid.md name="actions" %}
 
-[Voyage](https://www.voyagesms.com){:target="_blank"} is a SMS marketing and message commerce platform that empowers brands to drive revenue and build customer relationships through personalized text messaging — at scale.
+[Voyage SMS](https://www.voyagesms.com){:target="_blank"} is a message commerce and SMS marketing platform that empowers brands to engage, convert, and delight customers through 1:1 personalized messaging at scale.
 
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Voyage Segment destination.
