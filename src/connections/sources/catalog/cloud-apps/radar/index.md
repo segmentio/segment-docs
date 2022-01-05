@@ -12,9 +12,9 @@ The Radar platform has three products: *Geofencing and Place Detection*, *Trip T
 
 - **[Trip Tracking](https://radar.com/product/trip-tracking)**: Radar has a powerful trip tracking product that allows a brand to personalize the pickup and delivery experience for brick and mortar brands and logistics use cases.
   - **Curbside Pickup and BOPIS** - When a user places an order for pickup, offer them the option to share location to reduce wait times and, for restaurants, increase food freshness. Radar will track the user’s location while en route, provide staff with a real time ETA, and produce an arrival event which can trigger an Iterable notification to the user and/or staff. These features optimize operation efficiencies at the store and lead to a much stronger customer experience.
-  - **Delivery and Fleet Tracking** - Track your in-house delivery team via a driver app to be able to send ETA updates and real time arrival notifications to the end user who is expecting the delivery.
+  - **Delivery and Fleet Tracking** - Track your in-house delivery team using a driver app to be able to send ETA updates and real time arrival notifications to the end user who is expecting the delivery.
 
-- **[Search and Geocoding APIs](https://radar.com/product/api)**: Import and search your own location data, or tap into Radar's best-in-class address and POI datasets. Leverage these APIs to power store finders, address autocomplete, forward and reverse geocoding, IP geocoding, and more.
+- **[Search and Geocoding APIs](https://radar.com/product/api)**: Import and search your own location data, or tap into Radar's best-in-class address and POI datasets. Use these APIs to power store finders, address autocomplete, forward and reverse geocoding, IP geocoding, and more.
 
 When you enable Radar as a Segment Source, you can forward Geofences, Places, Regions, and Trip Tracking data to your warehouse or destinations.
 
@@ -26,255 +26,21 @@ The Radar source is currently in beta. Contact Radar to configure this source.
 
 Radar will send the following events to your Segment warehouses and destinations, depending on what products you enable in Radar.
 
-- Geofence Entered
-- Geofence Exited
-- Place Entered
-- Place Exited
-- Region Entered
-- Region Exited
-- Trip Started
-- Trip Updated
-- Trip Approaching Destination
-- Trip Arrived Destination
-- Trip Stopped
+<!-- TODO: Update the Region Entered/Exited with new links, when availible -->
 
-## Radar Event Properties
+- [Geofence Entered](https://radar.com/documentation/integrations/segment#geofence-entered)
+- [Geofence Exited](https://radar.com/documentation/integrations/segment#geofence-exited)
+- [Place Entered](https://radar.com/documentation/integrations/segment#place-entered)
+- [Place Exited](https://radar.com/documentation/integrations/segment#place-exited)
+- [Region Entered](https://radar.com/documentation/integrations/segment#country-entered)
+- [Region Exited](https://radar.com/documentation/integrations/segment#country-exited)
+- [Trip Started](https://radar.com/documentation/integrations/segment#trip-started)
+- [Trip Updated](https://radar.com/documentation/integrations/segment#trip-updated)
+- [Trip Approaching Destination](https://radar.com/documentation/integrations/segment#trip-approaching-destination)
+- [Trip Arrived Destination](https://radar.com/documentation/integrations/segment#trip-arrived-destination)
+- [Trip Stopped](https://radar.com/documentation/integrations/segment#trip-stopped)
 
-Below are popular examples of events passed into Segment from Radar. For a complete view of the events that Radar passes into Segment, visit [Radar's Segment Events Mapping documentation](https://radar.com/documentation/integrations/segment#event-mapping).
-
-### Geofence Entered
-
-<table>
-  <tr>
-    <td>Property Name</td>
-    <td>Type</td>
-    <td>Description</td>
-  </tr>
-  <tr>
-    <td>latitude</td>
-    <td>float</td>
-    <td>The latitude of the user's location at the time of the event.</td>
-  </tr>
-  <tr>
-    <td>longitude</td>
-    <td>float</td>
-    <td>The longitude of the user's location at the time of the event.</td>
-  </tr>
-  <tr>
-    <td>accuracy</td>
-    <td>float</td>
-    <td>The accuracy of the user's location at the time of the event in meters.</td>
-  </tr>
-  <tr>
-    <td>geofence_id</td>
-    <td>string</td>
-    <td>The ID of the geofence, provided by Radar.</td>
-  </tr>
-  <tr>
-    <td>geofence_description</td>
-    <td>string</td>
-    <td>The description of the geofence.</td>
-  </tr>
-  <tr>
-    <td>geofence_tag</td>
-    <td>string</td>
-    <td>The tag of the geofence.</td>
-  </tr>
-  <tr>
-    <td>geofence_external_id</td>
-    <td>string</td>
-    <td>The external ID of the geofence.</td>
-  </tr>
-  <tr>
-    <td>confidence</td>
-    <td>string</td>
-    <td>The confidence level of the event, one of low, medium, or high.</td>
-  </tr>
-</table>
-
-
-### Geofence Exited
-
-<table>
-  <tr>
-    <td>Property Name</td>
-    <td>Type</td>
-    <td>Description</td>
-  </tr>
-  <tr>
-    <td>latitude</td>
-    <td>float</td>
-    <td>The latitude of the user's location at the time of the event.</td>
-  </tr>
-  <tr>
-    <td>longitude</td>
-    <td>float</td>
-    <td>The longitude of the user's location at the time of the event.</td>
-  </tr>
-  <tr>
-    <td>accuracy</td>
-    <td>float</td>
-    <td>The accuracy of the user's location at the time of the event in meters.</td>
-  </tr>
-  <tr>
-    <td>geofence_id</td>
-    <td>string</td>
-    <td>The ID of the geofence, provided by Radar.</td>
-  </tr>
-  <tr>
-    <td>geofence_description</td>
-    <td>string</td>
-    <td>The description of the geofence.</td>
-  </tr>
-  <tr>
-    <td>geofence_tag</td>
-    <td>string</td>
-    <td>The tag of the geofence.</td>
-  </tr>
-  <tr>
-    <td>geofence_external_id</td>
-    <td>string</td>
-    <td>The external ID of the geofence.</td>
-  </tr>
-  <tr>
-    <td>confidence</td>
-    <td>string</td>
-    <td>The confidence level of the event, one of low, medium, or high.</td>
-  </tr>
-  <tr>
-    <td>duration</td>
-    <td>float</td>
-    <td>The duration between Geofence Entered and Geofence Exited events, in minutes.</td>
-  </tr>
-</table>
-
-
-### Place Entered
-
-<table>
-  <tr>
-    <td>Property Name</td>
-    <td>Type</td>
-    <td>Description</td>
-  </tr>
-  <tr>
-    <td>latitude</td>
-    <td>float</td>
-    <td>The latitude of the user at the time of the event.</td>
-  </tr>
-  <tr>
-    <td>longitude</td>
-    <td>float</td>
-    <td>The longitude of the user at the time of the event.</td>
-  </tr>
-  <tr>
-    <td>accuracy</td>
-    <td>float</td>
-    <td>The accuracy of the user's location at the time of the event in meters.</td>
-  </tr>
-  <tr>
-    <td>place_id</td>
-    <td>string</td>
-    <td>The ID of the place, provided by Radar.</td>
-  </tr>
-  <tr>
-    <td>place_name</td>
-    <td>string</td>
-    <td>The name of the place.</td>
-  </tr>
-  <tr>
-    <td>place_facebook_id</td>
-    <td>string</td>
-    <td>The Facebook ID of the place.</td>
-  </tr>
-  <tr>
-    <td>place_categories</td>
-    <td>array <string></td>
-    <td>List of the [categories of the place](https://www.radar.com/documentation/places/categories). </td>
-  </tr>
-  <tr>
-    <td>place_chain_name</td>
-    <td>string</td>
-    <td>The name of the [chain of the place](https://www.radar.com/documentation/places/chains).</td>
-  </tr>
-  <tr>
-    <td>place_chain_slug</td>
-    <td>string</td>
-    <td>A human-readable unique ID for the [chain of the place](https://www.radar.com/documentation/places/chains).</td>
-  </tr>
-  <tr>
-    <td>confidence</td>
-    <td>string</td>
-    <td>The confidence level of the event, one of low, medium, or high.</td>
-  </tr>
-</table>
-
-
-### Place Exited
-
-<table>
-  <tr>
-    <td>Property Name</td>
-    <td>Type</td>
-    <td>Description</td>
-  </tr>
-  <tr>
-    <td>latitude</td>
-    <td>float</td>
-    <td>The latitude of the user at the time of the event.</td>
-  </tr>
-  <tr>
-    <td>longitude</td>
-    <td>float</td>
-    <td>The longitude of the user at the time of the event.</td>
-  </tr>
-  <tr>
-    <td>accuracy</td>
-    <td>float</td>
-    <td>The accuracy of the user's location at the time of the event in meters.</td>
-  </tr>
-  <tr>
-    <td>placeId</td>
-    <td>string</td>
-    <td>The ID of the place, provided by Radar.</td>
-  </tr>
-  <tr>
-    <td>place_name</td>
-    <td>string</td>
-    <td>The name of the place.</td>
-  </tr>
-  <tr>
-    <td>place_facebook_id</td>
-    <td>string</td>
-    <td>The Facebook ID of the place.</td>
-  </tr>
-  <tr>
-    <td>place_categories</td>
-    <td>array <string></td>
-    <td>List of the [categories of the place](https://www.radar.com/documentation/places/categories).</td>
-  </tr>
-  <tr>
-    <td>place_chain_name</td>
-    <td>string</td>
-    <td>The name of the [chain of the place](https://www.radar.com/documentation/places/chains).</td>
-  </tr>
-  <tr>
-    <td>place_chain_slug</td>
-    <td>string</td>
-    <td>A human-readable unique ID for the [chain of the place](https://www.radar.com/documentation/places/chains).</td>
-  </tr>
-  <tr>
-    <td>confidence</td>
-    <td>string</td>
-    <td>The confidence level of the event, one of low, medium, or high.</td>
-  </tr>
-  <tr>
-    <td>duration</td>
-    <td>float</td>
-    <td>The duration between Place Entered and Place Exited events, in minutes.</td>
-  </tr>
-</table>
-
+For a complete view of the events that Radar passes into Segment, visit [Radar's Segment Events Mapping documentation](https://radar.com/documentation/integrations/segment#event-mapping).
 
 ## Radar User Traits
 
