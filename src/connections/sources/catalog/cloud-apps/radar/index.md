@@ -8,7 +8,7 @@ The Radar Segment Source is a Cloud-mode event source. Instead of packaging Rada
 
 The Radar platform has three products: *Geofencing and Place Detection*, *Trip Tracking*, and *APIs for Geocoding and Search*.
 
-- **[Geofencing and Place Detection](https://radar.com/product/geofencing)**: Radar geofencing is more powerful than native iOS or Android geofencing, with cross-platform support for unlimited geofences, polygon and isochrone geofences, stop detection, and accuracy down to 10 meters. Radar's Places feature allows you to instantly configure geofencing around thousands of chains (ie: Starbucks, Walmart) and categories (ie: airports, restaurants) with the click of a button. Radar will generate a real time event on entry or exit of a custom or Places geofence to trigger messaging, drive behavioral insgihts, inform audience segmentation, and more.
+- **[Geofencing and Place Detection](https://radar.com/product/geofencing)**: Radar geofencing is more powerful than native iOS or Android geofencing, with cross-platform support for unlimited geofences, polygon and isochrone geofences, stop detection, and accuracy down to 10 meters. Radar's Places feature allows you to instantly configure geofencing around thousands of chains (i.e.: Starbucks, Walmart) and categories (i.e.: airports, restaurants) with the click of a button. Radar will generate a real time event on entry or exit of a custom or Places geofence to trigger messaging, drive behavioral insights, inform audience segmentation, and more.
 
 - **[Trip Tracking](https://radar.com/product/trip-tracking)**: Radar has a powerful trip tracking product that allows a brand to personalize the pickup and delivery experience for brick and mortar brands and logistics use cases.
   - **Curbside Pickup and BOPIS** - When a user places an order for pickup, offer them the option to share location to reduce wait times and, for restaurants, increase food freshness. Radar will track the user’s location while en route, provide staff with a real time ETA, and produce an arrival event which can trigger an Iterable notification to the user and/or staff. These features optimize operation efficiencies at the store and lead to a much stronger customer experience.
@@ -32,15 +32,15 @@ Radar will send the following events to your Segment warehouses and destinations
 - Place Exited
 - Region Entered
 - Region Exited
-- Started Trip
-- Updated Trip
-- Approaching Trip Destination
-- Arrived at Trip Destination
-- Stopped Trip
+- Trip Started
+- Trip Updated
+- Trip Approaching Destination
+- Trip Arrived Destination
+- Trip Stopped
 
 ## Radar Event Properties
 
-Below are popular examples of events passed into Segment from Radar. For a complete view of the events that Radar passes into Segment, visit [Radar's Segment Events Mapping documentation](https://radar.com/documentation/integrations/segment#event-mapping)
+Below are popular examples of events passed into Segment from Radar. For a complete view of the events that Radar passes into Segment, visit [Radar's Segment Events Mapping documentation](https://radar.com/documentation/integrations/segment#event-mapping).
 
 ### Geofence Entered
 
