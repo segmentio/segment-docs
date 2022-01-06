@@ -82,6 +82,11 @@ changelog: vendor/bundle
 sidenav: vendor/bundle
 	@node scripts/nav.js
 
+# check local links
+.PHONY: linkcheck
+linkcheck:
+	@node scripts/checklinks.js
+
 .PHONY: zip-artifacts
 zip-artifacts:
 	@tar czf build_package.tar.gz _site
