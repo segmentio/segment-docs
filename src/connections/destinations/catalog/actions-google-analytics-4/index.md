@@ -44,16 +44,16 @@ To add the Google Analytics 4 destination:
 
 ### Custom Event Naming
 
-Google Analytics 4 does not accept custom event names that include spaces. Segment will automatically replace any spaces in the Event Name in the Custom Event action with an underscore. As a result, you will see custom events snakecased in Google Analytics 4.
+Google Analytics 4 does not accept custom event names that include spaces. Segment replaces spaces in the Event Name in the Custom Event action with an underscore. As a result, you will see custom events snakecased in Google Analytics 4.
 
-Google Analytics 4 is also case sensitive. If you would like all event names lowercased, use the `Lowercase Event Name` setting in the Custom Event action. If this setting is disabled, Google will treat event names with different casing as distinct events. For more information, see [Google Analytics 4 Event name rules](https://support.google.com/analytics/answer/10085872?hl=en&ref_topic=9756175#event-name-rules&zippy=%2Cin-this-article.%2Cin-this-article).
+Google Analytics 4 is also case sensitive. If you would like all event names lowercased, use the `Lowercase Event Name` setting in the Custom Event action. If this setting is disabled, Google will treat event names with different casing as distinct events. For more information, see [Google Analytics 4 Event name rules](https://support.google.com/analytics/answer/10085872?hl=en&ref_topic=9756175#event-name-rules&zippy=%2Cin-this-article.%2Cin-this-article){:target="_blank"}.
 
 ### User Metrics & Sessions
 
-We understand that you may not see user metrics on the Google Analytics 4 Realtime report and several other reports. Segment is sending a Google `clientId` in every request to the Measurement Protocol API as well as other required API fields. We are in active discussions with Google to understand expected behavior on these reports. We are aware that [user sessions are not currently supported by the Measurement Protocol API](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/limitations) so this may be expected behavior.
+Segment sends a Google `clientId` in requests to the Measurement Protocol API, alongside other required API fields. However, user sessions are [not currently supported by the Measurement Protocol API](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/limitations){:target="_blank"}, so user metrics might not appear on the Google Analytics 4 Realtime report or several other reports. 
 
-To validate your implementation, please check users on the Events report and User Explorer. You can also confirm events are picked up in the Realtime report.
+To validate your implementation, check users on the Events report and User Explorer. You can also confirm events are picked up in the Realtime report.
 
 ### Debug Mode
 
-The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/7201382?hl=en) only works with a client-side implementation through gtag.js, Google Tag Manager or Firebase. Segment’s Google Analytics 4 integration is server-side and uses the Measurement Protocol API so debug mode is not supported.
+The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/7201382?hl=en){:target="_blank"} only works with a client-side implementation through gtag.js, Google Tag Manager, or Firebase. Because Segment’s Google Analytics 4 integration is server-side and uses the Measurement Protocol API, debug mode is not supported.
