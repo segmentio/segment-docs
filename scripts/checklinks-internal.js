@@ -3,9 +3,6 @@ const posthtml = require('posthtml')
 const fs = require('fs')
 const server = require('browser-sync').create()
 const checkLinks = require('check-links')
-const {
-  $dataMetaSchema
-} = require('ajv')
 const ora = require('ora')
 
 
@@ -68,15 +65,15 @@ const checkForDeadLocalUrls = async () => {
 
 
 
-    const jsonKeys = []
+    const redirects = ['https://segment.com/docs/guides/usage-and-billing/','https://segment.com/docs/connections/sources/catalog/libraries/website/plugins/']
     const data = require('../_site/redirects.json')
     Object.keys(data).forEach(key => {
       if (!key.endsWith('/')){
         key = key+'/'
       }
-      jsonKeys.push('https://segment.com/docs'+key.replace('/docs',''))
+      redirects.push('https://segment.com/docs'+key.replace('/docs',''))
     })
-    broke = broke.filter(val => !jsonKeys.includes(val));
+    broke = broke.filter(val => !redirects.includes(val));
 
     if (broke.length > 0) {
       throbber.fail(`Dead URLS: ${broke.length}\n\n`)
