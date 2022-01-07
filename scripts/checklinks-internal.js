@@ -65,7 +65,7 @@ const checkForDeadLocalUrls = async () => {
 
 
 
-    const redirects = ['https://segment.com/docs/guides/usage-and-billing/','https://segment.com/docs/connections/sources/catalog/libraries/website/plugins/']
+    const redirects = ['https://segment.com/docs/guides/usage-and-billing/','https://segment.com/docs/connections/sources/catalog/libraries/website/plugins/', 'https://segment.com/docs/assets/docs.bundle.js/']
     const data = require('../_site/redirects.json')
     Object.keys(data).forEach(key => {
       if (!key.endsWith('/')){

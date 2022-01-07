@@ -20,7 +20,7 @@ jobs:
     env:
         GITHUB_TOKEN: ${{ secrets.DOCS_BOT_PAT_REPO_SCOPE }}
         REPORT_AUTHOR: docsbot
-        REPORT_LABEL: Automated report broken link
+        REPORT_LABEL: report, automated issue, broken links
         REPORT_REPOSITORY: segmentio/segment-docs
     strategy:
       fail-fast: false
@@ -48,17 +48,13 @@ jobs:
         run: |
           sudo make linkcheck-internal > broken_links.md
       - if: ${{ failure() }}
-        name: Get title for issue
-        id: check
-        run: echo "::set-output name=title::$(head -1 broken_links.md)"
-      - if: ${{ failure() }}
         name: Create issue from file
         id: broken-link-report
         uses: peter-evans/create-issue-from-file@b4f9ee0a9d4abbfc6986601d9b1a4f8f8e74c77e
         with:
           token: ${{ env.GITHUB_TOKEN }}
 
-          title: ${{ steps.check.outputs.title }}
+          title: Broken Links Report
           content-filepath: ./broken_links.md
           repository: ${{ env.REPORT_REPOSITORY }}
           labels: ${{ env.REPORT_LABEL }}
