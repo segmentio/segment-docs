@@ -6,15 +6,22 @@ name: CheckLinks
 
 
 
-on:
-  schedule:
-    - cron: "5 4 * * SAT"
+# on:
+#   schedule:
+#     - cron: "5 4 * * SAT"
+
+on: push
 
 jobs:
   checklinks:
     if: github.repository == 'segmentio/segment-docs'
     name: Linux
     runs-on: ubuntu-latest
+    env:
+        GITHUB_TOKEN: ${{ secrets.DOCS_BOT_PAT_REPO_SCOPE }}
+        REPORT_AUTHOR: docsbot
+        REPORT_LABEL: Automated report broken link
+        REPORT_REPOSITORY: segmentio/segment-docs
     strategy:
       fail-fast: false
     steps:
@@ -28,18 +35,30 @@ jobs:
         run: yarn install
       - name: Build jekyll website with
         run: bundle exec jekyll build
-      - name: Link Checker
-        uses: lycheeverse/lychee-action@v1.1.0
-        with:
-          args: --no-progress _site/**/*.html -a 429 -c ./lychee.toml
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      # - name: Link Checker
+      #   uses: lycheeverse/lychee-action@v1.1.0
+      #   with:
+      #     args: --no-progress _site/**/*.html -a 429 -c ./lychee.toml
+      #   env:
+      #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       # - name: "exclude non-400 errors"
       #   run: |
       #     sudo grep -v "error sending request" ./lychee/out.md > ./lychee/out2.md
-      - name: Create Issue From File
-        uses: peter-evans/create-issue-from-file@v3
+      - name: Run Script
+        run: |
+          scripts/checklinks-internal.js > broken_links.md
+      - if: ${{ failure() }}
+        name: Get title for issue
+        id: check
+        run: echo "::set-output name=title::$(head -1 broken_links.md)"
+      - if: ${{ failure() }}
+        name: Create issue from file
+        id: broken-link-report
+        uses: peter-evans/create-issue-from-file@b4f9ee0a9d4abbfc6986601d9b1a4f8f8e74c77e
         with:
-          title: Link Checker Report
-          content-filepath: ./lychee/out.md
-          labels: report, automated issue
+          token: ${{ env.GITHUB_TOKEN }}
+
+          title: ${{ steps.check.outputs.title }}
+          content-filepath: ./broken_links.md
+          repository: ${{ env.REPORT_REPOSITORY }}
+          labels: ${{ env.REPORT_LABEL }}
