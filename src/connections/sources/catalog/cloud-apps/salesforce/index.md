@@ -31,7 +31,7 @@ The Salesforce source contains a sync component, which means Segment makes reque
 If you configure Selective Sync, Segment only retrieves the objects and properties you specify. Use Selective Sync to avoid unnecessary Salesforce API consumption.
 
 > info "A note about Selective Sync"
-> The Salesforce Selective Sync feature is separate from the [Segment Warehouse Selective Sync](/docs/connections/storage/warehouses/selective-sync/). Both features enable you to choose what to sync. The Salesforce Selective Sync impacts the information that Segment collects from Salesforce.
+> The Salesforce Selective Sync feature is separate from the [Segment Warehouse Selective Sync](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync). Both features enable you to choose what to sync. The Salesforce Selective Sync impacts the information that Segment collects from Salesforce.
 
 Our sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in Salesforce. For example, if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
 
