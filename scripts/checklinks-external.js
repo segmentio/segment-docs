@@ -6,27 +6,33 @@ const checkLinks = require('check-links')
 const {
   $dataMetaSchema
 } = require('ajv')
+const ora = require('ora')
 
-const checkForDeadUrls = async () => {
+
+
+const checkForDeadExternalUrls = async () => {
   try {
     const files = await globby('_site/**/*.html')
-
+    const throbber = ora('Link Check Starting').start()
     const urls = new Set()
 
     const ph = posthtml([
       require('posthtml-urls')({
         eachURL: (url) => {
-          if (url.startsWith('/docs/')) {
-            urls.add(url.replace('/docs/', 'http://localhost:3000/'))
+          if (!url.startsWith('http://0') && !url.startsWith('/') && !url.startsWith('https://github.com/segmentio'))  {
+            urls.add(url)
           }
         },
       }),
     ])
-
+    throbber.succeed()
+    throbber.start('Processing files')
+    
     files.forEach((file) => {
       ph.process(fs.readFileSync(file))
     })
-
+    throbber.succeed()
+    throbber.start('Starting server')
     await new Promise((resolve) => {
       server.init({
           port: 3000,
@@ -34,12 +40,14 @@ const checkForDeadUrls = async () => {
             baseDir: '_site',
           },
           open: false,
-          logLevel: 'info',
+          logLevel: 'silent',
         },
         resolve,
       )
+      throbber.succeed()
     })
-
+    
+    throbber.start('Checking the links')
     const results = await checkLinks(
       Array.from(urls).map((url) =>
         url
@@ -49,34 +57,19 @@ const checkForDeadUrls = async () => {
       (url) => results[url].status === 'dead',
     )
 
-    let broke = []
-
-    deadUrls.forEach(url => {
-      link = url.replace('http://localhost:3000', 'https://segment.com/docs')
-      if (!link.endsWith('/')){
-        link = link+'/'
-      }
-      broke.push(link)
-    });
-
-
-
-    const jsonKeys = []
-    const data = require('../_site/redirects.json')
-    Object.keys(data).forEach(key => {
-      jsonKeys.push('https://segment.com/docs'+key.replace('/docs',''))
-    })
-    broke = broke.filter(val => !jsonKeys.includes(val));
-
-    if (broke.length > 0) {
-      console.error(`Dead URLS: ${broke.length}\n\n${broke.join('\n')}`)
+    if (deadUrls.length > 0) {
+      throbber.fail(`Dead URLS: ${deadUrls.length}\n\n`)
+      console.error(`${deadUrls.join('\n')}`)
       process.exit(1)
+    } else {
+      console.log('All links work!')
+      process.exit
     }
-
+    throbber.stop()
     server.exit()
   } catch (e) {
     console.error(e)
     server.exit()
   }
 }
-checkForDeadUrls()
+checkForDeadExternalUrls()

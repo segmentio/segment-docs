@@ -82,10 +82,15 @@ changelog: vendor/bundle
 sidenav: vendor/bundle
 	@node scripts/nav.js
 
-# check local links
-.PHONY: linkcheck
-linkcheck:
-	@node scripts/checklinks.js
+# check internal links
+.PHONY: linkcheck-internal
+linkcheck-internal:
+	@node scripts/checklinks-internal.js
+
+# check external links
+.PHONY: linkcheck-external
+linkcheck-external:
+	@node scripts/checklinks-external.js
 
 .PHONY: zip-artifacts
 zip-artifacts:
