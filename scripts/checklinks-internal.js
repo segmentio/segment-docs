@@ -71,6 +71,9 @@ const checkForDeadLocalUrls = async () => {
     const jsonKeys = []
     const data = require('../_site/redirects.json')
     Object.keys(data).forEach(key => {
+      if (!key.endsWith('/')){
+        key = key+'/'
+      }
       jsonKeys.push('https://segment.com/docs'+key.replace('/docs',''))
     })
     broke = broke.filter(val => !jsonKeys.includes(val));

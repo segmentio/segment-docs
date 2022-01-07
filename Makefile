@@ -29,13 +29,19 @@ intialize-work-dir:
 
 .PHONY: build
 build: node_modules vendor/bundle
-	@echo "Jekyll env: ${JEKYLL_ENV}"
-	@chown -R jekyll /workdir
-	@chmod -R 777 /workdir
-	@echo "env: ${JEKYLL_ENV}"
-	@$(BIN)/webpack --mode=production
-	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build --trace
-	@if [ '${BUILDKITE_BRANCH}' == 'staging' ]; then echo "updating sitemap.xml..." && sed -i -r 's/segment.com/segment.build/g' ./_site/sitemap.xml; fi;
+	@$(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
+		"$(BIN)/webpack --mode=development --watch" \
+		"bundle exec jekyll clean && bundle exec jekyll build -V"
+
+# .PHONY: build
+# build: node_modules vendor/bundle
+# 	@echo "Jekyll env: ${JEKYLL_ENV}"
+# 	@chown -R jekyll /workdir
+# 	@chmod -R 777 /workdir
+# 	@echo "env: ${JEKYLL_ENV}"
+# 	@$(BIN)/webpack --mode=production
+# 	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build --trace
+# 	@if [ '${BUILDKITE_BRANCH}' == 'staging' ]; then echo "updating sitemap.xml..." && sed -i -r 's/segment.com/segment.build/g' ./_site/sitemap.xml; fi;
 
 .PHONY: upload-docs
 upload-docs:
