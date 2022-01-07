@@ -197,6 +197,7 @@ const updateSources = async () => {
 
     // create the catalog metadata
     let updatedSource = {
+      id: source.id,
       display_name: source.name,
       slug,
       url,
