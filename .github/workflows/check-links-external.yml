@@ -6,14 +6,12 @@ name: CheckLinks
 
 
 
-# on:
-#   schedule:
-#     - cron: "5 4 * * SAT"
-
-on: push
+on:
+  schedule:
+    - cron: "5 4 * * SUN"
 
 jobs:
-  checklinks:
+  checklinks-external:
     if: github.repository == 'segmentio/segment-docs'
     name: Linux
     runs-on: ubuntu-latest

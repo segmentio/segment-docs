@@ -59,7 +59,7 @@ const checkForDeadExternalUrls = async () => {
 
     if (deadUrls.length > 0) {
       throbber.fail(`Dead URLS: ${deadUrls.length}\n\n`)
-      console.error(`${deadUrls.join('\n')}`)
+      console.log(`Dead URLS: ${deadUrls.length}\n\n${deadUrls.join('\n')}`)
       process.exit(1)
     } else {
       console.log('All links work!')

@@ -77,7 +77,7 @@ const checkForDeadLocalUrls = async () => {
 
     if (broke.length > 0) {
       throbber.fail(`Dead URLS: ${broke.length}\n\n`)
-      console.error(`${broke.join('\n')}`)
+      console.log(`Dead URLS: ${broke.length}\n\n${broke.join('\n')}`)
       process.exit(1)
     }else {
       console.log('All links work!')

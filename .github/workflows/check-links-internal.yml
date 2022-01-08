@@ -6,14 +6,12 @@ name: CheckLinks
 
 
 
-# on:
-#   schedule:
-#     - cron: "5 4 * * SAT"
-
-on: push
+on:
+  schedule:
+    - cron: "5 4 * * SAT"
 
 jobs:
-  checklinks:
+  checklinks-internal:
     if: github.repository == 'segmentio/segment-docs'
     name: Linux
     runs-on: ubuntu-latest
@@ -35,15 +33,6 @@ jobs:
         run: yarn install
       - name: Build jekyll website with
         run: bundle exec jekyll build
-      # - name: Link Checker
-      #   uses: lycheeverse/lychee-action@v1.1.0
-      #   with:
-      #     args: --no-progress _site/**/*.html -a 429 -c ./lychee.toml
-      #   env:
-      #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      # - name: "exclude non-400 errors"
-      #   run: |
-      #     sudo grep -v "error sending request" ./lychee/out.md > ./lychee/out2.md
       - name: Run Script
         run: |
           sudo make linkcheck-internal > broken_links.md
@@ -54,7 +43,7 @@ jobs:
         with:
           token: ${{ env.GITHUB_TOKEN }}
 
-          title: Broken Links Report
+          title: Broken Links Report - Local
           content-filepath: ./broken_links.md
           repository: ${{ env.REPORT_REPOSITORY }}
           labels: ${{ env.REPORT_LABEL }}
