@@ -1,13 +1,13 @@
 list:
   - name: Paul Mccall
     position: Lead Developer
-    image_path: paul-mccall.png
+    image_path: 
   - name: Jane Doe
     position: Lead Developer
-    image_path: jane-doe.png
+    image_path: 
   - name: Porter Braun
     position: Lead Developer
-    image_path: porter-braun.png
+    image_path: 
   - name: Monica Buck
     position: Lead Developer
-    image_path: monica-buck.png
+    image_path: 

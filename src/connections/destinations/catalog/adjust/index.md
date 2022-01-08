@@ -166,16 +166,6 @@ When you call `track` Segment maps the event to your pre-defined Adjust custom e
 If you don't provide a mapping, Adjust cannot accept the event. We include all the event `properties` as callback parameters on the Adjust event, and automatically translate `revenue` and `currency` to the appropriate Adjust event properties based on our [spec'd properties](/docs/connections/spec/track/#properties).
 
 
-## Reset
-
-If you're not familiar with the Segment Specs, take a look to understand what the [Reset method](/docs/connections/spec/reset/) does. An example call would look like:
-
-```javascript
-analytics.reset();
-```
-
-When you call `reset`, Segment will reset these partner parameters using Adjust's [resetSessionPartnerParameters](https://github.com/adjust/ios_sdk#session-partner-parameters) method.
-
 ## Install Attributed
 
 ### Client
