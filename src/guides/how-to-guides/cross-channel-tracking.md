@@ -194,7 +194,6 @@ Most other advertising networks provide some functionality of manually uploading
 
 *   [Google Adwords](https://adwords.google.com/home/) provides the functionality to [attribute offline conversions to your ads](https://support.google.com/adwords/answer/2998031?hl=en).
 
-*   [Optimizely](https://www.optimizely.com/) allows [importing offline data to match conversions](https://help.optimizely.com/Measure_success%3A_Track_visitor_behaviors/Tracking_offline_conversion_events_with_Optimizely_Classic)to their experiments
 
 
 Being able to attribute in-store purchases to an impression from a display ad online is critical to help marketers and advertisers understand which campaigns or creatives are driving sales. The more real-time the data and insights, the more nimble your business can be in altering course so that additional resources can be put towards the right marketing actions.

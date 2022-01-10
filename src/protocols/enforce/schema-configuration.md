@@ -13,6 +13,9 @@ To enable blocking, go to the **Settings** tab for your source, and click on **S
 
 ![](../images/event_blocking.png)
 
+> success ""
+> You can [export your Source Schema](/docs/connections/destination-data-control/#export-your-source-schema) as a CSV file to quickly audit events from your Tracking Plan.
+
 ## Track Calls - Unplanned Events
 When you set this dropdown to Block Event, Segment drops any events that are not defined in your Tracking Plan. Only allowlisted `track` calls in your Tracking Plan flow through Segment to your Destinations.
 

@@ -483,19 +483,19 @@ In your warehouse, each collection gets its own table. Find below a list of the 
    </tr>
    <tr>
      <td>requester_wait_time_in_minutes_calendar</td>
-     <td> Number of minutes the requester spent waiting during business hours.</td>
-   </tr>
-   <tr>
-     <td>requester_wait_time_in_minutes_business</td>
      <td> Number of minutes the requester spent waiting outside of business hours.</td>
    </tr>
    <tr>
+     <td>requester_wait_time_in_minutes_business</td>
+     <td> Number of minutes the requester spent waiting during business hours.</td>
+   </tr>
+   <tr>
      <td>on_hold_time_in_minutes_calendar</td>
-     <td> Number of minutes the ticket was on hold during business hours.</td>
+     <td> Number of minutes the ticket was on hold outside of business hours.</td>
    </tr>
    <tr>
      <td>on_hold_time_in_minutes_business</td>
-     <td> Number of minutes the ticket was on hold outside of business hours.</td>
+     <td> Number of minutes the ticket was on hold during business hours.</td>
    </tr>
    <tr>
      <td>created_at</td>

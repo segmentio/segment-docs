@@ -11,7 +11,7 @@ repo: analytics-android
 Analytics for Android only supports any Android device running API 14 (Android 4.0) and higher. This includes Amazon Fire devices.
 
 > info "Analytics-Kotlin public beta"
-> The Analytics-Kotlin library is in public beta. You can use Analytics-Kotlin for [mobile](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/index/) or [server](/docs/connections/sources/catalog/libraries/server/kotlin/index/) applications. If you’d like to migrate to Analytics-Kotlin, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/). Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this library. 
+> The Analytics-Kotlin library is in public beta. You can use Analytics-Kotlin for [mobile](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) or [server](/docs/connections/sources/catalog/libraries/server/kotlin) applications. If you’d like to migrate to Analytics-Kotlin, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/). Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this library. 
 
 > success ""
 > In addition to the documentation here, you can also [read the Javadocs for all versions of Analytics-Android on Javadoc.io](https://javadoc.io/doc/com.segment.analytics.android/analytics/latest/index.html).
@@ -929,7 +929,7 @@ Analytics analytics = new Analytics.Builder(this, ANALYTICS_WRITE_KEY) //
         .connectionFactory(new ConnectionFactory() {
           @Override protected HttpURLConnection openConnection(String url) throws IOException {
             String path = Uri.parse(url).getPath();
-            // Replace YOUR_PROXY_HOST with the address of your proxy, e.g. https://aba64da6.ngrok.io.
+            // Replace YOUR_PROXY_HOST with the address of your proxy
             return super.openConnection("YOUR_PROXY_HOST" + path);
           }
         })
@@ -944,7 +944,7 @@ val analytics = Analytics.Builder(this, ANALYTICS_WRITE_KEY) //
           @Throws(IOException::class)
           override fun openConnection(url: String): HttpURLConnection {
             val path = Uri.parse(url).path
-            // Replace YOUR_PROXY_HOST with the address of your proxy, e.g. https://aba64da6.ngrok.io.
+            // Replace YOUR_PROXY_HOST with the address of your proxy
             return super.openConnection("YOUR_PROXY_HOST$path")
           }
         })
