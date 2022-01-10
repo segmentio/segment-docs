@@ -115,7 +115,7 @@ After you build and release to the App Store, Segment automatically starts trans
 
 ### Server
 
-Our Cloud-mode integration allows you to send *supplemental* data to Adjust.  This, however, *does not* include attribution events. If you are relying on the Adjust server-side component, and you are not bundling the Segment-Adjust SDK, your installs will not be attributed. E-commerce events and other general `track` events are supported out of the box. You **must** map your `track` events to your custom Adjust Event Token in your [Adjust destination settings](#map-your-events-to-custom-adjust-event-tokens).
+The Cloud-mode integration allows you to send *supplemental* data to Adjust.  This *does not* include attribution events. If you rely on the Adjust server-side component, and do not bundle the Segment-Adjust SDK, your installs will not be attributed. E-commerce events and other general `track` events are supported out of the box. You **must** map your `track` events to your custom Adjust Event Token in your [Adjust destination settings](#map-your-events-to-custom-adjust-event-tokens).
 
 Additionally, to send any events to Adjust from the server, you must include the `device.id` as well as the `device.type` in the context object of your event. For example:
 
@@ -135,6 +135,13 @@ analytics.track({
   }
 });
 ```
+
+For iOS and Android, Device ID and Advertising ID map to Segment as follows:
+
+| Segment                        | iOS    | Android      |
+| ------------------------------ | ------ | ------------ |
+| `context.device.advertisingId` | `idfa` | `gps_adid`   |
+| `context.device.id`            | `idfv` | `android_id` |
 
 ## Identify
 
@@ -174,16 +181,16 @@ Segment will trigger an `Install Attributed` event if you have **trackAttributio
 
 Using Adjust's [Attribution callback](https://github.com/adjust/ios_sdk#attribution-callback), Segment listens for an attribution change from Adjust's SDK and triggers the call with the following Adjust attribution parameters:
 
-| Key  | Value  | Description |
-|--:|---|---|
-|  provider | Adjust  | hardcoded by Segment |
-| trackerToken | attribution.trackerToken | the tracker token of the current install |
-| trackerName | attribution.trackerName | the tracker name of the current install |
-| campaign.source |  attribution.network | the network grouping level of the current install |
-| campaign.name | attribution.campaign | the campaign grouping level of the current install |
-| campaign.content | attribution.clickLabel | the click label of the current install |
-| campaign.adCreative | attribution.creative | the creative grouping level of the current install |
-| campaign.adGroup | attribution.adgroup | the ad group grouping level of the current install |
+| Key                 | Value                    | Description                                        |
+| ------------------- | ------------------------ | -------------------------------------------------- |
+| provider            | Adjust                   | hardcoded by Segment                               |
+| trackerToken        | attribution.trackerToken | the tracker token of the current install           |
+| trackerName         | attribution.trackerName  | the tracker name of the current install            |
+| campaign.source     | attribution.network      | the network grouping level of the current install  |
+| campaign.name       | attribution.campaign     | the campaign grouping level of the current install |
+| campaign.content    | attribution.clickLabel   | the click label of the current install             |
+| campaign.adCreative | attribution.creative     | the creative grouping level of the current install |
+| campaign.adGroup    | attribution.adgroup      | the ad group grouping level of the current install |
 
 If any value is unavailable, it will default to nil.  This call will be sent to all enabled [device and cloud mode](/docs/connections/destinations/#connection-modes) destinations.
 
