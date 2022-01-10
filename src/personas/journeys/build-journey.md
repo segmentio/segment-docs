@@ -76,6 +76,33 @@ To publish and activate a Journey, click **Publish Journey** from the Journey Ov
 > info ""
 > After publication, Segment limits which Journeys features you can edit. For more information, see the difference between Draft and Published Journeys below.
 
+## Pausing and Resuming a Journey
+
+Pausing a published Journey prevents new users from joining your Journey. Users already in the Journey, however, will continue their progress.
+
+Follow these steps to pause a Journey:
+
+1. Select the **Journeys** tab within your Personas space.
+2. Select the **More Options** icon next to the Journey you want to pause.
+3. From the dropdown menu, select **Pause Entry**.
+4. A modal window appears. Select **Pause Entry** again to confirm.
+
+> info "Compute Limits"
+> Because pausing only affects new Journey members, paused Journeys still count towards compute credit limits.
+
+### Resuming a Journey
+
+You can resume new user entries to a paused Journey at any time. 
+
+After you resume Journey entry, users who meet the Journey's entry conditions will join the Journey. New users will not enter the Journey, however, if they met its conditions while it was paused. 
+
+Follow these steps to resume entry to a paused Journey:
+
+1. Select the **Journeys** tab within your Personas space.
+2. Select the **More Options** icon next to the Journey you want to resume.
+3. From the dropdown menu, select **Resume Entry**.
+4. A modal window appears. Select **Resume Entry** again to confirm.
+
 ### Drafting a Journey
 
 When you’ve finished creating your Journey, click **Save as Draft** in the bottom-right corner.
