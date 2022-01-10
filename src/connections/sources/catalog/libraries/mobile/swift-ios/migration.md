@@ -49,7 +49,7 @@ If you’re using a different mobile library such as Analytics-iOS, follow these
 
     Middlewares are a powerful mechanism that can augment the events collected by the SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify, augment or reject events.
 
-    <br> As middlewares have the same function as [enrichment plugins](/docs/connections/sources/catalog/libraries/mobile/swift-ios/index#plugin-architecture), you need to write an enrichment plugin to add a middleware.
+    <br> As middlewares have the same function as [enrichment plugins](/docs/connections/sources/catalog/libraries/mobile/swift-ios#plugin-architecture), you need to write an enrichment plugin to add a middleware.
 
     <br>Before example:
     ```swift

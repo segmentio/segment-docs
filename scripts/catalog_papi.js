@@ -118,7 +118,6 @@ const getConnectionModes = (destination) => {
     }
     fs.mkdirSync(docsPath)
     fs.writeFileSync(`${docsPath}/index.md`, content)
-    fs.appendFileSync('src/_data/catalog/incompleteDocs.txt', `${docsPath}\n`)
   }
 }
 
@@ -167,6 +166,7 @@ const updateSources = async () => {
   const hiddenSources = [
     'amp',
     'factual-engine',
+    'twilio-event-streams-beta'
   ]
 
   sources.forEach(source => {
@@ -197,6 +197,7 @@ const updateSources = async () => {
 
     // create the catalog metadata
     let updatedSource = {
+      id: source.id,
       display_name: source.name,
       slug,
       url,
@@ -272,7 +273,14 @@ const updateDestinations = async () => {
 
 
   destinations.forEach(destination => {
+    
+    // We need to be able to keep the system slug in some cases.
+    const slugOverrides = ['actions-google-enhanced-conversions', 'actions-google-analytics-4', 'actions-facebook-conversions-api']
     let slug = slugify(destination.name)
+    if (slugOverrides.includes(destination.slug)) {
+      slug = destination.slug
+    }
+    
 
     // Flip the slug of Actions destinations
     const actionsDests = [

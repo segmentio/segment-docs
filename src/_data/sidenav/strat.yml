@@ -29,7 +29,9 @@ sections:
   - path: /connections/destinations/catalog/facebook-pixel
     title: Facebook Pixel destination
   - path: /connections/destinations/catalog/facebook-pixel-server-side
-    title: Facebook Conversions API Destination (Beta)
+    title: Facebook Conversions API Destination (Classic)
+  - path: /connections/destinations/catalog/actions-facebook-conversions-api
+    title: Facebook Conversions API Destination (Actions)
   - path: /connections/destinations/catalog/facebook-app-events
     title: Facebook App Events destination
   - path: /connections/destinations/catalog/facebook-offline-conversions
@@ -47,10 +49,12 @@ sections:
     title: Google Firebase (mobile analytics) destination
   - path: /connections/destinations/catalog/google-analytics
     title: Google Universal Analytics destination
-  - path: /connections/destinations/catalog/google-analytics/ga4-plans
+  - path: /connections/destinations/catalog/actions-google-analytics-4
     title: Google Analytics 4 destination
   - path: /connections/destinations/catalog/google-tag-manager
-    title: Google Tag Manager destination
+    title: Google Tag Manager
+  - path: /connections/destinations/catalog/actions-google-enhanced-conversions
+    title: Google Enhanced Conversions
   - path: /connections/destinations/catalog/doubleclick-floodlight
     title: DoubleClick Floodlight destination
   - path: /connections/destinations/catalog/personas-display-video-360
@@ -161,9 +165,9 @@ sections:
 - slug: kotlin
   section_title: Analytics-Kotlin Documentation
   section:
-  - path: /connections/sources/catalog/libraries/mobile/kotlin-android/index
+  - path: /connections/sources/catalog/libraries/mobile/kotlin-android/
     title: Analytics-Kotlin (Mobile)
-  - path: /connections/sources/catalog/libraries/server/kotlin/index
+  - path: /connections/sources/catalog/libraries/server/kotlin
     title: Analytics-Kotlin (Server)
   - path: /connections/sources/catalog/libraries/mobile/kotlin-android/migration
     title: Analytics-Kotlin Migration Guide
@@ -171,7 +175,7 @@ sections:
 - slug: swift
   section_title: Analytics-Swift Documentation
   section:
-  - path: /connections/sources/catalog/libraries/mobile/swift-ios/index
+  - path: /connections/sources/catalog/libraries/mobile/swift-ios/
     title: Analytics-Swift
   - path: /connections/sources/catalog/libraries/mobile/swift-ios/migration
     title: Analytics-Swift Migration Guide

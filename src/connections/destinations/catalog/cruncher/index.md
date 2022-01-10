@@ -19,7 +19,7 @@ This destination is maintained by Cruncher. For any issues with the destination,
 
 Alternatively, you can connect Segment to Cruncher directly from your [Cruncher dashboard](https://tower.cruncherlabs.com/connectors). For more information, visit [Cruncher Documentation](https://docs.cruncherlabs.com/connectors/saas/segment).
 
-_Optional:_ If you would like to sync your past events which were sent through Segment into your Cruncher instance as a Business Tier customer, you have the option of leveraging [Segment Replay](/docs/guides/destinations/what-are-my-data-export-options/#business-plan-customers).
+_Optional:_ If you would like to sync your past events which were sent through Segment into your Cruncher instance as a Business Tier customer, you have the option of leveraging [Segment Replay](/docs/connections/data-export-options/#business-plan-customers).
 
 ## Page
 

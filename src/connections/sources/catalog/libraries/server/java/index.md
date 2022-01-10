@@ -16,7 +16,8 @@ Want to stay updated on releases? Subscribe to the [release feed](https://github
 
 ## Getting Started
 
-[![Javadocs](https://javadoc-badge.appspot.com/com.segment.analytics.java/analytics.svg?label=javadoc)](https://javadoc-badge.appspot.com/com.segment.analytics.java/analytics)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics)
+
 
 ### Install the library
 

@@ -249,10 +249,36 @@ You will have to be sure that the [IDFA](/docs/connections/sources/catalog/libra
 
 Similarly, on Android, you'll need to include the Play Services Ads library as [mentioned here](/docs/connections/sources/catalog/libraries/mobile/android/#how-do-you-handle-unique-identifiers-) in order for the `advertisingId` to populate.
 
-Once you have added these, you will start to see the `context.device.advertisingId` populate and the `context.device.adTrackingEnabled` flag set to `true` unless the user has ad tracking limited or is using a mobile ad blocker.
+Once you've added these, you will start to see the `context.device.advertisingId` populate and the `context.device.adTrackingEnabled` flag set to `true` unless the user has ad tracking limited or is using a mobile ad blocker.
 
-_Note_: While the network is deprecated, the relevant iOS [framework](https://developer.apple.com/reference/iad) is not.
+> note ""
+> While the network is deprecated, the relevant iOS [framework](https://developer.apple.com/reference/iad) is not.
 
+Facebook requires that payloads include the following:
+- `context.device.id`
+- `context.device.type`
+- `context.os.version`
+
+For example:
+
+```json
+{
+  "anonymousId": "507f191e810c19729de860ea",
+  "event": "Event Name",
+​  "context": {
+    "device": {
+      "id": "B5372DB0-C21E-11E4-8DFC-AA07A5B093DB",
+      "type": "ios"
+    },
+    "os": {
+      "version": "8.1.3"
+    }
+  },​
+  "messageId": "bbac-11e4-8dfc-aa07a53436b09b45567i8245237824",
+  "type": "track",
+  "userId": "97980cfea0067"
+}
+```
 
 ### Missing custom events
 
