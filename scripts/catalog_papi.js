@@ -118,7 +118,6 @@ const getConnectionModes = (destination) => {
     }
     fs.mkdirSync(docsPath)
     fs.writeFileSync(`${docsPath}/index.md`, content)
-    fs.appendFileSync('src/_data/catalog/incompleteDocs.txt', `${docsPath}\n`)
   }
 }
 
@@ -167,6 +166,7 @@ const updateSources = async () => {
   const hiddenSources = [
     'amp',
     'factual-engine',
+    'twilio-event-streams-beta'
   ]
 
   sources.forEach(source => {
@@ -197,6 +197,7 @@ const updateSources = async () => {
 
     // create the catalog metadata
     let updatedSource = {
+      id: source.id,
       display_name: source.name,
       slug,
       url,

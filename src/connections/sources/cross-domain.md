@@ -35,7 +35,7 @@ You will first need to set up a subdomain for each domain that you want to colle
 
 Setting up a CNAME record will depend on your provider. Refer to specific provider instructions below or [let us know](https://www.segment.com/help/contact) if you need help.
 
-- [Cloudflare](https://support.cloudflare.com/hc/en-us/articles/200168706-How-do-I-do-CNAME-setup-)
+- [Cloudflare](https://support.cloudflare.com/hc/en-us/articles/360020348832-How-do-I-do-CNAME-setup-)
 - [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9646/10/how-can-i-set-up-a-cname-record-for-my-domain)
 - [GoDaddy](https://ca.godaddy.com/help/add-a-cname-record-19236)
 - [Google](https://support.google.com/a/answer/47283?hl=en)

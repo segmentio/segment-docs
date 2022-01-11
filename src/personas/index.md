@@ -33,7 +33,6 @@ Once you create your Computed Traits and Audiences, Personas sends them to your 
 
 {% include components/reference-button.html href="https://segment.com/customers/drift/" icon="personas.svg" title="Personalizing marketing campaigns" content="Marketing teams use Personas to run real-time multi-channel marketing campaigns, based off specific user attributes they’ve computed in Personas. Read about how Drift used Personas to increase prospect engagement by 150% in 2 month." %}
 
-{% include components/reference-button.html href="https://segment.com/customers/consulting/" icon="personas.svg" title="Optimizing Advertising ROI" description="Marketing teams can use rich profile data to run powerful advertising campaigns and reduce wasteful ad spend. Examples include lookalike campaigns based on their best customers, exclusion campaigns of existing customers, and reactivation campaigns to warm up inactive users." %}
 
 ## Personas core components
 
