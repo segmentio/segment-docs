@@ -54,7 +54,7 @@ The table below shows the mapping of the Segment semantic [ecommerce](/docs/conn
 | Checkout Started     | InitiateCheckout                      |
 | Products Searched    | Search                                |
 | Payment Info Entered | AddPaymentInfo                        |
-| Order Completed      | PlaceOrder                            |
+| Order Completed      | PlaceAnOrder                            |
 
 | Segment Event Type         | TikTok Semantic Conversion Event Name |
 | -------------------------- | ------------------------------------- |
