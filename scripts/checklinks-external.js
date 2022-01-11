@@ -22,7 +22,7 @@ const checkForDeadExternalUrls = async () => {
     const ph = posthtml([
       require('posthtml-urls')({
         eachURL: (url) => {
-          if (!url.startsWith('http://0') && !url.startsWith('/') && !url.startsWith('https://github.com/segmentio'))  {
+          if (!url.startsWith('http://0') && !url.startsWith('/') && !url.startsWith('https://github.com/segmentio')) {
             urls.add(url)
           }
         },
@@ -30,13 +30,13 @@ const checkForDeadExternalUrls = async () => {
     ])
     throbber.succeed()
     throbber.start('Processing files')
-    
+
     // Run the above logic on each file 
     files.forEach((file) => {
       ph.process(fs.readFileSync(file))
     })
 
-   
+
     // Check all the links collected in the section above
     throbber.start('Checking the links')
     const results = await checkLinks(
@@ -44,17 +44,38 @@ const checkForDeadExternalUrls = async () => {
         url
       ),
     )
+
+
+
+
     // If a link returns 'dead' (404), add it to an array
     const deadUrls = Array.from(urls).filter(
       (url) => results[url].status === 'dead',
     )
-    
+
+    // Get the ignore list
+    throbber.succeed()
+    throbber.start('Get the ignore list')
+    const readFileLines = filename =>
+      fs.readFileSync(filename)
+      .toString('UTF8')
+      .split('\n')
+
+    let ignoreList = readFileLines('ignore-links.txt')
+
+    throbber.succeed()
+
+    // Filter the ignored links
+    throbber.start('Filter the ignored URls')
+    let broke = []
+    broke = deadUrls.filter(val => !ignoreList.includes(val));
+
     // If there are dead URLs, list them here, along with the count. Exit status 1 to indicate an error.
-    if (deadUrls.length > 0) {
-      throbber.fail(`Dead URLS: ${deadUrls.length}\n\n`)
-      console.log(`Dead URLS: ${deadUrls.length}\n\n${deadUrls.join('\n')}`)
+    if (broke.length > 0) {
+      throbber.fail(`Dead URLS: ${broke.length}\n\n`)
+      console.log(`Dead URLS: ${broke.length}\n\n${broke.join('\n')}`)
       process.exit(1)
-    } 
+    }
     // Otherwise, claim that all the links work, and exit the process normally.
     else {
       console.log('All links work!')
