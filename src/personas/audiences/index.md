@@ -95,6 +95,19 @@ To create a new audience:
 > warning ""
 > [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/), [Marketo Lists](/docs/connections/destinations/catalog/marketo-static-lists/), and [Adwords Remarking Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists) have rate limits on how quickly we can update an audience. We sync at the highest frequency allowed by the tool, which is between 1 hour and 6 hours.
 
+### Editing Realtime Audiences and Traits
+
+Personas supports the editing of realtime Audiences and Traits, which allows you to make nuanced changes to existing Traits and Audiences in situations where cloning or building from scratch may not suit your use case.
+
+To edit a realtime Trait or Audience, follow these steps:
+
+1. In your Personas Space, select the **Computed Traits** or **Audiences** tab.
+2. Select the realtime Audience or Trait you want to edit.
+3. Select the **Builder** tab and make your edits.
+4. Select **Save Audience** to confirm your edits.
+
+Personas then processes your realtime Audience or Trait edits.  Once Personas has finished incorporating your changes, you'll be able to access your updated Audience or Trait.
+
 ## Accessing your Audiences using the Profiles API
 
 You can access your audiences using the Profile API by querying the `/traits` endpoint. For example, if you can query for the `high_value_user` with the following GET request:
