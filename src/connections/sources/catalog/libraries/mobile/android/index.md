@@ -24,7 +24,7 @@ Naturally the Analytics SDK needs a unique ID for each user. The very first time
 
 The Segment SDK also collects the [Advertising ID](https://developer.android.com/google/play-services/id.html) provided by Play Services. Make sure the Play Services Ads library is included as a dependency for your application. This is the ID that should be used for advertising purposes. This value is set to `context.device.advertisingId`.
 
-Segment also generates an unique ID by using the [DRM API](https://source.android.com/devices/drm) as `context.device.id`. Some destinations rely on this field being the Android ID, so double check the destinations' vendor documentation. If you choose to override the default value, make sure the identifier you chose complies with Google's [User Data Policy](https://support.google.com/googleplay/android-developer/answer/10144311).
+Segment also generates a unique ID by using the [DRM API](https://source.android.com/devices/drm) as `context.device.id`. Some destinations rely on this field being the Android ID, so be sure to double-check the destination's vendor documentation. If you choose to override the default value, make sure the identifier you choose complies with Google's [User Data Policy](https://support.google.com/googleplay/android-developer/answer/10144311).
 
 > warning ""
 > **Note:** From `4.10.1`, Segment no longer collects the [Android ID](http://developer.android.com/reference/android/provider/Settings.Secure.html#ANDROID_ID) to comply with Google's [User Data Policy](https://support.google.com/googleplay/android-developer/answer/10144311).
