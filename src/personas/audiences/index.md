@@ -97,7 +97,7 @@ To create a new audience:
 
 ### Editing Realtime Audiences and Traits
 
-Personas supports the editing of realtime Audiences and Traits. Editing realtime Audiences allows you to make nuanced changes to existing Traits and Audiences in situations where cloning or building from scratch may not suit your use case.
+Personas supports the editing of realtime Audiences and Traits, which allows you to make nuanced changes to existing Traits and Audiences in situations where cloning or building from scratch may not suit your use case.
 
 To edit a realtime Trait or Audience, follow these steps:
 
