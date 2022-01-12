@@ -25,7 +25,7 @@ To get started with the Analytics-Kotlin mobile library:
     2. Search for **Kotlin (Android)** and click **Add source**.
 2. Add the Analytics dependency to your build.gradle.
 
-    Segment recommends you to install the library with a build system like Gradle, as it simplifies the process of upgrading versions and adding integrations. The library is distributed through [Maven Central](https://search.maven.org/search?q=g:com.segment.analytics.kotlin){:target="_blank"}. Add the analytics module to your build.gradle as a dependency as shown in the code sample below, and replace `<latest_version>` with the latest version listed in [Maven Central](https://search.maven.org/search?q=g:com.segment.analytics.kotlin){:target="_blank"}
+    Segment recommends you to install the library with a build system like Gradle, as it simplifies the process of upgrading versions and adding integrations. The library is distributed through [Maven Central](https://repo1.maven.org/maven2/com/segment/analytics/kotlin/android/){:target="_blank"}. Add the analytics module to your build.gradle as a dependency as shown in the code sample below, and replace `<latest_version>` with the latest version listed in our [releases page](https://github.com/segmentio/analytics-kotlin/releases){:target="_blank"}
 
     ```
     repositories {
@@ -50,6 +50,9 @@ To get started with the Analytics-Kotlin mobile library:
           flushInterval = 10
       }
     ```
+
+    > warning ""
+    > **Note:** In android, application context is required to pass as the second parameter, or an error `Using JVM Analytics initializer in Android platform. Context is required in constructor!` will be thrown out.
 
     Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) is optional, but Segment highly recommends you to configure these options in order to track core events.
 
@@ -82,6 +85,12 @@ To get started with the Analytics-Kotlin mobile library:
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     ```
+
+5. Enable Java 8+ API desugaring
+   
+   The SDK internally uses a number of Java 8 language APIs through desugaring. Please make sure your project:
+   * either enables desugaring (see how to enable it [here](https://developer.android.com/studio/write/java8-support#library-desugaring))
+   * or requires a minimum API level of 26.
 
 ## Tracking Methods
 
@@ -439,8 +448,8 @@ To test your destination:
 
 Segment recommends you to test your destination implementation end-to-end. Send some sample analytics events and ensure that they reach the destination.
 
-## Changelog
-[View the Analytics-Kotlin changelog on GitHub](https://github.com/segmentio/analytics-kotlin/releases).
-
 ## Compatibility
 [View the Analytics-Kotlin compatibility notes on GitHub](https://github.com/segmentio/analytics-kotlin#compatibility).
+
+## Changelog
+[View the Analytics-Kotlin changelog on GitHub](https://github.com/segmentio/analytics-kotlin/releases).
