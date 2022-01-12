@@ -81,8 +81,6 @@ To get started with the Analytics-Kotlin mobile library:
     <!-- Required for internet. -->
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <!--  Required to compute device Id, not providing this will not break your implementation -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     ```
 
 ## Tracking Methods
