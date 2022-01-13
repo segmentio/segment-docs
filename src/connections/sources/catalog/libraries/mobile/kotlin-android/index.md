@@ -51,7 +51,7 @@ To get started with the Analytics-Kotlin mobile library:
       }
     ```
 
-    **Note:** If you're on an Android platform, you must add the application context as the second parameter.
+    **Note: If you're on an Android platform, you must add the application context as the second parameter.**
     <br>Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) is optional, but Segment highly recommends you to configure these options in order to track core events.
 
     <br>**Note:** Unlike the Analytics-Android SDK, the Analytics-Kotlin SDK doesn’t provide a singleton instance and relies on you to keep track of the instance.
@@ -445,7 +445,7 @@ To test your destination:
 Segment recommends you to test your destination implementation end-to-end. Send some sample analytics events and ensure that they reach the destination.
 
 ## Compatibility
-[View the Analytics-Kotlin compatibility notes on GitHub](https://github.com/segmentio/analytics-kotlin#compatibility).
+If you use a pure Java codebase, please refer to [Java Compatibility](https://github.com/segmentio/analytics-kotlin/blob/main/JAVA_COMPAT.md){:target="_blank"} for sample uses.
 
 ## Changelog
 [View the Analytics-Kotlin changelog on GitHub](https://github.com/segmentio/analytics-kotlin/releases).
