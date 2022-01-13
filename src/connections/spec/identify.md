@@ -48,6 +48,8 @@ analytics.identify("97980cfea0067", {
   logins: 5
 });
 ```
+> note ""
+> The `identify` call syntax is different for Node.js. Please visit Segment's [Analytics for Node.js](/docs/connections/sources/catalog/libraries/server/node/#identify) page for more information.
 
 Beyond the common fields, an `identify` call has the following fields:
 
