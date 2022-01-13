@@ -3,16 +3,16 @@ title: Sailthru V2 New Destination
 rewrite: true
 redirect_from: '/connections/destinations/catalog/sailthru/'
 ---
-[Sailthru's](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) cross-channel marketing platform helps brands deliver personalized experiences to each and every consumer across email, web, and mobile, driving higher revenue, improving customer lifetime value, and reducing churn.
+[Sailthru's](https://www.sailthru.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) cross-channel marketing platform helps brands deliver personalized experiences to each and every consumer across email, web, and mobile, driving higher revenue, improving customer lifetime value, and reducing churn.
 
-Sailthru maintains this destination. For any issues with the destination, [contact the Sailthru Support team](mailto:support@sailthru.com.com).
+Sailthru maintains this destination. For any issues with the destination, [contact the Sailthru Support team](mailto:support@sailthru.com).
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. Contact the [Sailthru Support team](mailto:support@sailthru.com.com) to enable your account for EXTID support and request your integration-specific API Key and Secret.
+1. Contact the [Sailthru Support team](mailto:support@sailthru.com) to enable your account for EXTID support and request your integration-specific API Key and Secret.
 2. From the Destinations catalog page in the Segment App, click **Add Destination**.
 3. Search for “Sailthru” in the Destinations Catalog, and select the Sailthru destination.
 4. Choose which Source should send data to the Sailthru destination.
