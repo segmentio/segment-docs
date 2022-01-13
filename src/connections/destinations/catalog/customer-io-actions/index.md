@@ -40,3 +40,12 @@ redirect_from:
 
 Keep the following in mind if you plan to move to Customer.io (Actions) from the classic Customer.io destination.
 {% include components/actions-map-table.html name="customer-io" %}
+
+## Convert timestamps
+
+When you map some actions, you'll see a **Convert Timestamps** setting. This setting is on by default, and converts traits containing ISO-8601 timestamps to Unix timestamps (seconds since epoch). We strongly suggest that you leave this setting enabled. While we support ISO-8601 timestamps in liquid, you must use Unix timestamps to take advantage of timestamp conditions when segmenting your audience in Customer.io.
+
+For example, if you send an event with a `purchase_time` trait of `2006-01-02T18:04:07Z`, Customer.io converts it to `1136253847`. If the timestamp is *not* in ISO-8601 format, Customer.io doesn't convert it. This avoids inadvertently converting values like phone numbers or IDs. 
+
+Customer.io makes an exception for the `created_at` trait, converting ISO-8601 timestamps or any values supported by JavaScript `Date` objects to Unix timestamps.
+

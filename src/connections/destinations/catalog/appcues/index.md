@@ -49,6 +49,22 @@ To get the most out of Appcues, you should send as much user data as possible in
   * Properties to personalize Appcues content, such as `name`, `firstName`, or `company`
   * Properties to target based on user lifecycle, such as `createdAt` (date), or usage metrics, such as `numTasksComplete`
 
+## Group
+
+Refer to the Segment Spec for information about the [Group method](/docs/connections/spec/group/). The following represents an example `group` call:
+
+```javascript
+analytics.group("0e8c78ea9d97a7b8185e8632", {
+  name: "Initech",
+  industry: "Technology",
+  employees: 329,
+  plan: "enterprise",
+  "total billed": 830
+});
+```
+
+When you call `group` with Analytics.js, Segment calls `Appcues.group`. This is the preferred method of using and targeting on account-level properties.
+
 ## Track
 
 Refer to the Segment Spec for information about the [Track method](/docs/connections/spec/track/). The following represents an example `track` call:
