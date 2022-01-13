@@ -445,7 +445,7 @@ To test your destination:
 Segment recommends you to test your destination implementation end-to-end. Send some sample analytics events and ensure that they reach the destination.
 
 ## Compatibility
-If you use a pure Java codebase, please refer to [Java Compatibility](https://github.com/segmentio/analytics-kotlin/blob/main/JAVA_COMPAT.md){:target="_blank"} for sample uses.
+If you use a Java codebase, please refer to the [Java Compatibility docs](https://github.com/segmentio/analytics-kotlin/blob/main/JAVA_COMPAT.md){:target="_blank"} for sample uses.
 
 ## Changelog
 [View the Analytics-Kotlin changelog on GitHub](https://github.com/segmentio/analytics-kotlin/releases).
