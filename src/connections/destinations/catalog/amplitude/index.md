@@ -80,8 +80,8 @@ Page and Screen calls have two important properties: a *page name*, such as "Set
 
 If you use Analytics.js (in either [device- or cloud-mode](/docs/connections/destinations#connection-modes)), a mobile library in cloud-mode, or a Segment server library, the following settings are available. (Additional settings are available *only* for iOS and Android sources that send in device-mode.)
 
-| Setting Name    | When events are sent to Amplitude    | Amplitude Event Name     | Example for `{"name": "Settings", "category": "Merchant" }` |
-| ----------------------- | -------------- | --------------- | ------------------- |
+| Setting Name            | When events are sent to Amplitude        | Amplitude Event Name                        | Example for `{"name": "Settings", "category": "Merchant" }` |
+| ----------------------- | ---------------------------------------- | ------------------------------------------- | ----------------------------------------------------------- |
 | Track Named Pages       | A `page`/`screen` *name* is provided     | Loaded/Viewed (Category) (Name) Page/Screen | "Loaded Merchant Settings Page"                             |
 | Track Categorized Pages | A `page`/`screen` *category* is provided | Loaded/Viewed (Category) Page/Screen        | "Loaded Merchant Page"                                      |
 | Track All Pages         | Always                                   | Loaded/Viewed a Page/Screen                 | "Loaded a Page"                                             |
@@ -100,10 +100,10 @@ When you use the **Track All Pages** setting, Segment sends a `Loaded a Page` ev
 
 The following settings are available on iOS for device-mode connections.
 
-| Setting Name | When events will be sent to Amplitude | Amplitude Event Name | Example for `{"name": "Settings", "category": "Merchant" }` |
-| --- | --- | --- |
-| Track All Pages | Always | Viewed (Name) | "Viewed Settings" |
-| Track All Screens | Always | Loaded a Screen | "Loaded a Screen" |
+| Setting Name      | When events will be sent to Amplitude | Amplitude Event Name | Example for `{"name": "Settings", "category": "Merchant" }` |
+| ----------------- | ------------------------------------- | -------------------- |
+| Track All Pages   | Always                                | Viewed (Name)        | "Viewed Settings"                                           |
+| Track All Screens | Always                                | Loaded a Screen      | "Loaded a Screen"                                           |
 
 When enabled, the "Track All Screens" setting includes the screen name and category as event
 properties, where the "Track All Pages" omits them. Most iOS implementations should use "Track All Screens".
@@ -112,12 +112,12 @@ properties, where the "Track All Pages" omits them. Most iOS implementations sho
 
 The following settings are available on Android for device-mode connections.
 
-| Setting Name | When events will be sent to Amplitude | Amplitude Event Name | Example for `{"name": "Settings", "category": "Merchant" }` |
-| --- | --- | --- | --- |
-| Track Named Pages | A `screen` *name* is provided | Viewed (Category) (Name) Screen | "Viewed Merchant Settings Screen" |
-| Track Categorized Pages | A `screen` *category* is provided | Viewed (Category) Screen | "Viewed Merchant Screen" |
-| Track All Pages | Always | If a `screen` *name* is provided: `Viewed (Name) Screen`. Otherwise `Loaded a Screen` | "Viewed Settings Screen" |
-| Track All Screens | Always | Loaded a Screen | "Loaded a Screen" |
+| Setting Name            | When events will be sent to Amplitude | Amplitude Event Name                                                                  | Example for `{"name": "Settings", "category": "Merchant" }` |
+| ----------------------- | ------------------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| Track Named Pages       | A `screen` *name* is provided         | Viewed (Category) (Name) Screen                                                       | "Viewed Merchant Settings Screen"                           |
+| Track Categorized Pages | A `screen` *category* is provided     | Viewed (Category) Screen                                                              | "Viewed Merchant Screen"                                    |
+| Track All Pages         | Always                                | If a `screen` *name* is provided: `Viewed (Name) Screen`. Otherwise `Loaded a Screen` | "Viewed Settings Screen"                                    |
+| Track All Screens       | Always                                | Loaded a Screen                                                                       | "Loaded a Screen"                                           |
 
 You can learn more about Page calls from our [Page spec](/docs/connections/spec/page/)
 and Screen calls from our [Screen spec](/docs/connections/spec/screen/).
@@ -146,7 +146,7 @@ analytics.identify({
 })
 ```
 
-When you make an Identify call, Segment uses the `userId` you provide to set the [User Id in Amplitude](https://amplitude.zendesk.com/hc/en-us/articles/206404628-Step-2-Assign-User-IDs-and-Identify-Your-Users), and
+When you make an Identify call, Segment uses the `userId` you provide to set the [User Id in Amplitude](https://help.amplitude.com/hc/en-us/articles/206404628-Step-2-Assign-User-IDs-and-Identify-Your-Users), and
 sets any `traits` you provide as Amplitude custom `user_properties`.
 
 ### Merging users with Anonymous ID and User ID
@@ -163,21 +163,21 @@ You can set the Device ID in slightly different ways depending on the library an
 
 The table below represents default behavior.
 
-| Library | Default | Fallback |
-| --- | --- | --- |
-| A.js | [Generated by Amplitude](https://amplitude.zendesk.com/hc/en-us/articles/115003135607-Tracking-Unique-Users#determining-unique-users) | `anonymousId` |
-| Server-side  |  `context.device.id` | `anonymousId`  |
-| iOS |  [Generated by Amplitude](https://amplitude.zendesk.com/hc/en-us/articles/115003135607-Tracking-Unique-Users#determining-unique-users) | n/a  |
-| Android | [Generated by Amplitude](https://amplitude.zendesk.com/hc/en-us/articles/115003135607-Tracking-Unique-Users#determining-unique-users)  | n/a |
+| Library     | Default                 | Fallback      |
+| ----------- | ----------------------- | ------------- |
+| A.js        | Generated by Amplitude] | `anonymousId` |
+| Server-side | `context.device.id`     | `anonymousId` |
+| iOS         | Generated by Amplitude  | n/a           |
+| Android     | Generated by Amplitude  | n/a           |
 
 #### Prefer Anonymous ID for Device ID
 
 If you're using the "Prefer Anonymous ID for Device ID" setting in client-side, server-side, or a mobile library with Cloud-mode enabled, the following rules apply.
 
-| Library | Default | Fallback |
-| --- | --- | --- |
-| A.js | `anonymousId` | [Generated by Amplitude](https://amplitude.zendesk.com/hc/en-us/articles/115003135607-Tracking-Unique-Users#determining-unique-users) |
-| Server-side  |  `anonymousId` | `context.device.id`  |
+| Library     | Default       | Fallback               |
+| ----------- | ------------- | ---------------------- |
+| A.js        | `anonymousId` | Generated by Amplitude |
+| Server-side | `anonymousId` | `context.device.id`    |
 
 #### Prefer Advertising ID for Device ID
 
@@ -185,21 +185,21 @@ This option is not currently available for mobile libraries using cloud-mode.
 
 If you're using the "Prefer Advertising ID for Device ID" setting with one of our bundled mobile SDKs, the following rules apply.
 
-| Library | Default | Fallback |
-| --- | --- | --- |
-| iOS | `anonymousId` | [Generated by Amplitude](https://amplitude.zendesk.com/hc/en-us/articles/115003135607-Tracking-Unique-Users#determining-unique-users) |
-| Android  |  `anonymousId` | [Generated by Amplitude](https://amplitude.zendesk.com/hc/en-us/articles/115003135607-Tracking-Unique-Users#determining-unique-users)   |
+| Library | Default       | Fallback                |
+| ------- | ------------- | ----------------------- |
+| iOS     | `anonymousId` | [Generated by Amplitude |
+| Android | `anonymousId` | [Generated by Amplitude |
 
 ### Device ID priority
 
 If you have multiple settings enabled, one setting or value can take priority of another. This table lists which settings, if enabled, take priority over other settings or values.
 
-| Library | Priority (highest to lowest) |
-| --- | --- |
-| A.js | Prefer Anonymous ID for Device ID <br /> Set Device ID From URL Parameter amp_device_id (Device-mode only) <br /> [Device ID Generated by Amplitude](https://amplitude.zendesk.com/hc/en-us/articles/115003135607-Tracking-Unique-Users#determining-unique-users) |
-| Server-side  | Prefer Anonymous ID for Device ID <br /> `context.device.id` |
-| iOS |  Use AdvertisingId for Device ID (Device-mode only) <br /> [Device ID Generated by Amplitude](https://amplitude.zendesk.com/hc/en-us/articles/115003135607-Tracking-Unique-Users#determining-unique-users)
-| Android | Use AdvertisingId for Device ID (Device-mode only) <br /> [Device ID Generated by Amplitude](https://amplitude.zendesk.com/hc/en-us/articles/115003135607-Tracking-Unique-Users#determining-unique-users)
+| Library     | Priority (highest to lowest)                                                                                                                       |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A.js        | Prefer Anonymous ID for Device ID <br /> Set Device ID From URL Parameter amp_device_id (Device-mode only) <br /> Device ID Generated by Amplitude |
+| Server-side | Prefer Anonymous ID for Device ID <br /> `context.device.id`                                                                                       |
+| iOS         | Use AdvertisingId for Device ID (Device-mode only) <br /> Device ID Generated by Amplitude                                                         |
+| Android     | Use AdvertisingId for Device ID (Device-mode only) <br /> Device ID Generated by Amplitude                                                         |
 
 
 ### Using Device ID to merge users
@@ -277,15 +277,15 @@ For a complete list of special `context` keys see [Segment's Common fields spec]
 
 Segment's iOS and Android sources can send revenue using Amplitude's preferred `logRevenueV2` method. Segment sets Amplitude's special revenue properties, such as `revenueType` and `productIdentifier`, which are used in Amplitude's Revenue Analysis and Revenue LTV charts. Segment uses the Amplitude `eventProperties` field to send any properties _not_ mapped to Amplitude's special properties.
 
-| Amplitude Property | Segment Property | Description |
-| --- | --- | --- |
-| `productId` | `productId` | An identifier for the product. |
-| `quantity` | `quantity` | The quantity of products purchased. Note: revenue = `quantity` * `price`. |
-| `price` | `price` or `revenue` (or `total` for mobile, see note below) | The price of the products purchased, and this can be negative. |
-| `revenueType` | `revenueType`| The type of revenue (e.g. tax, refund, income). |
-| `receiptSignature`  | `receiptSignature` (Android only) | The receipt signature.  |
-| `receipt` | `receipt` | This is required if you want to verify the revenue event. |
-| `eventProperties` | Any remaining properties | A NSDictionary or Map of event properties to include in the revenue event. |
+| Amplitude Property | Segment Property                                             | Description                                                                |
+| ------------------ | ------------------------------------------------------------ | -------------------------------------------------------------------------- |
+| `productId`        | `productId`                                                  | An identifier for the product.                                             |
+| `quantity`         | `quantity`                                                   | The quantity of products purchased. Note: revenue = `quantity` * `price`.  |
+| `price`            | `price` or `revenue` (or `total` for mobile, see note below) | The price of the products purchased, and this can be negative.             |
+| `revenueType`      | `revenueType`                                                | The type of revenue (e.g. tax, refund, income).                            |
+| `receiptSignature` | `receiptSignature` (Android only)                            | The receipt signature.                                                     |
+| `receipt`          | `receipt`                                                    | This is required if you want to verify the revenue event.                  |
+| `eventProperties`  | Any remaining properties                                     | A NSDictionary or Map of event properties to include in the revenue event. |
 
 <!--&ast;-->\* If `properties.price` is not present, Segment uses `revenue` instead, and sends that as `price`. In Segment's iOS and Android components, if `revenue` isn't present either, Segment does an additional fallback and sends the `total`.
 
@@ -298,16 +298,16 @@ Property names should be `camelCase` for Android implementations, and `snake_cas
 
 For Segment's Analytics.js (device-mode), iOS, and Android sources, if you do not enable the preferred `logRevenueV2` setting, Segment sends the data using the deprecated `logRevenue` methods (which still work). If you record events using this old setting, fields such as `revenueType` aren't recorded in your events. This can reduce your ability to segment on those revenue events in the Amplitude platform.
 
-| Amplitude Property | Segment Property | Description |
-| --- | --- | --- |
-| `productId` | `productId` | An identifier for the product. |
-| `quantity` | `quantity` | The quantity of products purchased. Note: revenue = `quantity` * `price`. |
-| `price` | `price` (or `revenue` or `total`, see note below) | The price of the products purchased, and this can be negative. |
-| `receipt` | `receipt` (mobile only) | This is required to verify the revenue event. |
-| `receiptSignature`  | `receiptSignature` (Android only) | The receipt signature.  |
-| `revenueType` | `revenueType` (cloud-mode only)| The type of revenue (such as tax, refund, income). |
-| `revenue`  |  `revenue` (cloud-mode only) | The revenue collected.  |
-| `eventProperties` | Any remaining properties (cloud-mode only) | A NSDictionary or Map of event properties to include in the revenue event. |
+| Amplitude Property | Segment Property                                  | Description                                                                |
+| ------------------ | ------------------------------------------------- | -------------------------------------------------------------------------- |
+| `productId`        | `productId`                                       | An identifier for the product.                                             |
+| `quantity`         | `quantity`                                        | The quantity of products purchased. Note: revenue = `quantity` * `price`.  |
+| `price`            | `price` (or `revenue` or `total`, see note below) | The price of the products purchased, and this can be negative.             |
+| `receipt`          | `receipt` (mobile only)                           | This is required to verify the revenue event.                              |
+| `receiptSignature` | `receiptSignature` (Android only)                 | The receipt signature.                                                     |
+| `revenueType`      | `revenueType` (cloud-mode only)                   | The type of revenue (such as tax, refund, income).                         |
+| `revenue`          | `revenue` (cloud-mode only)                       | The revenue collected.                                                     |
+| `eventProperties`  | Any remaining properties (cloud-mode only)        | A NSDictionary or Map of event properties to include in the revenue event. |
 
 
 ^ In Segment's Analytics.js, iOS and Android sources, if `properties.price` is not present, Segment falls back to `revenue` and sends that as `price`. The Segment iOS and Android sources also do an additional fallback to `total`, if `revenue` isn't present either.
@@ -455,19 +455,19 @@ or are sending Alias events from a Segment server-side library (such as Node).
 > note ""
 > To use Alias, you must have the Amplitude Portfolio add-on enabled.
 
-For more information, see the [Segment Spec page for the Alias method](/docs/connections/spec/alias/) and [the Amplitude `usermap` documentation](https://amplitude.zendesk.com/hc/en-us/articles/360002750712-Portfolio-Cross-Project-Analysis#user-mapping-aliasing).
+For more information, see the [Segment Spec page for the Alias method](/docs/connections/spec/alias/).
 
 | Segment identifier name | Equivalent Amplitude identifier name |
-|--|--|
-| `previousId` | `user_id` |
-| `userId` | `global_user_id` |
+| ----------------------- | ------------------------------------ |
+| `previousId`            | `user_id`                            |
+| `userId`                | `global_user_id`                     |
 
 ### Mapping Users
 
 Mapping a Segment user's `previousId` to the user's `userId` in Amplitude is as
 simple as invoking a Segment Alias method with an argument for each value.
 The example Alias call below maps the `previousId` with the value of `123` to the `userId` with a value of `456` in Amplitude. Both user `123` and `456` still have separate user profiles, but the profiles get merged together when you look at the user's behavior in
-[Amplitude's Cross Project view](https://amplitude.zendesk.com/hc/en-us/articles/360002750712-Portfolio-Cross-Project-Analysis#user-mapping-aliasing).
+[Amplitude's Cross Project view](https://help.amplitude.com/hc/en-us/articles/360002750712-Portfolio-Cross-Project-Analysis#user-mapping-aliasing).
 
 This kind of mapping is useful for users who have different ids across different Amplitude projects. The user's `user_ids` act as child ids, and can all be mapped to a single `global_user_id` in Amplitude. This allows you to analyze the user's aggregate behavior in Amplitude's Cross Portfolio view.
 
@@ -511,7 +511,7 @@ analytics.alias({
 
 [Segment doesn't have a concept for a session](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/).
 
-Device-mode calls to Amplitude include session information because Segment bundles Amplitude's SDK. To set up the same `sessionId` for cloud-mode calls to Amplitude, you must explicitly set the [`session_id`](https://amplitude.zendesk.com/hc/en-us/articles/204771828-HTTP-API#optional-amplitude-specific-keys-for-the-event-argument) as an integration-specific option, as in the example below.
+Device-mode calls to Amplitude include session information because Segment bundles Amplitude's SDK. To set up the same `sessionId` for cloud-mode calls to Amplitude, you must explicitly set the [`session_id`](https://developers.amplitude.com/docs/http-api-v2#optional-keyst) as an integration-specific option, as in the example below.
 
 ```js
 {
@@ -612,7 +612,7 @@ Amplitude does not prompt the user for location permission, so your app must exp
 On iOS, the user's location is only recorded once per session. If you need to
 force update the location in Amplitude, you can use the native method
 `updateLocation` (iOS only) as documented
-[here](https://amplitude.zendesk.com/hc/en-us/articles/115002278527#location-tracking). When you call `enableLocationListening` on the iOS SDK, it forces the SDK to update (and overwrite) the initial location that was cached during app startup.
+[here](https://developers.amplitude.com/docs/ios). When you call `enableLocationListening` on the iOS SDK, it forces the SDK to update (and overwrite) the initial location that was cached during app startup.
 
 On Android, when enabled, this setting adds a latitude and longitude property
 to each Track call, which reflecte where geographically the event was triggered.
