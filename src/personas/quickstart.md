@@ -46,10 +46,10 @@ You probably have teammates who help set up your Segment Workspace with the data
 
 Once you select sources, Segment starts a replay of one month of historical data from these sources into your Personas space. We're doing this step first so you have some user data in Personas to build your first audiences and computed traits.
 
-The replay usually takes several hours, but the duration will depending on how much data you have sent through these sources in the past 2 months. When the replay finishes, you are notified in the Sources tab under Settings, shown below.
+The replay usually takes several hours, but the duration will vary depending on how much data you have sent through these sources in the past one month. When the replay finishes, you are notified in the Sources tab under Settings, shown below.
 
 > warning ""
-> **Note**: Data replays start with the earliest (oldest) chronological events in the two month window, and finish with the most recent. Don't continue to the next step until all replays are marked complete. If you do, the data in your Personas data will be stale.
+> **Note**: Data replays start with the earliest (oldest) chronological events in the one month window, and finish with the most recent. Don't continue to the next step until all replays are marked complete. If you do, the data in your Personas data will be stale.
 
 ![](images/pers-qs-sources.png)
 

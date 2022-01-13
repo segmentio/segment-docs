@@ -37,13 +37,31 @@ To edit the steps within a published Journey, make a copy of the Journey you wis
 
 When you do this, the key used for syncing to destinations will be different from the copied Journey. Make sure you change the reference key used in the downstream destinations accordingly.
 
-### Use Traits for conditions based on historical data
+### Know how to incorporate historical data
 
-Aside from the entry condition, all Journey step conditions are triggered by future events and existing trait memberships. This means that event-based conditions evaluate events that have occured *after* the Journey is published.
+Aside from the entry condition, all Journey step conditions are triggered by future events and existing trait memberships. Event-based conditions only evaluate events that occur *after* the Journey is published.
 
-As a result, if you want to include historical events that may have occured *before* the Journey was published, create conditions based on traits, instead of events.
+When you [include historical data](/docs/personas/journeys/build-journey/#using-historical-data-for-the-entry-step) in a Journey's entry condition, Personas backfills entry with users who previously satisfied the entry condition. For example, to evaluate if a user has ever used a discount code mid-Journey, create and configure a [Computed Trait](/docs/personas/computed-traits/#conditions) to select for `discount_used = true` to use in your Journey.
 
-For example, to evaluate if a user has ever used a discount code mid-Journey, create and configure a [Computed Trait](/docs/personas/computed-traits/#conditions) to select for `discount_used = true` to use in your Journey.
+This historical backfill has no impact on any additional Journey steps, however. To include historical data in post-entry conditions, use the following table to identify which conditions will automatically backfill historical data:
+
+| Condition Type     | Automatic Historical Data Backfill |
+| ------------------ | ---------------------------------- |
+| Computed Trait     | Yes                                |
+| Audience Reference | Yes                                |
+| Event              | No                                 |
+| Custom Trait       | No                                 |
+
+
+To include historical data based on custom traits or events that predate the Journey, first build an Audience that includes the targeted data by following these steps:
+
+1. Create a standard Personas Audience **outside of the Journeys builder**.
+2. Add conditions that include the historical event or custom trait you want to include in the Journey.
+3. After you've created the Audience, return to Journeys and create a **Part of an Audience** condition that references the audience you created in Step 2.
+
+For example, to include `custom trait = ABC` in a Journey, create an Audience called `ABC` that includes that custom trait, then add the Journey condition **Part of Audience** `ABC`.
+
+Using the **Part of Audience** condition, Journeys then populates the custom trait as if it were a backfill.
 
 ### Use dev spaces and data warehouse destinations to test journeys
 
@@ -52,7 +70,7 @@ Follow these best practices to test your journeys:
 - While in the process of configuring a journey, use dev Personas spaces to model that journey without affecting production data. 
 - Connect a data warehouse to each step of the journey to test for success or failure of that step. 
 - For early version journeys, scaffold Send to Destination steps without connecting to your production advertising or messaging destinations.
-- Verify individual users' progress through the Journey in the Personas Exploror view.
+- Verify individual users' progress through the Journey in the Personas Explorer view.
  
 ## Frequently asked questions
 
@@ -80,3 +98,7 @@ The data type you send to a destination depends on whether the destination is an
 
 ### Which roles can access Journeys?
 For Personas Advanced customers, users with either the Personas User or Personas Admin roles can create, edit, and delete journeys. Users with the Personas Read-only role are restricted to view-only access.
+
+### Why am I seeing duplicate entry or exit events?
+
+Journeys triggers audience or trait-related events for each email `external_id` on a profile. If a profile has two email addresses, you'll see two Audience Entered and two Audience Exited events for each Journey step. Journeys sends both email addresses to downstream destinations. 

@@ -37,4 +37,27 @@ If you no longer want to track an event, you can either remove it from your code
 
 ![](/docs/protocols/images/event-filters.png)
 
-Once you block an event in Segment, we'll stop forwarding it to all of your Destinations, including your warehouses. You can remove it from your code at your leisure. In addition to blocking track calls, Business plan customers can block all Page and Screen calls, as well as Identify traits and Group properties. 
+Once you block an event in Segment, Segment stops forwarding it to all of your Destinations, including your warehouses. You can remove it from your code at your leisure. In addition to blocking track calls, Business plan customers can block all Page and Screen calls, as well as Identify traits and Group properties. 
+
+## Export your Source Schema
+
+Segment allows you to download your Source Schema as a CSV file, maximizing portability and access to event data. You can download a copy of your schema by visiting the Source Schema page.
+
+![](images/export-source-schema.png)
+
+CSV files generate based on the current view of your Source Schema. Any search parameters or filters you apply to the current Source Schema view also apply to the CSV.
+
+You can download the following Track events:
+- Event Name
+- Last Seen (UTC)
+  - If greater than 30 days, the value is "more than 30 days ago"
+- Allowed Count
+- Blocked Count
+- Total Count
+- Planned (available for Protocols customers with a connected Tracking Plan)
+  - Values are "planned" or "unplanned"
+
+Export Schema is not available for Identify or Group events.
+
+> note ""
+> Export Schema doesn't include any actual values (for example, personal data) for the events, properties, and traits you are tracking for a specific source. Properties aren't included in the CSV.

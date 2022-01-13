@@ -4,7 +4,7 @@ hide-personas-partial: true
 cmode-override: true 
 ---
 
-When you enable the Iterable destination from the Segment app, your data starts flowing into Iterable, where it can trigger workflows and make data available for analytics. You can find your Iterable API key by going to Destinations → API Keys inside the Iterable app.
+When you enable the Iterable destination from the Segment app, your data starts flowing into Iterable, where it can trigger workflows and make data available for analytics. You can find or generate your Iterable API key by going to Integrations → API keys inside the Iterable app.
 
 <!-- LR 8/7/2020 these are all 404ing, commenting out until we can figure out if they're gone or just moved
 **Use Cases**
@@ -54,7 +54,7 @@ This `identify` event would merge the `mobile` property for this user with any o
 
 ## Track
 
-When you call `track` with one of Segment's sources, Segment calls Iterable's [track API endpoint](https://api.iterable.com/api/docs#!/events/track_post_0), and send over the event properties as the data fields in the request. The name of the `track` event appears as a Custom Event in Iterable, and will be available to trigger workflows, segment users, and view analytics.
+When you call `track` with one of Segment's sources, Segment calls Iterable's [track API endpoint](https://api.iterable.com/api/docs#events_track), and send over the event properties as the data fields in the request. The name of the `track` event appears as a Custom Event in Iterable, and will be available to trigger workflows, segment users, and view analytics.
 
 If a user does not already exist in Iterable, calling `track` for a user event will add that user into the system. You can track with either an `email` or userId (if a `userId` exists for that email).
 
@@ -197,7 +197,8 @@ To send computed traits or audiences to Iterable, you first must connect it to y
 - **Personas Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
 - **Traits and Audiences created by**:You can add traits and audiences as user properties using `identify` calls. You can send audiences as `Audience Entered` or `Audience Exited` `track` calls with the audience name as an event property.
 - **Must create audience_name field before Personas can update those values?**: No. If you send the audience as an `identify` call, Personas automatically creates the computed trait or audience name as a user property.
-- **Audience appears as**: Computed traits appears as a lower case user property with the spaces converted to underscores. When you send Audiences as an `identify` call, Personas creates a lower case boolean user property using the audience name with spaces converted to underscores.  When you send Audiences as a `track` call, Personas sends `Audience Entered` and `Audience Exited` events, with the audience name as an event property.
+- **Computed trait appears as**: A lower case user property with the spaces converted to underscores.
+- **Audience appears as**:  When you send Audiences as an `identify` call, Personas creates a lower case boolean user property using the audience name with spaces converted to underscores.  When you send Audiences as a `track` call, Personas sends `Audience Entered` and `Audience Exited` events, with the audience name as an event property.
 - **Destination rate limit**: If sending traits and audiences as `identify` calls, 500 requests/second, per project. If sending audiences as `track` calls, 2000 requests/second, per project.
 - **Lookback window allowed**: Unlimited
 - **Identifiers required** : `userId` or `email`

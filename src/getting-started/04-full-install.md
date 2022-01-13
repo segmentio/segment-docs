@@ -236,7 +236,7 @@ Use the following list of objects to see if there is a logical match with your a
 
 Verbs indicate the action taken by either a user on your site. When you name a new track event, consider if you can describe the current interaction using a verb from the list below.
 
-If you can’t, choose a verb that describes what the user is trying to in your specific case, but try to be flexible enough so that you could use is in other scenarios.
+If you can’t, choose a verb that describes what the user is trying to do in your specific case, but try to be flexible enough so that you could use it in other scenarios.
 
 #### Some suggested Verbs
 

@@ -4,14 +4,18 @@ rewite: true
 redirect_from:
   - '/connections/warehouses/catalog/postgres/'
 ---
-PostgreSQL, often simply Postgres, is an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance. As a database server, its primary functions are to store data securely and return that data in response to requests from other software applications. It can handle workloads ranging from small single-machine applications to large Internet-facing applications (or for data warehousing) with many concurrent users. PostgreSQL is the default database on macOS Server, and it is also available for Microsoft Windows and Linux (supplied in most distributions).
+PostgreSQL, or Postgres, is an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance. As a database server, its primary functions are to store data securely and return that data in response to requests from other software applications.
 
 PostgreSQL is ACID-compliant and transactional. PostgreSQL has updatable views and materialized views, triggers, foreign keys; supports functions and stored procedures, and other expandability. Developed by the PostgreSQL Global Development Group, free and open-source.
 
-This document was last updated on April, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 ## Getting started
-Find below a selection of options on how to create your Postgres warehouse.
+Segment supports the following Postgres database providers:
+- [Heroku](#heroku-postgres)
+- [RDS](#rds-postgres)
+- [Compose](#compose-postgres)
+
+> warning ""
+> Segment supports only these Postgres databases. Postgres databases from other providers are not guaranteed to work. For questions or concerns, contact [Segment Support](https://segment.com/help/contact){:target="_blank"}
 
 ### Heroku Postgres
 
@@ -27,7 +31,7 @@ This guide explains how to set up a Postgres database with Heroku. Heroku is a c
 
 3. Create a new app and go to the Data page.
 
-    To get to the Data page, either [click here](https://postgres.heroku.com/databases) or in the Dashboard menu dropdown, select Data.
+    To get to the Data page, in the Dashboard menu dropdown, select Data.
 
     ![](images/heroku1.png)
 
@@ -39,11 +43,11 @@ This guide explains how to set up a Postgres database with Heroku. Heroku is a c
 
 5. Choose your plan.
 
-    When you click **Create Database**, a modal appears with your plan choices. Depending on your needs, some plans may be more suitable than others - for example, more expensive plans generally have better performance and more storage. We recommend that new customers start with the "Standard 4" plan.
+    When you click **Create Database**, a modal appears with your plan choices. Depending on your needs, some plans may be more suitable than others - for example, more expensive plans generally have better performance and more storage. Segment recommends that new customers start with the "Standard 4" plan.
 
-    In addition, for the fastest sync times, we recommend that you choose the US East region. If you must store data elsewhere, let us know.
+    For the fastest sync times, choose the US East region.
 
-    After you are done configuring these settings, click in "Login to Install" and/or "Visit Heroku Dashboard to create your first app".
+    After you configure these settings, click "Login to Install" and/or "Visit Heroku Dashboard to create your first app".
 
     ![](images/heroku3.png)
 
@@ -53,7 +57,7 @@ This guide explains how to set up a Postgres database with Heroku. Heroku is a c
 
 7. Click **Provision** and wait for the database provisioning to complete
 
-    Click on the "Heroku Postgres :: Database". After a few moments, the database should shift into the Available state.
+    Click the "Heroku Postgres :: Database". The database should shift into the Available state.
 
     ![](images/heroku5.png)
 
@@ -75,11 +79,11 @@ As a supplement to this guide, Amazon has created an official guide to [setting 
 
 2. Open the RDS Console.
 
-    Go to the [RDS console](https://console.aws.amazon.com/rds/) when you are logged in to AWS.
+    Log in to AWS and navigate to the [RDS console](https://console.aws.amazon.com/rds/).
 
 3. Select the region you'd like to place the database in.
 
-    In the top right-hand corner of the console, you should see a drop-down with the available AWS regions. We suggest putting your database in `US West` for the best performance.
+    In the top right-hand corner of the console, you should see a drop-down with the available AWS regions. For best performance, put the database in the `US West` region.
 
     <img src="images/rds1.png" width="300">
 
@@ -350,16 +354,15 @@ GRANT CREATE, TEMPORARY ON DATABASE <enter database name here> TO segment;
 
 
 ## Security
-Make sure you're logging in with a user that has read and write permissions so that we can write to your database.
-
-- Whitelist the Segment IP (`52.25.130.38/32`)
+To make sure your Postgres database is secure:
+- Log in with a user that has read and write permissions so that Segment can write to your database.
+- Whitelist the Segment IP (`52.25.130.38/32`). Otherwise, Segment can't load your data.
 - Create a service user that has `read/write` permissions.
+- Always require SSL/TLS and make sure your data warehouse can only accept secure connections. Segment only connects to your data warehouse using SSL/TLS.
 
 ## Best Practices
 
-All the power of PostgreSQL for Segment data - it's that easy. We wrote an article on [useful queries](https://community.segment.com/t/y78ab1/useful-sql-queries-for-analyzing-segment-data) that you should read to get started on querying your data from your warehouse to create reports.
-
-Once you've got your data in Postgres, you can do even more with it. You might develop an app that performs various functions based on the different events being loaded to the database, potentially using [RabbitMQ](https://www.compose.io/articles/going-from-postgresql-rows-to-rabbitmq-messages/) as your asynchronous message broker. For example, you might want a banner to appear once your 1000th customer has signed up. The data is at your fingertips; you just need to decide how to use it.
+Once you've got your data in Postgres, you can do even more with it. You might develop an app that performs various functions based on different events being loaded to the database, potentially using [RabbitMQ](https://www.compose.io/articles/going-from-postgresql-rows-to-rabbitmq-messages/) as your asynchronous message broker. For example, you might want a banner to appear once your 1000th customer has signed up. The data is at your fingertips; you just need to decide how to use it.
 
 ### Query Speed
 

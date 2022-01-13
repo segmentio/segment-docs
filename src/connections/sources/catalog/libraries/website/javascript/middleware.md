@@ -78,7 +78,7 @@ Both `.addSourceMiddleware(fn)` and `.addDestinationMiddleware('integration', [f
 If you use the Braze (Appboy) destination in either [cloud or device mode](/docs/connections/destinations/#connection-modes) you can save Braze costs by "debouncing" duplicate `identify()` calls from Segment by adding our [open-source Middleware tool](https://github.com/segmentio/segment-braze-mobile-middleware) to your implementation.
 This optional middleware is disabled by default. When enabled, it ensures that only events where at least one changed trait value are sent to Braze, and events with duplicate traits are not sent.
 
-To enable this Middleware for a Javascript or Project source, go to `Analytics.js` in your source settings.
+To enable this Middleware for a JavaScript or Project source, go to `Analytics.js` in your source settings.
 
 ![BrazeMiddleware](images/sources_ajs_brazemiddleware.png)
 

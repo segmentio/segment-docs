@@ -38,7 +38,7 @@ Once you send the data from Segment to the Recombee destination you can:
 
 ## Page
 
-If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](https://segment.com/docs/connections/spec/page/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](/docs/connections/spec/page/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.page()
@@ -49,7 +49,7 @@ Segment sends Page calls to Recombee as a [Detail View](https://docs.recombee.co
 
 ## Track
 
-If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.track('Video Content Playing', {
@@ -62,28 +62,28 @@ analytics.track('Video Content Playing', {
 ```
 
 #### Sending semantic spec events to Recombee
-Recombee Destination can process several [Semantic Events](https://segment.com/docs/connections/spec/semantic/):
+Recombee Destination can process several [Semantic Events](/docs/connections/spec/semantic/):
 
-[Ecommerce](https://segment.com/docs/connections/spec/ecommerce/v2/):
- - [Product Viewed](https://segment.com/docs/connections/spec/ecommerce/v2/#product-viewed) - sends a [Detail View](https://docs.recombee.com/api.html#add-detail-view)
- - [Product Added](https://segment.com/docs/connections/spec/ecommerce/v2/#product-added) - sends a [Cart Addition](https://docs.recombee.com/api.html#add-cart-addition)
- - [Product Removed](https://segment.com/docs/connections/spec/ecommerce/v2/#product-removed) - sends a [Delete Cart Addition](https://docs.recombee.com/api.html#delete-cart-addition)
- - [Order Completed](https://segment.com/docs/connections/spec/ecommerce/v2/#order-completed) sends a [Purchase](https://docs.recombee.com/api.html#add-purchase) for each of the ordered products
-- [Product Added to Wishlist](https://segment.com/docs/connections/spec/ecommerce/v2/#product-added) - sends a [Bookmark](https://docs.recombee.com/api.html#add-bookmark)
-- [Product Shared](https://segment.com/docs/connections/spec/ecommerce/v2/#product-added) - sends a [Bookmark](https://docs.recombee.com/api.html#add-bookmark)
+[Ecommerce](/docs/connections/spec/ecommerce/v2/):
+ - [Product Viewed](/docs/connections/spec/ecommerce/v2/#product-viewed) - sends a [Detail View](https://docs.recombee.com/api.html#add-detail-view)
+ - [Product Added](/docs/connections/spec/ecommerce/v2/#product-added) - sends a [Cart Addition](https://docs.recombee.com/api.html#add-cart-addition)
+ - [Product Removed](/docs/connections/spec/ecommerce/v2/#product-removed) - sends a [Delete Cart Addition](https://docs.recombee.com/api.html#delete-cart-addition)
+ - [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) sends a [Purchase](https://docs.recombee.com/api.html#add-purchase) for each of the ordered products
+- [Product Added to Wishlist](/docs/connections/spec/ecommerce/v2/#product-added) - sends a [Bookmark](https://docs.recombee.com/api.html#add-bookmark)
+- [Product Shared](/docs/connections/spec/ecommerce/v2/#product-added) - sends a [Bookmark](https://docs.recombee.com/api.html#add-bookmark)
 
-[Video](https://segment.com/docs/connections/spec/video/):
+[Video](/docs/connections/spec/video/):
 - Following events send a [View Portion](https://docs.recombee.com/api.html#set-view-portion):
-    - [Video Playback Started](https://segment.com/docs/connections/spec/video/#video-playback-started)
-    - [Video Content Playing](https://segment.com/docs/connections/spec/video/#video-content-playing)
-    - [Video Playback Paused](https://segment.com/docs/connections/spec/video/#video-playback-paused)
-    - [Video Playback Completed](https://segment.com/docs/connections/spec/video/#video-playback-completed)
+    - [Video Playback Started](/docs/connections/spec/video/#video-playback-started)
+    - [Video Content Playing](/docs/connections/spec/video/#video-content-playing)
+    - [Video Playback Paused](/docs/connections/spec/video/#video-playback-paused)
+    - [Video Playback Completed](/docs/connections/spec/video/#video-playback-completed)
 
 If you want to send interactions from other events, set them to [Track Events Mapping](#track-events-mapping-optional) in Settings.
 
 ## Screen
 
-If you aren't familiar with the Segment Spec, take a look at the [Screen method documentation](https://segment.com/docs/connections/spec/screen/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Screen method documentation](/docs/connections/spec/screen/) to learn about what it does. An example call would look like:
 
 ```obj-c
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -94,7 +94,7 @@ Segment sends Screen calls to Recombee as a [Detail View](https://docs.recombee.
 
 ## Alias
 
-If you aren't familiar with the Segment Spec, take a look at the [Alias method documentation](https://segment.com/docs/connections/spec/alias/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Alias method documentation](/docs/connections/spec/alias/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.alias("507f191e81");
@@ -113,7 +113,7 @@ You can tell Recombee that a specific interaction is based on a successful recom
 
 Recombee recognizes the `recomm_id` property in all the events that send interactions.
 
-In case of [Order Completed](https://segment.com/docs/connections/spec/ecommerce/v2/#order-completed), set the `recomm_id` to the object of the product (`products.$.recomm_id`) that was ordered because of a successful recommendation.
+In case of [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed), set the `recomm_id` to the object of the product (`products.$.recomm_id`) that was ordered because of a successful recommendation.
 
 Sending the `recomm_id` gives you precise numbers about successful recommendations in the KPI section of the [Recombee Admin UI](https://admin.recombee.com). This explicit feedback also helps you optimize your recommendation models.
 
@@ -136,14 +136,14 @@ For each [Recombee interaction](https://docs.recombee.com/api.html#user-item-int
 You can set the **Item ID Property Name** to specify the Segment event property to use as the `itemId`.
 
 If you don't provide an **Item ID Property Name**:
-- `product_id` is used for [Ecommerce Events](https://segment.com/docs/connections/spec/ecommerce/v2/).
-- `content_asset_id` or `asset_id` is used for [Video Events](https://segment.com/docs/connections/spec/video/).
+- `product_id` is used for [Ecommerce Events](/docs/connections/spec/ecommerce/v2/).
+- `content_asset_id` or `asset_id` is used for [Video Events](/docs/connections/spec/video/).
 - `name` property is used if it exists.
 
 
 ### Track Events Mapping (Optional)
 
-Recombee can automatically handle different [Ecommerce Events](https://segment.com/docs/connections/spec/ecommerce/v2/) and [Video Events](https://segment.com/docs/connections/spec/video/) in the *Track* call type (see the [Track section](#track)).
+Recombee can automatically handle different [Ecommerce Events](/docs/connections/spec/ecommerce/v2/) and [Video Events](/docs/connections/spec/video/) in the *Track* call type (see the [Track section](#track)).
 
 If you use some custom Events, you can set which Recombee interaction to send for each one.
 
@@ -156,7 +156,7 @@ The value of the mapping is the name of your event, and the key can be one of:
 - [Rating](https://docs.recombee.com/api.html#ratings)
   - a property `rating` must exist and contain a number from interval [-1.0,1.0], where -1.0 means the worst rating possible, 0.0 means neutral, and 1.0 means absolutely positive rating.
 - [View Portion](https://docs.recombee.com/api.html#set-view-portion)
-  - the portion (how much of the content was consumed by the user) is computed from the `position` and `total_length` properties (see [Content Event Object](https://segment.com/docs/connections/spec/video/#content-event-object)), or can be given as the `portion` property (a number between 0 and 1).
+  - the portion (how much of the content was consumed by the user) is computed from the `position` and `total_length` properties (see [Content Event Object](/docs/connections/spec/video/#content-event-object)), or can be given as the `portion` property (a number between 0 and 1).
 
 
 ### API URI (Optional)

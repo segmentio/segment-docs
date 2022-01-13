@@ -10,21 +10,24 @@ Want to learn more? Check out the [Analytics.js reference](/docs/connections/sou
 
 ## Step 1: Create a Source in the Segment app
 
-Before you begin, you need a Workspace (which is a container that holds all of the sources and destinations which are billed together for an organization). If you already created one, great! If not, you can sign up for a free Segment account and create one.
+Before you begin, you need a Workspace (which is a container that holds all of the Sources and Destinations that are billed together for an organization). If you already created one, great! If not, you can sign up for a free Segment account and create one.
 
 Next create an Analytics.js source from your Workspace:
 
 1. Click **Add Source**.
-2. From the source catalog page, click **Javascript**.
+2. From the source catalog page, click **JavaScript**.
 3. Click **Add Source** again from the informational panel that appears to the right.
 4. Give the source a display name, and enter the URL the source will collect data from.
 
-When you create a Source in the Segment web app, it tells the Segment servers that you'll be sending data from a specific source type. When you create (or change!) a Source in the Segment app, Segment generates a new Write Key for that source. You use the write key in your website code to tell the Segment servers where the data is coming from, so Segment can route it to your destinations and other tools.
+When you create a Source in the Segment web app, it tells the Segment servers that you'll be sending data from a specific source type. When you create (or change!) a Source in the Segment app, Segment generates a new Write Key for that source. You use the write key in your website code to tell Segment servers where the data is coming from, so Segment can route it to your Destinations and other tools.
 
 
-## Step 2: Copy the Segment Snippet
+## Step 2: Add the Segment Snippet
 
-Installing Segment is easy, just paste this snippet into the `<head>` tag of your site.
+> success "Install Segment as an NPM package"
+> You can add Segment to your project as an [NPM package](https://www.npmjs.com/package/@segment/snippet){:target="_blank"}. For more information, see the instructions on [GitHub](https://github.com/segmentio/analytics-next#-using-as-an-npm-package){:target="_blank"}.
+
+Paste this snippet into the `<head>` tag of your site to install Segment.
 
 {% include content/snippet-helper.md %}
 
@@ -33,7 +36,7 @@ Next, replace `YOUR_WRITE_KEY` in the snippet you pasted with your Segment proje
 > note ""
 > **Note:** When you use Analytics.js in device-mode the source's Write Key is public, because it runs in a user's browser and can be accessed using the browser's developer tools. If this is not acceptable to your organization, you can explore [other Segment Sources](/docs/connections/sources/catalog/) which collect data from a server-based installation, and which are not accessible to the user.
 
-That snippet loads Analytics.js onto the page _asynchronously_, so it won't affect your page load speed. Once the snippet is running on your site, you can turn on destinations from the destinations page in your workspace and they start loading on your site automatically!
+That snippet loads Analytics.js onto the page _asynchronously_, so it won't affect your page load speed. Once the snippet is running on your site, you can turn on Destinations from the Destinations page in your workspace and they start loading on your site automatically.
 
 Note that you should remove other native third-party destination code that you might have on your site. For example, if you're using Segment to send data to Google Analytics, make sure you remove the Google Analytics snippet from your site source code to prevent sending the data twice.
 
@@ -64,7 +67,7 @@ That identifies Michael by his unique User ID (in this case, `f4ca124298`, which
 
 To do that, we recommend that you use a backend template to inject an `identify` call into the footer of **every page** of your site where the user is logged in. That way, no matter what page the user first lands on, they will always be identified. You don't need to call `identify` if your unique identifier (`userId`) is not known.
 
-Depending on your templating language, your actual identify call might look something like this:
+Depending on your templating language, your actual `identify` call might look something like this:
 
 ```js
 {% raw %}
@@ -108,7 +111,7 @@ If you're just getting started, some of the events you should track are events t
 
 To get started, we recommend that you track just a few important events. You can always add more later!
 
-Once you add a few `track` calls, **you're done with this tutorial!** You successfully installed Analytics.js tracking. Now you're ready to turn on any destination you like from our interface, margarita in hand.
+Once you add a few `track` calls, **you're done with this tutorial!** You successfully installed Analytics.js tracking. Now you're ready to turn on any Destination you like from our interface, margarita in hand.
 
 
 ---

@@ -28,8 +28,8 @@ SEGTypewriterAnalytics.orderCompleted(
   total: 39.99
 )
 ```
-
-> **Note**: Typewriter can currently generate clients for `analytics.js`, `analytics-node`, `analytics-ios` and `analytics-android`.
+> note ""
+> Typewriter can currently generate clients for `analytics.js`, `analytics-node`, `analytics-ios` and `analytics-android`.
 
 These generated clients are embedded with metadata from your Tracking Plan, which contextualizes your analytics instrumentation, and reduces (or entirely eliminates!) incorrect instrumentations in your production environments. In your editor, you can access event names, descriptions, property names, types and more:
 
@@ -101,8 +101,8 @@ Typewriter comes with a quickstart wizard that generates a [`typewriter.yml`](#c
 ```sh
 $ npx typewriter init
 ```
-
-> **Note**: You can regenerate your Typewriter client by running `npx typewriter`. You need to do this each time you update your Tracking Plan.
+> note ""
+> You can regenerate your Typewriter client by running `npx typewriter`. You need to do this each time you update your Tracking Plan.
 
 Running the command creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
 
@@ -153,8 +153,8 @@ Typewriter comes with a quickstart wizard that generates a [`typewriter.yml`](#c
 ```sh
 $ npx typewriter init
 ```
-
-> **Note**: You can regenerate your Typewriter client by running `npx typewriter`. You need to do this each time you update your Tracking Plan.
+> note ""
+> You can regenerate your Typewriter client by running `npx typewriter`. You need to do this each time you update your Tracking Plan.
 
 Running the command creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
 
@@ -195,8 +195,8 @@ Typewriter comes with a quickstart wizard that generates a [`typewriter.yml`](#c
 ```sh
 $ npx typewriter init
 ```
-
-> **Note**: You can regenerate your Typewriter client by running `npx typewriter`. You need to do this each time you update your Tracking Plan.
+> note ""
+> You can regenerate your Typewriter client by running `npx typewriter`. You need to do this each time you update your Tracking Plan.
 
 Running the command creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
 
@@ -252,8 +252,8 @@ Typewriter comes with a quickstart wizard that generates a [`typewriter.yml`](#c
 $ npx typewriter init
 ```
 
-> success ""
-> **Note**: You can regenerate your Typewriter client by running `npx typewriter`. You need to do this each time you update your Tracking Plan.
+> note ""
+> You can regenerate your Typewriter client by running `npx typewriter`. You need to do this each time you update your Tracking Plan.
 
 Running the command creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
 
@@ -289,8 +289,7 @@ Typewriter requires a Segment API token to fetch Tracking Plans from the [Segmen
 
 Only workspace owners can create Segment API tokens. To create an API token, open the `Tokens` tab on the [Access Management](https://app.segment.com/goto-my-workspace/settings/access-management) page and click `Create Token`. Typewriter only needs the `Protocols Read-only` role.
 
-<!-- This is a pretty tall image with an off-gray background. Just formatting it slightly to reduce its size and add a border. -->
-<img src="images/typewriter-token.png" alt="Example Typewriter Token" style="height: 800px; margin: auto; border: 1px solid lightgray">
+![typewriter-token](images/typewriter-token.png)
 
 Typewriter looks for an API token in two ways, in the following order:
 1. Executes a token script from the `typewriter.yml`. See [Token Script](#token-script) for more information.
@@ -446,8 +445,8 @@ $ npx typewriter development
 # To build a production client:
 $ npx typewriter production
 ```
-
-> **Note**: Not all languages support run-time validation. Currently, `analytics.js` and `analytics-node` support it using [AJV](https://github.com/epoberezkin/ajv) (both for JavaScript and TypeScript projects) while `analytics-ios` and `analytics-android` do not yet support run-time validation. Typewriter also does not yet support run-time validation using Common JSON Schema. For languages that do not yet support run-time validation, the development and production clients are identical.
+> note ""
+> Not all languages support run-time validation. Currently, `analytics.js` and `analytics-node` support it using [AJV](https://github.com/epoberezkin/ajv) (both for JavaScript and TypeScript projects) while `analytics-ios` and `analytics-android` do not yet support run-time validation. Typewriter also does not yet support run-time validation using Common JSON Schema. For languages that do not yet support run-time validation, the development and production clients are identical.
 
 Segment recommends using a development build when testing your application locally, or when running tests. We generally recommend _against_ using a development build in production, since this includes a full copy of your Tracking Plan which can increase the size of the application.
 
@@ -482,8 +481,8 @@ typewriter.setTypewriterOptions({
   onViolation: yourViolationHandler
 })
 ```
-
-> **Note**: Typewriter is preconfigured in `analytics-node` environments to throw an error if `NODE_ENV=test`, which is set by most Node.js testing libraries such as `ava` and `jest`.
+> note ""
+> Typewriter is preconfigured in `analytics-node` environments to throw an error if `NODE_ENV=test`, which is set by most Node.js testing libraries such as `ava` and `jest`.
 
 Another common use case is to customize how violations are reported to your team. For example, at Segment, we customized this handler to show a [toast notification](https://evergreen.segment.com/components/toaster) to our developers in-app:
 

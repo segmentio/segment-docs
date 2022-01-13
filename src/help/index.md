@@ -18,7 +18,7 @@ Segment’s Support teams work standard business hours (roughly 9:00 AM to 5:30 
 
 Saturdays, Sundays, and local holidays are not considered "standard business hours". On these days, our staffing may be limited, which could delay responses. Below you will find the list of Segment's observed holidays, along with the region in which observance takes place.
 
-[Observed Holidays](https://support.twilio.com/hc/en-us/articles/223136127-Twilio-Support-business-hours#h_ba9980a4-0bd2-47c5-8e38-5e79f0179249)
+[Observed Holidays](https://support.twilio.com/hc/en-us/articles/223136127-Twilio-Support-business-hours)
 
 ## Segment University
 

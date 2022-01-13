@@ -1,14 +1,15 @@
 ---
 title: 'Google Analytics 4 destination'
 strat: google
+hide-dossier: true
+published: false
 ---
 
 Google introduced the new version of Google Analytics, called Google Analytics 4 (GA4), in October 2020. GA4 has some distinct differences from Universal Analytics (UA), which are important to understand before considering migration and the data schema changes that might require.
 
 > success ""
-> Segment expects to release a beta GA4 destination in Q3 2021. Fill out the Segment GA4 [Beta Sign-up Form](https://forms.gle/WzC1dsbxmNVDsYNJ6) to be notified when the destination is available.
+> Segment expects to release a beta GA4 destination in Q4 2021. Segment will update this page to share the latest on the GA4 destination.
 
-We’ll update this page to share the latest on our GA4 destination.
 
 ## Event-based data model vs pageview-based data model
 

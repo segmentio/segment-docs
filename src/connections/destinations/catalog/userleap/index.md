@@ -20,7 +20,7 @@ This destination is maintained by UserLeap. For any issues with the destination,
 **Note**: UserLeap's Segment integration does not support In-Product Surveys
 
 ## Identify
-If you aren't familiar with the Segment Spec, take a look at the [Identify method documentation](https://segment.com/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Identify method documentation](/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -34,7 +34,7 @@ Use Segment's Identify method to identify your users in UserLeap. Segment `trait
 **Important:** Only Identify calls can create new users in UserLeap.
 
 ## Track
-If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.track('Button Clicked');
@@ -45,7 +45,7 @@ Use Track calls to track events and use them as filtering criteria for your Surv
 Create Triggered Events in your UserLeap [Events dashboard](https://app.userleap.com/events) and map them to your Segment Track event names before you start sending Segment data to UserLeap.
 
 ## Page
-If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](https://segment.com/docs/connections/spec/page/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](/docs/connections/spec/page/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.page()
@@ -56,7 +56,7 @@ Segment sends Page calls to UserLeap as a `pageview` which you can use as filter
 Add Page URLs  in your UserLeap [Events dashboard](https://app.userleap.com/events) and map them to your Segment Page call's `properties.url` field before you start sending Segment data to UserLeap.
 
 ## Alias
-If you aren't familiar with the Segment Spec, take a look at the [Alias method documentation](https://segment.com/docs/connections/spec/alias/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Alias method documentation](/docs/connections/spec/alias/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.alias('newUserId');

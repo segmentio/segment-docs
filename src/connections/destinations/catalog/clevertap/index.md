@@ -30,11 +30,14 @@ All other traits will be sent to CleverTap as custom attributes. Please also not
 
 When you `track` an event, we will send that event to CleverTap as a custom event.  Note that CleverTap does not support arrays or nested objects for custom track event properties.
 
+> note ""
+> CleverTap requires `identify` traits such as `userId` or `email` to record and associate the Track event. Without these traits, the Track event does not appear in CleverTap.
+
 Please also note that the default logic for our cloud mode connection to CleverTap will lower case and snake_case any event properties passed from Segment's servers to CleverTap. Our device mode connection will not lower case or snake_case any event properties passed directly to CleverTap from the client.
 
 ### Order Completed
 
-When you `track` an event using the server-side destination with the name `Order Completed` using the [e-commerce tracking API](https://segment.com/docs/connections/spec/ecommerce/v2/), we will map that event to CleverTap's [Charged](https://support.clevertap.com/docs/working-with-events.html#recording-customer-purchases) event.
+When you `track` an event using the server-side destination with the name `Order Completed` using the [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/), we will map that event to CleverTap's [Charged](https://support.clevertap.com/docs/working-with-events.html#recording-customer-purchases) event.
 
 ## Page
 
@@ -125,7 +128,7 @@ CleverTap has created a sample Android application that integrates CleverTap usi
 
 ### Integrating Push
 
-1. Follow the directions to register for push at: [https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications).
+1. Follow the directions to register for push at: [/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications](/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications).
 
 2. In your application's application:didReceiveRemoteNotification: method, add the following:
 

@@ -8,7 +8,7 @@ Any Analytics.js methods may be executed manually. Use the Network tab to inspec
 
 ## Are you loading Analytics.js?
 
-Open the Javascript console and enter `analytics`. Does it return an object, as seen below?
+Open the JavaScript console and enter `analytics`. Does it return an object, as seen below?
 
 ![Returning analytics object](images/VOsmoAB.gif)
 
@@ -30,11 +30,11 @@ ENV === 'production' ? writeKey = 'A' : writeKey = 'B';
 
 ## Do you see events appear in your debugger?
 
-When you reload the page, does your debugger show a new [`page`](/docs/connections/spec/page) and an [`identify`](/docs/connections/spec/identify) call? You can also check the Javascript console in the browser and manually fire an `identify` call as such, which would show up in the debugger.
+When you reload the page, does your debugger show a new [`page`](/docs/connections/spec/page) and an [`identify`](/docs/connections/spec/identify) call? You can also check the JavaScript console in the browser and manually fire an `identify` call as such, which would show up in the debugger.
 
 ![Making an identify call](images/7Ymnh2S.gif)
 
-If the call doesn't appear in the debugger, open up the Javascript console and check the Network tab to see if the outbound web services requests are being initiated:
+If the call doesn't appear in the debugger, open up the JavaScript console and check the Network tab to see if the outbound web services requests are being initiated:
 
 ![Checking for calls in the network tab](images/d8CmIY2.png)
 
@@ -43,7 +43,7 @@ In the above, the `p` is a [`page`](/docs/connections/spec/page) call and the `i
 
 ## Is data being transmitted to your third-party destinations?
 
-Some destinations send data directly from the website to their servers. You can check the Network tab in your Javascript console to see the outbound web services requests being initiated.
+Some destinations send data directly from the website to their servers. You can check the Network tab in your JavaScript console to see the outbound web services requests being initiated.
 
 In the below image, we use Google Analytics as an example. Our `page` call forms an outbound request that looks like this:
 
@@ -65,9 +65,9 @@ Examples of domains on the Public Suffix List that are common in troubleshooting
 - `*.appspot.com`
 
 
-## How do I open the Javascript console in your debugger?
+## How do I open the JavaScript console in your debugger?
 
-The Javascript console reveals all requests, outbound and inbound, to your browser. Additionally, you may execute valid Javascript.
+The JavaScript console reveals all requests, outbound and inbound, to your browser. Additionally, you may execute valid JavaScript.
 
 - **Chrome**: `COMMAND+OPTION+J` (Mac) or `CTRL+SHIFT+J` (Windows).
 - **Firefox**: `COMMAND+OPTION+K` (Mac) or `CTRL+SHIFT+K` (Windows) and then click on the **Console** tab.
@@ -83,7 +83,7 @@ Yes, 32KB per message.
 In the event that Analytics.js does not load, callbacks passed into your API calls do not fire. This is as designed, because the purpose of callbacks are to provide an estimate that the event was delivered and if the library never loads, the events won't be delivered.
 
 ## Why do I see a network request to `/m`?
-In May 2018, we're rolling out a change to Analytics.js that allows us to collect client side performance metrics in Analytics.js. This includes metrics such as:
+In May 2018, we rolled out a change to Analytics.js that allows us to collect client side performance metrics in Analytics.js. This includes metrics such as:
 
 - When client side integrations are initialized and when they fail
 - When messages are sent to client side integrations and when they fail

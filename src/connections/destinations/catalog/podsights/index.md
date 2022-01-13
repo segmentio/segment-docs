@@ -25,7 +25,7 @@ Once you start sending data to the Podsights' Destination it will take up to 20 
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page()
@@ -33,7 +33,7 @@ analytics.page()
 
 Page calls will be sent to Podsights as a `view` event.
 
-Podsights is an attribution platform, and as such, we need more context about the visitor than just a User ID. Analytics.js [automatically collects context fields](https://segment.com/docs/connections/spec/common/#context-fields-automatically-collected). Podsights requires certain context fields and properties for page calls. Below is an example of a raw JSON payload that contains the minimum requirements.
+Podsights is an attribution platform, and as such, we need more context about the visitor than just a User ID. Analytics.js [automatically collects context fields](/docs/connections/spec/common/#context-fields-automatically-collected). Podsights requires certain context fields and properties for page calls. Below is an example of a raw JSON payload that contains the minimum requirements.
 
 ```js
 {
@@ -58,7 +58,7 @@ The `context` and `properties` object are required, along with the fields in the
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Order Completed', {
@@ -72,14 +72,14 @@ analytics.track('Order Completed', {
 Track calls will be mapped to Podsights events. Podsights' support the following from the Segment Spec:
 
 
-* [Signed Up](https://segment.com/docs/connections/spec/b2b-saas/#signed-up) as `lead`
-* [Product Viewed](https://segment.com/docs/connections/spec/ecommerce/v2/#product-viewed) as `product`
-* [Product Added](https://segment.com/docs/connections/spec/ecommerce/v2/#product-added) as `addtocart`
-* [Checkout Started](https://segment.com/docs/connections/spec/ecommerce/v2/#checkout-started) as `checkout`
-* [Order Completed](https://segment.com/docs/connections/spec/ecommerce/v2/#order-completed) as `purchase`
+* [Signed Up](/docs/connections/spec/b2b-saas/#signed-up) as `lead`
+* [Product Viewed](/docs/connections/spec/ecommerce/v2/#product-viewed) as `product`
+* [Product Added](/docs/connections/spec/ecommerce/v2/#product-added) as `addtocart`
+* [Checkout Started](/docs/connections/spec/ecommerce/v2/#checkout-started) as `checkout`
+* [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) as `purchase`
 
 For track events Podsights requires a `context` object that contains a `userAgent` and an `ip` Podsights also requires a `page` object that contains a `referrer` and a `url` field.
-Analytics.js [automatically collects context fields](https://segment.com/docs/connections/spec/common/#context-fields-automatically-collected). Podsights requires certain context fields for track calls. Below is an example of a raw JSON payload that contains the minimum requirements.
+Analytics.js [automatically collects context fields](/docs/connections/spec/common/#context-fields-automatically-collected). Podsights requires certain context fields for track calls. Below is an example of a raw JSON payload that contains the minimum requirements.
 
 ```js
 {

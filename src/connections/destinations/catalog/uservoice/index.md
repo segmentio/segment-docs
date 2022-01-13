@@ -23,7 +23,7 @@ Remember to remove UserVoice's native snippet from your page.
 ## Identify
 
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('ze8rt1u89', {
@@ -43,7 +43,7 @@ When you call `identify` the `userId` and `traits` included in the call will be 
 
 ## Group
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
 
 ```
 analytics.group("0e8c78ea9d97a7b8185e8632", {
@@ -59,7 +59,7 @@ When you call `group` the `traits` included in the call will be set to the curre
 
 ## Alias
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Alias method](/docs/connections/spec/alias/) does. An example call would look like:
 
 ```
 analytics.alias("507f191e81");

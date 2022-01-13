@@ -14,9 +14,8 @@ With Analytics for iOS, you can send your data to analytics or marketing tool, w
 > **Note:** Segment does not currently support tracking of watchkit extensions for the Apple Watch. [Email us](https://segment.com/requests/integrations/) if you're interested in a Watchkit SDK. For now we recommend tracking watch interactions using the iPhone app code.
 
 
-> info "Analytics-Swift Pilot"
-> A pilot release of the analytics-swift library is available at the [Analytics-Swift](https://github.com/segmentio/analytics-swift) repository. This library is governed by Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/), and should not be used in production scenarios.
-
+> info "Analytics-Swift Public Beta"
+> The [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios/) library is in public beta. If you’d like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift-ios/migration/). Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this library. 
 
 ## Analytics-iOS and Unique Identifiers
 
@@ -777,32 +776,18 @@ Analytics.setup(with: configuration)
 ...
 
 SEGAnalyticsConfiguration* configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
-
 // Enable advertising collection
 configuration.enableAdvertisingTracking = YES;
 // Set the block to be called when the advertisingID is needed
 // NOTE: In iOS 14, you'll need to manually do authorization elsewhere and only when it has been authorized, return the advertisingIdentifier to segment via the block below
-configuration.adSupportBlock = ^{
-    return [[ASIdentifierManager sharedManager] advertisingIdentifier];
-}
-
+    configuration.adSupportBlock = ^{
+        return [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    };
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-> warning ""
-> In some cases, builds may fail with the following error if you are using XCode version 12 or higher:
-> `Incompatible block pointer types assigning to 'SEGAdSupportBlock _Nullable' (aka 'NSString * _Nonnull (^)(void)') from 'NSUUID * _Nonnull (^)(void)'`
-> 
-> If you see this error, change the following on **line 39** of the `SEGAnalyticsConfiguration.h` class:
-> 
-> From this:
-> `typedef NSString *_Nonnull (^SEGAdSupportBlock)(void);` 
-> 
-> To this:
-> `typedef NSUUID *_Nonnull (^SEGAdSupportBlock)(void);`
->
 
 The same value for IDFA will used across all (device and cloud-mode) integrations.
 

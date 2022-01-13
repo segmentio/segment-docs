@@ -46,16 +46,19 @@ At the moment, we don't support filtering which objects or properties get synced
 
 ### Streaming
 
-The SendGrid source also has a streaming component which listens in real time for inbound webhooks from SendGrid's Event Notifications and batches the events to be uploaded on your next warehouse flush. These events are only ever appended to your warehouse. Note, if you don't use SendGrid's marketing features, this will be the only data that we receive from SendGrid. At present, there is no way to retrieve email event history from SendGrid, so you will only have access to data that we've collected after you successfully enable this component of the source destination.
+The SendGrid source also has a streaming component which listens in real time for inbound webhooks from SendGrid's Event Notifications and batches the events to be uploaded on your next warehouse flush. **These events only append to your warehouse.**
+
+> note ""
+> **NOTE:** If you don't use SendGrid's marketing features, this will be the only data that Segment receives from SendGrid. There isn't a way to retrieve email event history from SendGrid, so you will only have access to data that Segment collected after you successfully enable this component of the source destination.
 
 
 ## Collections
 
 Collections are the groupings of resources we pull from your source. In your warehouse, each collection gets its own table.
 
-**Object** collections are updated with each sync. These are pulled using our sync component.
+**Object** collections are updated with each sync. These are pulled using Segment's sync component.
 
-**Event** collections are append only, represent a user action or activity, and may be likened to fact tables in a traditional data warehouse.
+**Event** collections are append only, represent a user action or activity, and may be likened to fact tables in a traditional data warehouse. **Note:** Unlike traditional events captured by Segment, you can't forward these events to Destinations you've configured in your Segment workspace. You can only sync these events to a supported data warehouse.
 
 
 |  Collection | Type | Description |
@@ -70,13 +73,13 @@ Collections are the groupings of resources we pull from your source. In your war
 |  deferred | Event | Recipient's email server temporarily rejected message. |
 |  unsubscribe | Event | Recipient clicked on message's subscription management link. You need to enable Subscription Tracking for getting this type of event. |
 |  spam_report | Event | Recipient marked message as spam. |
-|  lists | Object | [Groups of contacts](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html). **Will only return data if you're using Marketing Campaign featurs of SendGrid.** |
-|  segments | Object | [Slices of lists](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html). **Will only return data if you're using Marketing Campaign featurs of SendGrid.** |
-|  recipients | Object | All contacts who have received an email, with information about their last activities and custom activities. [More Info](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html).  **Will only return data if you're using Marketing Campaign featurs of SendGrid.** |
-|  campaigns | Object | All campaigns you've created in Sendgrid. [More Info](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html).  **Will only return data if you're using Marketing Campaign featurs of SendGrid.** |
+|  lists | Object | [Groups of contacts](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html). **Will only return data if you're using Marketing Campaign features of SendGrid.** |
+|  segments | Object | [Slices of lists](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html). **Will only return data if you're using Marketing Campaign features of SendGrid.** |
+|  recipients | Object | All contacts who have received an email, with information about their last activities and custom activities. [More Info](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html).  **Will only return data if you're using Marketing Campaign features of SendGrid.** |
+|  campaigns | Object | All campaigns you've created in Sendgrid. [More Info](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html).  **Will only return data if you're using Marketing Campaign features of SendGrid.** |
 
 ## Troubleshooting 
 
 If you're getting an "Invalid Credentials" error when setting up the SendGrid source, send a direct ping to the [SendGrid Marketing Campaigns API](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html) to test if you're using the correct credentials.
 
-Make sure you whitelist the Segment IP addresses on Sendgrid. [contact our team](https://segment.com/help/contact/) for the list of IP addresses to whitelist.
+Make sure you whitelist the Segment IP addresses on Sendgrid. [Contact Segment](https://segment.com/help/contact/) for the list of IP addresses to whitelist.

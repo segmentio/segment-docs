@@ -22,7 +22,7 @@ you fill out your company info and have a Nielsen representative before getting
 started.
 
 You must also go through the pre-certification process as outlined
-[here](https://engineeringportal.nielsen.com/docs/Digital_Pre-Certification_Checklist)
+[here](https://engineeringportal.nielsen.com/docs/DCR_Pre-Certification_Checklist)
 with your Nielsen representative before shipping this implementation to
 production.
 
@@ -34,110 +34,11 @@ your mobile app with our [iOS](/docs/connections/sources/catalog/libraries/mobil
 
 ### iOS
 
-#### Install the SDK
-
-The recommended way to install Analytics for iOS is using Cocoapods, since it
-means you can create a build with specific destinations, and because it makes
-it simple to install and upgrade. Simply add the Analytics dependency to
-your Podfile, like so:
-
-```
-pod 'Analytics' '~> 3.0'
-pod 'Segment-Nielsen-DTVR'
-```
-
-#### Add the Nielsen App SDK Framework 
-
-The integration relies on the NielsenApp SDK framework, which can either be installed using CocoaPods or by manually
-adding the framework. You will need to have a Nielsen representative before
-getting started.
-
-##### CocoaPods
-
-When using the Nielsen SDK version 6.2.0.0 and above, Nielsen recommends
-installation using CocoaPods, and Apple recommends using the dynamic framework.
-
-Requirements for CocoaPods:
-
-Dynamic Framework - version 1.6.1 or higher
-Static Framework - version 1.4.0 or higher
-
-1. Set repository credentials The first step is to add the credentials received
-from Nielsen into your .netrc file. Navigate to your home folder and create a
-file called .netrc ``` cd ~/ vi .netrc ```
-
-  Add the credentials in the following format:
-  ```
-  machine raw.githubusercontent.com
-  login <Nielsen App SDK client>
-  password <Auth token>
-  ```
-
-  You will need to fill out a license agreement form and have the contact
-  information for your Nielsen representative in order to obtain the
-  credentials
-  [here](https://engineeringportal.nielsen.com/docs/connections/special:Downloads)
-
-2. Add the source to your Podfile:
-
-  Dynamic Framework - `source 'https://github.com/NielsenDigitalSDK/nielsenappsdk-ios-specs-dynamic.git'`
-  Note - you will also need to include `use_frameworks!`
-
-  Static Framework - `source 'https://github.com/NielsenDigitalSDK/nielsenappsdk-ios-specs.git'`
-
-3. Add the pod to your Podfile:
-
-  `pod NielsenAppSDK`
-
-4. Install pods
-
-  `pod install`
-
-The full instructions from Nielsen can be found
-[here](https://engineeringportal.nielsen.com/docs/Digital_Measurement_iOS_Artifactory_Guide)
-
-##### Manual
-
-Navigate to the [Nielsen
-Downloads](https://engineeringportal.nielsen.com/docs/connections/special:Downloads) page
-to download the iOS SDK. You will need to fill out a license agreement form and
-have the contact information for your Nielsen representative ready.
-
-Once extracted, add the static NielsenAppApi.framework to the project and
-ensure it's in the `Frameworks` folder, and that it is linked.
-
-Nielsen also requires the following frameworks, which must be included into
-Link Binary with Libraries (within app target's Build Phases). However, if
-using the dynamic framework, these will dynamically be linked and there is no
-need to manually link these. - AdSupport.framework -
-SystemConfiguration.framework - CoreLocation.framework (Not applicable for
-International (Germany)) - libsqlite3
+To install Nielsen DTVR via Segment on iOS, please follow the instructions in the Segment-Nielsen-DTVR repository [README](https://github.com/segment-integrations/analytics-ios-integration-nielsen-dtvr/blob/master/README.md).
 
 ### Android
 
-To install the Segment-Nielsen-DTVR integration, you will first want to add
-Nielsen's maven repository to your app's module `build.gradle file`. Nielsen
-provides information on what your `build.gradle` file should look like after
-adding their repository [here in their
-documentation](https://engineeringportal.nielsen.com/docs/Digital_Measurement_Android_Artifactory_Guide#Add_Nielsen_Maven_Repository).
-
-To retrieve Nielsen credentials, you will need to fill out a license agreement
-form [here](https://engineeringportal.nielsen.com/docs/connections/special:Downloads)
-
-An easy way to configure your app with your Nielsen credentials is to set the
-Nielsen `user` and `authCode` as `ENV` variables, for example:
-
-```
-export ORG_GRADLE_PROJECT_NIELSEN_USER=<nielsen_user>
-export ORG_GRADLE_PROJECT_NIELSEN_AUTHCODE=<nielsen_authCode>
-```
-
-Then, to include Segment's Nielsen-DTVR module, simply add the following line
-to your module-level `build.gradle` file:
-
-```
-compile 'com.segment.analytics.android.integrations:nielsen-dtvr:+'
-```
+To install Nielsen DTVR via Segment on Android, please follow the instructions in the Segment-Nielsen-DTVR repository [README](https://github.com/segment-integrations/analytics-android-integration-nielsen-dtvr/blob/master/README.md).
 
 ##  Web
 
@@ -155,13 +56,7 @@ you to detect the player state such as video or ad plays. For example, you
 would not be able to collect ad plays using YouTube since their YouTube SDK
 does not expose any hooks into player states during ad plays.
 
-**IMPORTANT**: If you do not implement the Segment [Video
-Spec](/docs/connections/spec/video/) properly with key lifecycle events, this integration
-will not behave properly.
-
-Again, also refer to our [Video Spec](/docs/connections/spec/video/) and implement
-video tracking as outlined there. We will map the semantic events and
-properties to Nielsen's relevant methods and metadata.
+**IMPORTANT**: We will map the semantic events and properties in the Segment [Video Spec](/docs/connections/spec/video/) to Nielsen's relevant methods and metadata. If you do not implement the Segment [Video Spec](/docs/connections/spec/video/) properly, this integration will not behave properly. 
 
 ## Settings
 

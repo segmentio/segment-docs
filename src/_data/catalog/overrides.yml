@@ -1,8 +1,20 @@
 # This file is manually generated. When you add or remove an item, add or remove
 # it from the `overrides-list.yml` too.
 items:
+- slug: intercom
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: true
 - slug: hubspot
   display_name: HubSpot
+  previous_names:
+  - HubSpot
   components:
   - type: WEB
   - type: CLOUD
@@ -16,7 +28,7 @@ items:
       mobile: true
       server: true
     summary: >-
-      is available in device-mode for Analytics.js only, and is availble in cloud-mode for Mobile and Server sources.
+      is available in device-mode for Analytics.js only, and is availble in cloud-mode for Mobile and Server sources. Page calls are supported from Device-mode connections only.
     cmode_type: mixed
     case: '6'
 - slug: iterable
@@ -37,3 +49,206 @@ items:
       accepts cloud-mode data from all Segment source types. It does not offer device-mode connections.
     cmode_type: mixed
     case: '5'
+- slug: google-ads-gtag
+  previous_names:
+  - Google AdWords New
+- slug: klaviyo
+  display_name: Klaviyo
+  previous_names:
+  - Klaviyo
+  components:
+  - code: 'https://github.com/segment-integrations/analytics.js-integration-klaviyo'
+    type: browser
+  - code: 'https://github.com/segmentio/integrations/tree/master/integrations/klaviyo'
+    type: server
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: true
+    summary: >-
+      accepts data in cloud-mode from web and mobile sources, and can accept data in device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '10'
+- slug: friendbuy
+  display_name: Friendbuy
+  previous_names:
+  - FriendBuy
+  components:
+  - code: https://github.com/segment-integrations/analytics.js-integration-friendbuy
+    type: browser
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
+    summary: accepts device-mode data only from Analytics.js.
+    cmode_type: device-only
+    case: '2'
+  settings:
+  - name: siteId
+    type: string
+    defaultValue: ''
+    description: >-
+      This is your **Site ID**. It is used to identify your account in our
+      platform so we can properly attribute referral data. You can find your
+      Site ID in the in Friendbuy web application at **Settings > Integration
+      Code**
+    required: true
+    label: Site ID
+  - name: siteWideWidgets
+    type: mixed
+    defaultValue: []
+    description: >-
+      By default, Friendbuy recommends you add a site wide overlay widget. You
+      can enter any of these site wide widgets here and we will load them any
+      time we receive a `.page()` call. *Note*: If you have custom widgets
+      mapped to named pages in the *Widgets* setting and you have provided a
+      site wide widget, we will load both.
+    required: false
+    label: Site Wide Widgets
+  - name: widgets
+    type: mixed
+    defaultValue: []
+    description: Map your page calls to specific FriendBuy Widgets.
+    required: false
+    label: Page Widgets
+- slug: google-ads-classic
+  display_name: Google Ads (Classic)
+  name: Google Ads (Classic)
+  hidden: false
+  url: connections/destinations/catalog/google-ads-classic
+  previous_names:
+  - AdWords
+  - Google Ads (Classic)
+  website: https://adwords.google.com
+  status: PUBLIC
+  categories:
+  - Advertising
+  logo:
+    url: https://cdn.filepicker.io/api/file/O54PEswFQAC7ZZDLSBZ5
+  mark:
+    url: https://cdn.filepicker.io/api/file/R5kQQ2DMR0CuNdDbzPvr
+  methods:
+    track: true
+    identify: false
+    group: false
+    alias: false
+    page: true
+  platforms:
+    browser: true
+    mobile: true
+    server: true
+  components:
+  - code: https://github.com/segment-integrations/analytics.js-integration-adwords
+    type: browser
+  - code: >-
+      https://github.com/segmentio/integrations/tree/master/integrations/google-adwords
+    type: server
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: true
+  replay: false
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: false
+    summary: >-
+      accepts data in cloud-mode from all mobile sources, and can accept data in
+      device-mode from Analytics.js sources.
+    cmode_type: mixed
+    case: '9'
+  settings:
+  - name: conversionId
+    type: string
+    defaultValue: ''
+    description: >-
+      Your AdWords conversion identifier. It looks like `983265867`. You can opt
+      to override this on a per-event basis but at the very least this
+      conversion ID will serve as the ID used in page calls.
+    required: true
+    label: Conversion ID
+  - name: correctLat
+    type: boolean
+    defaultValue: true
+    description: >-
+      Enable this to set Limit Ad Tracking to `true` when
+      context.device.adTrackingEnabled is `false`.
+    required: true
+    label: Correct LAT Behavior
+  - name: eventMappings
+    type: mixed
+    defaultValue: []
+    description: AdWords behavior for each of your Segment Events is defined here.
+    required: true
+    label: Event Mappings
+  - name: linkId
+    type: string
+    defaultValue: ''
+    description: >-
+      The AdWords Link Id associated with Segment. The process for obtaining
+      this can be found
+      [here](https://support.google.com/adwords/answer/7365001). To create this
+      Link Id, you must input Segment's Provider Id: **7552494388**
+
+
+      **Important:** this setting is required only if you are using the new
+      AdWords for mobile implementations.
+    required: true
+    label: Link Id
+  - name: pageRemarketing
+    type: boolean
+    defaultValue: false
+    description: Enable this to send a remarketing tag with your page calls
+    required: true
+    label: Page Remarketing
+  - name: trackAttributionData
+    type: boolean
+    defaultValue: false
+    description: >-
+      If this setting is enabled, Segment will send successfully attributed
+      `Application Installed` events from AdWords as `Install Attributed` events
+      back into this source. These events will contain data about the AdWords
+      campaign that lead to the conversion. You can learn more about these
+      events [here](https://segment.com/docs/spec/mobile/#install-attributed).
+
+
+      **Important:** this feature is only available if you are using the new
+      AdWords version.
+    required: true
+    label: Track Attribution Data
+  - name: version
+    type: select
+    defaultValue: ''
+    description: >-
+      The current version of your AdWords account. If you have migrated your
+      AdWords account to the **new** AdWords interface at any point, you are
+      using version 2. Otherwise, please select version 1.
+    required: true
+    label: Version
+  - name: zeroedAttribution
+    type: boolean
+    defaultValue: false
+    description: >-
+      With the update to use analytics-ios v4.x SDK if adTrackingEnabled is set
+      to false, the advertisingId key will be deleted from the event. These
+      events will fail when sent to Google Adwords. To prevent these event
+      failures in this scenario enable this setting to set the IDFA to be zero'd
+      out (ie. '00000000-0000-0000-0000-000000000000') when sent to Google
+      Adwords. 
+    required: false
+    label: >-
+      Fallback to Zeroed IDFA when advertisingId key not present (Server-Side
+      Only)

@@ -16,7 +16,7 @@ Transformations _irrevocably_ change the event payloads flowing through Segment 
 > warning ""
 > As soon as you apply a Transformation, the original tracking payloads are not easily recoverable.
 
-Our goal is to make Transformations a powerful tool that complements a well structured Tracking Plan. Together, these features help your organization scale and achieve high data quality. For that reason we HIGHLY recommend that you start your data quality strategy with a clearly defined Tracking Plan. Without this critical component, the risk of creating conflicting or detrimental transformations increases.
+Segment's goal is to make Transformations a powerful tool that complements a well structured Tracking Plan. Together, these features help your organization scale and achieve high data quality. For that reason Segment recommends that you start your data quality strategy with a clearly defined Tracking Plan. Without this critical component, the risk of creating conflicting or detrimental transformations increases.
 
 ### Other important notes
 
@@ -47,7 +47,7 @@ To create a Transformation, navigate to the Transformations tab in Protocols and
 
 ### Step 1: Select the transformation type
 
-To create a Transformation, you first need to select which type of transformation you want to create. For each transformation type, we display a description, use cases and example payload. Current transformation types include:
+To create a Transformation, you first need to select which type of transformation you want to create. For each transformation type, Segment displays a description, use cases and example payload. Current transformation types include:
 
 **Rename track event:** Rename track event name at the source or per destination
 ![rename track event](../images/event-rename-example.png)
@@ -86,12 +86,12 @@ Depending on the type of transformation you selected, you will need to enter the
 After you select the scope, use the search box to choose the event to transform. You can **only** select a single track event, identify or group call. If you are renaming the event, simply enter the new name in the provided text field.
 
 * **Rename properties or traits:**
-If you are renaming properties or traits within your selected event, click the **+ Add Property** button. A dropdown will appear that contains all properties/traits sent with the selected event. We currently support JSON Path notation to select nested objects (ex. `order.id` will select an `id` property nested in a `order` object). We do **not** yet support `.$.` notation to select a property in an array of objects.
+If you rename properties or trains within a selected event, click **+ Add Property**. The dropdown that appears contains the properties or traits sent with the selected event. Segment supports JSON Path notation to select nested objects up to four levels deep. For example, `order.id` selects the `id` property in the `order` object. Segment does not support `.$.` notation to select a property from an array of objects.
 
 After selecting a property/trait, select JSON Path or Simple String to change the property/trait. Simple string will change the name in-line, while JSON path allows you to move the property/trait in or out of an object.
 
 ### Step 3: Name the transformation and enable it
 
-Finally, enter a descriptive name to act as a label for the transformation. This label helps you organize your Transformations, and we recommend making this descriptive and focused on the problem you're solving. For example `Fix misnamed order_completed event for ecommerce spec` is much better than `Map order_completed`.
+Enter a descriptive name to act as a label for the transformation. This label helps you organize your Transformations, and Segment recommends that you make this descriptive and focused on the problem you're solving. For example `Fix misnamed order_completed event for ecommerce spec` is much better than `Map order_completed`.
 
 In this step, you can also choose to keep the Transformation disabled, so you can and come back and edit it later. To update, enable, or disable a Transformation, click on the overflow menu and select **Edit Transformation**.

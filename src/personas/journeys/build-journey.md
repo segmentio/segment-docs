@@ -3,104 +3,121 @@ title: Build a Journey
 ---
 {% include content/plan-grid.md name="journeys" %}
 
-Follow along for the steps required to create a new Journey.
-
 ## Before you begin
 
-Ensure you have one or more sources connected to your Personas space, with events streaming in.
+Verify that you've connected at least one source to your Personas space, with events streaming in.
 
 For more information, see [Setting up your Sources](/docs/personas/quickstart/#step-3-connect-production-sources).
 
-## Add the entry condition
+## Adding the entry condition
 
 1. From your Personas space, click the **Journeys** tab.
 2. Click **+ New Journey** to access the Journey builder.
-3. Click **+ Add Entry Condition**. The entry condition is the first step in the journey and is where you define the entry criteria. On this step, you can both enable historical data and preview users before you publish.
-   1. Add a name that describes the step, for example `New users`.
-   2. Add conditions for inclusion, or import conditions from an existing audience to define the group of users who will enter the journey.
-   3. Check **Use historical data** to allow users who have matched the entry criteria to enter the journey. Otherwise, users who meet the entry conditions moving forward will enter the journey.
-   4. Click **Preview** to see the list of users and ensure you've defined the right conditions.
+3. Click **+ Add Entry Condition**. Define entry criteria with an entry condition, the first step in the Journey. Before publishing, you can also enable historical data and preview users who meet the entry criteria.
+   1. Add a name to describe the step, for example `New users`.
+   2. Add inclusion conditions, or import conditions from an existing audience to define users who will enter the Journey.
+   3. Check **Use historical data** to allow users who have already matched the entry criteria to enter the Journey. Otherwise, only users who meet the entry conditions after publication will enter the Journey.
+   4. Click **Preview** to see the list of users who meet your criteria. Verify that you've defined the right conditions.
    5. Click **Save**.
-4. You should see the entry condition on the Journey Builder canvas. It may take up to 2 minutes to see the estimated number of users in the journey.
-5. Click **+** to add the next step, and view the available step types.
+4. Segment displays the entry condition on the Journey Builder canvas. It may take up to two minutes for Segment to estimate the number of users in the journey.
+5. Click **+** to add the next step and view available step types.
 
 > info ""
-> Users can enter each Journey a maximum of one time.
+> Users can only enter a Journey once.
 
-### Use historical data for the entry step
+### Using historical data for the entry step
 
-If you select the **Use historical data** option, Segment queries all historical data to set the list of users who enter the Journey when it's published. When unselected, only users who satisfy the entry condition *after* you publish will enter the Journey.
+If you select the **Use historical data** option, Segment queries all historical data to generate a list of users who enter the Journey upon publication. If you don't select **Use historical data**, only users who satisfy the entry condition *after* you publish enter the Journey.
 
-Regardless of if you select **Use historical data** in the entry condition, only future events and existing trait memberships trigger subsequent journey steps.
+> info ""
+> Your **Use historical data** selection won't impact subsequent Journey steps.  Only future events and existing trait memberships trigger post-entry Journey steps.
 
 ## Available step types
 
-Journeys provide 5 step types which you can add after the entry condition.
+Journeys provides five step types, which you can add after the entry condition.
 
 ![Step types](images/journey_step-types.png)
 
-**Wait for condition** defines the conditions which a user must fulfill to move from the previous step, to the next step. You can define conditions from scratch, or import conditions from an existing audience.
+**Wait for condition** defines the conditions that a user must satisfy to move from one step to the next. You can define new conditions or import conditions from an existing audience.
 
 ![wait for condition](images/journey_wait-for-condition.png)
 
 **Wait for duration** defines the length of time in minutes, hours, days, or weeks that a user must wait before moving to the next step.
 
-**True/false split** splits the group of users from the previous step into two branches, based on boolean logic against a defined condition. If a user satisfies the condition(s), they move to the true branch. Otherwise, they move to the false branch.
+**True/false split** divides the previous step's user group into two branches, based on Boolean logic against a defined condition. Users who satisfy the condition(s) move to the **True** branch. Otherwise, they move to the **False** branch. To enforce mutual exclusivity, Journeys evaluates true/false conditions when a user reaches the relevant step.  
 
-You can add Step Names to describe the users in the true and false branch.
+You can add Step Names to describe the users in the True and False branch.
 
 ![true/false split](images/journey_t-f-split.png)
 
-**Multi-branch split** splits the group of users from the previous step into 2 or more branches based on conditions you define for each branch. 
+**Multi-branch split** divides the group of users from the previous step into two or more branches based on each branch's defined conditions. 
 
-Define the number of branches you want to create. Then, add a “Wait for condition” step to define the conditions for each branch.
-
-> info ""
-> Journeys does not enforce branch conditions to be mutually exclusive. For more information about ensuring branch exclusivity, see [Best Practices](#).
-
-**Send to destinations** delivers information about the journey to the selected destination. For more information, see [Send data to destinations](/docs/personas/journeys/send-data)
-
-## Clone a Journey
-
-Click the **…** icon at the end of a row in the Journey List View to, and select Clone Journey to clone an existing journey. This creates a copy of the journey in draft status. Similarly, you can also clone a Journey from a Journey’s overview by clicking on the **…** icon on the top right corner. 
-
-## Publish a Journey
-
-When you publish a journey, it becomes active. To publish a journey, click **Publish Journey** from the Journey Overview. You can also click **Publish Journey** in the bottom-right corner of the Journey Builder.
+Define the number of branches you want to create, then add a **Wait for condition** step to define each branch's condition.
 
 > info ""
-> Once published, you cannot edit select portions of a Journey. For more information, see the difference between Draft and Published journeys below.
+> Journeys doesn't enforce mutual exclusivity in branch conditions. For more information about ensuring branch exclusivity, see [Best Practices](#).
 
-### Draft Journeys
+**Send to Destinations** delivers information about the Journey to the selected Destination. For more information, see [Send data to Destinations](/docs/personas/journeys/send-data)
 
-When you’re finished creating your journey, click Save as Draft in the bottom-right corner.
+## Cloning a Journey
+
+To clone a Journey: 
+1. In Journey List view, click the **…** icon at the end of a row.  
+2. Select **Clone Journey**. 
+
+Segment then creates a draft of your Journey. 
+
+You can also clone a Journey from a Journey’s Overview by clicking the **…** icon. 
+
+## Publishing a Journey
+
+To publish and activate a Journey, click **Publish Journey** from the Journey Overview. You can also click **Publish Journey** in the bottom-right corner of the Journey Builder.
+
+> info ""
+> After publication, Segment limits which Journeys features you can edit. For more information, see the difference between Draft and Published Journeys below.
+
+## Pausing and Resuming a Journey
+
+Pausing a published Journey prevents new users from joining your Journey. Users already in the Journey, however, will continue their progress.
+
+Follow these steps to pause a Journey:
+
+1. Select the **Journeys** tab within your Personas space.
+2. Select the **More Options** icon next to the Journey you want to pause.
+3. From the dropdown menu, select **Pause Entry**.
+4. A modal window appears. Select **Pause Entry** again to confirm.
+
+> info "Compute Limits"
+> Because pausing only affects new Journey members, paused Journeys still count towards compute credit limits.
+
+### Resuming a Journey
+
+You can resume new user entries to a paused Journey at any time. 
+
+After you resume a Journey, users who meet the Journey's entry conditions will join the Journey. New users will not enter the Journey, however, if they met its entry conditions while it was paused. 
+
+Follow these steps to resume entry to a paused Journey:
+
+1. Select the **Journeys** tab within your Personas space.
+2. Select the **More Options** icon next to the Journey you want to resume.
+3. From the dropdown menu, select **Resume Entry**.
+4. A modal window appears. Select **Resume Entry** again to confirm.
+
+### Drafting a Journey
+
+When you’ve finished creating your Journey, click **Save as Draft** in the bottom-right corner.
 
 #### When Journeys are in a draft state
-- Journeys provide an estimate of user counts at the entry step, and do not compute user counts for the other steps of the journey.
-- Data is not sent to connected destinations.
+- Journeys estimates user counts only for the entry step.
+- Journeys doesn't send data to connected Destinations.
 
-### Published Journeys
+### About Published Journeys
 
-When you publish a journey, it becomes active. To publish a journey, click Publish Journey from the Journey Overview. You can also click Publish Journey in the bottom-right corner of the Journey Builder.
+Keep the following considerations in mind when working with a published Journey:
 
-> info ""
-> After you publish a Journey, it may take up to three hours for user preview to display.
-
-#### When you publish a Journey
-
-- You can edit the Journey name, description, and destination steps.
-- You cannot add, edit, or delete other steps in the journey.
-- Journeys computes user counts. It may take a up to 3 hours for user counts to be available.
-- Once Journeys computes user counts and makes them available, you’ll see the list of users at each step of the journey.
-- You can click a user profile to see the list of Journey they belong to.
-- Journeys sends data to destinations, and updates in real-time.
-
-## Edit name, description, and destinations
-
-### Edit name and description
-To edit your Journey name and description, navigate to the Settings tab of the Journey Overview.
-
-### Edit destinations
-To edit destinations, click Edit Destinations from the Journey Overview. You can add, edit, or delete connected destinations within existing Send to destinations steps.
-
-
+- It may take up to three hours for Journeys to compute user counts after publication.
+- You can edit a Journey's name, description, and Destination steps.
+- You can't add, edit, or delete other steps in the Journey.
+- Once Journeys computes and displays user counts, you’ll see the list of users at each step of the Journey.
+- Click a user profile to see the Journey list to which they belong.
+- Journeys sends and updates data to Destinations in real-time.

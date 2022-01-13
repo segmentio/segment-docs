@@ -11,7 +11,7 @@ This destination is maintained by Talon.One. For any issues with the destination
 {% include content/beta-note.md %}
 
 > warning ""
-> Data collection that affects promotions should be collected using a Segment **server-side** implementation. Client-side implementations exposes you to risks of fraud. (e.g. a user changing a custom trait relating to their profile using JS modification tools, which triggers them to receive a higher discount than they are entitled to) For more information  [read this](https://segment.com/docs/guides/how-to-guides/collect-on-client-or-server/).
+> Data collection that affects promotions should be collected using a Segment **server-side** implementation. Client-side implementations exposes you to risks of fraud. (e.g. a user changing a custom trait relating to their profile using JS modification tools, which triggers them to receive a higher discount than they are entitled to) For more information  [read this](/docs/guides/how-to-guides/collect-on-client-or-server/).
 
 ## Getting Started
 
@@ -25,7 +25,7 @@ This destination is maintained by Talon.One. For any issues with the destination
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {

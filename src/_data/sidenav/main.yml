@@ -3,11 +3,13 @@ sections:
 - section_title: Getting Started
   section:
   - path: /getting-started
-    title: Getting Started With Segment
-  - path: /getting-started/01-what-is-segment
     title: What is Segment?
+  - path: /getting-started/01-what-is-segment
+    title: How Segment Works
+  - path: /getting-started/implementation-guide
+    title: Getting Started Guide
   - path: /getting-started/02-simple-install
-    title: A Simple Segment Installation
+    title: A Basic Segment Installation
   - path: /getting-started/03-planning-full-install
     title: Planning a Full Installation
   - path: /getting-started/04-full-install
@@ -149,9 +151,8 @@ sections:
     section:
     - path: /connections/destinations
       title: Destinations Overview
-#    - path: /connections/destinations/actions
-#      title: Destination Actions
-# uncomment once fully rolled out
+    - path: /connections/destinations/actions
+      title: Destination Actions
     - path: /connections/destinations/add-destination
       title: Add a Destination
     - path: /connections/destinations/catalog
@@ -189,6 +190,8 @@ sections:
         title: Set Up Data Lakes
       - path: /connections/storage/data-lakes/sync-reports
         title: Sync Reports and Error Reporting
+      - path: /connections/storage/data-lakes/sync-history
+        title: Data Lakes Sync History and Health
       - path: /connections/storage/data-lakes/comparison
         title: Data Lakes vs. Warehouses
     - section_title: Data Warehouses
@@ -198,8 +201,8 @@ sections:
         title: Warehouse Overview
       - path: /connections/storage/warehouses/schema
         title: Warehouse Schemas
-      - path: /connections/storage/warehouses/selective-sync
-        title: Warehouse Selective Sync
+      - path: /connections/storage/warehouses/warehouse-syncs
+        title: Warehouse Syncs
       - path: /connections/storage/warehouses/health
         title: Warehouse Health Dashboards
       - path: /connections/storage/warehouses/choose-warehouse
@@ -226,12 +229,10 @@ sections:
     title: Locate Your Write Key
   - path: /connections/integration_error_codes
     title: Integration Error Codes
-  - path: /connections/schema-unique-limits
-    title: Segment Schema Limits
   - path: /connections/rate-limits
     title: Rate Limits and SLA
-  - path: /connections/data-residency
-    title: Data Residency
+  - path: /connections/regional-segment
+    title: Regional Segment
 - section_title: Personas
   section:
   - path: /personas
@@ -266,6 +267,8 @@ sections:
         title: Overview
       - path: /personas/audiences/account-audiences
         title: Account-Level Audiences
+      - path: /personas/audiences/organization/
+        title: Organizing Audiences
   - section_title: Journeys
     slug: /personas/journeys
     section:
@@ -279,6 +282,8 @@ sections:
         title: Journeys Best Practices and FAQ
       - path: /personas/journeys/use-cases
         title: Example Journeys Use Cases
+      - path: /personas/journeys/journeys-logic
+        title: Understanding Journeys Logic
       - path: /personas/journeys/key-terms
         title: Journeys Glossary
   - path: /personas/using-personas-data
@@ -287,6 +292,8 @@ sections:
     title: Personas and Warehouses
   - path: /personas/profile-api
     title: Profile API
+  - path: /personas/debugger
+    title: Personas Space Debugger
   - path: /personas/personas-gdpr
     title: Personas and GDPR
   - path: /personas/faqs

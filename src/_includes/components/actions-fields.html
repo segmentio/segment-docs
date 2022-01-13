@@ -1,0 +1,117 @@
+
+{% assign currentSlug = page.url | split: "/" | last %}
+{% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
+{% assign conn = include.settings %}
+
+{% assign connectionModes = currentIntegration.connection_modes %}
+{% assign settings = currentIntegration.settings %}
+{% assign actions = currentIntegration.actions %}
+{% assign presets = currentIntegration.presets %}
+
+{% if settings.size > 0 %}
+### Destination Settings
+
+<table >
+  <thead>
+    <tr>
+      <th>Setting</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for setting in settings %}
+<tr>
+<td>{{setting.label}}</td>
+<td>{% if setting.required %}<em>Required.</em><br />{%endif%}{{setting.description | markdownify}}</td>
+</tr>
+{%endfor%}
+</tbody>
+</table>
+
+
+{% endif %}
+
+
+{% if presets.size > 0 %}
+
+## Available Presets
+
+{{currentIntegration.display_name}} has the following presets:
+
+
+<table>
+<thead>
+  <tr>
+    <th>Preset Name</th>
+    <th>Trigger</th>
+    <th>Default Action</th>
+  </tr>
+</thead>
+<tbody>
+  {% for preset in presets %}
+  {% assign triggers = preset.trigger | split: "or" %}
+  {% assign id = preset.actionId %}
+  {% assign actionName = actions | where: "id", id | first %}
+  <tr>
+    <td>{{preset.name}}</td>
+    <td>{% for trigger in triggers %}Event {{trigger}}<br />{%endfor%}</td>
+    <td>{{actionName.name}}</td>
+  </tr>
+  {% endfor %}
+</tbody>
+
+</table>
+
+{% endif %}
+
+## Available Actions
+
+
+Build your own subscriptions! Combine supported [triggers](/docs/connections/destinations/actions/#components-of-a-destination-action) with the following {{currentIntegration.display_name | remove: " (Actions)"}}-supported actions:
+{% for action in actions %}
+- [{{action.name}}](#{{action.name | slugify}})
+{% endfor %}
+
+{% for action in actions %}
+### {{action.name}}
+<p>{{action.description | markdownify}}</p>
+<p>{{action.name}} is a <strong>{{action.platform | capitalize}}</strong> action.</p>
+
+
+{% if action.fields.size > 0 %}
+<p class="button button-hollow" data-toggle="collapse" data-target=".settings-content-{{action.slug}}">Click to show / hide fields</p>
+<div class="collapse settings-content-{{action.slug}} show">
+<table id="settingsTable">
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for field in action.fields %}
+<tr>
+<td>{{field.label}}</td>
+<td>{% if field.type %}Type: <code>{{field.type}}</code><br />{%endif%}{{field.description | markdownify}}</td>
+</tr>
+{%endfor%}
+</tbody>
+</table>
+</div>
+
+{% if include.section1 == action.slug %}
+{{include.content1}}
+{% endif %}
+{% if include.section2 == action.slug %}
+{{include.content2}}
+{% endif %}
+{% if include.section3 == action.slug %}
+{{include.content3}}
+{% endif %}
+
+{% else %}
+This action does not have any fields.
+{% endif %}
+
+{% endfor %}
+

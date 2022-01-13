@@ -95,4 +95,4 @@ All of our supported Segment integration features will work automatically, with 
 
 Batch's other features are available directly by using the native SDK, which comes bundled with this integration.
 
-To use the Batch native SDK through Segment, follow the [instructions for Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) and [instructions for iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x).
+To use the Batch native SDK through Segment, follow the [instructions for Android](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) and [instructions for iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x).

@@ -10,8 +10,8 @@ repo: analytics-android
 
 Analytics for Android only supports any Android device running API 14 (Android 4.0) and higher. This includes Amazon Fire devices.
 
-> info "Analytics-Kotlin Pilot"
-> A pilot release of the analytics-kotlin library is available at the [Analytics-Kotlin](https://github.com/segmentio/analytics-kotlin) repository. This library is governed by Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/), and should not be used in production scenarios.
+> info "Analytics-Kotlin public beta"
+> The Analytics-Kotlin library is in public beta. You can use Analytics-Kotlin for [mobile](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) or [server](/docs/connections/sources/catalog/libraries/server/kotlin) applications. If you’d like to migrate to Analytics-Kotlin, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/). Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this library. 
 
 > success ""
 > In addition to the documentation here, you can also [read the Javadocs for all versions of Analytics-Android on Javadoc.io](https://javadoc.io/doc/com.segment.analytics.android/analytics/latest/index.html).
@@ -24,7 +24,10 @@ Naturally the Analytics SDK needs a unique ID for each user. The very first time
 
 The Segment SDK also collects the [Advertising ID](https://developer.android.com/google/play-services/id.html) provided by Play Services. Make sure the Play Services Ads library is included as a dependency for your application. This is the ID that should be used for advertising purposes. This value is set to `context.device.advertisingId`.
 
-Segment also collects the [Android ID](http://developer.android.com/reference/android/provider/Settings.Secure.html#ANDROID_ID) as `context.device.id`. Some destinations rely on this field being the Android ID, so double check the destinations' vendor documentation if you choose to override the default value.
+Segment also generates a unique ID by using the [DRM API](https://source.android.com/devices/drm) as `context.device.id`. Some destinations rely on this field being the Android ID, so be sure to double-check the destination's vendor documentation. If you choose to override the default value, make sure the identifier you choose complies with Google's [User Data Policy](https://support.google.com/googleplay/android-developer/answer/10144311).
+
+> warning ""
+> **Note:** From `4.10.1`, Segment no longer collects the [Android ID](http://developer.android.com/reference/android/provider/Settings.Secure.html#ANDROID_ID) to comply with Google's [User Data Policy](https://support.google.com/googleplay/android-developer/answer/10144311).
 
 ## API call queuing in Analytics-Android
 
@@ -929,7 +932,7 @@ Analytics analytics = new Analytics.Builder(this, ANALYTICS_WRITE_KEY) //
         .connectionFactory(new ConnectionFactory() {
           @Override protected HttpURLConnection openConnection(String url) throws IOException {
             String path = Uri.parse(url).getPath();
-            // Replace YOUR_PROXY_HOST with the address of your proxy, e.g. https://aba64da6.ngrok.io.
+            // Replace YOUR_PROXY_HOST with the address of your proxy
             return super.openConnection("YOUR_PROXY_HOST" + path);
           }
         })
@@ -944,7 +947,7 @@ val analytics = Analytics.Builder(this, ANALYTICS_WRITE_KEY) //
           @Throws(IOException::class)
           override fun openConnection(url: String): HttpURLConnection {
             val path = Uri.parse(url).path
-            // Replace YOUR_PROXY_HOST with the address of your proxy, e.g. https://aba64da6.ngrok.io.
+            // Replace YOUR_PROXY_HOST with the address of your proxy
             return super.openConnection("YOUR_PROXY_HOST$path")
           }
         })

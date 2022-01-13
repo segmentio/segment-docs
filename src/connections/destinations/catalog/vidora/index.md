@@ -19,7 +19,7 @@ This destination is maintained by Vidora. For any issues with the destination, [
 
 ## Track
 
-If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.track("event_name", {
@@ -33,7 +33,7 @@ Segment sends Track calls to Vidora as a `track` event with the `event_name` as 
 
 ## Page
 
-If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](https://segment.com/docs/connections/spec/page/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](/docs/connections/spec/page/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.page({
@@ -50,7 +50,7 @@ Segment sends Page calls to Vidora as a `pageview` event along with the `page na
 
 ## Screen
 
-If you aren't familiar with the Segment Spec, take a look at the [Screen method documentation](https://segment.com/docs/connections/spec/screen/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Screen method documentation](/docs/connections/spec/screen/) to learn about what it does. An example call would look like:
 
 ```obj-c
 [[SEGAnalytics sharedAnalytics] screen:@"screen_name"
@@ -64,7 +64,7 @@ Segment sends Screen calls to Vidora as a `screenview` event along with the `scr
 
 ## Identify
 
-If you aren't familiar with the Segment Spec, take a look at the [Identify method documentation](https://segment.com/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Identify method documentation](/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.identify("userId123", {
@@ -78,7 +78,7 @@ Segment sends Identify calls to Vidora as an `identify` event along with any cor
 
 ## Group
 
-If you aren't familiar with the Segment Spec, take a look at the [Group method documentation](https://segment.com/docs/connections/spec/group/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Group method documentation](/docs/connections/spec/group/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.group("groupId", {

@@ -5,6 +5,8 @@
 
 {% if currentIntegration.platforms.server == true %}
 {% unless page.hide-personas-partial == true %}
+{% assign overridesList = site.data.catalog.overrides-list.items %}
+
 
 ## Personas
 
@@ -42,7 +44,6 @@ When you first create an audience, Personas sends an Identify call for every use
 
 {% unless page.hide-settings == true %}
 ## Settings
-
 Segment lets you change these destination settings from the Segment app without having to touch any code.
 <table class="settings">
 <thead>
@@ -69,10 +70,14 @@ Segment lets you change these destination settings from the Segment app without 
 ## Adding {{ currentIntegration.display_name }} to the integrations object
 
 To add {{ currentIntegration.display_name }} to the `integrations` JSON object (for example, [to filter data from a specific source](/docs/guides/filtering-data/#filtering-with-the-integrations-object)), use one of the following valid names for this integration:
+{% if page.name-override %}
+{% assign currentIntegration = site.data.catalog.overrides.items | where: "slug", currentSlug | first %}
+{% endif %}
 
 {% for valid_name in currentIntegration.previous_names %}
 - {{ valid_name }}
 {% endfor %}
+
 {% endunless %}
 {% endif %}
 

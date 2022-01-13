@@ -1,0 +1,287 @@
+config:
+  - category: Connection Settings
+    settings:
+    - name: App Identifier
+      connection_mode:
+        - cloud
+        - device-web
+      configurable: false
+      location:
+      notes: This setting is not necessary in Braze Web Mode (Actions).
+    - name: REST API Key
+      connection_mode:
+        - cloud
+      configurable: true
+      location: 
+      notes: This setting is renamed API Key, and is available during initial configuration, or on the Settings tab after configuration.
+    - name: Custom API Endpoint
+      connection_mode:
+        - device-web
+      configurable: false
+      location:
+      notes: This setting is not needed in Braze Web Mode (Actions). 
+    - name: Appboy Datacenter
+      connection_mode:
+        - cloud
+      configurable: false
+      location: ""
+      notes: This setting is covered by the REST API Endpoint
+    - name: Log Purchase when Revenue is present
+      connection_mode: 
+        - device-web
+      configurable: true
+      location:
+      notes: Modify the Trigger for the Track Purchase action to recreate this behavior in Braze (Actions). By default, events named "Order Completed" trigger this action, but you can update the Trigger to check for a property named `revenue`. The event must have a `products` array with `product_id` and `price`.
+    - name: Custom REST API Endpoint
+      connection_mode:
+        - cloud
+      configurable: true
+      location:
+      notes: Select from the available REST Endpoints during initial configuration, or on the Destination's Settings tab.
+    - name: Safari Website Push ID
+      connection_mode:
+        - device-web
+      configurable: false
+      location: Available as a setting in Braze Web Mode (Actions)
+      notes:
+    - name: Braze Web SDK Version
+      connection_mode:
+        - device-web
+      configurable: false
+      location: ""
+      notes: Hardcoded to version \#.##
+    - name: Connection Mode
+      connection_mode:
+        - cloud
+        - device-web
+      configurable: yes
+      location: Choose the version of the Braze (Actions) destination that matches your connection mode.
+      notes: ""
+  - category: In-App Messaging
+    settings:
+    - name: Enable Automatic In-App Message Registration
+      connection_mode:
+        - device-web
+      configurable: false
+      location: ""
+      notes: Unsupported, available only on Mobile.
+    - name: Automatically send In-App Messages
+      connection_mode:
+        - device-web
+      configurable: false
+      location: Available as a setting in Braze Web Mode (Actions)
+      notes: ""
+    - name: Do Not Load Font Awesome
+      connection_mode:
+        - device-web
+      configurable: false
+      location: Available as a setting in Braze Web Mode (Actions)
+      notes: ""
+    - name: Enable HTML In-App Messages
+      connection_mode:
+        - device-web
+      configurable: false
+      location: Available as a setting in Braze Web Mode (Actions)
+      notes: ""
+    - name: Open In-App Messages in New Tab
+      connection_mode:
+        - device-web
+      configurable: false
+      location: Available as a setting in Braze Web Mode (Actions)
+      notes: ""
+  - category: Page
+    settings:
+    - name: Track All Pages
+      connection_mode:
+        - device-web
+      configurable: true
+      location: Track Custom Event action
+      notes: Trigger the action on Page calls.
+    - name: Track Only Named Pages
+      connection_mode:
+        - device-web
+      configurable: true
+      location: Track Custom Event action
+      notes: Trigger the action on Page calls where the `name` property exists.
+  - category: Other Settings
+    settings:
+    - name: Allow Crawler Activity
+      connection_mode:
+        - device-web
+      configurable: false
+      location: Available as a setting in Braze Web Mode (Actions)
+      notes: ""
+    - name: Enable Logging
+      connection_mode:
+        - device-web
+      configurable: false
+      location: Available as a setting in Braze Web Mode (Actions)
+      notes: ""
+    - name: Minimum Interval Between Trigger Actions in Seconds
+      connection_mode:
+        - device-web
+      configurable: false
+      location: Available as a setting in Braze Web Mode (Actions)
+      notes: ""
+    - name: Only Track Known Users
+      connection_mode:
+        - device-web
+      configurable: false
+      location: Available as a setting in Braze Web Mode (Actions)
+      notes: ""
+    - name: Open News Feed Cards in New Tab
+      connection_mode:
+        - device-web
+      configurable: false
+      location: Available as a setting in Braze Web Mode (Actions)
+      notes: ""
+    - name: Session Timeout in Seconds
+      connection_mode:
+        - device-web
+      configurable: false
+      location: Available as a setting in Braze Web Mode (Actions)
+      notes: ""
+    # - name: Update Existing Users Only
+    #   connection_mode:
+    #     - cloud
+    #   configurable: true
+    #   location: ""
+    #   notes: ""
+actions:
+  - action: Track Event
+    blurb: Track Event sends Braze a Track Event call when the destination receives a Track event that **is not** named `Order Completed`.
+    fields:
+    - name: Event Name
+      description: The name of the event that Braze receives.
+      default: event
+    - name: Time
+      description: The timestamp of when the event occured.
+      default: receivedAt
+    - name: External User ID
+      description: The unique identifier of the user who performed the event.
+      default: userId
+    - name: User Alias Object
+      description: The user alias object. For more information, see the <a href="https://www.braze.com/docs/api/objects_filters/user_alias_object/" target="_blank">Braze documentation</a>.
+      default:
+    - name: Braze User Identifier
+      description: The unique identifier of the user that is passed to Braze.
+      default: properties.braze_id
+    - name: Event Properties
+      description: The object that contains properties pertaining to the event.
+      default: properties
+    - name: Update Existing Only
+      description: Set to true to use the Braze API in "Update Only" mode. 
+      default: false
+  - action: Track Purchase
+    blurb: Track Purchase sends Braze a Track Purchase call when the destination recieves any event that matches the specified name.
+    fields:
+    - name: Time
+      description: The timestamp of when the event occured.
+      default: receivedAt
+    - name: Products
+      description: A list of the products included in the order.
+      default: properties.products
+    - name: External User ID
+      description: The unique identifier of the user who performed the event.
+      default: userId
+    - name: User Alias Object
+      description: The user alias object. For more information, see the <a href="https://www.braze.com/docs/api/objects_filters/user_alias_object/" target="_blank">Braze documentation</a>.
+      default:
+    - name: Braze User Identifier
+      description: The unique identifier of the user that is passed to Braze.
+      default: properties.braze_id
+    - name: Event Properties
+      description: The object that contains properties pertaining to the event.
+      default: properties
+    - name: Update Existing Only
+      description: Set to true to use the Braze API in "Update Only" mode. 
+      default: false
+  - action: Update User Profile
+    blurb: Update User Profile sends to Braze a request to update an existing user's profile attributes when the destination receives an Identify call.
+    fields:
+    - name: External User ID
+      description: The unique identifier of the user who performed the event.
+      default: userId
+    - name: User Alias Object
+      description: The user alias object. For more information, see the <a href="https://www.braze.com/docs/api/objects_filters/user_alias_object/" target="_blank">Braze documentation</a>.
+      default:
+    - name: Braze User Identifier
+      description: The unique identifier of the user that is passed to Braze.
+      default: properties.braze_id
+    - name: Country
+      description: The user's country code.
+      default: context.location.country
+    - name: Current Location
+      description: The user's lattitude and longitude when they complete the event.
+      default: \{"latitude":{"@path":"$.context.location.latitude"},"longitude":{"@path":"$.context.location.longitude"}}
+    - name: Date of First Session
+      description: The date on which the user first used the application.
+      default:
+    - name: Date of Last Session
+      description: The date on which the user most recently used the application.
+      default:
+    - name: Date of Birth
+      description: The user's date of birth.
+      default:
+    - name: Email
+      description: The user's email address.
+      default: traits.email
+    - name: Email Subscribe
+      description: "The user's email subscription preference. Must be one of: `opted_in`, `unsubscribed`, or `subscribed`"
+      default: 
+    - name: Email Open Tracking Disabled
+      description: Set to true to disable adding the open tracking pixel to all future emails sent to this user.
+      default: 
+    - name: Email Click Tracking Disabled
+      description: Set to true to disable click tracking for all links within future emails sent to this user.
+      default:
+    - name: Facebook Attribution Data
+      description: "A hash of Facebook attribution data that contains any of `id`, `likes`, or `num_friends`"
+      default:
+    - name: First Name
+      description: The user's first name
+      default: traits.firstName
+    - name: Gender
+      description: "The user's gender: `M`, `F`, `O` (other), `N` (not applicable), `P` (prefer not to say), or nil (unknown)."
+      default: traits.gender
+    - name: Home City
+      description: The user's home city.
+      default: traits.address.city
+    - name: Image URL
+      description: The URL of the image associated with this user profile.
+      default: traits.avatar
+    - name: Language
+      description: The user's preferred language.
+      default:
+    - name: Last Name
+      description: The user's last name.
+      default: traits.lastName
+    - name: Marked Email as Spam At
+      description: The date on which the user marked their email as spam.
+      default:
+    - name: Phone Number
+      description: The user's phone number.
+      default: traits.phone
+    - name: Push Subscribe
+      description: "The user's push subscription preference: `opted_in` (explicitly registered to receive push messages), `unsubscribed` (explicitly opted out of push messages), and `subscribed` (neither opted in nor out)."
+      default:
+    - name: Push Tokens
+      description: "An array of objects with app_id and token string. You can optionally provide a `device_id` for the device this token is associated with. For example,`{\"app_id\": App Identifier, \"token\": \"abcd\", \"device_id\": \"optional_field_value\"}. If a device_id is not provided, a random value is generated." 
+      default:
+    - name: Time Zone
+      description: The user's time zone from the IANA Time Zone Database. For example, `America/New_York`.
+      default:
+    - name: Twitter Attribution Data
+      description: A Hash that contains any of id, screen_name, followers_count, friends_count, and statuses_count.
+      default:
+    - name: Custom Attributes
+      description: A hash of custom attributes sent to Braze.
+      default: traits
+    - name: Update Existing Only
+      description: Set this flag to true to put the API in "Update Only" mode. 
+      default: true
+  - action: Identify Debounce
+    blurb: >
+      When enabled for Javascript sources, this action ensure that only Identify calls where at least one updated trait value are sent to Braze. Events with duplicate traits are not sent.
+      To use Identify Debounce with mobile sources, include Segment's open-source [Middleware tool](https://github.com/segmentio/segment-braze-mobile-middleware){:target="_blank"}.
+    fields:

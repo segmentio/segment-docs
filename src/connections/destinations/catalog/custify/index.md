@@ -19,7 +19,7 @@ This destination is maintained by Custify. For any issues with the destination, 
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -32,7 +32,7 @@ Identify calls will be sent to Custify as `customers`, with the `userId` being s
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked Login Button')
@@ -46,7 +46,7 @@ To view the events, go to their linked Customer and they are displayed in the ac
 
 ## Group
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
 
 ```
 analytics.group("0e8c78ea9d97a7b8185e8632", {

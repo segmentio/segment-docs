@@ -6,11 +6,13 @@ One of the core components of the Segment [Spec](/docs/connections/spec/) is the
 
 By standardizing the events that comprise the core **mobile application lifecycle** and associated **mobile campaign and referral events**, Segment and our partners can, wherever possible, automatically collect and forward these events on your behalf and build downstream destinations which take full advantage of the semantic meaning associated with these events and their properties.
 
-**Note:** If you're already collecting similar events, we recommend migrating to these event names so that you can take advantage of available features in our destinations which depend on the spec as they become available.
+> info ""
+>  If you're already collecting similar events, we recommend migrating to these event names so that you can take advantage of available features in our destinations which depend on the spec as they become available.
 
-These events pair nicely with our [ecommerce spec](/docs/connections/spec/ecommerce/v2/) for mobile marketplaces to take full advantage of features like dynamic ads in Facebook and the ability to take full advantage of server-side destinations with Mobile Attribution Platforms like Tune and Kochava.
+These events pair nicely with our [ecommerce spec](/docs/connections/spec/ecommerce/v2/) for mobile marketplaces to take full advantage of features like dynamic ads in Facebook and the ability to take full advantage of server-side destinations with Mobile Attribution Platforms like [Tune](https://www.tune.com/){:target="_blank"} and [Kochava](https://www.kochava.com/){:target="_blank"}.
 
-**Note** Per our [Privacy Policy](https://segment.com/legal/privacy/#sensitive-personal-information) and applicable terms, don't send us sensitive personal information about your users. Certain features from Segment and our partners allow you to opt-in to automatically track data (for example: Application Installed or Deep Link Clicked). When working with these features and Segment in general, be cognizant of the data that is being tracked to ensure its matching both your obligations under your agreement with Segment and the privacy expectations of your users.
+> info ""
+>  Per the [Privacy Policy](https://segment.com/legal/privacy/#sensitive-personal-information) and applicable terms, don't send us sensitive personal information about your users. Certain features from Segment and our partners allow you to opt-in to automatically track data (for example: Application Installed or Deep Link Clicked). When working with these features and Segment in general, be cognizant of the data that is being tracked to ensure its matching both your obligations under your agreement with Segment and the privacy expectations of your users.
 
 ## Overview of Events
 
@@ -90,13 +92,13 @@ This event fires when a user launches or foregrounds your mobile application aft
 }
 ```
 
-| **Property**            | **Type** | **Description**                                                                                                                                                                                                                                                                                                |
-| ----------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Property**            | **Type** | **Description**                                                                                                                                                                                                                                                                     |
+| ----------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `from_background`       | Boolean  | If application [transitioned](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/#//apple_ref/doc/uid/TP40006786-CH3-SW52) from "Background" to "Inactive" state prior to foregrounding (as opposed to from "Not Running" state). |
-| `url`                   | String   | The value of `UIApplicationLaunchOptionsURLKey` from `launchOptions`.**Collected on iOS only**.                                                                                                                                                                                                                |
-| `referring_application` | String   | The value of `UIApplicationLaunchOptionsSourceApplicationKey` from `launchOptions`. **Automatically collected on iOS only**.                                                                                                                                                                                   |
-| `version`               | String   | The version installed.                                                                                                                                                                                                                                                                                         |
-| `build`                 | String   | The build number of the installed app.                                                                                                                                                                                                                                                                         |
+| `url`                   | String   | The value of `UIApplicationLaunchOptionsURLKey` from `launchOptions`.**Collected on iOS only**.                                                                                                                                                                                     |
+| `referring_application` | String   | The value of `UIApplicationLaunchOptionsSourceApplicationKey` from `launchOptions`. **Automatically collected on iOS only**.                                                                                                                                                        |
+| `version`               | String   | The version installed.                                                                                                                                                                                                                                                              |
+| `build`                 | String   | The build number of the installed app.                                                                                                                                                                                                                                              |
 
 
 ### Application Backgrounded
@@ -264,13 +266,13 @@ This event can be sent when a user taps on a push notification associated with y
 ```
 
 
-| **Property**        | **Type** | **Description**                                                                                                                                                                                                                                                            |
-| ------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `action`            | String   | If this notification is "[actionable](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/IPhoneOSClientImp.html#//apple_ref/doc/uid/TP40008194-CH103-SW26)", the custom action tapped. **Default:** "Open" |
-| `campaign[name]`    | String   | Campaign Name.                                                                                                                                                                                                                                                             |
-| `campaign[medium]`  | String   | Identifies what type of link was used (Push Notification).                                                                                                                                                                                                                 |
-| `campaign[content]` | String   | Push notification content content                                                                                                                                                                                                                                          |
-| `campaign[source]`  | String   | Designates the push provider. (Optional)                                                                                                                                                                                                                                   |
+| **Property**        | **Type** | **Description**                                                                     |
+| ------------------- | -------- | ----------------------------------------------------------------------------------- |
+| `action`            | String   | If this notification is "actionable", the custom action tapped. **Default:** "Open" |
+| `campaign[name]`    | String   | Campaign Name.                                                                      |
+| `campaign[medium]`  | String   | Identifies what type of link was used (Push Notification).                          |
+| `campaign[content]` | String   | Push notification content content                                                   |
+| `campaign[source]`  | String   | Designates the push provider. (Optional)                                            |
 
 
 ### Push Notification Bounced
@@ -296,13 +298,13 @@ This event fires when a push notification from a provider bounces. If your push 
 }
 ```
 
-| **Property**        | **Type** | **Description**                                                                                                                                                                                                                                                            |
-| ------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `action`            | String   | If this notification is "[actionable](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/IPhoneOSClientImp.html#//apple_ref/doc/uid/TP40008194-CH103-SW26)", the custom action tapped. **Default:** "Open" |
-| `campaign[name]`    | String   | Campaign Name.                                                                                                                                                                                                                                                             |
-| `campaign[medium]`  | String   | Identifies what type of link was used (Push Notification).                                                                                                                                                                                                                 |
-| `campaign[content]` | String   | Push notification content content                                                                                                                                                                                                                                          |
-| `campaign[source]`  | String   | Designates the push provider. (Optional)                                                                                                                                                                                                                                   |
+| **Property**        | **Type** | **Description**                                                                     |
+| ------------------- | -------- | ----------------------------------------------------------------------------------- |
+| `action`            | String   | If this notification is "actionable", the custom action tapped. **Default:** "Open" |
+| `campaign[name]`    | String   | Campaign Name.                                                                      |
+| `campaign[medium]`  | String   | Identifies what type of link was used (Push Notification).                          |
+| `campaign[content]` | String   | Push notification content content                                                   |
+| `campaign[source]`  | String   | Designates the push provider. (Optional)                                            |
 
 
 ### Deep Link Opened

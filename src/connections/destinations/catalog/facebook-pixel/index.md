@@ -6,9 +6,10 @@ strat: facebook
 
 [Facebook Pixel](https://developers.facebook.com/docs/facebook-pixel) lets you measure and optimize the performance of your Facebook Ads. It makes conversion tracking, optimization and remarketing easier than ever. The Facebook Pixel Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-facebook-pixel).
 
-_**NOTE:** Facebook has deprecated their modular "Ads For Websites" suite, which previously comprised Facebook Custom Audiences and Facebook Conversion Tracking. We've consolidated those two destinations into this new and improved "Facebook Pixel" destination._
+> warning ""
+> Facebook has deprecated the modular "Ads For Websites" suite, which previously comprised Facebook Custom Audiences and Facebook Conversion Tracking. We've consolidated those two destinations into this new and improved "Facebook Pixel" destination.
 
-This document was last updated on 31st October, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+
 
 **Use Cases**
 
@@ -39,7 +40,7 @@ Segment automatically initializes Facebook's pixel with your `pixelId` upon load
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```javascript
 analytics.page();
@@ -49,7 +50,7 @@ We've mapped `analytics.page()` to [Facebook's `fbq('track', "PageView")`](https
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('ze8rt1u89', {
@@ -69,7 +70,7 @@ When you make an Identify call with Segment, it will update Facebook Pixel the n
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track("My Custom Event", {
@@ -159,9 +160,12 @@ Facebook accepts the following properties:
 - State
 - Zip code
 
-If you follow Segment's [spec](/docs/connections/spec/identify/#traits), these would automatically be sent correctly.
+If you follow Segment's [spec](/docs/connections/spec/identify/#traits), these properties send in the correct format.
 
-Facebook also accepts an External ID. This can be any unique ID from the advertiser, such as loyalty membership IDs, user IDs, and external cookie IDs. In order to send an `external_id` to Facebook you can indicate which user trait you would like Segment to map to `external_id` using the **Client-Side Only: Advanced Match Trait Key for External ID** setting.
+When you use Advanced Matching, Facebook also accepts an External ID. This can be any unique ID from the advertiser, like loyalty membership IDs, user IDs, and external cookie IDs. To send an `external_id` to Facebook you can either:
+
+- Send the Segment `userId` or `anonymousId` as `external_id` using the **Use User ID or Anonymous ID as External ID** setting
+- Indicate which user trait you would like Segment to map to `external_id` using the **Advanced Match Trait Key for External ID** setting
 
 ## Limited Data Use
 
@@ -174,7 +178,7 @@ Facebook also accepts an External ID. This can be any unique ID from the adverti
 
 Facebook uses the `context.ip` to determine the geolocation of the event.
 
-You can manually change the Data Processing parameters by adding settings to the `integrations` object. For Facebook Pixel, you must store these settings in the [Load object](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#load-options) so that Segment can set them *before* it calls `init`. The example below shows how you might set custom Data Processing parameters in Analytics.js.
+You can manually change the Data Processing parameters by adding settings to the `integrations` object. For Facebook Pixel, you must store these settings in the [Load object](/docs/connections/sources/catalog/libraries/website/javascript/#load-options) so that Segment can set them *before* it calls `init`. The example below shows how you might set custom Data Processing parameters in Analytics.js.
 
 ```javascript
 analytics.load("replace_with_your_write_key", {
@@ -213,7 +217,7 @@ Facebook enforces strict guidelines around sending Personally Identifiable Infor
 
 Any `track` events with properties containing those keys will be sent to Facebook with those properties omitted.
 
-If you have events that use any of those keys for non-PII properties, you can manually whitelist them using the **Allowlist PII Properties** setting. You may also add to this list and/or optionally hash blocklisted properties with the **Blocklist PII Properties** setting.
+If you have events that use any of those keys for non-PII properties, you can manually allowlist them using the **Allowlist PII Properties** setting. You may also add to this list and/or optionally hash blocklisted properties with the **Blocklist PII Properties** setting.
 
 ### Inconsistent or Missing Conversions
 

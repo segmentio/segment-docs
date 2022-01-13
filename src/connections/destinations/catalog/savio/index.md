@@ -17,7 +17,7 @@ This destination is maintained by Savio. For any issues with the destination, [c
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -36,7 +36,7 @@ Once created you will be able to associate the `Person` with feedback in the Sav
 
 ## Group
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
 
 ```
 analytics.group("0e8c78ea9d97a7b8185e8632", {

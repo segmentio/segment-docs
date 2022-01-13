@@ -1,5 +1,6 @@
 ---
 title: Sailthru Destination
+hidden: true
 ---
 
 ## Getting Started
@@ -38,7 +39,7 @@ analytics.page('Page Name', {
 })
 ```
 
-See our [documentation](https://segment.com/docs/connections/spec/page/#properties) for more info on the `keywords` property.
+See our [documentation](/docs/connections/spec/page/#properties) for more info on the `keywords` property.
 
 - - -
 

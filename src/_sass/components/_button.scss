@@ -9,7 +9,7 @@
   border-radius: 4px;
   cursor: pointer;
 
-  @include breakpoint(medium up)  {
+  @include breakpoint(medium up) {
     padding: 8px 16px;
   }
 
@@ -23,8 +23,8 @@
 
   &__icon {
     vertical-align: middle;
-    
-    & > svg {
+
+    &>svg {
       max-width: 12px;
       max-height: 12px;
     }
@@ -33,4 +33,11 @@
   &--expand {
     width: 100%;
   }
+}
+
+.edit {
+  padding: 8px 0px;
+  text-align: left;
+  color: #8f95b2;
+  display: block;
 }

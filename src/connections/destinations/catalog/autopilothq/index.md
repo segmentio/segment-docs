@@ -6,7 +6,7 @@ title: Autopilot Destination
 
 This destination is maintained by Autopilot.  See [Autopilot's documentation](https://support.autopilothq.com/hc/en-us/categories/200396835-Segment) for more information.  For any issues with the destination, [contact our friends at Autopilot](https://support.autopilothq.com/hc/en-us/requests/new).
 
-Are you instead trying to set up Autopilot as a Source to get data from Autopilot into your data warehouse or other downstream tools? See our documentation on our [Autopilot source](https://segment.com/docs/connections/sources/catalog/cloud-apps/autopilothq/) instead.
+Are you instead trying to set up Autopilot as a Source to get data from Autopilot into your data warehouse or other downstream tools? See our documentation on our [Autopilot source](/docs/connections/sources/catalog/cloud-apps/autopilothq/) instead.
 
 This document was last updated on October 12, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
@@ -21,7 +21,7 @@ This document was last updated on October 12, 2018. If you notice any gaps, outd
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('12091906-01011992', {
@@ -32,7 +32,7 @@ analytics.identify('12091906-01011992', {
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track("Step Activated", {

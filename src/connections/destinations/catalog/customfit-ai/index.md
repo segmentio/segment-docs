@@ -18,7 +18,7 @@ This destination is maintained by CustomFit.ai. For any issues with the destinat
 
 ## Identify
 
-`Identify` lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them like their email, name, etc., Read more about the [Identify method](https://segment.com/docs/connections/spec/identify/) to understand what it does. An example call would look like:
+`Identify` lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them like their email, name, etc., Read more about the [Identify method](/docs/connections/spec/identify/) to understand what it does. An example call would look like:
 
 ```js
 analytics.identify("user_id", {
@@ -36,7 +36,7 @@ Identify calls will be sent to CustomFit.ai as an `identify` event. You can find
 
 ## Track
 
-The `track` API call is used to record any actions your users perform, along with any properties that describe the action. Each action is known as an event. Read more about the [Track method](https://segment.com/docs/connections/spec/track/) to understand what it does. An example call would look like:
+The `track` API call is used to record any actions your users perform, along with any properties that describe the action. Each action is known as an event. Read more about the [Track method](/docs/connections/spec/track/) to understand what it does. An example call would look like:
 
 ```js
 analytics.track("Registered", {
@@ -57,7 +57,7 @@ Track calls will be sent to CustomFit.ai as an `track` event. You can find the u
 
 ## Page
 
-The `page` call lets you record whenever a user sees a page of your website, along with any optional properties about the page. Read more about the [Page method](https://segment.com/docs/connections/spec/page/) to understand what it does. An example call would look like:
+The `page` call lets you record whenever a user sees a page of your website, along with any optional properties about the page. Read more about the [Page method](/docs/connections/spec/page/) to understand what it does. An example call would look like:
 
 ```js
 analytics.page("Home", {
@@ -72,7 +72,7 @@ Page calls will be sent to CustomFit.ai as a `pageview` event.
 
 ## Screen
 
-The `screen` call lets you record whenever a user sees a screen, the mobile equivalent of page, in your mobile app, along with any properties about the screen. Read more about the [Screen method](https://segment.com/docs/connections/spec/screen/) to understand what it does. An example call would look like:
+The `screen` call lets you record whenever a user sees a screen, the mobile equivalent of page, in your mobile app, along with any properties about the screen. Read more about the [Screen method](/docs/connections/spec/screen/) to understand what it does. An example call would look like:
 
 ```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Home"

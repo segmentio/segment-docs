@@ -12,6 +12,17 @@ items:
     url: 'https://d3hotuclm6if1r.cloudfront.net/logos/amazon-s3-default.svg'
   mark:
     url: 'https://cdn.filepicker.io/api/file/R1EKddJ1SnGECiHtdUlY'
+- display_name: AWS S3
+  slug: aws-s3
+  name: catalog/warehouses/aws-s3
+  description: >-
+    The AWS S3 destination provides a more secure way to store data in your AWS S3 buckets.
+  url: connections/storage/catalog/aws-s3
+  status: PUBLIC
+  logo:
+    url: 'https://d3hotuclm6if1r.cloudfront.net/logos/amazon-s3-default.svg'
+  mark:
+    url: 'https://cdn.filepicker.io/api/file/R1EKddJ1SnGECiHtdUlY'
 - display_name: Azure Synapse Analytics Warehouse
   slug: azuresqldw
   name: catalog/warehouses/azuresqldw
@@ -89,7 +100,7 @@ items:
   name: catalog/warehouse/data-lakes
   description: ''
   url: connections/storage/catalog/data-lakes
-  status: PUBLIC_BETA
+  status: PUBLIC
   logo:
     url: 'https://cdn.filepicker.io/api/file/YR7dKXAiQWyYvBiVOZNX'
   mark:

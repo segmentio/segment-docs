@@ -4,6 +4,8 @@ strat: react-native
 repo: analytics-react-native
 ---
 
+> info "Analytics React Native 2.0 Pilot"
+> Analytics React Native 2.0 is available as a public pilot. Use of this pilot is governed by Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/){:target="_blank"}. For more information, see the [Analytics React Native 2.0 GitHub repository](https://github.com/segmentio/analytics-react-native){:target="_blank"}.
 
 Analytics for React Native makes it easy to send your data to any analytics or marketing tool without having to learn, test or implement a new API every time.
 
@@ -13,6 +15,11 @@ All of Segment's libraries are open-source, and you can [view Analytics for Reac
 > You can subscribe to the [release feed](https://github.com/segmentio/analytics-react-native/tags.atom) to keep up to date with the latest releases.
 
 In cloud-mode, Analytics-React-Native functions as a normal Segment library. In device-mode it wraps the Segment [Analytics-iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) and [Analytics-Android](/docs/connections/sources/catalog/libraries/mobile/android/) libraries, and loads the appropriate mobile library depending on the user's platform. Because of this, Analytics-React-Native includes the two mobile libraries as dependencies.
+
+> warning ""
+> When you bundle a destination’s device-mode SDK, the React Native library serves as a wrapper for the iOS or Android source libraries. To access the underlying destination code, it is necessary to write bridging code between the React Native wrapper, and the destination’s SDK.
+> 
+> For example, if to configure deep linking or retrieve the Appsflyer ID in Appsflyer, or configure in-app messages or push notifications in Braze, you must write code to specifically access these methods from the destination SDK.
 
 ### Analytics-React-Native and Unique Identifiers
 

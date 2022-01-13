@@ -18,11 +18,11 @@ This destination is maintained by Kustomer. For any issues with the destination,
 4. In your Kustomer account, go to **Settings** > **Apps Directory** and install the **Segment** App.
 5. After installing the Segment App, you need to go to the **Segment App Settings Page** listed directly underneath the Apps Directory page. From this page you will need to click the large green "Enable with Segment" button.
 
-**NOTE:** Kustomer stores anonymous activity for 30 days but you will not see this activity in their UI unless the customer is identified using the [Identify](https://segment.com/docs/connections/destinations/catalog/kustomer/#identify) call.
+**NOTE:** Kustomer stores anonymous activity for 30 days but you will not see this activity in their UI unless the customer is identified using the [Identify](/docs/connections/destinations/catalog/kustomer/#identify) call.
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page('Pricing', {
@@ -37,7 +37,7 @@ Page calls will sent as a `tracking event` to Kustomer on the timeline of the cu
 
 ## Screen
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](/docs/connections/spec/screen/) does. An example call would look like:
 
 ```
 [[SEGAnalytics sharedAnalytics] screen:@"Home"
@@ -48,7 +48,7 @@ Screen calls will sent as a `tracking event` to Kustomer on the timeline of the 
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -58,7 +58,7 @@ analytics.identify('userId123', {
 
 Identify calls will be sent to Kustomer which will create or update a standard customer object record. If a record with a corresponding `userId` exists, that record will be updated. If a customer record doesn't already exist, a new customer record will be created.
 
-All of the overlapping attributes in the Segment [traits](https://segment.com/docs/connections/spec/identify/#traits) documentation are mapped to standard Kustomer attributes by default. In addition to the Segment traits, the following attributes are automatically mapped from Segment to Kustomer:
+All of the overlapping attributes in the Segment [traits](/docs/connections/spec/identify/#traits) documentation are mapped to standard Kustomer attributes by default. In addition to the Segment traits, the following attributes are automatically mapped from Segment to Kustomer:
 
 | Segment          | Kustomer         |
 | ------------     | --------         |
@@ -68,7 +68,7 @@ All of the overlapping attributes in the Segment [traits](https://segment.com/do
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track("Registered", {

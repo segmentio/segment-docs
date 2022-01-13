@@ -5,8 +5,6 @@ title: Singular Destination
 
 [Singular](https://www.singular.net/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Marketing Intelligence Platform that transforms marketing data into accurate, granular and actionable insights to drive growth. By unifying marketing campaign data with attribution data, marketers can measure ROI from every touchpoint across multiple channels for a single source of truth.
 
-The destination is available to receive data using Cloud Mode from all platforms and to integrate using Device Mode on Mobile.
-
 This destination is maintained by Singular. For any issues with the destination, [contact Singular Support](mailto:support@singular.net).
 
 ## Getting Started
@@ -27,7 +25,7 @@ This destination is maintained by Singular. For any issues with the destination,
 
 ## Install Attribution
 
-Enable automatic tracking of lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) using initialization config parameters ([iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#application-lifecycle-tracking), [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#step-2-initialize-the-client)) to track installs and sessions in Singular. The Singular "**session**" will be sent automatically by the integration as long as you are including the events above.
+Enable automatic tracking of lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) using initialization config parameters ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#application-lifecycle-tracking), [Android](/docs/connections/sources/catalog/libraries/mobile/android/#step-2-initialize-the-client)) to track installs and sessions in Singular. The Singular "**session**" will be sent automatically by the integration as long as you are including the events above.
 
 
 ## Apple Search Ads Attribution
@@ -35,7 +33,7 @@ Enable automatic tracking of lifecycle events (`Application Opened`, `Applicatio
 > note "Note"
 > If you are using the Device-Based Destination, there’s no need to implement the code below, as the data is already collected automatically.
 
-To get [iAD attribution](https://searchads.apple.com/help/measure-results/) data into Singular, you must include the [analytics-ios-iads-attribution](https://github.com/segmentio/analytics-ios-iads-attribution) dependency and version 3.6.0 or higher of the [Analytics SDK](https://github.com/segmentio/analytics-ios).
+To get attribution data into Singular, you must include the [analytics-ios-iads-attribution](https://github.com/segmentio/analytics-ios-iads-attribution) dependency and version 3.6.0 or higher of the [Analytics SDK](https://github.com/segmentio/analytics-ios).
 
 To install it, simply add the following line to your Podfile:
 `pod "Analytics"`
@@ -82,7 +80,7 @@ Singular has explicitly mapped the `Application Installed` lifecycle event to pr
 
 ## Tracking Custom Events
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call (in Android) would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call (in Android) would look like:
 
 ```java
 Analytics.with(context).track("Signup")
@@ -103,7 +101,7 @@ Analytics.with(context).track("Order Completed", new Properties().putRevenue(1.9
 ```
 
 ## Custom User ID
-For the cloud-mode destination, Singular has mapped the **Custom User ID** to the Segment [User ID](https://segment.com/docs/connections/spec/identify/#user-id) value. Follow the steps here to configure for: [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#identify), [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#identify).
+For the cloud-mode destination, Singular has mapped the **Custom User ID** to the Segment [User ID](/docs/connections/spec/identify/#user-id) value. Follow the steps here to configure for: [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#identify), [Android](/docs/connections/sources/catalog/libraries/mobile/android/#identify).
 
 For the device-based destination, Singular’s SDK uses the ​identify​ method to map Segment’s ​User ID​ value to the Custom User ID.
 

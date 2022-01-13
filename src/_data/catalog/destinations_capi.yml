@@ -19672,7 +19672,7 @@ items:
     type: LIST
     deprecated: false
     required: false
-    description: This is the array of source write keys you want to repeat data into.
+    description: This is the array of source write keys you want to repeat data into. You can have up to 20 write keys.
     settings: []
 - display_name: Responsys
   slug: responsys

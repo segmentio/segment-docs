@@ -19,7 +19,7 @@ Tracking is about learning and taking action. Think about what you want to know 
 
 ## Define Business Objectives
 
-While it may seem obvious, we highly recommend documenting your high level business objectives (see [Goals tab in Google Sheet Tracking Plan](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view){:target="_blank"} template). More specifically, what are the measurable business outcomes you want to achieve this year. Are you looking to acquire new customers, activate new signups, drive incremental revenues among your current customer base, etc? Answering this question is best done by interviewing stakeholders who would consume the data in your organization.
+While it may seem obvious, we highly recommend documenting your high level business objectives (see [Goals tab in Google Sheet Tracking Plan](https://docs.google.com/spreadsheets/d/1TA6qTcDHoZzsG7-C6p5yHGximDxqoNtizguKs7Z0av4/view){:target="_blank"} template). More specifically, what are the measurable business outcomes you want to achieve this year. Are you looking to acquire new customers, activate new signups, drive incremental revenues among your current customer base, etc? Answering this question is best done by interviewing stakeholders who would consume the data in your organization.
 
 With your business goals documented, you now need to map user actions to those business goals. For example, if one of your goals is to activate new signups, you want to think about which activities are related to a signup. Ask yourself, what actions do people take before signing up? Are there specific actions that can predict a user signing up?
 
@@ -63,7 +63,7 @@ In the following, we share how to build a tracking plan from the ground up using
 
 ## Tracking Plan Google Sheets Template
 
-To help you get started, we developed a Tracking Plan template in [Google Sheets](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view). The template includes all of our semantic specs including [eCommerce](/docs/connections/spec/ecommerce/v2/), [B2B SaaS](/docs/connections/spec/mobile/), [Mobile](/docs/connections/spec/mobile/) and [Video](/docs/connections/spec/video/), and a collection of common properties.
+To help you get started, we developed a Tracking Plan template in [Google Sheets](https://docs.google.com/spreadsheets/d/1TA6qTcDHoZzsG7-C6p5yHGximDxqoNtizguKs7Z0av4/view). The template includes all of our semantic specs including [eCommerce](/docs/connections/spec/ecommerce/v2/), [B2B SaaS](/docs/connections/spec/mobile/), [Mobile](/docs/connections/spec/mobile/) and [Video](/docs/connections/spec/video/), and a collection of common properties.
 
 We highly recommend you start by [defining your business objectives](/docs/protocols/tracking-plan/best-practices/#define-business-objectives), and have included a template in the **Goals** tab to guide that process.
 

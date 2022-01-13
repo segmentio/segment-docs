@@ -11,11 +11,11 @@ Segment's **Optimizely Web (previously Optimizely)** destination supports the fo
 * [Optimizely X Web](#optimizely-x-web)
 * [Optimizely Full Stack (JavaScript)](#optimizely-full-stack-javascript-sdk)
 
-If you're interested in implementing Optimizely Full Stack server-side or on mobile, see Segment's [**Optimizely Full Stack** destination](https://segment.com/docs/connections/destinations/catalog/optimizelyx/), which supports:
+If you're interested in implementing Optimizely Full Stack server-side or on mobile, see Segment's [**Optimizely Full Stack** destination](/docs/connections/destinations/catalog/optimizelyx/), which supports:
 
-* [Optimizely Full Stack (server)](https://segment.com/docs/connections/destinations/catalog/optimizelyx/#server-side)
-* [Optimizely Full Stack Android (cloud-mode)](https://segment.com/docs/connections/destinations/catalog/optimizelyx/#android-cloud-mode-implementation)
-* [Optimizely Full Stack iOS (cloud-mode)](https://segment.com/docs/connections/destinations/catalog/optimizelyx/#ios-cloud-mode-implementation)
+* [Optimizely Full Stack (server)](/docs/connections/destinations/catalog/optimizelyx/#server-side)
+* [Optimizely Full Stack Android (cloud-mode)](/docs/connections/destinations/catalog/optimizelyx/#android-cloud-mode-implementation)
+* [Optimizely Full Stack iOS (cloud-mode)](/docs/connections/destinations/catalog/optimizelyx/#ios-cloud-mode-implementation)
 
 **Use Cases**
 
@@ -219,7 +219,7 @@ analytics.track('Category Clicked', {
 
 If you were to send this Segment `track` event to Optimizely using any of the Segment integrations, you would only be able to use the `eventName` ‘Click’ as a `metric` in Optimizely since custom event tags in Optimizely are not available on the [Results page](https://help.optimizely.com/Analyze_Results/The_Experiment_Results_page_for_Optimizely_X).
 
-To send a `track` event from Segment with the context about that event from the `properties` to Optimizely, create a [custom Segment Destination Function](https://segment.com/docs/connections/destinations/destination-functions/) that maps the Segment `eventName` to a more specific Optimizely `eventName` and send an Optimizely `event` payload with the transformed `eventName` to the Optimizely [Event API](https://docs.developers.optimizely.com/web/docs/event-api). Using the example above, the Segment `track` event ‘Click’ can be transformed to an Optimizely `event` with the `eventName` ‘Clicked Shirt’.
+To send a `track` event from Segment with the context about that event from the `properties` to Optimizely, create a [custom Segment Destination Function](/docs/connections/destinations/destination-functions/) that maps the Segment `eventName` to a more specific Optimizely `eventName` and send an Optimizely `event` payload with the transformed `eventName` to the Optimizely [Event API](https://docs.developers.optimizely.com/web/docs/event-api). Using the example above, the Segment `track` event ‘Click’ can be transformed to an Optimizely `event` with the `eventName` ‘Clicked Shirt’.
 
 ### Sending effective referrer in your automatic page calls
 

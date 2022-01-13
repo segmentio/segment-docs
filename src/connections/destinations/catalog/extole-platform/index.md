@@ -27,7 +27,7 @@ This destination is maintained by Extole. For any issues with the destination, [
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. Identify calls are sent to Extole as an `identify` event.
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. Identify calls are sent to Extole as an `identify` event.
 Segment sends Identify calls to Extole as an `identify` event. Extole creates a new profile or updates an existing one. The table below lists how the basic traits are mapped:
 
 | Segment Traits | Extole Properties |
@@ -55,7 +55,7 @@ analytics.identify('userId123', {
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Login Button Clicked')

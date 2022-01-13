@@ -19,7 +19,7 @@ Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.j
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 ```
 analytics.page()
 ```
@@ -27,7 +27,7 @@ An initial `page` call is required for data to be sent to Mouseflow using Analyt
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 ```
 analytics.identify('user1234', {
   email: 'petergibbon@email.com',

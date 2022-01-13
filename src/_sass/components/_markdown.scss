@@ -144,7 +144,13 @@
         top: 0;
         left: 0;
       }
-
+      div.highlighter-rouge {
+        margin: 15px auto;
+        position: relative;
+      }
+      table {
+        margin: 15px auto;
+      }
       &>ul,
       ol {
         margin-top: 0;
@@ -243,8 +249,9 @@
     }
 
     td.def {
-      cursor:  pointer;
+      cursor: pointer;
       line-height: 16px;
+
       code {
         max-width: 100%;
         word-break: break-all;
@@ -293,11 +300,122 @@
 
 }
 
-a[target="_blank"]:after{
+a[target="_blank"]:not(.reference-button):after {
   content: url("/docs/images/external-link-alt-solid.svg");
   margin-left: 4px;
 }
 
 a.no-icon[target="_blank"]:after {
   content: none
+}
+
+tr.no-map td {
+  opacity: 0.5;
+  display: none;
+}
+
+tr.show {
+  display: table-row;
+}
+
+.settingRow {
+  display: none;
+}
+
+.table-search {
+  width: 100%;
+  border: 0px;
+  border-bottom: 1px solid rgb(128, 128, 128);
+  font-family: "SF Pro Text", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  color: #474d66;
+  font-size: 12px;
+  height: 30px;
+  margin-bottom: 15px;
+}
+
+.table-search:focus-visible {
+  outline: none
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.button-link {
+  padding: 4px 10px;
+}
+
+.active {
+  background-color: #eee;
+}
+
+.cmode {
+  background-color: #edeff5;
+  font-size: 11px;
+  padding: 0px 6px;
+  border-radius: 4px;
+  height: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgb(71, 77, 102);
+  opacity: 0.65;
+  white-space: nowrap;
+}
+
+.device-web-mode,
+.device-mobile-mode {
+  background-color: #e6f5ef;
+  color: #317159
+}
+
+.collapse {
+  display: block;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .5s cubic-bezier(0, 1, 0, 1);
+
+  &.show {
+    max-height: 100%;
+    transition: max-height .5s ease-in-out;
+  }
+
+}
+
+div.highlighter-rouge {
+  position: relative;
+
+  button {
+    color: #adb5bd;
+    box-sizing: border-box;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+    user-select: none;
+    padding: 8px 10px;
+    font-size: 0.8em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 0.15rem;
+    width: 40px;
+    img {
+      width: 16px;
+      margin: 0;
+      border: none;
+      border-radius: 0px;
+    }
+    img:hover {
+      filter: invert(65%) sepia(9%) saturate(784%) hue-rotate(192deg) brightness(91%) contrast(87%);
+      transition: 0.2s ease-out;
+    }
+
+    img:active {
+      filter: invert(65%) sepia(9%) saturate(784%) hue-rotate(192deg) brightness(91%) contrast(87%);
+    }
+  }
+
+  .green{
+    background-color: #BAE5D5;
+    content: "copied!";
+  }
 }
