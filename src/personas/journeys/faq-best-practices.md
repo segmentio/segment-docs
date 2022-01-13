@@ -43,7 +43,7 @@ Aside from the entry condition, all Journey step conditions are triggered by fut
 
 When you [include historical data](/docs/personas/journeys/build-journey/#using-historical-data-for-the-entry-step) in a Journey's entry condition, Personas backfills entry with users who previously satisfied the entry condition. For example, to evaluate if a user has ever used a discount code mid-Journey, create and configure a [Computed Trait](/docs/personas/computed-traits/#conditions) to select for `discount_used = true` to use in your Journey.
 
-This historical backfill has no impact on any additional Journey steps, however. To include historical data in post-entry conditions, then, first use the following table to identify which conditions will automatically backfill historical data:
+This historical backfill has no impact on any additional Journey steps, however. To include historical data in post-entry conditions, use the following table to identify which conditions will automatically backfill historical data:
 
 | Condition Type     | Automatic Historical Data Backfill |
 | ------------------ | ---------------------------------- |
