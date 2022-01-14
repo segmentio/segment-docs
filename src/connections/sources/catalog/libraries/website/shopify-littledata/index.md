@@ -12,7 +12,7 @@ Littledata is available as an independent [Shopify App](https://apps.shopify.com
 
 #### Client-side (device mode) tracking
 
-During the [installation process](https://blog.littledata.io/help/posts/segment-installation-guide/), Littledata adds a `LittledataLayer.liquid` snippet to all pages (included in `theme.liquid`) on your Shopify store:
+During the [installation process](https://blog.littledata.io/help/posts/segment-installation-guide/), Littledata adds a `LittledataLayer.liquid` snippet to all pages (included in `theme.liquid`) on your Shopify store. The benefits of this approach include:
 
 - Segment's analytics.js V1 library is loaded on all pages, except for the checkout
 - Includes a LittledataLayer data layer for all pages
