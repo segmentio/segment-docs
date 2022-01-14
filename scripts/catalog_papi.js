@@ -166,8 +166,7 @@ const updateSources = async () => {
   const hiddenSources = [
     'amp',
     'factual-engine',
-    'twilio-event-streams-beta',
-    'mixpanel-cohorts'
+    'twilio-event-streams-beta'
   ]
 
   sources.forEach(source => {

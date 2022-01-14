@@ -607,7 +607,7 @@ items:
     display_name: Mixpanel Cohorts
     slug: mixpanel-cohorts
     url: connections/sources/catalog/cloud-apps/mixpanel-cohorts
-    hidden: true
+    hidden: false
     source_type: cloud-app
     description: >-
       Mixpanel helps teams get answers to product questions by providing fast,
