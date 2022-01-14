@@ -41,16 +41,16 @@ When you do this, the key used for syncing to destinations will be different fro
 
 Aside from the entry condition, all Journey step conditions are triggered by future events and existing trait memberships. Event-based conditions only evaluate events that occur *after* the Journey is published.
 
-When you [include historical data](/docs/personas/journeys/build-journey/#using-historical-data-for-the-entry-step) in a Journey's entry condition, Personas backfills entry with users who previously satisfied the entry condition. For example, to evaluate if a user has ever used a discount code mid-Journey, create and configure a [Computed Trait](/docs/personas/computed-traits/#conditions) to select for `discount_used = true` to use in your Journey.
+When you [include historical data](/docs/personas/journeys/build-journey/#using-historical-data-for-the-entry-step) in a Journey's entry condition, Personas identifies users who previously satisfied the entry condition and adds them to entry. For example, to evaluate if a user has ever used a discount code mid-Journey, create and configure a [Computed Trait](/docs/personas/computed-traits/#conditions) to select for `discount_used = true` to use in your Journey. 
 
-This historical backfill has no impact on any additional Journey steps, however. To include historical data in post-entry conditions, use the following table to identify which conditions will automatically backfill historical data:
+Including historical data doesn't impact any additional Journey steps, however. To include historical data in post-entry conditions, use the following table to identify which conditions will automatically include historical data:
 
-| Condition Type     | Automatic Historical Data Backfill |
-| ------------------ | ---------------------------------- |
-| Computed Trait     | Yes                                |
-| Audience Reference | Yes                                |
-| Event              | No                                 |
-| Custom Trait       | No                                 |
+| Condition Type     | Automatic Historical Data Inclusion | 
+| ------------------ | ----------------------------------- |
+| Computed Trait     | Yes                                 |
+| Audience Reference | Yes                                 |
+| Event              | No                                  |
+| Custom Trait       | No                                  |
 
 
 To include historical data based on custom traits or events that predate the Journey, first build an Audience that includes the targeted data by following these steps:
@@ -61,7 +61,7 @@ To include historical data based on custom traits or events that predate the Jou
 
 For example, to include `custom trait = ABC` in a Journey, create an Audience called `ABC` that includes that custom trait, then add the Journey condition **Part of Audience** `ABC`.
 
-Using the **Part of Audience** condition, Journeys then populates the custom trait as if it were a backfill.
+Using the **Part of Audience** condition, Journeys then populates the custom trait as if it were using historical data.
 
 ### Use dev spaces and data warehouse destinations to test journeys
 
