@@ -22,3 +22,13 @@ https://support.appsflyer.com/hc/en-us/articles/207032126-AppsFlyer-SDK-Integrat
 https://support.autopilothq.com/hc/en-us/categories/200396835-Segment
 https://support.autopilothq.com/hc/en-us/requests/new
 https://support.autopilothq.com/hc/en-us/articles/203658119
+https://bugsnag.com/dashboard
+https://github.com/segment-integrations/analytics.js-integration-clevertap
+https://github.com/segment-integrations/analytics.js-integration-convertro
+https://github.com/segment-integrations/analytics.js-integration-criteo
+https://app.dreamdata.io/settings
+https://www.getdrip.com/settings/site
+https://github.com/segment-integrations/analytics.js-integration-eloqua
+https://github.com/segment-integrations/analytics.js-integration-email-aptitude
+https://platform.epica.ai/login
+https://github.com/segment-integrations/analytics.js-integration-friendbuy

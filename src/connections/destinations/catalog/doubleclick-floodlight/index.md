@@ -82,7 +82,7 @@ See the [Analytics.js documentation](/docs/connections/sources/catalog/libraries
 
 ## Setting up Custom Variables
 
-There are two things you need to do in order to send custom track properties as custom Floodlight variables. Firstly, refer to their [docs](https://support.google.com/dfa/partner/answer/2548879?hl=en) on how to create a custom variable inside DoubleClick:
+There are two things you need to do in order to send custom track properties as custom Floodlight variables. Refer to Google's [Custom Floodlight Variables](https://support.google.com/campaignmanager/answer/2823222?hl=en) documentation.
 
 Custom Floodlight variables use the keys u1=, u2=, and so on, and can take any values that you choose to pass to them. You can include custom Floodlight variables in any of your Floodlight activity tags and report on their values in Report Builder.
 
