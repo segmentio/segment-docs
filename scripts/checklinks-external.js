@@ -38,21 +38,19 @@ const checkForDeadExternalUrls = async () => {
 
 
     // Check all the links collected in the section above
+    throbber.succeed()
     throbber.start('Checking the links')
     const results = await checkLinks(
       Array.from(urls).map((url) =>
         url
-      ),
+      )
     )
-
-
-
 
     // If a link returns 'dead' (404), add it to an array
     const deadUrls = Array.from(urls).filter(
-      (url) => results[url].status === 'dead',
+      (url) => results[url].statusCode === 404,
     )
-
+ 
     // Get the ignore list
     throbber.succeed()
     throbber.start('Get the ignore list')
@@ -78,6 +76,7 @@ const checkForDeadExternalUrls = async () => {
     }
     // Otherwise, claim that all the links work, and exit the process normally.
     else {
+      throbber.succeed()
       console.log('All links work!')
       process.exit
     }
