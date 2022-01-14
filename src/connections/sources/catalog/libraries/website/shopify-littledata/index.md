@@ -6,7 +6,7 @@ redirect_from:
 
 <!-- LR Note: the working copy of the source catalog YML we built on showed this in the `website` source though as of Nov 18 it's labeled cloud-source -->
 
-Littledata's [Shopify to Segment connection](https://blog.littledata.io/help/posts/segment-overview/) uses a combination of client-side (browser) and server-side tracking to ensure 100% accurate data about your Shopify store in Segment. Littledata automatically integrates with Shopify and Shopify Plus sites to capture every customer touchpoint, including sales, marketing, customer and product performance data.
+Littledata's [Shopify to Segment connection](https://blog.littledata.io/help/posts/segment-overview/){:target="_blank"} uses a combination of client-side (browser) and server-side tracking to ensure 100% accurate data about your Shopify store in Segment. Littledata automatically integrates with Shopify and Shopify Plus sites to capture every customer touchpoint, including sales, marketing, customer and product performance data.
 
 Littledata is available as an independent [Shopify App](https://apps.shopify.com/segment-com-by-littledata).
 
