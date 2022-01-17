@@ -4,7 +4,7 @@ title: Personas and GDPR
 
 All [Segment GDPR features](/docs/privacy/complying-with-the-gdpr/) apply to Personas.
 
-Segment never shares or sells user data. Personas inherits Segment's holistic approach to security and privacy, leveraging 256-bit AES standard encryption to safeguard data stores both at rest and in transit.
+Segment never shares or sells user data. Personas inherits Segment's holistic approach to security and privacy, using 256-bit AES standard encryption to safeguard data stores both at rest and in transit.
 
 ## User Rights
 
