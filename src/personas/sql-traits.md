@@ -152,9 +152,10 @@ If you are sending data from [object cloud sources](/docs/connections/sources/#c
 
 When you're building your query, keep the following requirements in mind for the data your query returns.
 
-- The query must return a column with a `user_id`, `email`, or `anonymous_id` (or `group_id` for account traits, if you have Personas for B2B enabled).
-- It must return at least one additional trait in addition to `user_id`/`group_id`, and no more than 25 total columns.
-- The query must not return any `user_id`s with a `null` value, or any duplicate `user_id`s.
+- The query must return a column with a `user_id`, `email`, or `anonymous_id` (or `group_id` for account traits, if you have Personas for B2B enabled). The query _cannot_ include values for both `user_id` and `anonymous_id`. 
+- The query must return at least one trait in addition to `user_id`/`anonymous_id`/`email`/`group_id`, and no more than 25 total columns.
+- The query must not return any `user_id`s, `anonymous_id`s, or `group_id`s with a `null` value.
+- The query must not return any records with duplicate `user_id`s.
 - The query must not return more than 25 million rows.
 - Each record must be less than 16kb in size to adhere to [Segment's maximum request size](/docs/connections/sources/catalog/libraries/server/http-api/#max-request-size).
 
