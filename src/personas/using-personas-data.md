@@ -88,7 +88,7 @@ List destinations can only receive Audiences, and cannot receive computed traits
 
 When syncing to a list destination Personas uploads lists of users directly to the destination. When you first create an audience, Segment uploads the entire list of audience users to the destination. Later syncs only upload the users that have been added or removed since the last sync.
 
-User-list destinations can have individual limits on how often Segment can sync with them. For example, an AdWords audience is updated once every 6 hours or more, because that is what AdWords recommends.
+User-list destinations can have individual limits on how often Segment can sync with them. For example, an AdWords audience is updated once every six hours or more, because that is what AdWords recommends.
 
 
 ## What do the payloads look like for Personas data?
