@@ -1,5 +1,7 @@
 ---
 title: 'Mixpanel Cohorts Source'
+redirect_from:
+  - '/connections/sources/catalog/cloud-apps/mixpanel-cohorts-source/'
 ---
 
 
