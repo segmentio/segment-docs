@@ -10,8 +10,7 @@ In addition to the docs below, please reference the [BytePlus integration guide]
 
 This destination is maintained by BytePlus. For any issues with the destination, please [contact the BytePlus Support team](mailto:support@byteplus.com)
 
-Getting Started
-
+## Getting Started
 
 {% include content/connection-modes.md %}
 
@@ -24,7 +23,7 @@ Getting Started
 6. Enter the "API Key" in the "BytePlus" destination settings in Segment.
 
 
-Page
+## Page
 
 If you aren’t familiar with the Segment Spec, take a look at the Page method documentation (https://segment.com/docs/connections/spec/page/) to learn about what it does. An example call would look like:
 
@@ -36,7 +35,7 @@ analytics.page()
 
 Segment sends Page calls to BytePlus as a `page` event.
 
-Screen
+## Screen
 
 If you aren’t familiar with the Segment Spec, take a look at the [Screen method documentation](https://segment.com/docs/connections/spec/screen/) to learn about what it does. An example call would look like:
 ```obj-c
@@ -45,7 +44,7 @@ If you aren’t familiar with the Segment Spec, take a look at the [Screen metho
 
 Segment sends Screen calls to BytePlus as a`screen`event.
 
-Identify
+## Identify
 
 If you aren’t familiar with the Segment Spec, take a look at the [Identify method documentation](https://segment.com/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
 
@@ -56,7 +55,7 @@ analytics.identify('userId123', {
 ```
 Segment sends Identify calls to BytePlus as an `identify `event with `SSID`.
 
-Track
+## Track
 
 If you aren’t familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 ```js
