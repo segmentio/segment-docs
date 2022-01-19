@@ -76,7 +76,7 @@ To publish and activate a Journey, click **Publish Journey** from the Journey Ov
 > info ""
 > After publication, Segment limits which Journeys features you can edit. For more information, see the difference between Draft and Published Journeys below.
 
-## Journey Re-Entry
+## Journey re-entry
 
 The Journeys re-entry setting allows users to repeat Journeys they've already exited. Common use cases for Journeys re-entry include the following:
 
@@ -115,7 +115,7 @@ To enable Journey re-entry for an existing Journey, follow these steps:
 5. Under **Exit settings**, enter an exit time.
 6. Click **Update Settings**.
 
-## Pausing and Resuming a Journey
+## Pausing and resuming a Journey
 
 Pausing a published Journey prevents new users from joining your Journey. Users already in the Journey, however, will continue their progress.
 
@@ -150,7 +150,7 @@ When you’ve finished creating your Journey, click **Save as Draft** in the bot
 - Journeys estimates user counts only for the entry step.
 - Journeys doesn't send data to connected Destinations.
 
-### About Published Journeys
+### About published Journeys
 
 Keep the following considerations in mind when working with a published Journey:
 
