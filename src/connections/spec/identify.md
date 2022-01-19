@@ -48,8 +48,7 @@ analytics.identify("97980cfea0067", {
   logins: 5
 });
 ```
-> note ""
-> The `identify` call syntax is different for Node.js. See the docs for [Analytics for Node.js](/docs/connections/sources/catalog/libraries/server/node/#identify) for more information.
+{% include content/syntax-note.md %}
 
 Beyond the common fields, an `identify` call has the following fields:
 
