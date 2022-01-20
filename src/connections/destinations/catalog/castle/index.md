@@ -54,7 +54,7 @@ analytics.track(
 Tracking events from your server-side is crucial to prevent requests from getting blocked by malicious actors. This is recommended for all [Castle's reserved events](https://docs.castle.io/docs/events), such as logins and password changes.
 
 > warning "" 
-> Server-side `track` events are dropped by Castle unless they contain the properties listed below. `identify` calls still create or update a user, but do not create a device if these properties are missing:
+> Server-side `track` events are dropped by Castle unless they contain the properties listed below. `identify` calls still create or update a user, but don't create a device if these properties are missing:
 > - `context.ip`. The user's IP address, i.e. not your server's internal IP
 > - `context.user_agent`, alternatively `context.headers` containing at least the `user_agent` field.
 > - `context.client_id`. The _Client ID_ forwarded by the web or mobile SDK.
@@ -198,4 +198,4 @@ end
 ## Requesting a risk score
 Castle's adaptive authentication tells you whether to allow access, initiate a second factor of authentication, or log out the user.
 
-Since all Segment calls are called asynchronously, you will need to use Castle's native SDKs to perform [adaptive authentication](https://docs.castle.io/docs/authentication-method).
+Since all Segment calls are called asynchronously, you'll need to use Castle's native SDKs to perform [adaptive authentication](https://docs.castle.io/docs/authentication-method).

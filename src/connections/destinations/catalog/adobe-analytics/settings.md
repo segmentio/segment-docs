@@ -267,7 +267,7 @@ When you make a `page` call, here's what Segment does from the browser when you 
 
 3. Checks if the page call is associated with a `userId` from a previous `.identify()` call. If so, Segment sets the `userId` as `window.s.visitorID`.
 
-  **IMPORTANT**: Adobe Analytics does not support setting visitorID. If you send a timestamped call. So Segment first checks if your **Timestamp Option** is `disabled` _and_ that a `userId` exists on the event, and only then sets `window.s.visitorID`.
+  **IMPORTANT**: Adobe Analytics doesn't support setting visitorID if you send a timestamped call. So Segment first checks if your **Timestamp Option** is `disabled` _and_ that a `userId` exists on the event, and only then sets `window.s.visitorID`.
 
 4. Checks for some common properties, and sets them on the `window.s` object:
 

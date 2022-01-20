@@ -3,7 +3,7 @@ title: Emma Destination
 rewrite: true
 ---
 
-[EMMA](https://emma.io/en/) helps you track campaigns from your trusted networks, Google Ads campaigns, Facebook and Instagram campaigns, and Twitter campaigns. You can also track user activities in your app, so you can send personalizes push notifications and in-app campaigns like banners, start-views etc.
+[EMMA](https://emma.io/en/) helps you track campaigns from your trusted networks, Google Ads campaigns, Facebook and Instagram campaigns, and Twitter campaigns. You can also track user activities in your app, so you can send personalized push notifications and in-app campaigns like banners, start-views etc.
 
 This destination is maintained by EMMA. For any issues with the destination, [contact the EMMA Support team](mailto:support@emma.io).
 
