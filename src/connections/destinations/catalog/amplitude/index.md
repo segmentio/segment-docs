@@ -310,7 +310,7 @@ For Segment's Analytics.js (device-mode), iOS, and Android sources, if you do no
 | `eventProperties`  | Any remaining properties (cloud-mode only)        | A NSDictionary or Map of event properties to include in the revenue event. |
 
 
-^ In Segment's Analytics.js, iOS and Android sources, if `properties.price` is not present, Segment falls back to `revenue` and sends that as `price`. The Segment iOS and Android sources also do an additional fallback to `total`, if `revenue` isn't present either.
+^ In Segment's Analytics.js, iOS and Android sources, if `properties.price` isn't present, Segment falls back to `revenue` and sends that as `price`. The Segment iOS and Android sources also do an additional fallback to `total`, if `revenue` isn't present either.
 
 > success ""
 > **Tip** If your site allows users to perform a single transaction with multiple products (such as a shopping cart checkout), we recommend that you use an [Order Completed](/docs/connections/destinations/catalog/amplitude/#order-completed) event to track revenue with Amplitude.
