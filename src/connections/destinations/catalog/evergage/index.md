@@ -20,7 +20,7 @@ analytics.identify('userId123', {
 });
 ```
 
-A `userId` is required on all `identify` calls sent to {{ integration.name}}. When you call `identify` Segment will call both `setUser` and `setUserField` in the [Evergage library](https://doc.evergage.com/display/EKB/Send+Data+to+Evergage) to insert both the `userId` and corresponding user traits into {{ integration.name}}.
+A `userId` is required on all `identify` calls sent to {{ integration.name}}. When you call `identify` Segment will call both `setUser` and `setUserField` in the [Evergage library](https://doc.evergage.com/display/EKB/Send+Data+to+Evergage+via+JavaScript) to insert both the `userId` and corresponding user traits into {{ integration.name}}.
 
 ## Group
 If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
@@ -31,7 +31,7 @@ analytics.group('companyId123', {
 });
 ```
 
-A `groupId` is required on all `group` calls sent to {{ integration.name}}. When you call `group` Segment will call both `setCompany` and `setAccountField` in the [Evergage library](https://doc.evergage.com/display/EKB/Send+Data+to+Evergage) to insert both the `groupId` and corresponding group traits into {{ integration.name}}.
+A `groupId` is required on all `group` calls sent to {{ integration.name}}. When you call `group` Segment will call both `setCompany` and `setAccountField` in the [Evergage library](https://doc.evergage.com/display/EKB/Send+Data+to+Evergage+via+JavaScript) to insert both the `groupId` and corresponding group traits into {{ integration.name}}.
 
 ## Track
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:

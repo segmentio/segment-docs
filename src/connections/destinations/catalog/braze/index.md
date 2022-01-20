@@ -30,7 +30,7 @@ For issues with iOS or Android platforms, contact Braze support. For issues with
 3. In the Destination Settings, add the **API Key**, found in the Braze Dashboard in *App Settings > Manage App Group*.
 4. Set up a new App Group REST API Key in the Braze Dashboard in *App Settings > Developer Console > API Settings*. For more information, see [Creating and Managing REST API Keys](https://www.braze.com/docs/api/basics/#creating-and-managing-rest-api-keys) in the Braze documentation. 
   - Select the `users.track` endpoint in the **User Data** section.
-5. If you're adding Braze using Analytics.js, Segment automatically loads the [Braze Web SDK](https://www.braze.com/documentation/Web/). Otherwise, depending on the source you've selected, include Braze's library by adding the following lines to your dependency configuration.
+5. If you're adding Braze using Analytics.js, Segment automatically loads the [Braze Web SDK](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup). Otherwise, depending on the source you've selected, include Braze's library by adding the following lines to your dependency configuration.
 
 
 ### iOS
@@ -250,7 +250,7 @@ The example above would have "Purchased Item" as its `productId` and includes tw
 - `revenue`
 - `currency`
 
-Braze supports currency codes as specified in [their Purchase Object Specification](https://www.braze.com/docs/developer_guide/rest_api/user_data/#purchase-object-specification). Be aware that any currency reported other than USD displays in [the Braze UI in USD based on the exchange rate on the date it was reported](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/analytics/logging_purchases/#logging-purchases).
+Braze supports currency codes as specified in [their Purchase Object Specification](https://www.braze.com/docs/api/objects_filters/purchase_object/). Be aware that any currency reported other than USD displays in [the Braze UI in USD based on the exchange rate on the date it was reported](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/analytics/logging_purchases/#logging-purchases).
 
 You can add more product details in the form of key-value pairs to the `properties` object. The following reserved keys are not passed to Braze if included in your Track call's `properties` object:
 
@@ -287,7 +287,7 @@ In-app messages are registered for and requested by default. Disable this featur
 
 #### Web
 
-Instructions on how to set this up within Braze can be found in their [docs](https://www.braze.com/academy/Best_Practices/#in-app-message-behavior). Once setup, it allows you to trigger in-app message display as a result of several different event types. By default, all In-App Messages that a user is eligible for are automatically delivered to the user upon a session start event. A new session automatically starts when a user loads your site. If you'd like to force a new session for a user, simply make an identify with the corresponding [userId](/docs/connections/spec/identify/#user-id) for that user.
+Once configured, you can trigger in-app message display as a result of several different event types. By default, all In-App Messages that a user is eligible for are automatically delivered to the user upon a session start event. A new session automatically starts when a user loads your site. If you'd like to force a new session for a user, simply make an identify call with the corresponding [userId](/docs/connections/spec/identify/#user-id) for that user.
 
 If you don't want your site to immediately display new In-App Messages when they're received, you can disable automatic display and register your own display subscribers. To do this:
 
@@ -354,7 +354,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
 #### Android
 
-1. Follow the directions in Braze's [push notification docs](https://www.braze.com/documentation/Android/#push-notifications).
+1. Follow the directions in Braze's [push notification docs](https://www.braze.com/docs/developer_guide/platform_integration_guides/android/push_notifications/android/implementation_guide/).
 2. If you don't have Braze automatically register for push (for example, you pass the push token from an FCM or manual GCM registration) you need to ensure you call `registerAppboyPushMessages` after Braze is initialized. You can do this by checking if Braze is initialized before trying to pass the push token, and waiting for initializing to set if not.
 
     You can do this in an `onIntegrationReady` method:
@@ -385,7 +385,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
 #### Client
 
-1. To support push notifications on Chrome, you'll need to enable FCM/GCM as well as configure your site. Check out steps [one and two here, for detailed instructions on both](https://www.braze.com/documentation/Web/#step-1-to-support-chrome-enable-fcmgcm).
+1. To support push notifications on Chrome, you'll need to enable FCM/GCM as well as configure your site. Check out steps [one and two here for detailed instructions on both](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-1-to-support-chrome-enable-fcmgcm).
 
 2. Browser Registration. In order for a browser to receive push notifications, you must register it for push by calling:
 
@@ -419,13 +419,13 @@ analytics.ready(function() {
 });
 ```
 
-3. Set your GCM/FCM server API key and SenderID on the Braze dashboard. You can find more details for this [here](https://www.braze.com/documentation/Web/#step-4-set-your-gcmfcm-server-api-key-and-senderid-on-the-Braze-dashboard).
+3. Set your GCM/FCM server API key and SenderID on the Braze dashboard. You can find more details for this [here](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-4-set-your-gcmfcm-server-api-key-and-senderid-on-the-Braze-dashboard).
 
-4. To support push notifications on Safari, add your Website Push ID into your Segment Settings UI and Segment sends it when the Braze Web SDK initializes. To get your Website Push ID, follow the first two bullet points in [these instructions](https://www.braze.com/documentation/Web/#step-5-configure-safari-push).
+4. To support push notifications on Safari, add your Website Push ID into your Segment Settings UI and Segment sends it when the Braze Web SDK initializes. To get your Website Push ID, follow the first two bullet points in [these instructions](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-5-configure-safari-push).
 
 ### Soft Push Prompts
 
-1. Follow [step one](https://www.braze.com/documentation/Web/#soft-push-prompts) to create a "Prime for Push" in-app messaging Campaign on the Braze dashboard.
+1. Follow [step one](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#soft-push-prompts) to create a "Prime for Push" in-app messaging Campaign on the Braze dashboard.
 
 2. Disable your [Automatically Send In-App Messages Destination setting](/docs/connections/destinations/catalog/braze/#settings). By default, it is enabled when you enable the Braze destination.
 
@@ -468,7 +468,7 @@ analytics.ready(function() {
  });
 ```
 
-For more details on this snippet, check out the Braze's docs [here](https://www.braze.com/documentation/Web/#soft-push-prompts).
+For more details on this snippet, check out Braze's docs [here](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#soft-push-prompts).
 
 **Note:** Place this snippet outside of your [Segment Snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) within your `script` tag.
 

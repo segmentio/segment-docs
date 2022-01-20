@@ -49,4 +49,4 @@ Additional Autopilot Tracking code will be required on your site to unlock the f
   - Triggering Headsup messages.
   - User association using the Autopilot Javascript library.
 
-For complete details, visit the Autopilot page [How to use Segment with Autopilot](https://autopilothq.zendesk.com/hc/en-us/articles/203658119).
+For complete details, visit the Autopilot page [How to use Segment with Autopilot](https://support.autopilothq.com/hc/en-us/articles/203658119).
