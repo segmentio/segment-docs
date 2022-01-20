@@ -561,7 +561,7 @@ _ga=GA1.2.1033501218.1368477899;
 
 The `clientId` is this part: `1033501218.1368477899`
 
-You can double check that it's your `clientId` by running this script in your Javascript console:
+You can double check that it's your `clientId` by running this script in your JavaScript console:
 
 ```javascript
 ga(function (tracker) {
