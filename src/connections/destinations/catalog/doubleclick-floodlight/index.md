@@ -1,6 +1,7 @@
 ---
 title: DoubleClick Floodlight Destination
 strat: google
+cmode-override: true 
 ---
 
 The [DoubleClick Floodlight](https://support.google.com/searchads/answer/7298761?hl=en) destination allows you to make calls directly to Floodlight based on your mapped events. All you have to do is enter your **DoubleClick Advertiser ID** in the Doubleclick Floodlight destinations settings in the Segment App, then map the Segment `track` events to their corresponding Floodlight tags.

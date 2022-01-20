@@ -29,6 +29,7 @@ analytics.track("User Registered", {
   accountType: "Facebook"
 });
 ```
+{% include content/syntax-note.md %}
 
 Beyond the common fields, the `track` call has the following fields:
 
