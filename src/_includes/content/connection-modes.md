@@ -1,12 +1,17 @@
 <!-- in the file we're pulling from the API, "name" corresponds with the path to the yml blob for a specific destination.-->
 {% assign currentSlug = page.url | split: "/" | last %}
-{% if page.cmode-override %}
-{% assign currentIntegration = site.data.catalog.overrides.items | where: "slug", currentSlug | first %}
-{% else %}
-{% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
-{% endif %}
+{% assign overrideInfo = site.data.catalog.overrides.items % | where: "slug", currentSlug | first %}
 
+
+
+{% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
+
+
+{% if page.cmode-override %}
+{% assign connectionModes = overrideInfo.connection_modes %}
+{% else %}
 {% assign connectionModes = currentIntegration.connection_modes %}
+{% endif %}
 
 {% if currentIntegration.components.size > 0 %}
 <!--don't show a blank table if we can't find any info about these. -->

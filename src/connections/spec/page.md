@@ -26,6 +26,7 @@ And here's the corresponding JavaScript event that would generate the above payl
 ```js
 analytics.page("Retail Page","Home");
 ```
+{% include content/syntax-note.md %}
 
 Beyond the common fields, the `page` call takes the following fields:
 
