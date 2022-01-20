@@ -48,6 +48,7 @@ analytics.identify("97980cfea0067", {
   logins: 5
 });
 ```
+{% include content/syntax-note.md %}
 
 Beyond the common fields, an `identify` call has the following fields:
 

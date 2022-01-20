@@ -32,6 +32,7 @@ Here's the corresponding Javascript event that would generate the above payload.
 ```js
 analytics.alias("507f191e81");
 ```
+{% include content/syntax-note.md %}
 
 Beyond the common fields, the `alias` call takes the following fields:
 
