@@ -46,7 +46,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.page();
 ```
 
-We've mapped `analytics.page()` to [Facebook's `fbq('track', "PageView")`](https://developers.facebook.com/docs/ads-for-websites/pixel-events/v2.11) method and will forward all page views accordingly. Note that the integration will ignore any parameters you pass to `analytics.page()`.
+Segment maps `analytics.page()` to Facebook's `fbq('track', "PageView")` method and will forward all page views accordingly. Note that the integration will ignore any parameters you pass to `analytics.page()`.
 
 ## Identify
 
