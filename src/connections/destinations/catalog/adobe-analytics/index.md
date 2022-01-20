@@ -145,7 +145,7 @@ Segment's server-side integration is not open-source. Let's explore what happens
 
    **Important**: The Android library can collect the `userAgent` automatically - however, the iOS library cannot do so. However, since Segment does collect other contextual metadata about a device, it can render a valid iOS userAgent string to populate your Mobile Web Reports.
 
-6. If you are using the Marketing Cloud ID Service, you can pass the **Marketing Cloud Visitor ID** as an destination specific setting and which Segment sets as `<marketingCloudVisitorID>`.
+6. If you are using the Marketing Cloud ID Service, you can pass the **Marketing Cloud Visitor ID** as a destination specific setting and which Segment sets as `<marketingCloudVisitorID>`.
 
  (In Node.js)
  ```javascript
