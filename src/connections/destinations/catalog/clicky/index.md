@@ -7,8 +7,6 @@ rewrite: true
 
 Our Clicky destination code is open-source on GitHub. You can check out the code [here](https://github.com/segment-integrations/analytics.js-integration-clicky).
 
-This document was last updated on July 30th, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 
 ## Getting Started
 

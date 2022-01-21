@@ -5,8 +5,6 @@ rewrite: true
 
 [Evergage](https://www.evergage.com/) offers a cloud-based platform that empowers digital marketers to increase engagement and conversions through real-time 1:1 personalization. The `analytics.js` Evergage Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-evergage).
 
-This document was last updated on January 8, 2021. 
-
 > warning "The Evergage destination has been deprecated"
 > The Evergage Destination was deprecated on January 8, 2021 and is no longer supported or maintained. It is no longer available in the Segment catalog, but remains available to existing users.
 

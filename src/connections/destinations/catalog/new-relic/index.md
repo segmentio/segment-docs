@@ -4,8 +4,6 @@ title: New Relic Destination
 ---
 [New Relic](https://newrelic.com/) enables you to better understand, using their real-time analytics, the end-to-end business impact of your software performance.
 
-This document was last updated on August 29, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 ## Getting Started
 
 {% include content/connection-modes.md %}

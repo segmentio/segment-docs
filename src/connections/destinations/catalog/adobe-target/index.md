@@ -10,8 +10,7 @@ published: false
 coding and set up hassles of A/B testing to help you quickly discover which
 offers, experiences and messages truly engage your visitors.
 
-_**NOTE:** Adobe Target is currently in beta, and this doc was last
-updated on March 7, 2018. This means that there may still be some bugs for us to
+_**NOTE:** Adobe Target is currently in beta. This means that there may still be some bugs for us to
 iron out, and we're excited to hear your thoughts. If you are interested in
 joining or have any feedback to help us improve the Adobe Target
 Destination and its documentation, [let us know](https://segment.com/help/contact)!_

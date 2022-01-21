@@ -6,8 +6,6 @@ maintenance: true
 
 [Slack](https://slack.com/) is a team collaboration tool where work flows. It's where the people you need, the information you share, and the tools you use come together to get things done.
 
-This document was last updated on January 25, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 ## Getting Started
 
 {% include content/connection-modes.md %}

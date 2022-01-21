@@ -6,8 +6,6 @@ title: Yandex.Metrica Destination
 
 Our Yandex.Metrica destination code is open sourced on GitHub. Feel free to check it out here for [Javascript](https://github.com/segment-integrations/analytics.js-integration-yandex-metrica).
 
-This document was last updated on January 18, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 ## Getting Started
 
 1. From the Segment web app, click **Catalog**.

@@ -7,8 +7,6 @@ title: Zendesk Chat (Zopim) Destination
 
 **NOTE:** Zendesk Chat currently offers [two types of widgets](https://support.zendesk.com/hc/en-us/articles/115007912068-Using-the-Chat-JavaScript-API): a standalone `Chat Widget`, which is mainly designed to provide chat related features, and a `Web Widget`, which incorporates both Zendesk Chat and Zendesk Support functionalities. At the moment, Segment only supports the `Chat Widget`. For more details refer to the "Getting Started" section below.
 
-This document was last updated on June 11th, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 ## Getting Started
 
 {% include content/connection-modes.md %}

@@ -5,8 +5,6 @@ rewrite: true
 
 [FoxMetrics](https://www.foxmetrics.com/) is a personalization platform that allows users to collect & analyze customer actions through computers, mobile, and web applications. The `analytics.js` FoxMetrics destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-foxmetrics).
 
-This document was last updated on October 15, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 ## Getting Started
 
 {% include content/connection-modes.md %}

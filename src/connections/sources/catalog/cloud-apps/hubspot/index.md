@@ -7,8 +7,6 @@ rewrite: true
 
 Are you trying to set up HubSpot as a destination to receive data from Segment? Go here [HubSpot Destination](https://segment.com/docs/connections/destinations/catalog/hubspot/).
 
-This document was last updated on July 10, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 ## Getting Started
 
 1. From your workspace's `/sources` page, click `add source`.
