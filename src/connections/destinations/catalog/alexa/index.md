@@ -4,7 +4,6 @@ title: Alexa Destination
 ---
 [Alexa](https://www.alexa.com/) helps improve your website's SEO and conduct competitive analysis. They help your business get better marketing results. The Alexa Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-alexa).
 
-This document was last updated on October 16, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 

@@ -6,8 +6,6 @@ strat: facebook
 
 Facebook is one of the most efficient ways to advertise online. Take your company's analysis to the next level by adding [Facebook Ads](https://www.facebook.com/business/products/ads) as a Source to Segment.
 
-This document was last updated on July 6, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 ## Getting Started
 
 1. From your workspace's `/sources` page, click `add source`.

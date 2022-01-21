@@ -5,8 +5,6 @@ rewrite: true
 
 [Heap](https://heapanalytics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) automatically captures every user interaction with no extra code. This includes clicks, taps, gestures, form submissions, page views, and more. The Heap Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-heap).
 
-This document was last updated on January 29, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact/)!
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
