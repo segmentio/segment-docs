@@ -549,10 +549,11 @@ To use server-side Google Universal Analytics, there are three options with Segm
 
 ### Passing Cookies from Universal Analytics
 
-Universal Analytics (analytics.js) uses the [`clientId`](https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage#analyticsjs) to keep track of unique visitors.
-
 > info " "
 > When you add `Google Universal Analytics` to the `integrations` object, the Google Universal Analytics event appears in the Segment debugger as `Google Analytics`. 
+
+Universal Analytics (analytics.js) uses the [`clientId`](https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage#analyticsjs) to keep track of unique visitors.
+
 
 *A Google Analytics Universal cookie will look like this:*
 ```
