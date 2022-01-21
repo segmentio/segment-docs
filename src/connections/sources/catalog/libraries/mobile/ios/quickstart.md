@@ -26,7 +26,7 @@ When you create a Source in the Segment web app, it tells the Segment servers th
 
 ## Step 2: Install the SDK
 
-The recommended way to install Analytics for iOS is using [Cocoapods](http://cocoapods.org/), since it means you can create a build with specific bundled destinations, and because it makes it simple to install and upgrade.
+Segment recommends you to install Analytics for iOS by using either [Cocoapods](http://cocoapods.org/) or your Swift Package Manager, since it means you can create a build with specific bundled destinations, and because it makes it simple to install and upgrade.
 
 First, add the `Analytics` dependency to your `Podfile` by adding the following line:
 
@@ -94,7 +94,7 @@ Now that the SDK is installed and set up, you’re ready to start making calls.
 The `identify` method informs Segment who the current user is. It takes a unique User ID, and any optional traits you know about them. You can read more about it in the [identify reference](/docs/connections/sources/catalog/libraries/mobile/ios#identify).
 
 Here’s what a basic call to `identify` might look like:
- 
+
 {% codeexample %}
 {% codeexampletab Swift %}
 ```swift
@@ -225,4 +225,3 @@ Analytics.shared().flush()
 ## What’s Next?
 
 We just walked through the quickest way to get started with Segment using Analytics for iOS. You might also want to check out our full [Analytics for iOS reference](/docs/connections/sources/catalog/libraries/mobile/ios) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/server/http-api/) to get a sense for the bigger picture.
-
