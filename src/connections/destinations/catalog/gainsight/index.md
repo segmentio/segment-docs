@@ -5,8 +5,6 @@ rewrite: true
 
 [Gainsight](https://www.gainsight.com/) is a customer success software that empowers companies to increase revenue, decrease customer churn, and drive advocacy. Gainsight for Analytics Cloud is the first and only solution that runs predictive data science natively using Salesforce sales, service, marketing, and community data.
 
-This document was last updated on October 18, 2018. If you notice any gaps, outdated information, or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 
 ## Getting Started
 

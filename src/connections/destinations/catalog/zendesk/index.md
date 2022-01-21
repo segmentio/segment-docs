@@ -5,8 +5,6 @@ title: Zendesk Destination
 
 [Zendesk](https://www.zendesk.com/support/documentation/) is a premier, cloud-based customer service application. It was designed with one purpose in mind: to improve communication between a company and its customers. Their products allow businesses to be more reliable, flexible, and scalable. They help improve communication and make sense of massive amounts of data. Above all, they work together to build the best experience for your customers.
 
-This document was last updated on April 30, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 
 ## Getting Started
 

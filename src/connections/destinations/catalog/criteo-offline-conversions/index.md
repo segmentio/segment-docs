@@ -8,8 +8,6 @@ hide-personas-partial: true
 
 The Criteo Offline Conversions Destination and this document are maintained by Criteo. For any issues with the destination, [let the Criteo team know](mailto:support@criteo.com)!
 
-This document was last updated on January 8, 2020. If you notice any gaps, out-dated information, or simply want to leave some feedback to help us improve our documentation, [let  us know](mailto:support@criteo.com)!
-
 
 ## Getting Started
 
