@@ -8,8 +8,6 @@ This destination is maintained by Autopilot.  See [Autopilot's documentation](ht
 
 Are you instead trying to set up Autopilot as a Source to get data from Autopilot into your data warehouse or other downstream tools? See our documentation on our [Autopilot source](/docs/connections/sources/catalog/cloud-apps/autopilothq/) instead.
 
-This document was last updated on October 12, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
@@ -49,4 +47,4 @@ Additional Autopilot Tracking code will be required on your site to unlock the f
   - Triggering Headsup messages.
   - User association using the Autopilot Javascript library.
 
-For complete details, visit the Autopilot page [How to use Segment with Autopilot](https://autopilothq.zendesk.com/hc/en-us/articles/203658119).
+For complete details, visit the Autopilot page [How to use Segment with Autopilot](https://support.autopilothq.com/hc/en-us/articles/203658119).

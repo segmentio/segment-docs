@@ -7,11 +7,9 @@ cmode-override: true
 
 [Intercom](https://www.intercom.com/) makes customer messaging apps for sales, marketing, and support, connected on one platform. The Intercom Destination is open-source. You can browse the code for [analytics.js](https://github.com/segment-integrations/analytics.js-integration-intercom), [iOS](https://github.com/segment-integrations/analytics-ios-integration-intercom) and [Android](https://github.com/segment-integrations/analytics-android-integration-intercom) on GitHub.
 
-This document was last updated on March 11, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 ## Getting Started
 
-The first step is to make sure Intercom supports the source type and connection mode you've chosen to implement. You can learn more about what dictates [the connection modes we support here](/docs/destinations#connection-modes).
+The first step is to make sure Intercom supports the source type and connection mode you've chosen to implement. You can learn more about what dictates [the connection modes we support here](/docs/connections/destinations/#connection-modes).
 
 <table>
   <tr>
@@ -224,7 +222,7 @@ Because our server-side libraries batch calls by default, it is possible for an 
 
 [Adding a Flush method](/docs/connections/sources/catalog/libraries/server/node#batching) immediately following the `identify`, and before any additional `track` events helps ensure that the `identify` call reaches Intercom first to create the user. Generally, this is enough to prevent the race condition, but you can add an extra timeout if necessary.
 
-If you still see issues, the `identify` call is most likely either not reaching Intercom at all, or is arriving too late after a subsequent [retry](/docs/connections/destinations#retries). In cases like this you can use our [Event Delivery functionality](/docs/guides/destinations/how-do-i-check-if-data-is-successfully-being-delivered-to-my-destination/) to check for recent errors, and get some insight into how to prevent errors in the future.
+If you still see issues, the `identify` call is most likely either not reaching Intercom at all, or is arriving too late after a subsequent [retry](/docs/connections/destinations#retries). In cases like this you can use our [Event Delivery functionality](/docs/connections/event-delivery/) to check for recent errors, and get some insight into how to prevent errors in the future.
 
 ## Group
 

@@ -63,7 +63,7 @@ Segment cannot guarantee that data is deleted from your Destinations. When you i
 ### Which destinations require additional destination setting configuration?
 
 #### Amplitude
-If you have the Amplitude destination enabled in one or more sources, you must include Amplitude's secret key in each destination(s) settings so they can accept the deletion request. (You add it in the Amplitude destination settings, under "Secret Key"). You can find your Secret Key on the [General Settings](https://amplitude.zendesk.com/hc/en-us/articles/235649848-Settings#project-general-settings) of your Amplitude project.
+If you have the Amplitude destination enabled in one or more sources, you must include Amplitude's secret key in each destination(s) settings so they can accept the deletion request. (You add it in the Amplitude destination settings, under "Secret Key"). You can find your Secret Key on the [General Settings](https://help.amplitude.com/hc/en-us/articles/235649848-Settings) of your Amplitude project.
 
 #### Google Analytics
 To send user deletion requests to Google Analytics you must authenticate your Google Analytics account with Segment using OAuth. If you have the Google Analytics destination enabled in one or more sources, you must authenticate your account in each destination(s) settings. Navigate to the **User Deletion** settings in your Segment Google Analytics settings and use your email and password to authenticate your account.

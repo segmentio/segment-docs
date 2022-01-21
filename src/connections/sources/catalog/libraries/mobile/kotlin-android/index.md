@@ -25,14 +25,14 @@ To get started with the Analytics-Kotlin mobile library:
     2. Search for **Kotlin (Android)** and click **Add source**.
 2. Add the Analytics dependency to your build.gradle.
 
-    Segment recommends you to install the library with a build system like Gradle, as it simplifies the process of upgrading versions and adding integrations. The library is distributed through [Jitpack](https://jitpack.io/){:target="_blank"}. Add the analytics module to your build.gradle as a dependency as shown in the code sample below.
+    Segment recommends you to install the library with a build system like Gradle, as it simplifies the process of upgrading versions and adding integrations. The library is distributed through [Maven Central](https://repo1.maven.org/maven2/com/segment/analytics/kotlin/android/){:target="_blank"}. Add the analytics module to your build.gradle as a dependency as shown in the code sample below, and replace `<latest_version>` with the latest version listed on Segment's [releases page](https://github.com/segmentio/analytics-kotlin/releases){:target="_blank"}
 
     ```
     repositories {
-      maven { url 'https://jitpack.io' }
+      mavenCentral()
     }
     dependencies {
-        implementation 'com.github.segmentio.analytics-kotlin:android:+'
+        implementation 'com.segment.analytics.kotlin:android:<latest_version>'
     }
     ```
 
@@ -42,6 +42,7 @@ To get started with the Analytics-Kotlin mobile library:
 
     ```java
       // Create an analytics client with the given application context and Segment write key.
+      // NOTE: in android, application context is required to pass as the second parameter. 
       Analytics("YOUR_WRITE_KEY", applicationContext) {
           // Automatically track Lifecycle events
           trackApplicationLifecycleEvents = true
@@ -50,7 +51,8 @@ To get started with the Analytics-Kotlin mobile library:
       }
     ```
 
-    Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) is optional, but Segment highly recommends you to configure these options in order to track core events.
+    **Note: If you're on an Android platform, you must add the application context as the second parameter.**
+    <br>Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) is optional, but Segment highly recommends you to configure these options in order to track core events.
 
     <br>**Note:** Unlike the Analytics-Android SDK, the Analytics-Kotlin SDK doesn’t provide a singleton instance and relies on you to keep track of the instance.
 
@@ -67,7 +69,7 @@ To get started with the Analytics-Kotlin mobile library:
     `flushAt` | Default set to `20`. <br> The count of events at which Segment flushes events. |
     `flushInterval` | Default set to `30` (seconds). <br> The interval in seconds at which Segment flushes events. |
     `recordScreenViews` | Default set to `false`. <br> Set to `true` to automatically trigger screen events on Activity Start. |
-    `storageProvider` | Default set to `ConcreteStorageProvider`. <br> The provider for storage class. It’s best not to modify this as it can disrupt your storage logic and you won’t be able to correctly store events. |
+    `storageProvider` | Default set to `ConcreteStorageProvider`. <br> In Android, this must be set to `AndroidStorageProvider`. The `Analytics` constructors configure this automatically. |
     `trackApplicationLifecycleEvents` | Default set to `false`. <br> Set to `true` to automatically track Lifecycle events. |
     `trackDeepLinks` | Default set to `false`. <br> Set to `true` to automatically track opened Deep Links based on intents. |
     `useLifecycleObserver` | Default set to `false`. <br> Set to `true` to use `LifecycleObserver` to track Application lifecycle events. |
@@ -80,9 +82,11 @@ To get started with the Analytics-Kotlin mobile library:
     <!-- Required for internet. -->
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <!--  Required to compute device Id, not providing this will not break your implementation -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     ```
+
+5. Enable Java 8+ API desugaring.
+   
+    The SDK internally uses a number of Java 8 language APIs through desugaring. Make sure your project either [enables desugaring](https://developer.android.com/studio/write/java8-support#library-desugaring)) or requires a minimum API level of 26.
 
 ## Tracking Methods
 
@@ -439,6 +443,9 @@ To test your destination:
 4. Commit your changes.
 
 Segment recommends you to test your destination implementation end-to-end. Send some sample analytics events and ensure that they reach the destination.
+
+## Compatibility
+If you use a Java codebase, please refer to the [Java Compatibility docs](https://github.com/segmentio/analytics-kotlin/blob/main/JAVA_COMPAT.md){:target="_blank"} for sample uses.
 
 ## Changelog
 [View the Analytics-Kotlin changelog on GitHub](https://github.com/segmentio/analytics-kotlin/releases).

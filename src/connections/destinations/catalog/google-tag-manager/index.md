@@ -6,8 +6,6 @@ strat: google
 
 [Google Tag Manager](https://support.google.com/tagmanager) (GTM) is a tag management system that allows you to quickly and easily update tags and code snippets on your website or mobile apps. Once you add the Tag Manager snippet to your website or mobile app, you can configure tags using a web-based user interface without having to alter and deploy additional code. This reduces errors and frees you from having to involve a developer whenever you need to make changes. The Google Tag Manager Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-google-tag-manager).
 
-This document was last updated on April 30, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 
 ## Getting Started
 

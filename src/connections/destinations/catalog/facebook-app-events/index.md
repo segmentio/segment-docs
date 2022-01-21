@@ -6,8 +6,6 @@ strat: facebook
 
 [Facebook App Events](https://developers.facebook.com/docs/app-events) collects required information from one of Segment's mobile SDKs ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](/docs/connections/sources/catalog/libraries/mobile/android/)) and sends it from Segment's servers to Facebook App Events servers. This *server-to-server* connection will not work with our server-side libraries. The Facebook App Events Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-facebook-app-events).
 
-This document was last updated on October 04, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 
 ## Other Facebook Destinations Supported by Segment
 This page is about the **Facebook App Events**. For documentation on other Facebook destinations, see the pages linked below.

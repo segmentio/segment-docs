@@ -24,6 +24,7 @@ And here's the corresponding Objective-C event that would generate the above pay
 [[SEGAnalytics sharedAnalytics] screen:@"Home"
                             properties:@{ @"Feed Type": @"private" }];
 ```
+{% include content/syntax-note.md %}
 
 Beyond the common fields, the `screen` call takes the following fields:
 

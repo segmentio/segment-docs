@@ -1,0 +1,22 @@
+{% assign actionsDests = site.data.catalog.destinations.items %}
+
+
+<table>
+<thead>
+  <tr>
+    <th>Destination</th>
+    <th>Status</th>
+  </tr>
+</thead>
+<tbody>
+  {% for dest in actionsDests %}
+  {% if dest.actions.size > 0 || dest.actions.presets.size > 0%}
+  <tr>
+    <td><a href="/docs/{{dest.url}}">{{dest.name}}</a></td>
+    <td>{% if dest.status == "PUBLIC_BETA" %}Beta {% else %} GA {%endif%}</td>
+  </tr>
+  {% endif %}
+  {% endfor %}
+</tbody>
+</table>
+

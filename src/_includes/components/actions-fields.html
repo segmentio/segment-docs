@@ -8,7 +8,7 @@
 {% assign actions = currentIntegration.actions %}
 {% assign presets = currentIntegration.presets %}
 
-{% if conn == "true" %}
+{% if settings.size > 0 %}
 ### Destination Settings
 
 <table >
@@ -29,7 +29,7 @@
 </table>
 
 
-{% else %}
+{% endif %}
 
 
 {% if presets.size > 0 %}
@@ -79,8 +79,8 @@ Build your own subscriptions! Combine supported [triggers](/docs/connections/des
 
 
 {% if action.fields.size > 0 %}
-<p class="button button-fill button-fill--white" data-toggle="collapse" data-target=".settings-content-{{action.slug}}">Click to expand fields</p>
-<div class="collapse settings-content-{{action.slug}}">
+<p class="button button-hollow" data-toggle="collapse" data-target=".settings-content-{{action.slug}}">Click to show / hide fields</p>
+<div class="collapse settings-content-{{action.slug}} show">
 <table id="settingsTable">
   <thead>
     <tr>
@@ -115,4 +115,3 @@ This action does not have any fields.
 
 {% endfor %}
 
-{% endif %}

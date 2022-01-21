@@ -7,8 +7,6 @@ rewrite: true
 
 Our Flurry destination code is open sourced on GitHub. Feel free to check it out: [iOS](https://github.com/segment-integrations/analytics-ios-integration-flurry), [Android](https://github.com/segment-integrations/analytics-android-integration-flurry).
 
-This document was last updated on January 10, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 ## Getting Started
 
 {% include content/connection-modes.md %}

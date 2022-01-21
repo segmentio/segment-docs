@@ -76,6 +76,72 @@ To publish and activate a Journey, click **Publish Journey** from the Journey Ov
 > info ""
 > After publication, Segment limits which Journeys features you can edit. For more information, see the difference between Draft and Published Journeys below.
 
+## Journey re-entry
+
+The Journeys re-entry setting allows users to repeat Journeys they've already exited. Common use cases for Journeys re-entry include the following:
+
+- Retargeting users who abandon multiple carts
+- Recurring rewards and promotion offers
+- Notifying users when to renew a subscription
+
+### Exit and re-entry times
+
+To enable re-entry, you'll need to specify two Journeys settings:
+
+- Journeys exit time
+- Journeys re-entry time
+
+Users must first exit a Journey before re-entering. To enable re-entry, then, you'll need to specify a Journey's exit settings. You can configure exit by hour, day, or week. Journeys exits users once this time passes, allowing users to re-enter once they meet the Journey's entry conditions again.
+
+You'll also configure re-entry time by hour, day, or week. An exited user won't re-enter the same Journey until the re-entry time has passed. Re-entry time begins once a user exits the Journey.
+
+Suppose, for example, you enable re-entry for an abandoned cart campaign. You set exit to one week and re-entry to 30 days. A user who abandons their cart will progress through the Journey and exit no later than one week after entering. Once 30 days after exit have passed, the user can re-enter the Journey.
+
+### Setting up re-entry
+
+To enable Journey re-entry for a new Journey, follow these steps:
+
+1. Select the **Journeys** tab within your Personas space, then click **New Journey**.
+2. Under **Entry settings**, select **Re-Entry** and enter a re-entry time.
+3. Under **Exit settings**, enter an exit time.
+4. Click **Build Journey** to complete Journey setup.
+
+To enable Journey re-entry for an existing Journey, follow these steps:
+
+1. Select the **Journeys** tab within your Personas space.
+2. Select the Journey for which you want to enable re-entry.
+3. Select the **Settings** tab from the Journey overview.
+4. Under **Entry settings,** select **Re-Entry** and enter a re-entry time.
+5. Under **Exit settings**, enter an exit time.
+6. Click **Update Settings**.
+
+## Pausing and resuming a Journey
+
+Pausing a published Journey prevents new users from joining your Journey. Users already in the Journey, however, will continue their progress.
+
+Follow these steps to pause a Journey:
+
+1. Select the **Journeys** tab within your Personas space.
+2. Select the **More Options** icon next to the Journey you want to pause.
+3. From the dropdown menu, select **Pause Entry**.
+4. A modal window appears. Select **Pause Entry** again to confirm.
+
+> info "Compute Limits"
+> Because pausing only affects new Journey members, paused Journeys still count towards compute credit limits.
+
+### Resuming a Journey
+
+You can resume new user entries to a paused Journey at any time. 
+
+After you resume a Journey, users who meet the Journey's entry conditions will join the Journey. New users will not enter the Journey, however, if they met its entry conditions while it was paused. 
+
+Follow these steps to resume entry to a paused Journey:
+
+1. Select the **Journeys** tab within your Personas space.
+2. Select the **More Options** icon next to the Journey you want to resume.
+3. From the dropdown menu, select **Resume Entry**.
+4. A modal window appears. Select **Resume Entry** again to confirm.
+
 ### Drafting a Journey
 
 When you’ve finished creating your Journey, click **Save as Draft** in the bottom-right corner.
@@ -84,7 +150,7 @@ When you’ve finished creating your Journey, click **Save as Draft** in the bot
 - Journeys estimates user counts only for the entry step.
 - Journeys doesn't send data to connected Destinations.
 
-### About Published Journeys
+### About published Journeys
 
 Keep the following considerations in mind when working with a published Journey:
 

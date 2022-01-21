@@ -101,8 +101,6 @@ Note that this funnel is only looking customers who went through these events in
 
 At first glance, it appears that the group that was emailed did receive an absolute number of more conversions. However, these funnels are still inconclusive, given that we haven't explored the impact on the top line revenue, as well as overall engagement with the brand. Fortunately, we can continue to use Amplitude to analyze impact on revenue itself, though we won't go into detail here.
 
-[Learn more about how to use Amplitude to measure revenue.](https://amplitude.zendesk.com/hc/en-us/articles/230910368-Amplitude-2-0-Revenue-Analysis)
-
 ## Find new ways and channels to retain your most valuable customers
 
 Retaining and rewarding your customers is paramount to a strong and engaging brand. This example is just one of millions that you can employ to find new ways to delight and excite your customer base.

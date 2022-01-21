@@ -5,8 +5,6 @@ title: Userlike Destination
 
 [Userlike](https://www.userlike.com/en/) is B2C live chat software optimized for website and messenger support - it enables real-time analysis, so you can see web visitors and actions taken. Our Userlike destination code is open source and is viewable [here](https://github.com/segment-integrations/analytics.js-integration-userlike).
 
-This document was last updated on October 22, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 ## Getting Started
 
 {% include content/connection-modes.md %}

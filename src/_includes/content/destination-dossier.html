@@ -43,11 +43,11 @@
 <h6>Components</h6>
 <ul class="components-list">
 {%for component in components %}
-{% if component.code contains "/segment-integrations/" %}
+{% unless component.code contains "/segmentio/" %}
 <li><a href="{{component.code}}" target="_blank">{% if component.type == "IOS" %}iOS{%else%}{{component.type | capitalize}}{%endif%}</a></li>
 {% else %}
 <li>{% if component.type == "IOS" %}iOS{%else%}{{component.type | capitalize}}{%endif%}</li>
-{% endif %}
+{% endunless %}
 {% endfor %}
 </ul>
 

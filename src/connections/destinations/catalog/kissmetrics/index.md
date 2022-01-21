@@ -4,8 +4,6 @@ rewrite: true
 ---
 [Kissmetrics](https://www.kissmetricshq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a behavioral email and analytics platform. It pulls cross-platform behavior reports so marketers can analyze key audience growth segments. It also provides an overview of custom populations, population change and growth, so marketers can analyze populations from customers who have completed actions or events.
 
-This document was last updated on July 3, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact/)!
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
