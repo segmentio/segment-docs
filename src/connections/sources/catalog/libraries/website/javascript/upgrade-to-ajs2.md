@@ -57,4 +57,4 @@ Analytics.js 2.0 asynchronously loads different pieces of the library as needed.
 
 ### Using trackLink on elements that are not links
 
-Previously, it was possible to attach `trackLink` to any element, and a trackLink call would fire for that element if it wasn't a link. Now, when you attach `trackLink` to an element, if that element is not a link, an additional search of that element’s children occurs to see if it contains any nested links and fires track calls based off of those links. If you wish to fire track calls on non-link elements that have links as children, you can use a `track` call instead.
+Previously, it was possible to attach `trackLink` to any element, and a `trackLink` call would fire for that element if it wasn't a link. Now, when you attach `trackLink` to an element, if that element is not a link, an additional search of that element’s children occurs to see if it contains any nested links and fires track calls based off of those links. If you wish to fire track calls on non-link elements that have links as children, you can use a `track` call instead.
