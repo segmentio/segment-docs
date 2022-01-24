@@ -25,7 +25,7 @@ StackAdapt (Actions) provides the following benefits:
 
 - **Event & Page View Tracking**: Leverage the StackAdapt Pixel for event and page view tracking
 - **Audience Retargeting**: Use pixel data to create lookalike audiences
-- **Reporting**. Consolidate all conversion and other media metrics into one platform, for a robust reporting solution
+- **Reporting**: Consolidate all conversion and other media metrics into one platform, for a robust reporting solution
 
 <!-- The section below explains how to enable and configure the destination. Include any configuration steps not captured below. For example, obtaining an API key from your platform and any configuration steps required to connect to the destination. -->
 
