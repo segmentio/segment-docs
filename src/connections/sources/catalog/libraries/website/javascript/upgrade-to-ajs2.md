@@ -17,7 +17,7 @@ To upgrade a source to Analytics.js 2.0:
 6. Open the Debugger to ensure that events are flowing as expected.
 
 > info ""
-> If you set `'Segment.io:' false` in the integrations object, Analytics.js 2.0 drops the event before it reaches the Source Debugger. 
+> If you set `'Segment.io:' false` in the integrations object, Analytics.js 2.0 drops the event before it reaches the Source Debugger.
 
 ## Automatic migration
 
@@ -54,3 +54,7 @@ Analytics.js 2.0 asynchronously loads different pieces of the library as needed.
 - `https://cdn.segment.com/v1/projects/<WRITE_KEY>/settings`
 - `https://cdn.segment.com/analytics-next/bundles/*`
 - `https://cdn.segment.com/next-integrations/integrations/*`
+
+### Using trackLink on elements that are not links
+
+Previously, it was possible to attach `trackLink` to any element, and a `trackLink` call would fire for that element if it wasn't a link. Now, when you attach `trackLink` to a non-link element, an additional search of that element’s children occurs for any nested links and fires track calls based on those links. If you wish to fire track calls on non-link elements that have links as children, you can use a `track` call instead.
