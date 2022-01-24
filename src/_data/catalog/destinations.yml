@@ -27320,7 +27320,7 @@ items:
     type: boolean
     defaultValue: false
     description: >-
-      By default, we set the `amount` as the subtotal without the discount, but
+      By default, we set the `amount` as the subtotal (equal to the order total after discounts but before taxes and shipping), but
       this might cause problems for sources like Shopify. If you need to provide
       the amount in the total property directly, enable this setting.
     required: false
