@@ -8,7 +8,7 @@ Facebook Lead Ads help you capture contact information from people who have expr
 
 Segment lets you make the most of your leads by automatically sending them to your business tools like CRM and email. Importantly, these destinations allow you to contact customers in real-time using your communication platform of choice, whether you've promised them a demo, a newsletter, a piece of content, or a call from a salesperson.
 
-This source is maintained by Facebook. For any issues with the source, you may [contact the Facebook Support team](mailto:supportemail@email.com).
+This source is maintained by Facebook. For any issues with the source, you should contact the Facebook Support team.
 
 {% include content/beta-note.md %}
 
