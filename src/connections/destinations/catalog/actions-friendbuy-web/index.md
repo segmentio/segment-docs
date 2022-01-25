@@ -5,6 +5,8 @@ hide-dossier: true
 hidden: true
 ---
 
+<!-- The published version of this document is available at https://segment.com/docs/connections/destinations/catalog/actions-friendbuy-web/ -->
+
 {% include content/plan-grid.md name="actions" %}
 
 [Friendbuy](https://www.friendbuy.com/){:target='_blank'} is a referral marketing platform.
