@@ -170,13 +170,6 @@ In this example, creating or updating a Contact in Salesforce based on whether o
 
 ## Troubleshooting
 
-### Creating Other Resources
-
-To reduce the complexity of the API, the Salesforce destination intentionally only supports creating leads using the `identify` call.
-
-To create resources of other types, such as Accounts or custom objects, Segment recommends that you integrate with Salesforce directly
-
-
 ### Sandbox Mode
 
 To enable an integration with a Salesforce Sandbox instance:
