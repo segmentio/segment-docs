@@ -11,13 +11,16 @@ hidden: true
 
 [Friendbuy](https://www.friendbuy.com/){:target='_blank'} is a referral marketing platform.
 
-Friendbuy's Segment integration allows you to enable your Friendbuy referral program through Segment's dashboard instead of adding Friendbuy's JavaScript directly to your site.
+Friendbuy's web mode Segment integration allows you to enable your Friendbuy referral program through Segment's dashboard instead of adding Friendbuy's JavaScript directly to your site.
 
-Friendbuy's Segment integration is implemented as a Segment browser [destination action](/docs/connections/destinations/actions/) that loads and configures Friendbuy's JavaScript for you. If you're already using Segment's Analytics.js to identify your customers and track their purchases, either directly or through Segment source integrations that you've installed, you can configure Segment to send this data to Friendbuy and use in your referral program.
+This Segment integration is a web mode [destination action](/docs/connections/destinations/actions/) that loads and configures Friendbuy's JavaScript for you. If you're already using Segment's Analytics.js to identify your customers and track their purchases, either directly or through Segment source integrations that you've installed, you can configure Segment to send this data to Friendbuy for use in your referral program.
+
+> warning ""
+> The Friendbuy JavaScript will not be loaded unless at least one Mapping is enabled.  Even if you are not sending data to Friendbuy through Analytics.js calls, if you are using Segment to load the Friendbuy JavaScript you must define and enable at least one Mapping.  A safe mapping to enable is the pre-built **Track Page** mapping.
 
 ## Overview
 
-The Friendbuy destination sends information about your customers and their actions to Friendbuy. It supports the following [Friendbuy tracking events](https://developers.friendbuy.com/#tracking-events){:target='_blank'}.
+The Friendbuy web mode destination sends information about your customers and their actions to Friendbuy. It supports the following [Friendbuy tracking events](https://developers.friendbuy.com/#tracking-events){:target='_blank'}.
 
 - **Track Customer**: Converts Segment [`analytics.identify`](/docs/connections/spec/identify/) calls to Friendbuy *track customer* calls. Use this to add your customer ID and other customer data to the information that Friendbuy has about the customer.
 - **Track Purchase**: Converts Segment [`analytics.track('Order Completed')`](/docs/connections/spec/ecommerce/v2/#order-completed) calls to Friendbuy *track purchase* calls. Use this to send purchase data to Friendbuy and reward advocates based on their friends' purchases.
@@ -32,7 +35,7 @@ Friendbuy Web Mode (Actions) is the Segment web mode destination that works with
 ## Getting started
 
 > info ""
-> Please contact your Onboarding & Implementation Representative or email support@friendbuy.com to set up Friendbuy's Segment integration.
+> Please contact your Friendbuy Onboarding & Implementation Representative or email support@friendbuy.com to set up Friendbuy's Segment integration.
 
 Before you start, you must have Segment's Analytics.js 2.0 installed on your site. See [Segment's documentation](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) for instructions.
 
@@ -42,7 +45,7 @@ Before you start, you must have Segment's Analytics.js 2.0 installed on your sit
 4. Give the destination a name, and fill in the settings manually.
 5. On the **Basic Settings** page enter your Merchant ID value from step one, and click **Save Changes**.
 6. Select the **Mappings** tab. A number of pre-built mappings are configured for you that map standard events defined in the [Segment Spec](/docs/connections/spec/) to their equivalent Friendbuy events, as displayed below. You can disable events that you don't use or edit the pre-built field mappings.
-7. After you configure the destination, enable it from the **Settings** tab.
+7. After you configure the destination, enable it from the **Settings** tab. As noted above, the Friendbuy JavaScript will not be loaded unless at least one Mapping is enabled.
 
 ## Pre-built mappings
 
@@ -89,7 +92,7 @@ analytics.track("Order Completed", {
   currency: "USD",
   friendbuyAttributes: {
     orderNumber: "3",
-	promotion: "black friday"
+    promotion: "black friday"
   }
 });
 ```
@@ -118,7 +121,7 @@ To configure a custom event:
 
 2. For the Event Name, choose the name of the Segment event you are tracking. For example, if you want to reward on app downloads that you are tracking with `analytics.track("Downloaded", { downloadId: "My App" }`, select `Downloaded` as your *Event Name*.
 
-3. When you configure your action fields, you can accept the default *Event Name* of `event` which will cause Friendbuy to receive track events with the same names as the Segment events. If you want to rename the Friendbuy events, you can replace the *Event Name* with a different value such as the static string `download`.
+3. When you configure your action fields, you can accept the default *Event Type* of `event` which will cause Friendbuy to receive track events with the same names as the Segment events. If you want to rename the Friendbuy events, you can replace the *Event Type* with a different value such as the static string `download`.
 
 4. *Event Properties* is set from the path `properties` by default, which means that all the properties that you include in your Segment `analytics.track` call are passed to Friendbuy. If you only want to pass custom attributes to Friendbuy, you need to segregate the fields to pass to Friendbuy into an object and then specify the path to that object, similar to what is described above in [Custom Attributes](#custom-attributes).
 
