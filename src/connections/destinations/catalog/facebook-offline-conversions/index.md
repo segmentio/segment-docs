@@ -6,8 +6,6 @@ strat: facebook
 
 [Facebook Offline Conversions](https://www.facebook.com/business/help/1782327938668950?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) enables offline event tracking, so marketers can run campaigns, upload transaction data, and compare in-store transactions.
 
-This document was last updated on April 24, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 
 ## Other Facebook Destinations Supported by Segment
 This page is about the **Facebook Offline Conversions**. For documentation on other Facebook destinations, see the pages linked below.

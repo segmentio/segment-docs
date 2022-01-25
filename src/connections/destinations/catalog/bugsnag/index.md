@@ -11,8 +11,6 @@ Web | [Analytics.js SDK 2.1.0](https://github.com/segment-integrations/analytics
 Android | [Android SDK 2.0.0](https://github.com/segment-integrations/analytics-android-integration-bugsnag)
 iOS | [iOS SDK 1.0.3](https://github.com/segment-integrations/analytics-ios-integration-bugsnag)
 
-This document was last updated on July 11th, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 
 ## Getting Started
 

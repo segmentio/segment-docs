@@ -12,7 +12,7 @@ The Segment Hotjar Destination allows you to both easily install Hotjar on your 
 
 In time, most or all Hotjar features will use User Attributes in some way, with filtering Recordings planned in the first half of 2020.
 
-This document was last updated on February 6, 2020. This destination is maintained by Segment. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+This destination is maintained by Segment.
 
 
 ## Getting Started

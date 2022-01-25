@@ -11,7 +11,7 @@ hide-dossier: true
 
 The InMoment Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/wootric).
 
-This document was last updated on January 23, 2020. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [contact InMoment Support](mailto:support@wootric.com)!
+If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [contact InMoment Support](mailto:support@wootric.com)!
 
 
 ## Getting Started

@@ -86,7 +86,7 @@ When you send a `screen` event using the server-side destination or the iOS bund
     </service>
     ```
 
-2. For more in-depth information, visit our [Android push integration documentation](https://support.clevertap.com/integration/android-sdk/#push-notification-support).
+2. For more in-depth information, visit our [Android push integration documentation](https://developer.clevertap.com/docs/android).
 
 ### In-App Notifications
 

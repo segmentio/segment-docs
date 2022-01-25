@@ -6,8 +6,6 @@ redirect_from: '/connections/destinations/catalog/piwik/'
 
 [Matomo](https://matomo.org/), formerly Piwik, is the leading open source web analytics platform that gives you valuable insights into your website's visitors, your marketing campaigns and much more, so you can optimize your strategy and online experience of your visitors.
 
-This document was last updated on July 18th, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 ## Getting Started
 
 {% include content/connection-modes.md %}

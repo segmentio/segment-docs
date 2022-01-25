@@ -7,8 +7,6 @@ cmode-override: true
 
 [Intercom](https://www.intercom.com/) makes customer messaging apps for sales, marketing, and support, connected on one platform. The Intercom Destination is open-source. You can browse the code for [analytics.js](https://github.com/segment-integrations/analytics.js-integration-intercom), [iOS](https://github.com/segment-integrations/analytics-ios-integration-intercom) and [Android](https://github.com/segment-integrations/analytics-android-integration-intercom) on GitHub.
 
-This document was last updated on March 11, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 ## Getting Started
 
 The first step is to make sure Intercom supports the source type and connection mode you've chosen to implement. You can learn more about what dictates [the connection modes we support here](/docs/connections/destinations/#connection-modes).

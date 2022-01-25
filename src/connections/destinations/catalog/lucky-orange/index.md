@@ -5,8 +5,6 @@ rewrite: true
 
 [Lucky Orange](https://www.luckyorange.com/) lets you quickly see who is on your site and interact with them in many ways. With Lucky Orange, you can chat with visitors on your site, actually watch their mouse move around the screen and click in real time, play them back as recording, generate beautiful heat maps of clicks, mouse movements (eye tracking), and scroll depth, create quick insightful polls, and more. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-lucky-orange).
 
-This document was last updated on October 16, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 ## Getting Started
 
 {% include content/connection-modes.md %}

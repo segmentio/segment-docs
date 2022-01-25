@@ -18,8 +18,6 @@ The legacy instructions for implementing the Branch mobile SDKs for Segment have
 
 This destination is maintained by Branch. For any issues with the destination, [contact the Branch support team](https://support.branch.io/support/home).
 
-This document was last updated on November 13, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 ## Getting Started
 
 {% include content/connection-modes.md %}

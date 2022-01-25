@@ -44,13 +44,13 @@ Journeys provides five step types, which you can add after the entry condition.
 
 **Wait for duration** defines the length of time in minutes, hours, days, or weeks that a user must wait before moving to the next step.
 
-**True/false split** divides the previous step's user group into two branches, based on Boolean logic against a defined condition. Users who satisfy the condition(s) move to the **True** branch. Otherwise, they move to the **False** branch. To enforce mutual exclusivity, Journeys evaluates true/false conditions when a user reaches the relevant step.  
+**True/false split** divides the previous step's user group into two branches, based on Boolean logic against a defined condition. Users who satisfy the condition(s) move to the **True** branch. Otherwise, they move to the **False** branch. To enforce mutual exclusivity, Journeys evaluates true/false conditions when a user reaches the relevant step.
 
 You can add Step Names to describe the users in the True and False branch.
 
 ![true/false split](images/journey_t-f-split.png)
 
-**Multi-branch split** divides the group of users from the previous step into two or more branches based on each branch's defined conditions. 
+**Multi-branch split** divides the group of users from the previous step into two or more branches based on each branch's defined conditions.
 
 Define the number of branches you want to create, then add a **Wait for condition** step to define each branch's condition.
 
@@ -61,20 +61,20 @@ Define the number of branches you want to create, then add a **Wait for conditio
 
 ## Cloning a Journey
 
-To clone a Journey: 
-1. In Journey List view, click the **…** icon at the end of a row.  
-2. Select **Clone Journey**. 
+To clone a Journey:
+1. In Journey List view, click the **…** icon at the end of a row.
+2. Select **Clone Journey**.
 
-Segment then creates a draft of your Journey. 
+Segment then creates a draft of your Journey.
 
-You can also clone a Journey from a Journey’s Overview by clicking the **…** icon. 
+You can also clone a Journey from a Journey’s Overview by clicking the **…** icon.
 
 ## Publishing a Journey
 
 To publish and activate a Journey, click **Publish Journey** from the Journey Overview. You can also click **Publish Journey** in the bottom-right corner of the Journey Builder.
 
 > info ""
-> After publication, Segment limits which Journeys features you can edit. For more information, see the difference between Draft and Published Journeys below.
+> Some Journey features can only be edited before publication. For more information, see the difference between Draft and Published Journeys below.
 
 ## Journey re-entry
 
@@ -105,15 +105,6 @@ To enable Journey re-entry for a new Journey, follow these steps:
 2. Under **Entry settings**, select **Re-Entry** and enter a re-entry time.
 3. Under **Exit settings**, enter an exit time.
 4. Click **Build Journey** to complete Journey setup.
-
-To enable Journey re-entry for an existing Journey, follow these steps:
-
-1. Select the **Journeys** tab within your Personas space.
-2. Select the Journey for which you want to enable re-entry.
-3. Select the **Settings** tab from the Journey overview.
-4. Under **Entry settings,** select **Re-Entry** and enter a re-entry time.
-5. Under **Exit settings**, enter an exit time.
-6. Click **Update Settings**.
 
 ## Pausing and resuming a Journey
 

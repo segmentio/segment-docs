@@ -5,8 +5,6 @@ rewrite: true
 
 [Leanplum](https://www.leanplum.com/) helps mobile teams orchestrate multi-channel campaigns — from messaging to the in-app experience — all from a single mobile marketing platform.
 
-This document was last updated on January 29, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 > success ""
 > **Good to know**: This page is about the Leanplum Segment destination, which receives data from Segment. There's also a page about the [Leanplum Segment source](/docs/connections/sources/catalog/cloud-apps/leanplum/), which sends data _to_ Segment!
 

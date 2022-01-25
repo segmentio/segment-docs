@@ -68,7 +68,7 @@ Segment Track events are inbound events that might trigger a notification when C
 
 All Inbound Events coming from Segment Track calls appear with a `Segment-TrackEvent` prefix in Courier to help distinguish them from other inbound events.  
 
-Courier extracts data from the Segment Track `properties` object, and conditionally triggers a request to the [Courier Send API](https://docs.courier.com/reference/send-api?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) - only if that event is already [mapped](https://help.courier.com/en/articles/4202416-how-to-create-and-map-event-triggers-for-your-notifications). 
+Courier extracts data from the Segment Track `properties` object, and conditionally triggers a request to the [Courier Send API](https://www.courier.com/docs/reference/send/message/) - only if that event is already [mapped](https://help.courier.com/en/articles/4202416-how-to-create-and-map-event-triggers-for-your-notifications). 
 
 * Segment passes all `properties`  from the Track call to the `Send API` as elements in the `data` json objects. You can use these data points as variables in the Notification Template or as input on conditional routing logic.
 * Courier uses the `userId` or `anonymousId` to look up and include the associated `User Profile` with the inbound event.  (See the note in the [Identify section](#identify) above.)
