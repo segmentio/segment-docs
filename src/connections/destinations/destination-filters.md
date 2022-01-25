@@ -9,10 +9,8 @@ Using Destination Filters, you can conditionally filter out event properties, tr
 
 Common use cases for Destination Filters include the following:
 
-- Managing PII (personally identifiable information) by blocking fields from
-  reaching certain destinations
-- Controlling event volume by sampling or dropping unnecessary events for
- specific destinations
+- Managing PII (personally identifiable information) by blocking fields from reaching certain destinations
+- Controlling event volume by sampling or dropping unnecessary events for specific destinations
 - Increasing data relevance in your destinations by removing unused or unwanted data
 - Preventing test or internally-generated events from reaching your production tools
 
@@ -116,7 +114,7 @@ Errors aren't exposed in your Destination's Event Deliverability tab. For help d
 
 ## FAQ
 
-**How do destination filters work with array properties?**
+**How do Destination Filters work with array properties?**
 
 Destination filters can filter properties out of objects nested in an array. For example, you can filter out the `price` property of every object in an array at `properties.products`. You can also filter out an entire array from the payload. However, you can't drop nested objects in an array or filter properties out of a single object in an array.
 
