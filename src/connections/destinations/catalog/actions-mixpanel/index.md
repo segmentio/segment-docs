@@ -19,7 +19,7 @@ Mixpanel (Actions) provides the following benefits over the classic Mixpanel des
 
 ## Getting started
 
-1. Before you start, go to your [Mixpanel project settings](https://mixpanel.com/report/settings/#account/projects). Copy the Mixpanel API Key and Secret Key for the project.
+1. Go to your [Mixpanel project settings](https://mixpanel.com/report/settings/#account/projects). Copy the Mixpanel API Key and API Secret for your project.
 2. From the Segment web app, click **Catalog**, then click **Destinations**.
 3. Find the Destinations Actions item in the left navigation, and click it.
 4. Click the "Mixpanel" item to select it and click **Configure**.
@@ -31,15 +31,15 @@ Once you have a mapping, you can follow the steps in the Destinations Actions do
 
 ### Connection Modes for Mixpanel (Actions) destination
 
-The Mixpanel (actions) destination does not offer a device-mode connection mode. If you're using one of Segment's new libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)) with the Actions-framework version of the destination, you do not need the device-mode connection.
+The Mixpanel (Actions) destination does not offer a device-mode connection mode. If you're using one of Segment's new libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)) with the Actions-framework version of the destination, you do not need the device-mode connection.
 
 {% capture group_identify_user_details %}
-In the default configuration, Mixpanel (Actions) triggers this mapping when it receives a Group call.
+In the default configuration, Mixpanel (Actions) triggers this action when it receives a Group call.
 
 > warning ""
 > Group Analytics is available as an add-on package to customers on [Growth](https://mixpanel.com/pricing/) and [Enterprise](https://mixpanel.com/pricing/) plans.
 
-This Action sets or updates the properties of specific groups. You can use this when you want to update properties on a [group profile](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#group-profiles).
+This action sets or updates the properties of specific groups. You can use this when you want to update properties on a [group profile](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#group-profiles).
 
 The Groups model in Segment is slightly different than in Mixpanel. To explain the conceptual difference, it may help to think in terms of database tables. In Segment, there is a single "groups" table. You can have as many group rows as you want and each row has a unique identifier. When you want to set traits on that group, you only need to know the group id. 
 
