@@ -35,7 +35,7 @@ Friendbuy Web Mode (Actions) is the Segment web mode destination that works with
 ## Getting started
 
 > info ""
-> Please contact your Friendbuy Onboarding & Implementation Representative or email support@friendbuy.com to set up Friendbuy's Segment integration.
+> Please contact your Friendbuy Customer Success Manager or email support@friendbuy.com to set up Friendbuy's Segment integration.
 
 Before you start, you must have Segment's Analytics.js 2.0 installed on your site. See [Segment's documentation](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) for instructions.
 
