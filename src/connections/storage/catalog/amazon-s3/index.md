@@ -6,10 +6,8 @@ redirect_from:
 hide-personas-partial: true
 ---
 
-> warning "The Amazon S3 destination will enter Limited Access in February 2022"
-> After the Amazon S3 destination enters Limited Access, you will no longer be able to modify existing Amazon S3 destination instances, create new Amazon S3 instances, or re-enable a disabled Amazon S3 instance.
-> 
-> Migrate to the AWS S3 destination to continue storing data in AWS. For more information about migration to AWS S3, see the [AWS S3 destination documentation](/docs/connections/storage/catalog/aws-s3/#migrate-an-existing-destination).
+> warning "The Amazon S3 destination will enter Limited Access on February 8, 2022"
+> After the Amazon S3 destination enters Limited Access, you will no longer be able to modify existing Amazon S3 destination instances, create new Amazon S3 instances, or re-enable a disabled Amazon S3 instance. Existing Amazon S3 instances will continue to receive data. <br><br>Migrate to the AWS S3 destination to continue storing data in AWS. For more information about migration to AWS S3, see the [AWS S3 destination documentation](/docs/connections/storage/catalog/aws-s3/#migrate-an-existing-destination).
 
 ## Migrating from Amazon S3 to AWS S3
 
