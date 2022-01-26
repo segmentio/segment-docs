@@ -28,6 +28,7 @@ The table below lists events that Regal Voice sends to Segment. These events app
 | ---------------------------- | ----------------------------------------------------------------------------------------------------- |
 | agent.activity.updated       | An agent’s activity status was changed.                                                               |
 | call.completed               | An inbound or outbound call with a contact was completed. This includes calls that were not answered. |
+| call.recording.available     | A call recording link is available.                                                                   |                           
 | contact.subscribed           | A contact was subscribed to a marketing channel.                                                      |
 | contact.unsubscribed         | A contact was unsubscribed from a marketing channel.                                                  |
 | contact.attribute.edited     | A contact's attributes were edited by an agent.                                                       |
@@ -39,7 +40,9 @@ The table below lists events that Regal Voice sends to Segment. These events app
 | sms.undelivered              | An SMS was undelivered from Regal Voice to contact.                                                   |
 | sms.received                 | An SMS was received from a contact.                                                                   |
 | task.canceled                | A call or SMS task was canceled.                                                                      |
-| task.created                 | A call or SMS task was created.
+| task.created                 | A call or SMS task was created.                                                                       |
+| task.reservation.created     | A reservation was created for a task.                                                                 |
+| task.reservation.accepted    | A reservation was accepted by an agent.                                                               |
 
 ## Event Properties
 
@@ -79,7 +82,11 @@ The table below lists events that Regal Voice sends to Segment. These events app
 | `objections`                      | Task objections                                                                                                                                                                                                                                                                                                           |
 | `phone`                           | The phone number the subscription updated was applied to; phone number is the unique identifier for a contact in Regal voice                                                                                                                                                                                              |
 | `queue`                           | Task Queue                                                                                                                                                                                                                                                                                                                |
+| `recording_link` | Call recording link |
 | `regal_voice_phone`               | Regal Voice phone number                                                                                                                                                                                                                                                                                                  |
+| `regal_voice_phone_internal_name` | Internal name of phone line displayed to agents
+| `reserved_agent_email` | Email of the agent the task reservation is for
+| `reserved_agent_full_name` | Full name of the agent the task reservation is for 
 | `scheduling_agent_email`          | Email of the agent who scheduled the callback                                                                                                                                                                                                                                                                             |
 | `scheduling_agent_fullname`       | Full name of the agent who scheduled the callback                                                                                                                                                                                                                                                                         |
 | `scheduling_agent_id`             | Email of the agent who scheduled the callback                                                                                                                                                                                                                                                                             |
