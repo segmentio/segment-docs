@@ -146,7 +146,11 @@ The following operators are available.
 
 ## Connecting your Computed Trait to a Destination
 
-Personas sends user-level computed Traits to destinations using the [Identify call](/docs/connections/spec/identify/) for user traits, or using the [Track call](/docs/connections/spec/track/) for event properties. Learn more about [Computed trait generated events here](/docs/personas/using-personas-data/#computed-trait-generated-events). The trait name corresponds to the snake cased name that you see in the trait settings, for example `most_viewed_page_category`. See the [list of Personas-compatible destinations](/docs/personas/using-personas-data/#compatible-personas-destinations)
+Personas sends user-level computed Traits to destinations using the [Identify call](/docs/connections/spec/identify/) for user traits, or using the [Track call](/docs/connections/spec/track/) for event properties. Segment includes the trait value and property in the identify and track calls.
+
+As an example, the name of a computed trait is added to the user profile as a trait, and the trait's value is set to the value of the computed trait. When the trait is computed, Segment sends an identify or track call, depending on destination configuration. If a computed trait counts the number of times a user visits your pricing page, and the user visits your pricing page five times, Segment sends an identify call with the property `pricing_page_visits: 5`. 
+
+Learn more about [Computed trait generated events here](/docs/personas/using-personas-data/#computed-trait-generated-events). The trait name corresponds to the snake cased name that you see in the trait settings, for example `most_viewed_page_category`. See the [list of Personas-compatible destinations](/docs/personas/using-personas-data/#compatible-personas-destinations)
 
 ![](images/1525837601768.png)
 
