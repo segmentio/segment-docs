@@ -244,4 +244,5 @@ For user-property destinations, Segment sends an [identify](/docs/connections/sp
 
 When you first create an audience, Personas sends an Identify call for every user in that audience. Later audience syncs send updates for users whose membership has changed since the last sync.
 
+
 {% include content/destination-footer.md %}
