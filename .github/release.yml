@@ -5,6 +5,7 @@ changelog:
       - autoupdate
       - back-end
       - release
+      - hidden
     authors:
       - bot-docsteam
   categories:
