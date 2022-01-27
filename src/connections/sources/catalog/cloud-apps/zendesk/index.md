@@ -2,6 +2,8 @@
 title: Zendesk Source
 ---
 
+{% include content/source-region-unsupported.md %}
+
 [Zendesk](https://www.zendesk.com/) is a customer service platform for enterprises, which provides a customer support platform that allows quicker and easier interaction between businesses and customers.
 
 If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!

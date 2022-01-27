@@ -3,6 +3,8 @@ title: Google Ads Source
 rewrite: true
 ---
 
+{% include content/source-region-unsupported.md %}
+
 Google Ads is an online advertising service developed by Google. With Google Ads, you can take advantage of online advertising to improve your internet marketing effectiveness. [Visit Website](https://ads.google.com/home/)
 
 If you notice any gaps, outdated information or want to leave some feedback to help improve this documentation, please [contact Segment Support](https://segment.com/help/contact).
