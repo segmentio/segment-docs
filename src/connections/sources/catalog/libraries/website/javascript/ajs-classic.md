@@ -11,7 +11,7 @@ Analytics.js, Segment's Javascript source, makes it simple to send your data to 
 
 > warning "Deprecation of Analytics.js Classic"
 > On August 31, 2022, Segment will end support and maintenance for Analytics.js Classic, and on February 28, 2023,  Segment will remove access to Analytics.js Classic.
-> <br><br>[Upgrade to Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/upgrade-to-ajs2) before access ends for Analytics.js Classic. See [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/) to learn more the new Analytics.js source.
+> <br><br>[Upgrade to Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/upgrade-to-ajs2) before access ends for Analytics.js Classic. See the [Analytics.js 2.0 docs](/docs/connections/sources/catalog/libraries/website/javascript/) to learn more about the new source.
 
 ## Getting Started
 
