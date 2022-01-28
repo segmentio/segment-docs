@@ -1,0 +1,43 @@
+sources:
+  - factual-engine
+  - net
+  - amp
+  - android
+  - clojure
+  - go
+  - http-api
+  - ios
+  - java
+  - javascript
+  - kotlin
+  - kotlin-android
+  - node-js
+  - php
+  - pixel-tracking-api
+  - react-native
+  - roku
+  - ruby
+  - xamarin
+destinations:
+  - amplitude
+  - mixpanel
+  - braze
+  - repeater
+  - slack
+  - stitch-data
+  - adobe-analytics
+  - natero
+  - iron-io
+  - ibm-ubx
+  - actions-amplitude
+  - gainsight-px
+  - braze-cloud-mode-actions
+  - braze-web-mode-actions
+warehouses:
+  - azuresqldb
+  - azuresqldw
+  - bigquery
+  - db2
+  - postgres
+  - redshift
+  - snowflake
