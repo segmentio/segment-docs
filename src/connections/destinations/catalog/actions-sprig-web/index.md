@@ -4,6 +4,8 @@ title: Sprig (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
 hidden: true
+redirect_from:
+  - '/connections/destinations/catalog/sprig-web'
 ---
 
 <!-- In the section above, edit the `title` field. For example, Slack (Actions) Destination -->
