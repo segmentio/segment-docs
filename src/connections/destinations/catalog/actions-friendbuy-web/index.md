@@ -16,7 +16,7 @@ Friendbuy's web mode Segment integration allows you to enable your Friendbuy ref
 This Segment integration is a web mode [destination action](/docs/connections/destinations/actions/) that loads and configures Friendbuy's JavaScript for you. If you're already using Segment's Analytics.js to identify your customers and track their purchases, either directly or through Segment source integrations that you've installed, you can configure Segment to send this data to Friendbuy for use in your referral program.
 
 > warning ""
-> The Friendbuy JavaScript won't load unless at least one Mapping is enabled.  Even if you're not sending data to Friendbuy through Analytics.js calls, if you're using Segment to load the Friendbuy JavaScript you must define and enable at least one Mapping.  A safe mapping to enable is the pre-built **Track Page** mapping.
+> The Friendbuy JavaScript won't be loaded unless at least one Mapping is enabled.  Even if you're not sending data to Friendbuy through Analytics.js calls, if you're using Segment to load the Friendbuy JavaScript you must define and enable at least one Mapping.  A safe mapping to enable is the pre-built **Track Page** mapping.
 
 ## Overview
 

@@ -9,9 +9,9 @@ hidden: true
 
 [Friendbuy](https://www.friendbuy.com/){:target='_blank'} powers referral programs for e-commerce merchants of all sizes, providing an easy solution to launch Refer-a-Friend programs and accelerate growth through word of mouth.
 
-Friendbuy's cloud mode Segment integration allows you to send data to Friendbuy from your data center so that Friendbuy can act on it. For example, to trigger a reward when a referred customer performs a rewardable event or send customer data to use in your Friendbuy-managed loyalty/rewards program.
+Friendbuy's cloud mode Segment integration allows you to send data to Friendbuy from your data center so that Friendbuy can act on it. For example, you could trigger a reward when a referred customer performs a rewardable event or send customer data to use in your Friendbuy-managed loyalty/rewards program.
 
-If you're using Segment with a Friendbuy referral program you might want to use the [web destination](/docs/connections/destinations/catalog/actions-friendbuy-web/) to configure the Friendbuy JavaScript and to send customer and purchase data directly to Friendbuy as the user interacts with your web site. However, if you also want to send events from your data center to Friendbuy, such as purchases due to recurring transactions, you should also use this cloud mode [destination action](/docs/connections/destinations/actions/), which provides an interface between Segment's identify and track calls and Friendbuy's MAPI (merchant API).
+If you're using Segment with a Friendbuy referral program you probably want to use the [web destination](/docs/connections/destinations/catalog/actions-friendbuy-web/) to configure the Friendbuy JavaScript and to send customer and purchase data directly to Friendbuy as the user interacts with your web site. However, if you also want to send events from your data center to Friendbuy, such as purchases due to recurring transactions, you should also use this cloud mode [destination action](/docs/connections/destinations/actions/), which provides an interface between Segment's identify and track calls and Friendbuy's MAPI (merchant API).
 
 ## Overview
 
