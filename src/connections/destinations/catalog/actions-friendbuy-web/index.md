@@ -16,7 +16,7 @@ Friendbuy's web mode Segment integration allows you to enable your Friendbuy ref
 This Segment integration is a web mode [destination action](/docs/connections/destinations/actions/) that loads and configures Friendbuy's JavaScript for you. If you're already using Segment's Analytics.js to identify your customers and track their purchases, either directly or through Segment source integrations that you've installed, you can configure Segment to send this data to Friendbuy for use in your referral program.
 
 > warning ""
-> The Friendbuy JavaScript will not be loaded unless at least one Mapping is enabled.  Even if you are not sending data to Friendbuy through Analytics.js calls, if you are using Segment to load the Friendbuy JavaScript you must define and enable at least one Mapping.  A safe mapping to enable is the pre-built **Track Page** mapping.
+> The Friendbuy JavaScript won't load unless at least one Mapping is enabled.  Even if you're not sending data to Friendbuy through Analytics.js calls, if you're using Segment to load the Friendbuy JavaScript you must define and enable at least one Mapping.  A safe mapping to enable is the pre-built **Track Page** mapping.
 
 ## Overview
 
@@ -121,7 +121,7 @@ To configure a custom event:
 
 2. For the Event Name, choose the name of the Segment event you are tracking. For example, if you want to reward on app downloads that you are tracking with `analytics.track("Downloaded", { downloadId: "My App" }`, select `Downloaded` as your *Event Name*.
 
-3. When you configure your action fields, you can accept the default *Event Type* of `event` which will cause Friendbuy to receive track events with the same names as the Segment events. If you want to rename the Friendbuy events, you can replace the *Event Type* with a different value such as the static string `download`.
+3. When you configure your action fields, you can accept the default *Event Type* of `event` which will cause Friendbuy to receive track events with the same names as the Segment events. If you want to rename the Friendbuy events, you can replace the *Event Type* with a different value, such as the static string `download`.
 
 4. *Event Properties* is set from the path `properties` by default, which means that all the properties that you include in your Segment `analytics.track` call are passed to Friendbuy. If you only want to pass custom attributes to Friendbuy, you need to segregate the fields to pass to Friendbuy into an object and then specify the path to that object, similar to what is described above in [Custom Attributes](#custom-attributes).
 

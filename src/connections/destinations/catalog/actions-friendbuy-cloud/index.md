@@ -7,11 +7,11 @@ hidden: true
 
 {% include content/plan-grid.md name="actions" %}
 
-[Friendbuy](https://www.friendbuy.com/){:target='_blank'} powers referral programs for e-commerce merchants of all sizes.  We give companies an easy solution to launch Refer-a-Friend programs and accelerate their growth through word of mouth.
+[Friendbuy](https://www.friendbuy.com/){:target='_blank'} powers referral programs for e-commerce merchants of all sizes, providing an easy solution to launch Refer-a-Friend programs and accelerate growth through word of mouth.
 
-Friendbuy's cloud mode Segment integration allows you send data to Friendbuy from your data center so that Friendbuy can act on it, to trigger a reward when a referred customer performs a rewardable event or to send customer data to be used in your Friendbuy-managed loyalty/rewards program, for example.
+Friendbuy's cloud mode Segment integration allows you to send data to Friendbuy from your data center so that Friendbuy can act on it. For example, to trigger a reward when a referred customer performs a rewardable event or send customer data to use in your Friendbuy-managed loyalty/rewards program.
 
-If you are using Segment with a Friendbuy referral program you most likely want to use the [web destination](/docs/connections/destinations/catalog/actions-friendbuy-web/) to configure the Friendbuy JavaScript and to send customer and purchase data directly to Friendbuy as the user interacts with your web site. However if you also want to send events from your data center to Friendbuy, such as purchases due to recurring transactions, for example, then you should also use this cloud mode [destination action](/docs/connections/destinations/actions/), which provides an interface between Segment's identify and track calls and Friendbuy's MAPI (merchant API).
+If you're using Segment with a Friendbuy referral program you might want to use the [web destination](/docs/connections/destinations/catalog/actions-friendbuy-web/) to configure the Friendbuy JavaScript and to send customer and purchase data directly to Friendbuy as the user interacts with your web site. However, if you also want to send events from your data center to Friendbuy, such as purchases due to recurring transactions, you should also use this cloud mode [destination action](/docs/connections/destinations/actions/), which provides an interface between Segment's identify and track calls and Friendbuy's MAPI (merchant API).
 
 ## Overview
 
@@ -54,7 +54,7 @@ There are four steps to configure a Segment mapping.
 4. **Review mappings**: Verify that the fields in the sample event are mapped correctly.
 
 > info ""
-> If you are using the Friendbuy web mode destination to handle events that are generated in the browser as recommended then when configuring the event trigger in the cloud mode destination you may need to add an extra condition to prevent events that come from Analytics.js calls from being handled by both the web mode and cloud mode destinations. For example, if you are configuring a Track Purchase action in the cloud mode destination to handle purchases that are part of a recurring subscription, you might want to add an event property named `source` with the value `data center` to the recurring purchase events that you submit to Segment's REST interface and then add a condition on that property in the action's trigger so that only Order Completed events in which the Event Property `source` has the value `data center` are handled by that action. This will prevent ordinary purchases that are sent from Analytics.js and processed by the Friendbuy cloud mode destination for being sent a second time by the web mode destination.
+> If you use the Friendbuy web mode destination to handle events generated in the browser as recommended, then when you configure the event trigger in the cloud mode destination you might need to add an extra condition to prevent events that come from Analytics.js calls from being handled by both the web and cloud mode destinations. For example, if you configure a Track Purchase action in the cloud mode destination to handle purchases for a recurring subscription, you might want to add an event property named `source` with the value `data center` to the recurring purchase events that you submit to Segment's REST interface. Then, add a condition on that property in the action's trigger so that only Order Completed events in which the Event Property `source` has the value `data center` are handled by that action. This prevents ordinary purchases sent from Analytics.js and processed by the Friendbuy cloud mode destination from being sent a second time by the web mode destination.
 
 ### Configuring action fields
 
@@ -101,7 +101,7 @@ then the [Friendbuy MAPI purchase call](https://developers.friendbuy.com/#postpu
 }
 ```
 
-Note that a Friendbuy MAPI call is limited to a maximum of 10 additional properties, additional properties' values must be strings, and the maximum length of an additional property's value is 128 characters.  Additional properties that do not comply with these restrictions are dropped.
+Note that a Friendbuy MAPI call is limited to a maximum of 10 additional properties, additional properties' values must be strings, and the maximum length of an additional property's value is 128 characters.  Additional properties that don't comply with these restrictions are dropped.
 
 ### Custom events
 
@@ -111,9 +111,9 @@ To configure a custom event:
 
 1. Click **New Mapping** and choose **Track Custom Event**.
 
-2. When configuring the event trigger, for the Event Name choose the name of the Segment event you are tracking. For example, if you want to reward on app downloads that you are tracking with `{ "type": "track", "event": "Downloaded", ... }`, use `Downloaded` as the *Event Name* in the trigger.
+2. When you configure the event trigger, for the Event Name choose the name of the Segment event you're tracking. For example, if you want to reward on app downloads that you're tracking with `{ "type": "track", "event": "Downloaded", ... }`, use `Downloaded` as the *Event Name* in the trigger.
 
-3. When you configure your action fields, you can accept the default *Event Type* of `event` which will cause Friendbuy to receive track events with the same names as the Segment events. If you want to rename the Friendbuy events, you can replace the *Event Type* with a different value such as the static string `download`.
+3. When you configure your action fields, you can accept the default *Event Type* of `event` which will cause Friendbuy to receive track events with the same names as the Segment events. If you want to rename the Friendbuy events, you can replace the *Event Type* with a different value, such as the static string `download`.
 
 4. *Event Properties* is set from the path `properties` by default, which means that all the properties that you include in your Segment `analytics.track` call are passed to Friendbuy. If you only want to pass custom attributes to Friendbuy, you need to segregate the fields to pass to Friendbuy into an object and then specify the path to that object, similar to what is described above in [Custom Attributes](#custom-attributes).
 
