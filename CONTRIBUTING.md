@@ -10,7 +10,7 @@ Before you begin:
 
 ## Use the contribution links from any docs page
 
-Not all pages have a 1-1 mapping with their location within the repository. This can make browsing and locating the file you're trying to reference a challenge. As you browse [segment.com/docs](https://segment.com/docs), you'll notice two links in the right sidebar, at the top of the page. Click **Edit this page** to open the page in the Github editor. Or, click **Request docs change** to create a new issue that references the page.
+Not all pages have a 1-1 mapping with their location within the repository. This can make browsing and locating the file you're trying to reference a challenge. As you browse [segment.com/docs](https://segment.com/docs), you'll notice two links in the right sidebar, at the top of the page. Click **Edit this page** to open the page in the GitHub editor. Or, click **Request docs change** to create a new issue that references the page.
 
 ## Want to go deeper? Fork the repository
 
@@ -39,7 +39,7 @@ The most interesting ones are:
 
 ### Images
 
-**Save all images locally! No linking to 3rd party-hosted images!** Images are published to our CDN from the build step, and this means they won't go missing if the hosting service dujour goes out of business.
+**Save all images locally! No linking to third-party hosted images!** Images are published to our CDN from the build step, and this means they won't go missing if the hosting service dujour goes out of business.
 
 There are no _enforced_ naming conventions at this time. Files that start with an underscore are ignored by Jekyll. Anything you see with `asset` was dowloaded by a script to migrate it out of Contents.io.
 
@@ -79,7 +79,7 @@ Content with in each `.md` file is markdown. For information about styling, and 
 
 ### Frontmatter
 
-Each Markdown file in the docs can have "frontmatter" associated with it at the top of the file. These are considered by Jekyll to be "properties" of a page, generally control how the HTML page is built or rendered.
+Each Markdown file in the docs can have frontmatter associated with it at the top of the file. These are considered by Jekyll to be properties of a page that generally control how the HTML page is built or rendered.
 
 Frontmatter in a file will look something like this:
 
