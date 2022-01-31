@@ -52,7 +52,7 @@ Google Analytics 4 is also case sensitive. If you would like all event names low
 
 Segment sends a Google `clientId` in requests to the Measurement Protocol API, alongside other required API fields. However, user sessions are [not currently supported by the Measurement Protocol API](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/limitations){:target="_blank"}, so user metrics might not appear on the Google Analytics 4 Realtime report or several other reports. 
 
-To validate your implementation, check users on the Events report and User Explorer. You can also confirm events are picked up in the Realtime report.
+To validate your implementation, check users and events on the Events report and User Explorer.
 
 ### Debug Mode
 
