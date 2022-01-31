@@ -20,6 +20,8 @@ Relational databases are great when you know and predefine the information colle
 
 Examples of data warehouses include Amazon Redshift, Google BigQuery, and Postgres.
 
+{% include content/how-a-sync-works.md %}
+
 <div data-headings-anchors id="warehouse-schemas"></div>
 > info "Looking for the Warehouse Schemas docs?"
 >  They've moved! Check them out [here](schema/).
@@ -56,19 +58,19 @@ Check out our [Frequently Asked Questions about Warehouses](/docs/connections/st
 
 [Can I load in my own data into my warehouse?](/docs/connections/storage/warehouses/faq/#what-if-i-want-to-add-custom-data-to-my-warehouse)
 
-[Can I control what data is sent to my warehouse?](/docs/connections/storage/warehouses/faq/)
+[Can I control what data is sent to my warehouse?](/docs/connections/storage/warehouses/faq/#can-i-control-what-data-is-sent-to-my-warehouse)
 
 ### Managing a warehouse
 
-[How fresh is the data in my warehouse?](/docs/connections/storage/warehouses/faq/)
+[How fresh is the data in my warehouse?](/docs/connections/storage/warehouses/faq/#how-fresh-is-the-data-in-segment-warehouses)
 
-[Can I add, tweak, or delete some of the tables?](/docs/connections/storage/warehouses/faq/)
+[Can I add, tweak, or delete some of the tables?](/docs/connections/storage/warehouses/faq/#can-we-add-tweak-or-delete-some-of-the-tables)
 
-[Can I transform or clean up old data to new formats or specs?](/docs/connections/storage/warehouses/faq/)
+[Can I transform or clean up old data to new formats or specs?](/docs/connections/storage/warehouses/faq/#can-we-transform-or-clean-up-old-data-to-new-formats-or-specs)
 
 [What are common errors and how do I debug them?](/docs/connections/storage/warehouses/warehouse-errors/)
 
-[How do I speed up my queries?](/docs/connections/storage/warehouses/redshift-tuning/)
+[How do I speed up my Redshift queries?](/docs/connections/storage/warehouses/redshift-tuning/)
 
 ### Analyzing with SQL
 

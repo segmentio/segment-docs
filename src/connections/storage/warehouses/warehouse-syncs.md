@@ -3,11 +3,13 @@ title: Warehouse Syncs
 redirect_from: '/connections/warehouses/selective-sync/'
 ---
 
-The Warehouse Sync process prepares the raw data coming from a source and loads it into a warehouse destination. There are two phases to the sync process:
+<!--- The Warehouse Sync process prepares the raw data coming from a source and loads it into a warehouse destination. There are two phases to the sync process:
 1. **Preparation phase**: This is where Segment prepares the data coming from a source so that it's in the right format for the loading phase. 
-2. **Loading phase**: This is where Segment deduplicates data and the data loads into the warehouse destination. Any sync issues that occur in this phase can be traced back to your warehouse. 
+2. **Loading phase**: This is where Segment deduplicates data and the data loads into the warehouse destination. Any sync issues that occur in this phase can be traced back to your warehouse. -->
 
 Instead of constantly streaming data to the warehouse destination, Segment loads data to the warehouse in bulk at regular intervals. Before the data loads, Segment inserts and updates events and objects, and automatically adjusts the schema to make sure the data in the warehouse is inline with the data in Segment.
+
+{% include content/how-a-sync-works.md %}
 
 Warehouses sync with all data coming from your source and your data is available in your warehouse within 24-48 hours. If you'd like to manage the data you send to your warehouse, use [Warehouse Selective Sync](#warehouse-selective-sync).
 
