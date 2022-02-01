@@ -105,7 +105,7 @@ In this case, your HubSpot `eventId` is 'Bought Item'. If you want to use an exi
 
 #### Setting Contact Properties on Track
 
-Segment recommends that you send `traits` with an [Identify](/docs/connections/spec/identify/) call. You can also set HubSpot properties on a track call sent from any server-side source, as allowed by Hubspot's [events API](http://developers.hubspot.com/docs/methods/enterprise_events/http_api){:target="_blank"}. You might want to use this method if you're running out of API calls on the Identify requests.
+Segment recommends that you send `traits` with an [Identify](/docs/connections/spec/identify/) call. You can also set HubSpot properties on a track call sent from any server-side source, as allowed by Hubspot's [events API](http://developers.hubspot.com/docs/methods/enterprise_events/http_api){:target="_blank"}. Segment recommends this method if you're running out of HubSpot API calls on the Identify requests.
 
 Include HubSpot contact properties into the `context.traits` object:
 
