@@ -3,11 +3,16 @@ const path = require('path');
 const fs = require('fs');
 const fm = require('front-matter');
 const yaml = require('js-yaml');
-const { type } = require('os');
+const {
+  type
+} = require('os');
 
 require('dotenv').config();
 
 PAPI_URL = "https://api.segmentapis.com"
+
+const regionalSupport = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/regional-support.yml`)))
+
 
 const slugify = (displayName) => {
   let slug = displayName
@@ -16,7 +21,7 @@ const slugify = (displayName) => {
     .replace('-&-', '-')
     .replace('/', '-')
     .replace(/[\(\)]/g, '')
-    .replace('.','-')
+    .replace('.', '-')
 
   if (slug === '-net') slug = 'net'
   if (slug === 'talon-one') slug = 'talonone'
@@ -30,7 +35,7 @@ const slugify = (displayName) => {
 
 const getCatalog = async (url, page_token = "MA==") => {
   try {
-   const res = await axios.get(url, {
+    const res = await axios.get(url, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${process.env.PAPI_TOKEN}`
@@ -62,8 +67,8 @@ const getConnectionModes = (destination) => {
       server: false
     },
   }
-  destination.components.forEach(component =>{
-    switch (component.type){
+  destination.components.forEach(component => {
+    switch (component.type) {
       case 'IOS':
         connectionModes.device.mobile = true
         break
@@ -103,18 +108,18 @@ const getConnectionModes = (destination) => {
 /**
  * If catalog item does not exist, create folder and index.md file for it, and record it as incomplete for later fill in
  */
- const doesCatalogItemExist = (item) => {
+const doesCatalogItemExist = (item) => {
   const docsPath = `src/${item.url}`
 
   if (!fs.existsSync(docsPath)) {
     console.log(`${item.slug} does not exist: ${docsPath}`)
-    let content =`---\ntitle: '${item.display_name} Source'\nhidden: true\n---`
+    let content = `---\ntitle: '${item.display_name} Source'\nhidden: true\n---`
     if (!docsPath.includes('/sources/')) {
       let betaFlag = ''
       if (item.status === 'PUBLIC_BETA') {
         betaFlag = 'beta: true\n'
       }
-      content =`---\ntitle: '${item.display_name} Destination'\nhidden: true\npublished: false\n${betaFlag}---\n`
+      content = `---\ntitle: '${item.display_name} Destination'\nhidden: true\npublished: false\n${betaFlag}---\n`
     }
     fs.mkdirSync(docsPath)
     fs.writeFileSync(`${docsPath}/index.md`, content)
@@ -139,6 +144,7 @@ const isCatalogItemHidden = (itemURL) => {
 const updateSources = async () => {
   let sources = []
   let sourcesUpdated = []
+  let regionalSourcesUpdated = []
   let nextPageToken = "MA=="
   let categories = new Set()
   let sourceCategories = []
@@ -150,8 +156,12 @@ const updateSources = async () => {
   }
 
   sources.sort((a, b) => {
-    if(a.name.toLowerCase() < b.name.toLowerCase()) { return -1; }
-    if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
+    if (a.name.toLowerCase() < b.name.toLowerCase()) {
+      return -1;
+    }
+    if (a.name.toLowerCase() > b.name.toLowerCase()) {
+      return 1;
+    }
     return 0;
   })
 
@@ -169,10 +179,13 @@ const updateSources = async () => {
     'twilio-event-streams-beta'
   ]
 
+  const regionalSources = regionalSupport.sources
+
   sources.forEach(source => {
     let slug = slugify(source.name)
     let settings = source.options
     let hidden = false
+    let regional = ['us-west']
     let mainCategory = source.categories[0] ? source.categories[0].toLowerCase() : ''
 
     // determine the doc url based on the source's main category
@@ -185,14 +198,22 @@ const updateSources = async () => {
 
     // sort the sources alphabetically. JS's default sort is case sensistve which is why we compare lowercase on the fly
     settings.sort((a, b) => {
-      if(a.name.toLowerCase() < b.name.toLowerCase()) { return -1; }
-      if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
+      if (a.name.toLowerCase() < b.name.toLowerCase()) {
+        return -1;
+      }
+      if (a.name.toLowerCase() > b.name.toLowerCase()) {
+        return 1;
+      }
       return 0;
     })
 
     // check if the source should be hidden
     if (hiddenSources.includes(slug)) {
       hidden = true
+    }
+
+    if (regionalSources.includes(slug)) {
+      regional.push('eu-west')
     }
 
     // create the catalog metadata
@@ -202,6 +223,7 @@ const updateSources = async () => {
       slug,
       url,
       hidden,
+      regional,
       source_type: mainCategory,
       description: source.description,
       logo: {
@@ -216,6 +238,15 @@ const updateSources = async () => {
     doesCatalogItemExist(updatedSource)
     source.categories.reduce((s, e) => s.add(e), categories);
 
+    let updatedRegional = {
+      id: source.id,
+      display_name: source.name,
+      slug,
+      url,
+      regional
+    }
+    regionalSourcesUpdated.push(updatedRegional)
+
 
   })
 
@@ -226,35 +257,52 @@ const updateSources = async () => {
       slug: slugify(category)
     })
     sourceCategories.sort((a, b) => {
-      if(a.display_name.toLowerCase() < b.display_name.toLowerCase()) { return -1; }
-      if(a.display_name.toLowerCase() > b.display_name.toLowerCase()) { return 1; }
+      if (a.display_name.toLowerCase() < b.display_name.toLowerCase()) {
+        return -1;
+      }
+      if (a.display_name.toLowerCase() > b.display_name.toLowerCase()) {
+        return 1;
+      }
       return 0;
     })
   })
 
 
   // Create source catalog yaml file
-  const options = { noArrayIndent: false };
-  var todayDate = new Date().toISOString().slice(0,10);
+  const options = {
+    noArrayIndent: false
+  };
+  var todayDate = new Date().toISOString().slice(0, 10);
   output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n"
   output += "# sources last updated " + todayDate + " \n";
-  output += yaml.dump({ items: sourcesUpdated }, options);
+  output += yaml.dump({
+    items: sourcesUpdated
+  }, options);
   fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/sources.yml`), output);
 
   // Create source-category mapping yaml file
-  var todayDate = new Date().toISOString().slice(0,10);
+  var todayDate = new Date().toISOString().slice(0, 10);
   output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n"
   output += "# source cateogries last updated " + todayDate + " \n";
-  output += yaml.dump({ items: sourceCategories }, options);
+  output += yaml.dump({
+    items: sourceCategories
+  }, options);
   fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/source_categories.yml`), output);
 
-
-
+  
+  // output = "# AUTOGENERATED LIST OF CONNECTIONS THAT SUPPORT REGIONAL\n"
+  // output += "# Last updated " + todayDate + " \n";
+  output += yaml.dump({
+    sources: regionalSourcesUpdated
+  }, options)
+  fs.appendFileSync(path.resolve(__dirname, `../src/_data/catalog/regional-supported.yml`), output);
+  console.log("sources done")
 }
 
 const updateDestinations = async () => {
   let destinations = []
   let destinationsUpdated = []
+  let regionalDestinationsUpdated = []
   let destinationCategories = []
   let categories = new Set()
   let nextPageToken = "MA=="
@@ -266,21 +314,28 @@ const updateDestinations = async () => {
   }
 
   destinations.sort((a, b) => {
-    if(a.name.toLowerCase() < b.name.toLowerCase()) { return -1; }
-    if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
+    if (a.name.toLowerCase() < b.name.toLowerCase()) {
+      return -1;
+    }
+    if (a.name.toLowerCase() > b.name.toLowerCase()) {
+      return 1;
+    }
     return 0;
   })
 
+  const regionalDestinations = regionalSupport.destinations
+
 
   destinations.forEach(destination => {
-    
+    let regional = ['us-west']
+
     // We need to be able to keep the system slug in some cases.
     const slugOverrides = ['actions-google-enhanced-conversions', 'actions-google-analytics-4', 'actions-facebook-conversions-api']
     let slug = slugify(destination.name)
     if (slugOverrides.includes(destination.slug)) {
       slug = destination.slug
     }
-    
+
 
     // Flip the slug of Actions destinations
     const actionsDests = [
@@ -290,9 +345,13 @@ const updateDestinations = async () => {
     ]
 
     if (actionsDests.includes(slug)) {
-        const newSlug = slug.split('-')
-        slug = newSlug[1]+'-'+newSlug[0]
+      const newSlug = slug.split('-')
+      slug = newSlug[1] + '-' + newSlug[0]
     }
+    if (regionalDestinations.includes(slug)) {
+      regional.push('eu-west')
+    }
+
 
     let url = `connections/destinations/catalog/${slug}`
 
@@ -311,13 +370,17 @@ const updateDestinations = async () => {
     let settings = destination.options
 
     settings.sort((a, b) => {
-      if(a.name.toLowerCase() < b.name.toLowerCase()) { return -1; }
-      if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
+      if (a.name.toLowerCase() < b.name.toLowerCase()) {
+        return -1;
+      }
+      if (a.name.toLowerCase() > b.name.toLowerCase()) {
+        return 1;
+      }
       return 0;
     })
     let actions = destination.actions
     let presets = destination.presets
-    
+
     const clone = (obj) => Object.assign({}, obj)
     const renameKey = (object, key, newKey) => {
       const clonedObj = clone(object);
@@ -336,6 +399,7 @@ const updateDestinations = async () => {
       name: destination.name,
       slug,
       hidden: isCatalogItemHidden(url),
+      regional,
       url,
       previous_names: destination.previousNames,
       website: destination.website,
@@ -360,8 +424,17 @@ const updateDestinations = async () => {
     }
     destinationsUpdated.push(updatedDestination)
     doesCatalogItemExist(updatedDestination)
-
     tempCategories.reduce((s, e) => s.add(e), categories)
+
+    let updatedRegionalDestination = {
+      id: destination.id,
+      display_name: destination.name,
+      slug,
+      url,
+      regional
+    }
+
+    regionalDestinationsUpdated.push(updatedRegionalDestination)
   })
 
 
@@ -372,26 +445,45 @@ const updateDestinations = async () => {
       slug: slugify(category)
     })
     destinationCategories.sort((a, b) => {
-      if(a.display_name.toLowerCase() < b.display_name.toLowerCase()) { return -1; }
-      if(a.display_name.toLowerCase() > b.display_name.toLowerCase()) { return 1; }
+      if (a.display_name.toLowerCase() < b.display_name.toLowerCase()) {
+        return -1;
+      }
+      if (a.display_name.toLowerCase() > b.display_name.toLowerCase()) {
+        return 1;
+      }
       return 0;
     })
   })
 
 
-  const options = { noArrayIndent: true };
+  const options = {
+    noArrayIndent: true
+  };
   output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n"
-  var todayDate = new Date().toISOString().slice(0,10);
+  var todayDate = new Date().toISOString().slice(0, 10);
   output += "# destination data last updated " + todayDate + " \n";
-  output += yaml.dump({ items: destinationsUpdated }, options);
+  output += yaml.dump({
+    items: destinationsUpdated
+  }, options);
   fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/destinations.yml`), output);
 
   // Create destination-category mapping yaml file
   output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n"
-  var todayDate = new Date().toISOString().slice(0,10);
+  var todayDate = new Date().toISOString().slice(0, 10);
   output += "# destination categories last updated " + todayDate + " \n";
-  output += yaml.dump({ items: destinationCategories }, options);
+  output += yaml.dump({
+    items: destinationCategories
+  }, options);
   fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/destination_categories.yml`), output);
+
+  // Append regional destinations to regional file
+  output = yaml.dump({
+    destinations: regionalDestinationsUpdated
+  }, {
+    noArrayIndent: false
+  })
+  fs.appendFileSync(path.resolve(__dirname,`../src/_data/catalog/regional-supported.yml`),output);
+  console.log("destinations done")
 }
 
 const updateWarehouses = async () => {
@@ -407,47 +499,72 @@ const updateWarehouses = async () => {
   }
 
   warehouses.sort((a, b) => {
-    if(a.name.toLowerCase() < b.name.toLowerCase()) { return -1; }
-    if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
+    if (a.name.toLowerCase() < b.name.toLowerCase()) {
+      return -1;
+    }
+    if (a.name.toLowerCase() > b.name.toLowerCase()) {
+      return 1;
+    }
     return 0;
   })
 
+  const regionalWarehouses = regionalSupport.warehouses
+
+
   warehouses.forEach(warehouse => {
     let slug = slugify(warehouse.slug)
+    let regional = ['us-west']
     let url = `connections/storage/catalog/${slug}`
+
+    if (regionalWarehouses.includes(slug)) {
+      regional.push('eu-west')
+    }
 
     let settings = warehouse.options
     settings.sort((a, b) => {
-      if(a.name.toLowerCase() < b.name.toLowerCase()) { return -1; }
-      if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
+      if (a.name.toLowerCase() < b.name.toLowerCase()) {
+        return -1;
+      }
+      if (a.name.toLowerCase() > b.name.toLowerCase()) {
+        return 1;
+      }
       return 0;
     })
 
     let updatedWarehouse = {
+      id: warehouse.id,
       display_name: warehouse.name,
+      url,
       slug,
-      description: warehouse.description,
-      logo: {
-        url: warehouse.logos.default
-      },
-      mark: {
-        url: warehouse.logos.mark
-      },
-      settings
+      regional,
+
     }
     warehousesUpdated.push(updatedWarehouse)
-    doesCatalogItemExist(updatedWarehouse)
+
 
   })
-  const options = { noArrayIndent: true };
-  output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n"
-  var todayDate = new Date().toISOString().slice(0,10);
-  output += "# warehouse data last updated " + todayDate + " \n";
-  output += yaml.dump({ items: warehousesUpdated }, options);
-  fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/warehouse_papi.yml`), output);
+  const options = {
+    noArrayIndent: true
+  };
+  // output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n"
+  const todayDate = new Date().toISOString().slice(0, 10);
+  // output += "# warehouse data last updated " + todayDate + " \n";
+  // output += yaml.dump({
+  //   items: warehousesUpdated
+  // }, options);
+  // fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/warehouse_papi.yml`), output);
 
+  // Create regional support map
+  output = "# AUTOGENERATED LIST OF CONNECTIONS THAT SUPPORT REGIONAL\n"
+  output += "# Last updated " + todayDate + " \n";
+  output += yaml.dump({
+    warehouses: warehousesUpdated
+  }, {
+    noArrayIndent: false
+  })
+  fs.writeFileSync(path.resolve(__dirname,`../src/_data/catalog/regional-supported.yml`),output);
+  console.log("warehouses done")
 }
-
-updateDestinations()
 updateSources()
-//updateWarehouses()
+updateWarehouses()
+updateDestinations()

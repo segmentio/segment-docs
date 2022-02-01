@@ -41,6 +41,8 @@ sections:
     title: Segment vs. Tag Managers
   - path: /guides/what-is-replay
     title: Replay
+  - path: /guides/regional-segment
+    title: Regional Segment
 
   - section_title: How-to Guides
     slug: guides/how-to-guides

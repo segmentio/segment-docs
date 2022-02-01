@@ -1,0 +1,34 @@
+<a id="tf-link" href="https://segment.typeform.com/to/k5ADnN5e" target="_blank" class="button button--expand button-fill ">
+  Click to access the form
+</a>
+
+
+<script>
+  function getCookie() {
+    const cookies = ['ajs_user_id']
+    const cDecoded = decodeURIComponent(document.cookie); //to be careful
+    const arr = cDecoded.split('; ');
+    let id;
+    let res;
+    let values = {};
+
+    cookies.forEach(cookie => {
+      const name = cookie + "=";
+      arr.forEach(val => {
+        if (val.indexOf(name) === 0) res = val.substring(name.length);
+        values[cookie] = res
+      })
+    });
+
+    if (values["ajs_user_id"] !== undefined) {
+      id = "#user_id=" + values["ajs_user_id"]
+    } else {
+      id = ""
+    }
+    
+    let url = document.getElementById("tf-link")
+    url.href = url.href + id
+  }
+getCookie();
+
+</script>

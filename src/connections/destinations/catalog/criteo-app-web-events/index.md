@@ -1,28 +1,23 @@
 ---
 title: Criteo App & Web Events Destination
 rewrite: true
+cmode-override: true 
+hide-cmodes: true
 redirect_from: '/connections/destinations/catalog/criteo/'
 ---
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+> info "Information about Criteo App & Web Events and Analytics.js"
+> If you connect the Criteo App & Web Events destination to an Analytics.js source, the connection defaults to Device-mode. Cloud-mode connections are not available with Analytics.js.
 
 Currently this destination supports events originating from Mobile or Web sources (not Server). You can read more [about sources here](/docs/connections/sources/).
-
-**Our web integration with Criteo Events is currently in public beta. Use carefully and [contact us](https://segment.com/help/contact) if you are having any issues.**
 
 To get started with Criteo Events and Segment, you'll need:
 
 1. An existing account with [Criteo](http://www.criteo.com/).
 2. A data source integrated with either one of our mobile SDK's ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](/docs/connections/sources/catalog/libraries/mobile/android/)) or Javascript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/))
 
-Assuming both of these criteria are met, you can add Criteo Events as a destination for your desired source in your Segment account.
-
-**If you are using our mobile integration with Criteo Events make sure your app is properly registered with them.**
-
-
-- - -
 
 
 ## Track
