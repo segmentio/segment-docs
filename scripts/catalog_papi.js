@@ -330,7 +330,7 @@ const updateDestinations = async () => {
     let regional = ['us-west']
 
     // We need to be able to keep the system slug in some cases.
-    const slugOverrides = ['actions-google-enhanced-conversions', 'actions-google-analytics-4', 'actions-facebook-conversions-api']
+    const slugOverrides = ['actions-google-enhanced-conversions', 'actions-google-analytics-4', 'actions-facebook-conversions-api',  'actions-friendbuy-cloud']
     let slug = slugify(destination.name)
     if (slugOverrides.includes(destination.slug)) {
       slug = destination.slug
@@ -341,7 +341,8 @@ const updateDestinations = async () => {
     const actionsDests = [
       'amplitude-actions',
       'slack-actions',
-      'fullstory-actions'
+      'fullstory-actions',
+      'friendbuy-actions'
     ]
 
     if (actionsDests.includes(slug)) {
