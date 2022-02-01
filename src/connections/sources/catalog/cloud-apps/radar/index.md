@@ -2,6 +2,8 @@
 title: Radar Source
 ---
 
+{% include content/source-region-unsupported.md %}
+
 [Radar](https://radar.com) is the leading geofencing and location tracking platform. You can use Radar SDKs and APIs to build a wide range of location-based product and service experiences, including pickup and delivery tracking, location-triggered notifications, location verification, store locators, address autocomplete, and more.
 
 The Radar Segment Source is a Cloud-mode event source. Instead of packaging Radar's SDK using Segment as a wrapper, you include, configure, and initialize their SDK separately. Radar then sends all events that it detects and infers to Segment using its servers. As a result, only destinations that allow Cloud-mode are compatible with the Radar source.

@@ -2,6 +2,8 @@
 title: Mandrill Source
 ---
 
+{% include content/source-region-unsupported.md %}
+
 [Mandrill](http://www.mandrill.com/) is a transactional email API for MailChimp users.
 
 Take your company's email analysis to the next level by **adding Mandrill as a Source to Segment.** Segment automatically  collects email events like `Sent` and `Opened` and load them into your data warehouse. 

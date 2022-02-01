@@ -2,6 +2,8 @@
 title: Aircall Source
 ---
 
+{% include content/source-region-unsupported.md %}
+
 Connect [Aircall](https://aircall.io) with Segment to bring Aircall events and phone call data to your data warehouse. Improve your knowledge of customer touchpoints by leveraging call activity.
 
 This source is maintained by Aircall. For any issues with the source, [contact the Aircall Support team](mailto:support@aircall.io).
