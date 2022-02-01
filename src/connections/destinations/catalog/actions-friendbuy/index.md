@@ -47,17 +47,6 @@ Before you start, you must have Segment's Analytics.js 2.0 installed on your sit
 6. Select the **Mappings** tab. A number of pre-built mappings are configured for you that map standard events defined in the [Segment Spec](/docs/connections/spec/) to their equivalent Friendbuy events, as displayed below. You can disable events that you don't use or edit the pre-built field mappings.
 7. After you configure the destination, enable it from the **Settings** tab. As noted above, the Friendbuy JavaScript will not be loaded unless at least one Mapping is enabled.
 
-## Pre-built mappings
-
-By default, a Friendbuy Web Mode (Actions) Destination comes with the following mappings.
-
-| Mapping Name   | Trigger                                   | Friendbuy Action |
-|----------------|-------------------------------------------|------------------|
-| Track Customer | `identify` calls                          | Track Customer   |
-| Track Purchase | `track` calls with name `Order Completed` | Track Purchase   |
-| Track Sign Up  | `track` calls with name `Signed Up`       | Track Sign Up    |
-| Track Page     | `page` calls                              | Track Page       |
-
 <!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
 
 {% include components/actions-fields.html %}
