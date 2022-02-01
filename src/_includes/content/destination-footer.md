@@ -20,28 +20,6 @@ When you first create an audience, Personas sends an Identify call for every use
 
 {% endif %}
 
-{% unless page.rewrite == true or page.hide-cmodes == true%}
-## Supported Sources and Connection Modes
-{% if currentIntegration.components.size > 0 %}
-{% include content/connection-modes.md %}
-
-{% endif %}
-
-{% if currentIntegration.browserUnbundlingSupported == true and currentIntegration.browserUnbundlingPublic == true %}
-  Segment offers an optional **Cloud-based** Connection Mode for **Web** data with {{ currentIntegration.display_name }}. As a reminder, this removes the {{ currentIntegration.display_name }} javascript library from your site, improving performance.
-{% endif %}
-
-{% unless page.hide-device == true %}
-{% if currentIntegration.platforms.mobile == true %}
-  {% if currentIntegration.platforms.server == true %}
-  Segment offers an *optional* **Device-based** Connection Mode for **Mobile** data going to {{ currentIntegration.display_name }}, so that you can use {{ currentIntegration.display_name }} features that collect data directly from the mobile device. To do this, you must package the Segment-{{ currentIntegration.display_name }} mobile SDK with the Segment mobile library.
-  {% else %}
-  This destination *requires* that you use a **Device-based** Connection Mode for **Mobile** data. Make sure you package the {{ currentIntegration.display_name }} mobile SDK with the Segment mobile library.
-  {% endif %}
-{% endif %}
-{% endunless %}
-{% endunless %}
-
 {% unless page.hide-settings == true %}
 ## Settings
 Segment lets you change these destination settings from the Segment app without having to touch any code.
