@@ -2,6 +2,8 @@
 title: Blueshift Source
 ---
 
+{% include content/source-region-unsupported.md %}
+
 Blueshift is an AI powered customer engagement platform for growth marketers. With Blueshift, you can set up programmatic cross-channel marketing campaigns across Email, Mobile, Website and other channels.
 
 Take your company's email analysis to the next level by adding Blueshift as a Source to Segment. Segment automatically  collects email events like **Email Delivered** and **Email Opened**, forward them to your destinations, and load them into your data warehouse.

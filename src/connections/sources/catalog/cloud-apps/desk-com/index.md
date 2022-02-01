@@ -8,6 +8,7 @@ hidden: true
 > error ""
 > Desk.com ended operations on March 13th 2020. This page is for historical reference purposes only.
 
+{% include content/source-region-unsupported.md %}
 
 [Desk.com](http://www.desk.com/), previously known as Assistly, is a SaaS help desk and customer support product owned by Salesforce.com and accessible through the cloud.
 
