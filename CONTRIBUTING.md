@@ -79,7 +79,7 @@ Content with in each `.md` file is markdown. For information about styling, and 
 
 ### Front matter
 
-Repository markdown files often contain front matter metadata, which you'll find at the top of the file. These front matter variables instruct Jekyll how to build and render the page as HTML.
+Repository Markdown files often contain front matter metadata, which you'll find at the top of the file. These front matter variables instruct Jekyll how to build and render the page as HTML.
 
 Front matter in a file will look something like this:
 
