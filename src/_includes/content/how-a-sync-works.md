@@ -1,5 +1,5 @@
 When Segment loads data into your warehouse, each sync goes through the following steps:
-1. **Ping:** Segment servers connect to your warehouse. For Redshift warehouses, Segment also runs a query to determine how many slices a cluster has at this step. <br/>Common reasons a sync would fail at this step include a blocked VPN/IP, a warehouse that isn't publicly available, and user permission/credential errors. 
+1. **Ping:** Segment servers connect to your warehouse. For Redshift warehouses, Segment also runs a query to determine how many slices a cluster has. <br/>Common reasons a sync would fail at this step include a blocked VPN/IP, a warehouse that isn't publicly available, and user permission/credential errors. 
 2. **Scan:** Segment finds new events in AWS S3 and updated objects in Dynamo. 
 3. **Download:** Segment pulls the events and objects into a staging area.
 4. **Process:** The raw Segment event and object archive files are transformed into database-specific formats. The [warehouse schema](/docs/connections/storage/warehouses/schema/) is also defined in this step. 
