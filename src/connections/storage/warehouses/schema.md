@@ -2,6 +2,8 @@
 title: Warehouse Schemas
 ---
 
+A **schema** describes the way a warehouse is organized. Schemas include all database elements: tables, views, indexes, and synonyms, and the relationships that exist between elements. 
+
 ## Warehouse tables
 
 The table below describes the schema in Segment Warehouses:
