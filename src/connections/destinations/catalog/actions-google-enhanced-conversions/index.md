@@ -74,3 +74,18 @@ To test your mapping:
 {% endcapture %}
 
 {% include components/actions-fields.html content1=conv_label section1="postConversion" content2=test_mapping section2="postConversion" %}
+
+## Troubleshooting
+Follow the steps below if you have issues with Access Tokens or Conversion tracking.
+
+### Refreshing Access Tokens
+
+When you use OAuth to authenticate into the Google Enhanced Conversions destination, Segment stores an access token and refresh token. Access tokens for Google Enhanced Conversions expire after one hour. Once expired, Segment receives an error and then uses the refresh token to fetch a new access token. This results in two API requests to Google Enhanced Conversions, one failure and one success.
+
+Because of the duplicate API requests, you may see a warning in Google for unprocessed conversions due to incorrect or missing OAuth credentials. This warning is expected and does not indicate data loss. Google has confirmed that conversions are being processed, and OAuth retry behavior will not cause any issues for your web conversions. Whenever possible, Segment caches access tokens to reduce the total number of requests we make to Google Enhanced Conversions.
+
+### Conversion Tracking with Gtag
+
+To use Google Enhanced Conversions, you must record conversions using the standard Google Ads Conversion tag (Gtag). After a conversion is recorded, you can send hashed first-party data through Segment’s Google Enhanced Conversions destination for up to 24 hours after the conversion. Segment offers a [Google Ads (Gtag) destination](/docs/connections/destinations/catalog/google-ads-gtag/) so you can use your existing Segment implementation to activate Gtag.
+
+Conversions tracked by other means, such as importing goals from Google Analytics, are not eligible for Google Enhanced Conversions.

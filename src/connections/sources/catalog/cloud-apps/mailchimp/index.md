@@ -2,6 +2,8 @@
 title: Mailchimp Source
 ---
 
+{% include content/source-region-unsupported.md %}
+
 ## Getting Started
 
 1. From your workspace's `/sources` page, click `add source`.

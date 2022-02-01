@@ -2,6 +2,8 @@
 title: Amplitude Engage Event Source
 ---
 
+{% include content/source-region-unsupported.md %}
+
 This source combines Amplitude's analytics with Segment's rich connections
 ecosystem. This allows you to export Behavioral Cohorts from Amplitude to
 Segment so that you can better target users across their many downstream

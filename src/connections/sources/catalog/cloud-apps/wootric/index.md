@@ -5,6 +5,8 @@ redirect_from:
   - 'connections/sources/catalog/cloud-apps/inmoment-formerly-wootric'
 ---
 
+{% include content/source-region-unsupported.md %}
+
 [InMoment](https://wootric.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) (formerly Wootric) is modern customer feedback management software. You can incorporate Voice of Customer data in your decision-making processes and marketing campaigns, and trigger customer follow-up when you send survey responses to your CRM, marketing platform or data warehouses automatically.
 
 InMoment maintains this source. For any issues, [contact the InMoment support team](mailto:support@wootric.com).

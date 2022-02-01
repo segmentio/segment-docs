@@ -1,6 +1,9 @@
 ---
 title: Sendgrid Source
 ---
+
+{% include content/source-region-unsupported.md %}
+
 SendGrid is a trusted platform for transactional email and email marketing. [Visit Website](http://sendgrid.com)
 
 Take your company's analysis to the next level by **adding Sendgrid as a Source to Segment.** Segment automatically  collects events like `Click` or `Delivered` and objects such as `Recipients` or `Campaigns` and load them into your data warehouse. 

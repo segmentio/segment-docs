@@ -2,6 +2,8 @@
 title: Braze Source
 ---
 
+{% include content/source-region-unsupported.md %}
+
 [Braze](https://www.braze.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a marketing automation and customer engagement platform. Growth, Engagement, and Marketing teams use Braze to build great long term relationships with their customers across key digital channels.
 
 Take your company's marketing and customer engagement to the next level by adding Braze as a Segment Source, using Braze's Currents product. Segment automatically  collects marketing and analytics events, forwards them to your destinations, and loads them into your data warehouse.

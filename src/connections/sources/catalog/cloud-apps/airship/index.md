@@ -2,6 +2,8 @@
 title: Airship Source
 ---
 
+{% include content/source-region-unsupported.md %}
+
 [Airship](https://www.airship.com) gives brands the data, channels, orchestration and services they need to deliver push notifications, emails, SMS, in-app messages, and more to the right person at the right moment — building trust, boosting engagement, driving action and growing value.
 
 Real-Time Data Streaming automatically collects user-level data and sends the data to Segment for analysis or action through other Destination integrations. At Airship, we understand that seamlessly tying data across platforms can be a complex task. This integration removes the development so users can get back to understanding their audience and reaching them on their preferred channel.
