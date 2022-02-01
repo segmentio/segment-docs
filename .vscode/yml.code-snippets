@@ -21,8 +21,4 @@
 		"body":["- name: ${1:name}\r\tdescription: ${2:description}\r\tdefault: ${3}"],
 		"description": "Yaml settings"
 	},
-	"ext_link":{
-		"prefix": ["{:}"],
-		"body":["{:target='${1:_blank}'}"]
-	},
 }
