@@ -39,11 +39,23 @@ If you’re using a different library such as Analytics-Android, follow these st
 3. Modify your initialized instance.
 
     <br> Before example:
+    {% codeexample %}
+    {% codeexampletab Java %}
     ```java  
     Analytics analytics = new Analytics.Builder(context, "YOUR_WRITE_KEY")
       .trackApplicationLifecycleEvents()
       .build();
     ```
+    {% endcodeexampletab %}
+    {% codeexampletab Kotlin %}
+    ```kotlin
+    val analytics = Analytics.Builder(context, "YOUR_WRITE_KEY")
+      .trackApplicationLifecycleEvents()
+      .build()
+    ```
+    {% endcodeexampletab %}
+    {% endcodeexample %}
+
 
     <br> After example:
 
@@ -77,6 +89,9 @@ If you’re using a different library such as Analytics-Android, follow these st
     <br> As middlewares have the same function as [enrichment plugins](/docs/connections/sources/catalog/libraries/mobile/kotlin-android#plugin-architecture), you need to write an enrichment plugin to add a middleware.
 
     <br> Before example:
+    
+    {% codeexample %}
+    {% codeexampletab Java %}
     ```java  
     builder
       .useSourceMiddleware(new Middleware() {
@@ -100,6 +115,32 @@ If you’re using a different library such as Analytics-Android, follow these st
           }
         })
     ```
+    {% endcodeexampletab %}
+    {% codeexampletab Kotlin %}
+    ```kotlin
+    builder
+      .useSourceMiddleware(
+        Middleware { chain ->
+            // Get the payload.
+            val payload = chain.payload()
+
+            // Set the device year class on the context object.
+            val year = YearClass.get(getApplicationContext())
+            val context = LinkedHashMap<String, Object>(payload.context())
+            context.put("device_year_class", year)
+
+            // Build our new payload.
+            val newPayload = payload.toBuilder()
+                  .context(context)
+                  .build();
+
+            // Continue with the new payload.
+            chain.proceed(newPayload)
+        })
+    ```
+    {% endcodeexampletab %}
+    {% endcodeexample %}
+
 
     <br> After example:
 
@@ -149,7 +190,7 @@ If you’re using a different library such as Analytics-Android, follow these st
 
         override fun execute(event: BaseEvent): BaseEvent? {
             // Set the device year class on the context object.
-            val year = YearClass.get(getApplicationContext());
+            val year = YearClass.get(getApplicationContext())
             event.context = updateJsonObject(event.context) {
                 it["device_year_class"] = year
             }
@@ -165,6 +206,9 @@ If you’re using a different library such as Analytics-Android, follow these st
     If you don’t need to transform all of your Segment calls, and only want to transform the calls going to specific destinations, use Destination middleware instead of Source middleware. Destination middleware is available for device-mode destinations only.
 
     <br> Before example:
+
+    {% codeexample %}
+    {% codeexampletab Java %}
     ```java  
     builder
       .useDestinationMiddleware("Segment.io", new Middleware() {
@@ -188,6 +232,32 @@ If you’re using a different library such as Analytics-Android, follow these st
           }
         })
     ```
+    {% endcodeexampletab %}
+    {% codeexampletab Kotlin %}
+    ```kotlin
+    builder
+      .useDestinationMiddleware(
+       "Segment.io",
+       Middleware { chain ->
+            // Get the payload.
+            val payload = chain.payload()
+
+            // Set the device year class on the context object.
+            val year = YearClass.get(getApplicationContext())
+            val context = LinkedHashMap<String, Object>(payload.context())
+            context.put("device_year_class", year)
+
+            // Build our new payload.
+            val newPayload = payload.toBuilder()
+                  .context(context)
+                  .build();
+
+            // Continue with the new payload.
+            chain.proceed(newPayload)
+       })
+    ```
+    {% endcodeexampletab %}
+    {% endcodeexample %}
 
     <br> After example:
 
@@ -241,7 +311,7 @@ If you’re using a different library such as Analytics-Android, follow these st
 
         override fun execute(event: BaseEvent): BaseEvent? {
             // Set the device year class on the context object.
-            val year = YearClass.get(getApplicationContext());
+            val year = YearClass.get(getApplicationContext())
             event.context = updateJsonObject(event.context) {
                 it["device_year_class"] = year
             }
@@ -285,10 +355,21 @@ If you’re using a different library such as Analytics-Android, follow these st
     Segment previously used Factories to initialize destinations. With Analytics Kotlin, Segment treats destinations similar to plugins and simplifies the process in adding them.  
 
     <br> Before example:
+
+    {% codeexample %}
+    {% codeexampletab Java %}
     ```java  
+    // Previously we used to use Factories to initialize destinations
+    analytics.use(FooIntegration.FACTORY);
+    ```
+    {% endcodeexampletab %}
+    {% codeexampletab Kotlin %}
+    ```kotlin
     // Previously we used to use Factories to initialize destinations
     analytics.use(FooIntegration.FACTORY)
     ```
+    {% endcodeexampletab %}
+    {% endcodeexample %}
 
     <br> After example:
 
@@ -313,9 +394,20 @@ If you’re using a different library such as Analytics-Android, follow these st
     - Identify
 
       <br> Before example:
+
+      {% codeexample %}
+      {% codeexampletab Java %}
       ```java
       analytics.identify("a user's id", new Traits().putName("John Doe"), null);
       ```
+      {% endcodeexampletab %}
+      {% codeexampletab Kotlin %}
+      ```kotlin
+      analytics.identify("a user's id", Traits().putName("John Doe"), null)
+      ```
+      {% endcodeexampletab %}
+      {% endcodeexample %}
+
 
       <br> After example:
 
@@ -368,9 +460,19 @@ If you’re using a different library such as Analytics-Android, follow these st
     - Track
 
       <br> Before example:
-      ```kotlin
+
+      {% codeexample %}
+      {% codeexampletab Java %}
+      ```java
       analytics.track("Product Viewed", new Properties().putValue("name", "Moto 360"));
       ```
+      {% endcodeexampletab %}
+      {% codeexampletab Kotlin %}
+      ```kotlin
+      analytics.track("Product Viewed", Properties().putValue("name", "Moto 360"))
+      ```
+      {% endcodeexampletab %}
+      {% endcodeexample %}
 
       <br> After example:
 
@@ -427,7 +529,7 @@ If you’re using a different library such as Analytics-Android, follow these st
               productName = "Moto 360",
               brand = "Motorola",
               category = "smart watch",
-              price = 300.00
+              price = 300.00,
               currency = "USD"
             )
         )
@@ -449,9 +551,19 @@ If you’re using a different library such as Analytics-Android, follow these st
     
     - Group
       <br> Before example:
+
+      {% codeexample %}
+      {% codeexampletab Java %}
       ```java
       analytics.group("a user's id", "a group id", new Traits().putEmployees(20));
       ```
+      {% endcodeexampletab %}
+      {% codeexampletab Kotlin %}
+      ```kotlin
+      analytics.group("a user's id", "a group id", Traits().putEmployees(20))
+      ```
+      {% endcodeexampletab %}
+      {% endcodeexample %}
 
       <br> After example:
 
@@ -498,9 +610,19 @@ If you’re using a different library such as Analytics-Android, follow these st
 
     - Screen
       <br> Before example:
+
+      {% codeexample %}
+      {% codeexampletab Java %}
       ```java
       analytics.screen("Feed", new Properties().putValue("Feed Length", "26"));
       ```
+      {% endcodeexampletab %}
+      {% codeexampletab Kotlin %}
+      ```kotlin
+      analytics.screen("Feed", Properties().putValue("Feed Length", "26"))
+      ```
+      {% endcodeexampletab %}
+      {% endcodeexample %}
 
       <br> After example:
 
@@ -550,9 +672,19 @@ If you’re using a different library such as Analytics-Android, follow these st
     - Alias
 
       <br> Before example:
+
+      {% codeexample %}
+      {% codeexampletab Java %}
       ```java
       analytics.alias("new id");
       ```
+      {% endcodeexampletab %}
+      {% codeexampletab Kotlin %}
+      ```kotlin    
+      analytics.alias("new id")
+      ```
+      {% endcodeexampletab %}
+      {% endcodeexample %}
 
       <br> After example:
 
