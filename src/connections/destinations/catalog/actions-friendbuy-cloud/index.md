@@ -2,7 +2,7 @@
 title: Friendbuy Cloud Mode (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
-hidden: true
+hidden: false
 ---
 
 {% include content/plan-grid.md name="actions" %}

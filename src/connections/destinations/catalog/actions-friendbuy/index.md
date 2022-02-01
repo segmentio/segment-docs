@@ -2,7 +2,7 @@
 title: Friendbuy Web Mode (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
-hidden: true
+hidden: false
 ---
 
 <!-- The published version of this document is available at https://segment.com/docs/connections/destinations/catalog/actions-friendbuy/ -->
