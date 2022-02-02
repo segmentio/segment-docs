@@ -11,7 +11,6 @@ If you’re using a different library such as Analytics-Android, follow these st
 > success ""
 > You can continue to use your Android source write key for the migration to view historical events.
 
-
 1. Create a Kotlin Source in Segment.
     1. Go to **Connections > Sources > Add Source**.
     2. Search for **Kotlin** and click **Add source**.
@@ -38,60 +37,96 @@ If you’re using a different library such as Analytics-Android, follow these st
     ```
 3. Modify your initialized instance.
 
-    <br> Before example:
-    {% codeexample %}
-    {% codeexampletab Java %}
+    <table>
+    <thead>
+    <tr>
+    <th>Before</th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Java</td>
+    <td markdown=1 style="max-width: 450px">
     ```java  
     Analytics analytics = new Analytics.Builder(context, "YOUR_WRITE_KEY")
       .trackApplicationLifecycleEvents()
       .build();
     ```
-    {% endcodeexampletab %}
-    {% codeexampletab Kotlin %}
+    </td>
+    </tr>
+    <tr>
+    <td>Kotlin</td>
+    <td markdown=1 style="max-width: 450px">
     ```kotlin
     val analytics = Analytics.Builder(context, "YOUR_WRITE_KEY")
-      .trackApplicationLifecycleEvents()
-      .build()
+    .trackApplicationLifecycleEvents()
+    .build()
     ```
-    {% endcodeexampletab %}
-    {% endcodeexample %}
+    </td>
+    </tr>
+    </tbody>
+    </table>
 
+    <table>
+    <thead>
+    <tr>
+    <!-- <th><th> -->
+    <th>After</th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody style="max-width: 100%">
+    <tr>
+    <td>Java</td>
+    <td markdown=1 style="max-width: 450px">
 
-    <br> After example:
-
-    {% codeexample %}
-    {% codeexampletab Java %}
     ```java
-    // Initialize an Analytics object with the Kotlin Analytics method 
+    // Initialize an Analytics object with the Kotlin Analytics method
     Analytics androidAnalytics = AndroidAnalyticsKt.Analytics("YOUR_WRITE_KEY", context, configuration -> {
-      configuration.setTrackApplicationLifecycleEvents(true);
-      return Unit.INSTANCE;
-    });
+        configuration.setTrackApplicationLifecycleEvents(true);
+        return Unit.INSTANCE;
+      }
+    );
 
     // Wrap the object with JavaAnalytics to bring Java Compatibility.
     // You can also choose not to wrap the object, but some of the Analytics methods may not be accessible.
     JavaAnalytics analytics = new JavaAnalytics(androidAnalytics);    
     ```
-    {% endcodeexampletab %}
-    {% codeexampletab Kotlin %}
+    </td>
+    </tr>
+    <tr>
+    <td>Kotlin</td>
+    <td markdown=1 style="max-width: 450px">
+
     ```kotlin
     Analytics("YOUR_WRITE_KEY", context) {
-        trackApplicationLifecycleEvents = true
+    trackApplicationLifecycleEvents = true
     }
     ```
-    {% endcodeexampletab %}
-    {% endcodeexample %}
-    
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+
 4. Add a middleware.
 
     Middlewares are a powerful mechanism that can augment the events collected by the SDK. A middleware is a function that the Segment SDK invokes and can be used to monitor, modify, augment or reject events.
 
     <br> As middlewares have the same function as [enrichment plugins](/docs/connections/sources/catalog/libraries/mobile/kotlin-android#plugin-architecture), you need to write an enrichment plugin to add a middleware.
 
-    <br> Before example:
-    
-    {% codeexample %}
-    {% codeexampletab Java %}
+    <table>
+    <thead>
+    <tr>
+    <th>Before</th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Java</td>
+    <td markdown=1 style="max-width: 450px">
     ```java  
     builder
       .useSourceMiddleware(new Middleware() {
@@ -115,8 +150,11 @@ If you’re using a different library such as Analytics-Android, follow these st
           }
         })
     ```
-    {% endcodeexampletab %}
-    {% codeexampletab Kotlin %}
+    </td>
+    </tr>
+    <tr>
+    <td>Kotlin</td>
+    <td markdown=1 style="max-width: 450px">
     ```kotlin
     builder
       .useSourceMiddleware(
@@ -138,14 +176,24 @@ If you’re using a different library such as Analytics-Android, follow these st
             chain.proceed(newPayload)
         })
     ```
-    {% endcodeexampletab %}
-    {% endcodeexample %}
+    </td>
+    </tr>
+    </tbody>
+    </table>
 
+    <table>
+    <thead>
+    <tr>
+    <!-- <th><th> -->
+    <th>After</th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody style="max-width: 100%">
+    <tr>
+    <td>Java</td>
+    <td markdown=1 style="max-width: 450px">
 
-    <br> After example:
-
-    {% codeexample %}
-    {% codeexampletab Java %}
     ```java
     analytics.add(new Plugin() {
         private Analytics analytics;
@@ -181,8 +229,12 @@ If you’re using a different library such as Analytics-Android, follow these st
         }
     });
     ```
-    {% endcodeexampletab %}
-    {% codeexampletab Kotlin %}
+    </td>
+    </tr>
+    <tr>
+    <td>Kotlin</td>
+    <td markdown=1 style="max-width: 450px">
+
     ```kotlin
     analytics.add(object: Plugin {
         override lateinit var analytics: Analytics
@@ -198,17 +250,27 @@ If you’re using a different library such as Analytics-Android, follow these st
         }
     })
     ```
-    {% endcodeexampletab %}
-    {% endcodeexample %}
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
 
 5. Add a destination middleware.
 
     If you don’t need to transform all of your Segment calls, and only want to transform the calls going to specific destinations, use Destination middleware instead of Source middleware. Destination middleware is available for device-mode destinations only.
 
-    <br> Before example:
-
-    {% codeexample %}
-    {% codeexampletab Java %}
+    <table>
+    <thead>
+    <tr>
+    <th>Before</th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Java</td>
+    <td markdown=1 style="max-width: 450px">
     ```java  
     builder
       .useDestinationMiddleware("Segment.io", new Middleware() {
@@ -232,8 +294,11 @@ If you’re using a different library such as Analytics-Android, follow these st
           }
         })
     ```
-    {% endcodeexampletab %}
-    {% codeexampletab Kotlin %}
+    </td>
+    </tr>
+    <tr>
+    <td>Kotlin</td>
+    <td markdown=1 style="max-width: 450px">
     ```kotlin
     builder
       .useDestinationMiddleware(
@@ -256,13 +321,24 @@ If you’re using a different library such as Analytics-Android, follow these st
             chain.proceed(newPayload)
        })
     ```
-    {% endcodeexampletab %}
-    {% endcodeexample %}
+    </td>
+    </tr>
+    </tbody>
+    </table>
 
-    <br> After example:
+    <table>
+    <thead>
+    <tr>
+    <!-- <th><th> -->
+    <th>After</th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody style="max-width: 100%">
+    <tr>
+    <td>Java</td>
+    <td markdown=1 style="max-width: 450px">
 
-    {% codeexample %}
-    {% codeexampletab Java %}
     ```java
     SegmentDestination segmentDestination = analytics.find(SegmentDestination.class);
 
@@ -300,8 +376,12 @@ If you’re using a different library such as Analytics-Android, follow these st
         }
     });
     ```
-    {% endcodeexampletab %}
-    {% codeexampletab Kotlin %}
+    </td>
+    </tr>
+    <tr>
+    <td>Kotlin</td>
+    <td markdown=1 style="max-width: 450px">
+
     ```kotlin
     val segmentDestination: DestinationPlugin = analytics.find(SegmentDestination::class)
 
@@ -319,9 +399,12 @@ If you’re using a different library such as Analytics-Android, follow these st
         }
     })
     ```
-    {% endcodeexampletab %}
-    {% endcodeexample %}
-    
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+
 6. Set your config options.
 
     <br> Segment changed these config options:
@@ -354,65 +437,113 @@ If you’re using a different library such as Analytics-Android, follow these st
 
     Segment previously used Factories to initialize destinations. With Analytics Kotlin, Segment treats destinations similar to plugins and simplifies the process in adding them.  
 
-    <br> Before example:
-
-    {% codeexample %}
-    {% codeexampletab Java %}
+    <table>
+    <thead>
+    <tr>
+    <th>Before</th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Java</td>
+    <td markdown=1 style="max-width: 450px">
     ```java  
     // Previously we used to use Factories to initialize destinations
     analytics.use(FooIntegration.FACTORY);
     ```
-    {% endcodeexampletab %}
-    {% codeexampletab Kotlin %}
+    </td>
+    </tr>
+    <tr>
+    <td>Kotlin</td>
+    <td markdown=1 style="max-width: 450px">
     ```kotlin
     // Previously we used to use Factories to initialize destinations
     analytics.use(FooIntegration.FACTORY)
     ```
-    {% endcodeexampletab %}
-    {% endcodeexample %}
+    </td>
+    </tr>
+    </tbody>
+    </table>
 
-    <br> After example:
+    <table>
+    <thead>
+    <tr>
+    <!-- <th><th> -->
+    <th>After</th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody style="max-width: 100%">
+    <tr>
+    <td>Java</td>
+    <td markdown=1 style="max-width: 450px">
 
-    {% codeexample %}
-    {% codeexampletab Java %}
     ```java
     // Now destinations are treated similar to plugins and thus are simpler to add
     YourDestination destination = new YourDestination();
     analytics.add(destination);
     ```
-    {% endcodeexampletab %}
-    {% codeexampletab Kotlin %}
+    </td>
+    </tr>
+    <tr>
+    <td>Kotlin</td>
+    <td markdown=1 style="max-width: 450px">
+
     ```kotlin
     // Now destinations are treated similar to plugins and thus are simpler to add
     val destination = YourDestination()
     analytics.add(destination)
     ```
-    {% endcodeexampletab %}
-    {% endcodeexample %}
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
 
 8. Modify your tracking methods for Identify, Track, Group, Screen, and Alias.
     - Identify
 
-      <br> Before example:
-
-      {% codeexample %}
-      {% codeexampletab Java %}
+      <table>
+      <thead>
+      <tr>
+      <th>Before</th>
+      <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>Java</td>
+      <td markdown=1 style="max-width: 450px">
       ```java
       analytics.identify("a user's id", new Traits().putName("John Doe"), null);
       ```
-      {% endcodeexampletab %}
-      {% codeexampletab Kotlin %}
+      </td>
+      </tr>
+      <tr>
+      <td>Kotlin</td>
+      <td markdown=1 style="max-width: 450px">
       ```kotlin
       analytics.identify("a user's id", Traits().putName("John Doe"), null)
       ```
-      {% endcodeexampletab %}
-      {% endcodeexample %}
+      </td>
+      </tr>
+      </tbody>
+      </table>
 
+      <table>
+      <thead>
+      <tr>
+      <!-- <th><th> -->
+      <th>After</th>
+      <th></th>
+      </tr>
+      </thead>
+      <tbody style="max-width: 100%">
+      <tr>
+      <td>Java</td>
+      <td markdown=1 style="max-width: 450px">
 
-      <br> After example:
-
-      {% codeexample %}
-      {% codeexampletab Java %}
       ```java
       // The newer APIs promote the use of strongly typed structures to keep codebases legible
       class UserTraits implements JsonSerializable {
@@ -433,51 +564,78 @@ If you’re using a different library such as Analytics-Android, follow these st
       analytics.identify("a user's id", Builders.buildJsonObject(o -> {
           o.put("firstName", "John")
               .put("lastName", "Doe");
-      })); 
+      }));
       ```
-      {% endcodeexampletab %}
-      {% codeexampletab Kotlin %}
-        ```kotlin    
-        // The newer APIs promote the use of strongly typed structures to keep codebases legible
-        @Serializable
-        data class UserTraits(
-          var firstName: String,
-          var lastName: String
-        )
+      </td>
+      </tr>
+      <tr>
+      <td>Kotlin</td>
+      <td markdown=1 style="max-width: 450px">
 
-        analytics.identify("a user's id", UserTraits(firstName = "John", lastName = "Doe"))
+      ```kotlin    
+      // The newer APIs promote the use of strongly typed structures to keep codebases legible
+      @Serializable
+      data class UserTraits(
+        var firstName: String,
+        var lastName: String
+      )
+
+      analytics.identify("a user's id", UserTraits(firstName = "John", lastName = "Doe"))
 
 
-        // Or you could use the JSON builder if you have some unstructured data
-        analytics.identify("a user's id", buildJsonObject {
-            put("firstName", "John")
-            put("lastName", "Doe")
-        }));
-        ```
-      {% endcodeexampletab %}
-      {% endcodeexample %}
+      // Or you could use the JSON builder if you have some unstructured data
+      analytics.identify("a user's id", buildJsonObject {
+          put("firstName", "John")
+          put("lastName", "Doe")
+      }));
+      ```
+      </td>
+      </tr>
+      </tbody>
+      </table>
 
     - Track
 
-      <br> Before example:
-
-      {% codeexample %}
-      {% codeexampletab Java %}
+      <table>
+      <thead>
+      <tr>
+      <th>Before</th>
+      <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>Java</td>
+      <td markdown=1 style="max-width: 450px">
       ```java
       analytics.track("Product Viewed", new Properties().putValue("name", "Moto 360"));
       ```
-      {% endcodeexampletab %}
-      {% codeexampletab Kotlin %}
+      </td>
+      </tr>
+      <tr>
+      <td>Kotlin</td>
+      <td markdown=1 style="max-width: 450px">
       ```kotlin
       analytics.track("Product Viewed", Properties().putValue("name", "Moto 360"))
       ```
-      {% endcodeexampletab %}
-      {% endcodeexample %}
+      </td>
+      </tr>
+      </tbody>
+      </table>
 
-      <br> After example:
+      <table>
+      <thead>
+      <tr>
+      <!-- <th><th> -->
+      <th>After</th>
+      <th></th>
+      </tr>
+      </thead>
+      <tbody style="max-width: 100%">
+      <tr>
+      <td>Java</td>
+      <td markdown=1 style="max-width: 450px">
 
-      {% codeexample %}
-      {% codeexampletab Java %}
       ```java
         // The newer APIs promote the use of strongly typed structures to keep codebases legible
        class ProductViewedProperties implements JsonSerializable {
@@ -497,9 +655,9 @@ If you’re using a different library such as Analytics-Android, follow these st
               }));
           }
       }
-      
+
       analytics.track("Product Viewed", new ProductViewedProperties());
-      
+
       // Or you could use the JSON builder if you have some unstructured data
       analytics.track("Product Viewed", Builders.buildJsonObject(o -> {
           o.put("productName", productName)
@@ -510,65 +668,93 @@ If you’re using a different library such as Analytics-Android, follow these st
       }));
 
       ```
-      {% endcodeexampletab %}
-      {% codeexampletab Kotlin %}
-        ```kotlin    
-        // The newer APIs promote the use of strongly typed structures to keep codebases legible
-        @Serializable
-        data class ProductViewedProperties(
-          var productName: String,
-          var brand: String,
-          var category: String,
-          var price: Double,
-          var currency: String
-        )
+      </td>
+      </tr>
+      <tr>
+      <td>Kotlin</td>
+      <td markdown=1 style="max-width: 450px">
 
-        analytics.track(
-            "Product Viewed",
-            ProductViewedProperties(
-              productName = "Moto 360",
-              brand = "Motorola",
-              category = "smart watch",
-              price = 300.00,
-              currency = "USD"
-            )
-        )
+      ```kotlin    
+      // The newer APIs promote the use of strongly typed structures to keep codebases legible
+      @Serializable
+      data class ProductViewedProperties(
+        var productName: String,
+        var brand: String,
+        var category: String,
+        var price: Double,
+        var currency: String
+      )
 
-        // Or you could use the JSON builder if you have some unstructured data
-        analytics.track(
-            "Product Viewed",
-            buildJsonObject {
-              put("productName", "Moto 360"),
-              put("brand", "Motorola"),
-              put("category", "smart watch"),
-              put("price", 300.00),
-              put("currency", "USD")
-            }
-        )
-        ```
-      {% endcodeexampletab %}
-      {% endcodeexample %}
-    
+      analytics.track(
+          "Product Viewed",
+          ProductViewedProperties(
+            productName = "Moto 360",
+            brand = "Motorola",
+            category = "smart watch",
+            price = 300.00,
+            currency = "USD"
+          )
+      )
+
+      // Or you could use the JSON builder if you have some unstructured data
+      analytics.track(
+          "Product Viewed",
+          buildJsonObject {
+            put("productName", "Moto 360"),
+            put("brand", "Motorola"),
+            put("category", "smart watch"),
+            put("price", 300.00),
+            put("currency", "USD")
+          }
+      )
+      ```
+      </td>
+      </tr>
+      </tbody>
+      </table>
+
     - Group
-      <br> Before example:
 
-      {% codeexample %}
-      {% codeexampletab Java %}
+      <table>
+      <thead>
+      <tr>
+      <th>Before</th>
+      <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>Java</td>
+      <td markdown=1 style="max-width: 450px">
       ```java
       analytics.group("a user's id", "a group id", new Traits().putEmployees(20));
       ```
-      {% endcodeexampletab %}
-      {% codeexampletab Kotlin %}
+      </td>
+      </tr>
+      <tr>
+      <td>Kotlin</td>
+      <td markdown=1 style="max-width: 450px">
       ```kotlin
       analytics.group("a user's id", "a group id", Traits().putEmployees(20))
       ```
-      {% endcodeexampletab %}
-      {% endcodeexample %}
+      </td>
+      </tr>
+      </tbody>
+      </table>
 
-      <br> After example:
+      <table>
+      <thead>
+      <tr>
+      <!-- <th><th> -->
+      <th>After</th>
+      <th></th>
+      </tr>
+      </thead>
+      <tbody style="max-width: 100%">
+      <tr>
+      <td>Java</td>
+      <td markdown=1 style="max-width: 450px">
 
-      {% codeexample %}
-      {% codeexampletab Java %}
       ```java
       // The newer APIs promote the use of strongly typed structures to keep codebases legible
       class GroupTraits implements JsonSerializable {
@@ -587,12 +773,16 @@ If you’re using a different library such as Analytics-Android, follow these st
       analytics.group("a group id", Builders.buildJsonObject(o -> {
           o.put("employeeCount", 20);
       }));
-    
+
       ```
-      {% endcodeexampletab %}
-      {% codeexampletab Kotlin %}
+      </td>
+      </tr>
+      <tr>
+      <td>Kotlin</td>
+      <td markdown=1 style="max-width: 450px">
+
       ```kotlin   
-      // The newer APIs promote the use of strongly typed structures to keep codebases legible 
+      // The newer APIs promote the use of strongly typed structures to keep codebases legible
       @Serializable
       data class GroupTraits(
         var employeeCount: Int
@@ -605,31 +795,55 @@ If you’re using a different library such as Analytics-Android, follow these st
           put("employeeCount", 20)
       })
       ```
-      {% endcodeexampletab %}
-      {% endcodeexample %}
+      </td>
+      </tr>
+      </tbody>
+      </table>
 
     - Screen
-      <br> Before example:
 
-      {% codeexample %}
-      {% codeexampletab Java %}
+      <table>
+      <thead>
+      <tr>
+      <th>Before</th>
+      <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>Java</td>
+      <td markdown=1 style="max-width: 450px">
       ```java
       analytics.screen("Feed", new Properties().putValue("Feed Length", "26"));
       ```
-      {% endcodeexampletab %}
-      {% codeexampletab Kotlin %}
+      </td>
+      </tr>
+      <tr>
+      <td>Kotlin</td>
+      <td markdown=1 style="max-width: 450px">
       ```kotlin
       analytics.screen("Feed", Properties().putValue("Feed Length", "26"))
       ```
-      {% endcodeexampletab %}
-      {% endcodeexample %}
+      </td>
+      </tr>
+      </tbody>
+      </table>
 
-      <br> After example:
+      <table>
+      <thead>
+      <tr>
+      <!-- <th><th> -->
+      <th>After</th>
+      <th></th>
+      </tr>
+      </thead>
+      <tbody style="max-width: 100%">
+      <tr>
+      <td>Java</td>
+      <td markdown=1 style="max-width: 450px">
 
-      {% codeexample %}
-      {% codeexampletab Java %}
       ```java
-      // The newer APIs promote the use of strongly typed structures to keep codebases legible 
+      // The newer APIs promote the use of strongly typed structures to keep codebases legible
       class FeedScreenProperties implements JsonSerializable {
           private int feedLength;
 
@@ -646,12 +860,15 @@ If you’re using a different library such as Analytics-Android, follow these st
       analytics.screen("Feed", Builders.buildJsonObject(o -> {
           o.put("Feed Length", 26);
       }));
-
       ```
-      {% endcodeexampletab %}
-      {% codeexampletab Kotlin %}
+      </td>
+      </tr>
+      <tr>
+      <td>Kotlin</td>
+      <td markdown=1 style="max-width: 450px">
+
       ```kotlin    
-      // The newer APIs promote the use of strongly typed structures to keep codebases legible 
+      // The newer APIs promote the use of strongly typed structures to keep codebases legible
       @Serializable
       data class FeedScreenProperties(
         @SerialName("Feed Length")
@@ -666,38 +883,66 @@ If you’re using a different library such as Analytics-Android, follow these st
         put("feedLength", 26)
       })
       ```
-      {% endcodeexampletab %}
-      {% endcodeexample %}
-      
+      </td>
+      </tr>
+      </tbody>
+      </table>
+
     - Alias
 
-      <br> Before example:
-
-      {% codeexample %}
-      {% codeexampletab Java %}
+      <table>
+      <thead>
+      <tr>
+      <th>Before</th>
+      <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>Java</td>
+      <td markdown=1 style="max-width: 450px">
       ```java
       analytics.alias("new id");
       ```
-      {% endcodeexampletab %}
-      {% codeexampletab Kotlin %}
+      </td>
+      </tr>
+      <tr>
+      <td>Kotlin</td>
+      <td markdown=1 style="max-width: 450px">
       ```kotlin    
       analytics.alias("new id")
       ```
-      {% endcodeexampletab %}
-      {% endcodeexample %}
+      </td>
+      </tr>
+      </tbody>
+      </table>
 
-      <br> After example:
+      <table>
+      <thead>
+      <tr>
+      <!-- <th><th> -->
+      <th>After</th>
+      <th></th>
+      </tr>
+      </thead>
+      <tbody style="max-width: 100%">
+      <tr>
+      <td>Java</td>
+      <td markdown=1 style="max-width: 450px">
 
-      {% codeexample %}
-      {% codeexampletab Java %}
       ```java
       analytics.alias("new id");
       ```
-      {% endcodeexampletab %}
-      {% codeexampletab Kotlin %}
+      </td>
+      </tr>
+      <tr>
+      <td>Kotlin</td>
+      <td markdown=1 style="max-width: 450px">
+
       ```kotlin    
       analytics.alias("new id")
       ```
-      {% endcodeexampletab %}
-      {% endcodeexample %}
-      
+      </td>
+      </tr>
+      </tbody>
+      </table>
