@@ -413,6 +413,8 @@ By default, our library will flush:
 + whenever messages are queued and there is no outstanding request
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
+> Note that even if batch request accept a maximum of `500KB`, each indivduall items should stay under `32KB`.
+> A batch request with one `100KB` item will result in a 200 response, but the event won't be created in Segment.
 
 The queue consumer makes only **a single outbound request** at a time to avoid saturating your server's resources. If multiple messages are in the queue, they are sent together in a batch call.
 
