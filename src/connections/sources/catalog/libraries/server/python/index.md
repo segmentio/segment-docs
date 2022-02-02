@@ -510,6 +510,9 @@ By default, our library will flush:
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
 
+{% include content/tracking-api-limit.md %}
+
+
 ### What happens if there are just too many messages?
 
 If the module detects that it can't flush faster than it's receiving messages, it'll simply stop accepting messages. This means your program will never crash because of a backed up analytics queue. The default `max_queue_size` is `10000`.
@@ -678,7 +681,8 @@ If you're having issues with threads outliving your request, check [Background t
 
 ### Request Size Limits
 
-Keep in mind that we have a size limit of `32KB` per request and `500KB` per batch request!
+{% include content/tracking-api-limit.md %}
+
 
 {% include content/troubleshooting-intro.md %}
 {% include content/troubleshooting-server-debugger.md %}
