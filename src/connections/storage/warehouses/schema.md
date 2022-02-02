@@ -2,7 +2,14 @@
 title: Warehouse Schemas
 ---
 
-A **schema** describes the way a warehouse is organized. Schemas include all database elements: tables, views, indexes, and synonyms, and the relationships that exist between elements. 
+A **schema** describes the way that the data in a warehouse is organized. Schemas include a detailed description of database elements (tables, views, indexes, synonyms, etc.) and the relationships that exist between elements. 
+
+Schemas of warehouse data are organized into the following template: <br/>
+`<source>.<collection>.<property>` <br/><br/>
+eg. `segment-engineering.tracks.userId`, where Source refers to the source or project name (segment-engineering), collection refers to the event (tracks), and the property refers to the data being collected (userId).
+
+> note "Data warehouse column creation"
+> **Note:** Segment creates tables for each of your custom events, and columns for each event's custom properties. Segment does not allow unbounded `event` or `property` spaces in your data. Instead of recording events like "Ordered Product 15", use a single property of "Product Number" or similar.
 
 ## Warehouse tables
 
@@ -392,9 +399,6 @@ ORDER BY day
 ### New Columns
 
 New event properties and traits create columns. Segment processes the incoming data in batches, based on either data size or an interval of time. If the table doesn't exist we lock and create the table. If the table exists but new columns need to be created, we perform a diff and alter the table to append new columns.
-
-> note "Column creation in Redshift"
-> **Note:** Segment creates tables for each of your custom events, and columns for each event's custom properties. Redshift has limits on the number of columns in a table, so Segment does not allow unbounded event or property spaces in your data. Instead of recording events like "Ordered Product 15", use a single property of "Product Number" or similar.
 
 When Segment process a new batch and discover a new column to add, we take the most recent occurrence of a column and choose its datatype.
 

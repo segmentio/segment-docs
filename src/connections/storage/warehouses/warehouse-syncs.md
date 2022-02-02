@@ -11,7 +11,17 @@ Instead of constantly streaming data to the warehouse destination, Segment loads
 
 {% include content/how-a-sync-works.md %}
 
-Warehouses sync with all data coming from your source and your data is available in your warehouse within 24-48 hours. If you'd like to manage the data you send to your warehouse, use [Warehouse Selective Sync](#warehouse-selective-sync).
+Warehouses sync with all data coming from your source. 
+
+## Sync frequency
+
+| Plan     | Frequency   |
+| -------- | ----------- |
+| Free     | Once a day  |
+| Team     | Twice a day |
+| Business | Up to 24 times a day. Generally, these syncs are fixed to the top of the hour (:00), but these times can vary. |
+
+If you're a Business plan member and would like to manage the data you send to your warehouse, use [Warehouse Selective Sync](#warehouse-selective-sync).
 
 ## Sync History
 You can use the Sync History page to see the status and history of data updates in your warehouse. The Sync History page is available for every source connected to each warehouse. This page helps you answer questions like, “Has the data from a specific source been updated recently?” “Did a sync completely fail, or only partially fail?” and “Why wasn’t this sync successful?”
