@@ -7411,7 +7411,7 @@ items:
   display_name: BytePlus
   name: BytePlus
   slug: byteplus
-  hidden: true
+  hidden: false
   regional:
   - us-west
   url: connections/destinations/catalog/byteplus
@@ -14048,6 +14048,2269 @@ items:
     required: false
     label: Page Widgets
   actions: []
+  presets: []
+- destination_id: 6170a348128093cd0245e0ea
+  display_name: Friendbuy (Actions)
+  name: Friendbuy (Actions)
+  slug: actions-friendbuy
+  hidden: false
+  regional:
+  - us-west
+  url: connections/destinations/catalog/actions-friendbuy
+  previous_names:
+  - Friendbuy (Actions)
+  website: http://www.friendbuy.com
+  status: PUBLIC
+  categories:
+  - Referrals
+  logo:
+    url: https://cdn.filepicker.io/api/file/0OV3XmHVQi3n8PrFREPQ
+  mark:
+    url: https://cdn.filepicker.io/api/file/3BbFIi2bSsi08ig1RYgQ
+  methods:
+    track: true
+    identify: true
+    group: true
+    alias: true
+    page: true
+  platforms:
+    browser: true
+    mobile: false
+    server: false
+  components: []
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: false
+  replay: false
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
+  settings:
+  - name: merchantId
+    type: string
+    defaultValue: ''
+    description: >-
+      Find your Friendbuy Merchant ID by logging in to your [Friendbuy
+      account](https://retailer.friendbuy.io/) and going to Developer Center >
+      Friendbuy Code.
+    required: true
+    label: Friendbuy Merchant ID
+  actions:
+  - id: fk2xKEXiXd9qEkQb24nzXh
+    name: Track Page
+    slug: trackPage
+    description: >-
+      Record when a customer visits a new page. Allow Friendbuy widget targeting
+      by Page Name instead of URL.
+    platform: WEB
+    hidden: false
+    defaultTrigger: type = "page"
+    fields:
+    - id: e49CUAczWNodafjNEkGVLa
+      sortOrder: 0
+      fieldKey: name
+      label: Page Name
+      type: STRING
+      description: The page name.
+      placeholder: ''
+      defaultValue:
+        '@path': $.name
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: neQAzqaMjCLWQ1QAt82tDb
+      sortOrder: 1
+      fieldKey: category
+      label: Page Category
+      type: STRING
+      description: The page category.
+      placeholder: ''
+      defaultValue:
+        '@path': $.category
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 49oECrHAo9dQiUp2cMY5cw
+      sortOrder: 2
+      fieldKey: title
+      label: Page Title
+      type: STRING
+      description: The page title.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.title
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+  - id: jK3iMvwwXbgAz1EBm9Akq6
+    name: Track Custom Event
+    slug: trackCustomEvent
+    description: Record when a customer completes any custom event that you define.
+    platform: WEB
+    hidden: false
+    defaultTrigger: null
+    fields:
+    - id: shTHGLkieU1eHuJcSdeLRB
+      sortOrder: 0
+      fieldKey: eventType
+      label: Event Type
+      type: STRING
+      description: The type of the event to track.
+      placeholder: ''
+      defaultValue:
+        '@path': $.event
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 98zxb1CV5o2ke9JngvWEqY
+      sortOrder: 1
+      fieldKey: eventProperties
+      label: Event Properties
+      type: OBJECT
+      description: >-
+        Object containing the properties for the event being tracked. All of the
+        fields in this object will be sent in the root of the Friendbuy track
+        event.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 43bqAQttGP3YDk6Apnn2Ht
+      sortOrder: 2
+      fieldKey: deduplicationId
+      label: Event ID
+      type: STRING
+      description: >-
+        An identifier for the event being tracked to prevent the same event from
+        being rewarded more than once.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.deduplicationId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: bh1Tzs9mGXTvuDGNC6hYHB
+      sortOrder: 3
+      fieldKey: customerId
+      label: Customer ID
+      type: STRING
+      description: The user's customer ID.
+      placeholder: ''
+      defaultValue:
+        '@if':
+          exists:
+            '@path': $.properties.customerId
+          then:
+            '@path': $.properties.customerId
+          else:
+            '@path': $.userId
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: nk3aufvDqae12iG2gwC6VP
+      sortOrder: 4
+      fieldKey: anonymousId
+      label: Anonymous ID
+      type: STRING
+      description: The user's anonymous id
+      placeholder: ''
+      defaultValue:
+        '@path': $.anonymousId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: vmZWyCzHXzKA4jxaHU5hwr
+      sortOrder: 5
+      fieldKey: email
+      label: Email
+      type: STRING
+      description: The user's email address.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.email
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+  - id: otSYqZFafJi5aae1yTwynq
+    name: Track Sign Up
+    slug: trackSignUp
+    description: Record when a customer signs up for a service.
+    platform: WEB
+    hidden: false
+    defaultTrigger: event = "Signed Up"
+    fields:
+    - id: 2gjjqzPLDWN9KLXbM3vu9F
+      sortOrder: 0
+      fieldKey: customerId
+      label: Customer ID
+      type: STRING
+      description: The user's customer ID.
+      placeholder: ''
+      defaultValue:
+        '@if':
+          exists:
+            '@path': $.properties.customerId
+          then:
+            '@path': $.properties.customerId
+          else:
+            '@path': $.userId
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: di1f8nNefQ7nVLdzBPfqAQ
+      sortOrder: 1
+      fieldKey: anonymousId
+      label: Anonymous ID
+      type: STRING
+      description: The user's anonymous ID.
+      placeholder: ''
+      defaultValue:
+        '@path': $.anonymousId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 6MU84EwciUiTufPf97csEs
+      sortOrder: 2
+      fieldKey: email
+      label: Email
+      type: STRING
+      description: The user's email address.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.email
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 64C5Xdb6PxU4D9pEav5QDU
+      sortOrder: 3
+      fieldKey: isNewCustomer
+      label: New Customer Flag
+      type: BOOLEAN
+      description: Flag to indicate whether the user is a new customer.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.isNewCustomer
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: uNAEn545vDrLmwEdGtKKzK
+      sortOrder: 4
+      fieldKey: loyaltyStatus
+      label: Loyalty Program Status
+      type: STRING
+      description: >-
+        The status of the user in your loyalty program. Valid values are "in",
+        "out", or "blocked".
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.loyaltyStatus
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: kbmgdNcJwLGhfu1x5JDyNy
+      sortOrder: 5
+      fieldKey: firstName
+      label: First Name
+      type: STRING
+      description: The user's given name.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.firstName
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: d8M4Wav1wd1kEgr5nz3djv
+      sortOrder: 6
+      fieldKey: lastName
+      label: Last Name
+      type: STRING
+      description: The user's surname.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.lastName
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: kiNVPyiWJao7H7i2d5vd3P
+      sortOrder: 7
+      fieldKey: name
+      label: Name
+      type: STRING
+      description: The user's full name.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.name
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: jAsUxchPn4dLrtJessdjvP
+      sortOrder: 8
+      fieldKey: age
+      label: Age
+      type: NUMBER
+      description: The user's age.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.age
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: bBwvh1FU6hTx7sZAv9Z4SY
+      sortOrder: 9
+      fieldKey: birthday
+      label: Birthday
+      type: STRING
+      description: >-
+        The user's birthday in the format "YYYY-MM-DD", or "0000-MM-DD" to omit
+        the year.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.birthday
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 4PjMfC53zf7q4Dweg3n8jQ
+      sortOrder: 10
+      fieldKey: coupon
+      label: Coupon Code
+      type: STRING
+      description: Coupon code that customer supplied when they signed up.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.coupon
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: kvzmQoZeSmWcBsZBDcVdqH
+      sortOrder: 11
+      fieldKey: attributionId
+      label: Friendbuy Attribution ID
+      type: STRING
+      description: >-
+        Friendbuy attribution ID that associates the customer who is signing up
+        with the advocate who referred them.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.attributionId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 8drKi2r5mUiqpxy7uHo2bB
+      sortOrder: 12
+      fieldKey: referralCode
+      label: Friendbuy Referral ID
+      type: STRING
+      description: >-
+        Friendbuy referral code that associates the customer who is signing up
+        with the advocate who referred them.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.referralCode
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: vBQ96ZiNZ2vejqxaxYdriJ
+      sortOrder: 13
+      fieldKey: friendbuyAttributes
+      label: Custom Attributes
+      type: OBJECT
+      description: >-
+        Custom attributes to send to Friendbuy. You should pass an object whose
+        keys are the names of the custom attributes and whose values are
+        strings. Non-string-valued attributes will be dropped.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.friendbuyAttributes
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+  - id: vj1sYaj9saWmcRUVbFaPf5
+    name: Track Purchase
+    slug: trackPurchase
+    description: Record when a customer makes a purchase.
+    platform: WEB
+    hidden: false
+    defaultTrigger: event = "Order Completed"
+    fields:
+    - id: jtDk7HdbW3h775XotYX7RW
+      sortOrder: 0
+      fieldKey: orderId
+      label: Order ID
+      type: STRING
+      description: The order ID.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.order_id
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: seyRHj3Jhhsk7kTxXRSLoF
+      sortOrder: 1
+      fieldKey: amount
+      label: Amount Source
+      type: NUMBER
+      description: Purchase amount to be considered when evaluating reward rules.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.total
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: erbhwHHEtPwPT7s9GDwC3H
+      sortOrder: 2
+      fieldKey: currency
+      label: Currency
+      type: STRING
+      description: The currency of the purchase amount.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.currency
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: apJrPW1frbeo6RF79E1eFs
+      sortOrder: 3
+      fieldKey: coupon
+      label: Coupon
+      type: STRING
+      description: The coupon code of any coupon redeemed with the order.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.coupon
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: nbSRtQ5F7vNxhtEuLymfW
+      sortOrder: 4
+      fieldKey: attributionId
+      label: Friendbuy Attribution ID
+      type: STRING
+      description: >-
+        Friendbuy attribution ID that associates the purchase with the advocate
+        who referred the purchaser.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.attributionId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: x59iiXF7PXj4qX7Z1hXbva
+      sortOrder: 5
+      fieldKey: referralCode
+      label: Friendbuy Referral ID
+      type: STRING
+      description: >-
+        Friendbuy referral code that associates the purchase with the advocate
+        who referred the purchaser.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.referralCode
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: heQRdcwstpsku192obDNRo
+      sortOrder: 6
+      fieldKey: giftCardCodes
+      label: Gift Card Codes
+      type: STRING
+      description: An array of gift card codes applied to the order.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.giftCardCodes
+      required: false
+      multiple: true
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: jvZjKtMx75aR6DNQa817c
+      sortOrder: 7
+      fieldKey: products
+      label: Products
+      type: OBJECT
+      description: Products purchased.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.products
+      required: false
+      multiple: true
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: e49BnvXt9CdvsHP3gUddny
+      sortOrder: 8
+      fieldKey: customerId
+      label: Customer ID
+      type: STRING
+      description: The user's customer ID.
+      placeholder: ''
+      defaultValue:
+        '@if':
+          exists:
+            '@path': $.properties.customerId
+          then:
+            '@path': $.properties.customerId
+          else:
+            '@path': $.userId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 7yu3J3PxaUyg3tuidJ7UaK
+      sortOrder: 9
+      fieldKey: anonymousId
+      label: Anonymous ID
+      type: STRING
+      description: The user's anonymous ID.
+      placeholder: ''
+      defaultValue:
+        '@path': $.anonymousId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: pKJ7PkJzLJPmvHaa276pue
+      sortOrder: 10
+      fieldKey: email
+      label: Email
+      type: STRING
+      description: The user's email address.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.email
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: cxk2hBGqKivvjVi9ppjibC
+      sortOrder: 11
+      fieldKey: isNewCustomer
+      label: New Customer Flag
+      type: BOOLEAN
+      description: Flag to indicate whether the user is a new customer.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.isNewCustomer
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: aQMFpBXqLfA3PDzRuFtduM
+      sortOrder: 12
+      fieldKey: loyaltyStatus
+      label: Loyalty Program Status
+      type: STRING
+      description: >-
+        The status of the user in your loyalty program. Valid values are "in",
+        "out", or "blocked".
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.loyaltyStatus
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: rrpKTJgzEBSzCPg2vyjG9D
+      sortOrder: 13
+      fieldKey: firstName
+      label: First Name
+      type: STRING
+      description: The user's given name.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.firstName
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 3GDjggth5iTiT2dqGK7zGP
+      sortOrder: 14
+      fieldKey: lastName
+      label: Last Name
+      type: STRING
+      description: The user's surname.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.lastName
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: Xd4epHNN3sYt48neN9bN3
+      sortOrder: 15
+      fieldKey: name
+      label: Name
+      type: STRING
+      description: The user's full name.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.name
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: bSx5kxfkJoQ1vvcmXm6Ut2
+      sortOrder: 16
+      fieldKey: age
+      label: Age
+      type: NUMBER
+      description: The user's age.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.age
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: hzg7x9k2QSCiBWzBxmwybk
+      sortOrder: 17
+      fieldKey: birthday
+      label: Birthday
+      type: STRING
+      description: >-
+        The user's birthday in the format "YYYY-MM-DD", or "0000-MM-DD" to omit
+        the year.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.birthday
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: uQbbmFxFGAQJFhBzcHesbB
+      sortOrder: 18
+      fieldKey: friendbuyAttributes
+      label: Custom Attributes
+      type: OBJECT
+      description: >-
+        Custom attributes to send to Friendbuy. You should pass an object whose
+        keys are the names of the custom attributes and whose values are
+        strings. Non-string-valued attributes will be dropped.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.friendbuyAttributes
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+  - id: wTBkHZFw3Mh66G65UkMXBL
+    name: Track Customer
+    slug: trackCustomer
+    description: Create a new customer profile or update an existing customer profile.
+    platform: WEB
+    hidden: false
+    defaultTrigger: type = "identify"
+    fields:
+    - id: AkJRqp7x2vwUdqe97reZD
+      sortOrder: 0
+      fieldKey: customerId
+      label: Customer ID
+      type: STRING
+      description: The user's customer ID.
+      placeholder: ''
+      defaultValue:
+        '@path': $.userId
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: xuoGFMgo6dDoMgFiUiK8dy
+      sortOrder: 1
+      fieldKey: anonymousId
+      label: Anonymous ID
+      type: STRING
+      description: The user's anonymous id.
+      placeholder: ''
+      defaultValue:
+        '@path': $.anonymousId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: rQ91c85WpwF2cA4U8d59i
+      sortOrder: 2
+      fieldKey: email
+      label: Email
+      type: STRING
+      description: The user's email address.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.email
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: dgVNf5a6rpAbzBgK6B4MWA
+      sortOrder: 3
+      fieldKey: firstName
+      label: First Name
+      type: STRING
+      description: The user's given name.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.firstName
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: sQQ5Q5QFveS1sr6anuYpTV
+      sortOrder: 4
+      fieldKey: lastName
+      label: Last Name
+      type: STRING
+      description: The user's surname.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.lastName
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: miD4YPZSSJAvKashuwP9UK
+      sortOrder: 5
+      fieldKey: name
+      label: Name
+      type: STRING
+      description: >-
+        The user's full name. If the name trait doesn't exist then it will be
+        automatically derived from the firstName and lastName traits if they are
+        defined.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.name
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 2PGj2M8YErv7Ssz7M9FdCW
+      sortOrder: 6
+      fieldKey: age
+      label: Age
+      type: NUMBER
+      description: The user's age.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.age
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 9eutB7uWDAz8eucRfdqTGS
+      sortOrder: 7
+      fieldKey: birthday
+      label: Birthday
+      type: STRING
+      description: >-
+        The user's birthday in the format "YYYY-MM-DD", or "0000-MM-DD" to omit
+        the year.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.birthday
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: dLF9tZ39SShVVdoPzxV3Hv
+      sortOrder: 8
+      fieldKey: language
+      label: Language
+      type: STRING
+      description: The user's language.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.language
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: wQR61gJCRoK3TrcM5PdZZg
+      sortOrder: 9
+      fieldKey: addressCountry
+      label: Country
+      type: STRING
+      description: The user's country.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.address.country
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: t4kb37hYMbbNc4vCjGwKXn
+      sortOrder: 10
+      fieldKey: addressState
+      label: State
+      type: STRING
+      description: The user's state.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.address.state
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: nhW4J81o75BkVC5oHV5QeR
+      sortOrder: 11
+      fieldKey: addressCity
+      label: City
+      type: STRING
+      description: The user's city.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.address.city
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: tN4BGwdF3QwVThS899pYKG
+      sortOrder: 12
+      fieldKey: addressPostalCode
+      label: State
+      type: STRING
+      description: The user's postal code.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.address.postalCode
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 4j9sK8W15BqpywxbBKazQM
+      sortOrder: 13
+      fieldKey: customerSince
+      label: Customer Since
+      type: STRING
+      description: The date the user became a customer.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.customerSince
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 4W9aSb3uMBiFo4wixQ1BR7
+      sortOrder: 14
+      fieldKey: loyaltyStatus
+      label: Loyalty Status
+      type: STRING
+      description: >-
+        The status of the user in your loyalty program. Valid values are "in",
+        "out", or "blocked".
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.loyaltyStatus
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: jVnqS7vnxv4BiVFRAgQ93P
+      sortOrder: 15
+      fieldKey: isNewCustomer
+      label: New Customer Flag
+      type: BOOLEAN
+      description: Flag to indicate whether the user is a new customer.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.isNewCustomer
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: po4r4NNZhHZkukEoqWZc1s
+      sortOrder: 16
+      fieldKey: friendbuyAttributes
+      label: Custom Attributes
+      type: OBJECT
+      description: >-
+        Custom attributes to send to Friendbuy. You should pass an object whose
+        keys are the names of the custom attributes and whose values are
+        strings. Non-string-valued attributes will be dropped.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.friendbuyAttributes
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+  presets:
+  - actionId: vj1sYaj9saWmcRUVbFaPf5
+    name: Track Purchase
+    fields:
+      orderId:
+        '@path': $.properties.order_id
+      amount:
+        '@path': $.properties.total
+      currency:
+        '@path': $.properties.currency
+      coupon:
+        '@path': $.properties.coupon
+      attributionId:
+        '@path': $.properties.attributionId
+      referralCode:
+        '@path': $.properties.referralCode
+      giftCardCodes:
+        '@path': $.properties.giftCardCodes
+      products:
+        '@path': $.properties.products
+      customerId:
+        '@if':
+          exists:
+            '@path': $.properties.customerId
+          then:
+            '@path': $.properties.customerId
+          else:
+            '@path': $.userId
+      anonymousId:
+        '@path': $.anonymousId
+      email:
+        '@path': $.properties.email
+      isNewCustomer:
+        '@path': $.properties.isNewCustomer
+      loyaltyStatus:
+        '@path': $.properties.loyaltyStatus
+      firstName:
+        '@path': $.properties.firstName
+      lastName:
+        '@path': $.properties.lastName
+      name:
+        '@path': $.properties.name
+      age:
+        '@path': $.properties.age
+      birthday:
+        '@path': $.properties.birthday
+      friendbuyAttributes:
+        '@path': $.properties.friendbuyAttributes
+    trigger: event = "Order Completed"
+  - actionId: wTBkHZFw3Mh66G65UkMXBL
+    name: Track Customer
+    fields:
+      customerId:
+        '@path': $.userId
+      anonymousId:
+        '@path': $.anonymousId
+      email:
+        '@path': $.traits.email
+      firstName:
+        '@path': $.traits.firstName
+      lastName:
+        '@path': $.traits.lastName
+      name:
+        '@path': $.traits.name
+      age:
+        '@path': $.traits.age
+      birthday:
+        '@path': $.traits.birthday
+      language:
+        '@path': $.traits.language
+      addressCountry:
+        '@path': $.traits.address.country
+      addressState:
+        '@path': $.traits.address.state
+      addressCity:
+        '@path': $.traits.address.city
+      addressPostalCode:
+        '@path': $.traits.address.postalCode
+      customerSince:
+        '@path': $.traits.customerSince
+      loyaltyStatus:
+        '@path': $.traits.loyaltyStatus
+      isNewCustomer:
+        '@path': $.traits.isNewCustomer
+      friendbuyAttributes:
+        '@path': $.traits.friendbuyAttributes
+    trigger: type = "identify"
+  - actionId: otSYqZFafJi5aae1yTwynq
+    name: Track Sign Up
+    fields:
+      customerId:
+        '@if':
+          exists:
+            '@path': $.properties.customerId
+          then:
+            '@path': $.properties.customerId
+          else:
+            '@path': $.userId
+      anonymousId:
+        '@path': $.anonymousId
+      email:
+        '@path': $.properties.email
+      isNewCustomer:
+        '@path': $.properties.isNewCustomer
+      loyaltyStatus:
+        '@path': $.properties.loyaltyStatus
+      firstName:
+        '@path': $.properties.firstName
+      lastName:
+        '@path': $.properties.lastName
+      name:
+        '@path': $.properties.name
+      age:
+        '@path': $.properties.age
+      birthday:
+        '@path': $.properties.birthday
+      coupon:
+        '@path': $.properties.coupon
+      attributionId:
+        '@path': $.properties.attributionId
+      referralCode:
+        '@path': $.properties.referralCode
+      friendbuyAttributes:
+        '@path': $.properties.friendbuyAttributes
+    trigger: event = "Signed Up"
+  - actionId: fk2xKEXiXd9qEkQb24nzXh
+    name: Track Page
+    fields:
+      name:
+        '@path': $.name
+      category:
+        '@path': $.category
+      title:
+        '@path': $.properties.title
+    trigger: type = "page"
+- destination_id: 61dde0dc77eb0db0392649d3
+  display_name: Friendbuy (Cloud Destination)
+  name: Friendbuy (Cloud Destination)
+  slug: actions-friendbuy-cloud
+  hidden: false
+  regional:
+  - us-west
+  url: connections/destinations/catalog/actions-friendbuy-cloud
+  previous_names:
+  - Friendbuy (Cloud Destination)
+  website: http://www.segment.com
+  status: PUBLIC
+  categories:
+  - Referrals
+  logo:
+    url: https://cdn.filepicker.io/api/file/Lv1D71xoTOH6BxY6wcd4
+  mark:
+    url: https://cdn.filepicker.io/api/file/vVMZxAaTomw7iyVlgSo9
+  methods:
+    track: true
+    identify: true
+    group: true
+    alias: true
+    page: true
+  platforms:
+    browser: true
+    mobile: false
+    server: true
+  components: []
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: false
+  replay: false
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
+  settings:
+  - name: authKey
+    type: string
+    defaultValue: ''
+    description: >-
+      Contact your Friendbuy account manager to generate your Friendbuy MAPI key
+      and secret.
+    required: true
+    label: Friendbuy MAPI Key
+  - name: authSecret
+    type: string
+    defaultValue: ''
+    description: See Friendbuy MAPI Key.
+    required: true
+    label: Friendbuy MAPI Secret
+  actions:
+  - id: jGiVy4jyhXLyWfCbu4t9Rg
+    name: Track Custom Event
+    slug: trackCustomEvent
+    description: Record when a customer completes any custom event that you define.
+    platform: CLOUD
+    hidden: false
+    defaultTrigger: null
+    fields:
+    - id: oowkcUpVHmzkBJrJFjy7Gx
+      sortOrder: 0
+      fieldKey: eventType
+      label: Event Type
+      type: STRING
+      description: The type of the event to track.
+      placeholder: ''
+      defaultValue:
+        '@path': $.event
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 5fE31vDVwcyJ7STwddGtoc
+      sortOrder: 1
+      fieldKey: eventProperties
+      label: Event Properties
+      type: OBJECT
+      description: >-
+        Object containing the properties for the event being tracked. All of the
+        fields in this object will be sent in the root of the Friendbuy track
+        event.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: vc2q1ZTU9LURMdNS5oZ5jj
+      sortOrder: 2
+      fieldKey: deduplicationId
+      label: Event ID
+      type: STRING
+      description: >-
+        An identifier for the event being tracked to prevent the same event from
+        being rewarded more than once.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.deduplicationId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 6KyKwR3v5R1stV8Ai1yWyL
+      sortOrder: 3
+      fieldKey: customerId
+      label: Customer ID
+      type: STRING
+      description: The user's customer ID.
+      placeholder: ''
+      defaultValue:
+        '@if':
+          exists:
+            '@path': $.properties.customerId
+          then:
+            '@path': $.properties.customerId
+          else:
+            '@path': $.userId
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: nTza4zUtt7J9inTLaCGBHn
+      sortOrder: 4
+      fieldKey: anonymousId
+      label: Anonymous ID
+      type: STRING
+      description: The user's anonymous id
+      placeholder: ''
+      defaultValue:
+        '@path': $.anonymousId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: dnm8AgTE6jcgvXTJuVm5v2
+      sortOrder: 5
+      fieldKey: email
+      label: Email
+      type: STRING
+      description: The user's email address.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.email
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 8E22wrRB5nm2Bh5rVaqVvv
+      sortOrder: 6
+      fieldKey: pageUrl
+      label: Page URL
+      type: STRING
+      description: The URL of the web page the event was generated on.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.page.url
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: JU9ksPnAeWWotgb7TtCWY
+      sortOrder: 7
+      fieldKey: pageTitle
+      label: Page Title
+      type: STRING
+      description: The title of the web page the event was generated on.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.page.title
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: wZNieDhsTwfjgsTYYuMJhj
+      sortOrder: 8
+      fieldKey: userAgent
+      label: User Agent
+      type: STRING
+      description: The browser's User-Agent string.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.userAgent
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: g21v8UnT2NgMTqtXy6txS8
+      sortOrder: 9
+      fieldKey: ipAddress
+      label: IP Address
+      type: STRING
+      description: The users's IP address.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.ip
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+  - id: mgg3vBV3yyXq7GxGdWpsPS
+    name: Track Sign Up
+    slug: trackSignUp
+    description: Record when a customer signs up for a service.
+    platform: CLOUD
+    hidden: false
+    defaultTrigger: null
+    fields:
+    - id: mVpzx1Nx2sFdX725PMNfwc
+      sortOrder: 0
+      fieldKey: customerId
+      label: Customer ID
+      type: STRING
+      description: The user's customer ID.
+      placeholder: ''
+      defaultValue:
+        '@if':
+          exists:
+            '@path': $.properties.customerId
+          then:
+            '@path': $.properties.customerId
+          else:
+            '@path': $.userId
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: iDeMAoiX8dBqvZfVCtRpGu
+      sortOrder: 1
+      fieldKey: anonymousId
+      label: Anonymous ID
+      type: STRING
+      description: The user's anonymous ID.
+      placeholder: ''
+      defaultValue:
+        '@path': $.anonymousId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: bb81Q5qU2wDxDHJNCftRHt
+      sortOrder: 2
+      fieldKey: email
+      label: Email
+      type: STRING
+      description: The user's email address.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.email
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: p12B9pSzPXh7GiF7YT84t7
+      sortOrder: 3
+      fieldKey: isNewCustomer
+      label: New Customer Flag
+      type: BOOLEAN
+      description: Flag to indicate whether the user is a new customer.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.isNewCustomer
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: nnRLte19g1zXhEnTVjMbmB
+      sortOrder: 4
+      fieldKey: loyaltyStatus
+      label: Loyalty Program Status
+      type: STRING
+      description: >-
+        The status of the user in your loyalty program. Valid values are "in",
+        "out", or "blocked".
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.loyaltyStatus
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: uXezUiDYVX19rXwpkoPGqU
+      sortOrder: 5
+      fieldKey: firstName
+      label: First Name
+      type: STRING
+      description: The user's given name.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.firstName
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: c5tDaGSBMCt8GcHeWc31Bf
+      sortOrder: 6
+      fieldKey: lastName
+      label: Last Name
+      type: STRING
+      description: The user's surname.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.lastName
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: ed6ZW4TgiebaxNnxLHyuyx
+      sortOrder: 7
+      fieldKey: name
+      label: Name
+      type: STRING
+      description: The user's full name.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.name
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: oox5BrvQnKTUwuouCnHCuW
+      sortOrder: 8
+      fieldKey: age
+      label: Age
+      type: NUMBER
+      description: The user's age.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.age
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 52RrowQ2EFo5i8dJtAjbg5
+      sortOrder: 9
+      fieldKey: birthday
+      label: Birthday
+      type: STRING
+      description: >-
+        The user's birthday in the format "YYYY-MM-DD", or "0000-MM-DD" to omit
+        the year.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.birthday
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: v8Xt9wQFrXQsNeHmcCBY9P
+      sortOrder: 10
+      fieldKey: coupon
+      label: Coupon Code
+      type: STRING
+      description: Coupon code that customer supplied when they signed up.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.coupon
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: g1Wn5fsKa3UKjo6KFXiS8a
+      sortOrder: 11
+      fieldKey: attributionId
+      label: Friendbuy Attribution ID
+      type: STRING
+      description: >-
+        Friendbuy attribution ID that associates the customer who is signing up
+        with the advocate who referred them.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.attributionId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: t3fjGpemyUBqP6Hgdd7QdY
+      sortOrder: 12
+      fieldKey: referralCode
+      label: Friendbuy Referral ID
+      type: STRING
+      description: >-
+        Friendbuy referral code that associates the customer who is signing up
+        with the advocate who referred them.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.referralCode
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: mdxKmKcDYpwbhhG84qRvjV
+      sortOrder: 13
+      fieldKey: friendbuyAttributes
+      label: Custom Attributes
+      type: OBJECT
+      description: >-
+        Custom attributes to send to Friendbuy. You should pass an object whose
+        keys are the names of the custom attributes and whose values are
+        strings. Non-string-valued attributes will be dropped.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.friendbuyAttributes
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: s6y497EuoSozVqCMzwYKDj
+      sortOrder: 14
+      fieldKey: pageUrl
+      label: Page URL
+      type: STRING
+      description: The URL of the web page the event was generated on.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.page.url
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 9MY994crHiwQBd2tZ6N1pL
+      sortOrder: 15
+      fieldKey: pageTitle
+      label: Page Title
+      type: STRING
+      description: The title of the web page the event was generated on.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.page.title
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 23oANDtBoWVKmwo7SMKBFL
+      sortOrder: 16
+      fieldKey: userAgent
+      label: User Agent
+      type: STRING
+      description: The browser's User-Agent string.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.userAgent
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: jv4wtdTbrJj2WYZ1DymdiV
+      sortOrder: 17
+      fieldKey: ipAddress
+      label: IP Address
+      type: STRING
+      description: The users's IP address.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.ip
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+  - id: qXnqSX3hkPFkzQRR8K5YJp
+    name: Track Customer
+    slug: trackCustomer
+    description: Create a new customer profile or update an existing customer profile.
+    platform: CLOUD
+    hidden: false
+    defaultTrigger: null
+    fields:
+    - id: hyufZTKzkhVVYrbFqzKApD
+      sortOrder: 0
+      fieldKey: customerId
+      label: Customer ID
+      type: STRING
+      description: The user's customer ID.
+      placeholder: ''
+      defaultValue:
+        '@path': $.userId
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: tpxUYtNM6RgnvNZJfcC8DE
+      sortOrder: 1
+      fieldKey: anonymousId
+      label: Anonymous ID
+      type: STRING
+      description: The user's anonymous id.
+      placeholder: ''
+      defaultValue:
+        '@path': $.anonymousId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: im1MDJmjPihfzjXBiqTTAu
+      sortOrder: 2
+      fieldKey: email
+      label: Email
+      type: STRING
+      description: The user's email address.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.email
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: ih1KaVRRyWrJjiVMpoBNBz
+      sortOrder: 3
+      fieldKey: firstName
+      label: First Name
+      type: STRING
+      description: The user's given name.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.firstName
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: dGYeLsMuqPLsqViv6ozqWz
+      sortOrder: 4
+      fieldKey: lastName
+      label: Last Name
+      type: STRING
+      description: The user's surname.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.lastName
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 5or25ohrdDqT31ZrRDtocE
+      sortOrder: 5
+      fieldKey: name
+      label: Name
+      type: STRING
+      description: >-
+        The user's full name. If the name trait doesn't exist then it will be
+        automatically derived from the firstName and lastName traits if they are
+        defined.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.name
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: vFFWALL8gYvTQSVwQPTHsY
+      sortOrder: 6
+      fieldKey: age
+      label: Age
+      type: NUMBER
+      description: The user's age.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.age
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: oCLaaUerUXZVKRX2ZEQ4N4
+      sortOrder: 7
+      fieldKey: birthday
+      label: Birthday
+      type: STRING
+      description: >-
+        The user's birthday in the format "YYYY-MM-DD", or "0000-MM-DD" to omit
+        the year.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.birthday
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: fm5y5BWYpHvgRLxk8QcyR7
+      sortOrder: 8
+      fieldKey: language
+      label: Language
+      type: STRING
+      description: The user's language.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.language
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 7aEAcqmizMXvrrMPYaWPMD
+      sortOrder: 9
+      fieldKey: addressCountry
+      label: Country
+      type: STRING
+      description: The user's country.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.address.country
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: kSfc4sggqPfW2LAoS86YpA
+      sortOrder: 10
+      fieldKey: addressState
+      label: State
+      type: STRING
+      description: The user's state.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.address.state
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 5QT67XaNzBvD2bP5BWviGN
+      sortOrder: 11
+      fieldKey: addressCity
+      label: City
+      type: STRING
+      description: The user's city.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.address.city
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 7jvw8ogMPSYoUh7e2b5o8q
+      sortOrder: 12
+      fieldKey: addressPostalCode
+      label: State
+      type: STRING
+      description: The user's postal code.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.address.postalCode
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: nqCK3EhBEExK543hvjT1QW
+      sortOrder: 13
+      fieldKey: customerSince
+      label: Customer Since
+      type: STRING
+      description: The date the user became a customer.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.customerSince
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 7ck4mtXS7pM17qVJPXYbd1
+      sortOrder: 14
+      fieldKey: loyaltyStatus
+      label: Loyalty Status
+      type: STRING
+      description: >-
+        The status of the user in your loyalty program. Valid values are "in",
+        "out", or "blocked".
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.loyaltyStatus
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: f882GLMrfrr4RCBGLvMT38
+      sortOrder: 15
+      fieldKey: isNewCustomer
+      label: New Customer Flag
+      type: BOOLEAN
+      description: Flag to indicate whether the user is a new customer.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.isNewCustomer
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 4RKrCbou8QR7vWNU9QZNpq
+      sortOrder: 16
+      fieldKey: friendbuyAttributes
+      label: Custom Attributes
+      type: OBJECT
+      description: >-
+        Custom attributes to send to Friendbuy. You should pass an object whose
+        keys are the names of the custom attributes and whose values are
+        strings. Non-string-valued attributes will be dropped.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.friendbuyAttributes
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: bRraNNAivMUoy5xi1B7qcH
+      sortOrder: 17
+      fieldKey: pageUrl
+      label: Page URL
+      type: STRING
+      description: The URL of the web page the event was generated on.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.page.url
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 98taXo3A2L7qBLp2n6vv3U
+      sortOrder: 18
+      fieldKey: pageTitle
+      label: Page Title
+      type: STRING
+      description: The title of the web page the event was generated on.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.page.title
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: pHYgnkLb6aNpYeBUh86NaW
+      sortOrder: 19
+      fieldKey: userAgent
+      label: User Agent
+      type: STRING
+      description: The browser's User-Agent string.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.userAgent
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: boje7ArY6dFCB4jc27VEin
+      sortOrder: 20
+      fieldKey: ipAddress
+      label: IP Address
+      type: STRING
+      description: The users's IP address.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.ip
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+  - id: rHduKcyr8ptDrQnFupicxd
+    name: Track Purchase
+    slug: trackPurchase
+    description: Record when a customer makes a purchase.
+    platform: CLOUD
+    hidden: false
+    defaultTrigger: null
+    fields:
+    - id: wqe6KdE5WKF22aUQ89YbBk
+      sortOrder: 0
+      fieldKey: orderId
+      label: Order ID
+      type: STRING
+      description: The order ID.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.order_id
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: qWq2mTDVazLgkUMyJgBoqG
+      sortOrder: 1
+      fieldKey: amount
+      label: Amount Source
+      type: NUMBER
+      description: Purchase amount to be considered when evaluating reward rules.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.total
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: r3tCWiMg4TkJeVnumM61kR
+      sortOrder: 2
+      fieldKey: currency
+      label: Currency
+      type: STRING
+      description: The currency of the purchase amount.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.currency
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: sUptyXAjZWNTpp3XRz4oFn
+      sortOrder: 3
+      fieldKey: coupon
+      label: Coupon
+      type: STRING
+      description: The coupon code of any coupon redeemed with the order.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.coupon
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 6G1UDvw4eSeH4PAKcDfKjg
+      sortOrder: 4
+      fieldKey: attributionId
+      label: Friendbuy Attribution ID
+      type: STRING
+      description: >-
+        Friendbuy attribution ID that associates the purchase with the advocate
+        who referred the purchaser.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.attributionId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: wdVUENe5YATHcU9mRoVVXU
+      sortOrder: 5
+      fieldKey: referralCode
+      label: Friendbuy Referral ID
+      type: STRING
+      description: >-
+        Friendbuy referral code that associates the purchase with the advocate
+        who referred the purchaser.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.referralCode
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: bhWQtNmRgCHKAoW74H8h2J
+      sortOrder: 6
+      fieldKey: giftCardCodes
+      label: Gift Card Codes
+      type: STRING
+      description: An array of gift card codes applied to the order.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.giftCardCodes
+      required: false
+      multiple: true
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: aYi9MVMXoRozMekSzXuPwb
+      sortOrder: 7
+      fieldKey: products
+      label: Products
+      type: OBJECT
+      description: Products purchased.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.products
+      required: false
+      multiple: true
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: i76YK79Z6FdtNstg2wR1mP
+      sortOrder: 8
+      fieldKey: customerId
+      label: Customer ID
+      type: STRING
+      description: The user's customer ID.
+      placeholder: ''
+      defaultValue:
+        '@if':
+          exists:
+            '@path': $.properties.customerId
+          then:
+            '@path': $.properties.customerId
+          else:
+            '@path': $.userId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: mT7Di85ZgXTMJi3n7RxG5X
+      sortOrder: 9
+      fieldKey: anonymousId
+      label: Anonymous ID
+      type: STRING
+      description: The user's anonymous ID.
+      placeholder: ''
+      defaultValue:
+        '@path': $.anonymousId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: bUYzGk6i1CVBZoB53TySfS
+      sortOrder: 10
+      fieldKey: email
+      label: Email
+      type: STRING
+      description: The user's email address.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.email
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: imjDbTMEmYbpBT2TmX5FY8
+      sortOrder: 11
+      fieldKey: isNewCustomer
+      label: New Customer Flag
+      type: BOOLEAN
+      description: Flag to indicate whether the user is a new customer.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.isNewCustomer
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: LrpY891pMfaoM3EZoCinc
+      sortOrder: 12
+      fieldKey: loyaltyStatus
+      label: Loyalty Program Status
+      type: STRING
+      description: >-
+        The status of the user in your loyalty program. Valid values are "in",
+        "out", or "blocked".
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.loyaltyStatus
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: sNkavPa5RSnet4eWWbENQF
+      sortOrder: 13
+      fieldKey: firstName
+      label: First Name
+      type: STRING
+      description: The user's given name.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.firstName
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: v1SY9oFpwEPDkQEar37beY
+      sortOrder: 14
+      fieldKey: lastName
+      label: Last Name
+      type: STRING
+      description: The user's surname.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.lastName
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: pWJgQR3w92hSvuAvPCift8
+      sortOrder: 15
+      fieldKey: name
+      label: Name
+      type: STRING
+      description: The user's full name.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.name
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: ua2vy95ckMFNXXEF2eDWqj
+      sortOrder: 16
+      fieldKey: age
+      label: Age
+      type: NUMBER
+      description: The user's age.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.age
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: umTCW6h1TVzLBmr53N8Fgf
+      sortOrder: 17
+      fieldKey: birthday
+      label: Birthday
+      type: STRING
+      description: >-
+        The user's birthday in the format "YYYY-MM-DD", or "0000-MM-DD" to omit
+        the year.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.birthday
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 3VYELbeHb2Y86LRQ9GRxJ2
+      sortOrder: 18
+      fieldKey: friendbuyAttributes
+      label: Custom Attributes
+      type: OBJECT
+      description: >-
+        Custom attributes to send to Friendbuy. You should pass an object whose
+        keys are the names of the custom attributes and whose values are
+        strings. Non-string-valued attributes will be dropped.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.friendbuyAttributes
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: msLckf49ZEaf1KsPfQ4x91
+      sortOrder: 19
+      fieldKey: pageUrl
+      label: Page URL
+      type: STRING
+      description: The URL of the web page the event was generated on.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.page.url
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: hoZJWaYBJQ9YhvQSJRF66f
+      sortOrder: 20
+      fieldKey: pageTitle
+      label: Page Title
+      type: STRING
+      description: The title of the web page the event was generated on.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.page.title
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: iVx6fQYSn1TNrdmteTBr5w
+      sortOrder: 21
+      fieldKey: userAgent
+      label: User Agent
+      type: STRING
+      description: The browser's User-Agent string.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.userAgent
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: sXZcFy1ehAgpDEJe2eo3zN
+      sortOrder: 22
+      fieldKey: ipAddress
+      label: IP Address
+      type: STRING
+      description: The users's IP address.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.ip
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
   presets: []
 - destination_id: 54521fd625e721e32a72eeb8
   display_name: FullStory
