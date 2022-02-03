@@ -252,6 +252,8 @@ Segment maps the following Segment traits to [Facebook properties](https://devel
 | `timestamp`                         | `event_time`                         |                                                                                                                                                 |
 | `userId`                            | `external_id`                        | Any unique ID from the advertiser, such as membership IDs, user IDs, and cookie IDs. See [Alternative External IDs](#alternative-external-ids). |
 
+> info "About hashing"
+> For each of the hashed properties above, Segment's integration code hashes the values before they're sent to the destination.
 
 To access the `contexts` and `context.traits` objects in a Track call, you can use the [context-traits format](/docs/connections/sources/catalog/libraries/website/javascript/#context--traits) as in the example below.
 
