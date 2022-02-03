@@ -400,6 +400,9 @@ By default (in async mode), this library starts a single seperate thread on init
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
 
+{% include content/tracking-api-limit.md %}
+
+
 
 ### How do I turn batching off?
 

@@ -264,6 +264,9 @@ The `batch` method lets you send a series of `identify`, `group`, `track`, `page
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
 
+{% include content/tracking-api-limit.md %}
+
+
 Here's the what the `batch` request signature looks like:
 
 ```

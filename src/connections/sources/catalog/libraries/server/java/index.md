@@ -357,6 +357,9 @@ Every method you call **does not** result in an HTTP request, but is queued in m
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
 
+{% include content/tracking-api-limit.md %}
+
+
 ## How do I flush right now?!
 
 You can also flush on demand. For example, at the end of your program, you'll want to flush to make sure there's nothing left in the queue. Just call the `flush` method:
