@@ -377,6 +377,9 @@ leaving the flushing of Messages up to you to implement.
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
 
+{% include content/tracking-api-limit.md %}
+
+
 ## Troubleshooting
 
 {% include content/troubleshooting-intro.md %}

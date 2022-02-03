@@ -402,6 +402,9 @@ If your servers are handling more than 20 requests per second, you may want to l
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
 
+{% include content/tracking-api-limit.md %}
+
+
 The lib-curl consumer is Segment's default PHP library, although you may still initialize it explicitly and set queue and batch sizes in the library's initialization settings.
 
 ```php
