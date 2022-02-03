@@ -324,6 +324,9 @@ By default, our library will flush:
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
 
+{% include content/tracking-api-limit.md %}
+
+
 Sometimes you might not want batching (eg. when debugging, or in short-lived programs). You can turn off batching by setting the `FlushAt` argument to `1`, and your requests will always be sent right away.
 
 

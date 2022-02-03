@@ -414,6 +414,8 @@ By default, our library will flush:
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
 
+{% include content/tracking-api-limit.md %}
+
 The queue consumer makes only **a single outbound request** at a time to avoid saturating your server's resources. If multiple messages are in the queue, they are sent together in a batch call.
 
 You can specify the following additional options to determine how the queue operates and to help debug possible errors. None of them are required for normal operation.

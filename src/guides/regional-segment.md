@@ -3,6 +3,7 @@ title: Regional Segment
 redirect_from:
   - '/connections/regional-segment/'
   - '/docs/connections/regional-segment-eu/'
+  - '/docs/connections/data-residency/'
 ---
 {% include content/plan-grid.md name="data-residency" %}
 
