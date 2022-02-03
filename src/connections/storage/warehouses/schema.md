@@ -5,8 +5,7 @@ title: Warehouse Schemas
 A **schema** describes the way that the data in a warehouse is organized. Schemas include a detailed description of database elements (tables, views, indexes, synonyms, etc.) and the relationships that exist between elements. 
 
 Schemas of warehouse data are organized into the following template: <br/>
-`<source>.<collection>.<property>` <br/><br/>
-eg. `segment-engineering.tracks.userId`, where Source refers to the source or project name (segment-engineering), collection refers to the event (tracks), and the property refers to the data being collected (userId).
+`<source>.<collection>.<property>` eg. `segment-engineering.tracks.userId`, where Source refers to the source or project name (segment-engineering), collection refers to the event (tracks), and the property refers to the data being collected (userId).
 
 > note "Data warehouse column creation"
 > **Note:** Segment creates tables for each of your custom events, and columns for each event's custom properties. Segment does not allow unbounded `event` or `property` spaces in your data. Instead of recording events like "Ordered Product 15", use a single property of "Product Number" or similar.
@@ -402,13 +401,24 @@ New event properties and traits create columns. Segment processes the incoming d
 
 When Segment process a new batch and discover a new column to add, we take the most recent occurrence of a column and choose its datatype.
 
-The data types that we currently support include: 
 
-- `timestamp`
-- `integer` 
-- `float`
-- `boolean`
-- `varchar`
+### Supported Data Types
+The data types that Segment currently supports include:
+
+### `timestamp`
+The `timestamp`
+
+### `integer`
+Integers are 
+
+### `float`
+Float values
+
+### `boolean`
+Boolean data types 
+
+### `varchar`
+Varchar, or variable character data types, 
 
 ## Column Sizing
 
@@ -444,11 +454,13 @@ To learn more about timestamps in Segment, [read our timestamps overview](/docs/
 
 Each row in your database will have an `id` which is equivalent to the messageId which is passed through in the raw JSON events. The `id` is a unique message id associated with the row.
 
-## uuid and uuid_ts
+## uuid, uuid_ts, and loaded_at
 
 The `uuid` column is used to prevent duplicates. You can ignore this column.
 
 The `uuid_ts` column is used to keep track of when the specific event was last processed by our connector, specifically for deduping and debugging purposes. You can generally ignore this column.
+
+The `loaded_at` column contains the UTC timestamp reflecting when the data was staged by the processor. 
 
 ## Sort Key
 
@@ -460,4 +472,6 @@ All tables use `received_at` for the sort key. Amazon Redshift stores your data 
 
 [How do I give users permissions to my warehouse?](/docs/connections/storage/warehouses/add-warehouse-users/)
 
-Check out our [Frequently Asked Questions about Warehouses](/docs/connections/storage/warehouses/faq/) and [a list of helpful queries to get you started](https://help.segment.com/hc/en-us/articles/205577035-Common-Segment-SQL-Queries).
+Check out our [Frequently Asked Questions about Warehouses](/docs/connections/storage/warehouses/faq/). 
+
+<!-- and [a list of helpful queries to get you started](https://help.segment.com/hc/en-us/articles/205577035-Common-Segment-SQL-Queries). -->

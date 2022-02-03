@@ -13,7 +13,7 @@ Instead of constantly streaming data to the warehouse destination, Segment loads
 
 Warehouses sync with all data coming from your source. 
 
-## Sync frequency
+## Sync Frequency
 
 | Plan     | Frequency   |
 | -------- | ----------- |

@@ -44,9 +44,9 @@ Your warehouse id appears in the URL when you look at the [warehouse destination
 
 ## How fresh is the data in Segment Warehouses?
 
-Data is available in Warehouses within 24-48 hours. The underlying Redshift datastore has a subtle tradeoff between data freshness, robustness, and query speed. For the best experience, Segment needs to balance all three of these.
+Data is available in Warehouses within 24-48 hours, depending on your tier's sync frequency. For more information about sync frequency by tier, see [Sync Frequency](/docs/connections/storage/warehouses/warehouse-syncs/#sync-frequency).
 
-Real-time loading of the data into Segment Warehouses would cause significant performance degradation at query time because of the way Redshift uses large batches to optimize and compress columns. To optimize for your query speed, reliability, and robustness, Segment guarantees that your data will be available in Redshift within 24 hours.
+Real-time loading of the data into Segment Warehouses would cause significant performance degradation at query time because of the way Redshift uses large batches to optimize and compress columns. To optimize for your query speed, reliability, and robustness, Segment guarantees that your data will be available in Redshift within 24 hours. The underlying Redshift datastore has a subtle tradeoff between data freshness, robustness, and query speed. For the best experience, Segment needs to balance all three of these.
 
 As Segment improves and updates the ETL processes and optimizes for SQL query performance downstream, the actual load time will vary, but Segment ensures it's always within 24 hours.
 
@@ -69,7 +69,7 @@ If you're in the EU region, use CIDR `3.251.148.96/29`.
 > info ""
 > EU workspace regions are currently in beta. If you would like to learn more about the beta, please contact your account manager.
 
-BigQuery does not require whitelisting an IP address. To learn how to set up BigQuery, check out our [set up guide](https://segment.com/docs/connections/storage/catalog/bigquery/#getting-started)
+BigQuery does not require whitelisting an IP address. To learn how to set up BigQuery, check out our [set up guide](/docs/connections/storage/catalog/bigquery/#getting-started)
 
 
 ## Will Segment sync my historical data?
@@ -92,3 +92,13 @@ When you create a new source, the source syncs to all warehouse(s) in the worksp
 - **Config API**: Send a [PATCH Connected Warehouse request](https://reference.segmentapis.com/?version=latest#ec12dae0-1a3e-4bd0-bf1c-840f43537ee2) to update the settings for the warehouse(s) you want to prevent from syncing.
 
 After a source is created, you can enable or disable a warehouse sync within the Warehouse Settings page.
+
+## Can I be notified on warehouse sync failures?
+
+## How is my data formatted in my warehouse?
+
+## If my syncs fail and get fixed, will I need to ask for a backfill?
+
+Yes! If your syncs fail, you will need to ask for a backfill, as this is a manual process. 
+
+## Can I change my schema names once they've been created?
