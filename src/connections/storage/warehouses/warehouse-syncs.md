@@ -15,6 +15,8 @@ Warehouses sync with all data coming from your source.
 
 ## Sync Frequency
 
+Your plan determines how frequently data is synced to your warehouse. 
+
 | Plan     | Frequency   |
 | -------- | ----------- |
 | Free     | Once a day  |

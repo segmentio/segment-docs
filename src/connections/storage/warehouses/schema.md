@@ -8,7 +8,7 @@ Schemas of warehouse data are organized into the following template: <br/>
 `<source>.<collection>.<property>` eg. `segment-engineering.tracks.userId`, where Source refers to the source or project name (segment-engineering), collection refers to the event (tracks), and the property refers to the data being collected (userId).
 
 > note "Data warehouse column creation"
-> **Note:** Segment creates tables for each of your custom events, and columns for each event's custom properties. Segment does not allow unbounded `event` or `property` spaces in your data. Instead of recording events like "Ordered Product 15", use a single property of "Product Number" or similar.
+> **Note:** Segment creates tables for each of your custom events in your warehouse, with columns for each event's custom properties. Segment does not allow unbounded `event` or `property` spaces in your data. Instead of recording events like "Ordered Product 15", use a single property of "Product Number" or similar.
 
 ## Warehouse tables
 

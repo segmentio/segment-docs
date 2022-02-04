@@ -95,10 +95,31 @@ After a source is created, you can enable or disable a warehouse sync within the
 
 ## Can I be notified on warehouse sync failures?
 
+You will recieve notifications in the Segment app for warehouse sync failiures. 
+
+To view the notifications:
+1. 
+
 ## How is my data formatted in my warehouse?
+
+Data in your warehouse is formatted into **schemas**, which involve a detailed description of database elements (tables, views, indexes, synonyms, etc.) and the relationships that exist between elements. Segment's schemas use the following template: <br/>`<source>.<collection>.<property>`, for example, `segment-engineering.tracks.userId`, where Source refers to the source or project name (segment-engineering), collection refers to the event (tracks), and the property refers to the data being collected (userId). For more information about Warehouse Schemas, see the [Warehouse Schemas](/docs/connections/storage/warehouses/schema) page.
 
 ## If my syncs fail and get fixed, will I need to ask for a backfill?
 
-Yes! If your syncs fail, you will need to ask for a backfill, as this is a manual process. 
+If your syncs fail, you will need to reach out to [Segment Support](https://segment.com/help/) to ask for a backfill. Be sure to include the following information in your request: 
+- The warehouse that requires the backfill
+- What sources you need information from
+- The timeframe of data that requires a backfill
 
 ## Can I change my schema names once they've been created?
+
+If you'd like to change the name of your schema:
+
+1. Open the Segment app. 
+2. Select your warehouse from the Sources tab. 
+3. On the source's overview page, select "Settings."
+4. Under the "Enable Source" section, disable your warehouse and click "Save Changes."   
+5. Select the "SQL Settings" tab. 
+6. Update the "Schema Name" field with your intended schema name and click "Save Changes."
+7. On the source's overview page, select "Basic."
+8. Under the "Enable Source" section, disable your warehouse and click "Save Changes."
