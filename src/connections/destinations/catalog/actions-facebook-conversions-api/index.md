@@ -119,8 +119,30 @@ You can send additional User Data to increase the match rate for events from a s
 
 If you choose this option, each source sends different events, and deduplication is not necessary.
 
+## FAQ & Troubleshooting
 
-## Verify Events in Facebook
+### Other Standard Events
+
+If you want to send a [Facebook standard event](https://developers.facebook.com/docs/meta-pixel/reference#standard-events){:target="_blank"} that Segment does not have a prebuilt mapping for you can use the [Custom Event action](/docs/connections/destinations/catalog/actions-facebook-conversions-api/#custom-event) to send the standard event. For example, if you want to send a `CompleteRegistration` event, create a mapping for Custom Event, set up your Event Trigger criteria for completed registrations, and input a literal string of "CompleteRegistration" as the Event Name. You can use the Custom Data key/value editor to add fields that are in the `CompleteRegistration` event such as `content_name` and `currency`.
+
+### PII Hashing
+
+Segment will hash the following fields using a SHA-256 hash:
+- External ID
+- Email
+- Phone
+- Gender
+- Data of Birth
+- Last Name
+- First Name
+- City
+- State
+- Zip Code
+- Country
+
+If you are using the Facebook Pixel, the Pixel library will also hash the External ID. This means External IDs will match across Facebook Pixel and Facebook Conversions API if are relying External ID for [deduplication](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/#fbp-or-external-id){:target="_blank"}.
+
+### Verify Events in Facebook
 
 After you start sending events, you should start seeing them in twenty minutes. You can confirm that Facebook received them:
 
