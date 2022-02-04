@@ -127,7 +127,7 @@ If you want to send a [Facebook standard event](https://developers.facebook.com/
 
 ### PII Hashing
 
-Segment will hash the following fields using a SHA-256 hash:
+Segment creates a SHA-256 hash of the following fields:
 - External ID
 - Email
 - Phone
