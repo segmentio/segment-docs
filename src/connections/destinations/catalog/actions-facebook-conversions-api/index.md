@@ -123,7 +123,7 @@ If you choose this option, each source sends different events, and deduplication
 
 ### Other Standard Events
 
-If you want to send a [Facebook standard event](https://developers.facebook.com/docs/meta-pixel/reference#standard-events){:target="_blank"} that Segment does not have a prebuilt mapping for you can use the [Custom Event action](/docs/connections/destinations/catalog/actions-facebook-conversions-api/#custom-event) to send the standard event. For example, if you want to send a `CompleteRegistration` event, create a mapping for Custom Event, set up your Event Trigger criteria for completed registrations, and input a literal string of "CompleteRegistration" as the Event Name. You can use the Custom Data key/value editor to add fields that are in the `CompleteRegistration` event such as `content_name` and `currency`.
+If you want to send a [Facebook standard event](https://developers.facebook.com/docs/meta-pixel/reference#standard-events){:target="_blank"} that Segment does not have a prebuilt mapping for, you can use the [Custom Event action](/docs/connections/destinations/catalog/actions-facebook-conversions-api/#custom-event) to send the standard event. For example, if you want to send a `CompleteRegistration` event, create a mapping for Custom Event, set up your Event Trigger criteria for completed registrations, and input a literal string of "CompleteRegistration" as the Event Name. You can use the Custom Data key/value editor to add fields that are in the `CompleteRegistration` event such as `content_name` and `currency`.
 
 ### PII Hashing
 
@@ -140,7 +140,7 @@ Segment creates a SHA-256 hash of the following fields:
 - Zip Code
 - Country
 
-If you use the Facebook Pixel, the Pixel library also hashes the External ID. This means External IDs will match across Facebook Pixel and Facebook Conversions API if they use External ID for [deduplication](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/#fbp-or-external-id){:target="_blank"}.
+If you use Facebook Pixel, the Pixel library also hashes the External ID. This means External IDs will match across Facebook Pixel and Facebook Conversions API if they use the External ID for [deduplication](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/#fbp-or-external-id){:target="_blank"}.
 
 ### Verify Events in Facebook
 
