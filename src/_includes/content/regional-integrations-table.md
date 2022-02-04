@@ -28,7 +28,7 @@
     </tr>
     {% for source in sources %}
     <tr class="settingRow source {% if source.regional contains 'eu-west' %}eu-endpoint{%endif%}" id="settingRow">
-      <td><a href="{{source.url}}">{{source.display_name}}</a></td>
+      <td><a href="/docs/{{source.url}}">{{source.display_name}}</a></td>
       <td style="text-align:center">{% if source.regional contains "eu-west" %}<img class="inline"
           src="/docs/images/supported.svg" />{% else %}<img class="inline"
           src="/docs/images/unsupported.svg" />{% endif %}</td>
@@ -42,7 +42,7 @@
     {% for destination in destinations %}
     <tr class="settingRow destination {% if destination.regional contains 'eu-west' %}eu-endpoint{%endif%}"
       id="settingRow">
-      <td><a href="{{destination.url}}">{{destination.display_name}}</a></td>
+      <td><a href="/docs/{{destination.url}}">{{destination.display_name}}</a></td>
       <td style="text-align:center">{% if destination.regional contains "eu-west" %}<img class="inline"
           src="/docs/images/supported.svg" />{% else %}<img class="inline"
           src="/docs/images/unsupported.svg" />{% endif %}</td>
@@ -55,7 +55,7 @@
     </tr>
     {% for warehouse in warehouses %}
     <tr class="settingRow warehouse {% if warehouse.regional contains 'eu-west' %}eu-endpoint{%endif%}" id="settingRow">
-      <td><a href="{{warehouse.url}}">{{warehouse.display_name}}</a></td>
+      <td><a href="/docs/{{warehouse.url}}">{{warehouse.display_name}}</a></td>
       <td style="text-align:center">{% if warehouse.regional contains "eu-west" %}<img class="inline"
           src="/docs/images/supported.svg" />{% else %}<img class="inline"
           src="/docs/images/unsupported.svg" />{% endif %}</td>
