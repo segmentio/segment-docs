@@ -140,7 +140,7 @@ Segment creates a SHA-256 hash of the following fields:
 - Zip Code
 - Country
 
-If you are using the Facebook Pixel, the Pixel library will also hash the External ID. This means External IDs will match across Facebook Pixel and Facebook Conversions API if are relying External ID for [deduplication](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/#fbp-or-external-id){:target="_blank"}.
+If you use the Facebook Pixel, the Pixel library also hashes the External ID. This means External IDs will match across Facebook Pixel and Facebook Conversions API if they use External ID for [deduplication](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/#fbp-or-external-id){:target="_blank"}.
 
 ### Verify Events in Facebook
 
