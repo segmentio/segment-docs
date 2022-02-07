@@ -5,10 +5,115 @@ title: Warehouse Schemas
 A **schema** describes the way that the data in a warehouse is organized. Schemas include a detailed description of database elements (tables, views, indexes, synonyms, etc.) and the relationships that exist between elements. 
 
 Schemas of warehouse data are organized into the following template: <br/>
-`<source>.<collection>.<property>` eg. `segment-engineering.tracks.userId`, where Source refers to the source or project name (segment-engineering), collection refers to the event (tracks), and the property refers to the data being collected (userId).
+`<source>.<collection>.<property>` for example `segment-engineering.tracks.userId`, where Source refers to the source or project name (segment-engineering), collection refers to the event (tracks), and the property refers to the data being collected (userId).
 
-> note "Data warehouse column creation"
+> note "Warehouse column creation"
 > **Note:** Segment creates tables for each of your custom events in your warehouse, with columns for each event's custom properties. Segment does not allow unbounded `event` or `property` spaces in your data. Instead of recording events like "Ordered Product 15", use a single property of "Product Number" or similar.
+
+### How warehouse tables handle nested objects and arrays
+
+Segment's libraries pass nested objects and arrays into tracking calls as **properties**, **traits**, and **tracking calls**. To preserve the quality of your events data, Segment uses the following methods to store properties and traits in database tables: 
+
+- The warehouse connector stringifies all **properties** that contain a nested **array/object**
+- The warehouse connector stringifies all **context fields** that contain a nested **array**
+- The warehouse connector stringifies all **traits** that contain a nested **array**
+- The warehouse connector "flattens" all **traits** that contain a nested **object**
+- The warehouse connector optionally stringifies **arrays** when they follow our [Ecommerce spec](/docs/connections/spec/ecommerce/v2/)
+- The warehouse connector "flattens" all **context fields** that contain a nested **object** (for example, context.field.nestedA.nestedB becomes a column called context_field_nestedA_nestedB)
+
+<table>
+<thead>
+<tr>
+    <th> Field </th>
+    <th> Code (Example) </th>
+    <th> Schema (Example) </th>
+</tr>
+</thead>
+
+<tr>
+  <td><b>Object (Context):</b> Flatten </td>
+  <td markdown="1">
+
+``` json
+context: {
+  app: {
+    version: "1.0.0"
+  }
+}
+```
+  </td>
+  <td>
+    <b>Column Name:</b><br/>
+    context_app_version
+    <br/><br/>
+    <b>Value:</b><br/>
+    "1.0.0"
+  </td> 
+</tr>
+
+<tr>
+    <td> <b>Object (Traits):</b> Flatten </td>
+    <td markdown= "1">
+
+```json
+traits: {
+  address: {
+    street: "6th Street"
+  }
+}
+```
+
+</td>
+<td>
+<b>Column Name:</b><br/>
+address_street<br/>
+<br/>
+<b>Value:</b><br/>
+"6th Street"
+</td>
+</tr>
+
+<tr>
+<td><b>Object (Properties):</b> Stringify</td>
+<td markdown="1">
+
+```json
+properties: {
+  product_id: {
+    sku: "G-32"
+  }
+}
+```
+</td>
+<td>
+    <b>Column Name:</b><br/>
+    product_id<br/><br/>
+    <b>Value:</b><br/>
+    "{sku.'G-32'}"
+</td> 
+</tr>
+
+<tr>
+<td><b>Array (Any):</b> Stringify</td>
+<td markdown="1">
+
+```json
+products: {
+  product_id: [
+    "507f1", "505bd"
+  ]
+}
+```
+
+</td>
+<td>
+    <b>Column Name:</b> <br/>
+    product_id <br/><br/>
+    <b>Value:</b>
+    "[507f1, 505bd]"
+</td> 
+</tr>
+</table>
 
 ## Warehouse tables
 
@@ -237,104 +342,6 @@ AND table_name = '<event>'
 ORDER by column_name
 ```
 
-### How event tables handle nested objects and arrays
-
-To preserve the quality of your events data, Segment uses the following methods to store objects and arrays in the event tables: 
-
-<table>
-<thead>
-<tr>
-    <th> Field </th>
-    <th> Code (Example) </th>
-    <th> Schema (Example) </th>
-</tr>
-</thead>
-
-<tr>
-  <td><b>Object (Context):</b> Flatten </td>
-  <td markdown="1">
-
-``` json
-context: {
-  app: {
-    version: "1.0.0"
-  }
-}
-```
-  </td>
-  <td>
-    <b>Column Name:</b><br/>
-    context_app_version
-    <br/><br/>
-    <b>Value:</b><br/>
-    "1.0.0"
-  </td> 
-</tr>
-
-<tr>
-    <td> <b>Object (Traits):</b> Flatten </td>
-    <td markdown= "1">
-
-```json
-traits: {
-  address: {
-    street: "6th Street"
-  }
-}
-```
-
-</td>
-<td>
-<b>Column Name:</b><br/>
-address_street<br/>
-<br/>
-<b>Value:</b><br/>
-"6th Street"
-</td>
-</tr>
-
-<tr>
-<td><b>Object (Properties):</b> Stringify</td>
-<td markdown="1">
-
-```json
-properties: {
-  product_id: {
-    sku: "G-32"
-  }
-}
-```
-</td>
-<td>
-    <b>Column Name:</b><br/>
-    product_id<br/><br/>
-    <b>Value:</b><br/>
-    "{sku.'G-32'}"
-</td> 
-</tr>
-
-<tr>
-<td><b>Array (Any):</b> Stringify</td>
-<td markdown="1">
-
-```json
-products: {
-  product_id: [
-    "507f1", "505bd"
-  ]
-}
-```
-
-</td>
-<td>
-    <b>Column Name:</b> <br/>
-    product_id <br/><br/>
-    <b>Value:</b>
-    "[507f1, 505bd]"
-</td> 
-</tr>
-</table>
-
 ## Tracks vs. Events Tables
 
 To see the tables for your organization, you can run this query:
@@ -418,7 +425,7 @@ Float values
 Boolean data types 
 
 ### `varchar`
-Varchar, or variable character data types, 
+Varchar, or the variable character data type, 
 
 ## Column Sizing
 

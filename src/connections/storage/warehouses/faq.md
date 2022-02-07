@@ -58,7 +58,7 @@ The only restriction when loading your own data into your connected warehouse is
 
 If you want to insert custom data into your warehouse, create new schemas that are not associated with an existing source, since these may be deleted upon a reload of the Segment data in the cluster.
 
-We highly recommend scripting any sort of additions of data you might have to warehouse, so that you aren't doing one-off tasks that can be hard to recover from in the future in the case of hardware failure.
+Segment highly recommends scripting any sort of additions of data you might have to warehouse, so that you aren't doing one-off tasks that can be hard to recover from in the future in the case of hardware failure.
 
 ## Which IPs should I whitelist?
 
@@ -69,12 +69,12 @@ If you're in the EU region, use CIDR `3.251.148.96/29`.
 > info ""
 > EU workspace regions are currently in beta. If you would like to learn more about the beta, please contact your account manager.
 
-BigQuery does not require whitelisting an IP address. To learn how to set up BigQuery, check out our [set up guide](/docs/connections/storage/catalog/bigquery/#getting-started)
+BigQuery does not require whitelisting an IP address. To learn how to set up BigQuery, check out Segment's BigQuery [set up guide](/docs/connections/storage/catalog/bigquery/#getting-started)
 
 
 ## Will Segment sync my historical data?
 
-We will automatically load up to 2 months of your historical data when you connect a warehouse.
+Segment will automatically load up to two months of your historical data when you connect a warehouse.
 
 For full historical backfills you'll need to be a Segment Business plan customer. If you'd like to learn more about our Business plan and all the features that come with it, [check out our pricing page](https://segment.com/pricing).
 
@@ -93,12 +93,15 @@ When you create a new source, the source syncs to all warehouse(s) in the worksp
 
 After a source is created, you can enable or disable a warehouse sync within the Warehouse Settings page.
 
-## Can I be notified on warehouse sync failures?
+## Can I be notified when warehouse syncs fail?
 
-You will recieve notifications in the Segment app for warehouse sync failiures. 
+If you enabled activity notifications for your storage destination, you will receive notifications in the Segment app when your warehouse syncs fail.
 
-To view the notifications:
-1. 
+To sign up for warehouse sync notifications:
+1. Open the Segment app. 
+2. Go to **Settings** > **User Preferences**. 
+3. In the Activity Notifications section, select **Storage Destinations**.
+4. Enable **Storage Destination Sync Failed**. 
 
 ## How is my data formatted in my warehouse?
 
@@ -109,7 +112,7 @@ Data in your warehouse is formatted into **schemas**, which involve a detailed d
 If your syncs fail, you will need to reach out to [Segment Support](https://segment.com/help/) to ask for a backfill. Be sure to include the following information in your request: 
 - The warehouse that requires the backfill
 - What sources you need information from
-- The timeframe of data that requires a backfill
+- The date range of data that requires a backfill
 
 ## Can I change my schema names once they've been created?
 
