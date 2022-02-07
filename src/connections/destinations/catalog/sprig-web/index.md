@@ -1,9 +1,10 @@
 ---
-# The end name should be similar to `Slack (Actions) Destination`
-title: Sprig (Actions) Destination
+title: 'Sprig (Actions) Destination'
+hidden: false
 hide-boilerplate: true
 hide-dossier: true
-hidden: true
+redirect_from:
+  - '/connections/destinations/catalog/actions-sprig-web'
 ---
 
 <!-- In the section above, edit the `title` field. For example, Slack (Actions) Destination -->
