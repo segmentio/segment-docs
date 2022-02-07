@@ -56,7 +56,7 @@ Calling `flush` will clear the offline cache with comScore's `flushOfflineCache`
 
 ## User Consent
 
-To communicate user consent, Comscore requires customers add a label called `cs_ucfr` to events. Segment supports setting the `cs_ucfr` label on web only. Using the **Comscore User Consent Label** setting, input the custom field you would like to map to `cs_ucfr`. The custom field mapped to `cs_ucfr` should be present on **all** page calls as per comScore's requirements. 
+To communicate user consent, Comscore requires customers add a label called `cs_ucfr` to events. Segment supports setting the `cs_ucfr` label on web and Android only. Using the **Comscore User Consent Label** setting, input the custom field you would like to map to `cs_ucfr`. The custom field mapped to `cs_ucfr` should be present on **all** page calls as per comScore's requirements. On Android the custom field mapped to `cs_ucfr` can be sent with screen, track and identify calls. Android integration sets `cs_ucfr` Comscore persistent label once the custom field mapped to `cs_ucfr` is detected in the event payload. 
 
 Segment will map values to comScore's `cs_ucfr` label as outlined below:
 
