@@ -52,7 +52,7 @@ If the source you intend to upgrade uses the in-domain instrumentation as well a
 
 Analytics.js 2.0 removes inbuilt quotes from cookie values, resulting in a different format for the `ajs_anonymous_id` value when compared to Analytics.js Classic.  Though you can retrieve cookie values with [standard supported functions](/docs/connections/sources/catalog/libraries/website/javascript/identity/#retrieve-the-anonymous-id), you'll need to configure your environment to accept the new format if your implementation relies on accessing the cookie value directly.
 
-If you have configured different sources for different subdomains of your website, ensure that you switch them to Analytics 2.0 at the same time - this will guarantee that subdomain tracking will not break. In cases when you need to gradually update to Analytics 2.0, the `utility` [plugin](/docs/connections/sources/catalog/libraries/website/javascript/index/#example-plugins) will help match the ajs_anonymous_id cookie format and ensure that users are consistently identified across your subdomains.
+If you configured different sources for different subdomains of your website, switch them to Analytics 2.0 at the same time. Switching them at the same time ensures that subdomain tracking won't break. In cases when you need to gradually update to Analytics 2.0, the `utility` [plugin](/docs/connections/sources/catalog/libraries/website/javascript/index/#example-plugins) can help match the `ajs_anonymous_id` cookie format and ensure that users are consistently identified across your subdomains.
 
 ### Using a strict content security policy on the page
 
