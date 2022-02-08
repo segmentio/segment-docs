@@ -53,7 +53,7 @@ https://ad.doubleclick.net/ddm/activity/src=1234567;cat=fghij456;type=abcde123;d
 
 ### Accessing Other Event Properties
 
-By default, the Segment event property you define for each custom variable mapping is matched against the property values found in the `properties` object of a `track` event. On device-mode web, you can use JSON style dot-notation-accessors wrapped in double curly brackets to map to other fields in the event's raw payload to your custom variables. For example, some acceptable values could be `userId`, `anonymousId`, or `context.page.referrer` (be sure to wrap these values in double curly brackets). You can find the complete structure of a standard Segment event payload [here](/docs/connections/spec/common/#structure). Please note that some fields may not be available for mapping, such as fields within the `context.campaign` object.
+By default, the Segment event property you define for each custom variable mapping is matched against the property values found in the `properties` object of a `track` event. On device-mode web, you can use JSON style dot-notation-accessors wrapped in double curly brackets to map to other fields in the event's raw payload to your custom variables. For example, some acceptable values could be `{%raw%}{{userId}}{%endraw%}`, `{%raw%}{{anonymousId}}{%endraw%}`, or `{%raw%}{{context.page.referrer}}{%endraw%}`. You can find the complete structure of a standard Segment event payload [here](/docs/connections/spec/common/#structure). Please note that some fields may not be available for mapping, such as fields within the `context.campaign` object.
 
 **Note:** `dc_rdid` and `dc_lat` are automatically collected by Segment's mobile libraries and `ord` is uniquely generated for each event.
 
