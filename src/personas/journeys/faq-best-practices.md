@@ -41,14 +41,14 @@ When you do this, the key used for syncing to destinations will be different fro
 
 Aside from the entry condition, all Journey step conditions are triggered by future events and existing trait memberships. Event-based conditions only evaluate events that occur *after* the Journey is published.
 
-When you [include historical data](/docs/personas/journeys/build-journey/#using-historical-data-for-the-entry-step) in a Journey's entry condition, Personas identifies users who previously satisfied the entry condition and adds them to entry. For example, to evaluate if a user has ever used a discount code mid-Journey, create and configure a [Computed Trait](/docs/personas/computed-traits/#conditions) to select for `discount_used = true` to use in your Journey. 
+When you [include historical data](/docs/personas/journeys/build-journey/#using-historical-data-for-the-entry-step) in a Journey's entry condition, Personas identifies users who previously satisfied the entry condition and adds them to entry. For example, to evaluate if a user has ever used a discount code mid-Journey, create and configure a [Computed Trait](/docs/personas/computed-traits/#conditions) to select for `discount_used = true` to use in your Journey.
 
 Including historical data doesn't impact any additional Journey steps, however. To include historical data in post-entry conditions, use the following table to identify which conditions will automatically include historical data:
 
-| Condition Type     | Automatic Historical Data Inclusion | 
+| Condition Type     | Automatic Historical Data Inclusion |
 | ------------------ | ----------------------------------- |
-| Computed Trait     | Yes                                 |
 | Audience Reference | Yes                                 |
+| Computed Trait     | No                                  | 
 | Event              | No                                  |
 | Custom Trait       | No                                  |
 
@@ -67,11 +67,11 @@ Using the **Part of Audience** condition, Journeys then populates the custom tra
 
 Follow these best practices to test your journeys:
 
-- While in the process of configuring a journey, use dev Personas spaces to model that journey without affecting production data. 
-- Connect a data warehouse to each step of the journey to test for success or failure of that step. 
+- While in the process of configuring a journey, use dev Personas spaces to model that journey without affecting production data.
+- Connect a data warehouse to each step of the journey to test for success or failure of that step.
 - For early version journeys, scaffold Send to Destination steps without connecting to your production advertising or messaging destinations.
 - Verify individual users' progress through the Journey in the Personas Explorer view.
- 
+
 ## Frequently asked questions
 
 ### How often do Journeys run?
@@ -94,11 +94,11 @@ Once published, Journeys displays the number of users are in each step of the Jo
 
 ### How are users sent to downstream destinations?
 
-The data type you send to a destination depends on whether the destination is an Event Destination or a List Destination. 
+The data type you send to a destination depends on whether the destination is an Event Destination or a List Destination.
 
 ### Which roles can access Journeys?
 For Personas Advanced customers, users with either the Personas User or Personas Admin roles can create, edit, and delete journeys. Users with the Personas Read-only role are restricted to view-only access.
 
 ### Why am I seeing duplicate entry or exit events?
 
-Journeys triggers audience or trait-related events for each email `external_id` on a profile. If a profile has two email addresses, you'll see two Audience Entered and two Audience Exited events for each Journey step. Journeys sends both email addresses to downstream destinations. 
+Journeys triggers audience or trait-related events for each email `external_id` on a profile. If a profile has two email addresses, you'll see two Audience Entered and two Audience Exited events for each Journey step. Journeys sends both email addresses to downstream destinations.
