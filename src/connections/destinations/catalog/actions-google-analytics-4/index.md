@@ -50,7 +50,7 @@ Google Analytics 4 is also case sensitive. If you would like all event names low
 
 ### Custom Dimensions & Metrics
 
-With Google Analytics 4, you must create custom dimensions and metrics within the Google Analytics 4 interface and link event parameters to the corresponding dimension or metric. When creating the dimension or metric, you can either select a parameter from the list of already collected fields or enter the name of the parameter you plan to collect in the future. For more information, see [Google Analytics 4 Custom dimensions and metrics](https://support.google.com/analytics/answer/10075209?hl=en)  
+With Google Analytics 4, you must create custom dimensions and metrics within the Google Analytics 4 interface and link event parameters to the corresponding dimension or metric. When creating the dimension or metric, you can either select a parameter from the list of already collected fields or enter the name of the parameter you plan to collect in the future. For more information, see [Google Analytics 4 Custom dimensions and metrics](https://support.google.com/analytics/answer/10075209?hl=en){:target="_blank"}.
 
 ### Debug Mode
 
