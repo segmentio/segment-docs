@@ -47,7 +47,7 @@ If you’re using a different library such as Analytics-Android, follow these st
     <tbody>
     <tr>
     <td>Java</td>
-    <td markdown=1 style="max-width: 450px">
+    <td markdown=1 class="table-code-snippet">
     ```java  
     Analytics analytics = new Analytics.Builder(context, "YOUR_WRITE_KEY")
       .trackApplicationLifecycleEvents()
@@ -57,7 +57,7 @@ If you’re using a different library such as Analytics-Android, follow these st
     </tr>
     <tr>
     <td>Kotlin</td>
-    <td markdown=1 style="max-width: 450px">
+    <td markdown=1 class="table-code-snippet">
     ```kotlin
     val analytics = Analytics.Builder(context, "YOUR_WRITE_KEY")
     .trackApplicationLifecycleEvents()
@@ -76,10 +76,10 @@ If you’re using a different library such as Analytics-Android, follow these st
     <th></th>
     </tr>
     </thead>
-    <tbody style="max-width: 100%">
+    <tbody>
     <tr>
     <td>Java</td>
-    <td markdown=1 style="max-width: 450px">
+    <td markdown=1 class="table-code-snippet">
 
     ```java
     // Initialize an Analytics object with the Kotlin Analytics method
@@ -97,7 +97,7 @@ If you’re using a different library such as Analytics-Android, follow these st
     </tr>
     <tr>
     <td>Kotlin</td>
-    <td markdown=1 style="max-width: 450px">
+    <td markdown=1 class="table-code-snippet">
 
     ```kotlin
     Analytics("YOUR_WRITE_KEY", context) {
@@ -126,7 +126,7 @@ If you’re using a different library such as Analytics-Android, follow these st
     <tbody>
     <tr>
     <td>Java</td>
-    <td markdown=1 style="max-width: 450px">
+    <td markdown=1 class="table-code-snippet">
     ```java  
     builder
       .useSourceMiddleware(new Middleware() {
@@ -154,7 +154,7 @@ If you’re using a different library such as Analytics-Android, follow these st
     </tr>
     <tr>
     <td>Kotlin</td>
-    <td markdown=1 style="max-width: 450px">
+    <td markdown=1 class="table-code-snippet">
     ```kotlin
     builder
       .useSourceMiddleware(
@@ -189,10 +189,10 @@ If you’re using a different library such as Analytics-Android, follow these st
     <th></th>
     </tr>
     </thead>
-    <tbody style="max-width: 100%">
+    <tbody>
     <tr>
     <td>Java</td>
-    <td markdown=1 style="max-width: 450px">
+    <td markdown=1 class="table-code-snippet">
 
     ```java
     analytics.add(new Plugin() {
@@ -233,7 +233,7 @@ If you’re using a different library such as Analytics-Android, follow these st
     </tr>
     <tr>
     <td>Kotlin</td>
-    <td markdown=1 style="max-width: 450px">
+    <td markdown=1 class="table-code-snippet">
 
     ```kotlin
     analytics.add(object: Plugin {
@@ -270,7 +270,7 @@ If you’re using a different library such as Analytics-Android, follow these st
     <tbody>
     <tr>
     <td>Java</td>
-    <td markdown=1 style="max-width: 450px">
+    <td markdown=1 class="table-code-snippet">
     ```java  
     builder
       .useDestinationMiddleware("Segment.io", new Middleware() {
@@ -298,7 +298,7 @@ If you’re using a different library such as Analytics-Android, follow these st
     </tr>
     <tr>
     <td>Kotlin</td>
-    <td markdown=1 style="max-width: 450px">
+    <td markdown=1 class="table-code-snippet">
     ```kotlin
     builder
       .useDestinationMiddleware(
@@ -334,10 +334,10 @@ If you’re using a different library such as Analytics-Android, follow these st
     <th></th>
     </tr>
     </thead>
-    <tbody style="max-width: 100%">
+    <tbody>
     <tr>
     <td>Java</td>
-    <td markdown=1 style="max-width: 450px">
+    <td markdown=1 class="table-code-snippet">
 
     ```java
     SegmentDestination segmentDestination = analytics.find(SegmentDestination.class);
@@ -380,7 +380,7 @@ If you’re using a different library such as Analytics-Android, follow these st
     </tr>
     <tr>
     <td>Kotlin</td>
-    <td markdown=1 style="max-width: 450px">
+    <td markdown=1 class="table-code-snippet">
 
     ```kotlin
     val segmentDestination: DestinationPlugin = analytics.find(SegmentDestination::class)
@@ -447,7 +447,7 @@ If you’re using a different library such as Analytics-Android, follow these st
     <tbody>
     <tr>
     <td>Java</td>
-    <td markdown=1 style="max-width: 450px">
+    <td markdown=1 class="table-code-snippet">
     ```java  
     // Previously we used to use Factories to initialize destinations
     analytics.use(FooIntegration.FACTORY);
@@ -456,7 +456,7 @@ If you’re using a different library such as Analytics-Android, follow these st
     </tr>
     <tr>
     <td>Kotlin</td>
-    <td markdown=1 style="max-width: 450px">
+    <td markdown=1 class="table-code-snippet">
     ```kotlin
     // Previously we used to use Factories to initialize destinations
     analytics.use(FooIntegration.FACTORY)
@@ -474,10 +474,10 @@ If you’re using a different library such as Analytics-Android, follow these st
     <th></th>
     </tr>
     </thead>
-    <tbody style="max-width: 100%">
+    <tbody>
     <tr>
     <td>Java</td>
-    <td markdown=1 style="max-width: 450px">
+    <td markdown=1 class="table-code-snippet">
 
     ```java
     // Now destinations are treated similar to plugins and thus are simpler to add
@@ -488,7 +488,7 @@ If you’re using a different library such as Analytics-Android, follow these st
     </tr>
     <tr>
     <td>Kotlin</td>
-    <td markdown=1 style="max-width: 450px">
+    <td markdown=1 class="table-code-snippet">
 
     ```kotlin
     // Now destinations are treated similar to plugins and thus are simpler to add
@@ -514,7 +514,7 @@ If you’re using a different library such as Analytics-Android, follow these st
       <tbody>
       <tr>
       <td>Java</td>
-      <td markdown=1 style="max-width: 450px">
+      <td markdown=1 class="table-code-snippet">
       ```java
       analytics.identify("a user's id", new Traits().putName("John Doe"), null);
       ```
@@ -522,7 +522,7 @@ If you’re using a different library such as Analytics-Android, follow these st
       </tr>
       <tr>
       <td>Kotlin</td>
-      <td markdown=1 style="max-width: 450px">
+      <td markdown=1 class="table-code-snippet">
       ```kotlin
       analytics.identify("a user's id", Traits().putName("John Doe"), null)
       ```
@@ -539,10 +539,10 @@ If you’re using a different library such as Analytics-Android, follow these st
       <th></th>
       </tr>
       </thead>
-      <tbody style="max-width: 100%">
+      <tbody>
       <tr>
       <td>Java</td>
-      <td markdown=1 style="max-width: 450px">
+      <td markdown=1 class="table-code-snippet">
 
       ```java
       // The newer APIs promote the use of strongly typed structures to keep codebases legible
@@ -570,7 +570,7 @@ If you’re using a different library such as Analytics-Android, follow these st
       </tr>
       <tr>
       <td>Kotlin</td>
-      <td markdown=1 style="max-width: 450px">
+      <td markdown=1 class="table-code-snippet">
 
       ```kotlin    
       // The newer APIs promote the use of strongly typed structures to keep codebases legible
@@ -606,7 +606,7 @@ If you’re using a different library such as Analytics-Android, follow these st
       <tbody>
       <tr>
       <td>Java</td>
-      <td markdown=1 style="max-width: 450px">
+      <td markdown=1 class="table-code-snippet">
       ```java
       analytics.track("Product Viewed", new Properties().putValue("name", "Moto 360"));
       ```
@@ -614,7 +614,7 @@ If you’re using a different library such as Analytics-Android, follow these st
       </tr>
       <tr>
       <td>Kotlin</td>
-      <td markdown=1 style="max-width: 450px">
+      <td markdown=1 class="table-code-snippet">
       ```kotlin
       analytics.track("Product Viewed", Properties().putValue("name", "Moto 360"))
       ```
@@ -631,10 +631,10 @@ If you’re using a different library such as Analytics-Android, follow these st
       <th></th>
       </tr>
       </thead>
-      <tbody style="max-width: 100%">
+      <tbody>
       <tr>
       <td>Java</td>
-      <td markdown=1 style="max-width: 450px">
+      <td markdown=1 class="table-code-snippet">
 
       ```java
         // The newer APIs promote the use of strongly typed structures to keep codebases legible
@@ -672,7 +672,7 @@ If you’re using a different library such as Analytics-Android, follow these st
       </tr>
       <tr>
       <td>Kotlin</td>
-      <td markdown=1 style="max-width: 450px">
+      <td markdown=1 class="table-code-snippet">
 
       ```kotlin    
       // The newer APIs promote the use of strongly typed structures to keep codebases legible
@@ -725,7 +725,7 @@ If you’re using a different library such as Analytics-Android, follow these st
       <tbody>
       <tr>
       <td>Java</td>
-      <td markdown=1 style="max-width: 450px">
+      <td markdown=1 class="table-code-snippet">
       ```java
       analytics.group("a user's id", "a group id", new Traits().putEmployees(20));
       ```
@@ -733,7 +733,7 @@ If you’re using a different library such as Analytics-Android, follow these st
       </tr>
       <tr>
       <td>Kotlin</td>
-      <td markdown=1 style="max-width: 450px">
+      <td markdown=1 class="table-code-snippet">
       ```kotlin
       analytics.group("a user's id", "a group id", Traits().putEmployees(20))
       ```
@@ -750,10 +750,10 @@ If you’re using a different library such as Analytics-Android, follow these st
       <th></th>
       </tr>
       </thead>
-      <tbody style="max-width: 100%">
+      <tbody>
       <tr>
       <td>Java</td>
-      <td markdown=1 style="max-width: 450px">
+      <td markdown=1 class="table-code-snippet">
 
       ```java
       // The newer APIs promote the use of strongly typed structures to keep codebases legible
@@ -779,7 +779,7 @@ If you’re using a different library such as Analytics-Android, follow these st
       </tr>
       <tr>
       <td>Kotlin</td>
-      <td markdown=1 style="max-width: 450px">
+      <td markdown=1 class="table-code-snippet">
 
       ```kotlin   
       // The newer APIs promote the use of strongly typed structures to keep codebases legible
@@ -812,7 +812,7 @@ If you’re using a different library such as Analytics-Android, follow these st
       <tbody>
       <tr>
       <td>Java</td>
-      <td markdown=1 style="max-width: 450px">
+      <td markdown=1 class="table-code-snippet">
       ```java
       analytics.screen("Feed", new Properties().putValue("Feed Length", "26"));
       ```
@@ -820,7 +820,7 @@ If you’re using a different library such as Analytics-Android, follow these st
       </tr>
       <tr>
       <td>Kotlin</td>
-      <td markdown=1 style="max-width: 450px">
+      <td markdown=1 class="table-code-snippet">
       ```kotlin
       analytics.screen("Feed", Properties().putValue("Feed Length", "26"))
       ```
@@ -837,10 +837,10 @@ If you’re using a different library such as Analytics-Android, follow these st
       <th></th>
       </tr>
       </thead>
-      <tbody style="max-width: 100%">
+      <tbody>
       <tr>
       <td>Java</td>
-      <td markdown=1 style="max-width: 450px">
+      <td markdown=1 class="table-code-snippet">
 
       ```java
       // The newer APIs promote the use of strongly typed structures to keep codebases legible
@@ -865,7 +865,7 @@ If you’re using a different library such as Analytics-Android, follow these st
       </tr>
       <tr>
       <td>Kotlin</td>
-      <td markdown=1 style="max-width: 450px">
+      <td markdown=1 class="table-code-snippet">
 
       ```kotlin    
       // The newer APIs promote the use of strongly typed structures to keep codebases legible
@@ -900,7 +900,7 @@ If you’re using a different library such as Analytics-Android, follow these st
       <tbody>
       <tr>
       <td>Java</td>
-      <td markdown=1 style="max-width: 450px">
+      <td markdown=1 class="table-code-snippet">
       ```java
       analytics.alias("new id");
       ```
@@ -908,7 +908,7 @@ If you’re using a different library such as Analytics-Android, follow these st
       </tr>
       <tr>
       <td>Kotlin</td>
-      <td markdown=1 style="max-width: 450px">
+      <td markdown=1 class="table-code-snippet">
       ```kotlin    
       analytics.alias("new id")
       ```
@@ -925,10 +925,10 @@ If you’re using a different library such as Analytics-Android, follow these st
       <th></th>
       </tr>
       </thead>
-      <tbody style="max-width: 100%">
+      <tbody>
       <tr>
       <td>Java</td>
-      <td markdown=1 style="max-width: 450px">
+      <td markdown=1 class="table-code-snippet">
 
       ```java
       analytics.alias("new id");
@@ -937,7 +937,7 @@ If you’re using a different library such as Analytics-Android, follow these st
       </tr>
       <tr>
       <td>Kotlin</td>
-      <td markdown=1 style="max-width: 450px">
+      <td markdown=1 class="table-code-snippet">
 
       ```kotlin    
       analytics.alias("new id")

@@ -132,7 +132,7 @@
     margin: 0 auto;
     border-radius: 0px;
   }
-  
+
 
   ul,
   ol {
@@ -294,7 +294,7 @@
     }
   }
 
-  // remove reference button margins when it's inside the flex component (flex with waffle has its own margins) 
+  // remove reference button margins when it's inside the flex component (flex with waffle has its own margins)
   .flex {
     &.waffle {
       .reference-button {
@@ -425,4 +425,8 @@ div.highlighter-rouge {
     background-color: #BAE5D5;
     content: "copied!";
   }
+}
+
+.table-code-snippet {
+  max-width: 450px;
 }
