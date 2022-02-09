@@ -476,6 +476,4 @@ All tables use `received_at` for the sort key. Amazon Redshift stores your data 
 
 [How do I give users permissions to my warehouse?](/docs/connections/storage/warehouses/add-warehouse-users/)
 
-Check out our [Frequently Asked Questions about Warehouses](/docs/connections/storage/warehouses/faq/). 
-
-<!-- and [a list of helpful queries to get you started](https://help.segment.com/hc/en-us/articles/205577035-Common-Segment-SQL-Queries). -->
+Check out our [Frequently Asked Questions about Warehouses](/docs/connections/storage/warehouses/faq/) and [a list of helpful Redshift queries to get you started](/docs/connections/storage/warehouses/redshift-useful-sql).
