@@ -4,7 +4,7 @@ title: Useful SQL Queries for Redshift
 Below you'll find a library of some of the most useful SQL queries customers use in their Redshift warehouses. You can run these right in your Redshift instance with little to no modification.
 
 > note " "
-> If you're looking for SQL queries for warehouses other than Redshift, check out some of our [Analyizing with SQL guides](/docs/connections/storage/warehouses/index/#analyzing-with-sql).
+> If you're looking for SQL queries for warehouses other than Redshift, check out some of Segment's [Analyzing with SQL guides](/docs/connections/storage/warehouses/index/#analyzing-with-sql).
 
 ## Tracking events
 
@@ -21,7 +21,7 @@ analytics.track('Completed Order',
 });
 ```
 
-And another completed order track call might look like this:
+A completed order track call might look like this:
 
 ```javascript
 analytics.track('Completed Order', {
@@ -40,7 +40,7 @@ from initech.tracks
 where event = 'completed_order'
 ```
 
-This SQL query returns a table that looks like this:
+That SQL query returns a table that looks like this:
 
 | event           | event_id | user_id    | sent_at             | item  | color  | size   | payment     | 
 | --------------- | -------- | ---------- | ------------------- | ----- | ------ | ------ | ----------- |
@@ -50,10 +50,10 @@ This SQL query returns a table that looks like this:
 | completed_order | rft31ial | ly3jaeillp | 2021-12-09 08:50:13 | shirt | yellow | Large  | credit card | 
 | completed_order | k8bhgc6h | X9G5Qg0tha | 2021-12-09 07:20:19 | shirt | yellow | Small  | paypal      |
 
-But why are there columns in the table that weren't a part of our **track** call, like `event_id`? 
-This is because the track method automatically includes additional properties of the event, like `event_id`, `sent_at`, and `user_id` (for client-side libraries)!
+But why are there columns in the table that weren't a part of the track call, like `event_id`? 
+This is because the track method (for client-side libraries) automatically includes additional properties of the event, like `event_id`, `sent_at`, and `user_id`!
 
-## Grouping events by day
+### Grouping events by day
 If you want to know how many orders were completed over a span of time, you can use the `date()` and `count` function with the `sent_at` timestamp:
 
 ```sql
@@ -93,14 +93,16 @@ That query returns a table like this:
 ## Defining sessions
 Segment’s API does not impose any restrictions on your data with regard to user sessions.
 
-Sessions aren’t fundamental facts about the user experience. They’re stories we build around the data to understand how customers actually use the product in their day-to-day lives. And since Segment’s API is about collecting raw, factual data, we don’t have an API for collecting sessions. We leave session interpretation to our partners, which let you design how you measure sessions based on how customers use your product.
+Sessions aren’t fundamental facts about the user experience. They’re stories Segment builds around the data to understand how customers actually use the product in their day-to-day lives. And since Segment’s API is about collecting raw, factual data, there's no API for collecting sessions. Segment leaves session interpretation to SQL partners, which let you design how you measure sessions based on how customers use your product.
+
+For more on why Segment doesn't collect session data at the API level, [check out a blog post here](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/)!
 
 ### How to define user sessions using SQL
-Each of our SQL partners allows you to define sessions based on your specific business needs. With Looker, for example, you can take advantage of their persistent derived tables and LookML modeling language to layer sessionization on top of your Segment SQL data. We recommend checking out their approach here!
+Each of Segment's SQL partners allows you to define sessions based on your specific business needs. With [Looker](https://looker.com), for example, you can take advantage of their persistent derived tables and LookML modeling language to layer sessionization on top of your Segment SQL data. Segment recommends [checking out Looker's approach here](https://segment.com/blog/using-sql-to-define-measure-and-analyze-user-sessions/)!
 
-For defining sessions with raw SQL, the best query and explanation we’ve come across is from our friends at Mode Analytics.
+For defining sessions with raw SQL, a great query and explanation comes from [Mode Analytics](https://mode.com).
 
-Here’s the query to make it happen, but we definitely recommend checking out their blog post as well! They walk you through the reasoning behind the query, what each portion accomplishes, how you can tweak it to suit your needs, and what kind of further analysis you can do on top of it.
+Here’s the query to make it happen, but definitely check Mode Analytics' [blog post](https://blog.modeanalytics.com/finding-user-sessions-sql/) as well. They walk you through the reasoning behind the query, what each portion accomplishes, how you can tweak it to suit your needs, and what kind of further analysis you can do on top of it.
 
 ```sql
 -- Finding the start of every session
@@ -142,7 +144,7 @@ analytics.identify('bob123',{
   plan: 'Free'
 });
 ```
-As these user traits change over time, you can continue calling the identify method to update their changes. Here we’ll update Bob’s account plan to “Premium”.
+As these user traits change over time, you can continue calling the identify method to update their changes. With this query, you can update Bob’s account plan to “Premium”.
 
 ```javascript
 analytics.identify('bob123', {
@@ -163,14 +165,14 @@ This SQL query returns a table of Bob's account information, with each entry rep
 
 | user_id | email          | plan    | sent_at             |
 | ------- | -------------- | ------- | ------------------- |
-| bob123  | bob@intech.com | Premium | 2013-12-20 19:44:03 |
-| bob123  | bob@intech.com | Basic   | 2013-12-18 17:48:10 |
+| bob123  | bob@intech.com | Premium | 2021-12-20 19:44:03 |
+| bob123  | bob@intech.com | Basic   | 2021-12-18 17:48:10 |
 
-If you want to see what your users looked like at a previous point in time, that data is right there in your `identifies` table! (To get this table for your users, replace ‘initech’ with your source slug).
+If you want to see what your users looked like at a previous point in time, that data is right there in your `identifies` table! (To get this table for your users, replace ‘initech’ in the SQL query with your source slug).
 
-But what if you only want to see the most recent state of the user? Luckily, we can convert the `identifies` table into a distinct users table by taking the most recent identify call for each account.
+But what if you only want to see the most recent state of the user? Luckily, you can convert the `identifies` table into a distinct users table by taking the most recent identify call for each account.
 
-## Converting The identifies table into a users table
+### Converting the identifies table into a users table
 
 The following query will return your `identifies` table: 
 
@@ -182,12 +184,12 @@ That query returns a table like this:
 
 | user_id  | email           | plan    | sent_at             |
 | -------  | --------------  | ------- | ------------------- |
-| bob123   | bob@intech.com  | Premium | 2013-12-20 19:44:03 |
-| bob123   | bob@intech.com  | Basic   | 2013-12-18 17:48:10 |
-| jeff123  | jeff@intech.com | Premium | 2013-12-20 19:44:03 |
-| jeff123  | jeff@intech.com | Basic   | 2013-12-18 17:48:10 |
+| bob123   | bob@intech.com  | Premium | 2021-12-20 19:44:03 |
+| bob123   | bob@intech.com  | Basic   | 2021-12-18 17:48:10 |
+| jeff123  | jeff@intech.com | Premium | 2021-12-20 19:44:03 |
+| jeff123  | jeff@intech.com | Basic   | 2021-12-18 17:48:10 |
 
-if all you want is a table of distinct user with their current traits and without duplicates, you can do so with the following query:
+If all you want is a table of distinct user with their current traits and without duplicates, you can do so with the following query:
 
 ```sql
 with identifies as (
@@ -210,17 +212,17 @@ select *
 from users
 ```
 
-## Counts of user traits
+### Counts of user traits
 Let's say you have an `identifies` table that looks like this:
 
 | user_id  | email           | plan    | sent_at             |
 | -------  | --------------  | ------- | ------------------- |
-| bob123   | bob@intech.com  | Premium | 2013-12-20 19:44:03 |
-| bob123   | bob@intech.com  | Basic   | 2013-12-18 17:48:10 |
-| jeff123  | jeff@intech.com | Premium | 2013-12-20 19:44:03 |
-| jeff123  | jeff@intech.com | Basic   | 2013-12-18 17:48:10 |
+| bob123   | bob@intech.com  | Premium | 2021-12-20 19:44:03 |
+| bob123   | bob@intech.com  | Basic   | 2021-12-18 17:48:10 |
+| jeff123  | jeff@intech.com | Premium | 2021-12-20 19:44:03 |
+| jeff123  | jeff@intech.com | Basic   | 2021-12-18 17:48:10 |
 
-If we want to query the traits of these users, we first need to [convert the identifies table into a users table](#converting-the-identifies-table-into-a-users-table) From there, we can run a query like this to get a count of users with each type of plan:
+If you want to query the traits of these users, you first need to [convert the identifies table into a users table](#converting-the-identifies-table-into-a-users-table). From there, run a query like this to get a count of users with each type of plan:
 
 ```sql
 with identifies as (
@@ -252,7 +254,7 @@ And there you go: a count of users with each type of plan!
 
 ### Historical Traits
 
-The `group` method ties a user to a group. Be it a company, organization, account, source, team or whatever other crazy name you came up with for the same concept! It also lets you record custom traits about the group, like industry or number of employees.
+The `group` method ties a user to a group. It also lets you record custom traits about the group, like the industry or number of employees.
 
 Here’s what a basic `group` call looks like:
 
@@ -288,11 +290,11 @@ The previous query will return a table of Initech's group information, with each
 | name    | industry   | employees | plan    | sent_at             |
 | ------- | ---------- | --------- | ------- | ------------------- |
 | Initech | Technology | 600       | Premium | 2021-12-20 19:44:03 |
-| Initech | Technology | 349       | Free    | 2013-12-18 17:18:15 |
+| Initech | Technology | 349       | Free    | 2021-12-18 17:18:15 |
 
-If you want to see a group’s traits at a previous point in time, that data is right there in your groups table! (To get this table for your groups, replace ‘initech’ with your source slug).
+If you want to see a group’s traits at a previous point in time, this query is useful (To get this table for your groups, replace ‘initech’ with your source slug).
 
-But what if you only want to see the most recent state of the group? You can convert the groups table into a distinct groups table by taking the most recent groups call for each account.
+If you only want to see the most recent state of the group, you can convert the groups table into a distinct groups table by viewing the most recent groups call for each account.
 
 ### Converting the Groups Table into an Organizations Table
 
@@ -308,9 +310,9 @@ The previous query returns the following table:
 | name      | industry      | employees | plan    | sent_at             |
 | --------- | ------------- | --------- | ------- | ------------------- |
 | Initech   | Technology    | 600       | Premium | 2021-12-20 19:44:03 |
-| Initech   | Technology    | 349       | Free    | 2013-12-18 17:18:15 |
+| Initech   | Technology    | 349       | Free    | 2021-12-18 17:18:15 |
 | Acme Corp | Entertainment | 15        | Premium | 2021-12-20 19:44:03 |
-| Acme Corp | Entertainment | 10        | Free    | 2013-12-18 17:18:15 |
+| Acme Corp | Entertainment | 10        | Free    | 2021-12-18 17:18:15 |
 
 However, if all you want is a table of distinct groups and current traits, you can do so with the following query:
 
@@ -336,7 +338,7 @@ organizations as (
 select *
 from organizations
 ```
-This query will retun a table with your distinct groups, without duplicates!
+This query will return a table with your distinct groups, without duplicates.
 
 | name      | industry      | employees | plan    | sent_at             |
 | --------- | ------------- | --------- | ------- | ------------------- |
