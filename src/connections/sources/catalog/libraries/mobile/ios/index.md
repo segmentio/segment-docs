@@ -763,7 +763,7 @@ configuration.enableAdvertisingTracking = true
 // Set the block to be called when the advertisingID is needed
 // NOTE: In iOS 14, you'll need to manually do authorization elsewhere and only when it has been authorized, return the advertisingIdentifier to segment via the block below
 configuration.adSupportBlock = { () -> String in
-    return ASIdentifierManager.shared().advertisingIdentifier
+    return ASIdentifierManager.shared().advertisingIdentifier.uuidString
 }
 
 Analytics.setup(with: configuration)
