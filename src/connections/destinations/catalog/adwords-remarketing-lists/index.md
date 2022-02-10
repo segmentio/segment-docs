@@ -134,7 +134,7 @@ In Google Adwords go to **Tools & Settings** > **Shared Library**> **Audience ma
 
 ![](images/garl-audience_mgr.png)
 
-
+ 
 ## Troubleshooting
 
 #### Not seeing an audience in Google Adwords Audience Manager
