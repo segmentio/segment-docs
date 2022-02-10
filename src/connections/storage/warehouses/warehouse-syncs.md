@@ -11,7 +11,7 @@ Instead of constantly streaming data to the warehouse destination, Segment loads
 
 {% include content/how-a-sync-works.md %}
 
-Warehouses sync with all data coming from your source. However, Business plan members can manage the data that is sent to your warehouses using [Selective Sync](#warehouse-selective-sync).
+Warehouses sync with all data coming from your source. However, Business plan members can manage the data that is sent to their warehouses using [Selective Sync](#warehouse-selective-sync).
 
 ## Sync Frequency
 
