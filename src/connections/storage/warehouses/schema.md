@@ -2,10 +2,8 @@
 title: Warehouse Schemas
 ---
 
-A **schema** describes the way that the data in a warehouse is organized. Schemas include a detailed description of database elements (tables, views, indexes, synonyms, etc.) and the relationships that exist between elements. 
-
-Schemas of warehouse data are organized into the following template: <br/>
-`<source>.<collection>.<property>` for example `segment-engineering.tracks.userId`, where Source refers to the source or project name (segment-engineering), collection refers to the event (tracks), and the property refers to the data being collected (userId).
+A **schema** describes the way that the data in a warehouse is organized. Schemas of warehouse data are organized into the following template:
+`<source>.<collection>.<property>`, for example `segment-engineering.tracks.userId`, where source refers to the source or project name (segment-engineering), collection refers to the event (tracks), and the property refers to the data being collected (userId).
 
 > note "Warehouse column creation"
 > **Note:** Segment creates tables for each of your custom events in your warehouse, with columns for each event's custom properties. Segment does not allow unbounded `event` or `property` spaces in your data. Instead of recording events like "Ordered Product 15", use a single property of "Product Number" or similar.
@@ -137,7 +135,7 @@ The table below describes the schema in Segment Warehouses:
 
 ## Identifies table
 
-The `identifies` table stores the `.identify()` method calls =. Query it to find out user-level information. It has the following columns:
+The `identifies` table stores the `.identify()` method calls. Query it to find out user-level information. It has the following columns:
 
 | method          | property                                                                                                                                                                                   |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -428,7 +426,7 @@ The data types that Segment currently supports include:
 
 After analyzing the data from dozens of customers, we set the string column length limit at 512 characters. Longer strings are truncated. We found this was the sweet spot for good performance and ignoring non-useful data.
 
-We special-case compression for some known columns, like event names and timestamps. The others default to LZO. We may add look-ahead sampling down the road, but from inspecting the datasets today this would be unnecessary complexity.
+We special-case compression for some known columns, like event names and timestamps. The others default to LZO. We may add look-ahead sampling down the road, but from inspecting the datasets today this would be unnecessary complex.
 
 ## Timestamps
 
@@ -475,5 +473,7 @@ All tables use `received_at` for the sort key. Amazon Redshift stores your data 
 [How do I send custom data to my warehouse?](/docs/connections/storage/warehouses/faq/#what-if-i-want-to-add-custom-data-to-my-warehouse)
 
 [How do I give users permissions to my warehouse?](/docs/connections/storage/warehouses/add-warehouse-users/)
+
+[How frequently does data sync to my warehouse?](/docs/connections/storage/warehouses/warehouse-syncs/#sync-frequency)
 
 Check out our [Frequently Asked Questions about Warehouses](/docs/connections/storage/warehouses/faq/) and [a list of helpful Redshift queries to get you started](/docs/connections/storage/warehouses/redshift-useful-sql).

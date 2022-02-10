@@ -46,9 +46,7 @@ Your warehouse id appears in the URL when you look at the [warehouse destination
 
 Data is available in Warehouses within 24-48 hours, depending on your tier's sync frequency. For more information about sync frequency by tier, see [Sync Frequency](/docs/connections/storage/warehouses/warehouse-syncs/#sync-frequency).
 
-Real-time loading of the data into Segment Warehouses would cause significant performance degradation at query time because of the way Redshift uses large batches to optimize and compress columns. To optimize for your query speed, reliability, and robustness, Segment guarantees that your data will be available in Redshift within 24 hours. The underlying Redshift datastore has a subtle tradeoff between data freshness, robustness, and query speed. For the best experience, Segment needs to balance all three of these.
-
-As Segment improves and updates the ETL processes and optimizes for SQL query performance downstream, the actual load time will vary, but Segment ensures it's always within 24 hours.
+Real-time loading of the data into Segment Warehouses would cause significant performance degradation at query time. To optimize for your query speed, reliability, and robustness, Segment guarantees that your data will be available in your warehouse within 24 hours. The underlying datastore has a subtle tradeoff between data freshness, robustness, and query speed. For the best experience, Segment needs to balance all three of these.
 
 ## What if I want to add custom data to my warehouse?
 
@@ -109,7 +107,7 @@ Data in your warehouse is formatted into **schemas**, which involve a detailed d
 
 ## If my syncs fail and get fixed, will I need to ask for a backfill?
 
-If your syncs fail, you will need to reach out to [Segment Support](https://segment.com/help/) to ask for a backfill. Be sure to include the following information in your request: 
+Yes, if your syncs fail, you will need to reach out to [Segment Support](https://segment.com/help/) to ask for a backfill. Be sure to include the following information in your request: 
 - The warehouse that requires the backfill
 - What sources you need information from
 - The date range of data that requires a backfill

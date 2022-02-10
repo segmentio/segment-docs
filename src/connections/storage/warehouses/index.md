@@ -34,7 +34,7 @@ Examples of data warehouses include Amazon Redshift, Google BigQuery, and Postgr
 
 [How do I give users permissions to my warehouse?](/docs/connections/storage/warehouses/add-warehouse-users/)
 
-Check out our [Frequently Asked Questions about Warehouses](/docs/connections/storage/warehouses/faq/) and [a list of helpful Redshift queries to get you started](/docs/connections/storage/warehouses/redshift-useful-sql).
+Check out our [Frequently Asked Questions about Warehouses](/docs/connections/storage/warehouses/faq/) and [a list of helpful SQL queries to get you started with Redshift ](/docs/connections/storage/warehouses/redshift-useful-sql).
 
 ## FAQs
 
