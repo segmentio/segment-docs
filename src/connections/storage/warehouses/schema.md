@@ -426,7 +426,7 @@ The data types that Segment currently supports include:
 
 After analyzing the data from dozens of customers, we set the string column length limit at 512 characters. Longer strings are truncated. We found this was the sweet spot for good performance and ignoring non-useful data.
 
-We special-case compression for some known columns, like event names and timestamps. The others default to LZO. We may add look-ahead sampling down the road, but from inspecting the datasets today this would be unnecessary complex.
+Segment uses special-case compression for some known columns, like event names and timestamps. The others default to LZO. Segment may add look-ahead sampling down the road, but from inspecting the datasets today this would be unnecessarily complex.
 
 ## Timestamps
 
