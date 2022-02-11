@@ -257,6 +257,9 @@ Facebook requires that payloads include the following:
 - `context.device.type`
 - `context.os.version`
 
+> info ""
+> The value of `context.device.type` must be either `ios` or `android`.
+
 For example:
 
 ```json
