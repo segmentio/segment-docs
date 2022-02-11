@@ -132,5 +132,3 @@ Destinations that can be used with the Facebook Lead Ads Source:
 - Madkudu
 
 Log into your downstream tools and check that your events are populating, and contain all of the properties you expect. If all your events and properties are not showing up, refer to the [Destination docs](https://segment.com/docs/connections/destinations/) for troubleshooting.
-
-If you experience any issues with how the events arrive in Segment, [contact the Facebook team](https://www.facebook.com/business/resources).
