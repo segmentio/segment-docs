@@ -79,6 +79,10 @@ catalog-papi: vendor/bundle
 papi: vendor/bundle
 	@node scripts/catalog_papi.js
 
+# make the list of beta connections
+.PHONY: beta
+beta: vendor/bundle
+	@node scripts/beta.js
 
 .PHONY: changelog
 changelog: vendor/bundle

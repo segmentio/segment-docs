@@ -18,3 +18,7 @@ yarn-error.log
 
 # VS COde stuff
 .vscode*
+
+# Beta lists
+beta-destinations.csv
+beta-sources.csv

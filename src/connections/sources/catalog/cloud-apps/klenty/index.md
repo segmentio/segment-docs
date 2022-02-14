@@ -1,5 +1,6 @@
 ---
 title: Klenty Source
+beta: true
 ---
 
 {% include content/source-region-unsupported.md %}
