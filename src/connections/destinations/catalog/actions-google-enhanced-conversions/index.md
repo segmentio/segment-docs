@@ -26,13 +26,13 @@ The Google Enhanced Conversions destination enables you to improve the accuracy 
 2. Search for “Google Enhanced Conversions” in the Destinations Catalog, and select the destination.
 3. Click **Configure Google Enhanced Conversions** in the top-right corner of the screen.
 4. Select the source that will send data to Google Enhanced Conversions and follow the steps to name your destination.
-5. On the **Settings** tab, enter the Conversion ID and click **Save**. Find the Conversion ID in your Google Ads account using the instructions in the article [Google Ads conversions](https://support.google.com/tagmanager/answer/6105160?hl=en){:target="_blank"}. When you log in to Google Ads, enable [Expert Mode](https://support.google.com/google-ads/answer/9520605?hl=en){:target="_blank"}. You'll follow these same instructions to get the Conversion label, which you'll need when you set up your first Mapping, below.
+5. On the **Settings** tab, enter the Conversion ID and click **Save**. Find the Conversion ID in your Google Ads account using the instructions in the article [Google Ads conversions](https://support.google.com/tagmanager/answer/6105160?hl=en){:target="_blank"}. When you log in to Google Ads, enable [Expert Mode](https://support.google.com/google-ads/answer/9520605?hl=en){:target="_blank"}. You'll follow these same instructions to get the Conversion Label, which you'll need when you set up your first Mapping, below.
 6. On the **Settings** tab, authenticate with Google using OAuth. Click **Connect to Google Enhanced Conversions**. Follow the prompts to authenticate using OAuth, with a Google login that is a member of the Google Ads account with Enhanced Conversions enabled.
 7. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
 
 {% capture conv_label %}
-#### Find the Conversions label
+#### Find the Conversions Label
 Enter the Conversion Label. Find the Conversion Label using the instructions in the article [Google Ads conversions](https://support.google.com/tagmanager/answer/6105160?hl=en){:target="_blank"}.
 {% endcapture %}
 
@@ -75,8 +75,13 @@ To test your mapping:
 
 {% include components/actions-fields.html content1=conv_label section1="postConversion" content2=test_mapping section2="postConversion" %}
 
-## Troubleshooting
-Follow the steps below if you have issues with Access Tokens or Conversion tracking.
+## FAQ & Troubleshooting
+
+### Conversion Tracking with Gtag
+
+To use Google Enhanced Conversions, you must record conversions using the standard Google Ads Conversion tag (Gtag). After a conversion is recorded, you can send hashed first-party data through Segment’s Google Enhanced Conversions destination for up to 24 hours after the conversion. Segment offers a [Google Ads (Gtag) destination](/docs/connections/destinations/catalog/google-ads-gtag/) so you can use your existing Segment implementation to activate Gtag.
+
+Conversions tracked by other means, such as importing goals from Google Analytics, are not eligible for Google Enhanced Conversions.
 
 ### Refreshing Access Tokens
 
@@ -84,8 +89,6 @@ When you use OAuth to authenticate into the Google Enhanced Conversions destinat
 
 Because of the duplicate API requests, you may see a warning in Google for unprocessed conversions due to incorrect or missing OAuth credentials. This warning is expected and does not indicate data loss. Google has confirmed that conversions are being processed, and OAuth retry behavior will not cause any issues for your web conversions. Whenever possible, Segment caches access tokens to reduce the total number of requests we make to Google Enhanced Conversions.
 
-### Conversion Tracking with Gtag
+### Sending App Conversions for Incrementality Studies
 
-To use Google Enhanced Conversions, you must record conversions using the standard Google Ads Conversion tag (Gtag). After a conversion is recorded, you can send hashed first-party data through Segment’s Google Enhanced Conversions destination for up to 24 hours after the conversion. Segment offers a [Google Ads (Gtag) destination](/docs/connections/destinations/catalog/google-ads-gtag/) so you can use your existing Segment implementation to activate Gtag.
-
-Conversions tracked by other means, such as importing goals from Google Analytics, are not eligible for Google Enhanced Conversions.
+The Google Enhanced Conversions API does not offer standard reporting for app conversions at this point. As such, Google requires that you set up a new web conversion action specifically for the purposes of app incrementality studies. To send app conversions in your incrementality study, be sure to input the Conversion Label associated with your incrementality study **and** set the App Conversion for Incrementality Study field to `true`. You should create separate web conversion actions in Google Ads for each app event you want to send data for.
