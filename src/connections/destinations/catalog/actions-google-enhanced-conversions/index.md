@@ -2,7 +2,7 @@
 title: Google Enhanced Conversions Destination
 strat: google
 hide-boilerplate: true
-hide-dossier: true
+hide-dossier: false
 ---
 
 > info ""
