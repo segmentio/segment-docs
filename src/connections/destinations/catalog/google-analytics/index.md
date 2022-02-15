@@ -1,7 +1,7 @@
 ---
 title: Google Universal Analytics Destination
 strat: google
-hide-dossier: true
+hide-dossier: false
 redirect_from:
   - '/connections/destinations/catalog/google-universal-analytics'
 ---
