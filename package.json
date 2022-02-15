@@ -58,6 +58,7 @@
     "posthtml": "^0.16.5",
     "posthtml-urls": "^1.0.0",
     "search-insights": "^2.0.3",
+    "semver": "^7.3.5",
     "tap-spot": "^1.1.1",
     "tippy.js": "5.2.0",
     "typewriter": "^7.4.1",
