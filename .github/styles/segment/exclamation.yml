@@ -1,0 +1,6 @@
+extends: substitution
+message: "Please use '%s' instead of '%s'."
+link: https://docs.microsoft.com/en-us/style-guide/punctuation/exclamation-points
+level: warning
+swap:
+    '\w!\s': '\.'
