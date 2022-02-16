@@ -2,22 +2,14 @@
 title: Vale test
 hidden: true
 ---
-This file will test various Vale styles we have installed (e.g this exclamation point!) Neat!
+This file will test various Vale styles we have installed (e.g. this exclamation point!) Neat! 
 
-Links to docs should be relative, for example [here](https://segment.com/docs/connections).
+Links to docs should be relative, for example [here](https://www.segment.com/docs/connections).
 
-Also, word substitutions, like:
-- blacklist
-- whitelist
-- utilize
-- utilizes
-- utilizing
-- leverage
-- leverages
-- leveraging
-- via
-- drop in
+For example, like [this](/docs/connections)
 
+segment.com/docs
 
 Here's an update.
+
 
