@@ -12,6 +12,7 @@ require('dotenv').config();
 PAPI_URL = "https://api.segmentapis.com"
 
 const regionalSupport = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/regional-support.yml`)))
+const slugOverrides = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/slugs.yml`)))
 
 
 const slugify = (displayName) => {
@@ -23,13 +24,16 @@ const slugify = (displayName) => {
     .replace(/[\(\)]/g, '')
     .replace('.', '-')
 
-  if (slug === '-net') slug = 'net'
-  if (slug === 'talon-one') slug = 'talonone'
-  if (slug === 'roku-alpha') slug = 'roku'
-  if (slug === 'shopify-by-littledata') slug = 'shopify-littledata'
-  if (slug === 'talon-one') slug = 'talonone'
-  if (slug == 'google-adwords-remarketing-lists-customer-match') slug = 'adwords-remarketing-lists'
-  if (slug == 'canny-classic') slug = 'canny'
+  for (key in slugOverrides) {
+    let original = slugOverrides[key].original
+    let override = slugOverrides[key].override
+
+    if (slug == original) {
+      console.log(original+" -> "+override)
+      slug = override
+    }
+  }
+
   return slug
 }
 
@@ -329,26 +333,8 @@ const updateDestinations = async () => {
   destinations.forEach(destination => {
     let regional = ['us-west']
 
-    // We need to be able to keep the system slug in some cases.
-    const slugOverrides = ['actions-google-enhanced-conversions', 'actions-google-analytics-4', 'actions-facebook-conversions-api',  'actions-friendbuy-cloud', 'sprig-web', 'google-analytics']
     let slug = slugify(destination.name)
-    if (slugOverrides.includes(destination.slug)) {
-      slug = destination.slug
-    }
 
-
-    // Flip the slug of Actions destinations
-    const actionsDests = [
-      'amplitude-actions',
-      'slack-actions',
-      'fullstory-actions',
-      'friendbuy-actions'
-    ]
-
-    if (actionsDests.includes(slug)) {
-      const newSlug = slug.split('-')
-      slug = newSlug[1] + '-' + newSlug[0]
-    }
     if (regionalDestinations.includes(slug)) {
       regional.push('eu-west')
     }
@@ -569,3 +555,4 @@ const updateWarehouses = async () => {
 updateSources()
 updateWarehouses()
 updateDestinations()
+
