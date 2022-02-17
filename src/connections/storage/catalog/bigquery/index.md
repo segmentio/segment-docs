@@ -126,9 +126,9 @@ verified that the data is loading into your warehouse properly, remove access to
 
 1. Sign in to the [Google Developers Console](https://console.developers.google.com).
 2. Open the IAM & Admin product, and select **IAM**.
-3. From the list of projects, select the project that BigQuery is enabled for.
+3. From the list of projects, select the project that has BigQuery enabled.
 4. On the project's page, select the **Permissions** tab, and then click **view by PRINCIPALS**. 
-5. Select the checkbox for the `connector@segment-1119.iam.gserviceaccount.com`account and then click **Remove** to remove access to this shared Service Account.
+5. Select the checkbox for the `connector@segment-1119.iam.gserviceaccount.com` account and then click **Remove** to remove access to this shared Service Account.
 
 For more information about managing IAM access, see Google's documentation, [Manage access to projects, folders, and organization](https://cloud.google.com/iam/docs/granting-changing-revoking-access).
 
