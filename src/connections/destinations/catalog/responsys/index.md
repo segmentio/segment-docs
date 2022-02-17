@@ -1,5 +1,6 @@
 ---
 title: Oracle Responsys Destination
+show-sync-disclaimer: true
 ---
 
 ## Getting Started
