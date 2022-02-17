@@ -2,7 +2,7 @@
 # The end name should be similar to `Slack (Actions) Destination`
 title: Sprig (Actions) Destination
 hide-boilerplate: true
-hide-dossier: true
+hide-dossier: false
 hidden: true
 ---
 

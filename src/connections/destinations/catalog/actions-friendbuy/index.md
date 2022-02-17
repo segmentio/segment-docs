@@ -1,7 +1,7 @@
 ---
 title: Friendbuy Web Mode (Actions) Destination
 hide-boilerplate: true
-hide-dossier: true
+hide-dossier: false
 hidden: false
 ---
 

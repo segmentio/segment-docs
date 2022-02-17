@@ -1,7 +1,7 @@
 ---
 title: Braze Web Mode (Actions) Destination
 hide-boilerplate: true
-hide-dossier: true
+hide-dossier: false
 redirect_from:
   - '/connections/destinations/catalog/actions-braze-web/'
 ---
