@@ -120,15 +120,16 @@ Then, head to your warehouse's connection settings and update with the
 to your warehouse, [remove access to the shared Service Account](#remove-access-to-the-shared-service-account).
 
 ### Remove access to the shared Service Account
-After you've [created a new Service Account for Segment](#create-a-service-account-for-segment) and 
-verified that the data is loading into your warehouse properly, remove access to the shared Service Account 
+You can remove access to the shared Service Account 
 (`connector@segment-1119.iam.gserviceaccount.com`) using the following instructions:
 
-1. Sign in to the [Google Developers Console](https://console.developers.google.com).
-2. Open the IAM & Admin product, and select **IAM**.
-3. From the list of projects, select the project that has BigQuery enabled.
-4. On the project's page, select the **Permissions** tab, and then click **view by PRINCIPALS**. 
-5. Select the checkbox for the `connector@segment-1119.iam.gserviceaccount.com` account and then click **Remove** to remove access to this shared Service Account.
+1. Create a [new Service Account for Segment](#create-a-service-account-for-segment) using the linked instructions.
+2. Verify that the data is loading into your warehouse. 
+3. Sign in to the [Google Developers Console](https://console.developers.google.com).
+4. Open the IAM & Admin product, and select **IAM**.
+5. From the list of projects, select the project that has BigQuery enabled.
+6. On the project's page, select the **Permissions** tab, and then click **view by PRINCIPALS**. 
+7. Select the checkbox for the `connector@segment-1119.iam.gserviceaccount.com` account and then click **Remove** to remove access to this shared Service Account.
 
 For more information about managing IAM access, see Google's documentation, [Manage access to projects, folders, and organization](https://cloud.google.com/iam/docs/granting-changing-revoking-access).
 
