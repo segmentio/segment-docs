@@ -29,7 +29,7 @@ Follow the instructions below to enable your TikTok ads account, and add the Tik
 ### TikTok Requirements
 
 1. [Create a TikTok For Business account](https://ads.tiktok.com/marketing_api/docs?id=1702715936951297){:target="_blank"}.
-2. Follow instructions for [Authorization](https://ads.tiktok.com/marketing_api/docs?id=1701890979375106){:target="_blank"} and generate a long term  access token.
+2. Follow instructions for [Authorization](https://ads.tiktok.com/marketing_api/docs?rid=959icq5stjr&id=1701890979375106){:target="_blank"} and generate a long term  access token.
 
 ### Configuring TikTok Conversions in Segment
 
