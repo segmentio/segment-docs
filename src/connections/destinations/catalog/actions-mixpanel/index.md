@@ -1,7 +1,7 @@
 ---
 title: Mixpanel (Actions) Destination
 hide-boilerplate: true
-hide-dossier: true
+hide-dossier: false
 hidden: true
 ---
 {% include content/plan-grid.md name="actions" %}

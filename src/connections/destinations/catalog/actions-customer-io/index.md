@@ -1,7 +1,7 @@
 ---
 title: Customer.io (Actions) Destination
 hide-personas-partial: true
-hide-boilerplate: true
+hide-boilerplate: false
 hide-dossier: true
 ---
 {% include content/plan-grid.md name="actions" %}
