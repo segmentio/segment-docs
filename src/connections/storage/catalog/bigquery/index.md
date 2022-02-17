@@ -105,8 +105,7 @@ from <project-id>.<source-name>.<collection-name>_view
 For early customers using BigQuery with Segment, rather than providing Segment
 with credentials, access was granted to a shared Service Account
 (`connector@segment-1119.iam.gserviceaccount.com`). While convenient for early
-adopters, this presented potential security risks that Segment would prefer to address
-proactively.
+adopters, this presented potential security risks.
 
 As of **March 2019**, Segment requires BigQuery customers to
 create their own Service Accounts and provide the app with those credentials instead.
@@ -114,18 +113,21 @@ In addition, any attempts to update warehouse connection settings will also
 require these credentials. This effectively deprecates the shared Service
 Account.
 
-To stay ahead of this change, migrate your warehouse by following
-the instructions in the "Create a Service Account for Segment" section above.
+Migrate your warehouse from a shared Service Account to a dedicated Service Account 
+by creating a new Service Account using the [Create a Service Account for Segment](#create-a-service-account-for-segment) section.
 Then, head to your warehouse's connection settings and update with the
-**Credentials** you created. Once you've verified that data is loading properly to your warehouse, [remove access to the shared Service Account](#remove-access-to-the-shared-service-account).
+**Credentials** you created. Once you've verified that data is loading properly 
+to your warehouse, [remove access to the shared Service Account](#remove-access-to-the-shared-service-account).
 
 ### Remove access to the shared Service Account
-After you've [created a new Service Account for Segment](#create-a-service-account-for-segment) and verified that the data is loading properly, remove access to the shared Service Account (`connector@segment-1119.iam.gserviceaccount.com`) using the following instructions:
+After you've [created a new Service Account for Segment](#create-a-service-account-for-segment) and 
+verified that the data is loading into your warehouse properly, remove access to the shared Service Account 
+(`connector@segment-1119.iam.gserviceaccount.com`) using the following instructions:
 
 1. Sign in to the [Google Developers Console](https://console.developers.google.com).
 2. Open the IAM & Admin product, and select **IAM**.
 3. From the list of projects, select the project that BigQuery is enabled for.
-4. On the project's page, select the **Permissions** tab, and then select **view by PRINCIPALS**. 
+4. On the project's page, select the **Permissions** tab, and then click **view by PRINCIPALS**. 
 5. Select the checkbox for the `connector@segment-1119.iam.gserviceaccount.com`account and then click **Remove** to remove access to this shared Service Account.
 
 
