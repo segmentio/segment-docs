@@ -48,6 +48,7 @@ Every time you create an audience in Personas and connect it to Marketo Static L
 2. Adds any users to that list who both fit the audience definition and have an email address.
 3. If a user has multiple email addresses on their identity graph, each email address becomes a unique entry on the list.
 4. After the audience is configured, Segment checks which users still fit the audience definition, and adds or removes users from the audience, once every hour.
+{% include content/sync-frequency-note.md %}
 
 ## Configuring Marketo Static Lists
 
