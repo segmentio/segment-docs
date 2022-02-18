@@ -22,9 +22,6 @@ For more information, see [Setting up your Sources](/docs/personas/quickstart/#s
 4. Segment displays the entry condition on the Journey Builder canvas. It may take up to two minutes for Segment to estimate the number of users in the journey.
 5. Click **+** to add the next step and view available step types.
 
-> info ""
-> Users can only enter a Journey once.
-
 ### Using historical data for the entry step
 
 If you select the **Use historical data** option, Segment queries all historical data to generate a list of users who enter the Journey upon publication. If you don't select **Use historical data**, only users who satisfy the entry condition *after* you publish enter the Journey.
