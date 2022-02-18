@@ -107,7 +107,7 @@ Each step’s membership conditions evaluate in real time, which means that user
 
 ### Can users exit and re-enter a Journey?
 
-No. Users move down the Journey’s branches in sequential order and can't re-enter. Journeys appends a profile trait for each step a user enters. Because the system neither assigns `Audience Exit` events nor removes traits from profiles, users who meet the Journey's entry criteria stay in the Journey permanently.
+Yes. To allow users to re-enter Journeys that they've exited, [enable re-entry](/docs/personas/journeys/build-journey/#journey-re-entry) during initial Journey setup.
 
 ### What happens to traits and audiences when I delete a Journey?
 
