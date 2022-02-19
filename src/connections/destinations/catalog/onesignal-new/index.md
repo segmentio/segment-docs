@@ -49,7 +49,7 @@ Segment sends Identify traits as [Player Data Tags](https://documentation.onesig
 ![](images/demo.png)
 
 > info "Data Tag Limits"
-> Your OneSignal plan may cap incoming Data Tags. If you notice successful Segment events that don't update in OneSignal, you've likely reached your OneSignal plan Data Tag limit.
+> Your OneSignal plan may cap incoming Data Tags. Once you've reached your Data Tag limit, your user traits won't update in your OneSignal destination.
 
 ### Track
 
