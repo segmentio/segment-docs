@@ -11,7 +11,7 @@ strat: adobe
 
 The Marketo Static Lists destination lets you sync audiences created using [Segment Personas](/docs/personas) into Marketo as a **List**. Once you create the audience, Segment sends that list of users to Marketo, and keeps it up to date as users enter and exit the audience specification.
 
-This allows you to run email campaigns in Marketo without having to manually find and upload a refreshed a csv of users. This documentation explains how to set up Marketo in Segment, and what to expect in your Marketo UI.
+This allows you to run email campaigns in Marketo without having to manually find and upload a refreshed csv of users. This documentation explains how to set up Marketo in Segment, and what to expect in your Marketo UI.
 
 > info "Note:"
 > You must have access to Personas as part of your Segment plan to use this destination. [Contact our sales team](https://segment.com/demo/) to try this out.
@@ -21,12 +21,12 @@ This allows you to run email campaigns in Marketo without having to manually fin
 
 - **Supports Personas**: Yes
 - **Personas Destination type**: List
-- **Must create audience_name field before Personas can update those values?**: No. You don't need to create the _list_ in Marketo, however you do need the create the folder Segment will create the list in.
+- **Must create audience_name field before Personas can update those values?**: No. You don't need to create the _list_ in Marketo, however you do need to create the folder Segment will create the list in.
 - **Audience appears as**: A list in the folder you created, in the Marketo Lead Database under Group Lists.
 - **Destination rate limit**: 100 calls per 20 seconds, which is shared among all third-party API services
 - **Lookback window allowed**: Yes
-- **Identifiers required** : Email
-- **Identifiers accepted** : Email
+- **Identifiers required**: Email
+- **Identifiers accepted**: Email
 - **Client or Server-Side Connection**: Server-side
 
 <!-- commenting out this table because the format is giant
@@ -127,4 +127,4 @@ You might need to adjust your query to filter out users without an email so you 
 
 ![](images/personas-add-emailtrait.png)
 
-A user with multiple email addresses appears once per email address in the Marketo lists.
+A user with multiple email addresses will appear once per email address in the Marketo lists.
