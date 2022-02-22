@@ -30,3 +30,7 @@
   override: "sprig-web"
 - original: "google-universal-analytics"
   override: "google-analytics"
+- original: "friendbuy-web-destination"
+  override: "actions-friendbuy"
+- original: "friendbuy-legacy"
+  override: "friendbuy"
