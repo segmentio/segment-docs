@@ -16,7 +16,7 @@ To set up SCIM, you must first create an SSO connection. Once you [create your S
 
 ## Configuration Instructions
 
-Segment officially supports [Okta](#okta-set-up-guide) and [Azure AD](#azure-ad-set-up-guide), and we have plans to support OneLogin soon. Each link includes specific set up instructions for that IdP. You should read the [features](#features) section of this page to understand which features of SCIM Segment supports.
+Segment officially supports [Okta](#okta-set-up-guide) and [Azure AD](#azure-ad-set-up-guide), and [OneLogin](#oneLogin-set-up-guide). Each link includes specific set up instructions for that IdP. You should read the [features](#features) section of this page to understand which features of SCIM Segment supports.
 
 You may still be able to use SCIM with another Identity Provider (IdP) by adapting the following instructions.
 
