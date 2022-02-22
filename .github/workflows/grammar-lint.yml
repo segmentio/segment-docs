@@ -17,7 +17,11 @@ jobs:
         #   https://github.com/errata-ai/write-good/releases/latest/download/write-good.zip
 
         # Optional
+<<<<<<< HEAD
+        config: https://raw.githubusercontent.com/segmentio/segment-docs/develop/.vale.ini
+=======
         # config: https://raw.githubusercontent.com/errata-ai/vale/master/.vale.ini
+>>>>>>> master
 
         # Optional
         files: __onlyModified
