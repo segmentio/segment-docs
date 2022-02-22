@@ -58,9 +58,9 @@ If you want to insert custom data into your warehouse, create new schemas that a
 
 Segment highly recommends scripting any sort of additions of data you might have to warehouse, so that you aren't doing one-off tasks that can be hard to recover from in the future in the case of hardware failure.
 
-## Which IPs should I whitelist?
+## Which IPs should I allowlist?
 
-You can whitelist Segment's custom IP `52.25.130.38/32` while authorizing Segment to write in to your Redshift or Postgres port.
+You can allowlist Segment's custom IP `52.25.130.38/32` while authorizing Segment to write in to your Redshift or Postgres port.
 
 If you're in the EU region, use CIDR `3.251.148.96/29`.
 
