@@ -273,7 +273,7 @@ Then, enter the deep link URL scheme in your Segment Firebase destination settin
 
 ### **Conversion Tracking and Adwords Conversions**
 
-Firebase is now Google's recommended method for reporting conversions to Adwords! To do so, simply track the conversion events as you normally would with Segment and Segment will send them through to Firebase. 
+Firebase is Google's recommended method for reporting conversions to Adwords. To use Firebase, track the conversion events as you normally would with Segment and Segment will send them through to Firebase. 
 
 ### Troubleshooting
 
