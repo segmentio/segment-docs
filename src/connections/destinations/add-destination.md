@@ -114,6 +114,12 @@ Some destinations do not support having multiple instances connected to the same
 
 You can create unique destination filters for each destination instance connected to the same source.
 
+
+### Connect multiple sources to one instance of a destination
+
+It is not possible to connect more than one source to the same instance of a destination. Instead, you can create another instance of the same destination for the other sources, and click **Copy Settings From Other Destination** to save yourself time entering the settings values again.
+
+
 ### Connect to more than one instance of a destination using the Config API
 
 You can add multiple instances of a destination using the Segment Config API. See the Segment Config [API documentation](https://reference.segmentapis.com/?version=latest#39ce0439-0969-48c3-ba49-b22a46c41060). If a destination does not support multi-instance, the Config API throws an appropriate error.
