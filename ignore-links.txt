@@ -35,3 +35,13 @@ https://github.com/segment-integrations/analytics.js-integration-friendbuy
 https://www.braze.com/documentation/Web/#step-5-configure-safari-push
 https://platform.epica.ai/account
 https://platform.epica.ai/personas
+https://help.fullstory.com/hc/en-us/articles/360020623274
+https://app.gameball.co/settings
+https://app.getgist.com/projects/_/settings/api-key
+https://app.hawkei.io/settings/api_keys
+https://app.hawkei.io/settings/spaces
+http://app.variance.com/integrations
+https://app.windsor.io/sources
+https://app.windsor.io/feed
+https://app.windsor.io/people
+https://retailer.friendbuy.com/app
