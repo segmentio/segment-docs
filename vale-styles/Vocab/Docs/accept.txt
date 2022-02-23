@@ -17,6 +17,7 @@ boolean
 Chargebee
 CloudFront
 Cocoapods
+csv
 Dev
 Doubleclick
 Friendbuy
@@ -37,6 +38,7 @@ Kameleoon
 Kissmetrics
 Lightbox
 Littledata
+Marketo
 measurability
 middleware
 Middleware
