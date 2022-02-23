@@ -1,7 +1,10 @@
 ---
 title: Useful SQL Queries for Redshift
 ---
-Below you'll find a library of some of the most useful SQL queries customers use in their Redshift warehouses. You can run these right in your Redshift instance with little to no modification. 
+Below you'll find a library of some of the most useful SQL queries customers use in their Redshift warehouses. You can run these right in your Redshift instance with little to no modification.
+
+> success "Ways to improve query speed"
+> If you're looking to improve the speed of your queries, check out Segment's [Speeding Up Redshift Queries](/docs/connections/storage/warehouses/redshift-tuning/) page! 
 
 You can use SQL queries for the following tasks:
 - [Tracking events](#tracking-events)
