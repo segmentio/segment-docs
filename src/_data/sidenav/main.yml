@@ -366,6 +366,8 @@ sections:
       title: Typewriter
     - path: /protocols/apis-and-extensions/anomaly_detection
       title: Anomaly Detection
+  - path: /protocols/schema
+    title: Schema Controls
   - path: /protocols/faq
     title: Protocols FAQs
 - section_title: Segment App

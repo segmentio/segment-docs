@@ -1,7 +1,7 @@
 ---
 title: Amplitude (Actions) Destination
 hide-boilerplate: true
-hide-dossier: true
+hide-dossier: false
 ---
 {% include content/plan-grid.md name="actions" %}
 

@@ -2,6 +2,9 @@
 title: Selligent Marketing Cloud Source
 source-type: event
 ---
+
+{% include content/source-region-unsupported.md %}
+
 [Selligent Marketing Cloud](https://selligent.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a highly integrated, AI-powered omnichannel marketing automation platform which enables ambitious B2C marketers to maximize every moment of interaction with today’s connected consumers. Deliver ultra-personalized, highly relevant customer experiences across channels and devices, providing value swiftly and at scale.
 
 This source is maintained by Selligent Marketing Cloud. For any issues with the source, [contact the Selligent Marketing Cloud Support team](mailto:scrum-redwood@selligent.com).

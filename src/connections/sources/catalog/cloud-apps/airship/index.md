@@ -1,6 +1,9 @@
 ---
 title: Airship Source
+beta: true
 ---
+
+{% include content/source-region-unsupported.md %}
 
 [Airship](https://www.airship.com) gives brands the data, channels, orchestration and services they need to deliver push notifications, emails, SMS, in-app messages, and more to the right person at the right moment — building trust, boosting engagement, driving action and growing value.
 

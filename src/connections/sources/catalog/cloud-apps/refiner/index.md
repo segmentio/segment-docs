@@ -3,6 +3,8 @@ title: Refiner Source
 source-type: event
 ---
 
+{% include content/source-region-unsupported.md %}
+
 [Refiner](https://refiner.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a customer survey tool built specifically for SaaS, eCommerce and Membership sites. Ask your users any question while they are using your product with Refiner's beautiful and simple survey widgets - on brand and perfectly timed.
 
 This source allows you to enrich user profiles with survey responses and use them in any tool connected to your Segment account.

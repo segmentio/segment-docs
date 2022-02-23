@@ -212,7 +212,7 @@ Segment adheres to Firebase's semantic event specification and maps the followin
 | [Checkout Started](/docs/connections/spec/ecommerce/v2/#checkout-started) | begin_checkout |
 | [Promotion Viewed](/docs/connections/spec/ecommerce/v2/#promotion-viewed) | present_offer |
 | [Payment Info Entered](/docs/connections/spec/ecommerce/v2/#payment-info-entered) | add_payment_info |
-| [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) | ecommerce_purchase |
+| [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) | purchase |
 | [Order Refunded](/docs/connections/spec/ecommerce/v2/#order-refunded) | purchase_refund |
 
 ### Property Mappings
@@ -273,7 +273,7 @@ Then, enter the deep link URL scheme in your Segment Firebase destination settin
 
 ### **Conversion Tracking and Adwords Conversions**
 
-Firebase is now Google's recommended method for reporting conversions to Adwords! To do so, simply track the conversion events as you normally would with Segment and Segment will send them through to Firebase! Follow [this documentation from Firebase to set up your conversions in Firebase and to have them forwarded to Adwords](https://firebase.google.com/docs/adwords/).
+Firebase is Google's recommended method for reporting conversions to Adwords. To use Firebase, track the conversion events as you normally would with Segment and Segment will send them through to Firebase. 
 
 ### Troubleshooting
 

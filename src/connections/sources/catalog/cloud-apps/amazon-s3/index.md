@@ -3,6 +3,8 @@ title: Amazon S3 from Lambda
 rewrite: true
 ---
 
+{% include content/source-region-unsupported.md %}
+
 This document contains a procedure that enables you to upload a CSV file containing data to Amazon S3, where it uses Lambda to automatically parse, format, and upload the data to Segment.
 
 You might have sources of data where you can't instrument Segment's SDKs, including other SaaS tools for which a Segment integration is not yet available. In many of these cases, you can extract data from these sources in CSV format, and then use our server-side SDKs or HTTP tracking API to push the data to Segment.

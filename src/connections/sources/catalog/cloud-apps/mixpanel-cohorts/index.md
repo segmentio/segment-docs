@@ -4,6 +4,7 @@ redirect_from:
   - '/connections/sources/catalog/cloud-apps/mixpanel-cohorts-source/'
 ---
 
+{% include content/source-region-unsupported.md %}
 
 [Mixpanel Cohorts](https://help.mixpanel.com/hc/en-us/articles/115005708186-Cohorts-Overview-){:target="_blank} are groups of users defined by a set of criteria. The Mixpanel Cohorts Source allows you to export Cohorts of users from Mixpanel to Segment so that you can better target users across many downstream connections. You can sync Cohorts of users to your Segment-connected raw data warehouses and downstream destinations that accept Segment identify events.
 

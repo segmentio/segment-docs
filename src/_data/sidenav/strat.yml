@@ -80,8 +80,8 @@ sections:
   #   title: Salesforce Live Agent destination
   - path: /connections/destinations/catalog/salesforce-marketing-cloud
     title: Salesforce Marketing Cloud destination
-  - path: /connections/destinations/catalog/salesforce-dmp
-    title: Salesforce DMP destination (beta)
+  # - path: /connections/destinations/catalog/salesforce-dmp
+  #   title: Salesforce DMP destination (beta)
   - path: /connections/destinations/catalog/pardot
     title: Salesforce Pardot destination
   - path: /connections/sources/catalog/cloud-apps/salesforce

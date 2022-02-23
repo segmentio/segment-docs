@@ -3,6 +3,7 @@ title: Regional Segment
 redirect_from:
   - '/connections/regional-segment/'
   - '/docs/connections/regional-segment-eu/'
+  - '/docs/connections/data-residency/'
 ---
 {% include content/plan-grid.md name="data-residency" %}
 
@@ -10,7 +11,7 @@ As Schrems II restricts the transfer of personal data to any processors establis
 
 The default region for all users is in Oregon, United States. Workspaces can be configured to use the EU West Data Processing Region ingest (for supported sources), process, filter, deduplicate, and archive data through Segment-hosted archives hosted in S3 AWS Dublin, Ireland. The regional infrastructure has the same [rate limits and SLA](/docs/connections/rate-limits/) as the default region.
 
-## Existing Users
+## Existing Workspaces
 To ensure a smooth transition from a US-based Segment workspace to an EU workspace, Segment will provide additional support and tooling to help with the transition later this year. Use the form link below to provide more information about your current setup and goals for transitioning.
 
 {% include components/ajs-cookie.html %}
@@ -68,9 +69,11 @@ Regional Segment in the EU changes the way you [configure the Data Lakes AWS env
 ### Warehouse Public IP Range
 Use Segment's custom CIDR `3.251.148.96/29` while authorizing Segment to write in to your Redshift or Postgres port. [BigQuery](/docs/connections/storage/catalog/bigquery/#getting-started) doesn't require you to allow a custom IP address.
 
-## Regional endpoint availability
+## Destination support and Regional endpoint availability
 
 > info "Don't see a regional endpoint for a tool you're using?"
 > As more of the partner tools you use (Sources and Destinations) start to support a regional endpoint, Segment will update this list. Your contact for that tool should have a timeline for when they're hoping to support regional data ingestion. You can also visit Segment's [support page](https://segment.com/help/contact/) for any Segment-related questions.
+
+The following destinations are supported in your EU Segment workspace. The Destination tools that provide an EU Regional endpoint are marked for easy identification (see above.)
 
 {% include content/regional-integrations-table.md %}

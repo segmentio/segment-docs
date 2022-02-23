@@ -6,8 +6,6 @@ Friendbuy is a referral marketing and campaign optimization platform.
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 1. Log in to your Friendbuy account and go to **Integration Code**.
 2. Copy the **Site ID** above the snippet box.
 3. Log in to your Segment workspace, click **Catalog** and select the **Destinations** tab.

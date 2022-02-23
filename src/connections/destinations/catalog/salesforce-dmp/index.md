@@ -1,6 +1,5 @@
 ---
 title: Salesforce DMP Destination
-strat: salesforce
 rewrite: true
 beta: true
 hidden: true

@@ -2,6 +2,9 @@
 title: Stripe Source
 rewrite: true
 ---
+
+{% include content/source-region-unsupported.md %}
+
 [Stripe](https://stripe.com/about) builds economic infrastructure for the internet, that enables businesses of every size to accept payments and manage their businesses online.
 
 If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!

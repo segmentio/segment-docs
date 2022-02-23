@@ -2,7 +2,7 @@
 # The end name should be similar to `Slack (Actions) Destination`
 title: Sprig (Actions) Destination
 hide-boilerplate: true
-hide-dossier: true
+hide-dossier: false
 hidden: true
 ---
 
@@ -42,28 +42,7 @@ Sprig (Actions) provides the following benefits over the classic Sprig destinati
 
 <!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
 
-## Pre-built subscriptions
-
-By default, a new Sprig (Actions) destination comes with the following subscriptions.
-
-Select these subscriptions by choosing **Quick Setup** when you first configure the destination. You can enable, edit, or disable them from the screen that appears.
-
-| Subscription Name  | Default Trigger                                   | Sprig Action |
-| ------------------ | ----------------------------------------- | ------------------------- |
-| Identify User | All events with type **Identify**. | Set User ID, email, and other traits. |
-| Sign Out User | Events with name **Signed Out** and type **Track**. | Log out user on Sprig so that future actions are not associated with them. |
-| Track Event | All events with type **Track**, except **Signed Out**. | Track this event name for this user, and potentially display a matching microsurvey. |
-| Update User ID | All events with type **Alias**. | Update the User ID for the current user. |
-
-## Available Sprig actions
-
-Combine the supported [triggers](/docs/connections/destinations/actions/#components-of-a-destination-action) with the following Sprig-supported actions:
-
-- [Identify User](#identify-user)
-- [Sign Out User](#sign-out-user)
-- [Track Event](#track-event)
-- [Update User ID](#update-user-id)
-
+{% include components/actions-fields.html %}
 <!-- If applicable, add information regarding the migration from a classic destination to an Actions-based version below -->
 
 ## Migration from the classic Sprig destination

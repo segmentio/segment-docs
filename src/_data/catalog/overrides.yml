@@ -1,6 +1,17 @@
 # This file is manually generated. When you add or remove an item, add or remove
 # it from the `overrides-list.yml` too.
 items:
+- slug: criteo-app-web-events
+  connection_modes:
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: false
 - slug: doubleclick-floodlight
   connection_modes:
     device:
