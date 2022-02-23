@@ -1,7 +1,13 @@
 ---
 title: Useful SQL Queries for Redshift
 ---
-Below you'll find a library of some of the most useful SQL queries customers use in their Redshift warehouses. You can run these right in your Redshift instance with little to no modification.
+Below you'll find a library of some of the most useful SQL queries customers use in their Redshift warehouses. You can run these right in your Redshift instance with little to no modification. 
+
+You can use SQL queries for the following tasks:
+- [Tracking events](#tracking-events)
+- [Defining sessions](#defining-sessions)
+- [Identifying users](#identifying-users)
+- [Groups to accounts](#groups-to-accounts)
 
 > note " "
 > If you're looking for SQL queries for warehouses other than Redshift, check out some of Segment's [Analyzing with SQL guides](/docs/connections/storage/warehouses/index/#analyzing-with-sql).
@@ -42,13 +48,7 @@ where event = 'completed_order'
 
 That SQL query returns a table that looks like this:
 
-| event           | event_id | user_id    | sent_at             | item  | color  | size   | payment     | 
-| --------------- | -------- | ---------- | ------------------- | ----- | ------ | ------ | ----------- |
-| completed_order | jrse3pyf | BQ9R7u4NA9 | 2021-12-09 03:50:00 | pants | blue   | 32x33  | credit card |
-| completed_order | cxntjkc7 | TQ9D7x4NA4 | 2021-12-09 02:50:01 | pants | green  | 31x33  | credit card |
-| completed_order | xjuvaely | APR97u8NB9 | 2021-12-09 01:50:39 | shirt | red    | Medium | credit card |
-| completed_order | rft31ial | ly3jaeillp | 2021-12-09 08:50:13 | shirt | yellow | Large  | credit card | 
-| completed_order | k8bhgc6h | X9G5Qg0tha | 2021-12-09 07:20:19 | shirt | yellow | Small  | paypal      |
+![](images/sql-redshift-table-1.jpg)
 
 But why are there columns in the table that weren't a part of the track call, like `event_id`? 
 This is because the track method (for client-side libraries) automatically includes additional properties of the event, like `event_id`, `sent_at`, and `user_id`!
@@ -259,7 +259,7 @@ The `group` method ties a user to a group. It also lets you record custom traits
 Here’s what a basic `group` call looks like:
 
 ```javascript
-analytics.group'0e8c78ea9d97a7b8185e8632', {
+analytics.group('0e8c78ea9d97a7b8185e8632', {
   name: 'Initech',
   industry: 'Technology',
   employees: 329,

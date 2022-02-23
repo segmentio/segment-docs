@@ -67,7 +67,7 @@ If you're in the EU region, use CIDR `3.251.148.96/29`.
 > info ""
 > EU workspace regions are currently in beta. If you would like to learn more about the beta, please contact your account manager.
 
-BigQuery does not require whitelisting an IP address. To learn how to set up BigQuery, check out Segment's BigQuery [set up guide](/docs/connections/storage/catalog/bigquery/#getting-started)
+BigQuery does not require allowlisting an IP address. To learn how to set up BigQuery, check out Segment's BigQuery [set up guide](/docs/connections/storage/catalog/bigquery/#getting-started)
 
 
 ## Will Segment sync my historical data?
