@@ -127,4 +127,4 @@ You might need to adjust your query to filter out users without an email so you 
 
 ![](images/personas-add-emailtrait.png)
 
-A user with multiple email addresses will appear once per email address in the Marketo lists.
+If a user has multiple email addresses, each address appears once in the Marketo lists. 
