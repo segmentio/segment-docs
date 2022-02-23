@@ -32,3 +32,6 @@ https://github.com/segment-integrations/analytics.js-integration-eloqua
 https://github.com/segment-integrations/analytics.js-integration-email-aptitude
 https://platform.epica.ai/login
 https://github.com/segment-integrations/analytics.js-integration-friendbuy
+https://www.braze.com/documentation/Web/#step-5-configure-safari-push
+https://platform.epica.ai/account
+https://platform.epica.ai/personas
