@@ -29,7 +29,7 @@ Enabling Vitally as a destination in Segment can be done in one click from your 
 
   ![](images/2JQwIBK.png)
 
-5. Once we receive at least 1 event from Segment, you'll be able to proceed with the set up process and configure how to [create accounts from Segment](https://docs.vitally.io/managing-the-customer-lifecycle/account-hierarchy-using-vitallys-organization-object/supported-integrations-and-how-to-create-the-hierarchy#segment){:target="_blank"}
+5. Once Vitally receives at least one event from Segment, you'll be able to proceed with the set up process and configure how to [create accounts from Segment](https://docs.vitally.io/managing-the-customer-lifecycle/account-hierarchy-using-vitallys-organization-object/supported-integrations-and-how-to-create-the-hierarchy#segment){:target="_blank"}
 
 ## Identify
 
