@@ -56,7 +56,7 @@ The only restriction when loading your own data into your connected warehouse is
 
 If you want to insert custom data into your warehouse, create new schemas that are not associated with an existing source, since these may be deleted upon a reload of the Segment data in the cluster.
 
-Segment highly recommends scripting any sort of additions of data you might have to warehouse, so that you aren't doing one-off tasks that can be hard to recover from in the future in the case of hardware failure.
+Segment recommends scripting any sort of additions of data you might have to warehouse, so that you aren't doing one-off tasks that can be hard to recover from in the future in the case of hardware failure.
 
 ## Which IPs should I allowlist?
 
@@ -72,7 +72,7 @@ BigQuery does not require allowlisting an IP address. To learn how to set up Big
 
 ## Will Segment sync my historical data?
 
-Segment will automatically load up to two months of your historical data when you connect a warehouse.
+Segment loads up to two months of your historical data when you connect a warehouse.
 
 For full historical backfills you'll need to be a Segment Business plan customer. If you'd like to learn more about our Business plan and all the features that come with it, [check out our pricing page](https://segment.com/pricing).
 
@@ -93,7 +93,7 @@ After a source is created, you can enable or disable a warehouse sync within the
 
 ## Can I be notified when warehouse syncs fail?
 
-If you enabled activity notifications for your storage destination, you will receive notifications in the Segment app when your warehouse syncs fail.
+If you enabled activity notifications for your storage destination, you'll receive notifications in the Segment app when warehouse syncs fail.
 
 To sign up for warehouse sync notifications:
 1. Open the Segment app. 
