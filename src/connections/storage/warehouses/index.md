@@ -22,8 +22,6 @@ Examples of data warehouses include Amazon Redshift, Google BigQuery, and Postgr
 
 {% include content/how-a-sync-works.md %}
 
-![](images/how-a-sync-works.png)
-
 <div data-headings-anchors id="warehouse-schemas"></div>
 > info "Looking for the Warehouse Schemas docs?"
 >  They've moved! Check them out [here](schema/).
@@ -36,7 +34,7 @@ Examples of data warehouses include Amazon Redshift, Google BigQuery, and Postgr
 
 [How do I give users permissions to my warehouse?](/docs/connections/storage/warehouses/add-warehouse-users/)
 
-Check out our [Frequently Asked Questions about Warehouses](/docs/connections/storage/warehouses/faq/) and [a list of helpful SQL queries to get you started with Redshift ](/docs/connections/storage/warehouses/redshift-useful-sql).
+Check out the [Frequently Asked Questions about Warehouses](/docs/connections/storage/warehouses/faq/) page and [a list of helpful SQL queries to get you started with Redshift ](/docs/connections/storage/warehouses/redshift-useful-sql).
 
 ## FAQs
 
@@ -46,7 +44,7 @@ Check out our [Frequently Asked Questions about Warehouses](/docs/connections/st
 
 [How do I give users permissions?](/docs/connections/storage/warehouses/add-warehouse-users/)
 
-[What are the limitations of Redshift clusters and our warehouses connector?](/docs/connections/storage/warehouses/redshift-faq/)
+[What are the limitations of Redshift clusters and warehouses connectors?](/docs/connections/storage/warehouses/redshift-faq/)
 
 [Where do I find my source slug?](/docs/connections/storage/warehouses/faq/#how-do-i-find-my-source-slug)
 
