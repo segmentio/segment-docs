@@ -3,7 +3,7 @@ title: Building a Plugin
 ---
 
 > info ""
-> The Developer Center currently only supports the [Subscription](/docs/partners/subscriptions) component in _Developer Preview_. Include [your information here](https://airtable.com/shrT3b4C7agUEBKVS) and we'll contact you once _Plugins_ are made available!
+> The Developer Center is currently not accepting new components. Segment is committed to redeveloping the Developer Center and a new version will be launched in the future. Include [your information here](https://airtable.com/shrT3b4C7agUEBKVS) and we'll contact you once _Plugins_ are made available!
 
 SDK Plugins are used to augment traditional Destination and Source components ([Subscriptions](/docs/partners/subscriptions/) and [Streams](/docs/partners/streams/)) by shipping code to the End User's Device. You can use this mechanism to enable customers to dynamically include your libraries or SDKs and to wire up the Segment SDK to invoke them directly when your plugin is enabled. This pattern is most commonly used to build what we call "Device-mode Destinations".
 

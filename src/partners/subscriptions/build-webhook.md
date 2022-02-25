@@ -3,6 +3,9 @@ title: Building a Subscription Webhook
 redirect_from: '/partners/build-webhook/'
 ---
 
+> info ""
+> The Developer Center is currently not accepting new components. Segment is committed to redeveloping the Developer Center and a new version will be launched in the future. Include [your information here](https://airtable.com/shrvZzQ6NTTwsc6rQ) to join the waitlist!
+
 Subscription Webhooks allow Segment Partners to ingest Segment Event Data using a webhook. This guide explains how to set up your webhook with Segment.
 
 ## Getting Started

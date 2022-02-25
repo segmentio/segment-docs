@@ -3,7 +3,7 @@ title: Developer Center Overview
 ---
 
 > note ""
-> **NOTE:** Developer Center is currently in _Developer Preview_. If you are interested in joining the Developer Preview, request access [here](https://segment.com/partners/developer-center/). The use is governed by [(1) Segment First Access](https://segment.com/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/). By starting or continuing this process, you also agree to the [Segment Platform Partners Agreement](https://segment.com/legal/partnersagreement/).
+> **NOTE:** The Developer Center is currently not accepting new components. Segment is committed to redeveloping the Developer Center and a new version will be launched in the future. Include [your information here](https://airtable.com/shrvZzQ6NTTwsc6rQ) to join the waitlist!
 
 
 ## Building on Segment

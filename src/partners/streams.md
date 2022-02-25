@@ -3,7 +3,7 @@ title: Building a Stream
 ---
 
 > info ""
-> The Developer Center currently only supports the [Subscription](/docs/partners/subscriptions) component in _Developer Preview_. Include [your information here](https://airtable.com/shrj3BkHMhdeaPYWt) and we'll contact you once _Streams_ are made available!
+> The Developer Center is currently not accepting new components. Segment is committed to redeveloping the Developer Center and a new version will be launched in the future. Include [your information here](https://airtable.com/shrj3BkHMhdeaPYWt) and we'll contact you once _Streams_ are made available!
 
 Streams enable you to send data to our mutual customers from your web services in realtime.
 
