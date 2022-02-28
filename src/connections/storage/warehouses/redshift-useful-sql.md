@@ -17,9 +17,9 @@ You can use SQL queries for the following tasks:
 
 ## Tracking events
 
-The track allows you to record any actions your users perform. A track call takes three parameters: the userId, the event, and any optional properties.
+The Track call allows you to record any actions your users perform. A Track call takes three parameters: the userId, the event, and any optional properties.
 
-Here's a basic track call:
+Here's a basic Track call:
 
 ```javascript
 analytics.track('Completed Order',
@@ -30,7 +30,7 @@ analytics.track('Completed Order',
 });
 ```
 
-A completed order track call might look like this:
+A completed order Track call might look like this:
 
 ```javascript
 analytics.track('Completed Order', {
@@ -41,7 +41,7 @@ analytics.track('Completed Order', {
 });
 ```
 
-Each track call is stored as a distinct row in a single Redshift table called `tracks`. To get a table of your completed orders, you can run the following query: 
+Each Track call is stored as a distinct row in a single Redshift table called `tracks`. To get a table of your completed orders, you can run the following query: 
 
 ```sql
 select *
@@ -53,8 +53,8 @@ That SQL query returns a table that looks like this:
 
 ![](images/sql-redshift-table-1.jpg)
 
-But why are there columns in the table that weren't a part of the track call, like `event_id`? 
-This is because the track method (for client-side libraries) includes additional properties of the event, like `event_id`, `sent_at`, and `user_id`!
+But why are there columns in the table that weren't a part of the Track call, like `event_id`? 
+This is because the Track method (for client-side libraries) includes additional properties of the event, like `event_id`, `sent_at`, and `user_id`!
 
 ### Grouping events by day
 If you want to know how many orders were completed over a span of time, you can use the `date()` and `count` function with the `sent_at` timestamp:
@@ -139,7 +139,7 @@ SELECT *,
 
 ### Historical traits
 
-The `identify` method ties user attributes to a `userId`. 
+The Identify method ties user attributes to a `userId`. 
 
 ```javascript
 analytics.identify('bob123',{
@@ -147,7 +147,7 @@ analytics.identify('bob123',{
   plan: 'Free'
 });
 ```
-As these user traits change over time, you can continue calling the identify method to update their changes. With this query, you can update Bob’s account plan to “Premium”.
+As these user traits change over time, you can continue calling the Identify method to update their changes. With this query, you can update Bob’s account plan to “Premium”.
 
 ```javascript
 analytics.identify('bob123', {
@@ -156,7 +156,7 @@ analytics.identify('bob123', {
 });
 ```
 
-Each identify call is stored in a single Redshift table called `identifies`. To see how a user's plan changes over time, you can run the following query: 
+Each Identify call is stored in a single Redshift table called `identifies`. To see how a user's plan changes over time, you can run the following query: 
 
 ```sql
 select email, plan, sent_at
@@ -173,7 +173,7 @@ This SQL query returns a table of Bob's account information, with each entry rep
 
 If you want to see what your users looked like at a previous point in time, you can find that data in the `identifies` table. To get this table for your users, replace ‘initech’ in the SQL query with your source slug.
 
-But what if you only want to see the most recent state of the user? Luckily, you can convert the `identifies` table into a distinct users table by taking the most recent identify call for each account.
+But what if you only want to see the most recent state of the user? Luckily, you can convert the `identifies` table into a distinct users table by taking the most recent Identify call for each account.
 
 ### Convert the identifies table into a users table
 
