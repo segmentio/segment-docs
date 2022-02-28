@@ -1,8 +1,6 @@
 ---
 rewrite: true
 title: 'GraphJSON Destination'
-hidden: true
-published: false
 beta: true
 ---
 [GraphJSON](https://www.graphjson.com/guides/segment){:target="_blank"} provides self-serve analytics to better help you understand your business.
@@ -12,12 +10,10 @@ This destination is maintained by GraphJSON. For any issues with the destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 1. From the Destinations catalog page in the Segment App, click Add Destination.
 2. Search for “GraphJSON” in the Destinations Catalog, and select the “GraphJSON” destination.
 3. Choose which Source should send data to the “GraphJSON” destination.
-4. Go to the https://graphjson.com/dashboard/integrations/segment{:target="_blank"}, find and copy the “API key”.
+4. Go to the `https://graphjson.com/dashboard/integrations/segment`, find and copy the “API key”.
 5. Enter the “API Key” in the “GraphJSON” destination settings in Segment.
 6. Go to `https://graphjson.com/dashboard/integrations/segment` and finish the setup on the GraphJSON side.
 
