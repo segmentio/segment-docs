@@ -175,7 +175,7 @@ Segment requires the [DoubleClick Floodlight](/docs/connections/destinations/cat
 To configure DoubleClick Floodlight:
 
 > warning ""
-> **Prerequisite**: Createa a [Javascript Website](/docs/connections/sources/catalog/libraries/website/javascript/) source in your Segment workspace if one does not exist. Ensure that this source is configured to track visitors to your website. For more information about configuring Javascript sources, see the [Analytics.js Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
+> **Prerequisite**: Create a [Javascript Website](/docs/connections/sources/catalog/libraries/website/javascript/) source in your Segment workspace if one does not exist. Ensure that this source is configured to track visitors to your website. For more information about configuring Javascript sources, see the [Analytics.js Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
 
 1. In your workspace, visit the **Catalog** and search for the **DoubleClick Floodlight** destination.
 2. Connect your Javascript Website source to the DoubleClick Floodlight destination, and configure the following settings:
@@ -228,6 +228,7 @@ On Step 3: Review & Create, **deselect** the Historical Backfill option to ensur
 After you complete the set up process, allow up to 24 hours for Google to create the new audience list. Once the list is created, Segment can begin to sync users to that list. Google may require additional time to process the initial audience additions. The entire first sync to DV360 may require 24-48 hours to complete. As a result, the first few audience syncs after you create the audience may fail.
 
 Extra information from the API (settings, connection modes, etc.) are automatically pulled in here.
+{% include content/sync-frequency-note.md %}
 
 ## FAQ
 ### What is Segment’s relationship with Google DV360 and is the data that Segment sends considered to be First or Third party?

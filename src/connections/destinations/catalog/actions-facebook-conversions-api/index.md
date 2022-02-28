@@ -2,7 +2,7 @@
 title: Facebook Conversions API (Actions)
 strat: facebook
 hide-boilerplate: true
-hide-dossier: true
+hide-dossier: false
 ---
 
 Facebook Conversions API (Actions) enables advertisers to send events from their servers directly to Facebook. Server-side events link to Facebook Pixel events, and process like browser pixel events. This means that server-side events are used in measurement, reporting, and optimization, just like browser pixel events.

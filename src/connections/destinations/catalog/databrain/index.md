@@ -14,7 +14,7 @@ This destination is maintained by DataBrain. For any issues with the destination
 
 1. From the Segment App's Destinations catalog page, click **Add Destination**.
 2. Search for "DataBrain" in the Destinations Catalog, and select the DataBrain destination.
-3. Go to your [DataBrain dashboard](https://api.usedatabrain.com/integrations), and copy your "API Key".
+3. Go to your DataBrain dashboard, and copy your "API Key".
 4. Back in the Segment app, paste the API key into the settings for the DataBrain destination.
 
 > info ""

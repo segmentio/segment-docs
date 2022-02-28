@@ -100,7 +100,7 @@ For example, you may wish to create an audience which selects all admin-level us
 
 ## Known limitations of account-level audiences
 
-- Unlike user-level audiences which are [computed in real time](/docs/personas/audiences#realtime-compute-vs-batch), account-level audiences are computed on an hourly, batched basis.
+- Unlike user-level audiences, which are [computed in real time](/docs/personas/audiences#realtime-compute-vs-batch), account-level audiences are computed on a batched basis. Segment computes account-level audiences roughly every hour, but it's important to note that compute times can fluctuate based on the load on the system.
 - Account-level audiences do not respect the `context.groupId` property on track calls. If users are associated with multiple accounts (through multiple group calls), the entire collection of a user’s events is considered when evaluating user-level event conditions (not just those events which are tagged with a matching `groupId`). This can lead to unexpected results where a user’s events triggered in the context of one account lead to another account incorrectly matching an account-level audience.
 - The identity breakdown report (displayed in the audience builder for user-level audiences) is not available for account-level audiences.
 

@@ -84,7 +84,7 @@ Facebook offers the Facebook Pixel, which allows you to retarget these types of 
 1. Creates a Facebook Custom Audience (of type Customer List) with a name that matches the Personas Audience.
 2. Adds any users that fit the audience definition, based on the matching identifiers that Facebook supports (hashed). Facebook uses these identifiers to match users to Facebook users in their ads system.
 3. Once the audience is configured, Segment checks which users still fit the audience definition based on the same identifiers, and adds or remove users from the audience, every hour.
-
+{% include content/sync-frequency-note.md %}
 > success "Tip:"
 > You can use the Audience History feature in Facebook to see this change over time.
 

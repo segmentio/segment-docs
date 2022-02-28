@@ -64,7 +64,7 @@ To create a Kochava-Certified Postback that will send campaign information to Se
 
 ### Apple Search Ads
 
-To get [iAD attribution](https://searchads.apple.com/help/measure-results/) data into Kochava, you must include the [analytics-ios-iads-attribution](https://github.com/segmentio/analytics-ios-iads-attribution) dependency and version 3.6.0 or higher of the [Analytics SDK](https://github.com/segmentio/analytics-ios).
+To get iAD attribution data into Kochava, you must include the [analytics-ios-iads-attribution](https://github.com/segmentio/analytics-ios-iads-attribution) dependency and version 3.6.0 or higher of the [Analytics SDK](https://github.com/segmentio/analytics-ios).
 
 To install it, simply add the following line to your Podfile:
 

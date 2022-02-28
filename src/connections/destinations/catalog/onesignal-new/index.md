@@ -48,6 +48,9 @@ Segment sends Identify traits as [Player Data Tags](https://documentation.onesig
 
 ![](images/demo.png)
 
+> info "Data Tag Limits"
+> Your OneSignal plan may cap incoming Data Tags. Once you've reached your Data Tag limit, your user traits won't update in your OneSignal destination.
+
 ### Track
 
 Send [Track](/docs/connections/spec/track) calls to update Data Tags. For example:
