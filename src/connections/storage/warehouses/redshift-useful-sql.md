@@ -1,10 +1,10 @@
 ---
 title: Useful SQL Queries for Redshift
 ---
-Below you'll find a library of some of the most useful SQL queries customers use in their Redshift warehouses. You can run these right in your Redshift instance with little to no modification.
+Below you'll find a library of some of the most useful SQL queries customers use in their Redshift warehouses. You can run these in your Redshift instance with little to no modification.
 
 > success "Ways to improve query speed"
-> If you're looking to improve the speed of your queries, check out Segment's [Speeding Up Redshift Queries](/docs/connections/storage/warehouses/redshift-tuning/) page! 
+> If you're looking to improve the speed of your queries, check out Segment's [Speeding Up Redshift Queries](/docs/connections/storage/warehouses/redshift-tuning/) page.
 
 You can use SQL queries for the following tasks:
 - [Tracking events](#tracking-events)
@@ -54,7 +54,7 @@ That SQL query returns a table that looks like this:
 ![](images/sql-redshift-table-1.jpg)
 
 But why are there columns in the table that weren't a part of the track call, like `event_id`? 
-This is because the track method (for client-side libraries) automatically includes additional properties of the event, like `event_id`, `sent_at`, and `user_id`!
+This is because the track method (for client-side libraries) includes additional properties of the event, like `event_id`, `sent_at`, and `user_id`!
 
 ### Grouping events by day
 If you want to know how many orders were completed over a span of time, you can use the `date()` and `count` function with the `sent_at` timestamp:
@@ -65,7 +65,7 @@ from initech.tracks
 where event = 'completed_order'
 group by date
 ```
-That query will return a table like this:
+That query returns a table like this:
 
 | date       | count |
 | ---------- | ----- |
@@ -73,7 +73,7 @@ That query will return a table like this:
 | 2021-12-08 | 3     |
 | 2021-12-07 | 2     |
 
-If you wanted to see how many pants and shirts were sold on each of those dates, you can query that using case statements:
+To see the number of pants and shirts that were sold on each of those dates, you can query that using case statements:
 
 ```sql 
 select date(sent_at) as date,
@@ -93,19 +93,19 @@ That query returns a table like this:
 | 2021-12-07 | 2      | 0     |
 
 
-## Defining sessions
+## Define sessions
 Segment’s API does not impose any restrictions on your data with regard to user sessions.
 
 Sessions aren’t fundamental facts about the user experience. They’re stories Segment builds around the data to understand how customers actually use the product in their day-to-day lives. And since Segment’s API is about collecting raw, factual data, there's no API for collecting sessions. Segment leaves session interpretation to SQL partners, which let you design how you measure sessions based on how customers use your product.
 
-For more on why Segment doesn't collect session data at the API level, [check out a blog post here](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/)!
+For more on why Segment doesn't collect session data at the API level, [check out a blog post here](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/){:target="_blank"}.
 
 ### How to define user sessions using SQL
-Each of Segment's SQL partners allows you to define sessions based on your specific business needs. With [Looker](https://looker.com), for example, you can take advantage of their persistent derived tables and LookML modeling language to layer sessionization on top of your Segment SQL data. Segment recommends [checking out Looker's approach here](https://segment.com/blog/using-sql-to-define-measure-and-analyze-user-sessions/)!
+Each of Segment's SQL partners allow you to define sessions based on your specific business needs. With [Looker](https://looker.com){:target="_blank"}, for example, you can take advantage of their persistent derived tables and LookML modeling language to layer sessionization on top of your Segment SQL data. Segment recommends [checking out Looker's approach here](https://segment.com/blog/using-sql-to-define-measure-and-analyze-user-sessions/).
 
-For defining sessions with raw SQL, a great query and explanation comes from [Mode Analytics](https://mode.com).
+To define sessions with raw SQL, a great query and explanation comes from [Mode Analytics](https://mode.com).
 
-Here’s the query to make it happen, but definitely check Mode Analytics' [blog post](https://blog.modeanalytics.com/finding-user-sessions-sql/) as well. They walk you through the reasoning behind the query, what each portion accomplishes, how you can tweak it to suit your needs, and what kind of further analysis you can do on top of it.
+Here’s the query to make it happen, but read Mode Analytics' [blog post](https://blog.modeanalytics.com/finding-user-sessions-sql/) for more information. Mode walks you through the reasoning behind the query, what each portion accomplishes, how you can tweak it to suit your needs, and the kinds of further analysis you can add on top of it.
 
 ```sql
 -- Finding the start of every session
@@ -135,7 +135,7 @@ SELECT *,
        ) final
 ```
 
-## Identifying users
+## Identify users
 
 ### Historical traits
 
@@ -171,13 +171,13 @@ This SQL query returns a table of Bob's account information, with each entry rep
 | bob123  | bob@intech.com | Premium | 2021-12-20 19:44:03 |
 | bob123  | bob@intech.com | Basic   | 2021-12-18 17:48:10 |
 
-If you want to see what your users looked like at a previous point in time, that data is right there in your `identifies` table! (To get this table for your users, replace ‘initech’ in the SQL query with your source slug).
+If you want to see what your users looked like at a previous point in time, you can find that data in the `identifies` table. To get this table for your users, replace ‘initech’ in the SQL query with your source slug.
 
 But what if you only want to see the most recent state of the user? Luckily, you can convert the `identifies` table into a distinct users table by taking the most recent identify call for each account.
 
-### Converting the identifies table into a users table
+### Convert the identifies table into a users table
 
-The following query will return your `identifies` table: 
+The following query returns the `identifies` table: 
 
 ```sql
 select *
