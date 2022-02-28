@@ -173,7 +173,7 @@ This SQL query returns a table of Bob's account information, with each entry rep
 
 If you want to see what your users looked like at a previous point in time, you can find that data in the `identifies` table. To get this table for your users, replace ‘initech’ in the SQL query with your source slug.
 
-But what if you only want to see the most recent state of the user? Luckily, you can convert the `identifies` table into a distinct users table by taking the most recent Identify call for each account.
+If you only want the current state of the users, convert the `identifies` table into a [distinct users table](#convert-the-identifies-table-into-a-users-table) by returning the most recent Identify call for each account.
 
 ### Convert the identifies table into a users table
 
