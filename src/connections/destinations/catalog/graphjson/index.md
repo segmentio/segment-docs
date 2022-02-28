@@ -19,7 +19,7 @@ This destination is maintained by GraphJSON. For any issues with the destination
 3. Choose which Source should send data to the “GraphJSON” destination.
 4. Go to the https://graphjson.com/dashboard/integrations/segment{:target="_blank"}, find and copy the “API key”.
 5. Enter the “API Key” in the “GraphJSON” destination settings in Segment.
-6. Go to https://graphjson.com/dashboard/integrations/segment{:target="_blank"} and finish the setup on the GraphJSON side.
+6. Go to `https://graphjson.com/dashboard/integrations/segment` and finish the setup on the GraphJSON side.
 
 ## Supported methods
 
