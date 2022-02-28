@@ -20913,7 +20913,7 @@ items:
   display_name: GraphJSON
   name: GraphJSON
   slug: graphjson
-  hidden: true
+  hidden: false
   regional:
   - us-west
   url: connections/destinations/catalog/graphjson
