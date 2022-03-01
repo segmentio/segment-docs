@@ -51,7 +51,21 @@ Before you start, you must have Segment's Analytics.js 2.0 installed on your sit
 
 {% include components/actions-fields.html %}
 
-<!-- If applicable, add information regarding the migration from a classic destination to an Actions-based version below -->
+## Required Fields
+
+There are several fields that are required by the Friendbuy actions; these fields are marked by an asterisk in the action's Edit form when you are configuring the action fields. As required fields
+
+* these action fields must be assigned mappings from your analytics events, and
+* the event fields that the action fields are mapped from must be populated with values of the appropriate type in your analytics calls.
+
+If the `analytics.identify` or `analytics.track` event fields are not appropriately populated then the corresponding Friendbuy track call will not be made.
+
+| Track Event        | Required Fields                                   |
+|--------------------|---------------------------------------------------|
+| Track Customer     | `customerId`, `email`                             |
+| Track Purchase     | `orderId`, `amount`, `currency`, `products.price` |
+| Track Sign-Up      | `customerId`, `email`                             |
+| Track Custom Event | `eventType`, `eventProperties`, `customerId`      |
 
 ## Edit Friendbuy mappings
 
