@@ -117,7 +117,7 @@ You can create unique destination filters for each destination instance connecte
 
 ### Connect multiple sources to one instance of a destination
 
-It is not possible to connect more than one source to the same instance of a destination. However, you can create another instance of the same destination for the other sources, and click **Copy Settings From Other Destination** to save yourself time entering the settings values again.
+It is not possible to connect multiple instances of one source (for example, two website sources) to the same destination. However, you can create another instance of the destination for the other sources, and click **Copy Settings From Other Destination**  to save yourself time entering the settings values again.
 
 
 ### Connect to more than one instance of a destination using the Config API
