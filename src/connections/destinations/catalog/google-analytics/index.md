@@ -196,7 +196,7 @@ For this example these event attributes are sent to Google Universal Analytics:
 | **Event Action**   | Logged In |
 
 > info ""
-> **Note**: In device-mode only, if you pass `category` to the [`page`](https://segment.com/docs/connections/destinations/catalog/google-analytics/#page-and-screen) call, we will use the `category` from `page` instead of setting default **Event Category** to `All`.
+> **Note**: In device-mode only, if you pass `category` to the [`page`](https://segment.com/docs/connections/destinations/catalog/google-analytics/#page-and-screen) call, Segment will use the `category` from `page` instead of setting default **Event Category** to `All`.
 
 And another Track call example, this time with all Google Universal Analytics event parameters:
 
