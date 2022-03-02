@@ -113,16 +113,15 @@ and the relationships that exist between elements. Segment's schemas use the fol
 
 For more information about Warehouse Schemas, see the [Warehouse Schemas](/docs/connections/storage/warehouses/schema) page.
 
-## If my syncs fail and get fixed, will I need to ask for a backfill?
+## If my syncs fail and get fixed, do I need to ask for a backfill?
 
 If your syncs fail, you do not need to reach out to Segment Support to request a backfill. Once a successful sync takes place, 
-Segment will automatically load all of the data created since the last successful sync. 
+Segment automatically loads all of the data generated since the last successful sync occurred. 
 
 
 ## Can I change my schema names once they've been created?
 
-Segment stores the name of your hanging the name of your schema in the **SQL Settings** page without updating the name in your data warehouse causes the schema 
-to be split into two after the name is changed. 
+Segment stores the name of your schema in the **SQL Settings** page. Changing the name of your schma in the app without updating the name in your data warehouse causes a new schema to form, one independent of historical data.  
 
 To change the name of your schema without disruptions: 
 

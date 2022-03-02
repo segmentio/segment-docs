@@ -22,7 +22,7 @@ Your plan determines how frequently data is synced to your warehouse.
 *If you're a Business plan member and would like to adjust your sync frequency, you can do so using the Selective Sync feature. To enable Selective Sync, please go to **Warehouse** > **Settings** > **Sync Schedule**. 
 
 > note "Why can't I sync more than 24 times per day?"
-> We do not set syncs to happen more than once per hour (ie, 24 times per day). The warehouse product is not designed for real-time data, so more frequent syncs would not necessarily be helpful.
+> We do not set syncs to happen more than once per hour (24 times per day). The warehouse product is not designed for real-time data, so more frequent syncs would not necessarily be helpful.
 
 ## Sync History
 You can use the Sync History page to see the status and history of data updates in your warehouse. The Sync History page is available for every source connected to each warehouse. This page helps you answer questions like, “Has the data from a specific source been updated recently?” “Did a sync completely fail, or only partially fail?” and “Why wasn’t this sync successful?”
