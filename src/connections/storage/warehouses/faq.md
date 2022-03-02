@@ -121,7 +121,7 @@ Segment automatically loads all of the data generated since the last successful 
 
 ## Can I change my schema names once they've been created?
 
-Segment stores the name of your schema in the **SQL Settings** page. Changing the name of your schma in the app without updating the name in your data warehouse causes a new schema to form, one independent of historical data.  
+Segment stores the name of your schema in the **SQL Settings** page. Changing the name of your schema in the app without updating the name in your data warehouse causes a new schema to form, one that doesn't contain historical data.  
 
 To change the name of your schema without disruptions: 
 
