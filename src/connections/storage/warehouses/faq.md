@@ -93,7 +93,7 @@ After a source is created, you can enable or disable a warehouse sync within the
 
 ## Can I be notified when warehouse syncs fail?
 
-If you enabled activity notifications for your storage destination, you'll receive notifications in the Segment app when warehouse syncs fail.
+If you enabled activity notifications for your storage destination, you'll receive notifications in the Segment app for the fifth and 20th consecutive warehouse failures.
 
 To sign up for warehouse sync notifications:
 1. Open the Segment app. 
@@ -101,26 +101,35 @@ To sign up for warehouse sync notifications:
 3. In the Activity Notifications section, select **Storage Destinations**.
 4. Enable **Storage Destination Sync Failed**. 
 
-## How is my data formatted in my warehouse?
+## How is the data formatted in my warehouse?
 
-Data in your warehouse is formatted into **schemas**, which involve a detailed description of database elements (tables, views, indexes, synonyms, etc.) and the relationships that exist between elements. Segment's schemas use the following template: <br/>`<source>.<collection>.<property>`, for example, `segment-engineering.tracks.userId`, where Source refers to the source or project name (segment-engineering), collection refers to the event (tracks), and the property refers to the data being collected (userId). For more information about Warehouse Schemas, see the [Warehouse Schemas](/docs/connections/storage/warehouses/schema) page.
+Data in your warehouse is formatted into **schemas**, which involve a detailed description of database elements (tables, views, indexes, synonyms, etc.) 
+and the relationships that exist between elements. Segment's schemas use the following template: <br/>`<source>.<collection>.<property>`, for example, 
+`segment_engineering.tracks.user_id`, where Source refers to the source or project name (segment_engineering), collection refers to the event (tracks),
+ and the property refers to the data being collected (user_id). 
+
+> note " "
+> All schema data is always represented in snake case.
+
+For more information about Warehouse Schemas, see the [Warehouse Schemas](/docs/connections/storage/warehouses/schema) page.
 
 ## If my syncs fail and get fixed, will I need to ask for a backfill?
 
-Yes, if your syncs fail, you will need to reach out to [Segment Support](https://segment.com/help/) to ask for a backfill. Be sure to include the following information in your request: 
-- The warehouse that requires the backfill
-- What sources you need information from
-- The date range of data that requires a backfill
+If your syncs fail, you do not need to reach out to Segment Support to request a backfill. Once a successful sync takes place, 
+Segment will automatically load all of the data created since the last successful sync. 
+
 
 ## Can I change my schema names once they've been created?
 
-If you'd like to change the name of your schema:
+Segment stores the name of your hanging the name of your schema in the **SQL Settings** page without updating the name in your data warehouse causes the schema 
+to be split into two after the name is changed. 
 
-1. Open the Segment app. 
-2. Select your warehouse from the Sources tab. 
-3. On the source's overview page, select "Settings."
-4. Under the "Enable Source" section, disable your warehouse and click "Save Changes."   
-5. Select the "SQL Settings" tab. 
-6. Update the "Schema Name" field with your intended schema name and click "Save Changes."
-7. On the source's overview page, select "Basic."
-8. Under the "Enable Source" section, disable your warehouse and click "Save Changes."
+To change the name of your schema without disruptions: 
+
+1. Open the Segment app, select your warehouse from the Sources tab, and select **Settings.**
+2. Under the "Enable Source" section, disable your warehouse and click **Save Changes.**   
+3. Select the "SQL Settings" tab. 
+4. Update the "Schema Name" field with the new name for your schema and click **Save Changes.**
+5. Rename the schema in your Data Warehouse to match the new name in the Segment app. 
+6. Open the Segment app, select your warehouse from the Sources tab, and select **Settings.** On the source's settings page, select "Basic."
+7. Under the "Enable Source" section, enable your warehouse and click **Save Changes.**

@@ -3,7 +3,7 @@ title: Warehouse Schemas
 ---
 
 A **schema** describes the way that the data in a warehouse is organized. Schemas of warehouse data are organized into the following template:
-`<source>.<collection>.<property>`, for example `segment-engineering.tracks.userId`, where source refers to the source or project name (segment-engineering), collection refers to the event (tracks), and the property refers to the data being collected (userId).
+`<source>.<collection>.<property>`, for example `segment_engineering.tracks.user_id`, where source refers to the source or project name (segment_engineering), collection refers to the event (tracks), and the property refers to the data being collected (user_id). All schemas convert collection and property names from `CamelCase` to `snake_case`.
 
 > note "Warehouse column creation"
 > **Note:** Segment creates tables for each of your custom events in your warehouse, with columns for each event's custom properties. Segment does not allow unbounded `event` or `property` spaces in your data. Instead of recording events like "Ordered Product 15", use a single property of "Product Number" or similar.
@@ -412,15 +412,18 @@ Data types are set up in your warehouse based on the first value that comes in f
 
 The data types that Segment currently supports include:
 
-### `timestamp`
+#### `timestamp`
 
-### `integer`
+#### `integer`
 
-### `float`
+#### `float`
 
-### `boolean`
+#### `boolean`
 
-### `varchar`
+#### `varchar`
+
+> note " "
+> To change data types after they've been determined, please reach out to [Segment Support](https://segment.com/help/contact) for assistance. 
 
 ## Column Sizing
 

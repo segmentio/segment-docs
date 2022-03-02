@@ -3,10 +3,6 @@ title: Warehouse Syncs
 redirect_from: '/connections/warehouses/selective-sync/'
 ---
 
-<!--- The Warehouse Sync process prepares the raw data coming from a source and loads it into a warehouse destination. There are two phases to the sync process:
-1. **Preparation phase**: This is where Segment prepares the data coming from a source so that it's in the right format for the loading phase. 
-2. **Loading phase**: This is where Segment deduplicates data and the data loads into the warehouse destination. Any sync issues that occur in this phase can be traced back to your warehouse. -->
-
 Instead of constantly streaming data to the warehouse destination, Segment loads data to the warehouse in bulk at regular intervals. Before the data loads, Segment inserts and updates events and objects, and automatically adjusts the schema to make sure the data in the warehouse is inline with the data in Segment.
 
 {% include content/how-a-sync-works.md %}
@@ -17,13 +13,16 @@ Warehouses sync with all data coming from your source. However, Business plan me
 
 Your plan determines how frequently data is synced to your warehouse. 
 
-| Plan     | Frequency   |
-| -------- | ----------- |
-| Free     | Once a day  |
-| Team     | Twice a day |
-| Business | Up to 24 times a day. Generally, these syncs are fixed to the top of the hour (:00), but these times can vary. |
+| Plan      | Frequency                                                                                                      |
+| --------- | -------------------------------------------------------------------------------------------------------------- |
+| Free      | Once a day (every 86,400 seconds)                                                                              |
+| Team      | Twice a day (every 43,200 seconds)                                                                             |
+| Business* | Up to 24 times a day. Generally, these syncs are fixed to the top of the hour (:00), but these times can vary. |
 
-If you're a Business plan member and would like to adjust your sync frequency, you can do so using the Sync Schedule feature. To enable Sync Schedule, please go to **Warehouse** > **Settings** > **Sync Schedule**. 
+*If you're a Business plan member and would like to adjust your sync frequency, you can do so using the Selective Sync feature. To enable Selective Sync, please go to **Warehouse** > **Settings** > **Sync Schedule**. 
+
+> note "Why can't I sync more than 24 times per day?"
+> We do not set syncs to happen more than once per hour (ie, 24 times per day). The warehouse product is not designed for real-time data, so more frequent syncs would not necessarily be helpful.
 
 ## Sync History
 You can use the Sync History page to see the status and history of data updates in your warehouse. The Sync History page is available for every source connected to each warehouse. This page helps you answer questions like, “Has the data from a specific source been updated recently?” “Did a sync completely fail, or only partially fail?” and “Why wasn’t this sync successful?”
