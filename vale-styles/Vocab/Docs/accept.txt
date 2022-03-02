@@ -1,4 +1,6 @@
 (?:C|c)annonical
+(?:D|d)eduplicate
+(?:D|d)eduplication
 (?:G|g)tag
 (?:K|k)laviyo
 (?:L|l)ookback
