@@ -349,7 +349,7 @@ const updateDestinations = async () => {
     let connection_modes = getConnectionModes({
       components: destination.components,
       platforms: destination.supportedPlatforms,
-      browserUnbundlingSupported: destination.supportedFeatures.browserUnbundling,
+      browserUnbundling: destination.supportedFeatures.browserUnbundling,
       browserUnbundlingPublic: destination.supportedFeatures.browserUnbundlingPublic,
       methods: destination.supportedMethods
     })
