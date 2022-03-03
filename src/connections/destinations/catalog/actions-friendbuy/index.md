@@ -58,7 +58,7 @@ There are several fields that are required by the Friendbuy actions; these field
 * these action fields must be assigned mappings from your analytics events, and
 * the event fields that the action fields are mapped from must be populated with values of the appropriate type in your analytics calls.
 
-If the `analytics.identify` or `analytics.track` event fields are not appropriately populated then the corresponding Friendbuy track call will not be made.
+If the required event fields are missing or are not appropriately populated in an `analytics.identify` or `analytics.track` call then the corresponding Friendbuy track call will not be made and Friendbuy will not receive the event data for that call.
 
 | Track Event        | Required Fields                                   |
 |--------------------|---------------------------------------------------|
@@ -66,6 +66,8 @@ If the `analytics.identify` or `analytics.track` event fields are not appropriat
 | Track Purchase     | `orderId`, `amount`, `currency`, `products.price` |
 | Track Sign-Up      | `customerId`, `email`                             |
 | Track Custom Event | `eventType`, `eventProperties`, `customerId`      |
+
+When a problem with the event data is detected an error is logged to the browser console.
 
 ## Edit Friendbuy mappings
 
