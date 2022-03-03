@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: Trustpilot Destination
+id: 5c6e52858392d6000101d4c1
 ---
 [Trustpilot](https://www.trustpilot.com/) is an open and independent review platform. On Trustpilot, people can share and discover reviews of businesses, and businesses can gain insights and showcase their service and products performance through reviews.
 

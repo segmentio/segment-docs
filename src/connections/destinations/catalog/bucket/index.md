@@ -1,6 +1,7 @@
 ---
 title: Bucket Destination
 rewrite: true
+id: 5fabc0b00f88248bbce4db48
 ---
 [Bucket](https://bucket.so/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) features analytics for SaaS companies.
 

@@ -2,8 +2,8 @@
 title: Beamer Destination
 beta: true
 rewrite: true
+id: 5d2d8f56f159f30001b3c3a9
 ---
-
 [Beamer](https://www.getbeamer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a changelog and notification center that lets you announce new features, product updates, special offers and more.
 
 This destination is maintained by Beamer. For any issues with the destination, [contact the Beamer Support team](mailto:info@getbeamer.com).

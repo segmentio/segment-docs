@@ -2,8 +2,8 @@
 title: Google Tag Manager Destination
 hide-cmodes: true
 strat: google
+id: 54521fd625e721e32a72eeb9
 ---
-
 [Google Tag Manager](https://support.google.com/tagmanager) (GTM) is a tag management system that allows you to quickly and easily update tags and code snippets on your website or mobile apps. Once you add the Tag Manager snippet to your website or mobile app, you can configure tags using a web-based user interface without having to alter and deploy additional code. This reduces errors and frees you from having to involve a developer whenever you need to make changes. The Google Tag Manager Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-google-tag-manager).
 
 

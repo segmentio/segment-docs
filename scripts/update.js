@@ -16,7 +16,7 @@ const PAPI_URL = "https://api.segmentapis.com"
 const slugOverrides = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/slugs.yml`)))
 
 // This function connects with the Public API. It looks for the endpoint URL and a page token value.
-// The function is called in the updateSources and update Destination functions. 
+// The function is called in the updateSources and update Destination functions.
 // Functions let us reuse code easily. Instead of needing to write this out multiple times, I can define it once
 // and pass in the necessary details when I call it.
 const getCatalog = async (url, page_token = "MA==") => {
@@ -68,7 +68,7 @@ const slugify = (displayName) => {
 
 // This function does the actual work of adding the id value to the source and destination
 // Notice that the write to file step is commented out. This is to verify that the updated frontmatter
-// is correct before we write a whole bunch of files. 
+// is correct before we write a whole bunch of files.
 // Uncomment that line and remove the line above it to run it for real.
 const addIdToExisting = (integration) => {
   let itemURL = integration.url
@@ -80,7 +80,7 @@ const addIdToExisting = (integration) => {
       const body = f.body
       const content = attr + body
       console.log(attr)
-      //fs.writeFileSync(catalogPath, content)
+      fs.writeFileSync(catalogPath, content)
     }
   } catch (e) {
     console.log(error)
@@ -144,7 +144,7 @@ const updateDestinations = async () => {
     let slug = slugify(destination.name)
 
     let url = `connections/destinations/catalog/${slug}`
-  
+
     let updatedDestination = {
       id: destination.id,
       url

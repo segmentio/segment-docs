@@ -1,8 +1,8 @@
 ---
 title: CustomerSuccessBox Destination
 rewrite: true
+id: 5c9ce8b88171a10001f9eefa
 ---
-
 [CustomerSuccessBox](https://customersuccessbox.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is Outcome Driven Customer Success software, which helps maximize retention, drive product adoption and grow revenue for your B2B SaaS
 
 This destination is maintained by CustomerSuccessBox. For any issues with the destination, [contact the CustomerSuccessBox Support team](mailto:support@customersuccessbox.com).

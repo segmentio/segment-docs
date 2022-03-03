@@ -2,8 +2,8 @@
 title: TikTok Conversions
 hide-boilerplate: true
 hide-dossier: true
+id: 615cae349d109d6b7496a131
 ---
-
 {% include content/plan-grid.md name="actions" %}
 
 The TikTok Conversions Destination enables advertisers to send Segment events to report events directly to TikTok. Data shared can power TikTok solutions like dynamic product ads, custom targeting, campaign optimization and attribution.

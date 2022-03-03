@@ -5,8 +5,8 @@ hide-boilerplate: true
 hide-dossier: true
 redirect_from:
   - '/connections/destinations/catalog/actions-sprig-web'
+id: 61d8c74d174a9acd0e138b31
 ---
-
 <!-- In the section above, edit the `title` field. For example, Slack (Actions) Destination -->
 
 {% include content/plan-grid.md name="actions" %}

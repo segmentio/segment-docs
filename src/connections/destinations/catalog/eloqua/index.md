@@ -1,7 +1,7 @@
 ---
 title: Eloqua Destination
+id: 54521fd525e721e32a72eeac
 ---
-
 ## Page
 
 Client-side page-view tracking is achieved using an integration with the [Eloqua

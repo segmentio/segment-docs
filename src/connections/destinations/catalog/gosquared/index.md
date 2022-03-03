@@ -1,7 +1,7 @@
 ---
 title: GoSquared Destination
+id: 54521fd625e721e32a72eeba
 ---
-
 ## Getting Started
 
 When you enable GoSquared in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading GoSquared's Tracker onto your page.

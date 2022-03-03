@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Pendo Destination
+id: 575ef2fc80412f644ff139be
 ---
-
 [Pendo](http://www.pendo.io/) is a product cloud that helps product teams deliver software users love. With Pendo, product teams can understand product usage, collect feedback, measure NPS, onboard users, and announce new features in app—all without requiring engineering resources.
 
 Pendo maintains this destination. For any issues with the destination, [contact the Pendo Support team](https://help.pendo.io/).

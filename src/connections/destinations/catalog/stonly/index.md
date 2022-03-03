@@ -1,8 +1,8 @@
 ---
 title: Stonly Destination
 rewrite: true
+id: 5f354f1a928763feb8caf724
 ---
-
 [Stonly](https://stonly.com) helps make customers more successful and employees more productive by letting you easily create interactive guides and put them inside and around your website or app – without having to code anything.
 
 This destination is maintained by Stonly. For any issues with the destination, [contact their support team](mailto:support@stonly.com).

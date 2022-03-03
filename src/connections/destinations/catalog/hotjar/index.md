@@ -1,8 +1,8 @@
 ---
 title: Hotjar Destination
 rewrite: true
+id: 5913371070a3e552b9561a4e
 ---
-
 [Hotjar](https://help.hotjar.com/hc/en-us) is the fast & visual way to understand your users. It offers a full set of user experience tools: heatmaps, session recordings, forms reporting, funnels, and feedback tools, giving you everything your team needs to uncover user insights and make the right changes.
 
 The Segment Hotjar Destination allows you to both easily install Hotjar on your pages, and send [User Attributes](https://help.hotjar.com/hc/en-us/articles/360038394053-How-to-Setup-User-Attributes-in-4-Steps) information over Hotjar’s [Identify API](https://help.hotjar.com/hc/en-us/articles/360033640653) using the Segment Identify Spec. As of February 3rd, 2020, this allows you to:

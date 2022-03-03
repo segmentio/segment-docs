@@ -2,8 +2,8 @@
 title: CrowdPower Destination
 rewrite: true
 beta: true
+id: 5e59dad99437ab152550ce1f
 ---
-
 [CrowdPower](https://crowdpower.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a growth marketing platform that enables businesses to track key customer actions and deliver automated tailored communications to drive sales and increase engagement.
 
 This destination is maintained by CrowdPower. For any issues with the destination, [contact the CrowdPower Support team](mailto:support@crowdpower.io).

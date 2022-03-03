@@ -1,7 +1,7 @@
 ---
 title: Pinterest Destination
+id: 59526d7f70a3e552b957555c
 ---
-
 ## Getting Started
 
 When you enable the Pinterest Tag in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Pinterest Tag's tracking snippet onto your page. This means you should remove Pinterest Tag's snippet from your page.

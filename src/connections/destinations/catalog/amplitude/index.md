@@ -2,8 +2,8 @@
 title: Amplitude Destination
 hide-cmodes: true
 maintenance: true
+id: 54521fd525e721e32a72ee91
 ---
-
 [Amplitude](https://amplitude.com/) is an event tracking and segmentation
 platform for your web and mobile apps. By analyzing the actions your users
 perform, you can gain a better understanding to drive retention, engagement,

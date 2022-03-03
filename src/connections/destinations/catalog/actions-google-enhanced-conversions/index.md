@@ -3,8 +3,8 @@ title: Google Enhanced Conversions Destination
 strat: google
 hide-boilerplate: true
 hide-dossier: false
+id: 60ae8b97dcb6cc52d5d0d5ab
 ---
-
 > info ""
 > This document is about a feature that is in beta. This means that the destination is in active development, and some functionality may change before it becomes generally available.
 

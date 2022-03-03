@@ -1,8 +1,8 @@
 ---
 title: Indicative Destination
 rewrite: true
+id: 54521fd725e721e32a72eec4
 ---
-
 [Indicative](https://app.indicative.com/?utm_source=segment&utm_medium=partners&utm_campaign=setupguide#/login/register) is a behavioral analytics platform designed to help Marketing and Product teams optimize user engagement, conversion, and retention.
 
 ## Getting Started

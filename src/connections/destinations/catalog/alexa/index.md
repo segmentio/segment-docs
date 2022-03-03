@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: Alexa Destination
+id: 54521fd525e721e32a72ee90
 ---
 [Alexa](https://www.alexa.com/) helps improve your website's SEO and conduct competitive analysis. They help your business get better marketing results. The Alexa Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-alexa).
 

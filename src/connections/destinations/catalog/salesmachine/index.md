@@ -1,7 +1,7 @@
 ---
 title: Salesmachine Destination
+id: 560a21320a20f4e22f0fb5ca
 ---
-
 This destination is maintained by Salesmachine.
 
 ## Getting Started
