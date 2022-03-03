@@ -163,6 +163,7 @@ Segment can send the following group traits to HubSpot as special properties:
 - industry
 - phone
 - website
+- name
 
 
 ## Troubleshooting
