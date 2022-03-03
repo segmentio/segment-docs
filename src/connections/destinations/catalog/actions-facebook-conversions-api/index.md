@@ -55,7 +55,15 @@ Set up your Pixel to work with the Facebook Conversions API (Actions) destinatio
 
 {% include components/actions-fields.html %}
 
+## Server Event Parameter Requirements
 
+Facebook requires the `action_source` server event parameter for all events sent to the Conversions API. This parameter is used to specify where the conversions occurred. If `action_source` is set to 'website' then the `client_user_agent` and the `event_source_url` parameters are also required. Events sent to the Conversions API that do not meet the requirements may not be available for optimization, targeting, or measurement.
+
+| Server Event Parameter | Requirement                                 | Implementation                 p                                                                      |
+| ---------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `action_source`        | Always required                             | It is set automatically but it can be set manually.                                                  |
+| `client_user_agent`    | Only required if `action_source` = "website" | It must be set manually if using a server library. It is set automatically if using the Segment web library. |
+| `event_source_url`     | Only required if `action_source` = "website" | It must be set manually if using a server library. It is set automatically if using the Segment web library. |
 ## Configuration options
 
 The Facebook Conversions API (Actions) destination gives you several ways to implement your conversion tracking. You can use it with [Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/), or as a stand-alone alternative. You can read more about implementation options below and in [Facebook documentation](https://developers.facebook.com/docs/marketing-api/conversions-api/guides/end-to-end-implementation#pick-your-integration-type){:target="_blank"}.
