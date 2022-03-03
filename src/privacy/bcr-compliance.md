@@ -2,6 +2,7 @@
 title: Complying with Twilio's Binding Corporate Rules (BCRs)
 ---
 
+In response to the passage of the General Data Protection Regulation (GDPR) policy in the European Union, Twilio implemented a set of [Binding Corporate Rules (BCRs)](https://www.twilio.com/legal/binding-corporate-rules) that inform how Twilio, Segment, and Sendgrid store and process personal data. In order to be in alignment with Twilio's BCRs, Segment introduced a new data deletion process that allow customers to remove all of their workspace and user data immediately. 
 <!-- confirm how long a complete data purge takes -->
 
 ## What are Binding Corporate Rules?
