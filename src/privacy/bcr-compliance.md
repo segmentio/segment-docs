@@ -31,7 +31,7 @@ To delete the data for an individual user from you workspace, follow the instruc
 To delete the data for an entire source, send a request to the the Customer Success team by emailing [friends@segment.com](mailto:friends@segment.com) with your workplace slug, the source you'd like to delete data from, and the time frame for the data you'd like to delete. 
 
 > note "Deleting source data"
-> When Segment deletes your data for a particular source, they do not forward that deletion to sources or data storage providers associated with your account. To remove your data from external providers, please reach out to the individual providers about their deletion practices. 
+> When Segment deletes your data for a particular source, they do not forward that deletion to sources or data storage providers associated with your account. To remove your data from external providers, reach out to the individual providers about their deletion practices. 
 
 ### Deleting your workspace data
 
@@ -41,10 +41,10 @@ To delete all data from your workspace, including customer data:
 2. On the General Settings page, click the **Delete Workspace** button. 
 3. Follow the prompts on the pop-up to delete your workspace. 
 
-After you delete your workspace, Segment removes all data associated with your workspace within 30 days in a process called a [complete data purge](#what-is-a-complete-data-purge). 
+After you delete your workspace, Segment removes all data associated with your workspace within 30 days in a process called a [complete data purge](#what-is-a-complete-data-purge). For a status update on the deletion progress, raise a support ticket with the Customer Success team by emailing [friends@segment.com](mailto:friends@segment.com).
 
 > warning "Purging data from workspaces deleted prior to March 31, 2022"
-> If you deleted your workspace prior to March 31, 2022, and would like to have data associated with your workspace purged from Segment servers, please raise a support ticket with the Customer Success team by emailing [friends@segment.com](mailto:friends@segment.com). In your email to Customer Success, please include either the slug or the ID of the workspace you'd like to have purged from Segment servers. 
+> If you deleted your workspace prior to March 31, 2022, and would like to have data associated with your workspace purged from Segment servers, raise a support ticket with the Customer Success team by emailing [friends@segment.com](mailto:friends@segment.com). In your email to Customer Success, include either the slug or the ID of the workspace you'd like to have purged from Segment servers. 
 
 If you do not delete your data after you stop using Segment, it remains in Segment's internal servers until you submit a written request that your data be deleted. 
 
