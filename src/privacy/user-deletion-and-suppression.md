@@ -6,7 +6,7 @@ In keeping with Segment's commitment to GDPR and CCPA readiness, Segment offers 
 
 [Contact Support](https://segment.com/help/contact/) if you need to process more than 100,000 users within a 30 day period.
 
-> info "Business Plan Customers)"
+> info "Business Plan Customers"
 > If you use this feature to delete data, you can not Replay the deleted data. For standard Replay requests, you must wait for any pending deletions to complete, and you cannot submit new deletion requests for the period of time that Segment replays data for you.
 
 > info ""
