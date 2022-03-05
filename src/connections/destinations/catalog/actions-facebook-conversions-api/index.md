@@ -7,12 +7,6 @@ hide-dossier: false
 
 Facebook Conversions API (Actions) enables advertisers to send events from their servers directly to Facebook. Server-side events link to Facebook Pixel events, and process like browser pixel events. This means that server-side events are used in measurement, reporting, and optimization, just like browser pixel events.
 
-> info ""
-> This document is about a feature which is in beta. This means that the Facebook Conversions API (Actions) destination is in active development, and some functionality may change before it becomes generally available.
-
-> success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Facebook Conversions API Segment destination. There's also a page about the [non-Actions Facebook Conversions API destination](/docs/connections/destinations/catalog/facebook-pixel-server-side/). Both of these destinations receive data _from_ Segment.
-
 ## Benefits of Facebook Conversions API (Actions) vs Facebook Conversions API Classic
 
 The Facebook Conversions API (Actions) destination provides the following benefits over the classic Facebook Conversions API destination:
@@ -23,6 +17,18 @@ The Facebook Conversions API (Actions) destination provides the following benefi
 - **Support for identify calls**. Identify calls can be sent to Facebook as a standard or custom event.
 - **Support for multi-product arrays**. Product data nested within arrays, like the `products` array in the [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) event, can be sent to Facebook.
 - **Data normalization**. Data is normalized before it is hashed to ensure the hashed value matches Facebook Pixel (browser).
+
+## Other Facebook Destinations Supported by Segment
+This page is about the **Facebook Conversions API**. For documentation on other Facebook destinations, see the pages linked below.
+
+| **Facebook Destination**                                                                                    | Supported by Personas |
+| ----------------------------------------------------------------------------------------------------------- | --------------------- |
+| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                      | Yes                   |
+| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)**    | Yes                   |
+| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                                | No                    |
+| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)** | Yes                   |
+| **[Facebook Conversions API](/docs/connections/destinations/catalog/actions-facebook-conversions-api/)**    | Yes                   |
+
 
 ## Getting started
 
@@ -55,15 +61,6 @@ Set up your Pixel to work with the Facebook Conversions API (Actions) destinatio
 
 {% include components/actions-fields.html %}
 
-## Server Event Parameter Requirements
-
-Facebook requires the `action_source` server event parameter for all events sent to the Conversions API. This parameter is used to specify where the conversions occurred. If `action_source` is set to 'website' then the `client_user_agent` and the `event_source_url` parameters are also required. Events sent to the Conversions API that do not meet the requirements may not be available for optimization, targeting, or measurement.
-
-| Server Event Parameter | Requirement                                 | Implementation                 p                                                                      |
-| ---------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `action_source`        | Always required                             | It is set automatically but it can be set manually.                                                  |
-| `client_user_agent`    | Only required if `action_source` = "website" | It must be set manually if using a server library. It is set automatically if using the Segment web library. |
-| `event_source_url`     | Only required if `action_source` = "website" | It must be set manually if using a server library. It is set automatically if using the Segment web library. |
 ## Configuration options
 
 The Facebook Conversions API (Actions) destination gives you several ways to implement your conversion tracking. You can use it with [Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/), or as a stand-alone alternative. You can read more about implementation options below and in [Facebook documentation](https://developers.facebook.com/docs/marketing-api/conversions-api/guides/end-to-end-implementation#pick-your-integration-type){:target="_blank"}.
@@ -81,7 +78,7 @@ With the Facebook Conversions API (Actions) destination, you can choose any fiel
 
 ![the coalesce function](images/image1.png)
 
-You can send additional User Data to increase the match rate for events from a server source. Collect other fields from the browser, like User Agent, IP Address, and [Facebook's cookie parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and map them in the User Data object. See [Facebook's Customer Information Parameters](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters) for more information on User Data fields.
+You can send additional User Data to increase the match rate for events from a server source. Collect other fields from the browser, like User Agent, IP Address, and [Facebook's cookie parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and map them in the User Data object. See [Facebook's Customer Information Parameters](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters) for more information on User Data fields, and [Facebook’s Best Practices for Conversions API](https://www.facebook.com/business/help/308855623839366?id=818859032317965) for match rate best practices.
 
 ![the user data object](images/image2.png)
 
@@ -105,7 +102,7 @@ With the Facebook Conversions API (Actions) destination, you can choose any fiel
 
 ![the coalesce function](images/image1.png)
 
-You can send additional User Data to increase the match rate for events from a server source. Collect other fields from the browser, like User Agent, IP Address, and [Facebook's cookie parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and map them in the User Data object. See [Facebook's Customer Information Parameters](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters) for more information on User Data fields.
+You can send additional User Data to increase the match rate for events from a server source. Collect other fields from the browser, like User Agent, IP Address, and [Facebook's cookie parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and map them in the User Data object. See [Facebook's Customer Information Parameters](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters) for more information on User Data fields, and [Facebook’s Best Practices for Conversions API](https://www.facebook.com/business/help/308855623839366?id=818859032317965) for match rate best practices.
 
 ![the user data object](images/image2.png)
 
@@ -135,7 +132,7 @@ If you want to send a [Facebook standard event](https://developers.facebook.com/
 
 ### PII Hashing
 
-Segment creates a SHA-256 hash of the following fields:
+Segment creates a SHA-256 hash of the following fields before sending to Facebook:
 - External ID
 - Email
 - Phone
@@ -149,6 +146,10 @@ Segment creates a SHA-256 hash of the following fields:
 - Country
 
 If you use Facebook Pixel, the Pixel library also hashes the External ID. This means External IDs will match across Facebook Pixel and Facebook Conversions API if they use the External ID for [deduplication](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/#fbp-or-external-id){:target="_blank"}.
+
+### Server Event Parameter Requirements
+
+Facebook requires the `action_source` server event parameter for all events sent to the Facebook Conversions API. This parameter is used to specify where the conversions occurred. If `action_source` is set to 'website' then the `client_user_agent` and the `event_source_url` parameters are also required. Events sent to the Conversions API that do not meet the requirements may not be available for optimization, targeting, or measurement.
 
 ### Verify Events in Facebook
 

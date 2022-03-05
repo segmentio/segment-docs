@@ -1,8 +1,8 @@
 ---
 title: Facebook Conversions API destination
 rewrite: true
+maintenance: true
 beta: true
-strat: facebook
 redirect_from: '/connections/destinations/catalog/facebook-conversions-api/'
 hide-dossier: true
 ---
@@ -11,11 +11,8 @@ hide-dossier: true
 
 [Facebook Conversions API](https://developers.facebook.com/docs/marketing-api/conversions-api) allows advertisers to send events from their servers directly to Facebook. Server-Side events are linked to a pixel and are processed like browser pixel events. This means that Server-Side events are used in measurement, reporting, and optimization in the same way as browser pixel events.
 
-> warning "Server Event Parameter Requirements"
+> info "Server Event Parameter Requirements"
 > On February 15th 2021, Facebook began enforcing new requirements for server event parameters. After that date, events sent to the Conversions API that do not meet the new requirements might not be available for optimization, targeting, or measurement. For details on how to implement these requirements see [Server Event Parameter Requirements](/docs/connections/destinations/catalog/facebook-pixel-server-side/#server-event-parameter-requirements)
-
-> success ""
-> **Good to know**: This page is about the classic Facebook Conversions API Segment destination. There's also a page about the new [Facebook Conversions API (Actions) destination](/docs/connections/destinations/catalog/actions-facebook-conversions-api/). Both of these destinations are in Public Beta and receive data _from_ Segment. Segment recommends the new Facebook Conversions API (Actions) destination for additional functionality and flexibility.
 
 > info "Destination name change"
 > Facebook Conversions API was renamed from Facebook Pixel Server-Side.
