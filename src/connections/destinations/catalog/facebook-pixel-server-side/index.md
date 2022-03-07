@@ -12,7 +12,7 @@ hide-dossier: true
 [Facebook Conversions API](https://developers.facebook.com/docs/marketing-api/conversions-api) allows advertisers to send events from their servers directly to Facebook. Server-Side events are linked to a pixel and are processed like browser pixel events. This means that Server-Side events are used in measurement, reporting, and optimization in the same way as browser pixel events.
 
 > info "Server Event Parameter Requirements"
-> On February 15th 2021, Facebook began enforcing new requirements for server event parameters. After that date, events sent to the Conversions API that do not meet the new requirements might not be available for optimization, targeting, or measurement. For details on how to implement these requirements see [Server Event Parameter Requirements](/docs/connections/destinations/catalog/facebook-pixel-server-side/#server-event-parameter-requirements)
+> On February 15th, 2021, Facebook began enforcing new requirements for server event parameters. After that date, events sent to the Conversions API that do not meet the new requirements might not be available for optimization, targeting, or measurement. For details on how to implement these requirements see [Server Event Parameter Requirements](/docs/connections/destinations/catalog/facebook-pixel-server-side/#server-event-parameter-requirements)
 
 > info "Destination name change"
 > Facebook Conversions API was renamed from Facebook Pixel Server-Side.
