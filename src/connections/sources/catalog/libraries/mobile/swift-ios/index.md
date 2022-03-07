@@ -12,6 +12,7 @@ If you’re migrating to Analytics-Swift from a different mobile library, you ca
 > info ""
 > Analytics-Swift currently supports [these destinations](#supported-destinations), with more to follow.
 
+
 ## Getting Started
 To get started with the Analytics-Swift mobile library:
 
@@ -405,6 +406,7 @@ Segment supports these destinations for Analytics Swift, with more to come:
 * [Facebook App Events](https://github.com/segment-integrations/analytics-swift-facebook-app-events)
 * [Firebase](https://github.com/segment-integrations/analytics-swift-facebook-app-events)
 * [Mixpanel](https://github.com/segment-integrations/analytics-swift-mixpanel)
+
 
 ## Changelog
 [View the Analytics-Swift changelog on GitHub](https://github.com/segmentio/analytics-swift/releases).  

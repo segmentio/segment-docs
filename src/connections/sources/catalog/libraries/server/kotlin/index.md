@@ -6,11 +6,8 @@ redirect_from:
 
 With Analytics-Kotlin, you can send data using Kotlin applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics-Kotlin enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations.
 
-> info ""
-> Analytics-Kotlin is in public beta and currently supports [these destinations](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app-destinations/src/main/java/com/segment/analytics/destinations/plugins){:target="_blank"} with Segment actively adding more to the list. If you don't see your destination, you can [build your own](/docs/connections/sources/catalog/libraries/mobile/kotlin-android#build-your-own-destination). Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this library.
-
 > success ""
-> You can choose to set up your Analytics Kotlin source on [mobile](/docs/connections/sources/catalog/libraries/mobile/kotlin-android) or on the [server](/docs/connections/sources/catalog/libraries/server/kotlin). Segment doesn’t support device-mode destinations on the server-side.
+> You can choose to set up your Analytics Kotlin source on [mobile](/docs/connections/sources/catalog/libraries/mobile/kotlin-android) or on the server. Segment doesn’t support device-mode destinations on the server-side.
 
 If you’re migrating to Analytics-Kotlin from a different mobile library, you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/).
 
@@ -397,6 +394,7 @@ analytics.flush("SomePlugin")
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
+
 
 ## Changelog
 [View the Analytics-Kotlin changelog on GitHub](https://github.com/segmentio/analytics-kotlin/releases).
