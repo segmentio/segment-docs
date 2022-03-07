@@ -7,11 +7,11 @@ redirect_from:
 
 With Analytics-Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS and Linux applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics-Swift enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations. Analytics-Swift also offers default implementations to help you maintain destinations and integrations.
 
-> info ""
-> Analytics-Swift is in public beta and currently supports [these destinations](https://github.com/segmentio/analytics-swift/tree/main/Examples/destination_plugins){:target="_blank"} with Segment actively adding more to the list. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this library.
-
-
 If you’re migrating to Analytics-Swift from a different mobile library, you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift-ios/migration/).
+
+> info ""
+> Analytics-Swift currently supports [these destinations](#supported-destinations), with more to follow.
+
 
 ## Getting Started
 To get started with the Analytics-Swift mobile library:
@@ -398,6 +398,15 @@ Copy the IDFACollection plugin to your project. You can also use this [IDFAColle
 let idfaPlugin = IDFACollection()
 analytics.add(plugin: idfaPlugin)
 ```
+
+## Supported Destinations
+Segment supports these destinations for Analytics Swift, with more to come:
+* [Amplitude](https://github.com/segment-integrations/analytics-swift-amplitude)
+* [Appsflyer](https://github.com/segment-integrations/analytics-swift-appsflyer)
+* [Facebook App Events](https://github.com/segment-integrations/analytics-swift-facebook-app-events)
+* [Firebase](https://github.com/segment-integrations/analytics-swift-facebook-app-events)
+* [Mixpanel](https://github.com/segment-integrations/analytics-swift-mixpanel)
+
 
 ## Changelog
 [View the Analytics-Swift changelog on GitHub](https://github.com/segmentio/analytics-swift/releases).  
