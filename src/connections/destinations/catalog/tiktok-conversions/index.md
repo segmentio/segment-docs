@@ -6,7 +6,7 @@ hide-dossier: true
 
 {% include content/plan-grid.md name="actions" %}
 
-The TikTok Conversions Destination enables advertisers to send Segment events to directly to TikTok. Data shared can power TikTok solutions like dynamic product ads, custom targeting, campaign optimization and attribution. Advertisers will be able to see their event data in TikTok Events Manager.
+The TikTok Conversions Destination enables advertisers to send Segment events directly to TikTok. Data shared can power TikTok solutions like dynamic product ads, custom targeting, campaign optimization and attribution. Advertisers can see their event data in TikTok Events Manager.
 
 ## Benefits of TikTok Conversions
 The TikTok Conversions destination provides the following benefits:
