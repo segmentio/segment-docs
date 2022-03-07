@@ -96,7 +96,7 @@ Build your own Mappings! Combine supported [triggers](/docs/connections/destinat
   <tbody>
 {% for field in action.fields %}
 <tr>
-<td>{{field.label}}</td>
+<td>{{field.label}}{% if field.required %}<span class="required" title="This field is required">*</span>{% endif %}</td>
 <td>{% if field.type %}Type: <code>{{field.type}}</code><br />{%endif%}{{field.description | markdownify}}</td>
 </tr>
 {%endfor%}

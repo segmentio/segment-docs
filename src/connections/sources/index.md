@@ -66,15 +66,14 @@ analytics.identify('user_123', {
 
 Our Mobile SDKs are the best way to simplify your iOS, Android, and Xamarin app tracking. We recommend them over server-side sources as the default installation for any mobile app.
 
-- [iOS SDK](/docs/connections/sources/catalog/libraries/mobile/ios)
-- [Android SDK](/docs/connections/sources/catalog/libraries/mobile/android)
-- [Android Wear SDK](/docs/connections/sources/catalog/libraries/mobile/android/wear)
-- [Xamarin SDK](/docs/connections/sources/catalog/libraries/mobile/xamarin)
 - [AMP](/docs/connections/sources/catalog/libraries/mobile/amp)
+- [Android](/docs/connections/sources/catalog/libraries/mobile/android)
+- [Android Wear](/docs/connections/sources/catalog/libraries/mobile/android/wear)
+- [iOS](/docs/connections/sources/catalog/libraries/mobile/ios)
+- [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/)
 - [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native)
-
-> info "Pilot Libraries"
-> Pilot releases of the [Analytics-Swift](https://github.com/segmentio/analytics-swift) and [Analytics-Kotlin](https://github.com/segmentio/analytics-kotlin) libraries are available. This library is governed by [Segment’s First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/), and should not be used in production scenarios.
+- [Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios/)
+- [Xamarin](/docs/connections/sources/catalog/libraries/mobile/xamarin)
 
 ---
 

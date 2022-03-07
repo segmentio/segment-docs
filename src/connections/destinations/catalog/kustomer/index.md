@@ -6,8 +6,6 @@ rewrite: true
 
 This destination is maintained by Kustomer. For any issues with the destination, [contact the Kustomer Support team](mailto:support@kustomer.com).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
