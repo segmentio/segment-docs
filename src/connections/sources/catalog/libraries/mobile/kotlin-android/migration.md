@@ -4,7 +4,7 @@ strat: kotlin
 ---
 
 > info ""
-> Analytics-Kotlin supports [these destinations](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/#supported-destinations) with more to come. 
+> Analytics-Kotlin supports [these destinations](/docs/connections/sources/catalog/libraries/mobile/kotlin-android#supported-destinations) with more to come. 
 
 If you’re using a different library such as Analytics-Android, follow these steps to migrate to the Analytics-Kotlin library:
 

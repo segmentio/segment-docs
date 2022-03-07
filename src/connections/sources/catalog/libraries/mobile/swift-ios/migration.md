@@ -4,7 +4,7 @@ strat: swift
 ---
 
 > info ""
-> Analytics-Swift supports [these destinations](/docs/connections/sources/catalog/libraries/mobile/swift-ios/#supported-destinations) with more to come.
+> Analytics-Swift supports [these destinations](/docs/connections/sources/catalog/libraries/mobile/swift-ios#supported-destinations) with more to come.
 
 If you’re using a different mobile library such as Analytics-iOS, follow these steps to migrate to the Analytics-Swift library:
 
