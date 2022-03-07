@@ -78,7 +78,7 @@ With the Facebook Conversions API (Actions) destination, you can choose any fiel
 
 ![the coalesce function](images/image1.png)
 
-You can send additional User Data to increase the match rate for events from a server source. Collect other fields from the browser, like User Agent, IP Address, and [Facebook's cookie parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and map them in the User Data object. See [Facebook's Customer Information Parameters](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters) for more information on User Data fields, and [Facebook’s Best Practices for Conversions API](https://www.facebook.com/business/help/308855623839366?id=818859032317965) for match rate best practices.
+You can send additional User Data to increase the match rate for events from a server source. Collect other fields from the browser, like User Agent, IP Address, and [Facebook's cookie parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and map them in the User Data object. See [Facebook's Customer Information Parameters](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters){:target="_blank"} for more information on User Data fields, and [Facebook’s Best Practices for Conversions API](https://www.facebook.com/business/help/308855623839366?id=818859032317965){:target="_blank"} for match rate best practices.
 
 ![the user data object](images/image2.png)
 
@@ -102,7 +102,7 @@ With the Facebook Conversions API (Actions) destination, you can choose any fiel
 
 ![the coalesce function](images/image1.png)
 
-You can send additional User Data to increase the match rate for events from a server source. Collect other fields from the browser, like User Agent, IP Address, and [Facebook's cookie parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and map them in the User Data object. See [Facebook's Customer Information Parameters](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters) for more information on User Data fields, and [Facebook’s Best Practices for Conversions API](https://www.facebook.com/business/help/308855623839366?id=818859032317965) for match rate best practices.
+You can send additional User Data to increase the match rate for events from a server source. Collect other fields from the browser, like User Agent, IP Address, and [Facebook's cookie parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and map them in the User Data object. See [Facebook's Customer Information Parameters](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters){:target="_blank"} for more information on User Data fields, and [Facebook’s Best Practices for Conversions API](https://www.facebook.com/business/help/308855623839366?id=818859032317965){:target="_blank"} for match rate best practices.
 
 ![the user data object](images/image2.png)
 
@@ -149,7 +149,7 @@ If you use Facebook Pixel, the Pixel library also hashes the External ID. This m
 
 ### Server Event Parameter Requirements
 
-Facebook requires the `action_source` server event parameter for all events sent to the Facebook Conversions API. This parameter is used to specify where the conversions occurred. If `action_source` is set to 'website' then the `client_user_agent` and the `event_source_url` parameters are also required. Events sent to the Conversions API that do not meet the requirements may not be available for optimization, targeting, or measurement.
+Facebook requires the `action_source` server event parameter for all events sent to the Facebook Conversions API. This parameter specifies where the conversions occur. If `action_source` is set to **website**, then the `client_user_agent` and the `event_source_url` parameters are also required. Events sent to the Conversions API that don't meet the requirements may not be available for optimization, targeting, or measurement.
 
 ### Verify Events in Facebook
 

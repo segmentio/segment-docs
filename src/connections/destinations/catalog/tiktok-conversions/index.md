@@ -43,7 +43,11 @@ The TikTok Conversions destination is configured to use the TikTok Events API. T
 
 ### Other Standard Events
 
-If you want to send a [TikTok standard event](https://ads.tiktok.com/marketing_api/docs?id=1701890979375106){:target="_blank"} that Segment doesn't have a prebuilt mapping for, you can use the [Report Web Event action](/docs/connections/destinations/catalog/tiktok-conversions/#report-web-event) to send the standard event. For example, if you want to send a `CompleteRegistration` event, create a mapping for Report Web Event, set up your Event Trigger criteria for completed registrations, and input a literal string of "CompleteRegistration" as the Event Name.
+If you want to send a [TikTok standard event](https://ads.tiktok.com/marketing_api/docs?id=1701890979375106){:target="_blank"} that Segment doesn't have a prebuilt mapping for, you can use the [Report Web Event action](/docs/connections/destinations/catalog/tiktok-conversions/#report-web-event) to send the standard event. For example, if you want to send a `CompleteRegistration` event: 
+1. Create a mapping for Report Web Event. 
+2. Set up your Event Trigger criteria for completed registrations. 
+3. Input a literal string of "CompleteRegistration" as the Event Name.
+
 
 ### PII Hashing
 
