@@ -8,15 +8,15 @@ In response to the passage of the General Data Protection Regulation (GDPR) poli
 
 [Binding Corporate Rules (BCRs)](https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection/binding-corporate-rules-bcr_en) are enforceable, legally binding codes of conduct that explain the ways companies store and process personal data. These codes contain information about data protection principles, tools used to protect the security of your data, and a method of accountability, or some way that proves the BCRs are externally (outside of the company) and internally (inside of the company) binding.  BCRs are often specific to the storage and transfer (Controller) or processing (Processor) of personal data. 
 
-Twilio has two sets of BCRs: a [Controller policy](https://www.twilio.com/legal/bcr/controller) and a [Processor policy](https://www.twilio.com/legal/bcr/processor). Segment, as a processor of individual data, complies with the Processor policy.
+Twilio has two BCR policies: a [Controller policy](https://www.twilio.com/legal/bcr/controller) and a [Processor policy](https://www.twilio.com/legal/bcr/processor). Segment, as a processor of individual data, complies with the Processor policy.
 
 ### Where can I learn more about Twilio's Binding Corporate Rules?
  
-You can learn more about Twilio's Binding Corporate Rules (BCRs) by reading the [latest version of the BCRs](https://www.twilio.com/legal/bcr) or by reaching out to privacy@twilio.com.
+You can learn more about Twilio's Binding Corporate Rules (BCRs) by reading the [full version on twilio.com/legal](https://www.twilio.com/legal/bcr) or by reaching out to [privacy@twilio.com](mailto:privacy@twilio.com).
 
 ### What do Twilio's Binding Corporate Rules mean for my data?
 
-Twilio's BCRs inform the way your user data must be stored and processed. While the ways Segment processes and stores user data are already in compliance with Twilio BCRs, [additional data deletion methods](#how-can-i-delete-data-from-my-workspace) were added to comply with the ["Storage limitation"](https://www.twilio.com/legal/bcr/processor#part-ii-our-obligations) section of the Processor policy. These new data deletion methods allow you to delete the data associated with [individual users](#deleting-individual-user-data), [sources](#deleting-data-from-a-source), and your [workspace](#deleting-your-workspace-data). 
+Twilio's BCRs inform the way your user data must be stored, processed, and deleted. While the ways Segment processes and stores user data are already in compliance with Twilio BCRs, [additional data deletion methods](#how-can-i-delete-data-from-my-workspace) were added to comply with the ["Storage limitation"](https://www.twilio.com/legal/bcr/processor#part-ii-our-obligations) section of the Processor policy. These new data deletion methods allow you to delete the data associated with [individual users](#deleting-individual-user-data), [sources](#deleting-data-from-a-source), and your [workspace](#deleting-your-workspace-data). 
 
 ## How can I delete data from my workspace?
 
@@ -42,7 +42,7 @@ To delete all data from your workspace, including customer data:
 After you delete your workspace, Segment removes all data associated with your workspace within 30 days in a process called a [complete data purge](#what-is-a-complete-data-purge). For a data purge status update, create a support ticket with the Customer Success team by emailing [friends@segment.com](mailto:friends@segment.com).
 
 > warning "Purging data from workspaces deleted prior to March 31, 2022"
-> If you deleted your workspace prior to March 31, 2022, and would like to have data associated with your workspace purged from Segment servers, raise a support ticket with the Customer Success team by emailing [friends@segment.com](mailto:friends@segment.com). In your email to Customer Success, include either the slug or the ID of the workspace you'd like to have purged from Segment servers. 
+> If you deleted your workspace prior to March 31, 2022, and would like to have data associated with your workspace purged from Segment servers, raise a support ticket with the Customer Success team by emailing [friends@segment.com](mailto:friends@segment.com). In your email to Customer Success, include either the slug or the ID of the workspace you'd like to have purged from internal Segment servers. 
 
 If you do not delete your data after you stop using Segment, it remains in Segment's internal servers until you submit a written request that your data be deleted. 
 
