@@ -4,7 +4,7 @@ strat: swift
 ---
 
 > info ""
-> Analytics-Swift is in public beta and currently supports [these destinations](https://github.com/segmentio/analytics-swift/tree/main/Examples/destination_plugins){:target="_blank"} with Segment actively adding more to the list. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this library.
+> Analytics-Swift currently supports [these destinations](/docs/connections/sources/catalog/libraries/mobile/swift-ios/#supported-destinations) with Segment actively adding more to the list.
 
 If you’re using a different mobile library such as Analytics-iOS, follow these steps to migrate to the Analytics-Swift library:
 
