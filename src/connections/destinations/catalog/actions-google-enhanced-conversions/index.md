@@ -25,7 +25,7 @@ The Google Enhanced Conversions destination enables you to improve the accuracy 
 7. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
 > info
-> The Conversion ID is a global setting because it is an account-level ID that is the same for all conversion actions in your Google Ads account. The Conversion Label is unique to each conversion action, and is therefore configured per Mapping.
+> The Conversion ID is a global setting because it's an account-level ID that's the same for all conversion actions in your Google Ads account. The Conversion Label is unique to each conversion action and is therefore configured per Mapping.
 
 {% include components/actions-fields.html content1=conv_label section1="postConversion" content2=test_mapping section2="postConversion" %}
 
