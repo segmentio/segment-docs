@@ -1,8 +1,8 @@
 ---
 title: ChurnZero Destination
 rewrite: true
+id: 5c6386ce6b340800017691fa
 ---
-
 [ChurnZero](https://churnzero.net/) is a real-time Customer Success platform that helps subscription businesses fight churn, expand current accounts, increase product adoption and optimize the customer experience.
 
 This destination is maintained by ChurnZero. For any issues with the destination, [contact the ChurnZero Support team](mailto:support@churnzero.net).

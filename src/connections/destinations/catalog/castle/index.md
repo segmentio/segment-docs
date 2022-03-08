@@ -1,7 +1,7 @@
 ---
 title: Castle Destination
+id: 56a8f566e954a874ca44d3b0
 ---
-
 Once you enable the Castle integration, the [Castle JavaScript snippet](https://docs.castle.io/docs/sdk-browser) is placed on your website, and user data starts appearing in the Castle dashboard.
 Client-side tracking works out of the box, however **your existing server-side calls need to be extended** with data from the incoming request.
 

@@ -1,7 +1,7 @@
 ---
 title: Zendesk Source
+id: 3hbak7a9
 ---
-
 {% include content/source-region-unsupported.md %}
 
 [Zendesk](https://www.zendesk.com/) is a customer service platform for enterprises, which provides a customer support platform that allows quicker and easier interaction between businesses and customers.

@@ -1,8 +1,8 @@
 ---
 title: Vidora Destination
 rewrite: true
+id: 5ff67d3d4b6491271c0deae0
 ---
-
 [Vidora](https://vidora.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides a No Code Machine Learning Platform for Marketing and Product teams to quickly and easily transform raw data into predictions. Examples include [predicting future customer behaviors](https://www.vidora.com/docs/category/overview/predict-future-behavior-use-cases/) or [predicting customer attributes](https://www.vidora.com/docs/category/overview/predict-attributes-use-cases/).
 
 This destination is maintained by Vidora. For any issues with the destination, [contact the Vidora Support team](mailto:support@vidora.com).

@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: Amazon Kinesis Destination
+id: 57da359580412f644ff33fb9
 ---
 [Amazon Kinesis](https://aws.amazon.com/kinesis/) enables you to build custom applications that process or analyze streaming data for specialized needs. Amazon Kinesis Streams can continuously capture and store terabytes of data per hour from hundreds of thousands of sources such as website clickstreams, financial transactions, social media feeds, IT logs, and location-tracking events.
 

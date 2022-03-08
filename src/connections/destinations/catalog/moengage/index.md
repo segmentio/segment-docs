@@ -1,7 +1,7 @@
 ---
 title: MoEngage Destination
+id: 55b280290a20f4e22f0fb3d6
 ---
-
 ## Getting Started
 
 Once you add the Segment-MoEngage library to your app, you can enable MoEngage from the Segment App. These new settings can take up to an hour to propagate to your existing users. For new users, it'll be instantaneous!

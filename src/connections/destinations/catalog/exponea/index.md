@@ -2,8 +2,8 @@
 title: Exponea Destination
 rewrite: true
 beta: true
+id: 5d4d88bbd02041672e51e3ca
 ---
-
 [Exponea](https://exponea.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Customer Data & Experience Platform (CDXP) which creates a unified source of customer intelligence in real-time, ready for immediate activation using its own built‑in omnichannel marketing systems (web, email, push, mobile, text messages,etc.) powered by customer-centric analytics and artificial intelligence (product recommendations and predictions).
 
 This destination is maintained by Exponea. For any issues with the destination, contact [the Exponea Support team](mailto:support@exponea.com).

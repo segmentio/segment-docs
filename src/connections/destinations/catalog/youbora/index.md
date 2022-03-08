@@ -1,7 +1,7 @@
 ---
 title: Youbora Destination
+id: 59c04bd6432df886f42eea37
 ---
-
 ### Web Destination
 
 When you enable Youbora in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Youbora's Javascript onto your page. (This means you should remove Youbora's snippet from your page.)

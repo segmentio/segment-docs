@@ -3,7 +3,15 @@ title: Google Enhanced Conversions Destination
 strat: google
 hide-boilerplate: true
 hide-dossier: false
+id: 60ae8b97dcb6cc52d5d0d5ab
 ---
+
+> info ""
+> This document is about a feature that is in beta. This means that the destination is in active development, and some functionality may change before it becomes generally available.
+
+> success ""
+> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Google Enhanced Conversions Segment destination. 
+
 
 The Google Enhanced Conversions destination enables you to improve the accuracy of your conversion measurement. You can supplement existing conversion tags by sending first-party customer conversion data from your website, such as email address, to Google Ads. Segment hashes this data and sends it in a privacy-safe way. Google matches hashed data with signed-in Google accounts to attribute the conversion to ad events, such as clicks or views. To learn more about Google Enhanced Conversions, see Google's documentation [About enhanced conversions](https://support.google.com/google-ads/answer/9888656?hl=en-GB){:target="_blank"}.
 

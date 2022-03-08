@@ -2,8 +2,8 @@
 title: Branch Destination
 rewrite: true
 hide-personas-partial: true
+id: 5642909ae954a874ca44c582
 ---
-
 [Branch](https://branch.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) empowers you to increase mobile revenue with enterprise-grade links built to acquire, engage, and measure across all devices, channels, and platforms. An industry-leading mobile measurement and deep linking platform, trusted by the most top ranking apps to increase efficiency and revenue.
 
 ---
