@@ -1,8 +1,8 @@
 ---
 title: Clicky Destination
 rewrite: true
+id: 54521fd525e721e32a72eea2
 ---
-
 [Clicky](https://clicky.com/) is a web analytics tool that enables you to monitor, analyze, and react to your blog or web site's traffic in real time. Clicky supports user segmentation, so marketers can define and track customers based on unique constraints like user action, traffic source, location, or device. Additionally, it allows on-site analytics in order to track total visitors on site, pages currently viewed, and user actions like pageviews, downloads, sign ups, and session duration.
 
 Our Clicky destination code is open-source on GitHub. You can check out the code [here](https://github.com/segment-integrations/analytics.js-integration-clicky).

@@ -1,9 +1,8 @@
 ---
-
 title: Markettailor destination
 rewrite: true
+id: 6096714984bdd26c427c9250
 ---
-
 [Markettailor](https://www.markettailor.io/), helps B2B marketers create personalized websites without code, leveraging company data, audience insights, and recommendations.
 
 Markettailor maintains this destination. For any issues with the destination, contact the Markettailor Support team.

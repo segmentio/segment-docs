@@ -1,8 +1,8 @@
 ---
 title: Retina AI Destination
 rewrite: true
+id: 5f287bfa332cce0b1ed18331
 ---
-
 # Retina AI Segment Destination
 
 [Retina AI](https://retina.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a customer intelligence partner that provides accurate **customer-level lifetime value** metrics at or before their first transaction. You can use this to improve targeting, ad relevance, conversion rates, and customer loyalty.

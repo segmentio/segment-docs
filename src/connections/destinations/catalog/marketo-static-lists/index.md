@@ -2,8 +2,8 @@
 title: Marketo Static Lists Destination
 hide-boilerplate: true
 strat: adobe
+id: 5b73515e6170785a5e62978c
 ---
-
 > note "Marketo vs Marketo Static Lists Destinations"
 > This page is about the **Marketo Static Lists** destination developed specifically for use with Segment Personas. Marketo has strict API usage limits on the [main Marketo destination](/docs/connections/destinations/catalog/marketo-v2/), so although the main destination can receive events from Personas, we strongly recommend that you use the Marketo *Static Lists* destination with Personas instead.
 

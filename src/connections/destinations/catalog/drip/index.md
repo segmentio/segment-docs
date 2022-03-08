@@ -1,7 +1,7 @@
 ---
 title: Drip Destination
+id: 54521fd525e721e32a72eeaa
 ---
-
 Our Drip destination code is all open-source on GitHub if you want to check it out: [Javascript](https://github.com/segment-integrations/analytics.js-integration-drip),(iOS and Android work using the server destination).
 
 ## Getting Started

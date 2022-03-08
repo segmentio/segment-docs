@@ -2,6 +2,7 @@
 title: Modern Pricing Destination
 rewrite: true
 hide-personas-partial: true
+id: 5d65e2aa4da0623cbe367a05
 ---
 [Modern Pricing](https://modernpricing.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides intelligent, real-time pricing recommendations for every potential customer visiting your web application.
 

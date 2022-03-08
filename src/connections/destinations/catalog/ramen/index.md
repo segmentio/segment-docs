@@ -1,7 +1,7 @@
 ---
 title: Ramen Destination
+id: 558c9d1a0a20f4e22f0fb3bb
 ---
-
 ## Getting Started
 
 When you enable Ramen in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Ramen's JavaScript library onto your page. This means you should remove Ramen's snippet from your page if you already have it there.

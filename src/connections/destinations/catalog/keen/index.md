@@ -1,7 +1,7 @@
 ---
 title: Keen Destination
+id: 54521fd825e721e32a72eeca
 ---
-
 ## Getting Started
 
 When you enable Keen in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading `keen.js` onto your page. This means you should remove Keen's snippet from your page.

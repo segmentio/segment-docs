@@ -4,6 +4,7 @@ rewrite: true
 source-type: object
 strat: adobe
 beta: true
+id: VOXa199Bdm
 ---
 <!-- Marketo is listed as an object source, but doesn't appear in our configapi source catalog, so leave the "source-type" set here -->
 
