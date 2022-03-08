@@ -2,7 +2,7 @@
 title: Twilio's Binding Corporate Rules (BCRs)
 ---
 
-In response to the passage of the General Data Protection Regulation (GDPR) policy in the European Union, Twilio implemented a set of [Binding Corporate Rules (BCRs)](https://www.twilio.com/legal/binding-corporate-rules) that inform how Segment stores, processes, and deletes personal data. To be in alignment with Twilio's BCRs, Segment introduced a new data deletion process that allows customers to remove all of their workspace data within 30 days of deleting their workspace. 
+In response to the passage of the General Data Protection Regulation (GDPR) policy in the European Union, Twilio implemented a set of [Binding Corporate Rules (BCRs)](https://www.twilio.com/legal/binding-corporate-rules) that inform how Segment stores, processes, and deletes personal data. To align with Twilio's BCRs, Segment introduced a new data deletion process that allows customers to remove all of their workspace data within 30 days of deleting their workspace. 
 
 ## What are Binding Corporate Rules?
 
@@ -20,7 +20,7 @@ Twilio's BCRs inform the way your user data must be stored, processed, and delet
 
 ## How can I delete data from my workspace?
 
-You can choose to delete the data from an individual user, an entire source, or your entire workspace. 
+You can delete data from an individual user, an entire source, or your entire workspace. 
 
 ### Delete individual user data
 To delete the data for an individual user from you workspace, follow the instructions on the [User Deletion and Suppression](/docs/privacy/user-deletion-and-suppression) page.
