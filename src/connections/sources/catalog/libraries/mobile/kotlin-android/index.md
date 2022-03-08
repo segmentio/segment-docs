@@ -8,7 +8,7 @@ id: 9EMcTqiKok
 With Analytics-Kotlin, you can send data using Kotlin applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics-Kotlin enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations.
 
 > info ""
-> Analytics Kotlin is in public beta and currently supports [these destinations](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app-destinations/src/main/java/com/segment/analytics/destinations/plugins){:target="_blank"} with Segment actively adding more to the list. If you don't see your destination, you can [build your own](#build-your-own-destination). <br>Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this library.
+> Segment supports [these destinations](#supported-destinations) with more to come. If you don't see your destination, you can [build your own](#build-your-own-destination).
 
 > success ""
 > You can choose to set up your Analytics Kotlin source on [mobile](/docs/connections/sources/catalog/libraries/mobile/kotlin-android) or on the [server](/docs/connections/sources/catalog/libraries/server/kotlin). Segment doesn’t support device-mode destinations on the server-side.
@@ -42,7 +42,7 @@ To get started with the Analytics-Kotlin mobile library:
 
     ```java
       // Create an analytics client with the given application context and Segment write key.
-      // NOTE: in android, application context is required to pass as the second parameter. 
+      // NOTE: in android, application context is required to pass as the second parameter.
       Analytics("YOUR_WRITE_KEY", applicationContext) {
           // Automatically track Lifecycle events
           trackApplicationLifecycleEvents = true
@@ -85,7 +85,7 @@ To get started with the Analytics-Kotlin mobile library:
     ```
 
 5. Enable Java 8+ API desugaring.
-   
+
     The SDK internally uses a number of Java 8 language APIs through desugaring. Make sure your project either [enables desugaring](https://developer.android.com/studio/write/java8-support#library-desugaring)) or requires a minimum API level of 26.
 
 ## Tracking Methods
@@ -446,6 +446,14 @@ Segment recommends you to test your destination implementation end-to-end. Send 
 
 ## Compatibility
 If you use a Java codebase, please refer to the [Java Compatibility docs](https://github.com/segmentio/analytics-kotlin/blob/main/JAVA_COMPAT.md){:target="_blank"} for sample uses.
+
+## Supported Destinations
+Segment currently supports these destinations for Analytics Kotlin and is actively adding more:
+* [Amplitude](https://github.com/segment-integrations/analytics-kotlin-amplitude)
+* [Appsflyer](https://github.com/segment-integrations/analytics-kotlin-appsflyer)
+* [Firebase](https://github.com/segment-integrations/analytics-kotlin-firebase)
+* [Mixpanel](https://github.com/segment-integrations/analytics-kotlin-mixpanel)
+
 
 ## Changelog
 [View the Analytics-Kotlin changelog on GitHub](https://github.com/segmentio/analytics-kotlin/releases).

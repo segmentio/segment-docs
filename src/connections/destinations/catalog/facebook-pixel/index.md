@@ -19,13 +19,13 @@ id: 5661eb58e954a874ca44cc07
 ## Other Facebook Destinations Supported by Segment
 This page is about the **Facebook Pixel**. For documentation on other Facebook destinations, see the pages linked below.
 
-| **Facebook Destination**   | Supported by Personas |
-| ---------------------- | --------------------- |
-| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                  | Yes                   |
-| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)** | Yes                   |
-| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                             | No                    |
-| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)**      | Yes                   |
-| **Facebook Custom Audiences Website**    | Yes                   |
+| **Facebook Destination**                                                                                    | Supported by Personas |
+| ----------------------------------------------------------------------------------------------------------- | --------------------- |
+| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                      | Yes                   |
+| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)**    | Yes                   |
+| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                                | No                    |
+| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)** | Yes                   |
+| **[Facebook Conversions API](/docs/connections/destinations/catalog/actions-facebook-conversions-api/)**    | Yes                   |
 
 
 ## Getting Started

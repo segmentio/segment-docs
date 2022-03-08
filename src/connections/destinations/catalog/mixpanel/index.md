@@ -164,6 +164,9 @@ By default, each trait (that is, properties in an `identify` call) is registered
 
 Disable **Set All Traits as Super Properties or People Properties By Default** to disable the default behavior and register super properties explicitly. For more information, see [Explicitly set People Properties and Super Properties](#explicitly-set-people-properties-and-super-properties).
 
+> info ""
+> Super properties require a device mode connection.
+
 #### Set People Properties
 
 If you've enabled Mixpanel People in your Segment settings, Segment calls Mixpanel's `people.set` with the same `traits` object. There's no need for an additional API call to populate Mixpanel People.

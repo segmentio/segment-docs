@@ -81,7 +81,7 @@ papi: vendor/bundle
 
 # make the list of beta connections
 .PHONY: beta
-beta: vendor/bundle
+beta:
 	@node scripts/beta.js
 
 .PHONY: changelog
