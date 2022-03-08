@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Singular Destination
+id: 5c768ec31413290001ebdd2e
 ---
-
 [Singular](https://www.singular.net/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Marketing Intelligence Platform that transforms marketing data into accurate, granular and actionable insights to drive growth. By unifying marketing campaign data with attribution data, marketers can measure ROI from every touchpoint across multiple channels for a single source of truth.
 
 This destination is maintained by Singular. For any issues with the destination, [contact Singular Support](mailto:support@singular.net).

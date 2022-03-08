@@ -1,7 +1,7 @@
 ---
 title: Librato Destination
+id: 54521fd925e721e32a72eecd
 ---
-
 ## Getting Started
 
 When you enable Librato in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading the custom Librato provider on your website.

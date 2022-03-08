@@ -1,8 +1,8 @@
 ---
 title: Kochava Destination
 rewrite: true
+id: 5695db50e954a874ca44ce63
 ---
-
 [Kochava](https://www.kochava.com/) offers mobile app attribution and mobile app analytics providing holistic, unbiased measurement for precise, real-time visualization of app performance through the funnel.
 
 _**NOTE:** The Segment-Kochava destination is only available to [Kochava paid accounts](https://support.freeappanalytics.com/server-to-server-integration/segment-integration/)._

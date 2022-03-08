@@ -1,8 +1,8 @@
 ---
 title: 'Natero Destination'
 hidden: false
+id: 54bee265db31d978f14a7e21
 ---
-
 [Natero, also known as Freshdesk Customer Success](https://urldefense.com/v3/__https://freshsuccess.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners__;!!NCc8flgU!JByOjJz8hK4AJQxY6Rqzqe0ZcUCB3UJBtbn1bQrxTh6SxjM-uHPST7abmfD3cRc$){:target="_blank"} helps customer success managers better understand their customers by integrating all of your customer data in one place and leveraging it to help with prioritization and context.  By reaching out to customers in the right way at the right time, CSMs can reduce churn, increase upsell and create advocates for your business.  For more details on how the segment integration for Natero works, visit the [Natero developer site](https://urldefense.com/v3/__https://developer.freshsuccess.com/api/segmentapi.html__;!!NCc8flgU!JByOjJz8hK4AJQxY6Rqzqe0ZcUCB3UJBtbn1bQrxTh6SxjM-uHPST7abnKQ8GJ4$){:target="_blank"}.
 
 This destination is maintained by Freshworks. For any issues with the destination, [contact the Natero Support team](mailto:support@freshsuccess.com).

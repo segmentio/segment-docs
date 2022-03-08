@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Moesif API Analytics Destination
+id: 5ce828fe272bf500019d9dbc
 ---
-
 [Moesif API Analytics](https://www.moesif.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps you drive API adoption, usage, and retention. With Moesif, track your customer journey from initial ad click to first API call while identifying at-risk customers struggling to integrate with your APIs.
 
 The [Moesif SDKs and API gateway plugins](https://www.moesif.com/implementation?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) are open-source and support REST, GraphQL, and other APIs.

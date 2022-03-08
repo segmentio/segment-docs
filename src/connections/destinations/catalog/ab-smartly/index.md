@@ -1,8 +1,7 @@
 ---
 title: AB Smartly Destination
+id: 605dd9d7e5ff0b3873e250a4
 ---
-
-
 [A/B Smartly](https://absmartly.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} provides an on-premise, full-stack experimentation platform for engineering and product teams that do continuous experimentation embedded into their development process. A/B Smartly's real-time analytics helps engineering and product teams ensure that new features will improve the customer experience without breaking or degrading performance and/or business metrics.
 
 This destination is maintained by A/B Smartly. For any issues with the destination, [contact A/B Smartly's Support](mailto:support@absmartly.com).

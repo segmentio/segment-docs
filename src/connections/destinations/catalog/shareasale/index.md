@@ -1,7 +1,7 @@
 ---
 title: ShareASale Destination
+id: 54521fda25e721e32a72eef2
 ---
-
 ## Getting Started
 
 When you enable ShareASale in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading the ShareASale tag onto your page. This means you should remove ShareASale's snippet from your page.

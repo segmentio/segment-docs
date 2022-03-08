@@ -1,6 +1,7 @@
 ---
 title: Gist Destination
 rewrite: true
+id: 5ec499003e60e9200f681768
 ---
 [Gist](https://getgist.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a marketing and support platform that helps companies attract visitors, convert leads, and support customers.
 

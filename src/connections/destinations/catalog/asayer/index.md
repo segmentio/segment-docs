@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: Asayer Destination
+id: 5d00754256e478000114784f
 ---
 [Asayer](https://asayer.io) is a session replay tool for engineering teams. It lets you capture the full picture of each user session on your website so you can quickly solve issues and improve your customer experience.
 

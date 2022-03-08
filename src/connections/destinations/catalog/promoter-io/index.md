@@ -1,7 +1,7 @@
 ---
 title: Promoter Destination
+id: 55b6983e0a20f4e22f0fb3da
 ---
-
 ## Getting Started
 
 Once the Segment library is integrated with your service, add your Promoter API Key and enable Promoter in your Segment destinations page. You can find your API key in Promoter.io under **Accounts Settings > Segment Destination**.

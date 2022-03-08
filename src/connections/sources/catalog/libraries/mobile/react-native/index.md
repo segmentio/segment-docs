@@ -2,8 +2,8 @@
 title: Analytics for React Native
 strat: react-native
 repo: analytics-react-native
+id: B0X0QmvMny
 ---
-
 > info "Analytics for React Native 2.0 in Public Beta"
 > Analytics for React Native 2.0 is available in public beta and is governed by Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/){:target="_blank"}. For more information, see the [Analytics for React Native 2.0 GitHub repository](https://github.com/segmentio/analytics-react-native){:target="_blank"}.
 

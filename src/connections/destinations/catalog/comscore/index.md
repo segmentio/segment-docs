@@ -1,7 +1,7 @@
 ---
 title: comScore Destination
+id: 54521fd525e721e32a72eea1
 ---
-
 Segment's comScore destination code is open source and available on GitHub. Feel free to check it out: 
 - [Javascript](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/comscore)
 - [iOS](https://github.com/segment-integrations/analytics-ios-integration-comscore)

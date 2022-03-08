@@ -2,8 +2,8 @@
 title: Klaviyo Destination
 rewrite: true
 cmode-override: true
+id: 54521fd825e721e32a72eec8
 ---
-
 [Klaviyo](https://www.klaviyo.com/features/overview) is a powerful email platform focused on ecommerce that helps companies make more money. It supports segmentation based on category and event triggers like product bought, page viewed, email engagement, or amount spent.
 
 It measures opens, clicks, revenue generated, breakdown of generated revenue based on custom attributes (like campaign type or amount gained per recipient), and provides trend reports, cohort analysis, and subscriber growth

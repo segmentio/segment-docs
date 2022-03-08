@@ -1,8 +1,8 @@
 ---
 title: Google Adwords Remarketing Lists (Customer Match) Destination
 hide-boilerplate: true
+id: 5a6b50f1c900fa00011858fd
 ---
-
 > note "About Google destinations"
 > This page is about the **Google Adwords Remarketing Lists (Customer Match)** destination supported by Segment Personas. For documentation on other Google Destinations, see the pages below.
 

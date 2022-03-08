@@ -1,7 +1,7 @@
 ---
 title: CleverTap Destination
+id: 5711271880412f644ff13150
 ---
-
 ## Getting Started
 
 Once the Segment library is integrated, toggle CleverTap on in your Segment destinations, and add your CleverTap Account ID and CleverTap Account Token which you can find in the CleverTap Dashboard under Settings.

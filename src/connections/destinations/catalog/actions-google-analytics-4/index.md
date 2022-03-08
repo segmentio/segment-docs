@@ -3,8 +3,8 @@ title: Google Analytics 4 Destination
 strat: google
 hide-boilerplate: true
 hide-dossier: false
+id: 60ad61f9ff47a16b8fb7b5d9
 ---
-
 [Google Analytics 4](https://support.google.com/analytics/answer/10089681){:target="_blank"} is Google's new Analytics property, which you can use for both websites and applications. Google Analytics 4 has machine learning at its core to help surface insights and give you a more complete understanding of your customers across devices and platforms. 
 
 When you have Segment installed, you can use your existing tracking implementation to fulfill your data collection needs with Google Analytics 4. Segment will send your data server-side to [Google's Measurement Protocol API](https://developers.google.com/analytics/devguides/collection/protocol/ga4).

@@ -1,7 +1,7 @@
 ---
 title: Mailjet Destination
+id: 55b27b5d0a20f4e22f0fb3d5
 ---
-
 This destination is maintained by Mailjet. For any issues with the destination, you may [contact the Mailjet Support team](mailto:support@mailjet.com).
 
 ## Getting Started

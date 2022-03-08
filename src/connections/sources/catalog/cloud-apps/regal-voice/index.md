@@ -1,8 +1,8 @@
 ---
 title: Regal Voice Source
 source-type: event
+id: 1QTd6JKw53
 ---
-
 {% include content/source-region-unsupported.md %}
 
 [Regal Voice](https://regalvoice.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a next-gen customer engagement platform built for B2C services brands to proactively reach out to customers on voice and sms before they buy elsewhere.

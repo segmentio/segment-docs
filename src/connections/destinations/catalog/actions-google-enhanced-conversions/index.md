@@ -3,7 +3,15 @@ title: Google Enhanced Conversions Destination
 strat: google
 hide-boilerplate: true
 hide-dossier: false
+id: 60ae8b97dcb6cc52d5d0d5ab
 ---
+
+> info ""
+> This document is about a feature that is in beta. This means that the destination is in active development, and some functionality may change before it becomes generally available.
+
+> success ""
+> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Google Enhanced Conversions Segment destination. 
+
 
 The Google Enhanced Conversions destination enables you to improve the accuracy of your conversion measurement. You can supplement existing conversion tags by sending first-party customer conversion data from your website, such as email address, to Google Ads. Segment hashes this data and sends it in a privacy-safe way. Google matches hashed data with signed-in Google accounts to attribute the conversion to ad events, such as clicks or views. To learn more about Google Enhanced Conversions, see Google's documentation [About enhanced conversions](https://support.google.com/google-ads/answer/9888656?hl=en-GB){:target="_blank"}.
 
@@ -24,7 +32,7 @@ The Google Enhanced Conversions destination enables you to improve the accuracy 
 6. On the **Settings** tab, authenticate with Google using OAuth. Click **Connect to Google Enhanced Conversions**. Follow the prompts to authenticate using OAuth, with a Google login that is a member of the Google Ads account with Enhanced Conversions enabled.
 7. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
-> info
+> info ""
 > The Conversion ID is a global setting because it's an account-level ID that's the same for all conversion actions in your Google Ads account. The Conversion Label is unique to each conversion action and is therefore configured per Mapping.
 
 {% include components/actions-fields.html content1=conv_label section1="postConversion" content2=test_mapping section2="postConversion" %}

@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: Amazon EventBridge Destination
+id: 5d1994fb320116000112aa12
 ---
 [Amazon EventBridge](https://aws.amazon.com/eventbridge/) is the easiest way to onboard your Segment data into the AWS ecosystem.
 

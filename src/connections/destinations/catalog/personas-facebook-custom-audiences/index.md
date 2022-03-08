@@ -4,9 +4,8 @@ beta: true
 hide-boilerplate: true
 hide-dossier: true
 redirect_from: '/connections/destinations/catalog/personas-facebook-ads/'
+id: 5a4d24dcc5836400017188f6
 ---
-
-
 ## Overview
 
 The Facebook Custom Audiences Destination is one of the most popular Personas Destinations. It has a variety of use cases related to suppression, acquisition (using lookalikes), retargeting, and more.

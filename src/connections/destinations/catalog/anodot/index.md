@@ -1,6 +1,7 @@
 ---
 title: Anodot Destination
 rewrite: true
+id: 5feb4422ecbab07ade913573
 ---
 [Anodot](https://www.anodot.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) rapidly identifies revenue-critical issues by leveraging AI to constantly monitor and correlate business performance, providing real-time alerts and forecasts.
 

@@ -2,6 +2,7 @@
 title: Slack (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
+id: 5f7dd8e302173ff732db5cc4
 ---
 {% include content/plan-grid.md name="actions" %}
 

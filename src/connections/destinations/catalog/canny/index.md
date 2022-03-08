@@ -3,8 +3,8 @@ title: Canny Destination
 rewrite: true
 hide-dossier: true
 redirect_from: '/connections/destinations/catalog/canny-functions/'
+id: 609d2b40f4bd0f24a5a37fbb
 ---
-
 [Canny](https://canny.io) is a single place for all customer feedback. It saves you time managing all the feedback while keeping your customers in the loop. Let your customers post and vote on feedback from within your website or mobile app. You'll get an organized list of feedback that you can use to inform your roadmap.
 
 This destination is maintained by Canny. For any issues with the destination, [contact the Canny Support team](mailto:segment-help@canny.io).
