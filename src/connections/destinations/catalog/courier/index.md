@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Courier Destination
+id: 5e4b07ed88472cc19ea4f8d0
 ---
-
 [Courier](https://courier.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides a way to design and deliver notifications. Design once with a rich visual editor and  deliver to any channel through one API request.
 
 This destination is maintained by Courier. For any issues with the destination, [contact the Courier support team](mailto:support@courier.com).

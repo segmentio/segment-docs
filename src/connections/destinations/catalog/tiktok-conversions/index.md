@@ -2,8 +2,8 @@
 title: TikTok Conversions
 hide-boilerplate: true
 hide-dossier: true
+id: 615cae349d109d6b7496a131
 ---
-
 {% include content/plan-grid.md name="actions" %}
 
 The TikTok Conversions destination is a server-to-server integration with the TikTok Events API that allows advertisers to share website visitor events from Segment directly to TikTok. Data shared through the Events API is processed similarly to information shared through the TikTok pixel and TikTok SDK business tools. Advertisers can use events data to power solutions like dynamic showcase ads (DSA), custom targeting, campaign optimization and attribution. Advertisers can see their event data in TikTok Events Manager.

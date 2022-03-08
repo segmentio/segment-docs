@@ -1,6 +1,7 @@
 ---
 title: ProductBird Destination
 rewrite: true
+id: 5fe9e8d3dc1fbccfdfbd1490
 ---
 [ProductBird](https://productbird.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides a way for SaaS companies to have conversations with their users at scale, allowing them to make better product decisions.
 

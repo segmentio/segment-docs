@@ -2,8 +2,8 @@
 title: Facebook Ads Source
 rewrite: true
 strat: facebook
+id: mazatB39IS
 ---
-
 {% include content/source-region-unsupported.md %}
 
 Facebook is one of the most efficient ways to advertise online. Take your company's analysis to the next level by adding [Facebook Ads](https://www.facebook.com/business/products/ads) as a Source to Segment.

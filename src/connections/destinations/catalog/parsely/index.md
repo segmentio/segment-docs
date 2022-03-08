@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Parse.ly Destination
+id: 558c9f7b0a20f4e22f0fb3bc
 ---
-
 [Parse.ly](https://www.parse.ly) provides web analyses and content optimization for online publishers by partnering with them to provide clear audience insights through intuitive analytics.
 
 

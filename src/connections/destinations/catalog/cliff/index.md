@@ -1,6 +1,7 @@
 ---
 title: Cliff Destination
 rewrite: true
+id: 603bebf26429db1da7b36150
 ---
 [Cliff](https://cliff.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) monitors all your metrics in real time, detects unexpected changes (such as a sudden spike or dip), and notifies you immediately. It also shows you the root cause behind the unexpected change.
 

@@ -150,6 +150,9 @@ vendor/bundle:
 	@bundle config set --local path 'vendor/bundle'
 	@bundle install
 
+.PHONY: update
+update: 
+	@node scripts/update.js
 
 .PHONY: lint
 lint: node_modules

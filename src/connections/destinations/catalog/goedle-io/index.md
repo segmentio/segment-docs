@@ -1,8 +1,8 @@
 ---
 title: Goedle.io Destination
 rewrite: true
+id: 5653a808e954a874ca44cbe6
 ---
-
 [goedle.io](https://goedle.io/) uses powerful AI and Machine Learning algorithms to predict user behavior. The more data you provide, the better its recommendations will be.
 
 This destination is maintained by Goedle. For any issues with the destination, [contact the Goedle Support team](mailto:support@goedle.io).

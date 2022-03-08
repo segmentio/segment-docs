@@ -1,9 +1,8 @@
 ---
 title: Google Cloud Pub/Sub Destination
 strat: google
+id: 5a25e415229c250001a0a402
 ---
-
-
 When you enable Google Cloud Pub/Sub in the Segment app, Segment starts sending the events you specify to Pub/Sub topics of your choice. The Segment Google Cloud Pub/Sub destination supports all of the Segment methods, and sends data from [any of the Segment libraries](/docs/connections/sources/catalog/).
 
 ## Authentication

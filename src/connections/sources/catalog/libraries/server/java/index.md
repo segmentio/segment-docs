@@ -1,8 +1,8 @@
 ---
 title: Analytics for Java
 repo: analytics-java
+id: V6ynUvQgbc
 ---
-
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics)
 
 Our Java library lets you record analytics data from your Java code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.

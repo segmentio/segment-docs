@@ -1,6 +1,7 @@
 ---
 title: FunnelFox Destination
 rewrite: true
+id: 5d10e0d0d3831900017af2cd
 ---
 [FunnelFox](https://www.funnelfox.com/){:target="_blank"} allows you to sort your sales operations in just a few clicks. Integrate your sales tools to eliminate data silos, get accurate CRM data to make the right decisions, and know when opportunities require attention.
 

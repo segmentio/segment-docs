@@ -1,8 +1,8 @@
 ---
 title: FoxMetrics Destination
 rewrite: true
+id: 54521fd625e721e32a72eeb2
 ---
-
 [FoxMetrics](https://www.foxmetrics.com/) is a personalization platform that allows users to collect & analyze customer actions through computers, mobile, and web applications. The `analytics.js` FoxMetrics destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-foxmetrics).
 
 ## Getting Started

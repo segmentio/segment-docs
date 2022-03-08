@@ -2,8 +2,8 @@
 title: Criteo Offline Conversions Destination
 rewrite: true
 hide-personas-partial: true
+id: 5d433ab511dfe7000134faca
 ---
-
 [Criteo Offline Conversions](https://www.criteo.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) enables offline event tracking so marketers can run Omnichannel Campaigns by leveraging deterministic matching of SKU-level offline sales data with online user profiles.  Criteo can predict which store the shopper prefers to visit and deliver personalized recommendations for products that entice them to visit and purchase.
 
 The Criteo Offline Conversions Destination and this document are maintained by Criteo. For any issues with the destination, [let the Criteo team know](mailto:support@criteo.com)!

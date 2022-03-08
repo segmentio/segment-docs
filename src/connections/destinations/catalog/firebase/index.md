@@ -1,8 +1,8 @@
 ---
 title: Firebase Destination
 strat: google
+id: 579a568e80412f644ff19cf7
 ---
-
 Firebase is Google's platform for mobile apps. The Segment Firebase destination requires that you bundle the Firebase SDK with your project. The Segment-wrapped destination code then runs on the user's device, and sends its tracking calls to the Firebase API endpoints, and a copy to Segment for archiving.
 
 

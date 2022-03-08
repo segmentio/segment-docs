@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Regal Voice Destination
+id: 5f33e746fad0d620b8a4b144
 ---
-
 [Regal Voice](https://regalvoice.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a next-gen customer engagement platform that helps brands proactively engage and convert customers before they buy elsewhere.
 
 Regal Voice maintains this destination. For any issues with the destination, contact their [Regal Voice support team](mailto:support@regalvoice.com).

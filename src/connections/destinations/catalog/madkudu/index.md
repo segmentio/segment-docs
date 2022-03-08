@@ -1,7 +1,7 @@
 ---
 title: MadKudu Destination
+id: 55a9343b0a20f4e22f0fb3ca
 ---
-
 This destination is built and supported by MadKudu. If you run into any issues with the destination, contact their support team.
 
 ### How it works

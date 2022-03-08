@@ -1,8 +1,8 @@
 ---
 title: Salesforce Destination
 strat: salesforce
+id: 54521fda25e721e32a72eeef
 ---
-
 > info ""
 > Segment is aware of Salesforce's plans to enforce multi-factor authentication in 2022, and is evaluating solutions to ensure uninterrupted connectivity with your Salesforce account.
 
