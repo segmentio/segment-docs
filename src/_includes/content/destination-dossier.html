@@ -3,9 +3,7 @@
 
 {% assign overrideInfo = site.data.catalog.overrides.items % | where: "slug", thisDestination | first %}
 
-
-
-{% assign destinationInfo = site.data.catalog.destinations.items | where: "destination_id", thisDestination | first %}
+{% assign destinationInfo = site.data.catalog.destinations.items | where: "id", thisDestination | first %}
 {% comment %}There are probably prettier ways to generate a list of links to these methods, but this was good enough for me.{% endcomment %}
 {% assign destMethods = "" | split: ", " %}
 {% assign methodName = "" | split: " " %}
