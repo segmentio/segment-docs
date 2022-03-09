@@ -40,11 +40,10 @@ After you delete your workspace or account, Segment removes all data associated 
 If you do not delete your workspace after you stop using Segment, **your data remains in Segment's internal servers until you submit a written deletion request**.
 
 > warning "Purging data from workspaces deleted prior to March 31, 2022"
-> If you deleted your workspace prior to March 31, 2022, and would like to have data associated with your workspace purged from Segment servers, email the Customer Success team [friends@segment.com](mailto:friends@segment.com) to create a support ticket. In your email to Customer Success, include either the slug or the ID of the workspace you'd like to have purged from internal Segment servers. 
+> If you deleted your workspace prior to March 31, 2022, and would like to have data associated with your workspace purged from Segment's S3 archive buckets, email the Customer Success team [(friends@segment.com)](mailto:friends@segment.com) to create a support ticket. In your email to Customer Success, include either the slug or the ID of the workspace you'd like to have purged from internal Segment servers. 
 
 ### What is a complete data purge?
 
-A complete data purge is the mechanism Segment uses to completely remove all workspace and customer data from internal Segment servers across all product areas. To trigger a complete data purge, either [delete your workspace](#how-can-i-delete-data-from-my-workspace) or raise a support ticket with the Customer Success team [(friends@segment.com)](mailto:friends@segment.com) that contains either the slug or the ID of the workspace that you'd like to delete. Data purge deletions will *not* be forwarded to your connected third-party destinations or raw destinations. 
 
-> warning " "
+> error " "
 > Segment waits for five days before beginning a complete data purge to safeguard against malicious deletion requests. If you notice your workspace or account has been maliciously deleted,  reach out to [friends@segment.com](mailto:friends@segment.com) to cancel the data purge. After the five-day grace period, the deletion will be irreversible.
