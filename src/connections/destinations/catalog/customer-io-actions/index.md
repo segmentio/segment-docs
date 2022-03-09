@@ -6,6 +6,7 @@ hide-dossier: true
 redirect_from:
 - '/connections/destinations/catalog/actions-customerio/'
 - '/connections/destinations/catalog/actions-customer-io/'
+id: 5f7dd78fe27ce7ff2b8bfa37
 ---
 {% include content/plan-grid.md name="actions" %}
 

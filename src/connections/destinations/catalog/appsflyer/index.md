@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: AppsFlyer Destination
+id: 54521fd525e721e32a72ee8f
 ---
 [AppsFlyer](https://www.appsflyer.com/) is the world's leading mobile attribution & marketing analytics platform, helping app marketers around the world make better decisions. Our AppsFlyer destination code is open-source. You can browse the code on GitHub for [iOS](https://github.com/AppsFlyerSDK/segment-appsflyer-ios) and [Android](https://github.com/AppsFlyerSDK/AppsFlyer-Segment-Integration).
 

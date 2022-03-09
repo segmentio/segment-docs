@@ -2,9 +2,8 @@
 title: Analytics for iOS
 strat: ios
 repo: analytics-ios
+id: UBrsG9RVzw
 ---
-
-
 With Analytics for iOS, you can send your data to analytics or marketing tool, without needing to learn, test, or implement a new API with each update or addition.
 <br />
 <br />

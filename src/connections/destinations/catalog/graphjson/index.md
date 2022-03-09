@@ -2,6 +2,7 @@
 rewrite: true
 title: 'GraphJSON Destination'
 beta: true
+id: 61e8726c123c1a81273d00e4
 ---
 [GraphJSON](https://www.graphjson.com/guides/segment){:target="_blank"} provides self-serve analytics to better help you understand your business.
 

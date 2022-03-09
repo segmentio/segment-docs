@@ -1,7 +1,7 @@
 ---
 title: Mandrill Source
+id: asdf76as89
 ---
-
 {% include content/source-region-unsupported.md %}
 
 [Mandrill](http://www.mandrill.com/) is a transactional email API for MailChimp users.

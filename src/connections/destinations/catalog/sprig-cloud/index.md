@@ -3,8 +3,8 @@ title: Sprig Cloud Destination
 rewrite: true
 redirect_from:
  - '/connections/destinations/catalog/userleap/'
+id: 5f2c35239094d175b6485eb1
 ---
-
 [Sprig (formerly UserLeap)](https://sprig.com/?&utm_source=segment_2021-10-20&utm_medium=int&utm_campaign=integration) is an in-context user research platform that makes it fast and effortless for product teams to learn from their actual customers in real time, through microsurveys, concept tests, and video questions.
 
 Sprig maintains this destination. For any issues with the destination, consult [Sprig's documentation](https://docs.sprig.com/docs/segment) or contact [support@sprig.com](mailto:support@sprig.com).

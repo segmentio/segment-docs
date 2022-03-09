@@ -3,8 +3,8 @@ rewrite: true
 title: OneSignal New Destination
 hide-personas-partial: true
 redirect_from: '/connections/destinations/catalog/onesignal/'
+id: 60b6a5b69fec493efbd3c64c
 ---
-
 [OneSignal](https://onesignal.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is the market leader in driving customer engagement with multi-channel messaging across Web and Mobile Push, In-App Messages, SMS, and Email subscribers.
 This destination is maintained by OneSignal. For any issues with the destination, [contact the OneSignal Support team](mailto:support@onesignal.com).
 

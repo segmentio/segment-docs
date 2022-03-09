@@ -4,8 +4,8 @@ strat: google
 hide-dossier: false
 redirect_from:
   - '/connections/destinations/catalog/google-universal-analytics'
+id: 54521fd725e721e32a72eebb
 ---
-
 > warning "Migrate mobile implementations to Firebase"
 > Google ended support for Google Analytics classic on iOS and Android mobile apps on October 31st 2019. To continue measuring and optimizing user engagement in your mobile apps, [migrate your implementation to use the Firebase SDKs](migrating). If you are using Google Analytics 360 you do not need to migrate.
 
@@ -195,6 +195,8 @@ For this example these event attributes are sent to Google Universal Analytics:
 | **Event Category** | All       |
 | **Event Action**   | Logged In |
 
+> info ""
+> **Note**: In device-mode only, if you pass `category` to the [`page`](/docs/connections/destinations/catalog/google-analytics/#page-and-screen) call, Segment will use the `category` from `page` instead of setting default **Event Category** to `All`.
 
 And another Track call example, this time with all Google Universal Analytics event parameters:
 

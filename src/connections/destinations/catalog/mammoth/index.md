@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: Mammoth Destination
+id: 5cd3f02701645a0001cf49a0
 ---
 [Mammoth](https://mammoth.io/integrations/segment/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve analytics for analysts, businesses, and developers who can use Mammoth's data warehousing, data discovery & data preparation abilities to arrive at insights.
 

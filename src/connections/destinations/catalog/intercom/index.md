@@ -3,8 +3,8 @@ title: Intercom Destination
 hide-cmodes: true
 hide-personas-partial: true
 cmode-override: true
+id: 54521fd725e721e32a72eec6
 ---
-
 [Intercom](https://www.intercom.com/) makes customer messaging apps for sales, marketing, and support, connected on one platform. The Intercom Destination is open-source. You can browse the code for [analytics.js](https://github.com/segment-integrations/analytics.js-integration-intercom), [iOS](https://github.com/segment-integrations/analytics-ios-integration-intercom) and [Android](https://github.com/segment-integrations/analytics-android-integration-intercom) on GitHub.
 
 ## Getting Started

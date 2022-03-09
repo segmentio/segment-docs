@@ -1,8 +1,8 @@
 ---
 title: Inkit Destination
 rewrite: true
+id: 5f0746ced1c79b49ddee49fd
 ---
-
 [Inkit](https://inkit.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) connects to hundreds of printers with complete visibility. Instantly use global print infrastructure with Inkit's developer friendly APIs, dashboards, and reporting. Connect, track, and manage critical business communications faster than ever before.
 
 The Inkit Destination is in beta, which indicates ongoing development. To join the Inkit beta program, or if you have any feedback to help improve the Inkit Destination and its documentation, [contact the Inkit support team](mailto:support@inkit.com).

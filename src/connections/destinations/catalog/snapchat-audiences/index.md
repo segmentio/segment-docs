@@ -1,5 +1,6 @@
 ---
 title: Snapchat Audience Destination
+id: 5f289f7639d45a397a1fb880
 ---
 The [Snapchat Ads](https://forbusiness.snapchat.com/advertising/targeting) product provides a way to target advertisements to a global audience and drive meaningful results.
 

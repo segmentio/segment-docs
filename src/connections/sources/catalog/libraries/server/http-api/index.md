@@ -1,8 +1,8 @@
 ---
 title: HTTP Tracking API Source
 redirect_from: '/connections/sources/catalog/libraries/server/http/'
+id: iUM16Md8P2
 ---
-
 The Segment HTTP Tracking API lets you record analytics data from any website or application. The requests hit our servers, and we route your data to any destination you want!
 
 Segment has native [sources](/docs/connections/sources/) for most use cases (Javascript, iOS, etc.) that are all built for high-performance and are open-source. But sometimes you may want to send to the HTTP API directly—that's what this reference is for.

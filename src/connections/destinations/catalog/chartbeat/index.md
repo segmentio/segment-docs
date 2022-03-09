@@ -1,7 +1,7 @@
 ---
 title: Chartbeat Destination
+id: 54521fd525e721e32a72ee9d
 ---
-
 Our Chartbeat destination code is open-source on GitHub if you want to [check it out](https://github.com/segment-integrations/analytics.js-integration-chartbeat).
 
 ## Getting Started

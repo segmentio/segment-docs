@@ -1,8 +1,8 @@
 ---
 title: Salesforce Pardot Destination
 strat: salesforce
+id: 54521fd925e721e32a72eee1
 ---
-
 ## Getting Started
 
 When you enable Pardot in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Pardot's javascript onto your page. This means you should remove Pardot's snippet from your page. Pardot automatically collects anonymous visitor data data on your site. Pardot is supported on the client-side and server-side.

@@ -4,8 +4,8 @@ beta: true
 redirect_from: '/connections/destinations/catalog/google-adwords-new/'
 strat: google
 name-override: true
+id: 5a03bfe73156760001ab34ec
 ---
-
 ## Before you begin
 
 If you're using the [new Google Ads (Gtag) experience](https://support.google.com/adwords/answer/6095821?hl=en&ref_topic=3165803), you can enable the **Google Ads (Gtag)** Destination (previously called "Google Adwords New") in the Segment catalog. The new Google Ads uses a Global Site Tag (Gtag) and event snippets.

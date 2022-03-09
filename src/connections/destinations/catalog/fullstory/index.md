@@ -2,6 +2,7 @@
 title: FullStory Destination
 rewrite: true
 maintenance: true
+id: 54521fd625e721e32a72eeb8
 ---
 [FullStory](https://www.fullstory.com/){:target="_blank"} lets product and support teams easily understand everything about the customer experience. The Segment integration for FullStory helps accurately identify your customers within the FullStory dashboard.
 

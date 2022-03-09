@@ -3,8 +3,8 @@ title: Recombee AI Destination
 rewrite: true
 hide-settings: true
 hide-personas-partial: true
+id: 6095391bd839b62fca8a8606
 ---
-
 [Recombee](https://recombee.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Recommender as a Service, that can use your data to provide the most accurate recommendations of content or products for your users.
 
 Use this Segment destination to send your interaction data views, purchases, plays, etc.) to Recombee.

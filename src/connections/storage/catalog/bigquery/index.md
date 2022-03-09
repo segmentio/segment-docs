@@ -107,7 +107,7 @@ with credentials, access was granted to a shared Service Account
 (`connector@segment-1119.iam.gserviceaccount.com`). While convenient for early
 adopters, this presented potential security risks.
 
-As of **March 2019**, Segment requires BigQuery customers to
+Segment now requires BigQuery customers to
 create their own Service Accounts and provide the app with those credentials instead.
 In addition, any attempts to update warehouse connection settings will also
 require these credentials. This effectively deprecates the shared Service

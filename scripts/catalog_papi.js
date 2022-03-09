@@ -123,7 +123,7 @@ const doesCatalogItemExist = (item) => {
       if (item.status === 'PUBLIC_BETA') {
         betaFlag = 'beta: true\n'
       }
-      content = `---\ntitle: '${item.display_name} Destination'\nhidden: true\npublished: false\n${betaFlag}---\n`
+      content = `---\ntitle: '${item.display_name} Destination'\nhidden: true\nid: ${item.id}published: false\n${betaFlag}---\n`
     }
     fs.mkdirSync(docsPath)
     fs.writeFileSync(`${docsPath}/index.md`, content)
@@ -349,7 +349,7 @@ const updateDestinations = async () => {
     let connection_modes = getConnectionModes({
       components: destination.components,
       platforms: destination.supportedPlatforms,
-      browserUnbundlingSupported: destination.supportedFeatures.browserUnbundling,
+      browserUnbundling: destination.supportedFeatures.browserUnbundling,
       browserUnbundlingPublic: destination.supportedFeatures.browserUnbundlingPublic,
       methods: destination.supportedMethods
     })
@@ -381,7 +381,7 @@ const updateDestinations = async () => {
     destination.supportedMethods = renameKey(destination.supportedMethods, 'pageview', 'page')
 
     let updatedDestination = {
-      destination_id: destination.id,
+      id: destination.id,
       display_name: destination.name,
       name: destination.name,
       slug,

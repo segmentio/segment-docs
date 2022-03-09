@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: UserIQ Destination
+id: 5c742629088b680001eb30bb
 ---
-
 [UserIQ](http://useriq.com) empowers companies to deliver what each user needs to be successful in every moment, starting with adoption. Our platform collects user engagement data from your product and allows you to communicate to your users when they are most engaged: within the product itself.
 
 This destination is maintained by UserIQ. For any issues with the destination, [contact the UserIQ Support team](mailto:support@useriq.com).

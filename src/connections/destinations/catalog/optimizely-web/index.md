@@ -1,8 +1,8 @@
 ---
 title: Optimizely Web Destination
 redirect_from: '/connections/destinations/catalog/optimizely/'
+id: 54521fd925e721e32a72eee3
 ---
-
 ## Getting Started
 
 Segment's **Optimizely Web (previously Optimizely)** destination supports the following Optimizely products:
