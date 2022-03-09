@@ -32,7 +32,7 @@ The Google Enhanced Conversions destination enables you to improve the accuracy 
 6. On the **Settings** tab, authenticate with Google using OAuth. Click **Connect to Google Enhanced Conversions**. Follow the prompts to authenticate using OAuth, with a Google login that is a member of the Google Ads account with Enhanced Conversions enabled.
 7. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
-> info
+> info ""
 > The Conversion ID is a global setting because it's an account-level ID that's the same for all conversion actions in your Google Ads account. The Conversion Label is unique to each conversion action and is therefore configured per Mapping.
 
 {% include components/actions-fields.html content1=conv_label section1="postConversion" content2=test_mapping section2="postConversion" %}
