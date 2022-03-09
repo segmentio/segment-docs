@@ -1,7 +1,7 @@
 ---
 title: Rollbar Destination
+id: 54521fda25e721e32a72eeed
 ---
-
 ## Getting Started
 
 When you enable Rollbar in Segment, we'll start sending data to the Rollbar API for your account. Currently, Rollbar will send data from our analytics.js library.

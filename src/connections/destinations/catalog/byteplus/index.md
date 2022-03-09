@@ -4,8 +4,8 @@ title: BytePlus
 redirect_from:
   - '/connections/destinations/catalog/datarangers/'
 beta: true
+id: 60347eb973e8ce37bc360568
 ---
-
 BytePlus provides product analytics for mobile and web applications, including event/retention/funnel/error analysis, user segmentation, user paths, behavior lookup, A/B testing, and other functions.
 
 In addition to the docs below, please reference the [BytePlus integration guide](https://docs.byteplus.com/data-intelligence/docs/sdk-integration-1){:target="_blank"}.

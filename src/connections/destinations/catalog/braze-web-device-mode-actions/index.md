@@ -4,6 +4,7 @@ hide-boilerplate: true
 hide-dossier: false
 redirect_from:
   - '/connections/destinations/catalog/actions-braze-web/'
+id: 60fb01aec459242d3b6f20c1
 ---
 {% include content/plan-grid.md name="actions" %}
 

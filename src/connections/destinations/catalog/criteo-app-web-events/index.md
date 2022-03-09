@@ -4,8 +4,8 @@ rewrite: true
 cmode-override: true 
 hide-cmodes: true
 redirect_from: '/connections/destinations/catalog/criteo/'
+id: 5787cc5180412f644ff14d7e
 ---
-
 ## Getting Started
 
 > info "Information about Criteo App & Web Events and Analytics.js"

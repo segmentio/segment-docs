@@ -2,8 +2,8 @@
 title: Help Scout Destination
 rewrite: true
 hide-boilerplate: true
+id: 54521fd725e721e32a72eebf
 ---
-
 [Help Scout](https://www.helpscout.net/) is a help desk software company which provides an email-based customer support platform, knowledge base tool, and an embeddable search/contact widget for customer service professionals.
 
 ## Getting Started

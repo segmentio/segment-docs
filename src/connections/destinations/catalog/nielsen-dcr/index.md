@@ -1,7 +1,7 @@
 ---
 title: Nielsen DCR Destination
+id: 596f991a70a3e552b957f74e
 ---
-
 ## Getting Started
 
 Nielsen-DCR is supported on mobile apps and web browsers.
@@ -12,7 +12,7 @@ In order to get started with Nielsen-DCR and retrieve an `appid` to configure th
 
 There will be an NDA to sign prior to accessing the download. Nielsen requires you fill out your company info and have a Nielsen representative before getting started.
 
-You must also go through the pre-certification process as outlined [here](https://engineeringportal.nielsen.com/docs/Digital_Pre-Certification_Checklist) with your Nielsen representative before shipping this implementation to production.
+You must also go through a pre-certification process with your Nielsen representative before shipping this implementation to production.
 
 
 ## Mobile
@@ -36,13 +36,13 @@ If you'd like to measure video on the web, all you have to do is add your **App 
 
 Segment supports translating `screen` or `page` to Nielsen as a Static App Measurement event. We will translate the following properties to the expected Nielsen metadata:
 
-| Segment Property Name | Nielsen | Nielsen Description |
-| --------| ---------- | ---------- |
-| `type`| `type`| Required. Segment hardcodes `'static'` |
-| `name`* | `section`| Required. Section of site|
-| integration option | `segB`| Required (optional for web). Segment A.|
-| integration option | `segC`| Required (optional for web). Segment B.|
-| integration option | `crossId1` | Standard episode ID (mobile only)|
+| Segment Property Name | Nielsen    | Nielsen Description                     |
+| --------------------- | ---------- | --------------------------------------- |
+| `type`                | `type`     | Required. Segment hardcodes `'static'`  |
+| `name`*               | `section`  | Required. Section of site               |
+| integration option    | `segB`     | Required (optional for web). Segment A. |
+| integration option    | `segC`     | Required (optional for web). Segment B. |
+| integration option    | `crossId1` | Standard episode ID (mobile only)       |
 
 \* On web and mobile, you can map a custom property to `section` using the **Custom Page/Screen Section Property Name** setting. If this setting is left blank, Segment will fallback on the top-level `name`.
 
@@ -77,15 +77,15 @@ NSDictionary *channelInfo = @{
 
 From there we will map to the relevant events on the instance as outlined below:
 
-| Nielsen-DCR Spec | Segment Video Spec |
-| ------------ | ------------ |
-| `–(void) stop` and Heartbeat timer stopped | `Video Playback Paused` |
-| `–(void) stop` and Heartbeat timer stopped | `Video Playback Interrupted` |
-| Heartbeat timer stopped | `Video Playback Buffer Started` |
-| Heartbeat timer updated | `Video Playback Buffer Completed` |
-| Heartbeat timer stopped | `Video Playback Seek Started` |
-| Heartbeat timer updated | `Video Playback Seek Completed` |
-| `-(void) end` and Heartbeat timer stopped | `Video Playback Completed` |
+| Nielsen-DCR Spec                           | Segment Video Spec                |
+| ------------------------------------------ | --------------------------------- |
+| `–(void) stop` and Heartbeat timer stopped | `Video Playback Paused`           |
+| `–(void) stop` and Heartbeat timer stopped | `Video Playback Interrupted`      |
+| Heartbeat timer stopped                    | `Video Playback Buffer Started`   |
+| Heartbeat timer updated                    | `Video Playback Buffer Completed` |
+| Heartbeat timer stopped                    | `Video Playback Seek Started`     |
+| Heartbeat timer updated                    | `Video Playback Seek Completed`   |
+| `-(void) end` and Heartbeat timer stopped  | `Video Playback Completed`        |
 
 Web supports the use case of tracking a user switching back and forth from amongst multiple videos at the same time. To do so, Segment checks the metadata on playback interrupted events and sends Nielsen updated metadata if we see that the video content has changed. We do so by storing the current `asset_id` in memory and checking to see if the `asset_id` value has changed.
 
@@ -93,30 +93,30 @@ For playback events, Segment's video spec expects either `ad_asset_id​` or `co
 
 ### Content Events
 
-| Nielsen-DCR Spec | Segment Video Spec |
-| ------------ | ------------ |
-| `–(void)loadMetadata:(id)metadata;` | `Video Content Started ` |
-| Heartbeat timer updated | `Video Content Playing ` |
-| `–(void) end` and `-(void) stop` | `Video Content Completed` |
+| Nielsen-DCR Spec                    | Segment Video Spec        |
+| ----------------------------------- | ------------------------- |
+| `–(void)loadMetadata:(id)metadata;` | `Video Content Started `  |
+| Heartbeat timer updated             | `Video Content Playing `  |
+| `–(void) end` and `-(void) stop`    | `Video Content Completed` |
 
 **Content Properties (Labels)**
 
-| Nielsen-DCR metadata       | Segment Property |
-| -------------------------- | ---------------- |
-| `assetid`                  | `asset_id`       |
-| `program`                  | `program`        |
-| `title`                    | `title`          |
-| `segB`                     | `options.segB`   |
-| `segC`                     | `options.segC`   |
-| `airdate`                  | `airdate`        |
-| `isfullepisode`            | `full_episode`   |
-| `length`                   | `total_length`   |
-| `pipmode`                  | `options.pipmode`|
-| `type`                     | `'content'` (hardcoded)|
-| `adLoadType`               | `options.adLoadType`|
-| `hasAds`                   | `options.hasAds`|
-| `crossId1`                 | `options.crossId1`|
-| `crossId2`                 | `options.crossId2`|
+| Nielsen-DCR metadata | Segment Property        |
+| -------------------- | ----------------------- |
+| `assetid`            | `asset_id`              |
+| `program`            | `program`               |
+| `title`              | `title`                 |
+| `segB`               | `options.segB`          |
+| `segC`               | `options.segC`          |
+| `airdate`            | `airdate`               |
+| `isfullepisode`      | `full_episode`          |
+| `length`             | `total_length`          |
+| `pipmode`            | `options.pipmode`       |
+| `type`               | `'content'` (hardcoded) |
+| `adLoadType`         | `options.adLoadType`    |
+| `hasAds`             | `options.hasAds`        |
+| `crossId1`           | `options.crossId1`      |
+| `crossId2`           | `options.crossId2`      |
 
 Note that iOS and Android expect different casing. We expect `snake_case` for iOS and `camelCase` for Android.
 
@@ -124,11 +124,11 @@ Note that iOS and Android expect different casing. We expect `snake_case` for iO
 
 The Segment-Nielsen-DCR integration has logic to check for `type` in case of a preroll ad. If the `type` is `preroll`, Segment calls Nielsen's `loadMetadata` method with metadata values for content followed by loadMetadata with ad (preroll) metadata. Otherwise, Segment simply calls `loadMetadata` with the ad metadata.
 
-| Nielsen-DCR Spec | Segment Video Spec |
-| ------------------------------------ | ------------------- |
-| `–(void)loadMetadata:(id)metadata;` and Heartbeat timer started| `Video Ad Started ` |
-| Heartbeat timer updated | `Video Ad Playing ` |
-| `–(void) stop` and Heartbeat timer stopped| `Video Ad Completed` |
+| Nielsen-DCR Spec                                                | Segment Video Spec   |
+| --------------------------------------------------------------- | -------------------- |
+| `–(void)loadMetadata:(id)metadata;` and Heartbeat timer started | `Video Ad Started `  |
+| Heartbeat timer updated                                         | `Video Ad Playing `  |
+| `–(void) stop` and Heartbeat timer stopped                      | `Video Ad Completed` |
 
 
 | Nielsen-DCR Ad metadata | Segment Property |
@@ -137,19 +137,19 @@ The Segment-Nielsen-DCR integration has logic to check for `type` in case of a p
 | `type`                  | `type`           |
 | `title`                 | `title`          |
 
-| Nielsen-DCR Ad Content metadata | Segment Property |
-| ------------------------------- | ---------------- |
-| `assetid`                       | `asset_id`       |
-| `adloadtype`                    | `options.ad_load_type`   |
-| `type`                          | `content` (hard coded)|
-| `title`                         | `title`          |
-| `program`                       | `program`        |
-| `segB`                          | `options.segB`   |
-| `segC`                          | `options.segC`   |
-| `airdate`                       | `airdate`        |
-| `isfullepisode`                 | `full_episode`   |
-| `length`                        | `total_length`   |
-| `pipmode`                       | `options.pipmode`|
+| Nielsen-DCR Ad Content metadata | Segment Property       |
+| ------------------------------- | ---------------------- |
+| `assetid`                       | `asset_id`             |
+| `adloadtype`                    | `options.ad_load_type` |
+| `type`                          | `content` (hard coded) |
+| `title`                         | `title`                |
+| `program`                       | `program`              |
+| `segB`                          | `options.segB`         |
+| `segC`                          | `options.segC`         |
+| `airdate`                       | `airdate`              |
+| `isfullepisode`                 | `full_episode`         |
+| `length`                        | `total_length`         |
+| `pipmode`                       | `options.pipmode`      |
 
 Note that iOS and Android expect different casing. We expect `snake_case` for iOS and `camelCase` for Android.
 

@@ -1,8 +1,8 @@
 ---
 title: EPICA Destination
 rewrite: true
+id: 5c6dca8369c83b0001d6b868
 ---
-
 [EPICA](https://www.epica.ai?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the world's first Prediction-as-a-Service platform. Powered by AI, EPICA captures, processes and analyses online data sources to accurately predict customer behavior. EPICA provides predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
 
 This destination is maintained by EPICA. For any issues with the destination, [contact the Epica Support team](mailto:support@epica.ai).

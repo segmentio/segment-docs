@@ -2,9 +2,9 @@
 rewrite: true
 title: HubSpot Destination
 hide-personas-partial: true
-cmode-override: true 
+cmode-override: true
+id: 54521fd725e721e32a72eec1
 ---
-
 [HubSpot](https://www.hubspot.com/) is an inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers. The `analytics.js` HubSpot Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/hubspot).
 
 > warning ""
@@ -163,6 +163,7 @@ Segment can send the following group traits to HubSpot as special properties:
 - industry
 - phone
 - website
+- name
 
 
 ## Troubleshooting

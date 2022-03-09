@@ -1,7 +1,7 @@
 ---
 title: Iron.io Destination
+id: 54521fd725e721e32a72eec5
 ---
-
 ## Getting Started
 
 When you enable Iron.io in Segment, we'll start sending data to an IronMQ instance with data for your account. Currently, Iron.io supports all of the Segment methods, and will send data from any one of our libraries.

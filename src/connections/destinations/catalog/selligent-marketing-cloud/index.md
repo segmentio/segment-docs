@@ -1,6 +1,7 @@
 ---
 title: Selligent Marketing Cloud Destination
 rewrite: true
+id: 5e14bf9f1729d9e6ded001f6
 ---
 [Selligent Marketing Cloud](https://www.selligent.com/?utm_source=segment&utm_medium=integrations-page&utm_campaign=partners/) is a highly integrated, AI-powered omnichannel marketing automation platform which enables ambitious B2C marketers to maximize every moment of interaction with today’s connected consumers. Delivers ultra-personalized, highly relevant customer experiences across channels and devices, providing value swiftly and at scale.
 

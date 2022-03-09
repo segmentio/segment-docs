@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Vitally Destination
+id: 5c5239a982bdf80001a6ac7d
 ---
-
 [Vitally](https://vitally.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a customer success platform for B2B SaaS companies that wraps your unified customer data with powerful analytics, alerts, and workflows to help you build successful customers.
 
 This destination is maintained by Vitally. For any issues with the destination, [contact the Vitally Support team](mailto:support@vitally.io).
@@ -29,7 +29,7 @@ Enabling Vitally as a destination in Segment can be done in one click from your 
 
   ![](images/2JQwIBK.png)
 
-5. That's it! Once we receive at least 1 event from Segment, you'll be able to proceed with the set up process and configure how to [create accounts from Segment](http://docs.vitally.io/en/articles/4)
+5. Once Vitally receives at least one event from Segment, you'll be able to proceed with the set up process and configure how to [create accounts from Segment](https://docs.vitally.io/managing-the-customer-lifecycle/account-hierarchy-using-vitallys-organization-object/supported-integrations-and-how-to-create-the-hierarchy#segment){:target="_blank"}
 
 ## Identify
 

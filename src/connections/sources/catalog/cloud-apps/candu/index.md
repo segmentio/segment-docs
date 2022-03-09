@@ -2,8 +2,8 @@
 title: Candu Source
 beta: true
 source-type: event
+id: nmb56PunPc
 ---
-
 {% include content/source-region-unsupported.md %}
 
 [Candu](https://candu.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the first UI editor for enterprise applications that allows you to drag and drop your own UI components to build product experiences — no coding required.

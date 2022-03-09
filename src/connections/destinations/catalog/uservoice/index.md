@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: UserVoice Destination
+id: 54521fdc25e721e32a72ef00
 ---
-
 [Uservoice](https://www.uservoice.com/) is a customer support and feedback tool that lets your users submit feedback right from your site, and helps you manage all the incoming requests.
 
 ## Getting Started
@@ -37,7 +37,7 @@ analytics.identify('ze8rt1u89', {
 });
 ```
 
-When you call `identify` the `userId` and `traits` included in the call will be set to the current user in UserVoice. For more details on identifying users on UserVoice, check [their documentation](https://developer.uservoice.com/docs/widgets/identify/).
+When you call `identify` the `userId` and `traits` included in the call will be set to the current user in UserVoice. For more details on identifying users on UserVoice, check [their documentation](https://developer.uservoice.com).
 
 ## Group
 
@@ -53,7 +53,7 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 });
 ```
 
-When you call `group` the `traits` included in the call will be set to the current user's **Account** in UserVoice. For more details on grouping users on UserVoice, check [their documentation](https://developer.uservoice.com/docs/widgets/identify/).
+When you call `group` the `traits` included in the call will be set to the current user's **Account** in UserVoice. For more details on grouping users on UserVoice, check [their documentation](https://developer.uservoice.com/).
 
 ## Alias
 

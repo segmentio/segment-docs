@@ -1,8 +1,8 @@
 ---
 title: Stripe Source
 rewrite: true
+id: 1bow82lmk
 ---
-
 {% include content/source-region-unsupported.md %}
 
 [Stripe](https://stripe.com/about) builds economic infrastructure for the internet, that enables businesses of every size to accept payments and manage their businesses online.
@@ -339,13 +339,13 @@ Segment flattens Stripe's Evidence and Evidence Details objects. See Stripe's [D
 
 ### order_shipping_methods
 
-Segment flattens Stripe's Delivery Estimate object. See Stripe's [Shipping Methods](https://stripe.com/docs/api/orders/object#order_object-shipping_methods) documentation for more detail. 
+Segment flattens Stripe's Delivery Estimate object. See Stripe's [Shipping Methods](https://stripe.com/docs/api/orders_legacy/object#order_legacy_object-shipping_methods) documentation for more detail. 
 
 | Property Name        | Description                                                                                                                                                                                                                              |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `amount`             | The total amount of the line item, represented in the smallest currency unit                                                                                                                                                             |
 | `currency`           | Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase.                                                                                                                                        |
-| `delivery_estimate_` | The estimated delivery date for a given shipping method, as described in Stripe's [Delivery Estimate](https://stripe.com/docs/api/orders/object#order_object-shipping_methods-delivery_estimate). For example, `delivery_estimate_date`. |
+| `delivery_estimate_` | The estimated delivery date for a given shipping method, as described in Stripe's [Delivery Estimate](https://stripe.com/docs/api/orders_legacy/object#order_legacy_object-shipping_methods). For example, `delivery_estimate_date`. |
 | `description`        | An arbitrary string attached to the object                                                                                                                                                                                               |
 | `order_id`           | The identifier of the order associated with the shipping method                                                                                                                                                                          |
 | `shipping_id`        | A unique identifer for a given shipping method                                                                                                                                                                                           |

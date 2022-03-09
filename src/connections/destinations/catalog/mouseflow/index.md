@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Mouseflow Destination
+id: 54521fd925e721e32a72eeda
 ---
-
 [Mouseflow](https://mouseflow.com/) is a session replay and heatmap tool that shows how visitors click, move, scroll, browse, and pay attention on websites. It helps clients simplify their analytics to make decisions that matter. The `analytics.js` Mouseflow Destination is open-source. You can browse the code [on GitHub](hhttps://github.com/segment-integrations/analytics.js-integration-mouseflow).
 
 ## Getting Started

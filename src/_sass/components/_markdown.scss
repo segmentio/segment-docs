@@ -131,6 +131,7 @@
     border: none;
     margin: 0 auto;
     border-radius: 0px;
+    display: inline
   }
 
 
@@ -429,4 +430,10 @@ div.highlighter-rouge {
 
 .table-code-snippet {
   max-width: 450px;
+}
+
+.required {
+  color: black;
+  font-weight: bold;
+  margin-left: 3px
 }

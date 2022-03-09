@@ -5,8 +5,8 @@ hide-personas-partial: true
 hide-integrations-object: true
 maintenance: true
 maintenance-content: "New versions of this destination are available. See [Braze Cloud Mode (Actions)](/docs/connections/destinations/catalog/braze-cloud-mode-actions) and [Braze Web Mode (Actions)](/docs/connections/destinations/catalog/braze-web-device-mode-actions)."
+id: 54efbf12db31d978f14aa8b5
 ---
-
 [Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
 
 The Braze Destination is open-sourced on GitHub. Source code for the following integrations is available:

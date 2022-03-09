@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Unwaffle Destination
+id: 5c707b074876c300018c37ab
 ---
-
 [Unwaffle](https://unwaffle.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps SaaS businesses improve their Free Trial conversion rates. By tracking every action that your trialers take, Unwaffle can discover patterns that lead to successful conversions and provide actionable recommendations to boost trial funnel performance.
 
 This destination is maintained by Unwaffle. For any issues with the destination, [contact the Unwaffle Support team](mailto:info@unwaffle.com).

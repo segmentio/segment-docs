@@ -1,6 +1,7 @@
 ---
 title: Attribution Destination
 rewrite: true
+id: 54521fd525e721e32a72ee96
 ---
 [Attribution](http://attributionapp.com/) is an easy to use one stop dashboard for multi-touch attribution across all marketing channels. Attribution prides itself on high-fidelity and allows marketers to trace every visit, conversion or revenue dollar to the source. Marketers can easily integrate Attribution and Segment to begin measuring the effectiveness of their campaigns today.
 

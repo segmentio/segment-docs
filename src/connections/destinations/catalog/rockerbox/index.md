@@ -1,8 +1,8 @@
 ---
 title: Rockerbox Destination
 redirect_from: '/connections/destinations/catalog/hindsight/'
+id: 59a476a470a3e552b9594307
 ---
-
 ## Getting Started
 
 All you need in order to integrate with Rockerbox is your pixel code, which you can get by emailing **info@rockerbox.com**.

@@ -3,9 +3,9 @@ title: Google Ads (Classic) Destination
 redirect_from: '/connections/destinations/catalog/adwords/'
 strat: google
 hide-personas-partial: true
-cmode-override: true 
+cmode-override: true
+id: 54521fd525e721e32a72ee92
 ---
-
 > info ""
 > The Google Ads (Classic) destination code is available on GitHub [here](https://github.com/segment-integrations/analytics.js-integration-adwords){:target="_blank"}.
 

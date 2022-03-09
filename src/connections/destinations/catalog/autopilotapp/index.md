@@ -2,8 +2,8 @@
 title: AutopilotApp Destination
 rewrite: true
 beta: true
+id: 613ef845b8784e858199fe2d
 ---
-
 [Autopilot](https://autopilotapp.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps thousands of organizations around the world automate their communications via email notifications, such as regular email newsletters, abandoned cart emails, as well as SMS messages, and more, to help organizations market and grow their businesses faster.
 
 Once you connect Segment to AutopilotApp (the Autopilot product), you can leverage Autopilot's powerful [campaign](https://help.autopilotapp.com/user/latest/campaigns/) features on your Segment customer data.

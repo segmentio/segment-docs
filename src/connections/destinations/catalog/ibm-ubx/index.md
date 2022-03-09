@@ -3,8 +3,8 @@ title: IBM Universal Behavior Exchange Destination
 rewrite: true
 beta: true
 hidden: true
+id: 5a3ab305a1e66e00017185f9
 ---
-
 [IBM's Universal Behavior Exchange (UBX)](https://www.ibm.com/support/knowledgecenter/en/SS9JVY/UBX/kc_welcome_UBX.html)
 is an API that allows users to share customer interactions, behaviors, and
 target audiences among IBM solutions and applications - including the *Watson
@@ -63,8 +63,8 @@ endpoint from Segment's support team._
 
 ## General Tracking Advice
 
-We encourage customers to review [UBX's dynamic event
-library](https://ubx-pilot.ibmmarketingcloud.com/#/taxonomy) closely to become
+We encourage customers to review UBX's dynamic event
+library closely to become
 familiar with UBX's specced events and properties. Many UBX consumers only
 accept specific events; likewise, many consumers function best when specific
 events include particular properties. Although Segment provides robust
@@ -92,8 +92,8 @@ _**Note:** As with `track` events, all properties sent by the user that aren't
 mapped above will be sent as attributes to UBX. To send a UBX-specced property
 that isn't mapped above, simply set the Segment property name to the UBX
 property code directly (e.g. `pageID`)._ Remember, you can find UBX-specific
-event and property codes in their [dynamic event
-library](https://ubx-pilot.ibmmarketingcloud.com/#/taxonomy).
+event and property codes in their dynamic event
+library.
 
 ## Track
 
@@ -143,8 +143,8 @@ Events
 
 We do not define any specific mobile property mappings at this time given that
 Segment's spec and UBX's spec do not share closely related mobile properties.
-Note, you can still pass in any attribute codes as defined in [UBX's dynamic
-event library](https://ubx-pilot.ibmmarketingcloud.com/#/taxonomy), and Segment
+Note, you can still pass in any attribute codes as defined in UBX's dynamic
+event library, and Segment
 will pass these values downstream.
 
 #### Ecommerce
@@ -333,8 +333,8 @@ Attributes
 _**Note**: To send a UBX event or property that isn't mapped above, simply set
 the Segment event or property name to the UBX-specced event or property code
 directly (e.g. `opptyQualified`)._ Remember, you can find UBX-specific event and
-property codes in their [dynamic event
-library](https://ubx-pilot.ibmmarketingcloud.com/#/taxonomy).
+property codes in their dynamic event
+library.
 
 ### Property Mappings
 

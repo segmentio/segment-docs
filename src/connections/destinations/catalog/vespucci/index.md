@@ -1,8 +1,8 @@
 ---
 title: Vespucci Destination
 rewrite: true
+id: 5e8761995f50ba6c68e5ea53
 ---
-
 [Vespucci](https://vespuccianalytics.com) is an unsupervised analytics solution relying on models that highlight the elements and content in your app revealing remarkable behaviors.
 
 This destination is maintained by Vespucci. For any issues with the destination, [contact the Vespucci Support team](mailto:info@amerigotechnology.com).

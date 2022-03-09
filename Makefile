@@ -81,7 +81,7 @@ papi: vendor/bundle
 
 # make the list of beta connections
 .PHONY: beta
-beta: vendor/bundle
+beta:
 	@node scripts/beta.js
 
 .PHONY: changelog
@@ -150,6 +150,9 @@ vendor/bundle:
 	@bundle config set --local path 'vendor/bundle'
 	@bundle install
 
+.PHONY: update
+update: 
+	@node scripts/update.js
 
 .PHONY: lint
 lint: node_modules

@@ -1,8 +1,8 @@
 ---
 beta: true
 title: Swrve Destination
+id: 59c467ba9e26eb0001380743
 ---
-
 ## Getting Started
 
 Once the Segment library is integrated, toggle Swrve on in your Segment destination catalog. You can integrate Swrve as a mobile destination (iOS or Android). You'll need to get your `app_id` and `api_key` from the Swrve dashboard and add these to your mobile app.

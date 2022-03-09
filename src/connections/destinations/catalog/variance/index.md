@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Variance Destination
+id: 6099bbbc3d51136d7d293b0c
 ---
-
 [Variance](https://variance.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) hooks into your customer data and makes it easy to access growth signals across product, marketing, and sales. The platform provides your growth team with clear, intent-based signals, from all stages of a customer's journey.
 
 This destination is maintained by Variance. For any issues with the destination, [contact the Variance Support team](mailto:support@variance.com).

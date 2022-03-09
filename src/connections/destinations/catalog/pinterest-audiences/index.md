@@ -1,5 +1,6 @@
 ---
 title: 'Pinterest Audiences Destination'
+id: 5f3ada4acea48a461353d5af
 ---
 Pinterest Ads provides a way to target advertisements on Pinterest to a global audience. Segment's Pinterest Audiences integration allows Segment Personas customers to sync audiences from Personas to Pinterest for better retargeting and higher-performing ads.
 

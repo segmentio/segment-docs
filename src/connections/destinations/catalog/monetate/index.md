@@ -1,7 +1,7 @@
 ---
 title: Monetate Destination
+id: 54521fd925e721e32a72eede
 ---
-
 ## Getting Started
 
 Segment allows you to track events directly into Monetate, and create, test, deploy, and measure personalized marketing campaigns.
