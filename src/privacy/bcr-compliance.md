@@ -10,10 +10,10 @@ In response to the passage of the General Data Protection Regulation (GDPR) poli
 
 Twilio has two BCR policies: a [Controller policy](https://www.twilio.com/legal/bcr/controller) and a [Processor policy](https://www.twilio.com/legal/bcr/processor). Segment, as a processor of individual data, complies with the Processor policy.
 
-### Where can I learn more about Twilio's Binding Corporate Rules?
+## Where can I learn more about Twilio's Binding Corporate Rules?
  
 To learn more about Twilio's Binding Corporate Rules (BCRs,) read the [full version on twilio.com/legal](https://www.twilio.com/legal/bcr) or reach out to [privacy@twilio.com](mailto:privacy@twilio.com).
 
-### What do Twilio's Binding Corporate Rules mean for my data?
+## What do Twilio's Binding Corporate Rules mean for my data?
 
-Twilio's BCRs inform the way your user data must be stored, processed, and deleted. While the ways Segment stores and processes user data are already in compliance with Twilio's BCRs, [an additional data deletion method](/docs/privacy/account-deletion/#delete-your-workspace-data) was introduced to comply with the ["Storage limitation"](https://www.twilio.com/legal/bcr/processor#part-ii-our-obligations) section of the Processor policy. This new data deletion method, along with the existing methods of deleting [individual user data](/docs/privacy/account-deletion/#delete-individual-user-data) and [source data](/docs/privacy/account-deletion/#delete-data-from-a-source), ensure that Segment's policies are now in alignment with Twilio's BCRs. 
+Twilio's BCRs inform the way your user data must be stored, processed, and deleted. While the ways Segment stores and processes user data are already in compliance with Twilio's BCRs, [an additional data deletion method](/docs/privacy/account-deletion/#delete-your-workspace-data) for all workspace data was introduced to comply with the ["Storage limitation"](https://www.twilio.com/legal/bcr/processor#part-ii-our-obligations) section of the Processor policy. This new data deletion method, along with the existing methods of deleting [individual user data](/docs/privacy/account-deletion/#delete-individual-user-data) and [source data](/docs/privacy/account-deletion/#delete-data-from-a-source), ensure that Segment's policies now align with Twilio's BCRs. 

@@ -2,7 +2,7 @@
 title: Account & Data Deletion
 ---
 
-Segment allows you to delete data at a variety of levels. You can delete specific data relating to an individual end user, all data from associated with a source, or all data within your entire workspace.
+Segment allows you to delete specific data relating to an individual end user, all data from associated with a source, or all data within your entire workspace.
 
 ## Delete individual user data
 To delete the data for an individual user from you workspace, follow the instructions on the [User Deletion and Suppression](/docs/privacy/user-deletion-and-suppression) page.
@@ -22,13 +22,13 @@ To delete the data for an entire source, email the Customer Success team [(frien
 
 Workspace admins can delete all of the data associated with a workspace, including customer data. 
 
-To delete all data from one workspace:
+**To delete all data from one workspace:**
 
-1. Open the Segment app, and select **Settings.**
+1. Sign in to the Segment app, select the workspace you'd like to delete, and click **Settings.**
 2. On the General Settings page, click the **Delete Workspace** button. 
 3. Follow the prompts on the pop-up to delete your workspace. 
 
-To delete data from all workspaces associated with your account:
+**To delete data from all workspaces in which you have workspace admin permissions:**
 
 1. Sign in to the Segment app. 
 2. Navigate to the [User Settings page](https://app.segment.com/settings/user). 
@@ -44,7 +44,7 @@ If you do not delete your workspace after you stop using Segment, **your data re
 
 ### What is a complete data purge?
 
-A complete data purge is the mechanism Segment uses to completely remove all workspace and customer data from internal Segment servers across all product areas. To trigger a complete data purge, either [delete your workspace](#how-can-i-delete-data-from-my-workspace) or raise a support ticket with the Customer Success team by emailing [(friends@segment.com)](mailto:friends@segment.com). In your email to Customer Success, include either the slug or the ID of the workspace that you'd like to delete. Deletions related to data purges will *not* be forwarded to your connected third-party destinations or raw data destinations. 
+A complete data purge is the way Segment removes all workspace and customer data from internal servers across all product areas. To trigger a complete data purge, either [delete your workspace](#how-can-i-delete-data-from-my-workspace) or raise a support ticket with the Customer Success team by emailing [(friends@segment.com)](mailto:friends@segment.com). In your email to Customer Success, include either the slug or the ID of the workspace that you'd like to delete. Deletions related to data purges will *not* be forwarded to your connected third-party destinations or raw data destinations. 
 
 > error " "
-> Segment waits for five days before beginning a complete data purge to safeguard against malicious deletion requests. If you notice your workspace or account has been maliciously deleted,  reach out to [friends@segment.com](mailto:friends@segment.com) to cancel the data purge. After the five-day grace period, the deletion will be irreversible.
+> Segment waits for five calendar days before beginning a complete data purge to safeguard against malicious deletion requests. If you notice your workspace or account has been maliciously deleted, reach out to [friends@segment.com](mailto:friends@segment.com) to cancel the data purge. After the five-day grace period, the deletion will be irreversible.
