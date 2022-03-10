@@ -322,9 +322,6 @@ sections:
       title: Complying With GDPR
     - path: /privacy/user-deletion-and-suppression
       title: User Deletion and Suppression
-  - path: /privacy/bcr-compliance
-    title: Twilio's Binding Corporate Rules
-  - path: /privacy/account-deletion
     title: Account & Data Deletion 
   - path: /privacy/faq
     title: Privacy FAQs
