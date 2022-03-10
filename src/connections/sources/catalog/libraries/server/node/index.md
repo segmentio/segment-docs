@@ -437,6 +437,85 @@ analytics.flush(function(err, batch){
 });
 ```
 
+## Long running process
+
+You should call client.track(...) and know that events will be queued and eventually sent to Segment, also to prevent losing messages make sure that you capture any interruption (for example, a server restart) and call flush to know of and delay the process shutdown.
+
+```js
+import { randomUUID } from 'crypto';
+import Analytics from 'analytics-node'
+
+const WRITE_KEY = '...';
+
+const analytics = new Analytics(WRITE_KEY, { flushAt: 10 });
+
+analytics.track({
+  anonymousId: randomUUID(),
+  event: 'Test event',
+  properties: {
+    name: 'Test event',
+    timestamp: new Date()
+  }
+});
+
+const exitGracefully = async (code) => {
+  console.log('Flushing events');
+  await analytics.flush(function(err, batch) {
+    console.log('Flushed, and now this program can exit!');
+    process.exit(code);
+  });
+};
+
+[
+  'beforeExit', 'uncaughtException', 'unhandledRejection', 
+  'SIGHUP', 'SIGINT', 'SIGQUIT', 'SIGILL', 'SIGTRAP', 
+  'SIGABRT','SIGBUS', 'SIGFPE', 'SIGUSR1', 'SIGSEGV', 
+  'SIGUSR2', 'SIGTERM', 
+].forEach(evt => process.on(evt, exitGracefully));
+
+function logEvery2Seconds(i) {
+    setTimeout(() => {
+        console.log('Infinite Loop Test n:', i);
+        logEvery2Seconds(++i);
+    }, 2000);
+}
+
+logEvery2Seconds(0);
+```
+
+# Short lived process
+
+Short-lived functions have a predictably short and linear lifecycle so use a queue big enough to hold all messages and then
+await for flush to complete it's work.
+ 
+
+```js
+import { randomUUID } from 'crypto';
+import Analytics from 'analytics-node'
+
+
+async function lambda()
+{
+  const WRITE_KEY = '...';
+  const analytics = new Analytics(WRITE_KEY, { flushAt: 20 });
+  analytics.flushed = true;
+  
+  analytics.track({
+    anonymousId: randomUUID(),
+    event: 'Test event',
+    properties: {
+      name: 'Test event',
+      timestamp: new Date()
+    }
+  });
+  await analytics.flush(function(err, batch) {
+    console.log('Flushed, and now this program can exit!');
+  });
+}
+
+lambda();
+```
+
 
 ## Multiple Clients
 
