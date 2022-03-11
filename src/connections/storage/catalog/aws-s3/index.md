@@ -5,7 +5,6 @@ redirect_from:
 hide-personas-partial: true
 ---
 
-
 ## Differences between the Amazon S3 destination and the AWS S3 destination
 
 The AWS S3 destination provides a more secure method of connecting to your S3 buckets. It uses AWS's own IAM Roles to define access to the specified buckets. For more information about IAM Roles, see Amazon's [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html){:target="_blank"} documentation.
@@ -244,6 +243,31 @@ For example:
 - prod_source_N → prod_bucket
 
 For each source in the scenario, complete the steps described in [Migrate an existing destination](#migrate-an-existing-destination), and ensure that you have separate IAM Roles and Permissions set for staging and production use.
+
+### Test your migrated source
+You can validate that your configured your migrated source correctly using a button in the Settings section of the AWS S3 destination. 
+
+To verify that you migrated your source correctly: 
+1. Open the Segment app and select the AWS S3 destination. 
+2. On the Settings page, verify that your Region, Bucket Name, and IAM Role ARN are all correct. 
+3. Click **Validate.**
+4. A success/failure code appears.
+
+> note "`dummy-object.txt`"
+> In order to test your bucket, Segment will upload a text file, `dummy-object.txt`, to your `segment-logs` folder. After you've completed the validation process, feel free to delete this file.
+
+#### Troubleshooting
+
+The following table outlines some of the error codes the validation tool may display, as well as possible reasons for the error. 
+
+| Frontend error message | Backend error message | Likely cause of the error |
+| ---------------------- | --------------------- | ------------------------- |
+| Unknown Error. Please try again. If the problem persists, please contact [Segment support](mailto:friends@segment.com) | failed to assume intermediate role | Fail to assume intermediate role |
+| Access Denied. Please configure External ID in the AWS IAM Console. [Learn more](#create-an-iam-role-in-the-aws-console). | role not configured with external id | Successfully assumed customer's role, role doesn't have external ID |
+| Unknown Error. Please follow [instructions](#create-an-iam-role-in-the-aws-console) to set up the AWS S3 destination. If the problem persists, please contact [Segment support](mailto:friends@segment.com). | failed to assume role | Fail to assume customer’s role without external ID & returned an error code that is not error 403 |
+| Access Denied. Please configure External ID in the AWS IAM Console. [Learn more](#create-an-iam-role-in-the-aws-console). | assume role failed with Access Denied | Fail to assume customer’s role without external ID & returned error 403 |
+| Access Denied. Please add PutObject permissions to the IAM role in the AWS IAM Console. [Learn more](). | upload dummy object failed with Access Denied | Fail to upload the dummy object to customer's S3 bucket & an error code that is not error 403. |
+| Unknown Error. Please follow [instructions](#create-an-iam-role-in-the-aws-console) to set up the AWS s3 destination. If the problem persists, please contact [Segment support](mailto:friends@segment.com). | failed to upload dummy object | Fail to upload the dummy object to customer's S3 bucket & an error code that is not error 403. |
 
 
 ## Data format
