@@ -40,7 +40,7 @@ Here's what it would look like with Maven:
 *or if you're using Gradle:*
 
 ```bash
-compile 'com.segment.analytics.java:analytics:+'
+implementation 'com.segment.analytics.java:analytics:+'
 ```
 
 ## Step 3: Initialize the SDK
@@ -71,14 +71,13 @@ The `identify` message is how you tell Segment who the current user is. It inclu
 Here's what a basic call to `identify` a user might look like:
 
 ```java
+Map<String, String> map = new HashMap();
+map.put("name", "Michael Bolton");
+map.put("email", "mbolton@example.com");
+
 analytics.enqueue(IdentifyMessage.builder()
-    .userId("f4ca124298")
-    .traits(ImmutableMap.builder()
-        .put("name", "Michael Bolton")
-        .put("email", "mbolton@example.com")
-        .build()
-    )
-);
+        .userId("f4ca124298")
+                .traits(map));
 ```
 
 **Note:** The enqueue method takes a `MessageBuilder` instance and not a `Message` instance directly. This is to allow you to use a `MessageTransformer` that applies to all incoming messages and transform or add data. <!-- LR: Can't find that we ever had a doc about this. Read more about it in the [transformer reference docs](/docs/connections/sources/catalog/libraries/server/java#transformer).-->
