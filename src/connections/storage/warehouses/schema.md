@@ -2,7 +2,7 @@
 title: Warehouse Schemas
 ---
 
-A **schema** describes the way that the data in a warehouse is organized. Schemas of Segment data are organized into the following template:
+A **schema** describes the way that the data in a warehouse is organized. Segment stores data in relational schemas, which organize data into the following template:
 `<source>.<collection>.<property>`, for example `segment_engineering.tracks.user_id`, where source refers to the source or project name (segment_engineering), collection refers to the event (tracks), and the property refers to the data being collected (user_id). All schemas convert collection and property names from `CamelCase` to `snake_case`.
 
 > note "Warehouse column creation"
