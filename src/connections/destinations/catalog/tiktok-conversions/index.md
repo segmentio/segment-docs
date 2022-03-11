@@ -46,7 +46,7 @@ The TikTok Conversions destination is configured to use the TikTok Events API. T
 
 ### Deduplication with the TikTok Pixel
 
-If you independently placed the TikTok Pixel on your website, please reach out to your TikTok representative to understand if there are any changes necessary to your Pixel, to properly deduplicate events sent through both the Pixel and the Segment TikTok Conversions destination.
+If you independently placed the TikTok Pixel on your website, please reach out to your TikTok representative to see if there are any necessary changes to your Pixel to properly deduplicate events sent through both the Pixel and the Segment TikTok Conversions destination.
 
 ### Match Keys
 
