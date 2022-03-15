@@ -3,33 +3,32 @@ title: HTTP Tracking API Source
 redirect_from: '/connections/sources/catalog/libraries/server/http/'
 id: iUM16Md8P2
 ---
-The Segment HTTP Tracking API lets you record analytics data from any website or application. The requests hit our servers, and we route your data to any destination you want!
+The Segment HTTP Tracking API lets you record analytics data from any website or application. The requests hit Segment servers, Segment routes your data to any destination you want.
 
-Segment has native [sources](/docs/connections/sources/) for most use cases (Javascript, iOS, etc.) that are all built for high-performance and are open-source. But sometimes you may want to send to the HTTP API directly—that's what this reference is for.
+Segment has native [sources](/docs/connections/sources/) for most use cases (like JavaScript and iOS) that are all built for high-performance and are open-source. But sometimes you may want to send to the HTTP API directly—that's what this reference is for.
 
 ## Headers
 
 ### Authentication
 
 Authenticate to the Tracking API by sending your project's **Write Key** along with a request.
-Authentication uses HTTP Basic Auth, which involves a 'username:password' that is base64 encoded and prepended with the string 'Basic '.
+Authentication uses HTTP Basic Auth, which involves a `username:password` that is base64 encoded and prepended with the string `Basic`.
 
 In practice that means taking a Segment source **Write Key**,`'abc123'`, as the username, adding a colon, and then the password field is left empty. After base64 encoding `'abc123:'` becomes `'YWJjMTIzOg=='`; and this is passed in the authorization header like so: `'Authorization: Basic YWJjMTIzOg=='`.
 
 ### Content-Type
 
-In order to send data to our HTTP API, a content-type header must be set to `'application/json'`.
+To send data to our HTTP API, a content-type header must be set to `'application/json'`.
 
 ## Errors
 
-We currently return a `200` response for all API requests so debugging should be done in the Segment Debugger. The only exception is if the request is too large / JSON is invalid it will respond with a `400`.
+Segment returns a `200` response for all API requests so debugging should be done in the Segment Debugger. The only exception is if the request is too large / JSON is invalid it will respond with a `400`.
 
-We're hard at work surfacing more errors and more helpful responses to our users. If you have any suggestions, [let us know](https://segment.com/help/contact/)!
-
+Segment welcomes feedback on API responses and error messages. [Reach out to support](https://segment.com/help/contact/) with any requests or suggestions you may have.
 
 ## Rate Limits
 
-There is no hard rate limit at which point Segment will drop your data. We ask that if you need to import at a rate exceeding 500 requests per second, [contact us](https://segment.com/help/contact/) first. Requests include batches sent with the [batch method](#batch), which means you can send a large batch of events inside of a single request.
+There is no hard rate limit at which point Segment will drop your data. [Contact support](https://segment.com/help/contact/) if you need to import at a rate exceeding 500 requests per second. Requests include batches sent with the [batch method](#batch), which means you can send a large batch of events inside of a single request.
 
 ## Max Request Size
 
@@ -39,7 +38,7 @@ There is a maximum of `32KB` per normal API request.  The `batch` API endpoint a
 
 `identify` lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
 
-We recommend calling `identify` a single time when the user's account is first created, and only identifying again later when their traits change.
+Segment recommends calling `identify` a single time when the user's account is first created, and only identifying again later when their traits change.
 
 Example `identify` call:
 
@@ -75,11 +74,11 @@ Find details on the **identify method payload** in our [Spec](/docs/connections/
 
 ## Track
 
-`track` lets you record the actions your users perform. Every action triggers what we call an "event", which can also have associated properties.
+`track` lets you record the actions your users perform. Every action triggers an "event", which can also have associated properties.
 
 You'll want to track events that are indicators of success for your site, like **Signed Up**, **Item Purchased** or **Article Bookmarked**.
 
-To get started, we recommend tracking just a few important events. You can always add more later!
+To get started, try tracking just a few important events. You can always add more later.
 
 Example `track` call:
 
@@ -254,7 +253,7 @@ For more details on the `alias` call and payload, check out our [Spec](/docs/con
 
 You can import historical data by adding the `timestamp` argument to any of your method calls. This can be helpful if you've just switched to Segment.
 
-Historical imports can only be done into destinations that can accept historical timestamped data. Most analytics tools like Mixpanel, Amplitude, Kissmetrics, etc. can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
+Historical imports can only be done into destinations that can accept historical timestamped data. Most analytics tools like Mixpanel, Amplitude, and Kissmetrics can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
 
 **Note:** If you're tracking things that are happening right now, leave out the `timestamp` and our servers will timestamp the requests for you.
 
@@ -377,13 +376,13 @@ POST https://api.segment.io/v1/identify
 }
 ```
 
-In this case, we're specifying that we want this identify to only go to Mixpanel and Kissmetrics. `'All': false` says that no destination should be enabled unless otherwise specified. `'Mixpanel': true` turns on Mixpanel, etc.
+ `'All': false` says that no destination should be enabled unless otherwise specified. `'Mixpanel': true` turns on Mixpanel, `"Kissmetrics": true,` turns on Kissmetrics, and so on.
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/catalog/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/catalog/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", and so on).
 
 **Note:**
 
-- Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
+- Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. Segment recommends using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
 
 - If you are on a grandfathered plan, events sent server-side that are filtered through the Segment dashboard will still count towards your API usage.
 
@@ -401,6 +400,6 @@ When sending a HTTP call from a user's device, you can collect the IP address by
 
 1. Double check that you've set up the library correctly.
 
-2. Make sure that you're calling one of our API methods once the library is successfully installed—[`identify`](#identify), [`track`](#track), etc.
+2. Make sure that you're calling one of our API methods once the library is successfully installed—[`identify`](#identify), [`track`](#track), and so on.
 
 {% include content/troubleshooting-server-integration.md %}
