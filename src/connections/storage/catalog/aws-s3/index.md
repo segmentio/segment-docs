@@ -260,14 +260,14 @@ To verify that you migrated your source correctly:
 
 The following table outlines some of the error codes the validation tool may display, as well as possible reasons for the error. 
 
-| Frontend error message | Backend error message | Likely cause of the error |
-| ---------------------- | --------------------- | ------------------------- |
-| Unknown Error. Please try again. If the problem persists, please contact [Segment support](mailto:friends@segment.com) | failed to assume intermediate role | Fail to assume intermediate role |
-| Access Denied. Please configure External ID in the AWS IAM Console. [Learn more](#create-an-iam-role-in-the-aws-console). | role not configured with external id | Successfully assumed customer's role, role doesn't have external ID |
-| Unknown Error. Please follow [instructions](#create-an-iam-role-in-the-aws-console) to set up the AWS S3 destination. If the problem persists, please contact [Segment support](mailto:friends@segment.com). | failed to assume role | Fail to assume customer’s role without external ID & returned an error code that is not error 403 |
-| Access Denied. Please configure External ID in the AWS IAM Console. [Learn more](#create-an-iam-role-in-the-aws-console). | assume role failed with Access Denied | Fail to assume customer’s role without external ID & returned error 403 |
-| Access Denied. Please add PutObject permissions to the IAM role in the AWS IAM Console. [Learn more](). | upload dummy object failed with Access Denied | Fail to upload the dummy object to customer's S3 bucket & an error code that is not error 403. |
-| Unknown Error. Please follow [instructions](#create-an-iam-role-in-the-aws-console) to set up the AWS s3 destination. If the problem persists, please contact [Segment support](mailto:friends@segment.com). | failed to upload dummy object | Fail to upload the dummy object to customer's S3 bucket & an error code that is not error 403. |
+| Error message | Likely cause of the error |
+| ------------- | ------------------------- |
+| Unknown Error. Please try again. If the problem persists, please contact [Segment support](mailto:friends@segment.com) | Fail to assume intermediate role |
+| Access Denied. Please configure External ID in the AWS IAM Console. [Learn more](#create-an-iam-role-in-the-aws-console). | Successfully assumed customer's role, role doesn't have external ID |
+| Unknown Error. Please follow [instructions](#create-an-iam-role-in-the-aws-console) to set up the AWS S3 destination. If the problem persists, please contact [Segment support](mailto:friends@segment.com). | Fail to assume customer’s role without external ID & returned an error code that is not error 403 |
+| Access Denied. Please configure External ID in the AWS IAM Console. [Learn more](#create-an-iam-role-in-the-aws-console). | Fail to assume customer’s role without external ID & returned error 403 |
+| Access Denied. Please add PutObject permissions to the IAM role in the AWS IAM Console. [Learn more](). | Fail to upload the dummy object to customer's S3 bucket & an error code that is not error 403. |
+| Unknown Error. Please follow [instructions](#create-an-iam-role-in-the-aws-console) to set up the AWS s3 destination. If the problem persists, please contact [Segment support](mailto:friends@segment.com). | Fail to upload the dummy object to customer's S3 bucket & an error code that is not error 403. |
 
 
 ## Data format
