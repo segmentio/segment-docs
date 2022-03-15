@@ -5,10 +5,14 @@ id: 579a568e80412f644ff19cf7
 ---
 Firebase is Google's platform for mobile apps. The Segment Firebase destination requires that you bundle the Firebase SDK with your project. The Segment-wrapped destination code then runs on the user's device, and sends its tracking calls to the Firebase API endpoints, and a copy to Segment for archiving.
 
-
 > info ""
 > As of October 2019, Firebase replaced the legacy version of Google Analytics Classic for mobile devices. (If you used Google Analytics for mobile, see the [migration guide](/docs/connections/destinations/catalog/google-analytics/migrating/).)
 
+Segment's Firebase destination code is open source and available on GitHub. You can view these repositories:
+- [Android](https://github.com/segment-integrations/analytics-android-integration-firebase){:target="_blank"}
+- [iOS](https://github.com/segment-integrations/analytics-ios-integration-firebase){:target="_blank"}
+- [Kotlin](https://github.com/segment-integrations/analytics-kotlin-firebase){:target="_blank"}
+- [Swift](https://github.com/segment-integrations/analytics-swift-firebase){:target="_blank"} 
 
 ## Getting Started on Android
 
@@ -111,43 +115,6 @@ If you use Segment's React Native source library, you must explicitly bundle the
 3. Go to the `await analytics.setup` configuration in your code, and find (or add) the `using:` item. Add "Firebase" to the list of device-mode destinations in the `using` item.
 4. Change to your iOS directory and run `pod install`.
 5. Add the `analytics-react-native-firebase` module to your `build.gradle` file. (See Step.4 of [Getting Started on Android](/docs/connections/destinations/catalog/firebase/#getting-started-on-android))
-
-
-## Setting up Firebase with Analytics-Kotlin
-If you're using the [Analytics-Kotlin library](/docs/connections/sources/catalog/libraries/mobile/kotlin-android), follow these steps to set up Firebase with Analytics-Kotlin:
-1. In your top-level `build.gradle` file add these lines:
-    ```kotlin  
-    buildscript {
-        ...
-        repositories {
-            google()
-        }
-        dependencies {
-            ...
-            classpath 'com.google.gms:google-services:4.3.5'
-        }
-    }
-    ```    
-2. In your app-module `build.gradle` file add these lines:
-    ```kotlin
-    ...
-    plugins {
-        id 'com.google.gms.google-services'
-    }
-
-    dependencies {
-        ...
-        implementation platform('com.google.firebase:firebase-bom:28.2.1')
-        implementation 'com.google.firebase:firebase-analytics-ktx'
-    }
-    ```
-3. Copy the [FirebaseDestination.kt](https://github.com/segmentio/analytics-kotlin/blob/main/samples/kotlin-android-app-destinations/src/main/java/com/segment/analytics/destinations/plugins/FirebaseDestination.kt) file into your project's codebase.
-4. Copy your `google-service.json` file to your app-module.
-5. Go to your project's codebase and add these lines where you intialize the analytics client:
-    ```kotlin
-    val Firebase = FirebaseDestination()
-    analytics.add(Firebase)
-    ```
 
 ## Identify
 
@@ -273,7 +240,7 @@ Then, enter the deep link URL scheme in your Segment Firebase destination settin
 
 ### **Conversion Tracking and Adwords Conversions**
 
-Firebase is Google's recommended method for reporting conversions to Adwords. To use Firebase, track the conversion events as you normally would with Segment and Segment will send them through to Firebase. 
+Firebase is Google's recommended method for reporting conversions to Adwords. To use Firebase, track the conversion events as you normally would with Segment and Segment will send them through to Firebase.
 
 ### Troubleshooting
 
