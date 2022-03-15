@@ -5,6 +5,12 @@ id: 54521fd525e721e32a72ee8f
 ---
 [AppsFlyer](https://www.appsflyer.com/) is the world's leading mobile attribution & marketing analytics platform, helping app marketers around the world make better decisions. Our AppsFlyer destination code is open-source. You can browse the code on GitHub for [iOS](https://github.com/AppsFlyerSDK/segment-appsflyer-ios) and [Android](https://github.com/AppsFlyerSDK/AppsFlyer-Segment-Integration).
 
+Segment's Appsflyer destination code is open source and available on GitHub. You can view these repos:
+- [Android](https://github.com/AppsFlyerSDK/appsflyer-segment-android-plugin){:target="_blank"}
+- [iOS](https://github.com/AppsFlyerSDK/segment-appsflyer-ios){:target="_blank"}
+- [Kotlin](https://github.com/segment-integrations/analytics-kotlin-appsflyer){:target="_blank"}
+- [Swift](https://github.com/segment-integrations/analytics-swift-appsflyer){:target="_blank"} 
+
 ## Getting Started
 
 {% include content/connection-modes.md %}
