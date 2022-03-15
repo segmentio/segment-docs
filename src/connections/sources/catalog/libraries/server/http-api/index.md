@@ -18,7 +18,7 @@ In practice that means taking a Segment source **Write Key**,`'abc123'`, as the 
 
 ### Content-Type
 
-To send data to our HTTP API, a content-type header must be set to `'application/json'`.
+To send data to Segment's HTTP API, a content-type header must be set to `'application/json'`.
 
 ## Errors
 
@@ -70,7 +70,7 @@ This call is identifying the user by their unique User ID (the one you know them
   {% include content/spec-field-user-id.md %}
 </table>
 
-Find details on the **identify method payload** in our [Spec](/docs/connections/spec/identify/).
+Find details on the **identify method payload** in the [Segment Spec](/docs/connections/spec/identify/).
 
 ## Track
 
