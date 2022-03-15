@@ -8,7 +8,7 @@ Firebase is Google's platform for mobile apps. The Segment Firebase destination 
 > info ""
 > As of October 2019, Firebase replaced the legacy version of Google Analytics Classic for mobile devices. (If you used Google Analytics for mobile, see the [migration guide](/docs/connections/destinations/catalog/google-analytics/migrating/).)
 
-Segment's Firebase destination code is open source and available on GitHub. You can view these repos:
+Segment's Firebase destination code is open source and available on GitHub. You can view these repositories:
 - [Android](https://github.com/segment-integrations/analytics-android-integration-firebase){:target="_blank"}
 - [iOS](https://github.com/segment-integrations/analytics-ios-integration-firebase){:target="_blank"}
 - [Kotlin](https://github.com/segment-integrations/analytics-kotlin-firebase){:target="_blank"}

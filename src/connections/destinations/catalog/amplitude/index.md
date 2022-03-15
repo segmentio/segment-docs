@@ -9,7 +9,7 @@ platform for your web and mobile apps. By analyzing the actions your users
 perform, you can gain a better understanding to drive retention, engagement,
 and conversion.
 
-Segment's Amplitude destination code is open source and available on GitHub. You can view these repos:
+Segment's Amplitude destination code is open source and available on GitHub. You can view these repositories:
 - [Android](https://github.com/segment-integrations/analytics-android-integration-amplitude){:target="_blank"}
 - [iOS](https://github.com/segment-integrations/analytics-ios-integration-amplitude){:target="_blank"}
 - [JavaScript](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/amplitude){:target="_blank"}
