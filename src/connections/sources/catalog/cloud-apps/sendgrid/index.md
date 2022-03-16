@@ -80,16 +80,16 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 |  deferred | Event | Recipient's email server temporarily rejected message. |
 |  unsubscribe | Event | Recipient clicked on message's subscription management link. You need to enable Subscription Tracking for getting this type of event. |
 |  spam_report | Event | Recipient marked message as spam. |
-|  lists | Object | [Groups of contacts](https://SendGrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html). **Will only return data if you're using SendGrid's Marketing Campaign features.** |
-|  segments | Object | [Slices of lists](https://SendGrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html). **Will only return data if you're using SendGrid's Marketing Campaign features.** |
-|  recipients | Object | All contacts who have received an email, with information about their last activities and custom activities. [More Info](https://SendGrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html).  **Will only return data if you're using SendGrid's Marketing Campaign features.** |
-|  campaigns | Object | All campaigns you've created in SendGrid. [More Info](https://SendGrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html).  **Will only return data if you're using SendGrid's Marketing Campaign features.** |
+|  lists | Object | [Groups of contacts](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html). **Will only return data if you're using SendGrid's Marketing Campaign features.** |
+|  segments | Object | [Slices of lists](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html). **Will only return data if you're using SendGrid's Marketing Campaign features.** |
+|  recipients | Object | All contacts who have received an email, with information about their last activities and custom activities. [More Info](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html).  **Will only return data if you're using SendGrid's Marketing Campaign features.** |
+|  campaigns | Object | All campaigns you've created in SendGrid. [More Info](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html).  **Will only return data if you're using SendGrid's Marketing Campaign features.** |
 
 > info "SendGrid and Personas"
 > SendGrid data is not available in Personas.
 
 ## Troubleshooting
 
-If you're getting an "Invalid Credentials" error when setting up the SendGrid source, send a direct ping to the [SendGrid Marketing Campaigns API](https://SendGrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html) to test if you're using the correct credentials.
+If you're getting an "Invalid Credentials" error when setting up the SendGrid source, send a direct ping to the [SendGrid Marketing Campaigns API](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html) to test if you're using the correct credentials.
 
 Make sure you allowlist Segment IP addresses on SendGrid. [Contact Segment](https://segment.com/help/contact/) for the list of IP addresses to allowlist.
