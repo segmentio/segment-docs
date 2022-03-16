@@ -10,7 +10,7 @@ To delete the data for an individual user from you workspace, follow the instruc
 ## Delete data from a source
 To delete the data for an entire source, email the Customer Success team [(friends@segment.com)](mailto:friends@segment.com) to create a support ticket. In your email to Customer Success, include the following information:
 - Your workplace slug
-- The source you'd like to delete data from
+- The source from which you'd like to delete data
 - The time frame for the data you'd like to delete*
 
 **Due to the way Segment stores data internally, source-level deletions can only be scoped to one day in granularity. Deletion requests for smaller time frames are not supported.*
