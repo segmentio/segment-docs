@@ -439,7 +439,7 @@ analytics.flush(function(err, batch){
 
 ## Long running process
 
-You should call client.track(...) and know that events will be queued and eventually sent to Segment, also to prevent losing messages make sure that you capture any interruption (for example, a server restart) and call flush to know of and delay the process shutdown.
+You should call `client.track(...)` and know that events will be queued and eventually sent to Segment. To prevent losing messages, be sure to capture any interruption (for example, a server restart) and call flush to know of and delay the process shutdown.
 
 ```js
 import { randomUUID } from 'crypto';
