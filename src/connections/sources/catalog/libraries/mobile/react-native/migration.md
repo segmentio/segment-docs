@@ -7,10 +7,14 @@ If you’re using `analytics-react-native 1.5.1` or older, follow these steps to
 
 1. Update the existing package:
     ```js
-    yarn upgrade @segment/analytics-react-native@2.0
+    yarn upgrade @segment/analytics-react-native@2.2.0
+    ```
+2. Install additional dependencies:
+    ```js
+    yarn add @segment/sovran-react-native @react-native-async-storage/async-storage 
     ```
 
-2. Install or update pods:
+3. Install or update pods:
     ```js
     npx pod-install
     ```
@@ -22,7 +26,7 @@ If you’re using `analytics-react-native 1.5.1` or older, follow these steps to
 
 4. Initialize and configure the Analytics React Native 2.0 client. The package exposes a method called `createClient` which you can use to create the Segment Analytics client. This central client manages all the tracking events.
     ```js
-    import { createClient } from '@segment/analytics-react-native';
+    import { createClient, AnalyticsProvider } from '@segment/analytics-react-native';
 
     const segmentClient = createClient({
       writeKey: 'SEGMENT_API_KEY'
@@ -82,7 +86,7 @@ PODS:
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-### Example client configuration for `analytics-react-native 2.0.0`
+### Example client configuration for `analytics-react-native 2.2.0`
 
 {% codeexample %}
 {% codeexampletab App.tsx (or .js) %}
@@ -92,12 +96,15 @@ import {
  AnalyticsProvider,
 } from '@segment/analytics-react-native';
 
+import { FirebasePlugin } from '@segment/analytics-react-native-plugin-firebase';
 ...
 
 const segmentClient = createClient({
  writeKey: 'WRITE_KEY',
  trackAppLifecycleEvents: true,
 });
+
+segmentClient.add({ plugin: new FirebasePlugin() });
 
 const App = () => {
  ...
@@ -116,7 +123,9 @@ const App = () => {
   ...
  "nanoid": "^3.1.30",
  "@react-native-async-storage/async-storage": "^1.15.11",
- "@segment/analytics-react-native": "2.0.0"
+ "@segment/analytics-react-native": "2.2.0",
+ "@segment/analytics-react-native-plugin-firebase": "2.2.0",
+ "@segment/sovran-react-native": "0.2.6",
 }
 ```
 {% endcodeexampletab %}
@@ -126,6 +135,8 @@ const App = () => {
 PODS:
 ...
 - segment-analytics-react-native (2.0.0):
+ - React-Core
+- sovran-react-native (0.2.6):
  - React-Core
 }
 ```
@@ -152,7 +163,7 @@ onSendEvent = async() => {
 }
 ```
 
-### Example tracking implementation for `analytics-react-native 2.0.0`
+### Example tracking implementation for `analytics-react-native 2.2.0`
 Home.tsx
 
 ```js
