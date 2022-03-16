@@ -4,7 +4,7 @@ id: jhr8dT2yHn
 ---
 {% include content/source-region-unsupported.md %}
 
-[SendGrid](http://SendGrid.com) is a trusted platform for transactional email and email marketing.
+[SendGrid](http://sendgrid.com) is a trusted platform for transactional email and email marketing.
 
 Take your company's analysis to the next level by **adding SendGrid as a Source to Segment.** Segment automatically  collects events like `Click` or `Delivered` and objects such as `Recipients` or `Campaigns` and loads them into your data warehouse. 
 
@@ -25,7 +25,7 @@ To finish adding the SendGrid source, return to your Segment Workspace and follo
 1. From the [Source catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) in your Segment workspace, enter **SendGrid** and select the SendGrid source that appears.
 2. From the SendGrid information panel that appears, click **Add source**.
 3. Give the Source a name and add any labels to help you organize and filter your sources.
-   Segment recommends a name that reflects the source itself, as this name autopopulates the schema name. For example, the source name `SendGrid` creates the schema `SendGrid`. You can add multiple instances if you have multiple SendGrid accounts.
+   Segment recommends a name that reflects the source itself, as this name populates the schema name. For example, the source name `SendGrid` creates the schema `SendGrid`. You can add multiple instances if you have multiple SendGrid accounts.
 4. Paste the SendGrid API Key you copied above into the Segment interface. Click **Connect**.
 ![](images/601347_Key.png)
 
