@@ -486,7 +486,6 @@ logEvery2Seconds(0);
 ## Short lived process
 
 Short-lived functions have a predictably short and linear lifecycle, so use a queue big enough to hold all messages and then await flush to complete its work.
-await for flush to complete it's work.
  
 
 ```js
