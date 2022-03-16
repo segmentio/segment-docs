@@ -20,6 +20,8 @@ Relational databases are great when you know and predefine the information colle
 
 Examples of data warehouses include Amazon Redshift, Google BigQuery, and Postgres.
 
+{% include content/how-a-sync-works.md %}
+
 <div data-headings-anchors id="warehouse-schemas"></div>
 > info "Looking for the Warehouse Schemas docs?"
 >  They've moved! Check them out [here](schema/).
@@ -32,7 +34,7 @@ Examples of data warehouses include Amazon Redshift, Google BigQuery, and Postgr
 
 [How do I give users permissions to my warehouse?](/docs/connections/storage/warehouses/add-warehouse-users/)
 
-Check out our [Frequently Asked Questions about Warehouses](/docs/connections/storage/warehouses/faq/) and [a list of helpful queries to get you started](https://help.segment.com/hc/en-us/articles/205577035-Common-Segment-SQL-Queries).
+Check out the [Frequently Asked Questions about Warehouses](/docs/connections/storage/warehouses/faq/) page and [a list of helpful SQL queries to get you started with Redshift ](/docs/connections/storage/warehouses/redshift-useful-sql).
 
 ## FAQs
 
@@ -42,7 +44,7 @@ Check out our [Frequently Asked Questions about Warehouses](/docs/connections/st
 
 [How do I give users permissions?](/docs/connections/storage/warehouses/add-warehouse-users/)
 
-[What are the limitations of Redshift clusters and our warehouses connector?](/docs/connections/storage/warehouses/redshift-faq/)
+[What are the limitations of Redshift clusters and warehouses connectors?](/docs/connections/storage/warehouses/redshift-faq/)
 
 [Where do I find my source slug?](/docs/connections/storage/warehouses/faq/#how-do-i-find-my-source-slug)
 
@@ -50,25 +52,25 @@ Check out our [Frequently Asked Questions about Warehouses](/docs/connections/st
 
 [How do I create a user, grant usage on a schema and then grant the privileges that the user will need to interact with that schema?](/docs/connections/storage/warehouses/add-warehouse-users/)
 
-[Which IPs should I whitelist?](/docs/connections/storage/warehouses/faq/#which-ips-should-i-whitelist)
+[Which IPs should I allowlist?](/docs/connections/storage/warehouses/faq/#which-ips-should-i-whitelist)
 
 [Will Segment sync my historical data?](/docs/connections/storage/warehouses/faq/#will-segment-sync-my-historical-data)
 
 [Can I load in my own data into my warehouse?](/docs/connections/storage/warehouses/faq/#what-if-i-want-to-add-custom-data-to-my-warehouse)
 
-[Can I control what data is sent to my warehouse?](/docs/connections/storage/warehouses/faq/)
+[Can I control what data is sent to my warehouse?](/docs/connections/storage/warehouses/faq/#can-i-control-what-data-is-sent-to-my-warehouse)
 
 ### Managing a warehouse
 
-[How fresh is the data in my warehouse?](/docs/connections/storage/warehouses/faq/)
+[How fresh is the data in my warehouse?](/docs/connections/storage/warehouses/faq/#how-fresh-is-the-data-in-segment-warehouses)
 
-[Can I add, tweak, or delete some of the tables?](/docs/connections/storage/warehouses/faq/)
+[Can I add, tweak, or delete some of the tables?](/docs/connections/storage/warehouses/faq/#can-we-add-tweak-or-delete-some-of-the-tables)
 
-[Can I transform or clean up old data to new formats or specs?](/docs/connections/storage/warehouses/faq/)
+[Can I transform or clean up old data to new formats or specs?](/docs/connections/storage/warehouses/faq/#can-we-transform-or-clean-up-old-data-to-new-formats-or-specs)
 
 [What are common errors and how do I debug them?](/docs/connections/storage/warehouses/warehouse-errors/)
 
-[How do I speed up my queries?](/docs/connections/storage/warehouses/redshift-tuning/)
+[How do I speed up my Redshift queries?](/docs/connections/storage/warehouses/redshift-tuning/)
 
 ### Analyzing with SQL
 
