@@ -1,0 +1,3 @@
+When Segment loads data into your warehouse, each sync goes through two steps:
+1. **Ping:** Segment servers connect to your warehouse. For Redshift warehouses, Segment also runs a query to determine how many slices a cluster has. Common reasons a sync might fail at this step include a blocked VPN or IP, a warehouse that isn't set to be publicly accessible, or an issue with user permissions or credentials. 
+2. **Load:** Segment de-duplicates the transformed data and loads it into your warehouse. If you have queries set up in your warehouse, they run after the data is loaded into your warehouse. 
