@@ -10,6 +10,16 @@
     padding: 10px;
   }
 
+  .release-pill {
+    background-color:#E7E4F9;
+    color: #6E62B6;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0px 6px;
+    border-radius: 4px
+
+  }
+
   @include breakpoint(small down)  {
     max-width: 100%;
     float: none;
@@ -55,7 +65,7 @@
     font-size: 14px;
     line-height: 24px;
   }
-  ul li:first-of-type {
+  ul li:not(:last-of-type) {
     margin-bottom: 16px;
   }
   ul li:before{

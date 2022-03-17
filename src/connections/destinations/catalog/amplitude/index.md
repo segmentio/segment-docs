@@ -9,11 +9,12 @@ platform for your web and mobile apps. By analyzing the actions your users
 perform, you can gain a better understanding to drive retention, engagement,
 and conversion.
 
-Segment's Amplitude destination code is open source and available on GitHub. Feel free to check it out:
-- [JavaScript](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/amplitude)
-- [iOS](https://github.com/segment-integrations/analytics-ios-integration-amplitude)
-- [Android](https://github.com/segment-integrations/analytics-android-integration-amplitude)
-
+Segment's Amplitude destination code is open source and available on GitHub. You can view these repositories:
+- [Android](https://github.com/segment-integrations/analytics-android-integration-amplitude){:target="_blank"}
+- [iOS](https://github.com/segment-integrations/analytics-ios-integration-amplitude){:target="_blank"}
+- [JavaScript](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/amplitude){:target="_blank"}
+- [Kotlin](https://github.com/segment-integrations/analytics-kotlin-amplitude){:target="_blank"}
+- [Swift](https://github.com/segment-integrations/analytics-swift-amplitude){:target="_blank"} 
 
 In addition to the docs below, Amplitude created a [integration guide](https://developers.amplitude.com/docs/segment-amplitude-integration).
 

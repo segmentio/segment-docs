@@ -2,7 +2,7 @@
 # it from the `overrides-list.yml` too.
 items:
 - slug: criteo-app-web-events
-  connection_modes:
+  id: 5787cc5180412f644ff14d7e
   connection_modes:
     device:
       web: true
@@ -13,6 +13,7 @@ items:
       mobile: true
       server: false
 - slug: doubleclick-floodlight
+  id: 57ab9dfc80412f644ff2004c
   connection_modes:
     device:
       web: true
@@ -23,6 +24,7 @@ items:
       mobile: true
       server: true
 - slug: intercom
+  id: 54521fd725e721e32a72eec6
   connection_modes:
     device:
       web: true
@@ -33,6 +35,7 @@ items:
       mobile: true
       server: true
 - slug: hubspot
+  id: 54521fd725e721e32a72eec1
   display_name: HubSpot
   previous_names:
   - HubSpot
@@ -53,6 +56,7 @@ items:
     cmode_type: mixed
     case: '6'
 - slug: iterable
+  id: 54521fd925e721e32a72eecc
   display_name: Iterable
   components:
   - type: WEB
@@ -71,9 +75,11 @@ items:
     cmode_type: mixed
     case: '5'
 - slug: google-ads-gtag
+  id: 5a03bfe73156760001ab34ec
   previous_names:
   - Google AdWords New
 - slug: klaviyo
+  id: 54521fd825e721e32a72eec8
   display_name: Klaviyo
   previous_names:
   - Klaviyo
@@ -96,9 +102,12 @@ items:
     cmode_type: mixed
     case: '10'
 - slug: friendbuy
-  display_name: Friendbuy
+  id: 59ce9468cf711e00014a9c12
+  display_name: Friendbuy (Legacy)
+  name: Friendbuy (Legacy)
   previous_names:
   - FriendBuy
+  - Friendbuy (Legacy)
   components:
   - code: https://github.com/segment-integrations/analytics.js-integration-friendbuy
     type: browser
@@ -143,6 +152,7 @@ items:
     required: false
     label: Page Widgets
 - slug: google-ads-classic
+  id: 54521fd525e721e32a72ee92
   display_name: Google Ads (Classic)
   name: Google Ads (Classic)
   hidden: false

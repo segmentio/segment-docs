@@ -84,6 +84,10 @@ There is no hard rate limit at which point Segment will drop your data. However,
 
 If you want to batch requests to the HTTP endpoint, refer to the batching documentation [here](https://segment.com/docs/connections/sources/catalog/libraries/server/http-api/#import). The suggested maximum rate includes any batch requests.
 
+## Regional Segment
+Segment offers customers the option to lead on data residency by providing regional infrastructure in both the Europe and the United States.
+We recommend you enable the user to the Segment [endpoint](https://segment.com/docs/guides/regional-segment/#server-side-and-project-sources) to send data to for the given writeKey.
+
 # Process
 
 ## Plan

@@ -219,6 +219,8 @@ sections:
         title: Redshift Cluster and Redshift Connector Limitations
       - path: /connections/storage/warehouses/redshift-tuning
         title: Speeding Up Redshift Queries
+      - path: /connections/storage/warehouses/redshift-useful-sql
+        title: Useful SQL Queries for Redshift
   - path: /connections/test-connections
     title: Testing Connections
   - path: /connections/data-export-options

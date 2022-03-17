@@ -6,7 +6,12 @@ id: 54521fd925e721e32a72eed6
 ---
 [Mixpanel](https://mixpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an event tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion. The client-side Mixpanel Destination code is open-source.
 
-You can browse the code on GitHub for [Analytics.js in Device-mode](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/mixpanel), [iOS](https://github.com/segment-integrations/analytics-ios-integration-mixpanel) and [Android](https://github.com/segment-integrations/analytics-android-integration-mixpanel).
+Segment's Mixpanel destination code is open source and available on GitHub. You can view these repositories:
+- [Analytics.js in Device-mode](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/mixpanel){:target="_blank"}
+- [Android](https://github.com/segment-integrations/analytics-android-integration-mixpanel){:target="_blank"}
+- [iOS](https://github.com/segment-integrations/analytics-ios-integration-mixpanel){:target="_blank"}
+- [Swift](https://github.com/segment-integrations/analytics-swift-mixpanel){:target="_blank"} 
+- [Kotlin](https://github.com/segment-integrations/analytics-kotlin-mixpanel){:target="_blank"}
 
 ## Getting Started
 
@@ -382,7 +387,7 @@ analytics.track({
 
 ### Explicitly Set People Properties and Super Properties
 
-Previously, Segment set all traits and properties as both Super Properties and People Properties (If you had Mixpanel People enabled). Now Mixpanel allows you to segment your reports by both People Properties and Super Properties. To give you better precision and control over what property or trait gets set as a Super Property or People Property, you can disable **Set All Traits as Super Properties or People Properties By Default** and pass in the properties or traits that you want to send to Mixpanel as People or Super Properties as shown below. Segment passes through all of Mixpanel's special traits as People Properties so you only need to add the ones that aren't on [this list](#group-using-device-mode). 
+Previously, Segment set all traits and properties as both Super Properties and People Properties (If you had Mixpanel People enabled). Now Mixpanel allows you to segment your reports by both People Properties and Super Properties. To give you better precision and control over what property or trait gets set as a Super Property or People Property, you can disable **Set All Traits as Super Properties or People Properties By Default** and pass in the properties or traits that you want to send to Mixpanel as People or Super Properties as shown below. Segment passes through all of Mixpanel's special traits as People Properties so you only need to add the ones that aren't on [this list](#group-using-device-mode).
 
 
 ![mixpanel people properties list](images/mixpanelpeoplesuperprops.png)
@@ -498,7 +503,7 @@ analytics.identify(
 
 Push notifications are only available for projects bundling the Segment-Mixpanel SDK.
 
-> info "" 
+> info ""
 > Set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) documentation.
 
 ### In-App Notifications
