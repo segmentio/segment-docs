@@ -4,7 +4,7 @@ strat: react-native
 id: B0X0QmvMny
 ---
 
-With Analytics for React Native 2.0, you can you can collect analytics in your React Native application and send data to any analytics or marketing tool without having to learn, test or implement a new API every time. Analytics React Native 2.0 enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations.
+With Analytics for React Native 2.0, you can you can collect analytics in your React Native application and send data to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics React Native 2.0 enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations.
 
 All of Segment’s libraries are open-source, and you can view Analytics for React Native 2.0 on GitHub. For more information, see the [Analytics React Native 2.0 GitHub repository](https://github.com/segmentio/analytics-react-native){:target="_blank"}.
 
@@ -64,14 +64,14 @@ To get started with the Analytics for React Native 2.0 library:
     `debug` | The default is set to `true`. <br> The default value is `false` in production. <br> When set to false, logs don’t generate.
     `defaultSettings` | The default is set to `undefined`. <br> Settings that will be used if the request to get the settings from Segment fails.
     `flushAt` | The default is set to `20`. <br> The count of events at which Segment sends to the backend.
-    `flushInterval`| The default is set to `30`. <br> The internval in seconds at which Segment sends events to the backend.
+    `flushInterval`| The default is set to `30`. <br> The interval in seconds at which Segment sends events to the backend.
     `maxBatchSize` | The default is set to `1000`. <br> The maxiumum batch size of how many events to send to the API at once.
     `trackAppLifecycleEvents` | The default is set to `false`. <br> This enables you to automatically track app lifecycle events, such as application installed, opened, updated, backgrounded. Set to true to `true` to track.
     `trackDeepLinks` | The default is set to `false`. <br> This automatically tracks when the user opens the app via a deep link. Set to Enable automatic tracking for when the user opens the app via a deep link.
 
 ## Set up iOS Deep Link Tracking
 > warning ""
-> This is only required for iOS if you are using the `trackDeepLinks` option. Android does not require any additional setup.
+> This is only required for iOS if you're using the `trackDeepLinks` option. Android doesn't require any additional setup.
 
 To track deep links in iOS, add the following to your `AppDelegate.m` file:
 ```js
@@ -156,7 +156,7 @@ Once you’ve installed the Analytics React Native 2.0 library, you can start co
 
 ### Identify
 
-The [Identify](/docs/connections/spec/identify/) method lets you tie a user to their actions and record traits about them. This includes a unique user ID and any optional traits you know about them like their email, name, address. The traits option can include any information you want to tie to the user. When using any of the [reserved user traits](/docs/connections/spec/identify/#traits), be sure the information reflects the name of the trait. For example, `email` should always be a string of the user’s email address.
+The [Identify](/docs/connections/spec/identify/) method lets you tie a user to their actions and record traits about them. This includes a unique user ID and any optional traits you know about them like their email, name, or address. The traits option can include any information you want to tie to the user. When using any of the [reserved user traits](/docs/connections/spec/identify/#traits), be sure the information reflects the name of the trait. For example, `email` should always be a string of the user’s email address.
 
 {% codeexample %}
 {% codeexampletab Method signature %}
@@ -203,7 +203,7 @@ track('View Product', {
 ### Screen
 The [Screen](/docs/connections/spec/screen/) method lets you record whenever a user sees a screen in your mobile app, along with optional extra information about the page being viewed.
 
-You’ll want to record a screen event whenever the user opens a screen in your app. This could be a view, fragment, dialog or activity depending on your app.
+You’ll want to record a screen event whenever the user opens a screen in your app. This could be a view, fragment, dialog, or activity depending on your app.
 
 Not all integrations support screen, so when it’s not supported explicitly, the screen method tracks as an event with the same parameters.
 
@@ -228,7 +228,7 @@ screen('ScreenName', {
 For setting up automatic screen tracking, see the [Automatic Screen Tracking instructions].
 
 ### Group
-The [Group](/docs/connections/spec/group/) method lets you associate an individual user with a group— whether it’s a company, organization, account, project, or team. This includes a unique group identifier and any additional group traits you may know, like company name, industry, number of employees. You can include any information you want to associate with the group in the traits option. When using any of the [reserved group traits](/docs/connections/spec/group/#traits), be sure the information reflects the name of the trait. For example, email should always be a string of the user’s email address.
+The [Group](/docs/connections/spec/group/) method lets you associate an individual user with a group— whether it’s a company, organization, account, project, or team. This includes a unique group identifier and any additional group traits you may know, like company name, industry, or number of employees. You can include any information you want to associate with the group in the traits option. When using any of the [reserved group traits](/docs/connections/spec/group/#traits), be sure the information reflects the name of the trait. For example, email should always be a string of the user’s email address.
 
 {% codeexample %}
 {% codeexampletab Method signature %}
@@ -411,7 +411,7 @@ Segment’s plugin architecture enables you to modify and augment how the events
 > Plugins can have their own native code (such as the iOS-only `IdfaPlugin`) or wrap an underlying library (such as `FirebasePlugin` which uses `react-native-firebase` under the hood).
 
 ### Destination Plugins
-Segment is an out-of-the-box `DestinationPlugin`. You can add as many other destination plugins as you like, and upload events and data to them.
+Segment is an out-of-the-box `DestinationPlugin`. You can add as many other destination plugins as you like and upload events and data to them.
 
 If you don’t want the Segment destination plugin, you can pass `autoAddSegmentDestination = false` in the options when setting up your client. This prevents the `SegmentDestination` plugin from being added automatically for you.
 
@@ -446,7 +446,7 @@ The available plugin classes are:
 - `PlatformPlugin`
 
 Any plugin must be an extension of one of these classes.
-You can them customize the functionality by overriding different methods on the base class. For example, here is a simple `Logger` plugin:
+You can then customize the functionality by overriding different methods on the base class. For example, here is a simple `Logger` plugin:
 
 ```js
 // logger.js

@@ -40,13 +40,13 @@ If you’re using `analytics-react-native 1.5.1` or older, follow these steps to
     | `writeKey` required         | This is your Segment write key.                                                                                                                                                            |
     | `autoAddSegmentDestination` | The default is set to `true`.<br>This automatically adds the Segment Destination plugin. Set to `false` if you don’t want to add the Segment Destination.                                  |
     | `debug`                     | The default is set to `true`. <br>The default value is `false` in production.<br>When set to false, logs don’t generate.                                                                   |
-    | `defaultSettings`           | The default is set to `undefined`.<br>Settings that will be used if the request to get the settings from Segment fails                                                                     |
+    | `defaultSettings`           | The default is set to `undefined`.<br>Settings that will be used if the request to get the settings from Segment fails.                                                                     |
     | `flushAt`                   | The default is set to `20`.<br>The count of events at which Segment sends to the backend.                                                                                                  |
     | `flushInterval`             | The default is set to `30`.<br>The internval in seconds at which Segment sends events to the backend.                                                                                      |
     | `maxBatchSize`              | The default is set to `1000`.<br>The maxiumum batch size of how many events to send to the API at once.                                                                                    |
     | `maxEventsToRetry`          | The default is set to `1000`.<br>The maximum number of events needed to retry sending if the initial request failed.                                                                       |
     | `retryInterval`             | The default is set to `60`.<br>The interval in seconds at which to retry sending events the request failed, for example, in case of a network failure.                                     |
-    | `trackAppLifecycleEvents`   | The default is set to `false`.<br>This enables you to automatically track app lifecycle events, such as application installed, opened, updated, backgrounded. Set to `true` to track.      |
+    | `trackAppLifecycleEvents`   | The default is set to `false`.<br>This enables you to automatically track app lifecycle events, such as application installed, opened, updated, and backgrounded. Set to `true` to track.      |
     | `trackDeepLinks`            | The default is set to `false`.<br>This automatically tracks when the user opens the app via a deep link. Set to Enable automatic tracking for when the user opens the app via a deep link. |
 
 ## Client Configuration Examples
