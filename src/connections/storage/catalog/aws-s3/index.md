@@ -247,6 +247,9 @@ For each source in the scenario, complete the steps described in [Migrate an exi
 ### Test your migrated source
 You can validate that your configured your migrated source correctly using a button in the Settings section of the AWS S3 destination. 
 
+> important "Roles"
+> In-app source validation is restricted to users with source editing permissions. For more information about roles in the Segment app, please see the [Roles](/docs/segment-app/iam/roles/) documentation. 
+
 To verify that you migrated your source correctly: 
 1. Open the Segment app and select the AWS S3 destination. 
 2. On the Settings page, verify that your Region, Bucket Name, and IAM Role ARN are all correct. 
@@ -258,7 +261,7 @@ To verify that you migrated your source correctly:
 
 #### Troubleshooting
 
-The following table outlines some of the error codes the validation tool may display, as well as possible reasons for the error. 
+The following table outlines some of the error codes the validation tool may display and possible reasons for the error. 
 
 | Error message | Likely cause of the error |
 | ------------- | ------------------------- |
@@ -266,7 +269,7 @@ The following table outlines some of the error codes the validation tool may dis
 | Access Denied. Please configure External ID in the AWS IAM Console. [Learn more](#create-an-iam-role-in-the-aws-console). | Successfully assumed customer's role, role doesn't have external ID |
 | Unknown Error. Please follow [instructions](#create-an-iam-role-in-the-aws-console) to set up the AWS S3 destination. If the problem persists, please contact [Segment support](mailto:friends@segment.com). | Fail to assume customer’s role without external ID & returned an error code that is not error 403 |
 | Access Denied. Please configure External ID in the AWS IAM Console. [Learn more](#create-an-iam-role-in-the-aws-console). | Fail to assume customer’s role without external ID & returned error 403 |
-| Access Denied. Please add PutObject permissions to the IAM role in the AWS IAM Console. [Learn more](). | Fail to upload the dummy object to customer's S3 bucket & an error code that is not error 403. |
+| Access Denied. Please add PutObject permissions to the IAM role in the AWS IAM Console. [Learn more](#create-an-iam-role-in-the-aws-console). | Fail to upload the dummy object to customer's S3 bucket & an error code that is not error 403. |
 | Unknown Error. Please follow [instructions](#create-an-iam-role-in-the-aws-console) to set up the AWS s3 destination. If the problem persists, please contact [Segment support](mailto:friends@segment.com). | Fail to upload the dummy object to customer's S3 bucket & an error code that is not error 403. |
 
 
