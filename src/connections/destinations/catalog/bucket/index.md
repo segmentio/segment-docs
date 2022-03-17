@@ -4,7 +4,7 @@ rewrite: true
 id: 5fabc0b00f88248bbce4db48
 ---
 
-[Bucket](https://bucket.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is feature-focused analytics. Bucket empowers software teams with a repeatable approach to shipping features that customers crave.
+[Bucket](https://bucket.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="blank"} is feature-focused analytics. Bucket empowers software teams with a repeatable approach to shipping features that customers crave.
 
 This destination is maintained by Bucket. For any issues with the destination, [contact the Bucket Support team](mailto:support@bucket.co).
 
@@ -15,7 +15,7 @@ This destination is maintained by Bucket. For any issues with the destination, [
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Bucket" in the Destinations Catalog, and select the Bucket destination.
 3. Choose which Source should send data to the Bucket destination.
-4. Go to [Bucket's Settings](https://bucket.co) and find and copy the "Tracking Key" under Settings.
+4. Go to [Bucket's Settings](https://bucket.co){:target="blank"} and find and copy the "Tracking Key" under Settings.
 5. Enter the "Tracking Key" as "API Key" in the "Bucket" destination settings in Segment.
 
 ## Identify
