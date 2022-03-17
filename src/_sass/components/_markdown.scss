@@ -308,10 +308,10 @@
 
 }
 
-a[target="_blank"]:not(.reference-button):after {
-  content: url("/docs/images/external-link-alt-solid.svg");
-  margin-left: 4px;
-}
+//a[target="_blank"]:not(.reference-button):after {
+  //content: url("/docs/images/external-link-alt-solid.svg");
+//  margin-left: 4px;
+//}
 
 a.no-icon[target="_blank"]:after {
   content: none
