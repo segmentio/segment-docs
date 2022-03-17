@@ -245,10 +245,10 @@ For example:
 For each source in the scenario, complete the steps described in [Migrate an existing destination](#migrate-an-existing-destination), and ensure that you have separate IAM Roles and Permissions set for staging and production use.
 
 ### Test your migrated source
-You can validate that your configured your migrated source correctly using a button in the Settings section of the AWS S3 destination. 
+You can validate that your configured your migrated source correctly in the Settings section of the AWS S3 destination. 
 
-> important "Roles"
-> In-app source validation is restricted to users with source editing permissions. For more information about roles in the Segment app, please see the [Roles](/docs/segment-app/iam/roles/) documentation. 
+> important "Source editing permissions required"
+> In-app source validation is restricted to users with source editing permissions (for example, users with Workspace Owner, Source Admin, or Workspace Admin roles). For more information about roles in the Segment app, please see the [Roles documentation](/docs/segment-app/iam/roles/). 
 
 To verify that you migrated your source correctly: 
 1. Open the Segment app and select the AWS S3 destination. 
