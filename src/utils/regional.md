@@ -6,6 +6,7 @@ hidden: true
 {% assign destinations = site.data.catalog.regional-supported.destinations %}
 {% assign warehouses = site.data.catalog.regional-supported.warehouses %}
 
+This page breaks down individual integrations along with their support for Regional workspaces and endpoints.
 ## Sources
 
 <table>
