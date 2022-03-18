@@ -153,7 +153,7 @@ const updateSources = async () => {
   let categories = new Set()
   let sourceCategories = []
 
-  while (nextPageToken !== null) {
+  while (nextPageToken !== undefined) {
     const res = await getCatalog(`${PAPI_URL}/catalog/sources/`, nextPageToken)
     sources = sources.concat(res.data.sourcesCatalog)
     nextPageToken = res.data.pagination.next
@@ -183,13 +183,15 @@ const updateSources = async () => {
     'twilio-event-streams-beta'
   ]
 
-  const regionalSources = regionalSupport.sources
+  const regionalSourceEndpoint = regionalSupport.sources.endpoint
+  const regionalSourceRegion = regionalSupport.sources.region
 
   sources.forEach(source => {
     let slug = slugify(source.name)
     let settings = source.options
     let hidden = false
-    let regional = ['us-west']
+    let regions = ['us']
+    let endpoints = ['us']
     let mainCategory = source.categories[0] ? source.categories[0].toLowerCase() : ''
 
     // determine the doc url based on the source's main category
@@ -216,8 +218,12 @@ const updateSources = async () => {
       hidden = true
     }
 
-    if (regionalSources.includes(slug)) {
-      regional.push('eu-west')
+    if (regionalSourceEndpoint.includes(slug)) {
+      endpoints.push('eu')
+    }
+
+    if (regionalSourceRegion.includes(slug)) {
+      regions.push('eu')
     }
 
     // create the catalog metadata
@@ -227,7 +233,8 @@ const updateSources = async () => {
       slug,
       url,
       hidden,
-      regional,
+      regions,
+      endpoints,
       source_type: mainCategory,
       description: source.description,
       logo: {
@@ -247,7 +254,8 @@ const updateSources = async () => {
       display_name: source.name,
       slug,
       url,
-      regional
+      regions,
+      endpoints
     }
     regionalSourcesUpdated.push(updatedRegional)
 
@@ -311,7 +319,7 @@ const updateDestinations = async () => {
   let categories = new Set()
   let nextPageToken = "MA=="
 
-  while (nextPageToken !== null) {
+  while (nextPageToken !== undefined) {
     const res = await getCatalog(`${PAPI_URL}/catalog/destinations/`, nextPageToken)
     destinations = destinations.concat(res.data.destinationsCatalog)
     nextPageToken = res.data.pagination.next
@@ -327,18 +335,24 @@ const updateDestinations = async () => {
     return 0;
   })
 
-  const regionalDestinations = regionalSupport.destinations
+  const regionalDestinationEndpoints= regionalSupport.destinations.endpoint
+  const regionalDestinationRegions= regionalSupport.destinations.region
 
 
   destinations.forEach(destination => {
-    let regional = ['us-west']
+    let endpoints = ['us']
+    let regions = ['us']
 
     let slug = slugify(destination.name)
 
-    if (regionalDestinations.includes(slug)) {
-      regional.push('eu-west')
+    if (regionalDestinationEndpoints.includes(slug)) {
+      endpoints.push('eu')
     }
 
+    if (regionalDestinationRegions.includes(slug)) {
+      regions.push('eu')
+    }
+    
 
     let url = `connections/destinations/catalog/${slug}`
 
@@ -386,7 +400,8 @@ const updateDestinations = async () => {
       name: destination.name,
       slug,
       hidden: isCatalogItemHidden(url),
-      regional,
+      endpoints,
+      regions,
       url,
       previous_names: destination.previousNames,
       website: destination.website,
@@ -418,7 +433,8 @@ const updateDestinations = async () => {
       display_name: destination.name,
       slug,
       url,
-      regional
+      regions,
+      endpoints
     }
 
     regionalDestinationsUpdated.push(updatedRegionalDestination)
@@ -479,7 +495,7 @@ const updateWarehouses = async () => {
   let warehousesUpdated = []
 
 
-  while (nextPageToken !== null) {
+  while (nextPageToken !== undefined) {
     const res = await getCatalog(`${PAPI_URL}/catalog/warehouses/`, nextPageToken)
     warehouses = warehouses.concat(res.data.warehousesCatalog)
     nextPageToken = res.data.pagination.next
@@ -495,16 +511,22 @@ const updateWarehouses = async () => {
     return 0;
   })
 
-  const regionalWarehouses = regionalSupport.warehouses
+  const regionalWarehouseEndpoints = regionalSupport.warehouses.endpoint
+  const regionalWarehouseRegions = regionalSupport.warehouses.region
 
 
   warehouses.forEach(warehouse => {
     let slug = slugify(warehouse.slug)
-    let regional = ['us-west']
+    let endpoints = ['us']
+    let regions = ['us']
     let url = `connections/storage/catalog/${slug}`
 
-    if (regionalWarehouses.includes(slug)) {
-      regional.push('eu-west')
+    if (regionalWarehouseEndpoints.includes(slug)) {
+      endpoints.push('eu')
+    }
+
+    if (regionalWarehouseRegions.includes(slug)) {
+      regions.push('eu')
     }
 
     let settings = warehouse.options
@@ -523,7 +545,8 @@ const updateWarehouses = async () => {
       display_name: warehouse.name,
       url,
       slug,
-      regional,
+      endpoints,
+      regions
 
     }
     warehousesUpdated.push(updatedWarehouse)
