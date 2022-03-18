@@ -6,7 +6,6 @@ id: 3hbak7a9
 
 [Zendesk](https://www.zendesk.com/) is a customer service platform for enterprises, which provides a customer support platform that allows quicker and easier interaction between businesses and customers.
 
-If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -14,60 +13,64 @@ If you notice any gaps, outdated information or simply want to leave some feedba
 
 2. Choose Zendesk.
 
-3. Give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name autopopulates the schema name. For example, the source name  `Zendesk` creates the schema `zendesk`.
+3. Give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name auto-populates the schema name. For example, the source name  `Zendesk` creates the schema `zendesk`.
 
-   **Note**: You can add multiple instances if you have multiple Zendesk accounts. That's why we allow you to customize the source's nickname and schema name!
+   **Note**: You can add multiple instances if you have multiple Zendesk accounts. That's why Segment allows you to customize the source's nickname and schema name.
 
-4. Enter your Zendesk subdomain. The subdomain you use to access your Zendesk portal (e.g. 'segment' for segment.zendesk.com)
+4. Enter your Zendesk subdomain. The subdomain you use to access your Zendesk portal (for example 'segment' for segment.zendesk.com)
 
    **Note** If you enter `segment.zendesk.com` as a subdomain instead of just `segment`, Segment tries to access the host `segment.zendesk.com.zendesk.com` and you will get a credentials error.
 
-5. Click **Authorize** to start Zendesk's OAuth process. Sign in and grant permissions, you'll be good to go!
+5. Click **Authorize** to start Zendesk's OAuth process. Sign in and grant permissions, you'll be good to go.
 
 > success ""
-> **Tip**: Segment uses the incremental export API from Zendesk, which requires Admin access. Make sure the user has Admin authorizations!
+> **Tip**: Segment uses the incremental export API from Zendesk, which requires Admin access. Make sure the user has Admin authorizations.
 
 
 ### Rate Limits
 
-The Zendesk source uses both Zendesk's [Core API](https://developer.zendesk.com/api-reference/) and [Incremental Exports API](https://developer.zendesk.com/rest_api/docs/core/incremental_export). The source's requests to the Incremental API do not count towards your Zendesk account's rate limits, but requests to the Core API do. By default, we cap our requests to Zendesk's Core API to a rate of 200 requests per minute to avoid triggering [Zendesk's Rate Limits](https://developer.zendesk.com/api-reference/ticketing/account-configuration/usage_limits/). If you'd like us to increase or decrease the request rate for your source, [let us know](https://segment.com/help/contact/), and we'll get it set up. We'll add support for this in the UI soon!
+The Zendesk source uses both Zendesk's [Core API](https://developer.zendesk.com/api-reference/) and [Incremental Exports API](https://developer.zendesk.com/rest_api/docs/core/incremental_export). The source's requests to the Incremental API do not count towards your Zendesk account's rate limits, but requests to the Core API do. By default, Segment caps requests to Zendesk's Core API to a rate of 200 requests per minute to avoid triggering [Zendesk's Rate Limits](https://developer.zendesk.com/api-reference/ticketing/account-configuration/usage_limits/). If you'd like to increase or decrease the request rate for your source, [please reach out](https://segment.com/help/contact/). Support for this in the UI is in the works.
 
 ## Components
 
 ### Sync
 
-The Zendesk source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Zendesk objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation (ie. `zendesk_prod.users`).
+The Zendesk source is built with a sync component, which means Segment makes requests to their API on your behalf on a three hour interval to pull the latest data into Segment. In the initial sync, Segment grabs all the Zendesk objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation (like `zendesk_prod.users`).
 
-Our sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in Zendesk.  For example, if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
+The sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in Zendesk.  For example, if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
 
-The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
+The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every three hours. Depending on your Warehouses plan, Segment pushes the Source data to your warehouse on the interval associated with your billing plan.
 
-At the moment, we don't support filtering which objects or properties get synced. If you're interested in this feature, [let us know](https://segment.com/help/contact/)!
+At the moment, Segment doesn't support filtering which objects or properties get synced. If you're interested in this feature, [please reach out](https://segment.com/help/contact/).
 
 ## Collections
 
-Collections are the groupings of resources we pull from your source.
+Collections are the groupings of resources Segment pulls from your source.
 
 
 |  Collection | Type | Description |
 |  ------ | ------ | ------ |
-|  users | object | Zendesk Support has three types of users: end-users (your customers), agents, and administrators. End-users request support through tickets. Agents work in Zendesk Support to solve tickets. Agents can be divided into multiple groups and can also belong to multiple groups. Agents don't have access to administrative configuration in Zendesk Support such as business rules or automations, but can configure their own macros and views. Administrators have all the abilities of agents, plus administrative abilities. |
+|  users | object | Zendesk Support has three types of users: end-users (your customers), agents, and administrators. End-users request support through tickets. Agents work in Zendesk Support to solve tickets. Agents can be divided into multiple groups and can also belong to multiple groups. Agents don't have access to administrative configuration in Zendesk Support such as business rules or automation, but can configure their own macros and views. Administrators have all the abilities of agents, plus administrative abilities. |
 |  groups | object | When support requests arrive in Zendesk, they can be assigned to a Group. Groups serve as the core element of ticket workflow; support agents are organized into Groups and tickets can be assigned to a Group only, or to an assigned agent within a Group. A ticket can never be assigned to an agent without also being assigned to a Group. |
-|  tickets | object | Tickets are the means through which your End-users (customers) communicate with Agents in Zendesk. **Note**: We pull all tickets updated (or created) in the last year to start by default. If you need more, just let us know and we'll do a run to pull further back in history.  |
+|  tickets | object | Tickets are the means through which your End-users (customers) communicate with Agents in Zendesk. **Note**: Segment pulls all tickets updated (or created) in the last year to start by default. If you need more, reach out to Segment support. Support can do a run to pull further back in history.  |
 |  ticket_fields | object | Customize fields on the ticket form.  |
 |  activities | object | The activity stream is a per agent event stream. It will give access to the most recent events that relate to the agent polling the API. |
 |  attachments | object | This API is for attachments in tickets and forum posts in the Web portal. |
 |  organizations | object | Just as agents can be segmented into groups in Zendesk, your customers (end-users) can be segmented into organizations. |
-|  ticket_events | events | Returns a stream of changes that occurred on tickets. Each event is tied to an update on a ticket and contains all the fields that were updated in that change. **Note**: We pull 1 year of ticket events to start by default. If you need more, just let us know and we'll do a run to pull further back in history.|
+|  ticket_events | events | Returns a stream of changes that occurred on tickets. Each event is tied to an update on a ticket and contains all the fields that were updated in that change. **Note**: Segment pulls one year of ticket events to start by default. If you need more, reach out to Segment support. Support can do a run to pull further back in history. |
 |  ticket_metrics | object | All kinds of aggregate metrics about a ticket |
 |  satisfaction_ratings | object | If you have enabled satisfaction ratings for your account, this end point allows you to quickly retrieve all ratings. |
-|  ticket_comments | object | Ticket comments represent the conversation between requesters, collaborators, and agents. It includes the full body of each comment, public and private. **Note**: This collection is not included by default. To request it, [contact us]https://segment.com/help/contact/. |
+|  ticket_comments | object | Ticket comments represent the conversation between requesters, collaborators, and agents. It includes the full body of each comment, public and private. **Note**: This collection is not included by default. To request it, [contact Segment support]https://segment.com/help/contact/. |
 
-In your warehouse, each collection gets its own table. Find below a list of the properties we automatically fetch for each collection.
-**Note** The list in this document includes the standard properties only, but doesn't include _your_ custom fields. (Don't worry, they'll be there in your warehouse!)
+In your warehouse, each collection gets its own table. Find below a list of the properties Segment automatically fetches for each collection.
+**Note** The list in this document includes the standard properties only, but doesn't include _your_ custom fields. (Don't worry, they'll be there in your warehouse.)
 
 ### groups
 <table>
+   <tr>
+     <th>Property</th>
+     <th>Description</th>
+   </tr>
    <tr>
      <td>id</td>
      <td> Automatically assigned when creating groups. </td>
@@ -101,12 +104,16 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 ### users
 <table>
    <tr>
+     <th>Property</th>
+     <th>Description</th>
+   </tr>
+   <tr>
      <td>id</td>
      <td> Automatically assigned when the user is created. </td>
    </tr>
    <tr>
      <td>url</td>
-     <td> We set the "url" field users see in their Warehouse to equal the "id" from Zendesk, rather than the "url" field.</td>
+     <td> Segment sets the "url" field users see in their Warehouse to equal the "id" from Zendesk, rather than the "url" field.</td>
    </tr>
    <tr>
      <td>name</td>
@@ -228,6 +235,10 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 ### tickets
 <table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
    <tr>
      <td>id</td>
      <td> Automatically assigned when the ticket is created.</td>
@@ -282,7 +293,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
    </tr>
    <tr>
      <td>organization_id</td>
-     <td> The organization of the requester. You can only specify the ID of an organization associated with the requestert.</td>
+     <td> The organization of the requester. You can only specify the ID of an organization associated with the requester.</td>
    </tr>
    <tr>
      <td>group_id</td>
@@ -332,6 +343,10 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 ### ticket_fields
 <table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
    <tr>
      <td>id</td>
      <td> Automatically assigned upon creation.</td>
@@ -427,6 +442,10 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 ### ticket_metrics
 <table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
    <tr>
      <td>id</td>
      <td> Automatically assigned.</td>
@@ -542,6 +561,10 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 ### ticket_events
 <table>
   <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
+  <tr>
     <td>id</td>
     <td> Automatically assigned. </td>
   </tr>
@@ -567,11 +590,11 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
   <tr>
     <td>context_client</td>
-    <td>  Refers to the "client" used to submit this ticket change (i.e. browser name and type).</td>
+    <td>  Refers to the "client" used to submit this ticket change (for example, browser name and type).</td>
   </tr>
   <tr>
     <td>context_location</td>
-    <td> Plain text name of where the request was made, if available (i.e. country, city).</td>
+    <td> Plain text name of where the request was made, if available (for example, country, city).</td>
   </tr>
   <tr>
     <td>context_latitude</td>
@@ -593,6 +616,10 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 ### activities
 <table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
   <tr>
     <td>id</td>
     <td> Automatically assigned upon creation. </td>
@@ -621,6 +648,10 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 ### attachments
 <table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
   <tr>
     <td>id</td>
     <td> Automatically assigned upon creation.</td>
@@ -654,6 +685,10 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 ### organizations
 <table>
   <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
+  <tr>
     <td>id</td>
     <td> Automatically assigned when the organization is created. </td>
   </tr>
@@ -671,7 +706,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
   <tr>
     <td>details</td>
-    <td> Any details obout the organization, such as the address.</td>
+    <td> Any details about the organization, such as the address.</td>
   </tr>
   <tr>
     <td>notes</td>
@@ -705,6 +740,10 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 ### satisfaction_ratings
 <table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
   <tr>
     <td>id</td>
     <td> Automatically assigned when the organization is created. </td>
@@ -748,6 +787,10 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 ### ticket_comments
   <table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
   <tr>
     <td>id</td>
     <td> Automatically assigned when the comment is created. </td>
