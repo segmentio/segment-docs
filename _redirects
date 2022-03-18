@@ -1,6 +1,2 @@
----
-filename: _redirects
----
-
 /docs* /:splat 200
-/docs/assets/docs.bundle.js /assest/docs.bundle.js 200
+/docs/assets/docs.bundle.js /assets/docs.bundle.js 200
