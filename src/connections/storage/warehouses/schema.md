@@ -87,7 +87,7 @@ properties: {
     <b>Column Name:</b><br/>
     product_id<br/><br/>
     <b>Value:</b><br/>
-    "{sku.'G-32'}"
+    "{sku:'G-32'}"
 </td> 
 </tr>
 
