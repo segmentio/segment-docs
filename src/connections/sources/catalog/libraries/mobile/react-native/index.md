@@ -4,12 +4,12 @@ strat: react-native
 id: B0X0QmvMny
 ---
 
-With Analytics for React Native 2.0, you can you can collect analytics in your React Native application and send data to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics React Native 2.0 enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations.
+React Native 2.0 is a major version upgrade to the [existing React Native library](/docs/connections/sources/catalog/libraries/mobile/react-native/classic) that is production-ready. With Analytics for React Native 2.0, you can you can collect analytics in your React Native application and send data to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics React Native 2.0 enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations.
 
 All of Segment’s libraries are open-source, and you can view Analytics for React Native 2.0 on GitHub. For more information, see the [Analytics React Native 2.0 GitHub repository](https://github.com/segmentio/analytics-react-native){:target="_blank"}.
 
 > info "Using Analytics for React Native Classic?"
-> If you're still using Analytics for React Native Classic, you can refer to the documentation [here](/docs/connections/sources/catalog/libraries/mobile/react-native/classic).
+> If you're still using the classic version of Analytics for React Native, you can refer to the documentation [here](/docs/connections/sources/catalog/libraries/mobile/react-native/classic).
 
 If you’re migrating to Analytics React Native 2.0 from an older Analytics React Native version, skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/react-native/migration/).
 
@@ -23,9 +23,9 @@ If you’re migrating to Analytics React Native 2.0 from an older Analytics Reac
 
 To get started with the Analytics for React Native 2.0 library:
 
-1. Create a React Native 2.0 Source in Segment.
+1. Create a React Native Source in Segment.
     1. Go to **Connections > Sources > Add Source**.
-    2. Search for React Native 2.0 and click **Add source**.
+    2. Search for React Native and click **Add source**.
 2. Install `@segment/analytics-react-native`, [`@segment/sovran-react-native`](https://github.com/segmentio/sovran-react-native){:target="_blank"} and [`react-native-async-storage/async-storage`](https://github.com/react-native-async-storage/async-storage){:target="_blank"}:
 
     ```js
@@ -48,7 +48,7 @@ To get started with the Analytics for React Native 2.0 library:
 5. Initialize and configure the Analytics React Native 2.0 client. The package exposes a method called `createClient` which you can use to create the Segment Analytics client. This central client manages all the tracking events.
 
     ```js    
-    import { createClient } from '@segment/analytics-react-native';
+    import { createClient, AnalyticsProvider } from '@segment/analytics-react-native';
 
     const segmentClient = createClient({
       writeKey: 'SEGMENT_API_KEY'
@@ -138,7 +138,7 @@ import {
   AnalyticsProvider,
 } from '@segment/analytics-react-native';
 
-// create the client once when he app loads
+// create the client once when the app loads
 const segmentClient = createClient({
   writeKey: 'SEGMENT_API_KEY'
 });
@@ -225,10 +225,10 @@ screen('ScreenName', {
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-For setting up automatic screen tracking, see the [Automatic Screen Tracking instructions].
+For setting up automatic screen tracking, see the [Automatic Screen Tracking instructions](#automatic-screen-tracking).
 
 ### Group
-The [Group](/docs/connections/spec/group/) method lets you associate an individual user with a group— whether it’s a company, organization, account, project, or team. This includes a unique group identifier and any additional group traits you may know, like company name, industry, or number of employees. You can include any information you want to associate with the group in the traits option. When using any of the [reserved group traits](/docs/connections/spec/group/#traits), be sure the information reflects the name of the trait. For example, email should always be a string of the user’s email address.
+The [Group](/docs/connections/spec/group/) method lets you associate an individual user with a group— whether it’s a company, organization, account, project, or team. This includes a unique group identifier and any additional group traits you may know, like company name, industry, or number of employees. You can include any information you want to associate with the group in the traits option. When using any of the [reserved group traits](/docs/connections/spec/group/#traits), be sure the information reflects the name of the trait. For example, email should always be a string of the user's email address.
 
 {% codeexample %}
 {% codeexampletab Method signature %}
@@ -297,7 +297,7 @@ reset();
 {% endcodeexample %}
 
 ### Flush
-By default, the analytics send to the API after 30 seconds or when 20 items accumulate, whichever occurs first. This also occurs whenever the app resumes if the user has closed the app with some events unsent. These values can be modified by the `flushAt` and `flushInterval` config options. You can also trigger a flush event manually.
+By default, the analytics client sends queued events to the API every 30 seconds or when 20 events accumulate, whichever occurs first. This also occurs whenever the app resumes if the user has closed the app with some events unsent. These values can be modified by the `flushAt` and `flushInterval` config options. You can also trigger a flush event manually.
 
 {% codeexample %}
 {% codeexampletab Method signature %}
@@ -342,7 +342,7 @@ When setting up React Navigation, you’ll essentially find the root level navig
 
 To set up automatic screen tracking with React Navigation:
 
-1. Find the file where you used the `NavigationContainer`. This is the main top level container for Reach Navigation.
+1. Find the file where you used the `NavigationContainer`. This is the main top level container for React Navigation.
 2. In the component, create a new state variable to store the current route name:
 
     ```js
@@ -408,7 +408,7 @@ Segment’s plugin architecture enables you to modify and augment how the events
 | `utility`     | Executes only with manual calls such as Logging.                                                  |
 
 > info ""
-> Plugins can have their own native code (such as the iOS-only `IdfaPlugin`) or wrap an underlying library (such as `FirebasePlugin` which uses `react-native-firebase` under the hood).
+> Plugins can have their own native code (such as the iOS-only [`IdfaPlugin`](https://github.com/segmentio/analytics-react-native/blob/829fc80bc8c4f59fa99dadd25083efa422d577f0/packages/plugins/plugin-idfa/README.md){:target="_blank"} or wrap an underlying library (such as the [`FirebasePlugin`](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-firebase) which uses `react-native-firebase` under the hood).
 
 ### Destination Plugins
 Segment is an out-of-the-box `DestinationPlugin`. You can add as many other destination plugins as you like and upload events and data to them.
@@ -490,6 +490,15 @@ These are the example plugins you can use and alter to meet your tracking needs:
 | Facebook App Events | `@segment/analytics-react-native-plugin-facebook-app-events` |
 | Firebase            | `@segment/analytics-react-native-plugin-consent-firebase`    |
 | IDFA                | `@segment/analytics-react-native-plugin-idfa`                |
+
+## Supported Destinations
+Segment supports these destinations for Analytics React Native 2.0 with more to come:
+- [Adjust](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-adjust){:target="_blank"}
+- [Amplitude Session](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-amplitude-session){:target="_blank"}
+- [Appsflyer](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-appsflyer){:target="_blank"}
+- [Braze](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-braze){:target="_blank"}
+- [Facebook App Events](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-facebook-app-events){:target="_blank"}
+- [Firebase](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-firebase){:target="_blank"}
 
 ## Changelog
 [View the Analytics React Native 2.0 changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.

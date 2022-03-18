@@ -6,7 +6,7 @@ hidden: true
 > info "Analytics for React Native 2.0"
 > Analytics for React Native 2.0 is available. For more information, see the [Analytics for React Native 2.0 GitHub repository](https://github.com/segmentio/analytics-react-native){:target="_blank"}.
 
-Analytics for React Native makes it easy to send your data to any analytics or marketing tool without having to learn, test, or implement a new API every time.
+Analytics for React Native makes it easy to send your data to any analytics or marketing tool without having to learn, test or implement a new API every time.
 
 All of Segment's libraries are open-source, and you can [view Analytics for React Native on GitHub](https://github.com/segmentio/analytics-react-native){:target="_blank"}, or see a list of the other [Segment browser and server libraries](/docs/connections/sources/catalog/){:target="_blank"} too.
 
@@ -16,9 +16,9 @@ All of Segment's libraries are open-source, and you can [view Analytics for Reac
 In cloud-mode, Analytics-React-Native functions as a normal Segment library. In device-mode it wraps the Segment [Analytics-iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) and [Analytics-Android](/docs/connections/sources/catalog/libraries/mobile/android/) libraries, and loads the appropriate mobile library depending on the user's platform. Because of this, Analytics-React-Native includes the two mobile libraries as dependencies.
 
 > warning ""
-> When you bundle a destination’s device-mode SDK, the React Native library serves as a wrapper for the iOS or Android source libraries. To access the underlying destination code, it's necessary to write bridging code between the React Native wrapper and the destination’s SDK.
+> When you bundle a destination’s device-mode SDK, the React Native library serves as a wrapper for the iOS or Android source libraries. To access the underlying destination code, it is necessary to write bridging code between the React Native wrapper, and the destination’s SDK.
 >
-> For example, to configure deep linking or retrieve the Appsflyer ID in Appsflyer, or configure in-app messages or push notifications in Braze, you must write code to specifically access these methods from the destination SDK.
+> For example, if to configure deep linking or retrieve the Appsflyer ID in Appsflyer, or configure in-app messages or push notifications in Braze, you must write code to specifically access these methods from the destination SDK.
 
 ### Analytics-React-Native and Unique Identifiers
 
@@ -28,7 +28,7 @@ One of the most important parts of any analytics platform is the ability to cons
 
 Apple restricts how you can generate and use unique IDs to help protect end-users' privacy. Segment generates IDs while remaining in compliance with Apple's policies.
 
-Before iOS 5, developers had access to `uniqueIdentifier`, which was a hardware-specific serial number that was consistent across different apps, vendors, and installs. Starting with iOS 5, however, [Apple deprecated access to this identifier](https://developer.apple.com/news/?id=3212013a){:target="_blank"}. In iOS 6, Apple introduced the `identifierForVendor` which protects end-users from cross-app identification. In iOS 7, Apple [restricted access to the device’s MAC address](http://techcrunch.com/2013/06/14/ios-7-eliminates-mac-address-as-tracking-option-signaling-final-push-towards-apples-own-ad-identifier-technology/){:target="_blank"}, which many developers used as a workaround to get a similar device-specific serial number to replace  `uniqueIdentifier`.
+Before iOS 5 developers had access to `uniqueIdentifier`, which was a hardware-specific serial number that was consistent across different apps, vendors and installs. Starting with iOS 5, however, [Apple deprecated access to this identifier](https://developer.apple.com/news/?id=3212013a){:target="_blank"}. In iOS 6 Apple introduced the `identifierForVendor` which protects end-users from cross-app identification. In iOS 7 Apple [restricted access to the device’s MAC address](http://techcrunch.com/2013/06/14/ios-7-eliminates-mac-address-as-tracking-option-signaling-final-push-towards-apples-own-ad-identifier-technology/){:target="_blank"}, which many developers used as a workaround to get a similar device-specific serial number to replace  `uniqueIdentifier`.
 
 Segment’s iOS library supports iOS 7+ by generating a UUID and storing it on disk. This complies with Apple’s required privacy policies, maintains compatibility, and also enables correct tracking in situations where multiple people use the same device, since the UUID can be regenerated.
 
@@ -66,27 +66,26 @@ To add CocoaPods to your app, follow [these instructions](https://facebook.githu
 
 ### Install the SDK
 
-Segment recommends that you use NPM to install Analytics for React Native. This allows you to create a build with specific destinations, and makes it much easier to install and upgrade the library and any components.
+Segment recommends that you use NPM to install Analytics for React Native. This allows you to create a build with specific destinations, and makes it much easier to install and upgrade the library and any components. To install the SDK:
 
-First, add the `@segment/analytics-react-native` dependency to your `dependencies` and link it using `react-native-cli`, using the example commands below.
+1. Add the `@segment/analytics-react-native` dependency to your `dependencies` and link it using `react-native-cli`, using the example commands below.
 
-```bash
-$ yarn add @segment/analytics-react-native
-$ yarn react-native link
-```
+    ```bash
+    $ yarn add @segment/analytics-react-native
+    $ yarn react-native link
+    ```
 
-Then in your application, set up the library as in the example below.
+2. In your application, set up the library as in the example below.
 
-```js
-await analytics.setup('YOUR_WRITE_KEY', {
-  // Record screen views automatically!
-  recordScreenViews: true,
-  // Record certain application events automatically!
-  trackAppLifecycleEvents: true
-})
-```
-
-Next, make sure you import Analytics-React-Native in any files that you want to use it in. You can use an `import` statement like the example below.
+    ```js
+    await analytics.setup('YOUR_WRITE_KEY', {
+      // Record screen views automatically!
+      recordScreenViews: true,
+      // Record certain application events automatically!
+      trackAppLifecycleEvents: true
+    })
+    ```
+3. Make sure you import Analytics-React-Native in any files that you use want to it in. You can use an `import` statement like the example below.
 
 ```js
 import analytics from '@segment/analytics-react-native'
@@ -94,9 +93,9 @@ import analytics from '@segment/analytics-react-native'
 
 ### Dynamic Framework for Manual Installation
 
-Segment only supports sending data to bundled, device-mode destinations if you're using Cocoapods to manage your dependencies. Our Support staff cannot answer questions about, and are not responsible for, projects that do not use Cocoapods.
+Segment only supports sending data to bundled, device-mode destinations if you are using Cocoapods to manage your dependencies. Our Support staff cannot answer questions about, and are not responsible for, projects that do not use Cocoapods.
 
-If you absolutely cannot use Cocoapods, you can manually install our dynamic framework which allows you to send data to Segment, and have Segment send it on to enabled cloud-mode destinations.
+If you can't use Cocoapods, you can manually install Segment's dynamic framework which allows you to send data to Segment, and have Segment send it on to enabled cloud-mode destinations.
 
 To install Analytics-React-native manually:
 
@@ -105,12 +104,12 @@ To install Analytics-React-native manually:
    ![Embed Analytics.framework](images/embed-analytics-framework.png)
 
 > warning ""
-> **Note**: if you choose not to use a dependency manager, you must keep all of the files up-to-date with regularly scheduled, manual updates.
+> **Note**: If you choose not to use a dependency manager, you must keep all of the files up-to-date with regularly scheduled, manual updates.
 
 
 ### Packaging Destinations using Device-mode
 
-By default, Analytics-React-Native sends all of your data first to the Segment servers, which forward the data on to any tools you enabled from the Segment web app. It doesn't package any external destination code by default. This is known as sending your data using "Cloud-mode", and it helps reduce the size of your project.
+By default, Analytics-React-Native sends all of your data first to the Segment servers, which forward the data on to any tools you enabled from the Segment web app. It does not package any external destination code by default. This is known as sending your data using "Cloud-mode", and it helps reduce the size of your project.
 
 However, some destinations require that you include code in your project that can be run on the user's device so that these tools can function correctly. These destinations send data directly to the destination's API endpoints, as well as sending a copy to the Segment servers for archiving. This is known as sending data in "device-mode". Other destinations offer a device-mode SDK, but still work (with reduced features) in cloud-mode.
 
@@ -119,7 +118,7 @@ You can read [more about connection modes](/docs/connections/destinations/#conne
 > success ""
 > **Tip!** Segment recommends that you use Device-mode destinations only when necessary to use device-specific features, so you can reduce the size of your application.
 
-To use a device-mode destination, you add the destination's SDK to the project. You can find information about these in the destination information pages in the Segment app. Any mobile destination with a Device-mode option includes information on how to bundle SDK.
+To use a device-mode destination, add the destination's SDK to the project. You can find information about these in the destination information pages in the Segment app. Any mobile destination with a Device-mode option includes information on how to bundle SDK.
 
 > warning ""
 > **Good to know**: Not all destinations have a device-mode package available for use with React Native. [See the list below](#destinations-that-support-device-mode-for-react-native). If a destination you want to use doesn't offer a React Native SDK, you can usually still use it in cloud-mode instead.
@@ -133,7 +132,7 @@ yarn add @segment/analytics-react-native-{bugsnag,branch,firebase}
 ```
 
 > tip "Tip!"
-> If you are bundling several device-mode destinations in your project, you might want to make a checklist to make sure you add the relevant dependencies and add import statements.
+> If you are bundling several device-mode destinations in your project, you might want to make a checklist to make sure you add the relevant dependencies, and add import statements.
 
 See the [device mode documentation in the React Native readme](https://github.com/segmentio/analytics-react-native/#packaging-device-mode-destination-sdks){:target="_blank"} for more details.
 
@@ -188,7 +187,7 @@ Now that the library is installed and some SDKs are set up, you're ready to lear
 
 ### Identify
 
-The [Identify call](/docs/connections/spec/identify/) lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
+The [Identify call](/docs/connections/spec/identify/) lets you tie a user to their actions, and record traits about them. It includes a unique User ID, and any optional traits you know about them.
 
 Segment recommends that you make an Identify call when the user first creates an account, and when they update their information.  If users can log out of your app, you should call `identify` when a user logs back in.
 
@@ -197,7 +196,7 @@ Analytics-React-Native works on its own background thread, so it never blocks th
 > note ""
 > **Note**: Segment automatically assigns an `anonymousId` to users before you identify them. The `userId` is what connects anonymous activities across devices.
 
-The example Identify call below identifies a user by their unique User ID (the one you know them by in your database), and labels them with `name` and `email` traits.
+The example Identify call below identifies a user by their unique User ID (the one you know them by in your database), and labels them with a `name` and `email` traits.
 
 ```js
 analytics.identify("a user's id", {
@@ -270,7 +269,7 @@ You can read more about the Track call fields on [the Segment Spec page about th
 
 The [Screen call](/docs/connections/spec/screen/) lets you you record whenever a user sees a screen of your mobile app, along with optional extra information about the page being viewed. This is very similar to the [Page call](/docs/connections/spec/page/) that you would use for non-mobile users.
 
-Record a screen event whenever the user opens or navigates to a new screen in your app. This could be a view, fragment, dialog, or activity depending on your app.
+Record a screen event an event whenever the user opens or navigates to a new screen in your app. This could be a view, fragment, dialog or activity depending on your app.
 
 The example Screen call below shows a user viewed the Photo Feed, and that the page was private.
 
@@ -297,9 +296,9 @@ You can read more about the Screen call fields on [the Segment Spec page about t
 
 ### Group
 
-The [Group call](/docs/connections/spec/group/) lets you associate an [identified user](#identify) user with a group. A group could be a company, organization, account, project, or team. The call also lets you record custom traits about the group, like industry or number of employees.
+The [Group call](/docs/connections/spec/group/) lets you associate an [identified user](#identify) user with a group. A group could be a company, organization, account, project or team. The call also lets you record custom traits about the group, like industry or number of employees.
 
-The Group call is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/), and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
+The Group call is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
 The example Group call below adds the current user to the `myGroup` group, and adds a name and description.
 
@@ -327,7 +326,7 @@ You can read more about the Group method, including the group call payload, in [
 
 ### Alias
 
-You can use Alias calls to link one identity with another. This is an advanced method, but it's required to manage user identities correctly in *some* destinations.
+You can use Alias calls to link one identity with another. This is an advanced method, but it is required to manage user identities correctly in *some* destinations.
 
 In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
@@ -405,7 +404,7 @@ analytics.reset()
 
 ### Flush
 
-By default, the library collects 20 events in the queue before flushing (sending) them, but you can modify this number.
+By default, the library collects 20 events in the queue before flushing (sending) them, but you modify this number.
 
 You can set `flushAt` to `1` to send events as they come in, and not in batches. This approach uses more battery.
 
@@ -433,7 +432,7 @@ await analytics.setup('YOUR_WRITE_KEY', {
 })
 ```
 
-By default, debug logging is disabled.
+By default debug logging is disabled.
 
 
 ### Application Lifecycle Tracking
@@ -448,7 +447,7 @@ await analytics.setup('YOUR_WRITE_KEY', {
 
 ### Adding data to the context
 
-In some cases, you might want to add information to [the `context` object](/docs/connections/spec/common/#context) in the Segment message payload. This can be useful for adding context or session data for an event that doesn't have another logical place to add it, such as in an Identify, Screen, or Group.
+In some cases, you might want to add information to [the `context` object](/docs/connections/spec/common/#context) in the Segment message payload. This can be useful for adding context or session data for an event that doesn't have another logical place to add it, such as in an Identify, Screen or Group.
 
 ```js
 analytics.identify('brandon', null, { context: { myValue: false, loginFailures: 3 }})
@@ -464,10 +463,10 @@ There are some situations where you might not want to send an event to a specifi
 analytics.track('MyEvent', null, { integrations: { Mixpanel: false }})
 ```
 
-By default, events are delivered to any cloud-mode destinations currently enabled in the Segment web app. You can override this delivery by adding a list to exclude, as in the example above. In this example, the event doesn't reach the Mixpanel destination.
+By default, events are delivered to any cloud-mode destinations currently enabled in the Segment web app. You can override this delivery by adding a list to exclude, as in the example above. In this example, the event does not reach the Mixpanel destination.
 
 > success ""
-> **Tip!** Items in the Integrations object are **case sensitive** and must match the actual destination name. Many destination documentation pages include a list of acceptable names when the correct name isn't clear.
+> **Tip!** Items in the Integrations object are **case sensitive** and must match the actual destination name. Many destination documentation pages include a list of acceptable names when the correct name is not clear.
 
 ## Identity and privacy
 
@@ -487,7 +486,7 @@ If a user opts back in at a later date, you can re-enable data collection using 
 analytics.enable()
 ```
 
-When you disable the Segment library, all data collection methods (`track`, `identify`, etc) stop running; however, it doesn't remove the initialized libraries. If you bundle device-mode SDKs which collect data automatically, or outside of Segment, those continue to operate. Segment recommends that you invoke a disable method in each of packaged SDK when a user opts-out, to ensure all automatic data collection stops.
+When you disable the Segment library, all data collection methods (`track`, `identify`, etc) stop running; however, it does not remove the initialized libraries. If you bundle device-mode SDKs which collect data automatically, or outside of Segment, those continue to operate. Segment recommends that you invoke a disable method in each of packaged SDK when a user opts-out, to ensure all automatic data collection stops.
 
 ### Anonymizing IP
 
@@ -524,7 +523,7 @@ React Native doesn't provide an official JavaScript API to handle push notificat
 
 ### React Native push notifications on iOS
 
-For services that send push notifications, you first want to [create a Push SSL certificate following these steps](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html){:target="_blank"}. You then want to configure your application delegate to look like the code below and replace your Segment source write key.
+For services that send push notifications, you first want to [create a Push SSL certificate following these steps](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html){:target="_blank"}. You then want to configure your application delegate to look like the code below, and replace your Segment source write key.
 
 ```objc
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
