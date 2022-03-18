@@ -61,9 +61,16 @@ Collections are the groupings of resources Segment pulls from your source.
 |  ticket_metrics | object | All kinds of aggregate metrics about a ticket |
 |  satisfaction_ratings | object | If you have enabled satisfaction ratings for your account, this end point allows you to quickly retrieve all ratings. |
 |  ticket_comments | object | Ticket comments represent the conversation between requesters, collaborators, and agents. It includes the full body of each comment, public and private. **Note**: This collection is not included by default. To request it, [contact Segment support]https://segment.com/help/contact/. |
+|  ticket_forms | object | Ticket comments represent the conversation between requesters, collaborators, and agents. It includes the full body of each comment, public and private. **Note**: This collection is not included by default. To request it, [contact Segment support]https://segment.com/help/contact/. |
+|  audit_logs | events | The audit log shows various changes in your instance of Zendesk since the account was created.  **Note**: This collection is not included by default. To request it, [contact Segment support]https://segment.com/help/contact/. |
+|  organization_memberships | object | A membership links a user to an organization. Organizations can have many users. Users can be in many organizations if the account supports multiple organizations. You can use the API to list users in an organization, and reassign organization members. |
+|  group_memberships | object | A membership links an agent to a group. Groups can have many agents, as agents can be in many groups. You can use the API to list what agents are in which groups, and reassign group members. |
+|  ticket_skips | events | A skip is a record of when an agent skips over a ticket without responding to the end user.  |
 
 In your warehouse, each collection gets its own table. Find below a list of the properties Segment automatically fetches for each collection.
-**Note** The list in this document includes the standard properties only, but doesn't include _your_ custom fields. (Don't worry, they'll be there in your warehouse.)
+
+> note "Standard properties"
+> The list in this document includes the standard properties only, but doesn't include _your_ custom fields. (Don't worry, they'll be there in your warehouse.)
 
 ### groups
 <table>
@@ -141,7 +148,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
    </tr>
    <tr>
      <td>organization_id</td>
-     <td> The id of the organization this user is associated with.</td>
+     <td> The ID of the organization this user is associated with.</td>
    </tr>
    <tr>
      <td>role</td>
@@ -153,7 +160,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
    </tr>
    <tr>
      <td>external_id</td>
-     <td> A unique identifier from another system. The API treats the id as case insensitive. Example: ian1 and Ian1 are the same user.</td>
+     <td> A unique identifier from another system. The API treats the ID as case insensitive. Example: ian1 and Ian1 are the same user.</td>
    </tr>
    <tr>
      <td>alias</td>
@@ -249,7 +256,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
    </tr>
    <tr>
      <td>external_id</td>
-     <td> An id you can use to link Zendesk Support tickets to local records.</td>
+     <td> An ID you can use to link Zendesk Support tickets to local records.</td>
    </tr>
    <tr>
      <td>type</td>
@@ -301,7 +308,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
    </tr>
    <tr>
      <td>collaborator_ids</td>
-     <td> The ids of users currently cc'ed on the ticket.</td>
+     <td> The IDs of users currently cc'ed on the ticket.</td>
    </tr>
    <tr>
      <td>forum_topic_id</td>
@@ -325,7 +332,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
    </tr>
    <tr>
      <td>sharing_agreement_ids</td>
-     <td> The ids of the sharing agreements used for this ticket.</td>
+     <td> The IDs of the sharing agreements used for this ticket.</td>
    </tr>
    <tr>
      <td>created_at</td>
@@ -338,6 +345,10 @@ In your warehouse, each collection gets its own table. Find below a list of the 
    <tr>
      <td>received_at</td>
      <td> This timestamp is added to incoming messages as soon as they hit Segment API.</td>
+   </tr>
+      <tr>
+     <td>ticket_form_id</td>
+     <td>The ID of the ticket form to render for the ticket (Enterprise only).</td>
    </tr>
 </table>
 
@@ -397,7 +408,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
    </tr>
    <tr>
      <td>regexp_for_validation</td>
-     <td>  Regular expression field only. The validation pattern for a field value to be deemed valid..</td>
+     <td>  Regular expression field only. The validation pattern for a field value to be deemed valid.</td>
    </tr>
    <tr>
      <td>title_in_portal</td>
@@ -452,7 +463,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
    </tr>
    <tr>
      <td>ticket_id</td>
-     <td> Id of the associated ticket.</td>
+     <td> ID of the associated ticket.</td>
    </tr>
    <tr>
      <td>group_stations</td>
@@ -574,7 +585,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
   <tr>
     <td>ticket_id</td>
-    <td> Id of the associated ticket.</td>
+    <td> ID of the associated ticket.</td>
   </tr>
   <tr>
     <td>timestamp</td>
@@ -582,7 +593,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
   <tr>
     <td>updater_id</td>
-    <td> Id of the user who updated the ticket.</td>
+    <td> ID of the user who updated the ticket.</td>
   </tr>
   <tr>
     <td>ticket_event_via</td>
@@ -694,7 +705,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
   <tr>
     <td>external_id</td>
-    <td> A unique external id to associate organizations to an external record.</td>
+    <td> A unique external ID to associate organizations to an external record.</td>
   </tr>
   <tr>
     <td>url</td>
@@ -753,19 +764,19 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
   <tr>
     <td>assignee_id</td>
-    <td> The id of agent assigned to at the time of rating.</td>
+    <td> The ID of agent assigned to at the time of rating.</td>
   </tr>
   <tr>
     <td>group_id</td>
-    <td> The id of group assigned to at the time of rating.</td>
+    <td> The ID of group assigned to at the time of rating.</td>
   </tr>
   <tr>
     <td>requester_id</td>
-    <td> The id of ticket requester submitting the rating.</td>
+    <td> The ID of ticket requester submitting the rating.</td>
   </tr>
   <tr>
     <td>ticket_id</td>
-    <td>  The id of ticket being rated.</td>
+    <td>  The ID of ticket being rated.</td>
   </tr>
   <tr>
     <td>score</td>
@@ -800,7 +811,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
   <tr>
     <td>ticket_id</td>
-    <td> The id of ticket being commented.</td>
+    <td> The ID of ticket being commented.</td>
   </tr>
   <tr>
     <td>type</td>
@@ -816,7 +827,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
   <tr>
     <td>author_id</td>
-    <td> The id of the comment author.</td>
+    <td> The ID of the comment author.</td>
   </tr>
   <tr>
     <td>via</td>
@@ -832,5 +843,221 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
 </table>
 
+### ticket_forms
+<table>
+   <tr>
+     <th>Property</th>
+     <th>Description</th>
+   </tr>
+   <tr>
+     <td>id</td>
+     <td>Automatically assigned when creating groups. </td>
+   </tr>
+   <tr>
+     <td>active</td>
+     <td>Shows if the form is set as active.</td>
+   </tr>
+   <tr>
+     <td>end_user_visible</td>
+     <td>Shows if the form is visible to the end user.</td>
+   </tr>
+   <tr>
+     <td>name</td>
+     <td>The name of the form.</td>
+   </tr>
+   <tr>
+     <td>restricted_brand_ids</td>
+     <td>IDs of all brands that this ticket form is restricted to.</td>
+   </tr>
+   <tr>
+     <td>ticket_field_ids</td>
+     <td>IDs of all ticket fields which are in this ticket form.</td>
+   </tr>
+   <tr>
+     <td>updated_at</td>
+     <td>The time of the last update of the ticket form.</td>
+   </tr>
+   <tr>
+     <td>url</td>
+     <td> The API url of this ticket.</td>
+   </tr>
+   <tr>
+     <td>created_at</td>
+     <td>The time the ticket form was created.</td>
+   </tr>
+   <tr>
+     <td>display_name</td>
+     <td>The name of the form that is displayed to the end user.</td>
+   </tr>
+   <tr>
+     <td>in_all_brands</td>
+     <td>Shows if the form is available for use in all brands on this account.</td>
+   </tr>
+   <tr>
+     <td>position</td>
+     <td>The position of this form among other forms in the account (for example, dropdown)</td>
+   </tr>
+   <tr>
+     <td>raw_display_name</td>
+     <td>The dynamic content placeholder (if available,) or the "display_name" value, if the dynamic content placeholder is unavailable.</td>
+   </tr>
+   <tr>
+     <td>raw_name</td>
+     <td>The dynamic content placeholder (if available,) or the "name" value, if the dynamic content placeholder is unavailable.</td>
+   </tr>
+   <tr>
+     <td>default</td>
+     <td>Shows if this form is the default form for this account.</td>
+   </tr>
+</table>
+
+### audit_logs
+<table>
+   <tr>
+     <th>Property</th>
+     <th>Description</th>
+   </tr>
+   <tr>
+     <td>id</td>
+     <td>Automatically assigned when creating groups. </td>
+   </tr>
+   <tr>
+     <td>url</td>
+     <td> The API url of this ticket.</td>
+   </tr>
+   <tr>
+     <td>created_at</td>
+     <td>The time the audit got created.</td>
+   </tr>
+   <tr>
+     <td>actor_id</td>
+     <td>The ID of the user creating the ticket</td>
+   </tr>
+   <tr>
+     <td>source_id</td>
+     <td>The ID of the item being audited.</td>
+   </tr>
+   <tr>
+     <td>source_type</td>
+     <td>The item type being audited.</td>
+   </tr>
+   <tr>
+     <td>source_label</td>
+     <td>The name of the item being audited.</td>
+   </tr>
+   <tr>
+     <td>action</td>
+     <td>The action a user performed. Either "login", "create", "update", or "destroy".</td>
+   </tr>
+   <tr>
+     <td>change_description</td>
+     <td>The description of the change that occurred.</td>
+   </tr>
+   <tr>
+     <td>ip_address</td>
+     <td>The IP address of the user performing the audit.</td>
+   </tr>
+   <tr>
+     <td>action_label</td>
+     <td>A localized string of action field.</td>
+   </tr>
+</table>
+
+### organization_memberships
+<table>
+   <tr>
+     <th>Property</th>
+     <th>Description</th>
+   </tr>
+   <tr>
+     <td>id</td>
+     <td>Automatically assigned when creating groups. </td>
+   </tr>
+   <tr>
+     <td>url</td>
+     <td> The API url of this ticket.</td>
+   </tr>
+   <tr>
+     <td>user_id</td>
+     <td>The ID of the user who has this organization membership.</td>
+   </tr>
+   <tr>
+     <td>organization_id</td>
+     <td>the ID of the organization associated with this user.</td>
+   </tr>
+   <tr>
+     <td>created_at</td>
+     <td>When this record was created.</td>
+   </tr>
+   <tr>
+     <td>updated_at</td>
+     <td>When this record was last updated.</td>
+   </tr>
+   <tr>
+     <td>organization_name</td>
+     <td>The name of the organization associated with this user.</td>
+   </tr>
+</table>
+
+### group_memberships
+<table>
+   <tr>
+     <th>Property</th>
+     <th>Description</th>
+   </tr>
+   <tr>
+     <td>id</td>
+     <td> Automatically assigned when creating groups. </td>
+   </tr>
+   <tr>
+     <td>url</td>
+     <td> The API url of this group.</td>
+   </tr>
+   <tr>
+     <td>created_at</td>
+     <td> The time the group was created.</td>
+   </tr>
+   <tr>
+     <td>group_id</td>
+     <td> The ID of the group assigned to at the time of rating.</td>
+   </tr>
+   <tr>
+     <td>updated_at</td>
+     <td> The time of the last update of the group.</td>
+   </tr>
+   <tr>
+     <td>user_id</td>
+     <td> The ID of an agent.</td>
+   </tr>
+</table>
+
+### ticket_skips
+<table>
+   <tr>
+     <th>Property</th>
+     <th>Description</th>
+   </tr>
+   <tr>
+     <td>id</td>
+     <td>Automatically assigned when creating groups.</td>
+   </tr>
+   <tr>
+     <td>user_id</td>
+     <td>ID of the skipping agent.</td>
+   </tr>
+   <tr>
+     <td>reason</td>
+     <td>Reason for skipping the ticket.</td>
+   </tr>
+   <tr>
+     <td>created_at</td>
+     <td>Time the skip was created.</td>
+   </tr>
+   <tr>
+     <td>updated_at</td>
+     <td>Time the skip was last updated.</td>
+   </tr>
+</table>
+
 ## Adding Destinations
-Currently only Warehouses are supported for object-cloud sources
+Currently only Warehouses are supported for object-cloud sources.
