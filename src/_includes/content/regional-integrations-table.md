@@ -27,9 +27,9 @@
         Sources</td>
     </tr>
     {% for source in sources %}
-    <tr class="settingRow source {% if source.regional contains 'eu-west' %}eu-endpoint{%endif%}" id="settingRow">
+    <tr class="settingRow source {% if source.endpoints contains 'eu' %}eu-endpoint{%endif%}" id="settingRow">
       <td><a href="/docs/{{source.url}}">{{source.display_name}}</a></td>
-      <td style="text-align:center">{% if source.regional contains "eu-west" %}<img alt="Supports EU Endpoints" class="inline"
+      <td style="text-align:center">{% if source.endpoints contains "eu" %}<img alt="Supports EU Endpoints" class="inline"
           src="/docs/images/supported.svg" />{% else %}<img alt="Does not support EU endpoints" class="inline"
           src="/docs/images/unsupported.svg" />{% endif %}</td>
     </tr>
@@ -40,10 +40,10 @@
         Destinations</td>
     </tr>
     {% for destination in destinations %}
-    <tr class="settingRow destination {% if destination.regional contains 'eu-west' %}eu-endpoint{%endif%}"
+    <tr class="settingRow destination {% if destination.endpoints contains 'eu' %}eu-endpoint{%endif%}"
       id="settingRow">
       <td><a href="/docs/{{destination.url}}">{{destination.display_name}}</a></td>
-      <td style="text-align:center">{% if destination.regional contains "eu-west" %}<img alt="Supports EU Endpoints" class="inline"
+      <td style="text-align:center">{% if destination.endpoints contains "eu" %}<img alt="Supports EU Endpoints" class="inline"
           src="/docs/images/supported.svg" />{% else %}<img alt="Does not support EU endpoints" class="inline"
           src="/docs/images/unsupported.svg" />{% endif %}</td>
     </tr>
@@ -54,9 +54,9 @@
         Warehouses</td>
     </tr>
     {% for warehouse in warehouses %}
-    <tr class="settingRow warehouse {% if warehouse.regional contains 'eu-west' %}eu-endpoint{%endif%}" id="settingRow">
+    <tr class="settingRow warehouse {% if warehouse.endpoints contains 'eu' %}eu-endpoint{%endif%}" id="settingRow">
       <td><a href="/docs/{{warehouse.url}}">{{warehouse.display_name}}</a></td>
-      <td style="text-align:center">{% if warehouse.regional contains "eu-west" %}<img alt="Supports EU Endpoints" class="inline"
+      <td style="text-align:center">{% if warehouse.endpoints contains "eu" %}<img alt="Supports EU Endpoints" class="inline"
           src="/docs/images/supported.svg" />{% else %}<img alt="Does not support EU endpoints" class="inline"
           src="/docs/images/unsupported.svg" />{% endif %}</td>
     </tr>
