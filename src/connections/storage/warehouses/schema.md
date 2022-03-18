@@ -12,9 +12,10 @@ A **schema** describes the way that the data in a warehouse is organized. Segmen
 
 Segment's libraries pass nested objects and arrays into tracking calls as **properties**, **traits**, and **tracking calls**. To preserve the quality of your events data, Segment uses the following methods to store properties and traits in database tables: 
 
-- The warehouse connector stringifies all **properties** that contain a nested **array/object**
+- The warehouse connector stringifies all **properties** that contain a nested **array**
 - The warehouse connector stringifies all **context fields** that contain a nested **array**
 - The warehouse connector stringifies all **traits** that contain a nested **array**
+- The warehouse connector "flattens" all **properties** that contain a nested **object**
 - The warehouse connector "flattens" all **traits** that contain a nested **object**
 - The warehouse connector optionally stringifies **arrays** when they follow the [Ecommerce spec](/docs/connections/spec/ecommerce/v2/)
 - The warehouse connector "flattens" all **context fields** that contain a nested **object** (for example, context.field.nestedA.nestedB becomes a column called context_field_nestedA_nestedB)
@@ -72,7 +73,7 @@ address_street<br/>
 </tr>
 
 <tr>
-<td><b>Object (Properties):</b> Stringify</td>
+<td><b>Object (Properties):</b> Flatten</td>
 <td markdown="1">
 
 ```json
@@ -85,9 +86,9 @@ properties: {
 </td>
 <td>
     <b>Column Name:</b><br/>
-    product_id<br/><br/>
+    product_id_sku<br/><br/>
     <b>Value:</b><br/>
-    "{sku:'G-32'}"
+    "G-32"
 </td> 
 </tr>
 
