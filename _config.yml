@@ -8,6 +8,8 @@ incremental: true
 
 permalink: /:categories/:title/
 
+include: ['_redirects']
+
 exclude: ['js', '_site', '*.sketch']
 # Build settings
 os_links: true
