@@ -62,10 +62,10 @@ Collections are the groupings of resources Segment pulls from your source.
 |  satisfaction_ratings | object | If you have enabled satisfaction ratings for your account, this end point allows you to quickly retrieve all ratings. |
 |  ticket_comments | object | Ticket comments represent the conversation between requesters, collaborators, and agents. It includes the full body of each comment, public and private. **Note**: This collection is not included by default. To request it, [contact Segment support](https://segment.com/help/contact/). |
 |  ticket_forms | object | Ticket comments represent the conversation between requesters, collaborators, and agents. It includes the full body of each comment, public and private. **Note**: This collection is not included by default. To request it, [contact Segment support](https://segment.com/help/contact/). |
-|  audit_logs | events | The audit log shows various changes in your instance of Zendesk since the account was created.  **Note**: This collection is not included by default. To request it, [contact Segment support](https://segment.com/help/contact/). |
+|  audit_logs | object | The audit log shows various changes in your instance of Zendesk since the account was created.  **Note**: This collection is not included by default. To request it, [contact Segment support](https://segment.com/help/contact/). |
 |  organization_memberships | object | A membership links a user to an organization. Organizations can have many users. Users can be in many organizations if the account supports multiple organizations. You can use the API to list users in an organization, and reassign organization members. |
 |  group_memberships | object | A membership links an agent to a group. Groups can have many agents, as agents can be in many groups. You can use the API to list what agents are in which groups, and reassign group members. |
-|  ticket_skips | events | A skip is a record of when an agent skips over a ticket without responding to the end user.  |
+|  ticket_skips | object | A skip is a record of when an agent skips over a ticket without responding to the end user.  |
 
 In your warehouse, each collection gets its own table. Find below a list of the properties Segment automatically fetches for each collection.
 
