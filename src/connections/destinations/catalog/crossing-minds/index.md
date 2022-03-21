@@ -1,3 +1,9 @@
+---
+title: Crossing Minds Destination
+id:
+hidden: true
+---
+
 [Crossing Minds](https://crossingminds.com/) provides a recommendation platform for businesses using next-gen AI that instantly anticipate customers’ wants and needs using only anonymized user data.
 
 This destination is maintained by Crossing Minds. For any issues with the destination, [contact the Crossing Minds Support team](mailto:support@crossingminds.com).
@@ -9,8 +15,8 @@ This destination is maintained by Crossing Minds. For any issues with the destin
 
 1. Contact your Crossing Minds Account Manager and request your integration API Key, API Password, and Database ID.
 2. From the Destinations catalog page in the Segment App, click **Add Destination**.
-3. Search for "CrossingMinds" in the Destinations Catalog, and select the "CrossingMinds" destination.
-4. Choose which Source should send data to the "CrossingMinds" destination.
+3. Search for "Crossing Minds" in the Destinations Catalog, and select the "Crossing Minds" destination.
+4. Choose which Source should send data to the "Crossing Minds" destination.
 5. Enter the Service Account Name as "API Key" Service Account Password as "API Password" and "Database ID" in the "Crossing Minds" destination settings in Segment.
 
 
@@ -30,7 +36,7 @@ analytics.identify('userId123', {
 });
 ```
 
-Segment sends Identify calls to CrossingMinds as an `identify` event.
+Segment sends Identify calls to Crossing Minds as an `identify` event.
 
 
 ### Track
@@ -50,5 +56,5 @@ For example:
 analytics.track('Login Button Clicked')
 ```
 
-Segment sends Track calls to CrossingMinds as a `track` event.
+Segment sends Track calls to Crossing Minds as a `track` event.
 Any events that are not listed in the mentioned categories will be rejected.
