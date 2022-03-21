@@ -1,3 +1,8 @@
+---
+title: Retentive Destination
+id:
+hidden: true
+---
 [Retentive](https://retentive.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) makes your help docs searchable in product so your GTM team can act on data of what each customer is struggling with.
 
 This destination is maintained by Retentive. For any issues with the destination, [contact the Retentive Support team](mailto:help@retentive.io).
