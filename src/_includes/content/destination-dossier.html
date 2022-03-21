@@ -1,7 +1,7 @@
 <!-- in the file we're pulling from the API, "name" corresponds with the path to the yml blob for a specific destination.-->
 {% assign thisDestination = page.id %}
 
-{% assign overrideInfo = site.data.catalog.overrides.items % | where: "slug", thisDestination | first %}
+{% assign overrideInfo = site.data.catalog.overrides.items % | where: "id", thisDestination | first %}
 
 {% assign destinationInfo = site.data.catalog.destinations.items | where: "id", thisDestination | first %}
 

@@ -38,7 +38,7 @@ Here's the payload of a typical `identify` call with most [common fields](/docs/
 }
 ```
 
-And here's the corresponding Javascript event that would generate the above payload:
+And here's the corresponding JavaScript event that would generate the above payload:
 
 ```js
 analytics.identify("97980cfea0067", {
@@ -113,7 +113,7 @@ The Anonymous ID can be any pseudo-unique identifier. For example, on your serve
 
 **Note:** Our [browser and mobile libraries](/docs/connections/sources/) **automatically** use Anonymous IDs under the covers to keep track of users as they navigate around your website or app, so you don't need to worry about them when using those libraries.
 
-Here's an example of a Javascript event for an anonymous user:
+Here's an example of a JavaScript event for an anonymous user:
 
 ```js
 analytics.identify({
@@ -238,4 +238,4 @@ Reserved traits we've standardized:
 
 **Note:** You might be used to some destinations recognizing special traits by slightly different names. For example, Mixpanel recognizes a `$created` trait when the user's account was first created, while Intercom recognizes the same trait as `created_at` instead.  Luckily, you don't have to worry about those inconsistencies. Just pass us `createdAt`. **We'll handle all of the destination-specific conversions for you automatically.**  Same goes for the rest of the reserved traits.
 
-**You can pass these reserved traits using camelCase or snake_case**, so in Javascript you can match the rest of your camel-case code by sending `firstName`, while in Ruby you can match your snake-case code by sending `first_name`. That way the API never seems alien to your code base. Keep in mind that not all destinations support these reserved traits, so sending these traits in camelCase and snake_case can result in two sets of traits in other destinations.
+**You can pass these reserved traits using camelCase or snake_case**, so in JavaScript you can match the rest of your camel-case code by sending `firstName`, while in Ruby you can match your snake-case code by sending `first_name`. That way the API never seems alien to your code base. Keep in mind that not all destinations support these reserved traits, so sending these traits in camelCase and snake_case can result in two sets of traits in other destinations.

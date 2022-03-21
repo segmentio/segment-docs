@@ -44,11 +44,9 @@ Your warehouse id appears in the URL when you look at the [warehouse destination
 
 ## How fresh is the data in Segment Warehouses?
 
-Data is available in Warehouses within 24-48 hours. The underlying Redshift datastore has a subtle tradeoff between data freshness, robustness, and query speed. For the best experience, Segment needs to balance all three of these.
+Data is available in Warehouses within 24-48 hours, depending on your tier's sync frequency. For more information about sync frequency by tier, see [Sync Frequency](/docs/connections/storage/warehouses/warehouse-syncs/#sync-frequency).
 
-Real-time loading of the data into Segment Warehouses would cause significant performance degradation at query time because of the way Redshift uses large batches to optimize and compress columns. To optimize for your query speed, reliability, and robustness, Segment guarantees that your data will be available in Redshift within 24 hours.
-
-As Segment improves and updates the ETL processes and optimizes for SQL query performance downstream, the actual load time will vary, but Segment ensures it's always within 24 hours.
+Real-time loading of the data into Segment Warehouses would cause significant performance degradation at query time. To optimize for your query speed, reliability, and robustness, Segment guarantees that your data will be available in your warehouse within 24 hours. The underlying datastore has a subtle tradeoff between data freshness, robustness, and query speed. For the best experience, Segment needs to balance all three of these.
 
 ## What if I want to add custom data to my warehouse?
 
@@ -58,23 +56,23 @@ The only restriction when loading your own data into your connected warehouse is
 
 If you want to insert custom data into your warehouse, create new schemas that are not associated with an existing source, since these may be deleted upon a reload of the Segment data in the cluster.
 
-We highly recommend scripting any sort of additions of data you might have to warehouse, so that you aren't doing one-off tasks that can be hard to recover from in the future in the case of hardware failure.
+Segment recommends scripting any sort of additions of data you might have to warehouse, so that you aren't doing one-off tasks that can be hard to recover from in the future in the case of hardware failure.
 
-## Which IPs should I whitelist?
+## Which IPs should I allowlist?
 
-You can whitelist Segment's custom IP `52.25.130.38/32` while authorizing Segment to write in to your Redshift or Postgres port.
+You can allowlist Segment's custom IP `52.25.130.38/32` while authorizing Segment to write in to your Redshift or Postgres port.
 
 If you're in the EU region, use CIDR `3.251.148.96/29`.
 
 > info ""
 > EU workspace regions are currently in beta. If you would like to learn more about the beta, please contact your account manager.
 
-BigQuery does not require whitelisting an IP address. To learn how to set up BigQuery, check out our [set up guide](https://segment.com/docs/connections/storage/catalog/bigquery/#getting-started)
+BigQuery does not require allowlisting an IP address. To learn how to set up BigQuery, check out Segment's BigQuery [set up guide](/docs/connections/storage/catalog/bigquery/#getting-started)
 
 
 ## Will Segment sync my historical data?
 
-We will automatically load up to 2 months of your historical data when you connect a warehouse.
+Segment loads up to two months of your historical data when you connect a warehouse.
 
 For full historical backfills you'll need to be a Segment Business plan customer. If you'd like to learn more about our Business plan and all the features that come with it, [check out our pricing page](https://segment.com/pricing).
 
@@ -92,3 +90,45 @@ When you create a new source, the source syncs to all warehouse(s) in the worksp
 - **Config API**: Send a [PATCH Connected Warehouse request](https://reference.segmentapis.com/?version=latest#ec12dae0-1a3e-4bd0-bf1c-840f43537ee2) to update the settings for the warehouse(s) you want to prevent from syncing.
 
 After a source is created, you can enable or disable a warehouse sync within the Warehouse Settings page.
+
+## Can I be notified when warehouse syncs fail?
+
+If you enabled activity notifications for your storage destination, you'll receive notifications in the Segment app for the fifth and 20th consecutive warehouse failures.
+
+To sign up for warehouse sync notifications:
+1. Open the Segment app. 
+2. Go to **Settings** > **User Preferences**. 
+3. In the Activity Notifications section, select **Storage Destinations**.
+4. Enable **Storage Destination Sync Failed**. 
+
+## How is the data formatted in my warehouse?
+
+Data in your warehouse is formatted into **schemas**, which involve a detailed description of database elements (tables, views, indexes, synonyms, etc.) 
+and the relationships that exist between elements. Segment's schemas use the following template: <br/>`<source>.<collection>.<property>`, for example, 
+`segment_engineering.tracks.user_id`, where Source refers to the source or project name (segment_engineering), collection refers to the event (tracks),
+ and the property refers to the data being collected (user_id). 
+
+> note " "
+> All schema data is always represented in snake case.
+
+For more information about Warehouse Schemas, see the [Warehouse Schemas](/docs/connections/storage/warehouses/schema) page.
+
+## If my syncs fail and get fixed, do I need to ask for a backfill?
+
+If your syncs fail, you do not need to reach out to Segment Support to request a backfill. Once a successful sync takes place, 
+Segment automatically loads all of the data generated since the last successful sync occurred. 
+
+
+## Can I change my schema names once they've been created?
+
+Segment stores the name of your schema in the **SQL Settings** page. Changing the name of your schema in the app without updating the name in your data warehouse causes a new schema to form, one that doesn't contain historical data.  
+
+To change the name of your schema without disruptions: 
+
+1. Open the Segment app, select your warehouse from the Sources tab, and select **Settings.**
+2. Under the "Enable Source" section, disable your warehouse and click **Save Changes.**   
+3. Select the "SQL Settings" tab. 
+4. Update the "Schema Name" field with the new name for your schema and click **Save Changes.**
+5. Rename the schema in your Data Warehouse to match the new name in the Segment app. 
+6. Open the Segment app, select your warehouse from the Sources tab, and select **Settings.** On the source's settings page, select "Basic."
+7. Under the "Enable Source" section, enable your warehouse and click **Save Changes.**
