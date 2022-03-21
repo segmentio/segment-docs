@@ -153,7 +153,7 @@ const updateSources = async () => {
   let categories = new Set()
   let sourceCategories = []
 
-  while (nextPageToken !== null) {
+  while (nextPageToken !== undefined) {
     const res = await getCatalog(`${PAPI_URL}/catalog/sources/`, nextPageToken)
     sources = sources.concat(res.data.sourcesCatalog)
     nextPageToken = res.data.pagination.next
@@ -311,7 +311,7 @@ const updateDestinations = async () => {
   let categories = new Set()
   let nextPageToken = "MA=="
 
-  while (nextPageToken !== null) {
+  while (nextPageToken !== undefined) {
     const res = await getCatalog(`${PAPI_URL}/catalog/destinations/`, nextPageToken)
     destinations = destinations.concat(res.data.destinationsCatalog)
     nextPageToken = res.data.pagination.next
@@ -479,7 +479,7 @@ const updateWarehouses = async () => {
   let warehousesUpdated = []
 
 
-  while (nextPageToken !== null) {
+  while (nextPageToken !== undefined) {
     const res = await getCatalog(`${PAPI_URL}/catalog/warehouses/`, nextPageToken)
     warehouses = warehouses.concat(res.data.warehousesCatalog)
     nextPageToken = res.data.pagination.next
