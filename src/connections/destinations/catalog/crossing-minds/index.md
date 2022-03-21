@@ -4,9 +4,9 @@ id:
 hidden: true
 ---
 
-[Crossing Minds](https://crossingminds.com/) provides a recommendation platform for businesses using next-gen AI that instantly anticipate customers’ wants and needs using only anonymized user data.
+[Crossing Minds](https://crossingminds.com/){:target="blank"} provides a recommendation platform for businesses using next-gen AI that instantly anticipates customers’ wants and needs using only anonymized user data.
 
-This destination is maintained by Crossing Minds. For any issues with the destination, [contact the Crossing Minds Support team](mailto:support@crossingminds.com).
+Crossing Minds maintains this destination. For any issues with the destination, [contact the Crossing Minds Support team](mailto:support@crossingminds.com).
 
 {% include content/beta-note.md %}
 
@@ -16,8 +16,8 @@ This destination is maintained by Crossing Minds. For any issues with the destin
 1. Contact your Crossing Minds Account Manager and request your integration API Key, API Password, and Database ID.
 2. From the Destinations catalog page in the Segment App, click **Add Destination**.
 3. Search for "Crossing Minds" in the Destinations Catalog, and select the "Crossing Minds" destination.
-4. Choose which Source should send data to the "Crossing Minds" destination.
-5. Enter the Service Account Name as "API Key" Service Account Password as "API Password" and "Database ID" in the "Crossing Minds" destination settings in Segment.
+4. Choose which source should send data to the Crossing Minds destination.
+5. In the Crossing Minds destination settings in Segment, enter the Service Account Name as the **API Key**, Service Account Password as the **API Password**, and the **Database ID**.
 
 
 ## Supported methods
