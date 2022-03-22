@@ -13,7 +13,7 @@ id: 3hbak7a9
 
 2. Choose Zendesk.
 
-3. Give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name auto-populates the schema name. For example, the source name  `Zendesk` creates the schema `zendesk`.
+3. Give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name auto-populates the schema name. For example, the source name `Zendesk` creates the schema `zendesk`.
 
    **Note**: You can add multiple instances if you have multiple Zendesk accounts. That's why Segment allows you to customize the source's nickname and schema name.
 
@@ -619,10 +619,6 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   <tr>
     <td>via</td>
     <td> How the event was created.</td>
-  </tr>
-  <tr>
-    <td>via_reference_id</td>
-    <td>  </td>
   </tr>
 </table>
 
