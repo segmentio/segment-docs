@@ -53,19 +53,19 @@ Collections are the groupings of resources Segment pulls from your source.
 |  [users](#users) | object | Zendesk Support has three types of users: end-users (your customers), agents, and administrators. End-users request support through tickets. Agents work in Zendesk Support to solve tickets. Agents can be divided into multiple groups and can also belong to multiple groups. Agents don't have access to administrative configuration in Zendesk Support such as business rules or automation, but can configure their own macros and views. Administrators have all the abilities of agents, plus administrative abilities. |
 |  [groups](#groups) | object | When support requests arrive in Zendesk, they can be assigned to a Group. Groups serve as the core element of ticket workflow; support agents are organized into Groups and tickets can be assigned to a Group only, or to an assigned agent within a Group. A ticket can never be assigned to an agent without also being assigned to a Group. |
 |  [tickets](#tickets) | object | Tickets are the means through which your End-users (customers) communicate with Agents in Zendesk. **Note**: Segment pulls all tickets updated (or created) in the last year to start by default. If you need more, reach out to Segment support. Support can do a run to pull further back in history.  |
-|  [ticket_fields](#ticketfields) | object | Customize fields on the ticket form.  |
+|  [ticket_fields](#ticket_fields) | object | Customize fields on the ticket form.  |
 |  [activities](#activities) | object | The activity stream is a per agent event stream. It will give access to the most recent events that relate to the agent polling the API. |
 |  [attachments](#activities) | object | This API is for attachments in tickets and forum posts in the Web portal. |
 |  [organizations](#organizations) | object | Just as agents can be segmented into groups in Zendesk, your customers (end-users) can be segmented into organizations. |
-|  [ticket_events](#ticketevents) | events | Returns a stream of changes that occurred on tickets. Each event is tied to an update on a ticket and contains all the fields that were updated in that change. **Note**: Segment pulls one year of ticket events to start by default. If you need more, reach out to [Segment support](https://segment.com/help/contact/). Support can do a run to pull further back in history. |
-|  [ticket_metrics](#ticketmetrics) | object | All kinds of aggregate metrics about a ticket |
-|  [satisfaction_ratings](#satisfactionratings) | object | If you have enabled satisfaction ratings for your account, this end point allows you to quickly retrieve all ratings. |
-|  [ticket_comments](#ticketcomments) | object | Ticket comments represent the conversation between requesters, collaborators, and agents. It includes the full body of each comment, public and private. **Note**: This collection is not included by default. To request it, [contact Segment support](https://segment.com/help/contact/). |
-|  [ticket_forms](#ticketforms) | object | Ticket comments represent the conversation between requesters, collaborators, and agents. It includes the full body of each comment, public and private. **Note**: This collection is not included by default. To request it, [contact Segment support](https://segment.com/help/contact/). |
-|  [ticket_skips](#ticketskips) | object | A skip is a record of when an agent skips over a ticket without responding to the end user.  |
-|  [organization_memberships](#organizationmemberships) | object | A membership links a user to an organization. Organizations can have many users. Users can be in many organizations if the account supports multiple organizations. You can use the API to list users in an organization, and reassign organization members. |
-|  [group_memberships](#groupmemberships) | object | A membership links an agent to a group. Groups can have many agents, as agents can be in many groups. You can use the API to list what agents are in which groups, and reassign group members. |
-|  [audit_logs](#auditlogs) | object | The audit log shows various changes in your instance of Zendesk since the account was created.  **Note**: This collection is not included by default. To request it, [contact Segment support](https://segment.com/help/contact/). |
+|  [ticket_events](#ticket_events) | events | Returns a stream of changes that occurred on tickets. Each event is tied to an update on a ticket and contains all the fields that were updated in that change. **Note**: Segment pulls one year of ticket events to start by default. If you need more, reach out to [Segment support](https://segment.com/help/contact/). Support can do a run to pull further back in history. |
+|  [ticket_metrics](#ticket_metrics) | object | All kinds of aggregate metrics about a ticket |
+|  [satisfaction_ratings](#satisfaction_ratings) | object | If you have enabled satisfaction ratings for your account, this end point allows you to quickly retrieve all ratings. |
+|  [ticket_comments](#ticket_comments) | object | Ticket comments represent the conversation between requesters, collaborators, and agents. It includes the full body of each comment, public and private. **Note**: This collection is not included by default. To request it, [contact Segment support](https://segment.com/help/contact/). |
+|  [ticket_forms](#ticket_forms) | object | Ticket comments represent the conversation between requesters, collaborators, and agents. It includes the full body of each comment, public and private. **Note**: This collection is not included by default. To request it, [contact Segment support](https://segment.com/help/contact/). |
+|  [ticket_skips](#ticket_skips) | object | A skip is a record of when an agent skips over a ticket without responding to the end user.  |
+|  [organization_memberships](#organization_memberships) | object | A membership links a user to an organization. Organizations can have many users. Users can be in many organizations if the account supports multiple organizations. You can use the API to list users in an organization, and reassign organization members. |
+|  [group_memberships](#group_memberships) | object | A membership links an agent to a group. Groups can have many agents, as agents can be in many groups. You can use the API to list what agents are in which groups, and reassign group members. |
+|  [audit_logs](#audit_logs) | object | The audit log shows various changes in your instance of Zendesk since the account was created.  **Note**: This collection is not included by default. To request it, [contact Segment support](https://segment.com/help/contact/). |
 
 
 In your warehouse, each collection gets its own table. Find below a list of the properties Segment automatically fetches for each collection.
@@ -439,6 +439,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
      <td>removable</td>
      <td> If this field is not a system basic field that must be present for all tickets on the account.</td>
    </tr>
+   <tr>
      <td>created_at</td>
      <td> The time the ticket field was created.</td>
    </tr>
@@ -538,6 +539,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
      <td>updated_at</td>
      <td> When this record last got updated.</td>
    </tr>
+   <tr>
      <td>assignee_updated_at</td>
      <td> When the assignee last updated the ticket.</td>
    </tr>
@@ -554,10 +556,11 @@ In your warehouse, each collection gets its own table. Find below a list of the 
      <td> When the ticket was initially assigned.</td>
    </tr>
    <tr>
-  <td>assigned_at</td>
+    <td>assigned_at</td>
     <td> When the ticket was last assigned.</td>
   </tr>
-  <td>solved_at</td>
+  <tr>
+    <td>solved_at</td>
     <td> When the ticket was solved.</td>
   </tr>
   <tr>
@@ -756,6 +759,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
     <td>id</td>
     <td> Automatically assigned when the organization is created. </td>
   </tr>
+  <tr>
     <td>url</td>
     <td> The API url of this rating.</td>
   </tr>
@@ -803,6 +807,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
     <td>id</td>
     <td> Automatically assigned when the comment is created. </td>
   </tr>
+  <tr>
     <td>ticket_event_id</td>
     <td> Automatically assigned when the comment is created.</td>
   </tr>
