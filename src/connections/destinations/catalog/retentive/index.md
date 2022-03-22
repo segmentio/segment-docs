@@ -12,7 +12,7 @@ Retentive maintains this destination. For any issues with the destination, [cont
 {% include content/connection-modes.md %}
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-2. Search for "Retentive" in the Destinations Catalog, and select the "Retentive" destination.
+2. In the Destinations Catalog, search for "Retentive" and select the Retentive destination.
 3. Choose which source should send data to the Retentive destination.
 4. Navigate to the [Retentive integrations tab](https://app.retentive.io/integrations){:target="blank"}.
 5. Toggle the Segment integration on, and copy the API key presented.
