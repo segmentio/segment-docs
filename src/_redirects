@@ -1,2 +1,2 @@
-/docs/* /:splat 200
-/docs/assets/docs.bundle.js /assets/docs.bundle.js 200
+/docs/* /:splat 301
+/docs/assets/docs.bundle.js /assets/docs.bundle.js 301
