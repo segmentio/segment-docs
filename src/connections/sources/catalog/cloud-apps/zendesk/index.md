@@ -248,7 +248,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 | content_type    | The content type of the image. Example value: image/png.          |
 | inline          | If true, the attachment is excluded from the attachment list and the attachment’s URL can be referenced within the comment of a ticket. Default is false. |
 | size            | The size of the image file in bytes.                              |
-| recieved_at     | This timestamp is added to incoming messages as soon as they hit Segment API. |
+| received_at     | This timestamp is added to incoming messages as soon as they hit Segment API. |
 
 ### organizations
 <table>
