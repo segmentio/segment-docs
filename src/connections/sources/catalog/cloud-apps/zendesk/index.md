@@ -251,372 +251,105 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 | received_at     | This timestamp is added to incoming messages as soon as they hit Segment API. |
 
 ### organizations
-<table>
-  <tr>
-    <th>Property</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>id</td>
-    <td> Automatically assigned when the organization is created. </td>
-  </tr>
-  <tr>
-    <td>external_id</td>
-    <td> A unique external ID to associate organizations to an external record.</td>
-  </tr>
-  <tr>
-    <td>url</td>
-    <td> The API url of this organization.</td>
-  </tr>
-  <tr>
-    <td>name</td>
-    <td> A unique name for the organization.</td>
-  </tr>
-  <tr>
-    <td>details</td>
-    <td> This includes any details about the organization, such as the address.</td>
-  </tr>
-  <tr>
-    <td>notes</td>
-    <td> Any notes you have about the organization.</td>
-  </tr>
-  <tr>
-    <td>group_id</td>
-    <td> New tickets from users in this organization are automatically put in this group.</td>
-  </tr>
-  <tr>
-    <td>shared_tickets</td>
-    <td> End users in this organization are able to see each other's tickets.</td>
-  </tr>
-  <tr>
-    <td>shared_comments</td>
-    <td> End users in this organization are able to see each other's comments on tickets.</td>
-  </tr>
-  <tr>
-    <td>created_at</td>
-    <td> The time the organization was created.</td>
-  </tr>
-  <tr>
-    <td>updated_at</td>
-    <td> The time of the last update of the organization.</td>
-  </tr>
-  <tr>
-    <td>received_at</td>
-    <td> This timestamp is added to incoming messages as soon as they hit Segment API.</td>
-  </tr>
-</table>
 
-### satisfaction_ratings
-<table>
-  <tr>
-    <th>Property</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>id</td>
-    <td> Automatically assigned when the organization is created. </td>
-  </tr>
-  <tr>
-    <td>url</td>
-    <td> The API url of this rating.</td>
-  </tr>
-  <tr>
-    <td>assignee_id</td>
-    <td> The ID of agent assigned to at the time of rating.</td>
-  </tr>
-  <tr>
-    <td>group_id</td>
-    <td> The ID of group assigned to at the time of rating.</td>
-  </tr>
-  <tr>
-    <td>requester_id</td>
-    <td> The ID of ticket requester submitting the rating.</td>
-  </tr>
-  <tr>
-    <td>ticket_id</td>
-    <td>  The ID of ticket being rated.</td>
-  </tr>
-  <tr>
-    <td>score</td>
-    <td> The rating: "offered", "unoffered", "good" or "bad".</td>
-  </tr>
-  <tr>
-    <td>created_at</td>
-    <td> The time the satisfaction rating got created.</td>
-  </tr>
-  <tr>
-    <td>updated_at</td>
-    <td> The time the satisfaction rating got updated.</td>
-  </tr>
-  <tr>
-    <td>received_at</td>
-    <td> This timestamp is added to incoming messages as soon as they hit Segment API.</td>
-  </tr>
-</table>
+| Property        | Description                                                       |
+| --------------- | ----------------------------------------------------------------- |
+| id              | Automatically assigned when the organization is created.          |
+| external_id     | A unique external ID to associate organizations to an external record. |
+| url             | The API URL of this organization.                                 |
+| name            | A unique name for the organization.                               |
+| details         | This includes any details about the organization, such as the address. |
+| notes           | Any notes you have about the organization.                        |
+| group_id        | New tickets from users in this organization are automatically put in this group. |
+| shared_tickets  | End users in this organization are able to see each other’s tickets. |
+| shared_comments | End users in this organization are able to see each other’s comments on tickets. |
+| created_at | The date and time that the organization was created.                   |
+| updated_at      | The date and time that the organization was last updated.         |
+| received_at     | This timestamp is added to incoming messages as soon as they hit Segment API. |
 
 ### ticket_comments
-  <table>
-  <tr>
-    <th>Property</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>id</td>
-    <td> Automatically assigned when the comment is created. </td>
-  </tr>
-  <tr>
-    <td>ticket_event_id</td>
-    <td> Automatically assigned when the comment is created.</td>
-  </tr>
-  <tr>
-    <td>ticket_id</td>
-    <td> The ID of ticket being commented.</td>
-  </tr>
-  <tr>
-    <td>type</td>
-    <td> Comment or VoiceComment. The JSON object for voice comments is different.</td>
-  </tr>
-  <tr>
-    <td>body</td>
-    <td> The comment string.</td>
-  </tr>
-  <tr>
-    <td>public</td>
-    <td>  true if a public comment; false if an internal note. The initial value set on ticket creation persists for any additional comment unless you change it.</td>
-  </tr>
-  <tr>
-    <td>author_id</td>
-    <td> The ID of the comment author.</td>
-  </tr>
-  <tr>
-    <td>via</td>
-    <td> How the comment was created.</td>
-  </tr>
-  <tr>
-    <td>created_at</td>
-    <td> The time the comment was created.</td>
-  </tr>
-  <tr>
-    <td>received_at</td>
-    <td> This timestamp is added to incoming messages as soon as they hit Segment API.</td>
-  </tr>
-</table>
+
+| Property        | Description                                                       |
+| --------------- | ----------------------------------------------------------------- |
+| id              | Automatically assigned when the comment is created.               |
+| ticket_event_id | Automatically assigned when the comment is created.               |
+| ticket_id       | The ID of the ticket being commented.                             |
+| type            | Comment or VoiceComment. The JSON object for voice comments is different.  |
+| body            | The comment string.                                               |
+| public          | true if a public comment; false if an internal note. The initial value set on ticket creation persists for any additional comment unless you change it. |
+| author_id       | The ID of the comment author.                                     |
+| via             | How the comment was created.                                      |
+| created_at      | The time the comment was created.                                 |
+| received_at     | This timestamp is added to incoming messages as soon as they hit Segment API. |
 
 ### ticket_forms
-<table>
-   <tr>
-     <th>Property</th>
-     <th>Description</th>
-   </tr>
-   <tr>
-     <td>id</td>
-     <td>Automatically assigned when creating groups. </td>
-   </tr>
-   <tr>
-     <td>active</td>
-     <td>Shows if the form is set as active.</td>
-   </tr>
-   <tr>
-     <td>end_user_visible</td>
-     <td>This shows if the form is visible to the end user.</td>
-   </tr>
-   <tr>
-     <td>name</td>
-     <td>The name of the form.</td>
-   </tr>
-   <tr>
-     <td>restricted_brand_ids</td>
-     <td>The IDs of all brands that this ticket form is restricted to.</td>
-   </tr>
-   <tr>
-     <td>ticket_field_ids</td>
-     <td>The IDs of all ticket fields which are in this ticket form.</td>
-   </tr>
-   <tr>
-     <td>updated_at</td>
-     <td>The time of the last update of the ticket form.</td>
-   </tr>
-   <tr>
-     <td>url</td>
-     <td> The API url of this ticket.</td>
-   </tr>
-   <tr>
-     <td>created_at</td>
-     <td>The time the ticket form was created.</td>
-   </tr>
-   <tr>
-     <td>display_name</td>
-     <td>The name of the form that displays to the end user.</td>
-   </tr>
-   <tr>
-     <td>in_all_brands</td>
-     <td>This shows if the form is available for use in all brands on this account.</td>
-   </tr>
-   <tr>
-     <td>position</td>
-     <td>The position of this form among other forms in the account (for example, dropdown)</td>
-   </tr>
-   <tr>
-     <td>raw_display_name</td>
-     <td>The dynamic content placeholder (if available,) or the "display_name" value, if the dynamic content placeholder is unavailable.</td>
-   </tr>
-   <tr>
-     <td>raw_name</td>
-     <td>The dynamic content placeholder (if available,) or the "name" value, if the dynamic content placeholder is unavailable.</td>
-   </tr>
-   <tr>
-     <td>default</td>
-     <td>This shows if this form is the default form for this account.</td>
-   </tr>
-</table>
+
+| Property        | Description                                                       |
+| --------------- | ----------------------------------------------------------------- |
+| id              | Automatically assigned when the ticket form is created.           |
+| active          | If set to true, this shows that the form is active.               |
+| end_user_visible | If set to true, this shows that the form is visible to end users.|
+| name            | The name of the form.                                             |
+| restricted_brand_ids | The IDs of all brands that this ticket form is restricted to. |
+| ticket_field_ids | The IDs of all ticket fields which are in this ticket form.      |
+| updated_at      | The date and time the ticket form was last updated.               |
+| url             | The URL of the ticket form.                                       |
+| created_at      | The date and time the ticket form was created.                    |
+| display_name    | The name of the form that displays to the end user.               |
+| in_all_brands   | This shows if the form is available for use in all brands on this account. |
+| position         | The position of this form among other forms in the account (for example, dropdown) |
+| raw_display_name | The dynamic content placeholder (if available,) or the “display_name” value, if the dynamic content placeholder is unavailable. |
+| raw_name       | The dynamic content placeholder (if available,) or the “name” value, if the dynamic content placeholder is unavailable. |
+| default        | If set to true, this shows that the form is the default form for this account. |
 
 ### ticket_skips
-<table>
-   <tr>
-     <th>Property</th>
-     <th>Description</th>
-   </tr>
-   <tr>
-     <td>id</td>
-     <td>Automatically assigned when creating groups.</td>
-   </tr>
-   <tr>
-     <td>user_id</td>
-     <td>The ID of the skipping agent.</td>
-   </tr>
-   <tr>
-     <td>reason</td>
-     <td>The reason for skipping the ticket.</td>
-   </tr>
-   <tr>
-     <td>created_at</td>
-     <td>The time the skip was created.</td>
-   </tr>
-   <tr>
-     <td>updated_at</td>
-     <td>The time the skip was last updated.</td>
-   </tr>
-</table>
+
+| Property        | Description                                                       |
+| --------------- | ----------------------------------------------------------------- |
+| id              | Automatically assigned upon ticket skip creation.                 |
+| user_id         | The ID of the skipping agent.                                     |
+| reason          | The reason for skipping the ticket.                               |
+| created_at      | The date and time the skip was created.                           |
+| updated_at      | The date and time the skip was last updated.                      |
 
 ### organization_memberships
-<table>
-   <tr>
-     <th>Property</th>
-     <th>Description</th>
-   </tr>
-   <tr>
-     <td>id</td>
-     <td>This is automatically assigned when creating groups. </td>
-   </tr>
-   <tr>
-     <td>url</td>
-     <td> The API url of this ticket.</td>
-   </tr>
-   <tr>
-     <td>user_id</td>
-     <td>The ID of the user who has this organization membership.</td>
-   </tr>
-   <tr>
-     <td>organization_id</td>
-     <td>The ID of the organization associated with this user.</td>
-   </tr>
-   <tr>
-     <td>created_at</td>
-     <td>When this record was created.</td>
-   </tr>
-   <tr>
-     <td>updated_at</td>
-     <td>When this record was last updated.</td>
-   </tr>
-   <tr>
-     <td>organization_name</td>
-     <td>The name of the organization associated with this user.</td>
-   </tr>
-</table>
+
+| Property        | Description                                                       |
+| --------------- | ----------------------------------------------------------------- |
+| id              | Automatically assigned when creating organizations.               |
+| url             | The URL of this organization.                                     |
+| user_id         | The ID of the user associated with this organization.            |
+| organization_id | The ID of the organization associated with the selected user      |
+| created_at      | The date and time this record was created.                        |
+| updated_at      | The date and time this record was last updated.                   |
+| organization_name | The name of the organization associated with the selected user. |
 
 ### group_memberships
-<table>
-   <tr>
-     <th>Property</th>
-     <th>Description</th>
-   </tr>
-   <tr>
-     <td>id</td>
-     <td> Automatically assigned when creating groups. </td>
-   </tr>
-   <tr>
-     <td>url</td>
-     <td> The API url of this group.</td>
-   </tr>
-   <tr>
-     <td>created_at</td>
-     <td> The time the group was created.</td>
-   </tr>
-   <tr>
-     <td>group_id</td>
-     <td> The ID of the group assigned to at the time of rating.</td>
-   </tr>
-   <tr>
-     <td>updated_at</td>
-     <td> The time of the last update of the group.</td>
-   </tr>
-   <tr>
-     <td>user_id</td>
-     <td> The ID of an agent.</td>
-   </tr>
-</table>
+
+| Property        | Description                                                       |
+| --------------- | ----------------------------------------------------------------- |
+| id              | Automatically assigned when creating groups.                      |
+| url             | The API URL of this group.                                        |
+| created_at      | The date and time the group was created.                          |
+| group_id        | The ID of the group.                                              |
+| updated_at      | The date and time the group was last updated.                     |
+| user_id         | The ID of an agent.                                               |
 
 ### audit_logs
-<table>
-   <tr>
-     <th>Property</th>
-     <th>Description</th>
-   </tr>
-   <tr>
-     <td>id</td>
-     <td>Automatically assigned when creating groups. </td>
-   </tr>
-   <tr>
-     <td>url</td>
-     <td> The API url of this ticket.</td>
-   </tr>
-   <tr>
-     <td>created_at</td>
-     <td>The time the audit got created.</td>
-   </tr>
-   <tr>
-     <td>actor_id</td>
-     <td>The ID of the user creating the ticket</td>
-   </tr>
-   <tr>
-     <td>source_id</td>
-     <td>The ID of the item being audited.</td>
-   </tr>
-   <tr>
-     <td>source_type</td>
-     <td>The item type being audited.</td>
-   </tr>
-   <tr>
-     <td>source_label</td>
-     <td>The name of the item being audited.</td>
-   </tr>
-   <tr>
-     <td>action</td>
-     <td>The action a user performed. Either "login", "create", "update", or "destroy".</td>
-   </tr>
-   <tr>
-     <td>change_description</td>
-     <td>The description of the change that occurred.</td>
-   </tr>
-   <tr>
-     <td>ip_address</td>
-     <td>The IP address of the user performing the audit.</td>
-   </tr>
-   <tr>
-     <td>action_label</td>
-     <td>A localized string of action field.</td>
-   </tr>
-</table>
+
+| Property        | Description                                                       |
+| --------------- | ----------------------------------------------------------------- |
+| id              | Automatically assigned when creating audit logs.                  |
+| url             | The URL to access the audit log.                                  |
+| created_at      | The date and time that the audit was created.                     |
+| actor_id        | The ID of the user creating the ticket.                           |
+| source_id       | The ID of the item being audited.                                 |
+| source_type     | The item type being audited.                                      |
+| source_label    | The name of the item being audited.                               |
+| action          | The action a user performed. Either “login”, “create”, “update”, or “destroy”. |
+| change_description | The description of the change that occurred.                   |
+| ip_address      | The IP address of the user performing the audit.                  |
+| action_label    | A localized string of action field.                               |
 
 ## Adding Destinations
 Currently only Warehouses are supported for object-cloud sources.
