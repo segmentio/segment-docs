@@ -9,17 +9,17 @@ id: 3hbak7a9
 
 ## Getting Started
 
-1. From your workspace's `sources` page, click `add source`.
+1. Go to **Connections > Sources** and click **Add Source** in the Segment app.
 
-2. Choose Zendesk.
+2. Search for **Zendesk** in the Sources Catalog and click **Add Source**.
 
 3. Give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name auto-populates the schema name. For example, the source name `Zendesk` creates the schema `zendesk`.
 
-   **Note**: You can add multiple instances if you have multiple Zendesk accounts. That's why Segment allows you to customize the source's nickname and schema name.
+   * **Note**: You can add multiple instances if you have multiple Zendesk accounts. That's why Segment allows you to customize the source's nickname and schema name.
 
 4. Enter your Zendesk subdomain. The subdomain you use to access your Zendesk portal (for example 'segment' for segment.zendesk.com)
 
-   **Note** If you enter `segment.zendesk.com` as a subdomain instead of just `segment`, Segment tries to access the host `segment.zendesk.com.zendesk.com` and you will get a credentials error.
+   * **Note:** If you enter `segment.zendesk.com` as a subdomain instead of just `segment`, Segment tries to access the host `segment.zendesk.com.zendesk.com` and you will get a credentials error.
 
 5. Click **Authorize** to start Zendesk's OAuth process. Sign in and grant permissions, you'll be good to go.
 
@@ -29,17 +29,17 @@ id: 3hbak7a9
 
 ### Rate Limits
 
-The Zendesk source uses both Zendesk's [Core API](https://developer.zendesk.com/api-reference/) and [Incremental Exports API](https://developer.zendesk.com/rest_api/docs/core/incremental_export). The source's requests to the Incremental API do not count towards your Zendesk account's rate limits, but requests to the Core API do. By default, Segment caps requests to Zendesk's Core API to a rate of 200 requests per minute to avoid triggering [Zendesk's Rate Limits](https://developer.zendesk.com/api-reference/ticketing/account-configuration/usage_limits/). If you'd like to increase or decrease the request rate for your source, [please reach out](https://segment.com/help/contact/). Support for this in the UI is in the works.
+The Zendesk source uses both Zendesk's [Core API](https://developer.zendesk.com/api-reference/){:target="_blank"} and [Incremental Exports API](https://developer.zendesk.com/rest_api/docs/core/incremental_export){:target="_blank"}. The source's requests to the Incremental API don't count towards your Zendesk account's rate limits, but requests to the Core API do. By default, Segment caps requests to Zendesk's Core API to a rate of 200 requests per minute to avoid triggering [Zendesk's Rate Limits](https://developer.zendesk.com/api-reference/ticketing/account-configuration/usage_limits/){:target="_blank"}. If you'd like to increase or decrease the request rate for your source, [please reach out](https://segment.com/help/contact/). Support for this in the UI is in the works.
 
 ## Components
 
 ### Sync
 
-The Zendesk source is built with a sync component, which means Segment makes requests to their API on your behalf on a three hour interval to pull the latest data into Segment. In the initial sync, Segment grabs all the Zendesk objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation (like `zendesk_prod.users`).
+The Zendesk source is built with a sync component, which means Segment makes requests to their API on your behalf on a three hour interval to pull the latest data into Segment. In the initial sync, Segment grabs all the Zendesk objects (and their corresponding properties) according to the Collections Table below. The objects are written into a separate schema, corresponding to the source instance's schema name you designated upon creation (like `zendesk_prod.users`).
 
-The sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in Zendesk.  For example, if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
+The sync component uses an upsert API, so the data in your warehouse loaded using sync reflects the latest state of the corresponding resource in Zendesk.  For example, if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status is `closed`.
 
-The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every three hours. Depending on your Warehouses plan, Segment pushes the Source data to your warehouse on the interval associated with your billing plan.
+The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources sync with Segment every three hours. Depending on your Warehouses plan, Segment pushes the Source data to your warehouse on the interval associated with your billing plan.
 
 At the moment, Segment doesn't support filtering which objects or properties get synced. If you're interested in this feature, [please reach out](https://segment.com/help/contact/).
 
@@ -589,15 +589,15 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
   <tr>
     <td>ticket_id</td>
-    <td> ID of the associated ticket.</td>
+    <td> The ID of the associated ticket.</td>
   </tr>
   <tr>
     <td>timestamp</td>
-    <td> Time when the ticket was updated.</td>
+    <td> The time when the ticket was updated.</td>
   </tr>
   <tr>
     <td>updater_id</td>
-    <td> ID of the user who updated the ticket.</td>
+    <td> The ID of the user who updated the ticket.</td>
   </tr>
   <tr>
     <td>ticket_event_via</td>
@@ -605,11 +605,11 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
   <tr>
     <td>context_client</td>
-    <td>  Refers to the "client" used to submit this ticket change (for example, browser name and type).</td>
+    <td>  This refers to the "client" used to submit this ticket change (for example, browser name and type).</td>
   </tr>
   <tr>
     <td>context_location</td>
-    <td> Plain text name of where the request was made, if available (for example, country, city).</td>
+    <td> The plain text name of where the request was made, if available (for example, country, city).</td>
   </tr>
   <tr>
     <td>context_latitude</td>
@@ -717,7 +717,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
   <tr>
     <td>details</td>
-    <td> Any details about the organization, such as the address.</td>
+    <td> This includes any details about the organization, such as the address.</td>
   </tr>
   <tr>
     <td>notes</td>
@@ -861,7 +861,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
    </tr>
    <tr>
      <td>end_user_visible</td>
-     <td>Shows if the form is visible to the end user.</td>
+     <td>This shows if the form is visible to the end user.</td>
    </tr>
    <tr>
      <td>name</td>
@@ -869,11 +869,11 @@ In your warehouse, each collection gets its own table. Find below a list of the 
    </tr>
    <tr>
      <td>restricted_brand_ids</td>
-     <td>IDs of all brands that this ticket form is restricted to.</td>
+     <td>The IDs of all brands that this ticket form is restricted to.</td>
    </tr>
    <tr>
      <td>ticket_field_ids</td>
-     <td>IDs of all ticket fields which are in this ticket form.</td>
+     <td>The IDs of all ticket fields which are in this ticket form.</td>
    </tr>
    <tr>
      <td>updated_at</td>
@@ -889,11 +889,11 @@ In your warehouse, each collection gets its own table. Find below a list of the 
    </tr>
    <tr>
      <td>display_name</td>
-     <td>The name of the form that is displayed to the end user.</td>
+     <td>The name of the form that displays to the end user.</td>
    </tr>
    <tr>
      <td>in_all_brands</td>
-     <td>Shows if the form is available for use in all brands on this account.</td>
+     <td>This shows if the form is available for use in all brands on this account.</td>
    </tr>
    <tr>
      <td>position</td>
@@ -909,7 +909,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
    </tr>
    <tr>
      <td>default</td>
-     <td>Shows if this form is the default form for this account.</td>
+     <td>This shows if this form is the default form for this account.</td>
    </tr>
 </table>
 
@@ -925,19 +925,19 @@ In your warehouse, each collection gets its own table. Find below a list of the 
    </tr>
    <tr>
      <td>user_id</td>
-     <td>ID of the skipping agent.</td>
+     <td>The ID of the skipping agent.</td>
    </tr>
    <tr>
      <td>reason</td>
-     <td>Reason for skipping the ticket.</td>
+     <td>The reason for skipping the ticket.</td>
    </tr>
    <tr>
      <td>created_at</td>
-     <td>Time the skip was created.</td>
+     <td>The time the skip was created.</td>
    </tr>
    <tr>
      <td>updated_at</td>
-     <td>Time the skip was last updated.</td>
+     <td>The time the skip was last updated.</td>
    </tr>
 </table>
 
@@ -949,7 +949,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
    </tr>
    <tr>
      <td>id</td>
-     <td>Automatically assigned when creating groups. </td>
+     <td>This is automatically assigned when creating groups. </td>
    </tr>
    <tr>
      <td>url</td>
@@ -961,7 +961,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
    </tr>
    <tr>
      <td>organization_id</td>
-     <td>the ID of the organization associated with this user.</td>
+     <td>The ID of the organization associated with this user.</td>
    </tr>
    <tr>
      <td>created_at</td>
