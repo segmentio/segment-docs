@@ -10,7 +10,7 @@ hidden: true
 {% include content/plan-grid.md name="actions" %}
 
 Create flexible and targeted promotional and loyalty campaigns with [Talon.One](https://www.talon.one/).
-Campaigns can be created and managed by non-technical users such as marketeers. There is no need to
+Campaigns can be created and managed by non-technical users such as marketers. There is no need to
 get your development team involved. Features include coupons, discounts, loyalty
 programs, referral tracking, geo-fencing, and bundling.
 
