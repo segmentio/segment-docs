@@ -9,7 +9,7 @@ To migrate to React Native 2.0:
 
 1. Update the existing package:
     ```js
-    yarn upgrade @segment/analytics-react-native@2.2.0
+    yarn upgrade @segment/analytics-react-native
     ```
 2. Install additional dependencies:
     ```js
@@ -88,7 +88,7 @@ PODS:
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-### Example client configuration for `analytics-react-native 2.2.0`
+### Example client configuration for `analytics-react-native 2.0`
 
 {% codeexample %}
 {% codeexampletab App.tsx (or .js) %}
@@ -126,7 +126,7 @@ const App = () => {
  "nanoid": "^3.1.30",
  "@react-native-async-storage/async-storage": "^1.15.11",
  "@segment/analytics-react-native": "2.2.0",
- "@segment/analytics-react-native-plugin-firebase": "2.2.0",
+ "@segment/analytics-react-native-plugin-firebase": "2.0",
  "@segment/sovran-react-native": "0.2.6",
 }
 ```
@@ -165,7 +165,7 @@ onSendEvent = async() => {
 }
 ```
 
-### Example tracking implementation for `analytics-react-native 2.2.0`
+### Example tracking implementation for `analytics-react-native 2.0`
 Home.tsx
 
 ```js
