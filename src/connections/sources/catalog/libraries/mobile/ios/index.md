@@ -13,7 +13,7 @@ With Analytics for iOS, you can send your data to analytics or marketing tool, w
 > **Note:** Segment does not currently support tracking of watchkit extensions for the Apple Watch. [Email us](https://segment.com/requests/integrations/) if you're interested in a Watchkit SDK. For now we recommend tracking watch interactions using the iPhone app code.
 
 
-> info "Analytics-Swift Public Beta"
+> info "Analytics-Swift"
 > The [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios/) library is in General Availability. If you’d like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift-ios/migration/).
 
 ## Analytics-iOS and Unique Identifiers
