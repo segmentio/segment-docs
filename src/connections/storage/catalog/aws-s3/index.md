@@ -246,27 +246,17 @@ For each source in the scenario, complete the steps described in [Migrate an exi
 
 
 ## Migrate an existing destination using public-api
-This procedure uses Segment's public-api to migrate your destinations from Amazon S3 to the AWS S3 destination. For more information about the public-api, please see the [Getting Started](https://api.segmentapis.com/docs/guides/#getting-started) guide.
+This procedure uses Segment's public-api to migrate your destinations to the AWS S3 destination. For more information about the public-api, please see the [public-api Getting Started](https://api.segmentapis.com/docs/guides/#getting-started) guide.
 
-To migrate from the Amazon S3 destination to the AWS S3 destination using the public-api:
+To migrate to the AWS S3 destination using the public-api:
 
-1. Add the **AWS S3** destination and add the AWS Region and IAM role ARN. For the bucket name, enter `<YOUR_BUCKET_NAME>/segment-logs/test`. Enable the destination, and verify data is received at `<YOUR_BUCKET_NAME>/segment-logs/test/segment-logs`. If the folder receives data, continue to the next step. If you don't see log entries, check the trust relationship document and IAM policy attached to the role.
-2. Get a list of destinations or an individual destination. To return a list of all of your Amazon S3 destinations, use the `list desintations` call and filter the results using metadata id `54f418c3db31d978f14aa925` or slug `amazon-s3`: <br/>
-```shell
-curl -vvv --location --request GET https://api.segmentapis.com/destinations?pagination.count=1 \
---header 'Content-Type: application/json' \
-  --header 'Authorization: Bearer ...' \
-  --data-raw '
-```
-<br/> To return the information for an individual Amazon S3 destination, use the `get destination` call, using the destination ID for your individual Amazon S3 destination (**Note:** Destination IDs are visible in the Segment app, in the settings for the source.) <br/>
-```shell
-curl -vvv --location --request GET https://api.segmentapis.com/destinations/$DESTINATION_ID \
---header 'Content-Type: application/json' \
-  --header 'Authorization: Bearer ...' \
-  --data-raw '
-```
-
-3. Create the new AWS S3 destination using the `create destination` call. Below is an example of the parameters: <br/>
+1. Create a new S3 bucket and IAM role using either the [AWS console](#create-an-iam-role-in-the-aws-console) or the [AWS CLI](#create-an-iam-role-using-the-aws-cli). 
+2. Open the Segment app and add the **AWS S3** destination from the Storage Destinations tab of the catalog.
+3. Configure your AWS S3 destination. For the bucket name, enter `<YOUR_BUCKET_NAME>/segment-logs/test`. 
+4. Enable the destination, and verify data is received at `<YOUR_BUCKET_NAME>/segment-logs/test/segment-logs`. If the folder receives data, continue to the next step. If you don't see log entries, check the trust relationship document and IAM policy attached to the role.
+5. Update the bucket name in the Segment app to `<YOUR_BUCKET_NAME>`.
+6. After an hour, disable your original Amazon S3 destination.
+7. Create the new AWS S3 destination using the `create destination` call. Below is an example of the parameters: <br/>
 ```json
 {
  "sourceId": "rh5BDZp6QDHvXFCkibm1pR",
@@ -288,12 +278,28 @@ curl -vvv --location --request PATCH https://api.segmentapis.com/destinations/$D
   --data-raw '
 {
         "destinationId": "$DESTINATION_ID",
-        "enabled": true
+        "enabled": false
 }
 ' | jq
 ```
 <br/>
-4. After creating your new AWS S3 destination, delete the Amazon S3 sources using the following command (replacing `$DESTINATION_ID` with the ID of your Amazon S3 destination): 
+8. Identify the source IDs for your old Amazon S3 destination(s). You can use the public-api to return information about a list of your Amazon S3 destinations or an individual destination. <br/>
+To return a list of all of your Amazon S3 destinations, use the `list desintations` call and filter the results using metadata id `54f418c3db31d978f14aa925` or slug `amazon-s3`: <br/>
+```shell
+curl -vvv --location --request GET https://api.segmentapis.com/destinations?pagination.count=1 \
+--header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer ...' \
+  --data-raw '
+```
+<br/> To return the information for an individual Amazon S3 destination, use the `get destination` call, using the destination ID for your individual Amazon S3 destination (**Note:** Destination IDs are visible in the Segment app, in the settings for the source.) <br/>
+```shell
+curl -vvv --location --request GET https://api.segmentapis.com/destinations/$DESTINATION_ID \
+--header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer ...' \
+  --data-raw '
+```
+
+9. Disable the Amazon S3 destinations using the following command (replacing `$DESTINATION_ID` with the ID of your Amazon S3 destination you found in step ): 
 
 ```shell
 curl -vvv --location --request PATCH https://api.segmentapis.com/destinations/$DESTINATION_ID \
