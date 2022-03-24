@@ -63,7 +63,7 @@ To start sending data to Talon.One from Segment, create a Talon.One
    1. Configure the trigger and action fields.
 1. Click **Event Tester** and test if you received the data in Talon.One.
 
-Once you retrieve data, you can start creating rules that rely on that data.
+Once you receive data, you can start creating rules that rely on that data.
 
 > warning ""
 > **Important**: You might need to create custom attributes in Talon.One to be able to map the data from Segment in Talon.One. See the [Talon.One docs](https://docs.talon.one/docs/product/account/dev-tools/managing-attributes#creating-custom-attributes){:target="_blank"}.
