@@ -1,6 +1,6 @@
 // Purpose: Add id values to integrations that don't have them
 // Why it's important: We look up integration metadata by ID, rather than slug
-// Instructions: run `make catalog`, select the integration type, enter the slug
+// Instructions: run `make add-id`, select the integration type, enter the slug
 // The script:
 // 1. Get's the list of public integrations from the API
 // 2. Checks the slug you entered for an id
