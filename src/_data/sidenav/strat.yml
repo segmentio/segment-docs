@@ -153,6 +153,8 @@ sections:
   section:
   - path: /connections/sources/catalog/libraries/mobile/react-native
     title: Analytics-React-Native mobile source
+  - path: /connections/sources/catalog/libraries/mobile/react-native/migration
+    title: React-Native 2.0 Migration Guide
   - path: /connections/sources/catalog/libraries/mobile/react-native/troubleshooting
     title: Troubleshooting Analytics-React-Native
   - path: /connections/sources/catalog/libraries/mobile/react-native/react-faqs/
