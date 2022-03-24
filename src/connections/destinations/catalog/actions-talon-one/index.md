@@ -94,7 +94,7 @@ You can use the following payloads to test and fine-tune your requests.
 
 ### Next steps
 
-Once you receive data from Segment inside Talon.One, start creating your rules in the Campaign Manager. See the [Talon.One documentation](https://docs.talon.one/docs/product/rules/overview).
+Once you receive data from Segment inside Talon.One, start creating your rules in the Campaign Manager. See the [Talon.One documentation](https://docs.talon.one/docs/product/rules/overview){:target="_blank"}.
 <!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
 
 {% include components/actions-fields.html %}
