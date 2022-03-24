@@ -93,17 +93,15 @@ Let's say you're connecting your Segment customer data stream to Kinesis Stream 
 
 The Segment Kinesis destination issues a `PutRecord` request with the following parameters:
 ```js
-kinesis.putRecord({
-  Data: new Buffer(JSON.stringify(msg)).toString('base64')
-  PartitionKey: msg.userId() || msg.anonymousId(),
-  StreamName: 'stream-name'
-});
+const payload = {
+  Data: JSON.stringify(msg.json()),
+  StreamName: this.settings.stream,
+  PartitionKey: this.settings.useMessageId ? msg.field('messageId') : msg.userId() || msg.anonymousId()
+}
+const request = kinesis.putRecord(payload)
 ```
 
-Segment uses the the `userId || anonymousId` as the `PartitionKey`. The partition key is used by Amazon Kinesis to distribute data across shards. Amazon Kinesis segregates the data records that belong to a stream into multiple shards, using the partition key associated with each data record to determine which shard a given data record belongs to.
-
-> note ""
-> **NOTE:** The JSON payload is base64 stringified.
+Segment uses the `messageId` or the `userId || anonymousId` as the `PartitionKey`. The partition key is used by Amazon Kinesis to distribute data across shards. Amazon Kinesis segregates the data records that belong to a stream into multiple shards, using the partition key associated with each data record to determine which shard a given data record belongs to.
 
 ## Group
 If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does.

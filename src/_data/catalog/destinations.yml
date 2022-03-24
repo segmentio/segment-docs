@@ -9353,7 +9353,7 @@ items:
   display_name: Crossing Minds
   name: Crossing Minds
   slug: crossing-minds
-  hidden: true
+  hidden: false
   endpoints:
   - us
   regions:
@@ -29889,7 +29889,7 @@ items:
   display_name: Retentive
   name: Retentive
   slug: retentive
-  hidden: true
+  hidden: false
   endpoints:
   - us
   regions:

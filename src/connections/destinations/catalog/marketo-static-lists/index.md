@@ -63,14 +63,14 @@ In this step, you'll create an API-Only Marketo user with both Access API and Le
 
    ![](images/marketosl-create-new-role.png)
 
-2. Go to **Admin**→ **Users & Roles** → **Users** → **Invite New User** and create a new **API Only user** with the role that has both Access API and Lead Database permissions.
+2. Go to **Admin**→ **Users & Roles** → **Users** → **Invite New User** and create a new **API Only user** with the role that has both Access API and Lead Database permissions. **Be sure to check the API Only box.**
 
    ![](images/marketosl-perms.png)
 
 
 ### Step 2: Create a Marketo Launchpoint Service for Segment Personas
 
-1. Go to **Admin** → **Integrations**→ **Launchpoint** → **New**
+1. Go to **Admin** → **Integration**→ **LaunchPoint** → **New**
 2. Create a new service. In the Service field, select `Custom`, and in the **API Only User** field, select the user you created in step 1.
 3. Write down the **Client Id** and **Client Secret** for this service, as you will need it in Step 4.
 
@@ -85,7 +85,7 @@ In this step, you'll create an API-Only Marketo user with both Access API and Le
 
    ![](images/marketosl-newfolder.png)
 
-2. Before you continue to the next step, in Marketo, go to **Admin → Web Services**, and copy or write down the REST API Endpoint. You’ll need that in the next step.
+2. Before you continue to the next step, in Marketo, go to **Admin → Web Services**, and copy or write down the REST API Endpoint. **Be sure to copy the REST endpoint and not the SOAP endpoint.** You’ll need that in the next step.
 
 > warning "Warning:"
 > Do not create a list in the folder for the audience. Segment creates the list for you!
@@ -115,6 +115,8 @@ You can view the audience in Marketo by going to **Lead Database→ Group Lists�
 #### Not seeing an audience in Marketo
 
 Check that you followed all of the set-up steps.
+
+Wait six or more hours after setup for your audience to start appearing in Marketo.
 
 Check that you didn’t create a list in the folder for the audience - Segment creates the list for you, and an existing one can conflict.
 
