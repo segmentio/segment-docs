@@ -1,12 +1,18 @@
-// 1. Check all index.md files in Sources and Destinations
-// 2. For files w/out an ID, get it from the API
-// 3. Append id to frontmatter 
+// Purpose: Add id values to integrations that don't have them
+// Why it's important: We look up integration metadata by ID, rather than slug
+// Instructions: run `make catalog`, select the integration type, enter the slug
+// The script:
+// 1. Get's the list of public integrations from the API
+// 2. Checks the slug you entered for an id
+// 3. If there is no ID, it adds the ID retrieved from the API to the file.
+
+
+
 const axios = require('axios');
 const path = require('path');
 const fs = require('fs');
 const fm = require('front-matter');
 const yaml = require('js-yaml');
-const glob = require("glob")
 const {
   Select
 } = require('enquirer');
@@ -25,9 +31,6 @@ require('dotenv').config();
 
 // Here, global variables are set
 const PAPI_URL = "https://api.segmentapis.com"
-const destinationList = "src/connections/destinations/catalog/*/index.md"
-const sources = "src/connections/sources/catalog/**/index.md"
-
 const slugOverrides = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/slugs.yml`)))
 
 const slugify = (displayName) => {
@@ -39,14 +42,11 @@ const slugify = (displayName) => {
     .replace(/[\(\)]/g, '')
     .replace('.', '-')
 
-  // This is how we handle manual slug overrides right now.
-  // If a slug appears in the slugOverrides file, we want to use the 'override' value instead.
   for (key in slugOverrides) {
     let original = slugOverrides[key].original
     let override = slugOverrides[key].override
 
     if (slug == original) {
-      // console.log(original + " -> " + override)
       slug = override
     }
   }
@@ -76,45 +76,7 @@ const getCatalog = async (url, page_token = "MA==") => {
 }
 
 
-
-const updateDestinationIds = async () => {
-  let destinations = []
-  const files = glob.sync(destinationList)
-  let noIds = []
-  let nextPageToken = "MA=="
-
-
-  while (nextPageToken !== undefined) {
-    const res = await getCatalog(`${PAPI_URL}/catalog/destinations/`, nextPageToken)
-    destinations = destinations.concat(res.data.destinationsCatalog)
-    nextPageToken = res.data.pagination.next
-  }
-
-
-  files.forEach(function (item, index) {
-    if (fs.existsSync(item)) {
-      const f = fm(fs.readFileSync(item, 'utf8'));
-      const fmatter = f.frontmatter
-      const re_id = new RegExp("(id: )\S*")
-      const re_pub = new RegExp("(published: false)|(hidden: true)")
-      if (!re_id.test(fmatter) && !re_pub.test(fmatter)) {
-        noIds.push(item)
-      }
-
-      // const attr = `---\n${f.frontmatter}\nid: ${integration.id}\n---\n`
-      // const body = f.body
-      // const content = attr + body
-      // console.log(attr)
-      // fs.writeFileSync(catalogPath, content)
-    }
-
-  })
-
-  console.log(noIds)
-}
-
-
-const test = async () => {
+const updateId = async () => {
   const type_select = new Select({
     name: 'int_type',
     message: 'What type of integration?',
@@ -131,7 +93,6 @@ const test = async () => {
 
   while (nextPageToken !== undefined) {
     const res = await getCatalog(`${PAPI_URL}/catalog/${int_type}/`, nextPageToken)
-    // console.log(res)
     if (int_type == "sources") {
       integrations = integrations.concat(res.data.sourcesCatalog)
     } else {
@@ -181,7 +142,6 @@ const test = async () => {
   })
 
   let integrationSlugs = paredIntegrations.map(a => a.slug)
-  //  console.log(integrationSlugs)
 
   const slug_select = new AutoComplete({
     name: "slug",
@@ -195,8 +155,6 @@ const test = async () => {
   let slug_value = await slug_select.run()
 
   let final = paredIntegrations.find(x => x.slug == slug_value)
-  // console.log(integrationSlugs)
-  // console.log(final.url)
   let itemURL = final.url
 
   const catalogPath = path.resolve('src/', itemURL, 'index.md')
@@ -218,4 +176,4 @@ const test = async () => {
   }
 }
 
-test()
+updateId()
