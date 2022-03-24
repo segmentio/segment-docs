@@ -18,7 +18,7 @@ This destination is maintained by Talon.One. For any issues with the destination
 <!-- In the section below, add your destination name where indicated. If you have a classic version of the destination, ensure that its documentation is linked as well. If you don't have a classic version of the destination, remove the second and third sentences. -->
 
 > success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Talon.One Segment destination. T here's also a page about the [non-Actions Talon.One destination](/docs/connections/destinations/catalog/talonone/). Both of these destinations receive data from Segment.
+> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Talon.One Segment destination. There's also a page about the [non-Actions Talon.One destination](/docs/connections/destinations/catalog/talonone/). Both of these destinations receive data from Segment.
 
 ## Benefits of Talon.One (Actions) vs Talon.One Classic
 
