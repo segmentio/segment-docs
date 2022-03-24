@@ -154,6 +154,10 @@ vendor/bundle:
 update: 
 	@node scripts/update.js
 
+.PHONY: add-id
+add-id:
+	@node scripts/add_id.js
+	
 .PHONY: lint
 lint: node_modules
 	@echo "Checking yml files..."
