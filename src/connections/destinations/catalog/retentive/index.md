@@ -1,7 +1,6 @@
 ---
 title: Retentive Destination
-id:
-hidden: true
+id: 6205293e7095075d8ce71a74
 ---
 [Retentive](https://retentive.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="blank"} makes your help docs searchable in product so go-to-market teams can act on data that each customer struggles with.
 
