@@ -21416,7 +21416,7 @@ items:
   display_name: Groundswell
   name: Groundswell
   slug: groundswell
-  hidden: true
+  hidden: false
   endpoints:
   - us
   regions:
