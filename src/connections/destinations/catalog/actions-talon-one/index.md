@@ -50,7 +50,7 @@ To start sending data to Talon.One from Segment, create a Talon.One
 [destination](/docs/connections/destinations/) in Segment.
 
 1. In Segment, click **Destinations** > **Add Destination**. The **Destination catalog** opens.
-1. Search for **Talon.one** and confirm the destination.
+1. Search for **Talon.one** and configure the destination.
 1. Enter the details:
    - In **Name**, type a name, for example `Talon.One destination`.
    - In **API key**, paste the API key generated in the previous section.
