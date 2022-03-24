@@ -12,7 +12,7 @@ hidden: true
 Create flexible and targeted promotional and loyalty campaigns with [Talon.One](https://www.talon.one/).
 Campaigns can be created and managed by non-technical users such as marketers. There is no need to
 get your development team involved. Features include coupons, discounts, loyalty
-programs, referral tracking, geo-fencing, and bundling.
+programs, referral tracking, geofencing, and bundling.
 
 This destination is maintained by Talon.One. For any issues with the destination, [contact the Talon.One Support team](mailto:support@talon.one) or refer to [Talon.One's documentation](https://docs.talon.one/docs/dev/technology-partners/segment).
 <!-- In the section below, add your destination name where indicated. If you have a classic version of the destination, ensure that its documentation is linked as well. If you don't have a classic version of the destination, remove the second and third sentences. -->
