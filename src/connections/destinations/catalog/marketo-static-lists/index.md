@@ -85,7 +85,7 @@ In this step, you'll create an API-Only Marketo user with both Access API and Le
 
    ![](images/marketosl-newfolder.png)
 
-2. Before you continue to the next step, in Marketo, go to **Admin → Web Services**, and copy or write down the REST API Endpoint. You’ll need that in the next step.
+2. Before you continue to the next step, in Marketo, go to **Admin → Web Services**, and copy or write down the REST API Endpoint. **Be sure to copy the REST endpoint and not the SOAP endpoint.** You’ll need that in the next step.
 
 > warning "Warning:"
 > Do not create a list in the folder for the audience. Segment creates the list for you!
