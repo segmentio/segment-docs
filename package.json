@@ -26,7 +26,7 @@
     "babel-loader": "^8.2.2",
     "concurrently": "^6.2.1",
     "front-matter": "^4.0.2",
-    "glob": "^7.1.7",
+    "glob": "^7.2.0",
     "js-yaml": "^4.1.0",
     "remark": "^14.0.1",
     "remark-cli": "^10.0.0",
