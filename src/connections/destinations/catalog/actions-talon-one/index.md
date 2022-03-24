@@ -35,7 +35,7 @@ The classic version only shares customer profile data. The Action version suppor
 
 ### Creating an API key in Talon.One
 
-Segment needs a Talon.One-generated API key to be able to send data to your Talon.One Application. Generate an API key specific to Segment:
+Segment needs a Talon.One-generated API key to be able to send data to your Talon.One Application.  To generate an API key specific to Segment:
 
 1. Open your Talon.One Application in the Campaign Manager and click **Settings > Developer settings**.
 1. Click **Create API Key**.
