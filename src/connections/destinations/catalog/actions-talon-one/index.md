@@ -23,7 +23,7 @@ This destination is maintained by Talon.One. For any issues with the destination
 ## Benefits of Talon.One (Actions) vs Talon.One Classic
 
 Talon.One (Actions) allows you to share more data than the classic destination.
-The classic version sharing customer profile data. The Action version supports sharing the following data:
+The classic version only shares customer profile data. The Action version supports sharing the following data:
 
 - Customer profile data
 - Audience data
