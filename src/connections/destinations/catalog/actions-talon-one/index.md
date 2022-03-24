@@ -14,7 +14,7 @@ Campaigns can be created and managed by non-technical users such as marketers. T
 get your development team involved. Features include coupons, discounts, loyalty
 programs, referral tracking, geofencing, and bundling.
 
-This destination is maintained by Talon.One. For any issues with the destination, [contact the Talon.One Support team](mailto:support@talon.one) or refer to [Talon.One's documentation](https://docs.talon.one/docs/dev/technology-partners/segment).
+This destination is maintained by Talon.One. For any issues with the destination, [contact the Talon.One Support team](mailto:support@talon.one) or refer to [Talon.One's documentation](https://docs.talon.one/docs/dev/technology-partners/segment){:target="_blank"}.
 <!-- In the section below, add your destination name where indicated. If you have a classic version of the destination, ensure that its documentation is linked as well. If you don't have a classic version of the destination, remove the second and third sentences. -->
 
 > success ""
