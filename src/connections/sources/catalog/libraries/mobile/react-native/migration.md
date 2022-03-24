@@ -3,13 +3,13 @@ title: React Native 2.0 Migration Guide
 strat: react-native
 ---
 
-If you’re using `analytics-react-native 1.5.1` or older, follow these steps to migrate to `analytics-react-native 2.0`. You can continue to use your React Native source write key for the migration to view historical events. Additionally, with React Native 2.0, you don't need to leverage bundled SDK packages, but can use [this list of supported destinations](/docs/connections/sources/catalog/libraries/mobile/react-native/#supported-destinations).
+If you’re using `analytics-react-native 1.5.1` or older, follow these steps to migrate to `analytics-react-native 2.0`. You can continue to use your React Native source write key for the migration to view historical events. Additionally, with React Native 2.0, you don't need to leverage bundled SDK packages, but can use [this list of supported destinations](/docs/connections/sources/catalog/libraries/mobile/react-native#supported-destinations).
 
 To migrate to React Native 2.0:
 
 1. Update the existing package:
     ```js
-    yarn upgrade @segment/analytics-react-native@2.2.0
+    yarn upgrade @segment/analytics-react-native
     ```
 2. Install additional dependencies:
     ```js
@@ -88,7 +88,7 @@ PODS:
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-### Example client configuration for `analytics-react-native 2.2.0`
+### Example client configuration for `analytics-react-native 2.0`
 
 {% codeexample %}
 {% codeexampletab App.tsx (or .js) %}
@@ -126,7 +126,7 @@ const App = () => {
  "nanoid": "^3.1.30",
  "@react-native-async-storage/async-storage": "^1.15.11",
  "@segment/analytics-react-native": "2.2.0",
- "@segment/analytics-react-native-plugin-firebase": "2.2.0",
+ "@segment/analytics-react-native-plugin-firebase": "2.0",
  "@segment/sovran-react-native": "0.2.6",
 }
 ```
@@ -165,7 +165,7 @@ onSendEvent = async() => {
 }
 ```
 
-### Example tracking implementation for `analytics-react-native 2.2.0`
+### Example tracking implementation for `analytics-react-native 2.0`
 Home.tsx
 
 ```js
