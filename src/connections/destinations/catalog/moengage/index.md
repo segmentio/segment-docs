@@ -27,7 +27,7 @@ users it’ll be instantaneous! Segment-MoEngage Integration is a bundled integr
 ## iOS
 
 
-To get started with MoEngage on iOS, first integrate your app with the [MoEngage-Segment-iOS](https://github.com/moengage/MoEngage-Segment-iOS) library. You can integrate MoEngage and Segment with [CocoaPods](http://cocoapods.org).
+To get started with MoEngage on iOS, first integrate your app with the [MoEngage-Segment-iOS](https://github.com/moengage/MoEngage-Segment-iOS) library. You can integrate MoEngage and Segment with [CocoaPods](http://cocoapods.org) or with Swift Package Manager.
 
   * Initialize pod with pod init command, this will create a podfile for your project.
   * Update your podfile by adding pod '**Segment-MoEngage**' as shown below:
@@ -40,6 +40,9 @@ To get started with MoEngage on iOS, first integrate your app with the [MoEngage
    * Update the pod.
 
     pod update
+    
+    
+ To install with SPM use the https://github.com/moengage/MoEngage-Segment-iOS.git and set the branch as master or version as 7.0.0 and above.
 
 ### Configure the Segment SDK:
 
