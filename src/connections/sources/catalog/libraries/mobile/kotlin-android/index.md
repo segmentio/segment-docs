@@ -68,7 +68,7 @@ To get started with the Analytics-Kotlin mobile library:
     `application` | Default set to `null`. <br> The application specific object (in the case of `Android: ApplicationContext`).
     `apiHost` | Default set to `api.segment.io/v1`. <br> This sets a default API Host to which Segment sends events. |
     `autoAddSegmentDestination` | Default set to `true`. <br> This automatically adds the Segment Destination plugin. You can set this to `false` if you want to manually add the Segment Destination plugin. |
-    `collectDeviceId` | Default set to `false`. <br> Set to `true` to automatically collect the device Id. |
+    `collectDeviceId` | Default set to `false`. <br> Set to `true` to automatically collect the device Id. <br> The [DRM API](https://source.android.com/devices/drm) generates the device ID. If the ID didn't generate previously (for example, because the app was newly installed), an empty string shows before the ID generation completes. You can overwrite the device ID with a custom ID by writing your own [`plugin`](#plugin) |
     `defaultSettings` | Default set to `{}`. <br> The settings object used as fallback in case of network failure. |
     `flushAt` | Default set to `20`. <br> The count of events at which Segment flushes events. |
     `flushInterval` | Default set to `30` (seconds). <br> The interval in seconds at which Segment flushes events. |
