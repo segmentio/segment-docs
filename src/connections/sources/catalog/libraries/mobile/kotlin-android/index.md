@@ -41,6 +41,10 @@ To get started with the Analytics-Kotlin mobile library:
     Segment recommends you to install the client in your application subclass.
 
     ```java
+      // Add required imports
+      import com.segment.analytics.kotlin.android.Analytics
+      import com.segment.analytics.kotlin.core.*
+
       // Create an analytics client with the given application context and Segment write key.
       // NOTE: in android, application context is required to pass as the second parameter.
       Analytics("YOUR_WRITE_KEY", applicationContext) {
