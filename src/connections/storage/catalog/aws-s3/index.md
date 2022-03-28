@@ -26,8 +26,6 @@ The Segment Tracking API processes data from your sources, and collects the Even
 
 ![](images/s3processdiagram.png)
 
-
-
 ## Create a new destination
 
 Complete either [Create an IAM role in the AWS console](#create-an-iam-role-in-the-aws-console) or [Create an IAM role using the AWS CLI](#create-an-iam-role-using-the-aws-cli) to configure the AWS S3 Destination with IAM Role Support.
@@ -248,6 +246,9 @@ For each source in the scenario, complete the steps described in [Migrate an exi
 ## Migrate an existing destination using public-api
 This procedure uses Segment's public-api to migrate your destinations to the AWS S3 destination. For more information about the public-api, please see the [public-api Getting Started](https://api.segmentapis.com/docs/guides/#getting-started) guide.
 
+> warning "Avoid overwriting data"
+> Sending data to the same S3 location from both the existing Amazon S3 destination and the AWS S3 destinations will overwrite data in your instance of S3. To avoid this, disable your Amazon S3 destination after you create your AWS S3 destination.
+
 To migrate to the AWS S3 destination using the public-api:
 
 1. Create a new S3 bucket and IAM role using either the [AWS console](#create-an-iam-role-in-the-aws-console) or the [AWS CLI](#create-an-iam-role-using-the-aws-cli). 
@@ -299,7 +300,7 @@ curl -vvv --location --request GET https://api.segmentapis.com/destinations/$DES
   --data-raw '
 ```
 
-9. Disable the Amazon S3 destinations using the following command (replacing `$DESTINATION_ID` with the ID of your Amazon S3 destination you found in step ): 
+9. Disable the Amazon S3 destinations using the following command (replacing `$DESTINATION_ID` with the ID of your Amazon S3 destination you found in step 8): 
 
 ```shell
 curl -vvv --location --request PATCH https://api.segmentapis.com/destinations/$DESTINATION_ID \
@@ -313,11 +314,11 @@ curl -vvv --location --request PATCH https://api.segmentapis.com/destinations/$D
 ' | jq
 ```
 
-> warning "Avoid overwriting data"
-> Sending data to the same S3 location from both the existing Amazon S3 destination and the AWS S3 destinations will overwrite data in your instance of S3. To avoid this, disable your Amazon S3 destination after you create your AWS S3 destination.
+> error " "
+> You must migrate to the new S3 destination before you disable your legacy destination to ensure Segment continues to deliver data to your S3 bucket. 
 
 ## Test your migrated source
-You can validate that your configured your migrated source correctly in the Settings section of the AWS S3 destination. 
+You can validate that your configured your migrated source correctly in the Settings section of the AWS S3 destination page in the Segment app. 
 
 > success "Source editing permissions required"
 > In-app source validation is restricted to users with source editing permissions (for example, users with Workspace Owner, Source Admin, or Workspace Admin roles). For more information about roles in the Segment app, please see the [Roles documentation](/docs/segment-app/iam/roles/). 
