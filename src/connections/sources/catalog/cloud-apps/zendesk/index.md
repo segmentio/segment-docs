@@ -148,7 +148,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 | created_at      | The date and time this record was created.                        |
 | updated_at      | The date and time this record was last updated.                   |
 | received_at     | This timestamp is added to incoming messages as soon as they hit Segment API. |
-| ticket_form_id  | The ID of the ticket form to render the ticket (Enterprise only). |
+| ticket_form_id  | The ID of the ticket form to render the ticket.                   |
 
 ### ticket_fields
 
@@ -286,7 +286,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 | Property        | Description                                                       |
 | --------------- | ----------------------------------------------------------------- |
-| id              | Automatically assigned when the ticket form is created.           |
+| id              | The ID of the ticket form.                                        |
 | active          | If set to true, this shows that the form is active.               |
 | end_user_visible | If set to true, this shows that the form is visible to end users.|
 | name            | The name of the form.                                             |
@@ -306,7 +306,8 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 | Property        | Description                                                       |
 | --------------- | ----------------------------------------------------------------- |
-| id              | Automatically assigned upon ticket skip creation.                 |
+| id              | The ID of the ticket skip record.                                 |
+| ticket_id       | The ID of the skipped ticket.                                     |
 | user_id         | The ID of the skipping agent.                                     |
 | reason          | The reason for skipping the ticket.                               |
 | created_at      | The date and time the skip was created.                           |
@@ -316,19 +317,19 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 | Property        | Description                                                       |
 | --------------- | ----------------------------------------------------------------- |
-| id              | Automatically assigned when creating organizations.               |
-| url             | The URL of this organization.                                     |
-| user_id         | The ID of the user associated with this organization.            |
-| organization_id | The ID of the organization associated with the selected user      |
+| id              | The ID of the organization membership.                            |
+| url             | The API URL of the membership.                                    |
+| user_id         | The ID of the user for whom this membership belongs.              |
+| organization_id | The ID of the organization associated with the selected user, in this membership. |
 | created_at      | The date and time this record was created.                        |
 | updated_at      | The date and time this record was last updated.                   |
-| organization_name | The name of the organization associated with the selected user. |
+| organization_name | The name of the organization associated with the selected user, in this membership. |
 
 ### group_memberships
 
 | Property        | Description                                                       |
 | --------------- | ----------------------------------------------------------------- |
-| id              | Automatically assigned when creating groups.                      |
+| id              | The ID of the group membership.                                   |
 | url             | The API URL of this group.                                        |
 | created_at      | The date and time the group was created.                          |
 | group_id        | The ID of the group.                                              |
@@ -339,7 +340,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 | Property        | Description                                                       |
 | --------------- | ----------------------------------------------------------------- |
-| id              | Automatically assigned when creating audit logs.                  |
+| id              | The ID of the audit log.                                          |
 | url             | The URL to access the audit log.                                  |
 | created_at      | The date and time that the audit was created.                     |
 | actor_id        | The ID of the user creating the ticket.                           |
