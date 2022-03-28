@@ -13,6 +13,7 @@
 (?:U|u)rls?\b
 Adwords
 allowlist
+Amberflo
 Appboy
 blocklist
 boolean
