@@ -265,7 +265,9 @@ Copy the Server Key from the FCM console and add it to the MoEngage Dashboard. T
 
 To display push notifications, some metadata regarding the notification is required. For example, the small icon and large icon drawables are mandatory.
 
-Refer to the [MoEngage - NotificationConfig](https://moengage.github.io/android-api-reference/core/com.moengage.core.config/-notification-config/index.html){:target="_blank"} API reference for all the possible options.
+
+Refer to the [MoEngage - NotificationConfig](https://moengage.github.io/android-api-reference-v11/core/com.moengage.core.config/-notification-config/index.html){:target="_blank"} API reference for all the possible options.
+
 
 Use the `configureNotificationMetaData()` to pass on the configuration to the SDK.
 
@@ -341,7 +343,9 @@ When the MoEngage SDK handles push registration, it optionally provides a callba
 
 An application can get this callback by implementing `FirebaseEventListener` and registering for a callback in the Application class `onCreate()` using `MoEFireBaseHelper.getInstance().addEventListener()`
 
-Refer to the [MoEngage - API reference](https://moengage.github.io/android-api-reference/moe-push-firebase/moe-push-firebase/com.moengage.firebase.listener/-firebase-event-listener/index.html){:target="_blank"} for more details on the listener.
+
+Refer to the [MoEngage - API reference](https://moengage.github.io/android-api-reference-v11/moe-push-firebase/com.moengage.firebase.listener/-firebase-event-listener/index.html?query=open%20class%20FirebaseEventListener){:target="_blank"} for more details on the listener.
+
 
 ##### Callbacks
 

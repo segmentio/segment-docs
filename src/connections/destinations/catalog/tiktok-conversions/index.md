@@ -8,8 +8,6 @@ id: 615cae349d109d6b7496a131
 
 The TikTok Conversions destination is a server-to-server integration with the TikTok Events API that allows advertisers to share website visitor events from Segment directly to TikTok. Data shared through the Events API is processed similarly to information shared through the TikTok pixel and TikTok SDK business tools. Advertisers can use events data to power solutions like dynamic showcase ads (DSA), custom targeting, campaign optimization and attribution. Advertisers can see their event data in TikTok Events Manager.
 
-The TikTok Conversions destination is owned and maintained by the TikTok team.
-
 ## Benefits of TikTok Conversions
 The TikTok Conversions destination provides the following benefits:
 
@@ -77,6 +75,8 @@ Segment creates a SHA-256 hash of the following fields before sending to TikTok:
 You can check whether the integration is working, test events in real-time, and troubleshoot common issues in TikTok’s Web Diagnostics Suite. Please see the [TikTok Pixel Web Diagnostics documentation](https://ads.tiktok.com/help/article?aid=10000360){:target="_blank"} for more information.
 
 ## Support
+
+The TikTok Conversions destination is owned and maintained by the TikTok team.
 
 - For general Segment questions, including issues with event data not being sent to TikTok Events Manager, please contact [Segment support](https://segment.com/help/){:target="_blank"}.
 - For questions regarding campaign setup and performance, web tracking, or additional API functionality, please contact your TikTok representative.
