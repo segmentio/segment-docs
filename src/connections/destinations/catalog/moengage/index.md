@@ -162,7 +162,7 @@ Create targeted or automated App Inbox/NewsFeed messages that can be grouped int
 
 
 #### Compliance
-To make the App compliant with policies i.e,GDPR while using our SDK, follow the doc in this [link](https://developers.moengage.com/hc/en-us/articles/4403905438228-SDK-initialisation){:target="_blank"}.
+To make the App compliant with policies (such as GDPR) while using MoEngage's SDK, follow the instructions in this [doc](https://developers.moengage.com/hc/en-us/articles/4403905438228-SDK-initialisation){:target="_blank"}.
 
 ### Segment Docs
 For more info on using **Segment for iOS** refer to [**Developer Docs**](/docs/connections/sources/catalog/libraries/mobile/ios/) provided by Segment.
