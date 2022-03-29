@@ -42,7 +42,7 @@ To get started with MoEngage on iOS, first integrate your app with the [MoEngage
     pod update
 
 
- To install with SPM use the https://github.com/moengage/MoEngage-Segment-iOS.git and set the branch as master or version as 7.0.0 and above.
+ To install with SPM use the [MoEngage-Segment-iOS](https://github.com/moengage/MoEngage-Segment-iOS.git){:target="_blank"} library and set the branch as master or version as 7.0.0 and above.
 
 ### Configure the Segment SDK:
 
