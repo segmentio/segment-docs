@@ -99,7 +99,7 @@ Click **Save**.
 
 ## COPPA Compliance
 
-DoubleClick Floodlight lets you set a parameter called `tag_for_child_directed_treatment` as either `0`, or `1` to mark a specific tag as coming from a user under the age of 13, under the [COPPA compliance privacy law](https://www.ftc.gov/news-events/media-resources/protecting-consumer-privacy/kids-privacy-coppa).
+DoubleClick Floodlight lets you set a parameter called `tag_for_child_directed_treatment` as either `0`, or `1` to mark a specific tag as coming from a user under the age of 13.
 
 If you want to set this flag, you can send an integration option namespaced as `coppaCompliant` with `true` or `false` (default):
 
