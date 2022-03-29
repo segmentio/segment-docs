@@ -1,4 +1,5 @@
 (?:C|c)annonical
+(?:C|c)onfig
 (?:D|d)eduplicate
 (?:D|d)eduplication
 (?:G|g)tag
@@ -11,6 +12,7 @@
 (?:U|u)nlinks?\b
 (?:U|u)nmaps?\b
 (?:U|u)rls?\b
+adset
 Adwords
 allowlist
 Amberflo
@@ -21,12 +23,17 @@ Chargebee
 CloudFront
 Cocoapods
 csv
+deeplink
 Dev
 Doubleclick
+endfor
+endif
+eu
 Friendbuy
 ga
 gmail
 Gradle
+html
 http
 HTTP
 https
@@ -58,6 +65,8 @@ Subnet
 Totango
 Twilio
 upsert
+US
+utm
 Vero
 viewability
 WebKit
