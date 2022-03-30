@@ -25,13 +25,13 @@ This new integration creates a direct connection between Segment and Criteo for 
 
 ## Getting Started
 
-**Prerequisites:**  
+# Prerequisites:
 
 Before connecting to Criteo Audiences (Actions) destination, you must create a Criteo API Marketing Solutions app to generate your app credentials (client id and secret) as per the guidelines in [Criteo's Developer's Portal](https://developers.criteo.com/marketing-solutions/docs/onboarding-checklist).  
 
 You will also need your Criteo Advertiser ID. Please reach out to your Criteo Account Strategist to get this ID.
 
-**To Add the Criteo Audiences Destination:**
+# To Add the Criteo Audiences Destination:
 
 1. From your Segment workspace, go to **Connections > Catalog** and click Destinations.
 
