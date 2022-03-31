@@ -56,13 +56,8 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 
 ## Journeys
 
-
-In addition to [Personas Default Limits](#default-limits), Journeys enforces default limits to ensure feature performance and reliability.
-
-| Item          | Limit description                | Details                                                                                                                                                                                                                                                                               |
-| ------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Journeys      | 10 Journeys per workspace        | Applies to active, concurrent Journeys. <br><br>Once the limit is reached, you cannot publish any additional Journeys. You will still be able to create draft Journeys.                                                                                               |
-| Journey steps | 20 steps per Journey             | This applies to certain steps:<br><br>- Initial cohort: 1<br>- Wait for condition: 1<br>- True / False Split: 1<br>- Multi-Branch Split: Number of branches<br>- Send to Destinations: 1<br><br>Once the limit is reached, you will be unable to add additional steps to the Journey. |
-| Journey Name  | Maximum length of 73 characters  | Once the limit is reached, you cannot add additional characters to the name.                                                                                                                                                                                               |
-| Step Name     | Maximum length of 170 characters | Once the limit is reached, you cannot add additional characters to the name.                                                                                                                                                                                               |
-| Key           | Maximum length of 255 characters | Once the limit is reached, you cannot add additional characters to the key.                                                                                                                                                                                                |
+| Item         | Limit description                | Details                                                                                                                                                                 |
+| ------------ | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Journey Name | Maximum length of 73 characters  | Once the limit is reached, you cannot add additional characters to the name.                                                                                            |
+| Step Name    | Maximum length of 170 characters | Once the limit is reached, you cannot add additional characters to the name.                                                                                            |
+| Key          | Maximum length of 255 characters | Once the limit is reached, you cannot add additional characters to the key.                                                                                             |

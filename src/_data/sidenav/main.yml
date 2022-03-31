@@ -324,6 +324,8 @@ sections:
       title: Complying With GDPR
     - path: /privacy/user-deletion-and-suppression
       title: User Deletion and Suppression
+  - path: /privacy/account-deletion
+    title: Account & Data Deletion 
   - path: /privacy/faq
     title: Privacy FAQs
 - section_title: Protocols

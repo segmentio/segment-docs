@@ -196,6 +196,8 @@ The example below shows a Data Extension for `User Registered` Track calls that 
 
 ![](images/dext-user-regd-example.png)
 
+> warning ""
+> Segment doesn't automatically send timestamps. You must add timestamps as a property in the Track Call to send timestamps to the destination.
 
 ### Configure the SFMC Destination in Segment
 
@@ -281,7 +283,7 @@ In order to do this, you must have access to **Personas**. To learn more, [conta
 > **Tip**: We recommend that you use [SFMC batching](#optional-set-up-sfmc-batching) with Personas to help reduce the number of API calls that you send to SFMC, but this is optional. If you choose to set up batching, do this _before_ you set up the SFMC destination in your Segment workspace.
 
 Personas sends audience membership and computed trait values to SFMC using Identify calls. To integrate Personas with SFMC:
-1. [Create a Data Extension to store Identify calls](#create-a-data-extension-in-sfmc-to-store-identify-calls) if you haven't already. 
+1. [Create a Data Extension to store Identify calls](#create-a-data-extension-in-sfmc-to-store-identify-calls) if you haven't already.
 2. [Configure SFMC as a Personas Destination](#configure-the-salesforce-marketing-cloud-destination-in-segment)
 
 When you sync to an existing Data Extension, note these additional requirements:
