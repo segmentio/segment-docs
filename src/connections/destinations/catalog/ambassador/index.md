@@ -16,7 +16,7 @@ id: 573a3dfb80412f644ff13679
 
 Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading the Ambassador snippet on your page and sending data.
 
-Since Ambassador only records specific events and user data, events and users may not appear in Ambassador until you start using the API explained below. And you must approve your website domain via the Editor -> Manage websites section in the navigation pane along the left-hand side of the page.
+Since Ambassador only records specific events and user data, events and users may not appear in Ambassador until you start using the API explained below. And you must approve your website domain through the Editor -> Manage websites section in the navigation pane along the left-hand side of the page.
 
 ## Identify
 
