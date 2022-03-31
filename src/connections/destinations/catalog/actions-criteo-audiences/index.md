@@ -5,7 +5,7 @@ hide-boilerplate: false
 hide-dossier: true
 id:
 ---
-Criteo Audiences (Actions) enables advertisers to send Segment Persona Audiences seamlessly to Criteo.
+Criteo Audiences (Actions) enables advertisers to send Segment Persona Audiences seamlessly to Criteo using Criteo's Audience API.
 
 By leveraging Segment's Persona Audiences with Criteo, you have the opportunity to get traffic and drive conversions from new and existing customer as well as re-engaging existing customers with hyper-relevant ads that promote product discovery.
 
