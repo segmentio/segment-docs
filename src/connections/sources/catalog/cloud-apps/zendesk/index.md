@@ -77,7 +77,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 | Property    | Description                                  |
 | ----------- | -------------------------------------------- |
-| id          | Automatically assigned when creating groups. |
+| id          | This is automatically assigned when creating groups. |
 | url         | The API URL of this group.                   |
 | deleted     | Deleted groups get marked as such.           |
 | name        | The name of the group.                       |
@@ -89,7 +89,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 | Property        | Description                                                       |
 | --------------- | ----------------------------------------------------------------- |
-| id              | Automatically assigned when the user is created.                  |
+| id              | This is automatically assigned when the user is created.          |
 | url             | Segment sets the “url” field users see in their Warehouse to equal the “id” from Zendesk, rather than the “url” field. |
 | name            | The name of the user.                                             |
 | email           | The primary email address of the user.                            |
@@ -123,7 +123,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 | Property        | Description                                                       |
 | --------------- | ----------------------------------------------------------------- |
-| id              | Automatically assigned when the ticket is created.                |
+| id              | This is automatically assigned when the ticket is created.        |
 | url             | The API URL of this ticket.                                       |
 | external_id     | An ID you can use to link Zendesk Support tickets to local records. |
 | type            | The type of this ticket. Possible values: “problem”, “incident”, “question” or “task”. |
@@ -154,7 +154,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 | Property        | Description                                                       |
 | --------------- | ----------------------------------------------------------------- |
-| id              | Automatically assigned upon creation.                             |
+| id              | This is automatically assigned upon creation.                     |
 | url             | The URL for this resource.                                        |
 | type            | The type of the ticket field: “checkbox”, “date”, “decimal”, “integer”, “regexp”, “tagger”, “text”, or “textarea”. _*Type is not editable once created._ |
 | slug            | The title of the ticket field separated by _.                     |
@@ -182,7 +182,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 | Property        | Description                                                       |
 | --------------- | ----------------------------------------------------------------- |
-| id              | Automatically assigned.                                           |
+| id              | This is automatically assigned.                                   |
 | ticket_id       | ID of the associated ticket.                                      |
 | group_stations  | Number of groups this ticket passed through.                      |
 | assignee_stations | Number of assignees this ticket had.                            |
@@ -214,8 +214,8 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 | Property        | Description                                                       |
 | --------------- | ----------------------------------------------------------------- |
-| id              | Automatically assigned.                                           |
-| ticket_event_id | Automatically assigned when the ticket is updated.                |
+| id              | This is automatically assigned.                                   |
+| ticket_event_id | This is automatically assigned when the ticket is updated.        |
 | ticket_id       | The ID of the associated ticket.                                  |
 | timestamp       | The time when the ticket was updated.                             |
 | updater_id      | The ID of the user who updated the ticket.                        |
@@ -231,7 +231,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 | Property        | Description                                                       |
 | --------------- | ----------------------------------------------------------------- |
-| id              | Automatically assigned upon creation.                             |
+| id              | This is automatically assigned upon creation.                     |
 | url             | The API URL of this activity.                                     |
 | verb            | The type of activity. Can be "tickets.assignment," "tickets.comment," or "tickets.priority_increase." |
 | title           | Description of this activity.                                     |
@@ -242,7 +242,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 | Property        | Description                                                       |
 | --------------- | ----------------------------------------------------------------- |
-| id              | Automatically assigned upon creation.                             |
+| id              | This is automatically assigned upon creation.                     |
 | file_name       | The name of the image file.                                       |
 | content_url     | A full URL where the attachment image file can be downloaded.     |
 | content_type    | The content type of the image. Example value: image/png.          |
@@ -254,7 +254,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 | Property        | Description                                                       |
 | --------------- | ----------------------------------------------------------------- |
-| id              | Automatically assigned when the organization is created.          |
+| id              | This is automatically assigned when the organization is created.  |
 | external_id     | A unique external ID to associate organizations to an external record. |
 | url             | The API URL of this organization.                                 |
 | name            | A unique name for the organization.                               |
@@ -271,8 +271,8 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 | Property        | Description                                                       |
 | --------------- | ----------------------------------------------------------------- |
-| id              | Automatically assigned when the comment is created.               |
-| ticket_event_id | Automatically assigned when the comment is created.               |
+| id              | This is automatically assigned when the comment is created.       |
+| ticket_event_id | This is automatically assigned when the comment is created.       |
 | ticket_id       | The ID of the ticket being commented.                             |
 | type            | Comment or VoiceComment. The JSON object for voice comments is different.  |
 | body            | The comment string.                                               |
