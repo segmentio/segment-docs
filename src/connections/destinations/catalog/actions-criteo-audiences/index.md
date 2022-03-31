@@ -7,9 +7,7 @@ id:
 ---
 Criteo Audiences (Actions) enables advertisers to send Segment Persona Audiences seamlessly to Criteo.
 
-Criteo powers trusted and impactful advertising to bring richer experiences to every consumer across the open internet. With the world’s largest commerce data set and best-in-class AI, Criteo ensures each touchpoint across the shopping journey is personalized to reach customers with the right ad, at the right time.
-
-Criteo enables marketers to get traffic and drive conversions from new and existing customers. By connecting your data to Criteo, you can re-engage existing customers with hyper-relevant ads that promote product discovery. Use lookalike modeling to find new potential consumers similar to your most loyal shoppers across Criteo’s network of 685 million daily active shoppers. With intelligent product recommendations, your ads will automatically feature the products most likely to trigger visits and engagement. Flexible targeting allows you to build audiences from Criteo’s commerce data set or from your own prospect lists and your CDP segments. When visitors leave your website, your ads will remind them what they’re missing by showing special deals and hyper-relevant offers, wherever they go next.
+By leveraging Segment's Persona Audiences with Criteo, you have the opportunity to get traffic and drive conversions from new and existing customer as well as re-engaging existing customers with hyper-relevant ads that promote product discovery.
 
 # Benefits of Criteo Audiences (Actions)
 
