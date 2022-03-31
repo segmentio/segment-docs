@@ -23,7 +23,7 @@ You can configure Lake Formation using the [`IAMAllowedPrincipals` group](#confi
 4. On the **Grant data permissions** page, select the `IAMAllowedPrincipals` group in the Principals section.
 5. Under the **Database permissions** section, select the checkboxes for **Super** database permissions and **Super** grantable permissions.
 6. Select the **Grant** button. 
-7. On the **Permissions** page, verify the `IAMAllowedPrincipals` group is listed. 
+7. On the **Permissions** page, verify the `IAMAllowedPrincipals` group has "All" permissions.
 
 #### New databases
 1. Open the [AWS Lake Formation service](https://console.aws.amazon.com/lakeformation/).
@@ -38,26 +38,35 @@ You can configure Lake Formation using the [`IAMAllowedPrincipals` group](#confi
 5. On the **Grant data permissions** page, select the `IAMAllowedPrincipals` group in the Principals section.
 6. Under the **Database permissions** section, select the checkboxes for **Super** database permissions and **Super** grantable permissions.
 7. Select the **Grant** button. 
-8. On the **Permissions** page, verify the `IAMAllowedPrincipals` group is listed. 
+8. On the **Permissions** page, verify the `IAMAllowedPrincipals` group has "All" permissions.
 
 #### Verifying your configuration
 To verify that you've successfully configured Lake Formation, open the [AWS Lake Formation service](https://console.aws.amazon.com/lakeformation/), select **Data lake permissions**, and verify the `IAMAllowedPrincipals` group is listed with "All" permissions.
 
 ### Configuring Lake Formation using IAM policies
 
-<!-- totally start this section from scratch-->
+> note "Granting Super permission to IAM roles"
+> If you manually configured your database, assign the `EMR_EC2_DefaultRole` super permissions. If you configured your database using Terraform, assign the `segment_emr_instance_profile` super permissions. 
 
 #### Existing databases
 1. Open the [AWS Lake Formation service](https://console.aws.amazon.com/lakeformation/).
-2. Under **Data catalog**, select the settings tab. Ensure the checkboxes under the **Default permissions for newly created databases and tables** are not checked.
-3. 
+2. Under **Data catalog**, select the **Settings** tab. Ensure the checkboxes under the **Default permissions for newly created databases and tables** are not checked.
+3. On the **Databases** page, select your database. From the **Actions** menu, select **Grant** under the Permissions section. 
+5. On the **Grant data permissions** page, select the `EMR_EC2_DefaultRole` (or `segment_emr_instance_profile`, if you configured your data lake using Terraform) and `segment-data-lake-iam-role` roles in the Principals section.
+6. Under the **Database permissions** section, select the checkboxes for **Super** database permissions and **Super** grantable permissions.
+7. Select the **Grant** button. 
+8. On the **Permissions** page, verify the `EMR_EC2_DefaultRole` (or `segment_emr_instance_profile`) and `segment-data-lake-iam-role` roles have "All" permissions.
 
 #### New databases
 1. Open the [AWS Lake Formation service](https://console.aws.amazon.com/lakeformation/).
-2. Under **Data catalog**, select the settings tab. Ensure the checkboxes under the **Default permissions for newly created databases and tables** are not checked. 
+2. Under **Data catalog**, select the **Settings** tab. Ensure the checkboxes under the **Default permissions for newly created databases and tables** are not checked.
 3. Select the Databases tab. Click the **Create database** button, and create your database:
     1. Select the **Database** button.
     2. Name your database. 
     3. Set the location to `s3://$datalake_bucket/segment-data/`. <br/> **Optional:** Add a description to your database.
     4. Click **Create database**.
-4. 
+4. On the **Databases** page, select your database. From the **Actions** menu, select **Grant** under the Permissions section. 
+5. On the **Grant data permissions** page, select the `EMR_EC2_DefaultRole` (or `segment_emr_instance_profile`, if you configured your data lake using Terraform) and `segment-data-lake-iam-role` roles in the Principals section.
+6. Under the **Database permissions** section, select the checkboxes for **Super** database permissions and **Super** grantable permissions.
+7. Select the **Grant** button. 
+8. On the **Permissions** page, verify the `EMR_EC2_DefaultRole` (or `segment_emr_instance_profile`) and `segment-data-lake-iam-role` roles have "All" permissions. 
