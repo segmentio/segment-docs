@@ -3,7 +3,7 @@ sections:
   section_icons:
     - book
     - chart
-    - config-api
+    - api
     - connections
     - getting-started
     - git-repo

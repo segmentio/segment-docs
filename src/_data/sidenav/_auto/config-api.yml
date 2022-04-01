@@ -1,5 +1,5 @@
 sections:
-- section_title: Config Api
+- section_title: Api
   section:
   - path: /config-api
     title: Config API Overview
