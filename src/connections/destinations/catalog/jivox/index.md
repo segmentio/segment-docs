@@ -1,7 +1,7 @@
 ---
-Title: Jivox IQ Destination
+title: Jivox IQ Destination
+id: 61a0f8fdc53f13a42eac137c
 ---
-
 [Jivox](https://jivox.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) personalizes digital marketing and advertising. Using the power of big data and machine learning algorithms, Jivox IQ assembles thousands of creative and messaging variations in real-time to create millions of personalized conversations.
 
 This destination is maintained by Jivox. For any issues with the destination, [contact the Jivox Support team](mailto:support@jivox.com).
@@ -23,7 +23,7 @@ Jivox IQ supports the following methods, as specified in the [Segment Spec](/doc
 
 ### Page
 
-Send [Page](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#page) calls to understand the user journey. For example:
+Send [Page](/docs/connections/sources/catalog/libraries/website/javascript/#page) calls to understand the user journey. For example:
 
 ```js
 let properties = {
@@ -50,7 +50,7 @@ Segment sends Screen calls to Jivox IQ as a `screenview`.
 
 ### Identify
 
-Send [Identify](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#identify) calls to connect Jivox IQ User identified by `jvxUserId` with Segment User identified by `anonymousId/userId`. Send the `jvxUserId` as userId in `identify` call. For example:
+Send [Identify](/docs/connections/sources/catalog/libraries/website/javascript/#identify) calls to connect Jivox IQ User identified by `jvxUserId` with Segment User identified by `anonymousId/userId`. Send the `jvxUserId` as userId in `identify` call. For example:
 
 ```js
 let jvxUserId = 'a345pf56';
@@ -65,7 +65,7 @@ Segment sends Identify calls to Jivox IQ as an `identify` event.
 
 ### Track
 
-Send [Track](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#track) calls to track user conversions and other actions. For example:
+Send [Track](/docs/connections/sources/catalog/libraries/website/javascript/#track) calls to track user conversions and other actions. For example:
 
 ```js
 let properties = { 
