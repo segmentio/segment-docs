@@ -10,8 +10,9 @@ id: IqDTy1TpoU
 ---
 Analytics.js 2.0, the latest version of Segment's JavaScript source, enables you to send your data to any tool without having to learn, test, or use a new API every time.
 
-> note ""
+> info ""
 > Analytics.js 2.0 is available as an [open-source project](https://github.com/segmentio/analytics-next/){:target="_blank"}.
+> <br><br> All sources created on April 5, 2022 and after default to use Analytics.js 2.0.  
 
 
 ## Benefits of Analytics.js 2.0
@@ -70,33 +71,12 @@ analytics.identify([userId], [traits], [options], [callback]);
 
 The Identify call has the following fields:
 
-<table>
-  <tr>
-    <td>`userId`</td>
-    <td>optional</td>
-    <td>String</td>
-    <td>The database ID for the user. If you don't know who the user is yet, you can omit the `userId` and just record `traits`. You can read more about identities in the [identify reference](/docs/connections/spec/identify).</td>
-  </tr>
-  <tr>
-    <td>`traits`</td>
-    <td>optional</td>
-    <td>Object</td>
-    <td>A dictionary of traits you know about the user, like `email` or `name`. You can read more about traits in the [identify reference](/docs/connections/spec/identify/).</td>
-  </tr>
-  <tr>
-    <td>`options`</td>
-    <td>optional</td>
-    <td>Object</td>
-    <td>A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `traits` object, pass an empty object (as an '{}') before `options`_</td>
-  </tr>
-  <tr>
-    <td>`callback`</td>
-    <td>optional</td>
-    <td>Function</td>
-    <td>A function executed after a short timeout, giving the browser time to make outbound requests first.</td>
-  </tr>
-</table>
-
+Field | | Type | Description
+----- | | ---- | -----------
+`userId` | optional | String | The database ID for the user. If you don't know who the user is yet, you can omit the `userId` and just record `traits`. You can read more about identities in the [identify reference](/docs/connections/spec/identify).
+`traits` | optional | Object | A dictionary of traits you know about the user, like `email` or `name`. You can read more about traits in the [identify reference](/docs/connections/spec/identify/).
+`options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `traits` object, pass an empty object (as an '{}') before `options`.
+`callback` | optional | Function | A function executed after a short timeout, giving the browser time to make outbound requests first.
 
 By default, Analytics.js caches traits in the browser's `localStorage` and attaches them to each Identify call.
 
@@ -141,32 +121,12 @@ analytics.track(event, [properties], [options], [callback]);
 
 The `track` call has the following fields:
 
-<table>
-  <tr>
-    <td>`event`</td>
-    <td></td>
-    <td>String</td>
-    <td>The name of the event you're tracking. You can read more about the [track method](/docs/connections/spec/track) and recommended event names.</td>
-  </tr>
-  <tr>
-    <td>`properties`</td>
-    <td>optional</td>
-    <td>Object</td>
-    <td>A dictionary of [properties](/docs/connections/spec/track#properties) for the event. If the event was `'Added to Cart'`, it might have properties like `price` and `productType`.</td>
-  </tr>
-  <tr>
-    <td>`options`</td>
-    <td>optional</td>
-    <td>Object</td>
-    <td>A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before *options*_</td>
-  </tr>
-  <tr>
-    <td>`callback`</td>
-    <td>optional</td>
-    <td>Function</td>
-    <td>A function that runs after a short timeout, giving the browser time to make outbound requests first.</td>
-  </tr>
-</table>
+Field | | Type | Description
+----- | | ---- | -----------
+`event`| | String | The name of the event you're tracking. You can read more about the [track method](/docs/connections/spec/track) and recommended event names.
+`properties` | optional | Object | A dictionary of [properties](/docs/connections/spec/track#properties) for the event. If the event was `'Added to Cart'`, it might have properties like `price` and `productType`.
+`options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before *options*_
+`callback` | optional | Function | A function that runs after a short timeout, giving the browser time to make outbound requests first.
 
 The only required argument in Analytics.js is an _event name string_. You can read more about [how Segment recommends you name events](/docs/connections/spec/track#event).
 
@@ -195,23 +155,11 @@ The `trackLink` method follows the format below.
 analytics.trackLink(element, event, [properties])
 ```
 
-<table>
-  <tr>
-    <td>`element(s)` </td>
-    <td>Element or Array</td>
-    <td>DOM element to bind with `track` method. You may pass an array of elements or jQuery objects. _Note: This must be an element, **not** a CSS selector._</td>
-  </tr>
-  <tr>
-    <td>`event` </td>
-    <td>String or Function</td>
-    <td>The name of the event, passed to the `track` method. Or a **function** that returns a string to use as the name of the `track` event.</td>
-  </tr>
-  <tr>
-    <td>`properties` optional</td>
-    <td>Object or Function</td>
-    <td>A dictionary of properties to pass with the track method or a **function** that returns an object to use as the `properties` of the event.</td>
-  </tr>
-</table>
+Field | | Type | Description
+----- | | ---- | -----------
+`element(s)` | | Element or Array | DOM element to bind with `track` method. You may pass an array of elements or jQuery objects. _Note: This must be an element, **not** a CSS selector._
+`event` | | String or Function | The name of the event, passed to the `track` method. Or a **function** that returns a string to use as the name of the `track` event.
+`properties` | optional | Object or Function | A dictionary of properties to pass with the track method or a **function** that returns an object to use as the `properties` of the event.
 
 Example:
 
@@ -234,23 +182,12 @@ The `trackForm` method follows the format below.
 analytics.trackForm(form, event, [properties])
 ```
 
-<table>
-  <tr>
-    <td>`form(s)` Element or Array</td>
-    <td>Element or Array</td>
-    <td>The form element to track or an array of form elements or jQuery objects. _Note: trackForm takes an element, not a CSS selector._</td>
-  </tr>
-  <tr>
-    <td>`event` </td>
-    <td>String or Function</td>
-    <td>The name of the event, passed to the `track` method. Or a **function** that returns a string to use as the name of the `track` event.</td>
-  </tr>
-  <tr>
-    <td>`properties` optional</td>
-    <td>Object or Function</td>
-    <td>A dictionary of properties to pass with the track method. Or a **function** that returns an object to use as the `properties` of the event.</td>
-  </tr>
-</table>
+Field | | Type | Description
+----- | | ---- | -----------
+`form(s)` | | Element or Array | The form element to track or an array of form elements or jQuery objects. _Note: trackForm takes an element, not a CSS selector._
+`event` | | Element or Array | The form element to track or an array of form elements or jQuery objects. _Note: trackForm takes an element, not a CSS selector._
+`form(s)` | | Element or Array | The form element to track or an array of form elements or jQuery objects. _Note: trackForm takes an element, not a CSS selector._
+`properties` | optional | Object or Function | A dictionary of properties to pass with the track method. Or a **function** that returns an object to use as the `properties` of the event.
 
 Example:
 
@@ -279,39 +216,13 @@ analytics.page([category], [name], [properties], [options], [callback]);
 
 The `page` call has the following fields:
 
-<table>
-  <tr>
-    <td>`category`</td>
-    <td>optional</td>
-    <td>String</td>
-    <td>The category of the page. Useful for cases like ecommerce where many pages might live under a single category. _Note: if you pass only one string to `page` it is assumed to be `name`. You **must** include a `name` to send a `category`._</td>
-  </tr>
-  <tr>
-    <td>`name`</td>
-    <td>optional</td>
-    <td> String</td>
-    <td>The name of the page.</td>
-  </tr>
-  <tr>
-    <td>`properties`</td>
-    <td>optional</td>
-    <td> Object </td>
-    <td>A dictionary of properties of the page. Note: Analytics.js collects `url`, `title`, `referrer` and `path` are automatically. This defaults to a `canonical url`, if available, and falls back to `document.location.href`.</td>
-  </tr>
-  <tr>
-    <td>`options`</td>
-    <td>optional</td>
-    <td>Object</td>
-    <td>A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_ </td>
-  </tr>
-  <tr>
-    <td>`callback`</td>
-    <td>optional</td>
-    <td>Function</td>
-    <td>A function that runs after a short timeout, giving the browser time to make outbound requests first.</td>
-  </tr>
-</table>
-
+Field | | Type | Description
+----- | | ---- | -----------
+`category` | optional | String | The category of the page. Useful for cases like ecommerce where many pages might live under a single category. _Note: if you pass only one string to `page` it is assumed to be `name`. You **must** include a `name` to send a `category`._
+`name` | optional | String | The name of the page.
+`properties` | optional | Object | A dictionary of properties of the page. Note: Analytics.js collects `url`, `title`, `referrer` and `path` are automatically. This defaults to a `canonical url`, if available, and falls back to `document.location.href`.
+`options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_.
+`callback` | optional | Function | A function that runs after a short timeout, giving the browser time to make outbound requests first.
 
 #### Default Page Properties
 
@@ -365,33 +276,12 @@ analytics.group(groupId, [traits], [options], [callback]);
 ```
 The Group call has the following fields:
 
-<table>
-  <tr>
-    <td>`groupId`</td>
-    <td></td>
-    <td>String</td>
-    <td>The Group ID to associate with the current user.</td>
-  </tr>
-  <tr>
-    <td>`traits`</td>
-    <td>optional</td>
-    <td> Object</td>
-    <td>A dictionary of [traits](/docs/connections/spec/group#traits) for the group. Example traits for a group include `address`, `website`, and `employees`.</td>
-  </tr>
-  <tr>
-    <td>`options`</td>
-    <td>optional</td>
-    <td>Object</td>
-    <td>A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_</td>
-  </tr>
-  <tr>
-    <td>`callback`</td>
-    <td>optional</td>
-    <td>Function</td>
-    <td>A function that runs after a short timeout, giving the browser time to make outbound requests first.</td>
-  </tr>
-</table>
-
+Field | | Type | Description
+----- | | ---- | -----------
+`groupId` | | String | The Group ID to associate with the current user.
+`traits` | optional | Object | A dictionary of [traits](/docs/connections/spec/group#traits) for the group. Example traits for a group include `address`, `website`, and `employees`.
+`options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_.
+`callback` | optional | Function | A function that runs after a short timeout, giving the browser time to make outbound requests first.
 
 Example `group` call:
 
@@ -422,32 +312,12 @@ analytics.alias(userId, [previousId], [options], [callback]);
 
 The Alias call has the following fields:
 
-<table>
-  <tr>
-    <td>`userId`</td>
-    <td></td>
-    <td>String</td>
-    <td>The new user ID you want to associate with the user.</td>
-  </tr>
-  <tr>
-    <td>`previousId`</td>
-    <td>optional</td>
-    <td>String</td>
-    <td>The previous ID that the user was recognized by. This defaults to the currently identified user's ID.</td>
-  </tr>
-  <tr>
-    <td>`options`</td>
-    <td>optional</td>
-    <td>Object</td>
-    <td>A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call.</td>
-  </tr>
-  <tr>
-    <td>`callback`</td>
-    <td>optional</td>
-    <td>Function</td>
-    <td>A function that is executed after a short timeout, giving the browser time to make outbound requests first.</td>
-  </tr>
-</table>
+Field | | Type | Description
+----- | | ---- | -----------
+`userId` | | String | The new user ID you want to associate with the user.
+`previousId` | optional | String | The previous ID that the user was recognized by. This defaults to the currently identified user's ID.
+`options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call.
+`callback` | optional | Function | A function that is executed after a short timeout, giving the browser time to make outbound requests first.
 
 For more details about Alias, including the **`alias` call payload**, check out our [Spec](/docs/connections/spec/alias/).
 
@@ -487,13 +357,9 @@ analytics.ready(callback);
 
 The `ready` method has the following fields:
 
-<table>
-  <tr>
-    <td>`callback` </td>
-    <td>Function</td>
-    <td>A function to be executed after all enabled destinations have loaded.</td>
-  </tr>
-</table>
+Field | Type | Description
+----- | ---- | -----------
+`callback` | Function | A function to be executed after all enabled destinations have loaded.
 
 ### Debug
 
@@ -520,18 +386,10 @@ Use the `on` method to set listeners for these events and run your own custom co
 analytics.on(method, callback);
 ```
 
-<table>
-  <tr>
-    <td>`method` </td>
-    <td>String</td>
-    <td>Name of the method to listen for</td>
-  </tr>
-  <tr>
-    <td>`callback` </td>
-    <td>Function</td>
-    <td>A function to execute after each emitted method, taking three arguments: `event`, `properties`, `options`</td>
-  </tr>
-</table>
+Field | Type | Description
+----- | ---- | -----------
+`method` | String | Name of the method to listen for.
+`callback`| Function | A function to execute after each emitted method, taking three arguments: `event`, `properties`, `options`.
 
 Example:
 
