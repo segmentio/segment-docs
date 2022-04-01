@@ -269,22 +269,17 @@ All of the basic [Segment methods](/docs/connections/spec/) have a common struct
 The following properties should be sent with every Track call:
 
 | **Event Context** | **Property Name** | **Description** |
-
-
-- **Any Track call**:
-    - **initiator** - *Was the event initiated by the user (“User”) or the system (“System”)?*
-    -  **display_format** - *Responsive or not (or some other indicator of the current page layout template)*
-- **Search Initiated or Search Results Displayed** - **[Search Parameters]** -  *All search parameters, with the names being the snake case version of the internal names.*
--  **Search Results Displayed**: **total_result_count** -  *The total number of results returned that match the search parameters.  This number represents the number of results that could be returned to the user even if only a subset of those were actually returned (e.g., if results are paginated).*
--  **Paginated List Displayed**:
-    -  **total_items_pages** - *The total number of pages of items available to be viewed by the user.*
-    -  **items_per_page**  - *The number of possible items in each page of items (e.g., if the UI is showing 50 search results per page).  The actual number of items in the current page may be less than this number if, for example, the system is displaying the last page of results and there aren’t enough results to fill to the page’s maximum (e.g., if there are 27 results when the page could display as many as 50).*
-    -  **current_item_page** - *The current page number being displayed to the user.*
--  **External Link Clicked** : **destination_url** -  *The URL that the user will be taken to when clicked. *Ideally this will be the final destination (e.g., after any redirects), but only the immediate destination is likely in most cases.*
--  **Item List Sorted**:
-    -  **sort_column**  - *The internal name of the column that was sorted on.*
-    -  **sort_direction**: *ascending or descending*
-
+| ----------------- | ----------------- | --------------- |
+| Any Track call    | `initiator`         | States whether the event was initiated by the user or the system. |
+| Any Track call    | `display_format`    | Responsive or not (or some other indicator of the current page layout template)
+| Search Initiated or Search Results Displayed | [Search Parameters] | All search parameters, with the names being the snake case version of the internal names.
+| Search Results Displayed | `total_result_count` | The total number of results returned that match the search parameters.  This number represents the number of results that could be returned to the user even if only a subset of those were actually returned (for example, if the results are paginated).
+| Paginated List Displayed | `total_items_pages` | The total number of pages of items available to be viewed by the user.
+| Paginated List Displayed | `items_per_page` | The number of possible items in each page of items (for example, if the UI is showing 50 search results per page).  The actual number of items in the current page may be less than this number if, for example, the system is displaying the last page of results and there aren’t enough results to fill to the page’s maximum (for example, if there are 27 results when the page could display as many as 50).
+| Paginated List Displayed | `current_item_page` | The current page number displayed to the user.
+| External Link Clicked | `destination_url` | The URL that the user is taken to when clicked. Ideally, this will be the final destination (for example, after any redirects), but only the immediate destination is likely in most cases.
+| Item List Sorted | `sort_column` | The internal name of the column that was sorted.
+| Item List Sorted | `sort_direction` | Whether the items sort in ascending or descending order.
 
 ### How to call Track
 
