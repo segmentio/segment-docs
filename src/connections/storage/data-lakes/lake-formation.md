@@ -1,12 +1,12 @@
 ---
 title: AWS Lake Formation
 ---
-AWS Lake Formation is a fully managed service built on top of the AWS Glue Data Catalog that provides one central set of tools to securely build and manage a Data Lake. The tools fall into one of two categories: setup and data management and security management. Setup and data management tools help import, catalog, transform, and deduplicate data, and optimize your storage and security. Security management tools help you to define and enforce encryption and access controls and implement audit logging. 
+AWS Lake Formation is a fully managed service built on top of the AWS Glue Data Catalog that provides one central set of tools to securely build and manage a Data Lake. These tools help import, catalog, transform, and deduplicate data, as well as provide strategies to optimize your storage and security.
 
 > note "Learn more about AWS Lake Formation features"
 > To learn more about AWS Lake Formation features, refer to the [Amazon Web Services documentation](https://aws.amazon.com/lake-formation/features/).
 
-<!--add description of how the security works, because the secure aspect is a big selling point-->
+The security policies in Lake Formation use two layers of permissions: each resource is protected by Lake Formation permissions and IAM permissions. When any user or role reads or writes to a resource, that action must pass a both a Lake Formation and an IAM resource check. For more information about security practices in Lake Formation, see Amazon's [Lake Formation Permissions Reference](https://docs.aws.amazon.com/lake-formation/latest/dg/lf-permissions-reference.html) documentation. 
 
 ## Configuring Lake Formation
 You can configure Lake Formation using the [`IAMAllowedPrincipals` group](#configuring-lake-formation-using-the-iamallowedprincipals-group) or by [using IAM policies for access control](#configuring-lake-formation-using-iam-policies). Configuring Lake Formation using the `IAMAllowedPrincipals` group is an easier method, recommended for those exploring Lake Formation. Setting up using IAM policies for access control is a more advanced setup option, recommended for those who want additional customization options. 
