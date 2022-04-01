@@ -30,18 +30,6 @@ analytics.page()
 
 `page` calls will be sent to Castle as `$page` events.
 
-<!--
-## Screen
-
-If you're not familiar with the Segment Specs, take a look to understand what the [`screen` method](/https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
-
-```
-[[SEGAnalytics sharedAnalytics] screen:@"Home"];
-```
-
-`screen` calls will be sent to Castle as a `$screen` events.
--->
-
 ## Track
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
