@@ -3,26 +3,29 @@ title: Castle Destination
 id: 56a8f566e954a874ca44d3b0
 ---
 
-[Castle](https://castle.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) monitors every step of the customer journey to help visualize and proactively block fraud that would otherwise fly under the radar. Types of fraud or abuse that can be managed include bots, fake accounts, multi-accounting, and account sharing.
+[Castle](https://castle.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} monitors every step of the customer journey to help visualize and proactively block fraud that would otherwise fly under the radar. Types of fraud or abuse that can be managed include bots, fake accounts, multi-accounting, and account sharing.
 
 This destination is maintained by Castle.
+
+> note " "
+> Castle only supports web integrations via Segment, but we are working on mobile support so please stay tuned.
 
 ## Getting Started
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Castle" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "Publishable Key" into your Segment Settings UI which you can find in your property in the [Castle dashboard](https://dashboard.castle.io).
+3. Enter the "Publishable Key" into your Segment Settings UI which you can find in your property in the [Castle dashboard](https://dashboard.castle.io){:target="_blank"}.
 4. Calls will now be visible in Castle dashboards in real-time.
 
-**NOTE**: Castle will only ingest Segment *client-side* events at this point. Server-side events will be dropped and not processed.
+> note " "
+> Castle will only ingest Segment *client-side* events at this point. Server-side events will be dropped and not processed.
 
-**NOTE**: Castle only supports web integrations via Segment, but we are working on mobile support so please stay tuned.
 
 ---
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [`page` method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [`page` call](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -32,13 +35,13 @@ analytics.page()
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [`track` call](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Added to Cart')
 ```
 
-`track` calls will be sent to Castle as a `$custom` events.
+`track` calls will be sent to Castle as `$custom` events.
 
 ---
 
@@ -48,7 +51,7 @@ In order to prevent user information from being spoofed by a bad actor, it is hi
 
 From your backend code, you need to encode the user as a JWT and sign it using your Castle "API Secret". Then, when Castle receives the JWT, the integrity of the user data will be verified to ensure that the data isn't being tampered with.
 
-Below is an example of how to generate a JWT on your backend using the Ruby language:
+Below is an example of how to generate a JWT on your backend using Ruby:
 
 ```ruby
 jwt_from_backend = JWT.encode({
