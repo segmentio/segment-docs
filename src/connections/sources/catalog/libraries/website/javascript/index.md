@@ -125,7 +125,7 @@ Field | | Type | Description
 ----- | | ---- | -----------
 `event`| | String | The name of the event you're tracking. You can read more about the [track method](/docs/connections/spec/track) and recommended event names.
 `properties` | optional | Object | A dictionary of [properties](/docs/connections/spec/track#properties) for the event. If the event was `'Added to Cart'`, it might have properties like `price` and `productType`.
-`options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before *options*_
+`options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_.
 `callback` | optional | Function | A function that runs after a short timeout, giving the browser time to make outbound requests first.
 
 The only required argument in Analytics.js is an _event name string_. You can read more about [how Segment recommends you name events](/docs/connections/spec/track#event).
