@@ -5,10 +5,10 @@ redirect_from: '/connections/destinations/catalog/data-lakes/'
 {% include content/plan-grid.md name="data-lakes" %}
 
 
-Segment Data Lakes provide a way to collect large quantities of data in a format that's optimized for targeted data science and data analytics workflows. You can read [more information about Data Lakes](/docs/connections/storage/data-lakes/) and learn [how they differ from Warehouses](/docs/connections/storage/data-lakes/comparison/) in the Segment documentation.
+Segment Data Lakes provide a way to collect large quantities of data in a format that's optimized for targeted data science and data analytics workflows. You can read [more information about Data Lakes](/docs/connections/storage/data-lakes/) and learn [how they differ from Warehouses](/docs/connections/storage/data-lakes/comparison/) in Segment's Data Lakes documentation.
 
-> success "AWS Lake Formation"
-> You can also set up your Data Lakes using [Lake Formation](/docs/connections/storage/data-lakes/lake-formation/).
+> note "AWS Lake Formation"
+> You can also set up your Data Lakes using [Lake Formation](/docs/connections/storage/data-lakes/lake-formation/), a fully managed service built on top of the AWS Glue Data Catalog.
 
 ## Pre-Requisites
 
