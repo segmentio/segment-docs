@@ -13,8 +13,8 @@ The security policies in Lake Formation use two layers of permissions: each reso
 
 For more information about security practices in Lake Formation, see Amazon's [Lake Formation Permissions Reference](https://docs.aws.amazon.com/lake-formation/latest/dg/lf-permissions-reference.html){:target="_blank"} documentation. 
 
-## Configuring Lake Formation
-You can configure Lake Formation using the [`IAMAllowedPrincipals` group](#configuring-lake-formation-using-the-iamallowedprincipals-group) or by [using IAM policies for access control](#configuring-lake-formation-using-iam-policies). Configuring Lake Formation using the `IAMAllowedPrincipals` group is an easier method, recommended for those exploring Lake Formation. Setting up using IAM policies for access control is a more advanced setup option, recommended for those who want additional customization options. 
+## Configure Lake Formation
+You can configure Lake Formation using the [`IAMAllowedPrincipals` group](#configure-lake-formation-using-the-iamallowedprincipals-group) or by [using IAM policies for access control](#configure-lake-formation-using-iam-policies). Configuring Lake Formation using the `IAMAllowedPrincipals` group is an easier method, recommended for those exploring Lake Formation. Setting up Lake Formation using IAM policies for access control is a more advanced setup option, recommended for those who want additional customization options. 
 
 > info "Permissions required to configure Data Lakes"
 > To configure Lake Formation, you must be logged in to AWS with data lake administrator or database creator permissions. 
@@ -23,7 +23,7 @@ You can configure Lake Formation using the [`IAMAllowedPrincipals` group](#confi
 
 #### Existing databases
 1. Open the [AWS Lake Formation service](https://console.aws.amazon.com/lakeformation/){:target="_blank"}.
-2. Under **Data catalog**, select the **Settings** tab. Ensure the checkboxes under the **Default permissions for newly created databases and tables** are not checked. 
+2. Under **Data catalog**, select **Settings**. Ensure the checkboxes under the **Default permissions for newly created databases and tables** are not checked. 
 3. Under **Permissions**, select the **Data lake permissions** section. Click **Grant**.
 4. On the **Grant data permissions** page, select the `IAMAllowedPrincipals` group in the Principals section.
 5. In the **Database permissions** section, select the checkboxes for **Super** database permissions and **Super** grantable permissions.
@@ -32,7 +32,7 @@ You can configure Lake Formation using the [`IAMAllowedPrincipals` group](#confi
 
 #### New databases
 1. Open the [AWS Lake Formation service](https://console.aws.amazon.com/lakeformation/){:target="_blank"}.
-2. Under **Data catalog**, select the **Settings** tab. Ensure the checkboxes under the **Default permissions for newly created databases and tables** are not checked. 
+2. Under **Data catalog**, select **Settings**. Ensure the checkboxes under **Default permissions for newly created databases and tables** are not checked. 
 3. Select the Databases tab and click **Create database**. On the **Create database** page:
     1. Select the **Database** button.
     2. Name your database. 
@@ -45,7 +45,7 @@ You can configure Lake Formation using the [`IAMAllowedPrincipals` group](#confi
 7. Click **Grant**. 
 8. On the **Permissions** page, verify the `IAMAllowedPrincipals` group has "All" permissions.
 
-#### Verifying your configuration
+#### Verify your configuration
 To verify that you've configured Lake Formation, open the [AWS Lake Formation service](https://console.aws.amazon.com/lakeformation/){:target="_blank"}, select **Data lake permissions**, and verify the `IAMAllowedPrincipals` group is listed with "All" permissions.
 
 ### Configure Lake Formation using IAM policies
@@ -55,7 +55,7 @@ To verify that you've configured Lake Formation, open the [AWS Lake Formation se
 
 #### Existing databases
 1. Open the [AWS Lake Formation service](https://console.aws.amazon.com/lakeformation/){:target="_blank"}.
-2. Under **Data catalog**, select the **Settings** tab. Ensure the checkboxes under the **Default permissions for newly created databases and tables** are not checked.
+2. Under **Data catalog**, select **Settings**. Ensure the checkboxes under the **Default permissions for newly created databases and tables** are not checked.
 3. On the **Databases** page, select your database. From the **Actions** menu, select **Grant**. 
 5. On the **Grant data permissions** page, select the `EMR_EC2_DefaultRole` (or `segment_emr_instance_profile`, if you configured your data lake using Terraform) and `segment-data-lake-iam-role` roles in the Principals section.
 6. In the **Database permissions** section, select the checkboxes for **Super** database permissions and **Super** grantable permissions.
@@ -64,7 +64,7 @@ To verify that you've configured Lake Formation, open the [AWS Lake Formation se
 
 #### New databases
 1. Open the [AWS Lake Formation service](https://console.aws.amazon.com/lakeformation/){:target="_blank"}.
-2. Under **Data catalog**, select the **Settings** tab. Ensure the checkboxes under the **Default permissions for newly created databases and tables** are not checked.
+2. Under **Data catalog**, select **Settings**. Ensure the checkboxes under the **Default permissions for newly created databases and tables** are not checked.
 3. Select the Databases tab and click **Create database**. On the **Create database** page:
     1. Select the **Database** button.
     2. Name your database. 
