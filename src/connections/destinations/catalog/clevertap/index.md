@@ -38,7 +38,7 @@ The default logic for the cloud mode connection to CleverTap will lower case and
 
 ### Order Completed
 
-When you `track` an event using the server-side destination with the name `Order Completed` using the [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/), Segment maps that event to CleverTap's [Charged](https://support.clevertap.com/docs/working-with-events.html#recording-customer-purchases) event.
+When you `track` an event using the server-side destination with the name `Order Completed` using the [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/), Segment maps that event to CleverTap's [Charged](https://support.clevertap.com/docs/working-with-events.html#recording-customer-purchases){:target="_blank"} event.
 
 ## Page
 
@@ -87,7 +87,7 @@ When you send a `screen` event using the server-side destination or the iOS bund
     </service>
     ```
 
-2. For more in-depth information, visit CleverTap's [Android push integration documentation](https://developer.clevertap.com/docs/android).
+2. For more in-depth information, visit CleverTap's [Android push integration documentation](https://developer.clevertap.com/docs/android){:target="_blank"}.
 
 ### In-App Notifications
 
@@ -105,7 +105,7 @@ When you send a `screen` event using the server-side destination or the iOS bund
 
 ### Sample App
 
-CleverTap has created a sample Android application that integrates CleverTap using Segment. Check it out at the [GitHub repository](https://github.com/CleverTap/clevertap-segment-android-example).
+CleverTap has created a sample Android application that integrates CleverTap using Segment. Check it out at the [GitHub repository](https://github.com/CleverTap/clevertap-segment-android-example){:target="_blank"}.
 
 ## iOS
 
@@ -117,7 +117,7 @@ CleverTap has created a sample Android application that integrates CleverTap usi
    `pod 'Segment-CleverTap'`
    ```
 
-   Use the latest version on [CocoaPods](https://cocoapods.org/pods/Segment-CleverTap) since it will contain the most up to date features and bug fixes.
+   Use the latest version on [CocoaPods](https://cocoapods.org/pods/Segment-CleverTap){:target="_blank"} since it will contain the most up to date features and bug fixes.
 
 2. Next, declare CleverTap's integration in your app delegate instance:
 
@@ -149,7 +149,7 @@ No further action is required to integrate in-app notifications, which are regis
 
 ### Sample App
 
-CleverTap has created a sample iOS application that integrates CleverTap using Segment. Check it out at the [GitHub repository](https://github.com/CleverTap/clevertap-segment-ios/tree/master/Example).
+CleverTap has created a sample iOS application that integrates CleverTap using Segment. Check it out at the [GitHub repository](https://github.com/CleverTap/clevertap-segment-ios/tree/master/Example){:target="_blank"}.
 
 
 ## React Native
