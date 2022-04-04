@@ -51,14 +51,14 @@ const slugify = (displayName) => {
     .replace(/[\(\)]/g, '')
     .replace('.', '-')
 
-// This is how we handle manual slug overrides right now.
-// If a slug appears in the slugOverrides file, we want to use the 'override' value instead.
+  // This is how we handle manual slug overrides right now.
+  // If a slug appears in the slugOverrides file, we want to use the 'override' value instead.
   for (key in slugOverrides) {
     let original = slugOverrides[key].original
     let override = slugOverrides[key].override
 
     if (slug == original) {
-      console.log(original + " -> " + override)
+      // console.log(original + " -> " + override)
       slug = override
     }
   }
@@ -76,11 +76,17 @@ const addIdToExisting = (integration) => {
     const catalogPath = path.resolve('src', itemURL, 'index.md')
     if (fs.existsSync(catalogPath)) {
       const f = fm(fs.readFileSync(catalogPath, 'utf8'));
-      const attr = `---\n${f.frontmatter}\nid: ${integration.id}\n---\n`
-      const body = f.body
-      const content = attr + body
-      console.log(attr)
-      fs.writeFileSync(catalogPath, content)
+
+      const fmatter = f.frontmatter
+      const re_id = new RegExp("(id: )\S*")
+      if (!re_id.test(fmatter)) {
+        const attr = `---\n${f.frontmatter}\nid: ${integration.id}\n---\n`
+        const body = f.body
+        const content = attr + body
+        console.log(attr)
+        fs.writeFileSync(catalogPath, content)
+      }
+
     }
   } catch (e) {
     console.log(error)
@@ -96,7 +102,7 @@ const updateSources = async () => {
   let sources = []
   let nextPageToken = "MA=="
 
-  while (nextPageToken !== null) {
+  while (nextPageToken !== undefined) {
     const res = await getCatalog(`${PAPI_URL}/catalog/sources/`, nextPageToken)
     sources = sources.concat(res.data.sourcesCatalog)
     nextPageToken = res.data.pagination.next
@@ -119,7 +125,7 @@ const updateSources = async () => {
       url = `connections/sources/catalog/cloud-apps/${slug}`
       mainCategory = 'cloud-app'
     }
-// So, we retrieve and store only the id and the URL, which is defined in the if statement on line 116.
+    // So, we retrieve and store only the id and the URL, which is defined in the if statement on line 116.
     let updatedSource = {
       id: source.id,
       url,
@@ -133,7 +139,7 @@ const updateDestinations = async () => {
   let destinations = []
   let nextPageToken = "MA=="
 
-  while (nextPageToken !== null) {
+  while (nextPageToken !== undefined) {
     const res = await getCatalog(`${PAPI_URL}/catalog/destinations/`, nextPageToken)
     destinations = destinations.concat(res.data.destinationsCatalog)
     nextPageToken = res.data.pagination.next

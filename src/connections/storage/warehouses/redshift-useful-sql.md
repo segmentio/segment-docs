@@ -8,12 +8,19 @@ Below you'll find a library of some of the most useful SQL queries customers use
 
 You can use SQL queries for the following tasks:
 - [Tracking events](#tracking-events)
-- [Defining sessions](#defining-sessions)
-- [Identifying users](#identifying-users)
+  - [Grouping events by day](#grouping-events-by-day)
+- [Define sessions](#define-sessions)
+  - [How to define user sessions using SQL](#how-to-define-user-sessions-using-sql)
+- [Identify users](#identify-users)
+  - [Historical traits](#historical-traits)
+  - [Convert the identifies table into a users table](#convert-the-identifies-table-into-a-users-table)
+  - [Counts of user traits](#counts-of-user-traits)
 - [Groups to accounts](#groups-to-accounts)
+  - [Historical Traits](#historical-traits-1)
+  - [Converting the Groups Table into an Organizations Table](#converting-the-groups-table-into-an-organizations-table)
 
 > note " "
-> If you're looking for SQL queries for warehouses other than Redshift, check out some of Segment's [Analyzing with SQL guides](/docs/connections/storage/warehouses/index/#analyzing-with-sql).
+> If you're looking for SQL queries for warehouses other than Redshift, check out some of Segment's [Analyzing with SQL guides](/docs/connections/storage/warehouses#analyzing-with-sql).
 
 ## Tracking events
 
