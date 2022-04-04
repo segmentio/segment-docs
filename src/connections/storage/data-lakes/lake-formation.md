@@ -74,4 +74,4 @@ To verify that you've configured Lake Formation, open the [AWS Lake Formation se
 5. On the **Grant data permissions** page, select the `EMR_EC2_DefaultRole` (or `segment_emr_instance_profile`, if you configured your data lake using Terraform) and `segment-data-lake-iam-role` roles in the Principals section.
 6. In the **Database permissions** section, select the checkboxes for **Super** database permissions and **Super** grantable permissions.
 7. Click **Grant**. 
-8. On the **Permissions** page, verify the `EMR_EC2_DefaultRole` (or `segment_emr_instance_profile`) and `segment-data-lake-iam-role` roles have "All" permissions. 
+8. On the **Permissions** page, verify the `EMR_EC2_DefaultRole` (or `segment_emr_instance_profile`) and `segment-data-lake-iam-role` roles have "All" permissions.
