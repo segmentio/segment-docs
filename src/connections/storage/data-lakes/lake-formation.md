@@ -6,7 +6,7 @@ AWS Lake Formation is a fully managed service built on top of the AWS Glue Data 
 > note "Learn more about AWS Lake Formation features"
 > To learn more about AWS Lake Formation features, refer to the [Amazon Web Services documentation](https://aws.amazon.com/lake-formation/features/).
 
-The security policies in Lake Formation use two layers of permissions: each resource is protected by Lake Formation permissions and IAM permissions. When any user or role reads or writes to a resource, that action must pass a both a Lake Formation and an IAM resource check. For more information about security practices in Lake Formation, see Amazon's [Lake Formation Permissions Reference](https://docs.aws.amazon.com/lake-formation/latest/dg/lf-permissions-reference.html) documentation. 
+The security policies in Lake Formation use two layers of permissions: each resource is protected by Lake Formation permissions (which control access to Data Catalog resources and S3 locations) and IAM permissions (which control access to Lake Formation and AWS Glue API resources). When any user or role reads or writes to a resource, that action must pass a both a Lake Formation and an IAM resource check: . For more information about security practices in Lake Formation, see Amazon's [Lake Formation Permissions Reference](https://docs.aws.amazon.com/lake-formation/latest/dg/lf-permissions-reference.html) documentation. 
 
 ## Configuring Lake Formation
 You can configure Lake Formation using the [`IAMAllowedPrincipals` group](#configuring-lake-formation-using-the-iamallowedprincipals-group) or by [using IAM policies for access control](#configuring-lake-formation-using-iam-policies). Configuring Lake Formation using the `IAMAllowedPrincipals` group is an easier method, recommended for those exploring Lake Formation. Setting up using IAM policies for access control is a more advanced setup option, recommended for those who want additional customization options. 
@@ -46,7 +46,7 @@ To verify that you've successfully configured Lake Formation, open the [AWS Lake
 ### Configuring Lake Formation using IAM policies
 
 > note "Granting Super permission to IAM roles"
-> If you manually configured your database, assign the `EMR_EC2_DefaultRole` super permissions. If you configured your database using Terraform, assign the `segment_emr_instance_profile` super permissions. 
+> If you manually configured your database, assign the `EMR_EC2_DefaultRole` Super permissions. If you configured your database using Terraform, assign the `segment_emr_instance_profile` Super permissions. 
 
 #### Existing databases
 1. Open the [AWS Lake Formation service](https://console.aws.amazon.com/lakeformation/).
