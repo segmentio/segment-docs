@@ -77,7 +77,7 @@ Segment also allows you to send a User-ID with your events. The User-ID feature 
 There are certain scenarios where sending a User-ID can be helpful. For example, if you choose to integrate with Google Analytics 4 client-side (using Gtag outside of Segment) _and_ also use Segment's Google Analytics 4 destination to send events via API, you may consider taking the following approach:
 - **Use the Gtag-generated Client ID.** Gtag will set a Client ID automatically. The Client ID is stored in a cookie and can be fetched on the web client. To tie data between client-side and server-side, pass the Gtag-generated Client ID to Segment as a property and use that value as the Client ID in the Google Analytics 4 destination mappings.
 - **Use the Segment `userId` for User-ID.** The Segment `userId` should be your company’s canonical user identifier. By setting Google's User-ID to the same value as `userId` on client-side and server-side, you can benefit from cross-platform analytics.
-In addition, if you use [Firebase to send mobile data to Google Analytics 4](docs/connections/destinations/catalog/actions-google-analytics-4/#mobile-data), using the same User-ID across web and mobile will ensure users are stitched together across devices.
+In addition, if you use [Firebase to send mobile data to Google Analytics 4](/docs/connections/destinations/catalog/actions-google-analytics-4/#mobile-data), using the same User-ID across web and mobile will ensure users are stitched together across devices.
 
 User sessions are [not currently supported by the Measurement Protocol API](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/limitations){:target="_blank"}, but should be coming soon. Once available, Segment will update the Google Analytics 4 destination to support sending session-level information.
 
@@ -96,7 +96,7 @@ The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/
 
 ### Mobile Data
 
-The Google Analytics 4 Measurement Protocol API is only compatible with web streams. Google requires use of their Firebase SDKs to send mobile data to Google Analytics 4. To assist in your implementation, Segment has a [Firebase destination](docs/connections/destinations/catalog/firebase) available for mobile analytics. For more information on linking Google Analytics 4 properties to Firebase, see [Google Analytics 4 Firebase integration](https://support.google.com/analytics/answer/9289234?hl=en){:target="_blank"}.
+The Google Analytics 4 Measurement Protocol API is only compatible with web streams. Google requires use of their Firebase SDKs to send mobile data to Google Analytics 4. To assist in your implementation, Segment has a [Firebase destination](/docs/connections/destinations/catalog/firebase) available for mobile analytics. For more information on linking Google Analytics 4 properties to Firebase, see [Google Analytics 4 Firebase integration](https://support.google.com/analytics/answer/9289234?hl=en){:target="_blank"}.
 
 ### User Metrics & Sessions
 
