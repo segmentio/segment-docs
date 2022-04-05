@@ -1,6 +1,11 @@
 
 {% assign currentSlug = page.url | split: "/" | last %}
+{% assign currentId = page.id %}
+{% if page.id %}
+{% assign currentIntegration = site.data.catalog.destinations.items | where: "id", currentId | first %}
+{% else %}
 {% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
+{% endif %}
 {% assign conn = include.settings %}
 
 {% assign connectionModes = currentIntegration.connection_modes %}
