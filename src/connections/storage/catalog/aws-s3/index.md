@@ -242,9 +242,8 @@ For example:
 
 For each source in the scenario, complete the steps described in [Migrate an existing destination](#migrate-an-existing-destination), and ensure that you have separate IAM Roles and Permissions set for staging and production use.
 
-
 ## Migrate an existing destination using public-api
-This procedure uses Segment's public-api to migrate your destinations to the AWS S3 destination. For more information about the public-api, please see the [public-api Getting Started](https://api.segmentapis.com/docs/guides/#getting-started) guide.
+This procedure uses Segment's public-api to migrate your existing Amazon S3 destination to the new AWS S3 destination. For more information about the public-api, please see the [public-api Getting Started](https://api.segmentapis.com/docs/guides/#getting-started) guide.
 
 > warning "Avoid overwriting data"
 > Sending data to the same S3 location from both the existing Amazon S3 destination and the AWS S3 destinations will overwrite data in your instance of S3. To avoid this, disable your Amazon S3 destination after you create your AWS S3 destination.
