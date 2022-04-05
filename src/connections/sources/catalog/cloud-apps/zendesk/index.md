@@ -284,7 +284,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 
 ### ticket_forms
 > warning "This collection requires Zendesk Enterprise access"
-> Segment's Zendesk source connector only fetches data for the ticket_forms collection if the associated Zendesk account is an Zendesk Enterprise account.
+> Segment's Zendesk source connector only fetches data for the ticket_forms collection if the associated Zendesk account is an Zendesk Enterprise account. For more information, please see [ Zendesk's ticket_forms documentation](https://developer.zendesk.com/api-reference/ticketing/tickets/ticket_forms/){:target="_blank"}.
 
 
 | Property        | Description                                                       |
