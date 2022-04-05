@@ -7,6 +7,7 @@
 (?:L|l)ookback
 (?:P|p)ageviews?\b
 (?:P|p)endo
+(?:P|p)odfile
 (?:P|p)ostgres
 (?:R|r)emarketing
 (?:U|u)nlinks?\b
@@ -44,6 +45,7 @@ iOS
 Javadoc
 Javadocs
 Javascript
+Jivox
 Kameleoon
 Kissmetrics
 Lightbox

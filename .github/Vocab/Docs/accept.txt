@@ -44,6 +44,7 @@ iOS
 Javadoc
 Javadocs
 Javascript
+Jivox
 Kameleoon
 Kissmetrics
 Lightbox
