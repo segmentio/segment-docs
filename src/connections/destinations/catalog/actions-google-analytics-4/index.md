@@ -100,4 +100,4 @@ The Google Analytics 4 Measurement Protocol API is only compatible with web stre
 
 ### User Metrics & Sessions
 
-Segment sends a Google `clientId` in requests to the Measurement Protocol API, alongside other required API fields. However, user sessions are [not currently supported by the Measurement Protocol API](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/limitations){:target="_blank"}, so user metrics might not appear on the Google Analytics 4 Realtime report or several other reports. To validate your implementation, check users and events on the Events report and User Explorer.
+Segment sends a Google Client ID in requests to the Measurement Protocol API, alongside other required API fields. However, user sessions are [not currently supported by the Measurement Protocol API](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/limitations){:target="_blank"}, so user metrics might not appear on the Google Analytics 4 Realtime report or several other reports. To validate your implementation, check users and events on the Events report and User Explorer.
