@@ -61,7 +61,7 @@ Collections are the groupings of resources Segment pulls from your source.
 |  [ticket_metrics](#ticket_metrics) | object | All kinds of aggregate metrics about a ticket |
 |  [satisfaction_ratings](#satisfaction_ratings) | object | If you have enabled satisfaction ratings for your account, this end point allows you to quickly retrieve all ratings. |
 |  [ticket_comments](#ticket_comments) | object | Ticket comments represent the conversation between requesters, collaborators, and agents. It includes the full body of each comment, public and private. **Note**: This collection is not included by default. To request it, [contact Segment support](https://segment.com/help/contact/). |
-|  [ticket_forms](#ticket_forms) | object | Ticket forms allow an admin to define a subset of ticket fields for display to both agents and end users. |
+|  [ticket_forms](#ticket_forms) | object | Ticket forms allow an admin to define a subset of ticket fields for display to both agents and end users. **Note**: This feature requires a Zendesk Enterprise account. |
 |  [ticket_skips](#ticket_skips) | object | A skip is a record of when an agent skips over a ticket without responding to the end user.  |
 |  [organization_memberships](#organization_memberships) | object | An organization_membership links a user to an organization. Organizations can have many users. Users can be in many organizations if the account supports multiple organizations. |
 |  [group_memberships](#group_memberships) | object | A group_membership links an agent to a group. Groups can have many agents, as agents can be in many groups. |
@@ -283,6 +283,9 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 | received_at     | This timestamp is added to incoming messages as soon as they hit Segment API. |
 
 ### ticket_forms
+> warning "This collection requires Zendesk Enterprise access"
+> Segment's Zendesk source connector only fetches data for the ticket_forms collection if the associated Zendesk account is an Zendesk Enterprise account.
+
 
 | Property        | Description                                                       |
 | --------------- | ----------------------------------------------------------------- |
