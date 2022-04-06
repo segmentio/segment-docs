@@ -104,12 +104,12 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | all_conversion_value                                   | The total value of your conversions, including estimated conversions.                                                                                                                 |
 | all_conversions                                        | Best estimate of the total number of conversions that Google Ads drives. Includes website, cross-device, and phone call conversions.                                                            |
 | average_cost                                           | The average amount you pay per interaction.                                                                                                                                                     |
-| average_position                                       | Your ad's position relative to those of other advertisers.                                                                                                                                      |
+| ~~average_position~~                                   | _Deprecated by Google._ Your ad's position relative to those of other advertisers.                                                                                                                                      |
 | average_time_on_site                                   | Total duration of all sessions (in seconds) / number of sessions.                                                                                                                               |
 | bounce_rate                                            | Percentage of clicks where the user visited a single page on your site.                                                                                                                    |
-| click_assisted_conversion_value                        | The total value of all conversions for which this keyword, ad, ad group, or campaign triggered assisted clicks.                                                                                 |
-| click_assisted_conversions                             | The total number of conversions for which this keyword, ad, ad group, or campaign contributed to one or more assisted clicks.                                                                   |
-| click_assisted_conversions_over_last_click_conversions | The total number of conversions for which this keyword, ad, ad group, or campaign received in assisted clicks divided by the total number of conversions for which it triggered the last click. |
+| ~~click_assisted_conversion_value~~                    | _Deprecated by Google._ The total value of all conversions for which this keyword, ad, ad group, or campaign triggered assisted clicks.                                                                                 |
+| ~~click_assisted_conversions~~                         | _Deprecated by Google._ The total number of conversions for which this keyword, ad, ad group, or campaign contributed to one or more assisted clicks.                                                                   |
+| ~~click_assisted_conversions_over_last_click_conversions~~ | _Deprecated by Google._ The total number of conversions for which this keyword, ad, ad group, or campaign received in assisted clicks divided by the total number of conversions for which it triggered the last click. |
 | clicks                                                 | The number of clicks.                                                                                                                                                                           |
 | conversion_value                                       | The sum of conversion values for all conversions.                                                                                                                                               |
 | conversions                                            | The number of conversions for all conversion actions that you have opted into optimization.                                                                                                     |
@@ -120,7 +120,7 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | gmail_forwards                                         | The number of times your ad was forwarded to someone else as a message.                                                                                                                         |
 | gmail_saves                                            | The number of times someone has saved your Gmail ad to their inbox as a message.                                                                                                                |
 | gmail_secondary_clicks                                 | The number of clicks to your landing page on the expanded state of Gmail ads.                                                                                                                   |
-| impression_assisted_conversions                        | Total number of conversions for which this object triggered assist impressions before the last click.                                                                                         |
+| ~~impression_assisted_conversions~~                    | _Deprecated by Google._ Total number of conversions for which this object triggered assist impressions before the last click.                                                                                         |
 | impressions                                            | Count of how often your ad has appeared on a search results page or website on the Google Network.                                                                                              |
 | interaction_types                                      | The types of interactions that are reflected in the Interactions, InteractionRate, and AverageCost columns.                                                                                     |
 | interactions                                           | The number of interactions. An interaction is the main user action associated with an ad format--clicks for text and shopping ads, views for video ads, and so on.                              |
@@ -144,7 +144,7 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | received_at         | This timestamp is added to incoming messages as soon as they hit Segment API.                                               |
 | status              | The [status](https://developers.google.com/google-ads/api/reference/rpc/v10/AdGroupAdStatusEnum.AdGroupAdStatus) of the ad. |
 | type                | The type of this ad.                                                                                                        |
-| url                 | Unique identifier for this instance of UrlData.                                                                             |
+| ~~url~~             | _Deprecated by Google._ Unique identifier for this instance of UrlData.                                                     |
 
 ### Campaigns
 
@@ -174,7 +174,7 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | all_conversions                                        | Best estimate of the total number of conversions that Google Ads drives. Includes website, cross-device, and phone call conversions.                                                            |
 | amount                                                 | The daily budget.                                                                                                                                                                               |
 | average_cost                                           | The average amount you pay per interaction.                                                                                                                                                     |
-| average_position                                       | Your ad's position relative to those of other advertisers.                                                                                                                                      |
+| ~~average_position~~                                   | _Deprecated by Google._ Your ad's position relative to those of other advertisers.                                                                                                                                      |
 | average_time_on_site                                   | Total duration of all sessions (in seconds) / number of sessions.                                                                                                                               |
 | base_campaign_id                                       | The ID of base campaign of trial campaigns.                                                                                                                                                     |
 | bounce_rate                                            | Percentage of clicks where the user only visited a single page on your site.                                                                                                                    |
@@ -182,9 +182,9 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | campaign_id                                            | The ID of the Campaign.                                                                                                                                                                         |
 | campaign_status                                        | The status of the Campaign.                                                                                                                                                                     |
 | campaign_trial_type                                    | The type of campaign. This shows if the campaign is a trial campaign or not.                                                                                                                    |
-| click_assisted_conversion_value                        | The total value of all conversions for which this keyword, ad, ad group, or campaign triggered assisted clicks.                                                                                 |
-| click_assisted_conversions                             | The total number of conversions for which this keyword, ad, ad group, or campaign contributed to one or more assisted clicks.                                                                   |
-| click_assisted_conversions_over_last_click_conversions | The total number of conversions for which this keyword, ad, ad group, or campaign received in assisted clicks divided by the total number of conversions for which it triggered the last click. |
+| ~~click_assisted_conversion_value~~                    | _Deprecated by Google._ The total value of all conversions for which this keyword, ad, ad group, or campaign triggered assisted clicks.                                                                                 |
+| ~~click_assisted_conversions~~                         | _Deprecated by Google._ The total number of conversions for which this keyword, ad, ad group, or campaign contributed to one or more assisted clicks.                                                                   |
+| ~~click_assisted_conversions_over_last_click_conversions~~ | _Deprecated by Google._ The total number of conversions for which this keyword, ad, ad group, or campaign received in assisted clicks divided by the total number of conversions for which it triggered the last click. |
 | clicks                                                 | The number of clicks.                                                                                                                                                                           |
 | conversion_value                                       | The sum of conversion values for all conversions.                                                                                                                                               |
 | conversions                                            | The number of conversions for all conversion actions that you have opted into optimization.                                                                                                     |
@@ -195,8 +195,8 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | gmail_forwards                                         | The number of times your ad was forwarded to someone else as a message.                                                                                                                         |
 | gmail_saves                                            | The number of times someone has saved your Gmail ad to their inbox as a message.                                                                                                                |
 | gmail_secondary_clicks                                 | The number of clicks to your landing page on the expanded state of Gmail ads.                                                                                                                   |
-| impression_assisted_conversions                        | Total number of conversions for which this object triggered assist impressions prior to the last click.                                                                                         |
-| impression_reach                                       | Number of unique cookies that were exposed to your ad over a given time period, or the special value "< 100" if the number of cookies is less than 100.                                         |
+| ~~impression_assisted_conversions~~                    | _Deprecated by Google._ Total number of conversions for which this object triggered assist impressions prior to the last click.                                                                                         |
+| ~~impression_reach~~                                   | _Deprecated by Google._ Number of unique cookies that were exposed to your ad over a given time period, or the special value "< 100" if the number of cookies is less than 100.                                         |
 | impressions                                            | Count of how often your ad has appeared on a search results page or website on the Google Network.                                                                                              |
 | interaction_types                                      | The types of interactions that are reflected in the Interactions, InteractionRate, and AverageCost columns.                                                                                     |
 | interactions                                           | The number of interactions. An interaction is the main user action associated with an ad format--clicks for text and shopping ads, views for video ads, and so on.                              |
@@ -216,16 +216,15 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 
 | Property Name               | Description                                                     |
 | --------------------------- | --------------------------------------------------------------- |
-| ad_format                   | The underlying media format of the ad.                          |
+| ~~ad_format~~               | _Deprecated by Google._ The underlying media format of the ad.  |
 | ad_group_id                 | The ID of the AdGroup.                                          |
-| ad_network_type_1           | First level network type.                                       |
-| ad_network_type_2           | Second level network type (includes search partners).           |
+| ad_network_type             | The network type. Previously `ad_network_type_1` and `ad_network_type_2`.  |
 | adwords_customer_id         | The 10-digit Google Ads Customer ID.                            |
 | aoi_most_specific_target_id | The most specific location target.                              |
 | campaign_id                 | The ID of the Campaign.                                         |
 | click_type                  | Indicates the click type for metric fields such as Impressions. |
 | creative_id                 | ID of the ad.                                                   |
-| criteria_parameters         | Descriptive string for the Criterion.                           |
+| ~~criteria_parameters~~     | _Deprecated by Google._ Descriptive string for the Criterion.   |
 | date_start                  | The date start formatted as yyyy-MM-dd.                         |
 | date_stop                   | The date stop formatted as yyyy-MM-dd.                          |
 | device                      | Device type where the impression was shown.                     |
@@ -251,7 +250,7 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | average_cpe                   | The average amount that you've been charged for an ad engagement.                                                                                      |
 | average_cpm                   | Average Cost-per-thousand impressions (CPM).                                                                                                           |
 | average_cpv                   | The average amount you pay each time someone views your ad.                                                                                            |
-| average_position              | Your ad's position relative to those of other advertisers.                                                                                             |
+| ~~average_position~~          | _Deprecated by Google._ Your ad's position relative to those of other advertisers.                                                                     |
 | campaign_id                   | The ID of the Campaign.                                                                                                                                |
 | clicks                        | The number of clicks.                                                                                                                                  |
 | conversion_rate               | The number of conversions divided by total clicks that can be tracked to conversions                                                                   |
@@ -275,7 +274,7 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | interactions                  | The number of interactions.                                                                                                                            |
 | keyword_id                    | The ID of the Keyword that triggered the ad.                                                                                                           |
 | network                       | First level network type.                                                                                                                              |
-| network_with_search_partners  | Second level network type (includes search partners).                                                                                                  |
+| ~~network_with_search_partners~~  | _Deprecated by Google._ Second level network type (includes search partners).                                                                      |
 | original_ad_id                | -                                                                                                                                                      |
 | query                         | Keyword that triggered the ad.                                                                                                                         |
 | query_match_type_with_variant | Match type of the keyword that triggered the ad, including variants.                                                                                   |
@@ -307,11 +306,11 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | average_cpm                     | Average Cost-per-thousand impressions (CPM).                                                                                         |
 | average_cpv                     | The average amount you pay each time someone views your ad.                                                                          |
 | average_pageviews               | Average number of pages viewed per session.                                                                                          |
-| average_position                | Your ad's position relative to those of other advertisers.                                                                           |
+| ~~average_position~~            | _Deprecated by Google._ Your ad's position relative to those of other advertisers.                                                   |
 | average_time_on_site            | Total duration of all sessions (in seconds) / number of sessions.                                                                    |
 | campaign_id                     | The ID of the Campaign.                                                                                                              |
-| click_assisted_conversion_value | The total value of all conversions for which this keyword, ad, ad group, or campaign triggered assisted clicks.                      |
-| click_assisted_conversions      | The total number of conversions for which this keyword, ad, ad group, or campaign contributed to one or more assisted clicks.        |
+| ~~click_assisted_conversion_value~~ | _Deprecated by Google._ The total value of all conversions for which this keyword, ad, ad group, or campaign triggered assisted clicks. |
+| ~~click_assisted_conversions~~      | _Deprecated by Google._ The total number of conversions for which this keyword, ad, ad group, or campaign contributed to one or more assisted clicks. |
 | clicks                          | The number of clicks.                                                                                                                |
 | conversions                     | The number of conversions for all conversion actions that you have opted into optimization.                                          |
 | cpc_bid                         | Cost per click bid.                                                                                                                  |
@@ -320,7 +319,7 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | ctr                             | The number of clicks your ad receives (Clicks) divided by the number of times your ad is shown (Impressions).                        |
 | date_start                      | The date start formatted as yyyy-MM-dd.                                                                                              |
 | date_stop                       | The date stop formatted as yyyy-MM-dd.                                                                                               |
-| impression_assisted_conversions | Total number of conversions for which this object triggered assist impressions prior to the last click.                              |
+| ~~impression_assisted_conversions~~ | _Deprecated by Google._ Total number of conversions for which this object triggered assist impressions prior to the last click.  |
 | impressions                     | Count of how often your ad has appeared on a search results page or website on the Google Network.                                   |
 | keyword_id                      | ID of the main object of this row.                                                                                                   |
 | original_keyword_id             | -                                                                                                                                    |
