@@ -54,7 +54,7 @@ You will also need your Criteo Advertiser ID. Please reach out to your Criteo Ac
 10. Click **Add Destinations** and select the newly created destination. On the settings that appear on the right-hand side, toggle **Send Track** option on and disable **Send Identify**. Hit **Save**.  
 
 Your Criteo destination should be ready to receive audiences!
-
+Your Persona audiences will reflect in your Criteo Advertiser dasboard. Please note that it will take approximately 12-24 hours for the number of identifiers to populate in Criteo's Management Center
 
 > warning ""
 > **NOTE**: Currently, you can only connect **ONE** personas audience to a single instance of Criteo Audience destination. If you have multiple audiences, repeat the above process to create a new Criteo audience destination and connect the audience to new destination each time.
