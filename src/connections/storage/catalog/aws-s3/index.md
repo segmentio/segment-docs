@@ -242,21 +242,20 @@ For example:
 
 For each source in the scenario, complete the steps described in [Migrate an existing destination](#migrate-an-existing-destination), and ensure that you have separate IAM Roles and Permissions set for staging and production use.
 
-## Migrate an existing destination using public-api
-This procedure uses Segment's public-api to migrate your existing Amazon S3 destination to the new AWS S3 destination. For more information about the public-api, please see the [public-api Getting Started](https://api.segmentapis.com/docs/guides/#getting-started) guide.
+## Migrate an existing destination using Public API
+This procedure uses Segment's Public API to migrate your existing Amazon S3 destination to the new AWS S3 destination. For more information about the Public API, see the [Public API Getting Started Guide](https://api.segmentapis.com/docs/guides/#getting-started).
 
 > warning "Avoid overwriting data"
 > Sending data to the same S3 location from both the existing Amazon S3 destination and the AWS S3 destinations will overwrite data in your instance of S3. To avoid this, disable your Amazon S3 destination after you create your AWS S3 destination.
 
-To migrate to the AWS S3 destination using the public-api:
+To migrate to the AWS S3 destination using the Public API:
 
-1. Create a new S3 bucket and IAM role using either the [AWS console](#create-an-iam-role-in-the-aws-console) or the [AWS CLI](#create-an-iam-role-using-the-aws-cli). 
-2. Open the Segment app and add the **AWS S3** destination from the Storage Destinations tab of the catalog.
-3. Configure your AWS S3 destination. For the bucket name, enter `<YOUR_BUCKET_NAME>/segment-logs/test`. 
-4. Enable the destination, and verify data is received at `<YOUR_BUCKET_NAME>/segment-logs/test/segment-logs`. If the folder receives data, continue to the next step. If you don't see log entries, check the trust relationship document and IAM policy attached to the role.
-5. Update the bucket name in the Segment app to `<YOUR_BUCKET_NAME>`.
-6. After an hour, disable your original Amazon S3 destination.
-7. Create the new AWS S3 destination using the `create destination` call. Below is an example of the parameters: <br/>
+1. Open the Segment app, select the Connections tab and then select Catalog.
+2. From the Catalog, select the Storage Destinations tab, and select the **AWS S3** destination. 
+3. On the AWS S3 destination page, click the **Configure AWS S3** button. 
+4. Configure your AWS S3 destination. When asked for the bucket name, enter `<YOUR_BUCKET_NAME>/segment-logs/test`. 
+5. Enable the destination, and verify data is received at `<YOUR_BUCKET_NAME>/segment-logs/test/segment-logs`. <br/>**Note:** If the folder receives data, continue to the next step. If you don't see log entries, check the trust relationship document and IAM policy attached to the role.
+6. Create the new AWS S3 destination using the [`create destination`](https://api.segmentapis.com/docs/connections/destinations/#create-destination) call. The `sourceId`, `metadataId`, and `settings` parameters are required. An example of the parameters is below: <br/>
 ```json
 {
  "sourceId": "rh5BDZp6QDHvXFCkibm1pR",
@@ -284,14 +283,14 @@ curl -vvv --location --request PATCH https://api.segmentapis.com/destinations/$D
 ```
 <br/>
 8. Identify the source IDs for your old Amazon S3 destination(s). You can use the public-api to return information about a list of your Amazon S3 destinations or an individual destination. <br/>
-To return a list of all of your Amazon S3 destinations, use the `list desintations` call and filter the results using metadata id `54f418c3db31d978f14aa925` or slug `amazon-s3`: <br/>
+To return a list of all of your Amazon S3 destinations, use the [`list destinations`](https://api.segmentapis.com/docs/connections/destinations/#list-destinations) call and filter the results using metadata id `54f418c3db31d978f14aa925` or slug `amazon-s3`: <br/>
 ```shell
 curl -vvv --location --request GET https://api.segmentapis.com/destinations?pagination.count=1 \
 --header 'Content-Type: application/json' \
   --header 'Authorization: Bearer ...' \
   --data-raw '
 ```
-<br/> To return the information for an individual Amazon S3 destination, use the `get destination` call, using the destination ID for your individual Amazon S3 destination (**Note:** Destination IDs are visible in the Segment app, in the settings for the source.) <br/>
+<br/> To return the information for an individual Amazon S3 destination, use the [`get destination`](https://api.segmentapis.com/docs/connections/destinations/#get-destination) call, using the destination ID for your individual Amazon S3 destination (**Note:** The destination ID for your Amazon S3 source is visible in the Segment app, on the destination's settings page) <br/>
 ```shell
 curl -vvv --location --request GET https://api.segmentapis.com/destinations/$DESTINATION_ID \
 --header 'Content-Type: application/json' \
@@ -319,21 +318,21 @@ curl -vvv --location --request PATCH https://api.segmentapis.com/destinations/$D
 ## Test your migrated source
 You can validate that your configured your migrated source correctly in the Settings section of the AWS S3 destination page in the Segment app. 
 
-> success "Source editing permissions required"
-> In-app source validation is restricted to users with source editing permissions (for example, users with Workspace Owner, Source Admin, or Workspace Admin roles). For more information about roles in the Segment app, please see the [Roles documentation](/docs/segment-app/iam/roles/). 
+> note "Source editing permissions required"
+> In-app source validation is restricted to users with source editing permissions (for example, users with Workspace Owner, Source Admin, or Workspace Admin roles). For more information about roles in the Segment app, see the [Roles documentation](/docs/segment-app/iam/roles/). 
 
 To verify that you migrated your source correctly: 
 1. Open the Segment app and select the AWS S3 destination. 
 2. On the Settings page, verify that your Region, Bucket Name, and IAM Role ARN are all correct. 
 3. Click **Validate.**
-4. A success/failure code appears.
+4. A code indicating if the validation was successful or failed appears. To troubleshoot failed validation codes, see the [Troubleshooting](#troubleshooting) section. 
 
-> note "`dummy-object.txt`"
-> In order to test your bucket, Segment will upload a text file, `dummy-object.txt`, to your `segment-logs` folder. After you've completed the validation process, feel free to delete this file.
+> info "dummy-object.txt"
+> In order to test your bucket, Segment will upload a text file, `dummy-object.txt`, to the `segment-logs` folder in your S3 bucket. After you've completed the validation process, feel free to delete this file.
 
 ### Troubleshooting
 
-The following table outlines some of the error codes the validation tool may display and possible reasons for the error. 
+The following table outlines some of the error codes the validation tool may display and possible reasons for the error. For assistance with correcting any of these error codes, contact [Segment support](mailto:friends@segment.com).
 
 | Error message | Likely cause of the error |
 | ------------- | ------------------------- |
