@@ -506,7 +506,7 @@ import analytics from '@segment/analytics-react-native';
 analytics.setIDFA("123");
 ```
 
-You will also need to set the `trackAdvertising` property to true in your configuration.
+You will also need to set the `trackAdvertising` property to `true` in your configuration.
 
 ```java
 analytics.setup('YOUR_WRITE_KEY', {
