@@ -382,7 +382,7 @@ Copy and paste this URL into the upstream tool or service to send data to this s
 
 ##### What is the retry policy for a webhook payload?
 
-The webhook payload retries up to 5 times with an exponential backoff for the function in the event of a failure with the function. After 5 attempts, the message is dropped.
+The webhook payload retries up to six times with an exponential backoff for the function in the event of a failure with the function. After six attempts, the message is dropped.
 
 ##### What is the maximum payload size for the incoming webhook?
 
