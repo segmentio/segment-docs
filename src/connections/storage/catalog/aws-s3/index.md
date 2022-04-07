@@ -328,7 +328,7 @@ To verify that you migrated your source correctly:
 4. A code indicating if the validation was successful or failed appears. To troubleshoot failed validation codes, see the [Troubleshooting](#troubleshooting) section. 
 
 > info "dummy-object.txt"
-> In order to test your bucket, Segment will upload a text file, `dummy-object.txt`, to the `segment-logs` folder in your S3 bucket. After you've completed the validation process, feel free to delete this file.
+> In order to test your bucket, Segment uploads a text file, `dummy-object.txt`, to the `segment-logs` folder in your S3 bucket. After you've completed the validation process, feel free to delete this file.
 
 ### Troubleshooting
 
