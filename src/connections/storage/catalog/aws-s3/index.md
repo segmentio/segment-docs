@@ -211,7 +211,7 @@ To finish configuration, enable the AWS S3 Destination with IAM Role Support des
 
 ## Migrate existing destinations
 
-You can migrate your existing Amazon S3 destinations to the new AWS S3 destination either [manually](#manually-migrate-an-existing-destination) in the Segment app, or byusing Segment's [Public API](#migrate-an-existing-destination-using-the-public-api). 
+You can migrate your existing Amazon S3 destinations to the new AWS S3 destination either [manually](#manually-migrate-an-existing-destination) in the Segment app, or by using Segment's [Public API](#migrate-an-existing-destination-using-the-public-api). 
 
 ### Manually migrate an existing destination
 
