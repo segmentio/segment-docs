@@ -1,6 +1,17 @@
 # This file is manually generated. When you add or remove an item, add or remove
 # it from the `overrides-list.yml` too.
 items:
+- slug: clevertap
+  id: 5711271880412f644ff13150
+  connection_modes:
+    device:
+      web: true
+      mobile: true
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - slug: criteo-app-web-events
   id: 5787cc5180412f644ff14d7e
   connection_modes:
