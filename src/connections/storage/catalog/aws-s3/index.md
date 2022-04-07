@@ -209,8 +209,11 @@ To finish configuration, enable the AWS S3 Destination with IAM Role Support des
 > info ""
 > Did you know you can create destinations with the Config API? For more information, see [Create Destination](https://reference.segmentapis.com/#51d965d3-4a67-4542-ae2c-eb1fdddc3df6){:target="_blank"}.
 
+## Migrate existing destinations
 
-## Manually migrate an existing destination
+You can migrate your existing Amazon S3 destinations to the new AWS S3 destination either [manually](#manually-migrate-an-existing-destination) in the Segment app, or byusing Segment's [Public API](#migrate-an-existing-destination-using-the-public-api). 
+
+### Manually migrate an existing destination
 
 > warning "Avoid overwriting data"
 > Sending data to the same S3 location from both the existing Amazon S3 destination, and the AWS S3 with IAM Role Support destination will overwrite data in that location. To avoid this, follow the steps below.
@@ -242,7 +245,7 @@ For example:
 
 For each source in the scenario, complete the steps described in [Migrate an existing destination](#migrate-an-existing-destination), and ensure that you have separate IAM Roles and Permissions set for staging and production use.
 
-## Migrate an existing destination using the Public API
+### Migrate an existing destination using the Public API
 This procedure uses Segment's Public API to migrate an existing Amazon S3 destination to the new AWS S3 destination. For more information about the Public API, see the [Public API documentation](https://api.segmentapis.com/docs/guides/#introduction){:target="_blank"}.
 
 > warning "Avoid overwriting data"
