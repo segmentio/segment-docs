@@ -514,7 +514,7 @@ analytics.track('Order Refunded', {
   });
 ```
 
-For partial refunds, you must include the `productId` and quantity for the items refunded:
+For partial refunds, you must include the `order_id` as well as the `productId` and `quantity` for the items refunded:
 
 ```js
 analytics.track('Order Refunded', {
