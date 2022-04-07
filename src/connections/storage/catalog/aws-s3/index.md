@@ -316,7 +316,7 @@ curl -vvv --location --request PATCH https://api.segmentapis.com/destinations/$D
 > You must migrate to the new S3 destination before you disable your legacy destination to ensure Segment continues to deliver data to your S3 bucket. 
 
 ## Test your migrated source
-You can validate that your configured your migrated source correctly in the Settings section of the AWS S3 destination page in the Segment app. 
+You can validate that your configured your migrated source correctly on the AWS S3 destination page in the Segment app. 
 
 > note "Source editing permissions required"
 > In-app source validation is restricted to users with source editing permissions (for example, users with Workspace Owner, Source Admin, or Workspace Admin roles). For more information about roles in the Segment app, see the [Roles documentation](/docs/segment-app/iam/roles/). 
