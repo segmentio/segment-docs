@@ -66,7 +66,7 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 
 ### Video Campaign Reports
 
-Segment doesn't pull "Video Campaign Reports", because the [Google Ads API](https://developers.google.com/google-ads/api/docs/campaigns/overview) doesn't support that report.
+Segment doesn't pull "Video Campaign Reports", because the [Google Ads API](https://developers.google.com/google-ads/api/docs/campaigns/overview){:target="_blank"} doesn't support that report.
 
 
 ## Collection Properties
@@ -84,7 +84,7 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | campaign_id         | ID of the campaign with which this ad group is associated.                                                                 |
 | name                | Name of this ad group.                                                                                                     |
 | received_at         | This timestamp is added to incoming messages as soon as they hit Segment API.                                              |
-| status              | [Status](https://developers.google.com/google-ads/api/reference/rpc/v10/AdGroupStatusEnum.AdGroupStatus) of this ad group. |
+| status              | [Status](https://developers.google.com/google-ads/api/reference/rpc/v10/AdGroupStatusEnum.AdGroupStatus){:target="_blank"} of this ad group. |
 
 ### Ad Performance Report
 
@@ -100,8 +100,8 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | ad_group_id                                            | The ID of the AdGroup.                                                                                                                                                                          |
 | ad_id                                                  | The ID of the Ad.                                                                                                                                                                               |
 | adwords_customer_id                                    | The 10-digit Google Ads Customer ID.                                                                                                                                                            |
-| all_conversion_rate                                    | How often a click on your ad resulted in a conversion.                                                                                                                                          |
-| all_conversion_value                                   | The total value of your conversions, including estimated conversions.                                                                                                                 |
+| all_conversion_rate                                    | How often a click on your ad resulted in a conversion. <br/> **This was previously a percentage, but as of 4/2022, is now a decimal value. For example, a previous value of 75 is now 0.75.**   |
+| all_conversion_value                                   | The total value of your conversions, including estimated conversions. <br/> **This was previously limited to two decimal places, but as of 4/2022, you can now have up to nine values after the decimal.** |
 | all_conversions                                        | Best estimate of the total number of conversions that Google Ads drives. Includes website, cross-device, and phone call conversions.                                                            |
 | average_cost                                           | The average amount you pay per interaction.                                                                                                                                                     |
 | ~~average_position~~                                   | _Deprecated by Google._ Your ad's position relative to those of other advertisers.                                                                                                                                      |
@@ -142,7 +142,7 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | final_mobile_urls   | A list of final mobile landing page urls.                                                                                   |
 | final_urls          | A list of final landing page urls.                                                                                          |
 | received_at         | This timestamp is added to incoming messages as soon as they hit Segment API.                                               |
-| status              | The [status](https://developers.google.com/google-ads/api/reference/rpc/v10/AdGroupAdStatusEnum.AdGroupAdStatus) of the ad. |
+| status              | The [status](https://developers.google.com/google-ads/api/reference/rpc/v10/AdGroupAdStatusEnum.AdGroupAdStatus){:target="_blank"} of the ad. |
 | type                | The type of this ad.                                                                                                        |
 | ~~url~~             | _Deprecated by Google._ Unique identifier for this instance of UrlData.                                                     |
 
@@ -154,9 +154,9 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | end_date            | Date the campaign ends.                                                                                                           |
 | name                | Name of this campaign.                                                                                                            |
 | received_at         | This timestamp is added to incoming messages as soon as they hit Segment API.                                                     |
-| serving_status      | [Serving status](https://developers.google.com/google-ads/api/reference/rpc/v10/CampaignServingStatusEnum.CampaignServingStatus) of the campaign. |
+| serving_status      | [Serving status](https://developers.google.com/google-ads/api/reference/rpc/v10/CampaignServingStatusEnum.CampaignServingStatus){:target="_blank"} of the campaign. |
 | start_date          | Date the campaign begins.                                                                                                         |
-| status              | [Status](https://developers.google.com/google-ads/api/reference/rpc/v10/CampaignStatusEnum.CampaignStatus) of the campaign.       |
+| status              | [Status](https://developers.google.com/google-ads/api/reference/rpc/v10/CampaignStatusEnum.CampaignStatus){:target="_blank"} of the campaign.       |
 
 ### Campaign Performance Report
 
@@ -169,15 +169,15 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | active_view_viewability                                | The percentage of time when your ad appeared on an Active View enabled site (measurable impressions) and was viewable (viewable impressions).                                                   |
 | advertising_channel_sub_type                           | Primary serving target for ads in the campaign.                                                                                                                                                 |
 | adwords_customer_id                                    | The 10-digit Google Ads Customer ID.                                                                                                                                                            |
-| all_conversion_rate                                    | How often a click on your ad resulted in a conversion.                                                                                                                                          |
-| all_conversion_value                                   | The total value of all of your conversions, including those that are estimated.                                                                                                                 |
+| all_conversion_rate                                    | How often a click on your ad resulted in a conversion. <br/> **This was previously a percentage, but as of 4/2022, is now a decimal value. For example, a previous value of 75 is now 0.75.** |
+| all_conversion_value                                   | The total value of all of your conversions, including those that are estimated. <br/> **This was previously limited to two decimal places, but as of 4/2022, you can now have up to nine values after the decimal.** |
 | all_conversions                                        | Best estimate of the total number of conversions that Google Ads drives. Includes website, cross-device, and phone call conversions.                                                            |
 | amount                                                 | The daily budget.                                                                                                                                                                               |
 | average_cost                                           | The average amount you pay per interaction.                                                                                                                                                     |
 | ~~average_position~~                                   | _Deprecated by Google._ Your ad's position relative to those of other advertisers.                                                                                                                                      |
 | average_time_on_site                                   | Total duration of all sessions (in seconds) / number of sessions.                                                                                                                               |
-| base_campaign_id                                       | The ID of base campaign of trial campaigns.                                                                                                                                                     |
-| bounce_rate                                            | Percentage of clicks where the user only visited a single page on your site.                                                                                                                    |
+| base_campaign_id                                       | The ID of base campaign of trial campaigns. <br/> **As of 4/2022, the attribute type has changed from a [`xsd:long`](https://developers.google.com/adwords/api/docs/reference/v201809/CampaignService.Campaign#basecampaignid){:target="_blank"} to a [String (Resource Name)](https://developers.google.com/google-ads/api/reference/rpc/v10/Campaign){:target="_blank"}.**    |
+| bounce_rate                                            | Percentage of clicks where the user only visited a single page on your site. <br/> **This was previously a percentage, but as of 4/2022, is now a decimal value. For example, a previous value of 75 (for example, 75%) is now 0.75.** |
 | budget_id                                              | The ID of the Budget.                                                                                                                                                                           |
 | campaign_id                                            | The ID of the Campaign.                                                                                                                                                                         |
 | campaign_status                                        | The status of the Campaign.                                                                                                                                                                     |
@@ -198,10 +198,10 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | ~~impression_assisted_conversions~~                    | _Deprecated by Google._ Total number of conversions for which this object triggered assist impressions prior to the last click.                                                                                         |
 | ~~impression_reach~~                                   | _Deprecated by Google._ Number of unique cookies that were exposed to your ad over a given time period, or the special value "< 100" if the number of cookies is less than 100.                                         |
 | impressions                                            | Count of how often your ad has appeared on a search results page or website on the Google Network.                                                                                              |
-| interaction_types                                      | The types of interactions that are reflected in the Interactions, InteractionRate, and AverageCost columns.                                                                                     |
+| interaction_types                                      | The types of interactions that are reflected in the Interactions, InteractionRate, and AverageCost columns. <br/> **As of 4/2022, the case of the value changed from Pascal case (`Click`) to [upper case (`CLICK`)](https://developers.google.com/google-ads/api/reference/rpc/v10/InteractionEventTypeEnum.InteractionEventType){:target="_blank"}.** |
 | interactions                                           | The number of interactions. An interaction is the main user action associated with an ad format--clicks for text and shopping ads, views for video ads, and so on.                              |
 | invalid_clicks                                         | Number of clicks Google considers illegitimate and doesn't charge you for.                                                                                                                      |
-| is_budget_explicitly_shared                            | Indicates if the budget is a shared budget (true) or specific to the campaign (false).                                                                                                          |
+| is_budget_explicitly_shared                            | Indicates if the budget is a shared budget (true) or specific to the campaign (false). <br/> **As of 4/2022, the case of the value changed from lowercase (`false`) to Pascal case (`False`).** |
 | url_custom_parameters                                  | Custom URL parameters of the main object of this row.                                                                                                                                           |
 | value_per_all_conversion                               | The value, on average, of all conversions.                                                                                                                                                      |
 | video_quartile_100_rate                                | Percentage of impressions where the viewer watched all of your video.                                                                                                                           |
@@ -227,13 +227,23 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | ~~criteria_parameters~~     | _Deprecated by Google._ Descriptive string for the Criterion.   |
 | date_start                  | The date start formatted as yyyy-MM-dd.                         |
 | date_stop                   | The date stop formatted as yyyy-MM-dd.                          |
-| device                      | Device type where the impression was shown.                     |
+| device                      | Device type where the impression was shown. <br/> **As of 4/2022, the [device values have been updated](https://developers.google.com/google-ads/api/reference/rpc/v10/DeviceEnum.Device){:target="_blank"}.** |
 | gcl_id                      | The Google Click ID.                                            |
 | page                        | Page number in search results where the ad was shown.           |
-| slot                        | The position of the Ad.                                         |
+| slot                        | The position of the Ad. <br/> **As of 4/2022, the [case of the value changed](https://developers.google.com/google-ads/api/reference/rpc/v10/SlotEnum.Slot){:target="_blank"} from PascalCase (`SearchTop`) to upper case snake case (`SEARCH_TOP`).** |
 | user_list_id                | The ID of the UserList (audience).                              |
 
 ### Search Performance Report
+
+> info "Ads API updates"
+> As of 4/2022, in the absence of a value the following fields return `0` or empty strings instead of `null` values:
+> - conversion_category_name:`0`
+> - conversion_name: _empty string_
+> - conversion_tracker_id: _empty string_
+> - cross_device_conversions: `0`
+> - external_conversion_source: `0`
+> - tracking_url_template: _empty string_
+
 
 | Property Name                 | Description                                                                                                                                            |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -267,7 +277,7 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | engagements                   | The number of engagements. An engagement occurs when a viewer expands your Lightbox ad.                                                                |
 | external_conversion_source    | The source of conversion such as website, import from calls.                                                                                           |
 | external_customer_id          | The Customer ID.                                                                                                                                       |
-| final_url                     | Final URL of the impressions.                                                                                                                          |
+| final_url                     | Final URL of the impressions. <br/> **This previously contained the protocol, domain, and path for your URL, but as of 4/2022, now only contains the protocol and domain. For example, a previous value of https://segment.com/docs/ is now https://segment.com/.**                                                                                    |
 | impressions                   | Count of how often your ad has appeared on a search results page or website on the Google Network.                                                     |
 | interaction_rate              | How often people interact with your ad after it is shown to them.                                                                                      |
 | interaction_types             | The types of interactions that are reflected in the Interactions, InteractionRate, and AverageCost columns.                                            |
@@ -277,7 +287,7 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | ~~network_with_search_partners~~  | _Deprecated by Google._ Second level network type (includes search partners).                                                                      |
 | original_ad_id                | -                                                                                                                                                      |
 | query                         | Keyword that triggered the ad.                                                                                                                         |
-| query_match_type_with_variant | Match type of the keyword that triggered the ad, including variants.                                                                                   |
+| query_match_type_with_variant | Match type of the keyword that triggered the ad, including variants. <br/> **As of 4/2022, `query_match_type_with_variant` [doesn't support the following metrics, so they will return a `null` value](https://developers.google.com/google-ads/api/fields/v10/segments#segmentsconversion_action_category){:target="_blank"}:** average_cpv, video_quartile_p100_rate, video_quartile_p25_rate, video_quartile_p50_rate, video_quartile_p75_rate, video_view_rate, video_views |
 | tracking_url_template         | Tracking template of the main object of this row.                                                                                                      |
 | value_per_all_conversion      | The value, on average, of all conversions.                                                                                                             |
 | value_per_conversion          | The total value of your conversions divided by the total number of conversions.                                                                        |
@@ -297,13 +307,13 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | ad_group_id                     | The ID of the AdGroup.                                                                                                               |
 | adwords_customer_id             | The 10-digit Google Ads Customer ID.                                                                                                 |
-| all_conversion_rate             | How often a click on your ad resulted in a conversion.                                                                               |
-| all_conversion_value            | The total value of all of your conversions, including those that are estimated.                                                      |
+| all_conversion_rate             | How often a click on your ad resulted in a conversion. <br/> **This value was previously a percentage, but as of 4/2022, is now a decimal. For example, a previous value of 75 is now 0.75.** |
+| all_conversion_value            | The total value of all of your conversions, including those that are estimated. <br/> **This was previously limited to two decimal places, but as of 4/2022, you can now have up to nine values after the decimal.** |
 | all_conversions                 | Best estimate of the total number of conversions that Google Ads drives. Includes website, cross-device, and phone call conversions. |
 | approval_status                 | Approval status of the criterion.                                                                                                    |
 | average_cost                    | The average amount you pay per interaction.                                                                                          |
 | average_cpc                     | The total cost of all clicks divided by the total number of clicks received.                                                         |
-| average_cpm                     | Average Cost-per-thousand impressions (CPM).                                                                                         |
+| average_cpm                     | Average Cost-per-thousand impressions (CPM). <br/> **This was previously limited to two decimal places, but as of 4/2022, you can now have up to nine values after the decimal.**|
 | average_cpv                     | The average amount you pay each time someone views your ad.                                                                          |
 | average_pageviews               | Average number of pages viewed per session.                                                                                          |
 | ~~average_position~~            | _Deprecated by Google._ Your ad's position relative to those of other advertisers.                                                   |
@@ -313,10 +323,10 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | ~~click_assisted_conversions~~      | _Deprecated by Google._ The total number of conversions for which this keyword, ad, ad group, or campaign contributed to one or more assisted clicks. |
 | clicks                          | The number of clicks.                                                                                                                |
 | conversions                     | The number of conversions for all conversion actions that you have opted into optimization.                                          |
-| cpc_bid                         | Cost per click bid.                                                                                                                  |
-| cpc_bid_source                  | Source of the CPC bid.                                                                                                               |
+| cpc_bid                         | Cost per click bid.  <br/> **This value was [previously one of three units](https://developers.google.com/adwords/api/docs/appendix/reports/keywords-performance-report#cpcbid): a monetary amount in micros, "auto: x" or "auto", but as of 4/2022, is now always a monetary amount in micros.** |
+| cpc_bid_source                  | Source of the CPC bid. <br/> **As of 4/2022, the [ENUM values have been updated](https://developers.google.com/google-ads/api/reference/rpc/v10/BiddingSourceEnum.BiddingSource).** |
 | criteria                        | Descriptive string for the Criterion.                                                                                                |
-| ctr                             | The number of clicks your ad receives (Clicks) divided by the number of times your ad is shown (Impressions).                        |
+| ctr                             | The number of clicks your ad receives (Clicks) divided by the number of times your ad is shown (Impressions). <br/> **This value was previously a percentage, but as of 4/2022, is now a decimal. For example, a previous value of 75 is now 0.75.**  |
 | date_start                      | The date start formatted as yyyy-MM-dd.                                                                                              |
 | date_stop                       | The date stop formatted as yyyy-MM-dd.                                                                                               |
 | ~~impression_assisted_conversions~~ | _Deprecated by Google._ Total number of conversions for which this object triggered assist impressions prior to the last click.  |
