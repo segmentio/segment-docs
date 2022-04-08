@@ -96,7 +96,7 @@ The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/
 
 ### Mobile Data
 
-The Google Analytics 4 Measurement Protocol API is only compatible with web streams. Google requires use of their Firebase SDKs to send mobile data to Google Analytics 4. To assist in your implementation, Segment has a [Firebase destination](/docs/connections/destinations/catalog/firebase) available for mobile analytics. For more information on linking Google Analytics 4 properties to Firebase, see [Google Analytics 4 Firebase integration](https://support.google.com/analytics/answer/9289234?hl=en){:target="_blank"}.
+Google recommends use of their Firebase SDKs to send mobile data to Google Analytics 4. To assist in your implementation, Segment has a [Firebase destination](/docs/connections/destinations/catalog/firebase) available for mobile analytics. For more information on linking Google Analytics 4 properties to Firebase, see [Google Analytics 4 Firebase integration](https://support.google.com/analytics/answer/9289234?hl=en){:target="_blank"}. Segment's Google Analytics 4 destination is currently only compatible with web streams. 
 
 ### User Metrics & Sessions
 
