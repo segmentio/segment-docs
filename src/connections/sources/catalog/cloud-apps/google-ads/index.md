@@ -7,7 +7,14 @@ id: cQ8NOxeApJ
 
 Google Ads is an online advertising service developed by Google. With Google Ads, you can take advantage of online advertising to improve your internet marketing effectiveness. [Visit Website](https://ads.google.com/home/)
 
-If you notice any gaps, outdated information or want to leave some feedback to help improve this documentation, please [contact Segment Support](https://segment.com/help/contact).
+> info "Google Ads Source API Upgrade"
+> In April 2022, Segment upgraded from using the Google AdWords API to the Google Ads API for the Segment Google Ads source. As a result of this change, the API [no longer supports](https://developers.google.com/google-ads/api/docs/reporting/zero-metrics#rows_returned) "Include Zero Impressions." Queries that contain segments (date, product, country, etc.) will no longer return data for rows that have zero metrics. Because all collections reported to Segment contain date segments in their queries, Include Zero Impressions is no longer supported for any collection in the Google Ads source.
+> <br/>In addition, some properties in the following collections have different functionality: 
+> - [Ad Performance Report](#ad-performance-report)
+> - [Campaign Performance Report](#campaign-performance-report)
+> - [Click Performance Report](#click-performance-report)
+> - [Search Performance Report](#search-performance-report)
+> - [Keyword Performance Report](#keyword-performance-report)
 
 ## Getting Started
 
