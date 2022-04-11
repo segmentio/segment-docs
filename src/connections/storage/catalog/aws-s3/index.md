@@ -28,7 +28,9 @@ The Segment Tracking API processes data from your sources, and collects the Even
 
 ## Create a new destination
 
-Complete either [Create an IAM role in the AWS console](#create-an-iam-role-in-the-aws-console) or [Create an IAM role using the AWS CLI](#create-an-iam-role-using-the-aws-cli) to configure the AWS S3 Destination with IAM Role Support.
+Complete either [Create an IAM role in the AWS console](#create-an-iam-role-in-the-aws-console), [Create an IAM role using the AWS CLI](#create-an-iam-role-using-the-aws-cli), or [Configure resources using Terraform](#configure-resources-using-terraform) to set up the AWS S3 Destination with IAM Role Support.
+
+All three setup methods provide a base level of permissions to Segment (for example, the correct IAM role to allow Segment to send data to your S3 bucket). If you want stricter permissions or other custom configurations, you can customize these setup instructions manually.
 
 ### Create an IAM role in the AWS console
 
@@ -190,6 +192,12 @@ To create an S3 IAM role, you must first install and configure the AWS CLI on yo
 > info ""
 > To verify that the IAM role is created, navigate to the AWS console and open the IAM Management Console. On the Permissions tab, verify that there is a `segment-s3-putobject` Permissions policy.
 
+### Configure resources using Terraform
+
+You can use the instructions provided in the open source Terraform module to automate some of the required setup steps for this destination. The setup process for AWS S3 uses Terraform v12.0+. The AWS provider must use v4, which is included in our example `main.tf`.
+
+> note "Support for the AWS S3 Terraform module"
+> If you’re familiar with Terraform, you can modify the module to meet your organization’s needs, however, Segment guarantees support only for the template as provided.
 
 ### Add the AWS S3 with IAM Role Support Destination
 
