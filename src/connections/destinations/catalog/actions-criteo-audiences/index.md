@@ -9,11 +9,13 @@ id:
 
 Criteo Audiences (Actions) enables advertisers to send Segment Persona Audiences to Criteo using Criteo's Audience API.
 
-By using Segment's Persona Audiences with Criteo, you have the opportunity to get traffic and drive conversions from new and existing customers as well as re-engaging existing customers with hyper-relevant ads that promote product discovery.
+By using Segment's Persona Audiences with Criteo, you can increase traffic and drive conversions with hyper-relevant ads that promote product discovery.
 
 ## Benefits of Criteo Audiences (Actions)
 
-This integration creates a direct connection between Segment and Criteo for a higher match rate of email identifiers. Other benefits include:   
+Benefits of the Critero Audiences (Actions) destination include:
+- **Improved email matching**: This integration creates a direct connection between Segment and Criteo for a higher match rate of email identifiers. 
+
 
 - **Fewer settings**: Unlike Criteo's Filter destination, this destination doesn't require any custom copy and paste code. You only need the Advertiser ID and the Criteo API credentials.
 
@@ -27,7 +29,7 @@ This integration creates a direct connection between Segment and Criteo for a hi
 
 ### Prerequisites:
 
-Before connecting to the Criteo Audiences (Actions) destination, you must create a Criteo API Marketing Solutions app to generate your app credentials (client ID and secret) as per the guidelines in [Criteo's Developer's Portal](https://developers.criteo.com/marketing-solutions/docs/onboarding-checklist).  
+Before connecting to the Criteo Audiences (Actions) destination, you must create a Criteo API Marketing Solutions app to generate your app credentials (client ID and secret) as per the guidelines in [Criteo's Developer's Portal](https://developers.criteo.com/marketing-solutions/docs/onboarding-checklist){:target="_blank"}.
 
 You will also need your Criteo Advertiser ID. Please reach out to your Criteo Account Strategist to get this ID.
 
@@ -59,7 +61,7 @@ You will also need your Criteo Advertiser ID. Please reach out to your Criteo Ac
 
 10. Go to your **Personas** space and click the **Audiences** tab. Select the source audience that you want to send to your Criteo Audiences destination.
 
-11. Click **Add Destinations** and select the Criteo Audience destination you created. On the settings that appear on the right-hand side, toggle the **Send Track** option on and disable **Send Identify**. Click **Save**.  
+11. Click **Add Destinations** and select the Criteo Audience destination you created. In the settings that appear on the right-hand side, toggle the **Send Track** option on and disable **Send Identify**. Click **Save**. 
 
 Your Criteo destination is now ready to receive audiences, and your Persona audiences now reflect in your Criteo Advertiser dashboard. Please note that it takes approximately 12-24 hours for the number of identifiers to populate in Criteo's Management Center.
 
