@@ -63,6 +63,9 @@ When you connect Adobe Target Cloud Mode to a Personas space, you will need to s
 
 Profile Attributes can be used in the Adobe Target Audience builder to construct audiences. For example, if you send an audience for `first_time_shopper` to Adobe Target, in the Audience Builder you would select "Visitor Profile" and look for the `first_time_shopper` attribute. Setting the `first_time_shopper` attribute to `true` will replicate the audience for usage in Adobe Target Activities.
 
+> info ""
+> Segment does not set Profile Attributes to `traits` by default to avoid unintentionally sending PII to Adobe Target. [Adobe recommends that PII is hashed](https://experienceleague.adobe.com/docs/core-services/interface/services/customer-attributes/privacy-mac.html?lang=en){:target="_blank"} prior to sending to Adobe so please hash your data upstream if you choose to send PII.
+
 ## Viewing Segment data in Adobe Target
 To view and use your Segment data in Adobe Target, navigate to **Adobe Target > Audiences > Create Audience > Add Rule**.
 
