@@ -338,7 +338,7 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | date_stop                       | The date stop formatted as yyyy-MM-dd.                                                                                               |
 | ~~impression_assisted_conversions~~ | _Deprecated by Google._ Total number of conversions for which this object triggered assist impressions prior to the last click.  |
 | impressions                     | Count of how often your ad has appeared on a search results page or website on the Google Network.                                   |
-| keyword_id                      | ID of the main object of this row.                                                                                                   |
+| keyword_id                      | ID of the main object of this row. **As of April 2022, the format of this value changed from the keyword_id itself to the entire link: for example, a previous value of `10004380` is now `customers/.../adGroupCriteria/39801374490~10004380`** |
 | original_keyword_id             | -                                                                                                                                    |
 
 
