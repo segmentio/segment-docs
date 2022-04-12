@@ -194,7 +194,7 @@ To create an S3 IAM role, you must first install and configure the AWS CLI on yo
 
 ### Create IAM roles using Terraform
 
-You can run the provided Terraform module from your command line to create the IAM roles required for this destination.
+You can run the provided Terraform module from your command line to create the IAM roles required for this destination. This script requires access to Terraform versions v0.12+.
 
 > warning "Support for the AWS S3 Terraform module"
 > If you’re familiar with Terraform, you can modify the module to meet your organization’s needs: however, Segment guarantees support only for the template as provided.
