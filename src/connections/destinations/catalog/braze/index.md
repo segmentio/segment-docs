@@ -102,7 +102,7 @@ To use the latest Braze SDK to collect IDFAs you must do the following:
 
 <!-- LR, Mar2021: this should be a `react-dest` include but Braze was originally called Appboy-->
 
-To add the Braze device-mode SDK to a [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) project using our `1.5.1≤` release:
+To add the Braze device-mode SDK to a [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) project using Segment's `1.5.1≤` release:
 1. Navigate to the root folder of your project, and run a `yarn add appboy` command to add the destination SDK to your project.
 2. Add an `import` statement to your project, as in the example below.
    ```js
