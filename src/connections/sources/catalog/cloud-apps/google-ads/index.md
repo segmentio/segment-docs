@@ -142,6 +142,10 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 
 ### Ads
 
+> note "Returning removed ads"
+> As of April 2022, the Google Ads source uses the Google Ads API, which returns ads with a status of `REMOVED`. Prior to April 2022, `REMOVED` ads were not returned by the default AdWords API. 
+
+
 | Property Name       | Description                                                                                                                 |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | ad_group_id         | The id of the adgroup containing this ad.                                                                                   |
