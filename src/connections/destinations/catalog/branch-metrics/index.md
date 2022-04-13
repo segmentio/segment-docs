@@ -33,7 +33,7 @@ This destination is maintained by Branch. For any issues with the destination, [
 
 <!-- LR, Mar2021: this should be a `react-dest` include but Branch changed their name from Branch-Metrics-->
 
-To add the Branch device-mode SDK to a [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) project:
+To add the Branch device-mode SDK to a [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) project using Segment's `1.5.1≤` release:
 1. Navigate to the root folder of your project, and run a `yarn add branch` command to add the destination SDK to your project.
 2. Add an `import` statement to your project, as in the example below.
    ```js
