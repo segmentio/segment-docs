@@ -75,8 +75,8 @@ The deletion requests tab shows a log of all regulations with a deletion element
 Click a deletion to view its status across Segment and your connected destinations.
 
 > info ""
-> Deletion requests submitted through the [Segment Batch API](https://reference.segmentapis.com/?version=latest#57a69434-76cc-43cc-a547-98c319182247){:target="_blank"} appear in this view.
-
+> Deletion requests submitted through one of Segment's APIs, either [Config API](https://reference.segmentapis.com/?version=latest#57a69434-76cc-43cc-a547-98c319182247){:target="_blank"}
+ or [Public API](https://api.segmentapis.com/docs/connections/deletion-and-suppression/#create-workspace-regulation){:target="_blank"} (the Public API is currently in public beta, and will replace our Config API overtime), appear in this view.
 ## Programmatic User Deletion and Suppression using the API
 
 Use the [Segment Config APIs](https://reference.segmentapis.com/?version=latest#57a69434-76cc-43cc-a547-98c319182247){:target="_blank"} to interact with the User Deletion and Suppression system.
