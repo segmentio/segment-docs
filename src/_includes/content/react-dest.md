@@ -14,7 +14,7 @@ The {{thisDestName}} device-mode destination SDK is only available for {{thisDes
 </p></div></div>
 {%endif%}
 
-To add the {{thisDestName}} device-mode SDK to a [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) project:
+To add the {{thisDestName}} device-mode SDK to a [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) project using Segment's `1.5.1≤` release:
 1. Navigate to the root folder of your project, and run a `yarn add @segment/analytics-react-native-{{thisDestName | downcase | replace: " ", "-" }}{% if thisDestRNspecific %}-{{thisDestRNspecific}}{%endif%}` command to add the destination SDK to your project.
 2. Add an `import` statement to your project, as in the example below.
    ```js
