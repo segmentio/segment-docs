@@ -1,6 +1,8 @@
 ---
 title: PerimeterX Destination
 rewrite: true
+hidden: true
+published: false
 ---
 
 When you enable the PerimeterX destination in the Segment app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading PerimeterX's snippet onto your page. This means you should remove PerimeterX's snippet from your page.
