@@ -4,7 +4,7 @@ rewrite: true
 id: 620ebe78b4e75580b6e6b72a
 ---
 
-[Willow](https://heywillow.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a customer support platform built for early stage startups. We focus on getting your whole team (even engineering) solving issues together with fun commenting/tagging, showing your everything in one place from from customer messages to in-app actions, and showing your entire customer's journey in one continuous feed from day 1 to today.
+[Willow](https://heywillow.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a customer support platform for early stage startups. It focuses on getting your whole team (even engineering) to solve issues together with commenting and tagging, shows you everything in one place from customer messages to in-app actions, and it shows your entire customer's journey in one continuous feed from day one to today.
 
 This destination is maintained by Willow. For any issues with the destination, [contact the Willow Support team](mailto:help@heywillow.io).
 
