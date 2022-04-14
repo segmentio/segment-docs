@@ -44,7 +44,7 @@ Segment sends Screen calls to Willow as a `Viewed Page`.
 
 ### Identify
 
-Send [Identify](/docs/connections/spec/identify) calls to Willow to add traits to the customer. These are viewable in the lifetime view and customer overview. For example:
+Send [Identify](/docs/connections/spec/identify) calls to Willow to add traits to the customer. You can view these in the lifetime view and customer overview. For example:
 
 ```js
 analytics.identify("userId123", {
