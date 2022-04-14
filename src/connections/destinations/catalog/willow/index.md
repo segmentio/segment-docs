@@ -13,11 +13,11 @@ This destination is maintained by Willow. For any issues with the destination, [
 {% include content/connection-modes.md %}
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-2. Search for "Willow" in the Destinations Catalog, and select the "Willow" destination.
-3. Choose which Source should send data to the "Willow" destination.
-4. Select the correct team from your [Willow workspace](https://heywillow.io/a/workspace){:target="\_blank"}.
-5. Go to your team's settings page, select "API Keys", then find and copy the "API key".
-6. Enter the "API Key" in the "Willow" destination settings in Segment.
+2. Search for **Willow** in the Destinations Catalog, and select the **Willow** destination.
+3. Choose which Source should send data to the Willow destination.
+4. Select the team from your [Willow workspace](https://heywillow.io/a/workspace){:target="\_blank"}.
+5. Go to your team's settings page and select **API Keys**, and copy the **API key**.
+6. Enter the **API Key** in the Willow destination settings in Segment.
 ## Supported methods
 
 Willow supports the following methods, as specified in the [Segment Spec](/docs/connections/spec).
