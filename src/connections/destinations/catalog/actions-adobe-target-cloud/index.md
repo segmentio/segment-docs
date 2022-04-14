@@ -7,7 +7,7 @@ published: false
 beta: true
 id: 61aa712b857e8c85c3b5a849
 ---
-Adobe Target is a personalization solution that makes it easy to identify your best content through tests that are easy to execute. So you can deliver the right experience to the right customer. When you have Segment installed, you can make efficient use of your existing tracking implementation by using Segment to fulfill your data collection needs across all your tools that integrate with Segment, including Adobe Target.
+Adobe Target is the A/B testing and personalization component of Adobe Experience Cloud. Segment’s Adobe Target integration enables customers to send data from Segment to Adobe Target to create and update user profiles. You can leverage these profiles in Adobe Target to construct audiences and personalize onsite visitor experiences.
 
 Segment offers two destinations for Adobe Target:
 - [Adobe Target Web](/docs/connections/destinations/catalog/actions-adobe-target-web/)
