@@ -571,7 +571,7 @@ destinations:
     type: MAP
     deprecated: false
     required: false
-    description: "Map values you pass into the context object to [Context Data Variables](https://marketing.adobe.com/resources/help/en_US/sc/implement/context_data_variables.html)
+    description: "Map values you pass into the context object to [Context Data Variables](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/contextdata.html)
       in Adobe Analytics. Then you can use processing rules to map you Context Data
       Variables in Adobe to other variables with Adobe Analytics Processing Rules.
       In the box on the left, put your Segment context key. The box on the right is
