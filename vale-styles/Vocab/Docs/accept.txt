@@ -50,6 +50,7 @@ Kameleoon
 Kissmetrics
 Lightbox
 Littledata
+Mailmodo
 Marketo
 measurability
 middleware
@@ -70,6 +71,7 @@ upsert
 US
 utm
 Vero
+Vidora
 viewability
 WebKit
 Wootric
