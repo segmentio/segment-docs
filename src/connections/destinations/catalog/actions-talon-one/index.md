@@ -2,7 +2,6 @@
 title: Talon.One (Action) Destination
 hide-boilerplate: true
 hide-dossier: false
-hidden: true
 ---
 
 <!-- In the section above, edit the `title` field. For example, Slack (Actions) Destination -->
