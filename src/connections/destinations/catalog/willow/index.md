@@ -64,4 +64,3 @@ analytics.track("Login Button Clicked");
 
 Segment sends Track calls to Willow as a `track` event.
 
----
