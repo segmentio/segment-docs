@@ -4,7 +4,7 @@ rewrite: true
 id: 623a07123d307e60f268a1c2
 ---
 
-[Mailmodo](https://www.mailmodo.com/) is a powerful email marketing tool focused on bringing the interactive experience via AMP framework to emails. It allows businesses to create emails with web page-like interactivity right inside the user inbox, thereby increasing engagement and conversions multi-fold.
+[Mailmodo](https://www.mailmodo.com/){:target="_blank"} is a powerful email marketing tool focused on bringing the interactive experience of the AMP framework to emails. It allows businesses to create emails with web page-like interactivity right inside the user inbox, thereby increasing engagement and conversions multi-fold.
 
 
 This destination is maintained by Mailmodo. For any issues with the destination, [contact the Mailmodo Support team](mailto:help@mailmodo.com).
@@ -39,16 +39,16 @@ analytics.identify('userId12345', {
 });
 ```
 
-Every time you call identify with an email address included, we will:
-1.	First ask Mailmodo if the email exists.
-2.	If the email doesn’t exist, then we will add the user as a Contact to the Mailmodo database and match user properties with the Segment `traits` sent in identify call payload.
-3.	If the email exists, then we will update the user properties for the Contact against the Segment `traits` sent in identify call payload.
+Every time you call identify with an email address included, Mailmodo:
+1.	Verifies that the email exists.
+2.	If the email doesn’t exist, Mailmodo adds the user as a Contact to the Mailmodo database and matches user properties with the Segment `traits` sent in identify call payload.
+3.	If the email exists, Mailmodo updates the user properties for the Contact against the Segment `traits` sent in identify call payload.
 
-All the [special traits](https://segment.com/docs/connections/spec/identify#traits) recognized by Segment will be translated and matched with the Mailmodo user properties for a Contact. These fields will be automatically created or mapped for a Contact in Mailmodo and will be available for personalization and advance segmentation.
+All the [special traits](/docs/connections/spec/identify#traits) recognized by Segment will be translated and matched with the Mailmodo user properties for a Contact. These fields will be automatically created or mapped for a Contact in Mailmodo and will be available for personalization and advance segmentation.
 
-==Please note==
-==1. The email field is required. Identify calls without an email is dropped.==
-==2. If different email addresses are sent against same user id in identify call, then they are treated as two different contacts in Mailmodo.==
+> info "How Mailmodo handles incoming email addresses"
+> 1. The email field is required. Identify calls without an email are dropped.
+> 2. If different email addresses are sent against same user id in identify call, Mailmodo treats them as two different contacts.
 
 ### Track
 If you aren’t familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track) to learn about what it does. An example call would look like:
@@ -62,6 +62,6 @@ analytics.track('Product Viewed', {
   image_url: 'https://www.example.com/product/path.jpg'
 });
 ```
-Segment sends `Track` calls to Mailmodo as a Custom Event. When you call  track, we’ll send the event to Mailmodo with the event name and all properties that you specified.
+Segment sends `Track` calls to Mailmodo as a Custom Event. When you call  track, Segment sends the event to Mailmodo with the event name and all properties that you specified.
 
 Be sure you send an Identify call for any user who will trigger Track calls. If Mailmodo receives a Track call for an unknown userId, the call is dropped.
