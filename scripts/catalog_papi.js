@@ -232,7 +232,7 @@ const updateSources = async () => {
       display_name: source.name,
       slug,
       url,
-      hidden,
+      hidden: isCatalogItemHidden(url),
       regions,
       endpoints,
       source_type: mainCategory,

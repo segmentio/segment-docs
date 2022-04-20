@@ -11,7 +11,7 @@ The guide is broken into three categories of tasks:
 - [Optimization](#optimization): These tasks guide you to expand your data coverage and optimize your workspace.
 
 ## Basics
-The tasks included in Basics help you send and debug your very first data from a [Source](/docs/connections/sources/) (a library that sends data to Segnent), and into a [Destination](/docs/connections/destinations/) (tools you use to analyze or act on your data).
+The tasks included in Basics help you send and debug your very first data from a [Source](/docs/connections/sources/) (a library that sends data to Segment), and into a [Destination](/docs/connections/destinations/) (tools you use to analyze or act on your data).
 
 The Basic tasks include:
 
