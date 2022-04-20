@@ -21,7 +21,7 @@ Segment supports the following Postgres database providers:
 
 This guide explains how to set up a Postgres database with Heroku. Heroku is a cloud-based platform-as-a-service which simplifies the process of setting up and administering a Postgres database.
 
-1. Signup for a Heroku account.
+1. Sign up for a Heroku account.
 
     The first step to setting up Postgres on Heroku is to get a Heroku account. You can sign up for a free account [here](https://signup.heroku.com/identity).
 
@@ -83,77 +83,52 @@ As a supplement to this guide, Amazon has created an official guide to [setting 
 
 3. Select the region you'd like to place the database in.
 
-    In the top right-hand corner of the console, you should see a drop-down with the available AWS regions. For best performance, put the database in the `US West` region.
+    In the top right-hand corner of the console, you should see a drop-down with the available AWS regions. For best performance, put the database in one of the `US West` locations.
 
     <img src="images/rds1.png" width="300">
 
-4. Launch a DB Instance.
+4. Create a new database.
 
-    Go to the **Instances** tab on the left sidebar, and click **Launch DB Instance**.
+    Select the **Databases** tab on the left sidebar, and click **Create database**.
 
-    ![](images/rds2.png)
 
 5. Select the PostgreSQL Engine.
 
-    Click on the PostgreSQL icon and then click **Next**.
+    In the Engine options section, select **PostgreSQL**.
+    <!-- Ask an engineer about what versions of PostgreSQL we support -->
 
-    ![](images/rds3.png)
+6. Select a database template.
 
-6. Select whether or not you'd like to use the database for production purposes.
+    If you anticipate high utilization on your Postgres database, or if downtime is unacceptable, choose **Production**. If you don't plan to have high-utilization of your database or if periods of downtime are acceptable and you know how to recover from them, choose **Dev/Test**.
+    <br/><br/>
+    With the Free tier option, you have up to 750 hours of a Single-AZ db.t2.micro, db.t3.micro, or db.t4g.micro database running PostgreSQL. For more information about the AWS Free Tier with Amazon RDS, see Amazon's [Amazon RDS Free Tier documentation](https://aws.amazon.com/rds/free/).
+    <!--Ask an engineer: will/can the free tier support a Segment integration?>
 
-    There are two differences between the production and non-production options on this screen.
+7. Specify the availability and durability of the database.
 
-    - **Multi-AZ Deployment** means that Amazon will maintain an additional database machine in a separate Availability Zone (AZ). An availability zone is a datacenter that is independent of other availability zones in the same geographic region. In the case of the failure of one of the database machines or availability zone loss, Amazon prevents downtime by automatically transitioning to the other database machine.
+    The deployment options are:
+    <!-- Ask an engineer which one of these options is recommended, or if there are any that aren't supported-->
 
-    **Provisioned IOPS** helps to guarantee the disk I/O performance of a database. Due to the fact that databases often cannot keep all of their data in RAM, they must store some data on disk. When running queries, the database may have to read data from the disk. With Provisioned IOPS, Amazon guarantees that disk will be able to perform a certain number of reads and writes a second.
+    **Multi-AZ DB Cluster:** This option creates a cluster of databases with one primary database and two standby database instances, each in a different Availability Zone (AZ.) This option provides high availability and data redundancy, and increases capacity to serve read workloads. 
 
-    If you anticipate high utilization on your Postgres database, or if downtime is unacceptable, choose **Production**. If you don't plan to have high-utilization of your database or periods of downtime are acceptable and you know how to recover from them, choose **Dev/Test**.
+    **Multi-AZ DB instance:** This option creates two database instances located in different availability zones: one primary instance and once standby instance. This options provides high availability and data redundancy, but doesn't support read workloads.
 
-    After choosing, click **Next**.
+    **Single DB instance:** This option creates a single database instance with no standby instances. 
 
-    ![](images/rds4.png)
+8. Configure the database settings.
 
-7. Specify the DB Details.
+9. Select a DB instance class and class size. 
+    <!--Ask an engineer if a segment integration requires a minimum size here-->
 
-    Enter details about the database in the next screen. If you're not sure about an option, there are some details in this document below, and some tips provided in the sidebar when you edit an option.
-    The instance options are:
+10. Configure the storage options for your database.
 
-    **License Model:** only has one option, so choose the default.
-
-    **DB Engine Version:** specifies the version of Postgres to use. If you aren't sure which version you'd like to use, the default is fine.
-
-    **DB Instance Class:** selects the machine your database will run on. If you're not sure what DB instance class is suitable for your database, check the [DB Instance Classes chart ](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html)and the [Pricing Page](http://aws.amazon.com/rds/pricing/).
-
-    **Multi-AZ Deployment:** whether or not you want a backup machine on standby. The pricing is equivalent to running two instances.
-
-    **Storage Type:** specifies the type of disk you'd like to use for the instance. From the sidebar information:
-
-      - General Purpose (SSD)storage is suitable for a broad range of database workloads. Provides baseline of 3 IOPS/GB and ability to burst to 3,000 IOPS.
-      - Provisioned IOPS (SSD)storage is suitable for I/O-intensive database workloads. Provides flexibility to provision I/O ranging from 1,000 to 30,000 IOPS.
-      - Magnetic storage may be used for small database workloads where data is accessed less frequently.
-
-    Provisioned IOPS allows you to specify what performance guarantees you'd like on disk I/O.
-
-    ![](images/rds5.png)
-
-    The database settings are:
-
-    **DB Instance Identifier** is a unique identifier for the database. The ID must be unique for your account in a single region.
-
-    **Master Username** is the username you will use to log in to the instance.
-
-    **Master Password** is a password that is 8 to 128 ASCII characters long that doesn't contain the characters /, ", or @.
-
-    When you're done entering your settings, click **Next Step**.
-    ![](images/rds6.png)
-
-8. Configure the advanced settings
+11. Set up the connectivity options for your database.
 
     The options for Network & Security are:
 
-      - **VPC** specifies the Virtual Private Cloud you want the servers to reside in. If you have previously set up a VPC that you want the database in, select it here. If you aren't sure or don't have a VPC set up, select Create New VPC
-      - **Subnet Group** specifies the subnets that the DB instances can use in the VPC. If you're not sure, select Create new DB Subnet Group
-      - **Publicly Accessible** specifies whether your DB instances are internet-addressable. This option must be set to Yes.
+      - **VPC** specifies the Virtual Private Cloud you want the servers to reside in. If you have previously set up a VPC that you want the database in, select it here. If you aren't sure or don't have a VPC set up, select **Create New VPC**. You cannot change the VPC after creating your database.
+      - **Subnet group** specifies the subnets that the DB instances can use in the VPC. If you're not sure, select **Create new DB Subnet Group**.
+      - **Publicly access** specifies whether your DB instances are internet-addressable. This option must be set to Yes.
       - **Availability Zone** specifies which availability zone you want the instances to reside in. If you have a preference, you can set it here, else leave it on the No Preference default.
       - **VPC Security Groups** specify traffic rules concerning what traffic can leave the instances and what traffic can arrive at the instance. Unless you've previously made a security group specifically for DB instances, it's best to create a new one.
 
