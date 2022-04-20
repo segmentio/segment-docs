@@ -299,7 +299,7 @@ sections:
   - path: /personas/profile-api
     title: Profile API
   - path: /personas/debugger
-    title: Personas Space Debugger
+    title: Personas Source Debugger
   - path: /personas/personas-gdpr
     title: Personas and GDPR
   - path: /personas/faqs

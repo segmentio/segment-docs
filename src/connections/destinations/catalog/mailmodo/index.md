@@ -64,6 +64,4 @@ analytics.track('Product Viewed', {
 ```
 Segment sends `Track` calls to Mailmodo as a Custom Event. When you call  track, we’ll send the event to Mailmodo with the event name and all properties that you specified.
 
-==Be sure you send an Identify call for any user who will trigger Track calls. If Mailmodo receives a Track call for an unknown userId, the call is dropped.==
-
----
+Be sure you send an Identify call for any user who will trigger Track calls. If Mailmodo receives a Track call for an unknown userId, the call is dropped.
