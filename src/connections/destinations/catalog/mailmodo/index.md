@@ -62,6 +62,6 @@ analytics.track('Product Viewed', {
   image_url: 'https://www.example.com/product/path.jpg'
 });
 ```
-Segment sends `Track` calls to Mailmodo as a Custom Event. When you call  track, Segment sends the event to Mailmodo with the event name and all properties that you specified.
+Segment sends `Track` calls to Mailmodo as a Custom Event. When you call track, Segment sends the event to Mailmodo with the event name and all properties that you specified.
 
 Be sure you send an Identify call for any user who will trigger Track calls. If Mailmodo receives a Track call for an unknown userId, the call is dropped.
