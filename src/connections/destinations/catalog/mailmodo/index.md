@@ -40,7 +40,7 @@ analytics.identify('userId12345', {
 ```
 
 Every time you make an identify call with an email address included:
-1.	Verifies that the email exists.
+1.	Mailmodo verifies that the email exists.
 2.	If the email doesn’t exist, Mailmodo adds the user as a Contact to the Mailmodo database and matches user properties with the Segment `traits` sent in identify call payload.
 3.	If the email exists, Mailmodo updates the user properties for the Contact against the Segment `traits` sent in identify call payload.
 
