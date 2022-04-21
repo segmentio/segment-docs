@@ -18,6 +18,7 @@ Adwords
 allowlist
 Amberflo
 Appboy
+Appsflyer
 blocklist
 boolean
 Chargebee
@@ -50,6 +51,7 @@ Kameleoon
 Kissmetrics
 Lightbox
 Littledata
+Mailmodo
 Marketo
 measurability
 middleware
@@ -70,6 +72,7 @@ upsert
 US
 utm
 Vero
+Vidora
 viewability
 WebKit
 Wootric
