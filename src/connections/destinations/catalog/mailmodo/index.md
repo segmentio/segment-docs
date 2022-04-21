@@ -51,7 +51,7 @@ All the [special traits](/docs/connections/spec/identify#traits) recognized by S
 > * If different email addresses are sent against the same user ID in identify call, Mailmodo treats them as two different contacts.
 
 ### Track
-If you aren’t familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track) to learn about what it does. An example call would look like:
+Take a look at the [Track method documentation](/docs/connections/spec/track) to learn about what it does. An example call looks like:
 
 ```js
 analytics.track('Product Viewed', {
