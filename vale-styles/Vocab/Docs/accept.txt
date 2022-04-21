@@ -70,6 +70,7 @@ upsert
 US
 utm
 Vero
+Vidora
 viewability
 WebKit
 Wootric
