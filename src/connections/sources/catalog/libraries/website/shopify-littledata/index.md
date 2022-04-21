@@ -43,7 +43,7 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 2. Go the [Shopify app store listing](https://apps.shopify.com/segment-com-by-littledata){:target="_blank"} for **_Segment.com by Littledata_**.
    ![](images/Nd5L0C6.png)
 3. Click **Add app** to begin the installation process.
-4. **Choose a Littledata subscription** suitable for your store's volume of monthly orders
+4. **Choose a Littledata subscription** suitable for your store's volume of monthly orders.
 5. Add the [**Segment write key**](/docs/connections/find-writekey/) for the source that is going to send data in the **input field**.
    ![](images/eLUh6GF.png)
 6. Choose either an **Automatic**, a **Manual**, or a **Headless** install. _Automatic installs work in most instances, but if you choose to do a manual install, just follow [this guide](https://blog.littledata.io/help/posts/segment-installation-guide/){:target="_blank"}._
