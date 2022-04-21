@@ -10,7 +10,7 @@ hide-dossier: true
 {% include content/plan-grid.md name="actions" %}
 
 <!-- Include a brief description of the destination here, along with a link to your website. -->
-[Close](https://close.com/) is the inside sales CRM of choice for startups and SMBs.
+[Close](https://close.com/){:target="_blank"} is the inside sales CRM of choice for startups and small and midsize businesses (SMBs.)
 
 
 <!-- This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component. -->
