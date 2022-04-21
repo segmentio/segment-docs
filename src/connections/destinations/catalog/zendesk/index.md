@@ -123,7 +123,7 @@ analytics.track('Article Completed', {
 ```
 
 > warning ""
-> You must have a Zendesk [Sunshine plan](https://www.zendesk.com/pricing/?variant=a#platform) to make track calls.
+> You must have a Zendesk [Sunshine plan](https://www.zendesk.com/pricing/?variant=a#platform){:target="blank"} to make track calls.
 
 When you make a Track call, Segment sends data about the user's activity to Zendesk.
 
