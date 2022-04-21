@@ -47,7 +47,7 @@ Every time you make an identify call with an email address included:
 All the [special traits](/docs/connections/spec/identify#traits) recognized by Segment are translated and matched with the Mailmodo user properties for a Contact. These fields are automatically created or mapped for a Contact in Mailmodo and are available for personalization and advance segmentation.
 
 > info "How Mailmodo handles incoming email addresses"
-> 1. The email field is required. Identify calls without an email are dropped.
+> * The email field is required. Mailmodo drops identify calls without an email.
 > * If different email addresses are sent against the same user ID in identify call, Mailmodo treats them as two different contacts.
 
 ### Track
