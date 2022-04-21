@@ -44,7 +44,7 @@ Every time you make an identify call with an email address included:
 2.	If the email doesn’t exist, Mailmodo adds the user as a contact to the Mailmodo database and matches user properties with the Segment `traits` sent in the identify call payload.
 3.	If the email exists, Mailmodo updates the user properties for the Contact against the Segment `traits` sent in the identify call payload.
 
-All the [special traits](/docs/connections/spec/identify#traits) recognized by Segment will be translated and matched with the Mailmodo user properties for a Contact. These fields will be automatically created or mapped for a Contact in Mailmodo and will be available for personalization and advance segmentation.
+All the [special traits](/docs/connections/spec/identify#traits) recognized by Segment are translated and matched with the Mailmodo user properties for a Contact. These fields are automatically created or mapped for a Contact in Mailmodo and are available for personalization and advance segmentation.
 
 > info "How Mailmodo handles incoming email addresses"
 > 1. The email field is required. Identify calls without an email are dropped.
