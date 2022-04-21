@@ -25,7 +25,7 @@ During the [installation process](https://blog.littledata.io/help/posts/segment
 During the Segment connection setup, Littledata also adds a set of webhooks to your Shopify store. When a customer interacts with your store these changes are relayed server-side from Shopify to Littledata to Segment. The advantages to this approach are:
 
 - 100% event capture for adds to cart, checkout steps, sales and refunds/returns
-- Customer data (e.g. email) securely relayed server-side
+- Customer data (for example, email) securely relayed server-side
 - No extra scripts on the sensitive and secure checkout pages
 - Accurate marketing attribution, even when customers use ad-blockers or cookie opt-outs
 - Supports cloud-mode destinations such as [Facebook Conversions API](/docs/connections/destinations/catalog/actions-facebook-conversions-api/)
