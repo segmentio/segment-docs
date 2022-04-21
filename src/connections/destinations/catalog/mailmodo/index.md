@@ -48,7 +48,7 @@ All the [special traits](/docs/connections/spec/identify#traits) recognized by S
 
 > info "How Mailmodo handles incoming email addresses"
 > 1. The email field is required. Identify calls without an email are dropped.
-> 2. If different email addresses are sent against same user id in identify call, Mailmodo treats them as two different contacts.
+> * If different email addresses are sent against the same user ID in identify call, Mailmodo treats them as two different contacts.
 
 ### Track
 If you aren’t familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track) to learn about what it does. An example call would look like:
