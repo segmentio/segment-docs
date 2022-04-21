@@ -3,7 +3,6 @@ title: Adobe Target Web Destination
 hide-boilerplate: true
 hide-dossier: false
 hidden: true
-published: false
 beta: true
 id: 61fc2ffcc76fb3e73d85c89d
 ---
