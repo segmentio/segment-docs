@@ -4,7 +4,7 @@ title: AppsFlyer Destination
 id: 54521fd525e721e32a72ee8f
 hide-personas-partial: true
 ---
-[AppsFlyer](https://www.appsflyer.com/) is the world's leading mobile attribution & marketing analytics platform, helping app marketers around the world make better decisions. The AppsFlyer destination code is open-source. You can browse the code on GitHub for [iOS](https://github.com/AppsFlyerSDK/segment-appsflyer-ios) and [Android](https://github.com/AppsFlyerSDK/AppsFlyer-Segment-Integration).
+[AppsFlyer](https://www.appsflyer.com/){:target="blank"} is the world's leading mobile attribution & marketing analytics platform, helping app marketers around the world make better decisions. The AppsFlyer destination code is open-source. You can browse the code on GitHub for [iOS](https://github.com/AppsFlyerSDK/segment-appsflyer-ios){:target="blank"} and [Android](https://github.com/AppsFlyerSDK/AppsFlyer-Segment-Integration){:target="blank"}.
 
 Segment's Appsflyer destination code is open source and available on GitHub. You can view these repositories:
 - [Android](https://github.com/AppsFlyerSDK/appsflyer-segment-android-plugin){:target="_blank"}
@@ -19,7 +19,7 @@ Segment's Appsflyer destination code is open source and available on GitHub. You
   1. From the Segment web app, click **Catalog**.
   2. Search for "AppsFlyer" in the Catalog, select it, and choose which of your sources to connect the destination to.
   3. In the destination settings, enter your `AppsFlyer Dev Key`, which can be retrieved from the App Settings section of your AppsFlyer account.
-  4. Follow the instructions in the GitHub repositories: [iOS SDK](https://github.com/AppsFlyerSDK/segment-appsflyer-ios) and [Android SDK](https://github.com/AppsFlyerSDK/AppsFlyer-Segment-Integration).
+  4. Follow the instructions in the GitHub repositories: [iOS SDK](https://github.com/AppsFlyerSDK/segment-appsflyer-ios){:target="blank"} and [Android SDK](https://github.com/AppsFlyerSDK/AppsFlyer-Segment-Integration){:target="blank"}.
   5. After you build and release to the app store, Segment starts translating and sending your data to AppsFlyer automatically.
 
 **Important:** If you plan on using the server-side destination for an Android project, make sure to enter your **Android App ID**. If you are using only the mobile SDK, Android projects only require the **AppsFlyer Dev Key**. iOS projects always require both the **AppsFlyer Dev Key** and the **Apple App ID**. Also, note that if you do use the server-side destination, you will not be able to selectively disable calls sent to AppsFlyer using your Segment dashboard.
@@ -98,7 +98,7 @@ When you call `track`, Segment translates it automatically and sends the event 
 
 Segment includes all the event properties as callback parameters on the AppsFlyer event, and automatically translate `properties.revenue` to the appropriate AppsFlyer purchase event properties based on the spec'd properties.
 
-Finally, Segment uses AppsFlyer's `transactionId` deduplication when you send an an `orderId` (see the [e-commerce spec](/docs/connections/spec/ecommerce/v2/)).
+Finally, Segment uses AppsFlyer's `transactionId` deduplication when you send an `orderId` (see the [e-commerce spec](/docs/connections/spec/ecommerce/v2/)).
 
 ### Server
 
@@ -142,7 +142,7 @@ analytics.track({
 Finally, the server-side component will look for the following `properties` and handle them specially:
 
 - `ip` (this should be the `ip` of your customer--this is not collected by Segment's libraries out-of-the-box)
-- `timestamp` (refer to AppsFlyer's docs on [how they process timestamps](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-). Since the libraries generate a [timestamp](/docs/connections/spec/common/#timestamps), Segment always sets this value)
+- `timestamp` (refer to AppsFlyer's docs on [how they process timestamps](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-){:target="blank"}. Since the libraries generate a [timestamp](/docs/connections/spec/common/#timestamps), Segment always sets this value)
 - `currency` (defaults to `"USD"`)
 - `revenue` (For `Order Completed` events, precedence is given to `total`, falling back to `properties.revenue`)
 
