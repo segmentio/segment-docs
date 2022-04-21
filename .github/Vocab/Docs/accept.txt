@@ -18,6 +18,7 @@ Adwords
 allowlist
 Amberflo
 Appboy
+Appsflyer
 blocklist
 boolean
 Chargebee
