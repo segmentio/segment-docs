@@ -14,7 +14,7 @@ Littledata is available as an independent [Shopify App](https://apps.shopify.com
 
 During the [installation process](https://blog.littledata.io/help/posts/segment-installation-guide/), Littledata adds a `LittledataLayer.liquid` snippet to all pages (included in `theme.liquid`) on your Shopify store. The benefits of this approach include:
 
-- Segment's analytics.js V1 library is loaded on all pages, except for the checkout
+- Segment's Analytics.js 2.0 library is loaded on all pages, except for the checkout
 - Includes a LittledataLayer data layer for all pages
 - Loads a minified tracking script, hosted on a content delivery network (CDN)
 - Enables sending of device-mode ecommerce events to all Segment destinations
@@ -28,14 +28,14 @@ During the Segment connection setup, Littledata also adds a set of webhooks to y
 - Customer data (e.g. email) securely relayed server-side
 - No extra scripts on the sensitive and secure checkout pages
 - Accurate marketing attribution, even when customers use ad-blockers or cookie opt-outs
-- Supports cloud-mode destinations such as [Facebook Conversions API](/docs/connections/destinations/catalog/facebook-pixel-server-side/)
+- Supports cloud-mode destinations such as [Facebook Conversions API](/docs/connections/destinations/catalog/actions-facebook-conversions-api/)
 
 Here's an architecture diagram that shows how the Littledata app mediates data flow between Shopify and Segment.
 
 ![](images/littledata_arch.png)
 
 > warning "Note"
-> This integration is maintained by Littledata _and is not supported by Segment directly_. The Littledata app has been reviewed by the Segment team for conformance with Segment's [E-Commerce Spec](/docs/connections/spec/ecommerce/v2/), and is the recommended way of using Segment with Shopify. However, it does require a paid subscription with Littledata, who mediates the connection between Shopify and Segment. [Contact the Littledata Support team](mailto:support@littledata.io) with any questions.
+> This integration is maintained by Littledata _and is not supported by Segment directly_. The Littledata app has been reviewed by the Segment team for conformance with Segment's [E-Commerce Spec](/docs/connections/spec/ecommerce/v2/), and is the recommended way of using Segment with Shopify. However, it does require a paid subscription with Littledata, who mediates the connection between Shopify and Segment. [Contact the Littledata Support team](mailto:help@littledata.io) with any questions.
 
 ## Getting Started
 
@@ -43,12 +43,12 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 2. Go the [Shopify app store listing](https://apps.shopify.com/segment-com-by-littledata){:target="_blank"} for **_Segment.com by Littledata_**.
    ![](images/Nd5L0C6.png)
 3. Click **Add app** to begin the installation process.
-4. **Sign up** for a Littledata account using an email address, Google login or Facebook login. _More team members can be added to the subscription after completing the installation process._
+4. **Choose a Littledata subscription** suitable for your store's volume of monthly orders
 5. Add the [**Segment write key**](/docs/connections/find-writekey/) for the source that is going to send data in the **input field**.
    ![](images/eLUh6GF.png)
-6. Choose either an **Automatic** or a **Manual** install. _Automatic installs work in most instances, but if you choose to do a manual install, just follow [this guide](https://blog.littledata.io/help/posts/segment-installation-guide/){:target="_blank"}._
+6. Choose either an **Automatic**, a **Manual**, or a **Headless** install. _Automatic installs work in most instances, but if you choose to do a manual install, just follow [this guide](https://blog.littledata.io/help/posts/segment-installation-guide/){:target="_blank"}._
    ![](images/iYM76VI.png)
-7. Segment's **analytics.js** library, Littledata **tracking script** and **webhooks** will be automatically applied to the store and the installation process will then be complete.
+7. Segment's **Analytics.js** library, Littledata **tracking script** and **webhooks** will be automatically applied to the store and the installation process will then be complete.
    ![](images/kvjNx4M.png)
 
 ## Event schema
@@ -233,6 +233,8 @@ Each item in the `products` array, or Product Viewed and Product Added events, w
 ## Import all orders
 
 With an [annual Littledata Plus plan](https://www.littledata.io/app/enterprise){:target="_blank"} you can import all Shopify orders and refunds from before you started using Segment, to sync with destinations that support timestamped events (for example, a data warehouse). This enables you to build a complete customer history in your chosen destination.
+
+This data import will include all the [event properties](#event-properties) usually sent with an `Order Completed` event, including the [customer traits](#identify-calls).
 
 ## Advanced settings
 
