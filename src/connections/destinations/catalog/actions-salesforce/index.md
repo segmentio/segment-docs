@@ -10,8 +10,8 @@ Segment’s Salesforce (Actions) destination allows you to create, update or ups
 > info ""
 > The Salesforce (Actions) destination is in beta and is in active development. Some functionality may change before it becomes generally available.
 
-> success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Salesforce destination. There's also a page about the [non-Actions Salesforce destination](/docs/connections/destinations/catalog/salesforce/). Both of these destinations receive data _from_ Segment.
+> success "Good to know"
+> This page is about the [Actions-framework](/docs/connections/destinations/actions/) Salesforce destination. There's also a page about the [non-Actions Salesforce destination](/docs/connections/destinations/catalog/salesforce/). Both of these destinations receive data _from_ Segment.
 
 ## Benefits of Salesforce (Actions) Destination vs Salesforce Destination Classic
 

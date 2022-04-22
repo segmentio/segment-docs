@@ -14,8 +14,8 @@ Segment offers two destinations for Adobe Target:
 > info ""
 > The Adobe Target Cloud Mode destination is in beta and is in active development. Some functionality may change before it becomes generally available.
 
-> success ""
-> **Good to know**: This page is about Segment's Adobe Target Cloud Mode destination. There's also a page about Segment's [Adobe Target Web destination](/docs/connections/destinations/catalog/actions-adobe-target-web/). **In order to use Adobe Target Cloud Mode, you must have a parallel web integration with Adobe Target as profiles can only be created by the Adobe Target `at.js` web script.**
+> success "Good to know"
+> This page is about Segment's Adobe Target Cloud Mode destination. There's also a page about Segment's [Adobe Target Web destination](/docs/connections/destinations/catalog/actions-adobe-target-web/). **In order to use Adobe Target Cloud Mode, you must have a parallel web integration with Adobe Target as profiles can only be created by the Adobe Target `at.js` web script.**
 
 ## Getting started
 
@@ -77,7 +77,7 @@ Adobe Target Audiences can be used in Activities, such as A/B Testing and Experi
 
 ## FAQ
 ### Why am I getting a `Profile Not Found` error?
-The Adobe Target API can only be used for profile updates. Profiles must be created on the web first, either using Segment’s [Adobe Target Web destination](/docs/connections/destinations/catalog/actions-adobe-target-web/) or a native implementation of `at.js`. Please ensure you are creating profiles on the web first.
+The Adobe Target API can only be used for profile updates. You must first create profiles on the web by using either Segment’s [Adobe Target Web destination](/docs/connections/destinations/catalog/actions-adobe-target-web/) or a native implementation of `at.js`. Please ensure you create profiles on the web first.
 
 Segment’s Adobe Target Web destination sends data in realtime, but it may take up to 1-hour for a user to be available via the Adobe Target API. This means you may see delivery errors for `Profile Not Found` in Adobe Target Cloud Mode until the profile is available for API updates.
 
