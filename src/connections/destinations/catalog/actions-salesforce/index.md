@@ -8,7 +8,7 @@ id: 61957755c4d820be968457de
 Segment’s Salesforce (Actions) destination allows you to create, update or upsert records for any object type. Segment sends data to the [Salesforce REST API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_rest.htm){:target="_blank"}. 
 
 > info ""
-> This document is about a feature which is in beta. This means that the Salesforce (Actions) destination is in active development, and some functionality may change before it becomes generally available.
+> The Salesforce (Actions) destination is in beta and is in active development. Some functionality may change before it becomes generally available.
 
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Salesforce destination. There's also a page about the [non-Actions Salesforce destination](/docs/connections/destinations/catalog/salesforce/). Both of these destinations receive data _from_ Segment.

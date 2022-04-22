@@ -12,7 +12,7 @@ Segment offers two destinations for Adobe Target:
 - [Adobe Target Cloud Mode](/docs/connections/destinations/catalog/actions-adobe-target-cloud/)
 
 > info ""
-> This document is about a feature which is in beta. This means that the Adobe Target Cloud Mode destination is in active development, and some functionality may change before it becomes generally available.
+> The Adobe Target Cloud Mode destination is in beta and is in active development. Some functionality may change before it becomes generally available.
 
 > success ""
 > **Good to know**: This page is about Segment's Adobe Target Cloud Mode destination. There's also a page about Segment's [Adobe Target Web destination](/docs/connections/destinations/catalog/actions-adobe-target-web/). **In order to use Adobe Target Cloud Mode, you must have a parallel web integration with Adobe Target as profiles can only be created by the Adobe Target `at.js` web script.**
