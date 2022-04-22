@@ -123,15 +123,17 @@ analytics.track('Article Completed', {
 ```
 
 > info ""
-> You must have a Zendesk [Sunshine plan](https://www.zendesk.com/pricing/?variant=a#platform) to make track calls.
+> You must have a Zendesk [Sunshine plan](https://www.zendesk.com/pricing/?variant=a#platform){:target="blank"} to make track calls.
 
 When you make a Track call, Segment sends data about the user's activity to Zendesk.
 
-Segment will only send `track` events when the following two conditions are met:
-
-1. The call is listed in the "Events" setting.
+Segment only sends `track` events when the following two conditions are met:
+1. The call is listed in the **Events** setting.
 2. A `userId` is included.
   - **Note:** If the `userId` doesn't match any existing users in Zendesk, the destination returns an error.
+
+> warning ""
+> The Zendesk destination Event Tester doesn't work for Track events and only sends the initial GET request. Even if the user ID doesn't match an existing user in Zendesk, it results in a 200 response.
 
 **Mapping Users to an Email**: To map a Segment track event to a Zendesk Sunshine event by email, add the user's email address in the Track call as `properties.email`. This allows Zendesk to tie the event to the user. If there is no `properties.email`, Segment sends the `userId` as `external_id`. If the email is provided in the track call, a javascript call may look like the example below.
 
@@ -144,8 +146,10 @@ analytics.track('Article Completed', {
   }
 });
 ```
+
 > warning "Zendesk API Limit"
 > Track calls to Zendesk must reference a user identifier of less than 61 characters. While you may create a user with an identifier of greater than 60 characters, track calls that reference that user return a 400 error. This is due to a limitation in the Zendesk Sunshine API.
+
 ## Group
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
