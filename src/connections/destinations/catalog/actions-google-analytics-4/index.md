@@ -12,8 +12,8 @@ When you have Segment installed, you can use your existing tracking implementati
 > warning ""
 > You won't be able to see user data or realtime data in your Google Analytics 4 instance, as Google's API is [in beta](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/limitations){:target="_blank"} and hasn't added session support. You can contact Google for more information.  
 
-> success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Google Analytics 4 destination. There's also a page about the [non-Actions Google Universal Analytics destination](/docs/connections/destinations/catalog/google-analytics/). Both of these destinations receive data _from_ Segment.
+> success "Good to know"
+> This page is about the [Actions-framework](/docs/connections/destinations/actions/) Google Analytics 4 destination. There's also a page about the [non-Actions Google Universal Analytics destination](/docs/connections/destinations/catalog/google-analytics/). Both of these destinations receive data _from_ Segment.
 
 ## Benefits of Google Analytics 4
 
@@ -69,8 +69,9 @@ In addition to recommended events, you can also send custom events using the [Cu
 > Google Analytics 4 requires that all event names contain only alpha-numeric characters and underscores, and must start with an alphabetic character. Segment replaces spaces in Event Names with an underscore, so that these events are accepted by GA4. For example, Segment renames an event named `Home Profile` to `Home_Profile`. In some cases, GA4 may reject an event outright, due to unsupported characters. For example, an event named `Home | Profile` will be silently rejected due to the pipe character.
 > 
 > In all cases, event names in GA4 are case sensitive. The Custom Event action includes a **Lowercase Event Name** option, to ensure consistency of all events sent to Google. For more information, see Google's articles [Google Analytics 4 event name rules](https://support.google.com/analytics/answer/10085872?hl=en&ref_topic=9756175#event-name-rules){:target='_blank'} and [Event name limitations](https://developers.google.com/analytics/devguides/collection/protocol/ga4/sending-events?client_type=firebase){:target="_blank"}
+
 #### Custom Dimensions & Metrics
-With Google Analytics 4, you must create custom dimensions and metrics within the Google Analytics 4 interface and link parameters to the corresponding dimension or metric. When creating the dimension or metric, you can either select a parameter from the list of already collected fields or enter the name of the parameter you plan to collect in the future. To send parameters to Google Analytics 4, use the Event Parameters object available on every action.
+With Google Analytics 4, you must create custom dimensions and metrics within the Google Analytics 4 interface and link parameters to the corresponding dimension or metric. When creating the dimension or metric, you can either select a parameter from the list of already collected fields or enter the name of the parameter you plan to collect in the future. Custom dimensions can be either event-scoped or user-scoped; custom metrics must always be event-scoped. To send parameters to Google Analytics 4, use the Event Parameters or User Properties object available on every action.
 
 To achieve parity with Universal Analytics, you will probably want to create the same custom dimensions that you defined in Universal Analytics. Additionally, many of the values that you tracked as event dimensions in Universal Analytics, particularly event category and event label, should be recreated in Google Analytics 4 as custom dimensions. For more information, see Google’s [Google Analytics 4 Custom dimensions and metrics](https://support.google.com/analytics/answer/10075209){:target='_blank'}.
 
