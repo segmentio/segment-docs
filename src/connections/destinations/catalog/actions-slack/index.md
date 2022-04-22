@@ -3,13 +3,16 @@ title: Slack (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
 id: 5f7dd8e302173ff732db5cc4
+redirect_from:
+  - '/connections/destinations/catalog/vendor-slack'
+versions:
+  - name: Slack (Classic)
+    link: /docs/connections/destinations/slack
 ---
 {% include content/plan-grid.md name="actions" %}
 
 [Slack](https://www.slack.com){:target="_blank"} is a team collaboration tool work flows. It’s where the people you need, the information you share, and the tools you use come together to get things done.
 
-> success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Slack Segment destination. There's also a page about the [non-Actions Slack destination](/docs/connections/destinations/catalog/slack/). Both of these destinations receives data from Segment. 
 
 ## Benefits of Slack (Actions) vs Slack Classic
 

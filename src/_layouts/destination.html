@@ -10,7 +10,11 @@ layout: integration
   {{destination-dossier | markdownify}}
 
 {% endif %}
-  
+
+{% if page.versions %}
+{% include content/actions-classic.md %}
+
+{% endif %}
   
 
 {% if page.maintenance == true %}
