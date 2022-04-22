@@ -17,7 +17,7 @@ Segment supports the following Postgres database providers:
 > warning ""
 > Segment supports only these Postgres databases. Postgres databases from other providers are not guaranteed to work. For questions or concerns, contact [Segment Support](https://segment.com/help/contact){:target="_blank"}
 
-### Heroku Postgres
+## Heroku Postgres
 
 This guide explains how to set up a Postgres database with Heroku. Heroku is a cloud-based platform-as-a-service which simplifies the process of setting up and administering a Postgres database.
 
@@ -67,7 +67,7 @@ This guide explains how to set up a Postgres database with Heroku. Heroku is a c
 
     ![](images/heroku6.png)
 
-### RDS Postgres
+## RDS Postgres
 
 This guide explains how to set up a Postgres database with Amazon Relational Database Service (RDS). RDS simplifies the process of setting up and administering a Postgres database.
 
@@ -83,84 +83,78 @@ As a supplement to this guide, Amazon has created an official guide to [setting 
 
 3. Select the region you'd like to place the database in.
 
-    In the top right-hand corner of the console, you should see a drop-down with the available AWS regions. For best performance, put the database in one of the `US West` locations.
+    In the top right-hand corner of the console, you should see a drop-down with the available AWS regions. For best performance, select one of the `US West` locations.
 
     <img src="images/rds1.png" width="300">
 
 4. Create a new database.
 
-    Select the **Databases** tab on the left sidebar, and click **Create database**.
+    Select the **Databases** tab on the left sidebar and click **Create database**. On the Create database page, select **Standard create.**
 
 
 5. Select the PostgreSQL Engine.
 
     In the Engine options section, select **PostgreSQL**.
-    <!-- Ask an engineer about what versions of PostgreSQL we support -->
+    <!--Ask an engineer about what versions of PostgreSQL we support-->
 
 6. Select a database template.
 
     If you anticipate high utilization on your Postgres database, or if downtime is unacceptable, choose **Production**. If you don't plan to have high-utilization of your database or if periods of downtime are acceptable and you know how to recover from them, choose **Dev/Test**.
     <br/><br/>
     With the Free tier option, you have up to 750 hours of a Single-AZ db.t2.micro, db.t3.micro, or db.t4g.micro database running PostgreSQL. For more information about the AWS Free Tier with Amazon RDS, see Amazon's [Amazon RDS Free Tier documentation](https://aws.amazon.com/rds/free/).
-    <!--Ask an engineer: will/can the free tier support a Segment integration?>
+    <!--Ask an engineer: will/can the free tier support a Segment integration?-->
 
 7. Specify the availability and durability of the database.
 
     The deployment options are:
-    <!-- Ask an engineer which one of these options is recommended, or if there are any that aren't supported-->
+    <!--Ask an engineer which one of these options is recommended, or if there are any that aren't supported-->
 
-    **Multi-AZ DB Cluster:** This option creates a cluster of databases with one primary database and two standby database instances, each in a different Availability Zone (AZ.) This option provides high availability and data redundancy, and increases capacity to serve read workloads. 
+    - **Multi-AZ DB Cluster:** This option creates a cluster of databases with one primary database and two standby database instances, each in a different Availability Zone (AZ.) This option provides high availability and data redundancy, and provides the capacity to serve read workloads. 
 
-    **Multi-AZ DB instance:** This option creates two database instances located in different availability zones: one primary instance and once standby instance. This options provides high availability and data redundancy, but doesn't support read workloads.
+    - **Multi-AZ DB instance:** This option creates two database instances located in different availability zones: one primary instance and once standby instance. This options provides high availability and data redundancy, but doesn't support read workloads.
 
-    **Single DB instance:** This option creates a single database instance with no standby instances. 
+    - **Single DB instance:** This option creates a single database instance with no standby instances. 
 
 8. Configure the database settings.
 
-9. Select a DB instance class and class size. 
-    <!--Ask an engineer if a segment integration requires a minimum size here-->
+    1. Enter a name for your database. The name must be unique across all database instances owned by your AWS account in the region you specified (US West.) This value must be 60 characters or less. 
+    2. Configure the credentials you'll use to access to your database.
+
+9. Select a DB instance class and size. 
+    Standard classes provide a balance of compute, memory, and network resources. Memory optimized classes prioritize memory, and burstable classes provide a baseline level of compute resources with the ability to provide additional resources if the demand exceeds ("bursts") above the baseline. 
+
+    Select a DB size that will work for your integration. 
+    <!--Ask an engineer if a Segment integration requires a minimum size/specific class here-->
 
 10. Configure the storage options for your database.
+    
+    - **Storage type:** While most integrations require General Purpose (SDD) storage, which provides a baseline of 3 IOPS/GiB with the ability to burst to 3,000 IOPS, databases with high I/O should consider selecting the Provisioned IOPS (SSD) storage. The Provisioned IOPS (SSD) option allows users to provision 1,000-80,000 IOPSfor their databases.
+    - **Allocated storage:** Select the amount of storage your database requires.
+    - **Provisioned IOPS:** Select the number of IOPS your database requires.
+    - **Storage autoscaling:** Users with Mutli-AZ instances/a single DB instance can select this option to allow storage to autoscale once the data in a database exceeds a set threshold. 
+    
+    <!-- Ask an engineer if a Segment integration requires a minimum about of storage-->
 
 11. Set up the connectivity options for your database.
 
-    The options for Network & Security are:
+    - **VPC:** Specifies the Virtual Private Cloud you want the servers to reside in. If you have previously set up a VPC that you want the database in, select it here. If you aren't sure which VPC to use or don't have a VPC set up, select **Create New VPC**. You cannot change the VPC after creating your database.
+    - **Subnet group:** Refers to subnets that the DB instances can use in the VPC. If you're not sure which subnet to use, select **Create new DB Subnet Group**.
+    - **Public access:** Specifies whether your DB instances are internet-addressable. **This option must be set to Yes.**
+    - **VPC Security Groups** Specify traffic rules concerning what traffic can leave the instances and what traffic can arrive at the instance. Unless you've previously made a security group specifically for DB instances, create a new one at this step.
+    - **Database port:** If you wish to have the database listen from a specific port, select it here. For Segment integrations, the default port (`5432`) works fine. 
 
-      - **VPC** specifies the Virtual Private Cloud you want the servers to reside in. If you have previously set up a VPC that you want the database in, select it here. If you aren't sure or don't have a VPC set up, select **Create New VPC**. You cannot change the VPC after creating your database.
-      - **Subnet group** specifies the subnets that the DB instances can use in the VPC. If you're not sure, select **Create new DB Subnet Group**.
-      - **Publicly access** specifies whether your DB instances are internet-addressable. This option must be set to Yes.
-      - **Availability Zone** specifies which availability zone you want the instances to reside in. If you have a preference, you can set it here, else leave it on the No Preference default.
-      - **VPC Security Groups** specify traffic rules concerning what traffic can leave the instances and what traffic can arrive at the instance. Unless you've previously made a security group specifically for DB instances, it's best to create a new one.
+12. Configure Database authentication settings.
 
-    The options for Database Options are:
+    Select one of the following options:
+      - **Password authentication:** Manages user credentials through PostgreSQL's native password authentication features. 
+      - **Password and IAM database authentication:** Manages user credentials through PostgreSQL's native password authentication features and IAM users/roles.
 
-      - Database Name is an optional value for a Postgres database to be created at instance startup. We highly recommend filling this out to avoid manual creation of the database unless you have a good reason to create a database manually. This value must be 8 characters or less. If you fill this out, keep a note of what the value is.
-      - Database Port specifies what port the DB listens on. The default of 5432 is fine.
-      - DB Parameter Group specifies the configuration applied to the database. If you haven't created a custom parameter group that you want to use, choosing the default is fine.
-      - Option Group specifies additional options of the database. At the time of writing, option groups are not available for Postgres.
-      - Copy Tags To Snapshots specifies whether you want the tags metadata on DB instances copied to corresponding instance snapshots.  It's fine to leave it on the default, but you can [learn more about it here.](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html)
-      - Enable Encryption allows you to specify whether you want the database and snapshots to be encrypted. If you choose to enable encryption, your data will be encrypted with AES-256, both in the instances themselves and in data at rest. There are some limitations though, which you can [read about here](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html). You will also have to specify a key in the AWS Key Management Service. If you select Yes, another option will appear to allow you to select what key you'd like to use.
+13. Make changes to optional settings in the **Additional configuration** section. 
 
-    The options for Backup are:
+    > note "Updating the database name field"
+    > While the Database Name is an optional field that creates the Postgres database at instance startup, Segment highly recommends filling this out to avoid manual creation of the database. This value is restricted to alphanumeric characters, and must be 64 characters or less.
 
-      - Backup Retention Period specifies how long you want to retain automatic point-in-time recovery backups. Specifying a longer period of time will increase cost.
-      - Backup Window allows you to select the time of day you'd like backups to occur. If you have no preference, select No Preference.
-
-    The options for Maintenance are:
-
-      - Auto Minor Version Upgrade allows you to choose whether or not the database automatically receives minor version upgrade.
-      - Maintenance Window allows you to select a period of time that you prefer updates and other maintenance to be applied. If you select No Preference, a random time period will be picked. We recommend choosing a time window where usage is historically low.
-
-    When you're finished choosing settings, press `Launch DB Instance`.
-
-    ![](images/rds7.png)
-    ![](images/rds8.png)
-
-9. Wait for DB Instance to be Created
-
-    In the Instances tab, you should be able to observe the DB instance being created. After a while, the status should change to Available.
-
-    ![](images/rds9.png)
+When you're finished updating your Additional configuration settings, click `Create database`.
 
 #### Network Permissions for Segment to RDS
 
@@ -199,11 +193,11 @@ This guide will help you change permissions on your Amazon Relational Database S
 
 Segment should be able to connect to your database now!
 
-### Compose Postgres
+## Compose Postgres
 
 Compose is the first DBaaS (Database as a Service) of its kind, geared at helping developers spend more time building their applications rather than wrestling with database provisioning and maintenance. Compose provides easy to deploy and scale data stores and services in many flavors: PostgreSQL, MongoDB, RethinkDB, Elasticsearch, Redis, etcd, and RabbitMQ.
 
-Using Compose, companies can deploy databases instantly with backups, monitoring, performance tuning, and a full-suite of management tools. Compose Enterpise brings all this to the corporate VPC (virtual private cloud).
+Using Compose, companies can deploy databases instantly with backups, monitoring, performance tuning, and a full-suite of management tools. Compose Enterprise brings all this to the corporate VPC (virtual private cloud).
 
 Compose uses Segment for hooking together web analytics, email, and social tracking and manages its Segment warehouse on PostgreSQL. Compose is pleased to be able to harness [the power of Postgres to query Segment data and be able create custom reports.
 
@@ -215,7 +209,7 @@ Compose uses Segment for hooking together web analytics, email, and social track
 
     ![](images/compose1.png)
 
-    Once your PostgreSQL deployment is spun up, you may want to [create a user](https://www.compose.io/articles/compose-postgresql-making-users-and-more/) to be the owner of the database you'll use for Segment. There is already an admin user role that is generated on initialization of your deployment, but this user has full privileges for your deployment so you may want to create additional users with more specific privileges. You may also want to manually scale up your deployment for the initial load of Segment data since it loads the past 2 months of data by default. You can then scale it back down according to your data needs after the initial load. The easy-to-use management console lets you perform these tasks, monitor your deployments, configure security settings, manage backups, and more.
+    Once your PostgreSQL deployment is spun up, you may want to [create a user](https://www.compose.io/articles/compose-postgresql-making-users-and-more/) to be the owner of the database you'll use for Segment. There is already an admin user role that is generated on initialization of your deployment, but this user has full privileges for your deployment so you may want to create additional users with more specific privileges. You may also want to manually scale up your deployment for the initial load of Segment data since it loads the past two months of data by default. You can then scale it back down according to your data needs after the initial load. The easy-to-use management console lets you perform these tasks, monitor your deployments, configure security settings, manage backups, and more.
 
     Now, all you need to do is create a database where your Segment data will live. You can create a database directly from the Data Browser interface in the Compose management console, by using a tool such as the [pgAdmin GUI](http://www.pgadmin.org/download/) or programmatically using code you've written. For simplicity, this database is simply named "segment" and associated it to the "compose" user as the owner. Here is the SQL statement to create the database for Segment data, using the default PostgreSQL arguments (set yours appropriately to your requirements):
 
@@ -239,7 +233,7 @@ Compose uses Segment for hooking together web analytics, email, and social track
 
     ![](images/compose1.png)
 
-    When the Segment data is loaded to the PostgreSQL database, several tables are created by default: `aliases`, `groups`, `identifies`, `pages`, `screens` and `tracks`. You might also have `accounts` and `users` tables if you use unique calls for groups and for identifies. To learn more about these default tables and their fields, see the [Segment schema documentation](https://segment.com/docs/connections/storage/warehouses/schema/).
+    When the Segment data is loaded to the PostgreSQL database, several tables are created by default: `aliases`, `groups`, `identifies`, `pages`, `screens` and `tracks`. You might also have `accounts` and `users` tables if you use unique calls for groups and for identifies. To learn more about these default tables and their fields, see the [Segment schema documentation](/docs/connections/storage/warehouses/schema/).
 
     All of the other tables will be event-specific, according to the event names and properties you use in your `track` calls. The number of tables will depend on the number of unique events you're tracking. For example, at Compose, there is a track call for when customers view their deployments such as:
 
@@ -259,7 +253,7 @@ Compose uses Segment for hooking together web analytics, email, and social track
     WHERE deployment_name = 'heroic-rabbitmq-62';
     ```
 
-    The result is 18 times in the past 2 months by a particular database user. To verify, just join to the identifies table, which contains user data, through the `user_id` foreign key:
+    The result is 18 times in the past two months by a particular database user. To verify, just join to the identifies table, which contains user data, through the `user_id` foreign key:
 
     ```sql
     SELECT DISTINCT i.name
@@ -319,7 +313,7 @@ GRANT CREATE, TEMPORARY ON DATABASE <enter database name here> TO segment;
 
 5. Verify that the database connected successfully.
 
-    You should see a message indicating that the connection was successful. If not, check that you entered the settings correctly. If it still isn't working, feel free to [contact us](https://segment.com/help/contact/)!
+    You should see a message indicating that the connection was successful. If not, check that you entered the settings correctly. If it still isn't working, feel free to [contact Segment support](https://segment.com/help/contact/).
 
 ### Sync schedule
 
@@ -331,7 +325,7 @@ GRANT CREATE, TEMPORARY ON DATABASE <enter database name here> TO segment;
 ## Security
 To make sure your Postgres database is secure:
 - Log in with a user that has read and write permissions so that Segment can write to your database.
-- Whitelist the Segment IP (`52.25.130.38/32`). Otherwise, Segment can't load your data.
+- Allowlist the Segment IP (`52.25.130.38/32`). Otherwise, Segment can't load your data.
 - Create a service user that has `read/write` permissions.
 - Always require SSL/TLS and make sure your data warehouse can only accept secure connections. Segment only connects to your data warehouse using SSL/TLS.
 
@@ -356,7 +350,7 @@ CREATE TABLE "Example" (
 );
 ```
 
-We have now created a table in which the table name has not been forced to lowercase, but which has preserved the capital E.  This means that the following query will now fail:
+Segment has now created a table in which the table name has not been forced to lowercase, but which has preserved the capital E.  This means that the following query will now fail:
 
 ```sql
 select * from example;
@@ -369,7 +363,7 @@ For more information on single vs double follow [this link](http://blog.lerner.c
 
 ### Can I add an index to my tables?
 
-Yes! You can add indexes to your tables without blocking Segment syncs. However, we recommend limiting the number of indexes you have. Postgres's native behavior requires that indexes update as more data is loaded, and this can slow down your Segment syncs.
+Yes! You can add indexes to your tables without blocking Segment syncs. However, Segment recommends limiting the number of indexes you have. Postgres's native behavior requires that indexes update as more data is loaded, and this can slow down your Segment syncs.
 
 ## Troubleshooting
 
@@ -407,13 +401,13 @@ In order to resolve the error, check the following settings:
 This error can be caused for a few reasons:
 
 - Your Warehouse went offline.
-- There's a setting needed for Segment to connect which hasn't been correctly configured. Refer to our Warehouse docs to ensure all steps outlined there have been followed.</td>
+- There's a setting needed for Segment to connect which hasn't been correctly configured. Refer to the [Warehouse documentation](/docs/connections/storage/warehouses/) to ensure all steps outlined there have been followed.</td>
     </tr>
     <tr>
         <td>Schema <schema_name> does not exist</td>
         <td>The syncs are failing due to a permissions issue. It looks like the user connected does not have permission to create schemas in your warehouse.
 
-To resolve these errors we recommend connecting to your warehouse using the owner account, or granting permissions to the current account you use to connect to Segment. You can correct these permissions by running the following SQL statement - Replace `user` with the account you use to connect to Segment, and run this statement for each schema in the warehouse.
+To resolve these errors Segment recommends connecting to your warehouse using the owner account, or granting permissions to the current account you use to connect to Segment. You can correct these permissions by running the following SQL statement - Replace `user` with the account you use to connect to Segment, and run this statement for each schema in the warehouse.
 
 `GRANT CREATE ON DATABASE <database_name> TO <user>`</td>
     </tr>
