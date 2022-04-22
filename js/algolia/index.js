@@ -54,7 +54,7 @@ function initAutocomplete(item){
                   query,
                   params: {
                     hitsPerPage: 7,
-                    facetFilters: ['hidden:-true'],
+                    facetFilters: ['hidden:-true', 'engage:-true'],
                     clickAnalytics: true,
                   },
                 },
