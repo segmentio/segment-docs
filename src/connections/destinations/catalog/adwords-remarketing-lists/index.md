@@ -52,7 +52,7 @@ You can use Personas to create a detailed profile of your most loyal customers (
 
 ### Remarketing audiences
 
-You can use Personas to target users who completed some initial action, but didn’t follow through on a purchase or other conversion event. You can create audiences to retarget these individuals and remind them to complete the purchase or other process.  For example, you might send an email to someone who didn’t complete a sign-up form or who didn’t complete a shopping cart checkout.
+You can use Personas to target users who completed some initial action, but didn’t follow through on a purchase or other conversion event. You can create audiences to re-target these individuals and remind them to complete the purchase or other process.  For example, you might send an email to someone who didn’t complete a sign-up form or who didn’t complete a shopping cart checkout.
 
 ## How it works
 
@@ -132,7 +132,7 @@ Personas audiences can only send to Google Ads Remarketing Lists for Google Sear
 
 #### What custom matchers does Personas send to Google Ads?
 
-Currently, Personas sends either email or mobile device ID (IDFA) to Google Ads for matching. We may add support for additional matchers in the future.
+Currently, Personas sends either email or mobile device ID (IDFA) to Google Ads for matching. Segment may add support for additional matchers in the future.
 
 #### If a user has multiple emails or IDFAs on their account, which IDs get sent to Google Ads?
 
