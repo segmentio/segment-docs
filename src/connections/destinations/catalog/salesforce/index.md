@@ -3,10 +3,14 @@ title: Salesforce Destination
 strat: salesforce
 id: 54521fda25e721e32a72eeef
 ---
-> info ""
-> Segment is aware of Salesforce's plans to enforce multi-factor authentication in 2022, and is evaluating solutions to ensure uninterrupted connectivity with your Salesforce account.
 
 Segment's Salesforce destination allows you to identify leads without using SOAP APIs.
+
+> info ""
+> Segment is aware of Salesforce's plans to enforce multi-factor authentication in 2022, and advises migrating to our new [Salesforce (Actions) destination](/docs/connections/destinations/catalog/actions-salesforce/) which supports OAuth 2.0.
+
+> success "Good to know"
+> This page is about the classic Salesforce Segment destination. There's also a page about the new [Salesforce (Actions) destination](/docs/connections/destinations/catalog/actions-salesforce/). Both of these destinations receive data _from_ Segment. Use the new Salesforce (Actions) destination for additional functionality and flexibility.
 
 ### API Access
 
