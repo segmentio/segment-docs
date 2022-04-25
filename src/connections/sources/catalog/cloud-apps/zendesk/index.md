@@ -138,7 +138,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 | assignee_id     | The agent currently assigned to the ticket.                       |
 | organization_id | The organization of the requester. You can only specify the ID of an organization associated with the requester. |
 | group_id        | The group this ticket is assigned to.                             |
-| collaborator_ids | The IDs of users currently cc’ed on the ticket.                  |
+| collaborator_ids | The IDs of users currently cc'ed on the ticket.                  |
 | forum_topic_id  | The topic this ticket originated from, if any.                    |
 | problem_id      | For tickets of type "incident," The ID of the problem the incident is linked to. |
 | has_incidents   | Is true of this ticket has been marked as a problem, false otherwise. |
@@ -164,14 +164,14 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 | raw_description | The dynamic content placeholder, if present, or the “description” value, if not. |
 | position        | A relative position for the ticket fields that determines the order of ticket fields on a ticket. Note that positions 0 to 7 are reserved for system fields. |
 | active          | Whether this field is available.                                  |
-| required        | If it’s required for this field to have a value when updated by agents.|
+| required        | If it's required for this field to have a value when updated by agents.|
 | collapsed_for_agents | If this field should be shown to agents by default or be hidden alongside infrequently used fields. Classic interface only. |
 | regexp_for_validation | Regular expression field only. The validation pattern for a field value to be deemed valid. |
 | title_in_portal | The title of the ticket field when shown to end users.            |
 | raw_title_in_portal | The dynamic content placeholder, if present, or the “title_in_portal” value, if not. |
 | visible_in_portal | Whether this field is available to end users.                   |
 | editable_in_portal | Whether this field is editable by end users.                   |
-| required_in_portal | If it’s required for this field to have a value when updated by end users. |
+| required_in_portal | If it's required for this field to have a value when updated by end users. |
 | tag             | A tag value to set for checkbox fields when checked.              |
 | removable      | If this field is not a system basic field that must be present for all tickets on the account. | 
 | created_at      | The date and time the ticket field was created.                   |
@@ -246,7 +246,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 | file_name       | The name of the image file.                                       |
 | content_url     | A full URL where the attachment image file can be downloaded.     |
 | content_type    | The content type of the image. Example value: image/png.          |
-| inline          | If true, the attachment is excluded from the attachment list and the attachment’s URL can be referenced within the comment of a ticket. Default is false. |
+| inline          | If true, the attachment is excluded from the attachment list and the attachment's URL can be referenced within the comment of a ticket. Default is false. |
 | size            | The size of the image file in bytes.                              |
 | received_at     | This timestamp is added to incoming messages as soon as they hit Segment API. |
 
@@ -261,8 +261,8 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 | details         | This includes any details about the organization, such as the address. |
 | notes           | Any notes you have about the organization.                        |
 | group_id        | New tickets from users in this organization are automatically put in this group. |
-| shared_tickets  | End users in this organization are able to see each other’s tickets. |
-| shared_comments | End users in this organization are able to see each other’s comments on tickets. |
+| shared_tickets  | End users in this organization are able to see each other's tickets. |
+| shared_comments | End users in this organization are able to see each other's comments on tickets. |
 | created_at | The date and time that the organization was created.                   |
 | updated_at      | The date and time that the organization was last updated.         |
 | received_at     | This timestamp is added to incoming messages as soon as they hit Segment API. |

@@ -20,16 +20,16 @@ To create a Folder, follow the steps below:
 
 ## Editing and Disbanding Folders
 
-To edit the name or description of a Folder you’ve created in Personas, click the **More Options** icon and select **Edit**.  Once you’ve made your desired changes, click **Save**.
+To edit the name or description of a Folder you've created in Personas, click the **More Options** icon and select **Edit**.  Once you've made your desired changes, click **Save**.
 
-To disband a Folder you’ve made in Personas, click the **More Options** icon and select **Disband**.   Audiences from the disbanded Folder return to your main Audience list.
+To disband a Folder you've made in Personas, click the **More Options** icon and select **Disband**.   Audiences from the disbanded Folder return to your main Audience list.
 
 > info "Note"
 > Disbanding a Folder won't delete any Audiences.
 
 ## Moving Audiences into Folders
 
-To move an Audience to a Folder you’ve already created, follow the steps below:
+To move an Audience to a Folder you've already created, follow the steps below:
 
 1. Navigate to the **Audiences** tab within your Personas space.
 2. Hover over the Audience you want to move.

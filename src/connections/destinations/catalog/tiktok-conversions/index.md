@@ -72,7 +72,7 @@ Segment creates a SHA-256 hash of the following fields before sending to TikTok:
 
 ### Web Diagnostics
 
-You can check whether the integration is working, test events in real-time, and troubleshoot common issues in TikTok’s Web Diagnostics Suite. Please see the [TikTok Pixel Web Diagnostics documentation](https://ads.tiktok.com/help/article?aid=10000360){:target="_blank"} for more information.
+You can check whether the integration is working, test events in real-time, and troubleshoot common issues in TikTok's Web Diagnostics Suite. Please see the [TikTok Pixel Web Diagnostics documentation](https://ads.tiktok.com/help/article?aid=10000360){:target="_blank"} for more information.
 
 ## Support
 

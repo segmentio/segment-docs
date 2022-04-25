@@ -376,7 +376,7 @@ You've successfully installed PHP tracking. Now you're ready to turn on any dest
 
 
 
-## Test that it’s working
+## Test that it's working
 
 Once you've set up your Segment library, and instrumented at least one call, you can look at the Debugger tab for the Source to check that it produces data as you expected.
 

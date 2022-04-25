@@ -11,7 +11,7 @@ The Segment Profile API provides a single API to read user-level and account-lev
 
 You can use this API to:
 
-- **Build an in-app recommendation** engine to show users or accounts the last 5 products they viewed but didn’t purchase
+- **Build an in-app recommendation** engine to show users or accounts the last 5 products they viewed but didn't purchase
 - **Empower your sales and support associates** with the complete customer context by embedding the user profile in third-party tools like Zendesk or Desk.com
 - **Power personalized marketing campaigns** by enriching dynamic / custom properties with profile traits in marketing tools like Braze
 - **Qualify leads faster** by embedding the user event timeline in Salesforce
@@ -644,4 +644,4 @@ Segment typically sees p95 response times under 200ms for the `/traits` endpoint
 
 Another best practice to optimize performance in high-throughput applications is to use connection pooling. Your personalization service should share existing connections when making a request to the Profile API, instead of opening and closing a connection for each request. This additional TLS handshake is a common source of overhead for each request.
 
-Segment recommends against blocking the page render to wait for a third party API’s response, as even small slow down can impact the page’s conversion performance. Instead, Segment recommends you to asynchronously request the data from after the page loads and use a server-to-server request for the necessary computed traits. Resulting computed traits can be cached for the second page load.
+Segment recommends against blocking the page render to wait for a third party API's response, as even small slow down can impact the page's conversion performance. Instead, Segment recommends you to asynchronously request the data from after the page loads and use a server-to-server request for the necessary computed traits. Resulting computed traits can be cached for the second page load.

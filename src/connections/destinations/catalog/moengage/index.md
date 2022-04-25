@@ -20,7 +20,7 @@ To setup MoEngage do the following :
       of features like push notifications and any in-app features of the MoEngage SDK.
 
 These new settings will take up to an hour to propagate to your existing users. For new
-users it’ll be instantaneous! Segment-MoEngage Integration is a bundled integration, requires client side integration.
+users it'll be instantaneous! Segment-MoEngage Integration is a bundled integration, requires client side integration.
 
 ![](images/segment_settings.png)
 
@@ -134,7 +134,7 @@ Push Notifications are a great way to keep your users engaged and informed about
 
 1. Follow the directions to register for push notifications [with the Segment SDK](/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications).
 
-2. In your application’s application:didReceiveRemoteNotification: method, add the following:
+2. In your application's application:didReceiveRemoteNotification: method, add the following:
   ```objc
   [[SEGAnalytics sharedAnalytics] receivedRemoteNotification:userInfo];
   ```
@@ -403,7 +403,7 @@ Use [track](/docs/connections/sources/catalog/libraries/mobile/android/#track) t
 This will send the event to MoEngage with the associated properties. Tracking events is essential and will help you create segments for engaging users.
 
 ### Reset
-If your app supports the ability for a user to logout and login with a new identity, then you’ll need to call reset for the Analytics client.
+If your app supports the ability for a user to logout and login with a new identity, then you'll need to call reset for the Analytics client.
 
 ### Sample Implementation
 
@@ -467,7 +467,7 @@ Use [Identify](/docs/sources/website/analytics.js/#identify) to track user speci
 Use [track](/docs/sources/website/analytics.js/#track) to track events and user behavior in your app. This will send the event to MoEngage with the associated properties. Tracking events is essential and will help you create segments for engaging users.
 
 ### Reset
-If your website supports the ability for a user to logout and login with a new identity, then you’ll need to call [reset](/docs/sources/website/analytics.js/#reset-logout) method in `analytics.js`.
+If your website supports the ability for a user to logout and login with a new identity, then you'll need to call [reset](/docs/sources/website/analytics.js/#reset-logout) method in `analytics.js`.
 
 ### Optional
 For information about optional feature, see the documentation below:

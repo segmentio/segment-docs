@@ -6,9 +6,9 @@ hidden: true
 
 The Twilio Developer Plan allows you to collect and process your data at scale, consolidating your data from up to 3 sources into a single warehouse for complex querying.
 
-## How is this offer different from Segment’s Free Plan?
+## How is this offer different from Segment's Free Plan?
 
-The Twilio Developer Plan allows for 10,000 Monthly Tracked Users (MTUs), while Segment’s Free Plan limits MTUs to 1,000.
+The Twilio Developer Plan allows for 10,000 Monthly Tracked Users (MTUs), while Segment's Free Plan limits MTUs to 1,000.
 
 The Twilio Developer Plan is limited to 1 warehouse destination, while all other Segment plans also allow you to send data in real time to more than 300 destinations (all the analytics, marketing, advertising, and A/B testing tools you already use).
 

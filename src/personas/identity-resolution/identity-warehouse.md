@@ -10,7 +10,7 @@ title: Identity Warehouse (Limited Availability)
 
 The Personas Identity Warehouse allows customers to export all the identifiers associated with any one user.
 
-When enabled, customers see a source called Personas Identities `<space_name>`. This automatically synchronizes to warehouses in a customer’s workspace. To disable, use Selective Sync.
+When enabled, customers see a source called Personas Identities `<space_name>`. This automatically synchronizes to warehouses in a customer's workspace. To disable, use Selective Sync.
 
 To query the underlying data, customers can query:
 

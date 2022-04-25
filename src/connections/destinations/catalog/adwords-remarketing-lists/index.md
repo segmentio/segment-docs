@@ -39,7 +39,7 @@ The Google Adwords Remarketing Lists (Customer Match) Destination is one of Segm
 This Destination can send audiences created in [Personas](/docs/personas/) to Google Adwords Audience Lists as a [**Customer List**](https://support.google.com/google-ads/answer/7558048) type. Once you set this up, Segment sends an [initial list](https://developers.google.com/analytics/devguides/config/mgmt/v3/remarketing#insert) of users to Google Adwords Audience lists as a “Customer list”. As users move in and out of the audience, Segment automatically [updates the list](https://developers.google.com/analytics/devguides/config/mgmt/v3/remarketing#insert) in Google every hour. This allows you to run advertising campaigns without having manually update the list of users to target in Adwords campaigns.
 
 Currently, you can only send either an email address or mobile id (IDFA) from Segment Personas to Google as custom matchers. You can set an email address on the user profile by including `email` as a trait on an [`identify` call](/docs/connections/spec/identify/), as a property on a [`track` call](/docs/connections/spec/track/), or as an [external id](/docs/personas/identity-resolution/externalids/) for the user.
-If you use Segment’s mobile SDK to collect events from a mobile app, the user’s IDFA is automatically captured. If you don't use Segment’s mobile SDK, you can set the user’s IDFA by setting it within `context.device.advertisingId`.
+If you use Segment's mobile SDK to collect events from a mobile app, the user's IDFA is automatically captured. If you don't use Segment's mobile SDK, you can set the user's IDFA by setting it within `context.device.advertisingId`.
 
 When you send an audience to Google Adwords Remarketing Lists (Customer Match), you can choose which custom matcher (email or mobile id/IDFA) to match with. If a user has multiple emails or IDFAs on their account as `external_ids`, Personas only sends Adwords the ID that was most recently added to the user profile.
 
@@ -60,15 +60,15 @@ Create an audience of users that signed up, purchased a product, or otherwise pe
 
 ### Similar audience
 
-You can use Personas to create a detailed profile of your most loyal customers (sometimes called a “seed audience”) and then send this list of customers to Google. In Google, you can then use Google’s [Similar Audience](https://support.google.com/google-ads/answer/7151628?hl=en-AU) features to find similar users to target. For example, you might want to create a group of high-value users who have spent a certain amount of money on your product, and then use Similar Audiences to find users who might also spend that much.
+You can use Personas to create a detailed profile of your most loyal customers (sometimes called a “seed audience”) and then send this list of customers to Google. In Google, you can then use Google's [Similar Audience](https://support.google.com/google-ads/answer/7151628?hl=en-AU) features to find similar users to target. For example, you might want to create a group of high-value users who have spent a certain amount of money on your product, and then use Similar Audiences to find users who might also spend that much.
 
 > note ""
-> **Note:** A “seed audience” must have at least 100 members for Google’s Similar Audience feature to function.
+> **Note:** A “seed audience” must have at least 100 members for Google's Similar Audience feature to function.
 
 
 ### Re-marketing audiences
 
-You can use Personas to target users who completed some initial action, but didn’t follow through on a purchase or other conversion event. You can create audiences to re-target these individuals and remind them to complete the purchase or other process.  For example, you might send an email to someone who didn’t complete a sign-up form or who didn’t complete a shopping cart checkout.
+You can use Personas to target users who completed some initial action, but didn't follow through on a purchase or other conversion event. You can create audiences to re-target these individuals and remind them to complete the purchase or other process.  For example, you might send an email to someone who didn't complete a sign-up form or who didn't complete a shopping cart checkout.
 
 ## How it works
 
@@ -149,9 +149,9 @@ Make sure you have administrator access for your Google Adwords account. You can
 
 Personas matches users in your audience using email and Mobile Device ID (IDFA) values. Make sure you're tracking these with Segment to have as high a match rate as possible.
 
-You can set an email on the user profile by including `email` as a trait, as a property on an event, or as an external id for the user. If you use Segment’s mobile SDKs to collect events from a mobile app, IDFA is automatically captured for the user. You can also set a user’s IDFA on a mobile app by setting it within `context.device.advertisingId`.
+You can set an email on the user profile by including `email` as a trait, as a property on an event, or as an external id for the user. If you use Segment's mobile SDKs to collect events from a mobile app, IDFA is automatically captured for the user. You can also set a user's IDFA on a mobile app by setting it within `context.device.advertisingId`.
 
-If a user has more than one email address or IDFA on their account as `external_ids`, Personas only sends the most recent id on the user profile to Adwords for matching. The match rate will be low if Google can’t identify users based on the data that you provide.
+If a user has more than one email address or IDFA on their account as `external_ids`, Personas only sends the most recent id on the user profile to Adwords for matching. The match rate will be low if Google can't identify users based on the data that you provide.
 
 ## FAQs
 
