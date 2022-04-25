@@ -11,9 +11,9 @@ With Analytics-Kotlin, you can send data using Kotlin applications to any analyt
 > Segment supports [these destinations](#supported-destinations) with more to come. If you don't see your destination, you can [build your own](#build-your-own-destination).
 
 > success ""
-> You can choose to set up your Analytics Kotlin source on [mobile](/docs/connections/sources/catalog/libraries/mobile/kotlin-android) or on the [server](/docs/connections/sources/catalog/libraries/server/kotlin). Segment doesn’t support device-mode destinations on the server-side.
+> You can choose to set up your Analytics Kotlin source on [mobile](/docs/connections/sources/catalog/libraries/mobile/kotlin-android) or on the [server](/docs/connections/sources/catalog/libraries/server/kotlin). Segment doesn't support device-mode destinations on the server-side.
 
-If you’re migrating to Analytics-Kotlin from a different mobile library, you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/).
+If you're migrating to Analytics-Kotlin from a different mobile library, you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/).
 
 
 ## Getting Started
@@ -58,7 +58,7 @@ To get started with the Analytics-Kotlin mobile library:
     **Note: If you're on an Android platform, you must add the application context as the second parameter.**
     <br>Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) is optional, but Segment highly recommends you to configure these options in order to track core events.
 
-    <br>**Note:** Unlike the Analytics-Android SDK, the Analytics-Kotlin SDK doesn’t provide a singleton instance and relies on you to keep track of the instance.
+    <br>**Note:** Unlike the Analytics-Android SDK, the Analytics-Kotlin SDK doesn't provide a singleton instance and relies on you to keep track of the instance.
 
     <br>These are the options you can apply to configure the client:
 
@@ -94,7 +94,7 @@ To get started with the Analytics-Kotlin mobile library:
 
 ## Tracking Methods
 
-Once you’ve installed the mobile or server Analytics-Kotlin library, you can start collecting data through Segment’s tracking methods:
+Once you've installed the mobile or server Analytics-Kotlin library, you can start collecting data through Segment's tracking methods:
 - [Identify](#identify)
 - [Track](#track)
 - [Screen](#screen)
@@ -104,7 +104,7 @@ Once you’ve installed the mobile or server Analytics-Kotlin library, you can s
 > For any of the different methods described, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 ### Identify
-The [Identify](/docs/connections/spec/identify/) method lets you tie a user to their actions and record traits about them. This includes a unique user ID and any optional traits you know about them like their email, name, address. The traits option can include any information you want to tie to the user. When using any of the reserved traits, be sure the information reflects the name of the trait. For example, `email`  should always be a string of the user’s email address.
+The [Identify](/docs/connections/spec/identify/) method lets you tie a user to their actions and record traits about them. This includes a unique user ID and any optional traits you know about them like their email, name, address. The traits option can include any information you want to tie to the user. When using any of the reserved traits, be sure the information reflects the name of the trait. For example, `email`  should always be a string of the user's email address.
 
 {% codeexample %}
 {% codeexampletab Method signature %}
@@ -153,9 +153,9 @@ analytics.track("View Product", buildJsonObject {
 ### Screen
 The [Screen](/docs/connections/spec/screen/) method lets you record whenever a user sees a screen in your mobile app, along with optional extra information about the page being viewed.
 
-You’ll want to record a screen event whenever the user opens a screen in your app. This could be a view, fragment, dialog or activity depending on your app.
+You'll want to record a screen event whenever the user opens a screen in your app. This could be a view, fragment, dialog or activity depending on your app.
 
-Not all integrations support screen, so when it’s not supported explicitly, the screen method tracks as an event with the same parameters.
+Not all integrations support screen, so when it's not supported explicitly, the screen method tracks as an event with the same parameters.
 
 {% codeexample %}
 {% codeexampletab Method signature %}
@@ -180,7 +180,7 @@ analytics.screen("ScreenName", buildJsonObject {
 > Add the `AndroidRecordScreenPlugin` to enable automatic screen tracking.
 
 ### Group
-The [Group](/docs/connections/spec/group/) method lets you associate an individual user with a group— whether it’s a company, organization, account, project, or team. This includes a unique group identifier and any additional group traits you may have, like company name, industry, number of employees. You can include any information you want to associate with the group in the traits option. When using any of the reserved group traits, be sure the information reflects the name of the trait. For example, email should always be a string of the user’s email address.
+The [Group](/docs/connections/spec/group/) method lets you associate an individual user with a group— whether it's a company, organization, account, project, or team. This includes a unique group identifier and any additional group traits you may have, like company name, industry, number of employees. You can include any information you want to associate with the group in the traits option. When using any of the reserved group traits, be sure the information reflects the name of the trait. For example, email should always be a string of the user's email address.
 
 {% codeexample %}
 {% codeexampletab Method signature %}
@@ -204,7 +204,7 @@ analytics.group("user-123", buildJsonObject {
 {% endcodeexample %}
 
 ## Plugin Architecture
-Segment’s plugin architecture enables you to modify and augment how the analytics client works. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
+Segment's plugin architecture enables you to modify and augment how the analytics client works. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
 
 Plugins are run through a timeline, which executes in order of insertion based on their entry types. Segment has these 5 entry types:
 
@@ -317,9 +317,9 @@ val yourPlugin = SomePlugin()
 analytics.add(yourPlugin)
 ```
 
-Though you can add plugins anywhere in your code, it’s best to implement your plugin when you configure the client.
+Though you can add plugins anywhere in your code, it's best to implement your plugin when you configure the client.
 
-Here’s an example of adding a plugin to the context object of any event payload as an enrichment:
+Here's an example of adding a plugin to the context object of any event payload as an enrichment:
 
 ```java
 class SomePlugin: Plugin {
@@ -347,7 +347,7 @@ The Analytics-Kotlin utility methods help you work with plugins from the analyti
 - [Find](#find)
 - [Remove](#remove)
 
-There’s also the [Flush](#flush) method to help you manage the current queue of events.
+There's also the [Flush](#flush) method to help you manage the current queue of events.
 
 ### Add
 The Add method lets you add a plugin to the analytics timeline.

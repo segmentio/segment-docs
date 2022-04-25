@@ -1,0 +1,103 @@
+{% assign currentPage = page.path | downcase | split: "/" %}
+{% assign currentPath = include.root_section.section_title | downcase | slugify %}
+<!-- {{currentPage[1]}} - {{currentPath}} -->
+<li class="menu-item {% if currentPage[1] == currentPath %}menu-item--active{% endif %}" data-accordion data-class-active="menu-item--active">
+  {% if include.root_section.path %}
+    <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}{{ include.root_section.path }}/">
+      <span class="menu-item__icon flex__column">
+        {% include icons/engage/{{ currentPath }}.svg %}
+      </span>
+
+      <span class="flex__column">{{ include.root_section.section_title }}</span>
+    </a>
+  {% else %}
+    <button class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" data-ref="accordion[trigger]">
+      <span class="menu-item__icon flex__column">
+        {% include icons/engage/{{ currentPath }}.svg %}
+      </span>
+
+      <span class="flex__column">{{ include.root_section.section_title }}</span>
+    </button>
+  {% endif %}
+
+  {% if include.root_section.section %}
+    <ul class="menu-item__body" data-ref="accordion[body]">
+      {% for item in root_section.section %}
+        {% assign currentPage = page.path | downcase | replace: "/index.md" "" | replace: ".md" "" %}
+        {% assign currentPath = item.path | downcase | replace_first: "/" "" %}
+        {% assign currentSectionPage = page.path | downcase | split: "/" %}
+        {% assign currentSectionPath = item.slug | downcase %}
+        {% capture currentSectionSlug %}{{ currentSectionPage[0] | downcase }}/{{ currentSectionPage[1] | downcase }}{% endcapture %}
+        <li class="menu-item {% if item.section_title %}menu-item--gray{% else %}menu-item--green{% endif %} {% if currentPage == currentPath or currentSectionSlug == currentSectionPath or item.expanded %}menu-item--active{% endif %}" data-accordion data-class-active="menu-item--active">
+          {% if item.path %}
+            {% assign menuLink = site.baseurl | append: item.path  | append: "/" %}
+            {% if item.path contains "http://" or  item.path contains "https://"%}
+              {% assign menuLink = item.path %}
+            {% endif %}
+            <a class="menu-item__link {% if currentPage == currentPath or currentSectionSlug == currentSectionPath %}menu-item__link--indicator-large{% endif %} flex" href="{{ menuLink }}">{{ item.title }}</a>
+          {% endif %}
+
+          {% if item.section_title %}
+            <button class="menu-item__link flex flex--middle flex--justify" data-ref="accordion[trigger]">
+              <span class="flex__column">
+                {{ item.section_title }}
+              </span>
+
+              <div class="menu-item__chevron flex__column flex__column--shrink">
+                {% include icons/symbols/caret-down.svg %}
+              </div>
+            </button>
+
+            <ul class="menu-item__body menu-item__body--nested" data-ref="accordion[body]">
+              {% for subsection in item.section %}
+                {% assign currentPage = page.path | downcase | replace: "/index.md" "" | replace: ".md" "" %}
+                {% assign currentPath = subsection.path | downcase | replace_first: "/" "" %}
+
+                <li class="menu-item {% if currentPage == currentPath %}menu-item--active menu-item--indicator{% endif %}" data-accordion data-class-active="menu-item--active">
+                  {% if subsection.path %}
+                    {% assign menuLink = site.baseurl | append: subsection.path | append: "/" %}
+                    {% if subsection.path contains "http://" or  subsection.path contains "https://"%}
+                      {% assign menuLink = subsection.path  %}
+                    {% endif %}
+                    <a class="menu-item__link menu-item__link--icon {% if currentPage == currentPath %}menu-item__link--indicator{% endif %} flex" href="{{menuLink}}">
+                      {% if subsection.menu_icon %}
+                        <div class="menu-item__icon menu-item__icon--small flex__column">
+                          {% include icons/{{ subsection.menu_icon }}.svg %}
+                        </div>
+                      {% endif %}
+
+                      {{ subsection.title }}
+                    </a>
+                  {% endif %}
+
+                  {% if subsection.section_title %}
+                    <button class="menu-item__link flex flex--middle flex--justify" data-ref="accordion[trigger]">
+                      <span class="flex__column">
+                        {{ subsection.section_title }}
+                      </span>
+
+                      <div class="menu-item__chevron flex__column flex__column--shrink">
+                        {% include icons/symbols/caret-down.svg %}
+                      </div>
+                    </button>
+
+                    <ul class="menu-item__body menu-item__body--nested" data-ref="accordion[body]">
+                      {% for subsubsection in subsection.section %}
+                        {% assign currentPage = page.path | downcase | replace: "/index.md" "" | replace: ".md" "" %}
+                        {% assign currentPath = subsubsection.path | downcase | replace_first: "/" "" %}
+
+                        <li class="menu-item">
+                          <a class="menu-item__link flex" href="{{ site.baseurl }}{{ subsubsection.path }}/">{{ subsubsection.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</li>

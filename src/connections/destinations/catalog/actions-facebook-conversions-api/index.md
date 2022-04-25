@@ -78,7 +78,7 @@ With the Facebook Conversions API (Actions) destination, you can choose any fiel
 
 ![the coalesce function](images/image1.png)
 
-You can send additional User Data to increase the match rate for events from a server source. Collect other fields from the browser, like User Agent, IP Address, and [Facebook's cookie parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and map them in the User Data object. See [Facebook's Customer Information Parameters](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters){:target="_blank"} for more information on User Data fields, and [Facebook’s Best Practices for Conversions API](https://www.facebook.com/business/help/308855623839366?id=818859032317965){:target="_blank"} for match rate best practices.
+You can send additional User Data to increase the match rate for events from a server source. Collect other fields from the browser, like User Agent, IP Address, and [Facebook's cookie parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and map them in the User Data object. See [Facebook's Customer Information Parameters](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters){:target="_blank"} for more information on User Data fields, and [Facebook's Best Practices for Conversions API](https://www.facebook.com/business/help/308855623839366?id=818859032317965){:target="_blank"} for match rate best practices.
 
 ![the user data object](images/image2.png)
 
@@ -88,11 +88,11 @@ A redundant setup requires deduplication to ensure browser events that are sent 
 - [Event ID and Event Name](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/#event-id-and-event-name--recommended-){:target="_blank"}
 - [FBP or External ID](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/#fbp-or-external-id){:target="_blank"}
 
-Segment’s Facebook Conversions API (Actions) destination allows you to map your data to these four fields, to support either deduplication method. Please note that Segment’s Facebook Pixel destination will set `messageId` as the `eventId`. See Facebook's [Handling Duplicate Pixel and Conversions API Events](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events){:target="_blank"} for more information.
+Segment's Facebook Conversions API (Actions) destination allows you to map your data to these four fields, to support either deduplication method. Please note that Segment's Facebook Pixel destination will set `messageId` as the `eventId`. See Facebook's [Handling Duplicate Pixel and Conversions API Events](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events){:target="_blank"} for more information.
 
 ### Send some events from the browser and others from the server 
 
-If you want to separate events completed on a user’s browser from events completed outside the browser, such as a server-based payment system, you can send some events to Facebook Pixel and other events to Facebook Conversions API. Sensitive information is best kept out of browsers, so any data you don’t want exposed to users should only be sent using a server source. You can also set up the Conversions API to measure customer actions that are deeper in your marketing funnel. Seeing these deeper funnel events means you can more accurately measure how your ads are helping you reach your business goals.
+If you want to separate events completed on a user's browser from events completed outside the browser, such as a server-based payment system, you can send some events to Facebook Pixel and other events to Facebook Conversions API. Sensitive information is best kept out of browsers, so any data you don't want exposed to users should only be sent using a server source. You can also set up the Conversions API to measure customer actions that are deeper in your marketing funnel. Seeing these deeper funnel events means you can more accurately measure how your ads are helping you reach your business goals.
 
 #### Match rate considerations
 
@@ -102,7 +102,7 @@ With the Facebook Conversions API (Actions) destination, you can choose any fiel
 
 ![the coalesce function](images/image1.png)
 
-You can send additional User Data to increase the match rate for events from a server source. Collect other fields from the browser, like User Agent, IP Address, and [Facebook's cookie parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and map them in the User Data object. See [Facebook's Customer Information Parameters](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters){:target="_blank"} for more information on User Data fields, and [Facebook’s Best Practices for Conversions API](https://www.facebook.com/business/help/308855623839366?id=818859032317965){:target="_blank"} for match rate best practices.
+You can send additional User Data to increase the match rate for events from a server source. Collect other fields from the browser, like User Agent, IP Address, and [Facebook's cookie parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and map them in the User Data object. See [Facebook's Customer Information Parameters](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters){:target="_blank"} for more information on User Data fields, and [Facebook's Best Practices for Conversions API](https://www.facebook.com/business/help/308855623839366?id=818859032317965){:target="_blank"} for match rate best practices.
 
 ![the user data object](images/image2.png)
 
@@ -112,7 +112,7 @@ If you choose this option, each source sends different events, and deduplication
 
 ### Send events from the server
 
-Use this approach if you don’t want to track users from the browser with Facebook Pixel. By default, Facebook Pixel collects cookie data, as well as browser data such as the IP Address and the User Agent, some of which you might not want to collect. By sending from a Segment server source to Facebook’s Conversions API, you can control which identifiers you pass to Facebook.
+Use this approach if you don't want to track users from the browser with Facebook Pixel. By default, Facebook Pixel collects cookie data, as well as browser data such as the IP Address and the User Agent, some of which you might not want to collect. By sending from a Segment server source to Facebook's Conversions API, you can control which identifiers you pass to Facebook.
 
 #### Match rate considerations
 

@@ -87,7 +87,7 @@ Events are only deduplicated if the same event is sent _first_ from the browser 
 
 ### Send different events - some from the browser others from the server
 
-Use this approach if you want to separate tracking events completed on a user's browser from events completed outside the browser, such as a server-based payment system. Sensitive information is best kept out of browsers, so any data you don’t want exposed to users should only be sent using a server source. You can also set up the Conversions API to measure customer actions that are deeper in your marketing funnel. Seeing these deeper funnel events means you can more accurately measure how your ads are helping you reach your business goals.
+Use this approach if you want to separate tracking events completed on a user's browser from events completed outside the browser, such as a server-based payment system. Sensitive information is best kept out of browsers, so any data you don't want exposed to users should only be sent using a server source. You can also set up the Conversions API to measure customer actions that are deeper in your marketing funnel. Seeing these deeper funnel events means you can more accurately measure how your ads are helping you reach your business goals.
 
 #### Match rate considerations
 
@@ -144,7 +144,7 @@ You can set `action_source` manually by passing it as a property of a Track even
 | `other`              | Conversion happened in a way that is not listed.                                                          |
 | `phone_call`         | Conversion was made over the phone.                                                                       |
 | `physical_store`     | Conversion was made in person at your physical store.                                                     |
-| `system_generated`   | Conversion happened automatically, for example, a subscription renewal that’s set on auto-pay each month. |
+| `system_generated`   | Conversion happened automatically, for example, a subscription renewal that's set on auto-pay each month. |
 | `website`            | Conversion was made on your website.                                                                      |
 
 

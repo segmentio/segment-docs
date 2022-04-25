@@ -69,7 +69,7 @@ Her identifiers will now contain the original anonymous_id, her email and her us
 ## Cross-Device Identification
 Users can have multiple touch points with an app ecosystem through more than one device. For example, users might interact with an eCommerce app through both a native app, a mobile browser and a web browser.
 
-Let’s continue with the example of Jane Doe. She now views the same mobile app SegKicks on her Android phone as well.
+Let's continue with the example of Jane Doe. She now views the same mobile app SegKicks on her Android phone as well.
 
 Jane Doe logs into the Android phone with the same email janedoe@example.com.
 
@@ -92,9 +92,9 @@ Her new User Profile identities will now also contain android.id:
 ![](images/jane_doe_new_android_identities.png)
 
 ## Cross-App Identification
-A company’s product ecosystem may also spread out across multiple apps. For example, SegmentKicks also has a running app SegRuns.
+A company's product ecosystem may also spread out across multiple apps. For example, SegmentKicks also has a running app SegRuns.
 
-Now let’s view what happens when Jane Doe downloads the Android app SegRuns and views a workout:
+Now let's view what happens when Jane Doe downloads the Android app SegRuns and views a workout:
 
 ```js
 {

@@ -95,3 +95,14 @@ a.aa-link:hover {
 .aa-submitButton:focus {
   outline: none;
 }
+
+.engage-pill {
+  background-color: #d14343;
+  display: inline-block;
+  position: absolute;
+  right: 15px;
+  padding: 0 4px;
+  border-radius: 5px;
+  color: white;
+  font-size: 10px;
+}

@@ -10,14 +10,14 @@ Personas is a powerful personalization platform that helps you create unified cu
 
 
 > info "Get Access to Personas"
-> Personas is available only to workspaces on our [Business Tier plan](https://segment.com/pricing/). If you’re already a Segment customer on a Business Tier plan, contact your Customer Success Manager to get access to Personas. If you’re a new customer or don’t have a CSM, [request a demo](https://segment.com/demo/).
+> Personas is available only to workspaces on our [Business Tier plan](https://segment.com/pricing/). If you're already a Segment customer on a Business Tier plan, contact your Customer Success Manager to get access to Personas. If you're a new customer or don't have a CSM, [request a demo](https://segment.com/demo/).
 
 ## What can you do with Personas?
 
 #### Create unified customer profiles
 Personas uses [Segment Identity Resolution](/docs/personas/identity-resolution/) to take event data from across devices and channels and intelligently merge it into complete user- or account-level profiles. This gives your organization a single view of your customer base. To learn more, read the [Identity Resolution documentation](/docs/personas/identity-resolution/).
 
-{% include components/reference-button.html href="https://segment.com/customers/frameio/" icon="personas.svg" title="Personalizing customer interactions" description="Support teams rely on Segment’s unified profiles to make real-time and informed decisions about customers when answering tickets or taking support calls. Read about how the support team at Frame.io reduced ticket response time by 80%." %}
+{% include components/reference-button.html href="https://segment.com/customers/frameio/" icon="personas.svg" title="Personalizing customer interactions" description="Support teams rely on Segment's unified profiles to make real-time and informed decisions about customers when answering tickets or taking support calls. Read about how the support team at Frame.io reduced ticket response time by 80%." %}
 
 #### Enrich profiles with new traits
 Add detail to user profiles with new traits, and use them to power personalized marketing campaigns. You can add new traits to your user or account profiles in Segment using:
@@ -31,7 +31,7 @@ Create lists of users or accounts that match specific criteria. For example, aft
 #### Sync audiences to marketing tools
 Once you create your Computed Traits and Audiences, Personas sends them to your Segment Destinations in just a few clicks. You can use these Traits and Audiences to personalize messages across channels, optimize ad spend, and improve targeting. You can also use the [Profile API](/docs/personas/profile-api) to build in-app and onsite personalization. Learn more about [using Personas data](/docs/personas/using-personas-data/) and the [Profile API](/docs/personas/profile-api).
 
-{% include components/reference-button.html href="https://segment.com/customers/drift/" icon="personas.svg" title="Personalizing marketing campaigns" content="Marketing teams use Personas to run real-time multi-channel marketing campaigns, based off specific user attributes they’ve computed in Personas. Read about how Drift used Personas to increase prospect engagement by 150% in 2 month." %}
+{% include components/reference-button.html href="https://segment.com/customers/drift/" icon="personas.svg" title="Personalizing marketing campaigns" content="Marketing teams use Personas to run real-time multi-channel marketing campaigns, based off specific user attributes they've computed in Personas. Read about how Drift used Personas to increase prospect engagement by 150% in 2 month." %}
 
 
 ## Personas core components
@@ -49,7 +49,7 @@ A space is a separate Personas environment. There are two main reasons you might
 
 ## Audiences
 
-An [Audience](/docs/personas/audiences/) is a list of either users (B2C) or accounts (B2B) that match a specific criteria. For example, Segment’s Marketing team might build an active signups audience for an email marketing campaign. This Audience could contain all users who signed up in the last seven days and added a source within seven days of signing up. The example below shows how you could define this audience in the Audience Builder.
+An [Audience](/docs/personas/audiences/) is a list of either users (B2C) or accounts (B2B) that match a specific criteria. For example, Segment's Marketing team might build an active signups audience for an email marketing campaign. This Audience could contain all users who signed up in the last seven days and added a source within seven days of signing up. The example below shows how you could define this audience in the Audience Builder.
 
 ![](images/personas-newaudience.png)
 

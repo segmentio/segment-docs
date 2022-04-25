@@ -49,7 +49,7 @@ Segment sends `identify()` calls to Moesif as [user updates](https://www.moesif.
 The integration handles Segment [reserved traits](/docs/connections/spec/identify/#traits) like `email` and `firstName`. It maps [automatically-collected fields](/docs/connections/spec/common/#context-fields-automatically-collected) like campaign information and IP address.
 
 ## Track
-If you haven’t had a chance to review our spec, take a look tounderstand what the [Track](/docs/connections/spec/track/) method does. An example call would look like:
+If you haven't had a chance to review our spec, take a look tounderstand what the [Track](/docs/connections/spec/track/) method does. An example call would look like:
 
 ```
 analytics.track('Login Button Clicked')

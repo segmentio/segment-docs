@@ -347,7 +347,7 @@ items:
   name: catalog/destinations/adobe-analytics
   url: connections/destinations/catalog/adobe-analytics
   description: >-
-    It’s the industry-leading solution for applying real-time analytics and
+    It's the industry-leading solution for applying real-time analytics and
     detailed segmentation across all of your marketing channels. Use it to
     discover high-value audiences and power customer intelligence for your
     business.
@@ -464,7 +464,7 @@ items:
       map_prefix: eVar
       select_options: []
     description: >-
-      Map your Adobe Analytics eVar names to the property names you’re using in
+      Map your Adobe Analytics eVar names to the property names you're using in
       your Segment events. Enter a Segment property name on the left and an
       Adobe Analytics eVar number on the right. You can view your Segment events
       and properties in your Schema.
@@ -512,7 +512,7 @@ items:
       map_prefix: hier
       select_options: []
     description: >-
-      Map your Adobe Analytics hVars to the property names you’re using in your
+      Map your Adobe Analytics hVars to the property names you're using in your
       Segment page calls. Enter a Segment property name on the left and an Adobe
       Analytics hVar number on the right. You can view your Segment page calls
       and properties in your Schema.
@@ -553,7 +553,7 @@ items:
       map_prefix: list
       select_options: []
     description: >-
-      Map your Adobe Analytics list variables names to the property names you’re
+      Map your Adobe Analytics list variables names to the property names you're
       using in your Segment events. Enter a Segment property name on the left
       and an Adobe Analytics list variable number on the right. You can view
       your Segment events and properties in your Schema.
@@ -600,7 +600,7 @@ items:
 
       ​​
 
-      ​​Segment’s default behavior is to set the Adobe Analytics visitorID based
+      ​​Segment's default behavior is to set the Adobe Analytics visitorID based
       on the destination specific setting for visitorId​, falling back to
       userId​ then anonymousId​. This setting removes the fallbacks.
     settings: []
@@ -653,7 +653,7 @@ items:
       map_prefix: prop
       select_options: []
     description: >-
-      Map your Adobe Analytics property names to the property names you’re using
+      Map your Adobe Analytics property names to the property names you're using
       in your Segment events. Enter a Segment property name on the left and an
       Adobe Analytics property number on the right. You can view your Segment
       events and properties in your Schema.
@@ -1029,7 +1029,7 @@ items:
     deprecated: false
     required: false
     description: >-
-      Toggle this switch ON if you are implemented in Airship’s European Data
+      Toggle this switch ON if you are implemented in Airship's European Data
       Center. If you are unsure which data center you are on please reach out to
       support@airship.com.
     settings: []
@@ -1375,7 +1375,7 @@ items:
     It can capture, transform, and load streaming data into Amazon Kinesis
     Analytics, Amazon S3, Amazon Redshift, and Amazon Elasticsearch Service,
     enabling near real-time analytics with existing business intelligence tools
-    and dashboards you’re already using today. It is a fully managed service
+    and dashboards you're already using today. It is a fully managed service
     that automatically scales to match the throughput of your data and requires
     no ongoing administration. It can also batch, compress, and encrypt the data
     before loading it, minimizing the amount of storage used at the destination
@@ -2762,7 +2762,7 @@ items:
     deprecated: false
     required: false
     description: >-
-      Toggle this switch ON if you are implemented in Apptimize’s European Data
+      Toggle this switch ON if you are implemented in Apptimize's European Data
       Center. If you are unsure which data center you are on please reach out to
       support@apptimize.com.
     settings: []
@@ -4155,7 +4155,7 @@ items:
   description: >-
     Button is the mobile commerce technology company that is powering a
     commerce-driven internet. Our platform powers mobile business growth for the
-    world’s largest brands and publishers, while offering consumers more
+    world's largest brands and publishers, while offering consumers more
     seamless, enjoyable experiences.
   hidden: false
   status: PUBLIC_BETA
@@ -6260,7 +6260,7 @@ items:
     string_validators:
       regexp: '^.{8,}$'
     description: >-
-      You can find your CrowdPower project’s public key on the settings page for
+      You can find your CrowdPower project's public key on the settings page for
       your project.
     settings: []
 - display_name: Cruncher
@@ -8431,7 +8431,7 @@ items:
       sending events to Facebook via Facebook Pixel for the same Pixel ID. 
 
 
-      By default, we’ll send the user ID as External ID and if User ID is
+      By default, we'll send the user ID as External ID and if User ID is
       absent, will fall back to Anonymous ID. If you wish to remove this default
       behavior and instead use a different field in your payload as the external
       ID, you can use this setting. An example value for this would be
@@ -9265,7 +9265,7 @@ items:
       regexp: ''
     description: >-
       Provide the subdomain of your Freshsales account. So if your domain is
-      segment.freshsales.io, then your subdomain is ‘segment’.
+      segment.freshsales.io, then your subdomain is ‘segment'.
     settings: []
 - display_name: Friendbuy
   slug: friendbuy
@@ -9928,7 +9928,7 @@ items:
   name: catalog/destinations/goedle
   url: connections/destinations/catalog/goedle-io
   description: >-
-    Predict your customer’s behavior. Increase conversions and retention with
+    Predict your customer's behavior. Increase conversions and retention with
     powerful AI and intelligent marketing automation.
   hidden: false
   status: PUBLIC
@@ -10226,8 +10226,8 @@ items:
     deprecated: false
     required: false
     description: >-
-      If you don’t want the global site tag to set first-party cookies on your
-      site’s domain, you should disable this setting. Disabling this is *NOT*
+      If you don't want the global site tag to set first-party cookies on your
+      site's domain, you should disable this setting. Disabling this is *NOT*
       recommended by Google as it can lead to less accurate conversion
       measurements.
     settings: []
@@ -10358,8 +10358,8 @@ items:
   name: catalog/destinations/google-analytics
   url: connections/destinations/catalog/google-analytics
   description: >-
-    Google Analytics is the most popular analytics tool for the web. It’s free
-    and provides a wide range of features. It’s especially good at measuring
+    Google Analytics is the most popular analytics tool for the web. It's free
+    and provides a wide range of features. It's especially good at measuring
     traffic sources and ad campaigns.
   hidden: false
   status: PUBLIC
@@ -10839,7 +10839,7 @@ items:
     deprecated: false
     required: false
     description: >-
-      Google’s AMP Client ID API lets you uniquely identify users who engage
+      Google's AMP Client ID API lets you uniquely identify users who engage
       with your content on AMP and non-AMP pages. If you opt-in, Google
       Analytics will use the user's AMP Client ID to determine that multiple
       site events belong to the same user when those users visit AMP pages via a
@@ -11238,9 +11238,9 @@ items:
     string_validators:
       regexp: '^[.a-zA-Z0-9_-]+\.[.a-zA-Z0-9_-]+$'
     description: >-
-      Use this if you wish to share GoSquared’s tracking cookies across
+      Use this if you wish to share GoSquared's tracking cookies across
       subdomains, `.example.com` will enable shared tracking across all
-      example’s subdomains. By default, cookies are set on the current domain
+      example's subdomains. By default, cookies are set on the current domain
       (including subdomain) only.
     settings: []
   - name: apiSecret
@@ -12224,7 +12224,7 @@ items:
       Optional. A list of Segment track events that correspond to an app open or
       page load. Default: “Application Opened”. Note events from page, screen or
       identify are enabled separately with the toggles below and are
-      automatically considered page load events in Impact’s platform.
+      automatically considered page load events in Impact's platform.
     settings: []
 - display_name: Improvely
   slug: improvely
@@ -13038,7 +13038,7 @@ items:
       regexp: ''
     description: >-
       If you are using our older mobile library (before v2 iOS or v3 Android)
-      and have packaged Kahuna’s SDK, you can give us the sender ID. The sender
+      and have packaged Kahuna's SDK, you can give us the sender ID. The sender
       ID is also called the project number in your Google API project. Make sure
       you have created a project by following instructions
       [here](http://app.usekahuna.com/tap/getstarted/android/), under 'Enable
@@ -13495,7 +13495,7 @@ items:
       identifier with your `traits.email` or `properties.email`. 
 
 
-      Klaviyo will not record events/profiles if there isn’t an email address
+      Klaviyo will not record events/profiles if there isn't an email address
       associated with that customer.
 
       Impact is fewer events/profiles recorded in Klaviyo as a result.
@@ -13557,7 +13557,7 @@ items:
   url: connections/destinations/catalog/kochava
   description: >-
     Kochava is a leading mobile attribution and analytics platform, with all the
-    right features to be the only partner you’ll need.
+    right features to be the only partner you'll need.
   hidden: false
   status: PUBLIC
   previous_names:
@@ -15192,7 +15192,7 @@ items:
   url: connections/destinations/catalog/matomo
   description: >-
     Matomo is the leading open source web analytics platform that gives you
-    valuable insights into your website’s visitors, your marketing campaigns and
+    valuable insights into your website's visitors, your marketing campaigns and
     much more, so you can optimize your strategy and online experience of your
     visitors.
   hidden: false
@@ -18163,7 +18163,7 @@ items:
       regexp: '^.{8,}$'
     description: >-
       In the Personyze dashboard, under Account Settings > Integrations >
-      Segment > Get Keys, you’ll see your API Key.
+      Segment > Get Keys, you'll see your API Key.
     settings: []
 - display_name: Pingdom
   slug: pingdom
@@ -18292,7 +18292,7 @@ items:
   url: connections/destinations/catalog/pinterest-tag
   description: >-
     Use the Pinterest Tag on your website to build audiences to target based on
-    actions they’ve taken on your site, and gather valuable conversion insights.
+    actions they've taken on your site, and gather valuable conversion insights.
     The Pinterest tag is a piece of JavaScript code you put on your website to
     track conversions, and build and optimize audiences to reach valuable
     customers on Pinterest.
@@ -21105,7 +21105,7 @@ items:
     Savio centralizes your customers' feedback to help you prioritize what
     features to build. Connect Savio to link customer feedback to MRR and Plan,
     so you can answer questions like "what features do my Enterprise customers
-    want" or "what’s the total MRR of customers who want feature A vs. feature
+    want" or "what's the total MRR of customers who want feature A vs. feature
     B".
   hidden: false
   status: PUBLIC
@@ -21436,7 +21436,7 @@ items:
   description: >-
     Selligent Marketing Cloud is a highly integrated, AI-powered omni-channel
     marketing automation platform which enables ambitious B2C marketers to
-    maximize every moment of interaction with today’s connected consumers.
+    maximize every moment of interaction with today's connected consumers.
   hidden: false
   status: PUBLIC_BETA
   previous_names:
@@ -21698,7 +21698,7 @@ items:
     string_validators:
       regexp: ''
     description: >-
-      Typically this would be the server name, but that doesn’t exist on all
+      Typically this would be the server name, but that doesn't exist on all
       platforms. Instead you may use something like the device ID, as it
       indicates the host which the client is running on.
     settings: []
@@ -22340,7 +22340,7 @@ items:
       Use "handlebarsjs" templating to format messages sent to Slack. The
       default template is "Identified {{name}}. 
 
-      {{traits}}". You do not need to append ‘traits’, as this template is
+      {{traits}}". You do not need to append ‘traits', as this template is
       specific to `.identify()` calls only and thus is assumed. Make sure
       whatever trait you try to use in your template, you send as a trait in
       your `.identify()` calls, otherwise we will reject the message.
@@ -22777,10 +22777,10 @@ items:
     description: >-
       To find your key, log into Split and navigate to “Admin Settings” >
       “Integrations” > select your desired workspace > “Segment”. There you can
-      find the key for each configured integration. If you don’t have an
+      find the key for each configured integration. If you don't have an
       integration configured, be sure to configure your integration in the
       section “Configure as a destination in Segment” and click save to generate
-      a key. For more information, learn more in Split’s [integration
+      a key. For more information, learn more in Split's [integration
       documentation](https://segment.com/docs/connections/destinations/catalog/split/).
     settings: []
 - display_name: Startdeliver
@@ -22912,8 +22912,8 @@ items:
     string_validators:
       regexp: ''
     description: >-
-      In your Stitch dashboard, click ‘Add an Integration’. Click on Segment,
-      and complete the ‘Enable with Segment’ workflow.
+      In your Stitch dashboard, click ‘Add an Integration'. Click on Segment,
+      and complete the ‘Enable with Segment' workflow.
     settings: []
 - display_name: Stonly
   slug: stonly
@@ -24398,7 +24398,7 @@ items:
   name: catalog/destinations/trustpilot
   url: connections/destinations/catalog/trustpilot
   description: >-
-    Trustpilot - Join the world’s most powerful review platform. Get customer
+    Trustpilot - Join the world's most powerful review platform. Get customer
     reviews to grow and show the trust in your brand that powers your business
     forward.
   hidden: false
@@ -26114,7 +26114,7 @@ items:
   name: catalog/destinations/walkme
   url: connections/destinations/catalog/walkme
   description: >-
-    WalkMe’s Digital Adoption Platform provides guidance, engagement, insights
+    WalkMe's Digital Adoption Platform provides guidance, engagement, insights
     and automation to users
   hidden: false
   status: PUBLIC_BETA
@@ -26935,7 +26935,7 @@ items:
   name: catalog/destinations/xplenty
   url: connections/destinations/catalog/xplenty
   description: >-
-    Xplenty’s cloud-based data integration service makes it easy to move,
+    Xplenty's cloud-based data integration service makes it easy to move,
     process and transform more data, faster. Xplenty processes both structured
     and unstructured data and integrates with a variety of sources, including
     Amazon Redshift, SQL data stores, NoSQL databases and cloud storage
@@ -27567,7 +27567,7 @@ items:
   description: >-
     Connect makes it easy to send email, iOS/Android push, web notifications and
     SMS based on user actions in your website and mobile apps—-then we let you
-    AB test to see how each message affects customer behavior. Because we’re
+    AB test to see how each message affects customer behavior. Because we're
     built on your event stream, you can create and update segments in real-time,
     decide which channel to use based on device history and run sophisticated AB
     tests across channels with multiple goals.

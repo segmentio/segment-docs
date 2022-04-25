@@ -3,7 +3,7 @@ title: Crossing Minds Destination
 id: 602c595c1cdf37acb79bb5d5
 ---
 
-[Crossing Minds](https://crossingminds.com/){:target="blank"} is a recommendation platform for businesses using next-gen AI that instantly anticipates customers’ wants and needs using only anonymized user data.
+[Crossing Minds](https://crossingminds.com/){:target="blank"} is a recommendation platform for businesses using next-gen AI that instantly anticipates customers' wants and needs using only anonymized user data.
 
 Crossing Minds maintains this destination. For any issues with the destination, [contact the Crossing Minds Support team](mailto:support@crossingminds.com).
 

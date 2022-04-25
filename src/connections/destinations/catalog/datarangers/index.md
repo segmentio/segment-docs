@@ -25,7 +25,7 @@ This destination is maintained by BytePlus. For any issues with the destination,
 
 ## Page
 
-If you aren’t familiar with the Segment Spec, take a look at the Page method documentation (https://segment.com/docs/connections/spec/page/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the Page method documentation (https://segment.com/docs/connections/spec/page/) to learn about what it does. An example call would look like:
 
 
 ```js
@@ -37,7 +37,7 @@ Segment sends Page calls to BytePlus as a `page` event.
 
 ## Screen
 
-If you aren’t familiar with the Segment Spec, take a look at the [Screen method documentation](https://segment.com/docs/connections/spec/screen/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Screen method documentation](https://segment.com/docs/connections/spec/screen/) to learn about what it does. An example call would look like:
 ```obj-c
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
@@ -46,7 +46,7 @@ Segment sends Screen calls to BytePlus as a`screen`event.
 
 ## Identify
 
-If you aren’t familiar with the Segment Spec, take a look at the [Identify method documentation](https://segment.com/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Identify method documentation](https://segment.com/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -57,7 +57,7 @@ Segment sends Identify calls to BytePlus as an `identify `event with `SSID`.
 
 ## Track
 
-If you aren’t familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 ```js
 analytics.track('Login Button Clicked')
 ```
