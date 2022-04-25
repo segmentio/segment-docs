@@ -101,9 +101,9 @@ That query returns a table like this:
 
 
 ## Define sessions
-Segment’s API does not impose any restrictions on your data with regard to user sessions.
+Segment's API does not impose any restrictions on your data with regard to user sessions.
 
-Sessions aren’t fundamental facts about the user experience. They’re stories Segment builds around the data to understand how customers actually use the product in their day-to-day lives. And since Segment’s API is about collecting raw, factual data, there's no API for collecting sessions. Segment leaves session interpretation to SQL partners, which let you design how you measure sessions based on how customers use your product.
+Sessions aren't fundamental facts about the user experience. They're stories Segment builds around the data to understand how customers actually use the product in their day-to-day lives. And since Segment's API is about collecting raw, factual data, there's no API for collecting sessions. Segment leaves session interpretation to SQL partners, which let you design how you measure sessions based on how customers use your product.
 
 For more on why Segment doesn't collect session data at the API level, [check out a blog post here](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/){:target="_blank"}.
 
@@ -112,7 +112,7 @@ Each of Segment's SQL partners allow you to define sessions based on your specif
 
 To define sessions with raw SQL, a great query and explanation comes from [Mode Analytics](https://mode.com).
 
-Here’s the query to make it happen, but read Mode Analytics' [blog post](https://blog.modeanalytics.com/finding-user-sessions-sql/) for more information. Mode walks you through the reasoning behind the query, what each portion accomplishes, how you can tweak it to suit your needs, and the kinds of further analysis you can add on top of it.
+Here's the query to make it happen, but read Mode Analytics' [blog post](https://blog.modeanalytics.com/finding-user-sessions-sql/) for more information. Mode walks you through the reasoning behind the query, what each portion accomplishes, how you can tweak it to suit your needs, and the kinds of further analysis you can add on top of it.
 
 ```sql
 -- Finding the start of every session
@@ -154,7 +154,7 @@ analytics.identify('bob123',{
   plan: 'Free'
 });
 ```
-As these user traits change over time, you can continue calling the Identify method to update their changes. With this query, you can update Bob’s account plan to “Premium”.
+As these user traits change over time, you can continue calling the Identify method to update their changes. With this query, you can update Bob's account plan to “Premium”.
 
 ```javascript
 analytics.identify('bob123', {
@@ -178,7 +178,7 @@ This SQL query returns a table of Bob's account information, with each entry rep
 | bob123  | bob@intech.com | Premium | 2021-12-20 19:44:03 |
 | bob123  | bob@intech.com | Basic   | 2021-12-18 17:48:10 |
 
-If you want to see what your users looked like at a previous point in time, you can find that data in the `identifies` table. To get this table for your users, replace ‘initech’ in the SQL query with your source slug.
+If you want to see what your users looked like at a previous point in time, you can find that data in the `identifies` table. To get this table for your users, replace 'initech' in the SQL query with your source slug.
 
 If you only want the current state of the users, convert the `identifies` table into a [distinct users table](#convert-the-identifies-table-into-a-users-table) by returning the most recent Identify call for each account.
 
@@ -266,7 +266,7 @@ And there you go: a count of users with each type of plan!
 
 The `group` method ties a user to a group. It also lets you record custom traits about the group, like the industry or number of employees.
 
-Here’s what a basic `group` call looks like:
+Here's what a basic `group` call looks like:
 
 ```javascript
 analytics.group('0e8c78ea9d97a7b8185e8632', {
@@ -302,7 +302,7 @@ The previous query will return a table of Initech's group information, with each
 | Initech | Technology | 600       | Premium | 2021-12-20 19:44:03 |
 | Initech | Technology | 349       | Free    | 2021-12-18 17:18:15 |
 
-If you want to see a group’s traits at a previous point in time, this query is useful (To get this table for your groups, replace ‘initech’ with your source slug).
+If you want to see a group's traits at a previous point in time, this query is useful (To get this table for your groups, replace 'initech' with your source slug).
 
 If you only want to see the most recent state of the group, you can convert the groups table into a distinct groups table by viewing the most recent groups call for each account.
 

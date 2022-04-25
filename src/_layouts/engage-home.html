@@ -1,0 +1,47 @@
+---
+layout: engage
+---
+
+<main class="docs__body stage__body">
+  <div class="docs__navbar">
+    <div class="flex flex--justify gutter gutter--large@medium">
+      <div class="flex__column flex__column--6@xlarge">
+        <div class="search">
+          {% include_cached navbar/search.html container="engage-autocomplete" %}
+        </div>
+      </div>
+
+      <div class="flex__column flex__column--shrink">
+        {% include_cached navbar/nav.html %}
+      </div>
+    </div>
+  </div>
+
+  {% include_cached navbar/navbar-mobile.html %}
+
+  <article class="home page" data-tracking-scroll>
+    <div class="home__body page__body">
+      <div>
+        {%- if page.title -%}
+          <h1 id="{{ page.title | slugify }}" class="home__heading">
+            {{ page.title }}
+          </h1>
+        {%- endif -%}
+
+
+        <div class="home__markdown markdown" data-headings-anchors>
+          {{ content }}
+        </div>
+      </div>
+
+      {% unless page.hide-feedback %}
+        <hr>
+        {% include components/feedback.html %}
+      {% endunless %}
+
+      <hr>
+
+      {% include components/callout.html %}
+    </div>
+  </article>
+</main>

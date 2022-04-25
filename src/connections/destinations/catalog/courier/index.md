@@ -21,7 +21,7 @@ This destination is maintained by Courier. For any issues with the destination, 
 
 ## Identify
 
-If you aren’t familiar with the Segment Spec, read through the [Identify method documentation](/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, read through the [Identify method documentation](/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {

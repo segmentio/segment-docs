@@ -19,7 +19,7 @@ This destination is maintained by Canny. For any issues with the destination, [c
 
 
 ## Identify
-If you haven’t had a chance to review spec, take a look to understand what the Identify method does. An example call would look like:
+If you haven't had a chance to review spec, take a look to understand what the Identify method does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {

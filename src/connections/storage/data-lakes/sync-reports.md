@@ -161,7 +161,7 @@ A few helpful and commonly used queries are included below.
 ```sql
 SELECT day,sum(row_count)
 FROM "__segment_datalake"."sync_reports"
-WHERE source_id=’9IP56Shn6’ and table_name='checkout_started'
+WHERE source_id='9IP56Shn6' and table_name='checkout_started'
 GROUP BY day
 ORDER BY day
 ```
@@ -171,7 +171,7 @@ ORDER BY day
 ```sql
 SELECT day, table_name,sum(row_count)
 FROM "__segment_datalake"."sync_reports"
-WHERE source_id=’9IP56Shn6’ AND type=’event’
+WHERE source_id='9IP56Shn6' AND type='event'
 GROUP BY day, table_name
 ORDER BY day
 ```
@@ -181,7 +181,7 @@ ORDER BY day
 ```sql
 SELECT max(finish_time)
 FROM "__segment_datalake"."sync_reports"
-WHERE source_id=’9IP56Shn6’ AND status='finished' AND date(day) = CURRENT_DATE
+WHERE source_id='9IP56Shn6' AND status='finished' AND date(day) = CURRENT_DATE
 LIMIT 1
 ```
 
@@ -190,7 +190,7 @@ LIMIT 1
 ```sql
 SELECT run_id, status, error, error_code
 FROM "__segment_datalake"."sync_reports"
-WHERE source_id=’9IP56Shn6’ AND status='failed' AND date(day) >= (CURRENT_DATE - interval '2' day)
+WHERE source_id='9IP56Shn6' AND status='failed' AND date(day) >= (CURRENT_DATE - interval '2' day)
 ```
 
 ## Sync Errors
@@ -198,7 +198,7 @@ WHERE source_id=’9IP56Shn6’ AND status='failed' AND date(day) >= (CURRENT_DA
 The following error types can cause your data lake syncs to fail:
 - **[Insufficient Permissions](#insufficient-permissions)** - Segment does not have the permissions necessary to perform a critical operation. You must grant Segment additional permissions.
 - **[Invalid Settings](#invalid-settings)** - The settings are invalid. This could be caused by a missing required field, or a validation check that fails. The invalid setting must be corrected before the sync can succeed.
-- **[Internal Error](#internal-error)** - An error occurred in Segment’s internal systems. This should resolve on its own. [Contact the Segment Support team](https://segment.com/help/contact/) if the sync failure persists.
+- **[Internal Error](#internal-error)** - An error occurred in Segment's internal systems. This should resolve on its own. [Contact the Segment Support team](https://segment.com/help/contact/) if the sync failure persists.
 
 ### Insufficient Permissions
 
@@ -232,7 +232,7 @@ The most common error occurs when you do not list all Source IDs in the External
 
 ### Internal Error
 
-Internal errors occurr in Segment’s internal systems, and should resolve on their own. If sync failures persist, [contact the Segment Support team](https://segment.com/help/contact/).
+Internal errors occurr in Segment's internal systems, and should resolve on their own. If sync failures persist, [contact the Segment Support team](https://segment.com/help/contact/).
 
 ## FAQ
 

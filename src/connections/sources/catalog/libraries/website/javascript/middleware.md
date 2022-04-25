@@ -28,7 +28,7 @@ function({payload, next, integrations}){};
 
 - `payload` represents the event payload sent by Analytics.js. To change the value of the `payload`, mutate the `payload.obj` object. (See the example below.)
 - `next` represents the next function to be called in the source middleware chain. If the middleware provided does not call this function, the event is dropped on the client and is not delivered to Segment or any destinations.
-- `integrations` is an array of objects representing all the integrations that the payload is sent to. If an integration in this array is set to a ‘falsey’ value then the event is not be sent to the Integration.
+- `integrations` is an array of objects representing all the integrations that the payload is sent to. If an integration in this array is set to a ‘falsey' value then the event is not be sent to the Integration.
 
 ```js
 var SMW1 = function({ payload, next, integrations }) {

@@ -6,12 +6,12 @@ id: B0X0QmvMny
 
 React Native 2.0 is a major version upgrade to the [existing React Native library](/docs/connections/sources/catalog/libraries/mobile/react-native/classic) that is production-ready. With Analytics for React Native 2.0, you can you can collect analytics in your React Native application and send data to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics React Native 2.0 enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations.
 
-All of Segment’s libraries are open-source, and you can view Analytics for React Native 2.0 on GitHub. For more information, see the [Analytics React Native 2.0 GitHub repository](https://github.com/segmentio/analytics-react-native){:target="_blank"}.
+All of Segment's libraries are open-source, and you can view Analytics for React Native 2.0 on GitHub. For more information, see the [Analytics React Native 2.0 GitHub repository](https://github.com/segmentio/analytics-react-native){:target="_blank"}.
 
 > info "Using Analytics for React Native Classic?"
 > If you're still using the classic version of Analytics for React Native, you can refer to the documentation [here](/docs/connections/sources/catalog/libraries/mobile/react-native/classic).
 
-If you’re migrating to Analytics React Native 2.0 from an older Analytics React Native version, skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/react-native/migration/).
+If you're migrating to Analytics React Native 2.0 from an older Analytics React Native version, skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/react-native/migration/).
 
 > warning ""
 > `@segment/analytics-react-native 2.0` is compatible with Expo's [Custom Dev Client](https://docs.expo.dev/development/getting-started/){:target="_blank"} and [EAS builds](https://docs.expo.dev/build/introduction/){:target="_blank"} without any additional configuration. Destination Plugins that require native modules may require custom [Expo Config Plugins](https://docs.expo.dev/guides/config-plugins/){:target="_blank"}.
@@ -33,13 +33,13 @@ To get started with the Analytics for React Native 2.0 library:
     # or
     npm install --save @segment/analytics-react-native @segment/sovran-react-native @react-native-async-storage/async-storage
     ```
-3. If you’re using iOS, install native modules with:
+3. If you're using iOS, install native modules with:
 
     ```js
     npx pod-install
     ```
 
-4. If you’re using Android, you need to add extra permissions to your `AndroidManifest.xml`.  Add the line below between the `` tags:
+4. If you're using Android, you need to add extra permissions to your `AndroidManifest.xml`.  Add the line below between the `` tags:
 
     ```js
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -60,8 +60,8 @@ To get started with the Analytics for React Native 2.0 library:
     Option Name | Description
     ----------- | ------------
     `writeKey` *required* | This is your Segment write key.
-    `autoAddSegmentDestination` | The default is set to `true`. <br> This automatically adds the Segment Destination plugin. Set to `false` if you don’t want to add the Segment Destination.  
-    `debug` | The default is set to `true`. <br> The default value is `false` in production. <br> When set to false, logs don’t generate.
+    `autoAddSegmentDestination` | The default is set to `true`. <br> This automatically adds the Segment Destination plugin. Set to `false` if you don't want to add the Segment Destination.  
+    `debug` | The default is set to `true`. <br> The default value is `false` in production. <br> When set to false, logs don't generate.
     `defaultSettings` | The default is set to `undefined`. <br> Settings that will be used if the request to get the settings from Segment fails.
     `flushAt` | The default is set to `20`. <br> The count of events at which Segment sends to the backend.
     `flushInterval`| The default is set to `30`. <br> The interval in seconds at which Segment sends events to the backend.
@@ -148,7 +148,7 @@ segmentClient.track('Awesome event');
 ```
 
 ## Tracking Methods
-Once you’ve installed the Analytics React Native 2.0 library, you can start collecting data through Segment’s tracking methods:
+Once you've installed the Analytics React Native 2.0 library, you can start collecting data through Segment's tracking methods:
 - Identify
 - Track
 - Screen
@@ -156,7 +156,7 @@ Once you’ve installed the Analytics React Native 2.0 library, you can start co
 
 ### Identify
 
-The [Identify](/docs/connections/spec/identify/) method lets you tie a user to their actions and record traits about them. This includes a unique user ID and any optional traits you know about them like their email, name, or address. The traits option can include any information you want to tie to the user. When using any of the [reserved user traits](/docs/connections/spec/identify/#traits), be sure the information reflects the name of the trait. For example, `email` should always be a string of the user’s email address.
+The [Identify](/docs/connections/spec/identify/) method lets you tie a user to their actions and record traits about them. This includes a unique user ID and any optional traits you know about them like their email, name, or address. The traits option can include any information you want to tie to the user. When using any of the [reserved user traits](/docs/connections/spec/identify/#traits), be sure the information reflects the name of the trait. For example, `email` should always be a string of the user's email address.
 
 {% codeexample %}
 {% codeexampletab Method signature %}
@@ -203,9 +203,9 @@ track('View Product', {
 ### Screen
 The [Screen](/docs/connections/spec/screen/) method lets you record whenever a user sees a screen in your mobile app, along with optional extra information about the page being viewed.
 
-You’ll want to record a screen event whenever the user opens a screen in your app. This could be a view, fragment, dialog, or activity depending on your app.
+You'll want to record a screen event whenever the user opens a screen in your app. This could be a view, fragment, dialog, or activity depending on your app.
 
-Not all integrations support screen, so when it’s not supported explicitly, the screen method tracks as an event with the same parameters.
+Not all integrations support screen, so when it's not supported explicitly, the screen method tracks as an event with the same parameters.
 
 {% codeexample %}
 {% codeexampletab Method signature %}
@@ -228,7 +228,7 @@ screen('ScreenName', {
 For setting up automatic screen tracking, see the [Automatic Screen Tracking instructions](#automatic-screen-tracking).
 
 ### Group
-The [Group](/docs/connections/spec/group/) method lets you associate an individual user with a group— whether it’s a company, organization, account, project, or team. This includes a unique group identifier and any additional group traits you may know, like company name, industry, or number of employees. You can include any information you want to associate with the group in the traits option. When using any of the [reserved group traits](/docs/connections/spec/group/#traits), be sure the information reflects the name of the trait. For example, email should always be a string of the user's email address.
+The [Group](/docs/connections/spec/group/) method lets you associate an individual user with a group— whether it's a company, organization, account, project, or team. This includes a unique group identifier and any additional group traits you may know, like company name, industry, or number of employees. You can include any information you want to associate with the group in the traits option. When using any of the [reserved group traits](/docs/connections/spec/group/#traits), be sure the information reflects the name of the trait. For example, email should always be a string of the user's email address.
 
 {% codeexample %}
 {% codeexampletab Method signature %}
@@ -256,7 +256,7 @@ The Analytics React Native 2.0 utility methods help you to manage your data. The
 - Cleanup
 
 ### Alias
-The [alias](/docs/connections/spec/alias/) method is used to merge two user identities by connecting two sets of user data as one. This method is required to manage user identities in some of Segment’s destinations.
+The [alias](/docs/connections/spec/alias/) method is used to merge two user identities by connecting two sets of user data as one. This method is required to manage user identities in some of Segment's destinations.
 
 {% codeexample %}
 {% codeexampletab Method signature %}
@@ -335,10 +335,10 @@ If you don't do this, the old client instance would still exist and retain the t
 Ideally, you shouldn't have to use this method, and the Segment client should be initialized only once in the application lifecycle.
 
 ## Automatic screen tracking
-As sending a screen() event with each navigation action can get tiresome, it’s best to track navigation globally. The implementation is different depending on which library you use for navigation. The two main navigation libraries for React Native are [React Navigation](https://reactnavigation.org/){:target="_blank"} and [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/){:target="_blank"}.
+As sending a screen() event with each navigation action can get tiresome, it's best to track navigation globally. The implementation is different depending on which library you use for navigation. The two main navigation libraries for React Native are [React Navigation](https://reactnavigation.org/){:target="_blank"} and [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/){:target="_blank"}.
 
 ### React Navigation
-When setting up React Navigation, you’ll essentially find the root level navigation container and call `screen()` whenever the user navigates to a new screen. Segment’s [example app](https://github.com/segmentio/analytics-react-native/tree/master/example){:target="_blank"} is set up with screen tracking using React Navigation, so you can use it as a guide.
+When setting up React Navigation, you'll essentially find the root level navigation container and call `screen()` whenever the user navigates to a new screen. Segment's [example app](https://github.com/segmentio/analytics-react-native/tree/master/example){:target="_blank"} is set up with screen tracking using React Navigation, so you can use it as a guide.
 
 To set up automatic screen tracking with React Navigation:
 
@@ -395,7 +395,7 @@ In order to set up automatic screen tracking while using [React Native Navigatio
     ```
 
 ## Plugin Architecture
-Segment’s plugin architecture enables you to modify and augment how the events are processed before they’re uploaded to the Segment API.  In order to customize what happens after an event is created, you can create and place various Plugins along the processing pipeline that an event goes through. This pipeline is referred to as a timeline.
+Segment's plugin architecture enables you to modify and augment how the events are processed before they're uploaded to the Segment API.  In order to customize what happens after an event is created, you can create and place various Plugins along the processing pipeline that an event goes through. This pipeline is referred to as a timeline.
 
 ### Plugin Types
 
@@ -413,7 +413,7 @@ Segment’s plugin architecture enables you to modify and augment how the events
 ### Destination Plugins
 Segment is an out-of-the-box `DestinationPlugin`. You can add as many other destination plugins as you like and upload events and data to them.
 
-If you don’t want the Segment destination plugin, you can pass `autoAddSegmentDestination = false` in the options when setting up your client. This prevents the `SegmentDestination` plugin from being added automatically for you.
+If you don't want the Segment destination plugin, you can pass `autoAddSegmentDestination = false` in the options when setting up your client. This prevents the `SegmentDestination` plugin from being added automatically for you.
 
 ### Adding Plugins
 You can add a plugin at any time through the `segmentClient.add()` method.

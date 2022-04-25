@@ -1,0 +1,43 @@
+{% assign currentPage = page.path | downcase | replace: "/index.md" "" | replace: ".md" "" %}
+<!-- MZ: 2/3/22: Need to have icons for each section, replace home icon with "back to home" or something similar -->
+
+<div class="sidebar">
+  <div class="sidebar__content">
+    <nav class="menu">
+      <ul class="list list--unstyle">
+        <li class="menu-item">
+          <a href="{{ site.baseurl }}/" class="menu-item__link menu-item__link--small menu-item__link--back">
+            {% include icons/symbols/arrow-left.svg %}
+            <span>Back to Segment Docs</span>
+          </a>
+        </li>
+        <li class="menu-item {% if currentPage == "engage" %}menu-item--active{% endif %}">
+          <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle"
+            href="{{ site.baseurl }}/engage">
+            <div class="menu-item__icon flex__column">
+              {% include icons/home.svg %}
+            </div>
+
+            <div class="flex__column">Engage Home</div>
+          </a>
+        </li>
+
+        {% for root_section in site.data.sidenav.engage.sections %}
+        {% include menu/menu-engage-item.html root_section=root_section %}
+        {% endfor %}
+
+        <li class="menu-item">
+          <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}/engage/contact">
+            <div class="menu-item__icon flex__column">
+              {% include icons/engage/support.svg %}
+            </div>
+    
+            <div class="flex__column">Support</div>
+          </a>
+        </li>
+    </nav>
+
+
+
+  </div>
+</div>

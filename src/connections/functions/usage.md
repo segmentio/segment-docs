@@ -24,7 +24,7 @@ Functions have a timeout of 5 seconds. If a function takes longer than 5 seconds
 
 ## Estimating execution time
 
-Execution time can vary widely between use cases, so it is extremely difficult to predict. The best way is to look at the function’s actual execution time and multiply it by the event volume.
+Execution time can vary widely between use cases, so it is extremely difficult to predict. The best way is to look at the function's actual execution time and multiply it by the event volume.
 
 Another way to provide a rough estimate is to use an expected source function time of 100ms per invocation, and expected destination function time at 200ms per invocation:
 
@@ -32,7 +32,7 @@ Another way to provide a rough estimate is to use an expected source function ti
 - A destination function receiving 1B requests and taking an average of 200 milliseconds will use 55,556 hours: `1,000,000,000 * 200ms = 200,000,000,000ms = 55,556 hours`
 
 > note ""
-> **Note:** Test runs are generally slower than the time it takes a function to run once it’s deployed. For more accurate estimates, base your estimates on sending data into a production function, and not on timing the test runs.
+> **Note:** Test runs are generally slower than the time it takes a function to run once it's deployed. For more accurate estimates, base your estimates on sending data into a production function, and not on timing the test runs.
 
 You can (and should!) use [Destination Filters](/docs/connections/destinations/destination-filters/) to reduce the volume of events reaching your function. Filtering events with a Destination Filter prevents the Function from being invoked for that event entirely.
 
@@ -40,7 +40,7 @@ You can (and should!) use [Destination Filters](/docs/connections/destinations/d
 
 In the most cases, functions are slow due to external requests using the `fetch()` call. The external API may be under heavy load or it may simply take a long time to process your request.
 
-If you’re making many requests that could be done in parallel, ensure that you’re not doing them sequentially. If the external API takes 400ms to respond and you issue 10 requests, it would take 4 seconds to do them sequentially versus 400ms to do them in parallel. For example, if you’re waiting for requests to complete inside of a loop you’re making your requests sequentially:
+If you're making many requests that could be done in parallel, ensure that you're not doing them sequentially. If the external API takes 400ms to respond and you issue 10 requests, it would take 4 seconds to do them sequentially versus 400ms to do them in parallel. For example, if you're waiting for requests to complete inside of a loop you're making your requests sequentially:
 
 ```js
 for (const objectId of event.properties.objects) {
@@ -68,4 +68,4 @@ for (const response of responses) {
 }
 ```
 
-If you’re only issuing a single request in your function and it is slow, you might want to contact the owner of the external API for support.
+If you're only issuing a single request in your function and it is slow, you might want to contact the owner of the external API for support.

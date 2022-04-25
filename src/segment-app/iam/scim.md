@@ -44,7 +44,7 @@ Even though Segment users exist separately from workspaces, your IdP can create 
 
 If the person you want to add does not have a Segment account, your IdP will create one. If the person already has a Segment account, you can still add them to your Workspace using your IdP, but it **does not create a new Segment account**.
 
-You can create new users and set their `userName` (email) and `displayName` (single value field that represents a user’s full name) using your IdP.
+You can create new users and set their `userName` (email) and `displayName` (single value field that represents a user's full name) using your IdP.
 
 If a user already has a Segment account, you can add them using their email address using your IdP. However, Segment ignores the `displayName` sent by the IdP, and instead uses the name chosen by the user when they created their account.
 

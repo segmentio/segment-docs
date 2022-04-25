@@ -66,7 +66,7 @@ To clone a Journey:
 
 Segment then creates a draft of your Journey.
 
-You can also clone a Journey from a Journey’s Overview by clicking the **…** icon.
+You can also clone a Journey from a Journey's Overview by clicking the **…** icon.
 
 ## Publishing a Journey
 
@@ -152,7 +152,7 @@ Follow the instructions below to connect branches to an existing step:
 
 ### Drafting a Journey
 
-When you’ve finished creating your Journey, click **Save as Draft** in the bottom-right corner.
+When you've finished creating your Journey, click **Save as Draft** in the bottom-right corner.
 
 #### When Journeys are in a draft state
 - Journeys estimates user counts only for the entry step.
@@ -165,6 +165,6 @@ Keep the following considerations in mind when working with a published Journey:
 - It may take up to three hours for Journeys to compute user counts after publication.
 - You can edit a Journey's name, description, and Destination steps.
 - You can't add, edit, or delete other steps in the Journey.
-- Once Journeys computes and displays user counts, you’ll see the list of users at each step of the Journey.
+- Once Journeys computes and displays user counts, you'll see the list of users at each step of the Journey.
 - Click a user profile to see the Journey list to which they belong.
 - Journeys sends and updates data to Destinations in real-time.

@@ -49,7 +49,7 @@ To get started:
 4. Create a new Kinesis destination.
    1. In the Segment source that you want to connect to your Kinesis destination, click **Add Destination**. Search and select the **Amazon Kinesis** destination.
    2. Enter the **Role Address**, **Stream Region**, **Stream Name**, and **Secret ID**.
-   * **NOTE:** For security purposes, Segment sets your Workspace ID as your Secret ID. If you’re using a Secret ID different from your Workspace ID, reach out to our support team so they can change it to make your account more secure.
+   * **NOTE:** For security purposes, Segment sets your Workspace ID as your Secret ID. If you're using a Secret ID different from your Workspace ID, reach out to our support team so they can change it to make your account more secure.
 
 ## Page
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
@@ -216,7 +216,7 @@ After you update the IAM policy, Segment systems default to use PutRecords for m
 If you have many sources using Kinesis that it's impractical to attach all of their IDs to your IAM role, you can instead opt to set a secret ID. To set this value:
 1. Go to **Connections > Destinations > Amazon Kinesis** for each of your Segment sources.
 2. Click **Secret ID**.
-    * **NOTE:** For security purposes, Segment sets your Workspace ID as your Secret ID. If you’re using a Secret ID different from your Workspace ID, reach out to our support team so they can change it and make your account more secure.
+    * **NOTE:** For security purposes, Segment sets your Workspace ID as your Secret ID. If you're using a Secret ID different from your Workspace ID, reach out to our support team so they can change it and make your account more secure.
 3. Find the IAM role you created for this destination in the AWS Console in **Services > IAM > Roles**.
 4. Click on the role and navigate to the **Trust Relationships** tab.
 5. Click **Edit trust relationship**. You should see a snippet that looks something that looks like this:

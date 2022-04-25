@@ -6,7 +6,7 @@ strat: kotlin
 > info ""
 > Analytics-Kotlin supports [these destinations](/docs/connections/sources/catalog/libraries/mobile/kotlin-android#supported-destinations) with more to come. 
 
-If you’re using a different library such as Analytics-Android, follow these steps to migrate to the Analytics-Kotlin library:
+If you're using a different library such as Analytics-Android, follow these steps to migrate to the Analytics-Kotlin library:
 
 > success ""
 > You can continue to use your Android source write key for the migration to view historical events.
@@ -258,7 +258,7 @@ If you’re using a different library such as Analytics-Android, follow these st
 
 5. Add a destination middleware.
 
-    If you don’t need to transform all of your Segment calls, and only want to transform the calls going to specific destinations, use Destination middleware instead of Source middleware. Destination middleware is available for device-mode destinations only.
+    If you don't need to transform all of your Segment calls, and only want to transform the calls going to specific destinations, use Destination middleware instead of Source middleware. Destination middleware is available for device-mode destinations only.
 
     <table>
     <thead>

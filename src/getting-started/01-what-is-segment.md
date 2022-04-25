@@ -20,7 +20,7 @@ Once you've collected your interaction data, there are several different actions
 
 ## Sources for collecting data
 
-You can collect data by implementing Segment’s tracking libraries as your Sources:
+You can collect data by implementing Segment's tracking libraries as your Sources:
 - [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), the Segment Javascript source, is the most powerful way to track customer data from a website. Segment recommends it as the default installation for any website.
 - [The Segment Mobile SDKs](/docs/connections/sources/catalog/#mobile) are the best way to simplify tracking in your iOS, Android, and Xamarin apps. Segment recommends them over server-side sources as the default installation for any mobile app.
 - [Server-side sources](/docs/connections/sources/catalog/#server) let you send analytics data directly from your servers when client-side tracking doesn't work, or when you're sending mission-critical data like revenues.
@@ -29,26 +29,26 @@ You can collect data by implementing Segment’s tracking libraries as your Sour
 Segment also offers these other source libraries to cover less straightforward cases:
 
 - Use the [HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http-api/) if Segment doesn't offer a library for your specific environment yet.
-- The [Pixel Tracking API](/docs/connections/sources/catalog/libraries/server/pixel-tracking-api/) lets you track events from environments where you can’t execute code - for example, tracking when an email was opened.
+- The [Pixel Tracking API](/docs/connections/sources/catalog/libraries/server/pixel-tracking-api/) lets you track events from environments where you can't execute code - for example, tracking when an email was opened.
 - The [Querystring API](/docs/connections/sources/catalog/libraries/website/javascript/querystring/) lets you use querystrings to load API methods when a user first visits a Segment-enabled site. Use this API for tracking events like email clicks and identifying users associated with those clicks on the destination page.
 
 ### Cloud App Sources
 Segment also offers [Cloud App Sources](/docs/connections/sources/about-cloud-sources/) to integrate data from your third-party tools:
 
 - [Object Cloud Sources](/docs/connections/sources/about-cloud-sources/#event-cloud-app-sources) can import third party tool data directly into your Segment warehouse, but can't stream that data into your other Segment destinations. Make sure you enable a Segment warehouse before you enable an object cloud source.
-- [Event Cloud Sources](/docs/connections/sources/about-cloud-sources/#object-cloud-app-sources) don’t just import third party tool data into your Segment warehouse, they also send event data in real-time to your other Segment destinations. You don't need to set up a data warehouse to send Event Cloud Source data to your destinations.
+- [Event Cloud Sources](/docs/connections/sources/about-cloud-sources/#object-cloud-app-sources) don't just import third party tool data into your Segment warehouse, they also send event data in real-time to your other Segment destinations. You don't need to set up a data warehouse to send Event Cloud Source data to your destinations.
 
 ## How you can track data
 
-Segment supports several ways to implement tracking. The two most common are to use _device-based_ or _server-based_ libraries. You can use Segment's device-based libraries, such as JavaScript, iOS, and Android, to make calls on users’ browsers or mobile devices. You can also track data with Segment's server-based libraries, such as Node, Python, or PHP, where the calls are triggered on your own servers and then sent to the Segment servers.
+Segment supports several ways to implement tracking. The two most common are to use _device-based_ or _server-based_ libraries. You can use Segment's device-based libraries, such as JavaScript, iOS, and Android, to make calls on users' browsers or mobile devices. You can also track data with Segment's server-based libraries, such as Node, Python, or PHP, where the calls are triggered on your own servers and then sent to the Segment servers.
 
 When you collect data using device-based libraries, you can choose between these two different connection modes:
 * **Cloud-mode** is where the library sends the data directly to the Segment servers which then translate and forward it.
 * **Device-mode** is where the library sends the data both directly to the Segment servers, and also to the servers for the destination tool. Device-mode sometimes requires some [additional set-up steps](/docs/connections/sources/mobile_guide/), but can unlock rich device data.
 
-Although there are some tradeoffs between the two approaches, neither is better than the other, and Segment recommends that you implement a mix of both. In general, more direct interaction data is available using a device-based library, but server-based collection is more secure, reliable, and can’t be blocked by ad blockers.
+Although there are some tradeoffs between the two approaches, neither is better than the other, and Segment recommends that you implement a mix of both. In general, more direct interaction data is available using a device-based library, but server-based collection is more secure, reliable, and can't be blocked by ad blockers.
 
-<!-- Here’s a handy flow chart to help with the client-side/server-side decision:
+<!-- Here's a handy flow chart to help with the client-side/server-side decision:
 
 TODO: Image removed, didn't work with formatting. need a better version of this flowchart or else to just omit?-->
 
