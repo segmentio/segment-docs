@@ -162,7 +162,7 @@ Test your events by clicking around on your website in the iframe, and doing thi
 If something doesn't look right, click **Back** to return to the Build screen and edit your tags.
 
 
-If you’re having trouble validating your events, see [Troubleshooting Tips](#troubleshooting-your-events).
+If you're having trouble validating your events, see [Troubleshooting Tips](#troubleshooting-your-events).
 
 ## Step 4: Publish the event(s)
 
@@ -239,7 +239,7 @@ The most stable way for Visual tagger to identify elements is if each one has a 
 Visual Tagger is a great way to get started with tracking, but over time you might need to augment with coded instrumentation.
 
 These are ideal use cases for Visual Tagger:
-- Understanding how users are engaging with your public website. Beyond page tracking, you can learn which CTA’s are most popular, collect information from forms, learn when users engage with interactive content like a carousel.
+- Understanding how users are engaging with your public website. Beyond page tracking, you can learn which CTA's are most popular, collect information from forms, learn when users engage with interactive content like a carousel.
 
 - Similarly for campaign landing pages, that needs to go live with short turnaround, and require tracking forms, CTA, and other interactive content
 

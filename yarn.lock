@@ -7900,6 +7900,7 @@ __metadata:
     check-links: ^1.1.8
     clipboard: ^2.0.8
     concurrently: ^6.2.1
+    diff: ^5.0.0
     dotenv: ^10.0.0
     enquirer: ^2.3.6
     fast-csv: ^4.3.6

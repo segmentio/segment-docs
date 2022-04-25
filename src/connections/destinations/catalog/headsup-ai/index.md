@@ -47,7 +47,7 @@ analytics.page()
 Segment sends Page calls to HeadsUp as a `pageview`.
 
 ## Group
-If you aren’t familiar with the Segment Spec, take a look at the [Group method documentation](/docs/connections/spec/group/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Group method documentation](/docs/connections/spec/group/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.group("0e8c78ea9d97a7b8185e8632", {

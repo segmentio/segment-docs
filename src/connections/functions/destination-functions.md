@@ -11,7 +11,7 @@ Destination functions allow you to transform and annotate your Segment events an
 All functions are scoped to your workspace, so members of other workspaces can't view or use them.
 
 > info ""
-> Functions is available to all customer plan types with a free allotment of usage hours. Read more about [Functions usage limits](/docs/connections/functions/usage/), or see [your workspace’s Functions usage stats](https://app.segment.com/goto-my-workspace/settings/usage?metric=functions).
+> Functions is available to all customer plan types with a free allotment of usage hours. Read more about [Functions usage limits](/docs/connections/functions/usage/), or see [your workspace's Functions usage stats](https://app.segment.com/goto-my-workspace/settings/usage?metric=functions).
 
 ![](images/destination_functions_overview.png)
 
@@ -190,7 +190,7 @@ If your function fails, you can check the error details and logs in the **Output
 ## Batching the destination function (Beta)
 
 > warning ""
-> Batch handling for Functions is available as an early access beta release. By enabling batch handlers for your function, you acknowledge that your use of batch handlers is subject to [Segment’s Beta Terms and Conditions](https://segment.com/legal/first-access-beta-preview), or the applicable terms governing Beta Releases found in your subscription agreement with Segment.
+> Batch handling for Functions is available as an early access beta release. By enabling batch handlers for your function, you acknowledge that your use of batch handlers is subject to [Segment's Beta Terms and Conditions](https://segment.com/legal/first-access-beta-preview), or the applicable terms governing Beta Releases found in your subscription agreement with Segment.
 >
 > If you notice any bugs or have any general feedback on this new feature, please fill out [this form](https://airtable.com/shr9TU4huO0PK0DSU).
 

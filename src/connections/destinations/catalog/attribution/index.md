@@ -18,7 +18,7 @@ id: 54521fd525e721e32a72ee96
 
 ## Page
 
-If you haven’t had a chance to review our spec, take a look tounderstand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
+If you haven't had a chance to review our spec, take a look tounderstand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page("pageLoaded");

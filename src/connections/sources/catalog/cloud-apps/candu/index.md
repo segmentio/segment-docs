@@ -8,7 +8,7 @@ id: nmb56PunPc
 
 [Candu](https://candu.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the first UI editor for enterprise applications that allows you to drag and drop your own UI components to build product experiences — no coding required.
  
-Candu’s Source integration automatically returns user interaction data to Segment, where you can join it with production data. This allows you to understand how a user’s interactions with Candu content drive downstream behaviors, such as feature adoption and renewal. 
+Candu's Source integration automatically returns user interaction data to Segment, where you can join it with production data. This allows you to understand how a user's interactions with Candu content drive downstream behaviors, such as feature adoption and renewal. 
 
 This source is maintained by Candu. For any issues with the source, [contact the Candu support team](mailto:support@candu.ai).
 

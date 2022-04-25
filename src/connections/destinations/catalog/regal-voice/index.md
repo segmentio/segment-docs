@@ -88,7 +88,7 @@ analytics.track('Loan Application Approved', {
 
 ## Collecting OptIn
 
-In order to trigger outbound calls or sms messages from Regal Voice, you must collect the user’s explicit opt-in for those channels along with the user’s phone number.
+In order to trigger outbound calls or sms messages from Regal Voice, you must collect the user's explicit opt-in for those channels along with the user's phone number.
 
 There are 2 options for how you can let Regal Voice know a user has opted in:
 

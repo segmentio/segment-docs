@@ -14,7 +14,7 @@ Learn how to use Segment to collect, responsibly manage, and integrate your cust
   icon="chart.svg"
   href="https://segment.com/academy/"
   title="Totally new to Analytics?"
-  description="Segment’s Analytics Academy walks you through the wide world of analytics, including best practices, an overview of the most popular tools, and case studies of how other developers have achieved success."
+  description="Segment's Analytics Academy walks you through the wide world of analytics, including best practices, an overview of the most popular tools, and case studies of how other developers have achieved success."
 %}
 
 {% include components/reference-button.html

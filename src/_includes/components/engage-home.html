@@ -1,0 +1,24 @@
+
+
+<div class="flex flex--wrap waffle waffle--large">
+    {% for section in include.sections %}
+{% unless section.section_title == "Settings" %}
+<div class="flex__column flex__column--12 flex__column--6@medium flex" style="margin-top:15px">
+<div>
+<h4>{{section.section_title}}</h4>
+<p>{{section.description}}</p>
+<ul>
+    {% for link in section.section %}
+    {% unless link.title == null %}
+    <li><a href="/docs/{{link.path}}">{{link.title}}</a></li>
+    {% endunless %}
+    {% endfor %}
+<!-- 
+<li><a href="/docs/engage/overview/onboarding">Onboarding Steps</a></li>
+<li><a href="/docs/engage/overview/use-cases">Use Cases</a></li> -->
+</ul>
+</div>
+</div>
+{% endunless %}
+{% endfor %}
+</div>
