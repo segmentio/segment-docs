@@ -157,7 +157,7 @@ To enable IP warmup, follow these directions:
 1. Within your SendGrid space, navigate to **Settings > IP Addresses**.
 2. On the **Dedicated IP Addresses** page, click the pencil edit button next to your Engage IP address.
 3. Under **Additional options** (pictured below), check **Use Automated IP warmup** and **Allow my subusers to send mail using this IP address**. Click **Save**.
-4. **Required: [Reach out to the Engage team](https://segment.com/docs/engage/contact/). Let them know you’ve enabled IP warmup.**
+4. **Required: [Reach out to the Engage team](/docs/engage/contact/). Let them know you’ve enabled IP warmup.**
 
 Your SendGrid account is now fully configured and ready to use with Engage.  You’re ready to move to Stage 3 and configure Twilio SMS.
 
