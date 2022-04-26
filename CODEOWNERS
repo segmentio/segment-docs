@@ -27,6 +27,8 @@ CODEOWNERS  @segmentio/segment-doc-team
 # Destinations owners
 /src/connections/destinations  @stayseesong @markzegarelli
 
+# Engage
+/src/engage/ @markzegarelli @pwseg @rchinn-segment
 
 # Personas owners 
 /src/personas @pwseg @rchinn-segent
