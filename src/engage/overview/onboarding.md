@@ -14,16 +14,16 @@ This guide lists all required onboarding steps and walks you through Engage setu
 
 You’ll set up Twilio Engage in three stages:
 
-1. Configure Personas Identifiers in your Segment workspace.
-2. Create and configure a SendGrid account.
-3. Create and configure Twilio SMS services.
+1. [Configure Personas Identifiers in your Segment workspace.](/docs/engage/overview/onboarding/#stage-1-configure-personas-identifiers-in-segment)
+2. [Create and configure a SendGrid account.](/docs/engage/overview/onboarding/#stage-2-create-and-configure-a-sendgrid-account)
+3. [Create and configure Twilio SMS services.](/docs/engage/overview/onboarding/#stage-3-create-and-configure-twilio-sms-services)
 
 The following table shows a high-level checklist of tasks you’ll need to complete in each platform:
 
 | Platform | Tasks                                                                                                                                                                                                                                                                                                                                                                                              |
 | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Segment  | 1. Check your Personas workspace for Engage identifiers. <br> 2. Add any missing identifiers.                                                                                                                                                                                                                                                                                                      |
-| SendGrid | 1. Create a SendGrid account. <br> 2. Upgrade your account to a Pro plan. <br> 3. Configure an IP. <br> 4. Create a SendGrid subuser. <br> 5. Authenticate your domain.* <br> 6. Enable subscription tracking. <br> 7. Enable an event webhook. <br> 8. Generate an API key, then copy it into the Engage settings. <br> 9. Enable automated IP warmup.* <br> 10. Contact the Twilio Engage team.* |
+| SendGrid | 1. Create a SendGrid account. <br> 2. Upgrade your account to a Pro plan. <br> 3. Configure an IP. <br> 4. Create a SendGrid subuser. <br> 5. Authenticate your domain. <br> 6. Enable subscription tracking. <br> 7. Enable an event webhook. <br> 8. Generate an API key, then copy it into the Engage settings. <br> 9. Enable automated IP warmup. <br> 10. Contact the Twilio Engage team. |
 | Twilio   | 1. Create a Twilio account. <br> 2. Purchase phone number(s). <br> 3. If necessary, register phone number(s). <br> 4. Create a messaging service. <br> 5. Create a messaging service. <br> 6. Generate an API key, then copy it into the Engage settings.                                                                                                                                                                                      |
 
 
@@ -64,17 +64,21 @@ Start by creating a SendGrid account and then upgrading to the SendGrid Pro Plan
 
 ### Create a subuser and check the dedicated IP address
 
-Next, you’ll create a SendGrid subuser and ensure the dedicated IP has been assigned. Your SendGrid subuser username must begin with the prefix `twilio_engage_app_`. Add a unique identifier to the end of the prefix, for example, `twilio_engage_app_someusername`. Make a note of the combined username you’ve created; you’ll use it when you add your SendGrid information to Engage.
+Next, you’ll create a SendGrid subuser and ensure that a dedicated IP has been assigned:
 
 1. In your SendGrid space, navigate to **Settings > Subuser Management**, then click **Create New Subuser**.
-2. In the **Create New Subuser** window, enter the username you created above, then add an email address and password.
-3. In the same window, click the checkbox next to the IP address from Step 1.
+2. In the **Create New Subuser** window, create a username for the subuser, then add an email address and password. Your SendGrid subuser username must begin with the prefix `twilio_engage_app_`. Add a unique identifier to the end of the prefix, for example, `twilio_engage_app_someusername`.
+
+    ![Adding a SendGrid subuser](images/subuser.png "Adding a SendGrid subuser")
+
+3. In the same window, click the checkbox next to the dedicated IP address for the subuser.
 4. Fill out the remaining fields in the window, then click **Create Subuser**.
 5. Using [SendGrid’s documentation](https://docs.sendgrid.com/ui/account-and-settings/dedicated-ip-addresses){:target="_blank"}, warm up the IP address.
 
 ### Authenticate your domain
 
-All further SendGrid onboarding steps require you to be signed in as the new subuser. If you're not logged in as the new subusers, log out of SendGrid, then log back in using the Engage credentials you created above.
+> info "Log in as the subuser"
+> All further SendGrid onboarding steps require you to be signed in as the new subuser you just created. If you're not logged in as the new subuser, log out of SendGrid, then log back in using the subuser credentials you created above.
 
 Now, you’ll authenticate your domain with SendGrid and your DNS provider and [enable link branding](https://docs.sendgrid.com/ui/account-and-settings/how-to-set-up-link-branding){:target="_blank"}. Domain authentication protects your sending reputation by showing email providers that you’ve given SendGrid permission to send email campaigns for you.
 
@@ -90,7 +94,7 @@ You’ll authenticate your domain using the SendGrid platform and your DNS provi
 Complete authentication by setting up reverse DNS:
 
 1. Follow [SendGrid’s reverse DNS (rDNS) documentation](https://docs.sendgrid.com/ui/account-and-settings/how-to-set-up-reverse-dns){:target="_blank"}.
-2. SendGrid provides you with five CNAME records and one A record.  Add them to your DNS host.
+2. SendGrid provides you with one A record. Add it to your DNS host, along with the five CNAME records from the previous steps.
 3. Return to SendGrid and [verify your DNS](https://docs.sendgrid.com/ui/account-and-settings/how-to-set-up-reverse-dns#verifying){:target="_blank"}.
 
 ### Enable subscription tracking
@@ -102,26 +106,30 @@ You'll also need to enable [subscription tracking](https://docs.sendgrid.com/ui/
 3. At the end of the Subscription Tracking window, toggle **Setting State** to `enabled`.
 4. Click **Save**.
 
-### Enable event webhook and generate an API key
-
-> info "Copying SendGrid Credentials"
-> This step creates an API key that you’ll later add to Segment. Make sure you’re ready to copy and save the key before proceeding.
+### Enable event webhook
 
 You’ll now need to enable event webhooks, which trigger webhook notifications for campaign-related events like clicks and opens:
 
-1. Within your SendGrid space, navigate to **Settings > Mail Settings**.
+1. Within your SendGrid subuser space, navigate to **Settings > Mail Settings**.
 2. Click the pencil edit icon next to **Event Webhook**.
 3. On the Event Webhook page, set authorization method to none.
-4. Copy and paste the following URL into the **HTTP Post URL** field (pictured below):
+4. Copy and paste the following URL into the **HTTP Post URL** field:
 
-`https://engage-ma-webhook-api.engage.segment.com/sendgrid`
+    <br> `https://engage-ma-webhook-api.engage.segment.com/sendgrid`
+
+    ![Adding the HTTP Post URL](images/webhook.png "Adding the HTTP Post URL")
 
 5. Check all event types.
 6. Switch the Event Webhook Status toggle to `Enabled`. Click **Save**.
 
+### Generate an API key
+
+> info "Copying SendGrid Credentials"
+> This step creates an API key that you’ll later add to Segment. Make sure you’re ready to copy and save the key before proceeding. You must follow these steps from within the SendGrid subuser account [you created for use with Twilio Engage](/docs/engage/overview/onboarding/#create-a-subuser-and-check-the-dedicated-ip-address).
+
 Next, generate an API key within SendGrid. Have your Segment workspace open in another tab, as you’ll copy the API key and paste it into your Engage settings.
 
-1. Within your SendGrid space, navigate to **Settings > API Keys**.
+1. Within your SendGrid subuser space, navigate to **Settings > API Keys**.
 2. Click the **Create API Key** button.
 3. In the Create API Key window, name your API key using the prefix `twilio_engage_app_`, with a suffix of your choice added to the end, like `twilio_engage_app_example`.
 4. Select the **Full Access** radio button.
@@ -132,15 +140,17 @@ To finish linking the API key to your Segment account, follow these steps:
 1. Switch to the browser tab with your Personas workspace open.
 2. Navigate to **Personas > Campaigns**. Under **Send emails with SendGrid**, click the **Get Started** button.
 3. In the **Set up your email service** window (shown below), enter the subuser username [you previously created](#configure-a-sendgrid-ip-and-create-a-subuser) into the Subuser name field.
-4. Paste the Subuser API Key ID and Subuser API Key you just copied from SendGrid into their respective fields.
-5. Click **Verify**.
+4. Paste the Subuser API Key ID and Subuser API Key you just copied from SendGrid into their respective fields, then click **Verify**.
+
+  ![Adding the SendGrid API Key](images/apifields.png "Adding the SendGrid API Key")
 
 ### Enable Automated IP warmup
 
 > info "Required Step"
-> Reach out to the Engage team once you’ve enabled IP warmup in SendGrid. 
-> 
-To finish configuring your SendGrid account for usage with Twilio Engage, you’ll enable [automated IP warmup](https://docs.sendgrid.com/ui/sending-email/warming-up-an-ip-address){:target="_blank"}. As a best practice, wait to warm up your IP until you're ready to begin sending campaigns.
+> Notify the Engage team once you've completed IP warmup.
+
+To finish configuring your SendGrid account for usage with Twilio Engage, you’ll enable [automated IP warmup](https://docs.sendgrid.com/ui/sending-email/warming-up-an-ip-address){:target="_blank"}. As a best practice, **only warm up your IP when you're ready to begin sending campaigns.**
+
 
 To enable IP warmup, follow these directions:
 
@@ -162,7 +172,7 @@ To add the ability to send SMS campaigns in Engage, you’ll now create a Twilio
 
 Start by creating your Twilio account and getting an API key for Engage:
 
-1. Visit the [Twilio website](https://www.twilio.com/try-twilio){:target="_blank"} and sign up for a paid account.
+1. Visit the [Twilio website](https://www.twilio.com/try-twilio){:target="_blank"} and sign up for a **paid account**. Trial accounts will generate sending errors.
 2. In your Twilio console, select the **Account** dropdown menu, then **API keys & tokens**.
 3. On the Auth Tokens & API Keys page, click **Create API key**.
 4. Enter a name for the API key in the **Friendly name** field.
@@ -170,12 +180,14 @@ Start by creating your Twilio account and getting an API key for Engage:
 6. Click **Create API Key**.
 7. Copy the **SID** and **Secret** field contents.
 
-Finish linking your Twilio API key to Segment:
+    ![Copying the Twilio API key](images/apikeys.png "Copying the Twilio API key")
 
 8. Switch to the browser tab or window with your Personas workspace.
 9. Navigate to **Personas > Campaigns**.  Under **Send SMS messages with Twilio**, click the **Get Started** button.  The **Set up your SMS service** page appears.
 10. Under **Enter your Twilio API Key information** (shown below), paste the SID and API Key Secret you copied above into their respective fields.
 11. Click **Verify**, then click **Save Twilio Account.**
+
+    ![Entering Twilio API key into Engage](images/engageapifields.png "Entering Twilio API key into Engage")
 
 > info ""
 > If you’re unable to verify your SID or API Key secret, you may have copied an extra space at the end of one or the other. Verify that you’ve not added any extra characters or spaces, then try to verify again.
@@ -183,11 +195,11 @@ Finish linking your Twilio API key to Segment:
 ### Set up a Twilio Messaging Service
 
 > info "Phone Number Registration"
-> Depending on the phone number you purchase, you'll need to register the phone number for use. Read Twilio's documentation on registering [short code](https://www.twilio.com/docs/glossary/what-is-a-short-code){:target="_blank"}, [long code](https://support.twilio.com/hc/en-us/articles/1260800720410-What-is-A2P-10DLC-){:target="_blank"}, and [toll free numbers](https://support.twilio.com/hc/en-us/articles/360038172934-Information-and-best-practices-for-using-Toll-Free-SMS-and-MMS-in-the-US-and-Canada){:target="_blank"} to complete registration.
+> You'll need to purchase a phone number to set up [Twilio Messaging](https://support.twilio.com/hc/en-us/articles/360038173654-Comparison-of-SMS-messaging-in-the-US-and-Canada-for-long-codes-short-codes-and-toll-free-phone-numbers){:target="_blank"}. Depending on the phone number type you purchase, you may have to register the number. Before completing this section, read Twilio's documentation on [short code](https://www.twilio.com/docs/glossary/what-is-a-short-code){:target="_blank"}, [long code](https://support.twilio.com/hc/en-us/articles/1260800720410-What-is-A2P-10DLC-){:target="_blank"}, and [toll free numbers](https://support.twilio.com/hc/en-us/articles/360038172934-Information-and-best-practices-for-using-Toll-Free-SMS-and-MMS-in-the-US-and-Canada){:target="_blank"}.
 
-Follow these steps to create a Twilio Messaging Service:
+Once you've identified the type of phone number you'll use with Twilio Engage, follow these steps to create a Twilio Messaging Service:
 
-1. Read [Twilio’s SMS messaging guide](https://support.twilio.com/hc/en-us/articles/360038173654-Comparison-of-SMS-messaging-in-the-US-and-Canada-for-long-codes-short-codes-and-toll-free-phone-numbers){:target="_blank"}. Choose the phone number type that best suits your use case*, then [purchase a number](https://support.twilio.com/hc/en-us/articles/223135247-How-to-Search-for-and-Buy-a-Twilio-Phone-Number-from-Console){:target="_blank"} within your Twilio Console.
+1. [Purchase a phone number](https://support.twilio.com/hc/en-us/articles/223135247-How-to-Search-for-and-Buy-a-Twilio-Phone-Number-from-Console){:target="_blank"} within your Twilio Console. If necessary, [register the number](https://support.twilio.com/hc/en-us/articles/1260801864489-How-do-I-register-to-use-A2P-10DLC-messaging-){:target="_blank"}.
 2. In the Twilio Console side menu, navigate to **Messaging > Services**.
 3. On the Messaging Services page, click **Create Messaging Service**.
 4. Enter a name for your Messaging Service.
@@ -199,8 +211,14 @@ To finish setting up your Messaging Service, you’ll now [configure an event we
 1. Switch to the browser tab or window with your Personas workspace.
 2. Navigate to **Personas > Campaigns**.  Under **Send SMS messages with Twilio**, click the **Get Started** button.
 3. A **Set up your SMS service** overlay appears (pictured below). Click the **Copy webhook URL** button. Your computer copies the URL to your clipboard.
+
+    ![Engage webhook URL](images/engagewebhook.png "Engage webhook URL")
+
 4. Return to the Twilio Messaging Service setup tab.  On the Integration page, select the **Send a webhook** radio button.
 5. Paste the URL you copied in Step 3 into the **Request URL** field (pictured below).
+
+    ![Twilio webhook field](images/requesturl.png "Twilio webhook field")
+
 6. Verify that the dropdown next to the **Request URL** field is set to **HTTP Post**.
 7. (If applicable:) Click **Step 4: Add compliance info**. Finish compliance setup, then click **Complete Messaging Service Setup**.
 
@@ -208,12 +226,8 @@ You’ve now configured both your SendGrid and Twilio accounts, and you’re rea
 
 ## Next steps
 
-With accounts on all three platforms configured for Engage, you’ve completed Engage onboarding and are ready to create and send campaigns to your users.
+With accounts on all three platforms configured, you’ve completed Engage onboarding and are ready to create and send campaigns to your users.
 
-Not sure where to start? Read the Engage documentation on [Sending an Email Campaign](#) and [Sending an SMS Campaign](#). To save time when creating Engage campaigns, view the SMS and [email templates guides](#).
+Not sure where to start? Read the Engage documentation on [sending email campaigns](/docs/engage/campaigns/email-campaigns/) and [sending SMS campaigns](docs/engage/campaigns/sms-campaigns/). To save time when generating Engage campaigns, check out the Engage guides on creating [SMS templates](/docs/engage/content/sms/template/) and [email templates](/docs/engage/content/email/template/).
 
-If you’re planning to import contacts to your Engage audience(s), learn how to format your CSV file with the [Engage CSV Uploader instructions](#).
-
-## Support
-
-[Contact the Twilio Engage team](/docs/engage/contact) with any questions you may have about Engage onboarding and setup.
+If you’re planning to import contacts to Engage, learn how to [update your audiences with a CSV file](/docs/engage/profiles/csv-upload/).
