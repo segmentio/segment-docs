@@ -28,7 +28,7 @@ The table below lists events that Regal Voice sends to Segment. These events app
 
 | Event name                   | Property description                                                                                  |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------- |
-| agent.activity.updated       | An agent’s activity status was changed.                                                               |
+| agent.activity.updated       | An agent's activity status was changed.                                                               |
 | call.completed               | An inbound or outbound call with a contact was completed. This includes calls that were not answered. |
 | call.recording.available     | A call recording link is available.                                                                   |                           
 | contact.subscribed           | A contact was subscribed to a marketing channel.                                                      |
@@ -109,6 +109,6 @@ The table below lists events that Regal Voice sends to Segment. These events app
 
 Now that your Source is set up, you can connect it with Destinations.
 
-Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
+Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don't appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, [contact the Regal Voice support team](mailto:support@regalvoice.com).

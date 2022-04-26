@@ -2,7 +2,7 @@
 title: Planning a Full Installation
 ---
 
-Now that we’ve shown you Segment in action, let’s step back and think through what a full implementation of Segment for your organization would look like. We know that figuring out what events to track in Segment can feel overwhelming. You should expect this planning process to have the following steps:
+Now that we've shown you Segment in action, let's step back and think through what a full implementation of Segment for your organization would look like. We know that figuring out what events to track in Segment can feel overwhelming. You should expect this planning process to have the following steps:
 
 <!-- TOC depthFrom:1 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
@@ -56,9 +56,9 @@ While this list represents a tiny fraction of the user actions you _could_ track
 
 ## Decide what to collect
 
-With your business objectives documented and mapped to user actions, it’s time to build standards that you can use when deciding what to track. With your stakeholders, make a list of the actual events (page or screen views, and user actions) that you want to track. Think about all of the ways your users can interact with your site or app
+With your business objectives documented and mapped to user actions, it's time to build standards that you can use when deciding what to track. With your stakeholders, make a list of the actual events (page or screen views, and user actions) that you want to track. Think about all of the ways your users can interact with your site or app
 
-When you're first starting out, we recommend that you limit your tracking plan to a few core events, but add lots of properties to provide context about them. We generally see more success with the “less is more” philosophy of tracking data, but you might also decide to take a more liberal “track more and analyze later” approach. Like everything, each alternative has pros and cons that are important to consider especially as it relates to your company’s needs.
+When you're first starting out, we recommend that you limit your tracking plan to a few core events, but add lots of properties to provide context about them. We generally see more success with the “less is more” philosophy of tracking data, but you might also decide to take a more liberal “track more and analyze later” approach. Like everything, each alternative has pros and cons that are important to consider especially as it relates to your company's needs.
 
 If you're having trouble starting out, we recommend that you look at our free [Tracking Plan spreadsheet template](https://docs.google.com/spreadsheets/d/1TA6qTcDHoZzsG7-C6p5yHGximDxqoNtizguKs7Z0av4/view) for inspiration. (We'll talk more about Tracking Plans [below](#develop-a-tracking-plan).)
 
@@ -92,18 +92,18 @@ Regardless of approach, here are some important best practices to keep in mind:
 
 - **Pick a casing convention:** We recommend *Title Case* for event names and *snake_case* for property names. Make sure you pick a casing standard and enforce it across your events and properties.
 
-- **Pick an event name structure:** As you may have noticed from our [specs](/docs/connections/spec/semantic/), we’re big fans of the Object (`Blog Post`) + Action (`Read`) framework for event names. Pick a convention and stick to it!
+- **Pick an event name structure:** As you may have noticed from our [specs](/docs/connections/spec/semantic/), we're big fans of the Object (`Blog Post`) + Action (`Read`) framework for event names. Pick a convention and stick to it!
 
-- **Don’t create event names dynamically:** Avoid creating events that pull a dynamic value into the event name (for example, `User Signed Up (11-01-2019)`). If and when you send these to a warehouse for analysis, you end up with huge numbers of tables and schema bloat!
+- **Don't create event names dynamically:** Avoid creating events that pull a dynamic value into the event name (for example, `User Signed Up (11-01-2019)`). If and when you send these to a warehouse for analysis, you end up with huge numbers of tables and schema bloat!
 
-- **Don’t create events to track properties:** Avoid adding values to event names when they could be a property. Instead, add values as a property. For example, rather than having an event called "Read Blog Post - Best Tracking Plans Ever", create a "Blog Post Read" event and with a property like `"blog_post_title":"Best Tracking Plans Ever"`.
+- **Don't create events to track properties:** Avoid adding values to event names when they could be a property. Instead, add values as a property. For example, rather than having an event called "Read Blog Post - Best Tracking Plans Ever", create a "Blog Post Read" event and with a property like `"blog_post_title":"Best Tracking Plans Ever"`.
 
-- **Don’t create property keys dynamically:** Avoid creating property names like `"feature_1":"true"`,`"feature_2":"false"` as these are ambiguous and very difficult to analyze
+- **Don't create property keys dynamically:** Avoid creating property names like `"feature_1":"true"`,`"feature_2":"false"` as these are ambiguous and very difficult to analyze
 
 ![](/docs/protocols/images/asset_nVdJ3ZyA.png)
 
 
-Got all that? Great! You’re now ready to develop a Tracking Plan.
+Got all that? Great! You're now ready to develop a Tracking Plan.
 
 <!--Source: /docs/protocols/data-quality/whats-a-tracking-plan/ or /docs/protocols/tracking-plan/ -->
 
@@ -132,7 +132,7 @@ From there, we recommend you specify Track events in the **Track (Custom)** tab.
 Once you complete the tracking plan, you can share the Google Sheet with stakeholders to review, comment, and edit, or simply to share as a reference for implementation.
 
 > success ""
-> **Tip**! If you decide to purchase [Protocols](/docs/protocols/) in the future, you’ll be able to upload the tracking plan into Segment [using the Config API](/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader).
+> **Tip**! If you decide to purchase [Protocols](/docs/protocols/) in the future, you'll be able to upload the tracking plan into Segment [using the Config API](/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader).
 
 ### Plan your Identify and Group calls
 
@@ -165,9 +165,9 @@ At Segment, we started out tracking these events:
 - **Source Data Sent**
 - **Subscription Started**
 
-Then we added some peripheral events to to better understand how we’re performing, for the following reasons:
+Then we added some peripheral events to to better understand how we're performing, for the following reasons:
 
-- **User Invited** When users invite more people to their organization, it’s a good indicator that they’re engaged and serious about using the product. This helps us measure growth in organizations.
+- **User Invited** When users invite more people to their organization, it's a good indicator that they're engaged and serious about using the product. This helps us measure growth in organizations.
 - **Destination Enabled** Turning on a destination is a key value driver for our customers.
 - **Debugger Call Expanded** When we see that a certain customer has used the live event stream feature a number of times, we can contact see if we can help them debug.
 
@@ -208,7 +208,7 @@ Similar to the traits in the Identify call, the properties provide a column that
 
 Don't create dynamically generated property names in the properties dictionary. Each `key` creates a new column in your downstream tools, and dynamically generated keys clutter your tools with fragmented data that makes it difficult and confusing to use later.
 
-Here is Segment’s `Lead Captured` Track call:
+Here is Segment's `Lead Captured` Track call:
 
 ```js
 analytics.track(userId, 'Lead Captured', {

@@ -28,19 +28,19 @@ Once you install the framework, import the header file and install as described 
 If you choose not to use a dependency manager, you must manually keep files up-to-date with regularly scheduled, manual updates.
 
 
-## Should I include each destination’s native SDK in my project?
+## Should I include each destination's native SDK in my project?
 
-No. Don’t include destination-native SDKs manually for a service Segment supports. Instead, bundle the destination’s Segment-integration SDK.
+No. Don't include destination-native SDKs manually for a service Segment supports. Instead, bundle the destination's Segment-integration SDK.
 
 If you already include destination native SDKs, you should remove them when you install the Segment SDK. Keeping the duplicate native SDK can cause symbol conflicts, namespace collisions, duplicate data, and sometimes even silent failures.
 
 
-## What if Analytics-iOS doesn’t support a feature I want to use?
+## What if Analytics-iOS doesn't support a feature I want to use?
 
-If you’re using device-mode for a mobile destination and want to access a feature from the tool’s native SDK, you can include the header file and call the method just as normal.
+If you're using device-mode for a mobile destination and want to access a feature from the tool's native SDK, you can include the header file and call the method just as normal.
 
-For example, you might want access to Flurry’s location logging or Localytics’s attribution parameters. To use the destination’s SDK you import the headers, then access the SDK as you would without Segment. Segment still handles initialization, event, screen and user tracking, plus all the proxied services and data storage for you.
-Here’s an example for Flurry location logging:
+For example, you might want access to Flurry's location logging or Localytics's attribution parameters. To use the destination's SDK you import the headers, then access the SDK as you would without Segment. Segment still handles initialization, event, screen and user tracking, plus all the proxied services and data storage for you.
+Here's an example for Flurry location logging:
 
 ```objc
 #import <Segment/SEGAnalytics.h>
@@ -166,12 +166,12 @@ Analytics-iOS supports iOS 11.0+. If you need support for older operating system
 
 ## Is the Segment SDK compatible with Swift?
 
-Yes, Swift’s compatibility with Objective-C lets you create a source that contains files written in either language. To use the Segment Analytics-iOS SDK from a Swift source, [follow these instructions from Apple](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html).
+Yes, Swift's compatibility with Objective-C lets you create a source that contains files written in either language. To use the Segment Analytics-iOS SDK from a Swift source, [follow these instructions from Apple](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html).
 
 
 ## Can I help develop a destination?
 
-Yes, the Segment [Analytics-iOS SDK is open-source](https://github.com/segmentio/analytics-ios). If you’d like to contribute, fix a bug, or add a destination please [see the contributing guide](https://github.com/segmentio/analytics-ios/blob/master/CONTRIBUTING.md).
+Yes, the Segment [Analytics-iOS SDK is open-source](https://github.com/segmentio/analytics-ios). If you'd like to contribute, fix a bug, or add a destination please [see the contributing guide](https://github.com/segmentio/analytics-ios/blob/master/CONTRIBUTING.md).
 
 
 ## How do I know when a destination is initialized?
@@ -215,9 +215,9 @@ NotificationCenter.default.addObserver(self, selector: #selector(integrationDidS
 
 ## Can I anonymize IP addresses?
 
-Segment collects IP addresses for device-mode (iOS, Android, Analytics.js and Xamarin) events automatically. If you don’t want to record your tracked users’ IP in destinations (and in storage destinations like S3), you can set the event’s `context.ip` field to `0.0.0.0` .  The Segment servers don’t record the IP address of the client for libraries if the `context.ip` field is already set.
+Segment collects IP addresses for device-mode (iOS, Android, Analytics.js and Xamarin) events automatically. If you don't want to record your tracked users' IP in destinations (and in storage destinations like S3), you can set the event's `context.ip` field to `0.0.0.0` .  The Segment servers don't record the IP address of the client for libraries if the `context.ip` field is already set.
 
-If you’d like to centralize this logic, you can write a [middleware](/docs/connections/sources/catalog/libraries/mobile/ios/middleware/) for it.
+If you'd like to centralize this logic, you can write a [middleware](/docs/connections/sources/catalog/libraries/mobile/ios/middleware/) for it.
 
 The following examples show how to set a static 0 value for the IP.
 
@@ -241,7 +241,7 @@ Analytics.shared().track("Clicked Button", properties: nil, options: ["context":
 
 
 
-## How can I get the user’s IDFA?
+## How can I get the user's IDFA?
 
 Some destinations, especially mobile attribution tools (for example, [Kochava](https://www.kochava.com/){:target="_blank"}), require the IDFA (identifier for advertisers). The IDFA appears in Segment calls in the debugger as `context.device.advertisingId`. To capture this value with Analytics-iOS, follow the steps in [Ad-tracking and IDFA](/docs/connections/sources/catalog/libraries/mobile/ios#ad-tracking-and-idfa).  Remember that Apple now requires that the user consent to your tracking before you can collect the IDFA.
 

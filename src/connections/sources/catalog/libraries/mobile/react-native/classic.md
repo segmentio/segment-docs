@@ -16,7 +16,7 @@ All of Segment's libraries are open-source, and you can [view Analytics for Reac
 In cloud-mode, Analytics-React-Native functions as a normal Segment library. In device-mode it wraps the Segment [Analytics-iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) and [Analytics-Android](/docs/connections/sources/catalog/libraries/mobile/android/) libraries, and loads the appropriate mobile library depending on the user's platform. Because of this, Analytics-React-Native includes the two mobile libraries as dependencies.
 
 > warning ""
-> When you bundle a destination’s device-mode SDK, the React Native library serves as a wrapper for the iOS or Android source libraries. To access the underlying destination code, it is necessary to write bridging code between the React Native wrapper, and the destination’s SDK.
+> When you bundle a destination's device-mode SDK, the React Native library serves as a wrapper for the iOS or Android source libraries. To access the underlying destination code, it is necessary to write bridging code between the React Native wrapper, and the destination's SDK.
 >
 > For example, if to configure deep linking or retrieve the Appsflyer ID in Appsflyer, or configure in-app messages or push notifications in Braze, you must write code to specifically access these methods from the destination SDK.
 
@@ -28,9 +28,9 @@ One of the most important parts of any analytics platform is the ability to cons
 
 Apple restricts how you can generate and use unique IDs to help protect end-users' privacy. Segment generates IDs while remaining in compliance with Apple's policies.
 
-Before iOS 5 developers had access to `uniqueIdentifier`, which was a hardware-specific serial number that was consistent across different apps, vendors and installs. Starting with iOS 5, however, [Apple deprecated access to this identifier](https://developer.apple.com/news/?id=3212013a){:target="_blank"}. In iOS 6 Apple introduced the `identifierForVendor` which protects end-users from cross-app identification. In iOS 7 Apple [restricted access to the device’s MAC address](http://techcrunch.com/2013/06/14/ios-7-eliminates-mac-address-as-tracking-option-signaling-final-push-towards-apples-own-ad-identifier-technology/){:target="_blank"}, which many developers used as a workaround to get a similar device-specific serial number to replace  `uniqueIdentifier`.
+Before iOS 5 developers had access to `uniqueIdentifier`, which was a hardware-specific serial number that was consistent across different apps, vendors and installs. Starting with iOS 5, however, [Apple deprecated access to this identifier](https://developer.apple.com/news/?id=3212013a){:target="_blank"}. In iOS 6 Apple introduced the `identifierForVendor` which protects end-users from cross-app identification. In iOS 7 Apple [restricted access to the device's MAC address](http://techcrunch.com/2013/06/14/ios-7-eliminates-mac-address-as-tracking-option-signaling-final-push-towards-apples-own-ad-identifier-technology/){:target="_blank"}, which many developers used as a workaround to get a similar device-specific serial number to replace  `uniqueIdentifier`.
 
-Segment’s iOS library supports iOS 7+ by generating a UUID and storing it on disk. This complies with Apple’s required privacy policies, maintains compatibility, and also enables correct tracking in situations where multiple people use the same device, since the UUID can be regenerated.
+Segment's iOS library supports iOS 7+ by generating a UUID and storing it on disk. This complies with Apple's required privacy policies, maintains compatibility, and also enables correct tracking in situations where multiple people use the same device, since the UUID can be regenerated.
 
 #### Unique Identifiers in Android
 
@@ -490,7 +490,7 @@ When you disable the Segment library, all data collection methods (`track`, `ide
 
 ### Anonymizing IP
 
-Segment collects IP addresses for device-mode (iOS, Android, Analytics.js and Xamarin) events automatically. If you don’t want to record your tracked users’ IP in destinations (and in storage destinations like S3), you can set the event’s `context.ip` field to `0.0.0.0` .  The Segment servers don’t record the IP address of the client for libraries if the `context.ip` field is already set.
+Segment collects IP addresses for device-mode (iOS, Android, Analytics.js and Xamarin) events automatically. If you don't want to record your tracked users' IP in destinations (and in storage destinations like S3), you can set the event's `context.ip` field to `0.0.0.0` .  The Segment servers don't record the IP address of the client for libraries if the `context.ip` field is already set.
 
 
 ### Set IDFA

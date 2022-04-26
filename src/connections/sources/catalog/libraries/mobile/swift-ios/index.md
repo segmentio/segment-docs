@@ -7,7 +7,7 @@ id: dZeHygTSD4
 ---
 With Analytics-Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS and Linux applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics-Swift enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations. Analytics-Swift also offers default implementations to help you maintain destinations and integrations.
 
-If you’re migrating to Analytics-Swift from a different mobile library, you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift-ios/migration/).
+If you're migrating to Analytics-Swift from a different mobile library, you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift-ios/migration/).
 
 > info ""
 > Analytics-Swift currently supports [these destinations](#supported-destinations), with more to follow.
@@ -58,17 +58,17 @@ To get started with the Analytics-Swift mobile library:
     `trackDeepLinks` | The default is set to `true`. <br> This automatically track deep links. Set to `false` to stop tracking Deep Links.
 
     > info ""
-    > Configuration options such as IDFA collection and automatic screen tracking are found in Segment’s [Plugin Examples repo](https://github.com/segmentio/analytics-example-plugins/tree/main/plugins/swift){:target="_blank"}.
+    > Configuration options such as IDFA collection and automatic screen tracking are found in Segment's [Plugin Examples repo](https://github.com/segmentio/analytics-example-plugins/tree/main/plugins/swift){:target="_blank"}.
 
 ## Tracking Methods
-Once you’ve installed the Analytics-Swift library, you can start collecting data through Segment’s tracking methods:
+Once you've installed the Analytics-Swift library, you can start collecting data through Segment's tracking methods:
 - [Identify](#identify)
 - [Track](#track)
 - [Screen](#screen)
 - [Group](#group)
 
 ### Identify
-The [Identify](/docs/connections/spec/identify/) method lets you tie a user to their actions and record traits about them. This includes a unique user ID and any optional traits you know about them like their email, name, address. The traits option can include any information you want to tie to the user. When using any of the reserved traits, be sure the information reflects the name of the trait. For example, `email`  should always be a string of the user’s email address.
+The [Identify](/docs/connections/spec/identify/) method lets you tie a user to their actions and record traits about them. This includes a unique user ID and any optional traits you know about them like their email, name, address. The traits option can include any information you want to tie to the user. When using any of the reserved traits, be sure the information reflects the name of the trait. For example, `email`  should always be a string of the user's email address.
 
 {% codeexample %}
 {% codeexampletab Method signature %}
@@ -128,9 +128,9 @@ Field | Details
 ### Screen
 The [Screen](/docs/connections/spec/screen/) method lets you record whenever a user sees a screen in your mobile app, along with optional extra information about the page being viewed.
 
-You’ll want to record a screen event whenever the user opens a screen in your app. This could be a view, fragment, dialog or activity depending on your app.
+You'll want to record a screen event whenever the user opens a screen in your app. This could be a view, fragment, dialog or activity depending on your app.
 
-Not all integrations support screen, so when it’s not supported explicitly, the screen method tracks as an event with the same parameters.
+Not all integrations support screen, so when it's not supported explicitly, the screen method tracks as an event with the same parameters.
 
 {% codeexample %}
 {% codeexampletab Method signature %}
@@ -156,7 +156,7 @@ Once you add the plugin to your project, add it to your Analytics instance:
 ```
 
 ### Group
-The [Group](/docs/connections/spec/group/) method lets you associate an individual user with a group— whether it’s a company, organization, account, project, or team. This includes a unique group identifier and any additional group traits you may have, like company name, industry, number of employees. You can include any information you want to associate with the group in the traits option. When using any of the reserved group traits, be sure the information reflects the name of the trait. For example, email should always be a string of the user’s email address.
+The [Group](/docs/connections/spec/group/) method lets you associate an individual user with a group— whether it's a company, organization, account, project, or team. This includes a unique group identifier and any additional group traits you may have, like company name, industry, number of employees. You can include any information you want to associate with the group in the traits option. When using any of the reserved group traits, be sure the information reflects the name of the trait. For example, email should always be a string of the user's email address.
 
 {% codeexample %}
 {% codeexampletab Method signature %}
@@ -185,7 +185,7 @@ analytics.group(groupId: "user-123", traits: MyTraits(
 {% endcodeexample %}
 
 ## Plugin Architecture
-Segment’s plugin architecture enables you to modify and augment how the analytics client works. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
+Segment's plugin architecture enables you to modify and augment how the analytics client works. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
 
 Plugins are run through a timeline, which executes in order of insertion based on their entry types. Segment has these 5 entry types:
 
@@ -311,7 +311,7 @@ Adding plugins enable you to modify your analytics implementation to best fit yo
 analytics.add(plugin: yourIntegration)
 ```
 
-Though you can add plugins anywhere in your code, it’s best to implement your plugin when you configure the client.
+Though you can add plugins anywhere in your code, it's best to implement your plugin when you configure the client.
 
 ## Utility Methods
 The Analytics Swift utility methods help you work with [plugins](#plugin-architecture) from the analytics timeline. They include:
@@ -319,7 +319,7 @@ The Analytics Swift utility methods help you work with [plugins](#plugin-archite
 - [Find](#find)
 - [Remove](#remove)
 
-There’s also the [Flush](#flush) method to help you manage the current queue of events.
+There's also the [Flush](#flush) method to help you manage the current queue of events.
 
 ### Add
 The Add method allows you to add a plugin to the analytics timeline.
@@ -390,7 +390,7 @@ analytics.flush()
 {% endcodeexample %}
 
 ## Ad Tracking and IDFA
-[Segment no longer automatically collects IDFA](/docs/connections/sources/catalog/libraries/mobile/ios/ios14-guide/#segment-no-longer-automatically-collects-idfa). If you need to collect the user’s IDFA to pass it to specific destinations, or for other uses, [you can manually pass the IDFA to the Segment SDK](/docs/connections/sources/catalog/libraries/mobile/ios/ios14-guide/#you-can-manually-pass-the-idfa-to-the-segment-sdk).
+[Segment no longer automatically collects IDFA](/docs/connections/sources/catalog/libraries/mobile/ios/ios14-guide/#segment-no-longer-automatically-collects-idfa). If you need to collect the user's IDFA to pass it to specific destinations, or for other uses, [you can manually pass the IDFA to the Segment SDK](/docs/connections/sources/catalog/libraries/mobile/ios/ios14-guide/#you-can-manually-pass-the-idfa-to-the-segment-sdk).
 
 Copy the IDFACollection plugin to your project. You can also use this [IDFACollection example plugin](https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/IDFACollection.swift){:target="_blank"}.
 

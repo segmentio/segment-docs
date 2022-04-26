@@ -5,6 +5,10 @@ sections:
   section:
   - path: /connections/destinations/catalog/adobe-analytics
     title: Adobe Analytics destination
+  - path: /connections/destinations/catalog/actions-adobe-target-web
+    title: Adobe Target Web Destination
+  - path: /connections/destinations/catalog/actions/adobe-target-cloud
+    title: Adobe Taget Cloud Mode Destination
   - path: /connections/destinations/catalog/adobe-analytics/settings
     title: Mapping Segment to Adobe Analytics
   - path: /connections/destinations/catalog/adobe-analytics/identity
@@ -73,6 +77,8 @@ sections:
   section:
   - path: /connections/destinations/catalog/salesforce
     title: Salesforce destination
+  - path: /connections/destinations/catalog/actions-salesforce
+    title: Salesforce (Actions) destination
   # This is in Private Beta
   # - path: /connections/destinations/catalog/salesforce-live-agent
   #   title: Salesforce Live Agent destination

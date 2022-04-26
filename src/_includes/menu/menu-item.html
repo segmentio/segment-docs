@@ -1,5 +1,6 @@
 {% assign currentPage = page.path | downcase | split: "/" %}
 {% assign currentPath = include.root_section.section_title | downcase | slugify %}
+<!-- {{currentPage[1]}} - {{currentPath}} -->
 
 <li class="menu-item {% if currentPage[0] == currentPath %}menu-item--active{% endif %}" data-accordion data-class-active="menu-item--active">
   {% if include.root_section.path %}

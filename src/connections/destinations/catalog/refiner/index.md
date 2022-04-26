@@ -42,7 +42,7 @@ Segment sends identify() calls to Refiner as an `identify` event.
 
 ## Group
 
-If you haven’t had a chance to review our spec, take a look tounderstand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
+If you haven't had a chance to review our spec, take a look tounderstand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
 
 ```js
 analytics.group("0e8c78ea9d97a7b8185e8632", {
@@ -64,4 +64,4 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.track('Login Button Clicked')
 ```
 
-Segment sends track() calls to Refiner as a `trackEvent` event. Note that Refiner doesn’t store the attributes sent alongside an event.
+Segment sends track() calls to Refiner as a `trackEvent` event. Note that Refiner doesn't store the attributes sent alongside an event.

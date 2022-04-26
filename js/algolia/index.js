@@ -16,6 +16,7 @@ const apiKey = envApiKey != null ? envApiKey : sampleApiKey;
 const placeHolder = envApiKey != null ? 'Search the Segment documentation' : 'Search disabled locally'
 
 const searchClient = algoliasearch(appId, apiKey);
+const loc = window.location.pathname
 
 //insights
 insightsClient('init', { appId, apiKey, useCookie: true });
@@ -23,6 +24,7 @@ const algoliaInsightsPlugin = createAlgoliaInsightsPlugin({ insightsClient });
 
 // define locations to separate invocation for mobile and desktop
 const locations = ['#autocomplete','#autocomplete-mobile'];
+const engage_locations = ['#engage-autocomplete']
 
 function initAutocomplete(item){
   const search = autocomplete({
@@ -54,7 +56,7 @@ function initAutocomplete(item){
                   query,
                   params: {
                     hitsPerPage: 7,
-                    facetFilters: ['hidden:-true'],
+                    facetFilters: ['hidden:-true','engage:-true'],
                     clickAnalytics: true,
                   },
                 },
@@ -104,4 +106,90 @@ function initAutocomplete(item){
   
 }
 
+function initEngageAutocomplete(item){
+  const search = autocomplete({
+    container: item,
+    placeholder: "Search the Twilio Engage documentation",
+    debug: false,
+    openOnFocus: false,
+    keyboardShortcuts: ['s', 191],
+    plugins: [algoliaInsightsPlugin,],
+    detachedMediaQuery:'none',
+    getSources( {query} ) {
+      return [
+        {
+          sourceId: 'articles',
+          getItemUrl({ item }){
+            if (item.anchor != null) {
+              var itemUrl = '/docs'+item.url+"#" + item.anchor;
+            } else {
+              var itemUrl = '/docs'+item.url;
+            }
+            return itemUrl;
+          },
+          getItems() {
+            return getAlgoliaResults({
+              searchClient,
+              queries: [
+                {
+                  indexName: 'segment-docs',
+                  query,
+                  params: {
+                    hitsPerPage: 7,
+                    facetFilters: ['hidden:-true'],
+                    clickAnalytics: true,
+                  },
+                },
+              ],
+            });
+          },
+          templates: {
+            item({ item, createElement  }){
+              if (item.anchor != null) {
+                var anchorLink = "#" + item.anchor;
+              } else {
+                var anchorLink = "";
+              }
+
+              if (item.engage){
+                var engage = "<span class='engage-pill'>Engage</span>"
+              }
+              return createElement('div',{
+                dangerouslySetInnerHTML: {
+                  __html: `<a class="aa-link" href="/docs${item.url}${anchorLink}">
+                     <p class="aa-title" >${highlightHit({hit: item, attribute: 'title'})} ${engage}</h3>
+                     <p class="aa-content">${highlightHit({hit: item, attribute: 'content'})}</p></a>`
+                }
+              })
+            },
+            noResults() {
+              return html `<p class="aa-content">No results for <strong>${query}</strong></p>`;
+            }
+          },
+          
+        },
+      ];
+    },
+    navigator: {
+      navigate({ itemUrl }) {
+        window.location.assign(itemUrl);
+      },
+      navigateNewTab({ itemUrl }) {
+        const windowReference = window.open(itemUrl, '_blank', 'noopener');
+  
+        if (windowReference) {
+          windowReference.focus();
+        }
+      },
+      navigateNewWindow({ itemUrl }) {
+        window.open(itemUrl, '_blank', 'noopener');
+      },
+    },
+  });
+  
+}
+if (loc.startsWith("/docs/engage")) {
+  engage_locations.forEach(initEngageAutocomplete)
+} else {
 locations.forEach(initAutocomplete);
+}

@@ -19,7 +19,7 @@ It also means that, for the time being, there is a longer delay for us to deploy
 2. On the Segment page, log in and authorize the Auryc Destination.
 3. Select the workspace and source you to add Auryc to, and click **Allow**.
 
-And you’re done! Once you click "Allow", Auryc shows an installation confirmation message.
+And you're done! Once you click "Allow", Auryc shows an installation confirmation message.
 
 ## Identify
 

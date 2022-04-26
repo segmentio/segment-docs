@@ -84,7 +84,7 @@ Record purchases in Sailthru wih the `Order Completed` event to send order confi
 
 Each line-item for Sailthru purchases requires the `url` field. Send the `tags` property for each line-item for later segmentation purposes.
 
-Sailthru automatically tracks the `shipping`, `tax`, and `discount` fields as adjustments for accurate purchase values per-user. Use `order_id`, `checkout_id`, or Segment’s `messageId` as a purchase key for later lookup and deduping purposes.
+Sailthru automatically tracks the `shipping`, `tax`, and `discount` fields as adjustments for accurate purchase values per-user. Use `order_id`, `checkout_id`, or Segment's `messageId` as a purchase key for later lookup and deduping purposes.
 
 ```js
 analytics.track("Order Completed", {
@@ -116,7 +116,7 @@ analytics.track("Order Completed", {
 ```
 
 #### Update Cart
-Send `Product Added` and `Product Removed` Track events for Sailthru’s abandoned cart messaging to enable the Cart Abandonment entry in Lifecycle Optimizer.
+Send `Product Added` and `Product Removed` Track events for Sailthru's abandoned cart messaging to enable the Cart Abandonment entry in Lifecycle Optimizer.
 
 Sailthru abandoned cart messaging requires the `url` to function properly. 
 

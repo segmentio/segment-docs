@@ -31,10 +31,10 @@ An example call would look like with a server-side call:
 ```text
 POST api.getstories.io/v1/events/
 Params: {
-  user_id: "some_user_id", //Segment’s userId
-  name: "Identify", //Segment’s call type
+  user_id: "some_user_id", //Segment's userId
+  name: "Identify", //Segment's call type
   data: {
-      traits: { //Segment’s traits for the user
+      traits: { //Segment's traits for the user
           first_name: "Jacob"
       }
   }
@@ -43,43 +43,43 @@ Params: {
 
 ## Page & Screen
 
-[`page`](/docs/connections/spec/page/) and [`screen`](/docs/connections/spec/screen/) calls are sent to Stories as a new event on a user’s timeline as a visited Page or opened Screen.
+[`page`](/docs/connections/spec/page/) and [`screen`](/docs/connections/spec/screen/) calls are sent to Stories as a new event on a user's timeline as a visited Page or opened Screen.
 `userId` is a **required** property to assign the call to a specific user. `name` is a recommended field that helps identify the event characteristics but is not required.
 An example server-side call:
 
 ```text
 POST api.getstories.io/v1/events/
 Params: {
-  user_id: "some_user_id", //Segment’s userId
-  name: "Page", //Segment’s call type
+  user_id: "some_user_id", //Segment's userId
+  name: "Page", //Segment's call type
   data: {
-      content: "FAQ - Help" //Segment’s name
+      content: "FAQ - Help" //Segment's name
   }
 }
 
 POST api.getstories.io/v1/events/
 Params: {
-  user_id: "some_user_id", //Segment’s userId
-  name: "Screen", //Segment’s call type
+  user_id: "some_user_id", //Segment's userId
+  name: "Screen", //Segment's call type
   data: {
-      content: "App went Foreground" //Segment’s name
+      content: "App went Foreground" //Segment's name
   }
 }
 ```
 
 ## Track
 
-[`track`](/docs/connections/spec/track/) calls are sent to Stories as a new event on a user’s timeline to keep a track of user actions.
+[`track`](/docs/connections/spec/track/) calls are sent to Stories as a new event on a user's timeline to keep a track of user actions.
 `userId` is a **required** property to assign the call to a specific user. `name` is a recommended field that helps identify the event characteristics but is not required.
 An example server-side call:
 
 ```text
 POST api.getstories.io/v1/events/
 Params: {
-  user_id: "some_user_id", //Segment’s userId
-  name: "Track", //Segment’s call type
+  user_id: "some_user_id", //Segment's userId
+  name: "Track", //Segment's call type
   data: {
-      content: "Remote Log session started" //Segment’s name
+      content: "Remote Log session started" //Segment's name
   }
 }
 ```
@@ -87,7 +87,7 @@ Params: {
 ## Known & Anonymous Users
 
 **Stories does not support anonymous users at the moment.**
-To have Stories recognize a user, you must include `userId` when calling `identify`. Otherwise, Stories won’t automatically be able to log the call under the correct user.
+To have Stories recognize a user, you must include `userId` when calling `identify`. Otherwise, Stories won't automatically be able to log the call under the correct user.
 
 ### Merging Users
 
@@ -98,11 +98,11 @@ An example server-side call:
 ```text
 POST api.getstories.io/v1/users
 Params: {
-    "user_id": "some_user_id", //Segment’s userId
-    "name": "Han Solo", //Segment’s username
-    "email": "han.solo@millenium.fa", //Segment’s email
-    "phone": "+14155552671", //Segment’s phone
-    "attributes": { //Segment’s Traits
+    "user_id": "some_user_id", //Segment's userId
+    "name": "Han Solo", //Segment's username
+    "email": "han.solo@millenium.fa", //Segment's email
+    "phone": "+14155552671", //Segment's phone
+    "attributes": { //Segment's Traits
         "vehicle": "Millennium Falcon",
         "latest_action": "Marry Leia"
     },

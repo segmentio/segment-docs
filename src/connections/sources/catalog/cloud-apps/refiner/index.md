@@ -16,7 +16,7 @@ This source is maintained by Refiner. For any issues with the source, [contact R
 
 ## Getting Started
 
-1. From your Segment UI’s Sources page click on “Add Source”.
+1. From your Segment UI's Sources page click on “Add Source”.
 2. Search for "Refiner" within the Sources Catalog and click **Connect** to confirm.
 3. Give the Source a nickname and follow the set-up flow to "Add Source".
 4. Copy the Write key from the Segment UI and log in to your Refiner account.

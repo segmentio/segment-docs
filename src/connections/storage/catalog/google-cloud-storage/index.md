@@ -111,7 +111,7 @@ Congratulations! You've set up a GCS destination. You'll receive files in your B
 **Why is data not syncing to the GCS destination?**
 Common errors which can cause sync failures are:
 - **Bucket not configured**: A bucket for the GCS destination was not provided. Check the GCS destination settings to confirm that a valid bucket is entered.
-- **GCS credentials not configured**: Credentials for the GCS destination cannot be found. Confirm that you’ve inputted GCS credentials into the destination settings.
+- **GCS credentials not configured**: Credentials for the GCS destination cannot be found. Confirm that you've inputted GCS credentials into the destination settings.
 - **Invalid GCS credentials**: Credentials for the GCS destination are found, but they are not correctly formatted credentials. Re-enter a valid credential as a setting for the destination to work.
 - **Unable to upload files**: We are unable to upload files to GCS due to incorrect credentials (e.g., non-existent bucket), insufficient permissions, or a GCS error. Confirm that credentials and permissions are set correctly.
 - **Destination not found**: There is no GCS destination connected to the source, and can be connected within the workspace overview page.

@@ -3,7 +3,7 @@ title: React Native 2.0 Migration Guide
 strat: react-native
 ---
 
-If you’re using `analytics-react-native 1.5.1` or older, follow these steps to migrate to `analytics-react-native 2.0`. You can continue to use your React Native source write key for the migration to view historical events. Additionally, with React Native 2.0, you don't need to leverage bundled SDK packages, but can use [this list of supported destinations](/docs/connections/sources/catalog/libraries/mobile/react-native#supported-destinations).
+If you're using `analytics-react-native 1.5.1` or older, follow these steps to migrate to `analytics-react-native 2.0`. You can continue to use your React Native source write key for the migration to view historical events. Additionally, with React Native 2.0, you don't need to leverage bundled SDK packages, but can use [this list of supported destinations](/docs/connections/sources/catalog/libraries/mobile/react-native#supported-destinations).
 
 To migrate to React Native 2.0:
 
@@ -40,8 +40,8 @@ To migrate to React Native 2.0:
     | Option Name                 | Description                                                                                                                                                                                |
     | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
     | `writeKey` *required*         | This is your Segment write key.                                                                                                                                                            |
-    | `autoAddSegmentDestination` | The default is set to `true`.<br>This automatically adds the Segment Destination plugin. Set to `false` if you don’t want to add the Segment Destination.                                  |
-    | `debug`                     | The default is set to `true`. <br>The default value is `false` in production.<br>When set to false, logs don’t generate.                                                                   |
+    | `autoAddSegmentDestination` | The default is set to `true`.<br>This automatically adds the Segment Destination plugin. Set to `false` if you don't want to add the Segment Destination.                                  |
+    | `debug`                     | The default is set to `true`. <br>The default value is `false` in production.<br>When set to false, logs don't generate.                                                                   |
     | `defaultSettings`           | The default is set to `undefined`.<br>Settings that will be used if the request to get the settings from Segment fails                                                                     |
     | `flushAt`                   | The default is set to `20`.<br>The count of events at which Segment sends to the backend.                                                                                                  |
     | `flushInterval`             | The default is set to `30`.<br>The internval in seconds at which Segment sends events to the backend.                                                                                      |

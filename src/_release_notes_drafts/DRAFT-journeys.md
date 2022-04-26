@@ -1,7 +1,7 @@
 ---
 title: Segment Journeys
 description: |
-  Leverage your audiences and create personalized experiences at scale across every connected channel, including: email, SMS, in-app, and advertising. With Segment Journeys, marketers can design multi-step, logic-based experiences that drive to results, whether it’s starting a subscription or requesting a demo.
+  Leverage your audiences and create personalized experiences at scale across every connected channel, including: email, SMS, in-app, and advertising. With Segment Journeys, marketers can design multi-step, logic-based experiences that drive to results, whether it's starting a subscription or requesting a demo.
 release_type: GA
 product_area: personas
 business: true
