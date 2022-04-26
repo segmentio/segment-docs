@@ -21,4 +21,4 @@ Use Engage to send [email](/docs/engage/campaigns/email-campaigns/) and [SMS cam
 
 With Engage, you can build [email](/docs/engage/content/email/template/) and [SMS templates](/docs/engage/content/sms/template/) to use throughout your campaigns. Build an email template using a visual editor or an HTML code editor. Personalize templates with merge tags and test your messages before you send them in campaigns.
 
-Engage saves the message templates for your to preview, maintain, and reuse throughout your campaigns.
+Engage saves the message templates for you to preview, maintain, and reuse throughout your campaigns.
