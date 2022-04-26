@@ -42,7 +42,7 @@ Subscribed users have intentionally requested to receive your marketing material
 
 **You may only send Engage campaigns to subscribed users. User subscriptions help you understand a user's preference to receive or not receive your marketing content.**
 
-It's your responsibility to ensure that our system correctly reflects your users' subscription choices. Failure to do so may put you in violation of legislation like [CAN-SPAM](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business){:target="_blank"}, [TCPA](https://www.twilio.com/docs/glossary/what-is-telephone-consumer-protection-act-tcpa){:target="_blank"}, or [GDPR](https://gdpr-info.eu/){:target="_blank"}.
+It's your responsibility to ensure that Segment correctly reflects your users' subscription choices. Failure to do so may put you in violation of legislation like [CAN-SPAM](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business){:target="_blank"}, [TCPA](https://www.twilio.com/docs/glossary/what-is-telephone-consumer-protection-act-tcpa){:target="_blank"}, or [GDPR](https://gdpr-info.eu/){:target="_blank"}.
 
 ### Unsubscribed
 
