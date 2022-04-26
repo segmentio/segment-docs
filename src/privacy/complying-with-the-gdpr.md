@@ -64,21 +64,4 @@ Segment offers a Data Processing Agreement (DPA) and Standard Contractual (SCCs)
 Segment offers a Data Processing Agreement (DPA) and Standard Contractual Clauses (SCCs) as a means of meeting the regulatory contractual requirements of GDPR in our role as processor and also to address international data transfers. 
 
 > note ""
-<<<<<<< HEAD
-> **Note on Schrems II**: Despite the CJEU's July 2020 ruling invalidating Privacy Shield as a means of validly transferring data to the USA from the EU, these developments are not expected to disrupt Segment's ability to provide services to its EU customers as the European Court of Justice has reaffirmed that the Standard Contractual Clauses (SCC) remain valid as a method of transfer. Our standard Data Processing Agreement includes a provision whereby should Privacy Shield ever be invalidated (as is the case now) then the SCCs will automatically apply.
-
-To opt into the Data Processing Agreement and Standard Contractual Clauses:
-
-1.  Go to your [Workspace](https://app.segment.com).
-2.  Open the left side menu and select **Settings**.
-3.  Below **End User Privacy**, click **Privacy & Security.**
-4.  Below **Data Processing Agreement**, click **Review**.
-5.  Review and sign within Docusign.
-
-If you also wish to opt into the Standard Contractual Clauses:
-
-1.  Below **Standard Contractual Clauses**, click **Review**.
-2.  Review and sign within Docusign.
-=======
 > **Note on Schrems II**: Despite the CJEU’s July 2020 ruling invalidating Privacy Shield as a means of validly transferring data to the USA from the EU, these developments are not expected to disrupt Segment’s ability to provide services to its EU customers as the European Court of Justice has reaffirmed that the Standard Contractual Clauses (SCC) remain valid as a method of transfer. Our standard Data Processing Agreement includes a provision whereby should Privacy Shield ever be invalidated (as is the case now) then the SCCs will automatically apply.
->>>>>>> master
