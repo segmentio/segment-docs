@@ -2,9 +2,6 @@
 title: User Subscription States
 layout: engage
 engage: true
-<<<<<<< HEAD
----
-=======
 ---
 
 Customer profiles in your Segment audiences contain **contact vectors**. A contact vector is a piece of unique, specific contact information associated with a customer, like the customer's email address or phone number.
@@ -102,4 +99,3 @@ The Public API will resolve most subscribe and unsubscribe requests in real time
 | User no longer receives desired SMS campaigns       | User may have replied STOP to an SMS campaign                       | You cannot change the state on your own; the user must send START, YES, or UNSTOP to the original campaign number from their own device.                    |
 
 [Reach out to support](/docs/engage/contact/) with questions you may have about resolving a user’s subscription state.
->>>>>>> master
