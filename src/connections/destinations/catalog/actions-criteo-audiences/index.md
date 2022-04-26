@@ -43,7 +43,7 @@ You will also need your Criteo Advertiser ID. Please reach out to your Criteo Ac
 
 4. Choose your **Personas** space for the Source as this destination only supports sending Personas Audiences to Criteo.
 
-5. On the **Settings** tab, name your destination. For example, Criteo audiences – <audience name>.
+On the **Settings** tab, name your destination. For example, Criteo audiences – &lt;audience name&gt;.
 
 6. Enter your Criteo Advertiser ID, API client ID and client secret.
 
