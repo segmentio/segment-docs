@@ -6,7 +6,7 @@ hide-dossier: true
 
 {% include content/plan-grid.md name="actions" %}
 
-[LaunchDarkly](https://launchdarkly.com) is a feature management platform that empowers development teams to safely deliver and control software through feature flags.
+[LaunchDarkly](https://launchdarkly.com) is a feature management platform that empowers development teams to safely deliver, measure and control software through feature flags.
 
 With LaunchDarkly, you can run experiments on any feature flag, with custom events as metrics. You can look for an existing custom event from Segment, and start recording data against it as a metric in your LaunchDarkly experiment.
 
