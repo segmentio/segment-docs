@@ -106,7 +106,10 @@ To edit a realtime Trait or Audience, follow these steps:
 3. Select the **Builder** tab and make your edits.
 4. Select **Save Audience** to confirm your edits.
 
-Personas then processes your realtime Audience or Trait edits.  Once Personas has finished incorporating your changes, you'll be able to access your updated Audience or Trait.
+Personas then processes your realtime Audience or Trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Personas has finished incorporating your changes, you'll be able to access your updated Audience or Trait.
+
+> warning ""
+> If your audience includes historical data (Historical Backfill is enabled), editing an audience creates a new backfill task. The backfill task, and therefore the edit task, take longer to process if the audience is connected to a destination with rate limits. Rate-limited destinations dictate how fast Personas can backfill. View a list of [rate-limited destinations](/docs/personas/using-personas-data/#rate-limits-on-personas-event-destinations).
 
 ## Accessing your Audiences using the Profiles API
 
