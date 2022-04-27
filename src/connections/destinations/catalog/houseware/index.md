@@ -26,7 +26,7 @@ Houseware supports the following methods, as specified in the [Segment Spec](/do
 
 ### Page
 
-If you aren’t familiar with the Segment Spec, take a look at the [Page method documentation](/docs/connections/spec/page/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](/docs/connections/spec/page/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.page('Home')
@@ -37,7 +37,7 @@ Segment sends Page calls to Houseware as a `pageview`.
 
 ### Identify
 
-If you aren’t familiar with the Segment Spec, take a look at the [Identify method documentation](/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Identify method documentation](/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -50,7 +50,7 @@ Segment sends Identify calls to Houseware as an `identify` event.
 
 ### Track
 
-If you aren’t familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 ```js
 analytics.track('Login Button Clicked')
 ```

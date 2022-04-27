@@ -10,7 +10,7 @@ With Protocols, you can help engineers reduce tracking errors, create issue noti
 
 ## Anomaly detection
 
-If you’re using Protocols, you might want to get notifications when event volume anomalies or Protocols violation counts occur. Read Segment's [anomaly detection documentation](/docs/protocols/apis-and-extensions/anomaly_detection/) to learn about common anomalies, as well as monitoring and alerting solutions you can implement using standard tools.
+If you're using Protocols, you might want to get notifications when event volume anomalies or Protocols violation counts occur. Read Segment's [anomaly detection documentation](/docs/protocols/apis-and-extensions/anomaly_detection/) to learn about common anomalies, as well as monitoring and alerting solutions you can implement using standard tools.
 
 ## Config API
 

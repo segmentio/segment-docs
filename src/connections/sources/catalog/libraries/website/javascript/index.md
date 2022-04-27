@@ -539,19 +539,19 @@ analytics.load("<write_key>", {
   });
 ```
 
-You can check to see if batching works by checking your source’s debugger in **Sources > Debugger**. When you select an event and view the **Raw** code, the `receivedAt` time of all the events in the batch should be the same.
+You can check to see if batching works by checking your source's debugger in **Sources > Debugger**. When you select an event and view the **Raw** code, the `receivedAt` time of all the events in the batch should be the same.
 
 #### Batch size
-The batch size is the threshold that forces all batched events to be sent once it’s reached. For example, `size: 10`  means that after triggering 10 events, Analytics.js sends those 10 events together as a batch to Segment.  
+The batch size is the threshold that forces all batched events to be sent once it's reached. For example, `size: 10`  means that after triggering 10 events, Analytics.js sends those 10 events together as a batch to Segment.  
 
-Your total batched events can’t exceed the maximum payload size of 500 KB, with a limit of 32 KB for each event in the batch. If the 500 KB limit is reached, the batch will be split.
+Your total batched events can't exceed the maximum payload size of 500 KB, with a limit of 32 KB for each event in the batch. If the 500 KB limit is reached, the batch will be split.
 
 #### Timeout
-`timeout` is the number of milliseconds that forces all events queued for batching to be sent, regardless of the batch size, once it’s reached. For example, `timeout: 5000` sends every event in the batch to Segment once 5 seconds passes.
+`timeout` is the number of milliseconds that forces all events queued for batching to be sent, regardless of the batch size, once it's reached. For example, `timeout: 5000` sends every event in the batch to Segment once 5 seconds passes.
 
 ### Batching FAQs
 #### Will Analytics.js deliver events that are in the queue when a user closes the browser?
-Analytics.js does its best to deliver the queued events before the browser closes, but the delivery isn’t guaranteed.
+Analytics.js does its best to deliver the queued events before the browser closes, but the delivery isn't guaranteed.
 
 Upon receiving the `beforeunload` browser event, Analytics.js attempts to flush the queue using `fetch` requests with `keepalive` set to true. Since the max size of `keepalive` payloads is limited to 64 KB, if the queue size is bigger than 64 KB at the time the browser closes, then there is a chance of losing a subset of the queued events. Reducing the batch size or timeout will alleviate this issue, but that will be a trade-off decision.
 
@@ -562,16 +562,16 @@ No. Batching is only supported as part of Analytics.js 2.0.
 No, this batching only impacts events sent to Segment. Once the batch reaches Segment, it is split up and follows the normal path of an event.
 
 #### Will batching impact billing or throughput?
-No, batching won’t impact billing or throughput.
+No, batching won't impact billing or throughput.
 
 #### Can I use batching with partner integrations?
-Partner integrations don’t support batching as all other partner integrations run one event at a time. Only Segment.io events support batched delivery.
+Partner integrations don't support batching as all other partner integrations run one event at a time. Only Segment.io events support batched delivery.
 
 #### Does batching work on all browsers?
-Batching won’t work on Internet Explorer.
+Batching won't work on Internet Explorer.
 
 #### If a source has retry enabled, does the retry behavior change when using batching?
-Batching delays retries, as events that are queued for batching aren’t retried until a batch delivery fails.
+Batching delays retries, as events that are queued for batching aren't retried until a batch delivery fails.
 
 #### When using Middlewares as a source and destination, is there a change in behavior when using batching?
 No, there is no change in behavior to Middlewares.
@@ -598,7 +598,7 @@ Type | Details
 ---- | -------
 `before` | Executes before event processing begins. These are plugins that run before any other plugins run. <br><br>For example, validating events before passing them along to other plugins. A failure here could halt the event pipeline. <br><br> See the example of how Analytics.js uses the [Event Validation plugin](https://github.com/segmentio/analytics-next/blob/master/src/plugins/validation/index.ts){:target="_blank"} to verify that every event has the correct shape.
 `enrichment` | Executes as the first level of event processing. These plugins modify an event. <br><br> See the example of how Analytics.js uses the [Page Enrichment plugin](https://github.com/segmentio/analytics-next/blob/master/src/plugins/page-enrichment/index.ts){:target="_blank"} to enrich every event with page information.
-`destination` | Executes as events begin to pass off to destinations. <br><br> This doesn’t modify the event outside of the specific destination, and failure doesn’t halt the execution.
+`destination` | Executes as events begin to pass off to destinations. <br><br> This doesn't modify the event outside of the specific destination, and failure doesn't halt the execution.
 `after` | Executes after all event processing completes. You can use this to perform cleanup operations. <br><br>An example of this is the [Segment.io Plugin](https://github.com/segmentio/analytics-next/blob/master/src/plugins/segmentio/index.ts){:target="_blank"} which waits for destinations to succeed or fail so it can send it observability metrics.
 `utility` | Executes once during the bootstrap, to give you an outlet to make any modifications as to how Analytics.js works internally. This allows you to augment Analytics.js functionality.
 

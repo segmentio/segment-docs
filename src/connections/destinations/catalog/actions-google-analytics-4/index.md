@@ -97,7 +97,7 @@ For a complete map of Universal Analytics functionality to corresponding Google 
 
 ### Debug Mode
 
-The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/7201382?hl=en){:target="_blank"} only works with a client-side implementation through gtag.js, Google Tag Manager, or Firebase. Because Segment’s Google Analytics 4 integration is server-side and uses the Measurement Protocol API, debug mode is not supported.
+The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/7201382?hl=en){:target="_blank"} only works with a client-side implementation through gtag.js, Google Tag Manager, or Firebase. Because Segment's Google Analytics 4 integration is server-side and uses the Measurement Protocol API, debug mode is not supported.
 
 ### Mobile Data
 

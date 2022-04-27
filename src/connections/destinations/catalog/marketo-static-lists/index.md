@@ -53,7 +53,7 @@ Every time you create an audience in Personas and connect it to Marketo Static L
 ## Configuring Marketo Static Lists
 
 > success "Good to know:"
-> To set up Marketo to receive Personas data, you need Marketo administrator access. If you don’t have that access, work with the administrator for your organization.
+> To set up Marketo to receive Personas data, you need Marketo administrator access. If you don't have that access, work with the administrator for your organization.
 
 ### Step 1: Create an API-Only Marketo user
 
@@ -85,7 +85,7 @@ In this step, you'll create an API-Only Marketo user with both Access API and Le
 
    ![](images/marketosl-newfolder.png)
 
-2. Before you continue to the next step, in Marketo, go to **Admin → Web Services**, and copy or write down the REST API Endpoint. **Be sure to copy the REST endpoint and not the SOAP endpoint.** You’ll need that in the next step.
+2. Before you continue to the next step, in Marketo, go to **Admin → Web Services**, and copy or write down the REST API Endpoint. **Be sure to copy the REST endpoint and not the SOAP endpoint.** You'll need that in the next step.
 
 > warning "Warning:"
 > Do not create a list in the folder for the audience. Segment creates the list for you!
@@ -118,7 +118,7 @@ Check that you followed all of the set-up steps.
 
 Wait six or more hours after setup for your audience to start appearing in Marketo.
 
-Check that you didn’t create a list in the folder for the audience - Segment creates the list for you, and an existing one can conflict.
+Check that you didn't create a list in the folder for the audience - Segment creates the list for you, and an existing one can conflict.
 
 Check that the audience members you expect have an email address on their profile.
 

@@ -25,7 +25,7 @@ Your plan determines how frequently data is synced to your warehouse.
 > We do not set syncs to happen more than once per hour (24 times per day). The warehouse product is not designed for real-time data, so more frequent syncs would not necessarily be helpful.
 
 ## Sync History
-You can use the Sync History page to see the status and history of data updates in your warehouse. The Sync History page is available for every source connected to each warehouse. This page helps you answer questions like, “Has the data from a specific source been updated recently?” “Did a sync completely fail, or only partially fail?” and “Why wasn’t this sync successful?”
+You can use the Sync History page to see the status and history of data updates in your warehouse. The Sync History page is available for every source connected to each warehouse. This page helps you answer questions like, “Has the data from a specific source been updated recently?” “Did a sync completely fail, or only partially fail?” and “Why wasn't this sync successful?”
 
 The Sync History includes the following information:
 
@@ -52,7 +52,7 @@ To view the Sync History:
 
 ## Warehouse Selective Sync
 
-Warehouse Selective Sync allows you to manage the data that you send to your warehouses. You can use this feature to stop syncing specific events (also known as collections) or properties that aren’t relevant, and may slow down your warehouse syncs.
+Warehouse Selective Sync allows you to manage the data that you send to your warehouses. You can use this feature to stop syncing specific events (also known as collections) or properties that aren't relevant, and may slow down your warehouse syncs.
 
 > info ""
 > This feature is only available to Business Tier customers. <br><br>You must be a Workspace Owner to change Selective Sync settings.
@@ -71,9 +71,9 @@ When you disable a source, collection or property, Segment no longer syncs data 
 
 By default, all sources and their collections and properties are sent, and no data is prevented from reaching warehouses.
 
-When you disable sources, collections, or properties using Selective Sync, Segment stops sending new data for these sources, collections, or properties to your warehouse. It doesn’t delete any existing data in the warehouse.
+When you disable sources, collections, or properties using Selective Sync, Segment stops sending new data for these sources, collections, or properties to your warehouse. It doesn't delete any existing data in the warehouse.
 
-If you choose to re-enable a source to begin syncing again, Segment loads all data that arrived since the last sync into the warehouse, but doesn’t backfill data that was omitted while these were disabled. When a collection or property is re-enabled, data only syncs going forward. It will not be loaded from the last sync.
+If you choose to re-enable a source to begin syncing again, Segment loads all data that arrived since the last sync into the warehouse, but doesn't backfill data that was omitted while these were disabled. When a collection or property is re-enabled, data only syncs going forward. It will not be loaded from the last sync.
 
 ### Enable Selective Sync
 
@@ -87,7 +87,7 @@ To use Selective Sync:
 
 To change the sync settings to a single warehouse from multiple sources, follow the same steps as [above](#enable-selective-sync).
 
-This may be valuable if you’re looking to make changes in bulk, such as when setting up a new warehouse.
+This may be valuable if you're looking to make changes in bulk, such as when setting up a new warehouse.
 
 
 ### Change sync settings on a specific Warehouse to Source connection

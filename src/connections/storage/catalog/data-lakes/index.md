@@ -20,7 +20,7 @@ Before you set up Segment Data Lakes, you need the following resources:
 
 ## Step 1 - Set Up AWS Resources
 
-You can use the [open source Terraform module](https://github.com/segmentio/terraform-aws-data-lake) to automate much of the set up work to get Data Lakes up and running. If you’re familiar with Terraform, you can modify the module to meet your organization’s needs, however Segment guarantees support only for the template as provided. The Data Lakes set up uses Terraform v0.12+. To support more versions of Terraform, the AWS provider must use v4, which is included in our example main.tf.
+You can use the [open source Terraform module](https://github.com/segmentio/terraform-aws-data-lake) to automate much of the set up work to get Data Lakes up and running. If you’re familiar with Terraform, you can modify the module to meet your organization’s needs, however Segment guarantees support only for the template as provided. The Data Lakes set up uses Terraform v0.12+. To support more versions of Terraform, the AWS provider must use v4, which is included in the example main.tf.
 
 You can also use Segment's [manual set up instructions](/docs/connections/storage/data-lakes/data-lakes-manual-setup) to configure these AWS resources if you prefer.
 

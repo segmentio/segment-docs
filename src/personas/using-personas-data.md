@@ -61,7 +61,7 @@ Some Destinations, such as Salesforce Marketing Cloud have both “event” and 
 
 ### Event Destinations
 
-<!-- TODO: add link when we have a real chartHere’s a list of [Chart of Personas Event Destinations](/docs/connections/destinations/cmodes-compare/) -->
+<!-- TODO: add link when we have a real chartHere's a list of [Chart of Personas Event Destinations](/docs/connections/destinations/cmodes-compare/) -->
 
 **Event Destinations and Computed traits**
 Computed traits can only be sent to Event destinations.
@@ -69,17 +69,17 @@ When Personas sends a computed trait to an Event destination, it uses an identif
 
 **Event Destinations and Audiences**
 
-- **`identify` call as a user trait**. When you use identify calls, the trait name is the snake_cased version of the audience name you provided, and the value is “true” if the user is part of the audience. For example, when a user first completes an order in the last 30 days, Segment sends an identify call with the property `order_completed_last_30days: true`, and when this user no longer satisfies that criteria (for example if 30 days elapses and they haven’t completed another order), Segment sets that value to `false`.
+- **`identify` call as a user trait**. When you use identify calls, the trait name is the snake_cased version of the audience name you provided, and the value is “true” if the user is part of the audience. For example, when a user first completes an order in the last 30 days, Segment sends an identify call with the property `order_completed_last_30days: true`, and when this user no longer satisfies that criteria (for example if 30 days elapses and they haven't completed another order), Segment sets that value to `false`.
 - **`track` call as two events**: `Audience Entered` and `Audience Exited`, with the event property `order_completed_last_30days` equal to true and false, respectively.
 
 Segment sends an identify or track call for every user in the audience when the audience is first created. Later syncs only send updates for those users who were added or removed from the audience since the last sync.
 
-Most destinations require that you configure a column in your schema to receive the audience data, however, some destinations (like Braze and Iterable) allow you to send audiences without doing this. This depends on the individual destination, so consult the destination’s documentation for details.
+Most destinations require that you configure a column in your schema to receive the audience data, however, some destinations (like Braze and Iterable) allow you to send audiences without doing this. This depends on the individual destination, so consult the destination's documentation for details.
 
 
 ### List Destinations
 
-<!-- TODO: add link when we have a real chart Here’s a list of List Destinations: [Chart of Personas List Destinations](/docs/connections/destinations/cmodes-compare/)-->
+<!-- TODO: add link when we have a real chart Here's a list of List Destinations: [Chart of Personas List Destinations](/docs/connections/destinations/cmodes-compare/)-->
 
 List destinations can only receive Audiences, and cannot receive computed traits.
 
@@ -93,7 +93,7 @@ User-list destinations can have individual limits on how often Segment can sync 
 
 ## What do the payloads look like for Personas data?
 
-The payloads sent from your Personas space to your destinations will be different depending on if you configured the destination to receive identify or track calls, and whether the payload is coming from a computed trait or audience. As a reminder, identify calls usually update a trait on a user profile or table, whereas track calls send a point-in-time event that can be used as a campaign trigger or a detailed record of when a user’s audience membership or computed trait value was calculated.
+The payloads sent from your Personas space to your destinations will be different depending on if you configured the destination to receive identify or track calls, and whether the payload is coming from a computed trait or audience. As a reminder, identify calls usually update a trait on a user profile or table, whereas track calls send a point-in-time event that can be used as a campaign trigger or a detailed record of when a user's audience membership or computed trait value was calculated.
 
 ### Computed Trait Generated Events
 
@@ -180,7 +180,7 @@ The first is when the value of the trait or audience changes.
 
 The second, less common case is that Personas re-syncs an audience or computed trait when a new `external_id` is added to a profile. For example, an ecommerce company has an anonymous visitor with a computed trait called `last_viewed_category = 'Shoes'`. That visitor then creates an account and an email address is added to that profile, even though the computed trait value has not changed. When that email address is added to the profile, Personas re-syncs the computed trait that includes an email to downstream tools. This allows the ecommerce company to start personalizaing the user's experience from a more complete profile.
 
-If this behavior, re-syncing a computed trait or audience when the underlying trait or audience value hasn’t changed, is not the desired in your system, [contact us](https://segment.com/help/contact/).
+If this behavior, re-syncing a computed trait or audience when the underlying trait or audience value hasn't changed, is not the desired in your system, [contact us](https://segment.com/help/contact/).
 
 
 ## Rate Limits on Personas Event Destinations
@@ -218,7 +218,7 @@ For additional information on Destination-specific rate limits, check the docume
 When you create a new Computed Trait or Audience in Personas, you can choose to calculate it either using all the available historical data from your Segment implementation, or only using data that arrives after you set up the trait or audience. By default, Segment opts to include historical data. Afterwards, Segment only sends updates to that destination.
 
 > success ""
-> **Why would I disable historical data?** You might want to disable historical data if you're sending a triggered campaign. For example, if you want to send an email confirming a purchase, you _probably_ don’t want to email users who bought something months ago, but you *do* want to target current users as they make purchases (and thus enter the audience).
+> **Why would I disable historical data?** You might want to disable historical data if you're sending a triggered campaign. For example, if you want to send an email confirming a purchase, you _probably_ don't want to email users who bought something months ago, but you *do* want to target current users as they make purchases (and thus enter the audience).
 
 **Note**: The Personas Facebook Custom Audiences Website destination does not accept historical data, and so only uses data from after the moment you configure it.
 

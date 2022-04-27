@@ -90,7 +90,7 @@ If you want to batch requests to the HTTP endpoint, refer to the batching docume
 ## Regional Segment
 Segment offers customers the option to lead on data residency by providing regional infrastructure in both the Europe and the United States.
 
-Segment recommends you enable the user to the Segment [endpoint](/docs/guides/regional-segment/#server-side-and-project-sources) to send data to for the given writeKey.
+Segment recommends you enable the user to choose which Segment [endpoint](/docs/guides/regional-segment/#server-side-and-project-sources) to send data to for the given writeKey from your system.
 
 # Process
 

@@ -504,15 +504,15 @@ You can send computed traits and audiences that you create in Personas to this D
 
 ### User-Level Traits and Audiences in Intercom
 
-Personas sends [**User-Level data**](/docs/glossary#event) to Intercom using an **Identify** call that appends a trait to users’ profiles, or a **Track** call when a trait is computed or an audience is entered or exited.
+Personas sends [**User-Level data**](/docs/glossary#event) to Intercom using an **Identify** call that appends a trait to users' profiles, or a **Track** call when a trait is computed or an audience is entered or exited.
 
 #### User level computed traits
 
-The name of the computed trait is added to the user profile as a trait, and the trait’s value is set to the value of the computed trait. When the trait is computed, Segment sends a **Track** call. For example: imagine you have a computed trait that counts the number of times a user visits your pricing page. If the user visits your pricing page five times, Segment sends an identify call with the property `pricing_page_visits: 5`.
+The name of the computed trait is added to the user profile as a trait, and the trait's value is set to the value of the computed trait. When the trait is computed, Segment sends a **Track** call. For example: imagine you have a computed trait that counts the number of times a user visits your pricing page. If the user visits your pricing page five times, Segment sends an identify call with the property `pricing_page_visits: 5`.
 
 #### User level Audiences
 
-The name of the audience is added to the user’s profile as a trait, with boolean value that indicates if the user is in the audience. For example, when a user first completes an order in a lookback window for the last 30 days, Personas sends an identify call with the property `order_completed_last_30days: true`.  When the user no longer satisfies these criteria (for example when it’s been longer than 30 days since the last purchase), Personas sets that value to `false`.
+The name of the audience is added to the user's profile as a trait, with boolean value that indicates if the user is in the audience. For example, when a user first completes an order in a lookback window for the last 30 days, Personas sends an identify call with the property `order_completed_last_30days: true`.  When the user no longer satisfies these criteria (for example when it's been longer than 30 days since the last purchase), Personas sets that value to `false`.
 
 When you first create an audience, Personas sends an `identify` call for every user in the audience. Later syncs only update users which were added or removed from the audience since the last sync.
 
@@ -522,17 +522,17 @@ When you first create an audience, Personas sends an `identify` call for every u
 
 ### Account-Level Traits and Audiences in Intercom
 
-Personas sends **Account-Level data** to Intercom using an **Identify** event call that appends an account trait to the users’ profiles or a **Track** call when a trait is computed or an audience is entered or exited. Users are added to an account using a single **Group** call, which appends a `groupID` to each user within the account.
+Personas sends **Account-Level data** to Intercom using an **Identify** event call that appends an account trait to the users' profiles or a **Track** call when a trait is computed or an audience is entered or exited. Users are added to an account using a single **Group** call, which appends a `groupID` to each user within the account.
 
 #### Account level computed traits
 
-When you build computed traits with Account-Level data, Personas computes for each account based on traits or aggregated user behavior. You can then export traits for each account, or for each user within an account. The name of the computed trait is added to the profiles of users who are part of the account as a user trait, and the value of the computed trait is added to the corresponding user’s user trait.
+When you build computed traits with Account-Level data, Personas computes for each account based on traits or aggregated user behavior. You can then export traits for each account, or for each user within an account. The name of the computed trait is added to the profiles of users who are part of the account as a user trait, and the value of the computed trait is added to the corresponding user's user trait.
 
 For example, imagine you have a computed trait that counts the number of times that users from a specific account visit your pricing page. If users visit your pricing page five times, Personas sends an identify call with the property `pricing_page_visits: 5`.
 
 #### Account level audiences
 
-When you build audiences with Account-Level data, Personas returns a set of accounts or a set of users that match your criteria. Personas adds the name of the audience to the profile (individual user, or user within the account) as a trait, with a boolean value to indicate if the user is in the audience. For example: when users in an account first complete an order in the last 30 days, Personas sends an identify call with the property `order_completed_last_30days: true`. When the users in this Account no longer satisfy these criteria (for example if it’s been more than 30 days) Segment sets that value to `false`.
+When you build audiences with Account-Level data, Personas returns a set of accounts or a set of users that match your criteria. Personas adds the name of the audience to the profile (individual user, or user within the account) as a trait, with a boolean value to indicate if the user is in the audience. For example: when users in an account first complete an order in the last 30 days, Personas sends an identify call with the property `order_completed_last_30days: true`. When the users in this Account no longer satisfy these criteria (for example if it's been more than 30 days) Segment sets that value to `false`.
 
 When you first create the audience, Personas sends an identify call for *every user in the account in that audience*. Later syncs only send updates for individual accounts and users which were added or removed since the last sync.
 

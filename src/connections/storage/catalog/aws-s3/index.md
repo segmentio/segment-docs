@@ -77,7 +77,7 @@ To complete this section, you need access to your AWS dashboard.
     ```
 If you have server-side encryption enabled, see the [required configuration](#encryption).
  
-4. Update `Principal` in the role’s trust relationship document to `arn:aws:iam::595280932656:role/segment-s3-integration-production-access`. Replace `<YOUR_WORKSPACE_ID>` with your Segment Workspace ID.
+4. Update `Principal` in the role's trust relationship document to `arn:aws:iam::595280932656:role/segment-s3-integration-production-access`. Replace `<YOUR_WORKSPACE_ID>` with your Segment Workspace ID.
 ``` json
     {
       "Version": "2012-10-17",

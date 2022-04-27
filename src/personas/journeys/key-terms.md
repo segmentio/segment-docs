@@ -50,6 +50,6 @@ Keep the following terms in mind as you begin to explore Journeys.
 
 | Step                | Details                                                                                                            |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| Delay               | No audience. Segment appends the wait duration as a condition to the following step’s audience.                    |
+| Delay               | No audience. Segment appends the wait duration as a condition to the following step's audience.                    |
 | T/F split           | The split's resulting conditions contain two mutually exclusive audiences.  The split node itself has no audience. |
 | Multi-branch splits | The split's resulting conditions contain audiences.  The split node itself has no audience.                        |
