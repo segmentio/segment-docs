@@ -9,8 +9,8 @@ id: 60ad61f9ff47a16b8fb7b5d9
 
 When you have Segment installed, you can use your existing tracking implementation to fulfill your data collection needs with Google Analytics 4. Segment will send your data server-side to [Google's Measurement Protocol API](https://developers.google.com/analytics/devguides/collection/protocol/ga4).
 
-> warning ""
-> You won't be able to see user data or realtime data in your Google Analytics 4 instance, as Google's API is [in beta](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/limitations){:target="_blank"} and hasn't added session support. You can contact Google for more information.  
+> warning "" 
+> Google Analytics 4 does not officially support a pure server-to-server integration, however Segment continues to monitor the capabilities of the Measurement Protocol API and make updates accordingly to achieve a reasonable level of reporting for our mutual customers. Segment does not have plans to build a device-mode integration with Gtag for Google Analytics 4.
 
 > success "Good to know"
 > This page is about the [Actions-framework](/docs/connections/destinations/actions/) Google Analytics 4 destination. There's also a page about the [non-Actions Google Universal Analytics destination](/docs/connections/destinations/catalog/google-analytics/). Both of these destinations receive data _from_ Segment.
@@ -64,7 +64,6 @@ Segment’s spec doesn't have an equivalent event for every Google Analytics 4 r
 #### Custom Events
 In addition to recommended events, you can also send custom events using the [Custom Event action](/docs/connections/destinations/catalog/actions-google-analytics-4/#custom-event). Custom events are events that you name. Custom events don't appear in most standard reports; you need to set up custom reports for meaningful analysis. To create custom events in the Google Analytics 4 web interface, see Google’s [Modify and create events through the user interface](https://support.google.com/analytics/answer/10085872){:target='_blank'}.
 
-
 > info "Event naming limitations"
 > Google Analytics 4 requires that all event names contain only alpha-numeric characters and underscores, and must start with an alphabetic character. Segment replaces spaces in Event Names with an underscore, so that these events are accepted by GA4. For example, Segment renames an event named `Home Profile` to `Home_Profile`. In some cases, GA4 may reject an event outright, due to unsupported characters. For example, an event named `Home | Profile` will be silently rejected due to the pipe character.
 > 
@@ -75,6 +74,16 @@ With Google Analytics 4, you must create custom dimensions and metrics within th
 
 To achieve parity with Universal Analytics, you will probably want to create the same custom dimensions that you defined in Universal Analytics. Additionally, many of the values that you tracked as event dimensions in Universal Analytics, particularly event category and event label, should be recreated in Google Analytics 4 as custom dimensions. For more information, see Google’s [Google Analytics 4 Custom dimensions and metrics](https://support.google.com/analytics/answer/10075209){:target='_blank'}.
 
+#### Tracking Active Users & Sessions
+The Google Analytics 4 reports will only display active users who engage with your site for a non-zero amount of time. To ensure users are rendered in reports, Segment sets the `engagement_time_msec` parameter to 1 by default. If you track engagement time on your Segment events, you can use the **Engagement Time in Milliseconds** field mapping to set `engagement_time_msec` to a different value.
+
+If you choose to integrate with Google Analytics 4 client-side (using Gtag outside of Segment) _and_ also use Segment's Google Analytics 4 destination to send events through the API, you can also track sessions server-side. When using Gtag, [Google generates a `session_id` and `session_number` when a session begins](https://support.google.com/analytics/answer/9191807?hl=en){:target='_blank'}. The `session_id` and `session_number` can be passed as Event Parameters to Google Analytics 4 to stitch events sent through the API with the same session that was collected client-side.
+
+> info "Tracking sessions limitations"
+> Session tracking server-side only works if you are also sending data to Google Analytics 4 client-side. This is because the `session_id` must match a value that was previously collected on the client. Events still have to arrive within a 48 hour window of when the client-side events arrived, for them to be stitched properly.
+> 
+> Google does not support passing other reserved fields, such as [predefined user dimensions](https://support.google.com/analytics/answer/9268042?hl=en&ref_topic=11151952){:target='_blank'} or device-specific information, to the Measurement Protocol API.
+
 #### User Identification
 Segment requires a Client ID to send data to Google Analytics 4. The Client ID is the web equivalent of a device identifier and uniquely identifies a given user instance of a web client. By default, Segment sets Client ID to the Segment `userId`, falling back on `anonymousId`. This mapping can be changed within each action if you prefer to map a different field to Client ID.
 
@@ -84,8 +93,6 @@ There are certain scenarios where sending a User-ID can be helpful. For example,
 - **Use the Gtag-generated Client ID.** Gtag will set a Client ID automatically. The Client ID is stored in a cookie and can be fetched on the web client. To tie data between client-side and server-side, pass the Gtag-generated Client ID to Segment as a property and use that value as the Client ID in the Google Analytics 4 destination mappings.
 - **Use the Segment `userId` for User-ID.** The Segment `userId` should be your company’s canonical user identifier. By setting Google's User-ID to the same value as `userId` on client-side and server-side, you can benefit from cross-platform analytics.
 In addition, if you use [Firebase to send mobile data to Google Analytics 4](/docs/connections/destinations/catalog/actions-google-analytics-4/#mobile-data), using the same User-ID across web and mobile will ensure users are stitched together across devices.
-
-User sessions are [not currently supported by the Measurement Protocol API](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/limitations){:target="_blank"}, but should be coming soon. Once available, Segment will update the Google Analytics 4 destination to support sending session-level information.
  
 #### Validating and Comparing Data
 Google recommends a period of dual-collection with both Universal Analytics and Google Analytics 4. This dual-collection approach lets you build a historical record in Google Analytics 4 while continuing to depend on Universal Analytics until you're ready to fully switch over.
@@ -103,7 +110,3 @@ The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/
 ### Mobile Data
 
 Google recommends use of their Firebase SDKs to send mobile data to Google Analytics 4. To assist in your implementation, Segment has a [Firebase destination](/docs/connections/destinations/catalog/firebase) available for mobile analytics. For more information on linking Google Analytics 4 properties to Firebase, see [Google Analytics 4 Firebase integration](https://support.google.com/analytics/answer/9289234?hl=en){:target="_blank"}. Segment's Google Analytics 4 destination is currently only compatible with web streams.
-
-### User Metrics & Sessions
-
-Segment sends a Google Client ID in requests to the Measurement Protocol API, alongside other required API fields. However, user sessions are [not currently supported by the Measurement Protocol API](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/limitations){:target="_blank"}, so user metrics might not appear on the Google Analytics 4 Realtime report or several other reports. To validate your implementation, check users and events on the Events report and User Explorer.
