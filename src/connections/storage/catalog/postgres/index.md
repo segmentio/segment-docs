@@ -91,23 +91,19 @@ As a supplement to this guide, Amazon has created an official guide to [setting 
 
     Select the **Databases** tab on the left sidebar and click **Create database**. On the Create database page, select **Standard create.**
 
-
 5. Select the PostgreSQL Engine.
 
-    In the Engine options section, select **PostgreSQL**.
-    <!--Ask an engineer about what versions of PostgreSQL we support-->
+    In the Engine options section, select **PostgreSQL** and the version you want to use. _**Note:** Versions of PostgreSQL prior to 12.3 don't support m6g and r6g generation instance classes._
 
 6. Select a database template.
 
-    If you anticipate high utilization on your Postgres database, or if downtime is unacceptable, choose **Production**. If you don't plan to have high-utilization of your database or if periods of downtime are acceptable and you know how to recover from them, choose **Dev/Test**.
+    If you anticipate high utilization on your Postgres database, or if downtime is unacceptable, select **Production**. If you don't plan to have high-utilization of your database or if periods of downtime are acceptable and you know how to recover from them, select **Dev/Test**.
     <br/><br/>
-    With the Free tier option, you have up to 750 hours of a Single-AZ db.t2.micro, db.t3.micro, or db.t4g.micro database running PostgreSQL. For more information about the AWS Free Tier with Amazon RDS, see Amazon's [Amazon RDS Free Tier documentation](https://aws.amazon.com/rds/free/).
-    <!--Ask an engineer: will/can the free tier support a Segment integration?-->
+    With the Free tier option, you have up to 750 hours of availability for a Single-AZ db.t2.micro, db.t3.micro, or db.t4g.micro database running PostgreSQL. For more information about the AWS Free Tier with Amazon RDS, see Amazon's [Amazon RDS Free Tier documentation](https://aws.amazon.com/rds/free/).
 
 7. Specify the availability and durability of the database.
 
     The deployment options are:
-    <!--Ask an engineer which one of these options is recommended, or if there are any that aren't supported-->
 
     - **Multi-AZ DB Cluster:** This option creates a cluster of databases with one primary database and two standby database instances, each in a different Availability Zone (AZ.) This option provides high availability and data redundancy, and provides the capacity to serve read workloads. 
 
@@ -123,8 +119,7 @@ As a supplement to this guide, Amazon has created an official guide to [setting 
 9. Select a DB instance class and size. 
     Standard classes provide a balance of compute, memory, and network resources. Memory optimized classes prioritize memory, and burstable classes provide a baseline level of compute resources with the ability to provide additional resources if the demand exceeds ("bursts") above the baseline. 
 
-    Select a DB size that will work for your integration. 
-    <!--Ask an engineer if a Segment integration requires a minimum size/specific class here-->
+    Select a DB size that works for your integration. 
 
 10. Configure the storage options for your database.
     
@@ -132,8 +127,6 @@ As a supplement to this guide, Amazon has created an official guide to [setting 
     - **Allocated storage:** Select the amount of storage your database requires.
     - **Provisioned IOPS:** Select the number of IOPS your database requires.
     - **Storage autoscaling:** Users with Mutli-AZ instances/a single DB instance can select this option to allow storage to autoscale once the data in a database exceeds a set threshold. 
-    
-    <!-- Ask an engineer if a Segment integration requires a minimum about of storage-->
 
 11. Set up the connectivity options for your database.
 
@@ -158,40 +151,25 @@ When you're finished updating your Additional configuration settings, click `Cre
 
 #### Network Permissions for Segment to RDS
 
-This guide will help you change permissions on your Amazon Relational Database Service (RDS) instance to allow Segment to connect.
+To create an inbound rule allowing Segment to connect to your instance: 
 
-1. Open the RDS Console
+1. Open the RDS Console.
 
     To get to the RDS console when you are logged in to AWS, visit [this page](https://console.aws.amazon.com/rds/).
 
-2. Go to the Instances tab.
+2. Open the Databases tab.
 
-    On the left-hand sidebar, click **Instances**.
+3. Select your database and open the Connectivity & security tab. Open the **Security group rules** section. 
 
-3. Go to the Connect and Details sections of the DB Instance.
+4. Click on the inbound security group and select the Inbound rules tab.
 
-    You can do this by clicking in the instance and scrolling down to the relevant sections.
+5. Click **Edit inbound rules** to add a new rule, and click **Add rule**.
 
-    ![](images/rds10.png)
-
-4. Click on the security group.
-
-    This should bring you to a page to configure the active security group.
-
-    ![](images/rds11.png)
-
-5. Click on the Inbound tab.
-
-    This should bring you to a screen that looks like this
-
-    ![](images/rds12.png)
-
-6. Click **Edit** to add a new rule.
-
-    Select PostgreSQL as the type. For **Source**, change the custom IP to `52.25.130.38/32`. This will allow Segment to connect to the instance. Press Save when done.
-    ![](images/rds13.png)
-
-Segment should be able to connect to your database now!
+6. Add a new rule with the following parameters:
+    - Select **PostgreSQL** as the type. 
+    - For **Source**, change the custom IP to `52.25.130.38/32`. This will allow Segment to connect to the instance.
+    
+    When you're finished, click **Save**.
 
 ## Compose Postgres
 
