@@ -9,7 +9,7 @@ id: 60ad61f9ff47a16b8fb7b5d9
 
 When you have Segment installed, you can use your existing tracking implementation to fulfill your data collection needs with Google Analytics 4. Segment will send your data server-side to [Google's Measurement Protocol API](https://developers.google.com/analytics/devguides/collection/protocol/ga4).
 
-> warning "" 
+> warning ""
 > Google Analytics 4 does not officially support a pure server-to-server integration, however Segment continues to monitor the capabilities of the Measurement Protocol API and make updates accordingly to achieve a reasonable level of reporting for our mutual customers. Segment does not have plans to build a device-mode integration with Gtag for Google Analytics 4.
 
 > success "Good to know"
@@ -77,7 +77,7 @@ To achieve parity with Universal Analytics, you will probably want to create the
 #### Tracking Active Users & Sessions
 The Google Analytics 4 reports will only display active users who engage with your site for a non-zero amount of time. To ensure users are rendered in reports, Segment sets the `engagement_time_msec` parameter to 1 by default. If you track engagement time on your Segment events, you can use the **Engagement Time in Milliseconds** field mapping to set `engagement_time_msec` to a different value.
 
-If you choose to integrate with Google Analytics 4 client-side (using Gtag outside of Segment) _and_ also use Segment's Google Analytics 4 destination to send events through the API, you can also track sessions server-side. When using Gtag, [Google generates a `session_id` and `session_number` when a session begins](https://support.google.com/analytics/answer/9191807?hl=en){:target='_blank'}. The `session_id` and `session_number` can be passed as Event Parameters to Google Analytics 4 to stitch events sent through the API with the same session that was collected client-side.
+If you choose to integrate with Google Analytics 4 client-side (using Gtag outside of Segment) _and_ also use Segment's Google Analytics 4 destination to send events through the API, you can track sessions server-side. When using Gtag, [Google generates a `session_id` and `session_number` when a session begins](https://support.google.com/analytics/answer/9191807?hl=en){:target='_blank'}. The `session_id` and `session_number` generated on the client can be passed as Event Parameters to stitch events sent through the API with the same session that was collected client-side.
 
 > info "Tracking sessions limitations"
 > Session tracking server-side only works if you are also sending data to Google Analytics 4 client-side. This is because the `session_id` must match a value that was previously collected on the client. Events still have to arrive within a 48 hour window of when the client-side events arrived, for them to be stitched properly.
