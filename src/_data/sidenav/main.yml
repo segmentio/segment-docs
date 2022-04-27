@@ -112,22 +112,24 @@ sections:
       title: 'Spec: Identify'
     - path: /connections/spec/common
       title: 'Spec: Common Fields'
-    - path: /connections/spec/mobile
-      title: Native Mobile Spec
-    - path: /connections/spec/native-mobile-spec
-      title: What is the native mobile spec?
-    - path: /connections/spec/mobile-packaging-sdks
-      title: Packaging SDKs for Mobile Destinations
     - path: /connections/spec/semantic
       title: 'Spec: Semantic Events'
     - path: /connections/spec/b2b-saas
       title: 'Spec: B2B SaaS'
     - path: /connections/spec/ecommerce/v2
       title: 'Spec: Ecommerce Events'
-    - path: /connections/spec/ecommerce-tracking-plan
-      title: 'Ecommerce Tracking Plans'
+    - path: /connections/spec/mobile
+      title: Native Mobile Spec
+    - path: /connections/spec/native-mobile-spec
+      title: What is the native mobile spec?
+    - path: /connections/spec/mobile-packaging-sdks
+      title: Packaging SDKs for Mobile Destinations
     - path: /connections/spec/video
       title: Video Spec
+    - path: /connections/spec/desktop
+      title: Desktop Spec
+    - path: /connections/spec/ecommerce-tracking-plan
+      title: 'Ecommerce Tracking Plans'
     - path: /connections/spec/best-practices-identify
       title: Best Practices for Identifying Users
     - path: /connections/spec/best-practices-event
@@ -327,7 +329,7 @@ sections:
     - path: /privacy/user-deletion-and-suppression
       title: User Deletion and Suppression
   - path: /privacy/account-deletion
-    title: Account & Data Deletion 
+    title: Account & Data Deletion
   - path: /privacy/faq
     title: Privacy FAQs
 - section_title: Protocols
