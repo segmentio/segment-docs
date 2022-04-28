@@ -110,6 +110,8 @@ sections:
     title: Quickstart tutorial
   - path: /connections/sources/catalog/libraries/website/javascript/custom-proxy
     title: Custom proxy for Analytics.js
+  - path: /connections/sources/catalog/libraries/website/javascript/persistence
+    title: Client-side persistence in Analytics.js
   - path: /connections/sources/catalog/libraries/website/javascript/identity
     title: Managing identity in Analytics.js
   - path: /connections/sources/catalog/libraries/website/javascript/middleware
