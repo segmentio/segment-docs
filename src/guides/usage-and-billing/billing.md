@@ -6,7 +6,7 @@ title: Billing and Account FAQs
 
 On the Segment monthly Team plan, your billing cycle starts the day after your 14-day trial ends. You're billed on this day for each month while you're on this plan. 
 
-On the Segment annual Team plan, you're billed at the end of your 14-day trial for the amount of an entire year of service including a specific number of [MTUs](docs/guides/usage-and-billing/mtus-and-throughput#what-is-an-mtu). Annual plan subscribers are billed for MTU overages at the end of each monthly cycle.
+On the Segment annual Team plan, you're billed at the end of your 14-day trial for the amount of an entire year of service including a specific number of [MTUs](/docs/guides/usage-and-billing/mtus-and-throughput#what-is-an-mtu). Annual plan subscribers are billed for MTU overages at the end of each monthly cycle.
 
 
 ## How do I change my plan?

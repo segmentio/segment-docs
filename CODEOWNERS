@@ -1,13 +1,11 @@
 * @segmentio/segment-doc-team
 # The default owners for everything in
 # the repo. Unless a later match takes precedence.
-CODEOWNERS  @segmentio/segment-doc-team @markzegarelli
+CODEOWNERS  @segmentio/segment-doc-team 
 
-# Diagram library
-# /diagram-library @markzegarelli
 
 # Utility scripts
-# /scripts @segmentio/segment-doc-team
+/scripts @segmentio/segment-doc-team
 
 # Vale Linting
 # /vale-styles @segmentio/segment-doc-team
@@ -23,28 +21,20 @@ CODEOWNERS  @segmentio/segment-doc-team @markzegarelli
 
 
 # Libraries owners
-# /src/connections/catalog/libraries   @bsneed @pooyaj @juliofarah
+/src/connections/catalog/libraries @stayseesong @markzegarelli
+
 
 # Destinations owners
-# /src/connections/destinations  @segmentio/segment-doc-team
+/src/connections/destinations  @stayseesong @markzegarelli
 
+# Engage
+/src/engage/ @markzegarelli @pwseg @rchinn-segment
 
-# Privacy owners TODO
-# /src/privacy
+# Personas owners 
+/src/personas @pwseg @rchinn-segent
 
+# Protocols owners
+/src/protocols @forstisabella
 
-# Protocols owners TODO
-# /src/protocols
-
-# Partner Program owners
-# /src/partners  @misteryeo @n2parko @benhorowitz
-
-# Personas owners TODO
-
-# Usage & Billing TODO
-
-# Config API TODO
-
-# Segment App TODO
-
-# Guides TODO
+# Storage owners
+/src/connections/storage @forstisabella
