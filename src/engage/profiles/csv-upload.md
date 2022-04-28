@@ -20,11 +20,11 @@ Click **Download Template** to download a CSV template with identifier columns f
 > info ""
 > CSV files can only have a single **email** and **phone** identifier column. Include any additional email addresses or phone numbers for a user profile as a separate row.
 
-Navigate to **Personas > Settings** and select the Identity Resolution tab to view or add identifiers in your Segment workspace.
+Navigate to **Personas > Settings** and select the **Identity Resolution** tab to view or add identifiers in your Segment workspace.
 
 ### 2. Upload a CSV file
 
-Upload a CSV file to Twilio Engage two ways:
+Upload a CSV file to Twilio Engage in two ways:
 - Drag and drop the CSV file in the dropzone.
 - Click **Browse** to locate the CSV file.
 
@@ -87,6 +87,11 @@ Please note the following limits as you upload CSV files to Twilio Engage:
 - Upload CSV files with up to 1 million rows (plus one header row).
 - You can only upload one file at a time.
 - The CSV file size can't exceed 15 MB.
+
+> warning ""
+> At this time, the following beta limitations apply:
+> - Email addresses and phone numbers that unsubscribe from your campaigns can't be re-subscribed.
+> - If you upload the same email or phone number with different subscription states in a CSV file, the resulting subscription status isn't guaranteed.
 
 ## Message consent
 
