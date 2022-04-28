@@ -69,14 +69,22 @@ This guide explains how to set up a Postgres database with Heroku. Heroku is a c
 
 ## RDS Postgres
 
-Create a new PostgreSQL database in Amazon's Relational Database Service (RDS) using Amazon's documentation, [Creating a PostgreSQL DB instance and connecting to a database on a PostgreSQL DB instance](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html). For best performance, create your database in one of the `US West` locations.
+You can set up a Postgres database with Amazon Relational Database Service (RDS). RDS simplifies the process of setting up and administering a Postgres database.
 
-> note "Database name field"
-> While Database name is an optional field in the **Additional options** section, adding a value to this field creates the Postgres database at instance startup. Segment recommends filling this out to avoid manual creation of the database. This value is restricted to alphanumeric characters, and must be 64 characters or less.
+To get started, create a new PostgreSQL database in RDS by following the steps in Amazon's documentation, [Creating a PostgreSQL DB instance and connecting to a database on a PostgreSQL DB instance](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html). 
+
+> warning "Ensure your database is publicly accessible"
+> When creating your database, ensure that the **Public access** setting is set to **Yes**. Making your database publicly accessible allows the Segment app to connect to your database. 
+
+For best performance, create your database in the `US West` region. 
+
+When creating your database, Segment recommends entering a **Database name** value in the **Additional options** section. This setting creates the Postgres database at instance startup. The database name is restricted to alphanumeric characters, and must be 64 characters or less.
 
 #### Network Permissions for Segment to RDS
 
-To create an inbound rule allowing Segment to connect to your instance: 
+Once you've created a database, you must create an inbound rule allowing Segment to connect to your instance.
+
+To create a new inbound rule:
 
 1. Open the RDS Console.
 
