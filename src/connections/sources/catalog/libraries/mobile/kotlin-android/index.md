@@ -8,7 +8,7 @@ id: 9EMcTqiKok
 With Analytics-Kotlin, you can send data using Kotlin applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics-Kotlin enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations.
 
 > info ""
-> Segment supports [these destinations](#supported-destinations) in device-mode, with more to follow. Cloud-mode destiantions are also supported. If you don't see your destination, you can [build your own](#build-your-own-destination).
+> Segment supports [these destinations](#supported-destinations) in device-mode, with more to follow. Cloud-mode destinations are also supported. If you don't see your destination, you can [build your own](#build-your-own-destination).
 
 > success ""
 > You can choose to set up your Analytics Kotlin source on [mobile](/docs/connections/sources/catalog/libraries/mobile/kotlin-android) or on the [server](/docs/connections/sources/catalog/libraries/server/kotlin). Segment doesn't support device-mode destinations on the server-side.
