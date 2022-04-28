@@ -1,5 +1,5 @@
 ---
-title: Managing Analytics.js client-side persistence
+title: Client-side persistence in Analytics.js
 strat: ajs
 ---
 
@@ -24,8 +24,8 @@ Here is the full list of available parameters with their default values:
 | `domain` | The domain to set the cookie to. This must match the domain of the JavaScript origin. Cookies set on top-level domain are available to sub-domains. | Top-level domain |
 | `maxage` | The maximum amount of time in seconds before the cookie expires. Browsers may clear cookies before this elapses. | 1 year |
 | `path` | The path the cookie is valid for. | `"/"` |
-| `sameSite` | This prevents the browser from sending the cookie along with cross-site requests. | Lax |
-| `secure` | This determines whether cookies can only be transmitted over secure protocols such as https. | false |
+| `sameSite` | This prevents the browser from sending the cookie along with cross-site requests. | `Lax` |
+| `secure` | This determines whether cookies can only be transmitted over secure protocols such as https. | `false` |
 
 Example:
 ```js
