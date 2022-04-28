@@ -71,12 +71,10 @@ This guide explains how to set up a Postgres database with Heroku. Heroku is a c
 
 You can set up a Postgres database with Amazon Relational Database Service (RDS). RDS simplifies the process of setting up and administering a Postgres database.
 
-To get started, create a new PostgreSQL database in RDS by following the steps in Amazon's documentation, [Creating a PostgreSQL DB instance and connecting to a database on a PostgreSQL DB instance](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html). 
+Create a new PostgreSQL database in RDS by following the steps in Amazon's documentation, [Creating a PostgreSQL DB instance and connecting to a database on a PostgreSQL DB instance](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html). For best performance, create your database in the `US West` region. 
 
 > warning "Ensure your database is publicly accessible"
 > When creating your database, ensure that the **Public access** setting is set to **Yes**. Making your database publicly accessible allows the Segment app to connect to your database. 
-
-For best performance, create your database in the `US West` region. 
 
 When creating your database, Segment recommends entering a **Database name** value in the **Additional options** section. This setting creates the Postgres database at instance startup. The database name is restricted to alphanumeric characters, and must be 64 characters or less.
 
