@@ -69,85 +69,10 @@ This guide explains how to set up a Postgres database with Heroku. Heroku is a c
 
 ## RDS Postgres
 
-This guide explains how to set up a Postgres database with Amazon Relational Database Service (RDS). RDS simplifies the process of setting up and administering a Postgres database.
+Create a new PostgreSQL database in Amazon's Relational Database Service (RDS) using Amazon's documentation, [Creating a PostgreSQL DB instance and connecting to a database on a PostgreSQL DB instance](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html). For best performance, create your database in one of the `US West` locations.
 
-As a supplement to this guide, Amazon has created an official guide to [setting up a Postgres database](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html).
-
-1. Log in to your AWS account.
-
-    If you don't have an AWS account, you can sign up for an account by visiting the [AWS homepage](http://aws.amazon.com/) and clicking 'Create an AWS Account' in the top right-hand corner.
-
-2. Open the RDS Console.
-
-    Log in to AWS and navigate to the [RDS console](https://console.aws.amazon.com/rds/).
-
-3. Select the region you'd like to place the database in.
-
-    In the top right-hand corner of the console, you should see a drop-down with the available AWS regions. For best performance, select one of the `US West` locations.
-
-    <img src="images/rds1.png" width="300">
-
-4. Create a new database.
-
-    Select the **Databases** tab on the left sidebar and click **Create database**. On the Create database page, select **Standard create.**
-
-5. Select the PostgreSQL Engine.
-
-    In the Engine options section, select **PostgreSQL** and the version you want to use. _**Note:** Versions of PostgreSQL prior to 12.3 don't support m6g and r6g generation instance classes._
-
-6. Select a database template.
-
-    If you anticipate high utilization on your Postgres database, or if downtime is unacceptable, select **Production**. If you don't plan to have high-utilization of your database or if periods of downtime are acceptable and you know how to recover from them, select **Dev/Test**.
-    <br/><br/>
-    With the Free tier option, you have up to 750 hours of availability for a Single-AZ db.t2.micro, db.t3.micro, or db.t4g.micro database running PostgreSQL. For more information about the AWS Free Tier with Amazon RDS, see Amazon's [Amazon RDS Free Tier documentation](https://aws.amazon.com/rds/free/).
-
-7. Specify the availability and durability of the database.
-
-    The deployment options are:
-
-    - **Multi-AZ DB Cluster:** This option creates a cluster of databases with one primary database and two standby database instances, each in a different Availability Zone (AZ.) This option provides high availability and data redundancy, and provides the capacity to serve read workloads. 
-
-    - **Multi-AZ DB instance:** This option creates two database instances located in different availability zones: one primary instance and once standby instance. This options provides high availability and data redundancy, but doesn't support read workloads.
-
-    - **Single DB instance:** This option creates a single database instance with no standby instances. 
-
-8. Configure the database settings.
-
-    1. Enter a name for your database. The name must be unique across all database instances owned by your AWS account in the region you specified (US West.) This value must be 60 characters or less. 
-    2. Configure the credentials you'll use to access to your database.
-
-9. Select a DB instance class and size. 
-    Standard classes provide a balance of compute, memory, and network resources. Memory optimized classes prioritize memory, and burstable classes provide a baseline level of compute resources with the ability to provide additional resources if the demand exceeds ("bursts") above the baseline. 
-
-    Select a DB size that works for your integration. 
-
-10. Configure the storage options for your database.
-    
-    - **Storage type:** While most integrations require General Purpose (SDD) storage, which provides a baseline of 3 IOPS/GiB with the ability to burst to 3,000 IOPS, databases with high I/O should consider selecting the Provisioned IOPS (SSD) storage. The Provisioned IOPS (SSD) option allows users to provision 1,000-80,000 IOPSfor their databases.
-    - **Allocated storage:** Select the amount of storage your database requires.
-    - **Provisioned IOPS:** Select the number of IOPS your database requires.
-    - **Storage autoscaling:** Users with Mutli-AZ instances/a single DB instance can select this option to allow storage to autoscale once the data in a database exceeds a set threshold. 
-
-11. Set up the connectivity options for your database.
-
-    - **VPC:** Specifies the Virtual Private Cloud you want the servers to reside in. If you have previously set up a VPC that you want the database in, select it here. If you aren't sure which VPC to use or don't have a VPC set up, select **Create New VPC**. You cannot change the VPC after creating your database.
-    - **Subnet group:** Refers to subnets that the DB instances can use in the VPC. If you're not sure which subnet to use, select **Create new DB Subnet Group**.
-    - **Public access:** Specifies whether your DB instances are internet-addressable. **This option must be set to Yes.**
-    - **VPC Security Groups** Specify traffic rules concerning what traffic can leave the instances and what traffic can arrive at the instance. Unless you've previously made a security group specifically for DB instances, create a new one at this step.
-    - **Database port:** If you wish to have the database listen from a specific port, select it here. For Segment integrations, the default port (`5432`) works fine. 
-
-12. Configure Database authentication settings.
-
-    Select one of the following options:
-      - **Password authentication:** Manages user credentials through PostgreSQL's native password authentication features. 
-      - **Password and IAM database authentication:** Manages user credentials through PostgreSQL's native password authentication features and IAM users/roles.
-
-13. Make changes to optional settings in the **Additional configuration** section. 
-
-    > note "Updating the database name field"
-    > While the Database Name is an optional field that creates the Postgres database at instance startup, Segment highly recommends filling this out to avoid manual creation of the database. This value is restricted to alphanumeric characters, and must be 64 characters or less.
-
-When you're finished updating your Additional configuration settings, click `Create database`.
+> note "Database name field"
+> While Database name is an optional field in the **Additional options** section, adding a value to this field creates the Postgres database at instance startup. Segment recommends filling this out to avoid manual creation of the database. This value is restricted to alphanumeric characters, and must be 64 characters or less.
 
 #### Network Permissions for Segment to RDS
 
@@ -167,7 +92,7 @@ To create an inbound rule allowing Segment to connect to your instance:
 
 6. Add a new rule with the following parameters:
     - Select **PostgreSQL** as the type. 
-    - For **Source**, change the custom IP to `52.25.130.38/32`. This will allow Segment to connect to the instance.
+    - For **Source**, change the custom IP to `52.25.130.38/32`. This allows Segment to connect to the instance.
     
     When you're finished, click **Save**.
 
@@ -177,7 +102,7 @@ Compose is the first DBaaS (Database as a Service) of its kind, geared at helpin
 
 Using Compose, companies can deploy databases instantly with backups, monitoring, performance tuning, and a full-suite of management tools. Compose Enterprise brings all this to the corporate VPC (virtual private cloud).
 
-Compose uses Segment for hooking together web analytics, email, and social tracking and manages its Segment warehouse on PostgreSQL. Compose is pleased to be able to harness [the power of Postgres to query Segment data and be able create custom reports.
+Compose uses Segment for hooking together web analytics, email, and social tracking and manages its Segment warehouse on PostgreSQL. Compose is pleased to be able to harness the power of Postgres to query Segment data and be able create custom reports.
 
 1. set up PostgreSQL
 
