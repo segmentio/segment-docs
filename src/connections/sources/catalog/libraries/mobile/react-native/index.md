@@ -492,7 +492,7 @@ These are the example plugins you can use and alter to meet your tracking needs:
 | IDFA                | `@segment/analytics-react-native-plugin-idfa`                |
 
 ## Supported Destinations
-Segment supports these destinations for Analytics React Native 2.0 with more to come:
+Segment supports these destinations for Analytics React Native 2.0 in device-mode, with more to follow. Cloud-mode destiantions are also supported:
 - [Adjust](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-adjust){:target="_blank"}
 - [Amplitude Session](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-amplitude-session){:target="_blank"}
 - [Appsflyer](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-appsflyer){:target="_blank"}
