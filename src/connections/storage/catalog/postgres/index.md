@@ -71,7 +71,7 @@ This guide explains how to set up a Postgres database with Heroku. Heroku is a c
 
 You can set up a Postgres database with Amazon Relational Database Service (RDS). RDS simplifies the process of setting up and administering a Postgres database.
 
-Create a new PostgreSQL database in RDS by following the steps in Amazon's documentation, [Creating a PostgreSQL DB instance and connecting to a database on a PostgreSQL DB instance](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html). For best performance, create your database in the `US West` region. 
+Follow the steps in Amazon's documentation [Creating a PostgreSQL DB instance and connecting to a database on a PostgreSQL DB instance](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html) to create a new PostgreSQL database in RDS. For best performance, create your database in the `US West` region. 
 
 > warning "Ensure your database is publicly accessible"
 > When you create your database, ensure that the **Public access** setting is set to **Yes**. Segment requires your database to be publicly accessible in order to connect to your database. 
@@ -274,48 +274,41 @@ Yes! You can add indexes to your tables without blocking Segment syncs. However,
 
 ## Troubleshooting
 
-<table>
-    <tr>
-        <td>Permission denied for database</td>
-        <td>The syncs are failing due to a permissions issue. The user you configured does not have permission to connect to the appropriate database. To resolve these errors: connect to your warehouse using the owner account, or grant permissions to the account you use to connect to Segment.  You can correct these permissions by running the following SQL statement, replacing `<user>` with the account you use to connect to Segment:
+### Permission denied for database
+The syncs are failing due to a permissions issue. The user you configured does not have permission to connect to the appropriate database. To resolve these errors: connect to your warehouse using the owner account, or grant permissions to the account you use to connect to Segment.  You can correct these permissions by running the following SQL statement, replacing `<user>` with the account you use to connect to Segment:
 
-`GRANT CONNECT ON DATABASE <database_name> TO <user>`</td>
-    </tr>
-    <tr>
-        <td>Permission denied for schema</td>
-        <td>The syncs for the source, `<source_name>`, are failing because of a permissions issue. In most cases, the user connected to Segment does not have permission to view the necessary schemas in the warehouse.
+`GRANT CONNECT ON DATABASE <database_name> TO <user>`
+
+
+### Permission denied for schema
+The syncs for the source, `<source_name>`, are failing because of a permissions issue. In most cases, the user connected to Segment does not have permission to view the necessary schemas in the warehouse.
 
 To resolve these errors, connect your warehouse using the owner account, or grant permissions to the user you use to connect to Segment. You can correct these permissions by running the following SQL statement - Replace `user` with the user you use to connect to Segment, and run this statement for each schema in the warehouse.
 
-`GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA <schema_name> TO <user>`</td>
-    </tr>
-    <tr>
-        <td>Dial TCP: no such host</td>
-        <td>We are unable to connect to the warehouse host, which is causing the syncs to fail. This error is usually due to an invalid host address, a warehouse hosted on a private IP, or a credentials issue.
+`GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA <schema_name> TO <user>`
+
+### Dial TCP: no such host
+Segment is unable to connect to the warehouse host, which is causing the syncs to fail. This error is usually due to an invalid host address, a warehouse hosted on a private IP, or a credentials issue.
 
 In order to resolve the error, check the following settings:
 
 - The host address listed in your Segment warehouse settings is correct
 - The host is configured with a _publicly_ accessible IP address
-- The username and password you use to connect to your Segment workspace matches the username and password on the Warehouse directly</td>
-    </tr>
-    <tr>
-        <td>Dial TCP: i/o timeout</td>
-        <td>The warehouse syncs are failing due to a connection issue:
+- The username and password you use to connect to your Segment workspace matches the username and password on the Warehouse directly
+
+### Dial TCP: i/o timeout
+The warehouse syncs are failing due to a connection issue:
 
 `dial tcp XX.XXX.XXX.XXX:XXXX: i/o timeout`
 
 This error can be caused for a few reasons:
 
-- Your Warehouse went offline.
-- There's a setting needed for Segment to connect which hasn't been correctly configured. Refer to the [Warehouse documentation](/docs/connections/storage/warehouses/) to ensure all steps outlined there have been followed.</td>
-    </tr>
-    <tr>
-        <td>Schema <schema_name> does not exist</td>
-        <td>The syncs are failing due to a permissions issue. It looks like the user connected does not have permission to create schemas in your warehouse.
+- Your warehouse went offline.
+- There's a setting needed for Segment to connect which hasn't been correctly configured. Refer to the [Warehouse documentation](/docs/connections/storage/warehouses/) to ensure all steps outlined there have been followed.
+
+### Schema <schema_name> does not exist
+The syncs are failing due to a permissions issue. It looks like the user connected does not have permission to create schemas in your warehouse.
 
 To resolve these errors Segment recommends connecting to your warehouse using the owner account, or granting permissions to the current account you use to connect to Segment. You can correct these permissions by running the following SQL statement - Replace `user` with the account you use to connect to Segment, and run this statement for each schema in the warehouse.
 
-`GRANT CREATE ON DATABASE <database_name> TO <user>`</td>
-    </tr>
-</table>
+`GRANT CREATE ON DATABASE <database_name> TO <user>`
