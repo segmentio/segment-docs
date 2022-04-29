@@ -10,7 +10,7 @@ With Analytics-Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS a
 If you're migrating to Analytics-Swift from a different mobile library, you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift-ios/migration/).
 
 > info ""
-> Analytics-Swift currently supports [these destinations](#supported-destinations), with more to follow.
+> Analytics-Swift currently supports [these destinations](#supported-destinations) in device-mode, with more to follow. Cloud-mode destinations are also supported.
 
 
 ## Getting Started
