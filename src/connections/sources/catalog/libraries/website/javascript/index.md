@@ -493,16 +493,6 @@ An example:
 analytics.load('writekey', { integrations: { All: false, 'Google Analytics': true, 'Segment.io': true } })
 ```
 
-You can also add an `obfuscate` property to the object taken as a second argument, which will obscure the url from which your integrations and actions are loaded. This is helpful for names that are commonly flagged by ad blockers.
-
-An example:
-
-```js
-analytics.load('writekey', { obfuscate: true })
-```
-
-This value is `false` by default.
-
 > info ""
 > **Note:** To use this feature, you must be on snippet version 4.1.0 or later. You can get the latest version of the snippet [here](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet).
 
@@ -513,6 +503,17 @@ onConsentDialogClosed(function(consentedTools){
   analytics.load('writekey', { integrations: consentedTools })
 })
 ```
+
+#### Bundle Obfuscation
+You can also add an `obfuscate` property to the object in the second parameter, which obscures the URL from which your integrations and destination actions are loaded. This helps prevent words that are flagged by ad blockers to not be detected in your URL, enabling the integration to properly load.
+
+An example:
+
+```js
+analytics.load('writekey', { obfuscate: true })
+```
+
+The `obfuscate` value is `false` by default.
 
 
 ## Retries
