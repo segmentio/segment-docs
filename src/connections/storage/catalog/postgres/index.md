@@ -74,9 +74,9 @@ You can set up a Postgres database with Amazon Relational Database Service (RDS)
 Create a new PostgreSQL database in RDS by following the steps in Amazon's documentation, [Creating a PostgreSQL DB instance and connecting to a database on a PostgreSQL DB instance](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html). For best performance, create your database in the `US West` region. 
 
 > warning "Ensure your database is publicly accessible"
-> When creating your database, ensure that the **Public access** setting is set to **Yes**. Making your database publicly accessible allows the Segment app to connect to your database. 
+> When you create your database, ensure that the **Public access** setting is set to **Yes**. Segment requires your database to be publicly accessible in order to connect to your database. 
 
-When creating your database, Segment recommends entering a **Database name** value in the **Additional options** section. This setting creates the Postgres database at instance startup. The database name is restricted to alphanumeric characters, and must be 64 characters or less.
+When you create your database, Segment recommends that you enter a **Database name** value in the **Additional options** section. This setting creates the Postgres database at instance startup.
 
 #### Network Permissions for Segment to RDS
 
@@ -84,15 +84,13 @@ Once you've created a database, you must create an inbound rule allowing Segment
 
 To create a new inbound rule:
 
-1. Open the RDS Console.
-
-    To get to the RDS console when you are logged in to AWS, visit [this page](https://console.aws.amazon.com/rds/).
+1. Open the [RDS Console](https://console.aws.amazon.com/rds/).
 
 2. Open the Databases tab.
 
 3. Select your database and open the Connectivity & security tab. Open the **Security group rules** section. 
 
-4. Click on the inbound security group and select the Inbound rules tab.
+4. Click on the existing inbound security group and select the Inbound rules tab.
 
 5. Click **Edit inbound rules** to add a new rule, and click **Add rule**.
 
