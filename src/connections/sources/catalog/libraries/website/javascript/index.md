@@ -507,7 +507,7 @@ onConsentDialogClosed(function(consentedTools){
 #### Bundle Obfuscation
 You can also add an `obfuscate` property to the object in the second parameter, which obscures the URL from which your integrations and destination actions are loaded. This helps prevent words that are flagged by ad blockers to not be detected in your URL, enabling the integration to properly load.
 
-An example:
+For example:
 
 ```js
 analytics.load('writekey', { obfuscate: true })
