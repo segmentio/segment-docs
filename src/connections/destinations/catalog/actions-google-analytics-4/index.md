@@ -10,7 +10,7 @@ id: 60ad61f9ff47a16b8fb7b5d9
 When you have Segment installed, you can use your existing tracking implementation to fulfill your data collection needs with Google Analytics 4. Segment will send your data server-side to [Google's Measurement Protocol API](https://developers.google.com/analytics/devguides/collection/protocol/ga4).
 
 > warning ""
-> Google Analytics 4 does not officially support a pure server-to-server integration, however Segment continues to monitor the capabilities of the Measurement Protocol API and make updates accordingly to achieve a reasonable level of reporting for our mutual customers. Segment does not have plans to build a device-mode integration with Gtag for Google Analytics 4.
+> Google Analytics 4 does not officially support a pure server-to-server integration, however Segment continues to monitor the capabilities of the Measurement Protocol API and will make updates accordingly to achieve a reasonable level of reporting for our mutual customers. Segment does not have plans to build a device-mode integration with Gtag for Google Analytics 4.
 
 > success "Good to know"
 > This page is about the [Actions-framework](/docs/connections/destinations/actions/) Google Analytics 4 destination. There's also a page about the [non-Actions Google Universal Analytics destination](/docs/connections/destinations/catalog/google-analytics/). Both of these destinations receive data _from_ Segment.
@@ -82,7 +82,7 @@ If you choose to integrate with Google Analytics 4 client-side (using Gtag outsi
 > info "Tracking sessions limitations"
 > Session tracking server-side only works if you are also sending data to Google Analytics 4 client-side. This is because the `session_id` must match a value that was previously collected on the client. Events still have to arrive within a 48 hour window of when the client-side events arrived, for them to be stitched properly.
 > 
-> Google does not support passing other reserved fields, such as [predefined user dimensions](https://support.google.com/analytics/answer/9268042?hl=en&ref_topic=11151952){:target='_blank'} or device-specific information, to the Measurement Protocol API.
+> Google does not currently support passing other reserved fields, such as [predefined user dimensions](https://support.google.com/analytics/answer/9268042?hl=en&ref_topic=11151952){:target='_blank'} or device-specific information, to the Measurement Protocol API.
 
 #### User Identification
 Segment requires a Client ID to send data to Google Analytics 4. The Client ID is the web equivalent of a device identifier and uniquely identifies a given user instance of a web client. By default, Segment sets Client ID to the Segment `userId`, falling back on `anonymousId`. This mapping can be changed within each action if you prefer to map a different field to Client ID.
