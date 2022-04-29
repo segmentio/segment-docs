@@ -23,11 +23,11 @@ This guide explains how to set up a Postgres database with Heroku. Heroku is a c
 
 1. Sign up for a Heroku account.
 
-    The first step to setting up Postgres on Heroku is to get a Heroku account. You can sign up for a free account [here](https://signup.heroku.com/identity).
+    The first step to setting up Postgres on Heroku is to get a Heroku account. You can sign up for a free account [here](https://signup.heroku.com/identity){:target="_blank"}.
 
 2. Log in to your Heroku account.
 
-    You can log in to Heroku [here](https://id.heroku.com/login).
+    You can log in to Heroku [here](https://id.heroku.com/login){:target="_blank"}.
 
 3. Create a new app and go to the Data page.
 
@@ -71,7 +71,7 @@ This guide explains how to set up a Postgres database with Heroku. Heroku is a c
 
 You can set up a Postgres database with Amazon Relational Database Service (RDS). RDS simplifies the process of setting up and administering a Postgres database.
 
-Follow the steps in Amazon's documentation [Creating a PostgreSQL DB instance and connecting to a database on a PostgreSQL DB instance](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html) to create a new PostgreSQL database in RDS. For best performance, create your database in the `US West` region. 
+Follow the steps in Amazon's documentation [Creating a PostgreSQL DB instance and connecting to a database on a PostgreSQL DB instance](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html){:target="_blank"} to create a new PostgreSQL database in RDS. For best performance, create your database in the `US West` region. 
 
 > warning "Ensure your database is publicly accessible"
 > When you create your database, ensure that the **Public access** setting is set to **Yes**. Segment requires your database to be publicly accessible in order to connect to your database. 
@@ -84,7 +84,7 @@ Once you've created a database, you must create an inbound rule allowing Segment
 
 To create a new inbound rule:
 
-1. Open the [RDS Console](https://console.aws.amazon.com/rds/).
+1. Open the [RDS Console](https://console.aws.amazon.com/rds/){:target="_blank"}.
 
 2. Open the Databases tab.
 
@@ -110,15 +110,15 @@ Compose uses Segment for hooking together web analytics, email, and social track
 
 1. set up PostgreSQL
 
-    If you don't yet have an account with Compose, [sign-up](https://www.compose.com/signup) and select the PostgreSQL database to get started.
+    If you don't yet have an account with Compose, [sign-up](https://www.compose.com/signup){:target="_blank"} and select the PostgreSQL database to get started.
 
-    For those of you already on Compose, if don't yet have a PostgreSQL instance, you can add one from the Deployments page in the management console by clicking "Create Deployment" then selecting PostgreSQL or just [add a PostgreSQL deployment](https://help.compose.com/docs/postgresql-on-compose) to your account.
+    For those of you already on Compose, if don't yet have a PostgreSQL instance, you can add one from the Deployments page in the management console by clicking "Create Deployment" then selecting PostgreSQL or just [add a PostgreSQL deployment](https://help.compose.com/docs/postgresql-on-compose){:target="_blank"} to your account.
 
     ![](images/compose1.png)
 
-    Once your PostgreSQL deployment is spun up, you may want to [create a user](https://www.compose.io/articles/compose-postgresql-making-users-and-more/) to be the owner of the database you'll use for Segment. There is already an admin user role that is generated on initialization of your deployment, but this user has full privileges for your deployment so you may want to create additional users with more specific privileges. You may also want to manually scale up your deployment for the initial load of Segment data since it loads the past two months of data by default. You can then scale it back down according to your data needs after the initial load. The easy-to-use management console lets you perform these tasks, monitor your deployments, configure security settings, manage backups, and more.
+    Once your PostgreSQL deployment is spun up, you may want to [create a user](https://www.compose.io/articles/compose-postgresql-making-users-and-more/){:target="_blank"} to be the owner of the database you'll use for Segment. There is already an admin user role that is generated on initialization of your deployment, but this user has full privileges for your deployment so you may want to create additional users with more specific privileges. You may also want to manually scale up your deployment for the initial load of Segment data since it loads the past two months of data by default. You can then scale it back down according to your data needs after the initial load. The easy-to-use management console lets you perform these tasks, monitor your deployments, configure security settings, manage backups, and more.
 
-    Now, all you need to do is create a database where your Segment data will live. You can create a database directly from the Data Browser interface in the Compose management console, by using a tool such as the [pgAdmin GUI](http://www.pgadmin.org/download/) or programmatically using code you've written. For simplicity, this database is simply named "segment" and associated it to the "compose" user as the owner. Here is the SQL statement to create the database for Segment data, using the default PostgreSQL arguments (set yours appropriately to your requirements):
+    Now, all you need to do is create a database where your Segment data will live. You can create a database directly from the Data Browser interface in the Compose management console, by using a tool such as the [pgAdmin GUI](http://www.pgadmin.org/download/){:target="_blank"} or programmatically using code you've written. For simplicity, this database is simply named "segment" and associated it to the "compose" user as the owner. Here is the SQL statement to create the database for Segment data, using the default PostgreSQL arguments (set yours appropriately to your requirements):
 
     ```sql
     CREATE DATABASE segment
@@ -187,7 +187,7 @@ Once you have your Postgres database running, you should do a few more things be
 
 Your database probably has an `admin` username and password. While you _could_ give these credentials directly to Segment, for security purposes you should instead create a separate "service" user. Do this for any other third-parties who connect with your database. This helps isolate access, and makes it easier to audit which accounts have done what.
 
-To use the SQL commands here, [connect to your database using a command line tool](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.Connecting.AWSCLI.PostgreSQL.html) such AWSCLI or psql Client.
+To use the SQL commands here, [connect to your database using a command line tool](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.Connecting.AWSCLI.PostgreSQL.html){:target="_blank"} such AWSCLI or psql Client.
 
 ```sql
 -- this command creates a user named "segment" that Segment will use when connecting to your Redshift cluster.
@@ -201,7 +201,7 @@ GRANT CREATE, TEMPORARY ON DATABASE <enter database name here> TO segment;
 
 1. Open up Segment in another browser window or tab
 
-    Visit the [Segment Workspaces screen](http://segment.com/workspaces). Click the workspace you'd like the database to be associated with.
+    Visit the [Segment Workspaces screen](http://segment.com/workspaces){:target="_blank"}. Click the workspace you'd like the database to be associated with.
 
 
 2. Click **Add Destination**.
@@ -220,7 +220,7 @@ GRANT CREATE, TEMPORARY ON DATABASE <enter database name here> TO segment;
 
 5. Verify that the database connected successfully.
 
-    You should see a message indicating that the connection was successful. If not, check that you entered the settings correctly. If it still isn't working, feel free to [contact Segment support](https://segment.com/help/contact/).
+    You should see a message indicating that the connection was successful. If not, check that you entered the settings correctly. If it still isn't working, feel free to [contact Segment support](https://segment.com/help/contact/){:target="_blank"}.
 
 ### Sync schedule
 
@@ -238,7 +238,7 @@ To make sure your Postgres database is secure:
 
 ## Best Practices
 
-Once you've got your data in Postgres, you can do even more with it. You might develop an app that performs various functions based on different events being loaded to the database, potentially using [RabbitMQ](https://www.compose.io/articles/going-from-postgresql-rows-to-rabbitmq-messages/) as your asynchronous message broker. For example, you might want a banner to appear once your 1000th customer has signed up. The data is at your fingertips; you just need to decide how to use it.
+Once you've got your data in Postgres, you can do even more with it. You might develop an app that performs various functions based on different events being loaded to the database, potentially using [RabbitMQ](https://www.compose.io/articles/going-from-postgresql-rows-to-rabbitmq-messages/){:target="_blank"} as your asynchronous message broker. For example, you might want a banner to appear once your 1000th customer has signed up. The data is at your fingertips; you just need to decide how to use it.
 
 ### Query Speed
 
@@ -264,7 +264,7 @@ select * from example;
 ERROR: relation "example" does not exist
 ```
 
-For more information on single vs double follow [this link](http://blog.lerner.co.il/quoting-postgresql/).
+For more information on single vs double follow [this link](http://blog.lerner.co.il/quoting-postgresql/){:target="_blank"}.
 
 ## FAQs
 
