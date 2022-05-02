@@ -80,7 +80,7 @@ The Google Analytics 4 reports will only display active users who engage with yo
 If you choose to integrate with Google Analytics 4 client-side (using Gtag outside of Segment) _and_ also use Segment's Google Analytics 4 destination to send events through the API, you can track sessions server-side. When using Gtag, [Google generates a `session_id` and `session_number` when a session begins](https://support.google.com/analytics/answer/9191807?hl=en){:target='_blank'}. The `session_id` and `session_number` generated on the client can be passed as Event Parameters to stitch events sent through the API with the same session that was collected client-side.
 
 > info "Tracking sessions limitations"
-> Session tracking server-side only works if you are also sending data to Google Analytics 4 client-side. This is because the `session_id` must match a value that was previously collected on the client. Events still have to arrive within a 48 hour window of when the client-side events arrived, for them to be stitched properly.
+> Session tracking server-side only works if you're also sending data to Google Analytics 4 client-side. This is because the `session_id` must match a value that was previously collected on the client. Events still have to arrive within a 48 hour window of when the client-side events arrived, for them to be stitched properly.
 > 
 > Google does not currently support passing other reserved fields, such as [predefined user dimensions](https://support.google.com/analytics/answer/9268042?hl=en&ref_topic=11151952){:target='_blank'} or device-specific information, to the Measurement Protocol API.
 
