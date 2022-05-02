@@ -1,5 +1,6 @@
 ---
 title: Criteo Audiences (Actions) Destination
+hidden: true
 hide-personas-partial: true
 hide-boilerplate: false
 hide-dossier: true
