@@ -1871,15 +1871,6 @@ destinations:
       - us
     endpoints:
       - us
-  - id: 5653a808e954a874ca44cbe6
-    display_name: goedle.io
-    slug: goedle-io
-    url: connections/destinations/catalog/goedle-io
-    regions:
-      - us
-      - eu
-    endpoints:
-      - us
   - id: 54521fd525e721e32a72ee92
     display_name: Google Ads (Classic)
     slug: google-ads-classic
@@ -3163,15 +3154,6 @@ destinations:
     url: connections/destinations/catalog/scuba-analytics
     regions:
       - us
-    endpoints:
-      - us
-  - id: 557b4b410a20f4e22f0fb3a9
-    display_name: Seg
-    slug: seg
-    url: connections/destinations/catalog/seg
-    regions:
-      - us
-      - eu
     endpoints:
       - us
   - id: 5ec2b3adf7d3322ea12f3c04
