@@ -9,7 +9,7 @@ This page explains what data Analytics.js stores on the client and how to overri
 
 <!-- Note: 1st 2 paragraphs copied from identity.md -->
 
-To ensure high fidelity, first-party customer data, Segment writes the user's IDs to the user's local storage, and uses that as the Segment ID on the cookie whenever possible. Local Storage is meant for storing this type of first-party customer information.
+To ensure high fidelity, first-party customer data, Segment writes the user's IDs to the user's localStorage, and uses that as the Segment ID on the cookie whenever possible. LocalStorage is meant for storing this type of first-party customer information.
 
 If a user returns to your site after the cookie expires, Analytics.js looks for an old ID in the user's `localStorage`, and if one is found, sets it as the user's ID again in the new cookie. If a user clears their cookies _and_ `localstorage`, all of the IDs are removed, and the user gets a completely new `anonymousID` when they next visit the page.
 
