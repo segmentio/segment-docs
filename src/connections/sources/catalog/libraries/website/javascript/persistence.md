@@ -109,3 +109,15 @@ You can completely disable client-side persistence when loading Analytics.js by 
 ```js
 analytics.load('writeKey', { disableClientPersistence: true })
 ```
+
+### Identity
+
+When `disableClientPersistence` is set to `true`, Analytics.js will not be able to automatically keep track of a user's identity when navigating to different pages. This can cause increased MTU usage if the anonymous usage cannot be associated with a `userId`.
+
+You can still manually track identity by calling `analytics.identify()` with the known identity on each page load, or pass in identity information to each page using the [querystring API](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/querystring/).
+
+### Event Retries
+
+Analytics.js tries to detect when a page is about to be closed and saves pending events to `localStorage`. When the user navigates to another page within the same domain, analytics.js will attempt to send any events it finds in localStorage.
+
+When `disableClientPersistence` is set to `true`, Analytics.js will not store any pending events into `localStorage`.
