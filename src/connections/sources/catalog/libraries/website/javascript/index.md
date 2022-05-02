@@ -493,6 +493,19 @@ An example:
 analytics.load('writekey', { integrations: { All: false, 'Google Analytics': true, 'Segment.io': true } })
 ```
 
+<<<<<<< Updated upstream
+=======
+You can also add an `obfuscate` property to the object taken as a second argument, which will obscure the url from which your integrations and destination actions are loaded. This is helpful for names that are commonly flagged by ad blockers.
+
+An example:
+
+```js
+analytics.load('writekey', { obfuscate: true })
+```
+
+This value is `false` by default.
+
+>>>>>>> Stashed changes
 > info ""
 > **Note:** To use this feature, you must be on snippet version 4.1.0 or later. You can get the latest version of the snippet [here](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet).
 
