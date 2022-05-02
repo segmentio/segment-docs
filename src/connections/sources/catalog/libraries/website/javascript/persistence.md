@@ -15,7 +15,7 @@ If a user returns to your site after the cookie expires, Analytics.js looks for 
 
 ### Cookie Settings
 
-Analytics.js sets some default properties when creating cookies for user or group identities. You can override the default cookie properties in code when loading Analytics.js by passing in a `cookie` object.
+Analytics.js sets some default properties when creating cookies for user or group identities. You can override the default cookie properties in code when loading Analytics.js by passing in a `cookie` object to the load method.
 
 Here is the full list of available parameters with their default values:
 
@@ -42,7 +42,7 @@ analytics.load('writeKey', {
 
 ### User Settings
 
-Analytics.js automatically persists the user's ID and traits locally. You can override how and where the user ID and traits are stored when loading Analytics.js by passing in a `user` object.
+Analytics.js automatically persists the user's ID and traits locally. You can override how and where the user ID and traits are stored when loading Analytics.js by passing in a `user` object to the load method.
 
 The user object has the following fields and default values:
 
@@ -70,7 +70,7 @@ analytics.load('writeKey', {
 
 ### Group Settings
 
-Analytics.js automatically persists the user's group ID and group properties locally. You can override how and where the group ID and properties are stored when loading analytics.js by passing in a `group` object.
+Analytics.js automatically persists the user's group ID and group properties locally. You can override how and where the group ID and properties are stored when loading analytics.js by passing in a `group` object to the load method.
 
 The group object has the following fields and default values:
 
