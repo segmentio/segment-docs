@@ -17,9 +17,9 @@ Benefits of the Critero Audiences (Actions) destination include:
 - **Improved email matching**: This integration creates a direct connection between Segment and Criteo for a higher match rate of email identifiers. 
 
 
-- **Fewer settings**: Unlike Criteo's Filter destination, this destination doesn't require any custom copy and paste code. You only need the Advertiser ID and the Criteo API credentials.
+- **Fewer settings**: Unlike Criteo's Filter destination, this destination doesn't require any copy and paste code. You only need your Advertiser ID and Criteo API credentials.
 
-- **Criteo Audience**: You don't need a Criteo audience ID as the audience gets created on the fly using the Personas audience name. This enables audience Segment names to be consistent across Segment and Criteo.
+- **Criteo Audience**: You don't need a Criteo audience ID as the audience gets created on the fly using the Personas audience name. This enables the names of audience segments to be consistent across Segment and Criteo.
 
 - **Batching events and support for large audiences**: This destination supports batching which enables Criteo to receive large audiences without discrepancies.
 
