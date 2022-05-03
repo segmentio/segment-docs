@@ -203,8 +203,6 @@ The following metrics and dimensions are supported:
 - `a.DeviceName`
 - `a.CarrierName`
 
-Support for additional "stateful" lifecycle dimensions is coming in a future Adobe Analytics release. If there are any missing that are of importance to you, [contact us](mailto:beta@segment.com)!
-
 10. Set `<userAgent>` with `context.userAgent` (which is automatically populated by the Segment libraries). Note this is omitted for mobile events and superseded by `DeviceName` and `OSVersion`.
 
 11. For any ecommerce events, Segment tries to set `<products>` if possible. The product description has the same logic as the ecommerce event processing done on the client side destination.
