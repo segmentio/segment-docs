@@ -487,32 +487,23 @@ You can modify the `.load` method in Analytics.js (the second line of the snippe
 
 You can only call `.load` on page load, or reload (refresh). If you modify the `.load` method between page loads, it does not have any effect until the page is reloaded.
 
-An example:
+For example:
 
 ```js
 analytics.load('writekey', { integrations: { All: false, 'Google Analytics': true, 'Segment.io': true } })
 ```
 
-You can also add an `obfuscate` property to the object taken as a second argument, which will obscure the url from which your integrations and destination actions are loaded. This is helpful for names that are commonly flagged by ad blockers.
+#### Bundle Obfuscation 
+You can also add an `obfuscate` property to the object in the second parameter, which obscures the URL from which your integrations and destination actions are loaded. This helps prevent words that are flagged by ad blockers to not be detected in your URL, enabling the integration to properly load.
 
-An example:
+For example:
 
 ```js
 analytics.load('writekey', { obfuscate: true })
 ```
 
-This value is `false` by default.
+The `obfuscate` value is `false` by default.
 
-> info ""
-> **Note:** To use this feature, you must be on snippet version 4.1.0 or later. You can get the latest version of the snippet [here](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet).
-
-This way, you can conditionally load integrations based on what customers opt into on your site. The example below shows how you might load only the tools that the user agreed to use.
-
-```js
-onConsentDialogClosed(function(consentedTools){
-  analytics.load('writekey', { integrations: consentedTools })
-})
-```
 
 ## Retries
 
