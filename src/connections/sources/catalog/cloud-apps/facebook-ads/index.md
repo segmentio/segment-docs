@@ -49,7 +49,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 | Collection  | Type   | Description                                                                                                                                                                                            |
 | ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| ad_accounts | object | An [ad account](https://developers.facebook.com/docs/marketing-api/reference/ad-account) is an account used to manage ads on Facebook                                                                  |
+| ad_accounts | object | An ad account is an account used to manage ads on Facebook                                                                  |
 | ad_sets     | object | An [ad set](https://developers.facebook.com/docs/marketing-api/reference/ad-campaign) is a group of ads that share the same daily or lifetime budget, schedule, bid type, bid info, and targeting data |
 | ads         | object | An [ad](https://developers.facebook.com/docs/marketing-api/reference/adgroup) object contains the data necessary to visually display an ad and associate it with a corresponding ad set.               |
 | campaigns   | object | A [campaign](https://developers.facebook.com/docs/marketing-api/reference/v13.0) is a grouping of ad sets which are organized by the same business objective.                              |
