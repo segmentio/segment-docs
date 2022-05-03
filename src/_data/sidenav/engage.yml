@@ -89,27 +89,27 @@ sections:
     title: Message Events
   # - path: '/engage/analytics/custom-events'
   #   title: Custom Events
-- section_title: Settings
-  section:
-  - path: '/engage/settings/messaging-settings'
-    title: Messaging Settings
-  - path: '/engage/settings/identity-resolution'
-    title: Identity Resolution
-  - path: '/engage/settings/sources'
-    title: Sources
-  - path: '/engage/settings/destinations'
-    title: Destinations
-  - path: '/engage/settings/debugger'
-    title: Debugger
-  - path: '/engage/settings/connection-policy'
-    title: Connection Policy
-  - path: '/engage/settings/warehouse-sources'
-    title: Warehouse Sources
-  - path: '/engage/settings/api-access'
-    title: API Access
-  - path: '/engage/settings/rename-space'
-    title: Rename Space
-  - path: '/engage/settings/labels'
-    title: Labels
+# - section_title: Settings
+#   section:
+#   - path: '/engage/settings/messaging-settings'
+#     title: Messaging Settings
+#   - path: '/engage/settings/identity-resolution'
+#     title: Identity Resolution
+#   - path: '/engage/settings/sources'
+#     title: Sources
+#   - path: '/engage/settings/destinations'
+#     title: Destinations
+#   - path: '/engage/settings/debugger'
+#     title: Debugger
+#   - path: '/engage/settings/connection-policy'
+#     title: Connection Policy
+#   - path: '/engage/settings/warehouse-sources'
+#     title: Warehouse Sources
+#   - path: '/engage/settings/api-access'
+#     title: API Access
+#   - path: '/engage/settings/rename-space'
+#     title: Rename Space
+#   - path: '/engage/settings/labels'
+#     title: Labels
 path: '/engage/contact'
 title: Support
