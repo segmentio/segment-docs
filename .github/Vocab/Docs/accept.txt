@@ -24,6 +24,7 @@ boolean
 Chargebee
 CloudFront
 Cocoapods
+Criteo
 csv
 deeplink
 Dev
