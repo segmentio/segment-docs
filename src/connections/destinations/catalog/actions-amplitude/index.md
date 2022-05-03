@@ -32,7 +32,7 @@ Amplitude (Actions) provides the following benefits over the classic Amplitude d
 
 Once you have a mapping, you can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
-### Logging Purchases in destination instances created before x/y
+### Log Purchases in existing destination instances
 
 Initially the Log Event Action was reporting purchases to Amplitude for all events containing a `products` array, even if the products were just added to cart. This inflated the LTV Chart in Amplitude.
 
