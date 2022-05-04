@@ -230,6 +230,7 @@ const updateSources = async () => {
     let updatedSource = {
       id: source.id,
       display_name: source.name,
+      isCloudEventSource: source.isCloudEventSource,
       slug,
       url,
       hidden: isCatalogItemHidden(url),
