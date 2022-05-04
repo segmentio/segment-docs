@@ -6,12 +6,12 @@ hide-dossier: true
 
 {% include content/plan-grid.md name="actions" %}
 
-[LaunchDarkly](https://launchdarkly.com) is a feature management platform that empowers development teams to safely deliver and control software through feature flags.
+[LaunchDarkly](https://launchdarkly.com) is a feature management platform that empowers development teams to safely deliver, control and measure their software through feature flags.
 
 With LaunchDarkly, you can run experiments on any feature flag, with custom events as metrics. You can look for an existing custom event from Segment, and start recording data against it as a metric in your LaunchDarkly experiment.
 
 > success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) <destination_name> Segment destination. There's also a page about the [non-Actions <destination_name> destination](/docs/connections/destinations/catalog/<destination_name>/). Both of these destinations receives data from Segment.
+> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) <destination_name> Segment destination. There's also a page about the [non-Actions LaunchDarkly destination](/docs/connections/destinations/catalog/launchdarkly-events/). Both of these destinations receives data from Segment.
 
 <!-- This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component. -->
 
@@ -41,14 +41,12 @@ LaunchDarkly (Actions) provides the following benefits over the classic LaunchDa
 
 {% include components/actions-fields.html %}
 
-<!--
-Additional Context
+## Creating LaunchDarkly metrics
 
-Include additional information that you think will be useful to the user here. For information that is specific to an individual mapping, please add that as a comment so that the Segment docs team can include it in the auto-generated content for that mapping.
--->
+In order to take full-advantage of the The LaunchDarkly (Actions) Destination will need to create metrics in LaunchDarkly that correspond to Segment track events. Read [Creating metrics]https://docs.launchdarkly.com/home/experimentation/metrics/index) to learn how to create metrics in LaunchDarkly.
 
 <!-- If applicable, add information regarding the migration from a classic destination to an Actions-based version below -->
 
-## Migration from the classic <destination_name> destination
+## Migration from the classic LaunchDarkly destination
 
-<!-- Include any pertinent information here. -->
+Be sure to disconnect the the classic LaunchDarkly destination before enabling this destination to avoid duplicate experimentation events in LaunchDarkly.
