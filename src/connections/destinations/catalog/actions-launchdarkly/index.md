@@ -8,7 +8,7 @@ hide-dossier: true
 
 [LaunchDarkly](https://launchdarkly.com) is a feature management platform that empowers development teams to safely deliver, control and measure their software through feature flags.
 
-With LaunchDarkly, you can run experiments on any feature flag, with custom events as metrics. You can look for an existing custom event from Segment, and start recording data against it as a metric in your LaunchDarkly experiment.
+With LaunchDarkly, you can run experiments on any feature flag. This destination allows you to connect existing Segment events to LaunchDarkly custom metrics for use in LaunchDarkly experiments.
 
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) <destination_name> Segment destination. There's also a page about the [non-Actions LaunchDarkly destination](/docs/connections/destinations/catalog/launchdarkly-events/). Both of these destinations receives data from Segment.
