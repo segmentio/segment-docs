@@ -29,6 +29,7 @@ csv
 deeplink
 Dev
 Doubleclick
+endcapture
 endfor
 endif
 eu
@@ -36,6 +37,7 @@ Friendbuy
 ga
 gmail
 Gradle
+href
 html
 http
 HTTP
@@ -53,6 +55,7 @@ Kissmetrics
 Lightbox
 Littledata
 Mailmodo
+markdownify
 Marketo
 measurability
 middleware
@@ -68,6 +71,7 @@ Preact
 Shopify
 Smartly
 Subnet
+svg
 Totango
 Twilio
 upsert
