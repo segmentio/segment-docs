@@ -55,7 +55,7 @@ To add a Source:
 ### Add page or screen tracking
 Once you've added your Segment Source, you're ready to send data into Segment. The simplest data to send into Segment is a Page call (for website Sources) or Screen call (for mobile Sources). Page and screen calls send automatically once you install the Segment snippet or SDK on your website or mobile app. Page and screen calls allow you to record whenever a user sees a page of your website or screen of your app, along with any optional properties about the page or screen.
 
-Learn how to [install the Segment snippet or SDK on your website or mobile app]((/docs/getting-started/02-simple-install/#installing-segment)) to start sending data.
+Learn how to [install the Segment snippet or SDK on your website or mobile app](/docs/getting-started/02-simple-install/#installing-segment) to start sending data.
 
 > info "Learn More"
 > - [Install Segment](/docs/getting-started/02-simple-install/#installing-segment)
