@@ -141,7 +141,7 @@ For example, you can write `length( userId ) > 0` instead of `typeof( userId ) =
 
 ### `match( string, pattern )`
 
-The `match( string, pattern )` function uses "glob" matching to return `true` if the given string fully matches a given pattern. Glob patterns are case sensitive. If you only need to determine if a string contains a given substring, you should use `contains()`.
+The `match( string, pattern )` function uses "glob" matching to return `true` if the given string fully matches a given pattern. Glob patterns are case sensitive. If you only need to determine if a string contains another string, you should use `contains()`.
 
 | Pattern | Summary                                                                                                                |
 | ------- | ---------------------------------------------------------------------------------------------------------------------- |
