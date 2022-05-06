@@ -19,8 +19,11 @@ Given the following JSON object:
   "context": {
     "library": {
       "name": "analytics.js",
-      "version": "1.0",
+      "version": "1.0"
     }
+  },
+  "properties": {
+    "features": ["discounts", "dark-mode"]
   }
 }
 ```
@@ -38,6 +41,8 @@ The following FQL statements will evaluate as follows:
 | `match( context.library.version, '2.*' )`                              | `false` |
 | `type = 'track' and ( event = 'Click' or match( event, 'Button *' ) )` | `true`  |
 | `!contains( context.library.name, 'js' )`                              | `false` |
+| `'dark-mode' in properties.features`                                   | `true`  |
+| `'blink' in properties.features`                                       | `false` |
 
 ## Field Paths
 
@@ -100,6 +105,7 @@ If your field name has a character not in the set of `{a-z A-Z 0-9 _ -}`, you mu
 | `>=`     | `number`                                      | `number`                                      | `true` if the left side is greater than or equal to the right side.                                         |
 | `<`      | `number`                                      | `number`                                      | `true` if the left side is less than the right side.                                                        |
 | `<=`     | `number`                                      | `number`                                      | `true` if the left side is less than or equal to the right side.                                            |
+| `in`     | `string`, `number`, `bool`, or `null`         | `list`                                        | `true` if the left side is contained in the list of values.                                                 |
 
 ## Subexpressions
 
@@ -109,6 +115,7 @@ You can use parentheses to group subexpressions for more complex "and / or" logi
 | -------------------------------------------------------------------------------------------------------------- |
 | `type = 'track' and ( event = 'Click' or match( 'Button *', event ) )`                                         |
 | `( type = 'track' or type = 'identify' ) and ( properties.enabled or match( traits.email, '*@company.com' ) )` |
+| `!( type in ['track', 'identify'] )`                                                                           |
 
 ## Functions
 
