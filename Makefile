@@ -62,12 +62,12 @@ catalog: catalog-papi
 # uses the old configapi
 .PHONY: capi
 capi: vendor/bundle
-	@node scripts/catalog-capi.js
+	@node scripts/catalog_capi.js
 
 # shorter alias
 .PHONY: catalog-capi
 catalog-capi: vendor/bundle
-	@node scripts/catalog-capi.js
+	@node scripts/catalog_capi.js
 
 # uses the new public api
 .PHONY: catalog-papi
