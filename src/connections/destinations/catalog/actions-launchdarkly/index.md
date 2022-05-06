@@ -50,4 +50,4 @@ In order to take full-advantage of the LaunchDarkly (Actions) Destination, you n
 
 ## Migration from the classic LaunchDarkly destination
 
-Be sure to disconnect the the classic LaunchDarkly destination before enabling this destination to avoid duplicate experimentation events in LaunchDarkly.
+Be sure to disconnect the classic LaunchDarkly destination before enabling the LaunchDarkly (Actions) destination to avoid duplicate experimentation events in LaunchDarkly.
