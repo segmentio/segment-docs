@@ -35,7 +35,7 @@ To get started with LaunchDarkly (Actions):
 2. From the Segment web app, click **Catalog**, then click **Destinations**.
 3. Search for **LaunchDarkly (Actions)** and select it.
 4. Click **Configure LaunchDarkly**.
-5. Select an existing Source to connect to LaunchDarkly (Actions).
+5. Select the Source you want to connect to LaunchDarkly (Actions).
 6. Paste the LaunchDarkly client-side ID you copied in step 1. into the **LaunchDarkly client-side ID** field in the destination settings page.
 
 <!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
