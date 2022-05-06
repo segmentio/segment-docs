@@ -24,7 +24,7 @@ With LaunchDarkly, you can run experiments on any feature flag. This destination
 LaunchDarkly (Actions) provides the following benefits over the classic LaunchDarkly destination:
 
 - **Improved customization**. You determine the mapping between the data Segment receives from your source and the data Segment sends to LaunchDarkly. For example, you can map an arbitrary event property to the LaunchDarkly metric key.
-- **Increased transparency**. You can see the data that is sent to LaunchDarkly and when Segment sends it. Additionally, the you can subscribe to alerts when the delivery rate to LaunchDarkly dips below a configurable threshold.
+- **Increased transparency**. You can see the data that is sent to LaunchDarkly and when Segment sends it. Additionally, you can subscribe to alerts when the delivery rate to LaunchDarkly dips below a configurable threshold.
 
 <!-- The section below explains how to enable and configure the destination. Include any configuration steps not captured below. For example, obtaining an API key from your platform and any configuration steps required to connect to the destination. -->
 
