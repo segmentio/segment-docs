@@ -30,6 +30,7 @@ LaunchDarkly (Actions) provides the following benefits over the classic LaunchDa
 
 ## Getting started
 
+To get started with LaunchDarkly (Actions):
 1. In LaunchDarkly, navigate to [Account settings](https://app.launchdarkly.com/settings/projects) and copy the client-side ID for the project and environment that you would like to connect to Segment.
 2. From the Segment web app, click **Catalog**, then click **Destinations**.
 3. Find the Destinations Actions item in the left navigation, and click it.
