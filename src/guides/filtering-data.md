@@ -25,7 +25,7 @@ You can use the `integrations` JSON object as part of your Segment payloads to c
     "page": {
       "title": "Analytics Academy",
       "url": "https://segment.com/academy/"
-    },
+    }
   },
   "integrations": {
     "All": true,
