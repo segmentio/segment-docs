@@ -43,7 +43,7 @@ Now that you have an IAM role in your AWS account, you can create your source or
 
 * "IAM Role External ID": A required, sensitive string setting that is the external ID for your IAM role.
 
-Here is an example function that uploads each event received to an S3 bucket (configured using an additional "S3 Bucket" setting). It uses the built-in local cache to retain S3 clients between requests to minimize processing time and to allow different instances of the function to use different IAM roles:
+Here is an example destination function that uploads each event received to an S3 bucket (configured using an additional "S3 Bucket" setting). It uses the built-in local cache to retain S3 clients between requests to minimize processing time and to allow different instances of the function to use different IAM roles:
 
 ```javascript
 async function getS3(settings) {
