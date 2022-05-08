@@ -8,7 +8,7 @@ Segment associates a [user subscription state](/docs/engage/profiles/user-subscr
 
 You can set a user’s subscription state using a CSV file or, programmatically, using Segment’s APIs.  On this page, you’ll learn how and when to use both processes.
 
-## Setting User Subscriptions with a CSV file upload
+## Setting user subscriptions with a CSV file upload
 
 Setting user subscriptions by uploading a CSV file proves useful when you’re importing batch contacts to Segment for the first time or when you need to change a specific user’s subscription status.
 
@@ -38,7 +38,7 @@ Because contact information from a CSV upload takes precedence over any existing
 
 When you upload a CSV file, Segment creates new profiles for users not already in your audience.  If the user already exists within an audience, Segment updates the contact’s profile to match the contact vector information provided within the CSV.
 
-For example, a user may reach out to you after accidentally unsubscribing to your campaigns.  If the user asks you to resubscribe them, you can upload a CSV file with the user’s contact vector next to a value of `subscribed` in the `email_subscription_status` field.  The subscription status then updates to subscribed.
+For example, a user might reach out to you after accidentally unsubscribing to your campaigns.  If the user asks you to resubscribe them, you can upload a CSV file with the user’s contact vector next to a value of `subscribed` in the `email_subscription_status` field.  The subscription status then updates to subscribed.
 
 > info "Resubscribing a user"
 > As a best practice, encourage users to resubscribe themselves. Refer to [Troubleshooting Subscription States](/docs/engage/profiles/user-subscriptions/subscription-states/#troubleshooting-subscription-states) for case-by-case solutions to resolving subscription state issues.
