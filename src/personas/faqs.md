@@ -98,7 +98,7 @@ From there, your marketing, product, sales, and success teams have channels on w
 
 They can contact you using livechat, email, push notification, or text. Success can better prioritize their support ticket in Zendesk, or hone in on the customer's problem faster. On the sales side, they can focus on the products a prospect is most engaged with, or focus on getting the customer on the right plan. Your product team can serve specific recommendations, based on that user's specific needs next time they visit your site.
 
-Today, most businesses are forced to think about each channel as individual siloes. With Personas, all channels — including your marketing automation tool — can be powered by the same, singular understanding of your users.
+Today, most businesses are forced to think about each channel as individual silos. With Personas, all channels — including your marketing automation tool — can be powered by the same, singular understanding of your users.
 
 ## What are Funnel Audiences?
 Funnel Audiences allow you to use **strict, relative ordering** for your audience conditions. Common use cases for these audiences are Cart Abandonment (users that triggered the Product Added event but did not trigger the Order Completed event after the Product Added event occurred) and onboarding steps (users that Added Credit Card but did not Subscribe afterward).
