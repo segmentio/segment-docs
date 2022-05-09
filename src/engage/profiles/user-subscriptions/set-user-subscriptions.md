@@ -38,7 +38,7 @@ Because contact information from a CSV upload takes precedence over any existing
 
 When you upload a CSV file, Segment creates new profiles for users not already in your audience.  If the user already exists within an audience, Segment updates the contact’s profile to match the contact vector information provided within the CSV.
 
-For example, a user might reach out to you after accidentally unsubscribing to your campaigns.  If the user asks you to resubscribe them, you can upload a CSV file with the user’s contact vector next to a value of `subscribed` in the `email_subscription_status` field.  The subscription status then updates to subscribed.
+For example, a user might reach out to you after accidentally unsubscribing to your campaigns. If the user asks you to resubscribe them, you can upload a CSV file with the user’s contact vector next to a value of `subscribed` in the `email_subscription_status` field.  The subscription status then updates to subscribed.
 
 > info "Resubscribing a user"
 > As a best practice, encourage users to resubscribe themselves. Refer to [Troubleshooting Subscription States](/docs/engage/profiles/user-subscriptions/subscription-states/#troubleshooting-subscription-states) for case-by-case solutions to resolving subscription state issues.
