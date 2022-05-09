@@ -6,12 +6,12 @@ hide-dossier: true
 
 {% include content/plan-grid.md name="actions" %}
 
-[LaunchDarkly](https://launchdarkly.com) is a feature management platform that empowers development teams to safely deliver, control and measure their software through feature flags.
+[LaunchDarkly](https://launchdarkly.com) is a feature management platform that empowers development teams to safely deliver, control, and measure their software through feature flags.
 
 With LaunchDarkly, you can run experiments on any feature flag. This destination allows you to connect existing Segment events to LaunchDarkly custom metrics for use in LaunchDarkly experiments.
 
 > success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) <destination_name> Segment destination. There's also a page about the [non-Actions LaunchDarkly destination](/docs/connections/destinations/catalog/launchdarkly-events/). Both of these destinations receives data from Segment.
+> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) LaunchDarkly Segment destination. There's also a page about the [non-Actions LaunchDarkly destination](/docs/connections/destinations/catalog/launchdarkly-events/). Both of these destinations receives data from Segment.
 
 <!-- This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component. -->
 
