@@ -175,6 +175,8 @@ sections:
       title: Functions Environment
     - path: /connections/functions/usage
       title: Functions Usage Limits
+    - path: /connections/functions/aws-apis
+      title: Calling AWS APIs
   - section_title: Storage Destinations
     slug: connections/storage
     section:
