@@ -32,6 +32,8 @@ These columns take the following values:
 
 Refer to the [User Subscription States documentation](/docs/engage/profiles/user-subscriptions/subscription-states/) for detailed explanations of each subscription state.
 
+<!--
+
 ### Overriding a subscription state with a CSV upload
 
 Because contact information from a CSV upload takes precedence over any existing contact vector details, you can use a CSV file upload to make manual changes to a user’s subscription status.
@@ -42,6 +44,8 @@ For example, a user might reach out to you after accidentally unsubscribing to y
 
 > info "Resubscribing a user"
 > As a best practice, encourage users to resubscribe themselves. Refer to [Troubleshooting Subscription States](/docs/engage/profiles/user-subscriptions/subscription-states/#troubleshooting-subscription-states) for case-by-case solutions to resolving subscription state issues.
+
+-->
 
 ## Managing user subscriptions with Segment APIs
 
