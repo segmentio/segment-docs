@@ -51,6 +51,6 @@ Managing subscriptions with Segment's APIs allows you to handle continuous updat
 
 ## The `track` call versus using the Public API
 
-When you use the `track` call, Segment replies with a standard HTTP `200 OK` status response code if it successfully received the request. Because the `track` call updates user traits asychronously, though, the `200 OK` code indicates that Segment has received, but not yet processed, the request. As a result, use the `track` call for non-critical subscription updates, like form signups on your website or adding a subscription from within the user's notification center.
+When you use the `track` call, Segment replies with a standard HTTP `200 OK` status response code if it successfully received the request. Because the `track` call updates user traits asynchronously, though, the `200 OK` code indicates that Segment has received, but not yet processed, the request. As a result, use the `track` call for non-critical subscription updates, like form signups on your website or adding a subscription from within the user's notification center.
 
 When you make calls to Segment's Public API, however, you'll get an immediate response that confirms that Segment both received and processed the request. Use the Public API, then, for user unsubscribes. If a user unsubscribes from your marketing campaigns within their notification center, they'll know immediately whether or not their request was processed.
