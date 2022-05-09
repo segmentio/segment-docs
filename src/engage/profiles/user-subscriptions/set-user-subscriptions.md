@@ -6,7 +6,7 @@ engage: true
 
 Segment associates a [user subscription state](/docs/engage/profiles/user-subscriptions/subscription-states/) with each contact vector in your Engage audiences. Subscription states give you insight into the level of consent a user has given you to receive your Engage campaigns.
 
-You can set a user’s subscription state using a CSV file or, programmatically, using Segment’s APIs.  On this page, you’ll learn how and when to use both processes.
+You can set a user’s subscription state using a CSV file or, programmatically, using Segment’s APIs. On this page, you’ll learn how and when to use both processes.
 
 ## Setting user subscriptions with a CSV file upload
 
