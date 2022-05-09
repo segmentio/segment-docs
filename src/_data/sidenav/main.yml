@@ -175,6 +175,8 @@ sections:
       title: Functions Environment
     - path: /connections/functions/usage
       title: Functions Usage Limits
+    - path: /connections/functions/aws-apis
+      title: Functions for AWS APIs 
   - section_title: Storage Destinations
     slug: connections/storage
     section:
@@ -327,7 +329,7 @@ sections:
     - path: /privacy/user-deletion-and-suppression
       title: User Deletion and Suppression
   - path: /privacy/account-deletion
-    title: Account & Data Deletion 
+    title: Account & Data Deletion
   - path: /privacy/faq
     title: Privacy FAQs
 - section_title: Protocols
