@@ -9,9 +9,9 @@ The [`aws-sdk`](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guid
 
 First, you'll need to create an IAM role in your AWS account that your function will assume before making AWS API calls. You need two values ahead of time:
 
-* Principal account ID: This is the ID number for the AWS account that your function runs in. For destination functions, this is `458175278816` and for source functions this is `300240842537`.
+* Principal account ID: This is the ID number for the AWS account that your function runs in. For destination functions, this is `458175278816`, and for source functions, this is `300240842537`.
 
-* External ID: This value will be used by your IAM role to ensure that only your functions have the ability to assume the role. We recommend choosing a long string of at least 32 random characters and treating it as if it were an API key or a password.
+* External ID: Your IAM role uses this value to restrict who can assume it, in this case, your function. We recommend choosing a long string of at least 32 random characters and treating it as if it were an API key or a password.
 
 Then, create an IAM role in your AWS account with the [minimum set of necessary permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege). Add a trust relationship to your role with the following policy, filling in the principal account ID and external ID from above:
 
@@ -66,9 +66,6 @@ async function getS3(settings) {
           secretAccessKey: data.Credentials.SecretAccessKey,
           sessionToken: data.Credentials.SessionToken
         };
-      })
-      .catch(err => {
-        throw err;
       });
 
     return new AWS.S3(creds);
@@ -87,9 +84,6 @@ async function onTrack(event, settings) {
     .promise()
     .then(data => {
       console.log(data);
-    })
-    .catch(err => {
-      throw err;
     });
 }
 ```
