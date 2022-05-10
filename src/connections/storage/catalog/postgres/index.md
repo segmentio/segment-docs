@@ -9,7 +9,7 @@ PostgreSQL, or Postgres, is an object-relational database management system (ORD
 PostgreSQL is ACID-compliant and transactional. PostgreSQL has updatable views and materialized views, triggers, foreign keys; supports functions and stored procedures, and other expandability. Developed by the PostgreSQL Global Development Group, free and open-source.
 
 > note "Segment sources required"
-> In order to add a Postgres destination to Segment, you must first add a source. To learn more about sources in Segment, check out our [Sources Overview](/docs/connections/sources) documentation.
+> In order to add a Postgres destination to Segment, you must first add a source. To learn more about sources in Segment, check out the [Sources Overview](/docs/connections/sources) documentation.
 
 ## Getting started
 Segment supports the following Postgres database providers:
