@@ -13,23 +13,23 @@ To set up your functions to call AWS APIs:
     2. Create an IAM role in your AWS account with the [minimum set of necessary permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege){:target="_blank"}.
     3. Add a trust relationship to your role with the following policy, filling in the principal account ID and external ID from step 1.1:
       ```json
-      {
-        "Version": "2012-10-17",
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Principal": {
-              "AWS": "<PRINCIPAL_ACCOUNT_ID>"
-            },
-            "Action": "sts:AssumeRole",
-            "Condition": {
-              "StringEquals": {
-                "sts:ExternalId": "<EXTERNAL_ID>"
+        {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": "<PRINCIPAL_ACCOUNT_ID>"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "sts:ExternalId": "<EXTERNAL_ID>"
+                }
               }
             }
-          }
-        ]
-      }
+          ]
+        }
       ```
 
 2. Create your function.
