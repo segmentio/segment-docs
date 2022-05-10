@@ -15,7 +15,7 @@ hide-dossier: true
 Cordial (Actions) provides the following benefits over the classic Cordial destination:
 
 - **Transparent data mapping**. Classic Cordial destination receives data from Segment as is. Cordial backend then converts those Segment events to Cordial's format and clients have limited control over this conversion. Cordial (Actions) destination allows clients to fully define their own mappings of Segment events, making sure they receive data structured specifically for their needs. 
-- **Sending only the data you need**. With Cordial (Actions) you can define only those destination actions and mappings that make sense for your use cases while Cordial Classic always sends four predefined API calls: identify, track, group, and page. 
+- **Sending only the data you need**. With Cordial (Actions) you can define only those destination actions and mappings that make sense for your use cases, while Cordial Classic always sends four predefined API calls: identify, track, group, and page. 
 - **Sending Personas components to Cordial**. With Cordial (Actions) it is possible to define action mappings that will send audiences and user computed traits defined in Segment Personas platform to Cordial.
 
 ## Getting started
@@ -34,9 +34,9 @@ Cordial (Actions) provides the following benefits over the classic Cordial desti
 
 ### User Identities Mappings
 
-Every Cordial destination action needs to be invoked with a data identifying a Cordial contact. To identify a contact every destination action has `User Identities` field, which maps Segment event fields to Cordial contact identifiers. Each entry in the list represents a contact identifier and how it maps from a Segment event. For example, `channels.email.address <- userId` or `customerId <- traits.customerId`. At least one identifier should be valid otherwise the contact will not be identified and the request will be ignored.
+Every Cordial destination action needs to be invoked with data identifying a Cordial contact. To identify a contact every destination action has a `User Identities` field, which maps Segment event fields to Cordial contact identifiers. Each entry in the list represents a contact identifier and how it maps from a Segment event. For example, `channels.email.address <- userId` or `customerId <- traits.customerId`. At least one identifier should be valid, otherwise the contact will not be identified and the request will be ignored.
 
-Typically `User Identities` field will map Segment event's  `userId` field to Cordial secondary identifier field. For example, if Segment's `userId` field is known to be an email, the mapping will be `channels.email.address <- userId`, meaning the value of `userId` will be sent as `channels.email.address` to Cordial.
+Typically `User Identities` field will map Segment event's `userId` field to Cordial secondary identifier field. For example, if Segment's `userId` field is known to be an email, the mapping will be `channels.email.address <- userId`, meaning the value of `userId` will be sent as `channels.email.address` to Cordial.
 
 ### Updating contacts
 
@@ -44,7 +44,7 @@ If you plan to create and update contacts in Cordial, define `upsertContact` des
 
 ### Sending events
 
-To send events define `createContactactivity` destination action. In addition to `User Identities` field, it defines additional fields such as `Event name`, `Event timestamp`, and `Event properties`. Refer to documentation for each field when defining the destination action.
+To send events define `createContactactivity` destination action. In addition to `User Identities` field, additional fields such as `Event name`, `Event timestamp`, and `Event properties` may be defined. Refer to documentation for each field when defining the destination action.
 
 ### Adding users to and removing from lists
 
