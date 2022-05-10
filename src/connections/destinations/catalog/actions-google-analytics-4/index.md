@@ -65,12 +65,12 @@ Segment’s spec doesn't have an equivalent event for every Google Analytics 4 r
 In addition to recommended events, you can also send custom events using the [Custom Event action](/docs/connections/destinations/catalog/actions-google-analytics-4/#custom-event). Custom events are events that you name. Custom events don't appear in most standard reports; you need to set up custom reports for meaningful analysis. To create custom events in the Google Analytics 4 web interface, see Google’s [Modify and create events through the user interface](https://support.google.com/analytics/answer/10085872){:target='_blank'}.
 
 > warning ""
-> Don’t create custom events that already correspond to the pre-built mappings that Segment has. Use the standard events defined in [GA4’s doc](https://developers.google.com/analytics/devguides/collection/ga4/reference/events){:target="_blank"} with their corresponding actions. 
+> Don’t create custom events that already correspond to the pre-built mappings that Segment has. Use the standard events defined in [GA4’s doc](https://developers.google.com/analytics/devguides/collection/ga4/reference/events){:target="_blank"} with their corresponding actions.
 
-> info "Event naming limitations"
-> Google Analytics 4 requires that all event names contain only alpha-numeric characters and underscores, and must start with an alphabetic character. Segment replaces spaces in Event Names with an underscore, so that these events are accepted by GA4. For example, Segment renames an event named `Home Profile` to `Home_Profile`. In some cases, GA4 may reject an event outright, due to unsupported characters. For example, an event named `Home | Profile` will be silently rejected due to the pipe character.
->
-> In all cases, event names in GA4 are case sensitive. The Custom Event action includes a **Lowercase Event Name** option, to ensure consistency of all events sent to Google. For more information, see Google's articles [Google Analytics 4 event name rules](https://support.google.com/analytics/answer/10085872?hl=en&ref_topic=9756175#event-name-rules){:target='_blank'} and [Event name limitations](https://developers.google.com/analytics/devguides/collection/protocol/ga4/sending-events?client_type=firebase){:target="_blank"}.
+info "Event naming limitations"
+Google Analytics 4 requires that all event names contain only alpha-numeric characters and underscores, and must start with an alphabetic character. Segment replaces spaces in Event Names with an underscore, so that these events are accepted by GA4. For example, Segment renames an event named `Home Profile` to `Home_Profile`. In some cases, GA4 may reject an event outright, due to unsupported characters. For example, an event named `Home | Profile` will be silently rejected due to the pipe character.
+
+In all cases, event names in GA4 are case sensitive. The Custom Event action includes a **Lowercase Event Name** option, to ensure consistency of all events sent to Google. For more information, see Google's articles [Google Analytics 4 event name rules](https://support.google.com/analytics/answer/10085872?hl=en&ref_topic=9756175#event-name-rules){:target='_blank'} and [Event name limitations](https://developers.google.com/analytics/devguides/collection/protocol/ga4/sending-events?client_type=firebase){:target="_blank"}.
 
 #### Custom Dimensions and Metrics
 With Google Analytics 4, you must create custom dimensions and metrics within the Google Analytics 4 interface and link parameters to the corresponding dimension or metric. When you create the dimension or metric, you can either select a parameter from the list of already collected fields or enter the name of the parameter you plan to collect in the future. Custom dimensions can be either event-scoped or user-scoped, and custom metrics must be event-scoped.
@@ -98,6 +98,7 @@ There are certain scenarios where sending a User-ID can be helpful. For example,
 - **Use the Gtag-generated Client ID.** Gtag will set a Client ID automatically. The Client ID is stored in a cookie and can be fetched on the web client. To tie data between client-side and server-side, pass the Gtag-generated Client ID to Segment as a property and use that value as the Client ID in the Google Analytics 4 destination mappings.
 - **Use the Segment `userId` for User-ID.** The Segment `userId` should be your company’s canonical user identifier. By setting Google's User-ID to the same value as `userId` on client-side and server-side, you can benefit from cross-platform analytics.
 In addition, if you use [Firebase to send mobile data to Google Analytics 4](/docs/connections/destinations/catalog/actions-google-analytics-4/#mobile-data), using the same User-ID across web and mobile will ensure users are stitched together across devices.
+
 #### Validating and Comparing Data
 Google recommends a period of dual-collection with both Universal Analytics and Google Analytics 4. This dual-collection approach lets you build a historical record in Google Analytics 4 while continuing to depend on Universal Analytics until you're ready to fully switch over.
 

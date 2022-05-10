@@ -77,8 +77,8 @@ Next, you’ll create a SendGrid subuser and ensure that a dedicated IP has been
 
 ### Authenticate your domain
 
-> info "Log in as the subuser"
-> All further SendGrid onboarding steps require you to be signed in as the new subuser you just created. If you're not logged in as the new subuser, log out of SendGrid, then log back in using the subuser credentials you created above.
+> info "SendGrid parent and subuser accounts"
+> In this section, you'll authenticate your domain using your new SendGrid subuser account and then set up reverse DNS with your SendGrid parent account. Have both login credentials on hand before proceeding.
 
 Now, you’ll authenticate your domain with SendGrid and your DNS provider and [enable link branding](https://docs.sendgrid.com/ui/account-and-settings/how-to-set-up-link-branding){:target="_blank"}. Domain authentication protects your sending reputation by showing email providers that you’ve given SendGrid permission to send email campaigns for you.
 
@@ -86,14 +86,14 @@ To authenticate your domain, you’ll copy CNAME records given to you by SendGri
 
 You’ll authenticate your domain using the SendGrid platform and your DNS provider:
 
-1. Follow [SendGrid’s domain authentication guide](https://docs.sendgrid.com/ui/account-and-settings/how-to-set-up-domain-authentication){:target="_blank"}.
+1. **From your new SendGrid subuser account**, follow [SendGrid’s domain authentication guide](https://docs.sendgrid.com/ui/account-and-settings/how-to-set-up-domain-authentication){:target="_blank"}.
 2. During the authentication process, SendGrid asks if you would like to brand links for your domain. Select **Yes**.
 3. SendGrid provides you with five CNAME records.  Add them to your DNS host.
 4. Return to SendGrid and [verify your DNS](https://docs.sendgrid.com/ui/account-and-settings/how-to-set-up-domain-authentication#verifying-your-dns){:target="_blank"}.
 
 Complete authentication by setting up reverse DNS:
 
-1. Follow [SendGrid’s reverse DNS (rDNS) documentation](https://docs.sendgrid.com/ui/account-and-settings/how-to-set-up-reverse-dns){:target="_blank"}.
+1. **From your SendGrid parent account**, follow [SendGrid’s reverse DNS (rDNS) documentation](https://docs.sendgrid.com/ui/account-and-settings/how-to-set-up-reverse-dns){:target="_blank"}.
 2. SendGrid provides you with one A record. Add it to your DNS host, along with the five CNAME records from the previous steps.
 3. Return to SendGrid and [verify your DNS](https://docs.sendgrid.com/ui/account-and-settings/how-to-set-up-reverse-dns#verifying){:target="_blank"}.
 
@@ -124,8 +124,8 @@ You’ll now need to enable event webhooks, which trigger webhook notifications 
 
 ### Generate an API key
 
-> info "Copying SendGrid Credentials"
-> This step creates an API key that you’ll later add to Segment. Make sure you’re ready to copy and save the key before proceeding. You must follow these steps from within the SendGrid subuser account [you created for use with Twilio Engage](/docs/engage/overview/onboarding/#create-a-subuser-and-check-the-dedicated-ip-address).
+> warning "Copying SendGrid Credentials"
+> This step creates an API key that you’ll later add to Segment. Make sure you’re ready to copy and save the key before proceeding; SendGrid only displays the API key once. You must follow these steps from within the SendGrid subuser account [you created for use with Twilio Engage](/docs/engage/overview/onboarding/#create-a-subuser-and-check-the-dedicated-ip-address).
 
 Next, generate an API key within SendGrid. Have your Segment workspace open in another tab, as you’ll copy the API key and paste it into your Engage settings.
 

@@ -65,6 +65,21 @@ Set up your Pixel to work with the Facebook Conversions API (Actions) destinatio
 
 The Facebook Conversions API (Actions) destination gives you several ways to implement your conversion tracking. You can use it with [Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/), or as a stand-alone alternative. You can read more about implementation options below and in [Facebook documentation](https://developers.facebook.com/docs/marketing-api/conversions-api/guides/end-to-end-implementation#pick-your-integration-type){:target="_blank"}.
 
+### Action Source
+
+`action_source` is set to "website" as a default value.
+
+You can set `action_source` manually by passing it as a property of a Track event. You can use either snake case or camel case to include `action_source` as a property in Track events.
+
+| Action Source Values | Description                                                                                               |
+| -------------------- | --------------------------------------------------------------------------------------------------------- |
+| `chat`               | Conversion was made through a messaging app, SMS, or online messaging feature.                                |
+| `email`              | Conversion happened over email.                                                                           |
+| `other`              | Conversion happened in a way that is not listed.                                                          |
+| `phone_call`         | Conversion was made over the phone.                                                                       |
+| `physical_store`     | Conversion was made in person at your physical store.                                                     |
+| `system_generated`   | Conversion happened automatically, for example, a subscription renewal that's set on auto-pay each month. |
+| `website`            | Conversion was made on your website.                                                                      |
 
 ### Send events from both the browser and the server
 
