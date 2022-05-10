@@ -37,17 +37,17 @@ To set up your functions to call AWS APIs:
   * **IAM Role ARN**: A string setting that is the ARN for the IAM role above. For example, `arn:aws:iam::1234567890:role/my-secure-role`.
   * **IAM Role External ID**: A sensitive string setting that is the external ID for your IAM role.
 
-    Below is an example destination function that uploads each event received to an S3 bucket (configured using an additional "S3 Bucket" setting). It uses the built-in local cache to retain S3 clients between requests to minimize processing time and to allow different instances of the function to use different IAM roles.
+    Below is an example destination function that uploads each event received to an S3 bucket (configured using additional "S3 Bucket" and "S3 Bucket Region" settings). It uses the built-in local cache to retain S3 clients between requests to minimize processing time and to allow different instances of the function to use different IAM roles.
 
     ```javascript
     async function getS3(settings) {
       const ttl = 30 * 60 * 1000; // 30 minutes
-      const key = settings.iamRoleArn + settings.iamRoleExternalId;
+      const key = [settings.iamRoleArn, settings.s3Bucket].join();
 
       return cache.load(key, ttl, async () => {
         const sts = new AWS.STS();
 
-        const creds = await sts
+        const opts = await sts
           .assumeRole({
             RoleArn: settings.iamRoleArn,
             ExternalId: settings.iamRoleExternalId,
@@ -56,16 +56,14 @@ To set up your functions to call AWS APIs:
           .promise()
           .then(data => {
             return {
+              region: settings.s3BucketRegion,
               accessKeyId: data.Credentials.AccessKeyId,
               secretAccessKey: data.Credentials.SecretAccessKey,
               sessionToken: data.Credentials.SessionToken
             };
-          })
-          .catch(err => {
-            throw err;
           });
 
-        return new AWS.S3(creds);
+        return new AWS.S3();
       });
     }
 
@@ -81,9 +79,6 @@ To set up your functions to call AWS APIs:
         .promise()
         .then(data => {
           console.log(data);
-        })
-        .catch(err => {
-          throw err;
         });
     }
     ```
