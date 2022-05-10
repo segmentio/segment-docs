@@ -64,8 +64,8 @@ Segment’s spec doesn't have an equivalent event for every Google Analytics 4 r
 #### Custom Events
 In addition to recommended events, you can also send custom events using the [Custom Event action](/docs/connections/destinations/catalog/actions-google-analytics-4/#custom-event). Custom events are events that you name. Custom events don't appear in most standard reports; you need to set up custom reports for meaningful analysis. To create custom events in the Google Analytics 4 web interface, see Google’s [Modify and create events through the user interface](https://support.google.com/analytics/answer/10085872){:target='_blank'}.
 
-warning ""
-Don’t create custom events that already correspond to the pre-built mappings that Segment has. Use the standard events defined in [GA4’s doc](https://developers.google.com/analytics/devguides/collection/ga4/reference/events){:target="_blank"} with their corresponding actions.
+> warning ""
+> Don’t create custom events that already correspond to the pre-built mappings that Segment has. Use the standard events defined in [GA4’s doc](https://developers.google.com/analytics/devguides/collection/ga4/reference/events){:target="_blank"} with their corresponding actions.
 
 info "Event naming limitations"
 Google Analytics 4 requires that all event names contain only alpha-numeric characters and underscores, and must start with an alphabetic character. Segment replaces spaces in Event Names with an underscore, so that these events are accepted by GA4. For example, Segment renames an event named `Home Profile` to `Home_Profile`. In some cases, GA4 may reject an event outright, due to unsupported characters. For example, an event named `Home | Profile` will be silently rejected due to the pipe character.
@@ -86,7 +86,7 @@ If you choose to integrate with Google Analytics 4 client-side (using Gtag outsi
 
 > info "Session tracking limitations"
 > Session tracking server-side only works if you're also sending data to Google Analytics 4 client-side. This is because the `session_id` must match a value that was previously collected on the client. For events to stitch properly, they must arrive within a 48 hour window of when the client-side events arrived.
-
+>
 > Google doesn't currently support passing other reserved fields, such as [predefined user dimensions](https://support.google.com/analytics/answer/9268042?hl=en&ref_topic=11151952){:target='_blank'} or device-specific information, to the Measurement Protocol API.
 
 #### User Identification
