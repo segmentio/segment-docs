@@ -6,7 +6,7 @@ id: 626153e34fb8f47a32f8deab
 
 [Flagship.io](https://www.Flagship.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) lets engineering teams deploy continuously and monitor the impact of features on technical infrastructure, while product teams control how features are released and their impact on users' experience and business KPIs.
 
-This destination is maintained by Flagship.io. For any issues with the destination, [contact the Flagship Support team](mailto:support@flagship.io).
+Flagship.io maintains this destination. For any issues with the destination, [contact the Flagship Support team](mailto:support@flagship.io).
 
 ## Getting Started
 
