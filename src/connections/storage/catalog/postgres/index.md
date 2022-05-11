@@ -35,7 +35,7 @@ This guide explains how to set up a Postgres database with Heroku. Heroku is a c
 
 4. On the Deploy page, select the Resources tab.
 
-5. On the Resources page, search for "Heroku Postgres" in the search bar. Select the billing plan that you want to use for this app and click **Submit Order Form**. Segment recommends that customers start with a Standard 4 plan. _Learn more about plan pricing on the [Heroku Postgres pricing page](https://www.heroku.com/pricing#data-services)._
+5. On the Resources page, search for "Heroku Postgres" in the search bar. Select the billing plan that you want to use for this app and click **Submit Order Form**. Segment recommends that customers start with a Standard 4 plan. _Learn more about plan pricing on the [Heroku Postgres pricing page](https://www.heroku.com/pricing#data-services){:target="_blank"}._
 
 6. Select the Heroku Postgres add-on you created in the previous step and open the Settings tab. Click the **View Credentials...** button and copy the host, database, user, and password fields. You will need this information to connect your database to Segment in a later step.
 
