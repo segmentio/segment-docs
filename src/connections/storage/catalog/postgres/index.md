@@ -43,7 +43,7 @@ This guide explains how to set up a Postgres database with Heroku. Heroku is a c
 
 8. Choose the source(s) you'd like to connect to Postgres, and click **Next**.
 
-9. Enter the host, database, user, and password fields you copied from Heroku in an earlier step, and click **Connect**. If Segment successfully connected to your destination, you'll see the Next Steps screen. If not, check your host, database, user, and password fields match your Heroku settings.
+9. Enter the host, database, user, and password fields you copied from Heroku in an earlier step, and click **Connect**. If Segment successfully connected to your destination, you'll see the Next Steps screen. If you receive an "Invalid database" error, check that your host, database, user, and password fields match the credentials for your Heroku instance.
 
 ## RDS Postgres
 
