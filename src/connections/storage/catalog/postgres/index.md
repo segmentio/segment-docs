@@ -24,30 +24,26 @@ Segment supports the following Postgres database providers:
 
 This guide explains how to set up a Postgres database with Heroku. Heroku is a cloud-based platform-as-a-service which simplifies the process of setting up and administering a Postgres database.
 
-1. Sign up for a Heroku account. You can create a free account [on Heroku's website](https://signup.heroku.com/identity){:target="_blank"}.
-
-2. [Log in](https://id.heroku.com/login){:target="_blank"} to your Heroku account.
-
-3. On the landing page, select **Create new app**.
-
-4. Add a name for your app and select the region where you want your host your app. If you have an existing pipeline that you want to add your app to, add it at this step. When you've finished updating your app's settings, click **Create app**.   
-
-5. On the Deploy page, select the **Resources** tab. 
-
-6. On the **Resources** page, add a new add-on to your app by searching for "Heroku Postgres" in the search bar. Select the plan that you wish to bill the database to, and click **Submit Order Form**. _Learn more about pricing information on [Heroku's website](https://www.heroku.com/pricing#data-services)._
-
-7. From the Deploy page, select the Settings tab. Click the **View Credentials...** button and copy the host, database, user, and password fields. 
-
-8. Open the Segment app. On the Overview page, click **Add Destination**.
-
-9. Search for and select the Postgres destination.  
-
-10. Choose the sources you'd like to connect to Postgres, and click **Next**.
-
-11. Enter the host, database, user, and password fields you copied in step seven, and click **Connect**. If Segment successfully connected to your destination, you'll see the Next Steps screen. If not, check your host, database, user, and password fields.
-
-> warning "First sync duration"
+> info "First sync duration"
 > The initial sync between Segment and Heroku Postgres can take up to 24 hours to complete. 
+
+1. [Sign up](https://signup.heroku.com/identity){:target="_blank"} for a Heroku account, or [log in](https://id.heroku.com/login){:target="_blank"} to an existing account.
+
+2. On the Heroku landing page, select **Create new app**.
+
+3. Give your app a name and select the region where it should be hosted. If you want to add your app to a Heroku pipeline, do so here. When you've finished updating your app's settings, click **Create app**.   
+
+4. On the Resources page, add a new add-on to your app by searching for "Heroku Postgres" in the search bar. Select the billing plan that you want to use for this app and click **Submit Order Form**. Segment recommends that customers start with a Standard 4 plan. _Learn more about plan pricing on the [Heroku Postgres pricing page](https://www.heroku.com/pricing#data-services)._
+
+5. On the Deploy page, select the Settings tab. Click the **View Credentials...** button and copy the host, database, user, and password fields. You need this information to connect your database to Segment in a later step.
+
+6. Open the Segment app. On the Overview page, click **Add Destination**.
+
+7. Search for and select the Postgres destination.  
+
+8. Choose the source(s) you'd like to connect to Postgres, and click **Next**.
+
+9. Enter the host, database, user, and password fields you copied from Heroku in an earlier step, and click **Connect**. If Segment successfully connected to your destination, you'll see the Next Steps screen. If not, check your host, database, user, and password fields match your Heroku settings.
 
 ## RDS Postgres
 
