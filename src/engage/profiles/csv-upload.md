@@ -67,12 +67,12 @@ For each CSV file, Engage adds:
 - An `email_subscription_status` column next to **Email** columns.
 - An `sms_subscription_status` column next to **SMS** columns.
 
-In the `email_subscription_status` and `sms_subscription_status` columns, set subscription states for email addresses and phone numbers:
+In the `email_subscription_status` and `sms_subscription_status` columns, set subscription states for email and phone numbers with the following values:
 
-- **Subscribed**: The user has actively subscribed.
-- **Unsubscribed**: The user has actively unsubscribed.
-- **Did Not Subscribe**: The user has provided their contact information but didn't actively subscribe or unsubscribe.
-- **No Subscription Status (or blank)**: The user's profile exists in Segment, but they haven't explicitly provided their contact information, and no subscription information is available.
+- `Subscribed`: The user has actively subscribed.
+- `Unsubscribed`: The user has actively unsubscribed.
+- `Did Not Subscribe`: The user has provided their contact information but didn't actively subscribe or unsubscribe.
+- **No Subscription Status (blank value)**: The user's profile exists in Segment, but they haven't explicitly provided their contact information, and no subscription information is available.
 
 > success ""
 > Only contact users that subscribe to your communications. View [User Subscription States](/docs/engage/profiles/user-subscriptions/subscription-states/) to learn more.

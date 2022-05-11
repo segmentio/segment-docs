@@ -22,7 +22,7 @@ You’ll build and then send your campaign in three stages:
 
 Because Engage campaigns exist within Journeys, begin by creating a Journey:
 
-1. Within your Personas space, select **Campaigns**, then click **New Journey**.
+1. Within your Personas space, select **Journeys**, then click **New Journey**.
 2. Name your Journey and select its entry settings.
 3. Click **Build Journey** to create the Journey.
 

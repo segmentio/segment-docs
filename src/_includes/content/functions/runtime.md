@@ -31,7 +31,9 @@ The following dependencies are installed in the function environment by default.
 
 Only the [`crypto` Node.js module](https://nodejs.org/dist/latest-v10.x/docs/api/crypto.html ) is included (exposed as `crypto`). [Other built-in Node.js modules](https://nodejs.org/api/modules.html) are not available.
 
-##### Caching
+For more information on using the `aws-sdk` module, see how to [set up functions for calling AWS APIs](/docs/connections/functions/aws-apis/).
+
+### Caching
 
 Basic cache storage is available through the `cache` object, which has the following methods defined:
 

@@ -25,4 +25,8 @@ Once MFA is enabled, Segment prompts you for one of these methods every time you
 ## Recovering MFA
 Your recovery code can be used bypass in the event you do not have your MFA device. If you no longer have access to your recovery code, you can choose to send a recovery code to your email to re-access your Account.
 
-If you've lost your recovery code, you can send it to your email by continuing through the recovery code flow and clicking _Send recovery code to my email_.
+1. Enter your username and password on the login screen.
+2. Click the _authenticating a different way_ link.
+3. Click _Recovery Code_.
+4. Click _Send recovery code to my email_.
+
