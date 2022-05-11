@@ -44,7 +44,7 @@ To get started with LaunchDarkly (Actions):
 
 ## Creating LaunchDarkly metrics
 
-In order to take full-advantage of the LaunchDarkly (Actions) Destination, you need to create metrics in LaunchDarkly that correspond to Segment track events. Read [Creating metrics](https://docs.launchdarkly.com/home/experimentation/metrics/index){:target="_blank"} to learn how to create metrics in LaunchDarkly.
+In order to take full-advantage of the LaunchDarkly (Actions) Destination, you need to create metrics in LaunchDarkly that correspond to Segment track events. Read [Creating metrics](https://docs.launchdarkly.com/home/experimentation/metrics){:target="\_blank"} to learn how to create metrics in LaunchDarkly.
 
 <!-- If applicable, add information regarding the migration from a classic destination to an Actions-based version below -->
 
