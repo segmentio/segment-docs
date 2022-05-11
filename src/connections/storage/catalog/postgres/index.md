@@ -18,7 +18,7 @@ Segment supports the following Postgres database providers:
 - [Compose](#compose-postgres)
 
 > warning ""
-> Segment supports only these Postgres databases. Postgres databases from other providers are not guaranteed to work. For questions or concerns about Postgres providers, contact [Segment Support](https://segment.com/help/contact){:target="_blank"}.
+> Segment supports only these Postgres databases. Postgres databases from other providers are not guaranteed to work. For questions or concerns about Segment-supported Postgres providers, contact [Segment Support](https://segment.com/help/contact){:target="_blank"}.
 
 ## Heroku Postgres
 
