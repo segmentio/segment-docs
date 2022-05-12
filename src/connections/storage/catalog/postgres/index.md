@@ -85,7 +85,7 @@ To create a new inbound rule:
 ## Compose Postgres
 
 > warning "Compose will enter End of Life on March 1, 2023"
-> After [Compose enters End of Life on March 1, 2023](https://help.compose.com/docs/compose-deprecation){:target="_blank"}, all databases on Compose will be disabled and deprovisioned. To continue using Postgres to integrate your data with Segment, consider using either [Heroku Postgres](#heroku-postgres) or [Amazon's Relational Database Service](#rds-postgres), the other Segment-supported Postgres providers.
+> After [Compose enters End of Life on March 1, 2023](https://help.compose.com/docs/compose-deprecation){:target="_blank"}, all databases on Compose will be disabled and deprovisioned. To continue sending your Segment data to a Postgres destination, consider using either [Heroku Postgres](#heroku-postgres) or [Amazon's Relational Database Service](#rds-postgres), the other Segment-supported Postgres providers.
 
 Compose is the first DBaaS (Database as a Service) of its kind, geared at helping developers spend more time building their applications rather than wrestling with database provisioning and maintenance. Compose provides easy to deploy and scale data stores and services in many flavors: PostgreSQL, MongoDB, RethinkDB, Elasticsearch, Redis, etcd, and RabbitMQ.
 
