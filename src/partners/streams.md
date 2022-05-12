@@ -28,8 +28,9 @@ To learn about the semantics of the five supported API calls, and the semantic e
 
 The spec is a critical component of preserving semantics between sources and destinations. If you break the spec, you are breaking the promise of Segment, which is grounds for removal from the catalog.
 
-> info "" 
+> info ""
 > If any events you send to Segment match, but do not adhere to, existing events from the Segment Spec (for example, sending "Purchase" instead of "Order Completed" or "install" instead of "Application Installed"), Segment will reject your application.
+
 
 If there is something unique about your tool that requires specific data points that are not included in the spec, [get in touch](https://segment.com/help/contact/){:target="_blank"}.
 
@@ -96,7 +97,7 @@ Segment recommends you enable the user to choose which Segment [endpoint](/docs/
 
 ## Plan
 
-If you have not already, contact review your timeline and resourcing plan. Include which events your source will be sending to Segment to ensure they are properly specified. Segment onboards new sources as quickly as possible, but you should only commence building once you receive approval from Segment.
+If you have not already, review your timeline and resourcing plan. Include which events your source will be sending to Segment to ensure they are properly specified. Segment onboards new sources as quickly as possible, but you should only commence building once you receive approval from Segment.
 
 ## Build
 
