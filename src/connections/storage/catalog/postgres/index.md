@@ -17,7 +17,7 @@ Segment supports the following Postgres database providers:
 - [RDS](#rds-postgres)
 - [Compose](#compose-postgres)*
 
-*_Compose will enter End of Life on March 1, 2023. After this date, all databases on Compose will be disabled and deprovisioned. If you need help selecting another Segment-supported Postgres database provider, contact [Segment Support](https://segment.com/help/contact){:target="_blank"}._
+*_[Compose will be End of Life on March 1, 2023](https://help.compose.com/docs/compose-deprecation){:target="_blank"}. After this date, all databases on Compose will be disabled and deprovisioned. If you need help selecting another Segment-supported Postgres database provider, contact [Segment Support](https://segment.com/help/contact){:target="_blank"}._
 
 > warning ""
 > Segment supports only these Postgres databases. Postgres databases from other providers are not guaranteed to work. For questions or concerns about Segment-supported Postgres providers, contact [Segment Support](https://segment.com/help/contact){:target="_blank"}.
@@ -85,7 +85,7 @@ To create a new inbound rule:
 ## Compose Postgres
 
 > warning "Compose will enter End of Life on March 1, 2023"
-> After March 1, 2023, all databases on Compose will be disabled and deprovisioned. To use Postgres to integrate your data with Segment, consider transferring your data to either [Heroku Postgres](#heroku-postgres) or [Amazon's Relational Database Service](#rds-postgres), other Segment-supported Postgres providers.
+> After [Compose enters End of Life on March 1, 2023](https://help.compose.com/docs/compose-deprecation){:target="_blank"}, all databases on Compose will be disabled and deprovisioned. To continue using Postgres to integrate your data with Segment, consider using either [Heroku Postgres](#heroku-postgres) or [Amazon's Relational Database Service](#rds-postgres), the other Segment-supported Postgres providers.
 
 Compose is the first DBaaS (Database as a Service) of its kind, geared at helping developers spend more time building their applications rather than wrestling with database provisioning and maintenance. Compose provides easy to deploy and scale data stores and services in many flavors: PostgreSQL, MongoDB, RethinkDB, Elasticsearch, Redis, etcd, and RabbitMQ.
 
