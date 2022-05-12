@@ -209,7 +209,7 @@ Once you've identified the type of phone number you'll use with Twilio Engage, f
 To finish setting up your Messaging Service, you’ll now [configure an event webhook](https://www.twilio.com/docs/usage/webhooks/sms-webhooks){:target="_blank"}:
 
 1. Switch to the browser tab or window with your Personas workspace.
-2. Navigate to **Personas > Campaigns**.  Under **Send SMS messages with Twilio**, click the **Get Started** button.
+2. Navigate to **Personas > Settings > Messaging Service**.  Under **Send SMS messages with Twilio**, click the **Get Started** button.
 3. A **Set up your SMS service** overlay appears (pictured below). Click the **Copy webhook URL** button. Your computer copies the URL to your clipboard.
 
     ![Engage webhook URL](images/engagewebhook.png "Engage webhook URL")
