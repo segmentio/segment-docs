@@ -138,7 +138,7 @@ Next, generate an API key within SendGrid. Have your Segment workspace open in a
 To finish linking the API key to your Segment account, follow these steps:
 
 1. Switch to the browser tab with your Personas workspace open.
-2. Navigate to **Personas > Campaigns**. Under **Send emails with SendGrid**, click the **Get Started** button.
+2. Navigate to **Personas > Settings > Messaging Service**. Under **Send emails with SendGrid**, click the **Get Started** button.
 3. In the **Set up your email service** window (shown below), enter the subuser username [you previously created](#configure-a-sendgrid-ip-and-create-a-subuser) into the Subuser name field.
 4. Paste the Subuser API Key ID and Subuser API Key you just copied from SendGrid into their respective fields, then click **Verify**.
 
@@ -183,7 +183,7 @@ Start by creating your Twilio account and getting an API key for Engage:
     ![Copying the Twilio API key](images/apikeys.png "Copying the Twilio API key")
 
 8. Switch to the browser tab or window with your Personas workspace.
-9. Navigate to **Personas > Campaigns**.  Under **Send SMS messages with Twilio**, click the **Get Started** button.  The **Set up your SMS service** page appears.
+9. Navigate to **Personas > Settings > Messaging Service**.  Under **Send SMS messages with Twilio**, click the **Get Started** button.  The **Set up your SMS service** page appears.
 10. Under **Enter your Twilio API Key information** (shown below), paste the SID and API Key Secret you copied above into their respective fields.
 11. Click **Verify**, then click **Save Twilio Account.**
 
