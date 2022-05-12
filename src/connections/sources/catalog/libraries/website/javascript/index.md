@@ -12,7 +12,7 @@ Analytics.js 2.0, the latest version of Segment's JavaScript source, enables you
 
 > info ""
 > Analytics.js 2.0 is available as an [open-source project](https://github.com/segmentio/analytics-next/){:target="_blank"}.
-> <br><br> All sources created on April 5, 2022 and after default to use Analytics.js 2.0.  
+> <br><br> All sources created on April 5, 2022 and after default to use Analytics.js 2.0.
 
 
 ## Benefits of Analytics.js 2.0
@@ -43,7 +43,7 @@ Use the [Analytics.js QuickStart Guide](/docs/connections/sources/catalog/librar
 
 For information about upgrading to Analytics.js 2.0, see [Upgrade to Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/upgrade-to-ajs2).
 
-### Upgrade your existing Javascript sources
+### Upgrade your existing JavaScript sources
 
 For information about upgrading your existing JavaScript sources, see [Upgrade to Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/upgrade-to-ajs2).
 
@@ -185,9 +185,9 @@ analytics.trackForm(form, event, [properties])
 Field | | Type | Description
 ----- | | ---- | -----------
 `form(s)` | | Element or Array | The form element to track or an array of form elements or jQuery objects. _Note: trackForm takes an element, not a CSS selector._
-`event` | | Element or Array | The form element to track or an array of form elements or jQuery objects. _Note: trackForm takes an element, not a CSS selector._
-`form(s)` | | Element or Array | The form element to track or an array of form elements or jQuery objects. _Note: trackForm takes an element, not a CSS selector._
+`event` | | String or Function | The name of the event, passed to the `track` method. Or a **function** that returns a string to use as the name of the `track` event.
 `properties` | optional | Object or Function | A dictionary of properties to pass with the track method. Or a **function** that returns an object to use as the `properties` of the event.
+
 
 Example:
 
@@ -302,7 +302,7 @@ Find more details about `group`, including the `group` payload, in [the Group Sp
 
 The Alias method combines two unassociated user identities. Segment usually handles aliasing automatically when you call `identify` on a user, however some tools require an explicit `alias` call.
 
-This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations such as [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) and [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias). <!-- TODO: LR Dests question: is this still true? Is there a list of the ones that require this?-->
+This is an advanced method, but it is required to manage user identities successfully in *some* Segment destinations like [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) and [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias). <!-- TODO: LR Dests question: is this still true? Is there a list of the ones that require this?-->
 
 The Alias method follows the format below:
 
@@ -319,7 +319,7 @@ Field | | Type | Description
 `options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call.
 `callback` | optional | Function | A function that is executed after a short timeout, giving the browser time to make outbound requests first.
 
-For more details about Alias, including the **`alias` call payload**, check out our [Spec](/docs/connections/spec/alias/).
+For more details about Alias, including the **`alias` call payload**, check out the [Segment Spec](/docs/connections/spec/alias/).
 
 
 ## Utility Methods
@@ -418,7 +418,7 @@ analytics.timeout(500);
 ```
 
 > success "Tip"
-> If you're triggering ad network conversion pixels, we recommend extending timeout to 500ms to account for slow load times.
+> If you're triggering ad network conversion pixels, Segment recommends extending timeout to 500ms to account for slow load times.
 
 
 ### Reset or Logout
@@ -478,7 +478,7 @@ You don't need to include `'All': true` in this call because it is implied as th
 Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (for example, "AdLearn Open Platform", "awe.sm", "Mailchimp", etc). If a Destination has more than one acceptable name, this appears in the documentation for that destination.
 
 > success "Tip"
-> Business tier customers can filter Track calls from the Source Schema page in the Segment UI. We recommend that you use the UI to simplify filter management and make updates without changing your site's code.
+> Business tier customers can filter Track calls from the Source Schema page in the Segment UI. Segment recommends that you use the UI to simplify filter management and make updates without changing your site's code.
 
 
 ### Load Options
@@ -553,7 +553,7 @@ analytics.load("<write_key>", {
 You can check to see if batching works by checking your source's debugger in **Sources > Debugger**. When you select an event and view the **Raw** code, the `receivedAt` time of all the events in the batch should be the same.
 
 #### Batch size
-The batch size is the threshold that forces all batched events to be sent once it's reached. For example, `size: 10`  means that after triggering 10 events, Analytics.js sends those 10 events together as a batch to Segment.  
+The batch size is the threshold that forces all batched events to be sent once it's reached. For example, `size: 10`  means that after triggering 10 events, Analytics.js sends those 10 events together as a batch to Segment.
 
 Your total batched events can't exceed the maximum payload size of 500 KB, with a limit of 32 KB for each event in the batch. If the 500 KB limit is reached, the batch will be split.
 
@@ -677,7 +677,7 @@ const identityStitching = () => {
   return identity
 }
 
-// Registers our new plugin into Analytics.js
+// Registers Segment's new plugin into Analytics.js
 await window.analytics.register(identityStitching())
 ```
 
@@ -707,7 +707,7 @@ window.analytics.ready(() => {
     })
 ```
 
-You can view Segment's [existing plugins](https://github.com/segmentio/analytics-next/tree/master/src/plugins){:target="_blank"} to see more examples.  
+You can view Segment's [existing plugins](https://github.com/segmentio/analytics-next/tree/master/src/plugins){:target="_blank"} to see more examples.
 
 ### Register a plugin
 Registering plugins enable you to modify your analytics implementation to best fit your needs. You can register a plugin using this:
@@ -727,7 +727,7 @@ Segment offers video player 'plugins' so you can quickly collect video events us
 
 ## Cross-Subdomain Analytics
 
-Analytics.js tracks across subdomains out of the box; all of our destinations fully support this feature.
+Analytics.js tracks across subdomains out of the box; all Segment destinations fully support this feature.
 
 
 ## Analytics.js Performance
