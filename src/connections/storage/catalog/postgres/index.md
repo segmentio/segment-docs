@@ -17,10 +17,11 @@ Segment supports the following Postgres database providers:
 - [RDS](#rds-postgres)
 - [Compose](#compose-postgres)*
 
-*_[Compose will be End of Life on March 1, 2023](https://help.compose.com/docs/compose-deprecation){:target="_blank"}. After this date, all databases on Compose will be disabled and deprovisioned. If you need help selecting another Segment-supported Postgres database provider, contact [Segment Support](https://segment.com/help/contact){:target="_blank"}._
+> note "Deprecation of Compose"
+> On March 1, 2023, [Compose will be deprecated](https://help.compose.com/docs/compose-deprecation){:target="_blank"}. After this date, all databases on Compose will be disabled and deprovisioned. If you need help selecting another Segment-supported Postgres database provider, [contact Segment Support](https://segment.com/help/contact){:target="_blank"}.
 
 > warning ""
-> Segment supports only these Postgres databases. Postgres databases from other providers are not guaranteed to work. For questions or concerns about Segment-supported Postgres providers, contact [Segment Support](https://segment.com/help/contact){:target="_blank"}.
+> Segment only supports these Postgres databases. Postgres databases from other providers aren't guaranteed to work. For questions or concerns about Segment-supported Postgres providers, [contact Segment Support](https://segment.com/help/contact){:target="_blank"}.
 
 ## Heroku Postgres
 
@@ -84,8 +85,8 @@ To create a new inbound rule:
 
 ## Compose Postgres
 
-> warning "Compose will enter End of Life on March 1, 2023"
-> After [Compose enters End of Life on March 1, 2023](https://help.compose.com/docs/compose-deprecation){:target="_blank"}, all databases on Compose will be disabled and deprovisioned. To continue sending your Segment data to a Postgres destination, consider using either [Heroku Postgres](#heroku-postgres) or [Amazon's Relational Database Service](#rds-postgres), the other Segment-supported Postgres providers.
+> warning "Deprecation of Compose"
+> [Compose will be deprecated](https://help.compose.com/docs/compose-deprecation){:target="_blank"} on March 1, 2023. After this date, all databases on Compose will be disabled and deprovisioned. To continue sending your Segment data to a Postgres destination, consider using either [Heroku Postgres](#heroku-postgres) or [Amazon's Relational Database Service](#rds-postgres).
 
 Compose is the first DBaaS (Database as a Service) of its kind, geared at helping developers spend more time building their applications rather than wrestling with database provisioning and maintenance. Compose provides easy to deploy and scale data stores and services in many flavors: PostgreSQL, MongoDB, RethinkDB, Elasticsearch, Redis, etcd, and RabbitMQ.
 
