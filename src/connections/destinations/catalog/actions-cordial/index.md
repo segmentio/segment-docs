@@ -46,7 +46,7 @@ If you plan to create and update contacts in Cordial, define the `upsertContact`
 
 ### Sending events
 
-To send events define `createContactactivity` destination action. In addition to `User Identities` field, additional fields such as `Event name`, `Event timestamp`, and `Event properties` may be defined. Refer to documentation for each field when defining the destination action.
+To send events, define the `createContactactivity` destination action. In addition to the `User Identities` field, additional fields such as `Event name`, `Event timestamp`, and `Event properties` may be defined. Refer to documentation for each field when defining the destination action.
 
 ### Adding users to and removing from lists
 
