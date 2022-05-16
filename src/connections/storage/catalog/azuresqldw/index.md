@@ -5,14 +5,14 @@ redirect_from:
   - '/connections/warehouses/catalog/azuresqldw/'
 ---
 
-Azure's [Azure Synapse Analytics](https://azure.microsoft.com/en-us/services/synapse-analytics/), previously known as Azure SQL Data Warehouse, is a limitless analytics service that brings together enterprise data warehousing and Big Data analytics.
+Azure's [Azure Synapse Analytics](https://azure.microsoft.com/en-us/services/synapse-analytics/){:target="_blank"}, previously known as Azure SQL Data Warehouse, is a limitless analytics service that brings together enterprise data warehousing and Big Data analytics.
 
 ## Getting Started
 
 There are four main steps to get started with Segment:
 
-1. Have an [Azure subscription](https://azure.microsoft.com/en-us/free/)
-2. Provision [SQL Data Warehouse (Dedicated SQL Pool)](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal)
+1. Have an [Azure subscription](https://azure.microsoft.com/en-us/free/){:target="_blank"}.
+2. Provision [SQL Data Warehouse (Dedicated SQL Pool)](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal){:target="_blank"}.
 3. Give Segment access to your SQL Data Warehouse
 4. Configure the Destination in Segment
 
@@ -48,13 +48,13 @@ This new user will need permissions to load data, and manage the resources it ne
 GRANT CONTROL TO Segment;
 ```
 
-Lastly, assign this new user a [resource allocation class](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/resource-classes-for-workload-management). The default (`smallrc`) likely will not give Segment enough memory to perform bulk loads, so we recommend starting with `largerc`. The larger "Dynamic Resource Classes" give more memory, while allowing fewer concurrent queries, which is a better fit for Segment's loading strategy:
+Lastly, assign this new user a [resource allocation class](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/resource-classes-for-workload-management){:target="_blank"}. The default (`smallrc`) likely will not give Segment enough memory to perform bulk loads, so we recommend starting with `largerc`. The larger "Dynamic Resource Classes" give more memory, while allowing fewer concurrent queries, which is a better fit for Segment's loading strategy:
 
 ```sql
 EXEC sp_addrolemember 'largerc', 'Segment';
 ```
 
-By default, Azure Synapse Analytics cannot be connected to from the public internet. In order for Segment to connect, a [server-level firewall rule](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal#create-a-server-level-firewall-rule) that allows connections from the [Segment IPs](/docs/connections/storage/warehouses/faq/#which-ips-should-i-whitelist) is needed.
+By default, Azure Synapse Analytics cannot be connected to from the public internet. In order for Segment to connect, a [server-level firewall rule](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal#create-a-server-level-firewall-rule){:target="_blank"} that allows connections from the [Segment IPs](/docs/connections/storage/warehouses/faq/#which-ips-should-i-whitelist){:target="_blank"} is needed.
 
 ### Configure an Azure SQL Data Warehouse Destination in Segment
 
@@ -71,10 +71,10 @@ All of these fields are required in order for Segment to load data into your SQL
 
 ### Making sure Segment has enough resources to load your data
 
-The default [resource allocation class](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/resource-classes-for-workload-management) (ie: `smallrc`) likely will not give Segment enough memory to perform bulk loads, so we recommend using a larger class (eg: `largerc`). Larger classes allocate more memory, but limit the number of concurrent queries, which is a better fit for Segment's loading strategy.
+The default [resource allocation class](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/resource-classes-for-workload-management){:target="_blank"} (ie: `smallrc`) likely will not give Segment enough memory to perform bulk loads, so we recommend using a larger class (eg: `largerc`). Larger classes allocate more memory, but limit the number of concurrent queries, which is a better fit for Segment's loading strategy.
 
 ## Troubleshooting
 
 ### Segment is not able to connect to Azure Synapse Analytics
 
-Make sure a [server-level firewall rule](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal#create-a-server-level-firewall-rule) that allows connections from the [Segment IPs](/docs/connections/storage/warehouses/faq/#which-ips-should-i-whitelist) is configured.
+Make sure a [server-level firewall rule](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal#create-a-server-level-firewall-rule){:target="_blank"} that allows connections from the [Segment IPs](/docs/connections/storage/warehouses/faq/#which-ips-should-i-whitelist){:target="_blank"} is configured.
