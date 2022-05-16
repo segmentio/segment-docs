@@ -21,11 +21,12 @@ Cordial (Actions) provides the following benefits over the classic Cordial desti
 
 ## Getting started
 
-1. To enable destination actions to connect to Cordial, you will need a Cordial API Key. API keys can be created on the API keys page page the Account Settings menu. [Learn more](https://support.cordial.com/hc/en-us/articles/115005365087)
-2. From the Segment web app, click **Catalog**, then click **Destinations**.
-3. Find the Destinations Actions item in the left navigation, and click it.
+To enable destination actions to connect to Cordial: 
+1. Make sure you have your Cordial API Key. To create a new API key, navigate to the account settings menu and select **API Keys**. [Learn more](https://support.cordial.com/hc/en-us/articles/115005365087){:target="_blank"}.
+2. From the Segment web app, click **Connections > Catalog**.
+3. Search for the **Cordial (Actions)** destination item in the left navigation, and click it.
 4. Click **Configure Cordial**.
-5. Select an existing Source to connect to Cordial (Actions).
+5. Select the Source you want to connect to Cordial (Actions).
 
 <!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
 
