@@ -42,7 +42,7 @@ Typically, the `User Identities` field maps the Segment events `userId` field to
 
 ### Updating contacts
 
-If you plan to create and update contacts in Cordial, define `upsertContact` destination action. In addition to `User Identities` field, the action defines `Contact Attributes` field. This field defines an exclusive set of attributes that will be updated in a contact. Typically you map them from Segment traits, for example, `customerId <- traits.customerId`. For Cordial Classic destination these mappings are stored in Cordial's database, for Cordial (Actions) destination they become explicit in the `upsertContact` destination action mappings.
+If you plan to create and update contacts in Cordial, define the `upsertContact` destination action. In addition to the `User Identities` field, the action defines the `Contact Attributes` field. This field defines an exclusive set of attributes that will be updated in a contact. Typically, you map them from Segment traits. For example, `customerId <- traits.customerId`. For the Cordial Classic destination, these mappings are stored in Cordial's database. In the Cordial (Actions) destination, they become explicit in the `upsertContact` destination action mappings.
 
 ### Sending events
 
