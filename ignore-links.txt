@@ -67,3 +67,7 @@ https://www.getdrip.com/settings/site
 https://www.linkedin.com/company/segment-io/
 https://www.navilytics.com/member/code_settings
 https://www.navilytics.com/member/code_settings
+https://segment.com/docs/connections/sources/catalog/cloud-apps/snowflake/
+https://segment.com/docs/connections/destinations/catalog/adobe-target-cloud-mode/
+https://segment.com/docs/connections/destinations/catalog/adobe-target-web/
+https://segment.com/docs/connections/destinations/catalog/google-ads-remarketing-lists/
