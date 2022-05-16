@@ -38,7 +38,7 @@ To enable destination actions to connect to Cordial:
 
 Every Cordial destination action needs to be invoked with data identifying a Cordial contact. To identify a contact every destination action has a `User Identities` field, which maps Segment event fields to Cordial contact identifiers. Each entry in the list represents a contact identifier and how it maps from a Segment event. For example, `channels.email.address <- userId` or `customerId <- traits.customerId`. At least one identifier should be valid, otherwise the contact will not be identified and the request will be ignored.
 
-Typically `User Identities` field will map Segment event's `userId` field to Cordial secondary identifier field. For example, if Segment's `userId` field is known to be an email, the mapping will be `channels.email.address <- userId`, meaning the value of `userId` will be sent as `channels.email.address` to Cordial.
+Typically, the `User Identities` field maps the Segment events `userId` field to the Cordial secondary identifier field. For example, if Segment's `userId` field is known to be an email, the mapping will be `channels.email.address <- userId`, meaning the value of `userId` will be sent as `channels.email.address` to Cordial.
 
 ### Updating contacts
 
