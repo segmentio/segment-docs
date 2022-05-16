@@ -50,6 +50,6 @@ To send events, define the `createContactactivity` destination action. In additi
 
 ### Adding users to and removing from lists
 
-If you plan segmenting users in Cordial, make sure you define `addContactToList` and `removeContactFromList` destination actions. Both actions require Segment group ID. `addContactToList` optionally accepts a list name. 
+If you plan segmenting users in Cordial, make sure you define the `addContactToList` and `removeContactFromList` destination actions. Both actions require the Segment group ID. `addContactToList` optionally accepts a list name. 
 
 Although optional, list name should be considered a must have, because it will drastically simplify segmenting contacts in Cordial based on lists. Lists without a name are called following the `segment_[groupId]` pattern.
