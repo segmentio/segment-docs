@@ -19,6 +19,7 @@ allowlist
 Amberflo
 Appboy
 Appsflyer
+Blitzllama
 blocklist
 boolean
 Chargebee
