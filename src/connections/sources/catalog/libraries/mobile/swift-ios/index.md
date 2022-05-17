@@ -404,7 +404,7 @@ Segment supports these destinations for Analytics Swift, with more to come:
 * [Amplitude](https://github.com/segment-integrations/analytics-swift-amplitude)
 * [Appsflyer](https://github.com/segment-integrations/analytics-swift-appsflyer)
 * [Facebook App Events](https://github.com/segment-integrations/analytics-swift-facebook-app-events)
-* [Firebase](https://github.com/segment-integrations/analytics-swift-facebook-app-events)
+* [Firebase](https://github.com/segment-integrations/analytics-swift-firebase)
 * [Mixpanel](https://github.com/segment-integrations/analytics-swift-mixpanel)
 
 
