@@ -29,7 +29,8 @@ If you no longer want to capture specific traits within `.identify()` and `.grou
 
 ![Blocking traits for a Source](images/disable-trait.gif "Animation showing how to block traits with the toggle switch")
 
-**IMPORTANT: Blocked traits are not omitted from calls to device-mode Destinations.**
+> warning ""
+> Blocked traits are not omitted from calls to device-mode Destinations.
 
 ## Schema Integration Filters
 
@@ -48,9 +49,9 @@ analytics.identify('user_123', {
 });
 ```
 
-Destination flags are case sensitive and match the [Destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are case sensitive and match the [Destination's name in the docs](/docs/connections/destinations/) (for example, "AdLearn Open Platform", "awe.sm", "MailChimp", and so on).
 
-Segment Business tier customers can block track calls from delivering to specific Destinations in the Segment UI. Visit a Source Schema page and click on the **Integrations** column to view specific Destination filters. Toggle the filter to block or enable an event to a Destination.
+Segment Business tier customers can block track calls from delivering to specific Destinations in the Segment UI. Visit a Source Schema page and click on the **Integrations** column to view specific schema integration filters. Toggle the filter to block or enable an event to a Destination.
 
 
 ![Schema integration filters](images/asset_d3SRmkWy.gif "Animation showing how to block events with the toggle switch")
