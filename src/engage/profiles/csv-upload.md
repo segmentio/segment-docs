@@ -11,9 +11,9 @@ You can also use the CSV Uploader to set email and SMS [subscription states](#se
 
 ## Upload a CSV file
 
-To upload a CSV file, navigate to **Personas > Profiles** and click **Update Users**.
+To upload a CSV file, navigate to **Personas > Profiles** and click **Upload CSV**.
 
-### 1. Download a CSV template with identifiers
+### 1. Download your CSV template
 
 Click **Download Template** to download a CSV template with identifier columns from your identity resolution configuration. Engage adds subscription columns next to email and SMS identifiers, where you can update subscription states for email addresses and phone numbers.
 
@@ -22,7 +22,14 @@ Click **Download Template** to download a CSV template with identifier columns f
 
 Navigate to **Personas > Settings** and select the **Identity Resolution** tab to view or add identifiers in your Segment workspace.
 
-### 2. Upload a CSV file
+### 2. Fill out your CSV file
+
+Enter values for the identifiers in your CSV file. You can also [set email and phone subscriptions](#set-user-subscriptions) using the `email_subscription_status` and `sms_subscription_status` columns.
+
+> success ""
+> Leave any unknown values blank to avoid bad data.
+
+### 3. Upload your CSV
 
 Upload a CSV file to Twilio Engage in two ways:
 - Drag and drop the CSV file in the dropzone.
@@ -32,7 +39,7 @@ Engage processes CSV rows sequentially. Column values, except for a blank subscr
 
 A blank subscription status in the CSV doesn't overwrite current **email** or **phone** [subscription states](/docs/engage/profiles/user-subscriptions/subscription-states/) in your Segment space.
 
-### 3. Name the custom trait
+### 4. Name your custom trait
 
 Every time you upload a file, you have the option to add a custom trait to user profiles in the CSV. Use custom traits to help you create audiences or send messages to a specific group of users. You can also add an existing custom trait name from your Segment workspace to the list of users in the CSV file.
 
@@ -53,8 +60,9 @@ Use error reports to fix invalid rows and quickly re-upload data.
 From the Upload History page:
 
 1. Select the link in the **Report** column to download an error report CSV. All rows not present in the error report were processed successfully.
-2. Correct data in the invalid rows and remove any extra columns.
-3. Click **Update Users** and re-upload the CSV file.
+2. Correct data in the invalid rows.
+3. Remove any extra columns such as `row_number`, `error_message`, and `error_code`.
+3. Click **Upload CSV** and re-upload the file.
 
 ## Set user subscriptions
 
