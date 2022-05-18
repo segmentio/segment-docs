@@ -14,7 +14,7 @@ You can also use the CSV Uploader to set email and SMS [subscription states](#se
 To upload a CSV file, navigate to **Personas > Profiles** and click **Upload CSV**.
 
 ### 1. Download your CSV template
-
+ 
 Click **Download Template** to download a CSV template with identifier columns from your identity resolution configuration. Engage adds subscription columns next to email and SMS identifiers, where you can update subscription states for email addresses and phone numbers.
 
 > info ""
