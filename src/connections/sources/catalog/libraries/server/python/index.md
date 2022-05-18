@@ -45,6 +45,12 @@ analytics.debug = True
 analytics.on_error = on_error
 ```
 
+If you don't want to send Segments informations while testing, you need to add in your test:
+
+```python
+analytics.send = False
+```
+
 **Using Django?** Check out the [Django docs](/docs/connections/sources/catalog/libraries/server/python/#django).
 
 ## Identify
