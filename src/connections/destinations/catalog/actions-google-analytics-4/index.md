@@ -93,7 +93,8 @@ const sessionNumPromise = new Promise(resolve => {
 Promise.all([sessionIdPromise, sessionNumPromise]).then(function(session_data) {
   console.log("session ID: "+session_data[0]);
   console.log("session Number: "+session_data[1]);
-});```
+});
+```
 
 > info "Session tracking limitations"
 > Session tracking server-side only works if you're also sending data to Google Analytics 4 client-side. This is because the `session_id` must match a value that was previously collected on the client. For events to stitch properly, they must arrive within a 48 hour window of when the client-side events arrived.
