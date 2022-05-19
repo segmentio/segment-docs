@@ -82,7 +82,8 @@ The Google Analytics 4 reports only display active users who engage with your si
 If you choose to integrate with Google Analytics 4 client-side (using Gtag outside of Segment) _and_ also use Segment's Google Analytics 4 destination to send events through the API, you can track sessions server-side. When using Gtag, [Google generates a `session_id` and `session_number` when a session begins](https://support.google.com/analytics/answer/9191807?hl=en){:target='_blank'}. The `session_id` and `session_number` generated on the client can be passed as Event Parameters to stitch events sent through the API with the same session that was collected client-side.
 
 You can double-check your session_id and session_number with the [Google Site Tag function](https://developers.google.com/tag-platform/gtagjs/reference) or by running this script in your JavaScript console and replacing G-xxxxxxxxxx with your GA4 measurement ID:
-```const sessionIdPromise = new Promise(resolve => {
+```
+const sessionIdPromise = new Promise(resolve => {
   gtag('get', 'G-xxxxxxxxxx', 'session_id', resolve)
 });
 const sessionNumPromise = new Promise(resolve => {
