@@ -51,7 +51,7 @@ items:
   connection_modes:
     device:
       web: true
-      mobile: false
+      mobile: true
       server: false
     cloud:
       web: false
