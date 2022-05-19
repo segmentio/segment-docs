@@ -14,7 +14,7 @@ You can also use the CSV Uploader to set email and SMS [subscription states](#se
 To upload a CSV file, navigate to **Personas > Profiles** and click **Upload CSV**.
 
 ### 1. Download your CSV template
- 
+
 Click **Download Template** to download a CSV template with identifier columns from your identity resolution configuration. Engage adds subscription columns next to email and SMS identifiers, where you can update subscription states for email addresses and phone numbers.
 
 > info ""
@@ -29,7 +29,7 @@ Enter values for the identifiers in your CSV file. You can also [set email and p
 > success ""
 > Leave any unknown values blank to avoid bad data.
 
-### 3. Upload your CSV
+### 3. Upload your CSV file
 
 Upload a CSV file to Twilio Engage in two ways:
 - Drag and drop the CSV file in the dropzone.
