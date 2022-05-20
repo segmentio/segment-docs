@@ -3,7 +3,6 @@ title: Skalin Destination
 id: 6256de4a1fe40d47ffb0b707
 ---
 
-## About Skalin
 
 [Skalin](https://skalin.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} calculates your customer health score and alerts you as needed. Your team can be more proactive, save time, and generate more revenue.
 
@@ -15,10 +14,10 @@ This destination is maintained by Skalin. For any issues with the destination, [
 {% include content/connection-modes.md %} 
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-2. Search for "Skalin" in the Destinations Catalog, and select the "Skalin" destination.
-3. Choose which Source should send data to the "Skalin" destination.
-4. Go to the [Skalin plateform Segment integration page](https://app.skalin.io/#/integration/segment){:target="_blank"}, click on "Connect" button to create configuration, find and copy the **API Key** and "Skalin Client ID" in  Segment connection section.
-5. Enter the **API Key** and **ClientID** in the "Skalin" destination settings in Segment.
+2. Search for **Skalin** in the Destinations Catalog, and select the **Skalin** destination.
+3. Choose which Source should send data to the Skalin destination.
+4. Go to the [Segment integration page in the Skalin platform](https://app.skalin.io/#/integration/segment){:target="_blank"}, and click **Connect** to create a configuration. Find and copy the **API Key** and and **Skalin Client ID** in the Segment connection section.
+5. Enter the **API Key** and **ClientID** in the Skalin destination settings in Segment.
 
 ## Supported methods
 
@@ -56,7 +55,7 @@ analytics.identify('userId123', {
 });
 ```
 
-Obtinaly, you can provide your CustomerID:
+Optionally, you can provide your CustomerID:
 ```js
 analytics.identify('userId123', {
   email: 'john.doe@example.com',
