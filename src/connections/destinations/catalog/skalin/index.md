@@ -25,7 +25,7 @@ Skalin supports the following methods, as specified in the [Segment Spec](/docs/
 
 ### Page
 
-Send [Page](/docs/connections/spec/page) calls to *feature*. For example:
+Send [Page](/docs/connections/spec/page) calls to Skalin. For example:
 
 ```js
 analytics.page('myFeature')
@@ -36,7 +36,7 @@ Segment sends Page calls to Skalin as a `feature`.
 
 ### Screen
 
-Send [Screen](/docs/connections/spec/screen) calls to *feature*. For example:
+Send [Screen](/docs/connections/spec/screen) calls to Skalin. For example:
 
 ```obj-c
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -47,7 +47,7 @@ Segment sends Screen calls to Skalin as a `feature`.
 
 ### Identify
 
-Send [Identify](/docs/connections/spec/identify) calls to *identity*. For example:
+Send [Identify](/docs/connections/spec/identify) calls to Skalin. For example:
 
 ```js
 analytics.identify('userId123', {
@@ -65,12 +65,12 @@ analytics.identify('userId123', {
 });
 ```
 
-Segment sends Identify calls to Skalin as an `identify` event.
+Segment sends Identify calls to Skalin as an `identity`.
 
 
 ### Track
 
-Send [Track](/docs/connections/spec/track) calls to *feature*. For example:
+Send [Track](/docs/connections/spec/track) calls to Skalin. For example:
 
 ```js
 analytics.track('myFeature')
