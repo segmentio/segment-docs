@@ -20,24 +20,25 @@ To connect your Azure database to Segment once you've provisioned your dedicated
 
 ### Give Segment access to your SQL Data Warehouse
 
-1. Create a server login for Segment to use. This can be accomplished by running the following SQL command on your SQL Server's `master` database.
+1. Create a server login for Segment to use. This can be accomplished by running the following SQL command on your SQL Server's `master` database:
   ```sql
   CREATE LOGIN Segment WITH PASSWORD = '<strong password>';
   ```
 
 2. Connect to your Azure database.
 
-3. Segment uses Azure Blob Storage to hold data that is being loaded into Azure Synapse Analytics. In order to facilitate this, a `MASTER KEY` is needed in order for credentials that Segment saves to the database to be encrypted. If you are using your Azure Synapse Analytics instance for more than just a Segment integration, it is possible you already have a master key. Running the command more than once will not create a new master key.
+3. Segment uses Azure Blob Storage to hold data that is being loaded into Azure Synapse Analytics. In order to facilitate this, a `MASTER KEY` is needed in order for credentials that Segment saves to the database to be encrypted. If you are using your Azure Synapse Analytics instance for more than just a Segment integration, it is possible you already have a master key. Running the command more than once will not create a new master key. 
+  To create a master key, run the following command: 
   ```sql
   CREATE MASTER KEY;
   ```
 
-4. Create a new database user using the server login that was created previously:
+4. Create a new database user using the server login that you created in a previous step:
   ```sql
   CREATE USER Segment FOR LOGIN Segment;
   ```
 
-5. This new user will need permissions to load data, and manage the resources it needs:
+5. This new user will need database-level permissions to load data and manage the resources it needs:
   ```sql
   GRANT CONTROL TO Segment;
   ```
@@ -55,15 +56,15 @@ To connect your Azure database to Segment once you've provisioned your dedicated
 
 ### Configure an Azure Synapse Analytics Destination in Segment
 
-In order to set up the necessary destination in Segment, you'll need the following pieces of information:
+In order to set up the Azure Synapse Analytics destination in Segment, you'll need the following pieces of information:
 
- - **Server Name:** the name of the SQL Server resource that houses your SQL Data Warehouse.
+ - **Server Name:** the name of the SQL Server resource that houses your SQL Data Warehouse
  - **Database:** the name of the SQL Data Warehouse database resource
  - **Username:** the name of the user you created above
  - **Password:** the password of the user you created above
 
 To add a Azure Synapse Analytics destination in the Segment app: 
-1. Log in to Segment and select the **Connections** tab. Select **Add Destination**.
+1. Log in to Segment and select the **Connections** tab. Click **Add Destination**.
 2. Select the **Storage Destinations** tab and click the **Azure SQL Data Warehouse** destination. 
 3. Select the source(s) you want to sync with the Azure SQL Data Warehouse destination, and click **Next**. 
 4. Provide a name for your destination, and then enter data into each of the fields in the "Enter your Credentials" section. For the **Server Name** field, enter only the part of the server name prior to `.database.windows.net`. 
@@ -86,4 +87,4 @@ Users with a Business Tier plan can enable Selective Sync for their Azure Synaps
 
 ### Segment is not able to connect to Azure Synapse Analytics
 
-Make sure you configure a [server-level firewall rule](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal#create-a-server-level-firewall-rule){:target="_blank"} that allows connections from the [Segment IPs](/docs/connections/storage/warehouses/faq/#which-ips-should-i-allowlist).
+If you encounter this error, create a [server-level firewall rule](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal#create-a-server-level-firewall-rule){:target="_blank"} that allows connections from the [Segment IPs](/docs/connections/storage/warehouses/faq/#which-ips-should-i-allowlist).
