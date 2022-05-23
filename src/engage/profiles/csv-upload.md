@@ -5,9 +5,9 @@ engage: true
 ---
 Use the CSV Uploader to add or update user profiles and set subscription states.
 
-When you upload a CSV file, Twilio Engage adds new users and updates existing user profiles. CSV rows correspond to a user and columns to an identifier trait in your [identity resolution configuration](/docs/personas/identity-resolution/identity-resolution-settings/).
+When you upload a CSV file, Twilio Engage adds new users and updates existing user profiles. Each CSV row corresponds to a user profile and columns to an identifier trait in your [identity resolution configuration](/docs/personas/identity-resolution/identity-resolution-settings/).
 
-You can also use the CSV Uploader to set email and SMS [subscription states](#set-user-subscriptions) to track email addresses and phone numbers that you have permission to market to.
+You can also [set subscription states](#set-user-subscriptions) for each email and SMS that you upload in the CSV. Subscription states help you track which email addresses and phone numbers you have permission to market to.
 
 ## Upload a CSV file
 
@@ -66,7 +66,7 @@ From the Upload History page:
 
 ## Set user subscriptions
 
-Use the CSV Uploader to set subscription states for user email addresses or phone numbers. Subscription states help you track which email addresses and numbers you have permission to market to.
+Use the CSV Uploader to set subscription states for user email addresses and phone numbers.
 
 > info ""
 > Each user profile in a Segment workspace can have multiple email addresses and phone numbers, all with different subscription states.
