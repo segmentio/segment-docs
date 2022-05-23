@@ -9,14 +9,14 @@ Azure's [Azure Synapse Analytics](https://azure.microsoft.com/en-us/services/syn
 
 ## Getting Started
 
-Complete the following prerequisites in Microsoft Azure before linking your Azure Synapse Analytics databases to Segment:
+Complete the following prerequisites in Microsoft Azure before connecting your Azure Synapse Analytics databases to Segment:
 
-1. Create an [Azure subscription](https://azure.microsoft.com/en-us/free/){:target="_blank"}.
+1. Sign up for an [Azure subscription](https://azure.microsoft.com/en-us/free/){:target="_blank"}.
 2. Provision a [Dedicated SQL Pool](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal){:target="_blank"}.
 
 ## Connect your Azure database to Segment
 
-To connect your Azure database to Segment once you've provisioned your dedicated SQL pool, [give Segment access to your SQL Data Warehouse](#give-segment-access-to-your-sql-data-warehouse) and [configure an Azure Synapse Analytics destination](#configure-an-azure-synapse-analytics-destination-in-segment).
+To connect your Azure database to Segment, [give Segment access to your SQL Data Warehouse](#give-segment-access-to-your-sql-data-warehouse) and [configure an Azure Synapse Analytics destination](#configure-an-azure-synapse-analytics-destination-in-segment).
 
 ### Give Segment access to your SQL Data Warehouse
 
@@ -27,18 +27,18 @@ To connect your Azure database to Segment once you've provisioned your dedicated
 
 2. Connect to your Azure database.
 
-3. Segment uses Azure Blob Storage to hold data that is being loaded into Azure Synapse Analytics. In order to facilitate this, a `MASTER KEY` is needed in order for credentials that Segment saves to the database to be encrypted. If you are using your Azure Synapse Analytics instance for more than just a Segment integration, it is possible you already have a master key. Running the command more than once will not create a new master key. 
-  To create a master key, run the following command: 
+3. Segment uses Azure Blob Storage to hold data that is being loaded into Azure Synapse Analytics. In order to facilitate this, a `MASTER KEY` is needed in order for credentials that Segment saves to the database to be encrypted. To create a master key, run the following command: 
   ```sql
   CREATE MASTER KEY;
   ```
+  If you are using your Azure Synapse Analytics instance for more than just a Segment integration, it is possible you already have a master key. Running the command more than once will not create a new master key.
 
 4. Create a new database user using the server login that you created in a previous step:
   ```sql
   CREATE USER Segment FOR LOGIN Segment;
   ```
 
-5. This new user will need database-level permissions to load data and manage the resources it needs:
+5. Run the following command to give your new user the permissions to load data and manage the resources in your database:
   ```sql
   GRANT CONTROL TO Segment;
   ```
