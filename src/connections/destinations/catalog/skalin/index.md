@@ -4,7 +4,7 @@ id: 6256de4a1fe40d47ffb0b707
 ---
 
 
-[Skalin](https://skalin.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} calculates your customer health score and alerts you as needed. Allowing you to be more proactive, save time, and generate more revenue.
+[Skalin](https://skalin.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} calculates your customer health score and alerts you as needed. This allows you to be more proactive, save time, and generate more revenue.
 
 This destination is maintained by Skalin. For any issues with the destination, [contact the Skalin Support team](mailto:contact@skalin.io).
 
