@@ -31,7 +31,9 @@ Analytics.js sources will upgrade to Analytics.js 2.0 on the date below, accordi
 |--------------| -------------|
 | Free         | June 15, 2021|
 | Team         | July 6, 2021 |
-| Business     | June 2022    |
+| Business*    | June 2022    |
+
+*If you're on a business plan, please reach out to [friends@segment.com](mailto:friends@segment.com) to see if your account is part of the upgrade in June 2022.
 
 > info ""
 > The plans and dates listed above are subject to change.
@@ -50,7 +52,7 @@ If the source you intend to upgrade uses the in-domain instrumentation as well a
 
 ### Using a mix of Analytics.js Classic and 2.0 sources
 
-If you're using a mix of Analytics.js Classic and 2.0 sources, the classic source won't be able to use the anonymous ID set by Analytics.js 2.0. In order to fix this, update all sources to 2.0. 
+If you're using a mix of Analytics.js Classic and 2.0 sources, the classic source won't be able to use the anonymous ID set by Analytics.js 2.0. In order to fix this, update all sources to 2.0.
 
 ### Relying on Analytics.js Classic's `ajs_anonymous_id` cookie format  
 
