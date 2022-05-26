@@ -131,4 +131,4 @@ Google recommends use of their Firebase SDKs to send mobile data to Google Analy
 
 ### Reserved Names
 
-Google reserves certain event names, parameters, and user properties. Google silently drops any events that include these [reserved names](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#reserved_names){:target="_blank"}. If you notice data not appearing in Google, please confirm you are not using a reserved name.
+Google reserves certain event names, parameters, and user properties. Google silently drops any events that include [these reserved names](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#reserved_names){:target="_blank"}. If you notice that your data isn't appearing in Google, please check that you're not using a reserved name.
