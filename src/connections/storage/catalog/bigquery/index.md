@@ -51,16 +51,16 @@ Refer to [Google Cloud's documentation about service accounts](https://cloud.goo
 1. In Segment, go to **Workspace** > **Add Destination** > Search for "BigQuery"
 2. Click **BigQuery**.
 3. Select the source(s) you'd like to sync with the BigQuery destination, and click **Next**.
-3. Add a name for the destination to the **Name your destination** field.
+3. Enter a name for your destination in the **Name your destination** field.
 4. Enter your project ID in the **Project ID** field.
-  **Optional:** Enter a [region code](https://cloud.google.com/compute/docs/regions-zones/){:target="_blank"} in the **Location** field (the default will be "US".)
+  <br/>**Optional:** Enter a [region code](https://cloud.google.com/compute/docs/regions-zones/){:target="_blank"} in the **Location** field (the default will be "US".)
 5. Copy the contents of the JSON key into the **Credentials** field.
 6. Click **Connect**.
-7. If Segment can connect with the provided **Project ID** and **Credentials**, a warehouse will be created and your first sync should begin shortly. 
+7. If Segment can connect with the provided project ID and credentials, a warehouse will be created and your first sync should begin shortly. 
 
 ## Schema
 
-BigQuery datasets are broken down into **tables** and **views**. **Tables**
+BigQuery datasets are broken down into [**tables**](#partitioned-tables) and [**views**](#views). **Tables**
 contain duplicate data, **views** do _not_.
 
 ### Partitioned Tables
@@ -70,14 +70,14 @@ tables](https://cloud.google.com/bigquery/docs/partitioned-tables){:target="_bla
 tables allow you to query a subset of data, thus increasing query performance
 and decreasing costs.
 
-To query a full table, you can query like this:
+To search a full table, use the following query:
 
 ```sql
 select *
 from <project-id>.<source-name>.<collection-name>
 ```
 
-To query a specific partitioned table, you can query like this:
+To search a specific partitioned table, use the following query:
 
 
 ```sql
@@ -116,7 +116,7 @@ Account.
 Migrate your warehouse from a shared Service Account to a dedicated Service Account 
 by creating a new Service Account using the [Create a Service Account for Segment](#create-a-service-account-for-segment) section.
 Then, head to your warehouse's connection settings and update with the
-**Credentials** you created. Once you've verified that data is loading properly 
+credentials you created. Once you've verified that data is loading properly 
 to your warehouse, [remove access to the shared Service Account](#remove-access-to-the-shared-service-account).
 
 ### Remove access to the shared Service Account
@@ -131,7 +131,7 @@ You can remove access to the shared Service Account
 6. On the project's page, select the **Permissions** tab, and then click **view by PRINCIPALS**. 
 7. Select the checkbox for the `connector@segment-1119.iam.gserviceaccount.com` account and then click **Remove** to remove access to this shared Service Account.
 
-For more information about managing IAM access, see Google's documentation, [Manage access to projects, folders, and organization](https://cloud.google.com/iam/docs/granting-changing-revoking-access){:target="_blank"}.
+For more information about managing IAM access, refer to Google's documentation, [Manage access to projects, folders, and organization](https://cloud.google.com/iam/docs/granting-changing-revoking-access){:target="_blank"}.
 
 
 ## Best Practices
@@ -158,7 +158,7 @@ destination table.
 If you typically start exploratory data analysis with `SELECT *` consider
 specifying the fields to reduce costs.
 
-See the section on [partitioned tables](#partitioned-tables) for details on
+Refer to the section on [partitioned tables](#partitioned-tables) for details on
 querying sub-sets of tables.
 
 
@@ -224,4 +224,4 @@ a need for streaming data into BigQuery, [contact Segment support](https://segme
 
 ### I'm seeing duplicates in my tables.
 
-This behavior is expected. Segment only de-duplicates data in your views. See the [schema section](#schema) for more details.
+This behavior is expected. Segment only de-duplicates data in your views. Refer to the [schema section](#schema) for more details.
