@@ -128,3 +128,7 @@ The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/
 ### Mobile Data
 
 Google recommends use of their Firebase SDKs to send mobile data to Google Analytics 4. To assist in your implementation, Segment has a [Firebase destination](/docs/connections/destinations/catalog/firebase) available for mobile analytics. For more information on linking Google Analytics 4 properties to Firebase, see [Google Analytics 4 Firebase integration](https://support.google.com/analytics/answer/9289234?hl=en){:target="_blank"}. Segment's Google Analytics 4 destination is currently only compatible with web streams.
+
+### Reserved Names
+
+Google reserves certain event names, parameters, and user properties. Google silently drops any events that include these [reserved names](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#reserved_names){:target="_blank"}. If you notice data not appearing in Google, please confirm you are not using a reserved name.
