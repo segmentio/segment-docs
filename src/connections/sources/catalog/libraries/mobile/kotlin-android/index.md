@@ -463,5 +463,6 @@ Segment currently supports these destinations for Analytics Kotlin and is active
 No, only the plugins listed above are supported in device-mode for Analytics-Kotlin.
 ### Will I still see device-mode integrations listed as `false` in the integrations object?
 When you successfully package a plugin in device-mode, you will no longer see the integration listed as `false` in the integrations object for a Segment event. This logic is now packaged in the event metadata, and is not surfaced in the Segment debugger.
+
 ## Changelog
 [View the Analytics-Kotlin changelog on GitHub](https://github.com/segmentio/analytics-kotlin/releases).
