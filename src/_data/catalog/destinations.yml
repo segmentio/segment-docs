@@ -35124,11 +35124,7 @@ items:
   display_name: Skalin
   name: Skalin
   slug: skalin
-<<<<<<< HEAD
-  hidden: true
-=======
   hidden: false
->>>>>>> 5dbaf28c (Update Catalog to include Skalin)
   endpoints:
   - us
   regions:
