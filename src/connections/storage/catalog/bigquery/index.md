@@ -7,77 +7,75 @@ redirect_from:
 
 Segment's [BigQuery](https://cloud.google.com/bigquery/){:target="_blank"} connector makes it easy
 to load web, mobile, and third-party source data like Salesforce, Zendesk, and
-Google AdWords into a BigQuery data warehouse.  This guide will explain how to
-set up BigQuery and start loading data into it.
+Google AdWords into a BigQuery data warehouse.  When you integrate BigQuery with Segment you get a fully managed data pipeline
+loaded into a powerful and cost-effective data warehouse.
 
-The Segment warehouse connector runs a periodic ETL (Extract - Transform - Load)
-process to pull raw events and objects and load them into your BigQuery cluster.
-
-Using BigQuery with Segment means you'll get a fully managed data pipeline
-loaded into one of the most powerful and cost-effective data warehouses today.
+The Segment warehouse connector runs a periodic ETL (Extract - Transform - Load) process to pull raw events and objects from your sources and load them into your BigQuery cluster. 
+For more information about the ETL process, including how it works and common ETL use cases, refer to [Google Cloud's ETL documentation](https://cloud.google.com/learn/what-is-etl){:target="_blank"}.
 
 ## Getting Started
 
 To store your Segment data in BigQuery, complete the following steps:
-1. [Enable BigQuery for your Google Cloud project](#create-a-project-and-enable-bigquery)
-2. [Create a GCP service account for Segment to assume](#create-a-service-account-for-segment)
-3. [Create a warehouse in the Segment app](#create-the-warehouse-in-segment)
+1. [Create a project and enable BigQuery](#create-a-project-and-enable-bigquery)
+2. [Create a service account for Segment](#create-a-service-account-for-segment)
+3. [Create the warehouse in Segment](#create-the-warehouse-in-segment)
 
 ### Create a Project and Enable BigQuery
 
 1. Navigate to the [Google Developers Console](https://console.developers.google.com/){:target="_blank"}.
-2. Configure [Cloud Platform](https://console.cloud.google.com/){:target="_blank"}:
+2. Configure the [Google Cloud Platform](https://console.cloud.google.com/){:target="_blank"}:
   - If you don't have a project already, [create one](https://support.google.com/cloud/answer/6251787?hl=en&ref_topic=6158848){:target="_blank"}.
-  - If you have an existing project, you will need to [enable the BigQuery API](https://cloud.google.com/bigquery/quickstart-web-ui){:target="_blank"}.
-    Once you've done so, you should see BigQuery in the "Resources" section of Cloud Platform.
-  - **Note:** make sure [billing is enabled](https://support.google.com/cloud/answer/6293499#enable-billing){:target="_blank"} on your project, or Segment will not be able to write into the cluster.
+  - If you have an existing project, [enable the BigQuery API](https://cloud.google.com/bigquery/quickstart-web-ui){:target="_blank"}. Once you've done so, you should see BigQuery in the "Resources" section of Cloud Platform.
 3. Copy the project ID. You will need it when you create a warehouse source in the Segment app.
 
-### Create a Service Account for Segment
+> note "Enable billing"
+> When creating your project, you must [enable billing](https://support.google.com/cloud/answer/6293499#enable-billing){:target="_blank"} so Segment can write into the cluster.
+
+### Create a service account for Segment
 
 1. From the Navigation panel on the left, select **IAM & admin** > **Service accounts**.
-2. Click **Create Service Account** along the top.
-3. Enter a name for the service account (for example: "segment-warehouses") and click **Create**.
-4. When assigning permissions, make sure to grant the following roles:
+2. Click **Create Service Account**.
+3. Enter a name for the service account (for example `segment-warehouses`) and click **Create**.
+4. When assigning permissions, make sure to grant the service account the following roles:
     - `BigQuery Data Owner`
     - `BigQuery Job User`
 5. [Create a JSON key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys){:target="_blank"}.
 The downloaded file will be used to create your warehouse in the Segment app.
 
-Refer to [Google Cloud's documentation about service accounts](https://cloud.google.com/iam/docs/creating-managing-service-accounts){:target="_blank"} for more information.
+If you have trouble creating a new service account, refer to [Google Cloud's documentation about service accounts](https://cloud.google.com/iam/docs/creating-managing-service-accounts){:target="_blank"} for more information.
 
 ### Create the Warehouse in Segment
 
-1. In Segment, go to **Workspace** > **Add Destination** > Search for "BigQuery"
+1. From the homepage of the Segment app, select **Connections**, click **Add Destination** and search for "BigQuery".
 2. Click **BigQuery**.
 3. Select the source(s) you'd like to sync with the BigQuery destination, and click **Next**.
 3. Enter a name for your destination in the **Name your destination** field.
-4. Enter your project ID in the **Project ID** field.
-  <br/>**Optional:** Enter a [region code](https://cloud.google.com/compute/docs/regions-zones/){:target="_blank"} in the **Location** field (the default will be "US".)
-5. Copy the contents of the JSON key into the **Credentials** field.
+4. Enter your Project ID in the **Project ID** field.
+  <br/>**Optional:** Enter a [region code](https://cloud.google.com/compute/docs/regions-zones/){:target="_blank"} in the **Location** field (the default is "US".)
+5. Copy the contents of the JSON key that you created for the Segment service account into the **Credentials** field.
 6. Click **Connect**.
-7. If Segment can connect with the provided project ID and credentials, a warehouse will be created and your first sync should begin shortly. 
+7. If Segment is able to connect to your project, a warehouse will be created and your first sync will begin shortly.
 
 ## Schema
 
 BigQuery datasets are broken down into [**tables**](#partitioned-tables) and [**views**](#views). **Tables**
-contain duplicate data, **views** do _not_.
+contain duplicate data, **views** do _not_ contain duplicate data.
 
 ### Partitioned Tables
 
-The Segment connector takes advantage of [partitioned
+The Segment connector uses [partitioned
 tables](https://cloud.google.com/bigquery/docs/partitioned-tables){:target="_blank"}. Partitioned
 tables allow you to query a subset of data, thus increasing query performance
 and decreasing costs.
 
-To search a full table, use the following query:
+To query a full table, use the following command:
 
 ```sql
 select *
 from <project-id>.<source-name>.<collection-name>
 ```
 
-To search a specific partitioned table, use the following query:
+To query a specific partitioned table, use the following command:
 
 
 ```sql
@@ -91,9 +89,9 @@ A [view](https://cloud.google.com/bigquery/querying-data#views){:target="_blank"
 table defined by a SQL query. Segment uses views in the de-duplication process to
 ensure that events that you are querying are unique events and contain the latest objects
 from third-party data. All Segment views are set up to show information from the last
-60 days. Whenever possible, query from these views.
+60 days. [Segment recommends querying from these views when possible](#use-views) to avoid duplicate events and historical objects.
 
-Views are appended with `_view` , which you can query like this:
+Views are appended with `_view` , which you can query using this format:
 
 ```sql
 select *
@@ -142,20 +140,18 @@ BigQuery charges based on the amount of data scanned by your queries. Views are
 a derived view over your tables that Segment uses for de-duplication of events.
 Therefore, Segment recommends you query a specific view whenever possible to avoid
 duplicate events and historical objects. It's important to note that BigQuery
-views are not cached. 
+views are not cached.
+  
+> note "Understanding BigQuery views"
+> BigQuery's views are logical views, not materialized views, which means that the query that defines the view is re-executed every time the view is queried. Queries are billed according to the total amount of data in all table fields referenced directly or indirectly by the top-level query.
 
-> BigQuery's views are logical views, not materialized views, which means that
-> the query that defines the view is re-executed every time the view is queried.
-> Queries are billed according to the total amount of data in all table fields
-> referenced directly or indirectly by the top-level query.
-
-To save more money, you can query the view and set a [destination
+To save money, you can query the view and set a [destination
 table](https://cloud.google.com/bigquery/docs/tables){:target="_blank"}, and then query the
 destination table.
 
 ### Query structure
 
-If you typically start exploratory data analysis with `SELECT *` consider
+If you typically start exploratory data analysis with `SELECT *`, consider
 specifying the fields to reduce costs.
 
 Refer to the section on [partitioned tables](#partitioned-tables) for details on
@@ -166,11 +162,8 @@ querying sub-sets of tables.
 
 ### I need more than 60 days of data in my views. Can I change the view definition?
 
-Absolutely! You will just need to modify one of the references to 60 in the view
-definition to the number of days of your choosing.
-
-Segment chose 60 days as it suits the needs of most customers. However,
-you're welcome to update the definition of the view as long as the name stays
+Yes! You just need to modify one of the references to `60` in the view
+definition to the number of days of your choosing. You can update the definition of the view as long as the name stays
 the same.
 
 Here is the base query Segment uses when first setting up your views. Included in the base query are the placeholders (`%s.%s.%s`) that you would want to include the project,
@@ -191,21 +184,21 @@ WHERE ROW_NUMBER = 1
 
 BigQuery offers both a scalable, pay-as-you-go pricing plan based on the amount
 of data scanned, or a flat-rate monthly cost. You can learn more about BigQuery
-pricing [here](https://cloud.google.com/bigquery/pricing){:target="_blank"}.
+pricing [on Google Cloud's BigQuery pricing page](https://cloud.google.com/bigquery/pricing){:target="_blank"}.
 
 BigQuery allows you to set up [Cost Controls and
 Alerts](https://cloud.google.com/bigquery/cost-controls){:target="_blank"} to help control and
-monitor costs. If you want to learn more about what BigQuery will cost you,
-they've provided [this
+monitor costs. If you want to learn more about the costs associated with BigQuery,
+Google Cloud has provided [a
 calculator](https://cloud.google.com/products/calculator/){:target="_blank"} to estimate your
 costs.
 
 ### How do I query my data in BigQuery?
 
-You can connect to BigQuery using a BI tool like Mode or Looker, or query
+You can connect a BI tool like Mode or Looker to BigQuery, or query
 directly from the BigQuery console.
 
-BigQuery now supports standard SQL, which you can enable using their query UI. 
+BigQuery now supports standard SQL, which you can enable [using Google Cloud's query UI](https://cloud.google.com/bigquery/docs/reference/standard-sql/introduction#changing_from_the_default_dialect){:target="_blank"}. 
 This does not work with views, or with a query that uses table range 
 functions.
 
@@ -218,10 +211,8 @@ a need for streaming data into BigQuery, [contact Segment support](https://segme
 
 {% include content/warehouse-sync-sched.md %}
 
-![sync schedule image](images/syncsched.png)
-
 ## Troubleshooting
 
-### I'm seeing duplicates in my tables.
+### I see duplicates in my tables.
 
 This behavior is expected. Segment only de-duplicates data in your views. Refer to the [schema section](#schema) for more details.
