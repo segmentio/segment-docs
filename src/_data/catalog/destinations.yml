@@ -35124,7 +35124,7 @@ items:
   display_name: Skalin
   name: Skalin
   slug: skalin
-  hidden: true
+  hidden: false
   endpoints:
   - us
   regions:

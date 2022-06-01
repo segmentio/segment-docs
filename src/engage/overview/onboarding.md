@@ -168,7 +168,7 @@ To add the ability to send SMS campaigns in Engage, you’ll now create a Twilio
 ### Create a Twilio account and generate an API key
 
 > info "Copying Twilio Credentials"
-> This step generates an Account SID and API key secret that you’ll later add to Segment. Make sure you’re ready to copy and save both proceeding.
+> This step generates an Account SID, API key SID, and API key secret that you’ll later add to Segment. Make sure you’re ready to copy and save both proceeding.
 
 Start by creating your Twilio account and getting an API key for Engage:
 
@@ -178,19 +178,24 @@ Start by creating your Twilio account and getting an API key for Engage:
 4. Enter a name for the API key in the **Friendly name** field.
 5. Set the region to **United States (US1) - Default** and key type to **Standard**.
 6. Click **Create API Key**.
-7. Copy the **SID** and **Secret** field contents.
+7. Copy both the **SID** and **Secret** field contents.
+
 
     ![Copying the Twilio API key](images/apikeys.png "Copying the Twilio API key")
 
-8. Switch to the browser tab or window with your Personas workspace.
-9. Navigate to **Personas > Settings > Messaging Service**.  Under **Send SMS messages with Twilio**, click the **Get Started** button.  The **Set up your SMS service** page appears.
-10. Under **Enter your Twilio API Key information** (shown below), paste the SID and API Key Secret you copied above into their respective fields.
-11. Click **Verify**, then click **Save Twilio Account.**
+8. Return to the API keys & tokens page. In the **Live credentials** section, copy the Account SID credentials.
 
-    ![Entering Twilio API key into Engage](images/engageapifields.png "Entering Twilio API key into Engage")
+    ![Copying the Twilio Account SID key](images/twilioaccountsid.png "Copying the Twilio API key")
+
+9. Switch to the browser tab or window with your Personas workspace.
+10. Navigate to **Personas > Settings > Messaging Service**.  Under **Send SMS messages with Twilio**, click the **Get Started** button.  The **Set up your SMS service** page appears.
+11. Under **Enter your Twilio API Key information** (shown below), paste the Account SID, API Key SID, and API Key Secret you copied above into their respective fields.
+12. Click **Verify**, then click **Save Twilio Account.**
+
+<!--    ![Entering Twilio API key into Engage](images/engageapifields.png "Entering Twilio API key into Engage") -->
 
 > info ""
-> If you’re unable to verify your SID or API Key secret, you may have copied an extra space at the end of one or the other. Verify that you’ve not added any extra characters or spaces, then try to verify again.
+> If you’re unable to verify your Account SID, SID, or API Key secret, you may have copied an extra space at the end of one or the other. Verify that you’ve not added any extra characters or spaces, then try to verify again.
 
 ### Set up a Twilio Messaging Service
 
