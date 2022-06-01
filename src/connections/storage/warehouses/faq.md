@@ -64,8 +64,7 @@ You can allowlist Segment's custom IP `52.25.130.38/32` while authorizing Segmen
 
 If you're in the EU region, use CIDR `3.251.148.96/29`.
 
-> info ""
-> EU workspace regions are currently in beta. If you would like to learn more about the beta, please contact your account manager.
+> **Note**: EU workspace regions are currently in beta. If you would like to learn more about the beta, please contact your account manager.
 
 BigQuery does not require allowlisting an IP address. To learn how to set up BigQuery, check out Segment's BigQuery [set up guide](/docs/connections/storage/catalog/bigquery/#getting-started)
 
@@ -108,8 +107,7 @@ and the relationships that exist between elements. Segment's schemas use the fol
 `segment_engineering.tracks.user_id`, where Source refers to the source or project name (segment_engineering), collection refers to the event (tracks),
  and the property refers to the data being collected (user_id). 
 
-> note " "
-> All schema data is always represented in snake case.
+> **Note**: All schema data is always represented in snake case.
 
 For more information about Warehouse Schemas, see the [Warehouse Schemas](/docs/connections/storage/warehouses/schema) page.
 
@@ -125,10 +123,22 @@ Segment stores the name of your schema in the **SQL Settings** page. Changing th
 
 To change the name of your schema without disruptions: 
 
-1. Open the Segment app, select your warehouse from the Sources tab, and select **Settings.**
-2. Under the "Enable Source" section, disable your warehouse and click **Save Changes.**   
-3. Select the "SQL Settings" tab. 
+1. Open the Segment app
+1. Select the "Connections" tab on the left
+1. Select the "Sources" tab
+1. Select the source from the list of "My Sources" that is sending data to the schema you want to change
+1. Select the "Settings" tab from the top (just below your source name)
+1. On the source's settings page, select "Basic."
+2. Under the "Enable Source" section, disable your source and click **Save Changes.**   
+> **Note**: This will pause all data from the selected source to all destinations.
+8. Select the "SQL Settings" tab. 
 4. Update the "Schema Name" field with the new name for your schema and click **Save Changes.**
-5. Rename the schema in your Data Warehouse to match the new name in the Segment app. 
-6. Open the Segment app, select your warehouse from the Sources tab, and select **Settings.** On the source's settings page, select "Basic."
+> **Note**: This will set the schema name for all existing and future SQL destinations. It is important that you understand how many warehouse destination(s) exist for this source, and that you understand how to rename the schema in each database.
+10. Rename the schema(s) in your warehouse destination(s) to match the newly modified schema name from the previous step. 
+1. Open the Segment app
+1. Select the "Connections" tab on the left
+1. Select the "Sources" tab
+1. Select the source from the list of My Sources that is sending data to the schema that was changed
+1. Select the "Settings" tab from the top (just below your source name)
+1. On the source's settings page, select "Basic."
 7. Under the "Enable Source" section, enable your warehouse and click **Save Changes.**
