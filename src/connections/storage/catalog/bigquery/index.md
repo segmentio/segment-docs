@@ -36,7 +36,7 @@ To store your Segment data in BigQuery, complete the following steps:
 1. From the Navigation panel on the left, select **IAM & admin** > **Service accounts**.
 2. Click **Create Service Account**.
 3. Enter a name for the service account (for example `segment-warehouses`) and click **Create**.
-4. When assigning permissions, make sure to grant the service account the following roles:
+4. Assign the service account the following roles:
     - `BigQuery Data Owner`
     - `BigQuery Job User`
 5. [Create a JSON key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys){:target="_blank"}.
