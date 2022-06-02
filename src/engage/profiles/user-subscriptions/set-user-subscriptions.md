@@ -53,6 +53,17 @@ Use Segment’s APIs to manage user subscriptions programmatically on an ongoing
 
 Managing subscriptions with Segment's APIs allows you to handle continuous updates of subscription statuses, like when users subscribe to your marketing campaigns on a website form or modify their subscription from within a notification center.
 
+### Receive subscription confirmation with the Public API
+
+To receive an API response that confirms Segment has both received and processed subscription status requests, use Segment's [Public API](https://api.segmentapis.com/docs/spaces/#replace-messaging-subscriptions-in-spaces){:target="_blank"}.
+
+For example, if a user updates their subscription state in your notification center:
+
+1. Use the [Public API](https://api.segmentapis.com/docs/spaces/#replace-messaging-subscriptions-in-spaces){:target="_blank"} synchronous call to update their subscription state.
+2. The API returns an immediate success or failure response.
+3. For successful requests, Segment instantly updates subscription states in your workspace. `Subscribed` email and phone numbers will receive messages from Engage campaigns that they are a part of.
+4. You can then display successful updates or error messages with users in your notification center.
+
 ## The `track` call versus using the Public API
 
 When you use the `track` call, Segment replies with a standard HTTP `200 OK` status response code if it successfully received the request. Because the `track` call updates user traits asynchronously, though, the `200 OK` code indicates that Segment has received, but not yet processed, the request. As a result, use the `track` call for non-critical subscription updates, like form signups on your website or adding a subscription from within the user's notification center.
