@@ -500,5 +500,10 @@ Segment supports these destinations for Analytics React Native 2.0 in device-mod
 - [Facebook App Events](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-facebook-app-events){:target="_blank"}
 - [Firebase](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-firebase){:target="_blank"}
 
+## FAQs
+### Can I use the catalog of device-mode destinations from Segments 1.X.X React-Native release?
+No, only the plugins listed above are supported in device-mode for Analytics React Native 2.0.
+### Will I still see device-mode integrations listed as `false` in the integrations object?
+When you successfully package a plugin in device-mode, you will no longer see the integration listed as `false` in the integrations object for a Segment event. This logic is now packaged in the event metadata, and is not surfaced in the Segment debugger.
 ## Changelog
 [View the Analytics React Native 2.0 changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.
