@@ -1,7 +1,7 @@
 ---
 title: Woopra Destination
+id: 54521fdc25e721e32a72ef05
 ---
-
 Our Woopra destination code is all open-source on GitHub if you want to check it out: [Javascript](https://github.com/segment-integrations/analytics.js-integration-woopra), [Server](https://github.com/segmentio/integration-woopra).
 
 ## Getting Started
@@ -50,7 +50,7 @@ When you call `track` on analytics.js, we call Woopra's `woopraTracker.pushEvent
 
 When you call `track` from the server-side languages, we call Woopra's HTTP REST API with the event properties that you pass in.
 
-The default Woopra `online` [timeout](http://www.woopra.com/docs-old/tracking/http-tracking-api/) is set to 60 seconds, but is adjustable with `context.Woopra.timeout`.
+The default Woopra `online` [timeout](https://docs.woopra.com/reference/intro-http-tracking) is set to 60 seconds, but is adjustable with `context.Woopra.timeout`.
 
 ## Features
 

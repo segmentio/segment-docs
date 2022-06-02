@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Movable Ink Destination
+id: 5a611c86c0ff800001f6c431
 ---
-
 [Movable Ink](https://movableink.com/) lets email marketers deliver jaw-dropping customer experiences. Our cloud-based software activates any data to generate intelligent content at the moment of open.
 
 This destination is maintained by [Movable Ink](https://movableink.com/). If you have any issues, contact Movable Ink at support@movableink.com.

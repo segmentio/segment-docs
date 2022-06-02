@@ -2,30 +2,38 @@
 title: Personas and GDPR
 ---
 
+All [Segment GDPR features](/docs/privacy/complying-with-the-gdpr/) apply to Personas.
+
+Segment never shares or sells user data. Personas inherits Segment's holistic approach to security and privacy, using 256-bit AES standard encryption to safeguard data stores both at rest and in transit.
+
+## User Rights
+
+End-user privacy and the GDPR principles informed the design of Personas, a product powered by first-party data. Personas integrates Segment's existing end-user privacy features with several user rights:
 
 
+- Right to Erasure
+- Right to Object
+- Right to Rectification
+- Rights to Access and Portability
 
-## Is Personas compatible with Segment's GDPR features?
-Yes! Personas is compatible with Segment's GDPR features. Personas was designed with the GDPR principles and end-user privacy in mind, and is powered by first-party data.
-
-As a company, we take a holistic approach to security and privacy, and never share or sell user data. These principles also extend to the Personas product. Personas' data stores are encrypted in transit and at rest with 256-bit AES standard encryption.
-
-Here's how Segment's existing end-user privacy features work with Personas:
+Below, learn how each of these rights protects the integrity of users and their data.
 
 ### Right to Erasure
 
-Segment enables you to manage user deletion across Segment (including Personas) and supported Destinations. Issuing a user deletion request will delete that user's data from all of Segment's internal archives and environments within 30 days. The user will also be deleted from any audiences created by Personas.
+Using Segment's platform, you can [manage user deletion](/docs/privacy/user-deletion-and-suppression/) across all Segment products and supported Destinations. User deletion requests remove user data from all internal Segment archives and environments, including Personas audiences, within 30 days.
 
 ### Right to Object
 
-With Segment, you can block data collection for specific users with one-click suppression. Suppressed users will no longer have profiles built around them. This also means they will not be added to any future audiences.
+With [one-click suppression](/docs/privacy/user-deletion-and-suppression/#supressed-users), you can block data collection for specific users. Segment discontinues profile building around suppressed users and prevents them from joining future Personas audiences.
 
 ### Right to Rectification
 
-We automatically update user profiles and traits in Segment and in downstream tools whenever new information is received. For auditing purposes, you can use the Profile API to confirm that the update has been processed.
+When Segment receives new information, the platform updates user profiles and traits in both Segment and its downstream tools. Use the [Profile API](/docs/personas/profile-api/) to confirm that an update has been processed.
 
 ### Rights to Access and Portability
 
-Identity Resolution enables you to aggregate all the information you've collected about a customer, and the Profile API can be used to provide the end user with their data. As an alternative, you can enable a raw data integration or warehouse to organize data about a given user to easily share it in a structured format if requested.
+[Identity Resolution](/docs/personas/identity-resolution/) connects information you've gathered about a customer into a single profile. Using the Profile API, you can provide end users with this data. You can also enable raw data integrations and warehouses to share a user's data in a structured format.
 
-You can learn more about our end-user privacy features and how we help our customers simplify GDPR compliance [here](https://segment.com/product/gdpr).
+## Next Steps
+
+Visit the Segment site to learn [how Segment products simplify GDPR compliance](https://segment.com/product/gdpr), and reference Segment's [complying with the GDPR](/docs/privacy/complying-with-the-gdpr/) documentation to incorporate [GDPR best practices](/docs/privacy/complying-with-the-gdpr/#things-you-can-do-to-address-gdpr) into your workflow.

@@ -53,6 +53,9 @@ See [Account-level Audiences](/docs/personas/audiences/account-audiences) for mo
 
 ## Connecting your Audience to a Destination
 
+> warning "Audience Keys"
+> Avoid using the same Audience key twice, even if you've deleted the original Audience.
+
 Once you have previewed your audience, you can choose to connect a destination, or simply keep the audience in Segment and download a csv. If you already have destinations set up in Segment, you can import the configuration from one of your existing sources to Personas. Note that you can only connect one destination configuration per destination type.
 
 ![](/docs/personas/images/audience_select_destination_card.png)
@@ -94,6 +97,22 @@ To create a new audience:
 
 > warning ""
 > [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/), [Marketo Lists](/docs/connections/destinations/catalog/marketo-static-lists/), and [Adwords Remarking Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists) have rate limits on how quickly we can update an audience. We sync at the highest frequency allowed by the tool, which is between 1 hour and 6 hours.
+
+### Editing Realtime Audiences and Traits
+
+Personas supports the editing of realtime Audiences and Traits, which allows you to make nuanced changes to existing Traits and Audiences in situations where cloning or building from scratch may not suit your use case.
+
+To edit a realtime Trait or Audience, follow these steps:
+
+1. In your Personas Space, select the **Computed Traits** or **Audiences** tab.
+2. Select the realtime Audience or Trait you want to edit.
+3. Select the **Builder** tab and make your edits.
+4. Select **Save Audience** to confirm your edits.
+
+Personas then processes your realtime Audience or Trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Personas has finished incorporating your changes, you'll be able to access your updated Audience or Trait.
+
+> warning ""
+> If your audience includes historical data (Historical Backfill is enabled), editing an audience creates a new backfill task. The backfill task, and therefore the edit task, take longer to process if the audience is connected to a destination with rate limits. Rate-limited destinations dictate how fast Personas can backfill. View a list of [rate-limited destinations](/docs/personas/using-personas-data/#rate-limits-on-personas-event-destinations).
 
 ## Accessing your Audiences using the Profiles API
 

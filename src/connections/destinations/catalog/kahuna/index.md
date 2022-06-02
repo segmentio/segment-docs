@@ -1,7 +1,7 @@
 ---
 title: Kahuna Destination
+id: 54751740db31d978f14a5bce
 ---
-
 ## Getting Started
 
 Segment makes it easy to send your data to Kahuna. When you tracking your data using Segment's [open-source libraries](/docs/connections/sources/catalog/), Segment translates and routes your data to Kahuna in a format it can process.

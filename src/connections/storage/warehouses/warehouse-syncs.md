@@ -3,16 +3,29 @@ title: Warehouse Syncs
 redirect_from: '/connections/warehouses/selective-sync/'
 ---
 
-The Warehouse Sync process prepares the raw data coming from a source and loads it into a warehouse destination. There are two phases to the sync process:
-1. **Preparation phase**: This is where Segment prepares the data coming from a source so that it's in the right format for the loading phase. 
-2. **Loading phase**: This is where Segment deduplicates data and the data loads into the warehouse destination. Any sync issues that occur in this phase can be traced back to your warehouse. 
-
 Instead of constantly streaming data to the warehouse destination, Segment loads data to the warehouse in bulk at regular intervals. Before the data loads, Segment inserts and updates events and objects, and automatically adjusts the schema to make sure the data in the warehouse is inline with the data in Segment.
 
-Warehouses sync with all data coming from your source and your data is available in your warehouse within 24-48 hours. If you'd like to manage the data you send to your warehouse, use [Warehouse Selective Sync](#warehouse-selective-sync).
+{% include content/how-a-sync-works.md %}
+
+Warehouses sync with all data coming from your source. However, Business plan members can manage the data that is sent to their warehouses using [Selective Sync](#warehouse-selective-sync).
+
+## Sync Frequency
+
+Your plan determines how frequently data is synced to your warehouse. 
+
+| Plan      | Frequency                                                                                                      |
+| --------- | -------------------------------------------------------------------------------------------------------------- |
+| Free      | Once a day (every 86,400 seconds)                                                                              |
+| Team      | Twice a day (every 43,200 seconds)                                                                             |
+| Business* | Up to 24 times a day. Generally, these syncs are fixed to the top of the hour (:00), but these times can vary. |
+
+*If you're a Business plan member and would like to adjust your sync frequency, you can do so using the Selective Sync feature. To enable Selective Sync, please go to **Warehouse** > **Settings** > **Sync Schedule**. 
+
+> note "Why can't I sync more than 24 times per day?"
+> We do not set syncs to happen more than once per hour (24 times per day). The warehouse product is not designed for real-time data, so more frequent syncs would not necessarily be helpful.
 
 ## Sync History
-You can use the Sync History page to see the status and history of data updates in your warehouse. The Sync History page is available for every source connected to each warehouse. This page helps you answer questions like, “Has the data from a specific source been updated recently?” “Did a sync completely fail, or only partially fail?” and “Why wasn’t this sync successful?”
+You can use the Sync History page to see the status and history of data updates in your warehouse. The Sync History page is available for every source connected to each warehouse. This page helps you answer questions like, “Has the data from a specific source been updated recently?” “Did a sync completely fail, or only partially fail?” and “Why wasn't this sync successful?”
 
 The Sync History includes the following information:
 
@@ -39,7 +52,7 @@ To view the Sync History:
 
 ## Warehouse Selective Sync
 
-Warehouse Selective Sync allows you to manage the data that you send to your warehouses. You can use this feature to stop syncing specific events (also known as collections) or properties that aren’t relevant, and may slow down your warehouse syncs.
+Warehouse Selective Sync allows you to manage the data that you send to your warehouses. You can use this feature to stop syncing specific events (also known as collections) or properties that aren't relevant, and may slow down your warehouse syncs.
 
 > info ""
 > This feature is only available to Business Tier customers. <br><br>You must be a Workspace Owner to change Selective Sync settings.
@@ -58,9 +71,9 @@ When you disable a source, collection or property, Segment no longer syncs data 
 
 By default, all sources and their collections and properties are sent, and no data is prevented from reaching warehouses.
 
-When you disable sources, collections, or properties using Selective Sync, Segment stops sending new data for these sources, collections, or properties to your warehouse. It doesn’t delete any existing data in the warehouse.
+When you disable sources, collections, or properties using Selective Sync, Segment stops sending new data for these sources, collections, or properties to your warehouse. It doesn't delete any existing data in the warehouse.
 
-If you choose to re-enable a source to begin syncing again, Segment loads all data that arrived since the last sync into the warehouse, but doesn’t backfill data that was omitted while these were disabled. When a collection or property is re-enabled, data only syncs going forward. It will not be loaded from the last sync.
+If you choose to re-enable a source to begin syncing again, Segment loads all data that arrived since the last sync into the warehouse, but doesn't backfill data that was omitted while these were disabled. When a collection or property is re-enabled, data only syncs going forward. It will not be loaded from the last sync.
 
 ### Enable Selective Sync
 
@@ -74,7 +87,7 @@ To use Selective Sync:
 
 To change the sync settings to a single warehouse from multiple sources, follow the same steps as [above](#enable-selective-sync).
 
-This may be valuable if you’re looking to make changes in bulk, such as when setting up a new warehouse.
+This may be valuable if you're looking to make changes in bulk, such as when setting up a new warehouse.
 
 
 ### Change sync settings on a specific Warehouse to Source connection

@@ -1,8 +1,8 @@
 ---
 title: 'Zendesk Connect Destination'
 redirect_from: '/connections/destinations/catalog/outbound/'
+id: 54521fd925e721e32a72eee4
 ---
-
 ## Getting Started
 
 When you enable Zendesk Connect from the Segment web app:

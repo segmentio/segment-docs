@@ -1,6 +1,5 @@
 ---
 title: Salesforce DMP Destination
-strat: salesforce
 rewrite: true
 beta: true
 hidden: true
@@ -11,8 +10,7 @@ to create a holistic databank to organize, taxonomize and make their full range
 of audience information actionable. It allows them to model, define and manage
 audience segments to improve content delivery and advertising revenue.
 
-_**NOTE:** Salesforce DMP is currently in beta, and this doc was last
-updated on November 6, 2018. This means that there may still be some bugs for
+_**NOTE:** Salesforce DMP is currently in beta. This means that there may still be some bugs for
 us to iron out. If you are interested in joining or have any feedback to help
 us improve the Salesforce DMP Destination and its documentation,
 [let us know](https://segment.com/help/contact)!_

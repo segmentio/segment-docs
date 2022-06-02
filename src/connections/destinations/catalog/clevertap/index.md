@@ -1,12 +1,13 @@
 ---
 title: CleverTap Destination
+id: 5711271880412f644ff13150
+cmode-override: true
 ---
-
 ## Getting Started
 
 Once the Segment library is integrated, toggle CleverTap on in your Segment destinations, and add your CleverTap Account ID and CleverTap Account Token which you can find in the CleverTap Dashboard under Settings.
 
-You can integrate CleverTap using a server-side or mobile destination (iOS or Andriod). If you are interested in using CleverTap's push notifications or in-app notifications products, you should use the mobile destinations.
+You can integrate CleverTap using a server-side or mobile destination (iOS or Android). If you are interested in using CleverTap's push notifications or in-app notifications products, you should use the mobile destinations.
 
 All server-side destination requests require either a Segment Anonymous ID or a userId in the payload.
 
@@ -15,7 +16,7 @@ CleverTap supports the `identify`, `track`, `page` (server-side only), and `scre
 
 ## Identify
 
-When you identify a user, we'll pass that user's information to CleverTap with userId as CleverTap's Identity value. A number of Segment's special traits map to CleverTap's standard user profile fields.  You'll pass the key on the left into Segment and we will transform it to the key on the right before sending to CleverTap.
+When you identify a user, Segment passes that user's information to CleverTap with userId as CleverTap's Identity value. A number of Segment's special traits map to CleverTap's standard user profile fields.  You'll pass the key on the left into Segment and Segment transforms it to the key on the right before sending to CleverTap.
 
 - `name` maps to `Name`
 - `birthday` maps to `DOB`
@@ -24,28 +25,28 @@ When you identify a user, we'll pass that user's information to CleverTap with u
 - `phone` maps to `Phone`
 - `email` maps to `Email`
 
-All other traits will be sent to CleverTap as custom attributes. Please also note that the default logic will lower case and snake_case any user traits - custom or special - passed to CleverTap.
+All other traits will be sent to CleverTap as custom attributes. The default logic will lower case and snake_case any user traits - custom or special - passed to CleverTap.
 
 ## Track
 
-When you `track` an event, we will send that event to CleverTap as a custom event.  Note that CleverTap does not support arrays or nested objects for custom track event properties.
+When you `track` an event, Segment sends that event to CleverTap as a custom event.  Note that CleverTap does not support arrays or nested objects for custom track event properties.
 
 > note ""
 > CleverTap requires `identify` traits such as `userId` or `email` to record and associate the Track event. Without these traits, the Track event does not appear in CleverTap.
 
-Please also note that the default logic for our cloud mode connection to CleverTap will lower case and snake_case any event properties passed from Segment's servers to CleverTap. Our device mode connection will not lower case or snake_case any event properties passed directly to CleverTap from the client.
+The default logic for the cloud mode connection to CleverTap will lower case and snake_case any event properties passed from Segment's servers to CleverTap. The device mode connection will not lower case or snake_case any event properties passed directly to CleverTap from the client.
 
 ### Order Completed
 
-When you `track` an event using the server-side destination with the name `Order Completed` using the [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/), we will map that event to CleverTap's [Charged](https://support.clevertap.com/docs/working-with-events.html#recording-customer-purchases) event.
+When you `track` an event using the server-side destination with the name `Order Completed` using the [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/), Segment maps that event to CleverTap's [Charged](https://support.clevertap.com/docs/working-with-events.html#recording-customer-purchases){:target="_blank"} event.
 
 ## Page
 
-When you send a `page` event using the server-side destination, we will send that event to CleverTap as a Web Page Viewed event.
+When you send a `page` event using the server-side destination, Segment sends that event to CleverTap as a Web Page Viewed event.
 
 ## Screen
 
-When you send a `screen` event using the server-side destination or the iOS bundled SDK, we will send that event to CleverTap as an App Screen Viewed event.
+When you send a `screen` event using the server-side destination or the iOS bundled SDK, Segment sends that event to CleverTap as an App Screen Viewed event.
 
 ## Android
 
@@ -55,7 +56,7 @@ When you send a `screen` event using the server-side destination or the iOS bund
 
     `compile 'com.clevertap.android:clevertap-segment-android:+'`
 
-    **Note**: Our group Id is `com.clevertap.android`, not `com.segment.analytics.android.integrations`.
+    **Note**: The group Id is `com.clevertap.android`, not `com.segment.analytics.android.integrations`.
 
 2. Next, declare CleverTap's destination in your Analytics instance:
 
@@ -86,7 +87,7 @@ When you send a `screen` event using the server-side destination or the iOS bund
     </service>
     ```
 
-2. For more in-depth information, visit our [Android push integration documentation](https://support.clevertap.com/integration/android-sdk/#push-notification-support).
+2. For more in-depth information, visit CleverTap's [Android push integration documentation](https://developer.clevertap.com/docs/android){:target="_blank"}.
 
 ### In-App Notifications
 
@@ -99,12 +100,12 @@ When you send a `screen` event using the server-side destination or the iOS bund
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
     ```
 
-    No further action is required to integrate in-app notifications, which are registered for and requested by default by our CleverTap Segment integration.
+    No further action is required to integrate in-app notifications, which are registered for and requested by default by the CleverTap Segment integration.
 
 
 ### Sample App
 
-CleverTap has created a sample Android application that integrates CleverTap using Segment. Check it out at the [GitHub repo](https://github.com/CleverTap/clevertap-segment-android-example).
+CleverTap has created a sample Android application that integrates CleverTap using Segment. Check it out at the [GitHub repository](https://github.com/CleverTap/clevertap-segment-android-example){:target="_blank"}.
 
 ## iOS
 
@@ -116,7 +117,7 @@ CleverTap has created a sample Android application that integrates CleverTap usi
    `pod 'Segment-CleverTap'`
    ```
 
-   We recommend using the latest version on [CocoaPods](https://cocoapods.org/pods/Segment-CleverTap) since it will contain the most up to date features and bug fixes.
+   Use the latest version on [CocoaPods](https://cocoapods.org/pods/Segment-CleverTap){:target="_blank"} since it will contain the most up to date features and bug fixes.
 
 2. Next, declare CleverTap's integration in your app delegate instance:
 
@@ -144,11 +145,11 @@ CleverTap has created a sample Android application that integrates CleverTap usi
 
 ### In-App Notifications
 
-No further action is required to integrate in-app notifications, which are registered for and requested by default by our CleverTap Segment integration.
+No further action is required to integrate in-app notifications, which are registered for and requested by default by the CleverTap Segment integration.
 
 ### Sample App
 
-CleverTap has created a sample iOS application that integrates CleverTap using Segment. Check it out at the [GitHub repo](https://github.com/CleverTap/clevertap-segment-ios/tree/master/Example).
+CleverTap has created a sample iOS application that integrates CleverTap using Segment. Check it out at the [GitHub repository](https://github.com/CleverTap/clevertap-segment-ios/tree/master/Example){:target="_blank"}.
 
 
 ## React Native

@@ -1,7 +1,13 @@
 ---
 title: Amplitude (Actions) Destination
 hide-boilerplate: true
-hide-dossier: true
+hide-dossier: false
+id: 5f7dd6d21ad74f3842b1fc47
+versions:
+  - name: "Amplitude (Classic)"
+    link: '/docs/connections/destinations/catalog/amplitude'
+redirect_from:
+  - '/connections/destinations/catalog/vendor-amplitude/'
 ---
 {% include content/plan-grid.md name="actions" %}
 
@@ -35,7 +41,7 @@ Once you have a mapping, you can follow the steps in the Destinations Actions do
 
 The Amplitude (actions) destination does not offer a device-mode connection mode. If you're using one of Segment's new libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)) with the Actions-framework version of the destination, you do not need the device-mode connection.
 
-Most previous deployments of the Amplitude Segment destination used the device-mode connection to use the `session_id` tracking feature. The new Actions-framework Amplitude destination, includes session ID tracking by default. This means you don’t need to bundle any software to run on the user’s device, or write any code. It also means that you can use more of the Segment platform features on data going to Amplitude, such as Protocols filtering and transformations, and Personas identity resolution.
+Most previous deployments of the Amplitude Segment destination used the device-mode connection to use the `session_id` tracking feature. The new Actions-framework Amplitude destination, includes session ID tracking by default. This means you don't need to bundle any software to run on the user's device, or write any code. It also means that you can use more of the Segment platform features on data going to Amplitude, such as Protocols filtering and transformations, and Personas identity resolution.
 
 Session tracking is available with Segment's new libraries: [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)
 
@@ -102,7 +108,7 @@ To enable session tracking in Amplitude when using the [Segment Android library]
 
 ## Important differences from the classic Amplitude destination
 
-The classic Amplitude destination captures the following user fields in device-mode (when it runs on the user’s device):
+The classic Amplitude destination captures the following user fields in device-mode (when it runs on the user's device):
 
 - Device Type (for example, Mac, PC, mobile device)
 - Platform (for example iOS or Android)
@@ -150,9 +156,9 @@ Property names should be `camelCase` for Android implementations, and `snake_cas
 > This endpoint is available when you send data in Cloud-mode.
 
 
-If `true`, the destination sends events to Amplitude’s `batch` endpoint rather than the `httpapi` endpoint. Because Amplitude’s `batch` endpoint throttles traffic less restrictively than the Amplitude `httpapi` endpoint, enabling this setting can help to reduce 429 errors (throttling errors) from Amplitude.
+If `true`, the destination sends events to Amplitude's `batch` endpoint rather than the `httpapi` endpoint. Because Amplitude's `batch` endpoint throttles traffic less restrictively than the Amplitude `httpapi` endpoint, enabling this setting can help to reduce 429 errors (throttling errors) from Amplitude.
 
-Amplitude’s `batch` endpoint throttles data when the rate of events sharing the same `user_id` or `device_id` exceeds an average of 1,000/second over a 30-second period. See the Amplitude documentation for more about [429 errors and throttling in Amplitude](https://developers.amplitude.com/#429s-in-depth).
+Amplitude's `batch` endpoint throttles data when the rate of events sharing the same `user_id` or `device_id` exceeds an average of 1,000/second over a 30-second period. See the Amplitude documentation for more about [429 errors and throttling in Amplitude](https://developers.amplitude.com/#429s-in-depth).
 {% endcapture %}
 
 

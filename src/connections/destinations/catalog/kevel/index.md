@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Kevel Destination
+id: 60525b44d37b46d34612c45e
 ---
-
 With [Kevel](https://kevel.co)'s ad serving APIs, you can build custom ad platforms for sponsored listings, internal promotions, native ads, and more — so you can take back the Internet and drive more revenue.
 
 This destination is maintained by Kevel. For any issues with the destination, [contact the Kevel Support team](mailto:support@kevel.co).

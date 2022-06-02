@@ -1,11 +1,9 @@
 ---
 title: Elevio Destination
 rewrite: true
+id: 556df6680a20f4e22f0fb3a0
 ---
-
 [Elevio](https://elev.io/) is a continuous user education platform that makes your product easier to learn and use. It helps your organization increase user engagement through up-skilling and education while reducing support loads and customer churn. The Elevio Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-elevio).
-
-This document was last updated on 31 July, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 
 ## Getting Started

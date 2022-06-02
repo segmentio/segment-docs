@@ -1,0 +1,49 @@
+name: CheckLinks
+
+# **What it does**: Runs a weekly check for broken internal links.
+# **Why we have it**: We want to make sure that pages we link to work.
+# **Who does it impact**: Everyone
+
+
+
+on:
+  schedule:
+    - cron: "5 4 * * SAT"
+
+jobs:
+  checklinks-internal:
+    if: github.repository == 'segmentio/segment-docs'
+    name: Linux
+    runs-on: ubuntu-latest
+    env:
+        GITHUB_TOKEN: ${{ secrets.DOCS_BOT_PAT_REPO_SCOPE }}
+        REPORT_AUTHOR: docsbot
+        REPORT_LABEL: report, automated issue, broken links
+        REPORT_REPOSITORY: segmentio/segment-docs
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v2
+      - name: Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6 # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - name: Yarn install
+        run: yarn install
+      - name: Build jekyll website with
+        run: bundle exec jekyll build
+      - name: Run Script
+        run: |
+          sudo make linkcheck-internal > broken_links.md
+      - if: ${{ failure() }}
+        name: Create issue from file
+        id: broken-link-report
+        uses: peter-evans/create-issue-from-file@b4f9ee0a9d4abbfc6986601d9b1a4f8f8e74c77e
+        with:
+          token: ${{ env.GITHUB_TOKEN }}
+
+          title: Broken Links Report - Local
+          content-filepath: ./broken_links.md
+          repository: ${{ env.REPORT_REPOSITORY }}
+          labels: ${{ env.REPORT_LABEL }}

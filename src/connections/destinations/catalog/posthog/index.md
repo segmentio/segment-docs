@@ -1,6 +1,7 @@
 ---
 title: PostHog Destination
 rewrite: true
+id: 5ece242d61055a0b1bb2e103
 ---
 [PostHog](https://posthog.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is self-hosted, open-source analytics product. Get the same powerful features as other product analytics software but keep full control over your data.
 

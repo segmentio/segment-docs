@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Sentry Destination
+id: 54521fda25e721e32a72eef0
 ---
-
 [Sentry](https://sentry.io) is open-source error tracking that helps developers monitor and fix crashes in real time. Iterate continuously. Boost efficiency. Improve user experience. The `analytics.js` Sentry Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/sentry).
 
 ## Getting Started

@@ -33,7 +33,7 @@ The combination of these traits, audiences, and business rules allows you to cre
 - Users enter the Journey when they fulfill the entry conditions.
 - Users can't re-enter the same Journey at an earlier step.
 - Users can only move forward through a Journey.
-- Users remain in a step indefinitely until they fulfill the next step’s criteria.
+- Users remain in a step indefinitely until they fulfill the next step's criteria.
 
 ## Step Membership
 
@@ -49,7 +49,7 @@ To enter each subsequent step, three conditions must be true:
 
 ### Condition Steps
 
-“Add a condition” steps operate like [Personas Audiences](/docs/personas/audiences/). The defined conditions provide criteria for each step’s membership.
+“Add a condition” steps operate like [Personas Audiences](/docs/personas/audiences/). The defined conditions provide criteria for each step's membership.
 
 ### Wait Times
 
@@ -67,7 +67,7 @@ The following table summarizes the three step membership conditions and their eq
 
 For every step after the entry step, Journeys leverages [the Personas real-time compute system](https://segment.com/docs/personas/audiences/#real-time-compute-vs-batch).
 
-When a user's traits change or they exceed time-based conditions (for example, "within 7 days"), they may no longer fulfill the conditions of a previously joined step. If a user joins a step but no longer meets its conditions, Journeys removes them from that step’s preview and analytics.  The user does, however, continue to progress through the Journey.
+When a user's traits change or they exceed time-based conditions (for example, "within 7 days"), they may no longer fulfill the conditions of a previously joined step. If a user joins a step but no longer meets its conditions, Journeys removes them from that step's preview and analytics.  The user does, however, continue to progress through the Journey.
 
 Consider the following example of Journey conditions for a cart abandonment campaign:
 
@@ -103,18 +103,18 @@ Because Journey members permanently remain in Destination sync steps, Segment ne
 
 ### What happens when a user reaches a single or Multi-Split Condition step and the conditions evaluates to `false`?
 
-Each step’s membership conditions evaluate in real time, which means that users remain in a step until the immediate next step’s conditions becomes true.
+Each step's membership conditions evaluate in real time, which means that users remain in a step until the immediate next step's conditions becomes true.
 
 ### Can users exit and re-enter a Journey?
 
-No. Users move down the Journey’s branches in sequential order and can't re-enter. Journeys appends a profile trait for each step a user enters. Because the system neither assigns `Audience Exit` events nor removes traits from profiles, users who meet the Journey's entry criteria stay in the Journey permanently.
+Yes. To allow users to re-enter Journeys that they've exited, [enable re-entry](/docs/personas/journeys/build-journey/#journey-re-entry) during initial Journey setup.
 
 ### What happens to traits and audiences when I delete a Journey?
 
-Deleting a Journey removes its underlying audiences from profile views in Personas Explorer.  However, the Journey’s True/False traits remain in the user’s last recorded state.
+Deleting a Journey removes its underlying audiences from profile views in Personas Explorer.  However, the Journey's True/False traits remain in the user's last recorded state.
 
 > info "Note"
-> Cloning a Journey generates new, unique traits and sync keys.  Deleting the original Journey won’t impact any cloned Journeys.
+> Cloning a Journey generates new, unique traits and sync keys.  Deleting the original Journey won't impact any cloned Journeys.
 
 ### Are splits mutually exclusive?
 

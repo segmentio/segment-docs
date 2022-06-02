@@ -2,24 +2,40 @@
 title: Shopify by Littledata Source
 redirect_from:
   - "/connections/sources/catalog/cloud-apps/shopify-littledata/"
+id: V8ji9rWzoS
 ---
-
 <!-- LR Note: the working copy of the source catalog YML we built on showed this in the `website` source though as of Nov 18 it's labeled cloud-source -->
 
-Littledata is a smart analytics app that automates e-commerce tracking. Littledata's [Shopify-to-Segment connection](https://blog.littledata.io/help/posts/segment-overview/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} automatically tracks key e-commerce events on a Shopify or Shopify Plus store, so you can use Shopify as a source in your Segment workspace.
+Littledata's [Shopify to Segment connection](https://blog.littledata.io/help/posts/segment-overview/){:target="_blank"} uses a combination of client-side (browser) and server-side tracking to ensure 100% accurate data about your Shopify store in Segment. Littledata automatically integrates with Shopify and Shopify Plus sites to capture every customer touchpoint, including sales, marketing, customer and product performance data.
 
-Littledata is available as an independent [Shopify App](https://apps.shopify.com/segment-com-by-littledata){:target="_blank"}. When you install the Littledata app on your store, Littledata does two things:
+Littledata is available as an independent [Shopify App](https://apps.shopify.com/segment-com-by-littledata).
 
-1. It inserts a smart tracking script to your store's front end. You can use this script with any Shopify site, and uses Analytics.js under the hood to send data in a spec-compliant manner to Segment.
+#### Client-side (device mode) tracking
 
-2. The app also sets up server-side webhook forwarding to ensure 100% accuracy of important Customer and Order data.
+During the [installation process](https://blog.littledata.io/help/posts/segment-installation-guide/){:target="_blank"}, Littledata adds a `LittledataLayer.liquid` snippet to all pages (included in `theme.liquid`) on your Shopify store. The benefits of this approach include:
+
+- Segment's Analytics.js 2.0 library is loaded on all pages, except for the checkout
+- Includes a LittledataLayer data layer for all pages
+- Loads a minified tracking script, hosted on a content delivery network (CDN)
+- Enables sending of device-mode ecommerce events to all Segment destinations
+- Segment's anonymous ID and Google Analytics' client ID is passed to our servers to ensure consistent user journey tracking
+
+#### Server-side (cloud mode) tracking
+
+During the Segment connection setup, Littledata also adds a set of webhooks to your Shopify store. When a customer interacts with your store these changes are relayed server-side from Shopify to Littledata to Segment. The advantages to this approach are:
+
+- 100% event capture for adds to cart, checkout steps, sales and refunds/returns
+- Customer data (for example, email) securely relayed server-side
+- No extra scripts on the sensitive and secure checkout pages
+- Accurate marketing attribution, even when customers use ad-blockers or cookie opt-outs
+- Supports cloud-mode destinations such as [Facebook Conversions API](/docs/connections/destinations/catalog/actions-facebook-conversions-api/)
 
 Here's an architecture diagram that shows how the Littledata app mediates data flow between Shopify and Segment.
 
 ![](images/littledata_arch.png)
 
 > warning "Note"
-> This integration is maintained by Littledata _and is not supported by Segment directly_. The Littledata app has been reviewed by the Segment team for conformance with Segment's [E-Commerce Spec](/docs/connections/spec/ecommerce/v2/), and is the recommended way of using Segment with Shopify. However, it does require a paid subscription with Littledata, who mediates the connection between Shopify and Segment. [Contact the Littledata Support team](mailto:support@littledata.io) with any questions.
+> This integration is maintained by Littledata _and isn't supported by Segment directly_. The Littledata app has been reviewed by the Segment team for conformance with Segment's [E-Commerce Spec](/docs/connections/spec/ecommerce/v2/), and is the recommended way of using Segment with Shopify. However, it does require a paid subscription with Littledata, who mediates the connection between Shopify and Segment. [Contact the Littledata Support team](mailto:help@littledata.io) with any questions.
 
 ## Getting Started
 
@@ -27,12 +43,12 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 2. Go the [Shopify app store listing](https://apps.shopify.com/segment-com-by-littledata){:target="_blank"} for **_Segment.com by Littledata_**.
    ![](images/Nd5L0C6.png)
 3. Click **Add app** to begin the installation process.
-4. **Sign up** for a Littledata account using an email address, Google login or Facebook login. _More team members can be added to the subscription after completing the installation process._
+4. **Choose a Littledata subscription** suitable for your store's volume of monthly orders.
 5. Add the [**Segment write key**](/docs/connections/find-writekey/) for the source that is going to send data in the **input field**.
    ![](images/eLUh6GF.png)
-6. Choose either an **Automatic** or a **Manual** install. _Automatic installs work in most instances, but if you choose to do a manual install, just follow [this guide](https://blog.littledata.io/help/posts/segment-installation-guide/){:target="_blank"}._
+6. Choose either an **Automatic**, a **Manual**, or a **Headless** install. _Automatic installs work in most instances, but if you choose to do a manual install, just follow [this guide](https://blog.littledata.io/help/posts/segment-installation-guide/){:target="_blank"}._
    ![](images/iYM76VI.png)
-7. Segment's **analytics.js** library, Littledata **tracking script** and **webhooks** will be automatically applied to the store and the installation process will then be complete.
+7. Segment's **Analytics.js** library, Littledata **tracking script** and **webhooks** will be automatically applied to the store and the installation process will then be complete.
    ![](images/kvjNx4M.png)
 
 ## Event schema
@@ -80,7 +96,7 @@ Below is a table of events that **Shopify by Littledata** sends to Segment from 
 | Order Completed          | A prospect has completed an order                                                                                                                                                           |
 | Order Refunded           | An order has been refunded                                                                                                                                                                  |
 | POS Order Placed (v2)    | A user has placed an order through Shopify POS                                                                                                                                              |
-| Payment Failure (v2)     | A user completed checkout step 3 but the payment method failed (for example, the card details were valid but the [charge did not succeed(https://stripe.com/docs/testing#cards-responses)]) |
+| Payment Failure (v2)     | A user completed checkout step 3 but the payment method failed (for example, the card details were valid but the [charge did not succeed](https://stripe.com/docs/testing#cards-responses)) |
 | Payment Info Entered     | A user has entered payment info                                                                                                                                                             |
 | Product Added            | A user has added a product to the cart, and left it in the cart for more than 10 seconds                                                                                                    |
 | Product Removed          | A user has removed a product from the cart                                                                                                                                                  |
@@ -90,8 +106,8 @@ Below is a table of events that **Shopify by Littledata** sends to Segment from 
 In the Littledata application you can choose which of the following fields you want to send as the `userId` for known customers:
 
 - **Shopify customer ID** (default) - Recommended if you have a simple Shopify setup with minimal integrations.
-- **Hashed email** - The MD5 email hash is useful if you have other marketing platforms sending traffic where you know the email of the visitor (e.g. email marketing like Bronto or Marketo), but not their Shopify customer ID.
-- **Email** - The email identifier is recommended when other platforms use the email and can’t hash it, and you are comfortable with the privacy implications.
+- **Hashed email** - The MD5 email hash is useful if you have other marketing platforms sending traffic where you know the email of the visitor (e.g. email marketing like Bronto or Marketo), but not their Shopify customer ID. We use an unsalted MD5 hash (\`createHash\` method) to match your other sources.
+- **Email** - The email identifier is recommended when other platforms use the email and can't hash it, and you are comfortable with the privacy implications.
 - **None** (no identifier) - Choose “none” if user identity is already handled by your Segment implementation and you only need the extra events powered by Littledata's Shopify source.
 
 For [Segment Personas](/docs/personas/) we also send `shopify_customer_id` as an [externalID](/docs/personas/identity-resolution/externalids/) for advanced matching.
@@ -218,9 +234,11 @@ Each item in the `products` array, or Product Viewed and Product Added events, w
 
 With an [annual Littledata Plus plan](https://www.littledata.io/app/enterprise){:target="_blank"} you can import all Shopify orders and refunds from before you started using Segment, to sync with destinations that support timestamped events (for example, a data warehouse). This enables you to build a complete customer history in your chosen destination.
 
-## Advanced Device-mode settings
+This data import will include all the [event properties](#event-properties) usually sent with an `Order Completed` event, including the [customer traits](#identify-calls).
 
-You can edit the LittledataLayer object in your Shopify theme to manually change these advanced settings. For more information, see the [Shopify tracker GitHub repository](https://github.com/littledata/shopify-tracker#segment-configuration){:target="_blank"}.
+## Advanced settings
+
+You can edit these data pipeline settings within Littledata's app.
 
 ### cookiesToTrack
 

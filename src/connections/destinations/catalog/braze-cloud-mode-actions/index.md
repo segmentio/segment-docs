@@ -1,9 +1,10 @@
 ---
 title: Braze Cloud Mode (Actions) Destination
 hide-boilerplate: true
-hide-dossier: true
+hide-dossier: false
 redirect_from:
   - '/connections/destinations/catalog/actions-braze-cloud/'
+id: 60f9d0d048950c356be2e4da
 ---
 {% include content/plan-grid.md name="actions" %}
 

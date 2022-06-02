@@ -35,6 +35,7 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
   "total billed": 830
 });
 ```
+{% include content/syntax-note.md %}
 
 Beyond the common fields, the `group` call takes the following fields:
 

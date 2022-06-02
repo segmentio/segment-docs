@@ -3,15 +3,6 @@ title: Formatting guide
 description: The styleguide of front-end components
 hidden: true
 layout: page
-contributors:
-  - name: Paul Mccall
-    date: 23.08.2019
-  - name: Jane Doe
-    date: 23.08.2019
-  - name: Porter Braun
-    date: 23.08.2019
-  - name: Monica Buck
-    date: 23.08.2019
 related:
   - "/connections/sources/catalog/"
   - "/connections/sources/"

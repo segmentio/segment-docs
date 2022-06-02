@@ -1,6 +1,8 @@
 ---
 title: 'Klaviyo Source'
+id: EfKbe2yt0J
 ---
+{% include content/source-region-unsupported.md %}
 
 Klaviyo is an email marketing platform that helps companies make more money. It lets you send personalized newsletters, triggered emails, product recommendations, push notifications and sync your data to facebook custom audiences. [Visit Website](https://www.klaviyo.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
 
@@ -104,4 +106,4 @@ As noted in the Overview, this integration now supports the ability to pass info
 
 To help avoid this duplication of profiles in Segment, you can check the box above, which will limit the profiles Klaviyo syncs with Segment to only the profiles originally created in Segment.
 
-Once you’ve selected the settings you would like to enable, click Update Segment Settings to complete the integration.
+Once you've selected the settings you would like to enable, click Update Segment Settings to complete the integration.

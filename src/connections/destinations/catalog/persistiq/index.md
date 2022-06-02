@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: PersistIQ Destination
+id: 5c75e3ca088b680001eb30fa
 ---
-
 [PersistIQ](https://www.persistiq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the easiest sales engagement software to use. Sales teams use PersistIQ to connect with more prospects using targeted emails, calls, and tasks.
 
 This destination is maintained by PersistIQ. For any issues with the destination, [contact the PersistIQ Support team](mailto:support@persistiq.com).

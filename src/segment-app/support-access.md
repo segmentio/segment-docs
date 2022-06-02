@@ -24,7 +24,7 @@ _The Segment Settings page after granting Support Access_
 **What can a Segment Support Engineer do in my account?**
 When you grant Support Access, the Segment Support Engineers can do everything that you can do in your workspace.
 
-## How do I know it’s working?
+## How do I know it's working?
 
 Workspace Owners of Business Tier workspaces can view any Support Access actions in the [Audit Trail](/docs/segment-app/iam/audit-trail). You can see and monitor:
 

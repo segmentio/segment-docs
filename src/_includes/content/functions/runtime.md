@@ -24,12 +24,16 @@ The following dependencies are installed in the function environment by default.
 - [`@sendgrid/mail v7.4.7`](https://www.npmjs.com/package/@sendgrid/mail) exposed as `sendgrid.mail`
 - [`stripe v8.115.0`](https://www.npmjs.com/package/stripe) exposed as `stripe`
 - [`twilio v3.68.0`](https://www.npmjs.com/package/twilio) exposed as `twilio`
+- [`uuidv5 v1.0.0`](https://www.npmjs.com/package/uuidv5) exposed as `uuidv5`
 - [`xml v1.0.1`](https://www.npmjs.com/package/xml) exposed as `xml`
 - [`xml2js v0.4.23`](https://www.npmjs.com/package/xml2js) exposed as `xml2js`
+- [`zlib v1.0.5`](https://www.npmjs.com/package/zlib) exposed as `zlib`
 
 Only the [`crypto` Node.js module](https://nodejs.org/dist/latest-v10.x/docs/api/crypto.html ) is included (exposed as `crypto`). [Other built-in Node.js modules](https://nodejs.org/api/modules.html) are not available.
 
-##### Caching
+For more information on using the `aws-sdk` module, see how to [set up functions for calling AWS APIs](/docs/connections/functions/aws-apis/).
+
+### Caching
 
 Basic cache storage is available through the `cache` object, which has the following methods defined:
 

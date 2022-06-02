@@ -3,9 +3,8 @@ title: Analytics for Go
 sourceTitle: 'Go'
 sourceCategory: 'Server'
 repo: analytics-go
+id: yBvi77aEwr
 ---
-
-
 Our Go library lets you record analytics data from your Go code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
 
 This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-go).
@@ -377,6 +376,8 @@ By default, our library will flush:
 + if 5 seconds has passed since the last flush (control with `FlushAfter`)
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
+
+{% include content/tracking-api-limit.md %}
 
 Sometimes you might not want batching (eg. when debugging, or in short-lived programs). You can turn off batching by setting the `FlushAt` argument to `1`, and your requests will always be sent right away.
 

@@ -2,6 +2,118 @@
 title: Warehouse Schemas
 ---
 
+A **schema** describes the way that the data in a warehouse is organized. Segment stores data in relational schemas, which organize data into the following template:
+`<source>.<collection>.<property>`, for example `segment_engineering.tracks.user_id`, where source refers to the source or project name (segment_engineering), collection refers to the event (tracks), and the property refers to the data being collected (user_id). All schemas convert collection and property names from `CamelCase` to `snake_case`.
+
+> note "Warehouse column creation"
+> **Note:** Segment creates tables for each of your custom events in your warehouse, with columns for each event's custom properties. Segment does not allow unbounded `event` or `property` spaces in your data. Instead of recording events like "Ordered Product 15", use a single property of "Product Number" or similar.
+
+### How warehouse tables handle nested objects and arrays
+
+Segment's libraries pass nested objects and arrays into tracking calls as **properties**, **traits**, and **tracking calls**. To preserve the quality of your events data, Segment uses the following methods to store properties and traits in database tables: 
+
+- The warehouse connector stringifies all **properties** that contain a nested **array**
+- The warehouse connector stringifies all **context fields** that contain a nested **array**
+- The warehouse connector stringifies all **traits** that contain a nested **array**
+- The warehouse connector "flattens" all **properties** that contain a nested **object**
+- The warehouse connector "flattens" all **traits** that contain a nested **object**
+- The warehouse connector optionally stringifies **arrays** when they follow the [Ecommerce spec](/docs/connections/spec/ecommerce/v2/)
+- The warehouse connector "flattens" all **context fields** that contain a nested **object** (for example, context.field.nestedA.nestedB becomes a column called context_field_nestedA_nestedB)
+
+<table>
+<thead>
+<tr>
+    <th> Field </th>
+    <th> Code (Example) </th>
+    <th> Schema (Example) </th>
+</tr>
+</thead>
+
+<tr>
+  <td><b>Object (Context):</b> Flatten </td>
+  <td markdown="1">
+
+``` json
+context: {
+  app: {
+    version: "1.0.0"
+  }
+}
+```
+  </td>
+  <td>
+    <b>Column Name:</b><br/>
+    context_app_version
+    <br/><br/>
+    <b>Value:</b><br/>
+    "1.0.0"
+  </td> 
+</tr>
+
+<tr>
+    <td> <b>Object (Traits):</b> Flatten </td>
+    <td markdown= "1">
+
+```json
+traits: {
+  address: {
+    street: "6th Street"
+  }
+}
+```
+
+</td>
+<td>
+<b>Column Name:</b><br/>
+address_street<br/>
+<br/>
+<b>Value:</b><br/>
+"6th Street"
+</td>
+</tr>
+
+<tr>
+<td><b>Object (Properties):</b> Flatten</td>
+<td markdown="1">
+
+```json
+properties: {
+  product_id: {
+    sku: "G-32"
+  }
+}
+```
+</td>
+<td>
+    <b>Column Name:</b><br/>
+    product_id_sku<br/><br/>
+    <b>Value:</b><br/>
+    "G-32"
+</td> 
+</tr>
+
+<tr>
+<td><b>Array (Any):</b> Stringify</td>
+<td markdown="1">
+
+```json
+products: {
+  product_id: [
+    "507f1", "505bd"
+  ]
+}
+```
+
+</td>
+<td>
+    <b>Column Name:</b> <br/>
+    product_id <br/><br/>
+    <b>Value:</b>
+    "[507f1, 505bd]"
+</td> 
+</tr>
+</table>
+
 ## Warehouse tables
 
 The table below describes the schema in Segment Warehouses:
@@ -15,7 +127,7 @@ The table below describes the schema in Segment Warehouses:
 | `<source>.groups`     | A table with your `group` method calls. This table includes the `traits` you record for groups as top-level columns, for example `<source>.groups.employee_count`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | `<source>.accounts`   | *IN BETA* A table with unique `group` method calls. Group calls are upserted into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a group.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | `<source>.identifies` | A table with your `identify` method calls. This table includes the `traits` you identify users by as top-level columns, for example `<source>.identifies.email`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| `<source>.users`      | A table with unique `identify` calls. `identify` calls are upserted on `user_id` into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a user. The `id` column in the users table is the same as the `user_id` column in the identifies table. Also note that this table won't have an `anonymous_id` column since a user can have multiple anonymousIds. To retrieve a user's `anonymousId`, query the identifies table. *If you observe any duplicates in the users table [contact us](https://segment.com/help/contact/) (unless you are using BigQuery, where [this is expected](/docs/connections/storage/catalog/bigquery/#schema))*. |
+| `<source>.users`      | A table with unique `identify` calls. `identify` calls are upserted on `user_id` into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a user. The `id` column in the users table is the same as the `user_id` column in the identifies table. Also note that this table won't have an `anonymous_id` column since a user can have multiple anonymousIds. To retrieve a user's `anonymousId`, query the identifies table. *If you observe any duplicates in the users table [contact Segment support](https://segment.com/help/contact/) (unless you are using BigQuery, where [this is expected](/docs/connections/storage/catalog/bigquery/#schema))*. |
 | `<source>.pages`      | A table with your `page` method calls. This table includes the `properties` you record for pages as top-level columns, for example `<source>.pages.title`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | `<source>.screens`    | A table with your `screen` method calls. This table includes `properties` you record for screens as top-level columns, for example `<source>.screens.title`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | `<source>.tracks`     | A table with your `track` method calls. This table includes standardized properties that are all common to all events: `anonymous_id`, `context_*`, `event`, `event_text`, `received_at`, `sent_at`, and `user_id`.  This is because every event that you send to Segment has different properties.  For querying by the custom properties, use the `<source>.<event>` tables instead.                                                                                                                                                                                                                                                                                                                |
@@ -24,7 +136,7 @@ The table below describes the schema in Segment Warehouses:
 
 ## Identifies table
 
-The `identifies` table stores the `.identify()` method calls =. Query it to find out user-level information. It has the following columns:
+The `identifies` table stores the `.identify()` method calls. Query it to find out user-level information. It has the following columns:
 
 | method          | property                                                                                                                                                                                   |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -229,104 +341,6 @@ AND table_name = '<event>'
 ORDER by column_name
 ```
 
-### How event tables handle nested objects and arrays
-
-To preserve the quality of your events data, Segment uses the following methods to store objects and arrays in the event tables: 
-
-<table>
-<thead>
-<tr>
-    <th> Field </th>
-    <th> Code (Example) </th>
-    <th> Schema (Example) </th>
-</tr>
-</thead>
-
-<tr>
-  <td><b>Object (Context):</b> Flatten </td>
-  <td markdown="1">
-
-``` json
-context: {
-  app: {
-    version: "1.0.0"
-  }
-}
-```
-  </td>
-  <td>
-    <b>Column Name:</b><br/>
-    context_app_version
-    <br/><br/>
-    <b>Value:</b><br/>
-    "1.0.0"
-  </td> 
-</tr>
-
-<tr>
-    <td> <b>Object (Traits):</b> Flatten </td>
-    <td markdown= "1">
-
-```json
-traits: {
-  address: {
-    street: "6th Street"
-  }
-}
-```
-
-</td>
-<td>
-<b>Column Name:</b><br/>
-address_street<br/>
-<br/>
-<b>Value:</b><br/>
-"6th Street"
-</td>
-</tr>
-
-<tr>
-<td><b>Object (Properties):</b> Stringify</td>
-<td markdown="1">
-
-```json
-properties: {
-  product_id: {
-    sku: "G-32"
-  }
-}
-```
-</td>
-<td>
-    <b>Column Name:</b><br/>
-    product_id<br/><br/>
-    <b>Value:</b><br/>
-    "{sku.'G-32'}"
-</td> 
-</tr>
-
-<tr>
-<td><b>Array (Any):</b> Stringify</td>
-<td markdown="1">
-
-```json
-products: {
-  product_id: [
-    "507f1", "505bd"
-  ]
-}
-```
-
-</td>
-<td>
-    <b>Column Name:</b> <br/>
-    product_id <br/><br/>
-    <b>Value:</b>
-    "[507f1, 505bd]"
-</td> 
-</tr>
-</table>
-
 ## Tracks vs. Events Tables
 
 To see the tables for your organization, you can run this query:
@@ -391,24 +405,32 @@ ORDER BY day
 
 New event properties and traits create columns. Segment processes the incoming data in batches, based on either data size or an interval of time. If the table doesn't exist we lock and create the table. If the table exists but new columns need to be created, we perform a diff and alter the table to append new columns.
 
-> note "Column creation in Redshift"
-> **Note:** Segment creates tables for each of your custom events, and columns for each event's custom properties. Redshift has limits on the number of columns in a table, so Segment does not allow unbounded event or property spaces in your data. Instead of recording events like "Ordered Product 15", use a single property of "Product Number" or similar.
-
 When Segment process a new batch and discover a new column to add, we take the most recent occurrence of a column and choose its datatype.
 
-The data types that we currently support include: 
 
-- `timestamp`
-- `integer` 
-- `float`
-- `boolean`
-- `varchar`
+### Supported Data Types
+Data types are set up in your warehouse based on the first value that comes in from a source. For example, if the first value that came in from a source was a string, Segment would set the data type in the warehouse to `string`. 
+
+The data types that Segment currently supports include:
+
+#### `timestamp`
+
+#### `integer`
+
+#### `float`
+
+#### `boolean`
+
+#### `varchar`
+
+> note " "
+> To change data types after they've been determined, please reach out to [Segment Support](https://segment.com/help/contact) for assistance. 
 
 ## Column Sizing
 
 After analyzing the data from dozens of customers, we set the string column length limit at 512 characters. Longer strings are truncated. We found this was the sweet spot for good performance and ignoring non-useful data.
 
-We special-case compression for some known columns, like event names and timestamps. The others default to LZO. We may add look-ahead sampling down the road, but from inspecting the datasets today this would be unnecessary complexity.
+Segment uses special-case compression for some known columns, like event names and timestamps. The others default to LZO. Segment may add look-ahead sampling down the road, but from inspecting the datasets today this would be unnecessarily complex.
 
 ## Timestamps
 
@@ -438,11 +460,13 @@ To learn more about timestamps in Segment, [read our timestamps overview](/docs/
 
 Each row in your database will have an `id` which is equivalent to the messageId which is passed through in the raw JSON events. The `id` is a unique message id associated with the row.
 
-## uuid and uuid_ts
+## uuid, uuid_ts, and loaded_at
 
 The `uuid` column is used to prevent duplicates. You can ignore this column.
 
 The `uuid_ts` column is used to keep track of when the specific event was last processed by our connector, specifically for deduping and debugging purposes. You can generally ignore this column.
+
+The `loaded_at` column contains the UTC timestamp reflecting when the data was staged by the processor. 
 
 ## Sort Key
 
@@ -454,4 +478,6 @@ All tables use `received_at` for the sort key. Amazon Redshift stores your data 
 
 [How do I give users permissions to my warehouse?](/docs/connections/storage/warehouses/add-warehouse-users/)
 
-Check out our [Frequently Asked Questions about Warehouses](/docs/connections/storage/warehouses/faq/) and [a list of helpful queries to get you started](https://help.segment.com/hc/en-us/articles/205577035-Common-Segment-SQL-Queries).
+[How frequently does data sync to my warehouse?](/docs/connections/storage/warehouses/warehouse-syncs/#sync-frequency)
+
+Check out our [Frequently Asked Questions about Warehouses](/docs/connections/storage/warehouses/faq/) and [a list of helpful Redshift queries to get you started](/docs/connections/storage/warehouses/redshift-useful-sql).

@@ -1,7 +1,8 @@
 ---
 title: Oracle Responsys Destination
+show-sync-disclaimer: true
+id: 588d348c80412f644ff611d1
 ---
-
 ## Getting Started
 
 Before you enable Responsys in your destinations page, there are a few things in your Segment destination settings you must set up. Once the set up is complete, you'll be able to use `.identify()` calls to add records to **Profile Lists**, **Profile Extension Tables** and `.track()` calls to add records to **Supplemental Tables**.

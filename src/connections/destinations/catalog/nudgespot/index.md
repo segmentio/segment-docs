@@ -1,7 +1,7 @@
 ---
 title: Nudgespot Destination
+id: 54be95b4db31d978f14a7e0f
 ---
-
 ## Getting Started
 
 When you enable on Nudgespot from the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading the Nudgespot code on your site.

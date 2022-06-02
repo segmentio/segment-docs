@@ -6,6 +6,8 @@ sections:
     title: What is Segment?
   - path: /getting-started/01-what-is-segment
     title: How Segment Works
+  - path: /getting-started/implementation-guide
+    title: Getting Started Guide
   - path: /getting-started/02-simple-install
     title: A Basic Segment Installation
   - path: /getting-started/03-planning-full-install
@@ -39,6 +41,8 @@ sections:
     title: Segment vs. Tag Managers
   - path: /guides/what-is-replay
     title: Replay
+  - path: /guides/regional-segment
+    title: Regional Segment
 
   - section_title: How-to Guides
     slug: guides/how-to-guides
@@ -171,6 +175,8 @@ sections:
       title: Functions Environment
     - path: /connections/functions/usage
       title: Functions Usage Limits
+    - path: /connections/functions/aws-apis
+      title: Functions for AWS APIs 
   - section_title: Storage Destinations
     slug: connections/storage
     section:
@@ -188,6 +194,8 @@ sections:
         title: Set Up Data Lakes
       - path: /connections/storage/data-lakes/sync-reports
         title: Sync Reports and Error Reporting
+      - path: /connections/storage/data-lakes/lake-formation
+        title: AWS Lake Formation
       - path: /connections/storage/data-lakes/sync-history
         title: Data Lakes Sync History and Health
       - path: /connections/storage/data-lakes/comparison
@@ -215,6 +223,8 @@ sections:
         title: Redshift Cluster and Redshift Connector Limitations
       - path: /connections/storage/warehouses/redshift-tuning
         title: Speeding Up Redshift Queries
+      - path: /connections/storage/warehouses/redshift-useful-sql
+        title: Useful SQL Queries for Redshift
   - path: /connections/test-connections
     title: Testing Connections
   - path: /connections/data-export-options
@@ -291,7 +301,7 @@ sections:
   - path: /personas/profile-api
     title: Profile API
   - path: /personas/debugger
-    title: Personas Space Debugger
+    title: Personas Source Debugger
   - path: /personas/personas-gdpr
     title: Personas and GDPR
   - path: /personas/faqs
@@ -318,6 +328,8 @@ sections:
       title: Complying With GDPR
     - path: /privacy/user-deletion-and-suppression
       title: User Deletion and Suppression
+  - path: /privacy/account-deletion
+    title: Account & Data Deletion
   - path: /privacy/faq
     title: Privacy FAQs
 - section_title: Protocols
@@ -360,6 +372,8 @@ sections:
       title: Typewriter
     - path: /protocols/apis-and-extensions/anomaly_detection
       title: Anomaly Detection
+  - path: /protocols/schema
+    title: Schema Controls
   - path: /protocols/faq
     title: Protocols FAQs
 - section_title: Segment App

@@ -2,7 +2,9 @@
 title: Youbora Source
 beta: true
 hidden: true
+id: 117eYCe9jH
 ---
+{% include content/source-region-unsupported.md %}
 
 YOUBORA is the most advanced and holistic suite of integrated video analytics and business intelligence for broadcasters, OTTs, telcos and media companies to help you make data-driven, business, operational and technical decisions to drive performance and maximize revenue across your entire video service. The latest version of YOUBORA has been thought through from the ground up to deliver the most detailed intelligence for your service.
 

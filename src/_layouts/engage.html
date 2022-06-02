@@ -1,0 +1,144 @@
+---
+layout: default
+---
+
+<div class="docs">
+  <div class="stage">
+    <div class="docs__aside stage__aside">
+      <div class="docs__logotype">
+        {% include_cached navbar/logo.html %}
+      </div>
+
+      {% include menu/menu-engage.html %}
+    </div>
+
+    <main class="docs__body stage__body">
+      <div class="docs__navbar">
+        <div class="flex flex--justify gutter gutter--large@medium">
+          <div class="flex__column flex__column--6@xlarge">
+            <div class="search">
+              {% include_cached navbar/search.html container="engage-autocomplete" %}
+            </div>
+          </div>
+
+          <div class="flex__column flex__column--shrink">
+            {% include_cached navbar/nav.html %}
+          </div>
+        </div>
+      </div>
+
+      {% include_cached navbar/navbar-mobile.html %}
+
+      <article class="integration page" data-headings-anchors data-tracking-scroll>
+        <div class="integration__body page__body">
+          {% unless page.hide-breadcrumb %}
+          {% include components/breadcrumbs.html %}
+          {% endunless %}
+          <div class="integration-header">
+            {%- if page.mark -%}
+            <div class="integration-header__icon">
+              <img src="{{ page.mark }}" alt="" class="image">
+            </div>
+            {%- endif -%}
+            <div class="flex__column">
+              {%- if page.title -%}
+              <h1 id="{{ page.title | slugify }}">
+                {{ page.title }}
+              </h1>
+              {%- endif -%}
+
+              {%- if page.excerpt -%}
+              <div class="integration-header__content">
+                {{ page.excerpt | markdownify }}
+              </div>
+              {%- endif -%}
+            </div>
+          </div>
+          {%- if page.url contains "destinations/catalog" -%}
+          {%- elsif page.landing -%}
+          {%- else -%}
+          <hr>
+          {%- endif -%}
+
+          {%- unless page.hide_toc -%}
+          {% include sidebar/mobile-menu-side.html %}
+          {%- endunless -%}
+
+          <div class="markdown">
+            {% if page.beta %}
+            {% unless page.integration_type == 'source' or page.integration_type == 'destination' %}
+            {% include content/beta-note.md %}
+            {% endunless %}
+            {% endif %}
+
+            {% if content.size < 2 %}
+            <div class="premonition info">
+              <div class="fa fa-info-circle"></div>
+              <div class="content">
+                <p class="header">Content coming soon.</p>
+                <p>Content for this topic is on its way! Please check back soon.</p>
+
+
+              </div>
+            </div>
+            {% endif %}
+            {{ content }}
+
+          </div>
+
+          <p class="last-modified">This page was last modified: {{ page.last_modified_at | date: '%d %b %Y' }}</p>
+
+          {% if page.contributors %}
+          {% include components/recent-contributor.html contributors=page.contributors %}
+          {% endif %}
+
+
+          {% unless page.hide-feedback %}
+          <hr>
+          {% include components/feedback.html %}
+          {% endunless %}
+        </div>
+
+        <div class="docs__sidebar page__sidebar">
+          <div class="sidebar sidebar--sticky sidebar--scroll">
+            {% unless page.no-edit %}
+            {% include sidebar/edit-tools.html %}
+            {% endunless %}
+            {%- unless page.hide_toc -%}
+            {% if page.integration_type == 'destination' %}
+            {% if page.hide-boilerplate == true %}
+            {% assign toc_content = content  %}
+            {% else %}
+            {% assign toc_foot = destination-footer | markdownify %}
+            {% assign toc_content = content | append: toc_foot %}
+            {% endif %}
+
+            <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
+              {% include sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=toc_content h_min=2 h_max=2 %}
+            </div>
+            {% else %}
+            <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
+              {% include sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=content h_min=2 h_max=2 %}
+            </div>
+            {% endif %}
+            {%- endunless -%}
+
+            {% if page.related %}
+            {% include sidebar/related-content.html items=page.related %}
+            {% endif %}
+
+            {% include sidebar/related-categories.html %}
+
+            {% unless page.hide-feedback %}
+            {% include_cached sidebar/feedback.html %}
+            {% endunless %}
+          </div>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <footer>
+    {% include_cached components/footer.html %}
+  </footer>
+</div>

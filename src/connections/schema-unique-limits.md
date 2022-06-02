@@ -8,7 +8,7 @@ While you can technically track unlimited events with Segment, only the first 2,
 
 **How many unique event properties can be logged on the event details page?**
 
-While you can track unlimited event properties with Segment, the event details page for a specific event can only show the first 300 properties. After you hit the 300 property limit, future properties are still tracked and sent to your Destinations, but they won't appear on the event details page. This limit includes nested properties in an event’s `properties` object.
+While you can track unlimited event properties with Segment, the event details page for a specific event can only show the first 300 properties. After you hit the 300 property limit, future properties are still tracked and sent to your Destinations, but they won't appear on the event details page. This limit includes nested properties in an event's `properties` object.
 
 These limits can also affect the traits and properties that you can see in the Computed Trait and Audience builder tools in Personas. If expected traits or properties do not appear in these tools, contact the [Segment Support team](https://segment.com/help/contact/).
 

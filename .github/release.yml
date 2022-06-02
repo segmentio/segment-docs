@@ -5,6 +5,7 @@ changelog:
       - autoupdate
       - back-end
       - release
+      - hidden
     authors:
       - bot-docsteam
   categories:
@@ -16,7 +17,7 @@ changelog:
         - new-integration
     - title: Improvements
       labels:
-        - enhancement
+        - content-update
     - title: Fixes
       labels:
         - fixed-content

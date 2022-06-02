@@ -2,8 +2,8 @@
 title: Facebook Pixel Destination
 rewrite: true
 strat: facebook
+id: 5661eb58e954a874ca44cc07
 ---
-
 [Facebook Pixel](https://developers.facebook.com/docs/facebook-pixel) lets you measure and optimize the performance of your Facebook Ads. It makes conversion tracking, optimization and remarketing easier than ever. The Facebook Pixel Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-facebook-pixel).
 
 > warning ""
@@ -19,13 +19,13 @@ strat: facebook
 ## Other Facebook Destinations Supported by Segment
 This page is about the **Facebook Pixel**. For documentation on other Facebook destinations, see the pages linked below.
 
-| **Facebook Destination**   | Supported by Personas |
-| ---------------------- | --------------------- |
-| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                  | Yes                   |
-| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)** | Yes                   |
-| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                             | No                    |
-| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)**      | Yes                   |
-| **Facebook Custom Audiences Website**    | Yes                   |
+| **Facebook Destination**                                                                                    | Supported by Personas |
+| ----------------------------------------------------------------------------------------------------------- | --------------------- |
+| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                      | Yes                   |
+| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)**    | Yes                   |
+| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                                | No                    |
+| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)** | Yes                   |
+| **[Facebook Conversions API](/docs/connections/destinations/catalog/actions-facebook-conversions-api/)**    | Yes                   |
 
 
 ## Getting Started
@@ -46,7 +46,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.page();
 ```
 
-We've mapped `analytics.page()` to [Facebook's `fbq('track', "PageView")`](https://developers.facebook.com/docs/ads-for-websites/pixel-events/v2.11) method and will forward all page views accordingly. Note that the integration will ignore any parameters you pass to `analytics.page()`.
+Segment maps `analytics.page()` to Facebook's `fbq('track', "PageView")` method and will forward all page views accordingly. Note that the integration will ignore any parameters you pass to `analytics.page()`.
 
 ## Identify
 

@@ -1,0 +1,115 @@
+---
+sections:
+- section_title: Overview
+  description: "Learn the fundamentals about Twilio Engage."
+  section:
+  - path: '/engage/overview'
+    title: Introduction
+  - path: '/engage/overview/onboarding'
+    title: Onboarding Steps
+  - path: '/engage/overview/use-cases'
+    title: Use Cases
+- section_title: Profiles
+  description: "Explore how data powers the creation of user profiles."
+  section:
+  - path: '/engage/profiles'
+    title: Profiles Explorer
+  - path: '/engage/profiles/computed-traits'
+    title: Computed Traits
+  - path: '/engage/profiles/csv-upload'
+    title: CSV Uploader
+  - section_title: User Subscriptions
+    slug: engage/profiles/user-subscriptions
+    menu_icon: read-more
+    section:
+    - path: '/engage/profiles/user-subscriptions'
+      title: User Subscription Overview
+    - path: '/engage/profiles/user-subscriptions/subscription-states'
+      title: User Subscription States
+    - path: '/engage/profiles/user-subscriptions/set-user-subscriptions'
+      title: Set User Subscription States
+- section_title: Audiences
+  description: "See how to create audiences based on data."
+  section:
+  - path: '/engage/audiences'
+    title: Audiences Overview
+  - path: '/engage/audiences/account-audiences'
+    title: Account-level Audiences
+  - path: '/engage/audiences/organization'
+    title: Organize Audiences
+- section_title: Journeys
+  description: "Learn how to create multi-step Journeys to tailor messages to your users."
+  section:
+  - path: '/engage/journeys'
+    title: Journeys Overview
+  - path: '/engage/journeys/build-journey'
+    title: 'Build a Journey'
+  - path: '/engage/journeys/send-data'
+    title: Send Data to Destinations
+  - path: '/engage/journeys/faq-best-practices'
+    title: Journeys Best Practices and FAQ
+  - path: '/engage/journeys/use-cases'
+    title: Example Journeys Use Cases
+  - path: '/engage/journeys/journeys-logic'
+    title: Understand Journeys Logic
+  - path: '/engage/journeys/key-terms'
+    title: Journeys Glossary
+- section_title: Content
+  description: "Design brand-specific templates for your email and SMS campaigns."
+  section:
+  # - section_title: Email
+  #   section:
+  - path: '/engage/content/email/template'
+    title: Email Template
+  - path: '/engage/content/email/editor'
+    title: Email Template Editor
+  # - section_title: SMS
+  #   section:
+  - path: '/engage/content/sms/template'
+    title: SMS Template
+- section_title: Campaigns
+  description: "Create multi-channel campaigns to get the right message to your users."
+  section:
+  - path: '/engage/campaigns'
+    title: Campaigns Overview
+  - path: '/engage/campaigns/email-campaigns'
+    title: Email Campaigns
+  - path: '/engage/campaigns/sms-campaigns'
+    title: SMS Campaigns
+  - path: '/engage/campaigns/use-profile-traits'
+    title: Use Profile Traits in your Campaigns
+  - path: '/engage/campaigns/email-sms-best-practices'
+    title: Email and SMS Best Practices
+- section_title: Analytics
+  description: "Track the performance of your campaigns."
+  section:
+  - path: '/engage/analytics'
+    title: Analytics Overview
+  - path: '/engage/analytics/message-events'
+    title: Message Events
+  # - path: '/engage/analytics/custom-events'
+  #   title: Custom Events
+# - section_title: Settings
+#   section:
+#   - path: '/engage/settings/messaging-settings'
+#     title: Messaging Settings
+#   - path: '/engage/settings/identity-resolution'
+#     title: Identity Resolution
+#   - path: '/engage/settings/sources'
+#     title: Sources
+#   - path: '/engage/settings/destinations'
+#     title: Destinations
+#   - path: '/engage/settings/debugger'
+#     title: Debugger
+#   - path: '/engage/settings/connection-policy'
+#     title: Connection Policy
+#   - path: '/engage/settings/warehouse-sources'
+#     title: Warehouse Sources
+#   - path: '/engage/settings/api-access'
+#     title: API Access
+#   - path: '/engage/settings/rename-space'
+#     title: Rename Space
+#   - path: '/engage/settings/labels'
+#     title: Labels
+path: '/engage/contact'
+title: Support

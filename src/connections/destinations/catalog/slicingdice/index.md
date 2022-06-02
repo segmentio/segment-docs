@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: SlicingDice Destination
+id: 5ca241b892f10000016b5696
 ---
 [SlicingDice](https://slicingdice.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an all-in-one data warehouse. It's a fully managed cloud data warehouse with optional built-in tools for data integration, exploration, visualization and machine learning.
 

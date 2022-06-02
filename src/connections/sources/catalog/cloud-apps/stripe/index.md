@@ -1,7 +1,10 @@
 ---
 title: Stripe Source
 rewrite: true
+id: 1bow82lmk
 ---
+{% include content/source-region-unsupported.md %}
+
 [Stripe](https://stripe.com/about) builds economic infrastructure for the internet, that enables businesses of every size to accept payments and manage their businesses online.
 
 If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
@@ -45,7 +48,7 @@ Collections are the groupings of resources we pull from your source. In your war
 | `invoice_items`                   | object | Sometimes you want to add a charge or credit to a customer but only actually charge the customer's card at the end of a regular billing cycle. This is useful for combining several charges to minimize per-transaction fees or having Stripe tabulate your usage-based billing totals. For more information, see [Stripe's API docs](https://stripe.com/docs/api#invoiceitems)                                      |
 | `invoice_lines`                   | object | When retrieving an invoice, you'll get a lines property containing the total count of line items and the first handful of those items For more information, see [Stripe's API docs](https://stripe.com/docs/api#invoice_lines)                                                                                                                                                                                       |
 | `invoices`                        | object | Invoices are statements of what a customer owes for a particular billing period, including subscriptions, invoice items, and any automatic proration adjustments if necessary. For more information, see [Stripe's API docs](https://stripe.com/docs/api#invoices)                                                                                                                                                   |
-| `order_shipping_methods`          | object | A list of supported shipping methods for a given product. For more information, see [Stripe's API docs](https://stripe.com/docs/api/orders/object#order_object-shipping_methods)                                                                                                                                                                                                                                     |
+| `order_shipping_methods`          | object | A list of supported shipping methods for a given product.                                                                                                                                                                                                                                      |
 | `payment_intents`                 | object | A PaymentIntent tracks the process of collecting a payment from your customer. A PaymentIntent transitions through multiple statuse throughout its lifetime and ultimately creates at most one successful charge. For more information, see [Stripe's API docs](https://stripe.com/docs/api/payment_intents)                                                                                                         |
 | `payment_methods`                 | object | PaymentMethod objects represent your customer's payment instruments. They can be used with [PaymentIntents](https://stripe.com/docs/payments/payment-intents) to collect payments or saved to Customer objects to store instrument details for future payments. For more information, see [Stripe's API docs](https://stripe.com/docs/payments/payment-methods)                                                      |
 | `plans`                           | object | A subscription plan contains the pricing information for different products and feature levels on your site. For more information, see [Stripe's API docs](https://stripe.com/docs/api#plans)                                                                                                                                                                                                                        |
@@ -336,13 +339,13 @@ Segment flattens Stripe's Evidence and Evidence Details objects. See Stripe's [D
 
 ### order_shipping_methods
 
-Segment flattens Stripe's Delivery Estimate object. See Stripe's [Shipping Methods](https://stripe.com/docs/api/orders/object#order_object-shipping_methods) documentation for more detail. 
+Segment flattens Stripe's Delivery Estimate object.
 
 | Property Name        | Description                                                                                                                                                                                                                              |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `amount`             | The total amount of the line item, represented in the smallest currency unit                                                                                                                                                             |
 | `currency`           | Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase.                                                                                                                                        |
-| `delivery_estimate_` | The estimated delivery date for a given shipping method, as described in Stripe's [Delivery Estimate](https://stripe.com/docs/api/orders/object#order_object-shipping_methods-delivery_estimate). For example, `delivery_estimate_date`. |
+| `delivery_estimate_` | The estimated delivery date for a given shipping method. For example, `delivery_estimate_date`. |
 | `description`        | An arbitrary string attached to the object                                                                                                                                                                                               |
 | `order_id`           | The identifier of the order associated with the shipping method                                                                                                                                                                          |
 | `shipping_id`        | A unique identifer for a given shipping method                                                                                                                                                                                           |

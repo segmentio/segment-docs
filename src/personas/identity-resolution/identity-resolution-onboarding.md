@@ -17,12 +17,12 @@ Segment creates and merges user profiles based on a space's Identity Resolution 
 
 ### Flat matching logic
 
-When Personas receives a new event, Segment looks for any profiles that match any of the identifiers on the event.
+When Personas receives a new event, Segment looks for profiles that match any of the identifiers on the event.
 
 Based on the existence of a match, one of three actions can occur:
 
 **1: Create a new profile**
-When there are no pre-existing profiles that have matching identifiers to the event, Segment create a new user profile.
+When there are no pre-existing profiles that have matching identifiers to the event, Segment creates a new user profile.
 
 **2: Add to existing profile**
 When there is one profile that matches all identifiers in an event, Segment attempts to map the traits, identifiers and events on the call to that existing profile. If there is an excess of any identifier on the final profile, Segment defers to the Identity Resolution rules outlined below.
@@ -32,7 +32,7 @@ When there are multiple profiles that match the identifiers in an event, Segment
 
 ## Identity Resolution settings
 
-Identity Admins should first configure Identity Resolution Settings page to protect the identity graph from inaccurate merges and user profiles.
+Identity Admins should first configure Identity Resolution Settings to protect the identity graph from inaccurate merges and user profiles.
 
 During the space creation process, the first step is to choose an Identity Resolution configuration. If this is your first space, you have the option to choose a Segment-suggested Out-of-the-Box configuration or a custom Identity Resolution setup. All other spaces have a third option of importing settings from a different space.
 
@@ -42,13 +42,13 @@ During the space creation process, the first step is to choose an Identity Resol
 
 For most first-time Personas users, Segment recommends that you use the out-of-the-box configuration and answer a short series of questions for a best-fit setup for your use-case.
 
-If you have custom unique identifiers or do not have a canonical `user_id` you are automatically redirected to the Identity Resolution Settings page to complete your setup.
+If you have custom unique identifiers or do not have a canonical `user_id`, you are automatically redirected to the Identity Resolution Settings page to complete your setup.
 
 ### Custom rules
 
 If you are familiar with identity or have custom identifiers, Segment recommends that you select Custom Rules.
 
-Segment redirects you to the Identity Resolutions Settings page where you can add Default Identifiers or Custom Identifiers.
+Segment redirects you to the Identity Resolution Settings page where you can add Default Identifiers or Custom Identifiers.
 
 Segment's 11 default are:
 
@@ -72,7 +72,7 @@ You can also provide a trait or property key to match on to add custom identifie
 
 #### Blocked values
 
-Segment recommends that you proactively prevent using certain values as identifiers. While these values remain in the payload on the event itself, it is not promoted to as an identifier Segment uses to determine user profiles.
+Segment recommends that you proactively prevent using certain values as identifiers. While these values remain in the payload on the event itself, it is not promoted to an identifier Segment uses to determine user profiles.
 
 This is important when developers have a hard-coded value for fields like `user_id` during QA or development that then erroneously make it to production. This may cause hundreds of profiles to merge incorrectly and can have costly consequences if these spaces already feed data into a production email marketing tool or push notification tool downstream.
 
@@ -152,7 +152,7 @@ If a new android.id identifier appeared without first giving it explicit order, 
 | anonymous_id | 4        |
 | ga_client_id | 5        |
 
-If you require an explicit order for all identifiers, configure this in the Identity Resolution settings page before sending in events.
+If you require an explicit order for all identifiers, configure this in the Identity Resolution Settings page before sending in events.
 
 ![](images/edit-priority.png)
 
@@ -180,8 +180,8 @@ After you connect a source, Personas creates user profiles based off of replayed
 
 ![](images/create_audience.png)
 
-The next step, which is important in the Dev space, is to create an audience to ensure that user profiles have populated correctly and that the identity resolution settings follow expected business logic.
+The next step, which is important in the Dev space, is to create an audience to ensure that user profiles have populated correctly and that the Identity Resolution settings follow expected business logic.
 
-For example, if there should be 100,000 distinct users who have a `user_id`, this would be a great way to validate that the identity resolution settings have calculated profiles correctly.
+For example, if there should be 100,000 distinct users who have a `user_id`, this would be a great way to validate that the Identity Resolution settings have calculated profiles correctly.
 
 For more information about how to create audiences and traits, see [Audiences](/docs/personas/audiences/).

@@ -1,11 +1,9 @@
 ---
 title: Clearbit Enrichment Destination
 rewrite: true
+id: 576af9ca80412f644ff13b87
 ---
-
 [Clearbit Enrichment](https://clearbit.com/segment) helps customers enrich and append real-time data to an email or domain, driving growth or powering your product with social data, location, job title, company size and technology.
-
-This document was last updated on April 20th, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 

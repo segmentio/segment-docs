@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Adjust Destination
+id: 56f6ce7280412f644ff12fb2
 ---
-
 [Adjust](https://adjust.com) is the mobile attribution provider of choice for hundreds of organizations across the globe. They unify all your marketing activities into one powerful platform, giving you the insights you need to scale your business. The Adjust Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-adjust) and [Android](https://github.com/segment-integrations/analytics-android-integration-adjust).
 
 If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
@@ -50,7 +50,7 @@ In cases where the Adjust integration sometimes does not track the install attri
 
 #### Additional device-mode set up for iOS 14 support
 
-Segment’s Adjust SDK was updated to use Adjust version 4.23.0 to prepare for iOS 14. The updated Adjust SDK offers iOS 14 support, AppTrackingTransparency (ATT) and SKAdNetwork dashboard features.
+Segment's Adjust SDK was updated to use Adjust version 4.23.0 to prepare for iOS 14. The updated Adjust SDK offers iOS 14 support, AppTrackingTransparency (ATT) and SKAdNetwork dashboard features.
 
 See Adjust's [Steps to Support iOS 14 documentation](https://help.adjust.com/manage-data/data-privacy/ios-14-user-privacy-frameworks#Steps-to-support-iOS-14) for more information.
 
@@ -61,7 +61,7 @@ To use the latest Adjust SDK to collect IDFAs you must do the following:
    The latest SDK has integrated support for the SKAdNetwork, which is enabled by default. For access to the SKAdNetwork, make sure your ad networks are registered with Apple. Adjust automatically registers for SKAdNetwork attribution on SDK initialization, and can handle the conversion value update. You can choose to disable this by calling `[adjustConfig deactivateSKAdNetworkHandling];` on the config object in your `AppDelegate.m` file.
 3. Import and implement the AppTrackingTransparency (ATT) Framework.
    Navigate to your project `Info.plist` and add a “Privacy - Tracking Usage Description”. This description appears in a popup when the application initializes in iOS 14. Users are prompted to indicate whether or not they want to allow tracking.
-4. Launch an opt-in popup using Adjust’s SDK wrapper, built on top of `requestTrackingAuthorizationWithCompletionHandler` for the ATT Framework. An iOS pop-up launches when the wrapper is called the first time. When it is called again, the wrapper retrieves the tracking authorization status, which is sent to the Adjust backend. Adjust relays the information directly to you. The example below shows how to use this wrapper.
+4. Launch an opt-in popup using Adjust's SDK wrapper, built on top of `requestTrackingAuthorizationWithCompletionHandler` for the ATT Framework. An iOS pop-up launches when the wrapper is called the first time. When it is called again, the wrapper retrieves the tracking authorization status, which is sent to the Adjust backend. Adjust relays the information directly to you. The example below shows how to use this wrapper.
 
    ```swift
    [Adjust requestTrackingAuthorizationWithCompletionHandler:^(NSUInteger status) {
@@ -115,7 +115,7 @@ After you build and release to the App Store, Segment automatically starts trans
 
 ### Server
 
-Our Cloud-mode integration allows you to send *supplemental* data to Adjust.  This, however, *does not* include attribution events. If you are relying on the Adjust server-side component, and you are not bundling the Segment-Adjust SDK, your installs will not be attributed. E-commerce events and other general `track` events are supported out of the box. You **must** map your `track` events to your custom Adjust Event Token in your [Adjust destination settings](#map-your-events-to-custom-adjust-event-tokens).
+The Cloud-mode integration allows you to send *supplemental* data to Adjust.  This *does not* include attribution events. If you rely on the Adjust server-side component, and do not bundle the Segment-Adjust SDK, your installs will not be attributed. E-commerce events and other general `track` events are supported out of the box. You **must** map your `track` events to your custom Adjust Event Token in your [Adjust destination settings](#map-your-events-to-custom-adjust-event-tokens).
 
 Additionally, to send any events to Adjust from the server, you must include the `device.id` as well as the `device.type` in the context object of your event. For example:
 
@@ -135,6 +135,13 @@ analytics.track({
   }
 });
 ```
+
+For iOS and Android, Device ID and Advertising ID map to Segment as follows:
+
+| Segment                        | iOS    | Android      |
+| ------------------------------ | ------ | ------------ |
+| `context.device.advertisingId` | `idfa` | `gps_adid`   |
+| `context.device.id`            | `idfv` | `android_id` |
 
 ## Identify
 
@@ -166,16 +173,6 @@ When you call `track` Segment maps the event to your pre-defined Adjust custom e
 If you don't provide a mapping, Adjust cannot accept the event. We include all the event `properties` as callback parameters on the Adjust event, and automatically translate `revenue` and `currency` to the appropriate Adjust event properties based on our [spec'd properties](/docs/connections/spec/track/#properties).
 
 
-## Reset
-
-If you're not familiar with the Segment Specs, take a look to understand what the [Reset method](/docs/connections/spec/reset/) does. An example call would look like:
-
-```javascript
-analytics.reset();
-```
-
-When you call `reset`, Segment will reset these partner parameters using Adjust's [resetSessionPartnerParameters](https://github.com/adjust/ios_sdk#session-partner-parameters) method.
-
 ## Install Attributed
 
 ### Client
@@ -184,16 +181,16 @@ Segment will trigger an `Install Attributed` event if you have **trackAttributio
 
 Using Adjust's [Attribution callback](https://github.com/adjust/ios_sdk#attribution-callback), Segment listens for an attribution change from Adjust's SDK and triggers the call with the following Adjust attribution parameters:
 
-| Key  | Value  | Description |
-|--:|---|---|
-|  provider | Adjust  | hardcoded by Segment |
-| trackerToken | attribution.trackerToken | the tracker token of the current install |
-| trackerName | attribution.trackerName | the tracker name of the current install |
-| campaign.source |  attribution.network | the network grouping level of the current install |
-| campaign.name | attribution.campaign | the campaign grouping level of the current install |
-| campaign.content | attribution.clickLabel | the click label of the current install |
-| campaign.adCreative | attribution.creative | the creative grouping level of the current install |
-| campaign.adGroup | attribution.adgroup | the ad group grouping level of the current install |
+| Key                 | Value                    | Description                                        |
+| ------------------- | ------------------------ | -------------------------------------------------- |
+| provider            | Adjust                   | hardcoded by Segment                               |
+| trackerToken        | attribution.trackerToken | the tracker token of the current install           |
+| trackerName         | attribution.trackerName  | the tracker name of the current install            |
+| campaign.source     | attribution.network      | the network grouping level of the current install  |
+| campaign.name       | attribution.campaign     | the campaign grouping level of the current install |
+| campaign.content    | attribution.clickLabel   | the click label of the current install             |
+| campaign.adCreative | attribution.creative     | the creative grouping level of the current install |
+| campaign.adGroup    | attribution.adgroup      | the ad group grouping level of the current install |
 
 If any value is unavailable, it will default to nil.  This call will be sent to all enabled [device and cloud mode](/docs/connections/destinations/#connection-modes) destinations.
 

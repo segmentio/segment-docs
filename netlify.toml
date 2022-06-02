@@ -12,12 +12,11 @@
   ignore = "./scripts/ignore.sh"
 
 [context.branch-deploy]
-  command = "yarn develop"
-  ignore = "./scripts/ignore.sh"
+  command = "jekyll algolia && yarn build"
+#  ignore = "./scripts/ignore.sh"
 
 [context.develop]
   command = "yarn develop"
-
 
 [[redirects]]
   from = "/docs/*"
@@ -29,3 +28,8 @@
   to = "/assets/docs.bundle.js"
   status = 200
 
+[[plugins]]
+  package = "netlify-plugin-jekyll-cache"
+
+	[plugins.inputs]
+  	jekyllSource = "/src"

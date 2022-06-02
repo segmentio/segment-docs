@@ -1,8 +1,8 @@
 ---
 title: Analytics for PHP
 repo: analytics-php
+id: TDO70If4mD
 ---
-
 Our PHP library lets you record analytics data from your PHP code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
 
 This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-php).
@@ -401,6 +401,9 @@ The [lib-curl consumer](https://github.com/segmentio/analytics-php/blob/master/l
 If your servers are handling more than 20 requests per second, you may want to look at the [file consumer](#file-consumer) to optimize performance.
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
+
+{% include content/tracking-api-limit.md %}
+
 
 The lib-curl consumer is Segment's default PHP library, although you may still initialize it explicitly and set queue and batch sizes in the library's initialization settings.
 

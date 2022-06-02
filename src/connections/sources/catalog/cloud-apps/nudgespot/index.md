@@ -1,7 +1,10 @@
 ---
 title: 'Nudgespot Source'
+id: 5GkpcyvNey
 ---
-Nudgespot is the easiest way to trigger emails, SMS, push notifications or in-app messages to your customers, at the right time.  [Visit Website](http://www.nudgespot.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
+{% include content/source-region-unsupported.md %}
+
+Nudgespot is the easiest way to trigger emails, SMS, push notifications or in-app messages to your customers, at the right time.  [Visit Website](https://zetaglobal.com/){:target="_blank"}.
 
 Take your company's email analysis to the next level by **adding Nudgespot as a Source to Segment.** Segment automatically  collects email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
 

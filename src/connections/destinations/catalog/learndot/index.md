@@ -1,8 +1,8 @@
 ---
 title: Learndot Destination
 rewrite: true
+id: 5d67475d07d95bd4a7937ea7
 ---
-
 [Learndot](https://www.learndot.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a product focussed customer education platform that enables companies to rapidly produce and distribute engaging training content.
 
 This destination is maintained by Learndot. For any issues with the destination, [contact the Learndot Support team](mailto:help@learndot.com).

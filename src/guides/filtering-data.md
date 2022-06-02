@@ -25,7 +25,7 @@ You can use the `integrations` JSON object as part of your Segment payloads to c
     "page": {
       "title": "Analytics Academy",
       "url": "https://segment.com/academy/"
-    },
+    }
   },
   "integrations": {
     "All": true,
@@ -100,7 +100,7 @@ If you have Protocols in your workspace, **and** have a tracking plan associated
 
 ## Warehouse Selective Sync
 
-Warehouse Selective Sync allows you to stop sending specific data to specific warehouses. You can use this to stop syncing specific events or properties that aren’t relevant, and could be slowing down your warehouse syncs. See the [Warehouse Selective Sync documentation](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync) to learn more.
+Warehouse Selective Sync allows you to stop sending specific data to specific warehouses. You can use this to stop syncing specific events or properties that aren't relevant, and could be slowing down your warehouse syncs. See the [Warehouse Selective Sync documentation](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync) to learn more.
 
 > info ""
 > This feature is only available to Business Tier customers, and you must be a Workspace Owner to change Selective Sync settings.

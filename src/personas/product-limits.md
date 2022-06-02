@@ -15,7 +15,7 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 | Name                                        | limit                                                       | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Inbound Data Throughput                     | 1000 events per second                                      | Total event stream from sources connected to Personas, including historical data replays. Segment may slow request processing once this limit is reached.                                                                                                                                                                                                                                                                                                                                               |
-| Outbound Downstream Destination Rate Limits | Reduced retries when failures exceed 1000 events per second | Outbound Destination requests may fail for reasons outside of Segment’s control.  For example, most Destinations enforce their own rate limits. As a result, Segment may deliver data faster than the Destination can accept. <br><br>  When Destination requests fail, Segment tries to deliver the data again. However, if more than 1000 requests per second fail or if the failure rate exceeds 50% for over 72 hours, Segment may reduce additional delivery attempts until the failure condition resolves. |
+| Outbound Downstream Destination Rate Limits | Reduced retries when failures exceed 1000 events per second | Outbound Destination requests may fail for reasons outside of Segment's control.  For example, most Destinations enforce their own rate limits. As a result, Segment may deliver data faster than the Destination can accept. <br><br>  When Destination requests fail, Segment tries to deliver the data again. However, if more than 1000 requests per second fail or if the failure rate exceeds 50% for over 72 hours, Segment may reduce additional delivery attempts until the failure condition resolves. |
 
 
 ## Profile API
@@ -23,7 +23,7 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 | Name                    | limit                   | Details                                                                                                                                                             |
 | ----------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Profile API Throughput  | 100 requests per second | If requests exceed 100 per second, the Profile API returns HTTP Error `429 Too Many Requests`.                                                                      |
-| Events Lookback History | 14 days                 | The Profile API retrieves up to 14 days of a profile’s historical events within a collection. This applies to Track events, not traits sent through Identify calls. |
+| Events Lookback History | 14 days                 | The Profile API retrieves up to 14 days of a profile's historical events within a collection. This applies to Track events, not traits sent through Identify calls. |
 
 
 ## Identity
@@ -42,7 +42,7 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 | Compute Concurrency     | 5 concurrent audiences                            | Segment computes five new audiences or computed traits at a time. Once the limit is reached, Segment queues additional audience computations until one of the five audiences finishes computing.       |
 | Compute Throughput      | 10000 computations per second                     | Computations include any Track or Identify call that triggers an audience or computed trait re-computation. Once the limit is reached, Segment may slow audience processing.                           |
 | Events Lookback History | **Essentials**: 1 year <br><br> **Advanced**: 3 years | The period of time for which Segment stores audience and computed traits computation events.  This limit depends on your Personas service. Contact your account team to upgrade your Personas service. |
-
+| Real-time to batch destination sync frequency | 2-3 hours   | The frequency with which Segment syncs real-time audiences to batch destinations.  |
 
 ## SQL Traits
 
@@ -56,13 +56,9 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 
 ## Journeys
 
-
-In addition to [Personas Default Limits](#default-limits), Journeys enforces default limits to ensure feature performance and reliability.
-
-| Item          | Limit description                | Details                                                                                                                                                                                                                                                                               |
-| ------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Journeys      | 10 Journeys per workspace        | Applies to active, concurrent Journeys. <br><br>Once the limit is reached, you cannot publish any additional Journeys. You will still be able to create draft Journeys.                                                                                               |
-| Journey steps | 20 steps per Journey             | This applies to certain steps:<br><br>- Initial cohort: 1<br>- Wait for condition: 1<br>- True / False Split: 1<br>- Multi-Branch Split: Number of branches<br>- Send to Destinations: 1<br><br>Once the limit is reached, you will be unable to add additional steps to the Journey. |
-| Journey Name  | Maximum length of 73 characters  | Once the limit is reached, you cannot add additional characters to the name.                                                                                                                                                                                               |
-| Step Name     | Maximum length of 170 characters | Once the limit is reached, you cannot add additional characters to the name.                                                                                                                                                                                               |
-| Key           | Maximum length of 255 characters | Once the limit is reached, you cannot add additional characters to the key.                                                                                                                                                                                                |
+| Item         | Limit description                | Details                                                                      |
+| ------------ | -------------------------------- | ---------------------------------------------------------------------------- |
+| Steps        | 500                              | The maximum number of steps per Journey.                                     | 
+| Step Name    | Maximum length of 170 characters | Once the limit is reached, you cannot add additional characters to the name. |
+| Key          | Maximum length of 255 characters | Once the limit is reached, you cannot add additional characters to the key.  |
+| Journey Name | Maximum length of 73 characters  | Once the limit is reached, you cannot add additional characters to the name. |

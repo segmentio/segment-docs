@@ -1,13 +1,13 @@
 ---
 title: HubSpot Source
 rewrite: true
+id: 2baks93o
 ---
+{% include content/source-region-unsupported.md %}
 
 [HubSpot](http://www.hubspot.com) is an all-in-one marketing tool that helps attract new leads and convert them into paying customers, with features like landing page creation and email automation.
 
 Are you trying to set up HubSpot as a destination to receive data from Segment? Go here [HubSpot Destination](https://segment.com/docs/connections/destinations/catalog/hubspot/).
-
-This document was last updated on July 10, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 

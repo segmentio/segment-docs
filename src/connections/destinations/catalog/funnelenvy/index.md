@@ -1,8 +1,8 @@
 ---
 title: FunnelEnvy Destination
 rewrite: true
+id: 5d3752aec1c95d00012c80aa
 ---
-
 [FunnelEnvy](https://www.funnelenvy.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps marketers optimize revenue by delivering personalized experiences and offers for every customer across their unique journey.
 
 This destination is maintained by FunnelEnvy. For any issues with the destination, [contact the FunnelEnvy Support team](mailto:support@funnelenvy.com).

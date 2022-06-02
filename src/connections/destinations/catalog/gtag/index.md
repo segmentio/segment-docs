@@ -6,7 +6,7 @@ strat: google
 ---
 
 > note ""
-> The Gtag Destination is in a closed Early Access Preview. To join the preview, contact [Segment Support](https://segment.com/help/contact/) or your CSM. The use is governed by [(1) Segment First Access](/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](/docs/legal/acceptable-use-policy/).
+> The Gtag Destination is in a closed Early Access Preview. To join the preview, contact [Segment Support](https://segment.com/help/contact/) or your CSM. The use is governed by [(1) Segment First Access](https://segment.com/legal/first-access-beta-preview/){:target="_blank"} and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/){:target='_blank'}.
 
 
 ## Getting started
@@ -438,7 +438,7 @@ analytics.ready(function(){
 
 To do this server side, you can create a separate [source](/docs/connections/sources/) in Segment, and within this source enter your Google Analytics credentials for the second tracker.
 
-This source can be your server-side source. From there, you send data to multiple projects server-side. As you can see in this [Node example](/docs/sources/server/node/#multiple-clients) you can initialize multiple instances of the library.
+This source can be your server-side source. From there, you send data to multiple projects server-side. As you can see in this [Node example](/docs/connections/sources/catalog/libraries/server/node/#multiple-clients) you can initialize multiple instances of the library.
 
 ### Cookie domain name
 

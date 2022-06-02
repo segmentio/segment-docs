@@ -1,6 +1,9 @@
 ---
 title: Aircall Source
+beta: true
+id: p1Kv6YKjE3
 ---
+{% include content/source-region-unsupported.md %}
 
 Connect [Aircall](https://aircall.io) with Segment to bring Aircall events and phone call data to your data warehouse. Improve your knowledge of customer touchpoints by leveraging call activity.
 

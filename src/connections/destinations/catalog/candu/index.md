@@ -2,9 +2,9 @@
 title: Candu Destination
 rewrite: true
 beta: true
+id: 5c7df2eafeed45000121a49e
 ---
-
-[Candu](https://www.candu.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the first Editor for your app. Instead of overlaying an experience layer, Candu’s embedded components inherit your style guide, so they look like a native part of your interface. Candu helps you build, iterate, and personalize native onboarding experiences that guide your end-users from basic to expert-level fluency.
+[Candu](https://www.candu.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the first Editor for your app. Instead of overlaying an experience layer, Candu's embedded components inherit your style guide, so they look like a native part of your interface. Candu helps you build, iterate, and personalize native onboarding experiences that guide your end-users from basic to expert-level fluency.
 
 This destination is maintained by Candu Labs. For any issues with the destination, [contact the Candu Support team](mailto:support@candu.ai).
 

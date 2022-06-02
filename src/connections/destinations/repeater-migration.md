@@ -3,7 +3,7 @@ title: Migrating Repeater destinations to multi-instance destinations
 hidden: true
 ---
 
-[Multi-instance destination capabilities](/docs/connections/destinations/add-destination#connecting-one-source-to-multiple-instances-of-a-destination) can replace a Repeater destination that is used to forward data from a single Segment source to multiple instances of a destination. Compared to using a Repeater, multi-instance destination configurations simplify setup, provide better observability into event delivery, and reduce event volume, which reduces your costs. However, multi-instance destination do not replace the Repeater in all situations. If you’re using a Repeater for data transformations or to filter Personas events, you will need to continue using the Repeater.
+[Multi-instance destination capabilities](/docs/connections/destinations/add-destination#connecting-one-source-to-multiple-instances-of-a-destination) can replace a Repeater destination that is used to forward data from a single Segment source to multiple instances of a destination. Compared to using a Repeater, multi-instance destination configurations simplify setup, provide better observability into event delivery, and reduce event volume, which reduces your costs. However, multi-instance destination do not replace the Repeater in all situations. If you're using a Repeater for data transformations or to filter Personas events, you will need to continue using the Repeater.
 
 > success ""
 > Segment recommends that you test the migration process in a staging environment to check your changes, **before** you change any production configurations.

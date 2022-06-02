@@ -1,8 +1,11 @@
 ---
 title: Selligent Marketing Cloud Source
 source-type: event
+id: xn9YEaDaNS
 ---
-[Selligent Marketing Cloud](https://selligent.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a highly integrated, AI-powered omnichannel marketing automation platform which enables ambitious B2C marketers to maximize every moment of interaction with today’s connected consumers. Deliver ultra-personalized, highly relevant customer experiences across channels and devices, providing value swiftly and at scale.
+{% include content/source-region-unsupported.md %}
+
+[Selligent Marketing Cloud](https://selligent.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a highly integrated, AI-powered omnichannel marketing automation platform which enables ambitious B2C marketers to maximize every moment of interaction with today's connected consumers. Deliver ultra-personalized, highly relevant customer experiences across channels and devices, providing value swiftly and at scale.
 
 This source is maintained by Selligent Marketing Cloud. For any issues with the source, [contact the Selligent Marketing Cloud Support team](mailto:scrum-redwood@selligent.com).
 
@@ -117,6 +120,6 @@ The table below list the properties included in the events listed above.
 
 Now that your Source is set up, you can connect it with Destinations.
 
-Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
+Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don't appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, [contact the Selligent Marketing Cloud support team](mailto:scrum-redwood@selligent.com).

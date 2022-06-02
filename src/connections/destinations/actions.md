@@ -24,19 +24,12 @@ Each Actions-framework Destination you see in the Segment catalog represents a f
 
 The following Actions-based Destinations are available:
 
-| Destination                                                                                                      | Benefits                                                                                                                |
-| ---------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| [Amplitude (Actions)](/docs/connections/destinations/catalog/actions-amplitude)                                  | - Supports Amplitude session reporting <br /> - Revenue is a top-level property <br /> - Session tracking in cloud-mode |
-| [Braze (Actions) Cloud](/docs/connections/destinations/catalog/braze-cloud-mode-actions)                         | E-commerce mappings                                                                                                     |
-| [Braze (Actions) Web](/docs/connections/destinations/catalog/braze-web-device-mode-actions)                      | E-commerce mappings                                                                                                     |
-| [Customer.io (Actions)](/docs/connections/destinations/catalog/customer-io-actions)                              | Track an anonymous event                                                                                                |
-| [FullStory (Actions)](/docs/connections/destinations/catalog/actions-fullstory)                                  | Support for FullStory's tracking page variables feature.                                                                |
-| [Slack (Actions)](/docs/connections/destinations/catalog/actions-slack)                                          | - Consolidated Message Sending <br /> - Configure connection details on a per-message basis                             |
+{% include components/available-actions.html %}
 
 ## Destination Actions compatibility
 
 - Destination Actions are available to all customers on all Segment plans.
-- Destination Actions do not require that you disable or change existing destinations. However, to prevent data duplication in the destination tool, you should make sure you aren’t sending the data through both a standard destination and the Actions destination at the same time.
+- Destination Actions do not require that you disable or change existing destinations. However, to prevent data duplication in the destination tool, you should make sure you aren't sending the data through both a standard destination and the Actions destination at the same time.
 - You can still use the [Event Tester](/docs/connections/test-connections) with Destination Actions, and event delivery metrics are still collected and available in the destination information pages.
 - If you are using Protocols, Destination Actions actions are applied *after* [schema filters](/docs/protocols/enforce/schema-configuration/) and [transformations](/docs/protocols/transform/). If you are using [destination filters](/docs/connections/destinations/destination-filters/), Actions are applied after the filters - meaning that they are not applied to data that is filtered out.
 - Destination Actions can not yet be accessed or modified using the Segment APIs.
@@ -69,7 +62,7 @@ To set up a new Actions-framework destination for the first time:
 5. Enter your credentials. This could be an API Key and secret key, or similar information that allows the destination to connect to your account.
 6. Next, choose how you want to set up the destination, and click **Configure Actions**.
     You can choose **Quick Setup** to use the default mappings, or choose **Customized Setup** (if available) to create new mappings and conditions from a blank state. You can always edit these mappings later.
-7. Once you’re satisfied with your mappings, click **Create Destination**.
+7. Once you're satisfied with your mappings, click **Create Destination**.
 
 ## Migrate a classic destination to an actions-based destination
 
@@ -88,14 +81,14 @@ Moving from a classic destination to an actions-based destination is a manual pr
 ## Edit a destination action
 You can add or remove, disable and re-enable, and rename individual actions from the Actions tab on the destination's information page in the Segment app. Click an individual action to edit it.
 
-From the edit screen you can change the action’s name and mapping, and toggle it on or off. See [Customizing mappings](#customizing-mappings) for more information.
+From the edit screen you can change the action's name and mapping, and toggle it on or off. See [Customizing mappings](#customizing-mappings) for more information.
 
 ![](images/actions-list.png)
 
 ![](images/actions-edit.png)
 
 ## Disable a destination action
-If you find that you need to stop an action from running, but don’t want to delete it completely, you can click the action to select it, then click the toggle next to the action’s name to disable it. This takes effect within minutes, and disables the action until you reenable it.
+If you find that you need to stop an action from running, but don't want to delete it completely, you can click the action to select it, then click the toggle next to the action's name to disable it. This takes effect within minutes, and disables the action until you reenable it.
 
 ## Delete a destination action
 To delete a destination action: click the action to select it, and click **Delete** (the trash can icon).
@@ -116,7 +109,7 @@ If necessary, click **New Mapping** to create a new, blank action.
 3. Next, set up the data mapping from the Segment format to the destination tool format.
 4. Test the mapping with data from a sample event.
     The edit panel shows you the mapping output in the format for the destination tool. You can change your mapping as needed and re-test.
-5. When you’re satisfied with the mapping, click **Save**.
+5. When you're satisfied with the mapping, click **Save**.
 
 
 > info ""

@@ -54,7 +54,7 @@ When you choose a warehouse, you can then use the steps in the documentation to 
 
 Once your warehouse is configured and running, you can connect to it using a Business Intelligence (BI) tool (such as Looker, Mode, Tableau, or others) to analyze your data in-depth.
 
-There are also a number of Business tier features you can then use with your warehouse, including [selective sync](/docs/connections/storage/warehouses/selective-sync/) and [Replay](/docs/guides/what-is-replay/).
+There are also a number of Business tier features you can then use with your warehouse, including [selective sync](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync) and [Replay](/docs/guides/what-is-replay/).
 
 
 

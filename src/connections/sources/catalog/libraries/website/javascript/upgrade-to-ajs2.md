@@ -5,6 +5,10 @@ strat: ajs
 
 Analytics.js 2.0 is fully backward compatible with Analytics.js Classic when you use the default Segment snippet in a standard implementation. To upgrade your sources, follow the manual upgrade steps below, or see the schedule for automatic migration. As with all upgrades, Segment recommends that you start development on a non-production source to test the upgrade process and outcome, prior to upgrading your production sources.
 
+> warning "Deprecation of Analytics.js Classic"
+> On August 31, 2022, Segment will end support and maintenance for Analytics.js Classic, and on February 28, 2023,  Segment will remove access to Analytics.js Classic.
+> <br><br>Upgrade to Analytics.js 2.0 before access ends for Analytics.js Classic. See the [Analytics.js 2.0 docs](/docs/connections/sources/catalog/libraries/website/javascript/) to learn more about the new source.
+
 ## Manual upgrade
 
 To upgrade a source to Analytics.js 2.0:
@@ -17,7 +21,7 @@ To upgrade a source to Analytics.js 2.0:
 6. Open the Debugger to ensure that events are flowing as expected.
 
 > info ""
-> If you set `'Segment.io:' false` in the integrations object, Analytics.js 2.0 drops the event before it reaches the Source Debugger. 
+> If you set `'Segment.io:' false` in the integrations object, Analytics.js 2.0 drops the event before it reaches the Source Debugger.
 
 ## Automatic migration
 
@@ -27,7 +31,9 @@ Analytics.js sources will upgrade to Analytics.js 2.0 on the date below, accordi
 |--------------| -------------|
 | Free         | June 15, 2021|
 | Team         | July 6, 2021 |
-| Business     | TBD          |
+| Business*    | June 2022    |
+
+*If you're on a business plan, please reach out to [friends@segment.com](mailto:friends@segment.com) to see if your account is part of the upgrade in June 2022.
 
 > info ""
 > The plans and dates listed above are subject to change.
@@ -42,11 +48,17 @@ In some cases, upgrading to Analytics.js 2.0 requires manual effort beyond enabl
 
 ### Using in-domain instrumentation CDN aliasing
 
-If the source you intend to upgrade uses the in-domain instrumentation as well as a custom "Alias for analytics.js", then you should update the AJS snippet to the latest version (4.15.3 or higher) before you toggle on Analytics.js 2.0.
+If the source you intend to upgrade uses the in-domain instrumentation as well as a custom "Alias for analytics.js", then you should update the Analytics.js snippet to the latest version (4.15.3 or higher) before you toggle on Analytics.js 2.0.
+
+### Using a mix of Analytics.js Classic and 2.0 sources
+
+If you're using a mix of Analytics.js Classic and 2.0 sources, the classic source won't be able to use the anonymous ID set by Analytics.js 2.0. In order to fix this, update all sources to 2.0.
 
 ### Relying on Analytics.js Classic's `ajs_anonymous_id` cookie format  
 
 Analytics.js 2.0 removes inbuilt quotes from cookie values, resulting in a different format for the `ajs_anonymous_id` value when compared to Analytics.js Classic.  Though you can retrieve cookie values with [standard supported functions](/docs/connections/sources/catalog/libraries/website/javascript/identity/#retrieve-the-anonymous-id), you'll need to configure your environment to accept the new format if your implementation relies on accessing the cookie value directly.
+
+If you configured different sources for different subdomains of your website, switch them to Analytics 2.0 at the same time. Switching them at the same time ensures that subdomain tracking won't break. In cases when you need to gradually update to Analytics 2.0, the `utility` [plugin](/docs/connections/sources/catalog/libraries/website/javascript/#example-plugins) can help match the `ajs_anonymous_id` cookie format and ensure that users are consistently identified across your subdomains.
 
 ### Using a strict content security policy on the page
 
@@ -54,3 +66,7 @@ Analytics.js 2.0 asynchronously loads different pieces of the library as needed.
 - `https://cdn.segment.com/v1/projects/<WRITE_KEY>/settings`
 - `https://cdn.segment.com/analytics-next/bundles/*`
 - `https://cdn.segment.com/next-integrations/integrations/*`
+
+### Using trackLink on elements that are not links
+
+Previously, it was possible to attach `trackLink` to any element, and a `trackLink` call would fire for that element if it wasn't a link. Now, when you attach `trackLink` to a non-link element, an additional search of that element's children occurs for any nested links and fires track calls based on those links. If you wish to fire track calls on non-link elements that have links as children, you can use a `track` call instead.

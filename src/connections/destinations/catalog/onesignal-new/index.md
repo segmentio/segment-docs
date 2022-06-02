@@ -3,8 +3,8 @@ rewrite: true
 title: OneSignal New Destination
 hide-personas-partial: true
 redirect_from: '/connections/destinations/catalog/onesignal/'
+id: 60b6a5b69fec493efbd3c64c
 ---
-
 [OneSignal](https://onesignal.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is the market leader in driving customer engagement with multi-channel messaging across Web and Mobile Push, In-App Messages, SMS, and Email subscribers.
 This destination is maintained by OneSignal. For any issues with the destination, [contact the OneSignal Support team](mailto:support@onesignal.com).
 
@@ -37,7 +37,7 @@ Send [Identify](/docs/connections/spec/identify) calls to update Users. For exam
 analytics.identify('userId123', {
   firstName: 'John',
   lastName: 'Doe',
-     country: ‘USA’
+     country: ‘USA'
 });
 ```
 
@@ -47,6 +47,9 @@ Segment sends Identify traits as [Player Data Tags](https://documentation.onesig
 > OneSignal doesn't accept nested objects or arrays as user properties.
 
 ![](images/demo.png)
+
+> info "Data Tag Limits"
+> Your OneSignal plan may cap incoming Data Tags. Once you've reached your Data Tag limit, your user traits won't update in your OneSignal destination.
 
 ### Track
 
@@ -86,7 +89,7 @@ Audiences sends Identify and Track calls to OneSignal when a user enters or exit
 OneSignal stores Track and Identify calls from Personas Computed Traits as [Data Tags](https://documentation.onesignal.com/docs/add-user-data-tags) for the OneSignal User/Player's records.
 
 ## OneSignal Destination FAQ
-### Managing Segment’s Reserved and Custom Traits
+### Managing Segment's Reserved and Custom Traits
 
 * Segment sends user traits to OneSignal as Data Tags. The number of data tags OneSignal allows depends on your OneSignal pricing plan. OneSignal drops the data tags that go over your set number. .
 
@@ -94,4 +97,4 @@ OneSignal stores Track and Identify calls from Personas Computed Traits as [Data
 
 * Send User properties to OneSignal with blank/null values to remove the corresponding Data Tag from the OneSignal user record.
 
-* OneSignal doesn’t store `email` and `phone` properties. To update `email` and `phone` properties in OneSignal, create a player record with the email address and/or a phone number and map those records with the External_User_ID. Additional properties from Segment map across all your matching records, including email and phone number records.
+* OneSignal doesn't store `email` and `phone` properties. To update `email` and `phone` properties in OneSignal, create a player record with the email address and/or a phone number and map those records with the External_User_ID. Additional properties from Segment map across all your matching records, including email and phone number records.

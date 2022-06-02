@@ -1,0 +1,15 @@
+extends: substitution
+message:  Please use '%s' instead of '%s'
+level: error
+ignorecase: true
+swap:
+  blacklist: blocklist
+  whitelist: allowlist
+  utilize: use
+  utilizes: uses
+  utilizing: using
+  leverage: use
+  leverages: uses
+  leveraging: using
+  via: through, or using
+  drop in: enter

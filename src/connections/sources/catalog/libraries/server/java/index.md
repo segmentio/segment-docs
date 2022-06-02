@@ -1,8 +1,8 @@
 ---
 title: Analytics for Java
 repo: analytics-java
+id: V6ynUvQgbc
 ---
-
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics)
 
 Our Java library lets you record analytics data from your Java code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
@@ -16,7 +16,8 @@ Want to stay updated on releases? Subscribe to the [release feed](https://github
 
 ## Getting Started
 
-[![Javadocs](https://javadoc-badge.appspot.com/com.segment.analytics.java/analytics.svg?label=javadoc)](https://javadoc-badge.appspot.com/com.segment.analytics.java/analytics)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics)
+
 
 ### Install the library
 
@@ -37,7 +38,7 @@ Add to `pom.xml`:
 or if you're using Gradle:
 
 ```bash
-compile 'com.segment.analytics.java:analytics:+'
+implementation 'com.segment.analytics.java:analytics:+'
 ```
 
 ### Initialize the SDK
@@ -73,14 +74,13 @@ We recommend calling `identify` a single time when the user's account is first c
 Example `identify` call:
 
 ```java
+Map<String, String> map = new HashMap();
+map.put("name", "Michael Bolton");
+map.put("email", "mbolton@example.com");
+
 analytics.enqueue(IdentifyMessage.builder()
-    .userId("f4ca124298")
-    .traits(ImmutableMap.builder()
-        .put("name", "Michael Bolton")
-        .put("email", "mbolton@example.com")
-        .build()
-    )
-);
+        .userId("f4ca124298")
+        .traits(map));
 ```
 
 This call is identifying  Michael by his unique User ID (the one you know him by in your database) and labeling him with `name` and `email` traits.
@@ -355,6 +355,9 @@ Our libraries are built to support high performance environments. That means it 
 Every method you call **does not** result in an HTTP request, but is queued in memory instead. Messages are flushed in batch in the background, which allows for much faster operation.
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
+
+{% include content/tracking-api-limit.md %}
+
 
 ## How do I flush right now?!
 

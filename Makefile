@@ -29,13 +29,19 @@ intialize-work-dir:
 
 .PHONY: build
 build: node_modules vendor/bundle
-	@echo "Jekyll env: ${JEKYLL_ENV}"
-	@chown -R jekyll /workdir
-	@chmod -R 777 /workdir
-	@echo "env: ${JEKYLL_ENV}"
-	@$(BIN)/webpack --mode=production
-	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build --trace
-	@if [ '${BUILDKITE_BRANCH}' == 'staging' ]; then echo "updating sitemap.xml..." && sed -i -r 's/segment.com/segment.build/g' ./_site/sitemap.xml; fi;
+	@$(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
+		"$(BIN)/webpack --mode=development --watch" \
+		"bundle exec jekyll clean && bundle exec jekyll build -V"
+
+# .PHONY: build
+# build: node_modules vendor/bundle
+# 	@echo "Jekyll env: ${JEKYLL_ENV}"
+# 	@chown -R jekyll /workdir
+# 	@chmod -R 777 /workdir
+# 	@echo "env: ${JEKYLL_ENV}"
+# 	@$(BIN)/webpack --mode=production
+# 	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build --trace
+# 	@if [ '${BUILDKITE_BRANCH}' == 'staging' ]; then echo "updating sitemap.xml..." && sed -i -r 's/segment.com/segment.build/g' ./_site/sitemap.xml; fi;
 
 .PHONY: upload-docs
 upload-docs:
@@ -56,12 +62,12 @@ catalog: catalog-papi
 # uses the old configapi
 .PHONY: capi
 capi: vendor/bundle
-	@node scripts/catalog-capi.js
+	@node scripts/catalog_capi.js
 
 # shorter alias
 .PHONY: catalog-capi
 catalog-capi: vendor/bundle
-	@node scripts/catalog-capi.js
+	@node scripts/catalog_capi.js
 
 # uses the new public api
 .PHONY: catalog-papi
@@ -73,6 +79,10 @@ catalog-papi: vendor/bundle
 papi: vendor/bundle
 	@node scripts/catalog_papi.js
 
+# make the list of beta connections
+.PHONY: beta
+beta:
+	@node scripts/beta.js
 
 .PHONY: changelog
 changelog: vendor/bundle
@@ -81,6 +91,16 @@ changelog: vendor/bundle
 .PHONY: sidenav
 sidenav: vendor/bundle
 	@node scripts/nav.js
+
+# check internal links
+.PHONY: linkcheck-internal
+linkcheck-internal:
+	@node scripts/checklinks-internal.js
+
+# check external links
+.PHONY: linkcheck-external
+linkcheck-external:
+	@node scripts/checklinks-external.js
 
 .PHONY: zip-artifacts
 zip-artifacts:
@@ -130,7 +150,14 @@ vendor/bundle:
 	@bundle config set --local path 'vendor/bundle'
 	@bundle install
 
+.PHONY: update
+update: 
+	@node scripts/update.js
 
+.PHONY: add-id
+add-id:
+	@node scripts/add_id.js
+	
 .PHONY: lint
 lint: node_modules
 	@echo "Checking yml files..."

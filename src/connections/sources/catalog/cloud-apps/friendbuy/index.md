@@ -1,6 +1,9 @@
 ---
 title: 'Friendbuy Source'
+id: 1drDrwuySw
 ---
+{% include content/source-region-unsupported.md %}
+
 Friendbuy is a referral marketing platform that powers modern day word of mouth. Designed for growth marketers, Friendbuy allows companies to acquire new customers at scale through seamlessly integrated referral and influencer campaigns.
 
 Adding Friendbuy as a Source to Segment is a surefire way to elevate analysis of your referral program performance. Friendbuy will automatically send referral events and important metadata to Segment.

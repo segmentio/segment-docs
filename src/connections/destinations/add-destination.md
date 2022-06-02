@@ -114,6 +114,12 @@ Some destinations do not support having multiple instances connected to the same
 
 You can create unique destination filters for each destination instance connected to the same source.
 
+
+### Connect multiple sources to one instance of a destination
+
+It is not possible to connect multiple instances of one source (for example, two website sources) to the same destination. However, you can create another instance of the destination for the other sources, and click **Copy Settings From Other Destination**  to save yourself time entering the settings values again.
+
+
 ### Connect to more than one instance of a destination using the Config API
 
 You can add multiple instances of a destination using the Segment Config API. See the Segment Config [API documentation](https://reference.segmentapis.com/?version=latest#39ce0439-0969-48c3-ba49-b22a46c41060). If a destination does not support multi-instance, the Config API throws an appropriate error.
@@ -124,8 +130,8 @@ You can add multiple instances of a destination using the Segment Config API. Se
 - **You can connect a source to up to 25 instances of a destination if all of the instances use cloud-mode.** Destinations using cloud-mode receive data directly from the Segment servers.
 - **Mobile sources, and the legacy Project source, can connect to multiple instances of destinations that operate only in cloud-mode.** Mobile and Project sources cannot connect to multiple instances of destinations that operate in both cloud-mode and device-mode.
     - **Warning**: If you bundle one instance of a destination in a mobile source but have other instances of that destination connected to that source you might see unexpected and inconsistent data.
-- **Non-mobile sources can only connect to one *device-mode* instance of a destination, in addition to up to 25 cloud-mode instances.** A web browser sending to a destination in device-mode sends data directly from the user’s browser (instead of through the Segment servers), by bundling a copy of destination’s code with the Segment SDK. Segment can’t bundle multiple copies of the destination SDK and so it can’t send data to multiple instances of the destination from the browser.
-- **You cannot connect a source to more than one instance of a destination that operates in device-mode only**. These destinations can only accept data from code directly on the user’s device, and Segment cannot include duplicates of that code for a single source.
+- **Non-mobile sources can only connect to one *device-mode* instance of a destination, in addition to up to 25 cloud-mode instances.** A web browser sending to a destination in device-mode sends data directly from the user's browser (instead of through the Segment servers), by bundling a copy of destination's code with the Segment SDK. Segment can't bundle multiple copies of the destination SDK and so it can't send data to multiple instances of the destination from the browser.
+- **You cannot connect a source to more than one instance of a destination that operates in device-mode only**. These destinations can only accept data from code directly on the user's device, and Segment cannot include duplicates of that code for a single source.
 
 
 ### Other multi-instance destination considerations

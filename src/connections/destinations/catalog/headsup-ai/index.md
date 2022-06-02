@@ -1,8 +1,8 @@
 ---
 title: HeadsUp AI Destination
 rewrite: true
+id: 60900f0a60033befef038889
 ---
-
 [HeadsUp AI](https://headsup.ai?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows customers to build metrics on top of their existing Segment analytics to better understand customer behavior and gauge health scores.
 
 This destination is maintained by HeadsUp. For any issues with the destination, [contact the HeadsUp AI Support team](mailto:administration@headsup.ai).
@@ -47,7 +47,7 @@ analytics.page()
 Segment sends Page calls to HeadsUp as a `pageview`.
 
 ## Group
-If you aren’t familiar with the Segment Spec, take a look at the [Group method documentation](/docs/connections/spec/group/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Group method documentation](/docs/connections/spec/group/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.group("0e8c78ea9d97a7b8185e8632", {

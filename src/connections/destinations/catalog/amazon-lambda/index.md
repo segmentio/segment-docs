@@ -2,8 +2,8 @@
 title: Amazon Lambda Destination
 rewrite: true
 hide-personas-partial: true
+id: 5c86f0512f5eb100013d570b
 ---
-
 Segment makes it easy to send your data to AWS Lambda (and lots of other destinations). Once you collect your data using Segment's [open source libraries](/docs/connections/sources/catalog/), Segment translates and routes your data to AWS Lambda in the format it can use.
 
 [AWS Lambda](https://aws.amazon.com/lambda/){:target="_blank"} lets you run code without provisioning or managing servers. You pay only for the compute time you consume - there is no charge when your code is not running.
@@ -77,7 +77,7 @@ Using CloudFormation minimizes the setup steps needed, and is Segment's recommen
 
    5. Give your stack a name.
    6. For the **ExternalId** parameter, enter the "External ID" setting in your Segment Lambda destination settings.
-      * **NOTE:** For security purposes, Segment will set your Workspace ID as your External ID. If you’re currently using an External ID different from your Workspace ID, reach out to our support team so they can change it and make your account more secure.
+      * **NOTE:** For security purposes, Segment will set your Workspace ID as your External ID. If you're currently using an External ID different from your Workspace ID, reach out to our support team so they can change it and make your account more secure.
    7. The **LambdaARN** parameter corresponds to the **Lambda** setting in your Segment Lambda destination settings.
 
       ![](images/CloudFormationStackDetails.png)
@@ -193,7 +193,7 @@ This setting controls the [Log Type](https://docs.aws.amazon.com/lambda/latest/d
 Due to how our event delivery system, [Centrifuge](https://segment.com/blog/introducing-centrifuge/), works, your Lambda can't take more than 5 seconds to run per message. If you're consistently running into timeout issues, you should consult the [AWS Lambda docs](https://docs.aws.amazon.com/lambda/index.html#lang/en_us), as well as docs for your language of choice, for tips on optimizing performance.
 
 **Handling Common Errors**
-You can find delivery logs in Destination > [Event Delivery](/docs/guides/destinations/how-do-i-check-if-data-is-successfully-being-delivered-to-my-destination/).
+You can find delivery logs in Destination > [Event Delivery](/docs/connections/event-delivery/).
 
 Here are some common errors you may come across and how to resolve:
 

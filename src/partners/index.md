@@ -106,7 +106,7 @@ In a nutshell you need:
   - **Segment Documentation:** Using these templates ([subscription](https://hackmd.io/t7amLXluS7-39rg7ARZgSA?both=)/[stream](https://hackmd.io/TV8cZR6tRnKwGtkvSexeag), document how our mutual customers can use your integration.
   - **Your Documentation:** Similar to the above but hosted on your own website.
   - **Catalog Details:** Details for our [catalog](https://segment.com/catalog) material including screenshots by making a copy of [this template](https://docs.google.com/document/d/1kKvqYtZeDPnBjvCrtQSuO3BBH70b_CLO13hYrYIOOtA/copy).
-  - **Integrations / Partners Page:** Add your Segment integration to your integrations or partners page, like [this](https://success.clearbrain.com/connections/import-connections/connect-to-your-data-in-segment).
+  - **Integrations / Partners Page:** Add your Segment integration to your integrations or partners page.
   - **Blog Post:** Publish a launch blog post about your integration, like [this](https://www.kustomer.com/blog/kustomer-segment-integration/). Make sure you share it on Twitter and LinkedIn too! (If you don't have a blog, an email is okay)
 
 Be sure to use our [brand kit](https://brandfolder.com/segment/press-kit) for logos, and our [UTM guide](https://docs.google.com/document/d/1L0MHYdF2SYaMMiodQCYlZELF7pN0TXiZbD22nnlGhEk/copy) any time you link to a Segment page.

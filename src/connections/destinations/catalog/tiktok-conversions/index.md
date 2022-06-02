@@ -2,99 +2,81 @@
 title: TikTok Conversions
 hide-boilerplate: true
 hide-dossier: true
-hidden: true
+id: 615cae349d109d6b7496a131
 ---
-
 {% include content/plan-grid.md name="actions" %}
 
-The TikTok Conversions Destination enables advertisers to send Segment events to report events directly to TikTok. Data shared can power TikTok solutions like dynamic product ads, custom targeting, campaign optimization and attribution.
+The TikTok Conversions destination is a server-to-server integration with the TikTok Events API that allows advertisers to share website visitor events from Segment directly to TikTok. Data shared through the Events API is processed similarly to information shared through the TikTok pixel and TikTok SDK business tools. Advertisers can use events data to power solutions like dynamic showcase ads (DSA), custom targeting, campaign optimization and attribution. Advertisers can see their event data in TikTok Events Manager.
 
-Reporting web events allows advertisers to send user data directly to TikTok for downstream targeting and optimization. Advertisers will be able to see their event data in TikTok Events Manager.
+## Benefits of TikTok Conversions
+The TikTok Conversions destination provides the following benefits:
 
-> info ""
-> This document is about a feature which is in beta. This means that the Destination Actions are in active development, and some functionality may change before it becomes generally available
-
-> success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) TikTok Conversions Segment Destination.
-
-## Benefits
-
-1. **Streamlined stability and security**: Integrate and iterate without client-side limitations, like network connectivity or ad blocker issues.
-2. **Configurable privacy controls**: Stay compliant with rapidly evolving requirements with flexible privacy controls that let you adapt what data you share and when you share it.
-3. **Maximum event measurement**: Capture more events with improved accuracy across different browsers, apps and devices to get a unified view of your customer's journey from page view to purchase.
+1. **Clear mapping of data.** Actions-based destinations enable you to define the mapping between the data Segment receives from your source and the data Segment sends to TikTok.
+2. **Prebuilt mappings.** Mappings for TikTok Standard Events, like `PlaceAnOrder`, are prebuilt with the prescribed parameters and available for customization.
+3. **Streamlined stability and security.** Integrate and iterate without client-side limitations, like network connectivity or ad blocker issues.
+4. **Privacy-focused**: Stay compliant with rapidly evolving requirements with automatic PII hashing and flexible controls that let you adapt what data you share.
+5. **Maximum event measurement**: Capture more events with improved accuracy across different browsers, apps, and devices to get a unified view of your customer's journey from page view to purchase.
 
 ## Getting started
 
-Follow the instructions below to enable your TikTok ads account, and add the TikTok Conversions Destination to your Segment workspace.
+Follow the instructions below to enable your TikTok ads account, and add the TikTok Conversions destination to your Segment workspace.
 
 ### TikTok Requirements
 
-1. [Create a TikTok For Business account](https://ads.tiktok.com/marketing_api/docs?id=1702715936951297){:target="_blank"}.
-2. Follow instructions for [Authorization](https://ads.tiktok.com/marketing_api/docs?id=1701890979375106){:target="_blank"} and generate a long term  access token.
+The TikTok Conversions destination is configured to use the TikTok Events API. To generate a TikTok Pixel Code and Access Token:
 
-### Configuring TikTok Conversions in Segment
+1. [Create a TikTok For Business account](https://ads.tiktok.com/marketing_api/docs?id=1702715936951297){:target="_blank"}.
+2. [Create a TikTok Pixel](https://ads.tiktok.com/help/article?aid=10021){:target="_blank"} in Developer Mode to obtain a Pixel Code. For more information about Developer Mode, please review the [TikTok developer documentation](https://ads.tiktok.com/marketing_api/docs?rid=5ipocbxyw8v&id=1701890973258754){:target="_blank"}.
+3. Follow instructions for [Authorization](https://ads.tiktok.com/marketing_api/docs?rid=959icq5stjr&id=1701890979375106){:target="_blank"} and generate a long term Access Token.
+
+### Connect TikTok Conversions to your workspace
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Find the Destinations Actions item in the left navigation, and click it.
+2. Search for “TikTok Conversions” in the Destinations Catalog, and select the destination.
 3. Click **Configure TikTok Conversions**.
-4. Select an existing Source to connect to TikTok Conversions.
-5. On the next page enter your TikTok Access Token, and Pixel Code. Click Verify credentials.
+4. Select the source that will send data to TikTok Conversions and follow the steps to name your destination.
+5. On the Settings tab, enter in your TikTok Access Token and Pixel Code and click **Save**.
+6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
+{% include components/actions-fields.html %}
 
-{% include components/actions-fields.html name="tiktok" connection="true" %}
+## FAQ & Troubleshooting
 
-## Pre-built subscriptions
+### Deduplication with the TikTok Pixel
 
-By default a new TikTok Conversions Destination comes with the following subscriptions.
+If you independently placed the TikTok Pixel on your website, please reach out to your TikTok representative to see if there are any necessary changes to your Pixel to properly deduplicate events sent through both the Pixel and the Segment TikTok Conversions destination.
 
-| Subscription Name | Trigger                                             | TikTok Conversions Action |
-| ----------------- | --------------------------------------------------- | ------------------------- |
-| Products Searched | All events where the name is `Products Searched`    | Report Web Event          |
-| Add Payment Info  | All events where the name is `Payment Info Entered` | Report Web Event          |
-| Initiate Checkout | All events where the name is `Checkout Started`     | Report Web Event          |
-| Order Completed   | All events where the name is `Order Completed`      | Report Web Event          |
-| View Content      | All **Page** events                                 | Report Web Event          |
+### Match Keys
 
-Choose **Quick Setup** during configuration to select these subscriptions. You can enable, edit, and disable them from the Actions tab of the destination.
+To increase the probability of matching website visitor events with TikTok ads, please send one or more of the following match keys and identifiers when possible:
+- TikTok Click ID
+- External ID
+- Phone Number
+- Email
+- IP Address
+- User Agent
 
-The pre-built TikTok Conversions Subscriptions trigger the same action, **Report Web Event**. The default subscriptions map events that follow Segment's Spec to the TikTok spec. You can create new subscriptions and map events that best suit your configuration.
+### Other Standard Events
 
-The table below shows the mapping of the Segment semantic [ecommerce](/docs/connections/spec/ecommerce/v2/) or custom event names to the TikTok semantic conversion event names in the pre-built subscriptions.
+If you want to send a [TikTok standard event](https://ads.tiktok.com/marketing_api/docs?id=1701890979375106){:target="_blank"} that Segment doesn't have a prebuilt mapping for, you can use the [Report Web Event action](/docs/connections/destinations/catalog/tiktok-conversions/#report-web-event) to send the standard event. For example, if you want to send a `CompleteRegistration` event: 
+1. Create a mapping for Report Web Event. 
+2. Set up your Event Trigger criteria for completed registrations. 
+3. Input a literal string of "CompleteRegistration" as the Event Name.
 
-| Segment Event Name   | TikTok Semantic Conversion Event Name |
-| -------------------- | ------------------------------------- |
-| Checkout Started     | InitiateCheckout                      |
-| Products Searched    | Search                                |
-| Payment Info Entered | AddPaymentInfo                        |
-| Order Completed      | PlaceOrder                            |
+### PII Hashing
 
-| Segment Event Type         | TikTok Semantic Conversion Event Name |
-| -------------------------- | ------------------------------------- |
-| All **Segment Page Calls** | ViewContent                           |
+Segment creates a SHA-256 hash of the following fields before sending to TikTok:
+- External ID
+- Email
+- Phone Number
 
-<!-- The section below provides reference tables for the actions defined in your destination. Create the unordered list. The Segment Docs team will assist with populating the data file referenced by this include. -->
+### Web Diagnostics
 
-## Available TikTok Conversion actions
+You can check whether the integration is working, test events in real-time, and troubleshoot common issues in TikTok's Web Diagnostics Suite. Please see the [TikTok Pixel Web Diagnostics documentation](https://ads.tiktok.com/help/article?aid=10000360){:target="_blank"} for more information.
 
-Combine the supported [triggers](/docs/connections/destinations/actions/#components-of-a-destination-action) with the following TikTok-supported actions:
+## Support
 
-- [Report Web Event](#report-web-event)
+The TikTok Conversions destination is owned and maintained by the TikTok team.
 
-{% include components/actions-fields.html name="tiktok" %}
-
-All TikTok Conversions subscriptions trigger the Report Web Event action.
-
-This action sends a request from Segment to the [TikTok Events Web API](https://ads.tiktok.com/marketing_api/docs?id=1701890979375106){:target="_blank"}.
-
-Ensure you've created your TikTok Pixel within Events Manager before sending events. Instructions to create a pixel can be found [here](https://ads.tiktok.com/help/article?aid=10021){:target="_blank"}.
-
-## Notes
-
-- The TikTok Events API supports QPS =< 1k per app（TikTok Marketing API app）per endpoint. If more is required, please contact your TikTok account representative.
-- Requests report events to one pixel ID. This restriction is because authorization is done at user/pixel level. See the [Authorization](https://ads.tiktok.com/marketing_api/docs?id=1701890912382977){:target="_blank"} section for details.
-- Data that is shared to the Events API is processed similar to information shared through other TikTok data integration business tools, like the TikTok pixel and TikTok SDK.
-
-
-
-<!-- Add information about steps needed to migrate from a classic version of your destination here. The Segment Docs team will assist you with populating the data file referenced by this include. The table at the bottom maps classic settings to the new destination.-->
-
+- For general Segment questions, including issues with event data not being sent to TikTok Events Manager, please contact [Segment support](https://segment.com/help/){:target="_blank"}.
+- For questions regarding campaign setup and performance, web tracking, or additional API functionality, please contact your TikTok representative.

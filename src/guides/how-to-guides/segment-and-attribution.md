@@ -17,7 +17,7 @@ Here is a bit more information on what is happening at each of those stages. 
 
 ## Customer installs your app
 
-When [lifecycle events](https://segment.com/docs/connections/spec/mobile/#lifecycle-events) are enabled, the **Application Installed** and **Application Opened** events are triggered on the first app open after the app is installed.  Note, if the app is deleted and then later reinstalled on the device, these events will be triggered again on first app open. 
+When [lifecycle events](/docs/connections/spec/mobile/#lifecycle-events) are enabled, the **Application Installed** and **Application Opened** events are triggered on the first app open after the app is installed.  Note, if the app is deleted and then later reinstalled on the device, these events will be triggered again on first app open. 
 
 **Situations where install counts look lower in Segment than in other tools. **
 
@@ -25,17 +25,13 @@ Some tools, like iTunes or Google Play, count install on download rather than on
 
 **Situations where install counts look higher in Segment than in other tools**
 
-Many tools dedupe install data. Some tools only allow one install event per lifetime of deviceId. Others dedupe by deviceId accepting only one install per UTC day.  Each and every tool is different.  
+Many tools deduplicate install data. Some tools only allow one install event per lifetime of deviceId. Others deduplicate by deviceId accepting only one install per UTC day.  Each and every tool is different.  
 
-Segment, on the other hand, does not dedupe.  We don't believe our role in your data pipeline should be deduping particular events.  In fact, there may be situations where you may want to account for multiple **Application Installed** events such as: user sells their phone, user uninstalls and later decides to reinstall, etc. It is better to think about the **Application Installed** data in your Segment warehouse as the raw source of data, giving you flexibility to query 
+Segment, on the other hand, does not deduplicate.  We don't believe our role in your data pipeline should be deduping particular events.  In fact, there may be situations where you may want to account for multiple **Application Installed** events such as: user sells their phone, user uninstalls and later decides to reinstall, etc. It is better to think about the **Application Installed** data in your Segment warehouse as the raw source of data, giving you flexibility to query 
 
 For more information on how installs are counted in different tools, here are a few resources from our partners: 
 
 [Adjust - Discrepancies and Why Data Does not Always Match Up](https://www.adjust.com/blog/discrepancies-and-why-data-does-not-always-match-up/)
-
-[TUNE - Comparing Installs to Apple iTunes and Google Play reports](https://help.tune.com/marketing-console/comparing-installs-to-apple-itunes-and-google-play-reports/)
-
-[AppsFlyer - Discrepancies - How Does AppsFlyer Count Installs Compared To App Store and Google Play?](https://support.appsflyer.com/hc/en-us/articles/207040726-Discrepancies-How-Does-AppsFlyer-Count-Installs-Compared-To-App-Store-and-Google-Play-)
 
 ## The install is attributed by an attribution provider
 

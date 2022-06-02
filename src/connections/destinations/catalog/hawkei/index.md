@@ -2,8 +2,8 @@
 rewrite: true
 title: Hawkei Destination
 hide-personas-partial: true
+id: 5d73347d0bbdf3a5abebca15
 ---
-
 [Hawkei](https://hawkei.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides real-time accurate error detection for your key user paths and product features. Pinpoint the root cause of an issue easily with all the meta data delivered straight to your inbox or slack channel.
 
 This destination is maintained by Hawkei. For any issues with the destination, [contact the Hawkei Support team](mailto:support@hawkei.io).

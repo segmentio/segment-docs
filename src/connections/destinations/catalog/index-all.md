@@ -1,5 +1,6 @@
 ---
 title: Destination list
+hide-dossier: true
 ---
 
 

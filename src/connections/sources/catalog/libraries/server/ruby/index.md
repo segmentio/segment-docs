@@ -2,8 +2,8 @@
 title: Analytics for Ruby
 sourceTitle: 'Ruby'
 sourceCategory: 'Server'
+id: aACTBqIbWT
 ---
-
 Our Ruby library lets you record analytics data from your ruby code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
 
 This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-ruby).
@@ -413,6 +413,8 @@ By default, our library will flush:
 + whenever messages are queued and there is no outstanding request
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
+
+{% include content/tracking-api-limit.md %}
 
 The queue consumer makes only **a single outbound request** at a time to avoid saturating your server's resources. If multiple messages are in the queue, they are sent together in a batch call.
 

@@ -2,11 +2,16 @@
 title: Mixpanel Destination
 hide-cmodes: true
 hide-personas-partial: true
+id: 54521fd925e721e32a72eed6
 ---
-
 [Mixpanel](https://mixpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an event tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion. The client-side Mixpanel Destination code is open-source.
 
-You can browse the code on GitHub for [Analytics.js in Device-mode](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/mixpanel), [iOS](https://github.com/segment-integrations/analytics-ios-integration-mixpanel) and [Android](https://github.com/segment-integrations/analytics-android-integration-mixpanel).
+Segment's Mixpanel destination code is open source and available on GitHub. You can view these repositories:
+- [Analytics.js in Device-mode](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/mixpanel){:target="_blank"}
+- [Android](https://github.com/segment-integrations/analytics-android-integration-mixpanel){:target="_blank"}
+- [iOS](https://github.com/segment-integrations/analytics-ios-integration-mixpanel){:target="_blank"}
+- [Swift](https://github.com/segment-integrations/analytics-swift-mixpanel){:target="_blank"} 
+- [Kotlin](https://github.com/segment-integrations/analytics-kotlin-mixpanel){:target="_blank"}
 
 ## Getting Started
 
@@ -68,6 +73,12 @@ analytics.identify('userId123', {
 
 The first thing you'll want to do is to identify your users so Mixpanel knows who they are. You'll use the Identify method to accomplish this which takes the unique `userId` of a user and any `traits` you know about them.
 
+> info ""
+> **Important:** Mixpanel used to require that you call `alias` in all libraries to connect anonymous visitors to identified users. However, with the release of Mixpanel's new [Identity Merge feature](https://help.mixpanel.com/hc/en-us/articles/360039133851#enable-id-merge) this is no longer necessary. To enable ID Merge, go to your Mixpanel Settings Dashboard, navigate to **Project Settings > Identity Merge** and enable the setting from that screen. If you are _not_ using this setting, use the instructions below.
+
+
+As soon as you have a `userId` for a visitor that was previously anonymous you'll need to [`alias`](/docs/connections/spec/alias/) their old anonymous `id` to the new `userId`. In Mixpanel only **one** anonymous user history can be merged to **one** identified user. For that reason you should only call `alias` once, right after a user registered, but before the first `identify`.
+
 ### People
 
 Segment doesn't send data to Mixpanel People by default, since this usually requires upgrading your Mixpanel account. To enable Mixpanel People, change the "Use Mixpanel People" setting in the Mixpanel Destination settings in Segment.
@@ -106,7 +117,7 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 });
 ```
 
-Mixpanel supports multiple definitions of groups. For more information see [Mixpanel’s Group Analytics documentation](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics).
+Mixpanel supports multiple definitions of groups. For more information see [Mixpanel's Group Analytics documentation](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics).
 
 If the group call **does not** have a group trait that matches the Group Identifier Traits setting, then the event will be ignored.
 
@@ -163,6 +174,9 @@ If you use Cloud-mode, you must explicitly include the grouping value as an even
 By default, each trait (that is, properties in an `identify` call) is registered as a super property. This does not require passing a `userId` in the `identify` call. You can pass a `traits` object by itself and it will still register the traits as super properties.
 
 Disable **Set All Traits as Super Properties or People Properties By Default** to disable the default behavior and register super properties explicitly. For more information, see [Explicitly set People Properties and Super Properties](#explicitly-set-people-properties-and-super-properties).
+
+> info ""
+> Super properties require a device mode connection.
 
 #### Set People Properties
 
@@ -379,7 +393,7 @@ analytics.track({
 
 ### Explicitly Set People Properties and Super Properties
 
-Previously, Segment set all traits and properties as both Super Properties and People Properties (If you had Mixpanel People enabled). Now Mixpanel allows you to segment your reports by both People Properties and Super Properties. To give you better precision and control over what property or trait gets set as a Super Property or People Property, you can disable **Set All Traits as Super Properties or People Properties By Default** and pass in the properties or traits that you want to send to Mixpanel as People or Super Properties as shown below. Segment passes through all of Mixpanel's special traits as People Properties so you only need to add the ones that aren't on [this list](#group-using-device-mode). 
+Previously, Segment set all traits and properties as both Super Properties and People Properties (If you had Mixpanel People enabled). Now Mixpanel allows you to segment your reports by both People Properties and Super Properties. To give you better precision and control over what property or trait gets set as a Super Property or People Property, you can disable **Set All Traits as Super Properties or People Properties By Default** and pass in the properties or traits that you want to send to Mixpanel as People or Super Properties as shown below. Segment passes through all of Mixpanel's special traits as People Properties so you only need to add the ones that aren't on [this list](#group-using-device-mode).
 
 
 ![mixpanel people properties list](images/mixpanelpeoplesuperprops.png)
@@ -495,7 +509,7 @@ analytics.identify(
 
 Push notifications are only available for projects bundling the Segment-Mixpanel SDK.
 
-> info "" 
+> info ""
 > Set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) documentation.
 
 ### In-App Notifications
@@ -514,7 +528,7 @@ In-app notifications are only available for projects either bundling the Segment
 
 Segment supports Mixpanel push notifications automatically using the [didRegisterForRemoteNotificationsWithDeviceToken method](/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications).
 
-For *in-app* notifications and surveys, follow the Mixpanel documentation [here](https://mixpanel.com/help/reference/ios-inapp-messages){:target="_blank"}. Use the native functionality to control when to show an in-app message by following the instructions [here](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and calling the native Mixpanel methods.
+For *in-app* notifications and surveys, follow the Mixpanel documentation [here](https://developer.mixpanel.com/docs/swift#in-app-messages){:target="_blank"}. Use the native functionality to control when to show an in-app message by following the instructions [here](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and calling the native Mixpanel methods.
 
 #### Cloud Connection Mode (Unbundled/ Server-side)
 
@@ -586,7 +600,7 @@ You can send Personas Audiences to Mixpanel as `identify` or `track` calls. You 
 ![](images/pers-05-pdest-settings.png)
 
 
-When you send custom traits as `identify` calls, the name of the audience is added to the user’s profile as a user trait, with a boolean value to indicate if the user is in the audience. For example, when a user first completes an order in the last 30 days, Segment sends an `identify` call with the property `order_completed_last_30days: true`. When this user no longer satisfies these criteria (for example when their last purchase was more than 30 days ago) Personas sets that value to `false`.
+When you send custom traits as `identify` calls, the name of the audience is added to the user's profile as a user trait, with a boolean value to indicate if the user is in the audience. For example, when a user first completes an order in the last 30 days, Segment sends an `identify` call with the property `order_completed_last_30days: true`. When this user no longer satisfies these criteria (for example when their last purchase was more than 30 days ago) Personas sets that value to `false`.
 
 ![](images/pers-06-audience.png)
 
@@ -662,4 +676,4 @@ If you delete an audience or trait in Segment, it is not deleted from Mixpanel. 
 
 **If a user has multiple external ids in Segment, what happens when they enter an audience or have a computed trait?**
 
-Segment sends an `identify` or a  `track` call for each external on the user’s account. For example, if a user has three email addresses, and you are sending `identify` calls for your audience, Personas sends three `identify` calls to Mixpanel and adds the latest email address to the user profile as the email “address of record” on the Mixpanel user profile.
+Segment sends an `identify` or a  `track` call for each external on the user's account. For example, if a user has three email addresses, and you are sending `identify` calls for your audience, Personas sends three `identify` calls to Mixpanel and adds the latest email address to the user profile as the email “address of record” on the Mixpanel user profile.

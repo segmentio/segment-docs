@@ -3,7 +3,7 @@ title: Sources Catalog
 hide_toc: true
 landing: true
 icon: symbols/squares-arrow.svg
-excerpt: Detailed information about each destination. Learn how our API methods are implemented for that destination.
+excerpt: A list of the available sources on the Segment platform. 
 layout: catalog
 menu_icon: "read-more"
 redirect_from:

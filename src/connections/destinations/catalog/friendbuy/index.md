@@ -1,12 +1,11 @@
 ---
 title: Friendbuy Destination
 cmode-override: true
+id: 59ce9468cf711e00014a9c12
 ---
 Friendbuy is a referral marketing and campaign optimization platform.
 
 ## Getting Started
-
-{% include content/connection-modes.md %}
 
 1. Log in to your Friendbuy account and go to **Integration Code**.
 2. Copy the **Site ID** above the snippet box.

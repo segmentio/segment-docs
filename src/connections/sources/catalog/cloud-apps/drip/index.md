@@ -1,5 +1,6 @@
 ---
 title: Drip Source
+id: m6FUZHH7tQ
 ---
 Drip is an automated email tool that lets you set up a drip campaign on your site in a few minutes. After a user signs up, it'll send them the next email in your series every few days. [Visit Website](http://mbsy.co/lqb7?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
 

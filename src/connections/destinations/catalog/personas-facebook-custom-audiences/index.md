@@ -4,9 +4,8 @@ beta: true
 hide-boilerplate: true
 hide-dossier: true
 redirect_from: '/connections/destinations/catalog/personas-facebook-ads/'
+id: 5a4d24dcc5836400017188f6
 ---
-
-
 ## Overview
 
 The Facebook Custom Audiences Destination is one of the most popular Personas Destinations. It has a variety of use cases related to suppression, acquisition (using lookalikes), retargeting, and more.
@@ -22,13 +21,13 @@ This allows you to run advertising campaigns in Facebook without having to manua
 ## Other Facebook Destinations Supported by Segment
 This page is about the **Facebook Custom Audiences** destination developed specifically for use with **Segment Personas**. For documentation on other Facebook destinations, see the pages linked below.
 
-| **Facebook Destination**   | Supported by Personas |
-| ---------------------- | --------------------- |
-| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                  | Yes                   |
-| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)** | Yes                   |
-| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                             | No                    |
-| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)**      | Yes                   |
-
+| **Facebook Destination**                                                                                    | Supported by Personas |
+| ----------------------------------------------------------------------------------------------------------- | --------------------- |
+| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                      | Yes                   |
+| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)**    | Yes                   |
+| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                                | No                    |
+| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)** | Yes                   |
+| **[Facebook Conversions API](/docs/connections/destinations/catalog/actions-facebook-conversions-api/)**    | Yes                   |
 
 ## Details
 
@@ -64,16 +63,16 @@ Facebook Custom Audiences allows you to efficiently run several marketing and ad
 
 1. **Suppression Audiences.** Create an audience of users that signed up, purchased a product, or otherwise performed some conversion event. Getting those users into Facebook in a timely manner (hourly syncs) prevents you from spending money targeting users that already converted. You can do this by creating an Audience in Personas, and syncing it to the Facebook Custom Audience Destination.
 
-2. **Lookalikes & Seed Audiences.** You can use Personas to create a detailed profile of your most loyal customers (sometimes called a “seed audience”) and then send this list of customers to Facebook. In Facebook, you can then use Facebook’s lookalike audiencing features to find similar users to target. For example, you might want to create a group of high-value users that have spent a certain amount of money on your product, and then use Facebook audiences to find similar users.
+2. **Lookalikes & Seed Audiences.** You can use Personas to create a detailed profile of your most loyal customers (sometimes called a “seed audience”) and then send this list of customers to Facebook. In Facebook, you can then use Facebook's lookalike audiencing features to find similar users to target. For example, you might want to create a group of high-value users that have spent a certain amount of money on your product, and then use Facebook audiences to find similar users.
 
-3. **Re-targeting Audiences.** You can use Personas to target users who completed some initial action, but didn’t follow through on a purchase or other conversion event. You can create audiences to re-target these individuals and remind them to complete the purchase or other process.
+3. **Re-targeting Audiences.** You can use Personas to target users who completed some initial action, but didn't follow through on a purchase or other conversion event. You can create audiences to re-target these individuals and remind them to complete the purchase or other process.
 
 > note ""
 > **Note**: Re-targeting can also mean targeting anonymous visitors (those with no known personally identifiable information, such as email). The Personas Facebook Custom Audiences Integration feature for this use case is currently in beta. See below.
 
 ## Use Cases - Anonymous Users (Facebook Pixel support only)
 
-Sometimes, users visit your website and perform high-intent activities such as looking at a product or pricing page multiple times, but they don’t convert (buy), and they don’t provide any personally identifiable information so you can contact them.
+Sometimes, users visit your website and perform high-intent activities such as looking at a product or pricing page multiple times, but they don't convert (buy), and they don't provide any personally identifiable information so you can contact them.
 
 Facebook offers the Facebook Pixel, which allows you to retarget these types of anonymous users with advertising. This works by identifying users based on a cookie set in their browser. You can create a Website Custom Audience in Facebook for this use case. Segment today does not provide a way to sync audiences of anonymous users from Personas to Facebook to automatically create one of these Website Custom Audiences, though this feature is currently under development.
 
@@ -84,7 +83,7 @@ Facebook offers the Facebook Pixel, which allows you to retarget these types of 
 1. Creates a Facebook Custom Audience (of type Customer List) with a name that matches the Personas Audience.
 2. Adds any users that fit the audience definition, based on the matching identifiers that Facebook supports (hashed). Facebook uses these identifiers to match users to Facebook users in their ads system.
 3. Once the audience is configured, Segment checks which users still fit the audience definition based on the same identifiers, and adds or remove users from the audience, every hour.
-
+{% include content/sync-frequency-note.md %}
 > success "Tip:"
 > You can use the Audience History feature in Facebook to see this change over time.
 
@@ -113,7 +112,7 @@ Facebook offers the Facebook Pixel, which allows you to retarget these types of 
 
 ### 3. Verify that the audience appears in Facebook
 
-Once created, the audience should be available in Facebook in ten minutes unless it’s unusually large.
+Once created, the audience should be available in Facebook in ten minutes unless it's unusually large.
 
 - From within Facebook Ads, go to **Business Manager > All tools > Assets > Audiences**.
 - Click the Facebook audience name that matches your Personas audience name, and check **Audience History** to see how many users were added.
@@ -158,9 +157,9 @@ Segment sends lists of users with identifiers that Facebook supports to Facebook
 
 Note that emails must be in a plaintext format. Facebook also provides these guidelines for the emails that you send to them: Trim leading, trail whitespace, and convert all characters to lowercase.
 
-For example: many B2B SaaS business have users that sign up for their products with a work email address, like `jane.doe@segment.com`. However, most Facebook users sign up for Facebook with a personal email only, like `janedoe@gmail.com`. If you only provide the work email address, and no other identifiers, then Facebook can’t match your user to the Jane Doe Facebook profile. This is the case for all identifiers: Facebook must have the identifier somewhere in a user's profile, or else they can't match on it.
+For example: many B2B SaaS business have users that sign up for their products with a work email address, like `jane.doe@segment.com`. However, most Facebook users sign up for Facebook with a personal email only, like `janedoe@gmail.com`. If you only provide the work email address, and no other identifiers, then Facebook can't match your user to the Jane Doe Facebook profile. This is the case for all identifiers: Facebook must have the identifier somewhere in a user's profile, or else they can't match on it.
 
 ### Do you support LTV audiences?
-Facebook has a feature called [value-based audiences](https://developers.facebook.com/docs/marketing-api/audiences/guides/value-based-lookalike-audiences/) where you can send an additional field like LTV, to tell Facebook how to optimize their advertising based on a customer’s value.
+Facebook has a feature called [value-based audiences](https://developers.facebook.com/docs/marketing-api/audiences/guides/value-based-lookalike-audiences/) where you can send an additional field like LTV, to tell Facebook how to optimize their advertising based on a customer's value.
 
 Personas does not currently support this feature. If this is important to you, let us know at [beta@segment.com](mailto:beta@segment.com).

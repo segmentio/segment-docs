@@ -1,11 +1,10 @@
 <!-- in the file we're pulling from the API, "name" corresponds with the path to the yml blob for a specific destination.-->
-{% assign thisDestination = page.url | split: "/" | last %}
+{% assign thisDestination = page.id %}
 
-{% assign overrideInfo = site.data.catalog.overrides.items % | where: "slug", thisDestination | first %}
+{% assign overrideInfo = site.data.catalog.overrides.items % | where: "id", thisDestination | first %}
 
+{% assign destinationInfo = site.data.catalog.destinations.items | where: "id", thisDestination | first %}
 
-
-{% assign destinationInfo = site.data.catalog.destinations.items | where: "slug", thisDestination | first %}
 {% comment %}There are probably prettier ways to generate a list of links to these methods, but this was good enough for me.{% endcomment %}
 {% assign destMethods = "" | split: ", " %}
 {% assign methodName = "" | split: " " %}
@@ -24,30 +23,39 @@
 {% assign connectionModes = destinationInfo.connection_modes %}
 {% endif %}
 
+
+
+{% if page.name-override %}
+{% assign previous_names = overrideInfo.previous_names %}
+{% else %}
+{% assign previous_names = destinationInfo.previous_names %}
+{% endif %}
+
 {% assign components = destinationInfo.components %}
 {% endfor %}
 {% assign destMethods = destMethods| reverse %}
 
 
-
+{% if page.id %}
 
 <div class="quick-info">
   <div class="qi-content">
 <h6>Destination Info</h6>
 <ul class="qi">
-  {% if destMethods.size > 0 %}<li>Accepts {% for method in destMethods%}{% if destMethods.size == 1 %}{{method}} calls.{% else %}{% unless forloop.last == true %}{{method}}, {% endunless %}{% if forloop.last == true%}and {{method}} calls.{%endif%}{% endif %}{% endfor %}</li>{% endif %}
-  <li>Referred to as <strong>{{destinationInfo.previous_names | join: '</strong>, or <strong>' }}</strong> in the <a href="/docs/guides/filtering-data/#filtering-with-the-integrations-object">Integrations object</a></li>
+  {% if destMethods.size > 0 %}<li>Accepts {% for method in destMethods%}{% if destMethods.size == 1 %}{{method}} calls.{% else %}{% unless forloop.last == true %}{{method}}, {% endunless %}{% if forloop.last == true%}and {{method}} calls{%endif%}{% endif %}{% endfor %}</li>{% endif %}
+  <li>Referred to as <strong>{{previous_names | join: '</strong>, or <strong>' }}</strong> in the <a href="/docs/guides/filtering-data/#filtering-with-the-integrations-object">Integrations object</a></li>
+  {% if destinationInfo.status == "PUBLIC_BETA" %}<li>This destination is in <span class="release-pill">Beta</span></li>{% endif %}
 </ul>
 {% if components.size > 0%}
 
 <h6>Components</h6>
 <ul class="components-list">
 {%for component in components %}
-{% if component.code contains "/segment-integrations/" %}
+{% unless component.code contains "/segmentio/" %}
 <li><a href="{{component.code}}" target="_blank">{% if component.type == "IOS" %}iOS{%else%}{{component.type | capitalize}}{%endif%}</a></li>
 {% else %}
 <li>{% if component.type == "IOS" %}iOS{%else%}{{component.type | capitalize}}{%endif%}</li>
-{% endif %}
+{% endunless %}
 {% endfor %}
 </ul>
 
@@ -79,3 +87,4 @@
 </div>
 {% endif %}
 </div>
+{% endif %}

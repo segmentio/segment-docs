@@ -1,8 +1,9 @@
 ---
 title: DoubleClick Floodlight Destination
 strat: google
+cmode-override: true
+id: 57ab9dfc80412f644ff2004c
 ---
-
 The [DoubleClick Floodlight](https://support.google.com/searchads/answer/7298761?hl=en) destination allows you to make calls directly to Floodlight based on your mapped events. All you have to do is enter your **DoubleClick Advertiser ID** in the Doubleclick Floodlight destinations settings in the Segment App, then map the Segment `track` events to their corresponding Floodlight tags.
 
 This destination _requires_ that you send device-specific information such as the `IDFA` or the `advertisingId`. The best way to send events to Doubleclick Floodlight from mobile devices is using [one of the Segment mobile libraries](/docs/connections/sources/catalog/#mobile), because they collect this information automatically. If you use [one of the Segment server source libraries](/docs/connections/sources/catalog/#server) instead, you must manually include the required `advertisingId`.  You can also send data from [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/) and Segment makes direct HTTP requests to Doubleclick Floodlight from your browser.
@@ -52,9 +53,9 @@ https://ad.doubleclick.net/ddm/activity/src=1234567;cat=fghij456;type=abcde123;d
 
 ### Accessing Other Event Properties
 
-By default, the Segment event property you define for each custom variable mapping will be matched against the property values found in the `properties` object of a `track` event. You can, however, use JSON style dot-notation-accessors wrapped in double curly brackets to map to **any** property in the event's raw payload to your custom variables. For example, some acceptable values could be `context.campaign.name`, `context.userAgent`, or `anonymousId` (inside of the double curly brackets). You can find the complete structure of a standard Segment event payload [here](/docs/connections/spec/common/#structure).
+By default, the Segment event property you define for each custom variable mapping is matched against the property values found in the `properties` object of a `track` event. On device-mode web, you can use JSON style dot-notation-accessors wrapped in double curly brackets to map to other fields in the event's raw payload to your custom variables. For example, some acceptable values could be `{%raw%}{{userId}}{%endraw%}`, `{%raw%}{{anonymousId}}{%endraw%}`, or `{%raw%}{{context.page.referrer}}{%endraw%}`. You can find the complete structure of a standard Segment event payload [here](/docs/connections/spec/common/#structure). Please note that some fields may not be available for mapping, such as fields within the `context.campaign` object.
 
-**Note:** `dc_rdid` and `dc_lat` are automatically collected by our mobile libraries and `ord` is uniquely generated for each event.
+**Note:** `dc_rdid` and `dc_lat` are automatically collected by Segment's mobile libraries and `ord` is uniquely generated for each event.
 
 ## Page
 
@@ -82,7 +83,7 @@ See the [Analytics.js documentation](/docs/connections/sources/catalog/libraries
 
 ## Setting up Custom Variables
 
-There are two things you need to do in order to send custom track properties as custom Floodlight variables. Firstly, refer to their [docs](https://support.google.com/dfa/partner/answer/2548879?hl=en) on how to create a custom variable inside DoubleClick:
+There are two things you need to do in order to send custom track properties as custom Floodlight variables. Refer to Google's [Custom Floodlight Variables](https://support.google.com/campaignmanager/answer/2823222?hl=en) documentation.
 
 Custom Floodlight variables use the keys u1=, u2=, and so on, and can take any values that you choose to pass to them. You can include custom Floodlight variables in any of your Floodlight activity tags and report on their values in Report Builder.
 
@@ -98,7 +99,7 @@ Click **Save**.
 
 ## COPPA Compliance
 
-DoubleClick Floodlight lets you set a parameter called `tag_for_child_directed_treatment` as either `0`, or `1` to mark a specific tag as coming from a user under the age of 13, under the [COPPA compliance privacy law](https://www.ftc.gov/news-events/media-resources/protecting-consumer-privacy/kids-privacy-coppa).
+DoubleClick Floodlight lets you set a parameter called `tag_for_child_directed_treatment` as either `0`, or `1` to mark a specific tag as coming from a user under the age of 13.
 
 If you want to set this flag, you can send an integration option namespaced as `coppaCompliant` with `true` or `false` (default):
 
@@ -111,6 +112,6 @@ Analytics.with(context).track("Free El", new Properties().putValue("show", "Stra
 
 ## Sending Personally Identifiable Information (PII)
 
-Do not map custom variables that contain Personally Identifying Information (PII). Refer to [this warning by DoubleClick](https://support.google.com/dfa/partner/answer/2548879?hl=en):
+Don't map custom variables that contain Personally Identifying Information (PII).
 
 The terms of your DoubleClick contract prohibit passing any information to us that we could use or recognize as personally identifiable information (PII). If you enter certain key-values into a field in a DoubleClick product, you may see a warning that reminds you that you must not use key-values to pass data that we would recognize as PII. Key-values that trigger this warning include, for example, email and username. Note that it is okay to use these key-values if your purpose is not to collect information that DoubleClick could use or recognize as PII. (For example, email=weekly is fine, but passing a user's email address is not.) If you do choose one of these key-values, DoubleClick may contact you in the future to confirm that you are not using them in a way that is prohibited.

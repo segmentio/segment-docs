@@ -10,6 +10,7 @@ vendor/
 node_modules/
 src/assets/docs.bundle.js
 yarn-error.log
+.yarn/install-state.gz
 # Make sure to update `analytics` to the full path to your Typewriter client.
 .vscode/spellright.dict
 
@@ -18,3 +19,7 @@ yarn-error.log
 
 # VS COde stuff
 .vscode*
+
+# Beta lists
+beta-destinations.csv
+beta-sources.csv

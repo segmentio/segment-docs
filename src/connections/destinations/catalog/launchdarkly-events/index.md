@@ -3,6 +3,8 @@ title: LaunchDarkly Events Destination
 rewrite: true
 redirect_from: /connections/destinations/catalog/launchdarkly-subscription
 hide-personas-partial: true
+hidden: true
+maintenance: true
 ---
 LaunchDarkly is a feature management platform that empowers development teams to safely deliver and control software through feature flags.
 

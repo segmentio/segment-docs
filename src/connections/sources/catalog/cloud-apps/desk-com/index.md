@@ -8,6 +8,7 @@ hidden: true
 > error ""
 > Desk.com ended operations on March 13th 2020. This page is for historical reference purposes only.
 
+{% include content/source-region-unsupported.md %}
 
 [Desk.com](http://www.desk.com/), previously known as Assistly, is a SaaS help desk and customer support product owned by Salesforce.com and accessible through the cloud.
 
@@ -39,151 +40,151 @@ The source syncs and warehouse syncs are independent processes. Source runs pull
 
 ## Collections
 
-|  Collection | Type | Description |
-|  ------ | ------ | ------ |
-| `articles` | object | Contains all available articles. For more info, check out the [Desk.com docs](http://dev.desk.com/API/articles/#fields) |
-| `brands` | object | Contains all brand objects. For more info, check out the [Desk.com docs](http://dev.desk.com/API/brands/#fields) |
-| `cases` | object | Contains all cases. For more info, check out the [Desk.com docs](http://dev.desk.com/API/cases/#fields) |
-| `companies` | object | Contains all available companies. For more info, check out the [Desk.com docs](http://dev.desk.com/API/companies/#fields) |
-| `customers` | object | For more info, check out the [Desk.com docs](http://dev.desk.com/API/customers/#fields) |
-| `users` | object | For more info, check out the [Desk.com docs](http://dev.desk.com/API/users/#fields) |
-| `feedbacks` | object | Contains customer feedback objects. For more info, check out the [Desk.com docs](http://dev.desk.com/API/feedbacks/#fields) |
+| Collection  | Type   |
+| ----------- | ------ |
+| `articles`  | object |
+| `brands`    | object |
+| `cases`     | object |
+| `companies` | object |
+| `customers` | object |
+| `users`     | object |
+| `feedbacks` | object |
 
 ## Collection Properties
 
 ### Articles
 
-|  Property Name | Description |
-|  ------ | ------- |
-| subject |	The subject of the article |
-| position | The position of the article as displayed in the support center |
-| quickcode	| Code used in the agent to quickly add article content to a case |
-| keywords | Keywords in the article |
-| publish_at | Date the article is to be published |
-| created_at | Date the article was created |
-| updated_at | Date the article was updated |
-| body | The content of the article (HTML formatted) |
-| body_email | Email specific content |
-| body_email_auto | True/false to use content from body |
-| body_chat	 | Chat specific content |
-| body_chat_auto | True/false to use content from body |
-| body_web_callback | Chat specific content |
-| body_web_callback_auto | True/false to use content from body |
-| body_twitter | Twitter specific content |
-| body_twitter_auto | True/false to use content from body |
-| body_qna | QNA specific content |
-| body_qna_auto | True/false to use content from body |
-| body_phone | Phone specific content |
-| body_phone_auto | True/false to use content from body |
-| body_facebook | Facebook specific content |
-| body_facebook_auto | True/false to use content from body |
-| rating | The percentage of people who found the article helpful |
-| rating_count | The number of ratings given to the article |
-| rating_score | The number of people who found the article helpful |
-| public_url | The publicly accessible URL for this article |
-| in_support_center | True/false to display the article in the support center |
-| internal_notes | Notes to the agent using the article |
-| locale | The ISO language code of the article |
-| available_locales | A list of ISO language codes corresponding to all available translations for the article |
+| Property Name          | Description                                                                              |
+| ---------------------- | ---------------------------------------------------------------------------------------- |
+| subject                | The subject of the article                                                               |
+| position               | The position of the article as displayed in the support center                           |
+| quickcode              | Code used in the agent to quickly add article content to a case                          |
+| keywords               | Keywords in the article                                                                  |
+| publish_at             | Date the article is to be published                                                      |
+| created_at             | Date the article was created                                                             |
+| updated_at             | Date the article was updated                                                             |
+| body                   | The content of the article (HTML formatted)                                              |
+| body_email             | Email specific content                                                                   |
+| body_email_auto        | True/false to use content from body                                                      |
+| body_chat              | Chat specific content                                                                    |
+| body_chat_auto         | True/false to use content from body                                                      |
+| body_web_callback      | Chat specific content                                                                    |
+| body_web_callback_auto | True/false to use content from body                                                      |
+| body_twitter           | Twitter specific content                                                                 |
+| body_twitter_auto      | True/false to use content from body                                                      |
+| body_qna               | QNA specific content                                                                     |
+| body_qna_auto          | True/false to use content from body                                                      |
+| body_phone             | Phone specific content                                                                   |
+| body_phone_auto        | True/false to use content from body                                                      |
+| body_facebook          | Facebook specific content                                                                |
+| body_facebook_auto     | True/false to use content from body                                                      |
+| rating                 | The percentage of people who found the article helpful                                   |
+| rating_count           | The number of ratings given to the article                                               |
+| rating_score           | The number of people who found the article helpful                                       |
+| public_url             | The publicly accessible URL for this article                                             |
+| in_support_center      | True/false to display the article in the support center                                  |
+| internal_notes         | Notes to the agent using the article                                                     |
+| locale                 | The ISO language code of the article                                                     |
+| available_locales      | A list of ISO language codes corresponding to all available translations for the article |
 
 ### Brands
 
-|  Property Name | Description |
-|  ------ | ------- |
-| name | Name of the brand |
-| created_at | When the brand was created |
-| updated_at | When the brand was last updated |
+| Property Name | Description                     |
+| ------------- | ------------------------------- |
+| name          | Name of the brand               |
+| created_at    | When the brand was created      |
+| updated_at    | When the brand was last updated |
 
 ### Cases
 
-|  Property Name | Description |
-|  ------ | ------- |
-| id | integer identifier for this object
-| external_id | unique external identifier to reference this case to an external system
-| blurb	| Short summary of, or excerpt from, the case |
-| subject | Subject of the case |
-| priority | Number between 1 and 10, 1 being lowest priority |
-| Description | Description or background information
-| status | Current state of the case, one of: `new`, `open`, `pending`, `resolved`, `closed`, `deleted` |
-| type | Channel of the case, one of: chat, twitter, email, qna, facebook, phone |
-| labels | Array of labels associated with this case |
-| label_ids	| Array of label ids associated with this case |
-| language | The case's ISO language code, which returns the site's default language (or nil if not set) unless multi-lingual support is enabled |
-| custom_fields | Hash of values for custom fields |
-| created_at | When this record was created |
-| updated_at | When this record was last updated by any action |
-| changed_at | When this case was last updated by a user |
-| active_at | When this case was last active |
-| received_at | When the most recent message was received |
-| locked_until | When the lock on this case will expire |
-| first_opened_at | When this case was first opened |
-| opened_at | When this case was most recently opened |
-| first_resolved_at | When this case was first resolved |
-| resolved_at | When this case was most recently resolved |
-| suppress_rules | Set to `true` to disable rule processing when creating or updating this case |
-| route_status | Current routing status of the case. this field only appears when routing is enabled for the first time. there are four values: `added` when a case is first added to desk. this switches to available after a few seconds. `available` case is not in use and can be routed. `assigned` case is being presented to a specific user to accept. `active` a case is open and in edit mode. doesn't necessarily have to have been routed |
+| Property Name     | Description                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| id                | integer identifier for this object                                                                                                                                                                                                                                                                                                                                                                                                   |
+| external_id       | unique external identifier to reference this case to an external system                                                                                                                                                                                                                                                                                                                                                              |
+| blurb             | Short summary of, or excerpt from, the case                                                                                                                                                                                                                                                                                                                                                                                          |
+| subject           | Subject of the case                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| priority          | Number between 1 and 10, 1 being lowest priority                                                                                                                                                                                                                                                                                                                                                                                     |
+| Description       | Description or background information                                                                                                                                                                                                                                                                                                                                                                                                |
+| status            | Current state of the case, one of: `new`, `open`, `pending`, `resolved`, `closed`, `deleted`                                                                                                                                                                                                                                                                                                                                         |
+| type              | Channel of the case, one of: chat, twitter, email, qna, facebook, phone                                                                                                                                                                                                                                                                                                                                                              |
+| labels            | Array of labels associated with this case                                                                                                                                                                                                                                                                                                                                                                                            |
+| label_ids         | Array of label ids associated with this case                                                                                                                                                                                                                                                                                                                                                                                         |
+| language          | The case's ISO language code, which returns the site's default language (or nil if not set) unless multi-lingual support is enabled                                                                                                                                                                                                                                                                                                  |
+| custom_fields     | Hash of values for custom fields                                                                                                                                                                                                                                                                                                                                                                                                     |
+| created_at        | When this record was created                                                                                                                                                                                                                                                                                                                                                                                                         |
+| updated_at        | When this record was last updated by any action                                                                                                                                                                                                                                                                                                                                                                                      |
+| changed_at        | When this case was last updated by a user                                                                                                                                                                                                                                                                                                                                                                                            |
+| active_at         | When this case was last active                                                                                                                                                                                                                                                                                                                                                                                                       |
+| received_at       | When the most recent message was received                                                                                                                                                                                                                                                                                                                                                                                            |
+| locked_until      | When the lock on this case will expire                                                                                                                                                                                                                                                                                                                                                                                               |
+| first_opened_at   | When this case was first opened                                                                                                                                                                                                                                                                                                                                                                                                      |
+| opened_at         | When this case was most recently opened                                                                                                                                                                                                                                                                                                                                                                                              |
+| first_resolved_at | When this case was first resolved                                                                                                                                                                                                                                                                                                                                                                                                    |
+| resolved_at       | When this case was most recently resolved                                                                                                                                                                                                                                                                                                                                                                                            |
+| suppress_rules    | Set to `true` to disable rule processing when creating or updating this case                                                                                                                                                                                                                                                                                                                                                         |
+| route_status      | Current routing status of the case. this field only appears when routing is enabled for the first time. there are four values: `added` when a case is first added to desk. this switches to available after a few seconds. `available` case is not in use and can be routed. `assigned` case is being presented to a specific user to accept. `active` a case is open and in edit mode. doesn't necessarily have to have been routed |
 
 ### Companies
 
-|  Property Name | Description |
-|  ------ | ------- |
-| name | Name of the company |
-| domains | Array of top level domain names (ie. desk.com, british.co.uk). Pass an array of domains to replace the set of domains for the company. An empty array will clear all domains from the company |
-| created_at | When the company was created |
-| updated_at | When the company was last updated |
-| custom_fields | Hash of values for custom fields |
+| Property Name | Description                                                                                                                                                                                   |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name          | Name of the company                                                                                                                                                                           |
+| domains       | Array of top level domain names (ie. desk.com, british.co.uk). Pass an array of domains to replace the set of domains for the company. An empty array will clear all domains from the company |
+| created_at    | When the company was created                                                                                                                                                                  |
+| updated_at    | When the company was last updated                                                                                                                                                             |
+| custom_fields | Hash of values for custom fields                                                                                                                                                              |
 
 ### Customers
 
-|  Property Name | Description |
-|  ------ | ------- |
-| first_name | Customer's first name |
-| last_name | Customer's last name |
-| company | Customer's company |
-| title |  Customer's title |
-| avatar | Customer's avatar URL - image sourced from Twitter, Facebook or Gravatar. See note on avatar_size param below |
-| uid | Customer's Multipass SSO UID |
-| external_id | Unique external identifier to reference this customer to an external system |
-| background | Any background information for the customer |
-| language | Customer's ISO language code, nil unless multi-lingual support is enabled
-| locked_until | Time in which the lock on this customer will expire
-| created_at | Time when customer was created |
-| updated_at | Time when customer was last updated at |
-| emails | Array of email objects, each specifying the contact type and value of the email address |
-| phone_numbers | Array of phone number objects, each specifying the contact type and value of the phone number |
-| addresses | Array of address objects, each specifying the contact type and value of the location |
-| custom_fields | Hash of values for custom fields |
-| access_private_portal | Whether or not customer can access private portal |
-| access_company_cases | Whether or not customer can access company cases |
+| Property Name         | Description                                                                                                   |
+| --------------------- | ------------------------------------------------------------------------------------------------------------- |
+| first_name            | Customer's first name                                                                                         |
+| last_name             | Customer's last name                                                                                          |
+| company               | Customer's company                                                                                            |
+| title                 | Customer's title                                                                                              |
+| avatar                | Customer's avatar URL - image sourced from Twitter, Facebook or Gravatar. See note on avatar_size param below |
+| uid                   | Customer's Multipass SSO UID                                                                                  |
+| external_id           | Unique external identifier to reference this customer to an external system                                   |
+| background            | Any background information for the customer                                                                   |
+| language              | Customer's ISO language code, nil unless multi-lingual support is enabled                                     |
+| locked_until          | Time in which the lock on this customer will expire                                                           |
+| created_at            | Time when customer was created                                                                                |
+| updated_at            | Time when customer was last updated at                                                                        |
+| emails                | Array of email objects, each specifying the contact type and value of the email address                       |
+| phone_numbers         | Array of phone number objects, each specifying the contact type and value of the phone number                 |
+| addresses             | Array of address objects, each specifying the contact type and value of the location                          |
+| custom_fields         | Hash of values for custom fields                                                                              |
+| access_private_portal | Whether or not customer can access private portal                                                             |
+| access_company_cases  | Whether or not customer can access company cases                                                              |
 
 
 ### Users
 
-|  Property Name | Description |
-|  ------ | ------- |
-| name | Name of the user |
-| public_name | Public facing name of the user |
-| email	| User's email |
-| email_verified | Indicates if an email address has been verified |
-| avatar | User's avatar URL - image sourced from Gravatar. |
-| level | User's permission level |
-| created_at | When this record was created |
-| updated_at | When this record was last updated |
-| current_login_at | When this user most recently logged in |
-| last_login_at | When this user last logged in |
-| available | `true` when user is online with routing enabeld, `false` otherwise |
+| Property Name    | Description                                                        |
+| ---------------- | ------------------------------------------------------------------ |
+| name             | Name of the user                                                   |
+| public_name      | Public facing name of the user                                     |
+| email            | User's email                                                       |
+| email_verified   | Indicates if an email address has been verified                    |
+| avatar           | User's avatar URL - image sourced from Gravatar.                   |
+| level            | User's permission level                                            |
+| created_at       | When this record was created                                       |
+| updated_at       | When this record was last updated                                  |
+| current_login_at | When this user most recently logged in                             |
+| last_login_at    | When this user last logged in                                      |
+| available        | `true` when user is online with routing enabeld, `false` otherwise |
 
 ### Feedbacks
 
-|  Property Name | Description |
-|  ------ | ------- |
-| rating |	Numeric rating left by customer |
-| rating_type |	Rating type used to generate this feedback, either yes_no or four_star  |
-| additional_feedback |	An optional additional feedback text field |
-| created_at |	Date the feedback was created |
-| updated_at |	Date the feedback was updated |
-| user | The user who created this feedback |
-| case | The case to which this feedback is assigned |
+| Property Name       | Description                                                            |
+| ------------------- | ---------------------------------------------------------------------- |
+| rating              | Numeric rating left by customer                                        |
+| rating_type         | Rating type used to generate this feedback, either yes_no or four_star |
+| additional_feedback | An optional additional feedback text field                             |
+| created_at          | Date the feedback was created                                          |
+| updated_at          | Date the feedback was updated                                          |
+| user                | The user who created this feedback                                     |
+| case                | The case to which this feedback is assigned                            |
 
 
 ## Adding Destinations

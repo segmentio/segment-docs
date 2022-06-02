@@ -1,8 +1,8 @@
 ---
 title: Optimizely Web Destination
 redirect_from: '/connections/destinations/catalog/optimizely/'
+id: 54521fd925e721e32a72eee3
 ---
-
 ## Getting Started
 
 Segment's **Optimizely Web (previously Optimizely)** destination supports the following Optimizely products:
@@ -41,7 +41,7 @@ Segment provides specific implementation details for each Optimizely product in 
 4. In your Optimizely dashboard, copy the snippet provided at the bottom of the page.
 5. Include the snippet immediately after the opening `<head>` tag on every page where you'd like to include Optimizely's JavaScript.
 6. Now, paste your Segment snippet below the Optimizely snippet on every page where you'd like to include Segment's JavaScript.
-7. Finally, remember to define any [custom `events`](https://help.optimizely.com/Build_Campaigns_and_Experiments/Custom_events_in_Optimizely_X) in your Optimizely dashboard, and to add those `events` as [`metrics`](https://help.optimizely.com/Measure_success%3A_Track_visitor_behaviors/Metrics_in_Optimizely_X) with the appropriate Optimizely Experiments. In Optimizely in the Implementation tab, select ‘Custom Event’ and give it an API name that corresponds to the Segment `track` event name. Once the Optimizely events are created, they can be added to experiments as metrics to start tracking Segment data to an Optimizely experiment.
+7. Finally, remember to define any [custom `events`](https://help.optimizely.com/Build_Campaigns_and_Experiments/Custom_events_in_Optimizely_X) in your Optimizely dashboard, and to add those `events` as [`metrics`](https://help.optimizely.com/Measure_success%3A_Track_visitor_behaviors/Metrics_in_Optimizely_X) with the appropriate Optimizely Experiments. In Optimizely in the Implementation tab, select 'Custom Event' and give it an API name that corresponds to the Segment `track` event name. Once the Optimizely events are created, they can be added to experiments as metrics to start tracking Segment data to an Optimizely experiment.
 
 ### Track
 
@@ -217,9 +217,9 @@ analytics.track('Category Clicked', {
 });
 ```
 
-If you were to send this Segment `track` event to Optimizely using any of the Segment integrations, you would only be able to use the `eventName` ‘Click’ as a `metric` in Optimizely since custom event tags in Optimizely are not available on the [Results page](https://help.optimizely.com/Analyze_Results/The_Experiment_Results_page_for_Optimizely_X).
+If you were to send this Segment `track` event to Optimizely using any of the Segment integrations, you would only be able to use the `eventName` ‘Click' as a `metric` in Optimizely since custom event tags in Optimizely are not available on the [Results page](https://help.optimizely.com/Analyze_Results/The_Experiment_Results_page_for_Optimizely_X).
 
-To send a `track` event from Segment with the context about that event from the `properties` to Optimizely, create a [custom Segment Destination Function](/docs/connections/destinations/destination-functions/) that maps the Segment `eventName` to a more specific Optimizely `eventName` and send an Optimizely `event` payload with the transformed `eventName` to the Optimizely [Event API](https://docs.developers.optimizely.com/web/docs/event-api). Using the example above, the Segment `track` event ‘Click’ can be transformed to an Optimizely `event` with the `eventName` ‘Clicked Shirt’.
+To send a `track` event from Segment with the context about that event from the `properties` to Optimizely, create a [custom Segment Destination Function](/docs/connections/destinations/destination-functions/) that maps the Segment `eventName` to a more specific Optimizely `eventName` and send an Optimizely `event` payload with the transformed `eventName` to the Optimizely [Event API](https://docs.developers.optimizely.com/web/docs/event-api). Using the example above, the Segment `track` event ‘Click' can be transformed to an Optimizely `event` with the `eventName` ‘Clicked Shirt'.
 
 ### Sending effective referrer in your automatic page calls
 

@@ -1,7 +1,7 @@
 ---
 title: Tray.io Destination
+id: 56b8444d80412f644ff12c30
 ---
-
 ## Getting Started
 
 Once your application is set up and instrumented with Segment, turn on tray in your Segment destinations page. After that, log in to your tray account and create a new workflow, using Segment as your trigger.

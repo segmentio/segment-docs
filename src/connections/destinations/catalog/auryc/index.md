@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: Auryc Destination
+id: 5cae592103251a0001c2820a
 ---
 [Auryc](https://www.auryc.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a client-side journey intelligence platform that surfaces real-time insights with powerful visual context across all of your digital ecommerce journeys. Auryc helps enterprises find and resolve the customer journey issues that directly impact conversions and customer satisfaction.
 
@@ -18,7 +19,7 @@ It also means that, for the time being, there is a longer delay for us to deploy
 2. On the Segment page, log in and authorize the Auryc Destination.
 3. Select the workspace and source you to add Auryc to, and click **Allow**.
 
-And you’re done! Once you click "Allow", Auryc shows an installation confirmation message.
+And you're done! Once you click "Allow", Auryc shows an installation confirmation message.
 
 ## Identify
 

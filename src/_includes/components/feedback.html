@@ -1,55 +1,80 @@
 <div class="flex flex--wrap waffle waffle--large waffle--xxlarge@medium">
-  <div class="flex__column flex__column--12 flex__column--6@medium flex">
+  <div class="flex__column flex__column--12 flex__column--4@medium flex">
     <div class="feedback-box flex flex--stack flex--justify waffle waffle--large@medium">
       <div class="flex__column flex__column--shrink">
         <div class="feedback-box__content">
-          <h3>Need support?</h3>
+          {% if page.layout == "engage" %}
+          <h3>Twilio Engage Beta Support</h3>
 
-          <p>Questions? Problems? Need more info? Contact us, and we can help!</p>
+          <p>Contact support with any questions or issues with the Twilio Engage Beta</p>
         </div>
       </div>
 
       <div class="flex__column flex__column--shrink">
-        {% include components/button-hollow.html text="Visit our Support page" href="https://segment.com/help/contact/" %}
+        {% include components/button-hollow.html text="Contact Support" href="/docs/engage/contact/" %}
       </div>
+      {% else %}
+
+
+
+      <h3>Need support?</h3>
+
+      <p>Questions? Problems? Need more info? Contact Segment Support for assistance!</p>
     </div>
   </div>
 
-  <div class="flex__column flex__column--12 flex__column--6@medium flex">
-    <div class="feedback-box flex flex--stack flex--justify waffle waffle--none waffle--large@medium">
-      <div class="flex__column flex__column--shrink">
-        <div class="feedback-box__content">
-          <h3>Was this page helpful?</h3>
+  <div class="flex__column flex__column--shrink">
+    {% include components/button-hollow.html text="Visit our Support page" href="https://segment.com/help/contact/" %}
+  </div>
+  {% endif %}
+</div>
+</div>
+<div class="flex__column flex__column--12 flex__column--4@medium flex">
+  <div class="flex__column flex__column--shrink">
+    <div class="feedback-box__content">
+      <h3>Help improve these docs!</h3>
+      {%include sidebar/edit-tools.html %}
+    </div>
+  </div>
+</div>
+<div class="flex__column flex__column--12 flex__column--4@medium flex">
+  <div class="feedback-box flex flex--stack flex--justify waffle waffle--none waffle--large@medium">
+    <div class="flex__column flex__column--shrink">
+      <div class="feedback-box__content">
+        <h3>Was this page helpful?</h3>
 
-          <div class="flex gutter gutter--large">
-            <div class="flex__column flex__column--shrink">
-              <button class="button button-hollow gutter gutter--small" data-feedback-button="helpful" data-active-class="button-fill button-fill--secondary">
-                <span class="button__icon">
-                  {% include icons/symbols/thumb-up.svg %}
-                </span>
+        <div class="flex gutter gutter--large">
+          <div class="flex__column flex__column--shrink">
+            <button class="button button-hollow gutter gutter--small" data-feedback-button="helpful"
+              data-active-class="button-fill button-fill--secondary">
+              <span class="button__icon">
+                {% include icons/symbols/thumb-up.svg %}
+              </span>
 
-                <span>Yes</span>
-              </button>
-            </div>
-
-            <div class="flex__column flex__column--shrink">
-              <button class="button button-hollow gutter gutter--small" data-feedback-button="unhelpful" data-active-class="button-fill button-fill--gray">
-                <span class="button__icon">
-                  {% include icons/symbols/thumb-down.svg %}
-                </span>
-
-                <span>No</span>
-              </button>
-            </div>
+              <span>Yes</span>
+            </button>
           </div>
 
-          <div class="widget__content" data-feedback-content hidden>
-            <p>Thanks for your feedback!</p>
+          <div class="flex__column flex__column--shrink">
+            <button class="button button-hollow gutter gutter--small" data-feedback-button="unhelpful"
+              data-active-class="button-fill button-fill--gray">
+              <span class="button__icon">
+                {% include icons/symbols/thumb-down.svg %}
+              </span>
 
-            <p>Can we improve this doc? <a href="#" data-feedback-button="alternate">Send us feedback!</a></p>
+              <span>No</span>
+            </button>
           </div>
+        </div>
+
+        <div class="widget__content" data-feedback-content hidden>
+          <p>Thanks for your feedback!</p>
+
+          <p>Can we improve this doc? <a href="#" data-feedback-button="alternate">Send us feedback!</a></p>
         </div>
       </div>
     </div>
   </div>
+</div>
+
 </div>

@@ -1,14 +1,17 @@
 ---
 title: FullStory (Actions)
 hide-boilerplate: true
-hide-dossier: true
+hide-dossier: false
+id: 6141153ee7500f15d3838703
+redirect_from:
+  - '/connections/destinations/catalog/vendor-fullstory'
+versions:
+  - name: Fullstory (Classic)
+    link: /docs/connections/destinations/catalog/fullstory
 ---
 {% include content/plan-grid.md name="actions" %}
 
 [FullStory](https://www.fullstory.com/){:target="_blank"} lets product and support teams easily understand everything about the customer experience. The Segment integration for FullStory helps accurately identify your customers within the FullStory dashboard.
-
-> success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) FullStory Segment destination. There's also a page about the [non-Actions FullStory destination](/docs/connections/destinations/catalog/fullstory/). Both of these destinations receives data from Segment. 
 
 ## Benefits of FullStory (Actions) vs FullStory Classic
 

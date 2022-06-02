@@ -1,8 +1,8 @@
 ---
 title: Zaius Destination
 hide-personas-partial: true
+id: 56cb441480412f644ff12d37
 ---
-
 ## Zaius Destination
 Zaius is a behavioral marketing engine that allows marketers to analyze, segment, and engage their customers across web, mobile, email and offline channels and devices.
 
@@ -41,7 +41,7 @@ The Zaius platform processes all of the page events passed into the Segment as w
 ## Personas
 You can send computed traits and audiences generated using [Segment Personas](/docs/personas/) to this destination as a field on the customer object.
 
-For user-property destinations, an identify call is sent to the destination for each user being added and removed. The property name is the snake_cased version of the audience name, with a true/false value to indicate membership. For example, when a user first completes an order in the last 30 days, Personas sends an Identify call with the trait `order_completed_last_30days: true`. When the user no longer satisfies this condition (for example, it’s been more than 30 days since their last order), Personas sets that value to `false`.
+For user-property destinations, an identify call is sent to the destination for each user being added and removed. The property name is the snake_cased version of the audience name, with a true/false value to indicate membership. For example, when a user first completes an order in the last 30 days, Personas sends an Identify call with the trait `order_completed_last_30days: true`. When the user no longer satisfies this condition (for example, it's been more than 30 days since their last order), Personas sets that value to `false`.
 
 To map Segment computed traits and audiences to Zaius customer objects, [create Zaius custom fields](https://docs.zaius.com/hc/en-us/articles/360015617313#CreateCustomFields) for each trait and audience. The field name you define in Zaius must exactly match the key for the trait or audience as it appears in your identify calls. Any Segment traits or audiences which do not have a corresponding Zaius custom field will be dropped from the customer object.
 

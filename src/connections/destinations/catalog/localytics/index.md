@@ -1,7 +1,7 @@
 ---
 title: Localytics Destination
+id: 54521fd925e721e32a72eed0
 ---
-
 Our Localytics mobile destination code is open sourced on GitHub. Feel free to
 check it out:
 [iOS](https://github.com/segment-integrations/analytics-ios-integration-localytics),

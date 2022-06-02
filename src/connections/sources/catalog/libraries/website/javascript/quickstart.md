@@ -22,7 +22,10 @@ Next create an Analytics.js source from your Workspace:
 When you create a Source in the Segment web app, it tells the Segment servers that you'll be sending data from a specific source type. When you create (or change!) a Source in the Segment app, Segment generates a new Write Key for that source. You use the write key in your website code to tell Segment servers where the data is coming from, so Segment can route it to your Destinations and other tools.
 
 
-## Step 2: Copy the Segment Snippet
+## Step 2: Add the Segment Snippet
+
+> success "Install Segment as an NPM package"
+> You can add Segment to your project as an [NPM package](https://www.npmjs.com/package/@segment/snippet){:target="_blank"}. For more information, see the instructions on [GitHub](https://github.com/segmentio/analytics-next#-using-as-an-npm-package){:target="_blank"}.
 
 Paste this snippet into the `<head>` tag of your site to install Segment.
 

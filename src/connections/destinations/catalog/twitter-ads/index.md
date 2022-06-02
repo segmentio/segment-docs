@@ -1,7 +1,7 @@
 ---
 title: Twitter Destination
+id: 54521fdc25e721e32a72eeff
 ---
-
 [Our Twitter Ads destination code](https://github.com/segment-integrations/analytics.js-integration-twitter-ads) is all open-source on GitHub if you want to check it out.
 
 ## Getting Started

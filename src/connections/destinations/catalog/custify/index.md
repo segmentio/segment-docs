@@ -1,8 +1,8 @@
 ---
 title: Custify Destination
 rewrite: true
+id: 5cf78a8db6bcdf00017208cd
 ---
-
 [Custify](https://www.custify.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)'s Customer Success Platform is designed for B2B SaaS businesses and enables them to reduce their churn and increase customer lifetime value.
 
 This destination is maintained by Custify. For any issues with the destination, [contact the Custify Support team](mailto:contact@custify.com).

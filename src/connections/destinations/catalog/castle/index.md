@@ -1,8 +1,8 @@
 ---
 title: Castle Destination
+id: 56a8f566e954a874ca44d3b0
 ---
-
-Once you enable the Castle integration, the [Castle JavaScript snippet](https://docs.castle.io/v1/tutorials/client-side-integration/web/) is placed on your website, and user data starts appearing in the Castle dashboard.
+Once you enable the Castle integration, the [Castle JavaScript snippet](https://docs.castle.io/docs/sdk-browser) is placed on your website, and user data starts appearing in the Castle dashboard.
 Client-side tracking works out of the box, however **your existing server-side calls need to be extended** with data from the incoming request.
 
 Castle supports calling `identify`, `page`, `screen`, and `group`. Castle does *not* support the `alias` call.
@@ -15,9 +15,10 @@ Castle supports calling `identify`, `page`, `screen`, and `group`. Castle does *
 1. _Recommended:_ Secure Mode
 
 ## Tracking successful and failed logins
-**A baseline integration of Castle includes tracking [successful and failed login attempts](https://castle.io/docs/events#recommended-order-of-integration).** If you are already tracking these events using a Segment integration, you can use [Event Mapping](https://dashboard.castle.io/settings/events) to indicate which events correspond to Castle reserved events.
+A baseline integration of Castle includes tracking [successful and failed login attempts](https://docs.castle.io/docs/failed-logins). If you track these events using a Segment integration, you can use [Event Mapping](https://dashboard.castle.io/settings/events) to indicate which events correspond to Castle reserved events.
 
->**Note**: If you request a Castle risk score for the "Logged in" event, you should **not** map that event to Castle's reserved `$login.succeeded`. Instead, [`authenticate`](https://castle.io/docs/authentication) that event through Castle. See next section on _Requesting a risk score_.
+> info ""
+> If you request a Castle risk score for the "Logged in" event, you should **not** map that event to Castle's reserved `$login.succeeded`. Instead, [`authenticate`](https://docs.castle.io/docs/authentication-method) that event through Castle. See next section on _Requesting a risk score_.
 
 Here are two Ruby examples on how to track successful and failed login attempts (`context` and `integration` have been omitted for brevity):
 
@@ -46,15 +47,17 @@ analytics.track(
 )
 ```
 
->**Note**: Segment requires either `user_id` or `anonymous_id` for the request to be processed. If you don't know which user generated the failed login create a UUID and provide it as `anonymous_id`
+> info ""
+> Segment requires either `user_id` or `anonymous_id` for the request to be processed. If you don't know which user generated the failed login create a UUID and provide it as `anonymous_id`
 
 ## Extending server-side tracking with request properties
-Tracking events from your server-side is crucial to prevent requests from getting blocked by malicious actors. This is recommended for all [Castle's reserved events](https://castle.io/docs/events), such as logins and password changes.
+Tracking events from your server-side is crucial to prevent requests from getting blocked by malicious actors. This is recommended for all [Castle's reserved events](https://docs.castle.io/docs/events), such as logins and password changes.
 
-**Important:** Server-side `track` events are dropped by Castle unless they contain the properties listed below. `identify` calls still create or update a user, but do not create a device if these properties are missing:
-- `context.ip`. The user's IP address, i.e. not your server's internal IP
-- `context.user_agent`, alternatively `context.headers` containing at least the `user_agent` field.
-- `context.client_id`. The _Client ID_ forwarded by the web or mobile SDK.
+> warning "" 
+> Server-side `track` events are dropped by Castle unless they contain the properties listed below. `identify` calls still create or update a user, but don't create a device if these properties are missing:
+> - `context.ip`. The user's IP address, i.e. not your server's internal IP
+> - `context.user_agent`, alternatively `context.headers` containing at least the `user_agent` field.
+> - `context.client_id`. The _Client ID_ forwarded by the web or mobile SDK.
 
 These properties are described in detail in the next section.
 
@@ -84,7 +87,7 @@ By forwarding a client identifier from the client-side to the server-side, you c
 
 The Castle JavaScript SDK (loaded by Analytics.js) forwards the client identifier as a browser cookie named `__cid`.
 
-The Castle [iOS](https://castle.io/docs/ios#forwarding-code-device_id-code-to-your-server) and [Android](https://castle.io/docs/android#forwarding-code-device_id-code-to-your-server) SDKs forward it as the HTTP header `X-Castle-Client-Id`. See the respective documentation pages for instructions on how to configure the header forwarding.
+The Castle [iOS](https://docs.castle.io/docs/sdk-ios) and [Android](https://docs.castle.io/docs/sdk-android) SDKs forward it as the HTTP header `X-Castle-Client-Id`. See the respective documentation pages for instructions on how to configure the header forwarding.
 
 Here's a Ruby example on how to extract the Client ID on your server-side:
 
@@ -131,10 +134,10 @@ For privacy reasons, **you do not want to send the "Cookie" header to Castle**, 
 }
 ```
 
-There are example implementations on how to extract request headers in [PHP](https://github.com/castle/castle-php/blob/e93de1532ef28af17b8bf2bef350e6995a580085/lib/Castle/Request.php#L31), [Ruby](https://github.com/castle/castle-ruby/blob/master/lib/castle-rb/client.rb#L54), and [Java](https://github.com/castle/castle-java/blob/96cdc7469aa0995a836100c3dfd370b10f299e8c/src/main/java/io/castle/client/objects/UserInfoHeader.java#L148).
+There are example implementations on how to extract request headers in [PHP](https://github.com/castle/castle-php/blob/e93de1532ef28af17b8bf2bef350e6995a580085/lib/Castle/Request.php#L31), [Ruby](https://github.com/castle/castle-ruby), and [Java](https://github.com/castle/castle-java/blob/96cdc7469aa0995a836100c3dfd370b10f299e8c/src/main/java/io/castle/client/objects/UserInfoHeader.java#L148).
 
 ## Identify
-When you call [`identify`](/docs/connections/spec/identify), a user will be created in Castle. The Segment special traits `email`, `username`, `name`, `createdAt`, `phone`, and `address` are mapped to Castle's reserved [user traits](https://castle.io/docs/castlejs#attributes).
+When you call [`identify`](/docs/connections/spec/identify), a user will be created in Castle. The Segment special traits `email`, `username`, `name`, `createdAt`, `phone`, and `address` are mapped to Castle's reserved user traits.
 
 Any additional traits will be stored on the Castle user model as _custom traits_.
 
@@ -160,10 +163,10 @@ analytics.identify('1234', {
 });
 ```
 
-> **Note:** If you're calling `authenticate` to obtain a risk score, you do *not* need to call `identify` from the server-side. Instead, `authenticate` provides a way to attach `traits` in the same call.
+> **Note:** If you call `authenticate` to obtain a risk score, you do *not* need to call `identify` from the server-side. Instead, `authenticate` provides a way to attach `traits` in the same call.
 
 ## Secure Mode
-Enable [Secure Mode](https://castle.io/docs/secure_mode) to prevent fraudsters from impersonating your users.
+Enable Secure Mode to prevent fraudsters from impersonating your users.
 
 > **Note:** Secure Mode is highly encouraged for production deployments, but can wait until after a completed proof a concept.
 To enable Secure Mode in Analytics.js, you pass in the `secure` variable by rendering it in your server-side templates. The `secure` field should be a SHA256 hash of your Castle API Secret and the user ID.
@@ -195,4 +198,4 @@ end
 ## Requesting a risk score
 Castle's adaptive authentication tells you whether to allow access, initiate a second factor of authentication, or log out the user.
 
-Since all Segment calls are called asynchronously, you will need to use Castle's native SDKs to perform [adaptive authentication](https://castle.io/docs/authentication).
+Since all Segment calls are called asynchronously, you'll need to use Castle's native SDKs to perform [adaptive authentication](https://docs.castle.io/docs/authentication-method).

@@ -82,7 +82,7 @@ When you connect an account-level audience or trait to a destination, you select
 - **Track**: Track calls are an alternative to Identify calls to send events for each user who is associated with any accounts that match the conditions. While `identify` typically updates a profile, a track event will record an event. The audience name is included as an event [property](/docs/connections/spec/track/#properties) (for example `audience_name:true`), and the default track name is `Audience Entered` or `Trait Computed` for audiences and computed traits, respectively. The event names can be customized. When a user associated with an account which no longer matches audiences conditions, an `Audience Exited` event is sent with an event property where `audience_name:false`.
 
 > info ""
-> Enable group calls when you want to update a destination’s account records based on audience membership. Enable identify calls when you want to update a destination’s user records based on audience membership.
+> Enable group calls when you want to update a destination's account records based on audience membership. Enable identify calls when you want to update a destination's user records based on audience membership.
 
 ## Use account-level traits in user-level audiences
 
@@ -92,16 +92,16 @@ Account-level traits are not available in the user-level audience builder. Howev
 
 For example, you may wish to create an audience which selects all admin-level users associated with accounts in the software industry (for example, `user.role=Admin AND account.industry=Software`). To accomplish this, you would:
 
-1. Create an account-level audience containing a single account-level custom trait condition that references the account’s industry(`industry=Software`).
+1. Create an account-level audience containing a single account-level custom trait condition that references the account's industry(`industry=Software`).
 2. Create a user-level audience with two conditions:
-    1. A custom trait condition referencing the user’s role (`role=Admin`)
+    1. A custom trait condition referencing the user's role (`role=Admin`)
     2. An audience membership condition referencing the account-level audience you just created (`software_industry_audience=True`)
 
 
 ## Known limitations of account-level audiences
 
-- Unlike user-level audiences which are [computed in real time](/docs/personas/audiences#realtime-compute-vs-batch), account-level audiences are computed on an hourly, batched basis.
-- Account-level audiences do not respect the `context.groupId` property on track calls. If users are associated with multiple accounts (through multiple group calls), the entire collection of a user’s events is considered when evaluating user-level event conditions (not just those events which are tagged with a matching `groupId`). This can lead to unexpected results where a user’s events triggered in the context of one account lead to another account incorrectly matching an account-level audience.
+- Unlike user-level audiences, which are [computed in real time](/docs/personas/audiences#realtime-compute-vs-batch), account-level audiences are computed on a batched basis. Segment computes account-level audiences roughly every hour, but it's important to note that compute times can fluctuate based on the load on the system.
+- Account-level audiences do not respect the `context.groupId` property on track calls. If users are associated with multiple accounts (through multiple group calls), the entire collection of a user's events is considered when evaluating user-level event conditions (not just those events which are tagged with a matching `groupId`). This can lead to unexpected results where a user's events triggered in the context of one account lead to another account incorrectly matching an account-level audience.
 - The identity breakdown report (displayed in the audience builder for user-level audiences) is not available for account-level audiences.
 
 If you find that these limitations impede your ability to use account-level audiences, contact [friends@segment.com](mailto:friends@segment.com) with details about your use-case.

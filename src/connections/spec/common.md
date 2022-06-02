@@ -122,11 +122,13 @@ Beyond this common structure, each API call adds a few specialized top-level fie
 Context is a dictionary of extra information that provides useful context about a datapoint, for example the user's `ip` address or `locale`. You should **only use** Context fields for their intended meaning.
 
 <table>
+<thead>
   <tr>
-    <td>**Field**</td>
-    <td>**Type**</td>
-    <td>**Description**</td>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
+  </thead>
   <tr>
     <td>`active`</td>
     <td>Boolean</td>
@@ -140,7 +142,7 @@ Context is a dictionary of extra information that provides useful context about 
     <td>Object</td>
     <td>dictionary of information about the current application, containing `name`, `version` and `build`.
     <br><br>
-    This is collected automatically from our mobile libraries when possible.
+    This is collected automatically from the mobile libraries when possible.
     </td>
   </tr>
   <tr>
@@ -189,7 +191,7 @@ Context is a dictionary of extra information that provides useful context about 
   <tr>
     <td>`page`</td>
     <td>Object</td>
-    <td>Dictionary of information about the current page in the browser, containing `path`, `referrer`, `search`, `title` and `url`. This is automatically collected by [Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#context--traits).
+    <td>Dictionary of information about the current page in the browser, containing `path`, `referrer`, `search`, `title` and `url`. This is automatically collected by [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/#context--traits).
     </td>
   </tr>
   <tr>
@@ -231,58 +233,58 @@ Context is a dictionary of extra information that provides useful context about 
 
 ## Context Fields Automatically Collected
 
-Below is a chart that shows you which context variables are populated automatically by our iOS, Android and analytics.js libraries.
+Below is a chart that shows you which context variables are populated automatically by the iOS, Android and analytics.js libraries.
 
 Other libraries only collect `context.library`, any other context variables must be sent manually.
 
 | Context Field            | Analytics.js | Analytics-ios | Analytics-android |
-|--------------------------|--------------|---------------|-------------------|
-| app.name                 |              |     √         |      √            |
-| app.version              |              |     √         |      √            |
-| app.build                |              |     √         |      √            |
-| campaign.name            |     √        |               |                   |
-| campaign.source          |     √        |               |                   |
-| campaign.medium          |     √        |               |                   |
-| campaign.term            |     √        |               |                   |
-| campaign.content         |     √        |               |                   |
-| device.type              |              |               |      √            |
-| device.id                |              |     √         |      √            |
-| device.advertisingId     |              |     √         |      √            |
-| device.adTrackingEnabled |              |     √         |      √            |
-| device.manufacturer      |              |     √         |      √            |
-| device.model             |              |     √         |      √            |
-| device.name              |              |               |      √            |
-| library.name             |     √        |     √         |      √            |
-| library.version          |     √        |     √         |      √            |
-| ip*                      |     √        |     √         |      √            |
-| locale                   |     √        |     √         |      √            |
+| ------------------------ | ------------ | ------------- | ----------------- |
+| app.name                 |              | ✅             | ✅                 |
+| app.version              |              | ✅             | ✅                 |
+| app.build                |              | ✅             | ✅                 |
+| campaign.name            | ✅            |               |                   |
+| campaign.source          | ✅            |               |                   |
+| campaign.medium          | ✅            |               |                   |
+| campaign.term            | ✅            |               |                   |
+| campaign.content         | ✅            |               |                   |
+| device.type              |              | ✅             | ✅                 |
+| device.id                |              | ✅             | ✅                 |
+| device.advertisingId     |              | ✅             | ✅                 |
+| device.adTrackingEnabled |              | ✅             | ✅                 |
+| device.manufacturer      |              | ✅             | ✅                 |
+| device.model             |              | ✅             | ✅                 |
+| device.name              |              | ✅             | ✅                 |
+| library.name             | ✅            | ✅             | ✅                 |
+| library.version          | ✅            | ✅             | ✅                 |
+| ip*                      | ✅            | ✅             | ✅                 |
+| locale                   | ✅            | ✅             | ✅                 |
 | location.latitude        |              |               |                   |
 | location.longitude       |              |               |                   |
 | location.speed           |              |               |                   |
-| network.bluetooth        |              |               |      √            |
-| network.carrier          |              |     √         |      √            |
-| network.cellular         |              |     √         |      √            |
-| network.wifi             |              |     √         |      √            |
-| os.name                  |              |     √         |      √            |
-| os.version               |              |     √         |      √            |
-| page.path                |      √       |               |                   |
-| page.referrer            |      √       |               |                   |
-| page.search              |      √       |               |                   |
-| page.title               |      √       |               |                   |
-| page.url                 |      √       |               |                   |
-| screen.density           |              |               |      √            |
-| screen.height            |              |      √        |      √            |
-| screen.width             |              |      √        |      √            |
-| traits                   |              |      √        |      √            |
-| userAgent                |      √       |               |      √            |
-| timezone                 |              |      √        |      √            |
+| network.bluetooth        |              |               | ✅                 |
+| network.carrier          |              | ✅             | ✅                 |
+| network.cellular         |              | ✅             | ✅                 |
+| network.wifi             |              | ✅             | ✅                 |
+| os.name                  |              | ✅             | ✅                 |
+| os.version               |              | ✅             | ✅                 |
+| page.path                | ✅            |               |                   |
+| page.referrer            | ✅            |               |                   |
+| page.search              | ✅            |               |                   |
+| page.title               | ✅            |               |                   |
+| page.url                 | ✅            |               |                   |
+| screen.density           |              |               | ✅                 |
+| screen.height            |              | ✅             | ✅                 |
+| screen.width             |              | ✅             | ✅                 |
+| traits                   |              | ✅             | ✅                 |
+| userAgent                | ✅            | ✅             | ✅                 |
+| timezone                 |              | ✅             | ✅                 |
 
-- IP Address is not collected by our libraries, but instead filled in by our servers when it receives a message for **client side events only**.
-- Our Android library collects `screen.density` with [this method](/docs/connections/spec/common/#context-fields-automatically-collected).
+- IP Address is not collected by Segment's libraries, but instead filled in by Segmen'ts servers when it receives a message for **client side events only**.
+- The Android library collects `screen.density` with [this method](/docs/connections/spec/common/#context-fields-automatically-collected).
 
 ## Integrations
 
-A dictionary of destination names that the message should be sent to. `'All'` is a special key that applies when no key for a specific destinatio n is found.
+A dictionary of destination names that the message should be sent to. `'All'` is a special key that applies when no key for a specific destination n is found.
 
 Integrations defaults to the following:
 
@@ -293,9 +295,9 @@ Integrations defaults to the following:
 }
 ```
 
-This is because [Salesforce](/docs/connections/destinations/catalog/salesforce/) has strict limits on API calls, and we don't want to run over your limits by accident.
+This is because [Salesforce](/docs/connections/destinations/catalog/salesforce/) has strict limits on API calls.
 
-Sending data to the rest of our destinations is opt-out so if you don't specify the destination as false in this object, it will be sent to rest of the destinations that can accept it.
+Sending data to the rest of Segment's destinations is opt-out so if you don't specify the destination as false in this object, it will be sent to rest of the destinations that can accept it.
 
 
 ## Timestamps
@@ -378,16 +380,16 @@ The `originalTimestamp` tells you when call was invoked on the client device or 
 
 ### sentAt
 
-The `sentAt` timestamp specifies the clock time for the client's device when the network request was made to the Segment API. For libraries and systems that send batched requests, there can be a long gap between a datapoint's `timestamp` and `sentAt`. Combined with `receivedAt`, we can use `sentAt` to correct the original `timestamp` in situations where a user's device clock cannot be trusted (mobile phones and browsers). The `sentAt` and `receivedAt` timestamps are assumed to occur at the same time (maximum a few hundred milliseconds), and therefore the difference is the user's device clock skew, which can be applied back to correct the `timestamp`.
+The `sentAt` timestamp specifies the clock time for the client's device when the network request was made to the Segment API. For libraries and systems that send batched requests, there can be a long gap between a datapoint's `timestamp` and `sentAt`. Combined with `receivedAt`, Segment uses `sentAt` to correct the original `timestamp` in situations where a user's device clock cannot be trusted (mobile phones and browsers). The `sentAt` and `receivedAt` timestamps are assumed to occur at the same time (maximum a few hundred milliseconds), and therefore the difference is the user's device clock skew, which can be applied back to correct the `timestamp`.
 
 **Note:** The `sentAt` timestamp is not useful for any analysis since it's tainted by user's clock skew.
 
 
 ### receivedAt
 
-The `receivedAt` timestamp is added to incoming messages as soon as they hit our API. It's used in combination with `sentAt` to correct clock skew, and also to aid with debugging libraries and systems that deliver events in batches.
+The `receivedAt` timestamp is added to incoming messages as soon as they hit the API. It's used in combination with `sentAt` to correct clock skew, and also to aid with debugging libraries and systems that deliver events in batches.
 
-The `receivedAt` timestamp is most important as the sort key in our Warehouses product. Use this for max query speed when retrieving data from your Warehouse!
+The `receivedAt` timestamp is most important as the sort key in Segment's Warehouses product. Use this for max query speed when retrieving data from your Warehouse!
 
 **Note:** Chronological order of events is not ensured with `receivedAt`.
 

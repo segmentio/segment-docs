@@ -2,11 +2,9 @@
 title: Facebook App Events Destination
 rewrite: true
 strat: facebook
+id: 56fc7e4680412f644ff12fb9
 ---
-
 [Facebook App Events](https://developers.facebook.com/docs/app-events) collects required information from one of Segment's mobile SDKs ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](/docs/connections/sources/catalog/libraries/mobile/android/)) and sends it from Segment's servers to Facebook App Events servers. This *server-to-server* connection will not work with our server-side libraries. The Facebook App Events Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-facebook-app-events).
-
-This document was last updated on October 04, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 
 ## Other Facebook Destinations Supported by Segment
@@ -18,8 +16,7 @@ This page is about the **Facebook App Events**. For documentation on other Faceb
 | **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)**    | Yes                   |
 | **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                                | No                    |
 | **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)** | Yes                   |
-| **Facebook Custom Audiences Website**                                                                       | Yes                   |
-
+| **[Facebook Conversions API](/docs/connections/destinations/catalog/actions-facebook-conversions-api/)**    | Yes                   |
 
 
 ## Getting Started
@@ -190,7 +187,7 @@ analytics.track({
 
 You must use the Facebook App Events integration SDK version `2.0.0` or later to call `setDataProcessingOptions` when you enable the **Use Limited Data Use** destination setting. Events sent from earlier versions of the Facebook App Events integration SDK cannot call `setDataProcessingOptions`, but Facebook still has access to the IP address in the events to process LDU based on geolocation.
 
-When you use Segment’s mobile libraries, you must set the Data Processing Options when you declare the destination in your app delegate’s instance. The example below shows how you might set custom Data Processing parameters in an iOS project.
+When you use Segment's mobile libraries, you must set the Data Processing Options when you declare the destination in your app delegate's instance. The example below shows how you might set custom Data Processing parameters in an iOS project.
 
 ```objc
 // Add the bundle FB integration SDK
@@ -220,7 +217,7 @@ Analytics.with(context).track(
 
 #### Additional iOS Cloud Mode Set up for iOS 14
 
-With the release of Segment’s latest Analytics-iOS SDK, which includes support for upcoming iOS 14 tracking changes, you must decide if you _need_ to collect the user's IDFA or not. If you do not need to collect IDFA, you can update your Analytics-iOS SDK to the next version, and Segment sets `device.adTrackingEnabled` to `false`, and starts deleting the `device.advertisingId` from the context object in your payloads. If you _do_ need to collect the IDFA, you must import the IDFA closure as a config to the library, or import the Ad Tracking Transparency framework from Apple.
+With the release of Segment's latest Analytics-iOS SDK, which includes support for upcoming iOS 14 tracking changes, you must decide if you _need_ to collect the user's IDFA or not. If you do not need to collect IDFA, you can update your Analytics-iOS SDK to the next version, and Segment sets `device.adTrackingEnabled` to `false`, and starts deleting the `device.advertisingId` from the context object in your payloads. If you _do_ need to collect the IDFA, you must import the IDFA closure as a config to the library, or import the Ad Tracking Transparency framework from Apple.
 
 Facebook returns a 4xx error due to lack of required parameters if the `device.advertisingId` key does not appear in the payload. To work around this, enable the  **Fallback to Zeroed IDFA when advertisingId key not present** destination setting for Facebook App Events from the Segment web app. When you enable this setting, Segment checks for the `device.advertisingId` key, and if none is present, sets the `advertiser_id` in the outbound payload to `'00000000-0000-0000-0000-000000000000'`.
 
@@ -249,10 +246,39 @@ You will have to be sure that the [IDFA](/docs/connections/sources/catalog/libra
 
 Similarly, on Android, you'll need to include the Play Services Ads library as [mentioned here](/docs/connections/sources/catalog/libraries/mobile/android/#how-do-you-handle-unique-identifiers-) in order for the `advertisingId` to populate.
 
-Once you have added these, you will start to see the `context.device.advertisingId` populate and the `context.device.adTrackingEnabled` flag set to `true` unless the user has ad tracking limited or is using a mobile ad blocker.
+Once you've added these, you will start to see the `context.device.advertisingId` populate and the `context.device.adTrackingEnabled` flag set to `true` unless the user has ad tracking limited or is using a mobile ad blocker.
 
-_Note_: While the network is deprecated, the relevant iOS [framework](https://developer.apple.com/reference/iad) is not.
+> note ""
+> While the network is deprecated, the relevant iOS [framework](https://developer.apple.com/reference/iad) is not.
 
+Facebook requires that payloads include the following:
+- `context.device.id`
+- `context.device.type`
+- `context.os.version`
+
+> info ""
+> The value of `context.device.type` must be either `ios` or `android`.
+
+For example:
+
+```json
+{
+  "anonymousId": "507f191e810c19729de860ea",
+  "event": "Event Name",
+​  "context": {
+    "device": {
+      "id": "B5372DB0-C21E-11E4-8DFC-AA07A5B093DB",
+      "type": "ios"
+    },
+    "os": {
+      "version": "8.1.3"
+    }
+  },​
+  "messageId": "bbac-11e4-8dfc-aa07a53436b09b45567i8245237824",
+  "type": "track",
+  "userId": "97980cfea0067"
+}
+```
 
 ### Missing custom events
 

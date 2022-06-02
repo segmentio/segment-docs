@@ -1,7 +1,9 @@
 ---
 title: Refiner Source
 source-type: event
+id: 4pJ1eVPRnJ
 ---
+{% include content/source-region-unsupported.md %}
 
 [Refiner](https://refiner.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a customer survey tool built specifically for SaaS, eCommerce and Membership sites. Ask your users any question while they are using your product with Refiner's beautiful and simple survey widgets - on brand and perfectly timed.
 
@@ -14,7 +16,7 @@ This source is maintained by Refiner. For any issues with the source, [contact R
 
 ## Getting Started
 
-1. From your Segment UI’s Sources page click on “Add Source”.
+1. From your Segment UI's Sources page click on “Add Source”.
 2. Search for "Refiner" within the Sources Catalog and click **Connect** to confirm.
 3. Give the Source a nickname and follow the set-up flow to "Add Source".
 4. Copy the Write key from the Segment UI and log in to your Refiner account.

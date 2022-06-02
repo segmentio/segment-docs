@@ -5,7 +5,6 @@ redirect_from:
 hide-personas-partial: true
 ---
 
-
 ## Differences between the Amazon S3 destination and the AWS S3 destination
 
 The AWS S3 destination provides a more secure method of connecting to your S3 buckets. It uses AWS's own IAM Roles to define access to the specified buckets. For more information about IAM Roles, see Amazon's [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html){:target="_blank"} documentation.
@@ -27,11 +26,11 @@ The Segment Tracking API processes data from your sources, and collects the Even
 
 ![](images/s3processdiagram.png)
 
-
-
 ## Create a new destination
 
-Complete either [Create an IAM role in the AWS console](#create-an-iam-role-in-the-aws-console) or [Create an IAM role using the AWS CLI](#create-an-iam-role-using-the-aws-cli) to configure the AWS S3 Destination with IAM Role Support.
+Complete either [Create an IAM role in the AWS console](#create-an-iam-role-in-the-aws-console), [Create an IAM role using the AWS CLI](#create-an-iam-role-using-the-aws-cli), or [Create IAM roles using Terraform](#create-iam-roles-using-terraform) to set up the AWS S3 Destination with IAM Role Support.
+
+All three setup methods provide a base level of permissions to Segment. If you want stricter permissions or other custom configurations, you can customize these setup instructions manually.
 
 ### Create an IAM role in the AWS console
 
@@ -78,7 +77,7 @@ To complete this section, you need access to your AWS dashboard.
     ```
 If you have server-side encryption enabled, see the [required configuration](#encryption).
  
-4. Update `Principal` in the role’s trust relationship document to `arn:aws:iam::595280932656:role/segment-s3-integration-production-access`. Replace `<YOUR_WORKSPACE_ID>` with your Segment Workspace ID.
+4. Update `Principal` in the role's trust relationship document to `arn:aws:iam::595280932656:role/segment-s3-integration-production-access`. Replace `<YOUR_WORKSPACE_ID>` with your Segment Workspace ID.
 ``` json
     {
       "Version": "2012-10-17",
@@ -193,6 +192,106 @@ To create an S3 IAM role, you must first install and configure the AWS CLI on yo
 > info ""
 > To verify that the IAM role is created, navigate to the AWS console and open the IAM Management Console. On the Permissions tab, verify that there is a `segment-s3-putobject` Permissions policy.
 
+### Create IAM roles using Terraform
+
+You can run the provided Terraform module from your command line to create the IAM roles required for this destination. This script requires access to Terraform versions v0.12+.
+
+> warning "Support for the AWS S3 Terraform module"
+> If you’re familiar with Terraform, you can modify the module to meet your organization’s needs: however, Segment guarantees support only for the template as provided.
+
+To set up the required IAM roles for this destination, run the following Terraform module from your command line:
+
+```hcl
+# Creates the IAM role used by Segment.
+# https://www.terraform.io/docs/providers/aws/r/iam_role.html
+resource "aws_iam_role" "segment_aws_s3_iam_role" {
+  name               = "SegmentAWSS3Role"
+  description        = "IAM Role used by Segment"
+  assume_role_policy = data.aws_iam_policy_document.segment_aws_s3_assume_role_policy_document.json
+}
+
+# Trust relationship policy attached to the IAM role.
+# https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html
+data "aws_iam_policy_document" "segment_aws_s3_assume_role_policy_document" {
+  version = "2012-10-17"
+  # Allows Segment to assume a role.
+  statement {
+    actions = [
+      "sts:AssumeRole"
+    ]
+    principals {
+      type        = "AWS"
+      identifiers = ["arn:aws:iam::595280932656:role/segment-s3-integration-production-access", ]
+    }
+    effect = "Allow"
+    condition {
+      test     = "StringEquals"
+      variable = "sts:ExternalId"
+      values   = ["<YOUR_WORKSPACE_ID>", ]
+    }
+  }
+}
+
+# https://www.terraform.io/docs/providers/aws/d/caller_identity.html
+data "aws_caller_identity" "current" {}
+# https://www.terraform.io/docs/providers/aws/d/region.html
+data "aws_region" "current" {}
+resource "aws_iam_policy" "segment_aws_s3_policy" {
+  name        = "SegmentAWSS3Policy"
+  description = "Gives access to resources in your S3 bucket"
+  policy      = data.aws_iam_policy_document.segment_aws_s3_policy_document.json
+}
+
+data "aws_iam_policy_document" "segment_aws_s3_policy_document" {
+  version = "2012-10-17"
+  # Allows Segment to write to your S3 bucket.
+  statement {
+    sid = "PutObjectsInBucket"
+    actions = [
+      "s3:PutObject",
+      "s3:PutObjectAcl",
+    ]
+    resources = [
+      "arn:aws:s3:::<YOUR_BUCKET_NAME>/segment-logs/*",
+    ]
+    effect = "Allow"
+  }
+}
+
+resource "aws_iam_role_policy_attachment" "segment_aws_s3_role_policy_attachment" {
+  role       = aws_iam_role.segment_aws_s3_iam_role.name
+  policy_arn = aws_iam_policy.segment_aws_s3_policy.arn
+}
+
+# Include the following sections if you’re using KMS encryption on your S3 bucket
+resource "aws_iam_policy" "segment_aws_s3_kms_policy" {
+  name        = "SegmentAWSS3KMSPolicy"
+  path        = "/"
+  description = "Gives access to your KMS key"
+  policy      = data.aws_iam_policy_document.segment_aws_s3_kms_policy_document.json
+}
+
+data "aws_iam_policy_document" "segment_aws_s3_kms_policy_document" {
+  version = "2012-10-17"
+  statement {
+    sid = "AllowKMS"
+    actions = [
+      "kms:GenerateDataKey",
+      "kms:Decrypt",
+    ]
+    # ARN of your KMS key.
+    resources = [
+      "<YOUR_KEY_ARN>",
+    ]
+    effect = "Allow"
+  }
+}
+
+resource "aws_iam_role_policy_attachment" "segment_aws_s3_role_kms_policy_attachment" {
+  role       = aws_iam_role.segment_aws_s3_iam_role.name
+  policy_arn = aws_iam_policy.segment_aws_s3_kms_policy.arn
+}
+```
 
 ### Add the AWS S3 with IAM Role Support Destination
 
@@ -212,8 +311,11 @@ To finish configuration, enable the AWS S3 Destination with IAM Role Support des
 > info ""
 > Did you know you can create destinations with the Config API? For more information, see [Create Destination](https://reference.segmentapis.com/#51d965d3-4a67-4542-ae2c-eb1fdddc3df6){:target="_blank"}.
 
+## Migrate existing destinations
 
-## Migrate an existing destination
+You can migrate your existing Amazon S3 destinations to the new AWS S3 destination either [manually](#manually-migrate-an-existing-destination) in the Segment app, or by using Segment's [Public API](#migrate-an-existing-destination-using-the-public-api). 
+
+### Manually migrate an existing destination
 
 > warning "Avoid overwriting data"
 > Sending data to the same S3 location from both the existing Amazon S3 destination, and the AWS S3 with IAM Role Support destination will overwrite data in that location. To avoid this, follow the steps below.
@@ -227,6 +329,8 @@ To migrate an existing Amazon S3 destination to the AWS S3 with IAM Role Support
 5. Verify that the `<YOUR_BUCKET_NAME>/segment-logs` receives data.
 6. Remove the test folder created in step 2 from the bucket.
 
+> error " "
+> You must migrate to the new S3 destination before you disable your legacy destination to ensure Segment continues to deliver data to your S3 bucket. 
 
 ### Migration steps for scenarios with multiple sources per environment
 
@@ -242,6 +346,112 @@ For example:
 - prod_source_N → prod_bucket
 
 For each source in the scenario, complete the steps described in [Migrate an existing destination](#migrate-an-existing-destination), and ensure that you have separate IAM Roles and Permissions set for staging and production use.
+
+### Migrate an existing destination using the Public API
+This procedure uses Segment's Public API to migrate an existing Amazon S3 destination to the new AWS S3 destination. For more information about the Public API, see the [Public API documentation](https://api.segmentapis.com/docs/guides/#introduction){:target="_blank"}.
+
+> warning "Avoid overwriting data"
+> Sending data to the same S3 location from both the existing Amazon S3 destination and the AWS S3 destinations will overwrite data in your instance of S3. To avoid this, disable your Amazon S3 destination after you create your AWS S3 destination.
+
+To migrate to the AWS S3 destination using the Public API:
+
+#### Step 1 - Verify your configuration
+
+1. Open the Segment app, select the Connections tab and then select Catalog.
+2. From the Catalog, select the Storage Destinations tab and select the **AWS S3** destination. 
+3. On the AWS S3 destination page, click the **Configure AWS S3** button. 
+4. Configure your AWS S3 destination. When asked for the bucket name, enter `<YOUR_BUCKET_NAME>/segment-logs/test`. 
+5. Enable the destination, and verify data is received at `<YOUR_BUCKET_NAME>/segment-logs/test/segment-logs`. <br/>**Note:** If the folder receives data, continue to the next step. If you don't see log entries, check the trust relationship document and IAM policy attached to your IAM role.
+
+
+#### Step 2 - Migrate an existing destination using the Public API
+
+1. Identify the source IDs for your old Amazon S3 destination(s). You can use the Public API to return information about a list of your Amazon S3 destinations or an individual destination. <br/>
+To return a list of all of your Amazon S3 destinations, use the [`list destinations`](https://api.segmentapis.com/docs/connections/destinations/#list-destinations) call and filter the results using metadata id `54f418c3db31d978f14aa925` or slug `amazon-s3`: <br/>
+```shell
+curl -vvv --location --request GET https://api.segmentapis.com/destinations?pagination.count=1 \
+--header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer ...' \
+  --data-raw '
+```
+To return the information for an individual Amazon S3 destination, use the [`get destination`](https://api.segmentapis.com/docs/connections/destinations/#get-destination) call, using the destination ID for your individual Amazon S3 destination (**Note:** The destination ID for your Amazon S3 source is visible in the Segment app, on the destination's settings page.) <br/>
+```shell
+curl -vvv --location --request GET https://api.segmentapis.com/destinations/$DESTINATION_ID \
+--header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer ...' \
+  --data-raw '
+```
+2. Create your new AWS S3 destination using the [`create destination`](https://api.segmentapis.com/docs/connections/destinations/#create-destination) Public API call. The `sourceId`, `metadataId`, and `settings` parameters are required. An example of the parameters is below: <br/>
+```json
+{
+ "sourceId": "$SOURCE_ID",
+ "metadataId": "60be92c8dabdd561bf6c9130",
+ "name": "AWS S3",
+ "settings": {
+  "region": "$BUCKET_REGION",
+  "s3Bucket": "$YOUR_BUCKET_NAME",
+  "iamRoleArn": "$IAM_ROLE_ARN"
+ }
+```
+<br/>**Optional:** You can create a destination that's not enabled automatically upon creation by setting `enabled` to `false` when creating the new AWS S3 destination:
+<br/>
+```shell
+curl -vvv --location --request PATCH https://api.segmentapis.com/destinations/$DESTINATION_ID \
+--header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer ...' \
+  --data-raw '
+{
+        "destinationId": "$DESTINATION_ID",
+        "enabled": false
+}
+' | jq
+```
+<br/>
+
+3. Disable the Amazon S3 destinations using the following command, replacing `$DESTINATION_ID` with the ID of your Amazon S3 destination you found in a previous step: 
+
+```shell
+curl -vvv --location --request PATCH https://api.segmentapis.com/destinations/$DESTINATION_ID \
+--header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer ...' \
+  --data-raw '
+{
+        "destinationId": "$DESTINATION_ID",
+        "enabled": false
+}
+' | jq
+``` 
+
+> error " "
+> You must migrate to the new S3 destination before you disable your legacy destination to ensure Segment continues to deliver data to your S3 bucket.
+
+## Test your migrated source
+You can validate that you configured your migrated source correctly on the AWS S3 destination page in the Segment app. 
+
+> note "Source editing permissions required"
+> In-app source validation is restricted to users with source editing permissions (for example, users with Workspace Owner, Source Admin, or Workspace Admin roles). For more information about roles in the Segment app, see the [Roles documentation](/docs/segment-app/iam/roles/). 
+
+To verify that you migrated your source correctly: 
+1. Open the Segment app and select the AWS S3 destination. 
+2. On the Settings page, verify that your Region, Bucket Name, and IAM Role ARN are all correct. 
+3. Click **Validate.**
+4. A code indicating if the validation was successful or failed appears. To troubleshoot failed validation codes, see the [Troubleshooting](#troubleshooting) section. 
+
+> info "dummy-object.txt"
+> In order to test your bucket, Segment uploads a text file, `dummy-object.txt`, to the segment-logs folder in your S3 bucket. After you've completed the validation process, feel free to delete this file.
+
+### Troubleshooting
+
+The following table outlines some of the error codes the validation tool may display and possible reasons for the error. For assistance with correcting any of these error codes, contact [Segment support](mailto:friends@segment.com).
+
+| Error message | Likely cause of the error |
+| ------------- | ------------------------- |
+| Unknown Error. Please try again. If the problem persists, please contact [Segment support](mailto:friends@segment.com). | Fail to assume intermediate role |
+| Access Denied. Please configure External ID in the AWS IAM Console. [Learn more](#create-an-iam-role-in-the-aws-console). | Successfully assumed customer's role, role doesn't have external ID |
+| Unknown Error. Please follow [instructions](#create-an-iam-role-in-the-aws-console) to set up the AWS S3 destination. If the problem persists, please contact [Segment support](mailto:friends@segment.com). | Fail to assume customer’s role without external ID and returned an error code that is not error 403 |
+| Access Denied. Please configure External ID in the AWS IAM Console. [Learn more](#create-an-iam-role-in-the-aws-console). | Fail to assume customer’s role without external ID and returned error 403 |
+| Access Denied. Please add PutObject permissions to the IAM role in the AWS IAM Console. [Learn more](#create-an-iam-role-in-the-aws-console). | Fail to upload the dummy object to customer's S3 bucket and an error code that is not error 403. |
+| Unknown Error. Please follow [instructions](#create-an-iam-role-in-the-aws-console) to set up the AWS S3 destination. If the problem persists, please contact [Segment support](mailto:friends@segment.com). | Fail to upload the dummy object to customer's S3 bucket and an error code that is not error 403. |
 
 
 ## Data format

@@ -1,7 +1,8 @@
 ---
 title: ClientSuccess Destination
+hide-personas-partial: true
+id: 55677dfd0a20f4e22f0fb39a
 ---
-
 This destination is maintained by ClientSuccess.
 
 ## Getting Started (for CSMs)
@@ -32,7 +33,7 @@ When you `identify` a user, Segment will pass that user's information to ClientS
 - `firstName` (`first_name`)
 - `lastName` (`last_name`)
 
-All other traits will be sent to ClientSuccess as custom attributes and may be ignored.
+ClientSuccess ignores all other traits sent as custom attributes.
 
 ## Track
 

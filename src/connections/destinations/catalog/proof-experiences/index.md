@@ -3,8 +3,8 @@ title: 'Proof Experiences Destination'
 beta: true
 rewrite: true
 redirect_from: '/connections/destinations/catalog/proof/'
+id: 5c4ba7167eed0c0001977f25
 ---
-
 [Proof Experiences](https://useproof.com/experiences?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps B2B SaaS businesses increase new trials and demos by creating delightfully personalized experiences for their visitors and customers.
 
 This destination is maintained by Proof. For any issues with the destination, [contact the Proof Experiences Support team](mailto:help@useproof.com).

@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Courier Destination
+id: 5e4b07ed88472cc19ea4f8d0
 ---
-
 [Courier](https://courier.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides a way to design and deliver notifications. Design once with a rich visual editor and  deliver to any channel through one API request.
 
 This destination is maintained by Courier. For any issues with the destination, [contact the Courier support team](mailto:support@courier.com).
@@ -21,7 +21,7 @@ This destination is maintained by Courier. For any issues with the destination, 
 
 ## Identify
 
-If you aren’t familiar with the Segment Spec, read through the [Identify method documentation](/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, read through the [Identify method documentation](/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -68,7 +68,7 @@ Segment Track events are inbound events that might trigger a notification when C
 
 All Inbound Events coming from Segment Track calls appear with a `Segment-TrackEvent` prefix in Courier to help distinguish them from other inbound events.  
 
-Courier extracts data from the Segment Track `properties` object, and conditionally triggers a request to the [Courier Send API](https://docs.courier.com/reference/send-api?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) - only if that event is already [mapped](https://help.courier.com/en/articles/4202416-how-to-create-and-map-event-triggers-for-your-notifications). 
+Courier extracts data from the Segment Track `properties` object, and conditionally triggers a request to the [Courier Send API](https://www.courier.com/docs/reference/send/message/) - only if that event is already [mapped](https://help.courier.com/en/articles/4202416-how-to-create-and-map-event-triggers-for-your-notifications). 
 
 * Segment passes all `properties`  from the Track call to the `Send API` as elements in the `data` json objects. You can use these data points as variables in the Notification Template or as input on conditional routing logic.
 * Courier uses the `userId` or `anonymousId` to look up and include the associated `User Profile` with the inbound event.  (See the note in the [Identify section](#identify) above.)

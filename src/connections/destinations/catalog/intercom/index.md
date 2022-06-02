@@ -3,44 +3,20 @@ title: Intercom Destination
 hide-cmodes: true
 hide-personas-partial: true
 cmode-override: true
+id: 54521fd725e721e32a72eec6
 ---
-
 [Intercom](https://www.intercom.com/) makes customer messaging apps for sales, marketing, and support, connected on one platform. The Intercom Destination is open-source. You can browse the code for [analytics.js](https://github.com/segment-integrations/analytics.js-integration-intercom), [iOS](https://github.com/segment-integrations/analytics-ios-integration-intercom) and [Android](https://github.com/segment-integrations/analytics-android-integration-intercom) on GitHub.
-
-This document was last updated on March 11, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
-The first step is to make sure Intercom supports the source type and connection mode you've chosen to implement. You can learn more about what dictates [the connection modes we support here](/docs/destinations#connection-modes).
-
-<table>
-  <tr>
-    <th></th>
-    <th>Web</th>
-    <th>Mobile</th>
-    <th>Server</th>
-  </tr>
-  <tr>
-    <td>📱 Device-based</td>
-    <td> ✅ </td>
-    <td> ✅ </td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>☁️  Cloud-based</td>
-    <td></td>
-    <td> ✅ </td>
-    <td> ✅ </td>
-  </tr>
-</table>
 
 1.  From your Segment UI's Destinations page click **Add Destination**.
 2.  Search for "Intercom" and select it in the results that appear.
 3.  Choose which Source to connect Intercom to.
-3.  Authorize your Intercom account in Segment and select the Intercom Account to sync with Segment.
+4.  Authorize your Intercom account in Segment and select the Intercom Account to sync with Segment.
 
     You can choose which account to sync from the drop down menu in the top right. If you are using [server-side sources](/docs/connections/sources#server), Segment starts passing data through once you activate the Destination. For other libraries  continue reading below.
-4. Find your "App ID" in the Intercom UI following [the instructions here](https://docs.intercom.com/faqs-and-troubleshooting/getting-set-up/where-can-i-find-my-app-id) or by navigating to the Gear Menu and clicking on "App Settings" followed by "API Keys". It should look something like `9iefb489`.
+5. Find your "App ID" in the Intercom UI following [the instructions here](https://docs.intercom.com/faqs-and-troubleshooting/getting-set-up/where-can-i-find-my-app-id){:target="_blank"} or by navigating to the Gear Menu and clicking on "App Settings" followed by "API Keys". It should look something like `9iefb489`.
 
 
 Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Intercom's `library.js` onto your page.
@@ -224,7 +200,7 @@ Because our server-side libraries batch calls by default, it is possible for an 
 
 [Adding a Flush method](/docs/connections/sources/catalog/libraries/server/node#batching) immediately following the `identify`, and before any additional `track` events helps ensure that the `identify` call reaches Intercom first to create the user. Generally, this is enough to prevent the race condition, but you can add an extra timeout if necessary.
 
-If you still see issues, the `identify` call is most likely either not reaching Intercom at all, or is arriving too late after a subsequent [retry](/docs/connections/destinations#retries). In cases like this you can use our [Event Delivery functionality](/docs/guides/destinations/how-do-i-check-if-data-is-successfully-being-delivered-to-my-destination/) to check for recent errors, and get some insight into how to prevent errors in the future.
+If you still see issues, the `identify` call is most likely either not reaching Intercom at all, or is arriving too late after a subsequent [retry](/docs/connections/destinations#retries). In cases like this you can use our [Event Delivery functionality](/docs/connections/event-delivery/) to check for recent errors, and get some insight into how to prevent errors in the future.
 
 ## Group
 
@@ -506,15 +482,15 @@ You can send computed traits and audiences that you create in Personas to this D
 
 ### User-Level Traits and Audiences in Intercom
 
-Personas sends [**User-Level data**](/docs/glossary#event) to Intercom using an **Identify** call that appends a trait to users’ profiles, or a **Track** call when a trait is computed or an audience is entered or exited.
+Personas sends [**User-Level data**](/docs/glossary#event) to Intercom using an **Identify** call that appends a trait to users' profiles, or a **Track** call when a trait is computed or an audience is entered or exited.
 
 #### User level computed traits
 
-The name of the computed trait is added to the user profile as a trait, and the trait’s value is set to the value of the computed trait. When the trait is computed, Segment sends a **Track** call. For example: imagine you have a computed trait that counts the number of times a user visits your pricing page. If the user visits your pricing page five times, Segment sends an identify call with the property `pricing_page_visits: 5`.
+The name of the computed trait is added to the user profile as a trait, and the trait's value is set to the value of the computed trait. When the trait is computed, Segment sends a **Track** call. For example: imagine you have a computed trait that counts the number of times a user visits your pricing page. If the user visits your pricing page five times, Segment sends an identify call with the property `pricing_page_visits: 5`.
 
 #### User level Audiences
 
-The name of the audience is added to the user’s profile as a trait, with boolean value that indicates if the user is in the audience. For example, when a user first completes an order in a lookback window for the last 30 days, Personas sends an identify call with the property `order_completed_last_30days: true`.  When the user no longer satisfies these criteria (for example when it’s been longer than 30 days since the last purchase), Personas sets that value to `false`.
+The name of the audience is added to the user's profile as a trait, with boolean value that indicates if the user is in the audience. For example, when a user first completes an order in a lookback window for the last 30 days, Personas sends an identify call with the property `order_completed_last_30days: true`.  When the user no longer satisfies these criteria (for example when it's been longer than 30 days since the last purchase), Personas sets that value to `false`.
 
 When you first create an audience, Personas sends an `identify` call for every user in the audience. Later syncs only update users which were added or removed from the audience since the last sync.
 
@@ -524,17 +500,17 @@ When you first create an audience, Personas sends an `identify` call for every u
 
 ### Account-Level Traits and Audiences in Intercom
 
-Personas sends **Account-Level data** to Intercom using an **Identify** event call that appends an account trait to the users’ profiles or a **Track** call when a trait is computed or an audience is entered or exited. Users are added to an account using a single **Group** call, which appends a `groupID` to each user within the account.
+Personas sends **Account-Level data** to Intercom using an **Identify** event call that appends an account trait to the users' profiles or a **Track** call when a trait is computed or an audience is entered or exited. Users are added to an account using a single **Group** call, which appends a `groupID` to each user within the account.
 
 #### Account level computed traits
 
-When you build computed traits with Account-Level data, Personas computes for each account based on traits or aggregated user behavior. You can then export traits for each account, or for each user within an account. The name of the computed trait is added to the profiles of users who are part of the account as a user trait, and the value of the computed trait is added to the corresponding user’s user trait.
+When you build computed traits with Account-Level data, Personas computes for each account based on traits or aggregated user behavior. You can then export traits for each account, or for each user within an account. The name of the computed trait is added to the profiles of users who are part of the account as a user trait, and the value of the computed trait is added to the corresponding user's user trait.
 
 For example, imagine you have a computed trait that counts the number of times that users from a specific account visit your pricing page. If users visit your pricing page five times, Personas sends an identify call with the property `pricing_page_visits: 5`.
 
 #### Account level audiences
 
-When you build audiences with Account-Level data, Personas returns a set of accounts or a set of users that match your criteria. Personas adds the name of the audience to the profile (individual user, or user within the account) as a trait, with a boolean value to indicate if the user is in the audience. For example: when users in an account first complete an order in the last 30 days, Personas sends an identify call with the property `order_completed_last_30days: true`. When the users in this Account no longer satisfy these criteria (for example if it’s been more than 30 days) Segment sets that value to `false`.
+When you build audiences with Account-Level data, Personas returns a set of accounts or a set of users that match your criteria. Personas adds the name of the audience to the profile (individual user, or user within the account) as a trait, with a boolean value to indicate if the user is in the audience. For example: when users in an account first complete an order in the last 30 days, Personas sends an identify call with the property `order_completed_last_30days: true`. When the users in this Account no longer satisfy these criteria (for example if it's been more than 30 days) Segment sets that value to `false`.
 
 When you first create the audience, Personas sends an identify call for *every user in the account in that audience*. Later syncs only send updates for individual accounts and users which were added or removed since the last sync.
 

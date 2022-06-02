@@ -43,4 +43,3 @@ class ShoppingCartButton {
 }
 ```
 
-**Note:** Segment's `analytics-node` package does not support [device-mode destinations](/docs/utils/cmodes-compare/) or some browser specific features that Analytics.js supports.

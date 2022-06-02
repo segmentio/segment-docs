@@ -267,7 +267,7 @@ When you make a `page` call, here's what Segment does from the browser when you 
 
 3. Checks if the page call is associated with a `userId` from a previous `.identify()` call. If so, Segment sets the `userId` as `window.s.visitorID`.
 
-  **IMPORTANT**: Adobe Analytics [does not support setting visitorID](https://marketing.adobe.com/resources/help/en_US/sc/implement/timestamps-overview.html) if you are sending a timestamped call. So Segment first checks if your **Timestamp Option** is `disabled` _and_ that a `userId` exists on the event, and only then sets `window.s.visitorID`.
+  **IMPORTANT**: Adobe Analytics doesn't support setting visitorID if you send a timestamped call. So Segment first checks if your **Timestamp Option** is `disabled` _and_ that a `userId` exists on the event, and only then sets `window.s.visitorID`.
 
 4. Checks for some common properties, and sets them on the `window.s` object:
 
@@ -326,7 +326,7 @@ When you make a `page` call, here's what Segment does from the browser when you 
 
 Custom Conversion variables, also known as eVars, are how Adobe segments conversion success metrics in custom marketing reports. To learn more, see the [Adobe documentation about eVars and how to configure them](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html).
 
-You must configure an eVar mapping in your Segment destination settings to send eVars to Adobe on Track and Page calls. When configuring the mapping, the list of eVars must be defined in the Adobe Analytics UI. Map your Adobe Analytics eVar names to the Segment property names you’re using in your Segment events. Enter a Segment property name on the left and an Adobe Analytics eVar number on the right. You can view your Segment events and properties in your Schema.
+You must configure an eVar mapping in your Segment destination settings to send eVars to Adobe on Track and Page calls. When configuring the mapping, the list of eVars must be defined in the Adobe Analytics UI. Map your Adobe Analytics eVar names to the Segment property names you're using in your Segment events. Enter a Segment property name on the left and an Adobe Analytics eVar number on the right. You can view your Segment events and properties in your Schema.
 
 An example eVar mapping in the Segment Destination settings UI should look like this:
 ![](/docs/connections/destinations/catalog/adobe-analytics/images/eVar-mapping.png)
@@ -482,7 +482,7 @@ Segment concatenates `list_var1` into `hello|world` before sending it to Adobe. 
 
 ## Hierarchy Variables - hVars
 
-Hierarchy variables mirror how customers can track “breadcrumbs” or “breadcrumb trails”  which are a type of secondary navigation scheme that reveals the user’s location in a website or Web application. See the Adobe documentation to learn more about [`hier` variables and how to configure them](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/hier.html).
+Hierarchy variables mirror how customers can track “breadcrumbs” or “breadcrumb trails”  which are a type of secondary navigation scheme that reveals the user's location in a website or Web application. See the Adobe documentation to learn more about [`hier` variables and how to configure them](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/hier.html).
 
 Map your Adobe Analytics hVars to the property names you use in your Segment Page calls. Enter a Segment property name on the left, and an Adobe Analytics hVar number on the right. You can view your Segment page calls and properties in your Schema.
 

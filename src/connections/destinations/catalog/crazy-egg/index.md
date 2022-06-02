@@ -1,12 +1,9 @@
 ---
 title: Crazy Egg Destination
 rewrite: true
+id: 54521fd525e721e32a72eea7
 ---
-
 [Crazy Egg](https://www.crazyegg.com/) is a user testing tool that gives you heatmaps, clickmaps and scrollmaps of your visitors interacting with your site. It helps you learn where your users are having trouble. The Crazy Egg Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-crazy-egg).
-
-This document was last updated on 18th January, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
 
 ## Getting Started
 
