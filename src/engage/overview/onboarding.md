@@ -176,7 +176,7 @@ Start by creating your Twilio account and getting an API key for Engage:
 2. In your Twilio console, select the **Account** dropdown menu, then **API keys & tokens**.
 3. On the Auth Tokens & API Keys page, click **Create API key**.
 4. Enter a name for the API key in the **Friendly name** field.
-5. Set the region to **United States (US1) - Default** and key type to **Standard**.
+5. Set the region to **United States (US1) - Default** and key type to **Main**.
 6. Click **Create API Key**.
 7. Copy both the **SID** and **Secret** field contents.
 
@@ -192,7 +192,7 @@ Start by creating your Twilio account and getting an API key for Engage:
 11. Under **Enter your Twilio API Key information** (shown below), paste the Account SID, API Key SID, and API Key Secret you copied above into their respective fields.
 12. Click **Verify**, then click **Save Twilio Account.**
 
-<!--    ![Entering Twilio API key into Engage](images/engageapifields.png "Entering Twilio API key into Engage") -->
+  ![Entering Twilio API key into Engage](images/engageapifields.png "Entering Twilio API key into Engage")
 
 > info ""
 > If you’re unable to verify your Account SID, SID, or API Key secret, you may have copied an extra space at the end of one or the other. Verify that you’ve not added any extra characters or spaces, then try to verify again.
