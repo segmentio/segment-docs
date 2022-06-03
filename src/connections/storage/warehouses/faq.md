@@ -62,11 +62,9 @@ Segment recommends scripting any sort of additions of data you might have to war
 
 You can allowlist Segment's custom IP `52.25.130.38/32` while authorizing Segment to write in to your Redshift or Postgres port.
 
-If you're in the EU region, use CIDR `3.251.148.96/29`.
+**EU workspace regions are currently in beta.**  If you're in the EU region and participating in the public beta program, use CIDR `3.251.148.96/29`. To learn more about the public beta for EU workspace locations, contact your account manager.
 
-> **Note**: EU workspace regions are currently in beta. If you would like to learn more about the beta, please contact your account manager.
-
-BigQuery does not require allowlisting an IP address. To learn how to set up BigQuery, check out Segment's BigQuery [set up guide](/docs/connections/storage/catalog/bigquery/#getting-started)
+BigQuery does not require allowlisting an IP address. To learn how to set up BigQuery, check out Segment's BigQuery [set up guide](/docs/connections/storage/catalog/bigquery/#getting-started).
 
 
 ## Will Segment sync my historical data?
@@ -104,10 +102,10 @@ To sign up for warehouse sync notifications:
 
 Data in your warehouse is formatted into **schemas**, which involve a detailed description of database elements (tables, views, indexes, synonyms, etc.) 
 and the relationships that exist between elements. Segment's schemas use the following template: <br/>`<source>.<collection>.<property>`, for example, 
-`segment_engineering.tracks.user_id`, where Source refers to the source or project name (segment_engineering), collection refers to the event (tracks),
- and the property refers to the data being collected (user_id). 
+`segment_engineering.tracks.user_id`, where source refers to the source or project name (segment_engineering), collection refers to the event (tracks),
+and the property refers to the data being collected (user_id). 
 
-> **Note**: All schema data is always represented in snake case.
+Schema data for Segment warehouses is represented in snake case.
 
 For more information about Warehouse Schemas, see the [Warehouse Schemas](/docs/connections/storage/warehouses/schema) page.
 
@@ -128,7 +126,6 @@ To change the name of your schema without disruptions:
 1. Select the "Sources" tab
 1. Select the source from the list of "My Sources" that is sending data to the schema you want to change
 1. Select the "Settings" tab from the top (just below your source name)
-1. On the source's settings page, select "Basic."
 2. Under the "Enable Source" section, disable your source and click **Save Changes.**   
 > **Note**: This will pause all data from the selected source to all destinations.
 8. Select the "SQL Settings" tab. 
