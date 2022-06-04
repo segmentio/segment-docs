@@ -16,7 +16,7 @@ Email support is available for all [Segment plans](https://segment.com/pricing/)
 
 Segment's Support teams work standard business hours (roughly 9:00 AM to 5:30 PM, Monday through Friday) across the Pacific, GMT, and Australian Eastern time zones. Your specific support hours, however, are governed by the terms and conditions of your agreement.
 
-Standard business hours excludes Saturdays, Sundays, and local holidays. On these days, our staffing may be limited, which could delay responses. Refer to [Twilio's support business hours guide](https://support.twilio.com/hc/en-us/articles/223136127-Twilio-Support-business-hours){:target="_blank"} for a list of Segment's observed holidays and the region in which observance takes place.
+Standard business hours excludes Saturdays, Sundays, and local holidays. On these days, support responses might be delayed. Refer to [Twilio's support business hours guide](https://support.twilio.com/hc/en-us/articles/223136127-Twilio-Support-business-hours){:target="_blank"} for a list of Segment's observed holidays and the region in which observance takes place.
 
 ## Segment University
 
