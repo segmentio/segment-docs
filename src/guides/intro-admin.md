@@ -9,7 +9,7 @@ If your job is to set up or maintain a Segment Workspace for your organization, 
 > info ""
 > If you've already read [an Introduction to Segment](/docs/guides/), you can skip ahead.
 
-Segment is a system for sending messages from your websites, mobile apps, and servers. These messages contain event and user data that you can send to other tools or collect in warehouses for further analysis. Segment also gathers information about your users from external systems, like helpdesks or CRMs. You can use this collated information to analyze data, build user audiences, and personalize your users' experiences.
+Segment is a system for sending messages from your websites, mobile apps, and servers. These messages contain event and user data that you can send to other tools or collect in warehouses for further analysis. Segment also gathers information about your users from external systems, like help desk software or CRMs. You can use this collated information to analyze data, build user audiences, and personalize your users' experiences.
 
 ## What's a Workspace?
 
