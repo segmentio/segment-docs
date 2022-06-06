@@ -5,7 +5,7 @@
 From drip campaigns, special coupon offers, growth hacking, activating inactive customers, e.t.c., we do the heavy lifting while you focus on other business operations.
 
 
-This destination is maintained by Lumen. For any issues with the destination, [contact the Lumen Support team](mailto:hello@uselumen.co).
+Lumen maintains this destination. For any issues with the destination, [contact the Lumen Support team](mailto:hello@uselumen.co).
 
 
 
