@@ -17,7 +17,8 @@ This destination is maintained by Lumen. For any issues with the destination, [c
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for **Lumen** and select the **Lumen** destination.
 3. Choose which Source should send data to the Lumen destination.
-4. Go to the [Lumen dashboard](https://app.uselumen.co){:target="_blank"}, visit the settings page, navigate to the API tab and copy your "API key".
+4. Go to the [Lumen dashboard](https://app.uselumen.co){:target="_blank"} and navigate to the API tab on the settings page. 
+5. Copy the API key. 
 5. Enter the "API Key" in the "Lumen" destination settings in Segment.
 
 ## Supported methods
