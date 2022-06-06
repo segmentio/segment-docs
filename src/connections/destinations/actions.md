@@ -96,9 +96,12 @@ To delete a destination action: click the action to select it, and click **Delet
 This takes effect within minutes, and removes the action completely. Any data that would have gone to the destination is not delivered. Once deleted, the saved action cannot be restored.
 
 
-## Customizing mappings
+## Customize mappings
 
-If you are using the default mappings for a destination action, you do not *need* to customize the mapping template for the action. However, you can always edit the fields later if you find that the defaults no longer meet your needs.
+If you use the default mappings for a destination action, you don't *need* to customize the mapping template for the action. You can edit the fields later if you find that the defaults no longer meet your needs.
+
+> info ""
+> Actions-based destinations have a limit of 50 individual mappings.
 
 To create a custom destination action, start from the Actions tab.
 If necessary, click **New Mapping** to create a new, blank action.
@@ -123,7 +126,7 @@ If necessary, click **New Mapping** to create a new, blank action.
 
 The following type filters and operators are available to help you build conditions:
 
-- **Event type** (`is`/`is not`). This allows you to filter by the [event types in the Segment Spec](https://segment.com/docs/connections/spec).
+- **Event type** (`is`/`is not`). This allows you to filter by the [event types in the Segment Spec](/docs/connections/spec).
 - **Event name** (`is`, `is not`, `contains`, `does not contain`, `starts with`, `ends with`). Use these filters to find events that match a specific name, regardless of the event type.
 - **Event property** (`is`, `is not`, `less than`, `less than or equal to`, `greater than`, `greater than or equal to`, `contains`,  `does not contain`, `starts with`, `ends with`, `exists`, `does not exist`).  Use these filters to trigger the action only when an event with a specific property occurs.  You can specify nested properties using dot notation, for example `context.app.name`. If the property might appear in more than one format or location, you can use an ANY statement and add conditions for each of those formats. For example, you might filter for both `context.device.type = ios`  as well as `context.os.name = "iPhone OS``"`
     The `does` `not exist` operator matches both a `null` value or a missing property.

@@ -78,6 +78,15 @@
 
 
 Build your own Mappings! Combine supported [triggers](/docs/connections/destinations/actions/#components-of-a-destination-action) with the following {{currentIntegration.display_name | remove: " (Actions)"}}-supported actions:
+
+<div class="premonition info">
+  <div class="fa fa-info-circle"></div>
+  <div class="content">
+    <p class="header">Mapping limits per destination</p>
+    <p>Individual destination instances have support a maximum of 50 mappings.</p>
+  </div>
+</div>
+
 {% for action in actions %}
 - [{{action.name}}](#{{action.name | slugify}})
 {% endfor %}
