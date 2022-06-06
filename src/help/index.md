@@ -24,7 +24,7 @@ Standard business hours excludes Saturdays, Sundays, and local holidays. On thes
 
 ## Analytics Academy
 
-[Analytics Academy](https://segment.com/academy/?utm=docs) is a series of lessons designed to help you understand the value of analytics as a discipline. Analytics Academy will help you think through your analytics needs so you can start creating robust and flexible analytics systems.
+[Analytics Academy](https://segment.com/academy/?utm=docs){:target="_blank"}  is a series of lessons designed to help you understand the value of analytics as a discipline. Analytics Academy will help you think through your analytics needs so you can start creating robust and flexible analytics systems.
 
 ## Recipes
 
