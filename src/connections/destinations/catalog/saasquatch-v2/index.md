@@ -3,9 +3,9 @@ title: SaaSquatch v2 Destination
 id: 62439b17f9f8c788769e83f6
 ---
 
-[SaaSquatch](https://saasquatch.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a loyalty, referral and rewards platform helping companies reward their brand advocates, build loyal communities, and accelerate revenue growth.
+[SaaSquatch](https://saasquatch.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a loyalty, referral and rewards platform that helps companies reward their brand advocates, build loyal communities, and accelerate revenue growth.
 
-This destination is maintained by SaaSquatch. For any issues with the destination, [contact the SaaSquatch Support team](mailto:support@saasquatch.com).
+SaaSquatch maintains this destination. For any issues with the destination, [contact the SaaSquatch Support team](mailto:support@saasquatch.com).
 
 ## Getting Started
 
@@ -14,11 +14,11 @@ This destination is maintained by SaaSquatch. For any issues with the destinatio
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for **SaaSquatch v2** in the Destinations Catalog, and select the **SaaSquatch v2** destination.
 3. Choose which Source should send data to the **SaaSquatch v2** destination.
-4. Login to the [SaaSquatch portal](https://app.referralsaasquatch.com/){:target="_blank"}.
-5. Navigate to the Integrations page by selecting Settings > Integrations.
+4. Log in to the [SaaSquatch portal](https://app.referralsaasquatch.com/){:target="_blank"}.
+5. Navigate to the Integrations page by selecting **Settings > Integrations**.
 6. Find and enable the Segment integration.
-7. Within the "Segment Destination" tab, copy the API Key.
-8. Enter the copied **API Key** in the **SaaSquatch v2** destination settings in Segment.
+7. Within the **Segment Destination** tab, copy the API Key.
+8. Enter the copied API Key in the SaaSquatch v2 destination settings in Segment.
 
 ## Supported methods
 
