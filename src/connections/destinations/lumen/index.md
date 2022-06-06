@@ -1,6 +1,6 @@
 # Lumen Destination
 
-[Lumen](https://uselumen.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps companies engage efficiently with the right customers with ease via data-driven messaging through push notifications, SMS and emails to meet business and marketing objectives.
+[Lumen](https://uselumen.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} helps companies engage the right customers with ease via data-driven messaging through push notifications, SMS, and emails to meet business and marketing objectives.
 
 From drip campaigns, special coupon offers, growth hacking, activating inactive customers, e.t.c., we do the heavy lifting while you focus on other business operations.
 
