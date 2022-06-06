@@ -35,7 +35,7 @@ analytics.identify('userId123', {
 });
 ```
 
-If the identifier doesn't exist, a new user record is created. If the identifier already exist, we update the user record For example:
+If the identifier doesn't exist, a new user record is created. If the identifier already exist, Segment updates the user record. For example:
 
 Segment sends Identify calls to Lumen as an `identify` event.
 
