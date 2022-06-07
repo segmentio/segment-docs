@@ -187,7 +187,7 @@ items:
   display_name: AB Tasty client side
   name: AB Tasty client side
   slug: ab-tasty-client-side
-  hidden: true
+  hidden: false
   endpoints:
   - us
   regions:
@@ -32450,7 +32450,7 @@ items:
   display_name: SaaSquatch v2
   name: SaaSquatch v2
   slug: saasquatch-v2
-  hidden: true
+  hidden: false
   endpoints:
   - us
   regions:
