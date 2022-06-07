@@ -1,8 +1,11 @@
-# Lumen Destination
+---
+	title: Lumen Destination
+	beta: true
+	---
 
 [Lumen](https://uselumen.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} helps companies engage the right customers with ease via data-driven messaging through push notifications, SMS, and emails to meet business and marketing objectives.
 
-From drip campaigns, special coupon offers, growth hacking, activating inactive customers, e.t.c., we do the heavy lifting while you focus on other business operations.
+From drip campaigns, special coupon offers, growth hacking, activating inactive customers and more, Lumen does the heavy lifting while you focus on other business operations.
 
 
 Lumen maintains this destination. For any issues with the destination, [contact the Lumen Support team](mailto:hello@uselumen.co).
@@ -19,7 +22,7 @@ Lumen maintains this destination. For any issues with the destination, [contact 
 3. Choose which Source should send data to the Lumen destination.
 4. Go to the [Lumen dashboard](https://app.uselumen.co){:target="_blank"} and navigate to the API tab on the settings page. 
 5. Copy the API key. 
-5. Enter the "API Key" in the "Lumen" destination settings in Segment.
+6. Go back to Segment and paste the API Key in the Lumen destination settings.
 
 ## Supported methods
 
