@@ -25,7 +25,7 @@ When you create a Source in the Segment web app, it tells the Segment servers th
 You can install analytics-python using pip:
 
 ```bash
-pip install analytics-python
+pip install segment-analytics-python
 ```
 
 If you're using a system for managing dependencies, you'll want to pin the library to `1.X` to avoid breaking changes when the library is updated

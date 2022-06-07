@@ -12,10 +12,10 @@ Want to stay updated on releases? Subscribe to the [release feed](https://github
 
 ## Getting Started
 
-Install `analytics-python` using pip:
+Install `segment-analytics-python` using pip:
 
 ```
-pip install analytics-python
+pip install segment-analytics-python
 ```
 
 If you're using a system for managing dependencies, you'll want to pin the library to `1.X` to avoid breaking changes when the library is updated
@@ -720,13 +720,13 @@ Does it match [the most current version](https://github.com/segmentio/analytics-
 If not, update your version.
 
 ```
-pip install -U analytics-python
+pip install -U segment-analytics-python
 ```
 
 or
 
 ```
-easy_install --upgrade analytics-python
+easy_install --upgrade segment-analytics-python
 ```
 
 ### Background threads and synchronous mode
