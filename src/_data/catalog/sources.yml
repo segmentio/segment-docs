@@ -535,7 +535,7 @@ items:
     isCloudEventSource: false
     slug: ibm-watson-assistant
     url: connections/sources/catalog/cloud-apps/ibm-watson-assistant
-    hidden: false
+    hidden: true
     regions:
       - us
     endpoints:
