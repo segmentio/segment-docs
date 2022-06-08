@@ -34,11 +34,11 @@ Map Segment events  the [Metronome event format](https://docs.metronome.com/gett
 * properties (object) - key/value pairs with details of the event
 
 
-## Benefits of Metronome (Actions) vs Legacy Metronome Destination 
-Metronome (Actions) provides the following benefits over the classic Metronome destination:
+## Benefits of Metronome (Actions)
+Metronome (Actions) provides the following benefits:
 
 - **Streamlined Configuration**. Configure connection details on a per-event basis, rather than for the destination as a whole. 
 
-- **Easier access to data**. The event variables picker shows you all the available data from the event you use to test the Trigger. Variables are clearly labeled to ensure they stand out from other text and markup.
+- **Easy access to data**. The event variables picker shows you all the available data from the event you use to test the Trigger. Variables are clearly labeled to ensure they stand out from other text and markup.
 
-- **Clearer mapping of data** Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to Metronome.
+- **Clear mapping of data** Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to Metronome.
