@@ -10,14 +10,8 @@ all of your event and Cloud Source data in a warehouse built by IBM. This
 guide will walk through what you need to know to get up and running with Db2
 Warehouse and Segment in a flash.
 
-Note: This document refers specifically to [IBM Db2 Warehouse on
-Cloud](https://www.ibm.com/cloud/db2-warehouse-on-cloud), [IBM Db2 Warehouse](https://www.ibm.com/analytics/db2), and the [IBM Integrated
-Analytics System](https://www.ibm.com/products/integrated-analytics-system). For questions related to any of these products,
- see the [IBM Cloud Docs](https://cloud.ibm.com/docs).
-
-If you notice any gaps, outdated information or simply want to leave some
-feedback to help us improve our documentation, [let us
-know](https://segment.com/help/contact)!
+> note " "
+> This document refers specifically to [IBM Db2 Warehouse on Cloud](https://www.ibm.com/cloud/db2-warehouse-on-cloud), [IBM Db2 Warehouse](https://www.ibm.com/analytics/db2), and the [IBM Integrated Analytics System](https://www.ibm.com/products/integrated-analytics-system). For questions related to any of these products, see the [IBM Cloud Docs](https://cloud.ibm.com/docs).
 
 ## Getting Started
 
@@ -82,11 +76,9 @@ database shortly.
 
 ## Security
 
-### Whitelisting IPs
+### Allowlisting IPs
 
-If your Db2 Warehouse is in a private network, be sure to [whitelist
-Segment's IP
-address](https://segment.com/docs/connections/storage/warehouses/faq/#which-ips-should-i-whitelist).
+If your Db2 Warehouse is in a private network, be sure to [allowlist Segment's IP address](/docs/connections/storage/warehouses/faq/#which-ips-should-i-allowlist).
 Otherwise, Segment can't load your data.
 
 ### Unique User
