@@ -5,13 +5,13 @@ redirect_from:
   - '/connections/warehouses/catalog/db2/'
 ---
 
-Use [IBM Db2](https://www.ibm.com/analytics/us/en/db2/) with Segment to get
+Use [IBM Db2](https://www.ibm.com/analytics/us/en/db2/){:target="_blank"} with Segment to get
 all of your event and Cloud Source data in a warehouse built by IBM. This
 guide will walk through what you need to know to get up and running with Db2
 Warehouse and Segment in a flash.
 
 > note " "
-> This document refers specifically to [IBM Db2 Warehouse on Cloud](https://www.ibm.com/cloud/db2-warehouse-on-cloud), [IBM Db2 Warehouse](https://www.ibm.com/analytics/db2), and the [IBM Integrated Analytics System](https://www.ibm.com/products/integrated-analytics-system). For questions related to any of these products, see the [IBM Cloud Docs](https://cloud.ibm.com/docs).
+> This document refers specifically to [IBM Db2 Warehouse on Cloud](https://www.ibm.com/cloud/db2-warehouse-on-cloud){:target="_blank"}, [IBM Db2 Warehouse](https://www.ibm.com/analytics/db2){:target="_blank"}, and the [IBM Integrated Analytics System](https://www.ibm.com/products/integrated-analytics-system){:target="_blank"}. For questions related to any of these products, see the [IBM Cloud Docs](https://cloud.ibm.com/docs){:target="_blank"}.
 
 ## Getting Started
 
