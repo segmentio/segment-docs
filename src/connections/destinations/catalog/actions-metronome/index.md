@@ -13,7 +13,7 @@ versions:
 
 [Metronome](https://www.metronome.com){:target="_blank"} helps software companies launch, iterate, and scale their business models with billing infrastructure that works at any size and stage. With Metronome, your team can set up a world-class billing infrastructure with minimal time and investment.
 
-With [Metronome](https://www.metronome.com){:target="_blank"}, you can enable product-led growth with a consistent source of truth for usage and billing. You can also freely experiment with pricing and packaging and put iteration directly in the hands of your Product team.
+[Metronome](https://www.metronome.com){:target="_blank"} enables product-led growth with a consistent source of truth for use and billing. Freely experiment with pricing and packaging and put iteration directly in the hands of your Product team.
 
 ## Getting Started
 
