@@ -25,7 +25,7 @@ With [Metronome](https://www.metronome.com){:target="_blank"}, you can enable pr
 
 ## Mapping
 
-Your Segment events need to be mapped to the [Metronome event format](https://docs.metronome.com/getting-usage-data-into-metronome/overview/){:target="_blank"}. The five fields listed are the required fields for Metronome.
+Map Segment events  the [Metronome event format](https://docs.metronome.com/getting-usage-data-into-metronome/overview/){:target="_blank"}. Metronome requires the five fields listed below: 
 
 * transaction_id (string) - unique identifier for each event
 * customer_id  (string) - which customer in Metronome the event applies to
