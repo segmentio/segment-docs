@@ -36,3 +36,5 @@
   override: "friendbuy"
 - original: "launchdarkly-actions"
   override: "actions-launchdarkly"
+- original: "freshsales-suite---crm"
+  override: "freshsales-suite-crm"
