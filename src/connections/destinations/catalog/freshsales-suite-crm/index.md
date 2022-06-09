@@ -61,7 +61,6 @@ Traits are pieces of information you know about a user that are included in an i
 
 Segment reserved some traits that have semantic meanings for users. You should only use reserved traits for their intended meaning. Check the [Segment Spec](/docs/connections/spec/identify/#traits) to get a list of reserved traits.
 
-![](images/freshsales-screenshot.png)
 
 All attributes that are a part of traits should correspond to the internal names of those fields in Freshsales. Segment ignores attributes that aren't mapped with their corresponding fields. 
 
