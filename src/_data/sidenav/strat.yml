@@ -8,7 +8,7 @@ sections:
   - path: /connections/destinations/catalog/actions-adobe-target-web
     title: Adobe Target Web Destination
   - path: /connections/destinations/catalog/actions/adobe-target-cloud
-    title: Adobe Taget Cloud Mode Destination
+    title: Adobe Target Cloud Mode Destination
   - path: /connections/destinations/catalog/adobe-analytics/settings
     title: Mapping Segment to Adobe Analytics
   - path: /connections/destinations/catalog/adobe-analytics/identity
