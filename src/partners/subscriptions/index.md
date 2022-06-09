@@ -3,7 +3,7 @@ title: Subscription Overview
 ---
 
 > info ""
-> The Developer Center is currently not accepting new components. Segment is committed to redeveloping the Developer Center and a new version will be launched in the future. Include [your information here](https://airtable.com/shrvZzQ6NTTwsc6rQ) to join the waitlist!
+> The Developer Center is currently not accepting new components. Segment is committed to redeveloping the Developer Center and a new version will be launched in the future. Include [your information here](https://airtable.com/shrvZzQ6NTTwsc6rQ){:target="_blank"} to join the waitlist!
 
 Subscriptions enable you to receive incoming data for our mutual customers to your service's HTTPS endpoint in realtime.
 
