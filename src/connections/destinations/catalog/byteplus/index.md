@@ -20,7 +20,7 @@ This destination is maintained by BytePlus. For any issues with the destination,
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "BytePlus" in the Destinations Catalog, and select the "BytePlus" destination.
 3. Choose which Source should send data to the "BytePlus" destination.
-4. In BytePlus, go to your "[Organization Settings](https://docs.byteplus.com/data-intelligence/docs/create-your-organizations-and-projects)" > "Project List" and find the targeted project.
+4. In BytePlus, go to Organization Settings > Project List and find the targeted project.
 5. Click on **Details** for the targeted project and find the API key ("App Key") on the pop-out information page. This should be a 32-character string of numbers and letters.
 6. Enter the "API Key" in the "BytePlus" destination settings in Segment.
 
