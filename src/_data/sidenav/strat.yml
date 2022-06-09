@@ -7,7 +7,7 @@ sections:
     title: Adobe Analytics destination
   - path: /connections/destinations/catalog/actions-adobe-target-web
     title: Adobe Target Web Destination
-  - path: /connections/destinations/catalog/actions/adobe-target-cloud
+  - path: /connections/destinations/catalog/actions-adobe-target-cloud
     title: Adobe Target Cloud Mode Destination
   - path: /connections/destinations/catalog/adobe-analytics/settings
     title: Mapping Segment to Adobe Analytics
