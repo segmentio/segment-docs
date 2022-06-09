@@ -71,7 +71,7 @@ However, Segment makes an exception for two attributes: `title` and `phone`, whi
 
 As part of traits, you can send custom fields created in Freshsales by using their internal names in camel case. You can find internal names in the corresponding field settings page. 
 
-Custom fields won't automatically create. You have to create them in Freshsales before proceeding to send data from Segment. [Learn more (https://crmsupport.freshworks.com/en/support/solutions/articles/50000002389-how-to-create-custom-fields-for-contacts-accounts-and-deals-){:target="_blank"} about creating custom fields in Freshsales.
+Custom fields won't automatically create. You have to create them in Freshsales before proceeding to send data from Segment. [Learn more](https://crmsupport.freshworks.com/en/support/solutions/articles/50000002389-how-to-create-custom-fields-for-contacts-accounts-and-deals-){:target="_blank"} about creating custom fields in Freshsales.
 ![](images/custom-traits.png)
 
 
@@ -133,8 +133,8 @@ If you want to track users visiting your sites, you can use the page method. Whe
   }
 ```
 
-### TroubleShooting
+## FAQs
 
-#### Custom Fields Aren't Updating
+### Custom Fields Aren't Updating
 
 Make sure that the traits you’re passing through match the custom field’s internal name and data type.
