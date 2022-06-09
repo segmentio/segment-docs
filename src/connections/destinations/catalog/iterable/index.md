@@ -1,9 +1,9 @@
 ---
 title: Iterable Destination
 hide-personas-partial: true
-cmode-override: true 
+cmode-override: true
+id: 54521fd925e721e32a72eecc
 ---
-
 When you enable the Iterable destination from the Segment app, your data starts flowing into Iterable, where it can trigger workflows and make data available for analytics. You can find or generate your Iterable API key by going to Integrations → API keys inside the Iterable app.
 
 <!-- LR 8/7/2020 these are all 404ing, commenting out until we can figure out if they're gone or just moved
@@ -157,7 +157,7 @@ You can send Personas Audiences to Iterable as `identify` or `track` calls. You 
 
 #### Audiences using Identify Calls
 
-When you send Audiences as `identify` calls, Personas adds a trait matching the name of the audience to the user’s profile, with a boolean value to indicate if the user is in the audience. For example, when a user first completes an order in the last 30 days, Personas sends an `identify` call with the property `order_completed_last_30days:` `true`. When the user no longer satisfies these criteria (for example when their last purchase was more than 30 days ago) Personas sets that value to `false`.
+When you send Audiences as `identify` calls, Personas adds a trait matching the name of the audience to the user's profile, with a boolean value to indicate if the user is in the audience. For example, when a user first completes an order in the last 30 days, Personas sends an `identify` call with the property `order_completed_last_30days:` `true`. When the user no longer satisfies these criteria (for example when their last purchase was more than 30 days ago) Personas sets that value to `false`.
 
 ![](images/pers-audience-id.png)
 
@@ -214,4 +214,4 @@ When you delete an audience or trait in Segment it is not deleted from Iterable.
 
 #### If a user has multiple email addresses as external ids in Segment, what happens when they enter an audience or have a computed trait?
 
-Segment sends an `identify` or `track` call for each email address on the user’s account. For example, if a user has three email addresses, this creates three separate users in Iterable.
+Segment sends an `identify` or `track` call for each email address on the user's account. For example, if a user has three email addresses, this creates three separate users in Iterable.

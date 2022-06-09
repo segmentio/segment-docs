@@ -1,8 +1,8 @@
 ---
 title: Intercom Source
 rewrite: true
+id: b3346ddd
 ---
-
 {% include content/source-region-unsupported.md %}
 
 [Intercom](http://intercom.com) is a customer platform with a suite of products for live chat, marketing, feedback, and support. With Intercom you will be able to send targeted messages to the right people at the right time, manage conversations with leads and customers at scale and create, organize, and publish articles to help people get answers to their questions and get started with your app.

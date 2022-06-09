@@ -34,3 +34,5 @@
   override: "actions-friendbuy"
 - original: "friendbuy-legacy"
   override: "friendbuy"
+- original: "launchdarkly-actions"
+  override: "actions-launchdarkly"

@@ -1,7 +1,7 @@
 ---
 title: Bronto Destination
+id: 54521fd525e721e32a72ee98
 ---
-
 Our Bronto destination code is open-source on GitHub if you want to [check it out](https://github.com/segment-integrations/analytics.js-integration-bronto).
 
 ## Getting Started

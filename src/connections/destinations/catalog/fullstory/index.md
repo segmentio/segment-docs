@@ -2,6 +2,7 @@
 title: FullStory Destination
 rewrite: true
 maintenance: true
+id: 54521fd625e721e32a72eeb8
 ---
 [FullStory](https://www.fullstory.com/){:target="_blank"} lets product and support teams easily understand everything about the customer experience. The Segment integration for FullStory helps accurately identify your customers within the FullStory dashboard.
 
@@ -53,7 +54,7 @@ analytics.identify("userId123", {
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [track method](/docs/connections/spec/track/) does. Track calls sent to Segment will be automatically passed directly to FullStory using [FullStory's](https://help.fullstory.com/develop-js/363565-fs-event-api-sending-custom-event-data-into-fullstory) `FS.event` method, including all the properties passed in the event.
+If you're not familiar with the Segment Specs, take a look to understand what the [track method](/docs/connections/spec/track/) does. Track calls sent to Segment will be automatically passed directly to FullStory using [FullStory's](https://help.fullstory.com/hc/en-us/articles/360020623274){:target="_blank} `FS.event` method, including all the properties passed in the event.
 
 An example call would look like:
 

@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Airship Destination
+id: 5d0ac1fbc12d700001651e34
 ---
-
 Airship gives brands the data, channels, orchestration and services they need to deliver push notifications, emails, SMS, in-app messages, and more to the right person at the right moment — building trust, boosting engagement, driving action, and growing value.
 
 [Airship Cloud-mode Destination integration](https://docs.airship.com/partners/segment/#destination) enables users to set Airship tags, attributes, and custom events through Segment's `identify`, `track`, and `group` API calls.

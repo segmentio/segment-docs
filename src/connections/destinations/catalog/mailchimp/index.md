@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: Mailchimp Destination
+id: 54521fd925e721e32a72eed3
 ---
 [Mailchimp](https://mailchimp.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides email marketing automation for e-commerce businesses. With Segment you can add people to your MailChimp list with a single [`identify`](/docs/connections/spec/identify/) call.
 

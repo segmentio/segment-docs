@@ -1,8 +1,8 @@
 ---
 title: Emarsys Destination
 rewrite: true
+id: 5a8e1add366cd2000115dfe7
 ---
-
 [The Emarsys Marketing Platform](https://www.emarsys.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows consumer-facing companies of any industry to convert, grow and retain their clients by enabling automated and personalized interactions across the customer lifecycle and across channels and devices.
 
 This destination is maintained by Emarsys. For any issues with the destination, [contact the Emarsys Support team](mailto:help@support.emarsys.com).

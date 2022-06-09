@@ -11,7 +11,7 @@ As a workspace owner, you can create access tokens from the Access Management pa
 > warning "Secret Token"
 > You can not retrieve the plain-text `token` later, so you should save it in a secret manager. If you lose the `token` you can generate a new one.
 
-## Use a Access Token
+## Use an Access Token
 
 Now that you have an access token, you can use this token to access the Config API by setting it in the `Authorization` header of your requests, for example:
 

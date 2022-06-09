@@ -3,6 +3,7 @@ title: Salesforce Marketing Cloud Source
 beta: true
 source-type: object
 strat: salesforce
+id: oQ5dZPW0Ii
 ---
 <!-- SFMC is listed as an object source, but doesn't appear in our configapi source catalog, so leave the "source-type" set here-->
 

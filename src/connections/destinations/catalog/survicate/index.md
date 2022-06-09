@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: Survicate Destination
+id: 5c922eae1761cd0001a71707
 ---
 [Survicate](https://survicate.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a complete toolkit for customer feedback. From website optimization and customer satisfaction surveys to complex customer insight processes integrated with your email campaigns.
 

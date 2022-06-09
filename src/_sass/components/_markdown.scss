@@ -131,6 +131,7 @@
     border: none;
     margin: 0 auto;
     border-radius: 0px;
+    display: inline
   }
 
 
@@ -307,10 +308,10 @@
 
 }
 
-a[target="_blank"]:not(.reference-button):after {
-  content: url("/docs/images/external-link-alt-solid.svg");
-  margin-left: 4px;
-}
+//a[target="_blank"]:not(.reference-button):after {
+  //content: url("/docs/images/external-link-alt-solid.svg");
+//  margin-left: 4px;
+//}
 
 a.no-icon[target="_blank"]:after {
   content: none
@@ -429,4 +430,10 @@ div.highlighter-rouge {
 
 .table-code-snippet {
   max-width: 450px;
+}
+
+.required {
+  color: black;
+  font-weight: bold;
+  margin-left: 3px
 }

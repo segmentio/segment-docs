@@ -54,6 +54,8 @@ Define the number of branches you want to create, then add a **Wait for conditio
 > info ""
 > Journeys doesn't enforce mutual exclusivity in branch conditions. For more information about ensuring branch exclusivity, see [Best Practices](#).
 
+**Connect to existing step** joins two separate branches. Use this step to target multiple groups with one step. 
+
 **Send to Destinations** delivers information about the Journey to the selected Destination. For more information, see [Send data to Destinations](/docs/personas/journeys/send-data)
 
 ## Cloning a Journey
@@ -64,7 +66,7 @@ To clone a Journey:
 
 Segment then creates a draft of your Journey.
 
-You can also clone a Journey from a Journey’s Overview by clicking the **…** icon.
+You can also clone a Journey from a Journey's Overview by clicking the **…** icon.
 
 ## Publishing a Journey
 
@@ -130,9 +132,27 @@ Follow these steps to resume entry to a paused Journey:
 3. From the dropdown menu, select **Resume Entry**.
 4. A modal window appears. Select **Resume Entry** again to confirm.
 
+## Connecting to Existing Steps
+
+You can merge split Journey branches by using the **Connect to existing steps** option. Connecting to existing steps lets you apply a single step to more than one group. For example, you may want to target some Journey group members with email campaigns while targeting others with ad campaigns. Instead of duplicating steps, you can connect these steps to steps that already exist.
+
+Keep the following in mind when connecting to existing steps:
+
+- You can only connect the end of a branch to another branch.
+- You cannot link back or loop back to previous steps.
+- If you connect multiple non-exclusive branches, the user will only be sent to a Destination the first time they reach it.
+
+Follow the instructions below to connect branches to an existing step:
+
+1. Within an existing Journey, click the **Edit** button.
+2. Click the **+** icon below an existing step to add a new step.
+3. From the **Select a Step** window, select **Connect to existing step**.
+4. Choose the existing step you want to connect.
+5. Click **Save** to confirm.
+
 ### Drafting a Journey
 
-When you’ve finished creating your Journey, click **Save as Draft** in the bottom-right corner.
+When you've finished creating your Journey, click **Save as Draft** in the bottom-right corner.
 
 #### When Journeys are in a draft state
 - Journeys estimates user counts only for the entry step.
@@ -145,6 +165,6 @@ Keep the following considerations in mind when working with a published Journey:
 - It may take up to three hours for Journeys to compute user counts after publication.
 - You can edit a Journey's name, description, and Destination steps.
 - You can't add, edit, or delete other steps in the Journey.
-- Once Journeys computes and displays user counts, you’ll see the list of users at each step of the Journey.
+- Once Journeys computes and displays user counts, you'll see the list of users at each step of the Journey.
 - Click a user profile to see the Journey list to which they belong.
 - Journeys sends and updates data to Destinations in real-time.

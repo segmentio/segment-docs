@@ -31,7 +31,9 @@ Analytics.js sources will upgrade to Analytics.js 2.0 on the date below, accordi
 |--------------| -------------|
 | Free         | June 15, 2021|
 | Team         | July 6, 2021 |
-| Business     | TBD          |
+| Business*    | June 2022    |
+
+*If you're on a business plan, please reach out to [friends@segment.com](mailto:friends@segment.com) to see if your account is part of the upgrade in June 2022.
 
 > info ""
 > The plans and dates listed above are subject to change.
@@ -46,7 +48,11 @@ In some cases, upgrading to Analytics.js 2.0 requires manual effort beyond enabl
 
 ### Using in-domain instrumentation CDN aliasing
 
-If the source you intend to upgrade uses the in-domain instrumentation as well as a custom "Alias for analytics.js", then you should update the AJS snippet to the latest version (4.15.3 or higher) before you toggle on Analytics.js 2.0.
+If the source you intend to upgrade uses the in-domain instrumentation as well as a custom "Alias for analytics.js", then you should update the Analytics.js snippet to the latest version (4.15.3 or higher) before you toggle on Analytics.js 2.0.
+
+### Using a mix of Analytics.js Classic and 2.0 sources
+
+If you're using a mix of Analytics.js Classic and 2.0 sources, the classic source won't be able to use the anonymous ID set by Analytics.js 2.0. In order to fix this, update all sources to 2.0.
 
 ### Relying on Analytics.js Classic's `ajs_anonymous_id` cookie format  
 
@@ -63,4 +69,4 @@ Analytics.js 2.0 asynchronously loads different pieces of the library as needed.
 
 ### Using trackLink on elements that are not links
 
-Previously, it was possible to attach `trackLink` to any element, and a `trackLink` call would fire for that element if it wasn't a link. Now, when you attach `trackLink` to a non-link element, an additional search of that element’s children occurs for any nested links and fires track calls based on those links. If you wish to fire track calls on non-link elements that have links as children, you can use a `track` call instead.
+Previously, it was possible to attach `trackLink` to any element, and a `trackLink` call would fire for that element if it wasn't a link. Now, when you attach `trackLink` to a non-link element, an additional search of that element's children occurs for any nested links and fires track calls based on those links. If you wish to fire track calls on non-link elements that have links as children, you can use a `track` call instead.

@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Windsor Destination
+id: 5dca74a6907ce1604b781476
 ---
-
 [Windsor](https://windsor.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides startups a unified dashboard for all SaaS data. It pulls analytics and email events, customer support tickets, credit card transactions, and more to give a complete view of customers.
 
 This destination is maintained by Windsor. For any issues with the destination, [contact the Windsor Support team](mailto:support@windsor.io).

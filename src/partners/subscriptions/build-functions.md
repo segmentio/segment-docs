@@ -8,6 +8,7 @@ Subscription Functions allow you to write custom JavaScript code that sends Segm
 > note ""
 > **NOTE:** On July 31, 2021 support for building Subscription Functions was removed from Developer Center. The Developer Center is currently not accepting new components. Segment is committed to redeveloping the Developer Center and a new version will be launched in the future. Include [your information here](https://airtable.com/shrvZzQ6NTTwsc6rQ) to join the waitlist!
 
+
 ## Getting Started
 
 Review the steps outlined in the [Developer Center Overview](/docs/partners). This document outlines specific details for Step 4 as it relates to building a Subscription Function.

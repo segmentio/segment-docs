@@ -3,8 +3,8 @@ title: Friendbuy Cloud Mode (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
 hidden: false
+id: 61dde0dc77eb0db0392649d3
 ---
-
 {% include content/plan-grid.md name="actions" %}
 
 [Friendbuy](https://www.friendbuy.com/){:target='_blank'} powers referral programs for e-commerce merchants of all sizes, providing an easy solution to launch Refer-a-Friend programs and accelerate growth through word of mouth.

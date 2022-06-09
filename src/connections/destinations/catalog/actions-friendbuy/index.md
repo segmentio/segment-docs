@@ -3,8 +3,8 @@ title: Friendbuy Web Mode (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
 hidden: false
+id: 6170a348128093cd0245e0ea
 ---
-
 <!-- The published version of this document is available at https://segment.com/docs/connections/destinations/catalog/actions-friendbuy/ -->
 
 {% include content/plan-grid.md name="actions" %}

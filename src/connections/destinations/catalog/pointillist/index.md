@@ -1,7 +1,7 @@
 ---
 title: Pointillist Destination
+id: 56b17633e954a874ca44d3df
 ---
-
 ## Getting Started
 
 Once the Segment library is integrated with your server code, site or app, toggle Pointillist ON in the Segment dashboard, and add your Pointillist API key.

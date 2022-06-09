@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Amazon Personalize Destination
+id: 5c7f0c9879726100019cc56b
 ---
-
 Segment makes it easy to send your data to Amazon Personalize (and lots of other destinations). Once you collect your data using Segment's [open source libraries](/docs/connections/sources/catalog/), Segment translates and routes your data to Amazon Personalize in the format it can use. [Amazon Personalize](https://aws.amazon.com/personalize/) is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications. AWS Personalize enables:
 
   - Media companies to provide recommended content for viewers based on their viewing history
@@ -17,16 +17,16 @@ Developing the machine-learning capabilities necessary to produce these recommen
 
 These are the pre-requisites you need before getting started:
 
-1. Segment data flowing into an S3 destination OR a warehouse
+1. Segment data flowing into an S3 destination, a Snowflake warehouse, or Amazon Redshift warehouse.
 2. You have the ability to create AWS Glue jobs (only required if using S3 to [train your model](#train-your-model))
 3. You have the ability to deploy Lambda functions in Amazon Web Services
 4. You have access to AWS Personalize
 
-If you don't have S3, Redshift warehouse, or Snowflake warehouse configured, you can read more about setting up [S3](/docs/connections/storage/catalog/amazon-s3/), [Redshift](/docs/connections/storage/catalog/redshift/), and [Snowflake](/docs/connections/storage/catalog/snowflake/).
+If you don't have S3, Redshift warehouse, or Snowflake warehouse configured, you can read more about setting up [S3](/docs/connections/storage/catalog/aws-s3/), [Redshift](/docs/connections/storage/catalog/redshift/), and [Snowflake](/docs/connections/storage/catalog/snowflake/).
 
 ***If you're a Segment business tier customer, contact your Success contact to initiate a replay to S3 or your Warehouse.***
 
-There are 3 main parts to using Amazon Personalize with Segment:
+There are three main parts to using Amazon Personalize with Segment:
 
 1. [Train your model](/docs/connections/destinations/catalog/amazon-personalize/#train-your-model) on historical data in S3 or a Warehouse.
 2. [Create a Personalize Dataset Group](/docs/connections/destinations/catalog/amazon-personalize/#create-personalize-dataset-group-solution-and-campaign) and Campaign
@@ -135,7 +135,7 @@ DELIMITER AS ','
 PARALLEL OFF;
 ```
 
-Note: Use `date_part(epoch,"timestamp") as TIMESTAMP` because Personalize requires timestamps to be specified in UNIX/epoch time.
+**Note:** Use `date_part(epoch,"timestamp") as TIMESTAMP` because Personalize requires timestamps to be specified in UNIX/epoch time.
 
 **Verify the Output file**
 Browse to the S3 service page in the AWS console and navigate to the bucket path specified in the `unload` command. You should see the output file.
@@ -201,15 +201,7 @@ The following examples show how to configure an AWS Glue job to convert Segment 
 **Create AWS Glue ETL Job**
 
 To create an AWS Glue ETL Job:
-1. Navigate to the Glue service in your AWS console.
-2. Click **Get started** and then click **Jobs** in the left navigation on the Glue console page.
-
-    ![](images/GlueJobs.png)
-
-
-3. Click **Add job**.
-4. Enter a job name such as "SegmentEventsJsonToCsv".
-5. For IAM role, create a role and execution policies that gives your Glue job the ability to write to your S3 bucket. For example:
+1. Create a new AWS service IAM role using the following execution policies. These policies give your Glue job the ability to write to your S3 bucket:
   * Policy 1:
 
       ```json
@@ -326,13 +318,10 @@ To create an AWS Glue ETL Job:
             ]
         }
       ```
-
-6. Leave Type as **Spark**.
-7. For **This job runs**, select **A new script to be authored by you**.
-8. Leave everything else the same and click **Next** at the bottom of the form.
-9. On the **Connections** step, click **Save job and edit script** since you won't access data in a database for this job.
-
-10. The source code for a generic Glue job is below. Modify this code to reflect the names of the events you wish to extract from the Segment logs (see line #25). Copy the code example to your clipboard and paste it into the Glue editor window.
+1. Navigate to the Glue service in your AWS console.
+2. Click **Get started** and then select **Jobs** from the left navigation on the Glue console page.
+3. Select **Spark script editor** and click **Create**.
+4. The following code sample is the source code for a generic Glue job. Copy the code example to your clipboard and paste it into the Glue editor window, modifying as necessary to reflect the names of the events you wish to extract from the Segment logs (see line #25).
 
     ```python
     import sys
@@ -354,7 +343,7 @@ To create an AWS Glue ETL Job:
     job.init(args['JOB_NAME'], args)
 
     # Load JSON into dynamic frame
-    datasource0 = glueContext.create_dynamic_frame.from_options('s3', {'paths': [args['S3_JSON_INPUT_PATH']]}, 'json')
+    datasource0 = glueContext.create_dynamic_frame.from_options('s3', {'paths': [args['S3_JSON_INPUT_PATH']], 'recurse': True}, 'json')
     print("Input file: ", args['S3_JSON_INPUT_PATH'])
     print("Input file total record count: ", datasource0.count())
 
@@ -399,13 +388,12 @@ To create an AWS Glue ETL Job:
 
     job.commit()
     ```
+5. Select the **Job details** tab.
+6. Enter a name for your Glue job. 
+6. Leave Type as **Spark**.
+7. Make any optional changes on the Job details page, and click **Save** to save the job script.
 
-11. Click **Save** to save the job script.
-
-    ![](images/GlueEditJobScript.png)
-
-
-To review key parts of the script in more detail:
+To review key parts of the Python script in more detail:
 1. The script is initialized with a few job parameters. You'll see how to specify these parameter values when the job below runs. For now, see that Segment is passing in the location of the raw JSON files using `S3_JSON_INPUT_PATH` and the location where the output CSV should be written through `S3_CSV_OUTPUT_PATH`.
 
     ```python
@@ -425,7 +413,7 @@ To review key parts of the script in more detail:
 3. The first step in Segment's Job is to load the raw JSON file as a Glue DynamicFrame.
 
     ```python
-        datasource0 = glueContext.create_dynamic_frame.from_options('s3', {'paths': [args['S3_JSON_INPUT_PATH']]}, 'json')
+       datasource0 = glueContext.create_dynamic_frame.from_options('s3', {'paths': [args['S3_JSON_INPUT_PATH']], 'recurse': True}, 'json')
     ```
 
 4. Since not all events that are written to S3 by Segment are relevant to training a Personalize model, Segment uses Glue's `Filter` transformation to keep the records needed.
@@ -489,7 +477,7 @@ With Segment's ETL Job script created and saved, it's time to run the job to cre
 
 
 4. Scroll down to the **Job parameters** section. This is where Segment will specify the job parameters that Segment's script expects for the path to the input data and the path to the output file.
-5. Create 2 job parameters with the following key and value.
+5. Create two job parameters with the following key and value.
   * Be sure to prefix each key with `--` as shown. Substitute your account ID for `[ACCOUNT_ID]` in the values below. You copy the bucket name to your clipboard from the S3 service page in the tab/window you opened above. The order they are specified does not matter.
 
     | **Key**              | **Value**                                      |
@@ -584,7 +572,7 @@ To create a personalize dataset group:
 
 10. Click **Next** to save the schema and move to the next step.
 
-11. The **Import user-item interaction data** step is displayed next. To complete this form Segment needs to get 2 pieces of information from IAM and S3. Give your import job a name and set the automatic import to **Off**.
+11. The **Import user-item interaction data** step is displayed next. To complete this form Segment needs to get two pieces of information from IAM and S3. Give your import job a name and set the automatic import to **Off**.
 
 12. For the **IAM service role**, select **Create a new role** from the dropdown.
 13. In the next pop-up, Segment recommends listing your bucket name in the **Specific S3 buckets** option, but you're free to choose the option that best suits your needs.
@@ -601,9 +589,9 @@ Be patient as this process can take a long time to complete.
 
 ### Create Personalize Solution
 
-Once Segment's event CSV is finished importing into a user-item interaction dataset, Segment can create a Personalize Solution. To do thi:
+Once Segment's event CSV is finished importing into a user-item interaction dataset, Segment can create a Personalize Solution. To do this:
 
-1. From the Dashboard page for the dataset group we created above, click **Start** in the **Create solutions** column.
+1. From the Dashboard page for the dataset group created above, click **Start** in the **Create solutions** column.
 
     ![](images/PersonalizeCreateSolution.png)
 
@@ -621,7 +609,7 @@ Once Segment's event CSV is finished importing into a user-item interaction data
 
 A deployed solution is known as a campaign, and is able to make recommendations for your users. To deploy a solution, you create a campaign in the console or by calling the CreateCampaign API. You can choose which version of the solution to use. By default, a campaign uses the latest version of a solution.
 
-To create a Personlize campaign:
+To create a Personalize campaign:
 
 1. From the Dataset Group Dashboard, click **Create new campaign**.
 
@@ -694,7 +682,7 @@ To create an IAM role:
 > note ""
 > **NOTE:** Your Source ID can be found by navigating to **Settings > API Keys** from your Segment source homepage.
 >
-> For security purposes, Segment will set your Workspace ID as your External ID. If you are currently using an External ID different from your Workspace ID, reach out to our support team so they can change it and make your account more secure.
+> For security purposes, Segment will set your Workspace ID as your External ID. If you are currently using an External ID different from your Workspace ID, reach out to Segment support so they can change it and make your account more secure.
 
 ```json
 {
@@ -811,7 +799,7 @@ To install Segment's Layer:
 
 **Update your IAM role for your Lambda to call Personalize**
 
-You need to modify the IAM Role & Policy originally created with this Lambda to allow it to send and recieve data from Personalize. To do this:
+You need to modify the IAM Role & Policy originally created with this Lambda to allow it to send and receive data from Personalize. To do this:
 
 1. From the **Execution role** section of your Lambda function, click the **View the <your-role-name>** link.
 
@@ -972,7 +960,7 @@ You need to create a Personalize Event Tracker for the Dataset Group you created
     ![](images/PersonalizeCampaignArn.png)
 
 
-12. Return to our Lambda function and scroll down to the **Environment variables** panel.
+12. Return to your Lambda function and scroll down to the **Environment variables** panel.
 
 13. Add an environment variable with the key `personalize_campaign_arn` and value of the Campaign ARN in your clipboard.
 14. Scroll to the top of the page and click **Save** to save your changes.
@@ -1008,7 +996,7 @@ Segment allows you to send each call type to a different Lambda. If you leave th
 
 There are two settings relevant for track calls:
 
-1. Lambda for track calls - the Lambda where we should route track calls.
+1. Lambda for track calls - the Lambda where the Segment app should route track calls.
 2. Events - a list of specific events to send. You may send *all* track events (see setting details for instructions on how), but use caution with this option, as it may significantly increase your Lambda costs.
 
 
@@ -1020,4 +1008,4 @@ This setting controls the [Log Type](https://docs.aws.amazon.com/lambda/latest/d
 
 **My Lambda <> Segment connection is timing out, what do I do?**
 
-Due to how our event delivery system, [Centrifuge](https://segment.com/blog/introducing-centrifuge/), works, your Lambda can't take more than 5 seconds to run per message. If you're consistently running into timeout issues, you should consult the [AWS Lambda docs](https://docs.aws.amazon.com/lambda/index.html#lang/en_us), as well as docs for your language of choice, for tips on optimizing performance.
+Due to how Segment's event delivery system, [Centrifuge](https://segment.com/blog/introducing-centrifuge/), works, your Lambda can't take more than five seconds to run per message. If you're consistently running into timeout issues, you should consult the [AWS Lambda docs](https://docs.aws.amazon.com/lambda/index.html#lang/en_us), as well as docs for your language of choice, for tips on optimizing performance.

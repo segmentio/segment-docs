@@ -4,8 +4,8 @@ rewrite: true
 redirect_from: "/connections/destinations/catalog/customer.io/"
 hide-personas-partial: true
 maintenance: true
+id: 54521fd525e721e32a72eea8
 ---
-
 [Customer.io](https://customer.io/) helps you send automated email, push, SMS, and webhooks based on your customers' activities in your app or product. It makes conversion tracking, optimization and re-marketing easier. The `analytics.js` Customer.io Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/customerio).
 
 > success ""
@@ -16,13 +16,13 @@ maintenance: true
 
 {% include content/connection-modes.md %}
 
-You can follow the setup guide through Segment using the steps below, or you can automatically sync your Customer.io connection settings to your Segment source using the flow in your Customer.io workspace’s Integrations page.
+You can follow the setup guide through Segment using the steps below, or you can automatically sync your Customer.io connection settings to your Segment source using the flow in your Customer.io workspace's Integrations page.
 
 1. From the Segment web app, click **Connections** > **Destinations**.
 1. Search for “Customer.io”, select it, and then click **Configure Customer.io**.
 1. Select the data sources you want to connect to Customer.io and click **Next**.
 1. Enter your *Destination Name* and select your **Connection Mode**—Cloud Mode or Device Mode. Click **Save**.
-1. Under *Connection Settings*, enter your Customer.io workspace **API Key** and **Site ID**. You’ll find both in your Customer.io *Account Settings* > *API Credentials* page.
+1. Under *Connection Settings*, enter your Customer.io workspace **API Key** and **Site ID**. You'll find both in your Customer.io *Account Settings* > *API Credentials* page.
 
 If you want to sync your settings directly from your Customer.io workspace, go to **Settings** > **Integrations** and find the **Segment Destination** integration. 
 
@@ -59,7 +59,7 @@ analytics.identify('userId123', {
 });
 ```
 
-When you identify a new user, Customer.io adds the user to your Customer.io workspace. If the user exists, the identify request updates the existing person’s attributes.
+When you identify a new user, Customer.io adds the user to your Customer.io workspace. If the user exists, the identify request updates the existing person's attributes.
 
 If your Customer.io workspace supports both `email` and `id` as identifiers (the default setting as of June 2021), you can identify people either by a database identifier (called `id` in Customer.io) or the `email` trait.
 
@@ -76,7 +76,7 @@ When Customer.io recognizes either the `id` or `email` in your request, your ide
 ```javascript
 analytics.identify('userId123', {
   email: 'john.doe@example.com',
-  fav_food: ‘pizza’
+  fav_food: 'pizza'
 });
 ```
 
@@ -249,7 +249,7 @@ For that, you need to make the following calls:
 
 ### Sending Data from Customer.io
 
-You can enable Customer.io as a Segment Source to send[ email events](/docs/connections/spec/email/) to other tools on the Segment platform. These events are sent as track calls to the other destinations you’ve turned on.
+You can enable Customer.io as a Segment Source to send[ email events](/docs/connections/spec/email/) to other tools on the Segment platform. These events are sent as track calls to the other destinations you've turned on.
 
 To enable this feature: 
 

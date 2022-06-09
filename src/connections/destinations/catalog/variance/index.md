@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Variance Destination
+id: 6099bbbc3d51136d7d293b0c
 ---
-
 [Variance](https://variance.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) hooks into your customer data and makes it easy to access growth signals across product, marketing, and sales. The platform provides your growth team with clear, intent-based signals, from all stages of a customer's journey.
 
 This destination is maintained by Variance. For any issues with the destination, [contact the Variance Support team](mailto:support@variance.com).
@@ -89,7 +89,7 @@ Segment sends Group calls to Variance as an `Account` if you've chosen the "Grou
 
 Variance offers several ways to map your users to accounts or companies, including the following.
 
- - **Group**: If you already use the Group call to indicate the Account, then you don’t need to change anything as Segment automatically extracts the Account name.
+ - **Group**: If you already use the Group call to indicate the Account, then you don't need to change anything as Segment automatically extracts the Account name.
  - **Identify with custom traits** (for example `company.id` and `company.name`): Choose this option if you include some information about the Account, Company, or Organization as a trait in each Identify call. When you choose this option, add the name of the trait you use. For example, if you configure the call with the data `{'company':{'id':1,'name':'Awesome Inc.'}}`, add `company.id` as the Account ID trait and `company.name` as the Account Name trait.
  - **Identify email trait domain extraction** (Fallback option): If you don't use the methods above, Segment extracts the domain name from the `email` trait, and uses that value as the Account name.
 

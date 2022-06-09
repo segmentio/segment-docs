@@ -11,7 +11,7 @@ The guide is broken into three categories of tasks:
 - [Optimization](#optimization): These tasks guide you to expand your data coverage and optimize your workspace.
 
 ## Basics
-The tasks included in Basics help you send and debug your very first data from a [Source](/docs/connections/sources/) (a library that sends data to Segnent), and into a [Destination](/docs/connections/destinations/) (tools you use to analyze or act on your data).
+The tasks included in Basics help you send and debug your very first data from a [Source](/docs/connections/sources/) (a library that sends data to Segment), and into a [Destination](/docs/connections/destinations/) (tools you use to analyze or act on your data).
 
 The Basic tasks include:
 
@@ -42,7 +42,7 @@ A Source is a website, server library, mobile SDK, or cloud application which ca
 To add a Source:
 1. Go to **Connections**.
 2. Click **Add Source**.
-3. Click the Source you’d like to add. *Note:* More than 80% of workspaces start by adding their Javascript website.
+3. Click the Source you'd like to add. *Note:* More than 80% of workspaces start by adding their Javascript website.
 4. Click **Add Source**.
 5. Enter a name for your source as well as any information on the setup page.
 6. Click **Add Source**.
@@ -53,9 +53,9 @@ To add a Source:
 > - [Sources Catalog](/docs/connections/sources/catalog/)
 
 ### Add page or screen tracking
-Once you’ve added your Segment Source, you're ready to send data into Segment. The simplest data to send into Segment is a Page call (for website Sources) or Screen call (for mobile Sources). Page and screen calls send automatically once you install the Segment snippet or SDK on your website or mobile app. Page and screen calls allow you to record whenever a user sees a page of your website or screen of your app, along with any optional properties about the page or screen.
+Once you've added your Segment Source, you're ready to send data into Segment. The simplest data to send into Segment is a Page call (for website Sources) or Screen call (for mobile Sources). Page and screen calls send automatically once you install the Segment snippet or SDK on your website or mobile app. Page and screen calls allow you to record whenever a user sees a page of your website or screen of your app, along with any optional properties about the page or screen.
 
-Learn how to [install the Segment snippet or SDK on your website or mobile app]((/docs/getting-started/02-simple-install/#installing-segment)) to start sending data.
+Learn how to [install the Segment snippet or SDK on your website or mobile app](/docs/getting-started/02-simple-install/#installing-segment) to start sending data.
 
 > info "Learn More"
 > - [Install Segment](/docs/getting-started/02-simple-install/#installing-segment)
@@ -83,7 +83,7 @@ To add a Destination:
 ### Testing and Debugging
 The Source Debugger is a real-time tool that helps you validate that API calls made from your website, mobile app, or servers arrive at your source. You can use the Source Debugger to make sure that your source functions properly and your events actively send.
 
-The Debugger shows a live stream of events that flow through your Segment Source, so that you can check that your events send in the correct format. When you click on a specific event, you’ll be able to see these two views of an event:
+The Debugger shows a live stream of events that flow through your Segment Source, so that you can check that your events send in the correct format. When you click on a specific event, you'll be able to see these two views of an event:
 - The Pretty view is a recreation of the API call you made that was sent to Segment.
 - The Raw view is the complete JSON object Segment receives from the calls you send. These calls include all the details about what is tracked: timestamps, properties, traits, ids, and contextual information Segment automatically collects the moment the data is sent.
 
@@ -138,7 +138,7 @@ To save time on instrumentation, be sure to check if [one of Segment's Business 
 ### Choose what to track
 Segment recommends you to create and maintain a Tracking Plan to have data clarity and team alignment about what customer data you need to collect and why. It's best to think about the measurable business outcomes you're trying to track or improve, and then drill down to track the events needed for each business outcome.
 
-For example, if you’re looking to reduce cart abandonment, you may want to engage cart abandoners by sending emails and in-app messaging to them using Customer.io and Intercom. You also might want to track events like Product Added or Cart Viewed along this customer journey.
+For example, if you're looking to reduce cart abandonment, you may want to engage cart abandoners by sending emails and in-app messaging to them using Customer.io and Intercom. You also might want to track events like Product Added or Cart Viewed along this customer journey.
 
 Segment maintains a number of industry or product-specific specs to help you get started:
 - [B2B](/docs/connections/spec/b2b-saas/)
@@ -146,7 +146,7 @@ Segment maintains a number of industry or product-specific specs to help you get
 - [Video](/docs/connections/spec/video/)
 - [Mobile](/docs/connections/spec/mobile/)
 
-Once you’re ready to define the events you’d like to track, you can use [this Tracking Plan Template](https://docs.google.com/spreadsheets/d/1TA6qTcDHoZzsG7-C6p5yHGximDxqoNtizguKs7Z0av4/view#gid=1164785081) to help you align your team.
+Once you're ready to define the events you'd like to track, you can use [this Tracking Plan Template](https://docs.google.com/spreadsheets/d/1TA6qTcDHoZzsG7-C6p5yHGximDxqoNtizguKs7Z0av4/view#gid=1164785081) to help you align your team.
 
 > info "Learn More"
 > - [Data Collection Best Practices](/docs/protocols/tracking-plan/best-practices/#tracking-plan-google-sheets-template)
@@ -156,7 +156,7 @@ Once you’re ready to define the events you’d like to track, you can use [thi
 ### Event anatomy and naming standards
 When it comes to data collection, the best way to set your company up for success is to establish consistent naming conventions. This makes your code easier to read, and it helps everyone at your company understand what your events mean.
 
-Segment recommends the best practice of using an “Object Action” (Noun Verb) naming convention for all Track events (for example, Menu Clicked) and using noun_noun snake case for property names (for example, property_name). You can view all the event names you’re currently tracking in the Schema view to ensure you're using consistent conventions and casing.
+Segment recommends the best practice of using an “Object Action” (Noun Verb) naming convention for all Track events (for example, Menu Clicked) and using noun_noun snake case for property names (for example, property_name). You can view all the event names you're currently tracking in the Schema view to ensure you're using consistent conventions and casing.
 
 To view your event names in the Source Schema:
 1. Navigate to **Connections > Sources**.
@@ -174,7 +174,7 @@ A data warehouse is a central location where you can store your raw customer dat
 A data warehouse also allows you to collect and compile data from third party tools as [Cloud Sources](/docs/connections/sources/about-cloud-sources/) in Segment, to help you gain a 360 view of your customer touchpoints.
 
 > info "Learn More"
-> - [What’s a warehouse?](/docs/connections/storage/warehouses/)
+> - [What's a warehouse?](/docs/connections/storage/warehouses/)
 > - [Warehouse FAQs](/docs/connections/storage/warehouses/faq/)
 > - [Analytics Academy: Why you should own your data](https://segment.com/academy/intro/why-you-should-own-your-data/?referrer=docs){:target="_blank"}
 
@@ -214,7 +214,7 @@ Each touchpoint you have with your customers is a potential area to gain a bette
 To add more sources:
 1. Go to **Connections**.
 2. Click **Add Source**.
-3. Click the Source you’d like to add.
+3. Click the Source you'd like to add.
 4. Click **Add Source**.
 5. Enter a name for your source as well as any information on the setup page.
 6. Click **Add Source**.

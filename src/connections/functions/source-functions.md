@@ -12,7 +12,7 @@ Source functions allow you to gather data from any third-party applications with
 All functions are scoped to your workspace, so members of other workspaces cannot view or use them.
 
 > info ""
-> Functions is available to all customer plan types with a free allotment of usage hours. Read more about [Functions usage limits](/docs/connections/functions/usage/), or see [your workspace’s Functions usage stats](https://app.segment.com/goto-my-workspace/settings/usage?metric=functions).
+> Functions is available to all customer plan types with a free allotment of usage hours. Read more about [Functions usage limits](/docs/connections/functions/usage/), or see [your workspace's Functions usage stats](https://app.segment.com/goto-my-workspace/settings/usage?metric=functions).
 
 ![](images/source_functions_overview.png)
 
@@ -132,7 +132,7 @@ Segment.identify({
 The `Segment.identify()` method accepts an object with the following fields:
 
 - `userId` - Unique identifier for the user in your database.
-- `anonymousId` - A pseudo-unique substitute for a User ID, for cases when you don’t have an absolutely unique identifier.
+- `anonymousId` - A pseudo-unique substitute for a User ID, for cases when you don't have an absolutely unique identifier.
 - `traits` - Object with data about or related to the user, like `name` or `email`.
 - `context` - Object with extra information that provides useful context, like `locale` or `country`.
 
@@ -154,7 +154,7 @@ Segment.track({
 The `Segment.track()` method accepts an object with the following fields:
 
 - `userId` - Unique identifier for the user in your database.
-- `anonymousId` - A pseudo-unique substitute for a User ID, for cases when you don’t have an absolutely unique identifier.
+- `anonymousId` - A pseudo-unique substitute for a User ID, for cases when you don't have an absolutely unique identifier.
 - `properties` - Object with data that is relevant to the action, like `product_name` or `price`.
 - `context` - Object with extra information that provides useful context, like `locale` or `country`.
 
@@ -194,7 +194,7 @@ Segment.page({
 The `Segment.page()` method accepts an object with the following fields:
 
 - `userId` - Unique identifier for the user in your database.
-- `anonymousId` - A pseudo-unique substitute for a User ID, for cases when you don’t have an absolutely unique identifier.
+- `anonymousId` - A pseudo-unique substitute for a User ID, for cases when you don't have an absolutely unique identifier.
 - `name` - Name of the page.
 - `properties` - Object with information about the page, like `page_name` or `page_url`.
 - `context` - Object with extra information that provides useful context, like `locale` or `country`.
@@ -215,7 +215,7 @@ Segment.screen({
 The `Segment.screen()` method accepts an object with the following fields:
 
 - `userId` - Unique identifier for the user in your database.
-- `anonymousId` - A pseudo-unique substitute for a User ID, for cases when you don’t have an absolutely unique identifier.
+- `anonymousId` - A pseudo-unique substitute for a User ID, for cases when you don't have an absolutely unique identifier.
 - `name` - Name of the screen.
 - `properties` - Object with data about the screen, like `screen_name`.
 - `context` - Object with extra information that provides useful context, like `locale` or `country`.
@@ -235,7 +235,7 @@ The `Segment.alias()` method accepts an object with the following fields:
 
 - `previousId` - Previous unique identifier for the user.
 - `userId` - Unique identifier for the user in your database.
-- `anonymousId` - A pseudo-unique substitute for a User ID, for cases when you don’t have an absolutely unique identifier.
+- `anonymousId` - A pseudo-unique substitute for a User ID, for cases when you don't have an absolutely unique identifier.
 
 ##### Set
 
@@ -382,7 +382,7 @@ Copy and paste this URL into the upstream tool or service to send data to this s
 
 ##### What is the retry policy for a webhook payload?
 
-The webhook payload retries up to 5 times with an exponential backoff for the function in the event of a failure with the function. After 5 attempts, the message is dropped.
+The webhook payload retries up to six times with an exponential backoff for the function in the event of a failure with the function. After six attempts, the message is dropped.
 
 ##### What is the maximum payload size for the incoming webhook?
 

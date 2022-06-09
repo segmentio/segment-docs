@@ -1,7 +1,7 @@
 ---
 title: 'Vero Source'
+id: FOkpxVzfJJ
 ---
-
 {% include content/source-region-unsupported.md %}
 
 Vero is an email marketing tool that lets you set up automated emails to your users that get sent after they've completed certain actions. [Visit Website](http://getvero.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)

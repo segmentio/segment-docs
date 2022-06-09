@@ -17,7 +17,7 @@ changelog:
         - new-integration
     - title: Improvements
       labels:
-        - enhancement
+        - content-update
     - title: Fixes
       labels:
         - fixed-content

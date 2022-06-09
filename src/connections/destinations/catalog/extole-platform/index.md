@@ -3,9 +3,8 @@ title: Extole Destination
 rewrite: true
 beta: true
 redirect_from: '/connections/destinations/catalog/extole/'
+id: 5e79ef31929aef3bdfbc53a5
 ---
-
-
 Brands use Extole to turn customers into advocates. Our enterprise platform and team of experts create beautiful referral and customer engagement programs, so brands can harness the power of sharing to the benefit of their bottom line. Extole enables marketers to engage thousands of advocates, scaling word-of-mouth to acquire new customers and increase loyalty using their greatest competitive advantage: their customers.
 
 

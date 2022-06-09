@@ -4,16 +4,17 @@ hide-boilerplate: true
 hide-dossier: false
 redirect_from:
   - '/connections/destinations/catalog/actions-braze-web/'
+  - '/connections/destinations/catalog/vendor-braze/'
+id: 60fb01aec459242d3b6f20c1
+versions:
+  - name: 'Braze Cloud Mode (Actions)'
+    link: '/docs/connections/destinations/catalog/braze-cloud-mode-actions'
+  - name: 'Braze (Classic)'
+    link: '/docs/connections/destinations/catalog/braze'
 ---
 {% include content/plan-grid.md name="actions" %}
 
 [Braze](https://www.braze.com/){:target="_blank"}, formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
-
-
-
-
-> success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Braze Segment destination. There's also a page about the [non-Actions Braze destination](/docs/connections/destinations/catalog/braze/). Both of these destinations receives data _from_ Segment. There's also the [Braze source](/docs/connections/sources/catalog/cloud-apps/braze/), which sends data _to_ Segment.
 
 ## Benefits of Braze Web Mode (Actions) vs Braze Classic
 

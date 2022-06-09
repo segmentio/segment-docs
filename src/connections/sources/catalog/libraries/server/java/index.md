@@ -1,8 +1,8 @@
 ---
 title: Analytics for Java
 repo: analytics-java
+id: V6ynUvQgbc
 ---
-
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics)
 
 Our Java library lets you record analytics data from your Java code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
@@ -38,7 +38,7 @@ Add to `pom.xml`:
 or if you're using Gradle:
 
 ```bash
-compile 'com.segment.analytics.java:analytics:+'
+implementation 'com.segment.analytics.java:analytics:+'
 ```
 
 ### Initialize the SDK
@@ -74,14 +74,13 @@ We recommend calling `identify` a single time when the user's account is first c
 Example `identify` call:
 
 ```java
+Map<String, String> map = new HashMap();
+map.put("name", "Michael Bolton");
+map.put("email", "mbolton@example.com");
+
 analytics.enqueue(IdentifyMessage.builder()
-    .userId("f4ca124298")
-    .traits(ImmutableMap.builder()
-        .put("name", "Michael Bolton")
-        .put("email", "mbolton@example.com")
-        .build()
-    )
-);
+        .userId("f4ca124298")
+        .traits(map));
 ```
 
 This call is identifying  Michael by his unique User ID (the one you know him by in your database) and labeling him with `name` and `email` traits.

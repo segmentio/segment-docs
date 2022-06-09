@@ -19,9 +19,11 @@ Before you start your Segment implementation, you need:
 > success ""
 > **Tip**! If you don't have any of those things, consider creating a simple [GitHub Pages website](https://pages.github.com/).
 
+### Create separate dev and prod sources
+
 When you develop and test sources, Segment recommends you to create and use separate sources for each of your environments (production, development, staging) to prevent testing and development activities from filling production systems with invalid data.
 
-You can give each source an `environment` label when you create it, and Segment strongly suggests that you use these labels to sort your sources. When you create a source during the steps below, make sure you enter an environment label.
+You can give each source an environment label when you create it, and Segment strongly suggests that you use these labels to sort your sources. When you create a source during the steps below, make sure you enter an environment label.
 
 > warning ""
 > Double-check when you enter write keys for dev and production environments to make sure that you send the right data to the right place.
@@ -376,7 +378,7 @@ You've successfully installed PHP tracking. Now you're ready to turn on any dest
 
 
 
-## Test that it’s working
+## Test that it's working
 
 Once you've set up your Segment library, and instrumented at least one call, you can look at the Debugger tab for the Source to check that it produces data as you expected.
 

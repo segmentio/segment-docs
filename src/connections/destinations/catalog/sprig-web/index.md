@@ -5,8 +5,12 @@ hide-boilerplate: true
 hide-dossier: true
 redirect_from:
   - '/connections/destinations/catalog/actions-sprig-web'
+  - '/connections/destinations/catalog/vendor-sprig'
+id: 61d8c74d174a9acd0e138b31
+versions:
+  - name: Sprig Cloud
+    link: /docs/connections/destinations/catalog/sprig-cloud
 ---
-
 <!-- In the section above, edit the `title` field. For example, Slack (Actions) Destination -->
 
 {% include content/plan-grid.md name="actions" %}
@@ -15,13 +19,6 @@ redirect_from:
 
 Sprig maintains this destination. For any issues with the destination, consult [Sprig's documentation](https://docs.sprig.com/docs/segment-web) or contact [support@sprig.com](mailto:support@sprig.com).
 
-
-<!-- In the section below, add your destination name where indicated. If you have a classic version of the destination, ensure that its documentation is linked as well. If you don't have a classic version of the destination, remove the second and third sentences. -->
-
-> success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Sprig Segment destination. There's also a page about the [non-Actions Sprig Cloud (formerly UserLeap) destination](/docs/connections/destinations/catalog/userleap/). Both of these destinations receive data from Segment.
-
-<!-- In the section below, explain the value of this actions-based destination over the classic version, if applicable. If you don't have a classic version of the destination, remove this section. -->
 
 ## Benefits of Sprig (Actions) vs Sprig Classic
 

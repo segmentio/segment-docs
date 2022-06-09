@@ -24,20 +24,17 @@ To create a new Tracking Plan:
 2. Once enabled, click on **Protocols** in the left bar navigation.
 3. Click **New Tracking Plan**.
 4. Add events, properties, traits and filters in the Tracking Plan editor.
-  - You'll see an option to import events and traits to your tracking plan from a source in your workspace. This option is great if you want to get started with your current events. Note that Segment infers data types, but often can't if several data types are sent for a specific category.  
-
-> info ""
-> If your tracking plan is in a spreadsheet, use the [Google Sheets Uploader](/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader) to import it to Protocols.
+  - You'll see an option to import events and traits to your tracking plan from a source in your workspace. This option is great if you want to get started with your current events. Note that Segment infers data types, but often can't if several data types are sent for a specific category.
 
 ### Tracking Plan Columns
 The Tracking Plan editor is organized as a spreadsheet to help you  add new events and properties, and edit the relevant fields for each. Like a spreadsheet, you can navigate across cells in a single event with your arrow keys and press enter to edit a cell.
 
-| Column Name  | Details   |
-| ------------ | --------- |
-| Name         | Specify the name of your event or property.   |
-| Description  | Enter a description for your event or property. These descriptions are helpful for both engineers instrumenting Segment and consumers of the data. |
-| Status       | Specify whether a property is required or optional. You can't require a `.track()` call because Segment is unable to verify when a `.track()` call should be fired. |
-| Data Type    | Specify the data type of the property. Data type options include `any, array, object, boolean, integer, number, string, Date time`. Note: Date time is required to be in ISO-8601 format |
+| Column Name      | Details                                                                                                                                                                                                                                                                        |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Name             | Specify the name of your event or property.                                                                                                                                                                                                                                    |
+| Description      | Enter a description for your event or property. These descriptions are helpful for both engineers instrumenting Segment and consumers of the data.                                                                                                                             |
+| Status           | Specify whether a property is required or optional. You can't require a `.track()` call because Segment is unable to verify when a `.track()` call should be fired.                                                                                                            |
+| Data Type        | Specify the data type of the property. Data type options include `any, array, object, boolean, integer, number, string, Date time`. Note: Date time is required to be in ISO-8601 format                                                                                       |
 | Permitted Values | Enter simple regular expressions to validate property values. This works when a property data type is set to `string`. For example, you can add pipe delimited strings to the regex column to generate violations when a property value does not match fall, winter or spring. |
 
 > info ""
@@ -150,7 +147,7 @@ To edit the common JSON schema:
 To edit the common JSON schema using the Config API, you'll need to add your new JSON schema under the `"global"`: object.
 
 > info ""
-> [Negative lookahead regexes (`?!`)](https://www.regular-expressions.info/lookaround.html) aren't supported. This means you can’t use regex to prevent matches with a specific following character or expression. But, you can use `not` in the regex of your JSON schema to generate violations when a property key or value doesn't match the provided regex pattern.
+> [Negative lookahead regexes (`?!`)](https://www.regular-expressions.info/lookaround.html) aren't supported. This means you can't use regex to prevent matches with a specific following character or expression. But, you can use `not` in the regex of your JSON schema to generate violations when a property key or value doesn't match the provided regex pattern.
 
 ### Extend the Tracking Plan
 Some customers prefer to manage the Tracking Plan with outside tools and resources. See the [APIs and extensions](/docs/protocols/apis-and-extensions/) section to learn more.

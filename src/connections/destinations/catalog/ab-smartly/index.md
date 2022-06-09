@@ -1,8 +1,7 @@
 ---
 title: AB Smartly Destination
+id: 605dd9d7e5ff0b3873e250a4
 ---
-
-
 [A/B Smartly](https://absmartly.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} provides an on-premise, full-stack experimentation platform for engineering and product teams that do continuous experimentation embedded into their development process. A/B Smartly's real-time analytics helps engineering and product teams ensure that new features will improve the customer experience without breaking or degrading performance and/or business metrics.
 
 This destination is maintained by A/B Smartly. For any issues with the destination, [contact A/B Smartly's Support](mailto:support@absmartly.com).
@@ -15,9 +14,9 @@ A/B Smartly works differently than other Segment destinations. Because A/B Smart
 
 A/B Smartly requires you to integrate the A/B Smartly SDKs natively, before the Segment snippet or implementation.
 
-Even though Segment maps `track`, and in some cases `page` and `screen` events to A/B Smartly’s `track` events, you must implement the snippet on your site to ensure that experiments run.
+Even though Segment maps `track`, and in some cases `page` and `screen` events to A/B Smartly's `track` events, you must implement the snippet on your site to ensure that experiments run.
 
-Segment provides specific implementation details for A/B Smartly in the sections below, in addition to details of the out-of-the-box mappings that Segment’s A/B Smartly integration handles transparently.
+Segment provides specific implementation details for A/B Smartly in the sections below, in addition to details of the out-of-the-box mappings that Segment's A/B Smartly integration handles transparently.
 
 ## Getting Started
 

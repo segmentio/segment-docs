@@ -2,8 +2,8 @@
 title: DoubleClick Floodlight Destination
 strat: google
 cmode-override: true
+id: 57ab9dfc80412f644ff2004c
 ---
-
 The [DoubleClick Floodlight](https://support.google.com/searchads/answer/7298761?hl=en) destination allows you to make calls directly to Floodlight based on your mapped events. All you have to do is enter your **DoubleClick Advertiser ID** in the Doubleclick Floodlight destinations settings in the Segment App, then map the Segment `track` events to their corresponding Floodlight tags.
 
 This destination _requires_ that you send device-specific information such as the `IDFA` or the `advertisingId`. The best way to send events to Doubleclick Floodlight from mobile devices is using [one of the Segment mobile libraries](/docs/connections/sources/catalog/#mobile), because they collect this information automatically. If you use [one of the Segment server source libraries](/docs/connections/sources/catalog/#server) instead, you must manually include the required `advertisingId`.  You can also send data from [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/) and Segment makes direct HTTP requests to Doubleclick Floodlight from your browser.
@@ -99,7 +99,7 @@ Click **Save**.
 
 ## COPPA Compliance
 
-DoubleClick Floodlight lets you set a parameter called `tag_for_child_directed_treatment` as either `0`, or `1` to mark a specific tag as coming from a user under the age of 13, under the [COPPA compliance privacy law](https://www.ftc.gov/news-events/media-resources/protecting-consumer-privacy/kids-privacy-coppa).
+DoubleClick Floodlight lets you set a parameter called `tag_for_child_directed_treatment` as either `0`, or `1` to mark a specific tag as coming from a user under the age of 13.
 
 If you want to set this flag, you can send an integration option namespaced as `coppaCompliant` with `true` or `false` (default):
 

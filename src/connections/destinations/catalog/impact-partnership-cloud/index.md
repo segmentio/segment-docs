@@ -1,8 +1,8 @@
 ---
 title: Impact Partnership Cloud Destination
 rewrite: true
+id: 5ed96e0b97e7ba0c0346cc04
 ---
-
 [Impact Partnership Cloud](https://impact.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) lets you expand your program and scale every type of partnership by managing the partnership lifecycle - from discovery, contracting and payments through tracking and optimization.
 
 This destination is maintained by Impact. For any issues with the destination, contact the [Impact Partnership Cloud team](https://app.impact.com/) or check out [Impact Partnership Cloud's documentation](https://app.impact.com/secure/agency/support/customer-support-portal-flow.ihtml?execution=e3s1).
@@ -19,7 +19,7 @@ This destination is maintained by Impact. For any issues with the destination, c
 
 ## Page
 
-If you aren’t familiar with the Segment Spec, take a look at the [Page method documentation](/docs/connections/spec/page/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](/docs/connections/spec/page/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.page("Home")
@@ -34,7 +34,7 @@ Read [Impact Partnership Cloud's documentation](https://impact-helpdesk.freshdes
 
 ## Screen
 
-If you aren’t familiar with the Segment Spec, take a look at the [Screen method documentation](/docs/connections/spec/screen/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Screen method documentation](/docs/connections/spec/screen/) to learn about what it does. An example call would look like:
 
 ```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -44,7 +44,7 @@ Segment sends Screen calls to Impact Partnership Cloud as a `Clicks` event if th
 
 ## Identify
 
-If you aren’t familiar with the Segment Spec, take a look at the [Identify method documentation](/docs/connections/spec/identify/) to learn more about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Identify method documentation](/docs/connections/spec/identify/) to learn more about what it does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -55,7 +55,7 @@ Segment sends Identify calls to Impact Partnership Cloud as a `Page Load` event 
 
 ## Track
 
-If you aren’t familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track/) to learn more about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track/) to learn more about what it does. An example call would look like:
 
 ```js
 analytics.track('Order Completed', {

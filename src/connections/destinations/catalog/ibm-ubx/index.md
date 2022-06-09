@@ -3,8 +3,8 @@ title: IBM Universal Behavior Exchange Destination
 rewrite: true
 beta: true
 hidden: true
+id: 5a3ab305a1e66e00017185f9
 ---
-
 [IBM's Universal Behavior Exchange (UBX)](https://www.ibm.com/support/knowledgecenter/en/SS9JVY/UBX/kc_welcome_UBX.html)
 is an API that allows users to share customer interactions, behaviors, and
 target audiences among IBM solutions and applications - including the *Watson

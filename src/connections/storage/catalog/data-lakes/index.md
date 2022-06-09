@@ -5,10 +5,10 @@ redirect_from: '/connections/destinations/catalog/data-lakes/'
 {% include content/plan-grid.md name="data-lakes" %}
 
 
-Segment Data Lakes provide a way to collect large quantities of data in a format that's optimized for targeted data science and data analytics workflows. You can read [more information about Data Lakes](/docs/connections/storage/data-lakes/) and learn [how they differ from Warehouses](/docs/connections/storage/data-lakes/comparison/) in our documentation.
+Segment Data Lakes provide a way to collect large quantities of data in a format that's optimized for targeted data science and data analytics workflows. You can read [more information about Data Lakes](/docs/connections/storage/data-lakes/) and learn [how they differ from Warehouses](/docs/connections/storage/data-lakes/comparison/) in Segment's Data Lakes documentation.
 
-> info ""
-> Segment Data Lakes is available to Business tier customers only.
+> note "Lake Formation"
+> You can also set up your Data Lakes using [Lake Formation](/docs/connections/storage/data-lakes/lake-formation/), a fully managed service built on top of the AWS Glue Data Catalog.
 
 ## Pre-Requisites
 
@@ -20,9 +20,9 @@ Before you set up Segment Data Lakes, you need the following resources:
 
 ## Step 1 - Set Up AWS Resources
 
-You can use the [open source Terraform module](https://github.com/segmentio/terraform-aws-data-lake) to automate much of the set up work to get Data Lakes up and running. If you’re familiar with Terraform, you can modify the module to meet your organization’s needs, however Segment guarantees support only for the template as provided. The Data Lakes set up uses Terraform v0.11+. To support more versions of Terraform, the aws provider must use v2, which is included in our example main.tf.
+You can use the [open source Terraform module](https://github.com/segmentio/terraform-aws-data-lake) to automate much of the set up work to get Data Lakes up and running. If you’re familiar with Terraform, you can modify the module to meet your organization’s needs, however Segment guarantees support only for the template as provided. The Data Lakes set up uses Terraform v0.12+. To support more versions of Terraform, the AWS provider must use v4, which is included in the example main.tf.
 
-You can also use our [manual set up instructions](/docs/connections/storage/data-lakes/data-lakes-manual-setup) to configure these AWS resources if you prefer.
+You can also use Segment's [manual set up instructions](/docs/connections/storage/data-lakes/data-lakes-manual-setup) to configure these AWS resources if you prefer.
 
 The Terraform module and manual set up instructions both provide a base level of permissions to Segment (for example, the correct IAM role to allow Segment to create Glue databases on your behalf). If you want stricter permissions, or other custom configurations, you can customize these manually.
 

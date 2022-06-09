@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: AdRoll Destination
+id: 54521fd525e721e32a72ee8e
 ---
-
 [AdRoll](https://adroll.com/) is a retargeting network that allows you to show ads to visitors who've landed on your site while browsing the web. The AdRoll Destination is open-source. You can browse the code on [GitHub](https://github.com/segment-integrations/analytics.js-integration-adroll).
 
 ## Getting Started

@@ -59,20 +59,9 @@ In addition to seeking independent legal advice regarding your obligations under
 
 ## Opting into the Data Processing Agreement and Standard Contractual Clauses
 
-Segment offers a Data Processing Agreement (DPA) and Standard Contractual Clauses (SCCs) as a means of meeting the regulatory contractual requirements of GDPR in our role as processor and also to address international data transfers.
+Segment offers a Data Processing Agreement (DPA) and Standard Contractual (SCCs) as a means of meeting contractual requirements of applicable data privacy laws and regulations, such as GDPR, and to address international data transfers. Segment’s online [Data Protection Addendum](https://www.twilio.com/legal/data-protection-addendum){:target="_blank"} (DPA) is already part of and incorporated into the [Terms of Service](https://www.twilio.com/legal/tos){:target="_blank"}. If you have a separate written agreement with Segment that does not include a Data Protection Addendum (DPA) or you would like to replace the existing Data Protection Addendum (DPA) that is attached to your separate written agreement with Segment’s latest Data Protection Addendum (DPA), please contact us at [privacy@twilio.com](mailto:privacy@twilio.com). 
+
+Segment offers a Data Processing Agreement (DPA) and Standard Contractual Clauses (SCCs) as a means of meeting the regulatory contractual requirements of GDPR in our role as processor and also to address international data transfers. 
 
 > note ""
 > **Note on Schrems II**: Despite the CJEU’s July 2020 ruling invalidating Privacy Shield as a means of validly transferring data to the USA from the EU, these developments are not expected to disrupt Segment’s ability to provide services to its EU customers as the European Court of Justice has reaffirmed that the Standard Contractual Clauses (SCC) remain valid as a method of transfer. Our standard Data Processing Agreement includes a provision whereby should Privacy Shield ever be invalidated (as is the case now) then the SCCs will automatically apply.
-
-To opt into the Data Processing Agreement and Standard Contractual Clauses:
-
-1.  Go to your [Workspace](https://app.segment.com).
-2.  Open the left side menu and select **Settings**.
-3.  Below **End User Privacy**, click **Privacy & Security.**
-4.  Below **Data Processing Agreement**, click **Review**.
-5.  Review and sign within Docusign.
-
-If you also wish to opt into the Standard Contractual Clauses:
-
-1.  Below **Standard Contractual Clauses**, click **Review**.
-2.  Review and sign within Docusign.

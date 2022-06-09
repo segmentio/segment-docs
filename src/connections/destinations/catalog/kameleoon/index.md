@@ -1,9 +1,9 @@
 ---
 title: Kameleoon Destination
 rewrite: true
+id: 609b99352cc613d05627620e
 ---
-
-[Kameleoon’s](https://kameleoon.com/en) powerful and easy-to-use A/B testing, full stack, and AI-powered personalization solutions help marketers, product owners, and developers maximize customer engagement and conversion all from a single platform.
+[Kameleoon's](https://kameleoon.com/en) powerful and easy-to-use A/B testing, full stack, and AI-powered personalization solutions help marketers, product owners, and developers maximize customer engagement and conversion all from a single platform.
 
 This destination is maintained by Kameleoon. For any issues with the destination, [contact the Kameleoon Support team](mailto:support@kameleoon.com).
 
@@ -12,7 +12,7 @@ This destination is maintained by Kameleoon. For any issues with the destination
 
 {% include content/connection-modes.md %}
 
-Segment’s Kameleoon destination supports the following Kameleoon products:
+Segment's Kameleoon destination supports the following Kameleoon products:
 * [Kameleoon Experiment](https://www.kameleoon.com/en/platform/ab-testing-client-side){:target="_blank"} (Web Client-side)
 * [Kameleoon Full Stack](https://www.kameleoon.com/en/platform/ab-testing-full-stack){:target="_blank"} (Web or mobile Apps, IoT..)
 * [Kameleoon AI Personalization](https://www.kameleoon.com/en/platform/personalization){:target="_blank"} (Web Client-side)

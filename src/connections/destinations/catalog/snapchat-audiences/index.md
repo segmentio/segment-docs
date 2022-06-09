@@ -1,5 +1,6 @@
 ---
 title: Snapchat Audience Destination
+id: 5f289f7639d45a397a1fb880
 ---
 The [Snapchat Ads](https://forbusiness.snapchat.com/advertising/targeting) product provides a way to target advertisements to a global audience and drive meaningful results.
 
@@ -38,7 +39,7 @@ The Snapchat Audiences destination syncs audience data from Segment Personas to 
    4. Click the destination and confirm the identifier: `Email`, `Phone`, or `Mobile ID`. Click **Save**.
 
       - Segment sends hashed `email` or `idfa` values to Snapchat so that they can match those identifiers against Snapchat users.
-      - Segment also supports `phoneNumber` if it is present on the user’s profile. Please make sure you pass phone numbers in a format that Snapchat supports. Read more in Snapchat’s documentation regarding [Normalizing and Hashing](https://developers.snapchat.com/api/docs/#normalizing-hashing).
+      - Segment also supports `phoneNumber` if it is present on the user's profile. Please make sure you pass phone numbers in a format that Snapchat supports. Read more in Snapchat's documentation regarding [Normalizing and Hashing](https://developers.snapchat.com/api/docs/#normalizing-hashing).
 
          **NOTE**: [Protocols](/docs/protocols) customers can use [Transformations](/docs/protocols/transform/) to change `phoneNumber` values to meet Snapchat's requirements.
 
@@ -51,10 +52,10 @@ The initial synchronization of audience data may take several hours, depending o
 ### I'm passing phone number as the identifier to Snapchat, why doesn't the audience populate?
 
 Verify the following:
-- You’re collecting user phone numbers when users are added to the Personas Audience, and that you have configured the destination to send `Phone`.
-- You’re collecting phone numbers in a format that Snapchat supports. For more information, see Snapchat’s documentation regarding [Normalizing and Hashing](https://developers.snapchat.com/api/docs/#normalizing-hashing).
+- You're collecting user phone numbers when users are added to the Personas Audience, and that you have configured the destination to send `Phone`.
+- You're collecting phone numbers in a format that Snapchat supports. For more information, see Snapchat's documentation regarding [Normalizing and Hashing](https://developers.snapchat.com/api/docs/#normalizing-hashing).
 
-### Why can’t I select our Ads Account during the destination setup?
+### Why can't I select our Ads Account during the destination setup?
 
 Ensure the following criteria are met:
 

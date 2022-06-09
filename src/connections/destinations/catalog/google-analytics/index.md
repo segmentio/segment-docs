@@ -4,8 +4,8 @@ strat: google
 hide-dossier: false
 redirect_from:
   - '/connections/destinations/catalog/google-universal-analytics'
+id: 54521fd725e721e32a72eebb
 ---
-
 > warning "Migrate mobile implementations to Firebase"
 > Google ended support for Google Analytics classic on iOS and Android mobile apps on October 31st 2019. To continue measuring and optimizing user engagement in your mobile apps, [migrate your implementation to use the Firebase SDKs](migrating). If you are using Google Analytics 360 you do not need to migrate.
 
@@ -195,6 +195,8 @@ For this example these event attributes are sent to Google Universal Analytics:
 | **Event Category** | All       |
 | **Event Action**   | Logged In |
 
+> info ""
+> **Note**: In device-mode only, if you pass `category` to the [`page`](/docs/connections/destinations/catalog/google-analytics/#page-and-screen) call, Segment will use the `category` from `page` instead of setting default **Event Category** to `All`.
 
 And another Track call example, this time with all Google Universal Analytics event parameters:
 
@@ -512,7 +514,7 @@ analytics.track('Order Refunded', {
   });
 ```
 
-For partial refunds, you must include the `productId` and quantity for the items refunded:
+For partial refunds, you must include the `order_id` as well as the `productId` and `quantity` for the items refunded:
 
 ```js
 analytics.track('Order Refunded', {
@@ -745,7 +747,7 @@ This source can be your server-side source. From there, its easy to send data to
 
 ### Consent Mode
 
-Segment does not support Google’s [Consent Mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} feature. Consent Mode enables you to adjust how Google’s tags load on your site, based on whether users consent to your use of cookies. This feature requires Google’s gtag.js library, and does not work when you use Segment’s Google Universal Analytics destination, because it loads [Google’s analytics.js library](https://support.google.com/analytics/answer/7476135?hl=en#zippy=%2Cin-this-article){:target="blank"} instead of the gtag.js library. As an alternative, you can use Segment’s [Consent Manager](https://github.com/segmentio/consent-manager){:target="blank"} .
+Segment does not support Google's [Consent Mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} feature. Consent Mode enables you to adjust how Google's tags load on your site, based on whether users consent to your use of cookies. This feature requires Google's gtag.js library, and does not work when you use Segment's Google Universal Analytics destination, because it loads [Google's analytics.js library](https://support.google.com/analytics/answer/7476135?hl=en#zippy=%2Cin-this-article){:target="blank"} instead of the gtag.js library. As an alternative, you can use Segment's [Consent Manager](https://github.com/segmentio/consent-manager){:target="blank"} .
 
 ### Cookie Domain Name
 

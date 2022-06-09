@@ -1,8 +1,8 @@
 ---
 title: Marketo V2 Destination
 strat: adobe
+id: 58f8f55a70a3e552b955a444
 ---
-
 ## Getting Started
 
 To start sending data to Marketo, there are two things you must do. **Both of these steps require that you to log in with the Admin Marketo Account.**

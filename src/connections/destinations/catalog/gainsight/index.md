@@ -1,8 +1,8 @@
 ---
 title: Gainsight Destination
 rewrite: true
+id: 54521fd625e721e32a72eeb5
 ---
-
 [Gainsight](https://www.gainsight.com/) is a customer success software that empowers companies to increase revenue, decrease customer churn, and drive advocacy. Gainsight for Analytics Cloud is the first and only solution that runs predictive data science natively using Salesforce sales, service, marketing, and community data.
 
 

@@ -3,8 +3,8 @@ title: Analytics for Clojure
 sourceTitle: 'Clojure'
 sourceCategory: 'Server'
 shortName: 'clojure'
+id: B6L7qzHmhI
 ---
-
 The clojure library lets you record analytics data from your clojure code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
 
 The library is open-source and was contributed by the very awesome [CircleCI](https://circleci.com/), thanks! You can [check it out on GitHub](https://github.com/circleci/analytics-clj). The clojure library is a wrapper around our [Java library](https://github.com/segmentio/analytics-java).

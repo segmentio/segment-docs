@@ -1,7 +1,7 @@
 ---
 title: LinkedIn Insight Tag Destination
+id: 59526b3170a3e552b957552b
 ---
-
 ## Getting Started
 
 When you enable the LinkedIn Insight Tag destination in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading LinkedIn Insight Tag's tracking snippet on your page.

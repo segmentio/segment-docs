@@ -1,8 +1,8 @@
 ---
 title: Bugsnag Destination
 rewrite: true
+id: 54521fd525e721e32a72ee9b
 ---
-
 [Bugsnag](https://docs.bugsnag.com/api/data-access/) helps you detect and diagnose crashes in your application. Depending on the data you provide, Bugsnag can filter errors based on user name, user email, timeline, release stages, paying user status, and more.
 
 At the moment, we support the following integrations:

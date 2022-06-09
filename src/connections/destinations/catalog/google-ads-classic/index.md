@@ -3,9 +3,9 @@ title: Google Ads (Classic) Destination
 redirect_from: '/connections/destinations/catalog/adwords/'
 strat: google
 hide-personas-partial: true
-cmode-override: true 
+cmode-override: true
+id: 54521fd525e721e32a72ee92
 ---
-
 > info ""
 > The Google Ads (Classic) destination code is available on GitHub [here](https://github.com/segment-integrations/analytics.js-integration-adwords){:target="_blank"}.
 
@@ -32,7 +32,7 @@ This section details the configuration of the Google Ads (Classic) destination w
 
 ### Additional iOS Cloud Mode Setup for iOS 14
 
-With the release of Segment’s latest Analytics-iOS SDK, which includes support for upcoming iOS 14 tracking changes, you must decide if you _need_ to collect the user's IDFA or not. If you do not need to collect IDFA, you can update your Analytics-iOS SDK to the next version, and Segment sets `device.adTrackingEnabled` to `false`, and starts deleting the `device.advertisingId` from the context object in your payloads. If you _do_ need to collect the IDFA, you must import the IDFA closure as a config to the library, or import the Ad Tracking Transparency framework from Apple.
+With the release of Segment's latest Analytics-iOS SDK, which includes support for upcoming iOS 14 tracking changes, you must decide if you _need_ to collect the user's IDFA or not. If you do not need to collect IDFA, you can update your Analytics-iOS SDK to the next version, and Segment sets `device.adTrackingEnabled` to `false`, and starts deleting the `device.advertisingId` from the context object in your payloads. If you _do_ need to collect the IDFA, you must import the IDFA closure as a config to the library, or import the Ad Tracking Transparency framework from Apple.
 
 Google Adwords maps the IDFA to `rdid`, and returns a 4xx error on the outbound request if no `device.advertisingId` key appears in the payload.
 

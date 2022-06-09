@@ -279,7 +279,7 @@ items:
     slug: foursquare-pilgrim
     name: catalog/sources/foursquare-pilgrim
     description: >-
-      Foursquare provides real-time event triggering based upon your users’
+      Foursquare provides real-time event triggering based upon your users'
       location in the physical world, allowing you to harness our powerful
       geotargeting capabilities to send those events to other services via
       Segment.
@@ -843,7 +843,7 @@ items:
     slug: stripe
     name: catalog/sources/stripe
     description: >-
-      Once you have successfully OAuth’d into Stripe, we will begin syncing
+      Once you have successfully OAuth'd into Stripe, we will begin syncing
       Stripe objects (and their corresponding properties) to any databases you
       have turned on (to turn on a database, navigate to the database tab in the
       navigation pane on the left).
@@ -937,7 +937,7 @@ items:
 
 
       These objects will be written into a separate schema, corresponding to
-      your project’s name.
+      your project's name.
 
 
       Zendesk data will reflect the state of the object at the time of the sync:

@@ -2,6 +2,7 @@
 title: Scuba Analytics Destination
 rewrite: true
 redirect_from: '/connections/destinations/catalog/interana/'
+id: 5d098d7fd748d200010cd081
 ---
 [Scuba Analytics's](https://www.scuba.io/){:target="_blank"} full stack solution allows you to visually explore trillions of data points from multiple data sets all in real time without the need for ETL, data aggregation, or writing any SQL.
 

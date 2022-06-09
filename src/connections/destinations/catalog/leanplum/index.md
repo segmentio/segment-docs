@@ -1,8 +1,8 @@
 ---
 title: Leanplum Destination
 rewrite: true
+id: 54521fd925e721e32a72eece
 ---
-
 [Leanplum](https://www.leanplum.com/) helps mobile teams orchestrate multi-channel campaigns — from messaging to the in-app experience — all from a single mobile marketing platform.
 
 > success ""

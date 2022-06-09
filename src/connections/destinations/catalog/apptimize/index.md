@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: Apptimize Destination
+id: 5537d3e80a20f4e22f0fb385
 ---
 [Apptimize](https://apptimize.com/) empowers product teams to efficiently run A/B tests, rollout and manage new features, and deliver personalized user experiences. Our Apptimize destination code is open-source. You can browse the code on GitHub for [iOS](https://github.com/Apptimize/analytics-ios-integration-apptimize) and [Android](https://github.com/Apptimize/analytics-android-integration-apptimize).
 

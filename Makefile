@@ -62,12 +62,12 @@ catalog: catalog-papi
 # uses the old configapi
 .PHONY: capi
 capi: vendor/bundle
-	@node scripts/catalog-capi.js
+	@node scripts/catalog_capi.js
 
 # shorter alias
 .PHONY: catalog-capi
 catalog-capi: vendor/bundle
-	@node scripts/catalog-capi.js
+	@node scripts/catalog_capi.js
 
 # uses the new public api
 .PHONY: catalog-papi
@@ -81,7 +81,7 @@ papi: vendor/bundle
 
 # make the list of beta connections
 .PHONY: beta
-beta: vendor/bundle
+beta:
 	@node scripts/beta.js
 
 .PHONY: changelog
@@ -150,7 +150,14 @@ vendor/bundle:
 	@bundle config set --local path 'vendor/bundle'
 	@bundle install
 
+.PHONY: update
+update: 
+	@node scripts/update.js
 
+.PHONY: add-id
+add-id:
+	@node scripts/add_id.js
+	
 .PHONY: lint
 lint: node_modules
 	@echo "Checking yml files..."

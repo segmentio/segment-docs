@@ -1,8 +1,8 @@
 ---
 beta: true
 title: Tractionboard Destination
+id: 569007b3e954a874ca44cd4e
 ---
-
 ## Getting Started
 
 Once the Segment library is integrated in your app, toggle Tractionboard on in your Segment destinations, and add your Segment Token ID which you can find in the Tractionboard Dashboard, under the Settings > Integrations.

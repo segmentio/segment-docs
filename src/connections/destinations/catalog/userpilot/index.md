@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: Userpilot
+id: 5ca9d0c1b7119500014381d3
 ---
 [Userpilot](https://userpilot.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps product teams increase user adoption by allowing them to trigger highly personalized onboarding experiences across the user journey. The Segment integration will help you install and send data to Userpilot without added development time.
 

@@ -1,8 +1,8 @@
 ---
 title: Stripe Source
 rewrite: true
+id: 1bow82lmk
 ---
-
 {% include content/source-region-unsupported.md %}
 
 [Stripe](https://stripe.com/about) builds economic infrastructure for the internet, that enables businesses of every size to accept payments and manage their businesses online.
@@ -48,13 +48,13 @@ Collections are the groupings of resources we pull from your source. In your war
 | `invoice_items`                   | object | Sometimes you want to add a charge or credit to a customer but only actually charge the customer's card at the end of a regular billing cycle. This is useful for combining several charges to minimize per-transaction fees or having Stripe tabulate your usage-based billing totals. For more information, see [Stripe's API docs](https://stripe.com/docs/api#invoiceitems)                                      |
 | `invoice_lines`                   | object | When retrieving an invoice, you'll get a lines property containing the total count of line items and the first handful of those items For more information, see [Stripe's API docs](https://stripe.com/docs/api#invoice_lines)                                                                                                                                                                                       |
 | `invoices`                        | object | Invoices are statements of what a customer owes for a particular billing period, including subscriptions, invoice items, and any automatic proration adjustments if necessary. For more information, see [Stripe's API docs](https://stripe.com/docs/api#invoices)                                                                                                                                                   |
-| `order_shipping_methods`          | object | A list of supported shipping methods for a given product. For more information, see [Stripe's API docs](https://stripe.com/docs/api/orders/object#order_object-shipping_methods)                                                                                                                                                                                                                                     |
+| `order_shipping_methods`          | object | A list of supported shipping methods for a given product.                                                                                                                                                                                                                                                                                                                                                            |
 | `payment_intents`                 | object | A PaymentIntent tracks the process of collecting a payment from your customer. A PaymentIntent transitions through multiple statuse throughout its lifetime and ultimately creates at most one successful charge. For more information, see [Stripe's API docs](https://stripe.com/docs/api/payment_intents)                                                                                                         |
 | `payment_methods`                 | object | PaymentMethod objects represent your customer's payment instruments. They can be used with [PaymentIntents](https://stripe.com/docs/payments/payment-intents) to collect payments or saved to Customer objects to store instrument details for future payments. For more information, see [Stripe's API docs](https://stripe.com/docs/payments/payment-methods)                                                      |
 | `plans`                           | object | A subscription plan contains the pricing information for different products and feature levels on your site. For more information, see [Stripe's API docs](https://stripe.com/docs/api#plans)                                                                                                                                                                                                                        |
 | `products`                        | object | A specific good or service you make available for your customers to purchase. For more information, see [Stripe's API docs](https://stripe.com/docs/api/products).                                                                                                                                                                                                                                                   |
 | `refunds`                         | object | Refund objects allow you to refund a charge that has previously been created but not yet refunded. Funds will be refunded to the credit or debit card that was originally charged. The fees you were originally charged are also refunded. For more information, see [Stripe's API docs](https://stripe.com/docs/api#refunds)                                                                                        |
-| `skus`                            | object | A specific variant of a product. For more information, see [Stripe's API docs](https://stripe.com/docs/api/skus).                                                                                                                                                                                                                                                                                                    |
+| `skus`                            | object | A specific variant of a product. .                                                                                                                                                                                                                                                                                                                                                                                   |
 | `subscription_items`              | object | Subscription items allow you to create customer subscriptions with more than one plan, making it easy to represent complex billing relationships. For more information, see [Stripe's API docs](https://stripe.com/docs/api/subscription_items).                                                                                                                                                                     |
 | `subscriptions`                   | object | Subscriptions allow you to charge a customer's card on a recurring basis. A subscription ties a customer to a particular plan you've created. For more information, see [Stripe's API docs](https://stripe.com/docs/api#subscriptions)                                                                                                                                                                               |
 | `transfer_reversals`              | object | A previously created transfer can be reversed if it has not yet been paid out. Funds will be refunded to your available balance, and the fees you were originally charged on the transfer will be refunded. You may not reverse automatic Stripe transfers. For more information, see [Stripe's API docs](https://stripe.com/docs/api#transfer_reversals)                                                            |
@@ -339,16 +339,16 @@ Segment flattens Stripe's Evidence and Evidence Details objects. See Stripe's [D
 
 ### order_shipping_methods
 
-Segment flattens Stripe's Delivery Estimate object. See Stripe's [Shipping Methods](https://stripe.com/docs/api/orders_legacy/object#order_legacy_object-shipping_methods) documentation for more detail. 
+Segment flattens Stripe's Delivery Estimate object.
 
-| Property Name        | Description                                                                                                                                                                                                                              |
-| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `amount`             | The total amount of the line item, represented in the smallest currency unit                                                                                                                                                             |
-| `currency`           | Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase.                                                                                                                                        |
-| `delivery_estimate_` | The estimated delivery date for a given shipping method, as described in Stripe's [Delivery Estimate](https://stripe.com/docs/api/orders_legacy/object#order_legacy_object-shipping_methods). For example, `delivery_estimate_date`. |
-| `description`        | An arbitrary string attached to the object                                                                                                                                                                                               |
-| `order_id`           | The identifier of the order associated with the shipping method                                                                                                                                                                          |
-| `shipping_id`        | A unique identifer for a given shipping method                                                                                                                                                                                           |
+| Property Name        | Description                                                                                       |
+| -------------------- | ------------------------------------------------------------------------------------------------- |
+| `amount`             | The total amount of the line item, represented in the smallest currency unit                      |
+| `currency`           | Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. |
+| `delivery_estimate_` | The estimated delivery date for a given shipping method. For example, `delivery_estimate_date`.   |
+| `description`        | An arbitrary string attached to the object                                                        |
+| `order_id`           | The identifier of the order associated with the shipping method                                   |
+| `shipping_id`        | A unique identifer for a given shipping method                                                    |
 
 ### payment_intents
 
@@ -452,23 +452,23 @@ Segment flattens Stripe's `package_dimensions` object. See Stripe's [Products](h
 
 ### skus
 
-Segment flattens Stripes `inventory`, `package_dimensions` objects. See Stripe's [SKU](https://stripe.com/docs/api/skus/object) documentation for more information.
+Segment flattens Stripes `inventory`, `package_dimensions` objects.
 
-| Property Name         | Description                                                                                                                                                                                              |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `active`              | Whether the SKU is available for purchase                                                                                                                                                                |
-| `attributes_`         | A dictionary of attributes and values defined by the product                                                                                                                                             |
-| `created`             | Time at which the object was created. Measured in seconds since the Unix epoch                                                                                                                           |
-| `currency`            | Three-letter ISO currency code, in lowercase                                                                                                                                                             |
-| `image`               | The URL of an image for this SKU                                                                                                                                                                         |
-| `inventory_`          | A description of the SKU's inventory, as described in Stripe's [documentation](https://stripe.com/docs/api/skus/object#sku_object-inventory). For example, `inventory_quantity`.                         |
-| `is_deleted`          | Whether the object is active or has been deleted                                                                                                                                                         |
-| `livemode`            | Whether the object exist in live mode or test mode                                                                                                                                                       |
-| `metadata`            | A set of key-value pairs that describe additional information about the object                                                                                                                           |
-| `package_dimensions_` | The dimensions of a SKU's package dimensions, as described in Stripe's [documentation](https://stripe.com/docs/api/skus/object#sku_object-package_dimensions). For example, `package_dimensions_height`. |
-| `price`               | The cost of the item in the smallest currency unit                                                                                                                                                       |
-| `product_id`          | The ID of the product this SKU is associated with                                                                                                                                                        |
-| `updated`             | Time at which the object was last updated. Measured in seconds since the Unix epoch                                                                                                                      |
+| Property Name         | Description                                                                             |
+| --------------------- | --------------------------------------------------------------------------------------- |
+| `active`              | Whether the SKU is available for purchase                                               |
+| `attributes_`         | A dictionary of attributes and values defined by the product                            |
+| `created`             | Time at which the object was created. Measured in seconds since the Unix epoch          |
+| `currency`            | Three-letter ISO currency code, in lowercase                                            |
+| `image`               | The URL of an image for this SKU                                                        |
+| `inventory_`          | A description of the SKU's inventory. For example, `inventory_quantity`.                |
+| `is_deleted`          | Whether the object is active or has been deleted                                        |
+| `livemode`            | Whether the object exist in live mode or test mode                                      |
+| `metadata`            | A set of key-value pairs that describe additional information about the object          |
+| `package_dimensions_` | The dimensions of a SKU's package dimensions. For example, `package_dimensions_height`. |
+| `price`               | The cost of the item in the smallest currency unit                                      |
+| `product_id`          | The ID of the product this SKU is associated with                                       |
+| `updated`             | Time at which the object was last updated. Measured in seconds since the Unix epoch     |
 
 ### subscriptions
 

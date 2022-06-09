@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: trackJs Destination
+id: 54521fdb25e721e32a72eef9
 ---
 [Track JS](https://trackjs.com/) monitors your web applications for JavaScript errors, alerting you with amazing context about how the user, application, and network got into trouble. The `analytics.js` trackJs Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/trackjs).
 

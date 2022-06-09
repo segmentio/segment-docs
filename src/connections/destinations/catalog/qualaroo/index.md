@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Qualaroo Destination
+id: 54521fda25e721e32a72eee8
 ---
-
 [Qualaroo](https://qualaroo.com/home) is a user testing tool that lets you add a survey to any page on your site, so you can get targeted user feedback as the user is performing a task. The `analytics.js` Qualaroo Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-qualaroo).
 
 ## Getting Started

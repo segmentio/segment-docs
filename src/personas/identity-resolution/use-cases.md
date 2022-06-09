@@ -21,7 +21,7 @@ By tracking a user's activity across all platforms, brands will be able to more 
 For example, a user who adds a product to a cart on the iPhone app but completes the checkout on the Android app should not be targeted with abandoned cart push notifications on the iPhone app.
 
 ## Cross-App Identification
-A company’s product ecosystem may also spread out across multiple apps.
+A company's product ecosystem may also spread out across multiple apps.
 
 If a company needs to understand a user's activity across all apps, we recommend connecting all sources to the same Personas space. This will give a comprehensive view of a user's activity across the entire app ecosystem.
 

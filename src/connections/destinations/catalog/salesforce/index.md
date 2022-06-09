@@ -1,12 +1,16 @@
 ---
 title: Salesforce Destination
 strat: salesforce
+id: 54521fda25e721e32a72eeef
 ---
 
-> info ""
-> Segment is aware of Salesforce's plans to enforce multi-factor authentication in 2022, and is evaluating solutions to ensure uninterrupted connectivity with your Salesforce account.
-
 Segment's Salesforce destination allows you to identify leads without using SOAP APIs.
+
+> info ""
+> Segment is aware of Salesforce's plans to enforce multi-factor authentication in 2022, and advises migrating to our new [Salesforce (Actions) destination](/docs/connections/destinations/catalog/actions-salesforce/) which supports OAuth 2.0.
+
+> success "Good to know"
+> This page is about the classic Salesforce Segment destination. There's also a page about the new [Salesforce (Actions) destination](/docs/connections/destinations/catalog/actions-salesforce/). Both of these destinations receive data _from_ Segment. Use the new Salesforce (Actions) destination for additional functionality and flexibility.
 
 ### API Access
 
@@ -27,7 +31,7 @@ This destination supports the most important pain point for Salesforce users: ge
 
 ### Identifying a Lead
 
-Let's go through a quick javascript example of identifying a lead:
+The example below demonstrates identifying a lead:
 
 ```javascript
 analytics.identify('YOUR_USERS_ID', {
@@ -91,7 +95,7 @@ By default Segment does not send identify calls to Salesforce, given their stric
 
 ## Group
 
-`.group()` calls create or update **Account Objects** inside Salesforce. When Segment receives a group call, similar to the `.identify()` call, it first checks using the `groupId` to see if the Account Object already exists in your Salesforce account. Depending on the response, Segment updates that object or create a new one. Creating/updating Accounts is the default behavior of `group` events. If you would like to customize this you can do so using [Actions](#custom-actions)
+`.group()` calls create or update **Account Objects** inside Salesforce. When Segment receives a group call, similar to the `.identify()` call, it first checks using the `groupId` to see if the Account Object already exists in your Salesforce account. Depending on the response, Segment updates that object or create a new one. Creating/updating Accounts is the default behavior of `group` events.
 
 Take this sample `.group()` call that you might send to Segment:
 

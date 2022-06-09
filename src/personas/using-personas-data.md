@@ -61,7 +61,7 @@ Some Destinations, such as Salesforce Marketing Cloud have both “event” and 
 
 ### Event Destinations
 
-<!-- TODO: add link when we have a real chartHere’s a list of [Chart of Personas Event Destinations](/docs/connections/destinations/cmodes-compare/) -->
+<!-- TODO: add link when we have a real chartHere's a list of [Chart of Personas Event Destinations](/docs/connections/destinations/cmodes-compare/) -->
 
 **Event Destinations and Computed traits**
 Computed traits can only be sent to Event destinations.
@@ -69,17 +69,17 @@ When Personas sends a computed trait to an Event destination, it uses an identif
 
 **Event Destinations and Audiences**
 
-- **`identify` call as a user trait**. When you use identify calls, the trait name is the snake_cased version of the audience name you provided, and the value is “true” if the user is part of the audience. For example, when a user first completes an order in the last 30 days, Segment sends an identify call with the property `order_completed_last_30days: true`, and when this user no longer satisfies that criteria (for example if 30 days elapses and they haven’t completed another order), Segment sets that value to `false`.
+- **`identify` call as a user trait**. When you use identify calls, the trait name is the snake_cased version of the audience name you provided, and the value is “true” if the user is part of the audience. For example, when a user first completes an order in the last 30 days, Segment sends an identify call with the property `order_completed_last_30days: true`, and when this user no longer satisfies that criteria (for example if 30 days elapses and they haven't completed another order), Segment sets that value to `false`.
 - **`track` call as two events**: `Audience Entered` and `Audience Exited`, with the event property `order_completed_last_30days` equal to true and false, respectively.
 
 Segment sends an identify or track call for every user in the audience when the audience is first created. Later syncs only send updates for those users who were added or removed from the audience since the last sync.
 
-Most destinations require that you configure a column in your schema to receive the audience data, however, some destinations (like Braze and Iterable) allow you to send audiences without doing this. This depends on the individual destination, so consult the destination’s documentation for details.
+Most destinations require that you configure a column in your schema to receive the audience data, however, some destinations (like Braze and Iterable) allow you to send audiences without doing this. This depends on the individual destination, so consult the destination's documentation for details.
 
 
 ### List Destinations
 
-<!-- TODO: add link when we have a real chart Here’s a list of List Destinations: [Chart of Personas List Destinations](/docs/connections/destinations/cmodes-compare/)-->
+<!-- TODO: add link when we have a real chart Here's a list of List Destinations: [Chart of Personas List Destinations](/docs/connections/destinations/cmodes-compare/)-->
 
 List destinations can only receive Audiences, and cannot receive computed traits.
 
@@ -93,7 +93,7 @@ User-list destinations can have individual limits on how often Segment can sync 
 
 ## What do the payloads look like for Personas data?
 
-The payloads sent from your Personas space to your destinations will be different depending on if you configured the destination to receive identify or track calls, and whether the payload is coming from a computed trait or audience. As a reminder, identify calls usually update a trait on a user profile or table, whereas track calls send a point-in-time event that can be used as a campaign trigger or a detailed record of when a user’s audience membership or computed trait value was calculated.
+The payloads sent from your Personas space to your destinations will be different depending on if you configured the destination to receive identify or track calls, and whether the payload is coming from a computed trait or audience. As a reminder, identify calls usually update a trait on a user profile or table, whereas track calls send a point-in-time event that can be used as a campaign trigger or a detailed record of when a user's audience membership or computed trait value was calculated.
 
 ### Computed Trait Generated Events
 
@@ -180,7 +180,7 @@ The first is when the value of the trait or audience changes.
 
 The second, less common case is that Personas re-syncs an audience or computed trait when a new `external_id` is added to a profile. For example, an ecommerce company has an anonymous visitor with a computed trait called `last_viewed_category = 'Shoes'`. That visitor then creates an account and an email address is added to that profile, even though the computed trait value has not changed. When that email address is added to the profile, Personas re-syncs the computed trait that includes an email to downstream tools. This allows the ecommerce company to start personalizaing the user's experience from a more complete profile.
 
-If this behavior, re-syncing a computed trait or audience when the underlying trait or audience value hasn’t changed, is not the desired in your system, [contact us](https://segment.com/help/contact/).
+If this behavior, re-syncing a computed trait or audience when the underlying trait or audience value hasn't changed, is not the desired in your system, [contact us](https://segment.com/help/contact/).
 
 
 ## Rate Limits on Personas Event Destinations
@@ -218,17 +218,17 @@ For additional information on Destination-specific rate limits, check the docume
 When you create a new Computed Trait or Audience in Personas, you can choose to calculate it either using all the available historical data from your Segment implementation, or only using data that arrives after you set up the trait or audience. By default, Segment opts to include historical data. Afterwards, Segment only sends updates to that destination.
 
 > success ""
-> **Why would I disable historical data?** You might want to disable historical data if you're sending a triggered campaign. For example, if you want to send an email confirming a purchase, you _probably_ don’t want to email users who bought something months ago, but you *do* want to target current users as they make purchases (and thus enter the audience).
+> **Why would I disable historical data?** You might want to disable historical data if you're sending a triggered campaign. For example, if you want to send an email confirming a purchase, you _probably_ don't want to email users who bought something months ago, but you *do* want to target current users as they make purchases (and thus enter the audience).
 
 **Note**: The Personas Facebook Custom Audiences Website destination does not accept historical data, and so only uses data from after the moment you configure it.
 
 ## Personas Compatible Destinations: Event Type
 
 - [ActiveCampaign](/docs/connections/destinations/catalog/activecampaign/)
-- [AdWords Remarketing Lists (Customer Match)](/docs/connections/destinations/catalog/adwords-remarketing-lists/)
 - [Adjust](/docs/connections/destinations/catalog/adjust/)
 - [Adobe Analytics](/docs/connections/destinations/catalog/adobe-analytics/)
 - [Adtriba](/docs/connections/destinations/catalog/adtriba/)
+- [AdWords Remarketing Lists (Customer Match)](/docs/connections/destinations/catalog/adwords-remarketing-lists/)
 - [Airship](/docs/connections/destinations/catalog/airship/)
 - [Amazon EventBridge](/docs/connections/destinations/catalog/amazon-eventbridge/)
 - [Amazon Kinesis Firehose](/docs/connections/destinations/catalog/amazon-kinesis-firehose/)
@@ -253,27 +253,29 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [Castle](/docs/connections/destinations/catalog/castle/)
 - [Chameleon](/docs/connections/destinations/catalog/chameleon/)
 - [ChurnZero](/docs/connections/destinations/catalog/churnzero/)
-- [ClearBrain](/docs/connections/destinations/catalog/clearbrain/)
 - [Clearbit Enrichment](/docs/connections/destinations/catalog/clearbit-enrichment/)
 - [Clearbit Reveal](/docs/connections/destinations/catalog/clearbit-reveal/)
+- [ClearBrain](/docs/connections/destinations/catalog/clearbrain/)
 - [CleverTap](/docs/connections/destinations/catalog/clevertap/)
 - [ClientSuccess](/docs/connections/destinations/catalog/clientsuccess/)
 - [Convertro](/docs/connections/destinations/catalog/convertro/)
+- [Courier](/docs/connections/destinations/catalog/courier/)
 - [Criteo](/docs/connections/destinations/catalog/criteo/)
 - [Cruncher](/docs/connections/destinations/catalog/cruncher/)
 - [Custify](/docs/connections/destinations/catalog/custify/)
-- [CustomFit.ai](/docs/connections/destinations/catalog/customfit-ai/)
 - [Customer.io](/docs/connections/destinations/catalog/customer-io/)
 - [CustomerSuccessBox](/docs/connections/destinations/catalog/customersuccessbox/)
+- [CustomFit.ai](/docs/connections/destinations/catalog/customfit-ai/)
 - [Delighted](/docs/connections/destinations/catalog/delighted/)
 - [DoubleClick Floodlight](/docs/connections/destinations/catalog/doubleclick-floodlight/)
 - [Dreamdata IO](/docs/connections/destinations/catalog/dreamdata-io/)
 - [Drift](/docs/connections/destinations/catalog/drift/)
 - [Drip](/docs/connections/destinations/catalog/drip/)
-- [EMMA](/docs/connections/destinations/catalog/emma/)
-- [EPICA](/docs/connections/destinations/catalog/epica/)
 - [Eloqua](/docs/connections/destinations/catalog/eloqua/)
 - [Emarsys](/docs/connections/destinations/catalog/emarsys/)
+- [EMMA](/docs/connections/destinations/catalog/emma/)
+- [EPICA](/docs/connections/destinations/catalog/epica/)
+- [Experiments by Growthhackers](/docs/connections/destinations/catalog/experiments-by-growthhackers/)
 - [Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)
 - [Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)
 - [FactorsAI](/docs/connections/destinations/catalog/factorsai/)
@@ -282,25 +284,26 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [FunnelEnvy](/docs/connections/destinations/catalog/funnelenvy/)
 - [FunnelFox](/docs/connections/destinations/catalog/funnelfox/)
 - [Gainsight](/docs/connections/destinations/catalog/gainsight/)
-- [GoSquared](/docs/connections/destinations/catalog/gosquared/)
 - [Google Ads (Classic)](/docs/connections/destinations/catalog/adwords/)
 - [Google Analytics](/docs/connections/destinations/catalog/google-analytics/)
 - [Google Cloud Function](/docs/connections/destinations/catalog/google-cloud-function/)
 - [Google Cloud PubSub](/docs/connections/destinations/catalog/google-cloud-pubsub/)
+- [GoSquared](/docs/connections/destinations/catalog/gosquared/)
 - [HasOffers](/docs/connections/destinations/catalog/hasoffers/)
 - [Heap](/docs/connections/destinations/catalog/heap/)
 - [Help Scout](/docs/connections/destinations/catalog/help-scout/)
 - [HubSpot](/docs/connections/destinations/catalog/hubspot/)
 - [Hull](/docs/connections/destinations/catalog/hull/)
+- [hydra](/docs/connections/destinations/catalog/hydra/)
 - [IBM UBX](/docs/connections/destinations/catalog/ibm-ubx/)
 - [Indicative](/docs/connections/destinations/catalog/indicative/)
 - [Intellimize](/docs/connections/destinations/catalog/intellimize/)
 - [Intercom](/docs/connections/destinations/catalog/intercom/)
 - [Iron.io](/docs/connections/destinations/catalog/iron-io/)
 - [Iterable](/docs/connections/destinations/catalog/iterable/)
-- [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/)
 - [Kahuna](/docs/connections/destinations/catalog/kahuna/)
 - [Keen](/docs/connections/destinations/catalog/keen/)
+- [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/)
 - [Kitemetrics](/docs/connections/destinations/catalog/kitemetrics/)
 - [Klaviyo](/docs/connections/destinations/catalog/klaviyo/)
 - [Kochava](/docs/connections/destinations/catalog/kochava/)
@@ -309,6 +312,7 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [Leanplum](/docs/connections/destinations/catalog/leanplum/)
 - [Librato](/docs/connections/destinations/catalog/librato/)
 - [Lytics](/docs/connections/destinations/catalog/lytics/)
+- [mabl](/docs/connections/destinations/catalog/mabl/)
 - [Madkudu](/docs/connections/destinations/catalog/madkudu/)
 - [MailChimp](/docs/connections/destinations/catalog/mailchimp/)
 - [Mailjet](/docs/connections/destinations/catalog/mailjet/)
@@ -324,7 +328,6 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [Nanigans](/docs/connections/destinations/catalog/nanigans/)
 - [Natero](/docs/connections/destinations/catalog/natero/)
 - [New Relic](/docs/connections/destinations/catalog/new-relic/)
-- [Experiments by Growthhackers](/docs/connections/destinations/catalog/experiments-by-growthhackers/)
 - [Nudgespot](/docs/connections/destinations/catalog/nudgespot/)
 - [OneSignal](/docs/connections/destinations/catalog/onesignal/)
 - [Optimizely Full Stack](/docs/connections/destinations/catalog/optimizelyx/)
@@ -347,7 +350,6 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [Refiner](/docs/connections/destinations/catalog/refiner/)
 - [Repeater](/docs/connections/destinations/catalog/repeater/)
 - [Responsys](/docs/connections/destinations/catalog/responsys/)
-- [SMBStreams](/docs/connections/destinations/catalog/smbstream/)
 - [Sailthru](/docs/connections/destinations/catalog/sailthru/)
 - [Salesforce Marketing Cloud](/docs/connections/destinations/catalog/salesforce-marketing-cloud/)
 - [Salesforce](/docs/connections/destinations/catalog/salesforce/)
@@ -355,23 +357,24 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [SatisMeter](/docs/connections/destinations/catalog/satismeter/)
 - [Savio](/docs/connections/destinations/catalog/savio/)
 - [ScopeAI](/docs/connections/destinations/catalog/scopeai/)
-- [Seg](/docs/connections/destinations/catalog/seg/)
 - [Serenytics](/docs/connections/destinations/catalog/serenytics/)
 - [Sherlock](/docs/connections/destinations/catalog/sherlock/)
 - [Singular](/docs/connections/destinations/catalog/singular/)
 - [Slack](/docs/connections/destinations/catalog/slack/)
 - [SlicingDice](/docs/connections/destinations/catalog/slicingdice/)
+- [SMBStreams](/docs/connections/destinations/catalog/smbstream/)
 - [Split](/docs/connections/destinations/catalog/split/)
 - [Stitch Data](/docs/connections/destinations/catalog/stitch-data/)
 - [Strikedeck](/docs/connections/destinations/catalog/strikedeck/)
-- [TUNE](/docs/connections/destinations/catalog/tune/)
 - [Tamber](/docs/connections/destinations/catalog/tamber/)
 - [Totango](/docs/connections/destinations/catalog/totango/)
 - [Trackier](/docs/connections/destinations/catalog/trackier/)
 - [Tractionboard](/docs/connections/destinations/catalog/tractionboard/)
 - [TrafficGuard](/docs/connections/destinations/catalog/trafficguard/)
+- [tray.io](/docs/connections/destinations/catalog/tray-io/)
 - [Treasure Data](/docs/connections/destinations/catalog/treasure-data/)
 - [Trustpilot](/docs/connections/destinations/catalog/trustpilot/)
+- [TUNE](/docs/connections/destinations/catalog/tune/)
 - [Unwaffle](/docs/connections/destinations/catalog/unwaffle/)
 - [Upcall](/docs/connections/destinations/catalog/upcall/)
 - [UserEngage](/docs/connections/destinations/catalog/userengage/)
@@ -393,11 +396,6 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [Zapier](/docs/connections/destinations/catalog/zapier/)
 - [Zendesk Connect](/docs/connections/destinations/catalog/outbound/)
 - [Zendesk](/docs/connections/destinations/catalog/zendesk/)
-- [goedle.io](/docs/connections/destinations/catalog/goedle-io/)
-- [hydra](/docs/connections/destinations/catalog/hydra/)
-- [mabl](/docs/connections/destinations/catalog/mabl/)
-- [tray.io](/docs/connections/destinations/catalog/tray-io/)
-- [Courier](/docs/connections/destinations/catalog/courier/)
 
 ## Personas Compatible Destinations: List Type
 

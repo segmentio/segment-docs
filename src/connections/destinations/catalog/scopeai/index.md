@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: ScopeAI Destination
+id: 5c6cb84c9d413f0001804a42
 ---
 [ScopeAI](https://www.getscopeai.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) improves communication between support and product teams by aggregating user feedback and tracking the impact of bugs or issues and feature requests.
 

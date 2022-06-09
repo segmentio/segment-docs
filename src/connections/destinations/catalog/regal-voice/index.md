@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Regal Voice Destination
+id: 5f33e746fad0d620b8a4b144
 ---
-
 [Regal Voice](https://regalvoice.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a next-gen customer engagement platform that helps brands proactively engage and convert customers before they buy elsewhere.
 
 Regal Voice maintains this destination. For any issues with the destination, contact their [Regal Voice support team](mailto:support@regalvoice.com).
@@ -88,7 +88,7 @@ analytics.track('Loan Application Approved', {
 
 ## Collecting OptIn
 
-In order to trigger outbound calls or sms messages from Regal Voice, you must collect the user’s explicit opt-in for those channels along with the user’s phone number.
+In order to trigger outbound calls or sms messages from Regal Voice, you must collect the user's explicit opt-in for those channels along with the user's phone number.
 
 There are 2 options for how you can let Regal Voice know a user has opted in:
 

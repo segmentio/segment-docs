@@ -1,6 +1,7 @@
 ---
 title: FactorsAI Destination
 rewrite: true
+id: 5d1060c40d357d000181e92c
 ---
 [FactorsAI](https://www.factors.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides advanced and intuitive analytics for marketers and product managers, to help drive growth. With FactorsAI you get immediate insights to optimize marketing campaigns, improve conversions and understand user behaviours that drive feature adoption and retention.
 

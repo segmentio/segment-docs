@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Adjust Destination
+id: 56f6ce7280412f644ff12fb2
 ---
-
 [Adjust](https://adjust.com) is the mobile attribution provider of choice for hundreds of organizations across the globe. They unify all your marketing activities into one powerful platform, giving you the insights you need to scale your business. The Adjust Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-adjust) and [Android](https://github.com/segment-integrations/analytics-android-integration-adjust).
 
 If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
@@ -50,7 +50,7 @@ In cases where the Adjust integration sometimes does not track the install attri
 
 #### Additional device-mode set up for iOS 14 support
 
-Segment’s Adjust SDK was updated to use Adjust version 4.23.0 to prepare for iOS 14. The updated Adjust SDK offers iOS 14 support, AppTrackingTransparency (ATT) and SKAdNetwork dashboard features.
+Segment's Adjust SDK was updated to use Adjust version 4.23.0 to prepare for iOS 14. The updated Adjust SDK offers iOS 14 support, AppTrackingTransparency (ATT) and SKAdNetwork dashboard features.
 
 See Adjust's [Steps to Support iOS 14 documentation](https://help.adjust.com/manage-data/data-privacy/ios-14-user-privacy-frameworks#Steps-to-support-iOS-14) for more information.
 
@@ -61,7 +61,7 @@ To use the latest Adjust SDK to collect IDFAs you must do the following:
    The latest SDK has integrated support for the SKAdNetwork, which is enabled by default. For access to the SKAdNetwork, make sure your ad networks are registered with Apple. Adjust automatically registers for SKAdNetwork attribution on SDK initialization, and can handle the conversion value update. You can choose to disable this by calling `[adjustConfig deactivateSKAdNetworkHandling];` on the config object in your `AppDelegate.m` file.
 3. Import and implement the AppTrackingTransparency (ATT) Framework.
    Navigate to your project `Info.plist` and add a “Privacy - Tracking Usage Description”. This description appears in a popup when the application initializes in iOS 14. Users are prompted to indicate whether or not they want to allow tracking.
-4. Launch an opt-in popup using Adjust’s SDK wrapper, built on top of `requestTrackingAuthorizationWithCompletionHandler` for the ATT Framework. An iOS pop-up launches when the wrapper is called the first time. When it is called again, the wrapper retrieves the tracking authorization status, which is sent to the Adjust backend. Adjust relays the information directly to you. The example below shows how to use this wrapper.
+4. Launch an opt-in popup using Adjust's SDK wrapper, built on top of `requestTrackingAuthorizationWithCompletionHandler` for the ATT Framework. An iOS pop-up launches when the wrapper is called the first time. When it is called again, the wrapper retrieves the tracking authorization status, which is sent to the Adjust backend. Adjust relays the information directly to you. The example below shows how to use this wrapper.
 
    ```swift
    [Adjust requestTrackingAuthorizationWithCompletionHandler:^(NSUInteger status) {

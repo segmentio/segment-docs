@@ -62,13 +62,13 @@ Once the replay finishes, you can see the data replayed into Personas using the 
 
 Before you continue, check a few user profiles to make sure they show an accurate and recent snapshot of your users.
 
-A good test this is to look at _your own_ user profile, and maybe some colleagues' profiles. Look in the Profile Explorer for your Profile, and look at your event history, custom traits and identifiers. If these identifiers look correct across a few different profiles (and you can verify that they are all correct), then you’re ready to create an audience.
+A good test this is to look at _your own_ user profile, and maybe some colleagues' profiles. Look in the Profile Explorer for your Profile, and look at your event history, custom traits and identifiers. If these identifiers look correct across a few different profiles (and you can verify that they are all correct), then you're ready to create an audience.
 
 If your user profiles look wrong, or you aren't confident users are being accurately defined and merged, stop here and troubleshoot. It's important to have accurate identity resolution before you continue. See the [detailed Identity Resolution documentation](/docs/personas/identity-resolution/) to better understand how it works, and why you may be running into problems. (Still need help? [Contact us](https://segment.com/help/contact/) for assistance.)
 
 ## Step 5: Create An Audience
 
-You can build an audience using any of the source data that flows into your Personas space. To further verify your data, in this step create an Audience that you are familiar with, and that you already have a rough idea of the size of. For example, you might know the number of new website user sign-ups in the last seven days, if you’ve connected your production website source to Personas.
+You can build an audience using any of the source data that flows into your Personas space. To further verify your data, in this step create an Audience that you are familiar with, and that you already have a rough idea of the size of. For example, you might know the number of new website user sign-ups in the last seven days, if you've connected your production website source to Personas.
 
 The Audience Builder UI prompts you to filter your users using on specific behaviors that they performed. The audience in the example below is all the users who have performed the event `User Signed Up` at least one time within the last 7 days:
 
@@ -93,7 +93,7 @@ Once you build your audience, click **Preview Results** to see the total number 
 
 Once you create your test audience, click **Select Destinations**. Personas guides you through configuration steps to set up a destination for your audience. If you don't already have destinations configured for the Personas space, the you are prompted to select one or more. Finally, enter a name for the audience.
 
-The larger the audience you’re creating, the longer it takes Personas to successfully compute the Audience. The Audience page shows a status that indicates if the audience is still being calculated. When the total number of users appears in the Audience overview, as in the example screenshot below, the audience has successfully finished computing, and Personas then sends the audience to the destination you selected.
+The larger the audience you're creating, the longer it takes Personas to successfully compute the Audience. The Audience page shows a status that indicates if the audience is still being calculated. When the total number of users appears in the Audience overview, as in the example screenshot below, the audience has successfully finished computing, and Personas then sends the audience to the destination you selected.
 
 
 ![](images/pers-qs-audience_dests.png)

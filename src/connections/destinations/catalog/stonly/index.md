@@ -1,8 +1,8 @@
 ---
 title: Stonly Destination
 rewrite: true
+id: 5f354f1a928763feb8caf724
 ---
-
 [Stonly](https://stonly.com) helps make customers more successful and employees more productive by letting you easily create interactive guides and put them inside and around your website or app – without having to code anything.
 
 This destination is maintained by Stonly. For any issues with the destination, [contact their support team](mailto:support@stonly.com).
@@ -12,7 +12,7 @@ This destination is maintained by Stonly. For any issues with the destination, [
 
 ## Getting Started
 
-Before you start, make sure Stonly destination supports the source type and connection mode you’ve chosen to implement. You can learn more about [connection modes here](/docs/connections/destinations/#connection-modes).
+Before you start, make sure Stonly destination supports the source type and connection mode you've chosen to implement. You can learn more about [connection modes here](/docs/connections/destinations/#connection-modes).
 
 {% include content/connection-modes.md %}
 
@@ -25,7 +25,7 @@ Before you start, make sure Stonly destination supports the source type and conn
 
 ## Identify
 
-If you’re not familiar with the Segment Specs, take a look to understand what the Identify method does. An example call would look like this [Identify method documentation](/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the Identify method does. An example call would look like this [Identify method documentation](/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.identify("userId", {

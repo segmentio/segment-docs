@@ -1,8 +1,8 @@
 ---
 title: Flurry Destination
 rewrite: true
+id: 54521fd625e721e32a72eeb1
 ---
-
 [Flurry](https://developer.yahoo.com/flurry/docs/) provides you with the tools and resources you need to gain a deep level of understanding about your users' behavior in your apps.
 
 Our Flurry destination code is open sourced on GitHub. Feel free to check it out: [iOS](https://github.com/segment-integrations/analytics-ios-integration-flurry), [Android](https://github.com/segment-integrations/analytics-android-integration-flurry).

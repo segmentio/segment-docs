@@ -4,8 +4,8 @@ beta: true
 redirect_from: '/connections/destinations/catalog/google-adwords-new/'
 strat: google
 name-override: true
+id: 5a03bfe73156760001ab34ec
 ---
-
 ## Before you begin
 
 If you're using the [new Google Ads (Gtag) experience](https://support.google.com/adwords/answer/6095821?hl=en&ref_topic=3165803), you can enable the **Google Ads (Gtag)** Destination (previously called "Google Adwords New") in the Segment catalog. The new Google Ads uses a Global Site Tag (Gtag) and event snippets.
@@ -38,7 +38,7 @@ analytics.page({}, {
 ```
 
 > note ""
-> **NOTE:** The `'Google Ads (Gtag)'` is case sensitive. Segment prefers you to use `order_id` rather than  `transaction_id` to stay more consistent with the [ecommerce spec](/docs/connections/spec/ecommerce/v2). However, Segment will send it as `transaction_id` in the request itself to satisfy Google's specifications.
+> **NOTE:** The `'Google Adwords New'` is case sensitive. Segment prefers you to use `order_id` rather than  `transaction_id` to stay more consistent with the [ecommerce spec](/docs/connections/spec/ecommerce/v2). However, Segment will send it as `transaction_id` in the request itself to satisfy Google's specifications.
 
 ## Track
 

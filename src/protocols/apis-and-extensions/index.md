@@ -4,18 +4,19 @@ title: 'Protocols: APIs and Extensions'
 
 {% include content/plan-grid.md name="protocols" %}
 
+Built from the ground up, Protocols addresses a wide range of customer needs.
 
-Protocols was developed from the ground up to support a wide range of customer needs. Whether you're interested in helping your engineers reduce tracking errors, or want to get notified when an issue arises, or want to use a Tracking Plan you already have, we have a suite of features and API support to get it done. We've captured many of those resources below.
+With Protocols, you can help engineers reduce tracking errors, create issue notifications, and get the most out of your Tracking Plan. Below, learn about several Protocols resources that can help you address these and other common use cases.
 
 ## Anomaly detection
 
-If you’re using Protocols, you might want to get notifications when an anomaly in event volumes or Protocols violation counts occurs. [This document](/docs/protocols/apis-and-extensions/anomaly_detection/) clarifies what we mean by anomaly detection, gives examples of anomalies that might be relevant to your business, and provides some example solutions of how to monitor and alert on anomalies using some standard tools available today.
-
-[Read more about Anomaly Detection here](/docs/protocols/apis-and-extensions/anomaly_detection/)
+If you're using Protocols, you might want to get notifications when event volume anomalies or Protocols violation counts occur. Read Segment's [anomaly detection documentation](/docs/protocols/apis-and-extensions/anomaly_detection/) to learn about common anomalies, as well as monitoring and alerting solutions you can implement using standard tools.
 
 ## Config API
 
-Protocols customers get access to the Segment Config API, which enables programmatic creation, configuration, and fetching of core Segment platform resources such as Sources, Destinations, and now Tracking Plans. The Config API represents Segment's commitment to developers, enabling customers to extend their workflows around customer data collection and activation. The Config API will be generally available to customers in coming months and will be evolving with more features throughout next year.
+Protocols customers can access [Segment's Config API](/docs/config-api/), which enables programmatic creation, configuration, and fetching of core Segment platform resources like Sources, Destinations, and Tracking Plans.
+
+The Config API represents Segment's commitment to developers, helping you extend your workflow around customer data collection and activation.
 
 ### Supported Operations
 
@@ -25,22 +26,10 @@ Protocols customers get access to the Segment Config API, which enables programm
 - **Update Tracking Plan**
 - **Delete Tracking Plan**
 
-[Learn more about the Config API here](https://segment.com/docs/config-api/)
-
 ## Typewriter
 
-Typewriter is a tool for generating strongly-typed Segment analytics libraries based on your pre-defined Tracking Plan spec. [Head over to the docs](/docs/protocols/apis-and-extensions/typewriter/) to get started with Typewriter.
+Typewriter is a tool for generating strongly-typed Segment analytics libraries based on your pre-defined Tracking Plan spec. View Segment's [Typewriter documentation](/docs/protocols/apis-and-extensions/typewriter/) to get started.
 
-## Google Sheets Tracking Plan Uploader
-
-Thousands of Segment customers have used Google Sheets to build Tracking Plans. We created the following template to help you draft a Tracking Plan and easily upload that Tracking Plan to Segment. Keep in mind that uploading changes from Google Sheets will overwrite any changes made in the Segment UI.
-
-[View the Google Sheets Tracking Plan template here](https://docs.google.com/spreadsheets/u/1/d/1TA6qTcDHoZzsG7-C6p5yHGximDxqoNtizguKs7Z0av4/copy). Feel free to make a copy!
-
-To upload your Tracking Plan directly from Google Sheets, follow these steps:
-
-1. Generate a Personal Access Token following the steps [here](/docs/config-api/authentication/)
-2. Copy your Personal Access Token, your Workspace's slug and your tracking plan's `rs_` id (found in the URL path of your Tracking Plan) to the Importer Settings worksheet. Then click on the Segment > Send to Segment menu item to upload your Tracking Plan to Segment.
 
 <!--
 Removed on 3/18/2020 per PROT-2279

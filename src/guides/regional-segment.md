@@ -24,7 +24,7 @@ Regional Data Ingestion enables you to send data to Segment from both Device-mod
 > [Cloud object sources](/docs/connections/sources/#object-cloud-sources) and cloud event sources aren't supported in EU workspaces.
 
 ### Client-side sources
-You can configure Segment’s client-side SDKs for Javascript, iOS, Android, and React Native sources to send data to a regional host after you’ve updated the Data Ingestion Region in that source’s settings. Segment’s EU instance only supports data ingestion from Dublin, Ireland with the `events.eu1.segmentapis.com/v1` endpoint.
+You can configure Segment's client-side SDKs for Javascript, iOS, Android, and React Native sources to send data to a regional host after you've updated the Data Ingestion Region in that source's settings. Segment's EU instance only supports data ingestion from Dublin, Ireland with the `events.eu1.segmentapis.com/v1` endpoint.
 
 > info ""
 > For workspaces that use the EU West Data Processing region, the Dublin Ingestion region is preselected for all sources.
@@ -35,10 +35,10 @@ To set your Data Ingestion Region:
 2. Select the **Settings** tab.
 3. Click **Regional Settings**.
 4. Choose your **Data Ingestion Region**.
-    - If you’re in the *US West* data processing region, you can select from: Dublin, Singapore, Oregon, and Sydney.
-    - If you’re in the *EU West* data processing region, Segment’s EU instance only supports data ingestion from Dublin with the `events.eu1.segmentapis.com/v1` endpoint.
+    - If you're in the *US West* data processing region, you can select from: Dublin, Singapore, Oregon, and Sydney.
+    - If you're in the *EU West* data processing region, Segment's EU instance only supports data ingestion from Dublin with the `events.eu1.segmentapis.com/v1` endpoint.
 
-All regions are configured on a **per-source** basis. You’ll need to configure the region for each source separately if you don't want to use the default region.
+All regions are configured on a **per-source** basis. You'll need to configure the region for each source separately if you don't want to use the default region.
 
 All Segment client-side SDKs read this setting and update themselves automatically to send data to new endpoints when the app reloads. You don't need to change code when you switch regions.
 
@@ -56,7 +56,7 @@ To create a workspace with a different data processing region:
 
 1. Log in to your Segment account.
 2. Click **New Workspace**.
-3. Select your **Data processing region**. This determines the location in which Segment collects, processes, and stores data that’s sent to and from your workspace. You can choose from *US West* or *EU West*.
+3. Select your **Data processing region**. This determines the location in which Segment collects, processes, and stores data that's sent to and from your workspace. You can choose from *US West* or *EU West*.
 4. Click **Create workspace**.
 
 > info ""
@@ -74,6 +74,6 @@ Use Segment's custom CIDR `3.251.148.96/29` while authorizing Segment to write i
 > info "Don't see a regional endpoint for a tool you're using?"
 > As more of the partner tools you use (Sources and Destinations) start to support a regional endpoint, Segment will update this list. Your contact for that tool should have a timeline for when they're hoping to support regional data ingestion. You can also visit Segment's [support page](https://segment.com/help/contact/) for any Segment-related questions.
 
-The following destinations are supported in your EU Segment workspace. The Destination tools that provide an EU Regional endpoint are marked for easy identification (see above.)
+The following integrations marked with a ![Supports EU regional endpoints](/docs/images/supported.svg){:class="inline"} (checkmark) support EU Regional endpoints.
 
 {% include content/regional-integrations-table.md %}
