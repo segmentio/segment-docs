@@ -51,9 +51,7 @@ To set up an IBM Db2 destination in the Segment app:
   - User (This is the "User ID" that you created above)
   - Password (This is the "Password" that you created above)
   - Security (Enter "SSL" in this field)
-
-
-Click **Connect** to complete the setup 
+5. Click **Connect** to connect your Db2 warehouse to Segment.
 
 ## Security
 
