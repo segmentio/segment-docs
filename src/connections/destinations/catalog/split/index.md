@@ -9,8 +9,6 @@ Split also maintains [integration specific documentation](https://help.split.io/
 
 This destination is maintained by [Split](https://split.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners). For any issues with the destination, [contact the Split IO Support team](https://help.split.io/hc/en-us).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
