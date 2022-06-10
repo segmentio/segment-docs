@@ -94,7 +94,7 @@ Build your own Mappings! Combine supported [triggers](/docs/connections/destinat
 {% for action in actions %}
 ### {{action.name}}
 <p>{{action.description | markdownify}}</p>
-<p>{{action.name}} is a <strong>{{action.platform | capitalize}}</strong> action.</p>
+<p>{{action.name}} is a <strong>{{action.platform | capitalize}}</strong> action. The default Trigger is:</p> <code>{{action.defaultTrigger}}</code>
 
 
 {% if action.fields.size > 0 %}
