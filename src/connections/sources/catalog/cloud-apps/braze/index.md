@@ -124,4 +124,4 @@ If there are problems with how the events arrive to Segment, [contact the Braze 
 
 ## Sending Data To Braze
 
-The Braze Source works better when you also connect Braze as a Destination. With the Braze Destination, you can use Segment to send event data to Braze so you can target customers with messaging campaigns. Want to start sending data to Braze? Learn how by reading the [Braze Destination docs](https://segment.com/docs/connections/destinations/catalog/braze/).
+The Braze Source works better when you also connect Braze as a Destination. With the Braze Destination, you can use Segment to send event data to Braze so you can target customers with messaging campaigns. Want to start sending data to Braze? Learn how by reading the [Braze Destination docs](/docs/connections/destinations/catalog/braze/).
