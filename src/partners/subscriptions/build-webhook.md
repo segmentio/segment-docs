@@ -3,13 +3,16 @@ title: Building a Subscription Webhook
 redirect_from: '/partners/build-webhook/'
 ---
 
+{% include content/dev-center-note.md %}
+
+
 Subscription Webhooks allow Segment Partners to ingest Segment Event Data using a webhook. This guide explains how to set up your webhook with Segment.
 
 ## Getting Started
 
-Review the steps outlined in the [Developer Center Overview](/docs/partners). This document outlines specific details for Step 4 as it relates to building a Subscription Webhook.
+Review the steps outlined in the [Developer Center Overview](/docs/partners). This document outlines specific details for Step four as it relates to building a Subscription Webhook.
 
-1. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model) and [Spec](https://segment.com/docs/connections/spec).
+1. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model) and [Spec](/docs/connections/spec).
 2. Follow Segment's security guidance.
 3. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/).
 4. Create an App.
@@ -35,13 +38,11 @@ The endpoint must:
 
 #### Authorization
 
-Segment sends your user's API key with requests, and you can use it to authenticate requests. **Note**: This is the API key _you_ give to your users; it is not a Segment API key.
+Segment sends your user's API key with requests, and you can use it to authenticate requests. This is the API key _you_ give to your users; it is not a Segment API key.
 
 Segment sends the key in the `Authorization` header using the `Basic` authentication type. It is Base64 encoded with your user's API key as the username, and an empty password.
 
-For example, if your user's API key was `segment`, Segment would Base64 encode the string `'segment:'` and prepend the string `'Basic '`.
-
-**Note**: The colon is always present, even when the password is absent.
+For example, if your user's API key was `segment`, Segment would Base64 encode the string `'segment:'` and prepend the string `'Basic '`. The colon is always present, even when the password is absent.
 
 This would result in a final string of `'Basic c2VnbWVudDo='`. This is what is contained in the `Authorization` header. Like any Authorization header, you must decode the string when you receive it.
 
@@ -59,22 +60,22 @@ Any custom settings you add will be sent in the custom header `X-Segment-Setting
 
 Segment sends you the following HTTP headers with all requests:
 
-Header|Description|Example
-------|-----------|-------
-`Accept` | Segment accepts any content type, but ignores responses unless this header is set to `application/json`.| `Accept: */*`
-`Authorization`| Segment sends your user's API token in this header, with the `Basic` authentication type. | `Authorization: Basic c2VnbWVudDo=`
-`Cache-Control`  | Each request Segment sends is a new event, so we do not expect caching on your end.| `Cache-Control: no-cache`
-`Connection` | Segment uses HTTP/1.1's keep-alive functionality whenever possible, however this is optional.| `Connection: Keep-Alive`
-`Content-Length` | Segment always sends you the length of the request in bytes.| `Content-Length: 348`
-`Content-Type`   | Segment indicates the type of data it sent you (this will always be JSON), along with Segment's vendor type. | `Content-Type: application/json`
-`User-Agent`     | Segment sends you this field every time. You can count on us!| `User-Agent: Segment.io/1.0`
-`X-Segment-Settings` | Except for the API key (which is sent in the Authorization header), Segment will send the base 64 encoding of the rest of your custom settings encoded in this header. | `X-Segment-Settings: eyJjdXN0b21TZXR0aW5nT25lIjoiY3VzdG9tIHNldHRpbmcgdmFsdWUifQ==`
+| Header               | Description                                                                                                                                                            | Example                                                                            |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `Accept`             | Segment accepts any content type, but ignores responses unless this header is set to `application/json`.                                                               | `Accept: */*`                                                                      |
+| `Authorization`      | Segment sends your user's API token in this header, with the `Basic` authentication type.                                                                              | `Authorization: Basic c2VnbWVudDo=`                                                |
+| `Cache-Control`      | Each request Segment sends is a new event. Segment does not expect your application to cache.                                                                          | `Cache-Control: no-cache`                                                          |
+| `Connection`         | Segment uses HTTP/1.1's keep-alive functionality whenever possible, however this is optional.                                                                          | `Connection: Keep-Alive`                                                           |
+| `Content-Length`     | Segment always sends you the length of the request in bytes.                                                                                                           | `Content-Length: 348`                                                              |
+| `Content-Type`       | Segment indicates the type of data it sent you (this will always be JSON), along with Segment's vendor type.                                                           | `Content-Type: application/json`                                                   |
+| `User-Agent`         | Segment sends you this field every time.                                                                                                                               | `User-Agent: Segment.io/1.0`                                                       |
+| `X-Segment-Settings` | Except for the API key (which is sent in the Authorization header), Segment will send the base 64 encoding of the rest of your custom settings encoded in this header. | `X-Segment-Settings: eyJjdXN0b21TZXR0aW5nT25lIjoiY3VzdG9tIHNldHRpbmcgdmFsdWUifQ==` |
 
 ### Responding to Segment Data
 
 #### Request Body
 
-Segment's [Spec](https://segment.com/docs/connections/spec) standardizes the data that you can expect from Segment. You can choose to implement four types types of calls:
+Segment's [Spec](/docs/connections/spec) standardizes the data that you can expect from Segment. You can choose to implement four types types of calls:
 
 - Who is this? `.identify(userId, traits)`
 - What are they doing? `.track(userId, event, properties)`
@@ -105,7 +106,8 @@ For example, you might implement the `.identify(userId, traits)` call to create 
 }
 ```
 
-*Important*: The casing on these fields will vary by customer, so be ready to accept any casing.
+> info ""
+> The casing on these fields will vary by customer, so be ready to accept any casing.
 
 
 #### Status Code
@@ -114,20 +116,20 @@ Segment uses standard HTTP status code conventions to help diagnose problems qui
 
 Upon receiving data, your endpoint should reply with one of the following status codes:
 
-Code  | Reason
-----  | ------
-`200` | You've accepted and successfully processed the message.
-`202` | You've accepted the message, but have not yet processed it.
-`400` | The message is malformed, or otherwise contains an error that is the client's fault.
-`401` | The client's API key is malformed, has expired, or is otherwise no longer valid.
-`403` | The client's API key is valid, but has been rejected due to inadequate permissions.
-`500` | If you encounter an internal error when processing the message, reply with this code. (Hopefully you won't have to send too many of these.)
-`501` | If Segment sends you an [API call type](https://segment.com/docs/connections/spec/#api-calls) (indicated by the `type` property included on all messages) you don't support, reply with this code. Read more about the API call types Segment supports [here](https://segment.com/docs/connections/spec/#api-calls).
-`503` | Send Segment this code when your endpoint is temporarily down for maintenance or otherwise not accepting messages. This helps Segment avoid dropping users' messages during your downtime.
+| Code  | Reason                                                                                                                                                                                                                                                                                                               |
+| ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `200` | You've accepted and successfully processed the message.                                                                                                                                                                                                                                                              |
+| `202` | You've accepted the message, but have not yet processed it.                                                                                                                                                                                                                                                          |
+| `400` | The message is malformed, or otherwise contains an error that is the client's fault.                                                                                                                                                                                                                                 |
+| `401` | The client's API key is malformed, has expired, or is otherwise no longer valid.                                                                                                                                                                                                                                     |
+| `403` | The client's API key is valid, but has been rejected due to inadequate permissions.                                                                                                                                                                                                                                  |
+| `500` | If you encounter an internal error when processing the message, reply with this code. (Hopefully you won't have to send too many of these.)                                                                                                                                                                          |
+| `501` | If Segment sends you an [API call type](https://segment.com/docs/connections/spec/#api-calls) (indicated by the `type` property included on all messages) you don't support, reply with this code. Read more about the API call types Segment supports [here](https://segment.com/docs/connections/spec/#api-calls). |
+| `503` | Send Segment this code when your endpoint is temporarily down for maintenance or otherwise not accepting messages. This helps Segment avoid dropping users' messages during your downtime.                                                                                                                           |
 
 #### Response Body
 
-You can normally send back an empty body, but when sending back a `4xx`- or `5xx`-class error, you can optionally send Segment a diagnostic message that explains the error. This message is displayed to the user in the Segment debugger, and is be used in our Event Delivery summaries.
+You can normally send back an empty body, but when sending back a `4xx`- or `5xx`-class error, you can optionally send Segment a diagnostic message that explains the error. This message is displayed to the user in the Segment debugger, and is be used in Segment's Event Delivery summaries.
 
 Be sure to send JSON (and set your `Content-Type` header to `application/json`), and send your message in the `message` property.
 
@@ -149,7 +151,9 @@ Or, if your tool requires an email address in order to accept calls, use this ex
 
 ## Test
 
-When testing your integration, we suggest going through two separate flows - testing that your endpoint successfully ingests data in the way you would expect, and also mimicking a user implementing your integration within their Segment workspace.
+When testing your integration, proceed through two separate flows:
+1. Test that your endpoint successfully ingests data in the way you would expect.
+2. Mimic a user implementing your integration within their Segment workspace.
 
 ### Your Endpoint
 
@@ -174,7 +178,7 @@ To test your Destination in the Catalog, click the "Test" tab in the Developer C
 
 From here, click "Configure App", select a Source, and click "Confirm Source". You can now configure your destination by setting the "API Key", then clicking the toggle to enable the destination.
 
-Next you can click the "Event Tester" tab to send data to your destination. Here you can see what requests Segment sends to your destination and introspect the response you are returning. Learn more about the event tester [here](https://segment.com/docs/guides/best-practices/how-do-I-test-my-connections/).
+Next you can click the "Event Tester" tab to send data to your destination. Here you can see what requests Segment sends to your destination and introspect the response you are returning. Learn more about the event tester [here](/docs/guides/best-practices/how-do-I-test-my-connections/).
 
 Now you can use the JavaScript SDK in a browser to generate real analytics events.
 
