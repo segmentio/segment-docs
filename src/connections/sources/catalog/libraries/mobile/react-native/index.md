@@ -16,7 +16,7 @@ If you're migrating to Analytics React Native 2.0 from an older Analytics React 
 > warning ""
 > `@segment/analytics-react-native 2.0` is compatible with Expo's [Custom Dev Client](https://docs.expo.dev/development/getting-started/){:target="_blank"} and [EAS builds](https://docs.expo.dev/build/introduction/){:target="_blank"} without any additional configuration. Destination Plugins that require native modules may require custom [Expo Config Plugins](https://docs.expo.dev/guides/config-plugins/){:target="_blank"}.
 >
-> `@segment/analytics-react-native 2.0` is not compatible with Expo's managed workflow.
+> `@segment/analytics-react-native 2.0` is not compatible with Expo Go.
 
 
 ## Getting Started
