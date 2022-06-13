@@ -13,7 +13,7 @@ When you disable a source, collection or property, Segment no longer syncs data 
 
 ## Can we add, tweak, or delete some of the tables?
 
-You have full admin access to your Segment Warehouse. However, don't tweak or delete Segment generated tables, as this may cause problems for our systems that upload new data.
+You have full admin access to your Segment Warehouse. However, don't tweak or delete Segment generated tables, as this may cause problems for the systems that upload new data.
 
 If you want to join across additional datasets, feel free to create and upload additional tables.
 
@@ -121,21 +121,17 @@ Segment stores the name of your schema in the **SQL Settings** page. Changing th
 
 To change the name of your schema without disruptions: 
 
-1. Open the Segment app
-1. Select the "Connections" tab on the left
-1. Select the "Sources" tab
-1. Select the source from the list of "My Sources" that is sending data to the schema you want to change
-1. Select the "Settings" tab from the top (just below your source name)
-2. Under the "Enable Source" section, disable your source and click **Save Changes.**   
-> **Note**: This will pause all data from the selected source to all destinations.
-8. Select the "SQL Settings" tab. 
-4. Update the "Schema Name" field with the new name for your schema and click **Save Changes.**
-> **Note**: This will set the schema name for all existing and future SQL destinations. It is important that you understand how many warehouse destination(s) exist for this source, and that you understand how to rename the schema in each database.
-10. Rename the schema(s) in your warehouse destination(s) to match the newly modified schema name from the previous step. 
-1. Open the Segment app
-1. Select the "Connections" tab on the left
-1. Select the "Sources" tab
-1. Select the source from the list of My Sources that is sending data to the schema that was changed
-1. Select the "Settings" tab from the top (just below your source name)
-1. On the source's settings page, select "Basic."
-7. Under the "Enable Source" section, enable your warehouse and click **Save Changes.**
+1. Open the Segment app, select **Connections** and click **Destinations**. 
+2. Select the warehouse you'd like to rename the schema for from the list of destinations.
+3. On the overview page for your source, select **Settings**.
+4. Disable the **Sync Data** toggle and click **Save Settings**. 
+5. Select **Connections** and click **Sources**. 
+6. Select a source that syncs data with your warehouse from your list of sources, and select **Settings**. 
+7. Select **SQL Settings** and update the "Schema Name" field with the new name for your schema and click **Save Changes.**
+> **Note**: This will set the schema name for all existing and future destinations.
+8. Repeat steps six and seven until you rename all sources that sync data to your warehouse. 
+9. Open the third-party host of your database, and rename the schema. 
+10. Open the Segment app, select **Connections** and click **Destinations**.
+11. Select the warehouse you disabled syncs for from the list of destinations.
+3. On the overview page for your source, select **Settings**.
+4. Enable the **Sync Data** toggle and click **Save Settings**. 
