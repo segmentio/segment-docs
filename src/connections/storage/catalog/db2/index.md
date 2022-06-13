@@ -49,7 +49,7 @@ To set up an IBM Db2 destination in the Segment app:
 2. Search for and select **IBM Db2 Warehouse**.
 3. Select the sources you want to connect to the IBM Db2 warehouse, and click **Next**.
 4. Enter a name for your destination, and enter the following credentials:
-  - Host (Found in your Db2 instance, under Administration → Connections)
+  - Host (You can find this in your Db2 instance, under Administration > Connections)
   - Port (50001 is the default for Db2)
   - Database name (You can find this in your Db2 instance, under Administration > Connections)
   - User (This is the User ID that you created above)
