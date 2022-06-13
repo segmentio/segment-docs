@@ -15,34 +15,35 @@ Warehouse and Segment.
 
 ## Getting Started
 
-To get started, you'll need to [create a Db2 user for Segment](#create-a-user-for-segment), [give that user sufficient permissions](#give-the-segment-user-permissions), and then [create the Segment Db2 Destination](#create-segment-db2-destination).
+To get started, you'll need to [create a Db2 user for Segment](#create-a-user-for-segment), [grant that user sufficient permissions](#grant-the-segment-user-permissions), and then [create the the IBM Db2 Destination in the Segment app](#create-segment-db2-destination).
 
 ### Create a User for Segment
 
-In order to connect your IBM Db2 warehouse to Segment, you need to create a user account that Segment can assume. To create a user account for Segment:
+In order to connect your IBM Db2 warehouse to Segment, you need to create a Db2 user account that Segment can assume. To create a user account for Segment:
 
 1. Open the Db2 warehouse. Click the top-left menu, select **Administration**, and open the **User management** tab.
 
 2. Click **Add**.
 
-3. Create a new user account with "User" priveledges. Save the username and password, as these are required to set up the Segment configuration in a later step.
+3. Create a new user account with "User" privileges. Save the username and password, as these are required to set up the Segment configuration in a later step.
 
-### Give the Segment User Permissions
+### Grant the Segment User Permissions
 
-Now that you created an IBM Db2 user for Segment, you must grant the Segment user permission to connect to your database. To grant the Segment user access to your database: 
+To grant the Segment user access to your database:
+
 1. Open the top-left menu and select **Run SQL**. 
-2. In the SQL input, copy the following code snippet, replacing "segment_user" with the user ID that you created above:
+2. In the SQL input, copy the following code snippet, replacing "segment_user" with the user ID that you created above.
   ```json
   GRANT CONNECT, CREATETAB, IMPLICIT_SCHEMA ON DATABASE TO USER <segment_user>
   ```
-3. Select Run All to execute the `GRANT` command.
+3. Click **Run All** to execute the `GRANT` command.
 
 ### Create Segment Db2 Destination
 
 To set up an IBM Db2 destination in the Segment app:
 
 1. Open the Segment app. Select **Connections** and click **Add Destination**. 
-2. Search for and select IBM Db2 Warehouse.
+2. Search for and select **IBM Db2 Warehouse**.
 3. Select the sources you want to connect to the IBM Db2 warehouse, and click **Next**.
 4. Enter a name for your destination, and enter the following credentials:
   - Host (Found in your Db2 instance, under Administration → Connections)
@@ -50,7 +51,7 @@ To set up an IBM Db2 destination in the Segment app:
   - Database name (Found in your Db2 instance, under Administration → Connections)
   - User (This is the "User ID" that you created above)
   - Password (This is the "Password" that you created above)
-  - Security (Enter "SSL" in this field)
+  - Security ([Enter "SSL" in this field](#ssltls))
 5. Click **Connect** to connect your Db2 warehouse to Segment.
 
 ## Security
