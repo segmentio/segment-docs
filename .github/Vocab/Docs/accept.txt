@@ -1,9 +1,11 @@
 (?:C|c)annonical
 (?:C|c)onfig
+(?:C|c)rypto
 (?:D|d)eduplicate
 (?:D|d)eduplication
 (?:G|g)tag
 (?:K|k)laviyo
+(?:L|l)odash
 (?:L|l)ookback
 (?:P|p)ageviews?\b
 (?:P|p)endo
@@ -19,6 +21,7 @@ allowlist
 Amberflo
 Appboy
 Appsflyer
+async
 Blitzllama
 blocklist
 boolean
@@ -39,6 +42,7 @@ Friendbuy
 ga
 gmail
 Gradle
+Heatmapping
 href
 html
 http
@@ -83,6 +87,7 @@ utm
 Vero
 Vidora
 viewability
+waitlist
 WebKit
 Wootric
 Zendesk

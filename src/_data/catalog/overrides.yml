@@ -1,6 +1,17 @@
 # This file is manually generated. When you add or remove an item, add or remove
 # it from the `overrides-list.yml` too.
 items:
+- slug: moengage
+  id: 55b280290a20f4e22f0fb3d6
+  connection_modes:
+    device:
+      web: true
+      mobile: true
+      server: true
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - slug: drip
   id: 54521fd525e721e32a72eeaa
   connection_modes:
@@ -21,7 +32,7 @@ items:
       mobile: true
       server: false
     cloud:
-      web: false
+      web: true
       mobile: true
       server: true
 - slug: criteo-app-web-events

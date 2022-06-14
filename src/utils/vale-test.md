@@ -11,5 +11,4 @@ For example, like [this](/docs/connections)
 segment.com/docs
 
 Here's an update.
-
-
+![alt tag](/diagram-library/Elements.png)

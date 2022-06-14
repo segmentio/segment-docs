@@ -60,10 +60,10 @@ If you send a [`screen`](/docs/connections/spec/screen) call using a server libr
 
 ### Virtual Pageviews
 
-Virtual pageviews are when you send a pageview to Google Universal Analytics when the page URL didn't actually change, for example when a full-screen modal dialog appears. You can do this with Segment by making a [Page call](/docs/connections/spec/page/) with optional properties, like in the following example.
+Virtual pageviews are when you send a pageview to Google Universal Analytics when the page URL didn't actually change, for example when a full-screen modal dialog appears. You can do this with Segment by making a [Page call](/docs/connections/spec/page/) with optional properties, like in the following example. Include both the category and name, in addition to the properties.
 
 ```javascript
-analytics.page({
+analytics.page('Form', 'Signup Modal', {
   title: 'Signup Modal',
   url: 'https://segment.com/#signup',
   path: '/#signup',

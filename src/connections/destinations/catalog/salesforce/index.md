@@ -2,15 +2,13 @@
 title: Salesforce Destination
 strat: salesforce
 id: 54521fda25e721e32a72eeef
+maintenance: true
 ---
 
-Segment's Salesforce destination allows you to identify leads without using SOAP APIs.
+Segment's Salesforce destination allows you to create and store leads and records for other objects in Salesforce Sales Cloud.
 
 > info ""
 > Segment is aware of Salesforce's plans to enforce multi-factor authentication in 2022, and advises migrating to our new [Salesforce (Actions) destination](/docs/connections/destinations/catalog/actions-salesforce/) which supports OAuth 2.0.
-
-> success "Good to know"
-> This page is about the classic Salesforce Segment destination. There's also a page about the new [Salesforce (Actions) destination](/docs/connections/destinations/catalog/actions-salesforce/). Both of these destinations receive data _from_ Segment. Use the new Salesforce (Actions) destination for additional functionality and flexibility.
 
 ### API Access
 
@@ -27,7 +25,7 @@ Also make sure that IP Security is disabled in this Salesforce user account. Thi
 
 ## Identify
 
-This destination supports the most important pain point for Salesforce users: getting your prospective customers into Salesforce as Leads from your website or mobile app. Creating/updating Leads is the default behavior of `identify` events. If you would like to customize this you can do so using [Actions](#custom-actions)
+This destination supports the most important pain point for Salesforce users: getting your prospective customers into Salesforce as Leads from your website or mobile app. Creating/updating Leads is the default behavior of `identify` events. If you would like to customize this you can do so using [Actions](#custom-actions).
 
 ### Identifying a Lead
 
