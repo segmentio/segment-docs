@@ -176,25 +176,6 @@ analytics.group("user-123", buildJsonObject {
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-## Utility Methods
-
-### Reset
-The `reset` method clears the SDK’s internal stores for the current user and group. This is useful for apps where users log in and out with different identities on the same device over time. 
-
-{% codeexample %}
-{% codeexampletab Method signature %}
-```java
-fun reset()
-```
-{% endcodeexampletab %}
-
-{% codeexampletab Example use %}
-```java
-analytics.reset()
-```
-{% endcodeexampletab %}
-{% endcodeexample %}
-
 ## Plugin Architecture
 Segment's plugin architecture enables you to modify and augment how the analytics client works. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
 
@@ -338,6 +319,7 @@ The Analytics-Kotlin utility methods help you work with plugins from the analyti
 - [Add](#add)
 - [Find](#find)
 - [Remove](#remove)
+- [Reset](#reset)
 
 There's also the [Flush](#flush) method to help you manage the current queue of events.
 
@@ -410,6 +392,23 @@ public fun flush()
 {% codeexampletab Example use %}
 ```java
 analytics.flush("SomePlugin")
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
+### Reset
+The `reset` method clears the SDK’s internal stores for the current user and group. This is useful for apps where users log in and out with different identities on the same device over time.
+
+{% codeexample %}
+{% codeexampletab Method signature %}
+```java
+fun reset()
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Example use %}
+```java
+analytics.reset()
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
