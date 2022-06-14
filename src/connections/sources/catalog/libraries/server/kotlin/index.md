@@ -25,12 +25,12 @@ To get started with the Analytics-Kotlin server library:
       Segment recommends you to install the library with a build system like Gradle, as it simplifies the process of upgrading versions and adding integrations. The library is distributed through [Maven Central](https://repo1.maven.org/maven2/com/segment/analytics/kotlin/android/){:target="_blank"}. Add the analytics module to your build.gradle as a dependency as shown in the code sample below, and replace `<latest_version>` with the latest version listed on Segment's [releases page](https://github.com/segmentio/analytics-kotlin/releases){:target="_blank"}
 
       ```java
-      repositories {
-        maven { url 'https://jitpack.io' }
-      }
-      dependencies {
-          implementation 'com.github.segmentio.analytics-kotlin:core:+'
-      }
+        repositories {
+            mavenCentral()
+        }
+        dependencies {
+            implementation 'com.segment.analytics.kotlin:core:<latest_version>'
+        }
       ```
 3. Initialize and configure the client.
 
@@ -172,6 +172,25 @@ analytics.group("user-123", buildJsonObject {
     put("email", "hello@test.com")
     put("plan", "premium")
 });
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
+## Utility Methods
+
+### Reset
+The `reset` method clears the SDK’s internal stores for the current user and group. This is useful for apps where users log in and out with different identities on the same device over time. 
+
+{% codeexample %}
+{% codeexampletab Method signature %}
+```java
+fun reset()
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Example use %}
+```java
+analytics.reset()
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
