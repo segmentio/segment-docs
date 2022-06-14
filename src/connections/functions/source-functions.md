@@ -14,7 +14,7 @@ All functions are scoped to your workspace, so members of other workspaces canno
 > info ""
 > Functions is available to all customer plan types with a free allotment of usage hours. Read more about [Functions usage limits](/docs/connections/functions/usage/), or see [your workspace's Functions usage stats](https://app.segment.com/goto-my-workspace/settings/usage?metric=functions){:target="_blank"}.
 
-![](images/source_functions_overview.png)
+![A graphic illustrating Segment source functions](images/source_functions_overview.png)
 
 
 ## Create a source function
