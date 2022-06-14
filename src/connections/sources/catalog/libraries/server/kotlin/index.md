@@ -198,7 +198,7 @@ analytics.reset()
 ## Plugin Architecture
 Segment's plugin architecture enables you to modify and augment how the analytics client works. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
 
-Plugins are run through a timeline, which executes in order of insertion based on their entry types. Segment has these 5 entry types:
+Plugins are run through a timeline, which executes in order of insertion based on their entry types. Segment has these five entry types:
 
 | Type          | Details                                                                                        |
 | ------------- | ---------------------------------------------------------------------------------------------- |
