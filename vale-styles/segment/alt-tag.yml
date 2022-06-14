@@ -1,0 +1,7 @@
+extends: existence
+message: 'Please add alt text to the image'
+level: warning
+scope: raw
+nonword: true
+raw:
+  - '(\!\[\])'
