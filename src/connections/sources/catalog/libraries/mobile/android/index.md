@@ -4,7 +4,7 @@ strat: android
 repo: analytics-android
 id: wXNairW5xX
 ---
-  Analytics for Android makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
+  Analytics for Android makes it easier for you to send data to any tool without having to learn, test or implement a new API every time.
 
 
 Analytics for Android only supports any Android device running API 14 (Android 4.0) and higher. This includes Amazon Fire devices.
