@@ -45,7 +45,7 @@ To grant the Segment user access to your database:
 
 To set up an IBM Db2 destination in the Segment app:
 
-1. Open the Segment app. Select **Connections** and click **Add Destination**. 
+1. Open the Segment app, navigate to **Connections** and click **Add Destination**. 
 2. Search for and select **IBM Db2 Warehouse**.
 3. Select the sources you want to connect to the IBM Db2 warehouse, and click **Next**.
 4. Enter a name for your destination, and enter the following credentials:
