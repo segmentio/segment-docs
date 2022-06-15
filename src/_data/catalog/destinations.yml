@@ -7610,6 +7610,67 @@ items:
       phone:
         '@path': $.traits.phone
     trigger: type = "identify" or type = "group"
+- id: 6241e78214aad278a6322f52
+  display_name: Breyta CRM
+  name: Breyta CRM
+  slug: breyta-crm
+  hidden: false
+  endpoints:
+  - us
+  regions:
+  - us
+  url: connections/destinations/catalog/breyta-crm
+  previous_names:
+  - Breyta CRM
+  website: https://breyta.io
+  status: PUBLIC_BETA
+  categories:
+  - Analytics
+  - Customer Success
+  logo:
+    url: >-
+      https://public-segment-devcenter-production.s3.amazonaws.com/214ac298-7522-46be-a714-6a2f9c1be203.svg
+  mark:
+    url: >-
+      https://public-segment-devcenter-production.s3.amazonaws.com/7d9fc850-f53a-4ae1-b270-6c157caff98e.svg
+  methods:
+    track: true
+    identify: true
+    group: true
+    alias: false
+    page: true
+  platforms:
+    browser: true
+    mobile: true
+    server: true
+  components: []
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: false
+  replay: false
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
+  settings:
+  - name: apiKey
+    type: string
+    defaultValue: ''
+    description: Breyta App Login -> Integrations -> Segment -> Copy API key
+    required: true
+    label: API Key
+  - name: workspaceId
+    type: string
+    defaultValue: ''
+    description: Your Breyta Workspace Id
+    required: true
+    label: Workspace Id
+  actions: []
+  presets: []
 - id: 54521fd525e721e32a72ee98
   display_name: Bronto
   name: Bronto
