@@ -553,6 +553,7 @@ sources:
       - eu
     endpoints:
       - us
+      - eu
   - id: bnpfpwKnhu
     display_name: Radar
     slug: radar
