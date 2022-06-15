@@ -76,7 +76,7 @@ Field | | Type | Description
 `userId` | optional | String | The database ID for the user. If you don't know who the user is yet, you can omit the `userId` and just record `traits`. You can read more about identities in the [identify reference](/docs/connections/spec/identify).
 `traits` | optional | Object | A dictionary of traits you know about the user, like `email` or `name`. You can read more about traits in the [identify reference](/docs/connections/spec/identify/).
 `options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `traits` object, pass an empty object (as an '{}') before `options`._
-`callback` | optional | Function | A function executed after a short timeout, giving the browser time to make outbound requests first.
+`callback` | optional | Function | A function executed after a short timeout (300 ms), giving the browser time to make outbound requests first.
 
 By default, Analytics.js caches traits in the browser's `localStorage` and attaches them to each Identify call.
 
@@ -126,7 +126,7 @@ Field | | Type | Description
 `event`| | String | The name of the event you're tracking. You can read more about the [track method](/docs/connections/spec/track) and recommended event names.
 `properties` | optional | Object | A dictionary of [properties](/docs/connections/spec/track#properties) for the event. If the event was `'Added to Cart'`, it might have properties like `price` and `productType`.
 `options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_.
-`callback` | optional | Function | A function that runs after a short timeout, giving the browser time to make outbound requests first.
+`callback` | optional | Function | A function that runs after a short timeout (300 ms), giving the browser time to make outbound requests first.
 
 The only required argument in Analytics.js is an _event name string_. You can read more about [how Segment recommends you name events](/docs/connections/spec/track#event).
 
@@ -139,7 +139,7 @@ analytics.track('Article Completed', {
 });
 ```
 
-For more information about choosing which events to track, event naming and more, check out [Analytics Academy](https://segment.com/academy/).
+For more information about choosing which events to track, event naming, and more, check out [Analytics Academy](https://segment.com/academy/){:target="_blank"}.
 
 The only required argument on Track calls in Analytics.js is an `event` name string. Read more about how Segment recommends [naming your events](/docs/connections/spec/track#event).
 
@@ -222,7 +222,7 @@ Field | | Type | Description
 `name` | optional | String | The name of the page.
 `properties` | optional | Object | A dictionary of properties of the page. Note: Analytics.js collects `url`, `title`, `referrer` and `path` are automatically. This defaults to a `canonical url`, if available, and falls back to `document.location.href`.
 `options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_.
-`callback` | optional | Function | A function that runs after a short timeout, giving the browser time to make outbound requests first.
+`callback` | optional | Function | A function that runs after a short timeout (300 ms), giving the browser time to make outbound requests first.
 
 #### Default Page Properties
 
@@ -266,7 +266,7 @@ analytics.page('Pricing', {
 
 The Group method associates an [identified user](/docs/connections/sources/catalog/libraries/website/javascript/#identify) with a company, organization, project, workspace, team, tribe, platoon, assemblage, cluster, troop, gang, party, society or any other collective noun you come up with for the same concept.
 
-This is useful for <!-- Business-to-Business (B2B) -->tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
+This is useful for <!-- Business-to-Business (B2B) -->tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/), and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
 
 The Group method follows the format below.
@@ -281,7 +281,7 @@ Field | | Type | Description
 `groupId` | | String | The Group ID to associate with the current user.
 `traits` | optional | Object | A dictionary of [traits](/docs/connections/spec/group#traits) for the group. Example traits for a group include `address`, `website`, and `employees`.
 `options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_.
-`callback` | optional | Function | A function that runs after a short timeout, giving the browser time to make outbound requests first.
+`callback` | optional | Function | A function that runs after a short timeout (300 ms), giving the browser time to make outbound requests first.
 
 Example `group` call:
 
@@ -302,7 +302,7 @@ Find more details about `group`, including the `group` payload, in [the Group Sp
 
 The Alias method combines two unassociated user identities. Segment usually handles aliasing automatically when you call `identify` on a user, however some tools require an explicit `alias` call.
 
-This is an advanced method, but it is required to manage user identities successfully in *some* Segment destinations like [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) and [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias). <!-- TODO: LR Dests question: is this still true? Is there a list of the ones that require this?-->
+This is an advanced method, but it's required to manage user identities successfully in *some* Segment destinations like [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) and [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias). <!-- TODO: LR Dests question: is this still true? Is there a list of the ones that require this?-->
 
 The Alias method follows the format below:
 
@@ -317,7 +317,7 @@ Field | | Type | Description
 `userId` | | String | The new user ID you want to associate with the user.
 `previousId` | optional | String | The previous ID that the user was recognized by. This defaults to the currently identified user's ID.
 `options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call.
-`callback` | optional | Function | A function that is executed after a short timeout, giving the browser time to make outbound requests first.
+`callback` | optional | Function | A function that is executed after a short timeout (300 ms), giving the browser time to make outbound requests first.
 
 For more details about Alias, including the **`alias` call payload**, check out the [Segment Spec](/docs/connections/spec/alias/).
 
@@ -334,9 +334,9 @@ The Analytics.js utility methods help you change how Segment loads on your page.
 
 ### Ready
 
-The `ready` method allows you to pass in a method that is called once Analytics.js finishes initializing, and once all enabled device-mode destinations load. It's like [jQuery's `ready` method](https://api.jquery.com/ready/), except for Destinations.
+The `ready` method allows you to pass in a method that is called once Analytics.js finishes initializing, and once all enabled device-mode destinations load. It's like [jQuery's `ready` method](https://api.jquery.com/ready/){:target="_blank"}, except for Destinations.
 
-The `ready` method is not invoked if any Destination throws an error (for example, for an expired API key, incorrect settings configuration, or when a Destination is blocked by the browser) during initialization.
+The `ready` method isn't invoked if any Destination throws an error (for example, for an expired API key, incorrect settings configuration, or when a Destination is blocked by the browser) during initialization.
 
 The code in the `ready` function only executes after `ready` is emitted.
 
@@ -378,9 +378,9 @@ analytics.debug(false);
 
 ### Emitter
 
-The global `analytics` object emits events whenever you call `alias`, `group`, `identify`, `track` or `page`.
+The global `analytics` object emits events whenever you call `alias`, `group`, `identify`, `track`, or `page`.
 
-Use the `on` method to set listeners for these events and run your own custom code. This can be useful if you want to send data to a service for which Segment does not have a destination.
+Use the `on` method to set listeners for these events and run your own custom code. This can be useful if you want to send data to a service for which Segment doesn't have a destination.
 
 ```js
 analytics.on(method, callback);
@@ -411,14 +411,14 @@ This method emits events _before_ they are processed by the Segment integration,
 
 The `timeout` method sets the length (in milliseconds) of callbacks and helper functions. This is useful if you have multiple scripts that need to fire in your callback or `trackLink`, `trackForm` helper function.
 
-The example below sets the timeout to 500ms.
+The example below sets the timeout to 500 ms.
 
 ```js
 analytics.timeout(500);
 ```
 
 > success "Tip"
-> If you're triggering ad network conversion pixels, Segment recommends extending timeout to 500ms to account for slow load times.
+> If you're triggering ad network conversion pixels, Segment recommends extending timeout to 500 ms to account for slow load times.
 
 
 ### Reset or Logout
@@ -429,9 +429,9 @@ Calling `reset` resets the `id`, including `anonymousId`, and clears `traits` fo
 analytics.reset();
 ```
 
-The `reset` method only clears the cookies and `localStorage` created by Segment. It does not clear data from other integrated tools, as those native libraries might set their own cookies to manage user tracking, sessions, and manage state. To completely clear out the user session, see the documentation provided by those tools.
+The `reset` method only clears the cookies and `localStorage` created by Segment. It doesn't clear data from other integrated tools, as those native libraries might set their own cookies to manage user tracking, sessions, and manage state. To completely clear out the user session, see the documentation provided by those tools.
 
-Segment does not share `localStorage` across subdomains. If you use Segment tracking on multiple subdomains, you must call `analytics.reset()` for each subdomain to completely clear out the user session.
+Segment doesn't share `localStorage` across subdomains. If you use Segment tracking on multiple subdomains, you must call `analytics.reset()` for each subdomain to completely clear out the user session.
 
 
 
@@ -473,7 +473,7 @@ analytics.identify('user_123', {
 });
 ```
 
-You don't need to include `'All': true` in this call because it is implied as the default behavior. Instead, only list the destinations that you want to exclude, with a `false` flag for each.
+You don't need to include `'All': true` in this call because it's implied as the default behavior. Instead, only list the destinations that you want to exclude, with a `false` flag for each.
 
 Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (for example, "AdLearn Open Platform", "awe.sm", "Mailchimp", etc). If a Destination has more than one acceptable name, this appears in the documentation for that destination.
 
@@ -488,7 +488,7 @@ Destination flags are **case sensitive** and match [the destination's name in th
 
 You can modify the `.load` method in Analytics.js (the second line of the snippet) to take a second argument. If you pass an object with an `integrations` dictionary (matching the format [above](#selecting-destinations-with-the-integrations-object)), then Segment only loads the integrations in that dictionary that are marked as enabled with the boolean value `true`.
 
-You can only call `.load` on page load, or reload (refresh). If you modify the `.load` method between page loads, it does not have any effect until the page is reloaded.
+You can only call `.load` on page load, or reload (refresh). If you modify the `.load` method between page loads, it doesn't have any effect until the page is reloaded.
 
 For example:
 
@@ -570,7 +570,7 @@ Upon receiving the `beforeunload` browser event, Analytics.js attempts to flush 
 No. Batching is only supported as part of Analytics.js 2.0.
 
 #### Can other destinations receive batched events?
-No, this batching only impacts events sent to Segment. Once the batch reaches Segment, it is split up and follows the normal path of an event.
+No, this batching only impacts events sent to Segment. Once the batch reaches Segment, it's split up and follows the normal path of an event.
 
 #### Will batching impact billing or throughput?
 No, batching won't impact billing or throughput.
@@ -732,13 +732,13 @@ Analytics.js tracks across subdomains out of the box; all Segment destinations f
 
 ## Analytics.js Performance
 
-The Analytics.js library and all Destination libraries are loaded with the [HTML script `async` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async). This also means that Segment fires methods asynchronously, so you should adjust your code accordingly if you require that events be sent from the browser in a specific order.
+The Analytics.js library and all Destination libraries are loaded with the [HTML script `async` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async){:target="_blank"}. This also means that Segment fires methods asynchronously, so you should adjust your code accordingly if you require that events be sent from the browser in a specific order.
 
-While many tools require access to the DOM or cookies, for the Zendesk, Salesforce, and Mailchimp destinations, Segment does not need to load a native JavaScript library. Instead, Segment's servers send data to the end-tools.
+While many tools require access to the DOM or cookies, for the Zendesk, Salesforce, and Mailchimp destinations, Segment doesn't need to load a native JavaScript library. Instead, Segment's servers send data to the end-tools.
 
 Segment loads the libraries required for your **enabled** Destinations. When you disable a destination, the custom version of Analytics.js loaded on your site stops requesting that library.
 
-Using Analytics.js does not offer a large performance benefit, but is more performant than installing each of the destinations individually. And as more destinations move to accept data directly from Segment, you'll receive more performance benefits automatically.
+Using Analytics.js doesn't offer a large performance benefit, but is more performant than installing each of the destinations individually. And as more destinations move to accept data directly from Segment, you'll receive more performance benefits automatically.
 
 One option, if you don't want to use any bundled third-party tools, is to use the browserify'd [analytics-node](https://github.com/segmentio/analytics-node) package. <!-- TODO LR note: WTF does "browserified" mean-->
 
@@ -757,7 +757,7 @@ Analytics.js uses `localstorage` cookies if you have retries enabled, to keep tr
 - The `reclaimStart` and `reclaimEnd` cookies determine if a tab takes over the queue from another tab.
 - The `inProgress` and `queue` cookies track events in progress, and events queued for retry.
 
-For more information, visit the [Segment localstorage-retry library](https://github.com/segmentio/localstorage-retry).
+For more information, visit the [Segment localstorage-retry library](https://github.com/segmentio/localstorage-retry){:target="_blank"}.
 
 You can set the `debug` cookie to `analytics.js` to log debug messages from Analytics.js to the console.
 
