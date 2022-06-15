@@ -161,7 +161,7 @@ The Profile API uses basic authentication for authorization — with the **Acces
 
 You can create your Access Secret in your Personas Settings page. Segment recommends that you name your tokens with the name of your app and its environment, such as `marketing_site/production`. Access tokens are shown once — you won't be able to see it again. In the event of a security incident, you can revoke and cycle the access token.
 
-![Coping an API access token in Personas](images/1515109834051.png)
+![Copying an API access token in Personas](images/1515109834051.png)
 
 
 When you make requests to the Profile API, use the Access Token as the basic authentication username and keep the password blank.
