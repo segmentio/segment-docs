@@ -25,6 +25,7 @@ async
 Blitzllama
 blocklist
 boolean
+Breyta
 Chargebee
 CloudFront
 Cocoapods

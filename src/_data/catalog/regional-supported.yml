@@ -553,6 +553,7 @@ sources:
       - eu
     endpoints:
       - us
+      - eu
   - id: bnpfpwKnhu
     display_name: Radar
     slug: radar
@@ -1153,6 +1154,14 @@ destinations:
     regions:
       - us
       - eu
+    endpoints:
+      - us
+  - id: 6241e78214aad278a6322f52
+    display_name: Breyta CRM
+    slug: breyta-crm
+    url: connections/destinations/catalog/breyta-crm
+    regions:
+      - us
     endpoints:
       - us
   - id: 54521fd525e721e32a72ee98
