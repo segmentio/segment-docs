@@ -4,7 +4,7 @@ title: Personas Profile API
 
 
 > info "Plan Requirements"
-> To use the Profile API, you'll need Personas Advanced on your plan. 
+> To use the Profile API, you'll need Personas Advanced on your plan.
 
 The Segment Profile API provides a single API to read user-level and account-level customer data. Segment now allows you to query the entire user or account object programmatically, including the `external_ids` , `traits` , and `events` that make up a user's journey through your product.
 
@@ -40,28 +40,36 @@ This document has four parts…
 
 Your access token enables you to call the Profile API and access customer data.
 
+> info "European Union requirements"
+> To implement the Profile API in the European Union, you must complete the following steps within an EU workspace. View the [regional Segment documentation](/docs/guides/regional-segment/#create-a-new-workspace-with-a-different-region) for more information.
+
 1.  Navigate to the API Access settings page *Personas > <personas_space> > Settings > API Access*.
 
 2.  Create your **Access Token** with a name that describes your use case, for example `testing/development`. Take note of the **space ID** value, you'll pass this into the Profile API request URL in a later step.
 
-    ![](images/1516309197043.png)
+    ![Generating an API access token in Personas](images/1516309197043.png)
 
 3.  Click **Generate token**. Copy the resulting **Access Token** and store it in a file on your computer. You'll pass in the **Access Token** into the Profile API for authorization as an HTTP Basic Auth username in a later step.
-    ![](images/1526362840437.png)
+    ![Copying an API access token in Personas](images/1526362840437.png)
 
 
 ### Find a user's external id
 
 1. Navigate to Personas > *personas_space* > Explorer and select the user you want to query through the API.
 2. Take note of the user's available identifiers. For example, this user has a `user_id` with the value `9800664881`. The Profile API requires both the type of ID and the value separated by a colon. For example, `user_id:9800664881`.
-![](images/profile_api_user_id.png)
+![Retrieving a user's identifiers with the Personas Explorer](images/profile_api_user_id.png)
 
 ### Query the user's event traits
 
 1. From the HTTP API testing application of your choice, configure the authentication as described above.
 2. Prepare the request URL by replacing `<space_id>` and `<external_id>` in the request URL:
     `https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/<external_id>/traits`
-3. Send a GET request to the URL.
+
+
+    If you're using the Profile API in the EU, use the following URL for all requests:
+
+    `https://profiles.euw1.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/<external_id>/traits`
+3. Send a `GET` request to the URL.
 
 ### Explore the user's traits in the response
 
@@ -142,14 +150,18 @@ The Segment API is organized around [REST](http://en.wikipedia.org/wiki/Represen
 
     https://profiles.segment.com
 
+**European Union endpoint**
+
+    https://profiles.euw1.segment.com
+
 
 ### Authentication
 
-The Profile API uses basic authentication for authorization — with the **Access Token** as the authorization key. Your **Access Token** carries access to all of your customer data, so be sure to keep them secret! Do not share your Access Token in publicly accessible areas such as GitHub or client-side code.
+The Profile API uses basic authentication for authorization — with the **Access Token** as the authorization key. Your **Access Token** carries access to all of your customer data, so be sure to keep them secret. Do not share your Access Token in publicly accessible areas such as GitHub or client-side code.
 
 You can create your Access Secret in your Personas Settings page. Segment recommends that you name your tokens with the name of your app and its environment, such as `marketing_site/production`. Access tokens are shown once — you won't be able to see it again. In the event of a security incident, you can revoke and cycle the access token.
 
-![](images/1515109834051.png)
+![Copying an API access token in Personas](images/1515109834051.png)
 
 
 When you make requests to the Profile API, use the Access Token as the basic authentication username and keep the password blank.
