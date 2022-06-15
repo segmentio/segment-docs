@@ -1,12 +1,13 @@
 ---
 title: Breyta Destination
+id: 6241e78214aad278a6322f52
 ---
 
 [Breyta](https://breyta.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}, CRM as it should be. Breyta is designed to work for you, so you can spend more time closing deals. Get actionable and automatic insights throughout your customer lifecycle.
 
 This destination is maintained by Breyta. For any issues with the destination, [contact the Breyta Support team](mailto:hello@breyta.io).
 
-## Getting Started
+## Getting started
 
 {% include content/connection-modes.md %} 
 
