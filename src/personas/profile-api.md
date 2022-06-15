@@ -50,7 +50,7 @@ Your access token enables you to call the Profile API and access customer data.
     ![Generating an API access token in Personas](images/1516309197043.png)
 
 3.  Click **Generate token**. Copy the resulting **Access Token** and store it in a file on your computer. You'll pass in the **Access Token** into the Profile API for authorization as an HTTP Basic Auth username in a later step.
-    ![Coping an API access token in Personas](images/1526362840437.png)
+    ![Copying an API access token in Personas](images/1526362840437.png)
 
 
 ### Find a user's external id
