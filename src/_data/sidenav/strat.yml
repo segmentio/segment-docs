@@ -4,17 +4,17 @@ sections:
   section_title: Adobe Integrations
   section:
   - path: /connections/destinations/catalog/adobe-analytics
-    title: Adobe Analytics destination: Overview
+    title: 'Adobe Analytics destination: Overview'
   - path: /connections/destinations/catalog/adobe-analytics/settings
-    title: Adobe Analytics destination: Mappings
+    title: 'Adobe Analytics destination: Mappings'
   - path: /connections/destinations/catalog/adobe-analytics/identity
-    title: Adobe Analytics destination: Identity resolution
+    title: 'Adobe Analytics destination: Identity resolution'
   - path: /connections/destinations/catalog/adobe-analytics/mobile
-    title: Adobe Analytics destination: Mobile support
+    title: 'Adobe Analytics destination: Mobile support'
   - path: /connections/destinations/catalog/adobe-analytics/heartbeat
-    title: Adobe Analytics destination: Heartbeat tracking
+    title: 'Adobe Analytics destination: Heartbeat tracking'
   - path: /connections/destinations/catalog/adobe-analytics/best-practices
-    title: Adobe Analytics destination: Best practices
+    title: 'Adobe Analytics destination: Best practices'
   - path: /connections/destinations/catalog/actions-adobe-target-web
     title: Adobe Target Web destination
   - path: /connections/destinations/catalog/actions-adobe-target-cloud
