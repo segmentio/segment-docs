@@ -1,8 +1,7 @@
 ---
-title: 'Personas Facebook Custom Audiences Destination'
-beta: true
+title: 'Facebook Custom Audiences Destination'
+strat: facebook
 hide-boilerplate: true
-hide-dossier: true
 redirect_from: '/connections/destinations/catalog/personas-facebook-ads/'
 id: 5a4d24dcc5836400017188f6
 ---

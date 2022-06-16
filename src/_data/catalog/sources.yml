@@ -1054,6 +1054,7 @@ items:
       - eu
     endpoints:
       - us
+      - eu
     source_type: server
     description: ''
     logo:
