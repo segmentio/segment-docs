@@ -255,8 +255,7 @@ Add a policy to the role created above to give Segment access to the relevant Gl
 Segment requires access to the data and schema for debugging data quality issues. The modes available for debugging are:
 - Access the individual objects stored in S3 and the associated schema to understand data discrepancies
 - Run an Athena query on the underlying data stored in S3
-  - Ensure Athena uses Glue as the data catalog. Older accounts may not have this configuration, and may require some additional steps to complete the upgrade. The Glue console typically displays a warning and provides a link to instructions on how to complete the upgrade.
-![Debugging](images/dl_setup_glueerror.png)
+  - Ensure Athena uses Glue as the data catalog. Older accounts may not have this configuration, and may require some additional steps to complete the upgrade. The Glue console typically displays a warning and provides a link to instructions on how to complete the upgrade. The warning reads: <br/> **Upgrade to the AWS Glue Data Catalog** <br/> To use the AWS Glue Data Catalog with Amazon Athena and Amazon Redshift Spectrum, you must upgrade your Athena Data Catalog to the AWS Glue Data Catalog. Without the upgrade, tables and partitions created by AWS Glue cannot be queried with Amazon Athena or Redshift Spectrum. Start the upgrade in the [Athena console](https://console.aws.amazon.com/athena/){:target="_blank"}.
   - An easier alternative is to create a new account that has Athena backed by Glue as the default.
 
 ## Updating EMR clusters
