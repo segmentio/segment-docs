@@ -28,7 +28,7 @@ If you see an error or something incorrect on a specific page, click Request doc
 
 ### Pull Requests
 
-If you would like to update the documentation yourself, create a Pull Request to bring it to the team’s attention. Click Edit this page to edit the page directly on GitHub. Alternatively, you can clone the repository and submit your Pull Request that way. For more information, see [Contributing](CONTRIBUTING.md) and the [Developer Guide](devguide.md)
+If you would like to update the documentation yourself, create a Pull Request to bring it to the team’s attention. Click Edit this page to edit the page directly on GitHub. Alternatively, you can clone the repository and submit your Pull Request that way. For more information, see [Contributing](CONTRIBUTING.md) and the [Developer Guide](devguide.md).
 
 
 
