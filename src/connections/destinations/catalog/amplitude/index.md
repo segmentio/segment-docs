@@ -34,9 +34,10 @@ In addition to the docs below, Amplitude created a [integration guide](https://d
 
 ## Getting Started
 
-1. From the Segment web app, click **Catalog** > **Destinations**.
-2. Search for "Amplitude" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. In the destination settings, enter your Amplitude API key.
+1. From the Segment web app, navigate to **Connections > Destinations** and click **Add Destination**.
+2. Search for **Amplitude** select it. 
+3. Choose which sources to connect the destination to.
+4. In the destination settings, enter your Amplitude API key.
 
    You can find your Amplitude API key in the [Amplitude project settings](https://analytics.amplitude.com/settings/projects). It is a 32-character string of numbers and letters. Locate the project you want to receive your Segment data, copy that project's API key, and paste it into your Amplitude destination settings in Segment.
 
