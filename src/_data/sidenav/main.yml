@@ -192,8 +192,6 @@ sections:
         title: Data Lakes Overview
       - path: /connections/storage/catalog/data-lakes
         title: Set Up Data Lakes
-      - path: /connections/storage/data-lakes/data-lakes-manual-setup
-        title: Configure the Data Lakes AWS Environment
       - path: /connections/storage/data-lakes/sync-reports
         title: Sync Reports and Error Reporting
       - path: /connections/storage/data-lakes/lake-formation
