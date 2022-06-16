@@ -76,7 +76,7 @@ Field | | Type | Description
 `userId` | optional | String | The database ID for the user. If you don't know who the user is yet, you can omit the `userId` and just record `traits`. You can read more about identities in the [identify reference](/docs/connections/spec/identify).
 `traits` | optional | Object | A dictionary of traits you know about the user, like `email` or `name`. You can read more about traits in the [identify reference](/docs/connections/spec/identify/).
 `options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `traits` object, pass an empty object (as an '{}') before `options`._
-`callback` | optional | Function | A function executed after a short timeout (300 ms), giving the browser time to make outbound requests first.
+`callback` | optional | Function | A function executed after a timeout of 300 ms, giving the browser time to make outbound requests first.
 
 By default, Analytics.js caches traits in the browser's `localStorage` and attaches them to each Identify call.
 
@@ -126,7 +126,7 @@ Field | | Type | Description
 `event`| | String | The name of the event you're tracking. You can read more about the [track method](/docs/connections/spec/track) and recommended event names.
 `properties` | optional | Object | A dictionary of [properties](/docs/connections/spec/track#properties) for the event. If the event was `'Added to Cart'`, it might have properties like `price` and `productType`.
 `options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_.
-`callback` | optional | Function | A function that runs after a short timeout (300 ms), giving the browser time to make outbound requests first.
+`callback` | optional | Function | A function that runs after a timeout of 300 ms, giving the browser time to make outbound requests first.
 
 The only required argument in Analytics.js is an _event name string_. You can read more about [how Segment recommends you name events](/docs/connections/spec/track#event).
 
@@ -147,7 +147,7 @@ The only required argument on Track calls in Analytics.js is an `event` name str
 #### Track Link
 
 `trackLink` is a helper method that attaches the `track` call as a handler to a link.
-With `trackLink`, Analytics.js inserts a short timeout (300 ms) to give the `track` call more time. This is useful when a page would redirect before the `track` method could complete all requests.
+With `trackLink`, Analytics.js inserts a timeout of 300 ms to give the `track` call more time. This is useful when a page would redirect before the `track` method could complete all requests.
 
 The `trackLink` method follows the format below.
 
@@ -174,7 +174,7 @@ analytics.trackLink(link, 'Clicked Free-Trial Link', {
 #### Track Form
 
 `trackForm` is a helper method that binds a `track` call to a form submission.
-The `trackForm` method inserts a short timeout (300 ms) to give the `track` call more time to complete. This is useful to prevent a page from redirecting before the `track` method could complete all requests.
+The `trackForm` method inserts a timeout of 300 ms to give the `track` call more time to complete. This is useful to prevent a page from redirecting before the `track` method could complete all requests.
 
 The `trackForm` method follows the format below.
 
@@ -222,7 +222,7 @@ Field | | Type | Description
 `name` | optional | String | The name of the page.
 `properties` | optional | Object | A dictionary of properties of the page. Note: Analytics.js collects `url`, `title`, `referrer` and `path` are automatically. This defaults to a `canonical url`, if available, and falls back to `document.location.href`.
 `options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_.
-`callback` | optional | Function | A function that runs after a short timeout (300 ms), giving the browser time to make outbound requests first.
+`callback` | optional | Function | A function that runs after a timeout of 300 ms, giving the browser time to make outbound requests first.
 
 #### Default Page Properties
 
@@ -281,7 +281,7 @@ Field | | Type | Description
 `groupId` | | String | The Group ID to associate with the current user.
 `traits` | optional | Object | A dictionary of [traits](/docs/connections/spec/group#traits) for the group. Example traits for a group include `address`, `website`, and `employees`.
 `options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_.
-`callback` | optional | Function | A function that runs after a short timeout (300 ms), giving the browser time to make outbound requests first.
+`callback` | optional | Function | A function that runs after a timeout of 300 ms, giving the browser time to make outbound requests first.
 
 Example `group` call:
 
@@ -317,7 +317,7 @@ Field | | Type | Description
 `userId` | | String | The new user ID you want to associate with the user.
 `previousId` | optional | String | The previous ID that the user was recognized by. This defaults to the currently identified user's ID.
 `options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call.
-`callback` | optional | Function | A function that is executed after a short timeout (300 ms), giving the browser time to make outbound requests first.
+`callback` | optional | Function | A function that is executed after a timeout of 300 ms, giving the browser time to make outbound requests first.
 
 For more details about Alias, including the **`alias` call payload**, check out the [Segment Spec](/docs/connections/spec/alias/).
 
