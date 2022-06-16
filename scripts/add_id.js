@@ -23,9 +23,7 @@ const {
 const {
   type
 } = require('os');
-const {
-  autocomplete
-} = require('@algolia/autocomplete-js');
+
 
 require('dotenv').config();
 
