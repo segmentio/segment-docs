@@ -61,8 +61,6 @@ sections:
     title: Google Enhanced Conversions destination
   - path: /connections/destinations/catalog/doubleclick-floodlight
     title: DoubleClick Floodlight destination
-  - path: /connections/destinations/catalog/personas-display-video-360
-    title: Google Display & Video 360 destination (Personas)
   - path: /connections/destinations/catalog/google-ads-classic
     title: Google Ads (Classic) destination
   - path: /connections/destinations/catalog/google-ads-gtag
@@ -71,6 +69,11 @@ sections:
     title: Google Cloud Function destination
   - path: /connections/destinations/catalog/google-cloud-pubsub
     title: Google Cloud Pub/Sub destination
+  - path: /connections/destinations/catalog/adwords-remarketing-lists
+    title: Google Ads Remarketing Lists destination (Personas)
+  - path: /connections/destinations/catalog/personas-display-video-360
+    title: Google Display & Video 360 destination (Personas)
+   
 
 - slug: salesforce
   section_title: Salesforce Integrations
