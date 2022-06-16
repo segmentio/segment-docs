@@ -95,7 +95,7 @@ Please note the following limits as you upload CSV files to Twilio Engage:
 - Upload CSV files with up to 1 million rows (plus one header row).
 - You can only upload one file at a time.
 - The CSV file size can't exceed 15 MB.
-- If you upload the same email or phone number with different subscription states in a CSV file, the resulting subscription status isn't guaranteed.
+- If you upload the same email or phone number with different subscription states in a CSV file, Engage doesn't guarantee the subscription status result.
 
 ## Message consent
 
