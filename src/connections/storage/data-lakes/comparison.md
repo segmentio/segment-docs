@@ -9,7 +9,7 @@ As Segment builds new data storage products, each product evolves from prior pro
 Data Lakes and Warehouses are not identical, but are compatible with a configurable mapping. This mapping helps you to identify and manage the differences between the two storage solutions, so you can easily understand how the data in each is related.
 
 
-## Data Freshness
+## Data freshness
 
 Data Lakes and Warehouses offer different sync frequencies:
 - Warehouses can sync up to once an hour, with the ability to set a custom sync schedule and [selectively sync](/docs/connections/warehouses/selective-sync/) collections and properties within a source to Warehouses.
@@ -21,7 +21,7 @@ Segment's [99% guarantee of no duplicates](/docs/guides/duplicate-data/) for dat
 
 [Warehouses](/docs/guides/duplicate-data/#warehouse-deduplication) and [Data Lakes](/docs/guides/duplicate-data/#data-lake-deduplication) also have a secondary deduplication system to further reduce the volume of duplicates to ensure clean data in your Warehouses and Data Lakes.
 
-## Object vs Event Data
+## Object vs event data
 
 Warehouses support both event and object data, while Data Lakes supports only event data.
 
@@ -73,7 +73,7 @@ See the table below for information about the [source](/docs/connections/sources
 
 ## Schema
 
-### Data Types
+### Data types
 
 Warehouses and Data Lakes both infer data types for the events each receives. Since events are received by Warehouses one by one, Warehouses look at the first event received every hour to infer the data type for subsequent events. Data Lakes uses a similar approach, however because it receives data every hour, Data Lakes is able to look at a group of events to infer the data type.
 
@@ -84,7 +84,7 @@ This approach leads to a few scenarios where the data type for an event may be d
 
 Variance in data types between Warehouses and Data Lakes don't happen often for booleans, strings, and timestamps, however it can occur for decimals and integers.
 
-If a bad data type is seen, such as text in place of a number or an incorrectly formatted date, Warehouses and Data Lakes attempt a best effort conversion to cast the fields to the target data type. Fields that cannot be casted may be dropped. [Contact us](https://segment.com/contact) if you want to correct data types in the schema and perform a [replay](/docs/guides/what-is-replay/) to ensure no data is lost.
+If a bad data type is seen, such as text in place of a number or an incorrectly formatted date, Warehouses and Data Lakes attempt a best effort conversion to cast the fields to the target data type. Fields that cannot be casted may be dropped. [Contact Segment Support](https://segment.com/contact){:target="_blank"} if you want to correct data types in the schema and perform a [replay](/docs/guides/what-is-replay/) to ensure no data is lost.
 
 
 ### Tables
