@@ -34,7 +34,7 @@ In addition to the docs below, Amplitude created a [integration guide](https://d
 
 ## Getting Started
 
-1. From the Segment web app, click **Catalog**.
+1. From the Segment web app, click **Catalog** > **Destinations**.
 2. Search for "Amplitude" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In the destination settings, enter your Amplitude API key.
 
