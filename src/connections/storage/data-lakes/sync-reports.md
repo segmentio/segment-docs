@@ -13,7 +13,7 @@ The table has the following columns in its schema:
 
 | **Sync Metric**   | **Description**    |
 | ----------------- | ------------------- |
-| `workspace_id`    | Distinct ID assigned to each Segment workspace and [found in the workspace settings](https://app.segment.com/goto-my-workspace/settings/basic). |
+| `workspace_id`    | Distinct ID assigned to each Segment workspace and [found in the workspace settings](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"}. |
 | `source_id`       | Distinct ID assigned to each Segment source, found in the Source Settings > API Keys > Source ID.         |
 | `database`        | Name of the Glue Database used to store sync report tables. Segment automatically creates this database during the Data Lakes set up process.         |
 | `emr_cluster_id`  | ID of the EMR cluster which Data Lakes uses, found in the [Data Lakes Settings page]().  |
@@ -223,7 +223,7 @@ WHERE source_id='9IP56Shn6' AND status='failed' AND date(day) >= (CURRENT_DATE -
 The following error types can cause your data lake syncs to fail:
 - **[Insufficient permissions](#insufficient-permissions)** - Segment does not have the permissions necessary to perform a critical operation. You must grant Segment additional permissions.
 - **[Invalid settings](#invalid-settings)** - The settings are invalid. This could be caused by a missing required field, or a validation check that fails. The invalid setting must be corrected before the sync can succeed.
-- **[Internal error](#internal-error)** - An error occurred in Segment's internal systems. This should resolve on its own. [Contact the Segment Support team](https://segment.com/help/contact/) if the sync failure persists.
+- **[Internal error](#internal-error)** - An error occurred in Segment's internal systems. This should resolve on its own. [Contact the Segment Support team](https://segment.com/help/contact/){:target="_blank"} if the sync failure persists.
 
 ### Insufficient permissions
 
@@ -253,11 +253,11 @@ If you have invalid settings, you might see one of the error messages below:
 - "External ID is invalid. Please ensure the external ID in the IAM role used to connect to your Data Lake matches the source ID."
 - "External ID is not set. Please ensure that the IAM role used to connect to your Data Lake has the source ID in the list of external IDs."
 
-The most common error occurs when you do not list all Source IDs in the External ID section of the IAM role. You can find your Source IDs in the Segment workspace, and you must add each one to the list of [External IDs](https://github.com/segmentio/terraform-aws-data-lake/tree/master/modules/iam#external_ids) in the IAM policy. You can either update the IAM policy from the AWS Console, or re-run the [Data Lakes set up Terraform job](https://github.com/segmentio/terraform-aws-data-lake).
+The most common error occurs when you do not list all Source IDs in the External ID section of the IAM role. You can find your Source IDs in the Segment workspace, and you must add each one to the list of [External IDs](https://github.com/segmentio/terraform-aws-data-lake/tree/master/modules/iam#external_ids){:target="_blank"} in the IAM policy. You can either update the IAM policy from the AWS Console, or re-run the [Data Lakes set up Terraform job](https://github.com/segmentio/terraform-aws-data-lake){:target="_blank"}.
 
 ### Internal error
 
-Internal errors occur in Segment's internal systems, and should resolve on their own. If sync failures persist, [contact the Segment Support team](https://segment.com/help/contact/).
+Internal errors occur in Segment's internal systems, and should resolve on their own. If sync failures persist, [contact the Segment Support team](https://segment.com/help/contact/){:target="_blank"}.
 
 ## FAQ
 

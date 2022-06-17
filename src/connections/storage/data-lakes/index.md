@@ -10,7 +10,7 @@ Segment Data Lakes sends Segment data to a cloud data store (for example AWS S3)
 > info ""
 > Segment Data Lakes is available to Business tier customers only.
 
-To learn more, check out the blog post, [Introducing Segment Data Lakes](https://segment.com/blog/introducing-segment-data-lakes/){:target="_blank"}.
+To learn more, check out the blog post [Introducing Segment Data Lakes](https://segment.com/blog/introducing-segment-data-lakes/){:target="_blank"}.
 
 
 ## How Segment Data Lakes work
@@ -38,7 +38,7 @@ When you use Data Lakes, you can either use Data Lakes as your _only_ source of 
 
 ## Set up Segment Data Lakes
 
-For detailed instructions on how to configure Segment Data Lakes, see the [Data Lakes catalog page](/docs/connections/storage/catalog/data-lakes/). Be sure to consider the EMR and AWS IAM components listed below."
+For detailed instructions on how to configure Segment Data Lakes, see the [Data Lakes catalog page](/docs/connections/storage/catalog/data-lakes/). Be sure to consider the EMR and AWS IAM components listed below.
 
 ### EMR
 
@@ -85,7 +85,7 @@ By default, the date partition structure is `day=<YYYY-MM-DD>/hr=<HH>` to give y
 
 Data Lakes stores the inferred schema and associated metadata of the S3 data in AWS Glue Data Catalog. This metadata includes the location of the S3 file, data converted into Parquet format, column names inferred from the Segment event, nested properties and traits which are now flattened, and the inferred data type.
 
-![A screenshot of the AWS ios_prod_identify table, containing the schema for the table, information about the table, and the table version](images/dl_gluecatalog.png)
+![A screenshot of the AWS ios_prod_identify table, displaying the schema for the table, information about the table, and the table version](images/dl_gluecatalog.png)
 <!--
 TODO:
 add annotated glue image calling out different parts of inferred schema)
@@ -158,7 +158,7 @@ Data types and labels available in Protocols aren't supported by Data Lakes.
 {% endfaqitem %}
 
 {% faqitem What is the cost to use AWS Glue? %}
-You can find details on Amazon's [pricing for Glue page](https://aws.amazon.com/glue/pricing/){:target="_blank"}. For reference, Data Lakes creates 1 table per event type in your source, and adds 1 partition per hour to the event table.
+You can find details on Amazon's [pricing for Glue](https://aws.amazon.com/glue/pricing/){:target="_blank"} page. For reference, Data Lakes creates 1 table per event type in your source, and adds 1 partition per hour to the event table.
 {% endfaqitem %}
 
 {% faqitem What limits does AWS Glue have? %}
@@ -171,7 +171,7 @@ The most common limits to keep in mind are:
 
 Segment stops creating new tables for the events after you exceed this limit. However you can contact your AWS account representative to increase these limits.
 
-You should also read the [additional considerations](https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-hive-metastore-glue.html){:target="_blank"} when using AWS Glue Data Catalog.
+You should also read the [additional considerations in Amazon's documentation](https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-hive-metastore-glue.html){:target="_blank"} when using AWS Glue Data Catalog.
 
 {% endfaqitem %}
 
