@@ -51,17 +51,17 @@ For example, a user might reach out to you after accidentally unsubscribing to y
 
 With Segment's APIs, you can manage user subscriptions programmatically on a real-time basis. Use the APIs for ongoing subscription status updates, like when users subscribe to your marketing campaigns on a website form or modify their subscription from within a notification center.
 
-### The `track` call compared to the Public API `identify` call
+### The Track call compared to the Public API Identify call
 
-To update Engage user subscriptions with Segment's APIs, first choose between a [standard `track` call](/docs/connections/spec/track/), for non-critical subscription updates, or the [Public API `identify` call](https://api.segmentapis.com/docs/){:target="_blank"}, for critical updates that require immediate confirmation, like unsubscribes.
+To update Engage user subscriptions with Segment's APIs, first choose between a [standard Track call](/docs/connections/spec/track/), for non-critical subscription updates, or the [Public API Identify call](https://api.segmentapis.com/docs/){:target="_blank"}, for critical updates that require immediate confirmation, like unsubscribes.
 
-When you use the `track` call, Segment replies with a standard HTTP `200 OK` status response code if it successfully received the request. Because the `track` call updates user traits asynchronously, though, the `200 OK` code indicates that Segment has received, but not yet processed, the request. As a result, use the `track` call for non-critical subscription updates, like form signups on your website or adding a subscription from within the user's notification center.
+When you use the Track call, Segment replies with a standard HTTP `200 OK` status response code if it successfully received the request. Because the Track call updates user traits asynchronously, though, the `200 OK` code indicates that Segment has received, but not yet processed, the request. As a result, use the Track call for non-critical subscription updates, like form signups on your website or adding a subscription from within the user's notification center.
 
-When you make `identify` calls to Segment's Public API, however, you'll get an immediate response that confirms that Segment both received and processed the request. Use the Public API, then, for unsubscribes, so users immediately find out if their subscription updated.
+When you make Identify calls to Segment's Public API, however, you'll get an immediate response that confirms that Segment both received and processed the request. Use the Public API, then, for unsubscribes, so users immediately find out if their subscription updated.
 
-### Format the `identify` call payload
+### Format the Identify call payload
 
-For Segment to process the subscription status request, your `identify` call payload must include at least one object with a subscription contact vector, the subscription type, and the subscription status.
+For Segment to process the subscription status request, your Identify call payload must include at least one object with a subscription contact vector, the subscription type, and the subscription status.
 
 The following array contains example objects that update both SMS and email subscription statuses:
 
