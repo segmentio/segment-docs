@@ -56,7 +56,7 @@ Facebook Custom Audiences allows you to efficiently run several marketing and ad
 
 Sometimes, users visit your website and perform high-intent activities such as looking at a product or pricing page multiple times, but they don't convert (buy), and they don't provide any personally identifiable information so you can contact them.
 
-Facebook offers the Facebook Pixel, which allows you to retarget these types of anonymous users with advertising. This works by identifying users based on a cookie set in their browser. You can create a Website Custom Audience in Facebook for this use case. Segment today does not provide a way to sync audiences of anonymous users from Personas to Facebook to automatically create one of these Website Custom Audiences.
+Facebook offers the Facebook Pixel, which allows you to retarget these types of anonymous users with advertising. This works by identifying users based on a cookie set in their browser. You can create a Website Custom Audience in Facebook for this use case.
 
 ## How it works
 
@@ -105,7 +105,7 @@ Once created, the audience should be available in Facebook in ten minutes unless
 ## Additional Traits Matching
 
 > note ""
-> This feature is in Public Preview and usage is subject to the terms contained in the [First Access and Beta Preview Terms](https://segment.com/legal/first-access-beta-preview/){:target="_blank"}. If you would like access, contact your CSM or email us at [friends@segment.com](mailto:friends@segment.com).
+> This feature is in Public Preview and usage is subject to the terms contained in the [First Access and Beta Preview Terms](https://segment.com/legal/first-access-beta-preview/){:target="_blank"}. For access, contact your CSM or email Segment at [friends@segment.com](mailto:friends@segment.com).
 
 Previously, Segment only sent email and mobile IDs to Facebook. A new beta feature can send an expanded list of identifiers or traits to Facebook, so that Facebook can try to use these additional datapoints to match to their user profiles. If you have this feature enabled and implemented any of these traits in your Segment tracking, Personas can send this data to Facebook. Segment can now also sync multiple emails if the profile contains more than one. Additionally as part of this feature, Segment hashes fields before sending them downstream to Facebook, if required. (See the table below for hashing requirements.) Please note that the trait data implemented in your Segment tracking must match the naming convention and format specified in the table below, otherwise we are not able to send it to Facebook.
 
@@ -138,7 +138,7 @@ Segment sends lists of users with identifiers that Facebook supports to Facebook
 
 For example, many B2B SaaS businesses have users that sign up for their products with a work email address, like `jane.doe@segment.com`. However, most Facebook users sign up for Facebook with a personal email only, like `janedoe@gmail.com`. If you only provide the work email address, and no other identifiers, then Facebook can't match your user to the Jane Doe Facebook profile. This is the case for all identifiers - Facebook must have the identifier somewhere in a user's profile, or else they can't match on it.
 
-Please note, emails must be in a plaintext format. Facebook also provides these guidelines for the emails that you send to them: trim leading, trail whitespace, and convert all characters to lowercase.
+Please note, emails must be in a plain text format. Facebook also provides these guidelines for the emails that you send to them: trim leading, trail whitespace, and convert all characters to lowercase.
 
 ### Do you support LTV audiences?
 Facebook has a feature called [value-based audiences](https://developers.facebook.com/docs/marketing-api/audiences/guides/value-based-lookalike-audiences/){:target="_blank"} where you can send an additional field like LTV, to tell Facebook how to optimize their advertising based on a customer's value. Personas does not currently support this feature.
