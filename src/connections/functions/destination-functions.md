@@ -187,12 +187,7 @@ If your function fails, you can check the error details and logs in the **Output
 - **Error Message** - This shows the error surfaced from your function.
 - **Logs** - This section displays any messages to `console.log()` from the function.
 
-## Batching the destination function (Beta)
-
-> warning ""
-> Batch handling for Functions is available as an early access beta release. By enabling batch handlers for your function, you acknowledge that your use of batch handlers is subject to [Segment's Beta Terms and Conditions](https://segment.com/legal/first-access-beta-preview), or the applicable terms governing Beta Releases found in your subscription agreement with Segment.
->
-> If you notice any bugs or have any general feedback on this new feature, please fill out [this form](https://airtable.com/shr9TU4huO0PK0DSU).
+## Batching the destination function
 
 Batch handlers are an extension of destination functions. When you define an `onBatch` handler alongside the handler functions for single events (for example: `onTrack` or `onIdentity`), you're telling Segment that the destination function can accept and handle batches of events.
 
@@ -283,7 +278,7 @@ async function onIdentifyBatch(events, settings) {
 
 ### Configure your batch parameters
 
-You cannot configure batch parameters (either in the code or UI) in this version of the beta. Functions waits up to 10 seconds to form a batch of 20 events. If you would like to change your batch parameters, please fill out [this form](https://airtable.com/shr9TU4huO0PK0DSU) and Support will contact you once this is made available.
+By default, Functions waits up to 10 seconds to form a batch of 20 events. You can increase the number of events included in each batch (up to 400 events per batch) by contacting [Segment support](https://segment.com/help/contact/){:target="_blank"}. Segment recommends users who wish to include fewer than 20 events per batch use destination functions without the `onBatch` handler. 
 
 ### Test the batch handler
 
