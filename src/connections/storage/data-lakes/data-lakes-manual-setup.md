@@ -87,11 +87,11 @@ Segment requires access to an EMR cluster to perform necessary data processing. 
 
 The following steps provide examples of the IAM Role and IAM Policy.
 
-### IAM Role
+### IAM role
 
 Create a `segment-data-lake-role` for Segment to assume. The trust relationship document you attach to the role will be different depending on your workspace region. 
 
-#### IAM Role for Data Lakes created in US workspaces:
+#### IAM role for Data Lakes created in US workspaces:
 
 Attach the following trust relationship document to the role to create a `segment-data-lake-role` role for Segment:
 
@@ -125,7 +125,7 @@ Attach the following trust relationship document to the role to create a `segmen
 > note ""
 > Replace the `ExternalID` list with the Segment `WorkspaceID` that contains the sources to sync to the Data Lake.
 
-#### IAM Role for Data Lakes created in EU workspaces:
+#### IAM role for Data Lakes created in EU workspaces:
 
 > info ""
 > EU workspaces are currently in beta. If you would like to learn more about the beta, please contact your account manager. 
@@ -160,7 +160,7 @@ Attach the following trust relationship document to the role to create a `segmen
 > note ""
 > **NOTE:** Replace the `ExternalID` list with the Segment `WorkspaceID` that contains the sources to sync to the Data Lake.
 
-### IAM Policy
+### IAM policy
 
 Add a policy to the role created above to give Segment access to the relevant Glue databases and tables, EMR cluster, and S3.
 
@@ -255,11 +255,10 @@ Add a policy to the role created above to give Segment access to the relevant Gl
 Segment requires access to the data and schema for debugging data quality issues. The modes available for debugging are:
 - Access the individual objects stored in S3 and the associated schema to understand data discrepancies
 - Run an Athena query on the underlying data stored in S3
-  - Ensure Athena uses Glue as the data catalog. Older accounts may not have this configuration, and may require some additional steps to complete the upgrade. The Glue console typically displays a warning and provides a link to instructions on how to complete the upgrade.
-![Debugging](images/dl_setup_glueerror.png)
+  - Ensure Athena uses Glue as the data catalog. Older accounts may not have this configuration, and may require some additional steps to complete the upgrade. The Glue console typically displays a warning and provides a link to instructions on how to complete the upgrade. The warning reads: <br/> **Upgrade to the AWS Glue Data Catalog** <br/> To use the AWS Glue Data Catalog with Amazon Athena and Amazon Redshift Spectrum, you must upgrade your Athena Data Catalog to the AWS Glue Data Catalog. Without the upgrade, tables and partitions created by AWS Glue cannot be queried with Amazon Athena or Redshift Spectrum. Start the upgrade in the [Athena console](https://console.aws.amazon.com/athena/){:target="_blank"}.
   - An easier alternative is to create a new account that has Athena backed by Glue as the default.
 
-## Updating EMR Clusters
+## Updating EMR clusters
 You can update your existing Data Lake destination to EMR version 5.33.0 by creating a new v5.33.0 cluster in AWS and associating it with your existing Data Lake. After you update the EMR cluster, your Segment Data Lake continues to use the Glue data catalog you initially configured.
 
 When you update an EMR cluster to 5.33.0, you can participate in [AWS Lake Formation](https://aws.amazon.com/lake-formation/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc){:target="_blank"}, use dynamic auto-scaling, and experience faster Parquet jobs.  
@@ -273,7 +272,7 @@ When you update an EMR cluster to 5.33.0, you can participate in [AWS Lake Forma
 
 ## Procedure
 1. Open your Segment app workspace and select the Data Lakes destination.
-2. On the Settings tab, select the EMR Cluster ID field and replace the existing ID with the ID of your v5.33.0 EMR cluster. For help finding the cluster ID in AWS, see Amazon's [View cluster status and details](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-manage-view-clusters.html). You don't need to update the Glue Catalog ID, IAM Role ARN, or S3 Bucket name fields.
+2. On the Settings tab, select the EMR Cluster ID field and replace the existing ID with the ID of your v5.33.0 EMR cluster. For help finding the cluster ID in AWS, see Amazon's [View cluster status and details](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-manage-view-clusters.html){:target="_blank"}. You don't need to update the Glue Catalog ID, IAM Role ARN, or S3 Bucket name fields.
 3. Click **Save**.
 4. In the AWS EMR console, view the Events tab for your cluster to verify it is receiving data.
 
