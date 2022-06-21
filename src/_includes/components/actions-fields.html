@@ -78,6 +78,15 @@
 
 
 Build your own Mappings! Combine supported [triggers](/docs/connections/destinations/actions/#components-of-a-destination-action) with the following {{currentIntegration.display_name | remove: " (Actions)"}}-supported actions:
+
+<div class="premonition info">
+  <div class="fa fa-info-circle"></div>
+  <div class="content">
+    <p class="header">Mapping limits per destination</p>
+    <p>Individual destination instances have support a maximum of 50 mappings.</p>
+  </div>
+</div>
+
 {% for action in actions %}
 - [{{action.name}}](#{{action.name | slugify}})
 {% endfor %}
@@ -85,7 +94,7 @@ Build your own Mappings! Combine supported [triggers](/docs/connections/destinat
 {% for action in actions %}
 ### {{action.name}}
 <p>{{action.description | markdownify}}</p>
-<p>{{action.name}} is a <strong>{{action.platform | capitalize}}</strong> action.</p>
+<p>{{action.name}} is a <strong>{{action.platform | capitalize}}</strong> action. The default Trigger is:</p> <code>{{action.defaultTrigger}}</code>
 
 
 {% if action.fields.size > 0 %}

@@ -72,8 +72,8 @@ Use the CSV Uploader to set subscription states for user email addresses and pho
 > Each user profile in a Segment workspace can have multiple email addresses and phone numbers, all with different subscription states.
 
 For each CSV file, Engage adds:
-- An `email_subscription_status` column next to **Email** columns.
-- An `sms_subscription_status` column next to **SMS** columns.
+- An `email_subscription_status` column next to the **Email** column.
+- An `sms_subscription_status` column next to the **Phone** column.
 
 In the `email_subscription_status` and `sms_subscription_status` columns, set subscription states for email and phone numbers with the following values:
 
@@ -95,11 +95,7 @@ Please note the following limits as you upload CSV files to Twilio Engage:
 - Upload CSV files with up to 1 million rows (plus one header row).
 - You can only upload one file at a time.
 - The CSV file size can't exceed 15 MB.
-
-> warning ""
-> At this time, the following beta limitations apply:
-> - Email addresses and phone numbers that unsubscribe from your campaigns can't be re-subscribed.
-> - If you upload the same email or phone number with different subscription states in a CSV file, the resulting subscription status isn't guaranteed.
+- If you upload the same email or phone number with different subscription states in a CSV file, Engage doesn't guarantee the subscription status result.
 
 ## Message consent
 

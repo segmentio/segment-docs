@@ -2,14 +2,10 @@
 title: Vale test
 hidden: true
 ---
-This file will test various Vale styles we have installed (e.g. this exclamation point!) Neat! 
+sdfsdfd
 
-Links to docs should be relative, for example [here](https://www.segment.com/docs/connections).
+Slave should flag, and so should grandfather.
 
-For example, like [this](/docs/connections)
-
-segment.com/docs
-
-Here's an update.
+## Sentence Case Here
 
 

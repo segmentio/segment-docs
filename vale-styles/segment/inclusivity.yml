@@ -1,0 +1,20 @@
+extends: existence
+message: Avoid the term '%s'
+level: warning
+code: false
+ignorecase: true
+tokens:
+    - appears to be
+    - arguably
+    - grandfather
+    - powow
+    - blacklist
+    - whitelist
+    - blackhat
+    - whitehat
+    - manned
+    - man-made
+    - master
+    - slave
+    - sanity check
+    - dummy

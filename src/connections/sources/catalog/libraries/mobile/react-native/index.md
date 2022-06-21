@@ -16,7 +16,7 @@ If you're migrating to Analytics React Native 2.0 from an older Analytics React 
 > warning ""
 > `@segment/analytics-react-native 2.0` is compatible with Expo's [Custom Dev Client](https://docs.expo.dev/development/getting-started/){:target="_blank"} and [EAS builds](https://docs.expo.dev/build/introduction/){:target="_blank"} without any additional configuration. Destination Plugins that require native modules may require custom [Expo Config Plugins](https://docs.expo.dev/guides/config-plugins/){:target="_blank"}.
 >
-> `@segment/analytics-react-native 2.0` is not compatible with Expo's managed workflow.
+> `@segment/analytics-react-native 2.0` isn't compatible with Expo Go.
 
 
 ## Getting Started
@@ -499,6 +499,12 @@ Segment supports these destinations for Analytics React Native 2.0 in device-mod
 - [Braze](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-braze){:target="_blank"}
 - [Facebook App Events](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-facebook-app-events){:target="_blank"}
 - [Firebase](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-firebase){:target="_blank"}
+
+## FAQs
+### Can I use the catalog of device-mode destinations from Segment's 1.X.X React-Native release?
+No, only the plugins listed above are supported in device-mode for Analytics React Native 2.0.
+### Will I still see device-mode integrations listed as `false` in the integrations object?
+When you successfully package a plugin in device-mode, you won't see the integration listed as `false` in the integrations object for a Segment event. This logic is packaged in the event metadata, and isn't surfaced in the Segment debugger.
 
 ## Changelog
 [View the Analytics React Native 2.0 changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.

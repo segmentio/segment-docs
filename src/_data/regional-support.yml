@@ -15,6 +15,7 @@ sources:
     - node-js
     - php
     - pixel-tracking-api
+    - python
     - react-native
     - roku
     - ruby

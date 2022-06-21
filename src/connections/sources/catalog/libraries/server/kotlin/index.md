@@ -22,15 +22,15 @@ To get started with the Analytics-Kotlin server library:
 
 2.  Add the Analytics dependency to your `build.gradle`.
 
-      Segment recommends you to install the library with a build system like Gradle, as it simplifies the process of upgrading versions and adding integrations. The library is distributed through [Jitpack](https://jitpack.io/){:target="_blank"}. Add the analytics module to your build.gradle as a dependency as shown in the code sample below.
+      Segment recommends you to install the library with a build system like Gradle, as it simplifies the process of upgrading versions and adding integrations. The library is distributed through [Maven Central](https://repo1.maven.org/maven2/com/segment/analytics/kotlin/android/){:target="_blank"}. Add the analytics module to your build.gradle as a dependency as shown in the code sample below, and replace `<latest_version>` with the latest version listed on Segment's [releases page](https://github.com/segmentio/analytics-kotlin/releases){:target="_blank"}.
 
       ```java
-      repositories {
-        maven { url 'https://jitpack.io' }
-      }
-      dependencies {
-          implementation 'com.github.segmentio.analytics-kotlin:core:+'
-      }
+        repositories {
+            mavenCentral()
+        }
+        dependencies {
+            implementation 'com.segment.analytics.kotlin:core:<latest_version>'
+        }
       ```
 3. Initialize and configure the client.
 
@@ -179,7 +179,7 @@ analytics.group("user-123", buildJsonObject {
 ## Plugin Architecture
 Segment's plugin architecture enables you to modify and augment how the analytics client works. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
 
-Plugins are run through a timeline, which executes in order of insertion based on their entry types. Segment has these 5 entry types:
+Plugins are run through a timeline, which executes in order of insertion based on their entry types. Segment has these five entry types:
 
 | Type          | Details                                                                                        |
 | ------------- | ---------------------------------------------------------------------------------------------- |
@@ -319,6 +319,7 @@ The Analytics-Kotlin utility methods help you work with plugins from the analyti
 - [Add](#add)
 - [Find](#find)
 - [Remove](#remove)
+- [Reset](#reset)
 
 There's also the [Flush](#flush) method to help you manage the current queue of events.
 
@@ -391,6 +392,23 @@ public fun flush()
 {% codeexampletab Example use %}
 ```java
 analytics.flush("SomePlugin")
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
+### Reset
+The `reset` method clears the SDK’s internal stores for the current user and group. This is useful for apps where users log in and out with different identities on the same device over time.
+
+{% codeexample %}
+{% codeexampletab Method signature %}
+```java
+fun reset()
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Example use %}
+```java
+analytics.reset()
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}

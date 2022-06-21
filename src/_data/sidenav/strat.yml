@@ -4,25 +4,25 @@ sections:
   section_title: Adobe Integrations
   section:
   - path: /connections/destinations/catalog/adobe-analytics
-    title: Adobe Analytics destination
-  - path: /connections/destinations/catalog/actions-adobe-target-web
-    title: Adobe Target Web Destination
-  - path: /connections/destinations/catalog/actions/adobe-target-cloud
-    title: Adobe Taget Cloud Mode Destination
+    title: 'Adobe Analytics destination: Overview'
   - path: /connections/destinations/catalog/adobe-analytics/settings
-    title: Mapping Segment to Adobe Analytics
+    title: 'Adobe Analytics destination: Mappings'
   - path: /connections/destinations/catalog/adobe-analytics/identity
-    title: Identity resolution in Segment Adobe Analytics
+    title: 'Adobe Analytics destination: Identity resolution'
   - path: /connections/destinations/catalog/adobe-analytics/mobile
-    title: Adobe Analytics for mobile
+    title: 'Adobe Analytics destination: Mobile support'
   - path: /connections/destinations/catalog/adobe-analytics/heartbeat
-    title: Adobe Analytics Heartbeat
+    title: 'Adobe Analytics destination: Heartbeat tracking'
   - path: /connections/destinations/catalog/adobe-analytics/best-practices
-    title: Adobe Analytics best practices
+    title: 'Adobe Analytics destination: Best practices'
+  - path: /connections/destinations/catalog/actions-adobe-target-web
+    title: Adobe Target Web destination
+  - path: /connections/destinations/catalog/actions-adobe-target-cloud
+    title: Adobe Target Cloud Mode destination
   - path: /connections/destinations/catalog/marketo-v2
     title: Marketo destination
   - path: /connections/destinations/catalog/marketo-static-lists
-    title: Marketo static lists destination (Personas)
+    title: Marketo Static Lists destination (Personas)
   - path: /connections/sources/catalog/cloud-apps/marketo
     title: Marketo cloud source
 
@@ -33,11 +33,13 @@ sections:
   - path: /connections/destinations/catalog/facebook-pixel
     title: Facebook Pixel destination
   - path: /connections/destinations/catalog/actions-facebook-conversions-api
-    title: Facebook Conversions API Destination (Actions)
+    title: Facebook Conversions API (Actions) destination 
   - path: /connections/destinations/catalog/facebook-app-events
     title: Facebook App Events destination
   - path: /connections/destinations/catalog/facebook-offline-conversions
     title: Facebook Offline Conversions destination
+  - path: /connections/destinations/catalog/personas-facebook-custom-audiences
+    title: Facebook Custom Audiences destination (Personas)
   - path: /connections/sources/catalog/cloud-apps/facebook-ads
     title: Facebook Ads cloud source
   - path: /connections/sources/catalog/cloud-apps/facebook-lead-ads
@@ -48,29 +50,30 @@ sections:
   section_title: Google Integrations
   section:
   - path: /connections/destinations/catalog/firebase
-    title: Google Firebase (mobile analytics) destination
+    title: Google Firebase destination
   - path: /connections/destinations/catalog/google-analytics
     title: Google Universal Analytics destination
   - path: /connections/destinations/catalog/actions-google-analytics-4
     title: Google Analytics 4 destination
   - path: /connections/destinations/catalog/google-tag-manager
-    title: Google Tag Manager
+    title: Google Tag Manager destination
   - path: /connections/destinations/catalog/actions-google-enhanced-conversions
-    title: Google Enhanced Conversions
+    title: Google Enhanced Conversions destination
   - path: /connections/destinations/catalog/doubleclick-floodlight
     title: DoubleClick Floodlight destination
-  - path: /connections/destinations/catalog/personas-display-video-360
-    title: 'Using Personas with Google DV360 (Beta)'
   - path: /connections/destinations/catalog/google-ads-classic
-    title: 'Google Ads (Classic) destination'
+    title: Google Ads (Classic) destination
   - path: /connections/destinations/catalog/google-ads-gtag
-    title: 'Google Ads (Gtag) destination'
+    title: Google Ads (Gtag) destination
   - path: /connections/destinations/catalog/google-cloud-function
     title: Google Cloud Function destination
   - path: /connections/destinations/catalog/google-cloud-pubsub
-    title: Google Cloud Pubsub destination
-  - path: /connections/sources/catalog/libraries/mobile/android
-    title: Google Android mobile source library
+    title: Google Cloud Pub/Sub destination
+  - path: /connections/destinations/catalog/adwords-remarketing-lists
+    title: Google Ads Remarketing Lists destination (Personas)
+  - path: /connections/destinations/catalog/personas-display-video-360
+    title: Google Display & Video 360 destination (Personas)
+   
 
 - slug: salesforce
   section_title: Salesforce Integrations
@@ -79,13 +82,8 @@ sections:
     title: Salesforce destination
   - path: /connections/destinations/catalog/actions-salesforce
     title: Salesforce (Actions) destination
-  # This is in Private Beta
-  # - path: /connections/destinations/catalog/salesforce-live-agent
-  #   title: Salesforce Live Agent destination
   - path: /connections/destinations/catalog/salesforce-marketing-cloud
     title: Salesforce Marketing Cloud destination
-  # - path: /connections/destinations/catalog/salesforce-dmp
-  #   title: Salesforce DMP destination (beta)
   - path: /connections/destinations/catalog/pardot
     title: Salesforce Pardot destination
   - path: /connections/sources/catalog/cloud-apps/salesforce

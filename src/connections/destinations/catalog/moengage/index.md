@@ -1,6 +1,8 @@
 ---
 title: MoEngage Destination
+cmode-override: true
 id: 55b280290a20f4e22f0fb3d6
+hide-personas-partial: true
 ---
 ## Getting Started
 
@@ -230,7 +232,7 @@ MoEngage moEngage = new MoEngage.Builder(this, "XXXXXXXXXXX")
 MoEngage.initialiseDefaultInstance(moEngage);
 ```
 ### Exclude MoEngage Storage File from Auto-Backup
-Auto backup service of Andriod periodically backs up the Shared Preference file, Database files, and so on.
+Auto backup service of Android periodically backs up the Shared Preference file, Database files, and so on.
 
 For more information, refer to [Auto Backup](https://developer.android.com/guide/topics/data/autobackup){:target="_blank"}.
 
@@ -349,7 +351,7 @@ Refer to the [MoEngage - API reference](https://moengage.github.io/android-api-r
 
 ##### Callbacks
 
-We recommend you to add the callbacks in the onCreate() of the Application class since these callbacks can be triggered even when the application is in the background.
+Segment recommends that you add the callbacks in the onCreate() of the Application class since these callbacks can be triggered even when the application is in the background.
 
 ###### Token Callback
 
@@ -362,7 +364,7 @@ If you're using the receiver provided by the SDK in your application's manifest 
 
 #### Declare and configure Rich Landing Activity:
 
-A rich landing page can be used to open a web URL inside the app via a push campaign.
+A rich landing page can be used to open a web URL inside the app through a push campaign.
 
 The configuration below is only required if you want to add a parent activity to the Rich landing page. If not, you can move to the next section.
 To use a rich landing page you need to add the below code in the AndroidManifest.xml
@@ -407,7 +409,7 @@ If your app supports the ability for a user to logout and login with a new ident
 
 ### Sample Implementation
 
-Refer to [this](https://github.com/moengage/moengage-segment-integration){:target="_blank"} Github repository for sample implementation
+Refer to [this](https://github.com/moengage/moengage-segment-integration){:target="_blank"} GitHub repository for sample implementation
 
 ## Web
 
