@@ -276,7 +276,7 @@ Other libraries only collect `context.library`, any other context variables must
 | screen.height            |              | ✅             | ✅                 |
 | screen.width             |              | ✅             | ✅                 |
 | traits                   |              | ✅             | ✅                 |
-| userAgent                | ✅            | ✅             | ✅                 |
+| userAgent                | ✅            |              | ✅                 |
 | timezone                 |              | ✅             | ✅                 |
 
 - IP Address is not collected by Segment's libraries, but instead filled in by Segmen'ts servers when it receives a message for **client side events only**.
