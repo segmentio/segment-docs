@@ -47,25 +47,37 @@ For example, a user might reach out to you after accidentally unsubscribing to y
 
 -->
 
-## Managing user subscriptions with Segment APIs
+## Manage user subscriptions with Segment APIs
 
-Use Segment’s APIs to manage user subscriptions programmatically on an ongoing, real-time basis. You can choose between a [standard `track` call](/docs/connections/spec/track/), for non-critical subscription updates, or the [Public API](https://api.segmentapis.com/docs/){:target="_blank"}, for critical updates that require immediate confirmation, like unsubscribes.
+With Segment's APIs, you can manage user subscriptions programmatically on a real-time basis. Use the APIs for ongoing subscription status updates, like when users subscribe to your marketing campaigns on a website form or modify their subscription from within a notification center.
 
-Managing subscriptions with Segment's APIs allows you to handle continuous updates of subscription statuses, like when users subscribe to your marketing campaigns on a website form or modify their subscription from within a notification center.
+### The Track call compared to the Public API Identify call
 
-### Receive subscription confirmation with the Public API
+To update Engage user subscriptions with Segment's APIs, first choose between a [standard Track call](/docs/connections/spec/track/), for non-critical subscription updates, or the [Public API Identify call](https://api.segmentapis.com/docs/){:target="_blank"}, for critical updates that require immediate confirmation, like unsubscribes.
 
-To receive an API response that confirms Segment has both received and processed subscription status requests, use Segment's [Public API](https://api.segmentapis.com/docs/spaces/#replace-messaging-subscriptions-in-spaces){:target="_blank"}.
+When you use the Track call, Segment replies with a standard HTTP `200 OK` status response code if it successfully received the request. Because the Track call updates user traits asynchronously, though, the `200 OK` code indicates that Segment has received, but not yet processed, the request. As a result, use the Track call for non-critical subscription updates, like form signups on your website or adding a subscription from within the user's notification center.
 
-For example, if a user updates their subscription state in your notification center:
+When you make Identify calls to Segment's Public API, however, you'll get an immediate response that confirms that Segment both received and processed the request. Use the Public API, then, for unsubscribes, so users immediately find out if their subscription updated.
 
-1. Use the [Public API](https://api.segmentapis.com/docs/spaces/#replace-messaging-subscriptions-in-spaces){:target="_blank"} synchronous call to update their subscription state.
-2. The API returns an immediate success or failure response.
-3. For successful requests, Segment instantly updates subscription states in your workspace. `Subscribed` email and phone numbers will receive messages from Engage campaigns that they are a part of.
-4. You can then display successful updates or error messages with users in your notification center.
+### Format the Identify call payload
 
-## The `track` call versus using the Public API
+For Segment to process the subscription status request, your Identify call payload must include at least one object with a subscription contact vector, the subscription type, and the subscription status.
 
-When you use the `track` call, Segment replies with a standard HTTP `200 OK` status response code if it successfully received the request. Because the `track` call updates user traits asynchronously, though, the `200 OK` code indicates that Segment has received, but not yet processed, the request. As a result, use the `track` call for non-critical subscription updates, like form signups on your website or adding a subscription from within the user's notification center.
+The following array contains example objects that update both SMS and email subscription statuses:
 
-When you make calls to Segment's Public API, however, you'll get an immediate response that confirms that Segment both received and processed the request. Use the Public API, then, for user unsubscribes. If a user unsubscribes from your marketing campaigns within their notification center, they'll know immediately whether or not their request was processed.
+```json
+"messaging_subscriptions": [
+      {
+        "key": "(123) 555-5555",
+        "type": "SMS",
+        "status": “SUBSCRIBED” | “UNSUBSCRIBED”| “DID_NOT_SUBSCRIBE”
+      },
+      {
+        "key": "example@example.com",
+        "type": "EMAIL",
+        "status": “SUBSCRIBED” | “UNSUBSCRIBED”| “DID_NOT_SUBSCRIBE”
+      }
+    ]
+```
+
+For successful requests, Segment instantly updates subscription states in your workspace. You can then display successful updates or error messages with users in your notification center.

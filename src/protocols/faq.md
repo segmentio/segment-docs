@@ -67,7 +67,7 @@ Yes! [Tracking Plan Libraries](/docs/protocols/tracking-plan/libraries/) makes i
 **Violations Daily Digest**
 The Violations Daily Digest is a great way to keep informed of new violations which might be easy to overlook on the Protocols Violations page. The digest sends one email digest per source, every day at approximately 12AM EST. You cannot currently opt in or out of specific sources.
 
-The digest contains all violations for that source that are _unique_ in the previous 48 hours. For example, if an event `testEvent` had violations on the first day of the month, the those violations won't appear in the digest until the third of the month.
+The digest contains all violations for that source that are _unique_ in the previous 48 hours. For example, if an event `testEvent` had violations on the first day of the month, then those violations won't appear in the digest until the third of the month.
 
 The email includes information about the violation to help you track down its source and correct it. It includes the event name and property name fields, the violation type, the number of times that specific type of violation was seen, and the last time it was seen.
 
@@ -98,11 +98,11 @@ Blocked events will not count towards your MTU counts as long as blocked event f
 
 If you create a destination scoped transformation and request a replay for that destination, the transformation will transform events into the destination. It's not recommended to request a replay to resend events to a destination as that will likely result in duplicate events in the destination.
 
-### What can't I create multiple transformations of the same type for the same event?
+### Why can't I create multiple transformations of the same type for the same event?
 
 To reduce the risk of creating circular and conflicting transformations, we only allow a single transformation to be created for each distinct source, event, destination and type pairing. That means you cannot create two **Rename track event** transformations for a `order_completed` event. This eliminates the possibility of different stakeholders creating conflicting transformations to satisfy their own needs. It also simplifies the Transformations list view, making it much easier to sort and filter by source, event, destination, etc.
 
-### What can't I select multiple events or destinations in a single transformation?
+### Why can't I select multiple events or destinations in a single transformation?
 
 In early transformations prototypes we allowed users to select multiple events and destinations for a single transformation rule. We realized however that this created a structure that was impossible to scale, and likely to generate unintended consequences. For example, if we allow multiple track events to be selected for a property name change, it'd be possible to create conflicting changes. Instead, by enforcing a single event, we can check to see if a transformation rule exists and smartly link you to that rule using a warning.
 
