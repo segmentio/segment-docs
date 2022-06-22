@@ -14,9 +14,7 @@ All of Segment's server-side libraries are built for high-performance, so you ca
 
 ## Getting Started
 
-### Install the Gem
-
-If you're using bundler, add the following line to your project's `Gemfile`:
+If you're using Bundler, add the following line to your project's `Gemfile`:
 
 ```ruby
 gem 'analytics-ruby', '~> 2.4.0', :require => 'segment/analytics'
@@ -45,6 +43,11 @@ If you're using Rails, you can stick that initialization logic in `config/initia
 
 > info ""
 > The analytics-ruby gem makes requests asynchronously, which can sometimes be suboptimal and difficult to debug if you're pairing it with a queuing system like Sidekiq/delayed job/sucker punch/resqueue. If you'd prefer to use a gem that makes requests synchronously, you can check out [`simple_segment`](https://github.com/whatthewhat/simple_segment), an API-compatible drop-in replacement for the standard gem that does its work synchronously inline. Big thanks to [Mikhail Topolskiy](https://github.com/whatthewhat) for his stewardship of this alternative gem!
+
+### Regional configuration
+For Business plans with access to [Regional Segment](/docs/guides/regional-segment), you can use the `host` configuration parameter to send data to the desired region:
+1. Oregon (Default) — `api.segment.io/v1`
+2. Dublin — `events.eu1.segmentapis.com/v1/`
 
 ## Identify
 

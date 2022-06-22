@@ -14,8 +14,6 @@ Want to stay updated on releases? Subscribe to the [release feed](https://github
 
 ## Getting Started
 
-### Install the Module
-
 Run:
 
 ```bash
@@ -33,6 +31,10 @@ Of course, you'll want to replace `YOUR_WRITE_KEY` with your actual **Write Key*
 
 This will create an instance of `Analytics` that you can use to send data to Segment for your project. The default initialization settings are production-ready and queue 20 messages before sending any requests. In development you might want to use [development settings](/docs/connections/sources/catalog/libraries/server/node/#development).
 
+### Regional configuration
+For Business plans with access to [Regional Segment](/docs/guides/regional-segment), you can use the `host` configuration parameter to send data to the desired region:
+1. Oregon (Default) — `api.segment.io/v1`
+2. Dublin — `events.eu1.segmentapis.com/v1/`
 ## Identify
 
 > note ""
