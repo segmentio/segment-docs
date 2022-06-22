@@ -58,14 +58,14 @@ The table below lists events tracking user interaction in your WorkRamp Academy.
   </tr>
   <tr>
    <td>Starts Training</td>
-   <td>User clicks “Get Started” from  <code>/training/:training_id/overview/training/:training_id/overview</td>
+   <td>User clicks “Get Started” from  <code>/training/:training_id/overview</td>
   </tr>
     </tr>
   <tr>
    <td>Enters Path Training</td>
    <td>User clicks “Get Started” from <code>/paths/:path_id
        </code><br>OR<br>
-       User clicks “Continue” from <code>/paths/:path_id/paths/:path_id</code>
+       User clicks “Continue” from <code>/paths/:path_id</code>
 
 </td>
   </tr>
@@ -85,11 +85,11 @@ The table below lists events tracking user interaction in your WorkRamp Academy.
   </tr>
   <tr>
    <td>Checkout Initiated</td>
-   <td>User clicks “Purchase Guide: [Price]” from <code>/training/:training_id/overview/training/:training_id/overview</code></td>
+   <td>User clicks “Purchase Guide: [Price]” from <code>/training/:training_id/overview</code></td>
   </tr>
     <tr>
    <td>Task Viewed</td>
-   <td>User visits <code>/guides/:guide_id/tasks/:task_id/guides/:guide_id/tasks/:task_id</code></td>
+   <td>User visits <code>/guides/:guide_id/tasks/:task_id</code></td>
   </tr>
      <td>Task completed</td>
    <td>User clicks “Next” from Task Viewed</td>
@@ -116,11 +116,11 @@ The table below lists events tracking user interaction in your WorkRamp Academy.
     </tr>
   <tr>
    <td>Clicks “Adds Certification to Linkedin”</td>
-   <td>User clicks “Add to LinkedIn” via <code>/certifications/:certification_id/certifications/:certification_id</code></td>
+   <td>User clicks “Add to LinkedIn” via <code>/certifications/:certification_id</code></td>
   </tr>
   <tr>
    <td>Downloads Certification</td>
-   <td>User clicks “Download” via <code>/certifications/:certification_id/certifications/:certification_id</code></td>
+   <td>User clicks “Download” via <code>/certifications/:certification_id</code></td>
   </tr>
   <tr>
    <td>Exits Course</td>
