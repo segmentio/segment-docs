@@ -85,8 +85,6 @@ The table below list the properties included in the events listed above.
 | `taskId`                                           | ID for the Task.                                                      |
 | `assignmentScore`                                  | Score user received on content.                                       |
 
-
-
 ## Adding destinations
 
 Once the source is configured, you can connect it to Destinations.
