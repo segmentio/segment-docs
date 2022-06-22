@@ -2,6 +2,7 @@
 title: Klaviyo Destination
 rewrite: true
 cmode-override: true
+hide-personas-partial: true
 id: 54521fd825e721e32a72eec8
 ---
 [Klaviyo](https://www.klaviyo.com/features/overview){:target="_blank"} is a powerful email platform focused on ecommerce that helps companies make more money. It supports segmentation based on category and event triggers like product bought, page viewed, email engagement, or amount spent.
@@ -212,3 +213,18 @@ analytics.track({
 ##### Send placed order events as order completed
 
 Enable this setting if you'd like to send `Order Completed` events as is rather than changing the event name to `Placed Order` on the server side (client side always sends `Order Completed`). Segment recommendeds that you keep this setting enabled so that both client- and server-side Klaviyo integrations send the same event for `Order Completed`. Klaviyo does not treat the event names differently in their backend feature wise. This option was introduced to bridge the existing disparity between Segment client- and server-side integrations regarding how this event name is sent without forcibly breaking the current behavior.
+
+## Personas
+
+You can send computed traits and audiences generated using [Segment Personas](/docs/personas) to this destination as a **user property**.
+
+For user-property destinations, Segment sends an [Identify](/docs/connections/spec/identify/) call to the destination for each user added and removed. The property name is the snake_cased version of the audience name, with a true/false value to indicate membership. For example, when a user first completes an order in the last 30 days, Personas sends an Identify call with the property `order_completed_last_30days: true`. When the user no longer satisfies this condition (for example, it's been more than 30 days since their last order), Personas sets that value to `false`.
+
+### Create user segments in Klaviyo
+
+> warning ""
+> For the Klaviyo Destination, avoid using a `list_id` in the Personas Destinations settings.
+
+When you first create an audience, Personas sends an Identify call for every user in that audience. Later audience syncs send updates for users whose membership has changed since the last sync. These syncs allow you to create Klaviyo segments from properties Personas sends to Klaviyo as long as the property's value is `true`. Memberships update continuously as user profiles fall in and out of the eligibility criteria for the Personas audience.
+
+If Segment detects a `list_id` in the Klaviyo Destination settings, however, it adds users to the Klaviyo list without removing them when they no longer qualify for list membership. As a result, Segment recommends leaving the `list_id` field empty when you set up the Klaviyo Destination. 
