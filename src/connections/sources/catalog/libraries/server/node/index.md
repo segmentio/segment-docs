@@ -350,6 +350,30 @@ var analytics = new Analytics('YOUR_WRITE_KEY', {
   </tr>  
 </table>
 
+### Error Handling
+
+Additionally there is an optional `errorHandler` property available to the class constructor's options.
+If unspecified, the behaviour of the library does not change.
+If specified, when an axios request fails, `errorHandler(axiosError)` will be called instead of re-throwing the axios error.
+
+Example usage:
+```javascript
+const Analytics = require('analytics-node');
+
+const client = new Analytics('write key', {
+  errorHandler: (err) => {
+    console.error('analytics-node flush failed.')
+    console.error(err)
+  }
+});
+
+client.track({
+  event: 'event name',
+  userId: 'user id'
+});
+
+```
+If this fails when flushed no exception will be thrown, instead the axios error will be logged to the console.
 
 ## Development
 
