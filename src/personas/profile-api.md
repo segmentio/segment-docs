@@ -406,7 +406,7 @@ curl https://profiles.segment.com/v1/spaces/:space_id:/collections/users/profile
 | **Argument** | **Description**                                        | **Example**               |
 | ------------ | ------------------------------------------------------ | ------------------------- |
 | `include`    | A comma-separated list of external id type to include. | `user_id`, `anonymous_id` |
-| `limit`      | Defines how many external ids are returned in one call | `100`                     |
+| `limit`      | Defines how many external ids are returned in one call | `25`                     |
 | `verbose`    | True for verbose field selection                       | `true`,`false`            |
 
 
