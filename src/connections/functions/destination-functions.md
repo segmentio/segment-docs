@@ -192,7 +192,7 @@ If your function fails, you can check the error details and logs in the **Output
 Batch handlers are an extension of destination functions. When you define an `onBatch` handler alongside the handler functions for single events (for example: `onTrack` or `onIdentity`), you're telling Segment that the destination function can accept and handle batches of events.
 
 > info ""
-> Batching is available to destination functions only.
+> Batching is available for destination functions only.
 
 ### When to use batching
 
@@ -278,7 +278,7 @@ async function onIdentifyBatch(events, settings) {
 
 ### Configure your batch parameters
 
-By default, Functions waits up to 10 seconds to form a batch of 20 events. You can increase the number of events included in each batch (up to 400 events per batch) by contacting [Segment support](https://segment.com/help/contact/){:target="_blank"}. Segment recommends users who wish to include fewer than 20 events per batch use destination Functions without the `onBatch` handler. 
+By default, Functions waits up to 10 seconds to form a batch of 20 events. You can increase the number of events included in each batch (up to 400 events per batch) by contacting [Segment support](https://segment.com/help/contact/){:target="_blank"}. Segment recommends users who wish to include fewer than 20 events per batch use destination functions without the `onBatch` handler. 
 
 ### Test the batch handler
 
@@ -295,7 +295,7 @@ The [Config API](/docs/config-api/) Functions/Preview endpoint also supports tes
 
 ### Handling batching errors
 
-Standard [function error types](/docs/connections/functions/destination-functions/#destination-functions-error-types) apply to batch handlers. Segment attempts to retry the batch in the case of Timeout or Retry errors. For all other error types, Segment discards the batch. If only part of a batch succeeds, Segment does not retry the failing part of the batch.
+Standard [function error types](/docs/connections/functions/destination-functions/#destination-functions-error-types) apply to batch handlers. Segment attempts to retry the batch in the case of Timeout or Retry errors. For all other error types, Segment discards the batch. 
 
 | Error Type             | Result  |
 | ---------------------- | ------- |
@@ -305,6 +305,8 @@ Standard [function error types](/docs/connections/functions/destination-function
 | RetryError             | Retry   |
 | Timeout                | Retry   |
 | Unsupported Event Type | Discard |
+
+If only part of a batch succeeds and the failed events return either a `RetryError` or `Timeout` error, Segment retries the entire batch. You can optionally configure a response array for partially failed syncs and retry only the failed events in a batch. To configure the response array for partially failed syncs, [contact Segment support](https://segment.com/help/contact/){:target="_blank"}.
 
 ## Save and deploy the function
 
