@@ -1,8 +1,12 @@
 
 {% assign currentSlug = page.url | split: "/" | last %}
 {% assign currentId = page.id %}
-{% if page.id %}
+{% if page.private %}
+{% assign currentIntegration = site.data.catalog.destinations_private.items | where: "id", currentId | first %}
+
+{% elsif page.id %}
 {% assign currentIntegration = site.data.catalog.destinations.items | where: "id", currentId | first %}
+
 {% else %}
 {% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
 {% endif %}
@@ -12,6 +16,7 @@
 {% assign settings = currentIntegration.settings %}
 {% assign actions = currentIntegration.actions %}
 {% assign presets = currentIntegration.presets %}
+
 
 {% if settings.size > 0 %}
 ### Destination Settings
