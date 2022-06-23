@@ -78,6 +78,11 @@ You only need to initialize once at the start of your program. You can then keep
 
 The default initialization settings are production-ready and queue messages on another thread before sending any requests. In development you might want to use [development settings](/docs/connections/sources/catalog/libraries/server/net/#development-settings).
 
+### Regional configuration
+For Business plans with access to [Regional Segment](/docs/guides/regional-segment), you can use the `host` configuration parameter to send data to the desired region:
+1. Oregon (Default) — `api.segment.io/v1`
+2. Dublin — `events.eu1.segmentapis.com/v1/`
+
 ## Identify
 
 > note ""
