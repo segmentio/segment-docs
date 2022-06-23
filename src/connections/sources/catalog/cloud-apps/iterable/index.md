@@ -12,13 +12,13 @@ In your favorite BI or analytics tool, you'll be able to analyze all your cross-
 
 ## Getting Started
 
-If you have previously enabled sending email events using the Iterable destination during our beta (using a project write key), you do not need to create new Iterable source. Your email data will continue to flow as normal.
+If you have previously enabled sending email events using the Iterable destination during the beta period (using a project write key), you do not need to create new Iterable source. Your email data will continue to flow as normal.
 
 1. From your workspace's `segment.com/<your-workspace>/sources` page, click **Add source**.
 
 2. Choose Iterable.
 
-3. Give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name autopopulates the schema name. For example, the source name  `Iterable` creates the schema `iterable`.
+3. Give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name auto-populates the schema name. For example, the source name  `Iterable` creates the schema `iterable`.
 
 4. The next page ("Overview") will surface your **Segment write key for Iterable.** Copy this write key. 
 
@@ -34,13 +34,13 @@ That's it! As you send emails, events will now be sent to your destinations and 
 
 **Stream**
 
-Iterable uses our stream Source component to send Segment email events. It uses a server-side `track` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL. 
+Iterable uses Segment's stream Source component to send Segment email events. It uses a server-side `track` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL. 
 
 The default behavior is for Iterable to pass the `userId` associated with the email recipient as the `userId`. There are cases in which Iterable does not have an associated `userId`, in which case the email address will be passed in as the `anonymousId`. 
 
 ## Collections
 
-Collections are the groupings of data we pull from your Source. In your warehouse, each collection gets its own table, as well as a `tracks` table that aggregates all the events into a single table. 
+Collections are the groupings of data Segment pulls from your Source. In your warehouse, each collection gets its own table, as well as a `tracks` table that aggregates all the events into a single table. 
 
 <table>
     <tr>
@@ -61,8 +61,7 @@ Collections are the groupings of data we pull from your Source. In your warehous
     <tr>
         <td>Email Link Clicked</td>
         <td>Event</td>
-        <td>
-            Recipient clicked on a link within the message. You need to enable Click Tracking for getting this type of event
+        <td>Recipient clicked on a link within the message. You need to enable Click Tracking for getting this type of event
         </td>
     </tr>
     <tr>
@@ -73,50 +72,43 @@ Collections are the groupings of data we pull from your Source. In your warehous
     <tr>
         <td>Email Opened</td>
         <td>Event</td>
-        <td>
-            Recipient has opened the HTML message. You need to enable Open Tracking for getting this type of event
+        <td>Recipient has opened the HTML message. You need to enable Open Tracking for getting this type of event
         </td>
     </tr>
     <tr>
         <td>Hosted Unsubscribe Click</td>
         <td>Event</td>
-        <td>
-            User navigated to email preference center through a `hostedUnsubscribeUrl` link
+        <td>User navigated to email preference center through a `hostedUnsubscribeUrl` link
         </td>
     </tr>
     <tr>
         <td>In App Clicked</td>
         <td>Event</td>
-        <td>
-            An in-app click event indicates that a user tapped a link or button in an in-app message
+        <td>An in-app click event indicates that a user tapped a link or button in an in-app message
         </td>
     </tr>
     <tr>
         <td>In App Delivered</td>
         <td>Event</td>
-        <td>
-            Indicates that an in-app message arrived on a user's device. It does not mean that the user viewed the message.
+        <td>Indicates that an in-app message arrived on a user's device. It does not mean that the user viewed the message.
         </td>
     </tr>
     <tr>
         <td>In App Opened</td>
         <td>Event</td>
-        <td>
-            Indicates that an in-app message displayed in an app, either because it appeared on arrival or because the user selected it in the inbox.
+        <td>Indicates that an in-app message displayed in an app, either because it appeared on arrival or because the user selected it in the inbox.
         </td>
     </tr>
     <tr>
         <td>In App Sent</td>
         <td>Event</td>
-        <td>
-            Indicates that Iterable sent an in-app message to a user. It does not mean that the user received the message.
+        <td>Indicates that Iterable sent an in-app message to a user. It does not mean that the user received the message.
         </td>
     </tr>
     <tr>
         <td>Mobile App Uninstalled</td>
         <td>Event</td>
-        <td>
-            Ghost message sent 12 hours after original push delivered results in rejection from receiving server
+        <td>Ghost message sent 12 hours after original push delivered results in rejection from receiving server
         </td>
     </tr>
     <tr>
@@ -172,8 +164,7 @@ Collections are the groupings of data we pull from your Source. In your warehous
     <tr>
         <td>Web Push Delivered</td>
         <td>Event</td>
-        <td>
-            Web Push has been successfully delivered to the receiving server
+        <td>Web Push has been successfully delivered to the receiving server
         </td>
     </tr>
 </table>
@@ -191,4 +182,4 @@ from iterable.email_delivered
 
 ## Send data to Iterable
 
-The Iterable Source works better when you also connect Iterable as a destination. With the Iterable **Destination**, you can use Segment to send Iterable user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Iterable? Head on over to our [Iterable destination docs](/docs/connections/destinations/catalog/iterable/).
+The Iterable Source works better when you also connect Iterable as a destination. With the Iterable **Destination**, you can use Segment to send Iterable user and event data from which you trigger email campaigns. For more information, see the [Iterable destination docs](/docs/connections/destinations/catalog/iterable/).
