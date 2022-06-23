@@ -1,7 +1,9 @@
 ---
 title: Metronome (Actions) Destination
 hide-boilerplate: true
-hide-dossier: false
+hide-dossier: true
+hidden: true
+private: true
 id: 61a8032ea5f157ee37a720be
 redirect_from:
   - '/connections/destinations/catalog/vendor-metronome'
@@ -10,7 +12,7 @@ redirect_from:
 
 [Metronome](https://www.metronome.com){:target="_blank"} helps software companies launch, iterate, and scale their business models with billing infrastructure that works at any size and stage. With Metronome, your team can set up a world-class billing infrastructure with minimal time and investment.
 
-[Metronome](https://www.metronome.com){:target="_blank"} enables product-led growth with a consistent source of truth for use and billing. Freely experiment with pricing and packaging and put iteration directly in the hands of your Product team.
+Metronome also enables product-led growth with a consistent source of truth for use and billing. Freely experiment with pricing and packaging and put iteration directly in the hands of your Product team.
 
 ## Getting Started
 
@@ -20,9 +22,12 @@ redirect_from:
 4. Select the source you’d like to connect to and give the destination a name
 5. Enter your Metronome API Token into the Segment Connection Settings UI (save changes).
 
-## Mapping
+{% include components/actions-fields.html %}
 
-Map Segment events  the [Metronome event format](https://docs.metronome.com/getting-usage-data-into-metronome/overview/){:target="_blank"}. Metronome requires the five fields listed below:
+
+## Mapping events to Metronome
+
+Map Segment events to the [Metronome event format](https://docs.metronome.com/getting-usage-data-into-metronome/overview/){:target="_blank"}. Metronome requires the five fields listed below: 
 
 Field | Type | Description
 ----- | ---- | ------------
@@ -32,11 +37,10 @@ Field | Type | Description
 `event_type` | (string) | This is the kind of event. For example, `page_view` or `cpu_used`.
 `properties` | (object) | The key/value pairs with details of the event.
 
-
 ## Benefits of Metronome (Actions)
 Metronome (Actions) provides the following benefits:
 
-- **Streamlined Configuration**. Configure connection details on a per-event basis, rather than for the destination as a whole.
+- **Streamlined Configuration**. Configure connection details on a per-event basis, rather than for the destination as a whole. 
 
 - **Easy access to data**. The event variables picker shows you all the available data from the event you use to test the Trigger. Variables are clearly labeled to ensure they stand out from other text and markup.
 

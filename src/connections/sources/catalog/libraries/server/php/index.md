@@ -43,6 +43,11 @@ Of course, you'll want to replace `YOUR_WRITE_KEY` with your actual **Write Key*
 
 The default PHP consumer is the [lib-curl consumer](#lib-curl-consumer). If this is not working well for you, or if you have a high-volume project, you may want to try one of our other consumers like the [fork-curl consumer](#fork-curl-consumer).
 
+### Regional configuration
+For Business plans with access to [Regional Segment](/docs/guides/regional-segment), you can use the `host` configuration parameter to send data to the desired region:
+1. Oregon (Default) — `api.segment.io/v1`
+2. Dublin — `events.eu1.segmentapis.com/v1/`
+
 ## Identify
 
 > note ""
