@@ -3,7 +3,7 @@ title: Matcha Destination
 id: 6286930129cf5f85d889854f
 ---
 
-[Matcha](https://www.matcha.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides scoring and insights based on product usage data for Product-Led Growth companies to better detect and leverage upsell opportunities.
+[Matcha](https://www.matcha.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} provides scoring and insights based on product usage data for Product-Led Growth companies to better detect and use upsell opportunities.
 
 This destination is maintained by Matcha. For any issues with the destination, [contact the Matcha Support team](mailto:support@matcha.co).
 
@@ -23,7 +23,7 @@ Matcha supports the following methods, as specified in the [Segment Spec](/docs/
 
 ### Page
 
-Send [Page](/docs/connections/spec/page) calls to allow Matcha to leverage pageviews information in the scoring. For example:
+Send [Page](/docs/connections/spec/page) calls to allow Matcha to use pageviews information in the scoring. For example:
 
 ```js
 analytics.page()
@@ -34,7 +34,7 @@ Segment sends Page calls to Matcha as a `pageview`.
 
 ### Screen
 
-Send [Screen](/docs/connections/spec/screen) calls to Matcha to leverage mobile information in the scoring. For example:
+Send [Screen](/docs/connections/spec/screen) calls to Matcha to use mobile information in the scoring. For example:
 
 ```obj-c
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -58,7 +58,7 @@ Segment sends Identify calls to Matcha as an `identify` event.
 
 ### Track
 
-Send [Track](/docs/connections/spec/track) calls to allow Matcha to better understand user interactions with your product and leverage it in the scoring. For example:
+Send [Track](/docs/connections/spec/track) calls to allow Matcha to better understand user interactions with your product and use it in the scoring. For example:
 
 ```js
 analytics.track('Login Button Clicked')
