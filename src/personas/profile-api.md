@@ -12,19 +12,19 @@ The Segment Profile API provides a single API to read user-level and account-lev
 
 You can use this API to:
 
-- **Build an in-app recommendation** engine to show users or accounts the last 5 products they viewed but didn't purchase
+- **Build an in-app recommendation** engine to show users or accounts the last five products they viewed but didn't purchase
 - **Empower your sales and support associates** with the complete customer context by embedding the user profile in third-party tools like Zendesk or Desk.com
 - **Power personalized marketing campaigns** by enriching dynamic / custom properties with profile traits in marketing tools like Braze
 - **Qualify leads faster** by embedding the user event timeline in Salesforce
 
-This document has four parts…
+This document has four parts:
 
 1. [**Product Highlights**](#product-highlights)
 2. [**Quickstart**](#quickstart): Walks you through how to get started querying your user profile in <1 min
 3. [**API Reference**](#api-reference): Retrieve a list of users sorted by recent activity or find a particular user
 4. [**Best Practices**](#recommended-implementation): Recommended implementation and example Profile API workflow
 
-## Product Highlights
+## Product highlights
 1. **Fast response times** — fetch traits from a user profile under 200ms
 2. **Real-time data** — query streaming data on the user profile
 3. **One identity** — query an end user's interactions across web, mobile, server, and third party touch-points
@@ -36,7 +36,7 @@ This document has four parts…
 > warning ""
 > **Important**: The Profile API is intended to be used server-side. You should not implement directly in client applications. See the [Best Practices](#recommended-implementation) section for more details.
 
-### Configure Access
+### Configure access
 
 Your access token enables you to call the Profile API and access customer data.
 
@@ -58,6 +58,10 @@ Your access token enables you to call the Profile API and access customer data.
 1. Navigate to Personas > *personas_space* > Explorer and select the user you want to query through the API.
 2. Take note of the user's available identifiers. For example, this user has a `user_id` with the value `9800664881`. The Profile API requires both the type of ID and the value separated by a colon. For example, `user_id:9800664881`.
 ![Retrieving a user's identifiers with the Personas Explorer](images/profile_api_user_id.png)
+
+> warning ""
+> To query phone numbers that contain a plus sign (`+`), insert the escape characters `%2B` in place of the plus sign. <br>
+> For example, if a `phone_number` identifier has the value `+5555550123`, enter `phone_number:%2B5555550123` in your query.
 
 ### Query the user's event traits
 
@@ -122,15 +126,17 @@ You can query all of a user's metadata (created_at, updated_at, ...):
 
 **Search an account profile**
 
-If you are sending group calls to Segment, you can now access your account profiles as well. You can retrieve your account traits, computed traits, and audience traits by querying the `group_id` you are interested in:
+If you're sending group calls to Segment, you can now access your account profiles as well. Retrieve your account traits, computed traits, and audience traits by querying the `group_id` you are interested in:
 
 `https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/accounts/profiles/group_id:12345/traits`
 
 **Search for linked users or accounts**
 
-If you are looking to find all the users linked to an account, you can search for an account's linked users, or a user's linked accounts.
+If you're looking to find all the users linked to an account, you can search for an account's linked users, or a user's linked accounts.
 
 `https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/accounts/profiles/group_id:12345/links`
+
+The return limit for the `/links` endpoint is 20 records. You can request up to 20 records by appending `?limit=20` to the query string.
 
 ### cURL
 
@@ -144,7 +150,7 @@ curl https://profiles.segment.com/v1/spaces/<your-space-id>/collections/users/pr
 
 ## API reference
 
-The Segment API is organized around [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer). The API has predictable, resource-oriented URLs, and uses HTTP response codes to indicate API errors. Segment uses standard HTTP features, like HTTP authentication and HTTP verbs, which are understood by off-the-shelf HTTP clients.  [JSON](http://www.json.org/) is returned by all API responses, including errors.
+The Segment API is organized around [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer){:target="_blank"}. The API has predictable, resource-oriented URLs, and uses HTTP response codes to indicate API errors. Segment uses standard HTTP features, like HTTP authentication and HTTP verbs, which are understood by off-the-shelf HTTP clients.  [JSON](http://www.json.org/){:target="_blank"} is returned by all API responses, including errors.
 
 **Endpoint**
 
@@ -157,7 +163,7 @@ The Segment API is organized around [REST](http://en.wikipedia.org/wiki/Represen
 
 ### Authentication
 
-The Profile API uses basic authentication for authorization — with the **Access Token** as the authorization key. Your **Access Token** carries access to all of your customer data, so be sure to keep them secret. Do not share your Access Token in publicly accessible areas such as GitHub or client-side code.
+The Profile API uses basic authentication for authorization — with the **Access Token** as the authorization key. Your **Access Token** carries access to all of your customer data, so be sure to keep them secret. Don't share your Access Token in publicly accessible areas such as GitHub or client-side code.
 
 You can create your Access Secret in your Personas Settings page. Segment recommends that you name your tokens with the name of your app and its environment, such as `marketing_site/production`. Access tokens are shown once — you won't be able to see it again. In the event of a security incident, you can revoke and cycle the access token.
 
@@ -205,7 +211,7 @@ Segment uses conventional HTTP response codes to indicate the success or failure
 | **rate_limit_error**      | Too many requests hit the API too quickly.                                                              |
 | **validation_error**      | Errors triggered when failing to validate fields (for example, when a collection name has invalid characters). |
 
-### Rate Limit
+### Rate limit
 
 To ensure low response times, every Space has a default rate limit of 100 requests/sec. Please contact [friends@segment.com](mailto:friends@segment.com) if you need a higher limit with details around your use case. For more information about rate limits, see the [Product Limits](/docs/personas/product-limits) documentation.
 
@@ -269,7 +275,7 @@ Retrieve a single profile's traits within a collection using an `external_id`. F
 GET /v1/spaces/<space_id>/collections/<users>/profiles/<external_id>/traits
 ```
 
-##### Query Parameters
+##### Query parameters
 
 | **Argument** | **Description**                                          | **Example**                                |
 | ------------ | -------------------------------------------------------- | ------------------------------------------ |
@@ -401,7 +407,7 @@ curl https://profiles.segment.com/v1/spaces/:space_id:/collections/users/profile
 }
 ```
 
-##### Query Parameters
+##### Query parameters
 
 | **Argument** | **Description**                                        | **Example**               |
 | ------------ | ------------------------------------------------------ | ------------------------- |
@@ -411,7 +417,7 @@ curl https://profiles.segment.com/v1/spaces/:space_id:/collections/users/profile
 
 
 
-#### Get a Profile's Events
+#### Get a profile's events
 
 Get up to 14 days of a profile's historical events within a collection using an `external_id`.
 
@@ -505,18 +511,18 @@ Get up to 14 days of a profile's historical events within a collection using an 
 }
 ```
 
-##### Query Parameters
+##### Query parameters
 
 | **Argument** | **Description**                                                                   | **Example**                       |
 | ------------ | --------------------------------------------------------------------------------- | --------------------------------- |
 | `end`        | Returns all the events that end before `end` (in ISO 8601).                       | `2018-01-02`                      |
-| `exclude`    | A comma-separated list of event keys to excluse.                                  | `Page Viewed`,`Experiment Viewed` |
+| `exclude`    | A comma-separated list of event keys to exclude.                                  | `Page Viewed`,`Experiment Viewed` |
 | `include`    | A comma-separated list of event keys to include.                                  | `Page Viewed`,`Experiment Viewed` |
-| `limit`      | Defines how many events are returned in one call                                  | `100`                             |
+| `limit`      | Defines how many events are returned in one call.                                  | `100`                             |
 | `sort`       | Determines whether the result is ascending or descending. Defaults to descending. | `asc`,`desc`                      |
 | `start`      | Returns all the events that start after `start` (in ISO 8601).                    | `2006-01-02`                      |
 
-#### Get a Profile's Metadata
+#### Get a profile's metadata
 
 Get a single profile's metadata within a collection using an `external_id`.
 
@@ -559,14 +565,14 @@ Get a single profile's metadata within a collection using an `external_id`.
 }
 ```
 
-##### Query Parameters
+##### Query parameters
 
 | **Argument** | **Description**                  | **Example**    |
 | ------------ | -------------------------------- | -------------- |
 | `verbose`    | True for verbose field selection | `true`,`false` |
 
 
-#### Get a Profile's Linked Users or Accounts
+#### Get a profile's linked users or accounts
 
 Get the users linked to an account, or accounts linked to a user, using an `external_id`.
 
@@ -626,14 +632,14 @@ GET /v1/spaces/<space_id>/collections/<users>/profiles/<external_id>/links
 }
 ```
 
-## Best Practices
-###  Recommended Implementation
+## Best practices
+###  Recommended implementation
 
-The Profile API does not support CORS because it has access to the sum of a customer's data. Segment also requests that you prevent the Access Token to the public, for example in a client-side application. Engineers implementing this API are advised to create a personalization service in their infrastructure, which other apps, websites, and services communicate with to fetch personalizations about their users.
+The Profile API doesn't support CORS because it has access to the sum of a customer's data. Segment also requests that you prevent the Access Token to the public, for example in a client-side application. Engineers implementing this API are advised to create a personalization service in their infrastructure, which other apps, websites, and services communicate with to fetch personalizations about their users.
 
 ![Server-side Personalization](https://www.lucidchart.com/publicSegments/view/25df2e70-a666-4581-8f86-1a000dbf1f49/image.png)
 
-### Example Workflow
+### Example workflow
 
 If you want to display the most relevant blog posts given a reader's favorite blog category:
 
@@ -653,7 +659,7 @@ Segment does not recommend using `external_ids` as a lookup field that might con
 
 ### Performance
 
-Segment typically sees p95 response times under 200ms for the `/traits` endpoint, based on an in-region test in `us-west` to retrieve 50 traits. However, if you know which traits you are looking for, Segment suggests you use the `/traits?include=` parameter to provide a list of traits want to retrieve.
+Segment typically sees p95 response times under 200ms for the `/traits` endpoint, based on an in-region test in `us-west` to retrieve 50 traits. However, if you know which traits you're looking for, Segment suggests you use the `/traits?include=` parameter to provide a list of traits you want to retrieve.
 
 Another best practice to optimize performance in high-throughput applications is to use connection pooling. Your personalization service should share existing connections when making a request to the Profile API, instead of opening and closing a connection for each request. This additional TLS handshake is a common source of overhead for each request.
 
