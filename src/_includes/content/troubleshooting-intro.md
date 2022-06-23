@@ -1,2 +1,1 @@
-If you're having trouble we have a few tips that help common problems.
-
+The following tips often help resolve common issues.
