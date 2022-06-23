@@ -20,7 +20,8 @@ To configure Klaviyo as an Event Source to get data into your warehouse or other
 1. From the Segment web app, click **Catalog**.
 2. Search for "Klaviyo" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Navigate to [Account > Settings > API Keys](https://www.klaviyo.com/account#api-keys-tab){:target="_blank"} in Klaviyo's UI and copy your API Key into the Segment Settings UI.
-4. **Note:** Klaviyo requires the Private API Key to use the List API. You can find this by going to Klaviyo's UI and clicking [Account > Settings > API Keys > Create API Key](https://www.klaviyo.com/account#api-keys-tab){:target="_blank"}  to generate a Private API Key and copy it into the Segment Settings UI.
+> info ""
+> Klaviyo requires the Private API Key to use the List API. You can find this by going to Klaviyo's UI and clicking [Account > Settings > API Keys > Create API Key](https://www.klaviyo.com/account#api-keys-tab){:target="_blank"}  to generate a Private API Key and copy it into the Segment Settings UI.
 
 ## Identify
 
