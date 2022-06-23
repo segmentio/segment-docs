@@ -64,7 +64,10 @@ To get started with the Analytics-Kotlin server library:
     `trackDeepLinks` | Default set to `false`. <br> Set to `true` to automatically track opened Deep Links based on intents. |
     `useLifecycleObserver` | Default set to `false`. <br> Set to `true` to use `LifecycleObserver` to track Application lifecycle events. |
 
-
+### Regional configuration
+For Business plans with access to [Regional Segment](/docs/guides/regional-segment), you can use the `host` configuration parameter to send data to the desired region:
+1. Oregon (Default) — `api.segment.io/v1`
+2. Dublin — `events.eu1.segmentapis.com/v1/`
 ## Tracking Methods
 
 Once you've installed the mobile or server Analytics-Kotlin library, you can start collecting data through Segment's tracking methods:

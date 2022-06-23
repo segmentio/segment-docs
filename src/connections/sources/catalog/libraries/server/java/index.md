@@ -18,10 +18,7 @@ Want to stay updated on releases? Subscribe to the [release feed](https://github
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics)
 
-
-### Install the library
-
-The recommended way to install the library for Java is with a build system like Gradle or Maven. This makes it simple to upgrade and swap out destinations. The library is distributed using [Maven Central](http://maven.org/) as a `jar` dependency.
+The recommended way to install the library for Java is with a build system like Gradle or Maven. This makes it simple to upgrade and swap out destinations. The library is distributed using [Maven Central](http://maven.org/){:target="_blank"}  as a `jar` dependency.
 
 Here's what it would look like with Maven:
 
@@ -43,7 +40,7 @@ implementation 'com.segment.analytics.java:analytics:+'
 
 ### Initialize the SDK
 
-Before you can send us events, you need to initialize an instance of the Analytics class. To do so, you must use the `Analytics.Builder` class.
+Before you can send events to Segment, you need to initialize an instance of the Analytics class. To do so, you must use the `Analytics.Builder` class.
 
 ```java
 Analytics analytics = Analytics.builder(writeKey).build();
@@ -61,7 +58,10 @@ Although not enforced at compile time, make sure you provide either of `userId` 
 
 The following examples use [Guava's](https://github.com/google/guava) immutable maps, but feel free to use plain old Java maps instead.
 
-
+### Regional configuration
+For Business plans with access to [Regional Segment](/docs/guides/regional-segment), you can use the `host` configuration parameter to send data to the desired region:
+1. Oregon (Default) — `api.segment.io/v1`
+2. Dublin — `events.eu1.segmentapis.com/v1/`
 ## Identify
 
 > note ""
