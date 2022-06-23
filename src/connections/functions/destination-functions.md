@@ -306,7 +306,7 @@ Standard [function error types](/docs/connections/functions/destination-function
 | Timeout                | Retry   |
 | Unsupported Event Type | Discard |
 
-If only part of a batch succeeds and the failed events return either a `RetryError` or `Timeout` error, Segment retries the entire batch. You can optionally configure a response array for partially failed syncs and retry only the failed events in a batch. To configure the response array for partially failed syncs, [contact Segment support](https://segment.com/help/contact/){:target="_blank"}.
+If only part of a batch succeeds and the failed events return either a Timeout or Retry error, Segment retries the entire batch. You can optionally configure a response array for partially failed syncs and retry only the failed events in a batch. To configure the response array for partially failed syncs, [contact Segment support](https://segment.com/help/contact/){:target="_blank"}.
 
 ## Save and deploy the function
 
