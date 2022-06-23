@@ -12,10 +12,10 @@ This destination is maintained by Matcha. For any issues with the destination, [
 {% include content/connection-modes.md %} 
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-2. Search for "Matcha" in the Destinations Catalog, and select the "Matcha" destination.
-3. Choose which Source should send data to the "Matcha" destination.
-4. Ask you Account Manager for your API key or [contact the Matcha Support team](mailto:support@matcha.co).
-5. Enter the "API Key" in the "Matcha" destination settings in Segment.
+2. Search for **Matcha** in the Destinations Catalog, and select the **Matcha** destination.
+3. Choose which Source should send data to the Matcha destination.
+4. Ask your Account Manager for your **API key** or [contact the Matcha Support team](mailto:support@matcha.co).
+5. Enter the **API Key** in the Matcha destination settings in Segment.
 
 ## Supported methods
 
