@@ -28,11 +28,16 @@ Segment welcomes feedback on API responses and error messages. [Reach out to sup
 
 ## Rate Limits
 
-There is no hard rate limit at which point Segment will drop your data. [Contact support](https://segment.com/help/contact/) if you need to import at a rate exceeding 500 requests per second. Requests include batches sent with the [batch method](#batch), which means you can send a large batch of events inside of a single request.
+The HTTP API has no hard rate limit. However, Segment recommends not exceeding 500 requests per second, including large groups of events sent with a single [`batch` request](#batch).
 
 ## Max Request Size
 
 There is a maximum of `32KB` per normal API request.  The `batch` API endpoint accepts a maximum of `500KB` per request, with a limit of `32KB` per event in the batch.  If you are sending data from a server source, Segment's API responds with `400 Bad Request` if these limits are exceeded.
+
+## Regional configuration
+For Business plans with access to [Regional Segment](/docs/guides/regional-segment), you can use the `host` configuration parameter to send data to the desired region:
+1. Oregon (Default) — `api.segment.io/v1`
+2. Dublin — `events.eu1.segmentapis.com/v1/`
 
 ## Identify
 
@@ -182,7 +187,7 @@ Find details on the **`screen` payload** in our [Spec](/docs/connections/spec/sc
 
 ## Group
 
-`group` lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/node/#identify) with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
+`group` lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/node/#identify) with a group. A group could be a company, organization, account, project, or team. It also lets you record custom traits about the group, like industry or number of employees.
 
 This is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
@@ -255,7 +260,7 @@ You can import historical data by adding the `timestamp` argument to any of your
 
 Historical imports can only be done into destinations that can accept historical timestamped data. Most analytics tools like Mixpanel, Amplitude, and Kissmetrics can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
 
-**Note:** If you're tracking things that are happening right now, leave out the `timestamp` and our servers will timestamp the requests for you.
+**Note:** If you're tracking things that are happening right now, leave out the `timestamp` and Segment servers will timestamp the requests for you.
 
 ## Batch
 
@@ -400,6 +405,6 @@ When sending a HTTP call from a user's device, you can collect the IP address by
 
 1. Double check that you've set up the library correctly.
 
-2. Make sure that you're calling one of our API methods once the library is successfully installed—[`identify`](#identify), [`track`](#track), and so on.
+2. Make sure that you're calling a Segment API method once the library is successfully installed—[`identify`](#identify), [`track`](#track), and so on.
 
 {% include content/troubleshooting-server-integration.md %}
