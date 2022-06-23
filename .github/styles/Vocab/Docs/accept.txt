@@ -51,6 +51,7 @@ HTTP
 https
 HTTPS
 Hubspot
+incrementality
 ios
 iOS
 Javadoc
@@ -78,6 +79,7 @@ Preact
 Shopify
 Skalin
 Smartly
+Snapchat
 Subnet
 svg
 Totango

@@ -6,12 +6,12 @@ hidden: true
 id: 6261a8b6cb4caa70e19116e8
 ---
 
-The Snapchat Conversions API destination is a server-to-server integration with the [Snapchat Conversions API](https://marketingapi.snapchat.com/docs/conversion.html#conversions-api){:target="_blank"} that allows advertisers to pass web, app, and offline events from Segment directly to Snap. Data shared through the Snapchat Conversions API is processed similarly to events passed through the Snap Pixel or App Ads Kit (SDK). By passing events, advertisers can access post-view and post-swipe campaign reporting to measure performance and incrementality. Depending on the data shared and timeliness of integration, it’s also possible to leverage events passed via Conversions API for solutions such as custom audience targeting, campaign optimization, Dynamic Ads, and more.
+The Snapchat Conversions API destination is a server-to-server integration with the [Snapchat Conversions API](https://marketingapi.snapchat.com/docs/conversion.html#conversions-api){:target="_blank"} that allows advertisers to pass web, app, and offline events from Segment directly to Snap. Data shared through the Snapchat Conversions API is processed similarly to events passed through the Snap Pixel or App Ads Kit (SDK). By passing events, advertisers can access post-view and post-swipe campaign reporting to measure performance and incrementality. Depending on the data shared and timeliness of integration, it’s also possible to use events passed through the Conversions API for solutions such as custom audience targeting, campaign optimization, Dynamic Ads, and more.
 
 > info ""
 > The Snapchat Conversions API destination is in beta and is in active development. Some functionality may change before it becomes generally available.
 
-## Benefits of Snapchat Conversions API
+## Benefits of the Snapchat Conversions API
 The Snapchat Conversions API destination provides the following benefits:
 - **Clear mapping of data.** Actions-based destinations enable you to define the mapping between the data Segment receives from your source and the data Segment sends to Snap.
 - **Prebuilt mappings.** Mappings for Snap event types, like `PURCHASE` and `ADD_CART`, are prebuilt with the prescribed parameters and available for customization.
@@ -33,14 +33,14 @@ The Snapchat Conversions API destination provides the following benefits:
 8. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
 > warning ""
-> In order for events to be sent to Snap, you **must** add a Pixel ID for web and offline conversions or a Snap App ID and App ID for mobile conversions. If missing, events will fail.
+> To send events to Snap, you **must** add a Pixel ID for web and offline conversions or a Snap App ID and App ID for mobile conversions. If missing, events will fail.
 
 {% include components/actions-fields.html %}
 
 > warning ""
-> By default, all mappings will be sent as `WEB` conversions. If you want to send events as mobile or offline conversions, update the Event Conversion Type in each mapping to be `MOBILE_APP` or `OFFLINE`.
+> By default, all mappings are sent as `WEB` conversions. If you want to send events as mobile or offline conversions, update the Event Conversion Type in each mapping to be `MOBILE_APP` or `OFFLINE`.
 
-## FAQ & Troubleshooting
+## FAQ and Troubleshooting
 
 ### Deduplication with the Snap Pixel or App Ads Kit (SDK)
 There are many ways to send conversion data to Snap, including through the Snap Pixel, App Ads Kit or Conversions API. Snap recommends sending redundant data across sources to ensure the best optimization, targeting, and measurement capabilities. The Client Deduplication ID, Transaction ID, and Mobile Ad Identifier are used by Snap to deduplicate events across sources. Please see below for guidance on when to use each field for deduplication.
@@ -62,7 +62,7 @@ The Client Deduplication ID allows for a 48-hour deduplication window. The Trans
 ### Latency
 It may take up to 1-hour for events to appear in the Snap [Events Manager](https://businesshelp.snapchat.com/s/article/events-manager?language=en_US){:target="_blank"}.
 
-### Other Events
+### Other events
 If you want to send a Snap Event Type that Segment doesn’t have a prebuilt mapping for, you can use the Report Conversion Event action to send the event. For example, if you want to send a `START_TRIAL` event:
 1. Create a mapping for Report Conversion Event.
 2. Set up your Event Trigger criteria for trial starts.
@@ -70,7 +70,7 @@ If you want to send a Snap Event Type that Segment doesn’t have a prebuilt map
 
 The Snapchat Conversions API only supports sending Event Types that are in the [predefined `event_type` list](https://marketingapi.snapchat.com/docs/conversion.html#conversion-parameters){:target="_blank"}. This includes custom events. You must use `CUSTOM_EVENT_1`, `CUSTOM_EVENT_2`, `CUSTOM_EVENT_3`, `CUSTOM_EVENT_4`, or `CUSTOM_EVENT_5` as the Event Type. Events sent with an invalid event type will fail with an `Unrecognized event type` error.
 
-### Required Parameters & Hashing
+### Required parameters and hashing
 To match visitor events with Snapchat ads, Snap requires that one or a combination of the following parameters are sent to the Conversions API:
 - Email
 - Phone Number
