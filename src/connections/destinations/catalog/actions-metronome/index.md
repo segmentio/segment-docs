@@ -11,13 +11,13 @@ redirect_from:
 
 Metronome also enables product-led growth with a consistent source of truth for use and billing. Freely experiment with pricing and packaging and put iteration directly in the hands of your Product team.
 
-## Getting Started
+## Initial Setup
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**
-2. Search for **Metronome (Actions)** within the Destinations Catalog and select **Metronome (Actions)**
+2. Search for ''Metronome (Actions)'' within the Destinations Catalog and select **Metronome (Actions)**
 3. Click **Configure Metronome (Actions)**.
-4. Select the source you’d like to connect to and give the destination a name
-5. Enter your Metronome API Token into the Segment Connection Settings UI (save changes).
+4. Select the source you’d like to connect to and give the destination a name (e.g., Metronome Instance #1).
+5. Enter your Metronome API Token on the **Settings** pane in the **API Token** box, and save changes.
 
 {% include components/actions-fields.html %}
 
