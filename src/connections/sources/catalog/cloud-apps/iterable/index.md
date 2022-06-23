@@ -42,132 +42,33 @@ The default behavior is for Iterable to pass the `userId` associated with the em
 
 Collections are the groupings of data Segment pulls from your Source. In your warehouse, each collection gets its own table, as well as a `tracks` table that aggregates all the events into a single table. 
 
-<table>
-    <tr>
-        <td>**Collection**</td>
-        <td>**Type**</td>
-        <td>**Description**</td>
-    </tr>
-    <tr>
-        <td>Email Bounced</td>
-        <td>Event</td>
-        <td>Receiving server could not or would not accept message</td>
-    </tr>
-    <tr>
-        <td>Email Delivered</td>
-        <td>Event</td>
-        <td>Message has been successfully delivered to the receiving server</td>
-    </tr>
-    <tr>
-        <td>Email Link Clicked</td>
-        <td>Event</td>
-        <td>Recipient clicked on a link within the message. You need to enable Click Tracking for getting this type of event
-        </td>
-    </tr>
-    <tr>
-        <td>Email Marked as Spam</td>
-        <td>Event</td>
-        <td>Recipient marked message as spam</td>
-    </tr>
-    <tr>
-        <td>Email Opened</td>
-        <td>Event</td>
-        <td>Recipient has opened the HTML message. You need to enable Open Tracking for getting this type of event
-        </td>
-    </tr>
-    <tr>
-        <td>Hosted Unsubscribe Click</td>
-        <td>Event</td>
-        <td>User navigated to email preference center through a `hostedUnsubscribeUrl` link
-        </td>
-    </tr>
-    <tr>
-        <td>In App Clicked</td>
-        <td>Event</td>
-        <td>An in-app click event indicates that a user tapped a link or button in an in-app message
-        </td>
-    </tr>
-    <tr>
-        <td>In App Delivered</td>
-        <td>Event</td>
-        <td>Indicates that an in-app message arrived on a user's device. It does not mean that the user viewed the message.
-        </td>
-    </tr>
-    <tr>
-        <td>In App Opened</td>
-        <td>Event</td>
-        <td>Indicates that an in-app message displayed in an app, either because it appeared on arrival or because the user selected it in the inbox.
-        </td>
-    </tr>
-    <tr>
-        <td>In App Sent</td>
-        <td>Event</td>
-        <td>Indicates that Iterable sent an in-app message to a user. It does not mean that the user received the message.
-        </td>
-    </tr>
-    <tr>
-        <td>Mobile App Uninstalled</td>
-        <td>Event</td>
-        <td>Ghost message sent 12 hours after original push delivered results in rejection from receiving server
-        </td>
-    </tr>
-    <tr>
-        <td>Push Bounced</td>
-        <td>Event</td>
-        <td>Receiving server could not or would not accept message</td>
-    </tr>
-    <tr>
-        <td>Push Delivered</td>
-        <td>Event</td>
-        <td>Message has been successfully delivered to the receiving server</td>
-    </tr>
-    <tr>
-        <td>Push Opened</td>
-        <td>Event</td>
-        <td>User has been shown push notification by client app</td>
-    </tr>
-    <tr>
-        <td>SMS Bounced</td>
-        <td>Event</td>
-        <td>Receiving server could not or would not accept message</td>
-    </tr>
-    <tr>
-        <td>SMS Clicked</td>
-        <td>Event</td>
-        <td>User has clicked link within SMS message</td>
-    </tr>
-    <tr>
-        <td>SMS Delivered</td>
-        <td>Event</td>
-        <td>Message has been successfully delivered to the receiving server</td>
-    </tr>
-    <tr>
-        <td>SMS Received</td>
-        <td>Event</td>
-        <td>User has sent an inbound SMS that was received by server</td>
-    </tr>
-    <tr>
-        <td>Subscribed</td>
-        <td>Event</td>
-        <td>User subscribes to a messaging channel</td>
-    </tr>
-    <tr>
-        <td>Unsubscribed</td>
-        <td>Event</td>
-        <td>Recipient clicked on message's subscription management link</td>
-    </tr>
-    <tr>
-        <td>Web Push Clicked</td>
-        <td>Event</td>
-        <td>User clicked on web push notification</td>
-    </tr>
-    <tr>
-        <td>Web Push Delivered</td>
-        <td>Event</td>
-        <td>Web Push has been successfully delivered to the receiving server
-        </td>
-    </tr>
-</table>
+| Collection               | Type  | Description                                                                                                                               |
+| ------------------------ | ----- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Email Bounced            | Event | The receiving server could not or would not accept message.                                                                                   |
+| Email Delivered          | Event | The message was successfully delivered to the receiving server.                                                                           |
+| Email Link Clicked       | Event | The recipient clicked a link within the message. Enable Click Tracking to receive this event.                          |
+| Email Marked as Spam     | Event | The recipient marked message as spam.                                                                                                          |
+| Email Opened             | Event | The recipient has opened the HTML message. Enable Open Tracking to receive event                                    |
+| Hosted Unsubscribe Click | Event | The user navigated to the email preference center through a `hostedUnsubscribeUrl` link.                                                           |
+| In App Clicked           | Event | An in-app click event indicates that a user tapped a link or button in an in-app message.                                                  |
+| In App Delivered         | Event | Indicates that an in-app message arrived on a user's device. It does not mean that the user viewed the message.                           |
+| In App Opened            | Event | Indicates that an in-app message displayed in an app, either because it appeared on arrival or because the user selected it in the inbox. |
+| In App Sent              | Event | Indicates that Iterable sent an in-app message to a user. It does not mean that the user received the message.                            |
+| Mobile App Uninstalled   | Event | Ghost message sent 12 hours after original push delivered results in rejection from receiving server.                                      |
+| Push Bounced             | Event | The receiving server could not or would not accept message.                                                                                    |
+| Push Delivered           | Event | The message was successfully delivered to the receiving server.                                                                           |
+| Push Opened              | Event | The user was shown a push notification by the client app.                                                                                       |
+| SMS Bounced              | Event | The receiving server could not or would not accept message.                                                                                    |
+| SMS Clicked              | Event | The user has clicked a link within an SMS message.                                                                                                  |
+| SMS Delivered            | Event | The message was successfully delivered to the receiving server.                                                                           |
+| SMS Received             | Event | The user has sent an inbound SMS that was received by server.                                                                                  |
+| Subscribed               | Event | The user subscribes to a messaging channel.                                                                                                    |
+| Unsubscribed             | Event | The recipient clicked a on message's subscription management link.                                                                               |
+| Web Push Clicked         | Event | The user clicked on a web push notification.                                                                                                     |
+| Web Push Delivered       | Event | A web Push was successfully delivered to the receiving server.                                                                          |
+
+
+
 
 <!-- Example: To query the Email Delivered table, you'd write a query like this:
 
