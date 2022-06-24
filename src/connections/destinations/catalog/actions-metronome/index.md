@@ -11,7 +11,7 @@ redirect_from:
 
 Metronome also enables product-led growth with a consistent source of truth for use and billing. Freely experiment with pricing and packaging and put iteration directly in the hands of your Product team.
 
-## Initial Setup
+## Getting Started
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**
 2. Search for ''Metronome (Actions)'' within the Destinations Catalog and select **Metronome (Actions)**
