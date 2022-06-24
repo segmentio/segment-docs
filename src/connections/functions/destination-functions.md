@@ -11,9 +11,9 @@ Destination functions allow you to transform and annotate your Segment events an
 All functions are scoped to your workspace, so members of other workspaces can't view or use them.
 
 > info ""
-> Functions is available to all customer plan types with a free allotment of usage hours. Read more about [Functions usage limits](/docs/connections/functions/usage/), or see [your workspace's Functions usage stats](https://app.segment.com/goto-my-workspace/settings/usage?metric=functions).
+> Functions is available to all customer plan types with a free allotment of usage hours. Read more about [Functions usage limits](/docs/connections/functions/usage/), or see [your workspace's Functions usage stats](https://app.segment.com/goto-my-workspace/settings/usage?metric=functions){:target="_blank"}.
 
-![](images/destination_functions_overview.png)
+![An illusrative graphic showing information flowing from the Segment app, into code, and then into Slack](images/destination_functions_overview.png)
 
 
 > note ""
@@ -21,16 +21,16 @@ All functions are scoped to your workspace, so members of other workspaces can't
 
 ## Create a destination function
 
-1. From your workspace, go to the Catalog and click the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog).
+1. From your workspace, go to the Catalog and click the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog){:target="_blank"}.
 2. Click **New Function**.
 3. Select **Destination Function** and click **Build**.
 
 > success ""
-> **Tip:** Want to see some example functions? Check out the templates available in the Functions UI, or in the open-source [Segment Functions Library](https://github.com/segmentio/functions-library). (Contributions welcome!)
+> **Tip:** Want to see some example functions? Check out the templates available in the Functions UI, or in the open-source [Segment Functions Library](https://github.com/segmentio/functions-library){:target="_blank"}. (Contributions welcome!)
 
 When you click **Build**, a code editor appears. Use the editor to write the code for your function, configure settings, and test the function's behavior.
 
-![Functions Editor](images/editor-dest.png)
+<!--- ![A screenshot of the Functions Editor in the Segment app, showing one of the Segment sample functions and the test panel in the code editor](images/editor-dest.png) --->
 
 ## Code the destination function
 
@@ -78,7 +78,7 @@ async function onTrack(event) {
 To change which event type the handler listens to, you can rename it to the name of the message type. For example, if you rename this function `onIdentify`, it listens for "Identify" events instead.
 
 > info ""
-> Functions' runtime includes a `fetch()` polyfill using a `node-fetch` package. Check out the [node-fetch documentation](https://www.npmjs.com/package/node-fetch) for usage examples.
+> Functions' runtime includes a `fetch()` polyfill using a `node-fetch` package. Check out the [node-fetch documentation](https://www.npmjs.com/package/node-fetch){:target="_blank"} for usage examples.
 
 ### Errors and error handling
 
@@ -140,8 +140,7 @@ You can read more about [error handling](#destination-functions-logs-and-errors)
 {% include content/functions/runtime.md %}
 
 
-<!-- TODO - could also go into the `runtime.md` include above, if applied identically to both types of functions.
-## Batching in functions   -->
+<!-- TODO - could also go into the `runtime.md` include above, if applied identically to both types of functions. -->
 
 ## Create settings and secrets
 
@@ -149,7 +148,7 @@ You can read more about [error handling](#destination-functions-logs-and-errors)
 
 Next, fill out this setting's value in the **Test** tab, so you can run the function and verify that the correct setting value is passed. (This value is only for testing your function.)
 
-![Test Value For Setting](images/setting-in-test-tab.png){:width="500"}
+<!-- ![Test Value For Setting](images/setting-in-test-tab.png){:width="500"} -->
 
 Now that you've configured a setting and entered a test value, you can add code to read its value and run the function, as in the example below:
 
@@ -162,8 +161,6 @@ async function onTrack(request, settings) {
 
 When you deploy your destination function in your workspace, you fill out the settings on the destination configuration page, similar to how you would configure a normal destination.
 
-![Destination Function Settings](images/dest-settings.png)
-
 ## Test the destination function
 
 You can test your code directly from the editor in two ways:
@@ -172,7 +169,7 @@ You can test your code directly from the editor in two ways:
 
 Click **Use Sample Event** and select the source to use events from.
 
-![Capture events to test your function](images/autofill-events.gif)
+![An animation showing someone using the Use Sample Event button, selecting a source, and clicking "Use Event"](images/autofill-events.gif)
 
 Click **Run** to test your function with the event you selected.
 
@@ -180,7 +177,7 @@ Click **Run** to test your function with the event you selected.
 
 You can also manually include your own JSON payload of a Segment event, instead of fetching a sample from one of your workspace sources.
 
-![Functions Editor Event Tester](images/editor-test.gif)
+![An animation showing someone clicking the run button in the Test panel and viewing a successful output](images/editor-test.gif)
 
 If your function fails, you can check the error details and logs in the **Output** section.
 
@@ -282,9 +279,12 @@ By default, Functions waits up to 10 seconds to form a batch of 20 events. You c
 
 ### Test the batch handler
 
-The [Functions editing environment](/docs/connections/functions/environment/) supports testing batch handlers. In the right panel of the Functions editor, click **customize the event yourself** to enter Manual Mode. Add events as a JSON array, with one event per element. Click **Run** to preview the batch handler with the specified events.
+The [Functions editing environment](/docs/connections/functions/environment/) supports testing batch handlers. 
 
-![Batch handler testing](images/batch-function-editor.png)
+To test the batch handler: 
+1. In the right panel of the Functions editor, click **customize the event yourself** to enter Manual Mode. 
+2. Add events as a JSON array, with one event per element. 
+3. Click **Run** to preview the batch handler with the specified events.
 
 > note ""
 > The Sample Event option tests single events only. You must use Manual Mode to add more than one event so you can test batch handlers.
@@ -322,12 +322,12 @@ You can also choose to **Save & Deploy** to save the changes, and then choose wh
 
 A function can throw errors, or Segment might encounter errors while invoking your function. You can view these errors in the [Event Delivery](/docs/connections/event-delivery/) tab for your Destination as in the example below.
 
-![Destination Function Event Delivery tab](images/event-delivery.png)
+![A screenshot of the event delivery tab, showing 519 failed events broken into categories explaining why they failed](images/event-delivery.png)
 
 ### Destination functions error types
 
 - **Bad Request** - Any error thrown by the function code that is not covered by the other errors.
-- **Invalid Settings** - A configuration error prevented Segment from executing your code. If this error persists for more than an hour, [contact Segment Support](https://segment.com/help/contact/).
+- **Invalid Settings** - A configuration error prevented Segment from executing your code. If this error persists for more than an hour, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
 - **Message Rejected** - Your code threw `InvalidEventPayload` or `ValidationError` due to invalid input.
 - **Unsupported Event Type** - Your code does not implement a specific event type (`onTrack()`, etc.) or threw a `EventNotSupported` error.
 - **Retry** - Your code threw `RetryError` indicating that the function should be retried.
@@ -340,9 +340,7 @@ If your function throws an error, execution halts immediately. Segment captures 
 
 Segment then displays the captured error information in the [Event Delivery](/docs/connections/event-delivery/) page for your destination function. You can use this information to find and fix unexpected errors.
 
-![Destination Function error logs](images/error-logs-dest.png)
-
-You can throw [an error or a custom error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) and you can also add helpful context in logs using the [`console` API](https://developer.mozilla.org/en-US/docs/Web/API/console). For example:
+You can throw [an error or a custom error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error){:target="_blank"} and you can also add helpful context in logs using the [`console` API](https://developer.mozilla.org/en-US/docs/Web/API/console){:target="_blank"}. For example:
 
 ```js
 async function onTrack(event, settings) {
@@ -394,7 +392,7 @@ async function getAccessToken () {
 
 ### Editing and deleting functions
 
-If you are a **Workspace Owner** or **Functions Admin**, you can manage your function from the [Functions](https://app.segment.com/goto-my-workspace/functions/catalog) page.
+If you are a **Workspace Owner** or **Functions Admin**, you can manage your function from the [Functions](https://app.segment.com/goto-my-workspace/functions/catalog){:target="_blank"} page.
 
 
 ### Monitoring destination functions
@@ -429,7 +427,7 @@ Yes, Functions access is logged in the [Audit Trail](/docs/segment-app/iam/audit
 
 ##### Does Segment retry failed function invocations?
 
-Segment retries 9 times over the course of 4 hours. This increases the number of attempts for messages, so we try to re-deliver them another 4 times after some backoff. Segment doesn't retry if your function throws a [non-recoverable error](#errors-and-error-handling).
+Segment retries 9 times over the course of 4 hours. This increases the number of attempts for messages, so Segment tries to re-deliver them another 4 times after some backoff. Segment doesn't retry if your function throws a [non-recoverable error](#errors-and-error-handling).
 
 ##### Are events guaranteed to send data in order?
 
@@ -437,11 +435,11 @@ No, Segment can't guarantee the order in which the events are delivered to an en
 
 ##### Can I create a device-mode destination?
 
-No, destination functions are currently available as cloud-mode destinations only. We're in the early phases of exploration and discovery for supporting customer "web plugins" for custom device-mode destinations and other use cases, but this is unsupported today.
+No, destination functions are currently available as cloud-mode destinations only. Segment is in the early phases of exploration and discovery for supporting customer "web plugins" for custom device-mode destinations and other use cases, but this is unsupported today.
 
 ##### How do I publish a destination to the public Segment catalog?
 
-If you are a partner, looking to publish your destination and distribute your app through Segment catalog, visit the [Developer Center](https://segment.com/partners/developer-center/) and check out our [partner docs](/docs/partners/).
+If you are a partner, looking to publish your destination and distribute your app through Segment catalog, visit the [Developer Center](https://segment.com/partners/developer-center/){:target="_blank"} and check out the Segment [partner docs](/docs/partners/).
 
 ##### How does batching affect visibility?
 

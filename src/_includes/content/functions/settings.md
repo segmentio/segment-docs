@@ -4,11 +4,11 @@ Settings allow you to pass configurable variables to your function, which is the
 
 First, add a setting in **Settings** tab in the code editor:
 
-![Settings Tab](/docs/connections/functions/images/settings-tab-empty.png){:width="500"}
+![A screenshot of the functions settings tab](/docs/connections/functions/images/settings-tab-empty.png){:width="500"}
 
 Click **Add Setting** to add your new setting.
 
-![Add Setting Dialog](/docs/connections/functions/images/add-setting-dialog.png)
+![A screenshot of the "Add Setting" section of the functions settings tab, with apiKey settings included](/docs/connections/functions/images/add-setting-dialog.png)
 
 You can configure the details about this setting, which change how it's displayed to anyone using your function:
 
@@ -25,4 +25,4 @@ Click **Add Setting** to save the new setting.
 
 Once you save a setting, it appears in the **Settings** tab for the function. You can edit or delete settings from this tab.
 
-![Settings Tab](/docs/connections/functions/images/settings-tab-non-empty.png){:width="500"}
+![A screenshot of the functions settings tab, showing the apiKey setting](/docs/connections/functions/images/settings-tab-non-empty.png){:width="500"}
