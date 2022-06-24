@@ -30,8 +30,6 @@ All functions are scoped to your workspace, so members of other workspaces can't
 
 When you click **Build**, a code editor appears. Use the editor to write the code for your function, configure settings, and test the function's behavior.
 
-<!--- ![A screenshot of the Functions Editor in the Segment app, showing one of the Segment sample functions and the test panel in the code editor](images/editor-dest.png) --->
-
 ## Code the destination function
 
 Segment invokes a separate part of the function (called a "handler") for each event type that you send to your destination function.
@@ -147,8 +145,6 @@ You can read more about [error handling](#destination-functions-logs-and-errors)
 {% include content/functions/settings.md %}
 
 Next, fill out this setting's value in the **Test** tab, so you can run the function and verify that the correct setting value is passed. (This value is only for testing your function.)
-
-<!-- ![Test Value For Setting](images/setting-in-test-tab.png){:width="500"} -->
 
 Now that you've configured a setting and entered a test value, you can add code to read its value and run the function, as in the example below:
 
