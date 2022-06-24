@@ -4,6 +4,7 @@ hide-boilerplate: true
 id: 61a8032ea5f157ee37a720be
 redirect_from:
   - '/connections/destinations/catalog/vendor-metronome'
+  - '/connections/destinations/catalog/metronome-actions'
 ---
 {% include content/plan-grid.md name="actions" %}
 
