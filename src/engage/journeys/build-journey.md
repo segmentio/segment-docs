@@ -1,8 +1,7 @@
 ---
 title: Build a Journey
-layout: engage
-engage: true
 ---
+{% include content/plan-grid.md name="journeys" %}
 
 ## Before you begin
 
@@ -32,7 +31,7 @@ If you select the **Use historical data** option, Segment queries all historical
 
 ## Available step types
 
-Journeys provides eight step types, which you can add after the entry condition.
+Journeys provides five step types, which you can add after the entry condition.
 
 ![Step types](images/journey_step-types.png)
 
@@ -55,49 +54,9 @@ Define the number of branches you want to create, then add a **Wait for conditio
 > info ""
 > Journeys doesn't enforce mutual exclusivity in branch conditions. For more information about ensuring branch exclusivity, see [Best Practices](#).
 
-**Connect to existing step** joins two separate branches. Use this step to target multiple groups with one step.
+**Connect to existing step** joins two separate branches. Use this step to target multiple groups with one step. 
 
 **Send to Destinations** delivers information about the Journey to the selected Destination. For more information, see [Send data to Destinations](/docs/personas/journeys/send-data)
-
-## Send an Email
-
-Use Twilio Engage to send email as a step in a Journey.
-
-> note ""
-> To send email in Engage, you must connect a [SendGrid subuser account](https://docs.sendgrid.com/ui/account-and-settings/subusers#create-a-subuser){:target="blank"} to your Segment Personas space. Visit the [onboarding steps](/docs/engage/overview/onboarding/) for more information.
-
-1. Click **Send an Email** from the **Select a Step** window.
-2. Build an email from scratch, or use an existing template as a starting point. You can use an existing template as a base to build the email, but any changes made from within Journeys won't be saved in the original email template. Click **Manage Templates** to visit the Email Templates page.
-3. Configure the email step.
-    1. Add a step name.
-    2. Add the sender's email address and name. Emails can only be sent from a verified domain.
-    3. Indicate if you want to send replies back to the sender. If not, add a reply to email and name.
-    4. Add email addresses to receive a blind carbon copy of your email.
-    5. Add preview text and the subject line. Use merge tags to personalize the email template with user profile traits.
-    6. Design and test the email in the Body section. Be sure to include an unsubscribe link in your message.
-    7. Add conversion goals.
-4. Click **Save** to add the email step to your Journey.
-
-`Subscribed` users will receive an email upon entering the step. Visit [Email Campaigns](/docs/engage/campaigns/email-campaigns/) for more information.
-
-## Send an SMS
-
-Use Engage to send an SMS message as a step in a Journey.
-
-> note ""
-> To send SMS in Engage, you must connect a Twilio messaging service to your segment workspace. Visit the [onboarding steps](/docs/engage/overview/onboarding/) for more information.
-
-1. Click **Send an SMS** from the **Select a Step** window.
-2. Build an SMS template from scratch, or select a previously built template. Click **Manage Templates** to visit the SMS Templates page.
-3. Configure the Send SMS step.
-    1. Add a name to describe the step.
-    2. Select a [Twilio Engage messaging service](https://support.twilio.com/hc/en-us/articles/223181308-Getting-started-with-Messaging-Services){:target="blank"} to use.
-    3. Add the body of the SMS. Include an opt-out message such as "Reply STOP to unsubscribe" in the text.
-    4. Use merge tags to personalize your text, and test the SMS message.
-    5. Add a conversion goal to track message success.
-4. Click **Save** to add the SMS step to your Journey.
-
-As soon as a `subscribed` user enters the Send SMS step, they'll receive the text. Visit [SMS Campaigns](/docs/engage/campaigns/sms-campaigns/) for more information.
 
 ## Cloning a Journey
 
