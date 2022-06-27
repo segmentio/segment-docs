@@ -31,6 +31,10 @@ One of our Success Engineers wrote an alpha prototype Node.js app for importing 
 
 [Example Node.js import application](https://github.com/lambtron/segment-import)
 
+Additionally, one of our Software Engineers developed a React App with more out of the box functionality for importing events. The features include  a modern UI, transformations, and event format checking prior to import:
+
+[Desktop React csv uploader](https://github.com/segmentio/desktop-csv-uploader)
+
 If a server-side library doesn't meet your needs, use the Segment [bulk import HTTP API](https://segment.com/docs/connections/sources/catalog/libraries/server/http/#import). **Note**, if you're using the HTTP API directly to replay data you've exported from Segment, we recommend removing the original `sent_at`, `message_id`, and `project_id` fields from the archived message before forwarding them to Segment.
 
 Our friends at [MarketLytics](http://marketlytics.com/) have written up their experience using the alpha prototype importer and offer some [helpful visuals and tips](http://marketlytics.com/blog/import-historic-data-to-segment).
