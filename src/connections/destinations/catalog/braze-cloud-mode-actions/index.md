@@ -28,6 +28,8 @@ Braze Cloud Mode (Actions) provides the following benefit over Braze Classic:
    - **App ID**: The app identifier used to reference specific Apps in requests made to the Braze API. Created under Developer Console in the Braze Dashboard.
    - **REST Endpoint**: Your Braze REST Endpoint. For more information, see [API Overview](https://www.braze.com/docs/api/basics/){:target="_blank"} in the Braze documentation.
 
+> info ""
+> Braze requires that you include a `userId` or `braze_id` for all calls made in cloud-mode. Segment sends a `braze_id` if the `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
 
 {% include components/actions-fields.html settings="true"%}
 
@@ -40,4 +42,3 @@ Braze Cloud Mode (Actions) provides the following benefit over Braze Classic:
 
 Keep the following in mind if you plan to move to Braze (Actions) from the classic Braze destination.
 {% include components/actions-map-table.html name="braze-cloud" %}
-
