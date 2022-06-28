@@ -291,7 +291,35 @@ The [Config API](/docs/config-api/) Functions/Preview endpoint also supports tes
 
 ### Handling batching errors
 
-Standard [function error types](/docs/connections/functions/destination-functions/#destination-functions-error-types) apply to batch handlers. Segment attempts to retry the batch in the case of Timeout or Retry errors. For all other error types, Segment discards the batch. 
+Standard [function error types](/docs/connections/functions/destination-functions/#destination-functions-error-types) apply to batch handlers. Segment attempts to retry the batch in the case of Timeout or Retry errors. For all other error types, Segment discards the batch. It is also possible to report a partial failure by returning status of each event in the batch. Segment retries only the failed events in a batch until those events are successful or until they result in a permanent error.
+
+```json
+[
+	{
+		"status": 200
+	},
+	{
+		"status": 400,
+		"errormessage": "Bad Request"
+	},
+	{
+		"status": 200
+	},
+	{
+		"status": 500,
+		"errormessage": "Error processing request"
+	},
+	{
+		"status": 500,
+		"errormessage": "Error processing request"
+	},
+	{
+		"status": 200
+	},
+]
+```
+
+After receiving the response from the `onBatch` handler, only **event_3** and **event_4** will be retried.
 
 | Error Type             | Result  |
 | ---------------------- | ------- |
@@ -302,7 +330,6 @@ Standard [function error types](/docs/connections/functions/destination-function
 | Timeout                | Retry   |
 | Unsupported Event Type | Discard |
 
-If only part of a batch succeeds and the failed events return either a Timeout or Retry error, Segment retries only the failed events in a batch until those events are successful or until they result in a permanent error. 
 
 ## Save and deploy the function
 
