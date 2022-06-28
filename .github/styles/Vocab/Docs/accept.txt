@@ -54,6 +54,7 @@ Hubspot
 incrementality
 ios
 iOS
+Iterable
 Javadoc
 Javadocs
 Javascript
