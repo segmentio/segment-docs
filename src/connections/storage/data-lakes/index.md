@@ -5,17 +5,30 @@ redirect_from: '/connections/destinations/catalog/data-lakes/'
 
 {% include content/plan-grid.md name="data-lakes" %}
 
-Segment Data Lakes sends Segment data to a cloud data store (for example AWS S3) in a format optimized to reduce processing for data analytics and data science workloads. Segment data is great for building machine learning models for personalization and recommendations, and for other large scale advanced analytics. Data Lakes can reduce the amount of processing required to get real value out of your data.
+A **data lake** is a centralized cloud storage location that holds structured and unstructured data. 
+
+Data lakes typically have four layers: 
+- **Storage layer:** Holds large files and raw data. 
+- **Metadata store:** Stores the schema, or the process used to organize the files in the object store. 
+- **Query layer:** Allows you to run SQL queries on the object store. 
+- **Compute layer:** Allows you to write to and transform the data in the storage layer.
+
+![A graphic showing the information flowing from the metadata into the query, compute, and metadata layers, and then into the storage layer](images/data_lakes_overview_graphic.png)
+
+Segment Data Lakes sends Segment data to a cloud data store (either AWS S3 or Azure Data Lake Storage Gen2) in a format optimized to reduce processing for data analytics and data science workloads. Segment data is great for building machine learning models for personalization and recommendations, and for other large scale advanced analytics. Data Lakes reduces the amount of processing required to get real value out of your data.
 
 > info ""
 > Segment Data Lakes is available to Business tier customers only.
 
-To learn more, check out the blog post [Introducing Segment Data Lakes](https://segment.com/blog/introducing-segment-data-lakes/){:target="_blank"}.
-
+To learn more about Segment Data Lakes, check out the [Introducing Segment Data Lakes](https://segment.com/blog/introducing-segment-data-lakes/){:target="_blank"} blog post.
 
 ## How Segment Data Lakes work
 
-Data Lakes store Segment data in S3 in a read-optimized encoding format (Parquet) which makes the data more accessible and actionable. To help you zero-in on the right data, Data Lakes also creates logical data partitions and event tables, and integrates metadata with existing schema management tools, such as the AWS Glue Data Catalog. The resulting data set is optimized for use with systems like Spark, Athena, EMR, or Machine Learning vendors like DataBricks or DataRobot.
+Segment currently supports Data Lakes hosted on two cloud providers: Amazon Web Services (AWS) and Microsoft Azure. Each cloud provider has a similar system for managing data, but offer different query engines, post-processing systems, and analytics options. 
+
+### How [AWS Data Lakes] work
+
+Data Lakes store Segment data in S3 in a read-optimized encoding format (Parquet) which makes the data more accessible and actionable. To help you zero-in on the right data, Data Lakes also creates logical data partitions and event tables, and integrates metadata with existing schema management tools, such as the AWS Glue Data Catalog. The resulting data set is optimized for use with systems like Spark, Athena, EMR, or machine learning vendors like DataBricks or DataRobot.
 
 ![A diagram showing data flowing from Segment, through Parquet and S3, into Glue, and then into your Data Lake](images/dl_overview2.png)
 
@@ -23,9 +36,16 @@ Segment sends data to S3 by orchestrating the processing in an EMR (Elastic MapR
 
 ![A diagram visualizing data flowing from a Segment user into your account and into a Glue catalog/S3 bucket](images/dl_vpc.png)
 
-Data Lakes offers 12 syncs in a 24 hour period and doesn't offer a custom sync schedule or selective sync.
+### How [Azure Data Lakes] work
+
+Data Lakes store Segment data in Azure Data Lake Storage Gen2 in a read-optimized encoding format (Parquet) which makes the data more accessible and actionable. To help you zero-in on the right data, Data Lakes also creates logical data partitions and event tables, and integrates metadata with existing schema management tools, like the Hive Metastore. The resulting data set is optimized for use with systems like Power BI and Azure HDInsight or machine learning vendors like Azure DataBricks or Azure Synapse Analytics.
+
+![A diagram showing data flowing from Segment, through DataBricks, Parquet and Azure Data Lake Storage Gen2 into the Hive Metastore, and then into your post-processing systems](images/Azure_DL_setup.png)
 
 ### Data Lake deduplication
+
+> info ""
+> As of June 2022, deduplication is only supported for [AWS Data Lakes].
 
 In addition to Segment's [99% guarantee of no duplicates](/docs/guides/duplicate-data/) for data within a 24 hour look-back window, Data Lakes have another layer of deduplication to ensure clean data in your Data Lake. Segment removes duplicate events at the time your Data Lake ingests data.  Data Lakes deduplicate any data synced within the last 7 days, based on the `message_id` field.
 
@@ -33,12 +53,14 @@ In addition to Segment's [99% guarantee of no duplicates](/docs/guides/duplicate
 
 The Data Lakes and Warehouses products are compatible using a mapping, but do not maintain exact parity with each other. This mapping helps you to identify and manage the differences between the two storage solutions, so you can easily understand how the data in each is related. You can [read more about the differences between Data Lakes and Warehouses](/docs/connections/storage/data-lakes/comparison/).
 
-When you use Data Lakes, you can either use Data Lakes as your _only_ source of data and query all of your data directly from S3, or you can use Data Lakes in addition to a data warehouse.
+When you use Data Lakes, you can either use Data Lakes as your _only_ source of data and query all of your data directly from S3 or Azure Data Lake Storage Gen2, or you can use Data Lakes in addition to a data warehouse.
 
 
 ## Set up Segment Data Lakes
 
-For detailed instructions on how to configure Segment Data Lakes, see the [Data Lakes catalog page](/docs/connections/storage/catalog/data-lakes/). Be sure to consider the EMR and AWS IAM components listed below.
+
+### Set up [AWS Data Lakes]
+For detailed instructions on how to configure [AWS Data Lakes], see the [Data Lakes catalog page](/docs/connections/storage/catalog/data-lakes/). Be sure to consider the EMR and AWS IAM components listed below.
 
 ### EMR
 
@@ -156,6 +178,10 @@ Data types and labels available in Protocols aren't supported by Data Lakes.
 - **Data Types** - Data Lakes infers the data type for each event using its own schema inference systems instead of using a data type set for an event in Protocols. This might lead to the data type set in a data lake being different from the data type in the tracking plan. For example, if you set `product_id` to be an integer in the Protocols Tracking Plan, but the event is sent into Segment as a string, then Data Lakes may infer this data type as a string in the Glue Data Catalog.
 - **Labels** - Labels set in Protocols aren't sent to Data Lakes.
 {% endfaqitem %}
+
+{ % faqitem How frequently does my Data Lake sync?}
+Data Lakes offers 12 syncs in a 24 hour period and doesn't offer a custom sync schedule or selective sync.
+{ % endfaqitem }
 
 {% faqitem What is the cost to use AWS Glue? %}
 You can find details on Amazon's [pricing for Glue](https://aws.amazon.com/glue/pricing/){:target="_blank"} page. For reference, Data Lakes creates 1 table per event type in your source, and adds 1 partition per hour to the event table.
