@@ -198,7 +198,7 @@ You can read the [full Profile API docs](/docs/personas/profile-api/) to learn m
 ## Downloading your Computed Trait as a CSV file
 
 You can download a copy of your trait by visiting the the computed trait overview page.
-![Downloading a CSV file of computed traits in the Segment](images/trait_overview.png)
+![Downloading a CSV file of computed traits in Segment](images/trait_overview.png)
 Computed Trait CSVs are generated on demand. Before you can download the CSV, you will need to generate it. There are three different options for formatting:
 - **Unformatted:** Contains three columns. The first contains the user or account key, the second contains the trait value and the third is a JSON object containing the external IDs. Generating this CSV is by far the fastest of the three options. [Download example unformatted CSV](files/trait_csv_format_a.csv)
 - **Distinct columns for unique external IDs (with indexed columns for ID types with multiple values):** Contains the same first three columns as the unformatted CSV. Additional columns are added for each distinct external ID type. When a single row has more than one value for a given external ID type, for example a user with three email addresses, _additional columns with indexed headers are added_, (`email`, `email_1`, `email_2`). [Download example formatted CSV with indexed columns](files/trait_csv_format_b.csv)
