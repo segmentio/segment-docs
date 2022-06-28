@@ -401,7 +401,7 @@ Analytics.Client.Identify("hj2kf92ds212", new Traits() {
 
 Our libraries are built to support high performance environments. That means it is safe to use Analytics.NET on a web server that's serving hundreds of requests per second.
 
-By default (in async mode), this library starts a single seperate thread on initialization, and flushes all messages on that thread. That means every method you call **does not** result in an HTTP request, but is queued in memory instead. Messages are flushed in batch in the background, which allows for much faster operation.
+By default (in async mode), this library starts a single separate thread on initialization, and flushes all messages on that thread. That means every method you call **does not** result in an HTTP request, but is queued in memory instead. Messages are flushed in batch in the background, which allows for much faster operation.
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
 
