@@ -78,6 +78,7 @@ onboarding
 Optimizely
 performant
 Preact
+Selligent
 Shopify
 Skalin
 Smartly

@@ -27,7 +27,7 @@ These columns take the following values:
 
 - `subscribed`; for users who opted in to your marketing campaigns
 - `unsubscribed`; for users who have unsubscribed from your marketing campaigns
-- `did_not_subscribe`; for users who have neither subscribed nor unsubscribed from your marketing campaigns
+- `did-not-subscribe`; for users who have neither subscribed nor unsubscribed from your marketing campaigns
 - Blank; for profiles that have no subscription information
 
 Refer to the [User Subscription States documentation](/docs/engage/profiles/user-subscriptions/subscription-states/) for detailed explanations of each subscription state.
