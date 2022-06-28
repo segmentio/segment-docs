@@ -662,7 +662,7 @@ items:
     isCloudEventSource: true
     slug: jebbit
     url: connections/sources/catalog/cloud-apps/jebbit
-    hidden: false
+    hidden: true
     regions:
       - us
     endpoints:

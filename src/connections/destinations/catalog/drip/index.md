@@ -23,6 +23,6 @@ When you call [`track`](/docs/connections/spec/track/), Segment sends the event 
 
 - Only conversions that are attributed to a Drip email delivery will show on the conversions dashboard page.
 
-## Sending Data from Drip
+## Sending data from Drip
 
 Drip supports sending [email events](/docs/connections/spec/email/) to other tools on the Segment platform. These events will be sent as `track` calls to the other destinations you've turned on.

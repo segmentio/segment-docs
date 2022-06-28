@@ -3,3 +3,375 @@ message: "'%s' should be in sentence case"
 level: warning
 scope: heading
 match: $sentence
+exceptions:
+- Started
+- Actions
+- 2mee
+- AB Smartly
+- AB Tasty client side
+- ActiveCampaign
+- Adikteev
+- Adjust
+- AdLearn Open Platform
+- Adobe Analytics
+- Adobe Target Cloud Mode
+- Adobe Target Web
+- AdQuick
+- AdRoll
+- Adtriba
+- Airship
+- Alexa
+- Algolia Insights
+- Amazon EventBridge
+- Amazon Kinesis
+- Amazon Kinesis Firehose
+- Amazon Lambda
+- Amazon Personalize
+- Ambassador
+- Amberflo
+- Amplitude
+- Amplitude (Actions)
+- Anodot
+- Appcues
+- AppNexus
+- AppsFlyer
+- Apptimize
+- Asayer
+- Atatus
+- Attribution
+- Auryc
+- AutopilotApp
+- AutopilotHQ
+- AWS S3
+- Azure Function
+- Batch
+- Beamer
+- Bing Ads
+- Blendo
+- Blitzllama
+- Blueshift
+- Branch Metrics
+- Braze
+- Braze Cloud Mode (Actions)
+- Braze Web Device Mode (Actions)
+- Breyta CRM
+- Bronto
+- Bucket
+- BugHerd
+- Bugsnag
+- Button
+- BuzzBoard
+- ByteGain
+- BytePlus
+- Calixa
+- Callingly
+- Candu
+- Canny
+- Castle
+- Chameleon
+- Chartbeat
+- ChurnZero
+- Clearbit Enrichment
+- Clearbit Reveal
+- ClearBrain
+- CleverTap
+- Clicky
+- ClientSuccess
+- Cliff
+- Close
+- comScore
+- ConvertFlow
+- Convertro
+- Countly
+- Courier
+- Crazy Egg
+- Crisp
+- Criteo App & Web Events
+- Criteo Audiences
+- Criteo Offline Conversions
+- Crittercism
+- Crossing Minds
+- CrowdPower
+- Cruncher
+- Custify
+- Customer.io
+- Customer.io (Actions)
+- CustomerSuccessBox
+- CustomFit.ai
+- Data Lakes
+- Delighted
+- Digioh
+- DoubleClick Floodlight
+- Dreamdata IO
+- Drip
+- Elevio
+- Eloqua
+- Email Aptitude
+- Emarsys
+- EMMA
+- Engage Messaging
+- EnjoyHQ
+- EPICA
+- Errorception
+- Everflow
+- Experiments by GrowthHackers
+- Exponea
+- Extole Platform
+- Facebook App Events
+- Facebook Conversions API (Actions)
+- Facebook Offline Conversions
+- Facebook Pixel
+- FactorsAI
+- Firebase
+- Flagship.io
+- Flurry
+- FoxMetrics
+- Freshmarketer
+- Freshsales
+- Freshsales Suite - CRM
+- Friendbuy (Cloud Destination)
+- Friendbuy (Legacy)
+- Friendbuy (Web Destination)
+- FullStory
+- Fullstory (Actions)
+- FunnelEnvy
+- FunnelFox
+- Gainsight
+- Gainsight PX
+- Gameball
+- Gauges
+- Gist
+- Google Ads (Classic)
+- Google Ads (Gtag)
+- Google Ads Remarketing Lists
+- Google Analytics 4
+- Google Cloud Function
+- Google Cloud PubSub
+- Google Cloud Storage
+- Google Enhanced Conversions
+- Google Tag Manager
+- Google Universal Analytics
+- GoSquared
+- GraphJSON
+- Groundswell
+- HasOffers
+- Hawkei
+- HeadsUp AI
+- Heap
+- Hello Bar
+- Help Scout
+- HitTail
+- Hotjar
+- Houseware
+- HubSpot
+- Hull
+- hydra
+- IBM UBX
+- Impact Partnership Cloud
+- Improvely
+- Indicative
+- Inflection
+- Inkit
+- InMoment (formerly Wootric)
+- Insider
+- Inspectlet
+- Intercom
+- Iron.io
+- Iterable
+- Jivox
+- journy io
+- June
+- Kahuna
+- Kameleoon
+- Keen
+- Kevel
+- KISSmetrics
+- Kitemetrics
+- Klaviyo
+- Koala
+- Kochava
+- Kubit
+- Kustomer
+- Lantern
+- LaunchDarkly (Actions)
+- Leanplum
+- Learndot
+- Librato
+- LinkedIn Insight Tag
+- LiveChat
+- LiveIntent Audiences
+- Localytics
+- Lou
+- Lucky Orange
+- Lumen
+- Lytics
+- mabl
+- Madkudu
+- MailChimp
+- Mailjet
+- Mailmodo
+- Mammoth
+- Marketo Static Lists
+- Marketo V2
+- Markettailor
+- Matcha
+- Matomo
+- MediaMath
+- Metronome (Actions)
+- Millennial Media
+- Mixpanel
+- Modern Pricing
+- MoEngage
+- Moesif API Analytics
+- Monetate
+- Moosend
+- Mouseflow
+- MouseStats
+- Movable Ink
+- Mutiny
+- Nanigans
+- Nat
+- Natero
+- Navilytics
+- New Relic
+- Nielsen DCR
+- Noora
+- Nudgespot
+- Olark
+- OneSignal (New)
+- Optimizely Full Stack
+- Optimizely Web
+- Orb
+- Pardot
+- Parsely
+- Pendo
+- Perfect Audience
+- Perkville
+- PersistIQ
+- Personas Display & Video 360
+- Personas Facebook Custom Audiences
+- Personyze
+- Pingdom
+- Pinterest Audiences
+- Pinterest Tag
+- Planhat
+- Podsights
+- Pointillist
+- PostHog
+- ProductBird
+- ProfitWell
+- Promoter.io
+- Proof Experiences
+- ProsperStack
+- Qualaroo
+- Quantcast
+- QuanticMind
+- Quora Conversion Pixel
+- RadiumOne Connect
+- Ramen
+- Recombee AI
+- Refersion
+- Refiner
+- Regal Voice
+- Repeater
+- Responsys
+- Retentive
+- Retently
+- Retina
+- Richpanel
+- Rockerbox
+- Rollbar
+- SaaSquatch v2
+- Sailthru v2
+- Salescamp CRM
+- Salesforce
+- Salesforce (Actions)
+- Salesforce Marketing Cloud
+- Salesmachine
+- SatisMeter
+- Savio
+- ScopeAI
+- Screeb
+- Scuba Analytics
+- SegMetrics
+- Selligent Marketing Cloud
+- Sentry
+- Serenytics
+- ShareASale
+- Sherlock
+- SIGNL4 Alerting
+- SimpleReach
+- Singular
+- Skalin
+- Slack
+- Slack (Actions)
+- SlicingDice
+- Smartlook
+- Snapboard
+- Snapchat Audiences
+- SnapEngage
+- Spinnakr
+- Split
+- Sprig (Actions)
+- Sprig Cloud
+- Startdeliver
+- Statsig
+- Stitch Data
+- Stonly
+- Stories
+- Stormly
+- Strikedeck
+- Survicate
+- Swrve
+- Talkable
+- Talon.One
+- Talon.One (Actions)
+- Tamber
+- Taplytics
+- Tapstream
+- TikTok Conversions
+- Totango
+- Track JS
+- Trackier
+- Tractionboard
+- TrafficGuard
+- tray.io
+- Treasure Data
+- Trustpilot
+- TUNE
+- TV Squared
+- Twitter Ads
+- Unwaffle
+- Upcall
+- User.com
+- UserIQ
+- Userlist
+- Userpilot
+- UserVoice
+- Variance
+- Vero
+- Vespucci
+- Vidora
+- Visual Website Optimizer
+- Vitally
+- Voucherify
+- WalkMe
+- WebEngage
+- Webhooks
+- Whale Alerts
+- Whale Watch
+- Wigzo
+- Willow
+- Windsor
+- Wishpond
+- Woopra
+- Xplenty
+- Xtremepush
+- Yandex Metrica
+- Yellowhammer
+- Youbora
+- Zaius
+- Zapier
+- Zendesk
+- Zendesk Connect
+- Zopim
