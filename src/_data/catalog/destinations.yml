@@ -28074,7 +28074,7 @@ items:
   display_name: Metronome (Actions)
   name: Metronome (Actions)
   slug: metronome-actions
-  hidden: true
+  hidden: false
   endpoints:
   - us
   regions:
@@ -36655,13 +36655,13 @@ items:
 - id: 6261a8b6cb4caa70e19116e8
   display_name: Snapchat Conversions API
   name: Snapchat Conversions API
-  slug: snapchat-conversions-api
+  slug: actions-snap-conversions
   hidden: false
   endpoints:
   - us
   regions:
   - us
-  url: connections/destinations/catalog/snapchat-conversions-api
+  url: connections/destinations/catalog/actions-snap-conversions
   previous_names:
   - Snap Conversions Api
   - Snap Conversions API

@@ -3436,8 +3436,8 @@ destinations:
       - us
   - id: 6261a8b6cb4caa70e19116e8
     display_name: Snapchat Conversions API
-    slug: snapchat-conversions-api
-    url: connections/destinations/catalog/snapchat-conversions-api
+    slug: actions-snap-conversions
+    url: connections/destinations/catalog/actions-snap-conversions
     regions:
       - us
     endpoints:
