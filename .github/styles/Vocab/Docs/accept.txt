@@ -54,6 +54,7 @@ Hubspot
 incrementality
 ios
 iOS
+Iterable
 Javadoc
 Javadocs
 Javascript
@@ -77,6 +78,7 @@ onboarding
 Optimizely
 performant
 Preact
+Selligent
 Shopify
 Skalin
 Smartly
