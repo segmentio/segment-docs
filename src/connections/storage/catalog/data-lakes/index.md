@@ -8,17 +8,21 @@ redirect_from: '/connections/destinations/catalog/data-lakes/'
 Segment Data Lakes provide a way to collect large quantities of data in a format that's optimized for targeted data science and data analytics workflows. You can read [more information about Data Lakes](/docs/connections/storage/data-lakes/) and learn [how they differ from Warehouses](/docs/connections/storage/data-lakes/comparison/) in Segment's Data Lakes documentation.
 
 > note "Lake Formation"
-> You can also set up your Data Lakes using [Lake Formation](/docs/connections/storage/data-lakes/lake-formation/), a fully managed service built on top of the AWS Glue Data Catalog.
+> You can also set up your [AWS Data Lakes] using [Lake Formation](/docs/connections/storage/data-lakes/lake-formation/), a fully managed service built on top of the AWS Glue Data Catalog.
 
-## Pre-Requisites
+## Set up [AWS Data Lakes]
 
-Before you set up Segment Data Lakes, you need the following resources:
+To set up [AWS Data Lakes], create your AWS resources, enable the [AWS Data Lakes] destination in the Segment app, and verify that your Segment data synced to S3 and Glue.
+
+### Prerequisites
+
+Before you set up [AWS Data Lakes], you need the following resources:
 
 - An [AWS account](https://aws.amazon.com/account/)
 - An [Amazon S3 bucket](https://github.com/terraform-aws-modules/terraform-aws-s3-bucket) to receive data and store logs
 - A subnet within a VPC for the EMR cluster to run in
 
-## Step 1 - Set Up AWS Resources
+### Step 1 - Set Up AWS Resources
 
 You can use the [open source Terraform module](https://github.com/segmentio/terraform-aws-data-lake) to automate much of the set up work to get Data Lakes up and running. If you’re familiar with Terraform, you can modify the module to meet your organization’s needs, however Segment guarantees support only for the template as provided. The Data Lakes set up uses Terraform v0.12+. To support more versions of Terraform, the AWS provider must use v4, which is included in the example main.tf.
 
@@ -26,7 +30,7 @@ You can also use Segment's [manual set up instructions](/docs/connections/storag
 
 The Terraform module and manual set up instructions both provide a base level of permissions to Segment (for example, the correct IAM role to allow Segment to create Glue databases on your behalf). If you want stricter permissions, or other custom configurations, you can customize these manually.
 
-## Step 2 - Enable Data Lakes Destination
+### Step 2 - Enable Data Lakes Destination
 
 After you set up the necessary AWS resources, the next step is to set up the Data Lakes destination within Segment:
 
@@ -57,7 +61,7 @@ After you set up the necessary AWS resources, the next step is to set up the Dat
 Once the Data Lakes destination is enabled, the first sync will begin approximately 2 hours later.
 
 
-## Step 3 - Verify Data is Synced to S3 and Glue
+### Step 3 - Verify Data is Synced to S3 and Glue
 
 You will see event data and [sync reports](/docs/connections/storage/data-lakes/sync-reports) populated in S3 and Glue after the first sync successfully completes. However if an [insufficient permission](/docs/connections/storage/data-lakes/sync-reports/#insufficient-permissions) or [invalid setting](/docs/connections/storage/data-lakes/sync-reports/#invalid-settings) is provided during set up, the first data lake sync will fail.
 
@@ -67,7 +71,7 @@ To be alerted of sync failures via email, subscribe to the `Storage Destination 
 `Sync Failed` emails are sent on the 1st, 5th and 20th sync failure. Learn more about the types of errors which can cause sync failures [here](/docs/connections/storage/data-lakes/sync-reports/#sync-errors).
 
 
-## (Optional) Step 4 - Replay Historical Data
+### (Optional) Step 4 - Replay Historical Data
 
 If you want to add historical data to your data set using a [replay of historical data](/docs/guides/what-is-replay/) into Data Lakes, [contact the Segment Support team](https://segment.com/help/contact/) to request one.
 
@@ -75,17 +79,41 @@ The time needed to process a Replay can vary depending on the volume of data and
 
 Segment creates a separate EMR cluster to run replays, then destroys it when the replay finished. This ensures that regular Data Lakes syncs are not interrupted, and helps the replay finish faster.
 
+## Set up [Azure Data Lakes]
+
+To set up [Azure Data Lakes], create your Azure resources and enable the Data Lakes destination in the Segment app.
+
+### Prerequisites
+
+### Step 1 - Create and ALDS-enabled storage account
+
+### Step 2 - Setup KeyVault
+
+### Step 3 - Setup Azure MySQL DB
+
+### Step 4 - Set up Databricks
+
+### Step 5 - Setup a Service Principal
+
+### Step 6 - Configure Databricks cluster
+
+### Step 7 - Enable Data Lakes destination in the Segment app
+
+### Optional - Set up the Data Lake using Terraform
+
 ## FAQ
 
-### Data Lakes Set Up
+### [AWS Data Lakes]
 
 {% faq %}
 {% faqitem Do I need to create Glue databases? %}
 No, Data Lakes automatically creates one Glue database per source. This database uses the source slug as its name.
 {% endfaqitem %}
+
 {% faqitem What IAM role do I use in the Settings page? %}
 Four roles are created when you set up Data Lakes using Terraform. You add the `arn:aws:iam::$ACCOUNT_ID:role/segment-data-lake-iam-role` role to the Data Lakes Settings page in the Segment web app.
 {% endfaqitem %}
+
 {% faqitem What level of access do the AWS roles have? %}
 The roles which Data Lakes assigns during set up are:
 
@@ -102,25 +130,26 @@ The roles which Data Lakes assigns during set up are:
 
 - **`segment_emr_autoscaling_role`** - Restricted role that can only be assumed by EMR and EC2. This is set up based on [AWS best practices](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-iam-role-automatic-scaling.html).
 {% endfaqitem %}
+
 {% faqitem Why doesn't the Data Lakes Terraform module create an S3 bucket? %}
 The module doesn't create a new S3 bucket so you can re-use an existing bucket for your Data Lakes.
 {% endfaqitem %}
+
 {% faqitem Does my S3 bucket need to be in the same region as the other infrastructure? %}
 Yes, the S3 bucket and the EMR cluster must be in the same region.
 {% endfaqitem %}
+
 {% faqitem How do I connect a new source to Data Lakes? %}
 To connect a new source to Data Lakes:
 
 1. Ensure that the `workspace_id` of the Segment workspace is in the list of [external ids](https://github.com/segmentio/terraform-aws-data-lake/tree/master/modules/iam#external_ids) in the IAM policy. You can either update this from the AWS console, or re-run the [Terraform](https://github.com/segmentio/terraform-aws-data-lake) job.
 2. From your Segment workspace, connect the source to the Data Lakes destination.
 {% endfaqitem %}
+
 {% faqitem Can I configure multiple sources to use the same EMR cluster? %}
 Yes, you can configure multiple sources to use the same EMR cluster. We recommend that the EMR cluster only be used for Data Lakes to ensure there aren't interruptions from non-Data Lakes job.
 {% endfaqitem %}
-{% endfaq %}
 
-### Post-Set Up
-{% faq %}
 {% faqitem Why don't I see any data in S3 or Glue after enabling a source? %}
 If you don't see data after enabling a source, check the following:
 - Does the IAM role have the Segment account ID and workspace ID as the external ID?
@@ -129,9 +158,11 @@ If you don't see data after enabling a source, check the following:
 
 If all of these look correct and you're still not seeing any data, please [contact the Support team](https://segment.com/help/contact/).
 {% endfaqitem %}
+
 {% faqitem What are "Segment Output" tables in S3? %}
 The `output` tables are temporary tables Segment creates when loading data. They are deleted after each sync.
 {% endfaqitem %}
+
 {% faqitem Can I make additional directories in the S3 bucket Data Lakes is using? %}
 Yes, you can create new directories in S3 without interfering with Segment data.
 Do not modify, or create additional directories with the following names:
@@ -140,9 +171,11 @@ Do not modify, or create additional directories with the following names:
 - `segment-data/`
 - `segment-logs/`
 {% endfaqitem %}
+
 {% faqitem What does "partitioned" mean in the table name? %}
 `Partitioned` just means that the table has partition columns (day and hour). All tables are partitioned, so you should see this on all table names.
 {% endfaqitem %}
+
 {% faqitem How can I use AWS Spectrum to access Data Lakes tables in Glue, and join it with Redshift data? %}
 You can use the following command to create external tables in Spectrum to access tables in Glue and join the data with Redshift:
 
@@ -161,3 +194,5 @@ Replace:
 - [spectrum_schema_name] = The schema name in Redshift you want to map to
 {% endfaqitem %}
 {% endfaq %}
+
+### [Azure Data Lakes]

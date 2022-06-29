@@ -26,7 +26,7 @@ To learn more about Segment Data Lakes, check out the [Introducing Segment Data 
 
 Segment currently supports Data Lakes hosted on two cloud providers: Amazon Web Services (AWS) and Microsoft Azure. Each cloud provider has a similar system for managing data, but offer different query engines, post-processing systems, and analytics options. 
 
-### How [AWS Data Lakes] work
+### How [AWS Data Lakes] works
 
 Data Lakes store Segment data in S3 in a read-optimized encoding format (Parquet) which makes the data more accessible and actionable. To help you zero-in on the right data, Data Lakes also creates logical data partitions and event tables, and integrates metadata with existing schema management tools, such as the AWS Glue Data Catalog. The resulting data set is optimized for use with systems like Spark, Athena, EMR, or machine learning vendors like DataBricks or DataRobot.
 
@@ -36,42 +36,42 @@ Segment sends data to S3 by orchestrating the processing in an EMR (Elastic MapR
 
 ![A diagram visualizing data flowing from a Segment user into your account and into a Glue catalog/S3 bucket](images/dl_vpc.png)
 
-### How [Azure Data Lakes] work
+### How [Azure Data Lakes] works
 
 Data Lakes store Segment data in Azure Data Lake Storage Gen2 in a read-optimized encoding format (Parquet) which makes the data more accessible and actionable. To help you zero-in on the right data, Data Lakes also creates logical data partitions and event tables, and integrates metadata with existing schema management tools, like the Hive Metastore. The resulting data set is optimized for use with systems like Power BI and Azure HDInsight or machine learning vendors like Azure DataBricks or Azure Synapse Analytics.
 
 ![A diagram showing data flowing from Segment, through DataBricks, Parquet and Azure Data Lake Storage Gen2 into the Hive Metastore, and then into your post-processing systems](images/Azure_DL_setup.png)
 
-### Data Lake deduplication
-
-> info ""
-> As of June 2022, deduplication is only supported for [AWS Data Lakes].
-
-In addition to Segment's [99% guarantee of no duplicates](/docs/guides/duplicate-data/) for data within a 24 hour look-back window, Data Lakes have another layer of deduplication to ensure clean data in your Data Lake. Segment removes duplicate events at the time your Data Lake ingests data.  Data Lakes deduplicate any data synced within the last 7 days, based on the `message_id` field.
-
-### Using a Data Lake with a Data Warehouse
-
-The Data Lakes and Warehouses products are compatible using a mapping, but do not maintain exact parity with each other. This mapping helps you to identify and manage the differences between the two storage solutions, so you can easily understand how the data in each is related. You can [read more about the differences between Data Lakes and Warehouses](/docs/connections/storage/data-lakes/comparison/).
-
-When you use Data Lakes, you can either use Data Lakes as your _only_ source of data and query all of your data directly from S3 or Azure Data Lake Storage Gen2, or you can use Data Lakes in addition to a data warehouse.
-
 
 ## Set up Segment Data Lakes
 
+For more detailed information about setting up AWS and Azure Data Lakes, please see 
 
 ### Set up [AWS Data Lakes]
 For detailed instructions on how to configure [AWS Data Lakes], see the [Data Lakes catalog page](/docs/connections/storage/catalog/data-lakes/). Be sure to consider the EMR and AWS IAM components listed below.
 
-### EMR
+#### EMR
 
 Data Lakes uses an EMR cluster to run jobs that load events from all sources into Data Lakes. The [AWS resources portion of the set up instructions](/docs/connections/storage/catalog/data-lakes#step-1---set-up-aws-resources) sets up an EMR cluster using the `m5.xlarge` node type. Data Lakes keeps the cluster  always running, however the cluster auto-scales to ensure it's not always running at full capacity. Check the Terraform module documentation for the [EMR specifications](https://github.com/segmentio/terraform-aws-data-lake/tree/master/modules/emr){:target="_blank"}.
 
-### AWS IAM role
+#### AWS IAM role
 
 Data Lakes uses an IAM role to grant Segment secure access to your AWS account. The required inputs are:
 - **external_ids**: External IDs are the part of the IAM role which Segment uses to assume the role providing access to your AWS account. You will define the external ID in the IAM role as the Segment Workspace ID in which you want to connect to  Data Lakes. The Segment Workspace ID can be retrieved from the [Segment app](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} when navigating to the Settings > General Settings > ID.
 - **s3_bucket**: Name of the S3 bucket used by the Data Lake.
 
+### Set up [Azure Data Lakes]
+
+Before you can connect your [Azure Data Lake] to Segment, you must set up the following components in your Azure environment:
+
+- Azure Storage Account
+- Service Principal
+- Databricks Instance
+- Databricks Cluster
+- Azure MySQL Database
+- Azure KeyVault Instance: 
+
+For more information about configuring [Azure Data Lakes], see the [Data Lakes setup page](/docs/connections/storage/catalog/data-lakes/).
 
 ## Data Lakes schema
 
@@ -81,7 +81,9 @@ TODO:
 add schema overview (tables/columns generated)
 -->
 
-### S3 partition structure
+### [AWS Data Lakes] schema
+
+#### S3 partition structure
 
 Segment partitions the data in S3 by the Segment source, event type, then the day and hour an event was received by Segment, to ensure that the data is actionable and accessible.
 
@@ -103,7 +105,7 @@ By default, the date partition structure is `day=<YYYY-MM-DD>/hr=<HH>` to give y
 - Year/Month/Day [YYYY/MM/DD]
 - Day [YYYY-MM-DD]
 
-### AWS Glue data catalog
+#### AWS Glue data catalog
 
 Data Lakes stores the inferred schema and associated metadata of the S3 data in AWS Glue Data Catalog. This metadata includes the location of the S3 file, data converted into Parquet format, column names inferred from the Segment event, nested properties and traits which are now flattened, and the inferred data type.
 
@@ -115,18 +117,27 @@ add annotated glue image calling out different parts of inferred schema)
 
 New columns are appended to the end of the table in the Glue Data Catalog as they are detected.
 
-#### Glue database
+##### Glue database
 
 The schema inferred by Segment is stored in a Glue database within Glue Data Catalog. Segment stores the schema for each source in its own Glue database to organize the data so it is easier to query. To make it easier to find, Segment writes the schema to a Glue database named using the source slug by default. The database name can be modified from the Data Lakes settings.
 
 > info ""
 > The recommended IAM role permissions grant Segment access to create the Glue databases on your behalf. If you do not grant Segment these permissions, you must manually create the Glue databases for Segment to write to.
 
+### [Azure Data Lakes] schema
+
 ### Data types
 
 Data Lakes infers the data type for an event it receives. Groups of events are poled every hour to infer the data type for that each event.
 
 The data types supported in Glue are:
+- bigint
+- boolean
+- decimal(38,6)
+- string
+- timestamp
+
+The data types supported in the Hive Metastore are:
 - bigint
 - boolean
 - decimal(38,6)
@@ -145,7 +156,18 @@ If the data type in Glue is wider than the data type for a column in an on-going
 
 If Data Lakes sees a bad data type, for example text in place of a number or an incorrectly formatted date, it attempts a best effort conversion to cast the field to the target data type. Fields that cannot be cast may be dropped. You can also correct the data type in the schema to the desired type and Replay to ensure no data is lost. [Contact Segment Support](https://segment.com/help/contact/){:target="_blank"} if you find a data type needs to be corrected.
 
+### Data Lake deduplication
 
+> info ""
+> As of June 2022, deduplication is only supported for [AWS Data Lakes].
+
+In addition to Segment's [99% guarantee of no duplicates](/docs/guides/duplicate-data/) for data within a 24 hour look-back window, Data Lakes have another layer of deduplication to ensure clean data in your Data Lake. Segment removes duplicate events at the time your Data Lake ingests data.  Data Lakes deduplicate any data synced within the last 7 days, based on the `message_id` field.
+
+### Using a Data Lake with a Data Warehouse
+
+The Data Lakes and Warehouses products are compatible using a mapping, but do not maintain exact parity with each other. This mapping helps you to identify and manage the differences between the two storage solutions, so you can easily understand how the data in each is related. You can [read more about the differences between Data Lakes and Warehouses](/docs/connections/storage/data-lakes/comparison/).
+
+When you use Data Lakes, you can either use Data Lakes as your _only_ source of data and query all of your data directly from S3 or Azure Data Lake Storage Gen2, or you can use Data Lakes in addition to a data warehouse.
 
 ## FAQ
 {% faq %}
