@@ -397,34 +397,35 @@ const updateDestinations = async () => {
     destination.supportedMethods = renameKey(destination.supportedMethods, 'pageview', 'page')
 
     let updatedDestination = {
-      id: destination.id,
-      display_name: destination.name,
+      // id: destination.id,
+      // display_name: destination.name,
+      // name: destination.name,
+      // slug,
+      // hidden: isCatalogItemHidden(url),
+      // endpoints,
+      // regions,
+      // url,
+      // previous_names: destination.previousNames,
+      // website: destination.website,
+      // status: destination.status,
+      // categories: tempCategories,
+      // logo: {
+      //   url: destination.logos.default
+      // },
+      // mark: {
+      //   url: destination.logos.mark
+      // },
+      // methods: destination.supportedMethods,
+      // platforms: destination.supportedPlatforms,
+      // components: destination.components,
+      // browserUnbundlingSupported: destination.supportedFeatures.browserUnbundling,
+      // browserUnbundlingPublic: destination.supportedFeatures.browserUnbundlingPublic,
+      // replay: destination.supportedFeatures.replay,
+      // connection_modes,
+      // settings,
+      // actions,
+      // presets
       name: destination.name,
-      slug,
-      hidden: isCatalogItemHidden(url),
-      endpoints,
-      regions,
-      url,
-      previous_names: destination.previousNames,
-      website: destination.website,
-      status: destination.status,
-      categories: tempCategories,
-      logo: {
-        url: destination.logos.default
-      },
-      mark: {
-        url: destination.logos.mark
-      },
-      methods: destination.supportedMethods,
-      platforms: destination.supportedPlatforms,
-      components: destination.components,
-      browserUnbundlingSupported: destination.supportedFeatures.browserUnbundling,
-      browserUnbundlingPublic: destination.supportedFeatures.browserUnbundlingPublic,
-      replay: destination.supportedFeatures.replay,
-      connection_modes,
-      settings,
-      actions,
-      presets
     }
     destinationsUpdated.push(updatedDestination)
     doesCatalogItemExist(updatedDestination)
