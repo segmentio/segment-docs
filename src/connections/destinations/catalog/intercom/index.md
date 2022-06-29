@@ -89,7 +89,7 @@ analytics.identify('su3r73', {
 
 When you call Identify, Segment creates or updates the user in Intercom using their [Users API](https://developers.intercom.com/reference#users). Segment does not currently support creation of leads.
 
-*Note:* Intercom only associates Track events with known users, an Identify call with a `userId` is required before Track events are associated properly. Our bundled mobile SDK's also require that `identify` be called prior to `track`, but accepts setting an unknown user in Intercom using the `anonymousId`.
+*Note:* Intercom only associates Track events with known users. An Identify call with a `userId` is required before Track events are associated properly. Segment's bundled mobile SDKs also require that `identify` be called prior to `track`, but accepts setting an unknown user in Intercom using the `anonymousId`.
 
 Keep reading for more information about the Identify call depending on the source type you send it from.
 

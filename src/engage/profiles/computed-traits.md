@@ -36,7 +36,7 @@ Account-level examples:
 - Total Logins by Account 30 Days
 - Emails Opened by Account 90 Days
 
-![](images/1525835194991.png)
+![An event counter trait run over the course of a week](images/1525835194991.png)
 
 ### Aggregation
 
@@ -50,27 +50,27 @@ Account-level use cases
 - Total Minutes Watched 30 Days
 - Avg Order Size Last 180 Days
 
-![](images/1525835663131.png)
+![An aggregation trait run over the course of 90 days](images/1525835663131.png)
 
 ### Most Frequent
 
-A most frequent user-level computed trait will return the **most common value** for an **event property**.  This is  helpful to create traits like `preferred_product_viewed`  or `most_commonly_viewed_category` that tell you what a user's preferred product, or content category might be. Note that the most frequent computed trait requires the event property to have been tracked at least twice. In the case of a tie, we return the first alphabetical value. For account-level computed traits, you can also return the most frequent **user trait**. This is helpful when you want to determine which user has performed an event the most frequently. For example, you might to return the email of the user in an account most actively viewing your app.
+A most frequent user-level computed trait will return the **most common value** for an **event property**.  This is  helpful to create traits like `preferred_product_viewed`  or `most_commonly_viewed_category` that tell you what a user's preferred product, or content category might be. Note that the most frequent computed trait requires the event property to have been tracked at least twice. In the case of a tie, Segment returns the first alphabetical value. For account-level computed traits, you can also return the most frequent **user trait**. This is helpful when you want to determine which user has performed an event the most frequently. For example, you might to return the email of the user in an account most actively viewing your app.
 
 User-level examples:
 - Favorite Blog Post
 - Top Purchase Category
 
-![](images/1525836239527.png)
+![A most frequent product-viewed trait](images/1525836239527.png)
 
 Account-level examples:
 - Most frequent product viewed
 - Most active user
 
-![](images/1542073415630.png)
+![A most frequent order-completed trait](images/1542073415630.png)
 
 ### First
 
-The first user-level trait returns the first event property value we have seen. This is common for creating traits like `first_page_visited` based on the page name. For accounts, the first computed trait could also return a trait like `first_user_signup`, to calculate the first user to use your product.
+The first user-level trait returns the first event property value Segment has seen. This is common for creating traits like `first_page_visited` based on the page name. For accounts, the first computed trait could also return a trait like `first_user_signup`, to calculate the first user to use your product.
 
 User-level examples:
 - First seen timestamp
@@ -80,23 +80,23 @@ Account-level examples:
 - First email opened
 - First user signup
 
-![](images/1525836568474.png)
+![The first event-seen trait builder](images/1525836568474.png)
 
 ### Last
 
-The last trait returns the last event property value we have seen. This is common for creating traits like `last_utm_campaign` to help you calculate last-touch attribution for paid advertising.
+The last trait returns the last event property value Segment has seen. This is common for creating traits like `last_utm_campaign` to help you calculate last-touch attribution for paid advertising.
 
 User-level examples:
 - Last seen at
 - Last utm parameter
 
-![](images/1525836818177.png)
+![The last event-seen trait builder](images/1525836818177.png)
 
 Account-level examples:
 - Last unsubscribe timestamp
 - Last user active
 
-![](images/1542073887657.png)
+![An account-level last page-viewed trait](images/1542073887657.png)
 
 ### Unique List
 
@@ -107,7 +107,7 @@ Example use cases:
 - Unique categories
 - Unique games played
 
-![](images/1525837083070.png)
+![The unique list trait builder](images/1525837083070.png)
 
 
 ### Unique List Count
@@ -118,13 +118,13 @@ User-level examples:
 - Unique products viewed count
 - Unique categories count
 
-![](images/1525837374378.png)
+![The unique list count builder](images/1525837374378.png)
 
 Account-level examples:
 - Unique products viewed
 - Unique visitors count
 
-![](images/1542074153487.png)
+![An account-level unique list trait](images/1542074153487.png)
 
 ## Conditions
 
@@ -150,14 +150,26 @@ The following operators are available.
 
 Personas sends user-level computed Traits to destinations using the [Identify call](/docs/connections/spec/identify/) for user traits, or using the [Track call](/docs/connections/spec/track/) for event properties. Segment includes the trait value and property in the identify and track calls.
 
-For example, the name of a computed trait is added to the user profile as a trait, and the trait's value is set to the value of the computed trait. Segment sends an identify or track call when the trait is computed, depending on the destination configuration. If a computed trait counts the number of times a user visits your pricing page, and the user visits your pricing page five times, Segment sends an identify call with the property `pricing_page_visits: 5`. 
+For example, the name of a computed trait is added to the user profile as a trait, and the trait's value is set to the value of the computed trait. Segment sends an identify or track call when the trait is computed, depending on the destination configuration. If a computed trait counts the number of times a user visits your pricing page, and the user visits your pricing page five times, Segment sends an identify call with the property `pricing_page_visits: 5`.
 
 Learn more about [Computed trait generated events here](/docs/personas/using-personas-data/#computed-trait-generated-events). The trait name corresponds to the snake cased name that you see in the trait settings, for example `most_viewed_page_category`. See the [list of Personas-compatible destinations](/docs/personas/using-personas-data/#compatible-personas-destinations)
 
-![](images/1525837601768.png)
+![Editing a computed trait's settings](images/1525837601768.png)
 
-For account-level computed traits, you have the option to send either a [group](/docs/connections/spec/group/) call and/or [identify](/docs/connections/spec/identify/) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, we will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account. See [Account-level Audiences](/docs/personas/audiences/account-audiences) for more information.
+For account-level computed traits, you have the option to send either a [group](/docs/connections/spec/group/) call and/or [identify](/docs/connections/spec/identify/) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, Segment will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account. See [Account-level Audiences](/docs/personas/audiences/account-audiences) for more information.
 
+## Editing Realtime Traits
+
+Personas supports the editing of realtime Traits, which allows you to make nuanced changes to existing Traits in situations where cloning or building from scratch may not suit your use case.
+
+To edit a realtime Trait, follow these steps:
+
+1. In your Personas Space, select the **Computed Traits** tab.
+2. Select the realtime Trait you want to edit.
+3. Select the **Builder** tab and make your edits.
+4. Select **Save Computed Trait** to confirm your edits.
+
+Personas then processes your Trait edits. While the edit task runs, the trait remains locked and you can't make further changes. Once Personas has finished incorporating your changes, you'll be able to access your updated Trait.
 
 ## Accessing your Computed Traits using the Profiles API
 
@@ -184,17 +196,17 @@ returns:
 
 You can read the [full Profile API docs](/docs/personas/profile-api/) to learn more.
 
-## Downloading your Computed Trait as a CSV
+## Downloading your Computed Trait as a CSV file
 
 You can download a copy of your trait by visiting the the computed trait overview page.
-![](images/trait_overview.png)
+![Downloading a CSV file of computed traits in Segment](images/trait_overview.png)
 Computed Trait CSVs are generated on demand. Before you can download the CSV, you will need to generate it. There are three different options for formatting:
 - **Unformatted:** Contains three columns. The first contains the user or account key, the second contains the trait value and the third is a JSON object containing the external IDs. Generating this CSV is by far the fastest of the three options. [Download example unformatted CSV](files/trait_csv_format_a.csv)
 - **Distinct columns for unique external IDs (with indexed columns for ID types with multiple values):** Contains the same first three columns as the unformatted CSV. Additional columns are added for each distinct external ID type. When a single row has more than one value for a given external ID type, for example a user with three email addresses, _additional columns with indexed headers are added_, (`email`, `email_1`, `email_2`). [Download example formatted CSV with indexed columns](files/trait_csv_format_b.csv)
 - **Distinct columns for unique external IDs (with additional rows for ID types with multiple values):** Contains the same first three columns as the unformatted CSV. Additional columns are added for each distinct external ID type. When a single row has more than one value for a given external ID type, for example a user with two email addresses, _additional rows are added with the first three columns repeated (user or account key, trait value and external IDs JSON)._ [Download example formatted CSV with additional rows](files/trait_csv_format_c.csv)
 <table>
     <tr>
-        <td>![](images/large_trait_csv.png)</td>
+        <td>![Handling large CSV file downloads](images/large_trait_csv.png)</td>
         <td width="45%">Generating a CSV can take a substantial amount of time for large traits (around 30 seconds for a formatted CSV with 1 million rows). For CSVs that are expected to take over 20 seconds, the Segment app displays an estimated generation time. After clicking Generate, it is recommended that you leave the modal and page open while the CSV is created.
         (If the trait recalculates between when you click Generate and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.)</td>
     </tr>
