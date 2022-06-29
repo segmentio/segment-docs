@@ -54,19 +54,9 @@ Define the number of branches you want to create, then add a **Wait for conditio
 > info ""
 > Journeys doesn't enforce mutual exclusivity in branch conditions. For more information about ensuring branch exclusivity, see [Best Practices](#).
 
-**Connect to existing step** joins two separate branches. Use this step to target multiple groups with one step. 
+**Connect to existing step** joins two separate branches. Use this step to target multiple groups with one step.
 
 **Send to Destinations** delivers information about the Journey to the selected Destination. For more information, see [Send data to Destinations](/docs/personas/journeys/send-data)
-
-## Cloning a Journey
-
-To clone a Journey:
-1. In Journey List view, click the **…** icon at the end of a row.
-2. Select **Clone Journey**.
-
-Segment then creates a draft of your Journey.
-
-You can also clone a Journey from a Journey's Overview by clicking the **…** icon.
 
 ## Publishing a Journey
 
@@ -82,6 +72,42 @@ The Journeys re-entry setting allows users to repeat Journeys they've already ex
 - Retargeting users who abandon multiple carts
 - Recurring rewards and promotion offers
 - Notifying users when to renew a subscription
+
+## Cloning a Journey
+
+To clone a Journey:
+1. In Journey List view, click the **…** icon at the end of a row.
+2. Select **Clone Journey**.
+
+Segment then creates a draft of your Journey.
+
+You can also clone a Journey from a Journey's Overview by clicking the **…** icon.
+
+## Randomized splits
+
+> info ""
+> The randomized splits step is in beta and available to users with a Personas Advanced plan.
+
+A randomized split lets you experiment with and test the performance of a Journey's branches. When you create a randomized split, you add up to five Journey branches, each with a different step. Journeys then sends eligible users down one of the branches at random. Each branch receives a portion of the eligible users based on percentages that you assign to the branches.
+
+To test your messaging channels, for example, you might create a randomized split with three different branches, assigning 40% of users to an email campaign, 40% to an SMS campaign, and 20% to a control group. Once users flow through the split, you can determine the success of the email and SMS campaigns compared to each other and the control group.
+
+### Add a randomized split
+
+Follow these steps to add a randomized split to a Journey:
+
+1. Create a new Journey, and [add an entry condition](#adding-the-entry-condition).
+2. Select the **+** icon to add a step, then select **Create a randomized split**.
+3. Name the randomized split step, then add up to five branches.
+4. Set the distribution percentage for each branch, then select **Save**.
+5. For each branch in the split, select the child **+** icon and add a step.
+3. Save and publish your Journey.
+
+Users who meet the Journey's entry condition will then enter the Journey and flow through the randomized split.
+
+### Act on the split's results
+
+Once users complete your Journey's randomized split step, you'll have insight into how each split performed. You can take action on the results by cloning the Journey and sending a new set of users through the highest performing branch.
 
 ### Exit and re-entry times
 
