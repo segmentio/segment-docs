@@ -2,8 +2,6 @@
 title: Snapchat Conversions API (Actions)
 hide-boilerplate: true
 hide-dossier: false
-hidden: true
-private: true
 id: 6261a8b6cb4caa70e19116e8
 ---
 
