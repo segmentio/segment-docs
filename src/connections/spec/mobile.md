@@ -145,7 +145,7 @@ This event fires when a user updates the application. Our SDK will automatically
 
 ### Application Uninstalled
 
-Fire this event when a user uninstalls the application. Several destination partners will detect this for you using Silent Push Notifications and send this event to Segment on your behalf.
+Fire this event when a user uninstalls the application. Some destination partners will detect this for you using Silent Push Notifications through their SDK. You might be able to send these events to Segment via a callback if available, please check the partner's docs on availability.
 
 {% comment %} api-example '{ "userId": "019mr8mf4r", "type": "track", "event": "Application Uninstalled", "properties": {}}'}}} {% endcomment %}
 
