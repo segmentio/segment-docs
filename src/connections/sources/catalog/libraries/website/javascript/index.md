@@ -357,9 +357,9 @@ analytics.ready(callback);
 
 The `ready` method has the following fields:
 
-Field | Type | Description
------ | ---- | -----------
-`callback` | Function | A function to be executed after all enabled destinations have loaded.
+| Field      | Type     | Description                                                           |
+| ---------- | -------- | --------------------------------------------------------------------- |
+| `callback` | Function | A function to be executed after all enabled destinations have loaded. |
 
 ### Debug
 
@@ -386,10 +386,10 @@ Use the `on` method to set listeners for these events and run your own custom co
 analytics.on(method, callback);
 ```
 
-Field | Type | Description
------ | ---- | -----------
-`method` | String | Name of the method to listen for.
-`callback`| Function | A function to execute after each emitted method, taking three arguments: `event`, `properties`, `options`.
+| Field      | Type     | Description                                                                                                |
+| ---------- | -------- | ---------------------------------------------------------------------------------------------------------- |
+| `method`   | String   | Name of the method to listen for.                                                                          |
+| `callback` | Function | A function to execute after each emitted method, taking three arguments: `event`, `properties`, `options`. |
 
 Example:
 
@@ -605,13 +605,13 @@ Plugins are bound by Analytics 2.0 which handles operations such as observabilit
 
 Non-critical plugins run through a timeline that executes in order of insertion based on the entry type. Segment has these five entry types of non-critical plugins:
 
-Type | Details
----- | -------
-`before` | Executes before event processing begins. These are plugins that run before any other plugins run. <br><br>For example, validating events before passing them along to other plugins. A failure here could halt the event pipeline. <br><br> See the example of how Analytics.js uses the [Event Validation plugin](https://github.com/segmentio/analytics-next/blob/master/src/plugins/validation/index.ts){:target="_blank"} to verify that every event has the correct shape.
-`enrichment` | Executes as the first level of event processing. These plugins modify an event. <br><br> See the example of how Analytics.js uses the [Page Enrichment plugin](https://github.com/segmentio/analytics-next/blob/master/src/plugins/page-enrichment/index.ts){:target="_blank"} to enrich every event with page information.
-`destination` | Executes as events begin to pass off to destinations. <br><br> This doesn't modify the event outside of the specific destination, and failure doesn't halt the execution.
-`after` | Executes after all event processing completes. You can use this to perform cleanup operations. <br><br>An example of this is the [Segment.io Plugin](https://github.com/segmentio/analytics-next/blob/master/src/plugins/segmentio/index.ts){:target="_blank"} which waits for destinations to succeed or fail so it can send it observability metrics.
-`utility` | Executes once during the bootstrap, to give you an outlet to make any modifications as to how Analytics.js works internally. This allows you to augment Analytics.js functionality.
+| Type          | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `before`      | Executes before event processing begins. These are plugins that run before any other plugins run. <br><br>For example, validating events before passing them along to other plugins. A failure here could halt the event pipeline. <br><br> See the example of how Analytics.js uses the [Event Validation plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/validation/index.ts){:target="_blank"} to verify that every event has the correct shape. |
+| `enrichment`  | Executes as the first level of event processing. These plugins modify an event. <br><br> See the example of how Analytics.js uses the [Page Enrichment plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/page-enrichment/index.ts){:target="_blank"} to enrich every event with page information.                                                                                                                                                     |
+| `destination` | Executes as events begin to pass off to destinations. <br><br> This doesn't modify the event outside of the specific destination, and failure doesn't halt the execution.                                                                                                                                                                                                                                                                                                       |
+| `after`       | Executes after all event processing completes. You can use this to perform cleanup operations. <br><br>An example of this is the [Segment.io Plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/segmentio/index.ts){:target="_blank"} which waits for destinations to succeed or fail so it can send it observability metrics.                                                                                                                         |
+| `utility`     | Executes once during the bootstrap, to give you an outlet to make any modifications as to how Analytics.js works internally. This allows you to augment Analytics.js functionality.                                                                                                                                                                                                                                                                                             |
 
 ### Example Plugins
 Here's an example of a plugin that converts all track event names to lowercase before the event goes through the rest of the pipeline:
