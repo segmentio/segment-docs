@@ -63,6 +63,7 @@ Kameleoon
 Kissmetrics
 Lightbox
 Littledata
+Mailchimp
 Mailmodo
 markdownify
 Marketo
