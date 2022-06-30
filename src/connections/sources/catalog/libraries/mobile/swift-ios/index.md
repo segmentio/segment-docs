@@ -33,6 +33,8 @@ To get started with the Analytics-Swift mobile library:
     For example, in a lifecycle method such as `didFinishLaunchingWithOptions` in iOS:
 
     ```swift
+    var analytics: Analytics? = nil
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
             // Override point for customization after application launch.
             let configuration = Configuration(writeKey: "WRITE_KEY")

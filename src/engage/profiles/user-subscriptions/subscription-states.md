@@ -18,10 +18,10 @@ The following table displays the four subscription states:
 
 | subscription states    | description                                                                                                 | example                                                                                                                            |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Subscribed             | A user has given you their contact information and consented to receive marketing campaigns.                | Users that have signed up for a weekly newsletter                                                                                 |
-| Unsubscribed           | A user has given you their contact information but doesn't want to receive campaigns.                       | Users that subscribed, then unsubscribed, from a weekly newsletter                                                                |
-| Did not subscribe      | A user gave you their contact information but made no decision about receiving marketing campaigns.         | A user provided their email address or phone number in an online transaction, but didn't sign up to receive your weekly newsletter. |
-| No subscription status | A user did not give you their contact information and made no decision about receiving marketing campaigns. | Segment collected the contact vector through identity resolution, but the user has not made a subscription decision.               |
+| `subscribed`             | A user has given you their contact information and consented to receive marketing campaigns.                | Users that have signed up for a weekly newsletter                                                                                 |
+| `unsubscribed`           | A user has given you their contact information but doesn't want to receive campaigns.                       | Users that subscribed, then unsubscribed, from a weekly newsletter                                                                |
+| `did-not-subscribe`      | A user gave you their contact information but made no decision about receiving marketing campaigns.         | A user provided their email address or phone number in an online transaction, but didn't sign up to receive your weekly newsletter. |
+| No subscription status | A user did not give you their contact information and made no decision about receiving marketing campaigns. | Segment collected an email or phone number through identity resolution. No user actively provided the email or phone number.               |
 
 > warning "Sending Permissions"
 > You can only send Engage campaigns to contacts with a subscribed user state.
@@ -58,14 +58,14 @@ You must include an unsubscribe option in all Engage email and SMS campaigns.
 
 ### Did not subscribe
 
-Users with **did not subscribe** contact vectors have provided you with their email address or phone number but have not given explicit permission to send them marketing materials.
+Users with the `did-not-subscribe` state associated with their email address or phone number gave you their contact information without explicitly agreeing to receive your marketing materials.
 
-The following scenarios often lead to user profiles who **did not subscribe**:
+The following scenarios often lead to an email or phone number with the `did-not-subscribe` subscription state:
 
-- A user provides their email or phone number during an online transaction, but doesn’t opt in to your marketing materials.
+- A user provides their email or phone number during an online transaction but doesn’t opt in to your marketing materials.
 - The user’s email address was obtained from a support request.
 
-Contact vectors with a `did not subscribe` status will not receive your marketing campaigns.
+Emails or phone numbers with a `did-not-subscribe` status won't receive your marketing campaigns.
 
 ### No subscription status
 

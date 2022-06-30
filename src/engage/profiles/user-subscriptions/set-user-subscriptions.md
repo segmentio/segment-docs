@@ -4,7 +4,7 @@ layout: engage
 engage: true
 ---
 
-Segment associates a [user subscription state](/docs/engage/profiles/user-subscriptions/subscription-states/) with each contact vector in your Engage audiences. Subscription states give you insight into the level of consent a user has given you to receive your Engage campaigns.
+Segment associates a [user subscription state](/docs/engage/profiles/user-subscriptions/subscription-states/) with each email address and phone number in your Engage audiences. Subscription states give you insight into the level of consent a user has given you to receive your Engage campaigns.
 
 You can set a user’s subscription state using a CSV file or, programmatically, using Segment’s APIs. On this page, you’ll learn how and when to use both processes.
 
@@ -18,7 +18,7 @@ For example, you may want to add contacts to Segment using an audience list sour
 
 To learn how to upload a CSV file to Segment, view the [Engage CSV Uploader page](/docs/engage/profiles/csv-upload/).
 
-To change a user’s email or SMS subscription status with a CSV file, include at least one of the following user subscription columns next to the contact column:
+To change the subscription status of an email or phone number with a CSV file, include at least one of the following user subscription columns next to the contact column:
 
 - `email_subscription_status`
 - `sms_subscription_status`
@@ -28,7 +28,7 @@ These columns take the following values:
 - `subscribed`; for users who opted in to your marketing campaigns
 - `unsubscribed`; for users who have unsubscribed from your marketing campaigns
 - `did-not-subscribe`; for users who have neither subscribed nor unsubscribed from your marketing campaigns
-- Blank; for profiles that have no subscription information
+- Blank; for email addresses or phone numbers that Segment collected without the user explicitly providing them
 
 Refer to the [User Subscription States documentation](/docs/engage/profiles/user-subscriptions/subscription-states/) for detailed explanations of each subscription state.
 
@@ -51,33 +51,51 @@ For example, a user might reach out to you after accidentally unsubscribing to y
 
 With Segment's APIs, you can manage user subscriptions programmatically on a real-time basis. Use the APIs for ongoing subscription status updates, like when users subscribe to your marketing campaigns on a website form or modify their subscription from within a notification center.
 
-### The Track call compared to the Public API Identify call
+### Choosing between the Identify call and the Public API
 
-To update Engage user subscriptions with Segment's APIs, first choose between a [standard Track call](/docs/connections/spec/track/), for non-critical subscription updates, or the [Public API Identify call](https://api.segmentapis.com/docs/){:target="_blank"}, for critical updates that require immediate confirmation, like unsubscribes.
+To update Engage user subscriptions with Segment's APIs, first choose between [the Identify call](/docs/connections/spec/identify/), for non-critical subscription updates, or the [Public API](https://api.segmentapis.com/docs/spaces/#replace-messaging-subscriptions-in-spaces){:target="_blank"}, for critical updates that require immediate confirmation, like unsubscribes.
 
-When you use the Track call, Segment replies with a standard HTTP `200 OK` status response code if it successfully received the request. Because the Track call updates user traits asynchronously, though, the `200 OK` code indicates that Segment has received, but not yet processed, the request. As a result, use the Track call for non-critical subscription updates, like form signups on your website or adding a subscription from within the user's notification center.
+When you use the Identify call, Segment replies with a standard HTTP `200 OK` status response code if it successfully received the request. Because the Identify call updates user traits asynchronously, though, the `200 OK` code indicates that Segment has received, but not yet processed, the request. As a result, use the Identify call for non-critical subscription updates, like form signups on your website or adding a subscription from within the user's notification center.
 
-When you make Identify calls to Segment's Public API, however, you'll get an immediate response that confirms that Segment both received and processed the request. Use the Public API, then, for unsubscribes, so users immediately find out if their subscription updated.
+When you update user subscriptions with Segment's Public API, however, you'll get an immediate response that confirms that Segment both received and processed the request. Use the Public API, then, for unsubscribes, so users immediately find out if their subscription updated.
 
 ### Format the Identify call payload
 
-For Segment to process the subscription status request, your Identify call payload must include at least one object with a subscription contact vector, the subscription type, and the subscription status.
+For Segment to process the subscription status request, your Identify call payload must include at least one object that contains an email address or phone number, its subscription type, and its subscription status.
 
-The following array contains example objects that update both SMS and email subscription statuses:
+The following example payload shows an Identify call with a `context` object, which you'll add to the Identify call to update user subscriptions. The `context` object contains a `messaging_subscriptions` array with two objects that update both SMS and email subscription statuses:
 
 ```json
-"messaging_subscriptions": [
+{
+  "userId": "12aBCDeFg4hIjKlM5OPq67RS8Tu",
+  "context": {
+    "messaging_subscriptions": [
       {
         "key": "(123) 555-5555",
         "type": "SMS",
         "status": “SUBSCRIBED” | “UNSUBSCRIBED”| “DID_NOT_SUBSCRIBE”
       },
       {
-        "key": "example@example.com",
+        "key": "test@example.com",
         "type": "EMAIL",
         "status": “SUBSCRIBED” | “UNSUBSCRIBED”| “DID_NOT_SUBSCRIBE”
       }
-    ]
+    ],
+    "externalIds": [
+      {
+        "id": "(123) 555-5555",
+        "type": "phone",
+        "collection": "users",
+        "encoding": "none"
+      }
+    ],
+    "traits": {
+       "email": "test@example.com"
+    }
+  },
+  "integrations": {},
+  "traits": {}
+}
 ```
 
 For successful requests, Segment instantly updates subscription states in your workspace. You can then display successful updates or error messages with users in your notification center.

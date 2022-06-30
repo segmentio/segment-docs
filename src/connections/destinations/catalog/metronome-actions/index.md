@@ -17,7 +17,7 @@ Metronome also enables product-led growth with a consistent source of truth for 
 1. From the Segment web app, click **Catalog**, then click **Destinations**
 2. Search for **Metronome (Actions)** within the Destinations Catalog and select **Metronome (Actions)**
 3. Click **Configure Metronome (Actions)**.
-4. Select the source you’d like to connect to and give the destination a name
+4. Select the source you’d like to connect to and give the destination a name.
 5. Enter your Metronome API Token into the Segment Connection Settings UI (save changes).
 
 {% include components/actions-fields.html %}
@@ -25,7 +25,7 @@ Metronome also enables product-led growth with a consistent source of truth for 
 
 ## Mapping events to Metronome
 
-Map Segment events to the [Metronome event format](https://docs.metronome.com/getting-usage-data-into-metronome/overview/){:target="_blank"}. Metronome requires the five fields listed below: 
+Map Segment events to the [Metronome event format](https://docs.metronome.com/getting-usage-data-into-metronome/overview/){:target="_blank"}. Metronome requires the five following fields: 
 
 Field | Type | Description
 ----- | ---- | ------------
@@ -42,4 +42,4 @@ Metronome (Actions) provides the following benefits:
 
 - **Easy access to data**. The event variables picker shows you all the available data from the event you use to test the Trigger. Variables are clearly labeled to ensure they stand out from other text and markup.
 
-- **Clear mapping of data** Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to Metronome.
+- **Clear mapping of data** Actions-based destinations enable you to define the mapping between the data Segment receives from your source and the data Segment sends to Metronome.

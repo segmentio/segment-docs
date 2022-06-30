@@ -33,9 +33,6 @@ Braze Cloud Mode (Actions) provides the following benefit over Braze Classic:
 
 {% include components/actions-fields.html settings="true"%}
 
-{% include components/actions-fields.html%}
-
-
 ## Migration from Braze Classic
 
 {% include content/ajs-upgrade.md %}
