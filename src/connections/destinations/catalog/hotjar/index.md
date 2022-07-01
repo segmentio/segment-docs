@@ -22,7 +22,7 @@ Knowing who your users are and what they're doing unlocks more advanced filterin
 
 3. Add your **Hotjar Site ID** to your Destination settings. You can find this ID in Account settings > Sites & Organizations.
 
-4. Your changes will appear in the Segment CDN in about 45 minutes, and then Analytics.js will start asynchronously loading Hotjar's tracking snippet and sending data. If you are already using Hotjar, remove Hotjar's snippet from your code.
+Your changes will appear in the Segment CDN after 45 minutes, and then Analytics.js will start to asynchronously load Hotjar's tracking snippet and send data. If you're already using Hotjar, remove Hotjar's snippet from your code.
 
 ## Identify
 
