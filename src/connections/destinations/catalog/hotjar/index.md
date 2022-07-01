@@ -53,7 +53,7 @@ In the example above, Hotjar rejects all the values in the `address` field.
 
 ## Track
 
-The Hotjar destination will automatically ingest any user actions tracked over your Track spec as [events](/docs/connections/spec/track/), as long as session capture is enabled in Hotjar.
+The Hotjar destination automatically ingests any user actions tracked over your Track spec as [events](/docs/connections/spec/track/), as long as session capture is enabled in Hotjar.
 
 ### Event properties
 
