@@ -49,7 +49,7 @@ As of July 2022, the Hotjar Identify API does not yet support ingesting values p
     }
 ```
 
-In the example above, Hotjar would reject all the values in the `address` field.
+In the example above, Hotjar rejects all the values in the `address` field.
 
 ## Track
 
