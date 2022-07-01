@@ -10,7 +10,7 @@ The Segment Hotjar Destination allows you to get started with Hotjar and its cor
 2. Automatically send [user attributes](https://help.hotjar.com/hc/en-us/articles/360033640653-Identify-API-Reference){:target="_blank"} to Hotjar by connecting your Segment `identify` calls with Hotjar's own Identify API.
 3. Automatically send [custom events](https://help.hotjar.com/hc/en-us/articles/4405109971095-Events-API-Reference){:target="_blank"} to Hotjar by connecting your Segment `track` calls with Hotjar's own Events API.
 
-Knowing who your users are and what they're doing unlocks much more advanced filtering and targeting capabilities across all of Hotjar's tools, helping you find meaningful insights much faster.
+Knowing who your users are and what they're doing unlocks more advanced filtering and targeting capabilities across all of Hotjar's tools, helping you find meaningful insights faster.
 
 ## Getting Started
 
