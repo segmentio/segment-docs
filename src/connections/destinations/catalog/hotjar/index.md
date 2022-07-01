@@ -23,15 +23,15 @@ This destination is maintained by Segment.
 
 2. Search for "Hotjar" in the Catalog, select it, and choose which of your Javascript sources to connect the destination to.
 
-3. Add your Hotjar Site ID to your Destination settings. You can find this under Settings and Sites & Organizations in your Hotjar dashboard. It should be a whole number (e.g. 123456).
+3. Add your Hotjar Site ID to your Destination settings. You can find this under Settings and Sites & Organizations in your Hotjar dashboard. It should be a whole number (for example, `123456`).
 
 4. Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Hotjar's tracking snippet, along with your Site ID, onto the page. If you are already using Hotjar, remove Hotjar's snippet from your code.
 
-Hotjar automatically starts tracking visitors based on the tools you have enabled in your Hotjar dashboard.
+Hotjar starts tracking visitors based on the tools you have enabled in your Hotjar dashboard.
 
 ## Identify
 
-The Hotjar destination will automatically ingest a User ID, as well as values sent over your Identify spec as [traits](/docs/connections/spec/identify/#traits), as long as [User Attributes are enabled in Hotjar](https://help.hotjar.com/hc/en-us/articles/360038394053-How-to-Setup-User-Attributes-in-4-Steps#step-2-review-your-privacy-requirements-and-enable-user-attributes).
+The Hotjar destination ingests a User ID, as well as values sent over your Identify spec as [traits](/docs/connections/spec/identify/#traits), as long as [User Attributes are enabled in Hotjar](https://help.hotjar.com/hc/en-us/articles/360038394053-How-to-Setup-User-Attributes-in-4-Steps#step-2-review-your-privacy-requirements-and-enable-user-attributes).
 
 Identify calls that do not have a User ID value will not be sent to Hotjar.
 

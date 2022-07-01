@@ -98,3 +98,4 @@ waitlist
 WebKit
 Wootric
 Zendesk
+Hotjar
