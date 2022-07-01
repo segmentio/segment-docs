@@ -7,7 +7,7 @@ cmode-override: true
 id: 54521fd525e721e32a72ee92
 ---
 > warning ""
-> **The Google Ads (Classic) destination is outdated.** For website tracking, Google released a new version of Google Ads that uses [a global site tag (gtag.js)](https://support.google.com/google-ads/answer/7548399?hl=en){:target="_blank"}. Segment supports the global site tag in the [Google Ads (Gtag) destination](/docs/connections/destinations/catalog/google-adwords-new/). For mobile tracking, Google recommends using theuir Firebase SDKs. Segment supports a Firebase implementation with the [Google Firebase destination](/docs/connections/destinations/catalog/firebase/).
+> **The Google Ads (Classic) destination is outdated.** For website tracking, Google released a new version of Google Ads that uses [a global site tag (gtag.js)](https://support.google.com/google-ads/answer/7548399?hl=en){:target="_blank"}. Segment supports the global site tag in the [Google Ads (Gtag) destination](/docs/connections/destinations/catalog/google-adwords-new/). For mobile tracking, Google recommends using their [Firebase SDKs](https://support.google.com/google-ads/answer/6397604?hl=en){:target="_blank"}. Segment supports a Firebase implementation with the [Google Firebase destination](/docs/connections/destinations/catalog/firebase/).
 
 ## Getting Started
 
