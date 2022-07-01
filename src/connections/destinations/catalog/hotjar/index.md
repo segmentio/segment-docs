@@ -3,7 +3,7 @@ title: Hotjar Destination
 rewrite: true
 id: 5913371070a3e552b9561a4e
 ---
-[Hotjar](https://hotjar.com) is the fast and visual way to really understand your users, offering a full set of tools: analytics, page heatmaps, session recordings, feedback tools, and more. Hotjar gives you everything your team needs to uncover user insights and make the right product changes.
+[Hotjar](https://hotjar.com){:target="_blank"} enables you to understand your users in a fast and visual way. Hotjar offers a full set of tools such as analytics, page heatmaps, session recordings, feedback tools, and more. Hotjar provides you with everything your team needs to uncover user insights and make the right product changes.
 
 The Segment Hotjar Destination allows you to easily get started with Hotjar and its core APIs:
 1. Automatically install the [Hotjar Tracking Code](https://help.hotjar.com/hc/en-us/articles/115011639927);
