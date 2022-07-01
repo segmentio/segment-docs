@@ -26,13 +26,13 @@ Knowing who your users are and what they're doing unlocks more advanced filterin
 
 ## Identify
 
-The Hotjar destination will automatically ingest a User ID and any values sent over your Identify spec as [traits](/docs/connections/spec/identify/#traits), as long as session capture and user attributes are both enabled in Hotjar.
+The Hotjar destination will automatically ingest a User ID and any values sent over your Identify spec as [traits](/docs/connections/spec/identify/#traits), as long as session capture is enabled in Hotjar.
 
 Identify calls that do not have a User ID value will not be sent to Hotjar.
 
 ### Nested values or lists
 
-As of July 2022, the Hotjar Identify API does not yet support ingesting values passed as nested objects or lists over your identify Spec:
+Currently, the Hotjar Identify API **does not** support ingesting values passed as nested objects or lists over your identify Spec:
 
 ```js
 "traits": {
@@ -57,7 +57,7 @@ The Hotjar destination automatically ingests any user actions tracked over your 
 
 ### Event properties
 
-As of July 2022, the Hotjar Events API does not yet support ingesting event properties:
+Currently, the Hotjar Events API **does not** support ingesting event properties:
 
 ```js
 analytics.track("Experiment Viewed", {
