@@ -2,7 +2,7 @@
 title: Planning a Full Installation
 ---
 
-Now that we've shown you Segment in action, let's step back and think through what a full implementation of Segment for your organization would look like. We know that figuring out what events to track in Segment can feel overwhelming. You should expect this planning process to have the following steps:
+Now that you've seen Segment in action, step back and think through what a full implementation of Segment for your organization would look like. Figuring out what events to track in Segment can feel overwhelming. You should expect this planning process to have the following steps:
 
 <!-- TOC depthFrom:1 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
@@ -100,7 +100,7 @@ Regardless of approach, here are some important best practices to keep in mind:
 
 - **Don't create property keys dynamically:** Avoid creating property names like `"feature_1":"true"`,`"feature_2":"false"` as these are ambiguous and very difficult to analyze
 
-![](/docs/protocols/images/asset_nVdJ3ZyA.png)
+![An image comparing good and bad naming and collection standards](/docs/protocols/images/asset_nVdJ3ZyA.png)
 
 
 Got all that? Great! You're now ready to develop a Tracking Plan.
@@ -112,27 +112,6 @@ Got all that? Great! You're now ready to develop a Tracking Plan.
 A [tracking plan](https://segment.com/blog/what-is-a-tracking-plan/) clarifies what events to track, where those events live in the code base, and why you're tracking those events (from a business perspective). **A good tracking plan represents the single source of truth about what data you collect, and why.**
 
 Your tracking plan is probably maintained in a spreadsheet (unless you use our tracking-plan tool, [Protocols](/docs/protocols/)), and serves as a project management tool to get your organization in agreement about what data to use to make decisions. A tracking plan helps build a shared understanding of the data among marketers, product managers, engineers, analysts, and any other data users.
-
-In the next section, we share how to build a tracking plan from the ground up using a Google Sheet template. Note that you can use any tool to create the tracking plan!
-
-### Using the Tracking Plan Google Sheets template
-
-To help you get started, we developed a Tracking Plan template in [Google Sheets](https://docs.google.com/spreadsheets/d/1TA6qTcDHoZzsG7-C6p5yHGximDxqoNtizguKs7Z0av4/view).
-
-The template includes all of our Business-case ("semantic") Specs (which we mentioned [above](#shortcut-check-if-a-business-spec-meets-your-needs)) as tabs, including [eCommerce](/docs/connections/spec/ecommerce/v2/), [B2B SaaS](/docs/connections/spec/mobile/), [Mobile](/docs/connections/spec/mobile/) and [Video](/docs/connections/spec/video/), and a collection of common properties.
-
-![](images/trackingplans.png)
-
-With your business goals defined, start by defining how you want to track Page/Screen, Identify and Group events. Most customers use [default page tracking](/docs/connections/sources/catalog/libraries/website/javascript/#page) and skip over that tab.
-
-The Identify tab is where you specify which user traits you intend to collect like `first_name`, `last_name`, `email`, etc. Read more about the [identify call below](/docs/protocols/tracking-plan/best-practices/#identify-your-users).
-
-From there, we recommend you specify Track events in the **Track (Custom)** tab. The template includes preexisting events with different numbers of grouped properties (1 Prop Event, 2 Prop Event, etc). While this might be more challenging to work with at first, this structure allows you to use the **Minimize Rows** button at the top to organize and view all events.
-
-Once you complete the tracking plan, you can share the Google Sheet with stakeholders to review, comment, and edit, or simply to share as a reference for implementation.
-
-> success ""
-> **Tip**! If you decide to purchase [Protocols](/docs/protocols/) in the future, you'll be able to upload the tracking plan into Segment [using the Config API](/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader).
 
 ### Plan your Identify and Group calls
 
