@@ -18,7 +18,7 @@ Knowing who your users are and what they're doing unlocks more advanced filterin
 
 1. Navigate to **Connections** and click **Add Destination** From the Segment web app.
 
-2. Search for "Hotjar" in the Catalog, select it, and choose which of your Javascript sources to connect the destination to;
+2. Search for *Hotjar* in the Catalog, select it, and choose the Javascript source you want to connect the destination to.
 
 3. Add your **Hotjar Site ID** to your Destination settings. You can find this ID (e.g. 123456) in Account settings > Sites & Organizations;
 
