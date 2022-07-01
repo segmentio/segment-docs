@@ -5,7 +5,7 @@ id: 5913371070a3e552b9561a4e
 ---
 [Hotjar](https://hotjar.com){:target="_blank"} enables you to understand your users in a fast and visual way. Hotjar offers a full set of tools such as analytics, page heatmaps, session recordings, feedback tools, and more. Hotjar provides you with everything your team needs to uncover user insights and make the right product changes.
 
-The Segment Hotjar Destination allows you to easily get started with Hotjar and its core APIs:
+The Segment Hotjar Destination allows you to get started with Hotjar and its core APIs. You can:
 1. Automatically install the [Hotjar Tracking Code](https://help.hotjar.com/hc/en-us/articles/115011639927);
 2. Automatically send [user attributes](https://help.hotjar.com/hc/en-us/articles/360033640653-Identify-API-Reference) to Hotjar by connecting your Segment `identify` calls with Hotjar's own Identify API;
 3. Automatically send [custom events](https://help.hotjar.com/hc/en-us/articles/4405109971095-Events-API-Reference) to Hotjar by connecting your Segment `track` calls with Hotjar's own Events API.
