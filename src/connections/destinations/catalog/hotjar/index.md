@@ -16,7 +16,7 @@ Knowing who your users are and what they're doing unlocks more advanced filterin
 
 {% include content/connection-modes.md %}
 
-1. From the Segment web app, click **Catalog**;
+1. Navigate to **Connections** and click **Add Destination** From the Segment web app.
 
 2. Search for "Hotjar" in the Catalog, select it, and choose which of your Javascript sources to connect the destination to;
 
