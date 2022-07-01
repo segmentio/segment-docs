@@ -68,4 +68,4 @@ analytics.track("Experiment Viewed", {
 });
 ```
 
-In the example above, Hotjar would only ingest the event name i.e. `Experiment Viewed`. All of its event properties would be rejected.
+In the example above, Hotjar only ingests the event name, `Experiment Viewed`. All of its event properties are rejected.
