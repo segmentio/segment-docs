@@ -146,10 +146,8 @@ Segment maintains a number of industry or product-specific specs to help you get
 - [Video](/docs/connections/spec/video/)
 - [Mobile](/docs/connections/spec/mobile/)
 
-Once you're ready to define the events you'd like to track, you can use [this Tracking Plan Template](https://docs.google.com/spreadsheets/d/1TA6qTcDHoZzsG7-C6p5yHGximDxqoNtizguKs7Z0av4/view#gid=1164785081) to help you align your team.
-
 > info "Learn More"
-> - [Data Collection Best Practices](/docs/protocols/tracking-plan/best-practices/#tracking-plan-google-sheets-template)
+> - [Data Collection Best Practices](/docs/protocols/tracking-plan/best-practices/)
 > - [Analytics Academy: How to create a successful data tracking plan](https://segment.com/academy/collecting-data/how-to-create-a-tracking-plan/){:target="_blank"}
 > - [Segment University: Planning your implementation](https://university.segment.com/data-governance-tracking-plans-the-source-of-truth){:target="_blank"}
 
