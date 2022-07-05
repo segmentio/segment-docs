@@ -32,4 +32,4 @@ analytics.track('Video Content Watched',{
 });
 ```
 
-`Track` events sent from Segment to Spideo will surface as different Spideo interaction types (e.g. 'play', 'click', 'buy'), depending on the event contents. These events will be used to personalize future user recommendations, and will feed Spideo's analytics Explore platform.
+`Track` events sent from Segment to Spideo will surface as different Spideo interaction types (for example 'play', 'click', 'buy'), depending on the event contents. These events will be used to personalize future user recommendations, and will feed Spideo's analytics Explore platform.
