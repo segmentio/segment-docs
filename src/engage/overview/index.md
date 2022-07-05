@@ -47,7 +47,7 @@ Use the CSV uploader to add or update user profiles and subscription states.
 - Download a template with identifier columns from your Segment space.
 - Add email and SMS columns from your Segment space.
 - Add email and SMS [subscription states](/docs/engage/profiles/user-subscriptions/subscription-states/).
-- Add a custom trait to users in the CSV. Custom traits help you create audiences, send messages, or add users to an existing group in your Segment space.
+- Add a custom trait to users in the CSV. Custom traits help you [create audiences](/docs/engage/audiences/#building-an-audience), send messages, or add users to an existing group in your Segment space.
 - Use error reports to quickly fix errors and re-upload unprocessed data.
 
 To learn more, visit the [CSV Uploader](/docs/engage/profiles/csv-upload/) documentation.
@@ -57,16 +57,16 @@ To learn more, visit the [CSV Uploader](/docs/engage/profiles/csv-upload/) docum
 Use Engage to add subscription states to user email addresses and phone numbers.
 Subscription states help determine which users you can send campaigns to in Engage.
 
-There are four subscription states: **Subscribed**, **Unsubscribed**, **Did Not Subscribe**, and **No Subscription Status**.
+There are four subscription states: `subscribed`, `unsubscribed`, `did-not-subscribe`, and **no subscription status (blank value)**.
 
 > success ""
-> Only send Engage campaigns to **Subscribed** email addresses and phone numbers. Learn more about user [subscription states](/docs/engage/profiles/user-subscriptions/subscription-states/) in Engage.
+> Only send Engage campaigns to `subscribed` email addresses and phone numbers. Learn more about user [subscription states](/docs/engage/profiles/user-subscriptions/subscription-states/) in Engage.
 
 Set user subscription states in two ways:
 - [Upload a CSV](/docs/engage/profiles/csv-upload/) with lists of users along with their phone and email subscription states.
 - Programmatically with Segment's [Public API](https://api.segmentapis.com/docs/spaces/#replace-messaging-subscriptions-in-spaces){:target="blank"}.
 
-Verify that users you message in Engage have given explicit permission to do so. Only send messages to **subscribed** users to avoid:
+Verify that users you message in Engage have given explicit permission to do so. Only send messages to `subscribed` users to avoid:
 - Penalties for violating regulations.
 - Increased spam reports or bounce rates.
 - Loss of customer trust.

@@ -7,7 +7,7 @@ Use the CSV Uploader to add or update user profiles and set subscription states.
 
 When you upload a CSV file, Twilio Engage adds new users and updates existing user profiles. Each CSV row corresponds to a user profile and columns to an identifier trait in your [identity resolution configuration](/docs/personas/identity-resolution/identity-resolution-settings/).
 
-You can also [set subscription states](#set-user-subscriptions) for each email and SMS that you upload in the CSV. Subscription states help you track which email addresses and phone numbers you have permission to market to.
+You can also [set subscription states](#set-user-subscriptions) for each email and phone number that you upload in the CSV. Subscription states help you track which email addresses and numbers you have permission to market to.
 
 ## Upload a CSV file
 
@@ -26,8 +26,11 @@ Navigate to **Personas > Settings** and select the **Identity Resolution** tab t
 
 Enter values for the identifiers in your CSV file. You can also [set email and phone subscriptions](#set-user-subscriptions) using the `email_subscription_status` and `sms_subscription_status` columns.
 
-> success ""
-> Leave any unknown values blank to avoid bad data.
+A few best practices to keep in mind as you fill out your CSV:
+
+- Leave any unknown values blank to avoid bad data. Engage can create a user profile from a single identifier in your CSV.
+- Enter phone numbers in your CSV in a format that's consistent with your Segment space. For example, if existing profiles in your workspace are in E.164 format `+15555550123`, enter numbers in your CSV using the same format `+##########`.
+
 
 ### 3. Upload your CSV file
 
@@ -41,7 +44,7 @@ A blank subscription status in the CSV doesn't overwrite current **email** or **
 
 ### 4. Name your custom trait
 
-Every time you upload a file, you have the option to add a custom trait to user profiles in the CSV. Use custom traits to help you create audiences or send messages to a specific group of users. You can also add an existing custom trait name from your Segment workspace to the list of users in the CSV file.
+Every time you upload a file, you have the option to add a custom trait to user profiles in the CSV. Use custom traits to help you [create audiences](/docs/engage/audiences/#building-an-audience) or send messages to a specific group of users. You can also add an existing custom trait name from your Segment workspace to the list of users in the CSV file.
 
 Custom traits display in the Custom Traits tab of a User Profile in the User Explorer.
 
@@ -77,10 +80,10 @@ For each CSV file, Engage adds:
 
 In the `email_subscription_status` and `sms_subscription_status` columns, set subscription states for email and phone numbers with the following values:
 
-- `Subscribed`: The user has actively subscribed.
-- `Unsubscribed`: The user has actively unsubscribed.
-- `Did Not Subscribe`: The user has provided their contact information but didn't actively subscribe or unsubscribe.
-- **No Subscription Status (blank value)**: The user's profile exists in Segment, but they haven't explicitly provided their contact information, and no subscription information is available.
+- `subscribed`: The user has actively subscribed.
+- `unsubscribed`: The user has actively unsubscribed.
+- `did-not-subscribe`: The user has provided their contact information but didn't actively subscribe or unsubscribe.
+- **No subscription status (blank value)**: The user's profile exists in Segment, but they haven't explicitly provided their contact information, and no subscription information is available.
 
 > success ""
 > Only contact users that subscribe to your communications. View [User Subscription States](/docs/engage/profiles/user-subscriptions/subscription-states/) to learn more.
@@ -95,7 +98,7 @@ Please note the following limits as you upload CSV files to Twilio Engage:
 - Upload CSV files with up to 1 million rows (plus one header row).
 - You can only upload one file at a time.
 - The CSV file size can't exceed 15 MB.
-- If you upload the same email or phone number with different subscription states in a CSV file, Engage doesn't guarantee the subscription status result.
+- If you upload the same email or phone number with different subscription states in a single CSV file, Engage doesn't guarantee the subscription status result.
 
 ## Message consent
 
