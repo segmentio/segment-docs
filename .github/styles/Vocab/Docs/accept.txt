@@ -29,6 +29,7 @@ Breyta
 Chargebee
 CloudFront
 Cocoapods
+Contentful
 Criteo
 csv
 deeplink
@@ -73,6 +74,7 @@ middleware
 Middleware
 Mixpanel
 namespace
+Ninetailed
 Okta
 Omnichannel
 onboarding
