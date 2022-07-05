@@ -18,19 +18,19 @@ To set up [AWS Data Lakes], create your AWS resources, enable the [AWS Data Lake
 
 Before you set up [AWS Data Lakes], you need the following resources:
 
-- An [AWS account](https://aws.amazon.com/account/)
-- An [Amazon S3 bucket](https://github.com/terraform-aws-modules/terraform-aws-s3-bucket) to receive data and store logs
+- An [AWS account](https://aws.amazon.com/account/){:target="_blank”}
+- An [Amazon S3 bucket](https://github.com/terraform-aws-modules/terraform-aws-s3-bucket){:target="_blank”} to receive data and store logs
 - A subnet within a VPC for the EMR cluster to run in
 
-### Step 1 - Set Up AWS Resources
+### Step 1 - Set up AWS resources
 
-You can use the [open source Terraform module](https://github.com/segmentio/terraform-aws-data-lake) to automate much of the set up work to get Data Lakes up and running. If you’re familiar with Terraform, you can modify the module to meet your organization’s needs, however Segment guarantees support only for the template as provided. The Data Lakes set up uses Terraform v0.12+. To support more versions of Terraform, the AWS provider must use v4, which is included in the example main.tf.
+You can use the [open source Terraform module](https://github.com/segmentio/terraform-aws-data-lake){:target="_blank”} to automate much of the set up work to get Data Lakes up and running. If you’re familiar with Terraform, you can modify the module to meet your organization’s needs, however Segment guarantees support only for the template as provided. The Data Lakes set up uses Terraform v0.12+. To support more versions of Terraform, the AWS provider must use v4, which is included in the example main.tf.
 
 You can also use Segment's [manual set up instructions](/docs/connections/storage/data-lakes/data-lakes-manual-setup) to configure these AWS resources if you prefer.
 
 The Terraform module and manual set up instructions both provide a base level of permissions to Segment (for example, the correct IAM role to allow Segment to create Glue databases on your behalf). If you want stricter permissions, or other custom configurations, you can customize these manually.
 
-### Step 2 - Enable Data Lakes Destination
+### Step 2 - Enable Data Lakes destination
 
 After you set up the necessary AWS resources, the next step is to set up the Data Lakes destination within Segment:
 
@@ -61,43 +61,58 @@ After you set up the necessary AWS resources, the next step is to set up the Dat
 Once the Data Lakes destination is enabled, the first sync will begin approximately 2 hours later.
 
 
-### Step 3 - Verify Data is Synced to S3 and Glue
+### Step 3 - Verify data is synced to S3 and Glue
 
 You will see event data and [sync reports](/docs/connections/storage/data-lakes/sync-reports) populated in S3 and Glue after the first sync successfully completes. However if an [insufficient permission](/docs/connections/storage/data-lakes/sync-reports/#insufficient-permissions) or [invalid setting](/docs/connections/storage/data-lakes/sync-reports/#invalid-settings) is provided during set up, the first data lake sync will fail.
 
-To be alerted of sync failures via email, subscribe to the `Storage Destination Sync Failed` activity email notification within the App Settings > User Preferences > [Notification Settings](https://app.segment.com/goto-my-workspace/settings/notifications).
+To be alerted of sync failures by email, subscribe to the `Storage Destination Sync Failed` activity email notification within the App Settings > User Preferences > [Notification Settings](https://app.segment.com/goto-my-workspace/settings/notifications){:target="_blank”}.
 
 
 `Sync Failed` emails are sent on the 1st, 5th and 20th sync failure. Learn more about the types of errors which can cause sync failures [here](/docs/connections/storage/data-lakes/sync-reports/#sync-errors).
 
 
-### (Optional) Step 4 - Replay Historical Data
+### (Optional) Step 4 - Replay historical data
 
-If you want to add historical data to your data set using a [replay of historical data](/docs/guides/what-is-replay/) into Data Lakes, [contact the Segment Support team](https://segment.com/help/contact/) to request one.
+If you want to add historical data to your data set using a [replay of historical data](/docs/guides/what-is-replay/) into Data Lakes, [contact the Segment Support team](https://segment.com/help/contact/){:target="_blank”} to request one.
 
-The time needed to process a Replay can vary depending on the volume of data and number of events in each source. If you decide to run a Replay, we recommend that you start with data from the last six months to get started, and then replay additional data if you find you need more.
+The time needed to process a Replay can vary depending on the volume of data and number of events in each source. If you decide to run a Replay, Segment recommends that you start with data from the last six months to get started, and then replay additional data if you find you need more.
 
 Segment creates a separate EMR cluster to run replays, then destroys it when the replay finished. This ensures that regular Data Lakes syncs are not interrupted, and helps the replay finish faster.
 
 ## Set up [Azure Data Lakes]
 
-To set up [Azure Data Lakes], create your Azure resources and enable the Data Lakes destination in the Segment app.
+> info "[Azure Data Lakes] is currently in Public Beta"
+> [Azure Data Lakes] is available in Public Beta.
+
+To set up [Azure Data Lakes], create your [Azure resources](/docs/src/connections/storage/data-lakes/#set-up-[azure-data-lakes]) and then enable the Data Lakes destination in the Segment app.
 
 ### Prerequisites
 
-### Step 1 - Create and ALDS-enabled storage account
+Before you can configure your Azure resources, you must first [create an Azure subscription](https://azure.microsoft.com/en-us/free/){:target="_blank”}.
 
-### Step 2 - Setup KeyVault
+### Step 1 - Create an ALDS-enabled storage account
 
-### Step 3 - Setup Azure MySQL DB
+To 
+
+### Step 2 - Set up KeyVault
+
+### Step 3 - Set up Azure MySQL database
 
 ### Step 4 - Set up Databricks
 
-### Step 5 - Setup a Service Principal
+### Step 5 - Set up a Service Principal
 
 ### Step 6 - Configure Databricks cluster
 
-### Step 7 - Enable Data Lakes destination in the Segment app
+### Step 7 - Enable the Data Lakes destination in the Segment app
+
+After you set up the necessary resources in Azure, the next step is to set up the Data Lakes destination in Segment:
+
+<!-- TODO: Test this workflow in a staging environment to verify that the steps are correct-->
+
+1. In the [Segment App](https://app.segment.com/goto-my-workspace/overview){:target="_blank”}, click **Add Destination**, then search for and select **Azure Data Lakes**.
+2. 
+
 
 ### Optional - Set up the Data Lake using Terraform
 
@@ -147,7 +162,7 @@ To connect a new source to Data Lakes:
 {% endfaqitem %}
 
 {% faqitem Can I configure multiple sources to use the same EMR cluster? %}
-Yes, you can configure multiple sources to use the same EMR cluster. We recommend that the EMR cluster only be used for Data Lakes to ensure there aren't interruptions from non-Data Lakes job.
+Yes, you can configure multiple sources to use the same EMR cluster. Segment recommends that the EMR cluster only be used for Data Lakes to ensure there aren't interruptions from non-Data Lakes job.
 {% endfaqitem %}
 
 {% faqitem Why don't I see any data in S3 or Glue after enabling a source? %}

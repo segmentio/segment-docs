@@ -15,12 +15,12 @@ Data lakes typically have four layers:
 
 ![A graphic showing the information flowing from the metadata into the query, compute, and metadata layers, and then into the storage layer](images/data_lakes_overview_graphic.png)
 
-Segment Data Lakes sends Segment data to a cloud data store (either AWS S3 or Azure Data Lake Storage Gen2) in a format optimized to reduce processing for data analytics and data science workloads. Segment data is great for building machine learning models for personalization and recommendations, and for other large scale advanced analytics. Data Lakes reduces the amount of processing required to get real value out of your data.
+Segment Data Lakes sends Segment data to a cloud data store, either AWS S3 or Azure Data Lake Storage Gen2 (ADLS), in a format optimized to reduce processing for data analytics and data science workloads. Segment data is great for building machine learning models for personalization and recommendations, and for other large scale advanced analytics. Data Lakes reduces the amount of processing required to get real value out of your data.
 
 > info ""
 > Segment Data Lakes is available to Business tier customers only.
 
-To learn more about Segment Data Lakes, check out the [Introducing Segment Data Lakes](https://segment.com/blog/introducing-segment-data-lakes/){:target="_blank"} blog post.
+To learn more about Segment Data Lakes, check out the Segment blog post [Introducing Segment Data Lakes](https://segment.com/blog/introducing-segment-data-lakes/){:target="_blank"}.
 
 ## How Segment Data Lakes work
 
@@ -38,38 +38,40 @@ Segment sends data to S3 by orchestrating the processing in an EMR (Elastic MapR
 
 ### How [Azure Data Lakes] works
 
-Data Lakes store Segment data in Azure Data Lake Storage Gen2 in a read-optimized encoding format (Parquet) which makes the data more accessible and actionable. To help you zero-in on the right data, Data Lakes also creates logical data partitions and event tables, and integrates metadata with existing schema management tools, like the Hive Metastore. The resulting data set is optimized for use with systems like Power BI and Azure HDInsight or machine learning vendors like Azure DataBricks or Azure Synapse Analytics.
+Data Lakes store Segment data in ADLS in a read-optimized encoding format (Parquet) which makes the data more accessible and actionable. To help you zero-in on the right data, Data Lakes also creates logical data partitions and event tables, and integrates metadata with existing schema management tools, like the Hive Metastore. The resulting data set is optimized for use with systems like Power BI and Azure HDInsight or machine learning vendors like Azure DataBricks or Azure Synapse Analytics.
 
 ![A diagram showing data flowing from Segment, through DataBricks, Parquet and Azure Data Lake Storage Gen2 into the Hive Metastore, and then into your post-processing systems](images/Azure_DL_setup.png)
 
 
 ## Set up Segment Data Lakes
 
-For more detailed information about setting up AWS and Azure Data Lakes, please see 
+For more detailed information about setting up AWS and Azure Data Lakes, please see the [Data Lakes setup page](/docs/connections/storage/catalog/data-lakes/).
 
 ### Set up [AWS Data Lakes]
-For detailed instructions on how to configure [AWS Data Lakes], see the [Data Lakes catalog page](/docs/connections/storage/catalog/data-lakes/). Be sure to consider the EMR and AWS IAM components listed below.
+When setting up your data lake using the [Data Lakes catalog page](/docs/connections/storage/catalog/data-lakes/), be sure to consider the EMR and AWS IAM components listed below.
 
 #### EMR
 
-Data Lakes uses an EMR cluster to run jobs that load events from all sources into Data Lakes. The [AWS resources portion of the set up instructions](/docs/connections/storage/catalog/data-lakes#step-1---set-up-aws-resources) sets up an EMR cluster using the `m5.xlarge` node type. Data Lakes keeps the cluster  always running, however the cluster auto-scales to ensure it's not always running at full capacity. Check the Terraform module documentation for the [EMR specifications](https://github.com/segmentio/terraform-aws-data-lake/tree/master/modules/emr){:target="_blank"}.
+Data Lakes uses an EMR cluster to run jobs that load events from all sources into Data Lakes. The [AWS resources portion of the set up instructions](/docs/connections/storage/catalog/data-lakes#step-1---set-up-aws-resources) sets up an EMR cluster using the `m5.xlarge` node type. Data Lakes keeps the cluster always running, however the cluster auto-scales to ensure it's not always running at full capacity. Check the Terraform module documentation for the [EMR specifications](https://github.com/segmentio/terraform-aws-data-lake/tree/master/modules/emr){:target="_blank"}.
 
 #### AWS IAM role
 
 Data Lakes uses an IAM role to grant Segment secure access to your AWS account. The required inputs are:
-- **external_ids**: External IDs are the part of the IAM role which Segment uses to assume the role providing access to your AWS account. You will define the external ID in the IAM role as the Segment Workspace ID in which you want to connect to  Data Lakes. The Segment Workspace ID can be retrieved from the [Segment app](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} when navigating to the Settings > General Settings > ID.
+- **external_ids**: External IDs are the part of the IAM role which Segment uses to assume the role providing access to your AWS account. You will define the external ID in the IAM role as the Segment Workspace ID in which you want to connect to  Data Lakes. The Segment Workspace ID can be retrieved from the [Segment app](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} by navigating to Settings > General Settings > ID.
 - **s3_bucket**: Name of the S3 bucket used by the Data Lake.
 
 ### Set up [Azure Data Lakes]
 
+
+
 Before you can connect your [Azure Data Lake] to Segment, you must set up the following components in your Azure environment:
 
-- Azure Storage Account
-- Service Principal
-- Databricks Instance
-- Databricks Cluster
-- Azure MySQL Database
-- Azure KeyVault Instance: 
+- [Azure Storage Account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal){:target="_blank”}: An Azure storage account contains all of your Azure Storage data objects, including blobs, file shares, queues, tables, and disks. 
+- [Service Principal](https://docs.microsoft.com/en-us/azure/purview/create-service-principal-azure){:target="_blank”}: Service principals are identities used to access specific resources.
+- [Databricks Instance](https://azure.microsoft.com/en-us/services/databricks/#overview){:target="_blank”}: Azure Databricks is a data analytics cluster that offers multiple environments (Databricks SQL, Databricks Data Science and Engineering, and Databricks Machine Learning) for you to develop data-intensive applications. 
+- [Databricks Cluster](https://docs.microsoft.com/en-us/azure/purview/register-scan-hive-metastore-source){:target="_blank”}: The Databricks cluster is a cluster of computation resources that you can use to run data science and analytics workloads.
+- [Azure MySQL Database](https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-mysql-database){:target="_blank”}: The MySQL database is a relational database service based on the MySQL Community Edition, versions 5.6, 5.7, and 8.0.
+- [Azure KeyVault Instance](https://docs.microsoft.com/en-us/azure/key-vault/general/quick-create-portal){:target="_blank”}: Azure KeyVault provides a secure store for your keys, secrets, and certificates. 
 
 For more information about configuring [Azure Data Lakes], see the [Data Lakes setup page](/docs/connections/storage/catalog/data-lakes/).
 
@@ -112,7 +114,7 @@ Data Lakes stores the inferred schema and associated metadata of the S3 data in 
 ![A screenshot of the AWS ios_prod_identify table, displaying the schema for the table, information about the table, and the table version](images/dl_gluecatalog.png)
 <!--
 TODO:
-add annotated glue image calling out different parts of inferred schema)
+add annotated glue image calling out different parts of inferred schema
 -->
 
 New columns are appended to the end of the table in the Glue Data Catalog as they are detected.
@@ -128,23 +130,23 @@ The schema inferred by Segment is stored in a Glue database within Glue Data Cat
 
 ### Data types
 
-Data Lakes infers the data type for an event it receives. Groups of events are poled every hour to infer the data type for that each event.
+Data Lakes infers the data type for an event it receives. Groups of events are polled every hour to infer the data type for that each event.
 
-The data types supported in Glue are:
+The data types supported in [AWS Data Lakes] are:
 - bigint
 - boolean
 - decimal(38,6)
 - string
 - timestamp
 
-The data types supported in the Hive Metastore are:
+The data types supported in the [Azure Data Lakes] are:
 - bigint
 - boolean
 - decimal(38,6)
 - string
 - timestamp
 
-#### Schema evolution
+### Schema evolution
 
 Once Data Lakes sets a data type for a column, all subsequent data will attempt to be cast into that data type. If incoming data does not match the data type, Data Lakes tries to cast the column to the target data type.
 
@@ -167,7 +169,7 @@ In addition to Segment's [99% guarantee of no duplicates](/docs/guides/duplicate
 
 The Data Lakes and Warehouses products are compatible using a mapping, but do not maintain exact parity with each other. This mapping helps you to identify and manage the differences between the two storage solutions, so you can easily understand how the data in each is related. You can [read more about the differences between Data Lakes and Warehouses](/docs/connections/storage/data-lakes/comparison/).
 
-When you use Data Lakes, you can either use Data Lakes as your _only_ source of data and query all of your data directly from S3 or Azure Data Lake Storage Gen2, or you can use Data Lakes in addition to a data warehouse.
+When you use Data Lakes, you can either use Data Lakes as your _only_ source of data and query all of your data directly from S3 or ADLS or you can use Data Lakes in addition to a data warehouse.
 
 ## FAQ
 {% faq %}
