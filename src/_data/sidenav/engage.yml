@@ -85,10 +85,10 @@ sections:
   section:
   - path: '/engage/analytics'
     title: Analytics Overview
-  - path: '/engage/analytics/message-events'
-    title: Message Events
-  # - path: '/engage/analytics/custom-events'
-  #   title: Custom Events
+# - path: '/engage/analytics/message-events'
+#   title: Message Events
+# - path: '/engage/analytics/custom-events'
+#   title: Custom Events
 # - section_title: Settings
 #   section:
 #   - path: '/engage/settings/messaging-settings'
