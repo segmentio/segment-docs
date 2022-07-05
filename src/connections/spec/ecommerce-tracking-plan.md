@@ -189,6 +189,4 @@ Aside from funnel health, having these key pieces of customer data gives compani
 
 Without taking this critical step of mapping out key customer events, businesses often spend too much time revisiting their data model or analyzing impartial data sets. Instead they could spend that time understanding and addressing customers' needs.
 
-_Want to get started immediately?_ [Download the e-commerce tracking plan template](https://docs.google.com/spreadsheets/d/1TA6qTcDHoZzsG7-C6p5yHGximDxqoNtizguKs7Z0av4/view).
-
 [Talk to a product specialist today](https://segment.com/contact/sales) _about building a clean, high-quality data spec so you can focus on brand engagement and sales growth._
