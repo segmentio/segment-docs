@@ -2,7 +2,10 @@
 title: Mixpanel (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
-hidden: true
+id: 615c7438d93d9b61b1e9e192
+beta: true
+redirect_from:
+  - '/connections/destinations/catalog/mixpanel-actions'
 ---
 {% include content/plan-grid.md name="actions" %}
 
@@ -32,13 +35,11 @@ The Mixpanel (Actions) destination does not offer a device-mode connection mode.
 
 Once you have a mapping, you can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
-{% include components/actions-fields.html content1=group_identify_user_details section1="groupIdentifyUser" %}
 
-<!-- MZ (1/25/2022): Once the destination is publicly available, this section will appear in the Group Identify User Details action section -->
 
-{% comment %}
-capture group_identify_user_details
-{% endcomment %}
+
+{% capture group_identify_user_details %}
+
 
 In the default configuration, Mixpanel (Actions) triggers this action when it receives a Group call.
 
@@ -91,9 +92,8 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 ```
 The group id that Mixpanel will use is `12345`.
 
-{% comment %}
-endcapture
-{% endcomment %}
+{% endcapture %}
+{% include components/actions-fields.html content1=group_identify_user_details section1="groupIdentifyUser" %}
 
 
 ## Migration from Mixpanel Classic
