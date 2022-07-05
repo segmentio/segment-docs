@@ -108,10 +108,12 @@ To
 
 After you set up the necessary resources in Azure, the next step is to set up the Data Lakes destination in Segment:
 
-<!-- TODO: Test this workflow in a staging environment to verify that the steps are correct-->
+<!-- TODO: Test this workflow in a staging environment to verify that the steps are correct -->
 
-1. In the [Segment App](https://app.segment.com/goto-my-workspace/overview){:target="_blank”}, click **Add Destination**, then search for and select **Azure Data Lakes**.
-2. 
+1. In the [Segment App](https://app.segment.com/goto-my-workspace/overview){:target="_blank”}, click **Add Destination**.
+2. Search for and select **Azure Data Lakes**.
+2. Click the **Configure Data Lakes** button, and select the source you'd like to recieve data from. 
+3. 
 
 
 ### Optional - Set up the Data Lake using Terraform

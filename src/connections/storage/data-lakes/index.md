@@ -62,8 +62,6 @@ Data Lakes uses an IAM role to grant Segment secure access to your AWS account. 
 
 ### Set up [Azure Data Lakes]
 
-
-
 Before you can connect your [Azure Data Lake] to Segment, you must set up the following components in your Azure environment:
 
 - [Azure Storage Account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal){:target="_blank”}: An Azure storage account contains all of your Azure Storage data objects, including blobs, file shares, queues, tables, and disks. 
