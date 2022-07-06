@@ -22,6 +22,7 @@ Amberflo
 Appboy
 Appsflyer
 async
+background(?:ed|ing)
 Blitzllama
 blocklist
 boolean
@@ -100,4 +101,5 @@ viewability
 waitlist
 WebKit
 Wootric
+Xcode
 Zendesk
