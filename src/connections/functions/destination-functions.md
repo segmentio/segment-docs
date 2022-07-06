@@ -17,7 +17,7 @@ All functions are scoped to your workspace, so members of other workspaces can't
 
 
 > note ""
-> Destination functions does not accept data from [Object Cloud sources](/docs/connections/sources/#object-cloud-sources).
+> Destination functions doesn't accept data from [Object Cloud sources](/docs/connections/sources/#object-cloud-sources).
 
 ## Create a destination function
 
@@ -35,9 +35,9 @@ When you click **Build**, a code editor appears. Use the editor to write the cod
 Segment invokes a separate part of the function (called a "handler") for each event type that you send to your destination function.
 
 > info ""
-> Your function is not invoked for an event if you've configured a [destination filter](/docs/connections/destinations/destination-filters/), and the event doesn't pass the filter.
+> Your function isn't invoked for an event if you've configured a [destination filter](/docs/connections/destinations/destination-filters/), and the event doesn't pass the filter.
 
-The default source code template includes handlers for all event types. You do not need to implement all of them - just use the ones you need, and skip the ones you don't.
+The default source code template includes handlers for all event types. You don't need to implement all of them - just use the ones you need, and skip the ones you don't.
 
 Destination functions can define handlers for each message type in the [Segment spec](/docs/connections/spec/):
 
@@ -129,7 +129,7 @@ async function onTrack(event) {
 }
 
 ```
-If you do not supply a function for an event type, Segment throws an `EventNotSupported` error by default.
+If you don't supply a function for an event type, Segment throws an `EventNotSupported` error by default.
 
 You can read more about [error handling](#destination-functions-logs-and-errors) below.
 
@@ -271,15 +271,15 @@ async function onIdentifyBatch(events, settings) {
 
 ### Configure your batch parameters
 
-By default, Functions waits up to 10 seconds to form a batch of 20 events. You can increase the number of events included in each batch (up to 400 events per batch) by contacting [Segment support](https://segment.com/help/contact/){:target="_blank"}. Segment recommends users who wish to include fewer than 20 events per batch use destination functions without the `onBatch` handler. 
+By default, Functions waits up to 10 seconds to form a batch of 20 events. You can increase the number of events included in each batch (up to 400 events per batch) by contacting [Segment support](https://segment.com/help/contact/){:target="_blank"}. Segment recommends users who wish to include fewer than 20 events per batch use destination functions without the `onBatch` handler.
 
 ### Test the batch handler
 
-The [Functions editing environment](/docs/connections/functions/environment/) supports testing batch handlers. 
+The [Functions editing environment](/docs/connections/functions/environment/) supports testing batch handlers.
 
-To test the batch handler: 
-1. In the right panel of the Functions editor, click **customize the event yourself** to enter Manual Mode. 
-2. Add events as a JSON array, with one event per element. 
+To test the batch handler:
+1. In the right panel of the Functions editor, click **customize the event yourself** to enter Manual Mode.
+2. Add events as a JSON array, with one event per element.
 3. Click **Run** to preview the batch handler with the specified events.
 
 > note ""
@@ -291,7 +291,7 @@ The [Config API](/docs/config-api/) Functions/Preview endpoint also supports tes
 
 ### Handling batching errors
 
-Standard [function error types](/docs/connections/functions/destination-functions/#destination-functions-error-types) apply to batch handlers. Segment attempts to retry the batch in the case of Timeout or Retry errors. For all other error types, Segment discards the batch. It is also possible to report a partial failure by returning status of each event in the batch. Segment retries only the failed events in a batch until those events are successful or until they result in a permanent error.
+Standard [function error types](/docs/connections/functions/destination-functions/#destination-functions-error-types) apply to batch handlers. Segment attempts to retry the batch in the case of Timeout or Retry errors. For all other error types, Segment discards the batch. It's also possible to report a partial failure by returning status of each event in the batch. Segment retries only the failed events in a batch until those events are successful or until they result in a permanent error.
 
 ```json
 [
@@ -356,6 +356,8 @@ A function can throw errors, or Segment might encounter errors while invoking yo
 - **Retry** - Your code threw `RetryError` indicating that the function should be retried.
 
 Segment only attempts to send the event to your destination function again if a **Retry** error occurs.
+
+You can view Segment's list of [Integration Error Codes](/docs/connections/integration_error_codes/) for more information about what might cause an error.
 
 ### Destination functions logs
 
@@ -470,6 +472,6 @@ The [Event Delivery tab](/docs/connections/event-delivery/) continues to show me
 
 ##### How does batching impact function use and cost?
 
-A function's use depends on the number of times it is invoked, and the amount of time it takes to execute. When you enable batching, Segment invokes your function _once per batch_ rather than once per event. The volume of events flowing through the function determines the number of batches, which determines the number of invocations.
+A function's use depends on the number of times it's invoked, and the amount of time it takes to execute. When you enable batching, Segment invokes your function _once per batch_ rather than once per event. The volume of events flowing through the function determines the number of batches, which determines the number of invocations.
 
 If you're sending your batch to an external service, the execution time of the function depends on the end-to-end latency of that service's batch endpoint, which may be higher than an endpoint that receives a single event.
