@@ -38,3 +38,5 @@
   override: "actions-launchdarkly"
 - original: "freshsales-suite---crm"
   override: "freshsales-suite-crm"
+- original: "snapchat-conversions-api"
+  override: "actions-snap-conversions"

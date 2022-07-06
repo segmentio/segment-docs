@@ -5,7 +5,7 @@ cmode-override: true
 hide-personas-partial: true
 id: 54521fd825e721e32a72eec8
 ---
-[Klaviyo](https://www.klaviyo.com/features/overview){:target="_blank"} is a powerful email platform focused on ecommerce that helps companies make more money. It supports segmentation based on category and event triggers like product bought, page viewed, email engagement, or amount spent.
+[Klaviyo](https://www.klaviyo.com){:target="_blank"} is a powerful email platform focused on ecommerce that helps companies make more money. It supports segmentation based on category and event triggers like product bought, page viewed, email engagement, or amount spent.
 
 It measures opens, clicks, revenue generated, breakdown of generated revenue based on custom attributes (like campaign type or amount gained per recipient), and provides trend reports, cohort analysis, and subscriber growth
 
@@ -213,7 +213,7 @@ analytics.track({
 
 ##### Send placed order events as order completed
 
-Enable this setting if you'd like to send `Order Completed` events as is rather than changing the event name to `Placed Order` on the server side (client side always sends `Order Completed`). Segment recommendeds that you keep this setting enabled so that both client- and server-side Klaviyo integrations send the same event for `Order Completed`. Klaviyo does not treat the event names differently in their backend feature wise. This option was introduced to bridge the existing disparity between Segment client- and server-side integrations regarding how this event name is sent without forcibly breaking the current behavior.
+Enable this setting if you'd like to send `Order Completed` events as is rather than changing the event name to `Placed Order` on the server side (client side always sends `Order Completed`). Segment recommends that you keep this setting enabled so that both client- and server-side Klaviyo integrations send the same event for `Order Completed`. Klaviyo does not treat the event names differently in their backend feature wise. This option was introduced to bridge the existing disparity between Segment client- and server-side integrations regarding how this event name is sent without forcibly breaking the current behavior.
 
 ## Personas
 

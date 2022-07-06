@@ -85,6 +85,16 @@ analytics.group("groupId123", {
 
 Segment sends Group calls to Variance as an `Account` if you've chosen the "Group" Account Mapping method during setup.
 
+### Alias
+
+If you're not familiar with the Segment Spec, take a look at the [Alias method documentation](/docs/connections/spec/alias/) to learn about what it does. An example call would look like this:
+
+```js
+analytics.alias('123456')
+```
+
+If there is an existing user with that `userId` in Variance that matches the `previousId` passed with the alias, that user will be merged into the "123456" user identified in the alias. If there is only one user with the `previousId` and no user with the `userId`, that user will have their Variance `externalId` updated to match the current `userId` passed in the alias.
+
 ## Account Mapping
 
 Variance offers several ways to map your users to accounts or companies, including the following.
