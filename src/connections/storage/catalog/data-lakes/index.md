@@ -109,7 +109,10 @@ Before you can configure your Azure resources, you must first [create an Azure s
 8. In the Data Lake Storage Gen2 section, select **Enable hierarchical namespace**. In the Blob storage selection, select the **Hot** option. 
 9. Click **Next: Networking**.
 10. On the **Networking** page, select **Disable public access and use private access**.
-11. Click **Review + create**. Take note of your location, 
+11. Click **Review + create**. Take note of your location and storage account name, and verify that all of the other settings are correct. When you feel satisified with your selections, clikc **Create**.
+12. After your resource is deployed, click **Go to resource**.
+13. On the storage account overview page, select the **Containers** button in the Data storage tab.
+14. Select **Container**. Give your container a name, and select the **Private** level of public access. Click **Create**. 
 
 
 ### Step 2 - Set up KeyVault
