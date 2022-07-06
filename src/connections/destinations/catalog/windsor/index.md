@@ -65,16 +65,14 @@ Windsor **requires** a **`userId`** and **`email`** for most integrations to wor
 
 Segment sends Identify calls to Windsor to create new users and their properties. You can find all your users on the [Users Page](https://app.windsor.io/people)
 
-### Best Practices
+### Best practices
 
-We recommend that you make an Identify call frequently from your app. As a general guide, call `identify`:
+Segment recommends that you make an Identify call frequently from your app. As a general guide, call `identify`:
 
 - On sign up
 - On every login (preferably on the device and server)
 - Every time a core user property changes (name, email, avatar or phone number)
 - On loading any pages that are only accessible by a logged in user
-
-You can find [additional best practices on using Identify with Windsor here](https://docs.windsor.io/docs/analytics#identify).
 
 
 ## Track
@@ -87,7 +85,7 @@ analytics.track('Login Button Clicked')
 
 Segment sends Track calls to Windsor as tracked events for each [user](https://app.windsor.io/people), and as events that appear on the Windsor [feed](https://app.windsor.io/feed).
 
-To get the best experience with Windsor, we recommend that you follow the Segment's specs for your industry or application .
+To get the best experience with Windsor, Segment recommends that you follow the Segment's specs for your industry or application .
 
 - [Mobile App](/docs/connections/spec/mobile/)
 - [E-Commerce](/docs/connections/spec/ecommerce/v2/)
