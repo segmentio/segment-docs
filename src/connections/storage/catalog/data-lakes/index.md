@@ -77,7 +77,7 @@ If you want to add historical data to your data set using a [replay of historica
 
 The time needed to process a Replay can vary depending on the volume of data and number of events in each source. If you decide to run a Replay, Segment recommends that you start with data from the last six months to get started, and then replay additional data if you find you need more.
 
-Segment creates a separate EMR cluster to run replays, then destroys it when the replay finished. This ensures that regular Data Lakes syncs are not interrupted, and helps the replay finish faster.
+Segment creates a separate EMR cluster to run replays, then destroys it when the replay finishes. This ensures that regular Data Lakes syncs are not interrupted, and helps the replay finish faster.
 
 ## Set up [Azure Data Lakes]
 
@@ -92,13 +92,34 @@ Before you can configure your Azure resources, you must first [create an Azure s
 
 ### Step 1 - Create an ALDS-enabled storage account
 
-To 
+> note " "
+> Take note of the Location, Storage Account Name, and the name of your Azure Storage Container: you'll need these variables when configuring the Azure Data Lakes destination in the Segment app.
+
+1. Sign in to your [Azure environment](https://portal.azure.com){:target="_blank”}. 
+2. From the Azure home page, select **Create a resource**.
+3. Search for and select **Storage account**. 
+4. On the Storage account resource page, select the **Storage account** plan and click **Create**. 
+5. On the **Basic** tab, select an existing subscription and resource group, give your storage account a name, and update any necessary instance details. Take note of the **Region** you select in this step, as you'll need it when creating the [Azure Data Lakes] destination in the Segment app. 
+6. Click **Next: Advanced**.
+7. On the **Advanced Settings** tab in the Security section, select the following options:
+  - Require secure transfer for REST API operations
+  - Enable blob public access
+  - Enable storage account key access
+  - Minimum TLS version: Version 1.2
+8. In the Data Lake Storage Gen2 section, select **Enable hierarchical namespace**. In the Blob storage selection, select the **Hot** option. 
+9. Click **Next: Networking**.
+10. On the **Networking** page, select **Disable public access and use private access**.
+11. Click **Review + create**. Take note of your location, 
+
 
 ### Step 2 - Set up KeyVault
 
 ### Step 3 - Set up Azure MySQL database
 
 ### Step 4 - Set up Databricks
+
+> note "Databricks pricing tier"
+> If you create a Databricks instance only for [Azure Data Lakes] to use, only the standard pricing tier is required. However, if you use your Databricks instance for other applications, you may require premium pricing.
 
 ### Step 5 - Set up a Service Principal
 
@@ -112,11 +133,59 @@ After you set up the necessary resources in Azure, the next step is to set up th
 
 1. In the [Segment App](https://app.segment.com/goto-my-workspace/overview){:target="_blank”}, click **Add Destination**.
 2. Search for and select **Azure Data Lakes**.
-2. Click the **Configure Data Lakes** button, and select the source you'd like to recieve data from. 
-3. 
+2. Click the **Configure Data Lakes** button, and select the source you'd like to receive data from. Click **Next**.
+3. In the **Connection Settings** section, enter the following values: 
+  - Azure Storage Account (The name of the Azure Storage account that you set up in [Step 1 - Create an ALDS-enabled storage account](#step-1---create-an-alds-enabled-storage-account))
+  - Azure Storage Container (The name of the Azure Storage Container you created in [Step 1 - Create an ALDS-enabled storage account](#step-1---create-an-alds-enabled-storage-account))
+  - Azure Subscription ID
+  - Azure Tenant ID
+  - Databricks Cluster ID
+  - Databricks Instance URL
+  - Databricks Workspace Name
+  - Databricks Workspace Resource Group
+  - Region (The location of the Azure Storage account you set up in [Step 1 - Create an ALDS-enabled storage account](#step-1---create-an-alds-enabled-storage-account)
+  - Service Principal Client ID
+  - Service Principal Client Secret
 
 
 ### Optional - Set up the Data Lake using Terraform
+
+Instead of manually configuring your Data Lake, you can create a Data Lake using the script in the [`terraform-azure-data-lake`](https://github.com/segmentio/terraform-azure-data-lakes) Github repository. 
+
+> note " "
+> This script requires Terraform versions 0.12+.
+
+Before you can run the Terraform script, create a Databricks workspace in the Azure UI using the instructions in [Step 4 - Set up Databricks](#step-4---set-up-databricks). Note the **Workspace URL**, as you will need it to run the script. 
+
+In the setup file, set the following local variables: 
+
+```js
+
+locals {
+region         = "<segment-datlakes-region>"
+resource_group = "<segment-datlakes-regource-group>"
+storage_account = "<segment-datalake-storage-account"
+container_name  = "<segment-datlakes-container>"
+key_vault_name = "<segment-datlakes-key vault>"
+server_name = "<segment-datlakes-server>"
+db_name     = "<segment-datlakes-db-name>"
+db_password = "<segment-datlakes-db-password>"
+db_admin    = "<segment-datlakes-db-admin>"
+databricks_workspace_url = "<segment-datlakes-db-worspace-url>"
+cluster_name   = "<segment-datlakes-db-cluster>"
+tenant_id      = "<tenant-id>"
+}
+```
+After you've configured your local variables, run the following commands: 
+
+```hcl
+terraform init
+terraform plan
+terraform apply
+```
+
+Running the `plan` command gives you an output that creates 19 new objects, unless you are reusing objects in other Azure applications. Running the `apply` command creates the resources and produces a service principal password you can use to set up the destination. 
+
 
 ## FAQ
 
