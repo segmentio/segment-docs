@@ -5,6 +5,9 @@ hide-dossier: true
 hidden: true
 private: true
 id: 62b256147cbb49302d1486d0
+versions:
+  - name: Heap (Classic)
+    link: /docs/connections/destinations/heap
 ---
 
 {% include content/plan-grid.md name="actions" %}
