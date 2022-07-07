@@ -88,18 +88,15 @@ To set up [Azure Data Lakes], create your [Azure resources](/docs/src/connection
 
 ### Prerequisites
 
-Before you can configure your Azure resources, you must first [create an Azure subscription](https://azure.microsoft.com/en-us/free/){:target="_blank”}.
+Before you can configure your Azure resources, you must first [create an Azure subscription](https://azure.microsoft.com/en-us/free/){:target="_blank”}, create an account with `Microsoft.Authorization/roleAssignments/write` permissions, and configure the [Azure Command Line Interface (Azure CLI)](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli){:target="_blank”}.
 
 ### Step 1 - Create an ALDS-enabled storage account
 
-> note " "
-> Take note of the Location, Storage Account Name, and the name of your Azure Storage Container: you'll need these variables when configuring the Azure Data Lakes destination in the Segment app.
-
 1. Sign in to your [Azure environment](https://portal.azure.com){:target="_blank”}. 
-2. From the Azure home page, select **Create a resource**.
+2. From the [Azure home page](https://portal.azure.com/#home){:target="_blank”}, select **Create a resource**.
 3. Search for and select **Storage account**. 
 4. On the Storage account resource page, select the **Storage account** plan and click **Create**. 
-5. On the **Basic** tab, select an existing subscription and resource group, give your storage account a name, and update any necessary instance details. Take note of the **Region** you select in this step, as you'll need it when creating the [Azure Data Lakes] destination in the Segment app. 
+5. On the **Basic** tab, select an existing subscription and resource group, give your storage account a name, and update any necessary instance details. 
 6. Click **Next: Advanced**.
 7. On the **Advanced Settings** tab in the Security section, select the following options:
   - Require secure transfer for REST API operations
@@ -109,20 +106,67 @@ Before you can configure your Azure resources, you must first [create an Azure s
 8. In the Data Lake Storage Gen2 section, select **Enable hierarchical namespace**. In the Blob storage selection, select the **Hot** option. 
 9. Click **Next: Networking**.
 10. On the **Networking** page, select **Disable public access and use private access**.
-11. Click **Review + create**. Take note of your location and storage account name, and verify that all of the other settings are correct. When you feel satisified with your selections, clikc **Create**.
+11. Click **Review + create**. Take note of your location and storage account name, and review your chosen settings. When you are satisfied with your selections, click **Create**.
 12. After your resource is deployed, click **Go to resource**.
 13. On the storage account overview page, select the **Containers** button in the Data storage tab.
 14. Select **Container**. Give your container a name, and select the **Private** level of public access. Click **Create**. 
 
+> warning " "
+> Before continuing, note the Location, Storage account name, and the Azure storage container name: you'll need these variables when configuring the Azure Data Lakes destination in the Segment app.
 
-### Step 2 - Set up KeyVault
+### Step 2 - Set up Key Vault
+
+1. From the [home page of your Azure portal](https://portal.azure.com/#home){:target="_blank”}, select **Create a resource**.
+2. Search for and select **Key Vault**.
+3. On the Key Vault resource page, select the **Key Vault** plan and click **Create**. 
+4. On the **Basic** tab, select an existing subscription and resource group, give your Key Vault a name, and update the **Days to retain deleted vaults** setting, if desired. 
+6. Click **Review + create**. 
+7. Review your chosen settings. When you are satisfied with your selections, click **Review + create**.
+8. After your resource is deployed, click **Go to resource**. 
+9. On the Key Vault page, select the **Access control (IAM)** tab. 
+10. Click **Add** and select **Add role assignment**.
+11. On the **Roles** tab, select the `Key Vault Secrets User` role. Click **Next**.
+12. On the **Members** tab, assign access to a **User, group, or service principal**.
+13. Click **Select members**.
+14. Search for and select the `Databricks Resource Provider` service principal. 
+15. 
 
 ### Step 3 - Set up Azure MySQL database
+
+1. From the [home page of your Azure portal](https://portal.azure.com/#home){:target="_blank”}, select **Create a resource**.
+2. Search for and select **Azure Database for MySQL**.
+3. On the Azure Database for MySQL resource page, select the **Azure Database for MySQL** plan and click **Create**.
+4. Select **Single server** and click **Create**.
+5. On the **Basic** tab, select an existing subscription and resource group, enter server details and create an administrator account.
+6. Click **Review + create**.
+7. Review your chosen settings. When you are satisfied with your selections, click **Create**.
+8. After your resource is deployed, click **Go to resource**.
+9. From the resouce page, select the **Connection security** tab.
+10. Under the Firewall rules section, select **Yes** to allow access to Azure services, and click the **Allow current client IP address (xx.xxx.xxx.xx)** button to allow access from your current IP address.
+11. Click **Save** to save the changes you made on the **Connection security** page, and select the **Server parameters** tab.
+12. Update the `lower_case_table_names` value to 2, and click **Save**. 
+13. Select the **Overview** tab and click the **Restart** button to restart your database. Restarting your database updates the `lower_case_table_name` setting.
+14. Once the server restarts successfully, open your Azure CLI.
+15. Sign into the MySQL server from your command line by entering the following command:
+  ```sql
+  mysql --host=/[HOSTNAME] --port=3306 --user=[USERNAME] --password=[PASSWORD]
+  ```
+16. Run the `CREATE DATABASE` command to create your Hive Metastore:
+  ```sql
+  CREATE DATABASE <name>;
+  ```
+
+> warning " "
+> Before continuing, note the MySQL server URL, username and password for the admin account, and your database name: you'll need these variables when configuring the Azure Data Lakes destination in the Segment app.
+
 
 ### Step 4 - Set up Databricks
 
 > note "Databricks pricing tier"
 > If you create a Databricks instance only for [Azure Data Lakes] to use, only the standard pricing tier is required. However, if you use your Databricks instance for other applications, you may require premium pricing.
+
+> warning " "
+> Before continuing, note the Cluster ID, Workspace name, Workspace URL, and the Azure Resource Group for Databricks Workspace: you'll need these variables when configuring the Azure Data Lakes destination in the Segment app.
 
 ### Step 5 - Set up a Service Principal
 
