@@ -28,6 +28,7 @@ blocklist
 boolean
 Breyta
 Chargebee
+chatbot
 CloudFront
 Cocoapods
 Contentful
@@ -88,6 +89,7 @@ Skalin
 Smartly
 Snapchat
 Spideo
+subaction
 Subnet
 svg
 Totango
