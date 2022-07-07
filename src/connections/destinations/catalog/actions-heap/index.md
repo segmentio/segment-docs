@@ -1,11 +1,10 @@
 ---
 title: Heap (Actions) Destination
 hide-boilerplate: true
-hide-dossier: false
-
-versions:
-  - name: Heap (Classic)
-    link: /docs/connections/destinations/heap
+hide-dossier: true
+hidden: true
+private: true
+id: 62b256147cbb49302d1486d0
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -13,7 +12,7 @@ versions:
 [Heap](https://heapanalytics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) automatically captures every user interaction with no extra code. This includes clicks, taps, gestures, form submissions, page views, and more.
 
 > success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) <destination_name> Segment destination. There's also a page about the [non-Actions <destination_name> destination](/docs/connections/destinations/catalog/<destination_name>/). Both of these destinations receives data from Segment.
+> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Heap destination. There's also a page about the [non-Actions Heap destination](/docs/connections/destinations/catalog/heap/). Both of these destinations receives data from Segment.
 
 
 {% include content/ajs-upgrade.md %}
