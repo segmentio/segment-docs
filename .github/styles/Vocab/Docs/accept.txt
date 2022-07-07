@@ -22,6 +22,7 @@ Amberflo
 Appboy
 Appsflyer
 async
+background(?:ed|ing)
 Blitzllama
 blocklist
 boolean
@@ -29,6 +30,7 @@ Breyta
 Chargebee
 CloudFront
 Cocoapods
+Contentful
 Criteo
 csv
 deeplink
@@ -73,6 +75,7 @@ middleware
 Middleware
 Mixpanel
 namespace
+Ninetailed
 Okta
 Omnichannel
 onboarding
@@ -84,6 +87,7 @@ Shopify
 Skalin
 Smartly
 Snapchat
+Spideo
 Subnet
 svg
 Totango
@@ -97,4 +101,5 @@ viewability
 waitlist
 WebKit
 Wootric
+Xcode
 Zendesk
