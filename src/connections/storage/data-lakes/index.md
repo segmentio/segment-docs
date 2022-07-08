@@ -36,7 +36,7 @@ Segment sends data to S3 by orchestrating the processing in an EMR (Elastic MapR
 
 ![A diagram visualizing data flowing from a Segment user into your account and into a Glue catalog/S3 bucket](images/dl_vpc.png)
 
-### How [Azure Data Lakes] works
+### How Azure Data Lakes works
 
 Data Lakes store Segment data in ADLS in a read-optimized encoding format (Parquet) which makes the data more accessible and actionable. To help you zero-in on the right data, Data Lakes also creates logical data partitions and event tables, and integrates metadata with existing schema management tools, like the Hive Metastore. The resulting data set is optimized for use with systems like Power BI and Azure HDInsight or machine learning vendors like Azure DataBricks or Azure Synapse Analytics.
 
@@ -60,7 +60,7 @@ Data Lakes uses an IAM role to grant Segment secure access to your AWS account. 
 - **external_ids**: External IDs are the part of the IAM role which Segment uses to assume the role providing access to your AWS account. You will define the external ID in the IAM role as the Segment Workspace ID in which you want to connect to  Data Lakes. The Segment Workspace ID can be retrieved from the [Segment app](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} by navigating to Settings > General Settings > ID.
 - **s3_bucket**: Name of the S3 bucket used by the Data Lake.
 
-### Set up [Azure Data Lakes]
+### Set up Azure Data Lakes
 
 Before you can connect your [Azure Data Lake] to Segment, you must set up the following components in your Azure environment:
 
@@ -71,7 +71,7 @@ Before you can connect your [Azure Data Lake] to Segment, you must set up the fo
 - [Azure MySQL Database](https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-mysql-database){:target="_blank”}: The MySQL database is a relational database service based on the MySQL Community Edition, versions 5.6, 5.7, and 8.0.
 - [Azure KeyVault Instance](https://docs.microsoft.com/en-us/azure/key-vault/general/quick-create-portal){:target="_blank”}: Azure KeyVault provides a secure store for your keys, secrets, and certificates. 
 
-For more information about configuring [Azure Data Lakes], see the [Data Lakes setup page](/docs/connections/storage/catalog/data-lakes/).
+For more information about configuring Azure Data Lakes, see the [Data Lakes setup page](/docs/connections/storage/catalog/data-lakes/).
 
 ## Data Lakes schema
 
@@ -124,7 +124,7 @@ The schema inferred by Segment is stored in a Glue database within Glue Data Cat
 > info ""
 > The recommended IAM role permissions grant Segment access to create the Glue databases on your behalf. If you do not grant Segment these permissions, you must manually create the Glue databases for Segment to write to.
 
-### [Azure Data Lakes] schema
+### Azure Data Lakes schema
 
 ### Data types
 
@@ -137,7 +137,7 @@ The data types supported in [AWS Data Lakes] are:
 - string
 - timestamp
 
-The data types supported in the [Azure Data Lakes] are:
+The data types supported in the Azure Data Lakes are:
 - bigint
 - boolean
 - decimal(38,6)

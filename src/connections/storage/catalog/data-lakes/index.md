@@ -79,12 +79,12 @@ The time needed to process a Replay can vary depending on the volume of data and
 
 Segment creates a separate EMR cluster to run replays, then destroys it when the replay finishes. This ensures that regular Data Lakes syncs are not interrupted, and helps the replay finish faster.
 
-## Set up [Azure Data Lakes]
+## Set up Azure Data Lakes
 
-> info "[Azure Data Lakes] is currently in Public Beta"
-> [Azure Data Lakes] is available in Public Beta.
+> info " "
+> Azure Data Lakes is available in Public Beta.
 
-To set up [Azure Data Lakes], create your [Azure resources](/docs/src/connections/storage/data-lakes/#set-up-[azure-data-lakes]) and then enable the Data Lakes destination in the Segment app.
+To set up Azure Data Lakes, create your [Azure resources](/docs/src/connections/storage/data-lakes/#set-up-[azure-data-lakes]) and then enable the Data Lakes destination in the Segment app.
 
 ### Prerequisites
 
@@ -141,7 +141,7 @@ Before you can configure your Azure resources, you must first [create an Azure s
 6. Click **Review + create**.
 7. Review your chosen settings. When you are satisfied with your selections, click **Create**.
 8. After your resource is deployed, click **Go to resource**.
-9. From the resouce page, select the **Connection security** tab.
+9. From the resource page, select the **Connection security** tab.
 10. Under the Firewall rules section, select **Yes** to allow access to Azure services, and click the **Allow current client IP address (xx.xxx.xxx.xx)** button to allow access from your current IP address.
 11. Click **Save** to save the changes you made on the **Connection security** page, and select the **Server parameters** tab.
 12. Update the `lower_case_table_names` value to 2, and click **Save**. 
@@ -163,16 +163,42 @@ Before you can configure your Azure resources, you must first [create an Azure s
 ### Step 4 - Set up Databricks
 
 > note "Databricks pricing tier"
-> If you create a Databricks instance only for [Azure Data Lakes] to use, only the standard pricing tier is required. However, if you use your Databricks instance for other applications, you may require premium pricing.
+> If you create a Databricks instance only for Azure Data Lakes to use, only the standard pricing tier is required. However, if you use your Databricks instance for other applications, you may require premium pricing.
+
+1. From the [home page of your Azure portal](https://portal.azure.com/#home){:target="_blank”}, select **Create a resource**.
+2. Search for and select **Azure Databricks**.
+3. On the Azure Database for MySQL resource page, select the **Azure Databricks** plan and click **Create**.
+4. On the **Basic** tab, select an existing subscription and resource group, enter a name for your workspace, select the region you'd like to house your Databricks instance in, and select a pricing tier. For those using the Databricks instance only for Azure Data Lakes, a Standard pricing tier is appropriate. If you plan to use your Databricks instance for more than just Azure Data Lakes, you may require the premium pricing tier.
+5. Click **Review + create**.
+6. Review your chosen settings. When you are satisfied with your selections, click **Create**.
+7. After your resource is deployed, click **Go to resource**.
+8. On the Azure Databricks Service overview page, click **Launch Workspace**. 
+9. On the Databricks page, select **Create a cluster**.
+10. On the Compute page, select **Create Cluster**.
+11. Enter a name for your cluster and select the `Standard_DS4_v2` worker type. Set the minimum number of workers to 2, and the maximum number of workers to 8. __Segment recommends deselecting the "Terminate after X minutes" setting, as the time it takes to restart a cluster may delay your data lake syncs.__
+12. Click **Create Cluster**.
+13. Open [your Azure portal](https://portal.azure.com/#home){:target="_blank”} and select the Key Vault you created in a previous step.
+14. On the Key Vault page, select the JSON View link to view the Resource ID and vaultURI. Take note of these values, as you'll need them in the next step to configure your Databricks instance.
+15. Open `https://<databricks-instance>#secrets/createScope` and enter the following information to connect your Databricks instance to the Key Vault you created in an earlier step:
+  - **Scope Name**: Set this value to `segment`.
+  - **Manage Principal**: Select **All Users**.
+  - **DNS Name**: Set this value to the Vault URI of your Key Vault instance.
+  - **Resource ID**: The Resource ID of your Azure Key Vault instance.
+16. When you've entered all of your information, click **Create**.
 
 > warning " "
 > Before continuing, note the Cluster ID, Workspace name, Workspace URL, and the Azure Resource Group for Databricks Workspace: you'll need these variables when configuring the Azure Data Lakes destination in the Segment app.
 
 ### Step 5 - Set up a Service Principal
 
-### Step 6 - Configure Databricks cluster
+1. From the [home page of your Azure portal](https://portal.azure.com/#home){:target="_blank”}, select the Databricks instance you created in [Step 4 - Set up Databricks](#step-4---set-up-databricks).
+2. On the overview page for your Databricks instance, select **Access control (IAM)**.
+3. Click **Add** and select **Add role assignment**.
+4. On the **Members** tab, assign access to a **User, group, or service principal**.
+5. Click **Select members**.
+6. Search for and select the `Databricks Resource Provider` service principal. 
 
-### Step 7 - Enable the Data Lakes destination in the Segment app
+### Step 6 - Enable the Data Lakes destination in the Segment app
 
 After you set up the necessary resources in Azure, the next step is to set up the Data Lakes destination in Segment:
 
@@ -182,22 +208,22 @@ After you set up the necessary resources in Azure, the next step is to set up th
 2. Search for and select **Azure Data Lakes**.
 2. Click the **Configure Data Lakes** button, and select the source you'd like to receive data from. Click **Next**.
 3. In the **Connection Settings** section, enter the following values: 
-  - Azure Storage Account (The name of the Azure Storage account that you set up in [Step 1 - Create an ALDS-enabled storage account](#step-1---create-an-alds-enabled-storage-account))
-  - Azure Storage Container (The name of the Azure Storage Container you created in [Step 1 - Create an ALDS-enabled storage account](#step-1---create-an-alds-enabled-storage-account))
-  - Azure Subscription ID
-  - Azure Tenant ID
-  - Databricks Cluster ID
-  - Databricks Instance URL
-  - Databricks Workspace Name
-  - Databricks Workspace Resource Group
-  - Region (The location of the Azure Storage account you set up in [Step 1 - Create an ALDS-enabled storage account](#step-1---create-an-alds-enabled-storage-account)
-  - Service Principal Client ID
-  - Service Principal Client Secret
+  - **Azure Storage Account**: The name of the Azure Storage account that you set up in [Step 1 - Create an ALDS-enabled storage account](#step-1---create-an-alds-enabled-storage-account).
+  - **Azure Storage Container**: The name of the Azure Storage Container you created in [Step 1 - Create an ALDS-enabled storage account](#step-1---create-an-alds-enabled-storage-account).
+  - **Azure Subscription ID**: The ID of your [Azure subscription](https://docs.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id){:target="_blank”}.
+  - **Azure Tenant ID**: The Tenant ID of your [Azure Active directory](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant){:target="_blank”}.
+  - **Databricks Cluster ID**: The ID of your [Databricks cluster](https://docs.databricks.com/workspace/workspace-details.html#cluster-url-and-id){:target="_blank”}
+  - **Databricks Instance URL**: The ID of your [Databricks workspace](https://docs.databricks.com/workspace/workspace-details.html#workspace-instance-names-urls-and-ids){:target="_blank”}
+  - **Databricks Workspace Name**: The name of your [Databricks workspace](https://docs.databricks.com/workspace/workspace-details.html#workspace-instance-names-urls-and-ids){:target="_blank”}
+  - **Databricks Workspace Resource Group**: The resource group that hosts your Azure Databricks instance. This is visible in Azure on the overview page for your Databricks instance.
+  - **Region**: The location of the Azure Storage account you set up in [Step 1 - Create an ALDS-enabled storage account](#step-1---create-an-alds-enabled-storage-account)
+  - **Service Principal Client ID**: 
+  - **Service Principal Client Secret**:
 
 
 ### Optional - Set up the Data Lake using Terraform
 
-Instead of manually configuring your Data Lake, you can create a Data Lake using the script in the [`terraform-azure-data-lake`](https://github.com/segmentio/terraform-azure-data-lakes) Github repository. 
+Instead of manually configuring your Data Lake, you can create a Data Lake using the script in the [`terraform-azure-data-lake`](https://github.com/segmentio/terraform-azure-data-lakes) GitHub repository. 
 
 > note " "
 > This script requires Terraform versions 0.12+.
@@ -328,4 +354,4 @@ Replace:
 {% endfaqitem %}
 {% endfaq %}
 
-### [Azure Data Lakes]
+### Azure Data Lakes
