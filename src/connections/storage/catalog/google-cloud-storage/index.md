@@ -12,7 +12,7 @@ The Google Cloud Storage (GCS) destination puts the raw logs of the data Segment
 > warning ""
 > The Google Cloud Storage destination works differently than other destinations in Segment. Segment sends **all** data from a Personas source to GCS during the sync process, not only the connected audiences and traits. Using a destinations selector like the [integrations object](/docs/connections/spec/common/#integrations) doesn't affect the events events sent to GCS.
 
-**Note**: The GCS destination is currently in public beta, and does not support product features such as deletions, replays, or surfacing errors in the UI.
+**Note**: The GCS destination is currently in public beta, and doesn't support product features such as deletions, replays, or surfacing errors in the UI.
 
 
 ## Getting Started
