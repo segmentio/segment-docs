@@ -17,7 +17,10 @@ Data Lakes and Warehouses offer different sync frequencies:
 
 ## Duplicates
 
-Segment's [99% guarantee of no duplicates](/docs/guides/duplicate-data/) for data within a 24 hour look-back window applies to data in Data Lakes and Warehouses.
+Segment's [99% guarantee of no duplicates](/docs/guides/duplicate-data/) for data within a 24 hour look-back window applies to data in Segment Data Lakes and Warehouses.
+
+> note "Deduplication is not supported for the Azure Data Lakes public beta"
+> Deduplication is not currently supported for the Azure Data Lakes public beta. For more information about Azure Data Lakes, see the [Data Lakes overview documentation](/docs/connections/storage/data-lakes/index/#how-azure-data-lakes-works).
 
 [Warehouses](/docs/guides/duplicate-data/#warehouse-deduplication) and [Data Lakes](/docs/guides/duplicate-data/#data-lake-deduplication) also have a secondary deduplication system to further reduce the volume of duplicates to ensure clean data in your Warehouses and Data Lakes.
 
@@ -103,6 +106,6 @@ Similar to tables, columns between Warehouses and Data Lakes will be the same, e
 
 - `event` and `event_text` - Each property within an event has its own column, however the naming convention for these columns differs between Warehouses and Data Lakes. Warehouses snake case the original payload value and preserves the original text within the `event_text` column. Data Lakes use the original payload value as-is for the column name, and does not need an `event_text` column.
 - `channel`, `metadata_*`, `project_id`, `type`, `version` - These columns are Segment internal data which are not found in Warehouses, but are found in Data Lakes. Warehouses is intentionally very detailed about it's transformation logic and does not include these. Data Lakes does include them due to its more straightforward approach to flatten the whole event.
-- (Redshift only) `uuid`, `uuid_ts` - Redshift customers will see columns for `uuid` and `uuid_ts`, which are used for de-duplication in Redshift; Other warehouses may have similar columns. These aren't relevant for Data Lakes so the columns won't appear there.
+- *(Redshift only)* `uuid`, `uuid_ts` - Redshift customers will see columns for `uuid` and `uuid_ts`, which are used for de-duplication in Redshift; Other warehouses may have similar columns. These aren't relevant for Data Lakes so the columns won't appear there.
 - `sent_at` - Warehouses computes the `sent_at` value based on timestamps found in the original event in order to account for clock skews and timestamps in the future. This was done when the Segment pipeline didn't do this on it's own, however it now calculates for this so Data Lakes does not need to do any additional computation, and will send the value as-is when computed at ingestion.
 - `integrations` - Warehouses does not include the integrations object.  Data Lakes flattens and includes the integrations object. You can read more about the `integrations` object [in the filtering data documentation](/docs/guides/filtering-data/#filtering-with-the-integrations-object).

@@ -8,15 +8,15 @@ redirect_from: '/connections/destinations/catalog/data-lakes/'
 Segment Data Lakes provide a way to collect large quantities of data in a format that's optimized for targeted data science and data analytics workflows. You can read [more information about Data Lakes](/docs/connections/storage/data-lakes/) and learn [how they differ from Warehouses](/docs/connections/storage/data-lakes/comparison/) in Segment's Data Lakes documentation.
 
 > note "Lake Formation"
-> You can also set up your [AWS Data Lakes] using [Lake Formation](/docs/connections/storage/data-lakes/lake-formation/), a fully managed service built on top of the AWS Glue Data Catalog.
+> You can also set up your Segment Data Lakes using [Lake Formation](/docs/connections/storage/data-lakes/lake-formation/), a fully managed service built on top of the AWS Glue Data Catalog.
 
-## Set up [AWS Data Lakes]
+## Set up Segment Data Lakes
 
-To set up [AWS Data Lakes], create your AWS resources, enable the [AWS Data Lakes] destination in the Segment app, and verify that your Segment data synced to S3 and Glue.
+To set up Segment Data Lakes, create your AWS resources, enable the Segment Data Lakes destination in the Segment app, and verify that your Segment data synced to S3 and Glue.
 
 ### Prerequisites
 
-Before you set up [AWS Data Lakes], you need the following resources:
+Before you set up Segment Data Lakes, you need the following resources:
 
 - An [AWS account](https://aws.amazon.com/account/){:target="_blank”}
 - An [Amazon S3 bucket](https://github.com/terraform-aws-modules/terraform-aws-s3-bucket){:target="_blank”} to receive data and store logs
@@ -84,7 +84,7 @@ Segment creates a separate EMR cluster to run replays, then destroys it when the
 > info " "
 > Azure Data Lakes is available in Public Beta.
 
-To set up Azure Data Lakes, create your [Azure resources](/docs/src/connections/storage/data-lakes/#set-up-[azure-data-lakes]) and then enable the Data Lakes destination in the Segment app.
+To set up Azure Data Lakes, create your Azure resources and then enable the Data Lakes destination in the Segment app.
 
 ### Prerequisites
 
@@ -120,16 +120,17 @@ Before you can configure your Azure resources, you must first [create an Azure s
 2. Search for and select **Key Vault**.
 3. On the Key Vault resource page, select the **Key Vault** plan and click **Create**. 
 4. On the **Basic** tab, select an existing subscription and resource group, give your Key Vault a name, and update the **Days to retain deleted vaults** setting, if desired. 
-6. Click **Review + create**. 
-7. Review your chosen settings. When you are satisfied with your selections, click **Review + create**.
-8. After your resource is deployed, click **Go to resource**. 
-9. On the Key Vault page, select the **Access control (IAM)** tab. 
-10. Click **Add** and select **Add role assignment**.
-11. On the **Roles** tab, select the `Key Vault Secrets User` role. Click **Next**.
-12. On the **Members** tab, assign access to a **User, group, or service principal**.
-13. Click **Select members**.
-14. Search for and select the `Databricks Resource Provider` service principal. 
-15. 
+5. Click **Review + create**. 
+6. Review your chosen settings. When you are satisfied with your selections, click **Review + create**.
+7. After your resource is deployed, click **Go to resource**. 
+8. On the Key Vault page, select the **Access control (IAM)** tab. 
+9. Click **Add** and select **Add role assignment**.
+10. On the **Roles** tab, select the `Key Vault Secrets User` role. Click **Next**.
+11. On the **Members** tab, select a **User, group, or service principal**.
+12. Click **Select members**.
+13. Search for and select the `Databricks Resource Provider` service principal. 
+14. Click **Select**.
+15. Under the **Members** header, verify that you selected the Databricks Resource Provider. Click **Review + assign**.
 
 ### Step 3 - Set up Azure MySQL database
 
@@ -175,7 +176,7 @@ Before you can configure your Azure resources, you must first [create an Azure s
 8. On the Azure Databricks Service overview page, click **Launch Workspace**. 
 9. On the Databricks page, select **Create a cluster**.
 10. On the Compute page, select **Create Cluster**.
-11. Enter a name for your cluster and select the `Standard_DS4_v2` worker type. Set the minimum number of workers to 2, and the maximum number of workers to 8. __Segment recommends deselecting the "Terminate after X minutes" setting, as the time it takes to restart a cluster may delay your data lake syncs.__
+11. Enter a name for your cluster and select the `Standard_DS4_v2` worker type. Set the minimum number of workers to 2, and the maximum number of workers to 8. __Segment recommends deselecting the "Terminate after X minutes" setting, as the time it takes to restart a cluster may delay your Data Lake syncs.__
 12. Click **Create Cluster**.
 13. Open [your Azure portal](https://portal.azure.com/#home){:target="_blank”} and select the Key Vault you created in a previous step.
 14. On the Key Vault page, select the JSON View link to view the Resource ID and vaultURI. Take note of these values, as you'll need them in the next step to configure your Databricks instance.
@@ -187,22 +188,106 @@ Before you can configure your Azure resources, you must first [create an Azure s
 16. When you've entered all of your information, click **Create**.
 
 > warning " "
-> Before continuing, note the Cluster ID, Workspace name, Workspace URL, and the Azure Resource Group for Databricks Workspace: you'll need these variables when configuring the Azure Data Lakes destination in the Segment app.
+> Before continuing, note the Cluster ID, Workspace name, Workspace URL, and the Azure Resource Group for your Databricks Workspace: you'll need these variables when configuring the Azure Data Lakes destination in the Segment app.
 
 ### Step 5 - Set up a Service Principal
 
-1. From the [home page of your Azure portal](https://portal.azure.com/#home){:target="_blank”}, select the Databricks instance you created in [Step 4 - Set up Databricks](#step-4---set-up-databricks).
+1. Open your Azure CLI and create a new service principal using the following commands: <br/>
+``` powershell
+az login
+az ad sp create-for-rbac --name <ServicePrincipalName>
+```
+2. In your Azure portal, select the Databricks instance you created in [Step 4 - Set up Databricks](#step-4---set-up-databricks).
 2. On the overview page for your Databricks instance, select **Access control (IAM)**.
 3. Click **Add** and select **Add role assignment**.
-4. On the **Members** tab, assign access to a **User, group, or service principal**.
-5. Click **Select members**.
-6. Search for and select the `Databricks Resource Provider` service principal. 
+4. On the **Roles** tab, select the `Managed Application Operator` role. Click **Next**.
+11. On the **Members** tab, select a **User, group, or service principal**.
+12. Click **Select members**.
+13. Search for and select the Service Principal you created above.
+14. Click **Select**.
+15. Under the **Members** header, verify that you selected your Service Principal. Click **Review + assign**.
+16. Return to the Azure home page. Select your storage account.
+17. On the overview page for your storage account, select **Access control (IAM)**.
+18. Click **Add** and select **Add role assignment**.
+4. On the **Roles** tab, select the `Storage Blob Data Contributor` role. Click **Next**.
+11. On the **Members** tab, select a **User, group, or service principal**.
+12. Click **Select members**.
+13. Search for and select the Service Principal you created above.
+14. Click **Select**.
+15. Under the **Members** header, verify that you selected your Service Principal. Click **Review + assign**.
 
-### Step 6 - Enable the Data Lakes destination in the Segment app
+### Step 6 - Configure Databricks Cluster
+
+> warning "Optional configuration settings for log4j vulnerability"
+> While Databricks released a statement that clusters are likely unaffected by the log4j vulnerability, out of an abundance of caution, Databricks recommends updating to log4j 2.15+ or adding the following options to the Spark configuration: <br/> `spark.driver.extraJavaOptions "-Dlog4j2.formatMsgNoLookups=true"`<br/>`spark.executor.extraJavaOptions "-Dlog4j2.formatMsgNoLookups=true"`
+
+1. Connect to a [Hive metastore](https://docs.databricks.com/data/metastores/external-hive-metastore.html){:target="_blank”} on your Databricks cluster.
+2. Copy the following Spark configuration, replacing the variables (`<example_variable>`) with information from your workspace: <br/>
+```py
+## Configs so we can read from the storage account
+spark.hadoop.fs.azure.account.oauth.provider.type.<storage_account_name>.dfs.core.windows.net org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider
+spark.hadoop.fs.azure.account.oauth2.client.endpoint.<storage_account_name>.dfs.core.windows.net https://login.microsoftonline.com/<azure-tenant-id>/oauth2/token
+spark.hadoop.fs.azure.account.oauth2.client.secret.<storage_account_name>.dfs.core.windows.net <service-principal-secret>
+spark.hadoop.fs.azure.account.auth.type.<storage_account_name>.dfs.core.windows.net OAuth
+spark.hadoop.fs.azure.account.oauth2.client.id.<storage_account_name>.dfs.core.windows.net <service_principal_client_id>
+##
+##
+spark.hadoop.javax.jdo.option.ConnectionDriverName org.mariadb.jdbc.Driver
+spark.hadoop.javax.jdo.option.ConnectionURL jdbc:mysql://<db-host>:<port>/<database-name>?useSSL=true&requireSSL=false
+spark.hadoop.javax.jdo.option.ConnectionUserName <database_user>
+spark.hadoop.javax.jdo.option.ConnectionPassword <database_password>
+##
+##
+##
+spark.hive.mapred.supports.subdirectories true
+spark.sql.storeAssignmentPolicy Legacy
+mapreduce.input.fileinputformat.input.dir.recursive true
+spark.sql.hive.convertMetastoreParquet false
+##
+datanucleus.autoCreateSchema true 
+datanucleus.autoCreateTables true 
+spark.sql.hive.metastore.schema.verification false 
+datanucleus.fixedDatastore false
+##
+spark.sql.hive.metastore.version 2.3.7
+spark.sql.hive.metastore.jars builtin
+``` 
+
+3. Log in to your Databricks instance and open your cluster. 
+4. On the overview page for your cluster, select **Edit**. 
+5. Open the **Advanced options** toggle and paste the Spark config you copied above, replacing the variables (`<example_variable>`) with information from your workspace.
+6. Select **Confirm and restart**. On the popup window, select **Confirm**.
+7. Log in to your Azure MySQL database using the following command: <br/>
+```powershell
+mysql --host=[HOSTNAME] --port=3306 --user=[USERNAME] --password=[PASSWORD]
+```
+8. Once you've logged in to your MySQL database, run the following commands: <br/>
+```sql
+USE <db-name>
+INSERT INTO VERSION (VER_ID, SCHEMA_VERSION) VALUES (0, '2.3.7');
+```
+9. Log in to your Databricks cluster.
+10. Click **Create** and select **Notebook**.
+11. Give your cluster a name, select **SQL** as the default language, and make sure it's located in the cluster you created in [Step 4 - Set up Databricks](#step-4---set-up-databricks). 
+12. Click **Create**.
+13. On the overview page for your new notebook, run the following command: <br/>
+```sql
+CREATE TABLE test (id string);
+```
+14. Open your cluster. 
+15. On the overview page for your cluster, select **Edit**. 
+16. Open the **Advanced options** toggle and paste the following code snippet: <br/>
+```py
+datanucleus.autoCreateSchema false
+datanucleus.autoCreateTables false
+spark.sql.hive.metastore.schema.verification true 
+datanucleus.fixedDatastore true
+```
+17. Select **Confirm and restart**. On the popup window, select **Confirm**.
+
+### Step 7 - Enable the Data Lakes destination in the Segment app
 
 After you set up the necessary resources in Azure, the next step is to set up the Data Lakes destination in Segment:
-
-<!-- TODO: Test this workflow in a staging environment to verify that the steps are correct -->
 
 1. In the [Segment App](https://app.segment.com/goto-my-workspace/overview){:target="_blank”}, click **Add Destination**.
 2. Search for and select **Azure Data Lakes**.
@@ -212,18 +297,18 @@ After you set up the necessary resources in Azure, the next step is to set up th
   - **Azure Storage Container**: The name of the Azure Storage Container you created in [Step 1 - Create an ALDS-enabled storage account](#step-1---create-an-alds-enabled-storage-account).
   - **Azure Subscription ID**: The ID of your [Azure subscription](https://docs.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id){:target="_blank”}.
   - **Azure Tenant ID**: The Tenant ID of your [Azure Active directory](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant){:target="_blank”}.
-  - **Databricks Cluster ID**: The ID of your [Databricks cluster](https://docs.databricks.com/workspace/workspace-details.html#cluster-url-and-id){:target="_blank”}
-  - **Databricks Instance URL**: The ID of your [Databricks workspace](https://docs.databricks.com/workspace/workspace-details.html#workspace-instance-names-urls-and-ids){:target="_blank”}
-  - **Databricks Workspace Name**: The name of your [Databricks workspace](https://docs.databricks.com/workspace/workspace-details.html#workspace-instance-names-urls-and-ids){:target="_blank”}
+  - **Databricks Cluster ID**: The ID of your [Databricks cluster](https://docs.databricks.com/workspace/workspace-details.html#cluster-url-and-id){:target="_blank”}.
+  - **Databricks Instance URL**: The ID of your [Databricks workspace](https://docs.databricks.com/workspace/workspace-details.html#workspace-instance-names-urls-and-ids){:target="_blank”}.
+  - **Databricks Workspace Name**: The name of your [Databricks workspace](https://docs.databricks.com/workspace/workspace-details.html#workspace-instance-names-urls-and-ids){:target="_blank”}.
   - **Databricks Workspace Resource Group**: The resource group that hosts your Azure Databricks instance. This is visible in Azure on the overview page for your Databricks instance.
-  - **Region**: The location of the Azure Storage account you set up in [Step 1 - Create an ALDS-enabled storage account](#step-1---create-an-alds-enabled-storage-account)
-  - **Service Principal Client ID**: 
-  - **Service Principal Client Secret**:
+  - **Region**: The location of the Azure Storage account you set up in [Step 1 - Create an ALDS-enabled storage account](#step-1---create-an-alds-enabled-storage-account).
+  - **Service Principal Client ID**: The Client ID of the Service Principal that you set up in [Step 5 - Set up a Service Principal](#step-5---set-up-a-service-principal).
+  - **Service Principal Client Secret**: The Client ID of the Service Principal that you set up in [Step 5 - Set up a Service Principal](#step-5---set-up-a-service-principal).
 
 
-### Optional - Set up the Data Lake using Terraform
+### (Optional) Set up your Azure Data Lake using Terraform
 
-Instead of manually configuring your Data Lake, you can create a Data Lake using the script in the [`terraform-azure-data-lake`](https://github.com/segmentio/terraform-azure-data-lakes) GitHub repository. 
+Instead of manually configuring your Data Lake, you can create it using the script in the [`terraform-azure-data-lake`](https://github.com/segmentio/terraform-azure-data-lakes) GitHub repository. 
 
 > note " "
 > This script requires Terraform versions 0.12+.
@@ -262,7 +347,7 @@ Running the `plan` command gives you an output that creates 19 new objects, unle
 
 ## FAQ
 
-### [AWS Data Lakes]
+### Segment Data Lakes
 
 {% faq %}
 {% faqitem Do I need to create Glue databases? %}
@@ -355,3 +440,33 @@ Replace:
 {% endfaq %}
 
 ### Azure Data Lakes
+
+{% faq %}
+
+{% faqitem Does my ALDS-enabled storage account need to be in the same region as the other infrastructure? %}
+Yes, your storage account and Databricks instance should be in the same region.
+{% endfaqitem %}
+
+{% faqitem What analytics tools are available to use with my Azure Data Lake? %}
+Azure Data Lakes supports the following post-processing tools:
+  - PowerBI
+  - Azure HDInsight
+  - Azure Synapse Analytics
+  - Databricks
+{% endfaqitem %}
+
+{% faqitem What can I do to troubleshoot my Databricks database? %}
+If you encounter errors related to your Databricks database, try adding the following line to the config: <br/>
+```py
+spark.sql.hive.metastore.schema.verification.record.version false
+```
+<br/>After you've added to your config, restart your cluster so that your changes can take effect. If you continue to encounter errors, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
+{% endfaqitem %}
+
+{% faqitem What do I do if I get a "Version table does not exist" error when setting up the Azure MySQL database? %}
+Check your Spark configs to ensure that the information you entered about the database is correct, then restart the cluster. The Databricks cluster automatically initializes the Hive Metastore, so an issue with your config file will stop the table from being created.  If you continue to encounter errors, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
+{% endfaqitem %}
+
+
+
+{% endfaq %}
