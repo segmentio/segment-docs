@@ -82,13 +82,16 @@ Segment creates a separate EMR cluster to run replays, then destroys it when the
 ## Set up Azure Data Lakes
 
 > info " "
-> Azure Data Lakes is available in Public Beta.
+> Azure Data Lakes is currently in Public Beta.
 
 To set up Azure Data Lakes, create your Azure resources and then enable the Data Lakes destination in the Segment app.
 
 ### Prerequisites
 
-Before you can configure your Azure resources, you must first [create an Azure subscription](https://azure.microsoft.com/en-us/free/){:target="_blank”}, create an account with `Microsoft.Authorization/roleAssignments/write` permissions, and configure the [Azure Command Line Interface (Azure CLI)](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli){:target="_blank”}.
+Before you can configure your Azure resources, you must complete the following prerequisites:
+- [Create an Azure subscription](https://azure.microsoft.com/en-us/free/){:target="_blank”}
+- Create an account with `Microsoft.Authorization/roleAssignments/write` permissions
+- Configure the [Azure Command Line Interface (Azure CLI)](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli){:target="_blank”}
 
 ### Step 1 - Create an ALDS-enabled storage account
 
@@ -149,7 +152,7 @@ Before you can configure your Azure resources, you must first [create an Azure s
 13. Select the **Overview** tab and click the **Restart** button to restart your database. Restarting your database updates the `lower_case_table_name` setting.
 14. Once the server restarts successfully, open your Azure CLI.
 15. Sign into the MySQL server from your command line by entering the following command:
-  ```sql
+  ```curl
   mysql --host=/[HOSTNAME] --port=3306 --user=[USERNAME] --password=[PASSWORD]
   ```
 16. Run the `CREATE DATABASE` command to create your Hive Metastore:
@@ -192,15 +195,20 @@ Before you can configure your Azure resources, you must first [create an Azure s
 
 ### Step 5 - Set up a Service Principal
 
-1. Open your Azure CLI and create a new service principal using the following commands: <br/>
+1. Open the Databricks instance you created in [Step 4 - Set up Databricks](#step-4---set-up-databricks). 
+2. Click **Settings** and select **User settings**.
+3. On the Access tokens page, click **Generate new token**. 
+4. Enter a comment for your token, select the lifetime of your ticket, and click **Generate**.
+5. Copy your token, as you'll use this to add your service principal to your workspace.
+6. Open your Azure CLI and create a new service principal using the following commands: <br/>
 ``` powershell
 az login
 az ad sp create-for-rbac --name <ServicePrincipalName>
 ```
-2. In your Azure portal, select the Databricks instance you created in [Step 4 - Set up Databricks](#step-4---set-up-databricks).
-2. On the overview page for your Databricks instance, select **Access control (IAM)**.
-3. Click **Add** and select **Add role assignment**.
-4. On the **Roles** tab, select the `Managed Application Operator` role. Click **Next**.
+7. In your Azure portal, select the Databricks instance you created in [Step 4 - Set up Databricks](#step-4---set-up-databricks).
+8. On the overview page for your Databricks instance, select **Access control (IAM)**.
+9. Click **Add** and select **Add role assignment**.
+10. On the **Roles** tab, select the `Managed Application Operator` role. Click **Next**.
 11. On the **Members** tab, select a **User, group, or service principal**.
 12. Click **Select members**.
 13. Search for and select the Service Principal you created above.
@@ -209,12 +217,38 @@ az ad sp create-for-rbac --name <ServicePrincipalName>
 16. Return to the Azure home page. Select your storage account.
 17. On the overview page for your storage account, select **Access control (IAM)**.
 18. Click **Add** and select **Add role assignment**.
-4. On the **Roles** tab, select the `Storage Blob Data Contributor` role. Click **Next**.
-11. On the **Members** tab, select a **User, group, or service principal**.
-12. Click **Select members**.
-13. Search for and select the Service Principal you created above.
-14. Click **Select**.
-15. Under the **Members** header, verify that you selected your Service Principal. Click **Review + assign**.
+19. On the **Roles** tab, select the `Storage Blob Data Contributor` role. Click **Next**.
+20. On the **Members** tab, select a **User, group, or service principal**.
+21. Click **Select members**.
+22. Search for and select the Service Principal you created above.
+23. Click **Select**.
+24. Under the **Members** header, verify that you selected your Service Principal. Click **Review + assign**.
+25. Open your Key Vault. In the sidebar, select **Secrets**.
+26. Click **Generate/Import**.
+27. On the Create a secret page, select **Manual**. Enter the name `spsecret` for your secret, and enter the name of the secret you created in Databricks in the **Value** field.
+28. From your Azure CLI, call the Databricks SCIM API to add your service principal to your workspace, replacing `<per-workspace-url> `with the URL of your Databricks workspace, `<personal-access-token> `with the access token you created in an earlier step, and `<application-id>` with the client ID of your service principal: <br/>
+```curl
+curl -X POST 'https://<per-workspace-url>/api/2.0/preview/scim/v2/ServicePrincipals' \
+  --header 'Content-Type: application/scim+json' \
+  --header 'Authorization: Bearer <personal-access-token>' \
+  --data-raw '{
+    "schemas":[
+      "urn:ietf:params:scim:schemas:core:2.0:ServicePrincipal"
+    ],
+    "applicationId":"<application-id>",
+    "displayName": "test-sp",
+    "entitlements":[
+      {
+        "value":"allow-cluster-create"
+      }
+    ]
+  }'
+```
+29. Open Databricks and navigate to your cluster. Select **Permissions**.
+30. In the permissions menu, grant your service principal **Can Manage** permissions. 
+
+> warning " "
+> Before continuing, note the Client ID and Client Secret for your Service Principal: you'll need these variables when configuring the Azure Data Lakes destination in the Segment app.
 
 ### Step 6 - Configure Databricks Cluster
 
@@ -258,7 +292,7 @@ spark.sql.hive.metastore.jars builtin
 5. Open the **Advanced options** toggle and paste the Spark config you copied above, replacing the variables (`<example_variable>`) with information from your workspace.
 6. Select **Confirm and restart**. On the popup window, select **Confirm**.
 7. Log in to your Azure MySQL database using the following command: <br/>
-```powershell
+```curl
 mysql --host=[HOSTNAME] --port=3306 --user=[USERNAME] --password=[PASSWORD]
 ```
 8. Once you've logged in to your MySQL database, run the following commands: <br/>
@@ -303,12 +337,12 @@ After you set up the necessary resources in Azure, the next step is to set up th
   - **Databricks Workspace Resource Group**: The resource group that hosts your Azure Databricks instance. This is visible in Azure on the overview page for your Databricks instance.
   - **Region**: The location of the Azure Storage account you set up in [Step 1 - Create an ALDS-enabled storage account](#step-1---create-an-alds-enabled-storage-account).
   - **Service Principal Client ID**: The Client ID of the Service Principal that you set up in [Step 5 - Set up a Service Principal](#step-5---set-up-a-service-principal).
-  - **Service Principal Client Secret**: The Client ID of the Service Principal that you set up in [Step 5 - Set up a Service Principal](#step-5---set-up-a-service-principal).
+  - **Service Principal Client Secret**: The Secret for the Service Principal that you set up in [Step 5 - Set up a Service Principal](#step-5---set-up-a-service-principal).
 
 
 ### (Optional) Set up your Azure Data Lake using Terraform
 
-Instead of manually configuring your Data Lake, you can create it using the script in the [`terraform-azure-data-lake`](https://github.com/segmentio/terraform-azure-data-lakes) GitHub repository. 
+Instead of manually configuring your Data Lake, you can create it using the script in the [`terraform-azure-data-lake`](https://github.com/segmentio/terraform-azure-data-lakes){:target="_blank”} GitHub repository. 
 
 > note " "
 > This script requires Terraform versions 0.12+.
