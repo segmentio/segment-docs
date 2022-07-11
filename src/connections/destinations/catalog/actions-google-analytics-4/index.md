@@ -121,6 +121,10 @@ For a complete map of Universal Analytics functionality to corresponding Google 
 
 ## FAQ & Troubleshooting
 
+### Attribution Reporting
+
+Google doesn't currently support passing certain reserved fields to the Google Analytics 4 Measurement Protocol API. This includes attribution data, like UTM parameters. If you rely on attribution reporting, you can either send this data as [custom dimensions](/docs/connections/destinations/catalog/actions-google-analytics-4/#custom-dimensions-and-metrics) or implement a parallel client-side integration to collect this data with gtag.js.
+
 ### Debug Mode
 
 The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/7201382?hl=en){:target="_blank"} only works with a client-side implementation through gtag.js, Google Tag Manager, or Firebase. Because Segment's Google Analytics 4 integration is server-side and uses the Measurement Protocol API, debug mode is not supported.
