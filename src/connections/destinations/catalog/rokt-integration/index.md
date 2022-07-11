@@ -7,7 +7,7 @@ The Rokt-Segment destination optimizes campaign performance by integrating conve
 
 This destination is maintained by Rokt. If you have any issues, please contact [Rokt support team](https://rokt.atlassian.net/servicedesk/customer/portal/20/group/98).
 
-# Getting Started
+## Getting Started
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for “Rokt” in the Destinations Catalog. Select the “Rokt Integration” destination.
@@ -16,11 +16,12 @@ This destination is maintained by Rokt. If you have any issues, please contact [
 
 Once you've entered the API credentials for Rokt, the chosen source will send data through to Rokt's API. 
 
-# API calls
+## Supported Methods
+
 Rokt supports the `track` API call, which can be used to send data to Rokt:
 
 
-## Track
+### Track
 The `track` API call is how you record any actions your users perform, along with any properties that describe the action. Read more [here](https://segment.com/docs/connections/spec/track/). 
 An example call would look like:
 ```js
