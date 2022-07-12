@@ -12,7 +12,7 @@ The purpose of this checklist is to give you a window into the full integration 
 
 First you will need a Segment account and access to Dev Center.
 
-Start on the [Developer Center Partner page](https://airtable.com/shrvZzQ6NTTwsc6rQ) to request access during signup. If you already have an account you can log in and go to the [request access to developer center](https://airtable.com/shrvZzQ6NTTwsc6rQ) page.
+Start on the [Developer Center Partner page](https://airtable.com/shrvZzQ6NTTwsc6rQ) to request access during sign-up. If you already have an account you can log in and go to the [request access to developer center](https://airtable.com/shrvZzQ6NTTwsc6rQ) page.
 
 Make sure to sign up with your company email address and to answer all the survey questions to expedite approval.
 
@@ -172,7 +172,7 @@ To maintain the quality of the partner integrations catalog, the Segment Develop
 
 
 - Review documentation partner submitted using [HackMD Template](https://hackmd.io/t7amLXluS7-39rg7ARZgSA?both=)
-    - All signup, API key and data delivery matches test
+    - All sign-up, API key and data delivery matches test
 
 
 - Review catalog information partner submitted using [Google Docs Template](https://docs.google.com/document/d/1kKvqYtZeDPnBjvCrtQSuO3BBH70b_CLO13hYrYIOOtA/edit)
