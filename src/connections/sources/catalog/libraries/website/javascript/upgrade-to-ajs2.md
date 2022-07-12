@@ -74,7 +74,7 @@ Previously, it was possible to attach `trackLink` to any element, and a `trackLi
 ## FAQs
 
 ### I'm already using Analytics 2.0, why am I still receiving the message to upgrade?
-It's possible that a different source you are using is still leveraging an older version of Analytics.js. A very easy way to see which sources are on which versions is to go to the source overview page, then filter on the Analytics.js version.
+It's possible that a different source you're using is still leveraging an older version of Analytics.js. A way to see which sources are on which versions is to go to the source overview page, then filter on the Analytics.js version.
 
 It's also possible that you have used a write key from another source type (like Ruby) to instrument     your Javascript source. To upgrade these sources, you may need to create a new javascript source and replace the write key.
 
