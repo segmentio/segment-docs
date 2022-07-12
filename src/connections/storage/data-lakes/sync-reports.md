@@ -264,13 +264,10 @@ Internal errors occur in Segment's internal systems, and should resolve on their
 
 ## FAQ
 
-{% faq %}
-{% faqitem How are Data Lakes sync reports different from the sync data for Segment Warehouses? %}
+### How are Data Lakes sync reports different from the sync data for Segment Warehouses?
 Both Warehouses and Data Lakes provide similar information about syncs, including the start and finish time, rows synced, and errors.
 
 However, Warehouse sync information is only available in the Segment app: on the Sync History page and Warehouse Health pages. With Data Lakes sync reports, the raw sync information is sent directly to your data lake. This means you can query the raw data and answer your own questions about syncs, and use the data to power alerting and monitoring tools.
-{% endfaqitem %}
-{% faqitem What happens if a sync is partly successful? %}
+
+### What happens if a sync is partly successful?
 Sync reports are currently generated only when a sync completes, or when it fails. Partial failure reporting is not currently supported.
-{% endfaqitem %}
-{% endfaq %}

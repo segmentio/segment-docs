@@ -22,7 +22,7 @@ Segment Data Lakes sends Segment data to a cloud data store, either AWS S3 or Az
 
 To learn more about Segment Data Lakes, check out the Segment blog post [Introducing Segment Data Lakes](https://segment.com/blog/introducing-segment-data-lakes/){:target="_blank"}.
 
-## How Segment Data Lakes work
+## How Data Lakes work
 
 Segment currently supports Data Lakes hosted on two cloud providers: Amazon Web Services (AWS) and Microsoft Azure. Each cloud provider has a similar system for managing data, but offer different query engines, post-processing systems, and analytics options. 
 
@@ -170,28 +170,27 @@ The Data Lakes and Warehouses products are compatible using a mapping, but do no
 When you use Data Lakes, you can either use Data Lakes as your _only_ source of data and query all of your data directly from S3 or ADLS or you can use Data Lakes in addition to a data warehouse.
 
 ## FAQ
-{% faq %}
 
-{% faqitem What AWS Data Lake features are not supported in the Azure Data Lakes public beta? %}
+### What AWS Data Lake features are not supported in the Azure Data Lakes public beta?
 The following capabilities are supported by Segment Data Lakes but not by the Azure Data Lakes public beta:
   - EU region support
   - Deduplication
   - Sync History and Sync Health in Segment app
-{% endfaqitem %}
 
-{% faqitem Can I send all of my Segment data into Data Lakes? %}
+
+#### Can I send all of my Segment data into Data Lakes?
 Data Lakes supports data from all event sources, including website libraries, mobile, server and event cloud sources. Data Lakes doesn't support loading [object cloud source data](/docs/connections/sources/#object-cloud-sources), as well as the users and accounts tables from event cloud sources.
-{% endfaqitem %}
 
-{% faqitem Are user deletions and suppression supported? %}
+
+### Are user deletions and suppression supported?
 Segment doesn't support User deletions in Data Lakes, but supports [user suppression](/docs/privacy/user-deletion-and-suppression/#suppressed-users).
-{% endfaqitem %}
 
-{% faqitem How does Data Lakes handle schema evolution? %}
+
+### How does Data Lakes handle schema evolution?
 As the data schema evolves and new columns are added, Segment Data Lakes will detect any new columns. New columns will be appended to the end of the table in the Glue Data Catalog.
-{% endfaqitem %}
 
-{% faqitem How does Data Lakes work with Protocols? %}
+
+### How does Data Lakes work with Protocols?
 Data Lakes doesn't have a direct integration with [Protocols](/docs/protocols/).
 
 Any changes to events at the source level made with Protocols also change the data for all downstream destinations, including Data Lakes.
@@ -204,21 +203,20 @@ Data types and labels available in Protocols aren't supported by Data Lakes.
 
 - **Data Types** - Data Lakes infers the data type for each event using its own schema inference systems instead of using a data type set for an event in Protocols. This might lead to the data type set in a data lake being different from the data type in the tracking plan. For example, if you set `product_id` to be an integer in the Protocols Tracking Plan, but the event is sent into Segment as a string, then Data Lakes may infer this data type as a string in the Glue Data Catalog.
 - **Labels** - Labels set in Protocols aren't sent to Data Lakes.
-{% endfaqitem %}
 
-{% faqitem How frequently does my Data Lake sync? %}
+
+### How frequently does my Data Lake sync?
 Data Lakes offers 12 syncs in a 24 hour period and doesn't offer a custom sync schedule or selective sync.
-{% endfaqitem %}
 
-{% faqitem What is the cost to use AWS Glue? %}
+
+### What is the cost to use AWS Glue?
 You can find details on Amazon's [pricing for Glue](https://aws.amazon.com/glue/pricing/){:target="_blank"} page. For reference, Data Lakes creates 1 table per event type in your source, and adds 1 partition per hour to the event table.
-{% endfaqitem %}
 
-{% faqitem What is the cost to use Microsoft Azure? %}
+### What is the cost to use Microsoft Azure?
 You can find details on Microsoft's [pricing for Azure](https://azure.microsoft.com/en-us/pricing/){:target="_blank"} page. For reference, Data Lakes creates 1 table per event type in your source, and adds 1 partition per hour to the event table.
-{% endfaqitem %}
 
-{% faqitem What limits does AWS Glue have? %}
+
+### What limits does AWS Glue have?
 AWS Glue has limits across various factors, such as number of databases per account, tables per account, and so on. See the [full list of Glue limits](https://docs.aws.amazon.com/general/latest/gr/glue.html#limits_glue){:target="_blank"} for more information.
 
 The most common limits to keep in mind are:
@@ -230,14 +228,10 @@ Segment stops creating new tables for the events after you exceed this limit. Ho
 
 You should also read the [additional considerations in Amazon's documentation](https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-hive-metastore-glue.html){:target="_blank"} when using AWS Glue Data Catalog.
 
-{% endfaqitem %}
-
-{% faqitem What analytics tools are available to use with my Azure Data Lake? %}
+### What analytics tools are available to use with my Azure Data Lake?
 Azure Data Lakes supports the following analytics tools:
   - PowerBI
   - Azure HDInsight
   - Azure Synapse Analytics
   - Databricks
-{% endfaqitem %}
 
-{% endfaq %}
