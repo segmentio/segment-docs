@@ -24,7 +24,7 @@ To learn more about Segment Data Lakes, check out the Segment blog post [Introdu
 
 ## How Data Lakes work
 
-Segment currently supports Data Lakes hosted on two cloud providers: Amazon Web Services (AWS) and Microsoft Azure. Each cloud provider has a similar system for managing data, but offer different query engines, post-processing systems, and analytics options. 
+Segment supports Data Lakes hosted on two cloud providers: Amazon Web Services (AWS) and Microsoft Azure. Each cloud provider has a similar system for managing data, but offer different query engines, post-processing systems, and analytics options. 
 
 ### How Segment Data Lakes works
 
@@ -158,7 +158,7 @@ If Data Lakes sees a bad data type, for example text in place of a number or an 
 
 ### Data Lake deduplication
 
-> info "Azure Data Lakes currently does not support deduplication"
+> info "Azure Data Lakes does not support deduplication"
 > Deduplication is not supported for Azure Data Lakes during the Public Beta period.
 
 In addition to Segment's [99% guarantee of no duplicates](/docs/guides/duplicate-data/) for data within a 24 hour look-back window, Data Lakes have another layer of deduplication to ensure clean data in your Data Lake. Segment removes duplicate events at the time your Data Lake ingests data.  Data Lakes deduplicate any data synced within the last 7 days, based on the `message_id` field.
