@@ -76,7 +76,7 @@ Previously, it was possible to attach `trackLink` to any element, and a `trackLi
 ### I'm already using Analytics 2.0, why am I still receiving the message to upgrade?
 It's possible that a different source you are using is still leveraging an older version of Analytics.js. A very easy way to see which sources are on which versions is to go to the source overview page, then filter on the Analytics.js version.
 
-It's also possible that you have used a write key from another source type (like Ruby) to instrument     your Javascript source.
+It's also possible that you have used a write key from another source type (like Ruby) to instrument     your Javascript source. To upgrade these sources, you may need to create a new javascript source and replace the write key.
 
 ### Should I expect any glitches or downtime when switching to Analytics 2.0?
 Segment expects no downtime or glitches when switching to A.js 2.0.
@@ -92,7 +92,7 @@ If you're using A.js 2.0, the library field will look like the code snippet belo
 ```
 
 ### Are there specific things to test from an engineering point of view?
-Like any software upgrade, Segment advises you to start with one source, or a development or staging source. Then you should ensure that traffic is flowing the way you expect it to and that it goes to the appropriate destinations. There is detailed upgrade information in the documentation.
+Like any software upgrade, Segment advises you to start with one source, or a development or staging source. Then you should ensure that traffic is flowing the way you expect it to and that it goes to the appropriate destinations.
 
 ### What happens if I don't upgrade by the end of service date?
 There will not be any changes to your sources on the end of service date. However, if you encounter issues or need support, the support team will advise you to upgrade to 2.0. All new features will only be available on the 2.0 versions.
