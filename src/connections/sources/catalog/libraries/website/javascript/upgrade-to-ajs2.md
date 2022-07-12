@@ -70,3 +70,29 @@ Analytics.js 2.0 asynchronously loads different pieces of the library as needed.
 ### Using trackLink on elements that are not links
 
 Previously, it was possible to attach `trackLink` to any element, and a `trackLink` call would fire for that element if it wasn't a link. Now, when you attach `trackLink` to a non-link element, an additional search of that element's children occurs for any nested links and fires track calls based on those links. If you wish to fire track calls on non-link elements that have links as children, you can use a `track` call instead.
+
+## FAQs
+
+### I'm already using Analytics 2.0, why am I still receiving the message to upgrade?
+It's possible that a different source you're using is still leveraging an older version of Analytics.js. A way to see which sources are on which versions is to go to the source overview page, then filter on the Analytics.js version.
+
+It's also possible that you have used a write key from another source type (like Ruby) to instrument     your Javascript source. To upgrade these sources, you may need to create a new javascript source and replace the write key.
+
+### Should I expect any glitches or downtime when switching to Analytics 2.0?
+Segment expects no downtime or glitches when switching to A.js 2.0.
+
+### How can I validate that my source is using Analytics.js 2.0?
+If you're using A.js 2.0, the library field will look like the code snippet below ( `next`  will be part of the version field):
+
+```js
+"library": {
+      "name": "analytics.js",
+      "version": "next-1.XX.X"     
+      }
+```
+
+### Are there specific things to test from an engineering point of view?
+Like any software upgrade, Segment advises you to start with one source, or a development or staging source. Then you should ensure that traffic is flowing the way you expect it to and that it goes to the appropriate destinations.
+
+### What happens if I don't upgrade by the end of service date?
+There will not be any changes to your sources on the end of service date. However, if you encounter issues or need support, the support team will advise you to upgrade to 2.0. All new features will only be available on the 2.0 versions.

@@ -18,14 +18,15 @@ analytics.identify('user_123', {
   name: 'Jane Kim'
 }, {
   integrations: {
-    'All': false,
+    'All': true,
     'Intercom': true,
-    'Google Analytics': true
+    'Google Analytics': true,
+    'Mixpanel': false
   }
 });
 ```
 
-Destination flags are **case sensitive** and match [the Destination's name in the docs](/docs/connections/destinations/catalog/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the Destination's name in the docs](/docs/connections/destinations/catalog/) (for example, "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
 If you're on Segment's Business plan, you can filter track calls right from the Segment UI on your Source Schema page by clicking on the field in the "Integrations" column and then adjusting the toggle for each tool. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
 
