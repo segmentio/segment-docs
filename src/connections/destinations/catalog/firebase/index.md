@@ -116,7 +116,7 @@ If you use Segment's older React Native source library, you must explicitly bund
 4. Change to your iOS directory and run `pod install`.
 5. Add the `analytics-react-native-firebase` module to your `build.gradle` file. (See Step.4 of [Getting Started on Android](/docs/connections/destinations/catalog/firebase/#getting-started-on-android))
 
-For React Native 2.0 you can reference the [install guide](https://github.com/segmentio/analytics-react-native/blob/master/packages/plugins/plugin-firebase/README.md).
+For React Native 2.0 you can reference the [install guide](https://github.com/segmentio/analytics-react-native/blob/master/packages/plugins/plugin-firebase/README.md){:target="_blank"}.
 ## Identify
 
 When you call `identify` Segment will map to the corresponding Firebase Analytics calls:
