@@ -52,7 +52,7 @@ See [Account-level Audiences](/docs/personas/audiences/account-audiences) for mo
 
 ## Send Audiences to Destinations
 
-With the help of Sources and Destinations in Segment's catalog, you create and send Personas Audiences and computed traits to third-party services.
+With the help of Sources and Destinations in Segment's catalog, you can create and send Personas Audiences and computed traits to third-party services.
 
 Segment's Connections pipeline first collects and sends events from your Source to your Destination. Built on top of Connections, Personas then uses the same Source events to let you create Audiences and computed traits within Segment. You can then send the Audience or computed trait you've built to your Destination(s).
 
