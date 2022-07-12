@@ -90,7 +90,7 @@ Real-time Compute allows you to update traits and Audiences as Segment receives 
 
 To create a new Audience:
 
-1. Go to your **Computed Traits** or **Audiences** tab in Personas and selec **New**.
+1. Go to your **Computed Traits** or **Audiences** tab in Personas and select **New**.
    ![A screenshot of the Computed Traits tab in Personas](/docs/personas/images/1538693216424_image.png)
 
 
