@@ -2,17 +2,21 @@
 title: Public Beta Checklist
 ---
 
+> info ""
+> The Developer Center is currently not accepting new components. Segment is committed to redeveloping the Developer Center and a new version will be launched in the future. Include [your information here](https://airtable.com/shrvZzQ6NTTwsc6rQ){:target="_blank"} to join the waitlist!
+
+
 The purpose of this checklist is to give you a window into the full integration lifecycle, from how you first get started with Developer Center, to how we'll test your app before it goes live.
 
 ## 1. Partner Access
 
 First you will need a Segment account and access to Dev Center.
 
-Start on the [Developer Center Partner page](https://segment.com/partners/developer-center/) to request access during signup. If you already have an account you can log in and go to the [request access to developer center](https://app.segment.com/developer/request-access) page.
+Start on the [Developer Center Partner page](https://airtable.com/shrvZzQ6NTTwsc6rQ) to request access during signup. If you already have an account you can log in and go to the [request access to developer center](https://airtable.com/shrvZzQ6NTTwsc6rQ) page.
 
 Make sure to sign up with your company email address and to answer all the survey questions to expedite approval.
 
-- Create Segment account and request access for Dev Center ([link](https://app.segment.com/signup?redirect=%2Fdeveloper%2Frequest-access&partner_signup=))
+- Create Segment account and request access for Dev Center ([link](https://airtable.com/shrvZzQ6NTTwsc6rQ))
 
 
 - Complete partner survey
