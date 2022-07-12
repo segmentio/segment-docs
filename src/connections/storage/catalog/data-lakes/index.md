@@ -90,6 +90,7 @@ To set up Azure Data Lakes, create your Azure resources and then enable the Data
 
 Before you can configure your Azure resources, you must complete the following prerequisites:
 - [Create an Azure subscription](https://azure.microsoft.com/en-us/free/){:target="_blank”}
+- [Create an Azure resource group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups){:target="_blank”}
 - Create an account with `Microsoft.Authorization/roleAssignments/write` permissions
 - Configure the [Azure Command Line Interface (Azure CLI)](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli){:target="_blank”}
 
@@ -115,7 +116,7 @@ Before you can configure your Azure resources, you must complete the following p
 14. Select **Container**. Give your container a name, and select the **Private** level of public access. Click **Create**. 
 
 > warning " "
-> Before continuing, note the Location, Storage account name, and the Azure storage container name: you'll need these variables when configuring the Azure Data Lakes destination in the Segment app.
+> Before continuing, note the Location, Storage account name, and the Azure storage container name: you'll need this information when configuring the Azure Data Lakes destination in the Segment app.
 
 ### Step 2 - Set up Key Vault
 
@@ -161,7 +162,7 @@ Before you can configure your Azure resources, you must complete the following p
   ```
 
 > warning " "
-> Before continuing, note the MySQL server URL, username and password for the admin account, and your database name: you'll need these variables when configuring the Azure Data Lakes destination in the Segment app.
+> Before continuing, note the MySQL server URL, username and password for the admin account, and your database name: you'll need this information when configuring the Azure Data Lakes destination in the Segment app.
 
 
 ### Step 4 - Set up Databricks
@@ -191,7 +192,7 @@ Before you can configure your Azure resources, you must complete the following p
 16. When you've entered all of your information, click **Create**.
 
 > warning " "
-> Before continuing, note the Cluster ID, Workspace name, Workspace URL, and the Azure Resource Group for your Databricks Workspace: you'll need these variables when configuring the Azure Data Lakes destination in the Segment app.
+> Before continuing, note the Cluster ID, Workspace name, Workspace URL, and the Azure Resource Group for your Databricks Workspace: you'll need this information when configuring the Azure Data Lakes destination in the Segment app.
 
 ### Step 5 - Set up a Service Principal
 
@@ -248,7 +249,7 @@ curl -X POST 'https://<per-workspace-url>/api/2.0/preview/scim/v2/ServicePrincip
 30. In the permissions menu, grant your service principal **Can Manage** permissions. 
 
 > warning " "
-> Before continuing, note the Client ID and Client Secret for your Service Principal: you'll need these variables when configuring the Azure Data Lakes destination in the Segment app.
+> Before continuing, note the Client ID and Client Secret for your Service Principal: you'll need this information when configuring the Azure Data Lakes destination in the Segment app.
 
 ### Step 6 - Configure Databricks Cluster
 
@@ -500,7 +501,5 @@ spark.sql.hive.metastore.schema.verification.record.version false
 {% faqitem What do I do if I get a "Version table does not exist" error when setting up the Azure MySQL database? %}
 Check your Spark configs to ensure that the information you entered about the database is correct, then restart the cluster. The Databricks cluster automatically initializes the Hive Metastore, so an issue with your config file will stop the table from being created.  If you continue to encounter errors, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
 {% endfaqitem %}
-
-
 
 {% endfaq %}
