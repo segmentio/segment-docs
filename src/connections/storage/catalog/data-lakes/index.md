@@ -104,7 +104,6 @@ Before you can configure your Azure resources, you must complete the following p
 6. Click **Next: Advanced**.
 7. On the **Advanced Settings** tab in the Security section, select the following options:
   - Require secure transfer for REST API operations
-  - Enable blob public access
   - Enable storage account key access
   - Minimum TLS version: Version 1.2
 8. In the Data Lake Storage Gen2 section, select **Enable hierarchical namespace**. In the Blob storage selection, select the **Hot** option. 

@@ -12,17 +12,17 @@ Data Lakes and Warehouses are not identical, but are compatible with a configura
 ## Data freshness
 
 Data Lakes and Warehouses offer different sync frequencies:
-- Warehouses can sync up to once an hour, with the ability to set a custom sync schedule and [selectively sync](/docs/connections/warehouses/selective-sync/) collections and properties within a source to Warehouses.
+- Warehouses can sync up to once an hour, with the ability to set a custom sync schedule and [selectively sync](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync) collections and properties within a source to Warehouses.
 - Data Lakes offers 12 syncs in a 24 hour period, and doesn't offer custom sync schedules or selective sync.
 
 ## Duplicates
 
 Segment's [99% guarantee of no duplicates](/docs/guides/duplicate-data/) for data within a 24 hour look-back window applies to data in Segment Data Lakes and Warehouses.
 
-> note "Deduplication is not supported for the Azure Data Lakes public beta"
-> Deduplication is not currently supported for the Azure Data Lakes public beta. For more information about Azure Data Lakes, see the [Data Lakes overview documentation](/docs/connections/storage/data-lakes/index/#how-azure-data-lakes-works).
-
 [Warehouses](/docs/guides/duplicate-data/#warehouse-deduplication) and [Data Lakes](/docs/guides/duplicate-data/#data-lake-deduplication) also have a secondary deduplication system to further reduce the volume of duplicates to ensure clean data in your Warehouses and Data Lakes.
+
+> note "Secondary deduplication is not supported during the Azure Data Lakes public beta"
+> During the Azure Data Lakes public beta, Segment's guarantee of 99% no duplicates applies, but secondary deduplication is not supported.
 
 ## Object vs event data
 

@@ -158,10 +158,10 @@ If Data Lakes sees a bad data type, for example text in place of a number or an 
 
 ### Data Lake deduplication
 
-> info "Azure Data Lakes does not support deduplication"
-> Deduplication is not supported for Azure Data Lakes during the Public Beta period.
+In addition to Segment's [99% guarantee of no duplicates](/docs/guides/duplicate-data/) for data within a 24 hour look-back window, Data Lakes have another layer of deduplication to ensure clean data in your Data Lake. Segment removes duplicate events at the time your Data Lake ingests data.  Data Lakes deduplicate any data synced within the last 7 days, based on the `messageId` field.
 
-In addition to Segment's [99% guarantee of no duplicates](/docs/guides/duplicate-data/) for data within a 24 hour look-back window, Data Lakes have another layer of deduplication to ensure clean data in your Data Lake. Segment removes duplicate events at the time your Data Lake ingests data.  Data Lakes deduplicate any data synced within the last 7 days, based on the `message_id` field.
+> note "Secondary deduplication is not supported during the Azure Data Lakes public beta"
+> During the Azure Data Lakes public beta, Segment's guarantee of 99% no duplicates within the 24-hour look-back window applies, but secondary deduplication is not supported.
 
 ### Using a Data Lake with a Data Warehouse
 
