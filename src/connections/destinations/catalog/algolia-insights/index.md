@@ -1,7 +1,6 @@
 ---
 title: Algolia Insights Destination
 rewrite: true
-layout: dest-test
 beta: true
 redirect_from: '/connections/destinations/catalog/algolia/'
 id: 5d373a350abf930001a6b70f

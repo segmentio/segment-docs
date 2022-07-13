@@ -258,6 +258,9 @@ The `Segment.set()` method accepts an object with the following fields:
 - `id` - Object's unique identifier.
 - `properties` - Object with free-form data.
 
+> warning ""
+> When you use the `set()` method, you won't see events in the Source Debugger. Segment only sends events to connected warehouses.
+
 ### Runtime and dependencies
 
 {% include content/functions/runtime.md %}
@@ -347,11 +350,11 @@ async function onRequest(request, settings) {
 
 ### Error types
 
-- **Bad Request** is any error thrown by your code not covered by the other errors.
+- **Bad Request**: is any error thrown by your code not covered by the other errors.
 - **Invalid Settings**: A configuration error prevented Segment from executing your code. If this error persists for more than an hour, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
 - **Message Rejected**: Your code threw `InvalidEventPayload` or `ValidationError` due to invalid input.
 - **Unsupported Event Type**: Your code does not implement a specific event type (`onTrack()`, etc.) or threw a `EventNotSupported` error.
-- **Retry** - Your code threw `RetryError` indicating that the function should be retried.
+- **Retry**: Your code threw `RetryError` indicating that the function should be retried.
 
 Segment only attempts to run your source function again if a **Retry** error occurs.
 
@@ -391,3 +394,7 @@ The maximum payload size for an incoming webhook payload is 512 KiB.
 ##### What is the timeout for a function to execute?
 
 The execution time limit is five seconds, however Segment strongly recommends that you keep execution time as low as possible. If you are making multiple external requests you can use async / await to make them concurrently, which will help keep your execution time low.
+
+#### Does Segment alter incoming payloads?
+
+Segment alphabetizes payload fields that come in to **deployed** Source Functions. Segment doesn't alphabetize payloads in the Functions tester. If you need to verify the exact payload that hits a Source Function, alphabetize it first. You can then make sure it matches what the Source Function ingests.

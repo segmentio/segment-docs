@@ -71,12 +71,12 @@ analytics.identify([userId], [traits], [options], [callback]);
 
 The Identify call has the following fields:
 
-Field | | Type | Description
------ | | ---- | -----------
-`userId` | optional | String | The database ID for the user. If you don't know who the user is yet, you can omit the `userId` and just record `traits`. You can read more about identities in the [identify reference](/docs/connections/spec/identify).
-`traits` | optional | Object | A dictionary of traits you know about the user, like `email` or `name`. You can read more about traits in the [identify reference](/docs/connections/spec/identify/).
-`options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `traits` object, pass an empty object (as an '{}') before `options`._
-`callback` | optional | Function | A function executed after a timeout of 300 ms, giving the browser time to make outbound requests first.
+| Field      |          | Type     | Description                                                                                                                                                                                                                                       |
+| ---------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `userId`   | optional | String   | The database ID for the user. If you don't know who the user is yet, you can omit the `userId` and just record `traits`. You can read more about identities in the [identify reference](/docs/connections/spec/identify).                         |
+| `traits`   | optional | Object   | A dictionary of traits you know about the user, like `email` or `name`. You can read more about traits in the [identify reference](/docs/connections/spec/identify/).                                                                             |
+| `options`  | optional | Object   | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `traits` object, pass an empty object (as an '{}') before `options`._ |
+| `callback` | optional | Function | A function executed after a timeout of 300 ms, giving the browser time to make outbound requests first.                                                                                                                                           |
 
 By default, Analytics.js caches traits in the browser's `localStorage` and attaches them to each Identify call.
 
@@ -89,7 +89,7 @@ analytics.identify({
 });
 ```
 
-Then, when the user completes the signup process, you might see the following:
+Then, when the user completes the sign up process, you might see the following:
 
 ```js
 analytics.identify('12091906-01011992', {
@@ -144,7 +144,7 @@ For more information about choosing which events to track, event naming, and mor
 The only required argument on Track calls in Analytics.js is an `event` name string. Read more about how Segment recommends [naming your events](/docs/connections/spec/track#event).
 
 
-#### Track Link
+#### Track link
 
 `trackLink` is a helper method that attaches the `track` call as a handler to a link.
 With `trackLink`, Analytics.js inserts a timeout of 300 ms to give the `track` call more time. This is useful when a page would redirect before the `track` method could complete all requests.
@@ -155,11 +155,11 @@ The `trackLink` method follows the format below.
 analytics.trackLink(element, event, [properties])
 ```
 
-Field | | Type | Description
------ | | ---- | -----------
-`element(s)` | | Element or Array | DOM element to bind with `track` method. You may pass an array of elements or jQuery objects. _Note: This must be an element, **not** a CSS selector._
-`event` | | String or Function | The name of the event, passed to the `track` method. Or a **function** that returns a string to use as the name of the `track` event.
-`properties` | optional | Object or Function | A dictionary of properties to pass with the track method or a **function** that returns an object to use as the `properties` of the event.
+| Field        |          | Type               | Description                                                                                                                                            |
+| ------------ | -------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `element(s)` |          | Element or Array   | DOM element to bind with `track` method. You may pass an array of elements or jQuery objects. _Note: This must be an element, **not** a CSS selector._ |
+| `event`      |          | String or Function | The name of the event, passed to the `track` method. Or a **function** that returns a string to use as the name of the `track` event.                  |
+| `properties` | optional | Object or Function | A dictionary of properties to pass with the track method or a **function** that returns an object to use as the `properties` of the event.             |
 
 Example:
 
@@ -171,7 +171,7 @@ analytics.trackLink(link, 'Clicked Free-Trial Link', {
 });
 ```
 
-#### Track Form
+#### Track form
 
 `trackForm` is a helper method that binds a `track` call to a form submission.
 The `trackForm` method inserts a timeout of 300 ms to give the `track` call more time to complete. This is useful to prevent a page from redirecting before the `track` method could complete all requests.
@@ -216,15 +216,15 @@ analytics.page([category], [name], [properties], [options], [callback]);
 
 The `page` call has the following fields:
 
-Field | | Type | Description
------ | | ---- | -----------
-`category` | optional | String | The category of the page. Useful for cases like ecommerce where many pages might live under a single category. _Note: if you pass only one string to `page` it is assumed to be `name`. You **must** include a `name` to send a `category`._
-`name` | optional | String | The name of the page.
-`properties` | optional | Object | A dictionary of properties of the page. Note: Analytics.js collects `url`, `title`, `referrer` and `path` are automatically. This defaults to a `canonical url`, if available, and falls back to `document.location.href`.
-`options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_.
-`callback` | optional | Function | A function that runs after a timeout of 300 ms, giving the browser time to make outbound requests first.
+| Field        |          | Type     | Description                                                                                                                                                                                                                                          |
+| ------------ | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `category`   | optional | String   | The category of the page. Useful for cases like ecommerce where many pages might live under a single category. _Note: if you pass only one string to `page` it is assumed to be `name`. You **must** include a `name` to send a `category`._         |
+| `name`       | optional | String   | The name of the page.                                                                                                                                                                                                                                |
+| `properties` | optional | Object   | A dictionary of properties of the page. Note: Analytics.js collects `url`, `title`, `referrer` and `path` are automatically. This defaults to a `canonical url`, if available, and falls back to `document.location.href`.                           |
+| `options`    | optional | Object   | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_. |
+| `callback`   | optional | Function | A function that runs after a timeout of 300 ms, giving the browser time to make outbound requests first.                                                                                                                                             |
 
-#### Default Page Properties
+#### Default page properties
 
 Analytics.js adds properties to each `page` call.
 
@@ -312,17 +312,17 @@ analytics.alias(userId, [previousId], [options], [callback]);
 
 The Alias call has the following fields:
 
-Field | | Type | Description
------ | | ---- | -----------
-`userId` | | String | The new user ID you want to associate with the user.
-`previousId` | optional | String | The previous ID that the user was recognized by. This defaults to the currently identified user's ID.
-`options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call.
-`callback` | optional | Function | A function that is executed after a timeout of 300 ms, giving the browser time to make outbound requests first.
+| Field        |          | Type     | Description                                                                                                                                     |
+| ------------ | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `userId`     |          | String   | The new user ID you want to associate with the user.                                                                                            |
+| `previousId` | optional | String   | The previous ID that the user was recognized by. This defaults to the currently identified user's ID.                                           |
+| `options`    | optional | Object   | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. |
+| `callback`   | optional | Function | A function that is executed after a timeout of 300 ms, giving the browser time to make outbound requests first.                                 |
 
 For more details about Alias, including the **`alias` call payload**, check out the [Segment Spec](/docs/connections/spec/alias/).
 
 
-## Utility Methods
+## Utility methods
 
 The Analytics.js utility methods help you change how Segment loads on your page. They include:
 
@@ -357,9 +357,9 @@ analytics.ready(callback);
 
 The `ready` method has the following fields:
 
-Field | Type | Description
------ | ---- | -----------
-`callback` | Function | A function to be executed after all enabled destinations have loaded.
+| Field      | Type     | Description                                                           |
+| ---------- | -------- | --------------------------------------------------------------------- |
+| `callback` | Function | A function to be executed after all enabled destinations have loaded. |
 
 ### Debug
 
@@ -386,10 +386,10 @@ Use the `on` method to set listeners for these events and run your own custom co
 analytics.on(method, callback);
 ```
 
-Field | Type | Description
------ | ---- | -----------
-`method` | String | Name of the method to listen for.
-`callback`| Function | A function to execute after each emitted method, taking three arguments: `event`, `properties`, `options`.
+| Field      | Type     | Description                                                                                                |
+| ---------- | -------- | ---------------------------------------------------------------------------------------------------------- |
+| `method`   | String   | Name of the method to listen for.                                                                          |
+| `callback` | Function | A function to execute after each emitted method, taking three arguments: `event`, `properties`, `options`. |
 
 Example:
 
@@ -407,7 +407,7 @@ This method emits events _before_ they are processed by the Segment integration,
 > Page event properties are stored in the `options` object.
 
 
-### Extending Timeout
+### Extending timeout
 
 The `timeout` method sets the length (in milliseconds) of callbacks and helper functions. This is useful if you have multiple scripts that need to fire in your callback or `trackLink`, `trackForm` helper function.
 
@@ -421,7 +421,7 @@ analytics.timeout(500);
 > If you're triggering ad network conversion pixels, Segment recommends extending timeout to 500 ms to account for slow load times.
 
 
-### Reset or Logout
+### Reset or log out
 
 Calling `reset` resets the `id`, including `anonymousId`, and clears `traits` for the currently identified user and group.
 
@@ -481,7 +481,7 @@ Destination flags are **case sensitive** and match [the destination's name in th
 > Business tier customers can filter Track calls from the Source Schema page in the Segment UI. Segment recommends that you use the UI to simplify filter management and make updates without changing your site's code.
 
 
-### Load Options
+### Load options
 
 > info ""
 > **Note:** To use this feature, you must be on snippet version 4.1.0 or later. You can get the latest version of the snippet [here](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet).
@@ -504,7 +504,7 @@ onConsentDialogClosed(function(consentedTools){
 })
 ```
 
-#### Bundle Obfuscation
+#### Bundle obfuscation
 You can also add an `obfuscate` property to the object in the second parameter, which obscures the URL from which your integrations and destination actions are loaded. This helps prevent words that are flagged by ad blockers to not be detected in your URL, enabling the integration to properly load.
 
 For example:
@@ -521,7 +521,7 @@ The `obfuscate` value is `false` by default.
 When enabled, Analytics.js automatically retries network and server errors. With persistent retries, Analytics.js can:
 
 - **Support offline tracking**. Analytics.js queues your events and delivers them when the user comes back online.
-- **Better handle network issues**. If your application can't connect to Segment's API, we'll continue to store the events on the browser to ensure you don't lose any data.
+- **Better handle network issues**. When your application can't connect to the Segment API, Segment continues to store the events on the browser to prevent data loss.
 
 Analytics.js stores events in `localStorage` and falls back to in-memory storage when `localStorage` is unavailable. It retries up to 10 times with an incrementally increasing back-off time between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device's local storage. See the [destination Retries documentation](/docs/connections/destinations/#retries) to learn more.
 
@@ -590,12 +590,12 @@ No, there is no change in behavior to Middlewares.
 #### When using Segment features (Schema filtering, integrations object, Protocols) to filter events from going to destinations (device and cloud-mode), will batching impact the filtering of events?
 No, there is no impact to how events filter.
 
-## Plugin Architecture
+## Plugin architecture
 When you develop against Analytics 2.0, the plugins you write can augment functionality, enrich data, and control the flow and delivery of events. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
 
 Though middlewares function the same as plugins, it's best to use plugins as they are easier to implement and are more testable.
 
-### Plugin Categories
+### Plugin categories
 Plugins are bound by Analytics 2.0 which handles operations such as observability, retries, and error handling. There are two different categories of plugins:
 * **Critical Plugins**: Analytics.js expects this plugin to be loaded before starting event delivery. Failure to load a critical plugin halts event delivery. Use this category sparingly, and only for plugins that are critical to your tracking.
 * **Non-critical Plugins**: Analytics.js can start event delivery before this plugin finishes loading. This means your plugin can fail to load independently from all other plugins. For example, every Analytics.js destination is a non-critical plugin. This makes it possible for Analytics.js to continue working if a partner destination fails to load, or if users have ad blockers turned on that are targeting specific destinations.
@@ -605,15 +605,15 @@ Plugins are bound by Analytics 2.0 which handles operations such as observabilit
 
 Non-critical plugins run through a timeline that executes in order of insertion based on the entry type. Segment has these five entry types of non-critical plugins:
 
-Type | Details
----- | -------
-`before` | Executes before event processing begins. These are plugins that run before any other plugins run. <br><br>For example, validating events before passing them along to other plugins. A failure here could halt the event pipeline. <br><br> See the example of how Analytics.js uses the [Event Validation plugin](https://github.com/segmentio/analytics-next/blob/master/src/plugins/validation/index.ts){:target="_blank"} to verify that every event has the correct shape.
-`enrichment` | Executes as the first level of event processing. These plugins modify an event. <br><br> See the example of how Analytics.js uses the [Page Enrichment plugin](https://github.com/segmentio/analytics-next/blob/master/src/plugins/page-enrichment/index.ts){:target="_blank"} to enrich every event with page information.
-`destination` | Executes as events begin to pass off to destinations. <br><br> This doesn't modify the event outside of the specific destination, and failure doesn't halt the execution.
-`after` | Executes after all event processing completes. You can use this to perform cleanup operations. <br><br>An example of this is the [Segment.io Plugin](https://github.com/segmentio/analytics-next/blob/master/src/plugins/segmentio/index.ts){:target="_blank"} which waits for destinations to succeed or fail so it can send it observability metrics.
-`utility` | Executes once during the bootstrap, to give you an outlet to make any modifications as to how Analytics.js works internally. This allows you to augment Analytics.js functionality.
+| Type          | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `before`      | Executes before event processing begins. These are plugins that run before any other plugins run. <br><br>For example, validating events before passing them along to other plugins. A failure here could halt the event pipeline. <br><br> See the example of how Analytics.js uses the [Event Validation plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/validation/index.ts){:target="_blank"} to verify that every event has the correct shape. |
+| `enrichment`  | Executes as the first level of event processing. These plugins modify an event. <br><br> See the example of how Analytics.js uses the [Page Enrichment plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/page-enrichment/index.ts){:target="_blank"} to enrich every event with page information.                                                                                                                                                     |
+| `destination` | Executes as events begin to pass off to destinations. <br><br> This doesn't modify the event outside of the specific destination, and failure doesn't halt the execution.                                                                                                                                                                                                                                                                                                                        |
+| `after`       | Executes after all event processing completes. You can use this to perform cleanup operations. <br><br>An example of this is the [Segment.io Plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/segmentio/index.ts){:target="_blank"} which waits for destinations to succeed or fail so it can send it observability metrics.                                                                                                                         |
+| `utility`     | Executes once during the bootstrap, to give you an outlet to make any modifications as to how Analytics.js works internally. This allows you to augment Analytics.js functionality.                                                                                                                                                                                                                                                                                                              |
 
-### Example Plugins
+### Example plugins
 Here's an example of a plugin that converts all track event names to lowercase before the event goes through the rest of the pipeline:
 
 ```js
@@ -718,19 +718,19 @@ Registering plugins enable you to modify your analytics implementation to best f
 await window.analytics.register(pluginA, pluginB, pluginN)
 ```
 
-## Video Player Plugins
+## Video player plugins
 
 Segment offers video player 'plugins' so you can quickly collect video events using Analytics.js. See the specific documentation below to learn more:
 
 - [YouTube](/docs/connections/sources/catalog/libraries/website/plugins/youtube)
 - [Vimeo](/docs/connections/sources/catalog/libraries/website/plugins/vimeo)
 
-## Cross-Subdomain Analytics
+## Cross-subdomain analytics
 
 Analytics.js tracks across subdomains out of the box; all Segment destinations fully support this feature.
 
 
-## Analytics.js Performance
+## Analytics.js performance
 
 The Analytics.js library and all Destination libraries are loaded with the [HTML script `async` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async){:target="_blank"}. This also means that Segment fires methods asynchronously, so you should adjust your code accordingly if you require that events be sent from the browser in a specific order.
 

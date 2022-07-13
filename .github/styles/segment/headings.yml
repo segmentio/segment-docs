@@ -31,6 +31,7 @@ exceptions:
 - Amberflo
 - Amplitude
 - Amplitude (Actions)
+- Analytics.js
 - Anodot
 - Appcues
 - AppNexus
@@ -375,3 +376,4 @@ exceptions:
 - Zendesk
 - Zendesk Connect
 - Zopim
+- JavaScript

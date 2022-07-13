@@ -47,13 +47,18 @@ If you want to track the `page` or `screen` calls to Mixpanel with the name or c
 > info ""
 > Beginning with "Consolidate Page" calls, the following options are each *mutually exclusive*. [See the code for details](https://github.com/segmentio/analytics.js-integrations/blob/master/integrations/mixpanel/lib/index.js#L96-L139){:target="_blank"}.
 
+### Prioritization of settings
+
+When you use the Mixpanel destination in Cloud-mode, Segment sends events for each option you select. This may result in Mixpanel receiving duplicate events for a single page call.
+
+When you use the Mixpanel destination in Device-mode, Segment prioritizes the options to prevent duplicate calls as follows:
 
 
-If you select "Track all Pages to Mixpanel", all `page` calls regardless of how you have customized it will send a `Loaded A Page`. Even if you have the other options enabled, Segment sends this call to prevent double counting your pageviews.
+- If you select "Track all Pages to Mixpanel", all `page` calls regardless of how you have customized it will send a `Loaded A Page`. Even if you have the other options enabled, Segment sends this call to prevent double counting your pageviews.
 
-If you select "Track Categorized Pages to Mixpanel", Segment sends a `Viewed [category] Page` event.
+- If you select "Track Categorized Pages to Mixpanel", Segment sends a `Viewed [category] Page` event.
 
-If you select "Track Named Pages to Mixpanel", Segment sends a `Viewed [name] Page` event.
+- If you select "Track Named Pages to Mixpanel", Segment sends a `Viewed [name] Page` event.
 
 > info ""
 > If both Option 2 and 3 are enabled, Segment gives precedence to `category`. If you pass both `category` and `name`, (for example, `analytics.page('category', 'name');`), Segment sends a `Viewed category name Page` to Mixpanel.
@@ -339,9 +344,6 @@ Segment doesn't map `$library_version` since that is reserved for Mixpanel's lib
 
 ## Features
 
-### Autotrack
-
-Mixpanel discontinued the Autotrack feature in February 2021. The feature is no longer available for use.
 
 ### People
 
@@ -584,7 +586,7 @@ You can check a specific user profile in Mixpanel for Computed Traits by going t
 
 Computed traits without a lookback window search across all historical events, and update in real time.
 
-Computed traits with a lookback window only search across events that occurred within the specified timeframe. Computed traits *with* a lookback window are updated hourly.
+Computed traits with a lookback window only search across events that occurred within the specified time frame. Computed traits *with* a lookback window are updated hourly.
 
 ![](images/pers-03-lookback.png)
 
@@ -624,7 +626,7 @@ You can check a specific user profile in Mixpanel for audience events by going t
 
 Audiences without a lookback window searches across all historical events and update in real time.
 
-Audiences with a lookback window only search across events that occurred within the specified timeframe. Audiences *with* a lookback window are updated hourly.
+Audiences with a lookback window only search across events that occurred within the specified time frame. Audiences *with* a lookback window are updated hourly.
 
 
 ![](images/pers-10-lookback.png)
