@@ -82,7 +82,7 @@ analytics.track("Clicked Buy Now button", {
 ```
 
 > warning "Important"
-> You must have a HubSpot Enterprise account for Segment to pass traits from an Identify call through to your Track call and send them as[custom events to HubSpot](https://knowledge.hubspot.com/events-user-guide-v2/using-custom-events).
+> Track calls and custom events in Hubspot require Hubspot Marketing Hub (https://knowledge.hubspot.com/analytics-tools/create-custom-behavioral-events). You must have a HubSpot Enterprise account for Segment to pass traits from an Identify call through to your Track call and send them as[custom events to HubSpot](https://knowledge.hubspot.com/events-user-guide-v2/using-custom-events).
 
 The event will appear in your HubSpot UI but may take up to 60 minutes to appear in the graph visualization.
 
