@@ -5,6 +5,9 @@ redirect_from: '/connections/destinations/catalog/data-lakes/'
 
 {% include content/plan-grid.md name="data-lakes" %}
 
+> warning "Azure Data Lakes public beta data deletion policies"
+> Data deletion is not supported by the Azure Data Lakes product, as customers retain data in systems that they manage. Azure Data Lakes is not supported in EU during the public beta, so European data recency requirements do not apply.
+
 A **data lake** is a centralized cloud storage location that holds structured and unstructured data. 
 
 Data lakes typically have four layers: 
@@ -171,8 +174,8 @@ When you use Data Lakes, you can either use Data Lakes as your _only_ source of 
 
 ## FAQ
 
-### What AWS Data Lake features are not supported in the Azure Data Lakes public beta?
-The following capabilities are supported by Segment Data Lakes but not by the Azure Data Lakes public beta:
+### What are some limitations of the Azure Data Lakes public beta?
+The following capabilities are not supported during the Azure Data Lakes public beta:
   - EU region support
   - Deduplication
   - Sync History and Sync Health in Segment app
