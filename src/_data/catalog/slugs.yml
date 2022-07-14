@@ -42,3 +42,5 @@
   override: "actions-snap-conversions"
 - original: "mixpanel-actions"
   override: "actions-mixpanel"
+- original: "rokt"
+  override: "rokt-integration"
