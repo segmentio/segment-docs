@@ -40,3 +40,5 @@
   override: "freshsales-suite-crm"
 - original: "snapchat-conversions-api"
   override: "actions-snap-conversions"
+- original: "mixpanel-actions"
+  override: "actions-mixpanel"
