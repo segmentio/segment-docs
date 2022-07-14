@@ -1,5 +1,5 @@
 ---
-title: Rokt Integration Destination
+title: Rokt Destination
 id: 6268a16ce311a548d8cb1a72
 ---
 
@@ -10,8 +10,8 @@ This destination is maintained by Rokt. If you have any issues, please contact t
 ## Getting Started
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-2. Search for “Rokt” in the Destinations Catalog. Select the “Rokt Integration” destination.
-3. Choose which source should send data to the “Rokt Integration” destination.
+2. Search for “Rokt” in the Destinations Catalog. Select the **Rokt** destination.
+3. Choose which source should send data to the Rokt destination.
 4. Enter the API key provided to you by your Rokt Account manager. If you haven't received your login credentials, please reach out to them.
 
 Once you've entered the API credentials for Rokt, the chosen source sends data through to Rokt's API. 
