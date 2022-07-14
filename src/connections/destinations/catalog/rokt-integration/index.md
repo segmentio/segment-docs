@@ -14,7 +14,7 @@ This destination is maintained by Rokt. If you have any issues, please contact t
 3. Choose which source should send data to the Rokt destination.
 4. Enter the API key provided to you by your Rokt Account manager. If you haven't received your login credentials, please reach out to them.
 
-Once you've entered the API credentials for Rokt, the chosen source sends data through to Rokt's API. 
+Once you've entered the API credentials for Rokt, the chosen source sends data through to Rokt's API.
 
 ## Supported Methods
 
@@ -22,7 +22,7 @@ Rokt supports the `track` API call, which can be used to send data to Rokt:
 
 
 ### Track
-The `track` API call is how you record any actions your users perform, along with any properties that describe the action. [Learn more about the track call](/docs/connections/spec/track/). 
+The `track` API call is how you record any actions your users perform, along with any properties that describe the action. [Learn more about the track call](/docs/connections/spec/track/).
 An example call would look like:
 ```js
 analytics.track('Clicked Login Button', , {
@@ -32,4 +32,4 @@ analytics.track('Clicked Login Button', , {
 })
 ```
 
-Segment sends `track` calls to Rokt as `track` events. You can use these to configure conversion goals to inform the destnation predictive analyses. You can use any `track` call made in the past week as the basis for a predictive goal in the Rokt destination.
+Segment sends `track` calls to Rokt as `track` events. You can use these to configure conversion goals to inform the destination predictive analyses. You can use any `track` call made in the past week as the basis for a predictive goal in the Rokt destination.
