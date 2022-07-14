@@ -1,11 +1,11 @@
 ---
-title: React Native 2.0 Migration Guide
+title: Upgrade to React Native 2.0
 strat: react-native
 ---
 
-If you're using `analytics-react-native 1.5.1` or older, follow these steps to migrate to `analytics-react-native 2.0`. You can continue to use your React Native source write key for the migration to view historical events. Additionally, with React Native 2.0, you don't need to leverage bundled SDK packages, but can use [this list of supported destinations](/docs/connections/sources/catalog/libraries/mobile/react-native#supported-destinations).
+If you're using `analytics-react-native 1.5.1` or older, follow these steps to upgrade to `analytics-react-native 2.0`. You can continue to use your React Native source write key for the upgrade to view historical events. Additionally, with React Native 2.0, you don't need to leverage bundled SDK packages, but can use [this list of supported destinations](/docs/connections/sources/catalog/libraries/mobile/react-native#supported-destinations).
 
-To migrate to React Native 2.0:
+To upgrade to React Native 2.0:
 
 1. Update the existing package:
     ```js
