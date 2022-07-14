@@ -33,7 +33,7 @@ sections:
   - path: /connections/destinations/catalog/facebook-pixel
     title: Facebook Pixel destination
   - path: /connections/destinations/catalog/actions-facebook-conversions-api
-    title: Facebook Conversions API (Actions) destination 
+    title: Facebook Conversions API (Actions) destination
   - path: /connections/destinations/catalog/facebook-app-events
     title: Facebook App Events destination
   - path: /connections/destinations/catalog/facebook-offline-conversions
@@ -73,7 +73,7 @@ sections:
     title: Google Ads Remarketing Lists destination (Personas)
   - path: /connections/destinations/catalog/personas-display-video-360
     title: Google Display & Video 360 destination (Personas)
-   
+
 
 - slug: salesforce
   section_title: Salesforce Integrations
@@ -160,7 +160,7 @@ sections:
   - path: /connections/sources/catalog/libraries/mobile/react-native
     title: Analytics-React-Native mobile source
   - path: /connections/sources/catalog/libraries/mobile/react-native/migration
-    title: React-Native 2.0 Migration Guide
+    title: Upgrade to React-Native 2.0
   - path: /connections/sources/catalog/libraries/mobile/react-native/troubleshooting
     title: Troubleshooting Analytics-React-Native
   - path: /connections/sources/catalog/libraries/mobile/react-native/react-faqs/
