@@ -108,7 +108,7 @@ By default, Segment only bundles `Firebase/Core` which is [Firebase's Analytics 
 
 ## Setting up Firebase with Analytics-React-Native
 
-If you use Segment's React Native source library, you must explicitly bundle the mobile SDKs for both iOS and Android with your project.
+If you use Segment's older React Native source library, you must explicitly bundle the mobile SDKs for both iOS and Android with your project.
 
 1. Use yarn to add the `analytics-react-native-firebase` SDKs.  (`@segment/analytics-react-native-firebase`)
 2. Add `import` statements to your code so you can access the SDKs.
@@ -116,6 +116,7 @@ If you use Segment's React Native source library, you must explicitly bundle the
 4. Change to your iOS directory and run `pod install`.
 5. Add the `analytics-react-native-firebase` module to your `build.gradle` file. (See Step.4 of [Getting Started on Android](/docs/connections/destinations/catalog/firebase/#getting-started-on-android))
 
+For React Native 2.0 you can reference the [install guide](https://github.com/segmentio/analytics-react-native/blob/master/packages/plugins/plugin-firebase/README.md){:target="_blank"}.
 ## Identify
 
 When you call `identify` Segment will map to the corresponding Firebase Analytics calls:

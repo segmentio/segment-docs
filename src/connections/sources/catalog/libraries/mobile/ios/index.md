@@ -548,12 +548,12 @@ Depending on the audience for your app (for example, children) or the countries 
 {% codeexample %}
 {% codeexampletab Swift %}
 ```swift
-[[SEGAnalytics sharedAnalytics] disable];
+Analytics.shared().disable()
 ```
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
 ```objc
-Analytics.shared().disable()
+[[SEGAnalytics sharedAnalytics] disable];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
