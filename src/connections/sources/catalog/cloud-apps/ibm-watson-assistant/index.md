@@ -1,6 +1,5 @@
 ---
 title: 'IBM Watson Assistant Source'
-hidden: true
 ---
 
 [IBM Watson Assistant](https://www.ibm.com/products/watson-assistant){:target="_blank"} uses artificial intelligence that understands customers in context to provide fast, consistent, and accurate answers across any application, device, or channel. You can use Watson Assistant to quickly build a customized AI chatbot and deploy it on your website, over the phone, or to any other channel your customers use.
