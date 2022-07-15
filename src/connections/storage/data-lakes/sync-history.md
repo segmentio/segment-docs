@@ -5,6 +5,9 @@ title: Data Lakes Sync History and Health
 
 The Segment Data Lakes sync history and health tabs generate real-time information about data syncs so you can monitor the health and performance of your data lakes. These tools provide monitoring and debugging capabilities within the Data Lakes UI, so you can identify and proactively address data sync or data pipeline failures. 
 
+> note "This feature is not supported for the Azure Data Lakes public beta"
+> The Sync History/Sync Health tabs are currently not supported for the Azure Data Lakes public beta. For more information about Azure Data Lakes, see the [Data Lakes overview documentation](/docs/connections/storage/data-lakes/index/#how-azure-data-lakes-works).
+
 ## Sync History
 The 'Sync History' table shows detailed information about the latest 100 syncs to the data lake. The table includes the following fields:
 * **Sync status:** The status of the sync: either 'Success,' indicating that all rows synced correctly, 'Partial Success,' indicating that some rows synced correctly, or 'Failed,' indicating that no rows synced correctly
@@ -32,24 +35,18 @@ Above the Daily Row Volume table is an overview of the total syncs for the curre
 To access the Sync history page from the Segment app, open the **My Destinations** page and select the data lake. On the data lakes settings page, select the **Health** tab.
 
 ## Data Lakes Reports FAQ
-{% faq %}
-{% faqitem How long is a data point available? %}
+
+### How long is a data point available?
 The health tab shows an aggregate view of the last 30 days worth of data, while the sync history retains the last 100 syncs.
-{% endfaqitem %}
 
-{% faqitem How do sync history and health compare? %}
+### How do sync history and health compare?
 The sync history feature shows detailed information about the most recent 100 syncs to a data lake, while the health tab shows just the number of rows synced to the data lake over the last 30 days.
-{% endfaqitem %}
 
-{% faqitem What timezone is the time and date information in? %}
+### What timezone is the time and date information in?
 All dates and times on the sync history and health pages are in the user's local time. 
-{% endfaqitem %}
 
-{% faqitem When does the data update? %}
+### When does the data update?
 The sync data for both reports updates in real time.
-{% endfaqitem %}
 
-{% faqitem When do syncs occur? %}
+### When do syncs occur?
 Syncs occur approximately every two hours. Users cannot choose how frequently the data lake syncs. 
-{% endfaqitem %}
-{% endfaq %}
