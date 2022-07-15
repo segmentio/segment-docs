@@ -13,9 +13,9 @@ SnapEngage is an enterprise chat software for businesses. It allows you to captu
 
 2. Search for "SnapEngage" in the Catalog, select it, and choose which of your sources to connect the destination to. - keep in mind that our "SnapEngage" destination is only compatible with our client-side [analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/) library.
 
-3. Add your SnapEngage `Widget ID` to your destination settings in Segment. You can find the `Widget ID` in your SnapEngage Javascript snippet. It will look something like this: 0c739ebb-2016-44a0-b1da-a5b5eb272474. Alternatively, the `Widget ID` can also be found under the _Advanced Widget ID_ section of the _Get the Code_ tab in the Admin Dashboard when logged in to SnapEngage.
+3. Add your SnapEngage `Widget ID` to your destination settings in Segment. You can find the `Widget ID` in your SnapEngage JavaScript snippet. It will look something like this: 0c739ebb-2016-44a0-b1da-a5b5eb272474. Alternatively, the `Widget ID` can also be found under the _Advanced Widget ID_ section of the _Get the Code_ tab in the Admin Dashboard when logged in to SnapEngage.
 
-Once you enable the destination from the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading SnapEngage's javascript onto your page.
+Once you enable the destination from the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading SnapEngage's JavaScript onto your page.
 
 Remember to remove SnapEngages's snippet from your page.
 

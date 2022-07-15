@@ -618,7 +618,7 @@ destinations:
     string_validators:
       regexp: "^[A-Z0-9]{22}$"
     description: 'You can find your Pixel ID in your AdRoll dashboard by clicking
-      the **green or red dot** in the lower-left corner. In the Javascript snippet,
+      the **green or red dot** in the lower-left corner. In the JavaScript snippet,
       the Pixel ID appears as `adroll_pix_id = ''XXXXXXX''` on line 3. It should be
       22 characters long, and look something like this: `6UUA5LKILFESVE44XH6SVX`.'
     settings: []
@@ -640,7 +640,7 @@ destinations:
     string_validators:
       regexp: "^[A-Z0-9]{22}$"
     description: 'You can find your Advertiser ID in your AdRoll dashboard by clicking
-      the **green or red dot** in the lower-left corner. In the Javascript snippet,
+      the **green or red dot** in the lower-left corner. In the JavaScript snippet,
       the Advertiser ID appears as `adroll_avd_id = ''XXXXXXX''` on line 2. It should
       be 22 characters long and look something like this: `WYJD6WNIAJC2XG6PT7UK4B`.'
     settings: []
@@ -962,7 +962,7 @@ destinations:
     required: true
     string_validators:
       regexp: ''
-    description: 'You can find your Account ID in the Javascript snippet, it appears
+    description: 'You can find your Account ID in the JavaScript snippet, it appears
       as `atrk_acct: ''XXXXXXX''`.'
     settings: []
   - name: domain
@@ -972,7 +972,7 @@ destinations:
     required: true
     string_validators:
       regexp: ''
-    description: 'You can find your Domain in the Javascript snippet, it appears as
+    description: 'You can find your Domain in the JavaScript snippet, it appears as
       `domain: ''example.com''`'
     settings: []
 - name: catalog/destinations/amazon-eventbridge
@@ -2014,7 +2014,7 @@ destinations:
     deprecated: false
     required: false
     description: "**Web Only:** Set to true to enable logging by default. Note that
-      this will cause Braze to log to the javascript console, which is visible to
+      this will cause Braze to log to the JavaScript console, which is visible to
       all users! You should probably remove this or provide an alternate logger with
       [appboy.setLogger()](https://js.appboycdn.com/web-sdk/2.0/doc/module-appboy.html#.setLogger)
       before you release your page to production. **This setting is only applicable
@@ -2166,7 +2166,7 @@ destinations:
     string_validators:
       regexp: ''
     description: 'If you''ve been assigned an API endpoint by the Braze team specifically
-      for use with their Mobile or Javascript SDKs, please input that here. It should
+      for use with their Mobile or JavaScript SDKs, please input that here. It should
       look something like: sdk.api.appboy.eu. Otherwise, leave this blank.'
     settings: []
   - name: restCustomEndpoint
@@ -5493,7 +5493,7 @@ destinations:
     settings: []
 - name: catalog/destinations/errorception
   display_name: Errorception
-  description: Errorception is a simple way to discover Javascript errors on your
+  description: Errorception is a simple way to discover JavaScript errors on your
     website. Any error that occurs will get sent to Errorception, so you can find
     out what's causing them.
   type: STREAMING
@@ -9169,7 +9169,7 @@ destinations:
     required: true
     string_validators:
       regexp: "^\\d+$"
-    description: You can find your License key in your LiveChat Javascript snippet
+    description: You can find your License key in your LiveChat JavaScript snippet
       on the **Settings > Installation** page. Or, if you're just signing up, it's
       right in the setup guide!
     settings: []
@@ -11191,7 +11191,7 @@ destinations:
     required: true
     string_validators:
       regexp: ''
-    description: Your Javascript API Key can be found in your Nudgespot dashboard
+    description: Your JavaScript API Key can be found in your Nudgespot dashboard
       under Settings
     settings: []
 - name: catalog/destinations/olark
@@ -13151,7 +13151,7 @@ destinations:
     settings: []
 - name: catalog/destinations/rollbar
   display_name: Rollbar
-  description: Rollbar is a simple way to collect Javascript errors on your website,
+  description: Rollbar is a simple way to collect JavaScript errors on your website,
     so that you can see which errors your users are encountering and get them fixed
     right away.
   type: STREAMING
@@ -13885,7 +13885,7 @@ destinations:
 - name: catalog/destinations/sentry
   display_name: Sentry
   description: Sentry is an error reporting and logging tool that automatically collects
-    Javascript errors on your site and helps you manage and fix them quickly.
+    JavaScript errors on your site and helps you manage and fix them quickly.
   type: STREAMING
   website: http://getsentry.com
   status: PUBLIC
@@ -15138,7 +15138,7 @@ destinations:
     type: BOOLEAN
     deprecated: false
     required: false
-    description: By default Totango's Javascript pings its servers once a minute to
+    description: By default Totango's JavaScript pings its servers once a minute to
       see if the user has left the page. If you don't want that to happen, enable
       this setting.
     settings: []
@@ -16439,7 +16439,7 @@ destinations:
 - name: catalog/destinations/visual-website-optimizer
   display_name: Visual Website Optimizer
   description: Visual Website Optimizer is an A/B testing tool that lets your marketing
-    team setup A/B tests without having to write any Javascript or HTML code.
+    team setup A/B tests without having to write any JavaScript or HTML code.
   type: STREAMING
   website: http://visualwebsiteoptimizer.com
   status: PUBLIC

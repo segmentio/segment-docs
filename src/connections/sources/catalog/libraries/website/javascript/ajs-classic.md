@@ -7,7 +7,7 @@ redirect_from:
 strat: ajs
 ---
 
-Analytics.js, Segment's Javascript source, makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
+Analytics.js, Segment's JavaScript source, makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
 > warning "Deprecation of Analytics.js Classic"
 > On August 31, 2022, Segment will end support and maintenance for Analytics.js Classic, and on February 28, 2023,  Segment will remove access to Analytics.js Classic.
@@ -643,7 +643,7 @@ Analytics.js tracks across subdomains out of the box; all of our destinations fu
 
 The Analytics.js library and all of the destination libraries are loaded with the [HTML script `async` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async). This also means that Segment methods are fired asynchronously, so you should adjust your code accordingly if you require that events be sent from the browser in a specific order.
 
-While many tools require access to the DOM or cookies, for our Zendesk, Salesforce, and MailChimp destinations, Segment does not need to load a native Javascript library! Instead data is sent from Segment's servers to the end-tools. We aim to expand on this front in the future.
+While many tools require access to the DOM or cookies, for our Zendesk, Salesforce, and MailChimp destinations, Segment does not need to load a native JavaScript library! Instead data is sent from Segment's servers to the end-tools. We aim to expand on this front in the future.
 
 Segment only loads the libraries required for your **enabled** destinations. When you disable a destination, the custom version of Analytics.js loaded on your site stops requesting that library.
 
@@ -653,9 +653,9 @@ One option, if you don't want to use any bundled third-party tools, is to use ou
 
 ### Bundle size
 
-Segment's Analytics.js Javascript snippet only increases the page size by about 1.1KB.
+Segment's Analytics.js JavaScript snippet only increases the page size by about 1.1KB.
 
-However, the snippet asynchronously requests and loads a customized Javascript bundle (`analytics.min.js`), which contains the code and settings needed to load your [device-mode destinations](/docs/connections/destinations/#connection-modes). The size of this file changes depending on how many and which destinations you enable.
+However, the snippet asynchronously requests and loads a customized JavaScript bundle (`analytics.min.js`), which contains the code and settings needed to load your [device-mode destinations](/docs/connections/destinations/#connection-modes). The size of this file changes depending on how many and which destinations you enable.
 
 Without any destinations enabled, the `analytics.min.js` file is about 62KB. Each time you enable a destination, the file's size may increase slightly.
 

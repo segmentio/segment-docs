@@ -28,7 +28,7 @@ Preact can be really useful for customer support. For that to work well you'll w
 
 All you have to do is add a "!" as the first character in the event name and Preact will recognize it as an error event. Properties sent with the event will also show up in Preact.
 
-Here's a javascript example:
+Here's a JavaScript example:
 ```javascript
 analytics.track('!Image upload error', {
     File size: '890kb',

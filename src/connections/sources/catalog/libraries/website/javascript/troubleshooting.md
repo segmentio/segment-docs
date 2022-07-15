@@ -3,7 +3,7 @@ title: Troubleshooting Analytics.js
 strat: ajs
 ---
 
-The console reveals all! [Learn how to access the Javascript console in each browser](#how-do-i-open-the-javascript-console-in-your-debugger).
+The console reveals all. [Learn how to access the JavaScript console in each browser](#how-do-i-open-the-javascript-console-in-your-debugger).
 Any Analytics.js methods may be executed manually. Use the Network tab to inspect requests.
 
 ## Are you loading Analytics.js?

@@ -175,10 +175,10 @@ Segment requires the [DoubleClick Floodlight](/docs/connections/destinations/cat
 To configure DoubleClick Floodlight:
 
 > warning ""
-> **Prerequisite**: Create a [Javascript Website](/docs/connections/sources/catalog/libraries/website/javascript/) source in your Segment workspace if one does not exist. Ensure that this source is configured to track visitors to your website. For more information about configuring Javascript sources, see the [Analytics.js Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
+> **Prerequisite**: Create a [JavaScript Website](/docs/connections/sources/catalog/libraries/website/javascript/) source in your Segment workspace if one does not exist. Ensure that this source is configured to track visitors to your website. For more information about configuring Javascript sources, see the [Analytics.js Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
 
 1. In your workspace, visit the **Catalog** and search for the **DoubleClick Floodlight** destination.
-2. Connect your Javascript Website source to the DoubleClick Floodlight destination, and configure the following settings:
+2. Connect your JavaScript Website source to the DoubleClick Floodlight destination, and configure the following settings:
    1. **Get DoubleClickID**: `On`
    2. **Google Network Id**: `segment`
    3. Your [Segment Write Key](/docs/connections/find-writekey/). You can retrieve your write key from the Settings tab on the Source.

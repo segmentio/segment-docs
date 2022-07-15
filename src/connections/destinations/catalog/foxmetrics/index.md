@@ -13,7 +13,7 @@ id: 54521fd625e721e32a72eeb2
 2. Search for "FoxMetrics" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Add your FoxMetrics `App ID`
 4. When you enable FoxMetrics from the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading
- FoxMetrics's javascript onto your page.
+ FoxMetrics's JavaScript onto your page.
 
 Remember to remove FoxMetrics's native snippet from your page.
 

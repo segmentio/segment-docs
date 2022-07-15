@@ -12,7 +12,7 @@ Currently this destination supports events originating from Web sources (not Ser
 To get started with Cxense and Segment, you'll need the following:
 
 1. An existing account with [Cxense](http://www.cxense.com/).
-2. A data source integrated with Segment's Javascript SDK ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/)).
+2. A data source integrated with Segment's JavaScript SDK ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/)).
 3. Your Cxense Site Id.
 
 Assuming these criteria are met, you can add Cxense as a destination for your desired source in your Segment account.
