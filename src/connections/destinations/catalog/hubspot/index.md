@@ -82,7 +82,7 @@ analytics.track("Clicked Buy Now button", {
 ```
 
 > warning "Important"
-> Marketing Hub subscription is required to [track calls and custom marketing events](https://knowledge.hubspot.com/analytics-tools/create-custom-behavioral-events) in Hubspot. You must have a HubSpot Enterprise account for Segment to pass traits from an Identify call to your Track call and send them as [custom events to HubSpot](https://knowledge.hubspot.com/events-user-guide-v2/using-custom-events){:target="_blank"}.
+> Marketing Hub subscription is required to [track calls and custom marketing events](https://knowledge.hubspot.com/analytics-tools/create-custom-behavioral-events){:target="_blank"} in HubSpot. You must have a HubSpot Enterprise account for Segment to pass traits from an Identify call to your Track call and send them as [custom events to HubSpot](https://knowledge.hubspot.com/events-user-guide-v2/using-custom-events){:target="_blank"}.
 
 The event will appear in your HubSpot UI but may take up to 60 minutes to appear in the graph visualization.
 
