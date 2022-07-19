@@ -41,7 +41,7 @@ In some cases, like using Google Analytics to track search queries, you might wa
 
 ## UTM parameters
 
-Segment recommends Analytics.js, the device-mode Javascript library, for collecting UTM parameter data because Analytics.js collects this data automatically.
+Segment recommends Analytics.js, the device-mode JavaScript library, for collecting UTM parameter data because Analytics.js collects this data automatically.
 
 Pass UTM parameters in the `context` object in `context.campaign`. For Google Analytics, send  `campaign.name`, `campaign.source` and `campaign.medium` all together to ensure the appear in reports. The other two parameters (`campaign.term` and `campaign.content`) are both optional, but is forwarded to Google Analytics if you send them to Segment.
 
@@ -400,7 +400,7 @@ Segment supports the following Google Analytics features:
 - [Optimize](#optimize)
 
 ### Client-Side library methods
-Because Segment's client-side snippet wraps the `gtag.js` Javascript SDK, all gtag.js library methods that don't map to Segment methods are available client side. Although invoking a native library method won't send data to Segment or other Segment-enabled destinations, the method *will* send data to Google.
+Because Segment's client-side snippet wraps the `gtag.js` JavaScript SDK, all gtag.js library methods that don't map to Segment methods are available client side. Although invoking a native library method won't send data to Segment or other Segment-enabled destinations, the method *will* send data to Google.
 
 To access gtag.js methods while using Segment, write these methods inside an `analytics.ready()` function, for example:
 

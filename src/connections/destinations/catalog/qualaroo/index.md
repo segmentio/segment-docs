@@ -11,8 +11,8 @@ id: 54521fda25e721e32a72eee8
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Qualaroo" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter your `Customer ID` from your Qualaroo Javascript library URL. So if your URL is: `s3.amazonaws.com/ki.js/70009/gAJ.js`, your `Customer ID` would be: `70009`.
-4. Enter your `Site Token` from your Qualaroo Javascript library URL. So if your URL is: `s3.amazonaws.com/ki.js/70009/gAJ.js`, your `Site Token` would be: `gAJ`.
+3. Enter your `Customer ID` from your Qualaroo JavaScript library URL. So if your URL is: `s3.amazonaws.com/ki.js/70009/gAJ.js`, your `Customer ID` would be: `70009`.
+4. Enter your `Site Token` from your Qualaroo JavaScript library URL. So if your URL is: `s3.amazonaws.com/ki.js/70009/gAJ.js`, your `Site Token` would be: `gAJ`.
 5. We'll initialize Qualaroo with your `Customer ID` and your `Site Token` upon loading `analytics.js`. Qualaroo will automatically start displaying your targeted surveys, according to the configurations you established on Qualaroo.
 
 ## Identify

@@ -47,13 +47,13 @@ Session tracking is available with Segment's new libraries: [Analytics.js 2.0](/
 
 
 ### Device ID Mappings
-The Amplitude destination requires that each event include either a Device ID or a User ID. If a User ID isn't present, Amplitude uses the a Device ID, and vice versa, if a Device ID isn't present, Amplitude uses the User ID. 
+The Amplitude destination requires that each event include either a Device ID or a User ID. If a User ID isn't present, Amplitude uses the a Device ID, and vice versa, if a Device ID isn't present, Amplitude uses the User ID.
 
-By default, Segment maps the Segment property `context.device.id` to the Amplitude property `Device ID`. If `context.device.id` isn't available, Segment maps the property `anonymousId` to the Amplitude `Device ID`. The Actions interface indicates this with the following contents of the Device ID field: `coalesce(` `context.device.id` `anonymousId` `)`. 
+By default, Segment maps the Segment property `context.device.id` to the Amplitude property `Device ID`. If `context.device.id` isn't available, Segment maps the property `anonymousId` to the Amplitude `Device ID`. The Actions interface indicates this with the following contents of the Device ID field: `coalesce(` `context.device.id` `anonymousId` `)`.
 
 ### Enable session tracking for Analytics.js 2.0
 
-The session tracking is automatically enabled on Javascript sources.
+The session tracking is automatically enabled on JavaScript sources.
 
 
 ### Enable Amplitude session tracking for Swift
@@ -195,7 +195,7 @@ Keep the following in mind if you plan to move to Amplitude (Actions) from a cla
 ### Amplitude (Actions) uses Amplitude's HTTP API v2
 
 > warning ""
-> If you used Amplitude Classic in cloud-mode, you'll notice different responses from Amplitude to calls you make with the destination. Classic Amplitude was built on Amplitude's now-deprecated HTTP API v1. 
+> If you used Amplitude Classic in cloud-mode, you'll notice different responses from Amplitude to calls you make with the destination. Classic Amplitude was built on Amplitude's now-deprecated HTTP API v1.
 
 You configure the Amplitude (Actions) destination through Filters and Actions. Consult the table below for information about configuring your Amplitude (Actions) destination similarly to your classic Amplitude destination.
 

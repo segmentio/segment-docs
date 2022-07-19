@@ -44,7 +44,7 @@ Once a source moves to Analytics.js 2.0, you can follow the steps above in [Manu
 
 ## Cases that require additional intervention
 
-In some cases, upgrading to Analytics.js 2.0 requires manual effort beyond enabling the Analytics.js 2.0 toggle.  
+In some cases, upgrading to Analytics.js 2.0 requires manual effort beyond enabling the Analytics.js 2.0 toggle.
 
 ### Using in-domain instrumentation CDN aliasing
 
@@ -54,7 +54,7 @@ If the source you intend to upgrade uses the in-domain instrumentation as well a
 
 If you're using a mix of Analytics.js Classic and 2.0 sources, the classic source won't be able to use the anonymous ID set by Analytics.js 2.0. In order to fix this, update all sources to 2.0.
 
-### Relying on Analytics.js Classic's `ajs_anonymous_id` cookie format  
+### Relying on Analytics.js Classic's `ajs_anonymous_id` cookie format
 
 Analytics.js 2.0 removes inbuilt quotes from cookie values, resulting in a different format for the `ajs_anonymous_id` value when compared to Analytics.js Classic.  Though you can retrieve cookie values with [standard supported functions](/docs/connections/sources/catalog/libraries/website/javascript/identity/#retrieve-the-anonymous-id), you'll need to configure your environment to accept the new format if your implementation relies on accessing the cookie value directly.
 
@@ -76,7 +76,7 @@ Previously, it was possible to attach `trackLink` to any element, and a `trackLi
 ### I'm already using Analytics 2.0, why am I still receiving the message to upgrade?
 It's possible that a different source you're using is still leveraging an older version of Analytics.js. A way to see which sources are on which versions is to go to the source overview page, then filter on the Analytics.js version.
 
-It's also possible that you have used a write key from another source type (like Ruby) to instrument     your Javascript source. To upgrade these sources, you may need to create a new javascript source and replace the write key.
+It's also possible that you have used a write key from another source type (like Ruby) to instrument your JavaScript source. To upgrade these sources, you may need to create a new JavaScript source and replace the write key.
 
 ### Should I expect any glitches or downtime when switching to Analytics 2.0?
 Segment expects no downtime or glitches when switching to A.js 2.0.
@@ -87,7 +87,7 @@ If you're using A.js 2.0, the library field will look like the code snippet belo
 ```js
 "library": {
       "name": "analytics.js",
-      "version": "next-1.XX.X"     
+      "version": "next-1.XX.X"
       }
 ```
 

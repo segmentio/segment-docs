@@ -24,7 +24,7 @@ Segment's Salescamp destination allows you to identify leads without using rest 
 
 The Salescamp destination makes it simple to integrate from Segment and send data to Salescamp. This destination feeds your prospective customers into Salescamp as Leads from your website or mobile app.
 
-Let's go through a quick javascript example of identifying a customers
+Let's go through a quick JavaScript example of identifying a customers
 
 If you aren't familiar with the Segment Spec, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 

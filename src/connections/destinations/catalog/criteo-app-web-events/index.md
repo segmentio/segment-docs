@@ -1,7 +1,7 @@
 ---
 title: Criteo App & Web Events Destination
 rewrite: true
-cmode-override: true 
+cmode-override: true
 hide-cmodes: true
 redirect_from: '/connections/destinations/catalog/criteo/'
 id: 5787cc5180412f644ff14d7e
@@ -16,7 +16,7 @@ Currently this destination supports events originating from Mobile or Web source
 To get started with Criteo Events and Segment, you'll need:
 
 1. An existing account with [Criteo](http://www.criteo.com/).
-2. A data source integrated with either one of our mobile SDK's ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](/docs/connections/sources/catalog/libraries/mobile/android/)) or Javascript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/))
+2. A data source integrated with either one of our mobile SDK's ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](/docs/connections/sources/catalog/libraries/mobile/android/)) or JavaScript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/))
 
 
 
@@ -67,7 +67,7 @@ analytics.track('Product Viewed', {
 });
 ```
 
-On web, the above Javascript example would result in the firing of the following Criteo Events tag:
+On web, the previous JavaScript example would result in the firing of the following Criteo Events tag:
 
 ```js
 window.criteo_q.push({ event: 'viewItem', item: '507f1f77bc' })
@@ -129,7 +129,7 @@ analytics.track('Product List Viewed', {
 });
 ```
 
-On web, the above Javascript example would result in the firing of the following Criteo Events tag:
+On web, the previous JavaScript example would result in the firing of the following Criteo Events tag:
 
 ```js
 window.criteo_q.push({ event: 'viewList', item: ['1', '2'] })
@@ -195,7 +195,7 @@ analytics.track('Cart Viewed', {
 });
 ```
 
-On web, the above Javascript example would result in the firing of the following Criteo Events tag:
+On web, the previous JavaScript example would result in the firing of the following Criteo Events tag:
 
 ```js
 window.criteo_q.push({ event: 'viewBasket', item: [
@@ -288,7 +288,7 @@ You will need to have a products array of product objects in your Segment [Order
   });
 ```
 
-On web, the above Javascript example would result in the firing of the following Criteo Events tag:
+On web, the previous JavaScript example would result in the firing of the following Criteo Events tag:
 
 ```js
 window.criteo_q.push({ event: 'trackTransaction', id: '098dsf098f', currency: 'USD', item: [

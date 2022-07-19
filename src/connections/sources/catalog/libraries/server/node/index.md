@@ -89,7 +89,7 @@ The `identify` call has the following fields:
   </tr>
   <tr>
     <td>`timestamp` _Date, optional_</td>
-    <td>A Javascript date object representing when the identify took place. If the identify just happened, leave it out and we'll use the server's time. If you're importing data from the past make sure you to send a `timestamp`.</td>
+    <td>A JavaScript date object representing when the identify took place. If the identify just happened, leave it out and we'll use the server's time. If you're importing data from the past make sure you to send a `timestamp`.</td>
   </tr>
   <tr>
     <td>`context` _Object, optional_</td>
@@ -158,7 +158,7 @@ The `track` call has the following fields:
   </tr>
   <tr>
     <td>`timestamp` _Date, optional_</td>
-    <td>A Javascript date object representing when the track took place. If the track just happened, leave it out and we'll use the server's time. If you're importing data from the past make sure you to send a `timestamp`.</td>
+    <td>A JavaScript date object representing when the track took place. If the track just happened, leave it out and we'll use the server's time. If you're importing data from the past make sure you to send a `timestamp`.</td>
   </tr>
   <tr>
     <td>`context` _Object, optional_</td>
@@ -215,7 +215,7 @@ The `page` call has the following fields:
   </tr>
   <tr>
     <td>`timestamp` _Date, optional_</td>
-    <td>A Javascript date object representing when the track took place. If the track just happened, leave it out and we'll use the server's time. If you're importing data from the past make sure you to send a `timestamp`.</td>
+    <td>A JavaScript date object representing when the track took place. If the track just happened, leave it out and we'll use the server's time. If you're importing data from the past make sure you to send a `timestamp`.</td>
   </tr>
   <tr>
     <td>`context` _Object, optional_</td>
@@ -349,7 +349,7 @@ var analytics = new Analytics('YOUR_WRITE_KEY', {
   <tr>
     <td>`enable` _Boolean_</td>
     <td>Enable (default) or disable flush. Useful when writing tests and you do not want to send data to Segment Servers.</td>
-  </tr>  
+  </tr>
 </table>
 
 
@@ -469,10 +469,10 @@ const exitGracefully = async (code) => {
 };
 
 [
-  'beforeExit', 'uncaughtException', 'unhandledRejection', 
-  'SIGHUP', 'SIGINT', 'SIGQUIT', 'SIGILL', 'SIGTRAP', 
-  'SIGABRT','SIGBUS', 'SIGFPE', 'SIGUSR1', 'SIGSEGV', 
-  'SIGUSR2', 'SIGTERM', 
+  'beforeExit', 'uncaughtException', 'unhandledRejection',
+  'SIGHUP', 'SIGINT', 'SIGQUIT', 'SIGILL', 'SIGTRAP',
+  'SIGABRT','SIGBUS', 'SIGFPE', 'SIGUSR1', 'SIGSEGV',
+  'SIGUSR2', 'SIGTERM',
 ].forEach(evt => process.on(evt, exitGracefully));
 
 function logEvery2Seconds(i) {
@@ -488,7 +488,7 @@ logEvery2Seconds(0);
 ## Short lived process
 
 Short-lived functions have a predictably short and linear lifecycle, so use a queue big enough to hold all messages and then await flush to complete its work.
- 
+
 
 ```js
 import { randomUUID } from 'crypto';
@@ -500,7 +500,7 @@ async function lambda()
   const WRITE_KEY = '...';
   const analytics = new Analytics(WRITE_KEY, { flushAt: 20 });
   analytics.flushed = true;
-  
+
   analytics.track({
     anonymousId: randomUUID(),
     event: 'Test event',

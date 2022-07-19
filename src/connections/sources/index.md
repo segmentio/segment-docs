@@ -51,7 +51,7 @@ analytics.identify('user_123', {
 
 ## Website libraries
 
-[Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), the Javascript library, is the most powerful way to track customer data from your website. If you're just starting out, Segment recommends it over server-side libraries as the simplest installation for any website.
+[Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), the JavaScript library, is the most powerful way to track customer data from your website. If you're just starting out, Segment recommends it over server-side libraries as the simplest installation for any website.
 
 {% include components/reference-button.html
   href="https://segment.com/academy/intro/"
@@ -139,4 +139,3 @@ Segment's [Pixel Tracking API](/docs/connections/sources/catalog/libraries/serve
 | Email Bounced           | Receiving server could not or would not accept message |
 | Email Marked as Spam    | Recipient marked message as spam |
 | Unsubscribe             | Recipient clicked on message's subscription management link |
-

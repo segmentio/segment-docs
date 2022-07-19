@@ -6,7 +6,7 @@ If you cannot find the answer to your question within the documentation or the b
 
 ### How do customers collect data?
 
-A mutual customer will use `analytics.js` (our client-side Javascript library), a server-side library, or one of our mobile SDK's to implement our [API methods](https://segment.com/docs/connections/spec/). For more information on Segment libraries, you can refer to our [source documentation](https://segment.com/docs/connections/sources/#website).
+A mutual customer will use `analytics.js` (our client-side JavaScript library), a server-side library, or one of our mobile SDK's to implement our [API methods](https://segment.com/docs/connections/spec/). For more information on Segment libraries, you can refer to our [source documentation](https://segment.com/docs/connections/sources/#website).
 
 ### Does Segment automatically collect any data?
 

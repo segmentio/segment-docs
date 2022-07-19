@@ -64,7 +64,7 @@ The tracking plan has been so instrumental in helping organizations reclaim thei
 
 The Identify call is important because it updates all records of the user with a set of traits. But how do you choose which traits to include?
 
-Here is a sample Identify call (with [analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/)) for Segment:
+Here is a sample Identify call (with [analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/)) for Segment:
 
 ```js
 analytics.identify({

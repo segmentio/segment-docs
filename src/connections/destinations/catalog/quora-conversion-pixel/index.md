@@ -19,7 +19,7 @@ id: 5952698570a3e552b9575519
 
 	iii. Click the "Setup Pixel" button to open the installation popup modal.
 
-	iv. Under "Option A: Install a Javascript Pixel," find your Quora Conversion Pixel Key in the Quora Javascript Pixel - the key is embedded in a tag that looks like `qp('init', '7cc5a029c2604daa8365d15ff337146e')`. In the example below, the key is `7cc5a029c2604daa8365d15ff337146e`.
+	iv. Under "Option A: Install a JavaScript Pixel," find your Quora Conversion Pixel Key in the Quora JavaScript Pixel - the key is embedded in a tag that looks like `qp('init', '7cc5a029c2604daa8365d15ff337146e')`. In the example below, the key is `7cc5a029c2604daa8365d15ff337146e`.
 
 
 ## Track

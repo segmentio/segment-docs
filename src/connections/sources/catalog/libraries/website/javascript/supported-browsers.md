@@ -4,7 +4,7 @@ redirect_from: '/guides/intelligent-tracking-prevention/'
 strat: ajs
 ---
 
-[The Segment Javascript library, Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/), loads a snippet on your webpage that supports existing user consent APIs and native browser controls. Segment regularly tests Analytics.js against the following browsers on all major platforms, and updates the library accordingly.
+[The Segment JavaScript library, Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/), loads a snippet on your webpage that supports existing user consent APIs and native browser controls. Segment regularly tests Analytics.js against the following browsers on all major platforms, and updates the library accordingly.
 
 The library is regularly tested and is functional with the following browsers:
 
