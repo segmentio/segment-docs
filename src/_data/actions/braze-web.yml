@@ -5,19 +5,19 @@ settings:
       description: Enable to allow Braze to log activity from crawlers.
       default: "off"
     - name: Allow User Supplied Javascript
-      description: Enable to indicate that you trust the Braze dashboard users to write non-malicious Javascript click actions, set this property to true.
+      description: Enable to indicate that you trust the Braze dashboard users to write non-malicious JavaScript click actions, set this property to true.
       default: "off"
     - name: API Key (required)
       description: Enter the API Key to identify your application to Braze.
-      default: 
+      default:
     - name: App Version
       description: Enter the version of the application to which user events will be associated for the purpose of segmentation.
-      default: 
+      default:
     - name: Content Security Nonce
       description: "Enter a value that Braze will add to any `script` and `style` elements that the SDK creates."
-      default: 
+      default:
     - name: Disable Push Token Maintenance
-      description: Enable to allow users who have already granted web push permission will to their push token with the Braze backend automatically on new session to ensure deliverability. 
+      description: Enable to allow users who have already granted web push permission will to their push token with the Braze backend automatically on new session to ensure deliverability.
       default: "On"
     - name: Do Not Load Font Awesome
       description: Enable to prevent Braze from loading FontAwesome 4.7.0 from the FontAwesome CDN.
@@ -30,17 +30,17 @@ settings:
       default: "off"
     - name: SDK Endpoint (required)
       description: Select the SDK Endpoint for your Braze applicaiton.
-      default: 
+      default:
     - name: In-App Message Z Index
       description: Enter a z-index value for the Braze In-App Message. By default, the Braze SDK will show In-App Messages with a z-index of 1040 for the screen overlay, 1050 for the actual in-app message, and 1060 for the message's close button.
-      default: 
+      default:
     - name: Localization
       description: Enter a ISO 639-1 Language Code to override the user's default browser language.
       default: _specified by the user's browser_
     - name: Manage Service Worker Externally
       description: Enable to prevent Braze from registering and unregistering a service worker of which you control the lifecycle.
       default: "off"
-    - name: Minimum Interval Between Trigger Actions in Seconds 
+    - name: Minimum Interval Between Trigger Actions in Seconds
       description: Enter a value to override the default interval between trigger actions.
       default: 30
     - name: No Cookies
@@ -75,7 +75,7 @@ config:
       location: ""
       notes: This setting is covered by the SDK Endpoint in Braze Web Mode (Actions) Connection Settings.
     - name: Log Purchase when Revenue is present
-      connection_mode: 
+      connection_mode:
         - device-web
       configurable: true
       location:
@@ -90,7 +90,7 @@ config:
       connection_mode:
         - device-web
       configurable: true
-      location: 
+      location:
       notes: This setting is available in the Braze Web Mode (Actions) Connection Settings.
     - name: Braze Web SDK Version
       connection_mode:
@@ -123,7 +123,7 @@ config:
       connection_mode:
         - device-web
       configurable: true
-      location: 
+      location:
       notes: Available in the Braze Web Mode (Actions) Connection Settings.
     - name: Open In-App Messages in New Tab
       connection_mode:
@@ -137,13 +137,13 @@ config:
       connection_mode:
         - device-web
       configurable: true
-      location: 
+      location:
       notes: Create a **Track Event** subscription and update the Event Trigger to specify `Event Type is Page` and `Event Property 'name' exists`. Update the Event Name field for the Track Event action to "Viewed Page {name}". Use the Event Variables selector to select the `name` variable.
     - name: Track Only Named Pages
       connection_mode:
         - device-web
       configurable: true
-      location: 
+      location:
       notes: Create a **Track Event** subscription and update the Event Trigger to specify `Event Type is Page` and. Update the Event Name field for the Track Event action to "Viewed Page {name}". Use the Event Variables selector to select the `name` variable.
   - category: Other Settings
     settings:
@@ -175,7 +175,7 @@ config:
       connection_mode:
         - device-web
       configurable: true
-      location: 
+      location:
       notes: Available in the Braze Web Mode (Actions) Connection Settings.
     - name: Service Worker Location
       connection_mode:
@@ -187,7 +187,7 @@ config:
       connection_mode:
         - device-web
       configurable: true
-      location: 
+      location:
       notes: Available in the Braze Web Mode (Actions) Connection Settings.
     # - name: Update Existing Users Only
     #   connection_mode:
@@ -218,7 +218,7 @@ actions:
       description: The object that contains properties pertaining to the event.
       default: properties
     - name: Update Existing Only
-      description: Set to true to use the Braze API in "Update Only" mode. 
+      description: Set to true to use the Braze API in "Update Only" mode.
       default: false
   - action: Track Purchase
     blurb: Track Purchase sends Braze a Track Purchase call when the destination recieves any event named `Order Completed`.
@@ -242,7 +242,7 @@ actions:
       description: The object that contains properties pertaining to the event.
       default: properties
     - name: Update Existing Only
-      description: Set to true to use the Braze API in "Update Only" mode. 
+      description: Set to true to use the Braze API in "Update Only" mode.
       default: false
   - action: Update User Profile
     blurb: Update User Profile sends to Braze a request to update an existing user's profile attributes when the destination receives an Identify call.
@@ -276,10 +276,10 @@ actions:
       default: traits.email
     - name: Email Subscribe
       description: "The user's email subscription preference. Must be one of: `opted_in`, `unsubscribed`, or `subscribed`"
-      default: 
+      default:
     - name: Email Open Tracking Disabled
       description: Set to true to disable adding the open tracking pixel to all future emails sent to this user.
-      default: 
+      default:
     - name: Email Click Tracking Disabled
       description: Set to true to disable click tracking for all links within future emails sent to this user.
       default:
@@ -314,7 +314,7 @@ actions:
       description: "The user's push subscription preference: `opted_in` (explicitly registered to receive push messages), `unsubscribed` (explicitly opted out of push messages), and `subscribed` (neither opted in nor out)."
       default:
     - name: Push Tokens
-      description: "An array of objects with app_id and token string. You can optionally provide a `device_id` for the device this token is associated with. For example,`{\"app_id\": App Identifier, \"token\": \"abcd\", \"device_id\": \"optional_field_value\"}. If a device_id is not provided, a random value is generated." 
+      description: "An array of objects with app_id and token string. You can optionally provide a `device_id` for the device this token is associated with. For example,`{\"app_id\": App Identifier, \"token\": \"abcd\", \"device_id\": \"optional_field_value\"}. If a device_id is not provided, a random value is generated."
       default:
     - name: Time Zone
       description: The user's time zone from the IANA Time Zone Database. For example, `America/New_York`.
@@ -326,10 +326,10 @@ actions:
       description: A hash of custom attributes sent to Braze.
       default: traits
     - name: Update Existing Only
-      description: Set this flag to true to put the API in "Update Only" mode. 
+      description: Set this flag to true to put the API in "Update Only" mode.
       default: true
   - action: Identify Debounce
     blurb: >
-      When enabled for Javascript sources, this action ensure that only Identify calls where at least one updated trait value are sent to Braze. Events with duplicate traits are not sent.
+      When enabled for JavaScript sources, this action ensure that only Identify calls where at least one updated trait value are sent to Braze. Events with duplicate traits are not sent.
       To use Identify Debounce with mobile sources, include Segment's open-source [Middleware tool](https://github.com/segmentio/segment-braze-mobile-middleware){:target="_blank"}.
     fields:

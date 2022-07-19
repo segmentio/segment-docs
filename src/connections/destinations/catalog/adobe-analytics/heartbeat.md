@@ -3,7 +3,7 @@ title: Setting up Adobe Analytics Heartbeat
 strat: adobe
 ---
 
-Adobe Heartbeat is an Adobe Analytics add-on that allows you to collect video analytics data from [mobile applications, and Javascript or website sources](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/).
+Adobe Heartbeat is an Adobe Analytics add-on that allows you to collect video analytics data from [mobile applications, and JavaScript or website sources](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/).
 
 > info ""
 > At this time, Adobe Heartbeat is only available for events sent using [device mode](/docs/connections/destinations/#connection-modes).
@@ -32,14 +32,14 @@ For iOS: The Adobe Heartbeat SDK is already included with the Segment-Adobe-Anal
 
 ## Set Up Steps for Web
 
-The Adobe Heartbeat JS SDK is automatically included with the Segment-Adobe-Analytics integration when you add a Heartbeat Tracking Server URL. 
+The Adobe Heartbeat JS SDK is automatically included with the Segment-Adobe-Analytics integration when you add a Heartbeat Tracking Server URL.
 
 Segment will map your video events to the Adobe methods as outlined below. In order to record video heartbeats to Adobe accurately on web, Adobe's SDK requires a playhead update **at least once per second** for main content. The "Video Content Playing" event updates the playhead using the `position` property. If you do not want to trigger this event every second, you can alternatively set the playhead to the window. This can be done by setting `window._segHBPlayheads` to the key-value pair of the current content's `session_id` and `position`:
 
 ```javascript
 window._segHBPlayheads = { <session_id>: <position> }
 ```
-   
+
 The Segment-Adobe-Analytics integration will pick up the playhead(s) you set to `window._segHBPlayheads` and pass this to Adobe's SDK.
 
 

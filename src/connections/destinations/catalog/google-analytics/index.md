@@ -37,7 +37,7 @@ To use Google Universal Analytics for mobile devices, you must use [Google Fireb
 
 When you enable the Google Universal Analytics destination in Segment:
 
-- Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Google Universal Analytics javascript library on your web page. **This means you should remove Google's snippet from your page.**
+- Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Google Universal Analytics JavaScript library on your web page. **This means you should remove Google's snippet from your page.**
 
 - Your Google Universal Analytics real-time dashboard starts showing live, concurrent visitors.
 
@@ -552,7 +552,7 @@ To use server-side Google Universal Analytics, there are three options with Segm
 ### Passing Cookies from Universal Analytics
 
 > info " "
-> When you add `Google Universal Analytics` to the `integrations` object, the Google Universal Analytics event appears in the Segment debugger as `Google Analytics`. 
+> When you add `Google Universal Analytics` to the `integrations` object, the Google Universal Analytics event appears in the Segment debugger as `Google Analytics`.
 
 Universal Analytics (analytics.js) uses the [`clientId`](https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage#analyticsjs) to keep track of unique visitors.
 

@@ -239,9 +239,9 @@ Read more about how Mixpanel recommends using `alias` [in their docs](https://mi
 
 ### Alias using Device-mode
 
-In client-side Javascript you only need to pass the new identified `userId`. Segment aliases the old anonymous `id` to your new `userId`.
+In client-side JavaScript you only need to pass the new identified `userId`. Segment aliases the old anonymous `id` to your new `userId`.
 
-Here's a Javascript example where the new `userId` is `12345`:
+Here's a JavaScript example where the new `userId` is `12345`:
 
 ```javascript
 analytics.alias('12345');
@@ -255,7 +255,7 @@ If an `identify` or `track` call arrives to Mixpanel with a new `distinct_id` to
 
 However, in cases when events are processed too quickly, before their corresponding alias, your calls can result in split/duplicate profiles.
 
-Mixpanel's client-side Javascript library fixes this issue by continuing to send `track` calls to the original mixpanel `distinct_id` while the records update.
+Mixpanel's client-side JavaScript library fixes this issue by continuing to send `track` calls to the original mixpanel `distinct_id` while the records update.
 
 > success ""
 > Segment recommends that you alias for Mixpanel on the client side through Analytics.js to avoid creating split profiles and broken funnels.

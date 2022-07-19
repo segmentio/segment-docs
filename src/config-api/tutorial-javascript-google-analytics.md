@@ -1,5 +1,5 @@
 ---
-title: 'Creating a Javascript web source and Google Analytics destination'
+title: 'Creating a JavaScript web source and Google Analytics destination'
 sidebar: 'Tutorial: Google Analytics Destination'
 ---
 
@@ -71,11 +71,11 @@ Example response:
 }
 ```
 
-## Create a Javascript Source
+## Create a JavaScript Source
 
 Data collection on Segment happens through "event sources". Event sources are created with a type that describes the environment you are sending events from, e.g. `javascript` for a website, `ios` for a mobile app, and `go` for a server. Segment gives each event source a unique "write key" that you configure the Segment SDK with.
 
-Let's create a Javascript event source:
+Let's create a JavaScript event source:
 
 ```shell
 $ ACCESS_TOKEN=1fUBblCni_qlYlUdBkv16tVrTtxJjv4uWLB2y9NYsUo.INcqwxms0p4OI_4ZeUyUiGFBwXJ7VyHYwtQNLQ3nu-g
@@ -105,7 +105,7 @@ $ curl \
 
 > Analytics.js
 >
-> The Javascript source requires that you add analytics.js to your website to collect data. See the [Quickstart: Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) guide for full details.
+> The JavaScript source requires that you add analytics.js to your website to collect data. See the [Quickstart: Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) guide for full details.
 
 ## Create a Google Analytics Destination
 

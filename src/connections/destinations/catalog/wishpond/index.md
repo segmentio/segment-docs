@@ -9,7 +9,7 @@ The [Wishpond JavaScript (browser) Integration](https://github.com/wishpond-dev/
 
 ## Getting Started
 
-Wishpond works with Segment's client-side javascript library: Analytics.js.
+Wishpond works with Segment's client-side JavaScript library: Analytics.js.
 
 
 1.  From your Segment UI's Destinations page click on "Add Destination".

@@ -11,7 +11,7 @@ id: 54521fd625e721e32a72eeb8
 {% include content/connection-modes.md %}
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "FullStory" in the Catalog, select it, and choose which of your sources to connect the destination to. Note the source must be sending events using our Javascript library Analytics.js.
+2. Search for "FullStory" in the Catalog, select it, and choose which of your sources to connect the destination to. Note the source must be sending events using our JavaScript library Analytics.js.
 3. Add your `FS Org` in the destination settings. You can find this in FullStory by navigating to `Settings` > `General` > and copying the value found on the line `window['_fs_org'] = 'fullstory_org_here';`
 
 Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading FullStory's recording snippet on your page and sending data.

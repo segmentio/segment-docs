@@ -42,7 +42,7 @@ A Source is a website, server library, mobile SDK, or cloud application which ca
 To add a Source:
 1. Go to **Connections**.
 2. Click **Add Source**.
-3. Click the Source you'd like to add. *Note:* More than 80% of workspaces start by adding their Javascript website.
+3. Click the Source you'd like to add. *Note:* More than 80% of workspaces start by adding their JavaScript website.
 4. Click **Add Source**.
 5. Enter a name for your source as well as any information on the setup page.
 6. Click **Add Source**.

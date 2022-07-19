@@ -24,7 +24,7 @@ You can follow the setup guide through Segment using the steps below, or you can
 1. Enter your *Destination Name* and select your **Connection Mode**—Cloud Mode or Device Mode. Click **Save**.
 1. Under *Connection Settings*, enter your Customer.io workspace **API Key** and **Site ID**. You'll find both in your Customer.io *Account Settings* > *API Credentials* page.
 
-If you want to sync your settings directly from your Customer.io workspace, go to **Settings** > **Integrations** and find the **Segment Destination** integration. 
+If you want to sync your settings directly from your Customer.io workspace, go to **Settings** > **Integrations** and find the **Segment Destination** integration.
 
 ![Segment Destination in Customer.io](images/segment-destination-cio.png)
 
@@ -251,10 +251,10 @@ For that, you need to make the following calls:
 
 You can enable Customer.io as a Segment Source to send[ email events](/docs/connections/spec/email/) to other tools on the Segment platform. These events are sent as track calls to the other destinations you've turned on.
 
-To enable this feature: 
+To enable this feature:
 
 1. In Customer.io go to **Settings** > **Integrations**.
-2. Find the Segment Source integration. 
+2. Find the Segment Source integration.
 3. Add your _Segment Write Key_ and click **Connect Segment**.
 
 ![Segment source in Customer.io](images/segment-source-cio.png)
@@ -267,7 +267,7 @@ Customer.io has limits on the data collected by their API. To ensure your events
 ## Troubleshooting
 
 ### No Events in Customer.io from the Browser
-Remember that before Segment can send events to Customer.io from client-side Javascript, the current user must identify with their `userId`. The user's email address is only used to identify them if that is the ID on record for them in Customer.io.
+Remember that before Segment can send events to Customer.io from client-side JavaScript, the current user must identify with their `userId`. The user's email address is only used to identify them if that is the ID on record for them in Customer.io.
 
 ### Page events not associated with user
 Page events will associate to a user if the user has been previously identified in Customer.io. If you identify a user after making Page calls, the previous page events won't associate to the user in Customer.io.

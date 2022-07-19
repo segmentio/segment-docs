@@ -24,7 +24,7 @@ Here's the payload of a typical `group` call, with most [common fields](/docs/co
 }
 ```
 
-And here's the corresponding Javascript event that would generate the above payload:
+And here's the corresponding JavaScript event that would generate the above payload:
 
 ```js
 analytics.group("0e8c78ea9d97a7b8185e8632", {
@@ -173,4 +173,4 @@ The following are the reserved traits we have standardized:
 If you pass these values, `on null` will throw a `NullPointerException`.
 You may continue to set values inside the trait.  If you do so, this would work the same as the rules do with NoSQL data. If you had set a value previously for a user and on the next request you sent the same value of that property as `on null`, it will be replaced by `null`, but if you do not send that property, the original value is persisted.
 
-**Traits are case-insensitive**, so in Javascript you can match the rest of your camel-case code by sending `createdAt`, and in Ruby you can match your snake-case code by sending `created_at`. That way the API never seems alien to your code base.
+**Traits are case-insensitive**, so in JavaScript you can match the rest of your camel-case code by sending `createdAt`, and in Ruby you can match your snake-case code by sending `created_at`. That way the API never seems alien to your code base.

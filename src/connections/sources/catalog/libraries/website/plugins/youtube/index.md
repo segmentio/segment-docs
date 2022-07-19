@@ -19,7 +19,7 @@ After you've generated the API key:
 
     ![the plugins setting screen](./images/youtube-vimeo-plugins-beta-2021-06-04.png)
 
-    **Note:** Only Javascript sources support plugins.
+    **Note:** Only JavaScript sources support plugins.
 
 2. Initialize the plugin by giving it access to the YouTube video player instance(s) running on your page.
 - Use the initialize method in the YouTube `onYouTubeIframeAPIReady()` function to register and initialize the plugin with the player instance and your API key:

@@ -13,7 +13,7 @@ id: 54521fd625e721e32a72eeb9
 1. From the Segment web app, click **Catalog**.
 2. Search for "Google Tag Manager" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In your Segment UI's destination settings, enter your Container ID (note: it should start with "GTM-"). You can find this in the Admin section of your [GTM dashboard](https://tagmanager.google.com/#/admin/).
-4. GTM loads on any pages where your Segment snippet is initialized and `analytics.page` is called in client-side Javascript. Once you've turned on GTM through Segment, you can use Segment `track` events to populate the GTM `dataLayer`, and remove the GTML snippet from your page.
+4. GTM loads on any pages where your Segment snippet is initialized and `analytics.page` is called in client-side JavaScript. Once you've turned on GTM through Segment, you can use Segment `track` events to populate the GTM `dataLayer`, and remove the GTML snippet from your page.
 
 **Notes**
 * Segment recommends that you load GTM through Segment rather than loading Segment inside of GTM.
@@ -24,7 +24,7 @@ id: 54521fd625e721e32a72eeb9
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
-analytics.page('Home', { 
+analytics.page('Home', {
   title: 'Welcome | My Website',
   url: 'https://mywebsite.com/'
 });
@@ -79,7 +79,7 @@ Segment it to the `dataLayer` as an object like this:
 
 ### 404 Error
 
-If you are seeing `404` error on the javascript console of your page and it is attributed to Google Tag Manager, it is likely that you have yet to publish your GTM container.
+If you are seeing `404` error on the JavaScript console of your page and it is attributed to Google Tag Manager, it is likely that you have yet to publish your GTM container.
 
 
 ## Appendices

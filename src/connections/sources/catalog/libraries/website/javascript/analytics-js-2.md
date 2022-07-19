@@ -34,7 +34,7 @@ Analytics.js is released as a Public Beta, on an opt-in basis, *per source*. The
 
 To opt in:
 
-1. Navigate to the **Settings** tab of the javascript source you want to enable.
+1. Navigate to the **Settings** tab of the JavaScript source you want to enable.
 2. Enable the Analytics 2.0 toggle.
 
 Once enabled, after 5 minutes or less, the updated code is delivered.
@@ -43,18 +43,18 @@ Once enabled, after 5 minutes or less, the updated code is delivered.
 
 To revert back to the previous version of Analytics.js, disable the Analytics 2.0 toggle on any source you've enabled it.
 
-## Cases that require manual upgrade 
+## Cases that require manual upgrade
 There are two cases where upgrading to Analytics.js 2.0 requires manual effort beyond enabling the Analytics.js 2.0 toggle.
 
 ### When using in-domain instrumentation CDN aliasing
 
-If the source you intend to upgrade uses the in-domain instrumentation as well as a custom "Alias for analytics.js", then you should update the AJS snippet to the latest version (4.13.2 or higher) before you toggle on Analytics.js 2.0. 
+If the source you intend to upgrade uses the in-domain instrumentation as well as a custom "Alias for analytics.js", then you should update the AJS snippet to the latest version (4.13.2 or higher) before you toggle on Analytics.js 2.0.
 
-### When using a strict content security policy on the page 
+### When using a strict content security policy on the page
 
-Analytics.js 2.0 asynchronously loads different pieces of the library as needed. If the source you're upgrading uses a strict Content Security Policy (CSP) that allows Javascript to be downloaded from specific locations, then you need to update the CSP to account for all the pieces used for Analytics.js 2.0. Therefore, beyond allowing the main analytics.min.js script, you should allow the following paths in your CSP: 
+Analytics.js 2.0 asynchronously loads different pieces of the library as needed. If the source you're upgrading uses a strict Content Security Policy (CSP) that allows JavaScript to be downloaded from specific locations, then you need to update the CSP to account for all the pieces used for Analytics.js 2.0. Therefore, beyond allowing the main analytics.min.js script, you should allow the following paths in your CSP:
 - `https://cdn.segment.com/v1/projects/<WRITE_KEY>/settings`
-- `https://cdn.segment.com/analytics-next/bundles/*` 
+- `https://cdn.segment.com/analytics-next/bundles/*`
 - `https://cdn.segment.com/next-integrations/integrations/*`
 
 ## Open source libraries
@@ -66,7 +66,7 @@ Copyright Luke Edwards <[luke.edwards05@gmail.com](mailto:luke.edwards05@gmail.c
 License: MIT License, available here: [https://github.com/lukeed/uuid/blob/master/license](https://github.com/lukeed/uuid/blob/master/license)
 
 **component-url v0.2.1** ([https://github.com/component/url](https://github.com/component/url))
-Copyright (c) 2014 Component 
+Copyright (c) 2014 Component
 License: MIT License, available here: [https://github.com/component/url/blob/master/Readme.md](https://github.com/component/url/blob/master/Readme.md)
 
 **dset v2.0.1** ([https://github.com/lukeed/dset](https://github.com/lukeed/dset))
@@ -80,7 +80,7 @@ Copyright (c) 2018 Copyright 2018 Klaus Hartl, Fagner Brack, GitHub Contributors
 **md5 v2.3.0** ([https://github.com/pvorb/node-md5](https://github.com/pvorb/node-md5))
 Copyright (c) 2011-2012, Paul Vorbach.
 Copyright (c) 2009, Jeff Mott.
-License: BSD-3-Clause “New” or “Revised” License, available at: 
+License: BSD-3-Clause “New” or “Revised” License, available at:
 [https://github.com/pvorb/node-md5/blob/master/LICENSE](https://github.com/pvorb/node-md5/blob/master/LICENSE)
 
 **unfetch v4.1.0** ([https://github.com/developit/unfetch](https://github.com/developit/unfetch))

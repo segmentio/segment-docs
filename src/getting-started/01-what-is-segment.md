@@ -21,7 +21,7 @@ Once you've collected your interaction data, there are several different actions
 ## Sources for collecting data
 
 You can collect data by implementing Segment's tracking libraries as your Sources:
-- [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), the Segment Javascript source, is the most powerful way to track customer data from a website. Segment recommends it as the default installation for any website.
+- [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), the Segment JavaScript source, is the most powerful way to track customer data from a website. Segment recommends it as the default installation for any website.
 - [The Segment Mobile SDKs](/docs/connections/sources/catalog/#mobile) are the best way to simplify tracking in your iOS, Android, and Xamarin apps. Segment recommends them over server-side sources as the default installation for any mobile app.
 - [Server-side sources](/docs/connections/sources/catalog/#server) let you send analytics data directly from your servers when client-side tracking doesn't work, or when you're sending mission-critical data like revenues.
 

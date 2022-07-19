@@ -54,7 +54,7 @@ By creating a track event you will effectively trigger a survey to be sent to yo
 
 The track event should have an associated userId sent with it. That userId **needs** to match the userId sent with the `identify` event. This is the only way we know which contact you would like to associate this event to. We will send a survey to that contact using the campaign that's associated to Segment within Promoter.
 
-Note: if you are using our client-side javascript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript)) and already called `identify` we will automatically include the `userId` with every `track` call.
+Note: if you are using Segment's client-side JavaScript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript)) and already called `identify` we will automatically include the `userId` with every `track` call.
 
 Here's an example:
 

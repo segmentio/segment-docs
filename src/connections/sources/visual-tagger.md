@@ -3,16 +3,16 @@ title: Visual Tagger
 ---
 > warning "Visual Tagger entering maintenance mode"
 > Visual Tagger is entering maintenance mode on **April 5th, 2021**.
-> 
+>
 > You can continue to use Visual Tagger with sources on which it's already enabled. However, the feature will no longer be available to new Segment customers and existing customers will not be able to add new Visual Tagger sources.
-> 
+>
 > Segment is committed to enabling customers to collect and deliver high quality customer data to the tools they need to run their businesses. As a CSS-based event tracking method, Visual Tagger has limitations that can prevent detailed data from being consistently collected. For code-based collection best practices, see the [Segment Spec](/docs/connections/spec).
-> 
+>
 > Going forward, support for the feature will include:
 > - Free, Team, and Startup customers will receive support with issues that impact multiple customers, but will not receive CSS-selector related troubleshooting
 > - Business customers will continue to receive full support
-> 
-> 
+>
+>
 > The following best practices can make your website more compatible with the feature and eliminate common issues:
 > - Assign unique IDs to all elements you intend to tag with Visual Tagger
 > - Adhere to HTML standards, such as forms inclosed in a `<form>` tag, and submitted with an `<input type="submit">` button.
@@ -40,8 +40,8 @@ Get the following things set up before you use Visual Tagger:
 2. **A website**. Visual Tagger works best with simple marketing websites, like landing pages or content sites. Visual Tagger does not support mobile apps , but you can tag the mobile-web version of your websites.
    > **Note**: Your website must use HTTPS.
 
-3. **A [Javascript (Website) Source](/docs/connections/sources/catalog/libraries/website/javascript/) in Segment**.
-   Once you create a Javascript Source, you must add the analytics.js snippet to the website for Visual Tagger to work.
+3. **A [JavaScript (Website) Source](/docs/connections/sources/catalog/libraries/website/javascript/) in Segment**.
+   Once you create a JavaScript Source, you must add the analytics.js snippet to the website for Visual Tagger to work.
    If you're having trouble with this step, follow the [Analytics.js Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
 4. **Chrome browser**. Visual Tagger supports the Chrome browser.
 
@@ -64,7 +64,7 @@ As you click each event, you're prompted to select the part of the website that 
 You are now ready to tag events on your website!
 
 > success ""
-> **Tip**: If you ever need to get back to this screen, you can navigate to the Javascript website source again, click the **Visual tagger** tab, then click **Add Event**.
+> **Tip**: If you ever need to get back to this screen, you can navigate to the JavaScript website source again, click the **Visual tagger** tab, then click **Add Event**.
 
 
 ## Step 1: Choose the event type and select an element
@@ -174,7 +174,7 @@ Events can take up to 10 minutes appear on your website. Once they are live, eve
 
 After you publish your event and wait for ~10 minutes, do a last test to make sure your tags are working expected and that you see your data landing in your Segment Debugger.
 
-In one window, open up your website where you created the event. In another window (side by side), open the **Segment Debugger** for your Javascript Source. The Debugger is a Segment tool that shows a live stream of the data coming from that Source.
+In one window, open up your website where you created the event. In another window (side by side), open the **Segment Debugger** for your JavaScript Source. The Debugger is a Segment tool that shows a live stream of the data coming from that Source.
 
 > info ""
 > **Good to know**: The Debugger automatically pauses after ~1 minute of idle time. Refresh the page if you leave and come back to it, and don't see new data.
@@ -221,10 +221,10 @@ Visual Tagger also does not support embedded elements, such as a YouTube video p
 
 ### What do I do if my website does not behave correctly inside the VT iframe?
 
-When you load your website in the Visual tagger iframe, you might see unexpected or incorrect behavior. This is because browsers load websites differently inside an `iframe` than in a regular browser window. 
-For example, Google Chrome blocks certain types of cookies when a page is loaded inside an iframe, and this can cause problems with authentication or other functions. 
+When you load your website in the Visual tagger iframe, you might see unexpected or incorrect behavior. This is because browsers load websites differently inside an `iframe` than in a regular browser window.
+For example, Google Chrome blocks certain types of cookies when a page is loaded inside an iframe, and this can cause problems with authentication or other functions.
 
-Click the **Open in Popup** button (above the top right corner of the iframed website) if you experience unexpected behavior when you load your website in the VT iframe, including issues with the login or authentication, or errors with form submissions. This opens the website in a new browser window (outside of an iframe) which is connected to the Visual Tagger. 
+Click the **Open in Popup** button (above the top right corner of the iframed website) if you experience unexpected behavior when you load your website in the VT iframe, including issues with the login or authentication, or errors with form submissions. This opens the website in a new browser window (outside of an iframe) which is connected to the Visual Tagger.
 
 > success ""
 > **Tip!**: You might want to change the width of both the Visual tagger window and your website window so you can view them side by side for easier tagging.
