@@ -99,6 +99,31 @@ Use Engage to send an SMS message as a step in a Journey.
 
 As soon as a `subscribed` user enters the Send SMS step, they'll receive the text. Visit [SMS Campaigns](/docs/engage/campaigns/sms-campaigns/) for more information.
 
+## Publishing a Journey
+
+To publish and activate a Journey, click **Publish Journey** from the Journey Overview. You can also click **Publish Journey** in the bottom-right corner of the Journey Builder.
+
+> info ""
+> Some Journey features can only be edited before publication. For more information, see the difference between Draft and Published Journeys below.
+
+## Journey re-entry
+
+The Journeys re-entry setting allows users to repeat Journeys they've already exited. Common use cases for Journeys re-entry include the following:
+
+- Retargeting users who abandon multiple carts
+- Recurring rewards and promotion offers
+- Notifying users when to renew a subscription
+
+## Cloning a Journey
+
+To clone a Journey:
+1. In Journey List view, click the **…** icon at the end of a row.
+2. Select **Clone Journey**.
+
+Segment then creates a draft of your Journey.
+
+You can also clone a Journey from a Journey's Overview by clicking the **…** icon.
+
 ## Randomized splits
 
 > info ""
@@ -124,31 +149,6 @@ Users who meet the Journey's entry condition will then enter the Journey and flo
 ### Act on the split's results
 
 Once users complete your Journey's randomized split step, you'll have insight into how each split performed. You can take action on the results by cloning the Journey and sending a new set of users through the highest performing branch.
-
-## Cloning a Journey
-
-To clone a Journey:
-1. In Journey List view, click the **…** icon at the end of a row.
-2. Select **Clone Journey**.
-
-Segment then creates a draft of your Journey.
-
-You can also clone a Journey from a Journey's Overview by clicking the **…** icon.
-
-## Publishing a Journey
-
-To publish and activate a Journey, click **Publish Journey** from the Journey Overview. You can also click **Publish Journey** in the bottom-right corner of the Journey Builder.
-
-> info ""
-> Some Journey features can only be edited before publication. For more information, see the difference between Draft and Published Journeys below.
-
-## Journey re-entry
-
-The Journeys re-entry setting allows users to repeat Journeys they've already exited. Common use cases for Journeys re-entry include the following:
-
-- Retargeting users who abandon multiple carts
-- Recurring rewards and promotion offers
-- Notifying users when to renew a subscription
 
 ### Exit and re-entry times
 

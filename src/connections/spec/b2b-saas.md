@@ -63,8 +63,8 @@ This event supports the following semantic properties:
     "account_name": "Initech"
   },
   "context": {
-      "groupId": "acct_123"
-      }
+    "groupId": "acct_123"
+  }
 }
 ```
 
@@ -91,8 +91,8 @@ This event supports the following semantic properties:
     "account_name": "Initech"
   },
   "context": {
-      "groupId": "acct_123"
-      }
+    "groupId": "acct_123"
+  }
 }'}}} {% endcomment %}
 
 ```js
@@ -104,8 +104,8 @@ This event supports the following semantic properties:
     "account_name": "Initech"
   },
   "context": {
-      "groupId": "acct_123"
-      }
+    "groupId": "acct_123"
+  }
 }
 ```
 
@@ -147,8 +147,8 @@ This event supports the following semantic properties:
     "title": "Mr"
   },
   "context": {
-      "groupId": "acct_123"
-      }
+    "groupId": "acct_123"
+  }
 }'}}} {% endcomment %}
 
 ```json
@@ -166,8 +166,8 @@ This event supports the following semantic properties:
     "title": "Mr"
   },
   "context": {
-      "groupId": "acct_123"
-      }
+    "groupId": "acct_123"
+  }
 }
 ```
 
@@ -182,10 +182,11 @@ This event should be sent when a user signs in to your service.
 
 This event supports the following semantic properties:
 
-| Property                | Type   | Description |
-| --------                | ----   | -----------
-| `username`              | String | The username of the user logging in. |
-| `context.groupId`       | String | The id of the account being created. |
+| Property          | Type   | Description                                                |
+| ----------------- | ------ | ---------------------------------------------------------- |
+| `username`        | String | The username of the user signing in.                       |
+| `context.groupId` | String | The id of the account associated with the user signing in. |
+
 
 #### Example
 
@@ -197,8 +198,8 @@ This event supports the following semantic properties:
     "username": "pgibbons"
   },
   "context": {
-      "groupId": "acct_123"
-      }
+    "groupId": "acct_123"
+  }
 }'}}} {% endcomment %}
 
 ```json
@@ -210,8 +211,8 @@ This event supports the following semantic properties:
     "username": "pgibbons"
   },
   "context": {
-      "groupId": "acct_123"
-      }
+    "groupId": "acct_123"
+  }
 }
 ```
 
@@ -226,10 +227,10 @@ This event should be sent when a user signs out for your service. You should als
 
 This event supports the following semantic properties:
 
-| Property          | Type   | Description                          |
-| ----------------- | ------ | ------------------------------------ |
-| `username`        | String | The username of the user logging in. |
-| `context.groupId` | String | The id of the account being created. |
+| Property          | Type   | Description                                                 |
+| ----------------- | ------ | ----------------------------------------------------------- |
+| `username`        | String | The username of the user signing out.                       |
+| `context.groupId` | String | The id of the account associated with the user signing out. |
 
 #### Example
 
@@ -241,8 +242,8 @@ This event supports the following semantic properties:
     "username": "pgibbons"
   },
   "context": {
-      "groupId": "acct_123"
-      }
+    "groupId": "acct_123"
+  }
 }'}}} {% endcomment %}
 
 ```js
@@ -254,8 +255,8 @@ This event supports the following semantic properties:
     "username": "pgibbons"
   },
   "context": {
-      "groupId": "acct_123"
-      }
+    "groupId": "acct_123"
+  }
 }
 ```
 
@@ -273,6 +274,7 @@ This event supports the following semantic properties:
 | `invitee_first_name` | String | The first name of the person receiving the invite.        |
 | `invitee_last_name`  | String | The last name of the person receiving the invite.         |
 | `invitee_role`       | String | The permission group for the person receiving the invite. |
+| `context.groupId`    | String | The id of the account the person is being invited to.     |
 
 #### Example
 
@@ -287,8 +289,8 @@ This event supports the following semantic properties:
     "invitee_role": "Owner"
   },
   "context": {
-      "groupId": "acct_123"
-      }
+    "groupId": "acct_123"
+  }
 }'}}} {% endcomment %}
 
 ```js
@@ -303,8 +305,8 @@ This event supports the following semantic properties:
     "invitee_role": "Owner"
   },
   "context": {
-      "groupId": "acct_123"
-      }
+    "groupId": "acct_123"
+  }
 }
 ```
 
@@ -319,7 +321,7 @@ This event supports the following semantic properties:
 | Property          | Type   | Description                                         |
 | ----------------- | ------ | --------------------------------------------------- |
 | `role`            | String | The permission group for this user in this account. |
-| `context.groupId` | String | The id of the account being created.                |
+| `context.groupId` | String | The id of the account the user is being added to.   |
 
 #### Example
 
@@ -331,8 +333,8 @@ This event supports the following semantic properties:
     "role": "Owner"
   },
   "context": {
-      "groupId": "acct_123"
-      }
+    "groupId": "acct_123"
+  }
 }'}}} {% endcomment %}
 
 ```js
@@ -344,8 +346,8 @@ This event supports the following semantic properties:
     "role": "Owner"
   },
   "context": {
-      "groupId": "acct_123"
-      }
+    "groupId": "acct_123"
+  }
 }
 ```
 
@@ -357,9 +359,9 @@ This event should be sent when a user is removed from a group or account.
 
 This event supports the following semantic properties:
 
-| Property                | Type   | Description |
-| --------                | ----   | ----------- |
-| `context.groupId`       | String | The id of the account being created. |
+| Property          | Type   | Description                                           |
+| ----------------- | ------ | ----------------------------------------------------- |
+| `context.groupId` | String | The id of the account the user is being removed from. |
 
 #### Example
 
@@ -369,8 +371,8 @@ This event supports the following semantic properties:
   "event": "Account Removed User",
   "properties": {},
   "context": {
-      "groupId": "acct_123"
-      }
+    "groupId": "acct_123"
+  }
 }'}}} {% endcomment %}
 
 ```js
@@ -380,8 +382,8 @@ This event supports the following semantic properties:
   "event": "Account Removed User",
   "properties": {},
   "context": {
-      "groupId": "acct_123"
-      }
+    "groupId": "acct_123"
+  }
 }
 ```
 
@@ -398,7 +400,7 @@ This event supports the following semantic properties:
 | `trial_start_date` | Date   | The date when the trial starts. It is an ISO-8601 date string. |
 | `trial_end_date`   | Date   | The date when the trial ends. It is an ISO-8601 date string.   |
 | `trial_plan_name`  | String | The name of the plan being trialed.                            |
-| `context.groupId`  | String | The id of the account being created.                           |
+| `context.groupId`  | String | The id of the account the trial is associated with.            |
 
 #### Example
 
@@ -407,13 +409,13 @@ This event supports the following semantic properties:
   "type": "track",
   "event": "Trial Started",
   "properties": {
-      "trial_start_date": "2018-08-28T04:09:47Z",
-      "trial_end_date": "2018-09-20T04:09:47Z",
-      "trial_plan_name": "Business"
+    "trial_start_date": "2018-08-28T04:09:47Z",
+    "trial_end_date": "2018-09-20T04:09:47Z",
+    "trial_plan_name": "Business"
   },
   "context": {
-      "groupId": "acct_123"
-      }
+    "groupId": "acct_123"
+  }
 }'}}} {% endcomment %}
 
 ```js
@@ -422,13 +424,13 @@ This event supports the following semantic properties:
   "type": "track",
   "event": "Trial Started",
   "properties": {
-      "trial_start_date": "2018-08-28T04:09:47Z",
-      "trial_end_date": "2018-09-20T04:09:47Z",
-      "trial_plan_name": "Business"
+    "trial_start_date": "2018-08-28T04:09:47Z",
+    "trial_end_date": "2018-09-20T04:09:47Z",
+    "trial_plan_name": "Business"
   },
   "context": {
-      "groupId": "acct_123"
-      }
+    "groupId": "acct_123"
+  }
 }
 ```
 
@@ -440,12 +442,13 @@ This event should be sent when a trial ends.
 
 This event supports the following semantic properties:
 
-| Property                | Type   | Description |
-| --------                | ----   | ----------- |
-| `trial_start_date`      | Date   | The date when the trial starts. It is an ISO-8601 date string. |
-| `trial_end_date`        | Date   | The date when the trial ends. It is an ISO-8601 date string. |
-| `trial_plan_name`       | String | The name of the plan being trialed. |
-| `context.groupId`       | String | The id of the account being created. |
+| Property           | Type   | Description                                                    |
+| ------------------ | ------ | -------------------------------------------------------------- |
+| `trial_start_date` | Date   | The date when the trial starts. It is an ISO-8601 date string. |
+| `trial_end_date`   | Date   | The date when the trial ends. It is an ISO-8601 date string.   |
+| `trial_plan_name`  | String | The name of the plan being trialed.                            |
+| `context.groupId`  | String | The id of the account the trial is associated with.            |
+
 
 #### Example
 
@@ -454,13 +457,13 @@ This event supports the following semantic properties:
   "type": "track",
   "event": "Trial Ended",
   "properties": {
-      "trial_start_date": "2018-08-28T04:09:47Z",
-      "trial_end_date": "2018-09-20T04:09:47Z",
-      "trial_plan_name": "Business"
+    "trial_start_date": "2018-08-28T04:09:47Z",
+    "trial_end_date": "2018-09-20T04:09:47Z",
+    "trial_plan_name": "Business"
   },
   "context": {
-      "groupId": "acct_123"
-      }
+    "groupId": "acct_123"
+  }
 }'}}} {% endcomment %}
 
 ```js
@@ -469,12 +472,12 @@ This event supports the following semantic properties:
   "type": "track",
   "event": "Trial Ended",
   "properties": {
-      "trial_start_date": "2018-08-28T04:09:47Z",
-      "trial_end_date": "2018-09-20T04:09:47Z",
-      "trial_plan_name": "Business"
+    "trial_start_date": "2018-08-28T04:09:47Z",
+    "trial_end_date": "2018-09-20T04:09:47Z",
+    "trial_plan_name": "Business"
   },
   "context": {
-      "groupId": "acct_123"
-      }
+    "groupId": "acct_123"
+  }
 }
 ```
