@@ -21,6 +21,9 @@ Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.j
 
 ### Cloud-mode configuration
 
+> info ""
+> The Pendo destination does not natively support Cloud-mode connections. Use the [Webhook](/docs/connections/destinations/catalog/webhooks) destination to send data to Pendo using a Cloud-mode connection.
+
 To add the Pendo destination using Cloud-mode, use the [Webhooks](/docs/connections/destinations/catalog/webhooks) destination to enable Segment to send data to Pendo through a webhook.
 
 1. From the Segment web app, click **Catalog**.
