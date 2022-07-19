@@ -46,6 +46,6 @@ Additional Autopilot Tracking code will be required on your site to unlock the f
   - Website activity for anonymous and known visitors ('page' calls).
   - Capturing form submissions.
   - Triggering Headsup messages.
-  - User association using the Autopilot Javascript library.
+  - User association using the Autopilot JavaScript library.
 
 For complete details, visit the Autopilot page [How to use Segment with Autopilot](https://support.autopilothq.com/hc/en-us/articles/203658119).

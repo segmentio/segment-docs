@@ -21,7 +21,7 @@ iOS | [iOS SDK 1.0.3](https://github.com/segment-integrations/analytics-ios-inte
 1. From the Segment web app, click **Catalog**.
 2. Search for "Bugsnag" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Add your API key to your connection settings. You can find your API key in your Bugsnag dashboard under "Settings", which is located in the upper left-hand corner
-4. Segment automatically initializes Bugsnag's javascript script with your API key upon loading analytics.js
+4. Segment automatically initializes Bugsnag's JavaScript script with your API key upon loading analytics.js
 
 ### Mobile
 

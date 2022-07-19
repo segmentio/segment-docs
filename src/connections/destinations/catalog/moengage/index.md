@@ -400,6 +400,9 @@ You are now all set up to receive push notifications from MoEngage. For more inf
 ### Identify
 Use [Identify](/docs/connections/sources/catalog/libraries/mobile/android/#identify) to track user-specific attributes. This is the same as tracking [user attributes](http://docs.moengage.com/docs/identifying-user){:target="_blank"} on MoEngage. MoEngage supports traits supported by Segment as well as custom traits. If you set traits.id, MoEngage sets that as the Unique ID for that user.
 
+> info ""
+> MoEngage supports anonymous identifiers in Device-mode only. If you use the MoEngage destination in Cloud-mode, use a known user identifier.
+
 ### Track
 Use [track](/docs/connections/sources/catalog/libraries/mobile/android/#track) to track events and user behavior in your app.
 This will send the event to MoEngage with the associated properties. Tracking events is essential and will help you create segments for engaging users.
@@ -464,6 +467,9 @@ If you already have these files,
 
 ### Identify
 Use [Identify](/docs/sources/website/analytics.js/#identify) to track user specific attributes. This is equal to [tracking user attributes](https://docs.moengage.com/docs/tracking-web-user-attributes){:target="_blank"} on MoEngage. MoEngage supports traits supported by Segment as well as custom traits.
+
+> info ""
+> MoEngage supports anonymous identifiers in Device-mode only. If you use the MoEngage destination in Cloud-mode, use a known user identifier.
 
 ### Track
 Use [track](/docs/sources/website/analytics.js/#track) to track events and user behavior in your app. This will send the event to MoEngage with the associated properties. Tracking events is essential and will help you create segments for engaging users.

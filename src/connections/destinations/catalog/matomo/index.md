@@ -11,7 +11,7 @@ id: 54521fda25e721e32a72eee7
 {% include content/connection-modes.md %}
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Matomo" in the Catalog, select it, and choose which of your sources to connect the destination to. Note the source must be sending events using our Javascript library Analytics.js.
+2. Search for "Matomo" in the Catalog, select it, and choose which of your sources to connect the destination to. Note the source must be sending events using our JavaScript library Analytics.js.
 3. In the destination settings, enter your Site Id. You can find your Site ID in your Matomo snippet.
 4. In the destination settings, enter your Server URL. You can find your Server URL in your snippet, we will append /matomo.php to the URL automatically.
   5. When you enable Matomo in your Segment settings, Segment's CDN is updated within 45 minutes. Once that happens, Segment asynchronously loads `matomo.js` on your page whenever it is loaded. This means you should remove Matomo's snippet from your page.

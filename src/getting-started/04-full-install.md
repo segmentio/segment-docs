@@ -104,7 +104,7 @@ analytics.identify( user_id: "12345abcde",
 
 When a user explicitly signs out of one of your applications, you can call `analytics.reset()` to stop logging further event activity to that user, and create a new `anonymousId` for subsequent activity (until the user logins in again and is subsequently `identify`-ed). **This call is most relevant for client-side Segment libraries**, as it clears cookies in the user's browser.
 
-Make a `Reset()` call as soon as possible after sign-out occurs, and only after it succeeds (not immediately when the user clicks sign out). For more info on this call, [see the Javascript source documentation](/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout).
+Make a `Reset()` call as soon as possible after sign-out occurs, and only after it succeeds (not immediately when the user clicks sign out). For more info on this call, [see the JavaScript source documentation](/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout).
 
 ## Page and Screen
 
@@ -283,7 +283,7 @@ The following properties should be sent with every Track call:
 
 ### How to call Track
 
-You can call `Track` from any of Segment's client-side or server-side libraries, including [Javascript](/docs/connections/sources/catalog/libraries/website/javascript/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios), [Android](/docs/connections/sources/catalog/libraries/mobile/android), [Ruby](/docs/connections/sources/catalog/libraries/server/ruby/), and [Python](/docs/connections/sources/catalog/libraries/server/python/). Here are two examples of calling track from two different libraries:
+You can make a Track call from any of Segment's client-side or server-side libraries, including [JavaScript](/docs/connections/sources/catalog/libraries/website/javascript/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios), [Android](/docs/connections/sources/catalog/libraries/mobile/android), [Ruby](/docs/connections/sources/catalog/libraries/server/ruby/), and [Python](/docs/connections/sources/catalog/libraries/server/python/). Here are two examples of calling track from two different libraries:
 
 
 {% codeexample %}

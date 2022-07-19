@@ -82,7 +82,7 @@ analytics.track("Clicked Buy Now button", {
 ```
 
 > warning "Important"
-> You must have a HubSpot Enterprise account for Segment to pass traits from an Identify call through to your Track call and send them as[custom events to HubSpot](https://knowledge.hubspot.com/events-user-guide-v2/using-custom-events).
+> Marketing Hub subscription is required to [track calls and custom marketing events](https://knowledge.hubspot.com/analytics-tools/create-custom-behavioral-events){:target="_blank"} in HubSpot. You must have a HubSpot Enterprise account for Segment to pass traits from an Identify call to your Track call and send them as [custom events to HubSpot](https://knowledge.hubspot.com/events-user-guide-v2/using-custom-events){:target="_blank"}.
 
 The event will appear in your HubSpot UI but may take up to 60 minutes to appear in the graph visualization.
 
@@ -147,7 +147,7 @@ Group calls map to the HubSpot [Companies API](https://developers.hubspot.com/do
 
 The three requirements to creating companies and associating contacts are:
 
-1. Group calls take effect when called using server-side libraries or mobile libraries, not the client-side javascript library.
+1. Group calls take effect when called using server-side libraries or mobile libraries, not the client-side JavaScript library.
 2. Your contact must be identified and created within HubSpot (called using `analytics.identify` for this `userId first`).
 3. You must include a `website` trait in your group call, and it must be a full, valid, and complete URL. HubSpot uses the domain of the website trait as a unique identifier for companies. To create a new company you must use the full URL and not just the subdomain.
 
@@ -189,7 +189,7 @@ HubSpot Plan: API Add-On (Any Tier)
 
 HubSpot's API has [specific requirements](http://developers.hubspot.com/docs/faq/how-should-timestamps-be-formatted-for-hubspots-apis) regarding you to format dates before they deliver as contact properties with date types.
 
-To ensure proper transformation of these properties, pass them to Segment as [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) formatted strings and **not** as UNIX timestamps. Here's a Javascript example:
+To ensure proper transformation of these properties, pass them to Segment as [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) formatted strings and **not** as UNIX timestamps. Here's a JavaScript example:
 
 ```js
 analytics.identify('userid', {

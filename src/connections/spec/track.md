@@ -21,7 +21,7 @@ Here's the payload of a typical `track` call with most [common fields](/docs/con
 }
 ```
 
-And here's the corresponding Javascript event that would generate the above payload:
+And here's the corresponding JavaScript event that would generate the above payload:
 
 ```js
 analytics.track("User Registered", {

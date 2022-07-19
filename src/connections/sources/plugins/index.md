@@ -54,7 +54,7 @@ If you are using Shopify, you can use our recommended third-party [Segment for S
 <!--
 ## Tumblr
 
-Tumblr customization is limited based on which theme your site uses. You may still be able to add Segment tracking using [Segment's Javascript source](/docs/connections/sources/catalog/libraries/website/javascript/) as part of [your theme's Custom HTML](https://tumblr.zendesk.com/hc/en-us/articles/230778847-Custom-HTML) if available. -->
+Tumblr customization is limited based on which theme your site uses. You may still be able to add Segment tracking using [Segment's JavaScript source](/docs/connections/sources/catalog/libraries/website/javascript/) as part of [your theme's Custom HTML](https://tumblr.zendesk.com/hc/en-us/articles/230778847-Custom-HTML) if available. -->
 
 ## Woocommerce
 

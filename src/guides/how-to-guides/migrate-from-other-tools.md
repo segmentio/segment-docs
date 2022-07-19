@@ -2,7 +2,7 @@
 title: Migrating Code From Other Analytics Tools
 ---
 
-Switching from your current client-side javascript event tracking to Segment is easy. Below you can find migration guides for the following tools:
+Switching from your current client-side JavaScript event tracking to Segment is easy. Below you can find migration guides for the following tools:
 
 - Google Analytics
 - Mixpanel

@@ -198,7 +198,7 @@ Add `{: .columns}` before a list you want to divide into two columns.
 
 ## Code Blocks
 
-Analytics.js, our Javascript `library`, is the most powerful way to track customer data from your `website`. If you're just starting out, we recommend it over server-side libraries as the simplest installation for any website.
+Analytics.js, our JavaScript `library`, is the most powerful way to track customer data from your `website`. If you're just starting out, we recommend it over server-side libraries as the simplest installation for any website.
 
 ```js
 analytics.identify('user_123', {

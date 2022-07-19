@@ -14,7 +14,7 @@ Segment's Amplitude destination code is open source and available on GitHub. You
 - [iOS](https://github.com/segment-integrations/analytics-ios-integration-amplitude){:target="_blank"}
 - [JavaScript](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/amplitude){:target="_blank"}
 - [Kotlin](https://github.com/segment-integrations/analytics-kotlin-amplitude){:target="_blank"}
-- [Swift](https://github.com/segment-integrations/analytics-swift-amplitude){:target="_blank"} 
+- [Swift](https://github.com/segment-integrations/analytics-swift-amplitude){:target="_blank"}
 
 In addition to the docs below, Amplitude created a [integration guide](https://developers.amplitude.com/docs/segment-amplitude-integration).
 
@@ -35,14 +35,14 @@ In addition to the docs below, Amplitude created a [integration guide](https://d
 ## Getting Started
 
 1. From the Segment web app, navigate to **Connections > Destinations** and click **Add Destination**.
-2. Search for **Amplitude** select it. 
+2. Search for **Amplitude** select it.
 3. Choose which sources to connect the destination to.
 4. In the destination settings, enter your Amplitude API key.
 
    You can find your Amplitude API key in the [Amplitude project settings](https://analytics.amplitude.com/settings/projects). It is a 32-character string of numbers and letters. Locate the project you want to receive your Segment data, copy that project's API key, and paste it into your Amplitude destination settings in Segment.
 
 
-If you included Segment's Javascript snippet on your page, then Amplitude's SDK loads on your page automatically and you can use Segment's to begin sending events right away.
+If you included Segment's JavaScript snippet on your page, then Amplitude's SDK loads on your page automatically and you can use Segment's to begin sending events right away.
 
 ### React Native device mode set up
 
