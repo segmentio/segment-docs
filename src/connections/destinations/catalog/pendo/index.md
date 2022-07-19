@@ -62,18 +62,3 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 
 When you send a Group call, Segment sends `groupId` as the Pendo as account ID. Group traits are mapped to account metadata in Pendo. If you are using Pendo account data, group calls (fields `groupId` & `traits`) are required.
 
-## Track
-
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
-
-```javascript
-analytics.track("Registered", {
-  groupId: "0e8c78ea9d97a7b8185e8632",
-  plan: "Pro Annual",
-  accountType: "Facebook"
-});
-```
-
-When you send a Track call, Segment sends it as a Pendo Track Event. Note that `groupId` is not included by default in a Track call, but it is highly recommended to add as a property.
-
-Pendo maps `groupId` to an account ID. For more information on Pendo's Track Events, check out their [support documentation](https://help.pendo.io/resources/support-library/integrations/track-events.html).
