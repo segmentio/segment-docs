@@ -43,7 +43,7 @@ Your access token enables you to call the Profile API and access customer data.
 > info "European Union requirements"
 > To implement the Profile API in the European Union, you must complete the following steps within an EU workspace. View the [regional Segment documentation](/docs/guides/regional-segment/#create-a-new-workspace-with-a-different-region) for more information.
 
-1.  Navigate to the API Access settings page *Personas > <personas_space> > Settings > API Access*.
+1.  Navigate to the API Access settings page **Personas > Settings > API Access**.
 
 2.  Create your **Access Token** with a name that describes your use case, for example `testing/development`. Take note of the **space ID** value, you'll pass this into the Profile API request URL in a later step.
 
@@ -55,24 +55,24 @@ Your access token enables you to call the Profile API and access customer data.
 
 ### Find a user's external id
 
-1. Navigate to Personas > *personas_space* > Explorer and select the user you want to query through the API.
+1. Navigate to **Personas > Profiles > Explorer** and select the user you want to query through the API.
 2. Take note of the user's available identifiers. For example, this user has a `user_id` with the value `9800664881`. The Profile API requires both the type of ID and the value separated by a colon. For example, `user_id:9800664881`.
 ![Retrieving a user's identifiers with the Personas Explorer](images/profile_api_user_id.png)
 
 > warning ""
-> To query phone numbers that contain a plus sign (`+`), insert the escape characters `%2B` in place of the plus sign. <br>
+> To query phone numbers that contain a plus sign (`+`), insert the escape characters `%2B` in place of the plus sign. 
 > For example, if a `phone_number` identifier has the value `+5555550123`, enter `phone_number:%2B5555550123` in your query.
 
 ### Query the user's event traits
 
 1. From the HTTP API testing application of your choice, configure the authentication as described above.
 2. Prepare the request URL by replacing `<space_id>` and `<external_id>` in the request URL:
-    `https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/<external_id>/traits`
+    `https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles/<external_id>/traits`
 
 
     If you're using the Profile API in the EU, use the following URL for all requests:
 
-    `https://profiles.euw1.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/<external_id>/traits`
+    `https://profiles.euw1.segment.com/v1/spaces/<space_id>/collections/users/profiles/<external_id>/traits`
 3. Send a `GET` request to the URL.
 
 ### Explore the user's traits in the response
@@ -104,37 +104,37 @@ The response is returned as a JSON object which contains the queried user's assi
 
 - **Search by an External ID**: You can query directly by a user's user_id or other external_id.
 
-  `https://profiles.segment.com/v1/spaces/<space-id>/collections/users/profiles/<user_identifier>/events`
+  `https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles/<user_identifier>/events`
 
-- **External IDs**: You can query all of a user's external IDs such as `anonymous_id`, `user_id`.
+- **External IDs**: You can query all of a user's external IDs such as `anonymous_id` or `user_id`.
 
-  `https://profiles.segment.com/v1/spaces/<space-id>/collections/users/profiles/<user_identifier>/external_ids`
+  `https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles/<user_identifier>/external_ids`
 
 
 **Traits**
-You can query a user's traits (first_name, last_name, ...):
+You can query a user's traits (such as `first_name`, `last_name`, and more):
 
 
-`https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/<your-segment-id>/traits`
+`https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles/<external_id>/traits`
 
 By default, the response includes 20 traits. You can return up to 200 traits by appending `?limit=200` to the querystring. If you wish to return a specific trait, append `?include={trait}` to the querystring (for example `?include=age`). You can also use the ``?class=audience​`` or ``?class=computed_trait​`` URL parameters to retrieve audiences or computed traits specifically.
 
 **Metadata**
-You can query all of a user's metadata (created_at, updated_at, ...):
+You can query all of a user's metadata (such as `created_at`, `updated_at`, and more):
 
-`https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/<your-segment-id>/metadata`
+`https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles/<external_id>/metadata`
 
 **Search an account profile**
 
 If you're sending group calls to Segment, you can now access your account profiles as well. Retrieve your account traits, computed traits, and audience traits by querying the `group_id` you are interested in:
 
-`https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/accounts/profiles/group_id:12345/traits`
+`https://profiles.segment.com/v1/spaces/<space_id>/collections/accounts/profiles/group_id:12345/traits`
 
 **Search for linked users or accounts**
 
 If you're looking to find all the users linked to an account, you can search for an account's linked users, or a user's linked accounts.
 
-`https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/accounts/profiles/group_id:12345/links`
+`https://profiles.segment.com/v1/spaces/<space_id>/collections/accounts/profiles/group_id:12345/links`
 
 The return limit for the `/links` endpoint is 20 records. You can request up to 20 records by appending `?limit=20` to the query string.
 
@@ -145,7 +145,7 @@ You can also request using cURL:
 ```bash
 export SEGMENT_ACCESS_SECRET="YOUR_API_ACCESS_TOKEN_SECRET_HERE"
 
-curl https://profiles.segment.com/v1/spaces/<your-space-id>/collections/users/profiles/<your-segment-id>/traits -u $SEGMENT_ACCESS_SECRET:
+curl https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles/<external_id>/traits -u $SEGMENT_ACCESS_SECRET:
 ```
 
 ## API reference
@@ -255,16 +255,16 @@ Request-Id: 1111-2222-3333-4444
 The Profile API supports the following routes. These routes are appended the Profile API request URL:
 
 ```
-https://profiles.segment.com/v1/spaces/:space_id:/
+https://profiles.segment.com/v1/spaces/<space_id>/
 ```
 
 | Name                         | Route                                                  |
 | ---------------------------- | ------------------------------------------------------ |
-| Get a Profile's Traits       | `collections/users/profiles/:identifier:/traits`       |
-| Get a Profile's External IDs | `collections/users/profiles/:identifier:/external_ids` |
-| Get a Profile's Events       | `collections/users/profiles/:identifier:/events`       |
-| Get a Profile's Metadata     | `collections/users/profiles/:identifier:/metadata`     |
-| Get a Profile's Links        | `collections/users/profiles/:identifier:/links`        |
+| Get a Profile's Traits       | `collections/users/profiles/<identifier>/traits`       |
+| Get a Profile's External IDs | `collections/users/profiles/<identifier>/external_ids` |
+| Get a Profile's Events       | `collections/users/profiles/<identifier>/events`       |
+| Get a Profile's Metadata     | `collections/users/profiles/<identifier>/metadata`     |
+| Get a Profile's Links        | `collections/users/profiles/<identifier>/links`        |
 
 
 #### Get a profile's traits
@@ -280,7 +280,7 @@ GET /v1/spaces/<space_id>/collections/<users>/profiles/<external_id>/traits
 | **Argument** | **Description**                                          | **Example**                                |
 | ------------ | -------------------------------------------------------- | ------------------------------------------ |
 | `class`      | Supports returning all audiences, or all computed traits | `class=audience` or `class=computed_trait` |
-| `include`    | A comma-separated list of property keys to include.      | `first_name,city`                          |
+| `include`    | A comma-separated list of property keys to include       | `first_name,city`                          |
 | `limit`      | Defines how many traits are returned in one call         | `100`                                      |
 | `verbose`    | True for verbose field selection                         | `true`,`false`                             |
 
@@ -300,7 +300,7 @@ GET /v1/spaces/lg8283283/collections/users/profiles/user_id:u1234/traits
 **Request**
 
 ```bash
-    curl https://profiles.segment.com/v1/spaces/:space_id:/collections/users/profiles/<id_type:ext_id>/traits
+    curl https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles/<id_type:ext_id>/traits
       -X GET
       -u $SEGMENT_ACCESS_SECRET:
 ```
@@ -368,7 +368,7 @@ GET /v1/spaces/<space_id>/collections/<users>/profiles/<id_type:ext_id>/external
 **Request**
 
 ```bash
-curl https://profiles.segment.com/v1/spaces/:space_id:/collections/users/profiles/<id_type:ext_id>/external_ids
+curl https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles/<id_type:ext_id>/external_ids
   -X GET
   -u $SEGMENT_ACCESS_TOKEN:
 ```
@@ -411,7 +411,7 @@ curl https://profiles.segment.com/v1/spaces/:space_id:/collections/users/profile
 
 | **Argument** | **Description**                                        | **Example**               |
 | ------------ | ------------------------------------------------------ | ------------------------- |
-| `include`    | A comma-separated list of external id type to include. | `user_id`, `anonymous_id` |
+| `include`    | A comma-separated list of external ids to include      | `user_id`, `anonymous_id` |
 | `limit`      | Defines how many external ids are returned in one call | `25`                     |
 | `verbose`    | True for verbose field selection                       | `true`,`false`            |
 
@@ -428,7 +428,7 @@ Get up to 14 days of a profile's historical events within a collection using an 
 **Request**
 
 ```js
-    curl https://profiles.segment.com/v1/spaces/:space_id:/collections/users/profiles/<external_id>/events
+    curl https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles/<external_id>/events
       -X GET
       -u $SEGMENT_ACCESS_SECRET:
 ```
@@ -533,7 +533,7 @@ Get a single profile's metadata within a collection using an `external_id`.
 **Request**
 
 ```bash
-    curl https://profiles.segment.com/v1/spaces/:space_id:/collections/users/profiles/<external_id>/metadata
+    curl https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles/<external_id>/metadata
       -X GET
       -u $SEGMENT_ACCESS_SECRET:
 ```
@@ -583,7 +583,7 @@ GET /v1/spaces/<space_id>/collections/<users>/profiles/<external_id>/links
 **Request**
 
 ```bash
-    curl https://profiles.segment.com/v1/spaces/:space_id:/collections/users/profiles/<external_id>/links
+    curl https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles/<external_id>/links
       -X GET
       -u $SEGMENT_ACCESS_SECRET:
 ```
