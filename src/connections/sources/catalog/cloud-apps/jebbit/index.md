@@ -5,7 +5,7 @@ id: V2kq0X7vYy
 
 [Jebbit](https://jebbit.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps build and design fun, engaging quizzes and customer experiences with speed and control, all while capturing customer preferences as zero-party data. 
 
-This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
+This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
 
 This source is maintained by Jebbit. For any issues with the source, [contact their Support team](mailto:support@jebbit.com).
 
@@ -15,7 +15,7 @@ This source is maintained by Jebbit. For any issues with the source, [contact th
 2. Search for "Jebbit" in the Sources Catalog, select click Jebbit, and click **Add Source**.
 4. On the next screen, give the Source a nickname and configure any other settings. 
 
-   The name identifies this source within your workspace, and typically reflects the name of the application. The name can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. Jebbit_Prod, Jebbit_Staging, Jebbit_Dev).
+   The name identifies this source within your workspace, and typically reflects the name of the application. The name can be anything, but should be something that reflects the source itself and distinguishes amongst your environments (for example, Jebbit_Prod, Jebbit_Staging, Jebbit_Dev).
 5. Click **Add Source** to save your settings.
 6. Send an email to [Jebbit's Support team](mailto:support@jebbit.com) after gathering the required credentials to start the integration process.
 
@@ -24,82 +24,33 @@ This source is maintained by Jebbit. For any issues with the source, [contact th
 
 The table below lists events that Jebbit sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations. 
 
-<table>
-  <tr>
-   <td>Event Name</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>Survey Completed</td>
-   <td>Experience was completed </td>
-  </tr>
-  <tr>
-   
-</table>
+| Event Name       | Description               |
+|------------------|---------------------------|
+| Survey Completed | Experience was completed  |
 
-## Event Properties
+
+## Event properties
 
 The table below list the properties included in the events listed above.
 
-<table>
-  <tr>
-   <td>Property Name</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>email</td>
-   <td>The email address provided by the user.
-</td>
-  </tr>
-  <tr>
-   <td>client_user_id 
-(optional)
+| Property Name             | Description                                                                                                                                                                                  |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `email`                     | The email address provided by the user.                                                                                                                                                      |
+| `client_user_id`  | Optional. An ID the Client passes in the Jebbit Experience URL that Jebbit can then pass back with the data for that user.                                                                             |
+| `experience_date`           | Timestamp representing the date the user engaged with the Jebbit Experience (UTC).Default is YYYY-MM-DD HH:MM:SS                                                                             |
+| `campaign_name`             | Client generated name of the campaign                                                                                                                                                        |
+| `opt_in`                    | User opt-in if Client chooses to use the opt_in feature in their Jebbit Experience.                                                                                                          |
+| `outcome`                   | The outcome tied to the user session. Outcomes offer a way to collect a data point based on multiple questions/input. For more information on outcomes, please contact your Account Manager. |
+| `url_param`                 | Any URL parameters attached to the Jebbit Experience URL.                                                                                                                                    |
+| favorite_color* (example) | Client defined attribute mapped to the experience.                                                                                                                                           |
+| age_group* (example)      | Client defined attribute mapped to the experience.                                                                                                                                           |
 
-</td>
-   <td>An ID the Client passess in the Jebbit Experience URL that Jebbit can then pass back with the data for that user.
 
-</td>
-  </tr>
-  <tr>
-   <td>experience_date</td>
-   <td>Timestamp representing the date the user engaged with the Jebbit Experience (UTC).
-Default is YYYY-MM-DD HH:MM:SS
-
-</td>
-  </tr>
-  <tr>
-   <td>campaign_name</td>
-   <td>Client generated name of the campaign</td>
-  </tr>
-  <tr>
-   <td>opt_in</td>
-   <td>User opt-in if Client chooses to use the opt_in feature in their Jebbit Experience. 
-
-</td>
-  </tr>
-  <tr>
-   <td>outcome</td>
-   <td>The outcome tied to the user session. Outcomes offer a way to collect a data point based on multiple questions/input. For more information on outcomes, please contact your Account Manager.</td>
-<tr>
-   <td>url_param</td>
-   <td>Any URL parameters attached to the Jebbit Experience URL.</td>
-  </tr>
-  <tr>
-   <td>favorite_color* (example) </td>
-   <td>Client defined attribute mapped to the experience. </td>
-  </tr>
-     <tr>
-   <td>age_group*
-(example) </td>
-   <td>Client defined attribute mapped to the experience. </td>
-  </tr>
-</table>
-
-## How Jebbit Sends Data to Segment
+## How Jebbit sends data to Segment
 
 Jebbit sends user data to Segment by triggering an identify call for each user completing an experience to be created, for example:
 
-```
+```json
 {
   "context": {
     "externalIds": [
@@ -124,7 +75,7 @@ Jebbit sends user data to Segment by triggering an identify call for each user
 
 In order to record actions that a user has completed, Jebbit triggers a Track Call for each user to completes an experience.
 
-```
+```json
 {
   "context": {
     "externalIds": [
@@ -152,7 +103,7 @@ In order to record actions that a user has completed, Jebbit triggers a Track Ca
 }
 ```
 
-Now that your Source is set up, you can connect it with Destinations.
+Now that the Source is configured, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
 
