@@ -13,25 +13,25 @@ This source is maintained by Bluedot. For any issues with the source, [contact B
 
 ## Getting started
 
-
-### Adding the Segment integration in Bluedot Canvas
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} click **Add Source**.
 2. Search for **Bluedot** in the Sources Catalog, select **Bluedot**, and click **Add Source**.
 3. On the next screen, give the Source a name configure any other settings.
 
-   - The name identifies this source within your workspace, and typically reflects the name of the application. The name can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (for example, SourceName_Prod, SourceName_Staging, or SourceName_Dev).
-5. Click **Add Source** to save your settings.
-6. Copy the Write key from the Segment UI and log in to Bluedot Canvas - navigate to Integrations > Select the Project you want link > Segment Integration and paste the key to connect.
+  The name identifies this source within your workspace, and typically reflects the name of the application. The name can be anything, but Segment recommends that you use something that reflects the source itself and distinguishes amongst your environments (for example, `SourceName_Prod`, `SourceName_Staging`, or `SourceName_Dev`).
+4. Click **Add Source** to save your settings.
+5. Copy the Write key from the Segment UI and log in to Bluedot Canvas - navigate to Integrations > Select the Project you want link > Segment Integration and paste the key to connect.
 
-### Sending Events to Segment
+### Send events to Segment
 
-To send events to segment you’ll need to include the `userId` in the [Custom Event Metadata](https://docs.bluedot.io/custom-event-metadata/){:target="_blank"} of the event. Make sure to name the property `segment_userId`.
+To send events to Segment, include the `userId` in the [Custom Event Metadata](https://docs.bluedot.io/custom-event-metadata/){:target="_blank"} of the event. Make sure to name the property `segment_userId`.
 
-**Example:**
+For example:
 
-    "segment_userId": "<YOUR SEGMENT USER ID>"
+```json
+"segment_userId": "<YOUR SEGMENT USER ID>"
+```
 
-The [Custom Event Metadata](https://docs.bluedot.io/custom-event-metadata/){:target="_blank"} is not persisted across SDK sessions. If the SDK is reset the Custom Event Metadata is cleared by the SDK. We suggest setting the custom data every time the SDK is initiated in the app.
+The [Custom Event Metadata](https://docs.bluedot.io/custom-event-metadata/){:target="_blank"} is not persisted across SDK sessions. If the SDK is reset the Custom Event Metadata is cleared by the SDK. Segment suggests that you set the custom data every time the SDK is initiated in the app.
 
 ## Events
 
@@ -48,7 +48,7 @@ The table below lists events that Bluedot sends to Segment. These events appear 
 | `Customer Arrived (Web)`         | Wave event type `arrival`                                      |
 | `Custom Web Event: {event type}` | Wave custom event types. (for example, `eventType: "pickedComplete"`). |
 
-## Event Properties
+## Event properties
 
 The table below list the properties included in the events listed above.
 
@@ -181,6 +181,6 @@ The following payload contains the properties for the following events:
 
 
 
-## Adding Destinations
+## Add destinations
 
-Now that your Source is set up, you can connect it with Destinations. Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the Event Delivery tool, and refer to the Destination docs for each tool for troubleshooting. If there are any issues with how the events are arriving to Segment, contact the [Bluedot support team](mailto:help@bluedot.io).
+Now that your Source is configured, you can connect it with Destinations. Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the Event Delivery tool, and refer to the Destination docs for each tool for troubleshooting. If there are any issues with how the events are arriving to Segment, contact the [Bluedot support team](mailto:help@bluedot.io).
