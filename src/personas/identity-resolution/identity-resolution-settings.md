@@ -16,15 +16,15 @@ Before you connect a source to your Personas space, Segment recommends that you 
 > note ""
 > **NOTE:** Workspace owners and users with the Identity Admin role can edit the Identity Resolution table.
 
-![](images/identity-resolution-page-1.png)
+![Identity Resolution Configuration screen](images/identity-resolution-page-1.png)
 
 ## ExternalIDs
 
 Segment creates and merges user profiles based on externalIDs used as identifiers. You can view these externalIDs in the Identities tab of a User Profile in the User Explorer:
 
-![](images/jane_doe_new_identities.png)
+![ExternalIDs of a profile in the User Explorer](images/jane_doe_new_identities.png)
 
-By default, Segment promotes the following traits and IDs in track and identify calls to as externalIDs:
+By default, Segment promotes the following traits and IDs in track and identify calls to externalIDs:
 
 | External ID Type   | Message Location in Track or Identify Call                                                                    |
 | ------------------ | ------------------------------------------------------------------------------------------------------------- |
@@ -54,7 +54,7 @@ These custom identifiers must be sent in the custom `externalIds` field in the `
 | Key        | Value                                                                        |
 | ---------- | ---------------------------------------------------------------------------- |
 | id         | value of the externalID                                                      |
-| type       | name of externalID type (`app_id`, `ecommerce_id`, `shopify_id`, etc)        |
+| type       | name of externalID type (`app_id`, `ecommerce_id`, `shopify_id`, and more)   |
 | collection | `users` if a user-level identifier or `accounts` if a group-level identifier |
 | encoding   | `none`                                                                       |
 
@@ -78,16 +78,16 @@ analytics.track('Subscription Upgraded', {
 
 Segment recommends that you add custom externalIDs to the Identity Resolution table *before* events containing this identifier flow through the space. Once an event with a new type of externalID flows into the space, the externalID is automatically added to the table if it wasn't manually added. When the externalID is automatically added, it defaults to the preset priority and limit, as explained below.
 
-## Flat Matching Logic
+## Flat matching logic
 When a new event flows into Personas, Segment looks for profiles that match any of the identifiers on the event.
 
 Based on the existence of a match, one of three actions can occur:
 
 **1: Create a new profile**
-When there are no pre-existing profiles that have matching identifiers to the event, Segment create a new user profile.
+When there are no pre-existing profiles that have matching identifiers to the event, Segment creates a new user profile.
 
 **2: Add to existing profile**
-When there is one profile that matches all identifiers in an event, Segment attempts to map the traits, identifiers and events on the call to that existing profile. If there is an excess of any identifier on the final profile, Segment defers to the Identity Resolution rules outlined below.
+When there is one profile that matches all identifiers in an event, Segment attempts to map the traits, identifiers, and events on the call to that existing profile. If there's an excess of any identifier on the final profile, Segment defers to the Identity Resolution rules outlined below.
 
 **3: Merge existing profiles**
 When there are multiple profiles that match the identifiers in an event, Segment checks the Identity Resolution rules outlined below, and attempts to merge profiles.
@@ -97,9 +97,9 @@ One common example of a use-case that can cause inaccurate merges is the Shared 
 Segment's three Identity Resolution rules allow Identity Admins to block incorrect values from causing incorrect merges, to set the maximum number of values allowed per externalID, and to customize the priority of these externalIDs.
 
 ## Identity Resolution rules
-The following rules exist increase the likelihood that identities are resolved correctly.
+The following rules exist to increase the likelihood that identities are resolved correctly.
 
-### Blocked Values
+### Blocked values
 Segment recommends that you proactively block certain values from being used as identifiers. While these values will remain in the payload on the event itself, they are not promoted to the externalID object Segment uses to determine user profiles.
 
 This is important when developers have a hard-coded value for fields like user_id during QA or development that then erroneously makes it production. This can cause hundreds of profiles to merge incorrectly and can have costly consequences when these spaces are already feeding data into a production email marketing tool or push notification tool downstream.
@@ -113,14 +113,14 @@ In the past, certain default values cause large amounts of profiles to merge inc
 | null                          | Exact Match     |
 | anonymous                     | Exact Match     |
 
-![](images/blocked-values.png)
+![Add blocked values for the identity algorithm to ignore](images/blocked-values.png)
 
 Before sending data through, Segment also recommends adding any default hard-coded values that your team uses during the development process, such as `void` or `abc123`.
 
 ### Limit
 
 Identity Admins can specify the total number of values allowed per identifier type on a profile during a certain period. For example, in the image below, the `anonymous_id` field has a limit of **5 Weekly**.
-![](images/anonymous-id.png)
+![Add value limits for an identifier type](images/anonymous-id.png)
 
 This will vary depending on how companies define a user today. In most cases, companies rely on `user_id` to distinguish user profiles and Segment defaults to the following configurations:
 
@@ -141,7 +141,7 @@ When you choose the limit on an identifier, ask the following questions about ea
 
 1. Is it an immutable ID? An immutable ID, such as `user_id`, should have `1 ever` per user profile.
 2. Is it a constantly changing ID? A constantly changing ID, such as `anonymous_id` or `ga_client_id`, should have a short sliding window, such as **5 weekly** or **5 monthly**, depending on how often your application automatically logs out the user.
-3. Is it an ID that updates on a yearly basis? Most customers will have around 5 emails or devices at any one time, but can update these over time. For identifiers like `email`, `android.id` or `ios.id`, Segment recommends a longer limit like **5 annually**.
+3. Is it an ID that updates on a yearly basis? Most customers will have around five emails or devices at any one time, but can update these over time. For identifiers like `email`, `android.id`, or `ios.id`, Segment recommends a longer limit like **5 annually**.
 
 ### Priority
 
@@ -161,7 +161,7 @@ If this event maps to this profile, the resulting profile would then contain two
 
 At this point, the event searches for any profiles that match just the identifier user_id `abc456`. Now there are no existing profiles with this identifier, so Segment creates a new profile with user_id `abc456`.
 
-By default, Segment explicitly orders user_id and email as rank `1` and `2`, respectively. All other identifiers are in alphabetical order beginning from rank `3`. This means that if the identifiers sent with events flowing into personas are user_id, email, anonymous_id and ga_client_id, the rank would be as follows:
+By default, Segment explicitly orders user_id and email as rank `1` and `2`, respectively. All other identifiers are in alphabetical order beginning from rank `3`. This means that if the identifiers sent with events flowing into personas are user_id, email, anonymous_id, and ga_client_id, the rank would be as follows:
 
 | Identifier   | Priority |
 | ------------ | -------- |
@@ -182,10 +182,10 @@ If a new android.id identifier appeared without first giving it explicit order, 
 
 If you require an explicit order for all identifiers, configure this in the Identity Resolution settings page before sending in events.
 
-![](images/edit-priority.png)
+![Edit priority for identifiers in the Identity Resolution settings](images/edit-priority.png)
 
 When choosing the priority of your identifier, ask the following questions about each of the identifiers you send to Segment:
 
 1. Is it an immutable ID? Give immutable IDs, such as user_id, highest priority.
 2. Are they unique IDs? Give Unique IDs such as email higher priority than possibly shared identifiers like android.id or ios.id.
-3. Does it temporarily identify a user? Identifiers such as anonymous_id, ios.idfa, ga_client_id are constantly updated or expired for a user. Generally speaking, rank these lower than identifiers that permanently identify a user.
+3. Does it temporarily identify a user? Identifiers such as anonymous_id, ios.idfa, and ga_client_id are constantly updated or expired for a user. Generally speaking, rank these lower than identifiers that permanently identify a user.
