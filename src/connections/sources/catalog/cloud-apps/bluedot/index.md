@@ -3,35 +3,35 @@ title: Bluedot Source
 id: lglFhNcZ9z
 ---
 
-[Bluedot](https://bluedot.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a location platform that provides an accurate and simple geofencing platform for apps. After integrating the Bluedot SDK and setting geofences, customer’s can create personalised location-based experiences for their users.
+[Bluedot](https://bluedot.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a location platform that provides an accurate and simple geofencing platform for apps. After integrating the Bluedot SDK and setting geofences, customer’s can create personalised location-based experiences for their users.
 
-Bluedot provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
+Bluedot provides self-serve predictive analytics for growth marketers, using machine learning to automate audience insights and recommendations.
 
-This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
+This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources){:target="_blank"} which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
 
-This source is maintained by Bluedot. For any issues with the source, [contact their Support team](mailto:help@bluedot.io).
+This source is maintained by Bluedot. For any issues with the source, [contact Bluedot's Support team](mailto:help@bluedot.io).
 
-## Getting Started
+## Getting started
 
 
 ### Adding the Segment integration in Bluedot Canvas
-1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
-2. Search for "Bluedot" in the Sources Catalog, select click Bluedot, and click **Add Source**.
-3. On the next screen, give the Source a name configure any other settings. 
+1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} click **Add Source**.
+2. Search for **Bluedot** in the Sources Catalog, select **Bluedot**, and click **Add Source**.
+3. On the next screen, give the Source a name configure any other settings.
 
-   The name identifies this source within your workspace, and typically reflects the name of the application. The name can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
+   - The name identifies this source within your workspace, and typically reflects the name of the application. The name can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (for example, SourceName_Prod, SourceName_Staging, or SourceName_Dev).
 5. Click **Add Source** to save your settings.
 6. Copy the Write key from the Segment UI and log in to Bluedot Canvas - navigate to Integrations > Select the Project you want link > Segment Integration and paste the key to connect.
 
 ### Sending Events to Segment
 
-To send events to segment you’ll need to include the `userId` in the [Custom Event Metadata](https://docs.bluedot.io/custom-event-metadata/) of the event. Make sure to name the property `segment_userId`. 
+To send events to segment you’ll need to include the `userId` in the [Custom Event Metadata](https://docs.bluedot.io/custom-event-metadata/){:target="_blank"} of the event. Make sure to name the property `segment_userId`.
 
 **Example:**
 
     "segment_userId": "<YOUR SEGMENT USER ID>"
 
-The [Custom Event Metadata](https://docs.bluedot.io/custom-event-metadata/) is not persisted across SDK sessions. If the SDK is reset the Custom Event Metadata is cleared by the SDK. We suggest setting the custom data every time the SDK is initiated in the app.
+The [Custom Event Metadata](https://docs.bluedot.io/custom-event-metadata/){:target="_blank"} is not persisted across SDK sessions. If the SDK is reset the Custom Event Metadata is cleared by the SDK. We suggest setting the custom data every time the SDK is initiated in the app.
 
 ## Events
 
@@ -46,7 +46,7 @@ The table below lists events that Bluedot sends to Segment. These events appear 
 | `Order Registered`               | Wave register order                                            |
 | `Customer On The Way (Web)`      | Wave event type `onTheWay`                                     |
 | `Customer Arrived (Web)`         | Wave event type `arrival`                                      |
-| `Custom Web Event: {event type}` | Wave custom event types. (I.E. `eventType: "pickedComplete"`). |
+| `Custom Web Event: {event type}` | Wave custom event types. (for example, `eventType: "pickedComplete"`). |
 
 ## Event Properties
 
@@ -159,17 +159,17 @@ The following payload contains the properties for the following events:
 
 The following payload contains the properties for the following events:
 
--  `Order Registered` 
--  `Customer On The Way (Web)` 
--  `Customer Arrived (Web)` 
--  `Custom Web Event: {event type}` 
+-  `Order Registered`
+-  `Customer On The Way (Web)`
+-  `Customer Arrived (Web)`
+-  `Custom Web Event: {event type}`
 
 | Property Name         | Description                                                                                                        |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | `event`               | The event type associated with the event                                                                           |
 | `accountId`           | The ID of the Bluedot Account that the project was associated with                                                 |
 | `customEventMetaData` | Custom information sent with triggered event                                                                       |
-| `eventType`           | type of triggered event                                                                                            |
+| `eventType`           | Type of triggered event                                                                                            |
 | `os`                  | `iOS` or `Android`                                                                                                 |
 | `installRef`          | A randomly issued installation reference, not tied to any personally identifiable data (PID) on the user’s device. |
 | `notificationId`      | A randomly issued notification ID, not tied to any personally identifiable data (PID) on the user’s device.        |
@@ -183,4 +183,4 @@ The following payload contains the properties for the following events:
 
 ## Adding Destinations
 
-Now that your Source is set up, you can connect it with Destinations.Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the Event Delivery tool, and refer to the Destination docs for each tool for troubleshooting. If there are any issues with how the events are arriving to Segment, contact the [Bluedot support team](mailto:help@bluedot.io).
+Now that your Source is set up, you can connect it with Destinations. Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the Event Delivery tool, and refer to the Destination docs for each tool for troubleshooting. If there are any issues with how the events are arriving to Segment, contact the [Bluedot support team](mailto:help@bluedot.io).
