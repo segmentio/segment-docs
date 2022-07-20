@@ -10,8 +10,6 @@ Segment uses several inputs to calculate the monthly bill for your account. The 
 
 In the example, there are five events across two sources attributed `userID: 123`. This is a single MTU, since the events occur within the same 30 day billing period. Segment uses Identity Resolution to associate `anonID: 456` with this known user, to ensure this user's event is counted within the same MTU.
 
-
-
 ## What is an MTU?
 
 MTU stands for "monthly tracked user". (Keep reading to learn [how Segment counts MTUs](#how-does-segment-calculate-mtus).)
