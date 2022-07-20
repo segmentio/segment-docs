@@ -1,6 +1,16 @@
 ---
 title: MTUs, Throughput and Billing
 ---
+[![A description of MTU and throughput calculation](images/billing-overview.png)](images/billing-overview.png)
+
+
+**Took a stab at describing the first part of the illustration below, but I'll defer to your knowledge on the subject. In general, I think it would be most helpful here if we could show the calculation given what we see in the image.**
+
+Segment uses several inputs to calculate the monthly bill for your account. The image above illustrates the method Segment uses to calculate Monthly Tracked Users (MTUs) across multiple sources. 
+
+In the example, there are five events across two sources attributed `userID: 123`. This is a single MTU, since the events occur within the same 30 day billing period. Segment uses Identity Resolution to associate `anonID: 456` with this known user, to ensure this user's event is counted within the same MTU.
+
+
 
 ## What is an MTU?
 
@@ -13,8 +23,6 @@ When you use Segment to collect your data, you use the Segment tracking methods 
 Each data blob (with its properties or traits) goes through this endpoint, and is considered one "API call".
 
 ## What is throughput?
-
-[![A description of MTU and throughput calculation](images/throughput.png)](images/throughput.png)
 
 Depending on your Segment account type, your plan might include a throughput limit. The throughput limit tells you how many API calls and objects Segment allows you per MTU.
 
@@ -60,7 +68,7 @@ Click the billing period dropdown at the top of the page to see a cumulative dai
 
 ## What is the difference between an event and an object?
 
-We know this sounds like a non-sequitur, but understanding the difference between events and objects helps you understand how MTUs are calculated.
+Understanding the difference between events and objects helps you understand how MTUs are calculated.
 
 An event is a data collection triggered in response to a user action: a [Track call](/docs/connections/spec/track/) (or a [Page](/docs/connections/spec/page/)/[Screen](/docs/connections/spec/screen/) call if the action was to navigate to a new page). Events take place in a single moment in time, and include a name, timestamp, and **properties**. When an event happens more than once, it creates a new Event record (with a new timestamp) rather than updating an existing one. For example, a user browsing a product catalog might generate several "Product Viewed" events, which might include the product name, price, and category.
 
@@ -117,7 +125,7 @@ Replays only affect your MTU count if you are using a [Repeater](/docs/connectio
 
 ## Why is my MTU count different from what I see in my destinations and other tools?
 
-Different tools count users under different conditions, so comparing numbers between any two tools, or between Segment and a tool, rarely produces the same number. Each tool accepts slightly different incoming data, and they often reject or process the incoming data differently. We've included some example explanations of why you might see differing numbers below.
+Different tools count users under different conditions, so comparing numbers between any two tools, or between Segment and a tool, rarely produces the same number. Each tool accepts slightly different incoming data, and they often reject or process the incoming data differently. Included are some example explanations of why you might see differing numbers below.
 
 > success ""
 > Contact [Segment Product Support](https://segment.com/help/contact/) if for more information about a specific tool, or if you're concerned that differing numbers might be due an implementation error.
