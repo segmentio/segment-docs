@@ -291,7 +291,7 @@ $ npm install --save-dev typewriter
 $ npx typewriter init
 ```
 
-You can regenerate your Typewriter client by running `npx typewriter`. You need to do this each time you update your Tracking Plan. Running the command creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference). The command also adds a new Typewriter / Segment client in `./analytics` (or whichever path you configured). You can use this interchangeably as a normal React Native Segment client. It contains additional methods for your tracking plan:
+Run `npx typewriter` to regenerate your Typewriter client. You need to do this each time you update your Tracking Plan. This command creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference). The command also adds a new Typewriter / Segment client in `./analytics` (or whichever path you configured). You can use this interchangeably as a normal React Native Segment client. It contains additional methods for your tracking plan:
 
 ```ts
 import {
@@ -351,7 +351,7 @@ $ npx typewriter
 Typewriter requires a Segment API token to fetch Tracking Plans from the [Segment Public API](https://api.segmentapis.com/docs/).
 
 > info ""
-> If you're using the previous version of Typewriter that fetches tracking plans from the [Segment Config API](/docs/config-api/) and would like to upgrade to the new version of Typewriter, generate a new API token by following the steps below.
+> If you use a previous version of Typewriter that fetches tracking plans from the [Segment Config API](/docs/config-api/) and would like to upgrade to the new version of Typewriter, generate a new API token by following the steps below.
 
 You must be a workspace owner to create Segment API tokens. To create an API token:
 1. Click on the **Tokens** tab on the [Access Management](https://app.segment.com/goto-my-workspace/settings/access-management) page and click **Create Token**.
@@ -462,7 +462,7 @@ $ npx typewriter init
 
 If your team has a standard way to supply secrets (passwords and tokens) in development environments, whether that's an `.env` file or an AWS-backed secret store, you can configure Typewriter to use it to get a Segment API token.
 
-You configure this by creating a token script called `scripts.token` in your `typewriter.yml`. This script is a string that contains a shell command that, when executed, outputs a valid Segment API token. Here's an **insecure**, example:
+To configure this, create a token script called `scripts.token` in your `typewriter.yml`. This script is a string that contains a shell command that, when executed, outputs a valid Segment API token. Here's an **insecure**, example:
 
 ```yaml
 scripts:
@@ -582,7 +582,7 @@ typewriter.setTypewriterOptions({
 
 ## Known Limitations
 
-Typewriter currently only supports `track` calls. However, you can continue to use the underlying (untyped) analytics instance to perform `identify`, `group`, `page`, `screen`, and `alias` calls.
+Typewriter only supports `track` calls. However, you can continue to use the underlying (untyped) analytics instance to perform `identify`, `group`, `page`, `screen`, and `alias` calls.
 
 Not all languages support run-time validation. Currently, `analytics.js` and `analytics-node` support it using [AJV](https://github.com/epoberezkin/ajv) (both for JavaScript and TypeScript projects) while `analytics-ios` and `analytics-android` do not yet support run-time validation. Typewriter also does not yet support run-time validation using Common JSON Schema.
 
