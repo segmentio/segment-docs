@@ -129,7 +129,7 @@ orderCompleted({
 })
 ```
 
-Typewriter wraps your analytics calls in an [ES6 `Proxy`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy){:target="_blank"}, which helps protect your application from crashing if you make analytics calls with a generated function that doesn't exist. For example, if an `Order Completed` event didn't exist in your Tracking Plan in the first example above, then your app would crash with a `TypeError: typewriter.orderCompleted is not a function`. However, since `typewriter` dynamically proxies the underlying function calls, it can detect if a function doesn't exist, and handle it for you. Typewriter logs a warning message, then fires an `Unknown Analytics Call Fired` event into your source. Segment has found this useful when migrating JavaScript projects to Typewriter in bulk, since it gives Segment confidence that Segment won't introduce regressions that crash the application. Keep in mind that proxying does not work with named exports.
+Typewriter wraps your analytics calls in an [ES6 `Proxy`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy){:target="_blank"}, which helps protect your application from crashing if you make analytics calls with a generated function that doesn't exist. For example, if an `Order Completed` event didn't exist in your Tracking Plan in the first example above, then your app would crash with a `TypeError: typewriter.orderCompleted is not a function`. However, since `typewriter` dynamically proxies the underlying function calls, it can detect if a function doesn't exist, and handle it for you. Typewriter logs a warning message, then fires an `Unknown Analytics Call Fired` event into your source. This helps to prevent regressions when you migrate JavaScript projects to Typewriter in bulk. Keep in mind that proxying doesn't work with named exports.
 
 ## Node.js Quickstart
 
@@ -174,7 +174,7 @@ typewriter.orderCompleted({
 })
 ```
 
-Typewriter wraps your analytics calls in an [ES6 `Proxy`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy), which helps protect your application from crashing if you make analytics calls with a generated function that doesn't exist. For example, if an `Order Completed` event didn't exist in your Tracking Plan in the first example above, then your app would crash with a `TypeError: typewriter.orderCompleted is not a function`. However, since `typewriter` dynamically proxies the underlying function calls, it can detect if a function does not exist, and handle it for you. Typewriter logs a warning message, then fires an `Unknown Analytics Call Fired` event into your source. Segment has found this useful when migrating JavaScript projects to Typewriter in bulk, since it gives Segment confidence that Segment won't introduce regressions that crash the application. Keep in mind that proxying does not work with named exports.
+Typewriter wraps your analytics calls in an [ES6 `Proxy`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy), which helps protect your application from crashing if you make analytics calls with a generated function that doesn't exist. For example, if an `Order Completed` event didn't exist in your Tracking Plan in the first example above, then your app would crash with a `TypeError: typewriter.orderCompleted is not a function`. However, since `typewriter` dynamically proxies the underlying function calls, it can detect if a function does not exist, and handle it for you. Typewriter logs a warning message, then fires an `Unknown Analytics Call Fired` event into your source. This helps to prevent regressions when you migrate JavaScript projects to Typewriter in bulk. Keep in mind that proxying doesn't work with named exports.
 
 ## Swift Quickstart
 
@@ -192,7 +192,7 @@ $ npx typewriter init
 
 4. Import your new Typewriter client into your project using XCode. If you place your generated files into a folder in your project, import the project as a group not a folder reference.
 
-After adding the generated client to your Xcode Project you will be able to use it from Swift as extension methods on any Analytics client object:
+When you add the generated client to your Xcode Project you can use as a Swift extension method on any Analytics client object:
 
 ```swift
 Analytics.main.orderCompleted(OrderCompleted(
@@ -592,4 +592,4 @@ If you're interested in contributing, [open an issue on GitHub](https://github.c
 
 ## Feedback
 
-Segment is always curious about any feedback you have on your experience with Typewriter! To contact Segment, [open an issue on GitHub](https://github.com/segmentio/typewriter/issues/new).
+Segment welcomes feedback you may have on your experience with Typewriter. To contact Segment, [open an issue on GitHub](https://github.com/segmentio/typewriter/issues/new).
