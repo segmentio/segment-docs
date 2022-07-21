@@ -37,15 +37,15 @@ The [Custom Event Metadata](https://docs.bluedot.io/custom-event-metadata/){:tar
 
 The table below lists events that Bluedot sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations.
 
-| Event Name                       | Description                                                    |
-| -------------------------------- | -------------------------------------------------------------- |
-| `Entry Geofence`                 | Device breaches a geofence.                                    |
-| `Exit Geofence`                  | Device exits a geofence                                        |
-| `Tempo ETA Update`               | Tempo ETA update                                               |
-| `Tempo Stop`                     | Tempo stops tracking ETA                                       |
-| `Order Registered`               | Wave register order                                            |
-| `Customer On The Way (Web)`      | Wave event type `onTheWay`                                     |
-| `Customer Arrived (Web)`         | Wave event type `arrival`                                      |
+| Event Name                       | Description                                                            |
+| -------------------------------- | ---------------------------------------------------------------------- |
+| `Entry Geofence`                 | Device breaches a geofence.                                            |
+| `Exit Geofence`                  | Device exits a geofence                                                |
+| `Tempo ETA Update`               | Tempo ETA update                                                       |
+| `Tempo Stop`                     | Tempo stops tracking ETA                                               |
+| `Order Registered`               | Wave register order                                                    |
+| `Customer On The Way (Web)`      | Wave event type `onTheWay`                                             |
+| `Customer Arrived (Web)`         | Wave event type `arrival`                                              |
 | `Custom Web Event: {event type}` | Wave custom event types. (for example, `eventType: "pickedComplete"`). |
 
 ## Event properties
@@ -127,7 +127,7 @@ The following payload contains the properties for the following events:
 | `eta`                                               | User’s estimated time of arrival to the destination in seconds                                                                                        |
 | `etaDirection`                                      | The direction of estimation – whether the device is more than or less than the number of seconds provided.<br><br><br>- `greaterThan`<br>- `lessThan` |
 | `installRef`                                        | A randomly issued installation reference, not tied to any personally identifiable data (PID) on the user’s device.                                    |
-| `notificationType`                                  | This field denotes the type of notification being relayed from our servers to yours. For a Tempo event the type will be “tempo”.                      |
+| `notificationType`                                  | This field denotes the type of notification being relayed from Bluedot's servers to yours. For a Tempo event the type will be “tempo”.                |
 | `projectId`                                         | The ID of the Bluedot project that the SDK was running against                                                                                        |
 | `receivedAt`                                        | Time of event received in Bluedot’s backend                                                                                                           |
 | `submissionTime`                                    | The time of event sent                                                                                                                                |
