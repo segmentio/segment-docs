@@ -52,7 +52,7 @@
   {% if destinationInfo.status == "PUBLIC_BETA" %}<li>This destination is in <span class="release-pill">Beta</span></li>{% endif %}
 </ul>
 {% if components.size > 0%}
-
+{% unless page.hide-components %}
 <h6>Components</h6>
 <ul class="components-list">
 {%for component in components %}
@@ -63,8 +63,9 @@
 {% endunless %}
 {% endfor %}
 </ul>
-
+{% endunless %}
 </div>
+{% unless page.hide-cmodes %}
 <div class="qi-content">
 <h6>Connection Modes <a href="/docs/connections/destinations/#connection-modes"><img src="/docs/images/help.svg"/></a></h6>
 <table>
@@ -90,6 +91,7 @@
 </tbody>
 </table>
 </div>
+{% endunless %}
 {% endif %}
 </div>
 {% endif %}
