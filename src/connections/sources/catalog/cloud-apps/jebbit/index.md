@@ -93,8 +93,8 @@ In order to record actions that a user has completed, Jebbit triggers a Track Ca
     "questions":{
     "attribute_1": "" //ALL MAPPED ATTRIBUTES
     },
-    "surveyId": ", //CAMPAIGN ID
-    "surveySessionId": ", //SESSION ID
+    "surveyId": "", //CAMPAIGN ID
+    "surveySessionId": "", //SESSION ID
     "surveyTitle": "", //CAMPAIGN NAME
     "trafficSource": "" //SOURCE 
   },

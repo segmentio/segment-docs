@@ -107,3 +107,5 @@ WebKit
 Wootric
 Xcode
 Zendesk
+geofenc(?:e|ing)
+Bluedot

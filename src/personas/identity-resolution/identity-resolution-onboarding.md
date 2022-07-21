@@ -11,9 +11,9 @@ title: Identity Resolution Onboarding
 > note ""
 > **NOTE:** Workspace owners, Personas administrators, and users with the Identity Admin role can edit Identity Resolution Settings.
 
-Segment creates and merges user profiles based on a space's Identity Resolution configuration. Segment searches for identifiers such as `userId`, `anonymousId` and `email` on incoming events and matches them to existing profiles or creates new profiles. These identifiers display in the Identities tab of a User Profile in the User Explorer:
+Segment creates and merges user profiles based on a space's Identity Resolution configuration. Segment searches for identifiers such as `userId`, `anonymousId`, and `email` on incoming events and matches them to existing profiles or creates new profiles. These identifiers display in the Identities tab of a User Profile in the User Explorer:
 
-![](images/jane_doe_new_identities.png)
+![Identities tab of a profile in the User Explorer](images/jane_doe_new_identities.png)
 
 ### Flat matching logic
 
@@ -25,7 +25,7 @@ Based on the existence of a match, one of three actions can occur:
 When there are no pre-existing profiles that have matching identifiers to the event, Segment creates a new user profile.
 
 **2: Add to existing profile**
-When there is one profile that matches all identifiers in an event, Segment attempts to map the traits, identifiers and events on the call to that existing profile. If there is an excess of any identifier on the final profile, Segment defers to the Identity Resolution rules outlined below.
+When there is one profile that matches all identifiers in an event, Segment attempts to map the traits, identifiers, and events on the call to that existing profile. If there is an excess of any identifier on the final profile, Segment defers to the Identity Resolution rules outlined below.
 
 **3: Merge existing profiles**
 When there are multiple profiles that match the identifiers in an event, Segment checks the Identity Resolution rules outlined below, and attempts to merge profiles.
@@ -36,17 +36,17 @@ Identity Admins should first configure Identity Resolution Settings to protect t
 
 During the space creation process, the first step is to choose an Identity Resolution configuration. If this is your first space, you have the option to choose a Segment-suggested Out-of-the-Box configuration or a custom Identity Resolution setup. All other spaces have a third option of importing settings from a different space.
 
-![](images/first_screen.png)
+![Choose an Identity Resolution configuration](images/first_screen.png)
 
 ### Out-of-the-Box
 
 For most first-time Personas users, Segment recommends that you use the out-of-the-box configuration and answer a short series of questions for a best-fit setup for your use-case.
 
-If you have custom unique identifiers or do not have a canonical `user_id`, you are automatically redirected to the Identity Resolution Settings page to complete your setup.
+If you have custom unique identifiers or don't have a canonical `user_id`, you're automatically redirected to the Identity Resolution Settings page to complete your setup.
 
 ### Custom rules
 
-If you are familiar with identity or have custom identifiers, Segment recommends that you select Custom Rules.
+If you're familiar with identity or have custom identifiers, Segment recommends that you select Custom Rules.
 
 Segment redirects you to the Identity Resolution Settings page where you can add Default Identifiers or Custom Identifiers.
 
@@ -66,9 +66,9 @@ Segment's 11 default are:
 | `ios.idfa`           | context.device.advertisingId when context.device.type = 'ios' AND context.device.adTrackingEnabled = true     |
 | `ios.push_token`     | context.device.token when context.device.type = 'ios'                                                         |
 
-You can also provide a trait or property key to match on to add custom identifiers. You can preview the locations where Segment looks for the identifier. Segment accepts both camelCase and snake_case for context.traits, traits and properties, but accepts lowercase types for identifiers only in the context.externalIds object.
+You can also provide a trait or property key to match on to add custom identifiers. You can preview the locations where Segment looks for the identifier. Segment accepts both camelCase and snake_case for context.traits, traits, and properties, but accepts lowercase types for identifiers only in the context.externalIds object.
 
-![](images/custom_identifiers.png)
+![Provide a trait or property key to match on](images/custom_identifiers.png)
 
 #### Blocked values
 
@@ -80,19 +80,19 @@ In the past, Segment has seen certain default values that cause large amounts of
 
 | Value                         | Type            |
 | ----------------------------- | --------------- |
-| Zeroes and Dashes (^[0-]*$) | Pattern (REGEX) |
+| Zeroes and Dashes (^[0-]*$)   | Pattern (REGEX) |
 | -1                            | Exact Match     |
 | null                          | Exact Match     |
 | anonymous                     | Exact Match     |
 
-![](images/blocked-values.png)
+![Add blocked values for the identity algorithm to ignore](images/blocked-values.png)
 
 Before sending data through, Segment also recommends that you add any default hard-coded values that your team uses during the development process, such as `void` or `abc123`.
 
 #### Limit
 
 Identity Admins can specify the total number of values allowed per identifier type on a profile during a certain period. For example, in the image below, the `anonymous_id` field has a limit of **5 Weekly**.
-![](images/anonymous-id.png)
+![Add a value limit](images/anonymous-id.png)
 
 This will vary depending on how companies define a user today. In most cases, companies rely on `user_id` to distinguish user profiles and Segment defaults to the following configurations:
 
@@ -113,7 +113,7 @@ When you choose the limit on an identifier, ask the following questions about ea
 
 1. Is it an immutable ID? An immutable ID, such as `user_id`, should have `1 ever` per user profile.
 2. Is it a constantly changing ID? A constantly changing ID, such as `anonymous_id` or `ga_client_id`, should have a short sliding window, such as **5 weekly** or **5 monthly**, depending on how often your application automatically logs out the user.
-3. Is it an ID that updates on a yearly basis? Most customers will have around 5 emails or devices at any one time, but can update these over time. For identifiers like `email`, `android.id` or `ios.id`, Segment recommends a longer limit like **5 annually**.
+3. Is it an ID that updates on a yearly basis? Most customers will have around five emails or devices at any one time, but can update these over time. For identifiers like `email`, `android.id`, or `ios.id`, Segment recommends a longer limit like **5 annually**.
 
 #### Priority
 
@@ -133,7 +133,7 @@ If this event maps to this profile, the resulting profile would then contain two
 
 At this point, the event searches for any profiles that match just the identifier user_id `abc456`. Now there are no existing profiles with this identifier, so Segment creates a new profile with user_id `abc456`.
 
-By default, Segment explicitly orders user_id and email as rank `1` and `2`, respectively. All other identifiers are in alphabetical order beginning from rank `3`. This means that if the identifiers sent with events flowing into personas are user_id, email, anonymous_id and ga_client_id, the rank would be as follows:
+By default, Segment explicitly orders user_id and email as rank `1` and `2`, respectively. All other identifiers are in alphabetical order beginning from rank `3`. This means that if the identifiers sent with events flowing into Personas are user_id, email, anonymous_id, and ga_client_id, the rank would be as follows:
 
 | Identifier   | Priority |
 | ------------ | -------- |
@@ -154,13 +154,13 @@ If a new android.id identifier appeared without first giving it explicit order, 
 
 If you require an explicit order for all identifiers, configure this in the Identity Resolution Settings page before sending in events.
 
-![](images/edit-priority.png)
+![The Identity Resolution Configuration screen](images/edit-priority.png)
 
 When choosing the priority of your identifier, ask the following questions about each of the identifiers you send to Segment:
 
 1. Is it an immutable ID? Give immutable IDs, such as user_id, highest priority.
 2. Are they unique IDs? Give Unique IDs such as email higher priority than possibly shared identifiers like android.id or ios.id.
-3. Does it temporarily identify a user? Identifiers such as anonymous_id, ios.idfa, ga_client_id are constantly updated or expired for a user. Generally speaking, rank these lower than identifiers that permanently identify a user.
+3. Does it temporarily identify a user? Identifiers such as anonymous_id, ios.idfa, and ga_client_id are constantly updated or expired for a user. Generally speaking, rank these lower than identifiers that permanently identify a user.
 
 ### Importing from an existing space
 
@@ -168,7 +168,7 @@ This option is available to new spaces after you create an initial Dev space. Se
 
 You can review the identifiers, priorities, limits, and blocked values before you complete the import.
 
-![](images/import.png)
+![Review identifiers, priorities, limits, and blocked values before import](images/import.png)
 
 ## Connect a source
 
@@ -178,10 +178,10 @@ After you configure Identity Resolution settings, the next step is to connect a 
 
 After you connect a source, Personas creates user profiles based off of replayed and newly incoming data.
 
-![](images/create_audience.png)
+![Create an Audience](images/create_audience.png)
 
 The next step, which is important in the Dev space, is to create an audience to ensure that user profiles have populated correctly and that the Identity Resolution settings follow expected business logic.
 
 For example, if there should be 100,000 distinct users who have a `user_id`, this would be a great way to validate that the Identity Resolution settings have calculated profiles correctly.
 
-For more information about how to create audiences and traits, see [Audiences](/docs/personas/audiences/).
+For more information about how to create audiences and traits, see Segment's [Audiences docs](/docs/personas/audiences/).
