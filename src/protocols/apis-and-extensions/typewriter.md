@@ -116,7 +116,7 @@ typewriter.orderCompleted({
 })
 ```
 
-To help you minimize your bundle size, Typewriter supports [tree-shaking](https://webpack.js.org/guides/tree-shaking/){:target="_blank"} using named exports. All generated analytics calls are automatically directly exported, so you can import them like so:
+To help you minimize your bundle size, Typewriter supports [tree-shaking](https://webpack.js.org/guides/tree-shaking/){:target="_blank"} using named exports. All generated analytics calls generate and export automatically, so you can import them like so:
 
 ```js
 // Import your auto-generated Typewriter client:
