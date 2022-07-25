@@ -10,20 +10,20 @@ id: 62d9aa9899b06480f83e8a66
 
 FullStory’s cloud mode Segment integration allows you send user and event data to FullStory from your servers and Cloud Apps so that you apply it to your analysis throughout FullStory. For example, you could build a funnel to analyze drop-off of users who engaged with a certain marketing campaign.
 
-If you want to use FullStory’s tagless autocapture, use the [FullStory Device Mode (Actions) web destination](https://segment.com/docs/connections/destinations/catalog/actions-fullstory/). However, if you want to capture custom user properties and events from other [server-side sources](https://segment.com/docs/connections/sources/#server) or [cloud apps](https://segment.com/docs/connections/sources/#cloud-apps), such as recurring subscription purchases, use this cloud mode destination.
+If you want to use FullStory’s tagless autocapture, use the [FullStory Device Mode (Actions) web destination](/docs/connections/destinations/catalog/actions-fullstory/). However, if you want to capture custom user properties and events from other [server-side sources](/docs/connections/sources/#server) or [cloud apps](/docs/connections/sources/#cloud-apps), such as recurring subscription purchases, use this cloud mode destination.
 
 ### Overview
 
 The FullStory cloud mode destination sends information about your users and related events to FullStory. It uses [FullStory’s REST APIs](https://developer.fullstory.com){:target="_blank"}.
 
-- **Identify User:** Converts Segment [Identify](https://segment.com/docs/connections/spec/identify/) calls to [FullStory Set User Properties API calls](https://developer.fullstory.com/set-user-properties){:target="_blank"}. Use this to set custom attributes which can be used to search and segment within FullStory.
-- **Track Custom Event**: Converts Segment [Track](https://segment.com/docs/connections/spec/track/) calls to [FullStory custom event API calls](https://developer.fullstory.com/server-events){:target="_blank"}. Use this to capture more context about your user’s experience on your site or to capture user’s actions in other applications to build a more complete understanding of your user’s overall experience.
+- **Identify User:** Converts Segment [Identify](/docs/connections/spec/identify/) calls to [FullStory Set User Properties API calls](https://developer.fullstory.com/set-user-properties){:target="_blank"}. Use this to set custom attributes which can be used to search and segment within FullStory.
+- **Track Custom Event**: Converts Segment [Track](/docs/connections/spec/track/) calls to [FullStory custom event API calls](https://developer.fullstory.com/server-events){:target="_blank"}. Use this to capture more context about your user’s experience on your site or to capture user’s actions in other applications to build a more complete understanding of your user’s overall experience.
 
 ### Benefits of FullStory Cloud Mode (Actions)
 
 - Works with FullStory’s latest data capture APIs
 - Ability to send custom events from new sources
-- Use [Destination Filters](https://segment.com/docs/connections/destinations/destination-filters/) to selectively send certain events or user properties to FullStory
+- Use [Destination Filters](/docs/connections/destinations/destination-filters/) to selectively send certain events or user properties to FullStory
 
 ### Getting Started
 

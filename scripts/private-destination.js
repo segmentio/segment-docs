@@ -68,7 +68,7 @@ const addPrivateDestination = async () => {
     let actions = destination.actions
     let presets = destination.presets
 
-    if (destination.status == "PRIVATE_BETA") {
+    if (destination.status == "PRIVATE_BETA" || destination.status == "PRIVATE_BUILDING") {
 
       let updatePrivateDest = {
         id: destination.id,
