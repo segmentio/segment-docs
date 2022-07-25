@@ -152,7 +152,7 @@ Segment creates a SHA-256 hash of the following fields before sending to Faceboo
 - Email
 - Phone
 - Gender
-- Data of Birth
+- Date of Birth
 - Last Name
 - First Name
 - City
