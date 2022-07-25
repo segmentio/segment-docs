@@ -5,6 +5,9 @@ strat: react-native
 
 If you're using `analytics-react-native 1.5.1` or older, follow these steps to upgrade to `analytics-react-native 2.0`. You can continue to use your React Native source write key for the upgrade to view historical events. Additionally, with React Native 2.0, you don't need to leverage bundled SDK packages, but can use [this list of supported destinations](/docs/connections/sources/catalog/libraries/mobile/react-native#supported-destinations).
 
+> info ""
+> Analytics React Native 2.0 implements a new storage framework, [@segment/sovran-react-native](https://github.com/segmentio/sovran-react-native){:target="_blank"}, which makes it impossible to determine if your app has been previously installed. Migrating to Analytics React Native 2.0 results in new `Application Installed` events for your existing users. To filter these events out you can either create an Enrichment Plugin to drop events or filter them using your Segment workspace.
+
 To upgrade to React Native 2.0:
 
 1. Update the existing package:
