@@ -30,7 +30,7 @@ The table below lists events that Gladly sends to Segment. These events appear a
 <table>
   <tr>
    <td>Conversation Opened</td>
-   <td>A conversation was openned and assigned to an agent </td>
+   <td>A conversation was opened and assigned to an agent </td>
   </tr>
   <tr>
    <td>Conversation Closed</td>
