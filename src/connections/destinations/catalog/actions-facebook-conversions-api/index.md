@@ -8,7 +8,7 @@ id: 61806e472cd47ea1104885fc
 Facebook Conversions API (Actions) enables advertisers to send events from their servers directly to Facebook. Server-side events link to Facebook Pixel events, and process like browser pixel events. This means that server-side events are used in measurement, reporting, and optimization, just like browser pixel events.
 
 > info "Customer Information Parameters Requirements"
-> As of Marketing API V13.0, Facebook began enforcing new requirements for customer information parameters (user data). To ensure your events do not throw an error, we recommend that you review [Facebook’s new requirements](https://developers.facebook.com/docs/graph-api/changelog/version13.0#conversions-api){:target="_blank"}.
+> As of Facebook Marketing API v13.0+, Facebook began enforcing new requirements for customer information parameters (user data). To ensure your events do not throw an error, we recommend that you review [Facebook’s new requirements](https://developers.facebook.com/docs/graph-api/changelog/version13.0#conversions-api){:target="_blank"}.
 
 ## Benefits of Facebook Conversions API (Actions) vs Facebook Conversions API Classic
 
