@@ -49,6 +49,7 @@ The table below list the properties included in the events listed above.
 | agentId        | Assigned Agent's ID                                                 |
 | agentName      | Assigned Agent's Name                                               |
 | timestamp      | Conversation Opened/Conversation Closed time                        |
+
 ## Add Destinations
 
 Now that your Source is set up, you can connect it with Destinations.
