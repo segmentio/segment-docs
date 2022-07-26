@@ -234,7 +234,7 @@ SEGTypewriterAnalytics.orderCompleted(
 To get started using Typewriter with Kotlin:
 1. Make sure you have `node` installed. Use the instructions in the [prerequisites](#prerequisites) above.
 2. Install `analytics-kotlin` in your app. Follow the [analytics-kotlin QuickStart Guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/#getting-started).
-3. Typewriter comes with a quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. Running the command creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference). To use this wizard, run:
+3. Run `npx typewriter init`. This command enables you to use the Typewriter quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. The command creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
 
 ```sh
 $ npx typewriter init
@@ -243,7 +243,7 @@ $ npx typewriter init
 > note ""
 > You can regenerate your Typewriter client by running `npx typewriter`. You need to do this each time you update your Tracking Plan.
 
-By default Typewriter creates the class file with a package name of `typewriter`. Segment recommends you to set up the right package name during `npx typewriter init` by choosing to review the additional options for Kotlin. You can also set up the right package name directly in `typewriter.yml`:
+Typewriter creates the class file with the package name `typewriter`. Segment recommends you to enter the right package name during `npx typewriter init` by choosing to review the Advanced Options for Kotlin. You can also set up the right package name directly in `typewriter.yml`:
 
 ```yml
 client:
