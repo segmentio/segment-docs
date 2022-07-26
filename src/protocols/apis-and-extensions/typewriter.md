@@ -518,7 +518,7 @@ typewriter.setTypewriterOptions({
   onViolation: yourViolationHandler
 })
 ```
-> into ""
+> info ""
 > Typewriter is preconfigured in `analytics-node` environments to throw an error if `NODE_ENV=test`, which is set by most Node.js testing libraries such as `ava` and `jest`.
 
 Another common use case is to customize how violations are reported to your team. For example, Segment customized this handler to show a [toast notification](https://evergreen.segment.com/components/toaster){:target="_blank"} to developers in-app:
