@@ -85,9 +85,6 @@ You can also clone a Journey from a Journey's Overview by clicking the **…** i
 
 ## Randomized splits
 
-> info ""
-> The randomized splits step is in beta and available to users with a Personas Advanced plan.
-
 A randomized split lets you experiment with and test the performance of a Journey's branches. When you create a randomized split, you add up to five Journey branches, each with a different step. Journeys then sends eligible users down one of the branches at random. Each branch receives a portion of the eligible users based on percentages that you assign to the branches.
 
 To test your messaging channels, for example, you might create a randomized split with three different branches, assigning 40% of users to an email campaign, 40% to an SMS campaign, and 20% to a control group. Once users flow through the split, you can determine the success of the email and SMS campaigns compared to each other and the control group.
