@@ -297,7 +297,7 @@ analytics.track('Article Bookmarked', {
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Ruby Identify call %}
+{% codeexampletab Ruby Track call %}
 ```ruby
 analytics.track( user_id: '12345abcde',
   event: 'Article Bookmarked',
