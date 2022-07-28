@@ -4,4 +4,3 @@ level: warning
 scope: raw
 raw:
   - '\[.+\]\(https://(www.)?segment.com/docs.*\)'
-
