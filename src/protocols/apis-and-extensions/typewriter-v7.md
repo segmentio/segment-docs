@@ -119,7 +119,7 @@ Typewriter requires a Segment API token to fetch Tracking Plans from the [Segmen
 You must be a workspace owner to create Segment API tokens.
 
 To create an API token:
-1. Click on the **Tokens** tab on the [Access Management](https://app.segment.com/goto-my-workspace/settings/access-management) page and click **Create Token**.
+1. Click on the **Tokens** tab on the [Access Management](https://app.segment.com/goto-my-workspace/settings/access-management){:target="_blank"} page and click **Create Token**.
 2. Choose Segment's Config API.
 3. Add a description for the token and assign access. If you choose *Workspace Member*, you only need to select **Tracking Plan Read-Only** for the Resource Role, as Typewriter only needs the *Tracking Plan Read-Only* role.
 4. Click **Create**.
@@ -133,4 +133,4 @@ The quickstart wizard prompts you for an API token and stores it in `~/.typewrit
 
 Segment recommends you use a [Token Script](/docs/protocols/apis-and-extensions/typewriter/#token-script) to share an API token with your team. When you use a token script, you can supply your API token as an environment variable (`echo $TYPEWRITER_TOKEN`), from an `.env.` file (`source .env; echo $TYPEWRITER_TOKEN`) or using any other CLI tool for providing secrets.
 
-Segment also recommends you to pipe through your API Token as this will let you keep your token secret, but it also allows you to share it across your team.
+Segment also recommends you to pipe through your API Token as this allows you to keep your token secret, but it also allows you to share it across your team.
