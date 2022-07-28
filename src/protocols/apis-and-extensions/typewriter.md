@@ -29,7 +29,7 @@ SEGTypewriterAnalytics.orderCompleted(
 )
 ```
 > info ""
-> Typewriter can currently generate clients for `analytics.js`, `analytics-node`, `analytics-swift` and `analytics-kotlin`.
+> Typewriter can generate clients for `analytics.js`, `analytics-node`, `analytics-swift` and `analytics-kotlin`. For use with the `analytics-ios` and `analytics-android` SDK, use [Typewriter v7](/docs/protocols/apis-and-extensions/typewriter-v7).
 
 These generated clients are embedded with metadata from your Tracking Plan, which contextualizes your analytics instrumentation, and reduces (or entirely eliminates!) incorrect instrumentations in your production environments. In your editor, you can access event names, descriptions, property names, types and more:
 
@@ -43,7 +43,7 @@ You can use this with a test suite to automatically fail your unit tests if the 
 
 ![Example unit tests failing because of violations](images/typewriter-test-suite.png)
 
-If you're using a statically typed language (such as TypeScript, Java, Objective-C, Swift, etc.), then you also get access to compile-time warnings about your instrumentation:
+If you're using a statically typed language (such as TypeScript, Java, Objective-C, Swift), then you also get access to compile-time warnings about your instrumentation:
 
 ![Example compile-time validation warnings](images/typewriter-compile-time-warnings.png)
 
@@ -55,7 +55,10 @@ To get started, check out one of the quickstart guides below:
 - [Swift Quickstart](#swift-quickstart)
 - [Kotlin Quickstart](#kotlin-quickstart)
 
-> Have feedback on Typewriter? Consider opening a [GitHub issue here](https://github.com/segmentio/typewriter/issues/new).
+> info ""
+> For use with the Analytics-iOS and Analytics-Android SDK, use [Typewriter v7](/docs/protocols/apis-and-extensions/typewriter-v7).
+
+Have feedback on Typewriter? Consider opening a [GitHub issue here](https://github.com/segmentio/typewriter/issues/new).
 
 ## Prerequisites
 
@@ -166,6 +169,9 @@ Typewriter wraps your analytics calls in an [ES6 `Proxy`](https://developer.mozi
 
 ## Swift Quickstart
 
+> info ""
+> For use with the `analytics-ios` SDK, use [Typewriter v7](/docs/protocols/apis-and-extensions/typewriter-v7).
+
 To get started using Typewriter with Swift:
 1. Make sure you have `node` installed using the instructions in the [prerequisites](#prerequisites) above.
 2. Install `analytics-swift` in your app. Follow the [analytics-swift Quickstart Guide](/docs/connections/sources/catalog/libraries/mobile/swift-ios).
@@ -184,10 +190,11 @@ To get started using Typewriter with Swift:
     ))
     ```
 
-> info ""
-> For use with the `analytics-ios` SDK, use the previous version of [Typewriter v7](https://www.npmjs.com/package/typewriter/v/7.4.1){:target="_blank"}.
-
 ## Kotlin Quickstart
+
+> info ""
+> For use with the `analytics-android` SDK, use [Typewriter v7](/docs/protocols/apis-and-extensions/typewriter-v7).
+
 To get started using Typewriter with Kotlin:
 1. Make sure you have `node` installed. Use the instructions in the [prerequisites](#prerequisites) above.
 2. Install `analytics-kotlin` in your app. Follow the [analytics-kotlin QuickStart Guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/#getting-started).
@@ -308,7 +315,7 @@ You must be a workspace owner to create Segment API tokens.
 
 To create an API token:
 1. Click on the **Tokens** tab on the [Access Management](https://app.segment.com/goto-my-workspace/settings/access-management) page and click **Create Token**.
-2. Choose between using Segment's Config API or the Public API.
+2. Choose Segment's Public API.
 3. Add a description for the token and assign access. If you choose *Workspace Member*, you only need to select **Tracking Plan Read-Only** for the Resource Role, as Typewriter only needs the *Tracking Plan Read-Only* role.
 4. Click **Create**.
 
