@@ -446,12 +446,12 @@ If Segment doesn't support your Kotlin destination, you can build your own with 
 
 To build your own Kotlin destination using a plugin template:
 
-1. Go to the [Kotlin Destination Plugin Template](https://github.com/segmentio/kotlin-destination-templates){:target="_blank"}.
+1. Go to the [Kotlin Destination Plugin Template](https://github.com/segment-integrations/analytics-kotlin-destination-template){:target="_blank"}.
 2. Click **Use this template**.
 3. Enter a name for the repository.
 4. Click **Create repository from template**.
-5. Go to **destination > src > main > java/dmn/your/pkg/destination** in your repository.
-6. Click the **ExampleDestination.kt**.
+5. Go to **lib > src > main > java/dmn/your/pkg/destination** in your repository.
+6. Click the **MyDestination.kt**.
 7. Complete the `TODO` sections in the sample code with the appropriate information for your destination. Segment recommends you to change the package name before you finalize your build.
 8. Commit your changes.
 
@@ -459,8 +459,8 @@ You can unit test your destination to make sure it works. Segment recommends you
 
 To test your destination:
 
-1. Go to **destination > src > test > java/dmn/your/pkg/destination**.
-2. Click **ExampleDestinationTests.kt**.
+1. Go to **lib > src > test > java/dmn/your/pkg/destination**.
+2. Click **MyDestinationTests.kt**.
 3. Complete the `TODO` sections in the sample code with the appropriate information for your destination.
 4. Commit your changes.
 
