@@ -14,7 +14,7 @@ These events pair nicely with Segment's [ecommerce spec](/docs/connections/spec/
 > info ""
 >  Per the [Privacy Policy](https://segment.com/legal/privacy/#sensitive-personal-information){:target="_blank"} and applicable terms, don't send Segment sensitive personal information about your users. Certain features from Segment and our partners allow you to opt-in to automatically track data (for example: Application Installed or Deep Link Clicked). When working with these features and Segment in general, be cognizant of the data that is being tracked to ensure its matching both your obligations under your agreement with Segment and the privacy expectations of your users.
 
-## Overview of Events
+## Overview of events
 
 The Segment Native Mobile Spec includes the following semantic events:
 
@@ -39,9 +39,9 @@ Segment recommends using the above event names if you're going to be integrating
 
 Additionally, though they're not formally part of the Native Mobile Spec, Segment also collects `Order Completed` from our ecommerce spec automatically upon in-app purchases on iOS and can collect screen views automatically in iOS and Android.
 
-## Lifecycle Events
+## Lifecycle events
 
-Mobile applications live within a fairly bounded lifecycle. In order to understand and communicate effectively with your users, it's crucial to instrument the core flows associated with installing and opening your app. The following events, many of which we can capture automatically in the latest versions of our SDKs, allow you to get a picture of top-line metrics such as DAUs, MAUs, and Screen Views per session. Automatic tracking of lifecycle events is completely optional - you can learn how to enable and disable them in Segment's [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#step-2-install-the-sdk){:target="_blank"} and [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-3-initialize-the-client){:target="_blank"} library docs.
+Mobile applications live within a fairly bounded lifecycle. In order to understand and communicate effectively with your users, it's crucial to instrument the core flows associated with installing and opening your app. The following events, many of which Segment can capture automatically in the latest versions of our SDKs, allow you to get a picture of top-line metrics such as DAUs, MAUs, and Screen Views per session. Automatic tracking of lifecycle events is completely optional - you can learn how to enable and disable them in Segment's [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#step-2-install-the-sdk){:target="_blank"} and [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-3-initialize-the-client){:target="_blank"} library docs.
 
 The following events will be tracked automatically when lifecycle events are enabled:
 
@@ -51,7 +51,7 @@ The following events will be tracked automatically when lifecycle events are ena
 
 ### Application Installed
 
-This event fires when a user **first** opens your mobile application. Note, if the user never opens your app after installing, Segment will not be able to collect this event. This event does not wait for attribution or campaign information to be received, and is collected automatically by our SDKs. Advertising providers like Facebook and Google require discrete install events to correctly attribute installs to ads served through their platform.
+This event fires when a user **first** opens your mobile application. Note, if the user never opens your app after installing, Segment will not be able to collect this event. This event doesn't wait for attribution or campaign information to be received, and is collected automatically by Segment's SDKs. Advertising providers like Facebook and Google require discrete install events to correctly attribute installs to ads served through their platform.
 
 {% comment %} api-example '{ "userId": "019mr8mf4r", "type": "track", "event": "Application Installed", "properties": { "version": "1.2.3", "build": "1234" }}'}}} {% endcomment %}
 
@@ -94,16 +94,16 @@ This event fires when a user launches or foregrounds your mobile application aft
 
 | **Property**            | **Type** | **Description**                                                                                                                                                                                                                                                                     |
 | ----------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `from_background`       | Boolean  | If application [transitioned](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/#//apple_ref/doc/uid/TP40006786-CH3-SW52) from "Background" to "Inactive" state prior to foregrounding (as opposed to from "Not Running" state). |
-| `url`                   | String   | The value of `UIApplicationLaunchOptionsURLKey` from `launchOptions`.**Collected on iOS only**.                                                                                                                                                                                     |
-| `referring_application` | String   | The value of `UIApplicationLaunchOptionsSourceApplicationKey` from `launchOptions`. **Automatically collected on iOS only**.                                                                                                                                                        |
-| `version`               | String   | The version installed.                                                                                                                                                                                                                                                              |
-| `build`                 | String   | The build number of the installed app.                                                                                                                                                                                                                                              |
+| `from_background`       | Boolean  | If application [transitioned](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/#//apple_ref/doc/uid/TP40006786-CH3-SW52){:target="_blank"} from "Background" to "Inactive" state prior to foregrounding (as opposed to from "Not Running" state). |
+| `url`                   | String   | The value of `UIApplicationLaunchOptionsURLKey` from `launchOptions`. **Collected on iOS only**.        |
+| `referring_application` | String   | The value of `UIApplicationLaunchOptionsSourceApplicationKey` from `launchOptions`. **Automatically collected on iOS only**.     |
+| `version`               | String   | The version installed.     |
+| `build`                 | String   | The build number of the installed app.    |
 
 
 ### Application Backgrounded
 
-This event should be sent when a user backgrounds the application upon [`applicationDidEnterBackground`](https://developer.apple.com/reference/uikit/uiapplicationdelegate/1622997-applicationdidenterbackground)
+This event should be sent when a user backgrounds the application upon [`applicationDidEnterBackground`](https://developer.apple.com/reference/uikit/uiapplicationdelegate/1622997-applicationdidenterbackground){:target="_blank"}.
 
 {% comment %} api-example '{ "userId": "019mr8mf4r", "type": "track", "event": "Application Backgrounded", "properties": {}}'}}} {% endcomment %}
 
@@ -118,7 +118,7 @@ This event should be sent when a user backgrounds the application upon [`applica
 
 ### Application Updated
 
-This event fires when a user updates the application. Segment's SDK will automatically collect this event in lieu of an "Application Opened" event when we determine that the Open is first since an update.
+This event fires when a user updates the application. Segment's SDK will automatically collect this event instead of an "Application Opened" event when we determine that the Open is first since an update.
 
 {% comment %} api-example '{ "userId": "019mr8mf4r", "type": "track", "event": "Application Updated", "properties": { "previous_version": "1.1.2", "previous_build": 1234, "version": "1.2.0", "build": "1456" }}'}}} {% endcomment %}
 
@@ -173,7 +173,7 @@ You can send this event when you receive a crash notification from your app, but
 }
 ```
 
-## Campaign Events
+## Campaign events
 
 As the walls between apps become increasingly lowered, capturing information about the content and campaigns that drive users to engage with your app is critical to building more targeted, relevant, personalized experiences for your users.
 
@@ -204,7 +204,7 @@ When Segment or an integrated partner can discern the source of an install, we'l
 | **Property**            | **Type** | **Description**                         |
 | ----------------------- | -------- | --------------------------------------- |
 | `provider`              | String   | The attribution provider.               |
-| `campaign[source]`      | String   | Campaign source — attributed ad network |
+| `campaign[source]`      | String   | Campaign source — attributed ad network.|
 | `campaign[name]`        | String   | The name of the attributed campaign.    |
 | `campaign[medium]`      | String   | Identifies what type of link was used.  |
 | `campaign[content]`     | String   | The content of the campaign.            |
@@ -236,7 +236,7 @@ This event can be sent when a push notification is received in the app. It can b
 
 | **Property**        | **Type** | **Description**                                            |
 | ------------------- | -------- | ---------------------------------------------------------- |
-| `campaign[name]`    | String   | Campaign Name.                                             |
+| `campaign[name]`    | String   | Campaign name.                                             |
 | `campaign[medium]`  | String   | Identifies what type of link was used (Push Notification). |
 | `campaign[content]` | String   | Push notification content.                                 |
 | `campaign[source]`  | String   | Designates the push provider. (Optional)                   |
@@ -269,10 +269,10 @@ This event can be sent when a user taps on a push notification associated with y
 | **Property**        | **Type** | **Description**                                                                     |
 | ------------------- | -------- | ----------------------------------------------------------------------------------- |
 | `action`            | String   | If this notification is "actionable", the custom action tapped. **Default:** "Open" |
-| `campaign[name]`    | String   | Campaign Name.                                                                      |
-| `campaign[medium]`  | String   | Identifies what type of link was used (Push Notification).                          |
-| `campaign[content]` | String   | Push notification content content                                                   |
-| `campaign[source]`  | String   | Designates the push provider. (Optional)                                            |
+| `campaign[name]`    | String   | Campaign name.               |
+| `campaign[medium]`  | String   | Identifies what type of link was used (Push Notification).   |
+| `campaign[content]` | String   | Push notification content.   |
+| `campaign[source]`  | String   | Designates the push provider. (Optional)    |
 
 
 ### Push Notification Bounced
@@ -301,10 +301,10 @@ This event fires when a push notification from a provider bounces. If your push 
 | **Property**        | **Type** | **Description**                                                                     |
 | ------------------- | -------- | ----------------------------------------------------------------------------------- |
 | `action`            | String   | If this notification is "actionable", the custom action tapped. **Default:** "Open" |
-| `campaign[name]`    | String   | Campaign Name.                                                                      |
-| `campaign[medium]`  | String   | Identifies what type of link was used (Push Notification).                          |
-| `campaign[content]` | String   | Push notification content content                                                   |
-| `campaign[source]`  | String   | Designates the push provider. (Optional)                                            |
+| `campaign[name]`    | String   | Campaign name.            |
+| `campaign[medium]`  | String   | Identifies what type of link was used (Push Notification).    |
+| `campaign[content]` | String   | Push notification content.   |
+| `campaign[source]`  | String   | Designates the push provider. (Optional)    |
 
 
 ### Deep Link Opened

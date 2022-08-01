@@ -2,7 +2,7 @@
 title: 'Spec: Screen'
 ---
 
-The `screen` call lets you record whenever a user sees a screen, the mobile equivalent of `page`, in your mobile app, along with any properties about the screen. Calling `page` or [`screen`](/docs/connections/spec/screen/) in one of our [sources](/docs/connections/sources/) is one of the first steps to getting started with Segment.
+The `screen` call lets you record whenever a user sees a screen, the mobile equivalent of `page`, in your mobile app, along with any properties about the screen. Calling `page` or [`screen`](/docs/connections/spec/screen/) in one of Segment's [sources](/docs/connections/sources/) is one of the first steps to getting started with Segment.
 
 {% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/299973?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: The Screen Method" description="Check out our high-level overview of the Screen method in Segment University. (Must be logged in to access.)" %}
 
@@ -79,21 +79,10 @@ Each screen can be tagged with a `name`. For example, many apps have a "Signup" 
 
 Properties are extra pieces of information that describe the screen. They can be anything you want.
 
-We've reserved some properties that have semantic meanings, and we handle them in special ways. You should **only use reserved properties for their intended meaning**.
+Segment has reserved some properties with semantic meanings and handles them in special ways. You should **only use reserved properties for their intended meaning**.
 
-Reserved properties we have standardized:
+Reserved properties that Segment has standardized:
 
-<table>
-  <tr>
-    <td>**Property**</td>
-    <td>**Type**</td>
-    <td>**Description**</td>
-  </tr>
-  <tr>
-    <td>`name`</td>
-    <td>String</td>
-    <td>Name of the screen.
-
-      This is reserved for future use.</td>
-  </tr>
-</table>
+| **Property** | **Type** | **Description**                                             |
+|--------------|----------|-------------------------------------------------------------|
+| `name`       | String   | Name of the screen. This is reserved for future use.        |
