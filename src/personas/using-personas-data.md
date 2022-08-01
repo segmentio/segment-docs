@@ -150,7 +150,7 @@ There are two situations when Personas sends an audience or computed trait to a 
 
 The first is when the value of the trait or audience changes.
 
-The second, less common case is that Personas re-syncs an audience or computed trait when a new `external_id` is added to a profile. For example, an ecommerce company has an anonymous visitor with a computed trait called `last_viewed_category = 'Shoes'`. That visitor then creates an account and an email address is added to that profile, even though the computed trait value hasn't changed. When that email address is added to the profile, Personas re-syncs the computed trait that includes an email to downstream tools. This allows the ecommerce company to start personalizaing the user's experience from a more complete profile.
+The second, less common case is that Personas re-syncs an audience or computed trait when a new `external_id` is added to a profile. For example, an ecommerce company has an anonymous visitor with a computed trait called `last_viewed_category = 'Shoes'`. That visitor then creates an account and an email address is added to that profile, even though the computed trait value hasn't changed. When that email address is added to the profile, Personas re-syncs the computed trait that includes an email to downstream tools. This allows the ecommerce company to start personalizing the user's experience from a more complete profile.
 
 If this behavior, re-syncing a computed trait or audience when the underlying trait or audience value hasn't changed, isn't desired in your system, [contact Segment](https://segment.com/help/contact/){:target="_blank"}.
 
@@ -196,7 +196,7 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 
 ## Personas compatible Destinations: Event type
 
-Any cloud-mode destination that supports identify or track calls can be connected to Personas as an event type destination.
+Connect any Cloud-mode destination that supports Identify or Track calls to Personas as an event type destination.
 
 ## Personas compatible Destinations: List type
 
