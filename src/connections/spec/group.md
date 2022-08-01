@@ -102,7 +102,7 @@ The following are the reserved traits Segment has standardized:
 |---------------|----------|---------------------------------------------------------------------------------------------------------------------------------------|
 | `address`     | Object   | Street address of a group. This should be a dictionary containing optional `city`, `country`, `postalCode`, `state`, or `street`.                               |
 | `avatar`      | String   | URL to an avatar image for the group.                  |
-| `createdAt`   | Date     | Date the group's account was first created. We recommend [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601){:target="_blank"} date strings.                   |
+| `createdAt`   | Date     | Date the group's account was first created. Segment recommends [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601){:target="_blank"} date strings.                   |
 | `description` | String   | Description of the group, like their personal bio.     |
 | `email`       | String   | Email address of group.             |
 | `employees`   | String   | Number of employees of a group, typically used for companies.       |
