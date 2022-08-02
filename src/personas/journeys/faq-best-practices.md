@@ -48,7 +48,7 @@ Including historical data doesn't impact any additional Journey steps, however. 
 | Condition Type     | Automatic Historical Data Inclusion |
 | ------------------ | ----------------------------------- |
 | Audience Reference | Yes                                 |
-| Computed Trait     | No                                  | 
+| Computed Trait     | No                                  |
 | Event              | No                                  |
 | Custom Trait       | No                                  |
 
@@ -81,6 +81,12 @@ Journeys run in real-time, like real-time Audiences in Personas. This means that
 ### How many times can a user enter one Journey?
 
 Users can enter a given journey a maximum of one time.
+
+### How many compute credits does a Journey use?
+
+Each step in a published Journey consumes half of a compute credit. A Journey with 10 steps, then, would use five compute credits. Credits consumed by published Journeys become available again if you disable or delete the Journey.
+
+You can view your compute credits usage in Segment by navigating to **Settings > Usage & Billing > Personas.**
 
 ### What destinations does Journeys support?
 
