@@ -25,6 +25,8 @@ async
 background(?:ed|ing)
 Blitzllama
 blocklist
+Bluedot
+bool
 boolean
 Breyta
 Chargebee
@@ -34,6 +36,7 @@ Cocoapods
 Contentful
 Criteo
 csv
+datetime
 deeplink
 Dev
 Doubleclick
@@ -44,8 +47,10 @@ eu
 Freshsales
 Friendbuy
 ga
+geofenc(?:e|ing)
 gmail
 Gradle
+gzip
 Heatmapping
 href
 html
@@ -87,6 +92,7 @@ Preact
 Rokt
 Selligent
 Shopify
+signup
 Skalin
 Smartly
 Snapchat
@@ -107,5 +113,3 @@ WebKit
 Wootric
 Xcode
 Zendesk
-geofenc(?:e|ing)
-Bluedot
