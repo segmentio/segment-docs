@@ -226,4 +226,4 @@ Under 'Connection Settings', you can provide up to 5 webhooks.
 
 ### Retries
 
-Segment will retry any request that fails due to temporary errors like timeouts and 5xx status codes for up to 4 hours.
+Segment will retry any request that fails due to temporary errors like timeouts and 5xx status codes for up to four hours.

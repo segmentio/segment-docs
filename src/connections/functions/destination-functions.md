@@ -452,7 +452,7 @@ Yes, Functions access is logged in the [Audit Trail](/docs/segment-app/iam/audit
 
 ##### Does Segment retry failed function invocations?
 
-Segment retries invocations that throw RetryError or Timeout errors for up to 4 hours. Segment does not retry if your function throws a [non-recoverable error](#errors-and-error-handling).
+Segment retries invocations that throw RetryError or Timeout errors for up to four hours. Segment does not retry if your function throws a [non-recoverable error](#errors-and-error-handling).
 
 ##### Are events guaranteed to send data in order?
 
