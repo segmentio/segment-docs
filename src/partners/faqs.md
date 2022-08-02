@@ -68,4 +68,4 @@ You can subscribe to updates [here](https://status.segment.com/).
 
 ### Does Segment retry data?
 
-Segment retries requests for up to 4 hours if they fail due to retryable errors like timeouts, 429 Too Many Request status codes, and 5xx status codes. Segment does not retry requests that fail due to permanent errors like authentication failures or 4xx status codes.
+Segment retries requests for up to 4 hours if they fail due to temporary errors like timeouts, 429 Too Many Request status codes, and 5xx status codes. Segment does not retry requests that fail due to permanent errors like authentication failures or 4xx status codes.

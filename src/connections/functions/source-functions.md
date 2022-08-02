@@ -385,7 +385,7 @@ Copy and paste this URL into the upstream tool or service to send data to this s
 
 ##### What is the retry policy for a webhook payload?
 
-Segment retries invocations that throw RetryError or Timeout errors up to 6 times with an exponential backoff. After 6 attempts, the request is dropped.
+Segment retries invocations that throw RetryError or Timeout errors up to 6 times. After 6 attempts, the request is dropped.
 
 ##### What is the maximum payload size for the incoming webhook?
 
