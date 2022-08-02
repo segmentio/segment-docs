@@ -55,8 +55,8 @@ analytics.send = False
 
 ### Regional configuration
 For Business plans with access to [Regional Segment](/docs/guides/regional-segment), you can use the `host` configuration parameter to send data to the desired region:
-1. Oregon (Default) — `api.segment.io/v1`
-2. Dublin — `events.eu1.segmentapis.com/v1/`
+1. Oregon (Default) — `https://api.segment.io/v1`
+2. Dublin — `https://events.eu1.segmentapis.com/v1`
 
 ## Identify
 
