@@ -226,4 +226,4 @@ Under 'Connection Settings', you can provide up to 5 webhooks.
 
 ### Retries
 
-Our webhooks destination will retry any request that returns 5xx errors, multiple times, for a maximum of 4 hours.
+Our webhooks destination will retry any request that fails due to temporary errors like timeouts and 5xx status codes for up to 4 hours.
