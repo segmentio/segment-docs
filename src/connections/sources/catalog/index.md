@@ -62,7 +62,7 @@ Below is a list of the available sources on the Segment platform.
     <div class="flex flex--wrap waffle waffle--xlarge">
       {% assign integrations = site.data.catalog.sources.items %}
       {% for integration in integrations %}
-        {% unless integration.categories contains promoted_categories[0] or integration.categories contains promoted_categories[1] or integration.categories contains promoted_categories[2] or integration.categories contains promoted_categories[3 or integration.hidden == true%}
+        {% unless integration.categories contains promoted_categories[0] or integration.categories contains promoted_categories[1] or integration.categories contains promoted_categories[2] or integration.categories contains promoted_categories[3] or integration.hidden == true %}
           <div class="flex__column flex__column--6">
             <a class="thumbnail-integration flex flex--middle" href="{{ site.baseurl }}/{{ integration.url }}">
               <div class="thumbnail-integration__content">

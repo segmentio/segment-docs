@@ -57,9 +57,10 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 
 ## Journeys
 
-| Item         | Limit description                | Details                                                                      |
-| ------------ | -------------------------------- | ---------------------------------------------------------------------------- |
-| Steps        | 500                              | The maximum number of steps per Journey.                                     |
-| Step Name    | Maximum length of 170 characters | Once the limit is reached, you cannot add additional characters to the name. |
-| Key          | Maximum length of 255 characters | Once the limit is reached, you cannot add additional characters to the key.  |
-| Journey Name | Maximum length of 73 characters  | Once the limit is reached, you cannot add additional characters to the name. |
+| Item            | Limit description                | Details                                                                      |
+| --------------- | -------------------------------- | ---------------------------------------------------------------------------- |
+| Steps           | 500                              | The maximum number of steps per Journey.                                     |
+| Step Name       | Maximum length of 170 characters | Once the limit is reached, you cannot add additional characters to the name. |
+| Key             | Maximum length of 255 characters | Once the limit is reached, you cannot add additional characters to the key.  |
+| Journey Name    | Maximum length of 73 characters  | Once the limit is reached, you cannot add additional characters to the name. |
+| Compute credits | Half a credit for each step      | Each step in a published Journey consumes half of one compute credit.        | 
