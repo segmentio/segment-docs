@@ -108,9 +108,12 @@ You'll also need to enable [subscription tracking](https://docs.sendgrid.com/ui/
 
 ### Enable event webhook
 
+> info "Subuser Step"
+> This step takes place in the **subuser** space.
+
 You’ll now need to enable event webhooks, which trigger webhook notifications for campaign-related events like clicks and opens:
 
-1. Within your SendGrid subuser space, navigate to **Settings > Mail Settings**.
+1. Within your SendGrid **subuser** space, navigate to **Settings > Mail Settings**.
 2. Click the pencil edit icon next to **Event Webhook**.
 3. On the Event Webhook page, set authorization method to none.
 4. Copy and paste the following URL into the **HTTP Post URL** field:
