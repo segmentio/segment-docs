@@ -77,8 +77,8 @@ Next, you’ll create a SendGrid subuser and ensure that a dedicated IP has been
 
 ### Authenticate your domain
 
-> info "SendGrid parent and subuser accounts"
-> In this section, you'll authenticate your domain using your new SendGrid subuser account and then set up reverse DNS with your SendGrid parent account. Have both login credentials on hand before proceeding.
+> info "SendGrid parent account"
+> In this section, you'll authenticate your domain and set up reverse DNS with your SendGrid parent account.
 
 Now, you’ll authenticate your domain with SendGrid and your DNS provider and [enable link branding](https://docs.sendgrid.com/ui/account-and-settings/how-to-set-up-link-branding){:target="_blank"}. Domain authentication protects your sending reputation by showing email providers that you’ve given SendGrid permission to send email campaigns for you.
 
@@ -86,7 +86,7 @@ To authenticate your domain, you’ll copy CNAME records given to you by SendGri
 
 You’ll authenticate your domain using the SendGrid platform and your DNS provider:
 
-1. **From your new SendGrid subuser account**, follow [SendGrid’s domain authentication guide](https://docs.sendgrid.com/ui/account-and-settings/how-to-set-up-domain-authentication){:target="_blank"}.
+1. **From your SendGrid parent account**, follow [SendGrid’s domain authentication guide](https://docs.sendgrid.com/ui/account-and-settings/how-to-set-up-domain-authentication){:target="_blank"}.
 2. During the authentication process, SendGrid asks if you would like to brand links for your domain. Select **Yes**.
 3. SendGrid provides you with five CNAME records.  Add them to your DNS host.
 4. Return to SendGrid and [verify your DNS](https://docs.sendgrid.com/ui/account-and-settings/how-to-set-up-domain-authentication#verifying-your-dns){:target="_blank"}.
@@ -108,9 +108,12 @@ You'll also need to enable [subscription tracking](https://docs.sendgrid.com/ui/
 
 ### Enable event webhook
 
+> info "Subuser Step"
+> This step takes place in the **subuser** space.
+
 You’ll now need to enable event webhooks, which trigger webhook notifications for campaign-related events like clicks and opens:
 
-1. Within your SendGrid subuser space, navigate to **Settings > Mail Settings**.
+1. Within your SendGrid **subuser** space, navigate to **Settings > Mail Settings**.
 2. Click the pencil edit icon next to **Event Webhook**.
 3. On the Event Webhook page, set authorization method to none.
 4. Copy and paste the following URL into the **HTTP Post URL** field:
