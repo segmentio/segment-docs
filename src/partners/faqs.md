@@ -68,6 +68,4 @@ You can subscribe to updates [here](https://status.segment.com/).
 
 ### Does Segment retry data?
 
-Segment retries nine times over the course of four hours. This will increase the number of attempts for messages, so we'll try and re-deliver them another 4 times after some backoff.
-
-We don't retry anywhere which is the sign of an expired API key or failed payment. However, if we push bad code that results in a malformed payload and a 400 or 422 response from an endpoint, we also won't retry given that the call would not ever succeed.
+Segment retries requests for up to four hours if they fail due to temporary errors like timeouts, 429 Too Many Request status codes, and 5xx status codes. Segment does not retry requests that fail due to permanent errors like authentication failures or 4xx status codes.
