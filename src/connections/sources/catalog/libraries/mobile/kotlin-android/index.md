@@ -16,7 +16,7 @@ With Analytics-Kotlin, you can send data using Kotlin applications to any analyt
 If you're migrating to Analytics-Kotlin from a different mobile library, you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/).
 
 
-## Getting Started
+## Getting started
 
 To get started with the Analytics-Kotlin mobile library:
 
@@ -91,10 +91,10 @@ To get started with the Analytics-Kotlin mobile library:
 5. Enable Java 8+ API desugaring.
 
     The SDK internally uses a number of Java 8 language APIs through desugaring. Make sure your project either [enables desugaring](https://developer.android.com/studio/write/java8-support#library-desugaring)) or requires a minimum API level of 26.
-    
-    Configuration options such as IDFA collection and automatic screen tracking are found in Segment’s Plugin Examples repo - https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app/src/main/java/com/segment/analytics/next/plugins 
 
-## Tracking Methods
+    Configuration options such as IDFA collection and automatic screen tracking are found in Segment’s [Plugin Examples repository](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app/src/main/java/com/segment/analytics/next/plugins){:target="_blank"}.
+
+## Tracking methods
 
 Once you've installed the mobile or server Analytics-Kotlin library, you can start collecting data through Segment's tracking methods:
 - [Identify](#identify)
@@ -155,7 +155,7 @@ analytics.track("View Product", buildJsonObject {
 ### Screen
 The [Screen](/docs/connections/spec/screen/) method lets you record whenever a user sees a screen in your mobile app, along with optional extra information about the page being viewed.
 
-You'll want to record a screen event whenever the user opens a screen in your app. This could be a view, fragment, dialog or activity depending on your app.
+You'll want to record a screen event whenever the user opens a screen in your app. This could be a view, fragment, dialog, or activity depending on your app.
 
 Not all integrations support screen, so when it's not supported explicitly, the screen method tracks as an event with the same parameters.
 
@@ -205,10 +205,10 @@ analytics.group("user-123", buildJsonObject {
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-## Plugin Architecture
+## Plugin architecture
 Segment's plugin architecture enables you to modify and augment how the analytics client works. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
 
-Plugins are run through a timeline, which executes in order of insertion based on their entry types. Segment has these 5 entry types:
+Plugins are run through a timeline, which executes in order of insertion based on their entry types. Segment has these five entry types:
 
 | Type          | Details                                                                                        |
 | ------------- | ---------------------------------------------------------------------------------------------- |
@@ -219,7 +219,7 @@ Plugins are run through a timeline, which executes in order of insertion based o
 | `utility`     | Executes only with manual calls such as Logging.                                               |
 
 ### Fundamentals
-There are 3 basic types of plugins that you can use as a foundation for modifying functionality. They are: [`Plugin`](#plugin), [`EventPlugin`](#eventplugin), and [`DestinationPlugin`](#destinationplugin).
+There are three basic types of plugins that you can use as a foundation for modifying functionality. They are: [`Plugin`](#plugin), [`EventPlugin`](#eventplugin), and [`DestinationPlugin`](#destinationplugin).
 
 #### Plugin
 `Plugin` acts on any event payload going through the timeline.
@@ -343,7 +343,7 @@ analytics.add(yourPlugin)
 See how different platforms and languages use Analytics-Kotlin in different [example projects](https://github.com/segmentio/analytics-kotlin/tree/main/samples).
 The example projects contain sample [plugins](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app/src/main/java/com/segment/analytics/next/plugins) and [destination plugins](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app-destinations/src/main/java/com/segment/analytics/destinations/plugins) you can utilize.
 
-## Utility Methods
+## Utility methods
 The Analytics-Kotlin utility methods help you work with plugins from the analytics timeline. They include:
 - [Add](#add)
 - [Find](#find)
@@ -442,7 +442,7 @@ analytics.reset()
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-## Build Your Own Destination
+## Build Your own destination
 
 If Segment doesn't support your Kotlin destination, you can build your own with the template Segment provides.
 
