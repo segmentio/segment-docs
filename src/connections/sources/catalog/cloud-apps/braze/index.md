@@ -23,7 +23,7 @@ Braze maintains this source. For any issues with the source, you can [contact th
    The nickname is used as a label for the source in your Segment interface, and Segment creates a related schema name. The schema name is the namespace you'll query against in a warehouse. The nickname can be anything, but Segment recommends sticking to something that reflects the source itself and distinguishes amongst your environments (for example, `Braze_Prod`, `Braze_Staging`, `Braze_Dev`).
 4. Copy the **Write Key** on the Overview page.
 5. To finish the setup, contact Braze Support or your Customer Support Manager to activate Currents in Braze.
-   - **Note:** Braze Currents is only available in select Braze packages and can't be configured within Braze without assistance from your Braze Customer Success representative. Please select the appropriate **Supported Region** in Braze Currents configuration if you are using a non U.S. Segment Region.
+   - **Note:** Braze Currents is only available in select Braze packages and can't be configured within Braze without assistance from your Braze Customer Success representative. Please select the appropriate **Supported Region** in the Braze Currents configuration if you are using a non U.S. Segment Region.
 6. Go back to Segment and click **Add Destinations** in your Braze source to add the destinations where you want to receive your Braze data.
 
 Events are now sent to these destinations and automatically loaded into any warehouses you enabled.
