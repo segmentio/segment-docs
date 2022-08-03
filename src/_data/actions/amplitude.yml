@@ -198,9 +198,9 @@ config:
     - name: Track Referrer to Amplitude
       connection_mode:
         - device-web
-      configurable: false
+      configurable: true
       location:
-      notes: Not supported with Actions
+      notes: Update the User Properties mapping to send `context.page.referrer`.
     - name: Track Revenue per Product
       connection_mode:
         - cloud
@@ -219,9 +219,9 @@ config:
       connection_mode:
         - cloud
         - device-web
-      configurable: false
+      configurable: true
       location:
-      notes: Not supported with Actions
+      notes: Supported by default. See the UTM Properties section to view the
     - name: Unset Params Referrer on New Session
       connection_mode:
         - device-web
