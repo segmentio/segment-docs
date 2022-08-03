@@ -92,7 +92,7 @@ To get started with the Analytics-Kotlin mobile library:
 
     The SDK internally uses a number of Java 8 language APIs through desugaring. Make sure your project either [enables desugaring](https://developer.android.com/studio/write/java8-support#library-desugaring)) or requires a minimum API level of 26.
 
-    Configuration options such as IDFA collection and automatic screen tracking are found in Segment’s [Plugin Examples repository](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app/src/main/java/com/segment/analytics/next/plugins){:target="_blank"}.
+    You'll find configuration options such as IDFA collection and automatic screen tracking in Segment’s [Plugin Examples repository](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app/src/main/java/com/segment/analytics/next/plugins){:target="_blank"}.
 
 ## Tracking methods
 
