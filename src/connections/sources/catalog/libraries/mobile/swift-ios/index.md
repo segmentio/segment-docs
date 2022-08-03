@@ -187,8 +187,7 @@ analytics.group(groupId: "user-123", traits: MyTraits(
 {% endcodeexample %}
 
 ### Alias
-The [Alias](/docs/connections/spec/alias/) method is used to merge two user identities, effectively connecting two sets of user data as one. This is an advanced method, but can be used to manage user identities successfully in some of our destinations. 
-When this method is called the `newId` value will overwrite the old userId. If no userId is currently set, the `newId` will be associated with future events as the userId. This is an advanced method and may not be supported across our destination catalog, please refer to our destination docs to understand if this method is supported or not.
+The [Alias](/docs/connections/spec/alias/) method is used to merge two user identities, effectively connecting two sets of user data as one. When this method is called the `newId` value will overwrite the old userId. If no userId is currently set, the `newId` will be associated with future events as the userId. This is an advanced method and may not be supported across the entire destination catalog, please refer to the destination docs to understand if this method is supported or not.
 
 {% codeexample %}
 {% codeexampletab Method signature %}
