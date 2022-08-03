@@ -221,7 +221,7 @@ config:
         - device-web
       configurable: true
       location:
-      notes: Supported by default. See the UTM Properties section to view the
+      notes: Supported by default. See the UTM Properties section to view the mappings.
     - name: Unset Params Referrer on New Session
       connection_mode:
         - device-web
