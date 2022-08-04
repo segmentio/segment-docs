@@ -185,3 +185,11 @@ sections:
     title: Analytics-Swift
   - path: /connections/sources/catalog/libraries/mobile/swift-ios/migration
     title: Analytics-Swift Migration Guide
+
+- slug: node-js
+  section_title: Analytics-Node.js Documentation
+  section:
+  - path: /connections/sources/catalog/libraries/server/node/
+    title: Analytics-Node.js
+  - path: /connections/sources/catalog/libraries/server/node/quickstart/
+    title: Quickstart Node.js
