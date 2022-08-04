@@ -34,7 +34,7 @@ To get started with the Analytics-Swift mobile library:
 
     ```swift
     var analytics: Analytics? = nil
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
             // Override point for customization after application launch.
             let configuration = Configuration(writeKey: "WRITE_KEY")
@@ -68,6 +68,7 @@ Once you've installed the Analytics-Swift library, you can start collecting data
 - [Track](#track)
 - [Screen](#screen)
 - [Group](#group)
+- [Alias](#alias)
 
 ### Identify
 The [Identify](/docs/connections/spec/identify/) method lets you tie a user to their actions and record traits about them. This includes a unique user ID and any optional traits you know about them like their email, name, address. The traits option can include any information you want to tie to the user. When using any of the reserved traits, be sure the information reflects the name of the trait. For example, `email`  should always be a string of the user's email address.
@@ -182,6 +183,23 @@ analytics.group(groupId: "user-123", traits: MyTraits(
         username: "MisterWhiskers",
         email: "hello@test.com",
         plan: "premium"))
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
+### Alias
+The [Alias](/docs/connections/spec/alias/) method is used to merge two user identities, effectively connecting two sets of user data as one. When this method is called, the `newId` value overwrites the old `userId`. If no `userId` is currently set, the `newId` associates with future events as the `userId`. This is an advanced method and may not be supported across the entire destination catalog.
+
+{% codeexample %}
+{% codeexampletab Method signature %}
+```swift
+func alias(newId: String)
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Example use %}
+```swift
+analytics.alias(newId: "user-123")
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
