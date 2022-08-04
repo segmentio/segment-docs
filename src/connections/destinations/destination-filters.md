@@ -3,9 +3,9 @@ title: Destination Filters
 rewrite: true
 ---
 
-Destination Filters let you prevent certain data from flowing into a destination.
+Use Destination Filters to prevent certain data from flowing into a destination.
 
-Using Destination Filters, you can conditionally filter out event properties, traits, and fields, or even filter out the event itself.
+With Destination Filters, you can conditionally filter out event properties, traits, and fields, or even filter out the event itself.
 
 Common use cases for Destination Filters include the following:
 
@@ -17,10 +17,11 @@ Common use cases for Destination Filters include the following:
 > note ""
 > Destination Filters are available to Business Tier customers only.
 
-### Destination Filtering Limitations
+### Destination filtering limitations
 
 Keep the following limitations in mind when you use Destination Filters:
 
+- Segment applies Destination Filters one at a time in the order that they appear in your workspace.
 - Destination Filters can only be applied to cloud-mode (server-side) streaming destinations. Device-mode destinations aren't supported.
 - You can't apply Destination Filters to Warehouses or S3 destinations.
 - Each filter can only apply to one source-destination pair.
@@ -59,7 +60,7 @@ To learn more, read Segment's [Destination Filters API docs](https://reference.s
 
 The following examples illustrate common Destinations Filters use cases.
 
-### PII Management
+### PII management
 
 Example: Remove email addresses from `context` and `properties`:
 
@@ -68,19 +69,19 @@ Property-level allowlisting is available with Segment's API. Using Destination F
 
 ![PII management example](images/destination-filters/pii_example.png)
 
-### Control Event Volume
+### Control event volume
 
 This example shows a filter that controls event volume by only sending `User Signed Up` and `Demo Requested` events.
 
 ![Example of a filter that controls event volume](images/destination-filters/drop_example.png)
 
-### Cleaner Data
+### Cleaner data
 
 This example shows a rule that only sends track calls to Google Analytics.
 
 ![Example of a filter that only sends track calls to Google Analytics](images/destination-filters/clean_example.png)
 
-### Remove Internal and Test Events From Production Tools
+### Remove internal and test events from production tools
 
 This rule targets email addresses with internal domains to stop test events from reaching Destinations.
 
@@ -90,15 +91,15 @@ This rule prevents an event from sending if `Order Completed` and `properties.em
 
 ![Internal domain filter example](images/destination-filters/internal_example2.png)
 
-### Sample a Percentage of Events
+### Sample a percentage of events
 
 Using the [Destination Filters API](https://reference.segmentapis.com/#6c12fbe8-9f84-4a6c-848e-76a2325cb3c5){:target="_blank"}, you can create a rule to randomly sample video heartbeat events.
 
-### Drop Events
+### Drop events
 
 [Watch this Destination Filters walkthrough](https://www.youtube.com/watch?v=47dhAF1Hoco){:target="_blank"} to learn how to use event names to filter events sent to destinations.
 
-## Important Notes
+## Important notes
 
 **Conflicting settings**
 
