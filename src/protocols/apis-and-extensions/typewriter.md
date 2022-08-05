@@ -43,7 +43,7 @@ You can use this with a test suite to automatically fail your unit tests if the 
 
 ![Example unit tests failing because of violations](images/typewriter-test-suite.png)
 
-If you're using a statically typed language (such as TypeScript, Java, Objective-C, Swift), then you also get access to compile-time warnings about your instrumentation:
+If you use a statically typed language (such as TypeScript, Java, Objective-C, or Swift), you get access to compile-time warnings about your instrumentation:
 
 ![Example compile-time validation warnings](images/typewriter-compile-time-warnings.png)
 

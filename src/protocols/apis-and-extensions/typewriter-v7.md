@@ -3,13 +3,13 @@ title: 'Typewriter v7'
 hidden: true
 ---
 
-Analytics-iOS and Analytics-Android only works with Typewriter v7. If you'd like to upgrade to the latest version of Typewriter, upgrade to [Analytics-Swift](/docs/protocols/apis-and-extensions/typewriter/#swift-quickstart) or [Analytics-Kotlin](/docs/protocols/apis-and-extensions/typewriter/#kotlin-quickstart).
+Analytics-iOS and Analytics-Android support Typewriter v7. To upgrade to the latest version of Typewriter, upgrade to [Analytics-Swift](/docs/protocols/apis-and-extensions/typewriter/#swift-quickstart) or [Analytics-Kotlin](/docs/protocols/apis-and-extensions/typewriter/#kotlin-quickstart).
 
 ## Prerequisites
 
-Typewriter is built using [Node.js](https://nodejs.org/en/), and requires `node@8.x` or later, and `npm@5.2.x` or later to function.
+Typewriter is built with [Node.js](https://nodejs.org/en/), and requires `node@8.x` or later, and `npm@5.2.x` or later.
 
-You can check if you have Node and NPM installed by running the following commands in your command-line window:
+Run the following commands to verify your installed versions of Node and NPM:
 
 ```sh
 $ node --version
@@ -22,7 +22,7 @@ $ npx --version
 6.9.0
 ```
 
-If you don't have these, [you'll need to install `node`](https://nodejs.org/en/download/package-manager). Installing `node` also installs `npm` and `npx` for you. If you're on macOS, you can install it with [Homebrew](https://brew.sh/):
+If you don't have these, [install `node`](https://nodejs.org/en/download/package-manager). Installing `node` also installs the`npm` and `npx` package managers . If you're on macOS, you can install it with [Homebrew](https://brew.sh/):
 
 ```sh
 $ brew install node
