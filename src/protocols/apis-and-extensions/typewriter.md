@@ -96,7 +96,7 @@ To get started with Typewriter in your browser:
     $ npm install --save-dev typewriter
     ```
 
-4. Run `npx typewriter init` to use the Typewriter quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. When you run the command, it creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
+4. Run `npx typewriter init` to use the Typewriter quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. When you run the command, it creates a `typewriter.yml` file in your project. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
 
     The command also adds a new Typewriter client in `./analytics` (or whichever path you configured). You can import this client into your project, like so:
 
