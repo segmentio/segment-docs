@@ -8,7 +8,7 @@ id: 54521fd725e721e32a72eec1
 [HubSpot](https://www.hubspot.com/) is an inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers. The `analytics.js` HubSpot Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/hubspot).
 
 > info ""
-As of July 2022, HubSpot no longer allows new connections to authenticate with an API Key. Existing API Keys will continue to work, but in order to authenticate a new API connection with HubSpot, please use a Private App Token instead. To generate a Private App access token from your HubSpot dashboard, navigate to **Integrations > Private Apps**. Segment requires the following scopes: `business-intelligence`, `crm.objects.contacts.read`, `crm.objects.contacts.write`, `crm.schemas.contacts.read`, `crm.objects.companies.read`, `crm.objects.companies.write`, `crm.schemas.companies.read`.
+> As of July 2022, HubSpot no longer allows new connections to authenticate with an API Key. Existing API Keys will continue to work, but to authenticate a new API connection with HubSpot, use a Private App Token. To generate a Private App access token from the HubSpot dashboard, navigate to **Integrations > Private Apps**. Segment requires the following scopes: `business-intelligence`, `crm.objects.contacts.read`, `crm.objects.contacts.write`, `crm.schemas.contacts.read`, `crm.objects.companies.read`, `crm.objects.companies.write`, `crm.schemas.companies.read`. For more information, see Hubspot's article [Private Apps](https://developers.hubspot.com/docs/api/private-apps){:target="_blank"}
 
 > warning ""
 > The HubSpot destination is not compatible with the Segment Event Tester. As result, Segment recommends using other tools to troubleshoot the HubSpot destination.
@@ -19,7 +19,7 @@ As of July 2022, HubSpot no longer allows new connections to authenticate with a
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "HubSpot" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Generate a Private App access token in [HubSpot](https://developers.hubspot.com/docs/api/private-apps){:target="_blank"} and enter it in the "Private App Token" field in the Segment web app. Segment requires the following scopes: `business-intelligence`, `crm.objects.contacts.read`, `crm.objects.contacts.write`, `crm.schemas.contacts.read`, `crm.objects.companies.read`, `crm.objects.companies.write`, `crm.schemas.companies.read`. Note: HubSpot no longer allows generation of new API Keys so you must authenicate with a Private App Token.
+3. Generate a Private App access token in [HubSpot](https://developers.hubspot.com/docs/api/private-apps){:target="_blank"} and enter it in the "Private App Token" field in the Segment web app. Segment requires the following scopes: `business-intelligence`, `crm.objects.contacts.read`, `crm.objects.contacts.write`, `crm.schemas.contacts.read`, `crm.objects.companies.read`, `crm.objects.companies.write`, `crm.schemas.companies.read`. Note: HubSpot no longer allows generation of new API Keys so you must authenticate with a Private App Token.
 4. Navigate to the "Settings" page in the HubSpot UI to find your Hub ID and enter it to the "Hub ID" field in the Segment web app.
 
 
