@@ -43,7 +43,7 @@ To use the latest AppsFlyer SDK to collect IDFAs, do the following:
    // for iOS 13 and earlier - The IDFA will be collected by the SDK. The user will NOT be prompted for permission.
    if #available(iOS 14, *) {
        // Set a timeout for the SDK to wait for the IDFA collection before handling app launch
-       AppsFlyerLib.shared().waitForAdvertisingIdentifier(withTimeoutInterval: 60)
+       AppsFlyerLib.shared().waitForATTUserAuthorization(withTimeoutInterval: 60)
        // Show the user the Apple IDFA consent dialog (AppTrackingTransparency)
        // Can be called in any place
        ATTrackingManager.requestTrackingAuthorization { (status) in
