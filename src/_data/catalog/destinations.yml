@@ -19378,7 +19378,7 @@ items:
   display_name: Fullstory Cloud Mode (Actions)
   name: Fullstory Cloud Mode (Actions)
   slug: fullstory-cloud-mode-actions
-  hidden: false
+  hidden: true
   endpoints:
   - us
   regions:
@@ -19389,7 +19389,9 @@ items:
   website: >-
     http://www.fullstory.com/?utm_source=segment&utm_medium=integrations-page&utm_campaign=partners
   status: PUBLIC_BETA
-  categories: []
+  categories:
+  - Analytics
+  - Heatmaps & Recordings
   logo:
     url: https://cdn.filepicker.io/api/file/2HzRGQIWQZ2iX1XcIRDQ
   mark:
