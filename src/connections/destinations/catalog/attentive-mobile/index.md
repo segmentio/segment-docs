@@ -17,7 +17,7 @@ This destination is maintained by Attentive Mobile. For any issues with the dest
 
 ### Installing from Segment
 
-Note: To be able to install an additional Attentive destination from the Segment UI, the integration must already be installed in Attentive. If not already done so, please follow [the Installing From Attentive steps](#installing-from-attentive).
+Note: To install an additional Attentive destination from the Segment UI, the integration must already be installed in Attentive. If you've not already done so, please follow [the Installing From Attentive steps](#installing-from-attentive).
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Attentive Mobile" in the Destinations Catalog, and select the "Attentive Mobile" destination.
@@ -44,7 +44,7 @@ Segment sends Identify calls to Attentive Mobile as an `identify` event. The eve
 
 It may take up to 10 minutes for the `identify` attributes to appear in Attentive.
 
-> Note: For the Attentive destination to work best, it's desirable to send at least one identify call that contains both 1) the Segment userId, and 2) an email and/or phone. This allows Attentive to "link" the Segment UserId with an Attentive subscriber.
+> Note: For the Attentive destination to work best, send at least one Identify call that contains both 1) the Segment userId, and 2) an email and/or phone. This allows Attentive to "link" the Segment UserId with an Attentive subscriber.
 
 ### Track
 
