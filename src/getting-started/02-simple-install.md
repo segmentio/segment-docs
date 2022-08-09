@@ -69,7 +69,7 @@ Click a tab below to see the tutorial content for the specific library you chose
 
 ### Step 1: Copy the Snippet
 <br>
-Paste the snippet from the JavaScript Source overview page into the `<head>` tag of your site.
+Navigate **Connections > Sources > JavaScript** in the Segment app and copy the snippet from the JavaScript Source overview page and paste it into the `<head>` tag of your site.
 <br><br>
 That snippet loads Analytics.js onto the page _asynchronously_, so it won't affect your page load speed. Once the snippet runs on your site, you can turn on destinations from the destinations page in your workspace and data starts loading on your site automatically.
 <br><br>

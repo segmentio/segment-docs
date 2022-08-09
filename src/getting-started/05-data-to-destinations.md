@@ -6,7 +6,7 @@ Once you've got data flowing _into_ Segment, what do you do with it? The Segment
 
 ## Routing data to destinations
 
-When you enable a destination in the Segment App, you link it to a specific source (or sources). By default, Segment first processes the data from the selected source(s), then translates it and routes it from the Segment servers to to the API endpoint for that destination.
+When you enable a destination in the Segment App, you link it to a specific source (or sources). By default, Segment first processes the data from the selected source(s), then translates it and routes it from the Segment servers to the API endpoint for that destination.
 
 This means that if you previously had loaded code or a snippet for that tool on your website or app, you should remove it once you have Segment implemented so you don't send duplicate data.
 
