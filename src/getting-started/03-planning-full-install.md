@@ -8,14 +8,13 @@ Now that you've seen Segment in action, step back and think through what a full 
 
 - [Define Business Objectives](#define-business-objectives)
 - [Decide what to collect](#decide-what-to-collect)
-  - [Shortcut! Check if a Business Spec meets your needs](#shortcut-check-if-a-business-spec-meets-your-needs)
+  - [Shortcut: Check if a Business Spec meets your needs](#shortcut-check-if-a-business-spec-meets-your-needs)
     - [B2B Spec](#b2b-spec)
     - [Ecommerce Spec](#ecommerce-spec)
     - [Mobile Spec](#mobile-spec)
     - [Video Spec](#video-spec)
 - [Create naming conventions](#create-naming-conventions)
 - [Develop a Tracking Plan](#develop-a-tracking-plan)
-  - [Using the Tracking Plan Google Sheets template](#using-the-tracking-plan-google-sheets-template)
   - [Plan your Identify and Group calls](#plan-your-identify-and-group-calls)
   - [Plan your Track events](#plan-your-track-events)
   - [Define your Track event properties](#define-your-track-event-properties)
@@ -60,11 +59,11 @@ With your business objectives documented and mapped to user actions, it's time t
 
 When you're first starting out, we recommend that you limit your tracking plan to a few core events, but add lots of properties to provide context about them. We generally see more success with the “less is more” philosophy of tracking data, but you might also decide to take a more liberal “track more and analyze later” approach. Like everything, each alternative has pros and cons that are important to consider especially as it relates to your company's needs.
 
-### Shortcut! Check if a Business Spec meets your needs
+### Shortcut: Check if a Business Spec meets your needs
 
-Segment maintains several "Business Specs", which are recommendations based on your type of business that give recommendations on what to track, what additional traits or properties to collect, and how to format them. The two most common are the B2B (business-to-business) Spec, Ecommerce Spec, and our Mobile and Video specs.
+Segment maintains several "Business Specs", which are recommendations based on your type of business that give recommendations on what to track, what additional traits or properties to collect, and how to format them. The two most common are the B2B (business-to-business) Spec, Ecommerce Spec, and Mobile and Video specs.
 
-If these specs meet your business needs, you're in luck! These specs are built into our tracking plan templates, so you don't need to start from a blank slate.
+If these specs meet your business needs, you're in luck. These specs are built into Segment tracking plan templates, so you don't need to start from a blank slate.
 
 #### B2B Spec
 
@@ -90,9 +89,9 @@ Regardless of approach, here are some important best practices to keep in mind:
 
 - **Pick a casing convention:** We recommend *Title Case* for event names and *snake_case* for property names. Make sure you pick a casing standard and enforce it across your events and properties.
 
-- **Pick an event name structure:** As you may have noticed from our [specs](/docs/connections/spec/semantic/), we're big fans of the Object (`Blog Post`) + Action (`Read`) framework for event names. Pick a convention and stick to it!
+- **Pick an event name structure:** As you may have noticed from our [specs](/docs/connections/spec/semantic/), we're big fans of the Object (`Blog Post`) + Action (`Read`) framework for event names. Pick a convention and stick to it.
 
-- **Don't create event names dynamically:** Avoid creating events that pull a dynamic value into the event name (for example, `User Signed Up (11-01-2019)`). If and when you send these to a warehouse for analysis, you end up with huge numbers of tables and schema bloat!
+- **Don't create event names dynamically:** Avoid creating events that pull a dynamic value into the event name (for example, `User Signed Up (11-01-2019)`). If and when you send these to a warehouse for analysis, you end up with huge numbers of tables and schema bloat.
 
 - **Don't create events to track properties:** Avoid adding values to event names when they could be a property. Instead, add values as a property. For example, rather than having an event called "Read Blog Post - Best Tracking Plans Ever", create a "Blog Post Read" event and with a property like `"blog_post_title":"Best Tracking Plans Ever"`.
 
@@ -101,7 +100,7 @@ Regardless of approach, here are some important best practices to keep in mind:
 ![An image comparing good and bad naming and collection standards](/docs/protocols/images/asset_nVdJ3ZyA.png)
 
 
-Got all that? Great! You're now ready to develop a Tracking Plan.
+Got all that? Great. You're now ready to develop a Tracking Plan.
 
 <!--Source: /docs/protocols/data-quality/whats-a-tracking-plan/ or /docs/protocols/tracking-plan/ -->
 
@@ -109,7 +108,7 @@ Got all that? Great! You're now ready to develop a Tracking Plan.
 
 A [tracking plan](https://segment.com/blog/what-is-a-tracking-plan/){:target="_blank"} clarifies what events to track, where those events live in the code base, and why you're tracking those events (from a business perspective). **A good tracking plan represents the single source of truth about what data you collect, and why.**
 
-Your tracking plan is probably maintained in a spreadsheet (unless you use our tracking-plan tool, [Protocols](/docs/protocols/)), and serves as a project management tool to get your organization in agreement about what data to use to make decisions. A tracking plan helps build a shared understanding of the data among marketers, product managers, engineers, analysts, and any other data users.
+Your tracking plan is probably maintained in a spreadsheet (unless you use Segment's tracking-plan tool, [Protocols](/docs/protocols/)), and serves as a project management tool to get your organization in agreement about what data to use to make decisions. A tracking plan helps build a shared understanding of the data among marketers, product managers, engineers, analysts, and any other data users.
 
 ### Plan your Identify and Group calls
 
@@ -155,7 +154,7 @@ For an Ecommerce company, however, the main events might be something like:
 - **Order Completed**
 
 > success ""
-> **Tip**: As we mentioned [above](#shortcut-check-if-a-business-spec-meets-your-needs), Segment has a set of “reserved” event names specifically for ecommerce, called our [Ecommerce Spec](/docs/connections/spec/ecommerce/v2). Check it out to see which events we cover and how they are used in our downstream destinations.
+> **Tip**: As mentioned [above](#shortcut-check-if-a-business-spec-meets-your-needs), Segment has a set of “reserved” event names specifically for ecommerce, called the [Ecommerce Spec](/docs/connections/spec/ecommerce/v2). Check it out to see which events Segment covers and how they are used in downstream destinations.
 
 An online community, on the other hand, has an entirely different set of actions that indicate engagement, as listed below. For example, a community might want to track actions like:
 
