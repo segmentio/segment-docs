@@ -9,13 +9,14 @@ This destination is maintained by Attentive Mobile. For any issues with the dest
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
 
-### Installing from Attentive
 
-1. Follow the the [Attentive documentation](https://docs.attentivemobile.com/pages/developer-guides/third-party-integrations/customer-data-platforms/segment/) to install the Segment integration in Attentive.
+### Install from Attentive
 
-### Installing from Segment
+1. Follow the the [Attentive documentation](https://docs.attentivemobile.com/pages/developer-guides/third-party-integrations/customer-data-platforms/segment/){:target="_blank"} to install the Segment integration in Attentive.
+
+### Add from Segment
+
 
 Note: To install an additional Attentive destination from the Segment UI, the integration must already be installed in Attentive. If you've not already done so, please follow [the Installing From Attentive steps](#installing-from-attentive).
 
@@ -31,7 +32,7 @@ The Attentive Mobile destination supports the following methods, as specified in
 
 ### Identify
 
-Send [Identify](/docs/connections/spec/identify) calls to add attributes to the Attentive subscriber. These attributes are used to target Attentive subscribers in the [Attentive Segments product](https://help.attentivemobile.com/hc/en-us/categories/360004558392-Subscriber-segments). For example:
+Send [Identify](/docs/connections/spec/identify) calls to add attributes to the Attentive subscriber. These attributes are used to target Attentive subscribers in the [Attentive Segments product](https://help.attentivemobile.com/hc/en-us/categories/360004558392-Subscriber-segments){:target="_blank"}. For example:
 
 ```js
 analytics.identify("userId123", {
@@ -44,7 +45,8 @@ Segment sends Identify calls to Attentive Mobile as an `identify` event. The eve
 
 It may take up to 10 minutes for the `identify` attributes to appear in Attentive.
 
-> Note: For the Attentive destination to work best, send at least one Identify call that contains both 1) the Segment userId, and 2) an email and/or phone. This allows Attentive to "link" the Segment UserId with an Attentive subscriber.
+> info ""
+> For best results, send at least one Identify call that contains both a Segment `userId` and `email` or `phone`. This enables Attentive Mobile to link the Segment `userId` with an Attentive Mobile subscriber.
 
 ### Track
 
@@ -54,6 +56,6 @@ Send [Track](/docs/connections/spec/track) calls to save the event to the Attent
 analytics.track("Login Button Clicked");
 ```
 
-Segment sends Track calls to Attentive Mobile as a `track` event. The event is saved to the Attentive subscriber, and is usable in both the [Attentive Segments product](https://help.attentivemobile.com/hc/en-us/categories/360004558392-Subscriber-segments) and the [Attentive Journeys product](https://help.attentivemobile.com/hc/en-us/categories/6084285157396).
+Segment sends Track calls to Attentive Mobile as a `track` event. The event is saved to the Attentive subscriber, and is usable in both the [Attentive Segments product](https://help.attentivemobile.com/hc/en-us/categories/360004558392-Subscriber-segments){:target="_blank"} and the [Attentive Journeys product](https://help.attentivemobile.com/hc/en-us/categories/6084285157396){:target="_blank"}.
 
 It may take up to 10 minutes for the track events to appear in Attentive.
