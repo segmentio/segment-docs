@@ -625,7 +625,7 @@ Analytics.track(
 
 If you want to send UTM parameters to Google Universal Analytics using one of the Segment server-side sources they need to be passed manually. The client-side Javascript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript)) is highly recommended for collecting this data since it all happens automatically.
 
-Your UTM params need to be passed in the `context` object in `context.campaign`. For Google Universal Analytics `campaign.name`, `campaign.source` and `campaign.medium` all need to be sent together for things to show up in reports. The other two params (`campaign.term` and `campaign.content`) are both optional, but will be forwarded to GA if you send them to Segment.
+Your UTM params need to be passed in the `context` object in `context.campaign`. For Google Universal Analytics `campaign.name`, `campaign.source` and `campaign.medium` all need to be sent together for things to show up in reports. The `campaign.content` param is optional, but will be forwarded to GA if you send it to Segment.
 
 ### Measurement Protocol Parameters
 
