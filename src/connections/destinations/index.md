@@ -2,6 +2,9 @@
 title: Destinations Overview
 ---
 
+Destinations receive data from Segment.
+
+
 If you just want to explore the Segment destinations, check out the [Destinations catalog](/docs/connections/destinations/catalog/).
 
 Select an item from the catalog to learn more about it. The documentation for each destination explains how the Segment Tracking API methods are implemented for that destination.
