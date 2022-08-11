@@ -13,12 +13,11 @@ This destination is maintained by Attentive Mobile. For any issues with the dest
 
 ### Install from Attentive
 
-1. Follow the the [Attentive documentation](https://docs.attentivemobile.com/pages/developer-guides/third-party-integrations/customer-data-platforms/segment/){:target="_blank"} to install the Segment integration in Attentive.
+1. Follow the [Attentive documentation](https://docs.attentivemobile.com/pages/developer-guides/third-party-integrations/customer-data-platforms/segment/){:target="_blank"} to install the Segment integration from Attentive.
+
+> Note: To generate an API key, you must install this integration from Attentive. Only after doing so, can you create an additional Attentive destination from the Segment UI.
 
 ### Add from Segment
-
-
-Note: To install an additional Attentive destination from the Segment UI, the integration must already be installed in Attentive. If you've not already done so, please follow [the Installing From Attentive steps](#installing-from-attentive).
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Attentive Mobile" in the Destinations Catalog, and select the "Attentive Mobile" destination.
