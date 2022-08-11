@@ -3,27 +3,22 @@ title: Attentive Mobile Destination
 id: 62bcba2e1db8cc043e95f370
 ---
 
-[Attentive Mobile](https://www.attentivemobile.com/?utm_source=partner-generated&utm_medium=partner-marketing-&utm_campaign=partner-generated-4.15.22-segment.io) with Segment makes it easy to sync customer and event data from Segment to Attentive so that you can send highly personalized and timely messages.
+[Attentive Mobile](https://www.attentivemobile.com/?utm_source=partner-generated&utm_medium=partner-marketing-&utm_campaign=partner-generated-4.15.22-segment.io){:target="_blank"} with Segment makes it easy to sync customer and event data from Segment to Attentive so that you can send highly personalized and timely messages.
 
-This destination is maintained by Attentive Mobile. For any issues with the destination, [contact the Attentive Mobile Support team](mailto:support@attentivemobile.com).
+Attentive Mobile maintains this destination. For any issues with the destination, [contact the Attentive Mobile Support team](mailto:support@attentivemobile.com).
 
 ## Getting Started
 
+To get started with Attentive:
+1. Install the Segment integration from attentive. Follow the [Attentive documentation](https://docs.attentivemobile.com/pages/developer-guides/third-party-integrations/customer-data-platforms/segment/){:target="_blank"} to install the Segment integration from Attentive.
 
+    > **Note:** To generate an API key, you must install this integration from Attentive. Only after doing so, can you create an additional Attentive destination from the Segment UI.
 
-### Install from Attentive
-
-1. Follow the [Attentive documentation](https://docs.attentivemobile.com/pages/developer-guides/third-party-integrations/customer-data-platforms/segment/){:target="_blank"} to install the Segment integration from Attentive.
-
-> Note: To generate an API key, you must install this integration from Attentive. Only after doing so, can you create an additional Attentive destination from the Segment UI.
-
-### Add from Segment
-
-1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-2. Search for "Attentive Mobile" in the Destinations Catalog, and select the "Attentive Mobile" destination.
-3. Choose which Source should send data to the "Attentive Mobile" destination.
-4. Go to the [Attentive Mobile dashboard](https://www.ui.attentivemobile.com/integrations){:target="\_blank"}. Find and select the installed 'Segment (Beta)' integration. In the settings page, find and copy the "API key".
-5. Enter the "API Key" in the "Attentive Mobile" destination settings in Segment.
+2. From the Destinations catalog page in the Segment App, click **Add Destination**.
+2. Search for *Attentive Mobile* in the Destinations Catalog, and select the **Attentive Mobile** destination.
+3. Choose which Source should send data to the Attentive Mobile destination.
+4. Go to the [Attentive Mobile dashboard](https://www.ui.attentivemobile.com/integrations){:target="\_blank"}. Find and select the installed 'Segment (Beta)' integration. In the settings page, find and copy the **API key**.
+5. Enter the **API Key** in the Attentive Mobile destination settings page in Segment.
 
 ## Supported methods
 
