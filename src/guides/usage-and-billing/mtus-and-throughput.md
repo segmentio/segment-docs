@@ -1,6 +1,15 @@
 ---
 title: MTUs, Throughput and Billing
 ---
+[![A description of MTU and throughput calculation](images/billing-overview.png)](images/billing-overview.png)
+
+The graphic illustrates an example billing model with data flowing through Segment within a monthly period. Each event on the different touch points (for example, Sign-ups or Product Added) is calculated as one API call. 
+
+Segment detects that the user across two of the touch points is the same user based on their userID (userID 123) and deduplicates them, counting for one [MTU](#what-is-an-mtu). 
+
+With Personas, this user falls into one audience, has one computed trait, and falls into one Journeys step, accounting for three compute credits total. Compute credits are not tied to an individual user, so multiple people could fall into these buckets, still accounting for a single compute credit for each trait/audience/journey step. 
+
+Finally, the example sends some user events to a destination function, which is charged according to function execution time.
 
 ## What is an MTU?
 
@@ -19,6 +28,8 @@ Depending on your Segment account type, your plan might include a throughput lim
 For example, if your workspace's throughput limit is set to 250, this means that you can send a combined total of 250 API calls and objects to Segment each month per MTU you've paid for in your plan. If you have a 10,000 MTU plan, this means you can send up to a total of 2.5 million API calls and objects each month.
 
 These objects and API calls are not tied to a specific user, but are an aggregate number applied to your workspace. Most customers never hit this limit, and Business tier plans often have custom limits.
+
+
 
 #### Batching and throughput limits
 
@@ -56,7 +67,7 @@ Click the billing period dropdown at the top of the page to see a cumulative dai
 
 ## What is the difference between an event and an object?
 
-We know this sounds like a non-sequitur, but understanding the difference between events and objects helps you understand how MTUs are calculated.
+Understanding the difference between events and objects helps you understand how MTUs are calculated.
 
 An event is a data collection triggered in response to a user action: a [Track call](/docs/connections/spec/track/) (or a [Page](/docs/connections/spec/page/)/[Screen](/docs/connections/spec/screen/) call if the action was to navigate to a new page). Events take place in a single moment in time, and include a name, timestamp, and **properties**. When an event happens more than once, it creates a new Event record (with a new timestamp) rather than updating an existing one. For example, a user browsing a product catalog might generate several "Product Viewed" events, which might include the product name, price, and category.
 
@@ -113,7 +124,7 @@ Replays only affect your MTU count if you are using a [Repeater](/docs/connectio
 
 ## Why is my MTU count different from what I see in my destinations and other tools?
 
-Different tools count users under different conditions, so comparing numbers between any two tools, or between Segment and a tool, rarely produces the same number. Each tool accepts slightly different incoming data, and they often reject or process the incoming data differently. We've included some example explanations of why you might see differing numbers below.
+Different tools count users under different conditions, so comparing numbers between any two tools, or between Segment and a tool, rarely produces the same number. Each tool accepts slightly different incoming data, and they often reject or process the incoming data differently. Included are some example explanations of why you might see differing numbers below.
 
 > success ""
 > Contact [Segment Product Support](https://segment.com/help/contact/) if for more information about a specific tool, or if you're concerned that differing numbers might be due an implementation error.
