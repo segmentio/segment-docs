@@ -407,3 +407,18 @@ sections:
     title: Prod and Testing Environments in Segment
   - path: /segment-app/verify-email-address
     title: Verifying Your Email Address
+- section_title: API
+  section:
+  - path: /config-api
+    title: Config API overview
+  - path: /config-api/api-design
+    title: API design
+  - path: /config-api/authentication
+    title: Authentication
+  - path: /config-api/fql
+    title: Destination Filter Query Language
+  - path: "https://reference.segmentapis.com/"
+    title: Reference
+    menu_icon: new-tab
+  - path: /config-api/tutorial-javascript-google-analytics
+    title: Creating a Javascript web source and Google Analytics destination
