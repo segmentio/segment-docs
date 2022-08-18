@@ -3,12 +3,13 @@ title: MTUs, Throughput and Billing
 ---
 [![A description of MTU and throughput calculation](images/billing-overview.png)](images/billing-overview.png)
 
+The graphic illustrates an example billing model with data flowing through Segment within a monthly period. Each event on the different touch points (for example, Sign-ups or Product Added) is calculated as one API call. 
 
-**Took a stab at describing the first part of the illustration below, but I'll defer to your knowledge on the subject. In general, I think it would be most helpful here if we could show the calculation given what we see in the image.**
+Segment detects that the user across two of the touch points is the same user based on their userID (userID 123) and deduplicates them, counting for one [MTU](#what-is-an-mtu). 
 
-Segment uses several inputs to calculate the monthly bill for your account. The image above illustrates the method Segment uses to calculate Monthly Tracked Users (MTUs) across multiple sources. 
+With Personas, this user falls into one audience, has one computed trait, and falls into one Journeys step, accounting for three compute credits total. Compute credits are not tied to an individual user, so multiple people could fall into these buckets, still accounting for a single compute credit for each trait/audience/journey step. 
 
-In the example, there are five events across two sources attributed `userID: 123`. This is a single MTU, since the events occur within the same 30 day billing period. Segment uses Identity Resolution to associate `anonID: 456` with this known user, to ensure this user's event is counted within the same MTU.
+Finally, the example sends some user events to a destination function, which is charged according to function execution time.
 
 ## What is an MTU?
 
