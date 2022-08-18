@@ -18,7 +18,7 @@ hide-dossier: true
 <!-- In the section below, add your destination name where indicated. If you have a classic version of the destination, ensure that its documentation is linked as well. If you don't have a classic version of the destination, remove the second and third sentences. -->
 
 > success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) <destination_name> Segment destination. There's also a page about the [non-Actions <destination_name> destination](/docs/connections/destinations/catalog/moengage/). Both of these destinations receives data from Segment.
+> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) MoEngage Segment destination. There's also a page about the [non-Actions MoEngage Destination](/docs/connections/destinations/catalog/moengage/). Both of these destinations receives data from Segment.
 
 <!-- This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component. -->
 
