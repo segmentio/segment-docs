@@ -235,7 +235,7 @@ class SomePlugin: Plugin {
                 self.name = name
         }
 
-        override fun execute(event: BaseEvent): BaseEvent? {
+        override func execute(event: BaseEvent): BaseEvent? {
                 var workingEvent = event
                 if var context = workingEvent?.context?.dictionaryValue {
                         context[keyPath: "foo.bar"] = 12
