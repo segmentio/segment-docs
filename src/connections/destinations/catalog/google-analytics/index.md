@@ -112,16 +112,7 @@ Google Universal Analytics has multiple scopes for each custom dimensions: hit (
 #### Setting up Custom Dimensions
 First, [configure the Custom Dimensions](https://support.google.com/analytics/answer/2709829?hl=en) from your Google Universal Analytics admin page.
 
-Once you finish this set up in Google Universal Analytics, you can to map traits and properties to your custom dimensions. Go to the Google Universal Analytics destination settings in the Segment App and locate the **Custom Dimensions** setting. This is where you will enter your mapping.
-
-The following images show an example of mapping "Gender" to dimension "1" and "User Type" to dimension "2":
-
-On Segment:
-![custom dimension mapping screenshot](images/dimension-mapping.png)
-On Google:
-![custom dimension mapping screenshot](images/dimension-mapping-google-analytics.png)
-
-You can only map each trait or property to one Custom Dimension at a time.
+Once you finish this set up in Google Universal Analytics, you can map traits and properties to your custom dimensions. Go to the Google Universal Analytics destination settings in the Segment App and locate the **Custom Dimensions** setting. This is where you will enter your mapping. You can only map each trait or property to one Custom Dimension at a time.
 
 When you finish mapping dimensions and save the settings, Segment checks if the user traits and properties in [Identify](/docs/connections/spec/identify/), [Track](/docs/connections/spec/track/) and [Page](/docs/connections/spec/page/) calls are defined as a dimension. If they are defined in your mapping, Segment sends that dimension to Google Universal Analytics.
 
@@ -634,7 +625,7 @@ Analytics.track(
 
 If you want to send UTM parameters to Google Universal Analytics using one of the Segment server-side sources they need to be passed manually. The client-side Javascript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript)) is highly recommended for collecting this data since it all happens automatically.
 
-Your UTM params need to be passed in the `context` object in `context.campaign`. For Google Universal Analytics `campaign.name`, `campaign.source` and `campaign.medium` all need to be sent together for things to show up in reports. The other two params (`campaign.term` and `campaign.content`) are both optional, but will be forwarded to GA if you send them to Segment.
+Your UTM params need to be passed in the `context` object in `context.campaign`. For Google Universal Analytics `campaign.name`, `campaign.source` and `campaign.medium` all need to be sent together for things to show up in reports. The `campaign.content` param is optional, but will be forwarded to GA if you send it to Segment.
 
 ### Measurement Protocol Parameters
 
@@ -747,7 +738,7 @@ This source can be your server-side source. From there, its easy to send data to
 
 ### Consent Mode
 
-Segment does not support Google's [Consent Mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} feature. Consent Mode enables you to adjust how Google's tags load on your site, based on whether users consent to your use of cookies. This feature requires Google's gtag.js library, and does not work when you use Segment's Google Universal Analytics destination, because it loads [Google's analytics.js library](https://support.google.com/analytics/answer/7476135?hl=en#zippy=%2Cin-this-article){:target="blank"} instead of the gtag.js library. 
+Segment does not support Google's [Consent Mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} feature. Consent Mode enables you to adjust how Google's tags load on your site, based on whether users consent to your use of cookies. This feature requires Google's gtag.js library, and does not work when you use Segment's Google Universal Analytics destination, because it loads [Google's analytics.js library](https://support.google.com/analytics/answer/7476135?hl=en#zippy=%2Cin-this-article){:target="blank"} instead of the gtag.js library.
 
 ### Cookie Domain Name
 

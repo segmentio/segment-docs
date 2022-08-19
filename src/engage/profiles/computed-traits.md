@@ -173,7 +173,7 @@ Personas then processes your Trait edits. While the edit task runs, the trait re
 
 ## Accessing your Computed Traits using the Profiles API
 
-You can access your computed traits using the Profile API by querying the `/traits` endpoint. For example, if you can query for the `emails_opened_last_30_days` with the following GET request:
+You can access your computed traits using the Profile API by querying the `/traits` endpoint. For example, you can query for the `emails_opened_last_30_days` with the following GET request:
 
 ```
 https://profiles.segment.com/v1/spaces/<workspace_id>/collections/users/profiles/email:john.doe@segment.com/traits?include=emails_opened_last_30_days
@@ -193,6 +193,12 @@ returns:
         }
     }
 ```
+**Traits**
+You can query a user's traits (such as `first_name`, `last_name`, and more):
+
+`https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles/<external_id>/traits`
+
+By default, the response includes 20 traits. You can return up to 200 traits by appending `?limit=200` to the querystring. If you wish to return a specific trait, append `?include={trait}` to the querystring (for example, `?include=age`). You can also use the ``?class=audience​`` or ``?class=computed_trait​`` URL parameters to retrieve audiences or computed traits specifically.
 
 You can read the [full Profile API docs](/docs/personas/profile-api/) to learn more.
 
