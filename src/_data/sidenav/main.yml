@@ -409,16 +409,21 @@ sections:
     title: Verifying Your Email Address
 - section_title: API
   section:
-  - path: /config-api
-    title: Config API overview
-  - path: /config-api/api-design
-    title: API design
-  - path: /config-api/authentication
-    title: Authentication
-  - path: /config-api/fql
-    title: Destination Filter Query Language
-  - path: "https://reference.segmentapis.com/"
-    title: Reference
-    menu_icon: new-tab
-  - path: /config-api/tutorial-javascript-google-analytics
-    title: Creating a Javascript web source and Google Analytics destination
+  - path: /api
+    title: Public API
+  - section_title: Config API
+    slug: api/config-api
+    section:
+    - path: /api/config-api
+      title: Config API overview
+    - path: /api/config-api/api-design
+      title: API design
+    - path: /api/config-api/authentication
+      title: Authentication
+    - path: /api/config-api/fql
+      title: Destination Filter Query Language
+    # - path: "https://reference.segmentapis.com/"
+    #   title: Reference
+    #   menu_icon: new-tab
+  # - path: /config-api/tutorial-javascript-google-analytics
+  #   title: Creating a Javascript web source and Google Analytics destination

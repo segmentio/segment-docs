@@ -2,6 +2,9 @@
 title: Destination Filter Query Language
 ---
 
+{% include content/papi-ga.html %}
+
+
 Destination Filter Reference documentation can be found in the [main Config API reference docs](https://reference.segmentapis.com/#6c12fbe8-9f84-4a6c-848e-76a2325cb3c5).
 
 Filter Query Language ("FQL") is a simple language for filtering JSON objects used by the Transformations API to conditionally apply transformations. In the Transformations API, FQL statements evaluate to `true` or `false` based on the contents of each Segment event. If the statement evaluates to `true`, the transformation is applied, and if it is `false` the transformation is not applied.
