@@ -254,9 +254,9 @@ Segment.set({
 
 The `Segment.set()` method accepts an object with the following fields:
 
-- `collection` - Collection name.
-- `id` - Object's unique identifier.
-- `properties` - Object with free-form data.
+- `collection` - A collection name, which must be lowercase.
+- `id` - An object's unique identifier.
+- `properties` - An object with free-form data.
 
 > warning ""
 > When you use the `set()` method, you won't see events in the Source Debugger. Segment only sends events to connected warehouses.
