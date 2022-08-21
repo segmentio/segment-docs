@@ -51,7 +51,7 @@ Messages sent to the Segment servers using the tracking API can then be translat
 
 ## What are the other parts of the Segment platform?
 
-In addition to [Connections](/docs/connections/) (our core message routing product) Segment offers a additional features to help your organization do more with its data, and keep data clean, consistent, and respectful of end-user privacy. The following products are available:
+In addition to [Connections](/docs/connections/) (our core message routing product) Segment offers additional features to help your organization do more with its data, and keep data clean, consistent, and respectful of end-user privacy. The following products are available:
 
 - [Privacy Portal](/docs/privacy/portal/) - available to all users - Inspect incoming messages to identify PII, classify it by its riskiness, and decide how it's handled and which tool may use it.
 - [Protocols](/docs/protocols/) - create a unified schema for all the data you collect, coordinate implementation to keep it consistent with that schema, and make sure your data always arrives in the right format and block and alert when it doesn't.
