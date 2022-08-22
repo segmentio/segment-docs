@@ -6,3 +6,4 @@ The Segment Public API helps you manage your Segment workspaces and its resource
 All CRUD endpoints in the API follow REST conventions and use standard HTTP methods. Different URL endpoints represent different resources in a workspace.
 
 For more information, see the [Segment Public API documentation](#).
+
