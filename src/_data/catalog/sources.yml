@@ -201,7 +201,7 @@ items:
     isCloudEventSource: false
     slug: bigquery
     url: connections/sources/catalog/cloud-apps/bigquery
-    hidden: false
+    hidden: true
     regions:
       - us
     endpoints:
