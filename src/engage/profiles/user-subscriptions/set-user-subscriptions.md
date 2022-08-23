@@ -30,6 +30,9 @@ These columns take the following values:
 - `did-not-subscribe`; for users who have neither subscribed nor unsubscribed from your marketing campaigns
 - Blank; for email addresses or phone numbers that Segment collected without the user explicitly providing them
 
+> success ""
+> Engage accepts both uppercase and lowercase subscription status values.
+
 Refer to the [User Subscription States documentation](/docs/engage/profiles/user-subscriptions/subscription-states/) for detailed explanations of each subscription state.
 
 <!--
@@ -61,7 +64,7 @@ When you update user subscriptions with Segment's Public API, however, you'll ge
 
 ### Format the Identify call payload
 
-For Segment to process the subscription status request, your Identify call payload must include at least one object that contains an email address or phone number, its subscription type, and its subscription status.
+For Segment to process the subscription status request, your Identify call payload must include at least one object that contains an email address or phone number, its subscription type, and its subscription status. Engage accepts both uppercase and lowercase subscription statuses in Identify calls.
 
 The following example payload shows an Identify call with a `context` object, which you'll add to the Identify call to update user subscriptions. The `context` object contains a `messaging_subscriptions` array with two objects that update both SMS and email subscription statuses:
 
