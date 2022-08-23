@@ -42,4 +42,3 @@ analytics.track("Login Button Clicked");
 ```
 
 Segment sends Track calls to Jimo as a `track` event.
-
