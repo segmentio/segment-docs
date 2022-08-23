@@ -14,12 +14,13 @@ Common use cases for Destination Filters include:
 > info ""
 > Destination Filters are only available to Business Tier customers.
 
-### Destination filtering limitations
+### Limitations
 
 Keep the following limitations in mind when you use Destination Filters:
 
 - Segment applies Destination Filters one at a time in the order that they appear in your workspace.
-- Destination Filters can only be applied to cloud-mode (server-side) streaming destinations. Device-mode destinations aren't supported.
+- Destination Filters can only be applied to cloud-mode (server-side) streaming destinations.
+- Device-mode destinations aren't supported.
 - You can't apply Destination Filters to Warehouses or S3 destinations.
 - Each filter can only apply to one source-destination pair.
 
@@ -54,7 +55,13 @@ To learn more, read Segment's [Destination Filters API docs](https://reference.s
 
 ## Examples
 
-The following examples illustrate common Destinations Filters use cases.
+The following examples illustrate common Destinations Filters use cases:
+* [PII management](#pii-management)
+* [Control event volume](#control-event-volume)
+* [Cleaner data](#cleaner-data)
+* [Remove internal and test events from production tools](#remove-internal-and-test-events-from-production-tools)
+* [Sample a percentage of events](#sample-a-percentage-of-events)
+* [Drop events](#drop-events)  
 
 ### PII management
 
@@ -97,15 +104,15 @@ Using the [Destination Filters API](https://reference.segmentapis.com/#6c12fbe8-
 
 ## Important notes
 
-**Conflicting settings**
+#### Conflicting settings
 
 Some destinations offer settings that also allow you to filter data. For example, the Facebook App Events destination allows you to map `Screen` events to `Track` events. Because Destination Filters are evaluated and applied _before_ the Destination settings are applied, they can conflict with your settings.
 
-In the example in [the video](https://www.youtube.com/watch?v=47dhAF1Hoco){:target="_blank"}, if you have a Destination Filter that filters Track events _and_ you have the **Use Screen Events as Track Events** setting enabled, `Track` events drop, but `Screen` events still process. The destination settings will transform it into a `Track` event - *after* the filters.
+In the example in [the video](https://www.youtube.com/watch?v=47dhAF1Hoco){:target="_blank"}, if you have a Destination Filter that filters Track events _and_ you have the **Use Screen Events as Track Events** setting enabled, `Track` events drop, but `Screen` events still process. The destination settings transform it into a `Track` event - *after* the filters.
 
-**Error handling**
+#### Error handling
 
-Segment makes effort to ensure that Destination Filters handle unexpected situations. For example, if you use the `contains()` FQL function on `null` field, Segment returns `false` instead of returning an error. If Segment can't infer your intent, Segment logs an internal error and drops the event. Segment defaults to this behavior to prevent sensitive information, like a PII filter, from getting through.
+Segment makes effort to ensure that Destination Filters can handle unexpected situations. For example, if you use the `contains()` FQL function on the `null` field, Segment returns `false` instead of returning an error. If Segment can't infer your intent, Segment logs an internal error and drops the event. Segment defaults to this behavior to prevent sensitive information, like a PII filter, from getting through.
 
 Errors aren't exposed in your Destination's Event Deliverability tab. For help diagnosing missing destination filter events, [contact Segment](https://segment.com/help/contact/){:target="_blank"}.
 
@@ -121,7 +128,7 @@ For example, the `properties.products.newElement` filter blocks all `newElement`
 
 ![Filter array properties](images/destination-filters/filter-array-properties.png)
 
-To block the Identify event trait `products.newElement`, select the option under the **User Traits** list instead. To block a context object field `products.newElement`, select it from the **Context Fields** list.
+To block the Identify event trait `products.newElement`, select the option under the **User Traits** list instead. To block the context object field `products.newElement`, select it from the **Context Fields** list.
 
 #### How many filters can I create?
 
@@ -139,19 +146,17 @@ Segment displays the most recent 15,000 properties. To find a property not in th
 
 To filter out events from warehouses, use Selective Sync.
 
-#### I don't see a `name` property at the top level of my events to filter on "event name".
+#### I don't see a *name* property at the top level of my events to filter on *event* name".
 
-Generally, only Track calls have "name" properties, which correspond to the "Event" field in an event.
+Generally, only Track calls have *name* properties, which correspond to the *event* field in an event.
 
 #### How can I find out when new Destination Filters have been added or removed?
 
-The activity feed shows the action, date, and user who performed the action when a Destination Filter is created, modified, enabled, disabled, or deleted. You can also subscribe to notifications for any of these changes in the Activity Feed settings page.
-
-The Activity Feed shows the user, date, and action performed when a Destination Filter is created, modified, enabled, disabled, or deleted.
+The Activity Feed shows the action, date, and user who performed the action when a Destination Filter is created, modified, enabled, disabled, or deleted. You can also subscribe to notifications for any of these changes in the **Activity Feed** settings page.
 
 #### Why am I getting a permissions denied error when I try to save a filter?
 
-You must have write access to save and edit filters; read permission allows viewing and testing access only.
+You must have write access to save and edit filters. Read permission only allows viewing and testing access.
 
 #### How can I test my filter?
 
