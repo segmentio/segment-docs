@@ -1,7 +1,5 @@
 ---
 title: MoEngage (Actions) Destination
-cmode-override: true
-id: 55b280290a20f4e22f0fb3d6
 hide-personas-partial: true
 hide-boilerplate: true
 hide-dossier: true
@@ -30,7 +28,7 @@ hide-dossier: true
 
 MoEngage (Actions) provides the following benefits over the MoEngage Classic destination:
 
-<!-- rephrase slack for mapping and config -->
+<!-- rephrase moengage for mapping and config -->
 - **Data Consistency**. Data consistency between device mode and cloud mode. Earlier, data sent from device and cloud mode would sometimes be mismatched with duplicated properties - this has now been fixed.
 - **Better Mapping**. Using MoEngage Actions, you can now map incompatible properties with MoEngage-compatible properties. This will significantly reduce your development bandwidth. 
 - **Region Support**. Support across all data clusters. We now provide an option to choose your Data Region where your app is present.
@@ -54,7 +52,7 @@ Field Name | Description |
  Name | Name of the moengage destination such as MoEngage prod, MoEngage test, etc. |
  App Id | Navigate to Settings >> API >> General on your MoEngage dashboard and copy paste the App ID. |
  App Key  | Navigate to Settings >> API >> General on your MoEngage dashboard and copy paste the App Key. |
- Endpoint Region | This is your MoEngage data center. [Read more](https://help.moengage.com/hc/en-us/articles/360057030512-Data-Centers-in-MoEngage) |
+ Endpoint Region | This is your MoEngage data center. [Read more](https://help.moengage.com/hc/en-us/articles/360057030512-Data-Centers-in-MoEngage). |
 
 <!--
 Additional Context
@@ -87,6 +85,8 @@ If successful the data would start flowing into your MoEngage account in 3-5 min
 <!-- If applicable, add information regarding the migration from a classic destination to an Actions-based version below -->
 
 ## Migration from the classic MoEngage destination
+
+<!-- Include any pertinent information here. -->
 
 {% include content/ajs-upgrade.md %}
 
