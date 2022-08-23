@@ -1,6 +1,5 @@
 ---
 title: Cordial (Actions) Destination
-hidden: true
 hide-boilerplate: true
 hide-dossier: true
 ---
