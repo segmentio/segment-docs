@@ -52,7 +52,14 @@ If the source you intend to upgrade uses the in-domain instrumentation as well a
 
 ### Using a mix of Analytics.js Classic and 2.0 sources
 
-If you're using a mix of Analytics.js Classic and 2.0 sources, the classic source won't be able to use the anonymous ID set by Analytics.js 2.0. In order to fix this, update all sources to 2.0.
+If you're using a mix of Analytics.js Classic and 2.0 sources, the classic source won't be able to use the `anonymousId` set by Analytics.js 2.0. In order to fix this, update all sources to 2.0.
+
+Segment won't change the `anonymousId` value when a source is upgraded from Analytics.js Classic to Analytics.js 2.0. The previous `anonymousId` will still be used by the new library. The only exception is for the scenario below:
+* The user initiates the visit on the Analytics.js 2.0 subdomain (for example: `account.yourwebsite.com`), and Analytics.js 2.0 creates the `anonymousId`. When users visit another domain (for example: `yourwebsite.com`) where Analytics.js Classic is still being loaded, Analytics.js Classic can't read the Analytics.js 2.0 `anonymousId` and therefore recreates its own `anonymousId`.
+
+> success ""
+> Segment recommends all subdomains to use the same version of Analytics.js for compatibility between `anonymousId`s. 
+
 
 ### Relying on Analytics.js Classic's `ajs_anonymous_id` cookie format
 
