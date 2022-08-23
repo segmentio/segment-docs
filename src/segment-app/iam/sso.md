@@ -86,14 +86,13 @@ You simply enter your domain (or, if you've verified it already, choose it from 
 
 ## Enabling Segment-initiated login
 
-Segment supports "interruption" on the login page for emails that match your workspace's domain.
-
+Segment supports SSO on the login page for emails that match your workspace's domain.
 
 In order to enable this, you'll need to verify your domain with Segment. To do that, go to the "Domains" tab under "Authentication" in the workspace settings page.
 
 ![](images/asset_MSaDZk2f.png)
 
-Enter your domain and click "Add Domain." When you click verify, you're given two options to verify your domain, either using a meta tag to add to your `/index.html` at the root, or a DNS txt record that you can add through your DNS provider. Once you do so and click verify, you're ready to go!
+Enter your domain and click "Add Domain." When you click verify, you're given two options to verify your domain, either using a meta tag to add to your `/index.html` at the root, or a DNS text record that you can add through your DNS provider. Once you do so and click verify, you're ready to go!
 
 > note ""
 > **Note**: domain tokens expire 14 days after they are verified.
