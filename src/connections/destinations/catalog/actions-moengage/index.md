@@ -3,6 +3,9 @@ title: MoEngage (Actions) Destination
 hide-personas-partial: true
 hide-boilerplate: true
 hide-dossier: true
+hidden: true
+private: true
+id: 620feaa207e70f6c6a765ff7
 ---
 
 <!-- This template is meant for Actions-based destinations that represent a new version of an existing, or Classic Segment destination. For new Actions-based destinations, see the doc-template-new.md template -->
@@ -31,7 +34,7 @@ MoEngage (Actions) provides the following benefits over the MoEngage Classic des
 <!-- rephrase moengage for mapping and config -->
 - **Data Consistency**. Data consistency between device mode and cloud mode. Earlier, data sent from device and cloud mode would sometimes be mismatched with duplicated properties - this has now been fixed.
 - **Better Mapping**. Using MoEngage Actions, you can now map incompatible properties with MoEngage-compatible properties. This will significantly reduce your development bandwidth. 
-- **Region Support**. Support across all data clusters. We now provide an option to choose your Data Region where your app is present.
+- **Region Support**. Support across all data clusters. Moengage provides an option to choose your Data Region where your app is present.
 - **Better Configuration**. Additional configurations for JS integration like custom Service Worker, etc.
 
 <!-- The section below explains how to enable and configure the destination. Include any configuration steps not captured below. For example, obtaining an API key from your platform and any configuration steps required to connect to the destination. -->
