@@ -16,15 +16,16 @@ To track custom properties first create [custom variables](#setting-up-custom-va
 
 After you finish configuring Doubleclick Floodlight, Segment maps the following properties and settings when it receives a mapped event:
 
-- `dc_rdid` is set as `IDFA` or `AdvertisingId` (for mobile data only)
-- `src` is pulled from your destination settings
-- `cat` and `type` are pulled from your event mappings from the settings OR your top level **Activity Tag** and **Group Tag** settings
-- `ord` for **counter** tags are a random number to prevent browser caching
-- `ord` for **sales** tags are set to whatever you define in your settings! (ie. `properties.order_id`) Include the `properties.` prefix to the key to ensure Segment finds the associated value in your `properties` object.
-- `qty` for **sales** tags only, Segment sums the quantity of products in your `products` array property or falls back on top level `properties.quantity`
-- `cost` for **sales** tags only Segment sends the `revenue`
-- `u$` (if any) is pulled from your property mapping setting
-- `dc_lat` is set to `0` or `1` depending on whether the device has **Limit Ad Tracking** enabled (for mobile data only)
+- `dc_rdid` is set as `IDFA` or `AdvertisingId` (for mobile data only).
+- `src` is pulled from your destination settings.
+- `cat`is pulled from the event mappings in your destination settings.
+- `type` is pulled from the event mappings in your destination settings OR from the top-level **Group Tag** setting.
+- `ord` for **Counter** tags are a random number to prevent browser caching.
+- `ord` for **Sales** tags are set to whatever you define in your settings (ie. `properties.order_id`). Include the `properties.` prefix to the key to ensure Segment finds the associated value in your `properties` object.
+- `qty` for **Sales** tags only. Segment sums the quantity of products in your `products` array property or falls back on top level `properties.quantity`.
+- `cost` for **Sales** tags only. Segment sends the `revenue` property.
+- `u` values (if any) are pulled from your property mapping setting.
+- `dc_lat` is set to `0` or `1` depending on whether the device has **Limit Ad Tracking** enabled (for mobile data only).
 
 **Important:** Floodlight requires that you [set a `User-Agent` header](images/cDlD6KmuuOK.png) with that of the app where the track event took place. The Segment Android and Analytics.js (JavaScript) library automatically collect the `userAgent`. However you must manually send the user agent string inside the `context` object if you are using the iOS library. If `context.userAgent` is not provided, Segment tries to generate a user agent string based on some device and operating system information that is already has.
 
