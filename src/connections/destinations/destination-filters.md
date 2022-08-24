@@ -86,11 +86,11 @@ This example shows a rule that only sends track calls to Google Analytics.
 
 ### Remove internal and test events from production tools
 
-This rule targets email addresses with internal domains to stop test events from reaching Destinations.
+In the example below, the rule targets email addresses with internal domains to stop test events from reaching Destinations.
 
 ![Example of a filter that removes internal and test events from production tools](images/destination-filters/internal_example.png)
 
-This rule prevents an event from sending if `Order Completed` and `properties.email` contain an internal `@segment.com` email address.
+In the example below, the rule prevents an event from sending if `Order Completed` and `properties.email` contain an internal `@segment.com` email address.
 
 ![Internal domain filter example](images/destination-filters/internal_example2.png)
 
@@ -116,7 +116,7 @@ Segment makes effort to ensure that Destination Filters can handle unexpected si
 
 Errors aren't exposed in your Destination's Event Deliverability tab. For help diagnosing missing destination filter events, [contact Segment](https://segment.com/help/contact/){:target="_blank"}.
 
-## FAQ
+## FAQs
 
 #### How do Destination Filters work with array properties?
 
@@ -134,7 +134,7 @@ To block the Identify event trait `products.newElement`, select the option under
 
 Segment supports 10 filters per destination. If you need help consolidating filters or would like to discuss your use case, [contact Segment](https://segment.com/help/contact/){:target="_blank"}.
 
-#### Can I set multiple `Only Send` Destination Filters?
+#### Can I set multiple `Only Send` destination filters?
 
 Segment evaluates multiple `Only Send` filters against each other and resolves Destination Filters in order. If multiple `Only Send` filters conflict with each other, Segment won't send information downstream.
 
@@ -156,7 +156,7 @@ The Activity Feed shows the action, date, and user who performed the action when
 
 #### Why am I getting a permissions denied error when I try to save a filter?
 
-You must have write access to save and edit filters. Read permission only allows viewing and testing access.
+You must have write access to save and edit filters. Read permission access only allows viewing and testing access.
 
 #### How can I test my filter?
 

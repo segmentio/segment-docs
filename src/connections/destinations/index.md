@@ -11,7 +11,7 @@ If you want to explore the destinations compatible with Segment, check out the [
 
 Segment has [Sources](/docs/connections/sources/) and [Destinations](/docs/connections/destinations/). Sources send data _into_ Segment, while Destinations receive data _from_ Segment.
 
-## Types of sources
+### Types of sources
 
 Segment has five types of sources: Web (Analytics.js), Mobile, Server, Cloud App, and User-created [Source Functions](/docs/connections/sources/source-functions/). Web, Mobile, and Server sources send first-party data from your digital properties. Cloud-app sources send data about your users from your connected web apps, such as [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/), [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/), or [Braze](/docs/connections/sources/catalog/cloud-apps/braze/).
 
@@ -36,7 +36,7 @@ In June 2021, Segment released a new form of destinations called [Destinations A
 {% include content/connection-modes-intro.md %}
 
 
-### When should I use Device-mode? When should I use Cloud-mode?
+### How Segment determines Device-mode and Cloud-mode destinations
 
 There are two main things Segment considers when deciding to use Device-mode or Cloud-mode, or both, for a destination partner:
 1. [Anonymous Attribution Methodology](#anonymous-attribution-methodology)
@@ -48,7 +48,7 @@ There are two main things Segment considers when deciding to use Device-mode or 
 
 The anonymous identifiers used on mobile devices are usually static, which means Segment doesn't need to do additional resolution, and can build Cloud-mode destinations by default. Because Segment uses native advertising identifiers on mobile devices, you don't need a full SDK on the device to reconcile or identify a user. For example, you might track users who viewed an advertisement in one app and installed another app as a result.
 
-However, some mobile attribution tools do more advanced reconciliation based on more than the native identifier, which requires the SDK on the device to work properly. For those destinations, Segment offers device-mode which packages the tool's SDK with the client-side library, so that you can get the entire range of tool functionality.
+However, some mobile attribution tools do more advanced reconciliation based on more than the native identifier, which requires the SDK on the device to work properly. For those destinations, Segment offers device-mode, which packages the tool's SDK with the client-side library so that you can get the entire range of tool functionality.
 
 ##### Web Attribution
 
