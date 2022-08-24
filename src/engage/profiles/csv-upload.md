@@ -85,6 +85,8 @@ In the `email_subscription_status` and `sms_subscription_status` columns, set su
 - `did-not-subscribe`: The user has provided their contact information but didn't actively subscribe or unsubscribe.
 - **No subscription status (blank value)**: The user's profile exists in Segment, but they haven't explicitly provided their contact information, and no subscription information is available.
 
+Engage accepts both uppercase and lowercase subscription status values.
+
 > success ""
 > Only contact users that subscribe to your communications. View [User Subscription States](/docs/engage/profiles/user-subscriptions/subscription-states/) to learn more.
 

@@ -7,7 +7,7 @@ Functions let you create your own sources and destinations directly within your 
 > info ""
 > Functions is available to all customer plan types with a free allotment of usage hours. Read more about [Functions usage limits](/docs/connections/functions/usage/), or see [your workspace's Functions usage stats](https://app.segment.com/goto-my-workspace/settings/usage?metric=functions).
 
-![](images/functions_overview.png)
+![An image illustrating source functions and destination functions in a Segment workspace](images/functions_overview.png)
 
 ## What can you do with Functions?
 Functions can help you bring external data into Segment ([Source Functions](/docs/connections/functions/source-functions)) and send data in Segment out to external destinations ([Destination Functions](/docs/connections/functions/destination-functions)). Functions are scoped to your specific workspace. If you're a technology partner and want to build a new integration and publish it in Segment's catalog, see the [Developer Center documentation](/docs/partners/).

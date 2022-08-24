@@ -67,6 +67,7 @@ Javadoc
 Javadocs
 Javascript
 Jebbit
+Jimo
 Jivox
 Kameleoon
 Kissmetrics
@@ -87,6 +88,8 @@ Okta
 Omnichannel
 onboarding
 Optimizely
+param(:?s)
+Pardot
 performant
 Preact
 Rokt

@@ -55,6 +55,7 @@ iOS
 Javadoc
 Javadocs
 Javascript
+Jimo
 Jivox
 Kameleoon
 Kissmetrics

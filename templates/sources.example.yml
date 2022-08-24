@@ -114,15 +114,6 @@ sources:
   logos:
     logo: https://cdn.filepicker.io/api/file/fgNxQploS3i3ndgfisKr
     mark: https://cdn.filepicker.io/api/file/rDx5SqqTjyMB2KtZJUYx
-- name: catalog/sources/desk-com
-  display_name: Desk.com
-  description: Desk.com source will load your Desk.com data into a Postgres, Redshift,
-    or BigQuery warehouse.
-  categories:
-  - Helpdesk
-  logos:
-    logo: https://cdn.filepicker.io/api/file/PsYR3untRVGZVoHUYSpU
-    mark: https://cdn.filepicker.io/api/file/kXfnDxpSSrSp36khgjkM
 - name: catalog/sources/drip
   display_name: Drip
   description: ''
