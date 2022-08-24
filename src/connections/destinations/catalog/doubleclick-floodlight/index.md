@@ -21,7 +21,7 @@ After you finish configuring Doubleclick Floodlight, Segment maps the following 
 - `cat`is pulled from the event mappings in your destination settings.
 - `type` is pulled from the event mappings in your destination settings OR from the top-level **Group Tag** setting.
 - `ord` for **Counter** tags are a random number to prevent browser caching.
-- `ord` for **Sales** tags are set to whatever you define in your settings (ie. `properties.order_id`). Include the `properties.` prefix to the key to ensure Segment finds the associated value in your `properties` object.
+- `ord` for **Sales** tags are set to whatever you define in your settings (for example, `properties.order_id`). Include the `properties.` prefix to the key to ensure Segment finds the associated value in your `properties` object.
 - `qty` for **Sales** tags only. Segment sums the quantity of products in your `products` array property or falls back on top level `properties.quantity`.
 - `cost` for **Sales** tags only. Segment sends the `revenue` property.
 - `u` values (if any) are pulled from your property mapping setting.
@@ -56,7 +56,8 @@ https://ad.doubleclick.net/ddm/activity/src=1234567;cat=fghij456;type=abcde123;d
 
 By default, the Segment event property you define for each custom variable mapping is matched against the property values found in the `properties` object of a `track` event. On device-mode web, you can use JSON style dot-notation-accessors wrapped in double curly brackets to map to other fields in the event's raw payload to your custom variables. For example, some acceptable values could be `{%raw%}{{userId}}{%endraw%}`, `{%raw%}{{anonymousId}}{%endraw%}`, or `{%raw%}{{context.page.referrer}}{%endraw%}`. You can find the complete structure of a standard Segment event payload [here](/docs/connections/spec/common/#structure). Please note that some fields may not be available for mapping, such as fields within the `context.campaign` object.
 
-**Note:** `dc_rdid` and `dc_lat` are automatically collected by Segment's mobile libraries and `ord` is uniquely generated for each event.
+> info ""
+>  `dc_rdid` and `dc_lat` are automatically collected by Segment's mobile libraries and `ord` is uniquely generated for each event.
 
 ## Page
 
@@ -80,7 +81,7 @@ For example, if you had a `page` event with the name as **Confirmation** that wa
 
 **Viewed Checkout Confirmation Page**
 
-See the [Analytics.js documentation](/docs/connections/sources/catalog/libraries/website/javascript/#page) for more on the `category` paramter.
+See the [Analytics.js documentation](/docs/connections/sources/catalog/libraries/website/javascript/#page) for more on the `category` parameter.
 
 ## Setting up Custom Variables
 
@@ -115,4 +116,4 @@ Analytics.with(context).track("Free El", new Properties().putValue("show", "Stra
 
 Don't map custom variables that contain Personally Identifying Information (PII).
 
-The terms of your DoubleClick contract prohibit passing any information to us that we could use or recognize as personally identifiable information (PII). If you enter certain key-values into a field in a DoubleClick product, you may see a warning that reminds you that you must not use key-values to pass data that we would recognize as PII. Key-values that trigger this warning include, for example, email and username. Note that it is okay to use these key-values if your purpose is not to collect information that DoubleClick could use or recognize as PII. (For example, email=weekly is fine, but passing a user's email address is not.) If you do choose one of these key-values, DoubleClick may contact you in the future to confirm that you are not using them in a way that is prohibited.
+The terms of your DoubleClick contract prohibit passing any information to Segment that could be used or recognized as personally identifiable information (PII). If you enter certain key-values into a field in a DoubleClick product, you may see a warning that reminds you that you must not use key-values to pass data that Segment would recognize as PII. Key-values that trigger this warning include, for example, email and username. Note that it is okay to use these key-values if your purpose is not to collect information that DoubleClick could use or recognize as PII. (For example, email=weekly is fine, but passing a user's email address is not.) If you do choose one of these key-values, DoubleClick may contact you in the future to confirm that you are not using them in a way that is prohibited.
