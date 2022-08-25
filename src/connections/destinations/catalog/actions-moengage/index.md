@@ -63,14 +63,12 @@ Additional Context
 Include additional information that you think will be useful to the user here. For information that is specific to an individual mapping, please add that as a comment so that the Segment docs team can include it in the auto-generated content for that mapping.
 -->
 
-### Mapping the User ID and Anonymous ID
+### Default Mapping
 
-To map the User ID to the Anonymous ID, make sure you the correct values. Scroll down to the **Define mappings** section and change the following keys from sentence case to Camel Case. Make sure you select the new values from the dropdown.
+> warning ""
+> Don't change the preset values.
 
-Key | Default Value | New Value
----------|----------|---------
- User ID | `user_id` | `userId`
- Anonymous ID | `anonymous_id` | `anonymousId`
+MoEngage provides preset values to all mappings. You don't need to make any changes to the Identify User Actions and Track Event Actions.
 
 <!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
 
@@ -93,7 +91,3 @@ If successful, the data starts flowing into your MoEngage account in 3-5 minutes
 <!-- Include any pertinent information here. -->
 
 {% include content/ajs-upgrade.md %}
-
-Follow the table below to map your existing MoEngage destination configuration to MoEngage (Actions).
-
-{% include components/actions-map-table.html name="moengage" %}
