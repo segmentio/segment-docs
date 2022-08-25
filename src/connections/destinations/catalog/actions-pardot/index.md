@@ -1,7 +1,7 @@
 ---
 title: Pardot (Actions) Destination
 hide-boilerplate: true
-hide-dossier: true
+hide-dossier: false
 hidden: true
 strat: salesforce
 id: 62df16e45ba0058c864a75d1
@@ -35,7 +35,7 @@ To get started using Pardot with Segment:
 7. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 8. Enable the destination and configured mappings.
 
-<!--- {% include components/actions-fields.html %} --->
+{% include components/actions-fields.html %}
 
 ## FAQ
 ### When will Pardot create versus update a prospect?
