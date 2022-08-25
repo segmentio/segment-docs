@@ -33,7 +33,7 @@ analytics.page('Home', {
 You must call the Page method for Google Tag Manager to load. Segment includes a call to `analytics.page` in your default Segment snippet, so if you haven't removed that, GTM will work the same as if you installed the GTM snippet directly.
 
 ### Tracking All Pages
-When you turn on the setting to **Track All Pages** in your Optional Settings, Segment tracks events whenever you call the `page` method and send a "Loaded A Page" event to Google Tag Manager. See the `track` section below for more info on how Segment sends events to GTM.
+When you turn on the setting to **Track All Pages** in your Optional Settings, Segment tracks events whenever you call the `page` method and sends a "Loaded a Page" event to Google Tag Manager. See the `track` section below for more info on how Segment sends events to GTM.
 
 ### Named Page Events
 If you include a `name` parameter in your `page` calls and turn on the setting to **Track Named Pages** in your Optional Settings, Segment passes on an event to GTM for that page. For example, `analytics.page('Sign up')` would translate to a "Viewed Sign up Page" event. See the `track` section below for more info about how Segment sends events to GTM.
