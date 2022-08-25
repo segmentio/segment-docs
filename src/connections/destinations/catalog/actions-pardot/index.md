@@ -1,8 +1,9 @@
 ---
 title: Pardot (Actions) Destination
 hide-boilerplate: true
-hide-dossier: false
+hide-dossier: true
 hidden: true
+private: true
 strat: salesforce
 id: 62df16e45ba0058c864a75d1
 ---
