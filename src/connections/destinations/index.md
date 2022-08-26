@@ -2,19 +2,14 @@
 title: Destinations Overview
 ---
 
-Destinations receive data from Segment.
+Destinations are the business tools or apps that Segment forwards your data to. Adding Destinations allow you to act on your data and learn more about your customers in real time.
 
-If you want to explore the destinations compatible with Segment, check out the [Destinations catalog](/docs/connections/destinations/catalog/). Select an item from the catalog to learn more about it. The documentation for each destination explains how the Segment Tracking API methods are implemented for that destination.
-
+> info "Destinations Catalog"
+> If you want to explore the destinations compatible with Segment, check out the [Destinations catalog](/docs/connections/destinations/catalog/). Select an item from the catalog to learn more about it. The documentation for each destination explains how the Segment Tracking API methods are implemented for that destination.
 
 ## Sources vs Destinations
 
 Segment has [Sources](/docs/connections/sources/) and [Destinations](/docs/connections/destinations/). Sources send data _into_ Segment, while Destinations receive data _from_ Segment.
-
-### Types of sources
-
-Segment has five types of sources: Web (Analytics.js), Mobile, Server, Cloud App, and User-created [Source Functions](/docs/connections/sources/source-functions/). Web, Mobile, and Server sources send first-party data from your digital properties. Cloud-app sources send data about your users from your connected web apps, such as [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/), [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/), or [Braze](/docs/connections/sources/catalog/cloud-apps/braze/).
-
 
 ## Method compatibility
 
@@ -34,6 +29,32 @@ In June 2021, Segment released a new form of destinations called [Destinations A
 ## Connection modes
 
 {% include content/connection-modes-intro.md %}
+
+
+### Choosing a connection mode
+
+Cloud-mode destinations send data through Segment. Device-mode destinations send data in parallel to Segment. There are tradeoffs between using cloud-mode and device-mode destinations. In general, Cloud-mode is preferred because you then benefit from Segment's system features, like retries, Replay, Warehouses, Privacy blocking, filtering, and more.
+
+You should consider using device-mode if you use destinations which record information directly on the user's device. These types of tools might lose functionality if they aren't loaded directly on the device.
+
+Take a look at the pros and cons chart of device-mode and cloud-mode destinations to determine which connection mode is best for you:
+
+Connection Mode| Pros | Cons |
+-------------- | ---- | ---- |  
+Cloud-mode | * Increased site or app performance<br>* Unaffected by ad blockers | * May limit Destination features |
+Device-mode | * Access to all features of the Destination | * Decreased site or app performance |
+
+#### Website source connection modes
+
+Segment's website sources use device-mode by default, because so many website-based destinations require that they be loaded on the page, and because size and page performance are less of a concern than on mobile. If your website source only collects information that you can instrument yourself, then you can use cloud-mode.
+
+For example, a web-chat destination must be loaded to connect to the service and collect metrics efficiently - you don't expect it to route chat messages through Segment! This _does_ mean that Segment might not receive a small amount of the destination-specific information from your users. In the chat example, if the destination is calculating idle time between messages, that data would appear in the destination's tooling, but not necessarily in the Segment data.
+
+#### Mobile source connection modes
+
+By default, destinations configured on a mobile source send their data directly to the Segment servers, then translate it and use Cloud-mode to forward it to destinations. *Cloud-mode* means that Segment sends the data directly from the Segment servers, to their servers. This means you don't need to package third-party SDKs for destinations that can accept cloud-mode data. Some primarily web-based destinations also allow cloud-mode, which can help reduce app size, and improve load time and performance. You can read more about the [effects of mobile app size on downloads in Segment's blog](https://segment.com/blog/mobile-app-size-effect-on-downloads/).
+
+Before you turn on or opt-in for cloud-mode for a mobile source, consider if your destinations have features that require interactions on the device or require device-specific data (see the examples above). For example, if you use cloud-mode for Mixpanel, you'll get your data on reporting and people, but won't be able to use their features for in-app surveys or auto-tracking. These can be really valuable, but might not be a priority for your team.
 
 
 ### How Segment determines Device-mode and Cloud-mode destinations
@@ -62,31 +83,25 @@ Many of Segment's destinations offer client-side features beyond data collection
 
 Some features that usually require Device-mode include: automatic A/B testing, displaying user surveys, live chat or in-app notifications, touch and hover heatmapping, and accessing rich device data such as CPU usage, network data, or raised exceptions.
 
-
-### Choosing a connection mode
-
-Cloud-mode destinations send data through Segment. Device-mode destinations send data in parallel to Segment. There are tradeoffs between using cloud-mode and device-mode destinations. In general, Cloud-mode is preferred because you then benefit from Segment's system features, like retries, Replay, Warehouses, Privacy blocking, filtering, and more.
-
-You should consider using device-mode if you use destinations which record information directly on the user's device. These types of tools might lose functionality if they aren't loaded directly on the device.
-
-#### Website source connection modes
-
-Segment's website sources use a device-mode by default, because so many website-based destinations require that they be loaded on the page, and because size and page performance are less of a concern than on mobile. If your website source only collects information that you can instrument yourself, then you can use cloud-mode.
-
-For example, a web-chat destination must be loaded to connect to the service and collect metrics efficiently - you don't expect it to route chat messages through Segment! This _does_ mean that Segment might not receive a small amount of the destination-specific information from your users. In the chat example, if the destination is calculating idle time between messages, that data would appear in the destination's tooling, but not necessarily in the Segment data.
-
-#### Mobile source connection modes
-
-By default, destinations configured on a mobile source send their data directly to the Segment servers, then translate it and use Cloud-mode to forward it to destinations. *Cloud-mode* means that Segment sends the data directly from the Segment servers, to their servers. This means you don't need to package third-party SDKs for destinations that can accept cloud-mode data. Some primarily web-based destinations also allow cloud-mode, which can help reduce app size, and improve load time and performance. You can read more about the [effects of mobile app size on downloads in Segment's blog](https://segment.com/blog/mobile-app-size-effect-on-downloads/).
-
-Before you turn on or opt-in for Cloud-mode for a mobile source, consider if your destinations have features that require interactions on the device or require device-specific data (see the examples above). For example, if you use cloud-mode for Mixpanel, you'll get your data on reporting and people, but won't be able to use their features for in-app surveys or auto-tracking. These can be really valuable, but might not be a priority for your team.
-
-
 ### How can I tell which connection modes and platforms are supported for a destination?
 
 The first place to look is the individual destination documentation. Each one includes a matrix of supported Sources and Connection Modes. Segment provides a list of [all destinations and their connection modes](/docs/connections/destinations/cmodes-compare/).
 
 In order to override the default, check the destination settings pane in the Segment web App either for a **Connection Mode** toggle or instructions on bundling any additional mobile components required.
+
+## Add a destination
+To add a Destination:
+
+1. Navigate to **Connections**.
+2. Click **Add Destination**.
+3. Choose the Destination you want to add and click **Configure**. Most users eventually add destinations for: Analytics, Advertising, Email Marketing and/or Live Chat.
+4. Select the Source you want to connect to your Destination.
+5. Click **Next**.
+6. Give you Destination a name.
+7. Click **Save**.
+8. Configure the settings and enable your destination on the destination settings page.
+
+[Learn more](/docs/connections/destinations/add-destination/) about what adding a destination entails.
 
 ## Data deliverability
 
@@ -102,85 +117,19 @@ When you use Segment's mobile SDK, Segment dispatches each event to a background
 
 If the delivery of the payload is not successfully sent due to connection issues, all of your SDKs will automatically retry the request until successful receipt of the payload according to the following policies. Note that retry policies are subject to change / tuning in the future.
 
-<table>
-  <tr>
-    <td>Platform</td>
-    <td><b>Initial Wait - </b>Sleep duration before the first retry</td>
-    <td><b>Wait Growth - </b>Rate of growth of the sleep duration between each retry</td>
-    <td><b>Max Wait - </b>Maximum sleep duration between retries</td>
-    <td><b>Max Attempts - </b>Maximum number of individual retries</td>
-  </tr>
-  <tr>
-    <td>**C++**</td>
-    <td>1s</td>
-    <td>None</td>
-    <td>1s</td>
-    <td>5</td>
-  </tr>
-  <tr>
-    <td>**Clojure**</td>
-    <td>15s</td>
-    <td>Exponential</td>
-    <td>1h</td>
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>**Go**</td>
-    <td>100ms</td>
-    <td>Exponential</td>
-    <td>10s</td>
-    <td>10</td>
-  </tr>
-  <tr>
-    <td>**Java**</td>
-    <td>15s</td>
-    <td>Exponential</td>
-    <td>1h</td>
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>**JavaScript**</td>
-    <td>1s</td>
-    <td>Exponential</td>
-    <td>1h</td>
-    <td>10</td>
-  </tr>
-  <tr>
-    <td>**.Net**</td>
-    <td>100ms</td>
-    <td>Exponential</td>
-    <td>6.4s</td>
-    <td>7</td>
-  </tr>
-  <tr>
-    <td>**Node.js**</td>
-    <td>100ms</td>
-    <td>Exponential</td>
-    <td>400ms</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>**PHP**</td>
-    <td>100ms</td>
-    <td>Exponential</td>
-    <td>6.4s</td>
-    <td>7</td>
-  </tr>
-  <tr>
-    <td>**Python**</td>
-    <td>1s</td>
-    <td>Exponential</td>
-    <td>34m</td>
-    <td>10</td>
-  </tr>
-  <tr>
-    <td>**Ruby**</td>
-    <td>100ms</td>
-    <td>Exponential</td>
-    <td>10s</td>
-    <td>10</td>
-  </tr>
-</table>
+Platform | **Initial Wait -** Sleep duration before the first retry | **Wait Growth -** Rate of growth of the sleep duration between each retry | **Max Wait -** Maximum sleep duration between retries | **Max Attempts -** Maximum number of individual retries
+-- | -- | -- | -- | -- |
+C++ | 1s | None | 1s | 5
+Clojure | 15s | Exponential | 1h | 50
+Go | 100ms | Exponential | 10s | 10
+Java | 15s | Exponential | 1h | 50
+JavaScript | 1s | Exponential | 1h | 10
+.Net | 100ms | Exponential | 6.4s | 7
+Node.js | 100ms | Exponential | 400ms | 3
+PHP | 100ms | Exponential | 6.4s | 7
+Python | 1s | Exponential | 34m | 10
+Ruby | 100ms | Exponential | 10s | 10
+
 
 #### Mobile library retries
 
@@ -188,7 +137,7 @@ All mobile libraries handle retries by periodically attempting to flush their in
 
 #### Retries between Segment and destinations
 
-The destination endpoint APIs we send data to have fluctuations in availability due to any number of issues ranging from network failures to bugs to overload. Segment's internal systems retry failed destination API calls for 4 hours with a randomize exponential backoff after each attempt. This substantially improves delivery rates.
+The destination endpoint APIs have fluctuations in availability due to a number of issues ranging from network failures to bugs to overload. Segment's internal systems retry failed destination API calls for 4 hours with a randomize exponential backoff after each attempt. This substantially improves delivery rates.
 
 Here's an example destination that was only successfully accepting 93.36% of all API requests but was achieving a 99.28% final deliverability rate due to Segment's retry functionality.
 
