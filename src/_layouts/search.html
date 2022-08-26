@@ -101,9 +101,9 @@ layout: main
             var anchorLink = "";
           }
           return `<a class="aa-link" href="/docs${item.url}${anchorLink}">
-              <p class="aa-title" >${item.title}</h3>
+              <p class="aa-title" >${instantsearch.highlight({attribute: 'title', hit: item})}</h3>
                 <p class="aa-heading">${item.headings.join(' >')}</p>
-              <p class="aa-content">${item.content}</p></a>
+              <p class="aa-content">${instantsearch.highlight({attribute: 'content', hit: item})}</p></a>
             `;
         }
       }
