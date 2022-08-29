@@ -38,7 +38,7 @@ Initially, the Log Event Action was reporting purchases to Amplitude for all eve
 
 To resolve this, purchase reporting takes place in a new Action called Log Purchase.
 
-Instances created after x/y have both Log Event and Log Purchase configured.  For instances created prior to x/y, you need to manually add the Log Purchases Action to report purchases to Amplitude. 
+For instances created prior to before the Log Purchases action was released, you need to manually add the Log Purchases Action to report purchases to Amplitude. 
 
 To manually add the Log Purchases Action: 
 1. Add a new Mapping for the Log Purchases Action. The default trigger for this action is Order Completed events.
