@@ -3,8 +3,6 @@ title: MoEngage (Actions) Destination
 hide-personas-partial: true
 hide-boilerplate: true
 hide-dossier: true
-hidden: true
-private: true
 id: 620feaa207e70f6c6a765ff7
 ---
 
