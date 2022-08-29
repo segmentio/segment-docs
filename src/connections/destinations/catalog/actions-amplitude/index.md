@@ -34,16 +34,17 @@ Once you have a mapping, you can follow the steps in the Destinations Actions do
 
 ### Log Purchases in existing destination instances
 
-Initially the Log Event Action was reporting purchases to Amplitude for all events containing a `products` array, even if the products were just added to cart. This inflated the LTV Chart in Amplitude.
+Initially, the Log Event Action was reporting purchases to Amplitude for all events containing a `products` array, even if the products were just added to cart. This inflated the LTV Chart in Amplitude.
 
 To resolve this, purchase reporting takes place in a new Action called Log Purchase.
 
-Any instances created after x/y has both Log Event and Log Purchase configured, but for prior instances you need to manually add the Log Purchases Action to report purchases to Amplitude:
+Instances created after x/y have both Log Event and Log Purchase configured.  For instances created prior to x/y, you need to manually add the Log Purchases Action to report purchases to Amplitude. 
 
+To manually add the Log Purchases Action: 
 1. Add a new Mapping for the Log Purchases Action. The default trigger for this action is Order Completed events.
-2. Modify the Trigger if you need to report purchases for any other events
-3. Modify the Trigger of Log Event to exclude these same events, to avoid sending the same event twice
-4. Enable the Log Purchases mapping
+2. Modify the Trigger if you need to report purchases for any other events.
+3. Modify the Trigger of Log Event to exclude these same events. This helps you to avoid sending the same event twice. 
+4. Enable the Log Purchases mapping. 
 
 ### Connection Modes for Amplitude (Actions) destination
 
