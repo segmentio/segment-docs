@@ -106,3 +106,7 @@ a.aa-link:hover {
   color: white;
   font-size: 10px;
 }
+
+.ais-Pagination-item:before {
+  content: none!important;
+}
