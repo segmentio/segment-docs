@@ -37,6 +37,20 @@ Amplitude (Actions) provides the following benefits over the classic Amplitude d
 
 Once you have a mapping, you can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
+### Log Purchases in existing destination instances
+
+Initially, the Log Event Action was reporting purchases to Amplitude for all events containing a `products` array, even if the products were just added to cart. This inflated the LTV Chart in Amplitude.
+
+To resolve this, purchase reporting takes place in a new Action called Log Purchase.
+
+For instances created prior to before the Log Purchases action was released, you need to manually add the Log Purchases Action to report purchases to Amplitude. 
+
+To manually add the Log Purchases Action: 
+1. Add a new Mapping for the Log Purchases Action. The default trigger for this action is Order Completed events.
+2. Modify the Trigger if you need to report purchases for any other events.
+3. Modify the Trigger of Log Event to exclude these same events. This helps you to avoid sending the same event twice. 
+4. Enable the Log Purchases mapping. 
+
 ### Connection Modes for Amplitude (Actions) destination
 
 The Amplitude (actions) destination does not offer a device-mode connection mode. If you're using one of Segment's new libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)) with the Actions-framework version of the destination, you do not need the device-mode connection.
