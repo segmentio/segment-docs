@@ -28,7 +28,30 @@ The following dependencies are installed in the function environment by default.
 - [`uuidv5 v1.0.0`](https://www.npmjs.com/package/uuidv5) exposed as `uuidv5`
 - [`xml v1.0.1`](https://www.npmjs.com/package/xml) exposed as `xml`
 - [`xml2js v0.4.23`](https://www.npmjs.com/package/xml2js) exposed as `xml2js`
-- [`zlib v1.0.5`](https://www.npmjs.com/package/zlib) exposed as `zlib`
+- [`zlib v1.0.5`](https://www.npmjs.com/package/zlib) exposed as `zlib.zlib`
+  
+    `zlib`'s asynchronous methods `inflate` and `deflate` must be used with `async` or `await`. For example:
+
+    ```js
+  zlib = zlib.zlib;  // Required to access zlib objects and associated functions
+  async function onRequest(request, settings) {
+    const body = request.json();
+
+    const input = 'something';
+
+    // Calling inflateSync method
+    var deflated = zlib.deflateSync(input);
+
+    console.log(deflated.toString('base64'));
+
+    // Calling inflateSync method
+    var inflated = zlib.inflateSync(new Buffer.from(deflated)).toString();
+
+    console.log(inflated);
+
+    console.log('Done');
+    }
+    ```
 
 Only the [`crypto` Node.js module](https://nodejs.org/dist/latest-v10.x/docs/api/crypto.html ) is included (exposed as `crypto`). [Other built-in Node.js modules](https://nodejs.org/api/modules.html) are not available.
 
