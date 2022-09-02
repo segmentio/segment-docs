@@ -1,14 +1,18 @@
 ---
 title: Pardot (Actions) Destination
 hide-boilerplate: true
-hide-dossier: true
+hide-dossier: false
 hidden: true
+private: true
 strat: salesforce
 id: 62df16e45ba0058c864a75d1
 ---
 Pardot is a Salesforce marketing automation and analytics solution that lets you send automated emails to prospects and track conversions in emails and across social networks.
 
 Segment’s Pardot (Actions) destination enables you to create and update prospects with custom traits that can be leveraged in your marketing efforts. Segment sends data to [version 5 of the Pardot API](https://developer.salesforce.com/docs/marketing/pardot/guide/version5overview.html){:target="_blank"}.
+
+> info ""
+> The Pardot (Actions) destination is in beta and is in active development. Some functionality may change before it becomes generally available.
 
 > success "Good to know"
 > This page is about the [Actions-framework](/docs/connections/destinations/actions/) Pardot destination. There's also a page about the [non-Actions Pardot destination](/docs/connections/destinations/catalog/pardot/). Both of these destinations receive data from Segment.
@@ -35,7 +39,7 @@ To get started using Pardot with Segment:
 7. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 8. Enable the destination and configured mappings.
 
-<!--- {% include components/actions-fields.html %} --->
+{% include components/actions-fields.html %}
 
 ## FAQ
 ### When will Pardot create versus update a prospect?

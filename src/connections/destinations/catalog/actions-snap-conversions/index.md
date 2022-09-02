@@ -7,9 +7,6 @@ id: 6261a8b6cb4caa70e19116e8
 
 The Snapchat Conversions API destination is a server-to-server integration with the [Snapchat Conversions API](https://marketingapi.snapchat.com/docs/conversion.html#conversions-api){:target="_blank"} that allows advertisers to pass web, app, and offline events from Segment directly to Snap. Data shared through the Snapchat Conversions API is processed similarly to events passed through the Snap Pixel or App Ads Kit (SDK). By passing events, advertisers can access post-view and post-swipe campaign reporting to measure performance and incrementality. Depending on the data shared and timeliness of integration, it’s also possible to use events passed through the Conversions API for solutions such as custom audience targeting, campaign optimization, Dynamic Ads, and more.
 
-> info ""
-> The Snapchat Conversions API destination is in beta and is in active development. Some functionality may change before it becomes generally available.
-
 ## Benefits of the Snapchat Conversions API
 The Snapchat Conversions API destination provides the following benefits:
 - **Clear mapping of data.** Actions-based destinations enable you to define the mapping between the data Segment receives from your source and the data Segment sends to Snap.
@@ -83,3 +80,5 @@ In addition, Segment creates a SHA-256 hash of the following fields before sendi
 - Phone Number
 - IP Address
 
+> warning ""
+> If you hash identifiers upstream before sending to Segment, Segment still hashes that data before sending to Snap. This results in a double hash that won't be able to be matched on. Please ensure your fields are not hashed prior to sending through the Snapchat Conversions API destination.

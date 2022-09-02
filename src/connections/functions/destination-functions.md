@@ -13,7 +13,7 @@ All functions are scoped to your workspace, so members of other workspaces can't
 > info ""
 > Functions is available to all customer plan types with a free allotment of usage hours. Read more about [Functions usage limits](/docs/connections/functions/usage/), or see [your workspace's Functions usage stats](https://app.segment.com/goto-my-workspace/settings/usage?metric=functions){:target="_blank"}.
 
-![An illusrative graphic showing information flowing from the Segment app, into code, and then into Slack](images/destination_functions_overview.png)
+![An illustrative graphic showing information flowing from the Segment app, into code, and then into Slack](images/destination_functions_overview.png)
 
 
 > note ""
@@ -352,7 +352,7 @@ A function can throw errors, or Segment might encounter errors while invoking yo
 - **Bad Request** - Any error thrown by the function code that is not covered by the other errors.
 - **Invalid Settings** - A configuration error prevented Segment from executing your code. If this error persists for more than an hour, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
 - **Message Rejected** - Your code threw `InvalidEventPayload` or `ValidationError` due to invalid input.
-- **Unsupported Event Type** - Your code does not implement a specific event type (`onTrack()`, etc.) or threw a `EventNotSupported` error.
+- **Unsupported Event Type** - Your code doesn't implement a specific event type (for example, `onTrack()`) or threw a `EventNotSupported` error.
 - **Retry** - Your code threw `RetryError` indicating that the function should be retried.
 
 Segment only attempts to send the event to your destination function again if a **Retry** error occurs.

@@ -15,7 +15,7 @@ When you create a function, write code for it, and save it, the function appears
 
 Only [Functions admins](#functions-permissions) can create or edit functions.
 
-1. From your workspace, go to the Catalog and click the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog).
+1. From your workspace, go to the Catalog and click the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog){:target="_blank"}.
 2. Click **New Function**.
 3. Select the type of function you want to build, and click **Build**.
 
@@ -24,7 +24,7 @@ Only [Functions admins](#functions-permissions) can create or edit functions.
 5. Once you finish writing your function, click **Configure** to give it a name.
 6. Click **Create Function** to save your work and make this function available in your workspace.
 
-After you click **Create Function**, the function appears on the [Functions catalog page](https://app.segment.com/goto-my-workspace/functions/catalog/) in your workspace.
+After you click **Create Function**, the function appears on the [Functions catalog page](https://app.segment.com/goto-my-workspace/functions/catalog/){:target="_blank"} in your workspace.
 
 
 ## Editing a function
@@ -40,7 +40,7 @@ You can also choose to **Save & Deploy** to push changes to all, or specific fun
 > note ""
 > You must be a **Workspace Owner** or **Source Admin** to connect an instance of your function in your workspace.
 
-1. From the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog), locate the source function you want to deploy.
+1. From the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog){:target="_blank"}, locate the source function you want to deploy.
 2. Click **Connect Source** and follow the prompts to configure the source. (You can access these settings later by navigating to the Source Settings page for your source function.)
 3. Locate the webhook URL for the source, either on the **Overview** or **Settings → Endpoint** page.
 4. Copy this URL and paste it into the upstream tool or service.

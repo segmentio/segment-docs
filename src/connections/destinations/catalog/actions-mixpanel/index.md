@@ -3,7 +3,6 @@ title: Mixpanel (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
 id: 615c7438d93d9b61b1e9e192
-beta: true
 redirect_from:
   - '/connections/destinations/catalog/mixpanel-actions'
 ---
