@@ -12673,8 +12673,8 @@ items:
   methods:
     track: true
     identify: true
-    group: true
-    alias: true
+    group: false
+    alias: false
     page: true
   platforms:
     browser: true
