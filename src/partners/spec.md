@@ -589,7 +589,7 @@ Docs coming soon.
 
 ## Delete
 
-Segment users can trigger the delete action withg [Public API](https://docs.segmentapis.com/tag/Deletion-and-Suppression){:target="_blank"} or App. Partners are required to delete data for `userId` in the request payload in line with GDPR and CCPA. 
+Segment users can trigger the delete action with the [Public API](https://docs.segmentapis.com/tag/Deletion-and-Suppression){:target="_blank"} or App. Partners are required to delete data for `userId` in the request payload in line with GDPR and CCPA. 
 
 This results in the following event data:
 
