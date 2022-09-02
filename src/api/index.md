@@ -5,7 +5,12 @@ The Segment Public API helps you manage your Segment workspaces and its resource
 
 All CRUD endpoints in the API follow REST conventions and use standard HTTP methods. Different URL endpoints represent different resources in a workspace.
 
-For more information, see the [Segment Public API documentation](#).
+{% include components/reference-button.html
+  href="https://docs.segmentapis.com"
+  icon="media/programming.svg"
+  title="Segment Public API Documentation"
+  description="Research and test the Public API's available endpoints."
+%}
 
 ## Config API vs Public API
 The Public API includes the following benefits over the Config API:
@@ -18,6 +23,5 @@ The Public API includes the following benefits over the Config API:
 | Higher rate limits      | The Public API can offer higher rate limits when needed or different rate limits per endpoint or token.                                                             |
 | Improved architecture   | The Public API is built with improved security, checks for authentication, authorization, input validation, HTTPS exposed services, auto-scaling, and more in mind. |
 | Cleaner mapping         | The Public API uses unique IDs for reference, in place of slugs in the Config API. Unique IDs are, by design, unique.                                               |
-| Improved ease of use    |                                                                                                                                                                     |
-| Available in Europe     |                                                                                                                                                                     |
+| Available in Europe     | The Public API is accessible to both US and EU-based workspaces.                                                                                                                                                                   |
 | Increased reliability   | The Public API features more stable endpoints, and a 99.8% success rate                                                                                             |
