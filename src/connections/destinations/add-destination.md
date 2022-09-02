@@ -12,7 +12,7 @@ Destinations are tools or services which can use the data sent from Segment to p
 
 ## Adding a destination
 
-There are two ways to add a destination to your deployment: using the Segment web app, or using the [Config API](/docs/config-api/).
+There are two ways to add a destination to your deployment: using the Segment web app, or using the [Public API](/docs/api/).
 
 
 #### Adding a destination from the Segment web app
@@ -46,12 +46,12 @@ You can also add a destination directly from the source's settings page in the S
 6. On the next page, find the **Connection Settings** section, and enter the token or credentials for that destination tool.
 7. Click the toggle at the top of the Settings page to enable the destination.
 
-#### Adding a destination using the Config API
+#### Adding a destination using the Public API
 
-You can use the Segment Config API to add destinations to your workspace using the [Create Destination endpoint](https://reference.segmentapis.com/#51d965d3-4a67-4542-ae2c-eb1fdddc3df6). The API requires an authorization token, and uses the `name` field as a namespace that defines which _source_ the destination is connected to. You send the rest of the destination's configuration as a JSON blob. View the documentation page in the Segment Catalog, or query the [Segment Catalog API](https://reference.segmentapis.com/#7a63ac88-43af-43db-a987-7ed7d677a8c8), for a destination to see the available settings.
+You can use the Segment Public API to add destinations to your workspace using the [Create Destination endpoint](https://docs.segmentapis.com/tag/Destinations#operation/createDestination){:target = "_blank"}. The API requires an authorization token, and uses the `name` field as a namespace that defines which _source_ the destination is connected to. You send the rest of the destination's configuration as a JSON blob. View the documentation page in the Segment Catalog, or query the [Segment Catalog API](https://docs.segmentapis.com/tag/Catalog){:target="_blank"}, for a destination to see the available settings.
 
 > success ""
-> You must use an authorization token to access the Config API, and these tokens are tied to specific workspaces. If you use the Config API to access multiple workspaces, make sure you're using the token for the workspace you want to access before proceeding.
+> You must use an authorization token to access the Public API, and these tokens are tied to specific workspaces. If you use the Public API to access multiple workspaces, make sure you're using the token for the workspace you want to access before proceeding.
 
 
 ## What happens when you add a destination
@@ -120,9 +120,9 @@ You can create unique destination filters for each destination instance connecte
 It is not possible to connect multiple instances of one source (for example, two website sources) to the same destination. However, you can create another instance of the destination for the other sources, and click **Copy Settings From Other Destination**  to save yourself time entering the settings values again.
 
 
-### Connect to more than one instance of a destination using the Config API
+### Connect to more than one instance of a destination using the Public API
 
-You can add multiple instances of a destination using the Segment Config API. See the Segment Config [API documentation](https://reference.segmentapis.com/?version=latest#39ce0439-0969-48c3-ba49-b22a46c41060). If a destination does not support multi-instance, the Config API throws an appropriate error.
+You can add multiple instances of a destination using the Segment Public API. See the Segment Config [API documentation](https://docs.segmentapis.com/){:target="_blank"}. If a destination does not support multi-instance, the Public API throws an appropriate error.
 
 
 ### Multi-instance destinations and Device-mode
