@@ -2,6 +2,8 @@
 title: Qualtrics Destination
 hide-boilerplate: true
 hide-dossier: true
+id: 62e17e6f687e4a3d32d0f875
+private: true
 ---
 
 <!-- This template is meant for Actions-based destinations that do not have an existing Classic or non-Actions-based version. For Actions Destinations that are a new version of a classic destination, see the doc-template-update.md template. -->
@@ -31,7 +33,7 @@ Qualtrics (Actions) provides the following benefits:
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Find the Destinations Actions item in the left navigation, and click it.
-3. Click **Configure Qualttrics**.
+3. Click **Configure Qualtrics**.
 4. Select an existing Source to connect to Qualtrics (Actions).
 5. To authenticate, enter your API key & Datacenter ID. To locate your API key & Datacenter ID, follow in the instructions found [here](https://api.qualtrics.com/ZG9jOjg3NjYzNQ-finding-your-qualtrics-i-ds)
 
