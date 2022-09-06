@@ -92,6 +92,7 @@ param(:?s)
 Pardot
 performant
 Preact
+Qualtrics
 Rokt
 Selligent
 Shopify
