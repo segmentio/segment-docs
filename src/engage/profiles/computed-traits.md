@@ -164,14 +164,14 @@ Because a number of factors (like system load, backfills, or user bases) determi
 
 As a result, **Segment recommends waiting at least 24 hours for a Trait to finish computing** before you resume working with the Trait.
 
-## Editing Realtime Traits
+## Editing Real-time Traits
 
-Personas supports the editing of realtime Traits, which allows you to make nuanced changes to existing Traits in situations where cloning or building from scratch may not suit your use case.
+Personas supports the editing of real-time Traits, which allows you to make nuanced changes to existing Traits in situations where cloning or building from scratch may not suit your use case.
 
-To edit a realtime Trait, follow these steps:
+To edit a real-time Trait, follow these steps:
 
 1. In your Personas Space, select the **Computed Traits** tab.
-2. Select the realtime Trait you want to edit.
+2. Select the real-time Trait you want to edit.
 3. Select the **Builder** tab and make your edits.
 4. Select **Save Computed Trait** to confirm your edits.
 
