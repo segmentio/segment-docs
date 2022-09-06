@@ -75,7 +75,7 @@ Each incoming event is analyzed and external IDs are extracted (`user_id`, `anon
 2. If Segment find no matching profile(s), it creates one.
 3. If Segment finds one profile, it merges the incoming event with that profile. (This means that Segment adds the external IDs on the incoming message and resolves the event to the profile.)
 4. If Segment finds multiple matching profiles, Segment applies the identity resolution settings for merge protection. Specifically, Segment uses identifier limits and priorities to add the correct identifiers to the profile.
-5. Segment then aplies [Personas default profile limits](/docs/personas/product-limits/#identity) to ensure profiles remain under these limits. Segment doesn't add any further merges or mappings if the profile is at either limit, but event resolution for the profile will continue.
+5. Segment then applies [Personas default profile limits](/docs/personas/product-limits/#identity) to ensure profiles remain under these limits. Segment doesn't add any further merges or mappings if the profile is at either limit, but event resolution for the profile will continue.
 
 ![Identity graph merging](images/merging_1.png "Flowchart of Segment receiving an incoming event")
 
@@ -132,7 +132,7 @@ This is especially helpful for preventing "blob users" that are merged together 
 ## Which destinations support syncing the identity graph?
 Most destinations on the Segment Platform are built up around a user model. They assume that a user will have a single userId. Further, most Destinations are not built to handle anonymous traffic.
 
-By default, Segment doesn't sync the output of the Identity Graph to Destinations. However, Segment computed traits and audiences are based on the entire user profile, including anonymous and merged data. We sync the value of these computations (e.g. `blog_posts_ready_30_days: 10`) using all `userIds` on the profile.
+By default, Segment doesn't sync the output of the Identity Graph to Destinations. However, Segment computed traits and audiences are based on the entire user profile, including anonymous and merged data. Segment syncs the value of these computations (for example, `blog_posts_ready_30_days: 10`) using all `userIds` on the profile.
 
 For Destinations that support an `alias` call (for example, Mixpanel), you can emit an `alias` call on merge.
 
