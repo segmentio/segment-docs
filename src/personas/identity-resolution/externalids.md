@@ -28,7 +28,6 @@ Segment automatically promotes the following traits and IDs in track and identif
 | ios.idfa           | context.device.advertisingId when context.device.type = 'ios'     |
 | ios.push_token     | context.device.token when context.device.type = 'ios'                                                         |
 
-
 ## Custom externalIDs
 
 Personas will automatically resolve identity for any other externalIDs that you bind to users - such as a phone number or any custom identifier that you support.
