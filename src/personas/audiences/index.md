@@ -4,7 +4,7 @@ title: Personas Audiences Overview
 
 Audiences let you group users or accounts based on event behavior and traits that Segment tracks.
 
-You can build Audiences from core **tracking events**, **traits**, and **computed traits**. You can then sync Audiences to hundreds of [Destinations](/docs/connections/destinations/) or access them with the [Profile API](/docs/personas/profile-api).
+You can build Audiences from core **tracking events**, **traits**, and [**computed traits**](/docs/personas/computed-traits/). You can then sync Audiences to hundreds of [Destinations](/docs/connections/destinations/) or access them with the [Profile API](/docs/personas/profile-api).
 
 ## Building an Audience
 
@@ -88,6 +88,13 @@ To view this sync information, navigate to **Personas > Audiences > Overview**. 
 
 > info "Real-time and batch syncs"
 > Personas doesn't display sync ETAs for real-time Audiences, because events for real-time Audiences sync to Destinations on a continual basis. Sync ETAs within Personas correspond only to non-real-time Audiences.
+
+## Understanding compute times
+
+Because a number of factors (like system load, backfills, or user bases) determine the complexity of an Audience, some compute times take longer than others.
+
+As a result, **Segment recommends waiting at least 24 hours for an Audience to finish computing** before you resume working with the Audience.
+
 
 ## Real-time compute compared to batch
 

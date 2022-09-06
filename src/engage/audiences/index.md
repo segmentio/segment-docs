@@ -83,6 +83,12 @@ Because most marketing tools are still based at the user level, it is often impo
 > info ""
 > When you connect a new Destination to an existing Audience, Personas will backfill historical data for that Audience to the new Destination.
 
+## Understanding compute times
+
+Because a number of factors (like system load, backfills, or user bases) determine the complexity of an Audience, some compute times take longer than others.
+
+As a result, **Segment recommends waiting at least 24 hours for an Audience to finish computing** before you resume working with the Audience.
+
 ## Real-time compute compared to batch
 
 Real-time Compute allows you to update traits and Audiences as Segment receives new events. Real-time Compute unlocks exciting use cases:
