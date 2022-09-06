@@ -80,11 +80,21 @@ Because most marketing tools are still based at the user level, it is often impo
 > info ""
 > When you connect a new Destination to an existing Audience, Personas will backfill historical data for that Audience to the new Destination.
 
+### Audience sync ETAs
+
+Personas provides dynamic ETAs for Audiences that you sync to downstream tools. Once an Audience that you've created finishes computing, Personas will display a progress bar in a Destination's tile that indicates how much time remains before the sync completes.
+
+To view this sync information, navigate to **Personas > Audiences > Overview**. Personas displays the latest sync information in the **Destinations** section of the Audience Overview tab. In the Destinations section, you'll also find information about any sync issues, including failed syncs.
+
+> info "Real-time and batch syncs"
+> Personas doesn't display sync ETAs for real-time Audiences, because events for real-time Audiences sync to Destinations on a continual basis. Sync ETAs within Personas correspond only to non-real-time Audiences.
+
 ## Understanding compute times
 
 Because a number of factors (like system load, backfills, or user bases) determine the complexity of an Audience, some compute times take longer than others.
 
 As a result, **Segment recommends waiting at least 24 hours for an Audience to finish computing** before you resume working with the Audience.
+
 
 ## Real-time compute compared to batch
 
