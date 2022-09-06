@@ -158,6 +158,12 @@ Learn more about [Computed trait generated events here](/docs/personas/using-per
 
 For account-level computed traits, you have the option to send either a [group](/docs/connections/spec/group/) call and/or [identify](/docs/connections/spec/identify/) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, Segment will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account. See [Account-level Audiences](/docs/personas/audiences/account-audiences) for more information.
 
+## Understanding compute times
+
+Because a number of factors (like system load, backfills, or user bases) determine the complexity of a Computed Trait, some compute times take longer than others.
+
+As a result, **Segment recommends waiting at least 24 hours for a Trait to finish computing** before you resume working with the Trait.
+
 ## Editing Realtime Traits
 
 Personas supports the editing of realtime Traits, which allows you to make nuanced changes to existing Traits in situations where cloning or building from scratch may not suit your use case.
