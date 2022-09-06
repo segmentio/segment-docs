@@ -31,7 +31,11 @@ Segment automatically promotes the following traits and IDs in track and identif
 
 ## Custom externalIDs
 
-Personas will automatically resolve identity for any other externalIDs that you bind to users - such as a phone number or any custom identifier that you support. As seen in the below example, you can send custom `externalIds` in the `context` object of any call to Segment's API.
+Personas will automatically resolve identity for any other externalIDs that you bind to users - such as a phone number or any custom identifier that you support.
+
+As long as you've configured custom externalIDs, such as `phone`, in your Space's Identity Resolution rules, you can include it with the `context.externalIds` array, the `properties` object, or the `context.traits` object.  
+
+As seen in the example below, you can send custom `externalIds` in the `context` object of any call to Segment's API.
 
 The four fields below (id, type, collection, encoding) are all required:
 
@@ -59,8 +63,16 @@ analytics.track('Subscription Upgraded', {
   ]
 })
 ```
+Additionally, adding `phone` with the `properties` object gets picked up by Personas and applied as an externalID:
+```js
+analytics.track('Subscription Upgraded', { plan: 'Pro', mrr: 99.99, phone: '123-456-7890'})
+```
+You can also include `phone` using the [`context.traits`](/docs/connections/sources/catalog/libraries/website/javascript/identity/#saving-traits-to-the-context-object) object and Personas adds it to the profile as an externalID.
 
-Personas will automatically create a user (user_id: `use_123`)  with the custom externalId (phone: `123-456-7890`). Then, you query the users phone record by using the external id (phone: `123-456-7890`), or update this profile using that externalId going forward. (Note: externalIDs must be lower-case.)
+```js
+analytics.track('Subscription Upgraded', { plan: 'Pro', mrr: 99.99}, {traits : {phone_number: '123-456-7890'}})
+```
+Personas will automatically create a user (user_id: `use_123`)  with the custom externalID (phone: `123-456-7890`). Query the user's phone record using the externalID (phone: `123-456-7890`), or update the profile with that externalID going forward. (Note: externalIDs must be lower-case.)
 
 ## Viewing promoted externalIDs
 
