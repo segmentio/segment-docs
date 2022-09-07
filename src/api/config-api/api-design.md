@@ -2,6 +2,8 @@
 title: API Design
 ---
 
+{% include content/papi-ga.html %}
+
 ## API Evolution: Versioning and Compatibility
 
 Segment strives to maintain a strict contract around the stability of our APIs once they reach maturity.

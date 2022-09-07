@@ -144,7 +144,7 @@ To edit the common JSON schema:
 3. Once you've saved and merged your JSON schema changes, go to the **Settings** tab for your source.
 4. Click **Schema Configuration** in the navigation and go to the **Advanced Blocking Controls** section to define specific blocking behavior for common JSON schema violations.
 
-To edit the common JSON schema using the Config API, you'll need to add your new JSON schema under the `"global"`: object.
+To edit the common JSON schema using the Public API, you'll need to add your new JSON schema under the `"global"`: object.
 
 > info ""
 > [Negative lookahead regexes (`?!`)](https://www.regular-expressions.info/lookaround.html) aren't supported. This means you can't use regex to prevent matches with a specific following character or expression. But, you can use `not` in the regex of your JSON schema to generate violations when a property key or value doesn't match the provided regex pattern.
