@@ -12,11 +12,11 @@ With Protocols, you can help engineers reduce tracking errors, create issue noti
 
 If you're using Protocols, you might want to get notifications when event volume anomalies or Protocols violation counts occur. Read Segment's [anomaly detection documentation](/docs/protocols/apis-and-extensions/anomaly_detection/) to learn about common anomalies, as well as monitoring and alerting solutions you can implement using standard tools.
 
-## Config API
+## Public API
 
-Protocols customers can access [Segment's Config API](/docs/config-api/), which enables programmatic creation, configuration, and fetching of core Segment platform resources like Sources, Destinations, and Tracking Plans.
+Protocols customers can access [Segment's Public API](/docs/api/), which enables programmatic creation, configuration, and fetching of core Segment platform resources like Sources, Destinations, and Tracking Plans.
 
-The Config API represents Segment's commitment to developers, helping you extend your workflow around customer data collection and activation.
+The Public API represents Segment's commitment to developers, helping you extend your workflow around customer data collection and activation.
 
 ### Supported Operations
 

@@ -2,7 +2,7 @@ Analytics.js: |
   The Segment Javascript library wrapper, which makes it simple to send your data to any tool without having to learn, test or implement the new API for each tool every time.
 
 API: |
-  Application Programming Interface. In software, this term describes a way of interacting with software in an automated fashion, without the use of a user-interface designed for humans. In Segment, we call the standard calls (`track`, `page` and `screen`, `identify` and `group`) our API. We also provide the [Config API](/docs/config-api/), which you can use to configure sources and destinations, and perform other functions in your workspace, without logging in using a web browser.
+  Application Programming Interface. In software, this term describes a way of interacting with software in an automated fashion, without the use of a user-interface designed for humans. In Segment, we call the standard calls (`track`, `page` and `screen`, `identify` and `group`) our API. We also provide the [Public API](/docs/api/), which you can use to configure sources and destinations, and perform other functions in your workspace, without logging in using a web browser.
 
 App: |
   The app is what we call the main Segment web application, the part you log in to, and where you configure sources and destinations, see events in the debugger, manage your tracking plan, and so on.

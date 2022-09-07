@@ -114,13 +114,13 @@ $ npx typewriter@7
 
 ## API Token Configuration
 
-Typewriter requires a Segment API token to fetch Tracking Plans from the [Segment Config API](/docs/config-api/).
+Typewriter requires a Segment API token to fetch Tracking Plans from the [Segment Public API](/docs/api/).
 
 You must be a workspace owner to create Segment API tokens.
 
 To create an API token:
 1. Click on the **Tokens** tab on the [Access Management](https://app.segment.com/goto-my-workspace/settings/access-management){:target="_blank"} page and click **Create Token**.
-2. Choose Segment's Config API.
+2. Choose Segment's Public API.
 3. Add a description for the token and assign access. If you choose *Workspace Member*, you only need to select **Tracking Plan Read-Only** for the Resource Role, as Typewriter only needs the *Tracking Plan Read-Only* role.
 4. Click **Create**.
 

@@ -310,7 +310,7 @@ To finish configuration, enable the AWS S3 Destination with IAM Role Support des
 6. Verify Segment data is stored in the S3 bucket by navigating to the `<your_S3_bucket>/segment-logs` in the AWS console. The bucket will take roughly 1 hour to begin receiving data.
 
 > info ""
-> Did you know you can create destinations with the Config API? For more information, see [Create Destination](https://reference.segmentapis.com/#51d965d3-4a67-4542-ae2c-eb1fdddc3df6){:target="_blank"}.
+> Did you know you can create destinations with the Public API? For more information, see [Create Destination](https://docs.segmentapis.com/tag/Destinations#operation/createDestination){:target="_blank"}.
 
 ## Migrate existing destinations
 
