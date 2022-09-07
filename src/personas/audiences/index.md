@@ -95,7 +95,7 @@ You can use Personas event generation to view information about any issues that 
 
 To access event generation, select the sync Destination's tile in the Audiences Overview tab, then select the **Syncs** tab from the overlay pane.
 
-For information on any **delivery** issues that might occur when Segment attempts to sync your Audience with a Destination, access the Destination's [event delivery tool](https://segment.com/docs/connections/event-delivery/).
+For information on any **delivery** issues that might occur when Segment attempts to sync your Audience with a Destination, access the Destination's [event delivery tool](/docs/connections/event-delivery/).
 
 ## Understanding compute times
 
