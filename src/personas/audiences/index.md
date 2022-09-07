@@ -4,7 +4,7 @@ title: Personas Audiences Overview
 
 Audiences let you group users or accounts based on event behavior and traits that Segment tracks.
 
-You can build Audiences from core **tracking events**, **traits**, and **computed traits**. You can then sync Audiences to hundreds of [Destinations](/docs/connections/destinations/) or access them with the [Profile API](/docs/personas/profile-api).
+You can build Audiences from core **tracking events**, **traits**, and [**computed traits**](/docs/personas/computed-traits/). You can then sync Audiences to hundreds of [Destinations](/docs/connections/destinations/) or access them with the [Profile API](/docs/personas/profile-api).
 
 ## Building an Audience
 
@@ -79,6 +79,30 @@ Because most marketing tools are still based at the user level, it is often impo
 
 > info ""
 > When you connect a new Destination to an existing Audience, Personas will backfill historical data for that Audience to the new Destination.
+
+### Audience sync ETAs
+
+Personas provides dynamic ETAs for Audiences that you sync to downstream tools. Once an Audience that you've created finishes computing, Personas will display a progress bar in a Destination's tile that indicates how much time remains before the sync completes.
+
+To view this sync information, navigate to **Personas > Audiences > Overview**. Personas displays the latest sync information in the **Destinations** section of the Audience Overview tab.
+
+> info "Real-time and batch syncs"
+> Personas doesn't display sync ETAs for real-time Audiences, because events for real-time Audiences sync to Destinations on a continual basis. Sync ETAs within Personas correspond only to non-real-time Audiences.
+
+#### Sync event generation
+
+You can use Personas event generation to view information about any issues that occur **before** Segment syncs an Audience to a downstream Destination. Event generation shows a sync history that displays common errors, like broken permissions, terms of service issues, and failed syncs.
+
+To access event generation, select the sync Destination's tile in the Audiences Overview tab, then select the **Syncs** tab from the overlay pane.
+
+For information on any **delivery** issues that might occur when Segment attempts to sync your Audience with a Destination, access the Destination's [event delivery tool](/docs/connections/event-delivery/).
+
+## Understanding compute times
+
+Because a number of factors (like system load, backfills, or user bases) determine the complexity of an Audience, some compute times take longer than others.
+
+As a result, **Segment recommends waiting at least 24 hours for an Audience to finish computing** before you resume working with the Audience.
+
 
 ## Real-time compute compared to batch
 
