@@ -1,6 +1,8 @@
 ---
 title: Warehouse Syncs
-redirect_from: '/connections/warehouses/selective-sync/'
+redirect_from: 
+  - '/connections/warehouses/selective-sync/'
+  - '/connections/storage/warehouses/selective-sync'
 ---
 
 Instead of constantly streaming data to the warehouse destination, Segment loads data to the warehouse in bulk at regular intervals. Before the data loads, Segment inserts and updates events and objects, and automatically adjusts the schema to make sure the data in the warehouse is inline with the data in Segment.
