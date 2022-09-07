@@ -32,8 +32,11 @@ Mixpanel (Actions) provides the following benefits over the classic Mixpanel des
 
 The Mixpanel (Actions) destination does not offer a device-mode connection mode. If you're using one of Segment's new libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)) with the Actions-framework version of the destination, you do not need the device-mode connection.
 
-Once you have a mapping, you can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+### Mappings
+You can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
+> success ""
+> Make sure you map email to `$email`, otherwise email will be undefined.   
 
 
 
@@ -47,15 +50,15 @@ In the default configuration, Mixpanel (Actions) triggers this action when it re
 
 This action sets or updates the properties of specific groups. Use this when you want to update properties on a [group profile](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#group-profiles){:target='_blank'}.
 
-The Groups model in Segment is slightly different than in Mixpanel. To explain the conceptual difference, it may help to think in terms of database tables. In Segment, there is a single "groups" table. You can have as many group rows as you want and each row has a unique identifier. When you want to set traits on that group, you only need to know the group id. 
+The Groups model in Segment is slightly different than in Mixpanel. To explain the conceptual difference, it may help to think in terms of database tables. In Segment, there is a single "groups" table. You can have as many group rows as you want and each row has a unique identifier. When you want to set traits on that group, you only need to know the group id.
 
 However, in Segment you cannot distinguish between "types" of groups. For example, a user can belong to a "Company" as well as a "Team". There is no way to differentiate between those in Segment. In Mixpanel, you can have multiple group types which are defined by a `group key`. To update group traits in Mixpanel you need to specify the `group key` *and* `group id`.
 
 ### Default group key
-By default, the Mixpanel (Actions) destination uses `$group_id` as the group key. Create a new group in Mixpanel with `$group_id` as the group key to complete the configuration. 
+By default, the Mixpanel (Actions) destination uses `$group_id` as the group key. Create a new group in Mixpanel with `$group_id` as the group key to complete the configuration.
 
 1. Go to your [Mixpanel project](https://mixpanel.com/report){:target='_blank'} settings
-2. Scroll to the "Group Keys" section. If this section doesn't exist, you may not have the Group Analytics add-on. 
+2. Scroll to the "Group Keys" section. If this section doesn't exist, you may not have the Group Analytics add-on.
 3. Create the new group key:
 
 ![Set Group Key](./images/set-group-key.gif)
@@ -99,7 +102,7 @@ The group id that Mixpanel will use is `12345`.
 
 {% include content/ajs-upgrade.md %}
 
-Assuming you're already using Segment Cloud-mode, the Mixpanel (Actions) destination is expected to have no breaking changes when upgrading. With the exception of a few new properties added to your events in the new Actions destination, there should be no difference in the data received in Mixpanel when using either of the Mixpanel destinations. 
+Assuming you're already using Segment Cloud-mode, the Mixpanel (Actions) destination is expected to have no breaking changes when upgrading. With the exception of a few new properties added to your events in the new Actions destination, there should be no difference in the data received in Mixpanel when using either of the Mixpanel destinations.
 
 If you want to confirm, you can configure the new destination to point to a different Mixpanel project and connect it to the same source(s) as the Classic destination and manually verify before fully switching over.
 
