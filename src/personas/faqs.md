@@ -68,6 +68,8 @@ Lookback windows are precise down to the hour, so a 90-day lookback window will 
 
 The trait and audience will automatically update going forward as historical events exceed the lookback window.
 
+<!--PW 9/6/22
+
 ## How does Personas handle identity merging?
 Each incoming event is analyzed and external IDs are extracted (`user_id`, `anonymous_id`, `email`, and so on). The simplified algorithm works as follows:
 
@@ -81,7 +83,7 @@ Each incoming event is analyzed and external IDs are extracted (`user_id`, `anon
 
 ![Identity graph merging](images/merging_2.png "Flowchart of Segment searching for profiles by external ID")
 
-![Identity graph merging](images/merging_3.png "Flowchart of Segment merging profiles")
+![Identity graph merging](images/merging_3.png "Flowchart of Segment merging profiles") -->
 
 ## Is all matching deterministic, or is there any support for probabilistic matching?
 All Profile matching is deterministic and based on first-party data that you've collected.
@@ -117,7 +119,7 @@ The audience in the image below includes all users that have Product Added in th
 ## What happens to conflicting and non-conflicting profile attributes?
 If two merged user profiles contain conflicting profile attributes, Segment selects the newest, or last updated, attributes when querying the profile.
 
-## How does Personas perform merge protection?
+<!--PW 9/6/22 ## How does Personas perform merge protection?
 
 Segment uses the Personas space's [identity resolution settings](/docs/personas/identity-resolution/) to prevent inaccurate profile merges. Segment uses identifier priorities and limits to determine how to add new merges and mappings to profiles.
 
@@ -127,7 +129,7 @@ In the following example, the identity resolution settings for `user_id` are `Pr
 
 In this example, `anonymous_id: a1` is not reset during a `User Logout`. Without merge protection rules, Segment would merge `user_id u1` and `user_id u2`. Instead, the identity resolution algorithm detects that such a merge would break `user_id` uniqueness and prevents the merge.
 
-This is especially helpful for preventing "blob users" that are merged together by non-unique anonymous IDs or by common group emails like `team@company.com`.
+This is especially helpful for preventing "blob users" that are merged together by non-unique anonymous IDs or by common group emails like `team@company.com`. -->
 
 ## Which destinations support syncing the identity graph?
 Most destinations on the Segment Platform are built up around a user model. They assume that a user will have a single userId. Further, most Destinations are not built to handle anonymous traffic.

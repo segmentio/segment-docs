@@ -306,10 +306,8 @@ $ npx typewriter
 
 ## API Token Configuration
 
-Typewriter requires a Segment API token to fetch Tracking Plans from the [Segment Public API](https://api.segmentapis.com/docs/).
+Typewriter requires a Segment API token to fetch Tracking Plans from the [Segment Public API](https://docs.segmentapis.com/).
 
-> info ""
-> If you use a previous version of Typewriter that fetches tracking plans from the [Segment Config API](/docs/config-api/) and would like to upgrade to the new version of Typewriter, generate a new API token by following the steps below.
 
 You must be a workspace owner to create Segment API tokens.
 
