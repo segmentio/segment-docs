@@ -94,7 +94,7 @@ To check how many API calls you have left in Salesforce, go to **Setup > Company
 ### Why do I see duplicate records in Salesforce?
 When using the `create` operation, it's possible for duplicate records to be created in Salesforce. This is because Segment retries records once they hit the internal timeout. It's possible Salesforce's REST API eventually processes the original record in addition to the retried record, resulting in duplicates. You may encounter this behavior if Salesforce's REST API throttles your records (for example, due to hitting API limits or complex workflow automation). To prevent duplicates, you can use [Duplicate Rules](https://help.salesforce.com/s/articleView?id=duplicate_rules_map_of_reference.htm&language=en_US){:target="_blank"} in Salesforce. See set up information in [Resolve and Prevent Duplicate Data in Salesforce](https://trailhead.salesforce.com/content/learn/modules/sales_admin_duplicate_management/sales_admin_duplicate_management_unit_2){:target="_blank"}.
 
-Please note this is only a concern when using the `create` operation, so you may consider using the `upsert` operation instead to avoid this if it meets your needs.
+Please note this is only a concern when using the `create` operation. You can use the `upsert` operation instead to avoid duplicates if `upsert` meets your needs.
 
 ### Can I send data to the Salesforce Bulk API 2.0?
 Segment is in the process of adding support for the Bulk API to help reduce API calls made to Salesforce. This is not yet available.
