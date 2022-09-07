@@ -409,7 +409,7 @@ sections:
     title: Verifying Your Email Address
 - section_title: API
   section:
-  - path: /api
+  - path: /api/public-api
     title: Public API
   - section_title: Config API
     slug: api/config-api
