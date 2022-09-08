@@ -10,9 +10,9 @@ excerpt: Detailed information about each Source. Learn how our API methods are i
 
 ## What is a source?
 
-In Segment, you create a source (or more than one!) for each website or app you want to track. While it's not required that you have a single Source for each server, site or app, you should create a Source for each unique source of data.
+A Source is a website, server library, mobile SDK, or cloud application which can send data into Segment. It’s where your data originates. Add a Source to collect data to understand who your customers are and how they’re using your product. Create a source for each website or app you want to track. While it's not required that you have a single source for each server, site, or app, you should create a source for each unique source of data.
 
-You can create new sources using the button in the workspace view. Each source you create has a write key, which is used to send data to that source. For example, to load [`analytics.js`, the Segment JavaScript library](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/) on your page, the snippet on the [Quickstart Guide](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) includes:
+Each source you create has a write key, which is used to send data to that source. For example, to load [`analytics.js`, the Segment JavaScript library](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/) on your page, the snippet on the [Quickstart Guide](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) includes:
 
 
 ```js
@@ -49,6 +49,26 @@ analytics.identify('user_123', {
 {% endcomment %}
 ---
 
+
+## Types of sources
+
+Segment has five types of sources:
+* [Web](#website-libraries)
+* [Mobile](#mobile)
+* [Server](#server)
+* [Cloud App](#cloud-apps)
+* User-created [Source Functions](/docs/connections/sources/source-functions/)
+
+Web, Mobile, and Server sources send first-party data from your digital properties. Cloud-app sources send data about your users from your connected web apps such as [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/),  [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/), and [Braze](/docs/connections/sources/catalog/cloud-apps/braze/).
+
+## Create a source
+To create a source:
+1. Navigate to **Connections** and click **Add Source**.
+2. Click the Source you’d like to add. *Note:* More than 80% of workspaces start by adding their JavaScript website.
+3. Click **Add Source**.
+4. Enter a name for your source as well as any information on the setup page.
+5. Click **Add Source**.
+
 ## Website libraries
 
 [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), the JavaScript library, is the most powerful way to track customer data from your website. If you're just starting out, Segment recommends it over server-side libraries as the simplest installation for any website.
@@ -79,7 +99,7 @@ Segment's Mobile SDKs are the best way to simplify your iOS, Android, and Xamari
 
 ## Server
 
-Segment's server-side sources let you send analytics data directly from your servers. Segment recommends tracking from your servers when device-mode tracking (tracking on the client) won't work. Check out the [guide on server-side tracking](/docs/guides/how-to-guides/collect-on-client-or-server/) if you're not sure whether it makes sense for your use case.
+Segment's server-side sources let you send analytics data directly from your servers. Segment recommends tracking from your servers when device-mode tracking (tracking on the client) doesn't work. Check out the [guide on server-side tracking](/docs/guides/how-to-guides/collect-on-client-or-server/) if you're not sure whether it makes sense for your use case.
 
 {: .columns }
 - [Clojure](/docs/connections/sources/catalog/libraries/server/clojure/)
@@ -91,16 +111,16 @@ Segment's server-side sources let you send analytics data directly from your ser
 - [Ruby](/docs/connections/sources/catalog/libraries/server/ruby/)
 - [.NET](/docs/connections/sources/catalog/libraries/server/net/)
 
-> note "Cloud-mode tracking"
-> Server-side data management is when tag sends data to the Segment servers, which then pass that data to the destination system.
+> info "Cloud-mode tracking"
+> Server-side data management is when tag sends data to the Segment servers, which then passes that data to the destination system.
 
 ---
 
 ## Cloud Apps
 
-Cloud app sources empower you to pull together data from all of your different third-party tools into a Segment warehouse or to your other enabled integrated tools. There are two types of Cloud Apps: **Object** and **Event** sources.
+Cloud app sources empower you to pull together data from all of your different third-party tools into a Segment warehouse or to your other enabled integrated tools. They send data about your users from your connected web apps. There are two types of Cloud Apps: **Object** and **Event** sources.
 
-{% include components/reference-button.html href="/docs/connections/sources/sources-compare/" icon="guides.svg" title="Comparing Cloud Sources" description="Wondering which cloud-apps send which types of data? Check out the Cloud Sources comparison!" %}
+{% include components/reference-button.html href="/docs/connections/sources/sources-compare/" icon="guides.svg" title="Comparing Cloud Sources" description="Wondering which cloud-apps send which types of data? Check out the Cloud Sources comparison." %}
 
 ### Object Cloud Sources
 
@@ -133,9 +153,9 @@ Segment's [Pixel Tracking API](/docs/connections/sources/catalog/libraries/serve
 
 | Event name              | Description       |
 | ---                     | ---               |
-| Email Delivered         | Message has been successfully delivered to the receiving server |
-| Email Opened	          | Recipient has opened the HTML message. You need to enable Open Tracking for getting this type of event |
-| Email Link Clicked      | Recipient clicked on a link within the message. You need to enable Click Tracking for getting this type of event |
-| Email Bounced           | Receiving server could not or would not accept message |
-| Email Marked as Spam    | Recipient marked message as spam |
-| Unsubscribe             | Recipient clicked on message's subscription management link |
+| Email Delivered         | The message has been successfully delivered to the receiving server |
+| Email Opened	          | The recipient has opened the HTML message. You need to enable Open Tracking for getting this type of event. |
+| Email Link Clicked      | The recipient clicked on a link within the message. You need to enable Click Tracking for getting this type of event. |
+| Email Bounced           | The receiving server could not or would not accept message. |
+| Email Marked as Spam    | The recipient marked message as spam. |
+| Unsubscribe             | The recipient clicked on message's subscription management link. |
