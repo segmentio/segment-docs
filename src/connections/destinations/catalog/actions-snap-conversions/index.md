@@ -85,7 +85,7 @@ In addition, Segment creates a SHA-256 hash of the following fields before sendi
 
 ## Support
 
-The Snapchat Conversions API destination is owned and maintained by the Snap team.
+The Snap team owns and maintains the Snapchat Conversions API destination.
 
 - For general Segment questions, including issues with event data not being sent to the Snapchat Events Manager, please contact [Segment support](https://segment.com/help/){:target="_blank"}.
 - For questions regarding campaign setup and performance, audience targeting, or additional API functionality, please contact your Snap representative.
