@@ -40,7 +40,7 @@ To create a Destination Filter:
 
 ## Destination Filters API
 
-The Destination Filters API provides more power than Segment's dashboard Destination Filters settings. With the API, you can create complex filters that are conditionally applied using Segment's [Filter Query Language (FQL)](docs/api/config-api/fql/).
+The Destination Filters API provides more power than Segment's dashboard Destination Filters settings. With the API, you can create complex filters that are conditionally applied using Segment's [Filter Query Language (FQL)](/docs/api/config-api/fql/).
 
 The Destination Filters API offers four different filter types:
 
