@@ -40,7 +40,7 @@ To create a Destination Filter:
 
 ## Destination Filters API
 
-The Destination Filters API provides more power than Segment's dashboard Destination Filters settings. With the API, you can create complex filters that are conditionally applied using Segment's [Filter Query Language (FQL)](/docs/config-api/fql).
+The Destination Filters API provides more power than Segment's dashboard Destination Filters settings. With the API, you can create complex filters that are conditionally applied using Segment's [Filter Query Language (FQL)](docs/api/config-api/fql/).
 
 The Destination Filters API offers four different filter types:
 
@@ -51,7 +51,7 @@ The Destination Filters API offers four different filter types:
 | `whitelist_fields` | Only sends whitelisted properties to the destination.         |
 | `blocklist_fields` | Doesn't send blocklisted properties to the destination.        |
 
-To learn more, read Segment's [Destination Filters API docs](https://reference.segmentapis.com/#6c12fbe8-9f84-4a6c-848e-76a2325cb3c5){:target="_blank"}.
+To learn more, read Segment's [Destination Filters API docs](https://docs.segmentapis.com/tag/Destination-Filters){:target="_blank"}.
 
 ## Examples
 
@@ -96,7 +96,7 @@ In the example below, the rule prevents an event from sending if `Order Complete
 
 ### Sample a percentage of events
 
-Using the [Destination Filters API](https://reference.segmentapis.com/#6c12fbe8-9f84-4a6c-848e-76a2325cb3c5){:target="_blank"}, you can create a rule to randomly sample video heartbeat events.
+Using the [Destination Filters API](https://docs.segmentapis.com/tag/Destination-Filters){:target="_blank"}, you can create a rule to randomly sample video heartbeat events.
 
 ### Drop events
 
@@ -108,7 +108,7 @@ Using the [Destination Filters API](https://reference.segmentapis.com/#6c12fbe8-
 
 Some destinations offer settings that also allow you to filter data. For example, the Facebook App Events destination allows you to map `Screen` events to `Track` events. Because Destination Filters are evaluated and applied _before_ the Destination settings are applied, they can conflict with your settings.
 
-In the example in [the video](https://www.youtube.com/watch?v=47dhAF1Hoco){:target="_blank"}, if you have a Destination Filter that filters Track events _and_ you have the **Use Screen Events as Track Events** setting enabled, `Track` events drop, but `Screen` events still process. The destination settings transform it into a `Track` event - *after* the filters.
+For example, if you have a Destination Filter that filters Track events _and_ you have the **Use Screen Events as Track Events** setting enabled, `Track` events drop, but `Screen` events still process. The destination settings transform it into a `Track` event - *after* the filters.
 
 #### Error handling
 
