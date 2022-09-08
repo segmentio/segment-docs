@@ -10,7 +10,7 @@ id: 60ad61f9ff47a16b8fb7b5d9
 When you have Segment installed, you can use your existing tracking implementation to fulfill your data collection needs with Google Analytics 4. Segment will send your data server-side to [Google's Measurement Protocol API](https://developers.google.com/analytics/devguides/collection/protocol/ga4){:target='_blank'}.
 
 > warning ""
-> Google Analytics 4 doesn't officially support a pure server-to-server integration. However, Segment monitors the capabilities of the Measurement Protocol API and updates accordingly to achieve a reasonable level of reporting for mutual customers. Segment doesn't plan to build a device-mode integration with Gtag for Google Analytics 4.
+> Google Analytics 4 doesn't officially support a pure server-to-server integration. However, Segment monitors the capabilities of the Measurement Protocol API and updates the integration accordingly to achieve a reasonable level of reporting for mutual customers.
 
 > success "Good to know"
 > This page is about the [Actions-framework](/docs/connections/destinations/actions/) Google Analytics 4 destination. There's also a page about the [non-Actions Google Universal Analytics destination](/docs/connections/destinations/catalog/google-analytics/). Both of these destinations receive data _from_ Segment.
