@@ -138,7 +138,7 @@ If you would like to collect additional, custom properties, include an `extraUrl
 
 ### UTM parameters
 
-Our AMP Source doesn't automatically collect UTM parameters for you but you can define these explicitly as a property. An example of this is shown below:
+Segment's AMP Source doesn't collect UTM parameters for you but you can define them as a property. An example of this is shown below:
 
 ```html
 <amp-analytics type="segment">
