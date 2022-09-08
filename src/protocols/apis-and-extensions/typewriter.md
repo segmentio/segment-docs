@@ -390,10 +390,10 @@ scripts:
 
 client:
   # Which Segment SDK you are generating for.
-  # Valid values: analytics.js, analytics-node, analytics-ios, analytics-android.
+  # Valid values: analytics.js, analytics-node, analytics-react-native, swift, kotlin.
   sdk: analytics-node
   # The target language for your Typewriter client.
-  # Valid values: javascript, typescript, java, objective-c, swift.
+  # Valid values: javascript, typescript, kotlin, swift.
   language: typescript
 
 trackingPlans:
