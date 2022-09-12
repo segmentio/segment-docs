@@ -3,6 +3,8 @@
 title: Sendgrid Marketing Campaigns Destination
 hide-boilerplate: true
 hide-dossier: true
+private: true
+id: 6101bf0e15772f7e12407fa9
 ---
 
 <!-- This template is meant for Actions-based destinations that do not have an existing Classic or non-Actions-based version. For Actions Destinations that are a new version of a classic destination, see the doc-template-update.md template. -->
