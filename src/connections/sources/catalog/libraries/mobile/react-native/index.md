@@ -510,6 +510,8 @@ To collect the Android Advertising ID provided by Play Services, Segment provide
 No, only the plugins listed above are supported in device-mode for Analytics React Native 2.0.
 ### Will I still see device-mode integrations listed as `false` in the integrations object?
 When you successfully package a plugin in device-mode, you won't see the integration listed as `false` in the integrations object for a Segment event. This logic is packaged in the event metadata, and isn't surfaced in the Segment debugger.
+### Why are my IDs not set as UUID format?
+Due to [issues](https://github.com/segmentio/analytics-react-native/blob/master/packages/core/src/uuid.ts#L5) with the React Native bridge, Segment does not use UUID format for anonymousIds and messageIds in local development. These IDs will be set to UUID format for your live app.  
 
 ## Changelog
 [View the Analytics React Native 2.0 changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.
