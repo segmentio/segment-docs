@@ -34,7 +34,7 @@ analytics.write_key = 'YOUR_WRITE_KEY'
 
 The default initialization settings are production-ready and queue messages to be processed by a background thread.
 
-In development, Segment recommends that you enable the following settings to help spot prooblems:
+In development, Segment recommends that you enable the following settings to help spot problems:
 - `analytics.debug` to log debugging information to the Python logger
 - an `on_error` handler to print the response you receive from Segment's API.
 
