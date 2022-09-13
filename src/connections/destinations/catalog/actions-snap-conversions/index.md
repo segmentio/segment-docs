@@ -54,7 +54,7 @@ The Client Deduplication ID allows for a 48-hour deduplication window. The Trans
 > Segment does not have client-side destinations for the Snap Pixel or Snap App Ads Kit (SDK). If you choose to integrate client-side, these must be implemented natively. See Snapchat’s [Install Snap Pixel](https://businesshelp.snapchat.com/s/article/pixel-website-install?language=en_US){:target="_blank"} and [App Ads Kit](https://businesshelp.snapchat.com/s/article/app-ads-kit?language=en_US){:target="_blank"} for implementation details.
 
 ### Latency
-It may take up to 1-hour for events to appear in the Snap [Events Manager](https://businesshelp.snapchat.com/s/article/events-manager?language=en_US){:target="_blank"}.
+It may take up to 1-hour for events to appear in the Snapchat [Events Manager](https://businesshelp.snapchat.com/s/article/events-manager?language=en_US){:target="_blank"}.
 
 ### Other events
 If you want to send a Snap Event Type that Segment doesn’t have a prebuilt mapping for, you can use the Report Conversion Event action to send the event. For example, if you want to send a `START_TRIAL` event:
@@ -82,3 +82,10 @@ In addition, Segment creates a SHA-256 hash of the following fields before sendi
 
 > warning ""
 > If you hash identifiers upstream before sending to Segment, Segment still hashes that data before sending to Snap. This results in a double hash that won't be able to be matched on. Please ensure your fields are not hashed prior to sending through the Snapchat Conversions API destination.
+
+## Support
+
+The Snap team owns and maintains the Snapchat Conversions API destination.
+
+- For general Segment questions, including issues with event data not being sent to the Snapchat Events Manager, please contact [Segment support](https://segment.com/help/){:target="_blank"}.
+- For questions regarding campaign setup and performance, audience targeting, or additional API functionality, please contact your Snap representative.
