@@ -117,3 +117,5 @@ WebKit
 Wootric
 Xcode
 Zendesk
+Leanplum
+Aircall
