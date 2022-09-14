@@ -331,9 +331,9 @@ After you set up the necessary resources in Azure, the next step is to set up th
 2. Click the **Configure Data Lakes** button, and select the source you'd like to receive data from. Click **Next**.
 3. In the **Connection Settings** section, enter the following values: 
   - **Azure Storage Account**: The name of the Azure Storage account that you set up in [Step 1 - Create an ALDS-enabled storage account](#step-1---create-an-alds-enabled-storage-account).
-    ![img.png](img.png)
+    ![img.png](images/storageaccount.png)
   - **Azure Storage Container**: The name of the Azure Storage Container you created in [Step 1 - Create an ALDS-enabled storage account](#step-1---create-an-alds-enabled-storage-account).
-    ![img_1.png](img_1.png)
+    ![img_1.png](images/storagecontainer.png)
   - **Azure Subscription ID**: The ID of your [Azure subscription](https://docs.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id){:target="_blank”}. <br> Please add it as it is in the Azure portal, i.e. in the format `********-****-****-****-************`
   - **Azure Tenant ID**: The Tenant ID of your [Azure Active directory](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant){:target="_blank”}. <br> Please add it as it is in the Azure portal, i.e. in the format `********-****-****-****-************`
   - **Databricks Cluster ID**: The ID of your [Databricks cluster](https://docs.databricks.com/workspace/workspace-details.html#cluster-url-and-id){:target="_blank”}.
