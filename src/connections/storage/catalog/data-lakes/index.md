@@ -334,8 +334,8 @@ After you set up the necessary resources in Azure, the next step is to set up th
     ![img.png](images/storageaccount.png)
   - **Azure Storage Container**: The name of the Azure Storage Container you created in [Step 1 - Create an ALDS-enabled storage account](#step-1---create-an-alds-enabled-storage-account).
     ![img_1.png](images/storagecontainer.png)
-  - **Azure Subscription ID**: The ID of your [Azure subscription](https://docs.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id){:target="_blank”}. <br> Please add it as it is in the Azure portal, i.e. in the format `********-****-****-****-************`
-  - **Azure Tenant ID**: The Tenant ID of your [Azure Active directory](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant){:target="_blank”}. <br> Please add it as it is in the Azure portal, i.e. in the format `********-****-****-****-************`
+  - **Azure Subscription ID**: The ID of your [Azure subscription](https://docs.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id){:target="_blank”}. <br> Please add it as it is in the Azure portal, in the format `********-****-****-****-************`
+  - **Azure Tenant ID**: The Tenant ID of your [Azure Active directory](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant){:target="_blank”}. <br> Please add it as it is in the Azure portal, in the format `********-****-****-****-************`
   - **Databricks Cluster ID**: The ID of your [Databricks cluster](https://docs.databricks.com/workspace/workspace-details.html#cluster-url-and-id){:target="_blank”}.
   - **Databricks Instance URL**: The ID of your [Databricks workspace](https://docs.databricks.com/workspace/workspace-details.html#workspace-instance-names-urls-and-ids){:target="_blank”}. <br> The correct format for adding the URL is 'adb-0000000000000000.00.azureatabricks.net'
   - **Databricks Workspace Name**: The name of your [Databricks workspace](https://docs.databricks.com/workspace/workspace-details.html#workspace-instance-names-urls-and-ids){:target="_blank”}.
