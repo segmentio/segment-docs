@@ -6,9 +6,9 @@ redirect_from: '/connections/destinations/catalog/data-lakes/'
 
 
 Segment Data Lakes provide a way to collect large quantities of data in a format that's optimized for targeted data science and data analytics workflows. You can read [more information about Data Lakes](/docs/connections/storage/data-lakes/) and learn [how they differ from Warehouses](/docs/connections/storage/data-lakes/comparison/) in Segment's Data Lakes documentation.
-We support two type of data-lakes as of now:
-- [AWS Datalake](https://segment.com/docs/connections/storage/catalog/data-lakes/#set-up-segment-data-lakes)
-- [Azure Datalakes](https://segment.com/docs/connections/storage/catalog/data-lakes/#set-up-azure-data-lakes)
+Segment supports two type of data-lakes as of now:
+- [AWS Data Lakes](https://segment.com/docs/connections/storage/catalog/data-lakes/#set-up-segment-data-lakes)
+- [Azure Data Lakes](https://segment.com/docs/connections/storage/catalog/data-lakes/#set-up-azure-data-lakes)
 
 > note "Lake Formation"
 > You can also set up your Segment Data Lakes using [Lake Formation](/docs/connections/storage/data-lakes/lake-formation/), a fully managed service built on top of the AWS Glue Data Catalog.
