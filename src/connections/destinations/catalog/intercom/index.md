@@ -95,7 +95,7 @@ Keep reading for more information about the Identify call depending on the sourc
 
 ### Client
 
-- Passing `traits.company` creates a new Intercom Company if the `company_id` does not match a known company. See the [Intercom user model documentation](https://developers.intercom.io/reference#user-model) for more details.
+- Passing `traits.company` creates a new Intercom Company if the `company_id` does not match a known company. See the [Intercom contact model documentation](https://developers.intercom.com/intercom-api-reference/reference/contacts-model) for more details.
 - Trait values must be no longer than 255 characters
 
 When you call Identify on `analytics.js`, Segment creates the `intercomSettings` object and loads Intercom's JavaScript into the page.
