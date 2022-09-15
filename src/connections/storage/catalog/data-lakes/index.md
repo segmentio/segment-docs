@@ -258,8 +258,7 @@ curl -X POST 'https://<per-workspace-url>/api/2.0/preview/scim/v2/ServicePrincip
 > warning "Optional configuration settings for log4j vulnerability"
 > While Databricks released a statement that clusters are likely unaffected by the log4j vulnerability, out of an abundance of caution, Databricks recommends updating to log4j 2.15+ or adding the following options to the Spark configuration: <br/> `spark.driver.extraJavaOptions "-Dlog4j2.formatMsgNoLookups=true"`<br/>`spark.executor.extraJavaOptions "-Dlog4j2.formatMsgNoLookups=true"`
 
-1. Connect to a [Hive metastore](https://docs.databricks.com/data/metastores/external-hive-metastore.html){:target="_blank”} on your Databricks cluster.
-2. Copy the following Spark configuration, replacing the variables (`<example_variable>`) with information from your workspace: <br/>
+1. Connect to a [Hive metastore](https://docs.databricks.com/data/metastores/external-hive-metastore.html){:target="_blank”} on your Databricks cluster using the following Spark configuration, replacing the variables (`<example_variable>`) with information from your workspace: <br/>
 ```py
 ## Configs so we can read from the storage account
 spark.hadoop.fs.azure.account.oauth.provider.type.<storage_account_name>.dfs.core.windows.net org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider
