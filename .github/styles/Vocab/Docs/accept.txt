@@ -17,7 +17,6 @@
 (?:U|u)rls?\b
 adset
 Adwords
-Aircall
 allowlist
 Amberflo
 Appboy
@@ -37,7 +36,6 @@ Cocoapods
 Contentful
 Criteo
 csv
-Databricks
 datetime
 deeplink
 Dev
@@ -73,7 +71,6 @@ Jimo
 Jivox
 Kameleoon
 Kissmetrics
-Leanplum
 Lightbox
 Littledata
 Mailchimp
@@ -121,3 +118,5 @@ WebKit
 Wootric
 Xcode
 Zendesk
+Leanplum
+Aircall
