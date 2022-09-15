@@ -9,10 +9,10 @@ id: 5a03bfe73156760001ab34ec
 
 The [Google global site tag (gtag.js)](https://support.google.com/google-ads/answer/7548399?hl=en){:target="_blank"} is a JavaScript tagging framework and API that allows you to send web conversions to Google Ads. With the Segment Google Ads (Gtag) destination, Segment loads gtag.js for you so you can make efficient use of your existing tracking implementation.
 
-> info ""
+> warning ""
 > Only use this destination if your Google Ads account is using Gtag. If you're using Google Tag Manager, don't add the global site tag (gtag.js) in your GTM containers. You should also disable any [Google Ads (Classic)](/docs/connections/destinations/catalog/adwords/) destinations within the same source, since **Google Ads (Classic)** can't load at the same time as **Google Ads (Gtag)**.
 
-> success "" 
+> info ""
 > If you're sending [enhancement data to Google Ads](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/) in parallel with Gtag, you must include the same Order ID (Transaction ID) on both sets of data. This is required to properly deduplicate conversions between Gtag conversions and enhanced conversions. To send Order ID (Transaction ID) to Gtag, include `order_id` as a property on your web events. 
 
 ## Getting Started
@@ -58,7 +58,7 @@ To figure out if an event is flagged for conversion, follow these steps:
       ```js
         "library": {
           "name": "analytics.js",
-      ``` 
+      ```
 
 2. Verify that the [Google Conversion ID](/docs/connections/destinations/catalog/google-ads-gtag/#google-conversion-id) in your Segment workspace is correct.
 3. Find your ad online and click on it. This will redirect you to your website.
