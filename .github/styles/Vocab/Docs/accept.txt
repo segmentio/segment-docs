@@ -95,6 +95,7 @@ Preact
 Qualtrics
 Rokt
 Selligent
+Sendgrid
 Shopify
 signup
 Skalin
