@@ -20,7 +20,7 @@ sections:
   section:
   - path: "https://segment.com/docs/"
     title: Documentation
-  - path: "https://segment.com/docs/config-api/"
+  - path: "https://segment.com/docs/api/public-api/"
     title: Segment API
   - path: "https://segment.com/partners/developer-center/"
     title: Build on Segment

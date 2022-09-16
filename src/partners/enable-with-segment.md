@@ -2,10 +2,7 @@
 title: Enable with OAuth
 ---
 
-> info ""
-> If you're a customer who just wants to build a simple script or app against a single workspace, you may want to use [Workspace Access Tokens](/docs/config-api/authentication).
-
-Enable with OAuth, supported with the [Public API](/docs/api), allows partners to build seamless flows for customers to implement and enable integrations within their workspace. This is a [post-launch requirement](/docs/partners/#post-launch) for a partner to graduate from public beta to public.
+Enable with OAuth, supported with the [Public API](/docs/api/public-api), allows partners to build seamless flows for customers to implement and enable integrations within their workspace. This is a [post-launch requirement](/docs/partners/#post-launch) for a partner to graduate from public beta to public.
 
 ## Concepts
 
@@ -191,7 +188,7 @@ If you created an App with a more permissive scope, you have access to more APIs
 - With the `workspace` scope you can change all resources
 - With the `workspace:read` you can read all resources, but not change them
 
-A full list of APIs are here: https://segment.com/docs/config-api/
+A full list of APIs are here: https://segment.com/docs/api/public-api/
 
 The example below shows how you would get a users workspace if you had any of the above scopes:
 
@@ -309,4 +306,4 @@ When the app was installed, you should have received a Segment `workspace` and  
 
 ### OK I managed to create an App. How do I use your APIs?
 
-See [the API docs](https://segment.com/docs/config-api/), and the Postman API reference collection that you can run as-is https://reference.segmentapis.com/#51d965d3-4a67-4542-ae2c-eb1fdddc3df6.
+See [the API docs](/docs/api/public-api/).
