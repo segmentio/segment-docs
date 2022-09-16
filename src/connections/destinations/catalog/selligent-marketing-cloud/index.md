@@ -17,7 +17,7 @@ Before you enable Selligent Marketing Cloud in your Destination page, validate w
 1. Login into your *Selligent Marketing Cloud* environment.
 2. Within the *Selligent Marketing Cloud* module click the wheel icon at the bottom-left corner to access the general configuration panel:
 ![1](images/1.png)
-1. Navigate tothe "Access Management" tab and select "Service Accounts":
+1. Navigate to the "Access Management" tab and select "Service Accounts":
 ![2](images/2.png)
 4. To create a new account click on the "New" icon:
 ![3](images/3.png)
