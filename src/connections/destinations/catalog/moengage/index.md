@@ -4,6 +4,23 @@ cmode-override: true
 id: 55b280290a20f4e22f0fb3d6
 hide-personas-partial: true
 ---
+
+[MoEngage](https://www.moengage.com/) is an Intelligent Customer Engagement Platform. MoEngage allows brands to personalize every customer interaction and drive better engagement, retention, loyalty and lifetime value.
+
+The MoEngage and Segment integration allows you to send 
+the users you have tracked on Segment, along with their route data, to MoEngage for further targetting and campaigning. This Destination enables you to:
+
+- **Import data from Segment to MoEngage**: We offer a side-by-side (device mode) SDK integration for your Android, iOS, and web applications and a server-to-server integration for your backend services.
+- **Sync [Segment Personas](https://segment.com/product/personas) (cohorts)**: Send Segment Cohorts to MoEngage for use in MoEngage Segments and campaigns. 
+
+The MoEngage Destination source code is open-sourced and freely available on GitHub for anyone to view:
+
+Connection Mode | Maintained by | GitHub Link
+---------|----------|---------
+ iOS | MoEngage | [MoEngage-Segment-iOS](https://github.com/moengage/MoEngage-Segment-iOS)
+ Android | MoEngage | [moengage-segment-integration](https://github.com/moengage/moengage-segment-integration)
+ Web | Segment | [analytics.js-integrations](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/moengage)
+
 ## Getting Started
 
 Once you add the Segment-MoEngage library to your app, you can enable MoEngage from the Segment App. These new settings can take up to an hour to propagate to your existing users. For new users, it'll be instantaneous!
