@@ -3,6 +3,7 @@ title: Intercom Cloud Mode (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
 hidden: true
+private: true
 id: 62ded0cf5753c743883ca0f3
 versions:
   - name: 'Intercom Web (Actions)'
@@ -23,9 +24,9 @@ When you use the Intercom Cloud Mode (Actions) destination, Segment will send yo
 ## Benefits of Intercom Cloud Mode (Actions) vs Intercom Classic
 Intercom Cloud Mode (Actions) provides the following benefits over the classic Intercom destination:
 
-- **Fewer settings.** Data mapping for actions-based destinations happens during configuration, which eliminates the need for most settings. 
+- **Fewer settings.** Data mapping for actions-based destinations happens during configuration, which eliminates the need for most settings.
 - **Clearer mapping of data.** Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to the destination.
-- **Granular control over data sent.** You can customize the conditions under which the events are sent to Intercom. 
+- **Granular control over data sent.** You can customize the conditions under which the events are sent to Intercom.
 - **Support for lead creation.** You can create contacts with a role of `lead`, associate them with a company, send events for them, and convert them to a `user`.
 
 
@@ -33,7 +34,7 @@ Intercom Cloud Mode (Actions) provides the following benefits over the classic I
 
 1. From the Segment web app, navigate to **Connections > Catalog**.
 2. Search for **Intercom Cloud Mode (Actions)** in the Destinations Catalog, and select the destination.
-3. Click **Configure Intercom Cloud Mode (Actions)**. 
+3. Click **Configure Intercom Cloud Mode (Actions)**.
 4. Select the source that will send data to Intercom Cloud Mode (Actions) and follow the steps to name your destination.
 5. On the **Settings** tab, authenticate with Intercom using OAuth.
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
