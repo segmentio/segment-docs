@@ -11,7 +11,7 @@ The component automatically collects default properties and sends a page view.
 
 ## Getting started
 
-If you're new to [AMP](https://www.ampproject.org){:target="_blank"}, go through Amp's excellent [Quickstart](https://www.ampproject.org/docs/get_started/create_page.html){:target="_blank"}. Once you're setup, follow the steps below to implement Segment.
+If you're new to [AMP](https://www.ampproject.org){:target="_blank"}, go through AMP's excellent [Quickstart](https://www.ampproject.org/docs/get_started/create_page.html){:target="_blank"}. Once you're setup, follow the steps below to implement Segment.
 
 ### Step 1: Include AMP component
 Before the closing `</head>` tag, include the [`amp-analytics` component](https://www.ampproject.org/docs/reference/components/amp-analytics){:target="_blank"}:
@@ -204,7 +204,7 @@ This identity schema will allow you to join down funnel interaction with earlier
 ### Why aren't all my IDs prefixed with an 'amp-'?
 
 All AMP events won't consistently have an 'amp-' prefixed ID as this is only included in the event that the AMP page is directly visited on your domain.
-For further details refer to the various `Client ID` scenarios in relation to AMP pages [here]( https://developers.google.com/analytics/devguides/collection/amp-analytics/client-id){:target="_blank"} (we can only guarantee that if the third scenario happens, the AMP ID will get generated and picked up).
+For further details refer to the various `Client ID` scenarios in relation to AMP pages [here]( https://developers.google.com/analytics/devguides/collection/amp-analytics/client-id){:target="_blank"} (Segment can only guarantee that if the third scenario happens, the AMP ID will get generated and picked up).
 
 
 See a live <a href="https://segment-amp.firebaseapp.com">AMP with Segment analytics</a>
