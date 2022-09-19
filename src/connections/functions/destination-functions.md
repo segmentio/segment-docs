@@ -287,7 +287,7 @@ To test the batch handler:
 
 The editor displays logs and request traces from the batch handler.
 
-The [Config API](/docs/config-api/) Functions/Preview endpoint also supports testing batch handlers. The payload must be a batch of events as a JSON array.
+The [Public API](/docs/api/) Functions/Preview endpoint also supports testing batch handlers. The payload must be a batch of events as a JSON array.
 
 ### Handling batching errors
 

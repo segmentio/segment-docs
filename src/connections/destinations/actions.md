@@ -81,7 +81,7 @@ Moving from a classic destination to an actions-based destination is a manual pr
 ## Edit a destination action
 You can add or remove, disable and re-enable, and rename individual actions from the Actions tab on the destination's information page in the Segment app. Click an individual action to edit it.
 
-From the edit screen you can change the action's name and mapping, and toggle it on or off. See [Customizing mappings](#customizing-mappings) for more information.
+From the edit screen you can change the action's name and mapping, and toggle it on or off. See [Customizing mappings](#customize-mappings) for more information.
 
 ![](images/actions-list.png)
 

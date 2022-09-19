@@ -25,7 +25,12 @@ This page collates information about each destination, organized by category for
 </tr>
 {% for destination in site.data.catalog.destinations.items %}
 {% if destination.categories contains category.display_name %}
-{% unless destination.connection_modes.cloud.web == false and destination.connection_modes.cloud.mobile == false and destination.connection_modes.cloud.server == false and destination.connection_modes.device.web == false and destination.connection_modes.device.mobile == false  %}
+{% if destination.actions[0] %}
+<tr>
+  <td>**[{{ destination.display_name }}](/docs/{{ destination.url }})**</td>
+<td colspan=5 style="border-left: 1px solid gray;">This destination uses the <a href="/docs/connections/destinations/actions">Actions</a> framework.</td>
+</tr>
+{%else%}
 <tr>
   <td>**[{{ destination.display_name }}](/docs/{{ destination.url }})**</td>
   {% if overridesList contains destination.slug %}{% assign thisDestname = destination.slug %}{% assign thisDest = site.data.catalog.overrides.items | where: "slug", thisDestname | first%}
@@ -43,7 +48,7 @@ This page collates information about each destination, organized by category for
   <td style="border-left: 1px solid gray;">{% if destination.connection_modes.device.web %}✅{% else %}⬜️{% endif %} </td>
   <td>{% if destination.connection_modes.device.mobile %}✅{% else %}⬜️{% endif %} </td>
   {%endif%}</tr>
-{% endunless %}
+{%endif%}
 {% endif %}
 {% endfor %}
 </table>

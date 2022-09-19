@@ -46,9 +46,9 @@ You can create a QA instance of your destination to verify that it is configured
 1. If you created a QA instance of the Repeater and you created a QA destination instance, you can test this process before you use production data.
 
 
-2. You can disable the repeater and enable the new destination instance manually in the Segment web app, or by using the [Segment Config API](/docs/config-api/).
+2. You can disable the repeater and enable the new destination instance manually in the Segment web app, or by using the [Segment Public API](/docs/-api/).
 
    - **If the destination can de-duplicate events**, enable the new instance of the destination, and _then_ disable the Repeater.
    - **If the destination does not de-duplicate events**, you can disable the Repeater and then enable the new instance of the destination.
-   This could result in minor data loss during the few seconds between the Repeater being disabled and the new destination instance being enabled. You can use the Segment Config API [Update Destination endpoint](https://reference.segmentapis.com/#f25d9ac1-3e20-4635-8687-26ed4153086d) to disable and enable destinations quickly, which can minimize the time between these two actions. However, we cannot guarantee that no data will be lost.
+   This could result in minor data loss during the few seconds between the Repeater being disabled and the new destination instance being enabled. You can use the Segment Public API [Update Destination endpoint](https://docs.segmentapis.com/tag/Destinations#operation/updateDestination){:target="_blank"} to disable and enable destinations quickly, which can minimize the time between these two actions. Segment does not guarantee that no data will be lost.
    If your workspace is on the Business Tier, and the destination supports [Replay](/docs/guides/what-is-replay/), you can replay the data from that period into the new destination instance. Replays are available for any destinations that support cloud-mode data (meaning data routed through Segment) and that also process timestamps. Contact your CSM for more information about replays. If the destination does not de-duplicate events and replays are not available, you can manually delete duplicate events in the destination.

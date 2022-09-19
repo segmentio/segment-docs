@@ -16,6 +16,10 @@ The Google Enhanced Conversions destination enables you to improve the accuracy 
 > 
 > When you authenticate your Segment workspace with your Google Account, use a Google Account that is a member of your Google Ads account.
 
+
+> info ""
+> To deduplicate conversions that are recorded from the Google Ads Conversion tag (Gtag) from the data that is sent to Google Enhanced Conversions, Order ID (Transaction ID) must be implemented in the Google Ads Conversion tag (Gtag) **and** the same Order IDs must be sent with the corresponding Enhanced Conversions data. This is required for Google to successfully process your enhancement data.
+
 ## Getting started
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Search for “Google Enhanced Conversions” in the Destinations Catalog, and select the destination.

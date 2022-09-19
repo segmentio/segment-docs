@@ -1,6 +1,7 @@
 ---
 title: 'Creating a JavaScript web source and Google Analytics destination'
 sidebar: 'Tutorial: Google Analytics Destination'
+published: false
 ---
 
 Segment makes it easy to collect data from cloud services (for example, advertising, helpdesk, and marketing) and send it to many destination services (for example, CRM services and data warehouses).

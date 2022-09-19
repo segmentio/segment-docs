@@ -17,12 +17,14 @@
 (?:U|u)rls?\b
 adset
 Adwords
+Aircall
 allowlist
 Amberflo
 Appboy
 Appsflyer
 async
 background(?:ed|ing)
+Bento
 Blitzllama
 blocklist
 Bluedot
@@ -71,6 +73,7 @@ Jimo
 Jivox
 Kameleoon
 Kissmetrics
+Leanplum
 Lightbox
 Littledata
 Mailchimp
@@ -92,8 +95,10 @@ param(:?s)
 Pardot
 performant
 Preact
+Qualtrics
 Rokt
 Selligent
+Sendgrid
 Shopify
 signup
 Skalin

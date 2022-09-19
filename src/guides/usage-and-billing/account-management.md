@@ -28,7 +28,7 @@ You should also change your write keys for each source and remove all Segment sn
 
 ## What happens if I change my workspace name or slug?
 
-Changing your workspace name or slug won't impact any sources or destinations you've already configured. If you're using [Segment's Config API](/docs/config-api/), though, you'll need to change the slug in your request URLs.
+Changing your workspace name or slug won't impact any sources or destinations you've already configured. If you're using [Segment's Public API](/docs/api), you'll need to change the slug in your request URLs.
 
 ## Can I recover a source or workspace after I delete it?
 

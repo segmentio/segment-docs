@@ -306,10 +306,8 @@ $ npx typewriter
 
 ## API Token Configuration
 
-Typewriter requires a Segment API token to fetch Tracking Plans from the [Segment Public API](https://api.segmentapis.com/docs/).
+Typewriter requires a Segment API token to fetch Tracking Plans from the [Segment Public API](https://docs.segmentapis.com/).
 
-> info ""
-> If you use a previous version of Typewriter that fetches tracking plans from the [Segment Config API](/docs/config-api/) and would like to upgrade to the new version of Typewriter, generate a new API token by following the steps below.
 
 You must be a workspace owner to create Segment API tokens.
 
@@ -392,10 +390,10 @@ scripts:
 
 client:
   # Which Segment SDK you are generating for.
-  # Valid values: analytics.js, analytics-node, analytics-ios, analytics-android.
+  # Valid values: analytics.js, analytics-node, analytics-react-native, swift, kotlin.
   sdk: analytics-node
   # The target language for your Typewriter client.
-  # Valid values: javascript, typescript, java, objective-c, swift.
+  # Valid values: javascript, typescript, kotlin, swift.
   language: typescript
 
 trackingPlans:
