@@ -13,7 +13,7 @@ versions:
 
 {% include content/plan-grid.md name="actions" %}
 
-Intercom is a customer communications platform. It shows you who is using your product and makes it easy to personally communicate with your users with targeted content, behavior-driven messages, and conversational support.
+Intercom is a customer communications platform that shows you who is using your product. Intercom allows you to personally communicate with your users with targeted content, behavior-driven messages, and conversational support.
 
 When you use the Intercom Cloud Mode (Actions) destination, Segment will send your data to [Intercom's REST API](https://developers.intercom.com/building-apps/docs/rest-apis){:target="_blank"}.
 
@@ -25,13 +25,13 @@ Intercom Cloud Mode (Actions) provides the following benefits over the classic I
 
 - **Fewer settings.** Data mapping for actions-based destinations happens during configuration, which eliminates the need for most settings. 
 - **Clearer mapping of data.** Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to the destination.
-- **Granular control over data sent.** You can customize the conditions under which the events will be sent to Intercom. 
-- **Support for lead creation.** You can now create contacts with a role of `lead`, associate them with a company, send events for them, and convert them to a `user`.
+- **Granular control over data sent.** You can customize the conditions under which the events are sent to Intercom. 
+- **Support for lead creation.** You can create contacts with a role of `lead`, associate them with a company, send events for them, and convert them to a `user`.
 
 
-## Getting Started
+## Getting started
 
-1. From the Segment web app, click **Catalog**.
+1. From the Segment web app, navigate to **Connections > Catalog**.
 2. Search for **Intercom Cloud Mode (Actions)** in the Destinations Catalog, and select the destination.
 3. Click **Configure Intercom Cloud Mode (Actions)**. 
 4. Select the source that will send data to Intercom Cloud Mode (Actions) and follow the steps to name your destination.

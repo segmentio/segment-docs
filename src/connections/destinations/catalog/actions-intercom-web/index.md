@@ -13,9 +13,9 @@ versions:
 
 {% include content/plan-grid.md name="actions" %}
 
-Intercom is a customer communications platform. It shows you who is using your product and makes it easy to personally communicate with your users with targeted content, behavior-driven messages, and conversational support.
+Intercom is a customer communications platform that shows you who is using your product. Intercom allows you to personally communicate with your users with targeted content, behavior-driven messages, and conversational support.
 
-When you use the Intercom Web (Actions) destination, Segment will load the [Intercom JavaScript library](https://developers.intercom.com/installing-intercom/docs/intercom-for-web){:target="_blank"} for you. The Intercom library enables you to track your user’s events on your website and interact with the Intercom messenger window.
+When you use the Intercom Web (Actions) destination, Segment loads the [Intercom JavaScript library](https://developers.intercom.com/installing-intercom/docs/intercom-for-web){:target="_blank"} for you. The Intercom library enables you to track your user’s events on your website and interact with the Intercom messenger window.
 
 > info ""
 > The Intercom Web (Actions) destination is in beta and is in active development. Some functionality may change before it becomes generally available.
@@ -25,12 +25,12 @@ Intercom Web (Actions) provides the following benefits over the classic Intercom
 
 - **Fewer settings.** Data mapping for actions-based destinations happens during configuration, which eliminates the need for most settings. 
 - **Clearer mapping of data.** Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to the destination.
-- **Granular control over data sent.** You can customize the conditions under which the events will be sent to Intercom. 
-- **Selectively show the Intercom chat widget.**
+- **Granular control over data sent.** You can customize the conditions under which the events are sent to Intercom. 
+- **Selectively shows the Intercom chat widget.**
 
 ## Getting Started
 
-1. From the Segment web app, click **Catalog**.
+1. From the Segment web app, navigate to **Connections > Catalog**.
 2. Search for **Intercom Web (Actions)** in the Destinations Catalog, and select the destination.
 3. Click **Configure Intercom Web (Actions)**. 
 4. Select the web source that will send data to Intercom Web (Actions) and follow the steps to name your destination. The web source chosen must use [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/). 
