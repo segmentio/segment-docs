@@ -17,7 +17,7 @@ Before you enable Selligent Marketing Cloud in your Destination page, validate w
 1. Login into your *Selligent Marketing Cloud* environment.
 2. Within the *Selligent Marketing Cloud* module click the wheel icon at the bottom-left corner to access the general configuration panel:
 ![1](images/1.png)
-1. Navigate tothe "Access Management" tab and select "Service Accounts":
+1. Navigate to the "Access Management" tab and select "Service Accounts":
 ![2](images/2.png)
 4. To create a new account click on the "New" icon:
 ![3](images/3.png)
@@ -40,7 +40,7 @@ You can then proceed to configure your destination.
 
 ## Identify
 
-If you haven't had a chance to review the Segment spec, please take time to review and to understand what the [`identify` method](/docs/spec/identify/) does.
+If you haven't had a chance to review the Segment spec, please take time to review and to understand what the [`identify` method](/docs/connections/spec/identify/) does.
 
 An example call can look like:
 
@@ -57,7 +57,7 @@ Identify calls will be sent to *Selligent Marketing Cloud* as an `identify` even
 
 ## Track
 
-If you haven't had a chance to review the Segment spec, please take time to review to understand what the [`track` method](/docs/spec/track/) can do. 
+If you haven't had a chance to review the Segment spec, please take time to review to understand what the [`track` method](/docs/connections/spec/track/) can do. 
 
 An example call can look like:
 
@@ -73,7 +73,7 @@ Track calls will be sent to *Selligent Marketing Cloud* as a `track` event.
 
 ## Group
 
-If you haven't had a chance to review the Segment spec, please take time to review to understand what the [`group` method](/docs/spec/group/) can do. 
+If you haven't had a chance to review the Segment spec, please take time to review to understand what the [`group` method](/docs/connections/spec/group/) can do. 
 
 An example call can look like:
 
@@ -100,7 +100,7 @@ Segment sends Group calls to *Selligent Marketing Cloud* as a `group` event. The
 
 ## Alias
 
-If you haven't had a chance to review the Segment spec, please take time to review to understand what the [`alias` method](/docs/spec/alias/) can do. 
+If you haven't had a chance to review the Segment spec, please take time to review to understand what the [`alias` method](/docs/connections/spec/alias/) can do. 
 
 An example call can look like:
 
@@ -112,7 +112,7 @@ Track calls will be sent to *Selligent Marketing Cloud* as a `alias` event.
 
 ## Page
 
-If you haven't had a chance to review the Segment spec, please take time to review to understand what the [`page` method](/docs/spec/page/) can do. 
+If you haven't had a chance to review the Segment spec, please take time to review to understand what the [`page` method](/docs/connections/spec/page/) can do. 
 
 An example call can look like:
 ```js
@@ -125,7 +125,7 @@ Track calls will be sent to *Selligent Marketing Cloud* as a `page` event.
 
 ## Screen
 
-If you haven't had a chance to review the Segment spec, please take time to review to understand what the [`screen` method](/docs/spec/screen/) can do. 
+If you haven't had a chance to review the Segment spec, please take time to review to understand what the [`screen` method](/docs/connections/spec/screen/) can do. 
 
 An example call in Objective C can look like:
 

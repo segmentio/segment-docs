@@ -1,5 +1,7 @@
 ---
 title: 'Native Mobile Spec'
+redirect_from:
+  - '/spec/mobile'
 ---
 
 One of the core components of the Segment [Spec](/docs/connections/spec/) is the [`track`](/docs/connections/spec/track) method. It records any arbitrary event that the user has triggered. For Mobile tracking, in addition to `screen` calls, you'll want to send **specific event names** that Segment recognizes semantically. That way, we can transform them correctly before sending them off to downstream destinations.
@@ -19,20 +21,38 @@ These events pair nicely with Segment's [ecommerce spec](/docs/connections/spec/
 The Segment Native Mobile Spec includes the following semantic events:
 
 **Application Lifecycle Events**
-- [Application Installed](#application-installed)
-- [Application Opened](#application-opened)
-- [Application Updated](#application-updated)
-- [Application Backgrounded](#application-backgrounded)
-- [Application Crashed](#application-crashed)
-- [Application Uninstalled](#application-uninstalled)
+- [Overview of events](#overview-of-events)
+- [Lifecycle events](#lifecycle-events)
+  - [Application Installed](#application-installed)
+  - [Application Opened](#application-opened)
+  - [Application Backgrounded](#application-backgrounded)
+  - [Application Updated](#application-updated)
+  - [Application Uninstalled](#application-uninstalled)
+  - [Application Crashed](#application-crashed)
+- [Campaign events](#campaign-events)
+  - [Install Attributed](#install-attributed)
+  - [Push Notification Received](#push-notification-received)
+  - [Push Notification Tapped](#push-notification-tapped)
+  - [Push Notification Bounced](#push-notification-bounced)
+  - [Deep Link Opened](#deep-link-opened)
+  - [Deep Link Clicked](#deep-link-clicked)
 
 **Campaign Events**
-- [Push Notification Received](#push-notification-received)
-- [Push Notification Tapped](#push-notification-tapped)
-- [Push Notification Bounced](#push-notification-bounced)
-- [Install Attributed](#install-attributed)
-- [Deep Link Clicked](#deep-link-clicked)
-- [Deep Link Opened](#deep-link-opened)
+- [Overview of events](#overview-of-events)
+- [Lifecycle events](#lifecycle-events)
+  - [Application Installed](#application-installed)
+  - [Application Opened](#application-opened)
+  - [Application Backgrounded](#application-backgrounded)
+  - [Application Updated](#application-updated)
+  - [Application Uninstalled](#application-uninstalled)
+  - [Application Crashed](#application-crashed)
+- [Campaign events](#campaign-events)
+  - [Install Attributed](#install-attributed)
+  - [Push Notification Received](#push-notification-received)
+  - [Push Notification Tapped](#push-notification-tapped)
+  - [Push Notification Bounced](#push-notification-bounced)
+  - [Deep Link Opened](#deep-link-opened)
+  - [Deep Link Clicked](#deep-link-clicked)
 
 
 Segment recommends using the above event names if you're going to be integrating the events yourself. This will ensure that they can be mapped effectively in downstream tools.

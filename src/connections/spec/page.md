@@ -1,5 +1,7 @@
 ---
 title: 'Spec: Page'
+redirect_from:
+  - '/spec/page'
 ---
 
 The `page` call lets you record whenever a user sees a page of your website, along with any optional properties about the page. Calling `page` or [`screen`](/docs/connections/spec/screen/) in a Segment [source](/docs/connections/sources/) is one of the first steps to getting started with Segment.
