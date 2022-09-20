@@ -25,6 +25,8 @@ id: 620feaa207e70f6c6a765ff7
 
 <!-- In the section below, explain the value of this actions-based destination over the classic version, if applicable. If you don't have a classic version of the destination, remove this section. -->
 
+This destination is maintained by MoEngage. For any issues with the destination, [contact the MoEngage Support team](mailto:support@moengage.com).
+
 ## Benefits of MoEngage (Actions) vs MoEngage Classic
 
 MoEngage (Actions) provides the following benefits over the MoEngage Classic destination:
