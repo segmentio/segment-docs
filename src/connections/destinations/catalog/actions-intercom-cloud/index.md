@@ -42,12 +42,10 @@ Intercom Cloud Mode (Actions) provides the following benefits over the classic I
 
 {% include components/actions-fields.html settings="true"%}
 
-{% include components/actions-fields.html%}
-
-## FAQs 
+## FAQ & Troubleshooting
 
 ### Why is a company I created missing from my Intercom dashboard?
-If a company is created without an attached user, the company won't appear on Intercom's dashboard. This is expected. Once a user is attached to the company, the company appears in the list of companies.
+If a company is created without an attached user, the company does not appear on Intercom's dashboard. This is expected. Once a user is attached to the company, it should appear in the list of companies.
 
 ### Why isn’t a user getting attached to a company?
-When using the Identify Company action, Segment first creates or updates a company. In the same action, Segment also attaches the user in your group call to that company. If the user does not exist in Intercom when the action runs, Segment will create and update the company but not attach the user. Please ensure the user is created in Intercom first.
+When you use the Identify Company action, Segment creates or updates a company's information. In the same action, Segment also attaches the user in your group call to that company. If the user doesn't exist in Intercom when the action runs, Segment creates or updates the company but not attach the user. Ensure the user is created in Intercom first.
