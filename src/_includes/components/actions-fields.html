@@ -16,6 +16,7 @@
 {% assign settings = currentIntegration.settings %}
 {% assign actions = currentIntegration.actions %}
 {% assign presets = currentIntegration.presets %}
+{% assign hiddenActions = page.hide_action | map: "id"%}
 
 
 {% if settings.size > 0 %}
@@ -81,7 +82,6 @@
 
 ## Available Actions
 
-
 Build your own Mappings! Combine supported [triggers](/docs/connections/destinations/actions/#components-of-a-destination-action) with the following {{currentIntegration.display_name | remove: " (Actions)"}}-supported actions:
 
 <div class="premonition info">
@@ -93,10 +93,13 @@ Build your own Mappings! Combine supported [triggers](/docs/connections/destinat
 </div>
 
 {% for action in actions %}
+{% unless hiddenActions contains action.id %}
 - [{{action.name}}](#{{action.name | slugify}})
+{% endunless %}
 {% endfor %}
 
 {% for action in actions %}
+{% unless hiddenActions contains action.id %}
 ### {{action.name}}
 <p>{{action.description | markdownify}}</p>
 <p>{{action.name}} is a <strong>{{action.platform | capitalize}}</strong> action. The default Trigger is:</p> <code>{{action.defaultTrigger}}</code>
@@ -136,6 +139,6 @@ Build your own Mappings! Combine supported [triggers](/docs/connections/destinat
 {% else %}
 This action does not have any fields.
 {% endif %}
-
+{% endunless %}
 {% endfor %}
 
