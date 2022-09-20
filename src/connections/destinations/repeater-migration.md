@@ -46,7 +46,7 @@ You can create a QA instance of your destination to verify that it is configured
 1. If you created a QA instance of the Repeater and you created a QA destination instance, you can test this process before you use production data.
 
 
-2. You can disable the repeater and enable the new destination instance manually in the Segment web app, or by using the [Segment Public API](/docs/-api/).
+2. You can disable the repeater and enable the new destination instance manually in the Segment web app, or by using the [Segment Public API](/docs/public-api/).
 
    - **If the destination can de-duplicate events**, enable the new instance of the destination, and _then_ disable the Repeater.
    - **If the destination does not de-duplicate events**, you can disable the Repeater and then enable the new instance of the destination.

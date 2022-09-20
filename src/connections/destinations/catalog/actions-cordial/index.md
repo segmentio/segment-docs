@@ -13,6 +13,8 @@ redirect_from:
 > info "Good to know"
 > This page is about the [Actions-framework](/docs/connections/destinations/actions/) Cordial Segment destination. There's also a page about the [non-Actions Cordial destination](/docs/connections/destinations/catalog/cordialio/). Both of these destinations receive data from Segment.
 
+This destination is maintained by Cordial. For any issues with the destination, [contact the Cordial Support team](mailto:support@cordial.com).
+
 ## Benefits of Cordial (Actions) vs Cordial Classic
 
 Cordial (Actions) provides the following benefits over the classic Cordial destination:

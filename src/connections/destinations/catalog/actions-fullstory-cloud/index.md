@@ -3,6 +3,11 @@ title: FullStory Cloud Mode (Actions)
 hide-boilerplate: true
 hide-dossier: false
 id: 62d9aa9899b06480f83e8a66
+versions:
+  - name: FullStory (Classic)
+    link: /docs/connections/destinations/catalog/fullstory
+  - name: FullStory Device Mode (Actions)
+    link: /docs/connections/destinations/catalog/actions-fullstory
 ---
 {% include content/plan-grid.md name="actions" %}
 
