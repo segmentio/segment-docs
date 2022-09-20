@@ -2,7 +2,6 @@
 title: SendGrid Source
 id: jhr8dT2yHn
 ---
-{% include content/source-region-unsupported.md %}
 
 [SendGrid](http://sendgrid.com) is a trusted platform for transactional email and email marketing.
 
