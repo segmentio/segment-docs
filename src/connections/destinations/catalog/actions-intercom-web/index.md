@@ -40,5 +40,3 @@ Intercom Web (Actions) provides the following benefits over the classic Intercom
 7. Enable the destination and configured mappings.
 
 {% include components/actions-fields.html settings="true"%}
-
-{% include components/actions-fields.html%}
