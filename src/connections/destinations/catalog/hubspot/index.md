@@ -52,7 +52,7 @@ analytics.identify('user1234', {
 ```
 
 > info ""
-> HubSpot's device-mode integration has two conditions for Identify to create or update a contact. Identify calls must include a `traits.email` value and need to go with a Page or Track call (after the Identify one). You can read more from HubSpot's documentation [here](https://developers.hubspot.com/docs/methods/tracking_code_api/identify_visitor){:target="_blank"}. If you are using HubSpot's cloud-mode integration, an Identify call will update records without the need for a Page or Track call.
+> HubSpot's device-mode integration has two conditions for Identify to create or update a contact: 1) Identify calls must include a `traits.email` value. 2) A Page or Track call must follow an Identify call. You can read more from [HubSpot's documentation](https://developers.hubspot.com/docs/methods/tracking_code_api/identify_visitor){:target="_blank"}. If you are using HubSpot's cloud-mode integration, an Identify call updates records without the need for a Page or Track call.
 
 HubSpot does not accept any trait keys that contain upper case letters or spaces. Segment converts any custom traits you send to lower case, and replaces spaces with an underscore.
 
