@@ -6,8 +6,10 @@ id: 6141153ee7500f15d3838703
 redirect_from:
   - '/connections/destinations/catalog/vendor-fullstory'
 versions:
-  - name: Fullstory (Classic)
+  - name: FullStory (Classic)
     link: /docs/connections/destinations/catalog/fullstory
+  - name: FullStory Cloud Mode (Actions)
+    link: /docs/connections/destinations/actions-fullstory-cloud
 ---
 {% include content/plan-grid.md name="actions" %}
 
