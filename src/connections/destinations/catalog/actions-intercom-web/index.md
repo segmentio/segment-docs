@@ -5,6 +5,11 @@ hide-dossier: false
 hidden: true
 private: true
 id: 62d9daff84a6bf190da9f592
+hide_action:
+  - id: 5W984Qq59XEQnFYKXKHGeZ
+    name: "Update User"
+  - id: nqdBJoXJwFrzwoL1y45LYt
+    name: "Update Company"
 versions:
   - name: 'Intercom Cloud Mode (Actions)'
     link: '/docs/connections/destinations/catalog/actions-intercom-cloud'
