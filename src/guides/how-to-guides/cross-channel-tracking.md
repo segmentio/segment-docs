@@ -158,7 +158,7 @@ If you do move key checkout events to the server side, you will have to manually
 
 *   **UTM parameters**: collecting the UTM params will allow you to tie conversion events to your marketing campaign or activities. This is valuable in that you can immediately measure performance and calculate ROI on your campaigns.
 
-*   **IP address**: the IP address can provide location intelligence for your customers. This means you can personalize your shopping experience or engagement emails with inventor that might be more relevant depending on your customers' locations.
+*   **IP address**: the IP address can provide location intelligence for your customers. This means you can personalize your shopping experience or engagement emails with inventory that might be more relevant depending on your customers' locations.
 
 *   **User Agent**: the User Agent will inform you of your customers' preferred device and shopping experience. Are they converting on a mobile web browser? Native app? Or on their laptop?
 

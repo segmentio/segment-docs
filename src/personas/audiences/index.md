@@ -177,7 +177,7 @@ You can read the [full Profile API docs](/docs/personas/profile-api/) to learn m
 
 ## Download your Audience as a CSV file
 
-You can download a copy of your Audience by visiting the the Audience overview page.
+You can download a copy of your Audience by visiting the Audience overview page.
 ![Downloading an Audience as a CSV file](/docs/personas/images/audience_overview.png)
 Before you can download the CSV, you will need to generate it. There are three different options for formatting:
 

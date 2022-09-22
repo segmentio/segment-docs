@@ -37,10 +37,10 @@ Intercom Cloud Mode (Actions) provides the following benefits over the classic I
 3. Click **Configure Intercom Cloud Mode (Actions)**.
 4. Select the source that will send data to Intercom Cloud Mode (Actions) and follow the steps to name your destination.
 5. On the **Settings** tab, authenticate with Intercom using OAuth.
-6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 7. Enable the destination and configured mappings.
 
-{% include components/actions-fields.html settings="true"%}
+{% include components/actions-fields.html %}
 
 ## FAQ & Troubleshooting
 
@@ -48,4 +48,4 @@ Intercom Cloud Mode (Actions) provides the following benefits over the classic I
 If a company is created without an attached user, the company does not appear on Intercom's dashboard. This is expected. Once a user is attached to the company, it should appear in the list of companies.
 
 ### Why isn’t a user getting attached to a company?
-When you use the Identify Company action, Segment creates or updates a company's information. In the same action, Segment also attaches the user in your group call to that company. If the user doesn't exist in Intercom when the action runs, Segment creates or updates the company but not attach the user. Ensure the user is created in Intercom first.
+When you use the Identify Company action, Segment creates or updates a company's information. In the same action, Segment also attaches the user in your group call to that company. If the user doesn't exist in Intercom when the action runs, Segment creates or updates the company but can't attach the user. Ensure the user is created in Intercom first.
