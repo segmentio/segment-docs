@@ -13,7 +13,7 @@
   {% unless dest.hidden == true %}
   {% if dest.actions.size > 0 %}
   <tr>
-    <td><a href="/docs/{{dest.url}}">{{dest.name}} - {{dest.actions.size}}</a></td>
+    <td><a href="/docs/{{dest.url}}">{{dest.name}}</a></td>
     <td>{% if dest.status == "PUBLIC_BETA" %}Beta {% else %} GA {%endif%}</td>
   </tr>
 
