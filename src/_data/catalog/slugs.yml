@@ -44,3 +44,5 @@
   override: "actions-mixpanel"
 - original: "rokt"
   override: "rokt-integration"
+- original: "salesforce-actions"
+  override: "actions-salesforce"
