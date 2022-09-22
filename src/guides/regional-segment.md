@@ -72,7 +72,7 @@ Use Segment's custom CIDR `3.251.148.96/29` while authorizing Segment to write i
 ## Known Limitations
 -   Regional Segment is currently limited to the EU. Future expansion of Regional Segment beyond the EU is under evaluation by Segment Product and R&D.
     
--   Edge proxies have been deprecated. Customers still using edge proxies may have US-based IP addresses show up in event payloads. For EU customers, it is recommended that a Regionalized EU workspace is used instead For non-EU customers, it is recommended that the US-based endpoint (`api.segment.io`) is used to preserve client IP addresses.
+-   Edge proxies are deprecated. Customers using edge proxies may see US-based IP addresses in event payloads. For EU customers, Segment recommends using a Regionalized EU workspace. For non-EU customers, Segment recommends using the US-based endpoint (`api.segment.io`) to preserve client IP addresses.
 
 ## Destination support and Regional endpoint availability
 
