@@ -41,7 +41,7 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 ## Getting Started
 
 1. **Login** to your Shopify Store account.
-2. Go the [Shopify app store listing](https://apps.shopify.com/segment-com-by-littledata){:target="_blank"} for \*\*\_Segment.com by Littledata_\*\*.
+2. Go the [Shopify app store listing](https://apps.shopify.com/segment-com-by-littledata){:target="_blank"} for **Segment.com by Littledata**.
    ![](images/Nd5L0C6.png)
 3. Click **Add app** to begin the installation process.
 4. **Choose a Littledata subscription** suitable for your store's volume of monthly orders.
@@ -157,7 +157,7 @@ To support seamless customer tracking the [Mixpanel](/docs/connections/destinati
 
 All [recurring orders in the Shopify checkout](https://help.littledata.io/posts/tracking-subscription-orders-in-the-shopify-checkout/){:target="\_blank"}, from any subscription app, are tracked as Order Completed events.
 
-Additional subscription lifecycle events via Littledata's [ReCharge connection](https://www.littledata.io/connections/recharge){:target="\_blank"} are available in cloud-mode destinations. See the [Track (custom)](https://docs.google.com/spreadsheets/d/1aljowRhMU9_7uGXmcipbP1Y14S4cOSdXGQA2Vx7BHko/edit#gid=1155311093){:target="\_blank"} tab of the event schema.
+Additional subscription lifecycle events through Littledata's [ReCharge connection](https://www.littledata.io/connections/recharge){:target="\_blank"} are available in cloud-mode destinations. See the [Track (custom)](https://docs.google.com/spreadsheets/d/1aljowRhMU9_7uGXmcipbP1Y14S4cOSdXGQA2Vx7BHko/edit#gid=1155311093){:target="\_blank"} tab of the event schema.
 
 | Event Name               | Description                                                                                                 |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------- |
