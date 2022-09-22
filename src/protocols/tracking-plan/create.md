@@ -21,11 +21,19 @@ Tracking Plans are stored in workspaces and can be connected to one or more Sour
 
 To create a new Tracking Plan:
 1. Contact your Segment account team to enable the Protocols features in your workspace.
-2. Once enabled, click on **Protocols** in the left bar navigation.
+2. Once enabled, click **Protocols** in the left bar navigation.
 3. Click **New Tracking Plan**.
 4. Add events, properties, traits and filters in the Tracking Plan editor.
   - You'll see an option to import events and traits to your tracking plan from a source in your workspace. This option is great if you want to get started with your current events. Note that Segment infers data types, but often can't if several data types are sent for a specific category.
 
+
+## Copy a Tracking Plan
+
+To create a copy of an existing Tracking Plan:
+
+1. Click **Protocols** in the left navigation bar.
+2. On the row of the Tracking Plan you want to copy, open the contextual menu(...), and select Duplicate Tracking Plan.
+3. Enter a name for the new Tracking Plan instance, and click Duplicate.
 ### Tracking Plan Columns
 The Tracking Plan editor is organized as a spreadsheet to help you  add new events and properties, and edit the relevant fields for each. Like a spreadsheet, you can navigate across cells in a single event with your arrow keys and press enter to edit a cell.
 
