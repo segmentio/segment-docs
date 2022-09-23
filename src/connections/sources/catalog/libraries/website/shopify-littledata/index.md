@@ -136,7 +136,7 @@ The following traits are included with an Identify call:
 | `marketingOptIn`             | The `marketing_opt_in` field from [Shopify customer](https://shopify.dev/docs/admin-api/rest/reference/customers/customer)                                                 | String        |
 | `phone`                      | The customer's phone number                                                                                                                                                | String        |
 | `purchaseCount`              | The number of orders by this customer                                                                                                                                      | Integer       |
-| `state`                      | Shopify [customer state](https://shopify.dev/api/admin-graphql/2022-07/enums/customerstate) - `enabled`, `disabled`, `invited` to create an account or customer `declined` | String        |
+| `state`                      | The Shopify [customer state](https://shopify.dev/api/admin-graphql/2022-07/enums/customerstate){:target="_blank"}. This can be `enabled`, `disabled`, `invited` to create an account, or customer `declined` | String        |
 | `tags`                       | The custom tags [applied to the customer](https://shopify.dev/docs/admin-api/rest/reference/customers/customer)                                                            | String        |
 | `userId`                     | Chosen user identifier, defaulting to Shopify Customer ID                                                                                                                  | Double        |
 | `verified_email` (v2)        | Whether the customer has verified their email                                                                                                                              | Boolean       |
@@ -238,7 +238,7 @@ This data import will include all the [event properties](#event-properties) usua
 
 ## Advanced settings
 
-You can customize Littledata's Shopify source from the [data pipeline settings](https://help.littledata.io/posts/data-pipeline-settings/) in the Littledata admin. The general settings affect how we handle details such as orders, products and pageviews. The more advanced settings include:
+You can customize Littledata's Shopify source from the [data pipeline settings](https://help.littledata.io/posts/data-pipeline-settings/){:target="\_blank"} in the Littledata admin. The general settings affect how Littledata handles details such as orders, products and pageviews. The more advanced settings include: `cookiesToTrack` and `CDNForAnalyticsJS`.
 
 ### cookiesToTrack
 
