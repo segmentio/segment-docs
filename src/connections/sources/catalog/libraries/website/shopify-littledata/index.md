@@ -13,10 +13,10 @@ Littledata is available as an independent [Shopify App](https://apps.shopify.com
 
 #### Client-side (device mode) tracking
 
-During the [installation process](https://help.littledata.io/posts/segment-installation-guide/){:target="\_blank"}:
+After the [installation process](https://help.littledata.io/posts/segment-installation-guide/){:target="\_blank"}:
 
-- Segment's Analytics.js 2.0 library is loaded on all pages, except for the checkout
-- Includes a LittledataLayer data layer for all pages
+- Segment's Analytics.js 2.0 library loads on all pages, except for the checkout.
+- All pages Include a LittledataLayer data layer.
 - Loads a minified tracking script, hosted on a content delivery network (CDN)
 - Enables sending of device-mode ecommerce events to all Segment destinations
 - Segment's anonymous ID and Google Analytics' client ID is passed to our servers to ensure consistent user journey tracking
