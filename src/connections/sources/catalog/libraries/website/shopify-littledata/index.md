@@ -17,9 +17,9 @@ After the [installation process](https://help.littledata.io/posts/segment-insta
 
 - Segment's Analytics.js 2.0 library loads on all pages, except for the checkout.
 - All pages include a LittledataLayer data layer.
-- Loads a minified tracking script, hosted on a content delivery network (CDN)
-- Enables sending of device-mode ecommerce events to all Segment destinations
-- Segment's anonymous ID and Google Analytics' client ID is passed to our servers to ensure consistent user journey tracking
+- Pages Load a minified tracking script, hosted on a content delivery network (CDN)
+- Device-mode e-commerce events can send to all Segment destinations
+- Segment's anonymous ID and Google Analytics' client ID passes to Littledata's servers to ensure consistent user journey tracking
 
 #### Server-side (cloud mode) tracking
 
