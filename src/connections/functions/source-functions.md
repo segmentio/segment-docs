@@ -398,3 +398,7 @@ The execution time limit is five seconds, however Segment strongly recommends th
 #### Does Segment alter incoming payloads?
 
 Segment alphabetizes payload fields that come in to **deployed** Source Functions. Segment doesn't alphabetize payloads in the Functions tester. If you need to verify the exact payload that hits a Source Function, alphabetize it first. You can then make sure it matches what the Source Function ingests.
+
+#### Does the source function allow GET requests?
+
+GET requests are not supported with a source function, and the only way for the source function to receive data is through a POST request.
