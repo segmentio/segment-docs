@@ -1,7 +1,6 @@
 ---
 title: Email Template Editor
-layout: engage
-engage: true
+plan: engage-premier
 ---
 Use Twilio Engage to build email templates with a *what you see is what you get* (WYSIWYG) visual editor. Use drag and drop tools to design the template layout and include user profile traits to personalize the message for each recipient.
 

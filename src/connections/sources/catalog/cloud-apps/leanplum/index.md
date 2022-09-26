@@ -75,4 +75,4 @@ If you experience any issues with how the events arrive in Segment, [contact the
 
 ## Send data to Leanplum
 
-Segment and Leanplum work better together when connected bi-directionally. With the Leanplum Destination, you can send client-side or server-side data, as well as connect Personas; which you can then turn into precisely targeted personalized messages. Learn more at our [Leanplum Destination docs](https://segment.com/docs/connections/destinations/catalog/leanplum/).
+Segment and Leanplum work better together when connected bi-directionally. With the Leanplum Destination, you can send client-side or server-side data, as well as connect Engage; which you can then turn into precisely targeted personalized messages. Learn more at our [Leanplum Destination docs](https://segment.com/docs/connections/destinations/catalog/leanplum/).

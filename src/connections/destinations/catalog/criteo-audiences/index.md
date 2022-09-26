@@ -21,7 +21,7 @@ Benefits of the Criteo Audiences (Actions) destination include:
 
 - **Fewer settings**: Unlike Criteo's Filter destination, this destination doesn't require any copy and paste code. You only need your Advertiser ID and Criteo API credentials.
 
-- **Criteo Audience**: You don't need a Criteo audience ID as the audience gets created on the fly using the Personas audience name. This enables the names of audience segments to be consistent across Segment and Criteo.
+- **Criteo Audience**: You don't need a Criteo audience ID as the audience gets created on the fly using the Engage audience name. This enables the names of audience segments to be consistent across Segment and Criteo.
 
 - **Batching events and support for large audiences**: This destination supports batching which enables Criteo to receive large audiences without discrepancies.
 
@@ -43,7 +43,7 @@ You will also need your Criteo Advertiser ID. Please reach out to your Criteo Ac
 
 3. Click **Configure Criteo Audiences**.
 
-4. Choose your **Personas** space for the Source as this destination only supports sending Personas Audiences to Criteo.
+4. Select the space in Engage to use as the Source as this destination only supports sending Engage Audiences to Criteo.
 
 5. On the **Settings** tab, name your destination. For example, `Criteo audiences – <audience name>`.
 
@@ -61,14 +61,14 @@ You will also need your Criteo Advertiser ID. Please reach out to your Criteo Ac
 
 9. Go to the **Settings** tab and **Enable** the destination.
 
-10. Go to your **Personas** space and click the **Audiences** tab. Select the source audience that you want to send to your Criteo Audiences destination.
+10. Select your space, and navigate to **Engage > Audiences**. Select the source audience that you want to send to your Criteo Audiences destination.
 
 11. Click **Add Destinations** and select the Criteo Audience destination you created. In the settings that appear on the right-hand side, toggle the **Send Track** option on and disable **Send Identify**. Click **Save**. 
 
 Your Criteo destination is now ready to receive audiences, and your Persona audiences now reflect in your Criteo Advertiser dashboard. Be aware, it takes 12-24 hours for the number of identifiers to populate in Criteo's Management Center.
 
 > warning ""
-> **NOTE**: You can connect **ONE** personas audience to a single instance of Criteo Audience destination. If you have multiple audiences, repeat the above process to create a new Criteo audience destination and connect the audience to new destination each time.
+> You can connect **ONE** Engage audience to a single instance of Criteo Audience destination. If you have multiple audiences, repeat the above process to create a new Criteo audience destination and connect the audience to new destination each time.
 
 {% include components/actions-fields.html %}
 

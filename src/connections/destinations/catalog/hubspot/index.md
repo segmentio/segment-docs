@@ -221,43 +221,43 @@ analytics.ready(function(){
 })
 ```
 
-## Using HubSpot with Personas
+## Using HubSpot with Engage
 
-You can send computed traits and audiences that you create in Personas to HubSpot so you can use the data in live chat, automated emails, and other HubSpot features to personalize interactions with your customers.
+You can send computed traits and audiences that you create in Engage to HubSpot so you can use the data in live chat, automated emails, and other HubSpot features to personalize interactions with your customers.
 
 {% include content/lookback.md %}
 
 
 ### Syncing Custom Traits to HubSpot
 
-HubSpot requires that you create and define any custom traits in the HubSpot UI **before** you send any Personas data to HubSpot. If you try to sync a property from Segment that does not exist in HubSpot, the sync fails.
+HubSpot requires that you create and define any custom traits in the HubSpot UI **before** you send any Engage data to HubSpot. If you try to sync a property from Segment that does not exist in HubSpot, the sync fails.
 
 
 ### How it works: User-Level Traits and Audiences
 
-Personas sends **User-Level data** to HubSpot to update properties on a user (or `contacts` in HubSpot) record, using an **Identify** call to add or update a standard  `Property` or when Segment computes a trait, and a **Track** call when the user enters or exits an audience.
+Engage sends **User-Level data** to HubSpot to update properties on a user (or `contacts` in HubSpot) record, using an **Identify** call to add or update a standard  `Property` or when Segment computes a trait, and a **Track** call when the user enters or exits an audience.
 
-- **Computed Traits**: When the trait is first computed, Personas sends an **Identify** call to update the records of all users who are included in the computed trait. Each time the trait is computed after that, Personas sends a **Identify** call to HubSpot to update the values. For example, if a computed trait counts the number of times a user visits your pricing page, and the user visits your pricing page five times, Segment first sends an Identify call with the property `pricing_page_visits: 5`, then sends a Identify call when this number updates. This appears in HubSpot as a `Property` for the contact.
+- **Computed Traits**: When the trait is first computed, Engage sends an **Identify** call to update the records of all users who are included in the computed trait. Each time the trait is computed after that, Engage sends a **Identify** call to HubSpot to update the values. For example, if a computed trait counts the number of times a user visits your pricing page, and the user visits your pricing page five times, Segment first sends an Identify call with the property `pricing_page_visits: 5`, then sends a Identify call when this number updates. This appears in HubSpot as a `Property` for the contact.
 
-- **Audiences**: Personas uses an Identify call to add the name of the audience to the user's profile as a trait, and includes a boolean value that indicates if the user is a member of the audience. For example, when a user first completes an order in the last 30 days, Personas sends an Identify call with the property `order_completed_last_30days: true`.  When the user no longer satisfies these criteria (for example when it's been longer than 30 days since the last purchase), Personas uses a Identify call to set that value to `false`.  This appears as a `Property` for the contact in HubSpot. If using a **Track** call, events will be sent for `Audience Entered` or `Audience Exited`.
-    - When you first create an audience, Personas sends an Identify call for every user in the audience. Later syncs only update users which were added or removed from the audience since the last sync.
+- **Audiences**: Engage uses an Identify call to add the name of the audience to the user's profile as a trait, and includes a boolean value that indicates if the user is a member of the audience. For example, when a user first completes an order in the last 30 days, Engage sends an Identify call with the property `order_completed_last_30days: true`.  When the user no longer satisfies these criteria (for example when it's been longer than 30 days since the last purchase), Engage uses a Identify call to set that value to `false`.  This appears as a `Property` for the contact in HubSpot. If using a **Track** call, events will be sent for `Audience Entered` or `Audience Exited`.
+    - When you first create an audience, Engage sends an Identify call for every user in the audience. Later syncs only update users which were added or removed from the audience since the last sync.
 
 
 ### How it works: Account-Level Traits and Audiences
 
-Personas sends **Account-Level data** to HubSpot using **Identify** calls to add account traits to the users' profiles, and **Identify** calls to update the trait when it recomputes, and will send a **Track** call when the group enters or exits an audience. Users are added to an account using a single **Group** call, which appends a `groupID` to each user within the account.
+Engage sends **Account-Level data** to HubSpot using **Identify** calls to add account traits to the users' profiles, and **Identify** calls to update the trait when it recomputes, and will send a **Track** call when the group enters or exits an audience. Users are added to an account using a single **Group** call, which appends a `groupID` to each user within the account.
 
-- **Computed Traits**: When you build computed traits with Account-Level data, Personas computes for each account based on traits or aggregated user behavior. You can then export traits for each account, or for each user within an account. Personas adds a new trait (set as the name of the computed trait) to the user profiles for each user in the group, and sets the value of that computed trait.
+- **Computed Traits**: When you build computed traits with Account-Level data, Engage computes for each account based on traits or aggregated user behavior. You can then export traits for each account, or for each user within an account. Engage adds a new trait (set as the name of the computed trait) to the user profiles for each user in the group, and sets the value of that computed trait.
 
-    For example: Imagine you have a computed trait that counts the number of times that users from a specific company visit your pricing page. If five different users visit your pricing page once each, Personas sends an Identify call with the property `pricing_page_visits: 5` to each user in the group.
+    For example: Imagine you have a computed trait that counts the number of times that users from a specific company visit your pricing page. If five different users visit your pricing page once each, Engage sends an Identify call with the property `pricing_page_visits: 5` to each user in the group.
 
-- **Audiences**: When you build audiences with Account-Level data, Personas returns a set of accounts, or a set of users that match your criteria. Personas adds the name of the audience to the user's profile as a trait (both for individual users, and users within an account), and sets a boolean value to indicate if the user is in the audience. For example, if users in an account first complete an order in the last 30 days, Personas sends an Identify call with the property `order_completed_last_30days: true`. When the users in this Account no longer satisfy these criteria (for example if it's been more than 30 days since the last order), Personas sets that value to `false`. If using a **Track** call, events will be sent for `Audience Entered` or `Audience Exited`.
+- **Audiences**: When you build audiences with Account-Level data, Engage returns a set of accounts, or a set of users that match your criteria. Engage adds the name of the audience to the user's profile as a trait (both for individual users, and users within an account), and sets a boolean value to indicate if the user is in the audience. For example, if users in an account first complete an order in the last 30 days, Engage sends an Identify call with the property `order_completed_last_30days: true`. When the users in this Account no longer satisfy these criteria (for example if it's been more than 30 days since the last order), Engage sets that value to `false`. If using a **Track** call, events will be sent for `Audience Entered` or `Audience Exited`.
 
-    - When you first create the audience, Personas sends an Identify call for *every user in the account in that audience*. Later syncs only send updates for individual accounts and users which were added or removed since the last sync.
+    - When you first create the audience, Engage sends an Identify call for *every user in the account in that audience*. Later syncs only send updates for individual accounts and users which were added or removed since the last sync.
     **Note**: For user-level events or traits, you can specify `None of the users`, `Any users`, or `All users` when you build your audience criteria.
 
 
-### Creating Personas Audiences in HubSpot
+### Creating Engage Audiences in HubSpot
 
 1. Create your audience criteria and preview the audience in Segment. Click Select Destinations.
 
@@ -273,9 +273,9 @@ Personas sends **Account-Level data** to HubSpot using **Identify** calls to add
 
 
 4. Go to your HubSpot Settings.
-5. Create a new `property` in HubSpot for each audience you want HubSpot to receive from Personas.
+5. Create a new `property` in HubSpot for each audience you want HubSpot to receive from Engage.
    This is required because HubSpot's schema is explicitly defined.
-   You must do this *before* you send any Personas data from Segment to HubSpot.
+   You must do this *before* you send any Engage data from Segment to HubSpot.
 
    ![](images/hubspot-personas04.png)
 
@@ -284,7 +284,7 @@ Personas sends **Account-Level data** to HubSpot using **Identify** calls to add
    - For user-level Audiences, set the **Object Type** to `Contact` and the **Group** to `Contact information`.
    - For account-level Audiences, set the **Object type** to `Company` and the **Group** to `Company information`.
 
-7. Enter the label for the custom property, and make sure it matches the Audience Key you wrote down from the Personas audience builder (see the tip below). Click **Next**.
+7. Enter the label for the custom property, and make sure it matches the Audience Key you wrote down from the Engage audience builder (see the tip below). Click **Next**.
 
    > ✅ **Tip**: The audience label's “internal name” in HubSpot *must exactly match* the Segment  `audience key`. You can check this by clicking the `</>` icon to the right of the Label field, and making corrections.
 
@@ -299,14 +299,12 @@ Personas sends **Account-Level data** to HubSpot using **Identify** calls to add
    ![](images/hubspot-personas06.png)
 
 
-9. Back in the Personas Audience builder, click **Create Audience**. Personas sends any users that meet the audience criteria to HubSpot immediately.
+9. Back in the Engage Audience builder, click **Create Audience**. Engage sends any users that meet the audience criteria to HubSpot immediately.
 
 
 ### Verify the audience
 
-You can use the debugger in your Personas space to see the calls sent to HubSpot. Edit the URL below to replace YOUR_WORKSPACE and YOUR_PERSONAS_SPACE with the workspace and personas space you're working in.
-
-`https://app.segment.com/YOUR_WORKSPACE/sources/YOUR_PERSONAS_SPACE/debugger`
+You can use the [Profiles Debugger](/docs/profiles/debugger) to see the calls sent to HubSpot. 
 
 ![](images/hubspot-personas07.png)
 
@@ -320,11 +318,11 @@ You can also see this in the contact property history for each user record.
 
 
 
-## HubSpot Personas Details
+## HubSpot Engage Details
 
-- **Personas Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
+- **Engage Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
 - **Traits and Audiences created by**: Identify calls add and update traits and audiences as traits on the user, Track calls send events for `Audience Entered` and `Audience Exited`.
-- **Must create audience_name field before Personas can update those values?**: Yes, you must manually create Contact properties in Hubspot before you send Custom Traits or Audiences.
+- **Must create audience_name field before Engage can update those values?**: Yes, you must manually create Contact properties in Hubspot before you send Custom Traits or Audiences.
 - **Audience appears as**: A prose-text version of the audience name (for example, `Order Completed 30 Days: Yes`) where `Yes` indicates that the user is in the audience.
 - **Destination rate limit**: Yes. HubSpot's rate limit depends on what account tier you have in HubSpot, but is *usually* 100 calls per ten seconds, or 10 per second.
 - **Lookback window allowed**: Unlimited

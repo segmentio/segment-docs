@@ -1,7 +1,8 @@
 ---
 title: Journeys Key Terms
-layout: engage
-engage: true
+plan: engage-foundations
+redirect_from:
+  - "/personas/journeys/key-terms"
 ---
 
 
@@ -13,7 +14,7 @@ Keep the following terms in mind as you begin to explore Journeys.
 | Term              | Definition                                                                                                                           |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | Journey           | A multi-step workflow that progresses users through steps based on time logic, real-time customer interactions, and customer traits. |
-| Journey list view | The Journeys tab shows all Journeys in the selected Personas space.                                                                  |
+| Journey list view | The Journeys tab shows all Journeys in the selected Engage space.                                                                  |
 | Journey builder   | A visual canvas where you can view and edit step definitions and types.                                                              |
 | Journey overview  | A visual canvas where you can view all steps and definitions.                                     |
 

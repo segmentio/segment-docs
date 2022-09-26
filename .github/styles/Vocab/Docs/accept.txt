@@ -14,6 +14,7 @@
 (?:R|r)emarketing
 (?:U|u)nlinks?\b
 (?:U|u)nmaps?\b
+(?:U|u)ploader
 (?:U|u)rls?\b
 adset
 Adwords
@@ -42,6 +43,7 @@ datetime
 deeplink
 Dev
 Doubleclick
+enablement
 endcapture
 endfor
 endif
@@ -81,6 +83,7 @@ Mailmodo
 markdownify
 Marketo
 Matcha
+matchers
 measurability
 middleware
 Middleware
@@ -94,8 +97,10 @@ Optimizely
 param(:?s)
 Pardot
 performant
+Pinterest
 Preact
 Qualtrics
+Responsys
 Rokt
 Selligent
 Sendgrid

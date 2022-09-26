@@ -7,19 +7,13 @@ id: 54d190dbdb31d978f14a903b
 ---
 Salesforce Marketing Cloud (SFMC) provides digital marketing automation and analytics software and services. Marketers can use this software to create sophisticated multi-channel campaigns using the SFMC [Journey Builder](https://help.salesforce.com/articleView?id=mc_jb_journey_builder.htm&type=5). This is a campaign planning tool that helps you design and automate campaigns that guide customers through their journey with your brand, such as [Weekly Product Summary Emails](https://segment.com/recipes/product-summary-emails-salesforce/) that you can enable with Segment.
 
-> info "A note about ExactTarget"
-> ExactTarget was acquired by Salesforce in 2013 and renamed "Salesforce Marketing Cloud." At Segment we use the name "Salesforce Marketing Cloud" (or sometimes SFMC, for short), but the names "Salesforce Marketing Cloud" and "ExactTarget" refer to the same product.
-
-> success ""
-> **Good to know**: This page is about the Salesforce Marketing Cloud Segment destination, which receives data from Segment. There's also a page about the [Salesforce Marketing Cloud Segment source](/docs/connections/sources/catalog/cloud-apps/salesforce-marketing-cloud/), which sends data _to_ Segment!
-
 
 ### SFMC details
 
-| **Support for Personas**               | Yes                                                                  |
+| **Support for Engage**               | Yes                                                                  |
 | **Rate Limits**                        | 20 requests per second                                               |
 | **Identifiers Required**               | `userId` or `email`                                                |
-| **Identifiers Accepted from Personas** | `user_id, anonymous_id, email, ios.idfa, android.idfa, ga_client_id` |
+| **Identifiers Accepted from Engage** | `user_id, anonymous_id, email, ios.idfa, android.idfa, ga_client_id` |
 | **Client vs. Server-Side Connection**  | Server-side                                                          |
 
 
@@ -29,7 +23,7 @@ Segment sends data to SFMC using [Data Extensions](https://help.salesforce.com/a
 
 - **Data Extensions** are tables that contain your data. When this data arrives in SFMC, you can use it to create targeted marketing campaigns using push notifications and emails. You can view and query Data Extensions using the Journey Builder in SFMC. During the set up process, you will create a Data Extensions for Identify calls, and one for each unique Track call.
 
-- **API Events** can trigger an email or push notification c ampaign immediately when they receive data from Segment.
+- **API Events** can trigger an email or push notification campaign immediately when they receive data from Segment.
 
 
 ## SFMC prerequisites
@@ -74,7 +68,7 @@ Segment uses your unique Salesforce subdomain to make API calls to SFMC. Your su
 SFMC has strict rate limits, usually 20 requests per second. If your organization sends a very high volume of data or has audiences with many people in them, Segment allows you to send data to SFMC in batches. This can help you reduce your SFMC API quota, reduce the number of rate-limiting errors you see, and help speed up transfers of large volumes of data.
 
 > info ""
-> The batching feature in SFMC is only available to our **Business Tier** customers.
+> The batching feature in SFMC is only available to **Business Tier** customers.
 
 To use the SFMC Batch feature:
 
@@ -271,20 +265,20 @@ To use context properties, you must create attributes in the Data Extensions tha
 
 
 
-## Using Personas with SFMC
+## Using Engage with SFMC
 
-You can send audiences and computed traits created in **Segment Personas** to SFMC to run more effective marketing campaigns.
+You can send audiences and computed traits created in **Engage** to SFMC to run more effective marketing campaigns.
 
-In order to do this, you must have access to **Personas**. To learn more, [contact Segment for a demo](https://segment.com/contact/demo).
+In order to do this, you must have access to **Engage**. To learn more, [contact Segment for a demo](https://segment.com/contact/demo).
 
-### Set up Personas with SFMC in Segment
+### Set up Engage with SFMC in Segment
 
 > info ""
-> **Tip**: We recommend that you use [SFMC batching](#optional-set-up-sfmc-batching) with Personas to help reduce the number of API calls that you send to SFMC, but this is optional. If you choose to set up batching, do this _before_ you set up the SFMC destination in your Segment workspace.
+> **Tip**: Segment recommends that you use [SFMC batching](#optional-set-up-sfmc-batching) with Engage to help reduce the number of API calls that you send to SFMC, but this is optional. If you choose to set up batching, do this _before_ you set up the SFMC destination in your Segment workspace.
 
-Personas sends audience membership and computed trait values to SFMC using Identify calls. To integrate Personas with SFMC:
+Engage sends audience membership and computed trait values to SFMC using Identify calls. To integrate Engage with SFMC:
 1. [Create a Data Extension to store Identify calls](#create-a-data-extension-in-sfmc-to-store-identify-calls) if you haven't already.
-2. [Configure SFMC as a Personas Destination](#configure-the-salesforce-marketing-cloud-destination-in-segment)
+2. [Configure SFMC as an Engage Destination](#configure-the-salesforce-marketing-cloud-destination-in-segment)
 
 When you sync to an existing Data Extension, note these additional requirements:
 - The table cannot have an existing **Primary Key**, unless it is the `Contact Key` field, and the field type is `Text`.
@@ -294,26 +288,26 @@ When you sync to an existing Data Extension, note these additional requirements:
 ![](images/existing-dext-data-types.png)
 
 
-### Syncing Personas Audiences to SFMC
+### Syncing Engage Audiences to SFMC
 
 Use the following process when syncing audiences to SFMC:
 
 1. Create a boolean field on the SFMC Data Extension to store audience membership information. The name of the field must match the name of the Segment audience you will create, and must be Title Cased.
-2. In your Personas space, add the SFMC destination to an audience, ensuring you specify the same name assigned to the SFMC field.
+2. In your Space, add the SFMC destination to an audience, ensuring you specify the same name assigned to the SFMC field.
 
-When you add an audience to SFMC, the first sync contains all the users in that audience. A user is added as a new row to the Data Extension the first time they enter an audience. For example, let's say you have an "Active Users" audience. When you send this audience to SFMC, all the users in the audience are added to a Data Extension, with a field value that indicates their audience membership with `true`.  **To work correctly**, the Personas audience name should be Title Cased in the Data Extension field.
+When you add an audience to SFMC, the first sync contains all the users in that audience. A user is added as a new row to the Data Extension the first time they enter an audience. For example, if you have an "Active Users" audience. When you send this audience to SFMC, all the users in the audience are added to a Data Extension, with a field value that indicates their audience membership with `true`.  **To work correctly**, the Engage audience name should be Title Cased in the Data Extension field.
 
 If a user leaves that audience, the value is automatically updated to `false`, but the user is not removed from the Extension. This allows you to see all users who have ever been in the audience, and then optionally create a filtered Data Extension if you want a subset. See the SFMC documentation for more details:
 
 - [Create a Filtered Data Extension in Marketing Cloud](https://help.salesforce.com/articleView?id=mc_es_create_filtered_de.htm&r=https%3A%2F%2Fwww.google.com%2F&type=5)
 - [Automatically refresh a Filtered Data Extension](https://help.salesforce.com/articleView?id=000264612&language=en_US&type=1)
 
-### Syncing Personas Computed Traits to SFMC
+### Syncing Engage Computed Traits to SFMC
 
 Use the following process when syncing Computed Traits to SFMC:
 
 1. Create a field on the SFMC Data Extension to store Computed Trait values. The name of the field must match the name of the Segment Computed Trait you'll create, and must be Title Cased. Choose a matching data type (for example, `text` for traits which produce string values, `number` or `decimal` for traits which produce numeric values).  
-2. In your Personas space, add the SFMC destination to a Computed Trait, ensuring you specify the same name assigned to the SFMC field.
+2. In your Space, add the SFMC destination to a Computed Trait, ensuring you specify the same name assigned to the SFMC field.
 
 ## Troubleshooting and Tips
 
@@ -339,7 +333,7 @@ When you send an email or push notification, you need to choose which email addr
 If you select **Use email attribute from Entry Source** you can use an email or phone attribute included in the API Event or Data Extension that triggers the Journey. (Otherwise, you must use an email address attribute or the default phone number attribute on a Contact record.)  To use this, you must include an email address and phone number as a property or trait in every single Track/Identify call mapped to SFMC.
 
 
-### Personas data takes too long to sync to SFMC the first time
+### Engage data takes too long to sync to SFMC the first time
 
 This issue usually occurs for customers that have very large volumes of customer data (10MM+ users), because multiple audiences and traits attempt to send large quantities of backfill data into SFMC at the same time, and compete for the SFMC rate limit. To help with this, avoid syncing multiple *new* audiences and *new* traits at the same time. Instead, create an audience, sync it to SFMC and wait for it to complete. Then, create and sync your next audience or trait.
 

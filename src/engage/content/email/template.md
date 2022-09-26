@@ -1,7 +1,6 @@
 ---
 title: Email Template
-layout: engage
-engage: true
+plan: engage-premier
 ---
 Use Twilio Engage to build personalized email templates to store and use throughout marketing campaigns.  
 
@@ -10,14 +9,14 @@ Build an email template from scratch using a [visual editor](/docs/engage/conten
 
 ## Build an Email template
 
-Navigate to **Personas > Content** and use the Email Templates page to preview and edit existing templates.
+Navigate to **Engage > Content** and use the Email Templates page to preview and edit existing templates.
 
-To configure an email template, click **New Template**.
+To configure an email template, click **Create Template**.
 
 1. Select **Email**, and click **Configure**.
 
 > note ""
-> You must first connect a [SendGrid subuser account](https://docs.sendgrid.com/ui/account-and-settings/subusers#create-a-subuser){:target="blank"} to your Segment Personas space to build email templates in Engage. Visit the [onboarding steps](/docs/engage/overview/onboarding/) for more information.
+> You must first connect a [SendGrid subuser account](https://docs.sendgrid.com/ui/account-and-settings/subusers#create-a-subuser){:target="blank"} to your Segment space to build email templates in Engage. Visit the [onboarding steps](/docs/engage/onboarding/) for more information.
 
 2. Configure the email template.
     1. Add a template name for internal reference.
@@ -45,7 +44,7 @@ You can send test emails before you include a template in marketing campaigns
 > success ""
 > You can also test email templates directly from a [Send an Email step](/docs/engage/journeys/build-journey/#send-an-email) in Journeys.
 
-## Personalize with Merge Tags
+## Personalize with merge tags
 Personalize email content in Twilio Engage with real-time profile traits in your email subject line, preview text, and message body.
 
 
@@ -54,7 +53,7 @@ As you configure the template, click **Merge Tags** and select the profile trait
 You can also add merge tags in heading and body text as you design an email with the [visual editor](/docs/engage/content/email/editor/).
 
 > info ""
-> To learn more about profile traits, visit [Segment's Compute Traits](/docs/personas/computed-traits) and [SQL Traits](/docs/personas/sql-traits/) documentation.
+> To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.
 
 ## Include unsubscribe links
 
@@ -62,9 +61,9 @@ When you build email templates, it's your responsibility to include an unsubscri
 
 When a recipient clicks on an unsubscribe link, they'll see a confirmation page and the recipient's subscription state is updated.
 
-Only send messages to subscribed users. Learn more about [User Subscriptions](/docs/engage/profiles/user-subscriptions/) in Twilio Engage.
+Only send messages to subscribed users. Learn more about [User Subscriptions](/docs/engage/user-subscriptions/) in Twilio Engage.
 
-## Next Steps
+## Next steps
 
 View some [email deliverability tips and tricks](https://docs.sendgrid.com/ui/sending-email/deliverability){:target="blank"} from SendGrid.
 

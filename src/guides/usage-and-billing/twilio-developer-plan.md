@@ -60,7 +60,7 @@ If you exceed the 10,000 MTU limit twice in a 6-month period, Segment locks acce
 
 Segment helps you simplify data collection, personalize user interactions, protect data integrity, and respect user privacy. Explore the [Destinations Catalog](/docs/connections/destinations/catalog/) to see all the tools you can send data to once you get data into Segment.
 
-On Business plans, Segment also offers two add-on products called [Protocols](/docs/protocols/) and [Personas](/docs/personas/).
+On Business plans, Segment also offers two add-on products called [Protocols](/docs/protocols/) and [Engage](/docs/engage/).
 
 - **Protocols** helps you automate and scale the [data quality best practices](/docs/protocols/tracking-plan/best-practices/) to improve data quality and trust across your company.
-- **Personas** is a powerful personalization platform that enables you to create unified customer profiles in Segment, to build and enrich audiences, and to activate audiences across marketing tools.
+- **Engage** is a powerful personalization platform that enables you to create unified customer profiles in Segment, to build and enrich audiences, and to activate audiences across marketing tools.

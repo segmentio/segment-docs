@@ -1,7 +1,6 @@
 ---
 title: SMS Template
-layout: engage
-engage: true
+plan: engage-premier
 ---
 Use Twilio Engage to build SMS message templates to include throughout your marketing campaigns.
 
@@ -12,9 +11,9 @@ Use personalized SMS messages to connect with users in real-time, as they reach 
 ## Build an SMS message template
 
 > info ""
-> You must first configure your SMS service with Twilio to build an SMS template in Engage. Visit the [onboarding steps](/docs/engage/overview/onboarding/) for more on how to connect a Twilio account.
+> You must first configure your SMS service with Twilio to build an SMS template in Engage. Visit the [onboarding steps](/docs/engage/onboarding/) for more on how to connect a Twilio account.
 
-To build an SMS template, navigate to **Personas > Content** and click **New Template**.
+To build an SMS template, navigate to **Engage > Content** and click **Create Template**.
 
 1. Select **SMS**, then click **Configure**.
 2. Add a template name and description.
@@ -49,7 +48,7 @@ To personalize an SMS, click **Merge Tags** in the SMS builder and select the pr
 Engage inserts the selected traits inside merge tags based on cursor placement in the message. This allows you to personalize each SMS you send to recipients.  
 
 > info ""
-> To learn more about profile traits, visit Segment's [Computed Traits](/docs/personas/computed-traits/) and [SQL Traits](/docs/personas/sql-traits/) documentation.
+> To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits/) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.
 
 ## SMS best practices and limitations
 
@@ -57,7 +56,7 @@ Engage inserts the selected traits inside merge tags based on cursor placement i
 
 When you build an SMS, it's important to include an opt-out message in the body of your text that informs recipients they can unsubscribe from a message channel.
 
-When an SMS recipient replies "Stop" to an SMS, they'll receive an opt-out confirmation, and Engage updates their phone number subscription status. Visit the [User Subscription States](/docs/engage/profiles/user-subscriptions/subscription-states/) documentation to learn more about user subscriptions in Engage.
+When an SMS recipient replies "Stop" to an SMS, they'll receive an opt-out confirmation, and Engage updates their phone number subscription status. Visit the [User Subscription States](/docs/engage/user-subscriptions/subscription-states/) documentation to learn more about user subscriptions in Engage.
 
 ### SMS character limit
 

@@ -14,7 +14,7 @@ If you're using Protocols, you might want to get notifications when event volume
 
 ## Public API
 
-Protocols customers can access [Segment's Public API](/docs/api/), which enables programmatic creation, configuration, and fetching of core Segment platform resources like Sources, Destinations, and Tracking Plans.
+Protocols customers can access [Segment's Public API](/docs/api/public-api), which enables programmatic creation, configuration, and fetching of core Segment platform resources like Sources, Destinations, and Tracking Plans.
 
 The Public API represents Segment's commitment to developers, helping you extend your workflow around customer data collection and activation.
 

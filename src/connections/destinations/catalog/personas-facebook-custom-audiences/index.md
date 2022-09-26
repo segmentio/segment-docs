@@ -7,33 +7,30 @@ id: 5a4d24dcc5836400017188f6
 ---
 ## Overview
 
-The Facebook Custom Audiences Destination is one of the most popular Personas Destinations. It has a variety of use cases related to suppression, acquisition (using lookalikes), retargeting, and more.
+The Facebook Custom Audiences Destination is one of the most popular Engage Destinations. It has a variety of use cases related to suppression, acquisition (using lookalikes), retargeting, and more.
 
-This Destination can send audiences (lists of users) created in Personas to Facebook Custom Audiences as a **User-List**. Once you set this up, Segment sends an initial list of users to Facebook, and then keeps it up-to-date as new users enter or exit that audience.
+This Destination can send audiences (lists of users) created in Engage to Facebook Custom Audiences as a **User-List**. Once you set this up, Segment sends an initial list of users to Facebook, and then keeps it up-to-date as new users enter or exit that audience.
 
 This allows you to run advertising campaigns in Facebook without having to manually find and upload a refreshed a csv of users. We currently support Facebook Custom Audiences for Known Users.
 
-> info ""
-> **Note:**You must have access to Personas as part of your Segment plan to use this destination. [Contact the Segment sales team](https://segment.com/demo/) to try this out.
-
 
 ## Other Facebook Destinations Supported by Segment
-This page is about the **Facebook Custom Audiences** destination developed specifically for use with **Segment Personas**. For documentation on other Facebook destinations, see the pages linked below.
+This page is about the **Facebook Custom Audiences** destination developed specifically for use with **EngagePersonas**. For documentation on other Facebook destinations, see the pages linked below.
 
-| **Facebook Destination**                                                                                    | Supported by Personas |
-| ----------------------------------------------------------------------------------------------------------- | --------------------- |
-| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                      | Yes                   |
-| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)**    | Yes                   |
-| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                                | No                    |
-| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)** | Yes                   |
-| **[Facebook Conversions API](/docs/connections/destinations/catalog/actions-facebook-conversions-api/)**    | Yes                   |
+| **Facebook Destination**                                                                                    | Supported by Engage |
+| ----------------------------------------------------------------------------------------------------------- | ------------------- |
+| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                      | Yes                 |
+| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)**    | Yes                 |
+| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                                | No                  |
+| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)** | Yes                 |
+| **[Facebook Conversions API](/docs/connections/destinations/catalog/actions-facebook-conversions-api/)**    | Yes                 |
 
 ## Details
 
 
-- **Supports Personas**: Yes
-- **Personas Destination type**: List
-- **Must create audience_name field before Personas can update those values?**: No, Personas creates the audience for you.
+- **Supports Engage**: Yes
+- **Engage Destination type**: List
+- **Must create audience_name field before Engage can update those values?**: No, Engage creates the audience for you.
 - **Audience appears as**: As a Facebook Custom Audience
 - **Destination rate limit**: None
 - **Lookback window allowed**: Yes
@@ -46,11 +43,11 @@ This page is about the **Facebook Custom Audiences** destination developed speci
 
 Facebook Custom Audiences allows you to efficiently run several marketing and advertising operations. The list below contains the most popular use cases when you know personally identifiable information (PII) about your users, such as email address, name, phone number, etc. Facebook takes the data that you send to Facebook Custom Audiences and matches it to the users that are on Facebook to enable these use cases.
 
-1. **Suppression Audiences.** Create an audience of users that signed up, purchased a product, or otherwise performed some conversion event. Getting those users into Facebook in a timely manner (hourly syncs) prevents you from spending money targeting users that already converted. You can do this by creating an Audience in Personas, and syncing it to the Facebook Custom Audience Destination.
+1. **Suppression Audiences.** Create an audience of users that signed up, purchased a product, or otherwise performed some conversion event. Getting those users into Facebook in a timely manner (hourly syncs) prevents you from spending money targeting users that already converted. You can do this by creating an Audience in Engage, and syncing it to the Facebook Custom Audience Destination.
 
-2. **Lookalikes & Seed Audiences.** You can use Personas to create a detailed profile of your most loyal customers (sometimes called a “seed audience”) and then send this list of customers to Facebook. In Facebook, you can then use Facebook's lookalike audiencing features to find similar users to target. For example, you might want to create a group of high-value users that have spent a certain amount of money on your product, and then use Facebook audiences to find similar users.
+2. **Lookalikes & Seed Audiences.** You can use Engage to create a detailed profile of your most loyal customers (sometimes called a “seed audience”) and then send this list of customers to Facebook. In Facebook, you can then use Facebook's lookalike audiencing features to find similar users to target. For example, you might want to create a group of high-value users that have spent a certain amount of money on your product, and then use Facebook audiences to find similar users.
 
-3. **Re-targeting Audiences.** You can use Personas to target users who completed some initial action, but didn't follow through on a purchase or other conversion event. You can create audiences to re-target these individuals and remind them to complete the purchase or other process.
+3. **Re-targeting Audiences.** You can use Engage to target users who completed some initial action, but didn't follow through on a purchase or other conversion event. You can create audiences to re-target these individuals and remind them to complete the purchase or other process.
 
 ## Use Cases - Anonymous Users (Facebook Pixel support only)
 
@@ -60,9 +57,9 @@ Facebook offers the Facebook Pixel, which allows you to retarget these types of 
 
 ## How it works
 
-**Every time you create an audience in Personas and connect it to Personas Facebook Custom Audiences, Segment does the following**:
+**Every time you create an audience in Engage and connect it to Engage Facebook Custom Audiences, Segment does the following**:
 
-1. Creates a Facebook Custom Audience (of type Customer List) with a name that matches the Personas Audience.
+1. Creates a Facebook Custom Audience (of type Customer List) with a name that matches the Engage Audience.
 2. Adds any users that fit the audience definition, based on the matching identifiers that Facebook supports (hashed). Facebook uses these identifiers to match users to Facebook users in their ads system.
 3. Once the audience is configured, Segment checks which users still fit the audience definition based on the same identifiers, and adds or remove users from the audience, every hour.
 {% include content/sync-frequency-note.md %}
@@ -73,31 +70,31 @@ Facebook offers the Facebook Pixel, which allows you to retarget these types of 
 ## Set up
 
 > success ""
-> Before you start, make sure you have a Facebook Ads account with “Advertiser” or “Admin” access to link Personas to Facebook Ads.
+> Before you start, make sure you have a Facebook Ads account with “Advertiser” or “Admin” access to link Engage to Facebook Ads.
 
 ### 1. Authorize Facebook Custom Audiences
 
-- Go to your Personas Space in your Segment Workspace.
+- Go to your Space in your Segment Workspace.
 - Go to the Destinations tab and click “Add Destination”.
-- Select the Personas Facebook Custom Audiences option, and click **Configure Personas Facebook Custom Audiences**.
+- Select the Facebook Custom Audiences option, and click **Configure Facebook Custom Audiences**.
 - Authorize Facebook Ads and select a Facebook account ID to sync to.
 
-### 2. Create an audience in Segment Personas & connect to Facebook
+### 2. Create an audience in Engage & connect to Facebook
 
-- Go to the Audience Builder in Personas and create a new Audience with your desired event and trait criteria.
-- Go to your Personas space, and select the Facebook destination you added to connect the audience to Facebook.
+- Go to the Audience Builder in Engage and create a new Audience with your desired event and trait criteria.
+- Go to your Space, and select the Facebook destination you added to connect the audience to Facebook.
 - Give the audience a name and description, and click **Create**.
-- Your audience starts syncing from Personas to Facebook Ads.
+- Your audience starts syncing from Engage to Facebook Ads.
 
-> note ""
-> **Note**: If you change the name of the audience in Personas, it will not be reflected in Facebook.
+> info ""
+> If you change the name of the audience in Engage, it will not be reflected in Facebook.
 
 ### 3. Verify that the audience appears in Facebook
 
 Once created, the audience should be available in Facebook in ten minutes unless it's unusually large.
 
 - From within Facebook Ads, go to **Business Manager > All tools > Assets > Audiences**.
-- Click the Facebook audience name that matches your Personas audience name, and check **Audience History** to see how many users were added.
+- Click the Facebook audience name that matches your Engage audience name, and check **Audience History** to see how many users were added.
 
 ![](images/fb_ca_final.png)
 
@@ -107,7 +104,7 @@ Once created, the audience should be available in Facebook in ten minutes unless
 > note ""
 > This feature is in Public Preview and usage is subject to the terms contained in the [First Access and Beta Preview Terms](https://segment.com/legal/first-access-beta-preview/){:target="_blank"}. For access, contact your CSM or email Segment at [friends@segment.com](mailto:friends@segment.com).
 
-Previously, Segment only sent email and mobile IDs to Facebook. A new beta feature can send an expanded list of identifiers or traits to Facebook, so that Facebook can try to use these additional datapoints to match to their user profiles. If you have this feature enabled and implemented any of these traits in your Segment tracking, Personas can send this data to Facebook. Segment can now also sync multiple emails if the profile contains more than one. Additionally as part of this feature, Segment hashes fields before sending them downstream to Facebook, if required. (See the table below for hashing requirements.) Please note that the trait data implemented in your Segment tracking must match the naming convention and format specified in the table below, otherwise we are not able to send it to Facebook.
+Previously, Segment only sent email and mobile IDs to Facebook. A new beta feature can send an expanded list of identifiers or traits to Facebook, so that Facebook can try to use these additional data points to match to their user profiles. If you have this feature enabled and implemented any of these traits in your Segment tracking, Engage can send this data to Facebook. Segment can now also sync multiple emails if the profile contains more than one. Additionally as part of this feature, Segment hashes fields before sending them downstream to Facebook, if required. (See the table below for hashing requirements.) Please note that the trait data implemented in your Segment tracking must match the naming convention and format specified in the table below, otherwise Segment can't send it to Facebook.
 
 
 | **Name**        | **Trait Key formats supported**   | **Facebook Keys**  | **FB Hashing Required** | **FB Guidelines**     |
@@ -141,4 +138,4 @@ For example, many B2B SaaS businesses have users that sign up for their products
 Please note, emails must be in a plain text format. Facebook also provides these guidelines for the emails that you send to them: trim leading, trail whitespace, and convert all characters to lowercase.
 
 ### Do you support LTV audiences?
-Facebook has a feature called [value-based audiences](https://developers.facebook.com/docs/marketing-api/audiences/guides/value-based-lookalike-audiences/){:target="_blank"} where you can send an additional field like LTV, to tell Facebook how to optimize their advertising based on a customer's value. Personas does not currently support this feature.
+Facebook has a feature called [value-based audiences](https://developers.facebook.com/docs/marketing-api/audiences/guides/value-based-lookalike-audiences/){:target="_blank"} where you can send an additional field like LTV, to tell Facebook how to optimize their advertising based on a customer's value. 

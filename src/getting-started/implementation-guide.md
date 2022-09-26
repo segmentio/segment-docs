@@ -100,12 +100,24 @@ To access your Source Debugger:
 The tasks in this phase help you create a data strategy and send additional types of data (identify and track calls) to get a clearer picture of who your users are and what actions they're taking.
 
 The Instrumentation tasks include:
-1. [Send an Identify call](#send-an-identify-call)
-2. [Send a Track call](#send-an-identify-call)
-3. [Choose what to track](#choose-what-to-track)
-4. [Event anatomy and naming standards](#event-anatomy-and-naming-standards)
-5. [Add a data warehouse](#add-a-data-warehouse)
-6. [Add more destinations](#add-more-destinations)
+- [Basics](#basics)
+  - [Invite Teammates](#invite-teammates)
+  - [Add a Source](#add-a-source)
+  - [Add page or screen tracking](#add-page-or-screen-tracking)
+  - [Add a Destination](#add-a-destination)
+  - [Testing and Debugging](#testing-and-debugging)
+- [Instrumentation](#instrumentation)
+  - [Send an Identify call](#send-an-identify-call)
+  - [Send a Track call](#send-a-track-call)
+  - [Choose what to track](#choose-what-to-track)
+  - [Event anatomy and naming standards](#event-anatomy-and-naming-standards)
+  - [Add a data warehouse](#add-a-data-warehouse)
+  - [Add more destinations](#add-more-destinations)
+- [Optimization](#optimization)
+  - [Add more sources](#add-more-sources)
+  - [Add a cloud source](#add-a-cloud-source)
+  - [Explore Protocols](#explore-protocols)
+  - [Explore Engage](#explore-engage)
 
 ### Send an Identify call
 The Identify call allows you to tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about the user, like their email, name, and address. Sending an Identify call is your first step towards understanding who your users are.
@@ -203,7 +215,7 @@ The optimization tasks include:
 1. [Add more sources](#add-more-sources)
 2. [Add a cloud source](#add-a-cloud-source)
 3. [Explore Protocols](#explore-protocols)
-4. [Explore Personas](#explore-personas)
+4. [Explore Engage](#explore-engage)
 
 ### Add more sources
 Adding any additional data sources that you might have, like a mobile app, marketing website, server, or cloud tool will give you a more complete view of your customer.
@@ -257,12 +269,9 @@ There are steps to take when you use Protocols:
 > - [Protocols FAQs](/docs/protocols/faq/)
 > - [Intro to Protocols](https://segment.com/product/protocols/?utm_campaign=gg_nam_dg-demo_search_brand_acquisition&utm_source=google&utm_medium=cpc&utm_content=segment_protocols&utm_term=segment%20protocols&gclid=CjwKCAiAv_KMBhAzEiwAs-rX1KJIZIitjBwLKuSXzUktRFLtQ_LDU5BcEMqB02BOpEmdK-6cauZ9nBoCRf8QAvD_BwE){:target="_blank"}
 
-### Explore Personas
-Personas is a powerful personalization platform that enables you to create unified customer profiles in Segment, to build and enrich audiences, and to activate audiences across marketing tools.
+### Explore Engage
+Engage is a powerful personalization platform that enables you to create unified customer profiles in Segment, to build and enrich audiences, and to activate audiences across marketing tools.
 
-Personas allows you to enrich user profiles with custom traits, allowing you to create granular audiences for campaigns, advertising, and analysis.
+Engage allows you to enrich user profiles with custom traits, allowing you to create granular audiences for campaigns, advertising, and analysis.
 
-> info "Learn More"
-> - [Segment Blog: Recipes with Personas](https://segment.com/recipes/?categories=&filters=Personas%20(add-on)){:target="_blank"}
-> - [Segment University: Personas](https://university.segment.com/personas-course/290634){:target="_blank"}
-> - [Segment Personas Overview](https://segment.com/product/personas/){:target="_blank"}
+

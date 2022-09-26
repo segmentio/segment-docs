@@ -53,4 +53,4 @@ You cannot use access tokens created with the `workspace:read` scope to create o
 }
 ```
 
-See [Config API Errors](/docs/config-api/api-design/#errors) for error codes.
+See [Config API Errors](/docs/api/config-api/api-design#errors) for error codes.

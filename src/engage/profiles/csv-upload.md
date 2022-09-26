@@ -1,17 +1,16 @@
 ---
 title: Update Audiences with a CSV
-layout: engage
-engage: true
+plan: engage-foundations
 ---
 Use the CSV Uploader to add or update user profiles and set subscription states.
 
-When you upload a CSV file, Twilio Engage adds new users and updates existing user profiles. Each CSV row corresponds to a user profile and columns to an identifier trait in your [identity resolution configuration](/docs/personas/identity-resolution/identity-resolution-settings/).
+When you upload a CSV file, Twilio Engage adds new users and updates existing user profiles. Each CSV row corresponds to a user profile and columns to an identifier trait in your [identity resolution configuration](/docs/profiles/identity-resolution/identity-resolution-settings/).
 
 You can also [set subscription states](#set-user-subscriptions) for each email and phone number that you upload in the CSV. Subscription states help you track which email addresses and numbers you have permission to market to.
 
 ## Upload a CSV file
 
-To upload a CSV file, navigate to **Personas > Profiles** and click **Upload CSV**.
+To upload a CSV file, navigate to **Engage > Audiences > Profile explorer** and click **Upload CSV**
 
 ### 1. Download your CSV template
 
@@ -20,7 +19,7 @@ Click **Download Template** to download a CSV template with identifier columns f
 > info ""
 > CSV files can only have a single **email** and **phone** identifier column. Include any additional email addresses or phone numbers for a user profile as a separate row.
 
-Navigate to **Personas > Settings** and select the **Identity Resolution** tab to view or add identifiers in your Segment workspace.
+Navigate to **Profiles > Profiles Settings** and select the **Identity resolution** tab to view or add identifiers in your Segment workspace.
 
 ### 2. Fill out your CSV file
 
@@ -40,19 +39,19 @@ Upload a CSV file to Twilio Engage in two ways:
 
 Engage processes CSV rows sequentially. Column values, except for a blank subscription status, override previous values for a user profile.
 
-A blank subscription status in the CSV doesn't overwrite current **email** or **phone** [subscription states](/docs/engage/profiles/user-subscriptions/subscription-states/) in your Segment space.
+A blank subscription status in the CSV doesn't overwrite current **email** or **phone** [subscription states](/docs/engage/user-subscriptions/subscription-states/) in your Segment space.
 
 ### 4. Name your custom trait
 
 Every time you upload a file, you have the option to add a custom trait to user profiles in the CSV. Use custom traits to help you [create audiences](/docs/engage/audiences/#building-an-audience) or send messages to a specific group of users. You can also add an existing custom trait name from your Segment workspace to the list of users in the CSV file.
 
-Custom traits display in the Custom Traits tab of a User Profile in the User Explorer.
+Custom traits display in the Custom Traits tab of a user profile in the Profile explorer.
 
 ## View upload history
 
 Use the Upload History page to view CSV file uploads in your workspace over the last 30 days.
 
-Navigate to **Personas > Profiles** and click **Upload History**.
+Navigate to **Engage > Audiences > Profile explorer** and click **Upload History**.
 
 Select links to view CSV files and any associated [error reports](#error-reports). View the status of the file upload and the custom trait name added to user profiles in the CSV upload.
 
@@ -88,7 +87,7 @@ In the `email_subscription_status` and `sms_subscription_status` columns, set su
 Engage accepts both uppercase and lowercase subscription status values.
 
 > success ""
-> Only contact users that subscribe to your communications. View [User Subscription States](/docs/engage/profiles/user-subscriptions/subscription-states/) to learn more.
+> Only contact users that subscribe to your communications. View [User Subscription States](/docs/engage/user-subscriptions/subscription-states/) to learn more.
 
 ## CSV upload limits
 
