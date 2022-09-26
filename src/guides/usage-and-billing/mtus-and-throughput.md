@@ -188,3 +188,7 @@ If you find you need to use one of these overwrite methods, you should check to 
 If the pages you track are on more than one domain (for example, `mydomain.com` and `mydomain.net`), the user generates a new `anonymousId` for each domain. However, if the domain is a subdomain (for example `mydomain.com` and `app.mydomain.com`), they can share a user cookie and so share identity data and count as only one MTU.
 
 If the user goes from one page to another and the second page loads in an iFrame, the page in the iFrame generates its own `anonymousId`.
+
+## Where can I find information about Twilio Engage Channels billing?
+
+Segment does not bill for SMS and Email sends from Engage Channels. For actual billed usage, refer to the Twilio and SendGrid accounts that you've linked to Engage.
