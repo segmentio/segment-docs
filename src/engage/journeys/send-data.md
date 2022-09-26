@@ -1,16 +1,15 @@
 ---
 title: Send Journeys data to a Destination
-layout: engage
-engage: true
+plan: engage-foundations
+redirect_from:
+  - '/personas/journeys/send-data'
 ---
 
 When you send data to destinations, you send a series of events or user lists, depending on the destination type.
 
 ## Before you begin
 
-Ensure you have connected and enabled destinations in your Personas space.
-
-For more information, see [Setting up Destinations](/docs/personas/quickstart/).
+Ensure you have connected and enabled destinations in your Space.
 
 ## Send data to destinations
 
@@ -56,8 +55,8 @@ When the user enters the step:
 
 ### List destination
 
-The destination receives a list of users who qualify for the associated journey step. Unlike lists associated with Personas Audiences, users who are added to a journey list cannot be subsequently removed. See [best practices](/docs/personas/journeys/faq-best-practices#suppress-targeting-with-journey-lists) for techniques to suppress targeting with journey lists.
+The destination receives a list of users who qualify for the associated journey step. Unlike lists associated with Engage Audiences, users who are added to a journey list cannot be subsequently removed. See [best practices](/docs/engage/journeys/faq-best-practices#suppress-targeting-with-journey-lists) for techniques to suppress targeting with journey lists.
 
-For more information, see [Using Personas Data](/docs/personas/using-personas-data/).
+For more information, see [Using Engage Data](/docs/engage/using-engage-data/).
 
 

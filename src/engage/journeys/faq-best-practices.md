@@ -1,7 +1,8 @@
 ---
 title: Journeys Best Practices and FAQ
-layout: engage
-engage: true
+plan: engage-foundations
+redirect_from:
+  - '/personas/journeys/faq-best-practices/'
 ---
 
 ## Best practices
@@ -20,7 +21,7 @@ Add time windows when defining conditions to enforce funnel constraints in a Jou
 
 ### Suppress targeting with journey lists
 
-Unlike lists associated with Personas Audiences, users who are added to a journey list cannot be subsequently removed. Lists are typically associated with advertising campaigns, and you must take additional steps if you wish to ensure that users do not continue to be targeted with ads after they achieve some goal. A typical implementation pattern is:
+Unlike lists associated with Engage Audiences, users who are added to a journey list cannot be subsequently removed. Lists are typically associated with advertising campaigns, and you must take additional steps if you wish to ensure that users do not continue to be targeted with ads after they achieve some goal. A typical implementation pattern is:
 1. Use a send to destination step to add users to the initial targeting list.
 2. Create additional journey steps to model the conditions where a user should be removed from targeting. Create a second send to destination step for the removal list.
 3. When configuring targeting conditions in the destination interface, use boolean logic to include only those users who are in the initial list AND NOT in the removal list.
@@ -41,21 +42,21 @@ When you do this, the key used for syncing to destinations will be different fro
 
 Aside from the entry condition, all Journey step conditions are triggered by future events and existing trait memberships. Event-based conditions only evaluate events that occur *after* the Journey is published.
 
-When you [include historical data](/docs/personas/journeys/build-journey/#using-historical-data-for-the-entry-step) in a Journey's entry condition, Personas identifies users who previously satisfied the entry condition and adds them to entry. For example, to evaluate if a user has ever used a discount code mid-Journey, create and configure a [Computed Trait](/docs/personas/computed-traits/#conditions) to select for `discount_used = true` to use in your Journey.
+When you [include historical data](/docs/engage/journeys/build-journey/#using-historical-data-for-the-entry-step) in a Journey's entry condition, Profiles identifies users who previously satisfied the entry condition and adds them to entry. For example, to evaluate if a user has ever used a discount code mid-Journey, create and configure a [Computed Trait](/docs/engage/audiences/computed-traits/#conditions) to select for `discount_used = true` to use in your Journey.
 
 Including historical data doesn't impact any additional Journey steps, however. To include historical data in post-entry conditions, use the following table to identify which conditions will automatically include historical data:
 
 | Condition Type     | Automatic Historical Data Inclusion |
 | ------------------ | ----------------------------------- |
 | Audience Reference | Yes                                 |
-| Computed Trait     | No                                  | 
+| Computed Trait     | No                                  |
 | Event              | No                                  |
 | Custom Trait       | No                                  |
 
 
 To include historical data based on custom traits or events that predate the Journey, first build an Audience that includes the targeted data by following these steps:
 
-1. Create a standard Personas Audience **outside of the Journeys builder**.
+1. Create a standard Engage Audience **outside of the Journeys builder**.
 2. Add conditions that include the historical event or custom trait you want to include in the Journey.
 3. After you've created the Audience, return to Journeys and create a **Part of an Audience** condition that references the audience you created in Step 2.
 
@@ -67,24 +68,24 @@ Using the **Part of Audience** condition, Journeys then populates the custom tra
 
 Follow these best practices to test your journeys:
 
-- While in the process of configuring a journey, use dev Personas spaces to model that journey without affecting production data.
+- While in the process of configuring a journey, use dev Spaces to model that journey without affecting production data.
 - Connect a data warehouse to each step of the journey to test for success or failure of that step.
 - For early version journeys, scaffold Send to Destination steps without connecting to your production advertising or messaging destinations.
-- Verify individual users' progress through the Journey in the Personas Explorer view.
+- Verify individual users' progress through the Journey in the Profiles Explorer view.
 
 ## Frequently asked questions
 
 ### How often do Journeys run?
 
-Journeys run in real-time, like real-time Audiences in Personas. This means that users will progress through Journeys as Segment receives new events.
+Journeys run in real-time, like real-time Audiences in Engage. This means that users will progress through Journeys as Segment receives new events.
 
-### How many times can a user enter one Journey?
+### Can a user re-enter a Journey?
 
-Users can enter a given journey a maximum of one time.
+Yes. Users must first exit a Journey, however, before entering it again. To learn more about Journey re-entry, read the [Journey re-entry section](/docs/engage/journeys/build-journey/#journey-re-entry) of the [Build a Journey](/docs/engage/journeys/build-journey/) page.
 
 ### What destinations does Journeys support?
 
-Journeys supports all Personas destinations, including Destination Functions. Read more in Send data to destinations.
+Journeys supports all Engage destinations, including Destination Functions. Read more in Send data to destinations.
 
 ### What are the reporting capabilities of Journeys?
 
@@ -97,7 +98,7 @@ Once published, Journeys displays the number of users are in each step of the Jo
 The data type you send to a destination depends on whether the destination is an Event Destination or a List Destination.
 
 ### Which roles can access Journeys?
-For Personas Advanced customers, users with either the Personas User or Personas Admin roles can create, edit, and delete journeys. Users with the Personas Read-only role are restricted to view-only access.
+For Engage customers, users with either the Engage User or Engage Admin roles can create, edit, and delete journeys. Users with the Engage Read-only role are restricted to view-only access.
 
 ### Why am I seeing duplicate entry or exit events?
 

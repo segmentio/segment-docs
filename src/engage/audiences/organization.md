@@ -1,39 +1,40 @@
 ---
 title: Organizing Your Audiences
-layout: engage
-engage: true
+plan: engage-foundations
+redirect_from:
+  - '/personas/audiences/organization'
 ---
 
-To add structure to your [Personas Spaces](/docs/personas/identity-resolution/personas-space-set-up/), you can organize Audiences into folders and clone Audiences within, and between, Spaces.
+To add structure to your [Spaces](/docs/profiles/identity-resolution/space-setup/), you can organize Audiences into folders and clone Audiences within, and between, Spaces.
 
-## Working with Folders
+## Working with folders
 
-Folders allow you to group Audiences together. You can create, edit, and search through folders directly within the Personas Audiences page.
+Folders allow you to group Audiences together. You can create, edit, and search through folders directly within the Engage Audiences page.
 
-### Creating a Folder
+### Creating a folder
 
 To create a Folder, follow the steps below:
 
-1. Navigate to the Audiences tab within your Personas space.
+1. Navigate to the Audiences tab within your Space.
 2. Click **Create**, then select **Folder** from the dropdown menu.
 3. Give your Folder a unique name, then click **Add Audiences**.
 4. Search for and select the Audience(s) you want to add to the Folder.
 5. To confirm the new Folder, click **Add Audiences**.
 
-## Editing and Disbanding Folders
+## Editing and disbanding folders
 
-To edit the name or description of a Folder you've created in Personas, click the **More Options** icon and select **Edit**.  Once you've made your desired changes, click **Save**.
+To edit the name or description of a Folder you've created, click the **More Options** icon and select **Edit**. Once you've made your desired changes, click **Save**.
 
-To disband a Folder you've made in Personas, click the **More Options** icon and select **Disband**.   Audiences from the disbanded Folder return to your main Audience list.
+To disband a Folder you've made, click the **More Options** icon and select **Disband**. Audiences from the disbanded Folder return to your main Audience list.
 
-> info "Note"
-> Disbanding a Folder won't delete any Audiences.
+> info ""
+> Disbanding folders does not delete audiences.
 
-## Moving Audiences into Folders
+## Moving Audiences into folders
 
 To move an Audience to a Folder you've already created, follow the steps below:
 
-1. Navigate to the **Audiences** tab within your Personas space.
+1. Navigate to the **Audiences** tab within your Space.
 2. Hover over the Audience you want to move.
 3. Check the selection box that appears next to the Audience name.
 4. *(Optional)*: Repeat Steps 2 and 3 to move multiple Audiences.
@@ -42,15 +43,15 @@ To move an Audience to a Folder you've already created, follow the steps below:
 7. Click **Move** to confirm and move the selected Audiences.
 
 
-## Cloning Audiences
+## Clone Audiences
 
-Audience cloning creates a copy of your Audience.  Within Personas, you can clone an Audience within the same space, or clone an Audience to a different space.
+Audience cloning creates a copy of your Audience. You can clone an Audience within the same space, or clone an Audience to a different space.
 
-### Cloning an Audience inside a Space
+### Clone an Audience inside a Space
 
 To clone an Audience within the same Space, follow the steps below:
 
-1. Navigate to the **Audiences** tab within your Personas space.
+1. Navigate to the **Audiences** tab within your Space.
 2. Click the **More Options** icon next to the Audience you want to clone.
 3. From the dropdown menu, click **Clone**.
 4. Select **Current Space**, then click **Continue**.
@@ -72,7 +73,7 @@ You may wish to clone an Audience between spaces for a number of use cases, incl
 
 To clone an Audience between Spaces, follow the steps below:
 
-1. Navigate to the **Audiences** tab within your Personas space.
+1. Navigate to the **Audiences** tab within your Space.
 2. Click the **More Options** icon next to the Audience you want to clone.
 3. From the dropdown menu, click **Clone**.
 4. Select **Different Space**, choose your target Space, then click **Continue**.
@@ -81,4 +82,4 @@ To clone an Audience between Spaces, follow the steps below:
 7. Give your Audience a unique name, then click **Create Cloned Audience**.
 
 
-If your target Space doesn't include the cloned Audience's events and traits, Personas prompts you to resolve the Space incompatibilities during Step 5.  As a best practice, verify that the target Space includes the Audience's traits and events before cloning.
+If your target Space doesn't include the cloned Audience's events and traits, Engage prompts you to resolve the Space incompatibilities during Step 5.  As a best practice, verify that the target Space includes the Audience's traits and events before cloning.

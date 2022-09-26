@@ -135,7 +135,7 @@ When you tag a form you can track both that the user _submitted_ the form, and a
 
 This is useful if the form collects information about the user (such as Name, Email, Country). (This wouldn't be useful on a Search or Add To Cart form.)
 
-This is an illustration of how traits and events might appear for a user in a Destination or Personas.
+This is an illustration of how traits and events might appear for a user in a Destination or Engage.
 
 ![Forms Details](images/vt-docs-identify.png)
 

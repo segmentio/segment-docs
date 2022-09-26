@@ -68,13 +68,13 @@ To keep the event names on OneSignal Data Tags, append the event name to the pro
 
 ![](images/track-example.png)
 
-## Personas
+## Engage
 
-Send Computed Traits and Audiences generated using [Segment Personas](/docs/personas) to OneSignal. To learn more about Personas, contact Segment for a [demo](https://segment.com/contact/demo){:target="_blank"}.
+Send Computed Traits and Audiences generated using [Engage](/docs/engage) to OneSignal
 
 ### Audiences
 
-Personas Audiences appear as a [segment](https://documentation.onesignal.com/docs/segmentation) in OneSignal.
+Engage Audiences appear as a [segment](https://documentation.onesignal.com/docs/segmentation) in OneSignal.
 
 Track calls from Audiences create a OneSignal [segment](https://documentation.onesignal.com/docs/segmentation) with the Audience Name.
 
@@ -86,14 +86,14 @@ Audiences sends Identify and Track calls to OneSignal when a user enters or exit
 
 ### Computed Traits
 
-OneSignal stores Track and Identify calls from Personas Computed Traits as [Data Tags](https://documentation.onesignal.com/docs/add-user-data-tags) for the OneSignal User/Player's records.
+OneSignal stores Track and Identify calls from Engage Computed Traits as [Data Tags](https://documentation.onesignal.com/docs/add-user-data-tags) for the OneSignal User/Player's records.
 
 ## OneSignal Destination FAQ
 ### Managing Segment's Reserved and Custom Traits
 
 * Segment sends user traits to OneSignal as Data Tags. The number of data tags OneSignal allows depends on your OneSignal pricing plan. OneSignal drops the data tags that go over your set number. .
 
-* OneSignal always updates the `firstName` and the `lastName` properties for matching users. All other traits are added/updated on a firstcome basis. `firstName` and `lastName` tags are stored as `first_name` and `last_name`.
+* OneSignal always updates the `firstName` and the `lastName` properties for matching users. All other traits are added/updated on a first-come basis. `firstName` and `lastName` tags are stored as `first_name` and `last_name`.
 
 * Send User properties to OneSignal with blank/null values to remove the corresponding Data Tag from the OneSignal user record.
 

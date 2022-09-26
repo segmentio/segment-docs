@@ -25,12 +25,12 @@ hide-dossier: true
 
 This page is about the **Facebook Conversions API** destination. For documentation on other Facebook destinations, including Facebook Pixel, see the pages linked below.
 
-| **Facebook Destination**                                                                                    | Supported by Personas |
-| ----------------------------------------------------------------------------------------------------------- | --------------------- |
-| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                      | Yes                   |
-| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)** | Yes                   |
-| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)**    | Yes                   |
-| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                                | No                    |
+| **Facebook Destination**                                                                                    | Supported by Engage |
+| ----------------------------------------------------------------------------------------------------------- | ------------------- |
+| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                      | Yes                 |
+| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)** | Yes                 |
+| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)**    | Yes                 |
+| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                                | No                  |
 
 ## Getting Started
 
@@ -127,9 +127,9 @@ For more information about Track calls, see the [Track method](/docs/connections
 
 Beginning February 15th 2021, Facebook requires the `action_source` server event parameter for all events sent to the Conversions API. This parameter is used to specify where the conversions occurred. If `action_source` is set to 'website' then the `client_user_agent` and the `event_source_url` parameters are also required. Events sent to the Conversions API after February 15th that do not meet the requirements may not be available for optimization, targeting, or measurement.
 
-| Server Event Parameter | Requirement                                 | Implementation                 p                                                                      |
-| ---------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `action_source`        | Always required                             | It is set automatically but it can be set manually.                                                  |
+| Server Event Parameter | Requirement                                  | Implementation                 p                                                                             |
+| ---------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `action_source`        | Always required                              | It is set automatically but it can be set manually.                                                          |
 | `client_user_agent`    | Only required if `action_source` = "website" | It must be set manually if using a server library. It is set automatically if using the Segment web library. |
 | `event_source_url`     | Only required if `action_source` = "website" | It must be set manually if using a server library. It is set automatically if using the Segment web library. |
 
@@ -142,7 +142,7 @@ You can set `action_source` manually by passing it as a property of a Track even
 
 | Action Source Values | Description                                                                                               |
 | -------------------- | --------------------------------------------------------------------------------------------------------- |
-| `chat`               | Conversion was made through a messaging app, SMS, or online messaging feature.                                |
+| `chat`               | Conversion was made through a messaging app, SMS, or online messaging feature.                            |
 | `email`              | Conversion happened over email.                                                                           |
 | `other`              | Conversion happened in a way that is not listed.                                                          |
 | `phone_call`         | Conversion was made over the phone.                                                                       |
@@ -198,13 +198,13 @@ analytics.track({
 The following mappings are automatic and require no additional set up. Any of the Segment Ecommerce Events in the table below will be sent as the corresponding Facebook Standard Event. You learn more about these in the Facebook pixel [standard events documentation](https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking#standard-events).
 
 | Segment E-commerce Event | Facebook Standard Event |
-| ----------------------- | ----------------------- |
-| `Checkout Started`      | `InitiateCheckout`      |
-| `Order Completed`       | `Purchase`              |
-| `Product Added`         | `AddToCart`             |
-| `Product List Viewed`   | `ViewContent`           |
-| `Product Viewed`        | `ViewContent`           |
-| `Products Searched`     | `Search`                |
+| ------------------------ | ----------------------- |
+| `Checkout Started`       | `InitiateCheckout`      |
+| `Order Completed`        | `Purchase`              |
+| `Product Added`          | `AddToCart`             |
+| `Product List Viewed`    | `ViewContent`           |
+| `Product Viewed`         | `ViewContent`           |
+| `Products Searched`      | `Search`                |
 
 > info ""
 > Facebook requires a currency for "Purchase" events -- if you leave it out, Segment will set a default value of "USD".

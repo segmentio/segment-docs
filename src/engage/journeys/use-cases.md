@@ -1,7 +1,8 @@
 ---
 title: Example Journeys Use Cases
-layout: engage
-engage: true
+plan: engage-foundations
+redirect_from:
+  - "/personas/journeys/use-cases"
 ---
 
 

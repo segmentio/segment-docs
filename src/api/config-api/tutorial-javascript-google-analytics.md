@@ -29,7 +29,7 @@ The Google Analytics integration requires a Google account and website tracking 
 ### Personal Access Token
 
 You can programmatically access resources that you own in using Config API as long as you have an access token. Segment users can generate access tokens for an individual workspace, with permissions for resources in that workspace. These tokens can then be used to access those resources.
-See the [Authentication](/docs/config-api/authentication/) doc for more information.
+See the [Authentication](/docs/api/config-api/authentication/) doc for more information.
 
 To set up Segment Protocols through the API you first need to create a personal access token with **full access** to your workspace through the `workspace` scope.
 

@@ -1,7 +1,6 @@
 ---
 title: Email Campaigns
-layout: engage
-engage: true
+plan: engage-premier
 ---
 
 With Twilio Engage, you can send email and SMS campaigns to users who have opted in to receive your marketing materials. On this page, you’ll learn how to create and send an email campaign.
@@ -22,7 +21,7 @@ You’ll build and then send your campaign in three stages:
 
 Because Engage campaigns exist within Journeys, begin by creating a Journey:
 
-1. Within your Personas space, select **Journeys**, then click **New Journey**.
+1. In Engage, select **Journeys**, then click **New Journey**.
 2. Name your Journey and select its entry settings.
 3. Click **Build Journey** to create the Journey.
 

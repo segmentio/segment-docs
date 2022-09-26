@@ -564,18 +564,18 @@ To add push open tracking, Mixpanel requires that on initialization Mixpanel is 
 *Note*: Push open tracking in Android is not currently supported by the Mixpanel Android library.
 
 
-## Using Mixpanel with Personas
+## Using Mixpanel with Engage
 
-Mixpanel is a product analytics platform that is compatible as a Personas destination.
+Mixpanel is a product analytics platform that is compatible as a Engage destination.
 
-You can send computed traits and audiences created in Personas to Mixpanel and use them to create dashboards, run cohort analyses, or to power messages.
+You can send computed traits and audiences created in Engage to Mixpanel and use them to create dashboards, run cohort analyses, or to power messages.
 
 {% include content/lookback.md %}
 
 
-### Using Personas Computed Traits with Mixpanel
+### Using Engage Computed Traits with Mixpanel
 
-You can send Computed Traits created in Personas to Mixpanel as `identify` calls to create user properties in Mixpanel.
+You can send Computed Traits created in Engage to Mixpanel as `identify` calls to create user properties in Mixpanel.
 
 ![](images/pers-01-computed.png)
 
@@ -595,14 +595,14 @@ If you choose to include anonymous users when you create the computed trait, you
 
 ![](images/pers-04-incl-anons.png)
 
-### Using Personas Audiences with Mixpanel
+### Using Engage Audiences with Mixpanel
 
-You can send Personas Audiences to Mixpanel as `identify` or `track` calls. You can choose the type of call to send when you add Mixpanel as a destination for an audience.
+You can send Engage Audiences to Mixpanel as `identify` or `track` calls. You can choose the type of call to send when you add Mixpanel as a destination for an audience.
 
 ![](images/pers-05-pdest-settings.png)
 
 
-When you send custom traits as `identify` calls, the name of the audience is added to the user's profile as a user trait, with a boolean value to indicate if the user is in the audience. For example, when a user first completes an order in the last 30 days, Segment sends an `identify` call with the property `order_completed_last_30days: true`. When this user no longer satisfies these criteria (for example when their last purchase was more than 30 days ago) Personas sets that value to `false`.
+When you send custom traits as `identify` calls, the name of the audience is added to the user's profile as a user trait, with a boolean value to indicate if the user is in the audience. For example, when a user first completes an order in the last 30 days, Segment sends an `identify` call with the property `order_completed_last_30days: true`. When this user no longer satisfies these criteria (for example when their last purchase was more than 30 days ago) Engage sets that value to `false`.
 
 ![](images/pers-06-audience.png)
 
@@ -611,10 +611,10 @@ You can check a specific user profile in Mixpanel for Computed Traits by going t
 
 ![](images/pers-07-mxp-profile-audience.png)
 
-When you first create an audience, Personas sends an  `identify` call for every user in the audience. Later syncs only send updates for users who were added or removed from the audience since the last sync.
+When you first create an audience, Engage sends an  `identify` call for every user in the audience. Later syncs only send updates for users who were added or removed from the audience since the last sync.
 
 
-When you use `track` calls, Segment sends an `Audience Entered` event when the user enters the audience, with the audience name as a property of the event. When the user exits the audience, Personas sends an `Audience Exited` event with the same property.
+When you use `track` calls, Segment sends an `Audience Entered` event when the user enters the audience, with the audience name as a property of the event. When the user exits the audience, Engage sends an `Audience Exited` event with the same property.
 
 
 ![](images/pers-08-audience-track.png)
@@ -637,14 +637,16 @@ If you choose to include anonymous users when you create an audience, you must u
 ![](images/pers-11-incl-anons.png)
 
 
-## Setting Up Personas and Mixpanel
+## Setting Up Engage and Mixpanel
 
-To send computed traits or audiences to Mixpanel, you first must connect it to your Personas space. Once it's set up, you can select Mixpanel as a destination for Personas data when you create computed traits or audiences.
+To send computed traits or audiences to Mixpanel, connect the destination to your Space. Once it's set up, you can select Mixpanel as a destination for Engage data when you create computed traits or audiences.
 
-1. Navigate to the Destinations tab in your Personas space.
+1. In your Segment workspace, click Engage in the left navigation bar, and select your Space.
+2. Click **Engage Settings** and select the **Destinations** tab.
+3. Click **Add Destination**.
 2. Search for Mixpanel and click add destination.
 3. Enter your API Secret and Token for the integration.
-4. Enable the "Use Mixpanel People” toggle. This allows Personas to send `identify` calls to Mixpanel.
+4. Enable the "Use Mixpanel People” toggle. This allows Engage to send `identify` calls to Mixpanel.
 
 > success ""
 > **Tip**: Mixpanel now accepts Identify calls by default. Previously, this was an additional paid feature.
@@ -653,16 +655,16 @@ To send computed traits or audiences to Mixpanel, you first must connect it to y
 ![](images/pers-12-settings-people.png)
 
 
-## Mixpanel Personas Details
+## Mixpanel Engage Details
 
-- **Supports Personas**: Yes
-- **Personas Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
+- **Supports Engage**: Yes
+- **Engage Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
 - **Traits and Audiences created by**: Traits and audiences are added as user properties using `identify` calls. You can send Audiences as `Audience Entered` or `Audience Exited track` calls with the audience name as an event property.
-- **Must create audience_name field before Personas can update those values?**: No. If sent as an `identify` call, Personas auto-creates the computed trait or audience name as a user property.
+- **Must create audience_name field before Engage can update those values?**: No. If sent as an `identify` call, Engage auto-creates the computed trait or audience name as a user property.
 - **Audience appears as**:
     - Computed traits appear as a lower case user property with spaces converted to underscores.
-    - For audiences sent as an `identify` call, Personas creates a lower case boolean (true/false) user property. Spaces are converted to underscores.
-    - For audiences sent as a `track` call, Personas sends `Audience Entered` and `Audience Exited` events with the audience name as an event property.
+    - For audiences sent as an `identify` call, Engage creates a lower case boolean (true/false) user property. Spaces are converted to underscores.
+    - For audiences sent as a `track` call, Engage sends `Audience Entered` and `Audience Exited` events with the audience name as an event property.
 - **Destination rate limit**: [None](https://help.mixpanel.com/hc/en-us/articles/115004602563-Rate-Limits-for-API-Endpoints#track-and-engage-endpoints){:target="_blank"}
 - **Lookback window allowed**: Yes, unlimited.
 - **Identifiers required** : `userId` or `anonymousId`
@@ -670,7 +672,7 @@ To send computed traits or audiences to Mixpanel, you first must connect it to y
 - **Client or Server-Side Connection**: Server-side
 
 
-## Mixpanel Personas FAQs
+## Mixpanel Engage FAQs
 
 **What happens if I delete an audience or trait in Segment?**
 
@@ -678,4 +680,4 @@ If you delete an audience or trait in Segment, it isn't deleted from Mixpanel. T
 
 **If a user has multiple external ids in Segment, what happens when they enter an audience or have a computed trait?**
 
-Segment sends an `identify` or a  `track` call for each external on the user's account. For example, if a user has three email addresses, and you are sending `identify` calls for your audience, Personas sends three `identify` calls to Mixpanel and adds the latest email address to the user profile as the email “address of record” on the Mixpanel user profile.
+Segment sends an `identify` or a  `track` call for each external on the user's account. For example, if a user has three email addresses, and you are sending `identify` calls for your audience, Engage sends three `identify` calls to Mixpanel and adds the latest email address to the user profile as the email “address of record” on the Mixpanel user profile.

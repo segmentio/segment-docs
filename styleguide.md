@@ -31,7 +31,7 @@ TL:DR: Avoid the words "we" and "they". Be explicit about naming who is being re
 
 Because Segment has such a large footprint of documentation around third-party integrations, it's important to be very clear about who "we" are in any given part of the doc. Instead of using "we", your should refer to our software or processes in the third person: "Segment creates..."  "Segment sends..."
 
-This is especially important with destination partners. Instead of writing "we create a new table schema and they ingest it" write "Segment Personas creates a new table schema, and FancyIntegration ingests it."
+This is especially important with destination partners. Instead of writing "we create a new table schema and they ingest it" write "Engage creates a new table schema, and FancyIntegration ingests it."
 
 ### Might, may, can
 

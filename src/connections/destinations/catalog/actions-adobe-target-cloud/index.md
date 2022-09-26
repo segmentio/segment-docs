@@ -5,7 +5,7 @@ hide-dossier: false
 strat: adobe
 id: 61aa712b857e8c85c3b5a849
 ---
-Adobe Target is the A/B testing and personalization component of Adobe Experience Cloud. Segment’s Adobe Target integration enables customers to send data from Segment to Adobe Target to create and update user profiles. You can leverage these profiles in Adobe Target to construct audiences and personalize onsite visitor experiences.
+Adobe Target is the A/B testing and personalization component of Adobe Experience Cloud. Segment’s Adobe Target integration enables customers to send data from Segment to Adobe Target to create and update user profiles. Use these profiles in Adobe Target to construct audiences and personalize onsite visitor experiences.
 
 Segment offers two destinations for Adobe Target:
 - [Adobe Target Web](/docs/connections/destinations/catalog/actions-adobe-target-web/)
@@ -33,9 +33,9 @@ The Adobe Target Cloud Mode destination sends user information to the Adobe Targ
 
 ## Relationship between Adobe Target Web and Adobe Target Cloud Mode
 
-Adobe Target is unique because you must have a web integration with Adobe Target in order to utilize the Target server-side API for profile updates. This is because Adobe Target only allows creation of user profiles via client-side web. 
+Adobe Target is unique because you must have a web integration with Adobe Target to use the Target server-side API for profile updates. This is because Adobe Target only allows creation of user profiles through client-side web. 
 
-To support this, Segment provides an [Adobe Target Web destination](/docs/connections/destinations/catalog/actions-adobe-target-web/) for user profile creation, updates, and page/event tracking and an Adobe Target Cloud Mode destination for additional profile updates. The cloud mode destination is useful if you would like to send Personas data to Adobe Target as profile parameters.
+To support this, Segment provides an [Adobe Target Web destination](/docs/connections/destinations/catalog/actions-adobe-target-web/) for user profile creation, updates, and page/event tracking and an Adobe Target Cloud Mode destination for additional profile updates. The cloud mode destination is useful if you would like to send Engage data to Adobe Target as profile parameters.
 
 ### How does it work?
 Adobe Target’s `at.js` script identifies each visitor uniquely through a `PCID`, which is auto-generated in the visitor’s cookies. Since Segment doesn't expect you to include the `PCID` on your Segment events, Segment updates profiles using the `mbox3rdPartyId` instead. 
@@ -57,10 +57,10 @@ If the same known user visits on a different device, assuming they authenticate 
 #### Scenario 3. Anonymous user becomes a known user.
 When an anonymous user arrives on your website, one Adobe Target profile will be created and the `mbox3rdPartyId` will be equal to the Segment `anonymousId`. However, once the user is identified, they will be assigned a new `mbox3rdPartyId` equal to the Segment `userId`. There will be two profiles in Adobe Target; both will be available for targeting.
 
-### How to use Adobe Target with Personas
-Adobe Target Cloud Mode operates as an [Event Destination](/docs/personas/using-personas-data/#personas-destination-types-event-vs-list). This means Personas sends computed traits and audiences as traits in `identify` calls or properties in `track`  calls. Please see [this example](/docs/personas/using-personas-data/#what-do-the-payloads-look-like-for-personas-data) of the payload Personas would send to Adobe Target.
+### How to use Adobe Target with Engage
+Adobe Target Cloud Mode operates as an [Event Destination](/docs/engage/using-engage-data/#engage-destination-types-event-vs-list). This means Engage sends computed traits and audiences as traits in `identify` calls or properties in `track` calls. See [this example](/docs/engage/using-engage-data/#what-do-the-payloads-look-like-for-engage-data) of the payload Engage sends to Adobe Target.
 
-When you connect Adobe Target Cloud Mode to a Personas space, you will need to set up a mapping for Update Profile. Within the Update Profile mapping, please ensure you have something mapped to Profile Attributes. If you plan to send multiple Personas computed traits and/or audiences to Adobe Target, you can click **Edit Object** and set Profile Attributes to the entire `traits` object. This ensures any audience Personas generates sends to Adobe Target.
+When you connect Adobe Target Cloud Mode to a Engage, you will need to set up a mapping for Update Profile. Within the Update Profile mapping, please ensure you have something mapped to Profile Attributes. If you plan to send multiple Computed Traits and/or audiences to Adobe Target, you can click **Edit Object** and set Profile Attributes to the entire `traits` object. This ensures any audience Engage generates sends to Adobe Target.
 
 You can use Profile Attributes in the Adobe Target Audience builder to construct audiences. For example, if you send an audience for `first_time_shopper` to Adobe Target, select **Visitor Profile** in the Audience Builder and look for the `first_time_shopper` attribute. Setting the `first_time_shopper` attribute to `true` replicates the audience for usage in Adobe Target Activities.
 
@@ -79,6 +79,6 @@ Adobe Target Audiences can be used in Activities, such as A/B Testing and Experi
 ### Why am I getting a `Profile Not Found` error?
 The Adobe Target API can only be used for profile updates. You must first create profiles on the web by using either Segment’s [Adobe Target Web destination](/docs/connections/destinations/catalog/actions-adobe-target-web/) or a native implementation of `at.js`. Please ensure you create profiles on the web first.
 
-Segment’s Adobe Target Web destination sends data in realtime, but it may take up to 1-hour for a user to be available via the Adobe Target API. This means you may see delivery errors for `Profile Not Found` in Adobe Target Cloud Mode until the profile is available for API updates.
+Segment’s Adobe Target Web destination sends data in real-time, but it may take up to 1-hour for a user to be available through the Adobe Target API. This means you may see delivery errors for `Profile Not Found` in Adobe Target Cloud Mode until the profile is available for API updates.
 
 In addition, Adobe Target visitor profiles expire after 14 days. [Profile lifetime](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/visitor-profile-lifetime.html){:target="_blank"} could be another reason a profile is not found.

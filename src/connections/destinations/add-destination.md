@@ -12,7 +12,7 @@ Destinations are tools or services which can use the data sent from Segment to p
 
 ## Adding a destination
 
-There are two ways to add a destination to your deployment: using the Segment web app, or using the [Public API](/docs/api/).
+There are two ways to add a destination to your deployment: using the Segment web app, or using the [Public API](/docs/api/public-api).
 
 
 #### Adding a destination from the Segment web app

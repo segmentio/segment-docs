@@ -50,10 +50,10 @@ To delete a favorite, click the **more** (…) menu and select **Remove favorite
 
 ## Recent Activity
 
-The recent activity section displays the most recent items logged to the Segment Audit trail. This includes workspace membership changes and requests, changes to the configuration of different Segment features (including sources, destinations, and to Personas and Protocols configurations), and data storage sync failures.
+The recent activity section displays the most recent items logged to the Segment Audit trail. This includes workspace membership changes and requests, changes to the configuration of different Segment features (including sources, destinations, and to Engage and Protocols configurations), and data storage sync failures.
 
 ## Usage
 
-The Usage section shows a summary of the workspace's plan utilization for the current billing period. This includes billing information for all parts of your Segment plan. This includes [MTUs or API call volume](/docs/guides/usage-and-billing/mtus-and-throughput/) (as applicable), Functions usage time (if applicable), and Personas details (if applicable). Click **view all** to go to the workspace's billing page for more detailed statistics.
+The Usage section shows a summary of the workspace's plan utilization for the current billing period. This includes billing information for all parts of your Segment plan. This includes [MTUs or API call volume](/docs/guides/usage-and-billing/mtus-and-throughput/) (as applicable), Functions usage time (if applicable), and Engage details (if applicable). Click **view all** to go to the workspace's billing page for more detailed statistics.
 
 ![](/docs/segment-app/images/workspace-home-usage.png)

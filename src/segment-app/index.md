@@ -21,7 +21,7 @@ The first thing you see is a graph of the Sources and Destinations you have conn
 
 The graph on this overview page includes lines which can show you which Sources send data to which Destinations. If this is the first time you're looking at your workspace and you haven't set it up yet, it won't look quite like this.
 
-In the left navigation bar, you see the main parts of the Segment application: [Sources](/docs/connections/sources/), [Destinations](/docs/connections/destinations/), [Privacy](/docs/privacy/), and [Personas](/docs/personas/) and [Protocols](/docs/protocols/) if your subscription includes them.
+In the left navigation bar, you see the main parts of the Segment application: [Sources](/docs/connections/sources/), [Destinations](/docs/connections/destinations/), [Privacy](/docs/privacy/), and [Engage](/docs/engage/) and [Protocols](/docs/protocols/) if your subscription includes them.
 
 You can also find the Catalog in the left navigation, which lists the sources you can collect data from, and the destinations you can send data to.
 
@@ -49,11 +49,11 @@ Next up we have the Catalog. The catalog includes a list of all [sources](/docs/
 
 The Catalog is always growing, so check out the "New and Noteworthy" section from time to time to see what's new!
 
-## Personas and Protocols
+## Engage and Protocols
 
-If you have Protocols or Personas enabled in your workspace, you'll see sections for those too. Protocols helps you structure and maintain the format of the data you send through Segment, and Personas helps you use your Segment data to build audiences and better understand your users.
+If you have Protocols or Engage enabled in your workspace, you'll see sections for those too. Protocols helps you structure and maintain the format of the data you send through Segment, and Engage helps you use your Segment data to build audiences and better understand your users.
 
-These features are fairly advanced, but you can learn more about them by [requesting a demo](https://segment.com/contact/sales/), or reading more in the [Personas documentation](/docs/personas/), and the [Protocols documentation](/docs/protocols/).
+These features are fairly advanced, but you can learn more about them by [requesting a demo](https://segment.com/contact/sales/), or reading more in the [Engage documentation](/docs/engage/), and the [Protocols documentation](/docs/protocols/).
 
 ## Segment Settings
 

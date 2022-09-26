@@ -25,7 +25,7 @@ This means you should remove Intercom's snippet from your page.
 
 ### Mobile
 
-**IMPORTANT:** Our Intercom mobile components are currently in public beta. We appreciate any feedback you have on the new components, so [let us know](https://segment.com/help/contact)!
+**IMPORTANT:** The Intercom mobile components are currently in public beta. 
 
 Before reading the specific instructions for iOS or Android below, make sure you enter your Mobile API Key in the Segment Settings UI. This is required to send data to Intercom from your mobile apps.
 
@@ -472,17 +472,17 @@ Intercom only allows a total of [120 unique event names](http://docs.intercom.io
 
 If you want to prevent some of your events from being passed to Intercom and thus prevent the error, you can filter out Intercom in those events using the [Selecting Destinations](/docs/guides/how-to-guides/collect-on-client-or-server#selecting-destinations) feature available on all of Segment's libraries.
 
-## Using Intercom with Personas
+## Using Intercom with Engage
 
-Intercom is one of the most popular Destinations used with Personas.
+Intercom is one of the most popular Destinations used with Engage.
 
-You can send computed traits and audiences that you create in Personas to this Destination so that you can use this data in live chat, automated emails, and other Intercom features to personalize interactions with your customers.
+You can send computed traits and audiences that you create in Engage to this Destination so that you can use this data in live chat, automated emails, and other Intercom features to personalize interactions with your customers.
 
 {% include content/lookback.md %}
 
 ### User-Level Traits and Audiences in Intercom
 
-Personas sends [**User-Level data**](/docs/glossary#event) to Intercom using an **Identify** call that appends a trait to users' profiles, or a **Track** call when a trait is computed or an audience is entered or exited.
+Engage sends [**User-Level data**](/docs/glossary#event) to Intercom using an **Identify** call that appends a trait to users' profiles, or a **Track** call when a trait is computed or an audience is entered or exited.
 
 #### User level computed traits
 
@@ -490,9 +490,9 @@ The name of the computed trait is added to the user profile as a trait, and the 
 
 #### User level Audiences
 
-The name of the audience is added to the user's profile as a trait, with boolean value that indicates if the user is in the audience. For example, when a user first completes an order in a lookback window for the last 30 days, Personas sends an identify call with the property `order_completed_last_30days: true`.  When the user no longer satisfies these criteria (for example when it's been longer than 30 days since the last purchase), Personas sets that value to `false`.
+The name of the audience is added to the user's profile as a trait, with boolean value that indicates if the user is in the audience. For example, when a user first completes an order in a lookback window for the last 30 days, Engage sends an identify call with the property `order_completed_last_30days: true`.  When the user no longer satisfies these criteria (for example when it's been longer than 30 days since the last purchase), Engage sets that value to `false`.
 
-When you first create an audience, Personas sends an `identify` call for every user in the audience. Later syncs only update users which were added or removed from the audience since the last sync.
+When you first create an audience, Engage sends an `identify` call for every user in the audience. Later syncs only update users which were added or removed from the audience since the last sync.
 
 > info ""
 > **Note**: Segment does not currently support the creation of **Leads** in Intercom.
@@ -500,42 +500,43 @@ When you first create an audience, Personas sends an `identify` call for every u
 
 ### Account-Level Traits and Audiences in Intercom
 
-Personas sends **Account-Level data** to Intercom using an **Identify** event call that appends an account trait to the users' profiles or a **Track** call when a trait is computed or an audience is entered or exited. Users are added to an account using a single **Group** call, which appends a `groupID` to each user within the account.
+Engage sends **Account-Level data** to Intercom using an **Identify** event call that appends an account trait to the users' profiles or a **Track** call when a trait is computed or an audience is entered or exited. Users are added to an account using a single **Group** call, which appends a `groupID` to each user within the account.
 
 #### Account level computed traits
 
-When you build computed traits with Account-Level data, Personas computes for each account based on traits or aggregated user behavior. You can then export traits for each account, or for each user within an account. The name of the computed trait is added to the profiles of users who are part of the account as a user trait, and the value of the computed trait is added to the corresponding user's user trait.
+When you build computed traits with Account-Level data, Engage computes for each account based on traits or aggregated user behavior. You can then export traits for each account, or for each user within an account. The name of the computed trait is added to the profiles of users who are part of the account as a user trait, and the value of the computed trait is added to the corresponding user's user trait.
 
-For example, imagine you have a computed trait that counts the number of times that users from a specific account visit your pricing page. If users visit your pricing page five times, Personas sends an identify call with the property `pricing_page_visits: 5`.
+For example, imagine you have a computed trait that counts the number of times that users from a specific account visit your pricing page. If users visit your pricing page five times, Engage sends an identify call with the property `pricing_page_visits: 5`.
 
 #### Account level audiences
 
-When you build audiences with Account-Level data, Personas returns a set of accounts or a set of users that match your criteria. Personas adds the name of the audience to the profile (individual user, or user within the account) as a trait, with a boolean value to indicate if the user is in the audience. For example: when users in an account first complete an order in the last 30 days, Personas sends an identify call with the property `order_completed_last_30days: true`. When the users in this Account no longer satisfy these criteria (for example if it's been more than 30 days) Segment sets that value to `false`.
+When you build audiences with Account-Level data, Engage returns a set of accounts or a set of users that match your criteria. Engage adds the name of the audience to the profile (individual user, or user within the account) as a trait, with a boolean value to indicate if the user is in the audience. For example: when users in an account first complete an order in the last 30 days, Engage sends an identify call with the property `order_completed_last_30days: true`. When the users in this Account no longer satisfy these criteria (for example if it's been more than 30 days) Segment sets that value to `false`.
 
-When you first create the audience, Personas sends an identify call for *every user in the account in that audience*. Later syncs only send updates for individual accounts and users which were added or removed since the last sync.
+When you first create the audience, Engage sends an identify call for *every user in the account in that audience*. Later syncs only send updates for individual accounts and users which were added or removed since the last sync.
 
 > success ""
 > **Tip**: For user-level events or traits, you can specify `None of the users`, `Any users`, or `All users` when building your audience criteria.
 
 
-## Setting Up Personas and Intercom
+## Setting Up Engage and Intercom
 
-To send computed traits or audiences to Intercom, you first must connect it to your Personas space. Once it's set up, you can select Intercom as a destination for Personas data when you create computed traits or audiences.
+To send computed traits or audiences to Intercom, you first must connect it to your Space. Once it's set up, you can select Intercom as a destination for Engage data when you create computed traits or audiences.
 
-1. In your Segment workspace, click Personas in the left navigation bar, and select your Personas space.
-2. Click **Destinations** in your Personas space and click **Add Destination**.
-3. Search for Intercom and click it when it appears in the search results
-4. Click **Configure Intercom**.
-5. Click **Connect to Intercom**.
+1. In your Segment workspace, click Engage in the left navigation bar, and select your Space.
+2. Click **Engage Settings** and select the **Destinations** tab.
+3. Click **Add Destination**.
+4. Search for Intercom and click it when it appears in the search results
+5. Click **Configure Intercom**.
+6. Click **Connect to Intercom**.
    ![](images/pers-5-connect.png)
-6. Log in to Intercom to allow Segment to send data to Intercom.
+7. Log in to Intercom to allow Segment to send data to Intercom.
    ![](images/pers-6-oath.png)
 
-## Intercom Personas Quick Info
+## Intercom Engage Quick Info
 
-- **Personas Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
+- **Engage Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
 - **Traits and Audiences created by**: Identify calls add traits and audiences as traits on the user
-- **Must create audience_name field before Personas can update those values?**: No, Personas creates the audience for you. Segment creates the name in Intercom when it passes user `identify` calls.
+- **Must create audience_name field before Engage can update those values?**: No, Engage creates the audience for you. Segment creates the name in Intercom when it passes user `identify` calls.
 - **Audience appears as**: A snake_cased version of the audience name (for example, `order_completed_last_30days: true` ) with a boolean value of `true` indicates that a user is in the audience.
 - **Destination rate limit**: Yes. 83 requests per 10 seconds
 - **Lookback window allowed**: Unlimited

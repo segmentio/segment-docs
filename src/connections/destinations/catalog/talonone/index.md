@@ -76,7 +76,7 @@ becomes `address_city`.
 
 ## Audience & Computed Traits
 
-`Computed traits` and `audiences` data can be communicated to the Talon.One destination as a customer's `custom attribute`. To learn more about Personas, contact us for a demo.
+`Computed traits` and `audiences` data can be communicated to the Talon.One destination as a customer's `custom attribute`. .
 
 An **identify** call is sent to the destination for each user being added and removed from an Audience. The trait name is the snake_cased version of the audience name you provide, with a  boolean (`true`/`false`) value.
 

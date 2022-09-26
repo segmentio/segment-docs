@@ -13,7 +13,7 @@ In June 2020, Apple made several privacy-related announcements at WWDC20 about i
 
 Segment fundamentally agrees with Apple's stance.
 
-Apple released iOS 14 in the autumn of 2020, but [delayed the IDFA changes until early 2021](https://developer.apple.com/news/?id=hx9s63c5&1599152522). Segment products, including Connections, Protocols, Personas (including Identity Resolution), and Privacy, Data Lakes, and Cloud Sources, do not rely on IDFA and so are not affected by these platform changes. However, Segment's iOS Source SDK (`analytics-ios`) and any destinations that previously used IDFA require that you update them so they continue to work with iOS 14.
+Apple released iOS 14 in the autumn of 2020, but [delayed the IDFA changes until early 2021](https://developer.apple.com/news/?id=hx9s63c5&1599152522). Segment products, including Connections, Protocols, Engage, Profiles (including Identity Resolution), and Privacy, Data Lakes, and Cloud Sources, do not rely on IDFA and so are not affected by these platform changes. However, Segment's iOS Source SDK (`analytics-ios`) and any destinations that previously used IDFA require that you update them so they continue to work with iOS 14.
 
 Segment updated the iOS Source SDK (`analytics-ios`) and any affected destinations so they support Apple's iOS platform changes. The Segment iOS SDK (`analytics-ios`) has been updated to version 4 with v4.1 released as stable.
 
