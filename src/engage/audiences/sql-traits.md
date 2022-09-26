@@ -84,37 +84,23 @@ To connect BigQuery to Segment SQL Traits, follow these instructions to create a
 
 2. Click the drop down to the left of the search bar and select the project that you want to connect.
 
-   ![Select a project to connect from the drop down menu](images/bigquery_setup1.png)
-
    > **Note**: If you don't see the project you want in the menu, click the account switcher in the upper right corner, and verify that you're logged in to the right Google account for the project.
 
 3. Click the menu in the upper left and select **IAM & Admin**, then **Service accounts**.
 
-5. Click **Create Service Account**.
+4. Click **Create Service Account**.
 
-   ![Click Create Service Account on the Service accounts screen](images/bigquery_setup2.png)
+5. Give the service account a name like `segment-sqltraits`.
 
-6. Give the service account a name like `segment-sqltraits`.
-
-7. Under **Project Role**, add _only_ the `BigQuery Data Viewer` and `BigQuery Job User` roles.
-
-   ![Select a project role](images/bigquery_setup3a.png)
-
-   ![Add the BigQuery Data Viewer and BigQuery Job User roles](images/bigquery_setup3b.png)
+6. Under **Project Role**, add _only_ the `BigQuery Data Viewer` and `BigQuery Job User` roles.
 
    > IMPORTANT: Do not add any other roles to the service account. Adding other roles can prevent Segment from connecting to the account.
 
-6. Click **Create Key**.
+7. Click **Create Key**.
 
-   ![Click Create Key](images/bigquery_setup4.png)
-
-7. Select `JSON` and click **Create**.
-
-   ![Select Json and click Create](images/bigquery_setup5.png)
+8. Select `JSON` and click **Create**.
 
    A file with the key is saved to your computer. Save this; you'll need it to set up the warehouse source in the next step.
-
-   ![A file key saved to your computer](images/bigquery_setup6.png)
 
    You're now ready to create a new BigQuery warehouse source, upload the JSON key you just downloaded, and complete the BigQuery setup.
 
@@ -219,7 +205,6 @@ Yes, Segment limits request sizes to a maximum of 16kb. Records larger than this
 ### I'm getting a permissions error.
 
 You might encounter a `permission denied for schema` error, like the following:
-![An example of a permission denied for schema error](images/troubleshoot1.png)
 
 Segment usually displays this error because you're querying a schema and table that the current user cannot access. To check the table privileges for a specific grantee (user), view the credentials of the stored warehouse user.
 
@@ -236,13 +221,11 @@ Learn more about granting permissions using the following links:
 
 ### I'm seeing a maximum columns error.
 
-![An example of a maximum columns error](images/troubleshoot2.png)
-
 Segment supports returning only 25 columns. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with a description of your use case if you need access to more than 25 columns.
 
 ### I'm seeing a duplicate `user_id` error.
 
-![An example of a duplicate user_id error](images/troubleshoot3.png)
+![An example of a duplicate user_id error](../images/troubleshoot3.png)
 
 Each query row must correspond to a unique user. Segment displays this error if it detects multiple rows with the same `user_id`. Use a `distinct` or `group by` statement to ensure that each row has a unique user_id.
 
