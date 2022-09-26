@@ -36,7 +36,7 @@ The Mixpanel (Actions) destination does not offer a device-mode connection mode.
 You can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
 > success ""
-> Make sure you map email to `$email`, otherwise email will be undefined.   
+> Make sure you map the `traits.email` property to Mixpanel's `$email`, otherwise email will be undefined.   
 
 
 
