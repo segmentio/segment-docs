@@ -190,7 +190,7 @@ This setting controls the [Log Type](https://docs.aws.amazon.com/lambda/latest/d
 
 **My Lambda <> Segment connection is timing out, what do I do?**
 
-Due to how our event delivery system, [Centrifuge](https://segment.com/blog/introducing-centrifuge/), works, your Lambda can't take more than 5 seconds to run per message. If you're consistently running into timeout issues, you should consult the [AWS Lambda docs](https://docs.aws.amazon.com/lambda/index.html#lang/en_us), as well as docs for your language of choice, for tips on optimizing performance.
+Due to how the event delivery system, [Centrifuge](https://segment.com/blog/introducing-centrifuge/), works, your Lambda can't take more than 5 seconds to run per message. If you're consistently running into timeout issues, you should consult the [AWS Lambda docs](https://docs.aws.amazon.com/lambda/index.html#lang/en_us), as well as docs for your language of choice, for tips on optimizing performance.
 
 **Handling Common Errors**
 You can find delivery logs in Destination > [Event Delivery](/docs/connections/event-delivery/).
@@ -205,4 +205,3 @@ Here are some common errors you may come across and how to resolve:
 
 `Invalid Credentials` - occurs when IAM permissions are not set up correctly. Check the IAM policy and role.
 
-{% include content/personas.md %}

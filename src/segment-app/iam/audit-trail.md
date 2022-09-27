@@ -68,7 +68,7 @@ The Audit Trail includes information on the following activity:
 *   Tracking Plan Updated
 *   Violations Detected
 
-### Personas
+### Engage
 *   Source Connected To Space
 *   Source Disconnected From Space
 *   Space Created
@@ -86,6 +86,6 @@ The Audit Trail includes information on the following activity:
 *   Audience CSV Downloaded
 *   Audience Run Failed
 *   Audience Destination Sync Failed
-*   Personas Warehouse Source Created
-*   Personas Warehouse Source Modified
-*   Personas Warehouse Source Deleted
+*   Engage Warehouse Source Created
+*   Engage Warehouse Source Modified
+*   Engage Warehouse Source Deleted

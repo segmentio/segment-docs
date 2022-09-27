@@ -1,7 +1,6 @@
 ---
 title: Analytics Overview
-layout: engage
-engage: true
+plan: engage-premier
 ---
 
 Twilio Engage provides you with analytics that give you insight into the performance of your [email and SMS campaigns](/docs/engage/campaigns/).
@@ -20,7 +19,7 @@ Campaign engagement metrics are based only on delivered campaigns. Suppose, for 
 
 You'll find a campaign's analytics within its parent Journey, using the following instructions:
 
-1. Within your Personas space, select the **Journeys** tab.
+1. Within your Space, select the **Journeys** tab.
 2. From the Journeys table, select the Journey you want to view.
 3. From the Journey overview, select the email or SMS campaign you want to view.
 4. A modal pane appears that displays your campaign's analytics.

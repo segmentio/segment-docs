@@ -21,7 +21,7 @@ Cordial (Actions) provides the following benefits over the classic Cordial desti
 
 - **Transparent data mapping**. The Classic Cordial destination receives data from Segment as is. The Cordial backend then converts those Segment events to Cordial's format and clients have limited control over this conversion. The Cordial (Actions) destination allows clients to fully define their own mappings of Segment events, making sure they receive data structured specifically for their needs. 
 - **Only sends the data you need**. With Cordial (Actions) you can define only those destination actions and mappings that make sense for your use cases, while Cordial Classic always sends four predefined API calls: identify, track, group, and page. 
-- **Sends Personas components to Cordial**. With Cordial (Actions) it's possible to define action mappings that will send audiences and user computed traits defined in the Segment Personas platform to Cordial.
+- **Sends Engage components to Cordial**. With Cordial (Actions) it's possible to define action mappings that will send audiences and user computed traits defined in the Segment Engage platform to Cordial.
 
 ## Getting started
 

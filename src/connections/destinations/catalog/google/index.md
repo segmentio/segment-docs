@@ -39,28 +39,3 @@ To add this number to your Segment destination, go to the Floodlight destination
 
 Your global site tag is controlled by a different Google product or may be implemented incorrectly. Use the [Tag Assistant extension](https://support.google.com/tagassistant/answer/2947093) for Google Chrome to verify.
 
-<!-- LR; TODO
-
-Analytics vs Ads categories.
-Which are ok for mobile? which are okay for device mode?
-Which recommended? Which deprecated?
-
-
-- [Google Firebase (mobile analytics) destination](/docs/connections/destinations/catalog/firebase)
-- [Google Analytics destination](/docs/connections/destinations/catalog/google-analytics)
-- [Google Analytics 4 destination](/docs/connections/destinations/catalog/google-analytics/ga4-plans)
-- [Google Tag Manager destination](/docs/connections/destinations/catalog/google-tag-manager)
-- [DoubleClick Floodlight destination](/docs/connections/destinations/catalog/doubleclick-floodlight)
-
-- [Using Personas with Google DV360 (Beta)](/docs/connections/destinations/catalog/personas-display-video-360)
-
-- [Google Ads (Classic) destination](/docs/connections/destinations/catalog/google-ads-classic)
-
-- [Google Ads (Gtag) destination](/docs/connections/destinations/catalog/google-ads-gtag) https://support.google.com/analytics/answer/9310895?hl=en
-
-- [Google Cloud Function destination](/docs/connections/destinations/catalog/google-cloud-function)
-
-- [Google Cloud Pubsub destination](/docs/connections/destinations/catalog/google-cloud-pubsub)
-
-- [Google Android mobile source library](/docs/connections/sources/catalog/libraries/mobile/android)
--->

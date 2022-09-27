@@ -17,10 +17,10 @@ sections:
     icon: protocols.svg
     description: "Prevent data quality issues with a tracking schema and enforcement with Protocols."
     path: /protocols/
-  - name: Personalize interactions
-    icon: personas.svg
-    description: "Improve customer interactions by building audiences that power personalized experiences."
-    path: /personas/
+  - name: Personalize experiences
+    icon: engage.svg
+    description: "Build audiences and journeys from real-time customer data to personalize experiences on every channel."
+    path: /engage/
   - name: Respect users' privacy
     icon: privacy.svg
     description: "Keep customer data private with Segment's data discovery and policy enforcement tools."

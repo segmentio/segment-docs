@@ -160,9 +160,9 @@ Invoking a Segment `identify` event sets Segment `traits` as Optimizely `attribu
 
 Notification listeners are not available for Segment `track` events when implementing Optimizely using Segment using cloud-mode. [Notification listeners](https://docs.developers.optimizely.com/full-stack/docs/notification-listeners) are still available with any native call invoked from your Optimizely client instance.
 
-## Personas
+## Engage
 
-Follow these instructions on how to set up Personas and Optimizely:
+Follow these instructions on how to set up Engage and Optimizely:
 
 * [Using Segment Personas and Optimizely Full Stack for Omnichannel Experiments](https://www.optimizely.com/insights/blog/segment-personas-optimizely-full-stack-omnichannel-experiments/){:target="_blank"}
 

@@ -4,11 +4,11 @@ title: Using Label-Based Access Control
 {% include content/plan-grid.md name="iam" %}
 
 
-Labels allow workspace owners to assign permissions to users to grant them access to groups. Groups represent collections of Sources, or collections of Personas spaces.
+Labels allow workspace owners to assign permissions to users to grant them access to groups. Groups represent collections of Sources, or collections of Spaces.
 
 To create or configure labels, go to the **Labels** tab in your workspace settings. Only workspace Owners can manage labels for the entire workspace.
 
-> note ""
+> info ""
 > All workspaces include labels for `Dev` (development) and `Prod` (production) environments. Business Tier customers can create an unlimited number of labels.
 
 ## Custom Environments
@@ -16,19 +16,17 @@ To create or configure labels, go to the **Labels** tab in your workspace settin
 By default, all workspaces include labels for Dev (development) and Prod (production) environments. Workspace owners can configure what these labels are applied to, and can create up to five custom environments.
 
 Labels must be in `key:value` format, both the key and value must begin with a letter, and they can only contain letters, numbers, hyphens or dashes.
-![](images/labels-page.png)
 
-To apply labels to Sources and Personas spaces, click the **Assign Labels** tab from the Labels screen. In the screen that appears, select the Sources and Personas spaces to apply the label to.
-![](images/assign-bulk-labels.png)
+To apply labels to Sources and Spaces, click the **Assign Labels** tab from the Labels screen. In the screen that appears, select the Sources and Spaces to apply the label to.
 
 Once a label is in use (either assigned to a resource or used to restrict permissions on a user), the label cannot be deleted. You must first manually remove the label from any resources and permissions before you can delete it.
 
-> note ""
-> **Note**: While only Workspace Owners can bulk-edit labels, Source and Space admins can edit the labels on the sources and spaces they have access to. To do this, go to the **Settings** tab for each item.
+> info ""
+> While only Workspace Owners can bulk-edit labels, Source and Space admins can edit the labels on the sources and spaces they have access to. To do this, go to the **Settings** tab for each item.
 
 Workspace owners can also grant specific [Roles](/docs/segment-app/iam/roles/) access to specific labels. For example, you might give a Source Admin access to only Sources that have the `Prod` label.
 
-Permissions can then be assigned to users in Access Management by label, on the Source Admin, Source Read-Only, Personas Admin, Personas User and Personas Read-Only users.
+Permissions can then be assigned to users in Access Management by label, on the Source Admin, Source Read-Only, Engage Admin, Engage User and Engage Read-Only users.
 
 ![](images/labels-access-mgmt.png)
 
@@ -37,26 +35,26 @@ Permissions can then be assigned to users in Access Management by label, on the 
 > note ""
 > **Note**: All Segment workspaces can create up to five custom labels. Additional label types (in addition to environment labels) are available to Segment Enterprise Tier accounts.
 
-To create additional custom labels, a workspace owner can create new key types in the Labels screen. The workspace owner can customize any combination of labels to mirror how resources should be partitioned in their organization. For example, some organizations may prefer to restrict access on their Sources and Personas Spaces by brand or product area while other organizations may find it more useful to restrict their resources by tech stack or engineering department.
+To create additional custom labels, a workspace owner can create new key types in the Labels screen. The workspace owner can customize any combination of labels to mirror how resources should be partitioned in their organization. For example, some organizations may prefer to restrict access on their Sources and Spaces by brand or product area while other organizations may find it more useful to restrict their resources by tech stack or engineering department.
 
 When you create a new key, it becomes available in the Sources page as a column type that can be used to organize sources.
 
 ## Labels FAQ
 
 ##### Where can I create labels?
-Workspace owners can create labels for sources and Personas spaces from the Segment workspace **Settings** -> **Admin** -> **Labels**.
+Workspace owners can create labels for sources and Spaces from the Segment workspace **Settings** -> **Admin** -> **Labels**.
 
 ##### What resources can I assign a label to?
 
-Labels currently only apply to Sources and Personas Spaces.
+Labels currently only apply to Sources and Spaces.
 
 ##### Where can I assign labels?
 
-Workspace owners can assign bulk assign labels to sources and Personas spaces using the "Assign Labels" tab in the **Labels** screen. Source admins and Personas space admins can edit the labels on their individual resources in the "Settings" tab.
+Workspace owners can assign bulk assign labels to sources and Spaces using the "Assign Labels" tab in the **Labels** screen. Source admins and Space admins can edit the labels on their individual resources in the "Settings" tab.
 
 ##### Where can labels be used?
 
-Once a label has been created and has been assigned to resources within the workspace, workspace owners can use these labels to restrict permissions on user access, restrict which sources can be connected to a Personas space through a Connection Policy, and organize sources by viewing these labels as columns in the Sources page.
+Once a label has been created and has been assigned to resources within the workspace, workspace owners can use these labels to restrict permissions on user access, restrict which sources can be connected to a Sxspace through a Connection Policy, and organize sources by viewing these labels as columns in the Sources page.
 
 ##### Can I delete a label?
 

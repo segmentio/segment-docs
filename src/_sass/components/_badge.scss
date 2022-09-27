@@ -19,4 +19,13 @@
     background-color: lighten(color(success), 40%);
     color: color(success-dark);
   }
+  &--engage {
+    background-color: lighten(color(error), 10%);
+    color: white;
+  }
+
+  &--none {
+    background-color: white;
+    color: color(gray-800);
+  }
 }

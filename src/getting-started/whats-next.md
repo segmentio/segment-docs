@@ -18,11 +18,11 @@ Business tier customers can use Segment's [Protocols](/docs/protocols/) package 
 
 With Protocols, you can use [Tracking Plans](/docs/protocols/tracking-plan/create/) to build consensus in your organization about which events and property you intend to collect across your web, mobile or server-side data sources. Once defined, you can connect the Tracking Plan to your Sources to automatically [validate](/docs/protocols/validate/) the data is flowing correctly. You can also turn on [enforcement](/docs/protocols/enforce/) to block bad data, and even fix incorrect data with [Transformations](/docs/protocols/transform/).
 
-## Single view of the customer with Personas
+## Single view of the customer with Engage
 
-[Personas](/docs/personas/) is a powerful personalization platform that enables you to create unified customer profiles in Segment, to build and enrich audiences, and to activate audiences across marketing tools.
+[Engage](/docs/engage/) is a powerful personalization platform that enables you to create unified customer profiles in Segment, to build and enrich audiences, and to activate audiences across marketing tools.
 
-With Personas, you can create unified customer profiles, enrich those profiles with new traits, build Audiences using those profiles, and sync audiences to marketing tools to power personalized experiences, and better understand your customers.
+With Engage, you can create unified customer profiles, enrich those profiles with new traits, build Audiences using those profiles, and sync audiences to marketing tools to power personalized experiences, and better understand and market to your customers.
 
 
 ## More learning resources
@@ -30,7 +30,7 @@ With Personas, you can create unified customer profiles, enrich those profiles w
 
 ##### Segment University
 
-[Segment University](https://university.segment.com/?utm=docs) is our free, online classroom for learning the basics of Segment.
+[Segment University](https://university.segment.com/?utm=docs) is Segment's free, online classroom for learning the basics of Segment.
 
 ##### Analytics Academy
 

@@ -1,5 +1,5 @@
 ---
 title: Email and SMS Best Practices
-layout: engage
-engage: true
+plan: engage-premier
+published: false
 ---

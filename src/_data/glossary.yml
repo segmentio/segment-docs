@@ -2,7 +2,7 @@ Analytics.js: |
   The Segment Javascript library wrapper, which makes it simple to send your data to any tool without having to learn, test or implement the new API for each tool every time.
 
 API: |
-  Application Programming Interface. In software, this term describes a way of interacting with software in an automated fashion, without the use of a user-interface designed for humans. In Segment, we call the standard calls (`track`, `page` and `screen`, `identify` and `group`) our API. We also provide the [Public API](/docs/api/), which you can use to configure sources and destinations, and perform other functions in your workspace, without logging in using a web browser.
+  Application Programming Interface. In software, this term describes a way of interacting with software in an automated fashion, without the use of a user-interface designed for humans. In Segment, we call the standard calls (`track`, `page` and `screen`, `identify` and `group`) our API. We also provide the [Public API](/docs/api/public-api), which you can use to configure sources and destinations, and perform other functions in your workspace, without logging in using a web browser.
 
 App: |
   The app is what we call the main Segment web application, the part you log in to, and where you configure sources and destinations, see events in the debugger, manage your tracking plan, and so on.
@@ -42,7 +42,7 @@ Computed trait: |
   [Computed traits](/docs/personas/computed-traits/) are per-user, or per-account [traits](#traits) that you create or “compute” in [Personas](/docs/personas/). When you build a Computed Trait, Personas adds it to relevant user profiles.
 
 Custom trait: |
-  [Custom Traits](/docs/personas/audiences/#custom-traits) are user or account properties collected from all the events you send to Personas.  For example, you can add any properties that you send as a part of your track calls or identify calls (`email`, `first_name`, `last_name`) as custom traits. You can then view them in the profile explorer, and use them in your audiences, computed traits and SQL traits.
+  [Custom Traits](/docs/engage/audiences/#custom-traits) are user or account properties collected from all the events you send to Personas.  For example, you can add any properties that you send as a part of your track calls or identify calls (`email`, `first_name`, `last_name`) as custom traits. You can then view them in the profile explorer, and use them in your audiences, computed traits and SQL traits.
 
 Debugger: |
   This is the place in the app where you can see your events flowing through Segment

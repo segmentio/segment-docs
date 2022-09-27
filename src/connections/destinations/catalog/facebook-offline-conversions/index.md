@@ -12,7 +12,7 @@ id: 58ae54dc70a3e552b95415f6
 ## Other Facebook Destinations Supported by Segment
 This page is about the **Facebook Offline Conversions**. For documentation on other Facebook destinations, see the pages linked below.
 
-| **Facebook Destination**                                                                                    | Supported by Personas |
+| **Facebook Destination**                                                                                    | Supported by Engage |
 | ----------------------------------------------------------------------------------------------------------- | --------------------- |
 | **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                      | Yes                   |
 | **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)**    | Yes                   |

@@ -5,7 +5,7 @@ hide-dossier: false
 strat: adobe
 id: 61fc2ffcc76fb3e73d85c89d
 ---
-Adobe Target is the A/B testing and personalization component of Adobe Experience Cloud. Segment’s Adobe Target integration enables customers to send data from Segment to Adobe Target to create and update user profiles. You can leverage these profiles in Adobe Target to construct audiences and personalize onsite visitor experiences.
+Adobe Target is the A/B testing and personalization component of Adobe Experience Cloud. Segment’s Adobe Target integration enables customers to send data from Segment to Adobe Target to create and update user profiles. Use these profiles in Adobe Target to construct audiences and personalize onsite visitor experiences.
 
 Segment offers two destinations for Adobe Target:
 - [Adobe Target Web](/docs/connections/destinations/catalog/actions-adobe-target-web/)
@@ -33,9 +33,9 @@ The Adobe Target Web destination loads Adobe's `at.js` script for you in order t
 
 ## Relationship between Adobe Target Web and Adobe Target Cloud Mode
 
-Adobe Target is unique because you must have a web integration with Adobe Target in order to utilize the Target server-side API for profile updates. This is because Adobe Target only allows creation of user profiles via client-side web. 
+Adobe Target is unique because you must have a web integration with Adobe Target to use the Target server-side API for profile updates. This is because Adobe Target only allows creation of user profiles through client-side web. 
 
-To support this, Segment provides an Adobe Target Web destination for user profile creation, updates, and page/event tracking and an [Adobe Target Cloud Mode destination](/docs/connections/destinations/catalog/actions-adobe-target-cloud/) for additional profile updates. The cloud mode destination is useful if you would like to send Personas data to Adobe Target as profile parameters.
+To support this, Segment provides an Adobe Target Web destination for user profile creation, updates, and page/event tracking and an [Adobe Target Cloud Mode destination](/docs/connections/destinations/catalog/actions-adobe-target-cloud/) for additional profile updates. The cloud mode destination is useful if you would like to send Engage data to Adobe Target as profile parameters.
 
 ### How does it work?
 Adobe Target’s `at.js` script identifies each visitor uniquely through a `PCID`, which is auto-generated in the visitor’s cookies. Since Segment doesn't expect you to include the `PCID` on your Segment events, Segment updates profiles using the `mbox3rdPartyId` instead.
@@ -57,8 +57,8 @@ If the same known user visits on a different device, assuming they authenticate 
 #### Scenario 3. Anonymous user becomes a known user.
 When an anonymous user arrives on your website, one Adobe Target profile will be created and the `mbox3rdPartyId` will be equal to the Segment `anonymousId`. However, once the user is identified, they will be assigned a new `mbox3rdPartyId` equal to the Segment `userId`. There will be two profiles in Adobe Target; both will be available for targeting.
 
-### How to use Adobe Target with Personas
-For information on how to use Adobe Target with Personas, please see [Adobe Target Cloud Mode destination](/docs/connections/destinations/catalog/actions-adobe-target-cloud/#how-to-use-adobe-target-with-personas).
+### How to use Adobe Target with Engage
+For information on how to use Adobe Target with Engage, see [Adobe Target Cloud Mode destination](/docs/connections/destinations/catalog/actions-adobe-target-cloud/#how-to-use-adobe-target-with-engage).
 
 ## Viewing Segment data in Adobe Target
 To view and use your Segment data in Adobe Target, navigate to **Adobe Target > Audiences > Create Audience > Add Rule**.

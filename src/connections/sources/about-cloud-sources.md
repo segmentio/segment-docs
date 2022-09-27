@@ -15,7 +15,7 @@ Event Cloud Sources can export their data both into Segment warehouses, and into
 
 ### Object Cloud-App Sources
 
-Object Cloud App Sources can export data and import it directly into a Segment warehouse. You *must* have a Segment warehouse enabled before you enable these. From the warehouse, you analyze your data with SQL, or use Personas's SQL Traits to build audiences. Some examples of Object Cloud sources are Salesforce (account information), Zendesk (support cases), and Stripe (payments information).
+Object Cloud App Sources can export data and import it directly into a Segment warehouse. You *must* have a Segment warehouse enabled before you enable these. From the warehouse, you analyze your data with SQL, or use Engage SQL Traits to build audiences. Some examples of Object Cloud sources are Salesforce (account information), Zendesk (support cases), and Stripe (payments information).
 
 
 > note ""

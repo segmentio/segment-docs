@@ -1,7 +1,7 @@
 
 {% assign type = include.type %}
 {% if type == "event" %}
-{% assign source-list = site.data.catalog.sources.items | where: "isCloudEventSource", "true" %}
+{% assign source-list = site.data.catalog.sources.items | where: "isCloudEventSource", "true" | where: "hidden", "false" %}
 {% elsif type == "object" %}
 {% assign source-list = site.data.catalog.sources.items | where: "source_type", "cloud-app" | where: "hidden", "false" | where: "isCloudEventSource", "false" %}
 

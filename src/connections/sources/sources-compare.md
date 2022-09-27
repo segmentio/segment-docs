@@ -33,7 +33,7 @@ Cloud-App Sources allow you to pull in data from third-party tools so you can us
 
 - **Event Cloud-App Sources** can export their data both into Segment warehouses, and into other enabled Segment integrations that work with event data. Data from Event sources can include userIds and anonymousIds, and can affect your MTU usage.
 
-- **Object Cloud-App Sources** export data and import it directly into a Segment warehouse. From the warehouse, you can analyze your data with SQL, or use Personas's SQL Traits to build audiences. Some examples of Object Cloud sources are Salesforce (account information), Zendesk (support cases), and Stripe (payments information).
+- **Object Cloud-App Sources** export data and import it directly into a Segment warehouse. From the warehouse, you can analyze your data with SQL, or use Engage SQL Traits to build audiences. Some examples of Object Cloud sources are Salesforce (account information), Zendesk (support cases), and Stripe (payments information).
 
 
 

@@ -61,7 +61,7 @@ $ brew install curl
 
 You can use the Config API with an access token to programmatically access Segment resources that the token can access. Access tokens are created by workspace owners using the Access Management page, and can only access resources that the token has permission to.
 
-These are currently only suitable for first party, trusted applications, such as your personal local scripts and server side programs. Partners should not prompt Segment users for their username and password and save an access token as a way to delegate access. See the [Authentication](/docs/config-api/authentication/) doc for more information.
+These are currently only suitable for first party, trusted applications, such as your personal local scripts and server side programs. Partners should not prompt Segment users for their username and password and save an access token as a way to delegate access. See the [Authentication](/docs/api/config-api/authentication/) doc for more information.
 
 When you create an access token, you'll give it a description, a workspace, and determine whether it has workspace owner or member access.
 

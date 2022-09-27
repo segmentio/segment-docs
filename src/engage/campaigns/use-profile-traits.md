@@ -1,5 +1,5 @@
 ---
 title: Use Profile Traits in Your Campaigns
-layout: engage
-engage: true
+plan: engage-premier
+published: false
 ---

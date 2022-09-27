@@ -12,7 +12,7 @@
   ignore = "./scripts/ignore.sh"
 
 [context.branch-deploy]
-  command = "jekyll algolia && yarn build"
+  command = "yarn build"
 #  ignore = "./scripts/ignore.sh"
 
 [context.develop]

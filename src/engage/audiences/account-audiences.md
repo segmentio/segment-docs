@@ -1,15 +1,14 @@
 ---
 title: Account-level Audiences
-layout: engage
-engage: true
+redirect_from:
+  - "/personas/account-audiences"
+plan: engage-foundations
 ---
 
 
 
-Account-level audiences are Personas audiences for businesses that sell to other businesses. They return the set of accounts which match a combination of account-level traits, user-level traits, and user events. You can sync these accounts and associated users with downstream destinations.
+Account-level audiences are audiences for businesses that sell to other businesses. They return the set of accounts which match a combination of account-level traits, user-level traits, and user events. You can sync these accounts and associated users with downstream destinations.
 
-> info ""
-> Account-level audiences are available to workspaces on a **Personas Advanced** plan. If you're an existing Segment customer on a Personas Advanced plan, contact your Customer Success Manager for access to Account-level audiences. If you're a new customer, or do not have a CSM, [request a demo](https://segment.com/demo/).
 
 You can use account-level audiences to accomplish the following use cases:
 - Identify a set of at-risk accounts based on associated users' log in patterns, and flag them in your customer service application
@@ -25,7 +24,7 @@ You can use account-level audiences to accomplish the following use cases:
 ## Enable account-level audiences
 
 1. Contact [friends@segment.com](mailto:friends@segment.com) and provide your workspace ID to have account-level audiences enabled for your workspace. Navigate to **Settings > Workspace Settings > General Settings** to view your workspace ID.
-2. Ensure that `group_id` is configured as an identifier in Personas Identity Resolution settings. For more information, see [Identity Resolution Settings](/docs/personas/identity-resolution/identity-resolution-settings/).
+2. Ensure that `group_id` is configured as an identifier in Engage Identity Resolution settings. For more information, see [Identity Resolution Settings](/docs/profiles/identity-resolution/identity-resolution-settings/).
 3. Instrument [group](/docs/connections/spec/group/) calls to send account information to Segment.
 
 ## Account-level audience conditions
@@ -40,9 +39,9 @@ A single account-level audience can incorporate any combination of the following
 - Account-level custom traits (set through a [group](/docs/connections/spec/group) call)
 
 
-Use this control to access account-level audience conditions:
+To access account-level audience conditions, select Accounts in the dropdown.
 
-![Use this control to access account level audience conditions](/docs/personas/images/new-audience-type.png)
+![Use this control to access account level audience conditions](/docs/engage/images/new-audience-type.png)
 
 The three types of user-level conditions are:
 - **Any User** (default): Returns all accounts where *at least one user* associated with the account satisfies the specified condition
@@ -54,7 +53,7 @@ The three types of user-level conditions are:
 
 ## Account-level computed and SQL traits
 
-Workspaces with access to account-level audiences can create account-level [computed](/docs/personas/computed-traits/) and [SQL](/docs/personas/sql-traits/) traits. All user-level computed trait types are supported (see [here](/docs/personas/computed-traits/#types-of-computed-traits) for a full list). Account-level computed traits operate on the set of events triggered by all users associated with a given account.
+Workspaces with access to account-level audiences can create account-level [computed](/docs/engage/audiences/computed-traits/) and [SQL](/docs/engage/audiences/sql-traits/) traits. All user-level computed trait types are supported (see [here](/docs/engage/audiences/computed-traits/#types-of-computed-traits) for a full list). Account-level computed traits operate on the set of events triggered by all users associated with a given account.
 
 Use-cases for account-level computed traits include:
 - Calculate the number of times users associated with an account logged in during the past month
@@ -102,7 +101,7 @@ For example, you may wish to create an audience which selects all admin-level us
 
 ## Known limitations of account-level audiences
 
-- Unlike user-level audiences, which are [computed in real time](/docs/personas/audiences#realtime-compute-vs-batch), account-level audiences are computed on a batched basis. Segment computes account-level audiences roughly every hour, but it's important to note that compute times can fluctuate based on the load on the system.
+- Unlike user-level audiences, which are [computed in real time](/docs/engage/audiences#realtime-compute-vs-batch), account-level audiences are computed on a batched basis. Segment computes account-level audiences roughly every hour, but it's important to note that compute times can fluctuate based on the load on the system.
 - Account-level audiences do not respect the `context.groupId` property on track calls. If users are associated with multiple accounts (through multiple group calls), the entire collection of a user's events is considered when evaluating user-level event conditions (not just those events which are tagged with a matching `groupId`). This can lead to unexpected results where a user's events triggered in the context of one account lead to another account incorrectly matching an account-level audience.
 - The identity breakdown report (displayed in the audience builder for user-level audiences) is not available for account-level audiences.
 

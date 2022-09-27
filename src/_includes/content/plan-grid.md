@@ -1,9 +1,10 @@
-{% assign thisProduct = include.name %}
+{% assign thisProduct = page.plan %}
 {% assign productData = site.data.products.items | where: "slug", thisProduct | first %}
 <!-- The line below hides the grid if there's no matching data in products.yml-->
 {% if productData %}
 
 {% assign productPlans = productData.plans %}
+{% assign productAddons = productData.addons %}
 
 
 <div class="popover" data-popover data-active-class="popover--active">
@@ -21,8 +22,17 @@
 {% endif %}
 
 {% endfor %}
+
+{% if productData.addon %}
+<div class="flex__column flex__column--shrink">
+<span class="badge badge--none">+</span>
+</div>
+<div class="flex__column flex__column--shrink">
+ <span class="badge badge--engage">  {{productData.product_display_name}} ✓ </span>
+</div>
+{% endif %}
 <div class="flex__column flex__column--shrink" style="padding-top:0px">
-  <a class="recent-contributor__button button-link" href="#" data-popover-target="contributors">?</a>
+  <a class="recent-contributor__button" style="padding: 4px 10px;" href="#" data-popover-target="contributors">?</a>
 </div>
 </div>
 

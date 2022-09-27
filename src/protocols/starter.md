@@ -16,7 +16,7 @@ This is a great way to get a head start on your tracking, and also to monitor ev
 
 Only Workspace Owners can set up or edit the starter tracking plan.
 
-You can use the **Tracking Plan Read-Only** role to allow workspace members to view the starter tracking plan, including the events and their properties, and code snippets for each. (When you upgrade to Personas, this role allows members to view additional tracking plans.)
+You can use the **Tracking Plan Read-Only** role to allow workspace members to view the starter tracking plan, including the events and their properties, and code snippets for each. (When you upgrade to Engage, this role allows members to view additional tracking plans.)
 
 You can add the Tracking Plan Read Only role to workspace members, or to groups that you use to grant workspace members access. To edit workspace member or group access, in your workspace navigate to **Settings > Workspace settings > Access management**.
 

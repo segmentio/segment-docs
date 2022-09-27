@@ -191,7 +191,7 @@ Batch handlers are an extension of destination functions. When you define an `on
 
 Consider creating a batch handler if:
 
-- **Your function sends data to a service that has a batch endpoint.** Batch endpoints may allow you both to send more data downstream and stay within the rate limits imposed by the service. Batch handlers that use one or more batch endpoints improve the efficiency of the function, and enable it to scale more easily. Specifically, you can use batch handlers to build [list-based](/docs/personas/using-personas-data/#personas-destination-types-event-vs-list) Personas destinations.
+- **Your function sends data to a service that has a batch endpoint.** Batch endpoints may allow you both to send more data downstream and stay within the rate limits imposed by the service. Batch handlers that use one or more batch endpoints improve the efficiency of the function, and enable it to scale more easily. Specifically, you can use batch handlers to build [list-based](/docs/engage/using-engage-data/#personas-destination-types-event-vs-list) Engage destinations.
 - **You have a high-throughput function and want to reduce cost.** When you define a batch handler, Segment invokes the function once per *batch*, rather than once per event. As long as the function's execution time isn't adversely affected, the reduction in invocations should lead to a reduction in cost.
 
 > info ""
@@ -287,7 +287,7 @@ To test the batch handler:
 
 The editor displays logs and request traces from the batch handler.
 
-The [Public API](/docs/api/) Functions/Preview endpoint also supports testing batch handlers. The payload must be a batch of events as a JSON array.
+The [Public API](/docs/api/public-api) Functions/Preview endpoint also supports testing batch handlers. The payload must be a batch of events as a JSON array.
 
 ### Handling batching errors
 

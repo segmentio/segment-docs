@@ -176,7 +176,7 @@ sections:
     - path: /connections/functions/usage
       title: Functions Usage Limits
     - path: /connections/functions/aws-apis
-      title: Functions for AWS APIs 
+      title: Functions for AWS APIs
   - section_title: Storage Destinations
     slug: connections/storage
     section:
@@ -241,73 +241,137 @@ sections:
     title: Rate Limits and SLA
   - path: /connections/regional-segment
     title: Regional Segment
-- section_title: Personas
+- section_title: Profiles
   section:
-  - path: /personas
-    title: Personas Overview
-  - path: /personas/quickstart
-    title: Personas Quickstart Guide
-  - section_title: Personas Identity Resolution
-    slug: personas/personas-identity-resolution
+  - path: /profiles
+    title: Profiles Overview
+  - path: /profiles/quickstart
+    title: Quickstart Guide
+  # - section_title: User Subscriptions
+  #   slug: profiles/user-subscriptions
+  #   section:
+  #   - path: /profiles/user-subscriptions
+  #     title: User Subscriptions
+  #   - path: /profiles/user-subscriptions/set-user-subscriptions
+  #     title: Set User Subscriptions
+  #   - path: /profiles/user-subscriptions/subscription-states
+  #     title: Subscription States
+  - section_title: Identity Resolution
+    slug: profiles/identity-resolution
     section:
-    - path: /personas/identity-resolution
+    - path: /profiles/identity-resolution
       title: Overview
-    - path: /personas/identity-resolution/identity-resolution-onboarding
+    - path: /profiles/identity-resolution/identity-resolution-onboarding
       title: Onboarding
-    - path: /personas/identity-resolution/use-cases
+    - path: /profiles/identity-resolution/use-cases
       title: Use Cases
-    - path: /personas/identity-resolution/externalids
+    - path: /profiles/identity-resolution/externalids
       title: External IDs
-    - path: /personas/identity-resolution/identity-resolution-settings
+    - path: /profiles/identity-resolution/identity-resolution-settings
       title: Settings
-    - path: /personas/identity-resolution/ecommerce-example
+    - path: /profiles/identity-resolution/ecommerce-example
       title: E-Commerce Example
-    - path: /personas/identity-resolution/personas-space-set-up
-      title: Personas Space Set Up
-  - path: /personas/computed-traits
-    title: Computed Traits
-  - path: /personas/sql-traits
-    title: SQL Traits
-  - section_title: Audiences
-    slug: /personas/audiences
-    section:
-      - path: /personas/audiences
-        title: Overview
-      - path: /personas/audiences/account-audiences
-        title: Account-Level Audiences
-      - path: /personas/audiences/organization/
-        title: Organizing Audiences
-  - section_title: Journeys
-    slug: /personas/journeys
-    section:
-      - path: /personas/journeys
-        title: Journeys Overview
-      - path: /personas/journeys/build-journey
-        title: Build a Journey
-      - path: /personas/journeys/send-data
-        title: Send Data to Destinations
-      - path: /personas/journeys/faq-best-practices
-        title: Journeys Best Practices and FAQ
-      - path: /personas/journeys/use-cases
-        title: Example Journeys Use Cases
-      - path: /personas/journeys/journeys-logic
-        title: Understanding Journeys Logic
-      - path: /personas/journeys/key-terms
-        title: Journeys Glossary
-  - path: /personas/using-personas-data
-    title: Using Personas Data
-  - path: /personas/warehouses
-    title: Personas and Warehouses
-  - path: /personas/profile-api
+  - path: /profiles/profile-api
     title: Profile API
-  - path: /personas/debugger
-    title: Personas Source Debugger
-  - path: /personas/personas-gdpr
-    title: Personas and GDPR
-  - path: /personas/faqs
-    title: Personas FAQs
-  - path: /personas/product-limits
-    title: Personas Limits
+  - path: /profiles/profile-api-limits
+    title: Profile API Limits
+  - path: /profiles/debugger
+    title: Profile Debugger
+  - path: /profiles/profiles-gdpr
+    title: Profiles and GDPR
+  - path: /profiles/faqs
+    title: Profiles FAQs
+
+
+- section_title: Engage
+  section:
+  - path: '/engage'
+    title: Introduction
+  - path: '/engage/quickstart'
+    title: Quickstart Guide
+  - path: '/engage/onboarding'
+    title: Onboarding Steps
+  - path: '/engage/use-cases'
+    title: Use Cases
+  - section_title: User Subscriptions
+    slug: profiles/user-subscriptions
+    section:
+    - path: /engage/user-subscriptions
+      title: User Subscriptions
+    - path: /engage/user-subscriptions/set-user-subscriptions
+      title: Set User Subscriptions
+    - path: /engage/user-subscriptions/subscription-states
+      title: Subscription States
+  - section_title: Profiles
+    description: "See how to create audiences based on data."
+    section:
+    - path: '/engage/profiles/csv-upload'
+      title: CSV Uploader
+  - section_title: Audiences
+    description: "See how to create audiences based on data."
+    section:
+    - path: '/engage/audiences'
+      title: Audiences Overview
+    - path: '/engage/audiences/account-audiences'
+      title: Account-level Audiences
+    - path: '/engage/audiences/organization'
+      title: Organize Audiences
+    - path: '/engage/audiences/computed-traits'
+      title: Computed Traits
+    - path: '/engage/audiences/sql-traits'
+      title:  SQL Traits
+
+  - section_title: Journeys
+    description: "Learn how to create multi-step Journeys to tailor messages to your users."
+    section:
+    - path: '/engage/journeys'
+      title: Journeys Overview
+    - path: '/engage/journeys/build-journey'
+      title: 'Build a Journey'
+    - path: '/engage/journeys/step-types'
+      title: 'Journey Step Types'
+    - path: '/engage/journeys/send-data'
+      title: Send Data to Destinations
+    - path: '/engage/journeys/journeys-analytics'
+      title: Journeys Analytics
+    - path: '/engage/journeys/faq-best-practices'
+      title: Journeys Best Practices and FAQ
+    - path: '/engage/journeys/use-cases'
+      title: Example Journeys Use Cases
+    - path: '/engage/journeys/journeys-logic'
+      title: Understand Journeys Logic
+    - path: '/engage/journeys/key-terms'
+      title: Journeys Glossary
+  - section_title: Content
+    description: "Design brand-specific templates for your email and SMS campaigns."
+    section:
+    - path: '/engage/content/email/template'
+      title: Email Template
+    - path: '/engage/content/email/editor'
+      title: Email Template Editor
+    - path: '/engage/content/sms/template'
+      title: SMS Template
+  - section_title: Campaigns
+    description: "Create multi-channel campaigns to get the right message to your users."
+    section:
+    - path: '/engage/campaigns'
+      title: Campaigns Overview
+    - path: '/engage/campaigns/email-campaigns'
+      title: Email Campaigns
+    - path: '/engage/campaigns/sms-campaigns'
+      title: SMS Campaigns
+  - path: '/engage/analytics'
+    title: Analytics Overview
+  - path: '/engage/settings'
+    title: Engage Settings
+  - path: /engage/product-limits
+    title: Engage Default Limits
+  - path: /engage/warehouses
+    title: Engage and Warehouses
+  - path: /engage/using-engage-data
+    title: Using Engage Data
+  - path: /engage/faqs
+    title: Engage FAQs
 - section_title: Privacy
   section:
   - path: /privacy
