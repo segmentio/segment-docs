@@ -6,6 +6,9 @@ redirect_from: '/connections/destinations/catalog/data-lakes/'
 
 
 Segment Data Lakes provide a way to collect large quantities of data in a format that's optimized for targeted data science and data analytics workflows. You can read [more information about Data Lakes](/docs/connections/storage/data-lakes/) and learn [how they differ from Warehouses](/docs/connections/storage/data-lakes/comparison/) in Segment's Data Lakes documentation.
+Segment supports two type of data-lakes:
+- [AWS Data Lakes](/docs/connections/storage/catalog/data-lakes/#set-up-segment-data-lakes)
+- [Azure Data Lakes](/docs/connections/storage/catalog/data-lakes/#set-up-azure-data-lakes)
 
 > note "Lake Formation"
 > You can also set up your Segment Data Lakes using [Lake Formation](/docs/connections/storage/data-lakes/lake-formation/), a fully managed service built on top of the AWS Glue Data Catalog.
@@ -255,8 +258,7 @@ curl -X POST 'https://<per-workspace-url>/api/2.0/preview/scim/v2/ServicePrincip
 > warning "Optional configuration settings for log4j vulnerability"
 > While Databricks released a statement that clusters are likely unaffected by the log4j vulnerability, out of an abundance of caution, Databricks recommends updating to log4j 2.15+ or adding the following options to the Spark configuration: <br/> `spark.driver.extraJavaOptions "-Dlog4j2.formatMsgNoLookups=true"`<br/>`spark.executor.extraJavaOptions "-Dlog4j2.formatMsgNoLookups=true"`
 
-1. Connect to a [Hive metastore](https://docs.databricks.com/data/metastores/external-hive-metastore.html){:target="_blank”} on your Databricks cluster.
-2. Copy the following Spark configuration, replacing the variables (`<example_variable>`) with information from your workspace: <br/>
+1. Connect to a [Hive metastore](https://docs.databricks.com/data/metastores/external-hive-metastore.html){:target="_blank”} on your Databricks cluster using the following Spark configuration, replacing the variables (`<example_variable>`) with information from your workspace: <br/>
 ```py
 ## Configs so we can read from the storage account
 spark.hadoop.fs.azure.account.oauth.provider.type.<storage_account_name>.dfs.core.windows.net org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider
@@ -267,7 +269,7 @@ spark.hadoop.fs.azure.account.oauth2.client.id.<storage_account_name>.dfs.core.w
 ##
 ##
 spark.hadoop.javax.jdo.option.ConnectionDriverName org.mariadb.jdbc.Driver
-spark.hadoop.javax.jdo.option.ConnectionURL jdbc:mysql://<db-host>:<port>/<database-name>?useSSL=true&requireSSL=false
+spark.hadoop.javax.jdo.option.ConnectionURL jdbc:mysql://<db-host>:<port>/<database-name>?useSSL=true&requireSSL=true&enabledSslProtocolSuites=TLSv1.2
 spark.hadoop.javax.jdo.option.ConnectionUserName <database_user>
 spark.hadoop.javax.jdo.option.ConnectionPassword <database_password>
 ##
@@ -328,11 +330,13 @@ After you set up the necessary resources in Azure, the next step is to set up th
 2. Click the **Configure Data Lakes** button, and select the source you'd like to receive data from. Click **Next**.
 3. In the **Connection Settings** section, enter the following values: 
   - **Azure Storage Account**: The name of the Azure Storage account that you set up in [Step 1 - Create an ALDS-enabled storage account](#step-1---create-an-alds-enabled-storage-account).
+    ![img.png](images/storageaccount.png)
   - **Azure Storage Container**: The name of the Azure Storage Container you created in [Step 1 - Create an ALDS-enabled storage account](#step-1---create-an-alds-enabled-storage-account).
-  - **Azure Subscription ID**: The ID of your [Azure subscription](https://docs.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id){:target="_blank”}.
-  - **Azure Tenant ID**: The Tenant ID of your [Azure Active directory](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant){:target="_blank”}.
+    ![img_1.png](images/storagecontainer.png)
+  - **Azure Subscription ID**: The ID of your [Azure subscription](https://docs.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id){:target="_blank”}. <br> Please add it as it is in the Azure portal, in the format `********-****-****-****-************`
+  - **Azure Tenant ID**: The Tenant ID of your [Azure Active directory](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant){:target="_blank”}. <br> Please add it as it is in the Azure portal, in the format `********-****-****-****-************`
   - **Databricks Cluster ID**: The ID of your [Databricks cluster](https://docs.databricks.com/workspace/workspace-details.html#cluster-url-and-id){:target="_blank”}.
-  - **Databricks Instance URL**: The ID of your [Databricks workspace](https://docs.databricks.com/workspace/workspace-details.html#workspace-instance-names-urls-and-ids){:target="_blank”}.
+  - **Databricks Instance URL**: The ID of your [Databricks workspace](https://docs.databricks.com/workspace/workspace-details.html#workspace-instance-names-urls-and-ids){:target="_blank”}. <br> The correct format for adding the URL is 'adb-0000000000000000.00.azureatabricks.net'
   - **Databricks Workspace Name**: The name of your [Databricks workspace](https://docs.databricks.com/workspace/workspace-details.html#workspace-instance-names-urls-and-ids){:target="_blank”}.
   - **Databricks Workspace Resource Group**: The resource group that hosts your Azure Databricks instance. This is visible in Azure on the overview page for your Databricks instance.
   - **Region**: The location of the Azure Storage account you set up in [Step 1 - Create an ALDS-enabled storage account](#step-1---create-an-alds-enabled-storage-account).
