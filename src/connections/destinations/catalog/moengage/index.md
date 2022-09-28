@@ -4,13 +4,30 @@ cmode-override: true
 id: 55b280290a20f4e22f0fb3d6
 hide-personas-partial: true
 ---
+
+[MoEngage](https://www.moengage.com/){:target="_blank"} is an Intelligent Customer Engagement Platform. MoEngage allows brands to personalize every customer interaction and drive better engagement, retention, loyalty and lifetime value.
+
+The MoEngage and Segment integration allows you to send 
+the users you have tracked on Segment, along with their route data, to MoEngage for further targetting and campaigning. This Destination enables you to:
+
+- **Import data from Segment to MoEngage**: We offer a side-by-side (device mode) SDK integration for your Android, iOS, and web applications and a server-to-server integration for your backend services.
+- **Sync [Segment Personas](https://segment.com/product/personas){:target="_blank"} (cohorts)**: Send Segment Cohorts to MoEngage for use in MoEngage Segments and campaigns. 
+
+The MoEngage Destination source code is open-sourced and freely available on GitHub for anyone to view:
+
+Connection Mode | Maintained by | GitHub Link
+---------|----------|---------
+ iOS | MoEngage | [MoEngage-Segment-iOS](https://github.com/moengage/MoEngage-Segment-iOS){:target="_blank"}
+ Android | MoEngage | [moengage-segment-integration](https://github.com/moengage/moengage-segment-integration){:target="_blank"}
+ Web | Segment | [analytics.js-integrations](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/moengage){:target="_blank"}
+
 ## Getting Started
 
 Once you add the Segment-MoEngage library to your app, you can enable MoEngage from the Segment App. These new settings can take up to an hour to propagate to your existing users. For new users, it'll be instantaneous!
 
 The Segment-MoEngage Integration is a bundled integration, meaning it requires that you add a client-side integration to your app.
 
-## Setup MoEngage in your Segment Workspace:
+## Setup MoEngage in your Segment Workspace
 
 To setup MoEngage do the following :
   1. First get your key(AppID) from the MoEngage dashboard. Navigate to `Dashboard --> Settings --> App --> General`.
@@ -24,8 +41,41 @@ To setup MoEngage do the following :
 These new settings will take up to an hour to propagate to your existing users. For new
 users it'll be instantaneous! Segment-MoEngage Integration is a bundled integration, requires client side integration.
 
-![](images/segment_settings.png)
+![segment_settings.png](images/segment_settings.png)
 
+## Identify
+Use [Identify](/docs/connections/sources/catalog/libraries/mobile/android/#identify){:target="_blank"} to track user-specific attributes. This is the same as tracking [user attributes](https://help.moengage.com/hc/en-us/articles/360044285511-User-Profile){:target="_blank"} on MoEngage. MoEngage supports traits supported by Segment as well as custom traits. If you set `traits.id`, MoEngage sets that as the Unique ID for that user.
+
+> info ""
+> MoEngage supports anonymous identifiers in Device-mode only. If you use the MoEngage destination in Cloud-mode, use a known user identifier.
+
+The Identify method follows the format below:
+
+```javascript
+analytics.identify('12090000-00001992', {
+  name: 'John Doe',
+  email: 'john.doe@example.com'
+});
+```
+
+## Track
+Use [track](/docs/connections/sources/catalog/libraries/mobile/android/#track){:target="_blank"} to track events and user behavior in your app.
+
+```javascript
+analytics.track('Article Completed', {
+  title: 'How to Create a Tracking Plan',
+  course: 'Intro to Analytics',
+});
+```
+
+This will send the event to MoEngage with the associated properties. Tracking events is essential and will help you create segments for engaging users.
+
+## Reset
+If your app or website supports the ability for a user to logout and login with a new identity, then you'll need to call [reset](/docs/sources/website/analytics.js/#reset-logout){:target="_blank"} method in `analytics.js`.
+
+```javascript
+analytics.reset();
+```
 ## iOS
 
 
@@ -75,7 +125,7 @@ Navigate to the App Delegate file, and setup the Segment SDK:
 
 ### Tracking User Attribute
 
-User attributes are specific traits of a user, like email, username, mobile, gender etc. **identify** lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
+[User attributes](https://developers.moengage.com/hc/en-us/articles/4403905883796-Tracking-user-attributes){:target="_blank"} are specific traits of a user, like email, username, mobile, gender etc. **identify** lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
 
  ```objc
  [[SEGAnalytics sharedAnalytics] identify:@"a user's id" traits:@{ @"email": @"a user's email address" }];
@@ -123,13 +173,13 @@ Read more on [install/update differentiation](https://developers.moengage.com/hc
 
 ### Set the data center
 
-By default, the data center setting in the SDK is set to `data_center_01`. Follow the steps in the [MoEngage - Data Redirection](https://developers.moengage.com/hc/en-us/articles/4403910162452-Data-Center){:target="_blank"} to update the data center value. If not set correctly, several features of the MoEngage SDK will not function.
+By default, the data center setting in the SDK is set to `data_center_01`. Follow the steps in the [MoEngage - Data Center](https://developers.moengage.com/hc/en-us/articles/4403910162452-Data-Center){:target="_blank"} to update the data center value. If not set correctly, several features of the MoEngage SDK will not function.
 
-### Using features provided in the MoEngage SDK
+## MoEngage iOS SDK Features
 
 Along with tracking your user's activities, you can use the MoEngage iOS SDK for more effective user engagement:
 
-#### Push Notifications:
+### Push Notifications:
 Push Notifications are a great way to keep your users engaged and informed about your app. You have following options while implementing push notifications in your app:
 
 **Segment Push Implementation:**
@@ -155,15 +205,15 @@ Push Notifications are a great way to keep your users engaged and informed about
 For information about the MoEngage push implementation, see [**Push Notifications**](https://developers.moengage.com/hc/en-us/articles/4403943988756){:target="_blank"} in the MoEngage documentation.
 
 
-#### In-app messaging
+### In-app messaging
 In-App Messages are custom views which you can send to a set of users to show custom messages, give new offers, or direct to a specific page. For more information about In-app messaging, see [MoEngage - In-App NATIV](https://developers.moengage.com/hc/en-us/articles/4404155127828-In-App-Nativ){:target="_blank"}.
 
 
-#### Cards
+### Cards
 Create targeted or automated App Inbox/NewsFeed messages that can be grouped into various categories, and target your users with different updates or offers that can stay in the Inbox/Feed over a designated period of time. For more information about cards, see [MoEngage - Cards](https://developers.moengage.com/hc/en-us/articles/4404058438676-Cards-in-iOS){:target="_blank"}.
 
 
-#### Compliance
+### Compliance
 To make the App compliant with policies (such as GDPR) while using MoEngage's SDK, follow the instructions in this [doc](https://developers.moengage.com/hc/en-us/articles/4403905438228-SDK-initialisation){:target="_blank"}.
 
 ### Segment Docs
@@ -258,6 +308,7 @@ If this is a fresh install:
 MoEAnalyticsHelper.INSTANCE.setAppStatus(context, AppStatus.INSTALL);
 ```
 
+## MoEngage Android SDK Features
 ### Configure Push Notifications
 
 Copy the Server Key from the FCM console and add it to the MoEngage Dashboard. To upload it, go to the Settings Page `Dashboard --> Settings --> Channel --> Push --> Mobile Push --> Android` and add the Server Key and package name.
@@ -396,9 +447,8 @@ You are now all set up to receive push notifications from MoEngage. For more inf
 
 * [Release Notes](https://developers.moengage.com/hc/en-us/articles/4403896795540-Changelog){:target="_blank"}
 
-
 ### Identify
-Use [Identify](/docs/connections/sources/catalog/libraries/mobile/android/#identify) to track user-specific attributes. This is the same as tracking [user attributes](http://docs.moengage.com/docs/identifying-user){:target="_blank"} on MoEngage. MoEngage supports traits supported by Segment as well as custom traits. If you set traits.id, MoEngage sets that as the Unique ID for that user.
+Use [Identify](/docs/connections/sources/catalog/libraries/mobile/android/#identify) to track user-specific attributes. This is the same as tracking [user attributes](https://developers.moengage.com/hc/en-us/articles/4402050979860-Track-User-Attributes){:target="_blank"} on MoEngage. MoEngage supports traits supported by Segment as well as custom traits. If you set traits.id, MoEngage sets that as the Unique ID for that user.
 
 > info ""
 > MoEngage supports anonymous identifiers in Device-mode only. If you use the MoEngage destination in Cloud-mode, use a known user identifier.
@@ -422,7 +472,8 @@ The MoEngage WebSDK offers the ability to send push notifications to Google Chro
 ### Integration
 
 #### 1. Setup your MoEngage Web SDK settings at MoEngage Dashboard
-Configure the [web settings](https://app.moengage.com/v3/#/settings/push/web){:target="_blank"} on the MoEngage dashboard to start using MoEngage <> Segment integration.
+
+Configure the [web settings](https://help.moengage.com/hc/en-us/articles/210224063){:target="_blank"} on the MoEngage dashboard to start using MoEngage <> Segment integration.
 
 If you have selected `HTTPS` mode of integration in the settings, complete the following steps:
 
@@ -430,8 +481,8 @@ If you have selected `HTTPS` mode of integration in the settings, complete the f
 
 #### 2.a Download the required files (HTTPS)
 For HTTPS Web Push to work, you need to host two files in the `root` directory of your web server. These two files will be available for you to download at the [web settings page](https://app.moengage.com/v3/#/settings/push/web){:target="_blank"}.
-* manifest.json
-* serviceworker.js
+* `manifest.json`
+* `serviceworker.js`
 
 > note ""
 > **Note**: Please make sure the name of the serviceworker file is `serviceworker.js`. Please contact MoEngage support at support@moengage.com if you wish to have some other name for the serviceworker file.
@@ -466,7 +517,7 @@ If you already have these files,
   ```
 
 ### Identify
-Use [Identify](/docs/sources/website/analytics.js/#identify) to track user specific attributes. This is equal to [tracking user attributes](https://docs.moengage.com/docs/tracking-web-user-attributes){:target="_blank"} on MoEngage. MoEngage supports traits supported by Segment as well as custom traits.
+Use [Identify](/docs/sources/website/analytics.js/#identify) to track user specific attributes. This is equal to [tracking user attributes](https://developers.moengage.com/hc/en-us/articles/360061114832-Web-SDK-User-Attributes-Tracking){:target="_blank"} on MoEngage. MoEngage supports traits supported by Segment as well as custom traits.
 
 > info ""
 > MoEngage supports anonymous identifiers in Device-mode only. If you use the MoEngage destination in Cloud-mode, use a known user identifier.
@@ -477,14 +528,93 @@ Use [track](/docs/sources/website/analytics.js/#track) to track events and user 
 ### Reset
 If your website supports the ability for a user to logout and login with a new identity, then you'll need to call [reset](/docs/sources/website/analytics.js/#reset-logout) method in `analytics.js`.
 
-### Optional
-For information about optional feature, see the documentation below:
-* [Configure opt in type](https://docs.moengage.com/docs/configuring-notification-opt-in){:target="_blank"}
-* [Self-handled opt-ins](https://docs.moengage.com/docs/self-handled-opt-ins){:target="_blank"}
-* [SDK callbacks](https://docs.moengage.com/docs/tracking-opt-ins-on-your-own){:target="_blank"}
-
 ### Test Mode and Debugging
 While updating the MoEngage settings on the Segment Dashboard, you can enable the logging functionality of the MoEngage SDK to see the SDK logs on the browser console. Just set `Enable Debug Logging` to `On` and the SDK loads in debug mode.
 
 > note ""
 > **Note**: When you enable debug mode, the events and attributes of the users send to the `TEST` environment of your MoEngage App.
+
+## MoEngage Web SDK Features
+For information about optional features, see the documentation below:
+
+* [Configure opt in type](https://help.moengage.com/hc/en-us/articles/210224063-Configure-Web-Push-Settings#configure-web-push-opt-in-0-6
+){:target="_blank"}
+* [Self-handled opt-ins](https://developers.moengage.com/hc/en-us/articles/360061219351-Configure-Self-Handled-Opt-In){:target="_blank"}
+* [SDK callbacks](https://developers.moengage.com/hc/en-us/articles/4401950701076-Opted-Out-Users){:target="_blank"}
+
+### On-Site Messaging
+
+On-site Messaging Campaigns allow you to show personalized pop-ups and non-intrusive banners on your website.
+
+Web SDK integration for On-site Messaging will automatically start working on all the pages where the web SDK is integrated. 
+
+For more information, refer to [Configure and Integrate On-site Messaging](https://developers.moengage.com/hc/en-us/articles/360061573232-Configure-and-Integrate-On-site-Messaging){:target="_blank"}.
+
+### Web Personalization
+
+Web Personalization is used to personalize the website experience for each user. A few popular use cases for Web Personalization include the home page banner personalization basis user behavior, localizing the website content basis user geography, testing the performance of new page layouts for improved performance, modifying the content shown on any webpage as per the user behavior.
+
+For more information, refer to [Configure and Integrate Web Personlization](https://developers.moengage.com/hc/en-us/articles/360062008891-Configure-and-Integrate-Web-Personlization){:target="_blank"}.
+
+## Use Segment Personas with MoEngage
+
+[Computed traits](https://segment.com/docs/personas/computed-traits/) and [audiences](https://segment.com/docs/personas/audiences/) can be sent to MoEngage as custom attributes or custom events.
+
+* Traits and audiences sent using the `identify` call will appear in MoEngage as _Tracked Custom Attributes_ with value as _True_.
+* Traits and audiences sent using the `track` call will appear in MoEngage as _Tracked User Events_.  
+      
+When connecting the calculated trait/audience to the MoEngage destination, you may select the method of your choice (or opt to utilise both).
+
+### Sync Time
+
+The default integration for MoEngage <> Segment Personas connection is **Real Time.** But there are some filters that will disqualify the persona from syncing in real-time, including some time-based filters which restrict your audience’s size at the time of message send.
+
+### Computed Traits using Identify calls
+
+To generate custom attributes in MoEngage, you may provide Computed Traits defined in Personas as `Identify` calls. The Computed Trait's value is used to set the custom attribute.
+
+### Create a Segment Computed Trait
+
+1.  In Segment, navigate to the _Computed Traits_ in _Personas._
+2.  Click _New Computed Trait_.
+  ![segment_new_trait_button.png](images/segment_new_trait_button.png)
+3.  Create your computed trait. A lightning bolt in the top corner of the page will indicate if the computation updates in real-time.  
+    ![segment_new_trait.png](images/segment_new_trait.png)
+4.  Next, select _MoEngage_ as your destination.  
+    ![segment_select_moengage_destination.png](images/segment_select_moengage_destination.png)
+5.  Preview by clicking _Review & Create_.  
+    _Note-_ By default, Segment queries all historical data to set the current value of the computed trait and audience. To omit this data, uncheck _Historical Backfill_.   
+    ![segment_new_trait_backfill.png](images/segment_new_trait_backfill.png)
+6.  In the computed trait, adjust the connection settings based on how you would like your data sent to MoEngage.
+
+### Create a Segment Audience
+
+1.  In Segment, navigate to the _Audience_ in _Personas._
+2.  Click _New_.
+    ![segment_audience_1.png](images/segment_audience_1.png)
+3.  Create your audience. A lightning bolt in the top corner of the page will indicate if the computation updates in real-time.  
+    ![segment_audience_2.png](images/segment_audience_2.png)
+4.  Next, select _MoEngage_ as your destination.  
+    ![segment_audience_destination.png](images/segment_audience_destination.png)
+5.  Preview your audience by clicking _Review & Create_.  
+    _Note-_ By default, Segment queries all historical data to set the current value of the audience. To omit this data, uncheck _Historical Backfill_.   
+    ![segment_audience_4.png](images/segment_audience_4.png)
+6.  In the computed trait or audience settings, adjust the connection settings based on how you would like your data sent to MoEngage.
+    ![segment_audience_5.png](images/segment_audience_5.png)
+
+## Connect Segment Personas to MoEngage
+
+You must first link MoEngage to your Segment Personas in order to send Computed Traits or Audiences. The first time you generate new Computed Trait or Audience, you may choose MoEngage as the destination for Personas data.
+
+1. Go to the Destinations tab in your Personas space.
+2. Search for MoEngage and add the MoEngage Destination to your Personas space.
+3. On the set up screen, enter your `App Id`, `App Key`, and your `Endpoint Region`.
+
+## Segment users in MoEngage
+
+To create a segment of these users, navigate to _Segments >> Create Segment._ Next, based on which call you used:
+
+- **Identify**: Select _User Property_ and select the specific attribute.
+  ![moengage_segment_identify.png](images/moengage_segment_identify.png)
+- **Track**: Select _User Behaviour_ and select the specific event.
+  ![moengage_segment_track.png](images/moengage_segment_track.png)

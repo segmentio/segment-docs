@@ -1,8 +1,7 @@
 ---
 title: MoEngage (Actions) Destination
-hide-personas-partial: true
 hide-boilerplate: true
-hide-dossier: true
+hide-dossier: false
 id: 620feaa207e70f6c6a765ff7
 ---
 
@@ -65,10 +64,8 @@ Include additional information that you think will be useful to the user here. F
 
 ### Default Mapping
 
-> warning ""
-> Don't change the preset values.
-
-MoEngage provides preset values to all mappings. You don't need to make any changes to the Identify User Actions and Track Event Actions.
+> warning "Do not change the preset values"
+> We already provide preset values to all mappings and hence no changes are required in the Identify User Actions, and Track Event Actions.
 
 <!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
 
