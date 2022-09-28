@@ -1,6 +1,9 @@
 ---
 title: Set Up Segment Data Lakes
 redirect_from: '/connections/destinations/catalog/data-lakes/'
+redirect_from:
+  - '/connections/destinations/catalog/data-lakes/'
+  - '/connections/destinations/catalog/azure-data-lakes/'
 ---
 {% include content/plan-grid.md name="data-lakes" %}
 
@@ -342,7 +345,7 @@ After you set up the necessary resources in Azure, the next step is to set up th
 
 ### (Optional) Set up your Segment Data Lake (Azure) using Terraform
 
-Instead of manually configuring your Data Lake, you can create it using the script in the [`terraform-azure-data-lake`](https://github.com/segmentio/terraform-azure-data-lakes){:target="_blank”} GitHub repository.
+Instead of manually configuring your Data Lake, you can create it using the script in the [`terraform-segment-data-lakes`](https://github.com/segmentio/terraform-segment-data-lakes){:target="_blank”} GitHub repository.
 
 > note " "
 > This script requires Terraform versions 0.12+.

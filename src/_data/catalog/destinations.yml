@@ -6339,7 +6339,7 @@ items:
   - us
   regions:
   - us
-  url: connections/destinations/catalog/azure-data-lakes
+  url: /connections/storage/data-lakes/
   previous_names:
   - Azure Data Lakes
   website: https://segment.com/docs/connections/storage/data-lakes/
