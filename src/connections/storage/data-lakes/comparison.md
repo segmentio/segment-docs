@@ -21,9 +21,6 @@ Segment's [99% guarantee of no duplicates](/docs/guides/duplicate-data/) for dat
 
 [Warehouses](/docs/guides/duplicate-data/#warehouse-deduplication) and [Data Lakes](/docs/guides/duplicate-data/#data-lake-deduplication) also have a secondary deduplication system to further reduce the volume of duplicates to ensure clean data in your Warehouses and Data Lakes.
 
-> note "Secondary deduplication is not supported during the Azure Data Lakes public beta"
-> During the Azure Data Lakes public beta, Segment's guarantee of 99% no duplicates applies, but secondary deduplication is not supported.
-
 ## Object vs event data
 
 Warehouses support both event and object data, while Data Lakes supports only event data.

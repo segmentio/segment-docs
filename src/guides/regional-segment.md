@@ -63,15 +63,15 @@ To create a workspace with a different data processing region:
 > Once you create a workspace with a specified data processing region, you can't change the region. You must create a new workspace to change the region.
 
 ## EU Storage Updates
-### Data Lakes
-Regional Segment in the EU changes the way you [configure the Data Lakes AWS environment](/docs/connections/storage/data-lakes/data-lakes-manual-setup/#iam-role)
+### Segment Data Lakes (AWS)
+Regional Segment in the EU changes the way you [configure the Segment Data Lakes (AWS) environment](/docs/connections/storage/data-lakes/data-lakes-manual-setup/#iam-role)
 
 ### Warehouse Public IP Range
 Use Segment's custom CIDR `3.251.148.96/29` while authorizing Segment to write in to your Redshift or Postgres port. [BigQuery](/docs/connections/storage/catalog/bigquery/#getting-started) doesn't require you to allow a custom IP address.
 
 ## Known Limitations
 -   Regional Segment is currently limited to the EU. Future expansion of Regional Segment beyond the EU is under evaluation by Segment Product and R&D.
-    
+
 -   Edge proxies are deprecated. Customers using edge proxies may see US-based IP addresses in event payloads. For EU customers, Segment recommends using a Regionalized EU workspace. For non-EU customers, Segment recommends using the US-based endpoint (`api.segment.io`) to preserve client IP addresses.
 
 ## Destination support and Regional endpoint availability
