@@ -1,6 +1,6 @@
 ---
 title: Update Audiences with a CSV
-plan: engage-foundations
+plan: engage-premier
 ---
 Use the CSV Uploader to add or update user profiles and set subscription states.
 
