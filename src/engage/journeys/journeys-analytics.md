@@ -23,7 +23,7 @@ Follow these steps to view the Analytics for a specific Journey:
 2. Select a Journey from the Journeys list.
 3. The Analytics tiles display as part of the Journey's overview.
 
-![An in-app screenshot of Journeys Level Analytics](images/jla_tiles.png "Journeys Level Analytics tiles")
+![An in-app screenshot of Journeys Level Analytics](images/journeys_analytics_tiles.png "Journeys Level Analytics tiles")
 
 ## Available Journeys Analytics statistics
 
@@ -35,4 +35,14 @@ The following table shows the three statistics available for a Journey:
 | In progress | The total number of users who have entered the Journey without yet exiting it |
 | Exits       | The total number of users who have exited the Journey                         |
 
-These statistics reflect the Journey's performance during the previous 180 days.
+Using the date picker, you can view a Journey's analytics over a specific period of time.
+
+The following table shows descriptions of the timeframes you can select:
+
+| Timeframe       | Description (based on UTC)           | 
+| --------------- | ------------------------------------ |
+| Since yesterday | Yesterday at midnight until now      |
+| Last 7 days     | The past seven days, including today |
+| Last 30 days    | The past 30 days, including today    |
+| Last 90 days    | The past 90 days, including today    |
+| Last 180 days   | The past 180 days, including today   |

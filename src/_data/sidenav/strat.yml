@@ -97,7 +97,7 @@ sections:
   section_title: Analytics.js Documentation
   section:
   - path: /connections/sources/catalog/libraries/website/javascript
-    title: Analytics.js (Javascript) Source
+    title: Analytics.js (JavaScript) Source
   - path: /connections/sources/catalog/libraries/website/javascript/ajs-classic
     title: Analytics.js Classic
   - path: /connections/sources/catalog/libraries/website/javascript/upgrade-to-ajs2
