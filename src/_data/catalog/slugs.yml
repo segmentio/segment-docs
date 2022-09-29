@@ -46,3 +46,5 @@
   override: "rokt-integration"
 - original: "salesforce-actions"
   override: "actions-salesforce"
+- original: "moengage-actions"
+  override: "actions-moengage"

@@ -2774,8 +2774,8 @@ destinations:
       - us
   - id: 620feaa207e70f6c6a765ff7
     display_name: Moengage (Actions)
-    slug: moengage-actions
-    url: connections/destinations/catalog/moengage-actions
+    slug: actions-moengage
+    url: connections/destinations/catalog/actions-moengage
     regions:
       - us
     endpoints:
