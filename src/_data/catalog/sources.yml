@@ -1495,7 +1495,7 @@ items:
     isCloudEventSource: false
     slug: unity
     url: connections/sources/catalog/libraries/mobile/unity
-    hidden: false
+    hidden: true
     regions:
       - us
     endpoints:
