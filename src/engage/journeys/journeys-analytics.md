@@ -23,7 +23,7 @@ Follow these steps to view the Analytics for a specific Journey:
 2. Select a Journey from the Journeys list.
 3. The Analytics tiles display as part of the Journey's overview.
 
-![An in-app screenshot of Journeys Level Analytics](images/jla_tiles.png "Journeys Level Analytics tiles")
+![An in-app screenshot of Journeys Level Analytics](images/journeys_analytics_tiles.png "Journeys Level Analytics tiles")
 
 ## Available Journeys Analytics statistics
 
