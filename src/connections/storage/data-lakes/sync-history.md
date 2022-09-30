@@ -5,17 +5,16 @@ title: Data Lakes Sync History and Health
 
 The Segment Data Lakes sync history and health tabs generate real-time information about data syncs so you can monitor the health and performance of your data lakes. These tools provide monitoring and debugging capabilities within the Data Lakes UI, so you can identify and proactively address data sync or data pipeline failures.
 
-<!-- PW: 9/22/22; commenting this section out for GA
-> note "This feature is not supported for the Azure Data Lakes public beta"
-> The Sync History/Sync Health tabs are currently not supported for the Azure Data Lakes public beta. For more information about Azure Data Lakes, see the [Data Lakes overview documentation](/docs/connections/storage/data-lakes/index/#how-azure-data-lakes-works). -->
-
 ## Sync history
-The 'Sync History' table shows detailed information about the latest 100 syncs to the data lake. The table includes the following fields:
-* **Sync status:** The status of the sync: either 'Success,' indicating that all rows synced correctly, 'Partial Success,' indicating that some rows synced correctly, or 'Failed,' indicating that no rows synced correctly
-* **Start time:** The time the sync began
-* **Duration:** How long the sync took to complete
-* **Synced rows:** The number of rows that synced to the data lake
-* **Notices:** Any notes or warnings about the sync
+The Sync History table shows detailed information about the latest 100 syncs to the data lake. The table includes the following fields:
+
+| Field       | Description                                                                                                                                                                                               |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sync status | The status of the sync: either `Success`, indicating that all rows synced correctly, `Partial Success`, indicating that some rows synced correctly, or `Failed`, indicating that no rows synced correctly |
+| Start time  | The time the sync began                                                                                                                                                                                   |
+| Duration    | How long the sync took to complete                                                                                                                                                                        |
+| Synced rows | The number of rows that synced to the data lake                                                                                                                                                           |
+| Notices     | Any notes or warnings about the sync
 
 Selecting a row in the Sync History table opens a sidebar showing the number of rows from each collection that synced.
 
@@ -35,7 +34,7 @@ Above the Daily Row Volume table is an overview of the total syncs for the curre
 
 To access the Sync history page from the Segment app, open the **My Destinations** page and select the data lake. On the data lakes settings page, select the **Health** tab.
 
-## Data Lakes Reports FAQ
+## Data Lakes reports FAQ
 
 ### How long is a data point available?
 The health tab shows an aggregate view of the last 30 days worth of data, while the sync history retains the last 100 syncs.
