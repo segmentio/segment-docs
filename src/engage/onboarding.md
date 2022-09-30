@@ -5,7 +5,7 @@ redirect_from:
   - '/engage/overview/onboarding'
 ---
 
-Twilio Engage brings Segment, Twilio, and SendGrid together to help you create and send email and SMS campaigns to your customers.
+Twilio Engage brings Segment, Twilio, and SendGrid together to help you create and send email and SMS campaigns to your customers. 
 
 Before sending your first Engage campaign, though, you’ll need to configure and connect accounts with all three platforms.
 
