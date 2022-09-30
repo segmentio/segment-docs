@@ -46,7 +46,7 @@ To learn more, visit [Connect production sources](/docs/profiles/quickstart/#ste
 
 ## Step 4: Check your profile data
 
-Once the replay finishes, you can see the data replayed into Engage using the Profile Explorer. Visit the [Profiles Quickstart Guide](/docs/profiles/quickstart/#step-4-check-your-profile-data) for more info.
+Once the replay finishes, you can see the data replayed into Engage using the Profile Explorer. Visit the [Profiles Onboarding Guide](/docs/profiles/quickstart/#step-4-check-your-profile-data) for more info.
 
 ## Step 5: Create an Audience
 

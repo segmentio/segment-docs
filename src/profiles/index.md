@@ -15,7 +15,7 @@ You can then use this interaction data with customer engagement tools, such as E
 > Profiles is an add-on to Segment Connections Business Tier. It's also a required add-on for Twilio Engage.
 > To use [Computed Traits](/docs/engage/audiences/computed-traits/) and [Audiences](/docs/engage/audiences/) with profiles, you must have access to Engage.
 
-To set up and get data flowing through Profiles, visit Segment's [Quickstart Guide](/docs/profiles/quickstart).
+To set up and get data flowing through Profiles, visit Segment's [Onboarding Guide](/docs/profiles/quickstart).
 
 ## Identity Resolution
 
