@@ -12,7 +12,7 @@ Before sending your first Engage campaign, though, you’ll need to configure an
 This guide lists all required onboarding steps and walks you through Engage setup. By the end of the onboarding process, you’ll be ready to send your first campaign.
 
 > info ""
-> The steps in this guide are only required if you plan to send email and SMS messages with Engage. Visit the [Engage Quickstart Guide](/docs/engage/quickstart) for general onboarding steps to set up your Engage space, connect sources, create audiences, and more.
+> The steps in this guide are only required if you plan to send email and SMS messages with Engage. Visit the [Engage Quickstart Guide](/docs/engage/quickstart) for general onboarding steps to set up your Engage space, connect sources, create audiences, and more. 
 
 ## Before you begin: overview and task checklist
 
