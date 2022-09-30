@@ -1,5 +1,5 @@
 ---
-title: Engage Quickstart Guide (Foundations)
+title: Twilio Engage Foundations Onboarding Guide
 plan: engage-foundations
 redirect_from:
   - "/personas/quickstart"
@@ -8,7 +8,7 @@ redirect_from:
 This guide walks you through the set up process for a simple Engage space, which you can use if your Segment implementation is simple. If your implementation is complex, you can use this to demonstrate and test Engage before working on a more complex configuration.
 
 > success ""
-> The first four steps in this guide also apply to Profiles set up. To learn more, visit the [Profiles Quickstart Guide](/docs/profiles/quickstart).
+> The first four steps in this guide also apply to Profiles set up. To learn more, visit the [Profiles Onboarding Guide](/docs/profiles/quickstart).
 
 ## Engage configuration requirements
 > info ""

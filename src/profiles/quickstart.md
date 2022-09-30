@@ -1,12 +1,12 @@
 ---
-title: Profiles Quickstart Guide
+title: Profiles Onboarding Guide
 plan: profiles
 ---
 
 This guide walks you through the set up process for a simple Profiles space, which you can use if your Segment implementation is simple. If your implementation is complex, you can use this to demonstrate and test Profiles before working on a more complex configuration.
 
 > success ""
-> If you're using Engage, visit the [Engage Quickstart Guide](/docs/engage/quickstart) for additional steps to create audiences, connect to destinations, and more.
+> If you're using Engage, visit the [Engage Foundations Onboarding Guide](/docs/engage/quickstart) for additional steps to create audiences, connect to destinations, and more.
 
 ## Profiles configuration requirements
 
@@ -67,4 +67,4 @@ If your user profiles look wrong, or you aren't confident users are being accura
 Once you validate that your data is flowing through Profiles, you're ready to create a Production space. Segment recommends that you repeat the same steps outlined above, focusing on your production use cases and data sources.
 
 > success ""
-> If you're using Engage, view additional steps to complete your space set up in the [Engage Quickstart Guide](/docs/engage/quickstart).
+> If you're using Engage, view additional steps to complete your space set up in the [Engage Foundations Onboarding Guide](/docs/engage/quickstart).
