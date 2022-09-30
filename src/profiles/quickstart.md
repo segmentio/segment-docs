@@ -6,7 +6,7 @@ plan: profiles
 This guide walks you through the set up process for a simple Profiles space, which you can use if your Segment implementation is simple. If your implementation is complex, you can use this to demonstrate and test Profiles before working on a more complex configuration.
 
 > success ""
-> If you're using Engage, visit the [Engage Foundations Onboarding Guide](/docs/engage/quickstart) for additional steps to create audiences, connect to destinations, and more.
+> If you're using Engage, visit the [Engage Foundations Onboarding Guide](/docs/engage/quickstart) for additional steps to create audiences, connect to destinations, and more. 
 
 ## Profiles configuration requirements
 
