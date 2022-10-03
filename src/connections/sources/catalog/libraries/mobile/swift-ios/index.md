@@ -340,7 +340,7 @@ Though you can add plugins anywhere in your code, it's best to implement your pl
 Use Analytics Swift to set up [destination filters](docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
 
 To get started with destination filters using Swift:
-1. Add the plugin dependency to your application by adding the Swift package `git@github.com:segmentio/DestinationFilters-Swift.git` as a dependency through either of these 2 options:
+1. Add the Swift package `git@github.com:segmentio/DestinationFilters-Swift.git` as a dependency through either of these 2 options:
     1. Your package.swift file
     2. Xcode
         1. Xcode 12: **File > Swift Packages > Add Package Dependency**
