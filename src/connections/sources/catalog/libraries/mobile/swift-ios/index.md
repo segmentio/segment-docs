@@ -337,7 +337,7 @@ Though you can add plugins anywhere in your code, it's best to implement your pl
 > info ""
 > Destination filters are only available to Business Tier customers.
 
-You can set up [destination filters](docs/connections/destinations/destination-filters/) on your mobile device-mode destinations by using Analytics Swift.
+Use Analytics Swift to set up [destination filters](docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
 
 To get started with destination filters using Swift:
 1. Add the plugin dependency to your application by adding the Swift package `git@github.com:segmentio/DestinationFilters-Swift.git` as a dependency through either of these 2 options:
@@ -346,7 +346,7 @@ To get started with destination filters using Swift:
         1. Xcode 12: **File > Swift Packages > Add Package Dependency**
         2. Xcode 13: **File > Add Packages...**
 
-    After installing the package, you can reference the Destination Filters plugin by importing the package with `import DestinationFilters_Swift`.
+    After you install the package, import the package with `import DestinationFilters_Swift` to reference the Destination Filters plugin.
 2. Add the plugin.
 ```swift
 analytics.add(DestinationFilters())
