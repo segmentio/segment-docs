@@ -32213,13 +32213,13 @@ items:
 - id: 620feaa207e70f6c6a765ff7
   display_name: Moengage (Actions)
   name: Moengage (Actions)
-  slug: moengage-actions
-  hidden: true
+  slug: actions-moengage
+  hidden: false
   endpoints:
   - us
   regions:
   - us
-  url: connections/destinations/catalog/moengage-actions
+  url: connections/destinations/catalog/actions-moengage
   previous_names:
   - Moengage (Actions)
   website: https://www.moengage.com
@@ -39402,7 +39402,7 @@ items:
   display_name: Segment Data Lakes (Azure)
   name: Segment Data Lakes (Azure)
   slug: segment-data-lakes-azure
-  hidden: false
+  hidden: true
   endpoints:
   - us
   regions:
