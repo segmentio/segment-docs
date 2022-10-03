@@ -3,30 +3,30 @@ title: Destination Filters
 rewrite: true
 ---
 
-Use Destination Filters to prevent certain data from flowing into a destination. With Destination Filters, you can conditionally filter out event properties, traits, and fields, or even filter out the event itself.
+> info ""
+> Destination filters are only available to Business Tier customers.
 
-Common use cases for Destination Filters include:
+Use destination filters to prevent certain data from flowing into a destination. You can conditionally filter out event properties, traits, and fields, or even filter out the event itself.
+
+You can configure destination filters on cloud-mode destinations as well as on mobile and web device-mode destinations.  With device-mode destinations, you can use the same user interface or API mechanism that you use for your cloud-mode destinations, and have those filters acted upon for device-mode destinations on web and mobile.
+
+Common use cases for destination filters include:
 - Managing PII (personally identifiable information) by blocking fields from reaching certain destinations
 - Controlling event volume by sampling or dropping unnecessary events for specific destinations
 - Increasing data relevance in your destinations by removing unused or unwanted data
 - Preventing test or internally-generated events from reaching your production tools
-
-> info ""
-> Destination Filters are only available to Business Tier customers.
 
 ### Limitations
 
 Keep the following limitations in mind when you use Destination Filters:
 
 - Segment applies Destination Filters one at a time in the order that they appear in your workspace.
-- Destination Filters can only be applied to cloud-mode (server-side) streaming destinations.
-- Device-mode destinations aren't supported.
 - You can't apply Destination Filters to Warehouses or S3 destinations.
 - Each filter can only apply to one source-destination pair.
 
 [Contact Segment](https://segment.com/help/contact/){:target="_blank"} if these limitations impact your use case.
 
-## Create a Destination Filter
+## Create a destination filter
 
 To create a Destination Filter:
 1. Go to **Connections > Destinations** and select your destination.
@@ -38,7 +38,7 @@ To create a Destination Filter:
 7. Name your filter and click the toggle to enable it.
 8. Click **Save**.
 
-## Destination Filters API
+## Destination filters API
 
 The Destination Filters API provides more power than Segment's dashboard Destination Filters settings. With the API, you can create complex filters that are conditionally applied using Segment's [Filter Query Language (FQL)](/docs/api/config-api/fql/).
 

@@ -13,7 +13,7 @@ If you're migrating to Analytics-Swift from a different mobile library, you can 
 > Analytics-Swift currently supports [these destinations](#supported-destinations) in device-mode, with more to follow. Cloud-mode destinations are also supported.
 
 
-## Getting Started
+## Getting started
 To get started with the Analytics-Swift mobile library:
 
 1. Create a Source in Segment.
@@ -62,7 +62,7 @@ To get started with the Analytics-Swift mobile library:
     > info ""
     > Configuration options such as IDFA collection and automatic screen tracking are found in Segment's [Plugin Examples repo](https://github.com/segmentio/analytics-example-plugins/tree/main/plugins/swift){:target="_blank"}.
 
-## Tracking Methods
+## Tracking methods
 Once you've installed the Analytics-Swift library, you can start collecting data through Segment's tracking methods:
 - [Identify](#identify)
 - [Track](#track)
@@ -204,7 +204,7 @@ analytics.alias(newId: "user-123")
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-## Plugin Architecture
+## Plugin architecture
 Segment's plugin architecture enables you to modify and augment how the analytics client works. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
 
 Plugins are run through a timeline, which executes in order of insertion based on their entry types. Segment has these 5 entry types:
@@ -333,7 +333,26 @@ analytics.add(plugin: yourIntegration)
 
 Though you can add plugins anywhere in your code, it's best to implement your plugin when you configure the client.
 
-## Utility Methods
+## Destination filters
+> info ""
+> Destination filters are only available to Business Tier customers.
+
+You can set up [destination filters](docs/connections/destinations/destination-filters/) on your mobile device-mode destinations by using Analytics Swift.
+
+To get started with destination filters using Swift:
+1. Add the plugin dependency to your application by adding the Swift package `git@github.com:segmentio/DestinationFilters-Swift.git` as a dependency through either of these 2 options:
+    1. Your package.swift file
+    2. Xcode
+        1. Xcode 12: **File > Swift Packages > Add Package Dependency**
+        2. Xcode 13: **File > Add Packages...**
+
+    After installing the package, you can reference the Destination Filters plugin by importing the package with `import DestinationFilters_Swift`.
+2. Add the plugin.
+```swift
+analytics.add(DestinationFilters())
+```
+
+## Utility methods
 The Analytics Swift utility methods help you work with [plugins](#plugin-architecture) from the analytics timeline. They include:
 - [Add](#add)
 - [Find](#find)
@@ -419,7 +438,7 @@ let idfaPlugin = IDFACollection()
 analytics.add(plugin: idfaPlugin)
 ```
 
-## Supported Destinations
+## Supported destinations
 Segment supports these destinations for Analytics Swift, with more to come:
 * [Amplitude](https://github.com/segment-integrations/analytics-swift-amplitude)
 * [Appsflyer](https://github.com/segment-integrations/analytics-swift-appsflyer)

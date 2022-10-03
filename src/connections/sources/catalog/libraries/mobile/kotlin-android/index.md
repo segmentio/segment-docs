@@ -340,8 +340,26 @@ analytics.add(yourPlugin)
 ```
 
 ### Example projects using Analytics-Kotlin
-See how different platforms and languages use Analytics-Kotlin in different [example projects](https://github.com/segmentio/analytics-kotlin/tree/main/samples).
-The example projects contain sample [plugins](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app/src/main/java/com/segment/analytics/next/plugins) and [destination plugins](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app-destinations/src/main/java/com/segment/analytics/destinations/plugins) you can utilize.
+See how different platforms and languages use Analytics-Kotlin in different [example projects](https://github.com/segmentio/analytics-kotlin/tree/main/samples){:target="_blank"}.
+The example projects contain sample [plugins](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app/src/main/java/com/segment/analytics/next/plugins){:target="_blank"} and [destination plugins](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app-destinations/src/main/java/com/segment/analytics/destinations/plugins){:target="_blank"} you can utilize.
+
+## Destination filters
+> info ""
+> Destination filters are only available to Business Tier customers.
+
+You can set up [destination filters](docs/connections/destinations/destination-filters/) on your mobile device-mode destinations by using Analytics Kotlin (Android). 
+
+To get started with destination filters on mobile device-mode destinations using Kotlin:
+
+1. Download and install the dependency.
+  ```java
+    implementation 'com.segment.analytics.kotlin:destination-filters-kotlin:x.x.x'
+  ```
+
+2. Add the plugin.
+  ```java
+    analytics.add(DestinationFilters())
+  ```
 
 ## Utility methods
 The Analytics-Kotlin utility methods help you work with plugins from the analytics timeline. They include:
