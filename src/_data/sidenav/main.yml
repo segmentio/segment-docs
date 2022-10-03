@@ -246,7 +246,7 @@ sections:
   - path: /profiles
     title: Profiles Overview
   - path: /profiles/quickstart
-    title: Quickstart Guide
+    title: Profiles Onboarding
   # - section_title: User Subscriptions
   #   slug: profiles/user-subscriptions
   #   section:
@@ -288,9 +288,9 @@ sections:
   - path: '/engage'
     title: Introduction
   - path: '/engage/quickstart'
-    title: Quickstart Guide
+    title: Foundations Onboarding
   - path: '/engage/onboarding'
-    title: Onboarding Steps
+    title: Premier Onboarding
   - path: '/engage/use-cases'
     title: Use Cases
   - section_title: User Subscriptions
