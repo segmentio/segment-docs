@@ -5,7 +5,7 @@ redirect_from:
   - '/personas/'
 ---
 
-Powered by real-time data, Engage is a customizable personalization platform with which you can build, enrich, and activate Audiences.
+Powered by real-time data, Twilio Engage (formerly known as Personas) is a customizable personalization platform with which you can build, enrich, and activate Audiences.
 
 Engage Channels builds on top of these Audiences, helping you connect with and market to your customers through email and SMS campaigns.
 
