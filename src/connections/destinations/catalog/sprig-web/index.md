@@ -17,7 +17,7 @@ versions:
 
 [Sprig](https://sprig.com/?&utm_source=segmentio&utm_medium=docs_actions&utm_campaign=integration){:target="_blank"} is an in-context user research platform that makes it fast and effortless for product teams to learn from their actual customers in real-time, through In-Product Surveys, Concept and Usability tests.
 
-Sprig maintains this destination. For any issues with the destination, consult [Sprig's documentation](https://docs.sprig.com/docs/segment) or contact [support@sprig.com](mailto:support@sprig.com).
+Sprig maintains this destination. For any issues with the destination, consult [Sprig's documentation](https://docs.sprig.com/docs/segment){:target="_blank"} or contact [support@sprig.com](mailto:support@sprig.com).
 
 
 ## Benefits of Sprig Actions versus Sprig Classic
