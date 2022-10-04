@@ -43,20 +43,23 @@ Note that destination flags are **case sensitive** and match the destination's n
 
 Your data is sent to your warehouse (if you have one) and into the Segment backend systems regardless of what is in the integrations object.
 
-## Destination Filters
+## Destination filters
 
-[Destination Filters](https://segment.com/docs/connections/destinations/destination-filters/) allow you to control the data flowing into each specific destination, by examining event payloads, and conditionally preventing data from being sent to destinations. You can filter out entire events, or just specific fields in the properties, in the traits, or in the context of your events. Destination filters are not available for, and do not prevent data from reaching your warehouse(s) or S3 destinations.
+[Destination filters](https://segment.com/docs/connections/destinations/destination-filters/) allow you to control the data flowing into each specific destination, by examining event payloads, and conditionally preventing data from being sent to destinations. You can filter out entire events, or just specific fields in the properties, in the traits, or in the context of your events. Destination filters are not available for, and do not prevent data from reaching your warehouse(s) or S3 destinations.
 
 > info ""
-> Destination filters are only available in workspaces that are on a Business Tier plan, and are available on cloud-mode, mobile, and web device-mode destinations. 
+> Destination filters are only available in workspaces that are on a Business Tier plan, and are available on cloud-mode, mobile, and web device-mode destinations.
 
 ![](images/destination-filter-create.png)
 
-You can set up Destination Filters from the Segment web app by navigating to the destination from which you want to exclude the data, and clicking the **Destination Filters** tab. From there you can create new filter rules, and edit, enable, and disable existing filters. See the [Destination Filters documentation](https://segment.com/docs/connections/destinations/destination-filters/) for more details.
+To set up destination filters from the Segment web app for the destination from which you want to exclude data:
+1. Navigate to **Connections > Destinations** and select the destination you want to set up filters for.
+2. Go to the **Filters** tab and click **+ New Filter** to create a destination filter.
+See the [Destination Filters documentation](/docs/connections/destinations/destination-filters/) for more details.
 
-You can set up Destination filters using the options presented in the Segment web app, or using Segment's Filter Query Logic (FQL). If you use FQL, your query syntax is limited to 5kb per query.
+You can set up destination filters using the options presented in the Segment web app, or using Segment's Filter Query Logic (FQL). If you use FQL, your query syntax is limited to 5kb per query.
 
-## Per-Source Schema Integrations Filters
+## Per-Source schema integrations filters
 
 Integration filters allow you to quickly change which destinations receive specific Track, Identify, or Group events. Access this tool in any Source that is receiving data by navigating to the Schema tab. Schema integration filters are available to workspaces that are on a Business Tier plan only.
 
@@ -68,7 +71,7 @@ The events filtered out of individual destinations using this method still arriv
 
 **Integration filters are all-or-nothing for each event.** If you require more detailed control over which events are sent to specific destinations, you can use Destination Filters to inspect the event payload, and conditionally drop the data or forward it to the destination.
 
-## Schema Event Filters
+## Schema event filters
 
 You can use Schema Event Filters to discard and permanently remove Page, Screen and Track events from event-based sources, preventing them from reaching any destinations or warehouses. Use this if you know that you'll never want to access this data again. This functionality is similar to filtering with the Integrations object, however it can be changed from within the Segment app without touching any code.
 
