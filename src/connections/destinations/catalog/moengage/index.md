@@ -10,7 +10,7 @@ hide-personas-partial: true
 The MoEngage and Segment integration allows you to send 
 the users you have tracked on Segment, along with their route data, to MoEngage for further targeting and campaigning. This Destination enables you to:
 
-- **Import data from Segment to MoEngage**: Moengage offesr a side-by-side (device mode) SDK integration for your Android, iOS, and web applications and a server-to-server integration for your backend services.
+- **Import data from Segment to MoEngage**: Moengage offers a side-by-side (device mode) SDK integration for your Android, iOS, and web applications and a server-to-server integration for your backend services.
 - **Sync [Twilio Engage](https://segment.com/product/twilio-engage){:target="_blank"} (cohorts)**: Send Segment Cohorts to MoEngage for use in MoEngage Segments and campaigns. 
 
 The MoEngage Destination source code is open-sourced and freely available on GitHub for anyone to view:
@@ -604,7 +604,7 @@ To generate custom attributes in MoEngage, you may provide Computed Traits defin
 
 First, link MoEngage to Twilio Engage to send Computed Traits or Audiences. The first time you generate new Computed Trait or Audience, you can choose MoEngage as the destination for the Engage data.
 
-1. Go to the Destinations tab in your Space.
+1. Go to the Destinations tab in your space.
 2. Search for MoEngage and add the MoEngage Destination to your Space.
 3. On the set up screen, enter your `App Id`, `App Key`, and your `Endpoint Region`.
 
