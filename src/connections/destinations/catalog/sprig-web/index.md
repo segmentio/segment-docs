@@ -29,7 +29,7 @@ Sprig Actions provides the following benefits over the Sprig Classic destination
 
 <!-- The section below explains how to enable and configure the destination. Include any configuration steps not captured below. For example, obtaining an API key from your platform and any configuration steps required to connect to the destination. -->
 
-## Getting Started with Actions
+## Getting started 
 
 1. In the Segment web app, click **Catalog**, then click **Destinations**.
 2. Type Sprig in the **Filter Destinations** field.
