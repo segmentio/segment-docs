@@ -75,7 +75,7 @@ In order to track these `click` events simply add a trigger with a `selector`, w
     "vars": {
       "writeKey": "WRITE_KEY",
       "name": "My Page Name"
-    }
+    },
     "triggers": {
       "click": {
         "on": "click",

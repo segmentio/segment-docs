@@ -1,15 +1,18 @@
 ---
-title: Onboard to Twilio Engage
-plan: engage-foundations
+title: Twilio Engage Premier Onboarding Guide
+plan: engage-premier
 redirect_from:
   - '/engage/overview/onboarding'
 ---
 
-Twilio Engage brings Segment, Twilio, and SendGrid together to help you create and send email and SMS campaigns to your customers.
+Twilio Engage (formerly known as Personas) brings Segment, Twilio, and SendGrid together to help you create and send email and SMS campaigns to your customers.
 
 Before sending your first Engage campaign, though, you’ll need to configure and connect accounts with all three platforms.
 
 This guide lists all required onboarding steps and walks you through Engage setup. By the end of the onboarding process, you’ll be ready to send your first campaign.
+
+> info ""
+> The steps in this guide are only required if you plan to send email and SMS messages with Engage. Visit the [Engage Foundations Onboarding Guide](/docs/engage/quickstart) for general onboarding steps to set up your Engage space, connect sources, create audiences, and more.
 
 ## Before you begin: overview and task checklist
 

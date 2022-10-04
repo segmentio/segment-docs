@@ -35,16 +35,12 @@ You can import event and property libraries into a Tracking Plan. Enter the Draf
 
 ![](../images/import_library_to_tracking_plan.gif)
 
-### Enable Event Library syncing
+### Library syncing
 
-> warning ""
-> [Property Library](/docs/protocols/tracking-plan/libraries/) syncing is **not** supported.
 
-When you import events from an Event Library, you can enable syncing to ensure that changes made to the Library pass down to all synced Tracking plans.Syncing is important when you want to make sure all Tracking Plans define events consistently. For example, it's best practice to create separate tracking plans for mobile and web sources as these two sources share some but not all events. Library syncing is the best way to ensure that the shared events are consistently tracked across Tracking Plans, even as you make changes to the Library.
+When you import events or properties from a Library, you can enable syncing to ensure that changes made to the Library pass down to all synced Tracking plans. Syncing is important when you want to make sure all Tracking Plans define events and properties consistently. For example, it's best practice to create separate tracking plans for mobile and web sources as these two sources share some but not all events or properties. Library syncing is the best way to ensure that the shared events are consistently tracked across Tracking Plans, even as you make changes to the Library.
 
-To enable syncing, select the desired Library from the Tracking Plan import flow, and toggle the syncing option. This selects all events in the Library for import. Partial syncs are not supported as it would make it impossible to ensure complete compliance with the Library.
-
-![](../images/sync_library_flow.gif)
+To enable syncing, select the desired Library from the Tracking Plan import flow, and toggle the syncing option. This selects all events or properties in the Library for import. Partial syncs are not supported.
 
 Syncing a Library makes events and properties un-editable, and bypasses the Tracking Plan merge step. You can add properties to synced events, but cannot remove those synced events unless you also remove the Library sync. To unsync a library, click **View Synced Libraries** from the Tracking Plan and click the overflow menu to unsync the Library.
 
