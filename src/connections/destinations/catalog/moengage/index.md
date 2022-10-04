@@ -8,10 +8,10 @@ hide-personas-partial: true
 [MoEngage](https://www.moengage.com/){:target="_blank"} is an Intelligent Customer Engagement Platform. MoEngage allows brands to personalize every customer interaction and drive better engagement, retention, loyalty and lifetime value.
 
 The MoEngage and Segment integration allows you to send 
-the users you have tracked on Segment, along with their route data, to MoEngage for further targetting and campaigning. This Destination enables you to:
+the users you have tracked on Segment, along with their route data, to MoEngage for further targeting and campaigning. This Destination enables you to:
 
-- **Import data from Segment to MoEngage**: We offer a side-by-side (device mode) SDK integration for your Android, iOS, and web applications and a server-to-server integration for your backend services.
-- **Sync [Segment Personas](https://segment.com/product/personas){:target="_blank"} (cohorts)**: Send Segment Cohorts to MoEngage for use in MoEngage Segments and campaigns. 
+- **Import data from Segment to MoEngage**: Moengage offers a side-by-side (device mode) SDK integration for your Android, iOS, and web applications and a server-to-server integration for your backend services.
+- **Sync [Twilio Engage](https://segment.com/product/twilio-engage){:target="_blank"} (cohorts)**: Send Segment Cohorts to MoEngage for use in MoEngage Segments and campaigns. 
 
 The MoEngage Destination source code is open-sourced and freely available on GitHub for anyone to view:
 
@@ -554,11 +554,11 @@ For more information, refer to [Configure and Integrate On-site Messaging](https
 
 Web Personalization is used to personalize the website experience for each user. A few popular use cases for Web Personalization include the home page banner personalization basis user behavior, localizing the website content basis user geography, testing the performance of new page layouts for improved performance, modifying the content shown on any webpage as per the user behavior.
 
-For more information, refer to [Configure and Integrate Web Personlization](https://developers.moengage.com/hc/en-us/articles/360062008891-Configure-and-Integrate-Web-Personlization){:target="_blank"}.
+For more information, refer to [Configure and Integrate Web Personalization](https://developers.moengage.com/hc/en-us/articles/360062008891-Configure-and-Integrate-Web-Personlization){:target="_blank"}.
 
-## Use Segment Personas with MoEngage
+## Use Twilio Engage with MoEngage
 
-[Computed traits](https://segment.com/docs/personas/computed-traits/) and [audiences](https://segment.com/docs/personas/audiences/) can be sent to MoEngage as custom attributes or custom events.
+You can send [Computed traits](/docs/engage/audiences/computed-traits/) and [Audiences](/docs/audiences/audiences/) to MoEngage as custom attributes or custom events.
 
 * Traits and audiences sent using the `identify` call will appear in MoEngage as _Tracked Custom Attributes_ with value as _True_.
 * Traits and audiences sent using the `track` call will appear in MoEngage as _Tracked User Events_.  
@@ -567,17 +567,16 @@ When connecting the calculated trait/audience to the MoEngage destination, you m
 
 ### Sync Time
 
-The default integration for MoEngage <> Segment Personas connection is **Real Time.** But there are some filters that will disqualify the persona from syncing in real-time, including some time-based filters which restrict your audience’s size at the time of message send.
+The default integration for MoEngage <> Twilio Engage connection is **Real Time.** But there are some filters that will disqualify the persona from syncing in real-time, including some time-based filters which restrict your audience’s size at the time of message send.
 
 ### Computed Traits using Identify calls
 
-To generate custom attributes in MoEngage, you may provide Computed Traits defined in Personas as `Identify` calls. The Computed Trait's value is used to set the custom attribute.
+To generate custom attributes in MoEngage, you may provide Computed Traits defined in Engage as `Identify` calls. The Computed Trait's value is used to set the custom attribute.
 
 ### Create a Segment Computed Trait
 
-1.  In Segment, navigate to the _Computed Traits_ in _Personas._
+1.  In Segment, navigate to the _Computed Traits_ in _Engage._
 2.  Click _New Computed Trait_.
-  ![segment_new_trait_button.png](images/segment_new_trait_button.png)
 3.  Create your computed trait. A lightning bolt in the top corner of the page will indicate if the computation updates in real-time.  
     ![segment_new_trait.png](images/segment_new_trait.png)
 4.  Next, select _MoEngage_ as your destination.  
@@ -589,9 +588,8 @@ To generate custom attributes in MoEngage, you may provide Computed Traits defin
 
 ### Create a Segment Audience
 
-1.  In Segment, navigate to the _Audience_ in _Personas._
+1.  In Segment, navigate to the _Audience_ in _Engage_
 2.  Click _New_.
-    ![segment_audience_1.png](images/segment_audience_1.png)
 3.  Create your audience. A lightning bolt in the top corner of the page will indicate if the computation updates in real-time.  
     ![segment_audience_2.png](images/segment_audience_2.png)
 4.  Next, select _MoEngage_ as your destination.  
@@ -602,12 +600,12 @@ To generate custom attributes in MoEngage, you may provide Computed Traits defin
 6.  In the computed trait or audience settings, adjust the connection settings based on how you would like your data sent to MoEngage.
     ![segment_audience_5.png](images/segment_audience_5.png)
 
-## Connect Segment Personas to MoEngage
+## Connect Twilio Engage to MoEngage
 
-You must first link MoEngage to your Segment Personas in order to send Computed Traits or Audiences. The first time you generate new Computed Trait or Audience, you may choose MoEngage as the destination for Personas data.
+First, link MoEngage to Twilio Engage to send Computed Traits or Audiences. The first time you generate new Computed Trait or Audience, you can choose MoEngage as the destination for the Engage data.
 
-1. Go to the Destinations tab in your Personas space.
-2. Search for MoEngage and add the MoEngage Destination to your Personas space.
+1. Go to the Destinations tab in your space.
+2. Search for MoEngage and add the MoEngage Destination to your Space.
 3. On the set up screen, enter your `App Id`, `App Key`, and your `Endpoint Region`.
 
 ## Segment users in MoEngage
