@@ -34,6 +34,7 @@ To create a copy of an existing Tracking Plan:
 1. Click **Protocols** in the left navigation bar.
 2. On the row of the Tracking Plan you want to copy, open the contextual menu(...), and select Duplicate Tracking Plan.
 3. Enter a name for the new Tracking Plan instance, and click Duplicate.
+
 ### Tracking Plan Columns
 The Tracking Plan editor is organized as a spreadsheet to help you  add new events and properties, and edit the relevant fields for each. Like a spreadsheet, you can navigate across cells in a single event with your arrow keys and press enter to edit a cell.
 
