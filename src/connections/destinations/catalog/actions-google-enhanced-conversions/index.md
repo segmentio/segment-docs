@@ -4,6 +4,13 @@ strat: google
 hide-boilerplate: true
 hide-dossier: false
 id: 60ae8b97dcb6cc52d5d0d5ab
+hide_action:
+  - id: 2n3RKy5oyzS1kLdEEYV99N
+    name: "Upload Conversion Adjustment"
+  - id: uEYL2A2fTEoxCzYmsRwRmT
+    name: "Upload Call Conversion"
+  - id: fv1r2SiUg6i12jzdy8hitm
+    name: "Upload Click Conversion"
 ---
 
 The Google Enhanced Conversions destination enables you to improve the accuracy of your conversion measurement. You can supplement existing conversion tags by sending first-party customer conversion data from your website, such as email address, to Google Ads. Segment hashes this data and sends it in a privacy-safe way. Google matches hashed data with signed-in Google accounts to attribute the conversion to ad events, such as clicks or views. To learn more about Google Enhanced Conversions, see Google's documentation [About enhanced conversions](https://support.google.com/google-ads/answer/9888656?hl=en-GB){:target="_blank"}.
