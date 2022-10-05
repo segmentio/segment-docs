@@ -6,13 +6,6 @@ id: 56a8f566e954a874ca44d3b0
 
 This destination is maintained by Castle.
 
-## Integration steps
-1. Track successful and failed logins
-1. Extend server-side tracking with request properties
-1. `identify`, preferably on the server-side
-1. _Optional:_ Use Castle's `authenticate` API to request a risk score
-1. _Recommended:_ Secure Mode
-
 ## Getting Started
 
 1. From the Segment web app, click **Catalog**.
