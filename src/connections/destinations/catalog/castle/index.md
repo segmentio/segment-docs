@@ -4,7 +4,7 @@ id: 56a8f566e954a874ca44d3b0
 ---
 [Castle](https://castle.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} monitors every step of the customer journey to help visualize and proactively block fraud that would otherwise fly under the radar. Types of fraud or abuse that can be managed include bots, fake accounts, multi-accounting, and account sharing.
 
-This destination is maintained by Castle.
+Castle maintains this destination. For any issues with the destination, contact the [Castle support team](mailto:support@castle.io).
 
 ## Getting Started
 
@@ -14,16 +14,17 @@ This destination is maintained by Castle.
 3. Enter the "Publishable Key" the Publishable Key field. Find the Publishable Key on the Castle dashboard.
 Calls are now visible in Castle dashboards in real-time.
 
-**NOTE**: Castle will only ingest Segment _client-side_ events at this point. Server-side events will be dropped and not processed.
+> info ""
+> Castle ingests Segment Client-side events. Server-side events are dropped and not processed.
+> Castle only supports web integrations through Segment, but is in the process of working on mobile support.
 
-**NOTE**: Castle only supports web integrations via Segment, but we are working on mobile support so please stay tuned.
 
 
 
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [`page` method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page call](/docs/connections/spec/page/) does. An example call looks like:
 
 ```
 analytics.page()
@@ -36,7 +37,7 @@ Segment sends Page calls to Castle as `$page` events.
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call looks like:
 
 ```
 analytics.track('Added to Cart')
