@@ -345,7 +345,7 @@ The example projects contain sample [plugins](https://github.com/segmentio/analy
 
 ## Destination filters
 > info ""
-> Destination filters are only available to Business Tier customers.
+> Destination filters are only available to Business Tier customers. Destination filters on mobile device-mode destinations are in beta for Analytics Kotlin.
 
 Use Analytics Kotlin (Android) to configure [destination filters](docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
 

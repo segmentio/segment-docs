@@ -10,6 +10,9 @@ Use destination filters to prevent certain data from flowing into a destination.
 
 You can configure destination filters on cloud-mode, mobile, and web device-mode and actions-based destinations.  With device-mode destinations, you can use the same user interface or API mechanism that you use for your cloud-mode destinations, and have those filters acted upon for device-mode destinations on web and mobile.
 
+> info ""
+> Destination filters for mobile device-mode destinations are in beta for [Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios#destination-filters) and [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/#destination-filters) libraries.
+
 Common use cases for destination filters include:
 - Managing PII (personally identifiable information) by blocking fields from reaching certain destinations
 - Controlling event volume by sampling or dropping unnecessary events for specific destinations

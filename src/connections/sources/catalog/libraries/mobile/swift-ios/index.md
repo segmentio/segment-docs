@@ -335,7 +335,7 @@ Though you can add plugins anywhere in your code, it's best to implement your pl
 
 ## Destination filters
 > info ""
-> Destination filters are only available to Business Tier customers.
+> Destination filters are only available to Business Tier customers. Destination filters on mobile device-mode destinations are in beta for Analytics Swift. 
 
 Use Analytics Swift to set up [destination filters](docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
 
