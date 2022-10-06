@@ -154,15 +154,22 @@ To finish linking the API credentials to your Segment account, follow these step
 
   ![Adding the SendGrid API Key](images/apifields.png "Adding the SendGrid API Key")
 
-### Enable Automated IP warmup
+### Warm up your IP
 
 > info "Required Step"
 > Once you've completed IP warmup, contact SendGrid support at [help@sendgrid.com](mailto:help@sendgrid.com).
 
-To finish configuring your SendGrid account for usage with Twilio Engage, you’ll enable [automated IP warmup](https://docs.sendgrid.com/ui/sending-email/warming-up-an-ip-address){:target="_blank"}. As a best practice, **only warm up your IP when you're ready to begin sending campaigns.**
+To finish configuring your SendGrid account for usage with Twilio Engage, you’ll [warm up your IP](https://docs.sendgrid.com/ui/sending-email/warming-up-an-ip-address){:target="_blank"}. Depending on when you created your SendGrid account, you'll either warm up your IP manually or use SendGrid's automated IP warmup process.
 
+As a best practice, **only warm up your IP when you're ready to begin sending campaigns.**
 
-To enable IP warmup, follow these directions:
+#### Manual IP warmup
+
+If your SendGrid account is new, you'll need to warm up your IP manually. For details on the manual warmup process, view SendGrid's [manual IP warmup documentation](https://docs.sendgrid.com/ui/sending-email/warming-up-an-ip-address#manually-warmup-your-ip){:target="_blank"}.
+
+#### Automated IP warmup
+
+If you've already warmed up an IP with your SendGrid account in the past, you can enable automated IP warmup by following these steps:
 
 1. Within your SendGrid space, navigate to **Settings > IP Addresses**.
 2. On the **Dedicated IP Addresses** page, click the pencil edit button next to your Engage IP address.
