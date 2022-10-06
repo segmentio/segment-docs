@@ -27,7 +27,7 @@ The following table shows a high-level checklist of tasks you’ll need to compl
 | Platform | Tasks                                                                                                                                                                                                                                                                                                                                                                                              |
 | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Segment  | 1. Verify Engage identifiers in your Segment workspace. <br> 2. Add any missing identifiers.                                                                                                                                                                                                                                                                                                      |
-| SendGrid | 1. Create a SendGrid account. <br> 2. Upgrade your account to a Pro plan. <br> 3. Configure an IP. <br> 4. Create a SendGrid subuser. <br> 5. Authenticate your domain. <br> 6. Enable subscription tracking. <br> 7. Enable an event webhook. <br> 8. Generate API credentials, then copy them into Engage settings. <br> 9. Enable automated IP warmup. <br> 10. Contact Segment support. |
+| SendGrid | 1. Create a SendGrid account. <br> 2. Upgrade your account to a Pro plan. <br> 3. Configure an IP. <br> 4. Create a SendGrid subuser. <br> 5. Authenticate your domain. <br> 6. Enable subscription tracking. <br> 7. Enable an event webhook. <br> 8. Generate API credentials, then copy them into Engage settings. <br> 9. Enable automated IP warmup. <br> 10. Contact SendGrid support. |
 | Twilio   | 1. Create a Twilio account. <br> 2. Purchase phone number(s). <br> 3. If necessary, register phone number(s). <br> 4. Create a messaging service. <br> 5. Generate an API key, then copy it into the Engage settings. <br> 6. Configure an event webhook.                                                                                                                                                                                      |
 
 
@@ -157,7 +157,7 @@ To finish linking the API credentials to your Segment account, follow these step
 ### Enable Automated IP warmup
 
 > info "Required Step"
-> Notify Segment support once you've completed IP warmup.
+> Once you've completed IP warmup, contact SendGrid support at [help@sendgrid.com](mailto:help@sendgrid.com).
 
 To finish configuring your SendGrid account for usage with Twilio Engage, you’ll enable [automated IP warmup](https://docs.sendgrid.com/ui/sending-email/warming-up-an-ip-address){:target="_blank"}. As a best practice, **only warm up your IP when you're ready to begin sending campaigns.**
 
@@ -167,7 +167,7 @@ To enable IP warmup, follow these directions:
 1. Within your SendGrid space, navigate to **Settings > IP Addresses**.
 2. On the **Dedicated IP Addresses** page, click the pencil edit button next to your Engage IP address.
 3. Under **Additional options** (pictured below), check **Use Automated IP warmup** and **Allow my subusers to send mail using this IP address**. Click **Save**.
-4. **Required: Reach out to Segment support. Let them know you’ve enabled IP warmup.**
+4. **Required: Reach out to SendGrid support at [help@sendgrid.com](mailto:help@sendgrid.com). Let them know you’ve enabled IP warmup.**
 
 Your SendGrid account is now fully configured and ready to use with Engage.  You’re ready to move to Stage 3 and configure Twilio SMS.
 
