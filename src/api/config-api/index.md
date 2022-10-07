@@ -101,4 +101,4 @@ $ curl \
 
 For an overview of the API's common design patterns and important information about versioning and compatibility, see the [API Design](/docs/api/config-api/api-design) document.
 
-To see all the API methods and models see the [Segment Config API Reference](https://reference.segmentapis.com/).
+To see all the API methods and models see the [Segment Config API Reference](https://reference.segmentapis.com/){:target="_blank"}.
