@@ -18,7 +18,7 @@ The Google Sheets destination is intended for use with **Reverse ETL sources onl
 
 ### Create a spreadsheet
 1. [Create a new Google spreadsheet](https://docs.google.com/spreadsheets/u/0/create?usp=sheets_home&ths=true){:target="_blank"} in your Google account.
-2. Grab the spreadsheet ID from the spreadsheet URL. The spreadsheet ID is the value after `d/` and before `/edit`. For example, if your URL is `https://docs.google.com/spreadsheets/d/1ejq5-UVP0SWZezRsdggzFxMqOmaJwZh7NkKPkQfi0Bb/edit#gid=0` the ID is `1ejq5-UVP0SWZezRsdggzFxMqOmaJwZh7NkKPkQfi0Bb`. You will need this ID when you configure the destination.
+2. Copy the spreadsheet ID from the spreadsheet URL. The spreadsheet ID is the value after `d/` and before `/edit`. For example, if your URL is `https://docs.google.com/spreadsheets/d/1ejq5-UVP0SWZezRsdggzFxMqOmaJwZh7NkKPkQfi0Bb/edit#gid=0` the ID is `1ejq5-UVP0SWZezRsdggzFxMqOmaJwZh7NkKPkQfi0Bb`. You will need this ID when you configure the destination.
 
 ### Connect Google Sheets
 1. Create and configure your Reverse ETL source.
