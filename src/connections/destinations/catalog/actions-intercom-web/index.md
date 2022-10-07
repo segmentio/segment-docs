@@ -2,8 +2,6 @@
 title: Intercom Web (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
-hidden: true
-private: true
 id: 62d9daff84a6bf190da9f592
 hide_action:
   - id: 5W984Qq59XEQnFYKXKHGeZ
