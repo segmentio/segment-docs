@@ -99,6 +99,6 @@ $ curl \
 
 ## Reference
 
-For an overview of the API's common design patterns and important information about versioning and compatibility, see the [API Design](/docs/config-api/api-design) document.
+For an overview of the API's common design patterns and important information about versioning and compatibility, see the [API Design](/docs/api/config-api/api-design) document.
 
 To see all the API methods and models see the [Segment Config API Reference](https://reference.segmentapis.com/).
