@@ -263,6 +263,8 @@ sections:
       title: Overview
     - path: /profiles/identity-resolution/identity-resolution-onboarding
       title: Onboarding
+    - path: /profiles/identity-resolution/space-setup
+      title: Space Setup
     - path: /profiles/identity-resolution/use-cases
       title: Use Cases
     - path: /profiles/identity-resolution/externalids
