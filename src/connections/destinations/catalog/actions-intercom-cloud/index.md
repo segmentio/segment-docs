@@ -2,8 +2,6 @@
 title: Intercom Cloud Mode (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
-hidden: true
-private: true
 id: 62ded0cf5753c743883ca0f3
 versions:
   - name: 'Intercom Web (Actions)'
