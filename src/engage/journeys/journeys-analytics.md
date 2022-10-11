@@ -37,9 +37,9 @@ The following table shows the three statistics available for a Journey:
 
 Using the date picker, you can view a Journey's analytics over a specific period of time.
 
-The following table shows descriptions of the timeframes you can select:
+The following table shows descriptions of the time frames you can select:
 
-| Timeframe         | Description (based on UTC)                                 |
+| Time frame         | Description (based on UTC)                                 |
 | ----------------- | ---------------------------------------------------------- |
 | Today             | Today, beginning at midnight                               |
 | Yesterday         | The day before today                                       |
