@@ -5,7 +5,7 @@ hidden: true
 ---
 
 > info ""
-> The Engage Source is in beta.
+> The Engage Events Source is in beta.
 
 Use the Engage Events Source to sync Engage subscription states to your downstream warehouses.
 
