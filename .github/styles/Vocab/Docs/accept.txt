@@ -1,3 +1,4 @@
+(:?C|c)loudwatch
 (?:C|c)annonical
 (?:C|c)onfig
 (?:C|c)rypto
@@ -21,9 +22,11 @@ Adwords
 Aircall
 allowlist
 Amberflo
+API(:?s)
 Appboy
 Appsflyer
 async
+aws
 background(?:ed|ing)
 Bento
 Blitzllama
@@ -34,6 +37,7 @@ boolean
 Breyta
 Chargebee
 chatbot
+cli
 CloudFront
 Cocoapods
 Contentful
@@ -91,6 +95,7 @@ Middleware
 Mixpanel
 namespace
 Ninetailed
+npm
 Okta
 Omnichannel
 onboarding
@@ -101,8 +106,10 @@ performant
 Pinterest
 Preact
 Qualtrics
+reformat(:?s)
 Responsys
 Rokt
+SDK(:?s)
 Selligent
 Sendgrid
 Shopify
@@ -124,6 +131,7 @@ Vero
 Vidora
 viewability
 waitlist
+walkthrough
 WebKit
 Wootric
 Xcode
