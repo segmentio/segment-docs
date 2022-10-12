@@ -41765,9 +41765,9 @@ items:
   hidden: true
   endpoints:
   - us
-  - eu
   regions:
   - us
+  - eu
   url: connections/destinations/catalog/segment-data-lakes-azure
   previous_names:
   - Azure Data Lakes
