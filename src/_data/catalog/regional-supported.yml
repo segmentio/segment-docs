@@ -3451,9 +3451,9 @@ destinations:
     url: connections/destinations/catalog/segment-data-lakes-azure
     regions:
       - us
+      - eu
     endpoints:
       - us
-      - eu
   - id: 5ec2b3adf7d3322ea12f3c04
     display_name: SegMetrics
     slug: segmetrics

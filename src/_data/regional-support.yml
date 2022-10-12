@@ -1,25 +1,11 @@
+##
+# Instructions:
+# To add an enabled integration, add the slug of the integration to the applicable endpoint or region list.
+# endpoint = EU WORKSPACE W/ EU ENDPOINT
+# region = EU WORKSPACE W/ US ENDPOINT
+
+
 sources:
-  endpoint:
-    - amp
-    - android
-    - clojure
-    - factual-engine
-    - go
-    - http-api
-    - ios
-    - java
-    - javascript
-    - kotlin
-    - kotlin-android
-    - net
-    - node-js
-    - php
-    - pixel-tracking-api
-    - python
-    - react-native
-    - roku
-    - ruby
-    - xamarin
   region:
     - amp
     - android
@@ -45,25 +31,29 @@ sources:
     - swift-ios
     - twilio-event-streams-beta
     - xamarin
-destinations:
   endpoint:
-    - actions-amplitude
-    - adobe-analytics
-    - amplitude
-    - braze
-    - braze-cloud-mode-actions
-    - braze-web-mode-actions
-    - gainsight-px
-    - ibm-ubx
-    - iron-io
-    - hubspot
-    - mixpanel
-    - natero
-    - repeater
-    - segment-data-lakes-azure
-    - slack
-    - stitch-data
-  region:
+    - amp
+    - android
+    - clojure
+    - factual-engine
+    - go
+    - http-api
+    - ios
+    - java
+    - javascript
+    - kotlin
+    - kotlin-android
+    - net
+    - node-js
+    - php
+    - pixel-tracking-api
+    - python
+    - react-native
+    - roku
+    - ruby
+    - xamarin
+destinations:
+region:
     - 2mee
     - ab-smartly
     - activecampaign
@@ -312,6 +302,7 @@ destinations:
     - scopeai
     - screeb
     - seg
+    - segment-data-lakes-azure
     - segmetrics
     - sentry
     - serenytics
@@ -383,8 +374,25 @@ destinations:
     - zendesk
     - zendesk-connect
     - zopim
+  endpoint:
+    - actions-amplitude
+    - adobe-analytics
+    - amplitude
+    - braze
+    - braze-cloud-mode-actions
+    - braze-web-mode-actions
+    - gainsight-px
+    - ibm-ubx
+    - iron-io
+    - hubspot
+    - mixpanel
+    - natero
+    - repeater
+    - slack
+    - stitch-data
+  
 warehouses:
-  endpoint: 
+  region:
     - azuresqldb
     - azuresqldw
     - bigquery
@@ -392,7 +400,7 @@ warehouses:
     - postgres
     - redshift
     - snowflake
-  region:
+  endpoint: 
     - azuresqldb
     - azuresqldw
     - bigquery

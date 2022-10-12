@@ -7,7 +7,7 @@ id: GNLT5OQ45P
 
 This document contains a procedure that enables you to upload a CSV file containing data to Amazon S3, where it uses Lambda to automatically parse, format, and upload the data to Segment.
 
-You might have sources of data where you can't instrument Segment's SDKs, including other SaaS tools for which a Segment integration is not yet available. In many of these cases, you can extract data from these sources in CSV format, and then use our server-side SDKs or HTTP tracking API to push the data to Segment.
+You might have sources of data where you can't instrument Segment's SDKs, including other SaaS tools for which a Segment integration is not yet available. In many of these cases, you can extract data from these sources in CSV format, and then use Segment's server-side SDKs or HTTP tracking API to push the data to Segment.
 
 The goal of this walkthrough is to make this process easier by providing an automated process that ingests this data. Once you complete this walkthrough, you will have the following Segment, Amazon S3, Lambda, and IAM resources deployed:
 
@@ -20,36 +20,35 @@ The goal of this walkthrough is to make this process easier by providing an auto
 
 ## Prerequisites
 
-This tutorial assumes that you have some basic understanding of S3, Lambda and the `aws cli` tool. If you haven't already, follow the instructions in  [Getting Started with AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html) to create your first Lambda function. If you're unfamiliar with `aws cli`, follow the instructions in [Setting up the AWS Command Line Interface](https://docs.aws.amazon.com/polly/latest/dg/setup-aws-cli.html) before you proceed.
+This tutorial assumes that you have some basic understanding of S3, Lambda and the `aws cli` tool. If you haven't already, follow the instructions in  [Getting Started with AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html){:target="_blank"} to create your first Lambda function. If you're unfamiliar with `aws cli`, follow the instructions in [Setting up the AWS Command Line Interface](https://docs.aws.amazon.com/polly/latest/dg/setup-aws-cli.html){:target="_blank"} before you proceed.
 
 This tutorial uses a command line terminal or shell to run commands. Commands appear preceded by a prompt symbol (`$`) and the name of the current directory, when appropriate.
 
-On Linux and macOS, use your preferred shell and package manager. On macOS, you can use the Terminal application. On Windows 10, you can  [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows-integrated version of Ubuntu and Bash.
+On Linux and macOS, use your preferred shell and package manager. On macOS, you can use the Terminal application. On Windows 10, you can  [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10){:target="_blank"} to get a Windows-integrated version of Ubuntu and Bash.
 
-[Install NPM](https://www.npmjs.com/get-npm) to manage the function's dependencies.
+[Install NPM](https://www.npmjs.com/get-npm){:target="_blank"} to manage the function's dependencies.
 
 ## Getting Started
 
 ### 1. Create an S3 source in Segment
-![](images/s3_1.png)
-- **Note your write key for this source** - we will need it later!
+Remember the write key for this source, you'll need it in a later step.
 
 ### 2. Create the Execution Role
 
-Create the  [execution role](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html) that gives your function permission to access AWS resources.
+Create the  [execution role](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html){:target="_blank"} that gives your function permission to access AWS resources.
 
 **To create an execution role**
 
-1. Open the  [roles page](https://console.aws.amazon.com/iam/home#/roles)  in the IAM console.
+1. Open the  [roles page](https://console.aws.amazon.com/iam/home#/roles){:target="_blank"}  in the IAM console.
 2. Choose  **Create role**.
 3. Create a role with the following properties:
     - Set the **Trusted entity** to **AWS Lambda**.
-      ![](images/s3_2.png)
+      ![Add Lambda as the trusted entity for the role](images/s3_2.png)
     - Set the **Permissions**  to **AWSLambdaExecute**.
-       ![](images/s3_3.png)
+       ![Add the AWSLambdaExecute permission](images/s3_3.png)
     - You can skip creating a tag.
     - Set the **Role name** to **`lambda-s3-role`**.
-      ![](images/s3_4.png)
+      ![Set the role name to lambda-s3-role](images/s3_4.png)
 4. Record the new created IAM role's `role id`! You're going to need it later!
 
 The **AWSLambdaExecute** policy has the permissions that the function needs to manage objects in Amazon S3, and write logs to CloudWatch Logs.
@@ -67,7 +66,8 @@ Follow these steps to create your local files, S3 bucket and upload an object.
     4,Jasmin Christian,test event,platinum,Pinterest,112.252.20.73,4,2019-05-14T20:32:27.940Z
     ```
 
->When you invoke the Lambda function manually, before you connect to Amazon S3, you pass sample event data to the function that specifies the source bucket and `track_1.csv` as the newly created object.
+> info ""
+> When you invoke the Lambda function manually, before you connect to Amazon S3, you pass sample event data to the function that specifies the source bucket and `track_1.csv` as the newly created object. 
 
 2. Open the Amazon S3 console.
 3.  Create your bucket. **Record your bucket name** - you'll need it later!
@@ -79,7 +79,7 @@ Next, create the Lambda function, install dependencies, and zip everything up so
 
 The example code template below receives an Amazon S3 event as input, and processes the message that it contains. It reads the newly uploaded `.csv` in the source bucket, transforms the data, then uploads it to Segment.
 
-**Example index.js:**
+Example index.js:
 
 ```js
 // dependencies
@@ -261,10 +261,10 @@ In this step, you invoke the Lambda function manually using sample Amazon S3 eve
    S3-Lambda-Segment$ touch output.txt
    ```
 2. Run the command below to test.
-   This command uses the `track_1.csv` file we created and uploaded to S3 as our data source, simulates that `track_1.csv` was just uploaded, and manually triggers our Lambda function.
+   This command uses the `track_1.csv` file you created and uploaded to S3 as the data source, simulates that `track_1.csv` was just uploaded, and manually triggers the Lambda function.
 
     ```bash
-    S3-Lambda-Segment$ aws lambda invoke --function-name <!Your Lambda Name!> --invocation-type Event --payload '{"Records":[ { "eventVersion":"2.0", "eventSource":"aws:s3", "awsRegion":"<!Your AWS Bucket Region!>", "eventTime":"1970-01-01T00:00:00.000Z", "eventName":"ObjectCreated:Put", "userIdentity":{ "principalId":"AIDAJDPLRKLG7UEXAMPLE" }, "requestParameters":{ "sourceIPAddress":"127.0.0.1" }, "responseElements":{ "x-amz-request-id":"C3D13FE58DE4C810", "x-amz-id-2":"FMyUVURIY8/IgAtTv8xRjskZQpcIZ9KG4V5Wp6S7S/JRWeUWerMUE5JgHvANOjpD" }, "s3":{ "s3SchemaVersion":"1.0", "configurationId":"testConfigRule", "bucket":{ "name":"<!Your Bucket Name!>", "ownerIdentity":{ "principalId":"A3NL1KOZZKExample" }, "arn":"arn:aws:s3:::<!Your Bucket Name!>" }, "object":{ "key":"track_1.csv", "eTag":"d41d8cd98f00b204e9800998ecf8427e", "versionId":"096fKKXTRTtl3on89fVO.nfljtsv6qko" } } } ] }' output.txt
+    S3-Lambda-Segment$ aws lambda invoke --function-name <!Your Lambda Name!> --invocation-type Event --payload '{"Records":[ { "eventVersion":"2.0", "eventSource":"aws:s3", "awsRegion":"<!Your AWS Bucket Region!>", "eventTime":"1970-01-01T00:00:00.000Z", "eventName":"ObjectCreated:Put", "userIdentity":{ "principalId":"AIDAJDPLRKLG7UEXAMPLE" }, "requestParameters":{ "sourceIPAddress":"127.0.0.1" }, "responseElements":{ "x-amz-request-id":"C3D13FE58DE4C810", "x-amz-id-2":"FMyUVURIY8/IgAtTv8xRjskZQpcIZ9KG4V5Wp6S7S/JRWeUWerMUE5JgHvANOjpD" }, "s3":{ "s3SchemaVersion":"1.0", "configurationId":"testConfigRule", "bucket":{ "name":"<!Your Bucket Name!>", "ownerIdentity":{ "principalId":"A3NL1KOZZKExample" }, "arn":"arn:aws:s3:::<!Your Bucket Name!>" }, "object":{ "key":"track_1.csv", "eTag":"d41d8cd98f00b204e9800998ecf8427e", "versionId":"096fKKXTRTtl3on89fVO.nfljtsv6qko" } } } ] }' output.txt --cli-binary-format raw-in-base64-out 
     ```
 
 3.  Review your Cloudwatch logs or Segment debugger to verify that the function ran as expected.
@@ -299,21 +299,21 @@ You'll do the following:
     S3-Lambda-Segment$ aws lambda get-policy --function-name <!Your Lambda Name!>
     ```
 
-Next, we add notification configuration on the source bucket to request Amazon S3 to publish object-created events to Lambda.
+Next, add configure notifications on the source bucket to request Amazon S3 to publish object-created events to Lambda.
 
 **To configure notifications**
 
 1. Open the  [Amazon S3 console](https://console.aws.amazon.com/s3).
 2. Choose the source bucket.
 3. Choose  **Properties**.
-   ![](images/s3_5.png)
+   ![Select the Properties tab](images/s3_5.png)
 4. Scroll down, click **Events**, and configure a notification with the following settings.
-   ![](images/s3_6.png)
+   ![Click Events](images/s3_6.png)
     - Set **Name** to **`lambda-trigger`**.
     - Set **Events** to **`ObjectCreate (All)`**.
     - Set **Send to** to **`Lambda function`**.
     - Set **Lambda** to **Your Lambda Function Name**.
-      ![](images/s3_7.png)
+      ![Add the name of the function you created to the Lambda field](images/s3_7.png)
 
 For more information on event configuration, see  [Enabling Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/enable-event-notifications.html)  in the  _Amazon Simple Storage Service Console User Guide_.
 
@@ -336,7 +336,7 @@ Last, test your system to make sure it's working as expected:
 ## Good to know
 
 ### Timestamps
-This script automatically transforms all CSV timestamp columns named `createdAt` and `timestamp` to timestamp objects, regardless of nesting, preparation for Segment ingestion. If your timestamps have a different name, search the example `index.js` code for the "colParser" function, and add your column names there for automatic transformation. If you make this modification, re-zip the package (using `zip -r function.zip .`) and upload the new zip to Lambda.
+This script automatically transforms all CSV timestamp columns named `createdAt` and `timestamp` to timestamp objects, regardless of nesting, preparation for Segment ingestion. If your timestamps have a different name, search the example `index.js` code for the `colParser` function, and add your column names there for automatic transformation. If you make this modification, re-zip the package (using `zip -r function.zip .`) and upload the new zip to Lambda.
 
 ## CSV Formats
 
@@ -387,7 +387,7 @@ The structure for `track` or `page` is almost identical to `identify` with the e
 
 #### Nested structures
 
-For any of these methods, you might need to pass nested JSON to the tracking or objects API. We use a canonical naming convention to specify nested CSVs. For example `context.device.advertisingId` in a CSV column translates to this in JSON:
+For any of these methods, you might need to pass nested JSON to the tracking or objects API. Segment uses a canonical naming convention to specify nested CSVs. For example `context.device.advertisingId` in a CSV column translates to this in JSON:
 
 ```json
     "context": {
@@ -401,9 +401,9 @@ The example `index.js` sample code above does not support ingestion of arrays. I
 
 #### Object Structure
 
-There are cases when our tracking API is not suitable for datasets that you might want to move to a warehouse. This could be e-commerce product data, media content metadata, campaign performance, and so on.
+There are cases when Segment's tracking API is not suitable for datasets that you might want to move to a warehouse. This could be e-commerce product data, media content metadata, campaign performance, and so on.
 
-To accomplish this, use our Objects API, which is used in our object cloud sources, and includes library support for Node and Golang.
+To accomplish this, use the Objects API, which is used in object cloud sources, and includes library support for Node and Golang.
 
 #### Filename
 
