@@ -21,15 +21,15 @@ updating Contacts in Eloqua following events that do not use an Eloqua form.
 Upon invocation of a server-side `identify`, Segment will by default map the
 Segment `identify` trait on the left to the Eloqua field on the right:
 
-| Segment trait | Eloqua field |
-|---|---|
-| email | Email |
-| firstName | First Name |
-| lastName | Last Name |
-| street _or_ address.street | Address |
-| city _or_ address.city | City |
-| country _or_ address.country | Country |
-| title | Title |
+| Segment trait                    | Eloqua field |
+| -------------------------------- | ------------ |
+| `email`                          | Email        |
+| `firstName`                      | First Name   |
+| `lastName`                       | Last Name    |
+| `street` _or_ `address.street`   | Address      |
+| `city` _or_ `address.city`       | City         |
+| `country` _or_ a`ddress.country` | Country      |
+| `title`                          | Title        |
 
 Follow the Segment spec to ensure proper mapping of these fields from Segment
 `identify` traits: /docs/connections/spec/identify/#traits.
@@ -48,15 +48,15 @@ in your destination settings.
 Upon invocation of a server-side `group` event, Segment will by default map the
 Segment `group` trait on the left to the Eloqua field on the right:
 
-| Segment trait | Eloqua field |
-|---|---|
-| name + groupId | Company Name |
-| street _or_ address.street | Address 1 |
-| city _or_ address.city | City|
-| country _or_ address.country | Country |
-| city _or_ address.city | City |
-| country _or_ address.country | Country |
-| phone | Business Phone |
+| Segment trait                    | Eloqua field   |
+| -------------------------------- | -------------- |
+| `name` + `groupId`               | Company Name   |
+| `street` _or_ `address.street`   | Address 1      |
+| `city` _or_ `address.city`       | City           |
+| `country` _or_ `address.country` | Country        |
+| `city` _or_ `address.city`       | City           |
+| `country` _or_ `address.country` | Country        |
+| `phone`                          | Business Phone |
 
 Segment concatenates `traits.name` and `groupId` to Company Name to ensure
 uniqueness. Therefore, in order to successfully create or update an Account,
@@ -85,7 +85,7 @@ that specifies the Segment trait names and the corresponding custom Account or
 Contact fields to associate them with in Eloqua.
 
 Segment's custom trait mapping will match exactly what you input into your
-Segment settings. For example, if you have a field called `Account Rating` in
+Segment settings. For example, if you have a field With a display name called `Account Rating` in
 Eloqua, and a property called `AccountRating` in your Segment events, you
 should enter `AccountRating: Account Rating` as the mapping in the "Map Custom
 Traits to Accounts" setting in the Segment UI.
@@ -104,7 +104,7 @@ specifying the Segment event names with the corresponding Custom Object you
 would like to associate it with in Eloqua.
 
 Segment will also map the properties of `track` events with Custom Object
-fields of the same name. Our integration does an automatic case- and
+fields of the same name. The integration does an automatic case- and
 formatting-insensitive match so that if you have a field called `Account Type`
 in Eloqua and a property called `AccountType` in your Segment event, the
 mapping will get handled.
@@ -119,13 +119,13 @@ Segment identifies Eloqua Custom Object Fields with `date` data types, and
 converts date objects to Unix date strings in seconds, before sending the
 payload to Eloqua.
 
-| **Eloqua Data Type** | **Common Data Type** | **Example Value** |
-|---|---|---|
-| Number | Integer | 31415 |
-| Text | String (max 250 characters) | '31415' |
-| Large Text | String (max 32000 characters) | '31415' |
-| Date/Time | String (Unix date string in seconds) | '1543861960' |
-| Numeric | Float (up to 4 decimal places) | 3.1415 |
+| **Eloqua Data Type** | **Common Data Type**                 | **Example Value** |
+| -------------------- | ------------------------------------ | ----------------- |
+| Number               | Integer                              | 31415             |
+| Text                 | String (max 250 characters)          | '31415'           |
+| Large Text           | String (max 32000 characters)        | '31415'           |
+| Date/Time            | String (Unix date string in seconds) | '1543861960'      |
+| Numeric              | Float (up to 4 decimal places)       | 3.1415            |
 
 ### User Email
 
