@@ -402,3 +402,4 @@ Segment alphabetizes payload fields that come in to **deployed** source function
 #### Does the source function allow `GET` requests?
 
 `GET` requests are not supported with a source function. Source functions can only receive data through `POST` requests.
+ 
