@@ -335,9 +335,14 @@ Though you can add plugins anywhere in your code, it's best to implement your pl
 
 ## Destination filters
 > info ""
-> Destination filters are only available to Business Tier customers. Destination filters on mobile device-mode destinations are in beta for Analytics Swift. 
+> Destination filters are only available to Business Tier customers.
+>
+> Destination filters on mobile device-mode destinations are in beta and only supports Analytics-Swift and [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/).
 
 Use Analytics Swift to set up [destination filters](docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
+
+> warning ""
+> When you use destination filters in mobile device-mode, certain fields that are added to the payload server-side such as an IP address, aren't supported. Segment ignores these filters.
 
 To get started with destination filters using Swift:
 1. Add the Swift package `git@github.com:segmentio/DestinationFilters-Swift.git` as a dependency through either of these 2 options:

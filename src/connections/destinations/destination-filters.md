@@ -5,13 +5,15 @@ rewrite: true
 
 > info ""
 > Destination filters are only available to Business Tier customers.
+>
+> Destination filters for mobile device-mode destinations are in beta and only supports [Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios#destination-filters) and [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/#destination-filters) libraries.
 
 Use destination filters to prevent certain data from flowing into a destination. You can conditionally filter out event properties, traits, and fields, or even filter out the event itself.
 
 You can configure destination filters on cloud-mode, mobile, and web device-mode and actions-based destinations.  With device-mode destinations, you can use the same user interface or API mechanism that you use for your cloud-mode destinations, and have those filters acted upon for device-mode destinations on web and mobile.
 
-> info ""
-> Destination filters for mobile device-mode destinations are in beta for [Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios#destination-filters) and [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/#destination-filters) libraries.
+> info "Web device-mode destinations"
+> Destination filters for web device-mode only supports the Analytics.js 2.0 source. You need to enable device mode destination filters for your Analytics.js source. To do this, go to your Javascript source and navigate to **Settings > Analytics.js** and turn the toggle on for **Destination Filters**.
 
 Common use cases for destination filters include:
 - Managing PII (personally identifiable information) by blocking fields from reaching certain destinations
