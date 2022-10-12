@@ -19,15 +19,15 @@ All functions are scoped to your workspace, so members of other workspaces canno
 
 ## Create a source function
 
-1. From your workspace, go to the Catalog and click the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog){:target="_blank"}.
+1. From your workspace, go to **Connections > Catalog** and click the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog){:target="_blank"}.
 2. Click **New Function**.
-4. Select **Source Function** and click **Build**.
+4. Select **Source** as the function type and click **Build**.
 
+After you click **Build**, a code editor appears. Use the editor to write the code for your function, configure settings, and test the function's behavior.
 
 > success ""
 > **Tip:** Want to see some example functions? Check out the templates available in the Functions UI, or in the open-source [Segment Functions Library](https://github.com/segmentio/functions-library){:target="_blank"}. (Contributions welcome!)
 
-When you click **Build**, a code editor appears. Use the editor to write the code for your function, configure settings, and test the function's behavior.
 
 ![Functions Editor](images/editor-source.png)
 
@@ -239,7 +239,7 @@ The `Segment.alias()` method accepts an object with the following fields:
 
 ##### Set
 
-The Set call uses [the object API](/docs/connections/sources/catalog/libraries/server/object-api/) to save object data to your Redshift, BigQuery, Snowflake or other data warehouses supported by Segment.
+The Set call uses [the object API](/docs/connections/sources/catalog/libraries/server/object-api/) to save object data to your Redshift, BigQuery, Snowflake, or other data warehouses supported by Segment.
 
 ```js
 Segment.set({
@@ -353,7 +353,7 @@ async function onRequest(request, settings) {
 - **Bad Request**: is any error thrown by your code not covered by the other errors.
 - **Invalid Settings**: A configuration error prevented Segment from executing your code. If this error persists for more than an hour, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
 - **Message Rejected**: Your code threw `InvalidEventPayload` or `ValidationError` due to invalid input.
-- **Unsupported Event Type**: Your code does not implement a specific event type (`onTrack()`, etc.) or threw a `EventNotSupported` error.
+- **Unsupported Event Type**: Your code doesn't implement a specific event type (for example, `onTrack()`) or threw an `EventNotSupported` error.
 - **Retry**: Your code threw `RetryError` indicating that the function should be retried.
 
 Segment only attempts to run your source function again if a **Retry** error occurs.
@@ -397,7 +397,7 @@ The execution time limit is five seconds, however Segment strongly recommends th
 
 #### Does Segment alter incoming payloads?
 
-Segment alphabetizes payload fields that come in to **deployed** Source Functions. Segment doesn't alphabetize payloads in the Functions tester. If you need to verify the exact payload that hits a Source Function, alphabetize it first. You can then make sure it matches what the Source Function ingests.
+Segment alphabetizes payload fields that come in to **deployed** source functions. Segment doesn't alphabetize payloads in the Functions tester. If you need to verify the exact payload that hits a source function, alphabetize it first. You can then make sure it matches what the source function ingests.
 
 #### Does the source function allow `GET` requests?
 
