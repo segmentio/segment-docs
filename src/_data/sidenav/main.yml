@@ -238,7 +238,7 @@ sections:
   - path: /connections/integration_error_codes
     title: Integration Error Codes
   - path: /connections/rate-limits
-    title: Rate Limits and SLA
+    title: Rate Limits
   - path: /connections/regional-segment
     title: Regional Segment
 - section_title: Profiles

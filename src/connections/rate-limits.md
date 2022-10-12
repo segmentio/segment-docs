@@ -1,7 +1,7 @@
 ---
-title: Rate Limits and SLA
+title: Rate Limits
 ---
-These rate limits were added to our product documentation on August 31, 2020.
+These rate limits were added to product documentation on August 31, 2020.
 
 ## Inbound Data Ingestion API Rate Limit
 
