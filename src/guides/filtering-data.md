@@ -45,7 +45,7 @@ Your data is sent to your warehouse (if you have one) and into the Segment backe
 
 ## Destination filters
 
-[Destination filters](https://segment.com/docs/connections/destinations/destination-filters/) allow you to control the data flowing into each specific destination, by examining event payloads, and conditionally preventing data from being sent to destinations. You can filter out entire events, or just specific fields in the properties, in the traits, or in the context of your events. Destination filters support cloud-based (server-side), actions-based, and mobile and web device-mode destinations.  Destination filters aren't available for, and don't prevent data from reaching your warehouse(s) or S3 destinations.
+[Destination filters](https://segment.com/docs/connections/destinations/destination-filters/) allow you to control the data flowing into each specific destination, by examining event payloads, and conditionally preventing data from being sent to destinations. You can filter out entire events, or just specific fields in the properties, in the traits, or in the context of your events. Destination filters support cloud-based (server-side), actions-based, and mobile and web device-mode destinations.  Destination filters aren't available for, and don't prevent data from reaching your warehouse(s) or S3 destinations. Keep [these limitations](/docs/connections/destinations/destination-filters/#limitations) in mind when using destination filters.
 
 > info ""
 > Destination filters are only available in workspaces that are on a Business Tier plan.

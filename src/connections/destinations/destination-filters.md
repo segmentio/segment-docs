@@ -28,6 +28,8 @@ Keep the following limitations in mind when you use Destination Filters:
 - Segment applies Destination Filters one at a time in the order that they appear in your workspace.
 - You can't apply Destination Filters to Warehouses or S3 destinations.
 - Each filter can only apply to one source-destination pair.
+- *(For device-mode)* Destination filters don't apply to items that are added to the payload server-side such as IP addresses.
+- *(For device-mode)* Destination filters don't filter on native events that the destination SDK collects. Instead, you can use the load option to conditionally load relevant bundled JavaScript on the page. See the docs for [load options](/docs/connections/sources/catalog/libraries/website/javascript/#load-options).
 
 [Contact Segment](https://segment.com/help/contact/){:target="_blank"} if these limitations impact your use case.
 

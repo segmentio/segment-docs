@@ -342,7 +342,7 @@ Though you can add plugins anywhere in your code, it's best to implement your pl
 Use Analytics Swift to set up [destination filters](docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
 
 > warning ""
-> When you use destination filters in mobile device-mode, certain fields that are added to the payload server-side such as an IP address, aren't supported. Segment ignores these filters.
+> Keep [these limitations](/docs/connections/destinations/destination-filters/#limitations) in mind when using destination filters.
 
 To get started with destination filters using Swift:
 1. Add the Swift package `git@github.com:segmentio/DestinationFilters-Swift.git` as a dependency through either of these 2 options:
