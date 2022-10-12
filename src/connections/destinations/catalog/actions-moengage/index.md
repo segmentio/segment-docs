@@ -65,7 +65,7 @@ Include additional information that you think will be useful to the user here. F
 ### Default Mapping
 
 > warning "Do not change the preset values"
-> We already provide preset values to all mappings and hence no changes are required in the Identify User Actions, and Track Event Actions.
+> Moengage provides preset values to all mappings and hence no changes are required in the Identify User Actions, and Track Event Actions.
 
 <!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
 

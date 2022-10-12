@@ -54,7 +54,7 @@ Workspace owners can assign bulk assign labels to sources and Spaces using the "
 
 ##### Where can labels be used?
 
-Once a label has been created and has been assigned to resources within the workspace, workspace owners can use these labels to restrict permissions on user access, restrict which sources can be connected to a Sxspace through a Connection Policy, and organize sources by viewing these labels as columns in the Sources page.
+Once a label has been created and has been assigned to resources within the workspace, workspace owners can use these labels to restrict permissions on user access, restrict which sources can be connected to a space through a Connection Policy, and organize sources by viewing these labels as columns in the Sources page.
 
 ##### Can I delete a label?
 
