@@ -45,15 +45,15 @@ Your data is sent to your warehouse (if you have one) and into the Segment backe
 
 ## Destination filters
 
-[Destination filters](https://segment.com/docs/connections/destinations/destination-filters/) allow you to control the data flowing into each specific destination, by examining event payloads, and conditionally preventing data from being sent to destinations. You can filter out entire events, or just specific fields in the properties, in the traits, or in the context of your events. Destination filters support cloud-based (server-side), actions-based, and mobile and web device-mode destinations.  Destination filters aren't available for, and don't prevent data from reaching your warehouse(s) or S3 destinations. Keep [these limitations](/docs/connections/destinations/destination-filters/#limitations) in mind when using destination filters.
+[Destination filters](https://segment.com/docs/connections/destinations/destination-filters/) allow you to control the data flowing into each specific destination, by examining event payloads, and conditionally preventing data from being sent to destinations. You can filter out entire events, or just specific fields in the properties, in the traits, or in the context of your events. Destination filters support cloud-based (server-side), actions-based, and mobile and web device-mode destinations.  Destination filters aren't available for, and don't prevent data from reaching your warehouse(s) or S3 destinations.
 
 > info ""
 > Destination filters are only available in workspaces that are on a Business Tier plan.
 >
 > Destination filters for mobile device-mode destinations are in beta and only supports [Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios#destination-filters) and [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/#destination-filters) libraries.
 
-> info "Destination filters for web device-mode"
-> Destination filters for web device-mode only supports the Analytics.js 2.0 source. You need to enable destination filters for your Analytics.js source. To do this, go to your Javascript source and navigate to **Settings > Analytics.js** and turn the toggle on for **Destination Filters**.
+> warning ""
+> Keep [these limitations](/docs/connections/destinations/destination-filters/#limitations) in mind when using destination filters.
 
 ![](images/destination-filter-create.png)
 

@@ -12,9 +12,6 @@ Use destination filters to prevent certain data from flowing into a destination.
 
 You can configure destination filters on cloud-mode, mobile, and web device-mode and actions-based destinations.  With device-mode destinations, you can use the same user interface or API mechanism that you use for your cloud-mode destinations, and have those filters acted upon for device-mode destinations on web and mobile.
 
-> info "Web device-mode destinations"
-> Destination filters for web device-mode only supports the Analytics.js 2.0 source. You need to enable device mode destination filters for your Analytics.js source. To do this, go to your Javascript source and navigate to **Settings > Analytics.js** and turn the toggle on for **Destination Filters**.
-
 Common use cases for destination filters include:
 - Managing PII (personally identifiable information) by blocking fields from reaching certain destinations
 - Controlling event volume by sampling or dropping unnecessary events for specific destinations
@@ -30,6 +27,7 @@ Keep the following limitations in mind when you use Destination Filters:
 - Each filter can only apply to one source-destination pair.
 - *(For device-mode)* Destination filters don't apply to items that are added to the payload server-side such as IP addresses.
 - *(For device-mode)* Destination filters don't filter on native events that the destination SDK collects. Instead, you can use the load option to conditionally load relevant bundled JavaScript on the page. See the docs for [load options](/docs/connections/sources/catalog/libraries/website/javascript/#load-options).
+- *(For web device-mode)* Destination filters for web device-mode only supports the Analytics.js 2.0 source. You need to enable device mode destination filters for your Analytics.js source. To do this, go to your Javascript source and navigate to **Settings > Analytics.js** and turn the toggle on for **Destination Filters**.
 
 [Contact Segment](https://segment.com/help/contact/){:target="_blank"} if these limitations impact your use case.
 
