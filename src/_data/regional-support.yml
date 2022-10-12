@@ -60,6 +60,7 @@ destinations:
     - mixpanel
     - natero
     - repeater
+    - segment-data-lakes-azure
     - slack
     - stitch-data
   region:

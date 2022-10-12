@@ -6,8 +6,8 @@ sections:
     title: Connections
   - path: "https://segment.com/product/protocols/"
     title: Protocols
-  - path: "https://segment.com/product/personas/"
-    title: Personas
+  - path: "https://segment.com/product/twilio-engage/"
+    title: Twilio Engage
   - path: "https://segment.com/catalog/"
     title: Integrations Catalog
   - path: "https://segment.com/pricing/"

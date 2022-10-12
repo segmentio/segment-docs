@@ -10,7 +10,9 @@ You can also [set subscription states](#set-user-subscriptions) for each email a
 
 ## Upload a CSV file
 
-To upload a CSV file, navigate to **Engage > Audiences > Profile explorer** and click **Upload CSV**
+There are two ways you can navigate to the Upload CSV page:
+- Select **Engage > Audiences > Profile explorer** and click **Upload CSV**.
+- Select **Profiles > Profile explorer** and click **Upload CSV**.
 
 ### 1. Download your CSV template
 
@@ -19,7 +21,7 @@ Click **Download Template** to download a CSV template with identifier columns f
 > info ""
 > CSV files can only have a single **email** and **phone** identifier column. Include any additional email addresses or phone numbers for a user profile as a separate row.
 
-Navigate to **Profiles > Profiles Settings** and select the **Identity resolution** tab to view or add identifiers in your Segment workspace.
+Navigate to **Profiles > Profiles settings** and select the **Identity resolution** tab to view or add identifiers in your Segment workspace.
 
 ### 2. Fill out your CSV file
 
@@ -51,7 +53,7 @@ Custom traits display in the Custom Traits tab of a user profile in the Profile 
 
 Use the Upload History page to view CSV file uploads in your workspace over the last 30 days.
 
-Navigate to **Engage > Audiences > Profile explorer** and click **Upload History**.
+Navigate to **Engage > Audiences > Profile explorer** or **Profiles > Profile explorer** and select the **CSV upload history** tab.
 
 Select links to view CSV files and any associated [error reports](#error-reports). View the status of the file upload and the custom trait name added to user profiles in the CSV upload.
 

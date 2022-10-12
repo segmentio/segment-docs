@@ -59,10 +59,11 @@ To get started with the Analytics-Swift mobile library:
     `trackApplicationLifecycleEvents`| The default is set to `true`. <br> This automatically tracks lifecycle events. Set to `false` to stop tracking lifecycle events.
     `trackDeepLinks` | The default is set to `true`. <br> This automatically track deep links. Set to `false` to stop tracking Deep Links.
 
+
     > info ""
     > Configuration options such as IDFA collection and automatic screen tracking are found in Segment's [Plugin Examples repo](https://github.com/segmentio/analytics-example-plugins/tree/main/plugins/swift){:target="_blank"}.
 
-## Tracking methods
+## Tracking Methods
 Once you've installed the Analytics-Swift library, you can start collecting data through Segment's tracking methods:
 - [Identify](#identify)
 - [Track](#track)

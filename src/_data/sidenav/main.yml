@@ -246,7 +246,7 @@ sections:
   - path: /profiles
     title: Profiles Overview
   - path: /profiles/quickstart
-    title: Quickstart Guide
+    title: Profiles Onboarding
   # - section_title: User Subscriptions
   #   slug: profiles/user-subscriptions
   #   section:
@@ -263,6 +263,8 @@ sections:
       title: Overview
     - path: /profiles/identity-resolution/identity-resolution-onboarding
       title: Onboarding
+    - path: /profiles/identity-resolution/space-setup
+      title: Space Setup
     - path: /profiles/identity-resolution/use-cases
       title: Use Cases
     - path: /profiles/identity-resolution/externalids
@@ -288,9 +290,9 @@ sections:
   - path: '/engage'
     title: Introduction
   - path: '/engage/quickstart'
-    title: Quickstart Guide
+    title: Foundations Onboarding
   - path: '/engage/onboarding'
-    title: Onboarding Steps
+    title: Premier Onboarding
   - path: '/engage/use-cases'
     title: Use Cases
   - section_title: User Subscriptions
