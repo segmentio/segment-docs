@@ -3,7 +3,7 @@
 # To add an enabled integration, add the slug of the integration to the applicable endpoint or region list.
 # endpoint = EU WORKSPACE W/ EU ENDPOINT
 # region = EU WORKSPACE W/ US ENDPOINT
-
+##
 
 sources:
   region:
@@ -53,7 +53,7 @@ sources:
     - ruby
     - xamarin
 destinations:
-region:
+  region:
     - 2mee
     - ab-smartly
     - activecampaign
