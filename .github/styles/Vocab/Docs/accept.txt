@@ -48,6 +48,7 @@ datetime
 deeplink
 Dev
 Doubleclick
+Eloqua
 enablement
 endcapture
 endfor
