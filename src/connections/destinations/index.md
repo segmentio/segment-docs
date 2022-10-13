@@ -137,7 +137,7 @@ All mobile libraries handle retries by periodically attempting to flush their in
 
 #### Retries between Segment and destinations
 
-The destination endpoint APIs have fluctuations in availability due to a number of issues ranging from network failures to bugs to overload. Segment's internal systems retry failed destination API calls for 4 hours with a randomize exponential backoff after each attempt. This substantially improves delivery rates.
+The destination endpoint APIs have fluctuations in availability due to a number of issues ranging from network failures to bugs to overload. Segment's internal systems retry failed destination API calls for four hours with a randomized exponential backoff after each attempt. This substantially improves delivery rates.
 
 Here's an example destination that was only successfully accepting 93.36% of all API requests but was achieving a 99.28% final deliverability rate due to Segment's retry functionality.
 
