@@ -85,7 +85,7 @@ that specifies the Segment trait names and the corresponding custom Account or
 Contact fields to associate them with in Eloqua.
 
 Segment's custom trait mapping will match exactly what you input into your
-Segment settings. For example, if you have a field With a display name called `Account Rating` in
+Segment settings. For example, if you have a field with a display name called `Account Rating` in
 Eloqua, and a property called `AccountRating` in your Segment events, you
 should enter `AccountRating: Account Rating` as the mapping in the "Map Custom
 Traits to Accounts" setting in the Segment UI.
