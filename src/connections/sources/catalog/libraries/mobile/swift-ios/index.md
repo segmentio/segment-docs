@@ -416,8 +416,8 @@ let idfaPlugin = IDFACollection()
 analytics.add(plugin: idfaPlugin)
 ```
 
-## Supported Destinations
-Segment supports these destinations for Analytics Swift, with more to come:
+## Supported Device-Mode Destinations
+Segment supports these device-mode destinations for Analytics Swift, with more to come:
 * [Amplitude](https://github.com/segment-integrations/analytics-swift-amplitude)
 * [Appsflyer](https://github.com/segment-integrations/analytics-swift-appsflyer)
 * [Facebook App Events](https://github.com/segment-integrations/analytics-swift-facebook-app-events)
