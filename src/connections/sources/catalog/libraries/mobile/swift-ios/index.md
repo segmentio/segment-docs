@@ -10,7 +10,7 @@ With Analytics-Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS a
 If you're migrating to Analytics-Swift from a different mobile library, you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift-ios/migration/).
 
 > info ""
-> Analytics-Swift currently supports [these destinations](#supported-destinations) in device-mode, with more to follow. Cloud-mode destinations are also supported.
+> Analytics-Swift currently supports [these destinations](#supported-device-mode-destinations) in device-mode, with more to follow. Cloud-mode destinations are also supported.
 
 
 ## Getting Started
@@ -416,13 +416,13 @@ let idfaPlugin = IDFACollection()
 analytics.add(plugin: idfaPlugin)
 ```
 
-## Supported Destinations
-Segment supports these destinations for Analytics Swift, with more to come:
-* [Amplitude](https://github.com/segment-integrations/analytics-swift-amplitude)
-* [Appsflyer](https://github.com/segment-integrations/analytics-swift-appsflyer)
-* [Facebook App Events](https://github.com/segment-integrations/analytics-swift-facebook-app-events)
-* [Firebase](https://github.com/segment-integrations/analytics-swift-firebase)
-* [Mixpanel](https://github.com/segment-integrations/analytics-swift-mixpanel)
+## Supported Device-Mode Destinations
+Segment supports these device-mode destinations for Analytics Swift, with more to come:
+* [Amplitude](https://github.com/segment-integrations/analytics-swift-amplitude){:target="_blank"}
+* [Appsflyer](https://github.com/segment-integrations/analytics-swift-appsflyer){:target="_blank"}
+* [Facebook App Events](https://github.com/segment-integrations/analytics-swift-facebook-app-events){:target="_blank"}
+* [Firebase](https://github.com/segment-integrations/analytics-swift-firebase){:target="_blank"}
+* [Mixpanel](https://github.com/segment-integrations/analytics-swift-mixpanel){:target="_blank"}
 
 ## FAQs
 ### Can I use the catalog of device-mode destinations from Analytics-iOS?
@@ -431,4 +431,4 @@ No, only the plugins listed above are supported in device-mode for Analytics-Swi
 When you successfully package a plugin in device-mode, you will no longer see the integration listed as `false` in the integrations object for a Segment event. This logic is now packaged in the event metadata, and is not surfaced in the Segment debugger.
 
 ## Changelog
-[View the Analytics-Swift changelog on GitHub](https://github.com/segmentio/analytics-swift/releases).  
+[View the Analytics-Swift changelog on GitHub](https://github.com/segmentio/analytics-swift/releases){:target="_blank"}.  
