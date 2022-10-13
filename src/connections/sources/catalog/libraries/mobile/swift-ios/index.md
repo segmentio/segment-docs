@@ -338,7 +338,7 @@ Though you can add plugins anywhere in your code, it's best to implement your pl
 > info ""
 > Destination filters are only available to Business Tier customers.
 >
-> Destination filters on mobile device-mode destinations are in beta and only supports Analytics-Swift and [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/).
+> Destination filters on mobile device-mode destinations are in beta and only supports Analytics-Swift, [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/), and [Analytics-React-Native 2.0](/docs/connections/sources/catalog/libraries/mobile/react-native/).
 
 Use Analytics Swift to set up [destination filters](docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
 
