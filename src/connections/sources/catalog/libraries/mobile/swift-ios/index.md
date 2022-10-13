@@ -334,30 +334,6 @@ analytics.add(plugin: yourIntegration)
 
 Though you can add plugins anywhere in your code, it's best to implement your plugin when you configure the client.
 
-## Destination filters
-> info ""
-> Destination filters are only available to Business Tier customers.
->
-> Destination filters on mobile device-mode destinations are in beta and only supports Analytics-Swift, [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/), and [Analytics-React-Native 2.0](/docs/connections/sources/catalog/libraries/mobile/react-native/).
-
-Use Analytics Swift to set up [destination filters](docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
-
-> warning ""
-> Keep [these limitations](/docs/connections/destinations/destination-filters/#limitations) in mind when using destination filters.
-
-To get started with destination filters using Swift:
-1. Add the Swift package `git@github.com:segmentio/DestinationFilters-Swift.git` as a dependency through either of these 2 options:
-    1. Your package.swift file
-    2. Xcode
-        1. Xcode 12: **File > Swift Packages > Add Package Dependency**
-        2. Xcode 13: **File > Add Packages...**
-
-    After you install the package, import the package with `import DestinationFilters_Swift` to reference the Destination Filters plugin.
-2. Add the plugin.
-```swift
-analytics.add(DestinationFilters())
-```
-
 ## Utility methods
 The Analytics Swift utility methods help you work with [plugins](#plugin-architecture) from the analytics timeline. They include:
 - [Add](#add)
@@ -433,6 +409,30 @@ analytics.flush()
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
+
+## Destination filters
+> info ""
+> Destination filters are only available to Business Tier customers.
+>
+> Destination filters on mobile device-mode destinations are in beta and only supports Analytics-Swift, [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/), and [Analytics-React-Native 2.0](/docs/connections/sources/catalog/libraries/mobile/react-native/).
+
+Use Analytics Swift to set up [destination filters](docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
+
+> warning ""
+> Keep [these limitations](/docs/connections/destinations/destination-filters/#limitations) in mind when using destination filters.
+
+To get started with destination filters using Swift:
+1. Add the Swift package `git@github.com:segmentio/DestinationFilters-Swift.git` as a dependency through either of these 2 options:
+    1. Your package.swift file
+    2. Xcode
+        1. Xcode 12: **File > Swift Packages > Add Package Dependency**
+        2. Xcode 13: **File > Add Packages...**
+
+    After you install the package, import the package with `import DestinationFilters_Swift` to reference the Destination Filters plugin.
+2. Add the plugin.
+```swift
+analytics.add(DestinationFilters())
+```
 
 ## Ad Tracking and IDFA
 [Segment no longer automatically collects IDFA](/docs/connections/sources/catalog/libraries/mobile/ios/ios14-guide/#segment-no-longer-automatically-collects-idfa). If you need to collect the user's IDFA to pass it to specific destinations, or for other uses, [you can manually pass the IDFA to the Segment SDK](/docs/connections/sources/catalog/libraries/mobile/ios/ios14-guide/#you-can-manually-pass-the-idfa-to-the-segment-sdk).
