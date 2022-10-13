@@ -10,7 +10,7 @@ With Analytics-Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS a
 If you're migrating to Analytics-Swift from a different mobile library, you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift-ios/migration/).
 
 > info ""
-> Analytics-Swift currently supports [these destinations](#supported-destinations) in device-mode, with more to follow. Cloud-mode destinations are also supported.
+> Analytics-Swift currently supports [these destinations](#supported-device-mode-destinations) in device-mode, with more to follow. Cloud-mode destinations are also supported.
 
 
 ## Getting started
@@ -459,4 +459,4 @@ No, only the plugins listed above are supported in device-mode for Analytics-Swi
 When you successfully package a plugin in device-mode, you will no longer see the integration listed as `false` in the integrations object for a Segment event. This logic is now packaged in the event metadata, and is not surfaced in the Segment debugger.
 
 ## Changelog
-[View the Analytics-Swift changelog on GitHub](https://github.com/segmentio/analytics-swift/releases).  
+[View the Analytics-Swift changelog on GitHub](https://github.com/segmentio/analytics-swift/releases){:target="_blank"}.  

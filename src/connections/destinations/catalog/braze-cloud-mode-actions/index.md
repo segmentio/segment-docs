@@ -5,6 +5,11 @@ hide-dossier: false
 redirect_from:
   - '/connections/destinations/catalog/actions-braze-cloud/'
 id: 60f9d0d048950c356be2e4da
+versions:
+  - name: 'Braze Web Mode (Actions)'
+    link: '/docs/connections/destinations/catalog/braze-web-mode-actions'
+  - name: 'Braze (Classic)'
+    link: '/docs/connections/destinations/catalog/braze'
 ---
 {% include content/plan-grid.md name="actions" %}
 

@@ -81,13 +81,16 @@ Select and drag and image into the canvas, then return to the sidebar to set ima
 
 | Image Property         |        | Description  |
 |--------------------------|--------|-------|
-| Image                  |        | Upload a new image, add an image url, and adjust the image width. You can also add alternate text to display with the image.   |
+| Image                  |        | Upload a new image (up to 10 MB), add an image url, and adjust the image width. You can also add alternate text to display with the image.   |
 | Action                 |        | Use the image link drop-down menu to select [link actions](#link-actions) that occur when a recipient clicks on an image.   |
 | General                |        | Adjust container padding, which determines the amount of space between the image and column border.   |
 | Responsive Design      |        | Hide selected images for an email viewed on either desktop or mobile.   |
 
 ## Upload an image
 Use the Uploads tool to upload an image for the email template. Click **Upload Image** to select an image stored locally or drag and drop images in the sidebar dropzone.
+
+> note ""
+> The maximum image file size you can upload is 10 MB.
 
 ## Link actions
 Use the **Action Type** drop down menu in the sidebar to select the action that occurs when a recipient clicks on the link, button, or image in the email template.

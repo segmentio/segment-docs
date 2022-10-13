@@ -8,7 +8,7 @@ Segment Functions create reusable code that can be run in your Segment workspace
 When you create a function, write code for it, and save it, the function appears in the Catalog in your workspace _only_. You can then deploy that function in your workspace just as you would a conventional source or destination.
 
 > note ""
-> Access to Functions is controlled by specific [access management roles](#functions-permissions). You may need additional access to create, and deploy functions.
+> Access to Functions is controlled by specific [access management roles](#functions-permissions). You may need additional access to create and deploy functions.
 
 
 ## Creating functions
@@ -29,7 +29,7 @@ After you click **Create Function**, the function appears on the [Functions cata
 
 ## Editing a function
 
-If you are a **Workspace Owner** or **Functions Admin**, you can manage your function from the [Functions catalog page](https://app.segment.com/goto-my-workspace/functions/catalog/).
+If you are a **Workspace Owner** or **Functions Admin**, you can manage your function from the [Functions catalog page](https://app.segment.com/goto-my-workspace/functions/catalog/){:target="_blank"}.
 
 If you're editing an existing function, you can **Save** changes without changing the behavior of existing instances of the function.
 
@@ -58,10 +58,10 @@ When you deploy your destination function in your workspace, you fill out the se
 
 {% include content/functions/perms.md%}
 
-## ️Settings and Secrets
+## ️Settings and secrets
 
 {% include content/functions/settings.md %}
 
-## Runtime and Dependencies
+## Runtime and dependencies
 
 {% include content/functions/runtime.md %}

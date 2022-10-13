@@ -21,14 +21,15 @@ All functions are scoped to your workspace, so members of other workspaces can't
 
 ## Create a destination function
 
-1. From your workspace, go to the Catalog and click the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog){:target="_blank"}.
+1. From your workspace, go to **Connections > Catalog** and click the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog){:target="_blank"}.
 2. Click **New Function**.
-3. Select **Destination Function** and click **Build**.
+3. Select **Destination** as the function type and click **Build**.
+
+After you click **Build**, a code editor appears. Use the editor to write the code for your function, configure settings, and test the function's behavior.
 
 > success ""
 > **Tip:** Want to see some example functions? Check out the templates available in the Functions UI, or in the open-source [Segment Functions Library](https://github.com/segmentio/functions-library){:target="_blank"}. (Contributions welcome!)
 
-When you click **Build**, a code editor appears. Use the editor to write the code for your function, configure settings, and test the function's behavior.
 
 ## Code the destination function
 
@@ -352,7 +353,7 @@ A function can throw errors, or Segment might encounter errors while invoking yo
 - **Bad Request** - Any error thrown by the function code that is not covered by the other errors.
 - **Invalid Settings** - A configuration error prevented Segment from executing your code. If this error persists for more than an hour, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
 - **Message Rejected** - Your code threw `InvalidEventPayload` or `ValidationError` due to invalid input.
-- **Unsupported Event Type** - Your code doesn't implement a specific event type (for example, `onTrack()`) or threw a `EventNotSupported` error.
+- **Unsupported Event Type** - Your code doesn't implement a specific event type (for example, `onTrack()`) or threw an `EventNotSupported` error.
 - **Retry** - Your code threw `RetryError` indicating that the function should be retried.
 
 Segment only attempts to send the event to your destination function again if a **Retry** error occurs.
@@ -442,7 +443,7 @@ In addition to using [Destination Filters](/docs/connections/destinations/destin
 ...
 ```
 
-In the example above, the integrations object directly references and enables the `My Destination Function`. Be sure to include the workspace name in which the Destination Function is created, as shown. Like all items in the integration object, Destination Functions (and workspace names) are case sensitive. 
+In the example above, the integrations object directly references and enables the `My Destination Function`. Be sure to include the workspace name in which the destination function is created, as shown. Like all items in the integration object, destination functions (and workspace names) are case sensitive.
 
 ## Destination functions FAQs
 
@@ -452,7 +453,9 @@ Yes, Functions access is logged in the [Audit Trail](/docs/segment-app/iam/audit
 
 ##### Does Segment retry failed function invocations?
 
-Segment retries invocations that throw RetryError or Timeout errors for up to four hours. Segment does not retry if your function throws a [non-recoverable error](#errors-and-error-handling).
+Yes, Segment retries invocations that throw RetryError or Timeout errors (temporary errors only). Segment's internal system retries failed functions API calls for four hours with a randomized exponential backoff after each attempt. This substantially improves delivery rates.
+
+[Retries](/docs/connections/destinations/#retries-between-segment-and-destinations) work the same for both functions and cloud-mode destinations in Segment.
 
 ##### Are events guaranteed to send data in order?
 
