@@ -1,35 +1,35 @@
 Functions use Node.js 14.x.
 
-Functions do not currently support importing dependencies, but you can [contact Segment Support](https://segment.com/help/contact/) to request that one be added.
+Functions do not currently support importing dependencies, but you can [contact Segment Support](https://segment.com/help/contact/){:target="_blank"} to request that one be added.
 
 The following dependencies are installed in the function environment by default.
 
-- [`atob v2.1.2`](https://www.npmjs.com/package/atob) exposed as `atob`
-- [`aws-sdk v2.488.0`](https://www.npmjs.com/package/aws-sdk) exposed as `AWS`
-- [`btoa v1.2.1`](https://www.npmjs.com/package/btoa) exposed as `btoa`
-- [`form-data v2.4.0`](https://www.npmjs.com/package/form-data) exposed as `FormData`
-- [`@google-cloud/automl v2.2.0`](https://www.npmjs.com/package/@google-cloud/automl) exposed as `google.cloud.automl`
-- [`@google-cloud/bigquery v5.3.0`](https://www.npmjs.com/package/@google-cloud/bigquery) exposed as `google.cloud.bigquery`
-- [`@google-cloud/datastore v6.2.0`](https://www.npmjs.com/package/@google-cloud/datastore) exposed as `google.cloud.datastore`
-- [`@google-cloud/firestore v4.4.0`](https://www.npmjs.com/package/@google-cloud/firestore) exposed as `google.cloud.firestore`
-- [`@google-cloud/functions v1.1.0`](https://www.npmjs.com/package/@google-cloud/functions) exposed as `google.cloud.functions`
-- [`@google-cloud/pubsub v2.6.0`](https://www.npmjs.com/package/@google-cloud/pubsub) exposed as `google.cloud.pubsub`
-- [`@google-cloud/storage v5.3.0`](https://www.npmjs.com/package/@google-cloud/storage) exposed as `google.cloud.storage`
-- [`jsforce v1.11.0`](https://www.npmjs.com/package/jsforce) exposed as `jsforce`
-- [`jsonwebtoken v8.5.1`](https://www.npmjs.com/package/jsonwebtoken) exposed as `jsonwebtoken`
-- [`lodash v4.17.15`](https://www.npmjs.com/package/lodash) exposed as `_`
-- [`moment v2.26.0`](https://www.npmjs.com/package/moment/v/2.26.0) exposed as `moment`
-- [`node-fetch v2.6.0`](https://www.npmjs.com/package/node-fetch) exposed as `fetch`
-- [`oauth v0.9.15`](https://www.npmjs.com/package/oauth) exposed as `OAuth`
-- [`@sendgrid/client v7.4.7`](https://www.npmjs.com/package/@sendgrid/client) exposed as `sendgrid.client`
-- [`@sendgrid/mail v7.4.7`](https://www.npmjs.com/package/@sendgrid/mail) exposed as `sendgrid.mail`
-- [`stripe v8.115.0`](https://www.npmjs.com/package/stripe) exposed as `stripe`
-- [`twilio v3.68.0`](https://www.npmjs.com/package/twilio) exposed as `twilio`
-- [`uuidv5 v1.0.0`](https://www.npmjs.com/package/uuidv5) exposed as `uuidv5`
-- [`xml v1.0.1`](https://www.npmjs.com/package/xml) exposed as `xml`
-- [`xml2js v0.4.23`](https://www.npmjs.com/package/xml2js) exposed as `xml2js`
-- [`zlib v1.0.5`](https://www.npmjs.com/package/zlib) exposed as `zlib.zlib`
-  
+- [`atob v2.1.2`](https://www.npmjs.com/package/atob){:target="_blank"} exposed as `atob`
+- [`aws-sdk v2.488.0`](https://www.npmjs.com/package/aws-sdk){:target="_blank"} exposed as `AWS`
+- [`btoa v1.2.1`](https://www.npmjs.com/package/btoa){:target="_blank"} exposed as `btoa`
+- [`form-data v2.4.0`](https://www.npmjs.com/package/form-data){:target="_blank"} exposed as `FormData`
+- [`@google-cloud/automl v2.2.0`](https://www.npmjs.com/package/@google-cloud/automl){:target="_blank"} exposed as `google.cloud.automl`
+- [`@google-cloud/bigquery v5.3.0`](https://www.npmjs.com/package/@google-cloud/bigquery){:target="_blank"} exposed as `google.cloud.bigquery`
+- [`@google-cloud/datastore v6.2.0`](https://www.npmjs.com/package/@google-cloud/datastore){:target="_blank"} exposed as `google.cloud.datastore`
+- [`@google-cloud/firestore v4.4.0`](https://www.npmjs.com/package/@google-cloud/firestore){:target="_blank"} exposed as `google.cloud.firestore`
+- [`@google-cloud/functions v1.1.0`](https://www.npmjs.com/package/@google-cloud/functions){:target="_blank"} exposed as `google.cloud.functions`
+- [`@google-cloud/pubsub v2.6.0`](https://www.npmjs.com/package/@google-cloud/pubsub){:target="_blank"} exposed as `google.cloud.pubsub`
+- [`@google-cloud/storage v5.3.0`](https://www.npmjs.com/package/@google-cloud/storage){:target="_blank"} exposed as `google.cloud.storage`
+- [`jsforce v1.11.0`](https://www.npmjs.com/package/jsforce){:target="_blank"} exposed as `jsforce`
+- [`jsonwebtoken v8.5.1`](https://www.npmjs.com/package/jsonwebtoken){:target="_blank"} exposed as `jsonwebtoken`
+- [`lodash v4.17.19`](https://www.npmjs.com/package/lodash){:target="\_blank"} exposed as `_`
+- [`moment-timezone v0.5.31`](https://www.npmjs.com/package/moment-timezone/v/0.5.31){:target="_blank"} exposed as `moment`
+- [`node-fetch v2.6.0`](https://www.npmjs.com/package/node-fetch){:target="_blank"} exposed as `fetch`
+- [`oauth v0.9.15`](https://www.npmjs.com/package/oauth){:target="_blank"} exposed as `OAuth`
+- [`@sendgrid/client v7.4.7`](https://www.npmjs.com/package/@sendgrid/client){:target="_blank"} exposed as `sendgrid.client`
+- [`@sendgrid/mail v7.4.7`](https://www.npmjs.com/package/@sendgrid/mail){:target="_blank"} exposed as `sendgrid.mail`
+- [`stripe v8.115.0`](https://www.npmjs.com/package/stripe){:target="_blank"} exposed as `stripe`
+- [`twilio v3.68.0`](https://www.npmjs.com/package/twilio){:target="_blank"} exposed as `twilio`
+- [`uuidv5 v1.0.0`](https://www.npmjs.com/package/uuidv5){:target="_blank"} exposed as `uuidv5`
+- [`xml v1.0.1`](https://www.npmjs.com/package/xml){:target="_blank"} exposed as `xml`
+- [`xml2js v0.4.23`](https://www.npmjs.com/package/xml2js){:target="_blank"} exposed as `xml2js`
+- [`zlib v1.0.5`](https://www.npmjs.com/package/zlib){:target="_blank"} exposed as `zlib.zlib`
+
     `zlib`'s asynchronous methods `inflate` and `deflate` must be used with `async` or `await`. For example:
 
     ```js
@@ -53,7 +53,11 @@ The following dependencies are installed in the function environment by default.
     }
     ```
 
-Only the [`crypto` Node.js module](https://nodejs.org/dist/latest-v10.x/docs/api/crypto.html ) is included (exposed as `crypto`). [Other built-in Node.js modules](https://nodejs.org/api/modules.html) are not available.
+The following Node.js modules are available:
+- [`crypto` Node.js module](https://nodejs.org/dist/latest-v10.x/docs/api/crypto.html ){:target="_blank"} exposed as `crypto`.
+- [`https` Node.js module](https://nodejs.org/api/https.html){:target="_blank"} exposed as `https`.
+
+[Other built-in Node.js modules](https://nodejs.org/api/modules.html){:target="_blank"} aren't available.
 
 For more information on using the `aws-sdk` module, see how to [set up functions for calling AWS APIs](/docs/connections/functions/aws-apis/).
 
