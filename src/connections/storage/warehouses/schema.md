@@ -466,7 +466,7 @@ The `uuid` column is used to prevent duplicates. You can ignore this column.
 
 The `uuid_ts` column is used to keep track of when the specific event was last processed by our connector, specifically for deduping and debugging purposes. You can generally ignore this column.
 
-The `loaded_at` column contains the UTC timestamp reflecting when the data was staged by the processor. 
+The `loaded_at` column contains the UTC timestamp reflecting when the data was staged by the processor. This column is created only in BigQuery warehouse.
 
 ## Sort Key
 
