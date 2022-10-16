@@ -81,10 +81,27 @@ Follow the instructions below to connect branches to an existing step:
 
 With the Journey actions steps, you can send marketing campaigns to groups of users and deliver Journey information to downstream tools.
 
-> info "Channels Steps"
-> The Send an Email and Send an SMS steps are only available on Engage Premier.
+### Show an ad
 
-### Send an email
+The **Show an ad** step lets you send users to an advertising destination. You can also configure exit settings that remove users from the ad step after specific periods of time.
+
+For example, you may want to show an ad for only one week to users who abandoned a cart during a purchase. With the Show an ad step, you can remove users from the ad destination seven days after they enter it.
+
+Follow these steps to add a Show an ad step to a Journey:
+
+1. From the Journey builder, select the **+** icon to add a step, then select **Show an ad**.
+2. Name the step, then select **+ Add destination**.
+4. Choose the ad destination that Segment will sync to.
+5. To specify how long users will remain in the step, choose one of the following options:
+    1. If you want users to exit the destination, select the checkbox next to **Remove users from the destination after**. Set a time frame in minutes, hours, days, or weeks.
+    2. If you want users to stay in the ad destination indefinitely, leave the checkbox empty.
+6. Select **Save** to finish creating the step.
+
+### Channels steps
+
+The **Send an Email** and **Send an SMS** steps are only available on [Engage Premier](/docs/engage/onboarding/).
+
+#### Send an email
 
 Use Twilio Engage to send email as a step in a Journey.
 
@@ -105,7 +122,7 @@ Use Twilio Engage to send email as a step in a Journey.
 
 `Subscribed` users will receive an email upon entering the step. Visit [Email Campaigns](/docs/engage/campaigns/email-campaigns/) for more information.
 
-### Send an SMS
+#### Send an SMS
 
 Send an SMS
 
