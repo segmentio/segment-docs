@@ -11,9 +11,10 @@ id: 54521fd925e721e32a72eed3
 
 {% include content/connection-modes.md %}
 
-1. From the Segment web app, click **Catalog**.
-2. Search for "Mailchimp" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. In the destination settings, enter your Mailchimp "API key" into the connection settings.
+1. From the Segment web app, navigate to **Connections > Catalog** and go to the **Destinations** tab of the catalog.
+2. Search for *Mailchimp*, select it, and click **Configure Mailchimp**.
+3. Choose the source to connect the destination to.
+4. In the destination settings, enter your Mailchimp "API key" into the connection settings.
    You should create a new API key for the Segment destination. Mailchimp restricts each API key to a maximum of 10 concurrent requests, so creating a dedicated one for Segment ensures maximum throughput for outgoing calls. You can read more about API keys on [Mailchimp's docs](http://kb.mailchimp.com/integrations/api-integrations/about-api-keys){:target="_blank"}.
 4. Enter your Mailchimp "[Audience ID](#audience-id)" into the connection settings.
 5. Enter your Mailchimp "[Datacenter ID](#datacenter-id)" into the connection settings.
@@ -30,13 +31,13 @@ analytics.identify('userId12345', {
 });
 ```
 
-Every time you call [identify](/docs/connections/spec/identify/) with an email address included, Segment will:
+Every time you call [identify](/docs/connections/spec/identify/) with an email address included, Segment:
 
-1. First ask Mailchimp if that email exists and what their subscriber status is for the `listId` you've provided in the destination settings.
+1. First asks Mailchimp if that email exists and what their subscriber status is for the `listId` you've provided in the destination settings.
 
-2. If they don't exist, Segment will **subscribe** that user to the list immediately. If you have `doubleOptIn` setting enabled, it will send a confirmation email to that user before subscribing them and that email won't be tagged with a subscriber status of `pending`.
+2. If they don't exist, Segment **subscribes** that user to the list immediately. If you enabled the `doubleOptIn` setting, it sends a confirmation email to that user before subscribing them, and that email won't be tagged with a subscriber status of `pending`.
 
-3. If they already have a subscriber status such as `pending`, `subscribed`, `unsubscribed`, or `cleaned`, Segment will **NOT** resubscribe them but simply update their user `traits`.
+3. If they already have a subscriber status such as `pending`, `subscribed`, `unsubscribed`, or `cleaned`, Segment doesn't resubscribe them, but updates their user `traits`.
 
 So you no longer have to worry about the `identify` call resubscribing users unintentionally!
 
@@ -50,10 +51,10 @@ If you want to view any other custom user traits in the Mailchimp list dashboard
 > **IMPORTANT:** Mailchimp only supports merge tags that are 10 characters or shorter. For every user `trait` you send inside the `.identify()` call, Segment will trim it to be the first 10 characters and will send it in **uppercase** form to Mailchimp.
 
 ![Sending traits to Mailchimp with an identify call](images/identify-call.png)
-It's very important that when you set up your merge tags in Mailchimp, your `Merge Tags` are the first 10 characters (excluding whitespace or special characters) of its `Field Label` (if it's over 10 characters).
+It's important that when you set up your merge tags in Mailchimp, your `Merge Tags` are the first 10 characters (excluding whitespace or special characters) of its `Field Label` (if it's over 10 characters).
 
-For example, if your `Field Label` was `Way Too-Long123`, your `Merge Tag` should be `WAYTOOLONG`. And the `user.trait` inside your `.identify()` call would be `Way Too-Long123` since Segment will convert that to `WAYTOOLONG` before sending it to Mailchimp.
- 
+For example, if your `Field Label` was `Way Too-Long123`, your `Merge Tag` should be `WAYTOOLONG`. And the `user.trait` inside your `.identify()` call would be `Way Too-Long123` since Segment converts that to `WAYTOOLONG` before sending it to Mailchimp.
+
 If you're going to send either a `boolean` or `null` object as a `user.trait` value, when creating the custom merge field for that trait inside Mailchimp, make sure to set the data type as `TEXT` since Segment will stringify all `boolean` or `null` objects to strings.
 
 Also note that fields you specify in Mailchimp as date fields must receive dates. Passing non-date values will cause issues.
@@ -78,7 +79,7 @@ analytics.identify('userId12345', {
 });
 ```
 
-For any other custom `traits` just add a Mailchimp custom merge field inside of Mailchimp with a tag that matches the key you are using in your `identify` call. In the example these `traits` are **company** and **employees**. They will be shown as **COMPANY** and **EMPLOYEES** in Mailchimp, but you can record them in lower-case to `identify` and they will still be populated.
+For any other custom `traits`, add a Mailchimp custom merge field inside of Mailchimp with a tag that matches the key you're using in your `identify` call. In the example, these `traits` are **company** and **employees**. They will be shown as **COMPANY** and **EMPLOYEES** in Mailchimp, but you can record them in lower-case to `identify` and they will still populate.
 
 > success ""
 > Don't use underscores in your custom merge field names. When Segment maps to Mailchimp merge fields, Segment removes the underscores and capitalizes the entire field.
