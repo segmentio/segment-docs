@@ -63,6 +63,19 @@ When a recipient clicks on an unsubscribe link, they'll see a confirmation page 
 
 Only send messages to subscribed users. Learn more about [User Subscriptions](/docs/engage/user-subscriptions/) in Twilio Engage.
 
+## Clone an Email template
+
+You can clone existing Email templates to edit and use in your message campaigns.
+
+To clone a template, navigate to the Templates page (**Engage > Content**). You can also clone from the Overview page of an individual template.
+
+1. Click the **...** icon.
+2. Select **Clone**.
+3. Enter a template name.
+4. Click **Clone** to save the template.
+
+After you clone a template, you can edit it from the Templates page.
+
 ## Next steps
 
 View some [email deliverability tips and tricks](https://docs.sendgrid.com/ui/sending-email/deliverability){:target="blank"} from SendGrid.
