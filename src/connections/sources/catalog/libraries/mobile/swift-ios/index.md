@@ -446,11 +446,11 @@ analytics.add(plugin: idfaPlugin)
 
 ## Supported destinations
 Segment supports these destinations for Analytics Swift, with more to come:
-* [Amplitude](https://github.com/segment-integrations/analytics-swift-amplitude)
-* [Appsflyer](https://github.com/segment-integrations/analytics-swift-appsflyer)
-* [Facebook App Events](https://github.com/segment-integrations/analytics-swift-facebook-app-events)
-* [Firebase](https://github.com/segment-integrations/analytics-swift-firebase)
-* [Mixpanel](https://github.com/segment-integrations/analytics-swift-mixpanel)
+* [Amplitude](https://github.com/segment-integrations/analytics-swift-amplitude){:target="_blank"}
+* [Appsflyer](https://github.com/segment-integrations/analytics-swift-appsflyer){:target="_blank"}
+* [Facebook App Events](https://github.com/segment-integrations/analytics-swift-facebook-app-events){:target="_blank"}
+* [Firebase](https://github.com/segment-integrations/analytics-swift-firebase){:target="_blank"}
+* [Mixpanel](https://github.com/segment-integrations/analytics-swift-mixpanel){:target="_blank"}
 
 ## FAQs
 ### Can I use the catalog of device-mode destinations from Analytics-iOS?
