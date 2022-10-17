@@ -53,7 +53,7 @@ If you want to view any other custom user traits in the Mailchimp list dashboard
 It's very important that when you set up your merge tags in Mailchimp, your `Merge Tags` are the first 10 characters (excluding whitespace or special characters) of its `Field Label` (if it's over 10 characters).
 
 For example, if your `Field Label` was `Way Too-Long123`, your `Merge Tag` should be `WAYTOOLONG`. And the `user.trait` inside your `.identify()` call would be `Way Too-Long123` since Segment will convert that to `WAYTOOLONG` before sending it to Mailchimp.
-
+ 
 If you're going to send either a `boolean` or `null` object as a `user.trait` value, when creating the custom merge field for that trait inside Mailchimp, make sure to set the data type as `TEXT` since Segment will stringify all `boolean` or `null` objects to strings.
 
 Also note that fields you specify in Mailchimp as date fields must receive dates. Passing non-date values will cause issues.
