@@ -65,7 +65,7 @@ Only send messages to subscribed users. Learn more about [User Subscriptions](/d
 
 ## Clone an Email template
 
-You can clone Email templates to edit and use in your message campaigns.
+You can clone existing Email templates to edit and use in your message campaigns.
 
 To clone a template, navigate to the Templates page (**Engage > Content**). You can also clone from the Overview page of an individual template.
 

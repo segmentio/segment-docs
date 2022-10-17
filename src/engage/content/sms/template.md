@@ -52,8 +52,8 @@ Engage inserts the selected traits inside merge tags based on cursor placement i
 
 ## Clone an SMS message template
 
-You can clone SMS templates to edit and use in your message campaigns.
- 
+You can clone existing SMS templates to edit and use in your message campaigns.
+
 To clone a template, navigate to the Templates page (**Engage > Content**). You can also clone from the Overview page of an individual template.
 
 1. Click the **...** icon.
