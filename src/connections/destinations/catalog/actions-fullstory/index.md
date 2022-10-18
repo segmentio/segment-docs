@@ -9,7 +9,7 @@ versions:
   - name: FullStory (Classic)
     link: /docs/connections/destinations/catalog/fullstory
   - name: FullStory Cloud Mode (Actions)
-    link: /docs/connections/destinations/actions-fullstory-cloud
+    link: /docs/connections/destinations/catalog/actions-fullstory-cloud
 ---
 {% include content/plan-grid.md name="actions" %}
 

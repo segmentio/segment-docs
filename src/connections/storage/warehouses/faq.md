@@ -11,6 +11,41 @@ Selective Sync helps manage the data Segment sends to each warehouse, allowing y
 
 When you disable a source, collection or property, Segment no longer syncs data from that source. Segment won't delete any historical data from your warehouse. When you re-enable a source, Segment syncs all events since the last sync. This doesn't apply when a collection or property is re-enabled. Only new data generated after re-enabling a collection or property will sync to your warehouse.
 
+You can also use the [Integration Object](/docs/guides/filtering-data/#filtering-with-the-integrations-object) to control whether or not data is sent to a specific warehouse.
+
+### Don't send data to any Warehouse
+
+```js
+integrations: {
+ All: true,
+ Warehouses: {
+    all: false
+ }
+}
+```
+
+### Send data to all Warehouses
+
+```js
+integrations: {
+ All: false,
+ Warehouses: {
+    all: true,
+ }
+}
+```
+
+### Send data to specific Warehouses
+
+```js
+integrations: {
+ All: false,
+ Warehouses: {
+    warehouseIds: ["<id1>", "<id2>"]
+ }
+}
+```
+
 ## Can we add, tweak, or delete some of the tables?
 
 You have full admin access to your Segment Warehouse. However, don't tweak or delete Segment generated tables, as this may cause problems for the systems that upload new data.
