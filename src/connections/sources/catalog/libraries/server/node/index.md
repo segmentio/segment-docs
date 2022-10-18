@@ -35,7 +35,15 @@ This will create an instance of `Analytics` that you can use to send data to Seg
 ### Regional configuration
 For Business plans with access to [Regional Segment](/docs/guides/regional-segment), you can use the `host` configuration parameter to send data to the desired region:
 1. Oregon (Default) — `api.segment.io/v1`
-2. Dublin — `events.eu1.segmentapis.com/v1/`
+2. Dublin — `events.eu1.segmentapis.com`
+
+An example of setting the host to the EU endpoint using the Node library would be:
+```javascript
+var analytics = new Analytics('YOUR_WRITE_KEY', {
+    host: "https://events.eu1.segmentapis.com"
+  });
+```
+
 ## Identify
 
 > note ""

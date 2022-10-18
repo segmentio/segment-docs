@@ -97,6 +97,10 @@ Mixpanel
 namespace
 Ninetailed
 npm
+NSDate
+NSNull
+NSNumber
+NSString
 Okta
 Omnichannel
 onboarding
