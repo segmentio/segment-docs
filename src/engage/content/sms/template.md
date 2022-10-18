@@ -50,6 +50,19 @@ Engage inserts the selected traits inside merge tags based on cursor placement i
 > info ""
 > To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits/) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.
 
+## Clone an SMS message template
+
+You can clone existing SMS templates to edit and use in your message campaigns.
+
+To clone a template, navigate to the Templates page (**Engage > Content**). You can also clone from the Overview page of an individual template.
+
+1. Click the **...** icon.
+2. Select **Clone**.
+3. Enter a template name.
+4. Click **Clone** to save the template.
+
+After you clone a template, you can edit it from the Templates page.
+
 ## SMS best practices and limitations
 
 ### Include an SMS opt-out message
