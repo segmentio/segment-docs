@@ -13,7 +13,7 @@ If you're migrating to Analytics-Swift from a different mobile library, you can 
 > Analytics-Swift currently supports [these destinations](#supported-destinations) in device-mode, with more to follow. Cloud-mode destinations are also supported.
 
 
-## Getting started
+## Getting Started
 To get started with the Analytics-Swift mobile library:
 
 1. Create a Source in Segment.
@@ -58,10 +58,6 @@ To get started with the Analytics-Swift mobile library:
     `flushInterval`| The default is set to `30` (seconds). <br> The interval in seconds at which Segment flushes events.
     `trackApplicationLifecycleEvents`| The default is set to `true`. <br> This automatically tracks lifecycle events. Set to `false` to stop tracking lifecycle events.
     `trackDeepLinks` | The default is set to `true`. <br> This automatically track deep links. Set to `false` to stop tracking Deep Links.
-
-
-    > info ""
-    > Configuration options such as IDFA collection and automatic screen tracking are found in Segment's [Plugin Examples repo](https://github.com/segmentio/analytics-example-plugins/tree/main/plugins/swift){:target="_blank"}.
 
 ## Tracking Methods
 Once you've installed the Analytics-Swift library, you can start collecting data through Segment's tracking methods:
@@ -205,7 +201,7 @@ analytics.alias(newId: "user-123")
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-## Plugin architecture
+## Plugin Architecture
 Segment's plugin architecture enables you to modify and augment how the analytics client works. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
 
 Plugins are run through a timeline, which executes in order of insertion based on their entry types. Segment has these 5 entry types:
@@ -334,7 +330,7 @@ analytics.add(plugin: yourIntegration)
 
 Though you can add plugins anywhere in your code, it's best to implement your plugin when you configure the client.
 
-## Utility methods
+## Utility Methods
 The Analytics Swift utility methods help you work with [plugins](#plugin-architecture) from the analytics timeline. They include:
 - [Add](#add)
 - [Find](#find)
@@ -410,30 +406,6 @@ analytics.flush()
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-## Destination filters
-> info ""
-> Destination filters are only available to Business Tier customers.
->
-> Destination filters on mobile device-mode destinations are in beta and only supports Analytics-Swift, [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/), and [Analytics-React-Native 2.0](/docs/connections/sources/catalog/libraries/mobile/react-native/).
-
-Use Analytics-Swift to set up [destination filters](docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
-
-> warning ""
-> Keep [these limitations](/docs/connections/destinations/destination-filters/#limitations) in mind when using destination filters.
-
-To get started with destination filters using Swift:
-1. Add the Swift package `git@github.com:segmentio/DestinationFilters-Swift.git` as a dependency through either of these 2 options:
-    1. Your package.swift file
-    2. Xcode
-        1. Xcode 12: **File > Swift Packages > Add Package Dependency**
-        2. Xcode 13: **File > Add Packages...**
-
-    After you install the package, import the package with `import DestinationFilters_Swift` to reference the Destination Filters plugin.
-2. Add the plugin.
-```swift
-analytics.add(DestinationFilters())
-```
-
 ## Ad Tracking and IDFA
 [Segment no longer automatically collects IDFA](/docs/connections/sources/catalog/libraries/mobile/ios/ios14-guide/#segment-no-longer-automatically-collects-idfa). If you need to collect the user's IDFA to pass it to specific destinations, or for other uses, [you can manually pass the IDFA to the Segment SDK](/docs/connections/sources/catalog/libraries/mobile/ios/ios14-guide/#you-can-manually-pass-the-idfa-to-the-segment-sdk).
 
@@ -444,13 +416,13 @@ let idfaPlugin = IDFACollection()
 analytics.add(plugin: idfaPlugin)
 ```
 
-## Supported destinations
+## Supported Destinations
 Segment supports these destinations for Analytics Swift, with more to come:
-* [Amplitude](https://github.com/segment-integrations/analytics-swift-amplitude){:target="_blank"}
-* [Appsflyer](https://github.com/segment-integrations/analytics-swift-appsflyer){:target="_blank"}
-* [Facebook App Events](https://github.com/segment-integrations/analytics-swift-facebook-app-events){:target="_blank"}
-* [Firebase](https://github.com/segment-integrations/analytics-swift-firebase){:target="_blank"}
-* [Mixpanel](https://github.com/segment-integrations/analytics-swift-mixpanel){:target="_blank"}
+* [Amplitude](https://github.com/segment-integrations/analytics-swift-amplitude)
+* [Appsflyer](https://github.com/segment-integrations/analytics-swift-appsflyer)
+* [Facebook App Events](https://github.com/segment-integrations/analytics-swift-facebook-app-events)
+* [Firebase](https://github.com/segment-integrations/analytics-swift-firebase)
+* [Mixpanel](https://github.com/segment-integrations/analytics-swift-mixpanel)
 
 ## FAQs
 ### Can I use the catalog of device-mode destinations from Analytics-iOS?
@@ -459,4 +431,4 @@ No, only the plugins listed above are supported in device-mode for Analytics-Swi
 When you successfully package a plugin in device-mode, you will no longer see the integration listed as `false` in the integrations object for a Segment event. This logic is now packaged in the event metadata, and is not surfaced in the Segment debugger.
 
 ## Changelog
-[View the Analytics-Swift changelog on GitHub](https://github.com/segmentio/analytics-swift/releases){:target="_blank"}.  
+[View the Analytics-Swift changelog on GitHub](https://github.com/segmentio/analytics-swift/releases).  

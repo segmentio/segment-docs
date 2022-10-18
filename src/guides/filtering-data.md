@@ -43,30 +43,20 @@ Note that destination flags are **case sensitive** and match the destination's n
 
 Your data is sent to your warehouse (if you have one) and into the Segment backend systems regardless of what is in the integrations object.
 
-## Destination filters
+## Destination Filters
 
-[Destination filters](https://segment.com/docs/connections/destinations/destination-filters/) allow you to control the data flowing into each specific destination, by examining event payloads, and conditionally preventing data from being sent to destinations. You can filter out entire events, or just specific fields in the properties, in the traits, or in the context of your events. Destination filters support cloud-based (server-side), actions-based, and mobile and web device-mode destinations.  Destination filters aren't available for, and don't prevent data from reaching your warehouse(s) or S3 destinations.
+[Destination Filters](https://segment.com/docs/connections/destinations/destination-filters/) allow you to control the data flowing into each specific destination, by examining event payloads, and conditionally preventing data from being sent to destinations. You can filter out entire events, or just specific fields in the properties, in the traits, or in the context of your events. Destination filters are not available for, and do not prevent data from reaching your warehouse(s) or S3 destinations.
 
-> info ""
-> Destination filters are only available in workspaces that are on a Business Tier plan.
->
-> Destination filters for mobile device-mode destinations are in beta and only supports [Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios#destination-filters), [Kotlin (Android)](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/#destination-filters), and [React Native 2.0](/docs/connections/sources/catalog/libraries/mobile/react-native/#destination-filters) libraries.
-
-> warning ""
-> Keep [these limitations](/docs/connections/destinations/destination-filters/#limitations) in mind when using destination filters.
+> note ""
+> **Note**: Destination Filters are available in workspaces that are on a Business Tier plan only. Destination Filters can only be applied to Cloud-mode ("server-side") streaming destinations. Device-mode destinations are not supported.
 
 ![](images/destination-filter-create.png)
 
-To set up destination filters from the Segment web app for the destination from which you want to exclude data:
-1. *(For web device-mode destinations only)* Enable device mode destination filters for your Analytics.js source. To do this, go to your Javascript source and navigate to **Settings > Analytics.js** and turn the toggle on for **Destination Filters**.
-    * **NOTE:** Destination filters for web device-mode only supports the Analytics.js 2.0 source. 
-2. Navigate to **Connections > Destinations** and select the destination you want to set up filters for.
-3. Go to the **Filters** tab and click **+ New Filter** to create a destination filter.
-See the [Destination Filters documentation](/docs/connections/destinations/destination-filters/) for more details.
+You can set up Destination Filters from the Segment web app by navigating to the destination from which you want to exclude the data, and clicking the **Destination Filters** tab. From there you can create new filter rules, and edit, enable, and disable existing filters. See the [Destination Filters documentation](https://segment.com/docs/connections/destinations/destination-filters/) for more details.
 
-You can set up destination filters using the options presented in the Segment web app, or using Segment's Filter Query Logic (FQL). If you use FQL, your query syntax is limited to 5kb per query.
+You can set up Destination filters using the options presented in the Segment web app, or using Segment's Filter Query Logic (FQL). If you use FQL, your query syntax is limited to 5kb per query.
 
-## Per-Source schema integrations filters
+## Per-Source Schema Integrations Filters
 
 Integration filters allow you to quickly change which destinations receive specific Track, Identify, or Group events. Access this tool in any Source that is receiving data by navigating to the Schema tab. Schema integration filters are available to workspaces that are on a Business Tier plan only.
 
@@ -78,7 +68,7 @@ The events filtered out of individual destinations using this method still arriv
 
 **Integration filters are all-or-nothing for each event.** If you require more detailed control over which events are sent to specific destinations, you can use Destination Filters to inspect the event payload, and conditionally drop the data or forward it to the destination.
 
-## Schema event filters
+## Schema Event Filters
 
 You can use Schema Event Filters to discard and permanently remove Page, Screen and Track events from event-based sources, preventing them from reaching any destinations or warehouses. Use this if you know that you'll never want to access this data again. This functionality is similar to filtering with the Integrations object, however it can be changed from within the Segment app without touching any code.
 
