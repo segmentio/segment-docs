@@ -1,7 +1,6 @@
 ---
 title: LaunchDarkly (Actions) Destination
 hide-boilerplate: true
-hide-dossier: true
 id: 624dddd054ced46facfdb9c0
 ---
 
@@ -43,11 +42,13 @@ To get started with LaunchDarkly (Actions):
 
 {% include components/actions-fields.html %}
 
+> info "A note about Identify calls"
+> LaunchDarkly does not store user attributes for use with flag evaluations. As a result, Segment does not support mapping Identify calls to LaunchDarkly actions.
+
 ## Creating LaunchDarkly metrics
 
 In order to take full-advantage of the LaunchDarkly (Actions) Destination, you need to create metrics in LaunchDarkly that correspond to Segment track events. Read [Creating metrics](https://docs.launchdarkly.com/home/experimentation/metrics){:target="_blank"} to learn how to create metrics in LaunchDarkly.
 
-<!-- If applicable, add information regarding the migration from a classic destination to an Actions-based version below -->
 
 ## Migration from the classic LaunchDarkly destination
 
