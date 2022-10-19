@@ -23,7 +23,7 @@ If you're using a system for managing dependencies, you'll want to pin the libra
 Inside your app, you'll want to **set your `write_key`** before making any analytics calls:
 
 ```python
-import analytics
+import segment.analytics as analytics
 
 analytics.write_key = 'YOUR_WRITE_KEY'
 ```
@@ -344,7 +344,7 @@ assert d.tzinfo is not None and d.tzinfo.utcoffset(d) is not None
 ```python
 import dateutil.parser
 
-import analytics
+import segment.analytics as analytics
 analytics.write_key = 'YOUR_WRITE_KEY'
 
 log = [
@@ -475,7 +475,7 @@ To add analytics to your Django web server, you need to include the initializati
 
 ```python
 from django.apps import AppConfig
-import analytics
+import segment.analytics as analytics
 
 class MyAppConfig(AppConfig):
 
@@ -524,7 +524,7 @@ and turn on module logging in your initialization call in `urls.py`.
 
 ```python
 import logging
-import analytics
+import segment.analytics as analytics
 
 analytics.debug = True # turn on debug logging
 analytics.write_key = 'YOUR_WRITE_KEY'
@@ -567,7 +567,7 @@ Be sure to see the full [reference of supported keys](/docs/connections/spec/com
 Check that you have the most recent version.
 
 ```
-python -c "import analytics; print analytics.VERSION"
+python -c "import segment.analytics as analytics; print analytics.VERSION"
 ```
 
 Does it match [the most current version](https://github.com/segmentio/analytics-python/blob/master/analytics/version.py#L2)?
@@ -591,7 +591,7 @@ easy_install --upgrade segment-analytics-python
 In some cases, you will want to disable threads and send each request synchronously. To do so, you can use the `sync_mode` option:
 
 ```python
-import analytics
+import segment.analytics as analytics
 
 analytics.write_key = 'YOUR_WRITE_KEY'
 analytics.sync_mode = True
