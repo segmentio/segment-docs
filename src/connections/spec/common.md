@@ -194,7 +194,7 @@ Other libraries only collect `context.library`, any other context variables must
 
 ## Integrations
 
-A dictionary of destination names that the message should be sent to. `'All'` is a special key that applies when no key for a specific destination n is found.
+A dictionary of destination names that the message should be sent to. `'All'` is a special key that applies when no key for a specific destination is found.
 
 Integrations defaults to the following:
 
