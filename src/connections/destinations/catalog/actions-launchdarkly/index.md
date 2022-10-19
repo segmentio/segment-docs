@@ -43,7 +43,7 @@ To get started with LaunchDarkly (Actions):
 {% include components/actions-fields.html %}
 
 > info "A note about Identify calls"
-> LaunchDarkly does not store user attributes for use with flag evaluations. As a result, Segment does not support mapping Identify calls to LaunchDarkly actions.
+> LaunchDarkly doesn't store user attributes for use with flag evaluations. As a result, Segment doesn't support mapping Identify calls to LaunchDarkly actions.
 
 ## Creating LaunchDarkly metrics
 
