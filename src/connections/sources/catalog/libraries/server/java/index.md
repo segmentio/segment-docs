@@ -59,9 +59,7 @@ Although not enforced at compile time, make sure you provide either of `userId` 
 The following examples use [Guava's](https://github.com/google/guava) immutable maps, but feel free to use plain old Java maps instead.
 
 ### Regional configuration
-For Business plans with access to [Regional Segment](/docs/guides/regional-segment), you can use the `host` configuration parameter to send data to the desired region:
-1. Oregon (Default) — `api.segment.io/v1`
-2. Dublin — `events.eu1.segmentapis.com/`
+{% include content/regional-config.md %}
 ## Identify
 
 > note ""
