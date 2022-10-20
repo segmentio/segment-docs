@@ -1,30 +1,30 @@
 ---
-title: Regal Voice Source
+title: Regal.io Source
 source-type: event
 id: 1QTd6JKw53
 ---
 {% include content/source-region-unsupported.md %}
 
-[Regal Voice](https://regalvoice.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a next-gen customer engagement platform built for B2C services brands to proactively reach out to customers on voice and sms before they buy elsewhere.
+[Regal.io](https://regalvoice.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a next-gen customer engagement platform built for B2C services brands to proactively reach out to customers on voice and sms before they buy elsewhere.
 
-This source is maintained by Regal Voice. For any issues with the source, [contact the Regal Voice Support team](mailto:support@regalvoice.com).
+This source is maintained by Regal.io. For any issues with the source, [contact the Regal.io Support team](mailto:support@regal.io).
 
 > success ""
-> **Good to know**: This page is about the Regal Voice Segment source, which sends data _into_ Segment. There's also a page about the [Regal Voice Segment destination](/docs/connections/destinations/catalog/regal-voice/), which receives data from Segment!
+> **Good to know**: This page is about the Regal.io Segment source, which sends data _into_ Segment. There's also a page about the [Regal.io Segment destination](/docs/connections/destinations/catalog/regal-voice/), which receives data from Segment!
 
 ## Getting Started
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
-2. Search for "Regal Voice" in the Sources Catalog, select click Regal Voice, and click **Add Source**.
+2. Search for "Regal.io" in the Sources Catalog, select click Regal.io, and click **Add Source**.
 3. On the next screen, give the Source a nickname and configure any other settings.
 
    The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse.  The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
 5. Click **Add Source** to save your settings.
-6. Copy the Write key from the Segment UI and email it to support@regalvoice.com.
+6. Copy the Write key from the Segment UI and email it to support@regal.io.
 
 ## Events
 
-The table below lists events that Regal Voice sends to Segment. These events appear as tables in your warehouse and as regular events in other Destinations. Regal Voice includes the `userId` if available.
+The table below lists events that Regal.io sends to Segment. These events appear as tables in your warehouse and as regular events in other Destinations. Regal.io includes the `userId` if available.
 
 | Event name                   | Property description                                                                                  |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------- |
@@ -36,10 +36,10 @@ The table below lists events that Regal Voice sends to Segment. These events app
 | contact.attribute.edited     | A contact's attributes were edited by an agent.                                                       |
 | contact.experiment.assigned  | A contact was assigned to an experiment.                                                              |
 | scheduled.callback.requested | A callback was scheduled.                                                                             |
-| sms.conversation.completed   | An SMS conversation between a contact and an agent was completed in the Regal Voice agent desktop.    |
-| sms.queued                   | An SMS was queued to be sent from Regal Voice to contact.                                             |
-| sms.sent                     | An SMS was sent from Regal Voice to contact.                                                          |
-| sms.undelivered              | An SMS was undelivered from Regal Voice to contact.                                                   |
+| sms.conversation.completed   | An SMS conversation between a contact and an agent was completed in the Regal.io agent desktop.    |
+| sms.queued                   | An SMS was queued to be sent from Regal.io to contact.                                             |
+| sms.sent                     | An SMS was sent from Regal.io to contact.                                                          |
+| sms.undelivered              | An SMS was undelivered from Regal.io to contact.                                                   |
 | sms.received                 | An SMS was received from a contact.                                                                   |
 | task.canceled                | A call or SMS task was canceled.                                                                      |
 | task.created                 | A call or SMS task was created.                                                                       |
@@ -82,10 +82,10 @@ The table below lists events that Regal Voice sends to Segment. These events app
 | `media_url`                       | Media URL (if it was an MMS)                                                                                                                                                                                                                                                                                              |
 | `notes`                           | Task notes                                                                                                                                                                                                                                                                                                                |
 | `objections`                      | Task objections                                                                                                                                                                                                                                                                                                           |
-| `phone`                           | The phone number the subscription updated was applied to; phone number is the unique identifier for a contact in Regal voice                                                                                                                                                                                              |
+| `phone`                           | The phone number the subscription updated was applied to; phone number is the unique identifier for a contact in Regal.io                                                                                                                                                                                              |
 | `queue`                           | Task Queue                                                                                                                                                                                                                                                                                                                |
 | `recording_link` | Call recording link |
-| `regal_voice_phone`               | Regal Voice phone number                                                                                                                                                                                                                                                                                                  |
+| `regal_voice_phone`               | Regal.io phone number                                                                                                                                                                                                                                                                                                  |
 | `regal_voice_phone_internal_name` | Internal name of phone line displayed to agents
 | `reserved_agent_email` | Email of the agent the task reservation is for
 | `reserved_agent_full_name` | Full name of the agent the task reservation is for 
@@ -93,7 +93,7 @@ The table below lists events that Regal Voice sends to Segment. These events app
 | `scheduling_agent_fullname`       | Full name of the agent who scheduled the callback                                                                                                                                                                                                                                                                         |
 | `scheduling_agent_id`             | Email of the agent who scheduled the callback                                                                                                                                                                                                                                                                             |
 | `sms_conversation_id`             | Task ID for the conversation (if the SMS was part of a two-way conversation with an agent, rather than just an automated outbound sms)                                                                                                                                                                                    |
-| `source`                          | Source of the subscription update. A source value that starts with "Brand." indicates that the subscription update was initiated by the Brand (outside of the Regal Voice platform). A source value that starts with "RegalVoice." indicates that the subscription update was initiated through the Regal Voice platform. |
+| `source`                          | Source of the subscription update. A source value that starts with "Brand." indicates that the subscription update was initiated by the Brand (outside of the Regal.io platform). A source value that starts with "RegalVoice." indicates that the subscription update was initiated through the Regal.io platform. |
 | `started_at`                      | UTC timestamp when the conversation was started                                                                                                                                                                                                                                                                           |
 | `talk_time`                       | Duration of conversation (ended_at - started_at)                                                                                                                                                                                                                                                                          |
 | `target_agent_fullname`           | Full name of the agent who contact (and all contact's tasks) are assigned to                                                                                                                                                                                                                                              |
@@ -111,4 +111,4 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don't appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, [contact the Regal Voice support team](mailto:support@regalvoice.com).
+If there are any issues with how the events are arriving to Segment, [contact the Regal.io support team](mailto:support@regal.io).
