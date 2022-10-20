@@ -3,15 +3,18 @@ rewrite: true
 title: Regal.io Destination
 id: 5f33e746fad0d620b8a4b144
 ---
+
 [Regal.io](https://www.regal.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a next-gen customer engagement platform that helps brands proactively engage and convert customers before they buy elsewhere.
 
 Regal.io maintains this destination. For any issues with the destination, contact their [Regal.io support team](mailto:support@regal.io).
 
-> note "Note:"
+
+> note ""
 > Regal.io is available in the U.S only.
 
-> note "Note:"
-> The Regal.io Destination is in beta, which means that they are still actively developing the destination. To join the beta program, or if you have any feedback to help improve the Regal.io Destination and its documentation, [contact the Regal.io support team](mailto:support@regal.io)! 
+> note ""
+> The Regal.io Destination is in beta, which means that they are still actively developing the destination. To join the beta program, or if you have any feedback to help improve the Regal.io Destination and its documentation, [contact the Regal.io support team](mailto:support@regal.io).
+
 
 
 ## Getting Started
