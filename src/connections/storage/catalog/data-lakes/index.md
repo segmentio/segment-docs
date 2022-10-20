@@ -143,7 +143,7 @@ Before you can configure your Azure resources, you must complete the following p
 2. Search for and select **Azure Database for MySQL**.
 3. On the Azure Database for MySQL resource page, select the **Azure Database for MySQL** plan and click **Create**.
 4. Select **Single server** and click **Create**.
-5. On the **Basic** tab, select an existing subscription and resource group, enter server details and create an administrator account. Due to the configurations required for the setup, Segment only supports version **5.7** currently. Before proceeding, please ensure you have the correct MySQL server version selected. 
+5. On the **Basic** tab, select an existing subscription and resource group, enter server details and create an administrator account. Due to the configurations required for the setup, Data Lakes supports MySQL version **5.7** only. Before you proceed, please ensure you have the correct MySQL server version selected. 
 6. Click **Review + create**.
 7. Review your chosen settings. When you are satisfied with your selections, click **Create**.
 8. After your resource is deployed, click **Go to resource**.
