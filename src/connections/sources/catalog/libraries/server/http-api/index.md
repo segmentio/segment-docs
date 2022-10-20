@@ -35,9 +35,7 @@ The HTTP API has no hard rate limit. However, Segment recommends not exceeding 5
 There is a maximum of `32KB` per normal API request.  The `batch` API endpoint accepts a maximum of `500KB` per request, with a limit of `32KB` per event in the batch.  If you are sending data from a server source, Segment's API responds with `400 Bad Request` if these limits are exceeded.
 
 ## Regional configuration
-For Business plans with access to [Regional Segment](/docs/guides/regional-segment), you can use the `host` configuration parameter to send data to the desired region:
-1. Oregon (Default) — `api.segment.io/v1`
-2. Dublin — `events.eu1.segmentapis.com/`
+{% include content/regional-config.md %}
 
 ## Identify
 
