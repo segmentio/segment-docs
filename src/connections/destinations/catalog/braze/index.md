@@ -604,7 +604,7 @@ To send computed traits or audiences to Braze, you first must connect it to Enga
 3. On the set up screen, enter in your App Identifier, REST API Key and Data center for Braze.
 
 
-## Braze PerEngagesonas Quick Info
+## Braze Engage Quick Info
 
 - **Engage Destination type**: [Event](/docs/glossary/#event) - data is delivered to this Destination one-by-one on a real-time basis
 - **Support for Track and Identify?**: Yes, both are supported.
