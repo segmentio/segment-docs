@@ -56,9 +56,7 @@ analytics.send = False
 **Using Django?** Check out the [Django docs](/docs/connections/sources/catalog/libraries/server/python/#django).
 
 ### Regional configuration
-For Business plans with access to [Regional Segment](/docs/guides/regional-segment), you can use the `host` configuration parameter to send data to the desired region:
-1. Oregon (Default) — `https://api.segment.io/v1`
-2. Dublin — `https://events.eu1.segmentapis.com/`
+{% include content/regional-config.md %}
 
 ## Identify
 

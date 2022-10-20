@@ -49,15 +49,13 @@ using the `Analytics` singleton anywhere in your code.
 The default initialization settings are production-ready.
 
 ### Regional configuration
-For Business plans with access to [Regional Segment](/docs/guides/regional-segment), you can use the `host` configuration parameter to send data to the desired region:
-1. Oregon (Default) — `api.segment.io/v1`
-2. Dublin — `events.eu1.segmentapis.com/`
+{% include content/regional-config.md %}
 
 ## Identify
 
 `identify` lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
 
-We recommend calling `identify` a single time when the user's account is first created, and only identifying again later when their traits are change.
+Segment recommends calling `identify` a single time when the user's account is first created, and only identifying again later when their traits are change.
 
 Example `identify` call:
 
