@@ -5,10 +5,10 @@ hide-personas-partial: true
 cmode-override: true
 id: 54521fd725e721e32a72eec1
 ---
-[HubSpot](https://www.hubspot.com/) is an inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers. The `analytics.js` HubSpot Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/hubspot).
+[HubSpot](https://www.hubspot.com/){:target="_blank"} is an inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers. The `analytics.js` HubSpot Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/hubspot){:target="_blank"}.
 
 > info ""
-> As of July 2022, HubSpot no longer allows new connections to authenticate with an API Key. Existing API Keys will continue to work, but to authenticate a new API connection with HubSpot, use a Private App Token. To generate a Private App access token from the HubSpot dashboard, navigate to **Integrations > Private Apps**. Segment requires the following scopes: `business-intelligence`, `crm.objects.contacts.read`, `crm.objects.contacts.write`, `crm.schemas.contacts.read`, `crm.objects.companies.read`, `crm.objects.companies.write`, `crm.schemas.companies.read`. For more information, see Hubspot's article [Private Apps](https://developers.hubspot.com/docs/api/private-apps){:target="_blank"}.
+> As of July 2022, HubSpot no longer allows new connections to authenticate with an API Key. Existing API Keys will continue to work, but to authenticate a new API connection with HubSpot, use a Private App Token. To generate a Private App access token from the HubSpot dashboard, navigate to **Integrations > Private Apps**. Segment requires the following scopes: `business-intelligence`, `crm.objects.contacts.read`, `crm.objects.contacts.write`, `crm.schemas.contacts.read`, `crm.objects.companies.read`, `crm.objects.companies.write`, `crm.schemas.companies.read`. For more information, see HubSpot's article [Private Apps](https://developers.hubspot.com/docs/api/private-apps){:target="_blank"}.
 
 > warning ""
 > The HubSpot destination is not compatible with the Segment Event Tester. As result, Segment recommends using other tools to troubleshoot the HubSpot destination.
@@ -35,7 +35,7 @@ analytics.page()
 ```
 
 > info ""
-> Hubspot supports Page calls on Device-mode connections from Analytics.js sources
+> HubSpot supports Page calls on Device-mode connections from Analytics.js sources
 
 Analytics.js requires an initial Page call to send data to HubSpot. The [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) includes this initial call by default.
 
@@ -56,11 +56,11 @@ analytics.identify('user1234', {
 
 HubSpot does not accept any trait keys that contain upper case letters or spaces. Segment converts any custom traits you send to lower case, and replaces spaces with an underscore.
 
-Hubspot removes from the request any traits that aren't contact fields in HubSpot. To find out which fields you can set, check out the custom field names in **Contacts > Contact Settings**. Example field names are `firstname`, `lastname`, `company`, and `phone`.
+HubSpot removes from the request any traits that aren't contact fields in HubSpot. To find out which fields you can set, check out the custom field names in **Contacts > Contact Settings**. Example field names are `firstname`, `lastname`, `company`, and `phone`.
 
 If you specify a company name (using `traits.company.name`), it appears as a *property* of the contact (you can find it in HubSpot's UI using **About [contact] > View > View All Properties**), but it does not appear as the user's company under **[contact]'s Company**.
 
-Hubspot tags the following fields as special fields:
+HubSpot tags the following fields as special fields:
 
 - address
 - city
@@ -84,7 +84,7 @@ analytics.track("Clicked Buy Now button", {
 ```
 
 > warning "Important"
-> Marketing Hub subscription is required to [track calls and custom marketing events](https://knowledge.hubspot.com/analytics-tools/create-custom-behavioral-events){:target="_blank"} in HubSpot. You must have a HubSpot Enterprise account for Segment to pass traits from an Identify call to your Track call and send them as [custom events to HubSpot](https://knowledge.hubspot.com/events-user-guide-v2/using-custom-events){:target="_blank"}.
+> Marketing Hub subscription is required to [manage legacy behavioral events](https://knowledge.hubspot.com/reports/analyze-and-manage-your-legacy-events){:target="_blank"} in HubSpot. You must have a HubSpot Enterprise account for Segment to pass traits from an Identify call to your Track call and send them as custom events to HubSpot.
 
 The event will appear in your HubSpot UI but may take up to 60 minutes to appear in the graph visualization.
 
@@ -107,7 +107,7 @@ In this case, your HubSpot `eventId` is 'Bought Item'. If you want to use an exi
 
 #### Setting Contact Properties on Track
 
-Segment recommends that you send `traits` with an [Identify](/docs/connections/spec/identify/) call. You can also set HubSpot properties on a track call sent from any server-side source, as allowed by Hubspot's [events API](http://developers.hubspot.com/docs/methods/enterprise_events/http_api){:target="_blank"}. Segment recommends this method if you're running out of HubSpot API calls on the Identify requests.
+Segment recommends that you send `traits` with an [Identify](/docs/connections/spec/identify/) call. You can also set HubSpot properties on a track call sent from any server-side source, as allowed by HubSpot's [events API](http://developers.hubspot.com/docs/methods/enterprise_events/http_api){:target="_blank"}. Segment recommends this method if you're running out of HubSpot API calls on the Identify requests.
 
 Include HubSpot contact properties into the `context.traits` object:
 
@@ -172,7 +172,7 @@ Segment can send the following group traits to HubSpot as special properties:
 
 ### API Call Limits
 
-HubSpot limits the total amount of hourly and daily requests Segment can make to their API on your behalf. Read more about these limits [here](https://developers.hubspot.com/apps/api_guidelines){target="_blank"}.
+HubSpot limits the total amount of hourly and daily requests Segment can make to their API on your behalf. See HubSpot's [API Usage Guidelines](https://developers.hubspot.com/apps/api_guidelines){:target="_blank"} for more information.
 
 HubSpot Plan: Free & Starter
 * Maximum Number of API Calls per 10 Seconds, per Key or Token: **100**
@@ -286,7 +286,8 @@ Engage sends **Account-Level data** to HubSpot using **Identify** calls to add a
 
 7. Enter the label for the custom property, and make sure it matches the Audience Key you wrote down from the Engage audience builder (see the tip below). Click **Next**.
 
-   > ✅ **Tip**: The audience label's “internal name” in HubSpot *must exactly match* the Segment  `audience key`. You can check this by clicking the `</>` icon to the right of the Label field, and making corrections.
+> success ""
+> The audience label's “internal name” in HubSpot *must exactly match* the Segment  `audience key`. You can check this by clicking the `</>` icon to the right of the Label field, and making corrections.
 
 
    ![](images/hubspot-personas05.png)
@@ -304,7 +305,7 @@ Engage sends **Account-Level data** to HubSpot using **Identify** calls to add a
 
 ### Verify the audience
 
-You can use the [Profiles Debugger](/docs/profiles/debugger) to see the calls sent to HubSpot. 
+You can use the [Profiles Debugger](/docs/profiles/debugger) to see the calls sent to HubSpot.
 
 ![](images/hubspot-personas07.png)
 
@@ -322,7 +323,7 @@ You can also see this in the contact property history for each user record.
 
 - **Engage Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
 - **Traits and Audiences created by**: Identify calls add and update traits and audiences as traits on the user, Track calls send events for `Audience Entered` and `Audience Exited`.
-- **Must create audience_name field before Engage can update those values?**: Yes, you must manually create Contact properties in Hubspot before you send Custom Traits or Audiences.
+- **Must create audience_name field before Engage can update those values?**: Yes, you must manually create Contact properties in HubSpot before you send Custom Traits or Audiences.
 - **Audience appears as**: A prose-text version of the audience name (for example, `Order Completed 30 Days: Yes`) where `Yes` indicates that the user is in the audience.
 - **Destination rate limit**: Yes. HubSpot's rate limit depends on what account tier you have in HubSpot, but is *usually* 100 calls per ten seconds, or 10 per second.
 - **Lookback window allowed**: Unlimited
