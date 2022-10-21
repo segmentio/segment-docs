@@ -15,6 +15,7 @@ The following dependencies are installed in the function environment by default.
 - [`@google-cloud/functions v1.1.0`](https://www.npmjs.com/package/@google-cloud/functions){:target="_blank"} exposed as `google.cloud.functions`
 - [`@google-cloud/pubsub v2.6.0`](https://www.npmjs.com/package/@google-cloud/pubsub){:target="_blank"} exposed as `google.cloud.pubsub`
 - [`@google-cloud/storage v5.3.0`](https://www.npmjs.com/package/@google-cloud/storage){:target="_blank"} exposed as `google.cloud.storage`
+- [`@google-cloud/tasks v2.6.0`](https://www.npmjs.com/package/@google-cloud/tasks){:target="_blank"} exposed as `google.cloud.tasks`
 - [`jsforce v1.11.0`](https://www.npmjs.com/package/jsforce){:target="_blank"} exposed as `jsforce`
 - [`jsonwebtoken v8.5.1`](https://www.npmjs.com/package/jsonwebtoken){:target="_blank"} exposed as `jsonwebtoken`
 - [`lodash v4.17.19`](https://www.npmjs.com/package/lodash){:target="\_blank"} exposed as `_`
@@ -26,6 +27,7 @@ The following dependencies are installed in the function environment by default.
 - [`stripe v8.115.0`](https://www.npmjs.com/package/stripe){:target="_blank"} exposed as `stripe`
 - [`twilio v3.68.0`](https://www.npmjs.com/package/twilio){:target="_blank"} exposed as `twilio`
 - [`uuidv5 v1.0.0`](https://www.npmjs.com/package/uuidv5){:target="_blank"} exposed as `uuidv5`
+- [`winston v2.4.6`](https://www.npmjs.com/package/winston){:target="_blank"} exposed as `const winston = winstonlib.winston`
 - [`xml v1.0.1`](https://www.npmjs.com/package/xml){:target="_blank"} exposed as `xml`
 - [`xml2js v0.4.23`](https://www.npmjs.com/package/xml2js){:target="_blank"} exposed as `xml2js`
 - [`zlib v1.0.5`](https://www.npmjs.com/package/zlib){:target="_blank"} exposed as `zlib.zlib`
