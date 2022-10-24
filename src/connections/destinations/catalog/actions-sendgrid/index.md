@@ -2,7 +2,6 @@
 title: Sendgrid Marketing Campaigns Destination
 hide-boilerplate: true
 hide-dossier: true
-private: true
 id: 631a6f32946dd8197e9cab66
 ---
 
