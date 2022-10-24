@@ -24,7 +24,7 @@ Regional Data Ingestion enables you to send data to Segment from both Device-mod
 > [Cloud event](/docs/connections/sources/#event-cloud-sources) sources aren't supported in EU workspaces.
 
 ### Client-side sources
-You can configure Segment's client-side SDKs for JavaScript, iOS, Android, and React Native sources to send data to a regional host after you've updated the Data Ingestion Region in that source's settings. Segment's EU instance only supports data ingestion from Dublin, Ireland with the `events.eu1.segmentapis.com/v1` endpoint.
+You can configure Segment's client-side SDKs for JavaScript, iOS, Android, and React Native sources to send data to a regional host after you've updated the Data Ingestion Region in that source's settings. Segment's EU instance only supports data ingestion from Dublin, Ireland with the `events.eu1.segmentapis.com/` endpoint.
 
 > info ""
 > For workspaces that use the EU West Data Processing region, the Dublin Ingestion region is preselected for all sources.
@@ -36,7 +36,7 @@ To set your Data Ingestion Region:
 3. Click **Regional Settings**.
 4. Choose your **Data Ingestion Region**.
     - If you're in the *US West* data processing region, you can select from: Dublin, Singapore, Oregon, and Sydney.
-    - If you're in the *EU West* data processing region, Segment's EU instance only supports data ingestion from Dublin with the `events.eu1.segmentapis.com/v1` endpoint.
+    - If you're in the *EU West* data processing region, Segment's EU instance only supports data ingestion from Dublin with the `events.eu1.segmentapis.com/` endpoint.
 
 All regions are configured on a **per-source** basis. You'll need to configure the region for each source separately if you don't want to use the default region.
 
