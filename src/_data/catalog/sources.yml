@@ -1220,11 +1220,7 @@ items:
     isCloudEventSource: true
     slug: regal-io
     url: connections/sources/catalog/cloud-apps/regal-io
-<<<<<<< HEAD
-    hidden: false
-=======
     hidden: true
->>>>>>> master
     regions:
       - us
     endpoints:

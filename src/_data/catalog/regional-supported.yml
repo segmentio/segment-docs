@@ -71,8 +71,6 @@ warehouses:
     regions:
       - us
       - eu
-<<<<<<< HEAD
-=======
 sources:
   - id: 8HWbgPTt3k
     display_name: .NET
@@ -4208,4 +4206,3 @@ destinations:
       - eu
     endpoints:
       - us
->>>>>>> master

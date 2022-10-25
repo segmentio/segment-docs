@@ -1,5 +1,16 @@
 # This file is manually generated.
 items:
+- slug: woopra
+  id: 54521fdc25e721e32a72ef05
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: true
 - slug: moengage
   id: 55b280290a20f4e22f0fb3d6
   connection_modes:
