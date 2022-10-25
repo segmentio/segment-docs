@@ -45,7 +45,7 @@ Kana looks for the following traits in Identify events which map to [user fields
 | `traits.email`         | *Optional* | Maps to the `email` of a user in Kana.                                                                                          |
 | `traits.billingUserId` | *Optional* | Maps to the `billingId` of a user in Kana. Must be the customer `id` for either Stripe or Chargebee as valid billing providers. |
 
-> warn ""
+> warning ""
 >  All other traits will be dropped as they do not map to a field in Kana.
 
 #### Creating, updating or merging
@@ -75,7 +75,7 @@ Kana looks at all properties in Track events for [mapping rules](#mapping-rules)
 | `properties.featureId` | *Optional* | Used to map events to features directly. Should correspond to the `id` of a feature in Kana. Defaults to the any [mapping rules](#kana-rules) if not present. |
 | `properties.delta`     | *Optional* | Used to record how much of a feature someone has used. Defaults to `1`.                                                                                       |
 
-> warn ""
+> warning ""
 > Events sent in without a `userId` (aka. anonymous events) will be dropped and responded to with a `400 Bad Request` error.
 
 ### Mapping Rules
