@@ -52,3 +52,5 @@
   override: "actions-intercom-cloud"
 - original: "intercom-web-actions"
   override: "actions-intercom-web"
+- original: "sendgrid-marketing-campaigns"
+  override: "actions-sendgrid"

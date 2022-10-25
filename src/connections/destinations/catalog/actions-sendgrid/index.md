@@ -2,6 +2,11 @@
 title: Sendgrid Marketing Campaigns Destination
 hide-boilerplate: true
 hide-dossier: true
+<<<<<<< HEAD
+=======
+redirect_from:
+  - "/connections/destinations/catalog/actions-sendgrid/"
+>>>>>>> master
 id: 631a6f32946dd8197e9cab66
 ---
 
