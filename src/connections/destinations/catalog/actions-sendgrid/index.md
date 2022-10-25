@@ -3,7 +3,7 @@ title: Sendgrid Marketing Campaigns Destination
 hide-boilerplate: true
 hide-dossier: true
 redirect_from:
-  - "/connections/destinations/catalog/actions-sendgrid/"
+  - "/connections/destinations/catalog/sendgrid-marketing-campaigns/"
 id: 631a6f32946dd8197e9cab66
 ---
 
