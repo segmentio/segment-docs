@@ -3,15 +3,18 @@ rewrite: true
 title: Regal.io Destination
 id: 5f33e746fad0d620b8a4b144
 ---
-[Regal.io](https://www.regal.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a next-gen customer engagement platform that helps brands proactively engage and convert customers before they buy elsewhere.
 
-Regal.io maintains this destination. For any issues with the destination, contact their [Regal.io support team](mailto:support@regalvoice.com).
+[Regal.io](https://www.regal.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a next-gen customer engagement platform that helps brands proactively engage and convert customers before they buy elsewhere.
 
-> note "Note:"
+Regal.io maintains this destination. For any issues with the destination, contact their [Regal.io support team](mailto:support@regal.io).
+
+
+> note ""
 > Regal.io is available in the U.S only.
 
-> note "Note:"
-> The Regal.io Destination is in beta, which means that they are still actively developing the destination. To join the beta program, or if you have any feedback to help improve the Regal.io Destination and its documentation, [contact the Regal.io support team](mailto:support@regalvoice.com)! 
+> note ""
+> The Regal.io Destination is in beta, which means that they are still actively developing the destination. To join the beta program, or if you have any feedback to help improve the Regal.io Destination and its documentation, [contact the Regal.io support team](mailto:support@regal.io).
+
 
 
 ## Getting Started
@@ -21,7 +24,7 @@ Regal.io maintains this destination. For any issues with the destination, contac
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Regal.io" in the Destinations Catalog, and select the "Regal.io" destination.
 3. Choose which Source should send data to the "Regal.io" destination.
-4. Email support@regalvoice.com to get your "API key".
+4. Email support@regal.io to get your "API key".
 5. Enter the "API Key" in the "Regal.io" destination settings in Segment.
 
 
