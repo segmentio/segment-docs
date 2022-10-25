@@ -18,6 +18,20 @@ Ensure you have connected and enabled destinations in your Space.
 3. Click **Connect destinations** to select the destination you'll send the data to.
 4. Click **Save**.
 
+## Test event payloads
+
+With the Engage event tester, you can send a test event payload to a Destination. As a result, you can confirm that you've correctly configured Journey Audiences before you publish your Journey.
+
+Follow these steps to send a test event:
+
+1. From the **Send to destinations** window, select **+ Add destination**.
+2. Choose the Destination that you want to connect.
+3. In the Destination pane, select **Event tester**.
+4. From the **Event Type** dropdown, select the event you want to test. Segment generates a test user ID.
+5. Select **Send Event**, then view the test event results in the **Event lifecycle** section.
+
+If your Destination successfully handled the event, Segment displays a `200 OK` HTTP status code along with the full response. If an error occurred, Segment displays any available details in the Event lifecyle section.
+
 ## What do I send to destinations?
 
 The data type you send to a destination depends on whether the destination is an Event destination, or a List destination.
@@ -58,5 +72,3 @@ When the user enters the step:
 The destination receives a list of users who qualify for the associated journey step. Unlike lists associated with Engage Audiences, users who are added to a journey list cannot be subsequently removed. See [best practices](/docs/engage/journeys/faq-best-practices#suppress-targeting-with-journey-lists) for techniques to suppress targeting with journey lists.
 
 For more information, see [Using Engage Data](/docs/engage/using-engage-data/).
-
-
