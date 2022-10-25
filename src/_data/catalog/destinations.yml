@@ -43652,13 +43652,21 @@ items:
 - id: 631a6f32946dd8197e9cab66
   display_name: SendGrid Marketing Campaigns
   name: SendGrid Marketing Campaigns
+<<<<<<< HEAD
   slug: sendgrid-marketing-campaigns
+=======
+  slug: actions-sendgrid
+>>>>>>> master
   hidden: false
   endpoints:
   - us
   regions:
   - us
+<<<<<<< HEAD
   url: connections/destinations/catalog/sendgrid-marketing-campaigns
+=======
+  url: connections/destinations/catalog/actions-sendgrid
+>>>>>>> master
   previous_names:
   - Sendgrid Marketing Campaigns
   - SendGrid Marketing Campaigns
