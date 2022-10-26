@@ -1,5 +1,5 @@
 ---
-title: Mixpanel Destination
+title: Mixpanel (Legacy) Destination
 hide-cmodes: true
 hide-personas-partial: true
 id: 54521fd925e721e32a72eed6
