@@ -30,7 +30,7 @@ Before you connect Segment to Salesforce, please ensure you have a Salesforce ac
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Search for **Salesforce** in the Destinations Catalog, and select the destination.
 3. Click **Configure Salesforce** in the top-right corner of the screen.
-4. Select the source that will send data to Salesforce, follow the steps to name your destination, and select **Actions** as the Destination framework.
+4. Select the source that will send data to Salesforce, follow the steps to name your destination, and select **Actions** as the destination framework.
 5. On the **Settings** tab, authenticate with Salesforce using OAuth.
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings). You must select which Event Types and/or Event Names will trigger each mapping.
 7. Enable the destination and configured mappings.
