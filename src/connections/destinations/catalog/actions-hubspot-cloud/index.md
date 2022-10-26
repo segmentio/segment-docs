@@ -22,7 +22,7 @@ When you use the HubSpot Cloud Mode (Actions) destination, Segment sends your da
 > The HubSpot Cloud Mode (Actions) destination is in beta and is in active development. Some functionality may change before it becomes generally available.
 
 > warning ""
-> The **Upsert Company** action is not compatible with the Segment Event Tester. As result, Segment recommends using other tools to test and troubleshoot the creation and updates of companies in HubSpot.
+> The **Upsert Company** action is not compatible with the Segment Event Tester. As a result, Segment recommends using other tools to test and troubleshoot the creation and updates of companies in HubSpot.
 
 
 ## Benefits of HubSpot Cloud Mode (Actions) vs HubSpot Classic
