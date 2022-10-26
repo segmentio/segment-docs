@@ -14,7 +14,7 @@ versions:
 
 {% include content/plan-grid.md name="actions" %}
 
-HubSpot is an all-in-one marketing tool that helps attract new leads and convert them into paying customers, with features like landing page creation and email automation.
+HubSpot is an all-in-one marketing tool that helps attract new leads and converts them into paying customers, with features like landing page creation and email automation.
 
 When you use the HubSpot Cloud Mode (Actions) destination, Segment sends your data to [HubSpot's REST API](https://developers.hubspot.com/docs/api/overview){:target="_blank"}.
 
