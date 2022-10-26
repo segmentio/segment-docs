@@ -1,5 +1,5 @@
 ---
-title: Pardot (Actions) Destination
+title: Salesforce Pardot (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
 strat: salesforce
