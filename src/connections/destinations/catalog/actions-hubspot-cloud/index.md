@@ -33,7 +33,7 @@ HubSpot Cloud Mode (Actions) provides the following benefits over the classic Hu
 - **Granular control over data sent.** You can customize the conditions under which the events are sent to HubSpot.
 - **OAuth 2.0 support**. Authentication with HubSpot uses OAuth 2.0 instead of an API key.
 - **Sandbox support**. Test with a HubSpot sandbox account before implementing in your main production account to feel confident in your configuration.
-- **Support for custom behavioral events**. Send [custom behaviorial events](https://developers.hubspot.com/docs/api/analytics/events){:target="_blank"} and event properties to HubSpot.
+- **Support for custom behavioral events**. Send [custom behavioral events](https://developers.hubspot.com/docs/api/analytics/events){:target="_blank"} and event properties to HubSpot.
 - **Create records in custom objects**. Use your Segment events to create records in any standard or custom object in your HubSpot account.
 
 
