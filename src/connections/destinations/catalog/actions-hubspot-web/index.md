@@ -14,7 +14,7 @@ versions:
 
 {% include content/plan-grid.md name="actions" %}
 
-HubSpot is an all-in-one marketing tool that helps attract new leads and convert them into paying customers, with features like landing page creation and email automation.
+HubSpot is an all-in-one marketing tool that helps attract new leads and converts them into paying customers, with features like landing page creation and email automation.
 
 When you use the HubSpot Web (Actions) destination, Segment loads the [HubSpot tracking code](https://developers.hubspot.com/docs/api/events/tracking-code){:target="_blank"} for you. In addition to tracking page views, the HubSpot tracking code allows you to identify visitors, track events, and manually track page views without reloading the page. The tracking code API allows you to dynamically create events and track event data in HubSpot.
 
