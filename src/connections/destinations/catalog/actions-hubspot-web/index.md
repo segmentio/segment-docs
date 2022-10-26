@@ -28,7 +28,7 @@ HubSpot Web (Actions) provides the following benefits over the classic HubSpot d
 - **Fewer settings.** Data mapping for actions-based destinations happens during configuration, which eliminates the need for most settings.
 - **Clearer mapping of data.** Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to the destination.
 - **Granular control over data sent.** You can customize the conditions under which the events are sent to HubSpot.
-- **Support for custom behavioral events**. Send [custom behaviorial events](https://developers.hubspot.com/docs/api/events/tracking-code#tracking-custom-behavioral-events-marketing-hub-enterprise-only-){:target="_blank"} and event properties to HubSpot.
+- **Support for custom behavioral events**. Send [custom behavioral events](https://developers.hubspot.com/docs/api/events/tracking-code#tracking-custom-behavioral-events-marketing-hub-enterprise-only-){:target="_blank"} and event properties to HubSpot.
 - **Improved tracking for single-page apps**. Keep track of page views in a single-page application without reloading the tracking code.
 
 ## Getting Started
