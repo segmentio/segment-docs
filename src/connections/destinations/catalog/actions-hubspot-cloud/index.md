@@ -16,7 +16,7 @@ versions:
 
 HubSpot is an all-in-one marketing tool that helps attract new leads and convert them into paying customers, with features like landing page creation and email automation.
 
-When you use the HubSpot Cloud Mode (Actions) destination, Segment will send your data to [HubSpot's REST API](https://developers.hubspot.com/docs/api/overview){:target="_blank"}.
+When you use the HubSpot Cloud Mode (Actions) destination, Segment sends your data to [HubSpot's REST API](https://developers.hubspot.com/docs/api/overview){:target="_blank"}.
 
 > info ""
 > The HubSpot Cloud Mode (Actions) destination is in beta and is in active development. Some functionality may change before it becomes generally available.
