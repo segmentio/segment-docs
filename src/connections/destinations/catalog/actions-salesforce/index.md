@@ -4,11 +4,16 @@ hide-boilerplate: true
 hide-dossier: false
 strat: salesforce
 id: 61957755c4d820be968457de
+versions:
+  - name: "Salesforce (Classic)"
+    link: '/docs/connections/destinations/catalog/salesforce/'
+redirect_from:
+  - '/connections/destinations/catalog/vendor-salesforce/'
 ---
-Segment’s Salesforce (Actions) destination allows you to create, update or upsert records for any object type. Segment sends data to the [Salesforce REST API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_rest.htm){:target="_blank"}. 
 
-> success "Good to know"
-> This page is about the [Actions-framework](/docs/connections/destinations/actions/) Salesforce destination. There's also a page about the [non-Actions Salesforce destination](/docs/connections/destinations/catalog/salesforce/). Both of these destinations receive data _from_ Segment.
+{% include content/plan-grid.md name="actions" %}
+
+Segment’s Salesforce (Actions) destination allows you to create, update or upsert records for any object type. Segment sends data to the [Salesforce REST API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_rest.htm){:target="_blank"}. 
 
 ## Benefits of Salesforce (Actions) Destination vs Salesforce Destination Classic
 
