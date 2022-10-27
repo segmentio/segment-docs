@@ -79,6 +79,7 @@ Javascript
 Jebbit
 Jimo
 Jivox
+Kable
 Kameleoon
 Kissmetrics
 Leanplum
