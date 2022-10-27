@@ -2,6 +2,7 @@
 title: Regal.io Source
 source-type: event
 id: 1QTd6JKw53
+redirect_from:  '/connections/sources/catalog/cloud-apps/regal-voice'
 ---
 {% include content/source-region-unsupported.md %}
 
