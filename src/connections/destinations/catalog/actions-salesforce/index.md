@@ -4,11 +4,16 @@ hide-boilerplate: true
 hide-dossier: false
 strat: salesforce
 id: 61957755c4d820be968457de
+versions:
+  - name: "Salesforce (Classic)"
+    link: '/docs/connections/destinations/catalog/salesforce/'
+redirect_from:
+  - '/connections/destinations/catalog/vendor-salesforce/'
 ---
-Segment’s Salesforce (Actions) destination allows you to create, update or upsert records for any object type. Segment sends data to the [Salesforce REST API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_rest.htm){:target="_blank"}. 
 
-> success "Good to know"
-> This page is about the [Actions-framework](/docs/connections/destinations/actions/) Salesforce destination. There's also a page about the [non-Actions Salesforce destination](/docs/connections/destinations/catalog/salesforce/). Both of these destinations receive data _from_ Segment.
+{% include content/plan-grid.md name="actions" %}
+
+Segment’s Salesforce (Actions) destination allows you to create, update or upsert records for any object type. Segment sends data to the [Salesforce REST API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_rest.htm){:target="_blank"}. 
 
 ## Benefits of Salesforce (Actions) Destination vs Salesforce Destination Classic
 
@@ -23,9 +28,9 @@ The Salesforce (Actions) destination provides the following benefits over the cl
 Before you connect Segment to Salesforce, please ensure you have a Salesforce account with REST API access.
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Search for **Salesforce (Actions)** in the Destinations Catalog, and select the destination.
-3. Click **Configure Salesforce (Actions)** in the top-right corner of the screen.
-4. Select the source that will send data to Salesforce (Actions) and follow the steps to name your destination.
+2. Search for **Salesforce** in the Destinations Catalog, and select the destination.
+3. Click **Configure Salesforce** in the top-right corner of the screen.
+4. Select the source that will send data to Salesforce, follow the steps to name your destination, and select **Actions** as the destination framework.
 5. On the **Settings** tab, authenticate with Salesforce using OAuth.
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings). You must select which Event Types and/or Event Names will trigger each mapping.
 7. Enable the destination and configured mappings.
