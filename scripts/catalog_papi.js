@@ -383,6 +383,7 @@ const updateDestinations = async () => {
     })
     let actions = destination.actions
     let presets = destination.presets
+    let contacts = destination.contacts
 
     const clone = (obj) => Object.assign({}, obj)
     const renameKey = (object, key, newKey) => {
@@ -424,7 +425,9 @@ const updateDestinations = async () => {
       connection_modes,
       settings,
       actions,
-      presets
+      presets,
+      contacts,
+      partnerOwned: destination.partnerOwned
     }
     destinationsUpdated.push(updatedDestination)
     doesCatalogItemExist(updatedDestination)
@@ -577,7 +580,7 @@ const updateWarehouses = async () => {
   fs.writeFileSync(path.resolve(__dirname,`../src/_data/catalog/regional-supported.yml`),output);
   console.log("warehouses done")
 }
-updateWarehouses()
-updateSources()
+// updateWarehouses()
+// updateSources()
 updateDestinations()
 
