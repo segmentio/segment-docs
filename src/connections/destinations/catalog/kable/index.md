@@ -4,7 +4,7 @@ id: 622786bfebadaf74178dfebe
 beta: true
 ---
 
-[Kable](https://kable.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps API companies launch and grow their business with easy-to-use billing infrastructure and analytics tools that work at any scale. 
+[Kable](https://kable.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} helps API companies launch and grow their business with easy-to-use billing infrastructure and analytics tools that work at any scale. 
 
 The fastest-growing API companies trust Kable to automate their revenue operations, improve their developer experience, and empower their product leaders to iterate on pricing and packaging without limitations or bottlenecks. 
 
@@ -24,12 +24,12 @@ This Segment destination is maintained by Kable. For any questions or issues, pl
     * Map any other Segment event `properties` to Kable event fields. 
 
 
-| Setting | Description | Example |
-| ------- | ----------- | ----------- |
-| API Key | Your Kable API Key | `sk_test.h6kVNO3I...` |
-| Kable Client ID   | Your Kable Client ID | `kci_3c90e9ac92c6...` |
-| Client ID Field   | The field from your Segment events that corresponds to your customer's `clientId` on Kable. | `userId` |
-| Properties Mappings   | Map fields from Segment event `properties` to fields in Kable event `data`. Use dot notation to map nested fields. | `segmentX : kableX` `nested.field : dimension` |
+| Setting             | Description                                                                                                        | Example                                        |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------- |
+| API Key             | Your Kable API Key                                                                                                 | `sk_test.h6kVNO3I...`                          |
+| Kable Client ID     | Your Kable Client ID                                                                                               | `kci_3c90e9ac92c6...`                          |
+| Client ID Field     | The field from your Segment events that corresponds to your customer's `clientId` on Kable.                        | `userId`                                       |
+| Properties Mappings | Map fields from Segment event `properties` to fields in Kable event `data`. Use dot notation to map nested fields. | `segmentX : kableX` `nested.field : dimension` |
 
 
 ## Supported methods
@@ -39,7 +39,7 @@ Kable supports Segment [Track](/docs/connections/spec/track) calls to capture us
 
 ### Track
 
-Send [Track](/docs/connections/spec/track) calls to Segment to record [usage events](https://docs.kable.io/docs/usage-events) in Kable. For example:
+Send [Track](/docs/connections/spec/track) calls to Segment to record [usage events](https://docs.kable.io/docs/usage-events){:target="_blank"} in Kable. For example:
 
 ```js
 analytics.track({
