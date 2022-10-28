@@ -10,7 +10,7 @@ Surprisingly, more than half of all web traffic is made up of bots. While a frac
 
 ## Is it possible to ignore bad bots?
 
-Segment doesn't offer any out-of-the-box feature to filter or ignore bot traffic.
+Segment doesn't offer an out-of-the-box solution to filter or ignore bot traffic.
 
 As such, you generally have two options:
 
