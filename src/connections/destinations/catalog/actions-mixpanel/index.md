@@ -23,7 +23,8 @@ Mixpanel (Actions) provides the following benefits over the classic Mixpanel des
 - **More control** - Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to the destination.
 - **Additional default property mappings** - More default mappings from the Segment context like app name, app namespace, device type, and more.
 - **Improved Groups support** - Implementation of [Segment Groups](/docs/connections/spec/group/) with [Mixpanel Group Analytics](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics){:target='_blank'} is easier. If you're already using Segment Groups, no code changes are required.
-
+- **E-commerce mappings** - Mixpanel (Actions) accepts products nested within arrays in the `Order Completed` event as described in the Segment [ecommerce spec](/docs/connections/spec/ecommerce/v2/#order-completed).
+- **Batching Requests** - If you have a lot of events, Mixpanel (Actions) provides more efficient way to receive and process those large sets of data.
 ## Getting started
 
 1. Go to your [Mixpanel project settings](https://mixpanel.com/report/settings/#account/projects){:target='_blank'}. Copy the Mixpanel API Key and API Secret for your project.
@@ -39,9 +40,13 @@ The Mixpanel (Actions) destination does not offer a device-mode connection mode.
 ### Mappings
 You can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
-> success ""
-> Make sure you map the `traits.email` property to Mixpanel's `$email`, otherwise email will be undefined.   
 
+{% capture track_purchase_details %}
+
+When set `Generate Purchase Event Per Product` to `true`, this setting effectively "flattens" the array of objects in the `Order Completed`'s `products` property by tracking a `Product Purchased` event for each item in the array. This enables more sophisticated analysis on a per-product basis in Mixpanel. These `Product Purchased` events will contain all of the key-value pairs from their respective object in the `products` array as event properties, along with the `order_id` and `checkout_id` from the `Order Completed` event.
+
+{% endcapture %}
+{% include components/actions-fields.html content1=track_purchase_details section1="trackPurchase" %}
 
 
 {% capture group_identify_user_details %}
@@ -98,10 +103,18 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 ```
 The group id that Mixpanel will use is `12345`.
 
+> success ""
+> The below special traits will be mapped to Mixpanel reserved properties automatically to fit Mixpanel's use cases. `traits.name` -> `$name`.
+
 {% endcapture %}
 {% include components/actions-fields.html content1=group_identify_user_details section1="groupIdentifyUser" %}
 
+{% capture identify_user %}
+> success ""
+> The below special traits will be mapped to Mixpanel reserved properties automatically to fit Mixpanel's use cases. `traits.created` -> `$created`, `traits.email` -> `$email`, `traits.firstName` -> `$first_name`, `traits.lastName` -> `$last_name`, `traits.name` -> `$name`, `traits.username` -> `$username` and `traits.phone` -> `$phone`.
 
+{% endcapture %}
+{% include components/actions-fields.html content1=identify_user_details section1="identifyUser" %}
 ## Migration from Mixpanel Classic
 
 {% include content/ajs-upgrade.md %}
