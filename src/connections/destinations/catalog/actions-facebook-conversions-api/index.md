@@ -64,6 +64,25 @@ Set up your Pixel to work with the Facebook Conversions API (Actions) destinatio
 
 {% include components/actions-fields.html %}
 
+## User data mapping
+
+By default, Segment maps hashed copies of the following user data to the corresponding Facebook parameter:
+
+| Segment Field | Facebook Field |
+| ------------- | -------------- |
+| `email`       | `em`           |
+| `phone`       | `ph`           |
+| `gender`      | `ge`           |
+| `dateOfBirth` | `db`           |
+| `lastName`    | `ln`           |
+| `firstName`   | `fn`           |
+| `city`        | `ct`           |
+| `state`       | `st`           |
+| `zip`         | `zp`           |
+
+> warning "Hashing"
+> Segment hashes values for these properties before sending to Facebook. Hashing values before you send them to Segment may prevent Facebook from reading the values properly.
+
 ## Configuration options
 
 The Facebook Conversions API (Actions) destination gives you several ways to implement your conversion tracking. You can use it with [Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/), or as a stand-alone alternative. You can read more about implementation options below and in [Facebook documentation](https://developers.facebook.com/docs/marketing-api/conversions-api/guides/end-to-end-implementation#pick-your-integration-type){:target="_blank"}.                                                               |
