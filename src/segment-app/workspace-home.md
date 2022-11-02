@@ -2,13 +2,10 @@
 title: Workspace Home
 ---
 
-{% include content/plan-grid.md name="workspace-home" %}
-
-
 Segment's Workspace Home serves as a dashboard that gives you a single consolidated view of the workspace, its health and status, and metrics for specific integrations over time.
 
-> info ""
-> The Workspace Home is available only to Business tier customers, and is only visible for [Workspace Owners](/docs/segment-app/iam/roles/). If you have access to the Home page, it is the first screen you see when you first log in to your Segment Workspace.
+> info "Availability"
+> The Workspace Home is visible to users who have the Workspace Owner (Free and Team workspaces only), Source Admin, or Source Read-only [roles](/docs/segment-app/iam/roles/). If you have access to the Home page, it is the first screen you see when you log in to your Segment Workspace.
 
 The Home page shows a summary of errors in the workspace's sources and destinations, a list of "favorite" integrations that you can configure, and information about recent audit logged events, and your billing plan usage.
 
@@ -50,7 +47,7 @@ To delete a favorite, click the **more** (…) menu and select **Remove favorite
 
 ## Recent Activity
 
-The recent activity section displays the most recent items logged to the Segment Audit trail. This includes workspace membership changes and requests, changes to the configuration of different Segment features (including sources, destinations, and to Engage and Protocols configurations), and data storage sync failures.
+For users with Business Tier workspaces, the recent activity section displays the most recent items logged to the Segment Audit trail. This includes workspace membership changes and requests, changes to the configuration of different Segment features (including sources, destinations, and to Engage and Protocols configurations), and data storage sync failures.
 
 ## Usage
 
