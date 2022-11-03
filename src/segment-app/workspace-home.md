@@ -5,7 +5,7 @@ title: Workspace Home
 Segment's Workspace Home serves as a dashboard that gives you a single consolidated view of the workspace, its health and status, and metrics for specific integrations over time.
 
 > info "Availability"
-> The Workspace Home is visible to users who have the Workspace Owner (Free and Team workspaces only), Source Admin, or Source Read-only [roles](/docs/segment-app/iam/roles/). If you have access to the Home page, it is the first screen you see when you log in to your Segment Workspace.
+> The Workspace Home is visible to users who have the Workspace Owner [role](/docs/segment-app/iam/roles/). If you have access to the Home page, it is the first screen you see when you log in to your Segment Workspace.
 
 The Home page shows a summary of errors in the workspace's sources and destinations, a list of "favorite" integrations that you can configure, and information about recent audit logged events, and your billing plan usage.
 
