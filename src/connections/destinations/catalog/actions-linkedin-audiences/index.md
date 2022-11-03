@@ -17,7 +17,7 @@ By using Segment's Engage Audiences with LinkedIn, you can increase traffic and 
 
 ## Getting Started
 
-Before connecting to the LinkedIn Audiences destination, you must have a [LinkedIn Campaign Manager](https://www.linkedin.com/campaignmanager){:target="_blank"} account and an Ad Account Id. In addition, the user authenticating with LinkedIn must have one of the following LinkedIn ad account roles: `ACCOUNT_BILLING_ADMIN`, `ACCOUNT_MANAGER`, `CAMPAIGN_MANAGER`, or `CREATIVE_MANAGER`.
+Before connecting to the LinkedIn Audiences destination, you must have a [LinkedIn Campaign Manager](https://www.linkedin.com/campaignmanager){:target="_blank"} account and an Ad Account ID. In addition, the user authenticating with LinkedIn must have one of the following LinkedIn ad account roles: `ACCOUNT_BILLING_ADMIN`, `ACCOUNT_MANAGER`, `CAMPAIGN_MANAGER`, or `CREATIVE_MANAGER`.
 
 To add the LinkedIn Audiences destination:
 
@@ -25,7 +25,7 @@ To add the LinkedIn Audiences destination:
 
 2. Within the Audience, click **Settings** and copy the Audience Key. You'll need this key later.
 
-3. Next, navigate to **Engage > Engage Settings** and click **Destinations**. Please ensure you are still in the correct Engage space.
+3. Navigate to **Engage > Engage Settings** and click **Destinations**. Please ensure you are still in the correct Engage space.
 
 4. Search for “LinkedIn Audiences” and select the destination.
 
@@ -35,7 +35,7 @@ To add the LinkedIn Audiences destination:
 
 7. On the Destination **Settings** tab, name your destination and authenticate with LinkedIn using OAuth. 
 
-8. Once authenticated, input your LinkedIn Ad Account Id from your [LinkedIn Campaign Manager](https://www.linkedin.com/campaignmanager){:target="_blank"} account. Toggle “Enable Destination” on and click  **Save Changes**.
+8. Once authenticated, input your LinkedIn Ad Account ID from your [LinkedIn Campaign Manager](https://www.linkedin.com/campaignmanager){:target="_blank"} account. Toggle “Enable Destination” on and click  **Save Changes**.
 
 9. Navigate to the **Mappings** tab, click **New Mapping**, and select **Sync To LinkedIn DMP Segment**.
 
@@ -48,7 +48,7 @@ To add the LinkedIn Audiences destination:
 
 ![engage audience destination settings](images/image1.png)
 
-The setup is complete and the Audience will start syncing to LinkedIn. Segment will automatically create a new DMP Segment in LinkedIn and add or remove users accordingly. The Audience will appear in your [LinkedIn Campaign Manager](https://www.linkedin.com/campaignmanager){:target="_blank"}, account under **Plan > Audiences > Matched**.
+The setup is complete and the Audience will start syncing to LinkedIn. Segment automatically creates a new DMP Segment in LinkedIn and will add or remove users accordingly. The Audience appears in your [LinkedIn Campaign Manager](https://www.linkedin.com/campaignmanager){:target="_blank"}, account under **Plan > Audiences > Matched**.
 
 To sync additional Audiences from your Engage space, create a separate mapping in the LinkedIn Audiences destination. Navigate to **Connections > Destinations**, search and select the LinkedIn Audiences destination, and follow Steps 9-11 above.
 
@@ -57,10 +57,10 @@ To sync additional Audiences from your Engage space, create a separate mapping i
 ## Troubleshooting
 
 ### Access & Refresh Tokens
-LinkedIn's OAuth access tokens have a time to live (TTL) of 60 days; refresh tokens have a TTL of one year. Segment will automatically update your access token as long as your refresh token is valid. You will not see any errors or interruptions in data delivery if your access token expires while your refresh token is valid.
+LinkedIn's OAuth access tokens have a time to live (TTL) of 60 days; refresh tokens have a TTL of one year. Segment automatically updates your access token as long as your refresh token is valid. You won't see any errors or interruptions in data delivery if your access token expires while your refresh token is valid.
 
-Upon expiry or revocation of a refresh token, you will see `Refresh Token Expired` errors in the Delivery Issues section of your LinkedIn Audiences destination **Event Delivery** tab.
+Upon expiry or revocation of a refresh token, you'll see `Refresh Token Expired` errors in the Delivery Issues section of your LinkedIn Audiences destination **Event Delivery** tab.
 
-Unknown errors from LinkedIn related to OAuth will appear as `Oauth Refresh Failed`.
+Unknown errors from LinkedIn related to OAuth appear as `Oauth Refresh Failed`.
 
 To remedy either error, please navigate to the **Settings** tab of your LinkedIn Audiences destination and select **Reauthorize** under the Connection heading and complete the OAuth flow.
