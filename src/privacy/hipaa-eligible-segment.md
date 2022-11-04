@@ -4,8 +4,6 @@ title: HIPAA Eligible Segment
 
 Segment is a HIPAA eligible platform, and meets the data privacy and security requirements of healthcare customers and their stakeholders. For more information about Segment becoming HIPAA eligible, see the [announcement blog post](#).
 
-
-
 ## Business Associate Addendum
 
 > info ""
