@@ -396,6 +396,8 @@ sections:
       title: User Deletion and Suppression
   - path: /privacy/account-deletion
     title: Account & Data Deletion
+  - path: /privacy/hipaa-eligible-segment
+    title: HIPAA Eligible Segment  
   - path: /privacy/faq
     title: Privacy FAQs
 - section_title: Protocols
