@@ -3,8 +3,6 @@ title: LinkedIn Audiences Destination
 hide-personas-partial: true
 hide-boilerplate: true
 hide-dossier: false
-hidden: true
-private: true
 id: 62f435d1d311567bd5bf0e8d
 ---
 
@@ -37,12 +35,13 @@ To add the LinkedIn Audiences destination:
 
 8. Once authenticated, input your LinkedIn Ad Account ID from your [LinkedIn Campaign Manager](https://www.linkedin.com/campaignmanager){:target="_blank"} account. Toggle “Enable Destination” on and click  **Save Changes**.
 
-9. Navigate to the **Mappings** tab, click **New Mapping**, and select **Sync To LinkedIn DMP Segment**.
+10. Navigate to the **Mappings** tab, click **New Mapping**, and select **Sync To LinkedIn DMP Segment
 
 10. Under Select mappings, input the Audience Key you copied in Step 2 as the “Segment Engage Audience Key.” Do not change any other defaults. Click **Save** and toggle to enable the mapping.
      * **Note:** The Audience Key must be manually entered to ensure users in the Engage Audience are sent to the correct DMP Segment in LinkedIn. For every Engage Audience you want to send to your LinkedIn Ads Account, a separate **Sync To LinkedIn DMP Segment** mapping must be created. You can create up to 50 mappings within an instance of the LinkedIn Audiences destination.
 
 11. Navigate back to **Engage > Audiences** and click on the Audience from Step 1. 
+
 12. Click **Add Destinations** and select the LinkedIn Audiences destination you just created. In the settings that appear in the side panel, toggle the **Send Track** option on and disable **Send Identify**. Click **Save Settings**.
 
 ![engage audience destination settings](images/image1.png)
