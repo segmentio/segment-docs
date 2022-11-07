@@ -33,7 +33,7 @@ During the Segment connection setup, Littledata also adds a set of webhooks to y
 
 Here's an architecture diagram that shows how the Littledata app mediates data flow between Shopify and Segment.
 
-![Connecting Shopify to Segment](https://res.cloudinary.com/littledata/image/upload/v1667808538/Architecture%20diagrams/segment.png)
+![Connecting Shopify to Segment](images/segment.png)
 
 > warning "Note"
 > This integration is maintained by Littledata _and isn't supported by Segment directly_. The Littledata app has been reviewed by the Segment team for conformance with Segment's [E-Commerce Spec](/docs/connections/spec/ecommerce/v2/), and is the recommended way of using Segment with Shopify. However, it does require a paid subscription with Littledata, who mediates the connection between Shopify and Segment. [Contact the Littledata Support team](mailto:help@littledata.io) with any questions.
