@@ -16,7 +16,7 @@ This is a great way to get a head start on your tracking, and also to monitor ev
 
 Only Workspace Owners can set up or edit the starter tracking plan.
 
-You can use the **Tracking Plan Read-Only** role to allow workspace members to view the starter tracking plan, including the events and their properties, and code snippets for each. (When you upgrade to Personas, this role allows members to view additional tracking plans.)
+You can use the **Tracking Plan Read-Only** role to allow workspace members to view the starter tracking plan, including the events and their properties, and code snippets for each. (When you upgrade to Engage, this role allows members to view additional tracking plans.)
 
 You can add the Tracking Plan Read Only role to workspace members, or to groups that you use to grant workspace members access. To edit workspace member or group access, in your workspace navigate to **Settings > Workspace settings > Access management**.
 
@@ -35,7 +35,7 @@ From the screen that appears, click **Add Events** to add your first event to th
 
 
 
-On the next page, you’ll select the events that you need from the Segment Standard Events. These are organized by their [industry spec](http://segment.com/docs/connections/spec/), such as Ecommerce, Marketing, and so on. Click each industry or use case to see and select events from that group.
+On the next page, you'll select the events that you need from the Segment Standard Events. These are organized by their [industry spec](http://segment.com/docs/connections/spec/), such as Ecommerce, Marketing, and so on. Click each industry or use case to see and select events from that group.
 
 
 1. Choose a Spec section based on your industry/type of website
@@ -61,7 +61,7 @@ When you click **Add**, Segment adds the events you selected to your Tracking Pl
 
 ## Customize Properties
 
-You might want to add extra properties to the Segment standard events, for example to capture unique information about the user’s action taken.
+You might want to add extra properties to the Segment standard events, for example to capture unique information about the user's action taken.
 
 To add a custom property, click the **plus** icon next to the event that the property should be attached to.
 
@@ -70,7 +70,7 @@ To add a custom property, click the **plus** icon next to the event that the pro
 
 In the dialog that appears, enter the name and type of the property, and add a description.
 
-You can click **Save and add more** to add more than one property, or click **Save and exit** when you’re satisfied that you’ve added all the properties you’ll need.
+You can click **Save and add more** to add more than one property, or click **Save and exit** when you're satisfied that you've added all the properties you'll need.
 
 
 ![](images/starter-tp-add-prop.png)
@@ -88,7 +88,7 @@ You can click each event in the table to expand it, view the event description, 
 The **Sending** column shows the number of Events Segment has seen with that description and format. You can expand this to see how many of the events Segment saw for Dev, Test, and Production sources. If you see a 0 in this column for all sources, this usually means that the event has not been implemented yet, or has not been implemented correctly.
 
 At the far right of the table is a **…** (more) menu.
-From this menu you can click **View Code Snippet** to see and copy a Javascript snippet for the event, including its properties. This might be helpful if you’re not sure how to implement or format the actual Track event.
+From this menu you can click **View Code Snippet** to see and copy a JavaScript snippet for the event, including its properties. This might be helpful if you're not sure how to implement or format the actual Track event.
 The more menu also includes an **Edit** button, which allows you to edit the description of an event or property, and the name of any custom properties, and a **Delete** button, which deletes either the entire event, or an individual property from the event.
 
 
@@ -97,7 +97,7 @@ The more menu also includes an **Edit** button, which allows you to edit the des
 If you haven't yet implemented Segment tracking in your app or site, there are three easy ways to use the Tracking Plan to set up your implementation:
 
 - **If you use Analytics.js and the [Visual Tagger](https://segment.com/docs/connections/sources/visual-tagger/)**, Segment loads your tracking plan so that you can simply tag the elements in your website with the Events that they should trigger.
-- **You can download a Javascript code snippet for each Event** in the tracking plan by clicking the **more (...)** menu. You can then paste these snippets into your site or app code and replace the example properties in these snippets with variables from your code.
+- **You can download a JavaScript code snippet for each Event** in the tracking plan by clicking the **more (...)** menu. You can then paste these snippets into your site or app code and replace the example properties in these snippets with variables from your code.
 
 <!--
 > success ""

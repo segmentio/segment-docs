@@ -1,10 +1,8 @@
 ---
 title: 'Spec: Identify'
-related:
-  - "/docs/connections/sources/catalog/"
 ---
 
-The Segment Identify call lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about the user, like their email, name, etc.
+The Segment Identify call lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about the user, like their email, name, and more.
 
 {% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/299968?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: The Identify Method" description="Check out our high-level overview of the Identify method in Segment University. (Must be logged in to access.)" %}
 
@@ -38,7 +36,7 @@ Here's the payload of a typical `identify` call with most [common fields](/docs/
 }
 ```
 
-And here's the corresponding Javascript event that would generate the above payload:
+And here's the corresponding JavaScript event that would generate the above payload:
 
 ```js
 analytics.identify("97980cfea0067", {
@@ -48,6 +46,7 @@ analytics.identify("97980cfea0067", {
   logins: 5
 });
 ```
+{% include content/syntax-note.md %}
 
 Beyond the common fields, an `identify` call has the following fields:
 
@@ -104,15 +103,15 @@ The `identify` call specifies a customer identity that you can reference across 
 
 ### Anonymous ID
 
-There are certain cases where you don't actually know who the user is according to your database, but you still want to be able to tie them to traits, events or page views. For example, you may not know who a user is when tracking newsletter signups or anonymous page views.
+There are certain cases where you don't actually know who the user is according to your database, but you still want to be able to tie them to traits, events, or page views. For example, you may not know who a user is when tracking newsletter signups or anonymous page views.
 
 In these cases, you should use an Anonymous ID.
 
-The Anonymous ID can be any pseudo-unique identifier. For example, on your servers you can use a session id. If you don't have any readily available identifier, you can always generate a new random one—we recommend [UUIDs](http://en.wikipedia.org/wiki/Universally_unique_identifier).
+The Anonymous ID can be any pseudo-unique identifier. For example, on your servers you can use a session id. If you don't have any readily available identifier, you can always generate a new random one—we recommend [UUIDs](http://en.wikipedia.org/wiki/Universally_unique_identifier){:target="_blank"}.
 
-**Note:** Our [browser and mobile libraries](/docs/connections/sources/) **automatically** use Anonymous IDs under the covers to keep track of users as they navigate around your website or app, so you don't need to worry about them when using those libraries.
+**Note:** Segment's [browser and mobile libraries](/docs/connections/sources/) **automatically** use Anonymous IDs to keep track of users as they navigate around your website or app, so you don't need to worry about them when using those libraries.
 
-Here's an example of a Javascript event for an anonymous user:
+Here's an example of a JavaScript event for an anonymous user:
 
 ```js
 analytics.identify({
@@ -126,7 +125,7 @@ User IDs are a more permanent and robust identifier, like a database ID. Since t
 
 A User ID is usually the unique identifier that you recognize a user by in your own database. For example, if you're using MongoDB it might look something like `507f191e810c19729de860ea`.
 
-We recommend using database IDs instead of simple email addresses or usernames, because database IDs _never_ change. That guarantees that even if the user changes their email address, you can still recognize them as the same person in all of your analytics tools. And even better, you'll be able to correlate analytics data with your own internal database.
+Segment recommends using database IDs instead of simple email addresses or usernames, because database IDs _never_ change. That guarantees that even if the user changes their email address, you can still recognize them as the same person in all of your analytics tools. And even better, you'll be able to correlate analytics data with your own internal database.
 
 **Instead of using an email address or a username as a User ID, send them along as [traits](/docs/connections/spec/identify#traits).**
 
@@ -134,107 +133,32 @@ We recommend using database IDs instead of simple email addresses or usernames, 
 
 Traits are pieces of information you know about a user that are included in an `identify` call. These could be demographics like `age` or `gender`, account-specific like `plan`, or even things like whether a user has seen a particular A/B test variation. Up to you!
 
-We've reserved some traits that have semantic meanings for users, and we handle them in special ways. For example, we always expect `email` to be a string of the user's email address. We'll send this on to destinations like _Mailchimp_ that require an email address for their tracking.
+Segment has reserved some traits that have semantic meanings for users, and we handle them in special ways. For example, Segment always expects `email` to be a string of the user's email address. We'll send this on to destinations like _Mailchimp_ that require an email address for their tracking.
 
 You should **only use reserved traits for their intended meaning**.
 
-Reserved traits we've standardized:
+Reserved traits Segment has standardized:
 
-<table>
-  <tr>
-    <td>**Trait**</td>
-    <td>**Type**</td>
-    <td>**Description**</td>
-  </tr>
-  <tr>
-    <td>`address`</td>
-    <td>Object</td>
-    <td>Street address of a user optionally containing:  `city`, `country`, `postalCode`, `state` or `street`</td>
-  </tr>
-  <tr>
-    <td>`age`</td>
-    <td>Number</td>
-    <td>Age of a user</td>
-  </tr>
-  <tr>
-    <td>`avatar`</td>
-    <td>String</td>
-    <td>URL to an avatar image for the user</td>
-  </tr>
-  <tr>
-    <td>`birthday`</td>
-    <td>Date</td>
-    <td>User's birthday</td>
-  </tr>
-  <tr>
-  <td>`company`</td>
-  <td>Object</td>
-  <td>Company the user represents, optionally containing: `name` (a String), `id` (a String or Number), `industry` (a String), `employee_count` (a Number) or `plan` (a String)</td>
-  </tr>
-  <tr>
-    <td>`createdAt`</td>
-    <td>Date</td>
-    <td>Date the user's account was first created. Segment recommends using [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date strings.</td>
-  </tr>
-  <tr>
-    <td>`description`</td>
-    <td>String</td>
-    <td>Description of the user</td>
-  </tr>
-  <tr>
-    <td>`email`</td>
-    <td>String</td>
-    <td>Email address of a user</td>
-  </tr>
-  <tr>
-    <td>`firstName`</td>
-    <td>String</td>
-    <td>First name of a user</td>
-  </tr>
-  <tr>
-    <td>`gender`</td>
-    <td>String</td>
-    <td>Gender of a user</td>
-  </tr>
-  <tr>
-    <td>`id`</td>
-    <td>String</td>
-    <td>Unique ID in your database for a user</td>
-  </tr>
-  <tr>
-    <td>`lastName`</td>
-    <td>String</td>
-    <td>Last name of a user</td>
-  </tr>
-  <tr>
-    <td>`name`</td>
-    <td>String</td>
-    <td>Full name of a user. If you only pass a first and last name Segment automatically fills in the full name for you.
-    </td>
-  </tr>
-  <tr>
-    <td>`phone`</td>
-    <td>String</td>
-    <td>Phone number of a user</td>
-  </tr>
-  <tr>
-    <td>`title`</td>
-    <td>String</td>
-    <td>Title of a user, usually related to their position at a specific company. Example: "VP of Engineering"
-    </td>
-  </tr>
-  <tr>
-    <td>`username`</td>
-    <td>String</td>
-    <td>User's username. This should be unique to each user, like the usernames of Twitter or GitHub.</td>
-  </tr>
-  <tr>
-    <td>`website`</td>
-    <td>String</td>
-    <td>Website of a user</td>
-  </tr>
-</table>
+| **Trait**     | **Type** | **Description**          |
+|---------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `address`     | Object   | Street address of a user optionally containing:  `city`, `country`, `postalCode`, `state`, or `street`   |
+| `age`         | Number   | Age of a user           |
+| `avatar`      | String   | URL to an avatar image for the user  |
+| `birthday`    | Date     | User's birthday         |
+| `company`     | Object   | Company the user represents, optionally containing: `name` (String), `id` (String or Number), `industry` (String), `employee_count` (Number) or `plan` (String) |
+| `createdAt`   | Date     | Date the user's account was first created. Segment recommends using [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date strings.       |
+| `description` | String   | Description of the user |
+| `email`       | String   | Email address of a user |
+| `firstName`   | String   | First name of a user    |
+| `gender`      | String   | Gender of a user        |
+| `id`          | String   | Unique ID in your database for a user      |
+| `lastName`    | String   | Last name of a user     |
+| `name`        | String   | Full name of a user. If you only pass a first and last name Segment automatically fills in the full name for you.      |
+| `phone`       | String   | Phone number of a user  |
+| `title`       | String   | Title of a user, usually related to their position at a specific company. Example: "VP of Engineering"                                  |
+| `username`    | String   | User's username. This should be unique to each user, like the usernames of Twitter or GitHub.             |
+| `website`     | String   | Website of a user       |
 
-**Note:** You might be used to some destinations recognizing special traits by slightly different names. For example, Mixpanel recognizes a `$created` trait when the user's account was first created, while Intercom recognizes the same trait as `created_at` instead.  Luckily, you don't have to worry about those inconsistencies. Just pass us `createdAt`. **We'll handle all of the destination-specific conversions for you automatically.**  Same goes for the rest of the reserved traits.
+**Note:** You might be used to some destinations recognizing special traits by slightly different names. For example, Mixpanel recognizes a `$created` trait when the user's account was first created, while Intercom recognizes the same trait as `created_at` instead.  Luckily, you don't have to worry about those inconsistencies. Just pass along `createdAt`. **Segment handles all of the destination-specific conversions for you automatically.**  Same goes for the rest of the reserved traits.
 
-**You can pass these reserved traits using camelCase or snake_case**, so in Javascript you can match the rest of your camel-case code by sending `firstName`, while in Ruby you can match your snake-case code by sending `first_name`. That way the API never seems alien to your code base. Keep in mind that not all destinations support these reserved traits, so sending these traits in camelCase and snake_case can result in two sets of traits in other destinations.
+**You can pass these reserved traits using camelCase or snake_case**, so in JavaScript you can match the rest of your camel-case code by sending `firstName`, while in Ruby you can match your snake-case code by sending `first_name`. That way the API never seems alien to your code base. Keep in mind that not all destinations support these reserved traits, so sending these traits in camelCase and snake_case can result in two sets of traits in other destinations.

@@ -16,6 +16,7 @@ const apiKey = envApiKey != null ? envApiKey : sampleApiKey;
 const placeHolder = envApiKey != null ? 'Search the Segment documentation' : 'Search disabled locally'
 
 const searchClient = algoliasearch(appId, apiKey);
+const loc = window.location.pathname
 
 //insights
 insightsClient('init', { appId, apiKey, useCookie: true });
@@ -54,7 +55,7 @@ function initAutocomplete(item){
                   query,
                   params: {
                     hitsPerPage: 7,
-                    facetFilters: ['hidden:-true'],
+                    facetFilters: ['hidden:-true','engage:-true'],
                     clickAnalytics: true,
                   },
                 },

@@ -2,7 +2,7 @@
 title: Measuring Your Advertising Funnel
 ---
 
-It’s surprisingly hard to answer questions about the ROI of your ad campaigns. What does a click actually result in? How much should I pay for it? We built our Sources for Facebook Ads and Google Adwords to help you understand the true performance and cost of your campaigns.
+It's surprisingly hard to answer questions about the ROI of your ad campaigns. What does a click actually result in? How much should I pay for it? We built our Sources for Facebook Ads and Google Adwords to help you understand the true performance and cost of your campaigns.
 
 In this article, we dig into the nuances of data collection and potential gotchas around measuring clicks, pageviews, and ultimately, conversions.
 
@@ -24,7 +24,7 @@ Let's go through each true funnel step in a little more detail.
 
 - **Page Request Initiated:** After an ad is clicked, a user's browser attempts to load your landing page. This request is the first contact your application has with the user, and the server responds with the content to render the landing page.
 
-- **First Javascript Loaded:** The user's browser starts to download the landing page content, which includes the HTML, javascript, and CSS. The browser parses and renders this content, loading the javascript sequentially as it parses the page. By default, analytics.js uses the [`async`](http://www.w3schools.com/tags/att_script_async.asp) [tag](http://www.w3schools.com/tags/att_script_async.asp), which means that the browser won't block the page and will load analytics.js once everything else is ready. Analytics.js wants to get out of the way where possible so you can create the best experience for your customers.
+- **First JavaScript Loaded:** The user's browser starts to download the landing page content, which includes the HTML, JavaScript, and CSS. The browser parses and renders this content, loading the JavaScript sequentially as it parses the page. By default, analytics.js uses the [`async`](http://www.w3schools.com/tags/att_script_async.asp) [tag](http://www.w3schools.com/tags/att_script_async.asp), which means that the browser won't block the page and will load analytics.js once everything else is ready. Analytics.js wants to get out of the way where possible so you can create the best experience for your customers.
 
 - **Page Fully Rendered:** The page is fully rendered once all the html, css and scripts have been loaded on the page. This time can vary a lot based on the speed of the internet connection (how fast all the assets download) and the device itself (how fast the local computer can run all of the scripts).
 

@@ -1,7 +1,7 @@
 ---
 title: Statsig Destination
+id: 613ba8c0114797213a8eff94
 ---
-
 [Statsig](https://www.statsig.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps companies safely A/B test features in production before rolling them out, avoiding product debates and costly mistakes when shipping out new features. Statsig automates the grunt work so that A/B tests are always running automatically and you always know how your features are performing.
 
 This destination is maintained by Statsig. For any issues with the destination, [contact the Statsig Support team](mailto:support@statsig.com).

@@ -1,6 +1,7 @@
 ---
 title: Kubit Destination
 rewrite: true
+id: 5d02baa1e63a2e0001117fb2
 ---
 [Kubit](https://kubit.ai) is an analytics tool which makes deep data discovery and insights accessible for everyone. Kubit Smart Analytics help product people get clear, fast answers about user engagement and retention. When you send your events through Segment, you benefit from Kubit's AI-powered behavioral analytics, diagnostics, and collaborative workspaces.
 

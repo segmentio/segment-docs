@@ -1,14 +1,14 @@
 ---
 title: Monetate Destination
+id: 54521fd925e721e32a72eede
 ---
-
 ## Getting Started
 
 Segment allows you to track events directly into Monetate, and create, test, deploy, and measure personalized marketing campaigns.
 
 ### Client-Side
 
-Because the Monetate destination needs to be on the page right away, Segment can't add it for you. That means you'll need to put the Monetate javascript snippet on the page. Pop over to Monetate and in Settings > destination > Tag you'll find their snippet.
+Because the Monetate destination needs to be on the page right away, Segment can't add it for you. That means you'll need to put the Monetate JavaScript snippet on the page. Pop over to Monetate and in Settings > destination > Tag you'll find their snippet.
 
 To get started with Monetate and Segment, just enable the Monetate destination on your Segment **Destinations page**. If you've already copied the Monetate script tag onto your page, you're ready to go!
 

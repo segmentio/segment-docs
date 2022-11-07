@@ -1,11 +1,9 @@
 ---
 rewrite: true
 title: Parse.ly Destination
+id: 558c9f7b0a20f4e22f0fb3bc
 ---
-
 [Parse.ly](https://www.parse.ly) provides web analyses and content optimization for online publishers by partnering with them to provide clear audience insights through intuitive analytics.
-
-This document was last updated on November 8th, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 
 ## Getting Started
@@ -17,7 +15,7 @@ This document was last updated on November 8th, 2018. If you notice any gaps, ou
 3. Enter your Domain and enable the destination in Segment. (To enable this destination, you use your Parsely website domain as your API key.)
 4. Segment automatically starts sending data from the source you selected.
 
-When you enable Parse.ly from the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Parse.ly's javascript onto your page.
+When you enable Parse.ly from the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Parse.ly's JavaScript onto your page.
 
 Remember to remove the Parse.ly native snippet from your page.
 
@@ -29,7 +27,7 @@ By default, unless you are using [Dynamic Tracking](https://www.parse.ly/help/in
 
 If you are using dynamic tracking, you must explicitly let us know in your [integration settings](/docs/connections/destinations/catalog/parsely/#enable-dynamic-tracking). If this setting is enabled, we will disable Parse.ly's autotracking functionality and begin sending their API pageview events only in response to `analytics.page()` events.
 
-**Note:** You can only track pageviews if you are using the Parsely destination with our Javascript Analytics.js library, and not using our server side integration with Parse.ly.
+**Note:** You can only track pageviews if you are using the Parsely destination with our JavaScript Analytics.js library, and not using our server side integration with Parse.ly.
 
 
 ## Identify
@@ -209,7 +207,7 @@ analytics.track('Video Playback Paused', {
 
 (Note: this event is only required for server side tracking)
 
-When using Parse.ly on the web using our Javascript SDK, video heartbeats are captured by their SDK automatically. However, if you are using this destination with a Server side source, you must pass heartbeat events manually using our [Video Content Playing](/docs/connections/spec/video/#content-events) event.
+When using Parse.ly on the web using our JavaScript SDK, video heartbeats are captured by their SDK automatically. However, if you are using this destination with a Server side source, you must pass heartbeat events manually using our [Video Content Playing](/docs/connections/spec/video/#content-events) event.
 
 **Important:** These events must be sent in 10 second increments.
 

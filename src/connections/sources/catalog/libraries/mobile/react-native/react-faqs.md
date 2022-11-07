@@ -35,5 +35,10 @@ If you use the [Segment Debugger](/docs/connections/sources/debugger/), you migh
   "Mixpanel": false
 }
 ```
-
 These flags are used both to in code to [prevent data from being sent to specific destinations](/docs/guides/filtering-data/#filtering-with-the-integrations-object), and by the library to tell the Segment servers that a bundled destination SDK sent the request payload directly from the device, to the destination's API endpoint. This prevents the Segment servers from sending a second version to the destination's endpoint and creating duplicate data.
+
+
+### Why upgrade to React Native 2.0?
+
+React Native 2.0 is a major version upgrade to the existing React Native library that includes several performance upgrades. The older version of the Analytics React Native library was built as a JavaScript wrapper for Segment's native analytics-android and analytics-ios libraries, which made feature development and bug fixes unsustainable, as they often required changes to the underlying libraries. The new Analytics React Native library executes less lines of code in a quicker manner with smaller algorithms. In addition, it no longer relies on analytics-ios or analytics-android. It has been rebuilt to be a standalone JavaScript library which drastically reduces the amount of dependencies required for React Native customers. Overall, it improves Analytics performance, provides a better developer experience, and uses less CPU, battery and memory.
+

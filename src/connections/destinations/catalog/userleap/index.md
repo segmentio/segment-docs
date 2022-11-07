@@ -1,63 +1,21 @@
 ---
-title: UserLeap
+title: Sprig Cloud Destination
 rewrite: true
+hidden: true
 ---
 
-[UserLeap](https://userleap.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a microsurvey platform that continuously identifies opportunities to build better experiences. Gain clarity into customer needs and grow faster.
+[Sprig (formerly UserLeap)](https://sprig.com/?&utm_source=segment_2021-10-20&utm_medium=int&utm_campaign=integration) is an in-context user research platform that makes it fast and effortless for product teams to learn from their actual customers in real time, through microsurveys, concept tests, and video questions.
 
-This destination is maintained by UserLeap. For any issues with the destination, contact [the UserLeap support team](mailto:support@userleap.com).
+Sprig maintains this destination. For any issues with the destination, consult [Sprig's documentation](https://docs.sprig.com/docs/segment) or contact [support@sprig.com](mailto:support@sprig.com).
 
+> success ""
+> **Good to know**: This page is about the [non-Actions Sprig (formerly UserLeap) destination](/docs/connections/destinations/catalog/userleap/). There's also a page about the [Actions-framework](/docs/connections/destinations/actions/) Sprig Segment destination. Both of these destinations receive data from Segment.
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-2. Search for "UserLeap" in the Destinations Catalog, and select the UserLeap destination.
-3. Choose which Source should send data to the UserLeap destination.
-4. Go to the [UserLeap dashboard](https://app.userleap.com/settings/installation), find and copy the **API key**.
-5. Enter the UserLeap API Key that you copied in the UserLeap destination settings in Segment.
-
-**Note**: UserLeap's Segment integration does not support In-Product Surveys
-
-## Identify
-If you aren't familiar with the Segment Spec, take a look at the [Identify method documentation](/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
-
-```js
-analytics.identify('userId123', {
-  firstName: 'Laura',
-  lastName: 'Gibbon'
-})
-```
-
-Use Segment's Identify method to identify your users in UserLeap. Segment `traits` map to UserLeap `attributes`.
-
-**Important:** Only Identify calls can create new users in UserLeap.
-
-## Track
-If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track/) to learn about what it does. An example call would look like:
-
-```js
-analytics.track('Button Clicked');
-```
-
-Use Track calls to track events and use them as filtering criteria for your Surveys.
-
-Create Triggered Events in your UserLeap [Events dashboard](https://app.userleap.com/events) and map them to your Segment Track event names before you start sending Segment data to UserLeap.
-
-## Page
-If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](/docs/connections/spec/page/) to learn about what it does. An example call would look like:
-
-```js
-analytics.page()
-```
-
-Segment sends Page calls to UserLeap as a `pageview` which you can use as filtering criteria for your surveys.
-
-Add Page URLs  in your UserLeap [Events dashboard](https://app.userleap.com/events) and map them to your Segment Page call's `properties.url` field before you start sending Segment data to UserLeap.
-
-## Alias
-If you aren't familiar with the Segment Spec, take a look at the [Alias method documentation](/docs/connections/spec/alias/) to learn about what it does. An example call would look like:
-
-```js
-analytics.alias('newUserId');
-```
+2. Search for "Sprig Cloud" in the Destinations Catalog, and select the Sprig Cloud destination.
+3. Choose which Source should send data to the Sprig Cloud destination.
+4. Go to the [Sprig Connect page](https://app.sprig.com/connect), and find and copy the Segment **API key**. Use the Development key for a testing environment, and the Production key for your live environment.
+5. Enter the API Key that you copied in the Sprig Cloud destination settings in Segment.

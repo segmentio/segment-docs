@@ -1,6 +1,8 @@
 ---
 title: Amplitude Engage Event Source
+id: pHcia14h1B
 ---
+{% include content/source-region-unsupported.md %}
 
 This source combines Amplitude's analytics with Segment's rich connections
 ecosystem. This allows you to export Behavioral Cohorts from Amplitude to

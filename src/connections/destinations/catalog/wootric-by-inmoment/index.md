@@ -1,7 +1,7 @@
 ---
 title: InMoment (formerly Wootric) Destination
 rewrite: true
-redirect_from: 
+redirect_from:
   - '/connections/destinations/catalog/wootric/'
   - 'connections/destinations/catalog/inmoment-formerly-wootric'
 hide-dossier: true
@@ -11,7 +11,7 @@ hide-dossier: true
 
 The InMoment Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/wootric).
 
-This document was last updated on January 23, 2020. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [contact InMoment Support](mailto:support@wootric.com)!
+If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [contact InMoment Support](mailto:support@wootric.com)!
 
 
 ## Getting Started
@@ -22,11 +22,11 @@ This document was last updated on January 23, 2020. If you notice any gaps, out-
 2. Search for "InMoment (Wootric)" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In the destination settings, enter your InMoment "Account Token".
    You can retrieve this from your **InMoment Settings > Your unique Account Token**. It should look like `NPS-XXXXXXXX`.
-4. If you're using Segment's client-side `analytics.js` library, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading InMoment's Javascript library onto the page and begins sending data.
+4. If you're using Segment's client-side `analytics.js` library, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading InMoment's JavaScript library onto the page and begins sending data.
 
 ### Mobile
 
-Mobile implementations require additional settings. 
+Mobile implementations require additional settings.
 
 Navigate to your **InMoment Settings > API** to add your **Client ID** to the respective part of the Segment Settings UI.
 
@@ -56,7 +56,7 @@ When you call Identify, the user's information is passed to InMoment to check el
 
 ## Track
 
-When you call Track, the user’s information is passed along with the event name to InMoment to check eligibility during survey responses.
+When you call Track, the user's information is passed along with the event name to InMoment to check eligibility during survey responses.
 > note ""
 > **Note**: this only works if you enable Targeted Sampling in your InMoment account. The event name must be exactly the same as the one used in the Track call.
 

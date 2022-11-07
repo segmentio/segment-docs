@@ -1,10 +1,9 @@
 ---
 title: Kissmetrics Destination
 rewrite: true
+id: 54521fd725e721e32a72eec7
 ---
 [Kissmetrics](https://www.kissmetricshq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a behavioral email and analytics platform. It pulls cross-platform behavior reports so marketers can analyze key audience growth segments. It also provides an overview of custom populations, population change and growth, so marketers can analyze populations from customers who have completed actions or events.
-
-This document was last updated on July 3, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact/)!
 
 ## Getting Started
 
@@ -15,7 +14,7 @@ To enable Kissmetrics in Segment:
 1. From the Segment web app, click **Catalog**.
 2. Search for "Kissmetrics" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In the destination settings, enter your Kissmetrics "API Key".
-4. If you are using Kissmetrics using Segment's client-side analytics.js library, Segment asynchronously loads Kissmetrics Javascript library onto the page. (This means you should remove Kissmetrics's snippet from your page.)
+4. If you are using Kissmetrics using Segment's client-side analytics.js library, Segment asynchronously loads Kissmetrics JavaScript library onto the page. (This means you should remove Kissmetrics's snippet from your page.)
 
 Your Kissmetrics source starts automatically collecting "Visited Site" events and [other automatically tracked events](https://support.kissmetrics.io/docs/javascript-settings).
 
@@ -129,7 +128,7 @@ analytics.alias({
 
 In order to [`identify`](/docs/connections/spec/identify/) **new users** server side and connect that user profile to an existing anonymous visitor profile there's some work to be done.
 
-**Remember:** Kissmetrics aliases automatically the first time you call [`identify`](/docs/connections/spec/identify/) in client-side javascript, so in most cases you don't have to call [`alias`](/docs/connections/spec/alias/) at all.
+**Remember:** Kissmetrics aliases automatically the first time you call [`identify`](/docs/connections/spec/identify/) in client-side JavaScript, so in most cases you don't have to call [`alias`](/docs/connections/spec/alias/) at all.
 
 We don't recommend handling [`alias`](/docs/connections/spec/alias/) server side, but if you must, here's how to make it happen. There are two options: aliasing **in conjunction with client-side tracking** or aliasing when **tracking exclusively server side**.
 

@@ -1,11 +1,9 @@
 ---
 title: Clearbit Reveal Destination
 rewrite: true
+id: 57e0726680412f644ff36883
 ---
-
 [Clearbit Reveal](https://clearbit.com/segment) helps customers instantly match IP addresses with company names, and see full profiles for all site visitors. It turns your anonymous web traffic into a full company profile — complete with industry, employee count, funding details, and much more. You can find a list of the different attributes you can collect with Clearbit [here](https://clearbit.com/attributes).
-
-This destination is maintained by Clearbit. For any issues with the destination, [contact the Clearbit Support team](mailto:support@clearbit.com)
 
 ## Getting Started
 

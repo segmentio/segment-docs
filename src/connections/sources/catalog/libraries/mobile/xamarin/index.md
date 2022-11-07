@@ -2,8 +2,8 @@
 title: Analytics for Xamarin
 sourceTitle: 'Xamarin'
 sourceCategory: 'Mobile'
+id: wcssVcPJrc
 ---
-
 Our [Xamarin](http://xamarin.com/) Portable Class Library ([PCL](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/pcl/)) is the best way to integrate analytics into your Xamarin application. It lets you record analytics data from your C#, F#, and .NET code, and supports `PCL Profile 4.0 - Profile136`, which targets the following platforms:
 
 - .NET Framework 4 or later

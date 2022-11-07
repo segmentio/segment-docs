@@ -16,7 +16,7 @@ A *User Group* is a set of Team Members with a set of shared policies. A Segment
 
 ## Tokens
 
-You can generate tokens to programmatically access Segment resources using the [Segment Config API](/docs/config-api/).
+You can generate tokens to programmatically access Segment resources using the [Segment Public API](/docs/api/public-api).
 
 ![](images/token-overview.png)
 
@@ -28,12 +28,12 @@ Resources are the building blocks of Segment, and represent the different parts 
 - Sources
 - Destinations
 - Warehouses
-- Personas Spaces
+- Spaces
 - Protocols Tracking Plans
 
 ## Labels
 
-Workspace owners can use Labels to grant users access to groups of resources. When you add a Label to a Source or Personas Spaces, any users who are granted access to that Label gain access to those resources.
+Workspace owners can use Labels to grant users access to groups of resources. When you add a Label to a Source or Spaces, any users who are granted access to that Label gain access to those resources.
 
 To create or configure labels, go to the **Labels** tab in your workspace settings. Only workspace Owners can manage labels for the entire workspace.
 

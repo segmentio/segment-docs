@@ -4,9 +4,9 @@ strat: swift
 ---
 
 > info ""
-> Analytics-Swift is in public beta and currently supports [these destinations](https://github.com/segmentio/analytics-swift/tree/main/Examples/destination_plugins){:target="_blank"} with Segment actively adding more to the list. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this library.
+> Analytics-Swift supports [these destinations](/docs/connections/sources/catalog/libraries/mobile/swift-ios#supported-destinations) with more to come.
 
-If you’re using a different mobile library such as Analytics-iOS, follow these steps to migrate to the Analytics-Swift library:
+If you're using a different mobile library such as Analytics-iOS, follow these steps to migrate to the Analytics-Swift library:
 
 > success ""
 > Segment no longer supports installing Analytics-Swift via Cocoapods.
@@ -95,7 +95,7 @@ If you’re using a different mobile library such as Analytics-iOS, follow these
     ```
 5. Add a destination middleware.
 
-    If you don’t need to transform all of your Segment calls, and only want to transform the calls going to specific destinations, use Destination middleware instead of Source middleware. Destination middleware is available for device-mode destinations only.
+    If you don't need to transform all of your Segment calls, and only want to transform the calls going to specific destinations, use Destination middleware instead of Source middleware. Destination middleware is available for device-mode destinations only.
 
     <br>Before example:
     ```swift

@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Wigzo Destination
+id: 564e4f97e954a874ca44cbd3
 ---
-
 [Wigzo](https://www.wigzo.com/) is a Contextual Marketing Platform that helps marketers send smarter communication through email or in-app, by changing content dynamically based on User behavior. Using Wigzo's predictive technologies, companies can produce Dynamic content blocks which automatically populate in emails based on User behavior and Context.
 
 This destination is maintained by Wigzo. For any issues with the destination, [contact the Wigzo Support team](mailto:support@wigzo.com)

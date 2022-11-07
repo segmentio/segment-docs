@@ -10,9 +10,9 @@ excerpt: Detailed information about each Source. Learn how our API methods are i
 
 ## What is a source?
 
-In Segment, you create a source (or more than one!) for each website or app you want to track. While it's not required that you have a single Source for each server, site or app, we **highly recommend** creating a Source for each unique source of data.
+A Source is a website, server library, mobile SDK, or cloud application which can send data into Segment. It’s where your data originates. Add a Source to collect data to understand who your customers are and how they’re using your product. Create a source for each website or app you want to track. While it's not required that you have a single source for each server, site, or app, you should create a source for each unique source of data.
 
-You can create new sources using the button in the workspace view. Each source you create has a write key, which is used to send data to that source. For example, to load [`analytics.js`, the Segment JavaScript library](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/) on your page, the snippet on the [Quickstart Guide](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) includes:
+Each source you create has a write key, which is used to send data to that source. For example, to load [`analytics.js`, the Segment JavaScript library](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/) on your page, the snippet on the [Quickstart Guide](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) includes:
 
 
 ```js
@@ -49,9 +49,29 @@ analytics.identify('user_123', {
 {% endcomment %}
 ---
 
+
+## Types of sources
+
+Segment has five types of sources:
+* [Web](#website-libraries)
+* [Mobile](#mobile)
+* [Server](#server)
+* [Cloud App](#cloud-apps)
+* User-created [Source Functions](/docs/connections/sources/source-functions/)
+
+Web, Mobile, and Server sources send first-party data from your digital properties. Cloud-app sources send data about your users from your connected web apps such as [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/),  [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/), and [Braze](/docs/connections/sources/catalog/cloud-apps/braze/).
+
+## Create a source
+To create a source:
+1. Navigate to **Connections** and click **Add Source**.
+2. Click the Source you’d like to add. *Note:* More than 80% of workspaces start by adding their JavaScript website.
+3. Click **Add Source**.
+4. Enter a name for your source as well as any information on the setup page.
+5. Click **Add Source**.
+
 ## Website libraries
 
-[Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), our Javascript library, is the most powerful way to track customer data from your website. If you're just starting out, we recommend it over server-side libraries as the simplest installation for any website.
+[Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), the JavaScript library, is the most powerful way to track customer data from your website. If you're just starting out, Segment recommends it over server-side libraries as the simplest installation for any website.
 
 {% include components/reference-button.html
   href="https://segment.com/academy/intro/"
@@ -64,23 +84,22 @@ analytics.identify('user_123', {
 
 ## Mobile
 
-Our Mobile SDKs are the best way to simplify your iOS, Android, and Xamarin app tracking. We recommend them over server-side sources as the default installation for any mobile app.
+Segment's Mobile SDKs are the best way to simplify your iOS, Android, and Xamarin app tracking. Try them over server-side sources as the default installation for any mobile app.
 
-- [iOS SDK](/docs/connections/sources/catalog/libraries/mobile/ios)
-- [Android SDK](/docs/connections/sources/catalog/libraries/mobile/android)
-- [Android Wear SDK](/docs/connections/sources/catalog/libraries/mobile/android/wear)
-- [Xamarin SDK](/docs/connections/sources/catalog/libraries/mobile/xamarin)
 - [AMP](/docs/connections/sources/catalog/libraries/mobile/amp)
+- [Android](/docs/connections/sources/catalog/libraries/mobile/android)
+- [Android Wear](/docs/connections/sources/catalog/libraries/mobile/android/wear)
+- [iOS](/docs/connections/sources/catalog/libraries/mobile/ios)
+- [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/)
 - [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native)
-
-> info "Pilot Libraries"
-> Pilot releases of the [Analytics-Swift](https://github.com/segmentio/analytics-swift) and [Analytics-Kotlin](https://github.com/segmentio/analytics-kotlin) libraries are available. This library is governed by [Segment’s First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/), and should not be used in production scenarios.
+- [Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios/)
+- [Xamarin](/docs/connections/sources/catalog/libraries/mobile/xamarin)
 
 ---
 
 ## Server
 
-Our server-side sources let you send analytics data directly from your servers. We only recommend tracking from your servers when device-mode tracking (tracking on the client) won't work. Check out [our guide on server-side tracking](/docs/guides/how-to-guides/collect-on-client-or-server/) if you're not sure whether it makes sense for your use case.
+Segment's server-side sources let you send analytics data directly from your servers. Segment recommends tracking from your servers when device-mode tracking (tracking on the client) doesn't work. Check out the [guide on server-side tracking](/docs/guides/how-to-guides/collect-on-client-or-server/) if you're not sure whether it makes sense for your use case.
 
 {: .columns }
 - [Clojure](/docs/connections/sources/catalog/libraries/server/clojure/)
@@ -92,35 +111,24 @@ Our server-side sources let you send analytics data directly from your servers. 
 - [Ruby](/docs/connections/sources/catalog/libraries/server/ruby/)
 - [.NET](/docs/connections/sources/catalog/libraries/server/net/)
 
-> note "Cloud-mode tracking"
-> Server-side data management is when tag sends data to the Segment servers, which then pass that data to the destination system.
+> info "Cloud-mode tracking"
+> Server-side data management is when tag sends data to the Segment servers, which then passes that data to the destination system.
 
 ---
 
 ## Cloud Apps
 
-Cloud app sources empower you to pull together data from all of your different third-party tools into a Segment warehouse or to your other enabled integrated tools. There are two types of Cloud Apps: **Object** and **Event** sources.
+Cloud app sources empower you to pull together data from all of your different third-party tools into a Segment warehouse or to your other enabled integrated tools. They send data about your users from your connected web apps. There are two types of Cloud Apps: **Object** and **Event** sources.
 
-{% include components/reference-button.html href="/docs/connections/sources/sources-compare/" icon="guides.svg" title="Comparing Cloud Sources" description="Wondering which cloud-apps send which types of data? Check out the Cloud Sources comparison!" %}
+{% include components/reference-button.html href="/docs/connections/sources/sources-compare/" icon="guides.svg" title="Comparing Cloud Sources" description="Wondering which cloud-apps send which types of data? Check out the Cloud Sources comparison." %}
 
 ### Object Cloud Sources
 
 These Cloud App Sources can export data from its third party tool and import it directly into your Segment warehouse. Make sure you have a Segment warehouse enabled before you enable any of the following sources:
 
 {: .columns }
-- [Salesforce](/docs/connections/sources/catalog/cloud-apps/salesforce/)
-- [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/)
-- [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/)
-- [Facebook Ads](/docs/connections/sources/catalog/cloud-apps/facebook-ads/)
-- [Google Ads](/docs/connections/sources/catalog/cloud-apps/google-ads/)
-- [SendGrid](/docs/connections/sources/catalog/cloud-apps/sendgrid/)
-- [Mailchimp](/docs/connections/sources/catalog/cloud-apps/mailchimp/)
-- [Mandrill](/docs/connections/sources/catalog/cloud-apps/mandrill/)
-- [Marketo](/docs/connections/sources/catalog/cloud-apps/marketo/)
-- [Twilio](/docs/connections/sources/catalog/cloud-apps/twilio/)
-- [HubSpot](/docs/connections/sources/catalog/cloud-apps/hubspot/)
-- [Intercom](/docs/connections/sources/catalog/cloud-apps/intercom/)
-- [Salesforce Marketing Cloud](/docs/connections/sources/catalog/cloud-apps/salesforce-marketing-cloud/)
+{% capture source-type-list %} {% include content/cloud-source-type-list.md type="object" %} {%endcapture%}
+{{source-type-list | markdownify}}
 
 
 ### Event Cloud Sources
@@ -128,56 +136,26 @@ These Cloud App Sources can export data from its third party tool and import it 
 These Cloud App Sources can not only export data into your Segment warehouse, but they can **also** federate the exported data into your other enabled Segment integrations:
 
 {: .columns }
-- [Facebook Lead Ads](/docs/connections/sources/catalog/cloud-apps/facebook-lead-ads/)
-- [Activecampaign](/docs/connections/sources/catalog/cloud-apps/activecampaign/)
-- [Customer.io](/docs/connections/sources/catalog/cloud-apps/customer.io/)
-- [Drip](/docs/connections/sources/catalog/cloud-apps/drip/)
-- [Iterable](/docs/connections/sources/catalog/cloud-apps/iterable/)
-- [Klaviyo](/docs/connections/sources/catalog/cloud-apps/klaviyo/)
-- [Mailjet](/docs/connections/sources/catalog/cloud-apps/mailjet/)
-- [Nudgespot](/docs/connections/sources/catalog/cloud-apps/nudgespot/)
-- [Vero](/docs/connections/sources/catalog/cloud-apps/vero/)
-- [Blueshift](/docs/connections/sources/catalog/cloud-apps/blueshift/)
-- [Delighted](/docs/connections/sources/catalog/cloud-apps/delighted/)
-- [Braze](/docs/connections/sources/catalog/cloud-apps/braze/)
-- [Looker](/docs/connections/sources/catalog/cloud-apps/looker/)
-- [Radar](/docs/connections/sources/catalog/cloud-apps/radar/)
-- [Autopilot](/docs/connections/sources/catalog/cloud-apps/autopilothq/)
-- [Friendbuy](/docs/connections/sources/catalog/cloud-apps/friendbuy/)
-- [Amplitude Cohorts](/docs/connections/sources/catalog/cloud-apps/amplitude-cohorts/)
-- [Klenty](/docs/connections/sources/catalog/cloud-apps/klenty/)
-- [ProveSource](/docs/connections/sources/catalog/cloud-apps/provesource/)
-- [Moesif API Analytics](/docs/connections/sources/catalog/cloud-apps/moesif-api-analytics/)
+{% capture source-type-list %} {% include content/cloud-source-type-list.md type="event" %} {%endcapture%}
+{{source-type-list | markdownify}}
 
-To dig into some examples of how to pull this data together, check out our [sample queries](https://community.segment.com/category/warehouses) in the Segment Community.
+To dig into some examples of how to pull this data together, check out the [sample queries](https://community.segment.com/category/warehouses) in the Segment Community.
 
 
 ### HTTP
 
-If we don't have a library for your environment yet, you can always send your data directly to our [HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http/). All of Segment's other sources and platforms use the HTTP API to work their magic behind the scenes.
+If Segment doesn't have a library for your environment, you can send your data directly to the [HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http/). All of Segment's other sources and platforms use the HTTP API to work their magic behind the scenes.
 
 
 ### Pixel
 
-Our [Pixel Tracking API](/docs/connections/sources/catalog/libraries/server/pixel-tracking-api/) lets you track events from environments where you can't execute code, like tracking email opens.
+Segment's [Pixel Tracking API](/docs/connections/sources/catalog/libraries/server/pixel-tracking-api/) lets you track events from environments where you can't execute code, like tracking email opens.
 
 | Event name              | Description       |
 | ---                     | ---               |
-| Email Delivered         | Message has been successfully delivered to the receiving server |
-| Email Opened	          | Recipient has opened the HTML message. You need to enable Open Tracking for getting this type of event |
-| Email Link Clicked      | Recipient clicked on a link within the message. You need to enable Click Tracking for getting this type of event |
-| Email Bounced           | Receiving server could not or would not accept message |
-| Email Marked as Spam    | Recipient marked message as spam |
-| Unsubscribe             | Recipient clicked on message's subscription management link |
-
-### Source request
-
-We'd love to know what other sources of data you'd like to analyze. [Contact the Support Team](https://segment.com/help/contact/) to log a request.
-
----
-
-## Visual Tagger (Beta)
-> warning "Visual Tagger entering maintenance mode"
-> For more information, see the [Visual Tagger documentation](/docs/connections/sources/visual-tagger).
-
-[Getting started with Segment Visual Tagger](/docs/connections/sources/visual-tagger)
+| Email Delivered         | The message has been successfully delivered to the receiving server |
+| Email Opened	          | The recipient has opened the HTML message. You need to enable Open Tracking for getting this type of event. |
+| Email Link Clicked      | The recipient clicked on a link within the message. You need to enable Click Tracking for getting this type of event. |
+| Email Bounced           | The receiving server could not or would not accept message. |
+| Email Marked as Spam    | The recipient marked message as spam. |
+| Unsubscribe             | The recipient clicked on message's subscription management link. |

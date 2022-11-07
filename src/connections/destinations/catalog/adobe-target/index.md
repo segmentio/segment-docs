@@ -10,8 +10,7 @@ published: false
 coding and set up hassles of A/B testing to help you quickly discover which
 offers, experiences and messages truly engage your visitors.
 
-_**NOTE:** Adobe Target is currently in beta, and this doc was last
-updated on March 7, 2018. This means that there may still be some bugs for us to
+_**NOTE:** Adobe Target is currently in beta. This means that there may still be some bugs for us to
 iron out, and we're excited to hear your thoughts. If you are interested in
 joining or have any feedback to help us improve the Adobe Target
 Destination and its documentation, [let us know](https://segment.com/help/contact)!_
@@ -22,7 +21,7 @@ Destination and its documentation, [let us know](https://segment.com/help/contac
 
 1. Download the `at.js` file from Adobe and include it in the `head` of your
    website above the Segment snippet. Because Adobe Target is an A/B testing
-   tool, their Javascript must be loaded as soon as possible.
+   tool, their JavaScript must be loaded as soon as possible.
 2. Search for "Adobe Target" in the Catalog, select it, and choose which of your sources to connect the destination to. Note
    that no integration settings are listed in this tab because you must manage
    integration options using Adobe's UI or their `targetGlobalSettings` object.

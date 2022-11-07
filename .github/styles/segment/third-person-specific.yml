@@ -1,0 +1,14 @@
+extends: existence
+message: "Avoid using first-person like '%s'. Use Segment, a product name, or the other company name."
+# link: https://docs.microsoft.com/en-us/style-guide/grammar/person#avoid-first-person-plural
+level: warning
+ignorecase: true
+
+tokens:
+  - we
+  - we'(?:ve|re)
+  - ours?
+  - our
+  - us
+  - let's
+  # - their

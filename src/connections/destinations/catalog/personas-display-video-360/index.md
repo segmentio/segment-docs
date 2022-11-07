@@ -2,14 +2,14 @@
 title: Personas Google Display & Video 360 Destination
 strat: google
 hide-settings: true
+id: 5d4dd5b989eda01a09b5cdb1
 ---
-
 Google's [Display & Video (DV360)](https://marketingplatform.google.com/about/display-video-360/) service is an end-to-end campaign management tool that enables enterprise customers to plan, measure, and run display and video advertisements.
 
 > info ""
 > **Note**: You can connect to a Google Ad Manager account. For more information, see [4. Create an audience and finish DV360 configuration](#4-create-an-audience-and-finish-dv360-configuration) below.
 
-Segment's integration with DV360 enables Segment customers to sync audiences created in Personas with DV360 to enable centralized audience management and improved retargeting.
+Segment's integration with DV360 enables Segment customers to sync audiences created in Engage with DV360 to enable centralized audience management and improved retargeting.
 
 > warning ""
 > **Important**: You must meet certain implementation criteria to use the DV360 integration:
@@ -27,11 +27,10 @@ Segment's integration with DV360 enables Segment customers to sync audiences cre
 **Requirements**
 </td>
 <td markdown=1>
- - Business tier Segment customers with Personas
+ - Business tier Segment customers with Engage
  - One of the following sources, depending on type:
    - For web: analytics.js
    - For mobile app: a mobile source that passes an advertising identifier
- - A personas space. Non-Personas spaces are not compatible with DV360.
  - A Google Marketing Platform account
 </td>
 </tr>
@@ -40,7 +39,7 @@ Segment's integration with DV360 enables Segment customers to sync audiences cre
 **Audience appears as**
 </td>
 <td>
-An audience list with the name of your Personas Audience on the DV360 **All Audiences** screen
+An audience list with the name of your Engage Audience on the DV360 **All Audiences** screen
 </td>
 </tr>
 <tr>
@@ -99,13 +98,12 @@ No
 {% endcomment %}
 
 - **Requirements**:
-  - Business tier Segment customers with Personas
+  - Business tier Segment customers with Engage
   - One of the following sources, depending on type:
     - For web: analytics.js
     - For mobile app: a mobile source that passes an advertising identifier
-  - A Personas space. Non-personas spaces are not compatible with DV360.
   - A Google Marketing Platform account
-- **Audience appears as**: An audience list with the name of your Personas Audience on the **DV360 All Audiences** screen
+- **Audience appears as**: An audience list with the name of your Engage Audience on the **DV360 All Audiences** screen
 - **Destination rate limit**: None
 - **Lookback window allowed**: 30 days
 - **Historical backfill supported**: No
@@ -175,10 +173,10 @@ Segment requires the [DoubleClick Floodlight](/docs/connections/destinations/cat
 To configure DoubleClick Floodlight:
 
 > warning ""
-> **Prerequisite**: Createa a [Javascript Website](/docs/connections/sources/catalog/libraries/website/javascript/) source in your Segment workspace if one does not exist. Ensure that this source is configured to track visitors to your website. For more information about configuring Javascript sources, see the [Analytics.js Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
+> **Prerequisite**: Create a [JavaScript Website](/docs/connections/sources/catalog/libraries/website/javascript/) source in your Segment workspace if one does not exist. Ensure that this source is configured to track visitors to your website. For more information about configuring Javascript sources, see the [Analytics.js Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
 
 1. In your workspace, visit the **Catalog** and search for the **DoubleClick Floodlight** destination.
-2. Connect your Javascript Website source to the DoubleClick Floodlight destination, and configure the following settings:
+2. Connect your JavaScript Website source to the DoubleClick Floodlight destination, and configure the following settings:
    1. **Get DoubleClickID**: `On`
    2. **Google Network Id**: `segment`
    3. Your [Segment Write Key](/docs/connections/find-writekey/). You can retrieve your write key from the Settings tab on the Source.
@@ -189,12 +187,12 @@ To configure DoubleClick Floodlight:
 
 ### 3. Enable and configure the DV360 destination
 
-Connect the DV360 destination to the Personas source from which you'll send data to DV360.
+Connect the DV360 destination to the Engage source from which you'll send data to DV360.
 
 To enable the DV360 destination:
 
-1. Searh for and select **Personas Display & Video 360** in the destinations catalog.
-2. Select the Personas space you want to connect to the destination.
+1. Search for and select **Personas Display & Video 360** in the destinations catalog.
+2. Select the Space you want to connect to the destination.
 3. Switch the toggle to enable the destination.
 
 > info ""
@@ -202,7 +200,7 @@ To enable the DV360 destination:
 
 ### 4. Create an audience and finish DV360 configuration
 
-Create an [Audience](/docs/personas/audiences) in a new or existing Personas space. After you create the audience, you can select the Personas Display & Video 360 destination.
+Create an [Audience](/docs/personas/audiences) in a new or existing Engage space. After you create the audience, you can select the Personas Display & Video 360 destination.
 
 ![Select the destination](images/dv360-1-select-destination.png)
 
@@ -216,28 +214,24 @@ When you select the destination, you're prompted to complete the destination set
 | User Role Granted              | The permission you requested from Google. Either `Advertiser`, `Partner`, or `Publisher`. **Note:** Select `Publisher` only if you plan to connect to Google Ad Manager.  |
 | Account ID                     | The ID of your DV360 or Ad Manager account.                                                                                                                               |
 
-On Step 3: Review & Create, **deselect** the Historical Backfill option to ensure that audience sizes between Personas and DV360 align more closely.
+On Step 3: Review & Create, **deselect** the Historical Backfill option to ensure that audience sizes between Engage and DV360 align more closely.
 
 > info ""
 > **Note**: When you create a new audience based on a web source,  and select the Historical Backfill option, Segment computes the audience based on data already received, and sends that computed audience data to the destination, regardless of when a user actually joined the audience.
 >
-> In the case of the DV360 destination, due to DV360’s reliance on browser cookies from Doubleclick Floodlight, only users who visited the site *after* Doubleclick Floodlight was added to the site are eligible to sync to the DV360 destination.
+> In the case of the DV360 destination, due to DV360's reliance on browser cookies from Doubleclick Floodlight, only users who visited the site *after* Doubleclick Floodlight was added to the site are eligible to sync to the DV360 destination.
 >
-> As a result, if you select Historical Backfill for the DV360 Personas audience, the audience you first send to DV360 might be significantly smaller than the size displayed in Personas.
+> As a result, if you select Historical Backfill for the DV360 Engage audience, the audience you first send to DV360 might be significantly smaller than the size displayed in Engage.
 
 After you complete the set up process, allow up to 24 hours for Google to create the new audience list. Once the list is created, Segment can begin to sync users to that list. Google may require additional time to process the initial audience additions. The entire first sync to DV360 may require 24-48 hours to complete. As a result, the first few audience syncs after you create the audience may fail.
 
 Extra information from the API (settings, connection modes, etc.) are automatically pulled in here.
+{% include content/sync-frequency-note.md %}
 
 ## FAQ
-### What is Segment’s relationship with Google DV360 and is the data that Segment sends considered to be First or Third party?
+### What is Segment's relationship with Google DV360 and is the data that Segment sends considered to be First or Third party?
 
 Google considers Segment to be a DMP or Data Onboarder. Audience information pushed from Segment to your DV360 account is considered to be **First-Party** data.
-
-
-### I am a publisher, not an advertiser or agency. Is there a Google Ad Manager integration?
-
-Segment’s Google DV360 Destination is compatible with Google Ad Manager. To send audience data to Ad Manager, select `Publisher` as the **User Role Granted** as described [above](https://paper.dropbox.com/doc/Google-DV360-Personas-Destination--A9Fw9vhscekAnHIWRPtmXK~MAg-uvbuDlyY03HJYZAFvS6UZ#:uid=445237064167468263180208&h2=Create-an-audience-and-finish-).
 
 
 ### When will my data appear in DV360?
@@ -247,20 +241,20 @@ When you complete the connection between Segment and DV360, it can take from 24 
 
 ### What identifiers are needed to enable this integration?
 
-Google’s [documentation](https://developers.google.com/authorized-buyers/rtb/downloads/cookie-bulk-upload-proto) provides information about the accepted identifiers for this integration.
+Google's [documentation](https://developers.google.com/authorized-buyers/rtb/downloads/cookie-bulk-upload-proto) provides information about the accepted identifiers for this integration.
 
 
 - To use DV360 with web traffic, you must collect `anonymous_id` through the client-side `analytics.js` Source.
-- To use DV360 with mobile traffic, you must collect  `IDFA`s through Segment’s mobile sources.
+- To use DV360 with mobile traffic, you must collect  `IDFA`s through Segment's mobile sources.
 
 
-### Why is my audience in DV360 smaller than the audience that I see in Personas? What affects match rates?
+### Why is my audience in DV360 smaller than the audience that I see in Engage? What affects match rates?
 
-Match rates may differ between Personas and DV360 for the following reasons:
+Match rates may differ between Engage and DV360 for the following reasons:
 
 #### Go-forward data
 
-When you first preview and create an audience in Personas, the audience may contain many audience members. This is more likely if you select the **Historical Backfill** option. This does not reflect the audience that syncs to DV360 for the following reasons:
+When you first preview and create an audience in Engage, the audience may contain many audience members. This is more likely if you select the **Historical Backfill** option. This does not reflect the audience that syncs to DV360 for the following reasons:
 
 
 1. During an audience sync, Segment sends a list of `anon_id` values to Google. Google attempts to match those values in their match table, to find an associated `google_user_id`.
@@ -268,11 +262,11 @@ When you first preview and create an audience in Personas, the audience may cont
 
 As a result, you must have Doubleclick Floodlight and the DV360 integration in place before Google can match users and make them available for retargeting.
 
-To help reduce the difference between Personas and DV360 audience sizes, Segment recommends that you deselect the `Historical Backfill` option when you create the audience that syncs to DV360.
+To help reduce the difference between Engage and DV360 audience sizes, Segment recommends that you deselect the `Historical Backfill` option when you create the audience that syncs to DV360.
 
 #### Impact to third-party cookies: Browser Policies
 
-The DV360 integration for web traffic relies on Doubleclick Floodlight, which itself relies on a `google_user_id` cookie. While this cookie is “yours”, browsers treat this as a third-party cookie because it is served from Google’s servers, and not the same domain as your website. As browsers become more privacy-oriented, they block third-party cookies by default.
+The DV360 integration for web traffic relies on Doubleclick Floodlight, which itself relies on a `google_user_id` cookie. While this cookie is “yours”, browsers treat this as a third-party cookie because it is served from Google's servers, and not the same domain as your website. As browsers become more privacy-oriented, they block third-party cookies by default.
 
 Users who visit your website in Firefox and Safari, and who do not specifically allow third-party cookies, are not identifiable by Doubleclick Floodlight (`google_user_id`). This prevents Google from identifying a match between an `anon_id` sent from Segment, and results in lower match rates.
 
@@ -290,15 +284,15 @@ Sometimes, Google denies IDFA or `google_user_id` values when they consider them
 
 #### Modifying Lists Configuration in DV360
 
-Any changes to a DV360 list's configuration (for example, modifying the membership expiration from 540 days to a value that matches the time window on the personas audience) is **very risky** and **will likely** cause mismatches between Personas audiences and the lists in Google. Segment ensures that the integration works successfully only if there are no changes made to the configurations in DV360. DV360 lists are created with parameters that are known to be compatible with Personas. Configurations that differ from Segment's can cause mismatches by removing more users than intended, or by not accepting valid uploads.
+Any changes to a DV360 list's configuration (for example, modifying the membership expiration from 540 days to a value that matches the time window on the audience) is **very risky** and **will likely** cause mismatches between Engage audiences and the lists in Google. Segment ensures that the integration works successfully only if there are no changes made to the configurations in DV360. DV360 lists are created with parameters that are known to be compatible with Engage. Configurations that differ from Segment's can cause mismatches by removing more users than intended, or by not accepting valid uploads.
 
 
-### Why is the audience size larger in DV360 than in Personas?
+### Why is the audience size larger in DV360 than in Engage?
 
-Personas syncs every IDFA or `anonymous_id` value for each user in an audience. When DV360 receives this data, it does not de-duplicate in the event that multiple identifiers map to the same unique user. This may result in a larger audience list in Google compared to Personas.
+Engage syncs every IDFA or `anonymous_id` value for each user in an audience. When DV360 receives this data, it does not de-duplicate in the event that multiple identifiers map to the same unique user. This may result in a larger audience list in Google compared to Engage.
 
 
-### Why don’t I see matches in DV360?
+### Why don't I see matches in DV360?
 
 The most common cause of matches not appearing in DV360 is an error with Doubleclick Floodlight. From the website where tracking is enabled, open the Network inspector, and confirm that outgoing requests to `idsync.segment.com` appear.
 
@@ -308,7 +302,7 @@ The most common cause of matches not appearing in DV360 is an error with Doublec
 Google Chrome has committed to replacing third-party cookies with an alternative, but has not announced a timeframe for that alternative. Segment will not update this integration until these updates from Google are announced.
 
 
-### Can I use Personas audiences to target YouTube ads with this integration?
+### Can I use Engage audiences to target YouTube ads with this integration?
 
 No. YouTube (through DV360) does not support the type of lists that Segment provides.
 

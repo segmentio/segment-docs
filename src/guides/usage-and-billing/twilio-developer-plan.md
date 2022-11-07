@@ -6,9 +6,9 @@ hidden: true
 
 The Twilio Developer Plan allows you to collect and process your data at scale, consolidating your data from up to 3 sources into a single warehouse for complex querying.
 
-## How is this offer different from Segment’s Free Plan?
+## How is this offer different from Segment's Free Plan?
 
-The Twilio Developer Plan allows for 10,000 Monthly Tracked Users (MTUs), while Segment’s Free Plan limits MTUs to 1,000.
+The Twilio Developer Plan allows for 10,000 Monthly Tracked Users (MTUs), while Segment's Free Plan limits MTUs to 1,000.
 
 The Twilio Developer Plan is limited to 1 warehouse destination, while all other Segment plans also allow you to send data in real time to more than 300 destinations (all the analytics, marketing, advertising, and A/B testing tools you already use).
 
@@ -60,7 +60,7 @@ If you exceed the 10,000 MTU limit twice in a 6-month period, Segment locks acce
 
 Segment helps you simplify data collection, personalize user interactions, protect data integrity, and respect user privacy. Explore the [Destinations Catalog](/docs/connections/destinations/catalog/) to see all the tools you can send data to once you get data into Segment.
 
-On Business plans, Segment also offers two add-on products called [Protocols](/docs/protocols/) and [Personas](/docs/personas/).
+On Business plans, Segment also offers two add-on products called [Protocols](/docs/protocols/) and [Engage](/docs/engage/).
 
 - **Protocols** helps you automate and scale the [data quality best practices](/docs/protocols/tracking-plan/best-practices/) to improve data quality and trust across your company.
-- **Personas** is a powerful personalization platform that enables you to create unified customer profiles in Segment, to build and enrich audiences, and to activate audiences across marketing tools.
+- **Engage** is a powerful personalization platform that enables you to create unified customer profiles in Segment, to build and enrich audiences, and to activate audiences across marketing tools.

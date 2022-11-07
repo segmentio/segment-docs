@@ -1,10 +1,9 @@
 ---
 rewrite: true
 title: Amazon Kinesis Firehose Destination
+id: 59022a2270a3e552b955caa9
 ---
 [Amazon Kinesis Firehose](https://aws.amazon.com/kinesis/data-firehose/) provides way to load streaming data into AWS. It can capture, transform, and load streaming data into Amazon Kinesis Analytics, Amazon S3, Amazon Redshift, and Amazon Elasticsearch Service, enabling near real-time analytics with existing business intelligence tools and dashboards you're already using today. It's a fully managed service that automatically scales to match the throughput of your data and requires no ongoing administration. It can also batch, compress, and encrypt the data before loading it, minimizing the amount of storage used at the destination and increasing security.
-
-This document was last updated on February 05, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -41,7 +40,7 @@ To get started:
 	  2. When prompted to enter an Account ID, enter `595280932656`.
 	  3. Select the checkbox to enable **Require External ID**.
 	  4. Enter your Segment Source ID as the **External ID**. This can be found in Segment by navigating to **Connections > Sources** and choosing the source you want to connect to your Kinesis Firehose destination. Click the **Settings** tab and choose **API Keys**.
-    - **Note:** If you have multiple sources using Kinesis, enter one of their source IDs here for now and then follow the procedure outlined in the [Multiple Sources](#best-practices) section at the bottom of this doc once you’ve completed this step and saved your IAM role.
+    - **Note:** If you have multiple sources using Kinesis, enter one of their source IDs here for now and then follow the procedure outlined in the [Multiple Sources](#best-practices) section at the bottom of this doc once you've completed this step and saved your IAM role.
       5. When adding permissions to your new role, find the policy you created in step 2 and attach it.
 
 4. Create a new Kinesis Firehose Destination.
@@ -187,7 +186,7 @@ If you have many sources using Kinesis that it's impractical to attach all of th
 To set this value for a Secret ID:
 1. Go to the Kinesis Firehose destination settings from each of your Segment sources.
 2. Click **Secret ID**.
-    * **NOTE:** For security purposes, Segment sets your Segment Workspace ID as your Secret ID. If you’re using a Secret ID different from your Workspace ID, reach out to our support team so they can change it to make your account more secure.
+    * **NOTE:** For security purposes, Segment sets your Segment Workspace ID as your Secret ID. If you're using a Secret ID different from your Workspace ID, reach out to our support team so they can change it to make your account more secure.
 3. Find the IAM role you created for this destination in the AWS Console in **Services > IAM > Roles**.
 4. Select the role and navigate to the **Trust Relationships** tab.
 5. Click **Edit trust relationship**. You should see a snippet that looks something like this:

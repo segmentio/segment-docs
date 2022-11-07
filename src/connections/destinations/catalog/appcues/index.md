@@ -2,6 +2,7 @@
 rewrite: true
 title: Appcues Destination
 hide-cmodes: true
+id: 554926390a20f4e22f0fb38a
 ---
 [Appcues](https://www.appcues.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) adds an experience layer to your product so you can build user onboarding, NPS surveys, or feature announcements in minutes instead of weeks. The Appcues JavaScript Destination is open-source. You can browse the code [on GitHub](https://github.com/appcues/analytics.js-integration-appcues).
 

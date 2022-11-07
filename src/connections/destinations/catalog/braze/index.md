@@ -4,9 +4,13 @@ hide-cmodes: true
 hide-personas-partial: true
 hide-integrations-object: true
 maintenance: true
-maintenance-content: "New versions of this destination are available. See [Braze Cloud Mode (Actions)](/docs/connections/destinations/catalog/braze-cloud-mode-actions) and [Braze Web Mode (Actions)](/docs/connections/destinations/catalog/braze-web-device-mode-actions)."
----
+maintenance-content: >
+  Future updates to this destination are limited to security updates and bug fixes. New versions of this destination are available. See [Braze Cloud Mode (Actions)](/docs/connections/destinations/catalog/braze-cloud-mode-actions) for a server-side integration and [Braze Web Mode (Actions)](/docs/connections/destinations/catalog/braze-web-device-mode-actions) for a device-mode integration with access to Braze SDK features. 
+  <br />
+  If you use a Braze mobile [device-mode connection](/docs/connections/destinations/#connection-modes), for example to use Braze Content Cards or In-App Messaging, use the Braze (Classic) Destination. Segment will continue to make updates to the Segment Braze mobile device-mode SDK.
 
+id: 54efbf12db31d978f14aa8b5
+---
 [Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
 
 The Braze Destination is open-sourced on GitHub. Source code for the following integrations is available:
@@ -23,14 +27,13 @@ For issues with iOS or Android platforms, contact Braze support. For issues with
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Braze" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In the Destination Settings, add the **API Key**, found in the Braze Dashboard in *App Settings > Manage App Group*.
 4. Set up a new App Group REST API Key in the Braze Dashboard in *App Settings > Developer Console > API Settings*. For more information, see [Creating and Managing REST API Keys](https://www.braze.com/docs/api/basics/#creating-and-managing-rest-api-keys) in the Braze documentation. 
   - Select the `users.track` endpoint in the **User Data** section.
-5. If you're adding Braze using Analytics.js, Segment automatically loads the [Braze Web SDK](https://www.braze.com/documentation/Web/). Otherwise, depending on the source you've selected, include Braze's library by adding the following lines to your dependency configuration.
+5. If you're adding Braze using Analytics.js, Segment automatically loads the [Braze Web SDK](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup). Otherwise, depending on the source you've selected, include Braze's library by adding the following lines to your dependency configuration.
 
 
 ### iOS
@@ -67,7 +70,7 @@ To use the latest Braze SDK to collect IDFAs you must do the following:
 2. Update the Braze iOS Segment SDK to version 3.3.0 or greater.
 3. Import and add the AppTrackingTransparency (ATT) Framework.
    - Navigate to your project `Info.plist` and add a “Privacy - Tracking Usage Description”. This description appears in a popup when the application initializes in iOS 14. Applications prompt users to select if they want to allow tracking.
-4. Add Braze's `ABKIDFADelegate`. For more information on how to add this see [Braze’s IDFA Collection documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/other_sdk_customizations/#implementing-idfa-collection).
+4. Add Braze's `ABKIDFADelegate`. For more information on how to add this see [Braze's IDFA Collection documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/other_sdk_customizations/#implementing-idfa-collection).
 5. Follow [Segment's guide for collecting IDFA](/docs/connections/sources/catalog/libraries/mobile/ios/#idfa-collection-in-40-beta-and-later)
 
 ### Android
@@ -102,7 +105,7 @@ To use the latest Braze SDK to collect IDFAs you must do the following:
 
 <!-- LR, Mar2021: this should be a `react-dest` include but Braze was originally called Appboy-->
 
-To add the Braze device-mode SDK to a [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) project:
+To add the Braze device-mode SDK to a [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) project using Segment's `1.5.1≤` release:
 1. Navigate to the root folder of your project, and run a `yarn add appboy` command to add the destination SDK to your project.
 2. Add an `import` statement to your project, as in the example below.
    ```js
@@ -250,7 +253,7 @@ The example above would have "Purchased Item" as its `productId` and includes tw
 - `revenue`
 - `currency`
 
-Braze supports currency codes as specified in [their Purchase Object Specification](https://www.braze.com/docs/developer_guide/rest_api/user_data/#purchase-object-specification). Be aware that any currency reported other than USD displays in [the Braze UI in USD based on the exchange rate on the date it was reported](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/analytics/logging_purchases/#logging-purchases).
+Braze supports currency codes as specified in [their Purchase Object Specification](https://www.braze.com/docs/api/objects_filters/purchase_object/). Be aware that any currency reported other than USD displays in [the Braze UI in USD based on the exchange rate on the date it was reported](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/analytics/logging_purchases/#logging-purchases).
 
 You can add more product details in the form of key-value pairs to the `properties` object. The following reserved keys are not passed to Braze if included in your Track call's `properties` object:
 
@@ -287,7 +290,7 @@ In-app messages are registered for and requested by default. Disable this featur
 
 #### Web
 
-Instructions on how to set this up within Braze can be found in their [docs](https://www.braze.com/academy/Best_Practices/#in-app-message-behavior). Once setup, it allows you to trigger in-app message display as a result of several different event types. By default, all In-App Messages that a user is eligible for are automatically delivered to the user upon a session start event. A new session automatically starts when a user loads your site. If you'd like to force a new session for a user, simply make an identify with the corresponding [userId](/docs/connections/spec/identify/#user-id) for that user.
+Once configured, you can trigger in-app message display as a result of several different event types. By default, all In-App Messages that a user is eligible for are automatically delivered to the user upon a session start event. A new session automatically starts when a user loads your site. If you'd like to force a new session for a user, simply make an identify call with the corresponding [userId](/docs/connections/spec/identify/#user-id) for that user.
 
 If you don't want your site to immediately display new In-App Messages when they're received, you can disable automatic display and register your own display subscribers. To do this:
 
@@ -354,7 +357,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
 #### Android
 
-1. Follow the directions in Braze's [push notification docs](https://www.braze.com/documentation/Android/#push-notifications).
+1. Follow the directions in Braze's [push notification docs](https://www.braze.com/docs/developer_guide/platform_integration_guides/android/push_notifications/android/implementation_guide/).
 2. If you don't have Braze automatically register for push (for example, you pass the push token from an FCM or manual GCM registration) you need to ensure you call `registerAppboyPushMessages` after Braze is initialized. You can do this by checking if Braze is initialized before trying to pass the push token, and waiting for initializing to set if not.
 
     You can do this in an `onIntegrationReady` method:
@@ -385,7 +388,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
 #### Client
 
-1. To support push notifications on Chrome, you'll need to enable FCM/GCM as well as configure your site. Check out steps [one and two here, for detailed instructions on both](https://www.braze.com/documentation/Web/#step-1-to-support-chrome-enable-fcmgcm).
+1. To support push notifications on Chrome, you'll need to enable FCM/GCM as well as configure your site. Check out steps [one and two here for detailed instructions on both](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-1-to-support-chrome-enable-fcmgcm).
 
 2. Browser Registration. In order for a browser to receive push notifications, you must register it for push by calling:
 
@@ -419,13 +422,13 @@ analytics.ready(function() {
 });
 ```
 
-3. Set your GCM/FCM server API key and SenderID on the Braze dashboard. You can find more details for this [here](https://www.braze.com/documentation/Web/#step-4-set-your-gcmfcm-server-api-key-and-senderid-on-the-Braze-dashboard).
+3. Set your GCM/FCM server API key and SenderID on the Braze dashboard. You can find more details for this [here](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-4-set-your-gcmfcm-server-api-key-and-senderid-on-the-Braze-dashboard).
 
-4. To support push notifications on Safari, add your Website Push ID into your Segment Settings UI and Segment sends it when the Braze Web SDK initializes. To get your Website Push ID, follow the first two bullet points in [these instructions](https://www.braze.com/documentation/Web/#step-5-configure-safari-push).
+4. To support push notifications on Safari, add your Website Push ID into your Segment Settings UI and Segment sends it when the Braze Web SDK initializes. To get your Website Push ID, follow the first two bullet points in [these instructions](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-5-configure-safari-push).
 
 ### Soft Push Prompts
 
-1. Follow [step one](https://www.braze.com/documentation/Web/#soft-push-prompts) to create a "Prime for Push" in-app messaging Campaign on the Braze dashboard.
+1. Follow [step one](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#soft-push-prompts) to create a "Prime for Push" in-app messaging Campaign on the Braze dashboard.
 
 2. Disable your [Automatically Send In-App Messages Destination setting](/docs/connections/destinations/catalog/braze/#settings). By default, it is enabled when you enable the Braze destination.
 
@@ -468,7 +471,7 @@ analytics.ready(function() {
  });
 ```
 
-For more details on this snippet, check out the Braze's docs [here](https://www.braze.com/documentation/Web/#soft-push-prompts).
+For more details on this snippet, check out Braze's docs [here](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#soft-push-prompts).
 
 **Note:** Place this snippet outside of your [Segment Snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) within your `script` tag.
 
@@ -504,11 +507,11 @@ There are three major [versions](https://github.com/Appboy/appboy-web-sdk/blob/m
 
 If you have never implemented Braze on your site, either using Segment or natively, you can ignore this section. If you have had Braze running before and want to migrate to Version 2+ **you must ensure you remove all references to `appboy.min.css` from your site.** This is very important as it will cause issues with Version 2+ of their SDK. Once you have done this you can select Version 2+ using the "Braze Web SDK Version" with your Segment Settings UI.
 
-## Using Braze with Personas
+## Use Braze with Engage
 
-You can send computed traits and audiences created in Personas to Braze, and use them to run personalization campaigns or power messages to users.
+You can send computed traits and audiences created in Engage to Braze, and use them to run personalization campaigns or power messages to users.
 
-Personas sends [event data](/docs/glossary/#event) about your users to Braze using an `identify` call and/or `track` call.
+Engage sends [event data](/docs/glossary/#event) about your users to Braze using an `identify` call and/or `track` call.
 
 
 ### Computed Traits in Braze
@@ -522,9 +525,9 @@ You can choose which method to use (or choose to use both) when you connect the 
 
 #### Computed Traits using Identify calls
 
-You can send computed traits created in Personas as `identify` calls to create custom attributes in Braze. The custom attribute is set to the value of the computed trait. The custom attribute name appears as the snake_cased version of the computed trait name you provide.
+You can send computed traits created in Engage as `identify` calls to create custom attributes in Braze. The custom attribute is set to the value of the computed trait. The custom attribute name appears as the snake_cased version of the computed trait name you provide.
 
-For example, if you have a Personas computed trait for “Last Product Viewed Item,” that would be named “last_product_viewed_item” in the user’s Personas profile.
+For example, if you have a computed trait for “Last Product Viewed Item,” that would be named `last_product_viewed_item` in the user's Engage profile.
 
 ![](images/last_viewed-user.png)
 
@@ -532,24 +535,24 @@ If the “Last Product Viewed Item” trait is connected to Braze to send `ident
 
 ![](images/last_viewed-identify.png)
 
-The following custom attribute, “last_product_viewed_item” appears in Braze on the user’s profile:
+The following custom attribute, “last_product_viewed_item” appears in Braze on the user's profile:
 
 ![](images/last_viewed-id-braze.png)
 
 #### Computed Traits using Track calls
 
-You can also send computed traits created in Personas as `track` calls to create custom events in Braze. When a Personas calculates a computed trait for a user, it sends a `Trait Computed` event to Braze.
+You can also send computed traits created in Engage as `track` calls to create custom events in Braze. When Engage calculates a computed trait for a user, it sends a `Trait Computed` event to Braze.
 
 Using the same example as above, if a user has a computed trait for “Last Product Viewed Item” and the trait is connected to Braze and configured to send `track` calls:
 
 ![](images/last_viewed-track.png)
 
-The following custom event appears in Braze on the user’s profile:
+The following custom event appears in Braze on the user's profile:
 
 ![](images/last_viewed-track-braze.png)
 
 > info "Tip"
-> You can change the name of the “computed trait” event that Braze receives in the Personas Destination Connection Settings.
+> You can change the name of the “computed trait” event that Braze receives in the Destination Settings accessed through Engage.
 
 ### Audiences in Braze
 
@@ -562,7 +565,7 @@ You can choose which method to use (or choose both) when you connect the audienc
 
 #### Audiences using Identify calls
 
-You can send audiences created in Personas as `identify` calls to create custom attributes in Braze. If a user is added to an audience, Personas sends a custom attribute to Braze with a value of `true`. The custom attribute name is be the snake_cased version of the audience name in Personas.
+You can send audiences created in Engage as `identify` calls to create custom attributes in Braze. If a user is added to an audience, Engage sends a custom attribute to Braze with a value of `true`. The custom attribute name is be the snake_cased version of the audience name in Engage.
 
 For example, if a user is in a “Dormant Shoppers” audience:
 
@@ -572,65 +575,65 @@ And the “Dormant Shoppers” audience is connected to Braze to send `identify`
 
 ![](images/dormant-identify.png)
 
-The “dormant_shoppers” custom attribute appears in Braze on the user’s profile:
+The “dormant_shoppers” custom attribute appears in Braze on the user's profile:
 
 ![](images/dormant-identify-braze.png)
 
 
 #### Audiences using Track calls
 
-You can also send audiences created in Personas as `track` calls to create custom events in Braze. If a user is added to an audience, Personas sends an `Audience Entered` event to Braze. If a user leaves the audience (because they no longer satisfy the criteria) Personas sends an `Audience Exited` event to Braze.
+You can also send audiences created in Engage as `track` calls to create custom events in Braze. If a user is added to an audience, Engage sends an `Audience Entered` event to Braze. If a user leaves the audience (because they no longer satisfy the criteria) Engage sends an `Audience Exited` event to Braze.
 
-Using the same example as above, if a user is in a “Dormant Shoppers” audience and the audience is connected to Braze to send `track` calls, Personas sends the following “Audience Entered” and “Audience Exited” events. (You can edit the names of these events from this screen.)
+Using the same example as above, if a user is in a “Dormant Shoppers” audience and the audience is connected to Braze to send `track` calls, Engage sends the following “Audience Entered” and “Audience Exited” events. (You can edit the names of these events from this screen.)
 
 ![](images/dormant-track.png)
 
-The following custom event appears in Braze on the user’s profile when they enter the audience:
+The following custom event appears in Braze on the user's profile when they enter the audience:
 
 ![](images/dormant-track-braze.png)
 
 > info "Tip"
-> You can change the name of the “Audience Entered” event that Braze receives in the Personas Destination Connection Settings.
+> You can change the name of the “Audience Entered” event that Braze receives in the Destination Settings accessed through Engage.
 
-## Setting up Personas with Braze
+## Setting up Engage with Braze
 
-To send computed traits or audiences to Braze, you first must connect it to your Personas space. Once it’s set up, you can select Braze as a destination for Personas data each time you create new computed traits or audiences.
+To send computed traits or audiences to Braze, you first must connect it to Engage. Once it's set up, you can select Braze as a destination for Engage data each time you create new computed traits or audiences.
 
-1. Navigate to the **Destinations** tab in your Personas space.
-2. Search for **Braze** and add the destination to your Personas space.
+1. Navigate to the **Destinations** tab in Engage Settings.
+2. Search for **Braze** and add the destination to your Engage.
 3. On the set up screen, enter in your App Identifier, REST API Key and Data center for Braze.
 
 
-## Braze Personas Quick Info
+## Braze Engage Quick Info
 
-- **Personas Destination type**: [Event](/docs/glossary/#event) - data is delivered to this Destination one-by-one on a realtime basis
+- **Engage Destination type**: [Event](/docs/glossary/#event) - data is delivered to this Destination one-by-one on a real-time basis
 - **Support for Track and Identify?**: Yes, both are supported.
 - **Traits and Audiences created by**: Computed traits and audiences are added as custom attributes using `identify` calls. You can also send computed traits and audiences as custom events using `track` calls.
-- **Must create audience_name field before Personas can update those values?**: No. If sent as an `identify` call, Personas automatically creates the computed trait or audience name as a custom attribute in Braze. If sent as a `track` call, Personas automatically creates a custom event in Braze.
+- **Must create audience_name field before Engage can update those values?**: No. If sent as an `identify` call, Engage creates the computed trait or audience name as a custom attribute in Braze. If sent as a `track` call, Engage creates a custom event in Braze.
 - **Computed trait appears as**: A snake cased version of the computed trait name (for example, `last_product_viewed: 'Sweater'`) with a string for the value of the computed trait.
 - **Audience appears as**: A snake cased version of the audience name (for example, `order_completed_last_30days: true` ) with a boolean value of `true` indicates that a user is in the audience.
-- **Destination rate limit**: 100 requests per second (this is at the Personas Space-level, for example shared across all Audiences & Computed Traits syncing from 1 Personas Space to Braze. This rate limit would not be shared by multiple Personas Spaces.)
+- **Destination rate limit**: 100 requests per second (this is at the Space-level, for example shared across all Audiences & Computed Traits syncing from 1 Space to Braze. This rate limit would not be shared by multiple Spaces.)
 - **Lookback window allowed:** Yes, unlimited.
 - **Identifiers required** : `userId` or `braze_id`
 - **Identifiers accepted** : `userId` or `braze_id`
-- **Client or Server-Side Connection**: Server-side connection for Personas
+- **Client or Server-Side Connection**: Server-side connection for Engage
 
 ## Debounce with Middlewares
 
-If you use the Braze destination in either [cloud or device mode](/docs/connections/destinations/#connection-modes) you can save Braze costs by "debouncing" duplicate `identify()` calls from Segment by adding our [open-source Middleware tool](https://github.com/segmentio/segment-braze-mobile-middleware) to your implementation. More information about this tool and how it works [is available in the project's README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).
+If you use the Braze destination in either [cloud or device mode](/docs/connections/destinations/#connection-modes) you can save Braze costs by "debouncing" duplicate `identify()` calls from Segment by adding the [open-source Middleware tool](https://github.com/segmentio/segment-braze-mobile-middleware) to your implementation. More information about this tool and how it works [is available in the project's README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).
 
 
-## Braze Personas FAQs
+## Braze Engage FAQs
 
 #### Which ID does Segment match on when sending data to Braze?
 
-By default, Personas data is sent to Braze by matching the `userId`. The Segment `userId` maps to Braze’s External ID. If the user is anonymous and does not have a `userId`, you can also choose to send data using the `braze_id` auto-generated by Braze. To use `braze_id`, you must pass the `braze_id` to Segment as a [Segment externalId](/docs/personas/identity-resolution/externalids/) in the `context.integrations.Braze.braze_id` object. If `braze_id` is sent as an `externalId` **and** `userId` is missing, Personas matches on `braze_id` when sending to Braze. You can check the **Identities** tab on a user’s Personas profile to confirm that `braze_id` was successfully picked up as an `externalId`.
+By default, Engage data is sent to Braze by matching the `userId`. The Segment `userId` maps to Braze's External ID. If the user is anonymous and does not have a `userId`, you can also choose to send data using the `braze_id` auto-generated by Braze. To use `braze_id`, you must pass the `braze_id` to Segment as a [Segment externalId](/docs/profiles/identity-resolution/externalids/) in the `context.integrations.Braze.braze_id` object. If `braze_id` is sent as an `externalId` **and** `userId` is missing, Engage matches on `braze_id` when sending to Braze. You can check the **Identities** tab on a user's Engage profile to confirm that `braze_id` was successfully picked up as an `externalId`.
 
 ![](images/braze-anonid.png)
 
-You can find the `braze_id` in the Braze UI or by using Braze’s [Users by Identifier API Endpoint](https://www.braze.com/docs/api/endpoints/export/user_data/post_users_identifier/).
+You can find the `braze_id` in the Braze UI or by using Braze's [Users by Identifier API Endpoint](https://www.braze.com/docs/api/endpoints/export/user_data/post_users_identifier/){:target="_blank"}.
 
-#### Do Personas audiences sync with [Braze Segments](https://www.braze.com/docs/user_guide/engagement_tools/segments/)?
+#### Do Engage audiences sync with [Braze Segments](https://www.braze.com/docs/user_guide/engagement_tools/segments/)?
 No. Audiences are sent to Braze as either custom attributes or custom events. You can use these events and attributes when building your Braze Segments and Campaigns.
 
 #### How long do my computed traits and audiences exist in Braze?

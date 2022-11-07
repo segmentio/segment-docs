@@ -1,6 +1,9 @@
 ---
 title: 'Vero Source'
+id: FOkpxVzfJJ
 ---
+{% include content/source-region-unsupported.md %}
+
 Vero is an email marketing tool that lets you set up automated emails to your users that get sent after they've completed certain actions. [Visit Website](http://getvero.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
 
 Take your company's email analysis to the next level by **adding Vero as a Source to Segment.** Segment automatically  collects email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 

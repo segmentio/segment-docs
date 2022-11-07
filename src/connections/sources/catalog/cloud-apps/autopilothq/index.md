@@ -1,6 +1,9 @@
 ---
 title: Autopilot Source
+id: R7eWaTLYUs
 ---
+{% include content/source-region-unsupported.md %}
+
 [Autopilot](https://autopilothq.com/) makes automating customer journeys as simple as drawing on a whiteboard. Engage at just the right time with personalized emails, in-app messages, SMS, and postcards.
 
 Take your company's email analysis to the next level by adding Autopilot as a Source to Segment. Segment automatically collects email events like Email Delivered and Email Opened, forwards them to your destinations, and loads them into your data warehouse.

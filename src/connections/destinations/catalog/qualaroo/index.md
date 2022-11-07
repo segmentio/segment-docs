@@ -1,11 +1,9 @@
 ---
 rewrite: true
 title: Qualaroo Destination
+id: 54521fda25e721e32a72eee8
 ---
-
 [Qualaroo](https://qualaroo.com/home) is a user testing tool that lets you add a survey to any page on your site, so you can get targeted user feedback as the user is performing a task. The `analytics.js` Qualaroo Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-qualaroo).
-
-This document was last updated on September 5, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -13,8 +11,8 @@ This document was last updated on September 5, 2018. If you notice any gaps, out
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Qualaroo" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter your `Customer ID` from your Qualaroo Javascript library URL. So if your URL is: `s3.amazonaws.com/ki.js/70009/gAJ.js`, your `Customer ID` would be: `70009`.
-4. Enter your `Site Token` from your Qualaroo Javascript library URL. So if your URL is: `s3.amazonaws.com/ki.js/70009/gAJ.js`, your `Site Token` would be: `gAJ`.
+3. Enter your `Customer ID` from your Qualaroo JavaScript library URL. So if your URL is: `s3.amazonaws.com/ki.js/70009/gAJ.js`, your `Customer ID` would be: `70009`.
+4. Enter your `Site Token` from your Qualaroo JavaScript library URL. So if your URL is: `s3.amazonaws.com/ki.js/70009/gAJ.js`, your `Site Token` would be: `gAJ`.
 5. We'll initialize Qualaroo with your `Customer ID` and your `Site Token` upon loading `analytics.js`. Qualaroo will automatically start displaying your targeted surveys, according to the configurations you established on Qualaroo.
 
 ## Identify

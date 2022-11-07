@@ -1,11 +1,9 @@
 ---
 rewrite: true
 title: tvsquared Destination
+id: 54521fdb25e721e32a72eefc
 ---
-
 [TV Squared](https://tvsquared.com/) enables you to pull same-day TV performance analytics so you can manage TV spend, and create data-driven TV media plans based on network, days, programs, and genres. Our TV Squared Destination is open-source. You can browse the code [in GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/tvsquared).
-
-This document was last updated on April 20th, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact/)!
 
 ## Getting Started
 
@@ -13,11 +11,11 @@ This document was last updated on April 20th, 2018. If you notice any gaps, outd
 
 1. From the Segment web app, click **Catalog**.
 
-2. Search for "TV Squared" in the Catalog, select it, and choose which of your Javascript sources to connect the destination to.
+2. Search for "TV Squared" in the Catalog, select it, and choose which of your JavaScript sources to connect the destination to.
 
 3. Add your TV Squared Brand ID and Client ID to your Segment Settings UI. You can find this within your TV Squared dashboard.
 
-4. Segment automatically loads TV Squared's Javascript tracking snippet onto the page once analytics.js loads. Make sure you remove TV Squared's snippet from your code.
+4. Segment automatically loads TV Squared's JavaScript tracking snippet onto the page once analytics.js loads. Make sure you remove TV Squared's snippet from your code.
 
 5. TV Squared starts automatically recording events after approximately 45 minutes, once our CDN is updated.
 

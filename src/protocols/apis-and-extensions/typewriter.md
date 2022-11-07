@@ -9,7 +9,7 @@ At a high-level, Typewriter can take an event from your Tracking Plan like this 
 
 ![Order Completed Event in a Protocols Tracking Plan](images/typewriter-order-completed.png)
 
-And use it to generate a typed analytics call in different languages:
+Typewriter uses the event to generate a typed analytics call in different languages:
 
 ```js
 // Example client in your web app
@@ -28,14 +28,12 @@ SEGTypewriterAnalytics.orderCompleted(
   total: 39.99
 )
 ```
-> note ""
-> Typewriter can currently generate clients for `analytics.js`, `analytics-node`, `analytics-ios` and `analytics-android`.
+> info ""
+> Typewriter can generate clients for `analytics.js`, `analytics-node`, `analytics-swift` and `analytics-kotlin`. For use with the `analytics-ios` and `analytics-android` SDK, use [Typewriter v7](/docs/protocols/apis-and-extensions/typewriter-v7).
 
 These generated clients are embedded with metadata from your Tracking Plan, which contextualizes your analytics instrumentation, and reduces (or entirely eliminates!) incorrect instrumentations in your production environments. In your editor, you can access event names, descriptions, property names, types and more:
 
 ![Event name intellisense](images/typewriter-event-names.png)
-
-![Property name intellisense](images/typewriter-property-names.png)
 
 You can also configure Typewriter to validate analytic events at runtime, which can alert you to instrumentation errors during development and testing. Typewriter can warn you about missing required properties, invalid enum values, regex mismatches, and any other advanced [JSON Schema](https://json-schema.org/understanding-json-schema/) you configure in your Tracking Plan.
 
@@ -45,7 +43,7 @@ You can use this with a test suite to automatically fail your unit tests if the 
 
 ![Example unit tests failing because of violations](images/typewriter-test-suite.png)
 
-If you're using a statically typed language (such as TypeScript, Java, Objective-C, Swift, etc.), then you also get access to compile-time warnings about your instrumentation:
+If you use a statically typed language (such as TypeScript, Java, Objective-C, or Swift), you get access to compile-time warnings about your instrumentation:
 
 ![Example compile-time validation warnings](images/typewriter-compile-time-warnings.png)
 
@@ -54,10 +52,13 @@ Typewriter also helps teams adopt [analytics best practices](/docs/protocols/tra
 To get started, check out one of the quickstart guides below:
 - [Browser Quickstart](#browser-quickstart)
 - [Node.js Quickstart](#nodejs-quickstart)
-- [iOS Quickstart](#ios-quickstart)
-- [Android Quickstart](#android-quickstart)
+- [Swift Quickstart](#swift-quickstart)
+- [Kotlin Quickstart](#kotlin-quickstart)
 
-> Have feedback on Typewriter? Consider opening a [GitHub issue here](https://github.com/segmentio/typewriter/issues/new).
+> info ""
+> For use with the Analytics-iOS and Analytics-Android SDK, use [Typewriter v7](/docs/protocols/apis-and-extensions/typewriter-v7).
+
+Have feedback on Typewriter? Consider opening a [GitHub issue here](https://github.com/segmentio/typewriter/issues/new).
 
 ## Prerequisites
 
@@ -86,40 +87,34 @@ Once you've installed Node and NPM, run the `--version` commands again to verify
 
 ## Browser Quickstart
 
-Before you start, make sure you have `node` installed using the instructions in the [prerequisites](#prerequisites) above.
+To get started with Typewriter in your browser:
+1. Make sure you have `node` installed using the instructions in the [prerequisites](#prerequisites) above.
+2. Install `analytics.js` in your app. For now, you just need to complete [`Step 1: Copy the Snippet`](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) from the [`analytics.js` Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
+3. Once you've got `analytics.js` installed, add Typewriter as a developer dependency in your project:
 
-Next, install `analytics.js` in your app. For now, you just need to complete [`Step 1: Copy the Snippet`](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) from the [`analytics.js` Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
+    ```sh
+    $ npm install --save-dev typewriter
+    ```
 
-Once you've got `analytics.js` installed, add Typewriter as a developer dependency in your project:
+4. Run `npx typewriter init` to use the Typewriter quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. When you run the command, it creates a `typewriter.yml` file in your project. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
 
-```sh
-$ npm install --save-dev typewriter
-```
+    The command also adds a new Typewriter client in `./analytics` (or whichever path you configured). You can import this client into your project, like so:
 
-Typewriter comes with a quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. To use this wizard, run:
+    ```js
+    // Import your auto-generated Typewriter client:
+    const typewriter = require('./analytics')
 
-```sh
-$ npx typewriter init
-```
-> note ""
-> You can regenerate your Typewriter client by running `npx typewriter`. You need to do this each time you update your Tracking Plan.
+    // Issue your first Typewriter track call!
+    typewriter.orderCompleted({
+      orderID: 'ck-f306fe0e-cc21-445a-9caa-08245a9aa52c',
+      total:   39.99
+    })
+    ```
 
-Running the command creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
+> info ""
+> Run `npx typewriter` to regenerate your Typewriter client. You need to do this each time you update your Tracking Plan.
 
-The command also adds a new Typewriter client in `./analytics` (or whichever path you configured). You can import this client into your project, like so:
-
-```js
-// Import your auto-generated Typewriter client:
-const typewriter = require('./analytics')
-
-// Issue your first Typewriter track call!
-typewriter.orderCompleted({
-  orderID: 'ck-f306fe0e-cc21-445a-9caa-08245a9aa52c',
-  total:   39.99
-})
-```
-
-To help you minimize your bundle size, Typewriter supports [tree-shaking](https://webpack.js.org/guides/tree-shaking/) using named exports. All generated analytics calls are automatically directly exported, so you can import them like so:
+To help you minimize your bundle size, Typewriter supports [tree-shaking](https://webpack.js.org/guides/tree-shaking/){:target="_blank"} using named exports. All generated analytics calls generate and export automatically, so you can import them like so:
 
 ```js
 // Import your auto-generated Typewriter client:
@@ -132,133 +127,101 @@ orderCompleted({
 })
 ```
 
-Typewriter wraps your analytics calls in an [ES6 `Proxy`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy), which helps protect your application from crashing if you make analytics calls with a generated function that doesn't exist. For example, if an `Order Completed` event didn't exist in your Tracking Plan in the first example above, then your app would crash with a `TypeError: typewriter.orderCompleted is not a function`. However, since `typewriter` dynamically proxies the underlying function calls, it can detect if a function does not exist, and handle it for you. Typewriter logs a warning message, then fires an `Unknown Analytics Call Fired` event into your source. Our team has found this useful when migrating JavaScript projects to Typewriter in bulk, since it gives us confidence that we won't introduce regressions that crash our application. Keep in mind that proxying does not work with named exports.
+Typewriter wraps your analytics calls in an [ES6 `Proxy`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy){:target="_blank"}, which helps protect your application from crashing if you make analytics calls with a generated function that doesn't exist. For example, if an `Order Completed` event didn't exist in your Tracking Plan in the first example above, then your app would crash with a `TypeError: typewriter.orderCompleted is not a function`. However, since Typewriter dynamically proxies the underlying function calls, it can detect if a function doesn't exist, and handle it for you. Typewriter logs a warning message, then fires an `Unknown Analytics Call Fired` event into your source. This helps to prevent regressions when you migrate JavaScript projects to Typewriter in bulk. Keep in mind that proxying doesn't work with named exports.
 
-You're now good to go! To learn more about some of the advanced configuration options that Typewriter supports, read on.
+## Node.js Quickstart
 
-## Nodejs Quickstart
+To get started with Nodejs:
+1. Make sure you have `node` installed using the instructions in the [prerequisites](#prerequisites) above.
+2. Install `analytics-node` in your app. For now, you just need to complete [`Step 2: Install the Module`](/docs/connections/sources/catalog/libraries/server/node/quickstart/#step-2-install-the-module) from the [`analytics-node` Quickstart Guide](/docs/connections/sources/catalog/libraries/server/node/quickstart).
+3. Once you have `analytics-node` installed, add Typewriter as a developer dependency in your project:
 
-Before you start, make sure you have `node` installed using the instructions in the [prerequisites](#prerequisites) above.
+    ```sh
+    $ npm install --save-dev typewriter
+    ```
 
-Next, install `analytics-node` in your app. For now, you just need to complete [`Step 2: Install the Module`](/docs/connections/sources/catalog/libraries/server/node/quickstart/#step-2-install-the-module) from the [`analytics-node` Quickstart Guide](/docs/connections/sources/catalog/libraries/server/node/quickstart).
+4. Run `npx typewriter init` to use the Typewriter quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. When you run the command, it creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference). The command also adds a new Typewriter client in `./analytics` (or whichever path you configured). You can import this client into your project, like so:
 
-Once you have `analytics-node` installed, add Typewriter as a developer dependency in your project:
+    ```js
+    // Initialize analytics-node, per the analytics-node guide above.
+    const Analytics = require('analytics-node')
+    const analytics = new Analytics('YOUR_WRITE_KEY')
 
-```sh
-$ npm install --save-dev typewriter
+    // Import your auto-generated Typewriter client.
+    const typewriter = require('./analytics')
+
+    // Pass in your analytics-node instance to Typewriter.
+    typewriter.setTypewriterOptions({
+      analytics: analytics
+    })
+
+    // Issue your first Typewriter track call!
+    typewriter.orderCompleted({
+      orderID: 'ck-f306fe0e-cc21-445a-9caa-08245a9aa52c',
+      total:   39.99
+    })
+    ```
+
+> info ""
+> Run `npx typewriter` to regenerate your Typewriter client. You need to do this each time you update your Tracking Plan.
+
+Typewriter wraps your analytics calls in an [ES6 `Proxy`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy), which helps protect your application from crashing if you make analytics calls with a generated function that doesn't exist. For example, if an `Order Completed` event didn't exist in your Tracking Plan in the first example above, then your app would crash with a `TypeError: typewriter.orderCompleted is not a function`. However, since `typewriter` dynamically proxies the underlying function calls, it can detect if a function does not exist, and handle it for you. Typewriter logs a warning message, then fires an `Unknown Analytics Call Fired` event into your source. This helps to prevent regressions when you migrate JavaScript projects to Typewriter in bulk. Keep in mind that proxying doesn't work with named exports.
+
+## Swift Quickstart
+
+> info ""
+> For use with the `analytics-ios` SDK, use [Typewriter v7](/docs/protocols/apis-and-extensions/typewriter-v7).
+
+To get started using Typewriter with Swift:
+1. Make sure you have `node` installed using the instructions in the [prerequisites](#prerequisites) above.
+2. Install `analytics-swift` in your app. Follow the [analytics-swift Quickstart Guide](/docs/connections/sources/catalog/libraries/mobile/swift-ios).
+3. Run `npx typewriter init` to use the Typewriter quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. When you run the command, it creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
+
+     <br> **Note:** Run `npx typewriter` to regenerate your Typewriter client. You need to do this each time you update your Tracking Plan.
+
+4. Import your new Typewriter client into your project using XCode. If you place your generated files into a folder in your project, import the project as a group not a folder reference.
+
+    <br> When you add the generated client to your Xcode Project you can use as a Swift extension method on any Analytics client object:
+
+    ```swift
+    Analytics.main.orderCompleted(OrderCompleted(
+      orderID: "ck-f306fe0e-cc21-445a-9caa-08245a9aa52c",
+      total: 39.99
+    ))
+    ```
+
+## Kotlin Quickstart
+
+> info ""
+> For use with the `analytics-android` SDK, use [Typewriter v7](/docs/protocols/apis-and-extensions/typewriter-v7).
+
+To get started using Typewriter with Kotlin:
+1. Make sure you have `node` installed. Use the instructions in the [prerequisites](#prerequisites) above.
+2. Install `analytics-kotlin` in your app. Follow the [analytics-kotlin QuickStart Guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/#getting-started).
+3. Run `npx typewriter init`. This command enables you to use the Typewriter quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. The command creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
+
+  Typewriter creates the class file with the package name `typewriter`. Segment recommends you to enter the right package name during `npx typewriter init` by choosing to review the Advanced Options for Kotlin. You can also enter the right package name directly in `typewriter.yml`:
+
+  ```yml
+  client:
+    language: kotlin
+    sdk: kotlin
+    languageOptions:
+      package: com.segment.typewriter
 ```
 
-Typewriter comes with a quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. To use this wizard, run:
+> info ""
+> Run `npx typewriter` to regenerate your Typewriter client. You need to do this each time you update your Tracking Plan.
 
-```sh
-$ npx typewriter init
-```
-> note ""
-> You can regenerate your Typewriter client by running `npx typewriter`. You need to do this each time you update your Tracking Plan.
+You can now use your Typewriter client in your Android Kotlin or Java application as extensions to any `Analytics` object:
 
-Running the command creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
-
-The command also adds a new Typewriter client in `./analytics` (or whichever path you configured). You can import this client into your project, like so:
-
-```js
-// Initialize analytics-node, per the analytics-node guide above.
-const Analytics = require('analytics-node')
-const analytics = new Analytics('YOUR_WRITE_KEY')
-
-// Import your auto-generated Typewriter client.
-const typewriter = require('./analytics')
-
-// Pass in your analytics-node instance to Typewriter.
-typewriter.setTypewriterOptions({
-  analytics: analytics
-})
-
-// Issue your first Typewriter track call!
-typewriter.orderCompleted({
-  orderID: 'ck-f306fe0e-cc21-445a-9caa-08245a9aa52c',
-  total:   39.99
-})
-```
-
-Typewriter wraps your analytics calls in an [ES6 `Proxy`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy), which helps protect your application from crashing if you make analytics calls with a generated function that doesn't exist. For example, if an `Order Completed` event didn't exist in your Tracking Plan in the first example above, then your app would crash with a `TypeError: typewriter.orderCompleted is not a function`. However, since `typewriter` dynamically proxies the underlying function calls, it can detect if a function does not exist, and handle it for you. Typewriter logs a warning message, then fires an `Unknown Analytics Call Fired` event into your source. Our team has found this useful when migrating JavaScript projects to Typewriter in bulk, since it gives us confidence that we won't introduce regressions that crash our application. Keep in mind that proxying does not work with named exports.
-
-You're now good to go! To learn more about some of the advanced configuration options that Typewriter supports, read on.
-
-## iOS Quickstart
-
-Before you start, make sure you have `node` installed using the instructions in the [prerequisites](#prerequisites) above.
-
-Next, install `analytics-ios` in your app. For now, you just need to complete [`Step 1: Install the SDK`](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/#step-2-install-the-sdk) from the [`analytics-ios` Quickstart Guide](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart).
-
-Typewriter comes with a quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. To use this wizard, run:
-
-```sh
-$ npx typewriter init
-```
-> note ""
-> You can regenerate your Typewriter client by running `npx typewriter`. You need to do this each time you update your Tracking Plan.
-
-Running the command creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
-
-You can now import your new Typewriter client into your project using XCode. If you place your generated files into a folder in your project, import the project as a group not a folder reference.
-
-To use it in an Objective-C application:
-
-```objc
+Kotlin:
+```kotlin
 // Import your auto-generated Typewriter client:
-#import "SEGTypewriterAnalytics.h"
-
-// Issue your first Typewriter track call!
-[SEGTypewriterAnalytics orderCompletedWithOrderID: "ck-f306fe0e-cc21-445a-9caa-08245a9aa52c" total: @39.99];
+import com.segment.generated.*
+analytics.orderCompleted(OrderCompleted(orderID = "110", total = 39.98))
 ```
-
-To use it in a Swift application, you add a [Bridging Header](https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_objective-c_into_swift) like the example below:
-
-```objc
-// TypewriterSwiftExample-Bridging-Header.h
-//
-// Make sure to include all generated headers from your Typewriter client:
-#import "Analytics/SEGTypewriterAnalytics.h"
-#import "Analytics/SEGGarage.h"
-#import "Analytics/SEGObjectItem.h"
-#import "Analytics/SEGOccupantsItem.h"
-#import "Analytics/SEGSubterraneanLab.h"
-#import "Analytics/SEGTunnel.h"
-#import "Analytics/SEGUniverse.h"
-#import "Analytics/SEGUniverseCharactersItemItem.h"
-```
-
-Then, you can use your Typewriter client in Swift:
-
-```objc
-// Issue your first Typewriter track call!
-SEGTypewriterAnalytics.orderCompleted(
-  orderID: "ck-f306fe0e-cc21-445a-9caa-08245a9aa52c",
-  total: 39.99
-)
-```
-
-You're now good to go! To learn more about some of the advanced configuration options that Typewriter supports, read on.
-
-## Android Quickstart
-
-Before you start, make sure you have `node` installed. Use the instructions in the [prerequisites](#prerequisites) above.
-
-Next, install `analytics-android` in your app, and configure the singleton analytics instance by following the first three steps in our [Android Quickstart](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-2-install-the-library).
-
-Typewriter comes with a quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. To use this wizard, run:
-
-```sh
-$ npx typewriter init
-```
-
-> note ""
-> You can regenerate your Typewriter client by running `npx typewriter`. You need to do this each time you update your Tracking Plan.
-
-Running the command creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
-
-You can now use your Typewriter client in your Android Java application:
-
+Java:
 ```java
 // Import your auto-generated Typewriter client:
 import com.segment.generated.*
@@ -272,7 +235,65 @@ TypewriterAnalytics.with(this).orderCompleted(
 );
 ```
 
-Congrats, you're ready to go! To learn more about some of the advanced configuration options that Typewriter supports, read on.
+## React Native Quickstart
+
+To get started with React Native:
+1. Follow the [Getting Started guide for React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/).
+2. Add `typewriter` as a dev dependency in your project once you have the library installed in your project.
+
+    ```
+    $ npm install --save-dev typewriter
+    ```
+
+3. Run `npx typewriter init` to use the Typewriter quickstart wizard that generates a `typewriter.yml` configuration along with your first Typewriter client.
+
+   This command creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference). The command also adds a new Typewriter / Segment client in `./analytics` (or whichever path you configured). You can use this interchangeably as a normal React Native Segment client. It contains additional methods for your tracking plan:
+
+    ```ts
+    import {
+      createClient,
+      AnalyticsProvider,
+    } from '../typewriter'; // Remember to import the methods from your typewriter generated file!
+    const segmentClient = createClient({
+      writeKey: 'SEGMENT_API_KEY'
+    });
+    const App = () => (
+      <AnalyticsProvider client={segmentClient}>
+        <Content />
+      </AnalyticsProvider>
+    );
+    ```
+
+    From there you can use it with hooks:
+
+    ```ts
+    import React from 'react';
+    import { Text, TouchableOpacity } from 'react-native';
+    import { useAnalytics } from '../typewriter'; // Important! To
+    const Button = () => {
+      const { orderCompleted } = useAnalytics();
+      return (
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            orderCompleted({orderID: "111", total: 39.99});
+          }}
+        >
+          <Text style={styles.text}>Press me!</Text>
+        </TouchableOpacity>
+      );
+    };
+    ```
+
+    Or directly through the client:
+
+    ```ts
+    segmentClient.orderCompleted({orderID: "111", total: 39.99});
+    // Remember this is just an extended client with the typewriter methods so all the normal segment methods still work!
+    segmentClient.track('Untyped event');
+    ```
+> info ""
+> Run `npx typewriter` to regenerate your Typewriter client. You need to do this each time you update your Tracking Plan.
 
 ## Adding Events
 
@@ -285,19 +306,30 @@ $ npx typewriter
 
 ## API Token Configuration
 
-Typewriter requires a Segment API token to fetch Tracking Plans from the [Segment Config API](/docs/config-api/).
+Typewriter requires a Segment API token to fetch Tracking Plans from the [Segment Public API](https://docs.segmentapis.com/).
 
-Only workspace owners can create Segment API tokens. To create an API token, open the `Tokens` tab on the [Access Management](https://app.segment.com/goto-my-workspace/settings/access-management) page and click `Create Token`. Typewriter only needs the `Protocols Read-only` role.
 
-![typewriter-token](images/typewriter-token.png)
+You must be a workspace owner to create Segment API tokens.
 
-Typewriter looks for an API token in two ways, in the following order:
-1. Executes a token script from the `typewriter.yml`. See [Token Script](#token-script) for more information.
-2. Reads the contents of a `~/.typewriter` file.
+To create an API token:
+1. Click on the **Tokens** tab on the [Access Management](https://app.segment.com/goto-my-workspace/settings/access-management) page and click **Create Token**.
+2. Choose Segment's Public API.
+3. Add a description for the token and assign access. If you choose *Workspace Member*, you only need to select **Tracking Plan Read-Only** for the Resource Role, as Typewriter only needs the *Tracking Plan Read-Only* role.
+4. Click **Create**.
+
+Typewriter looks for an API token in three ways, in the following order:
+1. If a token is piped through, it will use that token. For example, `echo $TW_TOKEN | typewriter build`.
+2. Typewriter executes a token script from the `typewriter.yml`. See [Token Script](#token-script) for more information.
+3. Typewriter reads the contents of the `~/.typewriter` file.
 
 The quickstart wizard prompts you for an API token and stores it in `~/.typewriter` for you.
 
-Segment recommends you use a [Token Script](#token-script) to share an API token with your team. When you use a token script, you can supply your API token as an environment variable (`echo $TYPEWRITER_TOKEN`), from a `.env.` file (`source .env; echo $TYPEWRITER_TOKEN`) or using any other CLI tool for providing secrets.
+Segment recommends you use a [Token Script](#token-script) to share an API token with your team. When you use a token script, you can supply your API token as an environment variable (`echo $TYPEWRITER_TOKEN`), from an `.env.` file (`source .env; echo $TYPEWRITER_TOKEN`) or using any other CLI tool for providing secrets.
+
+Segment also recommends you to pipe through your API Token as this will let you keep your token secret, but it also allows you to share it across your team.
+
+> warning ""
+> Segment is keeping the Token Script execution for compatibility purposes only in v8 of Typewriter. Segment might deprecate this feature in the future, and encourages you to execute your script and pipe in the token. For example, `echo $TW_TOKEN | typewriter build`.
 
 ## Editor Configuration
 
@@ -329,9 +361,9 @@ Android Studio does not require any extra configuration and shows intellisense o
 
 ## Best Practices
 
-We **strongly recommend** that you store your Tracking Plan (`plan.json`) in a version control system. This guarantees that Typewriter will generate the same client, regardless of any changes you make to your Tracking Plan in the Segment app. Otherwise, changes to your Tracking Plan could lead to broken builds.
+Segment **strongly recommends** that you store your Tracking Plan (`plan.json`) in a version control system. This guarantees that Typewriter will generate the same client, regardless of any changes you make to your Tracking Plan in the Segment app. Otherwise, changes to your Tracking Plan could lead to broken builds.
 
-We recommend that you only check in the `plan.json`, and generate your Typewriter client during the application build step (by calling `npx typewriter`). You can do this in `git` with the following `.gitignore`:
+Segment recommends that you only check in the `plan.json`, and generate your Typewriter client during the application build step (by calling `npx typewriter`). You can do this in `git` with the following `.gitignore`:
 
 ```bash
 # Make sure to update `analytics` to the full path to your Typewriter client.
@@ -339,7 +371,7 @@ analytics/*
 !analytics/plan.json
 ```
 
-If this isn't possible you _can_ also check in the full generated client. We do not recommend this method.
+If this isn't possible you can also check in the full generated client. Segment, however, doesn't recommend this method.
 
 ## Configuration Reference
 
@@ -358,10 +390,10 @@ scripts:
 
 client:
   # Which Segment SDK you are generating for.
-  # Valid values: analytics.js, analytics-node, analytics-ios, analytics-android.
+  # Valid values: analytics.js, analytics-node, analytics-react-native, swift, kotlin.
   sdk: analytics-node
   # The target language for your Typewriter client.
-  # Valid values: javascript, typescript, java, objective-c, swift.
+  # Valid values: javascript, typescript, kotlin, swift.
   language: typescript
 
 trackingPlans:
@@ -383,9 +415,12 @@ $ npx typewriter init
 
 ## Token Script
 
-If your team has a standard way to supply secrets (passwords and tokens) in development environments, whether that's a simple `.env` file or an AWS-backed secret store, you can configure Typewriter to use it to get a Segment API token.
+> warning ""
+> Segment is keeping the Token Script execution for compatibility purposes only in v8 of Typewriter. Segment might deprecate this feature in the future, and encourages you to execute your script and pipe in the token. For example, `echo $TW_TOKEN | typewriter build`.
 
-You configure this by creating a token script called `scripts.token` in your `typewriter.yml`. This script is a string that contains a shell command that, when executed, outputs a valid Segment API token. Here's a trivial, but **insecure**, example:
+If your team has a standard way to supply secrets (passwords and tokens) in development environments, whether that's an `.env` file or an AWS-backed secret store, you can configure Typewriter to use it to get a Segment API token.
+
+To configure this, create a token script called `scripts.token` in your `typewriter.yml`. This script is a string that contains a shell command that, when executed, outputs a valid Segment API token. Here's an **insecure**, example:
 
 ```yaml
 scripts:
@@ -393,31 +428,31 @@ scripts:
   token: echo "OIEGO$*hf83hfh034fnosnfiOEfowienfownfnoweunfoiwenf..."
 ```
 
-To give a real example, at Segment we store our secrets in [`segmentio/chamber`](http://github.com/segmentio/chamber) which is backed by [AWS Parameter Store](https://aws.amazon.com/blogs/mt/the-right-way-to-store-secrets-using-parameter-store/). Providing access to a token in `chamber` looks like this:
+To give a real example, Segment stores secrets in [`segmentio/chamber`](http://github.com/segmentio/chamber) which is backed by [AWS Parameter Store](https://aws.amazon.com/blogs/mt/the-right-way-to-store-secrets-using-parameter-store/){:target="_blank"}. Providing access to a token in `chamber` looks like this:
 
 ```yaml
 scripts:
   token: aws-okta exec dev-privileged -- chamber export typewriter | jq -r .typewriter_token
 ```
 
-To learn more about the `typewriter.yml` configuration format, see the [Configuration Reference](#configuration-reference) above.
+To learn more about the `typewriter.yml` configuration format, see the [Configuration Reference](#configuration-reference).
 
 ## Formatting Generated Files
 
-In your `typewriter.yml`, you can configure a script (`scripts.after`) that'll fire after generating a Typewriter client. You can use this to apply your team's style guide to any of Typewriter's auto-generated files.
+In your `typewriter.yml`, you can configure a script (`scripts.after`) that fires after generating a Typewriter client. You can use this to apply your team's style guide to any of Typewriter's auto-generated files.
 
-For example, if you wanted to apply your [`prettier`](https://prettier.io/) formatting to `plan.json` (the local snapshot of your Tracking Plan), you could use an `after` script like this:
+For example, if you want to apply your [`prettier`](https://prettier.io/) formatting to `plan.json` (the local snapshot of your Tracking Plan), you can use an `after` script like this:
 
 ```yaml
 scripts:
   after: ./node_modules/.bin/prettier --write ./analytics/plan.json
 ```
 
-To learn more about the `typewriter.yml` configuration format, see the [Configuration Reference](#configuration-reference) above.
+To learn more about the `typewriter.yml` configuration format, see the [Configuration Reference](#configuration-reference).
 
 ## Connecting to CI
 
-As mentioned in the [Best Practices](#best-practices) section above, Segment recommends that you only check in the `plan.json`, and not the generated clients, into your version control. Instead, we recommend building these clients as part of the build step for your application.
+As mentioned in the [Best Practices](#best-practices) section above, Segment recommends that you only check in the `plan.json`, and not the generated clients, into your version control. Instead, Segment recommends building these clients as part of the build step for your application.
 
 In your CI environment, this usually involves a step to build the Typewriter client. Make sure to build the production client before deploying the application, as explained in the [Tracking Plan Violation Handling](#tracking-plan-violation-handling) section below.
 
@@ -446,9 +481,9 @@ $ npx typewriter development
 $ npx typewriter production
 ```
 > note ""
-> Not all languages support run-time validation. Currently, `analytics.js` and `analytics-node` support it using [AJV](https://github.com/epoberezkin/ajv) (both for JavaScript and TypeScript projects) while `analytics-ios` and `analytics-android` do not yet support run-time validation. Typewriter also does not yet support run-time validation using Common JSON Schema. For languages that do not yet support run-time validation, the development and production clients are identical.
+> Not all languages support run-time validation. Currently, `analytics.js` and `analytics-node` support it using [AJV](https://github.com/epoberezkin/ajv) (both for JavaScript and TypeScript projects) while `analytics-ios` and `analytics-android` do not yet support run-time validation. Typewriter also doesn't support run-time validation using Common JSON Schema. For languages that don't support run-time validation, the development and production clients are identical.
 
-Segment recommends using a development build when testing your application locally, or when running tests. We generally recommend _against_ using a development build in production, since this includes a full copy of your Tracking Plan which can increase the size of the application.
+Segment recommends you to use a development build when testing your application locally, or when running tests. Segment generally recommends _against_ using a development build in production, since this includes a full copy of your Tracking Plan which can increase the size of the application.
 
 You can provide a custom handler that fires whenever a violation is seen. By default, this handler logs a warning.
 
@@ -481,10 +516,10 @@ typewriter.setTypewriterOptions({
   onViolation: yourViolationHandler
 })
 ```
-> note ""
+> info ""
 > Typewriter is preconfigured in `analytics-node` environments to throw an error if `NODE_ENV=test`, which is set by most Node.js testing libraries such as `ava` and `jest`.
 
-Another common use case is to customize how violations are reported to your team. For example, at Segment, we customized this handler to show a [toast notification](https://evergreen.segment.com/components/toaster) to our developers in-app:
+Another common use case is to customize how violations are reported to your team. For example, Segment customized this handler to show a [toast notification](https://evergreen.segment.com/components/toaster){:target="_blank"} to developers in-app:
 
 ![Example toaster notification on app.segment.com](images/typewriter-violation-toast.png)
 
@@ -505,14 +540,14 @@ typewriter.setTypewriterOptions({
 
 ## Known Limitations
 
-Typewriter currently only supports `track` calls, however you can continue to use the underlying (untyped) analytics instance to perform `identify`, `group`, `page`, `screen`, and `alias` calls.
+Typewriter only supports `track` calls. However, you can continue to use the underlying (untyped) analytics instance to perform `identify`, `group`, `page`, `screen`, and `alias` calls.
 
-Not all languages support run-time validation. Currently, `analytics.js` and `analytics-node` support it using [AJV](https://github.com/epoberezkin/ajv) (both for JavaScript and TypeScript projects) while `analytics-ios` and `analytics-android` do not yet support run-time validation. Typewriter also does not yet support run-time validation using Common JSON Schema.
+Not all languages support run-time validation. Currently, `analytics.js` and `analytics-node` support it using [AJV](https://github.com/epoberezkin/ajv){:target="_blank"} (both for JavaScript and TypeScript projects) while `analytics-swift` and `analytics-kotlin` don't support run-time validation. Typewriter also doesn't support run-time validation using Common JSON Schema.
 
 ## Contributing
 
-If you're interested in contributing, [open an issue on GitHub](https://github.com/segmentio/typewriter/issues/new) and we can help provide you pointers to get started!
+If you're interested in contributing, [open an issue on GitHub](https://github.com/segmentio/typewriter/issues/new) and Segment can help provide you pointers to get started.
 
 ## Feedback
 
-We're always curious about any feedback you have on your experience with Typewriter! To contact us, [open an issue on GitHub](https://github.com/segmentio/typewriter/issues/new).
+Segment welcomes feedback you may have on your experience with Typewriter. To contact Segment, [open an issue on GitHub](https://github.com/segmentio/typewriter/issues/new).

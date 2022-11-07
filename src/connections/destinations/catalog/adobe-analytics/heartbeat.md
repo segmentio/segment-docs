@@ -3,7 +3,7 @@ title: Setting up Adobe Analytics Heartbeat
 strat: adobe
 ---
 
-Adobe Heartbeat is an Adobe Analytics add-on that allows you to collect video analytics data from [mobile applications, and Javascript or website sources](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/).
+Adobe Heartbeat is an Adobe Analytics add-on that allows you to collect video analytics data from [mobile applications, and JavaScript or website sources](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/).
 
 > info ""
 > At this time, Adobe Heartbeat is only available for events sent using [device mode](/docs/connections/destinations/#connection-modes).
@@ -11,7 +11,7 @@ Adobe Heartbeat is an Adobe Analytics add-on that allows you to collect video an
 Before you start, complete these required steps.
 
 First, connect your Adobe Heartbeat Server URL to Segment:
-1. Find your Adobe Analytics Heartbeat Tracking Server URL and copy it. If you don’t know where to find your Heartbeat Tracking Server URL, contact your Adobe representative.
+1. Find your Adobe Analytics Heartbeat Tracking Server URL and copy it. If you don't know where to find your Heartbeat Tracking Server URL, contact your Adobe representative.
 2. Log in to your Segment workspace, and go to the Adobe Analytics settings.
    If you have multiple sources sending to Adobe Analytics, click the one that you'll be using with Adobe Heartbeat. If you'll be using Heartbeat with more than one source, repeat these steps for each source.
 3. Open the **Heartbeat Tracking Server URL** setting, and paste your server URL in the field. Click Save.
@@ -24,7 +24,7 @@ Next, enable Adobe's VisitorID service in your Adobe account. You must do this t
 
 For Android:
 
-1. If you haven’t done so already, go to the Adobe Mobile Services UI and follow [these steps](https://docs.adobe.com/content/help/en/mobile-services/android/getting-started-android/requirements.html#section_044C17DF82BC4FD8A3E409C456CE9A46) to download the core `adobeMobileLibrary` and configure in your Android project. Add the `ABDMobileConfig.json` to your project from the downloaded SDK.
+1. If you haven't done so already, go to the Adobe Mobile Services UI and follow [these steps](https://docs.adobe.com/content/help/en/mobile-services/android/getting-started-android/requirements.html#section_044C17DF82BC4FD8A3E409C456CE9A46) to download the core `adobeMobileLibrary` and configure in your Android project. Add the `ABDMobileConfig.json` to your project from the downloaded SDK.
 2. Download the latest version of the `MediaSDK.jar` file and [include it in your Android project using Adobe's documentation steps](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html).
 3. Follow the [remaining set up steps](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html) to complete the installation.
 
@@ -32,14 +32,14 @@ For iOS: The Adobe Heartbeat SDK is already included with the Segment-Adobe-Anal
 
 ## Set Up Steps for Web
 
-The Adobe Heartbeat JS SDK is automatically included with the Segment-Adobe-Analytics integration when you add a Heartbeat Tracking Server URL. 
+The Adobe Heartbeat JS SDK is automatically included with the Segment-Adobe-Analytics integration when you add a Heartbeat Tracking Server URL.
 
 Segment will map your video events to the Adobe methods as outlined below. In order to record video heartbeats to Adobe accurately on web, Adobe's SDK requires a playhead update **at least once per second** for main content. The "Video Content Playing" event updates the playhead using the `position` property. If you do not want to trigger this event every second, you can alternatively set the playhead to the window. This can be done by setting `window._segHBPlayheads` to the key-value pair of the current content's `session_id` and `position`:
 
 ```javascript
 window._segHBPlayheads = { <session_id>: <position> }
 ```
-   
+
 The Segment-Adobe-Analytics integration will pick up the playhead(s) you set to `window._segHBPlayheads` and pass this to Adobe's SDK.
 
 

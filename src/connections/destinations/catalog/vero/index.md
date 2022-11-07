@@ -1,8 +1,8 @@
 ---
 title: Vero Destination
+id: 54521fdc25e721e32a72ef03
 ---
-
-Our Vero destination code is all open-source on GitHub if you want to check it out: [Javascript](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/vero), [Server](https://github.com/segmentio/integration-vero).
+Our Vero destination code is all open-source on GitHub if you want to check it out: [JavaScript](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/vero), [Server](https://github.com/segmentio/integration-vero).
 
 ## Getting Started
 
@@ -23,7 +23,7 @@ Vero is supported on the client-side, server-side and mobile.
 
 When you call [`identify`](/docs/connections/spec/identify/) on analytics.js, we augment `traits` to have `traits.id` set to the `userId`, and then call Vero's `user` with the augmented traits object. You should provide both a `traits.email` and a `userId` for Vero to work best.
 
-If no `email` is attached, the user is created in Vero but cannot be emailed. If you send omit the `userId`, Vero will use the email as the ID, which is is not recommended. Check out the [Vero docs](http://www.getvero.com/help/adding-data-to-vero/creating-and-matching-vero-user-ids/) for more information.
+If no `email` is attached, the user is created in Vero but cannot be emailed. If you send omit the `userId`, Vero will use the email as the ID, which is is not recommended. Check out the [Vero docs](https://help.getvero.com/workflows/articles/creating-and-matching-vero-customer-ids/){:target="_blank"} for more information.
 
 A `userId` is a required value for all types of calls. Be sure you call `identify` with a `userId` for subsequent `track` calls to populate into Vero correctly. For server side calls, you will have to manually pass in the `userId` at the top level.
 

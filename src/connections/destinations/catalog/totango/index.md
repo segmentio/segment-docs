@@ -1,8 +1,8 @@
 ---
 title: Totango Destination
+id: 54521fdb25e721e32a72eefa
 ---
-
-Our Totango destination code is all open-source on GitHub if you want to check it out: [Javascript](https://github.com/segment-integrations/analytics.js-integration-totango), [Server](https://github.com/segmentio/integration-totango).
+Our Totango destination code is all open-source on GitHub if you want to check it out: [JavaScript](https://github.com/segment-integrations/analytics.js-integration-totango), [Server](https://github.com/segmentio/integration-totango).
 
 ## Getting Started
 

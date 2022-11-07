@@ -1,8 +1,8 @@
 ---
 title: Screeb Destination
 rewrite: true
+id: 60ae0d1120fec1896fa8ff8b
 ---
-
 [Screeb](https://screeb.app/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps teams to get actionnable feedback without ruining user experience.
 
 This destination is maintained by Screeb. For any issues with the destination, [contact the Screeb Support team](mailto:support@screeb.app).

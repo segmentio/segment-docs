@@ -16,7 +16,7 @@ Enable a new plugin by navigating to the settings for your Source and clicking *
 
 ![the plugins setting screen](/docs/connections/sources/plugins/plugins-enable.png)
 
-**NOTE:** At this time, only Javascript sources support plugins.
+**NOTE:** At this time, only JavaScript sources support plugins.
 
 ### 2. Initialize
 Initialize the plugin by giving it your Vimeo Access Token, and granting it access to the Vimeo video player instance(s) running on the page. Do this using the initialize method:

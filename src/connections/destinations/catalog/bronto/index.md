@@ -1,14 +1,14 @@
 ---
 title: Bronto Destination
+id: 54521fd525e721e32a72ee98
 ---
-
 Our Bronto destination code is open-source on GitHub if you want to [check it out](https://github.com/segment-integrations/analytics.js-integration-bronto).
 
 ## Getting Started
 
 All you need to get up and running with Bronto is your Bronto Site ID. You can find your site ID right on your Bronto Account Page.
 
-Bronto works with our client-side javascript library: Analytics.js.
+Bronto works with our client-side JavaScript library: Analytics.js.
 
 ## Track
 

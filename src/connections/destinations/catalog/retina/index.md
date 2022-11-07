@@ -1,8 +1,8 @@
 ---
 title: Retina AI Destination
 rewrite: true
+id: 5f287bfa332cce0b1ed18331
 ---
-
 # Retina AI Segment Destination
 
 [Retina AI](https://retina.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a customer intelligence partner that provides accurate **customer-level lifetime value** metrics at or before their first transaction. You can use this to improve targeting, ad relevance, conversion rates, and customer loyalty.
@@ -18,7 +18,7 @@ Retina AI maintains this destination. For any issues with the destination, conta
 {% include content/connection-modes.md %}
 
 To integrate Retina AI with Segment as a **Destination**:
-1. From your Segment UI’s Destinations page click on “Add Destination”.
+1. From your Segment UI's Destinations page click on “Add Destination”.
 2. Search for “Retina” in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Add the “API Key” that Retina AI provides through a secure data transfer to your Segment workspace.
 4. You will receive an email confirming data connectivity once the setup is complete.
@@ -69,7 +69,7 @@ analytics.track('Login Button Clicked')
 Segment sends Track calls to Retina AI as a `track` event.
 
 ## Group
-If you aren’t familiar with the Segment Spec, take a look at the [Group method documentation](/docs/connections/spec/group/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Group method documentation](/docs/connections/spec/group/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.group("e8c78ea9d97a7b8185e8632", {
@@ -82,7 +82,7 @@ analytics.group("e8c78ea9d97a7b8185e8632", {
 ```
 
 ## Alias
-If you aren’t familiar with the Segment Spec, take a look at the [Alias method documentation](/docs/connections/spec/alias/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Alias method documentation](/docs/connections/spec/alias/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.alias("507f191e81");

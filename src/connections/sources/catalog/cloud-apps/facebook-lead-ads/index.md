@@ -2,13 +2,14 @@
 title: Facebook Lead Ads Source
 rewrite: true
 strat: facebook
+beta: true
+id: ODf0vA6dcH
 ---
+{% include content/source-region-unsupported.md %}
 
 Facebook Lead Ads help you capture contact information from people who have expressed interest in your product. Without leaving Facebook's interface, your prospects can now share helpful information with you including work email, name, phone number, and more. Learn more about Facebook Lead Ads [here](https://www.facebook.com/business/news/lead-ads-launch). 
 
 Segment lets you make the most of your leads by automatically sending them to your business tools like CRM and email. Importantly, these destinations allow you to contact customers in real-time using your communication platform of choice, whether you've promised them a demo, a newsletter, a piece of content, or a call from a salesperson.
-
-This source is maintained by Facebook. For any issues with the source, you may [contact the Facebook Support team](mailto:supportemail@email.com).
 
 {% include content/beta-note.md %}
 
@@ -132,5 +133,3 @@ Destinations that can be used with the Facebook Lead Ads Source:
 - Madkudu
 
 Log into your downstream tools and check that your events are populating, and contain all of the properties you expect. If all your events and properties are not showing up, refer to the [Destination docs](https://segment.com/docs/connections/destinations/) for troubleshooting.
-
-If you experience any issues with how the events arrive in Segment, [contact the Facebook team](https://www.facebook.com/business/resources).

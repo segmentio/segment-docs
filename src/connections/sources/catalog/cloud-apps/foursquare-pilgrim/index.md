@@ -1,9 +1,11 @@
 ---
 title: Foursquare Pilgrim
 beta: true
+id: Eek5OnuA7e
 ---
+{% include content/source-region-unsupported.md %}
 
-[Foursquare's Pilgrim SDK](https://developer.foursquare.com/pilgrimsdk) provides real-time event triggering based upon your users’ location in the physical world, allowing you to harness our powerful geotargeting capabilities to send those events to other services using Segment.
+[Foursquare's Pilgrim SDK](https://developer.foursquare.com/pilgrimsdk) provides real-time event triggering based upon your users' location in the physical world, allowing you to harness our powerful geotargeting capabilities to send those events to other services using Segment.
 
 This destination is maintained by Foursquare. For any issues with the destination, [contact the Foursquare Developer Support team](mailto:developers@foursquare.com).
 

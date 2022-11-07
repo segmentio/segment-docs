@@ -1,9 +1,9 @@
 ---
 title: comScore Destination
+id: 54521fd525e721e32a72eea1
 ---
-
-Segment's comScore destination code is open source and available on GitHub. Feel free to check it out: 
-- [Javascript](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/comscore)
+Segment's comScore destination code is open source and available on GitHub. Feel free to check it out:
+- [JavaScript](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/comscore)
 - [iOS](https://github.com/segment-integrations/analytics-ios-integration-comscore)
 - [Android](https://github.com/segment-integrations/analytics-android-integration-comscore)
 
@@ -14,13 +14,13 @@ comScore is supported on mobile apps and web browsers.
 
 ## Web
 
-When you enable comScore in the Segment App, your changes appear in the Segment CDN within 45 minutes, and then analytics.js starts asynchronously loading comScore's `beacon.js` library onto your page. **This means you should remove comScore's snippet from your page.** 
+When you enable comScore in the Segment App, your changes appear in the Segment CDN within 45 minutes, and then analytics.js starts asynchronously loading comScore's `beacon.js` library onto your page. **This means you should remove comScore's snippet from your page.**
 
 Be sure to input your comScore **c2 ID** for comScore to start recording data. The **c2 ID** can be found by clicking on the "Get Tag" button within the Comscore dashboard. You will need to pull out the **C2 Value** from the comScore script tag. You **do not** need to copy/paste the entire script tag.
 
 ## Mobile
 
-To get started with comScore and Segment, you'll want to first integrate your mobile app with our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](/docs/connections/sources/catalog/libraries/mobile/android/) sources. comScore can only accept data sent directly from their iOS and Android SDKs. For that reason we can only send data directly from our iOS and Android SDKs to comScore. **Data recorded in our server-side sources cannot be sent to comScore.** 
+To get started with comScore and Segment, you'll want to first integrate your mobile app with our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](/docs/connections/sources/catalog/libraries/mobile/android/) sources. comScore can only accept data sent directly from their iOS and Android SDKs. For that reason we can only send data directly from our iOS and Android SDKs to comScore. **Data recorded in our server-side sources cannot be sent to comScore.**
 
 For mobile sources, you will need to enter your comScore **c2 ID** and **Publisher Secret**.
 
@@ -56,7 +56,7 @@ Calling `flush` will clear the offline cache with comScore's `flushOfflineCache`
 
 ## User Consent
 
-To communicate user consent, Comscore requires customers add a label called `cs_ucfr` to events. Segment supports setting the `cs_ucfr` label on web only. Using the **Comscore User Consent Label** setting, input the custom field you would like to map to `cs_ucfr`. The custom field mapped to `cs_ucfr` should be present on **all** page calls as per comScore's requirements. 
+To communicate user consent, Comscore requires customers add a label called `cs_ucfr` to events. Segment supports setting the `cs_ucfr` label on web only. Using the **Comscore User Consent Label** setting, input the custom field you would like to map to `cs_ucfr`. The custom field mapped to `cs_ucfr` should be present on **all** page calls as per comScore's requirements.
 
 Segment will map values to comScore's `cs_ucfr` label as outlined below:
 
@@ -71,7 +71,7 @@ Segment will map values to comScore's `cs_ucfr` label as outlined below:
 | If third character in the [US Privacy String](https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md) is `-` | Not included |
 | Any other string value | "" (empty string) |
 
-`cs_ucfr` will be omitted in all other cases. 
+`cs_ucfr` will be omitted in all other cases.
 
 ## Video Streaming
 

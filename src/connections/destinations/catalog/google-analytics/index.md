@@ -1,11 +1,11 @@
 ---
 title: Google Universal Analytics Destination
 strat: google
-hide-dossier: true
+hide-dossier: false
 redirect_from:
   - '/connections/destinations/catalog/google-universal-analytics'
+id: 54521fd725e721e32a72eebb
 ---
-
 > warning "Migrate mobile implementations to Firebase"
 > Google ended support for Google Analytics classic on iOS and Android mobile apps on October 31st 2019. To continue measuring and optimizing user engagement in your mobile apps, [migrate your implementation to use the Firebase SDKs](migrating). If you are using Google Analytics 360 you do not need to migrate.
 
@@ -37,7 +37,7 @@ To use Google Universal Analytics for mobile devices, you must use [Google Fireb
 
 When you enable the Google Universal Analytics destination in Segment:
 
-- Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Google Universal Analytics javascript library on your web page. **This means you should remove Google's snippet from your page.**
+- Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Google Universal Analytics JavaScript library on your web page. **This means you should remove Google's snippet from your page.**
 
 - Your Google Universal Analytics real-time dashboard starts showing live, concurrent visitors.
 
@@ -60,10 +60,10 @@ If you send a [`screen`](/docs/connections/spec/screen) call using a server libr
 
 ### Virtual Pageviews
 
-Virtual pageviews are when you send a pageview to Google Universal Analytics when the page URL didn't actually change, for example when a full-screen modal dialog appears. You can do this with Segment by making a [Page call](/docs/connections/spec/page/) with optional properties, like in the following example.
+Virtual pageviews are when you send a pageview to Google Universal Analytics when the page URL didn't actually change, for example when a full-screen modal dialog appears. You can do this with Segment by making a [Page call](/docs/connections/spec/page/) with optional properties, like in the following example. Include both the category and name, in addition to the properties.
 
 ```javascript
-analytics.page({
+analytics.page('Form', 'Signup Modal', {
   title: 'Signup Modal',
   url: 'https://segment.com/#signup',
   path: '/#signup',
@@ -112,16 +112,7 @@ Google Universal Analytics has multiple scopes for each custom dimensions: hit (
 #### Setting up Custom Dimensions
 First, [configure the Custom Dimensions](https://support.google.com/analytics/answer/2709829?hl=en) from your Google Universal Analytics admin page.
 
-Once you finish this set up in Google Universal Analytics, you can to map traits and properties to your custom dimensions. Go to the Google Universal Analytics destination settings in the Segment App and locate the **Custom Dimensions** setting. This is where you will enter your mapping.
-
-The following images show an example of mapping "Gender" to dimension "1" and "User Type" to dimension "2":
-
-On Segment:
-![custom dimension mapping screenshot](images/dimension-mapping.png)
-On Google:
-![custom dimension mapping screenshot](images/dimension-mapping-google-analytics.png)
-
-You can only map each trait or property to one Custom Dimension at a time.
+Once you finish this set up in Google Universal Analytics, you can map traits and properties to your custom dimensions. Go to the Google Universal Analytics destination settings in the Segment App and locate the **Custom Dimensions** setting. This is where you will enter your mapping. You can only map each trait or property to one Custom Dimension at a time.
 
 When you finish mapping dimensions and save the settings, Segment checks if the user traits and properties in [Identify](/docs/connections/spec/identify/), [Track](/docs/connections/spec/track/) and [Page](/docs/connections/spec/page/) calls are defined as a dimension. If they are defined in your mapping, Segment sends that dimension to Google Universal Analytics.
 
@@ -195,6 +186,8 @@ For this example these event attributes are sent to Google Universal Analytics:
 | **Event Category** | All       |
 | **Event Action**   | Logged In |
 
+> info ""
+> **Note**: In device-mode only, if you pass `category` to the [`page`](/docs/connections/destinations/catalog/google-analytics/#page-and-screen) call, Segment will use the `category` from `page` instead of setting default **Event Category** to `All`.
 
 And another Track call example, this time with all Google Universal Analytics event parameters:
 
@@ -512,7 +505,7 @@ analytics.track('Order Refunded', {
   });
 ```
 
-For partial refunds, you must include the `productId` and quantity for the items refunded:
+For partial refunds, you must include the `order_id` as well as the `productId` and `quantity` for the items refunded:
 
 ```js
 analytics.track('Order Refunded', {
@@ -549,7 +542,11 @@ To use server-side Google Universal Analytics, there are three options with Segm
 
 ### Passing Cookies from Universal Analytics
 
+> info " "
+> When you add `Google Universal Analytics` to the `integrations` object, the Google Universal Analytics event appears in the Segment debugger as `Google Analytics`.
+
 Universal Analytics (analytics.js) uses the [`clientId`](https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage#analyticsjs) to keep track of unique visitors.
+
 
 *A Google Analytics Universal cookie will look like this:*
 ```
@@ -558,7 +555,7 @@ _ga=GA1.2.1033501218.1368477899;
 
 The `clientId` is this part: `1033501218.1368477899`
 
-You can double check that it's your `clientId` by running this script in your javascript console:
+You can double check that it's your `clientId` by running this script in your JavaScript console:
 
 ```javascript
 ga(function (tracker) {
@@ -628,7 +625,7 @@ Analytics.track(
 
 If you want to send UTM parameters to Google Universal Analytics using one of the Segment server-side sources they need to be passed manually. The client-side Javascript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript)) is highly recommended for collecting this data since it all happens automatically.
 
-Your UTM params need to be passed in the `context` object in `context.campaign`. For Google Universal Analytics `campaign.name`, `campaign.source` and `campaign.medium` all need to be sent together for things to show up in reports. The other two params (`campaign.term` and `campaign.content`) are both optional, but will be forwarded to GA if you send them to Segment.
+Your UTM params need to be passed in the `context` object in `context.campaign`. For Google Universal Analytics `campaign.name`, `campaign.source` and `campaign.medium` all need to be sent together for things to show up in reports. The `campaign.content` param is optional, but will be forwarded to GA if you send it to Segment.
 
 ### Measurement Protocol Parameters
 
@@ -741,7 +738,7 @@ This source can be your server-side source. From there, its easy to send data to
 
 ### Consent Mode
 
-Segment does not support Google’s [Consent Mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} feature. Consent Mode enables you to adjust how Google’s tags load on your site, based on whether users consent to your use of cookies. This feature requires Google’s gtag.js library, and does not work when you use Segment’s Google Universal Analytics destination, because it loads [Google’s analytics.js library](https://support.google.com/analytics/answer/7476135?hl=en#zippy=%2Cin-this-article){:target="blank"} instead of the gtag.js library. As an alternative, you can use Segment’s [Consent Manager](https://github.com/segmentio/consent-manager){:target="blank"} .
+Segment does not support Google's [Consent Mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} feature. Consent Mode enables you to adjust how Google's tags load on your site, based on whether users consent to your use of cookies. This feature requires Google's gtag.js library, and does not work when you use Segment's Google Universal Analytics destination, because it loads [Google's analytics.js library](https://support.google.com/analytics/answer/7476135?hl=en#zippy=%2Cin-this-article){:target="blank"} instead of the gtag.js library.
 
 ### Cookie Domain Name
 

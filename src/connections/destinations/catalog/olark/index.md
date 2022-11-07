@@ -1,7 +1,7 @@
 ---
 title: Olark Destination
+id: 54521fd925e721e32a72eedc
 ---
-
 ## Getting Started
 
 When you enable Olark in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Olark's `loader0.js` onto your page. This means you should remove Olark's snippet from your page.
@@ -40,9 +40,9 @@ When you call [`track`](/docs/connections/spec/track/) or one of its helpers on 
 
 All the settings you can change [from your Olark settings pages](https://www.olark.com/help/customize), like targeted chat and your chat box design, still work exactly the same when Olark is enabled using Segment.
 
-### Olark Javascript API
+### Olark JavaScript API
 
-If you'd like to use the native Olark Javascript functions after turning on Olark using Segment our `ready` function will allow you to do that. Since we still load the Olark library in the background you can access those functions like this:
+If you'd like to use the native Olark JavaScript functions after turning on Olark using Segment our `ready` function will allow you to do that. Since we still load the Olark library in the background you can access those functions like this:
 
 ```js
 analytics.ready(function(){

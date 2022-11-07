@@ -64,4 +64,4 @@ The data available shows the last 30 days.
 
 ##### What timezone are the dates in?
 
-All dates and times found within Warehouse Health, Sync History and Warehouse overview pages are in the user’s local time.
+All dates and times found within Warehouse Health, Sync History and Warehouse overview pages are in the user's local time.

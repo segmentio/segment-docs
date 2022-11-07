@@ -3,16 +3,13 @@ title: Google Ads (Classic) Destination
 redirect_from: '/connections/destinations/catalog/adwords/'
 strat: google
 hide-personas-partial: true
-cmode-override: true 
+cmode-override: true
+id: 54521fd525e721e32a72ee92
 ---
-
-> info ""
-> The Google Ads (Classic) destination code is available on GitHub [here](https://github.com/segment-integrations/analytics.js-integration-adwords){:target="_blank"}.
+> warning "The Google Ads (Classic) destination is outdated."
+> For website tracking, Google released a new version of Google Ads that uses [a global site tag (gtag.js)](https://support.google.com/google-ads/answer/7548399?hl=en){:target="_blank"}. Segment supports the global site tag in the [Google Ads (Gtag) destination](/docs/connections/destinations/catalog/google-adwords-new/). For mobile tracking, Google recommends using their [Firebase SDKs](https://support.google.com/google-ads/answer/6397604?hl=en){:target="_blank"}. Segment supports a Firebase implementation with the [Google Firebase destination](/docs/connections/destinations/catalog/firebase/).
 
 ## Getting Started
-
-> info ""
-> Google released a new version of Google Ads that uses [a Global Site Tag (or Gtag)](https://support.google.com/adwords/answer/7548399?hl=en). Segment supports this using a different version of the destination - see the documentation for [Google Ads (Gtag)](/docs/connections/destinations/catalog/google-adwords-new/) for more details.
 
 With Segment, you can use your events to fire a Google Ads conversion pixel from your website **in client-side JavaScript.**
 You can also trigger Google Ads (Classic) conversion from your mobile app using the **Server to Server** destination, so you don't need to include the SDK in your app. The server to server connection requires mobile device specific details to forward the events to Google Ads (Classic). Google Ads (Classic) **does not work with any server-side libraries**. Make sure when you're setting up your Google Ads (Classic) conversions that you choose the appropriate tracking method.
@@ -32,7 +29,7 @@ This section details the configuration of the Google Ads (Classic) destination w
 
 ### Additional iOS Cloud Mode Setup for iOS 14
 
-With the release of Segment’s latest Analytics-iOS SDK, which includes support for upcoming iOS 14 tracking changes, you must decide if you _need_ to collect the user's IDFA or not. If you do not need to collect IDFA, you can update your Analytics-iOS SDK to the next version, and Segment sets `device.adTrackingEnabled` to `false`, and starts deleting the `device.advertisingId` from the context object in your payloads. If you _do_ need to collect the IDFA, you must import the IDFA closure as a config to the library, or import the Ad Tracking Transparency framework from Apple.
+With the release of Segment's latest Analytics-iOS SDK, which includes support for upcoming iOS 14 tracking changes, you must decide if you _need_ to collect the user's IDFA or not. If you do not need to collect IDFA, you can update your Analytics-iOS SDK to the next version, and Segment sets `device.adTrackingEnabled` to `false`, and starts deleting the `device.advertisingId` from the context object in your payloads. If you _do_ need to collect the IDFA, you must import the IDFA closure as a config to the library, or import the Ad Tracking Transparency framework from Apple.
 
 Google Adwords maps the IDFA to `rdid`, and returns a 4xx error on the outbound request if no `device.advertisingId` key appears in the payload.
 
@@ -47,7 +44,7 @@ To find a conversion ID look inside of your Google Ads (Classic) account and nav
 
 If you select "Website," click through to the "Review and Install" step in the Google Ads (Classic) dashboard. Scroll down to the "Install your tag" section and look for `w.google_conversion_id`. Copy the string directly to the right of it, and paste it into the Google Ads (Classic) section of your Segment destination tab.
 
-If you select "App" you can choose to track conversions from Firebase, Google Play, or first opens and in-app actions. For more on setting up moble tracking, see [Server to Server Destination for Mobile Apps](#mobile--server) further down on this page.
+If you select "App" you can choose to track conversions from Firebase, Google Play, or first opens and in-app actions. For more on setting up mobile tracking, see [Server to Server Destination for Mobile Apps](#mobile--server) further down on this page.
 
 > info ""
 > If using the New Adwords Experience, the Conversion ID can now be found in a different location. Navigate to Tools, Billing, and Settings menu and, then, select "Measurement: Conversions", which opens to the "Conversion Actions" table. From here you can drill down to the conversion "Tag setup" to view the tag details. From here, select Use Google Tag Manager card in order to expose the Conversion ID.
@@ -135,7 +132,7 @@ All `track` events are by default sent to your Google Ads (Classic) account and 
  8. ecommerce_purchase
  9. custom
 
-Segment integrates with these event types using the use of the [Semantic Event Spec](/docs/connections/spec/semantic/). Each individual mapping Segment supports is documented in the sections below. Any event Segment recieves that is not a mapped semantic event will be sent to Google Ads (Classic) as a `custom` event type.
+Segment integrates with these event types using the use of the [Semantic Event Spec](/docs/connections/spec/semantic/). Each individual mapping Segment supports is documented in the sections below. Any event Segment receives that is not a mapped semantic event will be sent to Google Ads (Classic) as a `custom` event type.
 
 ### Application Installed
 

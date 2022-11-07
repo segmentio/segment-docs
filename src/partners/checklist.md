@@ -2,17 +2,21 @@
 title: Public Beta Checklist
 ---
 
+> info ""
+> The Developer Center is currently not accepting new components. Segment is committed to redeveloping the Developer Center and a new version will be launched in the future. Include [your information here](https://airtable.com/shrvZzQ6NTTwsc6rQ){:target="_blank"} to join the waitlist!
+
+
 The purpose of this checklist is to give you a window into the full integration lifecycle, from how you first get started with Developer Center, to how we'll test your app before it goes live.
 
 ## 1. Partner Access
 
 First you will need a Segment account and access to Dev Center.
 
-Start on the [Developer Center Partner page](https://segment.com/partners/developer-center/) to request access during signup. If you already have an account you can log in and go to the [request access to developer center](https://app.segment.com/developer/request-access) page.
+Start on the [Developer Center Partner page](https://airtable.com/shrvZzQ6NTTwsc6rQ) to request access during sign-up. If you already have an account you can log in and go to the [request access to developer center](https://airtable.com/shrvZzQ6NTTwsc6rQ) page.
 
 Make sure to sign up with your company email address and to answer all the survey questions to expedite approval.
 
-- Create Segment account and request access for Dev Center ([link](https://app.segment.com/signup?redirect=%2Fdeveloper%2Frequest-access&partner_signup=))
+- Create Segment account and request access for Dev Center ([link](https://airtable.com/shrvZzQ6NTTwsc6rQ))
 
 
 - Complete partner survey
@@ -73,11 +77,10 @@ Once you've decided, you can:
 
 - Test component with the Dev Center Test Suite and get all green or yellow tests
 
-We also highly encourage you to build a 1-click enablement of your tool with OAuth and the Segment Config API. Partners who have implemented "Enable with Segment" button in their sign-up flows have reported 2X increase in conversions. You can [refer to the docs for full details about building an Enable with Segment button](https://segment.com/docs/partners/enable-with-segment/).
+Segment recommends you to build a 1-click enablement of your tool with OAuth and the Segment Public API. Partners who have implemented "Enable with Segment" button in their sign-up flows have reported 2X increase in conversions. You can [refer to the docs for full details about building an Enable with Segment button](https://segment.com/docs/partners/enable-with-segment/).
 
 - Implement one-click set up using Enable with Segment / OAuth
 
-> Note: If you are time constrained, you may skip the above step for now. Once we see at-least 5 customers using your public beta integration, it's a hard requirement to build "Enable with Segment" button in your sign-up flows or app/settings page for general availability. By building this, we are making it super easy for future customers to turn ON your Integration. Not doing so, will result in de-listing your Integration from the Segment Catalog.
 
 ## 5. Partner Test
 
@@ -168,7 +171,7 @@ To maintain the quality of the partner integrations catalog, the Segment Develop
 
 
 - Review documentation partner submitted using [HackMD Template](https://hackmd.io/t7amLXluS7-39rg7ARZgSA?both=)
-    - All signup, API key and data delivery matches test
+    - All sign-up, API key and data delivery matches test
 
 
 - Review catalog information partner submitted using [Google Docs Template](https://docs.google.com/document/d/1kKvqYtZeDPnBjvCrtQSuO3BBH70b_CLO13hYrYIOOtA/edit)

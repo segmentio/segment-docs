@@ -6,9 +6,9 @@ title: A Basic Segment Installation
 When you implement Segment, you add Segment code to your website, app, or server. This code generates messages based on specific triggers you define.
 
 
-In a basic implementation, the code can be a snippet of Javascript that you copy and paste into the HTML of a website to track page views. It can also be as complex as Segment calls embedded in a React mobile app to send messages when the app is opened or closed, when the user performs different actions, or when time based conditions are met (for example "ticket reservation expired" or "cart abandoned after 2 hours").
+In a basic implementation, the code can be a snippet of JavaScript that you copy and paste into the HTML of a website to track page views. It can also be as complex as Segment calls embedded in a React mobile app to send messages when the app is opened or closed, when the user performs different actions, or when time based conditions are met (for example "ticket reservation expired" or "cart abandoned after 2 hours").
 
-The best way to learn about how Segment works is to see it in action. This tutorial walks you though an installation using one of Segment's libraries: Javascript, PHP, or the iOS library.
+The best way to learn about how Segment works is to see it in action. This tutorial walks you though an installation using one of Segment's libraries: JavaScript, PHP, or the iOS library.
 
 ## Before you begin
 
@@ -19,9 +19,11 @@ Before you start your Segment implementation, you need:
 > success ""
 > **Tip**! If you don't have any of those things, consider creating a simple [GitHub Pages website](https://pages.github.com/).
 
+### Create separate dev and prod sources
+
 When you develop and test sources, Segment recommends you to create and use separate sources for each of your environments (production, development, staging) to prevent testing and development activities from filling production systems with invalid data.
 
-You can give each source an `environment` label when you create it, and Segment strongly suggests that you use these labels to sort your sources. When you create a source during the steps below, make sure you enter an environment label.
+You can give each source an environment label when you create it, and Segment strongly suggests that you use these labels to sort your sources. When you create a source during the steps below, make sure you enter an environment label.
 
 > warning ""
 > Double-check when you enter write keys for dev and production environments to make sure that you send the right data to the right place.
@@ -67,7 +69,7 @@ Click a tab below to see the tutorial content for the specific library you chose
 
 ### Step 1: Copy the Snippet
 <br>
-Paste the snippet from the JavaScript Source overview page into the `<head>` tag of your site.
+Navigate **Connections > Sources > JavaScript** in the Segment app and copy the snippet from the JavaScript Source overview page and paste it into the `<head>` tag of your site.
 <br><br>
 That snippet loads Analytics.js onto the page _asynchronously_, so it won't affect your page load speed. Once the snippet runs on your site, you can turn on destinations from the destinations page in your workspace and data starts loading on your site automatically.
 <br><br>
@@ -376,7 +378,7 @@ You've successfully installed PHP tracking. Now you're ready to turn on any dest
 
 
 
-## Test that it’s working
+## Test that it's working
 
 Once you've set up your Segment library, and instrumented at least one call, you can look at the Debugger tab for the Source to check that it produces data as you expected.
 

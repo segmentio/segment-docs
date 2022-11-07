@@ -2,9 +2,8 @@
 title: Snapboard Destination
 rewrite: true
 beta: true
+id: 5e586181995f166e239fd271
 ---
-
-
 [Snapboard](https://snapboard.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows customers to build dashboards and internal tools without code. Snapboard pulls in your data from the apps you use (Segment, Stripe, etc) and displays them as a spreadsheet in Snapboard (which you can filter, sort, group, etc).
 
 

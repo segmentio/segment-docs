@@ -3,19 +3,6 @@
 <div class="sidebar">
   <div class="sidebar__content">
     {% include menu/menu-primary.html %}
-
-    <nav class="menu">
-      <ul class="list list--unstyle">
-        <li class="menu-item">
-          <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}/config-api/">
-            <div class="menu-item__icon flex__column">
-              {% include icons/config-api.svg %}
-            </div>
-
-            <div class="flex__column">Config API</div>
-          </a>
-        </li>
-
         <li class="menu-item {% if currentPage == "help" %}menu-item--active{% endif %}">
           <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}/help/">
             <div class="menu-item__icon flex__column">
@@ -26,15 +13,15 @@
           </a>
         </li>
 
-        <!-- <li class="menu-item {% if currentPage == "release-notes" %}menu-item--active{% endif %}">
-          <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}/release-notes/">
+        <li class="menu-item">
+          <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="https://segment.com/release-notes/" target="_blank">
             <div class="menu-item__icon flex__column">
               {% include icons/megaphone.svg %}
             </div>
 
             <div class="flex__column">Release Notes</div>
           </a>
-        </li> -->
+        </li>
 
         <li class="menu-item menu-item--separated">
           <a class="menu-item__link menu-item__link--small menu-item__link--highlight" href="https://segment.com/">Back to Segment.com</a>

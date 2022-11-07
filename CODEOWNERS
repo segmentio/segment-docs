@@ -1,13 +1,11 @@
 * @segmentio/segment-doc-team
 # The default owners for everything in
 # the repo. Unless a later match takes precedence.
-CODEOWNERS  @segmentio/segment-doc-team @markzegarelli
+CODEOWNERS  @segmentio/segment-doc-team 
 
-# Diagram library
-# /diagram-library @markzegarelli
 
 # Utility scripts
-# /scripts @segmentio/segment-doc-team
+/scripts @segmentio/segment-doc-team
 
 # Vale Linting
 # /vale-styles @segmentio/segment-doc-team
@@ -23,28 +21,55 @@ CODEOWNERS  @segmentio/segment-doc-team @markzegarelli
 
 
 # Libraries owners
-# /src/connections/catalog/libraries   @bsneed @pooyaj @juliofarah
+/src/connections/catalog/libraries @stayseesong @markzegarelli
+
 
 # Destinations owners
-# /src/connections/destinations  @segmentio/segment-doc-team
+/src/connections/destinations  @stayseesong @markzegarelli
 
+# Stratconn
+## Adobe
+/src/connections/destinations/catalog/adobe-analytics/ @kdaswani
+/src/connections/destinations/catalog/actions-adobe-target-web/ @kdaswani
+/src/connections/destinations/catalog/actions-adobe-target-cloud/ @kdaswani
+/src/connections/destinations/catalog/marketo-v2/ @kdaswani
+/src/connections/destinations/catalog/marketo-static-lists/ @kdaswani
 
-# Privacy owners TODO
-# /src/privacy
+## Facebook
+/src/connections/destinations/catalog/facebook-pixel/ @kdaswani
+/src/connections/destinations/catalog/actions-facebook-conversions-api/ @kdaswani
+/src/connections/destinations/catalog/facebook-app-events/ @kdaswani
+/src/connections/destinations/catalog/facebook-offline-conversions/ @kdaswani
+/src/connections/destinations/catalog/personas-facebook-custom-audiences/ @kdaswani
 
+## Google
+/src/connections/destinations/catalog/firebase/ @kdaswani
+/src/connections/destinations/catalog/google-analytics/ @kdaswani
+/src/connections/destinations/catalog/actions-google-analytics-4/ @kdaswani
+/src/connections/destinations/catalog/google-tag-manager/ @kdaswani
+/src/connections/destinations/catalog/actions-google-enhanced-conversions/ @kdaswani
+/src/connections/destinations/catalog/doubleclick-floodlight/ @kdaswani
+/src/connections/destinations/catalog/google-ads-classic/ @kdaswani
+/src/connections/destinations/catalog/google-ads-gtag/ @kdaswani
+/src/connections/destinations/catalog/google-cloud-function/ @kdaswani
+/src/connections/destinations/catalog/google-cloud-pubsub/ @kdaswani
+/src/connections/destinations/catalog/adwords-remarketing-lists/ @kdaswani
+/src/connections/destinations/catalog/personas-display-video-360/ @kdaswani
 
-# Protocols owners TODO
-# /src/protocols
+## Salesforce
+/src/connections/destinations/catalog/salesforce/ @kdaswani
+/src/connections/destinations/catalog/actions-salesforce/ @kdaswani
+/src/connections/destinations/catalog/salesforce-marketing-cloud/ @kdaswani
+/src/connections/destinations/catalog/pardot/ @kdaswani
 
-# Partner Program owners
-# /src/partners  @misteryeo @n2parko @benhorowitz
+# Engage
+/src/engage/ @markzegarelli @pwseg @rchinn-segment
 
-# Personas owners TODO
+# Personas owners 
+/src/personas @pwseg @rchinn-segent
 
-# Usage & Billing TODO
+# Protocols owners
+/src/protocols @forstisabella
 
-# Config API TODO
-
-# Segment App TODO
-
-# Guides TODO
+# Storage owners
+/src/connections/storage @forstisabella

@@ -1,7 +1,7 @@
 ---
 title: Twitter Destination
+id: 54521fdc25e721e32a72eeff
 ---
-
 [Our Twitter Ads destination code](https://github.com/segment-integrations/analytics.js-integration-twitter-ads) is all open-source on GitHub if you want to check it out.
 
 ## Getting Started
@@ -14,7 +14,7 @@ If you want to use the universal tag, all you have to do is enter your **Univers
 
 If you'd like to use the **Single Event Website Tags**, you must map the Segment events to your tags' respective conversion pixel IDs. The **Single Event Website Tag** is good to use if your event names do not match the Segment supported events with the **Universal Website Tag**.
 
-Note that Twitter Ads only works with our client-side javascript library `analytics.js` as it requires its script or pixel to be loaded onto your website.
+Note that Twitter Ads only works with Segment's client-side JavaScript library `analytics.js` as it requires its script or pixel to be loaded onto your website.
 
 ## Page
 

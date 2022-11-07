@@ -1,21 +1,22 @@
 ---
 title: Facebook Conversions API destination
 rewrite: true
+maintenance: true
+maintenance-content: "A new version of this destination is available. See [Facebook Conversions API (Actions)](/docs/connections/destinations/catalog/actions-facebook-conversions-api/) for more information."
 beta: true
-strat: facebook
 redirect_from: '/connections/destinations/catalog/facebook-conversions-api/'
 hide-dossier: true
 ---
 
 <!-- LR: 2/16/2021: Redirect pulls in from `facebook-conversions-api` because while this destination's display name has changed, the slug is still the old name and the docs build needs to match on slug to find it in `destinations.yml` -->
 
-[Facebook Conversions API](https://developers.facebook.com/docs/marketing-api/conversions-api) allows advertisers to send events from their servers directly to Facebook. Server-Side events are linked to a pixel and are processed like browser pixel events. This means that Server-Side events are used in measurement, reporting, and optimization in the same way as browser pixel events.
+[Facebook Conversions API](https://developers.facebook.com/docs/marketing-api/conversions-api){:target="_blank"} allows advertisers to send events from their servers directly to Facebook. Server-side events are linked to a pixel and are processed like browser pixel events. This means that server-side events are used in measurement, reporting, and optimization in the same way as browser pixel events.
 
-> warning "Server Event Parameter Requirements"
-> On February 15th 2021, Facebook began enforcing new requirements for server event parameters. After that date, events sent to the Conversions API that do not meet the new requirements might not be available for optimization, targeting, or measurement. For details on how to implement these requirements see [Server Event Parameter Requirements](/docs/connections/destinations/catalog/facebook-pixel-server-side/#server-event-parameter-requirements)
+> info "Customer Information Parameters Requirements"
+> As of Facebook Marketing API v13.0+, Facebook began enforcing new requirements for customer information parameters (user data). To ensure your events don't throw an error, Segment recommends that you review [Facebook’s new requirements](https://developers.facebook.com/docs/graph-api/changelog/version13.0#conversions-api){:target="_blank"}.
 
-> success ""
-> **Good to know**: This page is about the classic Facebook Conversions API Segment destination. There's also a page about the new [Facebook Conversions API (Actions) destination](/docs/connections/destinations/catalog/actions-facebook-conversions-api/). Both of these destinations are in Public Beta and receive data _from_ Segment. We recommend using the new Facebook Conversions API (Actions) destination for additional functionality and flexibility.
+> info "Server Event Parameter Requirements"
+> On February 15th, 2021, Facebook began enforcing new requirements for server event parameters. After that date, events sent to the Conversions API that don't meet the new requirements might not be available for optimization, targeting, or measurement. For details on how to implement these requirements see [Server Event Parameter Requirements](/docs/connections/destinations/catalog/facebook-pixel-server-side/#server-event-parameter-requirements).
 
 > info "Destination name change"
 > Facebook Conversions API was renamed from Facebook Pixel Server-Side.
@@ -24,12 +25,12 @@ hide-dossier: true
 
 This page is about the **Facebook Conversions API** destination. For documentation on other Facebook destinations, including Facebook Pixel, see the pages linked below.
 
-| **Facebook Destination**                                                                                    | Supported by Personas |
-| ----------------------------------------------------------------------------------------------------------- | --------------------- |
-| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                      | Yes                   |
-| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)** | Yes                   |
-| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)**    | Yes                   |
-| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                                | No                    |
+| **Facebook Destination**                                                                                    | Supported by Engage |
+| ----------------------------------------------------------------------------------------------------------- | ------------------- |
+| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                      | Yes                 |
+| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)** | Yes                 |
+| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)**    | Yes                 |
+| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                                | No                  |
 
 ## Getting Started
 
@@ -47,7 +48,7 @@ Next, set up your Pixel to work with the Facebook Conversions API destination. Y
 
 ### Option 2 - Configure an existing pixel
 
-1. Go to the Facebook Business [Event Manager Pixel Settings](https://www.facebook.com/events_manager/pixel/settings).
+1. Go to the Facebook BusinessEvent Manager Pixel Settings.
 2. Scroll down to the **Set up through a partner integration** section and click **Choose Partner**.
 3. Choose "Segment" from the list of partners.
 4. Enable the setting to  "Authorize Segment Connection" and then click **Continue**.
@@ -89,7 +90,7 @@ Events are only deduplicated if the same event is sent _first_ from the browser 
 
 ### Send different events - some from the browser others from the server
 
-Use this approach if you want to separate tracking events completed on a user's browser from events completed outside the browser, such as a server-based payment system. Sensitive information is best kept out of browsers, so any data you don’t want exposed to users should only be sent using a server source. You can also set up the Conversions API to measure customer actions that are deeper in your marketing funnel. Seeing these deeper funnel events means you can more accurately measure how your ads are helping you reach your business goals.
+Use this approach if you want to separate tracking events completed on a user's browser from events completed outside the browser, such as a server-based payment system. Sensitive information is best kept out of browsers, so any data you don't want exposed to users should only be sent using a server source. You can also set up the Conversions API to measure customer actions that are deeper in your marketing funnel. Seeing these deeper funnel events means you can more accurately measure how your ads are helping you reach your business goals.
 
 #### Match rate considerations
 
@@ -126,9 +127,9 @@ For more information about Track calls, see the [Track method](/docs/connections
 
 Beginning February 15th 2021, Facebook requires the `action_source` server event parameter for all events sent to the Conversions API. This parameter is used to specify where the conversions occurred. If `action_source` is set to 'website' then the `client_user_agent` and the `event_source_url` parameters are also required. Events sent to the Conversions API after February 15th that do not meet the requirements may not be available for optimization, targeting, or measurement.
 
-| Server Event Parameter | Requirement                                 | Implementation                 p                                                                      |
-| ---------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `action_source`        | Always required                             | It is set automatically but it can be set manually.                                                  |
+| Server Event Parameter | Requirement                                  | Implementation                 p                                                                             |
+| ---------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `action_source`        | Always required                              | It is set automatically but it can be set manually.                                                          |
 | `client_user_agent`    | Only required if `action_source` = "website" | It must be set manually if using a server library. It is set automatically if using the Segment web library. |
 | `event_source_url`     | Only required if `action_source` = "website" | It must be set manually if using a server library. It is set automatically if using the Segment web library. |
 
@@ -141,12 +142,12 @@ You can set `action_source` manually by passing it as a property of a Track even
 
 | Action Source Values | Description                                                                                               |
 | -------------------- | --------------------------------------------------------------------------------------------------------- |
-| `chat`               | Conversion was made through a messaging app, SMS, or online messaging feature.                                |
+| `chat`               | Conversion was made through a messaging app, SMS, or online messaging feature.                            |
 | `email`              | Conversion happened over email.                                                                           |
 | `other`              | Conversion happened in a way that is not listed.                                                          |
 | `phone_call`         | Conversion was made over the phone.                                                                       |
 | `physical_store`     | Conversion was made in person at your physical store.                                                     |
-| `system_generated`   | Conversion happened automatically, for example, a subscription renewal that’s set on auto-pay each month. |
+| `system_generated`   | Conversion happened automatically, for example, a subscription renewal that's set on auto-pay each month. |
 | `website`            | Conversion was made on your website.                                                                      |
 
 
@@ -197,13 +198,13 @@ analytics.track({
 The following mappings are automatic and require no additional set up. Any of the Segment Ecommerce Events in the table below will be sent as the corresponding Facebook Standard Event. You learn more about these in the Facebook pixel [standard events documentation](https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking#standard-events).
 
 | Segment E-commerce Event | Facebook Standard Event |
-| ----------------------- | ----------------------- |
-| `Checkout Started`      | `InitiateCheckout`      |
-| `Order Completed`       | `Purchase`              |
-| `Product Added`         | `AddToCart`             |
-| `Product List Viewed`   | `ViewContent`           |
-| `Product Viewed`        | `ViewContent`           |
-| `Products Searched`     | `Search`                |
+| ------------------------ | ----------------------- |
+| `Checkout Started`       | `InitiateCheckout`      |
+| `Order Completed`        | `Purchase`              |
+| `Product Added`          | `AddToCart`             |
+| `Product List Viewed`    | `ViewContent`           |
+| `Product Viewed`         | `ViewContent`           |
+| `Products Searched`      | `Search`                |
 
 > info ""
 > Facebook requires a currency for "Purchase" events -- if you leave it out, Segment will set a default value of "USD".
@@ -252,6 +253,8 @@ Segment maps the following Segment traits to [Facebook properties](https://devel
 | `timestamp`                         | `event_time`                         |                                                                                                                                                 |
 | `userId`                            | `external_id`                        | Any unique ID from the advertiser, such as membership IDs, user IDs, and cookie IDs. See [Alternative External IDs](#alternative-external-ids). |
 
+> info "About hashing"
+> For each of the hashed properties above, Segment's integration code hashes the values before they're sent to the destination.
 
 To access the `contexts` and `context.traits` objects in a Track call, you can use the [context-traits format](/docs/connections/sources/catalog/libraries/website/javascript/#context--traits) as in the example below.
 

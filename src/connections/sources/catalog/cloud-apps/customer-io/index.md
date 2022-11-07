@@ -1,7 +1,9 @@
 ---
 title: Customer.io Source
 redirect_from: "/connections/sources/catalog/cloud-apps/customer.io/"
+id: sTypQz3Fd2
 ---
+
 [Customer.io](https://customer.io/) is an automated email tool. It lets you set up rules to automatically send emails to your users after they perform actions, making drip email campaigns really easy.
 
 Take your company's email analysis to the next level by **adding Customer.io as a Source to Segment.** Segment automatically  collects email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 

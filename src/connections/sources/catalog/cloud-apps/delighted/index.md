@@ -1,7 +1,10 @@
 ---
 title: Delighted Source
 rewrite: true
+id: 3yeoUP8E3Y
 ---
+{% include content/source-region-unsupported.md %}
+
 [Delighted](https://delighted.com/) is the fastest and easiest way to gather actionable feedback from your customers. Use the feedback you gather from customers in all of your decision making processes. Send your feedback to your BI and data warehouses automatically.
 
 This source is maintained by Delighted. For any issues with the source, you may [contact the Delighted Support team](mailto:hello@delighted.com).

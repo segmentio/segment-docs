@@ -5,95 +5,67 @@ redirect_from:
   - '/connections/warehouses/catalog/db2/'
 ---
 
-Use [IBM Db2](https://www.ibm.com/analytics/us/en/db2/) with Segment to get
+Use [IBM Db2](https://www.ibm.com/analytics/us/en/db2/){:target="_blank"} with Segment to get
 all of your event and Cloud Source data in a warehouse built by IBM. This
 guide will walk through what you need to know to get up and running with Db2
-Warehouse and Segment in a flash.
+Warehouse and Segment.
 
-Note: This document refers specifically to [IBM Db2 Warehouse on
-Cloud](https://www.ibm.com/cloud/db2-warehouse-on-cloud), [IBM Db2 Warehouse](https://www.ibm.com/analytics/db2), and the [IBM Integrated
-Analytics System](https://www.ibm.com/products/integrated-analytics-system). For questions related to any of these products,
- see the [IBM Cloud Docs](https://cloud.ibm.com/docs).
-
-If you notice any gaps, outdated information or simply want to leave some
-feedback to help us improve our documentation, [let us
-know](https://segment.com/help/contact)!
+> note " "
+> This document refers specifically to [IBM Db2 Warehouse on Cloud](https://www.ibm.com/cloud/db2-warehouse-on-cloud){:target="_blank"}, [IBM Db2 Warehouse](https://www.ibm.com/analytics/db2){:target="_blank"}, and the [IBM Integrated Analytics System](https://www.ibm.com/products/integrated-analytics-system){:target="_blank"}. For questions related to any of these products, see the [IBM Cloud Docs](https://cloud.ibm.com/docs){:target="_blank"}.
 
 ## Getting Started
 
-To get started, you'll need to create a Db2 user for Segment, give that user
-sufficient permissions, and then create the Segment Db2 Destination.
+To get started, you'll need to:
+1. [Create a Db2 user for Segment](#create-a-user-for-segment).
+2. [Grant the user sufficient permissions](#grant-the-segment-user-permissions).
+3. [Create the the IBM Db2 Destination in the Segment app](#create-segment-db2-destination).
 
 ### Create a User for Segment
 
-To create the user account that Segment will use to load data, open the
-top-left menu and navigate to Settings → Manage Users:
+In order to connect your IBM Db2 warehouse to Segment, you need to create a Db2 user account that Segment can assume. To create a user account for Segment:
 
-<img src="./images/db2_menu.png" style="max-width: 380px">
+1. Open the Db2 warehouse and navigate to  **Administration > User management**.
 
-Then click on "Add":
+2. Click **Add**.
 
-<img src="./images/manage_users.png" style="max-width: 437px">
+3. Create a new user account with *user* privileges. Make sure you save the username and password, as these are required to set up the Segment configuration in a later step.
 
-Fill in your desired Segment user settings and make sure that their Privilege
-is "User". You will enter these settings in to Segment later:
+### Grant the Segment User Permissions
 
-<img src="./images/add_user.png" style="max-width: 394px">
+To grant the Segment user access to your database:
 
-### Give the Segment User Permissions
-
-In order to load data, your new Segment Db2 user will need permissions to
-load that data. Open the top-left menu and navigate to Run SQL:
-
-<img src="./images/run_sql.png" style="max-width: 325px">
-
-In the SQL input, type "GRANT CONNECT, CREATETAB, IMPLICIT_SCHEMA ON DATABASE TO
-USER segment":, replacing "segment" with the user ID that you chose above:
-
-<img src="./images/grant.png" style="max-width: 616px">
-
-Select Run → Run All to execute the `GRANT` command.
+1. Open the top-left menu in your Db2 Warehouse and select **Run SQL**. 
+2. In the SQL input, copy the following code snippet, and replace `segment_user` with the user ID that you created above.
+  ```json
+  GRANT CONNECT, CREATETAB, IMPLICIT_SCHEMA ON DATABASE TO USER <segment_user>
+  ```
+3. Click **Run All** to execute the `GRANT` command.
 
 ### Create Segment Db2 Destination
 
-In the Segment App, select Add Destination:
+To set up an IBM Db2 destination in the Segment app:
 
-<img src="./images/add_destination.png" style="max-width: 682px">
-
-Search for and select "Db2":
-
-<img src="./images/search_results.png" style="max-width: 842px">
-
-Add your credentials as follows:
-
-- Host (Found in Settings → Connection Info → Connection Information)
-- Port (50001 is Db2 Default)
-- Database name
-- User (This is the "User ID" that you created above)
-- Password
-- Security (Enter "SSL" in this field if applicable - optional)
-
-
-<img src="./images/settings.png" style="max-width: 540px">
-
-Click connect to test the connection. If the connection is valid, your Db2
-Destination will be enabled! Segment will begin syncing data to your Db2
-database shortly.
+1. Open the Segment app, navigate to **Connections** and click **Add Destination**. 
+2. Search for and select **IBM Db2 Warehouse**.
+3. Select the sources you want to connect to the IBM Db2 warehouse, and click **Next**.
+4. Enter a name for your destination, and enter the following credentials:
+  - Host (You can find this in your Db2 instance, under Administration > Connections)
+  - Port (50001 is the default for Db2)
+  - Database name (You can find this in your Db2 instance, under Administration > Connections)
+  - User (This is the User ID that you created above)
+  - Password (This is the password that you created above)
+  - Security ([Enter "SSL" in this field](#ssltls))
+5. Click **Connect** to connect your Db2 warehouse to Segment.
 
 ## Security
 
-### Whitelisting IPs
+### Allowlisting IPs
 
-If your Db2 Warehouse is in a private network, be sure to [whitelist
-Segment's IP
-address](https://segment.com/docs/connections/storage/warehouses/faq/#which-ips-should-i-whitelist).
-Otherwise, Segment can't load your data.
+If your Db2 Warehouse is in a private network, be sure to [allowlist Segment's IP address](/docs/connections/storage/warehouses/faq/#which-ips-should-i-allowlist) when creating the Db2 user Segment assumes. Otherwise, Segment won't be able to load your data.
 
 ### Unique User
 
-Segment recommends you to create a unique User for the Segment Db2 Warehouse
-connection to your Db2 Warehouse instance so that you can manage permissions
-separately.
+Segment recommends you to create a unique User for the Segment Db2 Warehouse connection to your Db2 Warehouse instance so that you can manage permissions separately.
 
 ### SSL/TLS
 Always require SSL/TLS and make sure your data warehouse can only accept secure connections. Segment only connects to your data warehouse using SSL/TLS.

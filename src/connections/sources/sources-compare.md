@@ -33,26 +33,30 @@ Cloud-App Sources allow you to pull in data from third-party tools so you can us
 
 - **Event Cloud-App Sources** can export their data both into Segment warehouses, and into other enabled Segment integrations that work with event data. Data from Event sources can include userIds and anonymousIds, and can affect your MTU usage.
 
-- **Object Cloud-App Sources** export data and import it directly into a Segment warehouse. From the warehouse, you can analyze your data with SQL, or use Personas's SQL Traits to build audiences. Some examples of Object Cloud sources are Salesforce (account information), Zendesk (support cases), and Stripe (payments information).
+- **Object Cloud-App Sources** export data and import it directly into a Segment warehouse. From the warehouse, you can analyze your data with SQL, or use Engage SQL Traits to build audiences. Some examples of Object Cloud sources are Salesforce (account information), Zendesk (support cases), and Stripe (payments information).
 
 
 
 <table>
+<thead>
   <tr>
     <th width="20%"> Source </th>
     <th width="30%"> Categories </th>
-    <th> Data Type </th>
+    <th>Data Type</th>
   </tr>
-  {% assign integrations = site.data.catalog.sources_capi.items %}
+</thead>
+<tbody>
+  {% assign integrations = site.data.catalog.sources.items %}
   {% for integration in integrations %}
     {% unless integration.categories contains promoted_categories[0] or integration.categories contains promoted_categories[1] or integration.categories contains promoted_categories[2] or integration.categories contains promoted_categories[3]%}
     {% unless integration.display_name == "Project"%}
   <tr>
-    <td> **[{{ integration.display_name }}](/docs/{{ integration.url }})**</td>
+    <td> [{{ integration.display_name }}](/docs/{{ integration.url }})</td>
     <td width="30%">{{ integration.categories | join: ", " | capitalize }}</td>
-    <td width="20%">{{ integration.type | capitalize }} {%if integration.type == "object" %}🎁{%else%}🗓{%endif%}</td>
+    <td width="20%">{% if integration.isCloudEventSource %} Event 🗓 {%else%}Object 🎁{%endif%}</td>
   </tr>
     {% endunless %}
     {% endunless %}
   {% endfor %}
+  </tbody>
 </table>

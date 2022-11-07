@@ -1,6 +1,7 @@
 ---
 title: Gist Destination
 rewrite: true
+id: 5ec499003e60e9200f681768
 ---
 [Gist](https://getgist.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a marketing and support platform that helps companies attract visitors, convert leads, and support customers.
 
@@ -30,7 +31,7 @@ When you identify a new user, the contact is created in Gist. If the contact alr
 
 Only `identify` events can *update* existing Contacts.
 
-See [Gist’s Contact Properties](https://docs.getgist.com/article/241-contact-properties-glossary) for more details.
+See [Gist's Contact Properties](https://docs.getgist.com/article/241-contact-properties-glossary) for more details.
 
 ## Track
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:

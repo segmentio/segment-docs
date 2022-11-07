@@ -3,7 +3,7 @@ title: Troubleshooting Analytics.js
 strat: ajs
 ---
 
-The console reveals all! [Learn how to access the Javascript console in each browser](#how-do-i-open-the-javascript-console-in-your-debugger).
+The console reveals all. [Learn how to access the JavaScript console in each browser](#how-do-i-open-the-javascript-console-in-your-debugger).
 Any Analytics.js methods may be executed manually. Use the Network tab to inspect requests.
 
 ## Are you loading Analytics.js?
@@ -45,7 +45,7 @@ In the above, the `p` is a [`page`](/docs/connections/spec/page) call and the `i
 
 Some destinations send data directly from the website to their servers. You can check the Network tab in your JavaScript console to see the outbound web services requests being initiated.
 
-In the below image, we use Google Analytics as an example. Our `page` call forms an outbound request that looks like this:
+In the image below, with Google Analytics as an example, the `page` call forms an outbound request that looks like this:
 
 ![Google Analytics outbound request](images/CBdS5dO.png)
 
@@ -76,24 +76,24 @@ The JavaScript console reveals all requests, outbound and inbound, to your brows
 
 ## Is there a size limit on requests?
 
-Yes, 32KB per message.
+Yes, 32KB per event message. Events with a payload larger than 32kb are dropped, and Segment's servers respond with a `500` error. 
 
 ## If Analytics.js fails to load, are callbacks not fired?
 
 In the event that Analytics.js does not load, callbacks passed into your API calls do not fire. This is as designed, because the purpose of callbacks are to provide an estimate that the event was delivered and if the library never loads, the events won't be delivered.
 
 ## Why do I see a network request to `/m`?
-In May 2018, we rolled out a change to Analytics.js that allows us to collect client side performance metrics in Analytics.js. This includes metrics such as:
+In May 2018, Segment released a change to Analytics.js that collects client-side performance metrics in Analytics.js. This includes metrics like:
 
 - When client side integrations are initialized and when they fail
 - When messages are sent to client side integrations and when they fail
 
-We added these metrics so that we can proactively identify and resolve issues with individual client-side integrations. These metrics are connected to alerts that notify our on-call engineers so we can take action on these quickly.
+Segment added these metrics to proactively identify and resolve issues with individual client-side integrations. These metrics are connected to alerts that notify Segment's on-call engineers to take action on these quickly.
 
-There should be no noticeable impact to your data flow. You may notice Analytics.js make an extra network request in the network tab to carry the metrics data to our servers. This should be very infrequent since the data is sampled and batched every 30 seconds, and should not have any impact of website performance.
+There should be no noticeable impact to your data flow. You may notice Analytics.js make an extra network request in the network tab to carry the metrics data to Segment's servers. This should be very infrequent since the data is sampled and batched every 30 seconds, and should not have any impact of website performance.
 
 ## How are properties with `null` and `undefined` values treated?
-We use the [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) method under the hood. Property values set to `null` or `undefined` are treated in accordance with the expected behaviour for the standard method:
+Segment uses the [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) method under the hood. Property values set to `null` or `undefined` are treated in accordance with the expected behaviour for the standard method:
 
 ```js
 console.log(JSON.stringify({ x: null, y: 6 }));
@@ -131,6 +131,6 @@ analytics.track("Receipt Viewed", {}, {
 
 This works for any [context field](/docs/connections/spec/common/#context) that Segment automatically collects.
 
-## Known Issues:
+## Known issues:
 
 [Review and contribute to these on GitHub](https://github.com/segmentio/analytics.js/issues)

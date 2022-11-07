@@ -1,24 +1,22 @@
 ---
 rewrite: true
 title: Ambassador Destination
+id: 573a3dfb80412f644ff13679
 ---
-
-[Ambassador](https://www.getambassador.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) empowers companies to easily create, track & manage custom incentives that drive referrals and evangelize their users. The Ambassador Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-ambassador).
-
-This document was last updated on September 03, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+[Ambassador](https://www.getambassador.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) empowers companies to easily create, track & manage custom incentives that drive referrals and evangelize their users. 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-  1. From the Segment web app, click **Catalog**.
-  2. Search for "Ambassador" in the Catalog, select it, and choose which of your sources to connect the destination to.
-  3. In the destination settings, enter your "Client ID" from your Ambassador dashboard, and populate any "Campaigns" to be mapped as per the below [Mapping campaigns to URLs](#mapping-campaigns-to-urls) section.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Ambassador" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. In the destination settings, enter your "Client ID" from your Ambassador dashboard, and populate any "Campaigns" to be mapped as per the below [Mapping campaigns to URLs](#mapping-campaigns-to-urls) section.
 
 
 Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading the Ambassador snippet on your page and sending data.
 
-Since Ambassador only records specific events and user data, events and users may not appear in Ambassador until you start using the API explained below.
+Since Ambassador only records specific events and user data, events and users may not appear in Ambassador until you start using the API explained below. And you must approve your website domain through the Editor -> Manage websites section in the navigation pane along the left-hand side of the page.
 
 ## Identify
 

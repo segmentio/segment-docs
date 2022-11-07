@@ -3,8 +3,8 @@ title: Analytics for Clojure
 sourceTitle: 'Clojure'
 sourceCategory: 'Server'
 shortName: 'clojure'
+id: B6L7qzHmhI
 ---
-
 The clojure library lets you record analytics data from your clojure code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
 
 The library is open-source and was contributed by the very awesome [CircleCI](https://circleci.com/), thanks! You can [check it out on GitHub](https://github.com/circleci/analytics-clj). The clojure library is a wrapper around our [Java library](https://github.com/segmentio/analytics-java).
@@ -48,11 +48,14 @@ using the `Analytics` singleton anywhere in your code.
 
 The default initialization settings are production-ready.
 
+### Regional configuration
+{% include content/regional-config.md %}
+
 ## Identify
 
 `identify` lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
 
-We recommend calling `identify` a single time when the user's account is first created, and only identifying again later when their traits are change.
+Segment recommends calling `identify` a single time when the user's account is first created, and only identifying again later when their traits are change.
 
 Example `identify` call:
 

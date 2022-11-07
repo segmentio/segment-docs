@@ -1,5 +1,6 @@
 ---
 title: Protocols Overview
+plan: protocols
 ---
 
 Segment helps customers collect and integrate customer data across a wide range of tools and Destinations. To do so reliably, the data Segment receives must be clean, consistent and adhere to a well thought out tracking plan.

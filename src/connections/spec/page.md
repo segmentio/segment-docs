@@ -1,5 +1,7 @@
 ---
 title: 'Spec: Page'
+redirect_from:
+  - '/spec/page'
 ---
 
 The `page` call lets you record whenever a user sees a page of your website, along with any optional properties about the page. Calling `page` or [`screen`](/docs/connections/spec/screen/) in a Segment [source](/docs/connections/sources/) is one of the first steps to getting started with Segment.
@@ -26,6 +28,7 @@ And here's the corresponding JavaScript event that would generate the above payl
 ```js
 analytics.page("Retail Page","Home");
 ```
+{% include content/syntax-note.md %}
 
 Beyond the common fields, the `page` call takes the following fields:
 
@@ -83,14 +86,14 @@ You should **only use reserved properties for their intended meaning**.
 
 Reserved properties Segment has standardized:
 
-| Property   | Type           | Description                                                                                                                                                                                                                                                                                                                                                                                          |
+| Property   | Type           | Description    |
 | ---------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`     | String         | Name of the page. Reserved for future use.                                                                                                                                                                                                                                                                                                                                                           |
-| `path`     | String         | Path portion of the page's URL.  Equivalent to [`canonical path`](https://github.com/segmentio/analytics.js/blob/master/analytics.js#L6499-L6503) which defaults to [`location.pathname`](https://developer.mozilla.org/en-US/docs/Web/API/Location) from the DOM API.                                                                                                                               |
-| `referrer` | String         | Previous page's full URL.  Equivalent to [`document.referrer`](https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer) from the DOM API.                                                                                                                                                                                                                                                 |
-| `search`   | String         | Query string portion of the page's URL. Equivalent to [`location.search`](https://developer.mozilla.org/en-US/docs/Web/API/Location) from the DOM API.                                                                                                                                                                                                                                               |
-| `title`    | String         | Page's title. Equivalent to [`document.title`](https://developer.mozilla.org/en-US/docs/Web/API/Document/title) from the DOM API.                                                                                                                                                                                                                                                                    |
-| `url`      | String         | Page's full URL. Segment first looks for the canonical URL. If the canonical URL is not provided, Segment uses [`location.href`](https://developer.mozilla.org/en-US/docs/Web/API/Location) from the DOM API.                                                                                                                                                                                        |
-| `keywords` | Array [String] | A list/array of keywords describing the page's content. The keywords would most likely be the same as, or similar to, the keywords you would find in an HTML [meta](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#Attributes) tag for SEO purposes. This property is mainly used by content publishers that rely heavily on pageview tracking. This is not automatically collected. |
+| `name`     | String      | Name of the page. Reserved for future use.     |
+| `path`     | String         | Path portion of the page's URL.  Equivalent to [`canonical path`](https://github.com/segmentio/analytics.js/blob/master/analytics.js#L6499-L6503){:target="_blank"} which defaults to [`location.pathname`](https://developer.mozilla.org/en-US/docs/Web/API/Location){:target="_blank"} from the DOM API.      |
+| `referrer` | String         | Previous page's full URL.  Equivalent to [`document.referrer`](https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer){:target="_blank"} from the DOM API.     |
+| `search`   | String         | Query string portion of the page's URL. Equivalent to [`location.search`](https://developer.mozilla.org/en-US/docs/Web/API/Location){:target="_blank"} from the DOM API.     |
+| `title`    | String         | Page's title. Equivalent to [`document.title`](https://developer.mozilla.org/en-US/docs/Web/API/Document/title){:target="_blank"} from the DOM API.     |
+| `url`      | String         | Page's full URL. Segment first looks for the canonical URL. If the canonical URL is not provided, Segment uses [`location.href`](https://developer.mozilla.org/en-US/docs/Web/API/Location){:target="_blank"} from the DOM API.          |
+| `keywords` | Array [String] | A list/array of keywords describing the page's content. The keywords would most likely be the same as, or similar to, the keywords you would find in an HTML [meta](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#Attributes){:target="_blank"} tag for SEO purposes. This property is mainly used by content publishers that rely heavily on pageview tracking. This isn't automatically collected. |
 
 **Note:** In [analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), Segment automatically sends the following properties: `title`, `path`, `url`, `referrer`, and `search`.

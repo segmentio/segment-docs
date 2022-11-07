@@ -1,6 +1,7 @@
 ---
 title: 2mee Destination
 rewrite: true
+id: 60b5d0a01f3726b85dc05aab
 ---
 [2mee](https://2mee.com ) is a Human Hologram platform that automatically cuts the person out from the background, removing the visual clutter, and places them in the familiar context of your phone or website so that they dominate the screen.
 

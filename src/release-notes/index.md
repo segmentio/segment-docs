@@ -1,5 +1,6 @@
 ---
 title: Release Notes
+published: false
 hide_toc: true
 badges:
   new_feature: "primary"

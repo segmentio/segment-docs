@@ -1,7 +1,7 @@
 ---
 title: Quantcast Destination
+id: 54521fda25e721e32a72eeeb
 ---
-
 ## Getting Started
 
 We have both web and mobile destinations with Quantcast. The two integrations are outlined below. Our Quantcast destination code is also open source on GitHub. Feel free to check it out: [analytics-ios-integration-quantcast](https://github.com/segment-integrations/analytics-ios-integration-quantcast), [analytics.js-integration-quantcast](https://github.com/segment-integrations/analytics.js-integration-quantcast).
@@ -13,7 +13,7 @@ When you enable Quantcast for a website from the Segment web app, your changes a
 
 Quantcast supports the `identify` and `track` methods on our API.
 
-Note: For Quantcast to load you must call our page method. There is a call to page in your javascript snippet by default, so as long as you don't remove it Quantcast will load whenever your snippet loads!
+Note: For Quantcast to load you must call our page method. There is a call to page in your JavaScript snippet by default, so as long as you don't remove it Quantcast will load whenever your snippet loads!
 
 ## React Native set up
 

@@ -1,11 +1,9 @@
 ---
 title: Bing Ads Destination
 rewrite: true
+id: 54521fd525e721e32a72ee97
 ---
-
  [Bing Ads](https://bingads.microsoft.com) enables Marketers to track and monitor campaigns, clicks, CTRs, spend and budget. Bing Ads lets you place cross-device product ads in front of Bing, Yahoo, and MSN customers and support imported pay-per-click ad campaigns from third-party platforms like Google AdWords. With Bing Ads you can also retarget ads to customers after they complete an action like leaving a shopping cart or viewing a product without purchasing. Learn more about all you can do with Bing Ads [here](https://advertise.bingads.microsoft.com/en-us/resources/training/what-is-bing-ads). You can also browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-bing-ads).
-
-This document was last updated on January 29, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -16,7 +14,7 @@ Before you can track conversions or target audiences, you need to create a UET t
 Once you have created the Tag ID, you can follow the steps below:
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Bing Ads" in the Catalog, select it, and choose which of your sources to connect the destination to. Note the source must be sending events using our Javascript library Analytics.js.
+2. Search for "Bing Ads" in the Catalog, select it, and choose which of your sources to connect the destination to. Note the source must be sending events using our JavaScript library Analytics.js.
 3. In the destination settings, enter your Tag Id
 
 Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Bing Ads' snippet on your page and sending data.

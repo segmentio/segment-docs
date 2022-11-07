@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: VWO Destination
+id: 54521fdc25e721e32a72ef01
 ---
-
 [VWO](https://vwo.com/) is an all-in-one platform that helps you conduct visitor research, build an optimization roadmap, and run continuous experimentation. Their platform enables you to create a process-driven optimization, get benefits of a connected, unified view of the individual visitor and run A/B tests at scale without reducing performance.
 
 The VWO Destination is open-source and you can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-visual-website-optimizer).
@@ -13,10 +13,10 @@ If you notice any gaps, outdated information or simply want to leave some feedba
 
 {% include content/connection-modes.md %}
 
-Because the VWO destination needs to be on the page right away, there are two ways for the VWO Javascript snippet to be loaded on your page. You can either:
+Because the VWO destination needs to be on the page right away, there are two ways for the VWO JavaScript snippet to be loaded on your page. You can either:
 
-1. Add the Javascript snippet directly on your codebase by following the instructions in [these docs](https://vwo.com/knowledge/add-vwo-smartcode-to-your-website/) from the VWO documentation. Make sure to paste the snippet inside your `<HEAD>` tag above your Segment snippet!
-2. Have Segment include the Javascript snippet for you by toggling on the "Use Async Smart Code" setting and then including your Account ID in the "Account ID" setting. When both these settings are correctly set, you will not need to include VWO's native snippet on your page as Segment will do this on your behalf.
+1. Add the JavaScript snippet directly on your codebase by following the instructions in [these docs](https://vwo.com/knowledge/add-vwo-smartcode-to-your-website/) from the VWO documentation. Make sure to paste the snippet inside your `<HEAD>` tag above your Segment snippet!
+2. Have Segment include the JavaScript snippet for you by toggling on the "Use Async Smart Code" setting and then including your Account ID in the "Account ID" setting. When both these settings are correctly set, you will not need to include VWO's native snippet on your page as Segment will do this on your behalf.
 
 Additionally, to enable the destination  follow these instructions:
 

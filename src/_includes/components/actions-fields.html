@@ -1,12 +1,23 @@
 
 {% assign currentSlug = page.url | split: "/" | last %}
+{% assign currentId = page.id %}
+{% if page.private %}
+{% assign currentIntegration = site.data.catalog.destinations_private.items | where: "id", currentId | first %}
+
+{% elsif page.id %}
+{% assign currentIntegration = site.data.catalog.destinations.items | where: "id", currentId | first %}
+
+{% else %}
 {% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
+{% endif %}
 {% assign conn = include.settings %}
 
 {% assign connectionModes = currentIntegration.connection_modes %}
 {% assign settings = currentIntegration.settings %}
 {% assign actions = currentIntegration.actions %}
 {% assign presets = currentIntegration.presets %}
+{% assign hiddenActions = page.hide_action | map: "id"%}
+
 
 {% if settings.size > 0 %}
 ### Destination Settings
@@ -27,6 +38,9 @@
 {%endfor%}
 </tbody>
 </table>
+
+{% else %}
+<em>No settings available. The destination may not be publicly visble.</em>
 
 
 {% endif %}
@@ -62,20 +76,33 @@
 
 </table>
 
+
 {% endif %}
+
 
 ## Available Actions
 
+Build your own Mappings! Combine supported [triggers](/docs/connections/destinations/actions/#components-of-a-destination-action) with the following {{currentIntegration.display_name | remove: " (Actions)"}}-supported actions:
 
-Build your own subscriptions! Combine supported [triggers](/docs/connections/destinations/actions/#components-of-a-destination-action) with the following {{currentIntegration.display_name | remove: " (Actions)"}}-supported actions:
+<div class="premonition info">
+  <div class="fa fa-info-circle"></div>
+  <div class="content">
+    <p class="header">Mapping limits per destination</p>
+    <p>Individual destination instances support a maximum of 50 mappings.</p>
+  </div>
+</div>
+
 {% for action in actions %}
+{% unless hiddenActions contains action.id %}
 - [{{action.name}}](#{{action.name | slugify}})
+{% endunless %}
 {% endfor %}
 
 {% for action in actions %}
+{% unless hiddenActions contains action.id %}
 ### {{action.name}}
 <p>{{action.description | markdownify}}</p>
-<p>{{action.name}} is a <strong>{{action.platform | capitalize}}</strong> action.</p>
+<p>{{action.name}} is a <strong>{{action.platform | capitalize}}</strong> action. {% if action.defaultTrigger %}The default Trigger is: <code>{{action.defaultTrigger}}</code> {%endif%}</p>
 
 
 {% if action.fields.size > 0 %}
@@ -90,10 +117,12 @@ Build your own subscriptions! Combine supported [triggers](/docs/connections/des
   </thead>
   <tbody>
 {% for field in action.fields %}
+{% unless field.type == "HIDDEN" %}
 <tr>
-<td>{{field.label}}</td>
+<td>{{field.label}}{% if field.required %}<span class="required" title="This field is required">*</span>{% endif %}</td>
 <td>{% if field.type %}Type: <code>{{field.type}}</code><br />{%endif%}{{field.description | markdownify}}</td>
 </tr>
+{% endunless %}
 {%endfor%}
 </tbody>
 </table>
@@ -112,6 +141,5 @@ Build your own subscriptions! Combine supported [triggers](/docs/connections/des
 {% else %}
 This action does not have any fields.
 {% endif %}
-
+{% endunless %}
 {% endfor %}
-

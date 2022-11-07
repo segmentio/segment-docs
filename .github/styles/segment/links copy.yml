@@ -1,0 +1,6 @@
+extends: existence
+message: "Write meaningful link text."
+level: warning
+scope: link
+raw:
+  - '\[?here\]\('

@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: Webhooks Destination
+id: 54521fdc25e721e32a72ef04
 ---
 Segment Webhooks submit real-time user data to your own HTTP endpoints. A Webhook is an HTTP callback: a simple event-notification using HTTP POST. A web application implementing Webhooks will POST a message to a URL when certain things happen.
 
@@ -225,4 +226,4 @@ Under 'Connection Settings', you can provide up to 5 webhooks.
 
 ### Retries
 
-Our webhooks destination will retry any request that returns 5xx errors, multiple times, for a maximum of 4 hours.
+Segment retries requests that fail due to temporary errors like timeouts and 5xx status codes for up to four hours.

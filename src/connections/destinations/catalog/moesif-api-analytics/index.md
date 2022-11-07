@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Moesif API Analytics Destination
+id: 5ce828fe272bf500019d9dbc
 ---
-
 [Moesif API Analytics](https://www.moesif.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps you drive API adoption, usage, and retention. With Moesif, track your customer journey from initial ad click to first API call while identifying at-risk customers struggling to integrate with your APIs.
 
 The [Moesif SDKs and API gateway plugins](https://www.moesif.com/implementation?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) are open-source and support REST, GraphQL, and other APIs.
@@ -49,7 +49,7 @@ Segment sends `identify()` calls to Moesif as [user updates](https://www.moesif.
 The integration handles Segment [reserved traits](/docs/connections/spec/identify/#traits) like `email` and `firstName`. It maps [automatically-collected fields](/docs/connections/spec/common/#context-fields-automatically-collected) like campaign information and IP address.
 
 ## Track
-If you haven’t had a chance to review our spec, take a look tounderstand what the [Track](/docs/connections/spec/track/) method does. An example call would look like:
+If you haven't had a chance to review our spec, take a look tounderstand what the [Track](/docs/connections/spec/track/) method does. An example call would look like:
 
 ```
 analytics.track('Login Button Clicked')

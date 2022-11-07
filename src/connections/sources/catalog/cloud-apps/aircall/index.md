@@ -1,8 +1,11 @@
 ---
 title: Aircall Source
+beta: true
+id: p1Kv6YKjE3
 ---
+{% include content/source-region-unsupported.md %}
 
-Connect [Aircall](https://aircall.io) with Segment to bring Aircall events and phone call data to your data warehouse. Improve your knowledge of customer touchpoints by leveraging call activity.
+Connect [Aircall](https://aircall.io) with Segment to bring Aircall events and phone call data to your data warehouse. Improve your knowledge of customer touchpoints by using call activity.
 
 This source is maintained by Aircall. For any issues with the source, [contact the Aircall Support team](mailto:support@aircall.io).
 
@@ -52,7 +55,7 @@ Click on **Connect to Segment**
 ![](images/cUPCM42.png)
 ![](images/uLu70VP.png)
 
-        - Note: if you see a field to input a **Personas Key**, note that this field is not required and you can leave this field blank. We are working to remove it from the installation flow.
+        - Note: if you see a field to input a **Engage Key**, this field is not required and you can leave this field blank.
 
     * When finished, click on **Add**.
 

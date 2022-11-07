@@ -12,8 +12,8 @@
   ignore = "./scripts/ignore.sh"
 
 [context.branch-deploy]
-  command = "yarn develop"
-  ignore = "./scripts/ignore.sh"
+  command = "yarn build"
+#  ignore = "./scripts/ignore.sh"
 
 [context.develop]
   command = "yarn develop"
@@ -33,3 +33,10 @@
 
 	[plugins.inputs]
   	jekyllSource = "/src"
+
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"

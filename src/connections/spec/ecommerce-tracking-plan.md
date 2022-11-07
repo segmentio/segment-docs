@@ -12,7 +12,7 @@ That's where a tracking plan comes in. A tracking plan is a living document that
 
 [Learn more about the value and function of a tracking plan.](/docs/protocols/tracking-plan/create/)
 
-In this guide, we'll share with you the core events most relevant to e-commerce companies that can get you started immediately in understanding your customers and driving sales.
+In this guide, you'll learn the core events most relevant to e-commerce companies that can get you started immediately in understanding your customers and driving sales.
 
 [Talk to a product specialist today](https://segment.com/contact/sales) about building a clean, high-quality data spec so you can focus on brand engagement and sales growth.
 
@@ -20,7 +20,7 @@ In this guide, we'll share with you the core events most relevant to e-commerce 
 
 Before diving into specific event tracking, you'll want to make sure you track who your users are with the the `.identify()` call. You should call `.identify()` whenever a visitor provides you with a piece of information, at which point they become "known users." The `.identify()` call creates or updates a record of your customer with a set of traits in your tools and warehouse. But how do you choose which traits about your user to include?
 
-Traits are pieces of data that you track about a specific user. Read our guide about selecting traits to learn more.
+Traits are pieces of data that you track about a specific user. Read the guide about selecting traits to learn more.
 
 Here are the most common user traits e-commerce companies include in their tracking:
 
@@ -79,7 +79,7 @@ Given the power you have in your downstream tools to create cohorts based on the
 
 Now that you are tracking who your users are, you can work on what they're doing on your website or in your app with a `.track()` call. Tracking customer events lets you learn about your customers, measure the impact of your marketing efforts and product decisions, and proactively engage your customers in a meaningful way that drives sales.
 
-[Read our event tracking guide to learn more about tracking the right events.](/docs/protocols/tracking-plan/best-practices/)
+[Read the event tracking guide to learn more about tracking the right events.](/docs/protocols/tracking-plan/best-practices/)
 
 E-commerce businesses, unlike SaaS or consumer apps that optimize for product engagement, focus on directing users down their funnels to a conversion goal, like purchasing a product. To best understand why customers convert, it's important to track and measure all key funnel events.
 
@@ -96,7 +96,7 @@ There are also auxiliary actions to track to measure your customer's engagement 
 - Product List Filtered
 
 
-Lastly, we have a set of semantic campaign events that are automatically collected so you can understand the conversions in these specific channels:
+Lastly, Segment has a set of semantic campaign events that are automatically collected so you can understand the conversions in these specific channels:
 
 - Email Opened
 - Email Link Clicked
@@ -108,9 +108,9 @@ Lastly, we have a set of semantic campaign events that are automatically collect
 
 [Check out the full list of e-commerce events you should track.](/docs/connections/spec/ecommerce/v2)
 
-You may notice a pattern in the event names. We've selected the "Object Action" naming convention to ensure that all of our event data is clean and easily analyzable, while choosing "snake\_case" for the traits and properties. It doesn't matter what you choose, so long as it's consistent. Without a uniform and enforced naming framework to guide developers that add tracking code later, your data could get marred with conflicting naming structures. Learn more about the importance of naming conventions.
+You may notice a pattern in the event names. Segment selected the "Object Action" naming convention to ensure that all event data is clean and easily analyzable, while choosing "snake\_case" for the traits and properties. It doesn't matter what you choose, so long as it's consistent. Without a uniform and enforced naming framework to guide developers that add tracking code later, your data could get marred with conflicting naming structures. Learn more about the importance of naming conventions.
 
-_We recommend tracking core checkout activity on the server-side. Learn more about_ [tracking on the client vs. server](/docs/guides/how-to-guides/collect-on-client-or-server/).
+_Segment recommends tracking core checkout activity on the server-side. Learn more about_ [tracking on the client vs. server](/docs/guides/how-to-guides/collect-on-client-or-server/).
 
 ## Selecting your properties
 
@@ -129,7 +129,7 @@ For e-commerce, since most events are customers choosing, browsing, and checking
 
 These traits must be included because many tools rely on them for analysis. If there was one of them missing, the call would be ignored.
 
-_Using a specific tool and want to see how Segment handles sending calls to it?_ [Check out the documentation.](https://segment.com/docs/connections/destinations/)
+_Using a specific tool and want to see how Segment handles sending calls to it?_ [Check out the documentation.](/docs/connections/destinations/)
 
 Here is an example `.track()` call:
 
@@ -179,7 +179,7 @@ In analytics-android:
     Analytics.with(context).track("Order Completed", new Properties().putValue("order_id", "50314b8e9bcf000000000000").putValue("total", 20).putValue("currency", "USD").putValue("products", "Coupon"));
 ```
 
-It's important that these events contain particular properties, such as `sku` , otherwise the downstream tools won't be able to create out-of-the-box revenue and sales reports. Learn more about semantic properties in our e-commerce spec.
+It's important that these events contain particular properties, such as `sku` , otherwise the downstream tools won't be able to create out-of-the-box revenue and sales reports. Learn more about semantic properties in the e-commerce spec.
 
 ## Using data to understand why your customers don't convert
 
@@ -188,7 +188,5 @@ The most successful e-commerce businesses not only efficiently move their custom
 Aside from funnel health, having these key pieces of customer data gives companies the ability to tailor and personalize each interaction, as well as build marketing campaigns around actions taken or omitted.
 
 Without taking this critical step of mapping out key customer events, businesses often spend too much time revisiting their data model or analyzing impartial data sets. Instead they could spend that time understanding and addressing customers' needs.
-
-_Want to get started immediately?_ [Download our e-commerce tracking plan template](https://docs.google.com/spreadsheets/d/1lzvjMr5WlOR89on7XeFYCIFji6w02zK1yQeei0iu5wQ/edit?usp=sharing).
 
 [Talk to a product specialist today](https://segment.com/contact/sales) _about building a clean, high-quality data spec so you can focus on brand engagement and sales growth._

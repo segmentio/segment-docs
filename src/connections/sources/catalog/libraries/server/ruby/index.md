@@ -2,8 +2,8 @@
 title: Analytics for Ruby
 sourceTitle: 'Ruby'
 sourceCategory: 'Server'
+id: aACTBqIbWT
 ---
-
 Our Ruby library lets you record analytics data from your ruby code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
 
 This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-ruby).
@@ -14,9 +14,7 @@ All of Segment's server-side libraries are built for high-performance, so you ca
 
 ## Getting Started
 
-### Install the Gem
-
-If you're using bundler, add the following line to your project's `Gemfile`:
+If you're using Bundler, add the following line to your project's `Gemfile`:
 
 ```ruby
 gem 'analytics-ruby', '~> 2.4.0', :require => 'segment/analytics'
@@ -44,14 +42,17 @@ That will create an instance of `Analytics` that you can use to send data to Seg
 If you're using Rails, you can stick that initialization logic in `config/initializers/analytics_ruby.rb` and omit the `require` call.
 
 > info ""
-> The analytics-ruby gem makes requests asynchronously, which can sometimes be suboptimal and difficult to debug if you're pairing it with a queuing system like Sidekiq/delayed job/sucker punch/resqueue. If you'd prefer to use a gem that makes requests synchronously, you can check out [`simple_segment`](https://github.com/whatthewhat/simple_segment), an API-compatible drop-in replacement for the standard gem that does its work synchronously inline. Big thanks to [Mikhail Topolskiy](https://github.com/whatthewhat) for his stewardship of this alternative gem!
+> The analytics-ruby gem makes requests asynchronously, which can sometimes be suboptimal and difficult to debug if you're pairing it with a queuing system like Sidekiq/delayed job/sucker punch/resqueue. If you'd prefer to use a gem that makes requests synchronously, you can check out [`simple_segment`](https://github.com/whatthewhat/simple_segment){:target="_blank"} , an API-compatible drop-in replacement for the standard gem that does its work synchronously inline. Big thanks to [Mikhail Topolskiy](https://github.com/whatthewhat){:target="_blank"}  for his stewardship of this alternative gem!
+
+### Regional configuration
+{% include content/regional-config.md %}
 
 ## Identify
 
 > note ""
 > **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
-The `identify` method is how you associate your users and their actions to a recognizable `userId` and `traits`. You can [find details on the identify method payload in our Spec](/docs/connections/spec/identify/).
+The `identify` method is how you associate your users and their actions to a recognizable `userId` and `traits`. You can [find details on the identify method payload in the Spec](/docs/connections/spec/identify/).
 
 The `identify` call has the following fields:
 
@@ -413,6 +414,8 @@ By default, our library will flush:
 + whenever messages are queued and there is no outstanding request
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
+
+{% include content/tracking-api-limit.md %}
 
 The queue consumer makes only **a single outbound request** at a time to avoid saturating your server's resources. If multiple messages are in the queue, they are sent together in a batch call.
 

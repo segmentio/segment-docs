@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: Amazon Kinesis Destination
+id: 57da359580412f644ff33fb9
 ---
 [Amazon Kinesis](https://aws.amazon.com/kinesis/) enables you to build custom applications that process or analyze streaming data for specialized needs. Amazon Kinesis Streams can continuously capture and store terabytes of data per hour from hundreds of thousands of sources such as website clickstreams, financial transactions, social media feeds, IT logs, and location-tracking events.
 
@@ -48,7 +49,7 @@ To get started:
 4. Create a new Kinesis destination.
    1. In the Segment source that you want to connect to your Kinesis destination, click **Add Destination**. Search and select the **Amazon Kinesis** destination.
    2. Enter the **Role Address**, **Stream Region**, **Stream Name**, and **Secret ID**.
-   * **NOTE:** For security purposes, Segment sets your Workspace ID as your Secret ID. If you’re using a Secret ID different from your Workspace ID, reach out to our support team so they can change it to make your account more secure.
+   * **NOTE:** For security purposes, Segment sets your Workspace ID as your Secret ID. If you're using a Secret ID different from your Workspace ID, reach out to our support team so they can change it to make your account more secure.
 
 ## Page
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
@@ -92,17 +93,15 @@ Let's say you're connecting your Segment customer data stream to Kinesis Stream 
 
 The Segment Kinesis destination issues a `PutRecord` request with the following parameters:
 ```js
-kinesis.putRecord({
-  Data: new Buffer(JSON.stringify(msg)).toString('base64')
-  PartitionKey: msg.userId() || msg.anonymousId(),
-  StreamName: 'stream-name'
-});
+const payload = {
+  Data: JSON.stringify(msg.json()),
+  StreamName: this.settings.stream,
+  PartitionKey: this.settings.useMessageId ? msg.field('messageId') : msg.userId() || msg.anonymousId()
+}
+const request = kinesis.putRecord(payload)
 ```
 
-Segment uses the the `userId || anonymousId` as the `PartitionKey`. The partition key is used by Amazon Kinesis to distribute data across shards. Amazon Kinesis segregates the data records that belong to a stream into multiple shards, using the partition key associated with each data record to determine which shard a given data record belongs to.
-
-> note ""
-> **NOTE:** The JSON payload is base64 stringified.
+Segment uses the `messageId` or the `userId || anonymousId` as the `PartitionKey`. The partition key is used by Amazon Kinesis to distribute data across shards. Amazon Kinesis segregates the data records that belong to a stream into multiple shards, using the partition key associated with each data record to determine which shard a given data record belongs to.
 
 ## Group
 If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does.
@@ -217,7 +216,7 @@ After you update the IAM policy, Segment systems default to use PutRecords for m
 If you have many sources using Kinesis that it's impractical to attach all of their IDs to your IAM role, you can instead opt to set a secret ID. To set this value:
 1. Go to **Connections > Destinations > Amazon Kinesis** for each of your Segment sources.
 2. Click **Secret ID**.
-    * **NOTE:** For security purposes, Segment sets your Workspace ID as your Secret ID. If you’re using a Secret ID different from your Workspace ID, reach out to our support team so they can change it and make your account more secure.
+    * **NOTE:** For security purposes, Segment sets your Workspace ID as your Secret ID. If you're using a Secret ID different from your Workspace ID, reach out to our support team so they can change it and make your account more secure.
 3. Find the IAM role you created for this destination in the AWS Console in **Services > IAM > Roles**.
 4. Click on the role and navigate to the **Trust Relationships** tab.
 5. Click **Edit trust relationship**. You should see a snippet that looks something that looks like this:

@@ -1,9 +1,9 @@
 ---
 title: Vidora Destination
 rewrite: true
+id: 5ff67d3d4b6491271c0deae0
 ---
-
-[Vidora](https://vidora.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides a No Code Machine Learning Platform for Marketing and Product teams to quickly and easily transform raw data into predictions. Examples include [predicting future customer behaviors](https://www.vidora.com/docs/category/overview/predict-future-behavior-use-cases/) or [predicting customer attributes](https://www.vidora.com/docs/category/overview/predict-attributes-use-cases/).
+[Vidora](https://vidora.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides a Machine Learning Platform for Marketing, AdTech, and Product teams to quickly and easily transform raw consumer data into valuable business decisions. Examples include: [next-best-action](https://www.vidora.com/general/video-building-real-time-decisioning-in-cortex-for-next-best-offer-and-next-best-action), next-best-offer, [dynamic decisioning](https://www.vidora.com/ml-in-business/dynamic-decisioning-using-real-time-machine-learning), [predictions](https://segment.com/recipes/using-predictive-purchase-behavior-to-increase-campaign-roi/), and prescriptive modeling.
 
 This destination is maintained by Vidora. For any issues with the destination, [contact the Vidora Support team](mailto:support@vidora.com).
 
@@ -23,7 +23,7 @@ If you aren't familiar with the Segment Spec, take a look at the [Track method d
 
 ```js
 analytics.track("event_name", {
-  property1: "example",
+    property1: "example",
 });
 ```
 
@@ -37,11 +37,11 @@ If you aren't familiar with the Segment Spec, take a look at the [Page method do
 
 ```js
 analytics.page({
-  name: "page_name",
-  properties: {
-      property1: "example",
-  }
-})
+    name: "page_name",
+    properties: {
+        property1: "example",
+    },
+});
 ```
 
 When sending any data to Vidora, a `timestamp` and either a `userId` or `anonymousId` are required.
@@ -68,7 +68,7 @@ If you aren't familiar with the Segment Spec, take a look at the [Identify metho
 
 ```js
 analytics.identify("userId123", {
-  trait1: "example"
+    trait1: "example",
 });
 ```
 
@@ -82,8 +82,8 @@ If you aren't familiar with the Segment Spec, take a look at the [Group method d
 
 ```js
 analytics.group("groupId", {
-  name: "Group Name",
-  trait1: "example"
+    name: "Group Name",
+    trait1: "example",
 });
 ```
 

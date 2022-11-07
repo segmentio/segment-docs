@@ -62,12 +62,12 @@ catalog: catalog-papi
 # uses the old configapi
 .PHONY: capi
 capi: vendor/bundle
-	@node scripts/catalog-capi.js
+	@node scripts/catalog_capi.js
 
 # shorter alias
 .PHONY: catalog-capi
 catalog-capi: vendor/bundle
-	@node scripts/catalog-capi.js
+	@node scripts/catalog_capi.js
 
 # uses the new public api
 .PHONY: catalog-papi
@@ -79,6 +79,10 @@ catalog-papi: vendor/bundle
 papi: vendor/bundle
 	@node scripts/catalog_papi.js
 
+# make the list of beta connections
+.PHONY: beta
+beta:
+	@node scripts/beta.js
 
 .PHONY: changelog
 changelog: vendor/bundle
@@ -146,7 +150,14 @@ vendor/bundle:
 	@bundle config set --local path 'vendor/bundle'
 	@bundle install
 
+.PHONY: update
+update: 
+	@node scripts/update.js
 
+.PHONY: add-id
+add-id:
+	@node scripts/add_id.js
+	
 .PHONY: lint
 lint: node_modules
 	@echo "Checking yml files..."
@@ -171,6 +182,9 @@ docker-build:
 	@$(DOCKER_TTY) make build
 	bundle install --path=vevendor
 
+.PHONY: private-destination
+private_destination:
+	@node scripts/private-destination.js
 #.PHONY: docs
 #docs: node_modules
 #	$(BIN)/webpack --mode=production

@@ -1,7 +1,9 @@
 ---
 title: Beamer Source
 beta: true
+id: ErcsNGMEwt
 ---
+{% include content/source-region-unsupported.md %}
 
 [Beamer](https://www.getbeamer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a changelog and notification center that lets you announce new features, product updates, special offers and more.
 
@@ -16,7 +18,7 @@ This source is maintained by Beamer. For any issues with the source, [contact th
 
 1. From your Segment UI's Sources page click on "Add Source".
 2. Search for "Beamer" within the Sources Catalog and confirm the Source you'd like to connect to.
-3. Give the Source a nickname and follow the set up flow to “Add Source”. The nickname will be used to designate the source in the Segment interface, and Segment will create a related schema name. The schema name is the namespace you’ll be querying against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
+3. Give the Source a nickname and follow the set up flow to “Add Source”. The nickname will be used to designate the source in the Segment interface, and Segment will create a related schema name. The schema name is the namespace you'll be querying against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
 4. Copy the Write key from the Segment UI and go to [Integrations](https://app.getbeamer.com/integrations) in your Beamer dashboard, then paste your write key in the **Integrate with Segment** section.
 5. Click on **Save** and that's it!
 

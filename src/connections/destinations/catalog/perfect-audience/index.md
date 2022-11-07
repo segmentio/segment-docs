@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Perfect Audience Destination
+id: 54521fda25e721e32a72eee5
 ---
-
 [Perfect audience](http://www.perfectaudience.com/) is a retargeting platform that lets marketers bring back lost web visitors through Facebook ads and banner ads in the web.
 
 If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
@@ -16,7 +16,7 @@ If you notice any gaps, out-dated information or simply want to leave some feedb
 3. Add your `Advertiser ID` (located in the User tracking session in Perfect Audience) and enable the destination in Segment.
 4. Segment automatically starts sending data from the source you selected
 
-When you enable Perfect Audience from the Segment web app,Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Perfect Audience's javascript onto your page.
+When you enable Perfect Audience from the Segment web app,Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Perfect Audience's JavaScript onto your page.
 
 Remember to remove Perfect Audience's snippet from your page.
 

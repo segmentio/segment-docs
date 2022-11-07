@@ -8,6 +8,6 @@ The Data Processing parameters you set are the Data Processing Options Segment u
 
 | **Data Processing Parameter**       | **Default Value** | **What it means**                               |
 | ----------------------------------- | ----------------- | ----------------------------------------------- |
-| **Data Processing Options**         | `["LDU"]`         | Use Facebook’s Limited Data Use processing      |
-| **Data Processing Options Country** | `0`               | Use Facebook’s geolocation to determine country |
-| **Data Processing Options State**   | `0`               | Use Facebook’s geolocation to determine state   |
+| **Data Processing Options**         | `["LDU"]`         | Use Facebook's Limited Data Use processing      |
+| **Data Processing Options Country** | `0`               | Use Facebook's geolocation to determine country |
+| **Data Processing Options State**   | `0`               | Use Facebook's geolocation to determine state   |

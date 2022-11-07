@@ -1,8 +1,8 @@
 ---
 title: Analytics for Java
 repo: analytics-java
+id: V6ynUvQgbc
 ---
-
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics)
 
 Our Java library lets you record analytics data from your Java code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
@@ -18,10 +18,7 @@ Want to stay updated on releases? Subscribe to the [release feed](https://github
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics)
 
-
-### Install the library
-
-The recommended way to install the library for Java is with a build system like Gradle or Maven. This makes it simple to upgrade and swap out destinations. The library is distributed using [Maven Central](http://maven.org/) as a `jar` dependency.
+The recommended way to install the library for Java is with a build system like Gradle or Maven. This makes it simple to upgrade and swap out destinations. The library is distributed using [Maven Central](http://maven.org/){:target="_blank"}  as a `jar` dependency.
 
 Here's what it would look like with Maven:
 
@@ -38,12 +35,12 @@ Add to `pom.xml`:
 or if you're using Gradle:
 
 ```bash
-compile 'com.segment.analytics.java:analytics:+'
+implementation 'com.segment.analytics.java:analytics:+'
 ```
 
 ### Initialize the SDK
 
-Before you can send us events, you need to initialize an instance of the Analytics class. To do so, you must use the `Analytics.Builder` class.
+Before you can send events to Segment, you need to initialize an instance of the Analytics class. To do so, you must use the `Analytics.Builder` class.
 
 ```java
 Analytics analytics = Analytics.builder(writeKey).build();
@@ -61,7 +58,8 @@ Although not enforced at compile time, make sure you provide either of `userId` 
 
 The following examples use [Guava's](https://github.com/google/guava) immutable maps, but feel free to use plain old Java maps instead.
 
-
+### Regional configuration
+{% include content/regional-config.md %}
 ## Identify
 
 > note ""
@@ -74,14 +72,13 @@ We recommend calling `identify` a single time when the user's account is first c
 Example `identify` call:
 
 ```java
+Map<String, String> map = new HashMap();
+map.put("name", "Michael Bolton");
+map.put("email", "mbolton@example.com");
+
 analytics.enqueue(IdentifyMessage.builder()
-    .userId("f4ca124298")
-    .traits(ImmutableMap.builder()
-        .put("name", "Michael Bolton")
-        .put("email", "mbolton@example.com")
-        .build()
-    )
-);
+        .userId("f4ca124298")
+        .traits(map));
 ```
 
 This call is identifying  Michael by his unique User ID (the one you know him by in your database) and labeling him with `name` and `email` traits.
@@ -356,6 +353,9 @@ Our libraries are built to support high performance environments. That means it 
 Every method you call **does not** result in an HTTP request, but is queued in memory instead. Messages are flushed in batch in the background, which allows for much faster operation.
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
+
+{% include content/tracking-api-limit.md %}
+
 
 ## How do I flush right now?!
 

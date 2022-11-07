@@ -1,11 +1,9 @@
 ---
 rewrite: true
 title: UserVoice Destination
+id: 54521fdc25e721e32a72ef00
 ---
-
 [Uservoice](https://www.uservoice.com/) is a customer support and feedback tool that lets your users submit feedback right from your site, and helps you manage all the incoming requests.
-
-This document was last updated on November 8th, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -13,10 +11,10 @@ This document was last updated on November 8th, 2018. If you notice any gaps, ou
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "UserVoice" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Add your Javascript API Key (Your API Key appears in the javascript snippet URL as widget.uservoice.com/APIKEY.js.) and enable the destination in Segment.
+3. Add your JavaScript API Key (Your API Key appears in the JavaScript snippet URL as widget.uservoice.com/APIKEY.js.) and enable the destination in Segment.
 4. Segment automatically starts sending data from the source you selected
 
-When you enable UserVoice from the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Uservoice's javascript onto your page.
+When you enable UserVoice from the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Uservoice's JavaScript onto your page.
 
 Remember to remove UserVoice's native snippet from your page.
 
@@ -39,7 +37,7 @@ analytics.identify('ze8rt1u89', {
 });
 ```
 
-When you call `identify` the `userId` and `traits` included in the call will be set to the current user in UserVoice. For more details on identifying users on UserVoice, check [their documentation](https://developer.uservoice.com/docs/widgets/identify/).
+When you call `identify` the `userId` and `traits` included in the call will be set to the current user in UserVoice. For more details on identifying users on UserVoice, check [their documentation](https://developer.uservoice.com).
 
 ## Group
 
@@ -55,7 +53,7 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 });
 ```
 
-When you call `group` the `traits` included in the call will be set to the current user's **Account** in UserVoice. For more details on grouping users on UserVoice, check [their documentation](https://developer.uservoice.com/docs/widgets/identify/).
+When you call `group` the `traits` included in the call will be set to the current user's **Account** in UserVoice. For more details on grouping users on UserVoice, check [their documentation](https://developer.uservoice.com/).
 
 ## Alias
 

@@ -2,7 +2,7 @@ Analytics.js: |
   The Segment Javascript library wrapper, which makes it simple to send your data to any tool without having to learn, test or implement the new API for each tool every time.
 
 API: |
-  Application Programming Interface. In software, this term describes a way of interacting with software in an automated fashion, without the use of a user-interface designed for humans. In Segment, we call the standard calls (`track`, `page` and `screen`, `identify` and `group`) our API. We also provide the [Config API](/docs/config-api/), which you can use to configure sources and destinations, and perform other functions in your workspace, without logging in using a web browser.
+  Application Programming Interface. In software, this term describes a way of interacting with software in an automated fashion, without the use of a user-interface designed for humans. In Segment, we call the standard calls (`track`, `page` and `screen`, `identify` and `group`) our API. We also provide the [Public API](/docs/api/public-api), which you can use to configure sources and destinations, and perform other functions in your workspace, without logging in using a web browser.
 
 App: |
   The app is what we call the main Segment web application, the part you log in to, and where you configure sources and destinations, see events in the debugger, manage your tracking plan, and so on.
@@ -23,7 +23,7 @@ CDN: |
   Content Delivery Network. CDNs are a network of servers which make downloading files faster for the user, by placing them all around the world to reduce data transit time. When you have servers in a CDN, they're much closer on average to the end user. If someone is using Segment in Asia, they don't have to download our files all the way from California, they can get them from a server much closer to them in the network.
 
 CDP: |
-  Customer Data Platform: a central platform that brokers the flow of customer data through their application infrastructure so that they can build a central understanding of each customer’s interactions, comply with regulations that require them to carefully manage customer data, and ensure that their interactions with the customer are optimized.
+  Customer Data Platform: a central platform that brokers the flow of customer data through their application infrastructure so that they can build a central understanding of each customer's interactions, comply with regulations that require them to carefully manage customer data, and ensure that their interactions with the customer are optimized.
 
 Cookies: |
   Cookies are small pieces of text that are stored by the browser on a website. Cookies have a **name** and a **value**. They may also be set from Javascript using `document.cookie`. Our analytics.js script sets up a cookie called `ajs_uid` to store the user's id.
@@ -42,7 +42,7 @@ Computed trait: |
   [Computed traits](/docs/personas/computed-traits/) are per-user, or per-account [traits](#traits) that you create or “compute” in [Personas](/docs/personas/). When you build a Computed Trait, Personas adds it to relevant user profiles.
 
 Custom trait: |
-  [Custom Traits](/docs/personas/audiences/#custom-traits) are user or account properties collected from all the events you send to Personas.  For example, you can add any properties that you send as a part of your track calls or identify calls (`email`, `first_name`, `last_name`) as custom traits. You can then view them in the profile explorer, and use them in your audiences, computed traits and SQL traits.
+  [Custom Traits](/docs/engage/audiences/#custom-traits) are user or account properties collected from all the events you send to Personas.  For example, you can add any properties that you send as a part of your track calls or identify calls (`email`, `first_name`, `last_name`) as custom traits. You can then view them in the profile explorer, and use them in your audiences, computed traits and SQL traits.
 
 Debugger: |
   This is the place in the app where you can see your events flowing through Segment
@@ -78,7 +78,7 @@ Library: |
   The most common use case for this term at Segment is in reference to the libraries people use to send data to our API. [A full list of libraries can be found in our docs](/docs/connections/sources/catalog/). Libraries can collect either in "[Device mode](#device-mode)" or "[Cloud mode](#cloud-mode)".
 
 Lookback: |
-  A “lookback window” limits the period of time in which data is considered when calculating a trait or audience. For example, you might set a lookback window of 7 days on an audience or trait like `new_users_7_days`, but you would not add a lookback window to a trait that isn’t time-bounded, such as `lifetime_value`.
+  A “lookback window” limits the period of time in which data is considered when calculating a trait or audience. For example, you might set a lookback window of 7 days on an audience or trait like `new_users_7_days`, but you would not add a lookback window to a trait that isn't time-bounded, such as `lifetime_value`.
 
 Method: |
   A method is programming speak for "an action an object can take". It's a specific type of function that is attached to an object. All of our analytics tracking libraries create `analytics` objects, and then `track`, `identify`, `page`, [etc](/docs/connections/spec/) are methods you can invoke on those objects.
@@ -151,4 +151,4 @@ Traits: |
   Traits are individual pieces of information that we know about an [object](#object). Objects persist over time, so traits can change over time.
 
 Warehouses: |
-  Segment’s Data warehouse product. All event data can be sent to one of several Warehouses, where your team can use it to perform more complex analysis of the data.
+  Segment's Data warehouse product. All event data can be sent to one of several Warehouses, where your team can use it to perform more complex analysis of the data.

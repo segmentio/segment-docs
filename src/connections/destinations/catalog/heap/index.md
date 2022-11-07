@@ -1,11 +1,9 @@
 ---
 title: Heap Destination
 rewrite: true
+id: 54521fd725e721e32a72eebd
 ---
-
 [Heap](https://heapanalytics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) automatically captures every user interaction with no extra code. This includes clicks, taps, gestures, form submissions, page views, and more. The Heap Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-heap).
-
-This document was last updated on January 29, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact/)!
 
 ## Getting Started
 
@@ -14,7 +12,7 @@ This document was last updated on January 29, 2018. If you notice any gaps, out-
 1. From the Segment web app, click **Catalog**.
 2. Search for "Heap" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In the destination settings, enter your Heap "App ID" into the connection settings.
-4. If you are using Heap using Segment's client-side `analytics.js` library, we asynchronously load Heap's Javascript library onto the page. As such, all native functionality of Heap, including auto-capturing of all events.
+4. If you are using Heap using Segment's client-side `analytics.js` library, we asynchronously load Heap's JavaScript library onto the page. As such, all native functionality of Heap, including auto-capturing of all events.
 
 ## Identify
 

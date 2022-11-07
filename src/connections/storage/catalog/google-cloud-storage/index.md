@@ -1,6 +1,5 @@
 ---
 title: Google Cloud Storage Destination
-beta: true
 integration-type: destination
 redirect_from: '/connections/destinations/catalog/google-cloud-storage/'
 ---
@@ -10,11 +9,10 @@ redirect_from: '/connections/destinations/catalog/google-cloud-storage/'
 The Google Cloud Storage (GCS) destination puts the raw logs of the data Segment receives into your GCS bucket. The data is copied into your bucket at least every hour. You might see multiple files over a period of time depending on how much data is copied.
 
 > warning ""
-> The Google Cloud Storage destination works differently than other destinations in Segment. Segment sends **all** data from a Personas source to GCS during the sync process, not only the connected audiences and traits. Using a destinations selector like the [integrations object](/docs/connections/spec/common/#integrations) doesn't affect the events events sent to GCS.
+> The Google Cloud Storage destination works differently than other destinations in Segment. Segment sends **all** data from an Engage source to GCS during the sync process, not only the connected audiences and traits. Using a destinations selector like the [integrations object](/docs/connections/spec/common/#integrations) doesn't affect the events events sent to GCS.
 
-**Note**: The GCS destination is currently in beta, and does not support product features such as deletions, replays, or surfacing errors in the UI.
-
-If you are interested in joining the beta program, contact us at [beta@segment.com](mailto:beta@segment.com) to request access.
+> info ""
+> The Google Cloud Storage destination is in Public Beta, and doesn't support product features such as deletions or surfacing errors in the UI.
 
 
 ## Getting Started
@@ -95,7 +93,7 @@ Congratulations! You now have a bucket ready to accept Segment data.
 Once the Google Cloud Storage Bucket and Service Account are created, a destination that will send data files to the bucket must be configured:
 
 1. In the Segment **Destinations** section, click **Add Destination**.
-   You will be redirected to our `Catalog`.
+   You will be redirected to the `Catalog`.
 2. Search for "Google Cloud Storage", and click the destination in the catalog.
 3. Click **Configure Google Cloud Storage**.
 4. Select the source you want to send to this destination.
@@ -111,8 +109,8 @@ Congratulations! You've set up a GCS destination. You'll receive files in your B
 **Why is data not syncing to the GCS destination?**
 Common errors which can cause sync failures are:
 - **Bucket not configured**: A bucket for the GCS destination was not provided. Check the GCS destination settings to confirm that a valid bucket is entered.
-- **GCS credentials not configured**: Credentials for the GCS destination cannot be found. Confirm that you’ve inputted GCS credentials into the destination settings.
+- **GCS credentials not configured**: Credentials for the GCS destination cannot be found. Confirm that you've inputted GCS credentials into the destination settings.
 - **Invalid GCS credentials**: Credentials for the GCS destination are found, but they are not correctly formatted credentials. Re-enter a valid credential as a setting for the destination to work.
-- **Unable to upload files**: We are unable to upload files to GCS due to incorrect credentials (e.g., non-existent bucket), insufficient permissions, or a GCS error. Confirm that credentials and permissions are set correctly.
+- **Unable to upload files**: Segment can't upload files to GCS due to incorrect credentials (for example, a non-existent bucket), insufficient permissions, or a GCS error. Confirm that credentials and permissions are set correctly.
 - **Destination not found**: There is no GCS destination connected to the source, and can be connected within the workspace overview page.
 - **Destination disabled**: The GCS destination for the source is disabled, and can be enabled in the destination settings page.

@@ -1,5 +1,6 @@
 ---
 title: Freshsales Destination
+id: 56fd5efd80412f644ff12fbd
 ---
 This destination is maintained by [Freshsales](https://www.freshworks.com/freshsales-crm/?utm_source=segmentio&amp;utm_medium=docs&amp;utm_campaign=partners). For any issues with the destination contact us at support@freshsales.io.
 

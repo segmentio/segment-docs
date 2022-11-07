@@ -15,24 +15,24 @@ The Segment libraries generate an `anonymousId` for each user, even before you I
 An `anonymousId` is a randomly generated 36 character string automatically assigned to a user on their first visit to your website or mobile application. You can use the `anonymousId` to link events performed by the user as they navigate around your website. When you track the `anonymousId`, you can attribute activities over multiple days to the same user by collecting all of the activities with that ID. If a user chooses to register for your site, or log in to your app, you can Identify them, and still include their `anonymousId` in the event payload along with the new `userId`.
 
 > success ""
-> **Tip!** Only the Segment mobile and website libraries automatically generate an `anonymousId`. If you use Segment’s Server libraries, you must generate an `anonymousId` manually. It can be any pseudo-unique identifier, for example you might use a `sessionId` from a backend server.
+> **Tip!** Only the Segment mobile and website libraries automatically generate an `anonymousId`. If you use Segment's Server libraries, you must generate an `anonymousId` manually. It can be any pseudo-unique identifier, for example you might use a `sessionId` from a backend server.
 
 ## Identifying users
 
-Segment’s Identify method lets you link a user to their actions and record traits about them. It includes a unique User ID, and records any traits you know about them, such as their email address, and name.
+Segment's Identify method lets you link a user to their actions and record traits about them. It includes a unique User ID, and records any traits you know about them, such as their email address, and name.
 
-Segment recommends that you use a unique user identifier that won’t change for your `userId`, for example a database ID from your organization’s internal systems. (See below)
+Segment recommends that you use a unique user identifier that won't change for your `userId`, for example a database ID from your organization's internal systems. (See below)
 
-When you make an [Identify call](/docs/connections/spec/identify) using Analytics.js, Segment saves the `userId` to the browser cookie, and writes all the user traits in local storage. If you’re using one of the Segment mobile libraries, the `userId` and traits are stored in the device’s memory. This makes it possible to append the user’s data to all subsequent [Page calls](/docs/connections/sources/catalog/libraries/website/javascript#page) or [Track calls](/docs/connections/sources/catalog/libraries/website/javascript#track) for the user, so you can properly attribute those actions.
+When you make an [Identify call](/docs/connections/spec/identify) using Analytics.js, Segment saves the `userId` to the browser cookie, and writes all the user traits in local storage. If you're using one of the Segment mobile libraries, the `userId` and traits are stored in the device's memory. This makes it possible to append the user's data to all subsequent [Page calls](/docs/connections/sources/catalog/libraries/website/javascript#page) or [Track calls](/docs/connections/sources/catalog/libraries/website/javascript#track) for the user, so you can properly attribute those actions.
 
-If a user returns to your site after the [cookie expires](#id-expiration-and-overwriting), Analytics.js looks for an old ID in the user’s `localStorage`, and if one is found, sets it as the user’s ID again in a new cookie. If the user clears their cookies *and* `localStorage`, all of the IDs are removed. The user gets a completely new `anonymousId` when they next visit the page.
+If a user returns to your site after the [cookie expires](#id-expiration-and-overwriting), Analytics.js looks for an old ID in the user's `localStorage`, and if one is found, sets it as the user's ID again in a new cookie. If the user clears their cookies *and* `localStorage`, all of the IDs are removed. The user gets a completely new `anonymousId` when they next visit the page.
 
 
 ## Best options for userIds
 
-A User ID should be a robust, static, unique identifier that you recognize a user by in your own systems. Because these IDs are consistent across a customer’s lifetime, you should include a User ID in Identify calls as often as you can.
+A User ID should be a robust, static, unique identifier that you recognize a user by in your own systems. Because these IDs are consistent across a customer's lifetime, you should include a User ID in Identify calls as often as you can.
 
-Ideally, the User ID could be a database ID. For example, if you’re using MongoDB it might be a row identifier and look something like `507f191e810c19729de860ea`. These can also be [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier)s that you generate somewhere in your application. You can also use identifiers that you get from other tools - such as Shopify or Braze - however this approach can lead to extra complexity in your systems.
+Ideally, the User ID could be a database ID. For example, if you're using MongoDB it might be a row identifier and look something like `507f191e810c19729de860ea`. These can also be [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier)s that you generate somewhere in your application. You can also use identifiers that you get from other tools - such as Shopify or Braze - however this approach can lead to extra complexity in your systems.
 
 Segment does **not** recommend using simple email addresses or usernames as a User ID, as these can change over time. Segment recommends that you use static IDs instead, so the IDs *never* change. When you use a static ID, you can still recognize the user in your analytics tools, even if the user changes their email address. And even better, you can link your analytics data with your own internal database.
 
@@ -50,15 +50,15 @@ You should make an Identify call in the following situations:
 
 ## Merging Identified and Anonymous user profiles
 
-The illustration below shows a timeline with a user’s interactions on a website, including sample API calls above that show Segment calls, and the user's `anonymousId` and `userId`.
+The illustration below shows a timeline with a user's interactions on a website, including sample API calls above that show Segment calls, and the user's `anonymousId` and `userId`.
 
 ![](images/identify-bp-1.png)
 
 <!-- https://www.figma.com/file/Gc53MamYsKZBg3IUduunc5/identity-best-practices?node-id=1%3A3 -->
 
-When the user first visits a page, Analytics.js automatically assigns the user an `anonymousId` and saves it to the user's local storage. As the user interacts with the site, for example clicking around to different pages, Analytics.js includes this `anonymousId` and some [contextual information](/docs/connections/spec/common#context) with each Page and Track call. The contextual information might be the user’s [IP address, browser, and more](/docs/connections/spec/common#context-fields-automatically-collected).
+When the user first visits a page, Analytics.js automatically assigns the user an `anonymousId` and saves it to the user's local storage. As the user interacts with the site, for example clicking around to different pages, Analytics.js includes this `anonymousId` and some [contextual information](/docs/connections/spec/common#context) with each Page and Track call. The contextual information might be the user's [IP address, browser, and more](/docs/connections/spec/common#context-fields-automatically-collected).
 
-When a user signs up to create an account on the website, the `.identify(UID)` and `.track(“Signed Up”)` events fire, in that order. You pull the `userId` unique to the user from your systems, and send it to the Segment library so you can label that user’s later events with their ID. The later Track call (“Signed Up”) contains both the `userId` *and* the automatically-collected `anonymousId` for the user, and any other information you capture about them -  such as their first name, last name, and email address.
+When a user signs up to create an account on the website, the `.identify(UID)` and `.track(“Signed Up”)` events fire, in that order. You pull the `userId` unique to the user from your systems, and send it to the Segment library so you can label that user's later events with their ID. The later Track call (“Signed Up”) contains both the `userId` *and* the automatically-collected `anonymousId` for the user, and any other information you capture about them -  such as their first name, last name, and email address.
 
 The example below shows an Identify call including user traits. It uses a database ID (`97980cfea0067`) as the `userId`.
 
@@ -87,7 +87,7 @@ Now, as the user interacts with your site and different buttons or links that yo
 
 ### UserID merge examples
 
-Let’s go through some more scenarios to explain how an `anonymousId` is assigned and how it might be merged with a UID.
+Let's go through some more scenarios to explain how an `anonymousId` is assigned and how it might be merged with a UID.
 
 #### Scenario #1 - Multi-day, single device
 
@@ -117,7 +117,7 @@ Your data warehouse has a schema for each of your Segment sources. User informat
 
 The `identifies` table contains all of your identify events, and the timestamps for these events. Every time you make an Identify call, Segment adds the `userId`, `anonymousId`, any updated or added user traits from the call, as well as the timestamp of when the call was made. Your `identifies` table is your first stop when you have questions about users and their traits.
 
-The `users` table contains only unique Identify method calls, and is a collation of the `identifies` table. The `users` table is the single source of truth for a user’s most up-to-date traits.
+The `users` table contains only unique Identify method calls, and is a collation of the `identifies` table. The `users` table is the single source of truth for a user's most up-to-date traits.
 
 These tables only contain information about a user *once they have been identified.* However, you can still find information about an _anonymous_ user on the `pages`, `screens`, and `tracks` tables, as well as the individual track event tables.
 
@@ -125,7 +125,7 @@ These tables only contain information about a user *once they have been identifi
 
 The Segment ID cookie is set with a one year expiration. However, there are some ways an ID can be reset or overwritten:
 
-- If you call `reset` during a user’s browser session, it removes both their `userId` and `anonymousId`, which means the user generates a new `anonymousId` on the next visit.
+- If you call `reset` during a user's browser session, it removes both their `userId` and `anonymousId`, which means the user generates a new `anonymousId` on the next visit.
 - If the user manually clears their cookies and local storage, they generate a new `anonymousId` on the next visit.
 - If you invoke any call before you set an `anonymousId`, Segment automatically sets the `anonymousId` first. This means if you explicitly set an `anonymousId`, you might give the user two `anonymousId`s or overwrite an existing one.
 - If you fetch the `anonymousId` using `analytics.user().anonymousId()` before one is set, Segment generates and sets an `anonymousId` rather than returning `null`.

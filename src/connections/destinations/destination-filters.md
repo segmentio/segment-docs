@@ -3,154 +3,167 @@ title: Destination Filters
 rewrite: true
 ---
 
-Destination Filters allow you to control the data flowing into each specific destination by conditionally preventing data from being sent to cloud-mode  destinations. You can filter out entire events, or just specific fields in the properties, traits, or in the context of your events.
+> info ""
+> Destination filters are only available to Business Tier customers.
+>
+> Destination filters for mobile device-mode destinations are in beta and only supports [Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios#destination-filters), [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/#destination-filters) and [React Native 2.0](/docs/connections/sources/catalog/libraries/mobile/react-native/#destination-filters) libraries.
 
-With Destination Filters, you can:
+Use destination filters to prevent certain data from flowing into a destination. You can conditionally filter out event properties, traits, and fields, or even filter out the event itself.
 
-- Control your event volume by sampling or dropping unnecessary events for
- specific destinations.
-- Manage PII (personally identifiable information) by blocking fields from
- reaching certain destinations.
-- Increase the relevance of the data in your destinations by removing unused or unwanted data.
-- Prevent test or internally-generated events from reaching your production tools.
+You can configure destination filters on cloud-mode, mobile, and web device-mode and actions-based destinations.  With device-mode destinations, you can use the same user interface or API mechanism that you use for your cloud-mode destinations, and have those filters acted upon for device-mode destinations on web and mobile.
 
-> note ""
-> **Note**: Destination Filters are currently available to Business Tier customers only.
+Common use cases for destination filters include:
+- Managing PII (personally identifiable information) by blocking fields from reaching certain destinations
+- Controlling event volume by sampling or dropping unnecessary events for specific destinations
+- Increasing data relevance in your destinations by removing unused or unwanted data
+- Preventing test or internally-generated events from reaching your production tools
 
-### Destination Filtering Limitations
+### Limitations
 
-- Destination Filters can only be applied to Cloud-mode ("server-side") streaming destinations. Device-mode destinations aren't supported.
-- You can't apply Destination Filters to Warehouses or S3 destinations.
+Keep the following limitations in mind when you use destination filters:
+
+- Segment applies destination filters one at a time in the order that they appear in your workspace.
+- You can't apply destination filters to Warehouses or S3 destinations.
 - Each filter can only apply to one source-destination pair.
+- *(For device-mode)* Destination filters don't apply to items that are added to the payload server-side such as IP addresses.
+- *(For device-mode)* Destination filters don't filter on native events that the destination SDK collects. Instead, you can use the load option to conditionally load relevant bundled JavaScript on the page. See the docs for [load options](/docs/connections/sources/catalog/libraries/website/javascript/#load-options).
+- *(For device-mode)* Destination filters don't filter some fields that are collected by the destination SDK outside of Segment such as `page.url` and `page.referrer`.
+- *(For web device-mode)* Destination filters for web device-mode only supports the Analytics.js 2.0 source. You need to enable device mode destination filters for your Analytics.js source. To do this, go to your Javascript source and navigate to **Settings > Analytics.js** and turn the toggle on for **Destination Filters**.
 
-If you have a compelling use case for these unsupported options, [contact Segment](https://segment.com/help/contact/).
+[Contact Segment](https://segment.com/help/contact/){:target="_blank"} if these limitations impact your use case.
 
-## Create a Destination Filter
-To create a Destination Filter:
+## Create a destination filter
+
+To create a destination filter:
 1. Go to **Connections > Destinations** and select your destination.
 2. Click on the **Filters** tab of your destination.
 3. Click **+ New Filter**.
 4. Configure the rules for your filter.
-5. *(Optional)* Click **Load Sample Event** to test your filter to see if the event passes through your filter.
+5. *(Optional)* Click **Load Sample Event** to see if the event passes through your filter.
 6. Click **Next Step**.
 7. Name your filter and click the toggle to enable it.
-6. Click **Save**.
+8. Click **Save**.
 
-## Destination Filters API
+## Destination filters API
 
-The Destination Filters API provides more power than the Destination
-Filters settings in the Segment dashboard. You can create complex filters
-that are conditionally applied using Segment's "Filter Query Language" (FQL).
+The destination filters API provides more power than Segment's dashboard destination filters settings. With the API, you can create complex filters that are conditionally applied using Segment's [Filter Query Language (FQL)](/docs/api/config-api/fql/).
 
-The Destination Filters API offers these 4 different types of filters:
+The destination filters API offers four different filter types:
 
-Filter | Details
------- | -------
-`drop_event` | Don't send matched events to the destination.
-`sample_event` | Send only a percentage of events through to the destination.
-`whitelist_fields` | Only send whitelisted properties to the destination.
-`blocklist_fields` | Don't send blocklisted properties to the destination.
+| Filter             | Details                                                      |
+| ------------------ | ------------------------------------------------------------ |
+| `drop_event`       | Doesn't send matched events to the destination.                |
+| `sample_event`     | Sends only a percentage of events through to the destination. |
+| `whitelist_fields` | Only sends whitelisted properties to the destination.         |
+| `blocklist_fields` | Doesn't send blocklisted properties to the destination.        |
 
-Read more in the [Destination Filters API docs](https://reference.segmentapis.com/#6c12fbe8-9f84-4a6c-848e-76a2325cb3c5).
+To learn more, read Segment's [Destination Filters API docs](https://docs.segmentapis.com/tag/Destination-Filters){:target="_blank"}.
 
 ## Examples
 
-### PII Management
+The following examples illustrate common destinations filters use cases:
+* [PII management](#pii-management)
+* [Control event volume](#control-event-volume)
+* [Cleaner data](#cleaner-data)
+* [Remove internal and test events from production tools](#remove-internal-and-test-events-from-production-tools)
+* [Sample a percentage of events](#sample-a-percentage-of-events)
+* [Drop events](#drop-events)  
+
+### PII management
 
 Example: Remove email addresses from `context` and `properties`:
 
-Property-level whitelisting is available using Segment's API. Use this to perform actions like only send certain traits you know have no PII to a destination, and block
-all other traits in the context or property fields.
+Property-level allowlisting is available with Segment's API. Using destination filters, you can configure a rule that removes email addresses from `context` and `properties`. As a result, Segment only sends traits without PII to the destination.
 
-![](images/destination-filters/pii_example.png)
 
-### Control Event Volume
+![PII management example](images/destination-filters/pii_example.png)
 
-Example: Only send user signed up and demo requested events:
+### Control event volume
 
-![](images/destination-filters/drop_example.png)
+This example shows a filter that controls event volume by only sending `User Signed Up` and `Demo Requested` events.
 
-### Cleaner Data
+![Example of a filter that controls event volume](images/destination-filters/drop_example.png)
 
-Example: Only send events - only send track calls to Google Analytics:
+### Cleaner data
 
-![](images/destination-filters/clean_example.png)
+This example shows a rule that only sends track calls to Google Analytics.
 
-### Remove Internal and Test Events From Production Tools
+![Example of a filter that only sends track calls to Google Analytics](images/destination-filters/clean_example.png)
 
-Example: Don't send events when the email contains `@segment.com`:
+### Remove internal and test events from production tools
 
-![](images/destination-filters/internal_example.png)
+In the example below, the rule targets email addresses with internal domains to stop test events from reaching Destinations.
 
-Example: Don't send events when the `Order Completed` and `properties.email` contain `@segment.com`.
+![Example of a filter that removes internal and test events from production tools](images/destination-filters/internal_example.png)
 
-![](images/destination-filters/internal_example2.png)
+In the example below, the rule prevents an event from sending if `Order Completed` and `properties.email` contain an internal `@segment.com` email address.
 
-### Sample a Percentage of Events
+![Internal domain filter example](images/destination-filters/internal_example2.png)
 
-Example: Randomly sample video heartbeat events:
+### Sample a percentage of events
 
-Note: Random sampling can currently only be created using Segment's API: [Full API
-docs here](https://reference.segmentapis.com/#6c12fbe8-9f84-4a6c-848e-76a2325cb3c5)
+Using the [destination filters API](https://docs.segmentapis.com/tag/Destination-Filters){:target="_blank"}, you can create a rule to randomly sample video heartbeat events.
 
-### Drop Events
+### Drop events
 
-[This video](https://www.youtube.com/watch?v=47dhAF1Hoco) shows an example of
-filtering events sent to a destination based on the name of the event.
+[Watch this destination filters walkthrough](https://www.youtube.com/watch?v=47dhAF1Hoco){:target="_blank"} to learn how to use event names to filter events sent to destinations.
 
-## Important Notes
+## Important notes
 
-**Conflicting settings**
+#### Conflicting settings
 
-Some destinations offer settings that also allow you to filter data. For example, the Facebook App Events destination allows you to map `Screen` events to `Track` events. Because Destination Filters are evaluated and applied _before_ the Destination settings are applied, they can conflict with your settings.
+Some destinations offer settings that also allow you to filter data. For example, the Facebook App Events destination allows you to map `Screen` events to `Track` events. Because destination filters are evaluated and applied _before_ the destination settings are applied, they can conflict with your settings.
 
-In the example in the video above, if you have a Destination Filter that filters Track events _and_ you have the **Use Screen Events as Track Events** setting enabled, `Track` events will be dropped, but `Screen` events still process. The destination settings will transform it into a `Track` event - *after* the filters.
+For example, if you have a destination filter that filters Track events _and_ you have the **Use Screen Events as Track Events** setting enabled, `Track` events drop, but `Screen` events still process. The destination settings transform it into a `Track` event - *after* the filters.
 
-**Error handling**
+#### Error handling
 
-Segment makes effort to ensure that Destination Filters handle unexpected
-situations. For example, if you use the `contains()` FQL function on
-a field and that field is `null`, Segment returns `false` instead of returning an error. If Segment can't reasonably infer your intent, Segment logs an internal error, and drops the event. Segment defaults to this behavior to prevent sensitive information, for example from a PII filter, from getting through.
+Segment makes effort to ensure that destination filters can handle unexpected situations. For example, if you use the `contains()` FQL function on the `null` field, Segment returns `false` instead of returning an error. If Segment can't infer your intent, Segment logs an internal error and drops the event. Segment defaults to this behavior to prevent sensitive information, like a PII filter, from getting through.
 
-Errors aren't exposed in the Event Deliverability tab of your Destination. For help diagnosing unexpectedly missing events when using Destination Filters, [contact Segment](https://segment.com/help/contact/).
+Errors aren't exposed in your Destination's Event Deliverability tab. For help diagnosing missing destination filter events, [contact Segment](https://segment.com/help/contact/){:target="_blank"}.
 
-## FAQ
+## FAQs
 
-**Q: How does destination filters work with array properties?**
+#### How do destination filters work with array properties?
 
-Destination Filters can filter properties out of objects nested in an array. For
-example, you can filter out the `price` property of every object in an array at `properties.products`. You can also filter out an entire array from the payload. However, you can't drop nested objects in an array, or filter properties out of a single object in an array.
+Destination filters can filter properties out of objects nested in an array. For example, you can filter out the `price` property of every object in an array at `properties.products`. You can also filter out an entire array from the payload. However, you can't drop nested objects in an array or filter properties out of a single object in an array.
 
-In order to block a specific property from all of the objects within a properties array, set the filter following the format: `<propertyType>.<arrayName>.<arrayElementLabel>​`.
+To block a specific property from all of the objects within a properties array, set the filter using the following the format: `<propertyType>.<arrayName>.<arrayElementLabel>​`.
 
 For example, the `properties.products.newElement` filter blocks all `newElement` property fields from each `products` object of an array within the `properties` object of a Track event.
 
-![](images/destination-filters/filter-array-properties.png)
+![Filter array properties](images/destination-filters/filter-array-properties.png)
 
-If you want to block the Identify event trait `products.newElement`, select the option under the **User Traits** list instead. If you want to block a context object field `products.newElement`, select it from the **Context Fields** list.
+To block the Identify event trait `products.newElement`, select the option under the **User Traits** list instead. To block the context object field `products.newElement`, select it from the **Context Fields** list.
 
-**Q: How many filters can I create?**
+#### How many filters can I create?
 
-You are limited to 10 filters per destination. If you need help
-consolidating filters or would like to discuss your use case, [contact Segment](https://segment.com/help/contact/)!
+Segment supports 10 filters per destination. If you need help consolidating filters or would like to discuss your use case, [contact Segment](https://segment.com/help/contact/){:target="_blank"}.
 
-**Q: When will you support warehouses?**
+#### Can I set multiple `Only Send` destination filters?
 
-If you want to filter out events from warehouses, the best way to do that is with the existing Selective Sync feature.
+Segment evaluates multiple `Only Send` filters against each other and resolves destination filters in order. If multiple `Only Send` filters conflict with each other, Segment won't send information downstream.
 
-**Q: I don't see a "name" property at the top level of my events to filter on "event name".**
+#### How many properties can I view in the filter dropdown?
 
-Generally, only Track calls have "name" properties, which corresponds to the
-"Event" field in an event.
+Segment displays the most recent 15,000 properties. To find a property not in the filter dropdown, enter the property manually.
 
-**Q: How can I find out when new filters have been added or removed from a destination?**
+#### How can I filter out warehouse events?
 
-The Activity Feed shows the action, date, and user who performed the action when a Destination Filter is created, modified, enabled, disabled, or deleted. You can also subscribe to notifications for any of these changes in the **Activity Feed** settings page.
+To filter out events from warehouses, use Selective Sync.
 
-**Q: Why am I getting a permissions denied error when trying to save a filter?**
+#### I don't see a *name* property at the top level of my events to filter on *event* name".
 
-Anyone with `read` access on the source can view and test filters, but only users with `write` access can edit filters.
+Generally, only Track calls have *name* properties, which correspond to the *event* field in an event.
 
-**Q: How can I test that my filter is working?**
+#### How can I find out when new destination filters have been added or removed?
 
-Use the Destination Filter tester (in the destination filter set up screens) to test if you are filtering out the right events. Filtered events still show up in the schema page, but aren't counted in the Event Deliverability graphs.
+The Activity Feed shows the action, date, and user who performed the action when a destination filter is created, modified, enabled, disabled, or deleted. You can also subscribe to notifications for any of these changes in the **Activity Feed** settings page.
+
+#### Why am I getting a permissions denied error when I try to save a filter?
+
+You must have write access to save and edit filters. Read permission access only allows viewing and testing access.
+
+#### How can I test my filter?
+
+Use the destination filter tester during setup to verify that you're filtering out the right events. Filtered events show up on the schema page but aren't counted in event deliverability graphs.

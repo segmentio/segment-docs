@@ -1,10 +1,9 @@
 ---
 rewrite: true
 title: QuanticMind Destination
+id: 54521fd725e721e32a72eec2
 ---
 [QuanticMind](https://quanticmind.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the performance leader in predictive advertising management software for paid search, social, display, and mobile. The `analytics.js` QuanticMind Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-quanticmind).
-
-This document was last updated on January 09, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 

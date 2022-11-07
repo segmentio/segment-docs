@@ -12,14 +12,14 @@ config:
       connection_mode:
         - cloud
       configurable: true
-      location: 
+      location:
       notes: This setting is renamed API Key, and is available during initial configuration, or on the Settings tab after configuration.
     - name: Custom API Endpoint
       connection_mode:
         - device-web
       configurable: false
       location:
-      notes: This setting is not needed in Braze Web Mode (Actions). 
+      notes: This setting is not needed in Braze Web Mode (Actions).
     - name: Appboy Datacenter
       connection_mode:
         - cloud
@@ -27,7 +27,7 @@ config:
       location: ""
       notes: This setting is covered by the REST API Endpoint
     - name: Log Purchase when Revenue is present
-      connection_mode: 
+      connection_mode:
         - device-web
       configurable: true
       location:
@@ -170,7 +170,7 @@ actions:
       description: The object that contains properties pertaining to the event.
       default: properties
     - name: Update Existing Only
-      description: Set to true to use the Braze API in "Update Only" mode. 
+      description: Set to true to use the Braze API in "Update Only" mode.
       default: false
   - action: Track Purchase
     blurb: Track Purchase sends Braze a Track Purchase call when the destination recieves any event that matches the specified name.
@@ -194,7 +194,7 @@ actions:
       description: The object that contains properties pertaining to the event.
       default: properties
     - name: Update Existing Only
-      description: Set to true to use the Braze API in "Update Only" mode. 
+      description: Set to true to use the Braze API in "Update Only" mode.
       default: false
   - action: Update User Profile
     blurb: Update User Profile sends to Braze a request to update an existing user's profile attributes when the destination receives an Identify call.
@@ -228,10 +228,10 @@ actions:
       default: traits.email
     - name: Email Subscribe
       description: "The user's email subscription preference. Must be one of: `opted_in`, `unsubscribed`, or `subscribed`"
-      default: 
+      default:
     - name: Email Open Tracking Disabled
       description: Set to true to disable adding the open tracking pixel to all future emails sent to this user.
-      default: 
+      default:
     - name: Email Click Tracking Disabled
       description: Set to true to disable click tracking for all links within future emails sent to this user.
       default:
@@ -266,7 +266,7 @@ actions:
       description: "The user's push subscription preference: `opted_in` (explicitly registered to receive push messages), `unsubscribed` (explicitly opted out of push messages), and `subscribed` (neither opted in nor out)."
       default:
     - name: Push Tokens
-      description: "An array of objects with app_id and token string. You can optionally provide a `device_id` for the device this token is associated with. For example,`{\"app_id\": App Identifier, \"token\": \"abcd\", \"device_id\": \"optional_field_value\"}. If a device_id is not provided, a random value is generated." 
+      description: "An array of objects with app_id and token string. You can optionally provide a `device_id` for the device this token is associated with. For example,`{\"app_id\": App Identifier, \"token\": \"abcd\", \"device_id\": \"optional_field_value\"}. If a device_id is not provided, a random value is generated."
       default:
     - name: Time Zone
       description: The user's time zone from the IANA Time Zone Database. For example, `America/New_York`.
@@ -278,10 +278,10 @@ actions:
       description: A hash of custom attributes sent to Braze.
       default: traits
     - name: Update Existing Only
-      description: Set this flag to true to put the API in "Update Only" mode. 
+      description: Set this flag to true to put the API in "Update Only" mode.
       default: true
   - action: Identify Debounce
     blurb: >
-      When enabled for Javascript sources, this action ensure that only Identify calls where at least one updated trait value are sent to Braze. Events with duplicate traits are not sent.
+      When enabled for JavaScript sources, this action ensure that only Identify calls where at least one updated trait value are sent to Braze. Events with duplicate traits are not sent.
       To use Identify Debounce with mobile sources, include Segment's open-source [Middleware tool](https://github.com/segmentio/segment-braze-mobile-middleware){:target="_blank"}.
     fields:

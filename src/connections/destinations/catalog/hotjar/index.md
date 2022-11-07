@@ -1,43 +1,38 @@
 ---
 title: Hotjar Destination
 rewrite: true
+id: 5913371070a3e552b9561a4e
 ---
+[Hotjar](https://hotjar.com){:target="_blank"} enables you to understand your users in a fast and visual way. Hotjar offers a full set of tools such as analytics, page heatmaps, session recordings, feedback tools, and more. Hotjar provides you with everything your team needs to uncover user insights and make the right product changes.
 
-[Hotjar](https://help.hotjar.com/hc/en-us) is the fast & visual way to understand your users. It offers a full set of user experience tools: heatmaps, session recordings, forms reporting, funnels, and feedback tools, giving you everything your team needs to uncover user insights and make the right changes.
+The Segment Hotjar Destination allows you to get started with Hotjar and its core APIs. You can:
+1. Automatically install the [Hotjar Tracking Code](https://help.hotjar.com/hc/en-us/articles/115011639927){:target="_blank"}.
+2. Automatically send [user attributes](https://help.hotjar.com/hc/en-us/articles/360033640653-Identify-API-Reference){:target="_blank"} to Hotjar by connecting your Segment `identify` calls with Hotjar's own Identify API.
+3. Automatically send [custom events](https://help.hotjar.com/hc/en-us/articles/4405109971095-Events-API-Reference){:target="_blank"} to Hotjar by connecting your Segment `track` calls with Hotjar's own Events API.
 
-The Segment Hotjar Destination allows you to both easily install Hotjar on your pages, and send [User Attributes](https://help.hotjar.com/hc/en-us/articles/360038394053-How-to-Setup-User-Attributes-in-4-Steps) information over Hotjar’s [Identify API](https://help.hotjar.com/hc/en-us/articles/360033640653) using the Segment Identify Spec. As of February 3rd, 2020, this allows you to:
-
-* [Target Polls and Incoming Feedback to users based on their User Attributes](https://help.hotjar.com/hc/en-us/articles/360022688554)
-* [Lookup and Delete user data based on their User ID](https://help.hotjar.com/hc/en-us/articles/360001749014)
-
-In time, most or all Hotjar features will use User Attributes in some way, with filtering Recordings planned in the first half of 2020.
-
-This document was last updated on February 6, 2020. This destination is maintained by Segment. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
+Knowing who your users are and what they're doing unlocks more advanced filtering and targeting capabilities across all of Hotjar's tools, helping you find meaningful insights faster.
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From the Segment web app, click **Catalog**.
+1. Navigate to **Connections** and click **Add Destination** From the Segment web app.
 
-2. Search for "Hotjar" in the Catalog, select it, and choose which of your Javascript sources to connect the destination to.
+2. Search for *Hotjar* in the Catalog, select it, and choose the JavaScript source you want to connect the destination to.
 
-3. Add your Hotjar Site ID to your Destination settings. You can find this under Settings and Sites & Organizations in your Hotjar dashboard. It should be a whole number (e.g. 123456).
+3. Add your **Hotjar Site ID** to your Destination settings. You can find this ID in Account settings > Sites & Organizations.
 
-4. Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Hotjar's tracking snippet, along with your Site ID, onto the page. If you are already using Hotjar, remove Hotjar’s snippet from your code.
-
-Hotjar automatically starts tracking visitors based on the tools you have enabled in your Hotjar dashboard.
+Your changes will appear in the Segment CDN after 45 minutes, and then Analytics.js will start to asynchronously load Hotjar's tracking snippet and send data. If you're already using Hotjar, remove Hotjar's snippet from your code.
 
 ## Identify
 
-The Hotjar destination will automatically ingest a User ID, as well as values sent over your Identify spec as [traits](/docs/connections/spec/identify/#traits), as long as [User Attributes are enabled in Hotjar](https://help.hotjar.com/hc/en-us/articles/360038394053-How-to-Setup-User-Attributes-in-4-Steps#step-2-review-your-privacy-requirements-and-enable-user-attributes).
+The Hotjar destination will automatically ingest a User ID and any values sent over your Identify spec as [traits](/docs/connections/spec/identify/#traits), as long as session capture is enabled in Hotjar.
 
 Identify calls that do not have a User ID value will not be sent to Hotjar.
 
 ### Nested values or lists
 
-The Hotjar Identify API is unable to ingest values passed as nested objects or lists over your `identify` Spec:
+Currently, the Hotjar Identify API **does not** support ingesting values passed as nested objects or lists over your identify Spec:
 
 ```js
 "traits": {
@@ -54,6 +49,23 @@ The Hotjar Identify API is unable to ingest values passed as nested objects or l
     }
 ```
 
-In this example, Hotjar would reject all the values in the `address` field.
+In the example above, Hotjar rejects all the values in the `address` field.
 
-This is a recognized limitation of this version of the Hotjar Identify API, and as of February 3rd, 2020, is in the improvements backlog for the API.
+## Track
+
+The Hotjar destination automatically ingests any user actions tracked over your Track spec as [events](/docs/connections/spec/track/), as long as session capture is enabled in Hotjar.
+
+### Event properties
+
+Currently, the Hotjar Events API **does not** support ingesting event properties:
+
+```js
+analytics.track("Experiment Viewed", {
+  experiment_id: "1234",
+  experiment_name: "new_upsell_UX"
+  variation_id: "1234b"
+  variation_name: "variant"
+});
+```
+
+In the example above, Hotjar only ingests the event name, `Experiment Viewed`. All of its event properties are rejected.

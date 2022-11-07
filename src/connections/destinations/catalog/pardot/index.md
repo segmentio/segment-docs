@@ -1,8 +1,8 @@
 ---
 title: Salesforce Pardot Destination
 strat: salesforce
+id: 54521fd925e721e32a72eee1
 ---
-
 ## Getting Started
 
 When you enable Pardot in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Pardot's javascript onto your page. This means you should remove Pardot's snippet from your page. Pardot automatically collects anonymous visitor data data on your site. Pardot is supported on the client-side and server-side.
@@ -11,9 +11,9 @@ When you enable Pardot in the Segment web app, your changes appear in the Segmen
 ## Update your Segment Pardot destination to use Salesforce SSO
 
 > info ""
-> Starting February 15, 2021, Pardot will require that you authenticate using Salesforce’s single sign-on (SSO), rather than a Pardot username and password. If you are not already using SSO, you must reconnect your Segment Pardot destination using Salesforce SSO before February 15th to keep data flowing to Pardot.
+> Starting February 15, 2021, Pardot will require that you authenticate using Salesforce's single sign-on (SSO), rather than a Pardot username and password. If you are not already using SSO, you must reconnect your Segment Pardot destination using Salesforce SSO before February 15th to keep data flowing to Pardot.
 
-If you don’t have a Salesforce account, contact your Salesforce administrator. They can grant you a Salesforce Identity License, which allows you to use Salesforce for SSO purposes without provisioning a full Salesforce account.
+If you don't have a Salesforce account, contact your Salesforce administrator. They can grant you a Salesforce Identity License, which allows you to use Salesforce for SSO purposes without provisioning a full Salesforce account.
 
 To reconnect Pardot to Segment using SSO authentication:
 1. In the Segment app, click **Connections** on the left, then click **Destinations**. Select your Pardot destination.
@@ -21,14 +21,14 @@ To reconnect Pardot to Segment using SSO authentication:
    ![](images/connect-sso.png)
 
 3. On the next screen, you are prompted to authenticate using your Salesforce username and password.
-   If you don’t have a Salesforce account, contact your Salesforce administrator. They can grant you a Salesforce Identity License, which allows you to use Salesforce for SSO purposes without provisioning a full Salesforce account.
-4. On the Pardot destination settings page, click **Primary Business Unit Id** and specify the [Primary Business Unit Id](/docs/connections/destinations/catalog/pardot/#primary-business-unit-id) associated with your Pardot Account in Salesforce. 
+   If you don't have a Salesforce account, contact your Salesforce administrator. They can grant you a Salesforce Identity License, which allows you to use Salesforce for SSO purposes without provisioning a full Salesforce account.
+4. On the Pardot destination settings page, click **Primary Business Unit Id** and specify the [Primary Business Unit Id](/docs/connections/destinations/catalog/pardot/#primary-business-unit-id) associated with your Pardot Account in Salesforce.
 
 ## API Access
 To connect to the Pardot API, Segment requires that you authenticate your account using your Salesforce single sign-on (SSO) credentials. When you first connect to the Pardot destination, you are prompted to sign in using Salesforce SSO.
 
 > success ""
-> If you don’t have a Salesforce account, contact your Salesforce administrator. They can grant you a Salesforce Identity License, which allows you to use Salesforce for SSO purposes without provisioning a full Salesforce account.
+> If you don't have a Salesforce account, contact your Salesforce administrator. They can grant you a Salesforce Identity License, which allows you to use Salesforce for SSO purposes without provisioning a full Salesforce account.
 
 ### Pardot Version 3 and Version 4
 
@@ -116,7 +116,7 @@ If possible, we recommend you explore bulk updating all existing users to ensure
 
 ### Client Side
 
-On the client-side browser Segment loads Pardot's javascript snippet to enable [anonymous visitor tracking](http://www.pardot.com/products/marketing-automation/benefits/website-visitor-id-and-anonymous-visitor-tracking/).
+On the client-side browser Segment loads Pardot's JavaScript snippet to enable [anonymous visitor tracking](http://www.pardot.com/products/marketing-automation/benefits/website-visitor-id-and-anonymous-visitor-tracking/).
 
 ### Troubleshooting
 

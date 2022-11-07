@@ -154,11 +154,11 @@ Tracking with JavaScript in the browser has its benefits, such as leveraging bro
 
 [Learn more about client vs server tracking.](https://segment.com/academy/collecting-data/when-to-track-on-the-client-vs-server/)
 
-If you do move key checkout events to the server side, you will have to manually send the data automatically collected by our client-side javascript library to your server. These pieces of tracking data are still important for the following reasons:
+If you do move key checkout events to the server side, you will have to manually send the data automatically collected by our client-side JavaScript library to your server. These pieces of tracking data are still important for the following reasons:
 
 *   **UTM parameters**: collecting the UTM params will allow you to tie conversion events to your marketing campaign or activities. This is valuable in that you can immediately measure performance and calculate ROI on your campaigns.
 
-*   **IP address**: the IP address can provide location intelligence for your customers. This means you can personalize your shopping experience or engagement emails with inventor that might be more relevant depending on your customers' locations.
+*   **IP address**: the IP address can provide location intelligence for your customers. This means you can personalize your shopping experience or engagement emails with inventory that might be more relevant depending on your customers' locations.
 
 *   **User Agent**: the User Agent will inform you of your customers' preferred device and shopping experience. Are they converting on a mobile web browser? Native app? Or on their laptop?
 

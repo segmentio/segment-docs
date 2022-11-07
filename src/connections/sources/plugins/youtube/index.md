@@ -18,7 +18,7 @@ Enable a new plugin by navigating to the settings for your Source, and clicking 
 
 ![the plugins setting screen](/docs/connections/sources/plugins/plugins-enable.png)
 
-**Note: At this time, only Javascript sources support plugins.**
+**Note: At this time, only JavaScript sources support plugins.**
 
 ### 2. Initialize
 Initialize the plugin by giving it access to the YouTube video player instance(s) running on your page. Use the initialize method in the YouTube `onYouTubeIframeAPIReady()` function:

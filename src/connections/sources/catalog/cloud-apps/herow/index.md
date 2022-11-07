@@ -1,7 +1,9 @@
 ---
 title: Herow
 beta: true
+id: xJSb170s6B
 ---
+{% include content/source-region-unsupported.md %}
 
 [HEROW](https://www.herow.io) is a contextual platform for mobile application. Built around everyday behaviors and powered by location intelligence, its one-stop solution allows apps to maximize mobile engagement with their users.
 
@@ -14,7 +16,7 @@ This source is maintained by HEROW. For any issues with the source, [contact the
 
 ## Getting Started
 
-1. From your Segment UI’s Sources page click on “Add Source”.
+1. From your Segment UI's Sources page click on “Add Source”.
 2. Search for "HEROW" within the Sources Catalog and confirm by clicking "Connect".
 3. Give the Source a nickname and follow the set up flow to "Add Source". The nickname will be used to designate the source in the Segment interface, and Segment will create a related schema name. The schema name is the namespace you'll be querying against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (eg. HEROW_Prod, HEROW_Staging, HEROW_Dev).
 4. Copy the Write key from the Segment UI and log in to your HEROW account - navigate to Settings > Integrations > Segment Integration and paste the key to connect.
@@ -38,16 +40,16 @@ Below is a table of events that HEROW sends to Segment. These events will show u
 
 Below is a table of events that HEROW sends to Segment. These events will show up as tables in your warehouse, and as regular events in your other Destinations.
 
-**Important note on the user id:** for each of the following events, the user id will be the custom user id integrated with our HEROW SDK if applicable, or the device’s id. We recommend using the Custom user Id to match with your own user database.
+**Important note on the user id:** for each of the following events, the user id will be the custom user id integrated with our HEROW SDK if applicable, or the device's id. We recommend using the Custom user Id to match with your own user database.
 
 
 ### Zone Entered (Geofence) Events
 
 |Property Name|Type|Description|
 | -------- | -------- | -------- |
-|latitude|float|The latitude of the user’s location at the time of the event.|
-|longitude|float|The longitude of the user’s location at the time of the event.|
-|accuracy|float|The accuracy of the user’s location at the time of the event in meters.|
+|latitude|float|The latitude of the user's location at the time of the event.|
+|longitude|float|The longitude of the user's location at the time of the event.|
+|accuracy|float|The accuracy of the user's location at the time of the event in meters.|
 |geofence_id|string|The ID of the geofence, provided by HEROW.|
 |geofence_name|string|The description of the geofence.|
 |geofence_categories|array of strings (comma separated)| The category of the geofence.|
@@ -60,9 +62,9 @@ Below is a table of events that HEROW sends to Segment. These events will show u
 
 |Property Name|Type|Description|
 | -------- | -------- | -------- |
-|latitude|float|The latitude of the user’s location at the time of the event.|
-|longitude|float|The longitude of the user’s location at the time of the event.|
-|accuracy|float|The accuracy of the user’s location at the time of the event in meters.|
+|latitude|float|The latitude of the user's location at the time of the event.|
+|longitude|float|The longitude of the user's location at the time of the event.|
+|accuracy|float|The accuracy of the user's location at the time of the event in meters.|
 |geofence_id|string|The ID of the geofence, provided by HEROW.|
 |geofence_name|string|The description of the geofence.|
 |geofence_categories|array of strings (comma separated)|The category of the geofence.|
@@ -74,9 +76,9 @@ Below is a table of events that HEROW sends to Segment. These events will show u
 
 |Property Name|Type|Description|
 | -------- | -------- | -------- |
-|latitude|float|The latitude of the user’s location at the time of the event.|
+|latitude|float|The latitude of the user's location at the time of the event.|
 |longitude|float|The longitude of the user at the time of the event.|
-|accuracy|float|The accuracy of the user’s location at the time of the event in meters.|
+|accuracy|float|The accuracy of the user's location at the time of the event in meters.|
 
 
 
@@ -85,43 +87,43 @@ Below is a table of events that HEROW sends to Segment. These events will show u
 
 |Property Name|Type|Description|
 | -------- | -------- | -------- |
-|latitude|float|The latitude of the user’s location at the time of the event.|
+|latitude|float|The latitude of the user's location at the time of the event.|
 |longitude|float|The longitude of the user at the time of the event.|
-|accuracy|float|The accuracy of the user’s location at the time of the event in meters.|
+|accuracy|float|The accuracy of the user's location at the time of the event in meters.|
 
 
 ### Office Entered
 
 |Property Name|Type|Description|
 | -------- | -------- | -------- |
-|latitude|float|The latitude of the user’s location at the time of the event.|
+|latitude|float|The latitude of the user's location at the time of the event.|
 |longitude|float|The longitude of the user at the time of the event.|
-|accuracy|float|The accuracy of the user’s location at the time of the event in meters.|
+|accuracy|float|The accuracy of the user's location at the time of the event in meters.|
 
 ### Office Exited
 
 |Property Name|Type|Description|
 | -------- | -------- | -------- |
-|latitude|float|The latitude of the user’s location at the time of the event.|
+|latitude|float|The latitude of the user's location at the time of the event.|
 |longitude|float|The longitude of the user at the time of the event.|
-|accuracy|float|The accuracy of the user’s location at the time of the event in meters.|
+|accuracy|float|The accuracy of the user's location at the time of the event in meters.|
 
 
 ### Commute Started (Coming soon)
 
 |Property Name|Type|Description|
 | -------- | -------- | -------- |
-|latitude|float|The latitude of the user’s location at the time of the event.|
+|latitude|float|The latitude of the user's location at the time of the event.|
 |longitude|float|The longitude of the user at the time of the event.|
-|accuracy|float|The accuracy of the user’s location at the time of the event in meters.|
+|accuracy|float|The accuracy of the user's location at the time of the event in meters.|
 
 ### Commute Ended (Coming soon)
 
 |Property Name|Type|Description|
 | -------- | -------- | -------- |
-|latitude|float|The latitude of the user’s location at the time of the event.|
+|latitude|float|The latitude of the user's location at the time of the event.|
 |longitude|float|The longitude of the user at the time of the event.|
-|accuracy|float|The accuracy of the user’s location at the time of the event in meters.|
+|accuracy|float|The accuracy of the user's location at the time of the event in meters.|
 
 ### User Traits
 

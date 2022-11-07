@@ -2,7 +2,9 @@
 title: Factual Engine Mobile SDK Source
 beta: true
 source-type: event
+id: n8YgCndi75
 ---
+{% include content/source-region-unsupported.md %}
 
 ## How Engine Works
 Installing the Engine SDK in your app enables you to gather and analyze information about your users' location. Engine caches the relevant portion of Factual's Global Places data on the device to determine where the user is, beyond raw location. Engine needs device location data in order to work and will use whatever location permissions your app has authorized. You can also set custom rules to trigger "actions" like push notifications or emails.

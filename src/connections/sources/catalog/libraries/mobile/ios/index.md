@@ -2,9 +2,8 @@
 title: Analytics for iOS
 strat: ios
 repo: analytics-ios
+id: UBrsG9RVzw
 ---
-
-
 With Analytics for iOS, you can send your data to analytics or marketing tool, without needing to learn, test, or implement a new API with each update or addition.
 <br />
 <br />
@@ -14,25 +13,25 @@ With Analytics for iOS, you can send your data to analytics or marketing tool, w
 > **Note:** Segment does not currently support tracking of watchkit extensions for the Apple Watch. [Email us](https://segment.com/requests/integrations/) if you're interested in a Watchkit SDK. For now we recommend tracking watch interactions using the iPhone app code.
 
 
-> info "Analytics-Swift Public Beta"
-> The [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios/) library is in public beta. If you’d like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift-ios/migration/). Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this library. 
+> info "Analytics-Swift"
+> The [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios/) library is in General Availability. If you'd like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift-ios/migration/).
 
 ## Analytics-iOS and Unique Identifiers
 
 One of the most important parts of any analytics platform is the ability to consistently and accurately identify users. To do this, the platform must assign and persist some form of identification on the device, so you can analyze user actions effectively. This is especially important for funnel conversion analysis and retention analysis.
 
-Naturally the Analytics SDK needs a unique ID for each user. To protect end-users’ privacy, Apple places restrictions on how these IDs can be generated and used. This section explains Apple’s policies, and how Segment generates IDs in compliance with these policies.
+Naturally the Analytics SDK needs a unique ID for each user. To protect end-users' privacy, Apple places restrictions on how these IDs can be generated and used. This section explains Apple's policies, and how Segment generates IDs in compliance with these policies.
 
-Before iOS 5 developers had access to `uniqueIdentifier`, which was a hardware-specific serial number that was consistent across different apps, vendors and installs. Starting with iOS 5, however, [Apple deprecated access to this identifier](https://developer.apple.com/news/?id=3212013a). In iOS 6 Apple introduced the `identifierForVendor` which protects end-users from cross-app identification. In iOS 7 Apple [restricted access to the device’s MAC address](http://techcrunch.com/2013/06/14/ios-7-eliminates-mac-address-as-tracking-option-signaling-final-push-towards-apples-own-ad-identifier-technology/), which many developers used as a workaround to get a similar device-specific serial number to replace  `uniqueIdentifier`.
+Before iOS 5 developers had access to `uniqueIdentifier`, which was a hardware-specific serial number that was consistent across different apps, vendors and installs. Starting with iOS 5, however, [Apple deprecated access to this identifier](https://developer.apple.com/news/?id=3212013a). In iOS 6 Apple introduced the `identifierForVendor` which protects end-users from cross-app identification. In iOS 7 Apple [restricted access to the device's MAC address](http://techcrunch.com/2013/06/14/ios-7-eliminates-mac-address-as-tracking-option-signaling-final-push-towards-apples-own-ad-identifier-technology/), which many developers used as a workaround to get a similar device-specific serial number to replace  `uniqueIdentifier`.
 
-Segment’s iOS library supports iOS 7+ by generating a UUID and storing it on disk. This complies with Apple’s required privacy policies, maintains compatibility, and also enables correct tracking in situations where multiple people use the same device, since the UUID can be regenerated.
+Segment's iOS library supports iOS 7+ by generating a UUID and storing it on disk. This complies with Apple's required privacy policies, maintains compatibility, and also enables correct tracking in situations where multiple people use the same device, since the UUID can be regenerated.
 
 
 ## API call queueing in Analytics-iOS
 
-The Segment SDK queues API calls rather than making a network request for each event tracked, to help improve the user’s battery life.
+The Segment SDK queues API calls rather than making a network request for each event tracked, to help improve the user's battery life.
 
-Packaged, or “device-mode” destinations (where Segment sends data directly from the user’s device using the destination’s integration SDK), might have their own queue behavior. Check the destination vendor’s documentation for details.
+Packaged, or “device-mode” destinations (where Segment sends data directly from the user's device using the destination's integration SDK), might have their own queue behavior. Check the destination vendor's documentation for details.
 
 For cloud-mode destinations, when you make an API call (Track, Page, etc.) the Segment library adds that call to the queue, and sends the events to the Segment servers in batches. By default, the batch size is `100`.
 
@@ -549,12 +548,12 @@ Depending on the audience for your app (for example, children) or the countries 
 {% codeexample %}
 {% codeexampletab Swift %}
 ```swift
-[[SEGAnalytics sharedAnalytics] disable];
+Analytics.shared().disable()
 ```
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
 ```objc
-Analytics.shared().disable()
+[[SEGAnalytics sharedAnalytics] disable];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
@@ -763,7 +762,7 @@ configuration.enableAdvertisingTracking = true
 // Set the block to be called when the advertisingID is needed
 // NOTE: In iOS 14, you'll need to manually do authorization elsewhere and only when it has been authorized, return the advertisingIdentifier to segment via the block below
 configuration.adSupportBlock = { () -> String in
-    return ASIdentifierManager.shared().advertisingIdentifier
+    return ASIdentifierManager.shared().advertisingIdentifier.uuidString
 }
 
 Analytics.setup(with: configuration)

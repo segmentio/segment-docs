@@ -1,6 +1,7 @@
 ---
 title: Lou Destination
 rewrite: true
+id: 5fac1adf1aa5eb4a01168950
 ---
 [Lou](https://wwww.louassist.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) turns new users into power users with self-serve onboarding, personalized product tours, and feature announcements. Launch in just minutes with no dev time required.
 

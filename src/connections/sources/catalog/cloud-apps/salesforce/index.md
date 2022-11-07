@@ -1,7 +1,9 @@
 ---
 title: Salesforce Source
 strat: salesforce
+id: 2baks93n
 ---
+
 [Salesforce](http://salesforce.com){:target="_blank"} is a leader in on-demand customer relationship management.
 
 Take your company's analysis to the next level by **adding Salesforce as a Source to Segment.** Segment automatically collects objects like `Accounts`, `Campaigns`, and `Tasks` and loads them into your data warehouse. 

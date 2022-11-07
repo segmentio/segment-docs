@@ -29,6 +29,8 @@ layout: main
         <h1 id="{{ page.title | slugify }}">
           {{ page.title }}
         </h1>
+
+        {% include content/plan-grid.md %}
       {%- endif -%}
 
       {%- if page.beta -%}

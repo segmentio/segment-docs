@@ -1,16 +1,17 @@
 ---
 title: Algolia Insights Destination
 rewrite: true
-layout: dest-test
 beta: true
 redirect_from: '/connections/destinations/catalog/algolia/'
+id: 5d373a350abf930001a6b70f
 ---
-
 [Algolia Insights](https://www.algolia.com/products/analytics/) lets you push events related to how your product is being used. Sending those events is a required step for using several Algolia features:
 
-- Click analytics
+- Click and conversion analytics
 - A/B Testing
+- AI Re-Ranking
 - Personalization
+- Algolia Recommend
 
 This destination is maintained by [Algolia](https://www.algolia.com/). For any issues with the destination, [contact the Algolia team](mailto:hey@algolia.com).
 
@@ -26,7 +27,7 @@ This destination is maintained by [Algolia](https://www.algolia.com/). For any i
 _**NOTE:** The Algolia Insights Destination is not a plug-and-play integration. It requires you to modify your frontend code to send additional Algolia-related data like index name, queryID, etc._
 
 
-You can read more about how to send Algolia-related data to Segment from [the documentation at Algolia](https://www.algolia.com/doc/guides/getting-insights-and-analytics/connectors/segment/).
+You can read more about how to send Algolia-related data to Segment from [the documentation at Algolia](https://www.algolia.com/doc/guides/sending-events/implementing/connectors/segment/).
 
 
 ## Track

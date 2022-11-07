@@ -1,19 +1,20 @@
 ---
 title: Braze Web Mode (Actions) Destination
 hide-boilerplate: true
-hide-dossier: true
+hide-dossier: false
 redirect_from:
   - '/connections/destinations/catalog/actions-braze-web/'
+  - '/connections/destinations/catalog/vendor-braze/'
+id: 60fb01aec459242d3b6f20c1
+versions:
+  - name: 'Braze Cloud Mode (Actions)'
+    link: '/docs/connections/destinations/catalog/braze-cloud-mode-actions'
+  - name: 'Braze (Classic)'
+    link: '/docs/connections/destinations/catalog/braze'
 ---
 {% include content/plan-grid.md name="actions" %}
 
 [Braze](https://www.braze.com/){:target="_blank"}, formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
-
-
-
-
-> success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Braze Segment destination. There's also a page about the [non-Actions Braze destination](/docs/connections/destinations/catalog/braze/). Both of these destinations receives data _from_ Segment. There's also the [Braze source](/docs/connections/sources/catalog/cloud-apps/braze/), which sends data _to_ Segment.
 
 ## Benefits of Braze Web Mode (Actions) vs Braze Classic
 
@@ -27,6 +28,10 @@ Braze Web Mode (Actions) provides the following benefits over Braze Classic:
 2. Search for "Braze" in the Catalog, select **Braze Web Mode (Actions)**, and choose which of your sources to connect the destination to.
 3. Configure the Connection Settings. **API Key** and **SDK Endpoint** are required settings.
 
+> info ""
+> If you're using a device-mode connection, Braze's SDK assigns a `device_id` and a backend identifier, `braze_id`, to every user. This allows Braze to capture anonymous activity from the device by matching on those identifiers instead of `userId`. This applies to _device-mode connections_.
+
+
 {% include components/actions-fields.html settings="true"%}
 
 {% include components/actions-fields.html%}
@@ -37,7 +42,7 @@ Braze Web Mode (Actions) can use the following features of Braze.
 
 ### In-app Messaging
 
-Find instructions to configure In-app Messaging in the Braze [documentation](https://www.braze.com/academy/Best_Practices/#in-app-message-behavior){:target="_blank"}. Once configured, you can trigger in-app message display as a result of several different event types. By default, all In-App Messages that a user is eligible for are automatically delivered to the user upon a session start event. A new session automatically starts when a user loads your site. If you'd like to force a new session for a user, make an Identify call with the corresponding [userId](/docs/connections/spec/identify/#user-id) for that user.
+Once configured, you can trigger in-app message display as a result of several different event types. By default, all In-App Messages that a user is eligible for are automatically delivered to the user upon a session start event. A new session automatically starts when a user loads your site. If you'd like to force a new session for a user, make an Identify call with the corresponding [userId](/docs/connections/spec/identify/#user-id) for that user.
 
 If you don't want your site to display new In-App Messages as they're received, disable automatic display and register your own display subscribers. To do this:
 
@@ -63,7 +68,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
 ### Push Notifications
 
-1. To support push notifications on Chrome, you'll need to enable FCM/GCM as well as configure your site. Check out steps [one and two here, for detailed instructions on both](https://www.braze.com/documentation/Web/#step-1-to-support-chrome-enable-fcmgcm){:target="_blank"}.
+1. To support push notifications on Chrome, you'll need to enable FCM/GCM as well as configure your site. Check out steps [one and two here for detailed instructions on both](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-1-to-support-chrome-enable-fcmgcm){:target="_blank"}.
 
 2. Browser Registration. In order for a browser to receive push notifications, you must register it for push by calling:
 
@@ -97,13 +102,13 @@ analytics.ready(function() {
 });
 ```
 
-1. Set your GCM/FCM server API key and SenderID on the Braze dashboard. You can find more details for this [here](https://www.braze.com/documentation/Web/#step-4-set-your-gcmfcm-server-api-key-and-senderid-on-the-Braze-dashboard){:target="_blank"}.
+1. Set your GCM/FCM server API key and SenderID on the Braze dashboard. You can find more details for this [here](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-4-set-your-gcmfcm-server-api-key-and-senderid-on-the-Braze-dashboard){:target="_blank"}.
 
-2. To support push notifications on Safari, add your Website Push ID into your Segment Settings UI and Segment sends it when the Braze Web SDK initializes. To get your Website Push ID, follow the first two bullet points in [these instructions](https://www.braze.com/documentation/Web/#step-5-configure-safari-push){:target="_blank"}.
+2. To support push notifications on Safari, add your Website Push ID into your Segment Settings UI and Segment sends it when the Braze Web SDK initializes. To get your Website Push ID, follow the first two bullet points in [these instructions](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-5-configure-safari-push){:target="_blank"}.
 
 ### Soft Push Prompts
 
-1. Follow [step one](https://www.braze.com/documentation/Web/#soft-push-prompts){:target="_blank"} to create a "Prime for Push" in-app messaging Campaign on the Braze dashboard.
+1. Follow [step one](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#soft-push-prompts){:target="_blank"} to create a "Prime for Push" in-app messaging Campaign on the Braze dashboard.
 
 2. Add the following snippet to your site:
 
@@ -144,7 +149,7 @@ analytics.ready(function() {
  });
 ```
 
-For more details on this snippet, see Braze's documentation [here](https://www.braze.com/documentation/Web/#soft-push-prompts){:target="_blank"}.
+For more details on this snippet, see Braze's documentation [here](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#soft-push-prompts){:target="_blank"}.
 
 > info ""
 > Place this snippet outside of your [Segment Snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) within your `script` tag.
@@ -169,4 +174,3 @@ For more details on this snippet, see Braze's documentation [here](https://www.b
 
 Keep the following in mind if you plan to move to Braze (Actions) from the classic Braze destination.
 {% include components/actions-map-table.html name="braze-web" %}
-

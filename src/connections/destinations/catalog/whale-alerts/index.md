@@ -1,7 +1,7 @@
 ---
 title: Whalr Destination
+id: 55283a150a20f4e22f0fb37e
 ---
-
 This destination is maintained by Whalr.
 
 ## About Whalr
@@ -46,7 +46,7 @@ In addition, studies show a negative correlation between the number fields and t
 
 ### Contextual Intelligence
 
-As noted above, by default Segment sends a PAGE event every time a customer visits a page.   You can also create custom messages using the TRACK method.   You can track any event you are interested in, such as signing up to a newsletter or responding to a campaign.  For example, you might add the following Javascript code to an email signup form on your website:
+As noted above, by default Segment sends a PAGE event every time a customer visits a page.   You can also create custom messages using the TRACK method.   You can track any event you are interested in, such as signing up to a newsletter or responding to a campaign.  For example, you might add the following JavaScript code to an email signup form on your website:
 
 	analytics.track("email signup")
 

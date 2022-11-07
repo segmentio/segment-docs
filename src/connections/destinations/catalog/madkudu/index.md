@@ -1,7 +1,7 @@
 ---
 title: MadKudu Destination
+id: 55a9343b0a20f4e22f0fb3ca
 ---
-
 This destination is built and supported by MadKudu. If you run into any issues with the destination, contact their support team.
 
 ### How it works
@@ -34,4 +34,4 @@ These events are enriched with other data, aggregated, and pushed to appropriate
 
 ## Questions?
 
-More details available on [MadKudu's website](http://www.madkudu.com/segment) or email  [hello@madkudu.com](mailto:hello@madkudu.com).
+More details available on [MadKudu's website](http://www.madkudu.com/) or email  [hello@madkudu.com](mailto:hello@madkudu.com).

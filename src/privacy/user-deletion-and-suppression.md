@@ -6,11 +6,11 @@ In keeping with Segment's commitment to GDPR and CCPA readiness, Segment offers 
 
 [Contact Support](https://segment.com/help/contact/) if you need to process more than 100,000 users within a 30 day period.
 
-> info "Business Plan Customers)"
+> info "Business Plan Customers"
 > If you use this feature to delete data, you can not Replay the deleted data. For standard Replay requests, you must wait for any pending deletions to complete, and you cannot submit new deletion requests for the period of time that Segment replays data for you.
 
 > info ""
-> The legacy GraphQL APIs for user deletion and suppression are deprecated. Instead, use the [Segment Config APIs](https://reference.segmentapis.com/?version=latest#57a69434-76cc-43cc-a547-98c319182247) to interact with the User Deletion and Suppression system.
+> The legacy GraphQL APIs for user deletion and suppression are deprecated. Instead, use the [Segment Public API](https://docs.segmentapis.com/tag/Deletion-and-Suppression){:target="_blank"} to interact with the User Deletion and Suppression system.
 
 ## Overview
 
@@ -52,7 +52,7 @@ You will also need to contact any unsupported Destinations separately to manage 
 
 Note that if you later **UNSUPPRESS** a user, the deletion functionality does not clean up data sent after removing the user from the suppression list.
 
-## Supressed users
+## Suppressed users
 
 The Suppressed Users tab shows an up-to-date list of **actively** suppressed `userId`s. Segment blocks data about these users across all sources.
 
@@ -74,28 +74,26 @@ The deletion requests tab shows a log of all regulations with a deletion element
 
 Click a deletion to view its status across Segment and your connected destinations.
 
-> info ""
-> Deletion requests submitted through the [Segment Batch API](https://reference.segmentapis.com/?version=latest#57a69434-76cc-43cc-a547-98c319182247){:target="_blank"} appear in this view.
 
 ## Programmatic User Deletion and Suppression using the API
 
-Use the [Segment Config APIs](https://reference.segmentapis.com/?version=latest#57a69434-76cc-43cc-a547-98c319182247){:target="_blank"} to interact with the User Deletion and Suppression system.
+Use the [Segment Public API](https://docs.segmentapis.com/tag/Deletion-and-Suppression){:target="_blank"} to interact with the User Deletion and Suppression system.
 
 ### Regulate User from a single Source in a Workspace
 
-Refer to [Create Source Regulation](https://reference.segmentapis.com/?version=latest#32732f1a-572c-457b-9c38-77f3c7f77559){:target="_blank"} in the Config API.
+Refer to [Create Source Regulation](https://docs.segmentapis.com/tag/Deletion-and-Suppression#operation/createSourceRegulation){:target="_blank"} in the Public API.
 
 ### Delete Object from a Cloud Source
 
-Refer to the [Cloud Source Object Deletion](https://reference.segmentapis.com/?version=latest#1273ed6e-43e2-4cc2-a9bc-f0c7d2f153e8){:target="_blank"} Config API method.
+Refer to the [Create Cloud Source Regulation](https://docs.segmentapis.com/tag/Deletion-and-Suppression#operation/createCloudSourceRegulation){:target="_blank"} Public API endpoint.
 
 Cloud Sources sync objects to Segment. As a result, Cloud Sources are regulated based on an `objectId` instead of a `userId`.
 Before you delete the object from Segment, you should delete it from the upstream system first.
 
 ### List Suppressed Users for your Workspace
 
-Refer to [List Suppressed Users](https://reference.segmentapis.com/?version=latest#2ad8f59e-2490-4a85-bc6d-d758a6a373ce){:target="_blank"} method in the Config API.
+Refer to [List Suppressions](https://docs.segmentapis.com/tag/Deletion-and-Suppression#operation/listSuppressions){:target="_blank"} method in the Public API.
 
 ### List Deletion Requests for your Workspace
 
-Refer to the [List Regulations](https://reference.segmentapis.com/?version=latest#e27e4dac-892d-431e-b4f8-cee0eca5b3d8){:target="_blank"} Config API method.
+Refer to the [List Regulations from Source](https://docs.segmentapis.com/tag/Deletion-and-Suppression#operation/listRegulationsFromSource){:target="_blank"} Public API method.

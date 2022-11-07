@@ -16,7 +16,7 @@ To set up SCIM, you must first create an SSO connection. Once you [create your S
 
 ## Configuration Instructions
 
-Segment officially supports [Okta](#okta-set-up-guide) and [Azure AD](#azure-ad-set-up-guide), and we have plans to support OneLogin soon. Each link includes specific set up instructions for that IdP. You should read the [features](#features) section of this page to understand which features of SCIM Segment supports.
+Segment officially supports [Okta](#okta-set-up-guide), [Azure AD](#azure-ad-set-up-guide), and [OneLogin](#oneLogin-set-up-guide). Each link includes specific set up instructions for that IdP. You should read the [features](#features) section of this page to understand which features of SCIM Segment supports.
 
 You may still be able to use SCIM with another Identity Provider (IdP) by adapting the following instructions.
 
@@ -44,7 +44,7 @@ Even though Segment users exist separately from workspaces, your IdP can create 
 
 If the person you want to add does not have a Segment account, your IdP will create one. If the person already has a Segment account, you can still add them to your Workspace using your IdP, but it **does not create a new Segment account**.
 
-You can create new users and set their `userName` (email) and `displayName` (single value field that represents a user’s full name) using your IdP.
+You can create new users and set their `userName` (email) and `displayName` (single value field that represents a user's full name) using your IdP.
 
 If a user already has a Segment account, you can add them using their email address using your IdP. However, Segment ignores the `displayName` sent by the IdP, and instead uses the name chosen by the user when they created their account.
 

@@ -1,8 +1,8 @@
 ---
 title: Marketo V2 Destination
 strat: adobe
+id: 58f8f55a70a3e552b955a444
 ---
-
 ## Getting Started
 
 To start sending data to Marketo, there are two things you must do. **Both of these steps require that you to log in with the Admin Marketo Account.**
@@ -67,7 +67,7 @@ When you call [`Identify`](/docs/connections/spec/identify/) in Device-mode, Seg
 
 There are additional steps you must take to send `.identify()` calls in Device-mode.
 
-1. Create an empty form in Marketo. This form will always be hidden and can remain empty as long as the traits you need downstream are mapped in the **Marketo Custom Fields** Destination setting. 
+1. Create an empty form in Marketo. This form will always be hidden and can remain empty as long as the traits you need downstream are mapped in the **Marketo Custom Fields** Destination setting.
 2. Input the associated **Marketo Form ID** and **Marketo Form URL** in your Marketo V2 Destination settings. This information can be found in Form Actions > Embed Code in the Marketo Design Studio:
 ![](images/form-info.png)
 
@@ -88,7 +88,7 @@ Regardless of connection mode, we'll map the following spec'd Segment traits to 
 | `lastName` or `name`  | `Last`                      |
 | `phone`               | `Phone`                     |
 
-Here is a sample Javascript  `.identify()` call with the all the standard traits:
+Here is a sample JavaScript Identify call with the all the standard traits:
 
 ```js
 analytics.identify('1234', {

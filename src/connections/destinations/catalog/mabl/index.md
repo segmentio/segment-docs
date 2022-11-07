@@ -1,8 +1,8 @@
 ---
 rewrite: true
 title: Mabl Destination
+id: 5cdc9409f9de1d00017e3e3f
 ---
-
 Only [mabl](https://mabl.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) offers scriptless cross-browser web testing, auto-healing tests, visual testing, and diagnostics in one simple service. mabl helps you improve the speed and quality of your release pipeline by allowing you to test every release, at scale, on a single platform, with no infrastructure to manage.
 
 This destination is maintained by mabl. For any issues with the destination, [contact the Mabl  Support team](mailto:support@mabl.com).

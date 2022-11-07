@@ -1,11 +1,11 @@
 ---
 title: SIGNL4 Alerting
 rewrite: true
+id: 5fbfbfc64832c185a5fd3faf
 ---
-
 [SIGNL4](https://www.signl4.com) is a lightweight, app-based alerting service of operational teams supporting app push, SMS text and voice call including tracking, escalation, collaboration and duty planning.
 
-When incidents happen, SIGNL4 can alert your teams, engineers, sales, marketing or workers ‘in the field’. SIGNL4 helps to know what is going on – from anywhere and anytime.
+When incidents happen, SIGNL4 can alert your teams, engineers, sales, marketing or workers ‘in the field'. SIGNL4 helps to know what is going on – from anywhere and anytime.
 
 This destination is maintained by Derdack SIGNL4. For any issues with the destination, [contact their support team](mailto:success@signl4.com).
 

@@ -4,8 +4,8 @@ rewrite: true
 redirect_from: "/connections/destinations/catalog/customer.io/"
 hide-personas-partial: true
 maintenance: true
+id: 54521fd525e721e32a72eea8
 ---
-
 [Customer.io](https://customer.io/) helps you send automated email, push, SMS, and webhooks based on your customers' activities in your app or product. It makes conversion tracking, optimization and re-marketing easier. The `analytics.js` Customer.io Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/customerio).
 
 > success ""
@@ -16,15 +16,15 @@ maintenance: true
 
 {% include content/connection-modes.md %}
 
-You can follow the setup guide through Segment using the steps below, or you can automatically sync your Customer.io connection settings to your Segment source using the flow in your Customer.io workspace’s Integrations page.
+You can follow the setup guide through Segment using the steps below, or you can automatically sync your Customer.io connection settings to your Segment source using the flow in your Customer.io workspace's Integrations page.
 
 1. From the Segment web app, click **Connections** > **Destinations**.
 1. Search for “Customer.io”, select it, and then click **Configure Customer.io**.
 1. Select the data sources you want to connect to Customer.io and click **Next**.
 1. Enter your *Destination Name* and select your **Connection Mode**—Cloud Mode or Device Mode. Click **Save**.
-1. Under *Connection Settings*, enter your Customer.io workspace **API Key** and **Site ID**. You’ll find both in your Customer.io *Account Settings* > *API Credentials* page.
+1. Under *Connection Settings*, enter your Customer.io workspace **API Key** and **Site ID**. You'll find both in your Customer.io *Account Settings* > *API Credentials* page.
 
-If you want to sync your settings directly from your Customer.io workspace, go to **Settings** > **Integrations** and find the **Segment Destination** integration. 
+If you want to sync your settings directly from your Customer.io workspace, go to **Settings** > **Integrations** and find the **Segment Destination** integration.
 
 ![Segment Destination in Customer.io](images/segment-destination-cio.png)
 
@@ -59,7 +59,7 @@ analytics.identify('userId123', {
 });
 ```
 
-When you identify a new user, Customer.io adds the user to your Customer.io workspace. If the user exists, the identify request updates the existing person’s attributes.
+When you identify a new user, Customer.io adds the user to your Customer.io workspace. If the user exists, the identify request updates the existing person's attributes.
 
 If your Customer.io workspace supports both `email` and `id` as identifiers (the default setting as of June 2021), you can identify people either by a database identifier (called `id` in Customer.io) or the `email` trait.
 
@@ -76,7 +76,7 @@ When Customer.io recognizes either the `id` or `email` in your request, your ide
 ```javascript
 analytics.identify('userId123', {
   email: 'john.doe@example.com',
-  fav_food: ‘pizza’
+  fav_food: 'pizza'
 });
 ```
 
@@ -249,12 +249,12 @@ For that, you need to make the following calls:
 
 ### Sending Data from Customer.io
 
-You can enable Customer.io as a Segment Source to send[ email events](/docs/connections/spec/email/) to other tools on the Segment platform. These events are sent as track calls to the other destinations you’ve turned on.
+You can enable Customer.io as a Segment Source to send[ email events](/docs/connections/spec/email/) to other tools on the Segment platform. These events are sent as track calls to the other destinations you've turned on.
 
-To enable this feature: 
+To enable this feature:
 
 1. In Customer.io go to **Settings** > **Integrations**.
-2. Find the Segment Source integration. 
+2. Find the Segment Source integration.
 3. Add your _Segment Write Key_ and click **Connect Segment**.
 
 ![Segment source in Customer.io](images/segment-source-cio.png)
@@ -267,19 +267,19 @@ Customer.io has limits on the data collected by their API. To ensure your events
 ## Troubleshooting
 
 ### No Events in Customer.io from the Browser
-Remember that before Segment can send events to Customer.io from client-side Javascript, the current user must identify with their `userId`. The user's email address is only used to identify them if that is the ID on record for them in Customer.io.
+Remember that before Segment can send events to Customer.io from client-side JavaScript, the current user must identify with their `userId`. The user's email address is only used to identify them if that is the ID on record for them in Customer.io.
 
 ### Page events not associated with user
 Page events will associate to a user if the user has been previously identified in Customer.io. If you identify a user after making Page calls, the previous page events won't associate to the user in Customer.io.
 
 
-## Personas
+## Engage
 
-You can send computed traits and audiences generated using [Segment Personas](/docs/personas) to this destination as a **user property**. To learn more about Personas, contact Segment for a [demo](https://segment.com/contact/demo).
+You can send computed traits and audiences generated using [Engage](/docs/engage) to this destination as a **user property**.
 
-For user-property destinations, an [identify](/docs/connections/spec/identify/) call sends to the destination for each user that's added and removed. The property name is the snake_cased version of the audience name, with a true/false value to indicate membership. For example, when a user first completes an order in the last 30 days, Personas sends an Identify call with the property `order_completed_last_30days: true`. When the user no longer satisfies this condition (for example, it's been more than 30 days since their last order), Personas sets that value to `false`.
+For user-property destinations, an [identify](/docs/connections/spec/identify/) call sends to the destination for each user that's added and removed. The property name is the snake_cased version of the audience name, with a true/false value to indicate membership. For example, when a user first completes an order in the last 30 days, Engage sends an Identify call with the property `order_completed_last_30days: true`. When the user no longer satisfies this condition (for example, it's been more than 30 days since their last order), Engage sets that value to `false`.
 
 > note ""
 > Customer.io requires you to pass an identifier value (ID or email, depending on your workspace settings), when you sync Audiences or Computed Traits.
 
-When you first create an audience, Personas sends an Identify call for every user in that audience. Later audience syncs only send updates for users whose membership has changed since the last sync.
+When you first create an audience, Engage sends an Identify call for every user in that audience. Later audience syncs only send updates for users whose membership has changed since the last sync.

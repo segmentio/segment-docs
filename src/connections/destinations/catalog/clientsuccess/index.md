@@ -1,8 +1,8 @@
 ---
 title: ClientSuccess Destination
 hide-personas-partial: true
+id: 55677dfd0a20f4e22f0fb39a
 ---
-
 This destination is maintained by ClientSuccess.
 
 ## Getting Started (for CSMs)

@@ -1,12 +1,11 @@
 ---
 title: Friendbuy Destination
 cmode-override: true
+id: 59ce9468cf711e00014a9c12
 ---
 Friendbuy is a referral marketing and campaign optimization platform.
 
 ## Getting Started
-
-{% include content/connection-modes.md %}
 
 1. Log in to your Friendbuy account and go to **Integration Code**.
 2. Copy the **Site ID** above the snippet box.
@@ -31,7 +30,7 @@ Friendbuy has two Widgets you can map to your Page calls:
 
 **Site Wide Widgets**
 
-Friendbuy recommends you to load these widgets on all your web pages. To use these widgets, you can add them under the *Side Wide Widgets* setting. 
+Friendbuy recommends you to load these widgets on all your web pages. To use these widgets, you can add them under the *Side Wide Widgets* setting.
 
 > info ""
 > You don't need to map a site wide widget if the **Call To Action** type is a ribbon served by Friendbuy. This overlay widget loads when Segment loads the Friendbuy library.
@@ -54,7 +53,7 @@ When you call `.identify()`, Segment sends the following mapped traits:
 | `firstName`           | `first_name`                  |
 | `lastName`            | `last_name`                   |
 
-Here is a sample Javascript  `.identify()` call with the all the standard traits:
+Here is a sample JavaScript  `.identify()` call with the all the standard traits:
 
 ```js
 analytics.identify('2', {

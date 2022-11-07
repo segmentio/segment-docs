@@ -5,15 +5,15 @@ redirect_from: '/partners/build-functions/'
 
 Subscription Functions allow you to write custom JavaScript code that sends Segment Event Data to existing APIs. This guides explains how to write custom functions.
 
-> note ""
-> **NOTE:** On July 31, 2021 support for building Subscription Functions will be removed from Developer Center. You may continue building a Subscription Webhook. Segment is committed to improving the Developer Center experience with Developer Center 2.0, which will offer a more holistic approach to building on Segment. If you’re interested in joining the beta in the coming months, please fill out [this form](https://airtable.com/shrvZzQ6NTTwsc6rQ){:target="_blank"}.
+{% include content/dev-center-note.md %}
+
 
 
 ## Getting Started
 
-Review the steps outlined in the [Developer Center Overview](/docs/partners). This document outlines specific details for Step 4 as it relates to building a Subscription Function.
+Review the steps outlined in the [Developer Center Overview](/docs/partners). This document outlines specific details for Step four as it relates to building a Subscription Function.
 
-1. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model) and [Spec](https://segment.com/docs/connections/spec).
+1. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model) and [Spec](/docs/connections/spec).
 2. Follow Segment's security guidance.
 3. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/).
 4. Create an App.
@@ -29,7 +29,7 @@ Begin by selecting the _Subscription_ card in your Developer Center UI after cre
 
 ![](/docs/partners/images/developer_center_customcode_page.png)
 
-For every event you send to Segment, Segment invokes a function you provide for the event type. So you must define functions named after every type in the [Segment Spec](https://segment.com/docs/connections/spec/) that you support:
+For every event you send to Segment, Segment invokes a function you provide for the event type. So you must define functions named after every type in the [Segment Spec](/docs/connections/spec/) that you support:
 
 - `onIdentify`
 - `onTrack`
@@ -41,7 +41,7 @@ For every event you send to Segment, Segment invokes a function you provide for 
 
 The two items passed into the functions are the _event payload_ and the _settings_. All subscriptions have an _apiKey_ setting by default. To add more custom settings, go to the `Settings Builder` page under `App Info`. Use your custom setting _key_ (which is generated for you from your custom setting label) to access your custom setting from the _settings_ argument.
 
-* The _Event_ argument to the function is the [Segment Event Data](https://segment.com/docs/connections/spec/common/#structure)
+* The _Event_ argument to the function is the [Segment Event Data](/docs/connections/spec/common/#structure)
 * The _Settings_ argument to the function contains user settings like _apiKey_ and any custom settings you have added.
 
 The functions are ["async/await" style JavaScript](https://javascript.info/async-await), and should use the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) using the pre-loaded `fetch` package.
@@ -68,13 +68,13 @@ async function onTrack(event, settings) {
 }
 ```
 
-The function should return data to indicates a success. In the above example we simply return the request body.
+The function should return data to indicates a success. In the above example Segment returns the request body.
 
 You can also `throw` an error to indicate a failure.
 
 In the above example, try changing the endpoint to `https://foo` and you'll see it throws a `FetchError` with the message `request to https://foo/ failed, reason: getaddrinfo ENOTFOUND foo foo:443`
 
-There are 3 pre-defined error types that you can `throw` to indicate the function ran as expected, but data could not be delivered:
+There are three pre-defined error types that you can `throw` to indicate the function ran as expected, but data could not be delivered:
 
 * EventNotSupported
 * InvalidEventPayload
@@ -178,7 +178,9 @@ The `btoa()` method creates a base-64 encoded ASCII string from a binary string.
 
 ## Test
 
-When testing your integration, we suggest going through two separate flows - testing that your endpoint successfully ingests data in the way you would expect, and also mimicking a user implementing your integration within their Segment workspace.
+When testing your integration, proceed through two separate flows:
+1. Test that your endpoint successfully ingests data in the way you would expect.
+2. Mimic a user implementing your integration within their Segment workspace.
 
 ### Your Endpoint
 

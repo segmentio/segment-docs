@@ -2,8 +2,8 @@
 title: Adobe Analytics Destination
 strat: adobe
 redirect_from: '/connections/destinations/catalog/omniture/'
+id: 5783cec280412f644ff14226
 ---
-
 Once you enable Adobe Analytics (formerly known as Omniture or Sitecatalyst) in Segment, you can start sending data from any of the Segment [libraries](/docs/connections/sources/catalog/) to an Adobe report suite. When you send events from Segment's mobile SDKs or Cloud-mode libraries, Segment translates that data using a mapping that you configure, and then passes it to the Adobe Analytics [Data Insertion API](https://docs.adobe.com/content/help/en/analytics/import/c-data-insertion-api.html).
 
 The following documentation provides detailed explanation of how both destination the Device-mode and Cloud-mode components work. For FAQs about Device- vs Cloud-mode tracking, unique users, identifiers, and more, see the Best Practices page!
@@ -31,19 +31,19 @@ We strongly recommend that you create a tracking plan for both your Segment and 
 
 ### Choosing between Device-mode and Cloud-mode
 
-If you're using device-mode javascript, by default Segment "bundles" (mobile) or "wraps" (when using Analytics.js) the Adobe libraries. In this configuration, Segment sends Events directly from the client using the Adobe Analytics [`Appmeasurement.js` library](https://docs.adobe.com/content/help/en/analytics/implementation/js/overview.html). Adobe's client-side libraries can provide services to other Adobe suites and products, however they can also increase the size of your page.
+If you're using device-mode JavaScript, by default Segment "bundles" (mobile) or "wraps" (when using Analytics.js) the Adobe libraries. In this configuration, Segment sends Events directly from the client using the Adobe Analytics [`Appmeasurement.js` library](https://docs.adobe.com/content/help/en/analytics/implementation/js/overview.html). Adobe's client-side libraries can provide services to other Adobe suites and products, however they can also increase the size of your page.
 
 If you prefer, you can enable [Cloud-mode](/docs/connections/destinations/#connection-modes), and send data through the Segment servers where it is then mapped and sent on to Adobe Analytics. By default, mobile and server sources will use Adobe Analytics in Cloud-mode. You can enable Cloud-mode for Javascript sources from the Adobe Analytics source settings in the Segment app.
 
 Our Cloud-mode Adobe Analytics destination also provides support for **Adobe Mobile Services** "states", "actions", and lifecycle events, metrics, and dimensions.
 
-*Note*: Segment only supports Adobe Heartbeat through device-mode implementations, using Segment's Javascript source or mobile SDKs bundled.
+*Note*: Segment only supports Adobe Heartbeat through device-mode implementations, using Segment's JavaScript source or mobile SDKs bundled.
 
 ### Connecting Segment to Adobe Analytics
 
 To set up Adobe Analytics as a destination for your Segment data, Segment needs some information on how to connect to Adobe.
 
-- If you're using Device-mode data collection with Analytics.js, or using a server-side library, you need your Adobe Report Suite ID, and your Tracking Server URL. You'll add this information in the Destination settings in the Segment app UI so that Segment can send information to Adobe. An example tracking server is `jimsbrims.sc.omtrdc.net`. You do not  need to include the hypertext transfer protocol (ie. `http://`). For more information on  how to identify your analytics tracking server and report suites see Adobe’s [documentation here](https://docs.adobe.com/content/help/en/analytics-learn/tutorials/implementation/implementation-basics/how-to-identify-your-analytics-tracking-server-and-report-suites.html).
+- If you're using Device-mode data collection with Analytics.js, or using a server-side library, you need your Adobe Report Suite ID, and your Tracking Server URL. You'll add this information in the Destination settings in the Segment app UI so that Segment can send information to Adobe. An example tracking server is `jimsbrims.sc.omtrdc.net`. You do not  need to include the hypertext transfer protocol (ie. `http://`). For more information on  how to identify your analytics tracking server and report suites see Adobe's [documentation here](https://docs.adobe.com/content/help/en/analytics-learn/tutorials/implementation/implementation-basics/how-to-identify-your-analytics-tracking-server-and-report-suites.html).
 
 ![](images/trackingurl-setup.png)
 
@@ -57,7 +57,7 @@ If you just enabled Adobe Analytics for an app already deployed with the Segment
 
 It can also take up to an hour for all of the mobile users' Segment settings caches to refresh. Once they refresh, the mobile devices learn about the new service and begin sending data to Adobe Analytics.
 
-Adobe Analytics has a real-time reporting feature which displays web page traffic and ranks page views in real time. Configuring and enabling these reports are restricted to Adobe Admin users. To learn more see Adobe’s [overview on Real-time reporting](https://docs.adobe.com/content/help/en/analytics/components/real-time-reporting/realtime.html)
+Adobe Analytics has a real-time reporting feature which displays web page traffic and ranks page views in real time. Configuring and enabling these reports are restricted to Adobe Admin users. To learn more see Adobe's [overview on Real-time reporting](https://docs.adobe.com/content/help/en/analytics/components/real-time-reporting/realtime.html)
 
 ---
 
@@ -90,7 +90,7 @@ To use Adobe's Marketing Cloud Visitor ID Service, enter your **Marketing Cloud 
 
 ## Cloud-mode - Server-side
 
-"Cloud-mode" data is data sent _without_ bundling the Segment-Adobe-Analytics SDK. It can be sent using mobile libraries, Analytics.js, and other server-based sources. Cloud mode data is sent to Adobe using Adobe's data insertion API in XML format. To learn more about Adobe’s data insertion API see the [documentation here](https://docs.adobe.com/content/help/en/analytics/import/c-data-insertion-api.html).
+"Cloud-mode" data is data sent _without_ bundling the Segment-Adobe-Analytics SDK. It can be sent using mobile libraries, Analytics.js, and other server-based sources. Cloud mode data is sent to Adobe using Adobe's data insertion API in XML format. To learn more about Adobe's data insertion API see the [documentation here](https://docs.adobe.com/content/help/en/analytics/import/c-data-insertion-api.html).
 
 *For more information on mobile native integrations using Segment's iOS and Android Adobe Analytics SDKs, see the [section "Setting up Adobe Analytics for Mobile"](mobile/).*
 
@@ -145,7 +145,7 @@ Segment's server-side integration is not open-source. Let's explore what happens
 
    **Important**: The Android library can collect the `userAgent` automatically - however, the iOS library cannot do so. However, since Segment does collect other contextual metadata about a device, it can render a valid iOS userAgent string to populate your Mobile Web Reports.
 
-6. If you are using the [Marketing Cloud ID Service](https://marketing.adobe.com/resources/help/en_US/mcvid/mcvid_overview.html), you can pass the **Marketing Cloud Visitor ID** as an destination specific setting and which Segment sets as `<marketingCloudVisitorID>`.
+6. If you are using the Marketing Cloud ID Service, you can pass the **Marketing Cloud Visitor ID** as a destination specific setting and which Segment sets as `<marketingCloudVisitorID>`.
 
  (In Node.js)
  ```javascript
@@ -202,8 +202,6 @@ The following metrics and dimensions are supported:
 - `a.OSVersion`
 - `a.DeviceName`
 - `a.CarrierName`
-
-Support for additional "stateful" lifecycle dimensions is coming in a future Adobe Analytics release. If there are any missing that are of importance to you, [contact us](mailto:beta@segment.com)!
 
 10. Set `<userAgent>` with `context.userAgent` (which is automatically populated by the Segment libraries). Note this is omitted for mobile events and superseded by `DeviceName` and `OSVersion`.
 

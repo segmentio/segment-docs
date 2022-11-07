@@ -1,8 +1,8 @@
 ---
 title: AdQuick Destination
 rewrite: true
+id: 5d3638cd54d6be00014e6bf1
 ---
-
 [AdQuick](https://adquick.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) makes outdoor advertising easy to purchase and measure. By integrating with Segment you can analyze the impact of your outdoor ad campaign across all your digital channels.
 
 This destination is maintained by AdQuick. For any issues with the destination, [contact the AdQuick team](mailto:segment@adquick.com).

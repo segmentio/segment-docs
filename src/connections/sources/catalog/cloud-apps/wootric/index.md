@@ -5,6 +5,8 @@ redirect_from:
   - 'connections/sources/catalog/cloud-apps/inmoment-formerly-wootric'
 ---
 
+{% include content/source-region-unsupported.md %}
+
 [InMoment](https://wootric.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) (formerly Wootric) is modern customer feedback management software. You can incorporate Voice of Customer data in your decision-making processes and marketing campaigns, and trigger customer follow-up when you send survey responses to your CRM, marketing platform or data warehouses automatically.
 
 InMoment maintains this source. For any issues, [contact the InMoment support team](mailto:support@wootric.com).
@@ -34,7 +36,7 @@ Below are tables outlining the properties included in the events listed above.
 
 | Property Name | Description                                                           |
 | ------------- | --------------------------------------------------------------------- |  |
-| channel       | The channel from which the survey was responded like ‘web’ or ‘email’ |
+| channel       | The channel from which the survey was responded like ‘web' or ‘email' |
 | created_at    | The timestamp of when the response was created                        |
 | metric_type   | The mode of the survey like "NPS" or “CSAT”                           |
 | properties    | The survey properties                                                 |

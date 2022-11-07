@@ -1,15 +1,13 @@
 ---
 rewrite: true
 title: Split Destination
+id: 5c6e2b9d79daff00017ec990
 ---
-
 [Split](https://split.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) powers your product decisions with a unified solution for feature flagging and experimentation. With Split, you can safely roll out new functionality using sophisticated user targeting, measure impact of change on engineering, product, and business metrics, and rapidly iterate to refine functionality anywhere in the application stack.
 
 Split also maintains [integration specific documentation](https://help.split.io/hc/en-us/articles/360020742532-Segment) which include additional troubleshooting and frequently asked questions.
 
 This destination is maintained by [Split](https://split.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners). For any issues with the destination, [contact the Split IO Support team](https://help.split.io/hc/en-us).
-
-{% include content/beta-note.md %}
 
 ## Getting Started
 
