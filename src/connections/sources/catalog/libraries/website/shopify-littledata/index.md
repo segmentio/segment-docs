@@ -33,7 +33,7 @@ During the Segment connection setup, Littledata also adds a set of webhooks to y
 
 Here's an architecture diagram that shows how the Littledata app mediates data flow between Shopify and Segment.
 
-![](images/littledata_arch.png)
+![Connecting Shopify to Segment](https://res.cloudinary.com/littledata/image/upload/v1667808538/Architecture%20diagrams/segment.png)
 
 > warning "Note"
 > This integration is maintained by Littledata _and isn't supported by Segment directly_. The Littledata app has been reviewed by the Segment team for conformance with Segment's [E-Commerce Spec](/docs/connections/spec/ecommerce/v2/), and is the recommended way of using Segment with Shopify. However, it does require a paid subscription with Littledata, who mediates the connection between Shopify and Segment. [Contact the Littledata Support team](mailto:help@littledata.io) with any questions.
@@ -41,7 +41,7 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 ## Getting Started
 
 1. **Log in** to your Shopify Store account.
-2. Go the [Shopify app store listing](https://apps.shopify.com/segment-com-by-littledata){:target="_blank"} for **Segment.com by Littledata**.
+2. Go the [Shopify app store listing](https://apps.shopify.com/segment-com-by-littledata){:target="\_blank"} for **Segment.com by Littledata**.
    ![](images/Nd5L0C6.png)
 3. Click **Add app** to begin the installation process.
 4. **Choose a Littledata subscription** suitable for your store's volume of monthly orders.
@@ -119,27 +119,27 @@ For every event where there is an identifiable Shopify customer (from both the d
 
 The following traits are included with an Identify call:
 
-| Property Name                | Description                                                                                                                                                                | Property Type |
-| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `accepts_marketing`          | Whether the customer has accepted marketing                                                                                                                                | Boolean       |
-| `createdAt`                  | The date customer record was created                                                                                                                                       | Date          |
-| `customerLifetimeValue`      | The total spend of customer on the Shopify store                                                                                                                           | Double        |
-| `default_address.street`     | The customer's default street address                                                                                                                                      | String        |
-| `default_address.city`       | The customer's city address                                                                                                                                                | String        |
-| `default_address.postalCode` | The customer's ZIP / post code                                                                                                                                             | String        |
-| `default_address.state`      | The customer's state address                                                                                                                                               | String        |
-| `default_adress.country`     | The customer's country                                                                                                                                                     | String        |
-| `description`                | The customer notes                                                                                                                                                         | String        |
-| `email`                      | The customer's email address                                                                                                                                               | String        |
-| `firstName`                  | The customer's first name                                                                                                                                                  | String        |
-| `lastName`                   | The customer's last name                                                                                                                                                   | String        |
-| `marketingOptIn`             | The `marketing_opt_in` field from [Shopify customer](https://shopify.dev/docs/admin-api/rest/reference/customers/customer)                                                 | String        |
-| `phone`                      | The customer's phone number                                                                                                                                                | String        |
-| `purchaseCount`              | The number of orders by this customer                                                                                                                                      | Integer       |
-| `state`                      | The Shopify [customer state](https://shopify.dev/api/admin-graphql/2022-07/enums/customerstate){:target="_blank"}. This can be `enabled`, `disabled`, `invited` to create an account, or customer `declined` | String        |
-| `tags`                       | The custom tags [applied to the customer](https://shopify.dev/docs/admin-api/rest/reference/customers/customer)                                                            | String        |
-| `userId`                     | Chosen user identifier, defaulting to Shopify Customer ID                                                                                                                  | Double        |
-| `verified_email` (v2)        | Whether the customer has verified their email                                                                                                                              | Boolean       |
+| Property Name                | Description                                                                                                                                                                                                   | Property Type |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `accepts_marketing`          | Whether the customer has accepted marketing                                                                                                                                                                   | Boolean       |
+| `createdAt`                  | The date customer record was created                                                                                                                                                                          | Date          |
+| `customerLifetimeValue`      | The total spend of customer on the Shopify store                                                                                                                                                              | Double        |
+| `default_address.street`     | The customer's default street address                                                                                                                                                                         | String        |
+| `default_address.city`       | The customer's city address                                                                                                                                                                                   | String        |
+| `default_address.postalCode` | The customer's ZIP / post code                                                                                                                                                                                | String        |
+| `default_address.state`      | The customer's state address                                                                                                                                                                                  | String        |
+| `default_adress.country`     | The customer's country                                                                                                                                                                                        | String        |
+| `description`                | The customer notes                                                                                                                                                                                            | String        |
+| `email`                      | The customer's email address                                                                                                                                                                                  | String        |
+| `firstName`                  | The customer's first name                                                                                                                                                                                     | String        |
+| `lastName`                   | The customer's last name                                                                                                                                                                                      | String        |
+| `marketingOptIn`             | The `marketing_opt_in` field from [Shopify customer](https://shopify.dev/docs/admin-api/rest/reference/customers/customer)                                                                                    | String        |
+| `phone`                      | The customer's phone number                                                                                                                                                                                   | String        |
+| `purchaseCount`              | The number of orders by this customer                                                                                                                                                                         | Integer       |
+| `state`                      | The Shopify [customer state](https://shopify.dev/api/admin-graphql/2022-07/enums/customerstate){:target="\_blank"}. This can be `enabled`, `disabled`, `invited` to create an account, or customer `declined` | String        |
+| `tags`                       | The custom tags [applied to the customer](https://shopify.dev/docs/admin-api/rest/reference/customers/customer)                                                                                               | String        |
+| `userId`                     | Chosen user identifier, defaulting to Shopify Customer ID                                                                                                                                                     | Double        |
+| `verified_email` (v2)        | Whether the customer has verified their email                                                                                                                                                                 | Boolean       |
 
 ## Support for Google Analytics destination
 
