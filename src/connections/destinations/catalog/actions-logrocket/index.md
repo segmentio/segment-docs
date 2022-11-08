@@ -3,6 +3,8 @@
 title: LogRocket
 hide-boilerplate: true
 hide-dossier: false
+id: 635ada35ce269dbe305203ff
+private: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
