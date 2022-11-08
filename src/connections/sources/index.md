@@ -47,7 +47,6 @@ analytics.identify('user_123', {
 {% endcodeexampletab %}
 {% endcodeexample %}
 {% endcomment %}
----
 
 
 ## Types of sources
@@ -57,7 +56,10 @@ Segment has five types of sources:
 * [Mobile](#mobile)
 * [Server](#server)
 * [Cloud App](#cloud-apps)
+  * [Object Cloud](#object-cloud-sources)
+  * [Event Cloud](#event-cloud-sources)
 * User-created [Source Functions](/docs/connections/sources/source-functions/)
+
 
 Web, Mobile, and Server sources send first-party data from your digital properties. Cloud-app sources send data about your users from your connected web apps such as [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/),  [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/), and [Braze](/docs/connections/sources/catalog/cloud-apps/braze/).
 
@@ -80,7 +82,7 @@ To create a source:
   description="Analytics and data collection is a very broad topic and it can be quite overwhelming. How do you get started?"
 %}
 
----
+
 
 ## Mobile
 
@@ -95,7 +97,7 @@ Segment's Mobile SDKs are the best way to simplify your iOS, Android, and Xamari
 - [Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios/)
 - [Xamarin](/docs/connections/sources/catalog/libraries/mobile/xamarin)
 
----
+
 
 ## Server
 
@@ -114,7 +116,7 @@ Segment's server-side sources let you send analytics data directly from your ser
 > info "Cloud-mode tracking"
 > Server-side data management is when tag sends data to the Segment servers, which then passes that data to the destination system.
 
----
+
 
 ## Cloud Apps
 
@@ -151,11 +153,11 @@ If Segment doesn't have a library for your environment, you can send your data d
 
 Segment's [Pixel Tracking API](/docs/connections/sources/catalog/libraries/server/pixel-tracking-api/) lets you track events from environments where you can't execute code, like tracking email opens.
 
-| Event name              | Description       |
-| ---                     | ---               |
-| Email Delivered         | The message has been successfully delivered to the receiving server |
-| Email Opened	          | The recipient has opened the HTML message. You need to enable Open Tracking for getting this type of event. |
-| Email Link Clicked      | The recipient clicked on a link within the message. You need to enable Click Tracking for getting this type of event. |
-| Email Bounced           | The receiving server could not or would not accept message. |
-| Email Marked as Spam    | The recipient marked message as spam. |
-| Unsubscribe             | The recipient clicked on message's subscription management link. |
+| Event name           | Description                                                                                                           |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Email Delivered      | The message has been successfully delivered to the receiving server                                                   |
+| Email Opened         | The recipient has opened the HTML message. You need to enable Open Tracking for getting this type of event.           |
+| Email Link Clicked   | The recipient clicked on a link within the message. You need to enable Click Tracking for getting this type of event. |
+| Email Bounced        | The receiving server could not or would not accept message.                                                           |
+| Email Marked as Spam | The recipient marked message as spam.                                                                                 |
+| Unsubscribe          | The recipient clicked on message's subscription management link.                                                      |
