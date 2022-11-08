@@ -630,8 +630,8 @@ items:
     type: boolean
     defaultValue: false
     description: >-
-      If this setting is enabled, we will add `context.app.build`, if present,
-      to Adobe's AppID, as `<name> <version> (<build>)`.
+      If this setting is enable, we will add `context.app.build`, if present, to
+      Adobe's AppID, as `<name> <version> (<build>)`.
     required: true
     label: Add application build to Adobe's App ID
   - name: collectHighEntropyUserAgentHints
@@ -8883,7 +8883,7 @@ items:
       enableHtmlInAppMessages is true, this option will also be set to true.
       [See more
       details](https://js.appboycdn.com/web-sdk/latest/doc/modules/appboy.html#initializationoptions)
-    required: false
+    required: true
     label: Allow User Supplied Javascript
   - name: api_key
     type: string
@@ -8898,7 +8898,7 @@ items:
       Version to which user events sent to Braze will be associated with. [See
       more
       details](https://js.appboycdn.com/web-sdk/latest/doc/modules/appboy.html#initializationoptions)
-    required: false
+    required: true
     label: App Version
   - name: automaticallyDisplayMessages
     type: boolean
@@ -8908,7 +8908,7 @@ items:
       automatically delivered to the user. If you'd like to register your own
       display subscribers or send soft push notifications to your users, make
       sure to disable this option.
-    required: false
+    required: true
     label: Automatically Send In-App Messages
   - name: contentSecurityNonce
     type: string
@@ -8917,7 +8917,7 @@ items:
       Allows Braze to add the nonce to any <script> and <style> elements created
       by the SDK. [See more
       details](https://js.appboycdn.com/web-sdk/latest/doc/modules/appboy.html#initializationoptions)
-    required: false
+    required: true
     label: Content Security nonce
   - name: devicePropertyAllowlist
     type: array
@@ -8927,7 +8927,7 @@ items:
       properties in DeviceProperties. To override this behavior, provide an
       array of DeviceProperties. [See more
       details](https://js.appboycdn.com/web-sdk/latest/doc/modules/appboy.html#initializationoptions)
-    required: false
+    required: true
     label: Device Property Allow List
   - name: disablePushTokenMaintenance
     type: boolean
@@ -8936,7 +8936,7 @@ items:
       By default, users who have already granted web push permission will sync
       their push token with the Braze backend automatically on new session to
       ensure deliverability. To disable this behavior, set this option to true
-    required: false
+    required: true
     label: Disable Push Token Maintenance
   - name: doNotLoadFontAwesome
     type: boolean
@@ -8944,19 +8944,19 @@ items:
     description: >-
       Braze automatically loads FontAwesome 4.7.0 from the FontAwesome CDN. To
       disable this behavior set this option to true.
-    required: false
+    required: true
     label: Do Not Load Font Awesome
   - name: enableLogging
     type: boolean
     defaultValue: false
     description: Set to true to enable logging by default
-    required: false
+    required: true
     label: Enable Logging
   - name: enableSdkAuthentication
     type: boolean
     defaultValue: false
     description: Set to true to enable the SDK Authentication feature.
-    required: false
+    required: true
     label: Enable SDK Authentication
   - name: endpoint
     type: select
@@ -8974,7 +8974,7 @@ items:
       for the screen overlay, 1050 for the actual in-app message, and 1060 for
       the message's close button. Provide a value for this option to override
       these default z-indexes.
-    required: false
+    required: true
     label: In-App Message Z Index
   - name: localization
     type: string
@@ -8984,7 +8984,7 @@ items:
       the user's browser language. Provide a value for this option to override
       that behavior and force a specific language. The value for this option
       should be a ISO 639-1 Language Code.
-    required: false
+    required: true
     label: Localization
   - name: manageServiceWorkerExternally
     type: boolean
@@ -8994,7 +8994,7 @@ items:
       lifecycle of, set this option to true and the Braze SDK will not register
       or unregister a service worker. [See more
       details](https://js.appboycdn.com/web-sdk/latest/doc/modules/appboy.html#initializationoptions)
-    required: false
+    required: true
     label: Manage Service Worker Externally
   - name: minimumIntervalBetweenTriggerActionsInSeconds
     type: number
@@ -9003,7 +9003,7 @@ items:
       Provide a value to override the default interval between trigger actions
       with a value of your own. [See more
       details](https://js.appboycdn.com/web-sdk/latest/doc/modules/appboy.html#initializationoptions)
-    required: false
+    required: true
     label: Minimum Interval Between Trigger Actions in Seconds
   - name: noCookies
     type: boolean
@@ -9014,7 +9014,7 @@ items:
       storage and rely entirely on HTML 5 localStorage to identify users and
       sessions. [See more
       details](https://js.appboycdn.com/web-sdk/latest/doc/modules/appboy.html#initializationoptions)
-    required: false
+    required: true
     label: No Cookies
   - name: openCardsInNewTab
     type: boolean
@@ -9022,7 +9022,7 @@ items:
     description: >-
       By default, links from Card objects load in the current tab or window. Set
       this option to true to make links from cards open in a new tab or window.
-    required: false
+    required: true
     label: Open Cards In New Tab
   - name: openInAppMessagesInNewTab
     type: boolean
@@ -9032,7 +9032,7 @@ items:
       new tab as specified in the dashboard on a message-by-message basis. Set
       this option to true to force all links from in-app message clicks open in
       a new tab or window.
-    required: false
+    required: true
     label: Open In-App Messages In New Tab
   - name: requireExplicitInAppMessageDismissal
     type: boolean
@@ -9042,7 +9042,7 @@ items:
       or a click on the greyed-out background of the page will dismiss the
       message. Set this option to true to prevent this behavior and require an
       explicit button click to dismiss messages.
-    required: false
+    required: true
     label: Require Explicit In-App Message Dismissal
   - name: safariWebsitePushId
     type: string
@@ -9051,7 +9051,7 @@ items:
       If you support Safari push, you must specify this option with the website
       push ID that you provided to Apple when creating your Safari push
       certificate (starts with "web", e.g. "web.com.example.domain").
-    required: false
+    required: true
     label: Safari Website Push ID
   - name: sdkVersion
     type: select
@@ -9073,7 +9073,7 @@ items:
       ,worker file is located within the /mycustompath/ directory,
       appboy.registerAppboyPushMessages MAY ONLY BE CALLED from web pages that
       start with http://yoursite.com/mycustompath/.
-    required: false
+    required: true
     label: Service Worker Location
   - name: sessionTimeoutInSeconds
     type: number
@@ -9082,7 +9082,7 @@ items:
       By default, sessions time out after 30 minutes of inactivity. Provide a
       value for this configuration option to override that default with a value
       of your own.
-    required: false
+    required: true
     label: Session Timeout in Seconds
   actions:
   - id: eAkHUMUhynA8wGbVdp7otr
@@ -10721,7 +10721,7 @@ items:
   logo:
     url: https://cdn.filepicker.io/api/file/lrTbhI5mRbmM9Ax0hyDx
   mark:
-    url: https://cdn.filepicker.io/api/file/c6dXBVkSeix8Mw5HnQYQ
+    url: https://cdn.filepicker.io/api/file/7B58uDCOTwGBRTFbcDek
   methods:
     track: true
     identify: true
@@ -31835,10 +31835,10 @@ items:
       https://public-segment-devcenter-production.s3.amazonaws.com/32654599-9a5a-41b7-a0a3-d5700cc4a6c9.svg
   methods:
     track: true
-    identify: false
-    group: false
-    alias: false
-    page: false
+    identify: true
+    group: true
+    alias: true
+    page: true
   platforms:
     browser: true
     mobile: true
@@ -53323,7 +53323,7 @@ items:
   - name: trackMapping
     type: text-map
     defaultValue: {}
-    description: 'Track event object mapping. default: { properties: customer }'
+    description: 'Tack event object mapping. default: { properties: customer }'
     required: true
     label: Track Mapping
   - name: trackOnlyExistingCustomers
