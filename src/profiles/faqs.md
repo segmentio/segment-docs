@@ -17,6 +17,7 @@ Identity Graph automatically collects a rich set of external IDs without any add
 
 If you want Identity Graph to operate on a different custom ID, you can pass it in using `context.externalIds` on an `identify()` or `track()`. If you're interested in this feature, contact your CSM to discuss the best way to implement this feature.
 
+<!--PW 9/6/22
 ## How does Profiles handle identity merging?
 Each incoming event is analyzed and external IDs are extracted (`user_id`, `anonymous_id`, `email`). The simplified algorithm works as follows:
 
@@ -30,7 +31,7 @@ Each incoming event is analyzed and external IDs are extracted (`user_id`, `anon
 
 ![Identity graph merging](images/merging_2.png "Flowchart of Segment searching for profiles by external ID")
 
-![Identity graph merging](images/merging_3.png "Flowchart of Segment merging profiles")
+![Identity graph merging](images/merging_3.png "Flowchart of Segment merging profiles") -->
 
 ## Is all matching deterministic, or is there any support for probabilistic matching?
 All Profile matching is deterministic and based on first-party data that you've collected.

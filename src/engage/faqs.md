@@ -66,14 +66,14 @@ The audience in the image below includes all users that have Product Added in th
 > info ""
 > Funnel Audiences compute based on all instances of the parent event within the lookback period. This means that if you have a user that Product Added ⟶ Order Completed ⟶ Product Added, this user would be entered into the Abandoned Cart state despite having previously completed an order.
 
-## What is Engage Merge Protection?
+<!--PW 9/6/22 ## What is Engage Merge Protection?
 Engage merge protection algorithm protects your identity graph from unnecessary merges by finding and removing untrusted external IDs. Here's an example:
 
 ![Merge protection](images/merge_protection.png "An image representing the merge protection flow")
 
 In this example, `anonymous_id: a1` is not reset during a `User Logout`. Without merge protection rules, Segment would merge `user_id u1` and `user_id u2`. Instead, the identity resolution algorithm detects that such a merge would break `user_id` uniqueness and prevents the merge.
 
-This is especially helpful for preventing "blob users" that are merged together by non-unique anonymous IDs or by common group emails like `team@company.com`.
+This is especially helpful for preventing "blob users" that are merged together by non-unique anonymous IDs or by common group emails like `team@company.com`. -->
 
 ## Which destinations support syncing the identity graph?
 Most destinations on the Segment Platform are built up around a user model. They assume that a user will have a single userId. Further, most Destinations are not built to handle anonymous traffic.
