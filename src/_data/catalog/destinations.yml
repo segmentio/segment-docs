@@ -6682,7 +6682,7 @@ items:
   display_name: Atatus
   name: Atatus
   slug: atatus
-  hidden: true
+  hidden: false
   endpoints:
   - us
   regions:
@@ -28378,6 +28378,989 @@ items:
     label: Private App Token
   actions: []
   presets: []
+- id: 632b1116e0cb83902f3fd717
+  display_name: HubSpot Cloud Mode (Actions)
+  name: HubSpot Cloud Mode (Actions)
+  slug: hubspot-cloud-mode-actions
+  hidden: false
+  endpoints:
+  - us
+  regions:
+  - us
+  url: connections/destinations/catalog/hubspot-cloud-mode-actions
+  previous_names:
+  - Hubspot Cloud Mode (actions)
+  - Hubspot Cloud Mode (Actions)
+  - HubSpot Cloud Mode (Actions)
+  website: https://www.hubspot.com
+  status: PUBLIC_BETA
+  categories:
+  - CRM
+  - Analytics
+  - Email Marketing
+  logo:
+    url: https://cdn.filepicker.io/api/file/8LMkhymQBapc4nTU1Z7x
+  mark:
+    url: https://cdn.filepicker.io/api/file/rTxBWn2iTQeCJze1Ovxs
+  methods:
+    track: true
+    identify: true
+    group: true
+    alias: true
+    page: true
+  platforms:
+    browser: true
+    mobile: false
+    server: true
+  components: []
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: false
+  replay: false
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
+  settings: []
+  actions:
+  - id: 9cmB51ubHWyRFyhaCbYV8u
+    name: Send Custom Behavioral Event
+    slug: sendCustomBehavioralEvent
+    description: Send a custom behavioral event to HubSpot.
+    platform: CLOUD
+    hidden: false
+    defaultTrigger: type = "track"
+    fields:
+    - id: oigAK4ij98wgoyFYePaUCy
+      sortOrder: 0
+      fieldKey: eventName
+      label: Event Name
+      type: STRING
+      description: >-
+        The internal event name assigned by HubSpot. This can be found in your
+        HubSpot account. Events must be predefined in HubSpot. Learn how to find
+        the internal name in [HubSpot’s
+        documentation](https://knowledge.hubspot.com/analytics-tools/create-custom-behavioral-events).
+      placeholder: ''
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: mwxUBYNt7ZuHVdo8imo84j
+      sortOrder: 1
+      fieldKey: occurredAt
+      label: Event Timestamp
+      type: DATETIME
+      description: >-
+        The time when this event occurred. If this isn't set, the current time
+        will be used.
+      placeholder: ''
+      defaultValue:
+        '@path': $.timestamp
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: ww53u1cSCe8VL92dLJrGgV
+      sortOrder: 2
+      fieldKey: email
+      label: Email Address
+      type: STRING
+      description: >-
+        The email of the contact associated with this event. This is required if
+        no user token or object ID is provided.
+      placeholder: ''
+      defaultValue:
+        '@if':
+          exists:
+            '@path': $.properties.email
+          then:
+            '@path': $.properties.email
+          else:
+            '@path': $.context.traits.email
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: LbhmAnweTebJkgWHs73ca
+      sortOrder: 3
+      fieldKey: utk
+      label: User Token
+      type: STRING
+      description: >-
+        The user token (utk) of the contact associated with this event. This is
+        required if no email or object ID is provided.
+      placeholder: ''
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: gir26n8fXQHfYyPPyEiKXy
+      sortOrder: 4
+      fieldKey: objectId
+      label: Object ID
+      type: STRING
+      description: >-
+        The ID of the object associated with this event. This can be the HubSpot
+        contact ID, company ID, or ID of any other object. This is required if
+        no email or user token is provided.
+      placeholder: ''
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 7R9gA6GzesdZkbYguLtnGh
+      sortOrder: 5
+      fieldKey: properties
+      label: Event Properties
+      type: OBJECT
+      description: >-
+        Default or custom properties that describe the event. On the left-hand
+        side, input the internal name of the property as seen in your HubSpot
+        account. On the right-hand side, map the Segment field that contains the
+        value. See more information in [HubSpot’s
+        documentation](https://knowledge.hubspot.com/analytics-tools/create-custom-behavioral-events#add-and-manage-event-properties).
+      placeholder: ''
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+  - id: dfT2tG36Ddr8MUKCUvcvLt
+    name: Upsert Company
+    slug: upsertCompany
+    description: Create or update a company in HubSpot.
+    platform: CLOUD
+    hidden: false
+    defaultTrigger: type = "group"
+    fields:
+    - id: 3jcyJbfRKWSkAjUYbTLzEH
+      sortOrder: 0
+      fieldKey: groupid
+      label: Group ID
+      type: HIDDEN
+      description: Used for constructing the unique segment_group_id for HubSpot.
+      placeholder: ''
+      defaultValue:
+        '@if':
+          exists:
+            '@path': $.groupId
+          then:
+            '@path': $.groupId
+          else:
+            '@path': $.context.groupId
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: tAe2Et7SDpSgFzEJxqZRrp
+      sortOrder: 1
+      fieldKey: companysearchfields
+      label: Company Search Fields
+      type: OBJECT
+      description: >-
+        The unique field(s) used to search for an existing company in HubSpot to
+        update. By default, Segment creates a custom property to store groupId
+        for each company and uses this property to search for companies. If a
+        company is not found, the fields provided here are then used to search.
+        If a company is still not found, a new one is created.
+      placeholder: ''
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: xu1ucNZsMkUZdf189rWU6E
+      sortOrder: 2
+      fieldKey: name
+      label: Company Name
+      type: STRING
+      description: The name of the company.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.name
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: qLuSQv64Niyvai5hgJUcc6
+      sortOrder: 3
+      fieldKey: description
+      label: Company Description
+      type: STRING
+      description: A short statement about the company’s mission and goals.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.description
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: jwS4cH4H8i7o8QzELdA3np
+      sortOrder: 4
+      fieldKey: address
+      label: Street Address
+      type: STRING
+      description: The street address of the company.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.address.street
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: k9eHV17AZ1CUQ1zGDueUCe
+      sortOrder: 5
+      fieldKey: city
+      label: City
+      type: STRING
+      description: The city where the company is located.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.address.city
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 7zoeYjrpdavp56roQqegCF
+      sortOrder: 6
+      fieldKey: state
+      label: State
+      type: STRING
+      description: The state or region where the company is located.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.address.state
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 8QfLNBAMoS8U3FuSkhuxKc
+      sortOrder: 7
+      fieldKey: zip
+      label: Postal Code
+      type: STRING
+      description: The postal or zip code of the company.
+      placeholder: ''
+      defaultValue:
+        '@if':
+          exists:
+            '@path': $.traits.address.postalCode
+          then:
+            '@path': $.traits.address.postalCode
+          else:
+            '@path': $.traits.address.postal_code
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: xcW2HJqX8ppg4zsdyXS5hr
+      sortOrder: 8
+      fieldKey: domain
+      label: Domain
+      type: STRING
+      description: The company’s website domain.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.website
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 46H6gNHV9btJkFcv5hF4Az
+      sortOrder: 9
+      fieldKey: phone
+      label: Phone
+      type: STRING
+      description: The company’s primary phone number.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.phone
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 5JRpUv1pdkdNvhdMwAGZnu
+      sortOrder: 10
+      fieldKey: numberofemployees
+      label: Number of Employees
+      type: INTEGER
+      description: The total number of people who work for the company.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.employees
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: vqotPeBzbCqg9quJx34Grq
+      sortOrder: 11
+      fieldKey: industry
+      label: Industry
+      type: STRING
+      description: The type of business the company performs.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.industry
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 6xzzzottBCY7Lg9s4sWN7u
+      sortOrder: 12
+      fieldKey: lifecyclestage
+      label: Lifecycle Stage
+      type: STRING
+      description: >-
+        The company’s stage within the marketing/sales process. See more
+        information on default and custom stages in [HubSpot’s
+        documentation](https://knowledge.hubspot.com/contacts/use-lifecycle-stages).
+        Segment supports moving status forwards or backwards.
+      placeholder: ''
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: irhr8TaL6BfHr6kXNAxHzy
+      sortOrder: 13
+      fieldKey: properties
+      label: Other Properties
+      type: OBJECT
+      description: >-
+        Any other default or custom company properties. On the left-hand side,
+        input the internal name of the property as seen in your HubSpot account.
+        On the right-hand side, map the Segment field that contains the value.
+        Custom properties must be predefined in HubSpot. See more information in
+        [HubSpot’s
+        documentation](https://knowledge.hubspot.com/crm-setup/manage-your-properties#create-custom-properties).
+        Important: Do not use ’segment_group_id’ here as it is an internal
+        property and will result in an an error.
+      placeholder: ''
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+  - id: fRn8RWTicuG6dpma5JKi9d
+    name: Create Custom Object Record
+    slug: upsertCustomObjectRecord
+    description: Create records of Deals, Tickets or other Custom Objects in HubSpot.
+    platform: CLOUD
+    hidden: false
+    defaultTrigger: null
+    fields:
+    - id: tvXEqUbcsnxBTsFmSFESp7
+      sortOrder: 0
+      fieldKey: objectType
+      label: Object Type
+      type: STRING
+      description: >-
+        The CRM object schema to use for creating a record. This can be a
+        standard object (i.e. tickets, deals) or ***fullyQualifiedName*** of a
+        custom object. Schema for the Custom Objects must be predefined in
+        HubSpot. More information on Custom Objects and *fullyQualifiedName* in
+        [HubSpot
+        documentation](https://developers.hubspot.com/docs/api/crm/crm-custom-objects#retrieve-existing-custom-objects).
+      placeholder: ''
+      required: true
+      multiple: false
+      choices: null
+      dynamic: true
+      allowNull: false
+    - id: sJe3c591qCHciVTQ2Arzz9
+      sortOrder: 1
+      fieldKey: properties
+      label: Properties
+      type: OBJECT
+      description: >-
+        Properties to send to HubSpot. On the left-hand side, input the internal
+        name of the property as seen in your HubSpot account. On the right-hand
+        side, map the Segment field that contains the value. Please make sure to
+        include the object’s required properties. Any custom properties must be
+        predefined in HubSpot. More information in [HubSpot
+        documentation](https://knowledge.hubspot.com/crm-setup/manage-your-properties#create-custom-properties).
+      placeholder: ''
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+  - id: v3BPw5E3WcwKH4nngqta2i
+    name: Upsert Contact
+    slug: upsertContact
+    description: Create or update a contact in HubSpot.
+    platform: CLOUD
+    hidden: false
+    defaultTrigger: type = "identify"
+    fields:
+    - id: fSYRTWXipYk5zthoECevf7
+      sortOrder: 0
+      fieldKey: email
+      label: Email
+      type: STRING
+      description: >-
+        The contact’s email. Email is used to uniquely identify contact records
+        in HubSpot. If an existing contact is found with this email, we will
+        update the contact. If a contact is not found, we will create a new
+        contact.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.email
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: xz3i62VkZWGqJjy3AFmhbz
+      sortOrder: 1
+      fieldKey: company
+      label: Company Name
+      type: STRING
+      description: The contact’s company.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.company
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 5GbUeuZpoZhu4yNBBaCnLp
+      sortOrder: 2
+      fieldKey: firstname
+      label: First Name
+      type: STRING
+      description: The contact’s first name.
+      placeholder: ''
+      defaultValue:
+        '@if':
+          exists:
+            '@path': $.traits.first_name
+          then:
+            '@path': $.traits.first_name
+          else:
+            '@path': $.traits.firstName
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: kDPDkC5zkehekCRUEiMQiY
+      sortOrder: 3
+      fieldKey: lastname
+      label: Last Name
+      type: STRING
+      description: The contact’s last name.
+      placeholder: ''
+      defaultValue:
+        '@if':
+          exists:
+            '@path': $.traits.last_name
+          then:
+            '@path': $.traits.last_name
+          else:
+            '@path': $.traits.lastName
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 7xdyCcoLhD1UAnR6D7247Q
+      sortOrder: 4
+      fieldKey: phone
+      label: Phone
+      type: STRING
+      description: The contact’s phone number.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.phone
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: j1rPcmLdnC6dYJ7pNXNfja
+      sortOrder: 5
+      fieldKey: address
+      label: Street Address
+      type: STRING
+      description: The contact's street address, including apartment or unit number.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.address.street
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: uraPKPcX4S8V61Ghd8RhN2
+      sortOrder: 6
+      fieldKey: city
+      label: City
+      type: STRING
+      description: The contact's city of residence.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.address.city
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: nmgd1y1W99RjhB3y7Lzsat
+      sortOrder: 7
+      fieldKey: state
+      label: State
+      type: STRING
+      description: The contact's state of residence.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.address.state
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: wSRpuu3RF47ytJLDdvHpBP
+      sortOrder: 8
+      fieldKey: country
+      label: Country
+      type: STRING
+      description: The contact's country of residence.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.address.country
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 2wQqDKHdn5DscCfJ3bpw6L
+      sortOrder: 9
+      fieldKey: zip
+      label: Postal Code
+      type: STRING
+      description: The contact's zip code.
+      placeholder: ''
+      defaultValue:
+        '@if':
+          exists:
+            '@path': $.traits.address.postalCode
+          then:
+            '@path': $.traits.address.postalCode
+          else:
+            '@path': $.traits.address.postal_code
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: uLNrRK5J8CuAnXNNzSH8zt
+      sortOrder: 10
+      fieldKey: website
+      label: Website
+      type: STRING
+      description: The contact’s company/other website.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.website
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: qw9cWNKvwW5HNv5TBcNnZ4
+      sortOrder: 11
+      fieldKey: lifecyclestage
+      label: Lifecycle Stage
+      type: STRING
+      description: >-
+        The contact’s stage within the marketing/sales process. See more
+        information on default and custom stages in [HubSpot’s
+        documentation](https://knowledge.hubspot.com/contacts/use-lifecycle-stages).
+        Segment supports moving status forwards or backwards.
+      placeholder: ''
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: noX7vaQHyzs6Ucmie2rb7g
+      sortOrder: 12
+      fieldKey: properties
+      label: Other properties
+      type: OBJECT
+      description: >-
+        Any other default or custom contact properties. On the left-hand side,
+        input the internal name of the property as seen in your HubSpot account.
+        On the right-hand side, map the Segment field that contains the value.
+        Custom properties must be predefined in HubSpot. See more information in
+        [HubSpot’s
+        documentation](https://knowledge.hubspot.com/crm-setup/manage-your-properties#create-custom-properties).
+      placeholder: ''
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+  presets: []
+- id: 631a1c2bfdce36a23f0a14ec
+  display_name: HubSpot Web (Actions)
+  name: HubSpot Web (Actions)
+  slug: hubspot-web-actions
+  hidden: false
+  endpoints:
+  - us
+  regions:
+  - us
+  url: connections/destinations/catalog/hubspot-web-actions
+  previous_names:
+  - Hubspot Web (Actions)
+  - HubSpot Web (Actions)
+  website: https://www.hubspot.com
+  status: PUBLIC_BETA
+  categories:
+  - CRM
+  - Analytics
+  - Email Marketing
+  logo:
+    url: https://cdn.filepicker.io/api/file/aeEFGWdKRg69rh4vsaGj
+  mark:
+    url: https://cdn.filepicker.io/api/file/xblSRvE3T2e4GRoR50fH
+  methods:
+    track: true
+    identify: true
+    group: true
+    alias: true
+    page: true
+  platforms:
+    browser: true
+    mobile: false
+    server: false
+  components: []
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: false
+  replay: false
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
+  settings:
+  - name: enableEuropeanDataCenter
+    type: boolean
+    defaultValue: false
+    description: >-
+      Enable this option if you would like Segment to load the HubSpot SDK for
+      EU data residency.
+    required: true
+    label: Enable the European Data Center SDK
+  - name: flushIdentifyImmediately
+    type: boolean
+    defaultValue: false
+    description: >-
+      Enable this option to fire a `trackPageView` HubSpot event immediately
+      after each Segment `identify` call to flush the data to HubSpot
+      immediately.
+    required: true
+    label: Flush Identify Calls Immediately
+  - name: formatCustomBehavioralEventNames
+    type: boolean
+    defaultValue: true
+    description: >-
+      Format the event names for custom behavioral event automatically to
+      standard HubSpot format (`pe<HubID>_event_name`).
+    required: true
+    label: Format Custom Behavioral Event Names
+  - name: loadFormsSDK
+    type: boolean
+    defaultValue: false
+    description: >-
+      Enable this option if you would like Segment to automatically load the
+      HubSpot Forms SDK onto your site.
+    required: true
+    label: Load Forms SDK
+  - name: portalId
+    type: string
+    defaultValue: ''
+    description: The Hub ID of your HubSpot account.
+    required: true
+    label: Hub ID
+  actions:
+  - id: hSedKQQp1KxbB5FXsrofKB
+    name: Upsert Contact
+    slug: upsertContact
+    description: Create or update a contact in HubSpot.
+    platform: WEB
+    hidden: false
+    defaultTrigger: type = "identify"
+    fields:
+    - id: pRYSj58E6zYZLCn1G5Eu4T
+      sortOrder: 0
+      fieldKey: email
+      label: Email Address
+      type: STRING
+      description: >-
+        The contact’s email. Email is used to uniquely identify contact records
+        in HubSpot and create or update the contact accordingly.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.email
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 9Ffw3F9EAavT459MtKg9dZ
+      sortOrder: 1
+      fieldKey: id
+      label: External ID
+      type: STRING
+      description: A custom external ID that identifies the visitor.
+      placeholder: ''
+      defaultValue:
+        '@path': $.userId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: cZYCgE9JQ7M4hXemParPMi
+      sortOrder: 2
+      fieldKey: custom_properties
+      label: Custom Properties
+      type: OBJECT
+      description: >-
+        A list of key-value pairs that describe the contact. Please see
+        [HubSpot`s
+        documentation](https://knowledge.hubspot.com/account/prevent-contact-properties-update-through-tracking-code-api)
+        for limitations in updating contact properties.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: s3PFjuYmmNR43JmB12fFb7
+      sortOrder: 3
+      fieldKey: company
+      label: Company Name
+      type: STRING
+      description: The name of the company the contact is associated with.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.company.name
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: aAAb2D1KFNtcmiyvcK4EqL
+      sortOrder: 4
+      fieldKey: country
+      label: Country
+      type: STRING
+      description: The name of the country the contact is associated with.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.address.country
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: xfuSoZXgHxjDujLQz5J2FA
+      sortOrder: 5
+      fieldKey: state
+      label: State
+      type: STRING
+      description: The name of the state the contact is associated with.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.address.state
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 2WQ6ZQc2nVSdGxTgqamLXs
+      sortOrder: 6
+      fieldKey: city
+      label: City
+      type: STRING
+      description: The name of the city the contact is associated with.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.address.city
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: aLcciXXZXZa4ZcPWMnY6yt
+      sortOrder: 7
+      fieldKey: address
+      label: Street Address
+      type: STRING
+      description: The street address of the contact.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits.address.street
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: itAVtPekt7t3QkX2RcoRXM
+      sortOrder: 8
+      fieldKey: zip
+      label: Postal Code
+      type: STRING
+      description: The postal code of the contact.
+      placeholder: ''
+      defaultValue:
+        '@if':
+          exists:
+            '@path': $.traits.address.postalCode
+          then:
+            '@path': $.traits.address.postalCode
+          else:
+            '@path': $.traits.address.postal_code
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+  - id: nQrUkFqLZ6Zv6JaZGYTBDd
+    name: Track Custom Behavioral Event
+    slug: trackCustomBehavioralEvent
+    description: Send a custom behavioral event to HubSpot.
+    platform: WEB
+    hidden: false
+    defaultTrigger: type = "track"
+    fields:
+    - id: rQcrqyoAvJQdzTDTC51QdD
+      sortOrder: 0
+      fieldKey: name
+      label: Event Name
+      type: STRING
+      description: >-
+        The internal event name assigned by HubSpot. This can be found in your
+        HubSpot account. If the "Format Custom Behavioral Event Names" setting
+        is enabled, Segment will automatically convert your Segment event name
+        into the expected HubSpot internal event name format.
+      placeholder: ''
+      defaultValue:
+        '@path': $.event
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 4eAqrAGFGkF7TVBp38h8wN
+      sortOrder: 1
+      fieldKey: properties
+      label: Event Properties
+      type: OBJECT
+      description: A list of key-value pairs that describe the event.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+  - id: rnaHv5Y8rWxCiG6s3D6ShH
+    name: Track Page View
+    slug: trackPageView
+    description: Track the page view for the current page in HubSpot.
+    platform: WEB
+    hidden: false
+    defaultTrigger: type = "page"
+    fields:
+    - id: gukzTarLEP3qrWuLJR782r
+      sortOrder: 0
+      fieldKey: path
+      label: Path String
+      type: STRING
+      description: >-
+        The path of the current page. The set path will be treated as relative
+        to the current domain being viewed.
+      placeholder: ''
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+  presets:
+  - actionId: rnaHv5Y8rWxCiG6s3D6ShH
+    name: Track Page View
+    fields: {}
+    trigger: type = "page"
+  - actionId: nQrUkFqLZ6Zv6JaZGYTBDd
+    name: Track Custom Behavioral Event
+    fields:
+      name:
+        '@path': $.event
+      properties:
+        '@path': $.properties
+    trigger: type = "track"
+  - actionId: hSedKQQp1KxbB5FXsrofKB
+    name: Upsert Contact
+    fields:
+      email:
+        '@path': $.traits.email
+      id:
+        '@path': $.userId
+      custom_properties:
+        '@path': $.traits
+      company:
+        '@path': $.traits.company.name
+      country:
+        '@path': $.traits.address.country
+      state:
+        '@path': $.traits.address.state
+      city:
+        '@path': $.traits.address.city
+      address:
+        '@path': $.traits.address.street
+      zip:
+        '@if':
+          exists:
+            '@path': $.traits.address.postalCode
+          then:
+            '@path': $.traits.address.postalCode
+          else:
+            '@path': $.traits.address.postal_code
+    trigger: type = "identify"
 - id: 5728ed9c80412f644ff132d9
   display_name: Hull
   name: Hull
@@ -32394,6 +33377,190 @@ items:
     required: true
     label: Token
   actions: []
+  presets: []
+- id: 62f435d1d311567bd5bf0e8d
+  display_name: LinkedIn Audiences
+  name: LinkedIn Audiences
+  slug: linkedin-audiences
+  hidden: false
+  endpoints:
+  - us
+  regions:
+  - us
+  url: connections/destinations/catalog/linkedin-audiences
+  previous_names:
+  - Linkedin Audiences
+  - LinkedIn Audiences
+  website: https://business.linkedin.com/marketing-solutions/ads
+  status: PUBLIC_BETA
+  categories:
+  - Advertising
+  logo:
+    url: https://cdn.filepicker.io/api/file/ELNG7CyCSu2zCJFs0mzg
+  mark:
+    url: https://cdn.filepicker.io/api/file/gF6gY5PKTMSIrGjH0bCi
+  methods:
+    track: true
+    identify: false
+    group: false
+    alias: false
+    page: false
+  platforms:
+    browser: true
+    mobile: false
+    server: true
+  components: []
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: false
+  replay: false
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
+  settings:
+  - name: ad_account_id
+    type: string
+    defaultValue: ''
+    description: >-
+      The id of the LinkedIn Ad Account where batches should be synced. You can
+      find your Ad Account id in your [LinkedIn Campaign
+      Manager](https://www.linkedin.com/campaignmanager/login).
+    required: true
+    label: LinkedIn Ad Account Id
+  - name: send_email
+    type: boolean
+    defaultValue: true
+    description: >-
+      Whether to send `email` to LinkedIn. This setting applies to all mappings
+      you create in this destination instance.
+    required: true
+    label: Send Email
+  - name: send_google_advertising_id
+    type: boolean
+    defaultValue: true
+    description: >-
+      Whether to send Google Advertising ID to LinkedIn. This setting applies to
+      all mappings you create in this destination instance.
+    required: true
+    label: Send Google Advertising ID
+  actions:
+  - id: i9V1H1emvbxxNuwB5bdALx
+    name: Sync To LinkedIn DMP Segment
+    slug: updateAudience
+    description: Syncs contacts from a Personas Audience to a LinkedIn DMP Segment.
+    platform: CLOUD
+    hidden: false
+    defaultTrigger: event = "Audience Entered" or event = "Audience Exited"
+    fields:
+    - id: jcVeFsehCiYtsfdp8nfGCS
+      sortOrder: 0
+      fieldKey: dmp_segment_name
+      label: DMP Segment Display Name
+      type: STRING
+      description: >-
+        The display name of the LinkedIn DMP Segment. This field is set only
+        when Segment creates a new audience. Updating this field after Segment
+        has created an audience will not update the audience name in LinkedIn.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.audience_key
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 4zPS53458R7dERvi4XVKzb
+      sortOrder: 1
+      fieldKey: enable_batching
+      label: Enable Batching
+      type: BOOLEAN
+      description: Enable batching of requests to the LinkedIn DMP Segment.
+      placeholder: ''
+      defaultValue: true
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 9hFKbbzuGFXd265RKTb3bU
+      sortOrder: 2
+      fieldKey: email
+      label: User Email
+      type: HIDDEN
+      description: The user's email address to send to LinkedIn.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.traits.email
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: be2ANvsfsg2yYPybSUMbEA
+      sortOrder: 3
+      fieldKey: google_advertising_id
+      label: User Google Advertising ID
+      type: HIDDEN
+      description: The user's Google Advertising ID to send to LinkedIn.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.device.advertisingId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 9xFTPFKJWPAnP3J3LP6ARi
+      sortOrder: 4
+      fieldKey: source_segment_id
+      label: LinkedIn Source Segment ID
+      type: HIDDEN
+      description: >-
+        A Segment-specific key associated with the LinkedIn DMP Segment. This is
+        the lookup key Segment uses to fetch the DMP Segment from LinkedIn's
+        API.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties.audience_key
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: sSgTrU1TZDc8EeKVJpW9Gq
+      sortOrder: 5
+      fieldKey: personas_audience_key
+      label: Segment Engage Audience Key
+      type: STRING
+      description: >-
+        The `audience_key` of the Engage audience you want to sync to LinkedIn.
+        This value must be a hard-coded string variable, e.g.
+        `personas_test_audience`, in order for batching to work properly.
+      placeholder: ''
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: gx9rqynZ3C2fLt6FndV2RT
+      sortOrder: 6
+      fieldKey: event_name
+      label: Event Name
+      type: HIDDEN
+      description: The name of the current Segment event.
+      placeholder: ''
+      defaultValue:
+        '@path': $.event
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
   presets: []
 - id: 59526b3170a3e552b957552b
   display_name: LinkedIn Insight Tag
