@@ -201,7 +201,7 @@ treat that property whenever it is appears in data Segment processes.
    - **Green** for least restricted
 4. Choose whether to match on a **Key** (for example, "SIN", "Social Insurance Number", "Social Insurance No.", "SocInsNo") or on a **Value** (for example. "123-456-789", "1234567")
 5. Select how precise the match should be, by choosing **Exact** or **Similar** match.
-   - **Exact** matches mean that a key matches the term exactly (for example "phone number" but never "phone number")
+   - **Exact** matches mean that a key matches the term exactly (for example "phone number" but never "phne number")
    - **Similar to** matches a **Key** that is similar to a term within a fuzzy string distance (for example "email" and "e-mail"). We built fuzzy matching using [this public GitHub repository](https://github.com/imjasonmiller/godice). If the score is > 0.7, then we say it's a match.
 
 
