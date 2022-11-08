@@ -54,5 +54,3 @@
   override: "actions-intercom-web"
 - original: "sendgrid-marketing-campaigns"
   override: "actions-sendgrid"
-- original: "logrocket"
-  override: "actions-logrocket"
