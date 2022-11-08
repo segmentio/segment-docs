@@ -258,7 +258,7 @@ async function onBatch(events, settings) {
     // ...handle other event types here...
     }
   })
-  return Promise.all(promises)
+  await Promise.all(promises)
 }
 
 async function onTrackBatch(events, settings) {
