@@ -27,15 +27,15 @@ The Pardot (Actions) destination provides the following benefits over the classi
 
 ## Getting started
 
-Before you connect Segment to Salesforce Pardot, please ensure you have a Salesforce account with Pardot REST API access.
-
-1. From the Segment web app, navigate to **Connections > Catalog**.
-2. Search for **Pardot (Actions)** in the Destinations Catalog, and select the destination.
-3. Click **Configure Pardot (Actions)**.
-4. Select the source that will send data to Pardot (Actions) and follow the steps to name your destination.
-5. On the **Settings** tab, authenticate with Salesforce Pardot using OAuth. Input the Pardot Business Unit ID associated with your Pardot Account, and click **Save**.
-6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
-7. Enable the destination and configured mappings.
+To get started using Pardot with Segment:
+1. Make sure you have a Salesforce account with Pardot REST API access.
+2. Navigate to `https://app.segment.com/[workspace-slug]/destinations/catalog/actions-pardot`. Replace `[workspace-slug]` with your workspace slug.
+3. Click **Configure Pardot (Actions)** in the top-right corner of the screen.
+4. Accept the Beta terms.
+5. Select the source that will send data to Pardot (Actions) and follow the steps to name your destination.
+6. On the **Settings** tab, authenticate with Salesforce Pardot using OAuth. Input the Pardot Business Unit ID associated with your Pardot Account, and click **Save**.
+7. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+8. Enable the destination and configured mappings.
 
 {% include components/actions-fields.html %}
 

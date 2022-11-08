@@ -7,7 +7,7 @@ id: V8ji9rWzoS
 
 <!-- LR Note: the working copy of the source catalog YML we built on showed this in the `website` source though as of Nov 18 it's labeled cloud-source -->
 
-Littledata's [Shopify to Segment connection](https://help.littledata.io/posts/segment-overview/){:target="\_blank"} uses a combination of client-side (browser) and server-side tracking to ensure 100% accurate data about your Shopify store in Segment. Littledata automatically integrates with Shopify and Shopify Plus sites to capture every customer touch point, including sales, marketing, customer and product performance data.
+Littledata's [Shopify to Segment connection](https://help.littledata.io/posts/segment-overview/){:target="\_blank"} uses a combination of client-side (browser) and server-side tracking to ensure 100% accurate data about your Shopify store in Segment. Littledata automatically integrates with Shopify and Shopify Plus sites to capture every customer touchpoint, including sales, marketing, customer and product performance data.
 
 Littledata is available as an independent [Shopify App](https://apps.shopify.com/segment-com-by-littledata){:target="\_blank"}.
 
@@ -33,7 +33,7 @@ During the Segment connection setup, Littledata also adds a set of webhooks to y
 
 Here's an architecture diagram that shows how the Littledata app mediates data flow between Shopify and Segment.
 
-![Connecting Shopify to Segment](images/segment.png)
+![](images/littledata_arch.png)
 
 > warning "Note"
 > This integration is maintained by Littledata _and isn't supported by Segment directly_. The Littledata app has been reviewed by the Segment team for conformance with Segment's [E-Commerce Spec](/docs/connections/spec/ecommerce/v2/), and is the recommended way of using Segment with Shopify. However, it does require a paid subscription with Littledata, who mediates the connection between Shopify and Segment. [Contact the Littledata Support team](mailto:help@littledata.io) with any questions.
@@ -41,7 +41,7 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 ## Getting Started
 
 1. **Log in** to your Shopify Store account.
-2. Go the [Shopify app store listing](https://apps.shopify.com/segment-com-by-littledata){:target="\_blank"} for **Segment.com by Littledata**.
+2. Go the [Shopify app store listing](https://apps.shopify.com/segment-com-by-littledata){:target="_blank"} for **Segment.com by Littledata**.
    ![](images/Nd5L0C6.png)
 3. Click **Add app** to begin the installation process.
 4. **Choose a Littledata subscription** suitable for your store's volume of monthly orders.
@@ -78,7 +78,7 @@ Below is a table of events that **Shopify by Littledata** sends to Segment throu
 
 You can _opt out_ of device-mode pageviews or events by setting `disableClientSideEvents: true` or `disablePageviews: true` in the `LittledataLayer` settings.
 
-The source also respects [GDPR-compliant cookie](https://blog.littledata.io/2021/06/18/shopify-cookie-banner-gdpr-compliance/) consent through Shopify's cookie banner, or popular consent management platforms such as [OneTrust](https://help.littledata.io/help/integrating-onetrust-with-shopify/) and [TrustArc](https://help.littledata.io/posts/integrating-trustarc-with-shopify/).
+The source also respects [GDPR-compliant cookie](https://blog.littledata.io/2021/06/18/shopify-cookie-banner-gdpr-compliance/) consent via Shopify's cookie banner, or popular consent management platforms such as [OneTrust](https://help.littledata.io/help/integrating-onetrust-with-shopify/) and [TrustArc](https://help.littledata.io/posts/integrating-trustarc-with-shopify/).
 
 ## Cloud-mode events
 
@@ -119,31 +119,31 @@ For every event where there is an identifiable Shopify customer (from both the d
 
 The following traits are included with an Identify call:
 
-| Property Name                | Description                                                                                                                                                                                                   | Property Type |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `accepts_marketing`          | Whether the customer has accepted marketing                                                                                                                                                                   | Boolean       |
-| `createdAt`                  | The date customer record was created                                                                                                                                                                          | Date          |
-| `customerLifetimeValue`      | The total spend of customer on the Shopify store                                                                                                                                                              | Double        |
-| `default_address.street`     | The customer's default street address                                                                                                                                                                         | String        |
-| `default_address.city`       | The customer's city address                                                                                                                                                                                   | String        |
-| `default_address.postalCode` | The customer's ZIP / post code                                                                                                                                                                                | String        |
-| `default_address.state`      | The customer's state address                                                                                                                                                                                  | String        |
-| `default_adress.country`     | The customer's country                                                                                                                                                                                        | String        |
-| `description`                | The customer notes                                                                                                                                                                                            | String        |
-| `email`                      | The customer's email address                                                                                                                                                                                  | String        |
-| `firstName`                  | The customer's first name                                                                                                                                                                                     | String        |
-| `lastName`                   | The customer's last name                                                                                                                                                                                      | String        |
-| `marketingOptIn`             | The `marketing_opt_in` field from [Shopify customer](https://shopify.dev/docs/admin-api/rest/reference/customers/customer)                                                                                    | String        |
-| `phone`                      | The customer's phone number                                                                                                                                                                                   | String        |
-| `purchaseCount`              | The number of orders by this customer                                                                                                                                                                         | Integer       |
-| `state`                      | The Shopify [customer state](https://shopify.dev/api/admin-graphql/2022-07/enums/customerstate){:target="\_blank"}. This can be `enabled`, `disabled`, `invited` to create an account, or customer `declined` | String        |
-| `tags`                       | The custom tags [applied to the customer](https://shopify.dev/docs/admin-api/rest/reference/customers/customer)                                                                                               | String        |
-| `userId`                     | Chosen user identifier, defaulting to Shopify Customer ID                                                                                                                                                     | Double        |
-| `verified_email` (v2)        | Whether the customer has verified their email                                                                                                                                                                 | Boolean       |
+| Property Name                | Description                                                                                                                                                                | Property Type |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `accepts_marketing`          | Whether the customer has accepted marketing                                                                                                                                | Boolean       |
+| `createdAt`                  | The date customer record was created                                                                                                                                       | Date          |
+| `customerLifetimeValue`      | The total spend of customer on the Shopify store                                                                                                                           | Double        |
+| `default_address.street`     | The customer's default street address                                                                                                                                      | String        |
+| `default_address.city`       | The customer's city address                                                                                                                                                | String        |
+| `default_address.postalCode` | The customer's ZIP / post code                                                                                                                                             | String        |
+| `default_address.state`      | The customer's state address                                                                                                                                               | String        |
+| `default_adress.country`     | The customer's country                                                                                                                                                     | String        |
+| `description`                | The customer notes                                                                                                                                                         | String        |
+| `email`                      | The customer's email address                                                                                                                                               | String        |
+| `firstName`                  | The customer's first name                                                                                                                                                  | String        |
+| `lastName`                   | The customer's last name                                                                                                                                                   | String        |
+| `marketingOptIn`             | The `marketing_opt_in` field from [Shopify customer](https://shopify.dev/docs/admin-api/rest/reference/customers/customer)                                                 | String        |
+| `phone`                      | The customer's phone number                                                                                                                                                | String        |
+| `purchaseCount`              | The number of orders by this customer                                                                                                                                      | Integer       |
+| `state`                      | The Shopify [customer state](https://shopify.dev/api/admin-graphql/2022-07/enums/customerstate){:target="_blank"}. This can be `enabled`, `disabled`, `invited` to create an account, or customer `declined` | String        |
+| `tags`                       | The custom tags [applied to the customer](https://shopify.dev/docs/admin-api/rest/reference/customers/customer)                                                            | String        |
+| `userId`                     | Chosen user identifier, defaulting to Shopify Customer ID                                                                                                                  | Double        |
+| `verified_email` (v2)        | Whether the customer has verified their email                                                                                                                              | Boolean       |
 
 ## Support for Google Analytics destination
 
-All events (device-mode and cloud-mode) contain the Google Analytics `clientId` field where known. This allows the [Google Analytics destination](/docs/connections/destinations/catalog/google-analytics/#supported-sources-and-connection-modes) to be configured in cloud-mode only, so all client side events are relayed through Segment's servers - reducing the scripts needed on your website.
+All events (device-mode and cloud-mode) contain the Google Analytics `clientId` field where known. This allows the [Google Analytics destination](/docs/connections/destinations/catalog/google-analytics/#supported-sources-and-connection-modes) to be configured in cloud-mode only, so all client side events are relayed via Segment's servers - reducing the scripts needed on your website.
 
 ## Support for email marketing destinations
 
@@ -194,7 +194,7 @@ The list below outlines the properties included in most events. See the 'Track (
 | `sent_from`                            | A unique property to identify events sent by Littledata                                       | String        |
 | `shipping_method`                      | The shipping method chosen for checkout                                                       | String        |
 | `shipping`                             | The shipping cost                                                                             | Float         |
-| `source_name`                          | The source of the order or checkout (like `web`, `android`, `pos`)                            | String        |
+| `source_name`                          | The source of the order or checkout (e.g. `web`, `android`, `pos`)                            | String        |
 | `step`                                 | The checkout [step number](https://help.littledata.io/posts/shopify-checkout-funnel-updates/) | Integer       |
 | `subscription_revenue`                 | The revenue associated with a [Subscription Event](#subscription-events)                      | Float         |
 | `subtotal`                             | Order total after discounts but before taxes and shipping                                     | Float         |
@@ -202,7 +202,7 @@ The list below outlines the properties included in most events. See the 'Track (
 | `total`                                | The total value of the order                                                                  | Float         |
 | `userId`                               | Chosen user identifier, defaulting to Shopify Customer ID                                     | String        |
 
-> note "" \*`revenue` is available only with the Order Completed event, and only if the store opts in through the Littledata application. Revenue is a reserved property in many Segment destinations. Opting in will override the `total` property sent to Google Analytics.
+> note "" \*`revenue` is available only with the Order Completed event, and only if the store opts in via the Littledata application. Revenue is a reserved property in many Segment destinations. Opting in will override the `total` property sent to Google Analytics.
 
 ## Product properties
 
@@ -232,9 +232,9 @@ Each item in the `products` array, or Product Viewed and Product Added events, w
 
 ## Import all orders
 
-With an [annual Littledata Plus plan](https://www.littledata.io/app/enterprise){:target="_blank"} you can import all Shopify orders and refunds from before you started using Segment, to sync with destinations that support timestamped events (for example, a data warehouse). This enables you to build a complete customer history in your chosen destination.
+With an [annual Littledata Plus plan](https://www.littledata.io/app/enterprise){:target="\_blank"} you can import all Shopify orders and refunds from before you started using Segment, to sync with destinations that support timestamped events (for example, a data warehouse). This enables you to build a complete customer history in your chosen destination.
 
-This data import includes all the [event properties](#event-properties) usually sent with an `Order Completed` event, including the [customer traits](#identify-calls).
+This data import includse all the [event properties](#event-properties) usually sent with an `Order Completed` event, including the [customer traits](#identify-calls).
 
 ## Advanced settings
 

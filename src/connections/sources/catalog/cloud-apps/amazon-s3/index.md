@@ -43,9 +43,12 @@ Create the  [execution role](https://docs.aws.amazon.com/lambda/latest/dg/lambda
 2. Choose  **Create role**.
 3. Create a role with the following properties:
     - Set the **Trusted entity** to **AWS Lambda**.
+      ![Add Lambda as the trusted entity for the role](images/s3_2.png)
     - Set the **Permissions**  to **AWSLambdaExecute**.
+       ![Add the AWSLambdaExecute permission](images/s3_3.png)
     - You can skip creating a tag.
     - Set the **Role name** to **`lambda-s3-role`**.
+      ![Set the role name to lambda-s3-role](images/s3_4.png)
 4. Record the new created IAM role's `role id`! You're going to need it later!
 
 The **AWSLambdaExecute** policy has the permissions that the function needs to manage objects in Amazon S3, and write logs to CloudWatch Logs.
@@ -236,7 +239,7 @@ The deployment package is a .zip file that contains your Lambda function code an
 -   Upload the Lambda function using the following (note that your Lambda function name doesn't exist yet, you're naming it here):
 
     ```bash
-    S3-Lambda-Segment$ aws lambda create-function --function-name <!Your Lambda Name!> --zip-file fileb://function.zip --handler index.handler --runtime nodejs16.x --timeout 90 --memory-size 1024 --role <!Your Role ARN!> --environment Variables={write_key=<!Your Segment Write Key!>}
+    S3-Lambda-Segment$ aws lambda create-function --function-name <!Your Lambda Name!> --zip-file fileb://function.zip --handler index.handler --runtime nodejs8.10 --timeout 90 --memory-size 1024 --role <!Your Role ARN!> --environment Variables={write_key=<!Your Segment Write Key!>}
     ```
 
 **Record your Lambda function's name and region! You'll need them later**.
@@ -303,11 +306,14 @@ Next, add configure notifications on the source bucket to request Amazon S3 to p
 1. Open the  [Amazon S3 console](https://console.aws.amazon.com/s3).
 2. Choose the source bucket.
 3. Choose  **Properties**.
+   ![Select the Properties tab](images/s3_5.png)
 4. Scroll down, click **Events**, and configure a notification with the following settings.
+   ![Click Events](images/s3_6.png)
     - Set **Name** to **`lambda-trigger`**.
     - Set **Events** to **`ObjectCreate (All)`**.
     - Set **Send to** to **`Lambda function`**.
     - Set **Lambda** to **Your Lambda Function Name**.
+      ![Add the name of the function you created to the Lambda field](images/s3_7.png)
 
 For more information on event configuration, see  [Enabling Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/enable-event-notifications.html)  in the  _Amazon Simple Storage Service Console User Guide_.
 
