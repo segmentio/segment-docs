@@ -155,7 +155,7 @@ Segment's [Pixel Tracking API](/docs/connections/sources/catalog/libraries/serve
 
 | Event name           | Description                                                                                                           |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| Email Delivered      | The message has been successfully delivered to the receiving server                                                   |
+| Email Delivered      | The message has been successfully delivered to the receiving server.                                                   |
 | Email Opened         | The recipient has opened the HTML message. You need to enable Open Tracking for getting this type of event.           |
 | Email Link Clicked   | The recipient clicked on a link within the message. You need to enable Click Tracking for getting this type of event. |
 | Email Bounced        | The receiving server could not or would not accept message.                                                           |
