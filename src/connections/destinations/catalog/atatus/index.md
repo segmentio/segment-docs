@@ -10,7 +10,7 @@ and diagnose issues, and take corrective action to prevent or resolve applicatio
 ## Getting Started
 Before you start, make sure Atatus supports the source type and connection mode you’ve
 chosen to implement. You can learn more about [connection modes
-here](https://segment.com/docs/connections/destinations/#connection-modes).
+here](/docs/connections/destinations/#connection-modes).
 
 1. From the destinations catalog page in the segment web app, click on **Destinations -> Add
 Destination**.
@@ -26,7 +26,7 @@ you will have to add the API key to start receiving insights.
 
 ### Identify
 If you’re not familiar with the Segment Specs, take a look to understand what the
-[Identify](https://segment.com/docs/connections/spec/identify/) method does. An example call
+[Identify](/docs/connections/spec/identify/) method does. An example call
 would look like this:
 
 ```javascript
