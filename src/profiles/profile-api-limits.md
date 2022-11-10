@@ -1,6 +1,8 @@
 ---
 title: Profiles Limits
 plan: profiles
+redirect_from:
+  - '/profiles/product-limits'
 ---
 
 ## Profile API
