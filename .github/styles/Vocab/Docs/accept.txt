@@ -103,7 +103,6 @@ NSDate
 NSNull
 NSNumber
 NSString
-OAuth
 Okta
 Omnichannel
 onboarding

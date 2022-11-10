@@ -66,8 +66,7 @@ The audience in the image below includes all users that have Product Added in th
 > info ""
 > Funnel Audiences compute based on all instances of the parent event within the lookback period. This means that if you have a user that Product Added ⟶ Order Completed ⟶ Product Added, this user would be entered into the Abandoned Cart state despite having previously completed an order.
 
-<!-- MZ 11/8/22
-## What is Engage Merge Protection?
+<!--PW 9/6/22 ## What is Engage Merge Protection?
 Engage merge protection algorithm protects your identity graph from unnecessary merges by finding and removing untrusted external IDs. Here's an example:
 
 ![Merge protection](images/merge_protection.png "An image representing the merge protection flow")
