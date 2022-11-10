@@ -473,6 +473,8 @@ sections:
     title: Prod and Testing Environments in Segment
   - path: /segment-app/verify-email-address
     title: Verifying Your Email Address
+  - path: /segment-app/support-access
+    title: Support Access
 - section_title: API
   section:
   - section_title: Public API
