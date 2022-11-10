@@ -630,8 +630,8 @@ items:
     type: boolean
     defaultValue: false
     description: >-
-      If this setting is enabled, we will add `context.app.build`, if present,
-      to Adobe's AppID, as `<name> <version> (<build>)`.
+      If this setting is enable, we will add `context.app.build`, if present, to
+      Adobe's AppID, as `<name> <version> (<build>)`.
     required: true
     label: Add application build to Adobe's App ID
   - name: collectHighEntropyUserAgentHints
@@ -10730,7 +10730,7 @@ items:
   logo:
     url: https://cdn.filepicker.io/api/file/lrTbhI5mRbmM9Ax0hyDx
   mark:
-    url: https://cdn.filepicker.io/api/file/c6dXBVkSeix8Mw5HnQYQ
+    url: https://cdn.filepicker.io/api/file/7B58uDCOTwGBRTFbcDek
   methods:
     track: true
     identify: true
@@ -31844,10 +31844,10 @@ items:
       https://public-segment-devcenter-production.s3.amazonaws.com/32654599-9a5a-41b7-a0a3-d5700cc4a6c9.svg
   methods:
     track: true
-    identify: false
-    group: false
-    alias: false
-    page: false
+    identify: true
+    group: true
+    alias: true
+    page: true
   platforms:
     browser: true
     mobile: true
@@ -53348,7 +53348,7 @@ items:
   - name: trackMapping
     type: text-map
     defaultValue: {}
-    description: 'Track event object mapping. default: { properties: customer }'
+    description: 'Tack event object mapping. default: { properties: customer }'
     required: true
     label: Track Mapping
   - name: trackOnlyExistingCustomers

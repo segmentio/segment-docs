@@ -2,6 +2,8 @@
 title: HubSpot Web (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
+hidden: true
+private: true
 id: 631a1c2bfdce36a23f0a14ec
 versions:
   - name: 'HubSpot Cloud Mode (Actions)'
