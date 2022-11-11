@@ -2,8 +2,6 @@
 title: HubSpot Cloud Mode (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
-hidden: true
-private: true
 id: 632b1116e0cb83902f3fd717
 versions:
   - name: 'HubSpot Web (Actions)'
@@ -56,3 +54,7 @@ Segment provides prebuilt mappings for contacts and companies. If there are othe
 
 ### Why aren't my custom behavioral events appearing in HubSpot?
 HubSpot has several limits for custom behavioral events, including a limit on the number of event properties per event. Each event can contain data for up to 50 properties. If this limit is exceeded, the request will fail. See [HubSpot documentation](https://knowledge.hubspot.com/analytics-tools/create-custom-behavioral-events#define-the-api-call){:target="_blank"} for other limits.
+
+### Does the HubSpot Cloud Mode (Actions) destination support EU data residency?
+Yes. HubSpot will automatically redirect API requests directly to an EU data center if your HubSpot instance is on an EU data center. See more in HubSpot's [Routing API Traffic](https://product.hubspot.com/blog/routing-api-traffic){:target="_blank"} article.
+
