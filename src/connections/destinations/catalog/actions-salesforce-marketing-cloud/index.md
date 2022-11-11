@@ -67,6 +67,7 @@ Once you save the API integration and add permissions, you will see a Summary pa
 ## FAQ & Troubleshooting
 
 ### Batching Data to SFMC
+
 If your organization sends a very high volume of data or has Engage audiences with many people in them, Segment allows you to send data to SFMC data extensions in batches. This can help you reduce your SFMC API quota, reduce the number of rate-limit errors you see, and help speed up transfers of large volumes of data. 
 
 The batch feature is only compatible with the "Send Contact to Data Extension" and "Send Event to Data Extension" actions. To send data in batches, toggle the "Batch data to SFMC" mapping on.
