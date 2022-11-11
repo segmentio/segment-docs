@@ -63,7 +63,6 @@ Once you save the API integration and add permissions, you will see a Summary pa
 
 {% include components/actions-fields.html settings="true"%}
 
-
 ## FAQ & Troubleshooting
 
 ### Batching Data to SFMC
@@ -101,7 +100,3 @@ To send an Engage computed trait to SFMC:
 2. Set up the Salesforce Marketing Cloud (Actions) destination using the instructions [above](#connect-the-salesforce-marketing-cloud-actions-destination) and connect it to your Engage source.
 3. Create a "Send Contact to Data Extension" action in order to map the SFMC attribute to the Engage trait key. The Engage trait key can be found in **Engage > Audiences > Computed Traits > Choose your computed trait > Settings > Trait key**. In the Contact Fields mapping, input the name of the attribute you created in SFMC on the left-hand side. On the right-hand side, search for an event variable of `traits.[your-trait-key]` and select "No matches found. Use "traits.[your-trait-key]" as an event variable".
 4. Navigate back to your Engage computed trait and connect the Salesforce Marketing Cloud (Actions) destination to the computed trait. Keep "Send Identify" toggled on and save.
-
-
-
-
