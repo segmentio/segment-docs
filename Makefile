@@ -182,6 +182,9 @@ docker-build:
 	@$(DOCKER_TTY) make build
 	bundle install --path=vevendor
 
+.PHONY: private-destination
+private_destination:
+	@node scripts/private-destination.js
 #.PHONY: docs
 #docs: node_modules
 #	$(BIN)/webpack --mode=production

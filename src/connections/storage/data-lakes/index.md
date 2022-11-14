@@ -55,7 +55,7 @@ When setting up your data lake using the [Data Lakes catalog page](/docs/connect
 
 #### EMR
 
-Data Lakes uses an EMR cluster to run jobs that load events from all sources into Data Lakes. The [AWS resources portion of the set up instructions](/docs/connections/storage/catalog/data-lakes/#step-1---set-up-aws-resources) sets up an EMR cluster using the `m5.xlarge` node type. Data Lakes keeps the cluster always running, however the cluster auto-scales to ensure it's not always running at full capacity. Check the Terraform module documentation for the [EMR specifications](https://github.com/segmentio/terraform-aws-data-lake/tree/master/modules/emr){:target="_blank"}.
+Data Lakes uses an EMR cluster to run jobs that load events from all sources into Data Lakes. The [AWS resources portion of the set up instructions](/docs/connections/storage/catalog/data-lakes/#step-1---set-up-aws-resources) sets up an EMR cluster using the `m5.xlarge` node type. Data Lakes keeps the cluster always running, however the cluster auto-scales to ensure it's not always running at full capacity. Check the Terraform module documentation for the [EMR specifications](https://github.com/segmentio/terraform-segment-data-lakes/tree/master/aws_datalake/modules/emr){:target="_blank"}.
 
 #### AWS IAM role
 
