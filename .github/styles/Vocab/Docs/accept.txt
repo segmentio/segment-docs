@@ -117,6 +117,7 @@ Qualtrics
 reformat(:?s)
 Responsys
 Rokt
+Sabil
 SDK(:?s)
 Selligent
 Sendgrid
