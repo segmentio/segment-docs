@@ -130,7 +130,7 @@ You can use parentheses to group subexpressions for more complex "and / or" logi
 | `length( list or string )`          | `number`    | Returns the number of elements in a list or number of bytes (not necessarily characters) in a string. For example, `a`  is 1 byte and`ア` is 3 bytes long. |
 | `lowercase( s string )`             | `string`    | Returns `s` with all uppercase characters replaced with their lowercase equivalent.                                                                        |
 | `typeof( value )`                   | `string`    | Returns the type of the given value: `"string"`, `"number"`, `"list"`, `"bool"`, or `"null"`.                                                              |
-| `match( s string, pattern string )` | `bool`      | Returns `true` if the glob pattern `pattern` matches `s`. See below for more details about glob matching.  |
+| `match( s string, pattern string )` | `bool`      | Returns `true` if the glob pattern `pattern` matches `s`. See below for more details about glob matching.                                                  |
 
 Functions handle `null` with sensible defaults to make writing FQL more concise.
 For example, you can write `length( userId ) > 0` instead of `typeof( userId ) =

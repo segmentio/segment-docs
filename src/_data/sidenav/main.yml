@@ -396,6 +396,8 @@ sections:
       title: User Deletion and Suppression
   - path: /privacy/account-deletion
     title: Account & Data Deletion
+  - path: /privacy/hipaa-eligible-segment
+    title: HIPAA Eligible Segment  
   - path: /privacy/faq
     title: Privacy FAQs
 - section_title: Protocols
@@ -475,13 +477,8 @@ sections:
     title: Verifying Your Email Address
 - section_title: API
   section:
-  - section_title: Public API
-    slug: api/public-api
-    section:
-    - path: /api/public-api
-      title: Public API
-    - path: /api/public-api/fql
-      title: Destination Filter Query Language
+  - path: /api/public-api
+    title: Public API
   - section_title: Config API
     slug: api/config-api
     section:
@@ -491,6 +488,8 @@ sections:
       title: API design
     - path: /api/config-api/authentication
       title: Authentication
+    - path: /api/config-api/fql
+      title: Destination Filter Query Language
     # - path: "https://reference.segmentapis.com/"
     #   title: Reference
     #   menu_icon: new-tab

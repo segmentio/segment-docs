@@ -68,11 +68,11 @@ Here is a sample Identify call (with [analytics.js](/docs/connections/sources/ca
 
 ```js
 analytics.identify({
-  name: 'Dolly Parton',
-  email: 'dolly@iamawesome.com',
-  login: 'dollyparton',
+  name: 'Kanye West',
+  email: 'kanye@iamawesome.com',
+  login: 'kanyew',
   type: 'user',
-  created: '2022-10-31T16:40:52.238Z',
+  created: '2016-11-07T16:40:52.238Z',
 });
 ```
 
