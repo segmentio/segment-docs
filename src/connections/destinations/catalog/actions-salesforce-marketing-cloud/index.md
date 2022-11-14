@@ -35,7 +35,7 @@ The Salesforce Marketing Cloud (Actions) destination provides the following bene
 
 1. Log in to your Salesforce Marketing Cloud account and go to the **Setup** settings.
 2. Under **Platform Tools**, expand Apps and select **Installed Packages**.
-3. Click **New** to create a new package. We recommend giving it a name like "Segment".
+3. Click **New** to create a new package. For clarity, Segment recommends using a name like "Segment".
 4. Click **Add Component** and select **API Integration**.
 5. Select the **Server-to-Server** Integration Type.
 6. Enable the following permissions. If you don't add these permissions, you'll see an [Insufficient Privileges](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/error-handling.html#authorization){:target="_blank"} error from SFMC.
@@ -57,7 +57,7 @@ Once you save the API integration and add permissions, you will see a Summary pa
 2. Search for **Salesforce Marketing Cloud (Actions)** in the Destinations Catalog, and select the destination.
 3. Click **Configure Salesforce Marketing Cloud (Actions)** in the top-right corner of the screen.
 4. Select the source that will send data to SFMC and follow the steps to name your destination.
-5. On the **Settings** tab, input your SFMC Account ID (MID). In the Installed Package you created above, locate your Subdomain, Client ID, and Client Secret and input these settings. Your Subdomain can be found under "REST Base URI." Your Subdomain should be a 28-character string starting with the letters "mc". Do not include the `.rest.marketingcloudapis.com` part of the URL.
+5. On the **Settings** tab, input your SFMC Account ID (MID). In the Installed Package you created above, locate your Subdomain, Client ID, and Client Secret and input these settings. Your Subdomain can be found under "REST Base URI." Your Subdomain should be a 28-character string starting with the letters `mc`. Do not include the `.rest.marketingcloudapis.com` part of the URL.
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 7. Enable the destination and configured mappings.
 
