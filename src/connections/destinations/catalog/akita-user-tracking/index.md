@@ -1,0 +1,82 @@
+---
+title: Akita User Tracking Destination
+id: 5fc76defdde39f67d4fa85de
+---
+
+[Akita](https://www.akitaapp.com.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides Customer Success Management tools for Software-as-a-Service applications--helping you nurture, retain and grow your customer base.
+
+This destination is maintained by Akita. For any issues with the destination, [Akita support](mailto:support@akitaapp.com).
+
+> Note: The Akita Destination is currently in beta, which means that they are still actively developing the destination. To join their beta program, or if you have any feedback to help improve the Akita Destination and its documentation, [contact the Akita support team](mailto:support@akitaapp.com)!
+
+## Getting Started
+
+{% include content/connection-modes.md %}
+
+1. From the Destinations catalog page in the Segment App, click **Add Destination**.
+2. Search for "Akita" in the Destinations Catalog, and select the "Akita User Tracking" destination.
+3. Choose which Source should send data to the "Akita User Tracking" destination.
+4. Go to the ["Connect Segment" Page](https://beta.akitaapp.com/segment), find and copy the "Segment.com API Key".
+5. Enter the "API Key" in the "Akita User Tracking" destination settings in Segment.
+
+## Identify
+
+If you aren't familiar with the Segment Spec, take a look at the [Identify method documentation](https://segment.com/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
+
+```js
+analytics.identify("contact_123", {
+  email: "john.doe@example.com",
+  groupId: "account_123" /** Optional **/,
+});
+```
+
+Segment sends Identify calls to Akita as an `contact` event.
+
+You may find a list of useful information to send as traits in your `identify` call in the [Segment > Configure](https://beta.akitaapp.com/segment) tab in Akita.
+
+Contacts described using the `identify` event will be added to Akita as Contacts and associated with the correct Account.
+
+NOTE: Akita is primarily an Account management tool. All Contacts in Akita must be associated with one-and only one-Account. You must also use the Segment.com `group` event (see below).
+
+For best results, we recommend you also send the `groupId` (the identifier you send with `group`) as a trait in all `identify` events. This allows Akita to completely identify the Contact if you have not yet made the required Group call.
+
+## Group
+
+If you aren't familiar with the Segment Spec, take a look at the [Group method documentation](https://segment.com/docs/connections/spec/group/) to learn about what it does. An example call would look like:
+
+```js
+analytics.group("account_123", {
+  name: "Initech",
+  plan: "Enterprise",
+});
+```
+
+Segment sends Identify calls to Akita as an `account` event.
+
+You may find a list of useful information to send as traits in your `group` call in the [Segment > Configure](https://beta.akitaapp.com/segment) tab in Akita.
+
+Accounts described using the `group` event will be added to Akita as Accounts.
+
+NOTE: You must send `group` events to Segment.com for the Segment <> Akita integration to work correctly.
+
+## Track
+
+If you aren't familiar with the Track Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
+
+```js
+analytics.track("search:submit");
+```
+
+Segment sends Track calls to Akita as a `event` event.
+
+## Page
+
+If you aren't familiar with the Page Spec, take a look at the [Page method documentation](https://segment.com/docs/connections/spec/page/) to learn about what it does. An example call would look like:
+
+```js
+analytics.page();
+```
+
+Segment sends Page calls to Akita as a `page` event.
+
+NOTE: You must send either `event` or `page` events (or both) for Akita to recognize and store your users Sessions.
