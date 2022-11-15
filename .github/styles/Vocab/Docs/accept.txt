@@ -27,6 +27,7 @@ API(:?s)
 Appboy
 Appsflyer
 async
+Automations
 aws
 background(?:ed|ing)
 Bento

@@ -45,4 +45,5 @@ To move a source between workspaces, navigate to the source's **Settings** tab, 
 
 ![Image of the Transfer to Workspace tab in Segment's platform](images/transfer-source.png "Transferring a source")
 
-Transferring a source removes all associated destination configurations.  Be sure to set up the destinations you want after the transfer.
+> warning "Tracking Plans do not transfer"
+> Segment recommends that you disconnect Tracking Plans from Sources before you initiate a workspace transfer. Once the transfer is complete, add and reconnect your Tracking Plans in the new workspace.
