@@ -82,3 +82,4 @@ Segment sends Page calls to Akita as a `page` event.
 
 > success ""
 > You must send either `event` or `page` events (or both) for Akita to recognize and store your users Sessions.
+
