@@ -19,7 +19,7 @@
   command = "yarn develop"
 
 [context.build-time-improvements]
-  command = "yarn develop"
+  command = "yarn develop-inc"
 
 [[redirects]]
   from = "/docs/*"
