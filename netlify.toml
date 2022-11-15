@@ -12,10 +12,13 @@
   ignore = "./scripts/ignore.sh"
 
 [context.branch-deploy]
-  command = "yarn build"
+  command = "yarn develop"
 #  ignore = "./scripts/ignore.sh"
 
 [context.develop]
+  command = "yarn develop"
+
+[context.build-time-improvements]
   command = "yarn develop"
 
 [[redirects]]
