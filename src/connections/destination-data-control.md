@@ -74,3 +74,4 @@ The Identify & Group CSV file will contain the following columns:
 
 > note ""
 > Export Schema doesn't include any actual values (for example, personal data) for the events, properties, and traits you are tracking for a specific source.
+
