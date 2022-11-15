@@ -46,10 +46,15 @@ Segment allows you to download your Source Schema as a CSV file, maximizing port
 
 ![](images/export-source-schema.png)
 
+You can choose to include properties with the Track events in the modal.
+
+![](images/export-source-schema-including-props.png)
+
 CSV files generate based on the current view of your Source Schema. Any search parameters or filters you apply to the current Source Schema view also apply to the CSV.
 
-You can download the following Track events:
+The Track event CSV file will contain the following columns:
 - Event Name
+- Property Name (if properties are included in the export dialog)
 - Last Seen (UTC)
   - If greater than 30 days, the value is "more than 30 days ago"
 - Allowed Count
@@ -58,7 +63,14 @@ You can download the following Track events:
 - Planned (available for Protocols customers with a connected Tracking Plan)
   - Values are "planned" or "unplanned"
 
-Export Schema is not available for Identify or Group events.
+The Identify & Group CSV file will contain the following columns:
+- Trait Name
+- Last Seen (UTC)
+- Allowed Count
+- Blocked Count
+- Total Count
+- Planned (available for Protocols customers with a connected Tracking Plan)
+  - Values are "planned" or "unplanned"
 
 > note ""
-> Export Schema doesn't include any actual values (for example, personal data) for the events, properties, and traits you are tracking for a specific source. Properties aren't included in the CSV.
+> Export Schema doesn't include any actual values (for example, personal data) for the events, properties, and traits you are tracking for a specific source.
