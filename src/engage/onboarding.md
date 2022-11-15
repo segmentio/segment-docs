@@ -156,9 +156,6 @@ To finish linking the API credentials to your Segment account, follow these step
 
 ### Warm up your IP
 
-> info "Required Step"
-> Once you've completed IP warmup, contact SendGrid support at [help@sendgrid.com](mailto:help@sendgrid.com).
-
 To finish configuring your SendGrid account for usage with Twilio Engage, you’ll [warm up your IP](https://docs.sendgrid.com/ui/sending-email/warming-up-an-ip-address){:target="_blank"}. Depending on when you created your SendGrid account, you'll either warm up your IP manually or use SendGrid's automated IP warmup process.
 
 As a best practice, **only warm up your IP when you're ready to begin sending campaigns.**
@@ -174,7 +171,6 @@ If you've already warmed up an IP with your SendGrid account in the past, you ca
 1. Within your SendGrid space, navigate to **Settings > IP Addresses**.
 2. On the **Dedicated IP Addresses** page, click the pencil edit button next to your Engage IP address.
 3. Under **Additional options** (pictured below), check **Use Automated IP warmup** and **Allow my subusers to send mail using this IP address**. Click **Save**.
-4. **Required: Reach out to SendGrid support at [help@sendgrid.com](mailto:help@sendgrid.com). Let them know you’ve enabled IP warmup.**
 
 Your SendGrid account is now fully configured and ready to use with Engage.  You’re ready to move to Stage 3 and configure Twilio SMS.
 
