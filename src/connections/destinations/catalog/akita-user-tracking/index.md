@@ -58,7 +58,7 @@ You may find a list of useful information to send as traits in your Group call i
 Accounts described using the Group event are added to Akita as Accounts.
 
 > info ""
-> You must send Group events to Segment.com for the Segment <> Akita integration to work correctly.
+> Groups identified through Segment Group events become Accounts in Akita.
 
 ## Track
 
