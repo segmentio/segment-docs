@@ -11,7 +11,6 @@ This destination is maintained by 1Flow. For any issues with the destination, [c
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for **1Flow** in the Destinations Catalog, and select the **1Flow** destination.
