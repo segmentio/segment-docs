@@ -42,10 +42,10 @@ To set up CleverTap (Actions) Destination:
 
    | CleverTap Dashboard URL                                                                              | Region    |
    | ---------------------------------------------------------------------------------------------------- | --------- |
-   | [https://eu1.dashboard.clevertap.com/login.html#/](https://eu1.dashboard.clevertap.com/login.html#/) | EU        |
-   | [https://in1.dashboard.clevertap.com/login.html#/](https://in1.dashboard.clevertap.com/login.html#/) | IN        |
-   | [https://us1.dashboard.clevertap.com/login.html#/](https://us1.dashboard.clevertap.com/login.html#/) | US        |
-   | [https://sg1.dashboard.clevertap.com/login.html#/](https://sg1.dashboard.clevertap.com/login.html#/) | Singapore |
+   | [https://eu1.dashboard.clevertap.com/login.html#/](https://eu1.dashboard.clevertap.com/login.html#/){:target="_blank"} | EU        |
+   | [https://in1.dashboard.clevertap.com/login.html#/](https://in1.dashboard.clevertap.com/login.html#/){:target="_blank"} | IN        |
+   | [https://us1.dashboard.clevertap.com/login.html#/](https://us1.dashboard.clevertap.com/login.html#/){:target="_blank"} | US        |
+   | [https://sg1.dashboard.clevertap.com/login.html#/](https://sg1.dashboard.clevertap.com/login.html#/){:target="_blank"} | Singapore |
 
 7. Select *Quick Setup* to start with pre-populated subscriptions, or *Customized Setup* to configure each action from scratch.
 8. Click **Configure Actions**.
