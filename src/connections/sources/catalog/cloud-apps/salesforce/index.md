@@ -12,7 +12,7 @@ Take your company's analysis to the next level by **adding Salesforce as a Sourc
 > info ""
 > You can add multiple instances of this source if you have more than one Salesforce account. 
 
-1. From your the `/sources` page in your Workspace, click `Add Source`.
+1. From the `/sources` page in your Workspace, click `Add Source`.
 
 2. Choose Salesforce.
 
