@@ -14,7 +14,9 @@ Segment has native [sources](/docs/connections/sources/) for most use cases (lik
 Authenticate to the Tracking API by sending your project's **Write Key** along with a request.
 Authentication uses HTTP Basic Auth, which involves a `username:password` that is base64 encoded and prepended with the string `Basic`.
 
-In practice that means taking a Segment source **Write Key**,`'abc123'`, as the username, adding a colon, and then the password field is left empty. After base64 encoding `'abc123'` becomes `'YWJjMTIz'`; and this is passed in the authorization header like so: `'Authorization: Basic YWJjMTIz'`.
+In practice that means taking a Segment source **Write Key**,`'abc123'`, as the username, adding a colon, and then the password field is left empty. After base64 encoding `'abc123:'` becomes `'YWJjMTIzOg=='`; and this is passed in the authorization header like so: `'Authorization: Basic YWJjMTIzOg=='`.
+
+**Note:** Encoding the write key without a colon may work due to backward compatibility, but this may not always be the case, so it's important to include the colon before encoding.
 
 ### Content-Type
 
