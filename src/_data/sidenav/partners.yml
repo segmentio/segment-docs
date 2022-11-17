@@ -6,15 +6,17 @@ sections:
     title: Partners program overview
   - path: /partners/conceptual-model
     title: Conceptual model
-  - section_title: Building a subscription
+  - section_title: Build a Destination
     slug: partners/subscriptions
     section:
-    - path: /partners/subscriptions
-      title: Subscription overview
-    - path: /partners/subscriptions/build-functions
-      title: Building a Subscription Function
-    - path: /partners/subscriptions/build-webhook
-      title: Building a Subscription Webhook
+    - path: /partners/destinations
+      title: How to Build
+    - path: /partners/destinations/testing
+      title: Test your Destination
+    - path: /partners/destinations/get-access
+      title: Get Access
+    - path: /partners/destinations/authentication
+      title: Authentication
   - path: /partners/plugins
     title: Building a Plugin
   - path: /partners/streams
