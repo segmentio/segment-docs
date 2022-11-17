@@ -28,102 +28,63 @@ items:
     browserUnbundlingPublic: false
     replay: false
     settings:
-      - name: appId
+      - name: clevertapAccountId
         type: string
         defaultValue: ''
         description: >-
-          The app ID of the environment to which you want to send data. You can
-          find this ID on the
-          [Projects](https://heapanalytics.com/app/manage/projects) page.
+          CleverTap Account Id. This can be found under [Settings
+          Page](https://developer.clevertap.com/docs/authentication#getting-your-account-credentials).
         required: true
-        label: Heap app ID
-      - name: disableTextCapture
-        type: boolean
-        defaultValue: false
+        label: CleverTap Account ID
+      - name: clevertapEndpoint
+        type: select
+        defaultValue: https://sk1.api.clevertap.com
         description: >-
-          Setting to true will redact all target text on your website. For more
-          information visit the heap [docs
-          page](https://developers.heap.io/docs/web#global-data-redaction-via-disabling-text-capture).
-        required: false
-        label: Global data redaction via Disabling Text Capture
-      - name: secureCookie
-        type: boolean
-        defaultValue: false
+          Learn More about [Account
+          regions](https://docs.clevertap.com/docs/build-segment-destination#set-up-segment-destination-action).
+        required: true
+        label: REST Endpoint
+      - name: clevertapPasscode
+        type: string
+        defaultValue: ''
         description: >-
-          This option is turned off by default to accommodate websites not
-          served over HTTPS. If your application uses HTTPS, we recommend
-          enabling secure cookies to prevent Heap cookies from being observed by
-          unauthorized parties. For more information visit the heap [docs
-          page](https://developers.heap.io/docs/web#securecookie).
-        required: false
-        label: Secure Cookie
+          CleverTap Passcode. This can be found under [Settings
+          Page](https://developer.clevertap.com/docs/authentication#getting-your-account-credentials).
+        required: true
+        label: CleverTap Account Passcode
     actions:
-      - id: 9DNev5M9FhK634qd8TtqXN
-        name: Identify User
-        slug: identifyUser
-        description: Sets user identity
-        platform: WEB
+      - id: e3Sy9jMKUfuTSHk6ebh6fb
+        name: User Upload
+        slug: userUpload
+        description: >-
+          The User Upload Action enables you to create or update user profiles
+          in CleverTap.
+        platform: CLOUD
         hidden: false
-        defaultTrigger: type = "identify"
+        defaultTrigger: null
         fields:
-          - id: aFcado7WC7fAAmth74Qrhx
+          - id: riruCuyy2tVDVz8XrawGjN
             sortOrder: 0
-            fieldKey: userId
-            label: Identity
+            fieldKey: ts
+            label: Created At
             type: STRING
-            description: The user's identity
+            description: A timestamp when the person was created
             placeholder: ''
             defaultValue:
-              '@path': $.userId
+              '@path': $.timestamp
             required: false
             multiple: false
             choices: null
             dynamic: false
             allowNull: false
-          - id: w7z6gUcm8QVF2pWUtUzqa8
+          - id: tHVUT8H3vNkrfd7aJWxVzk
             sortOrder: 1
-            fieldKey: traits
-            label: Traits
-            type: OBJECT
-            description: The Segment traits to be forwarded to Heap
-            placeholder: ''
-            defaultValue:
-              '@path': $.traits
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-      - id: hbxtT8G3frRQvjM6AoJ73p
-        name: Track Event
-        slug: trackEvent
-        description: Track events
-        platform: WEB
-        hidden: false
-        defaultTrigger: type = "track"
-        fields:
-          - id: qbPz8kfSwRSSuDNyd85CHg
-            sortOrder: 0
-            fieldKey: name
-            label: Name
-            type: STRING
-            description: The name of the event.
-            placeholder: ''
-            defaultValue:
-              '@path': $.event
-            required: true
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: mSD7ZxZJ44LWttkJAYQYT3
-            sortOrder: 1
-            fieldKey: properties
-            label: Properties
+            fieldKey: profileData
+            label: Person Attributes
             type: OBJECT
             description: >-
-              A JSON object containing additional information about the event
-              that will be indexed by Heap.
+              Optional attributes for the person. When updating a person
+              attributes added or updated, not removed
             placeholder: ''
             defaultValue:
               '@path': $.properties
@@ -132,255 +93,40 @@ items:
             choices: null
             dynamic: false
             allowNull: false
-    presets:
-      - actionId: 9DNev5M9FhK634qd8TtqXN
-        name: Identify User
-        fields:
-          userId:
-            '@path': $.userId
-          traits:
-            '@path': $.traits
-        trigger: type = "identify"
-      - actionId: hbxtT8G3frRQvjM6AoJ73p
-        name: Track Event
-        fields:
-          name:
-            '@path': $.event
-          properties:
-            '@path': $.properties
-        trigger: type = "track"
-  - id: 62e17e6f687e4a3d32d0f875
-    display_name: Qualtrics
-    name: Qualtrics
-    slug: actions-qualtrics
-    previous_names:
-      - Qualtrics
-    website: http://www.segment.com
-    status: PRIVATE_BETA
-    logo:
-      url: https://cdn.filepicker.io/api/file/jrbUXsZDQ708akn3cVyZ
-    mark:
-      url: https://cdn.filepicker.io/api/file/jrbUXsZDQ708akn3cVyZ
-    methods:
-      track: true
-      pageview: true
-      identify: true
-      group: true
-      alias: true
-    platforms:
-      browser: true
-      mobile: false
-      server: true
-    components: []
-    browserUnbundlingSupported: false
-    browserUnbundlingPublic: false
-    replay: false
-    settings:
-      - name: apiToken
-        type: string
-        defaultValue: ''
-        description: >-
-          Qualtrics API token found in your Qualtrics account under "Account
-          settings" -> "Qualtrics IDs."
-        required: true
-        label: API Token
-      - name: datacenter
-        type: string
-        defaultValue: ''
-        description: >-
-          Qualtrics datacenter id that identifies where your qualtrics instance
-          is located. Found under "Account settings" -> "Qualtrics IDs".
-        required: true
-        label: Datacenter ID
-    actions:
-      - id: rMsycYYBB1vzGZv3ATE8ks
-        name: Add / Update Contact in XMD
-        slug: addContactToXmd
-        description: Add or update contact in XMD
-        platform: CLOUD
-        hidden: false
-        defaultTrigger: type = "identify"
-        fields:
-          - id: 2eV87bPf3dCPwQkJ39Yb4c
-            sortOrder: 0
-            fieldKey: directoryId
-            label: Directory ID
+          - id: wVrVgyTGvrjD6VF7PGShw9
+            sortOrder: 2
+            fieldKey: identity
+            label: Identity
             type: STRING
-            description: Directory id. Also known as the Pool ID. POOL_XXX
+            description: The Id used to uniquely identify a person in CleverTap
             placeholder: ''
             defaultValue:
-              '@path': $.traits.directoryId
+              '@path': $.userId
             required: true
             multiple: false
             choices: null
             dynamic: false
             allowNull: false
-          - id: vUa2xrSjkAWohGr65nFuRp
-            sortOrder: 1
-            fieldKey: extRef
-            label: External Data Reference
-            type: STRING
-            description: >-
-              The external data reference which is a unique identifier for the
-              user
-            placeholder: ''
-            defaultValue:
-              '@path': $.userId
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: hBXDkdarNgN45sCchCcLMV
-            sortOrder: 2
-            fieldKey: email
-            label: Email
-            type: STRING
-            description: Email of contact
-            placeholder: ''
-            defaultValue:
-              '@if':
-                exists:
-                  '@path': $.email
-                then:
-                  '@path': $.email
-                else:
-                  '@path': $.traits.email
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: jRxftyNyi7DX8W48PCLB2T
-            sortOrder: 3
-            fieldKey: phone
-            label: Phone number
-            type: STRING
-            description: Phone number of contact
-            placeholder: ''
-            defaultValue:
-              '@path': $.traits.phone
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: aWRnz7xJu9gjLh1xgjnV6k
-            sortOrder: 4
-            fieldKey: firstName
-            label: First Name
-            type: STRING
-            description: First name of contact
-            placeholder: ''
-            defaultValue:
-              '@path': $.traits.firstName
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: x6dkZvgNGGhQJmnLFyL37V
-            sortOrder: 5
-            fieldKey: lastName
-            label: Last Name
-            type: STRING
-            description: Last name of contact
-            placeholder: ''
-            defaultValue:
-              '@path': $.traits.lastName
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: fVtcMdUCzxtsgxpZHyxgPg
-            sortOrder: 6
-            fieldKey: language
-            label: Language
-            type: STRING
-            description: Language code of the contact
-            placeholder: ''
-            defaultValue:
-              '@if':
-                exists:
-                  '@path': $.traits.language
-                then:
-                  '@path': $.traits.language
-                else: EN
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: e7PSK2b95k1LeW7YYVGiZF
-            sortOrder: 7
-            fieldKey: unsubscribed
-            label: Contact is unsubscribed
-            type: BOOLEAN
-            description: Should the contact be unsubscribed from correspondence
-            placeholder: ''
-            defaultValue: false
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: aZS8ahxfEmUsiB6ajdTmeB
-            sortOrder: 8
-            fieldKey: embeddedData
-            label: Contact embedded data
-            type: OBJECT
-            description: Contact embedded data (properties of the contact)
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-      - id: u3JwUn6SECofbhY2y7FThX
-        name: Trigger workflow in xflow
-        slug: triggerXflowWorkflow
-        description: This action triggers a workflow in Qualtrics xflow
+      - id: uXV6Z1775w9WKaEFjpzU4g
+        name: User Delete
+        slug: userDelete
+        description: >-
+          The User Delete Action enables you to remove user profiles in
+          CleverTap.
         platform: CLOUD
         hidden: false
         defaultTrigger: null
         fields:
-          - id: 7QgBD4D7gPowC2TGoKzUUa
+          - id: xaSMDsUdxZ1KtoUZSoRic1
             sortOrder: 0
-            fieldKey: workflowUrl
-            label: Workflow URL
+            fieldKey: identity
+            label: Identity
             type: STRING
-            description: >-
-              Enter the full URL as you see in your Xflow trigger. [See more
-              details on setting up an xflow trigger and getting the
-              URL.](https://static-assets.qualtrics.com/static/integrations-external/twilio_segment_event_webhook_setup_instructions.pdf)
-            placeholder: ''
-            required: true
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: pLvMeHt1B3hBSeySZdypFD
-            sortOrder: 1
-            fieldKey: eventPayload
-            label: Event payload
-            type: OBJECT
-            description: A mapping of key values to send to Qualtrics xflow.
+            description: The ID used to uniquely identify a person in CleverTap
             placeholder: ''
             defaultValue:
-              event:
-                '@path': $.event
-              type:
-                '@path': $.type
-              userId:
-                '@path': $.userId
-              properties:
-                '@path': $.properties
-              traits:
-                '@path': $.traits
-              context:
-                '@path': $.context
-            required: false
+              '@path': $.userId
+            required: true
             multiple: false
             choices: null
             dynamic: false
@@ -786,7 +532,19 @@ items:
               If true, data is batched before sending to the SFMC Data
               Extension.
             placeholder: ''
-            defaultValue: false
+            defaultValue:
+              event:
+                '@path': $.event
+              type:
+                '@path': $.type
+              userId:
+                '@path': $.userId
+              properties:
+                '@path': $.properties
+              traits:
+                '@path': $.traits
+              context:
+                '@path': $.context
             required: false
             multiple: false
             choices: null
