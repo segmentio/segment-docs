@@ -57,6 +57,7 @@ destinations:
     - 2mee
     - ab-smartly
     - activecampaign
+    - actions-moengage
     - adikteev
     - adjust
     - adlearn-open-platform
@@ -376,15 +377,18 @@ destinations:
     - zopim
   endpoint:
     - actions-amplitude
+    - actions-moengage
+    - moengage-actions
     - adobe-analytics
+    - airship
     - amplitude
     - braze
     - braze-cloud-mode-actions
     - braze-web-mode-actions
     - gainsight-px
+    - hubspot
     - ibm-ubx
     - iron-io
-    - hubspot
     - mixpanel
     - natero
     - repeater
