@@ -2,6 +2,9 @@
 title: Sabil Destination
 hide-boilerplate: true
 hide-dossier: true
+id: 6372e18fb2b3d5d741c34bb6
+hidden: true
+private: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
