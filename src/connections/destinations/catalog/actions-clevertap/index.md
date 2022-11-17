@@ -15,7 +15,7 @@ private: true
 {% include content/ajs-upgrade.md %}
 
 
-[CleverTap](https://clevertap.com/) is the World’s No.1 retention cloud that empowers digital consumer brands to increase customer retention and lifetime value. CleverTap drives contextual individualization with the help of a unified and deep data layer, AI/ML-powered insights, and automation enabling brands to offer hyper-personalized and delightful experiences to their customers.
+[CleverTap](https://clevertap.com/){:target="_blank"} is a retention cloud that empowers digital consumer brands to increase customer retention and lifetime value. CleverTap drives contextual individualization with the help of a unified and deep data layer, AI/ML-powered insights, and automation enabling brands to offer hyper-personalized and delightful experiences to their customers.
 
 ## Advantages of CleverTap (Actions) Destination
 The following are the advantages of setting up CleverTap (Actions) Destination:
