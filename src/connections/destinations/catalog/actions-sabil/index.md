@@ -17,11 +17,11 @@ Sabil (Actions) provides the following benefits:
 ## Getting started
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Find the Destinations Actions item in the left navigation, and click it.
+2. Search for *Sabil (Actions)* and select it.
 3. Click **Configure Sabil**.
 4. Select an existing Source to connect to Sabil (Actions).
 5. Go to your [Sabil dashboard](https://dashboard.sabil.io/api_keys){:target="_blank"} and copy the `Client ID` of your **production** key.
-6. Paste the client id in the field labeled `Client ID`.
+6. Paste the client id in the **Client ID** field in the Segment UI.
 
 {% include components/actions-fields.html %}
 
