@@ -53,10 +53,10 @@ For example, you can display a campaign only to the users of the group ID 42:
 
 ### Track Event
 
-> warning ""
-> Custom events count as page views in your monthly quota. If you track a lot of events on Segment, you may want to edit this mapping to forward only the relevant events to Wisepops.
+> warning "Custom events count as page views in your monthly quota"
+> If you track a lot of events with Segment, you may want to edit this mapping to forward only the relevant events to Wisepops.
 
-By default, when you track an event, Segment sends a [custom event](https://support.wisepops.com/article/zbpq1z0exk-set-up-custom-events-to-trigger-popups) to Wisepops.
+By default, when you track an event, Segment sends a [custom event](https://support.wisepops.com/article/zbpq1z0exk-set-up-custom-events-to-trigger-popups){:target='_blank'} to Wisepops.
 You can trigger a campaign on custom events by typing the event name as the campaign trigger on Wisepops.
 For example, you can display a popup when a product is added to the cart:
 
@@ -64,14 +64,14 @@ For example, you can display a popup when a product is added to the cart:
 
 ### Track Goal
 
-By default, when you track the event **Order Completed**, Segment sends a [goal completion](https://support.wisepops.com/article/mx3z8na6yb-set-up-goal-tracking) to Wisepops.
+By default, when you track the event **Order Completed**, Segment sends a [goal completion](https://support.wisepops.com/article/mx3z8na6yb-set-up-goal-tracking){:target='_blank'} to Wisepops.
 The goal and its revenue are attached to one of your campaigns based on your Wisepops' goal attribution model.
 You can easily track more goals by editing the mapping.
 The goals will be named after the Segment event name.
 
 ### Track Page
 
-By default, when you track a page, Segment sends a [page view](https://support.wisepops.com/article/uymb5lywhi-wisepops-on-single-page-applications) to Wisepops.
+By default, when you track a page, Segment sends a [page view](https://support.wisepops.com/article/uymb5lywhi-wisepops-on-single-page-applications){:target='_blank'} to Wisepops.
 This mapping is required for Wisepops to display campaigns at page change.
 
 
