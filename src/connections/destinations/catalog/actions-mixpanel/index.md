@@ -23,6 +23,8 @@ Mixpanel (Actions) provides the following benefits over the classic Mixpanel des
 - **More control** - Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to the destination.
 - **Additional default property mappings** - More default mappings from the Segment context like app name, app namespace, device type, and more.
 - **Improved Groups support** - Implementation of [Segment Groups](/docs/connections/spec/group/) with [Mixpanel Group Analytics](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics){:target='_blank'} is easier. If you're already using Segment Groups, no code changes are required.
+- **E-commerce mappings** - Mixpanel (Actions) accepts products nested within arrays in the `Order Completed` event as described in the Segment [ecommerce spec](/docs/connections/spec/ecommerce/v2/#order-completed).
+- **Batching Requests** - If you have a lot of events, Mixpanel (Actions) provides more efficient way to receive and process those large sets of data.
 
 ## Getting started
 
@@ -36,11 +38,11 @@ Mixpanel (Actions) provides the following benefits over the classic Mixpanel des
 
 The Mixpanel (Actions) destination does not offer a device-mode connection mode. If you're using one of Segment's new libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)) with the Actions-framework version of the destination, you do not need the device-mode connection.
 
-### Mappings
-You can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+{% capture track_purchase_details %}
 
-> success ""
-> Make sure you map the `traits.email` property to Mixpanel's `$email`, otherwise email will be undefined.   
+When set `Generate Purchase Event Per Product` to `true`, this setting effectively "flattens" the array of objects in the `Order Completed`'s `products` property by tracking a `Product Purchased` event for each item in the array. This enables more sophisticated analysis on a per-product basis in Mixpanel. These `Product Purchased` events will contain all of the key-value pairs from their respective object in the `products` array as event properties, along with the `order_id` and `checkout_id` from the `Order Completed` event.
+
+{% endcapture %}
 
 
 
@@ -71,7 +73,7 @@ By default, the Mixpanel (Actions) destination uses `$group_id` as the group key
 If you already have a group set up in Mixpanel with a different group key and wish to use that one, you can specify it in the `Group Key` field of the destination configuration.
 
 ### Backwards-compatibility with Mixpanel Classic destination
-In the classic destination, the "group id" specified in the Segment SDK call was ignored and you were required to set a trait where the key of the trait is the group key and the value of that trait is the group id. While that is no longer necessary, this behavior is supported in the Mixpanel (Actions) destination to ensure backwards-compatibility. *If* you specify a trait that matches specified group key, we will use the value of that trait as the group id.
+In the classic destination, the "group id" specified in the Segment SDK call was ignored and you were required to set a trait where the key of the trait is the group key and the value of that trait is the group id. While that is no longer necessary, this behavior is supported in the Mixpanel (Actions) destination to ensure backwards-compatibility. *If* you specify a trait that matches specified group key, Mixpanel uses the value of that trait as the group id.
 
 #### Scenario 1: No group key trait specified
 ```js
@@ -98,10 +100,18 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 ```
 The group id that Mixpanel will use is `12345`.
 
+> success ""
+> The below special traits will be mapped to Mixpanel reserved properties automatically to fit Mixpanel's use cases. `traits.name` -> `$name`.
+
 {% endcapture %}
-{% include components/actions-fields.html content1=group_identify_user_details section1="groupIdentifyUser" %}
 
+{% capture identify_user_details %}
+> success ""
+> The below special traits will be mapped to Mixpanel reserved properties automatically to fit Mixpanel's use cases. `traits.created` -> `$created`, `traits.email` -> `$email`, `traits.firstName` -> `$first_name`, `traits.lastName` -> `$last_name`, `traits.name` -> `$name`, `traits.username` -> `$username` and `traits.phone` -> `$phone`.
 
+{% endcapture %}
+
+{% include components/actions-fields.html content1=track_purchase_details section1="trackPurchase" content2=group_identify_user_details section2="groupIdentifyUser" content3=identify_user_details section3="identifyUser" %}
 ## Migration from Mixpanel Classic
 
 {% include content/ajs-upgrade.md %}
