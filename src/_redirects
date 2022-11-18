@@ -1,3 +1,6 @@
+# Redirects file
+# Add the from URL first, and the to URL second. Both must be on the same line.
+
 /docs/config-api                                                                                             /docs/api/config-api/
 /docs/connections/destinations/catalog/actions-braze-cloud/                                                  /docs/connections/destinations/catalog/braze-cloud-mode-actions/
 /docs/connections/destinations/catalog/actions-braze-web/                                                    /docs/connections/destinations/catalog/braze-web-device-mode-actions/
@@ -11,10 +14,12 @@
 /docs/connections/destinations/catalog/adwords/                                                              /docs/connections/destinations/catalog/google-ads-classic/
 /docs/connections/destinations/catalog/algolia/                                                              /docs/connections/destinations/catalog/algolia-insights/
 /docs/connections/destinations/catalog/amazon-s3/                                                            /docs/connections/storage/catalog/amazon-s3/
+/docs/connections/destinations/catalog/amplitude-actions                                                     /docs/connections/destinations/catalog/actions-amplitude
 /docs/connections/destinations/catalog/apteligent/                                                           /docs/connections/destinations/catalog/crittercism/
 /docs/connections/destinations/catalog/aptrinsic/                                                            /docs/connections/destinations/catalog/gainsight-px/
 /docs/connections/destinations/catalog/aws-s3/                                                               /docs/connections/storage/catalog/aws-s3/
 /docs/connections/destinations/catalog/azure-data-lakes/                                                     /docs/connections/storage/catalog/data-lakes/
+/docs/connections/destinations/catalog/canny-classic                                                         /docs/connections/destinations/catalog/canny
 /docs/connections/destinations/catalog/canny-functions/                                                      /docs/connections/destinations/catalog/canny/
 /docs/connections/destinations/catalog/cordial-actions                                                       /docs/connections/destinations/catalog/actions-cordial/
 /docs/connections/destinations/catalog/criteo/                                                               /docs/connections/destinations/catalog/criteo-app-web-events/
@@ -23,18 +28,36 @@
 /docs/connections/destinations/catalog/data-lakes/                                                           /docs/connections/storage/data-lakes/
 /docs/connections/destinations/catalog/datarangers/                                                          /docs/connections/destinations/catalog/byteplus/
 /docs/connections/destinations/catalog/extole/                                                               /docs/connections/destinations/catalog/extole-platform/
+/docs/connections/destinations/catalog/facebook-conversions-api-actions                                      /docs/connections/destinations/catalog/actions-facebook-conversions-api
 /docs/connections/destinations/catalog/facebook-conversions-api/                                             /docs/connections/destinations/catalog/facebook-pixel-server-side/
 /docs/connections/destinations/catalog/flagship-io/                                                          /docs/connections/destinations/catalog/flagshipio/
+/docs/connections/destinations/catalog/freshsales-suite---crm                                                /docs/connections/destinations/catalog/freshsales-suite-crm
+/docs/connections/destinations/catalog/friendbuy-cloud-destination                                           /docs/connections/destinations/catalog/actions-friendbuy-cloud
+/docs/connections/destinations/catalog/friendbuy-legacy                                                      /docs/connections/destinations/catalog/friendbuy
+/docs/connections/destinations/catalog/friendbuy-web-destination                                             /docs/connections/destinations/catalog/actions-friendbuy
+/docs/connections/destinations/catalog/fullstory-actions                                                     /docs/connections/destinations/catalog/actions-fullstory
 /docs/connections/destinations/catalog/google-adwords-new/                                                   /docs/connections/destinations/catalog/google-ads-gtag/
+/docs/connections/destinations/catalog/google-adwords-remarketing-lists-customer-match                       /docs/connections/destinations/catalog/adwords-remarketing-lists
+/docs/connections/destinations/catalog/google-analytics-4                                                    /docs/connections/destinations/catalog/actions-google-analytics-4
 /docs/connections/destinations/catalog/google-cloud-storage/                                                 /docs/connections/storage/catalog/google-cloud-storage/
+/docs/connections/destinations/catalog/google-enhanced-conversions                                           /docs/connections/destinations/catalog/actions-google-enhanced-conversions
+/docs/connections/destinations/catalog/google-universal-analytics                                            /docs/connections/destinations/catalog/google-analytics
 /docs/connections/destinations/catalog/google-universal-analytics                                            /docs/connections/destinations/catalog/google-analytics/
 /docs/connections/destinations/catalog/hindsight/                                                            /docs/connections/destinations/catalog/rockerbox/
+/docs/connections/destinations/catalog/hubspot-cloud-mode-actions                                            /docs/connections/destinations/catalog/actions-hubspot-cloud
+/docs/connections/destinations/catalog/hubspot-web-actions                                                   /docs/connections/destinations/catalog/actions-hubspot-web
 /docs/connections/destinations/catalog/impact-radius/                                                        /docs/connections/destinations/catalog/impact/
 /docs/connections/destinations/catalog/inmoment-formerly-wootric                                             /docs/connections/destinations/catalog/wootric-by-inmoment/
 /docs/connections/destinations/catalog/interana/                                                             /docs/connections/destinations/catalog/scuba-analytics/
+/docs/connections/destinations/catalog/intercom-cloud-mode-actions                                           /docs/connections/destinations/catalog/actions-intercom-cloud
+/docs/connections/destinations/catalog/intercom-web-actions                                                  /docs/connections/destinations/catalog/actions-intercom-web
+/docs/connections/destinations/catalog/launchdarkly-actions                                                  /docs/connections/destinations/catalog/actions-launchdarkly
 /docs/connections/destinations/catalog/launchdarkly-subscription                                             /docs/connections/destinations/catalog/launchdarkly-events/
 /docs/connections/destinations/catalog/lazy-lantern/                                                         /docs/connections/destinations/catalog/lantern/
+/docs/connections/destinations/catalog/linkedin-audiences                                                    /docs/connections/destinations/catalog/actions-linkedin-audiences
+/docs/connections/destinations/catalog/mixpanel-actions                                                      /docs/connections/destinations/catalog/actions-mixpanel
 /docs/connections/destinations/catalog/mixpanel-actions                                                      /docs/connections/destinations/catalog/actions-mixpanel/
+/docs/connections/destinations/catalog/moengage-actions                                                      /docs/connections/destinations/catalog/actions-moengage
 /docs/connections/destinations/catalog/northstar-by-growthhackers/                                           /docs/connections/destinations/catalog/experiments-by-growthhackers/
 /docs/connections/destinations/catalog/omniture/                                                             /docs/connections/destinations/catalog/adobe-analytics/
 /docs/connections/destinations/catalog/onesignal/                                                            /docs/connections/destinations/catalog/onesignal-new/
@@ -45,9 +68,15 @@
 /docs/connections/destinations/catalog/piwik/                                                                /docs/connections/destinations/catalog/matomo/
 /docs/connections/destinations/catalog/proof/                                                                /docs/connections/destinations/catalog/proof-experiences/
 /docs/connections/destinations/catalog/regal-voice                                                           /docs/connections/destinations/catalog/regal/
+/docs/connections/destinations/catalog/rokt                                                                  /docs/connections/destinations/catalog/rokt-integration
 /docs/connections/destinations/catalog/sailthru/                                                             /docs/connections/destinations/catalog/sailthru-v2/
+/docs/connections/destinations/catalog/salesforce-actions                                                    /docs/connections/destinations/catalog/actions-salesforce
+/docs/connections/destinations/catalog/sendgrid-marketing-campaigns                                          /docs/connections/destinations/catalog/actions-sendgrid
 /docs/connections/destinations/catalog/sendgrid-marketing-campaigns/                                         /docs/connections/destinations/catalog/actions-sendgrid/
+/docs/connections/destinations/catalog/slack-actions                                                         /docs/connections/destinations/catalog/actions-slack
 /docs/connections/destinations/catalog/smbstream/                                                            /docs/connections/destinations/catalog/buzzboard/
+/docs/connections/destinations/catalog/snapchat-conversions-api                                              /docs/connections/destinations/catalog/actions-snap-conversions
+/docs/connections/destinations/catalog/sprig-actions                                                         /docs/connections/destinations/catalog/sprig-web
 /docs/connections/destinations/catalog/userengage/                                                           /docs/connections/destinations/catalog/user-com/
 /docs/connections/destinations/catalog/userleap/                                                             /docs/connections/destinations/catalog/sprig-cloud/
 /docs/connections/destinations/catalog/vendor-amplitude/                                                     /docs/connections/destinations/catalog/actions-amplitude/
