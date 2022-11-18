@@ -10,20 +10,20 @@ sections:
     slug: partners/subscriptions
     section:
     - path: /partners/destinations
-      title: How to Build
+      title: Build a Destination
     - path: /partners/destinations/testing
-      title: Test your Destination
+      title: Test a Destination
     - path: /partners/destinations/get-access
       title: Get Access
     - path: /partners/destinations/authentication
       title: Authentication
-  - path: /partners/plugins
-    title: Building a Plugin
-  - path: /partners/streams
-    title: Building a Stream
-  - path: /partners/checklist
-    title: Public beta checklist
-  - path: /partners/enable-with-segment
-    title: Enable with OAuth
+  # - path: /partners/plugins
+  #   title: Building a Plugin
+  # - path: /partners/streams
+  #   title: Building a Stream
+  # - path: /partners/checklist
+  #   title: Public beta checklist
+  # - path: /partners/enable-with-segment
+  #   title: Enable with OAuth
   - path: /partners/faqs
     title: Partners FAQs
