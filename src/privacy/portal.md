@@ -3,7 +3,7 @@ title: Privacy Portal
 ---
 {% include content/plan-grid.md name="privacy" %}
 
-When preparing for new privacy regulations (such as the GDPR or the CCPA), the
+When preparing for new privacy regulations (like HIPAA, the GDPR, or the CCPA), the
 best practice is to create a comprehensive data inventory which includes details
 about what personal information you collect, where you collect it from, where
 you store the data, and who has access to it. The Privacy Portal helps automate
@@ -23,7 +23,7 @@ Privacy Portal features are available to all Segment workspaces, however only wo
 
 The Inbox helps you keep track of new restricted data types as they are captured, quickly classify them, and build a data Inventory.
 
-We detect these fields by scanning data from your Web, Mobile, Server, and Cloud Event Sources to detect PII based on our [default PII matchers](#default-pii-matchers). New properties sent into Segment appear in the Inbox in realtime.
+Segment detects these fields by scanning data from your Web, Mobile, Server, and Cloud Event Sources to detect PII based on the [default PII matchers](#default-pii-matchers). New properties sent into Segment appear in the Inbox in realtime.
 
 When you view the Inbox for the first time, it displays every property that was sent into Segment from Web, Mobile, Server, and Cloud Event Sources dating back to August 9, 2019. ([Cloud Object Sources](/docs/connections/sources/#cloud-apps) do not appear in the Inbox at this time.)
 

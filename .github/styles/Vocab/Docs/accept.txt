@@ -17,6 +17,7 @@
 (?:U|u)nmaps?\b
 (?:U|u)ploader
 (?:U|u)rls?\b
+Aampe
 adset
 Adwords
 Aircall
@@ -26,6 +27,7 @@ API(:?s)
 Appboy
 Appsflyer
 async
+Automations
 aws
 background(?:ed|ing)
 Bento
@@ -109,6 +111,7 @@ onboarding
 Optimizely
 param(:?s)
 Pardot
+Passcode
 performant
 Pinterest
 Preact
@@ -116,6 +119,7 @@ Qualtrics
 reformat(:?s)
 Responsys
 Rokt
+Sabil
 SDK(:?s)
 Selligent
 Sendgrid

@@ -6,6 +6,7 @@ hide-dossier: false
 id: 62f435d1d311567bd5bf0e8d
 ---
 
+
 LinkedIn Audiences enables advertisers to send Segment Engage Audiences to LinkedIn as Matched Audiences using [LinkedIn's API](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/matched-audiences/matched-audiences){:target="_blank"}.
 
 By using Segment's Engage Audiences with LinkedIn, you can increase traffic and drive conversions with hyper-relevant ads that promote product discovery.

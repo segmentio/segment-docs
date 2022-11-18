@@ -57,3 +57,4 @@ HubSpot has several limits for custom behavioral events, including a limit on th
 
 ### Does the HubSpot Cloud Mode (Actions) destination support EU data residency?
 Yes. HubSpot will automatically redirect API requests directly to an EU data center if your HubSpot instance is on an EU data center. See more in HubSpot's [Routing API Traffic](https://product.hubspot.com/blog/routing-api-traffic){:target="_blank"} article.
+

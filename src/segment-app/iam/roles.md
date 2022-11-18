@@ -43,7 +43,7 @@ The following roles are only available to Segment Business Tier accounts.
 
 
 #### Profiles and Engage Read-only
-* Read-only access to Profiles and if purchased, Engage audiences, traits, journeys, content, and settings.
+* Read-only access to Profiles settings and if purchased, Engage audiences, traits, journeys, and content. Cannot download PII or edit settings in Profiles or Engage.
 * **Scope:** Grants access to either: all current and future Spaces, or a specific list of Spaces, or Spaces with a specific Label (BT only).
 
 #### Profiles Read-only, Engage User
