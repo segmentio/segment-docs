@@ -26,6 +26,10 @@ If your Segment plan includes Protocols, the dashboard shows [Event Violations](
 ![](/docs/segment-app/images/workspace-home-violations.png)
 
 
+## Sources - Events Received
+
+If your Segment plan does not include Protocols, an Events Received chart is shown to reflect the number of events received across sources.
+
 ## Destinations - Event Delivery
 
 The Destinations section of the Home page shows a summary of the Event Delivery for the workspace, including a graph over time. You can click the **destinations** link to see a list of destinations with delivery problems, ordered from highest to lowest error rate. You can click a destination to see more details about the delivery failures, and from the details panel click the destination name to go directly to its configuration page.

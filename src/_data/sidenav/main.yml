@@ -283,7 +283,8 @@ sections:
     title: Profiles and GDPR
   - path: /profiles/faqs
     title: Profiles FAQs
-
+  - path: /profiles/profiles-settings
+    title: Profiles Settings
 
 - section_title: Engage
   section:
