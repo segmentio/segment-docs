@@ -4,7 +4,6 @@ rewrite: true
 maintenance: true
 maintenance-content: "A new version of this destination is available. See [Facebook Conversions API (Actions)](/docs/connections/destinations/catalog/actions-facebook-conversions-api/) for more information."
 beta: true
-redirect_from: '/connections/destinations/catalog/facebook-conversions-api/'
 hide-dossier: true
 ---
 

@@ -1,7 +1,5 @@
 ---
 title: Config API Overview
-redirect_from:
-  - '/config-api'
 ---
 
 {% include content/papi-ga.html %}

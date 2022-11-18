@@ -1,7 +1,6 @@
 ---
 title: Customer.io Destination
 rewrite: true
-redirect_from: "/connections/destinations/catalog/customer.io/"
 hide-personas-partial: true
 maintenance: true
 id: 54521fd525e721e32a72eea8

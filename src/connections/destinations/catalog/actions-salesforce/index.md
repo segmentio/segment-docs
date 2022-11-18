@@ -7,8 +7,6 @@ id: 61957755c4d820be968457de
 versions:
   - name: "Salesforce (Classic)"
     link: '/docs/connections/destinations/catalog/salesforce/'
-redirect_from:
-  - '/connections/destinations/catalog/vendor-salesforce/'
 ---
 
 {% include content/plan-grid.md name="actions" %}

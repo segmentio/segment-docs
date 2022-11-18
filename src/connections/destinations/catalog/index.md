@@ -3,8 +3,6 @@ title: Destination Catalog
 hide_toc: true
 layout: catalog
 menu_icon: "read-more"
-redirect_from:
-  - '/docs/connections/destinations/catalog/drift/'
 ---
 
 > info "Want a simpler list?"

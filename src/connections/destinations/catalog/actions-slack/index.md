@@ -3,8 +3,6 @@ title: Slack (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
 id: 5f7dd8e302173ff732db5cc4
-redirect_from:
-  - '/connections/destinations/catalog/vendor-slack'
 versions:
   - name: Slack (Classic)
     link: /docs/connections/destinations/slack

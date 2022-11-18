@@ -2,9 +2,6 @@
 title: Braze Web Mode (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
-redirect_from:
-  - '/connections/destinations/catalog/actions-braze-web/'
-  - '/connections/destinations/catalog/vendor-braze/'
 id: 60fb01aec459242d3b6f20c1
 versions:
   - name: 'Braze Cloud Mode (Actions)'

@@ -1,6 +1,5 @@
 ---
 title: Google Ads (Classic) Destination
-redirect_from: '/connections/destinations/catalog/adwords/'
 strat: google
 hide-personas-partial: true
 cmode-override: true

@@ -1,7 +1,6 @@
 ---
 title: 'Google Ads (Gtag) Destination'
 beta: true
-redirect_from: '/connections/destinations/catalog/google-adwords-new/'
 strat: google
 name-override: true
 id: 5a03bfe73156760001ab34ec

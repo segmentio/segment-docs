@@ -1,7 +1,5 @@
 ---
 title: Destination Filter Query Language
-redirect_from:
-  - '/docs/config-api/fql'
 ---
 
 {% include content/papi-ga.html %}

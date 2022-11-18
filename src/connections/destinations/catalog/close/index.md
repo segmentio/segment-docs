@@ -4,8 +4,6 @@ id: 61f8296b7d15c30a3bbe2b76
 beta: true
 hide-boilerplate: true
 hide-dossier: true
-redirect_from:
-  - '/connections/destinations/catalog/actions-close'
 ---
 
 <!-- This template is meant for Actions-based destinations that do not have an existing Classic or non-Actions-based version. For Actions Destinations that are a new version of a classic destination, see the doc-template-update.md template. -->

@@ -6,8 +6,6 @@ id: 5f7dd6d21ad74f3842b1fc47
 versions:
   - name: "Amplitude (Classic)"
     link: '/docs/connections/destinations/catalog/amplitude'
-redirect_from:
-  - '/connections/destinations/catalog/vendor-amplitude/'
 ---
 {% include content/plan-grid.md name="actions" %}
 

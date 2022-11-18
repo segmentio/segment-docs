@@ -1,7 +1,6 @@
 ---
 title: LaunchDarkly Events Destination
 rewrite: true
-redirect_from: /connections/destinations/catalog/launchdarkly-subscription
 hide-personas-partial: true
 hidden: true
 maintenance: true

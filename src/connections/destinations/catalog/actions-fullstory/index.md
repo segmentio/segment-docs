@@ -3,8 +3,6 @@ title: FullStory Device Mode (Actions)
 hide-boilerplate: true
 hide-dossier: false
 id: 6141153ee7500f15d3838703
-redirect_from:
-  - '/connections/destinations/catalog/vendor-fullstory'
 versions:
   - name: FullStory (Classic)
     link: /docs/connections/destinations/catalog/fullstory

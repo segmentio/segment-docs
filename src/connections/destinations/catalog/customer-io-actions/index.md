@@ -2,10 +2,6 @@
 title: Customer.io (Actions) Destination
 hide-personas-partial: true
 hide-boilerplate: true
-redirect_from:
-- '/connections/destinations/catalog/actions-customerio/'
-- '/connections/destinations/catalog/actions-customer-io/'
-- '/connections/destinations/catalog/vendor-customerio'
 versions:
   - name: Customer.io (Classic)
     link: /docs/connections/destinations/catalog/customer-io

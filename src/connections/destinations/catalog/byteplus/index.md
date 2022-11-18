@@ -1,8 +1,6 @@
 ---
 rewrite: true
 title: BytePlus
-redirect_from:
-  - '/connections/destinations/catalog/datarangers/'
 beta: true
 id: 60347eb973e8ce37bc360568
 ---

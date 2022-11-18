@@ -8,9 +8,15 @@ incremental: true
 
 permalink: /:categories/:title/
 
-include: ['_redirects']
+include:
+ - _redirects
 
-exclude: ['js', '_site', '*.sketch']
+# exclude:
+#   - js
+#   - '_site'
+#   - '*.sketch'
+
+
 # Build settings
 os_links: true
 markdown: kramdown
@@ -50,7 +56,7 @@ collections:
 plugins_dir: ./_plugins
 plugins:
   - jekyll-sitemap
-  - jekyll-redirect-from
+#  - jekyll-redirect-from
   - premonition
   - jekyll-commonmark
   - jekyll-last-modified-at

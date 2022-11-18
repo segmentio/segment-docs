@@ -1,7 +1,6 @@
 ---
 title: Impact Destination
 hidden: true
-redirect_from: /connections/destinations/catalog/impact-radius/
 ---
 
 ## Getting Started

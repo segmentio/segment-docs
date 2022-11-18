@@ -6,9 +6,6 @@ id: 615c7438d93d9b61b1e9e192
 versions:
   - name: "Mixpanel (Classic)"
     link: '/docs/connections/destinations/catalog/mixpanel'
-redirect_from:
-  - '/connections/destinations/catalog/mixpanel-actions'
-  - '/connections/destinations/catalog/vendor-mixpanel'
 ---
 {% include content/plan-grid.md name="actions" %}
 

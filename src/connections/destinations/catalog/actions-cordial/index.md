@@ -2,8 +2,6 @@
 title: Cordial (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
-redirect_from:
-  - '/connections/destinations/catalog/cordial-actions'
 ---
 
 {% include content/plan-grid.md name="actions" %}

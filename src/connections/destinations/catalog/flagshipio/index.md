@@ -2,8 +2,6 @@
 title: Flagship.io Destination
 rewrite: true
 id: 626153e34fb8f47a32f8deab
-redirect_from:
-  - '/connections/destinations/catalog/flagship-io/'
 ---
 
 [Flagship.io](https://www.Flagship.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} lets engineering teams deploy continuously and monitor the impact of features on technical infrastructure. It also enables product teams to control how features are released and how they impact user experience and business KPIs.
