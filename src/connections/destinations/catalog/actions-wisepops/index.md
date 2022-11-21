@@ -21,7 +21,7 @@ When you use the Wisepops destination, Segment loads Wisepops on your website fo
 3. Click **Configure Wisepops**.
 4. Select an existing Source to connect to Wisepops.
 5. Give the destination a name.
-6. In the **Basic Settings** page, enter your **Website Identifier**. It can be found in your [Wisepops setup code](https://app.wisepops.com/f/settings/websites){:target='_blank'}. It's the 10 character long string in bold in the setup code of the Popups service.
+6. In the **Basic Settings** page, enter your **Website Identifier**. It can be found in your [Wisepops setup code](https://app.wisepops.com/f/settings/websites){:target='_blank'}. It's the 10 characters long string in bold in the setup code of the Popups service.
    ![Wisepops setup code](images/wisepops-setup-code.png)
 7. Toggle **Enable Destination** and click **Save changes**.
 
