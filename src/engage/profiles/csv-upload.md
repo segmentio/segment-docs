@@ -4,7 +4,7 @@ plan: engage-premier
 ---
 Use the CSV Uploader to add or update user profiles and set subscription states.
 
-When you upload a CSV file, Twilio Engage adds new users and updates existing user profiles. Each CSV row corresponds to a user profile and columns to an identifier trait in your [identity resolution configuration](/docs/profiles/identity-resolution/identity-resolution-settings/).
+When you upload a CSV file, Twilio Engage adds new users and updates existing user profiles. Each CSV row corresponds to a user profile and columns to an identifier in your [identity resolution configuration](/docs/profiles/identity-resolution/identity-resolution-settings/).
 
 You can also [set subscription states](#set-user-subscriptions) for each email and phone number that you upload in the CSV. Subscription states help you track which email addresses and numbers you have permission to market to.
 
@@ -51,7 +51,7 @@ Custom traits display in the Custom Traits tab of a user profile in the Profile 
 
 ## View upload history
 
-Use the Upload History page to view CSV file uploads in your workspace over the last 30 days.
+Use the Upload history page to view CSV file uploads in your workspace over the last 30 days.
 
 Navigate to **Engage > Audiences > Profile explorer** or **Profiles > Profile explorer** and select the **CSV upload history** tab.
 
@@ -61,7 +61,7 @@ Select links to view CSV files and any associated [error reports](#error-reports
 
 Use error reports to fix invalid rows and quickly re-upload data.
 
-From the Upload History page:
+From the Upload history page:
 
 1. Select the link in the **Report** column to download an error report CSV. All rows not present in the error report were processed successfully.
 2. Correct data in the invalid rows.
