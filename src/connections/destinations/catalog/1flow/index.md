@@ -1,8 +1,8 @@
 ---
-title: 1Flow Analytics Destination
+title: 1Flow Destination
 id: 62bf80378e3d0241ab190594
-hidden: true
-published: false
+redirect_from:
+  - '/connections/destinations/catalog/1flow-analytics'
 ---
 
 [1Flow](https://1flow.app/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a leading in-app user survey and messaging platform for Mobile app and SaaS businesses.
@@ -12,7 +12,6 @@ Using 1Flow, you can reach users _in-the-moment_ while they are interacting with
 This destination is maintained by 1Flow. For any issues with the destination, [contact the 1Flow Support team](mailto:support@1flow.app).
 
 ## Getting Started
-
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for **1Flow** in the Destinations Catalog, and select the **1Flow** destination.
