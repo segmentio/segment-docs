@@ -11,9 +11,9 @@ This source is maintained by Insider. For any issues with the source,[contact In
 
 ## Getting Started
 
-1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
+1. From the [Source catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
 2. Search for **Insider** in the Sources Catalog, select click Insider, and click **Add Source**.
-3. On the next screen, give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name autopopulates the schema name. For example, the source name `Insider` creates the schema `insider`.
+3. On the next screen, give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name auto-populates the schema name. For example, the source name `Insider` creates the schema `insider`.
 4. Click **Add Source** to save your settings.
 5. After configuring settings, contact your Insider Customer Success Manager to set up the Segment Source Integration using your writekey.
 
@@ -21,7 +21,7 @@ This source is maintained by Insider. For any issues with the source,[contact In
 
 **Stream**
 
-Isnider uses a server-side track method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
+Insider uses a server-side track method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
 
 The default behavior is for Insider to pass the `uuid` (unique user ID) associated with the user as the `userId`. This is the same `userId` that Insider originally receives from the downstream destination with Segment. You can easily change the identity attribute to `email`, `phone number`, `uuid`, or any _custom attribute_. If the selected identifier is not present or you want to pass additional identifier under `anonymousID`, Insider is capable of sending a secondary selected identifier as `anonymousID`.
 
@@ -29,160 +29,56 @@ The default behavior is for Insider to pass the `uuid` (unique user ID) associat
 
 The table below lists events that Insider sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations.
 
-<table>
-    <tr>
-        <td>Event Name</td>
-        <td>Event Description</td>
-    </tr>
-    <tr>
-        <td>Email Delivered</td>
-        <td>An email was successfully delivered to user.</td>
-    </tr>
-    <tr>
-        <td>Email Open</td>
-        <td>User opened the email campaign.</td>
-    </tr>
-    <tr>
-        <td>Email Clicked</td>
-        <td>User clicked a link in the email campaign.</td>
-    </tr>
-    <tr>
-        <td>Email Bounced</td>
-        <td>User’s receiving mail server did not accept it.</td>
-    </tr>
-    <tr>
-        <td>Email Unsubscribe</td>
-        <td>User no longer wants to receive marketing emails.</td>
-    </tr>
-    <tr>
-        <td>WhatsApp Reply</td>
-        <td>User clicked any button in WhatsApp Message.</td>
-    </tr>
-    <tr>
-        <td>WhatsApp Reply First Button</td>
-        <td>User clicked the first quick reply button.</td>
-    </tr>
-    <tr>
-        <td>WhatsApp Reply Second Button</td>
-        <td>User clicked the second quick reply button.</td>
-    </tr>
-    <tr>
-        <td>WhatsApp Reply Third Button</td>
-        <td>User clicked the third quick reply button.</td>
-    </tr>
-    <tr>
-        <td>WhatsApp Reply Auto Reply</td>
-        <td>User replied to WhatsApp message in a template that includes quick reply.</td>
-    </tr>
-    <tr>
-        <td>WhatsApp Reply Other Reply</td>
-        <td>User replied to WhatsApp message in any template.</td>
-    </tr>
-    <tr>
-        <td>WhatsApp Opt Out</td>
-        <td>User no longer wants to receive marketing WhatsApp marketing messages.</td>
-    </tr>
-    <tr>
-        <td>SMS Click</td>
-        <td>User clicked a link in the sms message.</td>
-    </tr>
-    <tr>
-        <td>SMS Delivered</td>
-        <td>An sms was successfully delivered to user.</td>
-    </tr>
-    <tr>
-        <td>SMS Unsubcribe</td>
-        <td>User no longer wants to receive marketing SMS marketing messages.</td>
-        <tr>
-        <td>Journey Enter</td>
-        <td>User entered a Journey.</td>
-    </tr>
-    <tr>
-        <td>Journey Exited</td>
-        <td>User exited from a Journey.</td>
-    </tr>
-    </tr>
-    <tr>
-        <td>InApp Seen</td>
-        <td>User has seen the InApp campaign.</td>
-    </tr>
-    <tr>
-        <td>Push Delivered</td>
-        <td>App Push message delivered to user.</td>
-    </tr>
-    <tr>
-        <td>Push Session</td>
-        <td>User clicked an App Push.</td>
-    </tr>
-    <tr>
-        <td>Session Start From Push</td>
-        <td>App is opened by clicking an App Push</td>
-    </tr>
-    <tr>
-        <td>Session Start</td>
-        <td>Everytime App is opened</td>
-    </tr>
-    <tr>
-        <td>Lead Collected</td>
-        <td>A new lead has been collected.</td>
-    </tr>
-</table>
 
-:::info
-Insider can send any _custom event_ defined by user to be utilized in Segment.
-:::
+| Event Name                   | Event Description                                                         |
+| ---------------------------- | ------------------------------------------------------------------------- |
+| Email Delivered              | An email was successfully delivered to user.                              |
+| Email Open                   | User opened the email campaign.                                           |
+| Email Clicked                | User clicked a link in the email campaign.                                |
+| Email Bounced                | User’s receiving mail server did not accept it.                           |
+| Email Unsubscribe            | User no longer wants to receive marketing emails.                         |
+| WhatsApp Reply               | User clicked any button in WhatsApp Message.                              |
+| WhatsApp Reply First Button  | User clicked the first quick reply button.                                |
+| WhatsApp Reply Second Button | User clicked the second quick reply button.                               |
+| WhatsApp Reply Third Button  | User clicked the third quick reply button.                                |
+| WhatsApp Reply Auto Reply    | User replied to WhatsApp message in a template that includes quick reply. |
+| WhatsApp Reply Other Reply   | User replied to WhatsApp message in any template.                         |
+| WhatsApp Opt Out             | User no longer wants to receive marketing WhatsApp marketing messages.    |
+| SMS Click                    | User clicked a link in the SMS message.                                   |
+| SMS Delivered                | An SMS was successfully delivered to user.                                |
+| SMS Unsubscribe              | User no longer wants to receive marketing SMS marketing messages.         |
+| Journey Enter                | User entered a Journey.                                                   |
+| Journey Exited               | User exited from a Journey.                                               |
+| InApp Seen                   | User has seen the InApp campaign.                                         |
+| Push Delivered               | App Push message delivered to user.                                       |
+| Push Session                 | User clicked an App Push.                                                 |
+| Session Start From Push      | App is opened by clicking an App Push                                     |
+| Session Start                | Every time App is opened                                                  |
+| Lead Collected               | A new lead has been collected.                                            |
+
+
+> info ""
+> Insider sends any custom events you define to Segment for use in downstream tools.
 
 ## Event Properties
 
 The table below list the properties included in the events listed above.
 
-<table>
-    <tr>
-        <td>Parameter Name</td>
-        <td>Description</td>
-    </tr>
-    <tr>
-        <td>campaign_id</td>
-        <td>ID of the campaign</td>
-    </tr>
-    <tr>
-        <td>campaign_name</td>
-        <td>Name of the campaign</td>
-    </tr>
-    <tr>
-        <td>ip_address</td>
-        <td>IP address of the user</td>
-    </tr>
-    <tr>
-        <td>user_agent</td>
-        <td>The user agent responsible for the event. This is usually a web browser.</td>
-    </tr>
-    <tr>
-        <td>variation_id</td>
-        <td>Variation ID of a campaign </td>
-    </tr>
-    <tr>
-        <td>journey_id</td>
-        <td>ID of the journey users entered. Used in the Events segment, and Exit Criteria.</td>
-    </tr>
-    <tr>
-        <td>variant_id</td>
-        <td>Variant ID of a campaign.</td>
-    </tr>
-    <tr>
-        <td>name</td>
-        <td>Name of the journey users entered.</td>
-    </tr>
-    <tr>
-        <td>reason</td>
-        <td>The reason of the Journey Enter event.</td>
-    </tr>
-    
-</table>
+| Parameter Name  | Description                                                                     |
+| --------------- | ------------------------------------------------------------------------------- |
+| `campaign_id`   | ID of the campaign                                                              |
+| `campaign_name` | Name of the campaign                                                            |
+| `ip_address`    | IP address of the user                                                          |
+| `user_agent`    | The user agent responsible for the event. This is usually a web browser.        |
+| `variation_id`  | Variation ID of a campaign                                                      |
+| `journey_id`    | ID of the journey users entered. Used in the Events segment, and Exit Criteria. |
+| `variant_id`    | Variant ID of a campaign.                                                       |
+| `name`          | Name of the journey users entered.                                              |
+| `reason`        | The reason of the Journey Enter event.                                          |
 
-:::info
-Insider can send any _custom event parameter_ defined by user to be utilized in Segment.
-:::
+> info ""
+> Insider sends any custom event parameters you define to Segment for use in downstream tools.
+
 
 ## Adding Destinations
 
