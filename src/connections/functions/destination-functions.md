@@ -320,7 +320,7 @@ Standard [function error types](/docs/connections/functions/destination-function
 ]
 ```
 
-After receiving the response from the `onBatch` handler, only **event_3** and **event_4** will be retried.
+After receiving the response from the `onBatch` handler, Segment only retries **event_4** and **event_5**.
 
 | Error Type             | Result  |
 | ---------------------- | ------- |
