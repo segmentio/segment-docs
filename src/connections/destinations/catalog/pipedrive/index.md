@@ -38,17 +38,4 @@ Once the installation is successful, you'll be redirected to Segment to authenti
 
 {% include components/actions-fields.html %}
 
-## Available Actions
-Build your own Mappings! Combine supported triggers with the following Pipedrive -supported actions:
-- **Create or update a person**
-- **Create or update an activity**
-- **Create or update a lead**
-- **Create or update a note**
-- **Create or update a deal**
-- **Create or update an organization**.
 
-### Identify
-Segment sends Identify calls to Pipedrive as an identify event. When you identify a new user, Pipedrive creates a new User or Company. If the User or Company already exists, Pipedrive updates the properties.
-
-### Track
-Segment sends Track calls to Pipedrive as a track event. They can be used in Pipedrive as event sources. You can create an Activity, or update Custom Fields or store it in the notes for the Deals or create/update the Deal.
