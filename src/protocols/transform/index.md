@@ -116,7 +116,7 @@ Here's a list of Segment Transformations with some use case examples.
 
 <!-- hiding this transformation until it's available
 - **Change property value casing:** Transform property value casing to lowercase, uppercase, or title case. For example, Transform the property value `united states` to `USA` to remain consistent with your data tracking.
--->
+--> 
 
 > note ""
 > Segment displays an error if the following property conflicts occur:
