@@ -1,5 +1,5 @@
 ---
-title: Akita User Tracking Destination
+title: Akita Customer Success Destination
 id: 5fc76defdde39f67d4fa85de
 ---
 
@@ -13,10 +13,10 @@ This destination is maintained by Akita. For any issues with the destination, co
 ## Getting Started
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-2. Search for "Akita" in the Destinations Catalog, and select the "Akita User Tracking" destination.
-3. Choose which Source should send data to the "Akita User Tracking" destination.
+2. Search for "Akita" in the Destinations Catalog, and select the "Akita Customer Success" destination.
+3. Choose which Source should send data to the "Akita Customer Success" destination.
 4. Go to the ["Connect Segment" Page](https://beta.akitaapp.com/segment){:target="_blank"}, find and copy the "Segment.com API Key".
-5. Enter the "API Key" in the "Akita User Tracking" destination settings in Segment.
+5. Enter the "API Key" in the "Akita Customer Success" destination settings in Segment.
 
 ## Identify
 
@@ -82,4 +82,3 @@ Segment sends Page calls to Akita as a `page` event.
 
 > success ""
 > You must send either `event` or `page` events (or both) for Akita to recognize and store your users Sessions.
-
