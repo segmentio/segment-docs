@@ -1,9 +1,9 @@
 ---
-title: Akita User Tracking Destination
+title: Akita Customer Success Destination
 id: 5fc76defdde39f67d4fa85de
 ---
 
-[Akita](https://www.akitaapp.com.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} provides Customer Success Management tools for Software-as-a-Service applications--helping you nurture, retain and grow your customer base.
+[Akita](https://www.akitaapp.com.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="\_blank"} provides Customer Success Management tools for Software-as-a-Service applications--helping you nurture, retain and grow your customer base.
 
 This destination is maintained by Akita. For any issues with the destination, contact [Akita support](mailto:support@akitaapp.com).
 
@@ -13,10 +13,10 @@ This destination is maintained by Akita. For any issues with the destination, co
 ## Getting Started
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-2. Search for "Akita" in the Destinations Catalog, and select the "Akita User Tracking" destination.
-3. Choose which Source should send data to the "Akita User Tracking" destination.
-4. Go to the ["Connect Segment" Page](https://beta.akitaapp.com/segment){:target="_blank"}, find and copy the "Segment.com API Key".
-5. Enter the "API Key" in the "Akita User Tracking" destination settings in Segment.
+2. Search for "Akita" in the Destinations Catalog, and select the "Akita Customer Success" destination.
+3. Choose which Source should send data to the "Akita Customer Success" destination.
+4. Go to the ["Connect Segment" Page](https://beta.akitaapp.com/segment){:target="\_blank"}, find and copy the "Segment.com API Key".
+5. Enter the "API Key" in the "Akita Customer Success" destination settings in Segment.
 
 ## Identify
 
@@ -31,7 +31,7 @@ analytics.identify("contact_123", {
 
 Segment sends Identify calls to Akita as a `contact` event.
 
-You may find a list of useful information to send as traits in your Identify call in the [Segment > Configure](https://beta.akitaapp.com/segment){:target="_blank"} tab in Akita.
+You may find a list of useful information to send as traits in your Identify call in the [Segment > Configure](https://beta.akitaapp.com/segment){:target="\_blank"} tab in Akita.
 
 Akita adds contacts described using Identify events as Contacts associated with the correct account.
 
@@ -53,7 +53,7 @@ analytics.group("account_123", {
 
 Segment sends Group calls to Akita as an `account` event.
 
-You may find a list of useful information to send as traits in your Group call in the [Segment > Configure](https://beta.akitaapp.com/segment){:target="_blank"} tab in Akita.
+You may find a list of useful information to send as traits in your Group call in the [Segment > Configure](https://beta.akitaapp.com/segment){:target="\_blank"} tab in Akita.
 
 Accounts described using the Group event are added to Akita as Accounts.
 
@@ -82,4 +82,3 @@ Segment sends Page calls to Akita as a `page` event.
 
 > success ""
 > You must send either `event` or `page` events (or both) for Akita to recognize and store your users Sessions.
-
