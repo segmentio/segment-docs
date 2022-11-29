@@ -121,7 +121,7 @@ const addPrivateDestination = async () => {
   } else {
     privateIds.push(DEST_ID.id)
   }
-
+  privateIds.sort();
   for (const element in privateIds) {
     let currentId = privateIds[element]
     getDestinationData(currentId)
