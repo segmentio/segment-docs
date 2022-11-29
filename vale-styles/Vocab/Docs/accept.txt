@@ -74,6 +74,7 @@ Omnichannel
 onboarding
 Optimizely
 performant
+Pipedrive
 Preact
 Shopify
 Skalin
