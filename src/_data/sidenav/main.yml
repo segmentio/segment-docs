@@ -243,7 +243,7 @@ sections:
     title: Regional Segment
 - section_title: Reverse ETL
   section:
-  - path: /reverse-etl/reverse-etl
+  - path: /reverse-etl
     title: Reverse ETL Overview
   - path: /reverse-etl/bigquery-setup
     title: Bigquery Reverse ETL Setup
