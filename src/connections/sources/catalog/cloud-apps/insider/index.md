@@ -184,6 +184,83 @@ The table below list the properties included in the events listed above.
 Insider can send any _custom event parameter_ defined by user to be utilized in Segment.
 :::
 
+## Traits
+
+Insider is capable of sending traits associated with a user in a `track` call to Segment. The `traits` will be passed along in the [context object](docs/connections/spec/common/#context).
+
+```json
+{
+  "anonymousId": "c1da3de8-b4b7-4cf2-b496-6a271890ff40",
+  "context": {
+    "library": {
+      "name": "Insider",
+      "version": "1.0.0"
+    },
+    "traits": {
+      "email": "f***.p***@h***.c***",
+      "phone": "6***"
+    }
+  },
+  "event": "Email Open",
+  "integrations": {},
+  "messageId": "api-2HgvQRYmsMWNlgqEuOKQmMWt5Wb",
+  "originalTimestamp": "2022-11-17T21:12:00.335Z",
+  "properties": {
+    "campaign_id": "10305",
+    "campaign_name": "20221117_midmonthsalethe1_cdsonp... Copy",
+    "email": "f***.p***@h***.c***",
+    "ip_address": "1***.2***.7***.1***",
+    "user_agent": "Mozilla/5.0",
+    "variation_id": "10305"
+  },
+  "receivedAt": "2022-11-17T21:12:03.554Z",
+  "timestamp": "2022-11-17T21:12:00.335Z",
+  "type": "track"
+}
+```
+
+The table below list the traits that can be included in the events listed above.
+
+<table>
+    <tr>
+        <td>Attribute Name</td>
+        <td>Description</td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td>User's email address</td>
+    </tr>
+    <tr>
+        <td>Phone</td>
+        <td>User's phone number</td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>User's name</td>
+    </tr>
+    <tr>
+        <td>Surname</td>
+        <td>User's surname</td>
+    </tr>
+    <tr>
+        <td>Age</td>
+        <td>User's age</td>
+    </tr>
+    <tr>
+        <td>Country</td>
+        <td>User's country information</td>
+    </tr>
+    <tr>
+        <td>City</td>
+        <td>User's city information</td>
+    </tr>
+    
+</table>
+
+:::info
+Insider can send any _default or custom user attributes_ as traits defined by user to be utilized in Segment.
+:::
+
 ## Adding Destinations
 
 Now that your Source is set up, you can connect it with Destinations.
