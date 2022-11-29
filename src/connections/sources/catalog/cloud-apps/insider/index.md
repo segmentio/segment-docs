@@ -79,6 +79,56 @@ The table below list the properties included in the events listed above.
 > info ""
 > Insider sends any custom event parameters you define to Segment for use in downstream tools.
 
+## Traits
+
+Insider is capable of sending traits associated with a user in a `track` call to Segment. The `traits` will be passed along in the [context object](docs/connections/spec/common/#context).
+
+```json
+{
+  "anonymousId": "c1da3de8-b4b7-4cf2-b496-6a271890ff40",
+  "context": {
+    "library": {
+      "name": "Insider",
+      "version": "1.0.0"
+    },
+    "traits": {
+      "email": "f***.p***@h***.c***",
+      "phone": "6***"
+    }
+  },
+  "event": "Email Open",
+  "integrations": {},
+  "messageId": "api-2HgvQRYmsMWNlgqEuOKQmMWt5Wb",
+  "originalTimestamp": "2022-11-17T21:12:00.335Z",
+  "properties": {
+    "campaign_id": "10305",
+    "campaign_name": "20221117_midmonthsalethe1_cdsonp... Copy",
+    "email": "f***.p***@h***.c***",
+    "ip_address": "1***.2***.7***.1***",
+    "user_agent": "Mozilla/5.0",
+    "variation_id": "10305"
+  },
+  "receivedAt": "2022-11-17T21:12:03.554Z",
+  "timestamp": "2022-11-17T21:12:00.335Z",
+  "type": "track"
+}
+```
+
+The table below list the traits that can be included in the events listed above.
+
+| Attribute Name | Description                |
+|----------------|----------------------------|
+| Email          | User's email address       |
+| Phone          | User's phone number        |
+| Name           | User's name                |
+| Surname        | User's surname             |
+| Age            | User's age                 |
+| Country        | User's country information |
+| City           | User's city information    |
+
+:::info
+Insider can send any _default or custom user attributes_ as traits defined by user to be utilized in Segment.
+:::
 
 ## Adding Destinations
 
