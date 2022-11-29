@@ -36,7 +36,7 @@ Follow these 4 steps to set up Reverse ETL and learn what each component is abou
 A Source is where your data originates from. Traditionally in Segment, a [Source](/docs/connections/sources/#what-is-a-source) is a website, server library, mobile SDK, or cloud application which can send data into Segment. In Reverse ETL, your data warehouse acts as the Source.
 
 > info ""
-> Reverse ETL currently only supports BigQuery and Snowflake as sources and is actively working on adding more. If you'd like to request Segment to add a particular source, please note it on the [feedback form](https://airtable.com/shrdu5cW06LsuZvXN){:target="_blank"}.
+> Reverse ETL supports BigQuery and Snowflake as sources and is actively working on adding more. If you'd like to request Segment to add a particular source, please note it on the [feedback form](https://airtable.com/shrdu5cW06LsuZvXN){:target="_blank"}.
 
 To add your warehouse as a source:
 
@@ -74,7 +74,7 @@ To add a model:
     * For a **Day and time** schedule type, you can choose the day(s) you’d like the schedule to run as well as the time. You can only choose to run the extraction at the top of the hour.
 10. Click **Create Model**.
 
-You can add multiple models to your source. Repeat steps 1-10 above to add more.
+To add multiple models to your source, repeat steps 1-10 above.
 
 ### Step 3: Add a Destination
 Once you’ve added a model, you need to add a destination. In Reverse ETL, destinations are the business tools or apps you use that Segment syncs the data from your warehouse to.
@@ -112,7 +112,7 @@ To create a mapping:
 9. Turn the toggle on for the **Mapping State** to enable the destination. Events that match the trigger condition in the mapping will be sent to the destination.
     * If you disable the mapping state to the destination, events that match the trigger condition in the mapping won’t be sent to the destination.
 
-You can add multiple mappings from your warehouse to your destination. To add more mappings, repeat steps 1-9 above.
+To add multiple mappings from your warehouse to your destination, repeat steps 1-9 above.
 
 ## Using Reverse ETL
 After you've followed [all four steps](/docs/reverse-etl/reverse-etl/#getting-started) and set up your source, model, destination, and mappings for Reverse ETL, your data will extract and will sync to your destination(s) right away if you chose an interval schedule. If you set your data to extract at a specific day and time, the extraction will take place then.
