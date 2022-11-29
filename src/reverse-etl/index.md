@@ -4,7 +4,7 @@ beta: true
 ---
 
 > info ""
-> Reverse ETL is currently in beta and Segment is actively working on this feature. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this feature. If you’d like to learn more reach out to your CSM, AE, or SE.
+> Reverse ETL is in beta and Segment is actively working on this feature. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this feature. If you’d like to learn more reach out to your CSM, AE, or SE.
 
 Reverse ETL (Extract, Transform, Load) extracts data from a data warehouse and loads it into a 3rd party destination. Reverse ETL allows you to connect your data warehouse to the tools that Marketing, Sales, Support, Product, Analytics, and other business teams use. For example, with Reverse ETL, you can sync rows from Snowflake to Salesforce. This enables your warehouse to remain the single source of truth in which all data is collected, operated on, and enriched.
 
@@ -14,7 +14,7 @@ As Segment is actively developing this feature, Segment welcomes your feedback o
 
 ## Example use cases
 Use Reverse ETL when you want to:
-* Sync lead scores created in the warehouse to Salesforce to customize interactions with prospects and optimize sales opportunities
+* Sync lead scores created in the warehouse to Salesforce to customize interactions with prospects and optimize sales opportunities.
 * Connect Google Sheets to a view in the warehouse for other business teams to have access to up-to-date reports.
 * Sync enriched data to Mixpanel for a more complete view.
 * Sync audiences and other data built in the warehouse to Braze, Iterable, or Hubspot or Salesforce Marketing Cloud for personlized marketing campaigns.
@@ -143,4 +143,4 @@ To edit your model:
 To edit your mapping:
 1. Navigate to **Reverse ETL > Destinations**.
 2. Select the destination with the mapping you want to edit.
-3. Select the **...*** three dots and click **Edit mapping**. If you want to delete your mapping, select **Delete**.
+3. Select the **...** three dots and click **Edit mapping**. If you want to delete your mapping, select **Delete**.
