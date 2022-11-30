@@ -43,7 +43,7 @@ A great use case is to [display the user first name in your campaign](https://su
 ![User first name](images/wisepops-user-first-name.png)
 
 > success ""
-> The user ID is set as the custom property `userId`. For example, use `{{userId}}` as a hidden field value to know who responds to your Wisepops surveys.
+> The user ID is set as the custom property `userId`. For example, use `\{\{userId}}` as a hidden field value to know who responds to your Wisepops surveys.
 
 ### Set Group Traits as Custom Properties
 
