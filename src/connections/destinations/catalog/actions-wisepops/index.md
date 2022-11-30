@@ -64,7 +64,7 @@ For example, you can display a popup when a product is added to the cart:
 
 ![Event Product Added](images/wisepops-custom-event.png)
 
-> info "Custom events count as page views in your monthly quota"
+> info "Custom events count as page views in your Wisepops' monthly quota"
 > If you track a lot of events with Segment, you may want to edit this mapping to send only the relevant events to Wisepops.
 
 ### Track Goal
