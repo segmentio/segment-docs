@@ -36,7 +36,7 @@ Follow these 4 steps to set up Reverse ETL and learn what each component is abou
 A Source is where your data originates from. Traditionally in Segment, a [Source](/docs/connections/sources/#what-is-a-source) is a website, server library, mobile SDK, or cloud application which can send data into Segment. In Reverse ETL, your data warehouse is the Source.
 
 > info ""
-> Reverse ETL supports BigQuery and Snowflake as sources and is actively working on adding more. If you'd like to request Segment to add a particular source, please note it on the [feedback form](https://airtable.com/shrdu5cW06LsuZvXN){:target="_blank"}.
+> Reverse ETL supports BigQuery and Snowflake as sources and Segment is actively working on adding more. If you'd like to request Segment to add a particular source, please note it on the [feedback form](https://airtable.com/shrdu5cW06LsuZvXN){:target="_blank"}.
 
 To add your warehouse as a source:
 
