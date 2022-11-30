@@ -110,6 +110,8 @@ To create a new Audience:
 
    By default, Segment queries all historical data to set the current value of the computed trait and Audience. You can uncheck **Historical Backfill** to compute values for the Audience or trait without using this data. With this disabled, the trait or Audience only uses the data that arrives after you created it.
 
+Use the Audience Explorer to see users or accounts that enter the Audience. Segment displays the Audience as computing until at least one user or account enters.
+
 
 > warning ""
 > [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/), [Marketo Lists](/docs/connections/destinations/catalog/marketo-static-lists/), and [Adwords Remarking Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists) impose rate limits on how quickly Segment can update an Audience. Segment syncs at the highest frequency allowed by the tool, which is between one and six hours.
