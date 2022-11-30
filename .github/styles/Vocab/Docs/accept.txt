@@ -111,13 +111,16 @@ onboarding
 Optimizely
 param(:?s)
 Pardot
+Passcode
 performant
 Pinterest
+Pipedrive
 Preact
 Qualtrics
 reformat(:?s)
 Responsys
 Rokt
+Sabil
 SDK(:?s)
 Selligent
 Sendgrid
@@ -142,6 +145,7 @@ viewability
 waitlist
 walkthrough
 WebKit
+Wisepops
 Woopra
 Wootric
 Xcode
