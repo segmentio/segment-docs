@@ -25,7 +25,7 @@ When you use the Wisepops destination, Segment loads Wisepops on your website fo
 5. Give the destination a name.
 6. In the **Basic Settings** page, enter your **Website Identifier**. It can be found in your [Wisepops setup code](https://app.wisepops.com/f/settings/websites){:target='_blank'}. It's the bolded string in the setup code of the Popups service that's 10 characters long.
    ![Wisepops setup code](images/wisepops-setup-code.png)
-7. Toggle **Enable Destination** and click **Save changes**.
+7. Toggle **Enable Destination** and click **Save Changes**.
 
 > info "Wisepops Destination is device mode only (web)"
 > This destination is compatible only with [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/). Server-side `identify` and `track` calls don't trigger Wisepops' actions.
@@ -33,7 +33,7 @@ When you use the Wisepops destination, Segment loads Wisepops on your website fo
 
 ## Default Mapping
 
-The Wisepops destination comes with [mapping presets](#available-presets). You can adjust each default mapping by going to the **Mapping** tab of the destination in the Segment web app.
+The Wisepops destination comes with mapping presets. You can adjust each default mapping by going to the **Mapping** tab of the destination in the Segment web app.
 
 ### Set User Traits as Custom Properties
 
