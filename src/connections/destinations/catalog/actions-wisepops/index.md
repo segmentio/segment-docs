@@ -51,7 +51,7 @@ By default, when you identify a group, its traits are set as [custom properties]
 You must use the prefix `group.` when you refer to a group trait in Wisepops.
 For example, you can [target the users of groups subscribed to your "Premium" plan](https://support.wisepops.com/article/yrdyv1tfih-set-up-custom-properties#defining-custom-conditions){:target='_blank'}:
 
-![Group ID](images/wisepops-group-id.png)
+![Group plan](images/wisepops-group-plan.png)
 
 > success ""
 > The group ID is set as the custom property `group.groupId`.
