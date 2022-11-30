@@ -7,7 +7,7 @@ redirect_from: '/protocols/transformations/'
 
 ## What is a Transformation?
 
-With Transformations, you can change data as it flows through Segment to either correct bad data or customize data for a specific destination. Change event and property names to align events with your Tracking Plan, or to conform to a destination-specific requirement. For example, a Transformation could be created to change an event name from `completed_order` to `Order Completed` to conform to [Segment's ecommerce spec](/docs/connections/spec/ecommerce/v2/#order-completed).
+With Transformations, you can change data as it flows through Segment to either correct bad data or customize data for a specific destination. Change event and property names to align events with your Tracking Plan, or to conform to a destination-specific requirement. For example, you can create a Transformation to change an event name from `completed_order` to `Order Completed` to conform to [Segment's ecommerce spec](/docs/connections/spec/ecommerce/v2/#order-completed).
 
 You can also use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to transform events, properties, and property values for many [use cases](#use-cases).
 
@@ -24,7 +24,7 @@ Segment's goal is to make Transformations a powerful tool that complements a wel
 ### Other important notes
 
 - **Transformations cannot be applied retroactively:** They only apply to data moving forward. However, you can manually extract and re-send (or even [Replay](/docs/guides/what-is-replay)) events through a source with an active destination Transformation, which will send the transformed events to your destinations.
-- **Transformations are only available to Protocols customers:** If you're interested in this feature, contact your Account Executive or CSM to learn more about the Protocols package.
+- **Transformations are available to Protocols customers:** If you're interested in this feature, contact your Account Executive or CSM to learn more about the Protocols package.
 - **Source-level transformations are irrevocable:** When applied at the source, a transformation permanently changes the structure of the event. The original events are not easily recoverable or [Replayable](/docs/guides/what-is-replay). Assume that transformed data cannot be recovered.
 - **Device-mode destinations are NOT supported:** Source scoped transformations will **only** apply to cloud-mode destinations, warehouses, and S3 destinations. Destination scoped transformations will **only** apply to cloud-mode destinations.
 
@@ -114,11 +114,11 @@ Here's a list of Segment Transformations with some use case examples.
 
 - **Add a new property name and assign a value:** If you want to create a new property and set a static value, use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to create `new_property: static_value`. This transformation is in beta.
 
-<!-- hiding this transformation until it's available
+{% comment %}
 - **Change property value casing:** Transform property value casing to lowercase, uppercase, or title case. For example, Transform the property value `united states` to `USA` to remain consistent with your data tracking.
---> 
+{% endcomment %}
 
-> note ""
+> info ""
 > Segment displays an error if the following property conflicts occur:
 > - You create a property value transformation when one already exists for the same property value.
 > - Two property paths in `propertyValueTransformations` are the same.
