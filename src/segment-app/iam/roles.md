@@ -53,17 +53,17 @@ The following roles are only available to Segment Business Tier accounts.
 #### Tracking Plan Admin
 * Edit access to all Tracking Plans in Protocols.
 * **Scope:** Grants access to *all* Tracking Plans.
-  
+
 #### Tracking Plan Read-only
 * Read access to all Tracking Plans in Protocols.
 * **Scope:** Grants access to *all* Tracking Plans.
 
-#### Warehouse Admin
-* Edit access to all warehouses and warehouse settings.
+#### Warehouse Destination Admin
+* Edit access to warehouse destinations and warehouse destination settings. *(For example, Redshift, Postgres, BigQuery)*  
 * **Scope:** Grants access to *all* warehouses.
 
-#### Warehouse Read-only
-* Read access to all warehouses and warehouse settings.
+#### Warehouse Destination Read-only
+* Read-only access warehouse destination and warehouse destination settings. *(For example, Redshift, Postgres, BigQuery)*
 * **Scope:** Grants access to *all* warehouses.
 
 
