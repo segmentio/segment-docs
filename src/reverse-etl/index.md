@@ -10,14 +10,14 @@ Reverse ETL (Extract, Transform, Load) extracts data from a data warehouse and l
 
 As Segment is actively developing this feature, Segment welcomes your feedback on your experience with Reverse ETL. Click the button below to submit your feedback.
 
-{% include components/button-fill.html modifier="expand" text="Submit feedback" href=" https://airtable.com/shrdu5cW06LsuZvXN" %}
+{% include components/button-fill.html modifier="expand" text="Submit feedback" href=" https://airtable.com/shriQgvkRpBCDN955" %}
 
 ## Example use cases
 Use Reverse ETL when you want to:
 * Sync lead scores created in the warehouse to Salesforce to customize interactions with prospects and optimize sales opportunities.
+* Sync audiences and other data built in the warehouse to Braze, Iterable, Hubspot, or Salesforce Marketing Cloud for personalized marketing campaigns.
 * Connect Google Sheets to a view in the warehouse for other business teams to have access to up-to-date reports.
 * Sync enriched data to Mixpanel for a more complete view.
-* Sync audiences and other data built in the warehouse to Braze, Iterable, Hubspot, or Salesforce Marketing Cloud for personalized marketing campaigns.
 * Send data in the warehouse back into Segment as events that can be activated in all supported destinations, including Twilio Engage and other platforms.
 * Pass offline or enriched data to conversion APIs like Facebook, Google Ads, TikTok, or Snapchat.
 
@@ -36,7 +36,7 @@ Follow these 4 steps to set up Reverse ETL and learn what each component is abou
 A Source is where your data originates from. Traditionally in Segment, a [Source](/docs/connections/sources/#what-is-a-source) is a website, server library, mobile SDK, or cloud application which can send data into Segment. In Reverse ETL, your data warehouse is the Source.
 
 > info ""
-> Reverse ETL supports BigQuery and Snowflake as sources and Segment is actively working on adding more. If you'd like to request Segment to add a particular source, please note it on the [feedback form](https://airtable.com/shrdu5cW06LsuZvXN){:target="_blank"}.
+> Reverse ETL supports BigQuery and Snowflake as sources and Segment is actively working on adding more. If you'd like to request Segment to add a particular source, please note it on the [feedback form](https://airtable.com/shriQgvkRpBCDN955){:target="_blank"}.
 
 To add your warehouse as a source:
 
@@ -49,7 +49,7 @@ To add your warehouse as a source:
     * If you choose to use Snowflake, run the queries listed in the [Snowflake Reverse ETL setup guide](/docs/reverse-etl/snowflake-setup/) to set up the Segment Snowflake connector. Segment recommends using the `ACCOUNTADMIN` role to execute all the commands.
     * If you choose to use BigQuery, use the permissions outlined in the [BigQuery Reverse ETL setup guide](/docs/reverse-etl/bigquery-setup/), to create a Service Account and generate JSON credentials that will then be copied into the Segment UI when creating a Reverse ETL Source.
 4. Add the account information for your source.  
-    * For Snowflake users: Learn more about the Snowflake Account ID [here](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html){:target="_blank"}
+    * For Snowflake users: Learn more about the Snowflake Account ID [here](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html){:target="_blank"}.
 5. Click **Test Connection** to test to see if the connection works.
 6. Click **Create Source** if the test connection is successful.
 
@@ -60,7 +60,7 @@ Models are SQL queries that define sets of data you want to synchronize to your 
 
 To add your first model:
 1. Navigate to **Reverse ETL > Sources**. Select your source and click **Add Model**.
-2. Click **SQL Editor** as your modeling method. (Segment will add more modeling methods in the future)
+2. Click **SQL Editor** as your modeling method. (Segment will add more modeling methods in the future.)
 3. Enter the SQL query that’ll define your model. Your model is used to map data to your Reverse ETL destinations.
 4. Choose a column to use as the unique identifier for each row in the **Unique Identifier column** field.
     * The Unique Identifier should be a column with unique values per row to ensure checkpointing works as expected. It can potentially be a primary key. This column is used to detect new, updated, and deleted rows.
@@ -84,7 +84,7 @@ Once you’ve added a model, you need to add a destination. In Reverse ETL, dest
 > info ""
 > Depending on the destination, you may need to know certain endpoints and have specific credentials to configure the destination.  
 >
-> If you'd like to request Segment to add a particular destination, please note it on the [feedback form](https://airtable.com/shrdu5cW06LsuZvXN){:target="_blank"}.  
+> If you'd like to request Segment to add a particular destination, please note it on the [feedback form](https://airtable.com/shriQgvkRpBCDN955){:target="_blank"}.  
 
 To add your first destination:
 1. Navigate to **Reverse ETL > Destinations**.
