@@ -68,6 +68,7 @@ To get started with the Analytics for React Native 2.0 library:
     `maxBatchSize` | The default is set to `1000`. <br> The maxiumum batch size of how many events to send to the API at once.
     `trackAppLifecycleEvents` | The default is set to `false`. <br> This enables you to automatically track app lifecycle events, such as application installed, opened, updated, backgrounded. Set to true to `true` to track.
     `trackDeepLinks` | The default is set to `false`. <br> This automatically tracks when the user opens the app via a deep link. Set to Enable automatic tracking for when the user opens the app via a deep link.
+    `proxy` | The default is set to `undefined`. <br> This is a batch url to post to instead of the default batch endpoint.
 
 ## Set up iOS Deep Link Tracking
 > warning ""
