@@ -4,9 +4,9 @@ beta: true
 ---
 
 > info ""
-> Reverse ETL is in beta and Segment is actively working on this feature. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this feature. If you’d like to learn more reach out to your CSM, AE, or SE.
+> Reverse ETL is in beta and Segment is actively working on this feature. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this feature. If you’d like to learn more, reach out to your CSM, AE, or SE.
 
-Reverse ETL (Extract, Transform, Load) extracts data from a data warehouse and loads it into a 3rd party destination. Reverse ETL allows you to connect your data warehouse to the tools that Marketing, Sales, Support, Product, Analytics, and other business teams use. For example, with Reverse ETL, you can sync rows from Snowflake to Salesforce. This enables your warehouse to remain the single source of truth in which all data is collected, operated on, and enriched.
+Reverse ETL (Extract, Transform, Load) extracts data from a data warehouse and loads it into a 3rd party destination. Reverse ETL allows you to connect your data warehouse to the tools that Marketing, Sales, Support, Product, Analytics, and other business teams use. For example, with Reverse ETL, you can sync rows from Snowflake to Salesforce. Reverse ETL supports event and object data. This includes customer profile data, subscriptions, product tables, shopping cart tables, and more.
 
 As Segment is actively developing this feature, Segment welcomes your feedback on your experience with Reverse ETL. Click the button below to submit your feedback.
 
@@ -17,14 +17,14 @@ Use Reverse ETL when you want to:
 * Sync lead scores created in the warehouse to Salesforce to customize interactions with prospects and optimize sales opportunities.
 * Connect Google Sheets to a view in the warehouse for other business teams to have access to up-to-date reports.
 * Sync enriched data to Mixpanel for a more complete view.
-* Sync audiences and other data built in the warehouse to Braze, Iterable, Hubspot, or Salesforce Marketing Cloud for personlized marketing campaigns.
+* Sync audiences and other data built in the warehouse to Braze, Iterable, Hubspot, or Salesforce Marketing Cloud for personalized marketing campaigns.
 * Send data in the warehouse back into Segment as events that can be activated in all supported destinations, including Twilio Engage and other platforms.
 * Pass offline or enriched data to conversion APIs like Facebook, Google Ads, TikTok, or Snapchat.
 
 ## Getting started
 There are four components to Reverse ETL: Sources, Models, Destinations, and Mappings.
 
-![image from Charmaine to go here](images/RETL_Doc_Illustration.png)
+![Reverse ETL overview image](images/RETL_Doc_Illustration.png)
 
 Follow these 4 steps to set up Reverse ETL and learn what each component is about:
 1. [Add a Source](#step-1-add-a-source)
@@ -46,9 +46,10 @@ To add your warehouse as a source:
 1. Navigate to **Reverse ETL** in the Segment app.
 2. Click **Add Source**.
 3. Select the source you want to add. You can choose between **BigQuery** and **Snowflake**.
-    * If you choose to use Snowflake, run the queries listed in the [Snowflake setup guide](/docs/reverse-etl/snowflake-setup/) to set up the Segment Snowflake connector. Segment recommends using the `ACCOUNTADMIN` role to execute all the commands.
-    * If you choose to use BigQuery, use the permissions outlined in the [BigQuery setup guide](/docs/reverse-etl/bigquery-setup/), to create a Service Account and generate JSON credentials that will then be copied into the Segment UI when creating a Reverse ETL Source.
+    * If you choose to use Snowflake, run the queries listed in the [Snowflake Reverse ETL setup guide](/docs/reverse-etl/snowflake-setup/) to set up the Segment Snowflake connector. Segment recommends using the `ACCOUNTADMIN` role to execute all the commands.
+    * If you choose to use BigQuery, use the permissions outlined in the [BigQuery Reverse ETL setup guide](/docs/reverse-etl/bigquery-setup/), to create a Service Account and generate JSON credentials that will then be copied into the Segment UI when creating a Reverse ETL Source.
 4. Add the account information for your source.  
+    * For Snowflake users: Learn more about the Snowflake Account ID [here](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html){:target="_blank"}
 5. Click **Test Connection** to test to see if the connection works.
 6. Click **Create Source** if the test connection is successful.
 
@@ -58,20 +59,21 @@ After you add your data warehouse as a source, you can [add a model](#step-2-add
 Models are SQL queries that define sets of data you want to synchronize to your Reverse ETL destinations. After you add your source, you can add a model.
 
 To add your first model:
-1. Navigate to **Reverse ETL > Sources** and click **Add Model**.
+1. Navigate to **Reverse ETL > Sources**. Select your source and click **Add Model**.
 2. Click **SQL Editor** as your modeling method. (Segment will add more modeling methods in the future)
 3. Enter the SQL query that’ll define your model. Your model is used to map data to your Reverse ETL destinations.
-4. Choose a column to use as the unique identifier for each row in the **Unique Identifier column** field. This column is used to detect new, updated, and deleted rows.
+4. Choose a column to use as the unique identifier for each row in the **Unique Identifier column** field.
+    * The Unique Identifier should be a column with unique values per row to ensure checkpointing works as expected. It can potentially be a primary key. This column is used to detect new, updated, and deleted rows.
 5. Click **Preview** to see a preview of the results of your SQL query. The data from the preview is extracted from the first 10 rows of your warehouse.
 6. Click **Next**.
 7. Enter your **Model Name**.
 8. Select the Schedule type for the times you want the model’s data to be extracted from your warehouse. You can choose from:
     * **Interval**: Extractions perform based on a selected time cycle.
     * **Day and time**: Extractions perform at specific times on selected days of the week.
-9. Select how often you want the schedule to run in **Schedule configuration**.
+9. Select how often you want the schedule to sync in **Schedule configuration**.
     * For an **Interval** schedule type, you can choose from: 15 minutes, 30 minutes, 1 hour, 2 hours, 4 hours, 6 hours, 8 hours, 12 hours, 1 day.
         * 15 minutes is considered real-time for warehouse syncs
-    * For a **Day and time** schedule type, you can choose the day(s) you’d like the schedule to run as well as the time. You can only choose to run the extraction at the top of the hour.
+    * For a **Day and time** schedule type, you can choose the day(s) you’d like the schedule to sync as well as the time. You can only choose to sync the extraction at the top of the hour.
 10. Click **Create Model**.
 
 To add multiple models to your source, repeat steps 1-10 above.
@@ -80,8 +82,8 @@ To add multiple models to your source, repeat steps 1-10 above.
 Once you’ve added a model, you need to add a destination. In Reverse ETL, destinations are the business tools or apps you use that Segment syncs the data from your warehouse to.
 
 > info ""
-> Reverse ETL only supports [Actions destinations](/docs/connections/destinations/actions/). If you'd like to request Segment to add a particular destination, please note it on the [feedback form](https://airtable.com/shrdu5cW06LsuZvXN){:target="_blank"}.
 > Depending on the destination, you may need to know certain endpoints and have specific credentials to configure the destination.  
+> If you'd like to request Segment to add a particular destination, please note it on the [feedback form](https://airtable.com/shrdu5cW06LsuZvXN){:target="_blank"}.  
 
 To add your first destination:
 1. Navigate to **Reverse ETL > Destinations**.
@@ -117,16 +119,16 @@ To add multiple mappings from your warehouse to your destination, repeat steps 1
 ## Using Reverse ETL
 After you've followed [all four steps](/docs/reverse-etl/reverse-etl/#getting-started) and set up your source, model, destination, and mappings for Reverse ETL, your data will extract and sync to your destination(s) right away if you chose an interval schedule. If you set your data to extract at a specific day and time, the extraction will take place then.
 
-### Run statuses
-You can check the status of your data extractions and see details of your runs.
+### Runs status and observability
+You can check the status of your data extractions and see details of your syncs. You can click into failed records to view additional details on the error, sample payloads to help you debug the issue, and recommended actions.
 
 To check the status of your extractions:
 1. Navigate to **Reverse ETL > Destinations**.
 2. Select the destination you want to view.
 3. Select the mapping you want to view.  
-4. Click the run you want to view to get details of the run. You can view:
-    * The status of the run
-    * How long it took for the run to complete
+4. Click the sync you want to view to get details of the sync. You can view:
+    * The status of the sync
+    * How long it took for the sync to complete
     * The load results - how many successful records were synced as well as how many records were updated, deleted, or are new.
 
 
