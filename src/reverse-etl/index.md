@@ -83,6 +83,7 @@ Once you’ve added a model, you need to add a destination. In Reverse ETL, dest
 
 > info ""
 > Depending on the destination, you may need to know certain endpoints and have specific credentials to configure the destination.  
+>
 > If you'd like to request Segment to add a particular destination, please note it on the [feedback form](https://airtable.com/shrdu5cW06LsuZvXN){:target="_blank"}.  
 
 To add your first destination:
