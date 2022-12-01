@@ -6,7 +6,9 @@ const yaml = require('js-yaml');
 const {
   prompt
 } = require('enquirer');
-const { type } = require('os');
+const {
+  type
+} = require('os');
 
 require('dotenv').config();
 
@@ -114,10 +116,10 @@ const checkExistingStatus = async () => {
   for (let [key] of Object.entries(privateDests)) {
     existingIds.push(privateDests[key].id)
   }
-  
+
   existingIds.sort()
-  
-  for (i in existingIds){
+
+  for (i in existingIds) {
     let id = existingIds[i]
     let destination = await checkDestinationStatus(id)
     let status = destination.status
@@ -133,30 +135,37 @@ const checkExistingStatus = async () => {
 }
 const addPrivateDestination = async () => {
   let ids = await checkExistingStatus()
+  ids.sort();
   const DEST_ID = await prompt({
     type: 'input',
     name: 'id',
     message: 'Enter the destination ID'
   })
 
-
-  if (ids.includes(DEST_ID.id)) {
-    console.log("This destination is already captured.")
-    return
+  if (DEST_ID.id = '0') {
+    for (const element in ids) {
+      let currentId = ids[element]
+      await getDestinationData(currentId)
+    }
+    console.log("Updating exsting Private Beta destinations.")
   } else {
-    ids.push(DEST_ID.id)
-    fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/destinations_private.yml`), '');
+    if (ids.includes(DEST_ID.id)) {
+      console.log("This destination is already captured.")
+      return
+    } else {
+      ids.push(DEST_ID.id)
+      fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/destinations_private.yml`), '');
 
+    }
+    ids.sort();
+
+
+    for (const element in ids) {
+      let currentId = ids[element]
+      await getDestinationData(currentId)
+    }
   }
-  ids.sort();
 
-
-  for (const element in ids) {
-    let currentId = ids[element]
-    await getDestinationData(currentId)
-  }
-
-  
 }
 
 
