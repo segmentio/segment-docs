@@ -81,6 +81,7 @@ Javascript
 Jebbit
 Jimo
 Jivox
+jQuery
 Kable
 Kameleoon
 Kissmetrics
