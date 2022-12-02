@@ -27,6 +27,11 @@ When you identify a user, Segment passes that user's information to CleverTap wi
 
 All other traits will be sent to CleverTap as custom attributes. The default logic will lower case and snake_case any user traits - custom or special - passed to CleverTap.
 
+Note: For Analytics.js library,
+
+In cloud mode CleverTap uses Segment anononymous ID as CleverTap ID
+In device mode, CleverTap ignores the anonymous ID and CleverTap injects it's own ID
+
 ## Track
 
 When you `track` an event, Segment sends that event to CleverTap as a custom event.  Note that CleverTap does not support arrays or nested objects for custom track event properties.
