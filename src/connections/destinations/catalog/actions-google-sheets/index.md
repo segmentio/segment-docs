@@ -2,7 +2,6 @@
 title: Google Sheets Destination
 hide-boilerplate: true
 hide-dossier: false
-hidden: false
 id: 627ea052118e3cd530d28963
 ---
 
