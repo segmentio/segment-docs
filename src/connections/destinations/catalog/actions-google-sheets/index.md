@@ -5,7 +5,7 @@ hide-dossier: false
 id: 627ea052118e3cd530d28963
 ---
 
-The Google Sheets destination allows you to sync your warehouse data to a Google spreadsheet, and automate updates to that spreadsheet as your data changes. This destination allows you to automate the workflow of exporting CSVs from your warehouse.
+The Google Sheets destination allows you to sync your warehouse data to a Google spreadsheet, and update the spreadsheet automatically as your data changes. This destination automates the workflow of exporting CSVs from your warehouse.
 
 The Google Sheets destination can be connected to **Reverse ETL warehouse sources only**. 
 
