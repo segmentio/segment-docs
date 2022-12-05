@@ -17,7 +17,6 @@ Identity Graph automatically collects a rich set of external IDs without any add
 
 If you want Identity Graph to operate on a different custom ID, you can pass it in using `context.externalIds` on an `identify()` or `track()`. If you're interested in this feature, contact your CSM to discuss the best way to implement this feature.
 
-<!--PW 9/6/22
 ## How does Profiles handle identity merging?
 Each incoming event is analyzed and external IDs are extracted (`user_id`, `anonymous_id`, `email`). The simplified algorithm works as follows:
 
@@ -26,6 +25,8 @@ Each incoming event is analyzed and external IDs are extracted (`user_id`, `anon
 3. If Segment finds one profile, it merges the incoming event with that profile. (This means that Segment adds the external IDs on the incoming message and resolves the event to the profile.)
 4. If Segment finds multiple matching profiles, Segment applies the identity resolution settings for merge protection. Specifically, Segment uses identifier limits and priorities to add the correct identifiers to the profile.
 5. Segment then applies [Profile limits](/docs/profiles/profile-api-limits/) to ensure profiles remain under these limits. Segment doesn't add any further merges or mappings if the profile is at either limit, but event resolution for the profile will continue.
+
+<!-- PW, 12/5/22
 
 ![Identity graph merging](images/merging_1.png "Flowchart of Segment receiving an incoming event")
 
