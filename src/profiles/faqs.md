@@ -26,13 +26,15 @@ Each incoming event is analyzed and external IDs are extracted (`user_id`, `anon
 4. If Segment finds multiple matching profiles, Segment applies the identity resolution settings for merge protection. Specifically, Segment uses identifier limits and priorities to add the correct identifiers to the profile.
 5. Segment then applies [Profile limits](/docs/profiles/profile-api-limits/) to ensure profiles remain under these limits. Segment doesn't add any further merges or mappings if the profile is at either limit, but event resolution for the profile will continue.
 
-<!-- PW, 12/5/22
+{% comment %}
 
 ![Identity graph merging](images/merging_1.png "Flowchart of Segment receiving an incoming event")
 
 ![Identity graph merging](images/merging_2.png "Flowchart of Segment searching for profiles by external ID")
 
-![Identity graph merging](images/merging_3.png "Flowchart of Segment merging profiles") -->
+![Identity graph merging](images/merging_3.png "Flowchart of Segment merging profiles") 
+
+{% endcomment %}
 
 ## Is all matching deterministic, or is there any support for probabilistic matching?
 All Profile matching is deterministic and based on first-party data that you've collected.
