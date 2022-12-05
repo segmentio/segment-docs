@@ -281,7 +281,7 @@ sections:
       title: Settings
     - path: /profiles/identity-resolution/ecommerce-example
       title: E-Commerce Example
-   - section_title: Profiles Sync
+  - section_title: Profiles Sync
     slug: profiles/profiles-sync
     section:
     - path: /profiles/profiles-sync
