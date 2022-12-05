@@ -1,6 +1,7 @@
 ---
 title: Profiles Sync Setup
 beta: true
+plan: profiles
 ---
 
 > info "Profiles Sync Beta"
