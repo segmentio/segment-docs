@@ -25,18 +25,7 @@ To upgrade a source to Analytics.js 2.0:
 
 ## Automatic migration
 
-Analytics.js sources will upgrade to Analytics.js 2.0 on the date below, according to the account tier. On the date listed, Segment will upgrade all Analytics.js sources within the associated account tier.
-
-| Segment Plan | Upgrade Date |
-|--------------| -------------|
-| Free         | June 15, 2021|
-| Team         | July 6, 2021 |
-| Business*    | June 2022    |
-
-*If you're on a business plan, please reach out to [friends@segment.com](mailto:friends@segment.com) to see if your account is part of the upgrade in June 2022.
-
-> info ""
-> The plans and dates listed above are subject to change.
+On February 28, 2023, all Analytics.js Classic sources will automatically upgrade to Analytics.js 2.0.
 
 ## Revert to Analytics.js Classic
 
