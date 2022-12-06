@@ -27,9 +27,17 @@ When you identify a user, Segment passes that user's information to CleverTap wi
 
 All other traits will be sent to CleverTap as custom attributes. The default logic will lower case and snake_case any user traits - custom or special - passed to CleverTap.
 
+
 > info ""
-> In cloud mode CleverTap uses Segment anononymous ID as CleverTap ID
+> In cloud mode CleverTap uses Segment anononymous ID as the CleverTap ID
 > In device mode, CleverTap ignores the anonymous ID and CleverTap injects it's own ID
+
+## Alias
+
+> warning ""
+> Alias is supported by Device-mode Web connections
+
+When you send an Alias call to CleverTap, CleverTap updates the user's profile with the contents of the Alias call.
 
 ## Track
 

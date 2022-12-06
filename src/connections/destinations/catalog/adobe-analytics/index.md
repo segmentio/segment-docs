@@ -131,7 +131,7 @@ Segment's server-side integration is not open-source. Let's explore what happens
  - `userId`
  - `anonymousId`
 
-5. Segment map a number of other supported XML tags. For example, it sets `<ipAddress>` with the `ip` of the call.
+5. Segment maps a number of other supported XML tags. For example, it sets `<ipAddress>` with the `ip` of the call.
 
    **Note**: For server side libraries, the `ip` is by default be the `ip` address of your company servers, NOT the customers' own. This means that for server side events, it is best practice to record the customer's `ip` from their requests, and manually send that to Segment as `context.ip`.
 
