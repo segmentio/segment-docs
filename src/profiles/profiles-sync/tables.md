@@ -165,7 +165,8 @@ All these events were performed by the same person. If you use these tables to a
 
 ## Tables you materialize
 
-Segment provides dbt code to efficiently materialize three tables. **These may be written to a different schema than the schema where Segment writes data.**
+> info ""
+> To help with your table materializations, Segment hosts dbt code in a private GitHub repository. To request access, reach out to Segment support with your GitHub username and email address.
 
 Every customer profile (or `canonical_segment_id`) will be represented in each of the following tables.
 
