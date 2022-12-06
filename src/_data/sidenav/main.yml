@@ -241,6 +241,14 @@ sections:
     title: Rate Limits
   - path: /connections/regional-segment
     title: Regional Segment
+- section_title: Reverse ETL
+  section:
+  - path: /reverse-etl
+    title: Reverse ETL Overview
+  - path: /reverse-etl/bigquery-setup
+    title: BigQuery Reverse ETL Setup
+  - path: /reverse-etl/snowflake-setup
+    title: Snowflake Reverse ETL Setup
 - section_title: Profiles
   section:
   - path: /profiles
@@ -397,7 +405,7 @@ sections:
   - path: /privacy/account-deletion
     title: Account & Data Deletion
   - path: /privacy/hipaa-eligible-segment
-    title: HIPAA Eligible Segment  
+    title: HIPAA Eligible Segment
   - path: /privacy/faq
     title: Privacy FAQs
 - section_title: Protocols
