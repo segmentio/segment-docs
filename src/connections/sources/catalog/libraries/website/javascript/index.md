@@ -12,7 +12,7 @@ Analytics.js 2.0, the latest version of Segment's JavaScript source, enables you
 
 > info ""
 > Analytics.js 2.0 is available as an [open-source project](https://github.com/segmentio/analytics-next/){:target="_blank"}.
-> <br><br> All sources created on April 5, 2022 and after default to use Analytics.js 2.0.
+> <br><br> All sources created on April 5, 2022 and after, default to use Analytics.js 2.0.
 
 
 ## Benefits of Analytics.js 2.0
