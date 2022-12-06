@@ -45,8 +45,6 @@ To add the LinkedIn Audiences destination:
 
 12. Click **Add Destinations** and select the LinkedIn Audiences destination you just created. In the settings that appear in the side panel, toggle the **Send Track** option on and disable **Send Identify**. Click **Save Settings**.
 
-![engage audience destination settings](images/image1.png)
-
 The setup is complete and the Audience will start syncing to LinkedIn. Segment automatically creates a new DMP Segment in LinkedIn and will add or remove users accordingly. The Audience appears in your [LinkedIn Campaign Manager](https://www.linkedin.com/campaignmanager){:target="_blank"}, account under **Plan > Audiences > Matched**.
 
 To sync additional Audiences from your Engage space, create a separate mapping in the LinkedIn Audiences destination. Navigate to **Connections > Destinations**, search and select the LinkedIn Audiences destination, and follow Steps 9-11 above.

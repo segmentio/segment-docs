@@ -7,7 +7,10 @@ redirect_from: '/protocols/transformations/'
 
 ## What is a Transformation?
 
-Transformations allow you to change data as it flows through Segment to either correct bad data or customize data for a specific destination. At this time, you can change event and property names to align events with your Tracking Plan, or to conform to a destination-specific requirement. For example, a Transformation could be created to change an event name from `completed_order` to `Order Completed` to conform to [Segment's ecommerce spec](/docs/connections/spec/ecommerce/v2/#order-completed).
+With Transformations, you can change data as it flows through Segment to either correct bad data or customize data for a specific destination. Change event and property names to align events with your Tracking Plan, or to conform to a destination-specific requirement. For example, you can create a Transformation to change an event name from `completed_order` to `Order Completed` to conform to [Segment's ecommerce spec](/docs/connections/spec/ecommerce/v2/#order-completed).
+
+You can also use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to transform events, properties, and property values for many [use cases](#use-cases).
+
 
 **Transformations are very powerful and should be applied with care!**
 
@@ -21,7 +24,7 @@ Segment's goal is to make Transformations a powerful tool that complements a wel
 ### Other important notes
 
 - **Transformations cannot be applied retroactively:** They only apply to data moving forward. However, you can manually extract and re-send (or even [Replay](/docs/guides/what-is-replay)) events through a source with an active destination Transformation, which will send the transformed events to your destinations.
-- **Transformations are only available to Protocols customers:** If you are interested in this feature, contact your Account Executive or CSM to learn more about the Protocols package.
+- **Transformations are available to Protocols customers:** If you're interested in this feature, contact your Account Executive or CSM to learn more about the Protocols package.
 - **Source-level transformations are irrevocable:** When applied at the source, a transformation permanently changes the structure of the event. The original events are not easily recoverable or [Replayable](/docs/guides/what-is-replay). Assume that transformed data cannot be recovered.
 - **Device-mode destinations are NOT supported:** Source scoped transformations will **only** apply to cloud-mode destinations, warehouses, and S3 destinations. Destination scoped transformations will **only** apply to cloud-mode destinations.
 
@@ -29,7 +32,7 @@ Segment's goal is to make Transformations a powerful tool that complements a wel
 
 All Protocols Transformations are listed in the Transformations tab in the Protocols section. The list view supports filtering and sorting to organize transformations by transformation type, source, and destination.
 
-![](../images/transformation_list_view.png)
+![view all Transformations in your Segment workspace](../images/transformation_list_view.png)
 
 Transformations can be enabled and disabled directly from the list view using the toggle.
 
@@ -43,11 +46,11 @@ To create a Transformation, navigate to the Transformations tab in Protocols and
 > Workspace Owner or Source Admin permissions are required to create and edit transformations.
 > Source Read-only permissions are required to view transformations.
 
-![](../images/transformation_wizard.png)
+![create a transformation with the three-step wizard](../images/transformation_wizard.png)
 
 ### Step 1: Select the transformation type
 
-To create a Transformation, you first need to select which type of transformation you want to create. For each transformation type, Segment displays a description, use cases and example payload. Current transformation types include:
+To create a Transformation, you first need to select which type of transformation you want to create. For each transformation type, Segment displays a description, use cases, and example payload. Current transformation types available in your Segment workspace include:
 
 **Rename track event:** Rename track event name at the source or per destination
 ![rename track event](../images/event-rename-example.png)
@@ -58,6 +61,9 @@ To create a Transformation, you first need to select which type of transformatio
 **Edit identify or group event traits:** Rename multiple traits and/or change trait data structure at the source or per destination
 ![edit identify or group event traits](../images/traits-example.png)
 
+> success ""
+> View more [use cases](#use-cases) of Transformations available in both your workspace and [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"}.
+
 ### Step 2: Set up the transformation
 
 Depending on the transformation type you selected, relevant drop-down selectors and fields are presented to define how you want to transform the data.
@@ -67,12 +73,12 @@ Depending on the transformation type you selected, relevant drop-down selectors 
 
 Regardless of the type of transformation selected, first select a source. Each Transformation can only apply to a single source. While this makes it more difficult to apply transformations broadly, it ensures you are only transforming data relevant to the selected source.
 
-After selecting the source, you will need to select a scope. Scope determines where the transformation will be applied.
+After selecting the source, you will need to select a scope. Scope determines where Segment applies the transformation.
 
 > warning ""
 > Source-scoped Transformations only apply to cloud-mode, S3, and data warehouse destinations.
 
-![](../images/transformation_scope.png)
+![select a transformation scope](../images/transformation_scope.png)
 
 * **Source scope:**
 Events are transformed in all **active Segment cloud-mode destinations, warehouses, and S3 destinations.** This scope is best when you want to fix malformed events before sending them to all destinations. These transformations should be treated as a temporary solution to hold you over while your engineering team fixes the root event.
@@ -86,7 +92,7 @@ Depending on the type of transformation you selected, you will need to enter the
 After you select the scope, use the search box to choose the event to transform. You can **only** select a single track event, identify or group call. If you are renaming the event, simply enter the new name in the provided text field.
 
 * **Rename properties or traits:**
-If you rename properties or trains within a selected event, click **+ Add Property**. The dropdown that appears contains the properties or traits sent with the selected event. Segment supports JSON Path notation to select nested objects up to four levels deep. For example, `order.id` selects the `id` property in the `order` object. Segment does not support `.$.` notation to select a property from an array of objects.
+If you rename properties or traits within a selected event, click **+ Add Property**. The dropdown that appears contains the properties or traits sent with the selected event. Segment supports JSON Path notation to select nested objects up to four levels deep. For example, `order.id` selects the `id` property in the `order` object. Segment does not support `.$.` notation to select a property from an array of objects.
 
 After selecting a property/trait, select JSON Path or Simple String to change the property/trait. Simple string will change the name in-line, while JSON path allows you to move the property/trait in or out of an object.
 
@@ -94,4 +100,26 @@ After selecting a property/trait, select JSON Path or Simple String to change th
 
 Enter a descriptive name to act as a label for the transformation. This label helps you organize your Transformations, and Segment recommends that you make this descriptive and focused on the problem you're solving. For example `Fix misnamed order_completed event for ecommerce spec` is much better than `Map order_completed`.
 
-In this step, you can also choose to keep the Transformation disabled, so you can and come back and edit it later. To update, enable, or disable a Transformation, click on the overflow menu and select **Edit Transformation**.
+In this step, you can also choose to keep the Transformation disabled, so you can come back and edit it later. To update, enable, or disable a Transformation, click on the overflow menu and select **Edit Transformation**.
+
+## Use Cases
+
+Here's a list of Segment Transformations with some use case examples.
+
+- **Rename an event:** Change an event name from `viewed_product` to `Product Viewed`.
+
+- **Rename a property or trait:** Change the property name `revenue` to `total` for a specific destination.
+
+- **Update a property value:** Use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to transform the property `currency` to have the value `USD`. This transformation is in beta.
+
+- **Add a new property name and assign a value:** If you want to create a new property and set a static value, use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to create `new_property: static_value`. This transformation is in beta.
+
+{% comment %}
+- **Change property value casing:** Transform property value casing to lowercase, uppercase, or title case. For example, Transform the property value `united states` to `USA` to remain consistent with your data tracking.
+{% endcomment %}
+
+> info ""
+> Segment displays an error if the following property conflicts occur:
+> - You create a property value transformation when one already exists for the same property value.
+> - Two property paths in `propertyValueTransformations` are the same.
+> - A property path in `propertyValueTransformations` is the same as a property name in `propertyRenames`.
