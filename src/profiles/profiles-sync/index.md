@@ -16,7 +16,7 @@ On this page, you’ll learn how to set up Profiles Sync, enable historical back
 ## Initial Profiles Sync setup
 
 > info "Identity Resolution Setup"
-> To use Profiles Sync, you must first set up [Identity Resolution](docs/profiles/identity-resolution/).
+> To use Profiles Sync, you must first set up [Identity Resolution](/docs/profiles/identity-resolution/).
 
 To set up Profiles Sync, you’ll first create a warehouse, then connect the warehouse within the Segment app.
 
