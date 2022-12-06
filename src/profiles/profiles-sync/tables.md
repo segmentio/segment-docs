@@ -1,6 +1,7 @@
 ---
 title: Profiles Sync Tables and Materialized Views
 beta: true
+plan: profiles
 ---
 
 Through Profiles Sync, Segment provides data sets and models that can help you enrich customer profiles using any warehouse data available to you.
@@ -90,11 +91,15 @@ As a result, this table contains information about the creation and merging of p
 
 Using the profile merge scenario, Segment would generate three new entries to this table:
 
+<div style="overflow-x:auto;" markdown=1>
+
 | `segment_id` | `canonical_segment_id` | `triggering_event_type` | `triggering_event_id` | `timestamp`         |
 | ------------ | ---------------------- | ----------------------- | --------------------- | ------------------- |
 | `profile_1`  | `profile_1`            | `page`                  | `event_1`             | 2022-05-02 14:01:00 |
 | `profile_2`  | `profile_2`            | `page`                  | `event_3`             | 2022-06-22 10:47:15 |
 | `profile_2`  | `profile_1`            | `identify`              | `event_4`             | 2022-06-22 10:48:00 |
+
+</div>
 
 In this example, the table shows `profile_2` mapping to two places: first to itself, then, later, to `profile_1` after the merge occurs.
 
@@ -110,20 +115,15 @@ This table maps Segment-generated identifiers, like `segment_id`, to external id
 
 The anonymous site visits sample used earlier would generate the following events:
 
+<div style="overflow-x:auto;" markdown=1>
+
 | `segment_id` | `canonical_segment_id` | `triggering_event_type` | `triggering_event_id` | `timestamp`         |
 | ------------ | ---------------------- | ----------------------- | --------------------- | ------------------- |
 | `profile_1`  | `profile_1`            | `page`                  | `event_1`             | 2022-05-02 14:01:00 |
 | `profile_2`  | `profile_2`            | `page`                  | `event_3`             | 2022-06-22 10:47:15 |
 | `profile_2`  | `profile_1`            | `identify`              | `event_4`             | 2022-06-22 10:48:00 |
 
-(stacked vertically)
-
-| `segment_id`            | `profile_1`         | `profile_2`         | `profile_2`         |
-| ----------------------- | ------------------- | ------------------- | ------------------- |
-| `canonical_segment_id`  | `profile_1`         | `profile_2`         | `event_1`           |
-| `triggering_event_type` | `page`              | `page`              | `identify`          |
-| `triggering_event_id`   | `event_1`           | `event_3`           | `event_4`           |
-| `timestamp`             | 2022-05-02 14:01:00 | 2022-06-22 10:47:15 | 2022-06-22 10:48:00 |
+</div>
 
 In this table, Segment shows three observed identifiers. For each of the three identifiers, Segment outputs the Segment ID initially associated with the identifier.
 
@@ -140,17 +140,25 @@ These event tables are similar to the tables landed by Segment warehouse integra
 
 The previous result would generate two entries in the `pages` table:
 
+<div style="overflow-x:auto;" markdown=1>
+
 | `segment_id` | `context_url`          | `anonymous_id`       | `event_source_id` | `event_id` | `timestamp`         |
 | ------------ | ---------------------- | -------------------- | ----------------- | ---------- | ------------------- |
 | `profile_1`  | `twilio.com`           | `5285bc35-05ef-4d21` | `source_1`        | `event_1`  | 2022-05-02 14:01:00 |
 | `profile_2`  | `twilio.com/education` | `b50e18a5-1b8d-451c` | `source_1`        | `event_3`  | 2022-06-22 10:47:15 |
 
+</div>
+
 And two entries in the `identifies` table:
+
+<div style="overflow-x:auto;" markdown=1>
 
 | `segment_id` | `context_url`                | `anonymous_id`       | `email`                | `event_source_id` | `event_id` | `timestamp`         |
 | ------------ | ---------------------------- | -------------------- | ---------------------- | ----------------- | ---------- | ------------------- |
 | `profile_1`  | `twilio.com/try_twilio`      | `5285bc35-05ef-4d21` | `jane.kim@segment.com` | `source_1`        | `event_2`  | 2022-05-02 14:01:47 |
 | `profile_2`  | `twilio.com/events/webinars` | `b50e18a5-1b8d-451c` | `jane.kim@segment.com` | `source_2`        | `event_4`  | 2022-06-22 10:48:00 |
+
+</div>
 
 All these events were performed by the same person. If you use these tables to assemble your data models, though, always join them against `id_graph` to resolve each event’s `canonical_segment_id`.
 

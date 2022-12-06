@@ -1,9 +1,8 @@
 ---
 title: Profiles Sync Sample Queries
 beta: true
+plan: profiles
 ---
-
-Through Profiles Sync, Segment provides data sets and models that can help you enrich customer profiles using any warehouse data available to you.
 
 On this page, you’ll find queries that you can run with Profiles Sync to address common use cases.
 
