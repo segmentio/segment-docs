@@ -142,7 +142,7 @@ const addPrivateDestination = async () => {
     message: 'Enter the destination ID'
   })
 
-  if (DEST_ID.id = '0') {
+  if (DEST_ID.id == '0') {
     for (const element in ids) {
       let currentId = ids[element]
       await getDestinationData(currentId)
