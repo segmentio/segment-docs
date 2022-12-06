@@ -108,7 +108,7 @@ In the **Connection settings** tab, you can verify your synced warehouse’s cre
 If you have write access, you can verify that your warehouse is successfully connected to Segment by entering your password and then selecting **Test Connection**.
 
 > info "Changing your synced warehouse"
-> If you’d like to change the warehouse connected to Profiles Sync, reach out to Segment support.
+> If you’d like to change the warehouse connected to Profiles Sync, [reach out to Segment support](https://segment.com/help/contact/).
 
 <!-- Verify that this doesn't need to be changed -->
 
