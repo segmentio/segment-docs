@@ -59,8 +59,9 @@ Follow these steps to connect your warehouse:
 5. If the connection test succeeds, Segment enables the **Next** button. Select it.
   * If the connection test fails, verify that you’ve correctly entered the warehouse credentials, then try again.
 6. Select **Next** on the **Sync schedule** page. Segment displays the Profiles Sync overview page.
+7. Select **Request sync to be enabled**.
 
-At this point, Segment enables live syncs for your account.
+Segment staff then receives and enables live sync for your account.
 
 #### Using historical backfill
 
