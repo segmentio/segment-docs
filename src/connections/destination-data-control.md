@@ -28,7 +28,7 @@ analytics.identify('user_123', {
 
 Destination flags are **case sensitive** and match [the Destination's name in the docs](/docs/connections/destinations/catalog/) (for example, "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
-If you're on Segment's Business plan, you can filter track calls right from the Segment UI on your Source Schema page by clicking on the field in the "Integrations" column and then adjusting the toggle for each tool. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
+If you're on Segment's Business plan, you can filter track calls right from the Segment UI on your Source Schema page by clicking on the field in the "Integrations" column and then adjusting the toggle for each tool. Segment recommends using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
 
 ![](images/destination-control.png)
 
@@ -42,14 +42,19 @@ Once you block an event in Segment, Segment stops forwarding it to all of your D
 
 ## Export your Source Schema
 
-Segment allows you to download your Source Schema as a CSV file, maximizing portability and access to event data. You can download a copy of your schema by visiting the Source Schema page.
+Segment allows you to download your Source Schema as a CSV file, maximizing portability and access to event data. You can download a copy of your schema by visiting the Source Schema page. Track, Identify, and Group events support Source Schema export.
 
 ![](images/export-source-schema.png)
 
+You can choose to include properties with the Track events in the modal.
+
+![](images/export-source-schema-including-props.png)
+
 CSV files generate based on the current view of your Source Schema. Any search parameters or filters you apply to the current Source Schema view also apply to the CSV.
 
-You can download the following Track events:
+The Track event CSV file contains the following columns:
 - Event Name
+- Property Name (if properties are included in the export dialog)
 - Last Seen (UTC)
   - If greater than 30 days, the value is "more than 30 days ago"
 - Allowed Count
@@ -58,7 +63,14 @@ You can download the following Track events:
 - Planned (available for Protocols customers with a connected Tracking Plan)
   - Values are "planned" or "unplanned"
 
-Export Schema is not available for Identify or Group events.
+The Identify & Group CSV file contains the following columns:
+- Trait Name
+- Last Seen (UTC)
+- Allowed Count
+- Blocked Count
+- Total Count
+- Planned (available for Protocols customers with a connected Tracking Plan)
+  - Values are "planned" or "unplanned"
 
 > note ""
-> Export Schema doesn't include any actual values (for example, personal data) for the events, properties, and traits you are tracking for a specific source. Properties aren't included in the CSV.
+> Export Schema doesn't include any actual values (for example, personal data) for the events, properties, and traits you are tracking for a specific source.
