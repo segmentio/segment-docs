@@ -30,7 +30,7 @@ The Public API includes the following benefits over the Config API:
 
 To enhance API token security, Segment partners with GitHub to prevent fraudulent use of exposed API tokens found in public git repositories. Malicious actors can use exposed tokens to perform unauthorized actions in your Segment workspace. 
 
-GitHub scans each commit in public repositories for Public API tokens and detected tokens are sent to Segment. Valid tokens are automatically revoked and workspace owners are notified. This process, Github identifying a token and Segment revoking it, typically takes seconds.
+GitHub scans each commit in public repositories for Public API tokens and detected tokens are sent to Segment. Valid tokens are automatically revoked and workspace owners are notified. This process, GitHub identifying a token and Segment revoking it, typically takes seconds.
 
 Learn more about [GitHub's secret scanning program](https://docs.github.com/en/developers/overview/secret-scanning-partner-program).
 
@@ -42,7 +42,7 @@ In most cases, identifying and revoking an exposed token takes seconds. Still, w
 Typically, tokens are exposed when developers commit them to a public git repository. This can happen when developers use a token in a local development environment and forget to remove it before committing their code.
 
 #### Why are exposed tokens automatically revoked?
-By automatically revoking the exposed token, we help keep your workspace secure and prevent potential abuse of the token.
+By automatically revoking the exposed token, Segment helps keep your workspace secure and prevents potential abuse of the token.
 
 #### How do I enable this feature?
 This feature is automatically enabled for all workspaces on Team or Business tier plans.
