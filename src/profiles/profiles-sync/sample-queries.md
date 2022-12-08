@@ -185,11 +185,9 @@ As a result, you can retrieve a customer’s complete event history by joining a
 
 For more information, view the [Profiles Sync tables guide](/docs/profiles/profiles-sync/tables/).
 
-#### Should I expect discrepancies between Profile data seen in Segment Profiles (or) UI vs. what’s exposed via Profiles in the Warehouse?
+#### Does Profiles Sync data ever differ from Profiles data?
 
-<!-- fix this header^^ -->
-
-Profiles Sync mimics the materialization performed by Segment Profiles. A user’s merges, external IDs, and traits should be expected whether they’re queried in the warehouse, Profile API, or viewed in the UI.
+Profiles Sync mimics the materialization performed by [Segment Profiles](/docs/profiles/). A user’s merges, external IDs, and traits should be expected whether they’re queried in the warehouse, Profile API, or viewed in the UI.
 
 The following edge cases might drive slight (<0.01%) variation:
 
