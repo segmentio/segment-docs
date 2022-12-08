@@ -41,6 +41,7 @@ The FullStory cloud mode destination sends information about your users and rela
 7. On the **Basic Settings** page, enter your FullStory API Key from step 1 and click **Save Changes**.
 8. On the **Mappings** tab, you can view default mappings as well as add, modify, or disable mappings. Confirm that the "User ID" FullStory property is mapped to the ID previously used to identify the user. For more information, please refer to the [API documentation](https://developer.fullstory.com/server-events){:target="_blank"}.
 
-Please note: Events sent through Segment Cloud Mode count towards your FullStory server event quota. To see your company’s current quota allotment, view the Subscription information in your Account Settings within FullStory.
+> info ""
+> Events that you send through to FullStory through a Cloud-mode connection count towards your FullStory server event quota. To see your company’s current quota allotment, view the Subscription information on the Account Settings page in FullStory.
 
 {% include components/actions-fields.html %}
