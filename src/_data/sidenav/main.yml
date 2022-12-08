@@ -241,6 +241,14 @@ sections:
     title: Rate Limits
   - path: /connections/regional-segment
     title: Regional Segment
+- section_title: Reverse ETL
+  section:
+  - path: /reverse-etl
+    title: Reverse ETL Overview
+  - path: /reverse-etl/bigquery-setup
+    title: BigQuery Reverse ETL Setup
+  - path: /reverse-etl/snowflake-setup
+    title: Snowflake Reverse ETL Setup
 - section_title: Profiles
   section:
   - path: /profiles
@@ -273,6 +281,25 @@ sections:
       title: Settings
     - path: /profiles/identity-resolution/ecommerce-example
       title: E-Commerce Example
+  - section_title: Profiles Sync
+    slug: profiles/profiles-sync
+    section:
+    - path: /profiles/profiles-sync
+      title: Setup
+    - path: /profiles/profiles-sync/sample-queries
+      title: Sample Queries
+    - path: /profiles/profiles-sync/tables
+      title: Tables & Materialized Views
+  - path: /profiles/profile-api
+    title: Profile API
+  - path: /profiles/profile-api-limits
+    title: Profile API Limits
+  - path: /profiles/debugger
+    title: Profile Debugger
+  - path: /profiles/profiles-gdpr
+    title: Profiles and GDPR
+  - path: /profiles/faqs
+    title: Profiles FAQs
   - path: /profiles/profile-api
     title: Profile API
   - path: /profiles/profile-api-limits
@@ -398,7 +425,7 @@ sections:
   - path: /privacy/account-deletion
     title: Account & Data Deletion
   - path: /privacy/hipaa-eligible-segment
-    title: HIPAA Eligible Segment  
+    title: HIPAA Eligible Segment
   - path: /privacy/faq
     title: Privacy FAQs
 - section_title: Protocols

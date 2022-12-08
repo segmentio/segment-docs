@@ -6,7 +6,7 @@ strat: ajs
 Analytics.js 2.0 is fully backward compatible with Analytics.js Classic when you use the default Segment snippet in a standard implementation. To upgrade your sources, follow the manual upgrade steps below, or see the schedule for automatic migration. As with all upgrades, Segment recommends that you start development on a non-production source to test the upgrade process and outcome, prior to upgrading your production sources.
 
 > warning "Deprecation of Analytics.js Classic"
-> Segment ended support and maintenance for Analytics.js Classic on August 31, 2022. On February 28, 2023, Segment will remove access to Analytics.js Classic.
+> Segment ended support and maintenance for Analytics.js Classic on August 31, 2022. On February 28, 2023, Segment will remove access to Analytics.js Classic, and all Analytics.js Classic sources will automatically upgrade to Analytics.js 2.0.
 > <br><br>Upgrade to Analytics.js 2.0 before access ends for Analytics.js Classic. See the [Analytics.js 2.0 docs](/docs/connections/sources/catalog/libraries/website/javascript/) to learn more about the new source.
 
 ## Manual upgrade
@@ -25,18 +25,7 @@ To upgrade a source to Analytics.js 2.0:
 
 ## Automatic migration
 
-Analytics.js sources will upgrade to Analytics.js 2.0 on the date below, according to the account tier. On the date listed, Segment will upgrade all Analytics.js sources within the associated account tier.
-
-| Segment Plan | Upgrade Date |
-|--------------| -------------|
-| Free         | June 15, 2021|
-| Team         | July 6, 2021 |
-| Business*    | June 2022    |
-
-*If you're on a business plan, please reach out to [friends@segment.com](mailto:friends@segment.com) to see if your account is part of the upgrade in June 2022.
-
-> info ""
-> The plans and dates listed above are subject to change.
+On February 28, 2023, all Analytics.js Classic sources will automatically upgrade to Analytics.js 2.0.
 
 ## Revert to Analytics.js Classic
 
@@ -95,4 +84,4 @@ If you're using A.js 2.0, the library field will look like the code snippet belo
 Like any software upgrade, Segment advises you to start with one source, or a development or staging source. Then you should ensure that traffic is flowing the way you expect it to and that it goes to the appropriate destinations.
 
 ### What happens if I don't upgrade by the end of service date?
-There will not be any changes to your sources on the end of service date. However, if you encounter issues or need support, the support team will advise you to upgrade to 2.0. All new features will only be available on the 2.0 versions.
+ On February 28, 2023, all Analytics.js Classic sources will automatically upgrade to Analytics.js 2.0.
