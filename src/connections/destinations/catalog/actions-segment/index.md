@@ -33,4 +33,4 @@ The Segment destination enables you to mold data extracted from your warehouse i
 ## FAQ & Troubleshooting
 
 ### API Calls and MTUs
-The Segment destination sends data to Segment's Tracking API, which has cost implications. New users will count as new MTUs and each call will count as an API call. For information on how Segment calculates MTUs and API calls, please see [MTUs, Throughput and Billing](/docs/guides/usage-and-billing/mtus-and-throughput).
+The Segment destination sends data to Segment's Tracking API, which has cost implications. New users will count as new MTUs and each call will count as an API call. For information on how Segment calculates MTUs and API calls, please see [MTUs, Throughput and Billing](/docs/guides/usage-and-billing/mtus-and-throughput/).
