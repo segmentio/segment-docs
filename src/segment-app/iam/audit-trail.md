@@ -100,3 +100,5 @@ To forward Audit Trail events:
 1. Navigate to **Settings > Workspace Settings > Audit Forwarding**.
 2. Select the source to which you'll forward workspace events.
 3. Toggle the setting to **On** and click **Save Changes**.
+
+When you forward audit events to a source, Segment passes those events through its entire processing pipeline. This ensures that tracking plans, filters, and other features work with the audit events, and also ensures you can send those events to multiple downstream destinations.
