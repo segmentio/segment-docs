@@ -23,6 +23,7 @@ In practice that means taking a Segment source **Write Key**,`'abc123'`, as the 
 To send data to Segment's HTTP API, a content-type header must be set to `'application/json'`.
 
 ## Errors
+
 Segment returns a `200` response for all API requests so debugging should be done in the Segment Debugger. The only exception is if the request is too large / JSON is invalid it will respond with a `400`.
 
 Segment welcomes feedback on API responses and error messages. [Reach out to support](https://segment.com/help/contact/) with any requests or suggestions you may have.
