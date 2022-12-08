@@ -32,14 +32,14 @@ To enhance API token security, Segment partners with GitHub to prevent fraudulen
 
 GitHub scans each commit in public repositories for Public API tokens and detected tokens are sent to Segment. Valid tokens are automatically revoked and workspace owners are notified. This process, GitHub identifying a token and Segment revoking it, typically takes seconds.
 
-Learn more about [GitHub's secret scanning program](https://docs.github.com/en/developers/overview/secret-scanning-partner-program).
+Learn more about [GitHub's secret scanning program](https://docs.github.com/en/developers/overview/secret-scanning-partner-program){:target="_blank"}.
 
 ### Frequently Asked Questions
 #### What should I do if I see a notification that my token was exposed?
-In most cases, identifying and revoking an exposed token takes seconds. Still, we recommend you check the [audit trail](/docs/segment-app/iam/audit-trail/) to ensure no unauthorized actions were taken with the token.
+In most cases, identifying and revoking an exposed token takes seconds. Segment recommends you check the [audit trail](/docs/segment-app/iam/audit-trail/) to ensure no unauthorized actions were taken with the token.
 
 #### How did my token get exposed?
-Typically, tokens are exposed when developers commit them to a public git repository. This can happen when developers use a token in a local development environment and forget to remove it before committing their code.
+Developers can accidentally commit tokens to public repositories, exposing them to the public. This can happen when developers use a token in a local development environment and forget to remove it before committing their code.
 
 #### Why are exposed tokens automatically revoked?
 By automatically revoking the exposed token, Segment helps keep your workspace secure and prevents potential abuse of the token.
