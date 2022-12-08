@@ -165,8 +165,8 @@ All these events were performed by the same person. If you use these tables to a
 
 ## Tables you materialize
 
-> info ""
-> To help with your table materializations, Segment hosts dbt code in a private GitHub repository. To request access, reach out to Segment support with your GitHub username and email address.
+> info "dbt model definitions package"
+> To get started with your table materializations, try Segment's [open-source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="_blank"}.
 
 With Profiles Traits materialized view, you can view all custom traits, computed traits, SQL traits, audiences, and journeys associated with a profile in a single row.
 
