@@ -168,6 +168,8 @@ All these events were performed by the same person. If you use these tables to a
 > info ""
 > To help with your table materializations, Segment hosts dbt code in a private GitHub repository. To request access, reach out to Segment support with your GitHub username and email address.
 
+With Profiles Traits materialized view, you can view all custom traits, computed traits, SQL traits, audiences, and journeys associated with a profile in a single row.
+
 Every customer profile (or `canonical_segment_id`) will be represented in each of the following tables.
 
 ### `id_graph` table
