@@ -14,7 +14,7 @@ Engage Channels builds on top of these Audiences, helping you connect with and m
 #### Create unified customer profiles
 Engage uses [Segment Identity Resolution](/docs/profiles/identity-resolution/) to take event data from across devices and channels and intelligently merge it into complete user- or account-level profiles. This gives your organization a single view of your customer base. To learn more, read the [Identity Resolution documentation](/docs/profiles/identity-resolution/).
 
-{% include components/reference-button.html href="https://segment.com/customers/frameio/" icon="personas.svg" title="Personalizing customer interactions" description="Support teams rely on Segment's unified profiles to make real-time and informed decisions about customers when answering tickets or taking support calls. Read about how the support team at Frame.io reduced ticket response time by 80%." %}
+{% include components/reference-button.html href="https://segment.com/customers/frame-io/" icon="personas.svg" title="Personalizing customer interactions" description="Support teams rely on Segment's unified profiles to make real-time and informed decisions about customers when answering tickets or taking support calls. Read about how the support team at Frame.io reduced ticket response time by 80%." %}
 
 #### Enrich profiles with new traits
 Add detail to user profiles with new traits and use them to power personalized marketing campaigns. You can add new traits to your user or account profiles in Engage using:
