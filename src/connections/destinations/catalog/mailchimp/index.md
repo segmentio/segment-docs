@@ -137,13 +137,12 @@ Mailchimp doesn't support arrays as traits values. This can cause calls to not s
 
 You can send computed traits and audiences generated using [Engage](/docs/engage/) to Mailchimp as a **user property**. To learn more about Engage, schedule a [demo](https://segment.com/demo/){:target="_blank"}.
 
+Segment sends an [identify call](/docs/connections/spec/identify/) to the Mailchimp destination for each user being added and removed. The Mailchimp destination requires an email field in all Identify payloads before Segment can send events to Mailchimp. If an profile doesn't have an email identifier when the audience or trait is created, then the event will fail, and will not be sent to Mailchimp. 
+
 > success ""
 > Before creating audiences or computed traits with Engage, you must first create merge fields in Mailchimp. Learn more about [recording custom user traits](#recording-custom-user-traits) and [sending custom merge fields](#custom-merge-fields) to Mailchimp.
 
-Segment sends an [identify call](/docs/connections/spec/identify/) to the Mailchimp destination for each user being added and removed. The Mailchimp destination requires an email field in all Identify payloads before Segment will attempt to send events to Mailchimp. If an profile doesn't have an email identifier when the audience or trait is created, then the event will fail. 
-
 The property name is the snake_cased version of the audience name, with a true/false value to indicate membership. For example, when a user first completes an order in the last 30 days, Engage sends an Identify call with the property `order_completed_last_30days: true`. When the user no longer satisfies this condition (for example, it’s been more than 30 days since their last order), Engage sets that value to `false`.
-
 
 When you first create an audience, Engage sends an Identify call for every user in that audience. Later audience syncs only send updates for users whose membership has changed since the last sync.
 
