@@ -4,16 +4,16 @@ hide-boilerplate: true
 hide-dossier: false
 strat: salesforce
 id: 62df16e45ba0058c864a75d1
+versions:
+  - name: "Pardot (Classic)"
+    link: '/docs/connections/destinations/catalog/pardot/'
 ---
+
+{% include content/plan-grid.md name="actions" %}
+
 Pardot is a Salesforce marketing automation and analytics solution that lets you send automated emails to prospects and track conversions in emails and across social networks.
 
 Segment’s Pardot (Actions) destination enables you to create and update prospects with custom traits that can be leveraged in your marketing efforts. Segment sends data to [version 5 of the Pardot API](https://developer.salesforce.com/docs/marketing/pardot/guide/version5overview.html){:target="_blank"}.
-
-> info ""
-> The Pardot (Actions) destination is in beta and is in active development. Some functionality may change before it becomes generally available.
-
-> success "Good to know"
-> This page is about the [Actions-framework](/docs/connections/destinations/actions/) Pardot destination. There's also a page about the [non-Actions Pardot destination](/docs/connections/destinations/catalog/pardot/). Both of these destinations receive data from Segment.
 
 ## Benefits of Pardot (Actions) Destination vs Pardot Destination Classic
 

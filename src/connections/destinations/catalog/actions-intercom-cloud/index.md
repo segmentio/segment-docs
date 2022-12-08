@@ -16,9 +16,6 @@ Intercom is a customer communications platform that shows you who is using your 
 
 When you use the Intercom Cloud Mode (Actions) destination, Segment will send your data to [Intercom's REST API](https://developers.intercom.com/building-apps/docs/rest-apis){:target="_blank"}.
 
-> info ""
-> The Intercom Cloud Mode (Actions) destination is in beta and is in active development. Some functionality may change before it becomes generally available.
-
 ## Benefits of Intercom Cloud Mode (Actions) vs Intercom Classic
 Intercom Cloud Mode (Actions) provides the following benefits over the classic Intercom destination:
 
