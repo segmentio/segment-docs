@@ -140,21 +140,10 @@ You can send computed traits and audiences generated using [Engage](/docs/engage
 > success ""
 > Before creating audiences or computed traits with Engage, you must first create merge fields in Mailchimp. Learn more about [recording custom user traits](#recording-custom-user-traits) and [sending custom merge fields](#custom-merge-fields) to Mailchimp.
 
-For user-property destinations, an [identify call](/docs/connections/spec/identify/) is sent to the destination for each user being added and removed. The property name is the snake_cased version of the audience name, with a true/false value to indicate membership. For example, when a user first completes an order in the last 30 days, Engage sends an Identify call with the property `order_completed_last_30days: true`. When the user no longer satisfies this condition (for example, it’s been more than 30 days since their last order), Engage sets that value to `false`.
+Segment sends an [identify call](/docs/connections/spec/identify/) to the Mailchimp destination for each user being added and removed. The Mailchimp destination requires an email field in all Identify payloads before Segment will attempt to send events to Mailchimp. If an profile doesn't have an email identifier when the audience or trait is created, then the event will fail. 
 
-### Email is a required field in all identify events sent to Mailchimp
-The Mailchimp destination requires an email field in all identity payloads before before Segment will attempt to send events to Mailchimp.
+The property name is the snake_cased version of the audience name, with a true/false value to indicate membership. For example, when a user first completes an order in the last 30 days, Engage sends an Identify call with the property `order_completed_last_30days: true`. When the user no longer satisfies this condition (for example, it’s been more than 30 days since their last order), Engage sets that value to `false`.
 
-A sample JavaScript 'identify' call looks like the following:
-
-``` javascript
-analytics.identify("97980cfea0067", {
-  name: "Jane Doe", 
-  email: "jane@email.com", 
-  plan: "premium", 
-  logins: 5
-});
-```
 
 When you first create an audience, Engage sends an Identify call for every user in that audience. Later audience syncs only send updates for users whose membership has changed since the last sync.
 
