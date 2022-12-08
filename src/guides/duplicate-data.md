@@ -2,11 +2,11 @@
 title: Handling Duplicate Data
 ---
 
-Segment guarantees that 99% of your data won't have duplicates within a 24 hour look-back window. Warehouses and Data Lakes also have their own secondary deduplication process to ensure you store clean data.
+Segment guarantees that 99% of your data won't have duplicates within a 24 hour or longer look-back window. Warehouses and Data Lakes also have their own secondary deduplication process to ensure you store clean data.
 
 ## 99% deduplication
 
-Segment has a special deduplication service that sits behind the `api.segment.com` endpoint and attempts to drop 99% of duplicate data. Segment stores 24 hours worth of event `messageId`s, allowing Segment to deduplicate any data that appears within a 24 hour rolling window.
+Segment has a special deduplication service that sits behind the `api.segment.com` endpoint and attempts to drop 99% of duplicate data. Segment stores at least 24 hours worth of event `messageId`s, allowing Segment to deduplicate any data that appears within a 24 hour rolling window.
 
 Segment deduplicates on the event's `messageId`, _not_ on the contents of the event payload. Segment doesn't have a built-in way to deduplicate data over periods longer than 24 hours or for events that don't generate `messageId`s.
 
