@@ -18,9 +18,20 @@ The Google Ads Conversions destination enables you to upload offline conversions
 7. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
 > info ""
-> When you use the "Upload Enhanced Conversion (Legacy)" action, Segment sends data to the legacy Enhanced Conversions API. To authenticate into the legacy API and send enhancement data, Segment needs your Conversion ID and Conversion Label. The Conversion ID is a global setting because it's an account-level ID that's the same for all conversion actions in your Google Ads account. The Conversion Label is unique to each conversion action and is therefore configured per mapping. Find the Conversion ID and Conversion Label in your Google Ads account using the instructions in the article [Google Ads conversions](https://support.google.com/tagmanager/answer/6105160?hl=en){:target="_blank"}.
-> When you use the "Upload Click Conversion", "Upload Call Conversion", and "Upload Conversion Adjustment" actions, Segment sends data to the new Google Ads API. To authenticate into the Google Ads API, Segment needs your Customer ID and Conversion Action ID. The Customer ID is a global setting because it's an account-level ID that's the same for all conversion actions in your Google Ads account. The Conversion Action ID is unique to each conversion action and is therefore configured per mapping. The Conversion Action ID can only be found in the browser URL of your given conversion action under the `ctId` parameter. For example, if the URL is `https://ads.google.com/aw/conversions/detail?ocid=00000000&ctId=576882000`, your Conversion Action ID is `576882000`.
-> Please note that the Conversion ID, Conversion Label, Customer ID, and Conversion Action ID should always be different values.
+> When you use the "Upload Enhanced Conversion (Legacy)" action, Segment sends data to the legacy Enhanced Conversions API. To authenticate into the legacy API and send enhancement data, Segment needs your Conversion ID and Conversion Label. 
+> 
+> The Conversion ID is a global setting because it's an account-level ID that's the same for all conversion actions in your Google Ads account. 
+> 
+> The Conversion Label is unique to each conversion action and is therefore configured per mapping. Find the Conversion ID and Conversion Label in your Google Ads account using the instructions in the article [Google Ads conversions](https://support.google.com/tagmanager/answer/6105160?hl=en){:target="_blank"}.
+
+> info ""
+> When you use the "Upload Click Conversion", "Upload Call Conversion", and "Upload Conversion Adjustment" actions, Segment sends data to the new Google Ads API. 
+> 
+> To authenticate into the Google Ads API, Segment needs your Customer ID and Conversion Action ID. The Customer ID is a global setting because it's an account-level ID that's the same for all conversion actions in your Google Ads account. The Conversion Action ID is unique to each conversion action and is  configured per mapping. The Conversion Action ID can only be found in the browser URL of your given conversion action under the `ctId` parameter. For example, if the URL is `https://ads.google.com/aw/conversions/detail?ocid=00000000&ctId=576882000`, your Conversion Action ID is `576882000`.
+
+
+> info ""
+> Conversion ID, Conversion Label, Customer ID, and Conversion Action ID should always be different values.
 
 {% include components/actions-fields.html settings="true"%}
 
