@@ -137,7 +137,7 @@ Mailchimp doesn't support arrays as traits values. This can cause calls to not s
 
 You can send computed traits and audiences generated using [Engage](/docs/engage/) to Mailchimp as a **user property**. To learn more about Engage, schedule a [demo](https://segment.com/demo/){:target="_blank"}.
 
-Segment sends an [identify call](/docs/connections/spec/identify/) to the Mailchimp destination for each user being added and removed. The Mailchimp destination requires an email field in all Identify payloads before Segment can send events to Mailchimp. If an profile doesn't have an email identifier when the audience or trait is created, then the event will fail, and will not be sent to Mailchimp. 
+Segment sends an [`identify` call](/docs/connections/spec/identify/) to the Mailchimp destination for each user being added and removed. The Mailchimp destination requires an email field in all Identify payloads before Segment can send events to Mailchimp. If an profile doesn't have an email identifier when the audience or trait is created, then the event will fail, and will not be sent to Mailchimp. 
 
 > success ""
 > Before creating audiences or computed traits with Engage, you must first create merge fields in Mailchimp. Learn more about [recording custom user traits](#recording-custom-user-traits) and [sending custom merge fields](#custom-merge-fields) to Mailchimp.
