@@ -34,20 +34,74 @@ All Segment customers with a US business address may be subject to state and loc
 
 Segment currently charges sales tax in the these states:
 
+- Alabama
 - Arizona
+- Arkansas
 - Colorado (Denver only)
 - Connecticut
 - District of Columbia
+- Florida
+- Hawaii
 - Illinois (Chicago only)
+- Maryland
 - Massachusetts
+- Minnesota
+- Mississippi
+- Nebraska
+- New Jersey
+- New Mexico
 - New York
 - Ohio
 - Pennsylvania
+- Rhode Island
 - South Carolina
+- South Dakota
 - Tennessee
 - Texas
 - Utah
 - Washington
+- West Virginia
+- Wisconsin
+
+Additionally, Segment may charge sales tax in the following countries or regions:
+
+- countries in the European Economic Area (EAA)
+  - Austria
+  - Belgium
+  - Bulgaria
+  - Croatia
+  - Cyprus
+  - Czech Republic
+  - Denmark
+  - Estonia
+  - Finland
+  - France
+  - Germany
+  - Greece
+  - Hungary
+  - Ireland
+  - Italy
+  - Latvia
+  - Lithuania
+  - Luxembourg
+  - Malta
+  - Netherlands
+  - Poland
+  - Portugal
+  - Romania
+  - Slovakia
+  - Slovenia
+  - Spain
+  - Sweden
+- Australia
+- Canada
+- Iceland
+- Liechtenstein
+- Monaco
+- Norway
+- Singapore
+- Switzerland
+- United Kingdom
 
 ## Do I qualify for a tax exemption?
 
