@@ -30,7 +30,7 @@ The Public API includes the following benefits over the Config API:
 
 To enhance API token security, Segment partners with GitHub to prevent fraudulent use of exposed API tokens found in public git repositories. This helps to prevent malicious actors from using exposed tokens to perform unauthorized actions in your Segment workspace. 
 
-GitHub scans each commit in public repositories for Public API tokens and detected tokens are sent to Segment. Valid tokens are automatically revoked and workspace owners are notified. This process, GitHub identifying a token and Segment revoking it, typically takes seconds.
+Within seconds, GitHub scans each commit in public repositories for Public API tokens, and sends detected tokens to Segment. Valid tokens are automatically revoked and workspace owners are notified. 
 
 Learn more about [GitHub's secret scanning program](https://docs.github.com/en/developers/overview/secret-scanning-partner-program){:target="_blank"}.
 
