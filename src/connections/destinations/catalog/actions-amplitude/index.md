@@ -33,8 +33,6 @@ Amplitude (Actions) provides the following benefits over the classic Amplitude d
 4. Click the "Amplitude" item to select it and click **Configure**.
 5. Choose which of your sources to connect the destination to. (You can connect more sources to the destination later.)
 
-{% include components/actions-fields.html settings="true"%}
-
 Once you have a mapping, you can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
 ### Log Purchases in existing destination instances
@@ -217,3 +215,15 @@ You configure the Amplitude (Actions) destination through Filters and Actions. C
 > Contact Segment support if you find features missing from the Amplitude (Actions) destination that were available in the classic Amplitude destination.
 
 {% include components/actions-map-table.html name="amplitude" %}
+
+## Advanced Amplitude (Actions) settings
+
+### Increment Traits
+The `traitsToIncrement` setting increases a user property by some numerical value. If the user property does not have a value set yet, Segment initializes it with a value of 0. The trait must have a numerical value so it can be incremented.
+
+In the following example, the Amplitude User property `friendCount` equals 4.
+
+``` js
+"traits" : {"$add": {"friendCount": 3} }
+"traits" : {"$add": {"friendCount": 1} }
+```
