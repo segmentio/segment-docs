@@ -300,17 +300,6 @@ sections:
     title: Profiles and GDPR
   - path: /profiles/faqs
     title: Profiles FAQs
-  - path: /profiles/profile-api
-    title: Profile API
-  - path: /profiles/profile-api-limits
-    title: Profile API Limits
-  - path: /profiles/debugger
-    title: Profile Debugger
-  - path: /profiles/profiles-gdpr
-    title: Profiles and GDPR
-  - path: /profiles/faqs
-    title: Profiles FAQs
-
 
 - section_title: Engage
   section:
