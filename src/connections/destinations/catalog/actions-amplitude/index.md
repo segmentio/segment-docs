@@ -12,7 +12,7 @@ redirect_from:
 {% include content/plan-grid.md name="actions" %}
 
 
-[Amplitude](https://amplitude.com/) is an event tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users
+[Amplitude](https://amplitude.com/){:target="_blank"} is an event tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users
 perform, you can gain a better understanding to drive retention, engagement, and conversion.
 
 
