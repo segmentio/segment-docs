@@ -133,4 +133,4 @@ This works for any [context field](/docs/connections/spec/common/#context) that 
 
 ## Known issues:
 
-[Review and contribute to these on GitHub](https://github.com/segmentio/analytics.js/issues)
+[Review and contribute to these on GitHub](https://github.com/segmentio/analytics.js/issues) 
