@@ -44,7 +44,7 @@ A Segment Customer Success team member will respond that they have enabled this 
 
 ## CloudFront
 
-These instructions refer to Amazon CloudFront, but apply more generally to other providers as well.
+These instructions refer to Amazon CloudFront, but apply more generally to other providers as well.  
 
 ### CDN Proxy
 To set up your CDN Proxy: 
