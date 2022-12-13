@@ -92,6 +92,13 @@ var Analytics = require('analytics-node');
 var Objects = require('objects-node');
 
 var analytics = new Analytics(process.env.write_key);
+
+// NOTE: if you are sending to an EU based source, analytics will need to be initialized
+// with EU tracking API URL.
+// var analytics = new Analytics(process.env.write_key, {
+//   host: "https://events.eu1.segmentapis.com"
+// });
+
 var objects = new Objects(process.env.write_key);
 var s3 = new AWS.S3();
 
