@@ -93,7 +93,7 @@ var Objects = require('objects-node');
 
 var analytics = new Analytics(process.env.write_key);
 
-// NOTE: if you are sending to an EU based source, analytics will need to be initialized
+// NOTE: if you are sending to an EU based source, `analytics-node` will need to be initialized
 // with EU tracking API URL.
 // var analytics = new Analytics(process.env.write_key, {
 //   host: "https://events.eu1.segmentapis.com"
