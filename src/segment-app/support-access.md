@@ -1,27 +1,19 @@
 ---
-title: Granting Segment Support Access
-hidden: true
+title: Support Access
 ---
-You can contact Segment Product Support by [submitting a ticket](https://segment.com/help/contact/).
+To best assist you after you submit a support ticket, Segment's Customer Success Engineers may request temporary access to your workspace. Once you grant access to your workspace, CSEs can access your workspace for up to 7 days, or until you revoke access.
 
-If you submit a particularly tricky ticket to our Segment Support Engineers, we might ask you to grant temporary access to your Segment account so we can troubleshoot your issue. Once granted access, a Segment Support Engineer can access your account for up to 7 days. You can also revoke Support Access at any time. This option is always available to you, but you only need to grant access when it is recommended by a Segment Support Engineer.
-> note ""
-> *Note*: Support Access is not available for workspaces using forced-SSO at this time.
+> info ""
+> Support Access is not available for workspaces using forced-SSO at this time.
 
 ## Granting a Segment Support Engineer access to your account
-Support Access is available for all Segment Workspace Owners and can be found under your [Workspace Settings](https://app.segment.com/goto-my-workspace/settings/support-access).
+Support Access is available for all Segment Workspace Owners and can be found on the **Support Access** tab of the  [Workspace Settings](https://app.segment.com/goto-my-workspace/settings/support-access) page.
 
 Click **Grant Access** to allow a Segment Support Engineer to access your account.
 
-When Segment Support no longer needs access to your account, simply revoke access at any time.
 
-![The Segment Settings page before granting Support Access](images/support-access-before.png)
-_The Segment Settings page before granting Support Access_
+## Support privileges
 
-![The Segment Settings page after granting Support Access](images/support-access-after.png)
-_The Segment Settings page after granting Support Access_
-
-**What can a Segment Support Engineer do in my account?**
 When you grant Support Access, the Segment Support Engineers can do everything that you can do in your workspace.
 
 ## How do I know it's working?
