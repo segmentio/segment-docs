@@ -43,7 +43,7 @@ The following roles are only available to Segment Business Tier accounts.
 
 
 #### Profiles and Engage Read-only
-* Read-only access to Profiles settings and if purchased, edit access to Engage audiences, traits, journeys, and content. Cannot download PII or edit settings in Profiles or Engage.
+* Read-only access to Profiles settings and if purchased, Engage audiences, traits, journeys, and content. Cannot download PII or edit settings in Profiles or Engage.
 * **Scope:** Grants access to either: all current and future Spaces, or a specific list of Spaces, or Spaces with a specific Label (BT only).
 
 #### Profiles Read-only, Engage User
@@ -53,17 +53,17 @@ The following roles are only available to Segment Business Tier accounts.
 #### Tracking Plan Admin
 * Edit access to all Tracking Plans in Protocols.
 * **Scope:** Grants access to *all* Tracking Plans.
-  
+
 #### Tracking Plan Read-only
 * Read access to all Tracking Plans in Protocols.
 * **Scope:** Grants access to *all* Tracking Plans.
 
-#### Warehouse Admin
-* Edit access to all warehouses and warehouse settings.
+#### Warehouse Destination Admin
+* Edit access to warehouse destinations and warehouse destination settings. *(For example, Redshift, Postgres, BigQuery)*  
 * **Scope:** Grants access to *all* warehouses.
 
-#### Warehouse Read-only
-* Read access to all warehouses and warehouse settings.
+#### Warehouse Destination Read-only
+* Read-only access warehouse destination and warehouse destination settings. *(For example, Redshift, Postgres, BigQuery)*
 * **Scope:** Grants access to *all* warehouses.
 
 

@@ -499,6 +499,7 @@ If you use a Java codebase, please refer to the [Java Compatibility docs](https:
 Segment currently supports these destinations for Analytics Kotlin and is actively adding more:
 * [Amplitude](https://github.com/segment-integrations/analytics-kotlin-amplitude)
 * [Appsflyer](https://github.com/segment-integrations/analytics-kotlin-appsflyer)
+* [Braze](https://github.com/braze-inc/braze-segment-kotlin)
 * [Firebase](https://github.com/segment-integrations/analytics-kotlin-firebase)
 * [Mixpanel](https://github.com/segment-integrations/analytics-kotlin-mixpanel)
 

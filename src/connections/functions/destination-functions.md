@@ -320,7 +320,7 @@ Standard [function error types](/docs/connections/functions/destination-function
 ]
 ```
 
-After receiving the response from the `onBatch` handler, only **event_3** and **event_4** will be retried.
+After receiving the response from the `onBatch` handler, Segment only retries **event_4** and **event_5**.
 
 | Error Type             | Result  |
 | ---------------------- | ------- |
@@ -443,7 +443,7 @@ In addition to using [Destination Filters](/docs/connections/destinations/destin
 ...
 ```
 
-In the example above, the integrations object directly references and enables the `My Destination Function`. Be sure to include the workspace name in which the destination function is created, as shown. Like all items in the integration object, destination functions (and workspace names) are case sensitive.
+In the example above, the integrations object directly references and enables the destination function (`My Destination Function`), located inside your workspace (`My Workspace`). Include the workspace name in parentheses, as shown in the example above. Like all items in the integration object, destination function and workspace names are case sensitive.
 
 ## Destination functions FAQs
 

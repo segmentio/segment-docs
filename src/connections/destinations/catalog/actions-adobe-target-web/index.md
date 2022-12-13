@@ -11,9 +11,6 @@ Segment offers two destinations for Adobe Target:
 - [Adobe Target Web](/docs/connections/destinations/catalog/actions-adobe-target-web/)
 - [Adobe Target Cloud Mode](/docs/connections/destinations/catalog/actions-adobe-target-cloud/)
 
-> info ""
-> The Adobe Target Web destination is in beta and is in active development. Some functionality may change before it becomes generally available.
-
 > success "Good to know"
 > This page is about Segment's Adobe Target Web destination. There's also a page about Segment's [Adobe Target Cloud Mode destination](/docs/connections/destinations/catalog/actions-adobe-target-cloud/).
 
