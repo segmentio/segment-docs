@@ -2,27 +2,15 @@
 title: Ripe Destination (Actions)
 hide-boilerplate: true
 hide-dossier: true
+id: 63913b2bf906ea939f153851
+private: true
 ---
 
-{% include content/plan-grid.md name="actions" %}
+[Ripe](https://www.getripe.com/){target="_blank"} is a product-led sales platform that empowers you to unlock revenue pipeline with product data. By identifying and showing which prospects to focus efforts on, you can convert leads into meetings, inside your product.
 
-[Ripe](https://www.getripe.com/){target="_blank"} is a product-led sales
-platform that empowers you to unlock revenue pipeline with product data. By
-identifying and showing which prospects to focus efforts on, you can convert
-leads into meetings, inside your product.
+This destination enables you to send product data to Ripe. Sales teams can identify who decision-makers and product champions are by understanding what properties they have and what events they have triggered. The Ripe destination is built as an alternative to directly adding Ripe’s SDK script to your app or site.
 
-This destination enables you to send product data to Ripe. Sales teams can
-identify who decision-makers and product champions are by understanding what
-properties they have and what events they have triggered. The Ripe destination
-is built as an alternative to directly adding Ripe’s SDK script to your app or
-site.
-
-The Ripe Segment integration is
-an [Actions-based Destination in device mode](/docs/connections/destinations/#connection-modes)
-that loads and configures Ripe’s SDK script for you. If you’re already using
-Segment’s Analytics.js for identifying and tracking your users, either directly
-or through Segment source integrations that you’ve installed, you can configure
-Segment to send this data directly to Ripe.
+The Ripe Segment integration is an [Actions-based Destination in device mode](/docs/connections/destinations/#connection-modes) that loads and configures Ripe’s SDK script for you. If you’re already using Segment’s Analytics.js for identifying and tracking your users, either directly or through Segment source integrations that you’ve installed, you can configure Segment to send this data directly to Ripe.
 
 {% include content/ajs-upgrade.md %}
 
@@ -30,18 +18,15 @@ Segment to send this data directly to Ripe.
 
 Ripe provides the following benefits:
 
-- **Be relevant**. The Ripe destination understands key events in Segment to
-  identify relevant leads, and shows its widget selectively to them.
-- **Quick integration**. Using the Ripe destination is the fastest way to start
-  combining key product events with sales data and start targeting ripe leads.
-- **More control**. You can customize the conditions under which the events are
-  sent to Ripe.
+- **Be relevant**. The Ripe destination understands key events in Segment to identify relevant leads, and shows its widget selectively to them.
+- **Quick integration**. Using the Ripe destination is the fastest way to start combining key product events with sales data and start targeting ripe leads.
+- **More control**. You can customize the conditions under which the events are sent to Ripe.
 
 ## Getting started
 
 > info ""
-> Make sure that you have set up an API key in the Ripe app before you start
-> <add link to API key page in app?>.
+> Before you begin, create an API key in Ripe which you'll use to configure the integration.
+
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Find the Destinations Actions item in the left navigation, and click it.
@@ -51,14 +36,12 @@ Ripe provides the following benefits:
 
 {% include components/actions-fields.html %}
 
+{% comment %}
 ## Ripe SDK
 
 ### Identify
 
-When you have a unique identifier for a user, preferably an id from your
-database, this should be called. Typically when a user logs in or updates her
-email. If a `user_id` is not provided an automatically generated anonymous_id
-will be used.
+When you have a unique identifier for a user, preferably an identifier from your database, call this method. For example, when a user logs in or updates their email. If you don't provide a `user_id` is not provided an automatically generated `anonymous_id` will be used.
 
 If you aren't familiar with the Segment Spec, take a look at
 the [Identify method documentation](/docs/connections/spec/identify/) to learn
@@ -140,5 +123,6 @@ Segment sends Page calls to Ripe as a `alias` event.
 
 ### Segment session
 
-Ripe will use the `userId`, `anonymous` and `groupId` set in Segment and our
-SDK keeps track of the current ids. 
+Ripe will use the `userId`, `anonymous` and `groupId` set in Segment and the Ripe SDK keeps track of the current ids. 
+
+{% endcomment %}
