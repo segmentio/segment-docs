@@ -3,6 +3,7 @@ title: Segment Destination
 hide-boilerplate: true
 hide-dossier: false
 id: 6371eee1ae5e324869aa8b1b
+private: true
 ---
 
 The Segment destination enables you to mold data extracted from your warehouse into [Segment Spec](/docs/connections/spec/) API calls that can be processed by Segment's Tracking API.
