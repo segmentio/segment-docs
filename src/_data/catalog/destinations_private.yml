@@ -2159,6 +2159,1240 @@ items:
           traits:
             '@path': $.traits
         trigger: type = "identify"
+  - id: 6371eee1ae5e324869aa8b1b
+    display_name: Segment
+    name: Segment
+    slug: actions-segment
+    previous_names:
+      - Segment
+    website: http://www.segment.com
+    status: PRIVATE_BETA
+    logo:
+      url: https://cdn.filepicker.io/api/file/alMBNLNZQon4th4eYp6R
+    mark:
+      url: https://cdn.filepicker.io/api/file/IH1RvUgRSUu9PvEnLw9x
+    methods:
+      track: true
+      pageview: true
+      identify: true
+      group: true
+      alias: true
+    platforms:
+      browser: true
+      mobile: false
+      server: true
+      warehouse: true
+    components: []
+    browserUnbundlingSupported: false
+    browserUnbundlingPublic: false
+    replay: false
+    settings:
+      - name: endpoint
+        type: select
+        defaultValue: north_america
+        description: The region to send your data.
+        required: true
+        label: Endpoint Region
+      - name: source_write_key
+        type: string
+        defaultValue: ''
+        description: The **Write Key** of a Segment source.
+        required: true
+        label: Source Write Key
+    actions:
+      - id: i9hk8hjh6xWfPTFdgcg3DB
+        name: Send Page
+        slug: sendPage
+        description: >-
+          Send a page call to Segment’s tracking API. This is used to track
+          website page views.
+        platform: CLOUD
+        hidden: false
+        defaultTrigger: type = "page"
+        fields:
+          - id: 8AgGw4GJQYw3VQ464DgAch
+            sortOrder: 0
+            fieldKey: user_id
+            label: User ID
+            type: STRING
+            description: >-
+              Unique identifier for the user in your database. A userId or an
+              anonymousId is required.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 4xQCZgtCbqh8AuUyiWRaiZ
+            sortOrder: 1
+            fieldKey: anonymous_id
+            label: Anonymous ID
+            type: STRING
+            description: >-
+              A pseudo-unique substitute for a User ID, for cases when you don’t
+              have an absolutely unique identifier. A userId or an anonymousId
+              is required.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: xfVnBacHUQgyJRC1z3NHfu
+            sortOrder: 2
+            fieldKey: timestamp
+            label: Timestamp
+            type: STRING
+            description: >-
+              Timestamp when the message itself took place as a ISO-8601 format
+              date string. Defaults to current time if not provided.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 9r5e3fd9Nx9aqMtpRYoFkM
+            sortOrder: 3
+            fieldKey: page_name
+            label: Page Name
+            type: STRING
+            description: Name of the page that was viewed.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: asuKJjBnuzddZffvBwWQVP
+            sortOrder: 4
+            fieldKey: page_category
+            label: Page Category
+            type: STRING
+            description: Category of the page that was viewed.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: jDxQXAiWpixxqSTs3q6Wda
+            sortOrder: 5
+            fieldKey: application
+            label: Application
+            type: OBJECT
+            description: Dictionary of information about the current application.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: gkiu8X8ifLmw3iDzDNmYhv
+            sortOrder: 6
+            fieldKey: campaign_parameters
+            label: Campaign Parameters
+            type: OBJECT
+            description: >-
+              Dictionary of information about the campaign that resulted in the
+              API call. This maps directly to the common UTM campaign
+              parameters.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: mHy21ggvJxExyPApzvwBbs
+            sortOrder: 7
+            fieldKey: device
+            label: Device
+            type: OBJECT
+            description: >-
+              Dictionary of information about the device the API call originated
+              from.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: jBtwDzWQPp1TvPtw1f9wxv
+            sortOrder: 8
+            fieldKey: ip_address
+            label: IP Address
+            type: STRING
+            description: The current user’s IP address.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 3WbVJhJ4nvKS5a6py6Mtpf
+            sortOrder: 9
+            fieldKey: locale
+            label: Locale
+            type: STRING
+            description: Locale string for the current user, for example en-US.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: pNLHJ1wN7bXJ1ZaFbiydsq
+            sortOrder: 10
+            fieldKey: location
+            label: Location
+            type: OBJECT
+            description: Dictionary of information about the user’s current location.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: m2Svdtj2Pfz7riENp2rdAU
+            sortOrder: 11
+            fieldKey: network
+            label: Network
+            type: OBJECT
+            description: Dictionary of information about the current network connection.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 42b1pXNbaLCeSCxzSM7Ne3
+            sortOrder: 12
+            fieldKey: operating_system
+            label: Operating System
+            type: OBJECT
+            description: Dictionary of information about the operating system.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 7hnJR1ks8FKkCXMFHJxPLv
+            sortOrder: 13
+            fieldKey: page
+            label: Page
+            type: OBJECT
+            description: Dictionary of information about the current page in the browser.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: rqLbhoB24XhdUp82W8ppvL
+            sortOrder: 14
+            fieldKey: screen
+            label: Screen
+            type: OBJECT
+            description: Dictionary of information about the device’s screen.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: c5YCzQGsJsZzb5yjtRkc6j
+            sortOrder: 15
+            fieldKey: user_agent
+            label: User Agent
+            type: STRING
+            description: User agent of the device the API call originated from.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 9PmRmbtPNvJdfQoq8tA2Ez
+            sortOrder: 16
+            fieldKey: timezone
+            label: Timezone
+            type: STRING
+            description: >-
+              The user’s timezone as a tz database string, for example
+              America/New_York.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: uAMXJnTYmfRY2wUFyCthaD
+            sortOrder: 17
+            fieldKey: group_id
+            label: Group ID
+            type: STRING
+            description: The group or account ID a user is associated with.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: mBwQGGp5DVrWWGrzZtJuge
+            sortOrder: 18
+            fieldKey: properties
+            label: Properties
+            type: OBJECT
+            description: Free-form dictionary of properties that describe the screen.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+      - id: oiFvX4YXwyaPVysi1t7mtz
+        name: Send Track
+        slug: sendTrack
+        description: >-
+          Send a track call to Segment’s tracking API. This is used to record
+          actions your users perform.
+        platform: CLOUD
+        hidden: false
+        defaultTrigger: type = "track"
+        fields:
+          - id: xtqDvYByzRU15iz6N4BSrQ
+            sortOrder: 0
+            fieldKey: user_id
+            label: User ID
+            type: STRING
+            description: >-
+              Unique identifier for the user in your database. A userId or an
+              anonymousId is required.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: v6ycXkm42uJK9wh39dofKF
+            sortOrder: 1
+            fieldKey: anonymous_id
+            label: Anonymous ID
+            type: STRING
+            description: >-
+              A pseudo-unique substitute for a User ID, for cases when you don’t
+              have an absolutely unique identifier. A userId or an anonymousId
+              is required.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: dJ1SsGAyZ4gnT9G9WGZumU
+            sortOrder: 2
+            fieldKey: timestamp
+            label: Timestamp
+            type: STRING
+            description: >-
+              Timestamp when the message itself took place as a ISO-8601 format
+              date string. Defaults to current time if not provided.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 2xgHSiA76zMaS71dPLtbkG
+            sortOrder: 3
+            fieldKey: event_name
+            label: Event Name
+            type: STRING
+            description: Name of the action that a user has performed.
+            placeholder: ''
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: pvPqujYmKhb9wGrZ9wwX8x
+            sortOrder: 4
+            fieldKey: application
+            label: Application
+            type: OBJECT
+            description: Dictionary of information about the current application.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: uLXqRhPGKXVkjPXsrGfkLD
+            sortOrder: 5
+            fieldKey: campaign_parameters
+            label: Campaign Parameters
+            type: OBJECT
+            description: >-
+              Dictionary of information about the campaign that resulted in the
+              API call. This maps directly to the common UTM campaign
+              parameters.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 9UVKNkWapT8eRtUbPKqfAK
+            sortOrder: 6
+            fieldKey: device
+            label: Device
+            type: OBJECT
+            description: >-
+              Dictionary of information about the device the API call originated
+              from.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: kgDfbvgedh5Z9y1AmRy7jD
+            sortOrder: 7
+            fieldKey: ip_address
+            label: IP Address
+            type: STRING
+            description: The current user’s IP address.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: hdwYXb6n8YCBHHWZTipiz3
+            sortOrder: 8
+            fieldKey: locale
+            label: Locale
+            type: STRING
+            description: Locale string for the current user, for example en-US.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: aEYmhhEpcu7y396va69HkG
+            sortOrder: 9
+            fieldKey: location
+            label: Location
+            type: OBJECT
+            description: Dictionary of information about the user’s current location.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: fHwSXspwyPXc7PfMq5mn98
+            sortOrder: 10
+            fieldKey: network
+            label: Network
+            type: OBJECT
+            description: Dictionary of information about the current network connection.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: jmcrBmQt1hc6jwSMy5cag5
+            sortOrder: 11
+            fieldKey: operating_system
+            label: Operating System
+            type: OBJECT
+            description: Dictionary of information about the operating system.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: mbQXF4i2hATEWvP6EpGc4s
+            sortOrder: 12
+            fieldKey: page
+            label: Page
+            type: OBJECT
+            description: Dictionary of information about the current page in the browser.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: nvys68ELwzv8vbbhpqo1z5
+            sortOrder: 13
+            fieldKey: screen
+            label: Screen
+            type: OBJECT
+            description: Dictionary of information about the device’s screen.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 7wuTAz2wN6RF26aazgSN4t
+            sortOrder: 14
+            fieldKey: user_agent
+            label: User Agent
+            type: STRING
+            description: User agent of the device the API call originated from.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: mXEQmVJUjD4TgYBFMFGemK
+            sortOrder: 15
+            fieldKey: timezone
+            label: Timezone
+            type: STRING
+            description: >-
+              The user’s timezone as a tz database string, for example
+              America/New_York.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 2V9jtm7AFLoqa2UN99NdzN
+            sortOrder: 16
+            fieldKey: group_id
+            label: Group ID
+            type: STRING
+            description: The group or account ID a user is associated with.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: bVzrSU6igiWiorQFwUGhL3
+            sortOrder: 17
+            fieldKey: properties
+            label: Properties
+            type: OBJECT
+            description: Free-form dictionary of properties that describe the screen.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+      - id: r2Ho4HQvhcfqxm1UBFue7K
+        name: Send Identify
+        slug: sendIdentify
+        description: >-
+          Send an identify call to Segment’s tracking API. This is used to tie
+          your users to their actions and record traits about them.
+        platform: CLOUD
+        hidden: false
+        defaultTrigger: type = "identify"
+        fields:
+          - id: 7M4wq4KY4APRWyqRMhgQB8
+            sortOrder: 0
+            fieldKey: user_id
+            label: User ID
+            type: STRING
+            description: >-
+              Unique identifier for the user in your database. A userId or an
+              anonymousId is required.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: pRfbmc8KQTTZYPKHMyEayf
+            sortOrder: 1
+            fieldKey: anonymous_id
+            label: Anonymous ID
+            type: STRING
+            description: >-
+              A pseudo-unique substitute for a User ID, for cases when you don’t
+              have an absolutely unique identifier. A userId or an anonymousId
+              is required.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 9TV7DNAnm49ugNAc7J7CxR
+            sortOrder: 2
+            fieldKey: timestamp
+            label: Timestamp
+            type: STRING
+            description: >-
+              Timestamp when the message itself took place as a ISO-8601 format
+              date string. Defaults to current time if not provided.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: aYsvDvEz6yRZixubvzMRmB
+            sortOrder: 3
+            fieldKey: application
+            label: Application
+            type: OBJECT
+            description: Dictionary of information about the current application.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: ufXrbiywid8mrYEXtmAggh
+            sortOrder: 4
+            fieldKey: campaign_parameters
+            label: Campaign Parameters
+            type: OBJECT
+            description: >-
+              Dictionary of information about the campaign that resulted in the
+              API call. This maps directly to the common UTM campaign
+              parameters.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: mQ8v2R17M1wsP1LQiGqFwD
+            sortOrder: 5
+            fieldKey: device
+            label: Device
+            type: OBJECT
+            description: >-
+              Dictionary of information about the device the API call originated
+              from.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 3GTTeH6gcs8Aviv7VZ5C5c
+            sortOrder: 6
+            fieldKey: ip_address
+            label: IP Address
+            type: STRING
+            description: The current user’s IP address.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 285WsGN8xYNrqnUQDtvAey
+            sortOrder: 7
+            fieldKey: locale
+            label: Locale
+            type: STRING
+            description: Locale string for the current user, for example en-US.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: qHY8FTkq2WC6oqCYDe8aws
+            sortOrder: 8
+            fieldKey: location
+            label: Location
+            type: OBJECT
+            description: Dictionary of information about the user’s current location.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: ZscveZ2NLYGSWDzLXs8gV
+            sortOrder: 9
+            fieldKey: network
+            label: Network
+            type: OBJECT
+            description: Dictionary of information about the current network connection.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: f8vWpXuYq8NWEuWMVUyJys
+            sortOrder: 10
+            fieldKey: operating_system
+            label: Operating System
+            type: OBJECT
+            description: Dictionary of information about the operating system.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: adoJvV2vekcfb66sXYcbPP
+            sortOrder: 11
+            fieldKey: page
+            label: Page
+            type: OBJECT
+            description: Dictionary of information about the current page in the browser.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: e5rn7mVgTVXARatXri7Hwt
+            sortOrder: 12
+            fieldKey: screen
+            label: Screen
+            type: OBJECT
+            description: Dictionary of information about the device’s screen.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: pN2qTVEuXG1QqqPRaCNCgH
+            sortOrder: 13
+            fieldKey: user_agent
+            label: User Agent
+            type: STRING
+            description: User agent of the device the API call originated from.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 9vDiL3NDkU6pM1rFYwL7jD
+            sortOrder: 14
+            fieldKey: timezone
+            label: Timezone
+            type: STRING
+            description: >-
+              The user’s timezone as a tz database string, for example
+              America/New_York.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: og7rjfhta6o1gYD9KCrRTy
+            sortOrder: 15
+            fieldKey: group_id
+            label: Group ID
+            type: STRING
+            description: The group or account ID a user is associated with.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: iJPhXRMPiRtWKsjzWqjDQ4
+            sortOrder: 16
+            fieldKey: traits
+            label: Traits
+            type: OBJECT
+            description: >-
+              Free-form dictionary of traits that describe the user or group of
+              users.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+      - id: sx4xn2b4hUhixBcDY3SHJU
+        name: Send Group
+        slug: sendGroup
+        description: >-
+          Send a group call to Segment’s tracking API. This is used to associate
+          an individual user with a group
+        platform: CLOUD
+        hidden: false
+        defaultTrigger: type = "group"
+        fields:
+          - id: iR5e8jDYryMKHXcCbf7Luv
+            sortOrder: 0
+            fieldKey: user_id
+            label: User ID
+            type: STRING
+            description: >-
+              Unique identifier for the user in your database. A userId or an
+              anonymousId is required.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: uD65qBjMDqNUsyV1WGN1oX
+            sortOrder: 1
+            fieldKey: anonymous_id
+            label: Anonymous ID
+            type: STRING
+            description: >-
+              A pseudo-unique substitute for a User ID, for cases when you don’t
+              have an absolutely unique identifier. A userId or an anonymousId
+              is required.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: jCe4UayeFcGywVrA1Cgcmu
+            sortOrder: 2
+            fieldKey: group_id
+            label: Group ID
+            type: STRING
+            description: The group or account ID a user is associated with.
+            placeholder: ''
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: h1em4ttQCeTo7HmE3sTCtn
+            sortOrder: 3
+            fieldKey: timestamp
+            label: Timestamp
+            type: STRING
+            description: >-
+              Timestamp when the message itself took place as a ISO-8601 format
+              date string. Defaults to current time if not provided.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 8DFoiRL4Mez9CkeXRBo1oq
+            sortOrder: 4
+            fieldKey: application
+            label: Application
+            type: OBJECT
+            description: Dictionary of information about the current application.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 21h25hpiYFAz1KYYTqFUeF
+            sortOrder: 5
+            fieldKey: campaign_parameters
+            label: Campaign Parameters
+            type: OBJECT
+            description: >-
+              Dictionary of information about the campaign that resulted in the
+              API call. This maps directly to the common UTM campaign
+              parameters.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: gPKyUGjob4fYNPjx357wXA
+            sortOrder: 6
+            fieldKey: device
+            label: Device
+            type: OBJECT
+            description: >-
+              Dictionary of information about the device the API call originated
+              from.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: kp916nLT3gYLsh5cFtbjFt
+            sortOrder: 7
+            fieldKey: ip_address
+            label: IP Address
+            type: STRING
+            description: The current user’s IP address.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: fA43jh8aKKV6fUa69UDPbq
+            sortOrder: 8
+            fieldKey: locale
+            label: Locale
+            type: STRING
+            description: Locale string for the current user, for example en-US.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 4pWbe7HJKgsPpLeD7CxTZh
+            sortOrder: 9
+            fieldKey: location
+            label: Location
+            type: OBJECT
+            description: Dictionary of information about the user’s current location.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: pUosjmGhjj1RZmK3DjGwcM
+            sortOrder: 10
+            fieldKey: network
+            label: Network
+            type: OBJECT
+            description: Dictionary of information about the current network connection.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: wSFk8tf3qJ7Q1ygYLexT41
+            sortOrder: 11
+            fieldKey: operating_system
+            label: Operating System
+            type: OBJECT
+            description: Dictionary of information about the operating system.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 3ftpovVyyy8N9WbZupzzgJ
+            sortOrder: 12
+            fieldKey: page
+            label: Page
+            type: OBJECT
+            description: Dictionary of information about the current page in the browser.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 6qGvApqy5ZNnd6tq2NvgfJ
+            sortOrder: 13
+            fieldKey: screen
+            label: Screen
+            type: OBJECT
+            description: Dictionary of information about the device’s screen.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: wmw4NoQFeJSw6sVTGqBbr2
+            sortOrder: 14
+            fieldKey: user_agent
+            label: User Agent
+            type: STRING
+            description: User agent of the device the API call originated from.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: qxS9XKJLaZTaPuQ9WWLFfn
+            sortOrder: 15
+            fieldKey: timezone
+            label: Timezone
+            type: STRING
+            description: >-
+              The user’s timezone as a tz database string, for example
+              America/New_York.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: vhNfALMV245dTeyPfHhnup
+            sortOrder: 16
+            fieldKey: traits
+            label: Traits
+            type: OBJECT
+            description: >-
+              Free-form dictionary of traits that describe the user or group of
+              users.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+      - id: xcwziKpmdnPGrTX3mrwiqX
+        name: Send Screen
+        slug: sendScreen
+        description: >-
+          Send a screen call to Segment’s tracking API. This is used to track
+          mobile app screen views.
+        platform: CLOUD
+        hidden: false
+        defaultTrigger: type = "screen"
+        fields:
+          - id: apycEo7kRuq9KfDJkA6RZo
+            sortOrder: 0
+            fieldKey: user_id
+            label: User ID
+            type: STRING
+            description: >-
+              Unique identifier for the user in your database. A userId or an
+              anonymousId is required.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: cb1DMwkzhwfMA4tDWk1EPL
+            sortOrder: 1
+            fieldKey: anonymous_id
+            label: Anonymous ID
+            type: STRING
+            description: >-
+              A pseudo-unique substitute for a User ID, for cases when you don’t
+              have an absolutely unique identifier. A userId or an anonymousId
+              is required.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: j8mPiveoUY3hwCNAHJMUBF
+            sortOrder: 2
+            fieldKey: timestamp
+            label: Timestamp
+            type: STRING
+            description: >-
+              Timestamp when the message itself took place as a ISO-8601 format
+              date string. Defaults to current time if not provided.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 4Kn2hYfv6Du25wfEH4gmc1
+            sortOrder: 3
+            fieldKey: screen_name
+            label: Screen Name
+            type: STRING
+            description: Name of the screen that was viewed.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: mcNzhxDpdTgKsNr6TgwoEf
+            sortOrder: 4
+            fieldKey: application
+            label: Application
+            type: OBJECT
+            description: Dictionary of information about the current application.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: wCGrdPNbpZAmDyNi2zefcd
+            sortOrder: 5
+            fieldKey: campaign_parameters
+            label: Campaign Parameters
+            type: OBJECT
+            description: >-
+              Dictionary of information about the campaign that resulted in the
+              API call. This maps directly to the common UTM campaign
+              parameters.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: iDeowZ3455evE75XFwSpMk
+            sortOrder: 6
+            fieldKey: device
+            label: Device
+            type: OBJECT
+            description: >-
+              Dictionary of information about the device the API call originated
+              from.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: qEHkSuwYadjSPQUf9w9dxC
+            sortOrder: 7
+            fieldKey: ip_address
+            label: IP Address
+            type: STRING
+            description: The current user’s IP address.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: qn7KZHUhDCfUkxxwUwDWCf
+            sortOrder: 8
+            fieldKey: locale
+            label: Locale
+            type: STRING
+            description: Locale string for the current user, for example en-US.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 9cSeDY12tc4ThRWYnhEej6
+            sortOrder: 9
+            fieldKey: location
+            label: Location
+            type: OBJECT
+            description: Dictionary of information about the user’s current location.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 3J4uoJSfABTr3BaCjWz6hS
+            sortOrder: 10
+            fieldKey: network
+            label: Network
+            type: OBJECT
+            description: Dictionary of information about the current network connection.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: bFGf5vYyyhiPNKQ8cJeRJP
+            sortOrder: 11
+            fieldKey: operating_system
+            label: Operating System
+            type: OBJECT
+            description: Dictionary of information about the operating system.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: iJj8TLUSGyV53KAenbPDDr
+            sortOrder: 12
+            fieldKey: page
+            label: Page
+            type: OBJECT
+            description: Dictionary of information about the current page in the browser.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 8KEDbbKo85wZdnW4fA3wCU
+            sortOrder: 13
+            fieldKey: screen
+            label: Screen
+            type: OBJECT
+            description: Dictionary of information about the device’s screen.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 5CeRn2pTxMoPwW1ohusxTP
+            sortOrder: 14
+            fieldKey: user_agent
+            label: User Agent
+            type: STRING
+            description: User agent of the device the API call originated from.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 9u8vfNWw2R6Jzw179pRUVW
+            sortOrder: 15
+            fieldKey: timezone
+            label: Timezone
+            type: STRING
+            description: >-
+              The user’s timezone as a tz database string, for example
+              America/New_York.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 7SZ9rBEfUeeLF4hn5b1ZsG
+            sortOrder: 16
+            fieldKey: group_id
+            label: Group ID
+            type: STRING
+            description: The group or account ID a user is associated with.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: vboMmHPWR3713A5CP1Vhzs
+            sortOrder: 17
+            fieldKey: properties
+            label: Properties
+            type: OBJECT
+            description: Free-form dictionary of properties that describe the screen.
+            placeholder: ''
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+    presets: []
   - id: 6372e18fb2b3d5d741c34bb6
     display_name: Sabil
     name: Sabil
