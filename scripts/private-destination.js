@@ -20,8 +20,9 @@ const PRIVATE_DESTINATIONS = yaml.load(fs.readFileSync(path.resolve(__dirname, `
 const privateDests = PRIVATE_DESTINATIONS.items
 let private = []
 const getCatalog = async (url, page_token = "MA==") => {
+  let res = null
   try {
-    const res = await axios.get(url, {
+    res = await axios.get(url, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${process.env.PAPI_TOKEN}`
@@ -33,10 +34,14 @@ const getCatalog = async (url, page_token = "MA==") => {
         }
       }
     });
-
     return res.data
-  } catch (error) {
-    console.log(error)
+  } catch (err) {
+    console.error("Error response:");
+    console.error(err.response.data);    // ***
+    console.error(err.response.status);  // ***
+    console.error(err.response.headers); // ***
+  } finally {
+    
   }
 }
 
@@ -48,6 +53,9 @@ const checkDestinationStatus = async (id) => {
 }
 const getDestinationData = async (id) => {
   const res = await getCatalog(`${PAPI_URL}/catalog/destinations/${id}`)
+  if (res == null) {
+    return
+  } 
   let destination = res.data.destinationMetadata
   let settings = destination.options
   settings.sort((a, b) => {
