@@ -78,10 +78,12 @@ sections:
 - slug: salesforce
   section_title: Salesforce Integrations
   section:
-  - path: /connections/destinations/catalog/salesforce
-    title: Salesforce destination
   - path: /connections/destinations/catalog/actions-salesforce
     title: Salesforce (Actions) destination
+  - path: /connections/destinations/catalog/salesforce
+    title: Salesforce destination
+  - path: /connections/destinations/catalog/actions-salesforce-marketing-cloud
+    title: Salesforce Marketing Cloud (Actions) destination
   - path: /connections/destinations/catalog/salesforce-marketing-cloud
     title: Salesforce Marketing Cloud destination
   - path: /connections/destinations/catalog/actions-pardot
