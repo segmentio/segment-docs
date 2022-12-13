@@ -37,7 +37,7 @@ If you prefer, you can enable [Cloud-mode](/docs/connections/destinations/#conne
 
 Our Cloud-mode Adobe Analytics destination also provides support for **Adobe Mobile Services** "states", "actions", and lifecycle events, metrics, and dimensions.
 
-*Note*: Segment only supports Adobe Heartbeat through device-mode implementations, using Segment's JavaScript source or mobile SDKs bundled.
+*Note*: Segment only supports Adobe Heartbeat through device-mode implementations, using Segment's JavaScript source or mobile SDKs bundled. 
 
 ### Connecting Segment to Adobe Analytics
 
