@@ -16,5 +16,8 @@ Segment deduplicates on the event's `messageId`, _not_ on the contents of the e
 ## Warehouse deduplication
 Duplicate events that are more than 24 hours apart from one another deduplicate in the Warehouse. Segment deduplicates messages going into a Warehouse based on the `messageId`, which is the `id` column in a Segment Warehouse.
 
+## Profiles Sync deduplication
+Segment deduplicates Profiles Sync messages based on the `messageId`, which is the `id` column in a Segment Warehouse. Duplicate Profiles Sync events that are more than 24 hours apart from one another deduplicate in the Warehouse.
+
 ## Data Lake deduplication
 To ensure clean data in your Data Lake, Segment removes duplicate events at the time your Data Lake ingests data. The Data Lake deduplication process dedupes the data the Data Lake syncs within the last 7 days with Segment deduping the data based on the `messageId`.
