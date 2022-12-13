@@ -58,7 +58,7 @@ sections:
   - path: /connections/destinations/catalog/google-tag-manager
     title: Google Tag Manager destination
   - path: /connections/destinations/catalog/actions-google-enhanced-conversions
-    title: Google Enhanced Conversions destination
+    title: Google Ads Conversions destination
   - path: /connections/destinations/catalog/doubleclick-floodlight
     title: DoubleClick Floodlight destination
   - path: /connections/destinations/catalog/google-ads-classic
