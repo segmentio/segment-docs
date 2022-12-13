@@ -97,3 +97,17 @@ Refer to [List Suppressions](https://docs.segmentapis.com/tag/Deletion-and-Suppr
 ### List Deletion Requests for your Workspace
 
 Refer to the [List Regulations from Source](https://docs.segmentapis.com/tag/Deletion-and-Suppression#operation/listRegulationsFromSource){:target="_blank"} Public API method.
+
+## Data retention
+
+Set lifecycle policies for the data stored internally in Segment’s secure event Archives, on S3.
+
+These limits represent the amount of time that Segment stores a copy of event data received by any of your sources. Segment recommends keeping at least 30 days of data to enable [Replays](/docs/guides/what-is-replay/) of your data.
+
+### Workspace Default Archive Retention Period
+
+Select the default retention period for the workspace here. This value applies to all sources in the workspace, unless overridden.
+
+### Source-Level Archive Retention Periods
+
+Override the workspace default retention period on a per-source level.
