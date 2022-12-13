@@ -254,7 +254,7 @@ analytics.track({
 });
 ```
 
-_Note_: You can choose to exlicitly send `firstName` or `lastName` separately or just send `name`. We will properly map to `fn` and `ln` properly. If your server has access to Facebook's **Lead IDs** from their Lead Ads product, you can opt to send this using integration specific options:
+_Note_: You can choose to explicitly send `firstName` or `lastName` separately or just send `name`. We will properly map to `fn` and `ln` properly. If your server has access to Facebook's **Lead IDs** from their Lead Ads product, you can opt to send this using integration specific options:
 
 ```js
 // node.js library example

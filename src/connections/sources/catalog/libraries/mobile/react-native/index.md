@@ -10,6 +10,9 @@ All of Segment's libraries are open-source, and you can view Analytics for React
 
 > info "Using Analytics for React Native Classic?"
 > If you're still using the classic version of Analytics for React Native, you can refer to the documentation [here](/docs/connections/sources/catalog/libraries/mobile/react-native/classic).
+> <br><br>On May 15, 2023, Segment will end support for Analytics React Native Classic, which includes versions 1.5.1 and older. [Upgrade to Analytics React Native 2.0](/docs/connections/sources/catalog/libraries/mobile/react-native/migration/). See the [Analytics React Native 2.0 docs](/docs/connections/sources/catalog/libraries/mobile/react-native/) to learn more. 
+
+Upgrade to Analytics React Native 2.0. See the Analytics React Native 2.0 docs to learn more.  
 
 If you're migrating to Analytics React Native 2.0 from an older Analytics React Native version, skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/react-native/migration/).
 
