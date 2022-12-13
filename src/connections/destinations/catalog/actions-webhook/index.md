@@ -2,8 +2,6 @@
 title: Webhooks (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
-hidden: true
-private: true
 id: 614a3c7d791c91c41bae7599
 versions:
   - name: 'Webhooks (Classic)'

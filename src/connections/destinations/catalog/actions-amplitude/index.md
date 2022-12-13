@@ -12,7 +12,7 @@ redirect_from:
 {% include content/plan-grid.md name="actions" %}
 
 
-[Amplitude](https://amplitude.com/) is an event tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users
+[Amplitude](https://amplitude.com/){:target="_blank"} is an event tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users
 perform, you can gain a better understanding to drive retention, engagement, and conversion.
 
 
@@ -32,8 +32,6 @@ Amplitude (Actions) provides the following benefits over the classic Amplitude d
 3. Find the Destinations Actions item in the left navigation, and click it.
 4. Click the "Amplitude" item to select it and click **Configure**.
 5. Choose which of your sources to connect the destination to. (You can connect more sources to the destination later.)
-
-{% include components/actions-fields.html settings="true"%}
 
 Once you have a mapping, you can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
@@ -217,3 +215,15 @@ You configure the Amplitude (Actions) destination through Filters and Actions. C
 > Contact Segment support if you find features missing from the Amplitude (Actions) destination that were available in the classic Amplitude destination.
 
 {% include components/actions-map-table.html name="amplitude" %}
+
+## Advanced Amplitude (Actions) settings
+
+### Increment Traits
+The `traitsToIncrement` setting increases a user property by some numerical value. If the user property does not have a value set yet, Segment initializes it with a value of 0. The trait must have a numerical value so it can be incremented.
+
+In the following example, the Amplitude User property `friendCount` equals 4.
+
+``` js
+"traits" : {"$add": {"friendCount": 3} }
+"traits" : {"$add": {"friendCount": 1} }
+```

@@ -2,8 +2,6 @@
 title: Salesforce Marketing Cloud (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
-hidden: true
-private: true
 strat: salesforce
 id: 62e30bad99f1bfb98ee8ce08
 versions:
