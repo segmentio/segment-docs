@@ -320,6 +320,8 @@ sections:
       title: Set User Subscriptions
     - path: /engage/user-subscriptions/subscription-states
       title: Subscription States
+    - path: /engage/user-subscriptions/engage-source
+      title: Engage Events Source
   - section_title: Profiles
     description: "See how to create audiences based on data."
     section:
