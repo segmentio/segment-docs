@@ -1059,127 +1059,6 @@ items:
             dynamic: false
             allowNull: false
     presets: []
-  - id: 614a3c7d791c91c41bae7599
-    display_name: Webhooks (Actions)
-    name: Webhooks (Actions)
-    slug: actions-webhook
-    previous_names:
-      - Webhook
-      - Webhooks (Actions)
-    website: https://segment.com/docs/integrations/actions-webhook
-    status: PRIVATE_BETA
-    logo:
-      url: https://cdn.filepicker.io/api/file/pN23yZ1Ro6L0I6YVGv3p
-    mark:
-      url: https://cdn.filepicker.io/api/file/8qGehdhwQy2Qbk6KNyhB
-    methods:
-      track: true
-      pageview: true
-      identify: true
-      group: true
-      alias: true
-    platforms:
-      browser: true
-      mobile: false
-      server: true
-      warehouse: true
-    components: []
-    browserUnbundlingSupported: false
-    browserUnbundlingPublic: false
-    replay: false
-    settings:
-      - name: sharedSecret
-        type: string
-        defaultValue: ''
-        description: >-
-          If set, Segment will sign requests with an HMAC in the "X-Signature"
-          request header. The HMAC is a hex-encoded SHA1 hash generated using
-          this shared secret and the request body.
-        required: false
-        label: Shared Secret
-    actions:
-      - id: nFPnRozhz1mh4Gbx4MLvT5
-        name: Send
-        slug: send
-        description: Send an HTTP request.
-        platform: CLOUD
-        hidden: false
-        defaultTrigger: null
-        fields:
-          - id: oXJmgujuaVydeMrki3gjjx
-            sortOrder: 0
-            fieldKey: url
-            label: URL
-            type: STRING
-            description: URL to deliver data to.
-            placeholder: ''
-            required: true
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: oAGqQ3FXatkbjSaBKUpar7
-            sortOrder: 1
-            fieldKey: method
-            label: Method
-            type: STRING
-            description: HTTP method to use.
-            placeholder: ''
-            defaultValue: POST
-            required: true
-            multiple: false
-            choices:
-              - label: POST
-                value: POST
-              - label: PUT
-                value: PUT
-              - label: PATCH
-                value: PATCH
-              - label: DELETE
-                value: DELETE
-              - label: GET
-                value: GET
-            dynamic: false
-            allowNull: false
-          - id: fZbrTu44jztYTDw8xqr5XU
-            sortOrder: 2
-            fieldKey: headers
-            label: Headers
-            type: OBJECT
-            description: HTTP headers to send with each request.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 6qaTt8XtG8dLBxtPTNbzRS
-            sortOrder: 3
-            fieldKey: data
-            label: Data
-            type: OBJECT
-            description: Payload to deliver to webhook URL (JSON-encoded).
-            placeholder: ''
-            defaultValue:
-              '@path': $.
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 9dWmpRdaPnsGFu7Ycy3Fn1
-            sortOrder: 4
-            fieldKey: enable_batching
-            label: Enable Batching?
-            type: BOOLEAN
-            description: When enabled, Segment will send events in batches.
-            defaultValue: false
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-    presets: []
   - id: 61d7456b078e79929de4ee8c
     display_name: CleverTap (Actions)
     name: CleverTap (Actions)
@@ -1716,339 +1595,6 @@ items:
             dynamic: false
             allowNull: false
     presets: []
-  - id: 62e30bad99f1bfb98ee8ce08
-    display_name: Salesforce Marketing Cloud (Actions)
-    name: Salesforce Marketing Cloud (Actions)
-    slug: actions-salesforce-marketing-cloud
-    previous_names:
-      - Salesforce Marketing Cloud (Actions)
-    website: https://www.salesforce.com/products/marketing-cloud/overview/
-    status: PRIVATE_BETA
-    logo:
-      url: https://cdn.filepicker.io/api/file/KB0B7rMFRqWW4HHOM92x
-    mark:
-      url: https://cdn.filepicker.io/api/file/R1lk8BfySzull3qlwbXz
-    methods:
-      track: true
-      pageview: true
-      identify: true
-      group: true
-      alias: true
-    platforms:
-      browser: true
-      mobile: false
-      server: true
-      warehouse: true
-    components: []
-    browserUnbundlingSupported: false
-    browserUnbundlingPublic: false
-    replay: false
-    settings:
-      - name: account_id
-        type: string
-        defaultValue: ''
-        description: >-
-          Your Salesforce Marketing Cloud account identifier (or MID). See more
-          information on how to find your MID
-          [here](https://help.salesforce.com/s/articleView?id=sf.mc_overview_determine_your_marketing_cloud_instance.htm&type=5).
-        required: true
-        label: Account ID
-      - name: client_id
-        type: string
-        defaultValue: ''
-        description: >-
-          Your Salesforce Marketing Cloud client ID. The client ID is issued
-          when you create an API integration in [Installed
-          Packages](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/install-packages.html).
-        required: true
-        label: Client ID
-      - name: client_secret
-        type: password
-        defaultValue: ''
-        description: >-
-          Your Salesforce Marketing Cloud client secret. The client secret is
-          issued when you create an API integration in Installed Packages.
-        required: true
-        label: Client Secret
-      - name: subdomain
-        type: string
-        defaultValue: ''
-        description: >-
-          The unique subdomain Salesforce Marketing Cloud assigned to your
-          account. Subdomains are tenant specific and should be a 28-character
-          string starting with the letters "mc". Do not include the
-          .rest.marketingcloudapis.com part of your subdomain URL. See more
-          information on how to find your subdomain
-          [here](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/your-subdomain-tenant-specific-endpoints.html).
-        required: true
-        label: Subdomain
-    actions:
-      - id: aBewyE4ZvDoZGMCWKQuhy3
-        name: Create Contact
-        slug: contact
-        description: Create contacts in Salesforce Marketing Cloud.
-        platform: CLOUD
-        hidden: false
-        defaultTrigger: type = "identify"
-        fields:
-          - id: rdgPDt1xktwYBgWRxkEXp1
-            sortOrder: 0
-            fieldKey: contactKey
-            label: Contact Key
-            type: STRING
-            description: >-
-              The unique identifier that you assign to a contact. This will be
-              used to create a contact if one does not already exist with this
-              Contact Key.
-            placeholder: ''
-            defaultValue:
-              '@path': $.userId
-            required: true
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-      - id: gx6uTEZ75m3X6bhYrCqLFi
-        name: Send API Event
-        slug: apiEvent
-        description: >-
-          Send events into an existing Event Definition in Salesforce Marketing
-          Cloud.
-        platform: CLOUD
-        hidden: false
-        defaultTrigger: null
-        fields:
-          - id: cU6fNmSaGsQusqpCd3BBL7
-            sortOrder: 0
-            fieldKey: eventDefinitionKey
-            label: Event Definition Key
-            type: STRING
-            description: >-
-              The unique key for an event definition in Salesforce Marketing
-              Cloud. The event defintion must be predefined in SFMC. 
-            placeholder: ''
-            required: true
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: oLo5kqbS2eEUxZwc1trMf2
-            sortOrder: 1
-            fieldKey: contactKey
-            label: Contact Key
-            type: STRING
-            description: The unique identifier that identifies a subscriber or a contact.
-            placeholder: ''
-            defaultValue:
-              '@path': $.userId
-            required: true
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 9SchV9QJ8xE3ggqU4ZHYgn
-            sortOrder: 2
-            fieldKey: data
-            label: Event Data
-            type: OBJECT
-            description: >-
-              The properties of the event. Fields must be created in the event
-              definition schema before sending data for it. On the left-hand
-              side, input the SFMC field name exactly how it appears in the
-              event definition schema. On the right-hand side, map the Segment
-              field that contains the corresponding value.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-      - id: ih1XmCi3dEQwnAHcMUBhx9
-        name: Send Event to Data Extension
-        slug: dataExtension
-        description: >-
-          Upsert events as rows into an existing data extension in Salesforce
-          Marketing Cloud.
-        platform: CLOUD
-        hidden: false
-        defaultTrigger: null
-        fields:
-          - id: 47T5KewiWkqbo2tmoRnW2H
-            sortOrder: 0
-            fieldKey: key
-            label: Data Extension Key
-            type: STRING
-            description: >-
-              The external key of the data extension that you want to store
-              information in. The data extension must be predefined in SFMC. The
-              external key is required if a Data Extension ID is not provided.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: nhUc9UcAFPFX1fKdoQvUH
-            sortOrder: 1
-            fieldKey: id
-            label: Data Extension ID
-            type: STRING
-            description: >-
-              The ID of the data extension that you want to store information
-              in. The data extension must be predefined in SFMC. The ID is
-              required if a Data Extension Key is not provided.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 9Az1NpCMcKA7fcFcabeni8
-            sortOrder: 2
-            fieldKey: keys
-            label: Data Extension Primary Keys
-            type: OBJECT
-            description: >-
-              The primary key(s) that uniquely identify a row in the data
-              extension. On the left-hand side, input the SFMC key name. On the
-              right-hand side, map the Segment field that contains the
-              corresponding value. When multiple primary keys are provided, SFMC
-              will update an existing row if all primary keys match, otherwise a
-              new row will be created
-            placeholder: ''
-            required: true
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: nxiaHRzAuMUVdPjgfu2uCW
-            sortOrder: 3
-            fieldKey: values
-            label: Data Extension Fields
-            type: OBJECT
-            description: >-
-              The fields in the data extension that contain data about an event,
-              such as Product Name, Revenue, Event Time, etc. Fields must be
-              created in the data extension before sending data for it. On the
-              left-hand side, input the SFMC field name exactly how it appears
-              in the data extension. On the right-hand side, map the Segment
-              field that contains the corresponding value.
-            placeholder: ''
-            required: true
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: bGQymftSqZKgYJcmEZUVhF
-            sortOrder: 4
-            fieldKey: enable_batching
-            label: Batch data to SFMC
-            type: BOOLEAN
-            description: >-
-              If true, data is batched before sending to the SFMC Data
-              Extension.
-            placeholder: ''
-            defaultValue: false
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-      - id: w71TA2NBTe31vEdejf99Jy
-        name: Send Contact to Data Extension
-        slug: contactDataExtension
-        description: >-
-          Upsert contact data as rows into an existing data extension in
-          Salesforce Marketing Cloud.
-        platform: CLOUD
-        hidden: false
-        defaultTrigger: type = "identify"
-        fields:
-          - id: mb6hLGAg8ycAm1J5UoUgd2
-            sortOrder: 0
-            fieldKey: key
-            label: Data Extension Key
-            type: STRING
-            description: >-
-              The external key of the data extension that you want to store
-              information in. The data extension must be predefined in SFMC. The
-              external key is required if a Data Extension ID is not provided.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: wCA9XXygQTMhw8CwJ3pyYX
-            sortOrder: 1
-            fieldKey: id
-            label: Data Extension ID
-            type: STRING
-            description: >-
-              The ID of the data extension that you want to store information
-              in. The data extension must be predefined in SFMC. The ID is
-              required if a Data Extension Key is not provided.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 5QS8PoT6Enq7GqW6e9pC7t
-            sortOrder: 2
-            fieldKey: keys
-            label: Data Extension Primary Keys
-            type: OBJECT
-            description: >-
-              The primary key(s) that uniquely identify a row in the data
-              extension. On the left-hand side, input the SFMC key name. On the
-              right-hand side, map the Segment field that contains the
-              corresponding value. When multiple primary keys are provided, SFMC
-              will update an existing row if all primary keys match, otherwise a
-              new row will be created
-            placeholder: ''
-            defaultValue:
-              contactKey:
-                '@path': $.userId
-            required: true
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: pffwuvFHuWTtomoAunt45u
-            sortOrder: 3
-            fieldKey: values
-            label: Contact Fields
-            type: OBJECT
-            description: >-
-              The fields in the data extension that contain data about a
-              contact, such as Email, Last Name, etc. Fields must be created in
-              the data extension before sending data for it. On the left-hand
-              side, input the SFMC field name exactly how it appears in the data
-              extension. On the right-hand side, map the Segment field that
-              contains the corresponding value.
-            placeholder: ''
-            required: true
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: cayNtTfCVrPcfWkwjMGbcR
-            sortOrder: 4
-            fieldKey: enable_batching
-            label: Batch data to SFMC
-            type: BOOLEAN
-            description: >-
-              If true, data is batched before sending to the SFMC Data
-              Extension.
-            placeholder: ''
-            defaultValue: false
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-    presets: []
   - id: 62fec615a42fa3dbfd208ce7
     display_name: Iterate Web (Actions)
     name: Iterate Web (Actions)
@@ -2159,1240 +1705,6 @@ items:
           traits:
             '@path': $.traits
         trigger: type = "identify"
-  - id: 6371eee1ae5e324869aa8b1b
-    display_name: Segment
-    name: Segment
-    slug: actions-segment
-    previous_names:
-      - Segment
-    website: http://www.segment.com
-    status: PRIVATE_BETA
-    logo:
-      url: https://cdn.filepicker.io/api/file/alMBNLNZQon4th4eYp6R
-    mark:
-      url: https://cdn.filepicker.io/api/file/IH1RvUgRSUu9PvEnLw9x
-    methods:
-      track: true
-      pageview: true
-      identify: true
-      group: true
-      alias: true
-    platforms:
-      browser: true
-      mobile: false
-      server: true
-      warehouse: true
-    components: []
-    browserUnbundlingSupported: false
-    browserUnbundlingPublic: false
-    replay: false
-    settings:
-      - name: endpoint
-        type: select
-        defaultValue: north_america
-        description: The region to send your data.
-        required: true
-        label: Endpoint Region
-      - name: source_write_key
-        type: string
-        defaultValue: ''
-        description: The **Write Key** of a Segment source.
-        required: true
-        label: Source Write Key
-    actions:
-      - id: i9hk8hjh6xWfPTFdgcg3DB
-        name: Send Page
-        slug: sendPage
-        description: >-
-          Send a page call to Segment’s tracking API. This is used to track
-          website page views.
-        platform: CLOUD
-        hidden: false
-        defaultTrigger: type = "page"
-        fields:
-          - id: 8AgGw4GJQYw3VQ464DgAch
-            sortOrder: 0
-            fieldKey: user_id
-            label: User ID
-            type: STRING
-            description: >-
-              Unique identifier for the user in your database. A userId or an
-              anonymousId is required.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 4xQCZgtCbqh8AuUyiWRaiZ
-            sortOrder: 1
-            fieldKey: anonymous_id
-            label: Anonymous ID
-            type: STRING
-            description: >-
-              A pseudo-unique substitute for a User ID, for cases when you don’t
-              have an absolutely unique identifier. A userId or an anonymousId
-              is required.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: xfVnBacHUQgyJRC1z3NHfu
-            sortOrder: 2
-            fieldKey: timestamp
-            label: Timestamp
-            type: STRING
-            description: >-
-              Timestamp when the message itself took place as a ISO-8601 format
-              date string. Defaults to current time if not provided.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 9r5e3fd9Nx9aqMtpRYoFkM
-            sortOrder: 3
-            fieldKey: page_name
-            label: Page Name
-            type: STRING
-            description: Name of the page that was viewed.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: asuKJjBnuzddZffvBwWQVP
-            sortOrder: 4
-            fieldKey: page_category
-            label: Page Category
-            type: STRING
-            description: Category of the page that was viewed.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: jDxQXAiWpixxqSTs3q6Wda
-            sortOrder: 5
-            fieldKey: application
-            label: Application
-            type: OBJECT
-            description: Dictionary of information about the current application.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: gkiu8X8ifLmw3iDzDNmYhv
-            sortOrder: 6
-            fieldKey: campaign_parameters
-            label: Campaign Parameters
-            type: OBJECT
-            description: >-
-              Dictionary of information about the campaign that resulted in the
-              API call. This maps directly to the common UTM campaign
-              parameters.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: mHy21ggvJxExyPApzvwBbs
-            sortOrder: 7
-            fieldKey: device
-            label: Device
-            type: OBJECT
-            description: >-
-              Dictionary of information about the device the API call originated
-              from.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: jBtwDzWQPp1TvPtw1f9wxv
-            sortOrder: 8
-            fieldKey: ip_address
-            label: IP Address
-            type: STRING
-            description: The current user’s IP address.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 3WbVJhJ4nvKS5a6py6Mtpf
-            sortOrder: 9
-            fieldKey: locale
-            label: Locale
-            type: STRING
-            description: Locale string for the current user, for example en-US.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: pNLHJ1wN7bXJ1ZaFbiydsq
-            sortOrder: 10
-            fieldKey: location
-            label: Location
-            type: OBJECT
-            description: Dictionary of information about the user’s current location.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: m2Svdtj2Pfz7riENp2rdAU
-            sortOrder: 11
-            fieldKey: network
-            label: Network
-            type: OBJECT
-            description: Dictionary of information about the current network connection.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 42b1pXNbaLCeSCxzSM7Ne3
-            sortOrder: 12
-            fieldKey: operating_system
-            label: Operating System
-            type: OBJECT
-            description: Dictionary of information about the operating system.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 7hnJR1ks8FKkCXMFHJxPLv
-            sortOrder: 13
-            fieldKey: page
-            label: Page
-            type: OBJECT
-            description: Dictionary of information about the current page in the browser.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: rqLbhoB24XhdUp82W8ppvL
-            sortOrder: 14
-            fieldKey: screen
-            label: Screen
-            type: OBJECT
-            description: Dictionary of information about the device’s screen.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: c5YCzQGsJsZzb5yjtRkc6j
-            sortOrder: 15
-            fieldKey: user_agent
-            label: User Agent
-            type: STRING
-            description: User agent of the device the API call originated from.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 9PmRmbtPNvJdfQoq8tA2Ez
-            sortOrder: 16
-            fieldKey: timezone
-            label: Timezone
-            type: STRING
-            description: >-
-              The user’s timezone as a tz database string, for example
-              America/New_York.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: uAMXJnTYmfRY2wUFyCthaD
-            sortOrder: 17
-            fieldKey: group_id
-            label: Group ID
-            type: STRING
-            description: The group or account ID a user is associated with.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: mBwQGGp5DVrWWGrzZtJuge
-            sortOrder: 18
-            fieldKey: properties
-            label: Properties
-            type: OBJECT
-            description: Free-form dictionary of properties that describe the screen.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-      - id: oiFvX4YXwyaPVysi1t7mtz
-        name: Send Track
-        slug: sendTrack
-        description: >-
-          Send a track call to Segment’s tracking API. This is used to record
-          actions your users perform.
-        platform: CLOUD
-        hidden: false
-        defaultTrigger: type = "track"
-        fields:
-          - id: xtqDvYByzRU15iz6N4BSrQ
-            sortOrder: 0
-            fieldKey: user_id
-            label: User ID
-            type: STRING
-            description: >-
-              Unique identifier for the user in your database. A userId or an
-              anonymousId is required.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: v6ycXkm42uJK9wh39dofKF
-            sortOrder: 1
-            fieldKey: anonymous_id
-            label: Anonymous ID
-            type: STRING
-            description: >-
-              A pseudo-unique substitute for a User ID, for cases when you don’t
-              have an absolutely unique identifier. A userId or an anonymousId
-              is required.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: dJ1SsGAyZ4gnT9G9WGZumU
-            sortOrder: 2
-            fieldKey: timestamp
-            label: Timestamp
-            type: STRING
-            description: >-
-              Timestamp when the message itself took place as a ISO-8601 format
-              date string. Defaults to current time if not provided.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 2xgHSiA76zMaS71dPLtbkG
-            sortOrder: 3
-            fieldKey: event_name
-            label: Event Name
-            type: STRING
-            description: Name of the action that a user has performed.
-            placeholder: ''
-            required: true
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: pvPqujYmKhb9wGrZ9wwX8x
-            sortOrder: 4
-            fieldKey: application
-            label: Application
-            type: OBJECT
-            description: Dictionary of information about the current application.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: uLXqRhPGKXVkjPXsrGfkLD
-            sortOrder: 5
-            fieldKey: campaign_parameters
-            label: Campaign Parameters
-            type: OBJECT
-            description: >-
-              Dictionary of information about the campaign that resulted in the
-              API call. This maps directly to the common UTM campaign
-              parameters.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 9UVKNkWapT8eRtUbPKqfAK
-            sortOrder: 6
-            fieldKey: device
-            label: Device
-            type: OBJECT
-            description: >-
-              Dictionary of information about the device the API call originated
-              from.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: kgDfbvgedh5Z9y1AmRy7jD
-            sortOrder: 7
-            fieldKey: ip_address
-            label: IP Address
-            type: STRING
-            description: The current user’s IP address.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: hdwYXb6n8YCBHHWZTipiz3
-            sortOrder: 8
-            fieldKey: locale
-            label: Locale
-            type: STRING
-            description: Locale string for the current user, for example en-US.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: aEYmhhEpcu7y396va69HkG
-            sortOrder: 9
-            fieldKey: location
-            label: Location
-            type: OBJECT
-            description: Dictionary of information about the user’s current location.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: fHwSXspwyPXc7PfMq5mn98
-            sortOrder: 10
-            fieldKey: network
-            label: Network
-            type: OBJECT
-            description: Dictionary of information about the current network connection.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: jmcrBmQt1hc6jwSMy5cag5
-            sortOrder: 11
-            fieldKey: operating_system
-            label: Operating System
-            type: OBJECT
-            description: Dictionary of information about the operating system.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: mbQXF4i2hATEWvP6EpGc4s
-            sortOrder: 12
-            fieldKey: page
-            label: Page
-            type: OBJECT
-            description: Dictionary of information about the current page in the browser.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: nvys68ELwzv8vbbhpqo1z5
-            sortOrder: 13
-            fieldKey: screen
-            label: Screen
-            type: OBJECT
-            description: Dictionary of information about the device’s screen.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 7wuTAz2wN6RF26aazgSN4t
-            sortOrder: 14
-            fieldKey: user_agent
-            label: User Agent
-            type: STRING
-            description: User agent of the device the API call originated from.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: mXEQmVJUjD4TgYBFMFGemK
-            sortOrder: 15
-            fieldKey: timezone
-            label: Timezone
-            type: STRING
-            description: >-
-              The user’s timezone as a tz database string, for example
-              America/New_York.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 2V9jtm7AFLoqa2UN99NdzN
-            sortOrder: 16
-            fieldKey: group_id
-            label: Group ID
-            type: STRING
-            description: The group or account ID a user is associated with.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: bVzrSU6igiWiorQFwUGhL3
-            sortOrder: 17
-            fieldKey: properties
-            label: Properties
-            type: OBJECT
-            description: Free-form dictionary of properties that describe the screen.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-      - id: r2Ho4HQvhcfqxm1UBFue7K
-        name: Send Identify
-        slug: sendIdentify
-        description: >-
-          Send an identify call to Segment’s tracking API. This is used to tie
-          your users to their actions and record traits about them.
-        platform: CLOUD
-        hidden: false
-        defaultTrigger: type = "identify"
-        fields:
-          - id: 7M4wq4KY4APRWyqRMhgQB8
-            sortOrder: 0
-            fieldKey: user_id
-            label: User ID
-            type: STRING
-            description: >-
-              Unique identifier for the user in your database. A userId or an
-              anonymousId is required.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: pRfbmc8KQTTZYPKHMyEayf
-            sortOrder: 1
-            fieldKey: anonymous_id
-            label: Anonymous ID
-            type: STRING
-            description: >-
-              A pseudo-unique substitute for a User ID, for cases when you don’t
-              have an absolutely unique identifier. A userId or an anonymousId
-              is required.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 9TV7DNAnm49ugNAc7J7CxR
-            sortOrder: 2
-            fieldKey: timestamp
-            label: Timestamp
-            type: STRING
-            description: >-
-              Timestamp when the message itself took place as a ISO-8601 format
-              date string. Defaults to current time if not provided.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: aYsvDvEz6yRZixubvzMRmB
-            sortOrder: 3
-            fieldKey: application
-            label: Application
-            type: OBJECT
-            description: Dictionary of information about the current application.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: ufXrbiywid8mrYEXtmAggh
-            sortOrder: 4
-            fieldKey: campaign_parameters
-            label: Campaign Parameters
-            type: OBJECT
-            description: >-
-              Dictionary of information about the campaign that resulted in the
-              API call. This maps directly to the common UTM campaign
-              parameters.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: mQ8v2R17M1wsP1LQiGqFwD
-            sortOrder: 5
-            fieldKey: device
-            label: Device
-            type: OBJECT
-            description: >-
-              Dictionary of information about the device the API call originated
-              from.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 3GTTeH6gcs8Aviv7VZ5C5c
-            sortOrder: 6
-            fieldKey: ip_address
-            label: IP Address
-            type: STRING
-            description: The current user’s IP address.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 285WsGN8xYNrqnUQDtvAey
-            sortOrder: 7
-            fieldKey: locale
-            label: Locale
-            type: STRING
-            description: Locale string for the current user, for example en-US.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: qHY8FTkq2WC6oqCYDe8aws
-            sortOrder: 8
-            fieldKey: location
-            label: Location
-            type: OBJECT
-            description: Dictionary of information about the user’s current location.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: ZscveZ2NLYGSWDzLXs8gV
-            sortOrder: 9
-            fieldKey: network
-            label: Network
-            type: OBJECT
-            description: Dictionary of information about the current network connection.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: f8vWpXuYq8NWEuWMVUyJys
-            sortOrder: 10
-            fieldKey: operating_system
-            label: Operating System
-            type: OBJECT
-            description: Dictionary of information about the operating system.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: adoJvV2vekcfb66sXYcbPP
-            sortOrder: 11
-            fieldKey: page
-            label: Page
-            type: OBJECT
-            description: Dictionary of information about the current page in the browser.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: e5rn7mVgTVXARatXri7Hwt
-            sortOrder: 12
-            fieldKey: screen
-            label: Screen
-            type: OBJECT
-            description: Dictionary of information about the device’s screen.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: pN2qTVEuXG1QqqPRaCNCgH
-            sortOrder: 13
-            fieldKey: user_agent
-            label: User Agent
-            type: STRING
-            description: User agent of the device the API call originated from.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 9vDiL3NDkU6pM1rFYwL7jD
-            sortOrder: 14
-            fieldKey: timezone
-            label: Timezone
-            type: STRING
-            description: >-
-              The user’s timezone as a tz database string, for example
-              America/New_York.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: og7rjfhta6o1gYD9KCrRTy
-            sortOrder: 15
-            fieldKey: group_id
-            label: Group ID
-            type: STRING
-            description: The group or account ID a user is associated with.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: iJPhXRMPiRtWKsjzWqjDQ4
-            sortOrder: 16
-            fieldKey: traits
-            label: Traits
-            type: OBJECT
-            description: >-
-              Free-form dictionary of traits that describe the user or group of
-              users.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-      - id: sx4xn2b4hUhixBcDY3SHJU
-        name: Send Group
-        slug: sendGroup
-        description: >-
-          Send a group call to Segment’s tracking API. This is used to associate
-          an individual user with a group
-        platform: CLOUD
-        hidden: false
-        defaultTrigger: type = "group"
-        fields:
-          - id: iR5e8jDYryMKHXcCbf7Luv
-            sortOrder: 0
-            fieldKey: user_id
-            label: User ID
-            type: STRING
-            description: >-
-              Unique identifier for the user in your database. A userId or an
-              anonymousId is required.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: uD65qBjMDqNUsyV1WGN1oX
-            sortOrder: 1
-            fieldKey: anonymous_id
-            label: Anonymous ID
-            type: STRING
-            description: >-
-              A pseudo-unique substitute for a User ID, for cases when you don’t
-              have an absolutely unique identifier. A userId or an anonymousId
-              is required.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: jCe4UayeFcGywVrA1Cgcmu
-            sortOrder: 2
-            fieldKey: group_id
-            label: Group ID
-            type: STRING
-            description: The group or account ID a user is associated with.
-            placeholder: ''
-            required: true
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: h1em4ttQCeTo7HmE3sTCtn
-            sortOrder: 3
-            fieldKey: timestamp
-            label: Timestamp
-            type: STRING
-            description: >-
-              Timestamp when the message itself took place as a ISO-8601 format
-              date string. Defaults to current time if not provided.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 8DFoiRL4Mez9CkeXRBo1oq
-            sortOrder: 4
-            fieldKey: application
-            label: Application
-            type: OBJECT
-            description: Dictionary of information about the current application.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 21h25hpiYFAz1KYYTqFUeF
-            sortOrder: 5
-            fieldKey: campaign_parameters
-            label: Campaign Parameters
-            type: OBJECT
-            description: >-
-              Dictionary of information about the campaign that resulted in the
-              API call. This maps directly to the common UTM campaign
-              parameters.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: gPKyUGjob4fYNPjx357wXA
-            sortOrder: 6
-            fieldKey: device
-            label: Device
-            type: OBJECT
-            description: >-
-              Dictionary of information about the device the API call originated
-              from.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: kp916nLT3gYLsh5cFtbjFt
-            sortOrder: 7
-            fieldKey: ip_address
-            label: IP Address
-            type: STRING
-            description: The current user’s IP address.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: fA43jh8aKKV6fUa69UDPbq
-            sortOrder: 8
-            fieldKey: locale
-            label: Locale
-            type: STRING
-            description: Locale string for the current user, for example en-US.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 4pWbe7HJKgsPpLeD7CxTZh
-            sortOrder: 9
-            fieldKey: location
-            label: Location
-            type: OBJECT
-            description: Dictionary of information about the user’s current location.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: pUosjmGhjj1RZmK3DjGwcM
-            sortOrder: 10
-            fieldKey: network
-            label: Network
-            type: OBJECT
-            description: Dictionary of information about the current network connection.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: wSFk8tf3qJ7Q1ygYLexT41
-            sortOrder: 11
-            fieldKey: operating_system
-            label: Operating System
-            type: OBJECT
-            description: Dictionary of information about the operating system.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 3ftpovVyyy8N9WbZupzzgJ
-            sortOrder: 12
-            fieldKey: page
-            label: Page
-            type: OBJECT
-            description: Dictionary of information about the current page in the browser.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 6qGvApqy5ZNnd6tq2NvgfJ
-            sortOrder: 13
-            fieldKey: screen
-            label: Screen
-            type: OBJECT
-            description: Dictionary of information about the device’s screen.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: wmw4NoQFeJSw6sVTGqBbr2
-            sortOrder: 14
-            fieldKey: user_agent
-            label: User Agent
-            type: STRING
-            description: User agent of the device the API call originated from.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: qxS9XKJLaZTaPuQ9WWLFfn
-            sortOrder: 15
-            fieldKey: timezone
-            label: Timezone
-            type: STRING
-            description: >-
-              The user’s timezone as a tz database string, for example
-              America/New_York.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: vhNfALMV245dTeyPfHhnup
-            sortOrder: 16
-            fieldKey: traits
-            label: Traits
-            type: OBJECT
-            description: >-
-              Free-form dictionary of traits that describe the user or group of
-              users.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-      - id: xcwziKpmdnPGrTX3mrwiqX
-        name: Send Screen
-        slug: sendScreen
-        description: >-
-          Send a screen call to Segment’s tracking API. This is used to track
-          mobile app screen views.
-        platform: CLOUD
-        hidden: false
-        defaultTrigger: type = "screen"
-        fields:
-          - id: apycEo7kRuq9KfDJkA6RZo
-            sortOrder: 0
-            fieldKey: user_id
-            label: User ID
-            type: STRING
-            description: >-
-              Unique identifier for the user in your database. A userId or an
-              anonymousId is required.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: cb1DMwkzhwfMA4tDWk1EPL
-            sortOrder: 1
-            fieldKey: anonymous_id
-            label: Anonymous ID
-            type: STRING
-            description: >-
-              A pseudo-unique substitute for a User ID, for cases when you don’t
-              have an absolutely unique identifier. A userId or an anonymousId
-              is required.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: j8mPiveoUY3hwCNAHJMUBF
-            sortOrder: 2
-            fieldKey: timestamp
-            label: Timestamp
-            type: STRING
-            description: >-
-              Timestamp when the message itself took place as a ISO-8601 format
-              date string. Defaults to current time if not provided.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 4Kn2hYfv6Du25wfEH4gmc1
-            sortOrder: 3
-            fieldKey: screen_name
-            label: Screen Name
-            type: STRING
-            description: Name of the screen that was viewed.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: mcNzhxDpdTgKsNr6TgwoEf
-            sortOrder: 4
-            fieldKey: application
-            label: Application
-            type: OBJECT
-            description: Dictionary of information about the current application.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: wCGrdPNbpZAmDyNi2zefcd
-            sortOrder: 5
-            fieldKey: campaign_parameters
-            label: Campaign Parameters
-            type: OBJECT
-            description: >-
-              Dictionary of information about the campaign that resulted in the
-              API call. This maps directly to the common UTM campaign
-              parameters.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: iDeowZ3455evE75XFwSpMk
-            sortOrder: 6
-            fieldKey: device
-            label: Device
-            type: OBJECT
-            description: >-
-              Dictionary of information about the device the API call originated
-              from.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: qEHkSuwYadjSPQUf9w9dxC
-            sortOrder: 7
-            fieldKey: ip_address
-            label: IP Address
-            type: STRING
-            description: The current user’s IP address.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: qn7KZHUhDCfUkxxwUwDWCf
-            sortOrder: 8
-            fieldKey: locale
-            label: Locale
-            type: STRING
-            description: Locale string for the current user, for example en-US.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 9cSeDY12tc4ThRWYnhEej6
-            sortOrder: 9
-            fieldKey: location
-            label: Location
-            type: OBJECT
-            description: Dictionary of information about the user’s current location.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 3J4uoJSfABTr3BaCjWz6hS
-            sortOrder: 10
-            fieldKey: network
-            label: Network
-            type: OBJECT
-            description: Dictionary of information about the current network connection.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: bFGf5vYyyhiPNKQ8cJeRJP
-            sortOrder: 11
-            fieldKey: operating_system
-            label: Operating System
-            type: OBJECT
-            description: Dictionary of information about the operating system.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: iJj8TLUSGyV53KAenbPDDr
-            sortOrder: 12
-            fieldKey: page
-            label: Page
-            type: OBJECT
-            description: Dictionary of information about the current page in the browser.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 8KEDbbKo85wZdnW4fA3wCU
-            sortOrder: 13
-            fieldKey: screen
-            label: Screen
-            type: OBJECT
-            description: Dictionary of information about the device’s screen.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 5CeRn2pTxMoPwW1ohusxTP
-            sortOrder: 14
-            fieldKey: user_agent
-            label: User Agent
-            type: STRING
-            description: User agent of the device the API call originated from.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 9u8vfNWw2R6Jzw179pRUVW
-            sortOrder: 15
-            fieldKey: timezone
-            label: Timezone
-            type: STRING
-            description: >-
-              The user’s timezone as a tz database string, for example
-              America/New_York.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 7SZ9rBEfUeeLF4hn5b1ZsG
-            sortOrder: 16
-            fieldKey: group_id
-            label: Group ID
-            type: STRING
-            description: The group or account ID a user is associated with.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: vboMmHPWR3713A5CP1Vhzs
-            sortOrder: 17
-            fieldKey: properties
-            label: Properties
-            type: OBJECT
-            description: Free-form dictionary of properties that describe the screen.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-    presets: []
   - id: 6372e18fb2b3d5d741c34bb6
     display_name: Sabil
     name: Sabil
@@ -3686,3 +1998,177 @@ items:
         name: Track Page
         fields: {}
         trigger: type = "page"
+  - id: 638f843c4520d424f63c9e51
+    display_name: CommandBar
+    name: CommandBar
+    slug: actions-commandbar
+    previous_names:
+      - CommandBar
+    website: http://www.commandbar.com
+    status: PRIVATE_BETA
+    logo:
+      url: https://cdn.filepicker.io/api/file/Df2gL4P0Tb6FOBaH7MPg
+    mark:
+      url: https://cdn.filepicker.io/api/file/dB22XUsaSX2Afop9R1vk
+    methods:
+      track: true
+      pageview: true
+      identify: true
+      group: true
+      alias: true
+    platforms:
+      browser: true
+      mobile: false
+      server: false
+      warehouse: false
+    components: []
+    browserUnbundlingSupported: false
+    browserUnbundlingPublic: false
+    replay: false
+    settings:
+      - name: deploy
+        type: boolean
+        defaultValue: false
+        description: >-
+          If enabled, CommandBar will be deployed to your site automatically and
+          you can remove the snippet from your source code.
+        required: true
+        label: Deploy via Segment
+      - name: orgId
+        type: string
+        defaultValue: ''
+        description: The ID of your CommandBar organization.
+        required: true
+        label: Organization ID
+    actions:
+      - id: 5cVhYfBJYs4sCSvLLoahGc
+        name: Track Event
+        slug: trackEvent
+        description: Submit an event's properties as CommandBar metaData.
+        platform: WEB
+        hidden: false
+        defaultTrigger: type = "track"
+        fields:
+          - id: 9pmubBefRct4eJvnSqTJHR
+            sortOrder: 0
+            fieldKey: event_name
+            label: Event Name
+            type: STRING
+            description: The name of the event.
+            placeholder: ''
+            defaultValue:
+              '@path': $.event
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 7qr1J7XrvSFGcH9zLXwbpZ
+            sortOrder: 1
+            fieldKey: event_metadata
+            label: Event Metadata
+            type: OBJECT
+            description: Optional metadata describing the event.
+            placeholder: ''
+            defaultValue:
+              '@path': $.properties
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+      - id: pvLKevrkEtiUZX3ej5FX8j
+        name: Identify User
+        slug: identifyUser
+        description: >-
+          Set attributes for the user in CommandBar. If "Deploy via Segment" is
+          enabled, then also boot CommandBar for the user, which makes
+          CommandBar available to the user.
+        platform: WEB
+        hidden: false
+        defaultTrigger: type = "identify"
+        fields:
+          - id: hKTrpnhQGq971DN41bTxwo
+            sortOrder: 0
+            fieldKey: userId
+            label: User ID
+            type: STRING
+            description: The user's id
+            placeholder: ''
+            defaultValue:
+              '@path': $.userId
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 5s6K64KCtWEicWtPLNEHLC
+            sortOrder: 1
+            fieldKey: hmac
+            label: HMAC
+            type: STRING
+            description: >-
+              Identify users with an HMAC of their user ID; this enables end
+              user customizable shortcuts and other features. [Learn about
+              identity
+              verification](https://app.commandbar.com/identity-verification).
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.CommandBar.hmac
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: vxinbjJzUTff8CgP6nsdFk
+            sortOrder: 2
+            fieldKey: formFactor
+            label: Event Metadata
+            type: OBJECT
+            description: >-
+              Configures the way the bar is displayed. An 'inline' bar is always
+              visible and hosted within an element on your page. A 'modal' bar
+              will display in a modal dialog when open.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.CommandBar.formFactor
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 3s9a5HaavqtKeaBzrmUE49
+            sortOrder: 3
+            fieldKey: traits
+            label: Traits
+            type: OBJECT
+            description: The Segment traits to be forwarded to CommandBar
+            placeholder: ''
+            defaultValue:
+              '@path': $.traits
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+    presets:
+      - actionId: 5cVhYfBJYs4sCSvLLoahGc
+        name: Track Event
+        fields:
+          event_name:
+            '@path': $.event
+          event_metadata:
+            '@path': $.properties
+        trigger: type = "track"
+      - actionId: pvLKevrkEtiUZX3ej5FX8j
+        name: Identify User
+        fields:
+          userId:
+            '@path': $.userId
+          hmac:
+            '@path': $.context.CommandBar.hmac
+          formFactor:
+            '@path': $.context.CommandBar.formFactor
+          traits:
+            '@path': $.traits
+        trigger: type = "identify"
