@@ -28,7 +28,7 @@ Ripe provides the following benefits:
 > Before you begin, create an API key in Ripe which you'll use to configure the integration.
 
 
-1. From the Segment web app, click **Catalog**, then click **Destinations**.
+1. From the Segment web app, navigate to **Connections > Catalog**, then click the **Destinations** tab at the top of the catalog.
 2. Find the Destinations Actions item in the left navigation, and click it.
 3. Click **Configure Ripe**.
 4. Select an existing Source to connect to Ripe (Actions).
