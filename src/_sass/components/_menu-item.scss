@@ -56,6 +56,10 @@
     align-items: center;
     padding: 5px 20px;
 
+    &:focus-visible {
+      border: 2px solid color(secondary);
+    }
+
     &:hover {
       color: color(secondary);
       text-decoration: none;
@@ -164,11 +168,6 @@
     & > #{$this}__link {
       color: color(secondary);
       font-weight: 500;
-
-      &:focus-visible {
-        color: color(secondary);
-        border: 2px solid color(secondary);
-      }
 
       #{$this}__icon {
         color: color(gray-600);
