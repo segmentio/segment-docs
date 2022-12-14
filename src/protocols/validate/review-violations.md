@@ -28,4 +28,4 @@ To view a specific violation, simply click on the violation to view recent sampl
 If you want to analyze or build custom alerts based on inbound violations, you can [enable violation forwarding here](/docs/protocols/validate/forward-violations/).
 
 > warning ""
-> Track violations use the `event` field for aggregation, while Page and Screen violations use the `name` field. If these are not properly implemented in your events, violations cannot be aggregated correctly.
+> Track violations use the `event` field for aggregation, while Page and Screen violations use the `name` field. If these are not properly implemented in your events, violations cannot be aggregated correctly. 
