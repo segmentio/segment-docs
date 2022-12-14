@@ -1998,6 +1998,180 @@ items:
         name: Track Page
         fields: {}
         trigger: type = "page"
+  - id: 638f843c4520d424f63c9e51
+    display_name: CommandBar
+    name: CommandBar
+    slug: actions-commandbar
+    previous_names:
+      - CommandBar
+    website: http://www.commandbar.com
+    status: PRIVATE_BETA
+    logo:
+      url: https://cdn.filepicker.io/api/file/Df2gL4P0Tb6FOBaH7MPg
+    mark:
+      url: https://cdn.filepicker.io/api/file/dB22XUsaSX2Afop9R1vk
+    methods:
+      track: true
+      pageview: true
+      identify: true
+      group: true
+      alias: true
+    platforms:
+      browser: true
+      mobile: false
+      server: false
+      warehouse: false
+    components: []
+    browserUnbundlingSupported: false
+    browserUnbundlingPublic: false
+    replay: false
+    settings:
+      - name: deploy
+        type: boolean
+        defaultValue: false
+        description: >-
+          If enabled, CommandBar will be deployed to your site automatically and
+          you can remove the snippet from your source code.
+        required: true
+        label: Deploy via Segment
+      - name: orgId
+        type: string
+        defaultValue: ''
+        description: The ID of your CommandBar organization.
+        required: true
+        label: Organization ID
+    actions:
+      - id: 5cVhYfBJYs4sCSvLLoahGc
+        name: Track Event
+        slug: trackEvent
+        description: Submit an event's properties as CommandBar metaData.
+        platform: WEB
+        hidden: false
+        defaultTrigger: type = "track"
+        fields:
+          - id: 9pmubBefRct4eJvnSqTJHR
+            sortOrder: 0
+            fieldKey: event_name
+            label: Event Name
+            type: STRING
+            description: The name of the event.
+            placeholder: ''
+            defaultValue:
+              '@path': $.event
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 7qr1J7XrvSFGcH9zLXwbpZ
+            sortOrder: 1
+            fieldKey: event_metadata
+            label: Event Metadata
+            type: OBJECT
+            description: Optional metadata describing the event.
+            placeholder: ''
+            defaultValue:
+              '@path': $.properties
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+      - id: pvLKevrkEtiUZX3ej5FX8j
+        name: Identify User
+        slug: identifyUser
+        description: >-
+          Set attributes for the user in CommandBar. If "Deploy via Segment" is
+          enabled, then also boot CommandBar for the user, which makes
+          CommandBar available to the user.
+        platform: WEB
+        hidden: false
+        defaultTrigger: type = "identify"
+        fields:
+          - id: hKTrpnhQGq971DN41bTxwo
+            sortOrder: 0
+            fieldKey: userId
+            label: User ID
+            type: STRING
+            description: The user's id
+            placeholder: ''
+            defaultValue:
+              '@path': $.userId
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 5s6K64KCtWEicWtPLNEHLC
+            sortOrder: 1
+            fieldKey: hmac
+            label: HMAC
+            type: STRING
+            description: >-
+              Identify users with an HMAC of their user ID; this enables end
+              user customizable shortcuts and other features. [Learn about
+              identity
+              verification](https://app.commandbar.com/identity-verification).
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.CommandBar.hmac
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: vxinbjJzUTff8CgP6nsdFk
+            sortOrder: 2
+            fieldKey: formFactor
+            label: Event Metadata
+            type: OBJECT
+            description: >-
+              Configures the way the bar is displayed. An 'inline' bar is always
+              visible and hosted within an element on your page. A 'modal' bar
+              will display in a modal dialog when open.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.CommandBar.formFactor
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 3s9a5HaavqtKeaBzrmUE49
+            sortOrder: 3
+            fieldKey: traits
+            label: Traits
+            type: OBJECT
+            description: The Segment traits to be forwarded to CommandBar
+            placeholder: ''
+            defaultValue:
+              '@path': $.traits
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+    presets:
+      - actionId: 5cVhYfBJYs4sCSvLLoahGc
+        name: Track Event
+        fields:
+          event_name:
+            '@path': $.event
+          event_metadata:
+            '@path': $.properties
+        trigger: type = "track"
+      - actionId: pvLKevrkEtiUZX3ej5FX8j
+        name: Identify User
+        fields:
+          userId:
+            '@path': $.userId
+          hmac:
+            '@path': $.context.CommandBar.hmac
+          formFactor:
+            '@path': $.context.CommandBar.formFactor
+          traits:
+            '@path': $.traits
+        trigger: type = "identify"
   - id: 63913b2bf906ea939f153851
     display_name: Ripe
     name: Ripe
