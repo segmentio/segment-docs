@@ -103,7 +103,6 @@ var objects = new Objects(process.env.write_key);
 //   host: "http://objects.euw1.segment.com"
 // });
 
-
 var s3 = new AWS.S3();
 
 exports.handler = function(event, context, callback) {
