@@ -6,7 +6,7 @@ id: 63913b2bf906ea939f153851
 private: true
 ---
 
-[Ripe](https://www.getripe.com/){target="_blank"} is a product-led sales platform that empowers you to unlock revenue pipeline with product data. By identifying and showing which prospects to focus efforts on, you can convert leads into meetings, inside your product.
+[Ripe](https://www.getripe.com/){target="_blank"} is a product-led sales platform that empowers you to unlock revenue pipeline with product data. By identifying and showing which prospects to focus efforts on, you can convert leads into meetings inside your product.
 
 This destination enables you to send product data to Ripe. Sales teams can identify who decision-makers and product champions are by understanding what properties they have and what events they have triggered. The Ripe destination is built as an alternative to directly adding Ripe’s SDK script to your app or site.
 
