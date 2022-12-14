@@ -91,11 +91,6 @@
         color: color(gray-800);
         background-color: color(gray-100);
       }
-
-      &:focus-visible {
-        color: color(secondary);
-        border: 2px solid color(secondary);
-      }
     }
 
     &--icon {
