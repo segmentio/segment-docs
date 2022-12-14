@@ -39,6 +39,12 @@ The Objects API is asynchronous by default. This means that if object updates ar
 
 Note: The average response time increases with the synchronous objects API header set, which can impact performance speed.
 
+## Regional configuration
+
+For Business plans with access to [Regional Segment](/docs/guides/regional-segment), you can use the `host` configuration parameter to interact with the desired region:
+1. Oregon (Default) — `objects.segment.com`
+2. Dublin — `objects.euw1.segment.com`
+
 ## Naming
 
 ### snake_case properties
