@@ -87,6 +87,11 @@
         color: color(gray-800);
         background-color: color(gray-100);
       }
+
+      &:focus-visible {
+        color: color(secondary);
+        border: 2px solid color(secondary);
+      }
     }
 
     &--icon {
@@ -159,6 +164,10 @@
     & > #{$this}__link {
       color: color(secondary);
       font-weight: 500;
+
+      &:focus-visible {
+        color: color(secondary);
+      }
 
       #{$this}__icon {
         color: color(gray-600);
