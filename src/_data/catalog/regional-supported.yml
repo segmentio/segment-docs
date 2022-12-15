@@ -2717,8 +2717,8 @@ destinations:
       - us
   - id: 62e30bad99f1bfb98ee8ce08
     display_name: Salesforce Marketing Cloud (Actions)
-    slug: salesforce-marketing-cloud-actions
-    url: connections/destinations/catalog/salesforce-marketing-cloud-actions
+    slug: actions-salesforce-marketing-cloud
+    url: connections/destinations/catalog/actions-salesforce-marketing-cloud
     regions:
       - us
     endpoints:

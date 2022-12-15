@@ -22553,7 +22553,7 @@ items:
   display_name: Google Ads Conversions
   name: Google Ads Conversions
   slug: google-ads-conversions
-  hidden: false
+  hidden: true
   endpoints:
   - us
   regions:
@@ -45306,13 +45306,13 @@ items:
 - id: 62e30bad99f1bfb98ee8ce08
   display_name: Salesforce Marketing Cloud (Actions)
   name: Salesforce Marketing Cloud (Actions)
-  slug: salesforce-marketing-cloud-actions
-  hidden: true
+  slug: actions-salesforce-marketing-cloud
+  hidden: false
   endpoints:
   - us
   regions:
   - us
-  url: connections/destinations/catalog/salesforce-marketing-cloud-actions
+  url: connections/destinations/catalog/actions-salesforce-marketing-cloud
   previous_names:
   - Salesforce Marketing Cloud (Actions)
   website: https://www.salesforce.com/products/marketing-cloud/overview/
