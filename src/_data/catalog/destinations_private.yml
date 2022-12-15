@@ -2172,3 +2172,457 @@ items:
           traits:
             '@path': $.traits
         trigger: type = "identify"
+  - id: 63913b2bf906ea939f153851
+    display_name: Ripe
+    name: Ripe
+    slug: actions-ripe
+    previous_names:
+      - Ripe
+    website: http://www.segment.com
+    status: PRIVATE_BETA
+    logo:
+      url: https://cdn.filepicker.io/api/file/jrbUXsZDQ708akn3cVyZ
+    mark:
+      url: https://cdn.filepicker.io/api/file/jrbUXsZDQ708akn3cVyZ
+    methods:
+      track: true
+      pageview: true
+      identify: true
+      group: true
+      alias: true
+    platforms:
+      browser: true
+      mobile: false
+      server: false
+      warehouse: false
+    components: []
+    browserUnbundlingSupported: false
+    browserUnbundlingPublic: false
+    replay: false
+    settings:
+      - name: apiKey
+        type: string
+        defaultValue: ''
+        description: The Ripe API key found in the Ripe App
+        required: true
+        label: API Key
+      - name: sdkVersion
+        type: select
+        defaultValue: latest
+        description: The version of the Ripe Widget SDK to use
+        required: true
+        label: SDK Version
+    actions:
+      - id: 3SGq783snwpEi33WUoutZt
+        name: Track
+        slug: track
+        description: Send user events to Ripe
+        platform: WEB
+        hidden: false
+        defaultTrigger: type = "track"
+        fields:
+          - id: apjYQmfEndHumjiF5E2Z6d
+            sortOrder: 0
+            fieldKey: anonymousId
+            label: Anonymous ID
+            type: STRING
+            description: The new user ID, if user ID is not set
+            placeholder: ''
+            defaultValue:
+              '@path': $.anonymousId
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: jt1874wYN68QNyVA6ks4BS
+            sortOrder: 1
+            fieldKey: userId
+            label: User ID
+            type: STRING
+            description: The ID associated with the user
+            placeholder: ''
+            defaultValue:
+              '@path': $.userId
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: oixVSz7JDMeqrrq9dS5ScV
+            sortOrder: 2
+            fieldKey: groupId
+            label: Group ID
+            type: STRING
+            description: The ID associated groupId
+            placeholder: ''
+            defaultValue:
+              '@path': $.groupId
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: bjFj861BfFnACFGokrPiLv
+            sortOrder: 3
+            fieldKey: event
+            label: Event Name
+            type: STRING
+            description: The event name
+            placeholder: ''
+            defaultValue:
+              '@path': $.event
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 652336q77Jaw6Hks6yJGRq
+            sortOrder: 4
+            fieldKey: properties
+            label: Event properties
+            type: OBJECT
+            description: Properties to send with the event
+            placeholder: ''
+            defaultValue:
+              '@path': $.properties
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+      - id: 99i7DLnRY1GsiBPoQro9YP
+        name: Page
+        slug: page
+        description: Register page view in Ripe
+        platform: WEB
+        hidden: false
+        defaultTrigger: type = "page"
+        fields:
+          - id: u6S4wXyzRBU8q4EooUijzW
+            sortOrder: 0
+            fieldKey: anonymousId
+            label: Anonymous ID
+            type: STRING
+            description: The new user ID, if user ID is not set
+            placeholder: ''
+            defaultValue:
+              '@path': $.anonymousId
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 4J2edJbyZyQAMBanZ6npY7
+            sortOrder: 1
+            fieldKey: userId
+            label: User ID
+            type: STRING
+            description: The ID associated with the user
+            placeholder: ''
+            defaultValue:
+              '@path': $.userId
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: hYevNroWqGPqWcFpUHYBHZ
+            sortOrder: 2
+            fieldKey: groupId
+            label: Group ID
+            type: STRING
+            description: The ID associated groupId
+            placeholder: ''
+            defaultValue:
+              '@path': $.groupId
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: cTHWAzzkrXpomYyyGo6CLs
+            sortOrder: 3
+            fieldKey: category
+            label: Category
+            type: STRING
+            description: The category of the page
+            placeholder: ''
+            defaultValue:
+              '@path': $.category
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 8QbkZo7UMGhg5vmAvKy1vn
+            sortOrder: 4
+            fieldKey: name
+            label: Name
+            type: STRING
+            description: The name of the page
+            placeholder: ''
+            defaultValue:
+              '@path': $.name
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: qad9KrWMF9GgHdTvDdfrDw
+            sortOrder: 5
+            fieldKey: properties
+            label: Properties
+            type: OBJECT
+            description: Page properties
+            placeholder: ''
+            defaultValue:
+              '@path': $.properties
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+      - id: aAkbLYG25CRN9dFVGocmtk
+        name: Identify
+        slug: identify
+        description: Identify user in Ripe
+        platform: WEB
+        hidden: false
+        defaultTrigger: type = "identify"
+        fields:
+          - id: 7DcacUsQRraJTLXSKwbtzy
+            sortOrder: 0
+            fieldKey: anonymousId
+            label: Anonymous ID
+            type: STRING
+            description: The new user ID, if user ID is not set
+            placeholder: ''
+            defaultValue:
+              '@path': $.anonymousId
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: tFsov9EqoDmy8aGNsKrdLa
+            sortOrder: 1
+            fieldKey: userId
+            label: User ID
+            type: STRING
+            description: The ID associated with the user
+            placeholder: ''
+            defaultValue:
+              '@path': $.userId
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 66dtNDqHCyinebqWpmCvMB
+            sortOrder: 2
+            fieldKey: groupId
+            label: Group ID
+            type: STRING
+            description: The ID associated groupId
+            placeholder: ''
+            defaultValue:
+              '@path': $.groupId
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: jQXPtP5RBY9tyt4rKPHUph
+            sortOrder: 3
+            fieldKey: traits
+            label: Traits
+            type: OBJECT
+            description: Traits to associate with the user
+            placeholder: ''
+            defaultValue:
+              '@path': $.traits
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+      - id: drx4u2Lu7aQPmPF95NE1po
+        name: Alias
+        slug: alias
+        description: Alias a user to new user ID in Ripe
+        platform: WEB
+        hidden: false
+        defaultTrigger: type = "alias"
+        fields:
+          - id: hPMFQqwq3JKvQVFMQS8MKB
+            sortOrder: 0
+            fieldKey: anonymousId
+            label: Anonymous ID
+            type: STRING
+            description: The new user ID, if user ID is not set
+            placeholder: ''
+            defaultValue:
+              '@path': $.anonymousId
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: jfSfW2ipBGGKgrm45PydPH
+            sortOrder: 1
+            fieldKey: userId
+            label: User ID
+            type: STRING
+            description: The ID associated with the user
+            placeholder: ''
+            defaultValue:
+              '@path': $.userId
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: grgCQsNs5XCxHrKuweCuYE
+            sortOrder: 2
+            fieldKey: groupId
+            label: Group ID
+            type: STRING
+            description: The ID associated groupId
+            placeholder: ''
+            defaultValue:
+              '@path': $.groupId
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+      - id: tLbgKm5fNhVwXmWeEb3283
+        name: Group
+        slug: group
+        description: Group user in Ripe
+        platform: WEB
+        hidden: false
+        defaultTrigger: type = "group"
+        fields:
+          - id: 25Du2whr3DTQqHN5JPe68z
+            sortOrder: 0
+            fieldKey: anonymousId
+            label: Anonymous ID
+            type: STRING
+            description: The new user ID, if user ID is not set
+            placeholder: ''
+            defaultValue:
+              '@path': $.anonymousId
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: rnajaYec5CUEA3S7AjkAeK
+            sortOrder: 1
+            fieldKey: userId
+            label: User ID
+            type: STRING
+            description: The ID associated with the user
+            placeholder: ''
+            defaultValue:
+              '@path': $.userId
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: wbqCtxDm5hW27UsMbBP7R9
+            sortOrder: 2
+            fieldKey: groupId
+            label: Group ID
+            type: STRING
+            description: The ID associated groupId
+            placeholder: ''
+            defaultValue:
+              '@path': $.groupId
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: cJ5xJip8V1Pg7Fs8ZknJ5c
+            sortOrder: 3
+            fieldKey: traits
+            label: Traits
+            type: OBJECT
+            description: Traits to associate with the group
+            placeholder: ''
+            defaultValue:
+              '@path': $.traits
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+    presets:
+      - actionId: 99i7DLnRY1GsiBPoQro9YP
+        name: Page view
+        fields:
+          anonymousId:
+            '@path': $.anonymousId
+          userId:
+            '@path': $.userId
+          groupId:
+            '@path': $.groupId
+          category:
+            '@path': $.category
+          name:
+            '@path': $.name
+          properties:
+            '@path': $.properties
+        trigger: type = "page"
+      - actionId: 3SGq783snwpEi33WUoutZt
+        name: Track event
+        fields:
+          anonymousId:
+            '@path': $.anonymousId
+          userId:
+            '@path': $.userId
+          groupId:
+            '@path': $.groupId
+          event:
+            '@path': $.event
+          properties:
+            '@path': $.properties
+        trigger: type = "track"
+      - actionId: aAkbLYG25CRN9dFVGocmtk
+        name: Identify user
+        fields:
+          anonymousId:
+            '@path': $.anonymousId
+          userId:
+            '@path': $.userId
+          groupId:
+            '@path': $.groupId
+          traits:
+            '@path': $.traits
+        trigger: type = "identify"
+      - actionId: tLbgKm5fNhVwXmWeEb3283
+        name: Group user
+        fields:
+          anonymousId:
+            '@path': $.anonymousId
+          userId:
+            '@path': $.userId
+          groupId:
+            '@path': $.groupId
+          traits:
+            '@path': $.traits
+        trigger: type = "group"
+      - actionId: drx4u2Lu7aQPmPF95NE1po
+        name: Alias user
+        fields:
+          anonymousId:
+            '@path': $.anonymousId
+          userId:
+            '@path': $.userId
+          groupId:
+            '@path': $.groupId
+        trigger: type = "alias"
