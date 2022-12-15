@@ -58,6 +58,7 @@
 
     &:focus-visible {
       border: 2px solid color(secondary);
+      color: color(secondary);
     }
 
     &:hover {
