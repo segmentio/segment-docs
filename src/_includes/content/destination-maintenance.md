@@ -1,5 +1,9 @@
 {% capture name %}{{page.title | replace: 'Destination', ''}}{% endcapture %}
-{% capture link %}/docs/connections/destinations/catalog/actions-{{name | slugify}}{% endcapture %}
+{% if page.actions-slug %}
+{% capture link %}/docs/connections/destinations/catalog/{{page.actions-slug}}{% endcapture %}
+{% else %}
+{% capture link %}/docs/connections/destinations/catalog/actions-{{name}}{% endcapture %}
+{% endif %}
 {% if page.maintenance-content %}
 {% capture blurb %}{{page.maintenance-content}} {% endcapture %}
 {% else %}
