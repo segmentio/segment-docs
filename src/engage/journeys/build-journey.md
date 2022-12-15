@@ -104,6 +104,15 @@ Segment then creates a draft of your Journey.
 
 You can also clone a Journey from a Journey's Overview by clicking the **…** icon.
 
+### Archive a Journey
+
+Use the Journey archive setting when you want to end a Journey but preserve its data.
+
+No new users enter archived Journeys, and progress stops for any users already in the Journey. Archived Journeys no longer [send data to Destinations](/docs/engage/journeys/send-data/).
+
+> success "Compute credits"
+> Steps in archived Journeys don't count towards your compute credits.
+
 ## Journey re-entry
 
 The Journeys re-entry setting allows users to repeat Journeys they've already exited. Common use cases for Journeys re-entry include the following:
