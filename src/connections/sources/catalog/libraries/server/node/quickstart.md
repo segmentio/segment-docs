@@ -1,8 +1,11 @@
 ---
-title: 'Quickstart: Node.js'
+title: 'Quickstart: Node.js Classic'
 redirect_from: '/connections/sources/catalog/libraries/server/node-js/quickstart/'
 strat: node-js
 ---
+
+> warning "Deprecation of Analytics Node.js Classic"
+> On [date], Segment will end support for Analytics Node.js Classic, which includes versions [1.x.x] and older. Upgrade to Analytics Node.js 2.0. See the [Analytics Node.js 2.0] docs to learn more.
 
 This tutorial will help you start sending data from your Node servers to Segment and any destination, using Segment's Node library. Check out the full documentation for [Analytics Node.js](/docs/connections/sources/catalog/libraries/server/node) to learn more.  
 

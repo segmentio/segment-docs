@@ -1,14 +1,18 @@
 ---
-title: Analytics for Node.js Next
+title: Analytics for Node.js 2.0
 repo: analytics-node
 strat: node-js
 ---
 
-Segment's Analytics Node.js Next library lets you record analytics data from your node code. The requests hit Segment's servers, and then Segment routes your data to any destinations you have enabled.
+Segment's Analytics Node.js 2.0 library lets you record analytics data from your node code. The requests hit Segment's servers, and then Segment routes your data to any destinations you have enabled.
 
 The [Segment Analytics Node.js Next library is open-source](https://github.com/segmentio/analytics-next){:target="_blank"} on GitHub.
 
 All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to Segment's servers.
+
+> info "Using Analytics for Node.js Classic?"
+> If you’re still using the classic version of Analytics for Node.js, you can refer to the documentation [here](/docs/connections/sources/catalog/libraries/server/node/).
+> <br><br>On [date], Segment will end support for Analytics Node.js Classic, which includes versions [#] and older. Upgrade to Analytics Node.js 2.0. See the Analytics Node.js 2.0 docs to learn more.
 
 ## Getting Started
 
@@ -430,6 +434,132 @@ analytics.on('identify', (ctx) => console.log(err))
 analytics.on('track', (ctx) => console.log(ctx))
 ```
 
+## Plugin architecture
+When you develop against Analytics 2.0, the plugins you write can augment functionality, enrich data, and control the flow and delivery of events. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
+
+Though middlewares function the same as plugins, it's best to use plugins as they are easier to implement and are more testable.
+
+### Plugin categories
+Plugins are bound by Analytics 2.0 which handles operations such as observability, retries, and error handling. There are two different categories of plugins:
+* **Critical Plugins**: Analytics.js expects this plugin to be loaded before starting event delivery. Failure to load a critical plugin halts event delivery. Use this category sparingly, and only for plugins that are critical to your tracking.
+* **Non-critical Plugins**: Analytics.js can start event delivery before this plugin finishes loading. This means your plugin can fail to load independently from all other plugins. For example, every Analytics.js destination is a non-critical plugin. This makes it possible for Analytics.js to continue working if a partner destination fails to load, or if users have ad blockers turned on that are targeting specific destinations.
+
+> info ""
+> Non-critical plugins are only non-critical from a loading standpoint. For example, if the `before` plugin crashes, this can still halt the event delivery pipeline.
+
+Non-critical plugins run through a timeline that executes in order of insertion based on the entry type. Segment has these five entry types of non-critical plugins:
+
+| Type          | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `before`      | Executes before event processing begins. These are plugins that run before any other plugins run. <br><br>For example, validating events before passing them along to other plugins. A failure here could halt the event pipeline. <br><br> See the example of how Analytics.js uses the [Event Validation plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/validation/index.ts){:target="_blank"} to verify that every event has the correct shape. |
+| `enrichment`  | Executes as the first level of event processing. These plugins modify an event. <br><br> See the example of how Analytics.js uses the [Page Enrichment plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/page-enrichment/index.ts){:target="_blank"} to enrich every event with page information.                                                                                                                                                     |
+| `destination` | Executes as events begin to pass off to destinations. <br><br> This doesn't modify the event outside of the specific destination, and failure doesn't halt the execution.                                                                                                                                                                                                                                                                                                                        |
+| `after`       | Executes after all event processing completes. You can use this to perform cleanup operations. <br><br>An example of this is the [Segment.io Plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/segmentio/index.ts){:target="_blank"} which waits for destinations to succeed or fail so it can send it observability metrics.                                                                                                                         |
+| `utility`     | Executes once during the bootstrap, to give you an outlet to make any modifications as to how Analytics.js works internally. This allows you to augment Analytics.js functionality.                                                                                                                                                                                                                                                                                                              |
+
+### Example plugins
+Here's an example of a plugin that converts all track event names to lowercase before the event goes through the rest of the pipeline:
+
+```js
+export const lowercase: Plugin = {
+  name: 'Lowercase events',
+  type: 'enrichment',
+  version: '1.0.0',
+
+  isLoaded: () => true,
+  load: () => Promise.resolve(),
+
+  track: (ctx) => {
+    ctx.updateEvent('event', ctx.event.event.toLowerCase())
+    return ctx
+  }
+}
+
+const identityStitching = () => {
+  let user
+
+  const identity = {
+    // Identifies your plugin in the Plugins stack.
+    // Access `window.analytics.queue.plugins` to see the full list of plugins
+    name: 'Identity Stitching',
+    // Defines where in the event timeline a plugin should run
+    type: 'enrichment',
+    version: '0.1.0',
+
+    // use the `load` hook to bootstrap your plugin
+    // The load hook will receive a context object as its first argument
+    // followed by a reference to the analytics.js instance from the page
+    load: async (_ctx, ajs) => {
+      user = ajs.user()
+    },
+
+    // Used to signal that a plugin has been property loaded
+    isLoaded: () => user !== undefined,
+
+    // Applies the plugin code to every `identify` call in Analytics.js
+    // You can override any of the existing types in the Segment Spec.
+    async identify(ctx) {
+      // Request some extra info to enrich your `identify` events from
+      // an external API.
+      const req = await fetch(
+        `https://jsonplaceholder.typicode.com/users/${ctx.event.userId}`
+      )
+      const userReq = await req.json()
+
+      // ctx.updateEvent can be used to update deeply nested properties
+      // in your events. It's a safe way to change events as it'll
+      //  create any missing objects and properties you may require.
+      ctx.updateEvent('traits.custom', userReq)
+      user.traits(userReq)
+
+      // Every plugin must return a `ctx` object, so that the event
+      // timeline can continue processing.
+      return ctx
+    },
+  }
+
+  return identity
+}
+
+// Registers Segment's new plugin into Analytics.js
+await window.analytics.register(identityStitching())
+```
+
+Here's an example of a `utility` plugin that allows you to change the format of the anonymous_id cookie:
+
+```js
+
+window.analytics.ready(() => {
+      window.analytics.register({
+        name: 'Cookie Compatibility',
+        version: '0.1.0',
+        type: 'utility',
+        load: (_ctx, ajs) => {
+          const user = ajs.user()
+          const cookieJar = user.cookies
+          const cookieSetter = cookieJar.set.bind(cookieJar)
+
+          // blindly convert any values into JSON strings
+          cookieJar.set = (key, value, opts) => cookieSetter(key, JSON.stringify(value), opts)
+
+          // stringify any existing IDs
+          user.anonymousId(user.anonymousId())
+          user.id(user.id())
+        },
+        isLoaded: () => true
+      })
+    })
+```
+
+You can view Segment's [existing plugins](https://github.com/segmentio/analytics-next/tree/master/src/plugins){:target="_blank"} to see more examples.
+
+### Register a plugin
+Registering plugins enable you to modify your analytics implementation to best fit your needs. You can register a plugin using this:
+
+```js
+// A promise will resolve once the plugins have been successfully loaded into Analytics.js
+// You can register multiple plugins at once by using the variable args interface in Analytics.js
+await window.analytics.register(pluginA, pluginB, pluginN)
 
 ## Development
 
