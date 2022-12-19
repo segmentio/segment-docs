@@ -172,6 +172,11 @@ Segment can send the following group traits to HubSpot as special properties:
 
 ## Troubleshooting
 
+
+### I Don't See My Data In HubSpot
+
+If you aren’t seeing your data arrive in HubSpot, we recommend you start by taking a look at your HubSpot configuration in Segment, and if you have enabled the option "Enable HubSpot SDK for EU" please confirm with the HubSpot team first that your account is enabled for EU data residency. 
+
 ### API Call Limits
 
 HubSpot limits the total amount of hourly and daily requests Segment can make to their API on your behalf. See HubSpot's [API Usage Guidelines](https://developers.hubspot.com/apps/api_guidelines){:target="_blank"} for more information.
