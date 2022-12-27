@@ -78,7 +78,7 @@ If your `userId` is an email, or you provide an email in `traits.email`, Segment
 
 #### Enforce email as primary identifier
 
-This option is enabled by default to ensure duplicate profiles are not being created inside of Klaviyo. When enabled, we will never set $id field to your `userId` when you call `.identify()` or `.track()`. Instead, we will only set $email as the primary identifier with your `traits.email` or `properties.email`. 
+This option is enabled by default to ensure duplicate profiles are not being created inside of Klaviyo. When enabled, Segment will never set the $id field to your `userId` when you call `.identify()` or `.track()`. Instead, Segment will only set $email as the primary identifier with your `traits.email` or `properties.email`. 
 
 #### Fallback on Anonymous ID
 
