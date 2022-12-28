@@ -36,7 +36,7 @@ The following Actions-based Destinations are available:
 
 ## Components of a Destination Action
 
-A Destination Action contains a hierarchy of components, that work together to ensure the right data is sent to the destination. 
+A Destination Action contains a hierarchy of components, that work together to ensure the right data is sent to the destination.
 
 | Component       | Description                                                                                                                                                                                                                                                                                                                                                                                             |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -83,9 +83,7 @@ You can add or remove, disable and re-enable, and rename individual actions from
 
 From the edit screen you can change the action's name and mapping, and toggle it on or off. See [Customizing mappings](#customize-mappings) for more information.
 
-![](images/actions-list.png)
-
-![](images/actions-edit.png)
+![Screenshot of the Mappings table with several enabled mappings](images/actions-list.png)
 
 ## Disable a destination action
 If you find that you need to stop an action from running, but don't want to delete it completely, you can click the action to select it, then click the toggle next to the action's name to disable it. This takes effect within minutes, and disables the action until you reenable it.
@@ -112,7 +110,8 @@ If necessary, click **New Mapping** to create a new, blank action.
 3. Next, set up the data mapping from the Segment format to the destination tool format.
 4. Test the mapping with data from a sample event.
     The edit panel shows you the mapping output in the format for the destination tool. You can change your mapping as needed and re-test.
-5. When you're satisfied with the mapping, click **Save**.
+5. When you're satisfied with the mapping, click **Save**. Segment returns you to the Mappings table.
+6. In the Mappings table **Status** column, verify that the **Enabled** toggle is on for the mapping you just customized.
 
 
 > info ""
@@ -137,5 +136,5 @@ You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY
 > Destination filters are compatible with Destination Actions. Consider a Destination Filter when:
 > - You need to remove properties from the data sent to the destination
 > - You need to filter data from multiple types of call (for example, Track, Page, and Identify calls)
-> 
+>
 > If your use case does not match these criteria, you might benefit from using Mapping-level Triggers to match only certain events.
