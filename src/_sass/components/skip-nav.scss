@@ -1,0 +1,19 @@
+.skiplink {
+  position: absolute;
+  left: -1000px;
+  top: auto;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  display: block;
+  z-index: 999;
+}
+.skiplink:focus-visible {
+  background: color(gray-700)
+  padding: 2px;
+  color: color(secondary);
+  position: static;
+  width: 200px;
+  height: auto;
+  overflow: visible;
+}
