@@ -398,7 +398,7 @@ tr.show {
 }
 
 .skiplink:focus-visible {
-  border: 4px solid color(secondary);
+  outline: 4px solid color(secondary);
   padding: 2px;
   color: color(secondary);
   position: static;

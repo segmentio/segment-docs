@@ -80,7 +80,7 @@
   <link rel="stylesheet" href="{{ '/assets/algolia.css' | relative_url }}">
 </head>
 <body>
-  <a href="#{{ page.title | downcase | split:" " | join:"-" }}" class="skiplink">Skip to main content</a>
+  <a href="#{{ page.title | remove:':' | remove:'?' | remove:'(' | remove:')' | remove:',' | remove:'&' | replace:"'", "-"| replace:'.', '-' | downcase | split:' ' | join:"-" }}" class="skiplink">Skip to main content</a>
   <div id="consent-manager"></div>
   {{ content }}
   <a class="back-scrolling" data-back-scrolling data-active-class="back-scrolling--active">
