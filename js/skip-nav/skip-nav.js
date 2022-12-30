@@ -1,12 +1,12 @@
-const button = 
-document.createElement ('skiplink');
+const button = document.createElement ('skiplink');
 button.textContent = 'Skip to main content';
 
-button.addEventListener ('focus-visible', => {
-  button.style.display = 'inline-block';
-});
+  button.addEventListener ('focus', (keypress) => {
+    button.style.display = 'inline-block';
+  });
 
-button.addEventListener ('focus-invisible', => {
+  button.addEventListener ('blur', (keypress) => {
   button.style.display = 'none';
-});
+  });
 
+document.body.appendChild(button)

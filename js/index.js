@@ -23,7 +23,6 @@ import autocomplete from './algolia'
 import mapTable from './map-table'
 import expando from './expando'
 import codeCopy from './code-copy'
-import skipNav from './skip-nav'
 
 feedback()
 accordion()
@@ -49,4 +48,3 @@ glightbox()
 mapTable()
 expando()
 codeCopy()
-skipNav()
