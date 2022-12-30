@@ -23,7 +23,6 @@ import autocomplete from './algolia'
 import mapTable from './map-table'
 import expando from './expando'
 import codeCopy from './code-copy'
-
 feedback()
 accordion()
 accordionGroup()
