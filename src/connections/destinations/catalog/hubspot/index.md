@@ -175,7 +175,7 @@ Segment can send the following group traits to HubSpot as special properties:
 
 ### I Don't See My Data In HubSpot
 
-If you aren’t seeing your data arrive in HubSpot, we recommend you start by taking a look at your HubSpot configuration in Segment, and if you have enabled the option "Enable HubSpot SDK for EU" please confirm with the HubSpot team first that your account is enabled for EU data residency. 
+If you don't see your data in HubSpot, verify the HubSpot configuration in your Segment workspace. If you've selected the **Enable HubSpot SDK for EU** option, confirm with HubSpot that your HubSpot account is enabled for EU data residency.
 
 ### API Call Limits
 
