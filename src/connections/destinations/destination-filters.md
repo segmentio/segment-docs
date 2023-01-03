@@ -16,7 +16,7 @@ Common use cases for destination filters include:
 - Managing PII (personally identifiable information) by blocking fields from reaching certain destinations
 - Controlling event volume by sampling or dropping unnecessary events for specific destinations
 - Increasing data relevance in your destinations by removing unused or unwanted data
-- Preventing test or internally-generated events from reaching your production tools
+- Preventing test or internally-generated events from reaching your production tools. 
 
 ### Limitations
 
