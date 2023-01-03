@@ -4,9 +4,9 @@ rewrite: true
 beta: true
 id: 613ef845b8784e858199fe2d
 ---
-[Ortto](https://ortto.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps thousands of organizations around the world automate their communications via email notifications, such as regular email newsletters, abandoned cart emails, as well as SMS messages, and more, to help organizations market and grow their businesses faster.
+[Ortto](https://ortto.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} helps thousands of organizations around the world automate their communications through email notifications, such as regular email newsletters, abandoned cart emails, as well as SMS messages, and more, to help organizations market and grow their businesses faster.
 
-Once you connect Segment to Ortto (the Ortto product), you can leverage Ortto's powerful [campaign](https://help.ortto.com/user/latest/campaigns/) features on your Segment customer data.
+Once you connect Segment to Ortto (the Ortto product), you can use Ortto's powerful [campaign](https://help.ortto.com/user/latest/campaigns/){:target="_blank"} features on your Segment customer data.
 
 This destination is maintained by Ortto. For any issues with the destination, [contact the Ortto Support team](mailto:help@ortto.com).
 
@@ -29,7 +29,7 @@ Ortto supports the following methods, as specified in the [Segment Spec](/docs/c
 
 ### Identify
 
-Send [Identify](/docs/connections/spec/identify) calls to create or update [people](https://help.ortto.com/user/latest/people/) in Ortto. For example:
+Send [Identify](/docs/connections/spec/identify) calls to create or update [people](https://help.ortto.com/user/latest/people/){:target="_blank"} in Ortto. For example:
 
 ```js
 analytics.identify('userId123', {
@@ -44,7 +44,7 @@ Segment sends Identify calls to Ortto as an `identify` event.
 
 ### Track
 
-Send [Track](/docs/connections/spec/track) calls to create or update [activities](https://help.ortto.com/user/latest/activities/) (including activity attributes) in Ortto. For example:
+Send [Track](/docs/connections/spec/track) calls to create or update [activities](https://help.ortto.com/user/latest/activities/){:target="_blank"} (including activity attributes) in Ortto. For example:
 
 ```js
 analytics.track('Login Button Clicked', {
