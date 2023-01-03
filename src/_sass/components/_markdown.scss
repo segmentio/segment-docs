@@ -398,13 +398,13 @@ tr.show {
 }
 
 .skiplink:focus-visible {
-  outline: 4px solid color(secondary);
-  padding: 2px;
+  outline: 2px solid color(secondary);
   color: color(secondary);
   position: static;
-  width: 200px;
+  width: 400px;
   height: auto;
   overflow: visible;
+  font-weight: bold;
 }
 
 .device-web-mode,
