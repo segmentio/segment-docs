@@ -388,6 +388,25 @@ tr.show {
   white-space: nowrap;
 }
 
+.skiplink {
+  left: -999px;
+  position: absolute;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skiplink:focus-visible {
+  outline: 2px solid color(secondary);
+  color: color(secondary);
+  position: static;
+  width: 400px;
+  height: auto;
+  overflow: visible;
+  font-weight: bold;
+}
+
 .device-web-mode,
 .device-mobile-mode {
   background-color: #e6f5ef;
