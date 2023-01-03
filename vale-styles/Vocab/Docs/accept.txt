@@ -73,7 +73,7 @@ Okta
 Omnichannel
 onboarding
 Optimizely
-Otto 
+Ortto 
 performant
 Pipedrive
 Preact
