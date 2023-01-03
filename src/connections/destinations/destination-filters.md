@@ -68,7 +68,7 @@ The following examples illustrate common destinations filters use cases:
 * [Remove internal and test events from production tools](#remove-internal-and-test-events-from-production-tools)
 * [Sample a percentage of events](#sample-a-percentage-of-events)
 * [Drop events](#drop-events)  
-* [Only send event with userId](#only-send-events-with-userid) 
+* [Only send events with userId](#only-send-events-with-userid) 
 
 ### PII management
 
@@ -111,7 +111,7 @@ Using the [destination filters API](https://docs.segmentapis.com/tag/Destination
 
 ### Only send events with userId
 
-You may only want to send some events downstream to your destinations if they contain a `userId`. You won't be able to configure a filter like that in the Destination Filter UI, but you can use the [Public API](https://docs.segmentapis.com/tag/Destination-Filters/){:target="_blank"} to achieve this. Here is an example of how you might format such a request:
+Use the [Public API](https://docs.segmentapis.com/tag/Destination-Filters/){:target="_blank"} to only send events to your destination if they contain a `userId`. Here's an example of how you might format this request:
 
 ```json
 {
