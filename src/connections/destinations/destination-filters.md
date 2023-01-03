@@ -42,7 +42,7 @@ To create a destination filter:
 5. *(Optional)* Click **Load Sample Event** to see if the event passes through your filter.
 6. Click **Next Step**.
 7. Name your filter and click the toggle to enable it.
-8. Click **Save**.
+8. Click **Save**.   
 
 ## Destination filters API
 
