@@ -4,6 +4,8 @@ title: HubSpot Destination
 hide-personas-partial: true
 cmode-override: true
 id: 54521fd725e721e32a72eec1
+maintenance: true
+maintenance-content: New versions of the destination are available. See [HubSpot Cloud Mode (Actions)](/docs/connections/destinations/catalog/actions-hubspot-cloud/) and [HubSpot Web (Actions)](/docs/connections/destinations/catalog/actions-hubspot-web/) for more information.
 ---
 [HubSpot](https://www.hubspot.com/){:target="_blank"} is an inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers. The `analytics.js` HubSpot Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/hubspot){:target="_blank"}.
 
@@ -169,6 +171,11 @@ Segment can send the following group traits to HubSpot as special properties:
 
 
 ## Troubleshooting
+
+
+### I Don't See My Data In HubSpot
+
+If you don't see your data in HubSpot, verify the HubSpot configuration in your Segment workspace. If you've selected the **Enable HubSpot SDK for EU** option, confirm with HubSpot that your HubSpot account is enabled for EU data residency.
 
 ### API Call Limits
 

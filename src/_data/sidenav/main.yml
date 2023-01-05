@@ -241,6 +241,14 @@ sections:
     title: Rate Limits
   - path: /connections/regional-segment
     title: Regional Segment
+- section_title: Reverse ETL
+  section:
+  - path: /reverse-etl
+    title: Reverse ETL Overview
+  - path: /reverse-etl/bigquery-setup
+    title: BigQuery Reverse ETL Setup
+  - path: /reverse-etl/snowflake-setup
+    title: Snowflake Reverse ETL Setup
 - section_title: Profiles
   section:
   - path: /profiles
@@ -273,6 +281,15 @@ sections:
       title: Settings
     - path: /profiles/identity-resolution/ecommerce-example
       title: E-Commerce Example
+  - section_title: Profiles Sync
+    slug: profiles/profiles-sync
+    section:
+    - path: /profiles/profiles-sync
+      title: Setup
+    - path: /profiles/profiles-sync/sample-queries
+      title: Sample Queries
+    - path: /profiles/profiles-sync/tables
+      title: Tables & Materialized Views
   - path: /profiles/profile-api
     title: Profile API
   - path: /profiles/profile-api-limits
@@ -283,7 +300,6 @@ sections:
     title: Profiles and GDPR
   - path: /profiles/faqs
     title: Profiles FAQs
-
 
 - section_title: Engage
   section:
@@ -304,6 +320,8 @@ sections:
       title: Set User Subscriptions
     - path: /engage/user-subscriptions/subscription-states
       title: Subscription States
+    - path: /engage/user-subscriptions/engage-source
+      title: Engage Events Source
   - section_title: Profiles
     description: "See how to create audiences based on data."
     section:
@@ -397,7 +415,7 @@ sections:
   - path: /privacy/account-deletion
     title: Account & Data Deletion
   - path: /privacy/hipaa-eligible-segment
-    title: HIPAA Eligible Segment  
+    title: HIPAA Eligible Segment
   - path: /privacy/faq
     title: Privacy FAQs
 - section_title: Protocols
@@ -475,6 +493,8 @@ sections:
     title: Prod and Testing Environments in Segment
   - path: /segment-app/verify-email-address
     title: Verifying Your Email Address
+  - path: /segment-app/support-access
+    title: Support Access
 - section_title: API
   section:
   - path: /api/public-api

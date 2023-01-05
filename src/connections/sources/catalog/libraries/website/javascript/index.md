@@ -12,7 +12,7 @@ Analytics.js 2.0, the latest version of Segment's JavaScript source, enables you
 
 > info ""
 > Analytics.js 2.0 is available as an [open-source project](https://github.com/segmentio/analytics-next/){:target="_blank"}.
-> <br><br> All sources created on April 5, 2022 and after default to use Analytics.js 2.0.
+> <br><br> All sources created on April 5, 2022 and after, default to use Analytics.js 2.0.
 
 
 ## Benefits of Analytics.js 2.0
@@ -121,12 +121,12 @@ analytics.track(event, [properties], [options], [callback]);
 
 The `track` call has the following fields:
 
-Field | | Type | Description
------ | | ---- | -----------
-`event`| | String | The name of the event you're tracking. You can read more about the [track method](/docs/connections/spec/track) and recommended event names.
-`properties` | optional | Object | A dictionary of [properties](/docs/connections/spec/track#properties) for the event. If the event was `'Added to Cart'`, it might have properties like `price` and `productType`.
-`options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_.
-`callback` | optional | Function | A function that runs after a timeout of 300 ms, giving the browser time to make outbound requests first.
+| Field        | Type     | Description                                                                                                                                                                                                                                                    |
+| ------------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `event`      | String   | The name of the event you're tracking. You can read more about the [track method](/docs/connections/spec/track) and recommended event names.                                                                                                                   |
+| `properties` | Object   | Optional. A dictionary of [properties](/docs/connections/spec/track#properties) for the event. If the event was `'Added to Cart'`, it might have properties like `price` and `productType`.                                                                    |
+| `options`    | Object   | Optional. A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_. |
+| `callback`   | Function | Optional. A function that runs after a timeout of 300 ms, giving the browser time to make outbound requests first.                                                                                                                                             |
 
 The only required argument in Analytics.js is an _event name string_. You can read more about [how Segment recommends you name events](/docs/connections/spec/track#event).
 
@@ -326,11 +326,40 @@ For more details about Alias, including the **`alias` call payload**, check out 
 
 The Analytics.js utility methods help you change how Segment loads on your page. They include:
 
+- [Load](#load)
 - [Ready](#ready)
 - [Debug](#debug)
 - [On (Emitter)](#emitter)
 - [Timeout](#extending-timeout)
 - [Reset (Logout)](#reset-or-logout)
+
+### Load
+
+> info ""
+> The `load` method is also available when you load analytics.js through the [NPM package](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"}.
+
+You can load a buffered version of analytics.js that requires you call `load` explicitly to before analytics.js initiates any network activity. This is useful if you want to, for example, wait for user consent before you fetch tracking destinations or send buffered events to Segment.
+
+> warning ""
+> Call `load` one time only.
+
+```js
+export const analytics = new AnalyticsBrowser()
+
+analytics.identify("hello world")
+
+if (userConsentsToBeingTracked) {
+    analytics.load({ writeKey: '<YOUR_WRITE_KEY>' }) // destinations loaded, enqueued events are flushed
+}
+```
+
+You can also use `load` if you fetch some settings asynchronously.
+```js
+const analytics = new AnalyticsBrowser()
+fetchWriteKey().then(writeKey => analytics.load({ writeKey }))
+
+analytics.identify("hello world")
+```
 
 ### Ready
 

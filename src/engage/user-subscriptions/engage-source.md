@@ -1,11 +1,7 @@
 ---
 title: Engage Events Source
 plan: engage-foundations
-hidden: true
 ---
-
-> info ""
-> The Engage Events Source is in beta.
 
 Use the Engage Events Source to sync Engage subscription states to downstream Destinations.
 

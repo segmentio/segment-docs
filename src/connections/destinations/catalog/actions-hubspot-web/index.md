@@ -16,10 +16,6 @@ HubSpot is an all-in-one marketing tool that helps attract new leads and convert
 
 When you use the HubSpot Web (Actions) destination, Segment loads the [HubSpot tracking code](https://developers.hubspot.com/docs/api/events/tracking-code){:target="_blank"} for you. In addition to tracking page views, the HubSpot tracking code allows you to identify visitors, track events, and manually track page views without reloading the page. The tracking code API allows you to dynamically create events and track event data in HubSpot.
 
-> info ""
-> The HubSpot Web (Actions) destination is in beta and is in active development. Some functionality may change before it becomes generally available.
-
-
 ## Benefits of HubSpot Web (Actions) vs HubSpot Classic
 HubSpot Web (Actions) provides the following benefits over the classic HubSpot destination:
 
@@ -40,3 +36,11 @@ HubSpot Web (Actions) provides the following benefits over the classic HubSpot d
 7. Enable the destination and configured mappings.
 
 {% include components/actions-fields.html settings="true"%}
+
+## FAQ & Troubleshooting
+
+### Why aren't my custom behavioral events appearing in HubSpot?
+HubSpot has several limits for custom behavioral events, including a limit on the number of event properties per event. Each event can contain data for up to 50 properties. If this limit is exceeded, HubSpot will truncate to only update 50 properties per event completion. See [HubSpot documentation](https://knowledge.hubspot.com/analytics-tools/create-custom-behavioral-events#define-the-api-call){:target="_blank"} for other limits.
+
+> note ""
+> A HubSpot Enterprise Marketing Hub account is required to send Custom Behavioral Events.

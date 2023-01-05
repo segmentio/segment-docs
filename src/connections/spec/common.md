@@ -89,6 +89,7 @@ Here's an example of these common fields in raw JSON:
     "Mixpanel": false,
     "Salesforce": false
   },
+  "event": "Report Submitted",
   "messageId": "022bb90c-bbac-11e4-8dfc-aa07a5b093db",
   "receivedAt": "2015-12-10T04:08:31.909Z",
   "sentAt": "2015-12-10T04:08:31.581Z",
@@ -97,6 +98,7 @@ Here's an example of these common fields in raw JSON:
   "userId": "97980cfea0067",
   "version": 2
 }
+
 ```
 
 In more detail these common fields for every API call are:

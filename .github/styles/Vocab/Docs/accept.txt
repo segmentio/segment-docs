@@ -81,6 +81,7 @@ Javascript
 Jebbit
 Jimo
 Jivox
+jQuery
 Kable
 Kameleoon
 Kissmetrics
@@ -114,6 +115,7 @@ Pardot
 Passcode
 performant
 Pinterest
+Pipedrive
 Preact
 Qualtrics
 reformat(:?s)

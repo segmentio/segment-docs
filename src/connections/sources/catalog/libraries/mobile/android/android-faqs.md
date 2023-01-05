@@ -127,3 +127,16 @@ analytics.getContext().putDeviceToken(registrationId);
 ## Do you support Phonegap or Cordova?
 
 Yes! You can use Segment's browserify'd [analytics-node](https://github.com/segmentio/analytics-node) package just like any other client-side JavaScript library.
+
+
+## Does LifecycleObserver (above version 2.6.0) work with Segment?
+
+No. It depends on androidx-startup for initialization, this snippet prevents the Segment SDK from tracking app lifecycle events.
+The solution is to either remove the snippet completely or use `tools:node="merge"` instead of `tools:node="remove"`.
+
+```java
+<provider
+    android:name="androidx.startup.InitializationProvider"
+    android:authorities="${applicationId}.androidx-startup"
+    tools:node="merge"></provider>
+```
