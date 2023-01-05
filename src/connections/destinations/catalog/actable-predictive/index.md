@@ -1,8 +1,9 @@
 ---
-# The end name should be similar to `Slack  Destination`
 title: Actable Predictive Destination
 hide-boilerplate: true
 hide-dossier: true
+id: 6388fddea33fcc69c0f8d9ce
+private: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -32,6 +33,6 @@ Actable Predictive (Actions) provides the following benefits:
 
 Each Action Destination mapping includes a `stream_key` field to indicate which type of event Segment sends. These should be left alone, except in cases involving the Custom Event Action. The Custom Event Action is for writing interaction, messaging engagement, or transaction data in cases where the mapping options available cannot transform the data as it exists in Segment.
 
-An example of this is if your Segment implementation contains transaction/purchase events that do not leverage the [eCommerce V2 Spec](/docs/connections/spec/ecommerce/v2/). The Send Transaction Event Action expects that the `properties.products` key contains an array of products the customer has purchased, each with a SKU or ID.
+An example of this is if your Segment implementation contains transaction/purchase events that do not use the [eCommerce V2 Spec](/docs/connections/spec/ecommerce/v2/). The Send Transaction Event Action expects that the `properties.products` key contains an array of products the customer has purchased, each with a SKU or ID.
 
  If, instead of an array, this value is already flattened into a list, use the Send Custom Event Action to send transaction events to Actable by changing the `stream_key` to `transaction`, in addition to sending other required fields (`userId`, `timestamp`, `amount`).
