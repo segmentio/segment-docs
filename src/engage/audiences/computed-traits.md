@@ -171,7 +171,7 @@ To edit a real-time Trait, follow these steps:
 
 Engage then processes your Trait edits. While the edit task runs, the trait remains locked and you can't make further changes. Once Engage has finished incorporating your changes, you'll be able to access your updated Trait.
 
-You can use the Overview page to view trait details and current [compute status](/docs/engage/audiences/#audience-and-trait-compute-statuses). For real-time traits, click **Refresh Trait** to see the current number of users with the trait.  
+You can use the Overview page to view trait details and current [compute status](/docs/engage/audiences/#compute-statuses). For real-time traits, click **Refresh Trait** to see the current number of users with the trait.  
 
 ## Accessing your Computed Traits using the Profiles API
 

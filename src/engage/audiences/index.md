@@ -167,7 +167,7 @@ To edit a realtime Trait or Audience, follow these steps:
 3. Select the **Builder** tab and make your edits.
 4. Select **Save Audience** to confirm your edits.
 
-Engage then processes your realtime Audience or Trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated Audience or Trait. You can use the Overview page to view user details, refresh real-time Audiences, and view the current [compute status](#audience-and-trait-compute-statuses).
+Engage then processes your realtime Audience or Trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated Audience or Trait. You can use the Overview page to view user details, refresh real-time Audiences, and view the current [compute status](#compute-statuses).
 
 > warning ""
 > If your audience includes historical data (Historical Backfill is enabled), editing an audience creates a new backfill task. The backfill task, and therefore the edit task, take longer to process if the audience is connected to a destination with rate limits. Rate-limited destinations dictate how fast Engage can backfill. View a list of [rate-limited destinations](/docs/engage/using-engage-data/#rate-limits-on-engage-event-destinations).
