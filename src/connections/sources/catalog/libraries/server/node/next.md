@@ -6,7 +6,7 @@ strat: node-js
 
 Segment's Analytics Node.js 2.0 library lets you record analytics data from your node code. The requests hit Segment's servers, and then Segment routes your data to any destinations you have enabled.
 
-The [Segment Analytics Node.js Next library is open-source](https://github.com/segmentio/analytics-next){:target="_blank"} on GitHub.
+The [Segment Analytics Node.js Next library is open-source](https://github.com/segmentio/analytics-next/tree/master/packages/node){:target="_blank"} on GitHub.
 
 All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to Segment's servers.
 
@@ -429,7 +429,7 @@ The event emitter interface allows you to track when certain things happen in th
 ```javascript
 analytics.on('error', (err) => console.error(err))
 
-analytics.on('identify', (ctx) => console.log(err))
+analytics.on('identify', (ctx) => console.log(ctx))
 
 analytics.on('track', (ctx) => console.log(ctx))
 ```
