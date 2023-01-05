@@ -95,7 +95,7 @@ From the Audience Overview page, you can view Audience details including the cur
 
 ### Refresh real-time Audiences and Traits
 
-For real-time Audiences or Traits, click **Refresh Audience** or **Refresh Trait** to update all users, status, and compute progress. Engage refreshes real-time Audiences and Traits approximately every 10 minutes.
+For real-time Audiences or Traits, click **Refresh Audience** or **Refresh Trait** to update user counts, status, and compute progress. Engage refreshes real-time Audiences and Traits approximately every 10 minutes.
 
 ### Audience and Trait compute statuses
 
@@ -103,13 +103,13 @@ Engage displays the following compute statuses for real-time and batch Audiences
 
 #### Real-time Audience or Trait
 
-| Computation Status        | Description         |
-|---------------------------|----------------------------|
+| Computation status        | Description                           |
+|---------------------------|---------------------------------------|
 | Preparing                 | Engage is preparing the computation.  |
-| Computing                 | Engage is computing the Audience or Trait. |
-| Live                      | The Audience or Trait is live with the most recent data. |
+| Computing                 | Engage is computing the Audience or Trait.                     |
+| Live                      | The Audience or Trait is live with the most recent data.       |
 | Disabled                  | The real-time Audience or Trait is disabled.                   |
-| Failed                    | The computation was cancelled or failed to compute. Please contact [Segment support](https://segment.com/help/contact/){:target="_blank"}. |
+| Failed                    | The computation was cancelled or failed to compute. Please contact [Segment support](https://segment.com/help/contact/){:target="_blank"}.      |
 
 
 #### Batch Audience or Trait
@@ -118,14 +118,14 @@ Engage displays the following compute statuses for real-time and batch Audiences
 > Engage updates batch Audiences and Traits approximately once every hour.
 
 
-| Computation Status        | Description                  |
-|---------------------------|------------------------------|
+| Computation status        | Description                           |
+|---------------------------|---------------------------------------|
 | Preparing                 | Engage is preparing the batch computation. |
 | Computing                 | Engage is computing the batch Audience or Trait.  |
-| Live                      | The batch computation is up-to-date with the most recent data, based on the most recent sync cadence.   |
+| Live                      | The batch computation is up-to-date with the most recent data, based on the most recent sync cadence.        |
 | Not Computing             | The audience is awaiting the destination to be connected. You'll see this status when there are no destinations connected and `Compute without connected destinations` isn't selected. |
 | Disabled                  | The batch Audience or Trait is disabled. |
-| Failed                    | The batch computation was cancelled or failed to compute. Please contact [Segment support](https://segment.com/help/contact/){:target="_blank"}. |
+| Failed                    | The batch computation was cancelled or failed to compute. Please contact [Segment support](https://segment.com/help/contact/){:target="_blank"}.      |
 
 
 ## Real-time compute compared to batch
@@ -150,8 +150,6 @@ To create a new Audience:
 
    By default, Segment queries all historical data to set the current value of the computed trait and Audience. Backfill computes historical data up to the point of audience creation. After audience creation, Segment computes traits and audiences in real-time. You can uncheck **Include Historical Data** to compute values for the Audience or trait without historical data. With backfill disabled, the trait or Audience only uses the data that arrives after you create it.
 
-After you create your Audience, Engage displays a confirmation screen along with an estimated time of completion.
-
 Use the Audience Explorer to see users or accounts that enter the Audience. Segment displays the Audience as computing until at least one user or account enters.
 
 
@@ -169,7 +167,7 @@ To edit a realtime Trait or Audience, follow these steps:
 3. Select the **Builder** tab and make your edits.
 4. Select **Save Audience** to confirm your edits.
 
-Engage then processes your realtime Audience or Trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Engage has finished incorporating your changes, you'll be able to access your updated Audience or Trait. You can use the Overview page to view user details, refresh real-time Audiences, and view the current [compute status](#).
+Engage then processes your realtime Audience or Trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Engage has finished incorporating your changes, you'll be able to access your updated Audience or Trait. You can use the Overview page to view user details, refresh real-time Audiences, and view the current [compute status](#audience-and-trait-compute-statuses).
 
 > warning ""
 > If your audience includes historical data (Historical Backfill is enabled), editing an audience creates a new backfill task. The backfill task, and therefore the edit task, take longer to process if the audience is connected to a destination with rate limits. Rate-limited destinations dictate how fast Engage can backfill. View a list of [rate-limited destinations](/docs/engage/using-engage-data/#rate-limits-on-engage-event-destinations).
