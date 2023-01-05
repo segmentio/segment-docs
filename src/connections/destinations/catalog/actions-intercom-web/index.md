@@ -21,9 +21,6 @@ Intercom is a customer communications platform that shows you who is using your 
 
 When you use the Intercom Web (Actions) destination, Segment loads the [Intercom JavaScript library](https://developers.intercom.com/installing-intercom/docs/intercom-for-web){:target="_blank"} for you. The Intercom library enables you to track your user’s events on your website and interact with the Intercom messenger window.
 
-> info ""
-> The Intercom Web (Actions) destination is in beta and is in active development. Some functionality may change before it becomes generally available.
-
 ## Benefits of Intercom Web Mode (Actions) vs Intercom Classic
 Intercom Web (Actions) provides the following benefits over the classic Intercom destination:
 

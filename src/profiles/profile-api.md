@@ -132,7 +132,7 @@ If you're looking to find all the users linked to an account, you can search for
 
 `https://profiles.segment.com/v1/spaces/<space_id>/collections/accounts/profiles/group_id:12345/links`
 
-The return limit for the `/links` endpoint is 20 records. You can request up to 20 records by appending `?limit=20` to the query string.
+The return limit for the `/links` endpoint is 20 records, which you can request by appending `?limit=20` to the query string.
 
 ### cURL
 

@@ -87,6 +87,9 @@ The **Show an ad** step lets you send users to an advertising destination. You c
 
 For example, you may want to show an ad for only one week to users who abandoned a cart during a purchase. With the Show an ad step, you can remove users from the ad destination seven days after they enter it.
 
+> info "Ad-based exit settings"
+> Ad step exit settings don't impact other Journey steps. A user can exit an ad step but remain in the overall Journey. For more on Journeys exit settings, view [Journey exit and re-entry times](/docs/engage/journeys/build-journey/#exit-and-re-entry-times).
+
 Follow these steps to add a Show an ad step to a Journey:
 
 1. From the Journey builder, select the **+** icon to add a step, then select **Show an ad**.

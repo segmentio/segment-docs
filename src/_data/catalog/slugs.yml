@@ -60,3 +60,5 @@
   override: "actions-hubspot-web"
 - original: "linkedin-audiences"
   override: "actions-linkedin-audiences"
+- original: "salesforce-marketing-cloud-actions"
+  override: "actions-salesforce-marketing-cloud"
