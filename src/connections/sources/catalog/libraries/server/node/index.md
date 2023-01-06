@@ -3,10 +3,11 @@ title: Analytics for Node.js Classic
 redirect_from: '/connections/sources/catalog/libraries/server/node-js/'
 repo: analytics-node
 strat: node-js
+hidden: true
 ---
 
 > warning "Deprecation of Analytics Node.js Classic"
-> On [date], Segment will end support for Analytics Node.js Classic, which includes versions [1.x.x] and older. Upgrade to Analytics Node.js 2.0. See the [Analytics Node.js 2.0] docs to learn more.
+> On [date], Segment will end support for Analytics Node.js Classic, which includes versions [1.x.x] and older. Upgrade to the new version of Analytics Node.js. See the updated [Analytics Node.js] docs to learn more.
 
 Segment's Node.js library lets you record analytics data from your node code. The requests hit Segment's servers, and then Segment routes your data to any destinations you have enabled.
 

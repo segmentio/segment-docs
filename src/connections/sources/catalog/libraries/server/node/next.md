@@ -41,18 +41,6 @@ Be sure to replace `YOUR_WRITE_KEY` with your actual **Write Key** which you can
 
 This will create an instance of `Analytics` that you can use to send data to Segment for your project. The default initialization settings are production-ready and queue 20 messages before sending any requests. In development you might want to use [development settings](/docs/connections/sources/catalog/libraries/server/node/#development).
 
-### Regional configuration
-For Business plans with access to [Regional Segment](/docs/guides/regional-segment), you can use the `host` configuration parameter to send data to the desired region:
-1. Oregon (Default) — `api.segment.io/v1`
-2. Dublin — `events.eu1.segmentapis.com`
-
-An example of setting the host to the EU endpoint using the Node library is:
-```javascript
-const analytics = new Analytics({
-  ...
-  host: "https://events.eu1.segmentapis.com"
-});
-```
 
 ## Basic tracking methods
 The basic tracking methods below serve as the building blocks of your Segment tracking. They include [Identify](#identify), [Track](#track), [Page](#page), [Group](#group), and [Alias](#alias).
@@ -286,7 +274,7 @@ The `group` call has the following fields:
   </tr>
   <tr>
     <td>`traits` _dict, optional_</td>
-    <td>A dict of traits you know about the group. For a company, they might be things like `name`, `address`, or `phone`.</td>
+    <td>A dict of traits you know about the group. For a company, they might be things like `name`, `address`, or `phone`. [Learn more about traits](/docs/connections/spec/group/#traits).</td>
   </tr>
   <tr>
     <td>`context` _dict, optional_</td>
@@ -412,6 +400,19 @@ await analytics.closeAndFlush()
 console.log(unflushedEvents) // all events that came in after closeAndFlush was called
 ```
 
+## Regional configuration
+For Business plans with access to [Regional Segment](/docs/guides/regional-segment), you can use the `host` configuration parameter to send data to the desired region:
+1. Oregon (Default) — `api.segment.io/v1`
+2. Dublin — `events.eu1.segmentapis.com`
+
+An example of setting the host to the EU endpoint using the Node library is:
+```javascript
+const analytics = new Analytics({
+  ...
+  host: "https://events.eu1.segmentapis.com"
+});
+```
+
 ## Error handling
 
 To keep track of errors, subscribe and log all event delivery errors by running:
@@ -486,13 +487,6 @@ const identityStitching = () => {
     type: 'enrichment',
     version: '0.1.0',
 
-    // use the `load` hook to bootstrap your plugin
-    // The load hook will receive a context object as its first argument
-    // followed by a reference to the analytics.js instance from the page
-    load: async (_ctx, ajs) => {
-      user = ajs.user()
-    },
-
     // Used to signal that a plugin has been property loaded
     isLoaded: () => user !== undefined,
 
@@ -521,34 +515,6 @@ const identityStitching = () => {
   return identity
 }
 
-// Registers Segment's new plugin into Analytics.js
-await window.analytics.register(identityStitching())
-```
-
-Here's an example of a `utility` plugin that allows you to change the format of the anonymous_id cookie:
-
-```js
-
-window.analytics.ready(() => {
-      window.analytics.register({
-        name: 'Cookie Compatibility',
-        version: '0.1.0',
-        type: 'utility',
-        load: (_ctx, ajs) => {
-          const user = ajs.user()
-          const cookieJar = user.cookies
-          const cookieSetter = cookieJar.set.bind(cookieJar)
-
-          // blindly convert any values into JSON strings
-          cookieJar.set = (key, value, opts) => cookieSetter(key, JSON.stringify(value), opts)
-
-          // stringify any existing IDs
-          user.anonymousId(user.anonymousId())
-          user.id(user.id())
-        },
-        isLoaded: () => true
-      })
-    })
 ```
 
 You can view Segment's [existing plugins](https://github.com/segmentio/analytics-next/tree/master/src/plugins){:target="_blank"} to see more examples.
@@ -560,15 +526,7 @@ Registering plugins enable you to modify your analytics implementation to best f
 // A promise will resolve once the plugins have been successfully loaded into Analytics.js
 // You can register multiple plugins at once by using the variable args interface in Analytics.js
 await window.analytics.register(pluginA, pluginB, pluginN)
-
-## Development
-
-You can use this initialization during development to make the library flush every time a message is submitted, so that you can be sure your calls are working properly before pushing to production.
-
-```javascript
-var analytics = new Analytics('YOUR_WRITE_KEY', { flushAt: 1 });
 ```
-
 
 ## Selecting Destinations
 
@@ -649,85 +607,6 @@ analytics.flush(function(err, batch){
   console.log('Flushed, and now this program can exit!');
 });
 ```
-
-<!-- ## Long running process??
-
-You should call `client.track(...)` and know that events will be queued and eventually sent to Segment. To prevent losing messages, be sure to capture any interruption (for example, a server restart) and call flush to know of and delay the process shutdown.
-
-```js
-import { randomUUID } from 'crypto';
-import Analytics from 'analytics-node'
-
-const WRITE_KEY = '...';
-
-const analytics = new Analytics(WRITE_KEY, { flushAt: 10 });
-
-analytics.track({
-  anonymousId: randomUUID(),
-  event: 'Test event',
-  properties: {
-    name: 'Test event',
-    timestamp: new Date()
-  }
-});
-
-const exitGracefully = async (code) => {
-  console.log('Flushing events');
-  await analytics.flush(function(err, batch) {
-    console.log('Flushed, and now this program can exit!');
-    process.exit(code);
-  });
-};
-
-[
-  'beforeExit', 'uncaughtException', 'unhandledRejection',
-  'SIGHUP', 'SIGINT', 'SIGQUIT', 'SIGILL', 'SIGTRAP',
-  'SIGABRT','SIGBUS', 'SIGFPE', 'SIGUSR1', 'SIGSEGV',
-  'SIGUSR2', 'SIGTERM',
-].forEach(evt => process.on(evt, exitGracefully));
-
-function logEvery2Seconds(i) {
-    setTimeout(() => {
-        console.log('Infinite Loop Test n:', i);
-        logEvery2Seconds(++i);
-    }, 2000);
-}
-
-logEvery2Seconds(0);
-```
-
-## Short lived process??
-
-Short-lived functions have a predictably short and linear lifecycle, so use a queue big enough to hold all messages and then await flush to complete its work. -->
-
-
-<!-- ```js
-import { randomUUID } from 'crypto';
-import Analytics from 'analytics-node'
-
-
-async function lambda()
-{
-  const WRITE_KEY = '...';
-  const analytics = new Analytics(WRITE_KEY, { flushAt: 20 });
-  analytics.flushed = true;
-
-  analytics.track({
-    anonymousId: randomUUID(),
-    event: 'Test event',
-    properties: {
-      name: 'Test event',
-      timestamp: new Date()
-    }
-  });
-  await analytics.flush(function(err, batch) {
-    console.log('Flushed, and now this program can exit!');
-  });
-}
-
-lambda();
-``` -->
-
 
 ## Multiple Clients
 
