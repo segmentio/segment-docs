@@ -91,7 +91,7 @@ As a result, **Segment recommends waiting at least 24 hours for an Audience to f
 From the Overview page, you can view Audience details including the current compute status and a progress bar for real-time and batch Audiences. Engage updates the progress bar and status for real-time computations approximately every 10 minutes.
 
 > info ""
-> Engage only displays the progress bar when you create new Audiences or Traits.
+> Engage only displays the progress bar when you create a new Audience or Trait.
 
 ### Refresh real-time Audiences and Traits
 
@@ -118,7 +118,7 @@ Engage displays the following compute statuses for Audiences and Traits.
 |---------------------------|---------------------------------------|
 | Preparing                 | Engage is preparing the computation. |
 | Computing                 | Engage is computing the Audience or Trait.  |
-| Live                      | The computation is up-to-date with the most recent data, based on the most recent sync cadence. Engage updates batch Audiences and Traits approximately once every hour.        |
+| Live                      | The Audience or Trait is up-to-date, based on the most recent sync cadence. Engage updates batch Audiences and Traits approximately once every hour.        |
 | Not Computing             | Engage displays this status when there are no destinations connected and `Compute without connected destinations` isn't selected. |
 | Disabled                  | The Audience or Trait is disabled. |
 | Failed                    | The computation was cancelled or failed to compute. Please contact [Segment support](https://segment.com/help/contact/){:target="_blank"}.      |
@@ -163,7 +163,7 @@ To edit a realtime Trait or Audience, follow these steps:
 3. Select the **Builder** tab and make your edits.
 4. Select **Save Audience** to confirm your edits.
 
-Engage then processes your realtime Audience or Trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated Audience or Trait. Use the Overview page to view the current [compute status](#compute-statuses) and Audience details, and refresh real-time computations.
+Engage then processes your realtime Audience or Trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated Audience or Trait. Use the Overview page to view the [compute status](#compute-statuses) and Audience details, and refresh real-time computations.
 
 > warning ""
 > If your audience includes historical data (Historical Backfill is enabled), editing an audience creates a new backfill task. The backfill task, and therefore the edit task, take longer to process if the audience is connected to a destination with rate limits. Rate-limited destinations dictate how fast Engage can backfill. View a list of [rate-limited destinations](/docs/engage/using-engage-data/#rate-limits-on-engage-event-destinations).
