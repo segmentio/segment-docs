@@ -108,7 +108,7 @@ Engage displays the following compute statuses for Audiences and Traits.
 | Preparing                 | Engage is preparing the computation.  |
 | Computing                 | Engage is computing the Audience or Trait.                     |
 | Live                      | The Audience or Trait is live. Users will enter in real-time as they meet entry criteria.       |
-| Disabled                  | The real-time Audience or Trait is disabled.                   |
+| Disabled                  | The Audience or Trait is disabled.                   |
 | Failed                    | The computation was cancelled or failed to compute. Please contact [Segment support](https://segment.com/help/contact/){:target="_blank"}.      |
 
 
@@ -116,12 +116,12 @@ Engage displays the following compute statuses for Audiences and Traits.
 
 | Computation status        | Description                           |
 |---------------------------|---------------------------------------|
-| Preparing                 | Engage is preparing the batch computation. |
-| Computing                 | Engage is computing the batch Audience or Trait.  |
-| Live                      | The batch computation is up-to-date with the most recent data, based on the most recent sync cadence. Engage updates batch Audiences and Traits approximately once every hour.        |
+| Preparing                 | Engage is preparing the computation. |
+| Computing                 | Engage is computing the Audience or Trait.  |
+| Live                      | The computation is up-to-date with the most recent data, based on the most recent sync cadence. Engage updates batch Audiences and Traits approximately once every hour.        |
 | Not Computing             | Engage displays this status when there are no destinations connected and `Compute without connected destinations` isn't selected. |
-| Disabled                  | The batch Audience or Trait is disabled. |
-| Failed                    | The batch computation was cancelled or failed to compute. Please contact [Segment support](https://segment.com/help/contact/){:target="_blank"}.      |
+| Disabled                  | The Audience or Trait is disabled. |
+| Failed                    | The computation was cancelled or failed to compute. Please contact [Segment support](https://segment.com/help/contact/){:target="_blank"}.      |
 
 
 ## Real-time compute compared to batch
