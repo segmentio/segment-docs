@@ -190,10 +190,10 @@ To see a visual representation of the settings/mappings fields Segment provides 
 
 For cloud action destinations, run one of the following commands, depending on the destination type, inside the directory where you have cloned the `actions-destinations` repository:
 
-| Type  | Command                                                                                  |
-| ----- | ---------------------------------------------------------------------------------------- |
-| Cloud | `./bin/run serve`                                                                        |
-| Web   | `./bin/run serve --directory ./packages/browser-destinations/src/destinations --browser` |
+| Type    | Command                                                                                  |
+| ------- | ---------------------------------------------------------------------------------------- |
+| Cloud   | `./bin/run serve`                                                                        |
+| Browser | `./bin/run serve --directory ./packages/browser-destinations/src/destinations --browser` |
 
 
 You can either select the new action destination from the command line menu, or optionally pass it with an environment variable.

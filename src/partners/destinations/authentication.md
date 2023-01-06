@@ -98,56 +98,10 @@ const destination = {
 }
 ```
 
-## OAuth2 Authentication Scheme
+## OAuth 2.0 Managed
 
-> info ""
-> OAuth authentication is not generally available to external partners as part of Developer Center Pilot. Contact the Segment Support if your integration requires it.
+If your API supports [OAuth 2.0](https://oauth.net/2/){:target="_blank"}, select this option.
 
-The OAuth2 Authentication scheme is the model to be used for destination APIs which support [OAuth 2.0](https://oauth.net/2/). You can define a `refreshAccessToken` function if you want the framework to refresh expired tokens.
+To use this option, set `authenticationScheme` to `oauth-managed` in your destination's code.
 
-You'll see a new `auth` object available in `extendRequest` and `refreshAccessToken` which surfaces your destination’s `accessToken`, `refreshToken`, `clientId`, and `clientSecret` (these last are available in `refreshAccessToken`).
-
-Most destination APIs expect the access token as part of the authorization header in every request. You can use `extendRequest` to define that header.
-
-```js
-authentication: {
-    scheme: 'oauth2',
-    fields: {
-      subdomain: {
-        type: 'string',
-        label: 'Subdomain',
-        description: 'The subdomain for your account, found in your user settings.',
-        required: true
-      }
-    },
-    testAuthentication: async (request) => {
-      const res = await request<UserInfoResponse>('https://www.example.com/oauth2/v3/userinfo', {
-        method: 'GET'
-      })
-      return { name: res.data.name}
-    },
-    refreshAccessToken: async (request, { settings, auth }) => {
-      const res = await request<RefreshTokenResponse>(`https://${settings.subdomain}.example.com/api/oauth2/token`, {
-        method: 'POST',
-        body: new URLSearchParams({
-          refresh_token: auth.refreshToken,
-          client_id: auth.clientId,
-          client_secret: auth.clientSecret,
-          grant_type: 'refresh_token'
-        })
-      })
-      return { accessToken: res.data.access_token }
-    }
-  },
-  extendRequest({ auth }) {
-    return {
-      headers: {
-        authorization: `Bearer ${auth?.accessToken}`
-      }
-    }
-  }
-```
-
-> info ""
-> OAuth directly depends on the oauth providers available in Segment's internal OAuth Service. Contact Segment if you require OAuth for your destination.
-
+When you receive access to the Developer Portal, find your integration, and navigate to the **OAuth settings** tab to configure the integration's OAuth details.

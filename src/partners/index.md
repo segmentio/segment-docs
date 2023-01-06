@@ -7,48 +7,69 @@ Welcome! Here are the steps you’ll follow to build an integration on Dev Cente
 Before you continue, read the [Code of Conduct](./CODE_OF_CONDUCT.md). By contributing to this project, you are expected to uphold this code.
 {% endcomment %}
 
-## Become a Segment Partner
+## Build on Segment
+
+Over 19,000 companies use Segment as their central hub for collecting and synthesizing first-party customer data. Customers use Segment [Sources](/docs/connections/sources/) to collect data across all their properties (for example, web, mobile, CRMs, or email) and send this data into [Destinations](/docs/connections/destinations/) (SaaS tools, internal databases or queues, or a data warehouse) to perform analytics, run marketing campaigns and much more.
+
+### Integration types
+
+Segment provides two different integration types to support bringing your data into Segment, and sending your data downstream to other third-party tools.
+
+#### Sources
+
+[Sources](/docs/connections/sources/) bring users' first-party data into Segment. While there are several *types* of sources (for example, web or server libraries, mobile integrations, and Cloud), the Developer Center enables you to build your own [*Cloud Event*](/docs/connections/sources/#event-cloud-sources) sources. These sources enable users to import data directly from your application into Segment.
+
+#### Destinations
+
+[Destinations](/docs/connections/destinations/) send data to other tools for processing or analysis. For example, a Segment user may want to send their data to your advertising platform or analytics tool. To accomplish this, they'll connect your Segment Destination to their workspace.
+
+All new Segment Destinations are built on the [Actions framework](/docs/connections/destinations/actions/), which enables a simplified build experience for you, and a more straightforward configuration experience for your users.
+
+## Development process
+
+To begin developing your integration in the Develper Center
+
+
+### Become a Segment Partner
 
 Sign up for the [Segment Select Partner Program](https://segment.com/partners/integration/). During the sign-up process, you’ll agree to the [Segment Partner Program Agreement](https://segment.com/legal/partnersagreement/) and [Privacy Policy](https://segment.com/legal/privacy/).
 
-## Plan your integration
+### Understand Segment's conceptual model and Spec
 
-Before you begin development, consider the following points:
+Segment's [Conceptual Model](/docs/partners/conceptual-model) is the starting point for building an understanding of how Segment works, and how and where your integration will fit. 
 
-1. Decide the type of destination you want to build. Developer Center supports building cloud-mode and device-mode web destinations. Segment recommends building a cloud-mode destination, because data is sent to Segment prior to going to your API, so customers can take advantage of Segment features like filters, transformations, and replays. You can learn more here. Developer Center does not support building device-mode mobile destinations. Segment recommends building a plugin to get information like session ID from the device.
+The [Segment Spec](/docs/connections/spec) provides best practices for the specific data you should capture, based on your use case, and the best way to format that data. The Spec outlines the semantic definition of the customer data that Segment captures across all its libraries and APIs, and will be a main building block for your integration.
 
-2. Spec out the integration. If you want some guidance, you can use this [template](https://docs.google.com/document/d/1dIJxYge9N700U9Nhawapy25WMD8pUuey72S5qo3uejA/edit#heading=h.92w309fjzhti){:target="_blank"}, which will prompt you to think about the connection mode of the destination, the method of authentication, the settings, and the Actions and default Field Mappings that you want to build.
+### Follow Segment's security guidance
 
-3. Join the Segment Partners Slack workspace.
+Security for both customers and partners is a priority at Segment. Before you start building on the Developer Center, review the [Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/) and ensure you're following the below guidance:
 
-## Build your integration
+- Follow a secure software-development lifecycle, which enables you to create code that is safe for Segment customers and their end users, and that enables you to maintain and raise the security of that code over time
+- If you or your code comes into contact with Segment customer- or end-user data for any reason, protect it with commercially reasonable methods throughout its data lifecycle, including creation, handling, transporting, storing and destruction.
+- If you suspect a security event, incident or breach while working on this project or afterward, contact [Segment Security](mailto:security@segment.com?subject=Developer%20Center%20Security) for assistance with your investigation and communications
+- Practice modern and common-sense security for any scenario not explicitly stated  
 
-1. You don't need to access a Segment dev environment to build an integration. You’ll test it with a locally on your machine. Destinations are written in Typescript. For more information about Typescript, see Typescripts [documentation](https://www.typescriptlang.org/docs/){:target="_blank}.
+### Request access to the Segment Developer Center
 
-2. To work with Segment's actions repository, download and install the following:
-  - node
-  - nvm
-  - yarn
+During _Developer Preview_, [request access to Developer Center](https://segment.com/partners/developer-center/). A Segment account is required for this step.
 
-3. To test your integration:
+Segment receives a large volume of requests so please include a valid company website and email address, answer all questions with details about integration's use case as well as highlighting specific customer requests to expedite the approval process.
 
-   - For cloud-mode destinations, follow these instructions: [Test Cloud Destinations](/docs/partners/destinations/testing).
-   - If you are building a device-mode destination, see the [Test Browser Destinations](#).
+### Create your integration
 
-4. When you have questions, ask in the Segment Partners Slack workspace.
+Follow the steps to build your [source](/docs/partners/sources) or [destination](/docs/partners/destinations).
 
-## Submit a pull request
+### Write your integration's documentation
 
-1. Once you’ve finished making your changes, added unit tests for new functionality, and tested end-to-end using the local server, you can create a pull request.
+Documentation is integral to enabling Segment's users to self-serve and onboard with your integration. Segment's documentation team will work with you during this part of the process to ensure your documentation matches the Segment style, and is as instructive as possible.
 
-   - When you create a pull request, include a description of the changes made and why. This will help during the code review process.
-   - Verify that you have thoroughly tested your changes by selecting the appropriate checkboxes.
-   - A Segment developer will review the PR. They may ask for changes to be completed before the PR can be merged. Once all changes are made, the Segment developer will approve the PR.
-   - _Note:_ When you submit a PR, the Segment team is automatically notified. The turnover time for reviews may take up to 2-3 business days.
 
-2. Your PR is merged!
-   - Congratulations! Once your PR is merged by a Segment developer, they will deploy your changes and notify you when it’s publicly available. If the destination is in private beta, Segment provides a link to access your destination. Once the destination is ready for general availability and has been approved, the destination will be visible in the integrations catalog.
-   - *Note*: The Developer Center deploys on Wednesdays for all non-emergency changes. Changes should be approved and merged by Tuesday EOD to make the Wednesday release.
+{% comment %}
+### Submit your integration for review
+
+Info to come
+
+
 
 
 ## Provide integration metadata for the catalog
@@ -82,3 +103,5 @@ Please find the below info for _Name of integration_ Catalog entry.
 2. Write a blog post for your company’s blog, write a [recipe](https://segment.com/recipes/) to help customers solve a specific problem using your Integration, and/or work with Segment's Marketing team to be featured in the Segment blog.
 
 3. Maintain your integration. Fix bugs, update it if your APIs change, add functionality as requested by customers.
+
+{% endcomment %}
