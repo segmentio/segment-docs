@@ -13,7 +13,7 @@ All of Segment's server-side libraries are built for high-performance, so you ca
 
 > info "Using Analytics for Node.js Classic?"
 > If you’re still using the classic version of Analytics for Node.js, you can refer to the documentation [here](/docs/connections/sources/catalog/libraries/server/node/classic).
-> <br><br>On [date], Segment will end support for Analytics Node.js Classic, which includes versions [1.x.x] and older. Upgrade to Analytics Node.js 2.0. See the Analytics Node.js 2.0 docs to learn more.
+> <br><br>On April 1, 2023, Segment will end support for Analytics Node.js Classic, which includes versions 6.2.0 and older. Upgrade to new Analytics Node.js. See the updated [Analytics Node.js quickstart guide](/docs/connections/sources/catalog/libraries/server/node/quickstart/) to learn more.
 
 ## Getting Started
 
