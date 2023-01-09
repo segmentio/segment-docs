@@ -9,7 +9,7 @@ Before you continue, read the [Code of Conduct](./CODE_OF_CONDUCT.md). By contri
 
 ## Build on Segment
 
-Over 19,000 companies use Segment as their central hub for collecting and synthesizing first-party customer data. Customers use Segment [Sources](/docs/connections/sources/) to collect data across all their properties (for example, web, mobile, CRMs, or email) and send this data into [Destinations](/docs/connections/destinations/) (SaaS tools, internal databases or queues, or a data warehouse) to perform analytics, run marketing campaigns and much more.
+Over 19,000 companies use Segment as their central hub for collecting and synthesizing first-party customer data. Customers use Segment [sources](/docs/connections/sources/) to collect data across all their properties (for example, web, mobile, CRMs, or email) and send this data into [destinations](/docs/connections/destinations/) (SaaS tools, internal databases or queues, or a data warehouse) to perform analytics, run marketing campaigns and much more.
 
 ### Integration types
 
