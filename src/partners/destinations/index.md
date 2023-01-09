@@ -49,11 +49,11 @@ Once you’ve finished making your changes, added unit tests for new functionali
    - When you create a pull request, include a description of the changes made and why. This will help during the code review process.
    - Verify that you have thoroughly tested your changes by selecting the appropriate checkboxes.
    - A Segment developer will review the PR. They may ask for changes to be completed before the PR can be merged. Once all changes are made, the Segment developer will approve the PR.
-   - _Note:_ When you submit a PR, the Segment team is automatically notified. The turnaround time for reviews may take up to 2-3 business days.
+   - When you submit a PR, the Segment team is automatically notified. The turnaround time for reviews may take up to 2-3 business days.
 
 2. Your PR is merged!
    - Congratulations! Once your PR is merged by a Segment developer, they will deploy your changes and notify you when it’s publicly available. If the destination is in private beta, Segment provides a link to access your destination. Once the destination is ready for general availability and has been approved, the destination will be visible in the integrations catalog.
-   - *Note*: The Developer Center deploys on Wednesdays for all non-emergency changes. Changes should be approved and merged by Tuesday EOD to make the Wednesday release.
+   - The Developer Center deploys on Wednesdays for all non-emergency changes. Changes should be approved and merged by Tuesday 5pm Pacific time to make the Wednesday release.
 
 
 ### Wait for review
