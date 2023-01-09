@@ -21,7 +21,7 @@ Segment provides two different integration types to support bringing your data i
 
 #### Destinations
 
-[Destinations](/docs/connections/destinations/) send data to other tools for processing or analysis. For example, a Segment user may want to send their data to your advertising platform or analytics tool. To accomplish this, they'll connect your Segment Destination to their workspace.
+[Destinations](/docs/connections/destinations/) send data to other tools for processing or analysis. For example, a Segment user may want to send their data to your advertising platform or analytics tool. To accomplish this, they'll connect your Segment destination to their workspace.
 
 All new Segment Destinations are built on the [Actions framework](/docs/connections/destinations/actions/), which enables a simplified build experience for you and a more straightforward configuration experience for your users.
 
