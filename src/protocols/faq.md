@@ -71,6 +71,17 @@ The digest contains all violations for that source that are _unique_ in the prev
 
 The email includes information about the violation to help you track down its source and correct it. It includes the event name and property name fields, the violation type, the number of times that specific type of violation was seen, and the last time it was seen.
 
+### Why do I see root listed on my Violations page?
+You may see violqtions related to (root). For example:
+```js
+(root)
+Must validate all the schemas
+// Or
+(root)
+Must validate "then" as "if" was valid
+```
+These will be related to your common JSON Scheam if you applied custom rules. In this instance (root), refers to the top level of the JSON object. 
+
 **Protocols Violations Page**
 The Protocols Violations page shows a live count for violations. You can adjust the timeframe to show violations in the last hour, the last 24 hours, or the last seven days.
 
