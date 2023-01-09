@@ -190,3 +190,4 @@ When choosing the priority of your identifier, ask the following questions about
 1. Is it an immutable ID? Give immutable IDs, such as user_id, highest priority.
 2. Are they unique IDs? Give Unique IDs such as email higher priority than possibly shared identifiers like android.id or ios.id.
 3. Does it temporarily identify a user? Identifiers such as anonymous_id, ios.idfa, and ga_client_id are constantly updated or expired for a user. Generally speaking, rank these lower than identifiers that permanently identify a user.
+

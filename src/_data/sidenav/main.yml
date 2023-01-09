@@ -320,6 +320,8 @@ sections:
       title: Set User Subscriptions
     - path: /engage/user-subscriptions/subscription-states
       title: Subscription States
+    - path: /engage/user-subscriptions/engage-source
+      title: Engage Events Source
   - section_title: Profiles
     description: "See how to create audiences based on data."
     section:
@@ -491,10 +493,17 @@ sections:
     title: Prod and Testing Environments in Segment
   - path: /segment-app/verify-email-address
     title: Verifying Your Email Address
+  - path: /segment-app/support-access
+    title: Support Access
 - section_title: API
   section:
-  - path: /api/public-api
-    title: Public API
+  - section_title: Public API
+    slug: api/public-api
+    section:
+      - path: /api/public-api
+        title: Public API
+      - path: /api/public-api/fql
+        title: Destination Filter Query Language
   - section_title: Config API
     slug: api/config-api
     section:

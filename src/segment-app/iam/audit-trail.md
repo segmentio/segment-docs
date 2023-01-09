@@ -3,7 +3,7 @@ title: Audit Trail
 ---
 {% include content/plan-grid.md name="audit-trail" %}
 
-Segment offers an in-app 90 day Audit Trail for Business Tier accounts. If you are a workspace Owner, you view user and system activity in your workspace settings, in the "Audit Trail" tab under "Admin".
+Segment offers an in-app 90 day Audit Trail for Business Tier accounts. If you are a Workspace Owner, you view user and system activity in your workspace settings, in the "Audit Trail" tab under "Admin".
 
 You can filter for specific actions or actors to see who made changes on specific resources in the app. Actors can include both logged-in users as well as access tokens. You can export the information to a CSV for download, or forward the activity to a Segment source. For example, you can forward audit trail activity to set up real-time Slack alerts and quickly revert changes that could cause unwanted downstream effects, such as a user unintentionally disabling a warehouse.
 
@@ -89,3 +89,16 @@ The Audit Trail includes information on the following activity:
 *   Engage Warehouse Source Created
 *   Engage Warehouse Source Modified
 *   Engage Warehouse Source Deleted
+
+
+## Audit forwarding
+
+You can forward events in your workspace to any of the sources you have configured in the workspace.
+
+To forward Audit Trail events:
+
+1. Navigate to **Settings > Workspace Settings > Audit Forwarding**.
+2. Select the source to which you'll forward workspace events.
+3. Toggle the setting to **On** and click **Save Changes**.
+
+When you forward audit events to a source, Segment passes those events through its entire processing pipeline. This ensures that tracking plans, filters, and other features work with the audit events, and also ensures you can send those events to multiple downstream destinations.
