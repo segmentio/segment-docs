@@ -5,7 +5,7 @@ strat: node-js
 ---
 
 > warning "Deprecation of Analytics Node.js Classic"
-> On [date], Segment will end support for [Analytics Node.js Classic](/docs/connections/sources/catalog/libraries/server/node/classic/), which includes versions [6.2.0] and older. Upgrade to Analytics Node.js 2.0. See the [Analytics Node.js 2.0] docs to learn more.
+> On April 1, 2023, Segment will end support for [Analytics Node.js Classic](/docs/connections/sources/catalog/libraries/server/node/classic/), which includes versions 6.2.0 and older. Upgrade to new Analytics Node.js. See the [updated Analytics Node.js docs](/docs/connections/sources/catalog/libraries/server/node/) to learn more.
 
 This tutorial will help you start sending data from your Node servers to Segment and any destination, using Segment's Node library. Check out the full documentation for [Analytics Node.js](/docs/connections/sources/catalog/libraries/server/node) to learn more.  
 

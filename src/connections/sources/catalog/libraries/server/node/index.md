@@ -1,11 +1,11 @@
 ---
 title: Analytics for Node.js
 redirect_from: '/connections/sources/catalog/libraries/server/node-js/'
-repo: analytics-node
+repo: analytics-next
 strat: node-js
 ---
 
-Segment's Analytics Node.js 2.0 library lets you record analytics data from your node code. The requests hit Segment's servers, and then Segment routes your data to any destinations you have enabled.
+Segment's Analytics Node.js library lets you record analytics data from your node code. The requests hit Segment's servers, and then Segment routes your data to any destinations you have enabled.
 
 The [Segment Analytics Node.js Next library is open-source](https://github.com/segmentio/analytics-next/tree/master/packages/node){:target="_blank"} on GitHub.
 
@@ -42,7 +42,7 @@ All of Segment's server-side libraries are built for high-performance, so you ca
     const analytics = new Analytics({ writeKey: '<YOUR_WRITE_KEY>' })
     ```
 
-  Be sure to replace `YOUR_WRITE_KEY` with your actual **Write Key** which you can find in Segment under your source settings.
+  Be sure to replace `YOUR_WRITE_KEY` with your actual **Write Key** which you can find in Segment by navigating to: **Connections > Sources** and selecting your source and going to the **Settings** tab.
 
   This creates an instance of `Analytics` that you can use to send data to Segment for your project. The default initialization settings are production-ready and queue 20 messages before sending any requests. In development you might want to use [development settings](/docs/connections/sources/catalog/libraries/server/node/#development).
 
@@ -288,7 +288,7 @@ Setting | Details
 `flushInterval` _number_ | The number of milliseconds to wait before flushing the queue automatically. The default is: `10000`
 `httpRequestTimeout` | The maximum number of milliseconds to wait for an http request. The default is: `10000`
 
-### Graceful shutdown
+## Graceful shutdown
 Avoid losing events after shutting down your console. Call `.closeAndFlush()` to stop collecting new events and flush all existing events. If a callback on an event call is included, this also waits for all callbacks to be called, and any of their subsequent promises to be resolved.
 
 ```javascript
