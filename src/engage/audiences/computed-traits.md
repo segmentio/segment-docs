@@ -26,6 +26,10 @@ Engage currently supports the following types of computed traits:
 - [Accessing your Computed Traits using the Profiles API](#accessing-your-computed-traits-using-the-profiles-api)
 - [Downloading your Computed Trait as a CSV file](#downloading-your-computed-trait-as-a-csv-file)
 
+
+> warning "Event Properties per Computed Trait limit"
+> Segment limits the number of Event Properties on each Computed trait to 10,000. If your Computed Trait exceeds this limit, Segment will not persist any new Event Properties and will drop new trait keys and corresponding values.
+
 ### Event Counter
 
 An Event Counter trait stores a count of an **event** over a period of time. For example, you can create a trait called `number_logins_90_days` based on a `User Logged In` event. You can also use event properties to only specific types of events.
