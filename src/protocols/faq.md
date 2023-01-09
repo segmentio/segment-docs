@@ -71,8 +71,13 @@ The digest contains all violations for that source that are _unique_ in the prev
 
 The email includes information about the violation to help you track down its source and correct it. It includes the event name and property name fields, the violation type, the number of times that specific type of violation was seen, and the last time it was seen.
 
+**Protocols Violations Page**
+The Protocols Violations page shows a live count for violations. You can adjust the timeframe to show violations in the last hour, the last 24 hours, or the last seven days.
+
+You might see a difference between the count on the Violations page and the count in the Violations email digests. This can happen due to differences between the time periods available (24 hours in in the live page, 48 hours in the daily digest email), and the fact that the digest only shows _unique_ violations. The fields displayed on the Violations page are more detailed than those included in the email digest.
+
 ### Why do I see root listed on my Violations page?
-You may see violqtions related to (root). For example:
+You may see violations related to (root). For example:
 ```js
 (root)
 Must validate all the schemas
@@ -80,12 +85,7 @@ Must validate all the schemas
 (root)
 Must validate "then" as "if" was valid
 ```
-These will be related to your common JSON Scheam if you applied custom rules. In this instance (root), refers to the top level of the JSON object. 
-
-**Protocols Violations Page**
-The Protocols Violations page shows a live count for violations. You can adjust the timeframe to show violations in the last hour, the last 24 hours, or the last seven days.
-
-You might see a difference between the count on the Violations page and the count in the Violations email digests. This can happen due to differences between the time periods available (24 hours in in the live page, 48 hours in the daily digest email), and the fact that the digest only shows _unique_ violations. The fields displayed on the Violations page are more detailed than those included in the email digest.
+These will be related to your common JSON Schema if you have applied custom rules. In this instance (root), refers to the top level of the JSON object (Segment event). 
 
 ## Protocols Enforcement
 
