@@ -1,9 +1,9 @@
 ---
-title: Build a destination
+title: Build a Destination
 ---
 
 
-This document describes in detail the steps necessary to create a new Actions-based Destination using the Segment CLI.
+This document describes in detail the steps necessary to create a new Actions-based destination using the Segment CLI.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ The security of customers and partners is a top priority at Segment. Before you 
 
 ### Configure your development environment
 
-You don't need to access a Segment dev environment to build an integration. You’ll test it with a locally on your machine. Destinations are written in Typescript. For more information about Typescript, see Typescripts [documentation](https://www.typescriptlang.org/docs/){:target="_blank}.
+You don't need to access a Segment dev environment to build an integration. You’ll test it locally on your machine. Destinations are written in TypeScript. For more information about TypeScript, see TypeScript's [documentation](https://www.typescriptlang.org/docs/){:target="_blank}.
 
 To work with Segment's actions repository, download and install the following:
   - [node](https://nodejs.org/en/){:target="_blank"}
@@ -53,7 +53,7 @@ yarn test
 
 Once you've configured your environment, you're ready to begin building your first destination. All commands, unless noted otherwise, should run from the root of the project folder. For example, `./action-destinations`
 
-> Run `./bin/run --help` at any time or visit the [CLI README](/packages/cli/README.md) to see a list of available commands.
+> Run `./bin/run --help` at any time or visit the [CLI README](https://github.com/segmentio/action-destinations/blob/main/packages/cli/README.md){:target="_blank"} to see a list of available commands.
 
 ### Scaffold the new destination
 
@@ -255,5 +255,5 @@ Segment recommends that you start with a simple task, and evolve it. Get the bas
 
 ## Write tests
 
-Testing ensures that your destination functions the way you expect. For information on testing, see [Build and Test Cloud Destinations](testing.md).
+Testing ensures that your destination functions the way you expect. For information on testing, see [Test your destination](/docs/partners/destinations/testing).
 

@@ -1,5 +1,5 @@
 ---
-title: Test your Destination
+title: Test Your Destination
 ---
 
 ## Local End-to-end Testing
@@ -222,7 +222,7 @@ The final pane is a JSON representation of the test event data after it is mappe
 
 ### Editing field definitions
 
-While working on your destination's definitions in typescript, if you have action tester running locally, the tester UI updates with settings or mapping field changes without the need to restart the local server component. There is a slight delay to account for the local bundling process.
+While working on your destination's definitions in TypeScript, if you have action tester running locally, the tester UI updates with settings or mapping field changes without the need to restart the local server component. There is a slight delay to account for the local bundling process.
 
 #### Test your action
 
@@ -230,4 +230,4 @@ The Actions tester enables a simulated test of the action environment. Click **T
 
 The output panel behaves in two 'modes'. The first is `immediate` failures. If your API call could not be completed due to invalid url, credentials, etc, the pane will displays any debug information in the client.
 
-When you make a successful API call, the Actions Tester shows both the request and response objects that the actions runtime uses internally to track your event.These are persisted across individual calls. If multiple calls appear and this is not desired behavior, reload the browser instance.
+When you make a successful API call, the Actions Tester shows both the request and response objects that the actions runtime uses internally to track your event. These are persisted across individual calls. If multiple calls appear and this is not desired behavior, reload the browser instance.

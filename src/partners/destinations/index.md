@@ -2,7 +2,7 @@
 title: Destinations
 ---
 
-[Destinations Actions](/docs/connections/destinations/actions/) allow users to create subscriptions: sets of conditions in which data is sent to the destinations and data mappings, to format that data for the destination tool. Segment watches for data that matches the conditions you create (triggers) for the subscription, and when the conditions are met, uses an explicit mapping to transform the incoming data to an output format that your destination can use.
+[Destination Actions](/docs/connections/destinations/actions/) allow users to create subscriptions, or sets of conditions in which data is sent to the destinations, and data mappings, which format that data for the destination tool. Segment watches for data that matches the conditions you create (triggers) for the subscription, and when the conditions are met, uses an explicit mapping to transform the incoming data to an output format that your destination can use.
 
 ## Development process
 
@@ -17,7 +17,7 @@ Sign up for the [Segment Select Partner Program](https://segment.com/partners/in
 
 Before you begin development, consider the following points:
 
-1. Decide the type of destination you want to build. Developer Center supports building cloud-mode and device-mode web destinations. Segment recommends building a cloud-mode destination, because data is sent to Segment prior to going to your API, so customers can take advantage of Segment features like filters, transformations, and replays. You can learn more here. Developer Center does not support building device-mode mobile destinations. Segment recommends building a plugin to get information like session ID from the device.
+1. Decide the type of destination you want to build. Developer Center supports building cloud-mode and device-mode web destinations. Segment recommends building a cloud-mode destination, because data is sent to Segment prior to going to your API, so customers can take advantage of Segment features like filters, transformations, and replays. You can learn more [here](https://segment.com/docs/connections/destinations/#connection-modes). Developer Center does not support building device-mode mobile destinations. Segment recommends building a plugin to get information like session ID from the device.
 
 2. Spec out the integration. If you want some guidance, you can use this [template](https://docs.google.com/document/d/1dIJxYge9N700U9Nhawapy25WMD8pUuey72S5qo3uejA/edit#heading=h.92w309fjzhti){:target="_blank"}, which will prompt you to think about the connection mode of the destination, the method of authentication, the settings, and the Actions and default Field Mappings that you want to build.
 
@@ -25,12 +25,13 @@ Before you begin development, consider the following points:
 
 ### Build your integration
 
-1. You don't need to access a Segment dev environment to build an integration. You’ll test it with a locally on your machine. Destinations are written in Typescript. For more information about Typescript, see Typescripts [documentation](https://www.typescriptlang.org/docs/){:target="_blank}.
+1. You don't need to access a Segment dev environment to build an integration. You’ll test it locally on your machine. Destinations are written in TypeScript. For more information about TypeScript, see TypeScript's [documentation](https://www.typescriptlang.org/docs/){:target="_blank}.
 
 2. To work with Segment's actions repository, download and install the following:
-  - node
-  - nvm
-  - yarn
+  - [node](https://nodejs.org/en/){:target="_blank"}
+  - [nvm](https://github.com/nvm-sh/nvm){:target="_blank"}
+  - [yarn](https://yarnpkg.com/){:target="_blank"}
+
 
 3. To test your integration:
 
@@ -39,16 +40,16 @@ Before you begin development, consider the following points:
 
 4. When you have questions, ask in the Segment Partners Slack workspace.
 
-For more information, see [Build a Destination](/docs/partners/destinations/build)
+For more information, see [Build a Destination](/docs/partners/destinations/build).
 
 ### Submit a pull request
 
-1. Once you’ve finished making your changes, added unit tests for new functionality, and tested end-to-end using the local server, you can create a pull request.
+Once you’ve finished making your changes, added unit tests for new functionality, and tested end-to-end using the local server, you can [create a pull request](https://github.com/segmentio/action-destinations/compare){:target="_blank”}.
 
    - When you create a pull request, include a description of the changes made and why. This will help during the code review process.
    - Verify that you have thoroughly tested your changes by selecting the appropriate checkboxes.
    - A Segment developer will review the PR. They may ask for changes to be completed before the PR can be merged. Once all changes are made, the Segment developer will approve the PR.
-   - _Note:_ When you submit a PR, the Segment team is automatically notified. The turnover time for reviews may take up to 2-3 business days.
+   - _Note:_ When you submit a PR, the Segment team is automatically notified. The turnaround time for reviews may take up to 2-3 business days.
 
 2. Your PR is merged!
    - Congratulations! Once your PR is merged by a Segment developer, they will deploy your changes and notify you when it’s publicly available. If the destination is in private beta, Segment provides a link to access your destination. Once the destination is ready for general availability and has been approved, the destination will be visible in the integrations catalog.
@@ -57,7 +58,7 @@ For more information, see [Build a Destination](/docs/partners/destinations/buil
 
 ### Wait for review
 
-The Segment team will review your submission, and work with you to resolve any errors or inefficencies in your code.
+The Segment team will review your submission, and work with you to resolve any errors or inefficiencies in your code.
 
 ### Your integration is deployed
 
@@ -65,11 +66,11 @@ Once approved, the Segment team merges your pull request, and deploys your code.
 
 ### Join the Developer Portal
 
-After your code is deployed, you'll recieve an invitation to join the Segment Developer Portal. You'll use this portal to provide additional metadata for the Segment catalog.
+After your code is deployed, you'll receive an invitation to join the Segment Developer Portal. You'll use this portal to provide additional metadata for the Segment catalog.
 
 ### Write documentation
 
-Documentation is integral to enabling Segment's users to self-serve and onboard with your integration. Segment's documentation team will work with you during this part of the process to ensure your documentation matches the Segment style, and is as instructive as possible.
+Documentation is integral to enabling Segment's users to self-serve and onboard with your integration. Segment's documentation team will work with you during this part of the process to ensure your documentation matches the Segment style and is as instructive as possible.
 
 ### Release your Destination
 

@@ -1,14 +1,14 @@
 ---
 title: Authentication
 ---
-Most destinations require some sort of authentication. Segment's Destination interface provides details about how customers need to authenticate with your destination to send data or retrieve data for dynamic input fields.
+Most destinations require some sort of authentication. Segment's destination interface provides details about how customers need to authenticate with your destination to send data or retrieve data for dynamic input fields.
 
 ## Basic Authentication
 
-Basic authentication is useful if your destination requires username and password to authenticate. These are values that only the customer and the destination know.
+Basic authentication is useful if your destination requires a username and password to authenticate. These are values that only the customer and the destination know.
 
 > success ""
-> When scaffolding your integration, pass `--template basic-auth` to use Basic Auth, or selecting it from the auto-prompt.
+> When scaffolding your integration, select Basic Auth from the auto-prompt or pass `--template basic-auth`.
 
 ```js
 const authentication = {
@@ -100,7 +100,7 @@ const destination = {
 
 ## OAuth 2.0 Managed
 
-If your API supports [OAuth 2.0](https://oauth.net/2/){:target="_blank"}, select this option.
+If your API supports [OAuth 2.0](https://oauth.net/2/){:target="_blank"}, select this option by setting `authenticationScheme` to `oauth-managed` in your destination's code.
 
 To use this option, set `authenticationScheme` to `oauth-managed` in your destination's code.
 

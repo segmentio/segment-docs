@@ -27,7 +27,13 @@ All new Segment Destinations are built on the [Actions framework](/docs/connecti
 
 ## Development process
 
-To begin developing your integration in the Develper Center
+To develop your integration in the Developer Center, complete the following steps:
+1. [Become a Segment Partner](#become-a-segment-partner)
+2. [Understand Segment's conceptual model and Spec](#understand-segments-conceptual-model-and-spec)
+3. [Follow Segment's security guidance](#follow-segments-security-guidance)
+4. [Request access to the Segment Developer Center](#request-access-to-the-segment-developer-center)
+5. [Create your integration](#create-your-integration)
+6. [Write your integration's documentation](#write-your-integrations-documentation)
 
 
 ### Become a Segment Partner
@@ -36,18 +42,18 @@ Sign up for the [Segment Select Partner Program](https://segment.com/partners/in
 
 ### Understand Segment's conceptual model and Spec
 
-Segment's [Conceptual Model](/docs/partners/conceptual-model) is the starting point for building an understanding of how Segment works, and how and where your integration will fit. 
+Segment's [Conceptual Model](/docs/partners/conceptual-model) is a high-level overview of how Segment works and explains how your integration fits into the Segment catalog.
 
-The [Segment Spec](/docs/connections/spec) provides best practices for the specific data you should capture, based on your use case, and the best way to format that data. The Spec outlines the semantic definition of the customer data that Segment captures across all its libraries and APIs, and will be a main building block for your integration.
+The [Segment Spec](/docs/connections/spec) provides best practices for the specific data you should capture and the best way to format that data based on your use case. The Spec outlines the semantic definition of the customer data that Segment captures across all its libraries and APIs, and will be a main building block for your integration.
 
 ### Follow Segment's security guidance
 
-Security for both customers and partners is a priority at Segment. Before you start building on the Developer Center, review the [Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/) and ensure you're following the below guidance:
+Security for both customers and partners is a priority at Segment. Before you start building on the Developer Center, review the [Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/) and ensure you're following these guidelines:
 
 - Follow a secure software-development lifecycle, which enables you to create code that is safe for Segment customers and their end users, and that enables you to maintain and raise the security of that code over time
 - If you or your code comes into contact with Segment customer- or end-user data for any reason, protect it with commercially reasonable methods throughout its data lifecycle, including creation, handling, transporting, storing and destruction.
 - If you suspect a security event, incident or breach while working on this project or afterward, contact [Segment Security](mailto:security@segment.com?subject=Developer%20Center%20Security) for assistance with your investigation and communications
-- Practice modern and common-sense security for any scenario not explicitly stated  
+- Practice modern and common-sense security for any scenario that is not explicitly stated.
 
 ### Request access to the Segment Developer Center
 
@@ -61,7 +67,7 @@ Follow the steps to build your [source](/docs/partners/sources) or [destination]
 
 ### Write your integration's documentation
 
-Documentation is integral to enabling Segment's users to self-serve and onboard with your integration. Segment's documentation team will work with you during this part of the process to ensure your documentation matches the Segment style, and is as instructive as possible.
+Documentation is integral to enabling Segment's users to self-serve and onboard with your integration. Segment's documentation team will work with you during this part of the process to ensure your documentation matches the Segment style and is as instructive as possible.
 
 
 {% comment %}
@@ -90,18 +96,18 @@ Please find the below info for _Name of integration_ Catalog entry.
 
 ## Release to Private Beta for customer testing
 
-1. During Private Beta, the integration will not be publicly listed in the catalog. You and your customers can access the catalog page using a special URL: `https://app.segment.com/goto-my-workspace/destinations/catalog/${destination-slug}` (This will direct users to the install page in their workspace).
+During Private Beta, the integration will not be publicly listed in the catalog. You and your customers can access the catalog page using a special URL: `https://app.segment.com/goto-my-workspace/destinations/catalog/${destination-slug}` (This will direct users to the install page in their workspace).
 
-2. Verify that the catalog entry renders correctly,
+1. Open the install URL for your integration (https://app.segment.com/goto-my-workspace/destinations/catalog/${destination-slug}) and verify that the catalog entry renders correctly. 
 
-3. Invite one or more customers to test the integration by giving them the URL. At least 1 customer must verify that the destination works before it becomes available to the public.
+2. Invite one or more customers to test the integration by giving them the URL. At least one customer must verify that the destination works before it becomes available to the public.
 
 ## Release to Public in the Segment catalog
 
-1. Once at least 1 customer successfully uses the integration, contact the Developer Center team. The team will make your destination Public. Any Segment customer can find it in the catalog, and it will be featured on the New & Noteworthy page..
+1. Once at least one customer successfully uses the integration, contact the Developer Center team, who will make your destination Public. When a destination is Public, any Segment customer can find it in the catalog and it will be featured on the New & Noteworthy page.
 
 2. Write a blog post for your company’s blog, write a [recipe](https://segment.com/recipes/) to help customers solve a specific problem using your Integration, and/or work with Segment's Marketing team to be featured in the Segment blog.
 
-3. Maintain your integration. Fix bugs, update it if your APIs change, add functionality as requested by customers.
+3. Maintain your integration: fix bugs, update it if your APIs change, and add functionality as requested by customers.
 
 {% endcomment %}
