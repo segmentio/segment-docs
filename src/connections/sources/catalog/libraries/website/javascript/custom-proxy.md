@@ -31,11 +31,13 @@ Hi,
 
 This is {person} from {company}. I would like to configure a proxy for the following source(s):
 
-* Source {link to source in Segment} with source ID {source id}
-* Source {link to source in Segment} with source ID {source id}
+* Source URL with Source ID
+* Source URL with Source ID 
 ```
+**Source URL**: link to the source in your Segment workspace (e.g. https://app.segment.com/<your_slug>/sources/<source>/overview)
+**Source ID**: navigate to **API Keys** on the lefthand side of the source **Settings** and provide the Source ID 
 
-Double-check the source link and the Source ID.
+Double-check the Source URL and the Source ID.
 
 A Segment Customer Success team member will respond that they have enabled this option for your account. When you receive this confirmation, open the source in your workspace, and navigate to Settings > Analytics.js. Update the **Host Address** setting from `api.segment.io/v1` to `[your proxy host]/v1`.
 
