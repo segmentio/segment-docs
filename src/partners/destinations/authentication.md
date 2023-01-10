@@ -100,8 +100,14 @@ const destination = {
 
 ## OAuth 2.0 Managed
 
-If your API supports [OAuth 2.0](https://oauth.net/2/){:target="_blank"}, select this option by setting `authenticationScheme` to `oauth-managed` in your destination's code.
+If your API supports [OAuth 2.0](https://oauth.net/2/){:target="_blank"}, you can authenticate your destination's users with it.
 
-To use this option, set `authenticationScheme` to `oauth-managed` in your destination's code.
+```js
+const authentication = {
+  // the 'oauth-managed' authentication scheme tells Segment use the
+  // oauth credentials and endpoint that you provide to authenticate users.
+  scheme: 'oauth-managed',
+}
+```
 
 When you receive access to the Developer Portal, find your integration, and navigate to the **OAuth settings** tab to configure the integration's OAuth details.

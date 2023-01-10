@@ -70,14 +70,19 @@ Follow the steps to build your [source](/docs/partners/sources) or [destination]
 Documentation is integral to enabling Segment's users to self-serve and onboard with your integration. Segment's documentation team will work with you during this part of the process to ensure your documentation matches the Segment style and is as instructive as possible.
 
 
-{% comment %}
+
 ### Submit your integration for review
 
-Info to come
+Before users can go hands on with your integration, a review by Segment engineers is required to ensure the integration meets security and usability standards.
+#### Destinations
 
+To submit your destination for review, follow the destination-specific instructions [here](/docs/partners/destinations#submit-a-pull-request).
 
+#### Sources
 
+To submit your source for review, complete the steps described in the Developer Portal, and click **Submit for review**.
 
+{% comment %}
 ## Provide integration metadata for the catalog
 
 Send the following information to partner-support@segment.com using the below template:

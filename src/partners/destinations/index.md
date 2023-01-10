@@ -46,23 +46,17 @@ For more information, see [Build a Destination](/docs/partners/destinations/buil
 
 Once you’ve finished making your changes, added unit tests for new functionality, and tested end-to-end using the local server, you can [create a pull request](https://github.com/segmentio/action-destinations/compare){:target="_blank”}.
 
-   - When you create a pull request, include a description of the changes made and why. This will help during the code review process.
-   - Verify that you have thoroughly tested your changes by selecting the appropriate checkboxes.
-   - A Segment developer will review the PR. They may ask for changes to be completed before the PR can be merged. Once all changes are made, the Segment developer will approve the PR.
-   - When you submit a PR, the Segment team is automatically notified. The turnaround time for reviews may take up to 2-3 business days.
-
-2. Your PR is merged!
-   - Congratulations! Once your PR is merged by a Segment developer, they will deploy your changes and notify you when it’s publicly available. If the destination is in private beta, Segment provides a link to access your destination. Once the destination is ready for general availability and has been approved, the destination will be visible in the integrations catalog.
-   - The Developer Center deploys on Wednesdays for all non-emergency changes. Changes should be approved and merged by Tuesday 5pm Pacific time to make the Wednesday release.
+- When you create a pull request, include a description of the changes made and why. This will help during the code review process.
+- Verify that you have thoroughly tested your changes by selecting the appropriate checkboxes.
+- A Segment developer will review the PR. They may ask for changes to be completed before the PR can be merged. Once all changes are made, the Segment developer will approve the PR.
+- When you submit a PR, the Segment team is automatically notified. The turnaround time for reviews may take up to 2-3 business days.
 
 
-### Wait for review
+Your PR is merged!
 
-The Segment team will review your submission, and work with you to resolve any errors or inefficiencies in your code.
+- Congratulations! Once your PR is merged by a Segment developer, they will deploy your changes and notify you when it’s publicly available. If the destination is in private beta, Segment provides a link to access your destination. Once the destination is ready for general availability and has been approved, the destination will be visible in the integrations catalog.
+- The Developer Center deploys on Wednesdays for all non-emergency changes. Changes should be approved and merged by Tuesday 5pm Pacific time to make the Wednesday release.
 
-### Your integration is deployed
-
-Once approved, the Segment team merges your pull request, and deploys your code.
 
 ### Join the Developer Portal
 
@@ -74,4 +68,4 @@ Documentation is integral to enabling Segment's users to self-serve and onboard 
 
 ### Release your Destination
 
-Once documentation is complete, your Destination will enter Public Beta status. When the destination has been successfully added, configured, and used by the required number of users, the Destination enters General Availability.
+Once documentation is complete, your Destination will enter Public Beta status. Destinations remain in Public Beta status for a minimum of two weeks, and until the destination is added and configured by two users. Once these criteria are met, the destination moves to General Availability.
