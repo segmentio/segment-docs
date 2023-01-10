@@ -57,7 +57,7 @@ Security for both customers and partners is a priority at Segment. Before you st
 
 ### Request access to the Segment Developer Center
 
-During _Developer Preview_, [request access to Developer Center](https://segment.com/partners/developer-center/). A Segment account is required for this step.
+Segment provides access to the developer on request. [Click here](https://segment.com/partners/developer-center/){:target="_blank"} to request access. A Segment account is required for this step.
 
 Segment receives a large volume of requests so please include a valid company website and email address, answer all questions with details about integration's use case as well as highlighting specific customer requests to expedite the approval process.
 
