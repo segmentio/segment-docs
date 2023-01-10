@@ -85,7 +85,7 @@ Must validate all the schemas
 (root)
 Must validate "then" as "if" was valid
 ```
-These will be related to your common JSON Schema if you have applied custom rules. In this instance (root), refers to the top level of the JSON object (Segment event). 
+These violations are related to your common JSON Schema if you've applied custom rules. In this instance (root), refers to the top level of the JSON object (Segment event). 
 
 ## Protocols Enforcement
 
