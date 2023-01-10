@@ -21,14 +21,15 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 
 ## Audiences and Computed Traits
 
-| name                                          | limit                         | Details                                                                                                                                                                                          |     |
-| --------------------------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --- |
-| Compute Concurrency                           | 5 concurrent audiences        | Segment computes five new audiences or computed traits at a time. Once the limit is reached, Segment queues additional audience computations until one of the five audiences finishes computing. |     |
-| Compute Throughput                            | 10000 computations per second | Computations include any Track or Identify call that triggers an audience or computed trait re-computation. Once the limit is reached, Segment may slow audience processing.                     |     |
-| Events Lookback History                       | 3 years                       | The period of time for which Segment stores audience and computed traits computation events.                                                                                                     |     |
-| Real-time to batch destination sync frequency | 2-3 hours                     | The frequency with which Segment syncs real-time audiences to batch destinations.                                                                                                                |     |
+| name                                          | limit                         | Details                                                                                                                                                                                          |
+| --------------------------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Compute Concurrency                           | 5 concurrent audiences        | Segment computes five new audiences or computed traits at a time. Once the limit is reached, Segment queues additional audience computations until one of the five audiences finishes computing. |
+| Compute Throughput                            | 10000 computations per second | Computations include any Track or Identify call that triggers an audience or computed trait re-computation. Once the limit is reached, Segment may slow audience processing.                     |
+| Events Lookback History                       | 3 years                       | The period of time for which Segment stores audience and computed traits computation events.                                                                                                     |
+| Real-time to batch destination sync frequency | 2-3 hours                     | The frequency with which Segment syncs real-time audiences to batch destinations.                                                                                                                |
 | Event History                                 | `1970-01-01`                  | Events with a timestamp less than `1970-01-01` aren't always ingested, which could impact audience backfills with event timestamps prior to this date.                                           |
-| Event Properties (Computed Traits)            | 10,000                        | For Computed Traits that exceed this limit, Segment will not persist any new Event Properties and will drop new trait keys and corresponding values.                                                  |
+| Event Properties (Computed Traits)            | 10,000                        | For Computed Traits that exceed this limit, Segment will not persist any new Event Properties and will drop new trait keys and corresponding values.                                             |
+
 ## SQL Traits
 
 | name                        | limit                      | Details                                                                                                      |
