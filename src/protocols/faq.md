@@ -76,6 +76,17 @@ The Protocols Violations page shows a live count for violations. You can adjust 
 
 You might see a difference between the count on the Violations page and the count in the Violations email digests. This can happen due to differences between the time periods available (24 hours in in the live page, 48 hours in the daily digest email), and the fact that the digest only shows _unique_ violations. The fields displayed on the Violations page are more detailed than those included in the email digest.
 
+### Why do I see root listed on my Violations page?
+You may see violations related to (root). For example:
+```js
+(root)
+Must validate all the schemas
+// Or
+(root)
+Must validate "then" as "if" was valid
+```
+These violations are related to your common JSON Schema if you've applied custom rules. In this instance (root), refers to the top level of the JSON object (Segment event). 
+
 ## Protocols Enforcement
 
 ### Why can't I use the Schema to filter my events?
