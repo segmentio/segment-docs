@@ -115,3 +115,9 @@ analytics.track('User Signup', {
 
 At this point, the Identity Graph associates external ID (user_id: `use_123`) with the same user `use_4paotyretuj4Ta2bEYQ0vKOq1e7`.
 ![Identities associated to a user in the Identity Graph](images/identity_resolution_3.png)
+
+
+## Frequently asked questions
+
+### Can ExternalID's be changed or removed from the profiles?
+No. Because ExternalID's are used by the Identity Graph, they remain for the lifetime of the user profile.
