@@ -481,8 +481,10 @@ segmentClient.add({ plugin: new Logger() });
 
 As the plugin overrides the `execute()` method, this `Logger` calls `console.log` for every event going through the Timeline.
 
-### Adding a Custom Plugin to a Destination Plugin
-You can also add your own custom Plugins to Destination Plugins for custom functionality. For example, if you wished to only send events to Braze on the weekend you could implement the following logic:
+### Add a custom Destination Plugin 
+
+You can add custom plugins to Destination Plugins. For example, you could implement the following logic to send events to Braze on weekends only:
+
 ```js
 
 import { createClient } from '@segment/analytics-react-native';
@@ -517,7 +519,8 @@ export class BrazeEventPlugin extends Plugin {
   }
 }
 ```
-Events will now only be passed to the Braze Destination Plugin on Saturday and Sunday based on the device time.
+
+Segment would then send events to the Braze Destination Plugin on Saturdays and Sundays, based on device time.
 
 ### Example Plugins
 These are the example plugins you can use and alter to meet your tracking needs:
