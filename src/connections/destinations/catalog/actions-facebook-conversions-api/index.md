@@ -149,6 +149,24 @@ Segment creates a SHA-256 hash of the following fields before sending to Faceboo
 
 If you use Facebook Pixel, the Pixel library also hashes the External ID. This means External IDs will match across Facebook Pixel and Facebook Conversions API if they use the External ID for [deduplication](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/#fbp-or-external-id){:target="_blank"}.
 
+### User Data Parameters
+
+Segment automatically maps User Data fields to their corresponding parameters [as expected by the Conversions API](https://segment.com/docs/connections/destinations/catalog/actions-facebook-conversions-api/#faq--troubleshooting){:target="_blank"} before sending to Facebook:
+
+| User Data Field | Conversions API User Data Parameter |
+|-----------------|-------------------------------------|
+| External ID     | external_id                         |
+| Email           | em                                  |
+| Phone           | ph                                  |
+| Gender          | ge                                  |
+| Date of Birth   | db                                  |
+| Last Name       | ln                                  |
+| First Name      | fn                                  |
+| City            | ct                                  |
+| State           | st                                  |
+| Zip Code        | zp                                  |
+| Country         | country                             |
+
 ### Server Event Parameter Requirements
 
 Facebook requires the `action_source` server event parameter for all events sent to the Facebook Conversions API. This parameter specifies where the conversions occur. If `action_source` is set to **website**, then the `client_user_agent` and the `event_source_url` parameters are also required. Events sent to the Conversions API that don't meet the requirements may not be available for optimization, targeting, or measurement.
