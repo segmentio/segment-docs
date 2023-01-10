@@ -497,8 +497,13 @@ sections:
     title: Support Access
 - section_title: API
   section:
-  - path: /api/public-api
-    title: Public API
+  - section_title: Public API
+    slug: api/public-api
+    section:
+      - path: /api/public-api
+        title: Public API
+      - path: /api/public-api/fql
+        title: Destination Filter Query Language
   - section_title: Config API
     slug: api/config-api
     section:
