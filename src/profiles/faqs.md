@@ -47,3 +47,6 @@ If two merged user profiles contain conflicting profile attributes, Segment sele
 ## What identifiers can the merged profile be queried/updated with?
 
 Any of the external IDs can be used to query a profile. When a profile is requested, Segment traverses the merge graph and resolves all merged profiles. The result is a single profile, with the latest state of all traits, events, and identifiers.
+
+### Can ExternalID's be changed or removed from the profiles?
+No. Because ExternalID's are used by the Identity Graph, they remain for the lifetime of the user profile.
