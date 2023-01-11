@@ -39,7 +39,7 @@ Within your `<body>` tags, include the following Segment analytics snippet:
   ```
 Replace `WRITE_KEY` with the write key you obtain from the AMP Source you've set up within the Segment UI.
 
-For sources in [EU workspaces](https://segment.com/docs/guides/regional-segment/), please use the following snippet:
+For sources in [EU workspaces](/docs/guides/regional-segment/), use the following snippet:
 
   ```html
 <amp-analytics type="segment">
