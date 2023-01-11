@@ -161,3 +161,13 @@ Segment's [Pixel Tracking API](/docs/connections/sources/catalog/libraries/serve
 | Email Bounced        | The receiving server could not or would not accept message.                                                           |
 | Email Marked as Spam | The recipient marked message as spam.                                                                                 |
 | Unsubscribe          | The recipient clicked on message's subscription management link.                                                      |
+
+## Should I set up one source or multiple sources? 
+
+Using one source or multiple sources is really a question of how you want to organize your data. We suggest that you create one source for each type of data you want to collect. So, for example, you might set up one source for all of your website tracking, and a different source for any mobile tracking. 
+
+We typically recommend having one source for each type of data for the following reasons:
+
+- Debugger ease of use - mixing libraries/sources on a single API key means you’re heavily reliant on filtering to actually test events
+- Flexibility sending data to different projects - if you want to have different warehouse schemas, analytics projects, etc., having multiple sources would create this separation
+- More control - as your account grows with the number of destinations you enable, having separate sources allows you to have more control
