@@ -13,13 +13,15 @@ You can subscribe to a variety of Protocols specific alerts through the workspac
 
 ### How can I get notified when someone makes a change to my tracking plan?
 
-You can forward notifications from Protocols to a new Segment Source, which can then send them to notification tools such as Slack webhook.
+You can forward notifications from Protocols to a new Segment Source, which can then send them to notification tools such as Slack webhook. 
 
 You can also forward these Protocols alerts to any (cloud-mode) Segment destination that accepts Track calls, including data warehouses. Most customers record these activity feed events to a data warehouse for analysis.
 
 ### How do I get notified when new violations are generated? Can I create custom violation notifications?
 
-You can enable [violation event forwarding](/docs/protocols/validate/forward-violations/) to start delivering violations as Track calls to a Segment Source. From there, you can forward the events to any Segment destination that accepts Track calls.
+You can enable [violation event forwarding](/docs/protocols/validate/forward-violations/) to start delivering violations as Track calls to a Segment Source. From there, you can forward the events to any Segment destination that accepts Track calls. 
+
+You can also utilize the Slack Actions destination here. The Actions destination will allow you to set event triggers for context fields, meaning events with Violations can be sent directly from the source. 
 
 
 ## Protocols Tracking Plan
