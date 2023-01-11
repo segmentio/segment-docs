@@ -145,3 +145,12 @@ items:
     team: false
     business: true
     add-on: false
+
+- product_display_name: Public API
+  slug: papi
+  plan-note: "The Public API is available to customers on Team or Business plans."
+  plans:
+    free: false
+    team: true
+    business: true
+    add-on: false
