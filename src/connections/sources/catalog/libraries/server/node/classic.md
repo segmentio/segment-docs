@@ -5,8 +5,8 @@ strat: node-js
 hidden: true
 ---
 
-> warning "Deprecation of Analytics Node.js Classic"
-> On April 1, 2023, Segment will end support for Analytics Node.js Classic, which includes versions 6.2.0 and older. Upgrade to the new version of Analytics Node.js. See the updated [Analytics Node.js docs](/docs/connections/sources/catalog/libraries/server/node) to learn more.
+> info "Upgrade to the new version of Analytics Node.js"
+> Upgrade to the new version of Analytics Node.js. See the updated [Analytics Node.js docs](/docs/connections/sources/catalog/libraries/server/node) to learn more.
 
 Segment's Node.js library lets you record analytics data from your node code. The requests hit Segment's servers, and then Segment routes your data to any destinations you have enabled.
 

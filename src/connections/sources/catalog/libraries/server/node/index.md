@@ -5,15 +5,14 @@ repo: analytics-next
 strat: node-js
 ---
 
+> info ""
+> This version of Analytics for Node.js is in beta and Segment is actively working on this feature. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this feature. If you’re using the classic version of Analytics for Node.js, you can refer to the documentation [here](/docs/connections/sources/catalog/libraries/server/node/classic).
+
 Segment's Analytics Node.js library lets you record analytics data from your node code. The requests hit Segment's servers, and then Segment routes your data to any destinations you have enabled.
 
 The [Segment Analytics Node.js Next library is open-source](https://github.com/segmentio/analytics-next/tree/master/packages/node){:target="_blank"} on GitHub.
 
 All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to Segment's servers.
-
-> info "Using Analytics for Node.js Classic?"
-> If you’re still using the classic version of Analytics for Node.js, you can refer to the documentation [here](/docs/connections/sources/catalog/libraries/server/node/classic).
-> <br><br>On April 1, 2023, Segment will end support for Analytics Node.js Classic, which includes versions 6.2.0 and older. Upgrade to new Analytics Node.js. See the updated [Analytics Node.js quickstart guide](/docs/connections/sources/catalog/libraries/server/node/quickstart/) to learn more.
 
 ## Getting Started
 
@@ -504,7 +503,6 @@ Every method you call **doesn't** result in a HTTP request, but is queued in mem
 
 By default, Segment's library will flush:
 
-  - The very first time it gets a message.
   - Every 15 messages (controlled by `settings.maxEventsInBatch`).
   - If 10 seconds has passed since the last flush (controlled by `settings.flushInterval`)
 
@@ -516,7 +514,8 @@ If you don't want to batch messages, you can turn batching off by setting the `m
 const analytics = new Analytics({
   ...
   maxEventsInBatch: 1
-});```
+});
+```
 
 Batching means that your message might not get sent right away. Every method call takes an optional `callback`, which you can use to know when a particular message is flushed from the queue, like so:
 
