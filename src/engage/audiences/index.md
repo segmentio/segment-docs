@@ -118,7 +118,7 @@ Engage displays the following compute statuses for Audiences and Traits.
 |---------------------------|---------------------------------------|
 | Preparing                 | Engage is preparing the computation. |
 | Computing                 | Engage is computing the Audience or Trait.  |
-| Live                      | The Audience or Trait is up-to-date, based on the most recent sync cadence. Engage updates batch Audiences and Traits approximately once every two to four hours.        |
+| Live                      | The Audience or Trait is up-to-date, based on the most recent sync cadence.       |
 | Not Computing             | Engage displays this status when there are no destinations connected or `Compute without connected destinations` isn't selected. |
 | Disabled                  | The Audience or Trait is disabled. |
 | Failed                    | The computation was cancelled or failed to compute. Please contact [Segment support](https://segment.com/help/contact/){:target="_blank"}.      |
