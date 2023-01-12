@@ -78,7 +78,7 @@ To create a source:
 {% include components/reference-button.html
   href="https://segment.com/academy/intro/"
   icon="symbols/squares-arrow.svg"
-  title="The Analytic Quickstart Guide"
+  title="The Analytics Quickstart Guide"
   description="Analytics and data collection is a very broad topic and it can be quite overwhelming. How do you get started?"
 %}
 

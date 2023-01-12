@@ -175,6 +175,9 @@ To edit a real-time Trait, follow these steps:
 
 Engage then processes your Trait edits. While the edit task runs, the trait remains locked and you can't make further changes. Once Engage has finished incorporating your changes, you'll be able to access your updated Trait.
 
+> warning ""
+> It is not possible to edit a trait to convert it from real-time to batch, or vice-versa. If the computation type needs to be changed, you will need to recreate the trait with the appropiate conditions.
+
 ## Accessing your Computed Traits using the Profiles API
 
 You can access your computed traits using the Profile API by querying the `/traits` endpoint. For example, you can query for the `emails_opened_last_30_days` with the following GET request:
