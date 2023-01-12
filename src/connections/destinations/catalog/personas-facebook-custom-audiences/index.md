@@ -137,5 +137,17 @@ For example, many B2B SaaS businesses have users that sign up for their products
 
 Please note, emails must be in a plain text format. Facebook also provides these guidelines for the emails that you send to them: trim leading, trail whitespace, and convert all characters to lowercase.
 
+## Audience sync remaining in a failed state
+
+Segment keeps sync data to Facebook for 14 days, after which they are deleted for GDPR purposes. If the latest audience sync request is in a failed state for more than 14 days when previous syncs were successful, the audience sync may be stuck because it is trying to read the data for a version of your audience that no longer exists. When inspecting the audience syncs to Facebook, this can surface as an Internal Error.
+
+There are two solutions for this:
+
+1. Deleting and re-creating the audience. You could re-create the audience with a different name (which can still be similar, but it's important that it's not exactly the same as the deleted audience), and so a new sync request will be created when you connect the new audience to Facebook. 
+
+OR
+
+2. [Contact the Segment Support team](https://segment.com/help/contact/) to kill the stuck sync. Segment Support can essentially force a new sync to the destination.
+
 ### Do you support LTV audiences?
 Facebook has a feature called [value-based audiences](https://developers.facebook.com/docs/marketing-api/audiences/guides/value-based-lookalike-audiences/){:target="_blank"} where you can send an additional field like LTV, to tell Facebook how to optimize their advertising based on a customer's value. 
