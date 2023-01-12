@@ -34,7 +34,7 @@ On the Destinations page, you can choose among the following properties:
 - Created At
 - Type
 - Sources
-- Category
+- Category 
 
 You can then sort or filter each column to just the values you care about, by clicking on the arrow next to each displayed column.
 
