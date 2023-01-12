@@ -125,7 +125,7 @@ Engage displays the following compute statuses for Audiences and Traits.
 
 
 ## Real-time compute compared to batch
-
+ 
 Real-time Compute allows you to update traits and Audiences as Segment receives new events. Real-time Compute unlocks exciting use cases:
 
 - **Intra-Session App Personalization:** change your app experience with personalized onboarding, product recommendations, and faster funnels based on a user entering and exiting an audience.
