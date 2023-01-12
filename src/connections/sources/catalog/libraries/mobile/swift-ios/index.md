@@ -445,6 +445,7 @@ analytics.add(plugin: idfaPlugin)
 Segment supports these destinations for Analytics Swift, with more to come:
 * [Amplitude](https://github.com/segment-integrations/analytics-swift-amplitude){:target="_blank"}
 * [Appsflyer](https://github.com/segment-integrations/analytics-swift-appsflyer){:target="_blank"}
+* [Braze (Partner Maintained)](https://github.com/braze-inc/analytics-swift-braze){:target="_blank"}
 * [Facebook App Events](https://github.com/segment-integrations/analytics-swift-facebook-app-events){:target="_blank"}
 * [Firebase](https://github.com/segment-integrations/analytics-swift-firebase){:target="_blank"}
 * [Mixpanel](https://github.com/segment-integrations/analytics-swift-mixpanel){:target="_blank"}
