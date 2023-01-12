@@ -12,7 +12,7 @@ Connections is Segment's core product offering: you can collect event data from 
 
 {% include content/whats-a-destination.md %}
 
-## What information can I see on Sources and Destinations pages?
+## What information can I see on Sources and Destinations pages? 
 
 The Sources and Destinations pages allow each user to decide what information appears in their personal view for each page.
 
