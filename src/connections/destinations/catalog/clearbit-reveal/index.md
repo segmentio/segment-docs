@@ -22,6 +22,8 @@ Setup within Clearbit:
 
 To verify that the destination has been set up correctly, send a page event **that includes an IP address**, check the Debugger section of your Segment Source. Assuming everything is as it should be, you should start seeing Clearbit Reveal data populate in an `identify` event – click on the specific event you're interested in to see Clearbit Reveal traits. These traits will now be available to other Segment destinations in your account. Notice that all Clearbit Reveal traits are prefixed with `reveal_` to ensure they don't conflict with existing traits. Clearbit will also send a `track` event for 'enrichment_provider'.
 
+When you make requests to Clearbit, they send events with Clearbit data back to your Segment source server-side using Segment's analytics-ruby library. If you see unexpected traffict from analytics-ruby in your Debugger, not to worry! Those are just your Clearbit events.
+
 
 ## Page
 
