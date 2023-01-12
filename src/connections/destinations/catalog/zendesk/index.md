@@ -13,7 +13,7 @@ id: 54521fdc25e721e32a72ef06
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Zendesk" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter your Zendesk domain and click the 'Connect' button - you'll be redirected to Zendesk OAuth. Use the standard email and password you use to Sign In to your Zendesk account. In the Zendesk settings, add your email in the **Email** setting and your password in the **Password** setting.
+3. Enter your Zendesk domain and click **Connect**. The Zendesk OAuth login opens in a new tab. Sign in with your Zendesk credentials to authenticate. In the Zendesk settings, add your email in the **Email** setting and your password in the **Password** setting.
 4. Add your Zendesk subdomain in the **Subdomain** setting (not including `.zendesk.com`).
 
 ## Identify
