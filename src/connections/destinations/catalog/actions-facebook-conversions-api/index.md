@@ -151,7 +151,7 @@ If you use Facebook Pixel, the Pixel library also hashes the External ID. This m
 
 ### User Data Parameters
 
-Segment automatically maps User Data fields to their corresponding parameters [as expected by the Conversions API](https://segment.com/docs/connections/destinations/catalog/actions-facebook-conversions-api/#faq--troubleshooting){:target="_blank"} before sending to Facebook:
+Segment automatically maps User Data fields to their corresponding parameters [as expected by the Conversions API](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters/){:target="_blank"} before sending to Facebook:
 
 | User Data Field | Conversions API User Data Parameter |
 |-----------------|-------------------------------------|
