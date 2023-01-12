@@ -173,4 +173,4 @@ To change the name of your schema without disruptions:
 
 ## Can I change the data type of a column in the warehouse?
 
-Yes, data types are set up in your warehouse based on the first value that comes in from a source. However, you can request the support team to update the data type. To learn more on how to request, check out [Data Types](/docs/connections/storage/warehouses/schema/#schema-evolution-and-compatibility) section. 
+Yes, data types are set up in your warehouse based on the first value that comes in from a source. However, you can request the support team to update the data type by reaching out to [support](https://app.segment.com/workspaces?contact=1). To learn more, check out [Data Types](/docs/connections/storage/warehouses/schema/#schema-evolution-and-compatibility) section.
