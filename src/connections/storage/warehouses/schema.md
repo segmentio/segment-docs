@@ -411,7 +411,17 @@ When Segment process a new batch and discover a new column to add, we take the m
 
 ### Data Types
 
-The data types that Segment currently supports include `timestamp`, `integer`, `float`, `boolean`, and `varchar`.
+The data types that Segment currently supports include:
+
+#### `timestamp`
+
+#### `integer`
+
+#### `float`
+
+#### `boolean`
+
+#### `varchar`
 
 Data types are set up in your warehouse based on the first value that comes in from a source. For example, if the first value that came in from a source was a string, Segment would set the data type in the warehouse to `string`. 
 
