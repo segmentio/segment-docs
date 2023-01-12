@@ -6,7 +6,7 @@ Connections is Segment's core product offering: you can collect event data from 
 
 ## What's a Source?
 
-{% include content/whats-a-source.md %}
+{% include content/whats-a-source.md %} 
 
 ## What's a Destination?
 
