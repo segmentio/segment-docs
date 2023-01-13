@@ -348,7 +348,7 @@ analytics.on('error', (err) => console.error(err))
 
 
 ### Event emitter interface
-The event emitter interface allows you to track when certain things happen in the app, such as a track call or an error, and it will call the function you provided with some arguments when that event happens.
+The event emitter interface allows you to track events, such as `track` and `identify` calls, and it calls the function you provided with some arguments upon successful delivery. `error` emits on delivery error. See the complete list of emitted events in the [GitHub Node repository](https://github.com/segmentio/analytics-next/blob/master/packages/node/src/app/emitter.ts).
 
 ```javascript
 analytics.on('error', (err) => console.error(err))
@@ -357,6 +357,24 @@ analytics.on('identify', (ctx) => console.log(ctx))
 
 analytics.on('track', (ctx) => console.log(ctx))
 ```
+
+Use the emitter to log all HTTP Requests.
+
+  ```javascript
+  analytics.on('http_request', (event) => console.log(event))
+
+  // when triggered, emits an event of the shape:
+  {
+      url: 'https://api.segment.io/v1/batch',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...
+      },
+      body: '...',
+  }
+  ```
+
 
 ## Plugin architecture
 When you develop against [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), the plugins you write can augment functionality, enrich data, and control the flow and delivery of events. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
