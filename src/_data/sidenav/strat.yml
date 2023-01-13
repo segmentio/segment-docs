@@ -197,3 +197,7 @@ sections:
     title: Analytics-Node.js
   - path: /connections/sources/catalog/libraries/server/node/quickstart/
     title: Quickstart Node.js
+  - path: /connections/sources/catalog/libraries/server/node/classic/
+    title: Analytics-Node.js Classic
+  - path: /connections/sources/catalog/libraries/server/node/migration/
+    title: Analytics-Node.js Migration Guide
