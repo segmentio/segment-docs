@@ -35,6 +35,9 @@ Amplitude (Actions) provides the following benefits over the classic Amplitude d
 
 Once you have a mapping, you can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
+> info ""
+> The Amplitude API Key is region-specific. For example, if you have a North America Amplitude account and API key, you would need to make sure the **Endpoint Region** in your Amplitude destination settings is set to North America.
+
 ### Log Purchases in existing destination instances
 
 Initially, the Log Event Action was reporting purchases to Amplitude for all events containing a `products` array, even if the products were just added to cart. This inflated the LTV Chart in Amplitude.
