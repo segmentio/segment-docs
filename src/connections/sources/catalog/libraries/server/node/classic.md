@@ -2,11 +2,11 @@
 title: Analytics for Node.js Classic
 repo: analytics-node
 strat: node-js
-hidden: true
+hidden: false
 ---
 
 > info "Upgrade to the new version of Analytics Node.js"
-> Upgrade to the new version of Analytics Node.js. See the updated [Analytics Node.js docs](/docs/connections/sources/catalog/libraries/server/node) to learn more.
+> There's a new version of Analytics Node.js. [Upgrade](/docs/connections/sources/catalog/libraries/server/node/migration/) to the latest version. See the updated [Analytics Node.js docs](/docs/connections/sources/catalog/libraries/server/node) to learn more.
 
 Segment's Node.js library lets you record analytics data from your node code. The requests hit Segment's servers, and then Segment routes your data to any destinations you have enabled.
 
