@@ -93,7 +93,13 @@ To install and verify your accounts:
 snowsql -a <account>  -u <user>
 ```
 
-For accounts outside the US, the account ID includes the region. You can also find part of your account name by running the following query on your worksheet in Snowflake:
+For accounts outside the US, the account ID includes the region. You can find your account name from the browser address string:
+
+<img width="566" alt="rtaImage" src="https://user-images.githubusercontent.com/37472597/212277907-04e05f89-ae0c-4c75-a355-9ce975cb05a0.png">
+
+The text in the red box (the one before the first dot) is going to be your account name.
+
+You can also find part of your account name by running the following query on your worksheet in Snowflake:
 
 ```
 SELECT CURRENT_ACCOUNT();
