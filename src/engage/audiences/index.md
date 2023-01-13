@@ -56,6 +56,10 @@ See [Account-level Audiences](/docs/engage/audiences/account-audiences) for more
 
 ![Building an Audience of accounts where no user viewed their dashboard in the last 30 days](/docs/engage/images/1542075123519.png)
 
+### Anonymous Users in Audiences and Computed Traits
+
+Users that do not have a user_id, but do have ga_client_id, braze_id, email, android.idfa or ios.idfa are not considered anonymous users by the Personas engine and will be included in the Audience and/or Computed Trait even when the "Include anonymous users" box is not checked. A user is considered anonymous in our system when only anonymous_id is present. 
+
 ## Send Audiences to Destinations
 With the help of Sources and Destinations in Segment's catalog, you can create and send Audiences and computed traits to third-party services.
 
