@@ -2676,8 +2676,7 @@ items:
     type: select
     defaultValue: ''
     description: >-
-      Cloud-mode Only (will not work in device-mode). Choose the endpoint
-      corresponding to your region. EU endpoints aren't supported for device mode.
+      Cloud-mode. Choose the endpoint corresponding to your region. EU endpoints aren't supported for device mode.
     required: true
     label: Endpoint
   - name: eventUploadPeriodMillis
