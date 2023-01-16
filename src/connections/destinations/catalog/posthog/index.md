@@ -5,7 +5,7 @@ id: 5ece242d61055a0b1bb2e103
 ---
 [PostHog](https://posthog.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is self-hosted, open-source analytics product. Get the same powerful features as other product analytics software but keep full control over your data.
 
-This destination is maintained by PostHog. For any issues with the destination, [contact the PostHog Support team](mailto:hey@posthog.com).
+This destination is maintained by PostHog. For any issues with the destination, checkout the [PostHog users slack](https://posthog.com/slack) or [contact the PostHog Support team](mailto:hey@posthog.com).
 
 ## Getting Started
 
@@ -16,9 +16,10 @@ This destination is maintained by PostHog. For any issues with the destination, 
 3. Choose which Source should send data to the PostHog destination.
 4. Go to your [PostHog set up page](https://app.posthog.com/setup), and find and copy the **API key**.
 5. Enter the PostHog API Key that you copied in the PostHog destination settings in Segment.
-
-> note ""
-> **Note**: If you're hosting your own PostHog instance, add the URL of your instance without the trailing slash in the **PostHog instance** setting. For example, `https://posthog-example.herokuapp.com`
+6. Enter your PostHog instance URL, as the address to your instance **without any trailing slash**, for example:
+  - `https://app.posthog.com` if you are using PostHog Cloud US
+  - `https://eu.posthog.com` if you are using PostHog Cloud EU
+  - `https://posthog-example.herokuapp.com` if you are self-hosting on Heruku
 
 ## Page
 
