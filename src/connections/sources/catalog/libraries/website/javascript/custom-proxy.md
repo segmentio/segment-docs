@@ -93,6 +93,6 @@ To add a CNAME record to your DNS settings:
    - **Name**: `<subdomain_name>.yourdomain.com`
    - **Value**: Tracking API CloudFront Distribution Domain Name
 3. Save your record. This might take some time to take effect, depending on your TTL settings.
-4. Run `curl` on your domain to check if the proxy is working correctly.
+4. Run `curl` on your domain to check if the proxy is working correctly. 
 
 
