@@ -3,7 +3,7 @@ title: PostHog Destination
 rewrite: true
 id: 5ece242d61055a0b1bb2e103
 ---
-[PostHog](https://posthog.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is self-hosted, open-source analytics product. Get the same powerful features as other product analytics software but keep full control over your data.
+[PostHog](https://posthog.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a self-hosted, open-source analytics product. Get the same powerful features as other product analytics software but keep full control over your data.
 
 This destination is maintained by PostHog. For any issues with the destination, check out the [PostHog users slack](https://posthog.com/slack){:target="_blank"} or [contact the PostHog Support team](mailto:hey@posthog.com).
 
@@ -14,9 +14,9 @@ This destination is maintained by PostHog. For any issues with the destination, 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "PostHog" in the Destinations Catalog, and select the PostHog destination.
 3. Choose which Source should send data to the PostHog destination.
-4. Go to your [PostHog set up page](https://app.posthog.com/setup){:target="_blank"}, and find and copy the **API key**.
+4. Go to your [PostHog set up page](https://app.posthog.com/setup){:target="_blank"}, and copy the **API key**.
 5. Enter the PostHog API Key that you copied in the PostHog destination settings in Segment.
-6. Enter your PostHog instance URL, as the address to your instance **without any trailing slash**, for example:
+6. Enter your PostHog instance URL as the address to your instance **without any trailing slash**, for example:
   - `https://app.posthog.com` if you use PostHog Cloud US
   - `https://eu.posthog.com` if you use PostHog Cloud EU
   - `https://posthog-example.herokuapp.com` if you self-host on Heroku
