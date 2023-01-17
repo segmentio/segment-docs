@@ -758,6 +758,7 @@ Segment offers video player 'plugins' so you can quickly collect video events us
 
 Analytics.js tracks across subdomains out of the box; all Segment destinations fully support this feature.
 
+You will still need to include the Segment snippet on each subdomain. Segment sets the anonymousId on the top-level domain so that users can be tracked across any subdomains using Segment tracking. 
 
 ## Analytics.js performance
 
