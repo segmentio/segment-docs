@@ -43,6 +43,8 @@ sections:
     title: Replay
   - path: /guides/regional-segment
     title: Regional Segment
+  - path: /guides/audiences-and-journeys
+    title: Audiences and Journeys
 
   - section_title: How-to Guides
     slug: guides/how-to-guides
