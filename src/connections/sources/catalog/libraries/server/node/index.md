@@ -348,7 +348,7 @@ analytics.on('error', (err) => console.error(err))
 
 
 ### Event emitter interface
-The event emitter interface allows you to track events, such as `track` and `identify` calls, and it calls the function you provided with some arguments upon successful delivery. `error` emits on delivery error. See the complete list of emitted events in the [GitHub Node repository](https://github.com/segmentio/analytics-next/blob/master/packages/node/src/app/emitter.ts).
+The event emitter interface allows you to track events, such as `track` and `identify` calls, and it calls the function you provided with some arguments upon successful delivery. `error` emits on delivery error. 
 
 ```javascript
 analytics.on('error', (err) => console.error(err))
