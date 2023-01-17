@@ -90,3 +90,6 @@ The UIs for the destination tools you send the audience data to are different, s
 ## Step 8: Create your production space
 
 Once you validate that your full audience is arriving in your destination, you're ready to create a Production space. Segment recommends that you repeat the same steps outlined above, focusing on your production use cases and data sources.
+
+> info ""
+> The default is two Engage spaces per workspace. Contact Segment <link to https://segment.com/help/contact/%3E if you require additional spaces to be provisioned.
