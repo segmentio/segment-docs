@@ -18,6 +18,12 @@ You can build an Audience from existing events, traits, computed traits, or othe
 
 ![Creating an Engage Audience from the conditions list](/docs/engage/images/audience_condition_list.png)
 
+> info ""
+> A user is considered anonymous in Engage when only anonymous_id is present. Users that do not have a user_id, but have other identifiers like ga_client_id, braze_id, email, are not considered anonymous, and will be included in the audience when the "Include anonymous users" box is not checked.
+
+
+
+
 ### Events
 
 You can build an Audience from any events that are connected to Engage, including [Track](/docs/connections/spec/track), [Page](/docs/connections/spec/page), and [Screen](/docs/connections/spec/screen) calls. You can use the `property` button to refine the audience on specific event properties, as well. Select `and not who` to indicate users that have not performed an event. For example, you might want to look at all users that have viewed a product above a certain price point but not completed the order.
