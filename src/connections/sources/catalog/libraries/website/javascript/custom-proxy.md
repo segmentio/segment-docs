@@ -22,6 +22,9 @@ You need to set up two important parts, regardless of the CDN provider you use:
 - Proxy to Segment CDN (`cdn.segment.com`)
 - Proxy to Segment tracking API (`api.segment.io`)
 
+> info ""
+> Please be advised that Segment only has the ability to enable the proxy setting for our web AJS source. Mobile source proxy details will be within the source documentation. At this time it is not possible to setup a proxy for server sources with Segment's UI.
+
 ## Set up
 
 Follow the directions listed for CloudFront or use your own CDN setup. Once you complete those steps and verify that your proxy works for both `cdn.segment.com` and `api.segment.io`, [contact Segment Product Support](https://segment.com/help/contact/) with the following template email:
