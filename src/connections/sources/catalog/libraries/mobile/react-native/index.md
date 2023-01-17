@@ -595,7 +595,19 @@ No, only the plugins listed above are supported in device-mode for Analytics Rea
 ### Will I still see device-mode integrations listed as `false` in the integrations object?
 When you successfully package a plugin in device-mode, you won't see the integration listed as `false` in the integrations object for a Segment event. This logic is packaged in the event metadata, and isn't surfaced in the Segment debugger.
 ### Why are my IDs not set in UUID format?
-Due to [limitations](https://github.com/segmentio/analytics-react-native/blob/master/packages/core/src/uuid.ts#L5){:target="_blank"} with the React Native bridge, Segment doesn't use UUID format for `anonymousId`s and `messageId`s in local development. These IDs will be set in UUID format for your live app.  
+Due to [limitations](https://github.com/segmentio/analytics-react-native/blob/master/packages/core/src/uuid.ts#L5){:target="_blank"} with the React Native bridge, Segment doesn't use UUID format for `anonymousId` and `messageId` values in local development. These IDs will be set in UUID format for your live app.
+### How do I set a distinct writeKey for iOS and android?
+You can set different writeKeys for iOS and Android. This is helpful if you want to send data to different destinations based on the client side platform. To set different writeKeys, you can dynamically set the writeKey when you initialize the Segment client:
 
+```js
+import {Platform} from 'react-native';
+import { createClient } from '@segment/analytics-react-native';
+
+const segmentWriteKey = Platform.iOS ? 'ios-writekey' : 'android-writekey';
+
+const segmentClient = createClient({
+  writeKey: segmentWriteKey
+});
+```
 ## Changelog
 [View the Analytics React Native 2.0 changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.
