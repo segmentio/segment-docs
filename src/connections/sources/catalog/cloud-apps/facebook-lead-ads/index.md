@@ -139,6 +139,8 @@ Log into your downstream tools and check that your events are populating, and co
 
 ### No Data After Updating Credentials
 
-When a connected account changes or updates their credentials, the customer will have to create a new Facebook Lead Ads source. Reauthorization implies that a new token gets generated, but the token is not the sole link between Segment and Facebook. A Segment app is installed onto an FB Account and that will be the sprouting point from where tokens are generated. The reason we can't disconnect and reconnect the CRM on Facebook with reauthorization is because the creation of a new token will mean to invalidate the rest of the tokens attached to the same Facebook account. 
+When you update or change credentials on a connected account, you need to create a new Facebook Lead Ads source to reauthorize Facebook. Reauthorization implies that a new token is generated, but the token is not the only link between Segment and Facebook. 
 
-For example, let's imagine you have a Facebook Account with three accounts: Account A, Account B, and Account C. You connect Segment to all of them and then generate tokens respectively. Later on, you decide for whatever reason to reauthorize the "Account A" page, the other tokens will be invalidated, and the pages will stop working.
+When you connect the Facebook Leads Ads source, a Segment application is installed on the connected Facebook account. If you were to generate a new token on the same source, it would invalidate all other tokens attached to that Facebook account.
+
+For example, if you have a Facebook Account with three accounts: Account A, Account B, and Account C. You connect Segment to all of them and then generate tokens respectively. Later on, if you need to reauthorize the "Account A" page, the tokens for Account B and Account C are invalidated, and the pages  stop working.
