@@ -1,7 +1,8 @@
 ---
 title: Public API
+plan: papi
 ---
-The Segment Public API helps you manage your Segment workspaces and its resources. You can use the API to perform CRUD (create, read, update, delete) operations at no extra charge. This includes working with resources such as Sources, Destinations, Warehouses, Tracking Plans, and the Segment Destinations and Sources Catalogs.
+The Segment Public API helps you manage your Segment workspaces and its resources. You can use the API to perform CRUD (create, read, update, delete) operations at no extra charge. This includes working with resources such as Sources, Destinations, Warehouses, Tracking Plans, and the Segment Destinations and Sources Catalogs. The Public API is available to Team and Business Tier customers.
 
 All CRUD endpoints in the API follow REST conventions and use standard HTTP methods. Different URL endpoints represent different resources in a workspace.
 
@@ -26,6 +27,7 @@ The Public API includes the following benefits over the Config API:
 | Available in Europe     | The Public API is accessible to both US and EU-based workspaces.                                                                                                                                                                   |
 | Increased reliability   | The Public API features more stable endpoints, and a 99.8% success rate                                                                                             |
 
+
 ## API Token Security
 
 To enhance API token security, Segment partners with GitHub to prevent fraudulent use of exposed API tokens found in public git repositories. This helps to prevent malicious actors from using exposed tokens to perform unauthorized actions in your Segment workspace. 
@@ -46,3 +48,4 @@ By automatically revoking the exposed token, Segment helps keep your workspace s
 
 #### How do I enable this feature?
 This feature is automatically enabled for all workspaces on Team or Business tier plans.
+
