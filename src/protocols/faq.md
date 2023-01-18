@@ -134,3 +134,7 @@ Transformations introduce advanced logic that at scale may impact performance of
 ### Why do I need Protocols to use transformations?
 
 Transformations are but one tool among many to help you improve data quality. Segment highly recommends that all customers interested in improving data quality start with a well defined Tracking Plan. The Tracking Plan serves as a roadmap for how you want to collect data. Without a clear roadmap, it's nearly impossible to build alignment around how transformations should be used to improve data quality, leading to more data quality issues than it solves.
+
+### What happens if Protocols gets disabled?
+
+We do not delete Tracking Plans if the Protocols entitlement was turned off. However, we will delete them if the workspace was deleted. 
