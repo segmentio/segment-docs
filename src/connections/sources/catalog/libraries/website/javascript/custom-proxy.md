@@ -22,8 +22,8 @@ You need to set up two important parts, regardless of the CDN provider you use:
 - Proxy to Segment CDN (`cdn.segment.com`)
 - Proxy to Segment tracking API (`api.segment.io`)
 
-> info ""
-> Please be advised that Segment only has the ability to enable the proxy setting for our web AJS source. Mobile source proxy details will be within the source documentation. At this time it is not possible to setup a proxy for server sources with Segment's UI.
+> info " "
+> Segment only has the ability to enable the proxy setting for the Web (Analytics.js) source. Details for mobile source proxies are in the [Analytics for iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#proxy-https-calls) and [Analytics for Android](/docs/connections/sources/catalog/libraries/mobile/android/#proxying-http-calls) documentation.  It is not currently possible to set up a proxy for server sources using the Segment UI.
 
 ## Set up
 
