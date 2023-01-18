@@ -34,8 +34,8 @@ This is {person} from {company}. I would like to configure a proxy for the follo
 * Source URL with Source ID
 * Source URL with Source ID 
 ```
-**Source URL**: link to the source in your Segment workspace (for example: https://app.segment.com/<your_slug>/sources/<source>/overview)
-**Source ID**: navigate to **API Keys** on the left-hand side of the source **Settings** and provide the Source ID 
+**Source URL**: link to the source in your Segment workspace (e.g. https://app.segment.com/<your_slug>/sources/<source>/overview)
+**Source ID**: navigate to **API Keys** on the lefthand side of the source **Settings** and provide the Source ID 
 
 Double-check the Source URL and the Source ID.
 
