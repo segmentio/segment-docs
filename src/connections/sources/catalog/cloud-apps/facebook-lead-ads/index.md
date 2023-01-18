@@ -143,4 +143,4 @@ When you update or change credentials on a connected account, you need to create
 
 When you connect the Facebook Leads Ads source, a Segment application is installed on the connected Facebook account. If you were to generate a new token on the same source, it would invalidate all other tokens attached to that Facebook account.
 
-For example, if you have a Facebook Account with three accounts: Account A, Account B, and Account C. You connect Segment to all of them and then generate tokens respectively. Later on, if you need to reauthorize the "Account A" page, the tokens for Account B and Account C are invalidated, and the pages  stop working.
+For example, if you have a Facebook Account with three accounts: Account A, Account B, and Account C, you can connect Segment to all of them and then generate a token for each account. Later on, if you need to reauthorize the "Account A" page, the tokens for Account B and Account C are invalidated, and the pages stop working.
