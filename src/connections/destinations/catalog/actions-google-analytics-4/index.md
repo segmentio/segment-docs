@@ -143,3 +143,7 @@ Google recommends use of their Firebase SDKs to send mobile data to Google Analy
 ### Reserved Names
 
 Google reserves certain event names, parameters, and user properties. Google silently drops any events that include [these reserved names](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#reserved_names){:target="_blank"}. If you notice that your data isn't appearing in Google, please check that you're not using a reserved name.
+
+### Verifying Event Meet GA4's Measurement Protocol API
+**Why are the events returning an error _Param [PARAM] has unsupported value._?**
+Google has some requirements/[limitations]([url](https://developers.google.com/analytics/devguides/collection/protocol/ga4/sending-events?client_type=gtag#limitations)) imposed by their [Measurement Protocol API]([url](https://developers.google.com/analytics/devguides/collection/protocol/ga4/sending-events?client_type=gtag)). If an event contains `null`/`object`/`array` parameters, GA4 would silently drop the event, so Segment does not attempt to send the event but instead returns an error of `Invalid Type` that can be found in the destination's Event Delivery tab. To verify whether an event would return this error, you can test this by sending an event to [GA4's debug endpoint]([url](https://developers.google.com/analytics/devguides/collection/protocol/ga4/validating-events?client_type=gtag)) via an API tool, such as [Postman]([url](https://www.postman.com/)).
