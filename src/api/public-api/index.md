@@ -25,3 +25,24 @@ The Public API includes the following benefits over the Config API:
 | Cleaner mapping         | The Public API uses unique IDs for reference, in place of slugs in the Config API. Unique IDs are, by design, unique.                                               |
 | Available in Europe     | The Public API is accessible to both US and EU-based workspaces.                                                                                                                                                                   |
 | Increased reliability   | The Public API features more stable endpoints, and a 99.8% success rate                                                                                             |
+
+## API Token Security
+
+To enhance API token security, Segment partners with GitHub to prevent fraudulent use of exposed API tokens found in public git repositories. This helps to prevent malicious actors from using exposed tokens to perform unauthorized actions in your Segment workspace. 
+
+Within seconds, GitHub scans each commit in public repositories for Public API tokens, and sends detected tokens to Segment. Valid tokens are automatically revoked and workspace owners are notified. 
+
+Learn more about [GitHub's secret scanning program](https://docs.github.com/en/developers/overview/secret-scanning-partner-program){:target="_blank"}.
+
+### Frequently Asked Questions
+#### What should I do if I see a notification that my token was exposed?
+In most cases, identifying and revoking an exposed token takes seconds. Segment recommends you check the [audit trail](/docs/segment-app/iam/audit-trail/) to ensure no unauthorized actions were taken with the token.
+
+#### How did my token get exposed?
+Developers can accidentally commit tokens to public repositories, exposing them to the public. This can happen when developers use a token in a local development environment and forget to remove it before committing their code.
+
+#### Why are exposed tokens automatically revoked?
+By automatically revoking the exposed token, Segment helps keep your workspace secure and prevents potential abuse of the token.
+
+#### How do I enable this feature?
+This feature is automatically enabled for all workspaces on Team or Business tier plans.
