@@ -71,7 +71,7 @@ To create a source:
 4. Enter a name for your source as well as any information on the setup page.
 5. Click **Add Source**.
 
-> info ""
+> info "One source or multiple sources?"
 > **One source or multiple sources?** 
 > Ultimately, it's up to you, but it really depends on how you want to organize your data. We suggest that you create one source for each type of data you want to collect. For example, a customer might have one source for all of their website tracking and a different source for any mobile tracking. We typically recommend having one source for each type of data (different libraries) for the following reasons:
 > - Debugger ease of use - mixing libraries/sources on a single API key means you’re heavily reliant on filtering to actually test events
