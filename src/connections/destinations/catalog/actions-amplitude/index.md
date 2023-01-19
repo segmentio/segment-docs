@@ -65,7 +65,7 @@ By default, Segment maps the Segment property `context.device.id` to the Amplitu
 
 ### Enable session tracking for Analytics.js 2.0
 
-Session tracking is automatically enabled on JavaScript sources.
+JavaScript sources automatically enable session tracking.
 
 The session ID Segment passes to Amplitude is stored locally in a key-value pair. You can access the session ID by viewing the value associated with the `analytics_session_id` key.
 
