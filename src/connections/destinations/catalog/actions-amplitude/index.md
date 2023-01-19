@@ -67,7 +67,7 @@ By default, Segment maps the Segment property `context.device.id` to the Amplitu
 
 JavaScript sources automatically enable session tracking.
 
-The session ID Segment passes to Amplitude is stored locally in a key-value pair. You can access the session ID by viewing the value associated with the `analytics_session_id` key.
+The session ID Segment passes to Amplitude stores locally in a key-value pair. View the value associated with the `analytics_session_id`key to access the session ID. 
 
 ### Enable Amplitude session tracking for Swift
 
