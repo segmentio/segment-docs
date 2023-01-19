@@ -377,7 +377,7 @@ Use the emitter to log all HTTP Requests.
 
 
 ## Plugin architecture
-When you develop against [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), the plugins you write can augment functionality, enrich data, and control the flow and delivery of events. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
+When you develop in [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), the plugins you write can improve functionality, enrich data, and control the flow and delivery of events. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
 
 Though middlewares function the same as plugins, it's best to use plugins as they are easier to implement and are more testable.
 
