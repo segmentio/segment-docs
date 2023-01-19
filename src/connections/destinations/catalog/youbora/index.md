@@ -198,9 +198,7 @@ Use the following steps to track a player that falls in one of the previous cate
 In the `player` field, pass the video player object, or the ID of the
 video player element in the case of HTML5.
 
-In the `options` field, you can pass options the same way you would pass them
-natively to Youbora as documented
-[here](http://developer.nicepeopleatwork.com/plugins/general/setting-youbora-options/).
+In the `options` field, you can pass options the same way you would [pass them natively to Youbora](http://developer.nicepeopleatwork.com/plugins/general/setting-youbora-options/){:target="_blank"}.
 
 The following example shows a working implementation:
 
