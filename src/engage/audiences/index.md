@@ -92,6 +92,9 @@ From the Overview page, you can view Audience details including the current comp
 > info ""
 > Engage only displays the progress bar and status updates when you create a new Audience or Trait.
 
+> warning ""
+> Engage syncs the Overview page for an individual audience more frequently than the Audiences page (**Engage > Audiences**). As a result, you may see temporary discrepancies in Audience details, such as user counts, between these two pages.
+
 ### Refresh real-time Audiences and Traits
 
 For real-time computations, you can click **Refresh Audience** or **Refresh Trait** to update user counts, status, and compute progress.
@@ -105,22 +108,22 @@ Engage displays the following compute statuses for Audiences and Traits.
 | Computation status        | Description                           |
 |---------------------------|---------------------------------------|
 | Preparing                 | Engage is preparing the computation.  |
-| Computing                 | Engage is computing the Audience or Trait.                     |
-| Live                      | The Audience or Trait is live. Users will enter in real-time as they meet entry criteria.       |
+| Computing                 | Engage is computing the Audience or Trait.           |
+| Live                      | The Audience or Trait is live. Users will enter in real-time as they meet entry criteria.        |
 | Disabled                  | The Audience or Trait is disabled.                   |
-| Failed                    | The computation was cancelled or failed to compute. Please contact [Segment support](https://segment.com/help/contact/){:target="_blank"}.      |
+| Failed                    | The computation was cancelled or failed to compute. Please contact [Segment support](https://segment.com/help/contact/){:target="_blank"}.            |
 
 
 #### Batch computations
 
 | Computation status        | Description                           |
 |---------------------------|---------------------------------------|
-| Preparing                 | Engage is preparing the computation. |
+| Preparing                 | Engage is preparing the computation.  |
 | Computing                 | Engage is computing the Audience or Trait.  |
-| Live                      | The Audience or Trait is up-to-date, based on the most recent sync cadence.       |
-| Not Computing             | Engage displays this status when there are no destinations connected or `Compute without connected destinations` isn't selected. |
-| Disabled                  | The Audience or Trait is disabled. |
-| Failed                    | The computation was cancelled or failed to compute. Please contact [Segment support](https://segment.com/help/contact/){:target="_blank"}.      |
+| Live                      | The Audience or Trait is up-to-date, based on the most recent sync cadence. When you edit a batch Audience or Trait, Engage displays the compute status as `Live` and incorporates your edits in the next scheduled sync.                 |
+| Not Computing             | Engage displays this status when there are no destinations connected or `Compute without connected destinations` isn't selected.         |
+| Disabled                  | The Audience or Trait is disabled.    |
+| Failed                    | The computation was cancelled or failed to compute. Please contact [Segment support](https://segment.com/help/contact/){:target="_blank"}.    |
 
 
 ## Real-time compute compared to batch
@@ -141,8 +144,7 @@ To create a new Audience or Trait:
 
 3. Select destinations to connect, then review and create your Audience or Trait.
 
-Use the Audience Explorer to see users or accounts that enter the Audience. Segment displays the Audience as computing until at least one user or account enters.
-
+While Engage is computing, use the Audience Explorer to see users or accounts that enter your Audience in real-time. Engage displays the Audience as computing in the Explorer until at least one user or account enters.
 
 > warning ""
 > [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/), [Marketo Lists](/docs/connections/destinations/catalog/marketo-static-lists/), and [Adwords Remarking Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists) impose rate limits on how quickly Segment can update an Audience. Segment syncs at the highest frequency allowed by the tool, which is between one and six hours.
