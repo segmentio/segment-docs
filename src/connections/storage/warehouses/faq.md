@@ -74,7 +74,7 @@ Your source slug can be found in the URL when you're looking at the source desti
 
 Your warehouse id appears in the URL when you look at the [warehouse destinations page](https://app.segment.com/goto-my-workspace/warehouses/). The URL structure looks like this:
 
-​​`app.segment.com/[my-workspace]/warehouses/[my-warehouse-id]/overview`
+`app.segment.com/[my-workspace]/warehouses/[my-warehouse-id]/overview`
 
 
 ## How fresh is the data in Segment Warehouses?
@@ -170,3 +170,7 @@ To change the name of your schema without disruptions:
 11. Select the warehouse you disabled syncs for from the list of destinations.
 3. On the overview page for your source, select **Settings**.
 4. Enable the **Sync Data** toggle and click **Save Settings**. 
+
+## Can I change the data type of a column in the warehouse?
+
+Yes, data types are set up in your warehouse based on the first value that comes in from a source. However, you can request the support team to update the data type by reaching out to [support](https://app.segment.com/workspaces?contact=1). To learn more, check out [Data Types](/docs/connections/storage/warehouses/schema/#schema-evolution-and-compatibility) section.
