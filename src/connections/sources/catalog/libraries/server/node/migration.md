@@ -31,7 +31,7 @@ If you're using the [classic version of Analytics Node.js](/docs/connections/sou
     ```javascript
     const analytics = new Analytics({ writeKey: '<YOUR_WRITE_KEY>' })
     ```
-3. Change flushing to [graceful shutdown](/docs/connections/sources/catalog/libraries/server/node//#graceful-shutdown). 
+3. Change flushing to [graceful shutdown](/docs/connections/sources/catalog/libraries/server/node/#graceful-shutdown). 
 
      <br> Before:
     ```javascript  
