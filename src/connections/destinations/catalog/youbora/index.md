@@ -43,7 +43,7 @@ Youbora calculates the join time using the time difference between `Video Playba
 
 When a user pauses or resumes playback of a video, use the [Video Playback Paused](/docs/connections/spec/video/#playback-events) and [Video Playback Resumed](/docs/connections/spec/video/#playback-events) events.
 
-If the user pauses during an ad, be sure to fill the `properties.ad_asset_id` field from the spec for **both** calls, as Segment uses its
+If the user pauses during an ad, fill the `properties.ad_asset_id` field from the spec for **both** calls, as Segment uses its
 presence to determine whether the pause is occurring during an ad or not.
 
 **Example**
