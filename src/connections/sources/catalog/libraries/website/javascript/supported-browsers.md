@@ -15,10 +15,13 @@ The library is regularly tested and is functional with the following browsers:
 - Microsoft Edge
 - Brave
 
+
 ### Internet Explorer Support
 
 Segment guarantees support for Internet Explorer 11 and later for Analytics.js. Remember that different bundled (device-mode) destinations might have different compatibility guarantees for their own products. Refer to the vendor's documentation to confirm browser compatibility.
 
+> info ""
+> Classic destinations and Analytics.js support Internet Explorer 11, but some Actions destinations are not yet supported. 
 
 ## Tracking Protection (ITP, ETP)
 
