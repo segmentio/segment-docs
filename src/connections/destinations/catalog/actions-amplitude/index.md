@@ -41,13 +41,13 @@ Initially, the Log Event Action was reporting purchases to Amplitude for all eve
 
 To resolve this, purchase reporting takes place in a new Action called Log Purchase.
 
-For instances created prior to before the Log Purchases action was released, you need to manually add the Log Purchases Action to report purchases to Amplitude. 
+For instances created prior to before the Log Purchases action was released, you need to manually add the Log Purchases Action to report purchases to Amplitude.
 
-To manually add the Log Purchases Action: 
+To manually add the Log Purchases Action:
 1. Add a new Mapping for the Log Purchases Action. The default trigger for this action is Order Completed events.
 2. Modify the Trigger if you need to report purchases for any other events.
-3. Modify the Trigger of Log Event to exclude these same events. This helps you to avoid sending the same event twice. 
-4. Enable the Log Purchases mapping. 
+3. Modify the Trigger of Log Event to exclude these same events. This helps you to avoid sending the same event twice.
+4. Enable the Log Purchases mapping.
 
 ### Connection Modes for Amplitude (Actions) destination
 
@@ -65,8 +65,9 @@ By default, Segment maps the Segment property `context.device.id` to the Amplitu
 
 ### Enable session tracking for Analytics.js 2.0
 
-The session tracking is automatically enabled on JavaScript sources.
+JavaScript sources automatically enable session tracking.
 
+The session ID Segment passes to Amplitude stores locally in a key-value pair. View the value associated with the `analytics_session_id`key to access the session ID. 
 
 ### Enable Amplitude session tracking for Swift
 
@@ -93,7 +94,7 @@ To enable session tracking in Amplitude when using the [Segment Kotlin library](
 
 To enable session tracking in Amplitude when using the [Segment iOS library](https://github.com/segmentio/analytics-ios):
 1. Add the [Amplitude Session middleware](https://github.com/segment-integrations/analytics-ios-integration-amplitude/blob/amplitude-session/Pod/Classes/SEGAmplitudeSession.m) to your project.
-2. Add the middleware & enable `trackApplicationLifecycleEvents` in your configuration
+2. Add the middleware & enable `trackApplicationLifecycleEvents` in your configuration:
    ```objective-c
    	NSString *const SEGMENT_WRITE_KEY = @" ... ";
    	SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:SEGMENT_WRITE_KEY];
@@ -109,7 +110,7 @@ To enable session tracking in Amplitude when using the [Segment Android library]
 	```gradle
 	implementation 'com.segment.analytics.android.integrations:amplitude:3.1.0'
 	```
-3. Add the middleware & enable `trackApplicationLifecycleEvents` in your configuration
+3. Add the middleware & enable `trackApplicationLifecycleEvents` in your configuration:
    ```java
    	String SEGMENT_WRITE_KEY = " ... ";
    	analytics = new Analytics.Builder(this, SEGMENT_WRITE_KEY)
