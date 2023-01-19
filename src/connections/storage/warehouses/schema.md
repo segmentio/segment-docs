@@ -427,7 +427,7 @@ Data types are set up in your warehouse based on the first value that comes in f
 
 In cases where a data type is determined incorrectly, the support team can help you update the data type. As an example, if a field can include float values as well as integers, but the first value we received was an integer, we will set the data type of the field to integer, resulting in a loss of precision. 
 
-To update the data type, the support team will update the internal schema that Segment uses to infer your warehouse schema. We will start syncing the data with the correct data type after the change is made. However, if you want to backfill all historical data correctly, it will be required to drop the impacted tables on your end so Segment can recreate them in the correct datatype, and then backfill those tables. 
+To update the data type, reach out to the Segment support team and we will update the internal schema that Segment uses to infer your warehouse schema. Once the change is made, Segment will start syncing the data with the correct data type. However, if you want to backfill the historical data correctly, you will be required to drop the impacted tables on your end, so that Segment can recreate them and backfill those tables.
 
 To request data types changes, please reach out to [Segment Support](https://segment.com/help/contact) for assistance, and provide with these details for the affected columns in the following format:
 `<schema_name>.<table_name>.<column_name>.<current_datatype>.<new_datatype>`
