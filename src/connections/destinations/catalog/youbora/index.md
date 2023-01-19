@@ -87,7 +87,7 @@ analytics.track('Video Playback Buffer Started', { session_id: 1 });
 analytics.track('Video Playback Buffer Completed', { session_id: 1 });
 ```
 
-If the user pauses during an ad, be sure to fill the `properties.ad_asset_id` field from the spec for **both** calls, as Segment uses its
+If the user pauses during an ad, fill the `properties.ad_asset_id` field from the spec for **both** calls, as Segment uses its
 presence to determine whether the pause is occurring during an ad or not.
 
 ### Video Playback Interrupted
