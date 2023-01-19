@@ -62,13 +62,12 @@ User-level examples:
 - Favorite Blog Post
 - Top Purchase Category
 
-![A most frequent product-viewed trait](../images/1525836239527.png)
-
 Account-level examples:
 - Most frequent product viewed
 - Most active user
 
-![A most frequent order-completed trait](../images/1542073415630.png)
+![A most frequent product-viewed trait](../images/1525836239527.png)
+
 
 ### First
 
@@ -92,13 +91,12 @@ User-level examples:
 - Last seen at
 - Last utm parameter
 
-![The last event-seen trait builder](../images/1525836818177.png)
-
 Account-level examples:
 - Last unsubscribe timestamp
 - Last user active
 
-![An account-level last page-viewed trait](../images/1542073887657.png)
+![The last event-seen trait builder](../images/1525836818177.png)
+
 
 ### Unique List
 
@@ -120,13 +118,12 @@ User-level examples:
 - Unique products viewed count
 - Unique categories count
 
-![The unique list count builder](../images/1525837374378.png)
-
 Account-level examples:
 - Unique products viewed
 - Unique visitors count
 
-![An account-level unique list trait](../images/1542074153487.png)
+![The unique list count builder](../images/1525837374378.png)
+
 
 ## Conditions
 
@@ -171,7 +168,7 @@ To edit a real-time Trait, follow these steps:
 1. In your Engage Space, select the **Computed Traits** tab.
 2. Select the realtime Trait you want to edit.
 3. Select the **Builder** tab and make your edits.
-4. Select **Save Computed Trait** to confirm your edits.
+4. Preview the results, then select **Save Computed Trait** to confirm your edits.
 
 Engage then processes your Trait edits. While the edit task runs, the trait remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated Trait. Use the Overview page to view Trait details and refresh user counts for real-time computations.
 

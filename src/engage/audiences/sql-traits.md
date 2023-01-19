@@ -225,7 +225,6 @@ Segment supports returning only 25 columns. [Contact Segment](https://segment.co
 
 ### I'm seeing a duplicate `user_id` error.
 
-![An example of a duplicate user_id error](../images/troubleshoot3.png)
 
 Each query row must correspond to a unique user. Segment displays this error if it detects multiple rows with the same `user_id`. Use a `distinct` or `group by` statement to ensure that each row has a unique user_id.
 

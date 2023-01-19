@@ -34,7 +34,6 @@ You can also build Audiences based on custom traits. These traits can be collect
 
 You can also use computed traits in an Audience definition. For example, you can create a `total_revenue` computed trait and use it to generate an audience of `big_spender` customers that exceed a certain threshold.
 
-![Creating an Audience from a computed trait based on the user's number of Twitter followers](/docs/engage/images/audience_builder_computed.png)
 
 ### Funnel Audiences
 
@@ -54,7 +53,7 @@ If you have a B2B business, you might want to build an Audience of accounts. You
 
 See [Account-level Audiences](/docs/engage/audiences/account-audiences) for more information.
 
-![Building an Audience of accounts where no user viewed their dashboard in the last 30 days](/docs/engage/images/1542075123519.png)
+
 
 ## Send Audiences to Destinations
 With the help of Sources and Destinations in Segment's catalog, you can create and send Audiences and computed traits to third-party services.
@@ -125,26 +124,22 @@ Engage displays the following compute statuses for Audiences and Traits.
 
 
 ## Real-time compute compared to batch
- 
+
 Real-time Compute allows you to update traits and Audiences as Segment receives new events. Real-time Compute unlocks exciting use cases:
 
 - **Intra-Session App Personalization:** change your app experience with personalized onboarding, product recommendations, and faster funnels based on a user entering and exiting an audience.
 - **Instant Messaging:** Trigger messages in email, live chat, and push notifications instantly, to deliver immediate experiences across channels.
 - **Operational Workflows:** Supercharge your sales and support teams by responding to customer needs faster, based on the latest understanding of a user.
 
-To create a new Audience:
+To create a new Audience or Trait:
 
-1. Go to your **Computed Traits** or **Audiences** tab in Engage and select **New**.
+1. Go to your **Computed Traits** or **Audiences** tab in Engage and select **Create**.
 
-2. Create your computed trait or Audience.
+2. Configure and preview your Audience or Trait.
+- A lightning bolt next to `Realtime Enabled` indicates that the computation updates in real-time.
+- By default, Segment queries all historical data to set the current value of the computed trait and Audience. Backfill computes historical data up to the point of audience creation. You can uncheck **Include Historical Data** to compute values for the Audience or trait without historical data. With backfill disabled, the trait or Audience only uses the data that arrives after you create it.
 
-   A lightning bolt indicates that the computation updates in real-time.
-
-   ![A screenshot of the Audience preview in the Audience Builder](/docs/engage/images/1538693443980_image.png)
-
-3. To preview your Audience, select **Select Destinations**, then select **Review & Create**.
-
-   By default, Segment queries all historical data to set the current value of the computed trait and Audience. Backfill computes historical data up to the point of audience creation. You can uncheck **Include Historical Data** to compute values for the Audience or trait without historical data. With backfill disabled, the trait or Audience only uses the data that arrives after you create it.
+3. Select destinations to connect, then review and create your Audience or Trait.
 
 Use the Audience Explorer to see users or accounts that enter the Audience. Segment displays the Audience as computing until at least one user or account enters.
 
@@ -161,7 +156,7 @@ To edit a realtime Trait or Audience, follow these steps:
 1. In your Engage Space, select the **Computed Traits** or **Audiences** tab.
 2. Select the realtime Audience or Trait you want to edit.
 3. Select the **Builder** tab and make your edits.
-4. Select **Save Audience** to confirm your edits.
+4. Preview the results, then select **Save audience** to confirm your edits.
 
 Engage then processes your realtime Audience or Trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated Audience or Trait. Use the Overview page to view Audience details and refresh user counts for real-time computations.
 
