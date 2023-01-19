@@ -45,7 +45,7 @@ If you're using the [classic version of Analytics Node.js](/docs/connections/sou
     await analytics.closeAndFlush()
     ```
 
-### Differences to note between the classic and updated version     
+### Key differences between the classic and updated version     
 
 * The callback call signature changed. 
 
