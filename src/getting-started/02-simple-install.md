@@ -77,7 +77,7 @@ That snippet loads Analytics.js onto the page _asynchronously_, so it won't affe
 > **Note:** If you only want the most basic Google Analytics setup you can stop reading right now. You're done! Just toggle on Google Analytics from the Segment App.
 
 > info ""
-> The Segment snippet version history is open-source and can be [viewed on GitHub](https://github.com/segmentio/snippet/blob/master/History.md). It is always recommended to use the latest snippet version whenever possible.
+> The Segment snippet version history available on [GitHub](https://github.com/segmentio/snippet/blob/master/History.md){:target="_blank"}. Segment recommends that you use the latest snippet version whenever possible.
 
 <br>
 ### Step 2: Identify Users
