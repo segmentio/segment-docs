@@ -18,3 +18,9 @@ These limits can also affect the traits and properties that you can see in the C
 If you hit any of the limits or would like to clear out old events or properties, you can clear the Schema data from your Source Settings. In your Source, navigate to Settings, then Schema Configuration. Scroll down to the **Clear Schema History** setting.
 
 ![](images/schema_config_clear_schema.png)
+
+
+**How can I clear/archive properties in my source schema?**
+
+Unfortunately, at this time you cannot clear or archive old event properties individually. The best alternative for this would be to archive the event itself, and then clear the archive. After it has been cleared, the event will re-populate in the schema with only the current properties. 
+
