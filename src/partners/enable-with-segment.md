@@ -2,7 +2,7 @@
 title: Enable with OAuth
 ---
 
-Enable with OAuth, supported with the [Public API](/docs/api/public-api), allows partners to build seamless flows for customers to implement and enable integrations within their workspace. This is a [post-launch requirement](/docs/partners/#post-launch) for a partner to graduate from public beta to public.
+Enable with OAuth, supported with the [Config API](/docs/api/config-api), allows partners to build seamless flows for customers to implement and enable integrations within their workspace. This is a [post-launch requirement](/docs/partners/#post-launch) for a partner to graduate from public beta to public.
 
 ## Concepts
 
@@ -10,7 +10,7 @@ Before getting started with your implementation, it's important to understand th
 
 ### Apps
 
-As a partner developing an integration using Segment's Public API, everything starts from an **App**. An App behaves like a standard OAuth client, but adds granular permissions. When a user installs your App through the familiar OAuth flow, Segment requires the user to grant access to a specific workspace and source. The user must also be a Workspace Owner of the authorized workspace.
+As a partner developing an integration using Segment's Config API, everything starts from an **App**. An App behaves like a standard OAuth client, but adds granular permissions. When a user installs your App through the familiar OAuth flow, Segment requires the user to grant access to a specific workspace and source. The user must also be a Workspace Owner of the authorized workspace.
 
 As a destination partner, you may only manage your own destination on the workspace and source authorized by the user.
 
@@ -188,7 +188,7 @@ If you created an App with a more permissive scope, you have access to more APIs
 - With the `workspace` scope you can change all resources
 - With the `workspace:read` you can read all resources, but not change them
 
-A full list of APIs are here: https://segment.com/docs/api/public-api/
+A full list of APIs are here: https://segment.com/docs/api/config-api/
 
 The example below shows how you would get a users workspace if you had any of the above scopes:
 
@@ -306,4 +306,4 @@ When the app was installed, you should have received a Segment `workspace` and  
 
 ### OK I managed to create an App. How do I use your APIs?
 
-See [the API docs](/docs/api/public-api/).
+See [the API docs](/docs/api/config-api/).
