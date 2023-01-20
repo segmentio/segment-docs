@@ -17,7 +17,7 @@ id: 1bow82lmk
 
 ### Sync
 
-The Stripe source is built with a sync component, which means Segment make requests to the Stripe API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, Segment grabs all the Stripe objects (and their corresponding properties) according to the Collections Table below. The objects are written into a separate schema, corresponding to the source instance's schema name you designated upon creation (for example, `stripe_prod.charges`).
+The Stripe source is built with a sync component, which means Segment make requests to the Stripe API on your behalf on a three hour interval to pull the latest data into Segment. In the initial sync, Segment grabs all the Stripe objects (and their corresponding properties) according to the Collections Table below. The objects are written into a separate schema, corresponding to the source instance's schema name you designated upon creation (for example, `stripe_prod.charges`).
 
 Segment's sync component uses an upsert API, so the data in your warehouse loaded using sync reflects the latest state of the corresponding resource in Stripe. For example, if `subscription_status` goes from `active` to `inactive` between syncs, on its next sync that ticket's status is `inactive`.
 
