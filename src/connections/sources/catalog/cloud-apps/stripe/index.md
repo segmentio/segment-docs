@@ -21,7 +21,7 @@ The Stripe source is built with a sync component, which means Segment make reque
 
 Segment's sync component uses an upsert API, so the data in your warehouse loaded using sync reflects the latest state of the corresponding resource in Stripe. For example, if `subscription_status` goes from `active` to `inactive` between syncs, on its next sync that ticket's status is `inactive`.
 
-The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, Segment pushes the Source data to your warehouse on the interval associated with your billing plan.
+The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every three hours. Depending on your Warehouses plan, Segment pushes the Source data to your warehouse on the interval associated with your billing plan.
 
 ## Collections
 Collections are the groupings of resources that Segment pulls from your source. In your warehouse, each collection gets its own table.
