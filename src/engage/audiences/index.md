@@ -93,7 +93,7 @@ From the Overview page, you can view Audience details including the current comp
 > Engage only displays the progress bar and status updates when you create a new Audience or Trait.
 
 > warning ""
-> Engage syncs the Overview page for an individual audience more frequently than the Audiences page (**Engage > Audiences**). As a result, you may see temporary discrepancies in Audience details, such as user counts, between these two pages.
+> Engage syncs the Overview page for an individual audience more frequently than the Engage Audiences page (**Engage > Audiences**). As a result, you might see temporary discrepancies in Audience details, such as user counts, between these two pages.
 
 ### Refresh real-time Audiences and Traits
 
@@ -158,7 +158,7 @@ To edit a realtime Trait or Audience, follow these steps:
 1. In your Engage Space, select the **Computed Traits** or **Audiences** tab.
 2. Select the realtime Audience or Trait you want to edit.
 3. Select the **Builder** tab and make your edits.
-4. Preview the results, then select **Save audience** to confirm your edits.
+4. Preview the results, then select **Create Audience** to confirm your edits.
 
 Engage then processes your realtime Audience or Trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated Audience or Trait. Use the Overview page to view Audience details and refresh user counts for real-time computations.
 

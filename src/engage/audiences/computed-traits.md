@@ -157,7 +157,7 @@ For account-level computed traits, you have the option to send either a [group](
 
 ## View compute status
 
-After you create a computed trait, use the Trait Overview page to view the current [compute status](/docs/engage/audiences#compute-statuses), number of users with the trait, connected destinations, and more. For real-time traits, click **Refresh Trait** to update the current number of users with the trait.  
+After you create a computed trait, use the Overview page to view the current [compute status](/docs/engage/audiences#compute-statuses), number of users with the trait, connected destinations, and more. For real-time traits, click **Refresh Trait** to update the current number of users with the trait.  
 
 ## Editing Realtime Traits
 
