@@ -67,7 +67,7 @@ The audience in the image below includes all users that have Product Added in th
 > Funnel Audiences compute based on all instances of the parent event within the lookback period. This means that if you have a user that Product Added ⟶ Order Completed ⟶ Product Added, this user would be entered into the Abandoned Cart state despite having previously completed an order.
 
 ## What is Engage Merge Protection?
-Engage merge protection algorithm protects your identity graph from unnecessary merges by finding and removing untrusted external IDs. Here's an example:
+Engage's merge protection algorithm protects your identity graph from unnecessary merges by finding and removing untrusted external IDs. Here's an example:
 
 ![Merge protection](images/merge_protection.png "An image representing the merge protection flow")
 
@@ -86,25 +86,25 @@ For Destinations that support an `alias` call (for example, Mixpanel), you can e
 
 The following list shows just some data sources you can sync to Engage:
 
-- Website ([analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/))
-- Mobile SDKs ([ios](/docs/connections/sources/catalog/libraries/mobile/ios), [android](/docs/connections/sources/catalog/libraries/mobile/android), [amp](/docs/connections/sources/catalog/libraries/mobile/amp))
-- Serverside libraries ([go](/docs/connections/sources/catalog/libraries/server/go), [node](/docs/connections/sources/catalog/libraries/server/node/), [java](/docs/connections/sources/catalog/libraries/server/java), [PHP](/docs/connections/sources/catalog/libraries/server/php/), [python](/docs/connections/sources/catalog/libraries/server/python), [ruby](/docs/connections/sources/catalog/libraries/server/ruby), [.NET](/docs/connections/sources/catalog/libraries/server/net))
-- [Facebook Lead Ads](https://segment.com/docs/connections/sources/catalog/cloud-apps/facebook-lead-ads/)
-- [Activecampaign](https://segment.com/docs/connections/sources/catalog/cloud-apps/activecampaign/)
-- [Customer.io](https://segment.com/docs/connections/sources/catalog/cloud-apps/customer.io/)
-- [Drip](https://segment.com/docs/connections/sources/catalog/cloud-apps/drip/)
-- [Iterable](https://segment.com/docs/connections/sources/catalog/cloud-apps/iterable/)
-- [Klaviyo](https://segment.com/docs/connections/sources/catalog/cloud-apps/klaviyo/)
-- [Mailjet](https://segment.com/docs/connections/sources/catalog/cloud-apps/mailjet/)
-- [Nudgespot](https://segment.com/docs/connections/sources/catalog/cloud-apps/nudgespot/)
-- [Vero](https://segment.com/docs/connections/sources/catalog/cloud-apps/vero/)
-- [Blueshift](https://segment.com/docs/connections/sources/catalog/cloud-apps/blueshift/)
-- [Delighted](https://segment.com/docs/connections/sources/catalog/cloud-apps/delighted/)
-- [Braze](https://segment.com/docs/connections/sources/catalog/cloud-apps/braze/)
-- [Looker](https://segment.com/docs/connections/sources/catalog/cloud-apps/looker/)
-- [Radar](https://segment.com/docs/connections/sources/catalog/cloud-apps/radar/)
-- [Autopilot](https://segment.com/docs/connections/sources/catalog/cloud-apps/autopilothq/)
-- [Friendbuy](https://segment.com/docs/connections/sources/catalog/cloud-apps/friendbuy/)
+- Website ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/))
+- Mobile SDKs ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios), [Android](/docs/connections/sources/catalog/libraries/mobile/android), [AMP](/docs/connections/sources/catalog/libraries/mobile/amp))
+- Server-side libraries ([Go](/docs/connections/sources/catalog/libraries/server/go), [Node](/docs/connections/sources/catalog/libraries/server/node/), [Java](/docs/connections/sources/catalog/libraries/server/java), [PHP](/docs/connections/sources/catalog/libraries/server/php/), [Python](/docs/connections/sources/catalog/libraries/server/python), [Ruby](/docs/connections/sources/catalog/libraries/server/ruby), [.NET](/docs/connections/sources/catalog/libraries/server/net))
+- [Facebook Lead Ads](/docs/connections/sources/catalog/cloud-apps/facebook-lead-ads/)
+- [ActiveCampaign](/docs/connections/sources/catalog/cloud-apps/activecampaign/)
+- [Customer.io](/docs/connections/sources/catalog/cloud-apps/customer.io/)
+- [Drip](/docs/connections/sources/catalog/cloud-apps/drip/)
+- [Iterable](/docs/connections/sources/catalog/cloud-apps/iterable/)
+- [Klaviyo](/docs/connections/sources/catalog/cloud-apps/klaviyo/)
+- [Mailjet](/docs/connections/sources/catalog/cloud-apps/mailjet/)
+- [Nudgespot](/docs/connections/sources/catalog/cloud-apps/nudgespot/)
+- [Vero](/docs/connections/sources/catalog/cloud-apps/vero/)
+- [Blueshift](/docs/connections/sources/catalog/cloud-apps/blueshift/)
+- [Delighted](/docs/connections/sources/catalog/cloud-apps/delighted/)
+- [Braze](/docs/connections/sources/catalog/cloud-apps/braze/)
+- [Looker](/docs/connections/sources/catalog/cloud-apps/looker/)
+- [Radar](/docs/connections/sources/catalog/cloud-apps/radar/)
+- [Autopilot](/docs/connections/sources/catalog/cloud-apps/autopilothq/)
+- [Friendbuy](/docs/connections/sources/catalog/cloud-apps/friendbuy/)
 
 
 ## Can I send audiences to multiple destination accounts?
