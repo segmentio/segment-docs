@@ -170,7 +170,7 @@ To edit a real-time Trait, follow these steps:
 3. Select the **Builder** tab and make your edits.
 4. Preview the results, then select **Save Computed Trait** to confirm your edits.
 
-Engage then processes your Trait edits. While the edit task runs, the trait remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated Trait. Use the Overview page to view Trait details and refresh user counts for real-time computations.
+Engage then processes your Trait edits. While the edit task runs, the trait remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated Trait. 
 
 
 ## Accessing your Computed Traits using the Profiles API
