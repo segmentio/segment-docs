@@ -40,7 +40,20 @@ Invite teammates to your Engage dev space and grant them access to the space. Na
 
 1. From your Engage space, go to your space Settings and click **Sources**.
 2. On the screen that appears, choose one or two production sources from your Connections workspace.
-   Segment recommends connecting your production website or App source as a great starting point.
+   _Segment recommends connecting your production website or App source as a great starting point._
+3. The flag **Replay data** is enabled by default, **Replay data : Enable this option to replay last month of data into Profiles for every selected source below.** When left enabled, 30 days of historical data will be replayed from the source. You can disable this option by toggling it - this will prevent the replay of any historical data from the source. If your team would like more historical data available from this source, fill out the form below for each replay and please contact Segment Support via friends@segment.com or [create a ticket]([url](https://app.segment.com/goto-my-workspace/home?period=last-24-hours&v2=enabled&help=create-ticket)):
+```
+Segment Source Details:
+- Name: source-name
+- SourceId: XXXXX or Link to Source
+
+Details for replay:
+- Destination: Name of destination you want to replay to or link to Profiles space
+- Start time: (Please use the following UTC format) 2020-11-21T05:10:00Z UTC
+- End time: (Please use the following UTC format) 2023-01-21T10:10:00Z UTC
+- All the events or only a subset of event names? Please provide event names and/or method calls (page/identify/track/group) if only a subset of events is needed.
+```
+_How much data can I replay from my source into Engage?_ : Your workspace's "computations history" limit is defined in the contract and can be found in the [workspace settings]([url](https://app.segment.com/goto-my-workspace/settings/usage?metric=mtu&period=current)).
 
 To learn more, visit [Connect production sources](/docs/profiles/quickstart/#step-3-connect-production-sources).
 
