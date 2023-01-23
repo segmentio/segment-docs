@@ -28,13 +28,13 @@ Segment supports the following Postgres database providers:
 This guide explains how to set up a Postgres database with Heroku. Heroku is a cloud-based platform-as-a-service which simplifies the process of setting up and administering a Postgres database.
 
 > info "First sync duration"
-> The initial sync between Segment and Heroku Postgres can take up to 24 hours to complete. 
+> The initial sync between Segment and Heroku Postgres can take up to 24 hours to complete.
 
 1. [Sign up](https://signup.heroku.com/identity){:target="_blank"} for a Heroku account, or [log in](https://id.heroku.com/login){:target="_blank"} to an existing account.
 
 2. On the Heroku landing page, select **New** and click **Create new app**.
 
-3. Enter a name for your app and select the region where you want to host it. If you want to add your app to a Heroku pipeline, do so here. When you've finished updating your app's settings, click **Create app**.   
+3. Enter a name for your app and select the region where you want to host it. If you want to add your app to a Heroku pipeline, do so here. When you've finished updating your app's settings, click **Create app**.
 
 4. On the Deploy page, select the Resources tab.
 
@@ -44,7 +44,7 @@ This guide explains how to set up a Postgres database with Heroku. Heroku is a c
 
 7. Open the Segment app. On the Overview page, click **Add Destination**.
 
-8. Search for and select the Postgres destination.  
+8. Search for and select the Postgres destination.
 
 9. Choose the source(s) you'd like to connect to Postgres, and click **Next**.
 
@@ -54,10 +54,10 @@ This guide explains how to set up a Postgres database with Heroku. Heroku is a c
 
 You can set up a Postgres database with Amazon Relational Database Service (RDS). RDS simplifies the process of setting up and administering a Postgres database.
 
-Follow the steps in Amazon's documentation [Creating a PostgreSQL DB instance and connecting to a database on a PostgreSQL DB instance](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html){:target="_blank"} to create a new PostgreSQL database in RDS. For best performance, create your database in the `US West` region. 
+Follow the steps in Amazon's documentation [Creating a PostgreSQL DB instance and connecting to a database on a PostgreSQL DB instance](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html){:target="_blank"} to create a new PostgreSQL database in RDS. For best performance, create your database in the `US West` region.
 
 > warning "Ensure your database is publicly accessible"
-> When you create your database, ensure that the **Public access** setting is set to **Yes**. Segment requires your database to be publicly accessible in order to connect to your database. 
+> When you create your database, ensure that the **Public access** setting is set to **Yes**. Segment requires your database to be publicly accessible in order to connect to your database.
 
 When you create your database, Segment recommends that you enter a **Database name** value in the **Additional options** section. This setting creates the Postgres database at instance startup.
 
@@ -71,17 +71,21 @@ To create a new inbound rule:
 
 2. Open the Databases tab.
 
-3. Select your database and open the Connectivity & security tab. Open the **Security group rules** section. 
+3. Select your database and open the Connectivity & security tab. Open the **Security group rules** section.
 
 4. Click on the existing inbound security group and select the Inbound rules tab.
 
 5. Click **Edit inbound rules** to add a new rule, and click **Add rule**.
 
 6. Add a new rule with the following parameters:
-    - Select **PostgreSQL** as the type. 
-    - For **Source**, change the custom IP to `52.25.130.38/32`. This allows Segment to connect to the instance.
-    
-    When you're finished, click **Save**.
+    - Select **PostgreSQL** as the type.
+    - For **Source**, change the custom IP to `52.25.130.38/32`.
+
+7. Add another rule with the following parameters:
+    - Select **PostgreSQL** as the type.
+    - For **Source**, change the custom IP to `34.223.203.0/28`.
+
+8. Click **Save rules**.
 
 ## Compose Postgres
 
@@ -218,7 +222,7 @@ GRANT CREATE, TEMPORARY ON DATABASE <enter database name here> TO segment;
 ## Security
 To make sure your Postgres database is secure:
 - Log in with a user that has read and write permissions so that Segment can write to your database.
-- Allowlist the Segment IP (`52.25.130.38/32`). Otherwise, Segment can't load your data.
+- Allowlist the Segment IP addresses (`52.25.130.38/32` and `34.223.203.0/28`). Otherwise, Segment can't load your data.
 - Create a service user that has `read/write` permissions.
 - Always require SSL/TLS and make sure your data warehouse can only accept secure connections. Segment only connects to your data warehouse using SSL/TLS.
 
