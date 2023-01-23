@@ -110,3 +110,7 @@ The following list shows just some data sources you can sync to Engage:
 ## Can I send audiences to multiple destination accounts?
 
 Yes, Engage supports the ability to send an audience or computed trait to two or more accounts of the same partner. The most common use case is multiple Facebook, or Adwords ad accounts.
+
+## Can I remove an unwanted trait from a user profile?
+
+Yes, In order to clear out unwanted traits from the UI, the custom or computed trait key can be set to to null by using an identify call with the trait_key = null for all users that have this trait. The simplest way to achieve this is via a [SQL](/docs/engage/audiences/sql-traits/) trait that will set the unwanted trait to null for the affected users. This can also be accomplished by sending the identify calls through server-side libraries. 
