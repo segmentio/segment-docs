@@ -8,12 +8,12 @@ With the analytics.js YouTube Plugin you can collect YouTube player events into 
 ## Prerequisites
 To begin, create a new project in the Google Developer Console, then create a new API key in that project for the Segment YouTube plugin. You can read more about this process in the YouTube documentation on [registering an application](https://developers.google.com/youtube/registering_an_application){:target="_blank”}. 
 
-The Segment YouTube Plugin requires the following APIs:
-- [YouTube IFrame player API](https://developers.google.com/youtube/iframe_api_reference#Getting_Started){:target="_blank”}: Segment's YouTube plugin uses this to control the video (play, pause, stop) and retrieve information stored inside the iFrame.
-- [Data API](https://developers.google.com/youtube/v3/getting-started){:target="_blank”}: Segment's YouTube plugin uses this to access metadata about the video in the iFrame.
-
-> note "Securely using API keys"
+> note "Secure your API keys"
 > You can [secure your API keys](https://cloud.google.com/docs/authentication/api-keys#securing){:target="_blank”} by adding API key restrictions, deleting unused API keys, and periodically rotating your keys. 
+
+The Segment YouTube Plugin requires the following Google APIs:
+- [YouTube IFrame player API](https://developers.google.com/youtube/iframe_api_reference#Getting_Started){:target="_blank”}: Used to control the video (play, pause, stop).
+- [Data API](https://developers.google.com/youtube/v3/getting-started){:target="_blank”}: Used this to access metadata about the video in the iFrame.
 
 ## Getting Started
 
