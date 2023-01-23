@@ -129,6 +129,18 @@ analytics.track("Receipt Viewed", {}, {
 })
 ```
 
+### What is the impact of exposing the source's write keys?
+
+For the Segment script to work in the browser, the write key must be exposed in order for client-side tracking to work and that is considered the industry best practice. Many major tools expose some kind of public write key (Google Analytics, Mixpanel, Kissmetrics, Hubspot, Marketo, etc).
+ 
+Although it is possible for people to see your write key, we haven't seen any malicious security concerns related to this. In no case would customer data ever be exposed. Attackers could, at most, just send a bunch of calls to Segment, thereby increasing your MTUs and your cost with us. But again, this seems fairly pointless because it would do nothing for whoever used the write key, and we have never seen it happen. When customers have had to reset the key, it was due to a bot scraping an HTML page where the Segment snippet is present and re-posting that page on another domain. In these cases, we can work with you regarding any overage charges; you can read more about it here.
+ 
+We do also have an option available in each Source where you can switch keys for you right away, if you do see any weird behavior, but this has only needed to be used a handful of times and not because of malicious activity.
+
+![image](https://user-images.githubusercontent.com/96406241/213965601-47549725-8afc-4c2d-b3c5-13586dfbf318.png)
+
+However, if you do feel it's necessarily to hide the write key, you can use our HTTP Tracking API or one of our server-side libraries.
+
 This works for any [context field](/docs/connections/spec/common/#context) that Segment automatically collects.
 
 ## Known issues:
