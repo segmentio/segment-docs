@@ -2,7 +2,7 @@
 title: Enable with OAuth
 ---
 
-Enable with OAuth, supported with the [Config API](/docs/api/config-api), allows partners to build seamless flows for customers to implement and enable integrations within their workspace. This is a [post-launch requirement](/docs/partners/#post-launch) for a partner to graduate from public beta to public.
+Enable with OAuth, supported with the [Config API](/docs/api/config-api), allows partners to build seamless flows for customers to implement and enable integrations within their workspace. 
 
 ## Concepts
 
