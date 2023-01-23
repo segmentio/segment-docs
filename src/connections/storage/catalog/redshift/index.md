@@ -86,7 +86,7 @@ Redshift clusters are created in a VPC subnet. To configure:
 
 4. Click the Security group in the list to access its settings.
 
-5. On the Inbound tab, add rules to enable Segment to write to your Redshift port from `34.223.203.0/28` and from `52.25.130.38/32`. ![inbound](images/redshift05.png)
+5. On the Inbound tab, add rules to enable Segment to write to your Redshift port from `34.223.203.0/28` and `52.25.130.38/32`. ![inbound](images/redshift05.png)
 
 6. On the Outbound tab, ensure Redshift can make outbound requests to the Segment S3 bucket. The default behavior is to allow all outbound traffic, but security groups can limit outbound behavior. ![outbound](images/redshift06.png)
 
