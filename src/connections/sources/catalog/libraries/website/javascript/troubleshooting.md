@@ -146,6 +146,8 @@ analytics.track("Order Completed", {}, {
 
 It is important to note that if you are not passing in properties, you still need to pass an empty object in it's place as shown in the above example. 
 
+Additionally, custom context fields may not be forwarded to all destinations, as some destinations accept properties only. 
+
 
 ## Known issues:
 
