@@ -11,89 +11,39 @@ Youbora automatically starts recording data.
 ## Tracking Video Events
 
 Segment can keep track of events occurring on any number of video players on your
-page. **You must include the `session_id` propert with every video event you want to send to the Youbora so Segment can keep track of which player to attribute the events to.**
+page. **You must include the `session_id` property with every video event you want to send to Youbora so Segment can keep track of which player to attribute the events to.**
 
 
 ### Video Playback Started
 
-When a user starts playback of a video, use the [Video Playback Started](/docs/connections/spec/video/#playback-events) event. Segment maps the properties
-from the Video Playback Started event to the following Youbora video metadata
-fields:
+When a user starts playback of a video, use the [Video Playback Started](/docs/connections/spec/video/#playback-events) event. Segment maps the properties from the Video Playback Started event to the following Youbora video metadata fields:
 
-<table>
-    <tr>
-      <td>**Youbora Parameter**</td>
-      <td>**Segment Property**</td>
-      <td>**Data Type**</td>
-    </tr>
-  <tr>
-    <td>'content.isLive'</td>
-    <td>`properties.livestream`</td>
-    <td>Boolean</td>
-  </tr>
-  <tr>
-    <td>Resource</td>
-    <td>`context.page.url`</td>
-    <td>String</td>
-  </tr>
-</table>
+| Youbora Parameter | Segment Property        | Data Type |
+| ----------------- | ----------------------- | --------- |
+| `content.isLive`  | `properties.livestream` | Boolean   |
+| Resource          | `context.page.url`      | String    |
+
 
 ### Video Content Started
 
-When the video content actually begins playing, use the [Video Content
-Started](/docs/connections/spec/video/#content-events) event. Segment maps the properties
-from the Video Playback Started event to the following Youbora video metadata
-fields:
+When the video content actually begins playing, use the [Video Content Started](/docs/connections/spec/video/#content-events) event. Segment maps the properties from the Video Playback Started event to the following Youbora video metadata fields:
 
-<table>
-    <tr>
-      <td>**Youbora Parameter**</td>
-      <td>**Segment Property**</td>
-      <td>**Data Type**</td>
-    </tr>
-  <tr>
-    <td>'content.title'</td>
-    <td>`properties.title`</td>
-    <td>String</td>
-  </tr>
-  <tr>
-    <td>'content.title2'</td>
-    <td>`properties.program`</td>
-    <td>String</td>
-  </tr>
-  <tr>
-    <td>'content.duration'</td>
-    <td>`properties.total_length`</td>
-    <td>Integer</td>
-  </tr>
-  <tr>
-    <td>'content.metadata.content_id'</td>
-    <td>`properties.asset_id`</td>
-    <td>String</td>
-  </tr>
-  <tr>
-    <td>'content.metadata.genre'</td>
-    <td>`properties.genre`</td>
-    <td>String</td>
-  </tr>
-  <tr>
-    <td>'content.metadata.owner'</td>
-    <td>`properties.publisher`</td>
-    <td>String</td>
-  </tr>
-</table>
+| Youbora Parameter             | Segment Property          | Data Type |
+|:----------------------------- |:------------------------- |:--------- |
+| `content.title`               | `properties.title`        | String    |
+| `content.title2`              | `properties.program`      | String    |
+| `content.duration`            | `properties.total_length` | Integer   |
+| `content.metadata.content_id` | `properties.asset_id`     | String    |
+| `content.metadata.genre`      | `properties.genre`        | String    |
+| `content.metadata.owner`      | `properties.publisher`    | String    |
 
-Using the difference in time between when `Video Playback Started` and `Video
-Content Started`, Youbora will calculate the join time for you.
+Youbora calculates the join time using the time difference between `Video Playback Started` and `Video Content Started`,
 
 ### Video Playback Paused/Resumed
 
-When a user pauses/resumes playback of a video, use the [Video
-Playback Paused](/docs/connections/spec/video/#playback-events) and [Video Playback
-Resumed](/docs/connections/spec/video/#playback-events) events.
+When a user pauses or resumes playback of a video, use the [Video Playback Paused](/docs/connections/spec/video/#playback-events) and [Video Playback Resumed](/docs/connections/spec/video/#playback-events) events.
 
-If the user pauses during an ad, be sure to fill the
-`properties.ad_asset_id` field from our spec for **both** calls, as we use its
+If the user pauses during an ad, fill the `properties.ad_asset_id` field from the spec for **both** calls, as Segment uses its
 presence to determine whether the pause is occurring during an ad or not.
 
 **Example**
@@ -112,11 +62,7 @@ analytics.track('Video Playback Resumed', {
 
 ### Video Playback Seek Started/Completed
 
-When the video content actually begins playing, use the [Video
-Playback Seek Started](/docs/connections/spec/video/#playback-events) and [Video Playback
-Seek Completed](/docs/connections/spec/video/#playback-events) events. Youbora internally
-calculates the duration of the seek but if you would prefer to provide this
-value yourself you can pass it as the integration-specific option `duration`.
+When the video content actually begins playing, use the [Video Playback Seek Started](/docs/connections/spec/video/#playback-events) and [Video Playback Seek Completed](/docs/connections/spec/video/#playback-events) events. Youbora internally calculates the duration of the seek but if you would prefer to provide this value yourself you can pass it as the integration-specific option `duration`.
 
 **Example**
 
@@ -133,10 +79,6 @@ Playback Buffer Started](/docs/connections/spec/video/#playback-events) and [Vid
 Buffer Completed](/docs/connections/spec/video/#playback-events) events. Segment maps the
 properties from these events to the following Youbora video metadata fields:
 
-If the buffer occurs during an ad, be sure to fill the
-`properties.ad_asset_id` field from our spec for **both** calls, as we use its
-presence to determine whether the buffer is occurring during an ad or not.
-
 **Example**
 
 ```js
@@ -145,14 +87,16 @@ analytics.track('Video Playback Buffer Started', { session_id: 1 });
 analytics.track('Video Playback Buffer Completed', { session_id: 1 });
 ```
 
+If the user pauses during an ad, fill the `properties.ad_asset_id` field from the spec for **both** calls, as Segment uses its
+presence to determine whether the pause is occurring during an ad or not.
+
 ### Video Playback Interrupted
 
 When playback of a video is interrupted, use the [Video Playback Interrupted](/docs/connections/spec/video/#playback-events) event.
 
 ### Video Playback Completed
 
-To track the completion of the video playback session, use our [Video
-Playback Completed](/docs/connections/spec/video/#playback-events) event.
+To track the completion of the video playback session, use the [Video Playback Completed](/docs/connections/spec/video/#playback-events) event.
 
 **Example**
 
@@ -165,18 +109,10 @@ analytics.track('Video Playback Completed', { session_id: 1 });
 When an ad begins to load, use the [Video Ad Started](/docs/connections/spec/video/#ad-events) event. Segment maps the properties from
 these events to the following Youbora video metadata fields:
 
-<table>
-    <tr>
-        <td>**Youbora Parameter**</td>
-        <td>**Segment Property**</td>
-        <td>**Data Type**</td>
-    </tr>
-    <tr>
-        <td>'ad.title'</td>
-        <td>`properties.title`</td>
-        <td>String</td>
-    </tr>
-</table>
+| Youbora Parameter | Segment Property   | Data Type |
+| ----------------- | ------------------ | --------- |
+| `ad.title`        | `properties.title` | String    |
+
 
 **Example**
 
@@ -186,8 +122,7 @@ analytics.track('Video Ad Started', { session_id: 1, title: 'Test Ad Title', ad_
 
 ### Video Ad Completed
 
-To track the completion of an ad, use our [Video Ad
-Completed](/docs/connections/spec/video/#ad-events) event.
+To track the completion of an ad, use the [Video Ad Completed](/docs/connections/spec/video/#ad-events) event.
 
 **Example**
 
@@ -214,13 +149,9 @@ Youbora supports automatic video tracking for the following video players:
 - ThePlatform
 - VideoJS
 
-However, note that relying solely on Youbora auto tracking will not send your
-video events to Segment downstream destinations, including a raw data warehouse.
-To track data to downstream tools, we recommend either manually implementing all
-video player events or manually implementing all events alongside Youbora. If
-you employ the latter method, you should indicate explicitly that your Segment
-events should not flow to Youbora (because they've already been auto-tracked by
-the Youbora library).
+However, relying solely on Youbora auto tracking will not send your video events to Segment downstream destinations, including a raw data warehouse. To track data to downstream tools, Segment recommends either manually implementing all video player events or manually implementing all events alongside Youbora.
+
+If you employ the latter method, you should indicate explicitly that your Segment events should not flow to Youbora (because they've already been auto-tracked by the Youbora library).
 
 ```javascript
 analytics.track('Video Playback Started', { // empty properties object
@@ -231,10 +162,9 @@ analytics.track('Video Playback Started', { // empty properties object
 });
 ```
 
-In order to track a player that falls in one of the above categories, follow the
-below steps:
+Use the following steps to track a player that falls in one of the previous categories:
 
-1. Ensure you have the latest snippet on your page (Updated 2/6/18).
+1. Ensure you have the latest snippet on your page.
 2. If your snippet is in the `head` of your page, move it to the very bottom of
    your `body`, right before the `</body>` tag.
 3. Replace the `load` method in your snippet with the following (you can delete
@@ -268,11 +198,9 @@ below steps:
 In the `player` field, pass the video player object, or the ID of the
 video player element in the case of HTML5.
 
-In the `options` field, you can pass options the same way you would pass them
-natively to Youbora as documented
-[here](http://developer.nicepeopleatwork.com/plugins/general/setting-youbora-options/).
+In the `options` field, you can pass options the same way you would [pass them natively to Youbora](http://developer.nicepeopleatwork.com/plugins/general/setting-youbora-options/){:target="_blank"}.
 
-See the below example for what a working implementation looks like:
+The following example shows a working implementation:
 
 ```js
   <script>

@@ -17,10 +17,12 @@ The Braze Destination is open-sourced on GitHub. Source code for the following i
 
 - [iOS](https://github.com/Appboy/appboy-segment-ios) (maintained by Braze)
 - [Android](https://github.com/Appboy/appboy-segment-android)(maintained by Braze)
+- [Swift](https://github.com/braze-inc/analytics-swift-braze)(maintained by Braze)
+- [Kotlin](https://github.com/braze-inc/braze-segment-kotlin)(maintained by Braze)
 - [Web](https://github.com/segment-integrations/analytics.js-integration-appboy) (maintained by Segment) 
 - [Server](https://github.com/segmentio/integration-appboy) (maintained by Segment)
 
-For issues with iOS or Android platforms, contact Braze support. For issues with Web or Server platforms, contact [Segment support](https://segment.com/help/contact).
+For issues with mobile platforms (iOS, Android, Swift, or Kotlin), contact Braze support. For issues with Web or Server platforms, contact [Segment support](https://segment.com/help/contact).
 
 > info "The Braze SDK contains three major versions"
 > If you are migrating from version 1 to version 2, see information about [migration from Version 1 to Version 2](/docs/connections/destinations/catalog/braze/#migrating-to-v2-of-the-braze-web-sdk) below.

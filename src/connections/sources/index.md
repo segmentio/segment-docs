@@ -71,6 +71,12 @@ To create a source:
 4. Enter a name for your source as well as any information on the setup page.
 5. Click **Add Source**.
 
+> info "One source or multiple sources?"
+> Segment suggests that you create one source for each type of data you want to collect. For example, you might have one source for all of your website tracking and a different source for any mobile tracking. Creating one source per data type provides the following benefits:
+> - Debugger ease of use - mixing libraries/sources on a single API key means you’re heavily reliant on filtering to actually test events
+> - Flexibility sending data to different projects - if you want to have different warehouse schemas, analytics projects, etc, having multiple sources would create this separation
+> - More control - as your account grows with the number of destinations you enable, having separate sources allows you to have more control
+
 ## Website libraries
 
 [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), the JavaScript library, is the most powerful way to track customer data from your website. If you're just starting out, Segment recommends it over server-side libraries as the simplest installation for any website.
@@ -78,7 +84,7 @@ To create a source:
 {% include components/reference-button.html
   href="https://segment.com/academy/intro/"
   icon="symbols/squares-arrow.svg"
-  title="The Analytic Quickstart Guide"
+  title="The Analytics Quickstart Guide"
   description="Analytics and data collection is a very broad topic and it can be quite overwhelming. How do you get started?"
 %}
 

@@ -13,10 +13,7 @@ id: 54521fdc25e721e32a72ef06
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Zendesk" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. There are two ways to authenticate your Zendesk account with Segment:
-   * Use the standard email and password you use to Sign In to your Zendesk account. In the Zendesk settings, add your email in the **Email** setting and your password in the **Password** setting.
-   * Use Zendesk OAuth with a unique token. Get the corresponding token from your Zendesk account: **Settings > Channels > API** and under the Settings Tab choose the corresponding token from the "Active API Tokens" list. In the Zendesk settings, add your `email/token` in the **Email** setting (for example, `peter@intech.com/token` - use the actual word token in your email address) and add the actual token in the **Password** setting.
-4. Add your Zendesk subdomain in the **Subdomain** setting (not including `.zendesk.com`).
+3. Enter your Zendesk domain (not including `.zendesk.com`) and click **Connect**. The Zendesk OAuth login opens in a new tab. Sign in with your Zendesk credentials to authenticate and allow the Segment integration.
 
 ## Identify
 
@@ -170,17 +167,6 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 When you call `group` Segment inserts or update an organization in Zendesk and uses the `groupId` you include in the call to match organization records in Zendesk. If there are multiple organizations matching the name, then no updates are submitted.
 
 Here's an example:
-
-{% comment %} api-example '{
-  "action": "group",
-  "groupId": "908172409",
-  "userId": "6789",
-  "traits": {
-    "name": "LA Lakers",
-    "url": "https://lakers.com",
-    "deleted": false
-  }
-}'}}} {% endcomment %}
 
 ```js
 {
