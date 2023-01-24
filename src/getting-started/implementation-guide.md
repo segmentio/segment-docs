@@ -81,9 +81,9 @@ To add a Destination:
 > - [Destination connection modes](/docs/connections/destinations/#connection-modes)
 
 ### Testing and Debugging
-The Source Debugger is a real-time tool that helps you validate that API calls made from your website, mobile app, or servers arrive at your source. You can use the Source Debugger to make sure that your source functions properly and your events actively send.
+The Source Debugger is a real-time tool that helps you validate that API calls made from your website, mobile app, or servers arrive at your source. You can use the Source Debugger to make sure that your source functions properly and your events are actively sent.
 
-The Debugger shows a live stream of events that flow through your Segment Source, so that you can check that your events send in the correct format. When you click on a specific event, you'll be able to see these two views of an event:
+The Debugger shows a live stream of events that flow through your Segment Source, so that you can check that your events are sent in the correct format. When you click on a specific event, you'll be able to see these two views:
 - The Pretty view is a recreation of the API call you made that was sent to Segment.
 - The Raw view is the complete JSON object Segment receives from the calls you send. These calls include all the details about what is tracked: timestamps, properties, traits, ids, and contextual information Segment automatically collects the moment the data is sent.
 
