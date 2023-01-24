@@ -150,4 +150,4 @@ Google reserves certain event names, parameters, and user properties. Google sil
 
 ### Data taking a long time to appear in Google's reports
 
-Please be aware that Google may take [24-48 hours to process data on their end](https://support.google.com/analytics/answer/9333790) so you may not see it in some places in the Google UI immediately. That said, Google's Realtime view will update fairly quickly (typically within a minute). 
+Google may take [24-48 hours](https://support.google.com/analytics/answer/9333790)  to process data sent to Google Analytics. As a result, the Google Analytics user interface may not reflect the most current data. The Google Analytics [Realtime report](https://support.google.com/analytics/answer/9271392){:target="_blank"} displays activity on your site as it happens.
