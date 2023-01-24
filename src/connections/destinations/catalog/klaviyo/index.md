@@ -142,6 +142,9 @@ analytics.track({
 
 When you call `track` on `analytics.js`, Segment calls Klaviyo's `track` with the same parameters.
 
+> info ""
+> When you're tracking client-side, some Klaviyo events require you send an Identify call  before a Track call. 
+
 ### Server-side Track
 
 When you call make a Track call from one of Segment's mobile or server-side libraries, Segment keys the user with the `userId` and also provides the Klaviyo `$email` `customer_property` if your `userId` is an email, or you provide `email` as one of your event `properties`.
