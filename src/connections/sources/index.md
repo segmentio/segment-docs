@@ -147,7 +147,6 @@ These Cloud App Sources can not only export data into your Segment warehouse, bu
 {% capture source-type-list %} {% include content/cloud-source-type-list.md type="event" %} {%endcapture%}
 {{source-type-list | markdownify}}
 
-To dig into some examples of how to pull this data together, check out the [sample queries](https://community.segment.com/category/warehouses) in the Segment Community.
 
 
 ### HTTP
