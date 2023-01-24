@@ -133,7 +133,7 @@ This works for any [context field](/docs/connections/spec/common/#context) that 
 
 ### Can I add context fields that do not already exist?
 
-Yes. Similar to overwriting context, you can add context fields by passing them into the options object as the third argument of the event call. For example, the analytics.js library does not automatically collect location information. So, if you wanted to add this into your context object, you would pass it into the third argument as in the example below:
+Yes. Similar to overwriting context, you can add context fields by passing them into the options object as the third argument of the event call. For example, the analytics.js library does not automatically collect location information. To add this into the context object, pass it into the third argument as in the example below:
 
 ```js
 analytics.track("Order Completed", {}, {
@@ -144,9 +144,10 @@ analytics.track("Order Completed", {}, {
 })
 ```
 
-It is important to note that if you are not passing in properties, you still need to pass an empty object in it's place as shown in the above example. 
+> info ""
+> You must pass the context object with the call, event if it's empty, as shown by the empty object in the example above.
 
-Additionally, custom context fields may not be forwarded to all destinations, as some destinations accept properties only. 
+Some destinations accept properties only. As a result, custom context fields you add may not forward to these destinations.
 
 
 ## Known issues:
