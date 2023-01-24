@@ -143,7 +143,7 @@ analytics.track({
 When you call `track` on `analytics.js`, Segment calls Klaviyo's `track` with the same parameters.
 
 > info ""
-> When you're tracking client-side, some Klaviyo events require that an `identify` event **must** be sent first before a `track` event. 
+> When you're tracking client-side, some Klaviyo events require you send an Identify call  before a Track call. 
 
 ### Server-side Track
 
