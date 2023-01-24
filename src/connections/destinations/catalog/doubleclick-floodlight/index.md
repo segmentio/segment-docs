@@ -16,7 +16,7 @@ To track custom properties first create [custom variables](#setting-up-custom-va
 
 After you finish configuring Doubleclick Floodlight, Segment maps the following properties and settings when it receives a mapped event:
 
-- `dc_rdid` is set as `IDFA` or `AdvertisingId` (for mobile data only).
+- `dc_rdid` is set as `IDFA` or `AdvertisingId` (for mobile, in-app data only).
 - `src` is pulled from your destination settings.
 - `cat`is pulled from the event mappings in your destination settings.
 - `type` is pulled from the event mappings in your destination settings OR from the top-level **Group Tag** setting.

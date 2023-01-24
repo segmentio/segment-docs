@@ -133,3 +133,14 @@ Destinations that can be used with the Facebook Lead Ads Source:
 - Madkudu
 
 Log into your downstream tools and check that your events are populating, and contain all of the properties you expect. If all your events and properties are not showing up, refer to the [Destination docs](https://segment.com/docs/connections/destinations/) for troubleshooting.
+
+
+## Troubleshooting
+
+### No Data After Updating Credentials
+
+When you update or change credentials on a connected account, you need to create a new Facebook Lead Ads source to reauthorize Facebook. Reauthorization implies that a new token is generated, but the token is not the only link between Segment and Facebook. 
+
+When you connect the Facebook Leads Ads source, a Segment application is installed on the connected Facebook account. If you were to generate a new token on the same source, it would invalidate all other tokens attached to that Facebook account.
+
+For example, if you have a Facebook Account with three accounts: Account A, Account B, and Account C, you can connect Segment to all of them and then generate a token for each account. Later on, if you need to reauthorize the "Account A" page, the tokens for Account B and Account C are invalidated, and the pages stop working.

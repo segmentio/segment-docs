@@ -11,9 +11,6 @@ LinkedIn Audiences enables advertisers to send Segment Engage Audiences to Linke
 
 By using Segment's Engage Audiences with LinkedIn, you can increase traffic and drive conversions with hyper-relevant ads that promote product discovery.
 
-> info ""
-> The LinkedIn Audiences destination is in beta and is in active development. Some functionality may change before it becomes generally available.
-
 ## Getting Started
 
 Before connecting to the LinkedIn Audiences destination, you must have a [LinkedIn Campaign Manager](https://www.linkedin.com/campaignmanager){:target="_blank"} account and an Ad Account ID. In addition, the user authenticating with LinkedIn must have one of the following LinkedIn ad account roles: `ACCOUNT_BILLING_ADMIN`, `ACCOUNT_MANAGER`, `CAMPAIGN_MANAGER`, or `CREATIVE_MANAGER`.
@@ -43,9 +40,7 @@ To add the LinkedIn Audiences destination:
 
 11. Navigate back to **Engage > Audiences** and click on the Audience from Step 1. 
 
-12. Click **Add Destinations** and select the LinkedIn Audiences destination you just created. In the settings that appear in the side panel, toggle the **Send Track** option on and disable **Send Identify**. Click **Save Settings**.
-
-![engage audience destination settings](images/image1.png)
+12. Click **Add Destinations** and select the LinkedIn Audiences destination you just created. In the settings that appear in the side panel, toggle the **Send Track** option on and do **not** change the Audience Entered/Audience Exited event names. Click **Save Settings**.
 
 The setup is complete and the Audience will start syncing to LinkedIn. Segment automatically creates a new DMP Segment in LinkedIn and will add or remove users accordingly. The Audience appears in your [LinkedIn Campaign Manager](https://www.linkedin.com/campaignmanager){:target="_blank"}, account under **Plan > Audiences > Matched**.
 

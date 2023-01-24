@@ -245,6 +245,12 @@
     tr {
       border: 1px solid color(gray-300);
     }
+    th > code {
+      color: #696f8c;
+      font-weight: 600;
+      font-size: 10px;
+      background-color: inherit;
+    }
   }
 
   table.settings {
@@ -380,6 +386,25 @@ tr.show {
   color: rgb(71, 77, 102);
   opacity: 0.65;
   white-space: nowrap;
+}
+
+.skiplink {
+  left: -999px;
+  position: absolute;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skiplink:focus-visible {
+  outline: 2px solid color(secondary);
+  color: color(secondary);
+  position: static;
+  width: 400px;
+  height: auto;
+  overflow: visible;
+  font-weight: bold;
 }
 
 .device-web-mode,

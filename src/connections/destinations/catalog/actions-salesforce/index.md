@@ -22,6 +22,7 @@ The Salesforce (Actions) destination provides the following benefits over the cl
 - **Clearer mapping of data**. Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to Salesforce.
 - **OAuth 2.0 support**. Authentication with Salesforce leverages OAuth 2.0 instead of a username/password.
 - **Flexible match keys**. Upsert and update records based on any match key, including external IDs, record IDs, email and other object fields.
+- **Batch support**. Reduce Salesforce overages and rate-limit errors by batching your Segment data to Salesforce's Bulk API 2.0.
 
 ## Getting started
 
@@ -86,7 +87,9 @@ The only way to associate a Contact with an Account is to include the `AccountId
 > The `AccountId` is different than the `AccountNumber` and `AccountName`. The `AccountId` is auto-generated, whereas the `AccountNumber` and `AccountName` are chosen by you.
 
 ### How do I send data for Person Accounts?
-A [Person Account](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_guidelines_personaccounts.htm){:target="_blank"} is a special type of account that represents an individual rather than a business. The requirements for Person Account records differ from what Segment’s standard Account action supports. For example, `Name` is required for Accounts, whereas `LastName` is required for Person Accounts. To send data for Person Accounts, you must use the Custom Object action. Hardcode the Salesforce Object to `Account` and define other standard and custom fields, such as `LastName` and `FirstName`, in the Other Fields mapping.
+A [Person Account](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_guidelines_personaccounts.htm){:target="_blank"} is a special type of account that represents an individual rather than a business. The requirements for Person Account records differ from what Segment’s standard Account action supports. For example, `Name` is required for Accounts, whereas `LastName` is required for Person Accounts. To send data for Person Accounts, you must use the Custom Object action. Hard code the Salesforce Object to `Account` and define other standard and custom fields, such as `LastName` and `FirstName`, in the Other Fields mapping.
+
+![Mapping configuration for a Person account](images/custom-object_person-account.png)
 
 Person Accounts are not enabled by default, and the solution above will only work if you have Person Accounts enabled. If you do not have Person Accounts enabled, please use the standard Account action.
 
@@ -101,5 +104,8 @@ When using the `create` operation, it's possible for duplicate records to be cre
 
 Please note this is only a concern when using the `create` operation. You can use the `upsert` operation instead to avoid duplicates if `upsert` meets your needs.
 
-### Can I send data to the Salesforce Bulk API 2.0?
-Segment is in the process of adding support for the Bulk API to help reduce API calls made to Salesforce. This is not yet available.
+### How does Salesforce Bulk API work?
+When **Use Salesforce Bulk API** is enabled for your mapping, events are sent to [Salesforce’s Bulk API 2.0](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/asynch_api_intro.htm){:target="_blank"} rather than their streaming REST API. If enabled, Segment will collect events into batches of 1000 before sending to Salesforce. Bulk support can be used for the `upsert` or `update` operations only.
+
+For bulk `update`, if a record in a batch is missing a Bulk Update Record ID, Segment will still send it to Salesforce. Salesforce will reject the individual record because it will be unable to find a record to update. Other records in the batch that are valid will still be processed. Please note that Segment's Event Delivery tab will show the entire batch as successful as Segment cannot currently break down Event Delivery stats into individual failed/passed events.
+

@@ -77,30 +77,37 @@ To send parameters to Google Analytics 4, use the Event Parameters or User Prope
 To achieve parity with Universal Analytics, you should create the same custom dimensions that you defined in Universal Analytics. Additionally, in Google Analytics 4, you should recreate many of the values that you tracked as event dimensions in Universal Analytics, particularly event category and event label.  For more information, see [Google Analytics 4 Custom dimensions and metrics](https://support.google.com/analytics/answer/10075209){:target='_blank'}.
 
 #### Tracking Active Users and Sessions
+
+##### Server-side Implementation using Google Analytics 4 Destination
+
 The Google Analytics 4 reports only display active users who engage with your site for a non-zero amount of time. To ensure users are rendered in reports, Segment sets the `engagement_time_msec` parameter to 1 by default. If you track engagement time on your Segment events, you can use the **Engagement Time in Milliseconds** field mapping to set `engagement_time_msec` to a different value.
 
-If you choose to integrate with Google Analytics 4 client-side (using Gtag outside of Segment) _and_ also use Segment's Google Analytics 4 destination to send events through the API, you can track sessions server-side. When using Gtag, [Google generates a `session_id` and `session_number` when a session begins](https://support.google.com/analytics/answer/9191807?hl=en){:target='_blank'}. The `session_id` and `session_number` generated on the client can be passed as Event Parameters to stitch events sent through the API with the same session that was collected client-side.
+Besides Engagement Time in Milliseconds, you can also generate your own `session_id` and `session_number` and pass them as event properties to Segment. These properties can then be mapped to their corresponding parameters in Segment's Google Analytics 4 destination.
+
+> info "Session tracking limitations"
+> Session tracking server-side only supports a subset of user dimensions. Certain reserved fields such as location, demographics, other [predefined user dimensions](https://support.google.com/analytics/answer/9268042?hl=en&ref_topic=11151952){:target='_blank'} and device-specific information are not supported by Google's Measurement Protocol API.
+
+##### Using Gtag.js and Google Analytics 4 Destination
+
+If you choose to integrate with Google Analytics 4 client-side (using Gtag outside of Segment) _and_ also use Segment's Google Analytics 4 destination to send events through the API, you will have all the reserved parameters and sessions tracking information available in Google Analytics 4 reports.
+
+When using Gtag, [Google generates a `session_id` and `session_number` when a session begins](https://support.google.com/analytics/answer/9191807?hl=en){:target='_blank'}. The `session_id` and `session_number` generated on the client can be passed as Event Parameters to stitch events sent through the API with the same session that was collected client-side. For events to stitch properly, server-side events must arrive within a 48 hour window of when the client-side events arrive.
 
 You can check your `session_id` and `session_number` with the [Google Site Tag function](https://developers.google.com/tag-platform/gtagjs/reference){:target='_blank'} or by running this script in your JavaScript console and replacing `G-xxxxxxxxxx` with your Google Analytics 4 Measurement ID:
 
 ```java
-const sessionIdPromise = new Promise(resolve => {
-  gtag('get', 'G-xxxxxxxxxx', 'session_id', resolve)
+const sessionIdPromise =  new  Promise(resolve => {
+	gtag('get', 'G-xxxxxxxxxx', 'session_id', resolve)
 });
-const sessionNumPromise = new Promise(resolve => {
-  gtag('get', 'G-xxxxxxxxxx', 'session_number', resolve)
+const sessionNumPromise =  new  Promise(resolve => {
+	gtag('get', 'G-xxxxxxxxxx', 'session_number', resolve)
 });
 
 Promise.all([sessionIdPromise, sessionNumPromise]).then(function(session_data) {
-  console.log("session ID: "+session_data[0]);
-  console.log("session Number: "+session_data[1]);
+	console.log("session ID: "+session_data[0]);
+	console.log("session Number: "+session_data[1]);
 });
 ```
-
-> info "Session tracking limitations"
-> Session tracking server-side only works if you're also sending data to Google Analytics 4 client-side. This is because the `session_id` must match a value that was previously collected on the client. For events to stitch properly, they must arrive within a 48 hour window of when the client-side events arrived.
->
-> Google doesn't currently support passing other reserved fields, such as [predefined user dimensions](https://support.google.com/analytics/answer/9268042?hl=en&ref_topic=11151952){:target='_blank'} or device-specific information, to the Measurement Protocol API.
 
 #### User Identification
 Segment requires a Client ID to send data to Google Analytics 4. The Client ID is the web equivalent of a device identifier and uniquely identifies a given user instance of a web client. By default, Segment sets Client ID to the Segment `userId`, falling back on `anonymousId`. This mapping can be changed within each action if you prefer to map a different field to Client ID.
@@ -120,6 +127,10 @@ During this period, you may find it hard to perfectly compare between the two pr
 For a complete map of Universal Analytics functionality to corresponding Google Analytics 4 functionality, please see Google’s [Migration Reference](https://support.google.com/analytics/answer/10607999?hl=en&ref_topic=10737980){:target="_blank"}.
 
 ## FAQ & Troubleshooting
+
+### Data not sending to Google
+
+Ensure that at least one mapping has been configured and enabled in the destination mappings for an event that you would like to reach Google. Without any mappings enabled to trigger on an event that has been ingested by the connected source, the destination will not send events downstream.
 
 ### Attribution Reporting
 

@@ -60,9 +60,6 @@ To get started with the Analytics-Swift mobile library:
     `trackDeepLinks` | The default is set to `true`. <br> This automatically track deep links. Set to `false` to stop tracking Deep Links.
 
 
-    > info ""
-    > Configuration options such as IDFA collection and automatic screen tracking are found in Segment's [Plugin Examples repo](https://github.com/segmentio/analytics-example-plugins/tree/main/plugins/swift){:target="_blank"}.
-
 ## Tracking Methods
 Once you've installed the Analytics-Swift library, you can start collecting data through Segment's tracking methods:
 - [Identify](#identify)
@@ -448,6 +445,7 @@ analytics.add(plugin: idfaPlugin)
 Segment supports these destinations for Analytics Swift, with more to come:
 * [Amplitude](https://github.com/segment-integrations/analytics-swift-amplitude){:target="_blank"}
 * [Appsflyer](https://github.com/segment-integrations/analytics-swift-appsflyer){:target="_blank"}
+* [Braze (Partner Maintained)](https://github.com/braze-inc/analytics-swift-braze){:target="_blank"}
 * [Facebook App Events](https://github.com/segment-integrations/analytics-swift-facebook-app-events){:target="_blank"}
 * [Firebase](https://github.com/segment-integrations/analytics-swift-firebase){:target="_blank"}
 * [Mixpanel](https://github.com/segment-integrations/analytics-swift-mixpanel){:target="_blank"}
