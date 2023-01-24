@@ -4,7 +4,7 @@ hide-boilerplate: true
 hide-dossier: true
 hidden: true
 private: true
-id: 
+id: 63c874d328bd6bd1aa1f90a0 
 ---
 
 
@@ -36,14 +36,9 @@ Ironclad (Actions) provides the following benefits:
 6. Set your Site Access Id. 
 
 
-{% include components/actions-fields.html %}
+### Get your Site Access Id
+In Ironclad, on the Settings page, there's one pane for Account Settings and one for Site Settings. Find the Site Access Id in the Site Settings section. The Site Access ID is unique for each Site within your account and Ironclad uses it to render your Contracts on your website, apps, and other digital surfaces. It is used in your API calls to Ironclad and helps Segment identify your unique Site across the entire cloud-based infrastructure. It is a GUID.
 
-
-## Get your Site Access Id
-On the Settings page, there's a pane for Account Settings and one for Site Settings. In the Site Settings section is a really important value: the Site's Access ID (or write key). The Access ID is unique for each Site within your account and is used to render your Contracts on your website, apps, and other digital surfaces. It is used in your API calls to Ironclad and helps Segment identify your unique Site across the entire cloud-based infrastructure. It is a GUID.
-
-**Tip:** If you need the Access ID for a different Site in your account, you need to switch to that Site and find it in the Account Settings there. Use the Change Site button (crossing arrows) near the bottom of the navigation bar on the left side of the screen to sign in to a different Site.
- 
 
 To get your Site Access Id:
 1. Log in to Ironclad.
@@ -51,6 +46,15 @@ To get your Site Access Id:
 3. Click **Settings** from the menu that appears. 
 4. Under the site settings pane, you will find **Access Id**.
 
+> success ""
+> If you need the Access ID for a different Site in your account, you need to switch to that Site and find it in the Account Settings there. Use the Change Site button (crossing arrows) near the bottom of the navigation bar on the left side of the screen to sign in to a different Site.
+
+{% include components/actions-fields.html %}
+
+
+
+
+{% comment %}
 ## Ironclad mappings and definitions
 
 Once the Ironclad (Actions) Site Access Id is configured, you're ready to finish the rest of the mappings:
@@ -67,7 +71,7 @@ Once the Ironclad (Actions) Site Access Id is configured, you're ready to finish
     4. Required: Yes
 3. **Group Id**:
     1. Type: `String`
-    2. Description: The ID of the Group associated with the acceptance event. You can find your Clickwrap Group ID by clicking into a Clickwrap Group in Ironclad and getting the ID from the URL (e.g. clickwrap.pactsafe.com/groups/1235)
+    2. Description: The ID of the Group associated with the acceptance event. You can find your Clickwrap Group ID by clicking into a Clickwrap Group in Ironclad and getting the ID from the URL (for example clickwrap.pactsafe.com/groups/1235)
     3. Mapping: Manual input
     4. Required: Yes
 3. **Event Type**:
@@ -101,4 +105,4 @@ Once the Ironclad (Actions) Site Access Id is configured, you're ready to finish
         `title`: Signer title field mapped by default to the `custom_data.title` field,
         `customer_id`: Customer id field mapped by default to the `custom_data.customer_id` field
     4. Required: No
-
+{% endcomment %}
