@@ -238,8 +238,8 @@ sources:
   categories:
   - Email Marketing
   logos:
-    logo: https://public-segment-devcenter-production.s3.amazonaws.com/485e07a1-bb4d-4718-97f5-4ffffc46387d.svg
-    mark: https://public-segment-devcenter-production.s3.amazonaws.com/480267ec-792a-43d2-a341-c73316b7b0db.svg
+    logo: https://cdn-devcenter.segment.com/485e07a1-bb4d-4718-97f5-4ffffc46387d.svg
+    mark: https://cdn-devcenter.segment.com/480267ec-792a-43d2-a341-c73316b7b0db.svg
 - name: catalog/sources/looker
   display_name: Looker
   description: This source is in beta! Looker is a business intelligence software
@@ -289,8 +289,8 @@ sources:
   - Customer Success
   - Performance Monitoring
   logos:
-    logo: https://public-segment-devcenter-production.s3.amazonaws.com/f40c960e-7a7c-4c40-9957-a718aed38307.svg
-    mark: https://public-segment-devcenter-production.s3.amazonaws.com/c125866c-b1ce-43f1-b2d4-dbb607af7311.svg
+    logo: https://cdn-devcenter.segment.com/f40c960e-7a7c-4c40-9957-a718aed38307.svg
+    mark: https://cdn-devcenter.segment.com/c125866c-b1ce-43f1-b2d4-dbb607af7311.svg
 - name: catalog/sources/node.js
   display_name: Node.js
   description: ''
@@ -344,8 +344,8 @@ sources:
   - Personalization
   - Customer Success
   logos:
-    logo: https://public-segment-devcenter-production.s3.amazonaws.com/aee7258a-5262-42db-8fac-aadb1e780ba0.svg
-    mark: https://public-segment-devcenter-production.s3.amazonaws.com/4782e4e8-6d4f-4dec-b1dd-02de9a2df9d1.svg
+    logo: https://cdn-devcenter.segment.com/aee7258a-5262-42db-8fac-aadb1e780ba0.svg
+    mark: https://cdn-devcenter.segment.com/4782e4e8-6d4f-4dec-b1dd-02de9a2df9d1.svg
 - name: catalog/sources/python
   display_name: Python
   description: ''
