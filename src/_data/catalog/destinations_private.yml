@@ -345,7 +345,7 @@ items:
         description: This action triggers a workflow in Qualtrics xflow
         platform: CLOUD
         hidden: false
-        defaultTrigger: null
+        defaultTrigger: type = "track" and event = "Order Completed"
         fields:
           - id: 7QgBD4D7gPowC2TGoKzUUa
             sortOrder: 0
