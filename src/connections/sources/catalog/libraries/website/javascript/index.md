@@ -331,7 +331,7 @@ The Analytics.js utility methods help you change how Segment loads on your page.
 - [Debug](#debug)
 - [On (Emitter)](#emitter)
 - [Timeout](#extending-timeout)
-- [Reset (Logout)](#reset-or-logout)
+- [Reset (Logout)](#reset-or-log-out)
 
 ### Load
 

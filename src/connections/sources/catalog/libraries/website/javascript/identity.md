@@ -37,7 +37,7 @@ You can override the default-generated anonymousID in code using the methods des
 
 ### Retrieve the Anonymous ID
 
-You can get the user's current `anonymousId` using either of the following calls:
+You can get the user's current `anonymousId` using the following call:
 
 ```js
 analytics.user().anonymousId();
