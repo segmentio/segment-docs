@@ -71,7 +71,7 @@ To add a Destination:
 3. Choose the Destination you want to add and click **Configure**. Most users eventually add destinations for: Analytics, Advertising, Email Marketing and/or Live Chat.
 4. Select the Source you want to connect to your Destination.
 5. Click **Next**.
-5. Give you Destination a name.
+5. Give your Destination a name.
 6. Click **Save**.
 7. Configure the settings and enable your destination on the destination settings page.
 
