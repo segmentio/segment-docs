@@ -127,8 +127,29 @@ The following type filters and operators are available to help you build conditi
 
 - **Event type** (`is`/`is not`). This allows you to filter by the [event types in the Segment Spec](/docs/connections/spec).
 - **Event name** (`is`, `is not`, `contains`, `does not contain`, `starts with`, `ends with`). Use these filters to find events that match a specific name, regardless of the event type.
-- **Event property** (`is`, `is not`, `less than`, `less than or equal to`, `greater than`, `greater than or equal to`, `contains`,  `does not contain`, `starts with`, `ends with`, `exists`, `does not exist`).  Use these filters to trigger the action only when an event with a specific property occurs.  You can specify nested properties using dot notation, for example `context.app.name`. If the property might appear in more than one format or location, you can use an ANY statement and add conditions for each of those formats. For example, you might filter for both `context.device.type = ios`  as well as `context.os.name = "iPhone OS``"`
+- **Event property** (`is`, `is not`, `less than`, `less than or equal to`, `greater than`, `greater than or equal to`, `contains`,  `does not contain`, `starts with`, `ends with`, `exists`, `does not exist`).  Use these filters to trigger the action only when an event with a specific property occurs. 
+
+    You can specify nested properties using dot notation, for example `context.app.name`. If the property might appear in more than one format or location, you can use an ANY statement and add conditions for each of those formats. For example, you might filter for both `context.device.type = ios`  as well as `context.os.name = "iPhone OS``"`
     The `does` `not exist` operator matches both a `null` value or a missing property.
+{% comment %}
+> info "Event property operators and supported data types"
+> Operators support matching on values with a **string** data type:
+> - `is`, `is not`, `contains`,  `does not contain`, `starts with`, `ends with`
+> 
+> Operators that support matching on values with either a **string** or **numeric** data type:
+> - `is less than`, `is less than or equal to`, `is greater than`, `is greater than or equal to`
+> 
+> Operators that support matching on values with a **boolean** data type:
+> - `is true`, `is false`
+{% endcomment %}
+
+The available operators depend on the property's data type:
+
+| Data Type         | Supported Operators                                                                          |
+| ----------------- | -------------------------------------------------------------------------------------------- |
+| string            | `is`, `is not`, `contains`,  `does not contain`, `starts with`, `ends with`                  |
+| string or numeric | `is less than`, `is less than or equal to`, `is greater than`, `is greater than or equal to` |
+| boolean           | `is true`, `is false`                                                                        |
 
 You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY to “subscribe” to multiple conditions. Use ALL when you need to filter for very specific conditions. You can only create one group condition per destination action. You cannot created nested conditions.
 

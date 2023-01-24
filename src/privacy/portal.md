@@ -138,16 +138,14 @@ Below is a full list of automatically detected restricted fields.
 | Matcher                | Classification |
 | ---------------------- | -------------- |
 | social security number | red            |
-| health                 | red            |
 | password               | red            |
 | visa                   | red            |
 | veteran                | red            |
 | disability             | red            |
 | credit card            | red            |
-| genetic                | red            |
-| race                   | red            |
 | passport               | red            |
 | token                  | red            |
+| race                   | yellow         |
 | birthdate              | yellow         |
 | phone                  | yellow         |
 | address                | yellow         |
@@ -172,7 +170,11 @@ Below is a full list of automatically detected restricted fields.
 | sex                    | yellow         |
 | gender                 | yellow         |
 | sexual orientation     | yellow         |
-
+| medication             | yellow         |
+| allergy                | yellow         |
+| condition              | yellow         |
+| diagnosis              | yellow         |
+| procedure              | yellow         |
 
 When Segment detects data that meets the criteria for one of the default
 matchers (in the list above) in properties in your Web, Mobile, Server, or Cloud

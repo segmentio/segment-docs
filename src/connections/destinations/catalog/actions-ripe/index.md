@@ -6,9 +6,9 @@ id: 63913b2bf906ea939f153851
 private: true
 ---
 
-[Ripe](https://www.getripe.com/){target="_blank"} is a product-led sales platform that empowers you to unlock revenue pipeline with product data. By identifying and showing which prospects to focus efforts on, you can convert leads into meetings inside your product.
+[Ripe](https://www.getripe.com/){:target="_blank"} is a product-led sales platform that empowers you to unlock revenue pipeline with product data. By identifying and showing which prospects to focus efforts on, you can convert leads into meetings inside your product.
 
-This destination enables you to send product data to Ripe. Sales teams can identify who decision-makers and product champions are by understanding what properties they have and what events they have triggered. The Ripe destination is built as an alternative to directly adding Ripe’s SDK script to your app or site.
+This destination enables you to send product data to Ripe. Sales teams can identify decision-makers and product champions by understanding what properties they have and what events they have triggered. The Ripe destination is built as an alternative to directly adding Ripe’s SDK script to your app or site.
 
 The Ripe Segment integration is an [Actions-based Destination in device mode](/docs/connections/destinations/#connection-modes) that loads and configures Ripe’s SDK script for you. If you’re already using Segment’s Analytics.js for identifying and tracking your users, either directly or through Segment source integrations that you’ve installed, you can configure Segment to send this data directly to Ripe.
 
@@ -25,7 +25,7 @@ Ripe provides the following benefits:
 ## Getting started
 
 > info ""
-> Before you begin, create an API key in Ripe which you'll use to configure the integration.
+> Before you begin, create an API key in Ripe that you'll use to configure the integration.
 
 
 1. From the Segment web app, navigate to **Connections > Catalog**, then click the **Destinations** tab at the top of the catalog.
@@ -123,6 +123,6 @@ Segment sends Page calls to Ripe as a `alias` event.
 
 ### Segment session
 
-Ripe will use the `userId`, `anonymous` and `groupId` set in Segment and the Ripe SDK keeps track of the current ids. 
+Ripe will use the `userId`, `anonymous` and `groupId` set in Segment and the Ripe SDK keeps track of the current ids.
 
 {% endcomment %}

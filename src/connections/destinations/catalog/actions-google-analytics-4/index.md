@@ -128,6 +128,10 @@ For a complete map of Universal Analytics functionality to corresponding Google 
 
 ## FAQ & Troubleshooting
 
+### Data not sending to Google
+
+Ensure that at least one mapping has been configured and enabled in the destination mappings for an event that you would like to reach Google. Without any mappings enabled to trigger on an event that has been ingested by the connected source, the destination will not send events downstream.
+
 ### Attribution Reporting
 
 Google doesn't currently support passing certain reserved fields to the Google Analytics 4 Measurement Protocol API. This includes attribution data, like UTM parameters. If you rely on attribution reporting, you can either send this data as [custom dimensions](/docs/connections/destinations/catalog/actions-google-analytics-4/#custom-dimensions-and-metrics) or implement a parallel client-side integration to collect this data with gtag.js.
