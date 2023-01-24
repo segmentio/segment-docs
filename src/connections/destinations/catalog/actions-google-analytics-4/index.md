@@ -147,3 +147,7 @@ Google recommends use of their Firebase SDKs to send mobile data to Google Analy
 ### Reserved Names
 
 Google reserves certain event names, parameters, and user properties. Google silently drops any events that include [these reserved names](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#reserved_names){:target="_blank"}. If you notice that your data isn't appearing in Google, please check that you're not using a reserved name.
+
+### Data taking a long time to appear in Google's reports
+
+Google may take [24-48 hours](https://support.google.com/analytics/answer/9333790)  to process data sent to Google Analytics. As a result, the Google Analytics user interface may not reflect the most current data. The Google Analytics [Realtime report](https://support.google.com/analytics/answer/9271392){:target="_blank"} displays activity on your site as it happens.

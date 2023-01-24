@@ -1,5 +1,5 @@
 ---
-title: Ripe Destination (Actions)
+title: Ripe Web (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
 id: 63913b2bf906ea939f153851
@@ -29,8 +29,8 @@ Ripe provides the following benefits:
 
 
 1. From the Segment web app, navigate to **Connections > Catalog**, then click the **Destinations** tab at the top of the catalog.
-2. Search for *Ripe* in the left navigation, and click it.
-3. Click **Configure Ripe**.
+2. Search for *Ripe Device Mode (Actions)* in the left navigation, and click it.
+3. Click **Configure Ripe Device Mode (Actions)**.
 4. Select an existing Source to connect to Ripe (Actions).
 5. Enter your Ripe API key in the API key field.
 
