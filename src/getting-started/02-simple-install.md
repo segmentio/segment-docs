@@ -8,7 +8,7 @@ When you implement Segment, you add Segment code to your website, app, or server
 
 In a basic implementation, the code can be a snippet of JavaScript that you copy and paste into the HTML of a website to track page views. It can also be as complex as Segment calls embedded in a React mobile app to send messages when the app is opened or closed, when the user performs different actions, or when time based conditions are met (for example "ticket reservation expired" or "cart abandoned after 2 hours").
 
-The best way to learn about how Segment works is to see it in action. This tutorial walks you though an installation using one of Segment's libraries: JavaScript, PHP, or the iOS library.
+The best way to learn about how Segment works is to see it in action. This tutorial walks you through an installation using one of Segment's libraries: JavaScript, PHP, or the iOS library.
 
 ## Before you begin
 
@@ -36,11 +36,11 @@ To create a Segment source:
 2. Select your source. You can choose from either the [Javascript source](https://app.segment.com/goto-my-workspace/sources/catalog/javascript), the [PHP source](https://app.segment.com/goto-my-workspace/sources/catalog/php), or the [iOS source](https://app.segment.com/goto-my-workspace/sources/catalog/ios).
 3. Click **Add Source**.
 4. Enter a name for the source. Segment recommends that you include the word `demo`, `test`, or `quickstart` in the name so you can easily find and delete this source later.
-5. *(Optional)* Add an Environment label of `dev` to the source in the **Labels** field. Segment recommends you do this so you know that this demo source isn't part of a production installation.
+5. *(Optional)* Add an Environment label of `dev` to the source in the **Labels** field. Segment recommends you do this so that you know this demo source isn't part of a production installation.
 
 ## Find your write key
 
-The write key is the unique identifier for a source that tells Segment which source data comes from, to which workspace the data belongs, and which destinations should receive the data.
+The write key is a unique identifier for a source that tells Segment which source the data comes from, to which workspace the data belongs, and which destinations should receive the data.
 
 To find your write key:
 1. Go to **Connections > Sources** and select your source.
@@ -394,7 +394,7 @@ The Debugger is separate from your workspace's data pipeline, and is not an exha
 > success ""
 > **Tip**: To see a more complete view of all your events, you might consider setting up either a [warehouse](/docs/connections/storage/warehouses/) or an [S3 destination](/docs/connections/storage/catalog/amazon-s3/).
 
-The Debugger shows a live stream of sampled events arriving at the Source, but you can also toggled from "Live" to "Pause", to stop the stream and prevent it from displaying new events. Events continue to arrive to your Source while you Pause the stream, they just are not displayed.
+The Debugger shows a live stream of sampled events arriving at the Source, but you can also toggle from "Live" to "Pause" to stop the stream and prevent it from displaying new events. Events continue to arrive to your Source while you Pause the stream, they just are not displayed.
 
 You can search on any information you know is available in an event payload to search in the Debugger and show only matching payloads. You can also use advanced search options to limit the results to a specific event.
 
@@ -408,11 +408,11 @@ Two views are available when viewing a payload:
 
 ## Set up your first destination
 
-Once you're satisfied that data is arriving from your new source, it's time to set up your first destination! As long as you have `page` or `screen` data, coming from the source, you can quickly enable Google Analytics to look at the page view statistics.
+Once you're satisfied that data is arriving from your new source, it's time to set up your first destination! As long as you have `page` or `screen` data coming from the source, you can quickly enable Google Analytics to look at the page view statistics.
 
 If you don't have a Google Analytics account, you can either set up a free account, or look at the Destination Catalog for a different destination to enable.
 
-You'll need a tracking ID for Google Analytics (either a "website" or "serverside" tracking ID), or another API key if you're substituting another destination. Make note of this ID or key as you'll need it to connect your destination.
+You'll need a tracking ID for Google Analytics (either a "website" or "serverside" tracking ID), or another API key if you're substituting another destination. Make a note of this ID or key as you'll need it to connect your destination.
 
 To set up your first destination:
 
