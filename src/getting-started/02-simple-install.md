@@ -36,7 +36,7 @@ To create a Segment source:
 2. Select your source. You can choose from either the [Javascript source](https://app.segment.com/goto-my-workspace/sources/catalog/javascript), the [PHP source](https://app.segment.com/goto-my-workspace/sources/catalog/php), or the [iOS source](https://app.segment.com/goto-my-workspace/sources/catalog/ios).
 3. Click **Add Source**.
 4. Enter a name for the source. Segment recommends that you include the word `demo`, `test`, or `quickstart` in the name so you can easily find and delete this source later.
-5. *(Optional)* Add an Environment label of `dev` to the source in the **Labels** field. Segment recommends you do this so that you know this demo source isn't a part of the production installation.
+5. *(Optional)* Add an Environment label of `dev` to the source in the **Labels** field. Segment recommends you do this so that you know this demo source isn't part of a production installation.
 
 ## Find your write key
 
