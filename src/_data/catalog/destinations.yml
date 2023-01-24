@@ -265,7 +265,7 @@ items:
     defaultValue: false
     description: >-
       Send Segment Screen view events to A/B Smartly as goals. The goal name
-      will be <screen_name>_screenview. The screen name is lower-cased and any
+      will be `<screen_name>`_screenview. The screen name is lower-cased and any
       spaces or special characters are replaced with underscores. For example, a
       view of the "Home" screen will trigger the home_screenview goal. If the
       goal does not exist in the A/B Smartly web console, it is ignored.
@@ -282,7 +282,7 @@ items:
     defaultValue: false
     description: >-
       Send Segment Page view events to A/B Smartly as goals. The goal name will
-      be <page_name>_pageview. The page name is lower-cased and any spaces or
+      be `<page_name>`_pageview. The page name is lower-cased and any spaces or
       special characters are replaced with underscores. For example, a view of
       the "Home" page will trigger the home_pageview goal. If the goal does not
       exist in the A/B Smartly web console, it is ignored.
@@ -766,7 +766,7 @@ items:
     defaultValue: false
     description: >-
       If this setting is enabled, we will add `context.app.build`, if present,
-      to Adobe's AppID, as `<name> <version> (<build>)`.
+      to Adobe's AppID, as ``<name>` `<version>` (`<build>`)`.
     required: true
     label: Add application build to Adobe's App ID
   - name: collectHighEntropyUserAgentHints
@@ -9155,8 +9155,8 @@ items:
     type: string
     defaultValue: ''
     description: >-
-      Allows Braze to add the nonce to any <script> and <style> elements created
-      by the SDK. [See more
+      Allows Braze to add the nonce to any `<script>` and `<style>` elements
+      created by the SDK. [See more
       details](https://js.appboycdn.com/web-sdk/latest/doc/modules/appboy.html#initializationoptions)
     required: true
     label: Content Security nonce
@@ -18617,7 +18617,7 @@ items:
   - name: oauth
     type: oauth
     defaultValue: {}
-    description: 'Authorize Segment to oauth <UPDATE> '
+    description: 'Authorize Segment to oauth `<UPDATE>` '
     required: false
     label: oauth
   - name: valueIdentifier
@@ -29015,8 +29015,8 @@ items:
     type: string
     defaultValue: ''
     description: >-
-      You can find your Hello Bar API Key, in the provided `<script>` tag for
-      example: `<script src="//my.hellobar.com/API_KEY.js">`
+      You can find your Hello Bar API Key, in the provided ``<script>`` tag for
+      example: ``<script src="//my.hellobar.com/API_KEY.js">``
     required: true
     label: API Key
   actions: []
@@ -30019,7 +30019,7 @@ items:
     defaultValue: true
     description: >-
       Format the event names for custom behavioral event automatically to
-      standard HubSpot format (`pe<HubID>_event_name`).
+      standard HubSpot format (`pe`<HubID>`_event_name`).
     required: true
     label: Format Custom Behavioral Event Names
   - name: loadFormsSDK
@@ -30463,8 +30463,8 @@ items:
       Enter your UBX account's base URL endpoint here. This can be found in the
       email you received from UBX after setting up your UBX account. It should
       have either the format
-      `https://<subdomain>.ubx.ibmmarketingcloud.com/<path>/` or
-      `https://<subdomain>.goacoustic.com/<path>/`.
+      `https://`<subdomain>`.ubx.ibmmarketingcloud.com/`<path>`/` or
+      `https://`<subdomain>`.goacoustic.com/`<path>`/`.
     required: true
     label: API URL
   - name: authToken
@@ -34723,8 +34723,8 @@ items:
     type: boolean
     defaultValue: true
     description: >-
-      Obfuscate all user-input elements (like <input> and <select>) from session
-      recordings.
+      Obfuscate all user-input elements (like `<input>` and `<select>`) from
+      session recordings.
     required: true
     label: Input Sanitization
   - name: networkSanitization
@@ -35530,7 +35530,7 @@ items:
     defaultValue: ''
     description: >-
       Your Marketo REST API Endpoint in this format:
-      `https://<your_account_id>.mktorest.com`
+      `https://`<your_account_id>`.mktorest.com`
     required: true
     label: Endpoint
   - name: folder
@@ -42552,8 +42552,8 @@ items:
       Enter your Quora Conversion Pixel write key. It should be a series of
       letters and numbers, which you can find in your `Install Pixel` option in
       your Quora Ads Manager -> Conversion Pixel tab. It is the string of
-      letters and numbers that is the second argument to `qp('init', <This is
-      your write key>)`
+      letters and numbers that is the second argument to `qp('init', `<This is
+      your write key>`)`
     required: true
     label: Quora Conversion Pixel Key
   actions: []
@@ -49010,8 +49010,8 @@ items:
       The inverse of ignoreUrls. Only report errors from whole urls matching a
       regex pattern or an exact string. whitelistUrls should match the url of
       your actual JavaScript files. It should match the url of your site if and
-      only if you are inlining code inside <script> tags. Not setting this value
-      is equivalent to a catch-all and will not filter out any values.
+      only if you are inlining code inside `<script>` tags. Not setting this
+      value is equivalent to a catch-all and will not filter out any values.
     required: false
     label: Whitelist Urls
   actions: []
