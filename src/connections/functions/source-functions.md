@@ -386,6 +386,12 @@ Copy and paste this URL into the upstream tool or service to send data to this s
 ##### What is the retry policy for a webhook payload?
 
 Segment retries invocations that throw RetryError or Timeout errors up to six times. After six attempts, the request is dropped.
+The initial wait time for the retried event is a random value between one and three minutes.
+Wait time increases exponentially after every retry attempt. The maximum wait time between attempts can reach 20 minutes.
+
+##### I configured RetryError in a function, but it doesn't appear in my source function error log.
+
+Retry errors only appear in the source function error logs if the event has exhausted all six retry attempts and, as a result, has been dropped.
 
 ##### What is the maximum payload size for the incoming webhook?
 
