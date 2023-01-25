@@ -30,7 +30,7 @@ If a Segment user first gets events with anonymousId only and then gets events w
 
 Segment Page events are registered as Page Visit activities of a SalesWings lead. To make use of these activites for tags and scores in the Falcon engine, use the "Page Visit" condition.
 
-Segment Track, Identify and Screen are registered as Custom Event activities of a SalesWings lead. To make use of these activites for tags and scores in the Falcon engine, use the "Custom Event" condition. 
+Segment Track, Identify and Screen events are registered as Custom Event activities of a SalesWings lead. To make use of these activites for tags and scores in the Falcon engine, use the "Custom Event" condition. 
 
 When adding a Track, Identify or Screen action, you control how a corresponding Custom Event activity would look like in SalesWings. When you see a Custom Event activity in the SalesWings cockpit or the SalesWings Lead Intent View in Salesforce, the activity is visualized as `[Kind] Data`. When adding an action for Track, Identify or Screen, you can configure how `Kind` and `Data` fields are formed in SalesWings. The action configuration has the following defaults:
 - For a Track event, `Data` would be set to "Track" and `Kind` would be set to the Track event name. The resulting Custom Event activity would look like, for example, `[Track] User Registered`.
