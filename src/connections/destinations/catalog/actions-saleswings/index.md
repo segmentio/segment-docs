@@ -32,9 +32,9 @@ The Segment Page events are registered as Page-Visit activities of a SalesWings 
 The Segment Track, Identify and Screen events are registered as Custom-Event activities of a SalesWings lead. To make use of these activites for tags and scores in the Falcon engine, use the "Custom Event" condition. 
 
 When adding a Track, Identify or Screen action, you control how a corresponding Custom-Event activity would look like in SalesWings. When you see a Custom-Event activity in the SalesWings cockpit or the SalesWings Lead Intent View in Salesforce, the activity is visualized as `[Kind] Data`. When adding an action for Track, Identify or Screen, you can configure how `Kind` and `Data` fields are formed in SalesWings. The action configuration has the following defaults:
-- For a Track event, `Data` would be set to "Track" and `Kind` would be set to the Track event name. The resulting Custom-Event activity would look like, for example, `[Track] User Registered`.
-- For an Identify event, `Data` would be set to "Identify" and `Kind` would be set to the Segment user email. The resulting Custom-Event activity would look like, for example, `[Identify] peter@example.com`.
-- For a Screen event, `Data` would be set to "Screen" and `Kind` would be set to the screen name. The resulting Custom-Event activity would look like, for example, `[Screen] Home View`.
+- For a Track event, `Kind` would be set to "Track" and `Data` would be set to the Track event name. The resulting Custom-Event activity would look like, for example, `[Track] User Registered`.
+- For an Identify event, `Kind` would be set to "Identify" and `Data` would be set to the Segment user email. The resulting Custom-Event activity would look like, for example, `[Identify] peter@example.com`.
+- For a Screen event, `Kind` would be set to "Screen" and `Data` would be set to the screen name. The resulting Custom-Event activity would look like, for example, `[Screen] Home View`.
 
 All the defaults can be overridden in the action configuration, you can either set `Kind` and `Data` to static values, or map them to string properties from Segment events.
 
