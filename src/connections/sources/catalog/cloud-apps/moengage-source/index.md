@@ -1,5 +1,7 @@
 ---
 title: MoEngage Source
+id: kpDbTUR9oD
+beta: true
 ---
 
 [MoEngage](https://www.moengage.com/) is an Intelligent Customer Engagement Platform. MoEngage allows brands to personalize every customer interaction and drive better engagement, retention, loyalty and lifetime value.
