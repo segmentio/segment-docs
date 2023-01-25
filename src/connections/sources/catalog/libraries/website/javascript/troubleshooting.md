@@ -131,6 +131,25 @@ analytics.track("Receipt Viewed", {}, {
 
 This works for any [context field](/docs/connections/spec/common/#context) that Segment automatically collects.
 
+### Can I add context fields that do not already exist?
+
+Yes. Similar to overwriting context, you can add context fields by passing them into the options object as the third argument of the event call. For example, the analytics.js library does not automatically collect location information. To add this into the context object, pass it into the third argument as in the example below:
+
+```js
+analytics.track("Order Completed", {}, {
+    location: {
+        latitude: '39.7392',
+        longitude: '104.9903'
+    }
+})
+```
+
+> info ""
+> You must pass the context object with the call, event if it's empty, as shown by the empty object in the example above.
+
+Some destinations accept properties only. As a result, custom context fields you add may not forward to these destinations.
+
+
 ## Known issues:
 
 [Review and contribute to these on GitHub](https://github.com/segmentio/analytics.js/issues)
