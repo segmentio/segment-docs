@@ -4,7 +4,7 @@ id: kpDbTUR9oD
 beta: true
 ---
 
-[MoEngage](https://www.moengage.com/) is an Intelligent Customer Engagement Platform. MoEngage allows brands to personalize every customer interaction and drive better engagement, retention, loyalty and lifetime value.
+[MoEngage](https://www.moengage.com/){:target="_blank”} is an Intelligent Customer Engagement Platform. MoEngage allows brands to personalize every customer interaction and drive better engagement, retention, loyalty and lifetime value.
 
 Using MoEngage as a Source on Segment, you can evolve your team's engagement and marketing efforts. Leveraging MoEngage Streams, you can automatically forward your users' engagement and activity events to Segment. This will enable you to forward these events to your destinations or warehouses.
 
