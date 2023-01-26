@@ -48,7 +48,7 @@ The FullStory cloud mode destination sends information about your users and rela
 
 ### Why am I getting a ‘404 Not Found’ error?
 
-The user for which the API request is being made can not be found in the identified set of users within your FullStory organization. If you expect that user to already exist, please confirm by searching for that “User ID” within the FullStory application. Also, double check that you are using an API key from the same organization.
+The user for which the API request is being made can not be found in the identified set of users within your FullStory organization. If you expect that user to already exist, you can search for that User ID in FullStory to confirm. Also, double check that you are using an API key from the same organization.
 
 Data being sent in server-side for users must match an already existing userId that was sent in via a client-side connection.
 
