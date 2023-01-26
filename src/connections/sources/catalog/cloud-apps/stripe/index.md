@@ -54,7 +54,7 @@ Collections are the groupings of resources that Segment pulls from your source. 
 | `skus`                            | object | A specific variant of a product. .                                                                                                                                                                                                                                                                                                                                                                                   |
 | `subscription_items`              | object | Subscription items allow you to create customer subscriptions with more than one plan, making it easy to represent complex billing relationships. For more information, see [Stripe's API docs](https://stripe.com/docs/api/subscription_items).                                                                                                                                                                     |
 | `subscriptions`                   | object | Subscriptions allow you to charge a customer's card on a recurring basis. A subscription ties a customer to a particular plan you've created. For more information, see [Stripe's API docs](https://stripe.com/docs/api#subscriptions)                                                                                                                                                                               |
-| `tax_rates`                        | object | Tax rates can be applied to invoices, subscriptions and Checkout Sessions to collect tax.                                                                                                                                                                                                                                                                                                                            |
+| `tax_rates`                       | object | Tax rates can be applied to invoices, subscriptions and Checkout Sessions to collect tax.                                                                                                                                                                                                                                                                                                                            |
 | `transfer_reversals`              | object | A previously created transfer can be reversed if it has not yet been paid out. Funds will be refunded to your available balance, and the fees you were originally charged on the transfer will be refunded. You may not reverse automatic Stripe transfers. For more information, see [Stripe's API docs](https://stripe.com/docs/api#transfer_reversals)                                                            |
 | `transfers`                       | object | When Stripe sends you money or you initiate a transfer to a bank account, debit card, or connected Stripe account, a transfer object will be created. You can retrieve individual transfers as well as list all transfers. For more information, see [Stripe's API docs](https://stripe.com/docs/api#transfers)                                                                                                      |
 
@@ -124,19 +124,19 @@ Below are tables outlining the properties included in the collections listed abo
 
 ### balance_transactions
 
-| Property Name  | Description                                                                      |
-| -------------- | -------------------------------------------------------------------------------- |
-| `amount`       | Gross amount of the transaction, in cents                                        |
-| `currency`     | Three-letter ISO currency code, in lowercase                                     |
-| `description`  | An arbitrary string attached to the object                                       |
-| `fee`          | Fees (in cents) paid for this transaction                                        |
-| `metadata`     | A set of key-value pairs that describe additional information about the object   |
-| `net`          | Net amount of the transaction, in cents                                          |
-| `source`       | The Stripe object to which this transaction is related                           |
-| `status`       | If the transaction's net funds are available in the Stripe balance yet           |
-| `type`         | Transaction type                                                                 |
-| `created`      | Time at which the object was created                                             |
-| `available` | The date the transactions's net funds will become available in the Stripe balance |
+| Property Name | Description                                                                       |
+| ------------- | --------------------------------------------------------------------------------- |
+| `amount`      | Gross amount of the transaction, in cents                                         |
+| `currency`    | Three-letter ISO currency code, in lowercase                                      |
+| `description` | An arbitrary string attached to the object                                        |
+| `fee`         | Fees (in cents) paid for this transaction                                         |
+| `metadata`    | A set of key-value pairs that describe additional information about the object    |
+| `net`         | Net amount of the transaction, in cents                                           |
+| `source`      | The Stripe object to which this transaction is related                            |
+| `status`      | If the transaction's net funds are available in the Stripe balance yet            |
+| `type`        | Transaction type                                                                  |
+| `created`     | Time at which the object was created                                              |
+| `available`   | The date the transactions's net funds will become available in the Stripe balance |
 
 ### balance_transaction_fee_details
 
@@ -513,6 +513,7 @@ Segment flattens Stripes `inventory`, `package_dimensions` objects.
 
 
 ### tax_rates
+
 | Property Name  | Description                                                                                                                                                                                    |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `active`       | Defaults to `true`. When set to `false`, this tax rate cannot be used with new applications or Checkout Sessions, but will still work for subscriptions and invoices that already have it set. |
