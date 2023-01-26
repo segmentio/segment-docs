@@ -15,7 +15,7 @@ The default region for all users is in Oregon, United States. Workspaces can be 
 To ensure a smooth transition from a US-based Segment workspace to an EU workspace, Segment will provide additional support and tooling to help with the transition later this year. Use the form link below to provide more information about your current setup and goals for transitioning.
 
 (suggested Note)
-Please Note: Transferring workspaces between regions is not supported.
+Please Note: The Segment UI does not support moving workspaces between regions. To request help with this move, please complete the Data Residency Workspace Provisioning Flow form. (Link to form: https://segment.typeform.com/to/k5ADnN5e?typeform-source=segment.com#user_id=9hLQ2NuvaCLxFbdkMYbjFp) 
 
 {% include components/ajs-cookie.html %}
 
