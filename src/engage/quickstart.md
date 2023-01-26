@@ -38,9 +38,10 @@ Invite teammates to your Engage dev space and grant them access to the space. Na
 
 ## Step 3: Connect production sources
 
-1. From your Engage space, go to your space Settings and click **Sources**.
+1. On the left sidebar click **Profiles**, click **Profiles Settings**, click the **Sources** tab, and then click the blue **+ Add Source** button.
 2. On the screen that appears, choose one or two production sources from your Connections workspace.
    Segment recommends connecting your production website or App source as a great starting point.
+   _The flag **Replay data** is enabled by default, **Replay data : Enable this option to replay last month of data into Profiles for every selected source below.** When left enabled, 30 days of historical data will be replayed from the source._
 
 To learn more, visit [Connect production sources](/docs/profiles/quickstart/#step-3-connect-production-sources).
 
