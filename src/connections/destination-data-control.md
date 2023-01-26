@@ -73,9 +73,9 @@ The Identify & Group CSV file contains the following columns:
 - Planned (available for Protocols customers with a connected Tracking Plan)
   - Values are "planned" or "unplanned"
 
-> note ""
-> Export Schema doesn't include any actual values (for example, personal data) for the events, properties, and traits you are tracking for a specific source.
+> info ""
+> The export schema doesn't include actual values (for example, personal data) for the events, properties, and traits you are tracking for a specific source.
 
 
 
-For more information on how to manage the Source Schema page, please visit [this page](https://segment.com/docs/connections/schema-unique-limits/)
+See the [Segment Schema Limits](/docs/connections/schema-unique-limits/) for more information on how to manage the Source Schema. 
