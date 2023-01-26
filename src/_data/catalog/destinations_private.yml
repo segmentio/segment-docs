@@ -514,6 +514,181 @@ items:
           traits:
             '@path': $.traits
         trigger: type = "identify"
+  - id: 634ef204885be3def430af66
+    display_name: PlayerZero Web
+    name: PlayerZero Web
+    slug: actions-playerzero-web
+    previous_names:
+      - PlayerZero Web
+    website: http://www.playerzero.app
+    status: PRIVATE_BETA
+    logo:
+      url: https://cdn.filepicker.io/api/file/YzMBIcfcScuaTGFkSdOA
+    mark:
+      url: https://cdn.filepicker.io/api/file/N7U81ONQSZCF9yJ3DRHz
+    methods:
+      track: true
+      pageview: true
+      identify: true
+      group: true
+      alias: true
+    platforms:
+      browser: true
+      mobile: false
+      server: false
+      warehouse: false
+    components: []
+    browserUnbundlingSupported: false
+    browserUnbundlingPublic: false
+    replay: false
+    settings:
+      - name: projectId
+        type: string
+        defaultValue: ''
+        description: >-
+          The Project ID where you want to send data. You can find this ID on
+          the [Project Data Collection](https://go.playerzero.app/setting/data)
+          page.
+        required: true
+        label: PlayerZero Project ID
+    actions:
+      - id: nzkXi7hgRkHEpD8iwbsbBZ
+        name: Identify User
+        slug: identifyUser
+        description: Sets the user identity
+        platform: WEB
+        hidden: false
+        defaultTrigger: type = "identify"
+        fields:
+          - id: i6fk9akAEiX2EmycoGfKwX
+            sortOrder: 0
+            fieldKey: userId
+            label: User ID
+            type: STRING
+            description: The user's id
+            placeholder: ''
+            defaultValue:
+              '@path': $.userId
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: Sj6MpTVuuaJxt8WtqFUmg
+            sortOrder: 1
+            fieldKey: anonymousId
+            label: Anonymous ID
+            type: STRING
+            description: The user's anonymous id
+            placeholder: ''
+            defaultValue:
+              '@path': $.anonymousId
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 3uCFrPFSC3SDAsegSVpmYn
+            sortOrder: 2
+            fieldKey: name
+            label: Display Name
+            type: STRING
+            description: The user's name
+            placeholder: ''
+            defaultValue:
+              '@path': $.traits.name
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 74q3vHLQvSLKMK2XyGRAhG
+            sortOrder: 3
+            fieldKey: email
+            label: Email
+            type: STRING
+            description: The user's email
+            placeholder: ''
+            defaultValue:
+              '@path': $.traits.email
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 3VmPPKtZhg511QoFuRLnV7
+            sortOrder: 4
+            fieldKey: traits
+            label: Traits
+            type: OBJECT
+            description: The Segment traits to be included as metadata in PlayerZero
+            placeholder: ''
+            defaultValue:
+              '@path': $.traits
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+      - id: vh6DQ6SBa6tcJwrVb1UygS
+        name: Track Event
+        slug: trackEvent
+        description: Track events
+        platform: WEB
+        hidden: false
+        defaultTrigger: type = "track"
+        fields:
+          - id: hKeVU7owd7EwcYbvrTZT4F
+            sortOrder: 0
+            fieldKey: name
+            label: Event name
+            type: STRING
+            description: The name of the event.
+            placeholder: ''
+            defaultValue:
+              '@path': $.event
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: hhS5T2AfZ9qdA1dQvPWMga
+            sortOrder: 1
+            fieldKey: properties
+            label: Properties
+            type: OBJECT
+            description: A JSON object containing more information about the event.
+            placeholder: ''
+            defaultValue:
+              '@path': $.properties
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+    presets:
+      - actionId: vh6DQ6SBa6tcJwrVb1UygS
+        name: Track Event
+        fields:
+          name:
+            '@path': $.event
+          properties:
+            '@path': $.properties
+        trigger: type = "track"
+      - actionId: nzkXi7hgRkHEpD8iwbsbBZ
+        name: Identify User
+        fields:
+          userId:
+            '@path': $.userId
+          anonymousId:
+            '@path': $.anonymousId
+          name:
+            '@path': $.traits.name
+          email:
+            '@path': $.traits.email
+          traits:
+            '@path': $.traits
+        trigger: type = "identify"
   - id: 6372e18fb2b3d5d741c34bb6
     display_name: Sabil
     name: Sabil
@@ -590,223 +765,6 @@ items:
             dynamic: false
             allowNull: false
     presets: []
-  - id: 6372e1e36d9c2181f3900834
-    display_name: Wisepops
-    name: Wisepops
-    slug: actions-wisepops
-    previous_names:
-      - Wisepops
-    website: https://wisepops.com/
-    status: PRIVATE_BETA
-    logo:
-      url: https://cdn.filepicker.io/api/file/93DooET4SPq6bzDtEspu
-    mark:
-      url: https://cdn.filepicker.io/api/file/Yrht1rOJQ1qQwXwmVfEh
-    methods:
-      track: true
-      pageview: true
-      identify: true
-      group: true
-      alias: true
-    platforms:
-      browser: true
-      mobile: false
-      server: false
-      warehouse: false
-    components: []
-    browserUnbundlingSupported: false
-    browserUnbundlingPublic: false
-    replay: false
-    settings:
-      - name: websiteId
-        type: string
-        defaultValue: ''
-        description: >-
-          The identifier of your Wisepops' website. You can find it in [your
-          setup code on Wisepops](https://app.wisepops.com/f/settings/websites).
-        required: true
-        label: Website Identifier
-    actions:
-      - id: 5M5CT8cJysDSpQzzhsnoyV
-        name: Track Page
-        slug: trackPage
-        description: >-
-          Let Wisepops know when the visitor goes to a new page. This allows
-          Wisepops to display campaigns at page change.
-        platform: WEB
-        hidden: false
-        defaultTrigger: type = "page"
-        fields: []
-      - id: nVy8wt8DdSKE2vDbqftwZ5
-        name: Set Custom Properties
-        slug: setCustomProperties
-        description: >-
-          Define [custom
-          properties](https://support.wisepops.com/article/yrdyv1tfih-set-up-custom-properties)
-          to let Wisepops target them in your scenarios.
-        platform: WEB
-        hidden: false
-        defaultTrigger: type = "identify"
-        fields:
-          - id: bAnMreNrdjVskVmfsCRrzM
-            sortOrder: 0
-            fieldKey: traits
-            label: Custom Properties
-            type: OBJECT
-            description: The custom properties to send to Wisepops.
-            placeholder: ''
-            defaultValue:
-              '@path': $.traits
-            required: true
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: 7EfUkM7PDYkANZd6KmngX6
-            sortOrder: 1
-            fieldKey: id
-            label: Entity ID
-            type: STRING
-            description: A unique identifier. Typically, a user ID or group ID.
-            placeholder: ''
-            defaultValue:
-              '@path': $.userId
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: iWBdXmc6deVa59paCAapGu
-            sortOrder: 2
-            fieldKey: idProperty
-            label: Property name for the entity ID
-            type: STRING
-            description: How to name the entity ID among the other custom properties?
-            placeholder: ''
-            defaultValue: userId
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: fMVgnbgd5A5BG6iS4dJoDQ
-            sortOrder: 3
-            fieldKey: prefix
-            label: Prefix
-            type: STRING
-            description: >-
-              This lets you define the properties as a nested object. If you set
-              the property `"name"` with the prefix `"group"`, you'll access it
-              in Wisepops as `"group.name"`.
-            placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-      - id: nru3QthNY6YBXTiHTg8YfR
-        name: Track Event
-        slug: trackEvent
-        description: >-
-          Send a [custom
-          event](https://support.wisepops.com/article/zbpq1z0exk-set-up-custom-events-to-trigger-popups)
-          to Wisepops. Keep in mind that events are counted as page views in
-          your Wisepops' monthly quota.
-        platform: WEB
-        hidden: false
-        defaultTrigger: type = "track"
-        fields:
-          - id: iWTfkexjvSECVFvaBTXTji
-            sortOrder: 0
-            fieldKey: eventName
-            label: Event Name
-            type: STRING
-            description: The name of the event to send to Wisepops.
-            placeholder: ''
-            defaultValue:
-              '@path': $.event
-            required: true
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-      - id: oS23rpRnU6cXVW7afcdjf9
-        name: Track Goal
-        slug: trackGoal
-        description: >-
-          [Track goals and
-          revenue](https://support.wisepops.com/article/mx3z8na6yb-set-up-goal-tracking)
-          to know which campaigns are generating the most value.
-        platform: WEB
-        hidden: false
-        defaultTrigger: type = "track" and event = "Order Completed"
-        fields:
-          - id: 7oKgGMyZYUGwh17niWYzTx
-            sortOrder: 0
-            fieldKey: goalName
-            label: Goal Name
-            type: STRING
-            description: The name of the goal to send to Wisepops.
-            placeholder: ''
-            defaultValue:
-              '@path': $.event
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: p1YLQ8bajZTkGn9nvN5aLK
-            sortOrder: 1
-            fieldKey: goalRevenue
-            label: Goal Revenue
-            type: STRING
-            description: The revenue associated with the goal.
-            placeholder: ''
-            defaultValue:
-              '@path': $.properties.revenue
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-    presets:
-      - actionId: nVy8wt8DdSKE2vDbqftwZ5
-        name: Set Group Traits as Custom Properties
-        fields:
-          traits:
-            '@path': $.traits
-          id:
-            '@path': $.groupId
-          idProperty: groupId
-          prefix: group
-        trigger: type = "group"
-      - actionId: nVy8wt8DdSKE2vDbqftwZ5
-        name: Set User Traits as Custom Properties
-        fields:
-          traits:
-            '@path': $.traits
-          id:
-            '@path': $.userId
-          idProperty: userId
-        trigger: type = "identify"
-      - actionId: oS23rpRnU6cXVW7afcdjf9
-        name: Track Goal
-        fields:
-          goalName:
-            '@path': $.event
-          goalRevenue:
-            '@path': $.properties.revenue
-        trigger: type = "track" and event = "Order Completed"
-      - actionId: nru3QthNY6YBXTiHTg8YfR
-        name: Track Event
-        fields:
-          eventName:
-            '@path': $.event
-        trigger: type = "track"
-      - actionId: 5M5CT8cJysDSpQzzhsnoyV
-        name: Track Page
-        fields: {}
-        trigger: type = "page"
   - id: 6388fddea33fcc69c0f8d9ce
     display_name: Actable Predictive
     name: Actable Predictive
