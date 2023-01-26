@@ -6,22 +6,22 @@ beta: true
 
 [MoEngage](https://www.moengage.com/){:target="_blank”} is an Intelligent Customer Engagement Platform. MoEngage allows brands to personalize every customer interaction and drive better engagement, retention, loyalty and lifetime value.
 
-Using MoEngage as a Source on Segment, you can evolve your team's engagement and marketing efforts. Leveraging MoEngage Streams, you can automatically forward your users' engagement and activity events to Segment. This will enable you to forward these events to your destinations or warehouses.
+Using MoEngage as a source on Segment, you can evolve your team's engagement and marketing efforts. With MoEngage Streams, you can automatically forward your users' engagement and activity events to Segment. This will enable you to forward these events to your destinations or warehouses.
 
 Segment allows you to move MoEngage data to your favorite BI or analytics tool in a seamless manner using which you can combine MoEngage data with the event data already flowing into Segment. This will help you get a holistic report of your engagement and marketing efforts.
 
-This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
+This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can export data into your Segment warehouse and federate the exported data into your enabled Segment destinations.
 
 This source is maintained by MoEngage. For any issues with the source, [contact their Support team](mailto:support@moengage.com).
 
-_**NOTE:** The MoEngage Source is currently in beta, which means that they are still actively developing the source. If you are interested in joining their beta program or have any feedback to help improve the MoEngage Source and its documentation, [let  their team know](mailto:support@moengage.com)!_
+_**NOTE:** The MoEngage Source is currently in beta, which means that they are still actively developing the source. If you are interested in joining their beta program or have any feedback to help improve the MoEngage Source and its documentation, [let their team know](mailto:support@moengage.com)._
 
 ## Getting Started
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
 2. Search for "MoEngage" in the Sources Catalog, select MoEngage, and click **Add Source**.
 3. On the next screen, give the Source **a nickname** configure any other settings.
-    - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. `MoEngage_Prod`, `MoEngage_Staging`, `MoEngage_Dev`).
+    - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (like `MoEngage_Prod`, `MoEngage_Staging`, or `MoEngage_Dev`).
 6. Click **Add Source** to save your settings.
 7. Copy the **Write key** from the Segment UI. You will need to input this key on the MoEngage App Marketplace.
 8. To finish the setup, contact MoEngage Support or your Customer Success Manager to get MoEngage Streams enabled in your account.
@@ -70,14 +70,14 @@ The table below lists events that MoEngage sends to Segment. These events appear
 | Card Sent | Tracked when a Card notification is sent to the user, doesn't indicate if the notification is delivered to the App Inbox. | Campaign Activity | Android, iOS |
 | Card Viewed | Tracked when the user views a Card or scrolls down to it in the App Inbox. | Campaign Activity | Android, iOS |
 | Connector Sent | Tracked when a connector was sent successfully. | Campaign Activity | Connector |
-| Email Bounced | Tracked when our system finds an email is hard bounced. Typically happens when an email address doesn't exist. | Campaign Activity | Email |
+| Email Bounced | Tracked when MoEngage finds an email is hard bounced. Typically happens when an email address doesn't exist. | Campaign Activity | Email |
 | Email Clicked | Tracked when a user clicks on any link in the email. | Campaign Activity | Email |
 | Email Complained | Tracked when a user marks the email as spam. | Campaign Activity | Email |
 | Email Dropped | Tracked when an email is dropped. Email is dropped, when it's part of the bounce list, the unsubscribe list, or the spam report list. | Campaign Activity | Email |
 | Email Opened | Tracked when a user opens an email. | Campaign Activity | Email |
-| Email Sent | Tracked when our system sends an email to a user. | Campaign Activity | Email |
-| Email Soft Bounced | Tracked when our system finds an email is soft bounced. Typically happens when there is a temporary delivery issue. | Campaign Activity | Email |
-| Email Unsubscribed | Tracked when our system finds an email is soft bounced. Typically happens when there is a temporary delivery issue. | Campaign Activity | Email |
+| Email Sent | Tracked when MoEngage sends an email to a user. | Campaign Activity | Email |
+| Email Soft Bounced | Tracked when MoEngage finds an email is soft bounced. Typically happens when there is a temporary delivery issue. | Campaign Activity | Email |
+| Email Unsubscribed | Tracked when MoEngage finds an email is soft bounced. Typically happens when there is a temporary delivery issue. | Campaign Activity | Email |
 | Email Unsubscribe Drop | Tracked when an email is dropped because the user is part of an unsubscribe list. This is tracked at SendGrid. This event is currently under **BETA**. | Campaign Activity | Email |
 | Email Viewed in Browser | Tracked when a user clicks on the view in the browser link present in the email. | Campaign Activity | Email |
 | Facebook Audience Synced | Tracked when Facebook API returns 2xx response for add or delete request to an audience. | Campaign Activity | Facebook |
@@ -97,7 +97,7 @@ The table below lists events that MoEngage sends to Segment. These events appear
 | Notification Dismissed iOS | Tracked when the user dismisses the notification on iOS device. | Campaign Activity | iOS |
 | Notification Received Android | Tracked when a user receives a notification on an Android device. | Campaign Activity | Android |
 | Notification Received iOS App Active | Tracked when App in foreground and user receives the notification on iOS. | Campaign Activity | iOS |
-| Notification Received iOS | Tracked when a user receives a notification on an iOS device. | Campaign Acitivity | iOS |
+| Notification Received iOS | Tracked when a user receives a notification on an iOS device. | Campaign Activity | iOS |
 | Notification Received Web | Tracked when a user receives a notification on a browser. | Campaign Activity | Web |
 | Notification Sent Windows | Tracked when a user receives a notification on a Windows device. | Campaign Activity | Windows |
 | Notification Sent iOS | Tracked when a user receives a notification on an iOS device. | Campaign Activity | iOS |
@@ -109,8 +109,8 @@ The table below lists events that MoEngage sends to Segment. These events appear
 | Web Personalization Message Shown | Tracked when a web personalization campaign is shown to a user. | Campaign Activity | Web |
 | Web Personalization Message Clicked | Tracked when a web personalization campaign is clicked by a user. | Campaign Activity | Web |
 | Web Personalization Message Closed | Tracked when a web personalization campaign is closed by a user. |  Campaign Activity | Web |
-| SMS Delivered | Tracked when our system receives a delivery receipt for the SMS sent to a user. | Campaign Activity | SMS |
-| SMS Sent | Tracked when our system sends SMS to a user. | Campaign Activity | SMS |
+| SMS Delivered | Tracked when MoEngage receives a delivery receipt for the SMS sent to a user. | Campaign Activity | SMS |
+| SMS Sent | Tracked when MoEngage sends SMS to a user. | Campaign Activity | SMS |
 | SMS Clicked | Tracked when a user clicks on any of the links in the SMS message body. | Campaign Activity | SMS |
 | User Entered Flow | Tracked when a user falls in the target audience and has qualified for the entry in the Flow. | Campaign Activity | Flows |
 | User Exited Flow | Tracked when a user exists from a Stop Cell of the Flow. | Campaign Activity | Flows |
@@ -149,18 +149,18 @@ The table below list the properties included in the events listed above.
 | Logged In Status | Generated for all the events tracked with MoEngage web SDK. Value is True if the user has logged in on the device. |
 | Exit Reason | Tracked when a user exits the flow. This is tracked as an attribute of the "User Exited Flow" event. | 
 
-You can refer to MoEngage's [Derived Events & Attributes](https://help.moengage.com/hc/en-us/articles/207836953-Derived-Events-Attributes) to know which attributes you can forward to Segment.
+You can refer to MoEngage's [Derived Events & Attributes](https://help.moengage.com/hc/en-us/articles/207836953-Derived-Events-Attributes){:target="_blank”} to determine which attributes you can forward to Segment.
 
 
 ## Adding Destinations
 
-Now that your Source is set up, you can connect it with Destinations.
+Now that your source is set up, you can connect it with destinations.
 
-Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
+Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear as expected, check the [Event Delivery](/docs/connections/event-delivery/) tool and refer to the docs for each destination.
 
 If there are any issues with how the events are arriving to Segment, [contact the MoEngage support team](mailto:support@moengage.com).
 
 
 ## Send Data to MoEngage
 
-You can take better advantage of MoEngage Source when you also connect MoEngage as a Destination on Segment. Using MoEngage as a Destination, Segment will translate your data and route it to MoEngage in the format MoEngage understands so that you can save some of your engineering efforts for using MoEngage. Learn more about how to use [MoEngage with Segment.](/docs/destinations/moengage/) 
+You can take better advantage of MoEngage source when you also connect MoEngage as a destination in Segment. Using MoEngage as a destination, Segment translates your data and routes it to MoEngage in the format MoEngage understands, saving your engineering resources from a data conversion project. Learn more about how to use [MoEngage with Segment.](/docs/connections/destinations/catalog/moengage/ 
