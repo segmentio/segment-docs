@@ -14,7 +14,8 @@ This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can ex
 
 This source is maintained by MoEngage. For any issues with the source, [contact their Support team](mailto:support@moengage.com).
 
-_**NOTE:** The MoEngage Source is currently in beta, which means that they are still actively developing the source. If you are interested in joining their beta program or have any feedback to help improve the MoEngage Source and its documentation, [let their team know](mailto:support@moengage.com)._
+> info "This is a Beta source"
+> The MoEngage Source is in beta, which means that they are still actively developing the source. If you're interested in joining their beta program or have any feedback to help improve the MoEngage Source and its documentation, [let their team know](mailto:support@moengage.com)._
 
 ## Getting Started
 
