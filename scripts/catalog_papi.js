@@ -144,6 +144,11 @@ const isCatalogItemHidden = (itemURL) => {
   }
 }
 
+const sanitize = (text) => {
+  const regex = /(<[^\/a].*?>)/ig;
+  result = text.replace(regex, "`$1`")
+  return result
+}
 
 const updateSources = async () => {
   let sources = []
@@ -381,6 +386,12 @@ const updateDestinations = async () => {
       }
       return 0;
     })
+
+    settings.forEach(setting => {
+      setting.description = sanitize(setting.description)
+    });
+
+
     let actions = destination.actions
     let presets = destination.presets
 
