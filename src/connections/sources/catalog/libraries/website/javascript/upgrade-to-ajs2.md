@@ -60,6 +60,21 @@ Analytics.js 2.0 asynchronously loads different pieces of the library as needed.
 
 Previously, it was possible to attach `trackLink` to any element, and a `trackLink` call would fire for that element if it wasn't a link. Now, when you attach `trackLink` to a non-link element, an additional search of that element's children occurs for any nested links and fires track calls based on those links. If you wish to fire track calls on non-link elements that have links as children, you can use a `track` call instead.
 
+### Using a custom proxy
+
+Analytics.js 2.0 loads new files not usually loaded with Analytics.js Classic, so you'll also need to make sure these new files are considered in your proxy configuration. If the new files are not considered, then Analytics.js 2.0 will fall back to cdn.segment.com. You'll have to proxy the rest of the files used by Analytics.js 2.0 using a similar URL scheme that our CDN uses. You have two options:
+
+**Option 1**: Update the proxy so that:
+
+`https://cdn.yourdomain.com/analytics.js/*` maps to `https://cdn.segment.com/analytics.js/*`
+`https://cdn.yourdomain.com/analytics.js/*` maps to `https://cdn.segment.com/v1/*`
+`https://cdn.yourdomain.com/analytics-next/*` maps to `https://cdn.segment.com/analytics-next/*`
+`https://cdn.yourdomain.com/next-integrations/*` maps to `https://cdn.segment.com/next-integrations/*`
+
+**Option 2**: Map `cdn.yourdomain.com/*` to `https://cdn.segment.com/*`
+
+After that, you'll just need to serve AJS from `https://cdn.yourdomain.com/analytics.js/v1/<YOUR_WRITE_KEY>/analytics.min.js` and everything will be fetched from your proxy.
+
 ## FAQs
 
 ### I'm already using Analytics 2.0, why am I still receiving the message to upgrade?
