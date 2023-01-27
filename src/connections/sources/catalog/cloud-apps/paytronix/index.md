@@ -43,24 +43,24 @@ The table below lists events that Paytronix sends to Segment. These events appea
 
 The table below list the properties included in the events listed above.
 
-| Property Name          | Description                                        |
-|------------------------|----------------------------------------------------|
-| 'first_name'           | First name of the user                             |
-| ‘last_name’           | Last name of the user                               |
-| ‘printed_card_number’ | Loyalty card number                                 |
-| ‘email_opt_in’        | Email Opt-In Status                                 |
-| ‘text_opt_in’         | Text Opt-In Status                                  |
-| ‘store_name’          | Store Name of Purchasing Site                       |
-| ‘store_code’          | Paytronix Store Code of Purchasing Site             |
-| ‘store_latitude’      | Purchasing Site Latitude                            |
-| ‘store_longitude’     | Purchasing Site Longitude                           |
-| ‘store_city’          | Purchasing Site City                                |
-| ‘store_postal_code’   | Purchasing Site Zip Code                            |
-| ‘store_state’         | Purchasing Site State                               |
-| ‘store_country’       | Purchasing Site Country                             |
-| ‘wallets_info’        | Wallet balance                                      |
-| ‘all_wallets_info’    | All available information of wallets                |
-| ‘flat_wallets_info’   | Wallet Code, Label, and Balance                     |
+| Property Name          | Description                                         |
+|------------------------|-----------------------------------------------------|
+| first_name             | First name of the user                              |
+| last_name              | Last name of the user                               |
+| printed_card_number    | Loyalty card number                                 |
+| email_opt_in           | Email Opt-In Status                                 |
+| text_opt_in            | Text Opt-In Status                                  |
+| store_name             | Store Name of Purchasing Site                       |
+| store_code             | Paytronix Store Code of Purchasing Site             |
+| store_latitude         | Purchasing Site Latitude                            |
+| store_longitude        | Purchasing Site Longitude                           |
+| store_city             | Purchasing Site City                                |
+| store_postal_code      | Purchasing Site Zip Code                            |
+| store_state            | Purchasing Site State                               |
+| store_country          | Purchasing Site Country                             |
+| wallets_info           | Wallet balance                                      |
+| all_wallets_info       | All available information of wallets                |
+| flat_wallets_info      | Wallet Code, Label, and Balance                     |
 
 
 ## Adding Destinations
