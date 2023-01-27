@@ -164,5 +164,5 @@ If there are any issues with how the events are arriving to Segment, [contact th
 
 ## Send Data to MoEngage
 
-You can take better advantage of MoEngage source when you also connect MoEngage as a destination in Segment. Using MoEngage as a destination, Segment translates your data and routes it to MoEngage in the format MoEngage understands, saving your engineering resources from a data conversion project. Learn more about how to use [MoEngage with Segment.](/docs/connections/destinations/catalog/moengage/ 
+You can take better advantage of MoEngage source when you also connect MoEngage as a destination in Segment. Using MoEngage as a destination, Segment translates your data and routes it to MoEngage in the format MoEngage understands, saving your engineering resources from a data conversion project. Learn more about how to use [MoEngage with Segment.](/docs/connections/destinations/catalog/moengage/)
 
