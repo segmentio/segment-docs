@@ -71,41 +71,70 @@ const getConnectionModes = (destination) => {
       server: false
     },
   }
-  destination.components.forEach(component => {
-    switch (component.type) {
-      case 'IOS':
-        connectionModes.device.mobile = true
-        break
-      case 'ANDROID':
-        connectionModes.device.mobile = true
-        break
-      case 'BROWSER':
-        if (destination.browserUnbundling) {
-          connectionModes.cloud.web = true
+  // destination.components.forEach(component => {
+  //   switch (component.type) {
+  //     case 'IOS':
+  //       connectionModes.device.mobile = true
+  //       break
+  //     case 'ANDROID':
+  //       connectionModes.device.mobile = true
+  //       break
+  //     case 'BROWSER':
+  //       if (destination.browserUnbundling) {
+  //         connectionModes.cloud.web = true
+  //       }
+  //       connectionModes.device.web = true
+  //       break
+  //     case 'SERVER':
+  //       connectionModes.cloud.mobile = true
+  //       if (destination.platforms.server) {
+  //         connectionModes.cloud.server = true
+  //       }
+  //       if (destination.platforms.browser) {
+  //         connectionModes.cloud.web = true
+  //       }
+  //       break
+  //     case 'CLOUD':
+  //       connectionModes.cloud.mobile = true
+  //       if (destination.platforms.server) {
+  //         connectionModes.cloud.server = true
+  //       }
+  //       if (destination.platforms.browser) {
+  //         connectionModes.cloud.web = true
+  //       }
+  //       break
+
+  //   }
+  // })
+
+  for (const [key, value] of Object.entries(destination.platforms)) {
+
+    switch (key){
+      case 'browser':
+        if (value == true){
+          connectionModes.device.web = true
+          if (destination.browserUnbundling) {
+                connectionModes.cloud.web = true
+              }
         }
-        connectionModes.device.web = true
         break
-      case 'SERVER':
-        connectionModes.cloud.mobile = true
-        if (destination.platforms.server) {
+      case 'mobile':
+        if (value == true){
+          connectionModes.device.mobile = true
+        }
+        break
+      case 'server':
+        if (value == true){
+          connectionModes.cloud.mobile = true
           connectionModes.cloud.server = true
         }
-        if (destination.platforms.browser) {
-          connectionModes.cloud.web = true
-        }
-        break
-      case 'CLOUD':
-        connectionModes.cloud.mobile = true
-        if (destination.platforms.server) {
-          connectionModes.cloud.server = true
-        }
-        if (destination.platforms.browser) {
-          connectionModes.cloud.web = true
-        }
-        break
 
     }
-  })
+  }
+
+
+    //console.log(destination.platforms)
+
   return connectionModes
 }
 
@@ -588,7 +617,7 @@ const updateWarehouses = async () => {
   fs.writeFileSync(path.resolve(__dirname,`../src/_data/catalog/regional-supported.yml`),output);
   console.log("warehouses done")
 }
-updateWarehouses()
-updateSources()
+//updateWarehouses()
+//updateSources()
 updateDestinations()
 
