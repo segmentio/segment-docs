@@ -6,18 +6,19 @@ beta: true
 
 [Paytronix](https://support-paytronix.force.com/help/s/article/000001348){:target="_blank”} is the leading provider of Digital Customer Engagement Solutions for restaurants, convenience stores, and retailers who seek to develop lasting relationships with their guests. For over 20 years, Paytronix has grown its Guest Engagement Platform to seamlessly incorporate individual components of digital customer engagement into a single, robust platform.
 
-This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources){:target="_blank”} which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
+This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources){:target="_blank”} which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
 
-This source is maintained by Paytronix. For any issues with the source, [contact their Support team](mailto:support@paytronix.com){:target="_blank”}.
+This source is maintained by Paytronix. For any issues with the source, [contact the Paytronix Support team](mailto:support@paytronix.com){:target="_blank”}.
 
-_**NOTE:** The Paytronix Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on January 27, 2023. If you are interested in joining their beta program or have any feedback to help improve the Paytronix Source and its documentation, [let their team know](mailto:support@paytronix.com){:target="_blank”}!_
+> info ""
+> The Paytronix Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on January 27, 2023. If you are interested in joining their beta program or have any feedback to help improve the Paytronix Source and its documentation, [let the Paytronix team know](mailto:support@paytronix.com){:target="blank"}.
 
-## Getting Started
+## Getting started
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank”} click **Add Source**.
 2. Search for "Paytronix" in the Sources Catalog, select Paytronix, and click **Add Source**.
-3. On the next screen, give the Source a nickname configure any other settings. 
-   - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse.  The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. Paytronix_Prod, Paytronix_Staging, Paytronix_Dev){:target="_blank”}.
+3. On the next screen, give the Source a nickname, and configure any other settings.
+   - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (for example, Paytronix_Prod, Paytronix_Staging, or Paytronix_Dev).
 5. Click **Add Source** to save your settings.
 6. Copy the Write key from the Segment UI. Include this WriteKey in your request to Paytronix Support to turn on the Segment Source Integration.
 
@@ -38,7 +39,7 @@ The table below lists events that Paytronix sends to Segment. These events appea
 | Loyalty Registration | Guest signs up for loyalty account                   |
 | Add/Redeem        | Guest accrues and/or spends points                      |
 
-## Event Properties
+## Event properties
 
 The table below list the properties included in the events listed above.
 
