@@ -13,11 +13,11 @@ The Segment integration for PlayerZero automatically instruments your web applic
 
 ## Getting started
 
-1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Find the Destinations Actions item in the left navigation, and click it.
+1. From the Segment web app, navigate to **Connections > Catalog > Destinations**.
+2. Under **Categories** select **Destination Actions**.
 3. Select PlayerZero Web (Actions), then click **Configure PlayerZero Web**.
 4. Select an existing Source to connect to PlayerZero Web.
-5. **Enable** the destination and click **Save Changes**.
-6. PlayerZero will collect any Segment data as soon as they arrive. You can set up a **View** in the PlayerZero dashboard to enable notifications and be alerted when the first high impact issue is surfaced.
+5. Click the toggle under **Enable Destination** to enable the destination, and click **Save Changes**.
+6. PlayerZero collects data from Segment as soon as it arrives. You can set up a **View** in the PlayerZero dashboard to enable notifications and be alerted when the first high impact issue surfaces.
 
 {% include components/actions-fields.html %}
