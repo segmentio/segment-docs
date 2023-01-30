@@ -1,11 +1,11 @@
 ---
-title: Foursquare Pilgrim
+title: Foursquare Movement
 beta: true
 id: Eek5OnuA7e
 ---
 {% include content/source-region-unsupported.md %}
 
-[Foursquare's Pilgrim SDK](https://developer.foursquare.com/pilgrimsdk) provides real-time event triggering based upon your users' location in the physical world, allowing you to harness our powerful geotargeting capabilities to send those events to other services using Segment.
+[Foursquare's Movement SDK](https://location.foursquare.com/products/movement-sdk/) provides real-time event triggering based upon your users' location in the physical world, allowing you to harness our powerful geotargeting capabilities to send those events to other services using Segment.
 
 This destination is maintained by Foursquare. For any issues with the destination, [contact the Foursquare Developer Support team](mailto:developers@foursquare.com).
 
@@ -15,13 +15,13 @@ This destination is maintained by Foursquare. For any issues with the destinatio
 ## Getting Started
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Foursquare Pilgrim" in the Catalog, select it, and choose which of your sources to connect the it to.
-3. Once you save Foursquare Pilgrim as a source, copy your "Write Key".
-4. Go to your [Foursquare Developer Console](https://foursquare.com/developers/apps/) and create a new Segment integration in your Foursquare app's Pilgrim SDK console. There you can enter the Segment "Write Key" into the Segment Integration Configuration screen.
+2. Search for "Foursquare Movement" in the Catalog, select it, and choose which of your sources to connect the it to.
+3. Once you save Foursquare Movement as a source, copy your "Write Key".
+4. Go to your [Foursquare Developer Console](https://foursquare.com/developers/apps/) and create a new Segment integration in your Foursquare app's Movement SDK console. There you can enter the Segment "Write Key" into the Segment Integration Configuration screen.
 
 ## Events
 
-Below is a table of events that Foursquare's Pilgrim SDK sends to Segment. These events will show up as tables in your warehouse, and as regular events in your other Destinations. Foursquare will send through the `userId` if available.
+Below is a table of events that Foursquare's Movement SDK sends to Segment. These events will show up as tables in your warehouse, and as regular events in your other Destinations. Foursquare will send through the `userId` if available.
 
 | Event Name | Description |
 | -------- | -------- |
