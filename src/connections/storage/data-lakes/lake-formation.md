@@ -6,10 +6,6 @@ title: Lake Formation
 
 Lake Formation is a fully managed service built on top of the AWS Glue Data Catalog that provides one central set of tools to build and manage a Data Lake. These tools help import, catalog, transform, and deduplicate data, as well as provide strategies to optimize data storage and security. To learn more about Lake Formation features, see [Amazon Web Services documentation](https://aws.amazon.com/lake-formation/features/){:target="_blank"}.
 
-<!-- PW: 9/22/22; commenting this section out for GA
-> note "This feature is not supported in the Azure Data Lakes public beta"
-> Lake Formation is only supported for Segment Data Lakes. For more information about Azure Data Lakes, see the [Data Lakes overview documentation](/docs/connections/storage/data-lakes/index/#how-azure-data-lakes-works). -->
-
 The security policies in Lake Formation use two layers of permissions: each resource is protected by Lake Formation permissions (which control access to Data Catalog resources and S3 locations) and IAM permissions (which control access to Lake Formation and AWS Glue API resources). When any user or role reads or writes to a resource, that action must pass a both a Lake Formation and an IAM resource check: for example, a user trying to create a new table in the Data Catalog may have Lake Formation access to the Data Catalog, but if they don't have the correct Glue API permissions, they will be unable to create the table.
 
 For more information about security practices in Lake Formation, see Amazon's [Lake Formation Permissions Reference](https://docs.aws.amazon.com/lake-formation/latest/dg/lf-permissions-reference.html){:target="_blank"} documentation.
