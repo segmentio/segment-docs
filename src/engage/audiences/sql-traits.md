@@ -135,7 +135,7 @@ When you're building your query, keep the following requirements in mind for the
 - The query must not return any `user_id`s, `anonymous_id`s, or `group_id`s with a `null` value.
 - The query must not return any records with duplicate `user_id`s.
 - The query must not return more than 25 million rows.
-- Each record must be less than 16kb in size to adhere to [Segment's maximum request size](/docs/connections/sources/catalog/libraries/server/http-api/#max-request-size).
+- Each record must be less than 16KB in size to adhere to [Segment's maximum request size](/docs/connections/sources/catalog/libraries/server/http-api/#max-request-size).
 
 A successful preview returns a sample of users and their traits.
 If Segment recognizes a user already in Engage, it displays a green checkmark on their profile. Clicking the checkmark displays the user's profile. If a user has a question mark, Segment hasn't detected this `user_id` in Engage before.
@@ -198,7 +198,7 @@ If you're importing a large list of users and traits, you'll need to consider yo
 
 ### Is there a limit on the size of a SQL Trait's payload?
 
-Yes, Segment limits request sizes to a maximum of 16kb. Records larger than this are discarded.
+Yes, Segment limits request sizes to a maximum of 16KB. Records larger than this are discarded.
 
 ## Troubleshooting
 
