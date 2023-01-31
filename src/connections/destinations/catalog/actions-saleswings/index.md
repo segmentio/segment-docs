@@ -12,8 +12,8 @@ id: 63d17a1e6ab3e62212278cd0
 
 ## Getting started
 
-1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Find the Destinations Actions item in the left navigation, and click it.
+1. From the Segment web app, navigate to **Connections > Catalog** and select the **Destinations** tab of the catalog. 
+2. Search for **SalesWings (Actions)** and select the destination. 
 3. Click **Configure SalesWings (Actions)**.
 4. Select an existing Source to connect to SalesWings (Actions).
 
