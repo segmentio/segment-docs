@@ -68,3 +68,12 @@ Once you validate that your data is flowing through Profiles, you're ready to cr
 
 > success ""
 > If you're using Engage, view additional steps to complete your space set up in the [Engage Foundations Onboarding Guide](/docs/engage/quickstart).
+
+## Profiles FAQ
+
+##### I'm trying to add a source to my Profiles space but I don't see it. Why?
+
+Check if the source is enabled. If the source is enabled, check if you have set up a connection policy which enforces that only sources with specific labels can be added to this space. Read more about connection policy here: https://segment.com/docs/profiles/identity-resolution/space-setup/#step-three-set-up-a-connection-policy 
+
+
+
