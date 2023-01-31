@@ -54,7 +54,7 @@ If this outbound request is not showing up in the network when you fire an `iden
 
 ## Is your web site deployed under a domain on the Public Suffix List?
 
-The [Public Suffix List](https://publicsuffix.org/list/) is a catalog of certain Internet effective top-level domains, enumerating all domain suffixes controlled by registrars.
+The [Public Suffix List](https://publicsuffix.org/list/){:target="blank"} is a catalog of certain Internet effective top-level domains, enumerating all domain suffixes controlled by registrars.
 
 The implications of these domain suffixes is that first party cookies cannot be set on them. Meaning, `foo.example.co.uk` can share cookie access with `bar.example.co.uk`, but `example.co.uk` should be walled off from cookies at `example2.co.uk`. The latter two domains could be registered by different owners.
 
@@ -76,7 +76,7 @@ The JavaScript console reveals all requests, outbound and inbound, to your brows
 
 ## Is there a size limit on requests?
 
-Yes, 32KB per event message. Events with a payload larger than 32kb are dropped, and Segment's servers respond with a `500` error. 
+Yes, 32KB per event message. Events with a payload larger than 32KB are dropped, and Segment's servers respond with a `500` error.
 
 ## If Analytics.js fails to load, are callbacks not fired?
 
@@ -93,7 +93,7 @@ Segment added these metrics to proactively identify and resolve issues with indi
 There should be no noticeable impact to your data flow. You may notice Analytics.js make an extra network request in the network tab to carry the metrics data to Segment's servers. This should be very infrequent since the data is sampled and batched every 30 seconds, and should not have any impact of website performance.
 
 ## How are properties with `null` and `undefined` values treated?
-Segment uses the [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) method under the hood. Property values set to `null` or `undefined` are treated in accordance with the expected behaviour for the standard method:
+Segment uses the [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify){:target="blank"} method under the hood. Property values set to `null` or `undefined` are treated in accordance with the expected behaviour for the standard method:
 
 ```js
 console.log(JSON.stringify({ x: null, y: 6 }));

@@ -25,7 +25,7 @@ Yes! You can use the Segment library with Maven, or any other custom build syste
 
 ## How big is the Segment SDK?
 
-The core Segment SDK is extremely lightweight! It contains just under 1k methods, the JAR weighs in at 123kb and the dex size is 113kb.
+The core Segment SDK is extremely lightweight. It contains just under 1k methods, the JAR weighs in at 123KB and the dex size is 113KB.
 
 ## How can I swap out debugging and production keys?
 

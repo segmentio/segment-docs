@@ -4,7 +4,7 @@ title: Filtering your Segment Data
 
 There are many ways you can use Segment to filter event and object based data to control which destinations it reaches. This document lists the most commonly used ways you can filter data in Segment, and explains when you'd use each.
 
-![](/docs/images/segment-diagram.png)
+![Use Segment to filter event and object based data](/docs/images/segment-diagram.png)
 
 
 ## Filtering with the Integrations Object
@@ -39,7 +39,7 @@ By *default*, the `integrations` object is set to `'All': true`. You do not need
 
 If you are using [multiple instances of a destination](/docs/connections/destinations/add-destination/#connecting-one-source-to-multiple-instances-of-a-destination), any settings you set in the integrations object are applied to all instances of the destination. You cannot specify an instance of a destination to apply Integrations object settings to. 
 
-Note that destination flags are **case sensitive** and match the destination's name in the docs (for example, "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Note that destination flags are **case sensitive** and match the destination's name in the docs (for example, "AdLearn Open Platform", "awe.sm", or "MailChimp").
 
 Your data is sent to your warehouse (if you have one) and into the Segment backend systems regardless of what is in the integrations object.
 
@@ -55,16 +55,16 @@ Your data is sent to your warehouse (if you have one) and into the Segment backe
 > warning ""
 > Keep [these limitations](/docs/connections/destinations/destination-filters/#limitations) in mind when using destination filters.
 
-![](images/destination-filter-create.png)
+![Configuring a destination filter](images/destination-filter-create.png)
 
 To set up destination filters from the Segment web app for the destination from which you want to exclude data:
 1. *(For web device-mode destinations only)* Enable device mode destination filters for your Analytics.js source. To do this, go to your Javascript source and navigate to **Settings > Analytics.js** and turn the toggle on for **Destination Filters**.
-    * **NOTE:** Destination filters for web device-mode only supports the Analytics.js 2.0 source. 
+    * **NOTE:** Destination filters for web device-mode only supports the Analytics.js 2.0 source.
 2. Navigate to **Connections > Destinations** and select the destination you want to set up filters for.
 3. Go to the **Filters** tab and click **+ New Filter** to create a destination filter.
 See the [Destination Filters documentation](/docs/connections/destinations/destination-filters/) for more details.
 
-You can set up destination filters using the options presented in the Segment web app, or using Segment's Filter Query Logic (FQL). If you use FQL, your query syntax is limited to 5kb per query.
+You can set up destination filters using the options presented in the Segment web app, or using Segment's Filter Query Logic (FQL). If you use FQL, your query syntax is limited to 5KB per query.
 
 ## Per-Source schema integrations filters
 
@@ -72,7 +72,7 @@ Integration filters allow you to quickly change which destinations receive speci
 
 You can apply Integrations filters to specific events regardless of whether the source is connected to a Tracking Plan. To update which destination an event can be sent to, click the **Integrations** dropdown menu to see a list of the destinations each call is sent to. You can turn those destinations on or off from within the dropdown menu.
 
-![](images/schema-integration-filters.png)
+![The Integrations dropdown menu displays a list of destinations each call is sent to](images/schema-integration-filters.png)
 
 The events filtered out of individual destinations using this method still arrive in your data warehouse(s). Warehouses do not appear in the integration filters dropdown, and you cannot prevent data from flowing to Warehouses using this feature - to do that use [Warehouse Selective Sync](#warehouse-selective-sync).
 
@@ -88,7 +88,7 @@ Use this when you need to disable an event immediately, but may need more time t
 
 If the Source is not connected to a tracking plan, you'll find event filter toggles next to the Integration filters in the source's schema tab. When an event is set to block, the entire event is blocked. This means no destinations receive it, including data warehouses.
 
-![](images/schema-event-filters.png)
+![Event filter toggles](images/schema-event-filters.png)
 
 When an event is blocked, the name of the event or property appears on your Schema page with a counter which shows how many times it has been blocked. By default, data from blocked events and properties is not recoverable. You can always re-enable the event to continue sending it to downstream destinations.
 
@@ -105,7 +105,7 @@ By default, the blocked events are permanently discarded: they do not flow to De
 
 If you have Protocols in your workspace, **and** have a tracking plan associated with the Source, you'll see additional options in the Schema Configuration section of the Source's Settings page. From this page you can choose how to handle data violations across different types of calls and properties, whether that be blocking events entirely or omitting violating properties.
 
-![](images/protocols-unplanned.png)
+![Schema Configuration section of a source's Settings page](images/protocols-unplanned.png)
 
 
 ## Warehouse Selective Sync
@@ -121,4 +121,4 @@ The [Privacy Portal](/docs/privacy/portal/) is available to all Segment customer
 
 The Privacy Portal tools allow you to inspect your incoming calls and their payloads, detect potential Personally Identifiable Information (PII) in properties using matchers, classify the information by different categories of risk, and use those categories to determine which Destinations may or may not receive the data. Learn more about these features in the [Privacy Portal documentation](/docs/privacy/portal/).
 
-![](/docs/privacy/images/privacy-add-new-matcher.gif)
+![Add a new matcher with the Privacy Portal tools](/docs/privacy/images/privacy-add-new-matcher.gif)
