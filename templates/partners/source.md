@@ -49,8 +49,8 @@ _**NOTE:** The YOURINTEGRATION Source is currently in beta, which means that the
 > Include clear, succinct steps including hyperlinks to where customers can locate the place in your app to enter their Segment writekey. 
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
-2. Search for "YOURINTEGRATION" in the Sources Catalog, select click YOURINTEGRATION, and click **Add Source**.
-3. On the next screen, give the Source a nickname configure any other settings. 
+2. Search for "YOURINTEGRATION" in the Sources Catalog, select YOURINTEGRATION, and click **Add Source**.
+3. On the next screen, give the Source a name and configure any other settings. 
 
    The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse.  The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
 5. Click **Add Source** to save your settings.

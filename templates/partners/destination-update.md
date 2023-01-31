@@ -35,10 +35,10 @@ hide-dossier: true
 
 ## Getting started
 
-1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Find the Destinations Actions item in the left navigation, and click it.
-3. Click **Configure <desintation_name>**.
-4. Select an existing Source to connect to <destination_name> (Actions).
+1. From the Segment web app, navigate to **Connections > Catalog** and select the **Destinations** tab within the catalog. 
+2. Search for **<destination_name>** and select the destination.
+3. Click **Configure <destintation_name>**.
+4. Select the Source to connect to <destination_name> (Actions).
 
 <!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
 
