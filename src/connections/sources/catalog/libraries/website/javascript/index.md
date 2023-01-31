@@ -773,7 +773,7 @@ Using Analytics.js doesn't offer a large performance benefit, but is more perfor
 One option, if you don't want to use any bundled third-party tools, is to use the [Analytics-Node](https://github.com/segmentio/analytics-node) package. 
 
 > info ""
-> Analytics.js isn't a third-party cookie and only sets first-party cookies. 
+> Analytics.js doesn't set third-party cookies and only sets first-party cookies. 
 
 ### Bundle size
 
