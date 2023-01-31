@@ -6,6 +6,9 @@ redirect_from:
 
 {% include content/papi-ga.html %}
 
+> warning "Config API Tokens can no longer be generated"
+> As of September 8, 2022, our Public API is in GA, and is meant to replace the Config API. As a part of the transition, new Config API token generation has ceased, but any Config API tokens issued prior to this will continue to work.
+
 The Config API enables you to programmatically manage Segment workspaces, sources, destinations and more. With the API you can:
 
 * List all your workspace Sources and Destinations to see how data flows through Segment
