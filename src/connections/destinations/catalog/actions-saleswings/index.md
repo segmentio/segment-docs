@@ -45,7 +45,6 @@ When you add a Track, Identify, or Screen action, you control how a correspondin
 
 You can override these defaults in the action configuration and map `Kind` and `Data` to static values, or map them to other properties that are part of the Segment event.
 
-All the defaults can be overridden in the action configuration, you can either set `Kind` and `Data` to static values, or map them to string properties from Segment events.
 
 If you have the Custom Attributes feature enabled in SalesWings, you can configure SalesWings Custom Attributes based on Segment events properties (for Track and Screen events) and traits (for Identify events). When you add a Custom Attribute with an id that matches a property or a trait name in Segment, you will see the Custom Attribute values on the lead profiles created for Segment users.
 
