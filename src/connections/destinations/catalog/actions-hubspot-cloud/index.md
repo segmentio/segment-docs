@@ -42,6 +42,9 @@ HubSpot Cloud Mode (Actions) provides the following benefits over the classic Hu
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 7. Enable the destination and configured mappings.
 
+> note ""
+> At least one mapping to handle a connected source's event(s) must be configured and enabled in an Actions-framework destination in order for data to be sent downstream.
+
 {% include components/actions-fields.html %}
 
 ## FAQ & Troubleshooting
