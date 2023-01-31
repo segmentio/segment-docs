@@ -242,3 +242,7 @@ In this case, for sources connected to Engage, Segment hasn't received any event
 You might be returning a value for `user_id` that's inconsistent with how you track `user_id` elsewhere. Some customers want to return `email` as the `user_id`, or a partner's tool ID as the `user_id`. These conflict with Segment best practices and corrupt the identity graph if you then track `user_id` differently elsewhere in your apps.
 
 If you see only question marks in the preview, and have already tracked data historically with Segment, then you likely have the wrong column. If your cloud source doesn't have the database `user_id`, Segment recommends using a `JOIN` clause with an internal users table before sending the results back to Segment.
+
+### Why few SQL trait’s settings are not having “Compute Schedule” option?
+
+New SQL traits created after Feb 8, 2021 have that option enabled by default. Before that, SQL trait computation frequency was disabled and the JIRA has to be created internally to enable the same. but starting on Feb 8th, this has changed. So we can see the compute schedule option on newly created SQL traits, but not on existing traits that were created before Feb 8th, and if you'd like to change the frequency of traits created before Feb 9, 2021, you will have to delete and re-create them.
