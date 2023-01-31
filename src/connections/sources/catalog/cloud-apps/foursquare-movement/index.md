@@ -2,6 +2,8 @@
 title: 'Foursquare Movement Source'
 beta: true
 id: Eek5OnuA7e
+redirect_from:
+  - /connections/sources/catalog/cloud-apps/foursquare-pilgrim/
 ---
 {% include content/source-region-unsupported.md %}
 
@@ -23,15 +25,15 @@ This destination is maintained by Foursquare. For any issues with the destinatio
 
 Below is a table of events that Foursquare's Movement SDK sends to Segment. These events will show up as tables in your warehouse, and as regular events in your other Destinations. Foursquare will send through the `userId` if available.
 
-| Event Name | Description |
-| -------- | -------- |
-| placeArrival | Device has arrived at a venue. Usually occurs after 3-7 minutes. |
-| placeDeparture | Device has left a visited venue. |
-| placeHistorical | Device previously arrived or departed a venue, but the device didn't have network connectivity at the time, but we're letting you know as soon as we have connectivity again. |
-| geofenceEnter | Device has entered a venue, polygon or lat/lng geofence. |
-| geofenceDwell | Device has remained within geofence for pre-determined time. |
-| geofenceVenueConfirmed | Device has dwelled within geofence AND Foursquare thinks this is actually the venue the device is at. |
-| geofenceExit | Device has left geofence. |
+| Event Name               | Description                                                                                                                                                                       |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `placeArrival`           | Device has arrived at a venue. Usually occurs after 3-7 minutes.                                                                                                                  |
+| `placeDeparture`         | Device has left a visited venue.                                                                                                                                                  |
+| `placeHistorical`        | Device previously arrived or departed a venue, but the device didn't have network connectivity at the time, but Foursquare lets you know as soon as they have connectivity again. |
+| `geofenceEnter`          | Device has entered a venue, polygon or lat/lng geofence.                                                                                                                          |
+| `geofenceDwell`          | Device has remained within geofence for pre-determined time.                                                                                                                      |
+| `geofenceVenueConfirmed` | Device has dwelled within geofence AND Foursquare thinks this is actually the venue the device is at.                                                                             |
+| `geofenceExit`           | Device has left geofence.                                                                                                                                                         |
 
 
 ### Event Properties
@@ -39,26 +41,27 @@ Below is a table of events that Foursquare's Movement SDK sends to Segment. Thes
 Below are tables outlining the properties included in the events listed above.
 
 #### Place Visit Event Properties
-Note: all fields are presented as strings.
+
+All fields are presented as strings.
 
 | Property Name         | Description                                                                                 | Values                         |
 | --------------------- | ------------------------------------------------------------------------------------------- | ------------------------------ |
-| address             | Address of visit venue                                                                      | String                         |
-| city                | City of visit venue                                                                         | String                         |
-| confidence          | How likely Foursquare thinks it's correct                                                   | low, medium, high              |
-| country             | Country of visit venue                                                                      | String                         |
-| crossStreet         | Cross street of visit venue                                                                 | String                         |
-| lat                 | Latitude of event                                                                           | Double                         |
-| lng                 | Longitude of event                                                                          | Double                         |
-| locationType        | Indicates if Foursquare thinks this location is device's home or work, otherwise uses venue | work, home, venue              |
-| primaryCategoryId   | Foursquare Category ID of visit venue                                                       | String                         |
-| primaryCategoryName | Human readable category name of visit venue                                                 | String                         |
-| state               | Abbreviation of state or province of visit venue                                            | String                         |
-| timestamp           | ISO 8601 timestamp of when event happened                                                   | Timestamp                      |
-| venueId             | Foursquare ID of visit venue                                                                | String                |
-| venueName           | Name of visit venue                                                                         | String                         |
-| visitType           | Visit type                                                                                  | arrival, departure, historical |
-| zipCode             | Zip or postal code for visit venue                                                          | String                         |
+| `address`             | Address of visit venue                                                                      | String                         |
+| `city`                | City of visit venue                                                                         | String                         |
+| `confidence`          | How likely Foursquare thinks it's correct                                                   | low, medium, high              |
+| `country`             | Country of visit venue                                                                      | String                         |
+| `crossStreet`         | Cross street of visit venue                                                                 | String                         |
+| `lat`                 | Latitude of event                                                                           | Double                         |
+| `lng`                 | Longitude of event                                                                          | Double                         |
+| `locationType`        | Indicates if Foursquare thinks this location is device's home or work, otherwise uses venue | work, home, venue              |
+| `primaryCategoryId`   | Foursquare Category ID of visit venue                                                       | String                         |
+| `primaryCategoryName` | Human readable category name of visit venue                                                 | String                         |
+| `state`               | Abbreviation of state or province of visit venue                                            | String                         |
+| `timestamp`           | ISO 8601 timestamp of when event happened                                                   | Timestamp                      |
+| `venueId`             | Foursquare ID of visit venue                                                                | String                         |
+| `venueName`           | Name of visit venue                                                                         | String                         |
+| `visitType`           | Visit type                                                                                  | arrival, departure, historical |
+| `zipCode`             | Zip or postal code for visit venue                                                          | String                         |
 
 Example:
 ```js
@@ -84,18 +87,18 @@ Example:
 
 #### Geofence Event Properties
 
-| Property Name | Description | Values |
-| -------- | -------- | -------- |
-| categoryIds | Comma separated string of Foursquare category IDs | String |
-| geofenceEventType | Geofence event type | venueEnter, venueDwell, venueConfirmed, venueExit |
-| geofenceId | Foursquare Geofence ID | String |
-| geofenceLat | Latitude of triggered geofence center | Double |
-| geofenceLng | Longitude of triggered geofence center | Double |
-| geofenceName | Name of triggered geofence | String |
-| geofenceProperties | Custom properties of triggered geofence | Key/value Pair |
-| radius | Minimum 50m, radius of triggered geofence | Int |
-| venueChainIds | Comma separated string of Foursquare chain IDs | String |
-| venueId | Foursquare ID of geofenced venue | String |
+| Property Name        | Description                                       | Values                                                    |
+| -------------------- | ------------------------------------------------- | --------------------------------------------------------- |
+| `categoryIds`        | Comma separated string of Foursquare category IDs | String                                                    |
+| `geofenceEventType`  | Geofence event type                               | `venueEnter`, `venueDwell`, `venueConfirmed`, `venueExit` |
+| `geofenceId`         | Foursquare Geofence ID                            | String                                                    |
+| `geofenceLat`        | Latitude of triggered geofence center             | Double                                                    |
+| `geofenceLng`        | Longitude of triggered geofence center            | Double                                                    |
+| `geofenceName`       | Name of triggered geofence                        | String                                                    |
+| `geofenceProperties` | Custom properties of triggered geofence           | Key/value Pair                                            |
+| `radius`             | Minimum 50m, radius of triggered geofence         | Int                                                       |
+| `venueChainIds`      | Comma separated string of Foursquare chain IDs    | String                                                    |
+| `venueId`            | Foursquare ID of geofenced venue                  | String                                                    |
 
 
 Example:
