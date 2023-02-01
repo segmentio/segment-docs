@@ -38,6 +38,9 @@ You probably have teammates who help set up your Segment Workspace with the data
 1. From your Segment space, navigate to **Profiles Settings** and click **Sources**.
 2. On the screen that appears, choose one or two production sources from your Connections workspace.
    Segment recommends connecting your production website or App source as a great starting point.
+   
+> info ""
+> If the source you want to add does not appear on the list, then check if the source is enabled. If the source is enabled, check if you have set up a connection policy which enforces that only sources with specific labels can be added to this space. Read more about connection policy here: https://segment.com/docs/profiles/identity-resolution/space-setup/#step-three-set-up-a-connection-policy
 
 > success ""
 > **Tip:** It sounds a little counter- intuitive to connect a production source to a developer space, but your production sources have rich user data in them, which is what you need to build and validate user profiles.
@@ -68,12 +71,4 @@ Once you validate that your data is flowing through Profiles, you're ready to cr
 
 > success ""
 > If you're using Engage, view additional steps to complete your space set up in the [Engage Foundations Onboarding Guide](/docs/engage/quickstart).
-
-## Profiles FAQ
-
-##### I'm trying to add a source to my Profiles space but I don't see it. Why?
-
-Check if the source is enabled. If the source is enabled, check if you have set up a connection policy which enforces that only sources with specific labels can be added to this space. Read more about connection policy here: https://segment.com/docs/profiles/identity-resolution/space-setup/#step-three-set-up-a-connection-policy 
-
-
 
