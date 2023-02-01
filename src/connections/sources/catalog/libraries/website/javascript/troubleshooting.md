@@ -132,7 +132,7 @@ This works for any [context field](/docs/connections/spec/common/#context) that 
 
 ### What is the impact of exposing the source's write keys?
 
-For the Segment script to work in the browser, the write key must be exposed in order for client-side tracking to work and that is considered the industry best practice. Many major tools expose some kind of public write key (Google Analytics, Mixpanel, Kissmetrics, Hubspot, Marketo, etc).
+For the Segment script to work in the browser, the write key must be exposed in order for client-side tracking to work. Our library architecture requires that the writekey be exposed, similar to other major tools (Google Analytics, Mixpanel, Kissmetrics, Hubspot, Marketo, etc).
  
 We do also have an option available in each Source where you can switch keys right away, if you do see any weird behavior,
 
