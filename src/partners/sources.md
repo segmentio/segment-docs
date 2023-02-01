@@ -8,9 +8,9 @@ Sources send data into Segment, and serve as the origin for your data. Segment e
 
 Before you begin, you need access to the Developer Portal. To access the Developer portal:
 
-1. Apply to become a [Segment Select Partner](https://segment.com/partners/integration/){:target="\_blank"}.
+1. Apply to become a [Segment Select Partner](https://segment.com/partners/integration/){:target="_blank"}.
 2. Once approved, you'll receive an invitation to join the Segment Developer Portal.
-3. Log in to Segment, navigate to the User dropdown in the top right of the screen, and click [**Developer Portal**](https://app.segment.com/dev-portal){:target="\_blank"}.
+3. Log in to Segment, navigate to the User dropdown in the top right of the screen, and click [**Developer Portal**](https://app.segment.com/dev-portal){:target="_blank"}.
 
 ## Build the Source
 
