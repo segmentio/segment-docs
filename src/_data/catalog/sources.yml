@@ -144,7 +144,7 @@ items:
     isCloudEventSource: false
     slug: android
     url: connections/sources/catalog/libraries/mobile/android
-    hidden: false
+    hidden: true
     regions:
       - us
       - eu
@@ -732,7 +732,7 @@ items:
     isCloudEventSource: false
     slug: ios
     url: connections/sources/catalog/libraries/mobile/ios
-    hidden: false
+    hidden: true
     regions:
       - us
       - eu
@@ -801,6 +801,7 @@ items:
       url: https://cdn.filepicker.io/api/file/aRgo4XJQZausZxD4gZQq
     categories:
       - Website
+      - New & Noteworthy
   - id: V2kq0X7vYy
     display_name: Jebbit
     isCloudEventSource: true
@@ -877,11 +878,11 @@ items:
     source_type: server
     description: The hassle-free way to add Segment analytics to your kotlin app (JVM).
     logo:
-      url: https://cdn.filepicker.io/api/file/MuJ4WNE4TRCFe5soqoAP
+      url: https://cdn.filepicker.io/api/file/9BoiIqVRFmsAuBbMMy9D
     categories:
       - Server
   - id: 9EMcTqiKok
-    display_name: Kotlin (Android)
+    display_name: Android
     isCloudEventSource: false
     slug: kotlin-android
     url: connections/sources/catalog/libraries/mobile/kotlin-android
@@ -897,9 +898,10 @@ items:
       The hassle-free way to add Segment analytics to your kotlin app
       (Android/JVM).
     logo:
-      url: https://cdn.filepicker.io/api/file/MuJ4WNE4TRCFe5soqoAP
+      url: https://cdn.filepicker.io/api/file/9BoiIqVRFmsAuBbMMy9D
     categories:
       - Mobile
+      - New & Noteworthy
   - id: cODRw1GgIP
     display_name: LaunchDarkly
     isCloudEventSource: true
@@ -1332,6 +1334,7 @@ items:
       url: https://cdn.filepicker.io/api/file/RfEz2NSeTtS1LLfAVq2X
     categories:
       - Mobile
+      - New & Noteworthy
   - id: 4pJ1eVPRnJ
     display_name: Refiner
     isCloudEventSource: true
@@ -1567,7 +1570,7 @@ items:
     categories:
       - Payments
   - id: dZeHygTSD4
-    display_name: Swift (iOS)
+    display_name: Apple
     isCloudEventSource: false
     slug: swift-ios
     url: connections/sources/catalog/libraries/mobile/swift-ios
@@ -1582,9 +1585,10 @@ items:
       The hassle-free way to add Segment analytics to your swift app (iOS,
       macOS, tvOS).
     logo:
-      url: https://cdn.filepicker.io/api/file/Kszd6sTcT5qO1i9tsunK
+      url: https://cdn.filepicker.io/api/file/qWgSP5cpS7eeW2voq13u
     categories:
       - Mobile
+      - New & Noteworthy
   - id: 86ctsPjqqd
     display_name: test
     isCloudEventSource: true
@@ -1783,6 +1787,7 @@ items:
       url: https://cdn.filepicker.io/api/file/TrFnszJ7Rj6LNZTt4kP5
     categories:
       - Mobile
+      - New & Noteworthy
   - id: FOkpxVzfJJ
     display_name: Vero
     isCloudEventSource: true

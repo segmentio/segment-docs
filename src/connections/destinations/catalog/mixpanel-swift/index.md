@@ -1,17 +1,10 @@
 ---
-title: Mixpanel (Legacy) Destination
-hide-cmodes: true
-hide-personas-partial: true
-id: 54521fd925e721e32a72eed6
+title: Analytics Swift Mixpanel Plugin
+strat: swift
 ---
 [Mixpanel](https://mixpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an event tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion. The client-side Mixpanel Destination code is open-source.
 
-Segment's Mixpanel destination code is open source and available on GitHub. You can view these repositories:
-- [Analytics.js in Device-mode](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/mixpanel){:target="_blank"}
-- [Android](https://github.com/segment-integrations/analytics-android-integration-mixpanel){:target="_blank"}
-- [iOS](https://github.com/segment-integrations/analytics-ios-integration-mixpanel){:target="_blank"}
-- [Swift](https://github.com/segment-integrations/analytics-swift-mixpanel){:target="_blank"}
-- [Kotlin](https://github.com/segment-integrations/analytics-kotlin-mixpanel){:target="_blank"}
+Segment's Mixpanel destination plugin code is open source and available on GitHub. You can view it [here.](https://github.com/segment-integrations/analytics-swift-mixpanel)
 
 ## Getting Started
 
@@ -22,34 +15,52 @@ Segment's Mixpanel destination code is open source and available on GitHub. You 
 3. Copy your Mixpanel "API Secret" and "Token", and paste them into the Connection Settings in Segment.
 4. Enable the destination to start sending your data to Mixpanel.
 
-### Adding device-mode SDKs to React Native
+### Adding the dependency
 
-{% include content/react-dest.md %}
+***Note:** the Mixpanel library itself will be installed as an additional dependency.*
 
-## Page
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
+### via Xcode
+In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repo.
 
-```javascript
-analytics.page()
+https://github.com/segment-integrations/analytics-swift-mixpanel
+
+You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to.  Once you've made your selections, click the `Add Package` button.  
+
+### via Package.swift
+
+Open your Package.swift file and add the following do your the `dependencies` section:
+
+```
+.package(
+            name: "Segment",
+            url: "https://github.com/segment-integrations/analytics-swift-mixpanel.git",
+            from: "1.1.3"
+        ),
 ```
 
-By default, the Page call is transformed to Mixpanel events. This sends all `page` and `screen` calls with a single name, for example `Loaded a Page` or `Loaded a Screen` respectively, with the calls' properties in the body. This gives the best experience of Page/Screen analytics with Mixpanel's reporting.
 
-You can disable this default by changing the "Track All Pages to Mixpanel with a Consolidated Event Name" in the Mixpanel destination settings.
+*Note the Mixpanel library itself will be installed as an additional dependency.*
 
-If you want to track the `page` or `screen` calls to Mixpanel with the name or category in the event name, Segment offers these options to send page/screen calls:
 
-1. Track All Pages to Mixpanel with a Consolidated Event Name
-2. Track all Pages to Mixpanel
-3. Track Categorized Pages to Mixpanel
-4. Track Named Pages to Mixpanel
+## Using the Plugin in your App
 
-> info ""
-> Beginning with "Consolidate Page" calls, the following options are each *mutually exclusive*. [See the code for details](https://github.com/segmentio/analytics.js-integrations/blob/master/integrations/mixpanel/lib/index.js#L96-L139){:target="_blank"}.
+Open the file where you setup and configure the Analytics-Swift library.  Add this plugin to the list of imports.
 
-### Prioritization of settings
+```
+import Segment
+import SegmentMixpanel // <-- Add this line
+```
 
-When you use the Mixpanel destination in Cloud-mode, Segment sends events for each option you select. This may result in Mixpanel receiving duplicate events for a single page call.
+Just under your Analytics-Swift library setup, call `analytics.add(plugin: ...)` to add an instance of the plugin to the Analytics timeline.
+
+```
+let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR WRITE KEY>")
+                    .flushAt(3)
+                    .trackApplicationLifecycleEvents(true))
+analytics.add(plugin: MixpanelDestination())
+```
+
+Your events will now begin to flow to Mixpanel in device mode.
 
 When you use the Mixpanel destination in Device-mode, Segment prioritizes the options to prevent duplicate calls as follows:
 
@@ -162,16 +173,6 @@ Segment recognizes and translates the [special traits](/docs/connections/spec/id
     <td>`$phone`</td>
   </tr>
 </table>
-
-### Group using Cloud-mode
-
-When you call the Identify method from any of Segment's server libraries, Segment creates or updates the user in Mixpanel People with the traits you provide. Calling `identify` doesn't create any users in the standard Mixpanel reporting interface since that only supports `track` events.
-
-You won't see server-side `traits` appear as super-properties on any events you track. This is because Mixpanel [has no REST API](https://github.com/mixpanel/mixpanel-node/issues/48){:target="_blank"} for setting [super properties](https://mixpanel.com/docs/managing-users/managing-user_advanced/specific-properties){:target="_blank"} for a `distinct_id`, so [`identify`](/docs/connections/spec/identify/) calls only affect Mixpanel People.
-
-For Mixpanel People, it's important to `identify` a user before you call `track`. A `track` without an `identify` won't create a user in Mixpanel People.
-
-If you use Cloud-mode, you must explicitly include the grouping value as an event property for any event you want to analyze using Mixpanel's Group Analytics.
 
 ### Register Super Properties
 
@@ -304,45 +305,6 @@ analytics.track('12345', 'Registered')
 ```
 
 Segment recommends that you flush the [`alias`](/docs/connections/spec/alias) to give Mixpanel more time to process it on their side before you [`identify`](/docs/connections/spec/identify) and [`track`](/docs/connections/spec/track).
-
-## Best Practices
-
-### Collecting contextual properties
-
-If you send events server side, depending on your library (JS, mobile, or server), Segment maps as many [Mixpanel supported contextual properties](https://mixpanel.com/help/questions/articles/what-properties-do-mixpanels-libraries-store-by-default){:target="_blank"} as possible.
-
-You can see which [context properties are being automatically collected by any Segment library](/docs/connections/spec/common/). If you use a library that doesn't support a certain contextual property, you can still send them manually with your events, as long as it's sent in accordance with the [spec](/docs/connections/spec/common/).
-
-For example, if you want to send `utm` parameters with your server side library, you can attach a `context.campaign` object like this:
-
-```javascript
-// node library
-
-analytics.track({
-  userId: '019mr8mf4r',
-  event: 'Purchased an Item',
-  properties: {
-    revenue: 39.95,
-    shippingMethod: '2-day'
-  },
-  context: {
-    campaign: {
-      name: "TPS Innovation Newsletter",
-      source: "Newsletter",
-      medium: "email",
-      term: "tps reports",
-      content: "image link"
-    }
-  }
-});
-```
-
-Segment doesn't map `$library_version` since that is reserved for Mixpanel's library version, not Segment's. Segment doesn't map to `$brand`.
-
-- - -
-
-## Features
-
 
 ### People
 
@@ -489,79 +451,12 @@ If an `ip` property is passed to Mixpanel, the value will be interpreted as the 
 
 Instead of `ip`, you can use a property name of `user IP` or `IP Address` (whatever is most clear for your implementation). This way, Mixpanel won't automatically interpret the IP address as an IP address, and instead store that value as a property on the event. You can read more [here](https://mixpanel.com/help/reference/http#tracking-events){:target="_blank"}.
 
-
-### Bypass "Last Seen" in Server-side Calls
-
-You can bypass the automatic re-setting of the "Last Seen" date property by passing **active** with a value of `false` in the `context` object, as follows:
-
-```python
-analytics.identify(
-  user_id='12345',
-  traits={
-    'name': 'Frank'
-  },
-  context={
-    'active': false
-  }
-)
-```
-
 ### Push Notifications
 
 Push notifications are only available for projects bundling the Segment-Mixpanel SDK.
 
 > info ""
 > Set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) documentation.
-
-### In-App Notifications
-
-In-app notifications are only available for projects either bundling the Segment-Mixpanel SDK or using the client-side Web integration. Configure in-app notification handlers by calling into native Mixpanel methods.
-
-> info ""
-> Read more about how to approach this in the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) documentation.
-
-### A/B Testing
-
-> info ""
-> Configure push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) documentation.
-
-#### Device Connection Mode (Bundled Mobile SDK)
-
-Segment supports Mixpanel push notifications automatically using the [didRegisterForRemoteNotificationsWithDeviceToken method](/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications).
-
-For *in-app* notifications and surveys, follow the Mixpanel documentation [here](https://developer.mixpanel.com/docs/swift#in-app-messages){:target="_blank"}. Use the native functionality to control when to show an in-app message by following the instructions [here](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and calling the native Mixpanel methods.
-
-#### Cloud Connection Mode (Unbundled/ Server-side)
-
-If you use Mixpanel server side and you have access to your users' device tokens, you can import into Mixpanel by sending the token using `context.device.token` as described in the [specs](/docs/connections/spec/common/#context) with an `identify` call. Segment sends the token as Mixpanel's special trait `$ios_devices`. This only works on iOS. In order to use push on Android, you must bundle the Mixpanel SDK.
-
-For example, using the [node library](/docs/connections/sources/catalog/libraries/server/node/):
-
-```javascript
-analytics.identify({
-  userId: '019mr8mf4r',
-  traits: {
-    name: 'Michael Bolton',
-    email: 'mbolton@example.com',
-    plan: 'Enterprise',
-    friends: 42
-  },
-  context: {
-    device: {
-      token: 'ff15bc0c20c4aa6cd50854ff165fd265c838e5405bfeb9571066395b8c9da449'
-    }
-  }
-});
-```
-
-### Tracking Mixpanel Push Notification Open Rate
-
-To enable push tracking, click the checkbox within Mixpanel as explained in [Mixpanel's documentation](https://mixpanel.com/help/questions/articles/how-do-i-track-push-notification-open-rate){:target="_blank"}. This feature allows push notification opens to be tracked as properties of an app open event, however this will miss pushes which are received when the app is already open.
-
-To add push open tracking, Mixpanel requires that on initialization Mixpanel is launched with options. Segment makes this available through the factory `(instancetype)createWithLaunchOptions:(NSString *)token launchOptions:(NSDictionary *)launchOptions;`
-
-*Note*: Push open tracking in Android is not currently supported by the Mixpanel Android library.
-
 
 ## Using Mixpanel with Engage
 
