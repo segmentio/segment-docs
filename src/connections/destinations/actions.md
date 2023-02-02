@@ -120,6 +120,12 @@ If necessary, click **New Mapping** to create a new, blank action.
 > info ""
 > The required fields for a destination mapping appear automatically. Click the + sign to see optional fields.
 
+### Coalesce function
+
+The coalesce function takes a primary value and uses it if it is available. If the value isn't available, the function uses the fallback value instead. 
+
+
+
 ### Conditions
 
 > info ""
