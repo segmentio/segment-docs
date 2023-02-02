@@ -182,7 +182,7 @@ For each SQL Trait you create, you can set a compute schedule to query the data 
 
 ### What identifiers can I use to query a list?
 
-You can query based on `email`, `user_id` or `anonymous_id`. If Segment doesn't locate a match based on the chosen identifier, it creates a new profile. See more below.
+You can query based on `email`, `user_id`, or `anonymous_id`. If Segment doesn't locate a match based on the chosen identifier, it creates a new profile. See more below.
 
 ### Can I use SQL Traits to create users in Segment? Or do SQL Traits only append Traits to existing users?
 
@@ -224,8 +224,6 @@ Learn more about granting permissions using the following links:
 Segment supports returning only 25 columns. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with a description of your use case if you need access to more than 25 columns.
 
 ### I'm seeing a duplicate `user_id` error.
-
-![An example of a duplicate user_id error](../images/troubleshoot3.png)
 
 Each query row must correspond to a unique user. Segment displays this error if it detects multiple rows with the same `user_id`. Use a `distinct` or `group by` statement to ensure that each row has a unique user_id.
 
