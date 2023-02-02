@@ -1,5 +1,5 @@
 {% assign sources = site.data.catalog.regional-supported.sources %}
-{% assign destinations = site.data.catalog.regional-supported.destinations %}
+{% assign destinations = site.data.catalog.destinations.items %}
 {% assign warehouses = site.data.catalog.regional-supported.warehouses %}
 
 <input class="table-search" type="text" id="filterInput" onkeyup="searchFilter()"
@@ -48,13 +48,13 @@
     {% for destination in destinations %}
     <tr class="settingRow destination" id="settingRow">
       <td><a href="/docs/{{destination.url}}">{{destination.display_name}}</a></td>
-      <td>{% if destination.regions contains "us" %}<img class="inline"
+      <td>{% if destination.regions contains "us-west-2" or "" %}<img class="inline"
           src="/docs/images/supported.svg" />{% else %}<img alt="" class="inline"
           src="/docs/images/unsupported.svg" />{% endif %}</td>
-      <td>{% if destination.regions contains "eu" and destination.endpoints contains "us" %}<img class="inline"
+      <td>{% if destination.regions contains "eu-west-1" and destination.endpoints contains "US" %}<img class="inline"
           src="/docs/images/supported.svg" />{% else %}<img alt="" class="inline"
           src="/docs/images/unsupported.svg" />{% endif %}</td>
-      <td> {% if destination.regions contains "eu" and destination.endpoints contains "eu" %}<img class="inline"
+      <td> {% if destination.regions contains "eu-west-1" and destination.endpoints contains "EU" %}<img class="inline"
           src="/docs/images/supported.svg" />{% else %}<img alt="" class="inline"
           src="/docs/images/unsupported.svg" />{% endif %}</td>
     </tr>
