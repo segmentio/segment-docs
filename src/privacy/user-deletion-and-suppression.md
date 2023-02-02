@@ -52,6 +52,22 @@ You will also need to contact any unsupported Destinations separately to manage 
 
 Note that if you later **UNSUPPRESS** a user, the deletion functionality does not clean up data sent after removing the user from the suppression list.
 
+### Supported Destinations
+
+In addition to Raw Data destinations (Amazon S3 and Data Warehouses), we can forward requests to the following streaming destinations:
+
+- Amplitude
+- Iterable
+- Braze
+- Intercom
+- Webhooks
+- tray.io
+- Appcues
+- Vero
+- Google Analytics
+- Customer.io
+- Optimizely Full Stack
+
 ## Suppressed users
 
 The Suppressed Users tab shows an up-to-date list of **actively** suppressed `userId`s. Segment blocks data about these users across all sources.
