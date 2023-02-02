@@ -6,6 +6,7 @@ Once you have enabled Destinations for a given Source, all of the [data](/docs/c
 
 But what happens when you want to send all of your data to a warehouse, and only two specific events to an analytics tool? And once you're satisfied with your spec, how do you make sure rogue events are blocked from all of your warehouses and end tools? Segment gives you the power to control exactly what data is allowed into your Destinations, so you can protect the integrity of your data, and the decisions you make with it.
 
+
 ## How do I filter specific events from being sent to specific Destinations?
 
 An `integrations object` may be passed in the `options` of  `group`, `identify`, `page` and `track` methods, allowing selective Destination filtering. By default all Destinations are enabled.
@@ -72,5 +73,9 @@ The Identify & Group CSV file contains the following columns:
 - Planned (available for Protocols customers with a connected Tracking Plan)
   - Values are "planned" or "unplanned"
 
-> note ""
-> Export Schema doesn't include any actual values (for example, personal data) for the events, properties, and traits you are tracking for a specific source.
+> info ""
+> The export schema doesn't include actual values (for example, personal data) for the events, properties, and traits you are tracking for a specific source.
+
+
+
+See the [Segment Schema Limits](/docs/connections/schema-unique-limits/) for more information on how to manage the Source Schema. 
