@@ -11,7 +11,6 @@
   <a href="#" id="warehouse" class="button button-link">Warehouses</a>
 </div>
 
-
 <table id="settingsTable">
   <thead>
     <tr>
