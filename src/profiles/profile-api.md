@@ -163,7 +163,7 @@ The Profile API uses basic authentication for authorization — with the **Acces
 
 You can create your Access Secret in your Profiles Settings page. Segment recommends that you name your tokens with the name of your app and its environment, such as `marketing_site/production`. Access tokens are shown once — you won't be able to see it again. In the event of a security incident, you can revoke and cycle the access token.
 
-When you make requests to the Profile API, use the Access Token as the basic authentication username and keep the password blank.
+When you make requests to the Profile API, use the Access Token as the basic authentication username and keep the password blank. Be sure to base64 encode your Access Token as is a general requirement for basic authentication.
 
 ```bash
 curl https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles
