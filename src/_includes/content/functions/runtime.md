@@ -19,11 +19,13 @@ The following dependencies are installed in the function environment by default.
 - [`jsforce v1.11.0`](https://www.npmjs.com/package/jsforce){:target="_blank"} exposed as `jsforce`
 - [`jsonwebtoken v8.5.1`](https://www.npmjs.com/package/jsonwebtoken){:target="_blank"} exposed as `jsonwebtoken`
 - [`lodash v4.17.19`](https://www.npmjs.com/package/lodash){:target="\_blank"} exposed as `_`
+- [`mailjet`](https://www.npmjs.com/package/node-mailjet){:target="_blank"} exposed as `const mailJet = nodemailjet.nodemailjet;`
 - [`moment-timezone v0.5.31`](https://www.npmjs.com/package/moment-timezone/v/0.5.31){:target="_blank"} exposed as `moment`
 - [`node-fetch v2.6.0`](https://www.npmjs.com/package/node-fetch){:target="_blank"} exposed as `fetch`
 - [`oauth v0.9.15`](https://www.npmjs.com/package/oauth){:target="_blank"} exposed as `OAuth`
 - [`@sendgrid/client v7.4.7`](https://www.npmjs.com/package/@sendgrid/client){:target="_blank"} exposed as `sendgrid.client`
 - [`@sendgrid/mail v7.4.7`](https://www.npmjs.com/package/@sendgrid/mail){:target="_blank"} exposed as `sendgrid.mail`
+- [`skyflow`](https://www.npmjs.com/package/skyflow-node){:target="_blank"} exposed as `skyflowlib.skyflow`
 - [`stripe v8.115.0`](https://www.npmjs.com/package/stripe){:target="_blank"} exposed as `stripe`
 - [`twilio v3.68.0`](https://www.npmjs.com/package/twilio){:target="_blank"} exposed as `twilio`
 - [`uuidv5 v1.0.0`](https://www.npmjs.com/package/uuidv5){:target="_blank"} exposed as `uuidv5.uuidv5`
