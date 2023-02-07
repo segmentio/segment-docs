@@ -43,7 +43,7 @@ HubSpot Cloud Mode (Actions) provides the following benefits over the classic Hu
 7. Enable the destination and configured mappings.
 
 > note ""
-> At least one mapping to handle a connected source's event(s) must be configured and enabled in an Actions-framework destination in order for data to be sent downstream.
+> To ensure that data is sent downstream, configure and enable at least one mapping to handle a connected sources event(s).
 
 {% include components/actions-fields.html %}
 
