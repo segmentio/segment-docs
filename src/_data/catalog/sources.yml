@@ -11,8 +11,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: server
     description: ''
     logo:
@@ -28,7 +28,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: ''
     logo:
@@ -44,7 +44,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Key customer interactions happen over the phone. Connect Aircall to
@@ -68,7 +68,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Airship gives brands the data, channels, orchestration and services they
@@ -90,7 +90,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: Send data from an S3 bucket into Segment
     logo:
@@ -107,8 +107,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: server
     description: >-
       The Segment AMP component makes it easy to send your data to lots of tools
@@ -129,7 +129,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Simply provide your Segment source's writeKey to Amplitude in your
@@ -149,8 +149,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: mobile
     description: ''
     logo:
@@ -166,7 +166,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: desc
     logo:
@@ -182,7 +182,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: Autopilot is easy-to-use software for multi-channel marketing automation.
     logo:
@@ -198,7 +198,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Keep users updated and engaged. Announce important news, latest updates,
@@ -221,7 +221,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: Use BigQuery as a Warehouse Source for Reverse ETL.
     logo:
@@ -237,7 +237,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Automatically pipe Bluedot event data into Segment so you can use it
@@ -257,7 +257,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Blueshift's predictive marketing automates behavioral messaging on email,
@@ -275,7 +275,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Braze is the platform of choice for serious growth, engagement, and
@@ -294,7 +294,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Candu is the first UI editor for enterprise applications that allows you
@@ -315,7 +315,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: Chatlio lets you chat directly with your customers from Slack.
     logo:
@@ -332,8 +332,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: server
     description: ''
     logo:
@@ -349,7 +349,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       CommandBar gives your users a searchable index of your app's features and
@@ -370,7 +370,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Customer.io is an automated email tool. It lets you set up rules to
@@ -389,7 +389,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Delighted uses the Net Promoter System® to gather real feedback from your
@@ -407,7 +407,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: ''
     logo:
@@ -423,7 +423,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: ''
     logo:
@@ -439,8 +439,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: cloud-app
     description: >-
       The Facebook Ads source pulls impressions, spend, campaign, and click data
@@ -458,7 +458,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       The Facebook Lead Ads source pulls your Lead Ad form data from your
@@ -477,8 +477,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: cloud-app
     description: 'Engine Mobile SDK: location intelligence for your mobile app.'
     logo:
@@ -495,7 +495,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Formsort is a low code form builder empowering product and growth teams to
@@ -515,7 +515,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Foursquare provides real-time event triggering based upon your users’
@@ -538,7 +538,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Friendbuy is a referral marketing and campaign optimization platform.
@@ -557,7 +557,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Gladly helps commerce and retail brands track customer service requests by
@@ -581,8 +581,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: server
     description: ''
     logo:
@@ -599,8 +599,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: cloud-app
     description: >-
       The Google Ads source pulls impressions, spend, campaign, and click data
@@ -618,7 +618,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       HEROW is a context recognition tool for mobile applications. Built around
@@ -639,8 +639,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: server
     description: ''
     logo:
@@ -657,8 +657,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: cloud-app
     description: >-
       When you authenticate with your Hubspot account, we'll pull their core
@@ -676,7 +676,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       IBM Watson Assistant is used to quickly build a customized AI chatbot and
@@ -699,7 +699,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: Wootric is modern software for measuring and boosting customer happiness.
     logo:
@@ -715,7 +715,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Insider connects data across channels, predicts future behavior with AI,
@@ -742,8 +742,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: cloud-app
     description: >-
       Once you have successfully added your credentials we start syncing your
@@ -765,8 +765,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: mobile
     description: ''
     logo:
@@ -782,7 +782,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: ''
     logo:
@@ -799,8 +799,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: server
     description: ''
     logo:
@@ -817,8 +817,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: website
     description: >-
       This is our most flexible and powerful tracking system, using
@@ -838,7 +838,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       With Jebbit's quiz and customer experience platform, you can trigger any
@@ -854,11 +854,11 @@ items:
     isCloudEventSource: true
     slug: journy-io
     url: connections/sources/catalog/cloud-apps/journy-io
-    hidden: false
+    hidden: true
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       journy.io discovers SaaS platform accounts (B2B) and users (B2B/B2C) that
@@ -880,7 +880,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Klaviyo is an email marketing platform that helps companies make more
@@ -900,7 +900,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Klenty helps sales teams to send personalized emails and automated
@@ -922,8 +922,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: server
     description: The hassle-free way to add Segment analytics to your kotlin app (JVM).
     logo:
@@ -940,8 +940,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: mobile
     description: >-
       The hassle-free way to add Segment analytics to your kotlin app
@@ -959,7 +959,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       LaunchDarkly is a feature management platform that empowers development
@@ -979,7 +979,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Leanplum is a multi-channel customer engagement platform that helps Growth
@@ -1000,7 +1000,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       This source is in beta! Looker is a business intelligence software
@@ -1020,8 +1020,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: cloud-app
     description: >-
       Once you have successfully added your credentials we start syncing your
@@ -1042,7 +1042,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       All-in-one email service provider that provides maximum insight and
@@ -1062,8 +1062,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: cloud-app
     description: ''
     logo:
@@ -1080,8 +1080,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: cloud-app
     description: ''
     logo:
@@ -1098,7 +1098,7 @@ items:
       - us
       - eu
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Mixpanel helps teams get answers to product questions by providing fast,
@@ -1118,7 +1118,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       MoEngage is an insights-led Customer Engagement platform for consumer
@@ -1144,7 +1144,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: API Analytics to Grow API Platforms
     logo:
@@ -1165,8 +1165,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: server
     description: ''
     logo:
@@ -1182,7 +1182,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Nudgespot is the easiest way to trigger emails, SMS, push notifications or
@@ -1200,7 +1200,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       OneTrust helps organizations rethink how to connect with customers in ways
@@ -1226,7 +1226,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: ''
     logo:
@@ -1241,7 +1241,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Send Paytronix loyalty data to Segment in order to better orchestrate
@@ -1262,7 +1262,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Pendo extends your product to capture user behavior, gather feedback, and
@@ -1282,8 +1282,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: server
     description: ''
     logo:
@@ -1299,7 +1299,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       This source requires you to have a service agreement with Stitch. Once you
@@ -1320,8 +1320,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: server
     description: ''
     logo:
@@ -1338,7 +1338,7 @@ items:
       - us
       - eu
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       We suggest that you create one source for each type of data you want to
@@ -1357,7 +1357,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       ProveSource is a social proof marketing platform that streams recent
@@ -1381,8 +1381,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: server
     description: ''
     logo:
@@ -1398,7 +1398,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: The location platform for mobile apps.
     logo:
@@ -1415,8 +1415,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: mobile
     description: ''
     logo:
@@ -1432,7 +1432,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: Micro-surveys that drive user engagement.
     logo:
@@ -1451,7 +1451,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Next-gen phone marketing and sales enablement for innovative consumer and
@@ -1472,8 +1472,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: ott
     description: ''
     logo:
@@ -1490,8 +1490,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: server
     description: ''
     logo:
@@ -1508,8 +1508,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: cloud-app
     description: >-
       When you enter your Salesforce credentials and hit save, we will sync
@@ -1536,8 +1536,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: cloud-app
     description: >-
       The Salesforce Marketing Cloud (formerly ExactTarget) is a marketing suite
@@ -1557,7 +1557,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: Cross-Channel Campaign Management
     logo:
@@ -1577,8 +1577,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: cloud-app
     description: >-
       Once you have successfully added your credentials we start syncing your
@@ -1599,7 +1599,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: website
     description: >-
       Littledata is a third-party plugin for installing Segment and collecting
@@ -1617,7 +1617,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: Use Snowflake as a Warehouse Source for Reverse ETL.
     logo:
@@ -1633,7 +1633,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Enabling Statsig as a Source in Segment provides an easy way to get
@@ -1652,7 +1652,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: 'Requires access to Stitch''s Pinwheel service. '
     logo:
@@ -1669,8 +1669,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: cloud-app
     description: >-
       Once you have successfully OAuth’d into Stripe, we will begin syncing
@@ -1691,7 +1691,7 @@ items:
       - us
       - eu
     endpoints:
-      - us
+      - us-west-2
     source_type: mobile
     description: >-
       The hassle-free way to add Segment analytics to your swift app (iOS,
@@ -1709,7 +1709,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: desc
     logo:
@@ -1725,7 +1725,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: ''
     logo:
@@ -1740,7 +1740,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: ''
     logo:
@@ -1755,7 +1755,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: ''
     logo:
@@ -1770,7 +1770,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: ''
     logo:
@@ -1785,7 +1785,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: product destination
     logo:
@@ -1801,7 +1801,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       https://app.segment.com/dev-portal/integrations/source/thomas-gilbert-test/edit
@@ -1818,7 +1818,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: This is a description
     logo:
@@ -1835,7 +1835,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       When you authenticate with your Hubspot account, we'll pull their core
@@ -1854,8 +1854,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: cloud-app
     description: >-
       Once you have successfully added your credentials we start syncing your
@@ -1877,7 +1877,7 @@ items:
       - us
       - eu
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Twilio Event Streams allows you to tap into a unified stream of every
@@ -1895,7 +1895,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: mobile
     description: The hassle-free way to add Segment analytics to your Unity app.
     logo:
@@ -1911,7 +1911,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: ''
     logo:
@@ -1927,7 +1927,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       Correlate WorkRamp learner data to business metrics in Segment to unlock
@@ -1949,8 +1949,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: mobile
     description: ''
     logo:
@@ -1966,7 +1966,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: ''
     logo:
@@ -1981,7 +1981,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: >-
       YOUBORA is a business intelligence and video analytics solution for the
@@ -2003,7 +2003,7 @@ items:
     regions:
       - us
     endpoints:
-      - us
+      - us-west-2
     source_type: cloud-app
     description: ''
     logo:
@@ -2019,8 +2019,8 @@ items:
       - us
       - eu
     endpoints:
-      - us
-      - eu
+      - us-west-2
+      - eu-west-1
     source_type: cloud-app
     description: >-
       When you enter your Zendesk credentials and hit save, we will sync

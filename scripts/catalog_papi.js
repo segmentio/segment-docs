@@ -197,7 +197,7 @@ const updateSources = async () => {
     let settings = source.options
     let hidden = false
     let regions = ['us']
-    let endpoints = ['us']
+    let endpoints = ['us-west-2']
     let mainCategory = source.categories[0] ? source.categories[0].toLowerCase() : ''
 
     // determine the doc url based on the source's main category
@@ -225,7 +225,7 @@ const updateSources = async () => {
     }
 
     if (regionalSourceEndpoint.includes(slug)) {
-      endpoints.push('eu')
+      endpoints.push('eu-west-1')
     }
 
     if (regionalSourceRegion.includes(slug)) {
@@ -242,6 +242,8 @@ const updateSources = async () => {
       hidden: isCatalogItemHidden(url),
       regions,
       endpoints,
+      endpoints_papi: source.supportedRegions,
+      regions_papi: source.regionEndpoints,
       source_type: mainCategory,
       description: source.description,
       logo: {
@@ -321,7 +323,7 @@ const updateSources = async () => {
 const updateDestinations = async () => {
   let destinations = []
   let destinationsUpdated = []
-  // let regionalDestinationsUpdated = []
+  let regionalDestinationsUpdated = []
   let destinationCategories = []
   let categories = new Set()
   let nextPageToken = "MA=="
@@ -342,23 +344,23 @@ const updateDestinations = async () => {
     return 0;
   })
 
-  // const regionalDestinationEndpoints= regionalSupport.destinations.endpoint
-  // const regionalDestinationRegions= regionalSupport.destinations.region
+  const regionalDestinationEndpoints= regionalSupport.destinations.endpoint
+  const regionalDestinationRegions= regionalSupport.destinations.region
 
 
   destinations.forEach(destination => {
-    // let endpoints = ['us']
-    // let regions = ['us']
+    let endpoints = ['us-west-2']
+    let regions = ['US']
 
     let slug = slugify(destination.name)
 
-    // if (regionalDestinationEndpoints.includes(slug)) {
-    //   endpoints.push('eu')
-    // }
+    if (regionalDestinationEndpoints.includes(slug)) {
+      endpoints.push('eu-west-1')
+    }
 
-    // if (regionalDestinationRegions.includes(slug)) {
-    //   regions.push('eu')
-    // }
+    if (regionalDestinationRegions.includes(slug)) {
+      regions.push('EU')
+    }
     
 
     let url = `connections/destinations/catalog/${slug}`
@@ -413,8 +415,10 @@ const updateDestinations = async () => {
       name: destination.name,
       slug,
       hidden: isCatalogItemHidden(url),
-      endpoints: destination.regionEndpoints,
-      regions: destination.supportedRegions,
+      endpoints,
+      regions,
+      endpoints_papi: destination.supportedRegions,
+      regions_papi: destination.regionEndpoints,
       url,
       previous_names: destination.previousNames,
       website: destination.website,
@@ -441,16 +445,16 @@ const updateDestinations = async () => {
     doesCatalogItemExist(updatedDestination)
     tempCategories.reduce((s, e) => s.add(e), categories)
 
-    // let updatedRegionalDestination = {
-    //   id: destination.id,
-    //   display_name: destination.name,
-    //   slug,
-    //   url,
-    //   regions,
-    //   endpoints
-    // }
+    let updatedRegionalDestination = {
+      id: destination.id,
+      display_name: destination.name,
+      slug,
+      url,
+      regions,
+      endpoints
+    }
 
-    // regionalDestinationsUpdated.push(updatedRegionalDestination)
+    regionalDestinationsUpdated.push(updatedRegionalDestination)
   })
 
 
@@ -493,12 +497,12 @@ const updateDestinations = async () => {
   fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/destination_categories.yml`), output);
 
   // Append regional destinations to regional file
-  // output = yaml.dump({
-  //   destinations: regionalDestinationsUpdated
-  // }, {
-  //   noArrayIndent: false
-  // })
-  // fs.appendFileSync(path.resolve(__dirname,`../src/_data/catalog/regional-supported.yml`),output);
+  output = yaml.dump({
+    destinations: regionalDestinationsUpdated
+  }, {
+    noArrayIndent: false
+  })
+  fs.appendFileSync(path.resolve(__dirname,`../src/_data/catalog/regional-supported.yml`),output);
   console.log("destinations done")
 }
 
