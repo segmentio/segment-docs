@@ -64,6 +64,9 @@ To set up a new Actions-framework destination for the first time:
     You can choose **Quick Setup** to use the default mappings, or choose **Customized Setup** (if available) to create new mappings and conditions from a blank state. You can always edit these mappings later.
 7. Once you're satisfied with your mappings, click **Create Destination**.
 
+> info ""
+> At least one mapping to handle a connected source's event(s) must be configured and enabled in an Actions-framework destination in order for data to be sent downstream.
+
 ## Migrate a classic destination to an actions-based destination
 
 {% include content/ajs-upgrade.md %}
@@ -116,6 +119,12 @@ If necessary, click **New Mapping** to create a new, blank action.
 
 > info ""
 > The required fields for a destination mapping appear automatically. Click the + sign to see optional fields.
+
+### Coalesce function
+
+The coalesce function takes a primary value and uses it if it is available. If the value isn't available, the function uses the fallback value instead. 
+
+
 
 ### Conditions
 

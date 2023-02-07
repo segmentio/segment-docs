@@ -135,7 +135,7 @@ When you're building your query, keep the following requirements in mind for the
 - The query must not return any `user_id`s, `anonymous_id`s, or `group_id`s with a `null` value.
 - The query must not return any records with duplicate `user_id`s.
 - The query must not return more than 25 million rows.
-- Each record must be less than 16kb in size to adhere to [Segment's maximum request size](/docs/connections/sources/catalog/libraries/server/http-api/#max-request-size).
+- Each record must be less than 16KB in size to adhere to [Segment's maximum request size](/docs/connections/sources/catalog/libraries/server/http-api/#max-request-size).
 
 A successful preview returns a sample of users and their traits.
 If Segment recognizes a user already in Engage, it displays a green checkmark on their profile. Clicking the checkmark displays the user's profile. If a user has a question mark, Segment hasn't detected this `user_id` in Engage before.
@@ -182,7 +182,7 @@ For each SQL Trait you create, you can set a compute schedule to query the data 
 
 ### What identifiers can I use to query a list?
 
-You can query based on `email`, `user_id` or `anonymous_id`. If Segment doesn't locate a match based on the chosen identifier, it creates a new profile. See more below.
+You can query based on `email`, `user_id`, or `anonymous_id`. If Segment doesn't locate a match based on the chosen identifier, it creates a new profile. See more below.
 
 ### Can I use SQL Traits to create users in Segment? Or do SQL Traits only append Traits to existing users?
 
@@ -198,7 +198,7 @@ If you're importing a large list of users and traits, you'll need to consider yo
 
 ### Is there a limit on the size of a SQL Trait's payload?
 
-Yes, Segment limits request sizes to a maximum of 16kb. Records larger than this are discarded.
+Yes, Segment limits request sizes to a maximum of 16KB. Records larger than this are discarded.
 
 ## Troubleshooting
 
@@ -224,8 +224,6 @@ Learn more about granting permissions using the following links:
 Segment supports returning only 25 columns. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with a description of your use case if you need access to more than 25 columns.
 
 ### I'm seeing a duplicate `user_id` error.
-
-![An example of a duplicate user_id error](../images/troubleshoot3.png)
 
 Each query row must correspond to a unique user. Segment displays this error if it detects multiple rows with the same `user_id`. Use a `distinct` or `group by` statement to ensure that each row has a unique user_id.
 
