@@ -42,7 +42,7 @@ That will create an instance of `Analytics` that you can use to send data to Seg
 If you're using Rails, you can stick that initialization logic in `config/initializers/analytics_ruby.rb` and omit the `require` call.
 
 > info ""
-> The analytics-ruby gem makes requests asynchronously, which can sometimes be suboptimal and difficult to debug if you're pairing it with a queuing system like Sidekiq/delayed job/sucker punch/resqueue. If you'd prefer to use a gem that makes requests synchronously, you can check out [`simple_segment`](https://github.com/whatthewhat/simple_segment){:target="_blank"} , an API-compatible drop-in replacement for the standard gem that does its work synchronously inline. Big thanks to [Mikhail Topolskiy](https://github.com/whatthewhat){:target="_blank"}  for his stewardship of this alternative gem!
+> The analytics-ruby gem makes requests asynchronously, which can sometimes be suboptimal and difficult to debug if you're pairing it with a queuing system like Sidekiq/delayed job/sucker punch/resqueue. If you prefer to use a gem that makes requests synchronously, you can use [`simple_segment`](https://github.com/whatthewhat/simple_segment){:target="_blank"} , an API-compatible drop-in replacement for the standard gem that does its work synchronously inline. If you choose to use `simple_segment`, please note that because the `simple_segment` package isn't owned and maintained directly by Segment, Segment wont' be able to provide support for it. 
 
 ### Regional configuration
 {% include content/regional-config.md %}
