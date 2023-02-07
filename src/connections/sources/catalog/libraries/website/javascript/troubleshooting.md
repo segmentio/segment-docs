@@ -132,13 +132,12 @@ This works for any [context field](/docs/connections/spec/common/#context) that 
 
 ### What is the impact of exposing the source's write keys?
 
-For the Segment script to work in the browser, the write key must be exposed in order for client-side tracking to work. Our library architecture requires that the writekey be exposed, similar to other major tools (Google Analytics, Mixpanel, Kissmetrics, Hubspot, Marketo, etc).
+For the Segment script to work in the browser, you need to expose the write key in order for client-side tracking to work. Segment's library architecture requires the write key to be exposed, similar to that of other major tools like Google Analytics, Mixpanel, Kissmetrics, Hubspot, and Marketo.
  
-We do also have an option available in each Source where you can switch keys right away, if you do see any weird behavior,
+If you see any unusual behavior associated with your write key, you can generate a new key. Navigate to **Connections > Sources** and select your source. On the **Settings** tab, go to the **API Keys** section, and click **Generate New Key**.
 
-![image](https://user-images.githubusercontent.com/96406241/213965601-47549725-8afc-4c2d-b3c5-13586dfbf318.png)
 
-However, if you do feel it's necessarily to hide the write key, you can use our HTTP Tracking API or one of our server-side libraries.
+If you feel it necessarily to hide the write key, you can use Segment's [HTTP Tracking API source](/docs/connections/sources/catalog/libraries/server/http-api/) or one of the other [server-side libraries](/docs/connections/sources/catalog/#server).
 
 ## Known issues:
 
