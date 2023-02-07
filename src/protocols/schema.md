@@ -7,7 +7,7 @@ title: Schema Controls
 
 Segment Business plan customers can use Schema Controls to manage which events are allowed to pass through Segment and on to Destinations. These filters are a first-line defense to help you protect the integrity of your data, and the decisions made with it.
 
-Blocking events within the source schema will exclude it from API and MTU calculations. The events are discarded before they reach our pipeline that we use for calculations of MTUs. 
+Blocking events within the source schema will exclude them from API and MTU calculations. These events are discarded before they reach the pipeline that Segment uses for MTU calculations. 
 
 ## Event filters
 
