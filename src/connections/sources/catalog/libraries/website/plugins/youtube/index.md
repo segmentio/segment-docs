@@ -5,10 +5,16 @@ hidden: true
 
 With the analytics.js YouTube Plugin you can collect YouTube player events into the Segment ecosystem.
 
-## Prerequisites
-The Segment YouTube Plugin requires the YouTube player JavaScript object as an input, so your YouTube player embed must use the [YouTube IFrame player API](https://developers.google.com/youtube/iframe_api_reference#Getting_Started).
+The Segment YouTube Plugin uses the following Google APIs:
+- [YouTube IFrame player API](https://developers.google.com/youtube/iframe_api_reference#Getting_Started){:target="_blank”}: Controls the video (play, pause, stop).
+- [Data API](https://developers.google.com/youtube/v3/getting-started){:target="_blank”}: Accesses metadata about the video in the iFrame.
 
-To begin, generate an API Key for the Segment YouTube plugin, which it uses to access metadata about the playing video content. To do this, create a new project in the Google Developer Console, then create a new API Key in that project for the Segment YouTube plugin. You can read more about this process in the YouTube documentation on [registering an application](https://developers.google.com/youtube/registering_an_application).
+## Prerequisites
+
+To begin, create a new project in the Google Developer Console, then create a new API key in that project. You can read more about this process in the YouTube documentation on [registering an application](https://developers.google.com/youtube/registering_an_application){:target="_blank”}. 
+
+> note "Secure your API keys"
+> You can [secure your API keys](https://cloud.google.com/docs/authentication/api-keys#securing){:target="_blank”} by adding API key restrictions, deleting unused API keys, and periodically rotating your keys. 
 
 ## Getting Started
 
@@ -38,7 +44,7 @@ var player;
       })}
 ```
 
-That's it! The plugin listens to the YouTube player for events, and fires the corresponding [Segment Video Spec](/docs/connections/spec/video/) events on analytics.js.
+The plugin listens to the YouTube player for events, and fires the corresponding [Segment Video Spec](/docs/connections/spec/video/) events on analytics.js.
 
 ## Supported Events
 The plugin tracks the following [Segment Video Spec](/docs/connections/spec/video/) events:

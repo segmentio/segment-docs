@@ -10,6 +10,9 @@ All of Segment's libraries are open-source, and you can view Analytics for React
 
 > info "Using Analytics for React Native Classic?"
 > If you're still using the classic version of Analytics for React Native, you can refer to the documentation [here](/docs/connections/sources/catalog/libraries/mobile/react-native/classic).
+> <br><br>On May 15, 2023, Segment will end support for Analytics React Native Classic, which includes versions 1.5.1 and older. [Upgrade to Analytics React Native 2.0](/docs/connections/sources/catalog/libraries/mobile/react-native/migration/). See the [Analytics React Native 2.0 docs](/docs/connections/sources/catalog/libraries/mobile/react-native/) to learn more. 
+
+Upgrade to Analytics React Native 2.0. See the Analytics React Native 2.0 docs to learn more.  
 
 If you're migrating to Analytics React Native 2.0 from an older Analytics React Native version, skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/react-native/migration/).
 
@@ -69,6 +72,7 @@ To get started with the Analytics for React Native 2.0 library:
     `trackAppLifecycleEvents` | The default is set to `false`. <br> This enables you to automatically track app lifecycle events, such as application installed, opened, updated, backgrounded. Set to true to `true` to track.
     `trackDeepLinks` | The default is set to `false`. <br> This automatically tracks when the user opens the app via a deep link. Set to Enable automatic tracking for when the user opens the app via a deep link.
     `proxy` | The default is set to `undefined`. <br> This is a batch url to post to instead of the default batch endpoint.
+    `collectDeviceId` | The default is set to `fasle`. <br> This automatically adds a `device.Id` property to the context object from the DRM API on Android devices.
 
 ## Set up iOS Deep Link Tracking
 > warning ""
@@ -478,6 +482,47 @@ segmentClient.add({ plugin: new Logger() });
 
 As the plugin overrides the `execute()` method, this `Logger` calls `console.log` for every event going through the Timeline.
 
+### Add a custom Destination Plugin 
+
+You can add custom plugins to Destination Plugins. For example, you could implement the following logic to send events to Braze on weekends only:
+
+```js
+
+import { createClient } from '@segment/analytics-react-native';
+
+import {BrazePlugin} from '@segment/analytics-react-native-plugin-braze';
+import {BrazeEventPlugin} from './BrazeEventPlugin';
+
+const segmentClient = createClient({
+  writeKey: 'SEGMENT_KEY'
+});
+
+const brazeplugin = new BrazePlugin();
+const myBrazeEventPlugin = new BrazeEventPlugin();
+brazeplugin.add(myBrazeEventPlugin);
+segmentClient.add({plugin: brazeplugin});
+
+// Plugin code for BrazeEventPlugin.ts
+import {
+  Plugin,
+  PluginType,
+  SegmentEvent,
+} from '@segment/analytics-react-native';
+
+export class BrazeEventPlugin extends Plugin {
+  type = PluginType.before;
+
+  execute(event: SegmentEvent) {
+    var today = new Date();
+    if (today.getDay() === 6 || today.getDay() === 0) {
+      return event;
+    }
+  }
+}
+```
+
+Segment would then send events to the Braze Destination Plugin on Saturdays and Sundays, based on device time.
+
 ### Example Plugins
 These are the example plugins you can use and alter to meet your tracking needs:
 
@@ -551,7 +596,19 @@ No, only the plugins listed above are supported in device-mode for Analytics Rea
 ### Will I still see device-mode integrations listed as `false` in the integrations object?
 When you successfully package a plugin in device-mode, you won't see the integration listed as `false` in the integrations object for a Segment event. This logic is packaged in the event metadata, and isn't surfaced in the Segment debugger.
 ### Why are my IDs not set in UUID format?
-Due to [limitations](https://github.com/segmentio/analytics-react-native/blob/master/packages/core/src/uuid.ts#L5){:target="_blank"} with the React Native bridge, Segment doesn't use UUID format for `anonymousId`s and `messageId`s in local development. These IDs will be set in UUID format for your live app.  
+Due to [limitations](https://github.com/segmentio/analytics-react-native/blob/master/packages/core/src/uuid.ts#L5){:target="_blank"} with the React Native bridge, Segment doesn't use UUID format for `anonymousId` and `messageId` values in local development. These IDs will be set in UUID format for your live app.
+### How do I set a distinct writeKey for iOS and android?
+You can set different writeKeys for iOS and Android. This is helpful if you want to send data to different destinations based on the client side platform. To set different writeKeys, you can dynamically set the writeKey when you initialize the Segment client:
 
+```js
+import {Platform} from 'react-native';
+import { createClient } from '@segment/analytics-react-native';
+
+const segmentWriteKey = Platform.iOS ? 'ios-writekey' : 'android-writekey';
+
+const segmentClient = createClient({
+  writeKey: segmentWriteKey
+});
+```
 ## Changelog
 [View the Analytics React Native 2.0 changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.

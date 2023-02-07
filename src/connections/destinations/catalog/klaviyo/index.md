@@ -78,7 +78,7 @@ If your `userId` is an email, or you provide an email in `traits.email`, Segment
 
 #### Enforce email as primary identifier
 
-If this option is enabled, Segment won't set the `$id` field to your `userId` when you call ``.identify()`` or ``.track()``. Instead, Segment will set a custom attribute `id` and only set `$email` as the primary identifier with your `traits.email` or `properties.email`. You should be careful when enabling this option and understand its full implications. This should only be enabled if you are experiencing an issue with duplicate profiles being created inside Klaviyo.
+This option is enabled by default to ensure duplicate profiles are not being created inside of Klaviyo. When enabled, Segment will never set the $id field to your `userId` when you call `.identify()` or `.track()`. Instead, Segment will only set $email as the primary identifier with your `traits.email` or `properties.email`. 
 
 #### Fallback on Anonymous ID
 
@@ -141,6 +141,9 @@ analytics.track({
 ### Client-side Track
 
 When you call `track` on `analytics.js`, Segment calls Klaviyo's `track` with the same parameters.
+
+> info ""
+> When you're tracking client-side, some Klaviyo events require you send an Identify call  before a Track call. 
 
 ### Server-side Track
 

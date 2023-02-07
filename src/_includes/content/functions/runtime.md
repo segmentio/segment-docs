@@ -26,13 +26,29 @@ The following dependencies are installed in the function environment by default.
 - [`@sendgrid/mail v7.4.7`](https://www.npmjs.com/package/@sendgrid/mail){:target="_blank"} exposed as `sendgrid.mail`
 - [`stripe v8.115.0`](https://www.npmjs.com/package/stripe){:target="_blank"} exposed as `stripe`
 - [`twilio v3.68.0`](https://www.npmjs.com/package/twilio){:target="_blank"} exposed as `twilio`
-- [`uuidv5 v1.0.0`](https://www.npmjs.com/package/uuidv5){:target="_blank"} exposed as `uuidv5`
+- [`uuidv5 v1.0.0`](https://www.npmjs.com/package/uuidv5){:target="_blank"} exposed as `uuidv5.uuidv5`
 - [`winston v2.4.6`](https://www.npmjs.com/package/winston){:target="_blank"} exposed as `const winston = winstonlib.winston`
 - [`xml v1.0.1`](https://www.npmjs.com/package/xml){:target="_blank"} exposed as `xml`
 - [`xml2js v0.4.23`](https://www.npmjs.com/package/xml2js){:target="_blank"} exposed as `xml2js`
 - [`zlib v1.0.5`](https://www.npmjs.com/package/zlib){:target="_blank"} exposed as `zlib.zlib`
 
-    `zlib`'s asynchronous methods `inflate` and `deflate` must be used with `async` or `await`. For example:
+  <br> `uuidv5` is exposed as an object. Use `uuidv5.uuidv5` to access its functions. For example:
+
+    ```js
+    async function onRequest(request, settings) {
+	     uuidv5 = uuidv5.uuidv5;
+	     console.log(typeof uuidv5);
+
+	      //Generate a UUID in the default URL namespace
+	      var urlUUID = uuidv5('url', 'http://google/com/page');
+	      console.log(urlUUID);
+
+	      //Default DNS namespace
+	      var dnsUUID = uuidv5('dns', 'google.com');
+	      console.log(dnsUUID);
+      }
+    ```
+  `zlib`'s asynchronous methods `inflate` and `deflate` must be used with `async` or `await`. For example:
 
     ```js
   zlib = zlib.zlib;  // Required to access zlib objects and associated functions

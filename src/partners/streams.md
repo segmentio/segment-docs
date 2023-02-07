@@ -37,7 +37,7 @@ If there is something unique about your tool that requires specific data points 
 
 ## Sending data
 
-To send events to Segment you should post events directly to the [Segment HTTP API](/docs/connections/sources/catalog/libraries/server/http-api/#track). You may use a Segment [library](/docs/connections/sources/catalog/) to do so. The HTTP API has a couple of basic requirements.
+To send events to Segment you should post events directly to the [Segment HTTP API](/docs/connections/sources/catalog/libraries/server/http-api/#track). You may use any server-side Segment [library](/docs/connections/sources/catalog/) to do so. The HTTP API has a couple of basic requirements.
 
 Beyond the Spec, there are a few additional requirements for partner Streams.
 

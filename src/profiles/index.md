@@ -1,6 +1,8 @@
 ---
 title: Profiles Overview
 plan: profiles
+redirect_from:
+  - '/engage/profiles/'
 ---
 
 Use Segment Profiles for a complete view of your customers.

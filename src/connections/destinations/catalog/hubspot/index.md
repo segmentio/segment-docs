@@ -4,6 +4,8 @@ title: HubSpot Destination
 hide-personas-partial: true
 cmode-override: true
 id: 54521fd725e721e32a72eec1
+maintenance: true
+maintenance-content: New versions of the destination are available. See [HubSpot Cloud Mode (Actions)](/docs/connections/destinations/catalog/actions-hubspot-cloud/) and [HubSpot Web (Actions)](/docs/connections/destinations/catalog/actions-hubspot-web/) for more information.
 ---
 [HubSpot](https://www.hubspot.com/){:target="_blank"} is an inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers. The `analytics.js` HubSpot Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/hubspot){:target="_blank"}.
 
@@ -56,7 +58,7 @@ analytics.identify('user1234', {
 
 HubSpot does not accept any trait keys that contain upper case letters or spaces. Segment converts any custom traits you send to lower case, and replaces spaces with an underscore.
 
-HubSpot removes from the request any traits that aren't contact fields in HubSpot. To find out which fields you can set, check out the custom field names in **Contacts > Contact Settings**. Example field names are `firstname`, `lastname`, `company`, and `phone`.
+HubSpot removes from the request any traits that aren't contact fields in HubSpot. To find out which fields you can set, navigate to **Settings > Data Management > Objects > Contacts** and select **Manage contact properties** under the **Setup** tab. Example field names are `firstname`, `lastname`, `company`, and `phone`.
 
 If you specify a company name (using `traits.company.name`), it appears as a *property* of the contact (you can find it in HubSpot's UI using **About [contact] > View > View All Properties**), but it does not appear as the user's company under **[contact]'s Company**.
 
@@ -169,6 +171,11 @@ Segment can send the following group traits to HubSpot as special properties:
 
 
 ## Troubleshooting
+
+
+### I Don't See My Data In HubSpot
+
+If you don't see your data in HubSpot, verify the HubSpot configuration in your Segment workspace. If you've selected the **Enable HubSpot SDK for EU** option, confirm with HubSpot that your HubSpot account is enabled for EU data residency.
 
 ### API Call Limits
 

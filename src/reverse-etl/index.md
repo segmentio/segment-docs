@@ -118,7 +118,7 @@ To create a mapping:
 To add multiple mappings from your warehouse to your destination, repeat steps 1-9 above.
 
 ## Using Reverse ETL
-After you've followed [all four steps](/docs/reverse-etl/reverse-etl/#getting-started) and set up your source, model, destination, and mappings for Reverse ETL, your data will extract and sync to your destination(s) right away if you chose an interval schedule. If you set your data to extract at a specific day and time, the extraction will take place then.
+After you've followed [all four steps](/docs/reverse-etl/#getting-started) and set up your source, model, destination, and mappings for Reverse ETL, your data will extract and sync to your destination(s) right away if you chose an interval schedule. If you set your data to extract at a specific day and time, the extraction will take place then.
 
 ### Runs status and observability
 You can check the status of your data extractions and see details of your syncs. You can click into failed records to view additional details on the error, sample payloads to help you debug the issue, and recommended actions.

@@ -13,20 +13,22 @@ You can subscribe to a variety of Protocols specific alerts through the workspac
 
 ### How can I get notified when someone makes a change to my tracking plan?
 
-You can forward notifications from Protocols to a new Segment Source, which can then send them to notification tools such as Slack webhook.
+You can forward notifications from Protocols to a new Segment source, which can then send them to notification tools such as Slack webhook. 
 
 You can also forward these Protocols alerts to any (cloud-mode) Segment destination that accepts Track calls, including data warehouses. Most customers record these activity feed events to a data warehouse for analysis.
 
 ### How do I get notified when new violations are generated? Can I create custom violation notifications?
 
-You can enable [violation event forwarding](/docs/protocols/validate/forward-violations/) to start delivering violations as Track calls to a Segment Source. From there, you can forward the events to any Segment destination that accepts Track calls.
+You can enable [violation event forwarding](/docs/protocols/validate/forward-violations/) to start delivering violations as Track calls to a Segment source. From there, you can forward the events to any Segment destination that accepts Track calls. 
+
+You can also use the Slack Actions destination to set event triggers for context fields, meaning events with violations are sent as Track calls directly from the source.
 
 
 ## Protocols Tracking Plan
 
-### Do I need to add a Page Viewed event to my tracking plan?
+### How do I add Page and Screen events to my tracking plan?
 
-Yes. To consolidate the views in the Schema tab, Segment automatically converts `page` calls into `Page Viewed` events that appear in the Schema Events view. Segment recommends adding a `Page Viewed` event to your Tracking Plan with any properties you want to validate against. At this time, you cannot validate that a specific named page (`analytics.page('Homepage')`) has a specific set of required properties.
+To consolidate the views in the Schema tab, Segment automatically converts `page` and `screen` calls into `Page Viewed` and `Screen Viewed` events that appear in the Schema Events view. Segment recommends adding a `Page Viewed` or `Screen Viewed` event to your Tracking Plan with any properties you want to validate against. At this time, to validate that a specific named page/screen (`analytics.page('Homepage') | analytics.screen('Home')`) has a specific set of required properties, you will need to use the [JSON Schema](/docs/protocols/tracking-plan/create/#edit-underlying-json-schema).
 
 ### How can I see who made changes to my Tracking Plan?
 
@@ -75,6 +77,17 @@ The email includes information about the violation to help you track down its so
 The Protocols Violations page shows a live count for violations. You can adjust the timeframe to show violations in the last hour, the last 24 hours, or the last seven days.
 
 You might see a difference between the count on the Violations page and the count in the Violations email digests. This can happen due to differences between the time periods available (24 hours in in the live page, 48 hours in the daily digest email), and the fact that the digest only shows _unique_ violations. The fields displayed on the Violations page are more detailed than those included in the email digest.
+
+### Why do I see root listed on my Violations page?
+You may see violations related to (root). For example:
+```js
+(root)
+Must validate all the schemas
+// Or
+(root)
+Must validate "then" as "if" was valid
+```
+These violations are related to your common JSON Schema if you've applied custom rules. In this instance (root), refers to the top level of the JSON object (Segment event). 
 
 ## Protocols Enforcement
 

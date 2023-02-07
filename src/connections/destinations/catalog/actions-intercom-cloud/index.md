@@ -16,9 +16,6 @@ Intercom is a customer communications platform that shows you who is using your 
 
 When you use the Intercom Cloud Mode (Actions) destination, Segment will send your data to [Intercom's REST API](https://developers.intercom.com/building-apps/docs/rest-apis){:target="_blank"}.
 
-> info ""
-> The Intercom Cloud Mode (Actions) destination is in beta and is in active development. Some functionality may change before it becomes generally available.
-
 ## Benefits of Intercom Cloud Mode (Actions) vs Intercom Classic
 Intercom Cloud Mode (Actions) provides the following benefits over the classic Intercom destination:
 
@@ -34,7 +31,7 @@ Intercom Cloud Mode (Actions) provides the following benefits over the classic I
 2. Search for **Intercom Cloud Mode (Actions)** in the Destinations Catalog, and select the destination.
 3. Click **Configure Intercom Cloud Mode (Actions)**.
 4. Select the source that will send data to Intercom Cloud Mode (Actions) and follow the steps to name your destination.
-5. On the **Settings** tab, authenticate with Intercom using OAuth.
+5. On the **Settings** tab, authenticate with Intercom using OAuth. If you have multiple Intercom workspaces, choose one workspace that you'll connect to Segment.
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 7. Enable the destination and configured mappings.
 

@@ -6,10 +6,6 @@ title: Data Lakes Sync Reports and Errors
 
 Segment Data Lakes generates reports with operational metrics about each sync to your data lake so you can monitor sync performance. These sync reports are stored in your S3 bucket and Glue Data Catalog. This means you have access to the raw data, so you can query it to answer questions and set up alerting and monitoring tools.
 
-<!-- PW: 9/22/22; commenting this section out for GA
-> note "This feature is not supported for the Azure Data Lakes public beta"
-> The Sync Report tab is currently not supported for the Azure Data Lakes public beta. For more information about Azure Data Lakes, see the [Data Lakes overview documentation](/docs/connections/storage/data-lakes/index/#how-azure-data-lakes-works). -->
-
 ## Sync Report schema
 
 Your sync_report table stores all of your sync data. You can query it to answer common questions about data synced to your data lake.

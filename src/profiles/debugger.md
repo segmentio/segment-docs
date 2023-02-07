@@ -7,7 +7,7 @@ redirect_from:
 
 The Engage Source Debugger enables you to inspect and monitor events that Engage sends downstream
 
-Because Engage generates a unique Source for every Destination connected to a Space, the Debugger gives you insight into how Engage sends events before they reach their Destination.
+Because Engage generates a unique Source for every Destination connected to a Space, the Debugger gives you insight into how Engage sends events before they reach their Destination. This automatically generated source cannot be deleted even when the destination is removed, in order for Engage to function as designed. The source will be reused by Engage as needed.
 
 The Debugger provides you with the payload information you need to troubleshoot potential formatting issues and ensure Engage sends events as your Destinations expect.
 

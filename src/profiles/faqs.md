@@ -17,7 +17,6 @@ Identity Graph automatically collects a rich set of external IDs without any add
 
 If you want Identity Graph to operate on a different custom ID, you can pass it in using `context.externalIds` on an `identify()` or `track()`. If you're interested in this feature, contact your CSM to discuss the best way to implement this feature.
 
-<!--PW 9/6/22
 ## How does Profiles handle identity merging?
 Each incoming event is analyzed and external IDs are extracted (`user_id`, `anonymous_id`, `email`). The simplified algorithm works as follows:
 
@@ -27,11 +26,15 @@ Each incoming event is analyzed and external IDs are extracted (`user_id`, `anon
 4. If Segment finds multiple matching profiles, Segment applies the identity resolution settings for merge protection. Specifically, Segment uses identifier limits and priorities to add the correct identifiers to the profile.
 5. Segment then applies [Profile limits](/docs/profiles/profile-api-limits/) to ensure profiles remain under these limits. Segment doesn't add any further merges or mappings if the profile is at either limit, but event resolution for the profile will continue.
 
+{% comment %}
+
 ![Identity graph merging](images/merging_1.png "Flowchart of Segment receiving an incoming event")
 
 ![Identity graph merging](images/merging_2.png "Flowchart of Segment searching for profiles by external ID")
 
-![Identity graph merging](images/merging_3.png "Flowchart of Segment merging profiles") -->
+![Identity graph merging](images/merging_3.png "Flowchart of Segment merging profiles") 
+
+{% endcomment %}
 
 ## Is all matching deterministic, or is there any support for probabilistic matching?
 All Profile matching is deterministic and based on first-party data that you've collected.
@@ -44,3 +47,6 @@ If two merged user profiles contain conflicting profile attributes, Segment sele
 ## What identifiers can the merged profile be queried/updated with?
 
 Any of the external IDs can be used to query a profile. When a profile is requested, Segment traverses the merge graph and resolves all merged profiles. The result is a single profile, with the latest state of all traits, events, and identifiers.
+
+### Can ExternalID's be changed or removed from the profiles?
+No. As the Identity Graph uses ExternalIDs, they remain for the lifetime of the user profile.

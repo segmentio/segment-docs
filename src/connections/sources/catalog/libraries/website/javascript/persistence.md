@@ -17,6 +17,9 @@ If a user returns to your site after the cookie expires, Analytics.js looks for 
 
 Analytics.js sets some default properties when creating cookies for user or group identities. You can override the default cookie properties in code when loading Analytics.js by passing in a `cookie` object to the load method.
 
+> info ""
+> Analytics.js doesn't set third-party cookies and only sets first-party cookies. 
+
 Here is the full list of available parameters with their default values:
 
 | Parameter | Description | Default value |
