@@ -24,7 +24,7 @@ If you're migrating to Analytics-Swift from a different mobile library, you can 
         <p>Choose the platform you are implementing Analytics Swift in to get started.</p>
       {% endif %}
       {%  if category == "Destinations" %}
-        <p>You can find more information about Destination types on the Destinations Overiew page.</p>
+        <p>You can find more information about Destination types on the Destinations Overview page.</p>
       {%  endif %}
       {%  if category == "Tools & Extensions" %}
         <p> Analytics for Swift was built with extensibility top of mind. Check out all of the additional tools you can use to improve data collection below.</p>
