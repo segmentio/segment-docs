@@ -66,6 +66,7 @@ To set up a new Actions-framework destination for the first time:
 
 > info ""
 > At least one mapping to handle a connected source's event(s) must be configured and enabled in an Actions-framework destination in order for data to be sent downstream.
+> The mappings can't be triggered in certain sequence even it is configured with the same event.
 
 ## Migrate a classic destination to an actions-based destination
 
