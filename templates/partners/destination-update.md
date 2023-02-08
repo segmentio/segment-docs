@@ -32,30 +32,30 @@
 
 ## title: <integration_name> Destination
 
-<!-- This template is meant for Actions-based destinations that represent a new version of an existing, or Classic Segment destination. For new Actions-based destinations, see destination-new-template.md template -->
+> (delete after reading) This template is meant for Actions-based destinations that represent a new version of an existing, or Classic Segment destination. For new Actions-based destinations, see destination-new-template.md template
 
-<!-- In the section above, edit the `title` field. For example, Slack (Actions) Destination -->
+> (delete after reading) (delete after reading) In the section above, edit the `title` field. For example, Slack (Actions) Destination
 
 {% include content/plan-grid.md name="actions" %}
 
-<!-- Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged. -->
+> (delete after reading) Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
 
 [<integration_name>](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
 
-<!-- Update your company name and support email address. -->
+> (delete after reading) Update your company name and support email address.
 
 This destination is maintained by <integration_name>. For any issues with the destination, [contact their Support team](mailto:support@<integration_name>.com).
 
-<!-- In the section below, add your destination name where indicated. If you have a classic version of the destination, ensure that its documentation is linked as well. If you don't have a classic version of the destination, remove the second and third sentences. -->
+> (delete after reading) In the section below, add your destination name where indicated. If you have a classic version of the destination, ensure that its documentation is linked as well. If you don't have a classic version of the destination, remove the second and third sentences.
 
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) <destination_name> Segment destination. There's also a page about the [non-Actions <destination_name> destination](/docs/connections/destinations/catalog/<destination_name>/). Both of these destinations receives data from Segment.
 
-<!-- This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component. -->
+> (delete after reading) This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component.
 
 {% include content/ajs-upgrade.md %}
 
-<!-- In the section below, explain the value of this actions-based destination over the classic version, if applicable. If you don't have a classic version of the destination, remove this section. -->
+> (delete after reading) In the section below, explain the value of this actions-based destination over the classic version, if applicable. If you don't have a classic version of the destination, remove this section.
 
 ## Benefits of <destination_name> (Actions) vs <destination_name> Classic
 
@@ -64,7 +64,7 @@ This destination is maintained by <integration_name>. For any issues with the de
 - **Main point 1**. One or two sentences that back up the main point.
 - **Main point 2**. One or two sentences that back up the main point.
 
-<!-- The section below explains how to enable and configure the destination. Include any configuration steps not captured below. For example, obtaining an API key from your platform and any configuration steps required to connect to the destination. -->
+> (delete after reading) The section below explains how to enable and configure the destination. Include any configuration steps not captured below. For example, obtaining an API key from your platform and any configuration steps required to connect to the destination.
 
 ## Getting started
 
@@ -73,7 +73,7 @@ This destination is maintained by <integration_name>. For any issues with the de
 3. Click **Configure <desintation_name>**.
 4. Select an existing Source to connect to <destination_name> (Actions).
 
-<!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
+> (delete after reading) The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions.
 
 {% include components/actions-fields.html %}
 
@@ -82,11 +82,11 @@ Additional Context
 Include additional information that you think will be useful to the user here. For information that is specific to an individual mapping, please add that as a comment so that the Segment docs team can include it in the auto-generated content for that mapping.
 -->
 
-<!-- If applicable, add information regarding the migration from a classic destination to an Actions-based version below -->
+> (delete after reading) If applicable, add information regarding the migration from a classic destination to an Actions-based version below
 
 ## Migration from the classic <destination_name> destination
 
-<!-- Include any pertinent information here. -->
+> (delete after reading) Include any pertinent information here.
 
 ---
 
