@@ -41,6 +41,10 @@ Use the [Source Debugger](/docs/connections/sources/debugger/) to observe inboun
 
 Check the Source Debugger to verify that the events arrive and are formatted according to the Segment Spec.
 
+## Write your source's documentation
+
+Documentation is integral to enabling Segment's users to self-serve and onboard with your integration. Segment's documentation team will work with you during this part of the process to ensure your documentation matches the Segment style and is as instructive as possible.To create your documentation, follow the instructions outlined [in this template](https://github.com/segmentio/segment-docs/blob/develop/templates/partners/source.md){:target="_blank"}. When submitting your source integration for review, you will need to include a link to the pull request you made to add your documentation.
+
 ## Launch your source
 
 When you've verified that your source sends the correct information, submit it for review. The Segment team will review your source's functionality, catalog metadata, and documentation. If your source is approved, it will appear in the Segment catalog, marked with a "beta" badge for a period of two weeks. After this period, the source is considered generally available.
