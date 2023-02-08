@@ -77,71 +77,67 @@ items:
   url: connections/destinations/catalog/mixpanel-swift/
   categories: 
   - plugin
-- name: Destinations Example
+- name: Destinations
   url: https://github.com/segmentio/analytics-swift/tree/main/Examples/apps/DestinationsExample
   categories: 
   - sample
-- name: Mac Example
+- name: Mac
   url: https://github.com/segmentio/analytics-swift/tree/main/Examples/apps/MacExample
   categories: 
   - sample
-- name: Objective C Example
+- name: Objective C
   url: https://github.com/segmentio/analytics-swift/tree/main/Examples/apps/ObjCExample
   categories: 
   - sample
-- name: Segment Extensions Example
+- name: Segment Extensions
   url: https://github.com/segmentio/analytics-swift/tree/main/Examples/apps/SegmentExtensionsExample
   categories: 
   - sample
-- name: SwiftUI Example
+- name: SwiftUI
   url: https://github.com/segmentio/analytics-swift/tree/main/Examples/apps/SwiftUIExample
   categories: 
   - sample
-- name: WidgetKit Example
+- name: WidgetKit
   url: https://github.com/segmentio/analytics-swift/tree/main/Examples/apps/SegmentweatherWidgetExample
   categories: 
   - sample
-- name: watchOS Example
+- name: watchOS
   url: https://github.com/segmentio/analytics-swift/tree/main/Examples/apps/watchOSExample
   categories: 
   - sample
-- name: watchOS Example
-  url: https://github.com/segmentio/analytics-swift/tree/main/Examples/apps/watchOSExample
-  categories: 
-  - sample
-- name: Cellular Carrier Plugin Example
+- name: Cellular Carrier Plugin
   url: https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/CellularCarrier.swift
   categories: 
   - sample
-- name: Consent Tracking Plugin Example
+- name: Consent Tracking Plugin
   url: https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/ConsentTracking.swift
   categories: 
   - sample
-- name: Console Logger Plugin Example
+- name: Console Logger Plugin
   url: https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/ConsoleLogger.swift
   categories: 
   - sample
-- name: IDFA Collection Plugin Example
+- name: IDFA Collection Plugin
   url: https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/IDFACollection.swift
   categories: 
   - sample
-- name: Inject Traits Plugin Example
+- name: Inject Traits Plugin
   url: https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/InjectTraits.swift
   categories: 
   - sample
-- name: Notification Tracking Plugin Example
+- name: Notification Tracking Plugin
   url: https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/NotificationTracking.swift
   categories: 
   - sample
-- name: UIKit Screen Tracking Plugin Example
+- name: UIKit Screen Tracking Plugin
   url: https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/UIKitScreenTracking.swift
   categories: 
   - sample
-- name: Custom Screen Tracking Plugin Example
+- name: Custom Screen Tracking Plugin
   url: https://github.com/segmentio/analytics-swift/blob/main/Examples/tasks/CustomScreenTracking.swift
   categories: 
   - sample
-- name: Multi-instance Analytics Extension Example
+- name: Multi-instance Analytics Extension
   url: https://github.com/segmentio/analytics-swift/blob/main/Examples/tasks/MultiInstance.swift
   categories: 
   - sample
