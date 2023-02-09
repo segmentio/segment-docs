@@ -100,3 +100,6 @@ To add a CNAME record to your DNS settings:
    - **Value**: Tracking API CloudFront Distribution Domain Name
 3. Save your record. This might take some time to take effect, depending on your TTL settings.
 4. Run `curl` on your domain to check if the proxy is working correctly.
+
+#### Troubleshooting
+Please note that setting up a custom proxy is something that is configured entirely by you and your engineering team. While we are always here to help support and brainstorm ideas should you come across any technical issues, troubleshooting custom proxy errors is challenging from the Segment side of things due to limited visibility into your codebase and not having access to your custom setup. 
