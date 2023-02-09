@@ -39,7 +39,10 @@ A single account-level audience can incorporate any combination of the following
 - Account-level custom traits (set through a [group](/docs/connections/spec/group) call)
 
 
-To access account-level audience conditions, select Accounts in the dropdown.
+To access account-level audience conditions:
+1. Navigate to **Engage > Audiences**, and click **Create**.
+2. Select **Accounts** from the **Select Type** screen.
+3. From the **Configure** screen, select **Accounts** in the dropdown.
 
 ![Use this control to access account level audience conditions](/docs/engage/images/new-audience-type.png)
 
