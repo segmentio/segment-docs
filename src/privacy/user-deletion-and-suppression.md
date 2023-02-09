@@ -74,6 +74,8 @@ The deletion requests tab shows a log of all regulations with a deletion element
 
 Click a deletion to view its status across Segment and your connected destinations.
 
+Note that Segment has a 30-day SLA for submitted deletion requests. Additionally, Segment's deletion manager can only accommodate 100,000 users within a 30-day period and cannot guarantee 30-day SLA if there are more than 100,000 deletion requests submitted within that 30-day period.
+
 
 ## Programmatic User Deletion and Suppression using the API
 
