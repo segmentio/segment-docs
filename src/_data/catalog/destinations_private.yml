@@ -352,6 +352,143 @@ items:
             dynamic: false
             allowNull: false
     presets: []
+  - id: 637c192eba61b944e08ee158
+    display_name: VWO Web Mode (Actions)
+    name: VWO Web Mode (Actions)
+    slug: actions-vwo-web
+    previous_names:
+      - VWO Web Mode (Actions)
+    website: https://vwo.com
+    status: PRIVATE_BETA
+    logo:
+      url: https://cdn.filepicker.io/api/file/o9X4IJO1RDegnGVmfje0
+    mark:
+      url: https://cdn.filepicker.io/api/file/L6U6f3KrRoScOQbUDMKj
+    methods:
+      track: true
+      pageview: true
+      identify: true
+      group: true
+      alias: true
+    platforms:
+      browser: true
+      mobile: false
+      server: false
+      warehouse: false
+    components: []
+    browserUnbundlingSupported: false
+    browserUnbundlingPublic: false
+    replay: false
+    settings:
+      - name: libraryTolerance
+        type: number
+        defaultValue: 2500
+        description: >-
+          The maximum amount of time (in milliseconds) to wait for VWO’s full
+          library to be downloaded before simply displaying your original page.
+        required: true
+        label: Library Tolerance
+      - name: settingsTolerance
+        type: number
+        defaultValue: 2000
+        description: >-
+          The maximum amount of time (in milliseconds) to wait for test settings
+          before VWO will simply display your original page.
+        required: true
+        label: Settings Tolerance
+      - name: useExistingJquery
+        type: boolean
+        defaultValue: false
+        description: >-
+          If your page already includes JQuery, you can set this to “true”.
+          Otherwise, VWO will include JQuery onto the page for you. VWO needs
+          JQuery on the page to function correctly. 
+        required: true
+        label: Use Existing JQuery
+      - name: vwoAccountId
+        type: number
+        defaultValue: 0
+        description: Your VWO account ID, used for fetching your VWO async smart code.
+        required: true
+        label: VWO Account ID
+    actions:
+      - id: 6uTbf9uHvZBJ3YnMmFHWtZ
+        name: Track Event
+        slug: trackEvent
+        description: Forwards track events to VWO Data360
+        platform: WEB
+        hidden: false
+        defaultTrigger: type = "track"
+        fields:
+          - id: aqLRikaffjfa3QFcEkPAfF
+            sortOrder: 0
+            fieldKey: eventName
+            label: Name
+            type: STRING
+            description: The name of the event.
+            placeholder: ''
+            defaultValue:
+              '@path': $.event
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: ivqt15sfJcDBKXYWs754XT
+            sortOrder: 1
+            fieldKey: properties
+            label: Properties
+            type: OBJECT
+            description: >-
+              A JSON object containing additional properties that will be
+              associated with the event.
+            placeholder: ''
+            defaultValue:
+              '@path': $.properties
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+      - id: tR1J9N9e3vk4XtqGjUfTSm
+        name: Identify User
+        slug: identifyUser
+        description: Forwards user traits to VWO Data360 attributes
+        platform: WEB
+        hidden: false
+        defaultTrigger: type = "identify"
+        fields:
+          - id: vviFo14bLhdFZcUucddRMV
+            sortOrder: 0
+            fieldKey: attributes
+            label: Attributes
+            type: OBJECT
+            description: >-
+              A JSON object containing additional attributes that will be
+              associated with the user.
+            placeholder: ''
+            defaultValue:
+              '@path': $.traits
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+    presets:
+      - actionId: 6uTbf9uHvZBJ3YnMmFHWtZ
+        name: Track Event
+        fields:
+          eventName:
+            '@path': $.event
+          properties:
+            '@path': $.properties
+        trigger: type = "track"
+      - actionId: tR1J9N9e3vk4XtqGjUfTSm
+        name: Identify User
+        fields:
+          attributes:
+            '@path': $.traits
+        trigger: type = "identify"
   - id: 63bedc136a8484a53739e013
     display_name: VWO Cloud Mode (Actions)
     name: VWO Cloud Mode (Actions)
