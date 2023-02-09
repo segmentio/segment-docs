@@ -61,7 +61,7 @@ _**NOTE:** The <integration_name> Source is currently in beta, which means that 
 
 ## Stream
 
-> (delete after reading) Clarify the type of Segment events your integration will send 
+> (delete after reading) Clarify the type of Segment events your integration will send. 
 
 <integration_name> uses our stream Source component to send Segment event data. It uses a server-side (select from `track`, `identify`, `page`, `group`) method(s) to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
 
