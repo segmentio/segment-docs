@@ -456,7 +456,7 @@ No, only the plugins listed above are supported in device-mode for Analytics-Swi
 ### Will I still see device-mode integrations listed as `false` in the integrations object?
 When you successfully package a plugin in device-mode, you will no longer see the integration listed as `false` in the integrations object for a Segment event. This logic is now packaged in the event metadata, and is not surfaced in the Segment debugger.
 ### Does the Analytics-Swift mobile library support multiple instances of Segment on the device?
-The Analytics-Swift mobile library does support multiple instances of Segment on the device. For example, you may wish to send some events to one source and other events to another:
+The Analytics-Swift mobile library supports multiple instances of Segment on the device. For example, you may wish to send some events to one source and other events to another:
 ```swift
 let configuration1 = Configuration(writeKey: "WRITE_KEY1")
 .trackApplicationLifecycleEvents(true)
