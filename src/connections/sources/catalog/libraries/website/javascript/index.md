@@ -392,7 +392,7 @@ The `ready` method has the following fields:
 
 ### Debug
 
-Calling the `debug` method turns on debug mode, which logs helpful messages to the console. Subsequent Segment events will generate messages in the developer console after you invoke `debug`.
+Calling the `debug` method turns on debug mode, which logs helpful messages to the console. Subsequent Segment events generate messages in the developer console after you invoke `debug`.
 
 Enable:
 ```js
