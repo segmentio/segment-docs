@@ -34,7 +34,7 @@
 
 > (delete after reading) This template is meant for Actions-based destinations that represent a new version of an existing, or Classic Segment destination. For new Actions-based destinations, see destination-new-template.md template.
 
-> (delete after reading) In the section above, edit the `title` field. For example, Slack (Actions) Destination
+> (delete after reading) In the section above, edit the `title` field. For example, Slack (Actions) Destination.
 
 {% include content/plan-grid.md name="actions" %}
 
