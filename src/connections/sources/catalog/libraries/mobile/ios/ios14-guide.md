@@ -90,3 +90,4 @@ Segment's partners have put together resources to help you navigate these change
 - [Adjust](https://help.adjust.com/en/article/attribution-privacy-models)
 - [Tune](https://www.tune.com/blog/what-ios-14-5-and-apples-latest-privacy-initiatives-mean-for-marketers/)
 - [Kochava](https://www.kochava.com/ios-14-5-final-launch-checklist/)
+- [AppsFlyer](https://support.appsflyer.com/hc/en-us/articles/360011890298-Quickstart-guide-FAQ-to-iOS-14-ATT-and-SKAN)
