@@ -243,6 +243,6 @@ You might be returning a value for `user_id` that's inconsistent with how you tr
 
 If you see only question marks in the preview, and have already tracked data historically with Segment, then you likely have the wrong column. If your cloud source doesn't have the database `user_id`, Segment recommends using a `JOIN` clause with an internal users table before sending the results back to Segment.
 
-### Why some SQL trait’s settings do not have the “Compute Schedule” option?
+### Why do some SQL Trait settings not have the “Compute schedule” option?
 
-The compute schedule feature was added on Feb 8,2021, so traits created prior to this date will not have this option available. If your trait lacks this feature, recreating it will make it available.
+Segment added the compute schedule feature on Feb 8, 2021, so traits created prior to this date will not have this option. If your trait lacks this feature, recreating it will make it available.
