@@ -86,7 +86,7 @@ This destination is maintained by <integration_name>. For any issues with the de
 
 ## Migration from the classic <destination_name> destination
 
-> (delete after reading) If applicable, add information regarding the migration from a classic destination to an Actions-based version below
+> (delete after reading) If applicable, add information regarding the migration from a classic destination to an Actions-based version below.
 
 ---
 
