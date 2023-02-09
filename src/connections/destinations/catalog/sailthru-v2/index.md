@@ -100,7 +100,7 @@ analytics.track("Subscribed", {
 For user deletion, the email needs to be included in the userId or context.traits track call, in a call like the following:
 
 ```js
-analytics.track(“User Deleted”, {userId:"xxxxxx@example.com" })
+analytics.track("User Deleted", {userId:"xxxxxx@example.com" })
 ```
 
 ```js
