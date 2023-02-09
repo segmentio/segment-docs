@@ -96,6 +96,21 @@ To delete a destination action: click the action to select it, and click **Delet
 
 This takes effect within minutes, and removes the action completely. Any data that would have gone to the destination is not delivered. Once deleted, the saved action cannot be restored.
 
+## Test a destination action
+To test a destination action, follow the instructions in our [testing conections documentation](https://segment.com/docs/connections/test-connections/). A mapping must be enabled in order to be tested. If it is not enabled, or there is not a mapping to match the event being tested, you will see an error in the event tester that states: **'You may not have any subscriptions that match this event.'**
+
+A second option is to test within the mapping itslef. Click an individual mapping to edit. In step 2 of the mapping, you can add a test event from the source, or a sampe event:
+
+<img width="915" alt="Screenshot of test or sample event load in mappings" src="https://user-images.githubusercontent.com/78318468/217881329-05546b7c-80f1-4641-b201-f755f6afa1f7.png">
+
+From there you can scroll to step 4 to test the mapping and receive a response from the destination:
+
+<img width="878" alt="Screenshot of event testing section of mapping" src="https://user-images.githubusercontent.com/78318468/217882013-508af07d-8b5d-4d4d-bb48-0ec986306418.png">
+
+<img width="877" alt="Screenshot of test event response in mapping" src="https://user-images.githubusercontent.com/78318468/217882104-b0b4dac3-9f8f-4034-a374-7adb171153f2.png">
+
+
+
 
 ## Customize mappings
 
