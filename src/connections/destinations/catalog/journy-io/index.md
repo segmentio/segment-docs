@@ -7,10 +7,6 @@ id: 607d4f97829762f3b69a807b
 
 This destination is maintained by journy.io. For any issues with the destination, [contact the journy.io Support team](mailto:hi@journy.io).
 
-> note "Note:"
-> The journy.io Destination is currently in beta, which means that they are still actively developing the destination. To join their beta program, or if you have any feedback to help improve the journy.io Destination and its documentation, [contact the journy.io support team](mailto:hi@journy.io)!
-
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
