@@ -86,7 +86,7 @@ If you want to batch requests to the HTTP endpoint, refer to the batching docume
 
 ## Regional Segment
 
-Segment offers customers the option to lead on data residency by providing [regional infrastructure](/docs/guides/regional-segment) in both the Europe and the United States. In order for your source to be available in an EU workspace, you will need to provide the ability for the Segment user to post their data to our EU ingestion endpoint: 
+Segment offers customers the option to lead on data residency by providing [regional infrastructure](/docs/guides/regional-segment) in both the Europe and the United States. In order for your source to be available in an EU workspace, you will need to provide the ability for the Segment user to post their data to the EU ingestion endpoint: 
 
 - Oregon (US Default) — `api.segment.io/v1`
 - Dublin — `events.eu1.segmentapis.com/`
