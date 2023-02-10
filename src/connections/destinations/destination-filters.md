@@ -138,7 +138,7 @@ There are certain destinations to which you may not want to send the `userId`. T
 {
     "sourceId": "<sourceId>",
     "destinationId": "<destinationId>",
-    "title": "Don'\''t send userId at all",
+    "title": "Don't send userId at all",
     "description": "Drop userId on all requests",
     "if": "all",
     "actions": [
