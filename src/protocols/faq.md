@@ -62,6 +62,10 @@ You can search in a Tracking Plan to find a specific event, and then copy the UR
 
 Yes. [Tracking Plan Libraries](/docs/protocols/tracking-plan/libraries/) makes it easy to create groups of events or properties that can be easily imported into multiple Tracking plans.
 
+### Can I copy a Tracking Plan into a library?
+
+No. Unfortunately it's not possible yet to automatically transfer events from a Tracking Plan to Libraries. Currently the best option for importing events into a new event library would be directly from a source.
+
 ## Protocols Validation
 
 ### What is the difference between Violations Emails and the Violations page in the Segment UI?
