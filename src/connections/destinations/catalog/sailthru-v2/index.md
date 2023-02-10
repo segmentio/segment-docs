@@ -71,7 +71,8 @@ analytics.identify("assigned-userId", {
 );
 ```
 
-**Note:** Sailthru will also search for the email address in the identify call() under context.traits if not provided at the top-level.
+> note ""
+> **NOTE:** Sailthru searches for the email address in the `identify` call under `context.traits` if it isn't provided at the top-level.
 
 ### Track
 
