@@ -152,7 +152,7 @@ Send `Product Added` and `Product Removed` Track events for Sailthru's abandoned
 
 Sailthru abandoned cart messaging requires the `url` to function properly.
 
-The timestamp of the last payload received (purchase_incomplete.time) will be compared with the clearIncompleteCartAfterNHours value to determine if cart is expired. If the cart is determined to be expired, any pre-existing products in the cart will be removed.
+To determine if the cart is expired, the timestamp of the last payload received (`purchase_incomplete.time`) is compared with the `clearIncompleteCartAfterNHours` value. If the cart is expired, any pre-existing products in the cart will be removed.
 
 ```js
 analytics.track('Product Added', {
