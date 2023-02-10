@@ -46,7 +46,7 @@ Screen events require a `url` property. If Sailthru receives a Screen call witho
 
 ### Identify
 
-Send [Identify](/docs/connections/spec/identify) calls to to create or update a Sailthru profile for any identified user on your site.
+Send [Identify](/docs/connections/spec/identify) calls to create or update a Sailthru profile for any identified user on your site.
 
 Email address passed at top level:
 ```js
