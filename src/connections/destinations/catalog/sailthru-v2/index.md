@@ -58,7 +58,7 @@ analytics.identify("assigned-userId", {
 });
 ```
 
-Email passed under context.traits:
+Pass an email under `context.traits` using the identify call:
 ```js
 analytics.identify("assigned-userId", {
  "name": "Stephen Noel",
