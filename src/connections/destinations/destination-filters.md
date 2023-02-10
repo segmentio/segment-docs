@@ -134,7 +134,7 @@ Use the [Public API](https://docs.segmentapis.com/tag/Destination-Filters/){:tar
 
 There are certain destinations to which you may not want to send the `userId`. To accomplish this, you can use the [Public API](https://docs.segmentapis.com/tag/Destination-Filters/) to create a Filter that will target and remove the `userId` (or any other top-level field) like this:
 
-```
+```json
 {
     "sourceId": "<sourceId>",
     "destinationId": "<destinationId>",
