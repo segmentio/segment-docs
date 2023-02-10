@@ -5,14 +5,62 @@ redirect_from:
   - '/connections/sources/catalog/cloud-apps/swift/'
 id: dZeHygTSD4
 ---
-With Analytics-Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS and Linux applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics-Swift enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations. Analytics-Swift also offers default implementations to help you maintain destinations and integrations.
+With Analytics-Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS and Linux applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. 
+
+Analytics-Swift enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations. Analytics-Swift also offers default implementations to help you maintain destinations and integrations.
 
 If you're migrating to Analytics-Swift from a different mobile library, you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift-ios/migration/).
 
 > warning ""
-> The following documentation covers `Analytics Swift` implementations. If you are using the older `Analytics iOS` SDK, you can find the documentation [here.](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/)
+> The following documentation covers `Analytics Swift` implementations. If you are using the older `Analytics iOS` SDK, you can find the documentation [here.](/docs/connections/sources/catalog/libraries/mobile/ios/)
 
-<div class="destinations-catalog">
+## Sources
+
+Choose the platform in which you're implementing Analytics Swift.
+
+- [iOS](/docs/connections/sources/catalog/libraries/mobile/swift-ios/implementation)
+- [macOS](/docs/connections/sources/catalog/libraries/mobile/swift-ios/implementation)
+- [tvOS](/docs/connections/sources/catalog/libraries/mobile/swift-ios/implementation)
+- [watchOS](/docs/connections/sources/catalog/libraries/mobile/swift-ios/implementation)
+
+## Destinations
+
+Descriptive text about these destinations
+
+<div class="double">
+  {% include components/reference-button.html
+    href="/docs/connections/sources/catalog/libraries/mobile/swift-ios/swift_destination_plugins"
+    icon="destinations-catalog/mobile.svg"
+    title="Device Mode Plugins"
+    description="These plugins integrate directly......"
+    newtab="false"
+  %}
+
+  {% include components/reference-button.html
+    href="/docs/connections/sources/catalog/libraries/mobile/swift-ios/cloud_mode_destinations"
+    icon="destinations-catalog/cloud-apps.svg"
+    title="Cloud Mode"
+    description="Some text about cloud mode stuff here"
+    newtab="false"
+  %}
+</div>
+
+## Tools and extensions
+
+Analytics for Swift is built with extensibility in mind. Use the tools list below to improve data collection.
+
+- [Plugin architecture](/docs/connections/sources/catalog/libraries/mobile/swift-ios/plugin_architecture)
+- [Typewriter](/docs/connections/sources/catalog/libraries/mobile/swift-ios/swift_typewriter)
+- [Destination filters](/docs/connections/sources/catalog/libraries/mobile/swift-ios/swift_destination_filters)
+
+## Additional resources
+
+Looking for more? See the additional resources below.
+- [Blog posts](#)
+- [Analytics iOS (Classic)](/docs/connections/sources/catalog/libraries/mobile/ios/)
+
+
+<!-- <div class="destinations-catalog">
   {% assign categories = "Sources, Destinations, Tools & Extensions, Additional Resources" | split: ", " %}
 
   {% for category in categories %}
@@ -48,4 +96,4 @@ If you're migrating to Analytics-Swift from a different mobile library, you can 
       </div>
     </div>
     {% endfor %}
-  </div>
+  </div> -->

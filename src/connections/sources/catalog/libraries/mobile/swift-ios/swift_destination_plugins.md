@@ -3,7 +3,9 @@ title: Analytics Swift Destination Plugins
 strat: swift
 ---
 
-Analytics-Swift leverages its timeline/plugin architecture to support sending data to bundled SDKs when a Cloud Mode connection is not possible. Destination Plugins are similar to traditional "Device Mode" integrations available in Analytics-iOS in that Segment will make calls directly to the destination tool’s API from the device. However, Destination Plugins are exponentially more customizable, giving you the ability to control and enrich your data at a much more granular level on the device itself. Analytics-Swift currently supports the following Destination Plugins: 
+Analytics-Swift uses its timeline/plugin architecture to support sending data to bundled SDKs when a Cloud Mode connection is not possible. Destination Plugins are similar to traditional Device Mode integrations available in Analytics-iOS in that Segment makes calls directly to the destination tool’s API from the device. However, Destination Plugins are more customizable, giving you the ability to control and enrich your data at a much more granular level on the device itself. 
+
+Analytics-Swift supports the following Destination Plugins: 
 
 <div class="destinations-catalog">
 <div class="destinations-catalog__section markdown" id="{{ category | slugify }}">
@@ -16,7 +18,7 @@ Analytics-Swift leverages its timeline/plugin architecture to support sending da
               <div class="thumbnail-integration__content">
                 <div class="flex flex--wrap flex--middle waffle waffle--xlarge@medium">
                   <div class="flex__column flex__column--12 flex__column--2@medium thumbnail-integration__logo-wrapper">
-                      <img class="thumbnail-integration__logo image" alt="{{integration.display_name}}" src="{{integration.logo.url}}" />
+                      <img class="thumbnail-integration__logo image" alt="{{resource.name}}" src="{{resource.mark.url}}" />
                   </div>
                   <h5 class="flex__column flex__column--12 flex__column--10@medium">{{ resource.name }}</h5>
                 </div>
@@ -33,8 +35,8 @@ Segment's plugin architecture enables you to modify and augment how the analytic
 
 Plugins are run through a timeline, which executes in order of insertion based on their entry types. Segment has these 5 entry types:
 
-| Type  | Details                                                                                        |
-|------ | -------- |
+| Type          | Details                                                                                        |
+| ------------- | ---------------------------------------------------------------------------------------------- |
 | `before`      | Executes before event processing begins.                                                       |
 | `enrichment`  | Executes as the first level of event processing.                                               |
 | `destination` | Executes as events begin to pass off to destinations.                                          |
