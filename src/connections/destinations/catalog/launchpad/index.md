@@ -6,7 +6,7 @@
 [Launchpad](https://www.launchpad.pm/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is mission control for growing product-led companies. Launchpad helps you monitor projects and outcomes in one place so that you can keep your business on track.
 
 
-This destination is maintained by <Launchpad>. For any issues with the destination, [contact our Support team](mailto:support@launchpad.pm).
+Launchpad maintains this destination. For any issues with the destination, [contact the Launchpad Support team](mailto:support@launchpad.pm).
 
 
 {% include content/ajs-upgrade.md %}
