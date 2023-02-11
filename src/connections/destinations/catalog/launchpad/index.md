@@ -26,4 +26,3 @@ Launchpad maintains this destination. For any issues with the destination, [cont
 
 This destination is meant to work a standard Segment integration. We work with track, identify and group events to showcase launch performance and help you better understand your customers.
 
----
