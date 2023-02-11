@@ -1,4 +1,6 @@
-## title:Launchpad Destination
+---
+title: Launchpad (Actions) Destination
+---
 
 
 {% include content/plan-grid.md name="actions" %}
