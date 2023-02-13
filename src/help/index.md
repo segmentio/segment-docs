@@ -32,4 +32,4 @@ Wondering what you can do with Segment? Check out [Segment Recipes](https://segm
 
 ## Other Resources
 
-Head over to [Segment Resources](https://segment.com/resources/?utm=docs){:target="_blank"} for Segment case studies, webinars, courses, and more.
+Head over to [Segment Resources](https://segment.com/resources/?utm=docs){:target="_blank"} for Segment case studies, webinars, courses, and more. 
