@@ -17,7 +17,7 @@ Launchpad maintains this destination. For any issues with the destination, [cont
 ## Getting started
 
 1. From the Segment web app, navigate to **Connections > Catalog** and click **Destinations**.
-2. Select Destinations Actions under **Categories** from the left navigation.
+2. Select **Destinations Actions** under **Categories** from the left navigation.
 3. Search for **Launchpad (Actions)** and click **Configure Launchpad**.
 4. Select an existing Source to connect to Launchpad (Actions).
 5. Copy your API Key from Launchpad. You can find the API key in the settings of the Launchpad app. 
