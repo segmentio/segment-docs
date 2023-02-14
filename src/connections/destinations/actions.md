@@ -100,10 +100,10 @@ This takes effect within minutes, and removes the action completely. Any data th
 To test a destination action, follow the instructions in [Testing Connections](/docs/connections/test-connections/). You must enable a mapping in order to test the destination. Otherwise, this error occurs: *You may not have any subscriptions that match this event.*
 
 You can also test within the mapping itself. To test the mapping:
-1. Navigate to the *Mappings** tab of your destination. 
-2. Select a mapping and click the **...*** and select **Edit Mapping**. 
-3. In step 2 of the mappings edit page, click **Load Test Event from Source** to add a test event from the source or you can add your own sample event. 
-4. Go to step 4 on the mappings edit page, and click **Test Mapping** to test the mapping and view the response from the destination. 
+1. Navigate to the **Mappings** tab of your destination. 
+2. Select a mapping and click the **...** and select **Edit Mapping**. 
+3. In step 2 of the mappings edit page, click **Load Test Event from Source** to add a test event from the source, or you can add your own sample event. 
+4. Scroll to step 4 on the page, and click **Test Mapping** to test the mapping and view the response from the destination. 
 
 ## Customize mappings
 
