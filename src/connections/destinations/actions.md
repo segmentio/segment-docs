@@ -105,13 +105,6 @@ You can also test within the mapping itself. To test the mapping:
 3. In step 2 of the mappings edit page, click **Load Test Event from Source** to add a test event from the source or you can add your own sample event. 
 4. Go to step 4 on the mappings edit page, and click **Test Mapping** to test the mapping and view the response from the destination. 
 
-
-
-
-
-
-
-
 ## Customize mappings
 
 If you use the default mappings for a destination action, you don't *need* to customize the mapping template for the action. You can edit the fields later if you find that the defaults no longer meet your needs.
