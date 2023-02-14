@@ -18,7 +18,7 @@ Rather than "firing and forgetting," Segment takes a data-centric, deliberate ap
 <tr><td><strong>User Interface</strong></td><td>Delivers sleek user experience; automatically translate data for new tools when you enable a destination</td><td>Requires that you configure settings and rules for each pixel to fire</td></tr>
 <tr><td><strong>Tool Integrations</strong></td><td>Fully integrates analytics, advertising, email, customer support, marketing automation, usability tracking, error testing, and CRM tools with the flick of a switch</td><td>Manages ad pixels; requires custom engineering work to integrate any other complex tool</td></tr></tbody></table>
 
-Every organization's data stack and business requirements are unique. Segment can also works well in tandem with a tag manager. In fact, Segment can also send data directly to the [Google Tag Manager (GTM) destination](/docs/connections/destinations/catalog/google-tag-manager/).
+Every organization's data stack and business requirements are unique. Segment can also work well in tandem with a tag manager. In fact, Segment can also send data directly to the [Google Tag Manager (GTM) destination](/docs/connections/destinations/catalog/google-tag-manager/).
 
 While you can use Segment's Analytics.js library through a tag manager, we don't recommended this for a few important reasons:
 
