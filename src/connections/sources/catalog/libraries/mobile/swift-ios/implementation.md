@@ -8,7 +8,7 @@ To get started with the Analytics-Swift mobile library:
 
 1. Create a Source in Segment.
     1. Go to **Connections > Sources > Add Source**.
-    2. Search for **Swift** and click **Add source**.
+    2. Search for **Apple** and click **Add source**.
 
 2. Add the Analytics dependency to your application.
     Add the Swift package, `git@github.com:segmentio/analytics-swift.git` as a dependency through either of these 2 options:
@@ -22,7 +22,9 @@ To get started with the Analytics-Swift mobile library:
 3. Initialize and configure the Analytics-Swift client.
     For example, in a lifecycle method such as `didFinishLaunchingWithOptions` in iOS:
 
-    ```swift
+{% codeexample %}
+{% codeexampletab Swift%}
+  ```swift
     var analytics: Analytics? = nil
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -33,21 +35,42 @@ To get started with the Analytics-Swift mobile library:
 
             analytics = Analytics(configuration: configuration)
     }
-    ```
+  ```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+  @import Segment;
+  ...
 
-    These are the options you can apply to configure the client:
+  - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+      // Override point for customization after application launch.
+      SEGConfiguration *config = [[SEGConfiguration alloc] initWithWriteKey:@"WRITE_KEY"];
+      config.trackApplicationLifecycleEvents = YES;
+    
+      SEGAnalytics *analytics = [[SEGAnalytics alloc] initWithConfiguration: config];
+    
+      [analytics track:@"Example Event"];
+      [analytics track:@"Example Properties" properties:@{@"email": @"sloth@segment.com"}];
+    
+      return YES;
+  }
+ ```
+{% endcodeexampletab %}
+{% endcodeexample %}
 
-    Option Name | Description
-    ----------- | ------------
-    `writeKey` *required* | This is your Segment write key.
-    `apiHost` | The default is set to `api.segment.io/v1`. <br> This sets a default API Host to which Segment sends event.
-    `autoAddSegmentDestination` | The default is set to `true`. <br> This automatically adds the Segment Destination plugin. Set to `false` if you want to add plugins to the Segment Destination.
-    `cdnHost` | The default is set to `cdn-settings.segment.com/v1`. <br> This sets a default CDN Host from which Segment retrieves settings.
-    `defaultSettings`| The default is set to `{}`. <br> This is the settings object used as fallback in case of network failure.
-    `flushAt`| The default is set to `20`. <br> The count of events at which Segment flushes events.
-    `flushInterval`| The default is set to `30` (seconds). <br> The interval in seconds at which Segment flushes events.
-    `trackApplicationLifecycleEvents`| The default is set to `true`. <br> This automatically tracks lifecycle events. Set to `false` to stop tracking lifecycle events.
-    `trackDeepLinks` | The default is set to `true`. <br> This automatically track deep links. Set to `false` to stop tracking Deep Links.
+These are the options you can apply to configure the client:
+
+ Option Name | Description
+----------- | ------------
+`writeKey` *required* | This is your Segment write key.
+`apiHost` | The default is set to `api.segment.io/v1`. <br> This sets a default API Host to which Segment sends event.
+`autoAddSegmentDestination` | The default is set to `true`. <br> This automatically adds the Segment Destination plugin. Set to `false` if you want to add plugins to the Segment Destination.
+`cdnHost` | The default is set to `cdn-settings.segment.com/v1`. <br> This sets a default CDN Host from which Segment retrieves settings.
+`defaultSettings`| The default is set to `{}`. <br> This is the settings object used as fallback in case of network failure.
+`flushAt`| The default is set to `20`. <br> The count of events at which Segment flushes events.
+`flushInterval`| The default is set to `30` (seconds). <br> The interval in seconds at which Segment flushes events.
+`trackApplicationLifecycleEvents`| The default is set to `true`. <br> This automatically tracks lifecycle events. Set to `false` to stop tracking lifecycle events.
+`trackDeepLinks` | The default is set to `true`. <br> This automatically track deep links. Set to `false` to stop tracking Deep Links.
 
 
 ## Tracking Methods
@@ -71,18 +94,29 @@ func identify(userId: String)
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Example use %}
+{% codeexampletab Swift %}
 ```swift
 struct MyTraits: Codable {
         let favoriteColor: String
 }
 
-// ...
-
-analytics.identify(userId: "someone@segment.com", MyTraits(favoriteColor: "fuscia"))
+analytics.identify(userId: "a user's id", MyTraits(favoriteColor: "fuscia"))
+```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+[analytics identify:@"a user's id"
+                                traits:@{ @"email": @"fuscia" }];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
+
+The Identify method has these fields:
+
+Field | Details
+----- | -------
+`userId` *optional* | The database ID for this user. If you don't know who the user is yet, you can omit the `userId` and just record `traits`. You can read more in the [identify reference](/docs/connections/spec/identify)
+`traits` *optional* | A dictionary of traits you know about the user, like their `email` or `name`. You can read more about traits in the [identify reference](/docs/connections/spec/identify).
 
 ### Track
 The [Track](/docs/connections/spec/track/) method lets you record the actions your users perform. Every action triggers an event, which also has associated properties that the track method records.
@@ -96,15 +130,19 @@ func track<P: Codable>(name: String, properties: P?)
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Example use %}
+{% codeexampletab Swift %}
 ```swift
 struct TrackProperties: Codable {
         let someValue: String
 }
 
-// ...
-
 analytics.track(name: "My Event", properties: TrackProperties(someValue: "Hello"))
+```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+[ analytics track:@"My Event"
+                            properties:@{ @"someValue": @"Hello" }];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
@@ -131,12 +169,25 @@ func screen<P: Codable>(title: String, category: String? = nil, properties: P?)
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Example use %}
+{% codeexampletab Swift %}
 ```swift
 analytics.screen(title: "SomeScreen")
 ```
 {% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+[analytics screen:@"SomeScreen"
+                            properties:@{ @"Feed Type": @"private" }];
+```
+{% endcodeexampletab %}
 {% endcodeexample %}
+
+The Screen method has these fields:
+
+Field | Details
+----- | -------
+`name` *required* | The name of the screen, for example *Signup* or *Home*.
+`properties` *optional* |A dictionary of properties for the screen. A screen *Photo Feed* might have properties like `Feed Type` or `Sort Order`.
 
 You can enable automatic screen tracking by using this [example plugin](https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/UIKitScreenTracking.swift){:target="_blank"}.
 
@@ -145,7 +196,6 @@ Once you add the plugin to your project, add it to your Analytics instance:
 ```swift
  analytics.add(plugin: UIKitScreenTracking())
 ```
-
 ### Group
 The [Group](/docs/connections/spec/group/) method lets you associate an individual user with a group— whether it's a company, organization, account, project, or team. This includes a unique group identifier and any additional group traits you may have, like company name, industry, number of employees. You can include any information you want to associate with the group in the traits option. When using any of the reserved group traits, be sure the information reflects the name of the trait. For example, email should always be a string of the user's email address.
 
@@ -157,7 +207,7 @@ func group<T: Codable>(groupId: String, traits: T?)
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Example use %}
+{% codeexampletab Swift %}
 ```swift
 struct MyTraits: Codable {
         let username: String
@@ -167,13 +217,27 @@ struct MyTraits: Codable {
 
 // ...
 
-analytics.group(groupId: "user-123", traits: MyTraits(
+analytics.group(groupId: "group123", traits: MyTraits(
         username: "MisterWhiskers",
         email: "hello@test.com",
         plan: "premium"))
 ```
 {% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+[analytics group:@"group123"
+traits:@{ @"name": @"MisterWhiskers", @"plan": @"premium" }];
+```
+{% endcodeexampletab %}
 {% endcodeexample %}
+
+The Group method has these fields:
+
+Field | Details
+----- | -------
+`userId` *required* | The ID for this user in your database.
+`groupId` *required* | The ID for this group in your database.
+`traits` *optional* | A dictionary of traits you know about the group. Things like: `name` or `website`.
 
 ### Alias
 The [Alias](/docs/connections/spec/alias/) method is used to merge two user identities, effectively connecting two sets of user data as one. When this method is called, the `newId` value overwrites the old `userId`. If no `userId` is currently set, the `newId` associates with future events as the `userId`. This is an advanced method and may not be supported across the entire destination catalog.
@@ -185,12 +249,23 @@ func alias(newId: String)
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Example use %}
+{% codeexampletab Swift%}
 ```swift
 analytics.alias(newId: "user-123")
 ```
 {% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+[ analytics alias:@"some new id"];
+```
+{% endcodeexampletab %}
 {% endcodeexample %}
+
+The Alias call has the following fields:
+
+Field | Details
+----- | -------
+`newId` *required* | The newId of the user you want to map to.
 
 ## Plugin architecture
 Segment's plugin architecture enables you to modify and augment how the analytics client works. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
