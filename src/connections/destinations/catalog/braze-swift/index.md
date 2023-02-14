@@ -54,12 +54,11 @@ let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR WRITE KE
                     .trackApplicationLifecycleEvents(true))
 analytics.add(plugin: BrazeDestination())
 ```
-## Page
-
+## Screen
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
-```js
-analytics.page();
+```swift
+analytics.screen(title: "SomeScreen")
 ```
 
 Segment sends Page calls to Braze as custom events if you have enabled either **Track All Pages** or **Track Only Named Pages** in the Segment Settings. 
@@ -71,19 +70,17 @@ Segment sends Page calls to Braze as custom events if you have enabled either **
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
-```js
-analytics.identify('ze8rt1u89', {
-  firstName: 'Jane',
-  lastName: 'Kim',
-  email: 'jane.kim@example.com'
-});
+```swift
+struct MyTraits: Codable {
+        let favoriteColor: String
+}
+
+analytics.identify(userId: "a user's id", MyTraits(favoriteColor: "fuscia"))
 ```
 
 When you Identify a user, Segment passes that user's information to Braze with `userId` as Braze's External User ID.
 
 If you're using a device-mode connection, Braze's SDK assigns a `device_id` and a backend identifier, `braze_id`, to every user. This allows Braze to capture anonymous activity from the device by matching on those identifiers instead of `userId`. This applies to _device-mode connections_.
-
-To send anonymous user data in cloud-mode, you must manually include the user's `braze_id` in all your Segment API calls in the `integrations.Braze.braze_id` or `context.integrations.Braze.braze_id` object.
 
 ### Capture the braze_id of anonymous users
 
@@ -134,7 +131,6 @@ Segment's special traits recognized as Braze's standard user profile fields (in 
 
 Segment sends all other traits (except Braze's [reserved user profile fields](https://www.braze.com/docs/api/objects_filters/user_attributes_object/#braze-user-profile-fields)) to Braze as custom attributes. You can send an array of strings as trait values but not nested objects.
 
-
 ## Track
 
 > info "Tip"
@@ -142,11 +138,12 @@ Segment sends all other traits (except Braze's [reserved user profile fields](ht
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call looks like:
 
-```
-analytics.track('Purchased Item', {
-    product_id: '1234',
-    name: 'bag'
-})
+```swift
+struct TrackProperties: Codable {
+        let someValue: String
+}
+
+analytics.track(name: "My Event", properties: TrackProperties(someValue: "Hello"))
 ```
 When you `track` an event, Segment sends that event to Braze as a custom event.
 
@@ -170,11 +167,13 @@ When you `track` an event with the name `Order Completed` using the [e-commerce 
 
 When you pass [ecommerce events](/docs/connections/spec/ecommerce/v2/), the name of the event becomes the `productId` in Braze. An example of a purchase event looks like:
 
-```js
-analytics.track('Purchased Item', {
-    revenue: '2000',
-    currency: 'USD'
-})
+```swift
+struct TrackProperties: Codable {
+        let revenue: String
+        let currency: String
+}
+
+analytics.track(name: "Purchased Item", properties: TrackProperties(revenue: "2000", currency: "USD"))
 ```
 
 The example above would have "Purchased Item" as its `productId` and includes two required properties that you must pass in:
@@ -197,14 +196,19 @@ You can add more product details in the form of key-value pairs to the `properti
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
 
-```js
-analytics.group("1234", {
-  name: "Initech",
-  industry: "Technology",
-  employees: 329,
-  plan: "enterprise",
-  totalBilled: 830
-});
+```swift
+struct MyTraits: Codable {
+        let username: String
+        let email: String
+        let plan: String
+}
+
+// ...
+
+analytics.group(groupId: "group123", traits: MyTraits(
+        username: "MisterWhiskers",
+        email: "hello@test.com",
+        plan: "premium"))
 ```
 
 When you call `group`, Segment sends a custom attribute to Braze with the name `ab_segment_group_<groupId>`, where `<groupId>` is the group's ID in the method's parameters. For example, if the group's ID is `1234`, then the custom attribute name is `ab_segment_group_1234`. The value of the custom attribute is `true`.

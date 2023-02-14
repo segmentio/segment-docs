@@ -64,9 +64,8 @@ Your events will now begin to flow to AppsFlyer in device mode.
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](/docs/connections/spec/screen/) does. An example call would look like:
 
-```objc
-[[SEGAnalytics sharedAnalytics] screen:@"Photo Feed"
-                            properties:@{ @"Feed Type": @"public" }];
+```swift
+analytics.screen(title: "SomeScreen")
 ```
 
 Our integration also supports using Segment `screen` events as `track` events. For example, if you had a `screen` event named `Confirmation` you could map the invocation of this to a Facebook app event as you would with Segment `track` events.
@@ -79,9 +78,12 @@ Note, the integration will not automatically translate `screen` events to spec'd
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
-```objc
-[[SEGAnalytics sharedAnalytics] track:@"Article Completed"
-                           properties:@{ @"title": @"How to Create a Tracking Plan", @"course": @"Intro to Analytics" }];
+```swift
+struct TrackProperties: Codable {
+        let someValue: String
+}
+
+analytics.track(name: "My Event", properties: TrackProperties(someValue: "Hello"))
 ```
 
 When you call `track` Segment automatically sends that event and it's properties to Facebook. In the Facebook analytics interface you'll be able to use the event properties to segment your data.

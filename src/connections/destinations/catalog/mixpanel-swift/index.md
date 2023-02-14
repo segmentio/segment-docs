@@ -79,11 +79,12 @@ In short, Segment sends one event to Mixpanel per `page` call.
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
-```js
-analytics.identify('userId123', {
-  firstName: 'James',
-  lastName: 'Gibbon'
-})
+```swift
+struct MyTraits: Codable {
+        let favoriteColor: String
+}
+
+analytics.identify(userId: "a user's id", MyTraits(favoriteColor: "fuscia"))
 ```
 
 The first thing you'll want to do is to identify your users so Mixpanel knows who they are. You'll use the Identify method to accomplish this which takes the unique `userId` of a user and any `traits` you know about them.
@@ -100,18 +101,6 @@ Segment doesn't send data to Mixpanel People by default. To enable Mixpanel Peop
 
 To add people properties in Mixpanel before you know the user's unique database `userId`, you can identify `traits` without the `userId`.
 
-> info ""
-> This only works in Analytics.js and the Segment mobile SDKs.
-
-The `identify` call would look like this in Analytics.js if you only want to set people properties without a `userId`:
-
-```js
-analytics.identify({
-  email: 'hello@example.com',
-  name: 'Ian Taylor'
-})
-```
-
 ## Group
 
 Group calls are sent to Mixpanel if, **and only if**,
@@ -121,15 +110,19 @@ Group calls are sent to Mixpanel if, **and only if**,
 2. You have created a group key of the same name in your Mixpanel [project settings](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#implementation){:target="_blank"}.
 3. A Group trait with the same name as one of the configured Group Identifier Traits is sent with the group call.
 
-```js
-analytics.group("0e8c78ea9d97a7b8185e8632", {
-  name: "Initech",
-  company_id: "0e8c78ea9d97a7b8185e8632", // Group identifier trait.
-  industry: "Technology",
-  employees: 329,
-  plan: "enterprise",
-  "total billed": 830
-});
+```swift
+struct MyTraits: Codable {
+        let username: String
+        let email: String
+        let plan: String
+}
+
+// ...
+
+analytics.group(groupId: "group123", traits: MyTraits(
+        username: "MisterWhiskers",
+        email: "hello@test.com",
+        plan: "premium"))
 ```
 
 Mixpanel supports multiple definitions of groups. For more information see [Mixpanel's Group Analytics documentation](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics){:target="_blank"}.
@@ -137,11 +130,7 @@ Mixpanel supports multiple definitions of groups. For more information see [Mixp
 If the group call **does not** have a group trait that matches the Group Identifier Traits setting, then the event will be ignored.
 
 ### Group using Device-mode
-
-When you use Analytics.js, you must set a `userId` value, or Mixpanel will ignore Group calls.
-When using Analytics.js, a `userId` must be set or group calls to Mixpanel will be ignored. When you call the Identify method from the client in either a browser using Analytics.js or one a mobile SDKs, several things occur:
-
-Segment recognizes and translates the [special traits](/docs/connections/spec/identify/#traits) so that they fit the expectations of Mixpanel's API. The table below shows the mappings. Pass the key on the left and Segment transforms it to the key on the right before sending to Mixpanel.
+ When you call the Identify method from the client in either a browser using Analytics.js or one a mobile SDKs, several things occur: Segment recognizes and translates the [special traits](/docs/connections/spec/identify/#traits) so that they fit the expectations of Mixpanel's API. The table below shows the mappings. Pass the key on the left and Segment transforms it to the key on the right before sending to Mixpanel.
 
 <table>
   <tr>
@@ -189,8 +178,6 @@ If you've enabled Mixpanel People in your Segment settings, Segment calls Mixpan
 
 Disable **Set All Traits as Super Properties or People Properties By Default** to disable the default behavior and register super properties explicitly. Segment automatically includes any trait on an identify that matches one of Mixpanel's special properties, which you can see in the table above. For more information, see [Explicitly set People Properties and Super Properties](#explicitly-set-people-properties-and-super-properties).
 
-If you call `identify` without a `userId`, it may not set the People Properties inside Mixpanel, but it will cache those traits for later use with Segment's `analytics.js`. It is best practice to always call `identify` with a `userId`.
-
 ### Arrays
 
 For array type traits passed to `identify` calls, Segment uses Mixpanel's `people.union` to union (append ignoring duplicates) them to their existing values. If the trait doesn't exist a new array will be created for you. To clear the contents of an array trait, you can pass an empty array `[]`.
@@ -198,8 +185,12 @@ For array type traits passed to `identify` calls, Segment uses Mixpanel's `peopl
 ## Track
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
-```javascript
-analytics.track('Button Clicked')
+```swift
+struct TrackProperties: Codable {
+        let someValue: String
+}
+
+analytics.track(name: "My Event", properties: TrackProperties(someValue: "Hello"))
 ```
 Because Mixpanel is an event tracking analytics tool, you'll want to [`track`](/docs/connections/spec/track/) your user's actions. The more useful events you [`track`](/docs/connections/spec/track/), the better Mixpanel becomes.
 
@@ -212,147 +203,6 @@ If Mixpanel People is enabled in your Segment settings and you include an event 
 ### Reserved Properties
 
 There are two strings to avoid when naming event properties that will be sent to Mixpanel: `length` and `bucket`. `length` is interpreted as the JavaScript `.length` method, which causes the `mixpanel.track` call to fail silently. `bucket` is a reserved property that was used in the early days of Mixpanel. If you include a property called `bucket` in your events, it will not show up in the UI. However, it will not cause the `mixpanel.track` call to fail.
-
-## Alias
-If you're not familiar with the Segment Specs, take a look to understand what the [Alias method](/docs/connections/spec/alias/) does. An example call would look like:
-
-```javascript
-analytics.alias('newUserId')
-```
-
-> info ""
-> **Important:** Mixpanel used to require that you call `alias` in all libraries to connect anonymous visitors to identified users. However, with the release of Mixpanel's new [Identity Merge feature](https://help.mixpanel.com/hc/en-us/articles/360039133851#enable-id-merge){:target="_blank"} this is no longer necessary. To enable ID Merge, go to your Mixpanel Settings Dashboard, navigate to **Project Settings > Identity Merge** and enable the setting from that screen. If you are _not_ using this setting, use the instructions below.
-
-
-As soon as you have a `userId` for a visitor that was previously anonymous you'll need to [`alias`](/docs/connections/spec/alias/) their old anonymous `id` to the new `userId`. In Mixpanel only **one** anonymous user history can be merged to **one** identified user. For that reason you should only call `alias` once, right after a user registered, but before the first `identify`. To merge identities in Mixpanel, send an identify call with both the previous anonymous ID, and the new user ID, as follows:
-
-```javascript
-analytics.alias('anonId','newUserId');
-```
-
-You can `track` the action that caused the user to be identified or created. For more information, see [Best Practices for Identifying Users](/docs/connections/spec/best-practices-identify/).
-
-Read more about how Mixpanel recommends using `alias` [in their docs](https://mixpanel.com/docs/integration-libraries/using-mixpanel-alias){:target="_blank"}.
-
-> success ""
-> Segment recommends that you alias on the client whenever possible, due to technical limitations with aliasing server-side.
-
-### Alias using Device-mode
-
-In client-side JavaScript you only need to pass the new identified `userId`. Segment aliases the old anonymous `id` to your new `userId`.
-
-Here's a JavaScript example where the new `userId` is `12345`:
-
-```javascript
-analytics.alias('12345');
-analytics.identify('12345');
-analytics.track('User Signed Up');
-```
-
-### Alias using Cloud-mode
-
-If an `identify` or `track` call arrives to Mixpanel with a new `distinct_id` too quickly after an `alias` call, there is a race condition between the event and the alias call. As long as your `identify` and `track` calls arrive ~1 second after the `alias`, this shouldn't be an issue; when the alias queue is backed up, Mixpanel queues events as well, mitigating the race condition.
-
-However, in cases when events are processed too quickly, before their corresponding alias, your calls can result in split/duplicate profiles.
-
-Mixpanel's client-side JavaScript library fixes this issue by continuing to send `track` calls to the original mixpanel `distinct_id` while the records update.
-
-> success ""
-> Segment recommends that you alias for Mixpanel on the client side through Analytics.js to avoid creating split profiles and broken funnels.
-
-However, in certain circumstances, despite the risk of duplicate profiles, you may still wish to send the calls server-side. In those cases, there are two options for calling [`alias`](/docs/connections/spec/alias/) from your servers:
-
-#### In Conjunction with Client-Side Tracking
-
-If you track anonymous users on the client side either from a browser or one of a mobile SDK, pass the Mixpanel `distinct_id` from the browser to your servers in order to [`alias`](/docs/connections/spec/alias/) it to the new `userId`.
-
-First, use [`analytics.ready`](/docs/connections/sources/catalog/libraries/website/javascript#ready) to grab the Mixpanel `distinct_id`:
-
-```js
-analytics.ready(function(){
-    var anonId = mixpanel.get_distinct_id();
-});
-```
-
-Next, pass the `anonId` to your server and [`alias`](/docs/connections/spec/alias/), [`identify`](/docs/connections/spec/identify/), and [`track`](/docs/connections/spec/track/) your new user.
-
-Here's a Node example where the new `userId` is `12345`:
-
-```js
-analytics.alias({ previousId: anonId, userId: '12345' });
-analytics.flush(); // flush the alias
-
-analytics.identify({userId: '12345'});
-analytics.track({
-  userId: '12345',
-  event: 'Connected Facebook'
-});
-```
-Segment recommends that you flush the [`alias`](/docs/connections/spec/alias) to give Mixpanel more time to process it on their side before you [`identify`](/docs/connections/spec/identify) and [`track`](/docs/connections/spec/track).
-
-#### Tracking Exclusively Server Side
-
-If you're tracking anonymous users with a server-side library, you can [`alias`](/docs/connections/spec/alias/) the anonymous `id` to the new `userId`.
-
-Here's a Python example of the [`alias`](/docs/connections/spec/alias/), [`identify`](/docs/connections/spec/identify/), [`track`](/docs/connections/spec/track/) sequence where the anonymous `id` was `92fh49fqh9849hf` and the new `userId` is `12345`:
-
-```python
-analytics.alias('92fh49fqh9849hf', '12345')
-analytics.flush() # flush the alias
-
-analytics.identify('12345')
-analytics.track('12345', 'Registered')
-```
-
-Segment recommends that you flush the [`alias`](/docs/connections/spec/alias) to give Mixpanel more time to process it on their side before you [`identify`](/docs/connections/spec/identify) and [`track`](/docs/connections/spec/track).
-
-### People
-
-Segment doesn't send data to Mixpanel People by default. To enable Mixpanel People, change the "Use Mixpanel People" setting in the Mixpanel Destination settings in Segment.
-
-If you want to add people properties in Mixpanel before you know the user's unique database `userId` you can identify `traits` without the `userId`.
-
-<!-- Removing this note as this has been tested with our server libraries and works (Feb 2020) -->
-<!--**Note:** this only works in Analytics.js and our mobile SDKs.-->
-
-Your `identify` call would look like this in Analytics.js if you only want to set people properties without a `userId`:
-
-```js
-analytics.identify({
-  email: 'example@example.com',
-  name: 'Ian Taylor'
-})
-```
-
-### UTM Campaign Parameters
-
-Since Segment's client-side javascript library (`analytics.js`) loads `mixpanel.js` in the background, you'll get the exact same functionality of Mixpanel around UTM Campaign Parameters as you would when using Mixpanel directly.
-
-[Read more in Mixpanel's UTM docs](https://mixpanel.com/help/questions/articles/can-i-track-google-analytics-style-utm-tags-with-mixpanel)
-
-In order to pass UTM parameters server-side, you can either pass properties or traits of `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, and `utm_term` in your track and identify calls, or pass them in your `context` object, for example:
-
-```javascript
-// node library
-
-analytics.track({
-  userId: '019mr8mf4r',
-  event: 'Item Purchased',
-  properties: {
-    revenue: 39.95,
-    shippingMethod: '2-day'
-  },
-  context: {
-    campaign: {
-      name: "TPS Innovation Newsletter",
-      source: "Newsletter",
-      medium: "email",
-      term: "tps reports",
-      content: "image link"
-    }
-  }
-});
-```
 
 ### Explicitly Set People Properties and Super Properties
 
@@ -384,49 +234,9 @@ Remember, Segment sends one event per `page` call.
 
 To increment at the property level, tell Segment which properties you want to increment using the **Properties to increment** setting and Segment calls Mixpanel's `increment` for you when you attach a number to the property (for example, `'items purchased': 5`)
 
-### Reset Mixpanel Cookies
-
-When a user logs out, Segment recommends that you call `analytics.reset();` to clear the Segment cookie. This function isn't mapped to Mixpanel's reset method. If you have issues with `distinct_id` for example, if it's not matched with the right user, you should add this to your logout flow:
-
-```javascript
-analytics.ready(function(){
-  window.mixpanel.cookie.clear();
-});
-```
-### Ignore IP from Server to Disable Geo-location in Mixpanel People
-
-To avoid having any IP address sent to Mixpanel and by doing so, turn off geo-location for server-side users, pass the `context.ip` as 0.
-
-Here's a python example:
-
-```python
-analytics.track(user_id=user.id,
-  event='Ignore My IP', context={
-  'ip': 0
-})
-```
-
-Provide `context.ip` to all your [`identify`](/docs/connections/spec/identify/), [`track`](/docs/connections/spec/track/), and [`alias`](/docs/connections/spec/alias/) calls to make sure Mixpanel doesn't geo-locate your users.
-
 ### Sending data to Mixpanel's European Union Endpoint
 
 To implement Mixpanel in the European Union, enable the setting "Enable European Union Endpoint" on the Settings tab of the Mixpanel destination. When this setting is enabled, Segment updates the endpoint for any data sent from server-side libraries, browsers using Analytics.js, or the iOS SDK.
-
-If you send data with the Android SDK, specify the different endpoints with meta-data tags. On your app's `AndroidManifest.xml` file, add the following tags under your `<application>` tags to override the track, engage, and group endpoints:
-
-```xml
-<meta-data android:name="com.mixpanel.android.MPConfig.EventsEndpoint"
-           android:value="https://api-eu.mixpanel.com/track?ip=" />
-<meta-data android:name="com.mixpanel.android.MPConfig.PeopleEndpoint"
-           android:value="https://api-eu.mixpanel.com/engage=" />
-<meta-data android:name="com.mixpanel.android.MPConfig.GroupsEndpoint"
-           android:value="https://api-eu.mixpanel.com/groups" />
-```
-
-See the [Mixpanel documentation on their European Union endpoint](https://developer.mixpanel.com/docs/implement-mixpanel#section-implementing-mixpanel-in-the-european-union-eu){:target="_blank"} for additional information.
-
-## Troubleshooting
-
 ### When Will I See Data from my Mobile App?
 
 If you already have an app deployed with the Segment library, and you just enabled Mixpanel mobile, it can take up to an hour for all your mobile users to refresh their Segment settings cache, and learn about the new service that you want to send to.
@@ -443,8 +253,6 @@ If you're testing in Xcode remember you must first background the app, then the 
 2. Make sure to turn on the "People" setting so that all of your [`identify`](/docs/connections/spec/identify/) calls will be sent to Mixpanel's People feature.
 3. Make sure you disable the default filter in the Mixpanel People Explore tab.
 
-## Appendices
-
 ### IP
 
 If an `ip` property is passed to Mixpanel, the value will be interpreted as the IP address of the request and therefore automatically parsed into Mixpanel geolocation properties (City, Country, Region). After that IP address has been parsed, they will throw out the IP address and only hold onto those resulting geolocation properties. As such, if you want to display an IP address as a property within the Mixpanel UI or within raw data, you will simply want to slightly modify the naming convention for that property.
@@ -456,122 +264,4 @@ Instead of `ip`, you can use a property name of `user IP` or `IP Address` (whate
 Push notifications are only available for projects bundling the Segment-Mixpanel SDK.
 
 > info ""
-> Set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) documentation.
-
-## Using Mixpanel with Engage
-
-Mixpanel is a product analytics platform that is compatible as a Engage destination.
-
-You can send computed traits and audiences created in Engage to Mixpanel and use them to create dashboards, run cohort analyses, or to power messages.
-
-{% include content/lookback.md %}
-
-
-### Using Engage Computed Traits with Mixpanel
-
-You can send Computed Traits created in Engage to Mixpanel as `identify` calls to create user properties in Mixpanel.
-
-![](images/pers-01-computed.png)
-
-You can check a specific user profile in Mixpanel for Computed Traits by going to **Users → Explore** and search for a specific user to view their profile.
-
-![](images/pers-02-mpx-profile-computed.png)
-
-
-Computed traits without a lookback window search across all historical events, and update in real time.
-
-Computed traits with a lookback window only search across events that occurred within the specified time frame. Computed traits *with* a lookback window are updated hourly.
-
-![](images/pers-03-lookback.png)
-
-
-If you choose to include anonymous users when you create the computed trait, you must use the [`alias` call](#alias) to merge user profiles when they become a known user.
-
-![](images/pers-04-incl-anons.png)
-
-### Using Engage Audiences with Mixpanel
-
-You can send Engage Audiences to Mixpanel as `identify` or `track` calls. You can choose the type of call to send when you add Mixpanel as a destination for an audience.
-
-![](images/pers-05-pdest-settings.png)
-
-
-When you send custom traits as `identify` calls, the name of the audience is added to the user's profile as a user trait, with a boolean value to indicate if the user is in the audience. For example, when a user first completes an order in the last 30 days, Segment sends an `identify` call with the property `order_completed_last_30days: true`. When this user no longer satisfies these criteria (for example when their last purchase was more than 30 days ago) Engage sets that value to `false`.
-
-![](images/pers-06-audience.png)
-
-You can check a specific user profile in Mixpanel for Computed Traits by going to **Users → Explore** and searching for a specific user to view their profile.
-
-
-![](images/pers-07-mxp-profile-audience.png)
-
-When you first create an audience, Engage sends an  `identify` call for every user in the audience. Later syncs only send updates for users who were added or removed from the audience since the last sync.
-
-
-When you use `track` calls, Segment sends an `Audience Entered` event when the user enters the audience, with the audience name as a property of the event. When the user exits the audience, Engage sends an `Audience Exited` event with the same property.
-
-
-![](images/pers-08-audience-track.png)
-
-
-You can check a specific user profile in Mixpanel for audience events by going to **Users → Explore** and searching for a specific user to view their profile. Look for `Audience Entered` and `Audience Exited` events in the Activity Feed.
-
-![](images/pers-09-mxp-profile-activityfeed.png)
-
-Audiences without a lookback window searches across all historical events and update in real time.
-
-Audiences with a lookback window only search across events that occurred within the specified time frame. Audiences *with* a lookback window are updated hourly.
-
-
-![](images/pers-10-lookback.png)
-
-If you choose to include anonymous users when you create an audience, you must use the [alias call](#alias) to merge user profiles when they become a known user.
-
-
-![](images/pers-11-incl-anons.png)
-
-
-## Setting Up Engage and Mixpanel
-
-To send computed traits or audiences to Mixpanel, connect the destination to your Space. Once it's set up, you can select Mixpanel as a destination for Engage data when you create computed traits or audiences.
-
-1. In your Segment workspace, click Engage in the left navigation bar, and select your Space.
-2. Click **Engage Settings** and select the **Destinations** tab.
-3. Click **Add Destination**.
-2. Search for Mixpanel and click add destination.
-3. Enter your API Secret and Token for the integration.
-4. Enable the "Use Mixpanel People” toggle. This allows Engage to send `identify` calls to Mixpanel.
-
-> success ""
-> **Tip**: Mixpanel now accepts Identify calls by default. Previously, this was an additional paid feature.
-
-
-![](images/pers-12-settings-people.png)
-
-
-## Mixpanel Engage Details
-
-- **Supports Engage**: Yes
-- **Engage Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
-- **Traits and Audiences created by**: Traits and audiences are added as user properties using `identify` calls. You can send Audiences as `Audience Entered` or `Audience Exited track` calls with the audience name as an event property.
-- **Must create audience_name field before Engage can update those values?**: No. If sent as an `identify` call, Engage auto-creates the computed trait or audience name as a user property.
-- **Audience appears as**:
-    - Computed traits appear as a lower case user property with spaces converted to underscores.
-    - For audiences sent as an `identify` call, Engage creates a lower case boolean (true/false) user property. Spaces are converted to underscores.
-    - For audiences sent as a `track` call, Engage sends `Audience Entered` and `Audience Exited` events with the audience name as an event property.
-- **Destination rate limit**: [None](https://help.mixpanel.com/hc/en-us/articles/115004602563-Rate-Limits-for-API-Endpoints#track-and-engage-endpoints){:target="_blank"}
-- **Lookback window allowed**: Yes, unlimited.
-- **Identifiers required** : `userId` or `anonymousId`
-- **Identifiers accepted** : `userId` or `anonymousId`
-- **Client or Server-Side Connection**: Server-side
-
-
-## Mixpanel Engage FAQs
-
-**What happens if I delete an audience or trait in Segment?**
-
-If you delete an audience or trait in Segment, it isn't deleted from Mixpanel. To remove an audience-created property in Mixpanel, you must use either [the Mixpanel Engage API using the $unset method or hide user properties from the Lexicon](https://help.mixpanel.com/hc/en-us/articles/115004567926-Hide-or-Delete-Events-Properties-Users){:target="_blank"}.
-
-**If a user has multiple external ids in Segment, what happens when they enter an audience or have a computed trait?**
-
-Segment sends an `identify` or a  `track` call for each external on the user's account. For example, if a user has three email addresses, and you are sending `identify` calls for your audience, Engage sends three `identify` calls to Mixpanel and adds the latest email address to the user profile as the email “address of record” on the Mixpanel user profile.
+> Set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) 

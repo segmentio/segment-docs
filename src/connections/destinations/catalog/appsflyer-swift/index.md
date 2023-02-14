@@ -63,8 +63,11 @@ Your events will now begin to flow to AppsFlyer in device mode.
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example iOS call would look like:
 
 ```swift
-[[SEGAnalytics sharedAnalytics] identify:@"12091906-01011992"
-                                traits:@{ @"email": @"john.doe@example.com" }];
+struct MyTraits: Codable {
+        let favoriteColor: String
+}
+
+analytics.identify(userId: "a user's id", MyTraits(favoriteColor: "fuscia"))
 ```
 
 When you call `.identify()`, Segment uses AppsFlyer's `setCustomerUserID` to send the `userId` that was passed in.
@@ -76,8 +79,11 @@ When you call `.identify()`, Segment uses AppsFlyer's `setCustomerUserID` to sen
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example iOS call would look like:
 
 ```swift
-[[SEGAnalytics sharedAnalytics] track:@"Article Completed"
-                           properties:@{ @"title": @"How to Create a Tracking Plan", @"course": @"Intro to Analytics" }];
+struct TrackProperties: Codable {
+        let someValue: String
+}
+
+analytics.track(name: "My Event", properties: TrackProperties(someValue: "Hello"))
 ```
 
 When you call `track`, Segment translates it automatically and sends the event to AppsFlyer.

@@ -9,7 +9,7 @@ Firebase’s destination plugin code is open source and available on GitHub. You
 ## Adding the dependency
 
 > warning ""
-> the Firebase library itself will be installed as an additional dependency.*
+> the Firebase library itself will be installed as an additional dependency.
 
 ### via Xcode
 In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repo.
@@ -29,10 +29,6 @@ Open your Package.swift file and add the following do your the `dependencies` se
             from: "1.1.3"
         ),
 ```
-
-
-*Note the AppsFlyer library itself will be installed as an additional dependency.*
-
 
 ## Using the Plugin in your App
 
@@ -152,6 +148,16 @@ Properties properties = new Properties()
 Analytics.with(this).track("Order Completed", properties);
 ```
 
+```swift
+struct TrackProperties: Codable {
+        let orderId: String
+        let revenue: Int
+        let currency: String
+}
+
+analytics.track(name: "Order Completed", properties: TrackProperties(orderId: "order-123", revenue: 23.00, currency: "USD"))
+```
+
 ## Screen
 
 Segment doesn't map screen events to Firebase - that's because Firebase's SDK collects screen information out of the box for you.
@@ -167,11 +173,9 @@ Google Analytics for Firebase iOS does NOT support the case of manual-only scree
 
 Firebase Dynamic Links are smart URLs that can change behavior dynamically depending on the platform where the user clicks them. Use them in web, email, social media, referral and physical promotions to increase user acquisition, retention and lifetime value. Key features include ability to survive app installs, controlling user experience depending on what platform they access the link on and knowing which content and campaigns are working using tracking in the Firebase console. [Check out Firebase's Docs here](https://firebase.google.com/docs/dynamic-links/).
 
-To use Firebase Dynamic Links, add the below to your podfile.
+To use Firebase Dynamic Links, search for the Firebase package via Swift Package Manager and add the Dynamic Links library:
 
-```objc
-pod 'Firebase/DynamicLinks'
-```
+`https://github.com/firebase/firebase-ios-sdk`
 
 Then, enter the deep link URL scheme in your Segment Firebase destination settings. [Here's a sample app delegate that shows how to implement the Dynamic Linking Logic](https://github.com/firebase/quickstart-ios/blob/master/dynamiclinks/DynamicLinksExample/AppDelegate.m#L41-L135).
 

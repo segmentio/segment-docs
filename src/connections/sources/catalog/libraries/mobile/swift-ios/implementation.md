@@ -47,10 +47,10 @@ To get started with the Analytics-Swift mobile library:
       SEGConfiguration *config = [[SEGConfiguration alloc] initWithWriteKey:@"WRITE_KEY"];
       config.trackApplicationLifecycleEvents = YES;
     
-      SEGAnalytics *analytics = [[SEGAnalytics alloc] initWithConfiguration: config];
-    
-      [analytics track:@"Example Event"];
-      [analytics track:@"Example Properties" properties:@{@"email": @"sloth@segment.com"}];
+      _analytics = [[SEGAnalytics alloc] initWithConfiguration: config];    
+
+      [self.analytics track:@"Example Event"];
+      [self.analytics track:@"Example Properties" properties:@{@"email": @"sloth@segment.com"}];
     
       return YES;
   }
@@ -105,7 +105,7 @@ analytics.identify(userId: "a user's id", MyTraits(favoriteColor: "fuscia"))
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
 ```objc
-[analytics identify:@"a user's id"
+[self.analytics identify:@"a user's id"
                                 traits:@{ @"email": @"fuscia" }];
 ```
 {% endcodeexampletab %}
@@ -141,7 +141,7 @@ analytics.track(name: "My Event", properties: TrackProperties(someValue: "Hello"
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
 ```objc
-[ analytics track:@"My Event"
+[ self.analytics track:@"My Event"
                             properties:@{ @"someValue": @"Hello" }];
 ```
 {% endcodeexampletab %}
@@ -176,7 +176,7 @@ analytics.screen(title: "SomeScreen")
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
 ```objc
-[analytics screen:@"SomeScreen"
+[self.analytics screen:@"SomeScreen"
                             properties:@{ @"Feed Type": @"private" }];
 ```
 {% endcodeexampletab %}
@@ -225,7 +225,7 @@ analytics.group(groupId: "group123", traits: MyTraits(
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
 ```objc
-[analytics group:@"group123"
+[self.analytics group:@"group123"
 traits:@{ @"name": @"MisterWhiskers", @"plan": @"premium" }];
 ```
 {% endcodeexampletab %}
@@ -256,7 +256,7 @@ analytics.alias(newId: "user-123")
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
 ```objc
-[ analytics alias:@"some new id"];
+[self.analytics alias:@"some new id"];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
