@@ -15,6 +15,9 @@ To set up a custom domain, you need:
 - Access to the CDN settings
 - A security certificate for the proxy domain
 
+> info "Custom Proxy Troubleshooting"
+> If you experience issues configuring a custom proxy, contact your organization's IT department for help. Segment does not have access to the resources you need to configure a custom proxy.
+
 This guide explains how to set up a custom domain in CloudFront. You can apply these principles to almost any modern CDN that supports proxies.
 
 You need to set up two important parts, regardless of the CDN provider you use:
@@ -100,6 +103,3 @@ To add a CNAME record to your DNS settings:
    - **Value**: Tracking API CloudFront Distribution Domain Name
 3. Save your record. This might take some time to take effect, depending on your TTL settings.
 4. Run `curl` on your domain to check if the proxy is working correctly.
-
-#### Troubleshooting
-Please note that setting up a custom proxy is something that is configured entirely by you and your engineering team. While we are always here to help support and brainstorm ideas should you come across any technical issues, troubleshooting custom proxy errors is challenging from the Segment side of things due to limited visibility into your codebase and not having access to your custom setup. 
