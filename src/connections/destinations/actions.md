@@ -99,15 +99,15 @@ This takes effect within minutes, and removes the action completely. Any data th
 ## Test a destination action
 To test a destination action, follow the instructions in [Testing Connections](/docs/connections/test-connections/). You must enable a mapping in order to test the destination. Otherwise, this error occurs: *You may not have any subscriptions that match this event.*
 
-You can also test within the mapping itself. Click an individual mapping to edit. In step 2 of the mapping, you can add a test event from the source, or a sample event:
+You can also test within the mapping itself. To test the mapping:
+1. Navigate to the *Mappings** tab of your destination. 
+2. Select a mapping and click the **...*** and select **Edit Mapping**. 
+3. In step 2 of the mappings edit page, click **Load Test Event from Source** to add a test event from the source or you can add your own sample event. 
+4. Go to step 4 on the mappings edit page, and click **Test Mapping** to test the mapping and view the response from the destination. 
 
-<img width="915" alt="Screenshot of test or sample event load in mappings" src="https://user-images.githubusercontent.com/78318468/217881329-05546b7c-80f1-4641-b201-f755f6afa1f7.png">
 
-From there you can scroll to step 4 to test the mapping and view the response from the destination.
 
-<img width="878" alt="Screenshot of event testing section of mapping" src="https://user-images.githubusercontent.com/78318468/217882013-508af07d-8b5d-4d4d-bb48-0ec986306418.png">
 
-<img width="877" alt="Screenshot of test event response in mapping" src="https://user-images.githubusercontent.com/78318468/217882104-b0b4dac3-9f8f-4034-a374-7adb171153f2.png">
 
 
 
