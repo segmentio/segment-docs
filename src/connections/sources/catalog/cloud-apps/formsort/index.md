@@ -23,98 +23,37 @@ This source is maintained by Formsort. For any issues with the source, [contact 
 
 The table below lists events that Formsort sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations. The default behavior is for Formsort to pass the `responderUuid` associated with the user as the `userId`. This can be changed in the Formsort integration.
 
-<table>
-  <tr>
-  </tr>
-  <tr>
-   <td>EmailCollected</td>
-   <td>Responder's email was collected successfully, and the email has the data classification of "responder_email"</td>
-  </tr>
-  <tr>
-   <td>FlowClosed</td>
-   <td>Responder clicked the exit button to leave the flow</td>
-  </tr>
-  <tr>
-   <td>FlowFinalized</td>
-   <td>Responder has finished the flow and they are redirected or shown the completion screen</td>
-  </tr>
-  <tr>
-   <td>FlowLoaded</td>
-   <td>Flow has finished loading</td>
-  </tr>
-  <tr>
-   <td>PhoneCollected</td>
-   <td>Responder's phone number was collected successfully, and the phone number has the data classification of "responder_phone"</td>
-  </tr>
-  <tr>
-   <td>StepCompleted</td>
-   <td>Responder completed the step</td>
-  </tr>
-   <tr>
-   <td>StepLoaded</td>
-   <td>Step was loaded</td>
-  </tr>
-  <tr>
-   <td>UrlOpened</td>
-   <td>Responder clicked a link and was redirected to a new URL</td>
-  </tr>  
-</table>
+| Property Name  | Description                                                                                                                |
+| -------------  | -------------------------------------------------------------------------------------------------------------------------- |
+| EmailCollected | Responder's email was collected successfully, and the email has the data classification of "responder_email"               |
+| FlowClosed     | Responder clicked the exit button to leave the flow                                                                        |
+| FlowFinalized  | Responder has finished the flow and they are redirected or shown the completion screen                                     |
+| FlowLoaded     | Flow has finished loading                                                                                                  |
+| PhoneCollected | Responder's phone number was collected successfully, and the phone number has the data classification of "responder_phone" |
+| StepCompleted  | Responder completed the step                                                                                               |
+| StepLoaded     | Step was loaded                                                                                                            |
+| UrlOpened      | Responder clicked a link and was redirected to a new URL                                                                   |
 
 ## Event Properties
 
 The following table lists event properties included with all events Segment receives from Formsort.
 
-<table>
-  <tr>
-   <td>Property Name</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>`event`</td>
-   <td>Flow event type</td>
-  </tr>
-  <tr>
-   <td>`flowLabel`</td>
-   <td>Label of the flow</td>
-  </tr>
-  <tr>
-   <td>`variantLabel`</td>
-   <td>Label of the variant</td>
-  </tr>
-  <tr>
-   <td>`variantUuid`</td>
-   <td>UUID of the variant</td>
-  </tr>
-  <tr>
-   <td>`responderUuid"</td>
-   <td>UUID of the responder</td>
-  </tr>
-  <tr>
-   <td>`userId`</td>
-   <td>Identifying id for the responder</td>
-  </tr>  
-</table>
+| Property Name   | Description                     |
+| --------------  | -------------------------       |
+| `event`         | Flow event type                 |
+| `flowLabel`     | Label of the flow               |
+| `variantLabel`  | Label of the variant            |
+| `variantUuid`   | UUID of the variant             |
+| `responderUuid` | UUID of the responder           |
+| `userId`        | Identifying id for the responder | 
 
 This table lists event-specific properties Formsort sends to Segment:
 
-<table>
-  <tr>
-   <td>Property Name</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>stepId</td>
-   <td>For step events, the named id of the step</td>
-  </tr>
-  <tr>
-   <td>stepIndex</td>
-   <td>For step events, the index of the step in the flow.</td>
-  </tr>
-  <tr>
-   <td>msSpentOnStep</td>
-   <td>For StepCompleted events, the time in millesconds the responder spent on the step.</td>
-  </tr>
-</table>
+| Property Name | Description                                                                         |
+| ------------- | ----------------------------------------------------------------------------------- |
+| stepId        | For step events, the name of the step                                               |
+| stepIndex     | For step events, the index of the step in the flow.                                 |
+| msSpentOnStep | For StepCompleted events, the time in milliseconds the responder spent on the step. |
 
 Optionally, form answers submitted by responders can also be included in events sent to Segment. If enabled, responder answers will appear in an `answers` object for each event.
 
