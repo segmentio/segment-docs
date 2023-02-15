@@ -178,5 +178,5 @@ analytics.track('Product Added', {
 * By default the value is null
 * Requirement is for the value to be greater than 0
 * Only whole positive numbers are supported. If fractional numbers are included, the number will be truncated (for example, 1.5 will be 1)
-* If a number is passed in a string format such as "1", it will be parsed and converted to integer
+* If a number is passed in a string format such as `"1"`, it will be parsed and converted to integer
 * Non-numeric characters are not allowed
