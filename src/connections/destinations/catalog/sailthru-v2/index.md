@@ -98,7 +98,7 @@ analytics.track("Subscribed", {
 
 #### Delete a User
 
-To delete a user, the email needs to be included in the `userId` or `context.traits` track call, in a call like the following:
+To delete a user, you need to include the email in the `userId` or `context.traits` track call, in a call like the following:
 
 ```js
 analytics.track("User Deleted", {userId:"xxxxxx@example.com" })
