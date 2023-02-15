@@ -67,7 +67,7 @@ Analytics.js 2.0 loads new files not usually loaded with Analytics.js Classic, s
 **Option 1**: Update the proxy so that:
 
 `https://cdn.yourdomain.com/analytics.js/*` maps to `https://cdn.segment.com/analytics.js/*`
-`https://cdn.yourdomain.com/analytics.js/*` maps to `https://cdn.segment.com/v1/*`
+`https://cdn.yourdomain.com/v1/*` maps to `https://cdn.segment.com/v1/*`
 `https://cdn.yourdomain.com/analytics-next/*` maps to `https://cdn.segment.com/analytics-next/*`
 `https://cdn.yourdomain.com/next-integrations/*` maps to `https://cdn.segment.com/next-integrations/*`
 
