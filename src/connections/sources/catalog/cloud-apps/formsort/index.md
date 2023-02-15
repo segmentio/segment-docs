@@ -38,13 +38,13 @@ The table below lists events that Formsort sends to Segment. These events appear
 
 The following table lists event properties included with all events Segment receives from Formsort.
 
-| Property Name   | Description                     |
-| --------------  | -------------------------       |
-| `event`         | Flow event type                 |
-| `flowLabel`     | Label of the flow               |
-| `variantLabel`  | Label of the variant            |
-| `variantUuid`   | UUID of the variant             |
-| `responderUuid` | UUID of the responder           |
+| Property Name   | Description                      |
+| --------------  | -------------------------------- |
+| `event`         | Flow event type                  |
+| `flowLabel`     | Label of the flow                |
+| `variantLabel`  | Label of the variant             |
+| `variantUuid`   | UUID of the variant              |
+| `responderUuid` | UUID of the responder            |
 | `userId`        | Identifying id for the responder | 
 
 This table lists event-specific properties Formsort sends to Segment:
