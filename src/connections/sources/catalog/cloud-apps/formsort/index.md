@@ -4,17 +4,16 @@ id: f02zgzAWMG
 hidden: true
 ---
 
-[Formsort](https://formsort.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a low code form builder empowering product and growth teams to build and optimize highly complex, customizable flows. Increase form conversion by over 20% - without the dev time.
+[Formsort](https://formsort.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a low code form builder empowering product and growth teams to build and optimize highly complex, customizable flows. Increase form conversion by over 20% - without the dev time.
 
-This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
 
-This source is maintained by Formsort. For any issues with the source, [contact their Support team](mailto:support@formsort.com).
+This source is maintained by Formsort. For any issues with the source, [contact the Formsort support team](mailto:support@formsort.com).
 
 ## Getting Started
 
 1. From your Segment UI’s Sources page click on “Add Source”.
 2. Search for “Formsort” within the Sources Catalog and confirm by clicking “Connect”.
-3. Give the Source a nickname and follow the set up flow to “Add Source”. The nickname is a label used in the Segment interface, and Segment creates a related schema name which you query against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (Eg. formsort-prod or formsort-dev).
+3. Give the source a nickname and follow the set up flow to “Add Source”. The nickname is a label used in the Segment interface, and Segment creates a related schema name which you query against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (Eg. formsort-prod or formsort-dev).
 4. Copy the Write key from the Segment UI and log in to your Formsort workspace - navigate to **Flows** > **Integrations** > **Segment** and paste the key.
 5. You can choose what events will be emitted by responders and change other settings.
 6. Press **Save** to connect.
@@ -59,8 +58,8 @@ Optionally, form answers submitted by responders can also be included in events 
 
 ## Adding Destinations
 
-Now that your Source is set up, you can connect it with Destinations.
+Now that your source is set up, you can connect it to destinations.
 
-Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
+Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, [contact the Formsort support team](mailto:support@formsort.com).
