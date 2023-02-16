@@ -1,13 +1,14 @@
 ---
 title: 'Qualtrics Source'
 hidden: true
+beta: true
 ---
 
-[Qualtrics](https://qualtrics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) [Qualtrics]() is an Experience Management platform that allows companies to design and improve customer and employee experiences through listening, analysis and action.
+[Qualtrics](https://qualtrics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is an Experience Management platform that allows companies to design and improve customer and employee experiences through listening, analysis, and action.
 
 This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
 
-This source is maintained by Qualtrics. For any issues with the source, [contact their Support team](mailto:support@qualtrics.com).
+Qualtrics maintains this source. For any issues with the source, [contact the Qualtrics Support team](mailto:support@qualtrics.com).
 
 _**NOTE:** The Qualtrics Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on February 15, 2023. If you are interested in joining their beta program or have any feedback to help improve the Qualtrics Source and its documentation, [let the Qualtrics team know](mailto:support@qualtrics.com)!_
 
@@ -16,13 +17,11 @@ _**NOTE:** The Qualtrics Source is currently in beta, which means that they are 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
 2. Search for "Qualtrics" in the Sources Catalog, select Qualtrics, and click **Add Source**.
 3. On the next screen, give the Source a nickname configure any other settings.
-
-   - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
-
+   - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (for example, SourceName_Prod, SourceName_Staging, or SourceName_Dev).
 4. Click **Add Source** to save your settings.
 5. Log in to your Qualtrics Account. Navigate to workflows, select a workflow to send Segment events from, and add a new Segment task.
 6. From within the Segment task, after connecting with your workspace API key, select your Qualtrics source and continue to set up the task with the event, data mapping, and more.
-7. See more information on the Qualtrics Segment task at the following [Qualtrics support page](https://www.qualtrics.com/support/integrations/twilio-segment/twilio-segment-task/)
+7. For more information on the Qualtrics Segment task, view the [Qualtrics support page](https://www.qualtrics.com/support/integrations/twilio-segment/twilio-segment-task/){:target="_blank"}.
 
 ## Stream
 
@@ -49,4 +48,3 @@ Log into your downstream tools and verify that events and properties appear the 
 
 If there are any issues with how the events are arriving to Segment, [contact the Qualtrics support team](mailto:support@Qualtrics.com).
 
----
