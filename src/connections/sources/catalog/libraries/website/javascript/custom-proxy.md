@@ -30,6 +30,8 @@ You need to set up two important parts, regardless of the CDN provider you use:
 
 ## Set up
 
+**Option 1**
+
 Follow the directions listed for CloudFront or use your own CDN setup. Once you complete those steps and verify that your proxy works for both `cdn.segment.com` and `api.segment.io`, [contact Segment Product Support](https://segment.com/help/contact/) with the following template email:
 
 ```text
@@ -50,6 +52,42 @@ A Segment Customer Success team member will respond that they have enabled this 
 
 > info ""
 > The **Host Address** field does not appear in source settings until it's enabled by Segment Customer Success.
+
+**Option 2**
+
+## Custom CDN / API Proxy
+
+You can proxy settings and destination requests that typically go to `http://cdn.segment.com` through a custom proxy.
+
+```ts
+const analytics = AnalyticsBrowser.load({
+  writeKey,
+  // GET http://cdn.segment.com/v1/projects/<writekey>/settings ->
+  // https://MY-CUSTOM-CDN-PROXY.com/v1/project/<writekey>/settings
+  // GET https://cdn.segment.com/next-integrations/actions/...js ->
+  // https://MY-CUSTOM-CDN-PROXY.com/next-integrations/actions/...js
+  cdnURL: 'https://MY-CUSTOM-CDN-PROXY.com' //
+ })
+```
+
+You can proxy event calls that typically go to `https://api.segment.io` by configuring `integrations['Segment.io'].apiHost`.
+```ts
+const analytics = AnalyticsBrowser.load(
+    {
+      writeKey,
+      cdnURL: 'https://MY-CUSTOM-CDN-PROXY.com'
+    },
+    {
+      integrations: {
+        'Segment.io': {
+          // POST https://api.segment.io/v1/t ->
+          //  https://MY-CUSTOM-API-PROXY.com/v1/t
+          apiHost: 'MY-CUSTOM-API-PROXY.com' //
+        }
+      }
+    }
+  )
+```
 
 ## CloudFront
 
