@@ -2,3 +2,55 @@
 title: 'Qualtrics Source'
 hidden: true
 ---
+
+---
+
+## title: Qualtrics Source
+
+[Qualtrics](https://qualtrics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) [Qualtrics]() is an Experience Management platform that allows companies to design and improve customer and employee experiences through listening, analysis and action.
+
+This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
+
+This source is maintained by Qualtrics. For any issues with the source, [contact their Support team](mailto:support@qualtrics.com).
+
+_**NOTE:** The Qualtrics Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on February 15, 2023. If you are interested in joining their beta program or have any feedback to help improve the Qualtrics Source and its documentation, [let their team know](mailto:support@qualtrics.com)!_
+
+## Getting Started
+
+1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
+2. Search for "Qualtrics" in the Sources Catalog, select Qualtrics, and click **Add Source**.
+3. On the next screen, give the Source a nickname configure any other settings.
+
+   - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
+
+4. Click **Add Source** to save your settings.
+5. Next login to your Qualtrics Account. Navigate to workflows -> Select the workflow you wish to send Segment events from -> Add a new Segment task.
+6. From within the Segment task, after connecting via your workspace API key, you now select your created Qualtrics source and continue to setup the task with the event, data mapping etc. 
+7. See more information on the Qualtrics Segment task at the following [Qualtrics support page](https://www.qualtrics.com/support/integrations/twilio-segment/twilio-segment-task/)
+
+## Stream
+
+Qualtrics uses our stream Source component to send Segment event data. It uses a server-side (select from `track`, `identify`) method(s) to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
+
+Qualtrics allows the you to configure the userId from various sources from within the Qualtrics platform i.e. data from a survey response, or a XM Directory contact's external data reference. The anonymous ID can also be configured from within Qualtrics task setup
+
+## Events
+
+The Qualtrics integration allows you to define the event to be sent to Segment from within the task. This can be customized to your particular use case e.g. 'Onboarding Survey Completed' could be the event based on a response to a particular survey. Another example may be 'Contact Updated' based on XM Directory change. These events can be tailored to align with your existing process or particular use case
+
+## Event Properties
+
+The Qualtrics integration allows you to define your the event properties as you require within the following constraints:
+
+- `Track` events allow you to define the `properties` object
+- `Identify` events allow you to define the `traits` object
+
+## Adding Destinations
+
+Now that your Source is set up, you can connect it with Destinations.
+
+Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
+
+If there are any issues with how the events are arriving to Segment, [contact the Qualtrics support team](mailto:support@Qualtrics.com).
+
+---
