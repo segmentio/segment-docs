@@ -100,7 +100,7 @@ Segment's Mobile SDKs are the best way to simplify your iOS, Android, and Xamari
 - [iOS](/docs/connections/sources/catalog/libraries/mobile/ios)
 - [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/)
 - [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native)
-- [Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios/)
+- [Swift](/docs/connections/sources/catalog/libraries/mobile/swift/)
 - [Xamarin](/docs/connections/sources/catalog/libraries/mobile/xamarin)
 
 

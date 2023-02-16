@@ -175,7 +175,7 @@ sections:
 - slug: kotlin
   section_title: Analytics-Kotlin Documentation
   section:
-  - path: /connections/sources/catalog/libraries/mobile/kotlin-android/
+  - path: /connections/sources/catalog/libraries/mobile/kotlin-android
     title: Analytics-Kotlin (Mobile)
   - path: /connections/sources/catalog/libraries/server/kotlin
     title: Analytics-Kotlin (Server)
@@ -185,10 +185,20 @@ sections:
 - slug: swift
   section_title: Analytics-Swift Documentation
   section:
-  - path: /connections/sources/catalog/libraries/mobile/swift-ios/
-    title: Analytics-Swift
-  - path: /connections/sources/catalog/libraries/mobile/swift-ios/migration
-    title: Analytics-Swift Migration Guide
+  - path: /connections/sources/catalog/libraries/mobile/swift
+    title: Overview
+  - path: /connections/sources/catalog/libraries/mobile/swift/implementation
+    title: Implementation Guide
+  - path: /connections/sources/catalog/libraries/mobile/swift/migration
+    title: Migration Guide
+  - path: /connections/sources/catalog/libraries/mobile/swift/destination-plugins
+    title: Destination Plugins
+  - path: /connections/sources/catalog/libraries/mobile/swift/cloud-mode-destinations
+    title: Cloud-mode Destinations
+  - path: /connections/sources/catalog/libraries/mobile/swift/swift-typewriter
+    title: Typewriter for Swift
+  - path: /connections/sources/catalog/libraries/mobile/swift/swift-destination-filters
+    title: Destination Filters for Swift
 
 - slug: node-js
   section_title: Analytics-Node.js Documentation

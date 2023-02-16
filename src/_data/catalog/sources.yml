@@ -1572,8 +1572,8 @@ items:
   - id: dZeHygTSD4
     display_name: Apple
     isCloudEventSource: false
-    slug: swift-ios
-    url: connections/sources/catalog/libraries/mobile/swift-ios
+    slug: swift
+    url: connections/sources/catalog/libraries/mobile/swift
     hidden: false
     regions:
       - us

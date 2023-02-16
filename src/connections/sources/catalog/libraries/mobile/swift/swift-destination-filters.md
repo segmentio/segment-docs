@@ -3,7 +3,7 @@ title: Analytics for Swift Destination Filters
 strat: swift
 ---
 > info ""
-> Destination filters are only available to Business Tier customers.
+> Destination filters are available to Business Tier customers.
 >
 > Destination filters on mobile device-mode destinations are in beta and only supports Analytics-Swift, [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/), and [Analytics-React-Native 2.0](/docs/connections/sources/catalog/libraries/mobile/react-native/).
 

@@ -1,9 +1,3 @@
----
-title: Cloud Mode Destinations
-strat: swift
----
-Below is a list of the available cloud mode destinations for Analytics Swift. 
-
 <div class="destinations-catalog">
     <div class="destinations-catalog__section markdown" id="{{ category | slugify }}">
       <div class="flex flex--wrap waffle waffle--xlarge">

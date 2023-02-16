@@ -76,10 +76,10 @@ Once you've installed Node and NPM, run the `--version` commands again to verify
 
 To get started using Typewriter with Swift:
 1. Make sure you have `node` installed using the instructions in the [prerequisites](#prerequisites) above.
-2. Install `analytics-swift` in your app. Follow the [analytics-swift Quickstart Guide](/docs/connections/sources/catalog/libraries/mobile/swift-ios).
-3. Run `npx typewriter init` to use the Typewriter quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. When you run the command, it creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
+2. Install `analytics-swift` in your app. Follow the [analytics-swift Quickstart Guide](/docs/connections/sources/catalog/libraries/mobile/swift).
+3. Run `npx typewriter init` to use the Typewriter quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. When you run the command, it creates a `typewriter.yml` file in your repository. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
 
-     <br> **Note:** Run `npx typewriter` to regenerate your Typewriter client. You need to do this each time you update your Tracking Plan.
+     <br> Run `npx typewriter` to regenerate your Typewriter client. You need to do this each time you update your Tracking Plan.
 
 4. Import your new Typewriter client into your project using XCode. If you place your generated files into a folder in your project, import the project as a group not a folder reference.
 
@@ -144,7 +144,7 @@ If this isn't possible you can also check in the full generated client. Segment,
 
 ## Configuration Reference
 
-Typewriter stores its configuration in a `typewriter.yml` file in the root of your repo. A sample configuration might look like this:
+Typewriter stores its configuration in a `typewriter.yml` file in the root of your repository. A sample configuration might look like this:
 
 ```yml
 # Segment Typewriter Configuration Reference (https://github.com/segmentio/typewriter)

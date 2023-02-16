@@ -1,6 +1,43 @@
 ---
 title: Analytics Swift Destination Plugins
 strat: swift
+plugins:
+  - name: Amplitude
+    url: connections/sources/catalog/librariesswift/destination-plugins/amplitude-swift/
+    logo:
+      url: https://d3hotuclm6if1r.cloudfront.net/logos/amplitude-default.svg
+    mark:
+      url: https://cdn.filepicker.io/api/file/Nmj7LgOQR62rdAmlbnLO
+  - name: Appsflyer
+    url: connections/sources/catalog/librariesswift/destination-plugins/appsflyer-swift/
+    logo:
+      url: https://d3hotuclm6if1r.cloudfront.net/logos/appsflyer-default.svg
+    mark:
+      url: https://cdn.filepicker.io/api/file/AnJUEBvxRouLLOvIeQuK
+  - name: Braze (Partner-Maintained)
+    url: connections/sources/catalog/librariesswift/destination-plugins/braze-swift/
+    logo:
+      url: https://cdn.filepicker.io/api/file/9kBQvmLRR22d365ZqKRK
+    mark:
+      url: https://cdn.filepicker.io/api/file/HrjOOkkLR8WrUc1gEeeG
+  - name: Facebook App Events
+    url: connections/sources/catalog/librariesswift/destination-plugins/facebook-app-events-swift/
+    logo:
+      url: https://d3hotuclm6if1r.cloudfront.net/logos/facebook-app-events-default.svg
+    mark:
+      url: https://cdn.filepicker.io/api/file/k1fi9InSu6eint2IHilP
+  - name: Firebase
+    url: connections/sources/catalog/librariesswift/destination-plugins/firebase-swift/
+    logo:
+      url: https://cdn.filepicker.io/api/file/W6teayYkRmKgb8SMqxIn
+    mark:
+      url: https://cdn.filepicker.io/api/file/ztKtaLBUT7GUZKius5sa
+  - name: Mixpanel
+    url: connections/sources/catalog/librariesswift/destination-plugins/mixpanel-swift/
+    logo:
+      url: https://cdn.filepicker.io/api/file/pUF0kwpTTu0Z5POuzZXV
+    mark:
+      url: https://cdn.filepicker.io/api/file/0mdiroESxtRQBoR8ieBg
 ---
 
 Analytics-Swift uses its timeline/plugin architecture to support sending data to bundled SDKs when a Cloud Mode connection is not possible. Destination Plugins are similar to traditional Device Mode integrations available in Analytics-iOS in that Segment makes calls directly to the destination tool’s API from the device. However, Destination Plugins are more customizable, giving you the ability to control and enrich your data at a much more granular level on the device itself. 
@@ -11,7 +48,7 @@ Analytics-Swift supports the following Destination Plugins:
 <div class="destinations-catalog__section markdown" id="{{ category | slugify }}">
  <div class="flex flex--wrap waffle waffle--xlarge">
         {% assign category = "plugin" %}
-        {% assign resources = site.data.catalog.swift_resources.items | where: "categories", category %}
+        {% assign resources = page.plugins %}
         {% for resource in resources %}
           <div class="flex__column flex__column--6">
             <a class="thumbnail-integration flex flex--middle" href="{{ site.baseurl }}/{{ resource.url }}">
