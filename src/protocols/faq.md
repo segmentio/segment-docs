@@ -64,7 +64,7 @@ Yes. [Tracking Plan Libraries](/docs/protocols/tracking-plan/libraries/) makes i
 
 ### Can I copy a Tracking Plan into a library?
 
-No. Unfortunately it's not possible yet to automatically transfer events from a Tracking Plan to Libraries. Currently the best option for importing events into a new event library would be directly from a source.
+No. Unfortunately it's not yet possible to automatically transfer events from a Tracking Plan to Libraries. To import events into a new event library, import them directly from a source.
 
 ## Protocols Validation
 
