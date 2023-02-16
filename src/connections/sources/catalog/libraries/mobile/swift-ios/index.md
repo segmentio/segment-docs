@@ -1,5 +1,5 @@
 ---
-title: 'Analytics for Swift'
+title: 'Analytics for Swift (iOS)'
 strat: swift
 redirect_from:
   - '/connections/sources/catalog/cloud-apps/swift/'
