@@ -37,8 +37,8 @@ Use the Qualtrics integration to define the event to be sent to Segment from wit
 
 The Qualtrics integration allows you to define event properties within the following constraints:
 
-- `Track` events allow you to define the `properties` object
-- `Identify` events allow you to define the `traits` object
+- Use `Track` events to define the `properties` object
+- Use `Identify` events to define the `traits` object
 
 ## Adding Destinations
 
