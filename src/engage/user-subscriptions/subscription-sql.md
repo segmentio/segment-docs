@@ -1,16 +1,16 @@
 ---
-title: Subscription SQL Sync
+title: Subscription with SQL Traits
 plan: engage-foundations
 beta: true
 ---
 
-With Subscription SQL Sync, connect to your data warehouse and query user subscription data to Engage on a scheduled basis. Use your data warehouse as a single source of truth for subscription statuses and query from warehouses such as BigQuery, Redshift, or Snowflake.
+Use Subscription with SQL Traits to connect to your data warehouse and query user subscription data to Engage on a scheduled basis. Use your data warehouse as a single source of truth for subscription statuses and query from warehouses such as BigQuery, Redshift, or Snowflake.
 
 On this page, you'll learn how to use SQL to sync subscription data from your warehouse to Engage.
 
 ## Getting started
 
-To use Subscription SQL Sync, you need the following:
+To use Subscription with SQL Traits, you need the following:
 - A warehouse connected to Segment
 - A Segment workspace
 - A user account with access to Engage in that workspace
@@ -36,8 +36,8 @@ To configure subscription SQL, you can write your own query or click **Use Templ
 > Reset your SQL query by clicking **Reset Template**.
 
 Queries must return at least one pair of the columns below with a value of `subscribed`, `unsubscribed`, or `did_not_subscribe`:
-- `email` and `segment_internal_email_subscription`
-- `phone` and `segment_internal_sms_subscription`
+- `email` and `_segment_internal_email_subscription_`
+- `phone` and `_segment_internal_sms_subscription_`
 
 For more subscription SQL best practices, view the [query requirements](#query-requirements) below.
 
@@ -75,7 +75,6 @@ From the Update History page you can view details for each SQL job including the
 When you build your SQL query, keep the following requirements in mind for the data your query returns:
 
 - The query must return at least one column with `user_id`, `anonymous_id`, `email`, `phone` (or `group_id` for account traits if Profiles for B2B is enabled).
-- The query can't return more than 25 total columns.
 - The query must not include values for both `user_id` and `anonymous_id` for a given record.
 - The query must not return any `user_id`s, `anonymous_id`s, or `group_id`s with a `null` value.
 - The query must not return any records with duplicate `user_id`s.

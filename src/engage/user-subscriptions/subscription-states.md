@@ -91,7 +91,7 @@ Use SQL to import user subscription states from your data warehouse back to Enga
 
 This option is especially useful if you don't have the ability to set subscription states with CSVs or Segment's Public API.
 
-View [Subscription SQL Sync](/docs/engage/user-subscriptions/subscription-sql/) for more information.
+View [Subscription with SQL Traits](/docs/engage/user-subscriptions/subscription-sql/) for more information.
 
 ### Troubleshooting subscription states
 
