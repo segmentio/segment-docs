@@ -69,6 +69,7 @@ The following examples illustrate common destinations filters use cases:
 * [Sample a percentage of events](#sample-a-percentage-of-events)
 * [Drop events](#drop-events)  
 * [Only send events with userId](#only-send-events-with-userid) 
+* [Remove userId from payload](#remove-userid-from-payload) 
 
 ### PII management
 
@@ -128,6 +129,30 @@ Use the [Public API](https://docs.segmentapis.com/tag/Destination-Filters/){:tar
     "enabled": true
   }
 ```
+
+### Remove userId from payload
+
+There are certain destinations to which you may not want to send the `userId`. To accomplish this, you can use the [Public API](https://docs.segmentapis.com/tag/Destination-Filters/) to create a Filter that will target and remove the `userId` (or any other top-level field) like this:
+
+```json
+{
+    "sourceId": "<sourceId>",
+    "destinationId": "<destinationId>",
+    "title": "Don't send userId at all",
+    "description": "Drop userId on all requests",
+    "if": "all",
+    "actions": [
+       {
+        "type": "DROP_PROPERTIES",
+          "fields": {
+            "":["userId"]
+            }
+       }
+      ],
+      "enabled": true
+}
+```
+
 
 ## Important notes
 

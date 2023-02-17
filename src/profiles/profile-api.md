@@ -265,7 +265,7 @@ https://profiles.segment.com/v1/spaces/<space_id>/
 Retrieve a single profile's traits within a collection using an `external_id`. For example, two different sources can set a different `first_name` for a user. The traits endpoint will resolve properties from multiple sources into a canonical source using the last updated precedence order.
 
 ```
-GET /v1/spaces/<space_id>/collections/<users>/profiles/<external_id>/traits
+GET /v1/spaces/<space_id>/collections/users/profiles/<external_id>/traits
 ```
 
 ##### Query parameters
@@ -355,7 +355,7 @@ With `?verbose=true` enabled:
 Get a single profile's external ids within a collection using an `external_id`.
 
 ```
-GET /v1/spaces/<space_id>/collections/<users>/profiles/<id_type:ext_id>/external_ids
+GET /v1/spaces/<space_id>/collections/users/profiles/<id_type:ext_id>/external_ids
 ```
 
 **Request**
@@ -415,7 +415,7 @@ curl https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profile
 Get up to 14 days of a profile's historical events within a collection using an `external_id`.
 
 ```
-    GET /v1/spaces/<space_id>/collections/<users>/profiles/<external_id>/events
+    GET /v1/spaces/<space_id>/collections/users/profiles/<external_id>/events
 ```
 
 **Request**
@@ -520,7 +520,7 @@ Get up to 14 days of a profile's historical events within a collection using an 
 Get a single profile's metadata within a collection using an `external_id`.
 
 ```
-    GET /v1/spaces/<space_id>/collections/<users>/profiles/<external_id>/metadata
+    GET /v1/spaces/<space_id>/collections/users/profiles/<external_id>/metadata
 ```
 
 **Request**
@@ -570,7 +570,7 @@ Get a single profile's metadata within a collection using an `external_id`.
 Get the users linked to an account, or accounts linked to a user, using an `external_id`.
 
 ```
-GET /v1/spaces/<space_id>/collections/<users>/profiles/<external_id>/links
+GET /v1/spaces/<space_id>/collections/users/profiles/<external_id>/links
 ```
 
 **Request**
