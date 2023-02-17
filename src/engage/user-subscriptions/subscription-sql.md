@@ -43,19 +43,13 @@ For more subscription SQL best practices, view the [query requirements](#query-r
 
 ### Select a warehouse and preview your query
 
-After you write your SQL query, click **Warehouse name** from the Configure screen to select the data warehouse you'd like to query.
-
-Before you schedule your sync intervals, click **Preview** to preview and validate your results. To see subscription statuses for a particular profile, select a user row, then select the **Identities** tab.
-
-### Select a warehouse and preview your query
- 
-After you write your SQL query, click **Warehouse name** from the Configure screen to select the data warehouse you'd like to query.
+Once you write your SQL query, click **Warehouse name** from the Configure screen to select the data warehouse you'd like to query.
 
 Before you schedule your sync intervals, click **Preview** to preview and validate your results. To see subscription statuses for a particular profile, select a user row, then select the Identities tab.
 
 ### Schedule sync intervals
 
-After you connect a warehouse and preview your query, schedule sync intervals to import subscription data from your warehouse to Engage:
+You can schedule sync intervals to import subscription data from your warehouse to Engage:
 
 1. From the Configure screen, click **Schedule**.
 2. Add a SQL job name and description.
@@ -78,7 +72,7 @@ From the Update History page you can view details for each SQL job including the
 
 ## Query requirements
 
-When you build your query, keep the following requirements in mind for the data your query returns:
+When you build your SQL query, keep the following requirements in mind for the data your query returns:
 
 - The query must return at least one column with `user_id`, `anonymous_id`, `email`, `phone` (or `group_id` for account traits if Profiles for B2B is enabled).
 - The query can't return more than 25 total columns.

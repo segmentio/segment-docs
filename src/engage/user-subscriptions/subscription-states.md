@@ -87,9 +87,9 @@ To learn more about both options, reference the Engage documentation on using th
 
 ### Sync subscription statuses with SQL
 
-Use SQL to import user subscription states from your data warehouse back to Engage. When you sync with SQL, you can query user subscription data at automated intervals. Pull subscription statuses on a per contact vector basis and use your data warehouse as a single source of truth for subscription data.
+Use SQL to import user subscription states from your data warehouse back to Engage. When you sync with SQL, you can query user subscription data at automated intervals. Pull subscription statuses for each contact vector and use your data warehouse as a single source of truth for subscription data.
 
-This option is especially useful if you don't have the ability to download CSVs with subscription information or can't invoke the subscription API.
+This option is especially useful if you don't have the ability to set subscription states with CSVs or Segment's Public API.
 
 View [Subscription SQL Sync](/docs/engage/user-subscriptions/subscription-sql/) for more information.
 
