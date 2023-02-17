@@ -25,7 +25,7 @@ To use Subscription SQL Sync, you need the following:
 
 You can sync with SQL from two locations in the Segment app. Navigate to **Profiles > Profile explorer** or **Engage > Audiences > Profile explorer**, then:
 
-1. Click **Manage Subscription Statuses**, and select **Update Subscription Statuses**.
+1. Click **Manage subscription statuses**, and select **Update subscription statuses**.
 2. Select **Sync with SQL**, and click **Configure**.
 
 ### Configure your SQL query
@@ -43,7 +43,7 @@ For more subscription SQL best practices, view the [query requirements](#query-r
 
 ### Select a warehouse and preview your query
 
-Once you write your SQL query, click **Warehouse name** from the Configure screen to select the data warehouse you'd like to query.
+Once you write your SQL query, click **Select warehouse** from the Configure screen to select the data warehouse you'd like to query.
 
 Before you schedule your sync intervals, click **Preview** to preview and validate your results. To see subscription statuses for a particular profile, select a user row, then select the Identities tab.
 
@@ -65,8 +65,8 @@ You can schedule sync intervals to import subscription data from your warehouse 
 Use the Update History page to view all SQL jobs.
 
 1. Navigate to **Profiles > Profile explorer** or **Engage > Audiences > Profile explorer.**
-2. Click **Manage Subscription Statuses**.
-3. Select **View Update History**, then select the **SQL Jobs** tab.
+2. Click **Manage subscription statuses**.
+3. Select **View update history**, then select the **SQL Jobs** tab.
 
 From the Update History page you can view details for each SQL job including the creation date and time, compute status, and the number of users updated across all runs for a job. Click the job link to visit a particular SQL job Overview page.
 
