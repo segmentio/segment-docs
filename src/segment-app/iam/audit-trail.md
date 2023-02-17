@@ -111,4 +111,4 @@ An audience/computed trait Run or a Sync may fail on its first attempt, but Enga
 
 In most cases, it is usually not necessary to track these failures, as long as there are no actual computation or sync failures. The Audit Trail logic, however, is configured in the way that it simply notifies about every task failure, even if it then later succeeds.
 
-If your team would like to avoid receiving the notifications for transient failures, please **[reach out to support](https://segment.com/help/contact/)**, who upon request can enable a setting that will reduce the number of notifications your workspace receives.
+If your team would like to avoid receiving the notifications for transient failures, please **[reach out to support](https://segment.com/help/contact/)**, who upon request can disable the transient failures, reducing the number of notifications your workspace receives for such errors.
