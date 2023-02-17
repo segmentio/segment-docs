@@ -1,16 +1,16 @@
 ---
-title: Subscription with SQL Traits
-plan: engage-foundations
+title: Subscriptions with SQL Traits
+plan: engage-premier
 beta: true
 ---
 
-Use Subscription with SQL Traits to connect to your data warehouse and query user subscription data to Engage on a scheduled basis. Use your data warehouse as a single source of truth for subscription statuses and query from warehouses such as BigQuery, Redshift, or Snowflake.
+Use Subscriptions with SQL Traits to connect to your data warehouse and query user subscription data to Engage on a scheduled basis. Use your data warehouse as a single source of truth for subscription statuses and query from warehouses such as BigQuery, Redshift, or Snowflake.
 
 On this page, you'll learn how to use SQL to sync subscription data from your warehouse to Engage.
 
 ## Getting started
 
-To use Subscription with SQL Traits, you need the following:
+To use Subscriptions with SQL Traits, you need the following:
 - A warehouse connected to Segment
 - A Segment workspace
 - A user account with access to Engage in that workspace
@@ -19,7 +19,7 @@ To use Subscription with SQL Traits, you need the following:
 > Segment supports Redshift, Postgres, Snowflake, Azure SQL, and BigQuery as data warehouse sources for SQL Traits. Visit [Segment's warehouse docs](/docs/connections/storage/warehouses/) for more on getting started with data warehouses.  
 
 > success ""
-> Before you begin with Subscription SQL, you may also want to visit the [subscription docs](/docs/engage/user-subscriptions/) to learn more about user subscriptions in Engage.
+> Before you begin with Subscriptions with SQL Traits, you may also want to visit the [subscription docs](/docs/engage/user-subscriptions/) to learn more about user subscriptions in Engage.
 
 ## Sync subscription data with SQL
 
@@ -30,7 +30,7 @@ You can sync with SQL from two locations in the Segment app. Navigate to **Profi
 
 ### Configure your SQL query
 
-To configure subscription SQL, you can write your own query or click **Use Template** to use one of the templates Engage provides. For any new users that your query returns, Engage adds a new profile.
+To configure Subscriptions with SQL Traits, you can write your own query or click **Use Template** to use one of the templates Engage provides. For any new users that your query returns, Engage adds a new profile.
 
 > success ""
 > Reset your SQL query by clicking **Reset Template**.
