@@ -48,7 +48,7 @@ After you write your SQL query, click **Warehouse name** from the Configure scre
 Before you schedule your sync intervals, click **Preview** to preview and validate your results. To see subscription statuses for a particular profile, select a user row, then select the **Identities** tab.
 
 ### Select a warehouse and preview your query
-
+ 
 After you write your SQL query, click **Warehouse name** from the Configure screen to select the data warehouse you'd like to query.
 
 Before you schedule your sync intervals, click **Preview** to preview and validate your results. To see subscription statuses for a particular profile, select a user row, then select the Identities tab.
