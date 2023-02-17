@@ -110,3 +110,17 @@ The following list shows just some data sources you can sync to Engage:
 ## Can I send audiences to multiple destination accounts?
 
 Yes, Engage supports the ability to send an audience or computed trait to two or more accounts of the same partner. The most common use case is multiple Facebook, or Adwords ad accounts.
+
+
+### Why am I getting alerts about an audience/computed trait sync failure, but when I look at the specific audience/computed trait it shows a successful sync?
+
+An audience/computed trait Run or a Sync may fail on its first attempt, but Engage will retry up to 5 times before considering it a hard failure and display on that audience/compute trait's Overview page. As long as the runs/syncs within the specific Audience's Overview page say they are successful, then these can be safely ignored. 
+
+**How things work internally:**
+Segment's Engage scheduler fetches audiences/traits from compute service and then handles the logic of generating tasks. These compute/sync tasks get scheduled and executed by another worker. Essentially, these tasks are a list of steps to be executed. Each task has a series of steps which is marked as complete by saving a timestamp for the completion. If the worker be disrupted, it picks up at the latest step which has no completed_at timestamp. In some cases, the step might fail or the entire task (for example, due to timeout or the worker disruption as there are many moving parts) - in either case, these failures will be retried. 
+
+These tasks are a part of internal Segment process, and there are systems in place which would retry failed tasks. In most cases, it is usually not necessary to track these failures, as long as there are no actual computation or sync failures. 
+
+The Audit Trail logic, however, is configured in the way that it simply notifies about every task failure, even if it then later succeeds.
+
+If your team would like to avoid receiving the notifications for transient failures, please **[reach out to support](https://segment.com/help/contact/)**, who upon request can disable transient failure notifications, which will reduce the number of notifications your workspace receives per those errors.
