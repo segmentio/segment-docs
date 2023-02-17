@@ -68,7 +68,7 @@ Use the Update History page to view all SQL jobs.
 2. Click **Manage subscription statuses**.
 3. Select **View update history**, then select the **SQL Jobs** tab.
 
-From the Update History page you can view details for each SQL job including the creation date and time, compute status, and the number of users updated across all runs for a job. Click the job link to visit a particular SQL job Overview page.
+From the Update History page, you can view details for each SQL job including the creation date and time, compute status, and the number of users updated across all runs for a job. Click the job link to visit a particular SQL job Overview page.
 
 ## Query requirements
 
