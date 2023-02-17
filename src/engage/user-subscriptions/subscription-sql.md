@@ -33,7 +33,7 @@ You can sync with SQL from two locations in the Segment app. Navigate to **Profi
 To configure Subscriptions with SQL Traits, you can write your own query or click **Use Template** to use one of the templates Engage provides. For any new users that your query returns, Engage adds a new profile.
 
 > success ""
-> Reset your SQL query by clicking **Reset Template**.
+> Click **Reset Template** to reset your SQL query.
 
 Queries must return at least one pair of the columns below with a value of `subscribed`, `unsubscribed`, or `did_not_subscribe`:
 - `email` and `_segment_internal_email_subscription_`
@@ -45,7 +45,7 @@ For more subscription SQL best practices, view the [query requirements](#query-r
 
 Once you write your SQL query, click **Select warehouse** from the Configure screen to select the data warehouse you'd like to query.
 
-Before you schedule your sync intervals, click **Preview** to preview and validate your results. To see subscription statuses for a particular profile, select a user row, then select the Identities tab.
+Before you schedule your sync intervals, click **Preview** to preview a subset of data and validate your results. To see subscription statuses for a particular profile, select a user row, then select the Identities tab.
 
 ### Schedule sync intervals
 
@@ -72,12 +72,17 @@ From the Update History page, you can view details for each SQL job including th
 
 ## Query requirements
 
-When you build your SQL query, keep the following requirements in mind for the data your query returns:
+When you build your SQL query, keep the following requirements in mind for the data your query returns.
 
-- The query must return at least one column with `user_id`, `anonymous_id`, `email`, `phone` (or `group_id` for account traits if Profiles for B2B is enabled).
-- The query must not include values for both `user_id` and `anonymous_id` for a given record.
-- The query must not return any `user_id`s, `anonymous_id`s, or `group_id`s with a `null` value.
-- The query must not return any records with duplicate `user_id`s.
-- The query must not return duplicate `email` or `phone` records that have different subscription statuses.
-- The query must not return more than 25 million rows.
-- Each record must be less than 16KB in size.
+**Your query must:**
+
+- Return at least one column with `user_id`, `anonymous_id`, `email`, `phone` (or `group_id` for account traits if Profiles for B2B is enabled).
+- Return records less than 16KB in size.
+
+**Your query must not:**
+
+- Include values for both `user_id` and `anonymous_id` for a given record.
+- Return any `user_id`s, `anonymous_id`s, or `group_id`s with a `null` value.
+- Return any records with duplicate `user_id`s.
+- Return duplicate `email` or `phone` records that have different subscription statuses.
+- Return more than 25 million rows.
