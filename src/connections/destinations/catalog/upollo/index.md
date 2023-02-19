@@ -1,5 +1,5 @@
 ---
-title: Upollo Destination
+title: Upollo (Actions) Destination
 hidden: true
 private: true
 ---
@@ -13,7 +13,7 @@ private: true
 https://upollo.ai/blog/grow-by-understanding-account-sharing?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) with others.
 Inviting these users to a paid account is the number 1 underutilized growth channel for SaaS businesses.
 
-This destination is maintained by Upollo. For any questions or issues with the destination, please [contact the Upollo team](https://upollo.ai/contact?utm_source=segmentio&utm_medium=docs&utm_campaign=partners).
+This destination is maintained by Upollo. For any questions or issues with the destination, please [contact the Upollo team](https://upollo.ai/contact?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}.
 
 ## Benefits of Upollo (Actions)
 
@@ -24,22 +24,20 @@ Upollo (Actions) provides the following benefits:
 
 ## Getting Started
 
-1. Signup for Upollo and get your public API key.
-2. Add that to the segment configuration
 
-1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Find the Destinations Actions item in the left navigation, and click it.
+1. From the Segment web app, navigate to **Connections > Catalog**, and select the **Destinations** tab. 
+2. Select **Destinations Actions** under **Categories** in the left navigation.
 3. Search for **Upollo (Actions)** and click **Configure Upollo**.
 4. Select an existing Source to connect to Upollo (Actions).
-5. Get your **Public API key** from the [Upollo dashboard](https://upollo.ai/app/settings/access-and-keys?utm_source=segmentio&utm_medium=docs&utm_campaign=partners).
+5. Get your **Public API key** from the [Upollo dashboard](https://upollo.ai/app/settings/access-and-keys?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}.
 6. Add your API key to the segment Upollo Action settings.
 
 ## Identify
 
-Upollo uses segments identify call to analyse users on your platform. If the same person is using mulitple accounts or if different people are sharing an account they will be flagged and shown in the Upollo dashboard.
+Upollo uses the `identify` call to analyze users on your platform. If the same person is using multiple accounts or if different people are sharing an account, they are flagged and shown in the Upollo dashboard.
 
 
-In the `identify` call provide any available information.
+The `identify` call provides any available information about the user.
 ```js
 analytics.identify('userId123', {
   email: 'john.doe@example.com',
@@ -48,6 +46,6 @@ analytics.identify('userId123', {
 });
 ```
 
-For more see the [Identify API documentation](/docs/connections/spec/identify/).
+Learn more about the [Identify call](/docs/connections/spec/identify/).
 
 {% include components/actions-fields.html %}
