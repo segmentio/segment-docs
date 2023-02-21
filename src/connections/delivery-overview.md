@@ -37,12 +37,11 @@ This table displays the following details:
 The discard table provides you with greater detail about the events that were discarded from your source or weren't successfully delivered to your destination during the selected time period. 
 
 This table displays the following details:
-- **Discard reason**: Any relevant error code, message, or description associated with the event's failure. When possible, Delivery Overview will link to any troubleshooting information you can use to get your events up and running again. Clicking on any discard reason brings you to the [breakdown table](#breakdown-table,) where more detail about each event 
+- **Discard reason**: Any relevant error code, message, or description associated with the event's failure. When possible, Delivery Overview will link to any troubleshooting information you can use to get your events up and running again. Clicking on any discard reason brings you to the [breakdown table](#breakdown-table,) where you can see more detail about events that have a certain discard reason.
 - **Counts related**: How many of each event were discarded in this pipeline step
 - **Related change percentage**: Insight into how the event counts differ from the last comparable time range as a percentage<sup>1</sup>
 
 <sup>1:</sup> *Segment calculates the related change percentage by subtracting the percent of events impacted in the previous time period from the percent of impacted events in the current time period. For example, if last week 15% of your events were filtered at a source, but this week, 22% of your events were filtered at a source, you would have a related change percentage of 7%.*
-
 
 ## View Delivery Overview
 To view the Delivery Overview page:
