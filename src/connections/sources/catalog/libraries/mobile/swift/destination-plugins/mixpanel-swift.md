@@ -44,7 +44,7 @@ Open your Package.swift file and add the following do your the `dependencies` se
 
 ## Using the Plugin in your App
 
-Open the file where you setup and configure the Analytics-Swift library.  Add this plugin to the list of imports.
+Open the file where you setup and configure the Analytics-Swift library. Add this plugin to the list of imports.
 
 ```
 import Segment
@@ -61,19 +61,6 @@ analytics.add(plugin: MixpanelDestination())
 ```
 
 Your events will now begin to flow to Mixpanel in device mode.
-
-When you use the Mixpanel destination in Device-mode, Segment prioritizes the options to prevent duplicate calls as follows:
-
-- If you select "Track all Pages to Mixpanel", all `page` calls regardless of how you have customized it will send a `Loaded A Page`. Even if you have the other options enabled, Segment sends this call to prevent double counting your pageviews.
-
-- If you select "Track Categorized Pages to Mixpanel", Segment sends a `Viewed [category] Page` event.
-
-- If you select "Track Named Pages to Mixpanel", Segment sends a `Viewed [name] Page` event.
-
-> info ""
-> If both Option 2 and 3 are enabled, Segment gives precedence to `category`. If you pass both `category` and `name`, (for example, `analytics.page('category', 'name');`), Segment sends a `Viewed category name Page` to Mixpanel.
-
-In short, Segment sends one event to Mixpanel per `page` call.
 
 ## Identify
 
@@ -94,6 +81,39 @@ The first thing you'll want to do is to identify your users so Mixpanel knows wh
 
 
 As soon as you have a `userId` for a visitor that was previously anonymous you'll need to [`alias`](/docs/connections/spec/alias/) their old anonymous `id` to the new `userId`. In Mixpanel only **one** anonymous user history can be merged to **one** identified user. For that reason you should only call `alias` once, right after a user registered, but before the first `identify`.
+
+ When you call the Identify method from the client in either a browser using Analytics.js or one a mobile SDKs, several things occur: Segment recognizes and translates the [special traits](/docs/connections/spec/identify/#traits) so that they fit the expectations of Mixpanel's API. The table below shows the mappings. Pass the key on the left and Segment transforms it to the key on the right before sending to Mixpanel.
+
+<table>
+  <tr>
+    <td>`created`</td>
+    <td>`$created`</td>
+  </tr>
+  <tr>
+    <td>`email`</td>
+    <td>`$email`</td>
+  </tr>
+  <tr>
+    <td>`firstName`</td>
+    <td>`$first_name`</td>
+  </tr>
+  <tr>
+    <td>`lastName`</td>
+    <td>`$last_name`</td>
+  </tr>
+  <tr>
+    <td>`name`</td>
+    <td>`$name`</td>
+  </tr>
+  <tr>
+    <td>`username`</td>
+    <td>`$username`</td>
+  </tr>
+  <tr>
+    <td>`phone`</td>
+    <td>`$phone`</td>
+  </tr>
+</table>
 
 ### People
 
@@ -129,40 +149,6 @@ Mixpanel supports multiple definitions of groups. For more information see [Mixp
 
 If the group call **does not** have a group trait that matches the Group Identifier Traits setting, then the event will be ignored.
 
-### Group using Device-mode
- When you call the Identify method from the client in either a browser using Analytics.js or one a mobile SDKs, several things occur: Segment recognizes and translates the [special traits](/docs/connections/spec/identify/#traits) so that they fit the expectations of Mixpanel's API. The table below shows the mappings. Pass the key on the left and Segment transforms it to the key on the right before sending to Mixpanel.
-
-<table>
-  <tr>
-    <td>`created`</td>
-    <td>`$created`</td>
-  </tr>
-  <tr>
-    <td>`email`</td>
-    <td>`$email`</td>
-  </tr>
-  <tr>
-    <td>`firstName`</td>
-    <td>`$first_name`</td>
-  </tr>
-  <tr>
-    <td>`lastName`</td>
-    <td>`$last_name`</td>
-  </tr>
-  <tr>
-    <td>`name`</td>
-    <td>`$name`</td>
-  </tr>
-  <tr>
-    <td>`username`</td>
-    <td>`$username`</td>
-  </tr>
-  <tr>
-    <td>`phone`</td>
-    <td>`$phone`</td>
-  </tr>
-</table>
-
 ### Register Super Properties
 
 By default, each trait (that is, properties in an `identify` call) is registered as a super property. This doesn't require passing a `userId` in the `identify` call. You can pass a `traits` object by itself and it will still register the traits as super properties.
@@ -177,10 +163,6 @@ Disable **Set All Traits as Super Properties or People Properties By Default** t
 If you've enabled Mixpanel People in your Segment settings, Segment calls Mixpanel's `people.set` with the same `traits` object. There's no need for an additional API call to populate Mixpanel People.
 
 Disable **Set All Traits as Super Properties or People Properties By Default** to disable the default behavior and register super properties explicitly. Segment automatically includes any trait on an identify that matches one of Mixpanel's special properties, which you can see in the table above. For more information, see [Explicitly set People Properties and Super Properties](#explicitly-set-people-properties-and-super-properties).
-
-### Arrays
-
-For array type traits passed to `identify` calls, Segment uses Mixpanel's `people.union` to union (append ignoring duplicates) them to their existing values. If the trait doesn't exist a new array will be created for you. To clear the contents of an array trait, you can pass an empty array `[]`.
 
 ## Track
 
@@ -233,6 +215,18 @@ Remember, Segment sends one event per `page` call.
 ### Incrementing properties
 
 To increment at the property level, tell Segment which properties you want to increment using the **Properties to increment** setting and Segment calls Mixpanel's `increment` for you when you attach a number to the property (for example, `'items purchased': 5`)
+
+### Screen
+
+When you use the Mixpanel destination in Device-mode, Segment sends Screen events to Mixpanel as follows:
+
+- If you select "Track all Pages to Mixpanel", all `screen` calls regardless of how you have customized it will send a `Loaded A Screen`. Even if you have the other options enabled, Segment sends this call to prevent double counting your pageviews.
+
+- If you select "Track Categorized Pages to Mixpanel", Segment sends a `Viewed [category] Screen` event.
+
+- If you select "Track Named Pages to Mixpanel", Segment sends a `Viewed [name] Screen` event.
+
+In short, Segment sends one event to Mixpanel per `screen` call.
 
 ### Sending data to Mixpanel's European Union Endpoint
 
