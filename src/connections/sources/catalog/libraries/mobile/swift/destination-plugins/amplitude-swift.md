@@ -16,6 +16,8 @@ perform, you can gain a better understanding to drive retention, engagement, and
 
 Once you have a mapping, you can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
+The Amplitude Swift plugin does not send events to Amplitude via the client side, instead it adds Amplitude session data which is then sent server side from the Amplitude Actions destination.
+
 ## Adding the dependency
 
 ### via Xcode
