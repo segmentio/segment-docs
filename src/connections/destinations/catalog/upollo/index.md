@@ -9,7 +9,7 @@ private: true
 
 [Upollo](https://upollo.ai?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} finds and converts repeat trialers, account sharers and more.
 
-11% of users signing up for free trials have [already used one](https://upollo.ai/blog/turn-repeated-trials-into-growth?utm_source=segmentio&utm_medium=docs&utm_campaign=partners), and up to 45% of users [share their logins](
+11% of users signing up for free trials have [already had one](https://upollo.ai/blog/turn-repeated-trials-into-growth?utm_source=segmentio&utm_medium=docs&utm_campaign=partners), and up to 45% of users [share their logins](
 https://upollo.ai/blog/grow-by-understanding-account-sharing?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) with others.
 Inviting these users to a paid account is the number 1 underutilized growth channel for SaaS businesses.
 
