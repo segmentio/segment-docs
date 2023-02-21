@@ -65,7 +65,7 @@ If you want to send a [TikTok standard event](https://ads.tiktok.com/marketing_a
 2. Set up your Event Trigger criteria for completed registrations.
 3. Input a literal string of "CompleteRegistration" as the Event Name.
 
-Please be aware that TikTok only supports [these event names]([url](https://ads.tiktok.com/marketing_api/docs?id=1727541103358977)).
+Please be aware that TikTok only supports [these event names](https://ads.tiktok.com/marketing_api/docs?id=1727541103358977){:target="_blank"}.
 
 ### PII Hashing
 
