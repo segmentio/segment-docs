@@ -13,7 +13,7 @@ This source is maintained by Formsort. For any issues with the source, [contact 
 
 1. From your Segment UI’s Sources page click on “Add Source”.
 2. Search for “Formsort” within the Sources Catalog and confirm by clicking “Connect”.
-3. Give the source a nickname and follow the set up flow to “Add Source”. The nickname is a label used in the Segment interface, and Segment creates a related schema name which you query against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (Eg. formsort-prod or formsort-dev).
+3. Give the source a nickname and follow the set up flow to “Add Source”. The nickname is a label used in the Segment interface, and Segment creates a related schema name which you query against in your warehouse. The nickname can be whatever you like, but Segment recommends sticking to something that reflects the source itself and distinguishes amongst your environments (Eg. formsort-prod or formsort-dev).
 4. Copy the Write key from the Segment UI and log in to your Formsort workspace - navigate to **Flows** > **Integrations** > **Segment** and paste the key.
 5. You can choose what events will be emitted by responders and change other settings.
 6. Press **Save** to connect.
