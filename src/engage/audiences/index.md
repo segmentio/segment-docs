@@ -212,3 +212,10 @@ Before you can download the CSV, you will need to generate it. There are three d
     (If the audience recalculates between when you click Generate and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.)</td>
   </tr>
 </table>
+
+## Identifier Breakdown
+
+The audience summary gives a breakdown of the percentages of external_ids of users in the audience. These are the default ID's that has been included in Identity resolution configuration. It helps us by showing the portion of the audience has which identities on it and is used to verify the audience size/profiles are correct and as expected.
+
+> info ""
+> The Identifier breakdown won't show custom ID's which has been included in identity resolution configuration. Only the default external IDs can be added in Identifier breakdown. Same applies for engage generated events sent to the destination.
