@@ -72,8 +72,6 @@ Our integration also supports using Segment `screen` events as `track` events. F
 
 To use this functionality you must opt into it using the integration setting named **Use Screen Events as Track Events**. Once enabled, you should start seeing `screen` events populate in Facebook App Events. The screen name you provide will be bookended with the words **Viewed** and **Screen**. So, if you have a `screen` event with the name property set to `Welcome`, it will show up in Facebook as an event called **Viewed Welcome Screen**.
 
-Note, the integration will not automatically translate `screen` events to spec'd Facebook events as our `track` method does. If you would like to map these events to specific Facebook events you can do this using the **Map your events to Standard FB App Events** setting. Be sure to specify the event as **Viewed** `name` **Screen** where `name` is the name property of the `screen` event.
-
 ## Track
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
@@ -105,82 +103,7 @@ If you don't provide a `currency` explicitly, we send `USD`. If any properties d
     <td>**Currency**</td>
     <td>fb_currency</td>
   </tr>
-  <tr>
-    <td>**name**</td>
-    <td>fb_description</td>
-  </tr>
-  <tr>
-    <td>**product_id**</td>
-    <td>fb_content_id</td>
-  </tr>
-  <tr>
-    <td>**category**</td>
-    <td>fb_content_type</td>
-  </tr>
-  <tr>
-    <td>**query**</td>
-    <td>fb_search_string</td>
-  </tr>
-  <tr>
-    <td>**timestamp**</td>
-    <td>_logTime</td>
-  </tr>
-  <tr>
-    <td>**quantity**</td>
-    <td>fb_num_items</td>
-  </tr>
 </table>
-
-### Facebook Events
-
-Segment automatically translates any of your events that match one of our [spec'd events](/docs/connections/spec/) that map to Facebook's spec'd events. The below table shows the out of the box mappings in our integration:
-
-<table>
-  <tr>
-    <td>**Application Installed**</td>
-    <td>MOBILE_APP_INSTALL</td>
-  </tr>
-  <tr>
-    <td>**Application Opened**</td>
-    <td>fb_mobile_activate_app</td>
-  </tr>
-  <tr>
-    <td>**Products Searched**</td>
-    <td>fb_mobile_search</td>
-  </tr>
-  <tr>
-    <td>**Product Viewed**</td>
-    <td>fb_mobile_content_view</td>
-  </tr>
-  <tr>
-    <td>**Product Added**</td>
-    <td>fb_mobile_add_to_cart</td>
-  </tr>
-  <tr>
-    <td>**Product Added to Wishlist**</td>
-    <td>fb_mobile_add_to_wishlist</td>
-  </tr>
-  <tr>
-    <td>**Payment Info Entered**</td>
-    <td>fb_mobile_add_payment_info</td>
-  </tr>
-  <tr>
-    <td>**Checkout Started**</td>
-    <td>fb_mobile_initiated_checkout</td>
-  </tr>
-  <tr>
-    <td>**Order Completed**</td>
-    <td>fb_mobile_purchase</td>
-  </tr>
-</table>
-
-If you send a `track` event that doesn't match one of the above events, we'll send it along to Facebook with the name you provide Segment.
-
-**Facebook Recommended Events**
-
-The most important events that can help advertisers improve campaign ROI are the conversion events or events closest to the conversion. Those events are marked with an "*" within Segment's Facebook App Events settings page.
-
-In addition, there are special requirements for dynamic ads. These events are marked with "m" for dynamic ads for mobile, and "t" for dynamic ads for travel within Segment's Facebook App Events settings page.
 
 ## Limited Data Use
 
