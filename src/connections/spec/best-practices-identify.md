@@ -48,40 +48,195 @@ You should make an `identify` call in the following situations:
 
 ## Soft User Registration
 
-An anonymous user visits the site for the very first time. The home page has the analytics.js tracking snippet loaded in its header. When the page loads, this sets off the default `page` call to Segment. The Segment SDK generates and sets `anonymousId`. 
+An anonymous user visits the site for the very first time. The home page has the analytics.js tracking snippet loaded in its header. When the page loads, this sets off the default `page` call to Segment. The Segment SDK generates and sets `anonymousId`.
 
-![Page Call](https://user-images.githubusercontent.com/78389005/214352835-5c3f7f28-af28-428e-bb8a-88ad39d53b46.png)
+```js
+analytics.page({
+  path: '/',
+  title: 'Home Page',
+  url: 'https://somesite.com/',
+})
+```
+
+<!---[Page Call](https://user-images.githubusercontent.com/78389005/214352835-5c3f7f28-af28-428e-bb8a-88ad39d53b46.png)--->
 
 You can see in this full page event, the `anonymousId` is populated, and the `userId` is null.
 
-![Full Page Payload](https://user-images.githubusercontent.com/78389005/214352920-cd7ac161-8e54-4de0-a522-35e6ed8a6e03.png)
+```js
+{
+  "anonymousId": "bd077b70-816b-448b-ae79-2f5f7d856513"
+  "context": {
+    "ip": "0.0.0.0",
+    "library": {
+      "name": "analytics.js",
+      "version": "3.11.4"
+    },
+    "locale": "en-US",
+    "page":{
+      "path":"/"
+      "referrer": "",
+      "search": "",
+      "title": "Home Page",
+      "url": "https://somesite.com"
+      },
+    "userAgent": "Mozilla/5.0"
+    },
+    "integrations": {},
+    "messageId": "ajs-84d32beb4273e661a2257bfef41c4964",
+    "originalTimestamp": "2020-04-23T22:38:48.55Z",
+    "properties":{
+      "path": "/",
+      "referrer": "",
+      "search": "",
+      "title": "Home Page",
+      "url": "https://somesite.com"
+    },
+  "recievedAt": "2020-04-23T22:38:48.55Z",
+  "sentAt": "2020-04-23T22:38:48.55Z",
+  "timestamp": "2020-04-23T22:38:48.55Z",
+  "type": "page",
+  "UserId": null
+}
+```
+
+<!---[Full Page Payload](https://user-images.githubusercontent.com/78389005/214352920-cd7ac161-8e54-4de0-a522-35e6ed8a6e03.png)--->
 
 The user signs up for an email newsletter and fills out the form giving you their first and last name, as well as their email address. At this point, you will fire off an `identify` call. You won't yet assign them a user ID in this example, but you can still grab these traits about them.
 
-![Fire Identify Call](https://user-images.githubusercontent.com/78389005/214353033-e90b6e7f-f593-416e-9f13-44848fab595a.png)
+```js
+analytics.identify({
+  firstName: 'Joe',
+  lastName: 'Visitor',
+  email: 'jvisitor@thissite.com'
+});
+```
+
+<!---[Fire Identify Call](https://user-images.githubusercontent.com/78389005/214353033-e90b6e7f-f593-416e-9f13-44848fab595a.png)--->
 
 You'll notice the identify call contains no `userId`. These traits will be associated to the `anonymousId` that is available in the user's cookie and `localStroage`. 
 
-![No UserId in Payload](https://user-images.githubusercontent.com/78389005/214353985-599e7456-9295-4cb3-b97c-b30a9b905fcf.png)
+```js
+{
+  "anonymousId": "bd077b70-816b-448b-ae79-2f5f7d856513"
+  "context": {
+    "ip": "0.0.0.0",
+    "library": {
+      "name": "analytics.js",
+      "version": "3.11.4"
+    },
+    "locale": "en-US",
+    "page":{
+      "path":"/"
+      "referrer": "",
+      "search": "",
+      "title": "Email Signup",
+      "url": "https://somesite.email"
+      },
+    "userAgent": "Mozilla/5.0"
+    },
+    "integrations": {},
+    "messageId": "ajs-84d32beb4273e661a2257bfef41c4964",
+    "originalTimestamp": "2020-04-23T22:38:48.55Z",
+    "properties":{
+      "path": "/",
+      "referrer": "",
+      "search": "",
+      "title": "Home Page",
+      "url": "https://somesite.com"
+    },
+  "recievedAt": "2020-04-23T22:38:48.55Z",
+  "sentAt": "2020-04-23T22:38:48.55Z",
+  "timestamp": "2020-04-23T22:38:48.55Z",
+  "traits"{
+    "email": "jvisitor@thissite.com",
+    "first_name": "Joe"
+    "last_name": "Visitor"
+  },
+  "type": "page",
+  "UserId": null
+}
+```
+
+<!--[No UserId in Payload](https://user-images.githubusercontent.com/78389005/214353985-599e7456-9295-4cb3-b97c-b30a9b905fcf.png)-->
 
 
 ## Full User Registration 
 
-An anonymous visitor registers for an account and becomes a known user. The account creation process allows you to assign a `userId` from your production database, as well as capture additional traits. For this example, the `userId` that is assigned is "123abc". This is when you'll want to fire an `identify` call with this user's newly assigned `userId` and additional traits. 
+An anonymous visitor registers for an account and becomes a known user. The account creation process allows you to assign a `userId` from your production database, as well as capture additional traits. For this example, the `userId` that is assigned is "123abc". This is when you'll want to fire an `identify` call with this user's newly assigned `userId` and additional traits.
 
-![Identify Call with UserId](https://user-images.githubusercontent.com/78389005/214355367-a24d55ce-4963-4da0-a67d-a8b1811ef0d0.png)
+```js
+analytics.identify(`123abc`,{
+  phone: '555-555-5555',
+  address: {
+    street: '6th Street',
+    city: 'San Fransisco',
+    state: 'CA',
+    postalCode: '94103',
+    country: 'US',
+  }
+});
+```
 
-After you fire the `identify` call with the `userId`, you'll notice that the payload now has both a `userId` *and* an `anonymousId` attributed to the user. 
+<!---[Identify Call with UserId](https://user-images.githubusercontent.com/78389005/214355367-a24d55ce-4963-4da0-a67d-a8b1811ef0d0.png)--->
 
-![Identify Payload with userId](https://user-images.githubusercontent.com/78389005/214355863-58c58cb7-f199-4bec-93b8-ab6487d6c0b3.png)
+After you fire the `identify` call with the `userId`, you'll notice that the payload now has both a `userId` *and* an `anonymousId` attributed to the user.
+
+```js
+{
+  "anonymousId": "bd077b70-816b-448b-ae79-2f5f7d856513"
+  "context": {
+    "ip": "0.0.0.0",
+    "library": {
+      "name": "analytics.js",
+      "version": "3.11.4"
+    },
+    "locale": "en-US",
+    "page":{
+      "path":"/"
+      "referrer": "",
+      "search": "",
+      "title": "Email Signup",
+      "url": "https://somesite.email"
+      },
+    "userAgent": "Mozilla/5.0"
+    },
+    "integrations": {},
+    "messageId": "ajs-84d32beb4273e661a2257bfef41c4964",
+    "originalTimestamp": "2020-04-23T22:38:48.55Z",
+    "properties":{
+      "path": "/",
+      "referrer": "",
+      "search": "",
+      "title": "Home Page",
+      "url": "https://somesite.com"
+    },
+  "recievedAt": "2020-04-23T22:38:48.55Z",
+  "sentAt": "2020-04-23T22:38:48.55Z",
+  "timestamp": "2020-04-23T22:38:48.55Z",
+  "traits"{
+    "phone": '555-555-5555',
+    "address": {
+    "street": '6th Street',
+    "city": 'San Fransisco',
+    "state": 'CA',
+    "postalCode": '94103',
+    "country": 'US',
+  }  
+  },
+  "type": "page",
+  "UserId": null
+}
+```
+
+<!---[Identify Payload with userId](https://user-images.githubusercontent.com/78389005/214355863-58c58cb7-f199-4bec-93b8-ab6487d6c0b3.png)--->
 
 ## Merging Identified and Anonymous user profiles
 
-The illustration below shows a timeline with a user's interactions on a website, including sample API calls above that show Segment calls, and the user's `anonymousId` and `userId`.
+<!--- The illustration below shows a timeline with a user's interactions on a website, including sample API calls above that show Segment calls, and the user's `anonymousId` and `userId`.
 
 ![](images/identify-bp-1.png)
 
-<!-- https://www.figma.com/file/Gc53MamYsKZBg3IUduunc5/identity-best-practices?node-id=1%3A3 -->
+https://www.figma.com/file/Gc53MamYsKZBg3IUduunc5/identity-best-practices?node-id=1%3A3 -->
 
 When the user first visits a page, Analytics.js automatically assigns the user an `anonymousId` and saves it to the user's `localStorage`. As the user interacts with the site, for example clicking around to different pages, Analytics.js includes this `anonymousId` and some [contextual information](/docs/connections/spec/common#context) with each `page` and `track` call. The contextual information might be the user's [IP address, browser, and more](/docs/connections/spec/common#context-fields-automatically-collected).
 
@@ -120,7 +275,7 @@ Let's go through some more scenarios to explain how an `anonymousId` is assigned
 
 If a user clicks on an ad and is directed to a webpage, they are assigned an `anonymousId`. While this user is anonymous, they navigate to different pages and click around on the website. Say they come back two days later from the same device, sign up, and are assigned a `userId` from your database.
 
-![](images/identify-bp-2.png)
+<!---![](images/identify-bp-2.png)--->
 
 For simplicity, we're assuming that the user has _not_ cleared their cookies or `localStorage`, where the original `anonymousId` is stored. If they had, they'd be assigned a new `anonymousId` when they visited the website, and the `userId` they got when they register on the website would _not_ be attached to the activities tracked with the old `anonymousId`.
 
@@ -128,14 +283,14 @@ For simplicity, we're assuming that the user has _not_ cleared their cookies or 
 
 In this scenario, the person uses both a web browser, and a mobile application to interact with your site. In each case, they are assigned a different `anonymousId`. In this scenario, the user signs up on the web browser, so their _web_ session is assigned a `userId`. However, because they do not log in on the mobile application, Segment cannot tie the mobile activity to this specific user. Their mobile application activity remains anonymous unless they log in on the mobile application.
 
-![](images/identify-bp-3.png)
+<!---![](images/identify-bp-3.png)--->
 
 
 #### Scenario #3 - Multi-day, multi-device, multiple logins
 
 Similar to the previous scenario, the user accessed both your website and mobile application, and also logged in on both. In this case, both sessions on the web and mobile app receive the user's `userId`, so Segment can tie the anonymous activity on both web and mobile to this user.
 
-![](images/identify-bp-4.png)
+<!---![](images/identify-bp-4.png)--->
 
 
 ## User profiles in warehouses
@@ -169,16 +324,16 @@ If you're tracking on the client and on the server, the `anonymousId` can be ret
 ```js
 analytics.user().anonymousId()
 ```
-
+<!---
 ![Prior to Registration](https://user-images.githubusercontent.com/78389005/214199496-ab7117fd-b42f-4cd7-9e85-aab3f28e382c.png)
 
 
 ![At Login](https://user-images.githubusercontent.com/78389005/214199506-e0251c90-c702-4760-a4a7-5bcd9e5a13f8.png)
+--->
 
+If you're identifying on the server, then you will want to pass the user ID from the server to the client using an `identify` call with the `anonymousId`. That will allow the `userId` to be aliased with the existing `anonymousId` and stored in the cookie in localStorage. With that, all previous anonymous activity and all subsequent activity is associated to the newly generated `userId`, as well as existing `anonymousId`s. 
 
-If you're identifying on the server, then you will want to pass the user ID from the server to the client using an `identify` call with the `anonymousId`. That will allow the `userId` to be aliased with the existing `anonymousId` and stored in the cookie in localStorage. With that, all previous anonymous activity and all subsequent activity is associated to the newly generated `userId`, as well as exisiting `anonymousId`s. 
-
-There are some advantages to sending details about your users directly from your server once the user registers. Server library [Identify calls](/docs/connections/spec/identify) are invisible to the end user, making them more secure, and much more reliable. Or, if you want to send user data that is sensitive or which you don't want to expose to the client, then you can make an `identify` call from the server with all the traits you know about the user. More about [collecting data on the client or server](https://segment.com/docs/guides/how-to-guides/collect-on-client-or-server/#not-stored-in-your-database) in our documentation. 
+There are some advantages to sending details about your users directly from your server once the user registers. Server library [Identify calls](/docs/connections/spec/identify) are invisible to the end user, making them more secure, and much more reliable. Or, if you want to send user data that is sensitive or which you don't want to expose to the client, then you can make an `identify` call from the server with all the traits you know about the user. More about [collecting data on the client or server](https://segment.com/docs/guides/how-to-guides/collect-on-client-or-server/#not-stored-in-your-database) in Segment's documentation. 
 
 
 ### Aliasing from a server library
