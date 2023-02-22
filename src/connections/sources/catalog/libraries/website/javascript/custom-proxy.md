@@ -70,7 +70,7 @@ const analytics = AnalyticsBrowser.load({
  })
 ```
 
-You can proxy event calls that typically go to `https://api.segment.io` by configuring `integrations['Segment.io'].apiHost`.
+You can proxy tracking calls that typically go to `api.segment.io/v1` by configuring `integrations['Segment.io'].apiHost`.
 ```ts
 const analytics = AnalyticsBrowser.load(
     {
@@ -80,9 +80,8 @@ const analytics = AnalyticsBrowser.load(
     {
       integrations: {
         'Segment.io': {
-          // POST https://api.segment.io/v1/t ->
-          //  https://MY-CUSTOM-API-PROXY.com/v1/t
-          apiHost: 'MY-CUSTOM-API-PROXY.com' //
+          // POST https://api.segment.io/v1/t -> https://MY-CUSTOM-API-PROXY.com/t
+          apiHost: 'MY-CUSTOM-API-PROXY.com' // omit the protocol (http/https) e.g. "api.segment.io/v1" rather than "https://api.segment.io/v1" 
         }
       }
     }
