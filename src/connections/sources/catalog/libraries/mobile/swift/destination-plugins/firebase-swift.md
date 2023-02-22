@@ -72,12 +72,6 @@ User Property values must be fewer than 100 characters.
 
 You are limited to 25 unique user properties per Firebase Console.
 
-**Segment automatically:**
-
-- Trims leading and trailing whitespace from user property names
-- Replaces spaces with underscores
-- Trims property names to 40 characters (Android only)
-
 Firebase automatically collects [these user properties](https://support.google.com/firebase/answer/6317486).
 
 ## Track
@@ -161,8 +155,6 @@ analytics.track(name: "Order Completed", properties: TrackProperties(orderId: "o
 ## Screen
 
 Segment doesn't map screen events to Firebase - that's because Firebase's SDK collects screen information out of the box for you.
-
-For Android, Segment passes contextual screen information into each screen view on each activity's `onResume` callback. To ensure that screen names are labeled properly, Segment recommends adding a `label` value to each of your activities in your app's `AndroidManifest.xml` file. At the moment, Firebase does not allow disabling automatic screen tracking for Android.
 
 For iOS, you can configure `recordScreenViews` which will automatically track screen views, or pass in a screen manually using a [screen](/docs/connections/spec/screen/) call. You should be able to disable the Automatic Screen reporting by adding the plist flag `FirebaseScreenReportingEnabled` to `Info.plist` and set its value to `NO` (Boolean).
 
