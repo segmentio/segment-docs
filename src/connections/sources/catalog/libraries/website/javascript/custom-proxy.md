@@ -31,10 +31,10 @@ You need to set up two important parts, regardless of the CDN provider you use:
 ## Set up
 
 There are 2 options you can choose from when you set up your custom domain proxy.
-1. [Use CloudFront](#cloudfront)
-2. [Use a custom CDN or API proxy]
+1. [CloudFront](#cloudfront)
+2. [Custom CDN or API proxy](#custom-cdn--api-proxy)
 
-Follow the directions listed for [CloudFront](#cloudfront) or [use your own CDN setup](#custom-cdn-api-proxy). Once you complete those steps and verify that your proxy works for both `cdn.segment.com` and `api.segment.io`, [contact Segment Product Support](https://segment.com/help/contact/) with the following template email:
+Follow the directions listed for [CloudFront](#cloudfront) or [use your own CDN setup](#custom-cdn--api-proxy). Once you complete those steps and verify that your proxy works for both `cdn.segment.com` and `api.segment.io`, [contact Segment Product Support](https://segment.com/help/contact/) with the following template email:
 
 ```text
 Hi,
@@ -92,9 +92,18 @@ const analytics = AnalyticsBrowser.load(
 ### Snippet instructions
 If you're a snippet user, you need to modify the [analytics snippet](/docs/getting-started/02-simple-install/#step-1-copy-the-snippet) that's inside your `<head>`. 
 
-To proxy settings and destination requests that typically go to `http://cdn.segment.com`, replace: `t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"` with `t.src="https://MY-CUSTOM-CDN-PROXY.com" + key + "/analytics.min.js"`
+To proxy settings and destination requests that typically go to `http://cdn.segment.com`, replace: 
+```diff
+- t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"
++ t.src="https://MY-CUSTOM-CDN-PROXY.com" + key + "/analytics.min.js"
+```
 
-To proxy tracking calls that typically go to `api.segment.io/v1`, replace `analytics.load("<MY_WRITE_KEY>")` with `analytics.load("<MY_WRITE_KEY>", { integrations: { "Segment.io": { apiHost:  "MY-CUSTOM-API-PROXY.com" }}})`
+To proxy tracking calls that typically go to `api.segment.io/v1`, replace:
+```diff
+- analytics.load("<MY_WRITE_KEY>")
++ analytics.load("<MY_WRITE_KEY>", { integrations: { "Segment.io": { apiHost:  "MY-CUSTOM-API-PROXY.com" }}})
+```
+
 
 ## CloudFront
 
