@@ -9,17 +9,16 @@ private: true
 
 [Upollo](https://upollo.ai?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} finds and converts repeat trialers, account sharers and more.
 
-11% of users signing up for free trials have [already had one](https://upollo.ai/blog/turn-repeated-trials-into-growth?utm_source=segmentio&utm_medium=docs&utm_campaign=partners), and up to 45% of users [share their logins](
-https://upollo.ai/blog/grow-by-understanding-account-sharing?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) with others.
-Inviting these users to a paid account is the number 1 underutilized growth channel for SaaS businesses.
+11% of users signing up for free trials have [already had a free trial](https://upollo.ai/blog/turn-repeated-trials-into-growth?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}, and up to 45% of users [share their logins](https://upollo.ai/blog/grow-by-understanding-account-sharing?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} with others.
+Inviting these users to a paid account is the top underutilized growth channel for SaaS businesses.
 
-This destination is maintained by Upollo. For any questions or issues with the destination, please [contact the Upollo team](https://upollo.ai/contact?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}.
+Upollo maintains this destination. For any questions or issues with the destination, please [contact the Upollo team](https://upollo.ai/contact?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}.
 
 ## Benefits of Upollo (Actions)
 
 Upollo (Actions) provides the following benefits:
 
-- **Find hidden growth opportunities**. Quickly see how many users are repeating free trials or share their account.
+- **Find hidden growth opportunities**. Quickly see how many users are repeating free trials or sharing their account.
 - **More happy paying customers**. Upgrade these users onto a paying plan and get more happy paying users.
 
 ## Getting Started
