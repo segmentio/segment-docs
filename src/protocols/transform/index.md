@@ -12,7 +12,7 @@ With Transformations, you can change data as it flows through Segment to either 
 You can also use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to transform events, properties, and property values for many [use cases](#use-cases).
 
 
-**Transformations are very powerful and should be applied with care!**
+**Transformations are very powerful and should be applied with care.**
 
 Transformations _irrevocably_ change the event payloads flowing through Segment and immediately affect either all destinations, or a single downstream destination, depending on your settings.
 
@@ -37,6 +37,9 @@ All Protocols Transformations are listed in the Transformations tab in the Proto
 Transformations can be enabled and disabled directly from the list view using the toggle.
 
 Transformations can be deleted and edited by clicking on the overflow menu. When editing a Transformation, only the resulting event or property names, and Transformation name can be edited. If you want to select a different event or source, create a separate Transformation rule.
+
+> note "Transformations created using the Public API"
+> On the Transformations page in the Segment app, you can view and rename transformations that you created with the Public API.
 
 ## Create a Transformation
 
@@ -114,9 +117,8 @@ Here's a list of Segment Transformations with some use case examples.
 
 - **Add a new property name and assign a value:** If you want to create a new property and set a static value, use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to create `new_property: static_value`. Segment currently supports setting static values for top-level fields with `propertyValueTransformations`. However, Segment doesn't support changing fields outside the properties or traits object with `propertyRenames`.
 
-{% comment %}
 - **Change property value casing:** Transform property value casing to lowercase, uppercase, or title case. For example, Transform the property value `united states` to `USA` to remain consistent with your data tracking.
-{% endcomment %}
+
 
 > info ""
 > Segment displays an error if the following property conflicts occur:
