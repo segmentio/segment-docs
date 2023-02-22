@@ -125,7 +125,8 @@ Context is a dictionary of extra information that provides useful context about 
 | `ip`        | String  | Current user's IP address.     |
 | `library`   | Object  | Dictionary of information about the library making the requests to the API, containing `name` and `version`.       |
 | `locale`    | String  | Locale string for the current user, for example `en-US`.        |               
-| `network`   | Object  | Dictionary of information about the current network connection, containing `bluetooth`, `carrier`, `cellular`, and `wifi`.               |
+| `network`   | Object  | Dictionary of information about the current network connection, containing `bluetooth`, `carrier`, `cellular`, and `wifi`. 
+If context.network.celluar and context.network.wifi fields are empty, then it means the user is offline |
 | `os`        | Object  | Dictionary of information about the operating system, containing `name` and `version`.               |
 | `page`      | Object  | Dictionary of information about the current page in the browser, containing `path`, `referrer`, `search`, `title` and `url`. This is automatically collected by [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/#context--traits).    |
 | `referrer`  | Object  | Dictionary of information about the way the user was referred to the website or app, containing `type`, `name`, `url`, and `link`.                                                |
