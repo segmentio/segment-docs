@@ -47,13 +47,6 @@ Here's an example of these common fields in raw JSON:
       "version": "2.11.1"
     },
     "locale": "en-US",
-    "location": {
-      "city": "San Francisco",
-      "country": "United States",
-      "latitude": 40.2964197,
-      "longitude": -76.9411617,
-      "speed": 0
-    },
     "network": {
       "bluetooth": false,
       "carrier": "T-Mobile US",
@@ -131,8 +124,7 @@ Context is a dictionary of extra information that provides useful context about 
 | `device`    | Object  | Dictionary of information about the device, containing `id`, `advertisingId`, `manufacturer`, `model`, `name`, `type`, and `version`.                |
 | `ip`        | String  | Current user's IP address.     |
 | `library`   | Object  | Dictionary of information about the library making the requests to the API, containing `name` and `version`.       |
-| `locale`    | String  | Locale string for the current user, for example `en-US`.        |
-| `location`  | Object  | Dictionary of information about the user's current location, containing `city`, `country`, `latitude`, `longitude`, `region`, and `speed`.                 |
+| `locale`    | String  | Locale string for the current user, for example `en-US`.        |               
 | `network`   | Object  | Dictionary of information about the current network connection, containing `bluetooth`, `carrier`, `cellular`, and `wifi`.               |
 | `os`        | Object  | Dictionary of information about the operating system, containing `name` and `version`.               |
 | `page`      | Object  | Dictionary of information about the current page in the browser, containing `path`, `referrer`, `search`, `title` and `url`. This is automatically collected by [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/#context--traits).    |
@@ -170,9 +162,6 @@ Other libraries only collect `context.library`, any other context variables must
 | library.version          | ✅            | ✅             | ✅                 |
 | ip*                      | ✅            | ✅             | ✅                 |
 | locale                   | ✅            | ✅             | ✅                 |
-| location.latitude        |              |               |                   |
-| location.longitude       |              |               |                   |
-| location.speed           |              |               |                   |
 | network.bluetooth        |              |               | ✅                 |
 | network.carrier          |              | ✅             | ✅                 |
 | network.cellular         |              | ✅             | ✅                 |

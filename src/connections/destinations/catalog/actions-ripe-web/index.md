@@ -107,20 +107,6 @@ analytics.page('Home')
 
 Segment sends Page calls to Ripe as a `pageview` event.
 
-### Alias
-
-Connects a new unique id to an existing identified user.
-
-If you aren't familiar with the Segment Spec, take a look at
-the [Alias method documentation](/docs/connections/spec/alias/) to learn about
-what it does. An example call would look like:
-
-```js
-analytics.alias('507f191e81')
-```
-
-Segment sends Page calls to Ripe as a `alias` event.
-
 ### Segment session
 
 Ripe will use the `userId`, `anonymous` and `groupId` set in Segment and the Ripe SDK keeps track of the current ids.

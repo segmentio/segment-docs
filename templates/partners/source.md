@@ -32,23 +32,23 @@
 
 ## title: <integration_name> Source
 
-<!-- Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged. -->
+> (delete after reading) Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
 
 [<integration_name>](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
 
 This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
 
-<!-- Update your company name and support email address. -->
+> (delete after reading) Update your company name and support email address.
 
 This source is maintained by <integration_name>. For any issues with the source, [contact their Support team](mailto:support@<integration_name>.com).
 
-<!-- Update your company name (x2) and support email address. -->
+> (delete after reading) Update your company name (x2) and support email address.
 
 _**NOTE:** The <integration_name> Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on <Month_Name DD, YYYY>. If you are interested in joining their beta program or have any feedback to help improve the <integration_name> Source and its documentation, [let their team know](mailto:support@<integration_name>.com)!_
 
 ## Getting Started
 
-<!-- Include clear, succinct steps including hyperlinks to where customers can locate the place in your app to enter their Segment writekey. -->
+> (delete after reading) Include clear, succinct steps including hyperlinks to where customers can locate the place in your app to enter their Segment writekey.
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
 2. Search for "<integration_name>" in the Sources Catalog, select <integration_name>, and click **Add Source**.
@@ -61,15 +61,15 @@ _**NOTE:** The <integration_name> Source is currently in beta, which means that 
 
 ## Stream
 
-<!-- Clarify the type of Segment events your integration will send  -->
+> (delete after reading) Clarify the type of Segment events your integration will send. 
 
 <integration_name> uses our stream Source component to send Segment event data. It uses a server-side (select from `track`, `identify`, `page`, `group`) method(s) to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
 
-<!-- Clarify how your integration includes user identifiers in your event payloads, the example below is from Klaviyo-->
+> (delete after reading) Clarify how your integration includes user identifiers in your event payloads, the example below is from Klaviyo:
 
 The default behavior is for Klaviyo to pass the userId associated with the email recipient as the userId. There are cases in which Klaviyo does not have an associated userId, in which case the email address will be passed in as the anonymousId.
 
-<!-- For each of the below sections, populate the event and properties that a customer would expect to receive in their downstream tools from your Event Source. -->
+> (delete after reading) For each of the below sections, populate the event and properties that a customer would expect to receive in their downstream tools from your Event Source.
 
 ## Events
 
