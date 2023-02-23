@@ -760,6 +760,25 @@ Analytics.js tracks across subdomains out of the box; all Segment destinations f
 
 To track activity on your subdomains, include the Segment Analytics.js snippet on each subdomain. Segment sets users' `anonymousId` on the top-level domain, so users are tracked across any subdomains.
 
+## UTM Tracking
+
+UTM parameters are only used when linking to your site from outside your domain. When a visitor arrives via a link containing UTM parameters, our analytics.js library will parse the URL query string and add the information to the event payload. Further details in our best practices guide [here](https://segment.com/docs/guides/how-to-guides/cross-channel-tracking/)
+
+UTM parameters contain three essential components (utm_source, utm_medium, utm_campaign) and two optional (utm_content, utm_term). For example, having the following three parameters included in your URL: ?utm_source=mysource&utm_medium=email&utm_campaign=mytestcampaign, once a visitor arrives via a link containing the above, we automatically grab the UTM parameters and subsequent events will contain these parameters within the 'context' object (visible in your source Debugger in the raw view).
+
+So, for example, if somebody follows the link with above query string to your site, the subsequent 'page' call in your Debugger should contain the below and will be passed to any enabled destinations:
+
+
+"context": {
+ "campaign": {
+ "medium": "email",
+ "name": "mytestcampaign",
+ "source": "mysource",
+ },
+ 
+
+Whenever the UTM parameters are no longer a part of the URL, we will no longer include them. For example, if the user goes to a new page within your website which does not contain these parameters, they will not be included in subsequent events. UTM parameters are non-persistent by default as they could potentially cause data accuracy problems. Here's an example of why: Say a user clicks on an ad and lands on your site. He navigates around and bookmarks an internal page - or maybe shares a link with a friend, who shares it with another friend. All those links would then point back to the same test utm_source as the initial referrer for any purchase.
+
 ## Analytics.js performance
 
 The Analytics.js library and all Destination libraries are loaded with the [HTML script `async` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async){:target="_blank"}. This also means that Segment fires methods asynchronously, so you should adjust your code accordingly if you require that events be sent from the browser in a specific order.
