@@ -52,4 +52,4 @@ Customer.io makes an exception for the `created_at` trait, converting ISO-8601 t
 
 ## Device token collection
 
-Segment does not automatically collect push notification tokens. These paramters are required by Customer.io, requiring logic to be implemented to collect these values.
+Segment does not automatically collect push notification tokens. These parameters are required by Customer.io, requiring logic to be implemented to collect these values.
