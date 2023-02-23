@@ -449,6 +449,7 @@ Segment supports these destinations for Analytics Swift, with more to come:
 * [Facebook App Events](https://github.com/segment-integrations/analytics-swift-facebook-app-events){:target="_blank"}
 * [Firebase](https://github.com/segment-integrations/analytics-swift-firebase){:target="_blank"}
 * [Mixpanel](https://github.com/segment-integrations/analytics-swift-mixpanel){:target="_blank"}
+* [Intercom](https://github.com/segment-integrations/analytics-swift-intercom){:target="_blank"}
 
 ## FAQs
 ### Can I use the catalog of device-mode destinations from Analytics-iOS?
