@@ -1,6 +1,5 @@
 ---
 title: 'Qualtrics Source'
-hidden: true
 beta: true
 ---
 
