@@ -23,6 +23,10 @@ plugins:
       url: https://cdn.filepicker.io/api/file/HrjOOkkLR8WrUc1gEeeG
   - name: comScore
     url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/comscore-kotlin-android/
+    logo:
+      url: https://cdn.filepicker.io/api/file/XM2ggMweTkliGImSg1Td
+    mark:
+      url: https://cdn.filepicker.io/api/file/1722B3EeQ6wPETOvS5ZA
   - name: Facebook App Events
     url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/facebook-app-events-kotlin-android/
     logo:
