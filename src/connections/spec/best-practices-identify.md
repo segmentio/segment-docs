@@ -85,7 +85,7 @@ Additionally, Analytics.js adds a `message_id` and [four timestamps](/docs/conne
 
 Now, as the user interacts with your site and different buttons or links that you track using Segment, their `userId` and `anonymousId` are sent with each tracking API call.
 
-### UserID merge examples
+### UserID merge examples 
 
 Let's go through some more scenarios to explain how an `anonymousId` is assigned and how it might be merged with a UID.
 
