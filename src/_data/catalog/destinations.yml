@@ -9550,6 +9550,217 @@ items:
         '@path': $.traits
       _update_existing_only: false
     trigger: type = "identify"
+- id: 63872c01c0c112b9b4d75412
+  display_name: Braze Cohorts
+  name: Braze Cohorts
+  slug: actions-braze-cohorts
+  hidden: false
+  endpoints:
+  - us
+  regions:
+  - us
+  url: connections/destinations/catalog/actions-braze-cohorts
+  previous_names:
+  - Braze Cohorts
+  website: http://www.segment.com
+  status: PUBLIC_BETA
+  categories: []
+  logo:
+    url: https://cdn.filepicker.io/api/file/jrbUXsZDQ708akn3cVyZ
+  mark:
+    url: https://cdn.filepicker.io/api/file/jrbUXsZDQ708akn3cVyZ
+  methods:
+    track: true
+    identify: true
+    group: true
+    alias: true
+    page: true
+  platforms:
+    browser: true
+    mobile: false
+    server: true
+    warehouse: false
+  components: []
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: false
+  replay: false
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
+  settings:
+  - name: client_secret
+    type: password
+    defaultValue: ''
+    description: >-
+      Data Import Key for the client whose cohort this belongs to. Also known as
+      customer key.
+    required: true
+    label: Client Secret key
+  - name: endpoint
+    type: select
+    defaultValue: https://rest.iad-01.braze.com
+    description: >-
+      Your Braze REST endpoint. [See more
+      details](https://www.braze.com/docs/api/basics/#endpoints)
+    required: true
+    label: REST Endpoint
+  actions:
+  - id: 5edDJm6nYLSGe61Nk16HzT
+    name: Sync Audience
+    slug: syncAudiences
+    description: Record custom events in Braze
+    platform: CLOUD
+    hidden: false
+    defaultTrigger: event = "Audience Entered" or event = "Audience Exited"
+    fields:
+    - id: nA4s4FMVtr6z8MNR6Nmjm6
+      sortOrder: 0
+      fieldKey: external_id
+      label: External User ID
+      type: STRING
+      description: >-
+        The external_id serves as a unique user identifier for whom you are
+        submitting data. This identifier should be the same as the one you set
+        in the Braze SDK in order to avoid creating multiple profiles for the
+        same user.
+      placeholder: ''
+      defaultValue:
+        '@path': $.userId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: d62siL4woAGgZYKrtw7HYW
+      sortOrder: 1
+      fieldKey: user_alias
+      label: User Alias Object
+      type: OBJECT
+      description: >-
+        Alternate unique user identifier, this is required if External User ID
+        or Device ID is not set. Refer [Braze
+        Documentation](https://www.braze.com/docs/api/objects_filters/user_alias_object)
+        for more details.
+      placeholder: ''
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: fEwG1xTh5p8sxHvuEECTxY
+      sortOrder: 2
+      fieldKey: device_id
+      label: Device ID
+      type: STRING
+      description: >-
+        Device IDs can be used to add and remove only anonymous users to/from a
+        cohort. However, users with an assigned User ID cannot use Device ID to
+        sync to a cohort.
+      placeholder: ''
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: qu3C2Yfiez4krQnrrkjP8i
+      sortOrder: 3
+      fieldKey: cohort_id
+      label: Cohort ID
+      type: HIDDEN
+      description: The Cohort Identifier
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.personas.computation_id
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: k1z6vu4cus8JqS783tq2sk
+      sortOrder: 4
+      fieldKey: cohort_name
+      label: Cohort Name
+      type: HIDDEN
+      description: The name of Cohort
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.personas.computation_key
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 7f1WsTic6uqMroUstE7q3s
+      sortOrder: 5
+      fieldKey: enable_batching
+      label: Enable Batching
+      type: BOOLEAN
+      description: Enable batching of requests to the Braze cohorts.
+      placeholder: ''
+      defaultValue: true
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: VVi5PyMZhWU485ox6rzKS
+      sortOrder: 6
+      fieldKey: personas_audience_key
+      label: Segment Engage Audience Key
+      type: STRING
+      description: >-
+        The `audience_key` of the Engage audience you want to sync to Braze
+        Cohorts. This value must be a hard-coded string variable, e.g.
+        `personas_test_audience`, in order for batching to work properly.
+      placeholder: ''
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: fkMefvqLDHFAx5HbmtKSbh
+      sortOrder: 7
+      fieldKey: event_properties
+      label: Event Properties
+      type: OBJECT
+      description: >-
+        Displays properties of the event to add/remove users to a cohort and the
+        traits of the specific user
+      placeholder: ''
+      defaultValue:
+        '@if':
+          exists:
+            '@path': $.properties
+          then:
+            '@path': $.properties
+          else:
+            '@path': $.traits
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: j6CXCxEs6arw4Ffa8n4kYQ
+      sortOrder: 8
+      fieldKey: time
+      label: Time
+      type: HIDDEN
+      description: When the event occurred.
+      placeholder: ''
+      defaultValue:
+        '@path': $.timestamp
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+  presets: []
 - id: 60fb01aec459242d3b6f20c1
   display_name: Braze Web Device Mode (Actions)
   name: Braze Web Device Mode (Actions)

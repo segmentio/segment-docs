@@ -7,16 +7,16 @@ beta: true
 
 {% include content/plan-grid.md name="actions" %}
 
-[Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.The Braze Partner Cohort API is a multi-channel marketing interface that allows our advertisers to send over cohorts of users that were generated within the partner’s application. These cohorts are then used to build better campaigns with the most accurate and recent customer data.
+[Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.The Braze Partner Cohort API is a multi-channel marketing interface that allows advertisers to send over cohorts of users that were generated within the partner’s application. These cohorts are then used to build better campaigns with the most accurate and recent customer data.
 
-This feature will allow the customer to sync Engage audiences quicker and will provide as a great alternative to storing audience subscription into user-level attributes in Braze. Depending on how the data will be mapped, it’s also possible to leverage RETL data passed via Segment.
+This feature will allow the customer to sync Engage audiences quicker and will provide as a great alternative to storing audience subscription into user-level attributes in Braze.
 
 > success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Braze Segment destination. There's also a page about the [non-Actions Braze destination](/docs/connections/destinations/catalog/braze/). Both of these destinations receives data _from_ Segment. There's also the [Braze source](/docs/connections/sources/catalog/cloud-apps/braze//), which sends data _to_ Segment!
+> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Braze Segment destination. There's also a page about the [non-Actions Braze destination](/docs/connections/destinations/catalog/braze/). Both of these destinations receives data _from_ Segment. There's also the [Braze source](/docs/connections/sources/catalog/cloud-apps/braze//), which sends data _to_ Segment
 
 ## Benefits of Braze Cohorts Destination
 
-Actually there is a lag in syncing large Engage audiences to Braze, when using existing Braze Classic and Actions destinations. This impacts their ability to move quickly with a modern data stack, as well as make quick adjustments to their Braze campaigns to better target users. By building this new destination, we can enable end users to upload audience data to Braze— as a “list” — all in one go, instead of in an event method.
+Actually there is a lag in syncing large Engage audiences to Braze, when using existing Braze Classic and Actions destinations. This impacts their ability to move quickly with a modern data stack, as well as make quick adjustments to their Braze campaigns to better target users. By building this new destination, It can enable end users to upload audience data to Braze— as a “list” — all in one go, instead of in an event method.
 
 This Destination will help Segment and Braze customers sync Audiences built in Segment Engage to Braze. This will enable customers to sync audiences quicker and help customers manage their rate limits better (100 RPS in Braze Action Destination)
 
@@ -46,7 +46,7 @@ To add the Braze Cohorts destination:
 9. Navigate to the **Mappings** tab, click **New Mapping**, and select **Sync Audience**.
 
 10. Under Select mappings, input the Audience Key you copied in Step 2 as the “Segment Engage Audience Key.” Do not change any other defaults. Click **Save** and toggle to enable the mapping.
-     * **Note:** User Can be added or removed from Braze Cohorts via ExternalId,DeviceId and User Alias and the priority goes as externalId, deviceId and then userAlias object if all are given.
+     * **Note:** User Can be added or removed from Braze Cohorts through ExternalId,DeviceId and User Alias and the priority goes as externalId, deviceId and then userAlias object if all are given.
      * The Audience Key must be manually entered to ensure users in the Engage Audience are sent to the correct Segment in Braze Cohorts. For every Engage Audience you want to send to your Braze Account, a separate **Sync Audience** mapping must be created. You can create up to 50 mappings within an instance of the Braze Cohorts Destination.
      
 11. Navigate back to **Engage > Audiences** and click on the Audience from Step 1. 
