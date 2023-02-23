@@ -56,6 +56,16 @@ Analytics.js 2.0 asynchronously loads different pieces of the library as needed.
 - `https://cdn.segment.com/analytics-next/bundles/*`
 - `https://cdn.segment.com/next-integrations/integrations/*`
 
+Your CSP may also require whitelisting approved domains, in which case you'll want to allow the following endpoints: 
+
+- `api.segment.io`
+- `api.segment.com`
+- `track.segment.com`
+- `cdn.segment.com`
+
+> info ""
+> Since Segment interacts with several integrations, support surrounding Content Security Policy issues is limited.
+
 ### Using trackLink on elements that are not links
 
 Previously, it was possible to attach `trackLink` to any element, and a `trackLink` call would fire for that element if it wasn't a link. Now, when you attach `trackLink` to a non-link element, an additional search of that element's children occurs for any nested links and fires track calls based on those links. If you wish to fire track calls on non-link elements that have links as children, you can use a `track` call instead.
