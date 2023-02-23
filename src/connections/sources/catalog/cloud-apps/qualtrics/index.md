@@ -9,7 +9,8 @@ This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-so
 
 Qualtrics maintains this source. For any issues with the source, [contact the Qualtrics Support team](mailto:support@qualtrics.com).
 
-_**NOTE:** The Qualtrics Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on February 15, 2023. If you are interested in joining their beta program or have any feedback to help improve the Qualtrics Source and its documentation, [let the Qualtrics team know](mailto:support@qualtrics.com)!_
+> info "Beta Source"
+> The Qualtrics Source is in beta, which means that they are still actively developing the source. This doc was last updated on February 15, 2023. If you are interested in joining their beta program or have any feedback to help improve the Qualtrics Source and its documentation, [let the Qualtrics team know](mailto:support@qualtrics.com)!_
 
 ## Getting started
 
