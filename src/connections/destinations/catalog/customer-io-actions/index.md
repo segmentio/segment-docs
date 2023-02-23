@@ -50,3 +50,6 @@ For example, if you send an event with a `purchase_time` trait of `2006-01-02T18
 
 Customer.io makes an exception for the `created_at` trait, converting ISO-8601 timestamps or any values supported by JavaScript `Date` objects to Unix timestamps.
 
+## Device token collection
+
+Segment does not automatically collect push notification tokens. These paramters are required by Customer.io, requiring logic to be implemented to collect these values.
