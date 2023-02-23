@@ -14,8 +14,10 @@ Delivery Overview has three core features:
 - [Breakdown table](#breakdown-table): contains more detail about the events that were processed at each pipeline step
 - [Discard table](#discard-table): contains details about the events that failed or were filtered out of your process
 
+You can refine these tables using the time picker and the metric toggle, located under the destination header.
+
 ### Pipeline view
-The pipeline view provides insights into each point of failure where events may be filtered out. The first step (successfully received) and the last step (successful delivery)
+The pipeline view provides insights into each point of failure where events may be filtered out. If you click on the first step (successfully received) and the last step (successful delivery,) you can view the breakdown table. If you click any of the discard steps, you can view the discard table.
 
 - **Successfully received**: Events that Segment ingested from your source
 - **Failed on ingest**: Events that were not ingested into Segment when emitted from the source
@@ -27,11 +29,11 @@ The pipeline view provides insights into each point of failure where events may 
 ### Breakdown table
 The breakdown table provides you with greater detail about the selected events.
 
-To open the breakdown table, select one of the steps in the pipeline view. 
+To open the breakdown table, select either the first step in the pipeline view (successfully received,) the last step in the pipeline view (successful delivery), or select a discard step and then click on a discard reason. 
 
 This table displays the following details:
 - **Event details**: The event name or event type (track call vs. identify call, for example)
-- **Counts related**: How many of each event successfully made it through this pipeline step
+- **Counts related**: How many of each event either successfully made it through this pipeline step (in the case of the first or last steps in the pipeline view) or were filtered out (if you access it from a discard table)
 - **Related change percentage**: Insight into how the event counts differ from the last comparable time range as a percentage<sup>1</sup>
 
 <sup>1:</sup> *Segment calculates the related change percentage by subtracting the percent of events impacted in the previous time period from the percent of impacted events in the current time period. For example, if last week 15% of your events were filtered at a source, but this week, 22% of your events were filtered at a source, you would have a related change percentage of 7%.*
@@ -39,10 +41,10 @@ This table displays the following details:
 ### Discard table
 The discard table provides you with greater detail about the events that failed to deliver or were filtered out of your sources and destinations. 
 
-To open the discard table, click on one of the discard steps (Failed on ingest, filtered at source, filtered at destination, or failed delivery.) If you click on a row in the discard table, you can see the breakdown table for the events that were discarded for a specific reason.
+To open the discard table, click on one of the discard steps (failed on ingest, filtered at source, filtered at destination, or failed delivery.) If you click on a row in the discard table, you can see the breakdown table for the discarded events.
 
 This table displays the following details:
-- **Discard reason**: Any relevant error code, message, or description associated with the event's failure. When possible, Delivery Overview will link to any troubleshooting information you can use to get your events up and running again. Clicking on a discard reason brings you to the [breakdown table](#breakdown-table,) where you can see more detail about events that were discarded.
+- **Discard reason**: Any relevant error code, message, or description associated with the event's failure. When possible, Delivery Overview will link to any troubleshooting information you can use to get your events up and running again. Clicking on a discard reason brings you to the [breakdown table](#breakdown-table,) where you can see more detail about discarded events.
 - **Counts related**: How many of each event were discarded in this pipeline step
 - **Related change percentage**: Insight into how the event counts differ from the last comparable time range as a percentage<sup>1</sup>
 
@@ -66,4 +68,8 @@ To use Delivery Overview:
 ### How does Delivery Overview differ from other Segment monitoring and observability products?
 
 ### How do I know which of my destinations are cloud streaming destinations?
+
+### How can I configure alerts?
+
+During the Delivery Overview beta, you can use the Event Delivery alerting features (Delivery Alerts) by selecting the **Alerts** tab in the destination header.
 
