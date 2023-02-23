@@ -149,4 +149,4 @@ Segment does not currently support SSH tunneling to Redshift. You can usually al
 
 ### Do you support Redshift Serverless?
 
-Segment does not currently support Serverless Redshift. While you are able to set up the connection in the Segment UI, we do not have the functionality to query Redshift's SYS tables.
+Segment does not currently support Serverless Redshift. While you can set up the connection in the Segment app, Segment does not have the functionality to query Redshift's SYS tables.
