@@ -84,7 +84,7 @@ The `DEPLOYED` version is the function version that's currently deployed.
 ### Restore a previous version
 
 To restore a previous function version:
-
+ 
 1. Select the function you want to restore.
 2. Click **Restore this version**.
   - Segment creates a duplicate of the selected version and labels it as the `LATEST` version.
