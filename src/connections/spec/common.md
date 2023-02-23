@@ -134,6 +134,8 @@ Context is a dictionary of extra information that provides useful context about 
 | `groupId`   | String  | Group / Account ID. <br><br> This is useful in B2B use cases where you need to attribute your non-group calls to a company or account. It is relied on by several Customer Success and CRM tools.          |
 | `traits`    | Object  | Dictionary of `traits` of the current user. <br><br> This is useful in cases where you need to `track` an event, but also associate information from a previous `identify` call. You should fill this object the same way you would fill traits in an [identify call](/docs/connections/spec/identify/#traits). |
 | `userAgent` | String  | User agent of the device making the request.             |
+| `channel` | String  | where the request originated from: server, browser or mobile             |
+
 
 ## Context fields automatically collected
 
