@@ -7,7 +7,7 @@ These limits were updated on February 22, 2023.
 
 Events ingested by Segment have a limit of **10,000** properties per individual event received. For example, two Track events named "Page Viewed" and "Signup completed" each have their own limit. Segment will not persist properties beyond this limit, and will drop any corresponding values.
 
-## Inbound data ingestion API ate limit
+## Inbound data ingestion API rate limit
 
 If within a ten minute period a Customer's sources (in aggregate) send more than 60 million events (average of 100,000 events per second) without prior arrangement, Segment reserves the right to queue any additional events and process those at a rate that does not exceed 60 million events in any ten minute period.
 
