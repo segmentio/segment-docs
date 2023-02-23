@@ -3,37 +3,37 @@ title: Analytics Swift Destination Plugins
 strat: swift
 plugins:
   - name: Amplitude
-    url: connections/sources/catalog/librariesswift/destination-plugins/amplitude-swift/
+    url: connections/sources/catalog/libraries/mobile/swift/destination-plugins/amplitude-swift/
     logo:
       url: https://d3hotuclm6if1r.cloudfront.net/logos/amplitude-default.svg
     mark:
       url: https://cdn.filepicker.io/api/file/Nmj7LgOQR62rdAmlbnLO
   - name: Appsflyer
-    url: connections/sources/catalog/librariesswift/destination-plugins/appsflyer-swift/
+    url: connections/sources/catalog/libraries/mobile/swift/destination-plugins/appsflyer-swift/
     logo:
       url: https://d3hotuclm6if1r.cloudfront.net/logos/appsflyer-default.svg
     mark:
       url: https://cdn.filepicker.io/api/file/AnJUEBvxRouLLOvIeQuK
   - name: Braze (Partner-Maintained)
-    url: connections/sources/catalog/librariesswift/destination-plugins/braze-swift/
+    url: connections/sources/catalog/libraries/mobile/swift/destination-plugins/braze-swift/
     logo:
       url: https://cdn.filepicker.io/api/file/9kBQvmLRR22d365ZqKRK
     mark:
       url: https://cdn.filepicker.io/api/file/HrjOOkkLR8WrUc1gEeeG
   - name: Facebook App Events
-    url: connections/sources/catalog/librariesswift/destination-plugins/facebook-app-events-swift/
+    url: connections/sources/catalog/libraries/mobile/swift/destination-plugins/facebook-app-events-swift/
     logo:
       url: https://d3hotuclm6if1r.cloudfront.net/logos/facebook-app-events-default.svg
     mark:
       url: https://cdn.filepicker.io/api/file/k1fi9InSu6eint2IHilP
   - name: Firebase
-    url: connections/sources/catalog/librariesswift/destination-plugins/firebase-swift/
+    url: connections/sources/catalog/libraries/mobile/swift//destination-plugins/firebase-swift/
     logo:
       url: https://cdn.filepicker.io/api/file/W6teayYkRmKgb8SMqxIn
     mark:
       url: https://cdn.filepicker.io/api/file/ztKtaLBUT7GUZKius5sa
   - name: Mixpanel
-    url: connections/sources/catalog/librariesswift/destination-plugins/mixpanel-swift/
+    url: connections/sources/catalog/libraries/mobile/swift/destination-plugins/mixpanel-swift/
     logo:
       url: https://cdn.filepicker.io/api/file/pUF0kwpTTu0Z5POuzZXV
     mark:

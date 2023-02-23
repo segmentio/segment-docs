@@ -1,0 +1,17 @@
+items: 
+- name: Destinations Example
+  url: https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app-destinations
+  categories: 
+  - sample
+- name: Java Android App
+  url: https://github.com/segmentio/analytics-kotlin/tree/main/samples/java-android-app
+  categories: 
+  - sample
+- name: Kotlin Android App
+  url: https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app
+  categories: 
+  - sample
+- name: Kotlin JVM App
+  url: https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-jvm-app
+  categories: 
+  - sample

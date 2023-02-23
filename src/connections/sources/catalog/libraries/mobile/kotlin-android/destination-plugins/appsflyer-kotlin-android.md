@@ -1,11 +1,11 @@
 ---
-title: Analytics Swift AppsFlyer Plugin
-strat: swift
+title: Analytics Kotlin AppsFlyer Plugin
+strat: kotlin-android
 ---
 
 AppsFlyer is the world’s leading mobile attribution & marketing analytics platform, helping app marketers around the world make better decisions. The AppsFlyer destination code is open-source. You can browse the code on GitHub for iOS and Android.
 
-Segment’s AppsFlyer destination plugin code is open source and available on GitHub. You can view it [here.](https://github.com/segment-integrations/analytics-swift-appsflyer)
+Segment’s Kotlin AppsFlyer destination plugin code is open source and available on GitHub. You can view it [here.](https://github.com/segment-integrations/analytics-kotlin-appsflyer)
 
 ## Getting Started
 
@@ -19,55 +19,48 @@ Segment’s AppsFlyer destination plugin code is open source and available on Gi
 > warning ""
 > the AppsFlyer library itself will be installed as an additional dependency.
 
-### via Xcode
-In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repo.
-
-https://github.com/segment-integrations/analytics-swift-appsflyer
-
-You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to.  Once you've made your selections, click the `Add Package` button.  
-
-### via Package.swift
-
-Open your Package.swift file and add the following do your the `dependencies` section:
+To install the Segment-Appsflyer integration, simply add this line to your gradle file:
 
 ```
-.package(
-            name: "Segment",
-            url: "https://github.com/segment-integrations/analytics-swift-appsflyer.git",
-            from: "1.1.3"
-        ),
+implementation 'com.segment.analytics.kotlin.destinations:appsflyer:<latest_version>'
+```
+
+Or the following for Kotlin DSL
+
+```
+implementation("com.segment.analytics.kotlin.destinations:appsflyer:<latest_version>")
 ```
 
 ## Using the Plugin in your App
 
-Open the file where you setup and configure the Analytics-Swift library.  Add this plugin to the list of imports.
+Open the file where you setup and configure the Analytics-Kotlin library.  Add this plugin to the list of imports.
 
 ```
-import Segment
-import SegmentAppsFlyer // <-- Add this line
+import com.segment.analytics.kotlin.destinations.appsflyer.AppsflyerDestination
 ```
 
-Just under your Analytics-Swift library setup, call `analytics.add(plugin: ...)` to add an instance of the plugin to the Analytics timeline.
+Just under your Analytics-Kotlin library setup, call `analytics.add(plugin = ...)` to add an instance of the plugin to the Analytics timeline.
 
 ```
-let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR WRITE KEY>")
-                    .flushAt(3)
-                    .trackApplicationLifecycleEvents(true))
-analytics.add(plugin: AppsFlyerDestination())
+    analytics = Analytics("<YOUR WRITE KEY>", applicationContext) {
+        this.flushAt = 3
+        this.trackApplicationLifecycleEvents = true
+    }
+    analytics.add(plugin = AppsflyerDestination(applicationContext))
 ```
 
-Your events will now begin to flow to AppsFlyer in device mode.
+Your events will now begin to flow to Appsflyer in device mode.
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example iOS call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example Kotlin call would look like:
 
-```swift
-struct MyTraits: Codable {
-        let favoriteColor: String
-}
-
-analytics.identify(userId: "a user's id", MyTraits(favoriteColor: "fuscia"))
+```java
+analytics.identify("user-123", buildJsonObject {
+    put("username", "MisterWhiskers")
+    put("email", "hello@test.com")
+    put("plan", "premium")
+});
 ```
 
 When you call `.identify()`, Segment uses AppsFlyer's `setCustomerUserID` to send the `userId` that was passed in.
@@ -76,14 +69,13 @@ When you call `.identify()`, Segment uses AppsFlyer's `setCustomerUserID` to sen
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example iOS call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example Kotlin call would look like:
 
-```swift
-struct TrackProperties: Codable {
-        let someValue: String
-}
-
-analytics.track(name: "My Event", properties: TrackProperties(someValue: "Hello"))
+```kotlin
+analytics.track("View Product", buildJsonObject {
+    put("productId", 123)
+    put("productName" "Striped trousers")
+});
 ```
 
 When you call `track`, Segment translates it automatically and sends the event to AppsFlyer.
@@ -114,4 +106,4 @@ The destination does not automatically support out-of-the-box deeplinking (you n
 
 Therefore, you can use AppsFlyer's OneLink integration which is a single, smart, tracking link that can be used to track on both Android and iOS. OneLink tracking links can launch your app when it is already installed instead of redirecting the user to the app store.
 
-For more details, review the [AppsFlyer OneLink set up Guide](https://support.appsflyer.com/hc/en-us/articles/207032246-OneLink-Setup-Guide). More information is available in the AppsFlyer SDK Integration Guides ([iOS](https://support.appsflyer.com/hc/en-us/articles/207032066-AppsFlyer-SDK-Integration-iOS), [Android](https://support.appsflyer.com/hc/en-us/articles/207032126-AppsFlyer-SDK-Integration-Android)) and Segment's mobile FAQs ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#faq), [Android](/docs/connections/sources/catalog/libraries/mobile/android/#faq)).
+For more details, review the [AppsFlyer OneLink set up Guide](https://support.appsflyer.com/hc/en-us/articles/207032246-OneLink-Setup-Guide). More information is available in the AppsFlyer SDK Integration Guides ( [Android](https://support.appsflyer.com/hc/en-us/articles/207032126-AppsFlyer-SDK-Integration-Android)) and Segment's mobile FAQs ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#faq), [Android](/docs/connections/sources/catalog/libraries/mobile/android/#faq)).
