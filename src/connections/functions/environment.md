@@ -67,7 +67,7 @@ To view the version history of a function:
 2. Select your source or destination function.
 3. Select **Edit Function**, then click **Version history**.
 
-Select previous versions to compare code using a *unified* or *split* view. With the split view, Segment displays the latest version on the left, and the version you've selected on the right.
+Select previous versions to compare code using a *unified* or *split* view. With the split view, Segment displays the latest version on the left and the version you've selected on the right.
 
 > success ""
 > Unified and split compare screens are read-only. While you can copy code, you can't make changes directly from these screens.
@@ -100,7 +100,7 @@ Here are some Public API use case examples:
 
 **Get Version history**: Use the `/versions` endpoint to retrieve a list of version records and metadata of a certain page size. You can also use this endpoint to get version source code for a given version ID.
 
-**Restore a previous version**: Use the `/restore` endpoint to restore a previous Function version. This creates a new version with the same source as the version you are restoring.
+**Restore a previous version**: Use the `/restore` endpoint to restore a previous function version. This creates a new version with the same source as the version you are restoring.
 
 **Create or update versions**: Create or update a function to add a version record and save the source code.
 
