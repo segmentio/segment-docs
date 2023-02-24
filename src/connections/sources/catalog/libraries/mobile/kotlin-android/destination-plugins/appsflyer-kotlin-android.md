@@ -3,7 +3,7 @@ title: Analytics Kotlin AppsFlyer Plugin
 strat: kotlin-android
 ---
 
-AppsFlyer is the world’s leading mobile attribution & marketing analytics platform, helping app marketers around the world make better decisions. The AppsFlyer destination code is open-source. You can browse the code on GitHub for iOS and Android.
+AppsFlyer is a mobile attribution & marketing analytics platform, helping app marketers around the world make better decisions. The AppsFlyer destination code is open-source. You can browse the code on GitHub for iOS and Android.
 
 Segment’s Kotlin AppsFlyer destination plugin code is open source and available on GitHub. You can view it [here.](https://github.com/segment-integrations/analytics-kotlin-appsflyer)
 
@@ -82,19 +82,15 @@ When you call `track`, Segment translates it automatically and sends the event 
 
 Segment includes all the event properties as callback parameters on the AppsFlyer event, and automatically translate `properties.revenue` to the appropriate AppsFlyer purchase event properties based on the spec'd properties.
 
-Finally, Segment uses AppsFlyer's `transactionId` deduplication when you send an `orderId` (see the [e-commerce spec](/docs/connections/spec/ecommerce/v2/)).
-
 ## Install Attributed
 
 Segment will automatically trigger an `Install Attributed` event if you have **trackAttributionData** enabled in your settings, and the Segment-AppsFlyer integration installed in your app. The event payload will adhere to the `Install Attributed` event specification documented [here](/docs/connections/spec/mobile/#install-attributed) and will propagate to your other downstream destinations.
 
+This logic depends on the Appsflyer `AppsFlyerConversionListener` [interface](https://dev.appsflyer.com/hc/docs/android-sdk-reference-appsflyerconversionlistener), and will only send when Appsflyer detects an install.
+
 ### Revenue Tracking
 
 The destination automatically recognizes spec'd `revenue` property and translates them to AppsFlyer's revenue tracking method.
-
-### Transaction De-duplication
-
-The destination automatically recognizes the spec'd `orderId` property, and sends it as the Transaction ID to AppsFlyer for revenue de-duplication.
 
 ### In-App Purchase Receipts
 
