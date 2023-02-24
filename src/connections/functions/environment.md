@@ -57,7 +57,8 @@ When you deploy your destination function in your workspace, you fill out the se
 With Functions Versioning, you can access a complete change history for each source or destination function. View version history and creation details, then use a unified or split display to compare code and restore previous versions of a function.
 
 > info "Functions Versioning in Beta"
-> Functions Versioning is in beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+> Functions Versioning is in beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. Also note that Versioning is disabled in workspaces where you deploy source functions with multiple instances. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+
 
 ### View and compare version history
 
@@ -84,7 +85,7 @@ The `DEPLOYED` version is the function version that's currently deployed.
 ### Restore a previous version
 
 To restore a previous function version:
- 
+
 1. Select the function you want to restore.
 2. Click **Restore this version**.
   - Segment creates a duplicate of the selected version and labels it as the `LATEST` version.
@@ -103,8 +104,8 @@ Here are some Public API use case examples:
 
 **Create or update versions**: Create or update a function to add a version record and save the source code.
 
-**Deploy a function**: Use the Public API to deploy a function. After you deploy, Segment marks the function version as `DEPLOYED`. Learn more about [version states](#latest-and-deployed-versions).
-`
+**Deploy a function**: Use the Public API to deploy a function. After you deploy, Segment marks the function version as `DEPLOYED`. Learn more about function version states [here](#latest-and-deployed-versions).
+
 View Segment's [Public API](https://docs.segmentapis.com/tag/Functions){:target="_blank"} docs for more information on how to use Functions Versioning with the Public API.
 
 ## Functions permissions
