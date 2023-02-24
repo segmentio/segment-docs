@@ -16,6 +16,9 @@ Braze’s destination plugin code is open source and available on GitHub. You ca
 4. Set up a new App Group REST API Key in the Braze Dashboard in *App Settings > Developer Console > API Settings*. For more information, see [Creating and Managing REST API Keys](https://www.braze.com/docs/api/basics/#creating-and-managing-rest-api-keys) in the Braze documentation. 
   - Select the `users.track` endpoint in the **User Data** section.
 
+> warning ""
+> The Braze (Classic) destination is in maintaince mode excpet for mobile device mode implementations.
+
 ## Adding the Dependency
 
 To install the Segment-Braze integration, simply add this line to your app's build.gradle file, replacing `<latest_version>` with the latest version number.
@@ -80,55 +83,6 @@ When you Identify a user, Segment passes that user's information to Braze with `
 
 If you're using a device-mode connection, Braze's SDK assigns a `device_id` and a backend identifier, `braze_id`, to every user. This allows Braze to capture anonymous activity from the device by matching on those identifiers instead of `userId`. This applies to _device-mode connections_.
 
-### Capture the braze_id of anonymous users
-
-Pass one of the many identifiers that may exist on an anonymous user profile to the [Braze's User by Identifier REST endpoint](https://www.braze.com/docs/api/endpoints/export/user_data/post_users_identifier/){:target='_blank'} to capture and export the `braze_id`. These identifiers include:
-- email address
-- phone number
-- device_id
-
-Choose an identifier that is available on the user profile at that point in the user lifecycle.
-
-For example, if you pass device_id to the User by Identifier endpoint:
-
-```js
-{
-  "device_id": “{{device_id}}",
-  "fields_to_export": ["braze_id"]
-}
-```
-
-The endpoint returns:
-
-```js
-{
-  "users": [
-    {
-        "braze_id": “{{braze_id}}"
-    }
-  ],
-  "message": "success"
-} 
-```
-
-
-> info "Tip"
-> Braze is complex. If you decide to use the `braze_id`, consider [contacting Segment Success Engineering](https://segment.com/help/contact/) or a Solutions Architect to verify your Braze implementation.
-
-Segment's special traits recognized as Braze's standard user profile fields (in parentheses) are:
-
-| Segment Event     | Braze Event  |
-|-------------------|-------------|
-| `firstName`       | `first_name`|
-| `lastName`        | `last_name` |
-| `birthday`        | `dob`       |
-| `avatar`          | `image_url` |
-| `address.city`    | `home_city` |
-| `address.country` | `country`   |
-| `gender`          | `gender`    |
-
-Segment sends all other traits (except Braze's [reserved user profile fields](https://www.braze.com/docs/api/objects_filters/user_attributes_object/#braze-user-profile-fields)) to Braze as custom attributes. You can send an array of strings as trait values but not nested objects.
-
 ## Track
 
 > info "Tip"
@@ -146,15 +100,6 @@ When you `track` an event, Segment sends that event to Braze as a custom event.
 
 > note ""
 > Braze requires that you include a `userId` or `braze_id` for all calls made in cloud-mode. Segment sends a `braze_id` if `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
-
-> note ""
-> Segment removes the following custom properties reserved by Braze:
->
->  - `time`
->  - `quantity`
->  - `event_name`
->  - `price`
->  - `currency`
 
 ### Order Completed
 
@@ -185,20 +130,3 @@ You can add more product details in the form of key-value pairs to the `properti
 - `quantity`
 - `event_name`
 - `price`
-
-
-## Group
-
-If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
-
-```java
-analytics.group("user-123", buildJsonObject {
-    put("username", "MisterWhiskers")
-    put("email", "hello@test.com")
-    put("plan", "premium")
-});
-```
-
-When you call `group`, Segment sends a custom attribute to Braze with the name `ab_segment_group_<groupId>`, where `<groupId>` is the group's ID in the method's parameters. For example, if the group's ID is `1234`, then the custom attribute name is `ab_segment_group_1234`. The value of the custom attribute is `true`.
-
-
