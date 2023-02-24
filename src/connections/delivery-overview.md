@@ -17,7 +17,7 @@ Delivery Overview has three core features:
 You can refine these tables using the time picker and the metric toggle, located under the destination header. With the time picker, you can specify a time period (last 10 minutes, 1 hour, 24 hours, or 7 days) for which you'd like to see data. With the metric toggle, you can switch between seeing metrics represented as percentages (for example, *85% of events* or *a 133% increase in events*) or as counts (*13 events* or *an increase of 145 events*.) Delivery Overview shows percentages by default.
 
 ### Pipeline view
-The pipeline view provides insights into each point of failure where events may be filtered out. If you click on the first step (successfully received) and the last step (successful delivery,) you can view the breakdown table. If you click any of the discard steps, you can view the discard table.
+The pipeline view provides insights into each point of failure where events may be filtered out. If you click on the first step (successfully received) and the last step (successful delivery) you can view the breakdown table. If you click any of the discard steps, you can view the discard table.
 
 The pipeline view shows the following steps:
 - **Successfully received**: Events that Segment ingested from your source
