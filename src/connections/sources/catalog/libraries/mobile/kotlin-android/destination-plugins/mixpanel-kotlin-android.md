@@ -211,9 +211,6 @@ When you use the Mixpanel destination in Device-mode, Segment sends Screen event
 
 In short, Segment sends one event to Mixpanel per `screen` call.
 
-### Sending data to Mixpanel's European Union Endpoint
-
-To implement Mixpanel in the European Union, enable the setting "Enable European Union Endpoint" on the Settings tab of the Mixpanel destination. When this setting is enabled, Segment updates the endpoint for any data sent from server-side libraries, browsers using Analytics.js, or the iOS SDK.
 ### When Will I See Data from my Mobile App?
 
 If you already have an app deployed with the Segment library, and you just enabled Mixpanel mobile, it can take up to an hour for all your mobile users to refresh their Segment settings cache, and learn about the new service that you want to send to.
@@ -229,12 +226,6 @@ If you're testing in Xcode remember you must first background the app, then the 
 1. You'll need to make sure you're using [`identify`](/docs/connections/spec/identify/). A Mixpanel track doesn't create users in Mixpanel People.
 2. Make sure to turn on the "People" setting so that all of your [`identify`](/docs/connections/spec/identify/) calls will be sent to Mixpanel's People feature.
 3. Make sure you disable the default filter in the Mixpanel People Explore tab.
-
-### IP
-
-If an `ip` property is passed to Mixpanel, the value will be interpreted as the IP address of the request and therefore automatically parsed into Mixpanel geolocation properties (City, Country, Region). After that IP address has been parsed, they will throw out the IP address and only hold onto those resulting geolocation properties. As such, if you want to display an IP address as a property within the Mixpanel UI or within raw data, you will simply want to slightly modify the naming convention for that property.
-
-Instead of `ip`, you can use a property name of `user IP` or `IP Address` (whatever is most clear for your implementation). This way, Mixpanel won't automatically interpret the IP address as an IP address, and instead store that value as a property on the event. You can read more [here](https://mixpanel.com/help/reference/http#tracking-events){:target="_blank"}.
 
 ### Push Notifications
 
