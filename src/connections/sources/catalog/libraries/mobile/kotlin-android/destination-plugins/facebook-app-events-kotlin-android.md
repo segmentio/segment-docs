@@ -76,7 +76,7 @@ analytics.track("View Product", buildJsonObject {
 
 When you call `track` Segment automatically sends that event and it's properties to Facebook. In the Facebook analytics interface you'll be able to use the event properties to segment your data.
 
-Facebook App Events doesn't like events with periods in the name so if you send us an event with periods in the name, we'll convert all periods to underscores. So if your event is `friend.added`, we'll send that to Facebook as `friend_added`. We also truncate events that are longer than 40 characters long due to Facebook's API constraints.
+Segment will truncate events that are longer than 40 characters long due to Facebook's API constraints.
 
 ### Facebook Parameters
 
@@ -111,13 +111,6 @@ You can manually change the Data Processing parameters by adding settings to the
 ## Troubleshooting
 
 ### Not seeing events?
-
-You will have to be sure that the [IDFA](/docs/connections/sources/catalog/libraries/mobile/ios/#idfa) is working within your app, which involves adding the [iAD framework](/docs/connections/sources/catalog/libraries/mobile/ios/#idfa).
-
-Once you've added these, you will start to see the `context.device.advertisingId` populate and the `context.device.adTrackingEnabled` flag set to `true` unless the user has ad tracking limited or is using a mobile ad blocker.
-
-> note ""
-> While the network is deprecated, the relevant iOS [framework](https://developer.apple.com/reference/iad) is not.
 
 Facebook requires that payloads include the following:
 - `context.device.id`
