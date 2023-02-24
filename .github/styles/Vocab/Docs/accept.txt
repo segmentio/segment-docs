@@ -12,6 +12,7 @@
 (?:P|p)endo
 (?:P|p)odfile
 (?:P|p)ostgres
+(?:R|r)ealtime
 (?:R|r)emarketing
 (?:U|u)nlinks?\b
 (?:U|u)nmaps?\b

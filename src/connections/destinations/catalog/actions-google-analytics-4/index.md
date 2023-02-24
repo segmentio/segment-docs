@@ -34,7 +34,9 @@ To add the Google Analytics 4 destination:
 2. Search for “Google Analytics 4” in the Destinations Catalog, and select the destination.
 3. Click **Configure Google Analytics 4** in the top-right corner of the screen.
 4. Select the source that will send data to Google Analytics 4 and follow the steps to name your destination.
-5. On the **Settings** tab, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} for web streams or the [Firebase App ID](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=firebase#payload_query_parameters){:target='_blank'} for mobile streams. Next, enter in the API Secret associated with your GA4 stream and click **Save**. _Note: To create a new API Secret, navigate in the Google Analytics UI to Admin > Data Streams > choose your stream > Measurement Protocol > Create._
+5. On the **Settings** tab, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} for web streams or the [Firebase App ID](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=firebase#payload_query_parameters){:target='_blank'} for mobile streams. Next, enter in the API Secret associated with your GA4 stream and click **Save**. 
+	
+	To create a new API Secret, navigate in the Google Analytics UI to Admin > Data Streams > choose your stream > Measurement Protocol > Create.
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
 {% include components/actions-fields.html %}
@@ -146,7 +148,7 @@ The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/
 
 To achieve complete reporting, Google recommends use of their Firebase SDKs to send mobile data to Google Analytics 4. To assist in your implementation, Segment has a [Firebase destination](/docs/connections/destinations/catalog/firebase) available for mobile analytics. For more information on linking Google Analytics 4 properties to Firebase, see [Google Analytics 4 Firebase integration](https://support.google.com/analytics/answer/9289234?hl=en){:target="_blank"}.
 
-If you would like to supplement your Firebase implementation by sending mobile app events server-side, Segment's Google Analytics 4 destination can support this. To send mobile events server-side, configure the Firebase App ID in your Destination Settings. In each mapping, change Data Stream Type to `Mobile App` and set a Firebase App Instance ID so that data is routed to a mobile stream.
+The Segment Google Analytics 4 destination supports sending mobile app events server-side to supplement your Firebase implementation. To send mobile events server-side, configure the Firebase App ID in the Destination settings. In each mapping, change the Data Stream Type to `Mobile App` and set a Firebase App Instance ID so that data routes to a mobile stream.
 
 ### Reserved Names
 
