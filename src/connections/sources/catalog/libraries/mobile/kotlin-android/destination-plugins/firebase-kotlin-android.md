@@ -142,17 +142,6 @@ For iOS, you can configure `recordScreenViews` which will automatically track sc
 
 Google Analytics for Firebase iOS does NOT support the case of manual-only screen reporting. Firebase only supports automatic + manual screen reporting or no screen reporting at all.
 
-
-#### **Firebase Dynamic Linking** (iOS only)
-
-Firebase Dynamic Links are smart URLs that can change behavior dynamically depending on the platform where the user clicks them. Use them in web, email, social media, referral and physical promotions to increase user acquisition, retention and lifetime value. Key features include ability to survive app installs, controlling user experience depending on what platform they access the link on and knowing which content and campaigns are working using tracking in the Firebase console. [Check out Firebase's Docs here](https://firebase.google.com/docs/dynamic-links/).
-
-To use Firebase Dynamic Links, search for the Firebase package via Swift Package Manager and add the Dynamic Links library:
-
-`https://github.com/firebase/firebase-ios-sdk`
-
-Then, enter the deep link URL scheme in your Segment Firebase destination settings. [Here's a sample app delegate that shows how to implement the Dynamic Linking Logic](https://github.com/firebase/quickstart-ios/blob/master/dynamiclinks/DynamicLinksExample/AppDelegate.m#L41-L135).
-
 ### **Conversion Tracking and Adwords Conversions**
 
 Firebase is Google's recommended method for reporting conversions to Adwords. To use Firebase, track the conversion events as you normally would with Segment and Segment will send them through to Firebase.
