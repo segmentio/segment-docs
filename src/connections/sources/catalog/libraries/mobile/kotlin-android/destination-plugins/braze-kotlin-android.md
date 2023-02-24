@@ -17,7 +17,7 @@ Braze’s destination plugin code is open source and available on GitHub. You ca
   - Select the `users.track` endpoint in the **User Data** section.
 
 > warning ""
-> The Braze (Classic) destination is in maintaince mode excpet for mobile device mode implementations.
+> The Braze (Classic) destination is in maintenance mode except for mobile device mode implementations.
 
 ## Adding the Dependency
 
