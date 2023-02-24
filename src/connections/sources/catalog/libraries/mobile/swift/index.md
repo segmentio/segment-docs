@@ -60,6 +60,7 @@ Analytics for Swift is built with extensibility in mind. Use the tools list belo
 - [Destination filters](/docs/connections/sources/catalog/libraries/mobile/swift/swift-destination-filters)
 
 ## Sample applications
+The code samples below demonstrate the implementation of common use cases of the Analytics Swift library across different platforms. 
 
 {% assign resources = site.data.catalog.swift_resources.items | where: "categories", "sample" %}
 {: .columns}
@@ -68,7 +69,5 @@ Analytics for Swift is built with extensibility in mind. Use the tools list belo
 {%endfor%}
 
 ## Additional Resources
-
-some copy here
 
 - [Analytics iOS (Classic)](/docs/connections/sources/catalog/libraries/mobile/ios)

@@ -60,16 +60,15 @@ Analytics for Kotlin is built with extensibility in mind. Use the tools list bel
 
 ## Sample applications
 
+The code samples below demonstrate the implementation of common use cases of the Analytics Kotlin library across different platforms. 
+
 {% assign resources = site.data.catalog.kotlin_resources.items | where: "categories", "sample" %}
 {: .columns}
 {% for resource in resources %}
 - [{{resource.name}}]({{resource.url}}){:target="_blank"}
 {%endfor%}
 
-
 ## Additional Resources
-
-some copy here
 
 - [Frequently Asked Questions](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/android-faqs)
 - [Analytics Android (Classic)](/docs/connections/sources/catalog/libraries/mobile/android)
