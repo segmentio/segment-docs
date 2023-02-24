@@ -55,4 +55,4 @@ The Event Tester is only accessible to users with write access in their Segment 
 
 **The Event Tester experienced an error when sending my event. Why did this happen?**
 
-If you experience an error, [let us know](https://segment.com/help/contact/) and we'll help you troubleshoot the issue.
+If you experience an error, [let us know](https://segment.com/help/contact/) and we'll help you troubleshoot the issue. 
