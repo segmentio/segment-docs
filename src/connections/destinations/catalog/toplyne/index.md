@@ -1,6 +1,6 @@
 ---
 # The end name should be similar to `Slack  Destination`
-title: <destination_name>
+title: Toplyne (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
 ---
@@ -9,7 +9,7 @@ hide-dossier: true
 
 {% include content/plan-grid.md name="actions" %}
 
-[Toplyne](https://www.toplyne.io/) is a headless Sales AI for revenue teams. Our AI captures and understands every user click stored in your Segment and enriches it with demographic data (through 3rd party enrichment tools). We then, deliver opportunities for expansion and conversion into your existing CRM. We do this without involving your data and engineering teams.
+[Toplyne](https://www.toplyne.io/) is a headless Sales AI for revenue teams. Toplyne's AI captures and understands every user click passed through Segment and enriches it with demographic data (through 3rd party enrichment tools). Toplyne then delivers opportunities for expansion and conversion into your existing CRM. We do this without involving your data and engineering teams.
 Cloudflare, Vercel, and Canva depend on Toplyne to build predictable pipelines and improve conversions and expansions for their sales and account management teams.
 
 <!-- This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component. -->
