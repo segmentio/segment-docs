@@ -14,7 +14,7 @@ Email support is available for all [Segment support plans](https://segment.com/s
 
 ### Segment Support Business Hours
 
-The Segment Support Team’s hours and holidays can be found here(https://support.twilio.com/hc/en-us/articles/223136127-Twilio-Support-business-hours).
+The Segment Support Team’s hours and holidays can be found [here](https://support.twilio.com/hc/en-us/articles/223136127-Twilio-Support-business-hours).
 
 ## Segment University
 
