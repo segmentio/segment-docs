@@ -70,5 +70,5 @@ The code samples below demonstrate the implementation of common use cases of the
 
 ## Additional Resources
 
-- [Frequently Asked Questions](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/android-faqs)
+- [Frequently Asked Questions](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-faq)
 - [Analytics Android (Classic)](/docs/connections/sources/catalog/libraries/mobile/android)
