@@ -94,6 +94,6 @@ To **view** transformations, you need `Source Read-only`, either for all Sources
 
 To **create or edit** transformations you must have either `Source Admin` for all Sources, or for the specific Sources used with Protocols.
 
-## Role for Privacy Portal
+## Roles for Privacy Portal
 
-To **view, create or edit** PII related configurations in Privacy Portal, you need to have `Workspace Owner` role.
+To **view, create or edit** PII related configurations in Privacy Portal, you need to have the `Workspace Owner` role.
