@@ -46,7 +46,7 @@ On the right hand side of the Event Tester you will see the response from the pa
 ![](images/event-tester_il6mvexS.png)
 
 If you are receiving an error and are unsure how to fix the issue, visit the partner docs (e.g. [https://developers.google.com/analytics/devguides/reporting/core/v3/errors](https://developers.google.com/analytics/devguides/reporting/core/v3/errors)) or contact the partner support team. 
-
+ 
 # FAQ
 
 **Why can't I see the Event Tester when I log into my workspace?**
