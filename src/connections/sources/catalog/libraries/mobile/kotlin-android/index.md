@@ -15,7 +15,15 @@ With Analytics-Kotlin, you can send data using Kotlin applications to any analyt
 
 ## Sources
 
-The Analytics-Kotlin [implementation guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/implementation) covers all platforms for which you can build Kotlin applications.
+
+{% include components/reference-button.html
+  href="/docs/connections/sources/catalog/libraries/mobile/kotlin-android/implementation"
+  icon="languages/kotlin.svg"
+  title="Kotlin Implementation Guide"
+  description="Follow the Analytics-Kotlin implementation guide to add Segment analytics to any Kotlin application."
+  newtab="false"
+  logo="true"
+%}
 
 ## Destinations
 

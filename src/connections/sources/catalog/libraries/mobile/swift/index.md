@@ -16,7 +16,16 @@ If you're migrating to Analytics-Swift from a different mobile library, you can 
 
 ## Sources
 
-Follow the Analytics-Swift [implementation guide](/docs/connections/sources/catalog/libraries/mobile/swift/implementation) to add Segment analytics to any Swift application, including iOS, macOS, tvOS, and watchOS apps.
+
+{% include components/reference-button.html
+  href="/docs/connections/sources/catalog/libraries/mobile/swift/implementation"
+  icon="languages/swift.svg"
+  title="Swift Implementation Guide"
+  description="Follow the Analytics-Swift implementation guide to add Segment analytics to any Swift application, including iOS, macOS, tvOS, and watchOS apps."
+  newtab="false"
+  logo="true"
+%}
+
 
 ## Destinations
 
