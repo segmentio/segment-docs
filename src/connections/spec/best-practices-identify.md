@@ -21,7 +21,7 @@ An `anonymousId` is a randomly generated 36 character string automatically assig
 
 Segment's Identify method lets you link a user to their actions and record traits about them. It includes a unique User ID, and records any traits you know about them, such as their email address, and name.
 
-Segment recommends that you use a unique user identifier that won't change for your `userId`, for example a database ID from your organization's internal systems. (See below)
+Segment recommends that you use a unique user identifier that won't change for your `userId`, for example a database ID from your organization's internal systems. (See below) 
 
 When you make an [Identify call](/docs/connections/spec/identify) using Analytics.js, Segment saves the `userId` to the browser cookie, and writes all the user traits in local storage. If you're using one of the Segment mobile libraries, the `userId` and traits are stored in the device's memory. This makes it possible to append the user's data to all subsequent [Page calls](/docs/connections/sources/catalog/libraries/website/javascript#page) or [Track calls](/docs/connections/sources/catalog/libraries/website/javascript#track) for the user, so you can properly attribute those actions.
 
