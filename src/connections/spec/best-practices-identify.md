@@ -133,7 +133,7 @@ The Segment ID cookie is set with a one year expiration. However, there are some
 - If you generate a new `anonymousId` on a server library, and pass it from the server to the browser, this could overwrite the user's existing `anonymousId`.
 
 > info ""
-> Remember, if a user has multiple devices, they can have different `anonymousId`s on each different device.
+> Remember, if a user has multiple devices, they can have different `anonymousId`s on each different device. 
 
 ## Linking server- and client- generated Ids
 
