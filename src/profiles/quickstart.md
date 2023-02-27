@@ -6,7 +6,7 @@ plan: profiles
 This guide walks you through the set up process for a simple Profiles space, which you can use if your Segment implementation is simple. If your implementation is complex, you can use this to demonstrate and test Profiles before working on a more complex configuration.
 
 > success ""
-> If you're using Engage, visit the [Engage Foundations Onboarding Guide](/docs/engage/quickstart) for additional steps to create audiences, connect to destinations, and more. 
+> If you're using Engage, visit the [Engage Foundations Onboarding Guide](/docs/engage/quickstart) for additional steps to create audiences, connect to destinations, and more.
 
 ## Profiles configuration requirements
 
@@ -38,6 +38,9 @@ You probably have teammates who help set up your Segment Workspace with the data
 1. From your Segment space, navigate to **Profiles Settings** and click **Sources**.
 2. On the screen that appears, choose one or two production sources from your Connections workspace.
    Segment recommends connecting your production website or App source as a great starting point.
+
+> info ""
+> If the source you want to add doesn't appear on the list, then check if the source is enabled. If the source is enabled, verify that you have set up a connection policy which enforces that you can only add sources with specific labels to this space. Read more about Segment's connection policy [here](/docs/profiles/identity-resolution/space-setup/#step-three-set-up-a-connection-policy).
 
 > success ""
 > **Tip:** It sounds a little counter- intuitive to connect a production source to a developer space, but your production sources have rich user data in them, which is what you need to build and validate user profiles.

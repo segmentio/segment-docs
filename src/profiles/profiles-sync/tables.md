@@ -117,11 +117,11 @@ The anonymous site visits sample used earlier would generate the following event
 
 <div style="overflow-x:auto;" markdown=1>
 
-| `segment_id` | `canonical_segment_id` | `triggering_event_type` | `triggering_event_id` | `timestamp`         |
-| ------------ | ---------------------- | ----------------------- | --------------------- | ------------------- |
-| `profile_1`  | `profile_1`            | `page`                  | `event_1`             | 2022-05-02 14:01:00 |
-| `profile_2`  | `profile_2`            | `page`                  | `event_3`             | 2022-06-22 10:47:15 |
-| `profile_2`  | `profile_1`            | `identify`              | `event_4`             | 2022-06-22 10:48:00 |
+| `segment_id` | `external_id_type` | `external_id_value`     | `triggering_event_type` | `triggering_event_id` | `timestamp`         |
+| ------------ | -------------------| ------------------------| ----------------------- |-----------------------| ------------------- |
+| `profile_1`  | `anonymous_id`     | `5285bc35-05ef-4d21`    | `page`                  | `event_1`             | 2022-05-02 14:01:00 |
+| `profile_1`  | `email`            | `jane.kim@segment.com`  | `identify`              | `event_2`             | 2022-05-02 14:01:47 |
+| `profile_2`  | `anonymous_id`     | `b50e18a5-1b8d-451c`    | `page`                  | `event_3`             | 2022-06-22 10:48:00 |
 
 </div>
 

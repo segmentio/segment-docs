@@ -70,7 +70,12 @@ const getDestinationData = async (id) => {
   let actions = destination.actions
   let presets = destination.presets
 
-
+  // Force screen method into supportedMethods object
+  destination.supportedMethods.screen = false
+  // Set it true for LiveLike, per request
+  if (destination.id == '63e42b47479274407b671071'){
+    destination.supportedMethods.screen = true
+  }
 
   let updatePrivateDest = {
     id: destination.id,
