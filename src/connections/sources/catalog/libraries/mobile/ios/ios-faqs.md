@@ -252,7 +252,7 @@ Some destinations, especially mobile attribution tools (for example, [Kochava](h
 As of [Version 4.1.0](https://github.com/segmentio/analytics-ios/releases/tag/4.1.0){:target="blank"}, Analytics-iOS now supports tvOS, macOS, and Catalyst as well. You can follow the [quickstart documentation](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/) to set it up.
 
 ## iPhone model in context object
-In context.device.model, the model refers to Apple’s mobile device codes, and not to a specfic iPhone model. 
+In context.device.model, the model refers to Apple’s mobile device codes, and not to a specific iPhone model. 
 For example:
 iPhone15,3 : iPhone 14 Pro Max
 
