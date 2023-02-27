@@ -123,7 +123,7 @@ Here's a list of Segment Transformations with some use case examples.
 
 - **Replace the value of a current property**: You can replace the property value of an existing property using static casing functions, for example `prop1: "titlecase(value 2)"`, or dynamic casing functions (`"prop1: kebabcase("properties.prop1")"`) with [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"}.
 
-- **Change the value of a property if a user triggers an event:** Use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to dynamically assign the value of one existing property to another property, or assign the value of an property to a new property. For example, you can assign a new property, `property2`, to have the same value as `property1` if a user clicks a button.
+- **Change the value of a property if a user triggers an event:** Use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to dynamically assign the value of one existing property to another property, or assign the value of an property to a new property. For example, you can assign a new property, `property2`, to have the same value as `property1` if a user clicks a button. 
 
 > info ""
 > Segment displays an error if the following property conflicts occur:
