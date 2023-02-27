@@ -255,6 +255,5 @@ As of [Version 4.1.0](https://github.com/segmentio/analytics-ios/releases/tag/4.
 The model refers to Apple’s mobile device codes, and not to a specfic iPhone model. 
 For example:
 iPhone15,3 : iPhone 14 Pro Max
-
 A broader list can be found within Apple's documentation.
 
