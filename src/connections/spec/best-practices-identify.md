@@ -232,7 +232,9 @@ After you fire the `identify` call with the `userId`, you'll notice that the pay
 
 ## Merging Identified and Anonymous user profiles
 
-![The illustration shows a timeline with a user's interactions on a website, including sample API calls above that show Segment calls, and the user's `anonymousId` and `userId`](images/identify-bp-1.png)
+The illustration below shows a timeline with a user's interactions on a website, including sample API calls above that show Segment calls, and the user's `anonymousId` and `userId`.
+
+![This timeline illustration shows three points at which a user interacts with a website (visits homepage, signs up for newsletter, and clicks demo request button) and the corresponding API calls Segment makes for each step](images/identify-bp-1.png)
 
 <!--https://www.figma.com/file/Gc53MamYsKZBg3IUduunc5/identity-best-practices?node-id=1%3A3 -->
 
@@ -273,7 +275,7 @@ Let's go through some more scenarios to explain how an `anonymousId` is assigned
 
 If a user clicks on an ad and is directed to a webpage, they are assigned an `anonymousId`. While this user is anonymous, they navigate to different pages and click around on the website. Say they come back two days later from the same device, sign up, and are assigned a `userId` from your database.
 
-![](images/identify-bp-2.png)
+![This timeline illustration shows four points at which a user interacts with a website (visits homepage, clicks button, visits page again, and signs up) and the corresponding API calls Segment makes at each point](images/identify-bp-2.png)
 
 For simplicity, we're assuming that the user has _not_ cleared their cookies or `localStorage`, where the original `anonymousId` is stored. If they had, they'd be assigned a new `anonymousId` when they visited the website, and the `userId` they got when they register on the website would _not_ be attached to the activities tracked with the old `anonymousId`.
 
@@ -281,14 +283,14 @@ For simplicity, we're assuming that the user has _not_ cleared their cookies or 
 
 In this scenario, the person uses both a web browser, and a mobile application to interact with your site. In each case, they are assigned a different `anonymousId`. In this scenario, the user signs up on the web browser, so Segment assigns their _web_ session a `userId`. However, because they do not log in on the mobile application, Segment cannot tie the mobile activity to this specific user. Their mobile application activity remains anonymous unless they log in on the mobile application.
 
-![](images/identify-bp-3.png)
+![This timeline illustration shows two parallel paths: one for a user logging in to a desktop site, and one for an anonymous mobile app user, and the API calls Segment makes to identify the users](images/identify-bp-3.png)
 
 
 #### Scenario #3 - Multi-day, multi-device, multiple logins
 
 Similar to the previous scenario, the user accessed both your website and mobile application, and also logged in on both. In this case, both sessions on the web and mobile app receive the user's `userId`, so Segment can tie the anonymous activity on both web and mobile to this user.
 
-![](images/identify-bp-4.png)
+![This timeline illustration shows two parallel paths: one for a user logging in to a desktop site, and one for a user logging into a mobile app, and the API calls Segment makes to identify the users](images/identify-bp-4.png)
 
 
 ## User profiles in warehouses
@@ -331,7 +333,7 @@ analytics.user().anonymousId()
 
 If you're identifying on the server, then you will want to pass the user ID from the server to the client using an `identify` call with the `anonymousId`. That will allow the `userId` to be aliased with the existing `anonymousId` and stored in the cookie in localStorage. With that, all previous anonymous activity and all subsequent activity is associated to the newly generated `userId`, as well as existing `anonymousId`s. 
 
-There are some advantages to sending details about your users directly from your server once the user registers. Server library [Identify calls](/docs/connections/spec/identify) are invisible to the end user, making them more secure, and much more reliable. Or, if you want to send user data that is sensitive or which you don't want to expose to the client, then you can make an `identify` call from the server with all the traits you know about the user. More about [collecting data on the client or server](https://segment.com/docs/guides/how-to-guides/collect-on-client-or-server/#not-stored-in-your-database) in Segment's documentation. 
+There are some advantages to sending details about your users directly from your server once the user registers. Server library [Identify calls](/docs/connections/spec/identify) are invisible to the end user, making them more secure, and much more reliable. Or, if you want to send user data that is sensitive or which you don't want to expose to the client, then you can make an `identify` call from the server with all the traits you know about the user. More about [collecting data on the client or server](docs/guides/how-to-guides/collect-on-client-or-server/#not-stored-in-your-database) in Segment's documentation. 
 
 
 ### Aliasing from a server library
