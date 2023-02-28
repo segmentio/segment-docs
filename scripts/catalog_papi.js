@@ -71,41 +71,56 @@ const getConnectionModes = (destination) => {
       server: false
     },
   }
-  destination.components.forEach(component => {
-    switch (component.type) {
-      case 'IOS':
-        connectionModes.device.mobile = true
-        break
-      case 'ANDROID':
-        connectionModes.device.mobile = true
-        break
-      case 'BROWSER':
-        if (destination.browserUnbundling) {
-          connectionModes.cloud.web = true
-        }
-        connectionModes.device.web = true
-        break
-      case 'SERVER':
-        connectionModes.cloud.mobile = true
-        if (destination.platforms.server) {
-          connectionModes.cloud.server = true
-        }
-        if (destination.platforms.browser) {
-          connectionModes.cloud.web = true
-        }
-        break
-      case 'CLOUD':
-        connectionModes.cloud.mobile = true
-        if (destination.platforms.server) {
-          connectionModes.cloud.server = true
-        }
-        if (destination.platforms.browser) {
-          connectionModes.cloud.web = true
-        }
-        break
 
+  // if destination has device specific components
+  if (destination.components.length) {
+    destination.components.forEach(component => {
+      switch (component.type) {
+        case 'IOS':
+          connectionModes.device.mobile = true
+          break
+        case 'ANDROID':
+          connectionModes.device.mobile = true
+          break
+        case 'BROWSER':
+          if (destination.browserUnbundling) {
+            connectionModes.cloud.web = true
+          }
+          connectionModes.device.web = true
+          break
+        case 'SERVER':
+          connectionModes.cloud.mobile = true
+          if (destination.platforms.server) {
+            connectionModes.cloud.server = true
+          }
+          if (destination.platforms.browser) {
+            connectionModes.cloud.web = true
+          }
+          break
+        case 'CLOUD':
+          connectionModes.cloud.mobile = true
+          if (destination.platforms.server) {
+            connectionModes.cloud.server = true
+          }
+          if (destination.platforms.browser) {
+            connectionModes.cloud.web = true
+          }
+          break
+      }
+    })
+    // if destination has no device specific components, check for supported platforms
+  } else {
+    if (destination.platforms.browser) {
+      connectionModes.cloud.web = true
     }
-  })
+    if (destination.platforms.mobile) {
+      connectionModes.cloud.mobile = true
+    }
+    if (destination.platforms.server) {
+      connectionModes.cloud.server = true
+    }
+  }
+ 
   return connectionModes
 }
 
