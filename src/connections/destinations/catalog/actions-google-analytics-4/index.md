@@ -34,7 +34,9 @@ To add the Google Analytics 4 destination:
 2. Search for “Google Analytics 4” in the Destinations Catalog, and select the destination.
 3. Click **Configure Google Analytics 4** in the top-right corner of the screen.
 4. Select the source that will send data to Google Analytics 4 and follow the steps to name your destination.
-5. On the **Settings** tab, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} and API Secret associated with your GA4 stream and click **Save**. _Note: To create a new API Secret, navigate in the Google Analytics UI to Admin > Data Streams > choose your stream > Measurement Protocol > Create._
+5. On the **Settings** tab, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} for web streams or the [Firebase App ID](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=firebase#payload_query_parameters){:target='_blank'} for mobile streams. Next, enter in the API Secret associated with your GA4 stream and click **Save**. 
+	
+	To create a new API Secret, navigate in the Google Analytics UI to Admin > Data Streams > choose your stream > Measurement Protocol > Create.
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
 {% include components/actions-fields.html %}
@@ -80,7 +82,7 @@ To achieve parity with Universal Analytics, you should create the same custom di
 
 ##### Server-side Implementation using Google Analytics 4 Destination
 
-The Google Analytics 4 reports only display active users who engage with your site for a non-zero amount of time. To ensure users are rendered in reports, Segment sets the `engagement_time_msec` parameter to 1 by default. If you track engagement time on your Segment events, you can use the **Engagement Time in Milliseconds** field mapping to set `engagement_time_msec` to a different value.
+The Google Analytics 4 reports only display active users who engage with your site for a non-zero amount of time. To ensure users are rendered in reports, Segment sets the `engagement_time_msec` parameter to 1 by default. If you track engagement time on your Segment events, you can use the Engagement Time in Milliseconds field mapping to set `engagement_time_msec` to a different value.
 
 Besides Engagement Time in Milliseconds, you can also generate your own `session_id` and `session_number` and pass them as event properties to Segment. These properties can then be mapped to their corresponding parameters in Segment's Google Analytics 4 destination.
 
@@ -110,7 +112,9 @@ Promise.all([sessionIdPromise, sessionNumPromise]).then(function(session_data) {
 ```
 
 #### User Identification
-Segment requires a Client ID to send data to Google Analytics 4. The Client ID is the web equivalent of a device identifier and uniquely identifies a given user instance of a web client. By default, Segment sets Client ID to the Segment `userId`, falling back on `anonymousId`. This mapping can be changed within each action if you prefer to map a different field to Client ID.
+Segment requires a Client ID or Firebase App Instance ID to send data to Google Analytics 4. The Client ID is the web equivalent of a device identifier and uniquely identifies a given user instance of a web client. By default, Segment sets Client ID to the Segment `userId`, falling back on `anonymousId`. This mapping can be changed within each action if you prefer to map a different field to Client ID. 
+
+The Firebase App Instance ID is the mobile equivalent of a device identifier and uniquely identifiers a given Firebase app instance. No default is set for Firebase App Instance ID,  as [this value needs to be retrieved through the Firebase SDK](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=firebase#payload_post_body){:target='_blank'}. 
 
 Segment also allows you to send a User-ID with your events. The User-ID feature lets you associate your own identifiers with individual users so you can connect their behavior across different sessions and on various devices and platforms. For more information on User-ID, see Google’s [Measure activity across platforms](https://support.google.com/analytics/answer/9213390){:target='_blank'} and [Reporting: deduplicate user counts](https://support.google.com/analytics/answer/9355949){:target='_blank'}.
 
@@ -134,7 +138,7 @@ Ensure that at least one mapping has been configured and enabled in the destinat
 
 ### Attribution Reporting
 
-Google doesn't currently support passing certain reserved fields to the Google Analytics 4 Measurement Protocol API. This includes attribution data, like UTM parameters. If you rely on attribution reporting, you can either send this data as [custom dimensions](/docs/connections/destinations/catalog/actions-google-analytics-4/#custom-dimensions-and-metrics) or implement a parallel client-side integration to collect this data with gtag.js.
+Google doesn't currently support passing certain reserved fields to the Google Analytics 4 Measurement Protocol API. This includes attribution data, like UTM parameters. If you rely on attribution reporting, you can either send this data as [custom dimensions](/docs/connections/destinations/catalog/actions-google-analytics-4/#custom-dimensions-and-metrics) or implement a parallel client-side integration to collect this data with gtag.js (web) or Firebase (mobile).
 
 ### Debug Mode
 
@@ -142,7 +146,9 @@ The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/
 
 ### Mobile Data
 
-Google recommends use of their Firebase SDKs to send mobile data to Google Analytics 4. To assist in your implementation, Segment has a [Firebase destination](/docs/connections/destinations/catalog/firebase) available for mobile analytics. For more information on linking Google Analytics 4 properties to Firebase, see [Google Analytics 4 Firebase integration](https://support.google.com/analytics/answer/9289234?hl=en){:target="_blank"}. Segment's Google Analytics 4 destination is currently only compatible with web streams.
+To achieve complete reporting, Google recommends use of their Firebase SDKs to send mobile data to Google Analytics 4. To assist in your implementation, Segment has a [Firebase destination](/docs/connections/destinations/catalog/firebase) available for mobile analytics. For more information on linking Google Analytics 4 properties to Firebase, see [Google Analytics 4 Firebase integration](https://support.google.com/analytics/answer/9289234?hl=en){:target="_blank"}.
+
+The Segment Google Analytics 4 destination supports sending mobile app events server-side to supplement your Firebase implementation. To send mobile events server-side, configure the Firebase App ID in the Destination settings. In each mapping, change the Data Stream Type to `Mobile App` and set a Firebase App Instance ID so that data routes to a mobile stream.
 
 ### Reserved Names
 
