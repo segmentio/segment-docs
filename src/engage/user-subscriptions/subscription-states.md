@@ -85,6 +85,14 @@ Uploading contacts with a CSV file works best for initial batches of contacts yo
 
 To learn more about both options, reference the Engage documentation on using the [CSV uploader](/docs/engage/profiles/csv-upload/) and setting user subscriptions.
 
+### Sync subscription statuses with SQL
+
+Use SQL to import user subscription states from your data warehouse back to Engage. When you sync with SQL, you can query user subscription data at automated intervals. Pull subscription statuses for each contact vector and use your data warehouse as a single source of truth for subscription data.
+
+This option is especially useful if you don't have the ability to set subscription states with CSVs or Segment's Public API.
+
+View [Subscriptions with SQL Traits](/docs/engage/user-subscriptions/subscription-sql/) for more information.
+
 ### Troubleshooting subscription states
 
 On occasion, a user’s subscription state may not be up-to-date. For example, a user may have unsuccessfully attempted to unsubscribe from your marketing campaigns.
